@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static final addListener(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroid/transition/Transition$TransitionListener;
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,33 +106,33 @@
 .end method
 
 .method public static synthetic addListener$default(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroid/transition/Transition$TransitionListener;
-    .registers 10
+    .locals 2
 
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 60
     sget-object p1, Landroidx/core/transition/TransitionKt$addListener$1;->INSTANCE:Landroidx/core/transition/TransitionKt$addListener$1;
 
     check-cast p1, Lkotlin/jvm/functions/Function1;
 
-    :cond_8
+    :cond_0
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_10
+    if-eqz p7, :cond_1
 
     .line 61
     sget-object p2, Landroidx/core/transition/TransitionKt$addListener$2;->INSTANCE:Landroidx/core/transition/TransitionKt$addListener$2;
 
     check-cast p2, Lkotlin/jvm/functions/Function1;
 
-    :cond_10
+    :cond_1
     move-object p7, p2
 
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_2
 
     .line 62
     sget-object p2, Landroidx/core/transition/TransitionKt$addListener$3;->INSTANCE:Landroidx/core/transition/TransitionKt$addListener$3;
@@ -141,12 +141,12 @@
 
     check-cast p3, Lkotlin/jvm/functions/Function1;
 
-    :cond_1a
+    :cond_2
     move-object v0, p3
 
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_3
 
     .line 63
     sget-object p2, Landroidx/core/transition/TransitionKt$addListener$4;->INSTANCE:Landroidx/core/transition/TransitionKt$addListener$4;
@@ -155,10 +155,10 @@
 
     check-cast p4, Lkotlin/jvm/functions/Function1;
 
-    :cond_24
+    :cond_3
     and-int/lit8 p2, p6, 0x10
 
-    if-eqz p2, :cond_2d
+    if-eqz p2, :cond_4
 
     .line 64
     sget-object p2, Landroidx/core/transition/TransitionKt$addListener$5;->INSTANCE:Landroidx/core/transition/TransitionKt$addListener$5;
@@ -168,7 +168,7 @@
     check-cast p5, Lkotlin/jvm/functions/Function1;
 
     .line 66
-    :cond_2d
+    :cond_4
     new-instance v1, Landroidx/core/transition/TransitionKt$addListener$listener$1;
 
     move-object p2, v1
@@ -188,7 +188,7 @@
 .end method
 
 .method public static final doOnCancel(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;)Landroid/transition/Transition$TransitionListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -216,7 +216,7 @@
 .end method
 
 .method public static final doOnEnd(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;)Landroid/transition/Transition$TransitionListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -244,7 +244,7 @@
 .end method
 
 .method public static final doOnPause(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;)Landroid/transition/Transition$TransitionListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -272,7 +272,7 @@
 .end method
 
 .method public static final doOnResume(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;)Landroid/transition/Transition$TransitionListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -300,7 +300,7 @@
 .end method
 
 .method public static final doOnStart(Landroid/transition/Transition;Lkotlin/jvm/functions/Function1;)Landroid/transition/Transition$TransitionListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

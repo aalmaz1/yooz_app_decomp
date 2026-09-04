@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>(IIIIII)V
-    .registers 7
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/avi/AviStreamHeaderChunk;
-    .registers 8
+    .locals 7
 
     .line 28
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 8
+    .locals 7
 
     .line 83
     iget v0, p0, Landroidx/media3/extractor/avi/AviStreamHeaderChunk;->length:I
@@ -140,7 +140,7 @@
 .end method
 
 .method public getFrameRate()F
-    .registers 3
+    .locals 2
 
     .line 79
     iget v0, p0, Landroidx/media3/extractor/avi/AviStreamHeaderChunk;->rate:I
@@ -157,22 +157,22 @@
 .end method
 
 .method public getTrackType()I
-    .registers 3
+    .locals 2
 
     .line 65
     iget v0, p0, Landroidx/media3/extractor/avi/AviStreamHeaderChunk;->streamType:I
 
     const v1, 0x73646976
 
-    if-eq v0, v1, :cond_31
+    if-eq v0, v1, :cond_2
 
     const v1, 0x73647561
 
-    if-eq v0, v1, :cond_2f
+    if-eq v0, v1, :cond_1
 
     const v1, 0x73747874
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_0
 
     .line 73
     new-instance v0, Ljava/lang/StringBuilder;
@@ -203,24 +203,24 @@
 
     return v0
 
-    :cond_2d
+    :cond_0
     const/4 v0, 0x3
 
     return v0
 
-    :cond_2f
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 
-    :cond_31
+    :cond_2
     const/4 v0, 0x2
 
     return v0
 .end method
 
 .method public getType()I
-    .registers 2
+    .locals 1
 
     const v0, 0x68727473
 

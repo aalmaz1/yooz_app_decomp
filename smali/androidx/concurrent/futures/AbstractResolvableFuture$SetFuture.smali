@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/concurrent/futures/AbstractResolvableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,19 +75,19 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 274
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;->owner:Landroidx/concurrent/futures/AbstractResolvableFuture;
 
     iget-object v0, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-eq v0, p0, :cond_7
+    if-eq v0, p0, :cond_0
 
     return-void
 
     .line 278
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;->future:Lcom/google/common/util/concurrent/ListenableFuture;
 
     invoke-static {v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getFutureValue(Lcom/google/common/util/concurrent/ListenableFuture;)Ljava/lang/Object;
@@ -103,13 +103,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 280
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;->owner:Landroidx/concurrent/futures/AbstractResolvableFuture;
 
     invoke-static {v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->complete(Landroidx/concurrent/futures/AbstractResolvableFuture;)V
 
-    :cond_1c
+    :cond_1
     return-void
 .end method

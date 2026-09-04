@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 127
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Empty;->access$000()Landroidx/datastore/preferences/protobuf/Empty;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Empty$1;)V
-    .registers 2
+    .locals 0
 
     .line 120
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Empty$Builder;-><init>()V

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$4vTZS-H3tUTsotYCbkX9nVH6ePw(Landroid/os/Bundle;)Landroidx/media3/common/text/Cue;
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/media3/common/text/Cue;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/text/Cue;
 
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public decode(J[B)Landroidx/media3/extractor/text/CuesWithTiming;
-    .registers 10
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public decode(J[BII)Landroidx/media3/extractor/text/CuesWithTiming;
-    .registers 12
+    .locals 6
 
     .line 60
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 40
     new-instance v0, Landroid/util/Rational;
@@ -26,7 +26,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method private static isAspectRatioMatch(Landroid/util/Size;Landroid/util/Rational;)Z
-    .registers 4
+    .locals 2
 
     .line 70
     new-instance v0, Landroid/util/Rational;
@@ -58,7 +58,7 @@
 .end method
 
 .method public static setHDRnet(Landroid/util/Size;Landroidx/camera/core/impl/SessionConfig$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 52
     const-class v0, Landroidx/camera/camera2/internal/compat/quirk/PreviewPixelHDRnetQuirk;
@@ -69,24 +69,24 @@
 
     check-cast v0, Landroidx/camera/camera2/internal/compat/quirk/PreviewPixelHDRnetQuirk;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     return-void
 
     .line 57
-    :cond_b
+    :cond_0
     sget-object v0, Landroidx/camera/camera2/internal/compat/workaround/PreviewPixelHDRnet;->ASPECT_RATIO_16_9:Landroid/util/Rational;
 
     invoke-static {p0, v0}, Landroidx/camera/camera2/internal/compat/workaround/PreviewPixelHDRnet;->isAspectRatioMatch(Landroid/util/Size;Landroid/util/Rational;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_1
 
     return-void
 
     .line 61
-    :cond_14
+    :cond_1
     new-instance p0, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
     invoke-direct {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;-><init>()V

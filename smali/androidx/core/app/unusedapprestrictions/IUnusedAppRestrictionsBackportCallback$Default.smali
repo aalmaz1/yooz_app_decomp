@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public onIsPermissionRevocationEnabledForAppResult(ZZ)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -44,26 +44,26 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 99
     invoke-static {}, Lcom/google/common/io/Closer$SuppressingSuppressor;->tryCreate()Lcom/google/common/io/Closer$SuppressingSuppressor;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 100
     sget-object v0, Lcom/google/common/io/Closer$LoggingSuppressor;->INSTANCE:Lcom/google/common/io/Closer$LoggingSuppressor;
 
-    :cond_8
+    :cond_0
     sput-object v0, Lcom/google/common/io/Closer;->SUPPRESSOR:Lcom/google/common/io/Closer$Suppressor;
 
     return-void
 .end method
 
 .method constructor <init>(Lcom/google/common/io/Closer$Suppressor;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -98,7 +98,7 @@
 .end method
 
 .method public static create()Lcom/google/common/io/Closer;
-    .registers 2
+    .locals 2
 
     .line 105
     new-instance v0, Lcom/google/common/io/Closer;
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -124,14 +124,14 @@
     iget-object v0, p0, Lcom/google/common/io/Closer;->thrown:Ljava/lang/Throwable;
 
     .line 215
-    :goto_2
+    :goto_0
     iget-object v1, p0, Lcom/google/common/io/Closer;->stack:Ljava/util/Deque;
 
     invoke-interface {v1}, Ljava/util/Deque;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_21
+    if-nez v1, :cond_1
 
     .line 216
     iget-object v1, p0, Lcom/google/common/io/Closer;->stack:Ljava/util/Deque;
@@ -143,42 +143,42 @@
     check-cast v1, Ljava/io/Closeable;
 
     .line 218
-    :try_start_12
+    :try_start_0
     invoke-interface {v1}, Ljava/io/Closeable;->close()V
-    :try_end_15
-    .catchall {:try_start_12 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2
+    goto :goto_0
 
-    :catchall_16
+    :catchall_0
     move-exception v2
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     move-object v0, v2
 
-    goto :goto_2
+    goto :goto_0
 
     .line 223
-    :cond_1b
+    :cond_0
     iget-object v3, p0, Lcom/google/common/io/Closer;->suppressor:Lcom/google/common/io/Closer$Suppressor;
 
     invoke-interface {v3, v1, v0, v2}, Lcom/google/common/io/Closer$Suppressor;->suppress(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    goto :goto_2
+    goto :goto_0
 
     .line 228
-    :cond_21
+    :cond_1
     iget-object v1, p0, Lcom/google/common/io/Closer;->thrown:Ljava/lang/Throwable;
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_3
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_2
 
-    goto :goto_33
+    goto :goto_1
 
     .line 229
-    :cond_28
+    :cond_2
     const-class v1, Ljava/io/IOException;
 
     invoke-static {v0, v1}, Lcom/google/common/base/Throwables;->propagateIfPossible(Ljava/lang/Throwable;Ljava/lang/Class;)V
@@ -190,13 +190,13 @@
 
     throw v1
 
-    :cond_33
-    :goto_33
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method public register(Ljava/io/Closeable;)Ljava/io/Closeable;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/io/Closeable;
         .annotation runtime Lcom/google/common/io/ParametricNullness;
         .end annotation
@@ -221,19 +221,19 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 130
     iget-object v0, p0, Lcom/google/common/io/Closer;->stack:Ljava/util/Deque;
 
     invoke-interface {v0, p1}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
 
-    :cond_7
+    :cond_0
     return-object p1
 .end method
 
 .method public rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -269,7 +269,7 @@
 .end method
 
 .method public rethrow(Ljava/lang/Throwable;Ljava/lang/Class;)Ljava/lang/RuntimeException;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -326,7 +326,7 @@
 .end method
 
 .method public rethrow(Ljava/lang/Throwable;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/RuntimeException;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

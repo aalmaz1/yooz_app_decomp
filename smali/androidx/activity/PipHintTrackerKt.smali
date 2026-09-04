@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final synthetic access$trackPipAnimationHintView$positionInWindow(Landroid/view/View;)Landroid/graphics/Rect;
-    .registers 1
+    .locals 0
 
     .line 1
     invoke-static {p0}, Landroidx/activity/PipHintTrackerKt;->trackPipAnimationHintView$positionInWindow(Landroid/view/View;)Landroid/graphics/Rect;
@@ -40,7 +40,7 @@
 .end method
 
 .method public static final trackPipAnimationHintView(Landroid/app/Activity;Landroid/view/View;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,18 +82,18 @@
 
     move-result-object p1
 
-    if-ne p0, p1, :cond_1e
+    if-ne p0, p1, :cond_0
 
     return-object p0
 
-    :cond_1e
+    :cond_0
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 .end method
 
 .method private static final trackPipAnimationHintView$positionInWindow(Landroid/view/View;)Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 43
     new-instance v0, Landroid/graphics/Rect;

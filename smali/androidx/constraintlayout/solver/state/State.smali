@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method private createHelperKey()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 168
     new-instance v0, Ljava/lang/StringBuilder;
@@ -148,7 +148,7 @@
 
 # virtual methods
 .method public apply(Landroidx/constraintlayout/solver/widgets/ConstraintWidgetContainer;)V
-    .registers 6
+    .locals 4
 
     .line 265
     invoke-virtual {p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetContainer;->removeAllChildren()V
@@ -186,13 +186,13 @@
 
     move-result-object v0
 
-    :cond_21
-    :goto_21
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -212,7 +212,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     .line 272
     iget-object v3, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
@@ -223,7 +223,7 @@
 
     check-cast v3, Landroidx/constraintlayout/solver/state/Reference;
 
-    if-nez v3, :cond_47
+    if-nez v3, :cond_1
 
     .line 274
     invoke-virtual {p0, v1}, Landroidx/constraintlayout/solver/state/State;->constraints(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
@@ -231,13 +231,13 @@
     move-result-object v3
 
     .line 276
-    :cond_47
+    :cond_1
     invoke-interface {v3, v2}, Landroidx/constraintlayout/solver/state/Reference;->setConstraintWidget(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 279
-    :cond_4b
+    :cond_2
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -248,12 +248,12 @@
 
     move-result-object v0
 
-    :goto_55
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_82
+    if-eqz v1, :cond_5
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -271,7 +271,7 @@
     .line 281
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/State;->mParent:Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    if-eq v1, v2, :cond_7e
+    if-eq v1, v2, :cond_4
 
     .line 282
     invoke-interface {v1}, Landroidx/constraintlayout/solver/state/Reference;->getConstraintWidget()Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
@@ -286,25 +286,25 @@
     .line 284
     instance-of v3, v1, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;
 
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_3
 
     .line 286
     invoke-interface {v1}, Landroidx/constraintlayout/solver/state/Reference;->apply()V
 
     .line 288
-    :cond_7a
+    :cond_3
     invoke-virtual {p1, v2}, Landroidx/constraintlayout/solver/widgets/ConstraintWidgetContainer;->add(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
 
-    goto :goto_55
+    goto :goto_1
 
     .line 290
-    :cond_7e
+    :cond_4
     invoke-interface {v1, p1}, Landroidx/constraintlayout/solver/state/Reference;->setConstraintWidget(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
 
-    goto :goto_55
+    goto :goto_1
 
     .line 293
-    :cond_82
+    :cond_5
     iget-object p1, p0, Landroidx/constraintlayout/solver/state/State;->mHelperReferences:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -315,13 +315,13 @@
 
     move-result-object p1
 
-    :cond_8c
-    :goto_8c
+    :cond_6
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_8
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -341,7 +341,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_6
 
     .line 297
     iget-object v1, v0, Landroidx/constraintlayout/solver/state/HelperReference;->mReferences:Ljava/util/ArrayList;
@@ -350,12 +350,12 @@
 
     move-result-object v1
 
-    :goto_aa
+    :goto_3
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_c8
+    if-eqz v2, :cond_7
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -381,16 +381,16 @@
 
     invoke-virtual {v3, v2}, Landroidx/constraintlayout/solver/widgets/HelperWidget;->add(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
 
-    goto :goto_aa
+    goto :goto_3
 
     .line 301
-    :cond_c8
+    :cond_7
     invoke-virtual {v0}, Landroidx/constraintlayout/solver/state/HelperReference;->apply()V
 
-    goto :goto_8c
+    goto :goto_2
 
     .line 304
-    :cond_cc
+    :cond_8
     iget-object p1, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -401,12 +401,12 @@
 
     move-result-object p1
 
-    :goto_d6
+    :goto_4
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_ec
+    if-eqz v0, :cond_9
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -424,14 +424,14 @@
     .line 306
     invoke-interface {v0}, Landroidx/constraintlayout/solver/state/Reference;->apply()V
 
-    goto :goto_d6
+    goto :goto_4
 
-    :cond_ec
+    :cond_9
     return-void
 .end method
 
 .method public barrier(Ljava/lang/Object;Landroidx/constraintlayout/solver/state/State$Direction;)Landroidx/constraintlayout/solver/state/helpers/BarrierReference;
-    .registers 4
+    .locals 1
 
     .line 223
     sget-object v0, Landroidx/constraintlayout/solver/state/State$Helper;->BARRIER:Landroidx/constraintlayout/solver/state/State$Helper;
@@ -449,7 +449,7 @@
 .end method
 
 .method public varargs centerHorizontally([Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -469,7 +469,7 @@
 .end method
 
 .method public varargs centerVertically([Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/helpers/AlignVerticallyReference;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -489,7 +489,7 @@
 .end method
 
 .method public constraints(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
-    .registers 4
+    .locals 2
 
     .line 154
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
@@ -500,7 +500,7 @@
 
     check-cast v0, Landroidx/constraintlayout/solver/state/Reference;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 156
     invoke-virtual {p0, p1}, Landroidx/constraintlayout/solver/state/State;->createConstraintReference(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
@@ -516,29 +516,29 @@
     invoke-interface {v0, p1}, Landroidx/constraintlayout/solver/state/Reference;->setKey(Ljava/lang/Object;)V
 
     .line 160
-    :cond_16
+    :cond_0
     instance-of p1, v0, Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_1
 
     .line 161
     check-cast v0, Landroidx/constraintlayout/solver/state/ConstraintReference;
 
     return-object v0
 
-    :cond_1d
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public convertDimension(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 112
     instance-of v0, p1, Ljava/lang/Float;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 113
     check-cast p1, Ljava/lang/Float;
@@ -550,10 +550,10 @@
     return p1
 
     .line 115
-    :cond_b
+    :cond_0
     instance-of v0, p1, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 116
     check-cast p1, Ljava/lang/Integer;
@@ -564,14 +564,14 @@
 
     return p1
 
-    :cond_16
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public createConstraintReference(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
-    .registers 2
+    .locals 0
 
     .line 128
     new-instance p1, Landroidx/constraintlayout/solver/state/ConstraintReference;
@@ -582,7 +582,7 @@
 .end method
 
 .method public directMapping()V
-    .registers 4
+    .locals 3
 
     .line 253
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
@@ -595,12 +595,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -614,14 +614,14 @@
     .line 255
     invoke-virtual {v2, v1}, Landroidx/constraintlayout/solver/state/ConstraintReference;->setView(Ljava/lang/Object;)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public guideline(Ljava/lang/Object;I)Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;
-    .registers 4
+    .locals 1
 
     .line 211
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
@@ -632,7 +632,7 @@
 
     check-cast v0, Landroidx/constraintlayout/solver/state/Reference;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 213
     new-instance v0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;
@@ -651,14 +651,14 @@
     invoke-virtual {p2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 219
-    :cond_1a
+    :cond_0
     check-cast v0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;
 
     return-object v0
 .end method
 
 .method public height(Landroidx/constraintlayout/solver/state/Dimension;)Landroidx/constraintlayout/solver/state/State;
-    .registers 2
+    .locals 0
 
     .line 136
     invoke-virtual {p0, p1}, Landroidx/constraintlayout/solver/state/State;->setHeight(Landroidx/constraintlayout/solver/state/Dimension;)Landroidx/constraintlayout/solver/state/State;
@@ -669,9 +669,9 @@
 .end method
 
 .method public helper(Ljava/lang/Object;Landroidx/constraintlayout/solver/state/State$Helper;)Landroidx/constraintlayout/solver/state/HelperReference;
-    .registers 5
+    .locals 2
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     .line 173
     invoke-direct {p0}, Landroidx/constraintlayout/solver/state/State;->createHelperKey()Ljava/lang/String;
@@ -679,7 +679,7 @@
     move-result-object p1
 
     .line 175
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mHelperReferences:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -688,7 +688,7 @@
 
     check-cast v0, Landroidx/constraintlayout/solver/state/HelperReference;
 
-    if-nez v0, :cond_50
+    if-nez v0, :cond_6
 
     .line 177
     sget-object v0, Landroidx/constraintlayout/solver/state/State$1;->$SwitchMap$androidx$constraintlayout$solver$state$State$Helper:[I
@@ -701,84 +701,84 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_45
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_3f
+    if-eq v0, v1, :cond_4
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_39
+    if-eq v0, v1, :cond_3
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_33
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_1
 
     .line 194
     new-instance v0, Landroidx/constraintlayout/solver/state/HelperReference;
 
     invoke-direct {v0, p0, p2}, Landroidx/constraintlayout/solver/state/HelperReference;-><init>(Landroidx/constraintlayout/solver/state/State;Landroidx/constraintlayout/solver/state/State$Helper;)V
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 191
-    :cond_2d
+    :cond_1
     new-instance p2, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;
 
     invoke-direct {p2, p0}, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;-><init>(Landroidx/constraintlayout/solver/state/State;)V
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 188
-    :cond_33
+    :cond_2
     new-instance p2, Landroidx/constraintlayout/solver/state/helpers/AlignVerticallyReference;
 
     invoke-direct {p2, p0}, Landroidx/constraintlayout/solver/state/helpers/AlignVerticallyReference;-><init>(Landroidx/constraintlayout/solver/state/State;)V
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 185
-    :cond_39
+    :cond_3
     new-instance p2, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;
 
     invoke-direct {p2, p0}, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;-><init>(Landroidx/constraintlayout/solver/state/State;)V
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 182
-    :cond_3f
+    :cond_4
     new-instance p2, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;
 
     invoke-direct {p2, p0}, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;-><init>(Landroidx/constraintlayout/solver/state/State;)V
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 179
-    :cond_45
+    :cond_5
     new-instance p2, Landroidx/constraintlayout/solver/state/helpers/HorizontalChainReference;
 
     invoke-direct {p2, p0}, Landroidx/constraintlayout/solver/state/helpers/HorizontalChainReference;-><init>(Landroidx/constraintlayout/solver/state/State;)V
 
-    :goto_4a
+    :goto_0
     move-object v0, p2
 
     .line 197
-    :goto_4b
+    :goto_1
     iget-object p2, p0, Landroidx/constraintlayout/solver/state/State;->mHelperReferences:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_50
+    :cond_6
     return-object v0
 .end method
 
 .method public varargs horizontalChain([Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/helpers/HorizontalChainReference;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -798,7 +798,7 @@
 .end method
 
 .method public horizontalGuideline(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -811,7 +811,7 @@
 .end method
 
 .method public map(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 260
     invoke-virtual {p0, p1}, Landroidx/constraintlayout/solver/state/State;->constraints(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
@@ -825,7 +825,7 @@
 .end method
 
 .method reference(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Reference;
-    .registers 3
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mReferences:Ljava/util/HashMap;
@@ -840,7 +840,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 100
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mHelperReferences:Ljava/util/HashMap;
@@ -851,7 +851,7 @@
 .end method
 
 .method public setHeight(Landroidx/constraintlayout/solver/state/Dimension;)Landroidx/constraintlayout/solver/state/State;
-    .registers 3
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mParent:Landroidx/constraintlayout/solver/state/ConstraintReference;
@@ -862,7 +862,7 @@
 .end method
 
 .method public setWidth(Landroidx/constraintlayout/solver/state/Dimension;)Landroidx/constraintlayout/solver/state/State;
-    .registers 3
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/State;->mParent:Landroidx/constraintlayout/solver/state/ConstraintReference;
@@ -873,7 +873,7 @@
 .end method
 
 .method public varargs verticalChain([Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -893,7 +893,7 @@
 .end method
 
 .method public verticalGuideline(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -906,7 +906,7 @@
 .end method
 
 .method public width(Landroidx/constraintlayout/solver/state/Dimension;)Landroidx/constraintlayout/solver/state/State;
-    .registers 2
+    .locals 0
 
     .line 132
     invoke-virtual {p0, p1}, Landroidx/constraintlayout/solver/state/State;->setWidth(Landroidx/constraintlayout/solver/state/Dimension;)Landroidx/constraintlayout/solver/state/State;

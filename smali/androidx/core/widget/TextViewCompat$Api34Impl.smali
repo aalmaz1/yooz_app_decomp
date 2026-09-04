@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static setLineHeight(Landroid/widget/TextView;IF)V
-    .registers 3
+    .locals 0
 
     .line 1152
     invoke-virtual {p0, p1, p2}, Landroid/widget/TextView;->setLineHeight(IF)V

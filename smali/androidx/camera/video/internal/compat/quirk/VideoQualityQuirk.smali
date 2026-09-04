@@ -11,7 +11,7 @@
 .end method
 
 .method public workaroundBySurfaceProcessing()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

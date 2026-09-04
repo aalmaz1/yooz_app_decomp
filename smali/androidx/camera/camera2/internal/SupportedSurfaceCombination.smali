@@ -122,7 +122,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroidx/camera/camera2/internal/compat/CameraManagerCompat;Landroidx/camera/camera2/internal/CamcorderProfileHelper;)V
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/CameraUnavailableException;
@@ -245,7 +245,7 @@
     iput-object p4, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mDisplayInfoManager:Landroidx/camera/camera2/internal/DisplayInfoManager;
 
     .line 140
-    :try_start_6a
+    :try_start_0
     invoke-virtual {p3, p2}, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;->getCameraCharacteristicsCompat(Ljava/lang/String;)Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     move-result-object p2
@@ -261,23 +261,23 @@
 
     check-cast p3, Ljava/lang/Integer;
 
-    if-eqz p3, :cond_7f
+    if-eqz p3, :cond_0
 
     .line 143
     invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
 
     move-result p3
 
-    goto :goto_80
+    goto :goto_0
 
-    :cond_7f
+    :cond_0
     const/4 p3, 0x2
 
     .line 144
-    :goto_80
+    :goto_0
     iput p3, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mHardwareLevel:I
-    :try_end_82
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_6a .. :try_end_82} :catch_ee
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 149
     sget-object p3, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -289,13 +289,13 @@
 
     check-cast p2, [I
 
-    if-eqz p2, :cond_ad
+    if-eqz p2, :cond_4
 
     .line 153
     array-length p3, p2
 
-    :goto_8d
-    if-ge v0, p3, :cond_ad
+    :goto_1
+    if-ge v0, p3, :cond_4
 
     aget p4, p2, v0
 
@@ -303,46 +303,46 @@
 
     const/4 v2, 0x1
 
-    if-ne p4, v1, :cond_98
+    if-ne p4, v1, :cond_1
 
     .line 155
     iput-boolean v2, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsRawSupported:Z
 
-    goto :goto_aa
+    goto :goto_2
 
-    :cond_98
+    :cond_1
     const/4 v1, 0x6
 
-    if-ne p4, v1, :cond_9e
+    if-ne p4, v1, :cond_2
 
     .line 158
     iput-boolean v2, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsBurstCaptureSupported:Z
 
-    goto :goto_aa
+    goto :goto_2
 
     .line 159
-    :cond_9e
+    :cond_2
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x1f
 
-    if-lt v1, v3, :cond_aa
+    if-lt v1, v3, :cond_3
 
     const/16 v1, 0x10
 
-    if-ne p4, v1, :cond_aa
+    if-ne p4, v1, :cond_3
 
     .line 162
     iput-boolean v2, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsUltraHighResolutionSensorSupported:Z
 
-    :cond_aa
-    :goto_aa
+    :cond_3
+    :goto_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8d
+    goto :goto_1
 
     .line 167
-    :cond_ad
+    :cond_4
     new-instance p2, Landroidx/camera/camera2/internal/DynamicRangeResolver;
 
     iget-object p3, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -357,13 +357,13 @@
     .line 170
     iget-boolean p3, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsUltraHighResolutionSensorSupported:Z
 
-    if-eqz p3, :cond_c0
+    if-eqz p3, :cond_5
 
     .line 171
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->generateUltraHighSupportedCombinationList()V
 
     .line 175
-    :cond_c0
+    :cond_5
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object p1
@@ -376,24 +376,24 @@
 
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsConcurrentCameraModeSupported:Z
 
-    if-eqz p1, :cond_d1
+    if-eqz p1, :cond_6
 
     .line 177
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->generateConcurrentSupportedCombinationList()V
 
     .line 180
-    :cond_d1
+    :cond_6
     invoke-virtual {p2}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->is10BitDynamicRangeSupported()Z
 
     move-result p1
 
-    if-eqz p1, :cond_da
+    if-eqz p1, :cond_7
 
     .line 181
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->generate10BitSupportedCombinationList()V
 
     .line 184
-    :cond_da
+    :cond_7
     iget-object p1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     invoke-static {p1}, Landroidx/camera/camera2/internal/StreamUseCaseUtil;->isStreamUseCaseSupported(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Z
@@ -402,13 +402,13 @@
 
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsStreamUseCaseSupported:Z
 
-    if-eqz p1, :cond_e7
+    if-eqz p1, :cond_8
 
     .line 186
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->generateStreamUseCaseSupportedCombinationList()V
 
     .line 189
-    :cond_e7
+    :cond_8
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->generateSurfaceSizeDefinition()V
 
     .line 190
@@ -416,7 +416,7 @@
 
     return-void
 
-    :catch_ee
+    :catch_0
     move-exception p1
 
     .line 146
@@ -428,13 +428,13 @@
 .end method
 
 .method private checkCustomization()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method private static compareIntersectingRanges(Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;)Landroid/util/Range;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -497,30 +497,30 @@
 
     const-wide/high16 v0, 0x3fe0000000000000L    # 0.5
 
-    if-lez p0, :cond_2f
+    if-lez p0, :cond_1
 
     cmpl-double p0, v4, v0
 
-    if-gez p0, :cond_2e
+    if-gez p0, :cond_0
 
     cmpl-double p0, v4, v6
 
-    if-ltz p0, :cond_58
+    if-ltz p0, :cond_4
 
-    :cond_2e
+    :cond_0
     return-object p2
 
-    :cond_2f
-    if-nez p0, :cond_4f
+    :cond_1
+    if-nez p0, :cond_3
 
     cmpl-double p0, v4, v6
 
-    if-lez p0, :cond_36
+    if-lez p0, :cond_2
 
     return-object p2
 
-    :cond_36
-    if-nez p0, :cond_58
+    :cond_2
+    if-nez p0, :cond_4
 
     .line 379
     invoke-virtual {p2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -543,27 +543,27 @@
 
     move-result v0
 
-    if-le p0, v0, :cond_58
+    if-le p0, v0, :cond_4
 
     return-object p2
 
-    :cond_4f
+    :cond_3
     cmpg-double p0, v6, v0
 
-    if-gez p0, :cond_58
+    if-gez p0, :cond_4
 
     cmpl-double p0, v4, v6
 
-    if-lez p0, :cond_58
+    if-lez p0, :cond_4
 
     return-object p2
 
-    :cond_58
+    :cond_4
     return-object p1
 .end method
 
 .method private createFeatureSettings(ILjava/util/Map;)Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -581,16 +581,16 @@
 
     move-result p2
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_1
 
     const/16 v0, 0xa
 
-    if-eq p2, v0, :cond_b
+    if-eq p2, v0, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 810
-    :cond_b
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -624,8 +624,8 @@
     throw p2
 
     .line 816
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_0
     invoke-static {p1, p2}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;->of(II)Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;
 
     move-result-object p1
@@ -634,7 +634,7 @@
 .end method
 
 .method private filterSupportedSizes(Ljava/util/Map;Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Landroid/util/Range;)Ljava/util/Map;
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -671,12 +671,12 @@
 
     move-result-object v1
 
-    :goto_d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_82
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -705,13 +705,13 @@
 
     move-result-object v5
 
-    :cond_2d
-    :goto_2d
+    :cond_0
+    :goto_1
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_7e
+    if-eqz v6, :cond_3
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -744,7 +744,7 @@
 
     move-result-object v8
 
-    if-eqz p3, :cond_56
+    if-eqz p3, :cond_1
 
     .line 937
     iget-object v9, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -753,20 +753,20 @@
 
     move-result v7
 
-    goto :goto_59
+    goto :goto_2
 
-    :cond_56
+    :cond_1
     const v7, 0x7fffffff
 
     .line 939
-    :goto_59
+    :goto_2
     invoke-interface {v4, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Ljava/util/Set;
 
-    if-nez v9, :cond_69
+    if-nez v9, :cond_2
 
     .line 942
     new-instance v9, Ljava/util/HashSet;
@@ -777,7 +777,7 @@
     invoke-interface {v4, v8, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 971
-    :cond_69
+    :cond_2
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -786,7 +786,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_2d
+    if-nez v8, :cond_0
 
     .line 972
     invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -798,20 +798,20 @@
 
     invoke-interface {v9, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 976
-    :cond_7e
+    :cond_3
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_82
+    :cond_4
     return-object v0
 .end method
 
 .method private generate10BitSupportedCombinationList()V
-    .registers 3
+    .locals 2
 
     .line 1247
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceCombinations10Bit:Ljava/util/List;
@@ -828,7 +828,7 @@
 .end method
 
 .method private generateConcurrentSupportedCombinationList()V
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mConcurrentSurfaceCombinations:Ljava/util/List;
@@ -845,14 +845,14 @@
 .end method
 
 .method private generateStreamUseCaseSupportedCombinationList()V
-    .registers 3
+    .locals 2
 
     .line 1252
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 1253
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceCombinationsStreamUseCase:Ljava/util/List;
@@ -865,12 +865,12 @@
     .line 1253
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private generateSupportedCombinationList()V
-    .registers 5
+    .locals 4
 
     .line 1228
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceCombinations:Ljava/util/List;
@@ -910,7 +910,7 @@
 .end method
 
 .method private generateSurfaceSizeDefinition()V
-    .registers 9
+    .locals 8
 
     .line 1266
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mDisplayInfoManager:Landroidx/camera/camera2/internal/DisplayInfoManager;
@@ -953,7 +953,7 @@
 .end method
 
 .method private generateUltraHighSupportedCombinationList()V
-    .registers 3
+    .locals 2
 
     .line 1237
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mUltraHighSurfaceCombinations:Ljava/util/List;
@@ -970,7 +970,7 @@
 .end method
 
 .method private getAllPossibleSizeArrangements(Ljava/util/List;)Ljava/util/List;
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -994,12 +994,12 @@
 
     move v2, v1
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1014,10 +1014,10 @@
 
     mul-int/2addr v2, v3
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_18
-    if-eqz v2, :cond_7c
+    :cond_0
+    if-eqz v2, :cond_5
 
     .line 1145
     new-instance v0, Ljava/util/ArrayList;
@@ -1028,8 +1028,8 @@
 
     move v4, v3
 
-    :goto_21
-    if-ge v4, v2, :cond_2e
+    :goto_1
+    if-ge v4, v2, :cond_1
 
     .line 1149
     new-instance v5, Ljava/util/ArrayList;
@@ -1041,10 +1041,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
     .line 1162
-    :cond_2e
+    :cond_1
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1062,12 +1062,12 @@
     move v5, v3
 
     .line 1164
-    :goto_3c
+    :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v7
 
-    if-ge v5, v7, :cond_7b
+    if-ge v5, v7, :cond_4
 
     .line 1165
     invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1078,8 +1078,8 @@
 
     move v8, v3
 
-    :goto_49
-    if-ge v8, v2, :cond_60
+    :goto_3
+    if-ge v8, v2, :cond_2
 
     .line 1167
     invoke-interface {v0, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1105,17 +1105,17 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_49
+    goto :goto_3
 
     .line 1173
-    :cond_60
+    :cond_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v7
 
     sub-int/2addr v7, v1
 
-    if-ge v5, v7, :cond_78
+    if-ge v5, v7, :cond_3
 
     add-int/lit8 v6, v5, 0x1
 
@@ -1138,16 +1138,16 @@
 
     move v4, v11
 
-    :cond_78
+    :cond_3
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_7b
+    :cond_4
     return-object v0
 
     .line 1142
-    :cond_7c
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Failed to find supported resolutions."
@@ -1158,7 +1158,7 @@
 .end method
 
 .method private getClosestSupportedDeviceFrameRate(Landroid/util/Range;I)Landroid/util/Range;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1171,7 +1171,7 @@
         }
     .end annotation
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     .line 405
     sget-object p1, Landroidx/camera/core/impl/StreamSpec;->FRAME_RATE_RANGE_UNSPECIFIED:Landroid/util/Range;
@@ -1179,7 +1179,7 @@
     return-object p1
 
     .line 409
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -1191,7 +1191,7 @@
 
     check-cast v0, [Landroid/util/Range;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 413
     sget-object p1, Landroidx/camera/core/impl/StreamSpec;->FRAME_RATE_RANGE_UNSPECIFIED:Landroid/util/Range;
@@ -1199,7 +1199,7 @@
     return-object p1
 
     .line 420
-    :cond_14
+    :cond_1
     new-instance v1, Landroid/util/Range;
 
     .line 421
@@ -1252,8 +1252,8 @@
 
     move v4, v3
 
-    :goto_42
-    if-ge v3, v2, :cond_bb
+    :goto_0
+    if-ge v3, v2, :cond_9
 
     aget-object v5, v0, v3
 
@@ -1268,7 +1268,7 @@
 
     move-result v6
 
-    if-lt p2, v6, :cond_b8
+    if-lt p2, v6, :cond_8
 
     .line 432
     sget-object v6, Landroidx/camera/core/impl/StreamSpec;->FRAME_RATE_RANGE_UNSPECIFIED:Landroid/util/Range;
@@ -1277,25 +1277,25 @@
 
     move-result v6
 
-    if-eqz v6, :cond_5b
+    if-eqz v6, :cond_2
 
     move-object p1, v5
 
     .line 436
-    :cond_5b
+    :cond_2
     invoke-virtual {v5, v1}, Landroid/util/Range;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_63
+    if-eqz v6, :cond_3
 
     move-object p1, v5
 
-    goto :goto_bb
+    goto :goto_2
 
     .line 443
-    :cond_63
-    :try_start_63
+    :cond_3
+    :try_start_0
     invoke-virtual {v5, v1}, Landroid/util/Range;->intersect(Landroid/util/Range;)Landroid/util/Range;
 
     move-result-object v6
@@ -1305,14 +1305,14 @@
 
     move-result v6
 
-    if-nez v4, :cond_6f
+    if-nez v4, :cond_4
 
     move v4, v6
 
-    goto :goto_b7
+    goto :goto_1
 
-    :cond_6f
-    if-lt v6, v4, :cond_7d
+    :cond_4
+    if-lt v6, v4, :cond_5
 
     .line 452
     invoke-static {v1, p1, v5}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->compareIntersectingRanges(Landroid/util/Range;Landroid/util/Range;Landroid/util/Range;)Landroid/util/Range;
@@ -1327,16 +1327,16 @@
     invoke-static {v6}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getRangeLength(Landroid/util/Range;)I
 
     move-result v4
-    :try_end_7d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_63 .. :try_end_7d} :catch_7f
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_7d
+    :cond_5
     move-object v5, p1
 
-    goto :goto_b7
+    goto :goto_1
 
-    :catch_7f
-    if-nez v4, :cond_b8
+    :catch_0
+    if-nez v4, :cond_8
 
     .line 459
     invoke-static {v5, v1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getRangeDistance(Landroid/util/Range;Landroid/util/Range;)I
@@ -1348,12 +1348,12 @@
 
     move-result v7
 
-    if-ge v6, v7, :cond_8c
+    if-ge v6, v7, :cond_6
 
-    goto :goto_b7
+    goto :goto_1
 
     .line 462
-    :cond_8c
+    :cond_6
     invoke-static {v5, v1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getRangeDistance(Landroid/util/Range;Landroid/util/Range;)I
 
     move-result v6
@@ -1363,7 +1363,7 @@
 
     move-result v7
 
-    if-ne v6, v7, :cond_b8
+    if-ne v6, v7, :cond_8
 
     .line 464
     invoke-virtual {v5}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -1386,12 +1386,12 @@
 
     move-result v7
 
-    if-le v6, v7, :cond_ad
+    if-le v6, v7, :cond_7
 
-    goto :goto_b7
+    goto :goto_1
 
     .line 467
-    :cond_ad
+    :cond_7
     invoke-static {v5}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getRangeLength(Landroid/util/Range;)I
 
     move-result v6
@@ -1400,23 +1400,23 @@
 
     move-result v7
 
-    if-ge v6, v7, :cond_b8
+    if-ge v6, v7, :cond_8
 
-    :goto_b7
+    :goto_1
     move-object p1, v5
 
-    :cond_b8
+    :cond_8
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_bb
-    :goto_bb
+    :cond_9
+    :goto_2
     return-object p1
 .end method
 
 .method static getMaxFrameRate(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;ILandroid/util/Size;)I
-    .registers 5
+    .locals 2
 
     .line 311
     :try_start_0
@@ -1433,8 +1433,8 @@
     invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/params/StreamConfigurationMap;->getOutputMinFrameDuration(ILandroid/util/Size;)J
 
     move-result-wide p0
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_c} :catch_15
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     long-to-double p0, p0
 
@@ -1444,21 +1444,21 @@
 
     double-to-int p0, v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :catch_15
+    :catch_0
     const/4 p0, 0x0
 
-    :goto_16
+    :goto_0
     return p0
 .end method
 
 .method private getMaxOutputSizeByFormat(Landroid/hardware/camera2/params/StreamConfigurationMap;IZ)Landroid/util/Size;
-    .registers 7
+    .locals 3
 
     const/16 v0, 0x22
 
-    if-ne p2, v0, :cond_b
+    if-ne p2, v0, :cond_0
 
     .line 1200
     const-class v0, Landroid/graphics/SurfaceTexture;
@@ -1467,26 +1467,26 @@
 
     move-result-object v0
 
-    goto :goto_f
+    goto :goto_0
 
     .line 1202
-    :cond_b
+    :cond_0
     invoke-virtual {p1, p2}, Landroid/hardware/camera2/params/StreamConfigurationMap;->getOutputSizes(I)[Landroid/util/Size;
 
     move-result-object v0
 
-    :goto_f
-    if-eqz v0, :cond_50
+    :goto_0
+    if-eqz v0, :cond_3
 
     .line 1205
     array-length v1, v0
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
-    goto :goto_50
+    goto :goto_1
 
     .line 1209
-    :cond_15
+    :cond_1
     new-instance v1, Landroidx/camera/core/impl/utils/CompareSizesByArea;
 
     invoke-direct {v1}, Landroidx/camera/core/impl/utils/CompareSizesByArea;-><init>()V
@@ -1505,19 +1505,19 @@
     .line 1213
     sget-object v2, Landroidx/camera/core/internal/utils/SizeUtil;->RESOLUTION_ZERO:Landroid/util/Size;
 
-    if-eqz p3, :cond_3c
+    if-eqz p3, :cond_2
 
     .line 1215
     invoke-static {p1, p2}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination$Api23Impl;->getHighResolutionOutputSizes(Landroid/hardware/camera2/params/StreamConfigurationMap;I)[Landroid/util/Size;
 
     move-result-object p1
 
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_2
 
     .line 1218
     array-length p2, p1
 
-    if-lez p2, :cond_3c
+    if-lez p2, :cond_2
 
     .line 1219
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -1532,7 +1532,7 @@
 
     check-cast v2, Landroid/util/Size;
 
-    :cond_3c
+    :cond_2
     const/4 p1, 0x2
 
     new-array p1, p1, [Landroid/util/Size;
@@ -1558,15 +1558,15 @@
 
     return-object p1
 
-    :cond_50
-    :goto_50
+    :cond_3
+    :goto_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method private getMaxSupportedFpsFromAttachedSurfaces(Ljava/util/List;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1583,12 +1583,12 @@
 
     const v0, 0x7fffffff
 
-    :goto_7
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1610,14 +1610,14 @@
 
     move-result v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     return v0
 .end method
 
 .method private static getRangeDistance(Landroid/util/Range;Landroid/util/Range;)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1641,7 +1641,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 338
     invoke-virtual {p1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -1654,16 +1654,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1b
+    :goto_0
     const-string v1, "Ranges must not intersect"
 
     .line 336
@@ -1690,7 +1690,7 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_4c
+    if-le v0, v1, :cond_1
 
     .line 341
     invoke-virtual {p0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -1718,7 +1718,7 @@
     return p0
 
     .line 343
-    :cond_4c
+    :cond_1
     invoke-virtual {p1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object p1
@@ -1745,7 +1745,7 @@
 .end method
 
 .method private static getRangeLength(Landroid/util/Range;)I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1784,7 +1784,7 @@
 .end method
 
 .method private getRecordSize()Landroid/util/Size;
-    .registers 4
+    .locals 3
 
     .line 1380
     :try_start_0
@@ -1793,8 +1793,8 @@
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
-    :try_end_6
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_6} :catch_28
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1389
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1805,7 +1805,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 1390
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1814,13 +1814,13 @@
 
     move-result-object v1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_17
-    if-eqz v1, :cond_23
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 1394
     new-instance v0, Landroid/util/Size;
@@ -1834,7 +1834,7 @@
     return-object v0
 
     .line 1397
-    :cond_23
+    :cond_1
     invoke-direct {p0, v0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getRecordSizeByHasProfile(I)Landroid/util/Size;
 
     move-result-object v0
@@ -1842,7 +1842,7 @@
     return-object v0
 
     .line 1384
-    :catch_28
+    :catch_0
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getRecordSizeFromStreamConfigurationMap()Landroid/util/Size;
 
     move-result-object v0
@@ -1851,7 +1851,7 @@
 .end method
 
 .method private getRecordSizeByHasProfile(I)Landroid/util/Size;
-    .registers 5
+    .locals 3
 
     .line 1439
     sget-object v0, Landroidx/camera/core/internal/utils/SizeUtil;->RESOLUTION_480P:Landroid/util/Size;
@@ -1865,7 +1865,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 1445
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1874,10 +1874,10 @@
 
     move-result-object p1
 
-    goto :goto_66
+    goto :goto_0
 
     .line 1446
-    :cond_13
+    :cond_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
 
     const/16 v2, 0x8
@@ -1886,7 +1886,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     .line 1447
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1895,10 +1895,10 @@
 
     move-result-object p1
 
-    goto :goto_66
+    goto :goto_0
 
     .line 1448
-    :cond_24
+    :cond_1
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
 
     const/16 v2, 0xc
@@ -1907,7 +1907,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 1449
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1916,10 +1916,10 @@
 
     move-result-object p1
 
-    goto :goto_66
+    goto :goto_0
 
     .line 1450
-    :cond_35
+    :cond_2
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
 
     const/4 v2, 0x6
@@ -1928,7 +1928,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_3
 
     .line 1451
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1937,10 +1937,10 @@
 
     move-result-object p1
 
-    goto :goto_66
+    goto :goto_0
 
     .line 1452
-    :cond_45
+    :cond_3
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
 
     const/4 v2, 0x5
@@ -1949,7 +1949,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_4
 
     .line 1453
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1958,10 +1958,10 @@
 
     move-result-object p1
 
-    goto :goto_66
+    goto :goto_0
 
     .line 1454
-    :cond_55
+    :cond_4
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
 
     const/4 v2, 0x4
@@ -1970,7 +1970,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_5
 
     .line 1455
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCamcorderProfileHelper:Landroidx/camera/camera2/internal/CamcorderProfileHelper;
@@ -1979,13 +1979,13 @@
 
     move-result-object p1
 
-    goto :goto_66
+    goto :goto_0
 
-    :cond_65
+    :cond_5
     const/4 p1, 0x0
 
-    :goto_66
-    if-eqz p1, :cond_71
+    :goto_0
+    if-eqz p1, :cond_6
 
     .line 1459
     new-instance v0, Landroid/util/Size;
@@ -1996,12 +1996,12 @@
 
     invoke-direct {v0, v1, p1}, Landroid/util/Size;-><init>(II)V
 
-    :cond_71
+    :cond_6
     return-object v0
 .end method
 
 .method private getRecordSizeFromStreamConfigurationMap()Landroid/util/Size;
-    .registers 7
+    .locals 6
 
     .line 1410
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -2021,7 +2021,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 1415
     sget-object v0, Landroidx/camera/core/internal/utils/SizeUtil;->RESOLUTION_480P:Landroid/util/Size;
@@ -2029,7 +2029,7 @@
     return-object v0
 
     .line 1418
-    :cond_15
+    :cond_0
     new-instance v1, Landroidx/camera/core/impl/utils/CompareSizesByArea;
 
     const/4 v2, 0x1
@@ -2043,8 +2043,8 @@
 
     const/4 v2, 0x0
 
-    :goto_20
-    if-ge v2, v1, :cond_40
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     aget-object v3, v0, v2
 
@@ -2059,7 +2059,7 @@
 
     move-result v5
 
-    if-gt v4, v5, :cond_3d
+    if-gt v4, v5, :cond_1
 
     .line 1423
     invoke-virtual {v3}, Landroid/util/Size;->getHeight()I
@@ -2072,24 +2072,24 @@
 
     move-result v5
 
-    if-gt v4, v5, :cond_3d
+    if-gt v4, v5, :cond_1
 
     return-object v3
 
-    :cond_3d
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
     .line 1428
-    :cond_40
+    :cond_2
     sget-object v0, Landroidx/camera/core/internal/utils/SizeUtil;->RESOLUTION_480P:Landroid/util/Size;
 
     return-object v0
 .end method
 
 .method private static getRequiredMaxBitDepth(Ljava/util/Map;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2110,12 +2110,12 @@
 
     move-result-object p0
 
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2130,18 +2130,18 @@
 
     const/16 v1, 0xa
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     return v1
 
-    :cond_1d
+    :cond_1
     const/16 p0, 0x8
 
     return p0
 .end method
 
 .method private getSurfaceCombinationsByFeatureSettings(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;)Ljava/util/List;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2160,7 +2160,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 257
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mFeatureSettingsToSupportedCombinationsMap:Ljava/util/Map;
@@ -2174,7 +2174,7 @@
     return-object p1
 
     .line 260
-    :cond_11
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -2186,7 +2186,7 @@
 
     const/16 v2, 0x8
 
-    if-ne v1, v2, :cond_3c
+    if-ne v1, v2, :cond_3
 
     .line 263
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;->getCameraMode()I
@@ -2195,21 +2195,21 @@
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_39
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_2e
+    if-eq v1, v2, :cond_1
 
     .line 272
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceCombinations:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_4f
+    goto :goto_0
 
     .line 268
-    :cond_2e
+    :cond_1
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mUltraHighSurfaceCombinations:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -2219,30 +2219,30 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_4f
+    goto :goto_0
 
     .line 265
-    :cond_39
+    :cond_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mConcurrentSurfaceCombinations:Ljava/util/List;
 
-    goto :goto_4f
+    goto :goto_0
 
     .line 275
-    :cond_3c
+    :cond_3
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;->getRequiredMaxBitDepth()I
 
     move-result v1
 
     const/16 v2, 0xa
 
-    if-ne v1, v2, :cond_4f
+    if-ne v1, v2, :cond_4
 
     .line 277
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;->getCameraMode()I
 
     move-result v1
 
-    if-nez v1, :cond_4f
+    if-nez v1, :cond_4
 
     .line 278
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceCombinations10Bit:Ljava/util/List;
@@ -2250,8 +2250,8 @@
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 282
-    :cond_4f
-    :goto_4f
+    :cond_4
+    :goto_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mFeatureSettingsToSupportedCombinationsMap:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2260,7 +2260,7 @@
 .end method
 
 .method private getSurfaceConfigListAndFpsCeiling(ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;ILjava/util/Map;Ljava/util/Map;)Landroid/util/Pair;
-    .registers 13
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2303,13 +2303,13 @@
 
     move-result-object p2
 
-    :cond_9
-    :goto_9
+    :cond_0
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2324,7 +2324,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz p7, :cond_9
+    if-eqz p7, :cond_0
 
     .line 993
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -2339,18 +2339,18 @@
 
     invoke-interface {p7, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     const/4 p2, 0x0
 
     .line 999
-    :goto_2d
+    :goto_1
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result p7
 
-    if-ge p2, p7, :cond_72
+    if-ge p2, p7, :cond_3
 
     .line 1000
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2394,7 +2394,7 @@
     .line 1010
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz p8, :cond_67
+    if-eqz p8, :cond_2
 
     .line 1012
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -2410,7 +2410,7 @@
     invoke-interface {p8, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1018
-    :cond_67
+    :cond_2
     invoke-interface {v1}, Landroidx/camera/core/impl/UseCaseConfig;->getInputFormat()I
 
     move-result v1
@@ -2422,10 +2422,10 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 1021
-    :cond_72
+    :cond_3
     new-instance p1, Landroid/util/Pair;
 
     invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2438,7 +2438,7 @@
 .end method
 
 .method private getTargetFpsRange(Ljava/util/List;Ljava/util/List;Ljava/util/List;)Landroid/util/Range;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2466,12 +2466,12 @@
 
     move-object v1, v0
 
-    :goto_6
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2489,20 +2489,20 @@
 
     move-result-object v1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 887
-    :cond_1b
+    :cond_0
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :goto_1f
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
-    if-eqz p3, :cond_3e
+    if-eqz p3, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2530,14 +2530,14 @@
 
     move-result-object v1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_3e
+    :cond_1
     return-object v1
 .end method
 
 .method private getUpdatedMaximumFps(IILandroid/util/Size;)I
-    .registers 5
+    .locals 1
 
     .line 516
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -2554,7 +2554,7 @@
 .end method
 
 .method private getUpdatedTargetFramerate(Landroid/util/Range;Landroid/util/Range;)Landroid/util/Range;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2570,33 +2570,33 @@
         }
     .end annotation
 
-    if-nez p2, :cond_3
+    if-nez p2, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_3
-    if-eqz p1, :cond_a
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 501
-    :try_start_5
+    :try_start_0
     invoke-virtual {p2, p1}, Landroid/util/Range;->intersect(Landroid/util/Range;)Landroid/util/Range;
 
     move-result-object p1
-    :try_end_9
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :catch_a
-    :cond_a
+    :catch_0
+    :cond_1
     move-object p1, p2
 
-    :goto_b
+    :goto_0
     return-object p1
 .end method
 
 .method private getUseCasesPriorityOrder(Ljava/util/List;)Ljava/util/List;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2624,15 +2624,15 @@
 
     move-result-object v2
 
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_31
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2654,7 +2654,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_e
+    if-nez v4, :cond_0
 
     .line 1110
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2663,10 +2663,10 @@
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1114
-    :cond_31
+    :cond_1
     invoke-static {v1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
     .line 1117
@@ -2677,12 +2677,12 @@
 
     move-result-object v1
 
-    :cond_3b
+    :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2699,13 +2699,13 @@
 
     move-result-object v3
 
-    :cond_4f
-    :goto_4f
+    :cond_3
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_3b
+    if-eqz v5, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2718,7 +2718,7 @@
 
     move-result v6
 
-    if-ne v2, v6, :cond_4f
+    if-ne v2, v6, :cond_3
 
     .line 1122
     invoke-interface {p1, v5}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
@@ -2731,14 +2731,14 @@
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_6d
+    :cond_4
     return-object v0
 .end method
 
 .method private isUseCasesCombinationSupported(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Ljava/util/List;Ljava/util/Map;)Z
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2765,12 +2765,12 @@
 
     move-result-object p2
 
-    :goto_9
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2785,10 +2785,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
     .line 854
-    :cond_1d
+    :cond_0
     new-instance p2, Landroidx/camera/core/impl/utils/CompareSizesByArea;
 
     invoke-direct {p2}, Landroidx/camera/core/impl/utils/CompareSizesByArea;-><init>()V
@@ -2802,12 +2802,12 @@
 
     move-result-object v1
 
-    :goto_2a
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_79
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2822,23 +2822,23 @@
 
     check-cast v3, Ljava/util/List;
 
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_1
 
     .line 857
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
 
-    if-nez v4, :cond_46
+    if-nez v4, :cond_1
 
     const/4 v4, 0x1
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_46
+    :cond_1
     const/4 v4, 0x0
 
-    :goto_47
+    :goto_2
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v6, "No available output size is found for "
@@ -2891,10 +2891,10 @@
     .line 861
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 869
-    :cond_79
+    :cond_2
     invoke-virtual {p0, p1, v0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->checkSupported(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Ljava/util/List;)Z
 
     move-result p1
@@ -2903,7 +2903,7 @@
 .end method
 
 .method private refreshPreviewSize()V
-    .registers 9
+    .locals 8
 
     .line 1355
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mDisplayInfoManager:Landroidx/camera/camera2/internal/DisplayInfoManager;
@@ -2913,15 +2913,15 @@
     .line 1356
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceSizeDefinition:Landroidx/camera/core/impl/SurfaceSizeDefinition;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 1357
     invoke-direct {p0}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->generateSurfaceSizeDefinition()V
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 1359
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mDisplayInfoManager:Landroidx/camera/camera2/internal/DisplayInfoManager;
 
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/DisplayInfoManager;->getPreviewSize()Landroid/util/Size;
@@ -2978,12 +2978,12 @@
 
     iput-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceSizeDefinition:Landroidx/camera/core/impl/SurfaceSizeDefinition;
 
-    :goto_3d
+    :goto_0
     return-void
 .end method
 
 .method private updateMaximumSizeByFormat(Ljava/util/Map;I)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3013,7 +3013,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 1331
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3022,12 +3022,12 @@
 
     invoke-interface {p1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method private updateS720pOrS1440pSizeByFormat(Ljava/util/Map;Landroid/util/Size;I)V
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3043,12 +3043,12 @@
     .line 1311
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsConcurrentCameraModeSupported:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 1315
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     .line 1316
@@ -3072,11 +3072,11 @@
 
     move-result-object p3
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 v2, 0x2
 
     new-array v2, v2, [Landroid/util/Size;
@@ -3103,14 +3103,14 @@
     check-cast p2, Landroid/util/Size;
 
     .line 1318
-    :goto_32
+    :goto_0
     invoke-interface {p1, p3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method private updateUltraMaximumSizeByFormat(Ljava/util/Map;I)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3126,16 +3126,16 @@
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_24
+    if-lt v0, v1, :cond_2
 
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsUltraHighResolutionSensorSupported:Z
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 1344
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP_MAXIMUM_RESOLUTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -3146,12 +3146,12 @@
 
     check-cast v0, Landroid/hardware/camera2/params/StreamConfigurationMap;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     return-void
 
     .line 1351
-    :cond_18
+    :cond_1
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -3164,15 +3164,15 @@
 
     invoke-interface {p1, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_24
-    :goto_24
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method applyResolutionSelectionOrderRelatedWorkarounds(Ljava/util/List;I)Ljava/util/List;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3196,21 +3196,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/16 v0, 0x100
 
     .line 1052
@@ -3238,25 +3238,25 @@
 
     move-object v0, v1
 
-    goto :goto_32
+    goto :goto_0
 
     .line 1049
-    :cond_2d
+    :cond_1
     sget-object v0, Landroidx/camera/core/impl/utils/AspectRatioUtil;->ASPECT_RATIO_16_9:Landroid/util/Rational;
 
-    goto :goto_32
+    goto :goto_0
 
     .line 1046
-    :cond_30
+    :cond_2
     sget-object v0, Landroidx/camera/core/impl/utils/AspectRatioUtil;->ASPECT_RATIO_4_3:Landroid/util/Rational;
 
-    :goto_32
-    if-nez v0, :cond_35
+    :goto_0
+    if-nez v0, :cond_3
 
-    goto :goto_62
+    goto :goto_2
 
     .line 1065
-    :cond_35
+    :cond_3
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -3271,12 +3271,12 @@
 
     move-result-object p1
 
-    :goto_43
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5d
+    if-eqz v3, :cond_5
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3289,20 +3289,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_59
+    if-eqz v4, :cond_4
 
     .line 1070
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_43
+    goto :goto_1
 
     .line 1072
-    :cond_59
+    :cond_4
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_43
+    goto :goto_1
 
-    :cond_5d
+    :cond_5
     const/4 p1, 0x0
 
     .line 1075
@@ -3311,7 +3311,7 @@
     move-object p1, v2
 
     .line 1079
-    :goto_62
+    :goto_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mResolutionCorrector:Landroidx/camera/camera2/internal/compat/workaround/ResolutionCorrector;
 
     .line 1080
@@ -3328,7 +3328,7 @@
 .end method
 
 .method checkSupported(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Ljava/util/List;)Z
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3352,12 +3352,12 @@
 
     move v1, v0
 
-    :cond_a
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3370,24 +3370,24 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move v1, v0
 
-    :goto_1f
-    if-eqz v1, :cond_a
+    :goto_0
+    if-eqz v1, :cond_0
 
-    :cond_21
+    :cond_2
     return v1
 .end method
 
 .method getCameraId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCameraId:Ljava/lang/String;
@@ -3396,7 +3396,7 @@
 .end method
 
 .method getOrderedSupportedStreamUseCaseSurfaceConfigList(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Ljava/util/List;)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3417,24 +3417,24 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     return-object v0
 
     .line 240
-    :cond_8
+    :cond_0
     iget-object p1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceCombinationsStreamUseCase:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_e
+    :cond_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3447,16 +3447,16 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_1
 
     return-object v1
 
-    :cond_21
+    :cond_2
     return-object v0
 .end method
 
 .method getSuggestedStreamSpecifications(ILjava/util/List;Ljava/util/Map;)Landroid/util/Pair;
-    .registers 39
+    .locals 35
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3532,7 +3532,7 @@
 
     const-string v6, "No supported surface combination is found for camera device - Id : "
 
-    if-eqz v16, :cond_313
+    if-eqz v16, :cond_1c
 
     .line 568
     invoke-direct {v9, v10, v11, v12}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getTargetFpsRange(Ljava/util/List;Ljava/util/List;Ljava/util/List;)Landroid/util/Range;
@@ -3554,12 +3554,12 @@
 
     move-result-object v2
 
-    :goto_3f
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3598,10 +3598,10 @@
     .line 585
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 590
-    :cond_67
+    :cond_0
     invoke-direct {v9, v1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getAllPossibleSizeArrangements(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v17
@@ -3643,9 +3643,9 @@
 
     const/16 v18, 0x0
 
-    if-eqz v1, :cond_146
+    if-eqz v1, :cond_7
 
-    if-nez v0, :cond_146
+    if-nez v0, :cond_7
 
     .line 618
     invoke-interface/range {v17 .. v17}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3654,12 +3654,12 @@
 
     move-object/from16 v0, v18
 
-    :goto_97
+    :goto_1
     invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_108
+    if-eqz v1, :cond_4
 
     invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3729,19 +3729,19 @@
 
     move-object/from16 v7, v21
 
-    if-eqz v0, :cond_e2
+    if-eqz v0, :cond_1
 
     .line 629
     invoke-static {v8, v7, v0}, Landroidx/camera/camera2/internal/StreamUseCaseUtil;->areCaptureTypesEligible(Ljava/util/Map;Ljava/util/Map;Ljava/util/List;)Z
 
     move-result v1
 
-    if-nez v1, :cond_e2
+    if-nez v1, :cond_1
 
     move-object/from16 v0, v18
 
-    :cond_e2
-    if-eqz v0, :cond_ef
+    :cond_1
+    if-eqz v0, :cond_3
 
     .line 636
     iget-object v1, v9, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -3750,15 +3750,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_ed
+    if-eqz v1, :cond_2
 
-    goto :goto_11a
+    goto :goto_2
 
-    :cond_ed
+    :cond_2
     move-object/from16 v0, v18
 
     .line 643
-    :cond_ef
+    :cond_3
     invoke-interface {v8}, Ljava/util/Map;->clear()V
 
     .line 644
@@ -3786,9 +3786,9 @@
 
     move-object/from16 v12, v26
 
-    goto :goto_97
+    goto :goto_1
 
-    :cond_108
+    :cond_4
     move-object/from16 v22, v3
 
     move-object/from16 v23, v4
@@ -3811,15 +3811,15 @@
 
     move-object v8, v2
 
-    :goto_11a
-    if-nez v0, :cond_144
+    :goto_2
+    if-nez v0, :cond_6
 
-    if-eqz v16, :cond_11f
+    if-eqz v16, :cond_5
 
-    goto :goto_144
+    goto :goto_3
 
     .line 651
-    :cond_11f
+    :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3856,13 +3856,13 @@
 
     throw v0
 
-    :cond_144
-    :goto_144
+    :cond_6
+    :goto_3
     move-object v12, v0
 
-    goto :goto_159
+    goto :goto_4
 
-    :cond_146
+    :cond_7
     move-object v8, v2
 
     move-object/from16 v22, v3
@@ -3886,7 +3886,7 @@
     move-object/from16 v12, v18
 
     .line 663
-    :goto_159
+    :goto_4
     invoke-interface/range {v17 .. v17}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v16
@@ -3907,14 +3907,14 @@
 
     move-object/from16 v28, v27
 
-    :goto_16c
+    :goto_5
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     const/16 v29, 0x1
 
-    if-eqz v0, :cond_223
+    if-eqz v0, :cond_13
 
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3979,9 +3979,9 @@
 
     move/from16 v0, v25
 
-    if-eqz v24, :cond_1c0
+    if-eqz v24, :cond_8
 
-    if-le v0, v5, :cond_1c0
+    if-le v0, v5, :cond_8
 
     .line 674
     invoke-virtual/range {v24 .. v24}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -3994,45 +3994,45 @@
 
     move-result v2
 
-    if-ge v5, v2, :cond_1c0
+    if-ge v5, v2, :cond_8
 
     move/from16 v2, v17
 
-    goto :goto_1c2
+    goto :goto_6
 
-    :cond_1c0
+    :cond_8
     move/from16 v2, v29
 
-    :goto_1c2
-    if-nez v19, :cond_1e9
+    :goto_6
+    if-nez v19, :cond_c
 
     .line 687
     invoke-virtual {v9, v15, v1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->checkSupported(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Ljava/util/List;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_1e9
+    if-eqz v3, :cond_c
 
     move/from16 v6, v34
 
     const v3, 0x7fffffff
 
-    if-ne v6, v3, :cond_1d2
+    if-ne v6, v3, :cond_9
 
-    goto :goto_1d4
+    goto :goto_7
 
-    :cond_1d2
-    if-ge v6, v5, :cond_1d7
+    :cond_9
+    if-ge v6, v5, :cond_a
 
-    :goto_1d4
+    :goto_7
     move v6, v5
 
     move-object/from16 v27, v30
 
-    :cond_1d7
-    if-eqz v2, :cond_1ee
+    :cond_a
+    if-eqz v2, :cond_d
 
-    if-eqz v21, :cond_1e3
+    if-eqz v21, :cond_b
 
     move-object/from16 v1, v28
 
@@ -4040,60 +4040,60 @@
 
     move/from16 v4, v33
 
-    goto/16 :goto_22f
+    goto/16 :goto_c
 
-    :cond_1e3
+    :cond_b
     move v6, v5
 
     move/from16 v19, v29
 
     move-object/from16 v27, v30
 
-    goto :goto_1ee
+    goto :goto_8
 
-    :cond_1e9
+    :cond_c
     move/from16 v6, v34
 
     const v3, 0x7fffffff
 
-    :cond_1ee
-    :goto_1ee
-    if-eqz v12, :cond_214
+    :cond_d
+    :goto_8
+    if-eqz v12, :cond_11
 
-    if-nez v21, :cond_214
+    if-nez v21, :cond_11
 
     .line 715
     invoke-virtual {v9, v15, v1}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getOrderedSupportedStreamUseCaseSurfaceConfigList(Landroidx/camera/camera2/internal/SupportedSurfaceCombination$FeatureSettings;Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v1, :cond_214
+    if-eqz v1, :cond_11
 
     move/from16 v1, v33
 
-    if-ne v1, v3, :cond_1fd
+    if-ne v1, v3, :cond_e
 
-    goto :goto_1ff
+    goto :goto_9
 
-    :cond_1fd
-    if-ge v1, v5, :cond_203
+    :cond_e
+    if-ge v1, v5, :cond_f
 
-    :goto_1ff
+    :goto_9
     move v4, v5
 
     move-object/from16 v28, v30
 
-    goto :goto_204
+    goto :goto_a
 
-    :cond_203
+    :cond_f
     move v4, v1
 
-    :goto_204
-    if-eqz v2, :cond_217
+    :goto_a
+    if-eqz v2, :cond_12
 
     move v4, v5
 
-    if-eqz v19, :cond_20f
+    if-eqz v19, :cond_10
 
     move v5, v6
 
@@ -4101,22 +4101,22 @@
 
     move-object/from16 v1, v30
 
-    goto :goto_22f
+    goto :goto_c
 
-    :cond_20f
+    :cond_10
     move/from16 v21, v29
 
     move-object/from16 v28, v30
 
-    goto :goto_217
+    goto :goto_b
 
-    :cond_214
+    :cond_11
     move/from16 v1, v33
 
     move v4, v1
 
-    :cond_217
-    :goto_217
+    :cond_12
+    :goto_b
     move/from16 v25, v0
 
     move v5, v6
@@ -4131,9 +4131,9 @@
 
     move v6, v3
 
-    goto/16 :goto_16c
+    goto/16 :goto_5
 
-    :cond_223
+    :cond_13
     move v1, v4
 
     move v6, v5
@@ -4150,10 +4150,10 @@
 
     move-object/from16 v1, v28
 
-    :goto_22f
-    if-eqz v0, :cond_2dc
+    :goto_c
+    if-eqz v0, :cond_1b
 
-    if-eqz v24, :cond_239
+    if-eqz v24, :cond_14
 
     move-object/from16 v2, v24
 
@@ -4162,7 +4162,7 @@
 
     move-result-object v18
 
-    :cond_239
+    :cond_14
     move-object/from16 v2, v18
 
     .line 744
@@ -4170,12 +4170,12 @@
 
     move-result-object v3
 
-    :goto_23f
+    :goto_d
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_296
+    if-eqz v6, :cond_16
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4244,13 +4244,13 @@
 
     move-result-object v3
 
-    if-eqz v2, :cond_286
+    if-eqz v2, :cond_15
 
     .line 754
     invoke-virtual {v3, v2}, Landroidx/camera/core/impl/StreamSpec$Builder;->setExpectedFrameRateRange(Landroid/util/Range;)Landroidx/camera/core/impl/StreamSpec$Builder;
 
     .line 756
-    :cond_286
+    :cond_15
     invoke-virtual {v3}, Landroidx/camera/core/impl/StreamSpec$Builder;->build()Landroidx/camera/core/impl/StreamSpec;
 
     move-result-object v3
@@ -4265,14 +4265,14 @@
 
     move-object/from16 v20, v15
 
-    goto :goto_23f
+    goto :goto_d
 
-    :cond_296
+    :cond_16
     move-object/from16 v7, v22
 
-    if-eqz v12, :cond_2d4
+    if-eqz v12, :cond_19
 
-    if-ne v5, v4, :cond_2d4
+    if-ne v5, v4, :cond_19
 
     .line 770
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -4283,17 +4283,17 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_2d4
+    if-ne v2, v3, :cond_19
 
     move/from16 v2, v17
 
     .line 772
-    :goto_2a8
+    :goto_e
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_2c4
+    if-ge v2, v3, :cond_18
 
     .line 773
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4310,20 +4310,20 @@
 
     move-result v3
 
-    if-nez v3, :cond_2c1
+    if-nez v3, :cond_17
 
     move/from16 v17, v29
 
-    goto :goto_2c4
+    goto :goto_f
 
-    :cond_2c1
+    :cond_17
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2a8
+    goto :goto_e
 
-    :cond_2c4
-    :goto_2c4
-    if-nez v17, :cond_2d4
+    :cond_18
+    :goto_f
+    if-nez v17, :cond_19
 
     .line 779
     iget-object v0, v9, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -4335,19 +4335,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d6
+    if-nez v0, :cond_1a
 
     .line 785
     invoke-static {v7, v1, v13, v14, v12}, Landroidx/camera/camera2/internal/StreamUseCaseUtil;->populateStreamUseCaseStreamSpecOptionWithSupportedSurfaceConfigs(Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/List;)V
 
-    goto :goto_2d6
+    goto :goto_10
 
-    :cond_2d4
+    :cond_19
     move-object/from16 v1, v23
 
     .line 793
-    :cond_2d6
-    :goto_2d6
+    :cond_1a
+    :goto_10
     new-instance v0, Landroid/util/Pair;
 
     invoke-direct {v0, v7, v1}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -4355,7 +4355,7 @@
     return-object v0
 
     .line 759
-    :cond_2dc
+    :cond_1b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4410,7 +4410,7 @@
 
     throw v0
 
-    :cond_313
+    :cond_1c
     move-object v2, v6
 
     move-object v3, v7
@@ -4456,7 +4456,7 @@
 .end method
 
 .method getUpdatedSurfaceSizeDefinitionByFormat(I)Landroidx/camera/core/impl/SurfaceSizeDefinition;
-    .registers 4
+    .locals 2
 
     .line 1283
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceSizeDefinitionFormats:Ljava/util/List;
@@ -4469,7 +4469,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_0
 
     .line 1284
     iget-object v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceSizeDefinition:Landroidx/camera/core/impl/SurfaceSizeDefinition;
@@ -4521,14 +4521,14 @@
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 1292
-    :cond_3d
+    :cond_0
     iget-object p1, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mSurfaceSizeDefinition:Landroidx/camera/core/impl/SurfaceSizeDefinition;
 
     return-object p1
 .end method
 
 .method isBurstCaptureSupported()Z
-    .registers 2
+    .locals 1
 
     .line 202
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsBurstCaptureSupported:Z
@@ -4537,7 +4537,7 @@
 .end method
 
 .method isRawSupported()Z
-    .registers 2
+    .locals 1
 
     .line 198
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->mIsRawSupported:Z
@@ -4546,7 +4546,7 @@
 .end method
 
 .method transformSurfaceConfig(IILandroid/util/Size;)Landroidx/camera/core/impl/SurfaceConfig;
-    .registers 5
+    .locals 1
 
     .line 304
     invoke-virtual {p0, p2}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getUpdatedSurfaceSizeDefinitionByFormat(I)Landroidx/camera/core/impl/SurfaceSizeDefinition;

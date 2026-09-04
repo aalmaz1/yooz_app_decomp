@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILandroidx/datastore/preferences/protobuf/WireFormat$JavaType;I)V
-    .registers 11
+    .locals 6
 
     const/4 v5, 0x0
 
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public isPackable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 15
+    .locals 11
 
     .line 162
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -155,39 +155,39 @@
 
     move-result p1
 
-    if-ltz p1, :cond_30
+    if-ltz p1, :cond_0
 
     .line 172
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->setOrientation(I)V
 
     .line 175
-    :cond_30
+    :cond_0
     sget p1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_gravity:I
 
     invoke-virtual {v3, p1, v1}, Landroidx/appcompat/widget/TintTypedArray;->getInt(II)I
 
     move-result p1
 
-    if-ltz p1, :cond_3b
+    if-ltz p1, :cond_1
 
     .line 177
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->setGravity(I)V
 
     .line 180
-    :cond_3b
+    :cond_1
     sget p1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_baselineAligned:I
 
     invoke-virtual {v3, p1, v0}, Landroidx/appcompat/widget/TintTypedArray;->getBoolean(IZ)Z
 
     move-result p1
 
-    if-nez p1, :cond_46
+    if-nez p1, :cond_2
 
     .line 182
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->setBaselineAligned(Z)V
 
     .line 185
-    :cond_46
+    :cond_2
     sget p1, Landroidx/appcompat/R$styleable;->LinearLayoutCompat_android_weightSum:I
 
     const/high16 p2, -0x40800000    # -1.0f
@@ -251,7 +251,7 @@
 .end method
 
 .method private forceUniformHeight(II)V
-    .registers 13
+    .locals 10
 
     .line 1341
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getMeasuredHeight()I
@@ -266,8 +266,8 @@
 
     const/4 v1, 0x0
 
-    :goto_b
-    if-ge v1, p1, :cond_3a
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     .line 1344
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
@@ -281,7 +281,7 @@
 
     const/16 v4, 0x8
 
-    if-eq v2, v4, :cond_37
+    if-eq v2, v4, :cond_0
 
     .line 1346
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -297,7 +297,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v2, v4, :cond_37
+    if-ne v2, v4, :cond_0
 
     .line 1351
     iget v9, v8, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
@@ -325,17 +325,17 @@
     .line 1356
     iput v9, v8, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
-    :cond_37
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_3a
+    :cond_1
     return-void
 .end method
 
 .method private forceUniformWidth(II)V
-    .registers 13
+    .locals 10
 
     .line 919
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getMeasuredWidth()I
@@ -350,8 +350,8 @@
 
     const/4 v1, 0x0
 
-    :goto_b
-    if-ge v1, p1, :cond_3a
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     .line 922
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
@@ -365,7 +365,7 @@
 
     const/16 v4, 0x8
 
-    if-eq v2, v4, :cond_37
+    if-eq v2, v4, :cond_0
 
     .line 924
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -381,7 +381,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v2, v4, :cond_37
+    if-ne v2, v4, :cond_0
 
     .line 929
     iget v9, v8, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
@@ -409,17 +409,17 @@
     .line 934
     iput v9, v8, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
-    :cond_37
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_3a
+    :cond_1
     return-void
 .end method
 
 .method private setChildFrame(Landroid/view/View;IIII)V
-    .registers 6
+    .locals 0
 
     add-int/2addr p4, p2
 
@@ -434,7 +434,7 @@
 
 # virtual methods
 .method protected checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
-    .registers 2
+    .locals 0
 
     .line 1781
     instance-of p1, p1, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -443,7 +443,7 @@
 .end method
 
 .method drawDividersHorizontal(Landroid/graphics/Canvas;)V
-    .registers 8
+    .locals 6
 
     .line 342
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildCount()I
@@ -457,15 +457,15 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v0, :cond_3f
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     .line 345
     invoke-virtual {p0, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_1
 
     .line 347
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -474,14 +474,14 @@
 
     const/16 v5, 0x8
 
-    if-eq v4, v5, :cond_3c
+    if-eq v4, v5, :cond_1
 
     .line 348
     invoke-virtual {p0, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_3c
+    if-eqz v4, :cond_1
 
     .line 349
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -490,7 +490,7 @@
 
     check-cast v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 352
     invoke-virtual {v3}, Landroid/view/View;->getRight()I
@@ -501,10 +501,10 @@
 
     add-int/2addr v3, v4
 
-    goto :goto_39
+    goto :goto_1
 
     .line 354
-    :cond_2f
+    :cond_0
     invoke-virtual {v3}, Landroid/view/View;->getLeft()I
 
     move-result v3
@@ -518,21 +518,21 @@
     sub-int/2addr v3, v4
 
     .line 356
-    :goto_39
+    :goto_1
     invoke-virtual {p0, p1, v3}, Landroidx/appcompat/widget/LinearLayoutCompat;->drawVerticalDivider(Landroid/graphics/Canvas;I)V
 
-    :cond_3c
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 361
-    :cond_3f
+    :cond_2
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_7d
+    if-eqz v2, :cond_6
 
     add-int/lit8 v0, v0, -0x1
 
@@ -541,19 +541,19 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_60
+    if-nez v0, :cond_4
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_3
 
     .line 366
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingLeft()I
 
     move-result v0
 
-    goto :goto_7a
+    goto :goto_3
 
     .line 368
-    :cond_54
+    :cond_3
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getWidth()I
 
     move-result v0
@@ -566,17 +566,17 @@
 
     iget v1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth:I
 
-    goto :goto_71
+    goto :goto_2
 
     .line 371
-    :cond_60
+    :cond_4
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
     check-cast v2, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_5
 
     .line 373
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
@@ -589,13 +589,13 @@
 
     iget v1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth:I
 
-    :goto_71
+    :goto_2
     sub-int/2addr v0, v1
 
-    goto :goto_7a
+    goto :goto_3
 
     .line 375
-    :cond_73
+    :cond_5
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
     move-result v0
@@ -605,15 +605,15 @@
     add-int/2addr v0, v1
 
     .line 378
-    :goto_7a
+    :goto_3
     invoke-virtual {p0, p1, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->drawVerticalDivider(Landroid/graphics/Canvas;I)V
 
-    :cond_7d
+    :cond_6
     return-void
 .end method
 
 .method drawDividersVertical(Landroid/graphics/Canvas;)V
-    .registers 7
+    .locals 5
 
     .line 315
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildCount()I
@@ -622,15 +622,15 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_31
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 317
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_0
 
     .line 319
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
@@ -639,14 +639,14 @@
 
     const/16 v4, 0x8
 
-    if-eq v3, v4, :cond_2e
+    if-eq v3, v4, :cond_0
 
     .line 320
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_0
 
     .line 321
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -671,18 +671,18 @@
     .line 323
     invoke-virtual {p0, p1, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->drawHorizontalDivider(Landroid/graphics/Canvas;I)V
 
-    :cond_2e
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 328
-    :cond_31
+    :cond_1
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_5c
+    if-eqz v1, :cond_3
 
     add-int/lit8 v0, v0, -0x1
 
@@ -691,7 +691,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_4c
+    if-nez v0, :cond_2
 
     .line 332
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getHeight()I
@@ -708,10 +708,10 @@
 
     sub-int/2addr v0, v1
 
-    goto :goto_59
+    goto :goto_1
 
     .line 334
-    :cond_4c
+    :cond_2
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -728,15 +728,15 @@
     add-int/2addr v0, v1
 
     .line 337
-    :goto_59
+    :goto_1
     invoke-virtual {p0, p1, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->drawHorizontalDivider(Landroid/graphics/Canvas;I)V
 
-    :cond_5c
+    :cond_3
     return-void
 .end method
 
 .method drawHorizontalDivider(Landroid/graphics/Canvas;I)V
-    .registers 7
+    .locals 4
 
     .line 383
     iget-object v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider:Landroid/graphics/drawable/Drawable;
@@ -780,7 +780,7 @@
 .end method
 
 .method drawVerticalDivider(Landroid/graphics/Canvas;I)V
-    .registers 8
+    .locals 5
 
     .line 389
     iget-object v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider:Landroid/graphics/drawable/Drawable;
@@ -824,7 +824,7 @@
 .end method
 
 .method protected bridge synthetic generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-    .registers 2
+    .locals 1
 
     .line 61
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->generateDefaultLayoutParams()Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -835,14 +835,14 @@
 .end method
 
 .method protected generateDefaultLayoutParams()Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
-    .registers 4
+    .locals 3
 
     .line 1764
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
 
     const/4 v1, -0x2
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 1765
     new-instance v0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -851,10 +851,10 @@
 
     return-object v0
 
-    :cond_b
+    :cond_0
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_15
+    if-ne v0, v2, :cond_1
 
     .line 1767
     new-instance v0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -865,14 +865,14 @@
 
     return-object v0
 
-    :cond_15
+    :cond_1
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public bridge synthetic generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -883,7 +883,7 @@
 .end method
 
 .method protected bridge synthetic generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -894,7 +894,7 @@
 .end method
 
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
-    .registers 4
+    .locals 2
 
     .line 1751
     new-instance v0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -909,7 +909,7 @@
 .end method
 
 .method protected generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
-    .registers 3
+    .locals 1
 
     .line 1774
     new-instance v0, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
@@ -920,12 +920,12 @@
 .end method
 
 .method public getBaseline()I
-    .registers 6
+    .locals 5
 
     .line 445
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
 
-    if-gez v0, :cond_9
+    if-gez v0, :cond_0
 
     .line 446
     invoke-super {p0}, Landroid/view/ViewGroup;->getBaseline()I
@@ -935,14 +935,14 @@
     return v0
 
     .line 449
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
 
     move-result v0
 
     iget v1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
 
-    if-le v0, v1, :cond_77
+    if-le v0, v1, :cond_6
 
     .line 454
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
@@ -956,17 +956,17 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_29
+    if-ne v1, v2, :cond_2
 
     .line 458
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     return v2
 
     .line 464
-    :cond_21
+    :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "mBaselineAlignedChildIndex of LinearLayout points to a View that doesn\'t know how to get its baseline."
@@ -976,7 +976,7 @@
     throw v0
 
     .line 474
-    :cond_29
+    :cond_2
     iget v2, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineChildTop:I
 
     .line 476
@@ -984,7 +984,7 @@
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_6c
+    if-ne v3, v4, :cond_5
 
     .line 477
     iget v3, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity:I
@@ -993,20 +993,20 @@
 
     const/16 v4, 0x30
 
-    if-eq v3, v4, :cond_6c
+    if-eq v3, v4, :cond_5
 
     const/16 v4, 0x10
 
-    if-eq v3, v4, :cond_53
+    if-eq v3, v4, :cond_4
 
     const/16 v4, 0x50
 
-    if-eq v3, v4, :cond_41
+    if-eq v3, v4, :cond_3
 
-    goto :goto_6c
+    goto :goto_0
 
     .line 481
-    :cond_41
+    :cond_3
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getBottom()I
 
     move-result v2
@@ -1027,10 +1027,10 @@
 
     sub-int/2addr v2, v3
 
-    goto :goto_6c
+    goto :goto_0
 
     .line 485
-    :cond_53
+    :cond_4
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getBottom()I
 
     move-result v3
@@ -1062,8 +1062,8 @@
     add-int/2addr v2, v3
 
     .line 492
-    :cond_6c
-    :goto_6c
+    :cond_5
+    :goto_0
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1080,7 +1080,7 @@
     return v2
 
     .line 450
-    :cond_77
+    :cond_6
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "mBaselineAlignedChildIndex of LinearLayout set to an index that is out of bounds."
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public getBaselineAlignedChildIndex()I
-    .registers 2
+    .locals 1
 
     .line 503
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
@@ -1100,7 +1100,7 @@
 .end method
 
 .method getChildrenSkipCount(Landroid/view/View;I)I
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -1108,7 +1108,7 @@
 .end method
 
 .method public getDividerDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
 
     .line 240
     iget-object v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider:Landroid/graphics/drawable/Drawable;
@@ -1117,7 +1117,7 @@
 .end method
 
 .method public getDividerPadding()I
-    .registers 2
+    .locals 1
 
     .line 288
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerPadding:I
@@ -1126,7 +1126,7 @@
 .end method
 
 .method public getDividerWidth()I
-    .registers 2
+    .locals 1
 
     .line 298
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth:I
@@ -1135,7 +1135,7 @@
 .end method
 
 .method public getGravity()I
-    .registers 2
+    .locals 1
 
     .line 1730
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity:I
@@ -1144,7 +1144,7 @@
 .end method
 
 .method getLocationOffset(Landroid/view/View;)I
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -1152,7 +1152,7 @@
 .end method
 
 .method getNextLocationOffset(Landroid/view/View;)I
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -1160,7 +1160,7 @@
 .end method
 
 .method public getOrientation()I
-    .registers 2
+    .locals 1
 
     .line 1695
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
@@ -1169,7 +1169,7 @@
 .end method
 
 .method public getShowDividers()I
-    .registers 2
+    .locals 1
 
     .line 230
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
@@ -1178,7 +1178,7 @@
 .end method
 
 .method getVirtualChildAt(I)Landroid/view/View;
-    .registers 2
+    .locals 0
 
     .line 528
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
@@ -1189,7 +1189,7 @@
 .end method
 
 .method getVirtualChildCount()I
-    .registers 2
+    .locals 1
 
     .line 541
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
@@ -1200,7 +1200,7 @@
 .end method
 
 .method public getWeightSum()F
-    .registers 2
+    .locals 1
 
     .line 553
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mWeightSum:F
@@ -1209,58 +1209,58 @@
 .end method
 
 .method protected hasDividerBeforeChildAt(I)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_1
 
     .line 591
     iget p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
 
     and-int/2addr p1, v1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     move v0, v1
 
-    :cond_a
+    :cond_0
     return v0
 
     .line 592
-    :cond_b
+    :cond_1
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
 
     move-result v2
 
-    if-ne p1, v2, :cond_19
+    if-ne p1, v2, :cond_3
 
     .line 593
     iget p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
 
     and-int/lit8 p1, p1, 0x4
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_2
 
     move v0, v1
 
-    :cond_18
+    :cond_2
     return v0
 
     .line 594
-    :cond_19
+    :cond_3
     iget v2, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
 
     and-int/lit8 v2, v2, 0x2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_5
 
     sub-int/2addr p1, v1
 
-    :goto_20
-    if-ltz p1, :cond_33
+    :goto_0
+    if-ltz p1, :cond_5
 
     .line 597
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildAt(I)Landroid/view/View;
@@ -1273,24 +1273,24 @@
 
     const/16 v3, 0x8
 
-    if-eq v2, v3, :cond_30
+    if-eq v2, v3, :cond_4
 
     move v0, v1
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_30
+    :cond_4
     add-int/lit8 p1, p1, -0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_33
-    :goto_33
+    :cond_5
+    :goto_1
     return v0
 .end method
 
 .method public isBaselineAligned()Z
-    .registers 2
+    .locals 1
 
     .line 402
     iget-boolean v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAligned:Z
@@ -1299,7 +1299,7 @@
 .end method
 
 .method public isMeasureWithLargestChildEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 426
     iget-boolean v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mUseLargestChild:Z
@@ -1308,7 +1308,7 @@
 .end method
 
 .method layoutHorizontal(IIII)V
-    .registers 29
+    .locals 24
 
     move-object/from16 v6, p0
 
@@ -1377,21 +1377,21 @@
 
     const/4 v5, 0x1
 
-    if-eq v1, v5, :cond_4b
+    if-eq v1, v5, :cond_1
 
     const/4 v2, 0x5
 
-    if-eq v1, v2, :cond_3f
+    if-eq v1, v2, :cond_0
 
     .line 1582
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingLeft()I
 
     move-result v1
 
-    goto :goto_56
+    goto :goto_0
 
     .line 1572
-    :cond_3f
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingLeft()I
 
     move-result v1
@@ -1404,10 +1404,10 @@
 
     sub-int/2addr v1, v2
 
-    goto :goto_56
+    goto :goto_0
 
     .line 1577
-    :cond_4b
+    :cond_1
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingLeft()I
 
     move-result v1
@@ -1422,10 +1422,10 @@
 
     add-int/2addr v1, v2
 
-    :goto_56
+    :goto_0
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_2
 
     add-int/lit8 v0, v10, -0x1
 
@@ -1433,18 +1433,18 @@
 
     const/16 v17, -0x1
 
-    goto :goto_64
+    goto :goto_1
 
-    :cond_60
+    :cond_2
     move/from16 v16, v2
 
     move/from16 v17, v5
 
-    :goto_64
+    :goto_1
     move v3, v2
 
-    :goto_65
-    if-ge v3, v10, :cond_149
+    :goto_2
+    if-ge v3, v10, :cond_d
 
     mul-int v0, v17, v3
 
@@ -1455,7 +1455,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_80
+    if-nez v0, :cond_3
 
     .line 1599
     invoke-virtual {v6, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->measureNullChild(I)I
@@ -1472,17 +1472,17 @@
 
     move/from16 v20, v11
 
-    goto/16 :goto_13a
+    goto/16 :goto_6
 
     .line 1600
-    :cond_80
+    :cond_3
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v5
 
     const/16 v15, 0x8
 
-    if-eq v5, v15, :cond_130
+    if-eq v5, v15, :cond_c
 
     .line 1601
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
@@ -1505,7 +1505,7 @@
 
     move/from16 v18, v3
 
-    if-eqz v12, :cond_a8
+    if-eqz v12, :cond_4
 
     .line 1608
     iget v3, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
@@ -1514,53 +1514,53 @@
 
     const/4 v10, -0x1
 
-    if-eq v3, v10, :cond_aa
+    if-eq v3, v10, :cond_5
 
     .line 1609
     invoke-virtual {v0}, Landroid/view/View;->getBaseline()I
 
     move-result v10
 
-    goto :goto_ab
+    goto :goto_3
 
-    :cond_a8
+    :cond_4
     move/from16 v19, v10
 
-    :cond_aa
+    :cond_5
     const/4 v10, -0x1
 
     .line 1612
-    :goto_ab
+    :goto_3
     iget v3, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    if-gez v3, :cond_b0
+    if-gez v3, :cond_6
 
     move v3, v11
 
-    :cond_b0
+    :cond_6
     and-int/lit8 v3, v3, 0x70
 
     move/from16 v20, v11
 
     const/16 v11, 0x10
 
-    if-eq v3, v11, :cond_eb
+    if-eq v3, v11, :cond_a
 
     const/16 v11, 0x30
 
-    if-eq v3, v11, :cond_d9
+    if-eq v3, v11, :cond_8
 
     const/16 v11, 0x50
 
-    if-eq v3, v11, :cond_c3
+    if-eq v3, v11, :cond_7
 
     move v3, v7
 
     const/4 v11, -0x1
 
-    goto :goto_e8
+    goto :goto_4
 
-    :cond_c3
+    :cond_7
     sub-int v3, v8, v5
 
     .line 1642
@@ -1570,7 +1570,7 @@
 
     const/4 v11, -0x1
 
-    if-eq v10, v11, :cond_e8
+    if-eq v10, v11, :cond_9
 
     .line 1644
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
@@ -1588,9 +1588,9 @@
 
     sub-int v3, v3, v22
 
-    goto :goto_e8
+    goto :goto_4
 
-    :cond_d9
+    :cond_8
     const/4 v11, -0x1
 
     .line 1619
@@ -1598,7 +1598,7 @@
 
     add-int/2addr v3, v7
 
-    if-eq v10, v11, :cond_e8
+    if-eq v10, v11, :cond_9
 
     const/16 v21, 0x1
 
@@ -1609,15 +1609,15 @@
 
     add-int v3, v3, v22
 
-    goto :goto_f9
+    goto :goto_5
 
-    :cond_e8
-    :goto_e8
+    :cond_9
+    :goto_4
     const/16 v21, 0x1
 
-    goto :goto_f9
+    goto :goto_5
 
-    :cond_eb
+    :cond_a
     const/4 v11, -0x1
 
     const/16 v21, 0x1
@@ -1640,12 +1640,12 @@
     sub-int/2addr v3, v10
 
     .line 1653
-    :goto_f9
+    :goto_5
     invoke-virtual {v6, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v10
 
-    if-eqz v10, :cond_102
+    if-eqz v10, :cond_b
 
     .line 1654
     iget v10, v6, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth:I
@@ -1653,7 +1653,7 @@
     add-int/2addr v1, v10
 
     .line 1657
-    :cond_102
+    :cond_b
     iget v10, v4, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
 
     add-int/2addr v10, v1
@@ -1710,9 +1710,9 @@
 
     move v1, v10
 
-    goto :goto_13c
+    goto :goto_7
 
-    :cond_130
+    :cond_c
     move/from16 v18, v3
 
     move/from16 v22, v7
@@ -1723,10 +1723,10 @@
 
     const/16 v21, 0x1
 
-    :goto_13a
+    :goto_6
     const/16 v23, -0x1
 
-    :goto_13c
+    :goto_7
     add-int/lit8 v3, v3, 0x1
 
     move/from16 v10, v19
@@ -1739,14 +1739,14 @@
 
     const/4 v15, 0x2
 
-    goto/16 :goto_65
+    goto/16 :goto_2
 
-    :cond_149
+    :cond_d
     return-void
 .end method
 
 .method layoutVertical(IIII)V
-    .registers 22
+    .locals 17
 
     move-object/from16 v6, p0
 
@@ -1789,21 +1789,21 @@
 
     const/16 v0, 0x10
 
-    if-eq v1, v0, :cond_3b
+    if-eq v1, v0, :cond_1
 
     const/16 v0, 0x50
 
-    if-eq v1, v0, :cond_2f
+    if-eq v1, v0, :cond_0
 
     .line 1480
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingTop()I
 
     move-result v0
 
-    goto :goto_47
+    goto :goto_0
 
     .line 1470
-    :cond_2f
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingTop()I
 
     move-result v0
@@ -1816,10 +1816,10 @@
 
     sub-int/2addr v0, v1
 
-    goto :goto_47
+    goto :goto_0
 
     .line 1475
-    :cond_3b
+    :cond_1
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingTop()I
 
     move-result v0
@@ -1834,13 +1834,13 @@
 
     add-int/2addr v0, v1
 
-    :goto_47
+    :goto_0
     const/4 v1, 0x0
 
     move v12, v1
 
-    :goto_49
-    if-ge v12, v10, :cond_cb
+    :goto_1
+    if-ge v12, v10, :cond_8
 
     .line 1485
     invoke-virtual {v6, v12}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
@@ -1849,7 +1849,7 @@
 
     const/4 v14, 0x1
 
-    if-nez v13, :cond_59
+    if-nez v13, :cond_2
 
     .line 1487
     invoke-virtual {v6, v12}, Landroidx/appcompat/widget/LinearLayoutCompat;->measureNullChild(I)I
@@ -1858,17 +1858,17 @@
 
     add-int/2addr v0, v1
 
-    goto/16 :goto_c7
+    goto/16 :goto_4
 
     .line 1488
-    :cond_59
+    :cond_2
     invoke-virtual {v13}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
     const/16 v2, 0x8
 
-    if-eq v1, v2, :cond_c7
+    if-eq v1, v2, :cond_7
 
     .line 1489
     invoke-virtual {v13}, Landroid/view/View;->getMeasuredWidth()I
@@ -1892,12 +1892,12 @@
     .line 1495
     iget v1, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    if-gez v1, :cond_75
+    if-gez v1, :cond_3
 
     move v1, v11
 
     .line 1499
-    :cond_75
+    :cond_3
     invoke-static/range {p0 .. p0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
     move-result v2
@@ -1909,28 +1909,28 @@
 
     and-int/lit8 v1, v1, 0x7
 
-    if-eq v1, v14, :cond_8d
+    if-eq v1, v14, :cond_5
 
     const/4 v2, 0x5
 
-    if-eq v1, v2, :cond_88
+    if-eq v1, v2, :cond_4
 
     .line 1514
     iget v1, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
 
     add-int/2addr v1, v7
 
-    goto :goto_98
+    goto :goto_3
 
-    :cond_88
+    :cond_4
     sub-int v1, v8, v4
 
     .line 1509
     iget v2, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
 
-    goto :goto_97
+    goto :goto_2
 
-    :cond_8d
+    :cond_5
     sub-int v1, v9, v4
 
     .line 1504
@@ -1944,10 +1944,10 @@
 
     iget v2, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
 
-    :goto_97
+    :goto_2
     sub-int/2addr v1, v2
 
-    :goto_98
+    :goto_3
     move v2, v1
 
     .line 1518
@@ -1955,7 +1955,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_6
 
     .line 1519
     iget v1, v6, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerHeight:I
@@ -1963,7 +1963,7 @@
     add-int/2addr v0, v1
 
     .line 1522
-    :cond_a2
+    :cond_6
     iget v1, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->topMargin:I
 
     add-int v16, v0, v1
@@ -2009,23 +2009,23 @@
 
     const/4 v1, 0x1
 
-    goto :goto_c8
+    goto :goto_5
 
-    :cond_c7
-    :goto_c7
+    :cond_7
+    :goto_4
     move v1, v14
 
-    :goto_c8
+    :goto_5
     add-int/2addr v12, v1
 
-    goto/16 :goto_49
+    goto/16 :goto_1
 
-    :cond_cb
+    :cond_8
     return-void
 .end method
 
 .method measureChildBeforeLayout(Landroid/view/View;IIIII)V
-    .registers 13
+    .locals 6
 
     move-object v0, p0
 
@@ -2046,7 +2046,7 @@
 .end method
 
 .method measureHorizontal(II)V
-    .registers 41
+    .locals 38
 
     move-object/from16 v7, p0
 
@@ -2079,13 +2079,13 @@
 
     const/4 v14, 0x4
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     iget-object v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mMaxDescent:[I
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
-    :cond_1e
+    :cond_0
     new-array v0, v14, [I
 
     .line 969
@@ -2097,7 +2097,7 @@
     iput-object v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mMaxDescent:[I
 
     .line 973
-    :cond_26
+    :cond_1
     iget-object v15, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mMaxAscent:[I
 
     .line 974
@@ -2137,16 +2137,16 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    if-ne v12, v2, :cond_4c
+    if-ne v12, v2, :cond_2
 
     move/from16 v19, v18
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_4c
+    :cond_2
     move/from16 v19, v10
 
-    :goto_4e
+    :goto_0
     const/16 v20, 0x0
 
     move v1, v10
@@ -2169,19 +2169,19 @@
 
     move/from16 v0, v20
 
-    :goto_62
+    :goto_1
     move-object/from16 v28, v6
 
     const/16 v5, 0x8
 
-    if-ge v1, v11, :cond_20a
+    if-ge v1, v11, :cond_15
 
     .line 988
     invoke-virtual {v7, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    if-nez v6, :cond_82
+    if-nez v6, :cond_3
 
     .line 991
     iget v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2194,7 +2194,7 @@
 
     iput v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    :goto_77
+    :goto_2
     move/from16 v32, v3
 
     move/from16 v36, v4
@@ -2205,15 +2205,15 @@
 
     move/from16 v1, v37
 
-    goto/16 :goto_1f7
+    goto/16 :goto_f
 
     .line 995
-    :cond_82
+    :cond_3
     invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
 
     move-result v10
 
-    if-ne v10, v5, :cond_8e
+    if-ne v10, v5, :cond_4
 
     .line 996
     invoke-virtual {v7, v6, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildrenSkipCount(Landroid/view/View;I)I
@@ -2222,15 +2222,15 @@
 
     add-int/2addr v1, v5
 
-    goto :goto_77
+    goto :goto_2
 
     .line 1000
-    :cond_8e
+    :cond_4
     invoke-virtual {v7, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_9b
+    if-eqz v5, :cond_5
 
     .line 1001
     iget v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2242,7 +2242,7 @@
     iput v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     .line 1005
-    :cond_9b
+    :cond_5
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
@@ -2256,20 +2256,20 @@
 
     add-float v31, v0, v5
 
-    if-ne v12, v2, :cond_f1
+    if-ne v12, v2, :cond_8
 
     .line 1009
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
-    if-nez v0, :cond_f1
+    if-nez v0, :cond_8
 
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v0, v0, v20
 
-    if-lez v0, :cond_f1
+    if-lez v0, :cond_8
 
-    if-eqz v19, :cond_bf
+    if-eqz v19, :cond_6
 
     .line 1014
     iget v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2284,10 +2284,10 @@
 
     iput v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    goto :goto_cd
+    goto :goto_3
 
     .line 1016
-    :cond_bf
+    :cond_6
     iget v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     .line 1017
@@ -2305,8 +2305,8 @@
 
     iput v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    :goto_cd
-    if-eqz v4, :cond_e2
+    :goto_3
+    if-eqz v4, :cond_7
 
     const/4 v0, 0x0
 
@@ -2328,9 +2328,9 @@
 
     const/16 v30, -0x2
 
-    goto/16 :goto_16d
+    goto/16 :goto_7
 
-    :cond_e2
+    :cond_7
     move/from16 v34, v1
 
     move/from16 v32, v3
@@ -2345,19 +2345,19 @@
 
     const/16 v30, -0x2
 
-    goto/16 :goto_16f
+    goto/16 :goto_8
 
     .line 1035
-    :cond_f1
+    :cond_8
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
-    if-nez v0, :cond_100
+    if-nez v0, :cond_9
 
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v0, v0, v20
 
-    if-lez v0, :cond_100
+    if-lez v0, :cond_9
 
     const/4 v5, -0x2
 
@@ -2366,29 +2366,29 @@
 
     const/4 v2, 0x0
 
-    goto :goto_103
+    goto :goto_4
 
-    :cond_100
+    :cond_9
     const/4 v5, -0x2
 
     const/high16 v2, -0x80000000
 
-    :goto_103
+    :goto_4
     cmpl-float v0, v31, v20
 
-    if-nez v0, :cond_10c
+    if-nez v0, :cond_a
 
     .line 1049
     iget v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     move/from16 v29, v0
 
-    goto :goto_10e
+    goto :goto_5
 
-    :cond_10c
+    :cond_a
     const/16 v29, 0x0
 
-    :goto_10e
+    :goto_5
     const/16 v33, 0x0
 
     move-object/from16 v0, p0
@@ -2428,18 +2428,18 @@
 
     move/from16 v0, v35
 
-    if-eq v0, v9, :cond_137
+    if-eq v0, v9, :cond_b
 
     .line 1053
     iput v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
     .line 1056
-    :cond_137
+    :cond_b
     invoke-virtual/range {v29 .. v29}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
-    if-eqz v19, :cond_150
+    if-eqz v19, :cond_c
 
     .line 1058
     iget v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2465,9 +2465,9 @@
 
     iput v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    goto :goto_167
+    goto :goto_6
 
-    :cond_150
+    :cond_c
     move-object/from16 v3, v29
 
     .line 1061
@@ -2498,39 +2498,39 @@
 
     iput v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    :goto_167
-    if-eqz v32, :cond_16d
+    :goto_6
+    if-eqz v32, :cond_d
 
     .line 1067
     invoke-static {v0, v14}, Ljava/lang/Math;->max(II)I
 
     move-result v14
 
-    :cond_16d
-    :goto_16d
+    :cond_d
+    :goto_7
     const/high16 v1, 0x40000000    # 2.0f
 
-    :goto_16f
-    if-eq v13, v1, :cond_17b
+    :goto_8
+    if-eq v13, v1, :cond_e
 
     .line 1072
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_17b
+    if-ne v0, v2, :cond_e
 
     move/from16 v0, v18
 
     move/from16 v27, v0
 
-    goto :goto_17c
+    goto :goto_9
 
-    :cond_17b
+    :cond_e
     const/4 v0, 0x0
 
     .line 1080
-    :goto_17c
+    :goto_9
     iget v2, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->topMargin:I
 
     iget v4, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->bottomMargin:I
@@ -2555,7 +2555,7 @@
 
     move-result v25
 
-    if-eqz v36, :cond_1bc
+    if-eqz v36, :cond_10
 
     .line 1085
     invoke-virtual {v3}, Landroid/view/View;->getBaseline()I
@@ -2564,21 +2564,21 @@
 
     const/4 v6, -0x1
 
-    if-eq v5, v6, :cond_1bc
+    if-eq v5, v6, :cond_10
 
     .line 1089
     iget v6, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    if-gez v6, :cond_1a0
+    if-gez v6, :cond_f
 
     iget v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity:I
 
-    goto :goto_1a2
+    goto :goto_a
 
-    :cond_1a0
+    :cond_f
     iget v6, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    :goto_1a2
+    :goto_a
     and-int/lit8 v6, v6, 0x70
 
     const/4 v9, 0x4
@@ -2609,7 +2609,7 @@
 
     aput v5, v28, v6
 
-    :cond_1bc
+    :cond_10
     move/from16 v5, v21
 
     .line 1099
@@ -2617,38 +2617,38 @@
 
     move-result v21
 
-    if-eqz v26, :cond_1cc
+    if-eqz v26, :cond_11
 
     .line 1101
     iget v5, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     const/4 v6, -0x1
 
-    if-ne v5, v6, :cond_1cc
+    if-ne v5, v6, :cond_11
 
     move/from16 v26, v18
 
-    goto :goto_1ce
+    goto :goto_b
 
-    :cond_1cc
+    :cond_11
     const/16 v26, 0x0
 
     .line 1102
-    :goto_1ce
+    :goto_b
     iget v5, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v5, v5, v20
 
-    if-lez v5, :cond_1df
+    if-lez v5, :cond_13
 
-    if-eqz v0, :cond_1d7
+    if-eqz v0, :cond_12
 
-    goto :goto_1d8
+    goto :goto_c
 
-    :cond_1d7
+    :cond_12
     move v2, v4
 
-    :goto_1d8
+    :goto_c
     move/from16 v10, v23
 
     .line 1107
@@ -2656,19 +2656,19 @@
 
     move-result v23
 
-    goto :goto_1ed
+    goto :goto_e
 
-    :cond_1df
+    :cond_13
     move/from16 v10, v23
 
-    if-eqz v0, :cond_1e4
+    if-eqz v0, :cond_14
 
-    goto :goto_1e5
+    goto :goto_d
 
-    :cond_1e4
+    :cond_14
     move v2, v4
 
-    :goto_1e5
+    :goto_d
     move/from16 v4, v22
 
     .line 1110
@@ -2678,7 +2678,7 @@
 
     move/from16 v23, v10
 
-    :goto_1ed
+    :goto_e
     move/from16 v10, v34
 
     .line 1114
@@ -2692,7 +2692,7 @@
 
     move/from16 v0, v31
 
-    :goto_1f7
+    :goto_f
     add-int/lit8 v2, v2, 0x1
 
     move/from16 v9, p2
@@ -2713,9 +2713,9 @@
 
     move/from16 v1, v37
 
-    goto/16 :goto_62
+    goto/16 :goto_1
 
-    :cond_20a
+    :cond_15
     move v1, v2
 
     move/from16 v32, v3
@@ -2737,13 +2737,13 @@
     .line 1117
     iget v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    if-lez v3, :cond_22c
+    if-lez v3, :cond_16
 
     invoke-virtual {v7, v11}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_22c
+    if-eqz v3, :cond_16
 
     .line 1118
     iget v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2755,39 +2755,39 @@
     iput v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     .line 1123
-    :cond_22c
+    :cond_16
     aget v1, v15, v18
 
     const/4 v3, -0x1
 
-    if-ne v1, v3, :cond_244
+    if-ne v1, v3, :cond_18
 
     const/16 v21, 0x0
 
     aget v5, v15, v21
 
-    if-ne v5, v3, :cond_244
+    if-ne v5, v3, :cond_18
 
     aget v5, v15, v17
 
-    if-ne v5, v3, :cond_244
+    if-ne v5, v3, :cond_18
 
     aget v5, v15, v16
 
-    if-eq v5, v3, :cond_240
+    if-eq v5, v3, :cond_17
 
-    goto :goto_244
+    goto :goto_10
 
-    :cond_240
+    :cond_17
     move v1, v2
 
     move/from16 v23, v6
 
-    goto :goto_273
+    goto :goto_11
 
     .line 1127
-    :cond_244
-    :goto_244
+    :cond_18
+    :goto_10
     aget v3, v15, v16
 
     const/4 v5, 0x0
@@ -2846,16 +2846,16 @@
 
     move-result v1
 
-    :goto_273
-    if-eqz v32, :cond_2d6
+    :goto_11
+    if-eqz v32, :cond_1d
 
     const/high16 v2, -0x80000000
 
-    if-eq v12, v2, :cond_27b
+    if-eq v12, v2, :cond_19
 
-    if-nez v12, :cond_2d6
+    if-nez v12, :cond_1d
 
-    :cond_27b
+    :cond_19
     const/4 v2, 0x0
 
     .line 1138
@@ -2863,15 +2863,15 @@
 
     const/4 v2, 0x0
 
-    :goto_27f
-    if-ge v2, v11, :cond_2d6
+    :goto_12
+    if-ge v2, v11, :cond_1d
 
     .line 1141
     invoke-virtual {v7, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    if-nez v3, :cond_291
+    if-nez v3, :cond_1a
 
     .line 1144
     iget v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2884,17 +2884,17 @@
 
     iput v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    goto :goto_29e
+    goto :goto_13
 
     .line 1148
-    :cond_291
+    :cond_1a
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v5
 
     const/16 v6, 0x8
 
-    if-ne v5, v6, :cond_2a1
+    if-ne v5, v6, :cond_1b
 
     .line 1149
     invoke-virtual {v7, v3, v2}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildrenSkipCount(Landroid/view/View;I)I
@@ -2903,20 +2903,20 @@
 
     add-int/2addr v2, v3
 
-    :goto_29e
+    :goto_13
     move/from16 v21, v1
 
-    goto :goto_2d1
+    goto :goto_14
 
     .line 1154
-    :cond_2a1
+    :cond_1b
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
     check-cast v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
 
-    if-eqz v19, :cond_2ba
+    if-eqz v19, :cond_1c
 
     .line 1156
     iget v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -2940,10 +2940,10 @@
 
     iput v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    goto :goto_29e
+    goto :goto_13
 
     .line 1159
-    :cond_2ba
+    :cond_1c
     iget v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     add-int v9, v6, v14
@@ -2973,14 +2973,14 @@
 
     iput v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    :goto_2d1
+    :goto_14
     add-int/lit8 v2, v2, 0x1
 
     move/from16 v1, v21
 
-    goto :goto_27f
+    goto :goto_12
 
-    :cond_2d6
+    :cond_1d
     move/from16 v21, v1
 
     .line 1167
@@ -3025,39 +3025,39 @@
 
     sub-int/2addr v2, v3
 
-    if-nez v24, :cond_347
+    if-nez v24, :cond_22
 
-    if-eqz v2, :cond_303
+    if-eqz v2, :cond_1e
 
     cmpl-float v5, v0, v20
 
-    if-lez v5, :cond_303
+    if-lez v5, :cond_1e
 
-    goto :goto_347
+    goto :goto_17
 
     .line 1293
-    :cond_303
+    :cond_1e
     invoke-static {v4, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    if-eqz v32, :cond_33f
+    if-eqz v32, :cond_21
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    if-eq v12, v2, :cond_33f
+    if-eq v12, v2, :cond_21
 
     const/4 v10, 0x0
 
-    :goto_30e
-    if-ge v10, v11, :cond_33f
+    :goto_15
+    if-ge v10, v11, :cond_21
 
     .line 1299
     invoke-virtual {v7, v10}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    if-eqz v2, :cond_33c
+    if-eqz v2, :cond_20
 
     .line 1301
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
@@ -3066,12 +3066,12 @@
 
     const/16 v5, 0x8
 
-    if-ne v4, v5, :cond_31f
+    if-ne v4, v5, :cond_1f
 
-    goto :goto_33c
+    goto :goto_16
 
     .line 1306
-    :cond_31f
+    :cond_1f
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
@@ -3083,7 +3083,7 @@
 
     cmpl-float v4, v4, v20
 
-    if-lez v4, :cond_33c
+    if-lez v4, :cond_20
 
     const/high16 v4, 0x40000000    # 2.0f
 
@@ -3104,33 +3104,33 @@
     .line 1310
     invoke-virtual {v2, v5, v6}, Landroid/view/View;->measure(II)V
 
-    :cond_33c
-    :goto_33c
+    :cond_20
+    :goto_16
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_30e
+    goto :goto_15
 
-    :cond_33f
+    :cond_21
     move/from16 v2, p2
 
     move/from16 v25, v11
 
     move/from16 v3, v21
 
-    goto/16 :goto_4e3
+    goto/16 :goto_26
 
     .line 1183
-    :cond_347
-    :goto_347
+    :cond_22
+    :goto_17
     iget v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mWeightSum:F
 
     cmpl-float v6, v5, v20
 
-    if-lez v6, :cond_34e
+    if-lez v6, :cond_23
 
     move v0, v5
 
-    :cond_34e
+    :cond_23
     const/4 v5, -0x1
 
     .line 1185
@@ -3164,15 +3164,15 @@
 
     const/4 v10, 0x0
 
-    :goto_367
-    if-ge v10, v11, :cond_48c
+    :goto_18
+    if-ge v10, v11, :cond_32
 
     .line 1192
     invoke-virtual {v7, v10}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v14
 
-    if-eqz v14, :cond_47d
+    if-eqz v14, :cond_31
 
     .line 1194
     invoke-virtual {v14}, Landroid/view/View;->getVisibility()I
@@ -3181,12 +3181,12 @@
 
     const/16 v3, 0x8
 
-    if-ne v5, v3, :cond_379
+    if-ne v5, v3, :cond_24
 
-    goto/16 :goto_47d
+    goto/16 :goto_22
 
     .line 1199
-    :cond_379
+    :cond_24
     invoke-virtual {v14}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
@@ -3198,7 +3198,7 @@
 
     cmpl-float v23, v3, v20
 
-    if-lez v23, :cond_3e1
+    if-lez v23, :cond_29
 
     int-to-float v8, v2
 
@@ -3251,49 +3251,49 @@
     .line 1215
     iget v3, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
-    if-nez v3, :cond_3bf
+    if-nez v3, :cond_27
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    if-eq v12, v3, :cond_3b3
+    if-eq v12, v3, :cond_25
 
-    goto :goto_3c1
+    goto :goto_1a
 
-    :cond_3b3
-    if-lez v8, :cond_3b6
+    :cond_25
+    if-lez v8, :cond_26
 
-    goto :goto_3b7
+    goto :goto_19
 
-    :cond_3b6
+    :cond_26
     const/4 v8, 0x0
 
     .line 1228
-    :goto_3b7
+    :goto_19
     invoke-static {v8, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v8
 
     invoke-virtual {v14, v8, v0}, Landroid/view/View;->measure(II)V
 
-    goto :goto_3d1
+    goto :goto_1b
 
-    :cond_3bf
+    :cond_27
     const/high16 v3, 0x40000000    # 2.0f
 
     .line 1218
-    :goto_3c1
+    :goto_1a
     invoke-virtual {v14}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v29
 
     add-int v8, v29, v8
 
-    if-gez v8, :cond_3ca
+    if-gez v8, :cond_28
 
     const/4 v8, 0x0
 
     .line 1224
-    :cond_3ca
+    :cond_28
     invoke-static {v8, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v8
@@ -3302,7 +3302,7 @@
     invoke-virtual {v14, v8, v0}, Landroid/view/View;->measure(II)V
 
     .line 1235
-    :goto_3d1
+    :goto_1b
     invoke-virtual {v14}, Landroid/view/View;->getMeasuredState()I
 
     move-result v0
@@ -3320,9 +3320,9 @@
 
     move/from16 v3, v24
 
-    goto :goto_3e7
+    goto :goto_1c
 
-    :cond_3e1
+    :cond_29
     move v3, v2
 
     move/from16 v25, v11
@@ -3331,8 +3331,8 @@
 
     move/from16 v2, p2
 
-    :goto_3e7
-    if-eqz v19, :cond_404
+    :goto_1c
+    if-eqz v19, :cond_2a
 
     .line 1239
     iget v8, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -3362,10 +3362,10 @@
 
     move/from16 v23, v0
 
-    goto :goto_41e
+    goto :goto_1d
 
     .line 1242
-    :cond_404
+    :cond_2a
     iget v8, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     .line 1243
@@ -3399,27 +3399,27 @@
 
     iput v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    :goto_41e
+    :goto_1d
     const/high16 v0, 0x40000000    # 2.0f
 
-    if-eq v13, v0, :cond_42a
+    if-eq v13, v0, :cond_2b
 
     .line 1247
     iget v0, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     const/4 v8, -0x1
 
-    if-ne v0, v8, :cond_42a
+    if-ne v0, v8, :cond_2b
 
     move/from16 v0, v18
 
-    goto :goto_42b
+    goto :goto_1e
 
-    :cond_42a
+    :cond_2b
     const/4 v0, 0x0
 
     .line 1250
-    :goto_42b
+    :goto_1e
     iget v8, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->topMargin:I
 
     iget v11, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->bottomMargin:I
@@ -3438,61 +3438,61 @@
 
     move-result v4
 
-    if-eqz v0, :cond_43c
+    if-eqz v0, :cond_2c
 
-    goto :goto_43d
+    goto :goto_1f
 
-    :cond_43c
+    :cond_2c
     move v8, v11
 
     .line 1253
-    :goto_43d
+    :goto_1f
     invoke-static {v6, v8}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    if-eqz v26, :cond_44b
+    if-eqz v26, :cond_2d
 
     .line 1256
     iget v6, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     const/4 v8, -0x1
 
-    if-ne v6, v8, :cond_44c
+    if-ne v6, v8, :cond_2e
 
     move/from16 v6, v18
 
-    goto :goto_44d
+    goto :goto_20
 
-    :cond_44b
+    :cond_2d
     const/4 v8, -0x1
 
-    :cond_44c
+    :cond_2e
     const/4 v6, 0x0
 
-    :goto_44d
-    if-eqz v36, :cond_477
+    :goto_20
+    if-eqz v36, :cond_30
 
     .line 1259
     invoke-virtual {v14}, Landroid/view/View;->getBaseline()I
 
     move-result v14
 
-    if-eq v14, v8, :cond_477
+    if-eq v14, v8, :cond_30
 
     .line 1262
     iget v8, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    if-gez v8, :cond_45c
+    if-gez v8, :cond_2f
 
     iget v5, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity:I
 
-    goto :goto_45e
+    goto :goto_21
 
-    :cond_45c
+    :cond_2f
     iget v5, v5, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    :goto_45e
+    :goto_21
     and-int/lit8 v5, v5, 0x70
 
     const/4 v8, 0x4
@@ -3523,24 +3523,24 @@
 
     aput v8, v28, v5
 
-    :cond_477
+    :cond_30
     move/from16 v26, v6
 
     move v6, v0
 
     move/from16 v0, v23
 
-    goto :goto_482
+    goto :goto_23
 
-    :cond_47d
-    :goto_47d
+    :cond_31
+    :goto_22
     move v3, v2
 
     move/from16 v25, v11
 
     move/from16 v2, p2
 
-    :goto_482
+    :goto_23
     add-int/lit8 v10, v10, 0x1
 
     move/from16 v8, p1
@@ -3551,9 +3551,9 @@
 
     const/4 v5, -0x1
 
-    goto/16 :goto_367
+    goto/16 :goto_18
 
-    :cond_48c
+    :cond_32
     move/from16 v2, p2
 
     move/from16 v25, v11
@@ -3580,32 +3580,32 @@
 
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_4b3
+    if-ne v0, v3, :cond_34
 
     const/4 v5, 0x0
 
     aget v8, v15, v5
 
-    if-ne v8, v3, :cond_4b3
+    if-ne v8, v3, :cond_34
 
     aget v5, v15, v17
 
-    if-ne v5, v3, :cond_4b3
+    if-ne v5, v3, :cond_34
 
     aget v5, v15, v16
 
-    if-eq v5, v3, :cond_4b1
+    if-eq v5, v3, :cond_33
 
-    goto :goto_4b3
+    goto :goto_24
 
-    :cond_4b1
+    :cond_33
     move v0, v4
 
-    goto :goto_4df
+    goto :goto_25
 
     .line 1284
-    :cond_4b3
-    :goto_4b3
+    :cond_34
+    :goto_24
     aget v3, v15, v16
 
     const/4 v5, 0x0
@@ -3660,27 +3660,27 @@
 
     move-result v0
 
-    :goto_4df
+    :goto_25
     move v3, v0
 
     move v0, v6
 
     move/from16 v23, v9
 
-    :goto_4e3
-    if-nez v26, :cond_4ea
+    :goto_26
+    if-nez v26, :cond_35
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    if-eq v13, v4, :cond_4ea
+    if-eq v13, v4, :cond_35
 
-    goto :goto_4eb
+    goto :goto_27
 
-    :cond_4ea
+    :cond_35
     move v0, v3
 
     .line 1323
-    :goto_4eb
+    :goto_27
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingTop()I
 
     move-result v3
@@ -3718,7 +3718,7 @@
     .line 1328
     invoke-virtual {v7, v1, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->setMeasuredDimension(II)V
 
-    if-eqz v27, :cond_514
+    if-eqz v27, :cond_36
 
     move/from16 v0, p1
 
@@ -3727,12 +3727,12 @@
     .line 1333
     invoke-direct {v7, v1, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->forceUniformHeight(II)V
 
-    :cond_514
+    :cond_36
     return-void
 .end method
 
 .method measureNullChild(I)I
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -3740,7 +3740,7 @@
 .end method
 
 .method measureVertical(II)V
-    .registers 36
+    .locals 33
 
     move-object/from16 v7, p0
 
@@ -3798,19 +3798,19 @@
 
     move/from16 v0, v17
 
-    :goto_2b
+    :goto_0
     const/16 v10, 0x8
 
     move/from16 v22, v4
 
-    if-ge v6, v11, :cond_19f
+    if-ge v6, v11, :cond_10
 
     .line 642
     invoke-virtual {v7, v6}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    if-nez v4, :cond_48
+    if-nez v4, :cond_0
 
     .line 645
     iget v4, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -3829,9 +3829,9 @@
 
     move/from16 v4, v22
 
-    goto/16 :goto_193
+    goto/16 :goto_a
 
-    :cond_48
+    :cond_0
     move/from16 v24, v1
 
     .line 649
@@ -3839,7 +3839,7 @@
 
     move-result v1
 
-    if-ne v1, v10, :cond_5f
+    if-ne v1, v10, :cond_1
 
     .line 650
     invoke-virtual {v7, v4, v6}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildrenSkipCount(Landroid/view/View;I)I
@@ -3856,15 +3856,15 @@
 
     move/from16 v24, v13
 
-    goto/16 :goto_193
+    goto/16 :goto_a
 
     .line 654
-    :cond_5f
+    :cond_1
     invoke-virtual {v7, v6}, Landroidx/appcompat/widget/LinearLayoutCompat;->hasDividerBeforeChildAt(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_2
 
     .line 655
     iget v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -3876,7 +3876,7 @@
     iput v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     .line 658
-    :cond_6c
+    :cond_2
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -3892,18 +3892,18 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    if-ne v13, v1, :cond_a8
+    if-ne v13, v1, :cond_3
 
     .line 662
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
-    if-nez v0, :cond_a8
+    if-nez v0, :cond_3
 
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v0, v0, v17
 
-    if-lez v0, :cond_a8
+    if-lez v0, :cond_3
 
     .line 666
     iget v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -3945,21 +3945,21 @@
 
     move/from16 v13, v22
 
-    goto/16 :goto_11a
+    goto/16 :goto_3
 
-    :cond_a8
+    :cond_3
     move/from16 v26, v2
 
     .line 672
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
-    if-nez v0, :cond_b9
+    if-nez v0, :cond_4
 
     iget v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v0, v0, v17
 
-    if-lez v0, :cond_b9
+    if-lez v0, :cond_4
 
     const/4 v0, -0x2
 
@@ -3968,29 +3968,29 @@
 
     const/4 v2, 0x0
 
-    goto :goto_bb
+    goto :goto_1
 
-    :cond_b9
+    :cond_4
     const/high16 v2, -0x80000000
 
-    :goto_bb
+    :goto_1
     const/16 v27, 0x0
 
     cmpl-float v0, v25, v17
 
-    if-nez v0, :cond_c6
+    if-nez v0, :cond_5
 
     .line 687
     iget v0, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     move/from16 v28, v0
 
-    goto :goto_c8
+    goto :goto_2
 
-    :cond_c6
+    :cond_5
     const/16 v28, 0x0
 
-    :goto_c8
+    :goto_2
     move-object/from16 v0, p0
 
     move/from16 v8, v24
@@ -4038,13 +4038,13 @@
 
     const/high16 v1, -0x80000000
 
-    if-eq v0, v1, :cond_f7
+    if-eq v0, v1, :cond_6
 
     .line 690
     iput v0, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     .line 693
-    :cond_f7
+    :cond_6
     invoke-virtual/range {v22 .. v22}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -4079,44 +4079,44 @@
 
     iput v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    if-eqz v15, :cond_119
+    if-eqz v15, :cond_7
 
     .line 699
     invoke-static {v0, v9}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    goto :goto_11a
+    goto :goto_3
 
-    :cond_119
+    :cond_7
     move v0, v9
 
-    :goto_11a
-    if-ltz v14, :cond_124
+    :goto_3
+    if-ltz v14, :cond_8
 
     add-int/lit8 v6, v11, 0x1
 
-    if-ne v14, v6, :cond_124
+    if-ne v14, v6, :cond_8
 
     .line 708
     iget v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     iput v1, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineChildTop:I
 
-    :cond_124
-    if-ge v11, v14, :cond_135
+    :cond_8
+    if-ge v11, v14, :cond_a
 
     .line 714
     iget v1, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v1, v1, v17
 
-    if-gtz v1, :cond_12d
+    if-gtz v1, :cond_9
 
-    goto :goto_135
+    goto :goto_4
 
     .line 715
-    :cond_12d
+    :cond_9
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "A child of LinearLayout with index less than mBaselineAlignedChildIndex has weight > 0, which won\'t work.  Either remove the weight, or don\'t set mBaselineAlignedChildIndex."
@@ -4125,30 +4125,30 @@
 
     throw v0
 
-    :cond_135
-    :goto_135
+    :cond_a
+    :goto_4
     const/high16 v1, 0x40000000    # 2.0f
 
-    if-eq v12, v1, :cond_143
+    if-eq v12, v1, :cond_b
 
     .line 722
     iget v1, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_143
+    if-ne v1, v2, :cond_b
 
     move/from16 v1, v16
 
     move/from16 v20, v1
 
-    goto :goto_144
+    goto :goto_5
 
-    :cond_143
+    :cond_b
     const/4 v1, 0x0
 
     .line 731
-    :goto_144
+    :goto_5
     iget v2, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
 
     iget v4, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
@@ -4179,56 +4179,56 @@
 
     move-result v6
 
-    if-eqz v19, :cond_166
+    if-eqz v19, :cond_c
 
     .line 737
     iget v8, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
     const/4 v9, -0x1
 
-    if-ne v8, v9, :cond_166
+    if-ne v8, v9, :cond_c
 
     move/from16 v19, v16
 
-    goto :goto_168
+    goto :goto_6
 
-    :cond_166
+    :cond_c
     const/16 v19, 0x0
 
     .line 738
-    :goto_168
+    :goto_6
     iget v8, v10, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->weight:F
 
     cmpl-float v8, v8, v17
 
-    if-lez v8, :cond_179
+    if-lez v8, :cond_e
 
-    if-eqz v1, :cond_171
+    if-eqz v1, :cond_d
 
-    goto :goto_172
+    goto :goto_7
 
-    :cond_171
+    :cond_d
     move v2, v4
 
     .line 743
-    :goto_172
+    :goto_7
     invoke-static {v13, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
     move/from16 v1, v31
 
-    goto :goto_184
+    goto :goto_9
 
-    :cond_179
-    if-eqz v1, :cond_17c
+    :cond_e
+    if-eqz v1, :cond_f
 
-    goto :goto_17d
+    goto :goto_8
 
-    :cond_17c
+    :cond_f
     move v2, v4
 
-    :goto_17d
+    :goto_8
     move/from16 v1, v31
 
     .line 746
@@ -4239,7 +4239,7 @@
     move v4, v13
 
     .line 750
-    :goto_184
+    :goto_9
     invoke-virtual {v7, v3, v11}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildrenSkipCount(Landroid/view/View;I)I
 
     move-result v2
@@ -4260,7 +4260,7 @@
 
     move/from16 v2, v32
 
-    :goto_193
+    :goto_a
     add-int/lit8 v6, v6, 0x1
 
     move/from16 v8, p1
@@ -4271,9 +4271,9 @@
 
     move/from16 v13, v24
 
-    goto/16 :goto_2b
+    goto/16 :goto_0
 
-    :cond_19f
+    :cond_10
     move v8, v1
 
     move v9, v3
@@ -4291,7 +4291,7 @@
     .line 753
     iget v2, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    if-lez v2, :cond_1bd
+    if-lez v2, :cond_11
 
     move/from16 v2, v23
 
@@ -4299,7 +4299,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1bf
+    if-eqz v3, :cond_12
 
     .line 754
     iget v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -4310,24 +4310,24 @@
 
     iput v3, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    goto :goto_1bf
+    goto :goto_b
 
-    :cond_1bd
+    :cond_11
     move/from16 v2, v23
 
-    :cond_1bf
-    :goto_1bf
+    :cond_12
+    :goto_b
     move/from16 v3, v24
 
-    if-eqz v15, :cond_20e
+    if-eqz v15, :cond_16
 
     const/high16 v4, -0x80000000
 
-    if-eq v3, v4, :cond_1c9
+    if-eq v3, v4, :cond_13
 
-    if-nez v3, :cond_20e
+    if-nez v3, :cond_16
 
-    :cond_1c9
+    :cond_13
     const/4 v4, 0x0
 
     .line 759
@@ -4335,15 +4335,15 @@
 
     const/4 v4, 0x0
 
-    :goto_1cd
-    if-ge v4, v2, :cond_20e
+    :goto_c
+    if-ge v4, v2, :cond_16
 
     .line 762
     invoke-virtual {v7, v4}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    if-nez v6, :cond_1df
+    if-nez v6, :cond_14
 
     .line 765
     iget v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
@@ -4356,15 +4356,15 @@
 
     iput v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    goto :goto_209
+    goto :goto_d
 
     .line 769
-    :cond_1df
+    :cond_14
     invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
 
     move-result v11
 
-    if-ne v11, v10, :cond_1eb
+    if-ne v11, v10, :cond_15
 
     .line 770
     invoke-virtual {v7, v6, v4}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildrenSkipCount(Landroid/view/View;I)I
@@ -4373,10 +4373,10 @@
 
     add-int/2addr v4, v6
 
-    goto :goto_209
+    goto :goto_d
 
     .line 775
-    :cond_1eb
+    :cond_15
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v11
@@ -4411,15 +4411,15 @@
 
     iput v6, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
-    :goto_209
+    :goto_d
     add-int/lit8 v4, v4, 0x1
 
     const/16 v10, 0x8
 
-    goto :goto_1cd
+    goto :goto_c
 
     .line 784
-    :cond_20e
+    :cond_16
     iget v4, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingTop()I
@@ -4465,39 +4465,39 @@
 
     sub-int/2addr v9, v11
 
-    if-nez v18, :cond_27d
+    if-nez v18, :cond_1b
 
-    if-eqz v9, :cond_23c
+    if-eqz v9, :cond_17
 
     cmpl-float v11, v0, v17
 
-    if-lez v11, :cond_23c
+    if-lez v11, :cond_17
 
-    goto :goto_27d
+    goto :goto_10
 
     .line 871
-    :cond_23c
+    :cond_17
     invoke-static {v1, v13}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    if-eqz v15, :cond_278
+    if-eqz v15, :cond_1a
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    if-eq v3, v1, :cond_278
+    if-eq v3, v1, :cond_1a
 
     const/4 v1, 0x0
 
-    :goto_247
-    if-ge v1, v2, :cond_278
+    :goto_e
+    if-ge v1, v2, :cond_1a
 
     .line 879
     invoke-virtual {v7, v1}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    if-eqz v3, :cond_275
+    if-eqz v3, :cond_19
 
     .line 881
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -4506,12 +4506,12 @@
 
     const/16 v11, 0x8
 
-    if-ne v9, v11, :cond_258
+    if-ne v9, v11, :cond_18
 
-    goto :goto_275
+    goto :goto_f
 
     .line 886
-    :cond_258
+    :cond_18
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v9
@@ -4523,7 +4523,7 @@
 
     cmpl-float v9, v9, v17
 
-    if-lez v9, :cond_275
+    if-lez v9, :cond_19
 
     .line 891
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
@@ -4544,31 +4544,31 @@
     .line 890
     invoke-virtual {v3, v9, v13}, Landroid/view/View;->measure(II)V
 
-    :cond_275
-    :goto_275
+    :cond_19
+    :goto_f
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_247
+    goto :goto_e
 
-    :cond_278
+    :cond_1a
     move/from16 v11, p1
 
     move v1, v8
 
-    goto/16 :goto_371
+    goto/16 :goto_1a
 
     .line 800
-    :cond_27d
-    :goto_27d
+    :cond_1b
+    :goto_10
     iget v10, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mWeightSum:F
 
     cmpl-float v11, v10, v17
 
-    if-lez v11, :cond_284
+    if-lez v11, :cond_1c
 
     move v0, v10
 
-    :cond_284
+    :cond_1c
     const/4 v10, 0x0
 
     .line 802
@@ -4582,8 +4582,8 @@
 
     move v8, v10
 
-    :goto_28b
-    if-ge v8, v2, :cond_360
+    :goto_11
+    if-ge v8, v2, :cond_27
 
     .line 805
     invoke-virtual {v7, v8}, Landroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildAt(I)Landroid/view/View;
@@ -4597,16 +4597,16 @@
 
     const/16 v15, 0x8
 
-    if-ne v14, v15, :cond_29f
+    if-ne v14, v15, :cond_1d
 
     move/from16 v21, v11
 
     move/from16 v11, p1
 
-    goto/16 :goto_359
+    goto/16 :goto_19
 
     .line 811
-    :cond_29f
+    :cond_1d
     invoke-virtual {v13}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v14
@@ -4618,7 +4618,7 @@
 
     cmpl-float v18, v10, v17
 
-    if-lez v18, :cond_301
+    if-lez v18, :cond_22
 
     int-to-float v15, v11
 
@@ -4667,24 +4667,24 @@
     .line 826
     iget v10, v14, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->height:I
 
-    if-nez v10, :cond_2e2
+    if-nez v10, :cond_20
 
     const/high16 v10, 0x40000000    # 2.0f
 
-    if-eq v3, v10, :cond_2d6
+    if-eq v3, v10, :cond_1e
 
-    goto :goto_2e4
+    goto :goto_13
 
-    :cond_2d6
-    if-lez v15, :cond_2d9
+    :cond_1e
+    if-lez v15, :cond_1f
 
-    goto :goto_2da
+    goto :goto_12
 
-    :cond_2d9
+    :cond_1f
     const/4 v15, 0x0
 
     .line 840
-    :goto_2da
+    :goto_12
     invoke-static {v15, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v15
@@ -4692,25 +4692,25 @@
     .line 839
     invoke-virtual {v13, v0, v15}, Landroid/view/View;->measure(II)V
 
-    goto :goto_2f4
+    goto :goto_14
 
-    :cond_2e2
+    :cond_20
     const/high16 v10, 0x40000000    # 2.0f
 
     .line 829
-    :goto_2e4
+    :goto_13
     invoke-virtual {v13}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v23
 
     add-int v15, v23, v15
 
-    if-gez v15, :cond_2ed
+    if-gez v15, :cond_21
 
     const/4 v15, 0x0
 
     .line 835
-    :cond_2ed
+    :cond_21
     invoke-static {v15, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v15
@@ -4719,7 +4719,7 @@
     invoke-virtual {v13, v0, v15}, Landroid/view/View;->measure(II)V
 
     .line 846
-    :goto_2f4
+    :goto_14
     invoke-virtual {v13}, Landroid/view/View;->getMeasuredState()I
 
     move-result v0
@@ -4733,9 +4733,9 @@
 
     move/from16 v0, v18
 
-    goto :goto_306
+    goto :goto_15
 
-    :cond_301
+    :cond_22
     move v10, v11
 
     move/from16 v11, p1
@@ -4743,7 +4743,7 @@
     move/from16 v21, v10
 
     .line 850
-    :goto_306
+    :goto_15
     iget v10, v14, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
 
     iget v15, v14, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
@@ -4766,7 +4766,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    if-eq v12, v0, :cond_324
+    if-eq v12, v0, :cond_23
 
     .line 854
     iget v0, v14, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
@@ -4775,50 +4775,50 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_327
+    if-ne v0, v1, :cond_24
 
     move/from16 v0, v16
 
-    goto :goto_328
+    goto :goto_16
 
-    :cond_324
+    :cond_23
     move/from16 v23, v1
 
     const/4 v1, -0x1
 
-    :cond_327
+    :cond_24
     const/4 v0, 0x0
 
-    :goto_328
-    if-eqz v0, :cond_32b
+    :goto_16
+    if-eqz v0, :cond_25
 
-    goto :goto_32c
+    goto :goto_17
 
-    :cond_32b
+    :cond_25
     move v10, v15
 
     .line 857
-    :goto_32c
+    :goto_17
     invoke-static {v9, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    if-eqz v19, :cond_339
+    if-eqz v19, :cond_26
 
     .line 860
     iget v9, v14, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->width:I
 
-    if-ne v9, v1, :cond_339
+    if-ne v9, v1, :cond_26
 
     move/from16 v9, v16
 
-    goto :goto_33a
+    goto :goto_18
 
-    :cond_339
+    :cond_26
     const/4 v9, 0x0
 
     .line 862
-    :goto_33a
+    :goto_18
     iget v10, v7, Landroidx/appcompat/widget/LinearLayoutCompat;->mTotalLength:I
 
     .line 863
@@ -4858,16 +4858,16 @@
 
     move/from16 v0, v18
 
-    :goto_359
+    :goto_19
     add-int/lit8 v8, v8, 0x1
 
     move/from16 v11, v21
 
     const/4 v10, 0x0
 
-    goto/16 :goto_28b
+    goto/16 :goto_11
 
-    :cond_360
+    :cond_27
     move/from16 v11, p1
 
     .line 868
@@ -4889,20 +4889,20 @@
 
     move v0, v9
 
-    :goto_371
-    if-nez v19, :cond_378
+    :goto_1a
+    if-nez v19, :cond_28
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    if-eq v12, v3, :cond_378
+    if-eq v12, v3, :cond_28
 
-    goto :goto_379
+    goto :goto_1b
 
-    :cond_378
+    :cond_28
     move v0, v5
 
     .line 904
-    :goto_379
+    :goto_1b
     invoke-virtual/range {p0 .. p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getPaddingLeft()I
 
     move-result v3
@@ -4931,48 +4931,48 @@
 
     invoke-virtual {v7, v0, v4}, Landroidx/appcompat/widget/LinearLayoutCompat;->setMeasuredDimension(II)V
 
-    if-eqz v20, :cond_397
+    if-eqz v20, :cond_29
 
     .line 913
     invoke-direct {v7, v2, v6}, Landroidx/appcompat/widget/LinearLayoutCompat;->forceUniformWidth(II)V
 
-    :cond_397
+    :cond_29
     return-void
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 2
 
     .line 303
     iget-object v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider:Landroid/graphics/drawable/Drawable;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 307
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_1
 
     .line 308
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->drawDividersVertical(Landroid/graphics/Canvas;)V
 
-    goto :goto_11
+    goto :goto_0
 
     .line 310
-    :cond_e
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/LinearLayoutCompat;->drawDividersHorizontal(Landroid/graphics/Canvas;)V
 
-    :goto_11
+    :goto_0
     return-void
 .end method
 
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 3
+    .locals 1
 
     .line 1786
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
@@ -4986,7 +4986,7 @@
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .registers 3
+    .locals 1
 
     .line 1792
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
@@ -5000,53 +5000,53 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .registers 7
+    .locals 1
 
     .line 1430
     iget p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
 
     const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 1431
     invoke-virtual {p0, p2, p3, p4, p5}, Landroidx/appcompat/widget/LinearLayoutCompat;->layoutVertical(IIII)V
 
-    goto :goto_c
+    goto :goto_0
 
     .line 1433
-    :cond_9
+    :cond_0
     invoke-virtual {p0, p2, p3, p4, p5}, Landroidx/appcompat/widget/LinearLayoutCompat;->layoutHorizontal(IIII)V
 
-    :goto_c
+    :goto_0
     return-void
 .end method
 
 .method protected onMeasure(II)V
-    .registers 5
+    .locals 2
 
     .line 574
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     .line 575
     invoke-virtual {p0, p1, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;->measureVertical(II)V
 
-    goto :goto_c
+    goto :goto_0
 
     .line 577
-    :cond_9
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/appcompat/widget/LinearLayoutCompat;->measureHorizontal(II)V
 
-    :goto_c
+    :goto_0
     return-void
 .end method
 
 .method public setBaselineAligned(Z)V
-    .registers 2
+    .locals 0
 
     .line 413
     iput-boolean p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAligned:Z
@@ -5055,16 +5055,16 @@
 .end method
 
 .method public setBaselineAlignedChildIndex(I)V
-    .registers 4
+    .locals 2
 
-    if-ltz p1, :cond_b
+    if-ltz p1, :cond_0
 
     .line 511
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->getChildCount()I
 
     move-result v0
 
-    if-ge p1, v0, :cond_b
+    if-ge p1, v0, :cond_0
 
     .line 515
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mBaselineAlignedChildIndex:I
@@ -5072,7 +5072,7 @@
     return-void
 
     .line 512
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5106,22 +5106,22 @@
 .end method
 
 .method public setDividerDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 4
+    .locals 2
 
     .line 251
     iget-object v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider:Landroid/graphics/drawable/Drawable;
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 254
-    :cond_5
+    :cond_0
     iput-object p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDivider:Landroid/graphics/drawable/Drawable;
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
     .line 256
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -5137,22 +5137,22 @@
 
     iput v1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerHeight:I
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 259
-    :cond_17
+    :cond_1
     iput v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerWidth:I
 
     .line 260
     iput v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerHeight:I
 
-    :goto_1b
-    if-nez p1, :cond_1e
+    :goto_0
+    if-nez p1, :cond_2
 
     const/4 v0, 0x1
 
     .line 262
-    :cond_1e
+    :cond_2
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/LinearLayoutCompat;->setWillNotDraw(Z)V
 
     .line 263
@@ -5162,7 +5162,7 @@
 .end method
 
 .method public setDividerPadding(I)V
-    .registers 2
+    .locals 0
 
     .line 276
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mDividerPadding:I
@@ -5171,43 +5171,43 @@
 .end method
 
 .method public setGravity(I)V
-    .registers 3
+    .locals 1
 
     .line 1707
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity:I
 
-    if-eq v0, p1, :cond_19
+    if-eq v0, p1, :cond_2
 
     const v0, 0x800007
 
     and-int/2addr v0, p1
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const v0, 0x800003
 
     or-int/2addr p1, v0
 
-    :cond_e
+    :cond_0
     and-int/lit8 v0, p1, 0x70
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     or-int/lit8 p1, p1, 0x30
 
     .line 1716
-    :cond_14
+    :cond_1
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mGravity:I
 
     .line 1717
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
 
-    :cond_19
+    :cond_2
     return-void
 .end method
 
 .method public setHorizontalGravity(I)V
-    .registers 4
+    .locals 2
 
     const v0, 0x800007
 
@@ -5218,7 +5218,7 @@
 
     and-int/2addr v0, v1
 
-    if-eq v0, p1, :cond_13
+    if-eq v0, p1, :cond_0
 
     const v0, -0x800008
 
@@ -5232,12 +5232,12 @@
     .line 1737
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public setMeasureWithLargestChildEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 440
     iput-boolean p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mUseLargestChild:Z
@@ -5246,12 +5246,12 @@
 .end method
 
 .method public setOrientation(I)V
-    .registers 3
+    .locals 1
 
     .line 1678
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     .line 1679
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mOrientation:I
@@ -5259,30 +5259,30 @@
     .line 1680
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public setShowDividers(I)V
-    .registers 3
+    .locals 1
 
     .line 207
     iget v0, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
 
-    if-eq p1, v0, :cond_7
+    if-eq p1, v0, :cond_0
 
     .line 208
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
 
     .line 210
-    :cond_7
+    :cond_0
     iput p1, p0, Landroidx/appcompat/widget/LinearLayoutCompat;->mShowDividers:I
 
     return-void
 .end method
 
 .method public setVerticalGravity(I)V
-    .registers 4
+    .locals 2
 
     and-int/lit8 p1, p1, 0x70
 
@@ -5291,7 +5291,7 @@
 
     and-int/lit8 v1, v0, 0x70
 
-    if-eq v1, p1, :cond_10
+    if-eq v1, p1, :cond_0
 
     and-int/lit8 v0, v0, -0x71
 
@@ -5303,12 +5303,12 @@
     .line 1745
     invoke-virtual {p0}, Landroidx/appcompat/widget/LinearLayoutCompat;->requestLayout()V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public setWeightSum(F)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -5323,7 +5323,7 @@
 .end method
 
 .method public shouldDelayChildPressedState()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

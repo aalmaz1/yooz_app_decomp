@@ -106,7 +106,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,7 +157,7 @@
 
 # virtual methods
 .method public onTransitionCancel(Landroid/transition/Transition;)V
-    .registers 3
+    .locals 1
 
     .line 70
     iget-object v0, p0, Landroidx/core/transition/TransitionKt$addListener$listener$1;->$onCancel:Lkotlin/jvm/functions/Function1;
@@ -168,7 +168,7 @@
 .end method
 
 .method public onTransitionEnd(Landroid/transition/Transition;)V
-    .registers 3
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/core/transition/TransitionKt$addListener$listener$1;->$onEnd:Lkotlin/jvm/functions/Function1;
@@ -179,7 +179,7 @@
 .end method
 
 .method public onTransitionPause(Landroid/transition/Transition;)V
-    .registers 3
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/core/transition/TransitionKt$addListener$listener$1;->$onPause:Lkotlin/jvm/functions/Function1;
@@ -190,7 +190,7 @@
 .end method
 
 .method public onTransitionResume(Landroid/transition/Transition;)V
-    .registers 3
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/core/transition/TransitionKt$addListener$listener$1;->$onResume:Lkotlin/jvm/functions/Function1;
@@ -201,7 +201,7 @@
 .end method
 
 .method public onTransitionStart(Landroid/transition/Transition;)V
-    .registers 3
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/core/transition/TransitionKt$addListener$listener$1;->$onStart:Lkotlin/jvm/functions/Function1;

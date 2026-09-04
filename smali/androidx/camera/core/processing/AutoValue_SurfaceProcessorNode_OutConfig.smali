@@ -21,12 +21,12 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/UUID;IILandroid/graphics/Rect;Landroid/util/Size;IZ)V
-    .registers 8
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;-><init>()V
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_2
 
     .line 39
     iput-object p1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->uuid:Ljava/util/UUID;
@@ -37,12 +37,12 @@
     .line 41
     iput p3, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->format:I
 
-    if-eqz p4, :cond_20
+    if-eqz p4, :cond_1
 
     .line 45
     iput-object p4, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->cropRect:Landroid/graphics/Rect;
 
-    if-eqz p5, :cond_18
+    if-eqz p5, :cond_0
 
     .line 49
     iput-object p5, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->size:Landroid/util/Size;
@@ -56,7 +56,7 @@
     return-void
 
     .line 47
-    :cond_18
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null size"
@@ -66,7 +66,7 @@
     throw p1
 
     .line 43
-    :cond_20
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null cropRect"
@@ -76,7 +76,7 @@
     throw p1
 
     .line 37
-    :cond_28
+    :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null uuid"
@@ -89,21 +89,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 112
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_2
 
     .line 113
     check-cast p1, Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;
@@ -119,7 +119,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->targets:I
 
@@ -128,7 +128,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_50
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->format:I
 
@@ -137,7 +137,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_50
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->cropRect:Landroid/graphics/Rect;
 
@@ -150,7 +150,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->size:Landroid/util/Size;
 
@@ -163,7 +163,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->rotationDegrees:I
 
@@ -172,7 +172,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_50
+    if-ne v1, v3, :cond_1
 
     iget-boolean v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->mirroring:Z
 
@@ -181,22 +181,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_50
+    if-ne v1, p1, :cond_1
 
-    goto :goto_51
+    goto :goto_0
 
-    :cond_50
+    :cond_1
     move v0, v2
 
-    :goto_51
+    :goto_0
     return v0
 
-    :cond_52
+    :cond_2
     return v2
 .end method
 
 .method public getCropRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->cropRect:Landroid/graphics/Rect;
@@ -205,7 +205,7 @@
 .end method
 
 .method public getFormat()I
-    .registers 2
+    .locals 1
 
     .line 69
     iget v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->format:I
@@ -214,7 +214,7 @@
 .end method
 
 .method public getMirroring()Z
-    .registers 2
+    .locals 1
 
     .line 91
     iget-boolean v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->mirroring:Z
@@ -223,7 +223,7 @@
 .end method
 
 .method public getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 86
     iget v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->rotationDegrees:I
@@ -232,7 +232,7 @@
 .end method
 
 .method public getSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->size:Landroid/util/Size;
@@ -241,7 +241,7 @@
 .end method
 
 .method public getTargets()I
-    .registers 2
+    .locals 1
 
     .line 63
     iget v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->targets:I
@@ -250,7 +250,7 @@
 .end method
 
 .method getUuid()Ljava/util/UUID;
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->uuid:Ljava/util/UUID;
@@ -259,7 +259,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 129
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->uuid:Ljava/util/UUID;
@@ -320,23 +320,23 @@
     .line 141
     iget-boolean v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;->mirroring:Z
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     const/16 v1, 0x4cf
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     const/16 v1, 0x4d5
 
-    :goto_30
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 96
     new-instance v0, Ljava/lang/StringBuilder;

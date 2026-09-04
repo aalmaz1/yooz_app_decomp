@@ -25,7 +25,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$Ije3417V0uZgdBrD9pbxQ2_AHiI(Landroidx/core/widget/ContentLoadingProgressBar;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/core/widget/ContentLoadingProgressBar;->hideOnUiThread()V
 
@@ -33,7 +33,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$tmknj5M20Tn8TaJxR587u-39ZDQ(Landroidx/core/widget/ContentLoadingProgressBar;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/core/widget/ContentLoadingProgressBar;->showOnUiThread()V
 
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -91,7 +91,7 @@
 .end method
 
 .method private hideOnUiThread()V
-    .registers 10
+    .locals 9
 
     const/4 v0, 0x1
 
@@ -121,21 +121,21 @@
 
     cmp-long v7, v1, v5
 
-    if-gez v7, :cond_2c
+    if-gez v7, :cond_1
 
     const-wide/16 v7, -0x1
 
     cmp-long v3, v3, v7
 
-    if-nez v3, :cond_1f
+    if-nez v3, :cond_0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 112
-    :cond_1f
+    :cond_0
     iget-boolean v3, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mPostedHide:Z
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_2
 
     .line 113
     iget-object v3, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mDelayedHide:Ljava/lang/Runnable;
@@ -147,22 +147,22 @@
     .line 114
     iput-boolean v0, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mPostedHide:Z
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_0
     const/16 v0, 0x8
 
     .line 107
     invoke-virtual {p0, v0}, Landroidx/core/widget/ContentLoadingProgressBar;->setVisibility(I)V
 
-    :cond_31
-    :goto_31
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private removeCallbacks()V
-    .registers 2
+    .locals 1
 
     .line 79
     iget-object v0, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mDelayedHide:Ljava/lang/Runnable;
@@ -178,7 +178,7 @@
 .end method
 
 .method private showOnUiThread()V
-    .registers 4
+    .locals 3
 
     const-wide/16 v0, -0x1
 
@@ -201,7 +201,7 @@
     .line 139
     iget-boolean v0, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mPostedShow:Z
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 140
     iget-object v0, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mDelayedShow:Ljava/lang/Runnable;
@@ -215,14 +215,14 @@
     .line 141
     iput-boolean v0, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mPostedShow:Z
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public hide()V
-    .registers 2
+    .locals 1
 
     .line 94
     new-instance v0, Landroidx/core/widget/ContentLoadingProgressBar$$ExternalSyntheticLambda1;
@@ -235,7 +235,7 @@
 .end method
 
 .method synthetic lambda$new$0$androidx-core-widget-ContentLoadingProgressBar()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -256,7 +256,7 @@
 .end method
 
 .method synthetic lambda$new$1$androidx-core-widget-ContentLoadingProgressBar()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -266,7 +266,7 @@
     .line 52
     iget-boolean v1, p0, Landroidx/core/widget/ContentLoadingProgressBar;->mDismissed:Z
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 53
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -278,12 +278,12 @@
     .line 54
     invoke-virtual {p0, v0}, Landroidx/core/widget/ContentLoadingProgressBar;->setVisibility(I)V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     .line 68
     invoke-super {p0}, Landroid/widget/ProgressBar;->onAttachedToWindow()V
@@ -295,7 +295,7 @@
 .end method
 
 .method public onDetachedFromWindow()V
-    .registers 1
+    .locals 0
 
     .line 74
     invoke-super {p0}, Landroid/widget/ProgressBar;->onDetachedFromWindow()V
@@ -307,7 +307,7 @@
 .end method
 
 .method public show()V
-    .registers 2
+    .locals 1
 
     .line 129
     new-instance v0, Landroidx/core/widget/ContentLoadingProgressBar$$ExternalSyntheticLambda0;

@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 54
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -93,7 +93,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 4
+    .locals 2
 
     .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -155,7 +155,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJ[B)V
-    .registers 8
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -181,7 +181,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -189,18 +189,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_3
 
     .line 140
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -211,12 +211,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_45
+    goto :goto_1
 
     .line 143
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/emsg/EventMessage;
 
     .line 144
@@ -226,7 +226,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_43
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->id:J
 
@@ -234,7 +234,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_43
+    if-nez v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
@@ -245,7 +245,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
@@ -256,7 +256,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->messageData:[B
 
@@ -267,44 +267,44 @@
 
     move-result p1
 
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_2
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_43
+    :cond_2
     move v0, v1
 
-    :goto_44
+    :goto_0
     return v0
 
-    :cond_45
-    :goto_45
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getWrappedMetadataBytes()[B
-    .registers 2
+    .locals 1
 
     .line 118
     invoke-virtual {p0}, Landroidx/media3/extractor/metadata/emsg/EventMessage;->getWrappedMetadataFormat()Landroidx/media3/common/Format;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->messageData:[B
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public getWrappedMetadataFormat()Landroidx/media3/common/Format;
-    .registers 4
+    .locals 3
 
     .line 104
     iget-object v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
@@ -317,115 +317,115 @@
 
     const/4 v2, -0x1
 
-    sparse-switch v1, :sswitch_data_3a
+    sparse-switch v1, :sswitch_data_0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :sswitch_e
+    :sswitch_0
     const-string v1, "https://developer.apple.com/streaming/emsg-id3"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v2, 0x2
 
-    goto :goto_2f
+    goto :goto_0
 
-    :sswitch_19
+    :sswitch_1
     const-string v1, "https://aomedia.org/emsg/ID3"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 v2, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :sswitch_24
+    :sswitch_2
     const-string/jumbo v1, "urn:scte:scte35:2014:bin"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2e
+    :cond_2
     const/4 v2, 0x0
 
-    :goto_2f
-    packed-switch v2, :pswitch_data_48
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 107
-    :pswitch_34
+    :pswitch_0
     sget-object v0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->ID3_FORMAT:Landroidx/media3/common/Format;
 
     return-object v0
 
     .line 109
-    :pswitch_37
+    :pswitch_1
     sget-object v0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->SCTE35_FORMAT:Landroidx/media3/common/Format;
 
     return-object v0
 
-    :sswitch_data_3a
+    :sswitch_data_0
     .sparse-switch
-        -0x578730ab -> :sswitch_24
-        -0x2f712a89 -> :sswitch_19
-        0x4db418c9 -> :sswitch_e
+        -0x578730ab -> :sswitch_2
+        -0x2f712a89 -> :sswitch_1
+        0x4db418c9 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_37
-        :pswitch_34
-        :pswitch_34
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 123
     iget v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->hashCode:I
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_2
 
     .line 125
     iget-object v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v0, v1
 
-    :goto_f
+    :goto_0
     const/16 v2, 0x20f
 
     add-int/2addr v2, v0
@@ -435,13 +435,13 @@
     .line 126
     iget-object v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :cond_1c
+    :cond_1
     add-int/2addr v2, v1
 
     mul-int/lit8 v2, v2, 0x1f
@@ -487,14 +487,14 @@
     iput v2, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->hashCode:I
 
     .line 132
-    :cond_3c
+    :cond_2
     iget v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->hashCode:I
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 153
     new-instance v0, Ljava/lang/StringBuilder;
@@ -553,7 +553,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 172
     iget-object p2, p0, Landroidx/media3/extractor/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;

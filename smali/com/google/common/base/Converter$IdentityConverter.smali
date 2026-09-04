@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 574
     new-instance v0, Lcom/google/common/base/Converter$IdentityConverter;
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 573
     invoke-direct {p0}, Lcom/google/common/base/Converter;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method private readResolve()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 607
     sget-object v0, Lcom/google/common/base/Converter$IdentityConverter;->INSTANCE:Lcom/google/common/base/Converter;
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method doAndThen(Lcom/google/common/base/Converter;)Lcom/google/common/base/Converter;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -111,7 +111,7 @@
 .end method
 
 .method protected doBackward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -131,7 +131,7 @@
 .end method
 
 .method protected doForward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -151,7 +151,7 @@
 .end method
 
 .method public reverse()Lcom/google/common/base/Converter$IdentityConverter;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -164,7 +164,7 @@
 .end method
 
 .method public bridge synthetic reverse()Lcom/google/common/base/Converter;
-    .registers 2
+    .locals 1
 
     .line 573
     invoke-virtual {p0}, Lcom/google/common/base/Converter$IdentityConverter;->reverse()Lcom/google/common/base/Converter$IdentityConverter;
@@ -175,7 +175,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "Converter.identity()"
 

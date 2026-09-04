@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 41
     new-instance v0, Ljava/lang/ThreadLocal;
@@ -109,7 +109,7 @@
     new-array v1, v1, [I
 
     .line 49
-    fill-array-data v1, :array_50
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/appcompat/widget/ThemeUtils;->NOT_PRESSED_OR_FOCUSED_STATE_SET:[I
 
@@ -125,7 +125,7 @@
 
     return-void
 
-    :array_50
+    :array_0
     .array-data 4
         -0x10100a7
         -0x101009c
@@ -133,7 +133,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -142,7 +142,7 @@
 .end method
 
 .method public static checkAppCompatTheme(Landroid/view/View;Landroid/content/Context;)V
-    .registers 5
+    .locals 3
 
     const-string v0, "View "
 
@@ -154,14 +154,14 @@
     move-result-object p1
 
     .line 168
-    :try_start_8
+    :try_start_0
     sget v1, Landroidx/appcompat/R$styleable;->AppCompatTheme_windowActionBar:I
 
     invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_0
 
     const-string v1, "ThemeUtils"
 
@@ -189,16 +189,16 @@
     move-result-object p0
 
     invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2c
-    .catchall {:try_start_8 .. :try_end_2c} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 174
-    :cond_2c
+    :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 
-    :catchall_30
+    :catchall_0
     move-exception p0
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
@@ -208,7 +208,7 @@
 .end method
 
 .method public static createDisabledStateList(II)Landroid/content/res/ColorStateList;
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x2
 
@@ -243,21 +243,21 @@
 .end method
 
 .method public static getDisabledThemeAttrColor(Landroid/content/Context;I)I
-    .registers 6
+    .locals 4
 
     .line 126
     invoke-static {p0, p1}, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 127
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 129
     sget-object p0, Landroidx/appcompat/widget/ThemeUtils;->DISABLED_STATE_SET:[I
@@ -273,7 +273,7 @@
     return p0
 
     .line 133
-    :cond_17
+    :cond_0
     invoke-static {}, Landroidx/appcompat/widget/ThemeUtils;->getTypedValue()Landroid/util/TypedValue;
 
     move-result-object v0
@@ -303,7 +303,7 @@
 .end method
 
 .method public static getThemeAttrColor(Landroid/content/Context;I)I
-    .registers 4
+    .locals 2
 
     .line 91
     sget-object v0, Landroidx/appcompat/widget/ThemeUtils;->TEMP_ARRAY:[I
@@ -320,19 +320,19 @@
     move-result-object p0
 
     .line 94
-    :try_start_a
+    :try_start_0
     invoke-virtual {p0, v1, v1}, Landroidx/appcompat/widget/TintTypedArray;->getColor(II)I
 
     move-result p1
-    :try_end_e
-    .catchall {:try_start_a .. :try_end_e} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 96
     invoke-virtual {p0}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return p1
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
@@ -342,7 +342,7 @@
 .end method
 
 .method static getThemeAttrColor(Landroid/content/Context;IF)I
-    .registers 3
+    .locals 0
 
     .line 152
     invoke-static {p0, p1}, Landroidx/appcompat/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context;I)I
@@ -371,7 +371,7 @@
 .end method
 
 .method public static getThemeAttrColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .registers 4
+    .locals 2
 
     .line 109
     sget-object v0, Landroidx/appcompat/widget/ThemeUtils;->TEMP_ARRAY:[I
@@ -388,19 +388,19 @@
     move-result-object p0
 
     .line 112
-    :try_start_a
+    :try_start_0
     invoke-virtual {p0, v1}, Landroidx/appcompat/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object p1
-    :try_end_e
-    .catchall {:try_start_a .. :try_end_e} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 114
     invoke-virtual {p0}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
 
     return-object p1
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/TintTypedArray;->recycle()V
@@ -410,7 +410,7 @@
 .end method
 
 .method private static getTypedValue()Landroid/util/TypedValue;
-    .registers 2
+    .locals 2
 
     .line 143
     sget-object v0, Landroidx/appcompat/widget/ThemeUtils;->TL_TYPED_VALUE:Ljava/lang/ThreadLocal;
@@ -421,7 +421,7 @@
 
     check-cast v1, Landroid/util/TypedValue;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 145
     new-instance v1, Landroid/util/TypedValue;
@@ -431,6 +431,6 @@
     .line 146
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    :cond_12
+    :cond_0
     return-object v1
 .end method

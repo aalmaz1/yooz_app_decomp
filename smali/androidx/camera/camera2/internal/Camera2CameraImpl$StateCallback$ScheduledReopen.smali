@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
 
     .line 1906
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$ScheduledReopen;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method cancel()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -59,12 +59,12 @@
 .end method
 
 .method synthetic lambda$run$0$androidx-camera-camera2-internal-Camera2CameraImpl$StateCallback$ScheduledReopen()V
-    .registers 4
+    .locals 3
 
     .line 1919
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$ScheduledReopen;->mCancelled:Z
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_2
 
     .line 1920
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$ScheduledReopen;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
@@ -77,16 +77,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_12
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 1921
@@ -96,7 +96,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 1923
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$ScheduledReopen;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
@@ -105,23 +105,23 @@
 
     invoke-virtual {v0, v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->tryForceOpenCameraDevice(Z)V
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 1925
-    :cond_25
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$ScheduledReopen;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
 
     iget-object v0, v0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
     invoke-virtual {v0, v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->tryOpenCameraDevice(Z)V
 
-    :cond_2c
-    :goto_2c
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 1916
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$ScheduledReopen;->mExecutor:Ljava/util/concurrent/Executor;

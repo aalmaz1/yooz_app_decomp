@@ -30,14 +30,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x3
 
     new-array v0, v0, [B
 
     .line 291
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->START_CODE:[B
 
@@ -45,7 +45,7 @@
 
     nop
 
-    :array_a
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 299
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,16 +70,16 @@
 
 # virtual methods
 .method public onData([BII)V
-    .registers 8
+    .locals 4
 
     .line 344
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     sub-int/2addr p3, p2
 
     .line 348
@@ -91,7 +91,7 @@
 
     add-int v3, v2, p3
 
-    if-ge v1, v3, :cond_18
+    if-ge v1, v3, :cond_1
 
     add-int/2addr v2, p3
 
@@ -105,7 +105,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->data:[B
 
     .line 351
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->data:[B
 
     iget v1, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->length:I
@@ -123,7 +123,7 @@
 .end method
 
 .method public onStartCode(II)Z
-    .registers 6
+    .locals 3
 
     .line 321
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
@@ -132,7 +132,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 322
     iget v0, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->length:I
@@ -144,34 +144,34 @@
     .line 323
     iget p2, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
 
-    if-nez p2, :cond_16
+    if-nez p2, :cond_0
 
     const/16 p2, 0xb5
 
-    if-ne p1, p2, :cond_16
+    if-ne p1, p2, :cond_0
 
     .line 324
     iput v0, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 326
-    :cond_16
+    :cond_0
     iput-boolean v2, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
     return v1
 
-    :cond_19
+    :cond_1
     const/16 p2, 0xb3
 
-    if-ne p1, p2, :cond_1f
+    if-ne p1, p2, :cond_2
 
     .line 330
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
     .line 332
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_0
     sget-object p1, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->START_CODE:[B
 
     array-length p2, p1
@@ -182,7 +182,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 36
     sget-object v0, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
@@ -40,7 +40,7 @@
 .end method
 
 .method constructor <init>(Ljava/io/InputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -56,7 +56,7 @@
 .end method
 
 .method constructor <init>(Ljava/io/InputStream;Ljava/nio/ByteOrder;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -100,7 +100,7 @@
 .end method
 
 .method constructor <init>([B)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -138,7 +138,7 @@
 .end method
 
 .method public getLength()I
-    .registers 2
+    .locals 1
 
     .line 289
     iget v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
@@ -147,7 +147,7 @@
 .end method
 
 .method public mark(I)V
-    .registers 4
+    .locals 2
 
     .line 283
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -155,7 +155,7 @@
     monitor-enter v0
 
     .line 284
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
 
     invoke-virtual {v1, p1}, Ljava/io/DataInputStream;->mark(I)V
@@ -165,18 +165,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public peek()I
-    .registers 2
+    .locals 1
 
     .line 83
     iget v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mPosition:I
@@ -185,7 +185,7 @@
 .end method
 
 .method public read()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -210,7 +210,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -235,7 +235,7 @@
 .end method
 
 .method public readBoolean()Z
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -260,7 +260,7 @@
 .end method
 
 .method public readByte()B
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -277,7 +277,7 @@
     .line 158
     iget v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v0, v1, :cond_1a
+    if-gt v0, v1, :cond_1
 
     .line 161
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -286,14 +286,14 @@
 
     move-result v0
 
-    if-ltz v0, :cond_14
+    if-ltz v0, :cond_0
 
     int-to-byte v0, v0
 
     return v0
 
     .line 163
-    :cond_14
+    :cond_0
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -301,7 +301,7 @@
     throw v0
 
     .line 159
-    :cond_1a
+    :cond_1
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -310,7 +310,7 @@
 .end method
 
 .method public readChar()C
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -335,7 +335,7 @@
 .end method
 
 .method public readDouble()D
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -355,7 +355,7 @@
 .end method
 
 .method public readFloat()F
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -375,7 +375,7 @@
 .end method
 
 .method public readFully([B)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -394,7 +394,7 @@
     .line 147
     iget v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v0, v1, :cond_1e
+    if-gt v0, v1, :cond_1
 
     .line 150
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -409,12 +409,12 @@
 
     array-length p1, p1
 
-    if-ne v0, p1, :cond_16
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 151
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     const-string v0, "Couldn\'t read up to the length of buffer"
@@ -424,7 +424,7 @@
     throw p1
 
     .line 148
-    :cond_1e
+    :cond_1
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -433,7 +433,7 @@
 .end method
 
 .method public readFully([BII)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -450,7 +450,7 @@
     .line 136
     iget v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v0, v1, :cond_1a
+    if-gt v0, v1, :cond_1
 
     .line 139
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -459,12 +459,12 @@
 
     move-result p1
 
-    if-ne p1, p3, :cond_12
+    if-ne p1, p3, :cond_0
 
     return-void
 
     .line 140
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "Couldn\'t read up to the length of buffer"
@@ -474,7 +474,7 @@
     throw p1
 
     .line 137
-    :cond_1a
+    :cond_1
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -483,7 +483,7 @@
 .end method
 
 .method public readInt()I
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -500,7 +500,7 @@
     .line 190
     iget v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v0, v1, :cond_63
+    if-gt v0, v1, :cond_3
 
     .line 193
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -536,14 +536,14 @@
 
     or-int/2addr v4, v3
 
-    if-ltz v4, :cond_5d
+    if-ltz v4, :cond_2
 
     .line 200
     iget-object v4, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mByteOrder:Ljava/nio/ByteOrder;
 
     sget-object v5, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v4, v5, :cond_38
+    if-ne v4, v5, :cond_0
 
     shl-int/lit8 v3, v3, 0x18
 
@@ -560,10 +560,10 @@
     return v3
 
     .line 202
-    :cond_38
+    :cond_0
     sget-object v5, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v4, v5, :cond_46
+    if-ne v4, v5, :cond_1
 
     shl-int/lit8 v0, v0, 0x18
 
@@ -580,7 +580,7 @@
     return v0
 
     .line 205
-    :cond_46
+    :cond_1
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -604,7 +604,7 @@
     throw v0
 
     .line 198
-    :cond_5d
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -612,7 +612,7 @@
     throw v0
 
     .line 191
-    :cond_63
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -621,7 +621,7 @@
 .end method
 
 .method public readLine()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 112
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -634,7 +634,7 @@
 .end method
 
 .method public readLong()J
-    .registers 20
+    .locals 19
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -655,7 +655,7 @@
     .line 245
     iget v3, v0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v1, v3, :cond_b7
+    if-gt v1, v3, :cond_3
 
     .line 248
     iget-object v1, v0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -727,7 +727,7 @@
 
     or-int/2addr v10, v9
 
-    if-ltz v10, :cond_b1
+    if-ltz v10, :cond_2
 
     .line 259
     iget-object v10, v0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mByteOrder:Ljava/nio/ByteOrder;
@@ -746,7 +746,7 @@
 
     const/16 v17, 0x38
 
-    if-ne v10, v11, :cond_78
+    if-ne v10, v11, :cond_0
 
     int-to-long v9, v9
 
@@ -800,13 +800,13 @@
 
     return-wide v9
 
-    :cond_78
+    :cond_0
     move v2, v3
 
     .line 263
     sget-object v3, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v10, v3, :cond_9a
+    if-ne v10, v3, :cond_1
 
     int-to-long v11, v1
 
@@ -859,7 +859,7 @@
     return-wide v11
 
     .line 268
-    :cond_9a
+    :cond_1
     new-instance v1, Ljava/io/IOException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -883,7 +883,7 @@
     throw v1
 
     .line 257
-    :cond_b1
+    :cond_2
     new-instance v1, Ljava/io/EOFException;
 
     invoke-direct {v1}, Ljava/io/EOFException;-><init>()V
@@ -891,7 +891,7 @@
     throw v1
 
     .line 246
-    :cond_b7
+    :cond_3
     new-instance v1, Ljava/io/EOFException;
 
     invoke-direct {v1}, Ljava/io/EOFException;-><init>()V
@@ -900,7 +900,7 @@
 .end method
 
 .method public readShort()S
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -917,7 +917,7 @@
     .line 171
     iget v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v0, v1, :cond_4b
+    if-gt v0, v1, :cond_3
 
     .line 174
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -935,14 +935,14 @@
 
     or-int v2, v0, v1
 
-    if-ltz v2, :cond_45
+    if-ltz v2, :cond_2
 
     .line 179
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mByteOrder:Ljava/nio/ByteOrder;
 
     sget-object v3, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v2, v3, :cond_25
+    if-ne v2, v3, :cond_0
 
     shl-int/lit8 v1, v1, 0x8
 
@@ -953,10 +953,10 @@
     return v0
 
     .line 181
-    :cond_25
+    :cond_0
     sget-object v3, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v2, v3, :cond_2e
+    if-ne v2, v3, :cond_1
 
     shl-int/lit8 v0, v0, 0x8
 
@@ -967,7 +967,7 @@
     return v0
 
     .line 184
-    :cond_2e
+    :cond_1
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -991,7 +991,7 @@
     throw v0
 
     .line 177
-    :cond_45
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -999,7 +999,7 @@
     throw v0
 
     .line 172
-    :cond_4b
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -1008,7 +1008,7 @@
 .end method
 
 .method public readUTF()Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1033,7 +1033,7 @@
 .end method
 
 .method public readUnsignedByte()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1058,7 +1058,7 @@
 .end method
 
 .method public readUnsignedInt()J
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1080,7 +1080,7 @@
 .end method
 
 .method public readUnsignedShort()I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1097,7 +1097,7 @@
     .line 222
     iget v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mLength:I
 
-    if-gt v0, v1, :cond_49
+    if-gt v0, v1, :cond_3
 
     .line 225
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -1115,14 +1115,14 @@
 
     or-int v2, v0, v1
 
-    if-ltz v2, :cond_43
+    if-ltz v2, :cond_2
 
     .line 230
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mByteOrder:Ljava/nio/ByteOrder;
 
     sget-object v3, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v2, v3, :cond_24
+    if-ne v2, v3, :cond_0
 
     shl-int/lit8 v1, v1, 0x8
 
@@ -1131,10 +1131,10 @@
     return v1
 
     .line 232
-    :cond_24
+    :cond_0
     sget-object v3, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v2, v3, :cond_2c
+    if-ne v2, v3, :cond_1
 
     shl-int/lit8 v0, v0, 0x8
 
@@ -1143,7 +1143,7 @@
     return v0
 
     .line 235
-    :cond_2c
+    :cond_1
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1167,7 +1167,7 @@
     throw v0
 
     .line 228
-    :cond_43
+    :cond_2
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -1175,7 +1175,7 @@
     throw v0
 
     .line 223
-    :cond_49
+    :cond_3
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -1184,7 +1184,7 @@
 .end method
 
 .method public seek(J)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1198,7 +1198,7 @@
 
     cmp-long v1, v1, p1
 
-    if-lez v1, :cond_17
+    if-lez v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -1217,14 +1217,14 @@
 
     invoke-virtual {v0, v1}, Ljava/io/DataInputStream;->mark(I)V
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     int-to-long v0, v0
 
     sub-long/2addr p1, v0
 
-    :goto_19
+    :goto_0
     long-to-int p1, p1
 
     .line 77
@@ -1232,12 +1232,12 @@
 
     move-result p2
 
-    if-ne p2, p1, :cond_21
+    if-ne p2, p1, :cond_1
 
     return-void
 
     .line 78
-    :cond_21
+    :cond_1
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "Couldn\'t seek up to the byteCount"
@@ -1248,7 +1248,7 @@
 .end method
 
 .method public setByteOrder(Ljava/nio/ByteOrder;)V
-    .registers 2
+    .locals 0
 
     .line 64
     iput-object p1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mByteOrder:Ljava/nio/ByteOrder;
@@ -1257,7 +1257,7 @@
 .end method
 
 .method public skipBytes(I)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1277,8 +1277,8 @@
 
     const/4 v0, 0x0
 
-    :goto_a
-    if-ge v0, p1, :cond_16
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     .line 213
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -1291,10 +1291,10 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 215
-    :cond_16
+    :cond_0
     iget p1, p0, Landroidx/camera/core/impl/utils/ByteOrderedDataInputStream;->mPosition:I
 
     add-int/2addr p1, v0

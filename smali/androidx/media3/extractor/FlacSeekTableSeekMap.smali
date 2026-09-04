@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/FlacStreamMetadata;J)V
-    .registers 4
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method private getSeekPoint(JJ)Landroidx/media3/extractor/SeekPoint;
-    .registers 7
+    .locals 2
 
     const-wide/32 v0, 0xf4240
 
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 51
     iget-object v0, p0, Landroidx/media3/extractor/FlacSeekTableSeekMap;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
@@ -73,7 +73,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 12
+    .locals 9
 
     .line 56
     iget-object v0, p0, Landroidx/media3/extractor/FlacSeekTableSeekMap;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
@@ -116,27 +116,27 @@
 
     const/4 v6, -0x1
 
-    if-ne v2, v6, :cond_26
+    if-ne v2, v6, :cond_0
 
     move-wide v7, v3
 
-    goto :goto_28
+    goto :goto_0
 
     .line 68
-    :cond_26
+    :cond_0
     aget-wide v7, v0, v2
 
-    :goto_28
-    if-ne v2, v6, :cond_2b
+    :goto_0
+    if-ne v2, v6, :cond_1
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 69
-    :cond_2b
+    :cond_1
     aget-wide v3, v1, v2
 
     .line 70
-    :goto_2d
+    :goto_1
     invoke-direct {p0, v7, v8, v3, v4}, Landroidx/media3/extractor/FlacSeekTableSeekMap;->getSeekPoint(JJ)Landroidx/media3/extractor/SeekPoint;
 
     move-result-object v3
@@ -146,17 +146,17 @@
 
     cmp-long p1, v6, p1
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_3
 
     array-length p1, v0
 
     sub-int/2addr p1, v5
 
-    if-ne v2, p1, :cond_3c
+    if-ne v2, p1, :cond_2
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_3c
+    :cond_2
     add-int/2addr v2, v5
 
     .line 74
@@ -177,8 +177,8 @@
     return-object p2
 
     .line 72
-    :cond_4b
-    :goto_4b
+    :cond_3
+    :goto_2
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v3}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -187,7 +187,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

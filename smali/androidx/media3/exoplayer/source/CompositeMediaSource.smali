@@ -40,7 +40,7 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 46
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method protected final disableChildSource(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -91,7 +91,7 @@
 .end method
 
 .method protected disableInternal()V
-    .registers 4
+    .locals 3
 
     .line 76
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeMediaSource;->childSources:Ljava/util/HashMap;
@@ -104,12 +104,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -124,14 +124,14 @@
 
     invoke-interface {v2, v1}, Landroidx/media3/exoplayer/source/MediaSource;->disable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method protected final enableChildSource(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -164,7 +164,7 @@
 .end method
 
 .method protected enableInternal()V
-    .registers 4
+    .locals 3
 
     .line 68
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeMediaSource;->childSources:Ljava/util/HashMap;
@@ -177,12 +177,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -197,14 +197,14 @@
 
     invoke-interface {v2, v1}, Landroidx/media3/exoplayer/source/MediaSource;->enable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -218,7 +218,7 @@
 .end method
 
 .method protected getMediaTimeForChildMediaTime(Ljava/lang/Object;JLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)J
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;J",
@@ -231,7 +231,7 @@
 .end method
 
 .method protected getWindowIndexForChildWindowIndex(Ljava/lang/Object;I)I
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)I"
@@ -242,7 +242,7 @@
 .end method
 
 .method synthetic lambda$prepareChildSource$0$androidx-media3-exoplayer-source-CompositeMediaSource(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 0
 
     .line 117
     invoke-virtual {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->onChildSourceInfoRefreshed(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
@@ -251,7 +251,7 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -269,12 +269,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -287,9 +287,9 @@
 
     invoke-interface {v1}, Landroidx/media3/exoplayer/source/MediaSource;->maybeThrowSourceInfoRefreshError()V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
@@ -305,7 +305,7 @@
 .end method
 
 .method protected final prepareChildSource(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -380,17 +380,17 @@
 
     move-result p1
 
-    if-nez p1, :cond_47
+    if-nez p1, :cond_0
 
     .line 124
     invoke-interface {p2, v0}, Landroidx/media3/exoplayer/source/MediaSource;->disable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
 
-    :cond_47
+    :cond_0
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 2
+    .locals 0
 
     .line 53
     iput-object p1, p0, Landroidx/media3/exoplayer/source/CompositeMediaSource;->mediaTransferListener:Landroidx/media3/datasource/TransferListener;
@@ -406,7 +406,7 @@
 .end method
 
 .method protected final releaseChildSource(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -453,7 +453,7 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 5
+    .locals 4
 
     .line 84
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeMediaSource;->childSources:Ljava/util/HashMap;
@@ -466,12 +466,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -500,10 +500,10 @@
 
     invoke-interface {v2, v1}, Landroidx/media3/exoplayer/source/MediaSource;->removeDrmEventListener(Landroidx/media3/exoplayer/drm/DrmSessionEventListener;)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 89
-    :cond_2c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeMediaSource;->childSources:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V

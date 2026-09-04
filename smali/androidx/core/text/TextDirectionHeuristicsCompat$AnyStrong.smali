@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 235
     new-instance v0, Landroidx/core/text/TextDirectionHeuristicsCompat$AnyStrong;
@@ -42,7 +42,7 @@
 .end method
 
 .method private constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 231
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public checkRtl(Ljava/lang/CharSequence;II)I
-    .registers 8
+    .locals 4
 
     add-int/2addr p3, p2
 
@@ -64,8 +64,8 @@
 
     move v1, v0
 
-    :goto_3
-    if-ge p2, p3, :cond_25
+    :goto_0
+    if-ge p2, p3, :cond_3
 
     .line 208
     invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -82,45 +82,45 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1
 
-    if-eq v2, v3, :cond_17
+    if-eq v2, v3, :cond_0
 
-    goto :goto_22
+    goto :goto_1
 
     .line 216
-    :cond_17
+    :cond_0
     iget-boolean v1, p0, Landroidx/core/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
 
-    if-nez v1, :cond_21
+    if-nez v1, :cond_2
 
     return v3
 
     .line 210
-    :cond_1c
+    :cond_1
     iget-boolean v1, p0, Landroidx/core/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     return v0
 
-    :cond_21
+    :cond_2
     move v1, v3
 
-    :goto_22
+    :goto_1
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_25
-    if-eqz v1, :cond_2a
+    :cond_3
+    if-eqz v1, :cond_4
 
     .line 226
     iget-boolean p1, p0, Landroidx/core/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
 
     return p1
 
-    :cond_2a
+    :cond_4
     const/4 p1, 0x2
 
     return p1

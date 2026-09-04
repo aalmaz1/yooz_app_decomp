@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;)V
-    .registers 2
+    .locals 0
 
     .line 201
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ForwardingTimeline;-><init>(Landroidx/media3/common/Timeline;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public getNextWindowIndex(IIZ)I
-    .registers 5
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -39,19 +39,19 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_d
+    if-ne p1, p2, :cond_0
 
     .line 210
     invoke-virtual {p0, p3}, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;->getFirstWindowIndex(Z)I
 
     move-result p1
 
-    :cond_d
+    :cond_0
     return p1
 .end method
 
 .method public getPreviousWindowIndex(IIZ)I
-    .registers 5
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -63,13 +63,13 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_d
+    if-ne p1, p2, :cond_0
 
     .line 220
     invoke-virtual {p0, p3}, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;->getLastWindowIndex(Z)I
 
     move-result p1
 
-    :cond_d
+    :cond_0
     return p1
 .end method

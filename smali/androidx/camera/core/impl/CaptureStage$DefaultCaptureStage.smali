@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public getCaptureConfig()Landroidx/camera/core/impl/CaptureConfig;
-    .registers 2
+    .locals 1
 
     .line 55
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureStage$DefaultCaptureStage;->mCaptureConfig:Landroidx/camera/core/impl/CaptureConfig;
@@ -55,7 +55,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

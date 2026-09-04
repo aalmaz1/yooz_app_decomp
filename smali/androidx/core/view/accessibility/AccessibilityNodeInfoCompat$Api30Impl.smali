@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5182
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static createRangeInfo(IFFF)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 5199
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static getStateDescription(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 5194
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getStateDescription()Ljava/lang/CharSequence;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static setStateDescription(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 5189
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setStateDescription(Ljava/lang/CharSequence;)V

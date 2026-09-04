@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/lifecycle/viewmodel/CreationExtras;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "initialExtras"
 
@@ -72,18 +72,18 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/lifecycle/viewmodel/CreationExtras;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_0
 
     .line 52
     sget-object p1, Landroidx/lifecycle/viewmodel/CreationExtras$Empty;->INSTANCE:Landroidx/lifecycle/viewmodel/CreationExtras$Empty;
 
     check-cast p1, Landroidx/lifecycle/viewmodel/CreationExtras;
 
-    :cond_8
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/lifecycle/viewmodel/MutableCreationExtras;-><init>(Landroidx/lifecycle/viewmodel/CreationExtras;)V
 
     return-void
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public get(Landroidx/lifecycle/viewmodel/CreationExtras$Key;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -120,7 +120,7 @@
 .end method
 
 .method public final set(Landroidx/lifecycle/viewmodel/CreationExtras$Key;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

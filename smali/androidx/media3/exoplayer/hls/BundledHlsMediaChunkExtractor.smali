@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 44
     new-instance v0, Landroidx/media3/extractor/PositionHolder;
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/extractor/Extractor;Landroidx/media3/common/Format;Landroidx/media3/common/util/TimestampAdjuster;)V
-    .registers 10
+    .locals 6
 
     .line 61
     sget-object v4, Landroidx/media3/extractor/text/SubtitleParser$Factory;->UNSUPPORTED:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -58,7 +58,7 @@
 .end method
 
 .method constructor <init>(Landroidx/media3/extractor/Extractor;Landroidx/media3/common/Format;Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/text/SubtitleParser$Factory;Z)V
-    .registers 6
+    .locals 0
 
     .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 3
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->extractor:Landroidx/media3/extractor/Extractor;
@@ -95,7 +95,7 @@
 .end method
 
 .method public isPackedAudioExtractor()Z
-    .registers 3
+    .locals 2
 
     .line 107
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->extractor:Landroidx/media3/extractor/Extractor;
@@ -107,37 +107,37 @@
     .line 108
     instance-of v1, v0, Landroidx/media3/extractor/ts/AdtsExtractor;
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     instance-of v1, v0, Landroidx/media3/extractor/ts/Ac3Extractor;
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     instance-of v1, v0, Landroidx/media3/extractor/ts/Ac4Extractor;
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     instance-of v0, v0, Landroidx/media3/extractor/mp3/Mp3Extractor;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1a
+    :goto_1
     return v0
 .end method
 
 .method public isReusable()Z
-    .registers 3
+    .locals 2
 
     .line 116
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->extractor:Landroidx/media3/extractor/Extractor;
@@ -149,29 +149,29 @@
     .line 117
     instance-of v1, v0, Landroidx/media3/extractor/ts/TsExtractor;
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_1
 
     instance-of v0, v0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_12
+    :goto_1
     return v0
 .end method
 
 .method public onTruncatedSegmentParsed()V
-    .registers 4
+    .locals 3
 
     .line 158
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->extractor:Landroidx/media3/extractor/Extractor;
@@ -184,7 +184,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -200,21 +200,21 @@
 
     move-result p1
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method
 
 .method public recreate()Landroidx/media3/exoplayer/hls/HlsMediaChunkExtractor;
-    .registers 8
+    .locals 7
 
     .line 123
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->isReusable()Z
@@ -237,14 +237,14 @@
 
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-ne v0, v2, :cond_14
+    if-ne v0, v2, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_15
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "Can\'t recreate wrapped extractors. Outer type: "
@@ -274,7 +274,7 @@
 
     instance-of v1, v0, Landroidx/media3/exoplayer/hls/WebvttExtractor;
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     .line 130
     new-instance v0, Landroidx/media3/exoplayer/hls/WebvttExtractor;
@@ -291,65 +291,65 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroidx/media3/exoplayer/hls/WebvttExtractor;-><init>(Ljava/lang/String;Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/text/SubtitleParser$Factory;Z)V
 
-    :goto_42
+    :goto_1
     move-object v2, v0
 
-    goto :goto_6c
+    goto :goto_2
 
     .line 136
-    :cond_44
+    :cond_1
     instance-of v1, v0, Landroidx/media3/extractor/ts/AdtsExtractor;
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_2
 
     .line 137
     new-instance v0, Landroidx/media3/extractor/ts/AdtsExtractor;
 
     invoke-direct {v0}, Landroidx/media3/extractor/ts/AdtsExtractor;-><init>()V
 
-    goto :goto_42
+    goto :goto_1
 
     .line 138
-    :cond_4e
+    :cond_2
     instance-of v1, v0, Landroidx/media3/extractor/ts/Ac3Extractor;
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_3
 
     .line 139
     new-instance v0, Landroidx/media3/extractor/ts/Ac3Extractor;
 
     invoke-direct {v0}, Landroidx/media3/extractor/ts/Ac3Extractor;-><init>()V
 
-    goto :goto_42
+    goto :goto_1
 
     .line 140
-    :cond_58
+    :cond_3
     instance-of v1, v0, Landroidx/media3/extractor/ts/Ac4Extractor;
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_4
 
     .line 141
     new-instance v0, Landroidx/media3/extractor/ts/Ac4Extractor;
 
     invoke-direct {v0}, Landroidx/media3/extractor/ts/Ac4Extractor;-><init>()V
 
-    goto :goto_42
+    goto :goto_1
 
     .line 142
-    :cond_62
+    :cond_4
     instance-of v0, v0, Landroidx/media3/extractor/mp3/Mp3Extractor;
 
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_5
 
     .line 143
     new-instance v0, Landroidx/media3/extractor/mp3/Mp3Extractor;
 
     invoke-direct {v0}, Landroidx/media3/extractor/mp3/Mp3Extractor;-><init>()V
 
-    goto :goto_42
+    goto :goto_1
 
     .line 148
-    :goto_6c
+    :goto_2
     new-instance v0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;->multivariantPlaylistFormat:Landroidx/media3/common/Format;
@@ -367,7 +367,7 @@
     return-object v0
 
     .line 145
-    :cond_7b
+    :cond_5
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;

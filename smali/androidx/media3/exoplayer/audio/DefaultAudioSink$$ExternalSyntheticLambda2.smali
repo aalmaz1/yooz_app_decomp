@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroid/media/AudioTrack;Landroidx/media3/exoplayer/audio/AudioSink$Listener;Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;Landroidx/media3/common/util/ConditionVariable;)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$$ExternalSyntheticLambda2;->f$0:Landroid/media/AudioTrack;
 

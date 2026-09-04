@@ -58,7 +58,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;)V
-    .registers 4
+    .locals 2
 
     .line 1286
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -147,7 +147,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;Landroidx/media3/common/SimpleBasePlayer$1;)V
-    .registers 3
+    .locals 0
 
     .line 1242
     invoke-direct {p0, p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;-><init>(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;)V
@@ -156,7 +156,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
 
     .line 1267
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -229,7 +229,7 @@
 .end method
 
 .method static synthetic access$4700(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Landroidx/media3/common/MediaItem$LiveConfiguration;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
@@ -238,7 +238,7 @@
 .end method
 
 .method static synthetic access$4800(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-wide v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->presentationStartTimeMs:J
@@ -247,7 +247,7 @@
 .end method
 
 .method static synthetic access$4900(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-wide v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->windowStartTimeMs:J
@@ -256,7 +256,7 @@
 .end method
 
 .method static synthetic access$5000(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-wide v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->elapsedRealtimeEpochOffsetMs:J
@@ -265,7 +265,7 @@
 .end method
 
 .method static synthetic access$5100(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Lcom/google/common/collect/ImmutableList;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->periods:Lcom/google/common/collect/ImmutableList;
@@ -274,7 +274,7 @@
 .end method
 
 .method static synthetic access$5200(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-wide v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->durationUs:J
@@ -283,7 +283,7 @@
 .end method
 
 .method static synthetic access$5300(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-wide v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->defaultPositionUs:J
@@ -292,7 +292,7 @@
 .end method
 
 .method static synthetic access$5400(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->uid:Ljava/lang/Object;
@@ -301,7 +301,7 @@
 .end method
 
 .method static synthetic access$5500(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Landroidx/media3/common/Tracks;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->tracks:Landroidx/media3/common/Tracks;
@@ -310,7 +310,7 @@
 .end method
 
 .method static synthetic access$5600(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Landroidx/media3/common/MediaItem;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -319,7 +319,7 @@
 .end method
 
 .method static synthetic access$5700(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Landroidx/media3/common/MediaMetadata;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
@@ -328,7 +328,7 @@
 .end method
 
 .method static synthetic access$5800(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->manifest:Ljava/lang/Object;
@@ -337,7 +337,7 @@
 .end method
 
 .method static synthetic access$5900(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-boolean p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->isSeekable:Z
@@ -346,7 +346,7 @@
 .end method
 
 .method static synthetic access$6000(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-boolean p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->isDynamic:Z
@@ -355,7 +355,7 @@
 .end method
 
 .method static synthetic access$6100(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1242
     iget-wide v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->positionInFirstPeriodUs:J
@@ -364,7 +364,7 @@
 .end method
 
 .method static synthetic access$6200(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 1242
     iget-boolean p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->isPlaceholder:Z
@@ -375,7 +375,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/SimpleBasePlayer$MediaItemData;
-    .registers 3
+    .locals 2
 
     .line 1558
     new-instance v0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;
@@ -388,23 +388,23 @@
 .end method
 
 .method public setDefaultPositionUs(J)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 1477
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1478
@@ -414,33 +414,33 @@
 .end method
 
 .method public setDurationUs(J)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 5
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 1495
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1496
@@ -450,7 +450,7 @@
 .end method
 
 .method public setElapsedRealtimeEpochOffsetMs(J)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 3
+    .locals 0
 
     .line 1435
     iput-wide p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->elapsedRealtimeEpochOffsetMs:J
@@ -459,7 +459,7 @@
 .end method
 
 .method public setIsDynamic(Z)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1460
     iput-boolean p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->isDynamic:Z
@@ -468,7 +468,7 @@
 .end method
 
 .method public setIsPlaceholder(Z)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1525
     iput-boolean p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->isPlaceholder:Z
@@ -477,7 +477,7 @@
 .end method
 
 .method public setIsSeekable(Z)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1447
     iput-boolean p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->isSeekable:Z
@@ -486,7 +486,7 @@
 .end method
 
 .method public setLiveConfiguration(Landroidx/media3/common/MediaItem$LiveConfiguration;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1384
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
@@ -495,7 +495,7 @@
 .end method
 
 .method public setManifest(Ljava/lang/Object;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1371
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->manifest:Ljava/lang/Object;
@@ -504,7 +504,7 @@
 .end method
 
 .method public setMediaItem(Landroidx/media3/common/MediaItem;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1339
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -513,7 +513,7 @@
 .end method
 
 .method public setMediaMetadata(Landroidx/media3/common/MediaMetadata;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1359
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
@@ -522,7 +522,7 @@
 .end method
 
 .method public setPeriods(Ljava/util/List;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -542,10 +542,10 @@
 
     move v2, v1
 
-    :goto_6
+    :goto_0
     add-int/lit8 v3, v0, -0x1
 
-    if-ge v2, v3, :cond_48
+    if-ge v2, v3, :cond_2
 
     .line 1545
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -562,16 +562,16 @@
 
     const/4 v4, 0x1
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_0
 
     move v3, v4
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     move v3, v1
 
-    :goto_1f
+    :goto_1
     const-string v5, "Periods other than last need a duration"
 
     .line 1544
@@ -581,8 +581,8 @@
 
     move v5, v3
 
-    :goto_27
-    if-ge v5, v0, :cond_46
+    :goto_2
+    if-ge v5, v0, :cond_1
 
     .line 1548
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -614,15 +614,15 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_27
+    goto :goto_2
 
-    :cond_46
+    :cond_1
     move v2, v3
 
-    goto :goto_6
+    goto :goto_0
 
     .line 1552
-    :cond_48
+    :cond_2
     invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
@@ -633,23 +633,23 @@
 .end method
 
 .method public setPositionInFirstPeriodUs(J)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 1510
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1511
@@ -659,7 +659,7 @@
 .end method
 
 .method public setPresentationStartTimeMs(J)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 3
+    .locals 0
 
     .line 1400
     iput-wide p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->presentationStartTimeMs:J
@@ -668,7 +668,7 @@
 .end method
 
 .method public setTracks(Landroidx/media3/common/Tracks;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1327
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->tracks:Landroidx/media3/common/Tracks;
@@ -677,7 +677,7 @@
 .end method
 
 .method public setUid(Ljava/lang/Object;)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 2
+    .locals 0
 
     .line 1315
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->uid:Ljava/lang/Object;
@@ -686,7 +686,7 @@
 .end method
 
 .method public setWindowStartTimeMs(J)Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 3
+    .locals 0
 
     .line 1417
     iput-wide p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->windowStartTimeMs:J

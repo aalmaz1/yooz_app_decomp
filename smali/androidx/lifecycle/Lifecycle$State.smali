@@ -65,7 +65,7 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/lifecycle/Lifecycle$State;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x5
 
@@ -105,7 +105,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 236
     new-instance v0, Landroidx/lifecycle/Lifecycle$State;
@@ -172,7 +172,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -186,7 +186,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/lifecycle/Lifecycle$State;
-    .registers 2
+    .locals 1
 
     const-class v0, Landroidx/lifecycle/Lifecycle$State;
 
@@ -200,7 +200,7 @@
 .end method
 
 .method public static values()[Landroidx/lifecycle/Lifecycle$State;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/lifecycle/Lifecycle$State;->$VALUES:[Landroidx/lifecycle/Lifecycle$State;
 
@@ -216,7 +216,7 @@
 
 # virtual methods
 .method public final isAtLeast(Landroidx/lifecycle/Lifecycle$State;)Z
-    .registers 3
+    .locals 1
 
     const-string v0, "state"
 
@@ -229,15 +229,15 @@
 
     move-result p1
 
-    if-ltz p1, :cond_f
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_10
+    :goto_0
     return p1
 .end method

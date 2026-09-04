@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/core/content/res/ResourcesCompat$FontCallback;)V
-    .registers 2
+    .locals 0
 
     .line 361
     invoke-direct {p0}, Landroidx/core/provider/FontsContractCompat$FontRequestCallback;-><init>()V
@@ -34,31 +34,31 @@
 
 # virtual methods
 .method public onTypefaceRequestFailed(I)V
-    .registers 3
+    .locals 1
 
     .line 374
     iget-object v0, p0, Landroidx/core/graphics/TypefaceCompat$ResourcesCallbackAdapter;->mFontCallback:Landroidx/core/content/res/ResourcesCompat$FontCallback;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 375
     invoke-virtual {v0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrievalFailed(I)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public onTypefaceRetrieved(Landroid/graphics/Typeface;)V
-    .registers 3
+    .locals 1
 
     .line 367
     iget-object v0, p0, Landroidx/core/graphics/TypefaceCompat$ResourcesCallbackAdapter;->mFontCallback:Landroidx/core/content/res/ResourcesCompat$FontCallback;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 368
     invoke-virtual {v0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrieved(Landroid/graphics/Typeface;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method

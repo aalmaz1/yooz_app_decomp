@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 2652
     new-instance v0, Landroidx/appcompat/widget/Toolbar$SavedState$1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .registers 3
+    .locals 0
 
     .line 2636
     invoke-direct {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -75,23 +75,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_12
+    :goto_0
     iput-boolean p1, p0, Landroidx/appcompat/widget/Toolbar$SavedState;->isOverflowOpen:Z
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcelable;)V
-    .registers 2
+    .locals 0
 
     .line 2642
     invoke-direct {p0, p1}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 2647
     invoke-super {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V

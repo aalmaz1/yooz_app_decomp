@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerEmsgCallback;Landroidx/media3/exoplayer/upstream/Allocator;)V
-    .registers 4
+    .locals 0
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;)Landroidx/media3/extractor/metadata/emsg/EventMessageDecoder;
-    .registers 1
+    .locals 0
 
     .line 63
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->decoder:Landroidx/media3/extractor/metadata/emsg/EventMessageDecoder;
@@ -101,7 +101,7 @@
 .end method
 
 .method static synthetic access$100(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 63
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->isPlayerEmsgEvent(Ljava/lang/String;Ljava/lang/String;)Z
@@ -112,7 +112,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/metadata/emsg/EventMessage;)J
-    .registers 3
+    .locals 2
 
     .line 63
     invoke-static {p0}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->getManifestPublishTimeMsInEmsg(Landroidx/media3/extractor/metadata/emsg/EventMessage;)J
@@ -123,7 +123,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;)Landroid/os/Handler;
-    .registers 1
+    .locals 0
 
     .line 63
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->handler:Landroid/os/Handler;
@@ -132,7 +132,7 @@
 .end method
 
 .method private ceilingExpiryEntryForPublishTime(J)Ljava/util/Map$Entry;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -158,7 +158,7 @@
 .end method
 
 .method private static getManifestPublishTimeMsInEmsg(Landroidx/media3/extractor/metadata/emsg/EventMessage;)J
-    .registers 3
+    .locals 2
 
     .line 244
     :try_start_0
@@ -171,19 +171,19 @@
     invoke-static {p0}, Landroidx/media3/common/util/Util;->parseXsDateTime(Ljava/lang/String;)J
 
     move-result-wide v0
-    :try_end_a
-    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-wide v0
 
-    :catch_b
+    :catch_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide v0
 .end method
 
 .method private handleManifestExpiredMessage(JJ)V
-    .registers 7
+    .locals 2
 
     .line 200
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -198,7 +198,7 @@
 
     check-cast v0, Ljava/lang/Long;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 202
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -213,17 +213,17 @@
 
     invoke-virtual {v0, p3, p1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_31
+    goto :goto_0
 
     .line 204
-    :cond_1c
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
     cmp-long v0, v0, p1
 
-    if-lez v0, :cond_31
+    if-lez v0, :cond_1
 
     .line 205
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -238,13 +238,13 @@
 
     invoke-virtual {v0, p3, p1}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private static isPlayerEmsgEvent(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "urn:mpeg:dash:event:2012"
 
@@ -253,7 +253,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_23
+    if-eqz p0, :cond_1
 
     const-string p0, "1"
 
@@ -262,7 +262,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_21
+    if-nez p0, :cond_0
 
     const-string p0, "2"
 
@@ -270,7 +270,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_21
+    if-nez p0, :cond_0
 
     const-string p0, "3"
 
@@ -278,31 +278,31 @@
 
     move-result p0
 
-    if-eqz p0, :cond_23
+    if-eqz p0, :cond_1
 
-    :cond_21
+    :cond_0
     const/4 p0, 0x1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     const/4 p0, 0x0
 
-    :goto_24
+    :goto_0
     return p0
 .end method
 
 .method private maybeNotifyDashManifestRefreshNeeded()V
-    .registers 2
+    .locals 1
 
     .line 233
     iget-boolean v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->chunkLoadedCompletedSinceLastManifestRefreshRequest:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 237
@@ -322,7 +322,7 @@
 .end method
 
 .method private notifyManifestPublishTimeExpired()V
-    .registers 4
+    .locals 3
 
     .line 228
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->playerEmsgCallback:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerEmsgCallback;
@@ -335,7 +335,7 @@
 .end method
 
 .method private removePreviouslyExpiredManifestPublishTimeValues()V
-    .registers 6
+    .locals 5
 
     .line 216
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifestPublishTimeToExpiryTimeUs:Ljava/util/TreeMap;
@@ -350,13 +350,13 @@
     move-result-object v0
 
     .line 218
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     .line 219
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -383,43 +383,43 @@
 
     cmp-long v1, v1, v3
 
-    if-gez v1, :cond_a
+    if-gez v1, :cond_0
 
     .line 222
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 8
+    .locals 6
 
     .line 136
     iget-boolean v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->released:Z
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 139
-    :cond_6
+    :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 141
-    :cond_c
+    :cond_1
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$ManifestExpiryEventInfo;
@@ -435,7 +435,7 @@
 .end method
 
 .method maybeRefreshManifestBeforeLoadingNextChunk(J)Z
-    .registers 8
+    .locals 5
 
     .line 154
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -444,22 +444,22 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 157
-    :cond_8
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->isWaitingForManifestRefresh:Z
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     return v2
 
     .line 163
-    :cond_e
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-wide v3, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->publishTimeMs:J
@@ -468,7 +468,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 165
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -483,7 +483,7 @@
 
     cmp-long p1, v3, p1
 
-    if-gez p1, :cond_36
+    if-gez p1, :cond_2
 
     .line 167
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -503,18 +503,18 @@
 
     move v1, v2
 
-    :cond_36
-    if-eqz v1, :cond_3b
+    :cond_2
+    if-eqz v1, :cond_3
 
     .line 173
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->maybeNotifyDashManifestRefreshNeeded()V
 
-    :cond_3b
+    :cond_3
     return v1
 .end method
 
 .method public newPlayerTrackEmsgHandler()Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;
-    .registers 3
+    .locals 2
 
     .line 125
     new-instance v0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;
@@ -527,7 +527,7 @@
 .end method
 
 .method onChunkLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;)V
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -538,7 +538,7 @@
 .end method
 
 .method onChunkLoadError(Z)Z
-    .registers 5
+    .locals 3
 
     .line 183
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -547,34 +547,34 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 186
-    :cond_8
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->isWaitingForManifestRefresh:Z
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     return v2
 
-    :cond_e
-    if-eqz p1, :cond_14
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 193
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->maybeNotifyDashManifestRefreshNeeded()V
 
     return v2
 
-    :cond_14
+    :cond_2
     return v1
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -592,7 +592,7 @@
 .end method
 
 .method public updateManifest(Landroidx/media3/exoplayer/dash/manifest/DashManifest;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 

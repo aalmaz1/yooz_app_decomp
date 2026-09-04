@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 33
     new-instance v0, Landroidx/collection/SimpleArrayMap;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method static isFragmentClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 70
     :try_start_0
@@ -56,19 +56,19 @@
     invoke-virtual {p1, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result p0
-    :try_end_a
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_b
+    :catch_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method private static loadClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +95,7 @@
 
     check-cast v1, Landroidx/collection/SimpleArrayMap;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 47
     new-instance v1, Landroidx/collection/SimpleArrayMap;
@@ -106,14 +106,14 @@
     invoke-virtual {v0, p0, v1}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 50
-    :cond_12
+    :cond_0
     invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Class;
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
@@ -125,12 +125,12 @@
     .line 54
     invoke-virtual {v1, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_22
+    :cond_1
     return-object v0
 .end method
 
 .method public static loadFragmentClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,17 +147,17 @@
     const-string v0, "Unable to instantiate fragment "
 
     .line 94
-    :try_start_2
+    :try_start_0
     invoke-static {p0, p1}, Landroidx/fragment/app/FragmentFactory;->loadClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p0
-    :try_end_6
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_6} :catch_21
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_7
+    :catch_0
     move-exception p0
 
     .line 100
@@ -185,7 +185,7 @@
 
     throw v1
 
-    :catch_21
+    :catch_1
     move-exception p0
 
     .line 97
@@ -217,14 +217,14 @@
 
 # virtual methods
 .method public instantiate(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroidx/fragment/app/Fragment;
-    .registers 7
+    .locals 4
 
     const-string v0, ": make sure class name exists, is public, and has an empty constructor that is public"
 
     const-string v1, "Unable to instantiate fragment "
 
     .line 120
-    :try_start_4
+    :try_start_0
     invoke-static {p1, p2}, Landroidx/fragment/app/FragmentFactory;->loadFragmentClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p1
@@ -245,15 +245,15 @@
     move-result-object p1
 
     check-cast p1, Landroidx/fragment/app/Fragment;
-    :try_end_17
-    .catch Ljava/lang/InstantiationException; {:try_start_4 .. :try_end_17} :catch_64
-    .catch Ljava/lang/IllegalAccessException; {:try_start_4 .. :try_end_17} :catch_4c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_4 .. :try_end_17} :catch_32
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_4 .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_18
+    :catch_0
     move-exception p1
 
     .line 134
@@ -281,7 +281,7 @@
 
     throw v0
 
-    :catch_32
+    :catch_1
     move-exception p1
 
     .line 131
@@ -309,7 +309,7 @@
 
     throw v0
 
-    :catch_4c
+    :catch_2
     move-exception p1
 
     .line 127
@@ -335,7 +335,7 @@
 
     throw v2
 
-    :catch_64
+    :catch_3
     move-exception p1
 
     .line 123

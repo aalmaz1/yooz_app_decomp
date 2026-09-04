@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,13 +30,13 @@
 
 # virtual methods
 .method public onDiagnosticReceived(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onResultReceived(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

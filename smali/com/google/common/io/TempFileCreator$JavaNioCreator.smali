@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 152
     invoke-static {}, Ljava/nio/file/FileSystems;->getDefault()Ljava/nio/file/FileSystem;
@@ -46,7 +46,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 154
     new-instance v0, Lcom/google/common/io/TempFileCreator$JavaNioCreator$$ExternalSyntheticLambda0;
@@ -62,9 +62,9 @@
 
     sput-object v0, Lcom/google/common/io/TempFileCreator$JavaNioCreator;->directoryPermissions:Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const-string v1, "acl"
 
     .line 156
@@ -72,7 +72,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 157
     invoke-static {}, Lcom/google/common/io/TempFileCreator$JavaNioCreator;->userPermissions()Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
@@ -83,10 +83,10 @@
 
     sput-object v0, Lcom/google/common/io/TempFileCreator$JavaNioCreator;->filePermissions:Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
 
-    goto :goto_39
+    goto :goto_0
 
     .line 159
-    :cond_30
+    :cond_1
     new-instance v0, Lcom/google/common/io/TempFileCreator$JavaNioCreator$$ExternalSyntheticLambda2;
 
     invoke-direct {v0}, Lcom/google/common/io/TempFileCreator$JavaNioCreator$$ExternalSyntheticLambda2;-><init>()V
@@ -95,12 +95,12 @@
 
     sput-object v0, Lcom/google/common/io/TempFileCreator$JavaNioCreator;->filePermissions:Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
 
-    :goto_39
+    :goto_0
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -111,7 +111,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/io/TempFileCreator$1;)V
-    .registers 2
+    .locals 0
 
     .line 121
     invoke-direct {p0}, Lcom/google/common/io/TempFileCreator$JavaNioCreator;-><init>()V
@@ -120,7 +120,7 @@
 .end method
 
 .method static synthetic access$300()Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
-    .registers 1
+    .locals 1
 
     .line 121
     invoke-static {}, Lcom/google/common/io/TempFileCreator$JavaNioCreator;->userPermissions()Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
@@ -131,7 +131,7 @@
 .end method
 
 .method private static getUsername()Ljava/lang/String;
-    .registers 10
+    .locals 10
 
     .line 208
     sget-object v0, Lcom/google/common/base/StandardSystemProperty;->USER_NAME:Lcom/google/common/base/StandardSystemProperty;
@@ -146,7 +146,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    :try_start_c
+    :try_start_0
     const-string v1, "java.lang.ProcessHandle"
 
     .line 211
@@ -249,18 +249,18 @@
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
-    :try_end_66
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_c .. :try_end_66} :catch_70
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_c .. :try_end_66} :catch_68
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_c .. :try_end_66} :catch_67
-    .catch Ljava/lang/IllegalAccessException; {:try_start_c .. :try_end_66} :catch_67
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v1
 
-    :catch_67
+    :catch_0
     return-object v0
 
-    :catch_68
+    :catch_1
     move-exception v1
 
     .line 244
@@ -270,12 +270,12 @@
 
     invoke-static {v1}, Lcom/google/common/base/Throwables;->throwIfUnchecked(Ljava/lang/Throwable;)V
 
-    :catch_70
+    :catch_2
     return-object v0
 .end method
 
 .method static synthetic lambda$static$0()Ljava/nio/file/attribute/FileAttribute;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -297,7 +297,7 @@
 .end method
 
 .method static synthetic lambda$static$1()Ljava/nio/file/attribute/FileAttribute;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -319,7 +319,7 @@
 .end method
 
 .method static synthetic lambda$static$2()Ljava/nio/file/attribute/FileAttribute;
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -353,7 +353,7 @@
 .end method
 
 .method static synthetic lambda$userPermissions$3(Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/attribute/FileAttribute;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -364,7 +364,7 @@
 .end method
 
 .method static synthetic lambda$userPermissions$4(Ljava/io/IOException;)Ljava/nio/file/attribute/FileAttribute;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -382,7 +382,7 @@
 .end method
 
 .method private static userPermissions()Lcom/google/common/io/TempFileCreator$JavaNioCreator$PermissionSupplier;
-    .registers 4
+    .locals 4
 
     .line 170
     :try_start_0
@@ -472,12 +472,12 @@
     new-instance v0, Lcom/google/common/io/TempFileCreator$JavaNioCreator$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, v1}, Lcom/google/common/io/TempFileCreator$JavaNioCreator$$ExternalSyntheticLambda3;-><init>(Ljava/nio/file/attribute/FileAttribute;)V
-    :try_end_4b
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_4b} :catch_4c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_4c
+    :catch_0
     move-exception v0
 
     .line 196
@@ -491,7 +491,7 @@
 
 # virtual methods
 .method createTempDir()Ljava/io/File;
-    .registers 5
+    .locals 4
 
     .line 125
     :try_start_0
@@ -533,12 +533,12 @@
     invoke-interface {v0}, Ljava/nio/file/Path;->toFile()Ljava/io/File;
 
     move-result-object v0
-    :try_end_21
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_21} :catch_22
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_22
+    :catch_0
     move-exception v0
 
     .line 129
@@ -552,7 +552,7 @@
 .end method
 
 .method createTempFile(Ljava/lang/String;)Ljava/io/File;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

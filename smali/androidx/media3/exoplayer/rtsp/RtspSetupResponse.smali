@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspSessionHeader;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

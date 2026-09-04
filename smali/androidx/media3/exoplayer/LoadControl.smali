@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 122
     new-instance v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -42,7 +42,7 @@
 .end method
 
 .method public getBackBufferDurationUs()J
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -57,7 +57,7 @@
 .end method
 
 .method public getBackBufferDurationUs(Landroidx/media3/exoplayer/analytics/PlayerId;)J
-    .registers 4
+    .locals 2
 
     .line 254
     invoke-interface {p0}, Landroidx/media3/exoplayer/LoadControl;->getBackBufferDurationUs()J
@@ -68,7 +68,7 @@
 .end method
 
 .method public onPrepared()V
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public onPrepared(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     .line 131
     invoke-interface {p0}, Landroidx/media3/exoplayer/LoadControl;->onPrepared()V
@@ -92,7 +92,7 @@
 .end method
 
 .method public onReleased()V
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public onReleased(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     .line 221
     invoke-interface {p0}, Landroidx/media3/exoplayer/LoadControl;->onReleased()V
@@ -116,7 +116,7 @@
 .end method
 
 .method public onStopped()V
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public onStopped(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     .line 201
     invoke-interface {p0}, Landroidx/media3/exoplayer/LoadControl;->onStopped()V
@@ -140,7 +140,7 @@
 .end method
 
 .method public onTracksSelected(Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;[Landroidx/media3/exoplayer/Renderer;Landroidx/media3/exoplayer/source/TrackGroupArray;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)V
-    .registers 6
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -151,7 +151,7 @@
 .end method
 
 .method public onTracksSelected(Landroidx/media3/exoplayer/analytics/PlayerId;Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;[Landroidx/media3/exoplayer/Renderer;Landroidx/media3/exoplayer/source/TrackGroupArray;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)V
-    .registers 13
+    .locals 6
 
     move-object v0, p0
 
@@ -172,7 +172,7 @@
 .end method
 
 .method public onTracksSelected([Landroidx/media3/exoplayer/Renderer;Landroidx/media3/exoplayer/source/TrackGroupArray;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)V
-    .registers 4
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -187,7 +187,7 @@
 .end method
 
 .method public retainBackBufferFromKeyframe()Z
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -202,7 +202,7 @@
 .end method
 
 .method public retainBackBufferFromKeyframe(Landroidx/media3/exoplayer/analytics/PlayerId;)Z
-    .registers 2
+    .locals 0
 
     .line 288
     invoke-interface {p0}, Landroidx/media3/exoplayer/LoadControl;->retainBackBufferFromKeyframe()Z
@@ -213,7 +213,7 @@
 .end method
 
 .method public shouldContinueLoading(JJF)Z
-    .registers 6
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -228,7 +228,7 @@
 .end method
 
 .method public shouldContinueLoading(Landroidx/media3/exoplayer/LoadControl$Parameters;)Z
-    .registers 8
+    .locals 6
 
     .line 312
     iget-wide v1, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->playbackPositionUs:J
@@ -247,7 +247,7 @@
 .end method
 
 .method public shouldStartPlayback(JFZJ)Z
-    .registers 7
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -262,7 +262,7 @@
 .end method
 
 .method public shouldStartPlayback(Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JFZJ)Z
-    .registers 16
+    .locals 7
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -285,7 +285,7 @@
 .end method
 
 .method public shouldStartPlayback(Landroidx/media3/exoplayer/LoadControl$Parameters;)Z
-    .registers 11
+    .locals 9
 
     .line 339
     iget-object v1, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->timeline:Landroidx/media3/common/Timeline;

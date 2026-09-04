@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isAsynchronous(Landroid/os/Message;)Z
-    .registers 1
+    .locals 0
 
     .line 125
     invoke-virtual {p0}, Landroid/os/Message;->isAsynchronous()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static setAsynchronous(Landroid/os/Message;Z)V
-    .registers 2
+    .locals 0
 
     .line 130
     invoke-virtual {p0, p1}, Landroid/os/Message;->setAsynchronous(Z)V

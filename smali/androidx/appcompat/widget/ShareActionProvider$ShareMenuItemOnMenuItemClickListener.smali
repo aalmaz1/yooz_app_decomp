@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/ShareActionProvider;)V
-    .registers 2
+    .locals 0
 
     .line 357
     iput-object p1, p0, Landroidx/appcompat/widget/ShareActionProvider$ShareMenuItemOnMenuItemClickListener;->this$0:Landroidx/appcompat/widget/ShareActionProvider;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
-    .registers 4
+    .locals 2
 
     .line 362
     iget-object v0, p0, Landroidx/appcompat/widget/ShareActionProvider$ShareMenuItemOnMenuItemClickListener;->this$0:Landroidx/appcompat/widget/ShareActionProvider;
@@ -61,7 +61,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_2
 
     .line 367
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -75,7 +75,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_0
 
     const-string v1, "android.intent.action.SEND_MULTIPLE"
 
@@ -84,23 +84,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 370
-    :cond_2a
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/ShareActionProvider$ShareMenuItemOnMenuItemClickListener;->this$0:Landroidx/appcompat/widget/ShareActionProvider;
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/ShareActionProvider;->updateIntent(Landroid/content/Intent;)V
 
     .line 372
-    :cond_2f
+    :cond_1
     iget-object v0, p0, Landroidx/appcompat/widget/ShareActionProvider$ShareMenuItemOnMenuItemClickListener;->this$0:Landroidx/appcompat/widget/ShareActionProvider;
 
     iget-object v0, v0, Landroidx/appcompat/widget/ShareActionProvider;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    :cond_36
+    :cond_2
     const/4 p1, 0x1
 
     return p1

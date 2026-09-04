@@ -24,20 +24,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x23
 
     new-array v0, v0, [I
 
     .line 510
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/common/Player$Commands$Builder;->SUPPORTED_COMMANDS:[I
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 551
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +94,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/Player$Commands;)V
-    .registers 3
+    .locals 1
 
     .line 555
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -117,7 +117,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/Player$Commands;Landroidx/media3/common/Player$1;)V
-    .registers 3
+    .locals 0
 
     .line 507
     invoke-direct {p0, p1}, Landroidx/media3/common/Player$Commands$Builder;-><init>(Landroidx/media3/common/Player$Commands;)V
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public add(I)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 1
 
     .line 569
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -139,7 +139,7 @@
 .end method
 
 .method public addAll(Landroidx/media3/common/Player$Commands;)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 1
 
     .line 609
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -154,7 +154,7 @@
 .end method
 
 .method public varargs addAll([I)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 1
 
     .line 596
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -165,7 +165,7 @@
 .end method
 
 .method public addAllCommands()Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 2
 
     .line 621
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -178,7 +178,7 @@
 .end method
 
 .method public addIf(IZ)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 4
+    .locals 1
 
     .line 583
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -189,7 +189,7 @@
 .end method
 
 .method public build()Landroidx/media3/common/Player$Commands;
-    .registers 4
+    .locals 3
 
     .line 671
     new-instance v0, Landroidx/media3/common/Player$Commands;
@@ -208,7 +208,7 @@
 .end method
 
 .method public remove(I)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 1
 
     .line 634
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -219,7 +219,7 @@
 .end method
 
 .method public varargs removeAll([I)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 1
 
     .line 661
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -230,7 +230,7 @@
 .end method
 
 .method public removeIf(IZ)Landroidx/media3/common/Player$Commands$Builder;
-    .registers 4
+    .locals 1
 
     .line 648
     iget-object v0, p0, Landroidx/media3/common/Player$Commands$Builder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;

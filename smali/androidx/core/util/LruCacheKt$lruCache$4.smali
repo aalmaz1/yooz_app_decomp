@@ -93,7 +93,7 @@
 
 # direct methods
 .method public constructor <init>(ILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -127,7 +127,7 @@
 
 # virtual methods
 .method protected create(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"
@@ -145,7 +145,7 @@
 .end method
 
 .method protected entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZTK;TV;TV;)V"
@@ -165,7 +165,7 @@
 .end method
 
 .method protected sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)I"

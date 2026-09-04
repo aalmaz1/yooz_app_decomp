@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static create(ILjava/lang/String;IIII)Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
-    .registers 14
+    .locals 8
 
     .line 184
     new-instance v7, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_AudioProfileProxy;

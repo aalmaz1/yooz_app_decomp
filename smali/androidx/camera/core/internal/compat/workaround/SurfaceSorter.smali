@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,23 +29,23 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     iput-boolean v0, p0, Landroidx/camera/core/internal/compat/workaround/SurfaceSorter;->mHasQuirk:Z
 
     return-void
 .end method
 
 .method private getSurfacePriority(Landroidx/camera/core/impl/DeferrableSurface;)I
-    .registers 4
+    .locals 2
 
     .line 64
     invoke-virtual {p1}, Landroidx/camera/core/impl/DeferrableSurface;->getContainerClass()Ljava/lang/Class;
@@ -54,27 +54,27 @@
 
     const-class v1, Landroid/media/MediaCodec;
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const/4 p1, 0x2
 
     return p1
 
     .line 66
-    :cond_a
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/core/impl/DeferrableSurface;->getContainerClass()Ljava/lang/Class;
 
     move-result-object p1
 
     const-class v0, Landroidx/camera/core/Preview;
 
-    if-ne p1, v0, :cond_14
+    if-ne p1, v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
-    :cond_14
+    :cond_1
     const/4 p1, 0x1
 
     return p1
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method synthetic lambda$sort$0$androidx-camera-core-internal-compat-workaround-SurfaceSorter(Landroidx/camera/core/impl/SessionConfig$OutputConfig;Landroidx/camera/core/impl/SessionConfig$OutputConfig;)I
-    .registers 3
+    .locals 0
 
     .line 57
     invoke-virtual {p1}, Landroidx/camera/core/impl/SessionConfig$OutputConfig;->getSurface()Landroidx/camera/core/impl/DeferrableSurface;
@@ -109,7 +109,7 @@
 .end method
 
 .method public sort(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,12 +122,12 @@
     .line 53
     iget-boolean v0, p0, Landroidx/camera/core/internal/compat/workaround/SurfaceSorter;->mHasQuirk:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 56
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/camera/core/internal/compat/workaround/SurfaceSorter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Landroidx/camera/core/internal/compat/workaround/SurfaceSorter$$ExternalSyntheticLambda0;-><init>(Landroidx/camera/core/internal/compat/workaround/SurfaceSorter;)V

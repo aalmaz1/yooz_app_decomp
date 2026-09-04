@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     const/4 v0, 0x4
 
@@ -107,7 +107,7 @@
 .end method
 
 .method protected constructor <init>(ILjava/util/concurrent/Executor;Landroidx/camera/core/ImageProcessor;Landroidx/core/util/Consumer;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -124,16 +124,16 @@
 
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const-string v1, "Currently ImageProcessor can only target IMAGE_CAPTURE."
 
     .line 155
@@ -160,7 +160,7 @@
 .end method
 
 .method protected constructor <init>(ILjava/util/concurrent/Executor;Landroidx/camera/core/SurfaceProcessor;Landroidx/core/util/Consumer;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -203,7 +203,7 @@
 
 # virtual methods
 .method public createSurfaceProcessorInternal()Landroidx/camera/core/processing/SurfaceProcessorInternal;
-    .registers 2
+    .locals 1
 
     .line 257
     new-instance v0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;
@@ -214,7 +214,7 @@
 .end method
 
 .method public getErrorListener()Landroidx/core/util/Consumer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -231,7 +231,7 @@
 .end method
 
 .method public getExecutor()Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 215
     iget-object v0, p0, Landroidx/camera/core/CameraEffect;->mExecutor:Ljava/util/concurrent/Executor;
@@ -240,7 +240,7 @@
 .end method
 
 .method public getImageProcessor()Landroidx/camera/core/ImageProcessor;
-    .registers 2
+    .locals 1
 
     .line 243
     iget-object v0, p0, Landroidx/camera/core/CameraEffect;->mImageProcessor:Landroidx/camera/core/ImageProcessor;
@@ -249,7 +249,7 @@
 .end method
 
 .method public getSurfaceProcessor()Landroidx/camera/core/SurfaceProcessor;
-    .registers 2
+    .locals 1
 
     .line 234
     iget-object v0, p0, Landroidx/camera/core/CameraEffect;->mSurfaceProcessor:Landroidx/camera/core/SurfaceProcessor;
@@ -258,7 +258,7 @@
 .end method
 
 .method public getTargets()I
-    .registers 2
+    .locals 1
 
     .line 205
     iget v0, p0, Landroidx/camera/core/CameraEffect;->mTargets:I

@@ -20,22 +20,22 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;Landroidx/appcompat/graphics/drawable/StateListDrawableCompat;Landroid/content/res/Resources;)V
-    .registers 4
+    .locals 0
 
     .line 328
     invoke-direct {p0, p1, p2, p3}, Landroidx/appcompat/graphics/drawable/DrawableContainerCompat$DrawableContainerState;-><init>(Landroidx/appcompat/graphics/drawable/DrawableContainerCompat$DrawableContainerState;Landroidx/appcompat/graphics/drawable/DrawableContainerCompat;Landroid/content/res/Resources;)V
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 331
     iget-object p1, p1, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
 
     iput-object p1, p0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
 
-    goto :goto_12
+    goto :goto_0
 
     .line 333
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->getCapacity()I
 
     move-result p1
@@ -44,14 +44,14 @@
 
     iput-object p1, p0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
 
-    :goto_12
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method addStateSet([ILandroid/graphics/drawable/Drawable;)I
-    .registers 4
+    .locals 1
 
     .line 347
     invoke-virtual {p0, p2}, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->addChild(Landroid/graphics/drawable/Drawable;)I
@@ -67,7 +67,7 @@
 .end method
 
 .method public growArray(II)V
-    .registers 5
+    .locals 2
 
     .line 377
     invoke-super {p0, p1, p2}, Landroidx/appcompat/graphics/drawable/DrawableContainerCompat$DrawableContainerState;->growArray(II)V
@@ -89,7 +89,7 @@
 .end method
 
 .method indexOfStateSet([I)I
-    .registers 6
+    .locals 4
 
     .line 353
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
@@ -101,8 +101,8 @@
 
     const/4 v2, 0x0
 
-    :goto_7
-    if-ge v2, v1, :cond_15
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 356
     aget-object v3, v0, v2
@@ -111,23 +111,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_0
 
     return v2
 
-    :cond_12
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     const/4 p1, -0x1
 
     return p1
 .end method
 
 .method mutate()V
-    .registers 4
+    .locals 3
 
     .line 339
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
@@ -141,15 +141,15 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_1d
+    :goto_0
+    if-ltz v0, :cond_1
 
     .line 341
     iget-object v2, p0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
 
     aget-object v2, v2, v0
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, [I->clone()Ljava/lang/Object;
 
@@ -157,27 +157,27 @@
 
     check-cast v2, [I
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_18
+    :goto_1
     aput-object v2, v1, v0
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 343
-    :cond_1d
+    :cond_1
     iput-object v1, p0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat$StateListState;->mStateSets:[[I
 
     return-void
 .end method
 
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 2
 
     .line 366
     new-instance v0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat;
@@ -190,7 +190,7 @@
 .end method
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 1
 
     .line 372
     new-instance v0, Landroidx/appcompat/graphics/drawable/StateListDrawableCompat;

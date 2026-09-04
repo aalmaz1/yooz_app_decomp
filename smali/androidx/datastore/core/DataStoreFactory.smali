@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/datastore/core/DataStoreFactory;
 
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,37 +66,37 @@
 .end method
 
 .method public static synthetic create$default(Landroidx/datastore/core/DataStoreFactory;Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Landroidx/datastore/core/DataStore;
-    .registers 15
+    .locals 7
 
     and-int/lit8 p7, p6, 0x2
 
     const/4 v0, 0x0
 
-    if-eqz p7, :cond_7
+    if-eqz p7, :cond_0
 
     move-object v3, v0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move-object v3, p2
 
-    :goto_8
+    :goto_0
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_1
 
     .line 60
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p3
 
-    :cond_10
+    :cond_1
     move-object v4, p3
 
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_2a
+    if-eqz p2, :cond_2
 
     .line 61
     sget-object p2, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
@@ -121,7 +121,7 @@
 
     move-result-object p4
 
-    :cond_2a
+    :cond_2
     move-object v5, p4
 
     move-object v1, p0
@@ -141,7 +141,7 @@
 
 # virtual methods
 .method public final create(Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 14
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -200,7 +200,7 @@
 .end method
 
 .method public final create(Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -240,14 +240,14 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p2, :cond_1b
+    if-nez p2, :cond_0
 
     .line 67
     new-instance p2, Landroidx/datastore/core/handlers/NoOpCorruptionHandler;
 
     invoke-direct {p2}, Landroidx/datastore/core/handlers/NoOpCorruptionHandler;-><init>()V
 
-    :cond_1b
+    :cond_0
     check-cast p2, Landroidx/datastore/core/CorruptionHandler;
 
     move-object v4, p2
@@ -282,7 +282,7 @@
 .end method
 
 .method public final create(Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -333,7 +333,7 @@
 .end method
 
 .method public final create(Landroidx/datastore/core/Serializer;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 12
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

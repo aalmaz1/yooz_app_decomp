@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(JJJIJJJLandroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/common/MediaItem;Landroidx/media3/common/MediaItem$LiveConfiguration;)V
-    .registers 24
+    .locals 7
 
     move-object v0, p0
 
@@ -56,24 +56,24 @@
 
     const/4 v5, 0x0
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     move v6, v4
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v6, v5
 
-    :goto_11
-    if-ne v3, v6, :cond_14
+    :goto_0
+    if-ne v3, v6, :cond_1
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
+    :cond_1
     move v4, v5
 
-    :goto_15
+    :goto_1
     invoke-static {v4}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     move-wide v3, p1
@@ -126,7 +126,7 @@
 .end method
 
 .method private getAdjustedWindowDefaultStartPositionUs(J)J
-    .registers 13
+    .locals 10
 
     .line 1322
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->windowDefaultStartPositionUs:J
@@ -138,16 +138,16 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
     return-wide v0
 
-    :cond_b
+    :cond_0
     const-wide/16 v2, 0x0
 
     cmp-long v4, p1, v2
 
-    if-lez v4, :cond_1e
+    if-lez v4, :cond_1
 
     add-long/2addr v0, p1
 
@@ -156,14 +156,14 @@
 
     cmp-long p1, v0, p1
 
-    if-lez p1, :cond_1e
+    if-lez p1, :cond_1
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide p1
 
     .line 1335
-    :cond_1e
+    :cond_1
     iget-wide p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->offsetInFirstPeriodUs:J
 
     add-long/2addr p1, v0
@@ -180,7 +180,7 @@
     move v4, v5
 
     .line 1337
-    :goto_29
+    :goto_0
     iget-object v8, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     invoke-virtual {v8}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodCount()I
@@ -189,11 +189,11 @@
 
     add-int/lit8 v8, v8, -0x1
 
-    if-ge v4, v8, :cond_41
+    if-ge v4, v8, :cond_2
 
     cmp-long v8, p1, v6
 
-    if-ltz v8, :cond_41
+    if-ltz v8, :cond_2
 
     sub-long/2addr p1, v6
 
@@ -206,10 +206,10 @@
 
     move-result-wide v6
 
-    goto :goto_29
+    goto :goto_0
 
     .line 1343
-    :cond_41
+    :cond_2
     iget-object v8, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     invoke-virtual {v8, v4}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
@@ -225,12 +225,12 @@
 
     const/4 v9, -0x1
 
-    if-ne v8, v9, :cond_50
+    if-ne v8, v9, :cond_3
 
     return-wide v0
 
     .line 1352
-    :cond_50
+    :cond_3
     iget-object v4, v4, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     .line 1353
@@ -252,7 +252,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_79
+    if-eqz v4, :cond_5
 
     .line 1354
     invoke-interface {v4, v6, v7}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getSegmentCount(J)J
@@ -261,12 +261,12 @@
 
     cmp-long v2, v8, v2
 
-    if-nez v2, :cond_6f
+    if-nez v2, :cond_4
 
-    goto :goto_79
+    goto :goto_1
 
     .line 1358
-    :cond_6f
+    :cond_4
     invoke-interface {v4, p1, p2, v6, v7}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getSegmentNum(JJ)J
 
     move-result-wide v2
@@ -280,18 +280,18 @@
 
     sub-long/2addr v0, p1
 
-    :cond_79
-    :goto_79
+    :cond_5
+    :goto_1
     return-wide v0
 .end method
 
 .method private static isMovingLiveWindow(Landroidx/media3/exoplayer/dash/manifest/DashManifest;)Z
-    .registers 5
+    .locals 4
 
     .line 1371
     iget-boolean v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->minUpdatePeriodMs:J
 
@@ -299,41 +299,41 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->durationMs:J
 
     cmp-long p0, v0, v2
 
-    if-nez p0, :cond_17
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_18
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 4
+    .locals 2
 
     .line 1313
     instance-of v0, p1, Ljava/lang/Integer;
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 1316
-    :cond_6
+    :cond_0
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -345,27 +345,27 @@
 
     sub-int/2addr p1, v0
 
-    if-ltz p1, :cond_19
+    if-ltz p1, :cond_2
 
     .line 1318
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->getPeriodCount()I
 
     move-result v0
 
-    if-lt p1, v0, :cond_18
+    if-lt p1, v0, :cond_1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     move v1, p1
 
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 15
+    .locals 11
 
     .line 1272
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->getPeriodCount()I
@@ -378,7 +378,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_0
 
     .line 1273
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -391,13 +391,13 @@
 
     move-object v4, v2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move-object v4, v0
 
-    :goto_16
-    if-eqz p3, :cond_1f
+    :goto_0
+    if-eqz p3, :cond_1
 
     .line 1274
     iget p3, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->firstPeriodId:I
@@ -408,7 +408,7 @@
 
     move-result-object v0
 
-    :cond_1f
+    :cond_1
     move-object v5, v0
 
     const/4 v6, 0x0
@@ -459,7 +459,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 1267
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DashTimeline;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -472,7 +472,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -496,7 +496,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 27
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -576,7 +576,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

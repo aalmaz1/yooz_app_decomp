@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
-    .registers 4
+    .locals 2
 
     .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,19 +41,19 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     .line 115
     instance-of v0, p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl$OutputConfigurationParamsApi28;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 119
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl$OutputConfigurationParamsApi28;
 
     .line 121
@@ -65,7 +65,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     iget-wide v2, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl$OutputConfigurationParamsApi28;->mDynamicRangeProfile:J
 
@@ -73,16 +73,16 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_1b
+    :cond_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 131
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl$OutputConfigurationParamsApi28;->mOutputConfiguration:Landroid/hardware/camera2/params/OutputConfiguration;

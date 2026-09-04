@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 8
+    .locals 5
 
     .line 145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,8 +70,8 @@
 
     const/4 v1, 0x0
 
-    :goto_1c
-    if-ge v1, v0, :cond_65
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 150
     invoke-virtual {p2, v1}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -81,7 +81,7 @@
     .line 151
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->State_android_id:I
 
-    if-ne v2, v3, :cond_2f
+    if-ne v2, v3, :cond_0
 
     .line 152
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mId:I
@@ -92,13 +92,13 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mId:I
 
-    goto :goto_62
+    goto :goto_1
 
     .line 153
-    :cond_2f
+    :cond_0
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->State_constraints:I
 
-    if-ne v2, v3, :cond_62
+    if-ne v2, v3, :cond_1
 
     .line 154
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mConstraintID:I
@@ -136,7 +136,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_1
 
     .line 159
     new-instance v2, Landroidx/constraintlayout/widget/ConstraintSet;
@@ -150,14 +150,14 @@
 
     invoke-virtual {v2, p1, v3}, Landroidx/constraintlayout/widget/ConstraintSet;->clone(Landroid/content/Context;I)V
 
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 167
-    :cond_65
+    :cond_2
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
@@ -166,7 +166,7 @@
 
 # virtual methods
 .method add(Landroidx/constraintlayout/widget/ConstraintLayoutStates$Variant;)V
-    .registers 3
+    .locals 1
 
     .line 171
     iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mVariants:Ljava/util/ArrayList;
@@ -177,19 +177,19 @@
 .end method
 
 .method public findMatch(FF)I
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 175
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mVariants:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_1
 
     .line 176
     iget-object v1, p0, Landroidx/constraintlayout/widget/ConstraintLayoutStates$State;->mVariants:Ljava/util/ArrayList;
@@ -204,16 +204,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     return v0
 
-    :cond_18
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 p1, -0x1
 
     return p1

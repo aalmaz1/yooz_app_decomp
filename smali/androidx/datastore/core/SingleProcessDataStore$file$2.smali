@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/core/SingleProcessDataStore;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/io/File;
-    .registers 6
+    .locals 5
 
     const-string v0, "There are multiple DataStores active for the same file: "
 
@@ -110,7 +110,7 @@
     monitor-enter v3
 
     .line 168
-    :try_start_19
+    :try_start_0
     sget-object v4, Landroidx/datastore/core/SingleProcessDataStore;->Companion:Landroidx/datastore/core/SingleProcessDataStore$Companion;
 
     invoke-virtual {v4}, Landroidx/datastore/core/SingleProcessDataStore$Companion;->getActiveFiles$datastore_core()Ljava/util/Set;
@@ -123,7 +123,7 @@
 
     xor-int/lit8 v4, v4, 0x1
 
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_0
 
     .line 174
     sget-object v0, Landroidx/datastore/core/SingleProcessDataStore;->Companion:Landroidx/datastore/core/SingleProcessDataStore$Companion;
@@ -137,8 +137,8 @@
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_35
-    .catchall {:try_start_19 .. :try_end_35} :catchall_56
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 167
     monitor-exit v3
@@ -146,8 +146,8 @@
     return-object v1
 
     .line 169
-    :cond_37
-    :try_start_37
+    :cond_0
+    :try_start_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -178,10 +178,10 @@
     check-cast v1, Ljava/lang/Throwable;
 
     throw v1
-    :try_end_56
-    .catchall {:try_start_37 .. :try_end_56} :catchall_56
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_56
+    :catchall_0
     move-exception v0
 
     .line 167
@@ -191,7 +191,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 163
     invoke-virtual {p0}, Landroidx/datastore/core/SingleProcessDataStore$file$2;->invoke()Ljava/io/File;

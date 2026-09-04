@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 13
+    .locals 11
 
     const v2, -0x800001
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;FFIIFFIFI)V
-    .registers 11
+    .locals 0
 
     .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

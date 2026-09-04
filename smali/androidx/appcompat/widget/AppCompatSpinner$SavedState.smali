@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 679
     new-instance v0, Landroidx/appcompat/widget/AppCompatSpinner$SavedState$1;
@@ -45,7 +45,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 669
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
@@ -55,23 +55,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_c
+    :goto_0
     iput-boolean p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$SavedState;->mShowDropdown:Z
 
     return-void
 .end method
 
 .method constructor <init>(Landroid/os/Parcelable;)V
-    .registers 2
+    .locals 0
 
     .line 665
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 675
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V

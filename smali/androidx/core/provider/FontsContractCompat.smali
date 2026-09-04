@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public static buildTypeface(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroidx/core/provider/FontsContractCompat$FontInfo;)Landroid/graphics/Typeface;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public static fetchFonts(Landroid/content/Context;Landroid/os/CancellationSignal;Landroidx/core/provider/FontRequest;)Landroidx/core/provider/FontsContractCompat$FontFamilyResult;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static getFontSync(Landroid/content/Context;Landroidx/core/provider/FontRequest;Landroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;ZII)Landroid/graphics/Typeface;
-    .registers 14
+    .locals 7
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public static getProvider(Landroid/content/pm/PackageManager;Landroidx/core/provider/FontRequest;Landroid/content/res/Resources;)Landroid/content/pm/ProviderInfo;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -123,7 +123,7 @@
 .end method
 
 .method public static prepareFontData(Landroid/content/Context;[Landroidx/core/provider/FontsContractCompat$FontInfo;Landroid/os/CancellationSignal;)Ljava/util/Map;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -151,14 +151,14 @@
 .end method
 
 .method public static requestFont(Landroid/content/Context;Landroidx/core/provider/FontRequest;IZILandroid/os/Handler;Landroidx/core/provider/FontsContractCompat$FontRequestCallback;)Landroid/graphics/Typeface;
-    .registers 8
+    .locals 1
 
     .line 160
     new-instance v0, Landroidx/core/provider/CallbackWithHandler;
 
     invoke-direct {v0, p6, p5}, Landroidx/core/provider/CallbackWithHandler;-><init>(Landroidx/core/provider/FontsContractCompat$FontRequestCallback;Landroid/os/Handler;)V
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_0
 
     .line 163
     invoke-static {p0, p1, v0, p2, p4}, Landroidx/core/provider/FontRequestWorker;->requestFontSync(Landroid/content/Context;Landroidx/core/provider/FontRequest;Landroidx/core/provider/CallbackWithHandler;II)Landroid/graphics/Typeface;
@@ -167,7 +167,7 @@
 
     return-object p0
 
-    :cond_c
+    :cond_0
     const/4 p3, 0x0
 
     .line 166
@@ -179,7 +179,7 @@
 .end method
 
 .method public static requestFont(Landroid/content/Context;Landroidx/core/provider/FontRequest;Landroidx/core/provider/FontsContractCompat$FontRequestCallback;Landroid/os/Handler;)V
-    .registers 5
+    .locals 1
 
     .line 120
     new-instance v0, Landroidx/core/provider/CallbackWithHandler;
@@ -204,7 +204,7 @@
 .end method
 
 .method public static resetCache()V
-    .registers 0
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -215,7 +215,7 @@
 .end method
 
 .method public static resetTypefaceCache()V
-    .registers 0
+    .locals 0
 
     .line 174
     invoke-static {}, Landroidx/core/provider/FontRequestWorker;->resetTypefaceCache()V

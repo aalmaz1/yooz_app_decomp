@@ -108,7 +108,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm;Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;Landroidx/media3/exoplayer/drm/DefaultDrmSession$ReferenceCountListener;Ljava/util/List;IZZ[BLjava/util/HashMap;Landroidx/media3/exoplayer/drm/MediaDrmCallback;Landroid/os/Looper;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 16
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,18 +136,18 @@
 
     const/4 v0, 0x1
 
-    if-eq p6, v0, :cond_9
+    if-eq p6, v0, :cond_0
 
     const/4 v0, 0x3
 
-    if-ne p6, v0, :cond_c
+    if-ne p6, v0, :cond_1
 
     .line 190
-    :cond_9
+    :cond_0
     invoke-static {p9}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 192
-    :cond_c
+    :cond_1
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->uuid:Ljava/util/UUID;
 
     .line 193
@@ -168,7 +168,7 @@
     .line 198
     iput-boolean p8, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->isPlaceholderSession:Z
 
-    if-eqz p9, :cond_22
+    if-eqz p9, :cond_2
 
     .line 200
     iput-object p9, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
@@ -178,10 +178,10 @@
     .line 201
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->schemeDatas:Ljava/util/List;
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 203
-    :cond_22
+    :cond_2
     invoke-static {p5}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -195,7 +195,7 @@
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->schemeDatas:Ljava/util/List;
 
     .line 205
-    :goto_2e
+    :goto_0
     iput-object p10, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->keyRequestParameters:Ljava/util/HashMap;
 
     .line 206
@@ -233,7 +233,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/drm/DefaultDrmSession;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 59
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onProvisionResponse(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -242,7 +242,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/drm/DefaultDrmSession;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 59
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onKeyResponse(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -251,7 +251,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Ljava/util/UUID;
-    .registers 1
+    .locals 0
 
     .line 59
     iget-object p0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->uuid:Ljava/util/UUID;
@@ -260,7 +260,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Landroidx/media3/exoplayer/drm/MediaDrmCallback;
-    .registers 1
+    .locals 0
 
     .line 59
     iget-object p0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->callback:Landroidx/media3/exoplayer/drm/MediaDrmCallback;
@@ -269,7 +269,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
-    .registers 1
+    .locals 0
 
     .line 59
     iget-object p0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -278,7 +278,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Landroidx/media3/exoplayer/drm/DefaultDrmSession$ResponseHandler;
-    .registers 1
+    .locals 0
 
     .line 59
     iget-object p0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->responseHandler:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ResponseHandler;
@@ -287,7 +287,7 @@
 .end method
 
 .method private dispatchEvent(Landroidx/media3/common/util/Consumer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -308,12 +308,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -324,14 +324,14 @@
     .line 593
     invoke-interface {p1, v1}, Landroidx/media3/common/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method private doLicense(Z)V
-    .registers 10
+    .locals 8
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "sessionId"
@@ -341,12 +341,12 @@
     .line 433
     iget-boolean v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->isPlaceholderSession:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 436
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -362,20 +362,20 @@
 
     const/4 v3, 0x2
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_4
 
-    if-eq v1, v2, :cond_3a
+    if-eq v1, v2, :cond_4
 
-    if-eq v1, v3, :cond_2c
+    if-eq v1, v3, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq v1, v0, :cond_1c
+    if-eq v1, v0, :cond_1
 
-    goto/16 :goto_8c
+    goto/16 :goto_0
 
     .line 466
-    :cond_1c
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
 
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -390,53 +390,53 @@
 
     invoke-direct {p0, v1, v0, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->postKeyRequest([BIZ)V
 
-    goto :goto_8c
+    goto :goto_0
 
     .line 461
-    :cond_2c
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_3
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->restoreKeys()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_9
 
     .line 462
-    :cond_36
+    :cond_3
     invoke-direct {p0, v0, v3, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->postKeyRequest([BIZ)V
 
-    goto :goto_8c
+    goto :goto_0
 
     .line 440
-    :cond_3a
+    :cond_4
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
 
-    if-nez v1, :cond_42
+    if-nez v1, :cond_5
 
     .line 441
     invoke-direct {p0, v0, v2, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->postKeyRequest([BIZ)V
 
-    goto :goto_8c
+    goto :goto_0
 
     .line 442
-    :cond_42
+    :cond_5
     iget v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
     const/4 v2, 0x4
 
-    if-eq v1, v2, :cond_4d
+    if-eq v1, v2, :cond_6
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->restoreKeys()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_9
 
     .line 443
-    :cond_4d
+    :cond_6
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->getLicenseDurationRemainingSec()J
 
     move-result-wide v4
@@ -444,13 +444,13 @@
     .line 444
     iget v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mode:I
 
-    if-nez v1, :cond_73
+    if-nez v1, :cond_7
 
     const-wide/16 v6, 0x3c
 
     cmp-long v1, v4, v6
 
-    if-gtz v1, :cond_73
+    if-gtz v1, :cond_7
 
     .line 446
     new-instance v1, Ljava/lang/StringBuilder;
@@ -474,14 +474,14 @@
     .line 451
     invoke-direct {p0, v0, v3, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->postKeyRequest([BIZ)V
 
-    goto :goto_8c
+    goto :goto_0
 
-    :cond_73
+    :cond_7
     const-wide/16 v0, 0x0
 
     cmp-long p1, v4, v0
 
-    if-gtz p1, :cond_82
+    if-gtz p1, :cond_8
 
     .line 453
     new-instance p1, Landroidx/media3/exoplayer/drm/KeysExpiredException;
@@ -490,10 +490,10 @@
 
     invoke-direct {p0, p1, v3}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onError(Ljava/lang/Throwable;I)V
 
-    goto :goto_8c
+    goto :goto_0
 
     .line 455
-    :cond_82
+    :cond_8
     iput v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
     .line 456
@@ -503,13 +503,13 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->dispatchEvent(Landroidx/media3/common/util/Consumer;)V
 
-    :cond_8c
-    :goto_8c
+    :cond_9
+    :goto_0
     return-void
 .end method
 
 .method private getLicenseDurationRemainingSec()J
-    .registers 6
+    .locals 5
 
     .line 487
     sget-object v0, Landroidx/media3/common/C;->WIDEVINE_UUID:Ljava/util/UUID;
@@ -520,14 +520,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const-wide v0, 0x7fffffffffffffffL
 
     return-wide v0
 
     .line 491
-    :cond_10
+    :cond_0
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/WidevineUtil;->getLicenseDurationRemainingSec(Landroidx/media3/exoplayer/drm/DrmSession;)Landroid/util/Pair;
 
     move-result-object v0
@@ -563,7 +563,7 @@
 .end method
 
 .method private isOpen()Z
-    .registers 3
+    .locals 2
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "sessionId"
@@ -576,29 +576,29 @@
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_c
+    :goto_1
     return v0
 .end method
 
 .method static synthetic lambda$onError$1(Ljava/lang/Throwable;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 2
+    .locals 0
 
     .line 570
     check-cast p0, Ljava/lang/Exception;
@@ -609,7 +609,7 @@
 .end method
 
 .method static synthetic lambda$openInternal$0(ILandroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 2
+    .locals 0
 
     .line 392
     invoke-virtual {p1, p0}, Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;->drmSessionAcquired(I)V
@@ -618,7 +618,7 @@
 .end method
 
 .method private onError(Ljava/lang/Throwable;I)V
-    .registers 4
+    .locals 1
 
     .line 566
     new-instance v0, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -642,7 +642,7 @@
     .line 569
     instance-of p2, p1, Ljava/lang/Exception;
 
-    if-eqz p2, :cond_1f
+    if-eqz p2, :cond_0
 
     .line 570
     new-instance p2, Landroidx/media3/exoplayer/drm/DefaultDrmSession$$ExternalSyntheticLambda0;
@@ -651,55 +651,55 @@
 
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->dispatchEvent(Landroidx/media3/common/util/Consumer;)V
 
-    goto :goto_33
+    goto :goto_0
 
     .line 571
-    :cond_1f
+    :cond_0
     instance-of p2, p1, Ljava/lang/Error;
 
-    if-eqz p2, :cond_3c
+    if-eqz p2, :cond_4
 
     .line 573
     invoke-static {p1}, Landroidx/media3/exoplayer/drm/DrmUtil;->isFailureToConstructResourceBusyException(Ljava/lang/Throwable;)Z
 
     move-result p2
 
-    if-nez p2, :cond_33
+    if-nez p2, :cond_2
 
     .line 574
     invoke-static {p1}, Landroidx/media3/exoplayer/drm/DrmUtil;->isFailureToConstructNotProvisionedException(Ljava/lang/Throwable;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_30
+    if-eqz p2, :cond_1
 
-    goto :goto_33
+    goto :goto_0
 
     .line 575
-    :cond_30
+    :cond_1
     check-cast p1, Ljava/lang/Error;
 
     throw p1
 
     .line 580
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_0
     iget p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
     const/4 p2, 0x4
 
-    if-eq p1, p2, :cond_3b
+    if-eq p1, p2, :cond_3
 
     const/4 p1, 0x1
 
     .line 581
     iput p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
-    :cond_3b
+    :cond_3
     return-void
 
     .line 578
-    :cond_3c
+    :cond_4
     new-instance p2, Ljava/lang/IllegalStateException;
 
     const-string v0, "Unexpected Throwable subclass"
@@ -710,22 +710,22 @@
 .end method
 
 .method private onKeyResponse(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 506
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->currentKeyRequest:Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;
 
-    if-ne p1, v0, :cond_68
+    if-ne p1, v0, :cond_6
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->isOpen()Z
 
     move-result p1
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
-    goto :goto_68
+    goto :goto_3
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     .line 510
@@ -734,17 +734,17 @@
     .line 512
     instance-of p1, p2, Ljava/lang/Exception;
 
-    if-nez p1, :cond_62
+    if-nez p1, :cond_5
 
     instance-of p1, p2, Ljava/lang/NoSuchMethodError;
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
-    goto :goto_62
+    goto :goto_2
 
     .line 518
-    :cond_17
-    :try_start_17
+    :cond_1
+    :try_start_0
     check-cast p2, [B
 
     .line 519
@@ -752,7 +752,7 @@
 
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_34
+    if-ne p1, v0, :cond_2
 
     .line 520
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
@@ -774,10 +774,10 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->dispatchEvent(Landroidx/media3/common/util/Consumer;)V
 
-    goto :goto_61
+    goto :goto_1
 
     .line 523
-    :cond_34
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
@@ -791,25 +791,25 @@
 
     const/4 v0, 0x2
 
-    if-eq p2, v0, :cond_47
+    if-eq p2, v0, :cond_3
 
-    if-nez p2, :cond_4e
+    if-nez p2, :cond_4
 
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
 
-    if-eqz p2, :cond_4e
+    if-eqz p2, :cond_4
 
-    :cond_47
-    if-eqz p1, :cond_4e
+    :cond_3
+    if-eqz p1, :cond_4
 
     array-length p2, p1
 
-    if-eqz p2, :cond_4e
+    if-eqz p2, :cond_4
 
     .line 529
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
 
-    :cond_4e
+    :cond_4
     const/4 p1, 0x4
 
     .line 531
@@ -821,100 +821,100 @@
     invoke-direct {p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$$ExternalSyntheticLambda4;-><init>()V
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->dispatchEvent(Landroidx/media3/common/util/Consumer;)V
-    :try_end_59
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_59} :catch_5c
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_17 .. :try_end_59} :catch_5a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_61
+    goto :goto_1
 
-    :catch_5a
+    :catch_0
     move-exception p1
 
-    goto :goto_5d
+    goto :goto_0
 
-    :catch_5c
+    :catch_1
     move-exception p1
 
-    :goto_5d
+    :goto_0
     const/4 p2, 0x1
 
     .line 535
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onKeysError(Ljava/lang/Throwable;Z)V
 
-    :goto_61
+    :goto_1
     return-void
 
     .line 513
-    :cond_62
-    :goto_62
+    :cond_5
+    :goto_2
     check-cast p2, Ljava/lang/Throwable;
 
     const/4 p1, 0x0
 
     invoke-direct {p0, p2, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onKeysError(Ljava/lang/Throwable;Z)V
 
-    :cond_68
-    :goto_68
+    :cond_6
+    :goto_3
     return-void
 .end method
 
 .method private onKeysError(Ljava/lang/Throwable;Z)V
-    .registers 4
+    .locals 1
 
     .line 550
     instance-of v0, p1, Landroid/media/NotProvisionedException;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_2
 
     .line 551
     invoke-static {p1}, Landroidx/media3/exoplayer/drm/DrmUtil;->isFailureToConstructNotProvisionedException(Ljava/lang/Throwable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_b
-    if-eqz p2, :cond_f
+    :cond_0
+    if-eqz p2, :cond_1
 
     const/4 p2, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 p2, 0x2
 
     .line 554
-    :goto_10
+    :goto_0
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onError(Ljava/lang/Throwable;I)V
 
-    goto :goto_19
+    goto :goto_2
 
     .line 552
-    :cond_14
-    :goto_14
+    :cond_2
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->provisioningManager:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;
 
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;->provisionRequired(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)V
 
-    :goto_19
+    :goto_2
     return-void
 .end method
 
 .method private onKeysRequired()V
-    .registers 3
+    .locals 2
 
     .line 540
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mode:I
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 541
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
@@ -926,33 +926,33 @@
     .line 542
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->doLicense(Z)V
 
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method private onProvisionResponse(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 410
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->currentProvisionRequest:Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;
 
-    if-ne p1, v0, :cond_34
+    if-ne p1, v0, :cond_2
 
     iget p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->isOpen()Z
 
     move-result p1
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
     .line 414
@@ -961,7 +961,7 @@
     .line 416
     instance-of p1, p2, Ljava/lang/Exception;
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
     .line 417
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->provisioningManager:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;
@@ -975,15 +975,15 @@
     return-void
 
     .line 422
-    :cond_20
-    :try_start_20
+    :cond_1
+    :try_start_0
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
 
     check-cast p2, [B
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/drm/ExoMediaDrm;->provideProvisionResponse([B)V
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_27} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 428
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->provisioningManager:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;
@@ -992,7 +992,7 @@
 
     return-void
 
-    :catch_2d
+    :catch_0
     move-exception p1
 
     .line 424
@@ -1002,13 +1002,13 @@
 
     invoke-interface {p2, p1, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;->onProvisionError(Ljava/lang/Exception;Z)V
 
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method private openInternal()Z
-    .registers 5
+    .locals 4
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "sessionId"
@@ -1023,13 +1023,13 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 386
-    :cond_8
-    :try_start_8
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/ExoMediaDrm;->openSession()[B
@@ -1072,56 +1072,56 @@
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_31
-    .catch Landroid/media/NotProvisionedException; {:try_start_8 .. :try_end_31} :catch_45
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_31} :catch_34
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_8 .. :try_end_31} :catch_32
+    :try_end_0
+    .catch Landroid/media/NotProvisionedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
     return v1
 
-    :catch_32
+    :catch_0
     move-exception v0
 
-    goto :goto_35
+    goto :goto_0
 
-    :catch_34
+    :catch_1
     move-exception v0
 
     .line 399
-    :goto_35
+    :goto_0
     invoke-static {v0}, Landroidx/media3/exoplayer/drm/DrmUtil;->isFailureToConstructNotProvisionedException(Ljava/lang/Throwable;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_1
 
     .line 400
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->provisioningManager:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;
 
     invoke-interface {v0, p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;->provisionRequired(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)V
 
-    goto :goto_4a
+    goto :goto_1
 
     .line 402
-    :cond_41
+    :cond_1
     invoke-direct {p0, v0, v1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onError(Ljava/lang/Throwable;I)V
 
-    goto :goto_4a
+    goto :goto_1
 
     .line 396
-    :catch_45
+    :catch_2
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->provisioningManager:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;
 
     invoke-interface {v0, p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ProvisioningManager;->provisionRequired(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)V
 
-    :goto_4a
+    :goto_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method private postKeyRequest([BIZ)V
-    .registers 7
+    .locals 3
 
     .line 497
     :try_start_0
@@ -1156,32 +1156,32 @@
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0, p2, p3}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->post(ILjava/lang/Object;Z)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1e} :catch_21
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_26
+    goto :goto_1
 
-    :catch_1f
+    :catch_0
     move-exception p1
 
-    goto :goto_22
+    goto :goto_0
 
-    :catch_21
+    :catch_1
     move-exception p1
 
-    :goto_22
+    :goto_0
     const/4 p2, 0x1
 
     .line 501
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onKeysError(Ljava/lang/Throwable;Z)V
 
-    :goto_26
+    :goto_1
     return-void
 .end method
 
 .method private restoreKeys()Z
-    .registers 5
+    .locals 4
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "sessionId",
@@ -1192,7 +1192,7 @@
     const/4 v0, 0x1
 
     .line 478
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
@@ -1200,22 +1200,22 @@
     iget-object v3, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->offlineLicenseKeySetId:[B
 
     invoke-interface {v1, v2, v3}, Landroidx/media3/exoplayer/drm/ExoMediaDrm;->restoreKeys([B[B)V
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_a} :catch_d
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_1 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_0
 
     return v0
 
-    :catch_b
+    :catch_0
     move-exception v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :catch_d
+    :catch_1
     move-exception v1
 
     .line 481
-    :goto_e
+    :goto_0
     invoke-direct {p0, v1, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onError(Ljava/lang/Throwable;I)V
 
     const/4 v0, 0x0
@@ -1224,7 +1224,7 @@
 .end method
 
 .method private verifyPlaybackThread()V
-    .registers 4
+    .locals 3
 
     .line 598
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -1237,7 +1237,7 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_41
+    if-eq v0, v1, :cond_0
 
     .line 599
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1293,14 +1293,14 @@
     .line 599
     invoke-static {v2, v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_41
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public acquire(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 5
+    .locals 3
 
     .line 311
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1310,7 +1310,7 @@
 
     const/4 v1, 0x0
 
-    if-gez v0, :cond_20
+    if-gez v0, :cond_0
 
     .line 313
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1336,8 +1336,8 @@
     .line 314
     iput v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
 
-    :cond_20
-    if-eqz p1, :cond_27
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 317
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->eventDispatchers:Landroidx/media3/common/util/CopyOnWriteMultiset;
@@ -1345,7 +1345,7 @@
     invoke-virtual {v0, p1}, Landroidx/media3/common/util/CopyOnWriteMultiset;->add(Ljava/lang/Object;)V
 
     .line 319
-    :cond_27
+    :cond_1
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
 
     const/4 v2, 0x1
@@ -1354,18 +1354,18 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
 
-    if-ne v0, v2, :cond_5b
+    if-ne v0, v2, :cond_3
 
     .line 320
     iget p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
 
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_35
+    if-ne p1, v0, :cond_2
 
     move v1, v2
 
-    :cond_35
+    :cond_2
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 321
@@ -1398,22 +1398,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_4
 
     .line 325
     invoke-direct {p0, v2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->doLicense(Z)V
 
-    goto :goto_70
+    goto :goto_0
 
-    :cond_5b
-    if-eqz p1, :cond_70
+    :cond_3
+    if-eqz p1, :cond_4
 
     .line 328
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->isOpen()Z
 
     move-result v0
 
-    if-eqz v0, :cond_70
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->eventDispatchers:Landroidx/media3/common/util/CopyOnWriteMultiset;
 
@@ -1422,7 +1422,7 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_70
+    if-ne v0, v2, :cond_4
 
     .line 332
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->state:I
@@ -1430,8 +1430,8 @@
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;->drmSessionAcquired(I)V
 
     .line 334
-    :cond_70
-    :goto_70
+    :cond_4
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCountListener:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ReferenceCountListener;
 
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
@@ -1442,7 +1442,7 @@
 .end method
 
 .method public final getCryptoConfig()Landroidx/media3/decoder/CryptoConfig;
-    .registers 2
+    .locals 1
 
     .line 285
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1454,7 +1454,7 @@
 .end method
 
 .method public final getError()Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
-    .registers 3
+    .locals 2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1464,21 +1464,21 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->lastException:Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     return-object v0
 .end method
 
 .method public getOfflineLicenseKeySetId()[B
-    .registers 2
+    .locals 1
 
     .line 299
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1490,7 +1490,7 @@
 .end method
 
 .method public final getSchemeUuid()Ljava/util/UUID;
-    .registers 2
+    .locals 1
 
     .line 278
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1502,7 +1502,7 @@
 .end method
 
 .method public final getState()I
-    .registers 2
+    .locals 1
 
     .line 259
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1514,7 +1514,7 @@
 .end method
 
 .method public hasSessionId([B)Z
-    .registers 3
+    .locals 1
 
     .line 216
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1530,62 +1530,62 @@
 .end method
 
 .method onMediaDrmEvent(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_4
+    if-eq p1, v0, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
     .line 223
-    :cond_4
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onKeysRequired()V
 
-    :goto_7
+    :goto_0
     return-void
 .end method
 
 .method onProvisionCompleted()V
-    .registers 2
+    .locals 1
 
     .line 242
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->openInternal()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 243
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->doLicense(Z)V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method onProvisionError(Ljava/lang/Exception;Z)V
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_0
 
     const/4 p2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 p2, 0x3
 
     .line 248
-    :goto_5
+    :goto_0
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onError(Ljava/lang/Throwable;I)V
 
     return-void
 .end method
 
 .method public playClearSamplesWithoutKeys()Z
-    .registers 2
+    .locals 1
 
     .line 265
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1597,7 +1597,7 @@
 .end method
 
 .method provision()V
-    .registers 4
+    .locals 3
 
     .line 233
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
@@ -1633,7 +1633,7 @@
 .end method
 
 .method public queryKeyStatus()Ljava/util/Map;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1650,25 +1650,25 @@
     .line 293
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
 
     invoke-interface {v1, v0}, Landroidx/media3/exoplayer/drm/ExoMediaDrm;->queryKeyStatus([B)Ljava/util/Map;
 
     move-result-object v0
 
-    :goto_f
+    :goto_0
     return-object v0
 .end method
 
 .method public release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 5
+    .locals 3
 
     .line 339
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V
@@ -1676,7 +1676,7 @@
     .line 340
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
 
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_0
 
     const-string p1, "DefaultDrmSession"
 
@@ -1687,13 +1687,13 @@
 
     return-void
 
-    :cond_f
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
     .line 344
     iput v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
 
-    if-nez v0, :cond_51
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
@@ -1756,7 +1756,7 @@
     .line 356
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_1
 
     .line 357
     iget-object v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->mediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;
@@ -1766,8 +1766,8 @@
     .line 358
     iput-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->sessionId:[B
 
-    :cond_51
-    if-eqz p1, :cond_63
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 362
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->eventDispatchers:Landroidx/media3/common/util/CopyOnWriteMultiset;
@@ -1781,13 +1781,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_63
+    if-nez v0, :cond_2
 
     .line 365
     invoke-virtual {p1}, Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;->drmSessionReleased()V
 
     .line 368
-    :cond_63
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCountListener:Landroidx/media3/exoplayer/drm/DefaultDrmSession$ReferenceCountListener;
 
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->referenceCount:I
@@ -1798,7 +1798,7 @@
 .end method
 
 .method public requiresSecureDecoder(Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 305
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->verifyPlaybackThread()V

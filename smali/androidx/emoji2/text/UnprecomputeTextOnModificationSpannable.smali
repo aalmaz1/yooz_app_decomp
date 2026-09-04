@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/text/Spannable;)V
-    .registers 3
+    .locals 1
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method constructor <init>(Landroid/text/Spanned;)V
-    .registers 3
+    .locals 1
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 .end method
 
 .method private ensureSafeWrites()V
-    .registers 3
+    .locals 2
 
     .line 61
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -91,7 +91,7 @@
     .line 62
     iget-boolean v1, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mSafeToWrite:Z
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     invoke-static {}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->precomputedTextDetector()Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable$PrecomputedTextDetector;
 
@@ -101,7 +101,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 63
     new-instance v1, Landroid/text/SpannableString;
@@ -110,7 +110,7 @@
 
     iput-object v1, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x1
 
     .line 65
@@ -120,7 +120,7 @@
 .end method
 
 .method static precomputedTextDetector()Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable$PrecomputedTextDetector;
-    .registers 1
+    .locals 1
 
     .line 162
     new-instance v0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable$PrecomputedTextDetector_28;
@@ -133,7 +133,7 @@
 
 # virtual methods
 .method public charAt(I)C
-    .registers 3
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -146,7 +146,7 @@
 .end method
 
 .method public chars()Ljava/util/stream/IntStream;
-    .registers 2
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -159,7 +159,7 @@
 .end method
 
 .method public codePoints()Ljava/util/stream/IntStream;
-    .registers 2
+    .locals 1
 
     .line 142
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -172,7 +172,7 @@
 .end method
 
 .method public getSpanEnd(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 96
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -185,7 +185,7 @@
 .end method
 
 .method public getSpanFlags(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -198,7 +198,7 @@
 .end method
 
 .method public getSpanStart(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -211,7 +211,7 @@
 .end method
 
 .method public getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -233,7 +233,7 @@
 .end method
 
 .method getUnwrappedSpannable()Landroid/text/Spannable;
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -242,7 +242,7 @@
 .end method
 
 .method public length()I
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -255,7 +255,7 @@
 .end method
 
 .method public nextSpanTransition(IILjava/lang/Class;)I
-    .registers 5
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -268,7 +268,7 @@
 .end method
 
 .method public removeSpan(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 80
     invoke-direct {p0}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->ensureSafeWrites()V
@@ -282,7 +282,7 @@
 .end method
 
 .method public setSpan(Ljava/lang/Object;III)V
-    .registers 6
+    .locals 1
 
     .line 74
     invoke-direct {p0}, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->ensureSafeWrites()V
@@ -296,7 +296,7 @@
 .end method
 
 .method public subSequence(II)Ljava/lang/CharSequence;
-    .registers 4
+    .locals 1
 
     .line 122
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;
@@ -309,7 +309,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/emoji2/text/UnprecomputeTextOnModificationSpannable;->mDelegate:Landroid/text/Spannable;

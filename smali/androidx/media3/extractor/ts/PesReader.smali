@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ts/ElementaryStreamReader;)V
-    .registers 3
+    .locals 1
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
 .end method
 
 .method private continueRead(Landroidx/media3/common/util/ParsableByteArray;[BI)Z
-    .registers 7
+    .locals 3
 
     .line 195
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -97,45 +97,45 @@
 
     const/4 v1, 0x1
 
-    if-gtz v0, :cond_10
+    if-gtz v0, :cond_0
 
     return v1
 
-    :cond_10
-    if-nez p2, :cond_16
+    :cond_0
+    if-nez p2, :cond_1
 
     .line 199
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 201
-    :cond_16
+    :cond_1
     iget v2, p0, Landroidx/media3/extractor/ts/PesReader;->bytesRead:I
 
     invoke-virtual {p1, p2, v2, v0}, Landroidx/media3/common/util/ParsableByteArray;->readBytes([BII)V
 
     .line 203
-    :goto_1b
+    :goto_0
     iget p1, p0, Landroidx/media3/extractor/ts/PesReader;->bytesRead:I
 
     add-int/2addr p1, v0
 
     iput p1, p0, Landroidx/media3/extractor/ts/PesReader;->bytesRead:I
 
-    if-ne p1, p3, :cond_23
+    if-ne p1, p3, :cond_2
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_2
     const/4 v1, 0x0
 
-    :goto_24
+    :goto_1
     return v1
 .end method
 
 .method private parseHeader()Z
-    .registers 8
+    .locals 7
 
     .line 210
     iget-object v0, p0, Landroidx/media3/extractor/ts/PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -159,7 +159,7 @@
 
     const/4 v4, 0x1
 
-    if-eq v0, v4, :cond_29
+    if-eq v0, v4, :cond_0
 
     .line 213
     new-instance v4, Ljava/lang/StringBuilder;
@@ -184,7 +184,7 @@
     return v1
 
     .line 218
-    :cond_29
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     const/16 v1, 0x8
@@ -257,14 +257,14 @@
 
     iput v1, p0, Landroidx/media3/extractor/ts/PesReader;->extendedHeaderLength:I
 
-    if-nez v0, :cond_6f
+    if-nez v0, :cond_1
 
     .line 231
     iput v3, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_6f
+    :cond_1
     add-int/2addr v0, v6
 
     add-int/lit8 v0, v0, -0x9
@@ -274,7 +274,7 @@
     .line 233
     iput v0, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    if-gez v0, :cond_8d
+    if-gez v0, :cond_2
 
     .line 239
     new-instance v0, Ljava/lang/StringBuilder;
@@ -298,13 +298,13 @@
     .line 240
     iput v3, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    :cond_8d
-    :goto_8d
+    :cond_2
+    :goto_0
     return v4
 .end method
 
 .method private parseHeaderExtension()V
-    .registers 11
+    .locals 10
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "timestampAdjuster"
@@ -326,7 +326,7 @@
     .line 250
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PesReader;->ptsFlag:Z
 
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_1
 
     .line 251
     iget-object v0, p0, Landroidx/media3/extractor/ts/PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -396,11 +396,11 @@
     .line 258
     iget-boolean v5, p0, Landroidx/media3/extractor/ts/PesReader;->seenFirstDts:Z
 
-    if-nez v5, :cond_82
+    if-nez v5, :cond_0
 
     iget-boolean v5, p0, Landroidx/media3/extractor/ts/PesReader;->dtsFlag:Z
 
-    if-eqz v5, :cond_82
+    if-eqz v5, :cond_0
 
     .line 259
     iget-object v5, p0, Landroidx/media3/extractor/ts/PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -466,7 +466,7 @@
     iput-boolean v6, p0, Landroidx/media3/extractor/ts/PesReader;->seenFirstDts:Z
 
     .line 274
-    :cond_82
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/PesReader;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
 
     invoke-virtual {v0, v3, v4}, Landroidx/media3/common/util/TimestampAdjuster;->adjustTsTimestamp(J)J
@@ -475,12 +475,12 @@
 
     iput-wide v0, p0, Landroidx/media3/extractor/ts/PesReader;->timeUs:J
 
-    :cond_8a
+    :cond_1
     return-void
 .end method
 
 .method private setState(I)V
-    .registers 2
+    .locals 0
 
     .line 180
     iput p1, p0, Landroidx/media3/extractor/ts/PesReader;->state:I
@@ -496,43 +496,43 @@
 
 # virtual methods
 .method public canConsumeSynthesizedEmptyPusi(Z)Z
-    .registers 4
+    .locals 2
 
     .line 174
     iget v0, p0, Landroidx/media3/extractor/ts/PesReader;->state:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/extractor/ts/PesReader;->reader:Landroidx/media3/extractor/ts/ElementaryStreamReader;
 
     instance-of p1, p1, Landroidx/media3/extractor/ts/H262Reader;
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_1
 
-    :cond_12
+    :cond_0
     const/4 p1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_15
+    :goto_0
     return p1
 .end method
 
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -556,25 +556,25 @@
 
     const/4 v5, 0x1
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_5
 
     .line 93
     iget v0, p0, Landroidx/media3/extractor/ts/PesReader;->state:I
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_4
 
-    if-eq v0, v5, :cond_52
+    if-eq v0, v5, :cond_4
 
     const-string v6, "PesReader"
 
-    if-eq v0, v3, :cond_4d
+    if-eq v0, v3, :cond_3
 
-    if-ne v0, v2, :cond_47
+    if-ne v0, v2, :cond_2
 
     .line 106
     iget v0, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    if-eq v0, v1, :cond_38
+    if-eq v0, v1, :cond_0
 
     .line 107
     new-instance v0, Ljava/lang/StringBuilder;
@@ -602,66 +602,66 @@
     invoke-static {v6, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 110
-    :cond_38
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
 
     move-result v0
 
-    if-nez v0, :cond_40
+    if-nez v0, :cond_1
 
     move v0, v5
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_40
+    :cond_1
     move v0, v4
 
     .line 111
-    :goto_41
+    :goto_0
     iget-object v6, p0, Landroidx/media3/extractor/ts/PesReader;->reader:Landroidx/media3/extractor/ts/ElementaryStreamReader;
 
     invoke-interface {v6, v0}, Landroidx/media3/extractor/ts/ElementaryStreamReader;->packetFinished(Z)V
 
-    goto :goto_52
+    goto :goto_1
 
     .line 114
-    :cond_47
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_4d
+    :cond_3
     const-string v0, "Unexpected start indicator reading extended header"
 
     .line 99
     invoke-static {v6, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 116
-    :cond_52
-    :goto_52
+    :cond_4
+    :goto_1
     invoke-direct {p0, v5}, Landroidx/media3/extractor/ts/PesReader;->setState(I)V
 
     .line 119
-    :cond_55
-    :goto_55
+    :cond_5
+    :goto_2
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_ed
+    if-lez v0, :cond_e
 
     .line 120
     iget v0, p0, Landroidx/media3/extractor/ts/PesReader;->state:I
 
-    if-eqz v0, :cond_e4
+    if-eqz v0, :cond_d
 
-    if-eq v0, v5, :cond_ca
+    if-eq v0, v5, :cond_b
 
-    if-eq v0, v3, :cond_99
+    if-eq v0, v3, :cond_9
 
-    if-ne v0, v2, :cond_93
+    if-ne v0, v2, :cond_8
 
     .line 141
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -671,17 +671,17 @@
     .line 142
     iget v6, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    if-ne v6, v1, :cond_6f
+    if-ne v6, v1, :cond_6
 
     move v6, v4
 
-    goto :goto_71
+    goto :goto_3
 
-    :cond_6f
+    :cond_6
     sub-int v6, v0, v6
 
-    :goto_71
-    if-lez v6, :cond_7c
+    :goto_3
+    if-lez v6, :cond_7
 
     sub-int/2addr v0, v6
 
@@ -695,7 +695,7 @@
     invoke-virtual {p1, v6}, Landroidx/media3/common/util/ParsableByteArray;->setLimit(I)V
 
     .line 147
-    :cond_7c
+    :cond_7
     iget-object v6, p0, Landroidx/media3/extractor/ts/PesReader;->reader:Landroidx/media3/extractor/ts/ElementaryStreamReader;
 
     invoke-interface {v6, p1}, Landroidx/media3/extractor/ts/ElementaryStreamReader;->consume(Landroidx/media3/common/util/ParsableByteArray;)V
@@ -703,14 +703,14 @@
     .line 148
     iget v6, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    if-eq v6, v1, :cond_55
+    if-eq v6, v1, :cond_5
 
     sub-int/2addr v6, v0
 
     .line 149
     iput v6, p0, Landroidx/media3/extractor/ts/PesReader;->payloadSize:I
 
-    if-nez v6, :cond_55
+    if-nez v6, :cond_5
 
     .line 152
     iget-object v0, p0, Landroidx/media3/extractor/ts/PesReader;->reader:Landroidx/media3/extractor/ts/ElementaryStreamReader;
@@ -720,17 +720,17 @@
     .line 153
     invoke-direct {p0, v5}, Landroidx/media3/extractor/ts/PesReader;->setState(I)V
 
-    goto :goto_55
+    goto :goto_2
 
     .line 158
-    :cond_93
+    :cond_8
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_99
+    :cond_9
     const/16 v0, 0xa
 
     .line 130
@@ -749,7 +749,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_5
 
     const/4 v0, 0x0
 
@@ -760,7 +760,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_5
 
     .line 134
     invoke-direct {p0}, Landroidx/media3/extractor/ts/PesReader;->parseHeaderExtension()V
@@ -768,16 +768,16 @@
     .line 135
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PesReader;->dataAlignmentIndicator:Z
 
-    if-eqz v0, :cond_bd
+    if-eqz v0, :cond_a
 
     const/4 v0, 0x4
 
-    goto :goto_be
+    goto :goto_4
 
-    :cond_bd
+    :cond_a
     move v0, v4
 
-    :goto_be
+    :goto_4
     or-int/2addr p2, v0
 
     .line 136
@@ -790,10 +790,10 @@
     .line 137
     invoke-direct {p0, v2}, Landroidx/media3/extractor/ts/PesReader;->setState(I)V
 
-    goto :goto_55
+    goto :goto_2
 
     .line 125
-    :cond_ca
+    :cond_b
     iget-object v0, p0, Landroidx/media3/extractor/ts/PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     iget-object v0, v0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -804,43 +804,43 @@
 
     move-result v0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_5
 
     .line 126
     invoke-direct {p0}, Landroidx/media3/extractor/ts/PesReader;->parseHeader()Z
 
     move-result v0
 
-    if-eqz v0, :cond_de
+    if-eqz v0, :cond_c
 
     move v0, v3
 
-    goto :goto_df
+    goto :goto_5
 
-    :cond_de
+    :cond_c
     move v0, v4
 
-    :goto_df
+    :goto_5
     invoke-direct {p0, v0}, Landroidx/media3/extractor/ts/PesReader;->setState(I)V
 
-    goto/16 :goto_55
+    goto/16 :goto_2
 
     .line 122
-    :cond_e4
+    :cond_d
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto/16 :goto_55
+    goto/16 :goto_2
 
-    :cond_ed
+    :cond_e
     return-void
 .end method
 
 .method public init(Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 4
+    .locals 0
 
     .line 74
     iput-object p1, p0, Landroidx/media3/extractor/ts/PesReader;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -854,7 +854,7 @@
 .end method
 
 .method public seek()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

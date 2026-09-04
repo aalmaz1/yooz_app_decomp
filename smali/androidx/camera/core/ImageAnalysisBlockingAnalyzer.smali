@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Landroidx/camera/core/ImageAnalysisAbstractAnalyzer;-><init>()V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method acquireImage(Landroidx/camera/core/impl/ImageReaderProxy;)Landroidx/camera/core/ImageProxy;
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->acquireNextImage()Landroidx/camera/core/ImageProxy;
@@ -27,13 +27,13 @@
 .end method
 
 .method clearCache()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method onValidImageAvailable(Landroidx/camera/core/ImageProxy;)V
-    .registers 4
+    .locals 2
 
     .line 46
     invoke-virtual {p0, p1}, Landroidx/camera/core/ImageAnalysisBlockingAnalyzer;->analyzeImage(Landroidx/camera/core/ImageProxy;)Lcom/google/common/util/concurrent/ListenableFuture;

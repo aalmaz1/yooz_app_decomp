@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,43 +34,43 @@
 .end method
 
 .method private static getCaptureFrameRate(ILandroidx/media3/common/util/ParsableByteArray;I)I
-    .registers 6
+    .locals 3
 
     const/16 v0, 0xc
 
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_0
 
     const/16 p0, 0xf0
 
     return p0
 
-    :cond_7
+    :cond_0
     const/16 v1, 0xd
 
-    if-ne p0, v1, :cond_e
+    if-ne p0, v1, :cond_1
 
     const/16 p0, 0x78
 
     return p0
 
-    :cond_e
+    :cond_1
     const/16 v1, 0x15
 
     const v2, -0x7fffffff
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_2
 
     return v2
 
     .line 129
-    :cond_16
+    :cond_2
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p0
 
     const/16 v1, 0x8
 
-    if-lt p0, v1, :cond_3b
+    if-lt p0, v1, :cond_5
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
@@ -78,12 +78,12 @@
 
     add-int/2addr p0, v1
 
-    if-le p0, p2, :cond_26
+    if-le p0, p2, :cond_3
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 133
-    :cond_26
+    :cond_3
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result p0
@@ -93,29 +93,29 @@
 
     move-result p2
 
-    if-lt p0, v0, :cond_3b
+    if-lt p0, v0, :cond_5
 
     const p0, 0x73726672
 
-    if-eq p2, p0, :cond_36
+    if-eq p2, p0, :cond_4
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 139
-    :cond_36
+    :cond_4
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedFixedPoint1616()I
 
     move-result p0
 
     return p0
 
-    :cond_3b
-    :goto_3b
+    :cond_5
+    :goto_0
     return v2
 .end method
 
 .method public static parseSmta(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/common/Metadata;
-    .registers 10
+    .locals 8
 
     const/16 v0, 0xc
 
@@ -123,14 +123,14 @@
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 74
-    :goto_5
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-ge v0, p1, :cond_5f
+    if-ge v0, p1, :cond_6
 
     .line 75
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -149,15 +149,15 @@
 
     const v4, 0x73617574
 
-    if-ne v3, v4, :cond_5a
+    if-ne v3, v4, :cond_5
 
     const/16 v0, 0x10
 
-    if-ge v2, v0, :cond_22
+    if-ge v2, v0, :cond_0
 
     return-object v1
 
-    :cond_22
+    :cond_0
     const/4 v0, 0x4
 
     .line 83
@@ -171,12 +171,12 @@
 
     move v4, v3
 
-    :goto_2a
+    :goto_1
     const/4 v5, 0x2
 
     const/4 v6, 0x1
 
-    if-ge v3, v5, :cond_40
+    if-ge v3, v5, :cond_3
 
     .line 90
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -188,37 +188,37 @@
 
     move-result v7
 
-    if-nez v5, :cond_3a
+    if-nez v5, :cond_1
 
     move v2, v7
 
-    goto :goto_3d
+    goto :goto_2
 
-    :cond_3a
-    if-ne v5, v6, :cond_3d
+    :cond_1
+    if-ne v5, v6, :cond_2
 
     move v4, v7
 
-    :cond_3d
-    :goto_3d
+    :cond_2
+    :goto_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 99
-    :cond_40
+    :cond_3
     invoke-static {v2, p0, p1}, Landroidx/media3/extractor/mp4/SmtaAtomUtil;->getCaptureFrameRate(ILandroidx/media3/common/util/ParsableByteArray;I)I
 
     move-result p0
 
     const p1, -0x7fffffff
 
-    if-ne p0, p1, :cond_4a
+    if-ne p0, p1, :cond_4
 
     return-object v1
 
     .line 104
-    :cond_4a
+    :cond_4
     new-instance p1, Landroidx/media3/common/Metadata;
 
     new-array v1, v6, [Landroidx/media3/common/Metadata$Entry;
@@ -235,14 +235,14 @@
 
     return-object p1
 
-    :cond_5a
+    :cond_5
     add-int/2addr v0, v2
 
     .line 106
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_5f
+    :cond_6
     return-object v1
 .end method

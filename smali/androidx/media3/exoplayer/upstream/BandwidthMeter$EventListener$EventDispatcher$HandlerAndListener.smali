@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;)V
-    .registers 3
+    .locals 0
 
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher$HandlerAndListener;)Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;
-    .registers 1
+    .locals 0
 
     .line 87
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher$HandlerAndListener;->listener:Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;
@@ -48,7 +48,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher$HandlerAndListener;)Z
-    .registers 1
+    .locals 0
 
     .line 87
     iget-boolean p0, p0, Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher$HandlerAndListener;->released:Z
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher$HandlerAndListener;)Landroid/os/Handler;
-    .registers 1
+    .locals 0
 
     .line 87
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher$HandlerAndListener;->handler:Landroid/os/Handler;
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public release()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

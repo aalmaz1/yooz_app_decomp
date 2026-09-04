@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Landroidx/emoji2/text/flatbuffer/BaseVector;-><init>()V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public __assign(ILjava/nio/ByteBuffer;)Landroidx/emoji2/text/flatbuffer/FloatVector;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -27,7 +27,7 @@
 .end method
 
 .method public get(I)F
-    .registers 3
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FloatVector;->bb:Ljava/nio/ByteBuffer;

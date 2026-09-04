@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -101,7 +101,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public static getTagFieldNumber(I)I
-    .registers 1
+    .locals 0
 
     ushr-int/lit8 p0, p0, 0x3
 
@@ -118,7 +118,7 @@
 .end method
 
 .method public static getTagWireType(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit8 p0, p0, 0x7
 
@@ -126,7 +126,7 @@
 .end method
 
 .method static makeTag(II)I
-    .registers 2
+    .locals 0
 
     shl-int/lit8 p0, p0, 0x3
 
@@ -136,7 +136,7 @@
 .end method
 
 .method static readPrimitiveField(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -152,7 +152,7 @@
 
     aget p1, v0, p1
 
-    packed-switch p1, :pswitch_data_aa
+    packed-switch p1, :pswitch_data_0
 
     .line 269
     new-instance p0, Ljava/lang/RuntimeException;
@@ -164,7 +164,7 @@
     throw p0
 
     .line 266
-    :pswitch_13
+    :pswitch_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "readPrimitiveField() cannot handle enums."
@@ -174,7 +174,7 @@
     throw p0
 
     .line 262
-    :pswitch_1b
+    :pswitch_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "readPrimitiveField() cannot handle embedded messages."
@@ -184,7 +184,7 @@
     throw p0
 
     .line 260
-    :pswitch_23
+    :pswitch_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "readPrimitiveField() cannot handle nested groups."
@@ -194,7 +194,7 @@
     throw p0
 
     .line 258
-    :pswitch_2b
+    :pswitch_3
     invoke-virtual {p2, p0}, Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;->readString(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Ljava/lang/Object;
 
     move-result-object p0
@@ -202,7 +202,7 @@
     return-object p0
 
     .line 255
-    :pswitch_30
+    :pswitch_4
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readSInt64()J
 
     move-result-wide p0
@@ -214,7 +214,7 @@
     return-object p0
 
     .line 253
-    :pswitch_39
+    :pswitch_5
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readSInt32()I
 
     move-result p0
@@ -226,7 +226,7 @@
     return-object p0
 
     .line 251
-    :pswitch_42
+    :pswitch_6
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readSFixed64()J
 
     move-result-wide p0
@@ -238,7 +238,7 @@
     return-object p0
 
     .line 249
-    :pswitch_4b
+    :pswitch_7
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readSFixed32()I
 
     move-result p0
@@ -250,7 +250,7 @@
     return-object p0
 
     .line 247
-    :pswitch_54
+    :pswitch_8
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readUInt32()I
 
     move-result p0
@@ -262,7 +262,7 @@
     return-object p0
 
     .line 245
-    :pswitch_5d
+    :pswitch_9
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readBytes()Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object p0
@@ -270,7 +270,7 @@
     return-object p0
 
     .line 243
-    :pswitch_62
+    :pswitch_a
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readBool()Z
 
     move-result p0
@@ -282,7 +282,7 @@
     return-object p0
 
     .line 241
-    :pswitch_6b
+    :pswitch_b
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readFixed32()I
 
     move-result p0
@@ -294,7 +294,7 @@
     return-object p0
 
     .line 239
-    :pswitch_74
+    :pswitch_c
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readFixed64()J
 
     move-result-wide p0
@@ -306,7 +306,7 @@
     return-object p0
 
     .line 237
-    :pswitch_7d
+    :pswitch_d
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readInt32()I
 
     move-result p0
@@ -318,7 +318,7 @@
     return-object p0
 
     .line 235
-    :pswitch_86
+    :pswitch_e
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readUInt64()J
 
     move-result-wide p0
@@ -330,7 +330,7 @@
     return-object p0
 
     .line 233
-    :pswitch_8f
+    :pswitch_f
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readInt64()J
 
     move-result-wide p0
@@ -342,7 +342,7 @@
     return-object p0
 
     .line 231
-    :pswitch_98
+    :pswitch_10
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readFloat()F
 
     move-result p0
@@ -354,7 +354,7 @@
     return-object p0
 
     .line 229
-    :pswitch_a1
+    :pswitch_11
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readDouble()D
 
     move-result-wide p0
@@ -365,25 +365,25 @@
 
     return-object p0
 
-    :pswitch_data_aa
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a1
-        :pswitch_98
-        :pswitch_8f
-        :pswitch_86
-        :pswitch_7d
-        :pswitch_74
-        :pswitch_6b
-        :pswitch_62
-        :pswitch_5d
-        :pswitch_54
-        :pswitch_4b
-        :pswitch_42
-        :pswitch_39
-        :pswitch_30
-        :pswitch_2b
-        :pswitch_23
-        :pswitch_1b
-        :pswitch_13
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

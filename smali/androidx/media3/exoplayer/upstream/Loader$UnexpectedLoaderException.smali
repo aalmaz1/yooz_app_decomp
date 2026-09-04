@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 3
 
     .line 50
     new-instance v0, Ljava/lang/StringBuilder;
@@ -43,7 +43,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -63,12 +63,12 @@
 
     move-result-object v1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     const-string v1, ""
 
-    :goto_2f
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

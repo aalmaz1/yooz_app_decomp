@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/EmojiCompat$InitCallback;I)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/Collection;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/Collection;ILjava/lang/Throwable;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     .line 1543
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$ListenerDispatcher;->mInitCallbacks:Ljava/util/List;
@@ -140,10 +140,10 @@
 
     const/4 v3, 0x0
 
-    if-eq v1, v2, :cond_1e
+    if-eq v1, v2, :cond_0
 
-    :goto_c
-    if-ge v3, v0, :cond_2e
+    :goto_0
+    if-ge v3, v0, :cond_1
 
     .line 1553
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat$ListenerDispatcher;->mInitCallbacks:Ljava/util/List;
@@ -160,11 +160,11 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1e
-    :goto_1e
-    if-ge v3, v0, :cond_2e
+    :cond_0
+    :goto_1
+    if-ge v3, v0, :cond_1
 
     .line 1547
     iget-object v1, p0, Landroidx/emoji2/text/EmojiCompat$ListenerDispatcher;->mInitCallbacks:Ljava/util/List;
@@ -179,8 +179,8 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     return-void
 .end method

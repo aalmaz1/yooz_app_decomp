@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 221
     new-instance v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
@@ -43,7 +43,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 231
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/util/TimestampAdjuster;)V
-    .registers 2
+    .locals 0
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/ts/PsBinarySearchSeeker$1;)V
-    .registers 3
+    .locals 0
 
     .line 63
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/PsBinarySearchSeeker$PsScrSeeker;-><init>(Landroidx/media3/common/util/TimestampAdjuster;)V
@@ -53,7 +53,7 @@
 .end method
 
 .method private searchForScrValueInBuffer(Landroidx/media3/common/util/ParsableByteArray;JJ)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
-    .registers 15
+    .locals 9
 
     const/4 v0, -0x1
 
@@ -64,14 +64,14 @@
     move-wide v4, v1
 
     .line 96
-    :goto_8
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v6
 
     const/4 v7, 0x4
 
-    if-lt v6, v7, :cond_6a
+    if-lt v6, v7, :cond_5
 
     .line 97
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -88,17 +88,17 @@
 
     const/16 v8, 0x1ba
 
-    if-eq v6, v8, :cond_24
+    if-eq v6, v8, :cond_0
 
     const/4 v6, 0x1
 
     .line 99
     invoke-virtual {p1, v6}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_8
+    goto :goto_0
 
     .line 102
-    :cond_24
+    :cond_0
     invoke-virtual {p1, v7}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 106
@@ -108,7 +108,7 @@
 
     cmp-long v0, v6, v1
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_4
 
     .line 108
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsBinarySearchSeeker$PsScrSeeker;->scrTimestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -119,11 +119,11 @@
 
     cmp-long v0, v6, p2
 
-    if-lez v0, :cond_49
+    if-lez v0, :cond_2
 
     cmp-long p1, v4, v1
 
-    if-nez p1, :cond_42
+    if-nez p1, :cond_1
 
     .line 112
     invoke-static {v6, v7, p4, p5}, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->overestimatedResult(JJ)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
@@ -132,7 +132,7 @@
 
     return-object p1
 
-    :cond_42
+    :cond_1
     int-to-long p1, v3
 
     add-long/2addr p4, p1
@@ -144,14 +144,14 @@
 
     return-object p1
 
-    :cond_49
+    :cond_2
     const-wide/32 v3, 0x186a0
 
     add-long/2addr v3, v6
 
     cmp-long v0, v3, p2
 
-    if-lez v0, :cond_5c
+    if-lez v0, :cond_3
 
     .line 119
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -170,7 +170,7 @@
     return-object p1
 
     .line 124
-    :cond_5c
+    :cond_3
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v0
@@ -180,7 +180,7 @@
     move-wide v4, v6
 
     .line 126
-    :cond_62
+    :cond_4
     invoke-static {p1}, Landroidx/media3/extractor/ts/PsBinarySearchSeeker$PsScrSeeker;->skipToEndOfCurrentPack(Landroidx/media3/common/util/ParsableByteArray;)V
 
     .line 127
@@ -188,12 +188,12 @@
 
     move-result v0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6a
+    :cond_5
     cmp-long p1, v4, v1
 
-    if-eqz p1, :cond_75
+    if-eqz p1, :cond_6
 
     int-to-long p1, v0
 
@@ -207,14 +207,14 @@
     return-object p1
 
     .line 135
-    :cond_75
+    :cond_6
     sget-object p1, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->NO_TIMESTAMP_IN_RANGE_RESULT:Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     return-object p1
 .end method
 
 .method private static skipToEndOfCurrentPack(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 6
+    .locals 5
 
     .line 145
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -228,14 +228,14 @@
 
     const/16 v2, 0xa
 
-    if-ge v1, v2, :cond_10
+    if-ge v1, v2, :cond_0
 
     .line 150
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-void
 
-    :cond_10
+    :cond_0
     const/16 v1, 0x9
 
     .line 153
@@ -253,7 +253,7 @@
 
     move-result v2
 
-    if-ge v2, v1, :cond_25
+    if-ge v2, v1, :cond_1
 
     .line 157
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -261,7 +261,7 @@
     return-void
 
     .line 160
-    :cond_25
+    :cond_1
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 162
@@ -271,7 +271,7 @@
 
     const/4 v2, 0x4
 
-    if-ge v1, v2, :cond_33
+    if-ge v1, v2, :cond_2
 
     .line 163
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -279,7 +279,7 @@
     return-void
 
     .line 167
-    :cond_33
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v1
@@ -294,7 +294,7 @@
 
     const/16 v3, 0x1bb
 
-    if-ne v1, v3, :cond_57
+    if-ne v1, v3, :cond_4
 
     .line 169
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
@@ -309,7 +309,7 @@
 
     move-result v3
 
-    if-ge v3, v1, :cond_54
+    if-ge v3, v1, :cond_3
 
     .line 172
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -317,17 +317,17 @@
     return-void
 
     .line 175
-    :cond_54
+    :cond_3
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 182
-    :cond_57
-    :goto_57
+    :cond_4
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v1
 
-    if-lt v1, v2, :cond_9b
+    if-lt v1, v2, :cond_8
 
     .line 183
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -344,25 +344,25 @@
 
     const/16 v3, 0x1ba
 
-    if-eq v1, v3, :cond_9b
+    if-eq v1, v3, :cond_8
 
     const/16 v3, 0x1b9
 
-    if-ne v1, v3, :cond_72
+    if-ne v1, v3, :cond_5
 
-    goto :goto_9b
+    goto :goto_1
 
-    :cond_72
+    :cond_5
     ushr-int/lit8 v1, v1, 0x8
 
     const/4 v3, 0x1
 
-    if-eq v1, v3, :cond_78
+    if-eq v1, v3, :cond_6
 
-    goto :goto_9b
+    goto :goto_1
 
     .line 191
-    :cond_78
+    :cond_6
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 193
@@ -372,7 +372,7 @@
 
     const/4 v3, 0x2
 
-    if-ge v1, v3, :cond_86
+    if-ge v1, v3, :cond_7
 
     .line 195
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -380,7 +380,7 @@
     return-void
 
     .line 198
-    :cond_86
+    :cond_7
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v1
@@ -403,17 +403,17 @@
     .line 199
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_57
+    goto :goto_0
 
-    :cond_9b
-    :goto_9b
+    :cond_8
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public onSeekFinished()V
-    .registers 3
+    .locals 2
 
     .line 87
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsBinarySearchSeeker$PsScrSeeker;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -426,7 +426,7 @@
 .end method
 
 .method public searchForTimestamp(Landroidx/media3/extractor/ExtractorInput;J)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

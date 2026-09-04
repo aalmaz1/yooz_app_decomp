@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static getServiceInfo(Landroid/content/Context;)Landroid/content/pm/ServiceInfo;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 2
+    .locals 0
 
     .line 48
     new-instance p1, Ljava/lang/UnsupportedOperationException;

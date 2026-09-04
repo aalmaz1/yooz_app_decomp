@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 289
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Landroid/content/Context;
-    .registers 1
+    .locals 0
 
     .line 261
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->context:Landroid/content/Context;
@@ -93,7 +93,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Landroidx/media3/exoplayer/ExoPlayer$AudioOffloadListener;
-    .registers 1
+    .locals 0
 
     .line 261
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioOffloadListener:Landroidx/media3/exoplayer/ExoPlayer$AudioOffloadListener;
@@ -102,7 +102,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Landroidx/media3/exoplayer/audio/AudioCapabilities;
-    .registers 1
+    .locals 0
 
     .line 261
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioCapabilities:Landroidx/media3/exoplayer/audio/AudioCapabilities;
@@ -111,7 +111,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Landroidx/media3/common/audio/AudioProcessorChain;
-    .registers 1
+    .locals 0
 
     .line 261
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioProcessorChain:Landroidx/media3/common/audio/AudioProcessorChain;
@@ -120,7 +120,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 261
     iget-boolean p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->enableFloatOutput:Z
@@ -129,7 +129,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 261
     iget-boolean p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->enableAudioTrackPlaybackParams:Z
@@ -138,7 +138,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioTrackBufferSizeProvider;
-    .registers 1
+    .locals 0
 
     .line 261
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioTrackBufferSizeProvider:Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioTrackBufferSizeProvider;
@@ -147,7 +147,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioOffloadSupportProvider;
-    .registers 1
+    .locals 0
 
     .line 261
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioOffloadSupportProvider:Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioOffloadSupportProvider;
@@ -158,7 +158,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/audio/DefaultAudioSink;
-    .registers 3
+    .locals 2
 
     .line 408
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->buildCalled:Z
@@ -175,7 +175,7 @@
     .line 410
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioProcessorChain:Landroidx/media3/common/audio/AudioProcessorChain;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 411
     new-instance v0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;
@@ -189,10 +189,10 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioProcessorChain:Landroidx/media3/common/audio/AudioProcessorChain;
 
     .line 413
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioOffloadSupportProvider:Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioOffloadSupportProvider;
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 414
     new-instance v0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;
@@ -204,7 +204,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioOffloadSupportProvider:Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioOffloadSupportProvider;
 
     .line 416
-    :cond_24
+    :cond_1
     new-instance v0, Landroidx/media3/exoplayer/audio/DefaultAudioSink;
 
     const/4 v1, 0x0
@@ -215,7 +215,7 @@
 .end method
 
 .method public setAudioCapabilities(Landroidx/media3/exoplayer/audio/AudioCapabilities;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -229,7 +229,7 @@
 .end method
 
 .method public setAudioOffloadSupportProvider(Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioOffloadSupportProvider;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
 
     .line 389
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioOffloadSupportProvider:Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioOffloadSupportProvider;
@@ -238,7 +238,7 @@
 .end method
 
 .method public setAudioProcessorChain(Landroidx/media3/common/audio/AudioProcessorChain;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
 
     .line 332
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -250,7 +250,7 @@
 .end method
 
 .method public setAudioProcessors([Landroidx/media3/common/audio/AudioProcessor;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 3
+    .locals 1
 
     .line 318
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -268,7 +268,7 @@
 .end method
 
 .method public setAudioTrackBufferSizeProvider(Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioTrackBufferSizeProvider;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
 
     .line 374
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioTrackBufferSizeProvider:Landroidx/media3/exoplayer/audio/DefaultAudioSink$AudioTrackBufferSizeProvider;
@@ -277,7 +277,7 @@
 .end method
 
 .method public setEnableAudioTrackPlaybackParams(Z)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
 
     .line 361
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->enableAudioTrackPlaybackParams:Z
@@ -286,7 +286,7 @@
 .end method
 
 .method public setEnableFloatOutput(Z)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
 
     .line 347
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->enableFloatOutput:Z
@@ -295,7 +295,7 @@
 .end method
 
 .method public setExperimentalAudioOffloadListener(Landroidx/media3/exoplayer/ExoPlayer$AudioOffloadListener;)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
-    .registers 2
+    .locals 0
 
     .line 402
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;->audioOffloadListener:Landroidx/media3/exoplayer/ExoPlayer$AudioOffloadListener;

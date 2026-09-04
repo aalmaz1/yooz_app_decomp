@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SingleSegmentBase;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;J)V
-    .registers 23
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -110,14 +110,14 @@
     .line 270
     iput-wide v1, v10, Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;->contentLength:J
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_45
+    goto :goto_0
 
     .line 274
-    :cond_33
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/dash/manifest/SingleSegmentIndex;
 
     new-instance v3, Landroidx/media3/exoplayer/dash/manifest/RangedUri;
@@ -138,14 +138,14 @@
 
     invoke-direct {v0, v3}, Landroidx/media3/exoplayer/dash/manifest/SingleSegmentIndex;-><init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;)V
 
-    :goto_45
+    :goto_0
     iput-object v0, v10, Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;->segmentIndex:Landroidx/media3/exoplayer/dash/manifest/SingleSegmentIndex;
 
     return-void
 .end method
 
 .method public static newInstance(JLandroidx/media3/common/Format;Ljava/lang/String;JJJJLjava/util/List;Ljava/lang/String;J)Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;
-    .registers 37
+    .locals 21
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -241,7 +241,7 @@
 
 # virtual methods
 .method public getCacheKey()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 292
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;->cacheKey:Ljava/lang/String;
@@ -250,7 +250,7 @@
 .end method
 
 .method public getIndex()Landroidx/media3/exoplayer/dash/DashSegmentIndex;
-    .registers 2
+    .locals 1
 
     .line 286
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;->segmentIndex:Landroidx/media3/exoplayer/dash/manifest/SingleSegmentIndex;
@@ -259,7 +259,7 @@
 .end method
 
 .method public getIndexUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 2
+    .locals 1
 
     .line 280
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;->indexUri:Landroidx/media3/exoplayer/dash/manifest/RangedUri;

@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -67,16 +67,16 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_4
-    if-eqz p1, :cond_1c
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 359
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -87,12 +87,12 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 362
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->listener:Ljava/lang/Object;
 
     check-cast p1, Landroidx/media3/common/util/ListenerSet$ListenerHolder;
@@ -105,15 +105,15 @@
 
     return p1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 367
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->listener:Ljava/lang/Object;
@@ -126,7 +126,7 @@
 .end method
 
 .method public invoke(ILandroidx/media3/common/util/ListenerSet$Event;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -138,18 +138,18 @@
     .line 334
     iget-boolean v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->released:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_c
+    if-eq p1, v0, :cond_0
 
     .line 336
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
 
     invoke-virtual {v0, p1}, Landroidx/media3/common/FlagSet$Builder;->add(I)Landroidx/media3/common/FlagSet$Builder;
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x1
 
     .line 338
@@ -160,12 +160,12 @@
 
     invoke-interface {p2, p1}, Landroidx/media3/common/util/ListenerSet$Event;->invoke(Ljava/lang/Object;)V
 
-    :cond_14
+    :cond_1
     return-void
 .end method
 
 .method public iterationFinished(Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -177,11 +177,11 @@
     .line 344
     iget-boolean v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->released:Z
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->needsIterationFinishedEvent:Z
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 347
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->flagsBuilder:Landroidx/media3/common/FlagSet$Builder;
@@ -207,12 +207,12 @@
 
     invoke-interface {p1, v1, v0}, Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;->invoke(Ljava/lang/Object;Landroidx/media3/common/FlagSet;)V
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public release(Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -229,7 +229,7 @@
     .line 327
     iget-boolean v0, p0, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->needsIterationFinishedEvent:Z
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -247,6 +247,6 @@
 
     invoke-interface {p1, v0, v1}, Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;->invoke(Ljava/lang/Object;Landroidx/media3/common/FlagSet;)V
 
-    :cond_15
+    :cond_0
     return-void
 .end method

@@ -25,7 +25,7 @@
 .end method
 
 .method public getCaptureResult()Landroid/hardware/camera2/CaptureResult;
-    .registers 2
+    .locals 1
 
     .line 83
     invoke-static {}, Landroidx/camera/core/impl/CameraCaptureResult$EmptyCameraCaptureResult;->create()Landroidx/camera/core/impl/CameraCaptureResult;
@@ -49,7 +49,7 @@
 .end method
 
 .method public populateExifData(Landroidx/camera/core/impl/utils/ExifData$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 72
     invoke-interface {p0}, Landroidx/camera/core/impl/CameraCaptureResult;->getFlashState()Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/constraintlayout/motion/widget/MotionLayout;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 2474
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$1;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 2477
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$1;->val$target:Landroid/view/View;

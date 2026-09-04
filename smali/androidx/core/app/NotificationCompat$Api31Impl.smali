@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 9603
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isAuthenticationRequired(Landroid/app/Notification$Action;)Z
-    .registers 1
+    .locals 0
 
     .line 9607
     invoke-virtual {p0}, Landroid/app/Notification$Action;->isAuthenticationRequired()Z

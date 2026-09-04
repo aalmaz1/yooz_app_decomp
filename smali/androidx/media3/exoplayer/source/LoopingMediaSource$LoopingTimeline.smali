@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;I)V
-    .registers 5
+    .locals 2
 
     .line 137
     new-instance v0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;
@@ -57,42 +57,42 @@
     .line 141
     iput p2, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->loopCount:I
 
-    if-lez v0, :cond_27
+    if-lez v0, :cond_1
 
     const p1, 0x7fffffff
 
     .line 143
     div-int/2addr p1, v0
 
-    if-gt p2, p1, :cond_22
+    if-gt p2, p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_22
+    :cond_0
     const-string p1, "LoopingMediaSource contains too many periods"
 
     invoke-static {v1, p1}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
 
-    :cond_27
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method protected getChildIndexByChildUid(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 171
     instance-of v0, p1, Ljava/lang/Integer;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 174
-    :cond_6
+    :cond_0
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -103,7 +103,7 @@
 .end method
 
 .method protected getChildIndexByPeriodIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 161
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childPeriodCount:I
@@ -114,7 +114,7 @@
 .end method
 
 .method protected getChildIndexByWindowIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 166
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childWindowCount:I
@@ -125,7 +125,7 @@
 .end method
 
 .method protected getChildUidByChildIndex(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 194
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -136,7 +136,7 @@
 .end method
 
 .method protected getFirstPeriodIndexByChildIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 184
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childPeriodCount:I
@@ -147,7 +147,7 @@
 .end method
 
 .method protected getFirstWindowIndexByChildIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 189
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childWindowCount:I
@@ -158,7 +158,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 3
+    .locals 2
 
     .line 156
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childPeriodCount:I
@@ -171,7 +171,7 @@
 .end method
 
 .method protected getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 0
 
     .line 179
     iget-object p1, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childTimeline:Landroidx/media3/common/Timeline;
@@ -180,7 +180,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 3
+    .locals 2
 
     .line 151
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->childWindowCount:I

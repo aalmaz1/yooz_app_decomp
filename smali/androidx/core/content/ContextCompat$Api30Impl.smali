@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createAttributionContext(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Context;
-    .registers 2
+    .locals 0
 
     .line 1172
     invoke-virtual {p0, p1}, Landroid/content/Context;->createAttributionContext(Ljava/lang/String;)Landroid/content/Context;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getAttributionTag(Landroid/content/Context;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1152
     invoke-virtual {p0}, Landroid/content/Context;->getAttributionTag()Ljava/lang/String;
@@ -47,20 +47,20 @@
 .end method
 
 .method static getDisplayOrDefault(Landroid/content/Context;)Landroid/view/Display;
-    .registers 3
+    .locals 2
 
     .line 1158
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getDisplay()Landroid/view/Display;
 
     move-result-object p0
-    :try_end_4
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
     .line 1161
-    :catch_5
+    :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "The context:"

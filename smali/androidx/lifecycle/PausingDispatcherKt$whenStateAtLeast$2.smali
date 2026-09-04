@@ -90,7 +90,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -127,7 +127,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -158,7 +158,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -172,7 +172,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -199,7 +199,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -210,27 +210,27 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
-    if-ne v1, v2, :cond_15
+    if-ne v1, v2, :cond_0
 
     iget-object v0, p0, Landroidx/lifecycle/PausingDispatcherKt$whenStateAtLeast$2;->L$0:Ljava/lang/Object;
 
     check-cast v0, Landroidx/lifecycle/LifecycleController;
 
-    :try_start_f
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_12
-    .catchall {:try_start_f .. :try_end_12} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_57
+    goto :goto_0
 
-    :catchall_13
+    :catchall_0
     move-exception p1
 
-    goto :goto_5d
+    goto :goto_1
 
-    :cond_15
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -239,7 +239,7 @@
 
     throw p1
 
-    :cond_1d
+    :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/lifecycle/PausingDispatcherKt$whenStateAtLeast$2;->L$0:Ljava/lang/Object;
@@ -261,7 +261,7 @@
 
     check-cast p1, Lkotlinx/coroutines/Job;
 
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_3
 
     .line 199
     new-instance v1, Landroidx/lifecycle/PausingDispatcher;
@@ -280,7 +280,7 @@
     invoke-direct {v3, v4, v5, v6, p1}, Landroidx/lifecycle/LifecycleController;-><init>(Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Landroidx/lifecycle/DispatchQueue;Lkotlinx/coroutines/Job;)V
 
     .line 203
-    :try_start_44
+    :try_start_1
     check-cast v1, Lkotlin/coroutines/CoroutineContext;
 
     iget-object p1, p0, Landroidx/lifecycle/PausingDispatcherKt$whenStateAtLeast$2;->$block:Lkotlin/jvm/functions/Function2;
@@ -296,34 +296,34 @@
     invoke-static {v1, p1, v4}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_53
-    .catchall {:try_start_44 .. :try_end_53} :catchall_5b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne p1, v0, :cond_56
+    if-ne p1, v0, :cond_2
 
     return-object v0
 
-    :cond_56
+    :cond_2
     move-object v0, v3
 
     .line 205
-    :goto_57
+    :goto_0
     invoke-virtual {v0}, Landroidx/lifecycle/LifecycleController;->finish()V
 
     return-object p1
 
-    :catchall_5b
+    :catchall_1
     move-exception p1
 
     move-object v0, v3
 
-    :goto_5d
+    :goto_1
     invoke-virtual {v0}, Landroidx/lifecycle/LifecycleController;->finish()V
 
     throw p1
 
     .line 198
-    :cond_61
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v0, "when[State] methods should have a parent job"

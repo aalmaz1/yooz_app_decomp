@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/CameraSelector;Landroidx/camera/core/UseCaseGroup;Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 4
+    .locals 0
 
     .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public getCameraSelector()Landroidx/camera/core/CameraSelector;
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/camera/core/ConcurrentCamera$SingleCameraConfig;->mCameraSelector:Landroidx/camera/core/CameraSelector;
@@ -53,7 +53,7 @@
 .end method
 
 .method public getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-    .registers 2
+    .locals 1
 
     .line 114
     iget-object v0, p0, Landroidx/camera/core/ConcurrentCamera$SingleCameraConfig;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -62,7 +62,7 @@
 .end method
 
 .method public getUseCaseGroup()Landroidx/camera/core/UseCaseGroup;
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/camera/core/ConcurrentCamera$SingleCameraConfig;->mUseCaseGroup:Landroidx/camera/core/UseCaseGroup;

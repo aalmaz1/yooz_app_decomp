@@ -85,7 +85,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/adservices/measurement/MeasurementManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "mMeasurementManager"
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 
@@ -127,7 +127,7 @@
 .end method
 
 .method public static final synthetic access$convertDeletionRequest(Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;)Landroid/adservices/measurement/DeletionRequest;
-    .registers 2
+    .locals 0
 
     .line 93
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;->convertDeletionRequest(Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;)Landroid/adservices/measurement/DeletionRequest;
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final synthetic access$convertWebSourceRequest(Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;)Landroid/adservices/measurement/WebSourceRegistrationRequest;
-    .registers 2
+    .locals 0
 
     .line 93
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;->convertWebSourceRequest(Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;)Landroid/adservices/measurement/WebSourceRegistrationRequest;
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final synthetic access$convertWebTriggerRequest(Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;)Landroid/adservices/measurement/WebTriggerRegistrationRequest;
-    .registers 2
+    .locals 0
 
     .line 93
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;->convertWebTriggerRequest(Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;)Landroid/adservices/measurement/WebTriggerRegistrationRequest;
@@ -160,7 +160,7 @@
 .end method
 
 .method public static final synthetic access$getMMeasurementManager$p(Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;)Landroid/adservices/measurement/MeasurementManager;
-    .registers 1
+    .locals 0
 
     .line 93
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;->mMeasurementManager:Landroid/adservices/measurement/MeasurementManager;
@@ -169,7 +169,7 @@
 .end method
 
 .method private final convertDeletionRequest(Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;)Landroid/adservices/measurement/DeletionRequest;
-    .registers 4
+    .locals 2
 
     .line 118
     new-instance v0, Landroid/adservices/measurement/DeletionRequest$Builder;
@@ -243,7 +243,7 @@
 .end method
 
 .method private final convertWebSourceParams(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,12 +268,12 @@
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -311,14 +311,14 @@
     .line 182
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_35
+    :cond_0
     return-object v0
 .end method
 
 .method private final convertWebSourceRequest(Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;)Landroid/adservices/measurement/WebSourceRegistrationRequest;
-    .registers 5
+    .locals 3
 
     .line 167
     new-instance v0, Landroid/adservices/measurement/WebSourceRegistrationRequest$Builder;
@@ -389,7 +389,7 @@
 .end method
 
 .method private final convertWebTriggerParams(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -414,12 +414,12 @@
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -457,14 +457,14 @@
     .line 216
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_35
+    :cond_0
     return-object v0
 .end method
 
 .method private final convertWebTriggerRequest(Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;)Landroid/adservices/measurement/WebTriggerRegistrationRequest;
-    .registers 4
+    .locals 2
 
     .line 205
     new-instance v0, Landroid/adservices/measurement/WebTriggerRegistrationRequest$Builder;
@@ -501,7 +501,7 @@
 
 # virtual methods
 .method public deleteRegistrations(Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -567,28 +567,28 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_33
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_33
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 274
-    :cond_3a
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public getMeasurementApiStatus(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -648,16 +648,16 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_2f
+    if-ne v0, v1, :cond_0
 
     invoke-static {p1}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_2f
+    :cond_0
     return-object v0
 .end method
 
 .method public registerSource(Landroid/net/Uri;Landroid/view/InputEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -720,28 +720,28 @@
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_2f
+    if-ne p1, p2, :cond_0
 
     invoke-static {p3}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_2f
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_36
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 285
-    :cond_36
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public registerTrigger(Landroid/net/Uri;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -803,28 +803,28 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_2f
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_36
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 296
-    :cond_36
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public registerWebSource(Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -890,28 +890,28 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_33
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_33
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 307
-    :cond_3a
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public registerWebTrigger(Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -977,21 +977,21 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_33
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_33
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 318
-    :cond_3a
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

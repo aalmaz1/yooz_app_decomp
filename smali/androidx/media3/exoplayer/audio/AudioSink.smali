@@ -59,7 +59,7 @@
 .end method
 
 .method public getFormatOffloadSupport(Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
-    .registers 2
+    .locals 0
 
     .line 442
     sget-object p1, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;->DEFAULT_UNSUPPORTED:Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
@@ -109,7 +109,7 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -127,7 +127,7 @@
 .end method
 
 .method public setClock(Landroidx/media3/common/util/Clock;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
@@ -136,19 +136,19 @@
 .end method
 
 .method public setOffloadDelayPadding(II)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public setOffloadMode(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setOutputStreamOffsetUs(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
@@ -157,13 +157,13 @@
 .end method
 
 .method public setPlayerId(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setPreferredDevice(Landroid/media/AudioDeviceInfo;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

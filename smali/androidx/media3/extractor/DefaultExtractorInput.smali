@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.extractor"
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/DataReader;JJ)V
-    .registers 6
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,11 +75,11 @@
 .end method
 
 .method private commitBytesRead(I)V
-    .registers 6
+    .locals 4
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_9
+    if-eq p1, v0, :cond_0
 
     .line 310
     iget-wide v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->position:J
@@ -90,12 +90,12 @@
 
     iput-wide v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->position:J
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method private ensureSpaceForPeek(I)V
-    .registers 5
+    .locals 3
 
     .line 213
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -107,7 +107,7 @@
 
     array-length v1, p1
 
-    if-le v0, v1, :cond_1d
+    if-le v0, v1, :cond_0
 
     .line 215
     array-length p1, p1
@@ -136,24 +136,24 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBuffer:[B
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method private readFromPeekBuffer([BII)I
-    .registers 6
+    .locals 2
 
     .line 245
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferLength:I
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 248
-    :cond_6
+    :cond_0
     invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
 
     move-result p3
@@ -170,7 +170,7 @@
 .end method
 
 .method private readFromUpstream([BIIIZ)I
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -182,7 +182,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_2
 
     .line 293
     iget-object v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->dataReader:Landroidx/media3/common/DataReader;
@@ -197,29 +197,29 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_1c
+    if-ne p1, p2, :cond_1
 
-    if-nez p4, :cond_16
+    if-nez p4, :cond_0
 
-    if-eqz p5, :cond_16
+    if-eqz p5, :cond_0
 
     return p2
 
     .line 298
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
 
     throw p1
 
-    :cond_1c
+    :cond_1
     add-int/2addr p4, p1
 
     return p4
 
     .line 291
-    :cond_1e
+    :cond_2
     new-instance p1, Ljava/io/InterruptedIOException;
 
     invoke-direct {p1}, Ljava/io/InterruptedIOException;-><init>()V
@@ -228,7 +228,7 @@
 .end method
 
 .method private skipFromPeekBuffer(I)I
-    .registers 3
+    .locals 1
 
     .line 231
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferLength:I
@@ -244,7 +244,7 @@
 .end method
 
 .method private updatePeekBuffer(I)V
-    .registers 7
+    .locals 5
 
     .line 260
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferLength:I
@@ -268,7 +268,7 @@
 
     sub-int/2addr v3, v4
 
-    if-ge v0, v3, :cond_16
+    if-ge v0, v3, :cond_0
 
     const/high16 v3, 0x10000
 
@@ -277,13 +277,13 @@
     .line 264
     new-array v3, v3, [B
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move-object v3, v2
 
     .line 266
-    :goto_17
+    :goto_0
     invoke-static {v2, p1, v3, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 267
@@ -295,7 +295,7 @@
 
 # virtual methods
 .method public advancePeekPosition(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -311,7 +311,7 @@
 .end method
 
 .method public advancePeekPosition(IZ)Z
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -330,8 +330,8 @@
 
     move v5, v0
 
-    :goto_9
-    if-ge v5, p1, :cond_21
+    :goto_0
+    if-ge v5, p1, :cond_1
 
     .line 165
     iget-object v2, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBuffer:[B
@@ -351,24 +351,24 @@
 
     const/4 v0, -0x1
 
-    if-ne v5, v0, :cond_1b
+    if-ne v5, v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 170
-    :cond_1b
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
     add-int/2addr v0, v5
 
     iput v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferLength:I
 
-    goto :goto_9
+    goto :goto_0
 
     .line 172
-    :cond_21
+    :cond_1
     iget p2, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
     add-int/2addr p2, p1
@@ -381,7 +381,7 @@
 .end method
 
 .method public getLength()J
-    .registers 3
+    .locals 2
 
     .line 198
     iget-wide v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->streamLength:J
@@ -390,7 +390,7 @@
 .end method
 
 .method public getPeekPosition()J
-    .registers 5
+    .locals 4
 
     .line 188
     iget-wide v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->position:J
@@ -405,7 +405,7 @@
 .end method
 
 .method public getPosition()J
-    .registers 3
+    .locals 2
 
     .line 193
     iget-wide v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->position:J
@@ -414,7 +414,7 @@
 .end method
 
 .method public peek([BII)I
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -431,7 +431,7 @@
 
     sub-int/2addr v0, v3
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 126
     iget-object v2, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBuffer:[B
@@ -451,28 +451,28 @@
 
     const/4 v0, -0x1
 
-    if-ne p3, v0, :cond_18
+    if-ne p3, v0, :cond_0
 
     return v0
 
     .line 136
-    :cond_18
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferLength:I
 
     add-int/2addr v0, p3
 
     iput v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferLength:I
 
-    goto :goto_22
+    goto :goto_0
 
     .line 138
-    :cond_1e
+    :cond_1
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
     .line 140
-    :goto_22
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     iget v1, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -490,7 +490,7 @@
 .end method
 
 .method public peekFully([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -506,7 +506,7 @@
 .end method
 
 .method public peekFully([BIIZ)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -518,14 +518,14 @@
 
     move-result p4
 
-    if-nez p4, :cond_8
+    if-nez p4, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 151
-    :cond_8
+    :cond_0
     iget-object p4, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     iget v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -540,7 +540,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -552,7 +552,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 v5, 0x0
 
@@ -572,14 +572,14 @@
     move-result v0
 
     .line 73
-    :cond_10
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
     return v0
 .end method
 
 .method public readFully([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -595,7 +595,7 @@
 .end method
 
 .method public readFully([BIIZ)Z
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -609,12 +609,12 @@
 
     move v5, v0
 
-    :goto_5
+    :goto_0
     const/4 v0, -0x1
 
-    if-ge v5, p3, :cond_14
+    if-ge v5, p3, :cond_0
 
-    if-eq v5, v0, :cond_14
+    if-eq v5, v0, :cond_0
 
     move-object v1, p0
 
@@ -631,27 +631,27 @@
 
     move-result v5
 
-    goto :goto_5
+    goto :goto_0
 
     .line 84
-    :cond_14
+    :cond_0
     invoke-direct {p0, v5}, Landroidx/media3/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
-    if-eq v5, v0, :cond_1b
+    if-eq v5, v0, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_1c
+    :goto_1
     return p1
 .end method
 
 .method public resetPeekPosition()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -662,7 +662,7 @@
 .end method
 
 .method public setRetryPosition(JLjava/lang/Throwable;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -681,17 +681,17 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 203
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 204
@@ -702,7 +702,7 @@
 .end method
 
 .method public skip(I)I
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -714,7 +714,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 97
     iget-object v2, p0, Landroidx/media3/extractor/DefaultExtractorInput;->scratchSpace:[B
@@ -738,14 +738,14 @@
     move-result v0
 
     .line 99
-    :cond_15
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
     return v0
 .end method
 
 .method public skipFully(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -761,7 +761,7 @@
 .end method
 
 .method public skipFully(IZ)Z
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -775,12 +775,12 @@
 
     move v5, v0
 
-    :goto_5
+    :goto_0
     const/4 v0, -0x1
 
-    if-ge v5, p1, :cond_1c
+    if-ge v5, p1, :cond_0
 
-    if-eq v5, v0, :cond_1c
+    if-eq v5, v0, :cond_0
 
     .line 107
     iget-object v0, p0, Landroidx/media3/extractor/DefaultExtractorInput;->scratchSpace:[B
@@ -807,21 +807,21 @@
 
     move-result v5
 
-    goto :goto_5
+    goto :goto_0
 
     .line 111
-    :cond_1c
+    :cond_0
     invoke-direct {p0, v5}, Landroidx/media3/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
-    if-eq v5, v0, :cond_23
+    if-eq v5, v0, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_24
+    :goto_1
     return p1
 .end method

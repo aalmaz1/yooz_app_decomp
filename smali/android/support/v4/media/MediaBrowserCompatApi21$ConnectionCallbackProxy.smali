@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallback;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onConnected()V
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallbackProxy;->mConnectionCallback:Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallback;
@@ -65,7 +65,7 @@
 .end method
 
 .method public onConnectionFailed()V
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallbackProxy;->mConnectionCallback:Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallback;
@@ -76,7 +76,7 @@
 .end method
 
 .method public onConnectionSuspended()V
-    .registers 2
+    .locals 1
 
     .line 108
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallbackProxy;->mConnectionCallback:Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallback;

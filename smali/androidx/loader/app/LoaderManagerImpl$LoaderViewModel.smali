@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 281
     new-instance v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel$1;
@@ -47,7 +47,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 280
     invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method static getInstance(Landroidx/lifecycle/ViewModelStore;)Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
-    .registers 3
+    .locals 2
 
     .line 292
     new-instance v0, Landroidx/lifecycle/ViewModelProvider;
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .registers 9
+    .locals 4
 
     .line 354
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -100,7 +100,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_57
+    if-lez v0, :cond_0
 
     .line 355
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -131,14 +131,14 @@
     const/4 v1, 0x0
 
     .line 357
-    :goto_24
+    :goto_0
     iget-object v2, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
 
     invoke-virtual {v2}, Landroidx/collection/SparseArrayCompat;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_57
+    if-ge v1, v2, :cond_0
 
     .line 358
     iget-object v2, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -180,14 +180,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_57
+    :cond_0
     return-void
 .end method
 
 .method finishCreatingLoader()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -198,7 +198,7 @@
 .end method
 
 .method getLoader(I)Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<D:",
@@ -222,7 +222,7 @@
 .end method
 
 .method hasRunningLoaders()Z
-    .registers 5
+    .locals 4
 
     .line 324
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -235,8 +235,8 @@
 
     move v2, v1
 
-    :goto_8
-    if-ge v2, v0, :cond_1d
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 326
     iget-object v3, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -252,23 +252,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_1a
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     return v1
 .end method
 
 .method isCreatingLoader()Z
-    .registers 2
+    .locals 1
 
     .line 303
     iget-boolean v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mCreatingLoader:Z
@@ -277,7 +277,7 @@
 .end method
 
 .method markForRedelivery()V
-    .registers 4
+    .locals 3
 
     .line 335
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -288,8 +288,8 @@
 
     const/4 v1, 0x0
 
-    :goto_7
-    if-ge v1, v0, :cond_17
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 337
     iget-object v2, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -305,14 +305,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method protected onCleared()V
-    .registers 5
+    .locals 4
 
     .line 344
     invoke-super {p0}, Landroidx/lifecycle/ViewModel;->onCleared()V
@@ -326,8 +326,8 @@
 
     const/4 v1, 0x0
 
-    :goto_a
-    if-ge v1, v0, :cond_1b
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 347
     iget-object v2, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -345,10 +345,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 350
-    :cond_1b
+    :cond_0
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
 
     invoke-virtual {v0}, Landroidx/collection/SparseArrayCompat;->clear()V
@@ -357,7 +357,7 @@
 .end method
 
 .method putLoader(ILandroidx/loader/app/LoaderManagerImpl$LoaderInfo;)V
-    .registers 4
+    .locals 1
 
     .line 311
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -368,7 +368,7 @@
 .end method
 
 .method removeLoader(I)V
-    .registers 3
+    .locals 1
 
     .line 320
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
@@ -379,7 +379,7 @@
 .end method
 
 .method startCreatingLoader()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

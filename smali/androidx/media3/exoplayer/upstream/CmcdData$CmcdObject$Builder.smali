@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 432
     iget p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->bitrateKbps:I
@@ -74,7 +74,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 432
     iget p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->topBitrateKbps:I
@@ -83,7 +83,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 432
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->objectDurationMs:J
@@ -92,7 +92,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 432
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->objectType:Ljava/lang/String;
@@ -101,7 +101,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)Lcom/google/common/collect/ImmutableList;
-    .registers 1
+    .locals 0
 
     .line 432
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->customDataList:Lcom/google/common/collect/ImmutableList;
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;
-    .registers 3
+    .locals 2
 
     .line 501
     new-instance v0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;
@@ -125,27 +125,27 @@
 .end method
 
 .method public setBitrateKbps(I)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
-    .registers 3
+    .locals 1
 
-    if-gez p1, :cond_a
+    if-gez p1, :cond_1
 
     const v0, -0x7fffffff
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 455
-    :goto_b
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 456
@@ -155,7 +155,7 @@
 .end method
 
 .method public setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -177,33 +177,33 @@
 .end method
 
 .method public setObjectDurationMs(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gez v0, :cond_12
+    if-gez v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 481
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 482
@@ -213,7 +213,7 @@
 .end method
 
 .method public setObjectType(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
-    .registers 2
+    .locals 0
 
     .line 489
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->objectType:Ljava/lang/String;
@@ -222,27 +222,27 @@
 .end method
 
 .method public setTopBitrateKbps(I)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
-    .registers 3
+    .locals 1
 
-    if-gez p1, :cond_a
+    if-gez p1, :cond_1
 
     const v0, -0x7fffffff
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 468
-    :goto_b
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 469

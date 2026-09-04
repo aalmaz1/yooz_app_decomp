@@ -56,7 +56,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory$Companion;-><init>()V
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final defaultFactory$lifecycle_viewmodel_release(Landroidx/lifecycle/ViewModelStoreOwner;)Landroidx/lifecycle/ViewModelProvider$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "owner"
 
@@ -84,7 +84,7 @@
     .line 329
     instance-of v0, p1, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 330
     check-cast p1, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
@@ -93,9 +93,9 @@
 
     move-result-object p1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     sget-object p1, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->Companion:Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion;
 
     invoke-virtual {p1}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion;->getInstance()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
@@ -104,12 +104,12 @@
 
     check-cast p1, Landroidx/lifecycle/ViewModelProvider$Factory;
 
-    :goto_18
+    :goto_0
     return-object p1
 .end method
 
 .method public final getInstance(Landroid/app/Application;)Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -122,7 +122,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 345
     new-instance v0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
@@ -132,7 +132,7 @@
     invoke-static {v0}, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->access$setSInstance$cp(Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;)V
 
     .line 347
-    :cond_13
+    :cond_0
     invoke-static {}, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->access$getSInstance$cp()Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
 
     move-result-object p1

@@ -19,7 +19,7 @@
 .end method
 
 .method public getRealtimeCaptureLatency()Landroid/util/Pair;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -36,7 +36,7 @@
 .end method
 
 .method public getSupportedCameraOperations()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -73,7 +73,7 @@
 .end method
 
 .method public startTrigger(Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/SessionProcessor$CaptureCallback;)I
-    .registers 3
+    .locals 0
 
     const/4 p1, -0x1
 

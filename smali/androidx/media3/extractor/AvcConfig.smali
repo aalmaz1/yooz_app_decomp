@@ -38,7 +38,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/List;IIIIIIIIIFLjava/lang/String;)V
-    .registers 13
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 .end method
 
 .method private static buildNalUnitForChild(Landroidx/media3/common/util/ParsableByteArray;)[B
-    .registers 3
+    .locals 2
 
     .line 189
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
@@ -120,7 +120,7 @@
 .end method
 
 .method public static parse(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/AvcConfig;
-    .registers 16
+    .locals 15
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -130,7 +130,7 @@
     const/4 v0, 0x4
 
     .line 44
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 45
@@ -144,7 +144,7 @@
 
     add-int/lit8 v4, v0, 0x1
 
-    if-eq v4, v1, :cond_8d
+    if-eq v4, v1, :cond_3
 
     .line 49
     new-instance v3, Ljava/util/ArrayList;
@@ -162,8 +162,8 @@
 
     move v2, v1
 
-    :goto_1b
-    if-ge v2, v0, :cond_27
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 52
     invoke-static {p0}, Landroidx/media3/extractor/AvcConfig;->buildNalUnitForChild(Landroidx/media3/common/util/ParsableByteArray;)[B
@@ -174,18 +174,18 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 54
-    :cond_27
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v2
 
     move v5, v1
 
-    :goto_2c
-    if-ge v5, v2, :cond_38
+    :goto_1
+    if-ge v5, v2, :cond_1
 
     .line 56
     invoke-static {p0}, Landroidx/media3/extractor/AvcConfig;->buildNalUnitForChild(Landroidx/media3/common/util/ParsableByteArray;)[B
@@ -196,10 +196,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_38
-    if-lez v0, :cond_76
+    :cond_1
+    if-lez v0, :cond_2
 
     .line 71
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -285,9 +285,9 @@
 
     move v7, v2
 
-    goto :goto_86
+    goto :goto_2
 
-    :cond_76
+    :cond_2
     const/4 p0, -0x1
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -317,7 +317,7 @@
     move v12, v2
 
     .line 89
-    :goto_86
+    :goto_2
     new-instance p0, Landroidx/media3/extractor/AvcConfig;
 
     move-object v2, p0
@@ -327,16 +327,16 @@
     return-object p0
 
     .line 47
-    :cond_8d
+    :cond_3
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p0
-    :try_end_93
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_93} :catch_93
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_93
+    :catch_0
     move-exception p0
 
     const-string v0, "Error parsing AVC config"

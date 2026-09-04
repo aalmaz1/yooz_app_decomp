@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 16
     invoke-direct {p0}, Landroidx/camera/core/CameraState$StateError;-><init>()V
@@ -28,21 +28,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 46
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/CameraState$StateError;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_3
 
     .line 47
     check-cast p1, Landroidx/camera/core/CameraState$StateError;
@@ -54,22 +54,22 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_29
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/AutoValue_CameraState_StateError;->cause:Ljava/lang/Throwable;
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1
 
     .line 49
     invoke-virtual {p1}, Landroidx/camera/core/CameraState$StateError;->getCause()Ljava/lang/Throwable;
 
     move-result-object p1
 
-    if-nez p1, :cond_29
+    if-nez p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/CameraState$StateError;->getCause()Ljava/lang/Throwable;
 
     move-result-object p1
@@ -78,22 +78,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v2
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
+    :cond_3
     return v2
 .end method
 
 .method public getCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 30
     iget-object v0, p0, Landroidx/camera/core/AutoValue_CameraState_StateError;->cause:Ljava/lang/Throwable;
@@ -102,7 +102,7 @@
 .end method
 
 .method public getCode()I
-    .registers 2
+    .locals 1
 
     .line 24
     iget v0, p0, Landroidx/camera/core/AutoValue_CameraState_StateError;->code:I
@@ -111,7 +111,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 58
     iget v0, p0, Landroidx/camera/core/AutoValue_CameraState_StateError;->code:I
@@ -125,25 +125,25 @@
     .line 60
     iget-object v1, p0, Landroidx/camera/core/AutoValue_CameraState_StateError;->cause:Ljava/lang/Throwable;
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_11
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 35
     new-instance v0, Ljava/lang/StringBuilder;

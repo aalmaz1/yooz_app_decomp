@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "ExoPlayer:PlaceholderSurface"
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private initInternal(I)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -75,16 +75,16 @@
 
     move-result-object v1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_17
+    :goto_0
     const/4 v2, 0x0
 
     invoke-direct {v0, p0, v1, p1, v2}, Landroidx/media3/exoplayer/video/PlaceholderSurface;-><init>(Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;Landroid/graphics/SurfaceTexture;ZLandroidx/media3/exoplayer/video/PlaceholderSurface$1;)V
@@ -95,7 +95,7 @@
 .end method
 
 .method private releaseInternal()V
-    .registers 2
+    .locals 1
 
     .line 224
     iget-object v0, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->eglSurfaceTexture:Landroidx/media3/common/util/EGLSurfaceTexture;
@@ -113,53 +113,53 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 5
+    .locals 3
 
     .line 182
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1f
+    if-eq v0, v1, :cond_1
 
     const/4 p1, 0x2
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     return v1
 
     .line 203
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->releaseInternal()V
-    :try_end_c
-    .catchall {:try_start_9 .. :try_end_c} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 207
-    :goto_c
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->quit()Z
 
-    goto :goto_19
+    goto :goto_1
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
-    :try_start_11
+    :try_start_1
     const-string v0, "PlaceholderSurface"
 
     const-string v2, "Failed to release placeholder surface"
 
     .line 205
     invoke-static {v0, v2, p1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_18
-    .catchall {:try_start_11 .. :try_end_18} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_c
+    goto :goto_0
 
-    :goto_19
+    :goto_1
     return v1
 
-    :catchall_1a
+    :catchall_1
     move-exception p1
 
     .line 207
@@ -169,47 +169,47 @@
     throw p1
 
     .line 185
-    :cond_1f
-    :try_start_1f
+    :cond_1
+    :try_start_2
     iget p1, p1, Landroid/os/Message;->arg1:I
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initInternal(I)V
-    :try_end_24
-    .catch Ljava/lang/RuntimeException; {:try_start_1f .. :try_end_24} :catch_5a
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_1f .. :try_end_24} :catch_42
-    .catch Ljava/lang/Error; {:try_start_1f .. :try_end_24} :catch_2f
-    .catchall {:try_start_1f .. :try_end_24} :catchall_2d
+    :try_end_2
+    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Error; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
     .line 196
     monitor-enter p0
 
     .line 197
-    :try_start_25
+    :try_start_3
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
     .line 198
     monitor-exit p0
 
-    goto :goto_69
+    goto :goto_2
 
-    :catchall_2a
+    :catchall_2
     move-exception p1
 
     monitor-exit p0
-    :try_end_2c
-    .catchall {:try_start_25 .. :try_end_2c} :catchall_2a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     throw p1
 
-    :catchall_2d
+    :catchall_3
     move-exception p1
 
-    goto :goto_6d
+    goto :goto_3
 
-    :catch_2f
+    :catch_0
     move-exception p1
 
-    :try_start_30
+    :try_start_4
     const-string v0, "PlaceholderSurface"
 
     const-string v2, "Failed to initialize placeholder surface"
@@ -219,34 +219,34 @@
 
     .line 194
     iput-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initError:Ljava/lang/Error;
-    :try_end_39
-    .catchall {:try_start_30 .. :try_end_39} :catchall_2d
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 196
     monitor-enter p0
 
     .line 197
-    :try_start_3a
+    :try_start_5
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
     .line 198
     monitor-exit p0
 
-    goto :goto_69
+    goto :goto_2
 
-    :catchall_3f
+    :catchall_4
     move-exception p1
 
     monitor-exit p0
-    :try_end_41
-    .catchall {:try_start_3a .. :try_end_41} :catchall_3f
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     throw p1
 
-    :catch_42
+    :catch_1
     move-exception p1
 
-    :try_start_43
+    :try_start_6
     const-string v0, "PlaceholderSurface"
 
     const-string v2, "Failed to initialize placeholder surface"
@@ -260,34 +260,34 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     iput-object v0, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initException:Ljava/lang/RuntimeException;
-    :try_end_51
-    .catchall {:try_start_43 .. :try_end_51} :catchall_2d
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 196
     monitor-enter p0
 
     .line 197
-    :try_start_52
+    :try_start_7
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
     .line 198
     monitor-exit p0
 
-    goto :goto_69
+    goto :goto_2
 
-    :catchall_57
+    :catchall_5
     move-exception p1
 
     monitor-exit p0
-    :try_end_59
-    .catchall {:try_start_52 .. :try_end_59} :catchall_57
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_5
 
     throw p1
 
-    :catch_5a
+    :catch_2
     move-exception p1
 
-    :try_start_5b
+    :try_start_8
     const-string v0, "PlaceholderSurface"
 
     const-string v2, "Failed to initialize placeholder surface"
@@ -297,61 +297,61 @@
 
     .line 188
     iput-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initException:Ljava/lang/RuntimeException;
-    :try_end_64
-    .catchall {:try_start_5b .. :try_end_64} :catchall_2d
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
     .line 196
     monitor-enter p0
 
     .line 197
-    :try_start_65
+    :try_start_9
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
     .line 198
     monitor-exit p0
 
-    :goto_69
+    :goto_2
     return v1
 
-    :catchall_6a
+    :catchall_6
     move-exception p1
 
     monitor-exit p0
-    :try_end_6c
-    .catchall {:try_start_65 .. :try_end_6c} :catchall_6a
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_6
 
     throw p1
 
     .line 196
-    :goto_6d
+    :goto_3
     monitor-enter p0
 
     .line 197
-    :try_start_6e
+    :try_start_a
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
     .line 198
     monitor-exit p0
-    :try_end_72
-    .catchall {:try_start_6e .. :try_end_72} :catchall_73
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_7
 
     .line 199
     throw p1
 
-    :catchall_73
+    :catchall_7
     move-exception p1
 
     .line 198
-    :try_start_74
+    :try_start_b
     monitor-exit p0
-    :try_end_75
-    .catchall {:try_start_74 .. :try_end_75} :catchall_73
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_7
 
     throw p1
 .end method
 
 .method public init(I)Landroidx/media3/exoplayer/video/PlaceholderSurface;
-    .registers 5
+    .locals 3
 
     .line 148
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->start()V
@@ -380,7 +380,7 @@
     monitor-enter p0
 
     .line 153
-    :try_start_18
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->handler:Landroid/os/Handler;
 
     const/4 v1, 0x1
@@ -394,43 +394,43 @@
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     .line 154
-    :goto_23
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->surface:Landroidx/media3/exoplayer/video/PlaceholderSurface;
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initException:Ljava/lang/RuntimeException;
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initError:Ljava/lang/Error;
-    :try_end_2d
-    .catchall {:try_start_18 .. :try_end_2d} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_0
 
     .line 156
-    :try_start_2f
+    :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_32
-    .catch Ljava/lang/InterruptedException; {:try_start_2f .. :try_end_32} :catch_33
-    .catchall {:try_start_2f .. :try_end_32} :catchall_52
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_23
+    goto :goto_0
 
-    :catch_33
+    :catch_0
     move v2, v1
 
-    goto :goto_23
+    goto :goto_0
 
     .line 161
-    :cond_35
-    :try_start_35
+    :cond_0
+    :try_start_2
     monitor-exit p0
-    :try_end_36
-    .catchall {:try_start_35 .. :try_end_36} :catchall_52
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_1
 
     .line 164
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -440,15 +440,15 @@
     invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
 
     .line 166
-    :cond_3f
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initException:Ljava/lang/RuntimeException;
 
-    if-nez p1, :cond_51
+    if-nez p1, :cond_3
 
     .line 168
     iget-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->initError:Ljava/lang/Error;
 
-    if-nez p1, :cond_50
+    if-nez p1, :cond_2
 
     .line 171
     iget-object p1, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->surface:Landroidx/media3/exoplayer/video/PlaceholderSurface;
@@ -462,27 +462,27 @@
     return-object p1
 
     .line 169
-    :cond_50
+    :cond_2
     throw p1
 
     .line 167
-    :cond_51
+    :cond_3
     throw p1
 
-    :catchall_52
+    :catchall_0
     move-exception p1
 
     .line 161
-    :try_start_53
+    :try_start_3
     monitor-exit p0
-    :try_end_54
-    .catchall {:try_start_53 .. :try_end_54} :catchall_52
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     throw p1
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 176
     iget-object v0, p0, Landroidx/media3/exoplayer/video/PlaceholderSurface$PlaceholderSurfaceThread;->handler:Landroid/os/Handler;

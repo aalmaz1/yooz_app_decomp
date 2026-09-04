@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/State;)V
-    .registers 3
+    .locals 1
 
     .line 31
     sget-object v0, Landroidx/constraintlayout/solver/state/State$Helper;->VERTICAL_CHAIN:Landroidx/constraintlayout/solver/state/State$Helper;
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public apply()V
-    .registers 6
+    .locals 5
 
     .line 37
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mReferences:Ljava/util/ArrayList;
@@ -37,12 +37,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -58,10 +58,10 @@
     .line 39
     invoke-virtual {v1}, Landroidx/constraintlayout/solver/state/ConstraintReference;->clearVertical()Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_6
+    goto :goto_0
 
     .line 42
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mReferences:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -72,12 +72,12 @@
 
     move-object v2, v1
 
-    :goto_22
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_5
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -90,40 +90,40 @@
 
     move-result-object v3
 
-    if-nez v2, :cond_4a
+    if-nez v2, :cond_3
 
     .line 46
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mTopToTop:Ljava/lang/Object;
 
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_1
 
     .line 47
     invoke-virtual {v3, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->topToTop(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_49
+    goto :goto_2
 
     .line 48
-    :cond_3c
+    :cond_1
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mTopToBottom:Ljava/lang/Object;
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_2
 
     .line 49
     invoke-virtual {v3, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->topToBottom(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_49
+    goto :goto_2
 
     .line 51
-    :cond_44
+    :cond_2
     sget-object v2, Landroidx/constraintlayout/solver/state/State;->PARENT:Ljava/lang/Integer;
 
     invoke-virtual {v3, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->topToTop(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    :goto_49
+    :goto_2
     move-object v2, v3
 
-    :cond_4a
-    if-eqz v1, :cond_5a
+    :cond_3
+    if-eqz v1, :cond_4
 
     .line 55
     invoke-virtual {v3}, Landroidx/constraintlayout/solver/state/ConstraintReference;->getKey()Ljava/lang/Object;
@@ -139,44 +139,44 @@
 
     invoke-virtual {v3, v1}, Landroidx/constraintlayout/solver/state/ConstraintReference;->topToBottom(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    :cond_5a
+    :cond_4
     move-object v1, v3
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_5c
-    if-eqz v1, :cond_73
+    :cond_5
+    if-eqz v1, :cond_8
 
     .line 62
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mBottomToTop:Ljava/lang/Object;
 
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_6
 
     .line 63
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/solver/state/ConstraintReference;->bottomToTop(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_73
+    goto :goto_3
 
     .line 64
-    :cond_66
+    :cond_6
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mBottomToBottom:Ljava/lang/Object;
 
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_7
 
     .line 65
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/solver/state/ConstraintReference;->bottomToBottom(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_73
+    goto :goto_3
 
     .line 67
-    :cond_6e
+    :cond_7
     sget-object v0, Landroidx/constraintlayout/solver/state/State;->PARENT:Ljava/lang/Integer;
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/solver/state/ConstraintReference;->bottomToBottom(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    :cond_73
-    :goto_73
-    if-eqz v2, :cond_82
+    :cond_8
+    :goto_3
+    if-eqz v2, :cond_9
 
     .line 71
     iget v0, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mBias:F
@@ -185,7 +185,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_82
+    if-eqz v0, :cond_9
 
     .line 72
     iget v0, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mBias:F
@@ -193,7 +193,7 @@
     invoke-virtual {v2, v0}, Landroidx/constraintlayout/solver/state/ConstraintReference;->verticalBias(F)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
     .line 75
-    :cond_82
+    :cond_9
     sget-object v0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference$1;->$SwitchMap$androidx$constraintlayout$solver$state$State$Chain:[I
 
     iget-object v1, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mStyle:Landroidx/constraintlayout/solver/state/State$Chain;
@@ -206,42 +206,42 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_9e
+    if-eq v0, v1, :cond_c
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_9a
+    if-eq v0, v3, :cond_b
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_96
+    if-eq v0, v1, :cond_a
 
-    goto :goto_a2
+    goto :goto_4
 
     .line 83
-    :cond_96
+    :cond_a
     invoke-virtual {v2, v3}, Landroidx/constraintlayout/solver/state/ConstraintReference;->setVerticalChainStyle(I)V
 
-    goto :goto_a2
+    goto :goto_4
 
     .line 80
-    :cond_9a
+    :cond_b
     invoke-virtual {v2, v1}, Landroidx/constraintlayout/solver/state/ConstraintReference;->setVerticalChainStyle(I)V
 
-    goto :goto_a2
+    goto :goto_4
 
-    :cond_9e
+    :cond_c
     const/4 v0, 0x0
 
     .line 77
     invoke-virtual {v2, v0}, Landroidx/constraintlayout/solver/state/ConstraintReference;->setVerticalChainStyle(I)V
 
-    :goto_a2
+    :goto_4
     return-void
 .end method
 
 .method public bottomToBottom(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 91
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mBottomToBottom:Ljava/lang/Object;
@@ -250,7 +250,7 @@
 .end method
 
 .method public bottomToTop(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 90
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mBottomToTop:Ljava/lang/Object;
@@ -259,7 +259,7 @@
 .end method
 
 .method public topToBottom(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 89
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mTopToBottom:Ljava/lang/Object;
@@ -268,7 +268,7 @@
 .end method
 
 .method public topToTop(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 88
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/VerticalChainReference;->mTopToTop:Ljava/lang/Object;

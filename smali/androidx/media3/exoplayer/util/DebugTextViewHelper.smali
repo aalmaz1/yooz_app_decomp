@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/ExoPlayer;Landroid/widget/TextView;)V
-    .registers 5
+    .locals 2
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,16 +41,16 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 54
@@ -72,16 +72,16 @@
 .end method
 
 .method private static getColorInfoString(Landroidx/media3/common/ColorInfo;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    if-eqz p0, :cond_1c
+    if-eqz p0, :cond_0
 
     .line 194
     invoke-virtual {p0}, Landroidx/media3/common/ColorInfo;->isValid()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -101,26 +101,26 @@
 
     move-result-object p0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const-string p0, ""
 
-    :goto_1e
+    :goto_0
     return-object p0
 .end method
 
 .method private static getDecoderCountersBufferCountString(Landroidx/media3/exoplayer/DecoderCounters;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     const-string p0, ""
 
     return-object p0
 
     .line 178
-    :cond_5
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
 
     .line 179
@@ -204,24 +204,24 @@
 .end method
 
 .method private static getPixelAspectRatioString(F)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     const/high16 v0, -0x40800000    # -1.0f
 
     cmpl-float v0, p0, v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p0, v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 200
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, " par:"
@@ -256,26 +256,26 @@
 
     move-result-object p0
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_2f
-    :goto_2f
+    :cond_1
+    :goto_0
     const-string p0, ""
 
-    :goto_31
+    :goto_1
     return-object p0
 .end method
 
 .method private static getVideoFrameProcessingOffsetAverageString(JI)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
     const-string p0, "N/A"
 
     return-object p0
 
-    :cond_5
+    :cond_0
     long-to-double p0, p0
 
     int-to-double v0, p2
@@ -295,7 +295,7 @@
 
 # virtual methods
 .method protected getAudioString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 157
     iget-object v0, p0, Landroidx/media3/exoplayer/util/DebugTextViewHelper;->player:Landroidx/media3/exoplayer/ExoPlayer;
@@ -311,14 +311,14 @@
 
     move-result-object v1
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
-    goto :goto_55
+    goto :goto_0
 
     .line 162
-    :cond_11
+    :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "\n"
@@ -388,15 +388,15 @@
 
     return-object v0
 
-    :cond_55
-    :goto_55
+    :cond_1
+    :goto_0
     const-string v0, ""
 
     return-object v0
 .end method
 
 .method protected getDebugString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 98
     new-instance v0, Ljava/lang/StringBuilder;
@@ -435,7 +435,7 @@
 .end method
 
 .method protected getPlayerStateString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 105
     iget-object v0, p0, Landroidx/media3/exoplayer/util/DebugTextViewHelper;->player:Landroidx/media3/exoplayer/ExoPlayer;
@@ -450,39 +450,39 @@
 
     const/4 v3, 0x1
 
-    if-eq v0, v3, :cond_1f
+    if-eq v0, v3, :cond_3
 
-    if-eq v0, v2, :cond_1c
+    if-eq v0, v2, :cond_2
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_1
 
     const/4 v4, 0x4
 
-    if-eq v0, v4, :cond_16
+    if-eq v0, v4, :cond_0
 
     const-string/jumbo v0, "unknown"
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const-string v0, "ended"
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const-string v0, "ready"
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1c
+    :cond_2
     const-string v0, "buffering"
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1f
+    :cond_3
     const-string v0, "idle"
 
-    :goto_21
+    :goto_0
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 122
@@ -526,7 +526,7 @@
 .end method
 
 .method protected getVideoString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/util/DebugTextViewHelper;->player:Landroidx/media3/exoplayer/ExoPlayer;
@@ -549,14 +549,14 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_82
+    if-eqz v0, :cond_1
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_0
 
-    goto :goto_82
+    goto :goto_0
 
     .line 136
-    :cond_17
+    :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "\n"
@@ -667,24 +667,24 @@
 
     return-object v0
 
-    :cond_82
-    :goto_82
+    :cond_1
+    :goto_0
     const-string v0, ""
 
     return-object v0
 .end method
 
 .method public final start()V
-    .registers 3
+    .locals 2
 
     .line 64
     iget-boolean v0, p0, Landroidx/media3/exoplayer/util/DebugTextViewHelper;->started:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 67
@@ -704,16 +704,16 @@
 .end method
 
 .method public final stop()V
-    .registers 3
+    .locals 2
 
     .line 77
     iget-boolean v0, p0, Landroidx/media3/exoplayer/util/DebugTextViewHelper;->started:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 80
@@ -737,7 +737,7 @@
 .end method
 
 .method protected final updateAndPost()V
-    .registers 5
+    .locals 4
 
     .line 90
     iget-object v0, p0, Landroidx/media3/exoplayer/util/DebugTextViewHelper;->textView:Landroid/widget/TextView;

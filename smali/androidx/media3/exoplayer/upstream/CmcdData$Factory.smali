@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, ".*-.*"
 
@@ -79,7 +79,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;JFLjava/lang/String;ZZZ)V
-    .registers 13
+    .locals 3
 
     .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,39 +92,39 @@
 
     const/4 v2, 0x0
 
-    if-ltz v0, :cond_d
+    if-ltz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v2
 
     .line 140
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const v0, -0x800001
 
     cmpl-float v0, p5, v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x0
 
     cmpl-float v0, p5, v0
 
-    if-lez v0, :cond_1e
+    if-lez v0, :cond_1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     move v1, v2
 
     .line 141
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 142
@@ -160,12 +160,12 @@
 .end method
 
 .method private getIsInitSegment()Z
-    .registers 3
+    .locals 2
 
     .line 328
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->objectType:Ljava/lang/String;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const-string v1, "i"
 
@@ -173,35 +173,35 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public static getObjectType(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     move v1, v0
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 163
-    :goto_6
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 165
@@ -217,7 +217,7 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_20
+    if-ne v1, v2, :cond_1
 
     .line 167
     invoke-interface {p0}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getSelectedFormat()Landroidx/media3/common/Format;
@@ -230,30 +230,30 @@
 
     move-result v1
 
-    :cond_20
-    if-ne v1, v0, :cond_25
+    :cond_1
+    if-ne v1, v0, :cond_2
 
     const-string p0, "a"
 
     return-object p0
 
-    :cond_25
+    :cond_2
     const/4 p0, 0x2
 
-    if-ne v1, p0, :cond_2c
+    if-ne v1, p0, :cond_3
 
     const-string/jumbo p0, "v"
 
     return-object p0
 
-    :cond_2c
+    :cond_3
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private validateCustomDataListFormat(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,12 +268,12 @@
 
     move-result-object p1
 
-    :goto_4
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -305,16 +305,16 @@
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public createCmcdData()Landroidx/media3/exoplayer/upstream/CmcdData;
-    .registers 14
+    .locals 13
 
     .line 230
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -335,12 +335,12 @@
 
     move-result-object v1
 
-    :goto_10
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -355,10 +355,10 @@
 
     invoke-direct {p0, v2}, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->validateCustomDataListFormat(Ljava/util/List;)V
 
-    goto :goto_10
+    goto :goto_0
 
     .line 236
-    :cond_24
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     invoke-interface {v1}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getSelectedFormat()Landroidx/media3/common/Format;
@@ -385,7 +385,7 @@
 
     const/4 v5, 0x0
 
-    if-nez v4, :cond_89
+    if-nez v4, :cond_4
 
     .line 240
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -394,20 +394,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_49
+    if-eqz v4, :cond_1
 
     .line 241
     invoke-virtual {v3, v1}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->setBitrateKbps(I)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
 
     .line 243
-    :cond_49
+    :cond_1
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isTopBitrateLoggingAllowed()Z
 
     move-result v4
 
-    if-eqz v4, :cond_78
+    if-eqz v4, :cond_3
 
     .line 244
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -428,10 +428,10 @@
     move v7, v5
 
     .line 246
-    :goto_60
+    :goto_1
     iget v8, v4, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v7, v8, :cond_71
+    if-ge v7, v8, :cond_2
 
     .line 247
     invoke-virtual {v4, v7}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -446,10 +446,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_60
+    goto :goto_1
 
     .line 249
-    :cond_71
+    :cond_2
     invoke-static {v6, v2}, Landroidx/media3/common/util/Util;->ceilDivide(II)I
 
     move-result v2
@@ -457,14 +457,14 @@
     invoke-virtual {v3, v2}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->setTopBitrateKbps(I)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
 
     .line 251
-    :cond_78
+    :cond_3
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v2}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isObjectDurationLoggingAllowed()Z
 
     move-result v2
 
-    if-eqz v2, :cond_89
+    if-eqz v2, :cond_4
 
     .line 252
     iget-wide v6, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->chunkDurationUs:J
@@ -476,21 +476,21 @@
     invoke-virtual {v3, v6, v7}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->setObjectDurationMs(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
 
     .line 255
-    :cond_89
+    :cond_4
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v2}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isObjectTypeLoggingAllowed()Z
 
     move-result v2
 
-    if-eqz v2, :cond_96
+    if-eqz v2, :cond_5
 
     .line 256
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->objectType:Ljava/lang/String;
 
     invoke-virtual {v3, v2}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->setObjectType(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
 
-    :cond_96
+    :cond_5
     const-string v2, "CMCD-Object"
 
     .line 258
@@ -498,7 +498,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_a5
+    if-eqz v4, :cond_6
 
     .line 259
     invoke-virtual {v0, v2}, Lcom/google/common/collect/ImmutableListMultimap;->get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
@@ -508,7 +508,7 @@
     invoke-virtual {v3, v2}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;->setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;
 
     .line 262
-    :cond_a5
+    :cond_6
     new-instance v2, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     invoke-direct {v2}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;-><init>()V
@@ -518,7 +518,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_c1
+    if-nez v4, :cond_7
 
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
@@ -526,7 +526,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c1
+    if-eqz v4, :cond_7
 
     .line 264
     iget-wide v6, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->bufferedDurationUs:J
@@ -538,14 +538,14 @@
     invoke-virtual {v2, v6, v7}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setBufferLengthMs(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     .line 266
-    :cond_c1
+    :cond_7
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isMeasuredThroughputLoggingAllowed()Z
 
     move-result v4
 
-    if-eqz v4, :cond_e5
+    if-eqz v4, :cond_8
 
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
@@ -558,7 +558,7 @@
 
     cmp-long v4, v6, v8
 
-    if-eqz v4, :cond_e5
+    if-eqz v4, :cond_8
 
     .line 268
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -578,14 +578,14 @@
     invoke-virtual {v2, v6, v7}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setMeasuredThroughputInKbps(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     .line 271
-    :cond_e5
+    :cond_8
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isDeadlineLoggingAllowed()Z
 
     move-result v4
 
-    if-eqz v4, :cond_fb
+    if-eqz v4, :cond_9
 
     .line 272
     iget-wide v6, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->bufferedDurationUs:J
@@ -605,39 +605,39 @@
     invoke-virtual {v2, v6, v7}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setDeadlineMs(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     .line 274
-    :cond_fb
+    :cond_9
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isStartupLoggingAllowed()Z
 
     move-result v4
 
-    if-eqz v4, :cond_10f
+    if-eqz v4, :cond_c
 
     .line 275
     iget-boolean v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->didRebuffer:Z
 
-    if-nez v4, :cond_10b
+    if-nez v4, :cond_a
 
     iget-boolean v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->isBufferEmpty:Z
 
-    if-eqz v4, :cond_10c
+    if-eqz v4, :cond_b
 
-    :cond_10b
+    :cond_a
     const/4 v5, 0x1
 
-    :cond_10c
+    :cond_b
     invoke-virtual {v2, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setStartup(Z)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     .line 277
-    :cond_10f
+    :cond_c
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isNextObjectRequestLoggingAllowed()Z
 
     move-result v4
 
-    if-eqz v4, :cond_11c
+    if-eqz v4, :cond_d
 
     .line 278
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->nextObjectRequest:Ljava/lang/String;
@@ -645,21 +645,21 @@
     invoke-virtual {v2, v4}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setNextObjectRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     .line 280
-    :cond_11c
+    :cond_d
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isNextRangeRequestLoggingAllowed()Z
 
     move-result v4
 
-    if-eqz v4, :cond_129
+    if-eqz v4, :cond_e
 
     .line 281
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->nextRangeRequest:Ljava/lang/String;
 
     invoke-virtual {v2, v4}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setNextRangeRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
-    :cond_129
+    :cond_e
     const-string v4, "CMCD-Request"
 
     .line 283
@@ -667,7 +667,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_138
+    if-eqz v5, :cond_f
 
     .line 284
     invoke-virtual {v0, v4}, Lcom/google/common/collect/ImmutableListMultimap;->get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
@@ -677,7 +677,7 @@
     invoke-virtual {v2, v4}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
 
     .line 287
-    :cond_138
+    :cond_f
     new-instance v4, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
     invoke-direct {v4}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;-><init>()V
@@ -689,7 +689,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_14c
+    if-eqz v5, :cond_10
 
     .line 289
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -699,14 +699,14 @@
     invoke-virtual {v4, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;->setContentId(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
     .line 291
-    :cond_14c
+    :cond_10
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v5}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isSessionIdLoggingAllowed()Z
 
     move-result v5
 
-    if-eqz v5, :cond_15b
+    if-eqz v5, :cond_11
 
     .line 292
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -716,14 +716,14 @@
     invoke-virtual {v4, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;->setSessionId(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
     .line 294
-    :cond_15b
+    :cond_11
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v5}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isStreamingFormatLoggingAllowed()Z
 
     move-result v5
 
-    if-eqz v5, :cond_168
+    if-eqz v5, :cond_12
 
     .line 295
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->streamingFormat:Ljava/lang/String;
@@ -731,46 +731,46 @@
     invoke-virtual {v4, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;->setStreamingFormat(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
     .line 297
-    :cond_168
+    :cond_12
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v5}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isStreamTypeLoggingAllowed()Z
 
     move-result v5
 
-    if-eqz v5, :cond_17d
+    if-eqz v5, :cond_14
 
     .line 298
     iget-boolean v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->isLive:Z
 
-    if-eqz v5, :cond_177
+    if-eqz v5, :cond_13
 
     const-string v5, "l"
 
-    goto :goto_17a
+    goto :goto_2
 
-    :cond_177
+    :cond_13
     const-string/jumbo v5, "v"
 
-    :goto_17a
+    :goto_2
     invoke-virtual {v4, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;->setStreamType(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
     .line 300
-    :cond_17d
+    :cond_14
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v5}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isPlaybackRateLoggingAllowed()Z
 
     move-result v5
 
-    if-eqz v5, :cond_18a
+    if-eqz v5, :cond_15
 
     .line 301
     iget v5, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->playbackRate:F
 
     invoke-virtual {v4, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;->setPlaybackRate(F)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
-    :cond_18a
+    :cond_15
     const-string v5, "CMCD-Session"
 
     .line 303
@@ -778,7 +778,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_199
+    if-eqz v6, :cond_16
 
     .line 304
     invoke-virtual {v0, v5}, Lcom/google/common/collect/ImmutableListMultimap;->get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
@@ -788,7 +788,7 @@
     invoke-virtual {v4, v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;->setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdSession$Builder;
 
     .line 307
-    :cond_199
+    :cond_16
     new-instance v5, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
 
     invoke-direct {v5}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;-><init>()V
@@ -800,7 +800,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1b1
+    if-eqz v6, :cond_17
 
     .line 309
     iget-object v6, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -816,21 +816,21 @@
     invoke-virtual {v5, v1}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->setMaximumRequestedThroughputKbps(I)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
 
     .line 312
-    :cond_1b1
+    :cond_17
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;->isBufferStarvationLoggingAllowed()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1be
+    if-eqz v1, :cond_18
 
     .line 313
     iget-boolean v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->didRebuffer:Z
 
     invoke-virtual {v5, v1}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->setBufferStarvation(Z)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
 
-    :cond_1be
+    :cond_18
     const-string v1, "CMCD-Status"
 
     .line 315
@@ -838,7 +838,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1cd
+    if-eqz v6, :cond_19
 
     .line 316
     invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableListMultimap;->get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
@@ -848,7 +848,7 @@
     invoke-virtual {v5, v0}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
 
     .line 319
-    :cond_1cd
+    :cond_19
     new-instance v0, Landroidx/media3/exoplayer/upstream/CmcdData;
 
     .line 320
@@ -885,23 +885,23 @@
 .end method
 
 .method public setChunkDurationUs(J)Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 188
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 189
@@ -911,7 +911,7 @@
 .end method
 
 .method public setNextObjectRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
-    .registers 2
+    .locals 0
 
     .line 213
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->nextObjectRequest:Ljava/lang/String;
@@ -920,7 +920,7 @@
 .end method
 
 .method public setNextRangeRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
-    .registers 2
+    .locals 0
 
     .line 225
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->nextRangeRequest:Ljava/lang/String;
@@ -929,7 +929,7 @@
 .end method
 
 .method public setObjectType(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
-    .registers 2
+    .locals 0
 
     .line 201
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->objectType:Ljava/lang/String;

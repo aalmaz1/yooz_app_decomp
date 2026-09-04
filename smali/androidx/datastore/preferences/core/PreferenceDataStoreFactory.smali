@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/datastore/preferences/core/PreferenceDataStoreFactory;
 
@@ -55,7 +55,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,30 +64,30 @@
 .end method
 
 .method public static synthetic create$default(Landroidx/datastore/preferences/core/PreferenceDataStoreFactory;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Landroidx/datastore/core/DataStore;
-    .registers 8
+    .locals 1
 
     and-int/lit8 p6, p5, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     move-object p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_e
+    if-eqz p6, :cond_1
 
     .line 59
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p2
 
-    :cond_e
+    :cond_1
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_27
+    if-eqz p5, :cond_2
 
     .line 60
     sget-object p3, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
@@ -113,7 +113,7 @@
     move-result-object p3
 
     .line 57
-    :cond_27
+    :cond_2
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/datastore/preferences/core/PreferenceDataStoreFactory;->create(Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
 
     move-result-object p0
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public final create(Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -176,7 +176,7 @@
 .end method
 
 .method public final create(Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Ljava/util/List;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -252,7 +252,7 @@
 .end method
 
 .method public final create(Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -295,7 +295,7 @@
 .end method
 
 .method public final create(Lkotlin/jvm/functions/Function0;)Landroidx/datastore/core/DataStore;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V
-    .registers 3
+    .locals 0
 
     .line 566
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public isAppearanceLightStatusBars()Z
-    .registers 2
+    .locals 1
 
     .line 571
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl23;->mWindow:Landroid/view/Window;
@@ -42,25 +42,25 @@
 
     and-int/lit16 v0, v0, 0x2000
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public setAppearanceLightStatusBars(Z)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x2000
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     const/high16 p1, 0x4000000
 
@@ -75,12 +75,12 @@
     .line 580
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl23;->setSystemUiFlag(I)V
 
-    goto :goto_15
+    goto :goto_0
 
     .line 582
-    :cond_12
+    :cond_0
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl23;->unsetSystemUiFlag(I)V
 
-    :goto_15
+    :goto_0
     return-void
 .end method

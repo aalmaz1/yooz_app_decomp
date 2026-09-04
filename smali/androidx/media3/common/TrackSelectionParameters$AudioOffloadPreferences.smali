@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 960
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
@@ -92,7 +92,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 978
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -122,7 +122,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;Landroidx/media3/common/TrackSelectionParameters$1;)V
-    .registers 3
+    .locals 0
 
     .line 858
     invoke-direct {p0, p1}, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;-><init>(Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;)V
@@ -131,7 +131,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
-    .registers 5
+    .locals 4
 
     .line 1033
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
@@ -193,7 +193,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
-    .registers 3
+    .locals 2
 
     .line 989
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
@@ -225,18 +225,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_3
 
     .line 1000
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -247,12 +247,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_29
+    goto :goto_1
 
     .line 1003
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
 
     .line 1004
@@ -260,35 +260,35 @@
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->audioOffloadMode:I
 
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->isGaplessSupportRequired:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->isGaplessSupportRequired:Z
 
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->isSpeedChangeSupportRequired:Z
 
     iget-boolean p1, p1, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->isSpeedChangeSupportRequired:Z
 
-    if-ne v2, p1, :cond_27
+    if-ne v2, p1, :cond_2
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     move v0, v1
 
-    :goto_28
+    :goto_0
     return v0
 
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1012
     iget v0, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->audioOffloadMode:I
@@ -315,7 +315,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 1024
     new-instance v0, Landroid/os/Bundle;

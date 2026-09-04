@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5592
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static cancelDragAndDrop(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 5610
     invoke-virtual {p0}, Landroid/view/View;->cancelDragAndDrop()V
@@ -34,7 +34,7 @@
 .end method
 
 .method static dispatchFinishTemporaryDetach(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 5626
     invoke-virtual {p0}, Landroid/view/View;->dispatchFinishTemporaryDetach()V
@@ -43,7 +43,7 @@
 .end method
 
 .method static dispatchStartTemporaryDetach(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 5621
     invoke-virtual {p0}, Landroid/view/View;->dispatchStartTemporaryDetach()V
@@ -52,7 +52,7 @@
 .end method
 
 .method static setPointerIcon(Landroid/view/View;Landroid/view/PointerIcon;)V
-    .registers 2
+    .locals 0
 
     .line 5598
     invoke-virtual {p0, p1}, Landroid/view/View;->setPointerIcon(Landroid/view/PointerIcon;)V
@@ -61,7 +61,7 @@
 .end method
 
 .method static startDragAndDrop(Landroid/view/View;Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
-    .registers 5
+    .locals 0
 
     .line 5605
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->startDragAndDrop(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
@@ -72,7 +72,7 @@
 .end method
 
 .method static updateDragShadow(Landroid/view/View;Landroid/view/View$DragShadowBuilder;)V
-    .registers 2
+    .locals 0
 
     .line 5616
     invoke-virtual {p0, p1}, Landroid/view/View;->updateDragShadow(Landroid/view/View$DragShadowBuilder;)V

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraInfoInternal;)V
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public addSessionCaptureCallback(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/CameraCaptureCallback;)V
-    .registers 4
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -37,7 +37,7 @@
 .end method
 
 .method public getCameraId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 134
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -50,7 +50,7 @@
 .end method
 
 .method public getCameraQuirks()Landroidx/camera/core/impl/Quirks;
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -63,7 +63,7 @@
 .end method
 
 .method public getCameraSelector()Landroidx/camera/core/CameraSelector;
-    .registers 2
+    .locals 1
 
     .line 193
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -76,7 +76,7 @@
 .end method
 
 .method public getCameraState()Landroidx/lifecycle/LiveData;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,7 +97,7 @@
 .end method
 
 .method public getEncoderProfilesProvider()Landroidx/camera/core/impl/EncoderProfilesProvider;
-    .registers 2
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -110,7 +110,7 @@
 .end method
 
 .method public getExposureState()Landroidx/camera/core/ExposureState;
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -123,7 +123,7 @@
 .end method
 
 .method public getImplementation()Landroidx/camera/core/impl/CameraInfoInternal;
-    .registers 2
+    .locals 1
 
     .line 187
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -136,7 +136,7 @@
 .end method
 
 .method public getImplementationType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 96
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -149,7 +149,7 @@
 .end method
 
 .method public getIntrinsicZoomRatio()F
-    .registers 2
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -162,7 +162,7 @@
 .end method
 
 .method public getLensFacing()I
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -175,7 +175,7 @@
 .end method
 
 .method public getSensorRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -188,7 +188,7 @@
 .end method
 
 .method public getSensorRotationDegrees(I)I
-    .registers 3
+    .locals 1
 
     .line 61
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -201,7 +201,7 @@
 .end method
 
 .method public getSupportedDynamicRanges()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -222,7 +222,7 @@
 .end method
 
 .method public getSupportedFrameRateRanges()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -244,7 +244,7 @@
 .end method
 
 .method public getSupportedHighResolutions(I)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -265,7 +265,7 @@
 .end method
 
 .method public getSupportedResolutions(I)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -286,7 +286,7 @@
 .end method
 
 .method public getTimebase()Landroidx/camera/core/impl/Timebase;
-    .registers 2
+    .locals 1
 
     .line 163
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -299,7 +299,7 @@
 .end method
 
 .method public getTorchState()Landroidx/lifecycle/LiveData;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -320,7 +320,7 @@
 .end method
 
 .method public getZoomState()Landroidx/lifecycle/LiveData;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -341,7 +341,7 @@
 .end method
 
 .method public hasFlashUnit()Z
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -354,7 +354,7 @@
 .end method
 
 .method public isFocusMeteringSupported(Landroidx/camera/core/FocusMeteringAction;)Z
-    .registers 3
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -367,7 +367,7 @@
 .end method
 
 .method public isPrivateReprocessingSupported()Z
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -380,7 +380,7 @@
 .end method
 
 .method public isZslSupported()Z
-    .registers 2
+    .locals 1
 
     .line 117
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -393,7 +393,7 @@
 .end method
 
 .method public removeSessionCaptureCallback(Landroidx/camera/core/impl/CameraCaptureCallback;)V
-    .registers 3
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraInfo;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;

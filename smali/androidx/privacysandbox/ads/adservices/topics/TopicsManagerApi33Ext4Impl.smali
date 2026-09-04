@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 

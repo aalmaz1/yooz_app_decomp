@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 3
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/media3/extractor/webp/WebpExtractor;->imageExtractor:Landroidx/media3/extractor/SingleSampleExtractor;
@@ -64,7 +64,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -82,13 +82,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/media3/extractor/webp/WebpExtractor;->imageExtractor:Landroidx/media3/extractor/SingleSampleExtractor;
@@ -99,7 +99,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -135,12 +135,12 @@
 
     cmp-long v0, v3, v5
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     return v2
 
     .line 57
-    :cond_1e
+    :cond_0
     invoke-interface {p1, v1}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
     .line 58
@@ -168,10 +168,10 @@
 
     cmp-long p1, v0, v3
 
-    if-nez p1, :cond_3d
+    if-nez p1, :cond_1
 
     const/4 v2, 0x1
 
-    :cond_3d
+    :cond_1
     return v2
 .end method

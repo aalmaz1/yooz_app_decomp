@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static create(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 36
     new-instance v0, Landroidx/core/os/ExecutorCompat$HandlerExecutor;

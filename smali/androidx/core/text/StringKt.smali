@@ -25,7 +25,7 @@
 
 # direct methods
 .method public static final htmlEncode(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-static {p0}, Landroid/text/TextUtils;->htmlEncode(Ljava/lang/String;)Ljava/lang/String;

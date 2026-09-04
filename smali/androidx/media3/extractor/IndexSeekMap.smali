@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>([J[JJ)V
-    .registers 13
+    .locals 8
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,35 +32,35 @@
 
     const/4 v3, 0x0
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v3
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 46
     array-length v0, p2
 
-    if-lez v0, :cond_14
+    if-lez v0, :cond_1
 
     move v1, v2
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
+    :cond_1
     move v1, v3
 
     .line 47
-    :goto_15
+    :goto_1
     iput-boolean v1, p0, Landroidx/media3/extractor/IndexSeekMap;->isSeekable:Z
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_2
 
     .line 48
     aget-wide v4, p2, v3
@@ -69,7 +69,7 @@
 
     cmp-long v1, v4, v6
 
-    if-lez v1, :cond_32
+    if-lez v1, :cond_2
 
     add-int/lit8 v1, v0, 0x1
 
@@ -89,17 +89,17 @@
     .line 53
     invoke-static {p2, v3, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_36
+    goto :goto_2
 
     .line 55
-    :cond_32
+    :cond_2
     iput-object p1, p0, Landroidx/media3/extractor/IndexSeekMap;->positions:[J
 
     .line 56
     iput-object p2, p0, Landroidx/media3/extractor/IndexSeekMap;->timesUs:[J
 
     .line 58
-    :goto_36
+    :goto_2
     iput-wide p3, p0, Landroidx/media3/extractor/IndexSeekMap;->durationUs:J
 
     return-void
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 68
     iget-wide v0, p0, Landroidx/media3/extractor/IndexSeekMap;->durationUs:J
@@ -117,12 +117,12 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 10
+    .locals 7
 
     .line 73
     iget-boolean v0, p0, Landroidx/media3/extractor/IndexSeekMap;->isSeekable:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 74
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -134,7 +134,7 @@
     return-object p1
 
     .line 76
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/IndexSeekMap;->timesUs:[J
 
     const/4 v1, 0x1
@@ -162,7 +162,7 @@
 
     cmp-long p1, v3, p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Landroidx/media3/extractor/IndexSeekMap;->timesUs:[J
 
@@ -170,12 +170,12 @@
 
     sub-int/2addr p1, v1
 
-    if-ne v0, p1, :cond_2d
+    if-ne v0, p1, :cond_1
 
-    goto :goto_41
+    goto :goto_0
 
     .line 82
-    :cond_2d
+    :cond_1
     new-instance p1, Landroidx/media3/extractor/SeekPoint;
 
     iget-object p2, p0, Landroidx/media3/extractor/IndexSeekMap;->timesUs:[J
@@ -198,8 +198,8 @@
     return-object p2
 
     .line 80
-    :cond_41
-    :goto_41
+    :cond_2
+    :goto_0
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v2}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -208,7 +208,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     .line 63
     iget-boolean v0, p0, Landroidx/media3/extractor/IndexSeekMap;->isSeekable:Z

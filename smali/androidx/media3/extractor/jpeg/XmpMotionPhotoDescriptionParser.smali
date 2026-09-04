@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     const-string v0, "Camera:MicroVideo"
 
@@ -62,7 +62,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method public static parse(Ljava/lang/String;)Landroidx/media3/extractor/jpeg/MotionPhotoDescription;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -83,14 +83,14 @@
     invoke-static {p0}, Landroidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser;->parseInternal(Ljava/lang/String;)Landroidx/media3/extractor/jpeg/MotionPhotoDescription;
 
     move-result-object p0
-    :try_end_4
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_4} :catch_5
-    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_4} :catch_5
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_5
+    :catch_0
     const-string p0, "MotionPhotoXmpParser"
 
     const-string v0, "Ignoring unexpected XMP metadata"
@@ -104,7 +104,7 @@
 .end method
 
 .method private static parseInternal(Ljava/lang/String;)Landroidx/media3/extractor/jpeg/MotionPhotoDescription;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -141,7 +141,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_6
 
     .line 92
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
@@ -151,7 +151,7 @@
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 94
-    :cond_26
+    :cond_0
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     const-string v5, "rdf:Description"
@@ -161,19 +161,19 @@
 
     move-result v5
 
-    if-eqz v5, :cond_41
+    if-eqz v5, :cond_2
 
     .line 96
     invoke-static {v0}, Landroidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser;->parseMotionPhotoFlagFromDescription(Lorg/xmlpull/v1/XmlPullParser;)Z
 
     move-result v1
 
-    if-nez v1, :cond_38
+    if-nez v1, :cond_1
 
     return-object v2
 
     .line 101
-    :cond_38
+    :cond_1
     invoke-static {v0}, Landroidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser;->parseMotionPhotoPresentationTimestampUsFromDescription(Lorg/xmlpull/v1/XmlPullParser;)J
 
     move-result-wide v3
@@ -183,9 +183,9 @@
 
     move-result-object v1
 
-    goto :goto_62
+    goto :goto_0
 
-    :cond_41
+    :cond_2
     const-string v5, "Container:Directory"
 
     .line 103
@@ -193,7 +193,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_52
+    if-eqz v5, :cond_3
 
     const-string v1, "Container"
 
@@ -204,9 +204,9 @@
 
     move-result-object v1
 
-    goto :goto_62
+    goto :goto_0
 
-    :cond_52
+    :cond_3
     const-string v5, "GContainer:Directory"
 
     .line 105
@@ -214,7 +214,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_62
+    if-eqz v5, :cond_4
 
     const-string v1, "GContainer"
 
@@ -226,32 +226,32 @@
     move-result-object v1
 
     .line 108
-    :cond_62
-    :goto_62
+    :cond_4
+    :goto_0
     invoke-static {v0, p0}, Landroidx/media3/common/util/XmlPullParserUtil;->isEndTag(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_0
 
     .line 109
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_6f
+    if-eqz p0, :cond_5
 
     return-object v2
 
     .line 113
-    :cond_6f
+    :cond_5
     new-instance p0, Landroidx/media3/extractor/jpeg/MotionPhotoDescription;
 
     invoke-direct {p0, v3, v4, v1}, Landroidx/media3/extractor/jpeg/MotionPhotoDescription;-><init>(JLjava/util/List;)V
 
     return-object p0
 
-    :cond_75
+    :cond_6
     const-string p0, "Couldn\'t find xmp metadata"
 
     .line 88
@@ -263,7 +263,7 @@
 .end method
 
 .method private static parseMicroVideoOffsetFromDescription(Lorg/xmlpull/v1/XmlPullParser;)Lcom/google/common/collect/ImmutableList;
-    .registers 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -282,8 +282,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_35
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -292,7 +292,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     .line 145
     invoke-static {v3}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -332,13 +332,13 @@
 
     return-object p0
 
-    :cond_32
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 156
-    :cond_35
+    :cond_1
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
@@ -347,7 +347,7 @@
 .end method
 
 .method private static parseMotionPhotoFlagFromDescription(Lorg/xmlpull/v1/XmlPullParser;)Z
-    .registers 6
+    .locals 5
 
     .line 117
     sget-object v0, Landroidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser;->MOTION_PHOTO_ATTRIBUTE_NAMES:[Ljava/lang/String;
@@ -358,8 +358,8 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v3, v1, :cond_1b
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     aget-object v4, v0, v3
 
@@ -368,7 +368,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_1
 
     .line 120
     invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -377,24 +377,24 @@
 
     const/4 v0, 0x1
 
-    if-ne p0, v0, :cond_17
+    if-ne p0, v0, :cond_0
 
     move v2, v0
 
-    :cond_17
+    :cond_0
     return v2
 
-    :cond_18
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     return v2
 .end method
 
 .method private static parseMotionPhotoPresentationTimestampUsFromDescription(Lorg/xmlpull/v1/XmlPullParser;)J
-    .registers 8
+    .locals 7
 
     .line 128
     sget-object v0, Landroidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser;->DESCRIPTION_MOTION_PHOTO_PRESENTATION_TIMESTAMP_ATTRIBUTE_NAMES:[Ljava/lang/String;
@@ -403,10 +403,10 @@
 
     const/4 v2, 0x0
 
-    :goto_4
+    :goto_0
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ge v2, v1, :cond_23
+    if-ge v2, v1, :cond_2
 
     aget-object v5, v0, v2
 
@@ -415,7 +415,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_20
+    if-eqz v5, :cond_1
 
     .line 131
     invoke-static {v5}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -426,27 +426,27 @@
 
     cmp-long p0, v0, v5
 
-    if-nez p0, :cond_1e
+    if-nez p0, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     move-wide v3, v0
 
-    :goto_1f
+    :goto_1
     return-wide v3
 
-    :cond_20
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     return-wide v3
 .end method
 
 .method private static parseMotionPhotoV1Directory(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/collect/ImmutableList;
-    .registers 16
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -511,7 +511,7 @@
     move-result-object p1
 
     .line 167
-    :cond_2a
+    :cond_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 168
@@ -519,7 +519,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b6
+    if-eqz v2, :cond_5
 
     .line 169
     new-instance v2, Ljava/lang/StringBuilder;
@@ -617,32 +617,32 @@
 
     move-result-object v3
 
-    if-eqz v7, :cond_b1
+    if-eqz v7, :cond_4
 
-    if-nez v8, :cond_94
+    if-nez v8, :cond_1
 
-    goto :goto_b1
+    goto :goto_2
 
     .line 181
-    :cond_94
+    :cond_1
     new-instance v4, Landroidx/media3/extractor/jpeg/MotionPhotoDescription$ContainerItem;
 
     const-wide/16 v5, 0x0
 
-    if-eqz v2, :cond_9f
+    if-eqz v2, :cond_2
 
     .line 185
     invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v9
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_9f
+    :cond_2
     move-wide v9, v5
 
-    :goto_a0
-    if-eqz v3, :cond_a8
+    :goto_0
+    if-eqz v3, :cond_3
 
     .line 186
     invoke-static {v3}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -651,12 +651,12 @@
 
     move-wide v11, v2
 
-    goto :goto_a9
+    goto :goto_1
 
-    :cond_a8
+    :cond_3
     move-wide v11, v5
 
-    :goto_a9
+    :goto_1
     move-object v6, v4
 
     invoke-direct/range {v6 .. v12}, Landroidx/media3/extractor/jpeg/MotionPhotoDescription$ContainerItem;-><init>(Ljava/lang/String;Ljava/lang/String;JJ)V
@@ -664,11 +664,11 @@
     .line 181
     invoke-virtual {v0, v4}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    goto :goto_b6
+    goto :goto_3
 
     .line 179
-    :cond_b1
-    :goto_b1
+    :cond_4
+    :goto_2
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
@@ -676,13 +676,13 @@
     return-object p0
 
     .line 188
-    :cond_b6
-    :goto_b6
+    :cond_5
+    :goto_3
     invoke-static {p0, p1}, Landroidx/media3/common/util/XmlPullParserUtil;->isEndTag(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_0
 
     .line 189
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;

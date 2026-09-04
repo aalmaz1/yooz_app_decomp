@@ -58,7 +58,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -105,7 +105,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;Lcom/google/common/base/Predicates$1;)V
-    .registers 4
+    .locals 0
 
     .line 610
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Predicates$CompositionPredicate;-><init>(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;)V
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -153,7 +153,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -172,7 +172,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 628
     check-cast p1, Lcom/google/common/base/Predicates$CompositionPredicate;
@@ -186,7 +186,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->p:Lcom/google/common/base/Predicate;
 
@@ -196,16 +196,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 636
     iget-object v0, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->f:Lcom/google/common/base/Function;
@@ -226,7 +226,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 642
     new-instance v0, Ljava/lang/StringBuilder;

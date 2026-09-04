@@ -107,7 +107,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -185,7 +185,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 878
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -195,26 +195,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     invoke-static {p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->access$200(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Landroid/net/Uri;
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 880
@@ -294,7 +294,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_2
 
     .line 892
     invoke-static {p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->access$1300(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)[B
@@ -311,20 +311,20 @@
 
     move-result-object p1
 
-    goto :goto_69
+    goto :goto_2
 
-    :cond_68
+    :cond_2
     const/4 p1, 0x0
 
     .line 893
-    :goto_69
+    :goto_2
     iput-object p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->keySetId:[B
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 637
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$DrmConfiguration;-><init>(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)V
@@ -333,7 +333,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/common/MediaItem$DrmConfiguration;)[B
-    .registers 1
+    .locals 0
 
     .line 637
     iget-object p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->keySetId:[B
@@ -342,7 +342,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$DrmConfiguration;
-    .registers 9
+    .locals 8
 
     .line 955
     sget-object v0, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_SCHEME:Ljava/lang/String;
@@ -484,7 +484,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 3
+    .locals 2
 
     .line 904
     new-instance v0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
@@ -497,26 +497,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 912
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 916
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$DrmConfiguration;
 
     .line 917
@@ -528,7 +528,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseUri:Landroid/net/Uri;
 
@@ -539,7 +539,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseRequestHeaders:Lcom/google/common/collect/ImmutableMap;
 
@@ -550,25 +550,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->multiSession:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;->multiSession:Z
 
-    if-ne v1, v3, :cond_51
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->forceDefaultLicenseUri:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;->forceDefaultLicenseUri:Z
 
-    if-ne v1, v3, :cond_51
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->playClearContentWithoutKey:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;->playClearContentWithoutKey:Z
 
-    if-ne v1, v3, :cond_51
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->forcedSessionTrackTypes:Lcom/google/common/collect/ImmutableList;
 
@@ -579,7 +579,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->keySetId:[B
 
@@ -590,24 +590,24 @@
 
     move-result p1
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_2
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_51
+    :cond_2
     move v0, v2
 
-    :goto_52
+    :goto_0
     return v0
 .end method
 
 .method public getKeySetId()[B
-    .registers 3
+    .locals 2
 
     .line 899
     iget-object v0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->keySetId:[B
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     array-length v1, v0
 
@@ -615,17 +615,17 @@
 
     move-result-object v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return-object v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 929
     iget-object v0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->scheme:Ljava/util/UUID;
@@ -639,18 +639,18 @@
     .line 930
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseUri:Landroid/net/Uri;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/net/Uri;->hashCode()I
 
     move-result v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_12
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -711,7 +711,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 987
     new-instance v0, Landroid/os/Bundle;
@@ -732,7 +732,7 @@
     .line 989
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseUri:Landroid/net/Uri;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 990
     sget-object v2, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_LICENSE_URI:Ljava/lang/String;
@@ -740,14 +740,14 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 992
-    :cond_19
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseRequestHeaders:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableMap;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     .line 993
     sget-object v1, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_LICENSE_REQUEST_HEADERS:Ljava/lang/String;
@@ -763,10 +763,10 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 997
-    :cond_2c
+    :cond_1
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->multiSession:Z
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 998
     sget-object v2, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_MULTI_SESSION:Ljava/lang/String;
@@ -774,10 +774,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 1000
-    :cond_35
+    :cond_2
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->playClearContentWithoutKey:Z
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_3
 
     .line 1001
     sget-object v2, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_PLAY_CLEAR_CONTENT_WITHOUT_KEY:Ljava/lang/String;
@@ -785,10 +785,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 1003
-    :cond_3e
+    :cond_3
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->forceDefaultLicenseUri:Z
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_4
 
     .line 1004
     sget-object v2, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_FORCE_DEFAULT_LICENSE_URI:Ljava/lang/String;
@@ -796,14 +796,14 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 1006
-    :cond_47
+    :cond_4
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->forcedSessionTrackTypes:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableList;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_5b
+    if-nez v1, :cond_5
 
     .line 1007
     sget-object v1, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_FORCED_SESSION_TRACK_TYPES:Ljava/lang/String;
@@ -817,16 +817,16 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     .line 1010
-    :cond_5b
+    :cond_5
     iget-object v1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration;->keySetId:[B
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_6
 
     .line 1011
     sget-object v2, Landroidx/media3/common/MediaItem$DrmConfiguration;->FIELD_KEY_SET_ID:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    :cond_64
+    :cond_6
     return-object v0
 .end method

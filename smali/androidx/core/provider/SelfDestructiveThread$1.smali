@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/provider/SelfDestructiveThread;)V
-    .registers 2
+    .locals 0
 
     .line 61
     iput-object p1, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
@@ -36,21 +36,21 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 4
+    .locals 2
 
     .line 64
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     return v1
 
     .line 66
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -62,7 +62,7 @@
     return v1
 
     .line 69
-    :cond_12
+    :cond_1
     iget-object p1, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
     invoke-virtual {p1}, Landroidx/core/provider/SelfDestructiveThread;->onDestruction()V

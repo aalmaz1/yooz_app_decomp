@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;)Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
-    .registers 1
+    .locals 0
 
     .line 34
     iget-object p0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -49,7 +49,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;Z)Z
-    .registers 2
+    .locals 0
 
     .line 34
     iput-boolean p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepared:Z
@@ -58,7 +58,7 @@
 .end method
 
 .method private static isSameAdaptionSet(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)Z
-    .registers 6
+    .locals 4
 
     .line 208
     invoke-interface {p0}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getTrackGroup()Landroidx/media3/common/TrackGroup;
@@ -75,7 +75,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_3
 
     .line 209
     invoke-interface {p0}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
@@ -86,20 +86,20 @@
 
     move-result v2
 
-    if-eq v0, v2, :cond_1a
+    if-eq v0, v2, :cond_0
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_1a
+    :cond_0
     move v0, v1
 
     .line 212
-    :goto_1b
+    :goto_0
     invoke-interface {p0}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_2f
+    if-ge v0, v2, :cond_2
 
     .line 213
     invoke-interface {p0, v0}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getIndexInTrackGroup(I)I
@@ -110,27 +110,27 @@
 
     move-result v3
 
-    if-eq v2, v3, :cond_2c
+    if-eq v2, v3, :cond_1
 
     return v1
 
-    :cond_2c
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     const/4 p0, 0x1
 
     return p0
 
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method private static maybeUpdatePreloadTrackSelectionHolderForReselection([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;)Z
-    .registers 11
+    .locals 9
 
     .line 169
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -148,10 +148,10 @@
     move v3, v2
 
     .line 171
-    :goto_b
+    :goto_0
     array-length v4, p0
 
-    if-ge v2, v4, :cond_5f
+    if-ge v2, v4, :cond_6
 
     .line 172
     aget-object v4, p0, v2
@@ -159,21 +159,21 @@
     .line 173
     aget-object v5, v0, v2
 
-    if-nez v4, :cond_17
+    if-nez v4, :cond_0
 
-    if-nez v5, :cond_17
+    if-nez v5, :cond_0
 
-    goto :goto_5c
+    goto :goto_3
 
     .line 177
-    :cond_17
+    :cond_0
     iget-object v6, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->mayRetainStreamFlags:[Z
 
     aput-boolean v1, v6, v2
 
     const/4 v6, 0x1
 
-    if-nez v4, :cond_25
+    if-nez v4, :cond_1
 
     .line 180
     iget-object v3, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -182,38 +182,38 @@
 
     aput-object v4, v3, v2
 
-    :goto_23
+    :goto_1
     move v3, v6
 
-    goto :goto_5c
+    goto :goto_3
 
-    :cond_25
-    if-nez v5, :cond_2c
+    :cond_1
+    if-nez v5, :cond_2
 
     .line 184
     iget-object v3, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aput-object v4, v3, v2
 
-    goto :goto_23
+    goto :goto_1
 
     .line 186
-    :cond_2c
+    :cond_2
     invoke-static {v4, v5}, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->isSameAdaptionSet(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)Z
 
     move-result v7
 
-    if-nez v7, :cond_37
+    if-nez v7, :cond_3
 
     .line 188
     iget-object v3, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aput-object v4, v3, v2
 
-    goto :goto_23
+    goto :goto_1
 
     .line 190
-    :cond_37
+    :cond_3
     invoke-interface {v4}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getTrackGroup()Landroidx/media3/common/TrackGroup;
 
     move-result-object v7
@@ -222,7 +222,7 @@
 
     const/4 v8, 0x2
 
-    if-eq v7, v8, :cond_58
+    if-eq v7, v8, :cond_5
 
     .line 191
     invoke-interface {v4}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getTrackGroup()Landroidx/media3/common/TrackGroup;
@@ -231,7 +231,7 @@
 
     iget v7, v7, Landroidx/media3/common/TrackGroup;->type:I
 
-    if-eq v7, v6, :cond_58
+    if-eq v7, v6, :cond_5
 
     .line 192
     invoke-interface {v4}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getSelectedIndexInTrackGroup()I
@@ -243,36 +243,36 @@
 
     move-result v5
 
-    if-ne v7, v5, :cond_53
+    if-ne v7, v5, :cond_4
 
-    goto :goto_58
+    goto :goto_2
 
     .line 199
-    :cond_53
+    :cond_4
     iget-object v3, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aput-object v4, v3, v2
 
-    goto :goto_23
+    goto :goto_1
 
     .line 196
-    :cond_58
-    :goto_58
+    :cond_5
+    :goto_2
     iget-object v4, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->mayRetainStreamFlags:[Z
 
     aput-boolean v6, v4, v2
 
-    :goto_5c
+    :goto_3
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_5f
+    :cond_6
     return v3
 .end method
 
 .method private prepareInternal(J)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -292,7 +292,7 @@
 .end method
 
 .method private selectTracksInternal([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 23
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -301,7 +301,7 @@
     .line 119
     iget-object v1, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preloadTrackSelectionHolder:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
     .line 121
     iget-object v1, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -323,7 +323,7 @@
     return-wide v1
 
     .line 124
-    :cond_19
+    :cond_0
     array-length v2, v4
 
     iget-object v1, v1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->streams:[Landroidx/media3/exoplayer/source/SampleStream;
@@ -334,16 +334,16 @@
 
     const/4 v5, 0x0
 
-    if-ne v2, v1, :cond_23
+    if-ne v2, v1, :cond_1
 
     move v1, v3
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     move v1, v5
 
-    :goto_24
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 125
@@ -355,19 +355,19 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_4
 
     move v1, v5
 
     .line 128
-    :goto_31
+    :goto_1
     iget-object v3, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preloadTrackSelectionHolder:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;
 
     iget-object v3, v3, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->streams:[Landroidx/media3/exoplayer/source/SampleStream;
 
     array-length v3, v3
 
-    if-ge v1, v3, :cond_4d
+    if-ge v1, v3, :cond_3
 
     .line 129
     iget-object v3, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preloadTrackSelectionHolder:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;
@@ -376,7 +376,7 @@
 
     aget-object v3, v3, v1
 
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_2
 
     .line 130
     iget-object v3, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preloadTrackSelectionHolder:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;
@@ -390,13 +390,13 @@
     .line 131
     aput-boolean v5, p2, v1
 
-    :cond_4a
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_31
+    goto :goto_1
 
     .line 134
-    :cond_4d
+    :cond_3
     iput-object v2, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preloadTrackSelectionHolder:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;
 
     .line 135
@@ -419,7 +419,7 @@
     return-wide v1
 
     .line 138
-    :cond_60
+    :cond_4
     iget-object v1, v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preloadTrackSelectionHolder:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;
 
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -441,7 +441,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_9a
+    if-eqz v9, :cond_7
 
     .line 143
     array-length v6, v8
@@ -469,29 +469,29 @@
     move v9, v5
 
     .line 152
-    :goto_87
+    :goto_2
     iget-object v10, v1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->mayRetainStreamFlags:[Z
 
     array-length v10, v10
 
-    if-ge v9, v10, :cond_97
+    if-ge v9, v10, :cond_6
 
     .line 153
     iget-object v10, v1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->mayRetainStreamFlags:[Z
 
     aget-boolean v10, v10, v9
 
-    if-eqz v10, :cond_94
+    if-eqz v10, :cond_5
 
     .line 154
     aput-boolean v3, v6, v9
 
-    :cond_94
+    :cond_5
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_97
+    :cond_6
     move-wide v14, v7
 
     move-object v8, v6
@@ -499,7 +499,7 @@
     move-wide v6, v14
 
     .line 158
-    :cond_9a
+    :cond_7
     iget-object v3, v1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->streams:[Landroidx/media3/exoplayer/source/SampleStream;
 
     iget-object v1, v1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$PreloadTrackSelectionHolder;->streams:[Landroidx/media3/exoplayer/source/SampleStream;
@@ -524,7 +524,7 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 274
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -537,7 +537,7 @@
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 5
+    .locals 1
 
     .line 244
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -548,7 +548,7 @@
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 5
+    .locals 1
 
     .line 259
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -561,7 +561,7 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 264
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -574,7 +574,7 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 269
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -587,7 +587,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 99
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -600,7 +600,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 279
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -613,7 +613,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -629,7 +629,7 @@
 .end method
 
 .method preload(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 5
+    .locals 1
 
     .line 53
     iput-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -637,26 +637,26 @@
     .line 54
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepared:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 55
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
 
     .line 57
-    :cond_9
+    :cond_0
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepareInternalCalled:Z
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_1
 
     .line 58
     invoke-direct {p0, p2, p3}, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepareInternal(J)V
 
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 5
+    .locals 1
 
     .line 64
     iput-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -664,7 +664,7 @@
     .line 65
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepared:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 66
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
@@ -672,20 +672,20 @@
     return-void
 
     .line 69
-    :cond_a
+    :cond_0
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepareInternalCalled:Z
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_1
 
     .line 70
     invoke-direct {p0, p2, p3}, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->prepareInternal(J)V
 
-    :cond_11
+    :cond_1
     return-void
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     .line 249
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -698,7 +698,7 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 4
+    .locals 1
 
     .line 284
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -709,7 +709,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .registers 4
+    .locals 1
 
     .line 254
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -722,7 +722,7 @@
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 7
+    .locals 0
 
     .line 109
     invoke-direct/range {p0 .. p6}, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->selectTracksInternal([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
@@ -733,7 +733,7 @@
 .end method
 
 .method selectTracksForPreloading([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;J)J
-    .registers 15
+    .locals 11
 
     .line 222
     array-length v0, p1

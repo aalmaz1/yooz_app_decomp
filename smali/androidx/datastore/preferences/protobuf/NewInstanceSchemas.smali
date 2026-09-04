@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 34
     invoke-static {}, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->loadSchemaForFullRuntime()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
@@ -31,7 +31,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method static full()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
-    .registers 1
+    .locals 1
 
     .line 38
     sget-object v0, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->FULL_SCHEMA:Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
@@ -49,7 +49,7 @@
 .end method
 
 .method static lite()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
-    .registers 1
+    .locals 1
 
     .line 42
     sget-object v0, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->LITE_SCHEMA:Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
@@ -58,7 +58,7 @@
 .end method
 
 .method private static loadSchemaForFullRuntime()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
-    .registers 3
+    .locals 3
 
     :try_start_0
     const-string v0, "androidx.datastore.preferences.protobuf.NewInstanceSchemaFull"
@@ -84,12 +84,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
-    :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_16
+    :catch_0
     const/4 v0, 0x0
 
     return-object v0

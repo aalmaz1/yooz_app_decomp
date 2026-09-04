@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/widget/MenuPopupWindow;Landroidx/appcompat/view/menu/MenuBuilder;I)V
-    .registers 4
+    .locals 0
 
     .line 801
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public getListView()Landroid/widget/ListView;
-    .registers 2
+    .locals 1
 
     .line 808
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->window:Landroidx/appcompat/widget/MenuPopupWindow;

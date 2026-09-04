@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.exoplayer.rtsp"
 
@@ -52,7 +52,7 @@
 .end method
 
 .method constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/rtsp/RtpDataChannel$Factory;Ljava/lang/String;Ljavax/net/SocketFactory;Z)V
-    .registers 6
+    .locals 0
 
     .line 236
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$002(Landroidx/media3/exoplayer/rtsp/RtspMediaSource;J)J
-    .registers 3
+    .locals 0
 
     .line 49
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->timelineDurationUs:J
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/exoplayer/rtsp/RtspMediaSource;Z)Z
-    .registers 2
+    .locals 0
 
     .line 49
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->timelineIsSeekable:Z
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$202(Landroidx/media3/exoplayer/rtsp/RtspMediaSource;Z)Z
-    .registers 2
+    .locals 0
 
     .line 49
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->timelineIsLive:Z
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/exoplayer/rtsp/RtspMediaSource;Z)Z
-    .registers 2
+    .locals 0
 
     .line 49
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->timelineIsPlaceholder:Z
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/rtsp/RtspMediaSource;)V
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->notifySourceInfoRefreshed()V
@@ -144,7 +144,7 @@
 .end method
 
 .method private notifySourceInfoRefreshed()V
-    .registers 10
+    .locals 9
 
     .line 313
     new-instance v8, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
@@ -171,7 +171,7 @@
     .line 321
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->timelineIsPlaceholder:Z
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 322
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$2;
@@ -181,7 +181,7 @@
     move-object v8, v0
 
     .line 340
-    :cond_1c
+    :cond_0
     invoke-virtual {p0, v8}, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
     return-void
@@ -190,12 +190,12 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 3
+    .locals 1
 
     .line 264
     iget-object p1, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 265
     iget-object p1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -206,21 +206,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_11
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 13
+    .locals 8
 
     .line 280
     new-instance p1, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -249,21 +249,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 259
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -272,13 +272,13 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 2
+    .locals 0
 
     .line 249
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->notifySourceInfoRefreshed()V
@@ -287,7 +287,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 307
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -298,28 +298,28 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 270
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 271
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

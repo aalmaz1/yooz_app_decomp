@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method private static latmGetValue(Landroidx/media3/common/util/ParsableBitArray;)J
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -134,7 +134,7 @@
 .end method
 
 .method private parseAudioMuxElement(Landroidx/media3/common/util/ParsableBitArray;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -152,7 +152,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -162,29 +162,29 @@
     .line 170
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/LatmReader;->parseStreamMuxConfig(Landroidx/media3/common/util/ParsableBitArray;)V
 
-    goto :goto_12
+    goto :goto_0
 
     .line 171
-    :cond_d
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/LatmReader;->streamMuxRead:Z
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     return-void
 
     .line 175
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->audioMuxVersionA:I
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_4
 
     .line 176
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->numSubframes:I
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_3
 
     .line 179
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/LatmReader;->parsePayloadLengthInfo(Landroidx/media3/common/util/ParsableBitArray;)I
@@ -197,7 +197,7 @@
     .line 181
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/LatmReader;->otherDataPresent:Z
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 182
     iget-wide v0, p0, Landroidx/media3/extractor/ts/LatmReader;->otherDataLenBits:J
@@ -206,11 +206,11 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_2c
+    :cond_2
     return-void
 
     .line 177
-    :cond_2d
+    :cond_3
     invoke-static {v1, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p1
@@ -218,7 +218,7 @@
     throw p1
 
     .line 186
-    :cond_32
+    :cond_4
     invoke-static {v1, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p1
@@ -227,7 +227,7 @@
 .end method
 
 .method private parseAudioSpecificConfig(Landroidx/media3/common/util/ParsableBitArray;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -272,7 +272,7 @@
 .end method
 
 .method private parseFrameLength(Landroidx/media3/common/util/ParsableBitArray;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x3
 
@@ -283,34 +283,34 @@
 
     iput v1, p0, Landroidx/media3/extractor/ts/LatmReader;->frameLengthType:I
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_4
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_29
+    if-eq v1, v2, :cond_3
 
     const/4 v3, 0x6
 
-    if-eq v1, v0, :cond_25
+    if-eq v1, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq v1, v0, :cond_25
+    if-eq v1, v0, :cond_2
 
     const/4 v0, 0x5
 
-    if-eq v1, v0, :cond_25
+    if-eq v1, v0, :cond_2
 
-    if-eq v1, v3, :cond_21
+    if-eq v1, v3, :cond_1
 
     const/4 v0, 0x7
 
-    if-ne v1, v0, :cond_1b
+    if-ne v1, v0, :cond_0
 
-    goto :goto_21
+    goto :goto_0
 
     .line 278
-    :cond_1b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -318,38 +318,38 @@
     throw p1
 
     .line 275
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     invoke-virtual {p1, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_34
+    goto :goto_1
 
     .line 271
-    :cond_25
+    :cond_2
     invoke-virtual {p1, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_29
+    :cond_3
     const/16 v0, 0x9
 
     .line 266
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_2f
+    :cond_4
     const/16 v0, 0x8
 
     .line 263
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :goto_34
+    :goto_1
     return-void
 .end method
 
 .method private parsePayloadLengthInfo(Landroidx/media3/common/util/ParsableBitArray;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -359,11 +359,11 @@
     .line 294
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->frameLengthType:I
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
-    :cond_5
+    :cond_0
     const/16 v1, 0x8
 
     .line 297
@@ -375,11 +375,11 @@
 
     const/16 v2, 0xff
 
-    if-eq v1, v2, :cond_5
+    if-eq v1, v2, :cond_0
 
     return v0
 
-    :cond_11
+    :cond_1
     const/4 p1, 0x0
 
     .line 302
@@ -391,7 +391,7 @@
 .end method
 
 .method private parsePayloadMux(Landroidx/media3/common/util/ParsableBitArray;I)V
-    .registers 13
+    .locals 10
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -407,7 +407,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 312
     iget-object p1, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleDataBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -416,10 +416,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 316
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleDataBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -436,7 +436,7 @@
     invoke-virtual {p1, v2}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 319
-    :goto_21
+    :goto_0
     iget-object p1, p0, Landroidx/media3/extractor/ts/LatmReader;->output:Landroidx/media3/extractor/TrackOutput;
 
     iget-object v0, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleDataBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -450,11 +450,11 @@
 
     cmp-long p1, v0, v3
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_1
 
     const/4 v2, 0x1
 
-    :cond_34
+    :cond_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 322
@@ -485,7 +485,7 @@
 .end method
 
 .method private parseStreamMuxConfig(Landroidx/media3/common/util/ParsableBitArray;)V
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -507,37 +507,37 @@
 
     const/4 v2, 0x0
 
-    if-ne v1, v0, :cond_d
+    if-ne v1, v0, :cond_0
 
     .line 194
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v3, v2
 
-    :goto_e
+    :goto_0
     iput v3, p0, Landroidx/media3/extractor/ts/LatmReader;->audioMuxVersionA:I
 
     const/4 v4, 0x0
 
-    if-nez v3, :cond_e8
+    if-nez v3, :cond_9
 
-    if-ne v1, v0, :cond_18
+    if-ne v1, v0, :cond_1
 
     .line 197
     invoke-static {p1}, Landroidx/media3/extractor/ts/LatmReader;->latmGetValue(Landroidx/media3/common/util/ParsableBitArray;)J
 
     .line 199
-    :cond_18
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_e3
+    if-eqz v3, :cond_8
 
     const/4 v3, 0x6
 
@@ -562,13 +562,13 @@
 
     move-result v5
 
-    if-nez v3, :cond_de
+    if-nez v3, :cond_7
 
-    if-nez v5, :cond_de
+    if-nez v5, :cond_7
 
     const/16 v3, 0x8
 
-    if-nez v1, :cond_9e
+    if-nez v1, :cond_2
 
     .line 209
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableBitArray;->getPosition()I
@@ -668,7 +668,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_ab
+    if-nez v4, :cond_3
 
     .line 226
     iput-object v2, p0, Landroidx/media3/extractor/ts/LatmReader;->format:Landroidx/media3/common/Format;
@@ -689,10 +689,10 @@
 
     invoke-interface {v4, v2}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    goto :goto_ab
+    goto :goto_1
 
     .line 231
-    :cond_9e
+    :cond_2
     invoke-static {p1}, Landroidx/media3/extractor/ts/LatmReader;->latmGetValue(Landroidx/media3/common/util/ParsableBitArray;)J
 
     move-result-wide v4
@@ -710,8 +710,8 @@
     invoke-virtual {p1, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 235
-    :cond_ab
-    :goto_ab
+    :cond_3
+    :goto_1
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/LatmReader;->parseFrameLength(Landroidx/media3/common/util/ParsableBitArray;)V
 
     .line 236
@@ -726,9 +726,9 @@
     .line 237
     iput-wide v4, p0, Landroidx/media3/extractor/ts/LatmReader;->otherDataLenBits:J
 
-    if-eqz v2, :cond_d4
+    if-eqz v2, :cond_5
 
-    if-ne v1, v0, :cond_c3
+    if-ne v1, v0, :cond_4
 
     .line 240
     invoke-static {p1}, Landroidx/media3/extractor/ts/LatmReader;->latmGetValue(Landroidx/media3/common/util/ParsableBitArray;)J
@@ -737,10 +737,10 @@
 
     iput-wide v0, p0, Landroidx/media3/extractor/ts/LatmReader;->otherDataLenBits:J
 
-    goto :goto_d4
+    goto :goto_2
 
     .line 244
-    :cond_c3
+    :cond_4
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v0
@@ -760,25 +760,25 @@
 
     iput-wide v1, p0, Landroidx/media3/extractor/ts/LatmReader;->otherDataLenBits:J
 
-    if-nez v0, :cond_c3
+    if-nez v0, :cond_4
 
     .line 249
-    :cond_d4
-    :goto_d4
+    :cond_5
+    :goto_2
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v0
 
-    if-eqz v0, :cond_dd
+    if-eqz v0, :cond_6
 
     .line 251
     invoke-virtual {p1, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_dd
+    :cond_6
     return-void
 
     .line 206
-    :cond_de
+    :cond_7
     invoke-static {v4, v4}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p1
@@ -786,7 +786,7 @@
     throw p1
 
     .line 200
-    :cond_e3
+    :cond_8
     invoke-static {v4, v4}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p1
@@ -794,7 +794,7 @@
     throw p1
 
     .line 255
-    :cond_e8
+    :cond_9
     invoke-static {v4, v4}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p1
@@ -803,7 +803,7 @@
 .end method
 
 .method private resetBufferForSize(I)V
-    .registers 3
+    .locals 1
 
     .line 327
     iget-object v0, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleDataBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -827,7 +827,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -840,13 +840,13 @@
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 115
-    :cond_5
-    :goto_5
+    :cond_0
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_8b
+    if-lez v0, :cond_7
 
     .line 116
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->state:I
@@ -855,19 +855,19 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_6
 
     const/4 v3, 0x2
 
     const/4 v4, 0x0
 
-    if-eq v0, v2, :cond_6d
+    if-eq v0, v2, :cond_4
 
     const/4 v1, 0x3
 
-    if-eq v0, v3, :cond_4d
+    if-eq v0, v3, :cond_2
 
-    if-ne v0, v1, :cond_47
+    if-ne v0, v1, :cond_1
 
     .line 140
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -903,7 +903,7 @@
     .line 143
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleSize:I
 
-    if-ne v1, v0, :cond_5
+    if-ne v1, v0, :cond_0
 
     .line 144
     iget-object v0, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleBitArray:Landroidx/media3/common/util/ParsableBitArray;
@@ -918,10 +918,10 @@
     .line 146
     iput v4, p0, Landroidx/media3/extractor/ts/LatmReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
     .line 150
-    :cond_47
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -929,7 +929,7 @@
     throw p1
 
     .line 132
-    :cond_4d
+    :cond_2
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->secondHeaderByte:I
 
     and-int/lit16 v0, v0, -0xe1
@@ -953,7 +953,7 @@
 
     array-length v2, v2
 
-    if-le v0, v2, :cond_68
+    if-le v0, v2, :cond_3
 
     .line 134
     iget v0, p0, Landroidx/media3/extractor/ts/LatmReader;->sampleSize:I
@@ -961,16 +961,16 @@
     invoke-direct {p0, v0}, Landroidx/media3/extractor/ts/LatmReader;->resetBufferForSize(I)V
 
     .line 136
-    :cond_68
+    :cond_3
     iput v4, p0, Landroidx/media3/extractor/ts/LatmReader;->bytesRead:I
 
     .line 137
     iput v1, p0, Landroidx/media3/extractor/ts/LatmReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
     .line 123
-    :cond_6d
+    :cond_4
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
@@ -979,7 +979,7 @@
 
     const/16 v5, 0xe0
 
-    if-ne v2, v5, :cond_7c
+    if-ne v2, v5, :cond_5
 
     .line 125
     iput v0, p0, Landroidx/media3/extractor/ts/LatmReader;->secondHeaderByte:I
@@ -987,35 +987,35 @@
     .line 126
     iput v3, p0, Landroidx/media3/extractor/ts/LatmReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_7c
-    if-eq v0, v1, :cond_5
+    :cond_5
+    if-eq v0, v1, :cond_0
 
     .line 128
     iput v4, p0, Landroidx/media3/extractor/ts/LatmReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
     .line 118
-    :cond_81
+    :cond_6
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    if-ne v0, v1, :cond_5
+    if-ne v0, v1, :cond_0
 
     .line 119
     iput v2, p0, Landroidx/media3/extractor/ts/LatmReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
-    :cond_8b
+    :cond_7
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 5
+    .locals 2
 
     .line 101
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -1044,13 +1044,13 @@
 .end method
 
 .method public packetFinished(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     .line 108
     iput-wide p1, p0, Landroidx/media3/extractor/ts/LatmReader;->timeUs:J
@@ -1059,7 +1059,7 @@
 .end method
 
 .method public seek()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 

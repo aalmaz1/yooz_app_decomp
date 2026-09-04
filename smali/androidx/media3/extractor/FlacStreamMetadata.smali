@@ -45,7 +45,7 @@
 
 # direct methods
 .method private constructor <init>(IIIIIIIJLandroidx/media3/extractor/FlacStreamMetadata$SeekTable;Landroidx/media3/common/Metadata;)V
-    .registers 12
+    .locals 0
 
     .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 .end method
 
 .method public constructor <init>(IIIIIIIJLjava/util/ArrayList;Ljava/util/ArrayList;)V
-    .registers 24
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIIIIIIJ",
@@ -143,7 +143,7 @@
 .end method
 
 .method public constructor <init>([BI)V
-    .registers 4
+    .locals 1
 
     .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -256,7 +256,7 @@
 .end method
 
 .method private static concatenateVorbisMetadata(Ljava/util/List;Ljava/util/List;)Landroidx/media3/common/Metadata;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -275,21 +275,21 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_e
+    if-nez p0, :cond_0
 
     .line 333
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 336
-    :cond_e
+    :cond_0
     new-instance v0, Landroidx/media3/common/Metadata;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/Metadata;-><init>(Ljava/util/List;)V
@@ -302,144 +302,144 @@
 .end method
 
 .method private static getBitsPerSampleLookupKey(I)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_4
 
     const/16 v0, 0xc
 
-    if-eq p0, v0, :cond_1c
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x10
 
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x14
 
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x18
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_0
 
     const/4 p0, -0x1
 
     return p0
 
-    :cond_16
+    :cond_0
     const/4 p0, 0x6
 
     return p0
 
-    :cond_18
+    :cond_1
     const/4 p0, 0x5
 
     return p0
 
-    :cond_1a
+    :cond_2
     const/4 p0, 0x4
 
     return p0
 
-    :cond_1c
+    :cond_3
     const/4 p0, 0x2
 
     return p0
 
-    :cond_1e
+    :cond_4
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static getSampleRateLookupKey(I)I
-    .registers 1
+    .locals 0
 
-    sparse-switch p0, :sswitch_data_20
+    sparse-switch p0, :sswitch_data_0
 
     const/4 p0, -0x1
 
     return p0
 
-    :sswitch_5
+    :sswitch_0
     const/4 p0, 0x3
 
     return p0
 
-    :sswitch_7
+    :sswitch_1
     const/4 p0, 0x2
 
     return p0
 
-    :sswitch_9
+    :sswitch_2
     const/16 p0, 0xb
 
     return p0
 
-    :sswitch_c
+    :sswitch_3
     const/4 p0, 0x1
 
     return p0
 
-    :sswitch_e
+    :sswitch_4
     const/16 p0, 0xa
 
     return p0
 
-    :sswitch_11
+    :sswitch_5
     const/16 p0, 0x9
 
     return p0
 
-    :sswitch_14
+    :sswitch_6
     const/16 p0, 0x8
 
     return p0
 
-    :sswitch_17
+    :sswitch_7
     const/4 p0, 0x7
 
     return p0
 
-    :sswitch_19
+    :sswitch_8
     const/4 p0, 0x6
 
     return p0
 
-    :sswitch_1b
+    :sswitch_9
     const/4 p0, 0x5
 
     return p0
 
-    :sswitch_1d
+    :sswitch_a
     const/4 p0, 0x4
 
     return p0
 
     nop
 
-    :sswitch_data_20
+    :sswitch_data_0
     .sparse-switch
-        0x1f40 -> :sswitch_1d
-        0x3e80 -> :sswitch_1b
-        0x5622 -> :sswitch_19
-        0x5dc0 -> :sswitch_17
-        0x7d00 -> :sswitch_14
-        0xac44 -> :sswitch_11
-        0xbb80 -> :sswitch_e
-        0x15888 -> :sswitch_c
-        0x17700 -> :sswitch_9
-        0x2b110 -> :sswitch_7
-        0x2ee00 -> :sswitch_5
+        0x1f40 -> :sswitch_a
+        0x3e80 -> :sswitch_9
+        0x5622 -> :sswitch_8
+        0x5dc0 -> :sswitch_7
+        0x7d00 -> :sswitch_6
+        0xac44 -> :sswitch_5
+        0xbb80 -> :sswitch_4
+        0x15888 -> :sswitch_3
+        0x17700 -> :sswitch_2
+        0x2b110 -> :sswitch_1
+        0x2ee00 -> :sswitch_0
     .end sparse-switch
 .end method
 
 
 # virtual methods
 .method public copyWithPictureFrames(Ljava/util/List;)Landroidx/media3/extractor/FlacStreamMetadata;
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -488,7 +488,7 @@
 .end method
 
 .method public copyWithSeekTable(Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;)Landroidx/media3/extractor/FlacStreamMetadata;
-    .registers 15
+    .locals 13
 
     .line 277
     new-instance v12, Landroidx/media3/extractor/FlacStreamMetadata;
@@ -521,7 +521,7 @@
 .end method
 
 .method public copyWithVorbisComments(Ljava/util/List;)Landroidx/media3/extractor/FlacStreamMetadata;
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -570,12 +570,12 @@
 .end method
 
 .method public getApproxBytesPerFrame()J
-    .registers 5
+    .locals 4
 
     .line 228
     iget v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->maxFrameSize:I
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     int-to-long v0, v0
 
@@ -592,30 +592,30 @@
 
     const-wide/16 v2, 0x1
 
-    :goto_e
+    :goto_0
     add-long/2addr v0, v2
 
-    goto :goto_2a
+    goto :goto_2
 
     .line 234
-    :cond_10
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->minBlockSizeSamples:I
 
     iget v1, p0, Landroidx/media3/extractor/FlacStreamMetadata;->maxBlockSizeSamples:I
 
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_1
 
-    if-lez v0, :cond_1a
+    if-lez v0, :cond_1
 
     int-to-long v0, v0
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     const-wide/16 v0, 0x1000
 
     .line 237
-    :goto_1c
+    :goto_1
     iget v2, p0, Landroidx/media3/extractor/FlacStreamMetadata;->channels:I
 
     int-to-long v2, v2
@@ -634,14 +634,14 @@
 
     const-wide/16 v2, 0x40
 
-    goto :goto_e
+    goto :goto_0
 
-    :goto_2a
+    :goto_2
     return-wide v0
 .end method
 
 .method public getDecodedBitrate()I
-    .registers 3
+    .locals 2
 
     .line 203
     iget v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->bitsPerSample:I
@@ -658,7 +658,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 5
+    .locals 4
 
     .line 211
     iget-wide v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->totalSamples:J
@@ -667,13 +667,13 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const-wide/32 v2, 0xf4240
 
     mul-long/2addr v0, v2
@@ -684,12 +684,12 @@
 
     div-long/2addr v0, v2
 
-    :goto_16
+    :goto_0
     return-wide v0
 .end method
 
 .method public getFormat([BLandroidx/media3/common/Metadata;)Landroidx/media3/common/Format;
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x4
 
@@ -701,15 +701,15 @@
     .line 256
     iget v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->maxFrameSize:I
 
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, -0x1
 
     .line 257
-    :goto_b
+    :goto_0
     invoke-virtual {p0, p2}, Landroidx/media3/extractor/FlacStreamMetadata;->getMetadataCopyWithAppendedEntriesFrom(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Metadata;
 
     move-result-object p2
@@ -779,7 +779,7 @@
 .end method
 
 .method public getMaxDecodedFrameSize()I
-    .registers 3
+    .locals 2
 
     .line 198
     iget v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->maxBlockSizeSamples:I
@@ -798,26 +798,26 @@
 .end method
 
 .method public getMetadataCopyWithAppendedEntriesFrom(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Metadata;
-    .registers 3
+    .locals 1
 
     .line 272
     iget-object v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->metadata:Landroidx/media3/common/Metadata;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/media3/common/Metadata;->copyWithAppendedEntriesFrom(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Metadata;
 
     move-result-object p1
 
-    :goto_9
+    :goto_0
     return-object p1
 .end method
 
 .method public getSampleNumber(J)J
-    .registers 11
+    .locals 8
 
     .line 221
     iget v0, p0, Landroidx/media3/extractor/FlacStreamMetadata;->sampleRate:I

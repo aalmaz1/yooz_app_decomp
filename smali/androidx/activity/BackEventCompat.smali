@@ -71,7 +71,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/BackEventCompat$Companion;
 
@@ -85,7 +85,7 @@
 .end method
 
 .method public constructor <init>(FFFI)V
-    .registers 5
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>(Landroid/window/BackEvent;)V
-    .registers 6
+    .locals 4
 
     const-string v0, "backEvent"
 
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public final getProgress()F
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/activity/BackEventCompat;->progress:F
@@ -158,7 +158,7 @@
 .end method
 
 .method public final getSwipeEdge()I
-    .registers 2
+    .locals 1
 
     .line 50
     iget v0, p0, Landroidx/activity/BackEventCompat;->swipeEdge:I
@@ -167,7 +167,7 @@
 .end method
 
 .method public final getTouchX()F
-    .registers 2
+    .locals 1
 
     .line 36
     iget v0, p0, Landroidx/activity/BackEventCompat;->touchX:F
@@ -176,7 +176,7 @@
 .end method
 
 .method public final getTouchY()F
-    .registers 2
+    .locals 1
 
     .line 41
     iget v0, p0, Landroidx/activity/BackEventCompat;->touchY:F
@@ -185,14 +185,14 @@
 .end method
 
 .method public final toBackEvent()Landroid/window/BackEvent;
-    .registers 6
+    .locals 5
 
     .line 78
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_15
+    if-lt v0, v1, :cond_0
 
     .line 79
     sget-object v0, Landroidx/activity/Api34Impl;->INSTANCE:Landroidx/activity/Api34Impl;
@@ -212,7 +212,7 @@
     return-object v0
 
     .line 81
-    :cond_15
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "This method is only supported on API level 34+"
@@ -223,7 +223,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 86
     new-instance v0, Ljava/lang/StringBuilder;

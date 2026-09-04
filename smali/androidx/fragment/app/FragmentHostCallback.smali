@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/app/Activity;Landroid/content/Context;Landroid/os/Handler;I)V
-    .registers 6
+    .locals 1
 
     .line 95
     invoke-direct {p0}, Landroidx/fragment/app/FragmentContainer;-><init>()V
@@ -72,30 +72,30 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;I)V
-    .registers 5
+    .locals 1
 
     .line 85
     instance-of v0, p1, Landroid/app/Activity;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroid/app/Activity;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-direct {p0, v0, p1, p2, p3}, Landroidx/fragment/app/FragmentHostCallback;-><init>(Landroid/app/Activity;Landroid/content/Context;Landroid/os/Handler;I)V
 
     return-void
 .end method
 
 .method constructor <init>(Landroidx/fragment/app/FragmentActivity;)V
-    .registers 4
+    .locals 2
 
     .line 91
     new-instance v0, Landroid/os/Handler;
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method getActivity()Landroid/app/Activity;
-    .registers 2
+    .locals 1
 
     .line 242
     iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mActivity:Landroid/app/Activity;
@@ -121,7 +121,7 @@
 .end method
 
 .method getContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 247
     iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
@@ -130,7 +130,7 @@
 .end method
 
 .method getHandler()Landroid/os/Handler;
-    .registers 2
+    .locals 1
 
     .line 252
     iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
@@ -139,13 +139,13 @@
 .end method
 
 .method public onDump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method
 
 .method public onFindViewById(I)Landroid/view/View;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -161,7 +161,7 @@
 .end method
 
 .method public onGetLayoutInflater()Landroid/view/LayoutInflater;
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
@@ -174,7 +174,7 @@
 .end method
 
 .method public onGetWindowAnimations()I
-    .registers 2
+    .locals 1
 
     .line 226
     iget v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mWindowAnimations:I
@@ -183,7 +183,7 @@
 .end method
 
 .method public onHasView()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -191,7 +191,7 @@
 .end method
 
 .method public onHasWindowAnimations()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -199,7 +199,7 @@
 .end method
 
 .method public onRequestPermissionsFromFragment(Landroidx/fragment/app/Fragment;[Ljava/lang/String;I)V
-    .registers 4
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -207,7 +207,7 @@
 .end method
 
 .method public onShouldSaveFragmentState(Landroidx/fragment/app/Fragment;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -215,7 +215,7 @@
 .end method
 
 .method public onShouldShowRequestPermissionRationale(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -223,7 +223,7 @@
 .end method
 
 .method public onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;I)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -234,11 +234,11 @@
 .end method
 
 .method public onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
-    .registers 5
+    .locals 0
 
     const/4 p1, -0x1
 
-    if-ne p3, p1, :cond_9
+    if-ne p3, p1, :cond_0
 
     .line 166
     iget-object p1, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
@@ -248,7 +248,7 @@
     return-void
 
     .line 163
-    :cond_9
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Starting activity with a requestCode requires a FragmentActivity host"
@@ -259,7 +259,7 @@
 .end method
 
 .method public onStartIntentSenderFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
-    .registers 18
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/IntentSender$SendIntentException;
@@ -273,7 +273,7 @@
 
     move v3, p3
 
-    if-ne v3, v0, :cond_14
+    if-ne v3, v0, :cond_0
 
     move-object v0, p0
 
@@ -298,7 +298,7 @@
 
     return-void
 
-    :cond_14
+    :cond_0
     move-object v0, p0
 
     .line 185
@@ -312,7 +312,7 @@
 .end method
 
 .method public onSupportInvalidateOptionsMenu()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

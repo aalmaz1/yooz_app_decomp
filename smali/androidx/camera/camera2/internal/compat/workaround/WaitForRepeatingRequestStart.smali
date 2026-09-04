@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/Quirks;)V
-    .registers 3
+    .locals 1
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     .line 67
     new-instance p1, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$$ExternalSyntheticLambda0;
@@ -90,9 +90,9 @@
 
     iput-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     const/4 p1, 0x0
 
     .line 72
@@ -102,12 +102,12 @@
 
     iput-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    :goto_32
+    :goto_0
     return-void
 .end method
 
 .method static synthetic lambda$openCaptureSession$1(Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$OpenCaptureSession;Landroid/hardware/camera2/CameraDevice;Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat;Ljava/util/List;Ljava/util/List;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public getStartStreamFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -146,7 +146,7 @@
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-camera2-internal-compat-workaround-WaitForRepeatingRequestStart(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -181,7 +181,7 @@
 .end method
 
 .method public onSessionEnd()V
-    .registers 4
+    .locals 3
 
     .line 128
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mLock:Ljava/lang/Object;
@@ -189,16 +189,16 @@
     monitor-enter v0
 
     .line 129
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->shouldWaitRepeatingSubmit()Z
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     iget-boolean v1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mHasSubmittedRepeating:Z
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 132
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingFuture:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -208,23 +208,23 @@
     invoke-interface {v1, v2}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
     .line 134
-    :cond_13
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public openCaptureSession(Landroid/hardware/camera2/CameraDevice;Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat;Ljava/util/List;Ljava/util/List;Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$OpenCaptureSession;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -254,12 +254,12 @@
 
     move-result-object p4
 
-    :goto_9
+    :goto_0
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -274,10 +274,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
     .line 106
-    :cond_1d
+    :cond_0
     invoke-static {v0}, Landroidx/camera/core/impl/utils/futures/Futures;->successfulAsList(Ljava/util/Collection;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object p4
@@ -304,7 +304,7 @@
 .end method
 
 .method public setSingleRepeatingRequest(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$SingleRepeatingRequest;)I
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
@@ -317,12 +317,12 @@
     monitor-enter v0
 
     .line 118
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->shouldWaitRepeatingSubmit()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x2
 
@@ -347,7 +347,7 @@
     iput-boolean v2, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mHasSubmittedRepeating:Z
 
     .line 122
-    :cond_1a
+    :cond_0
     invoke-interface {p3, p1, p2}, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$SingleRepeatingRequest;->run(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I
 
     move-result p1
@@ -356,19 +356,19 @@
 
     return p1
 
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 123
     monitor-exit v0
-    :try_end_22
-    .catchall {:try_start_3 .. :try_end_22} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public shouldWaitRepeatingSubmit()Z
-    .registers 2
+    .locals 1
 
     .line 81
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mHasCaptureSessionStuckQuirk:Z

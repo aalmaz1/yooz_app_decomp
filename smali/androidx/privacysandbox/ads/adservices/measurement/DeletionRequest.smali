@@ -102,7 +102,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest$Companion;
 
@@ -116,7 +116,7 @@
 .end method
 
 .method public constructor <init>(IILjava/time/Instant;Ljava/time/Instant;Ljava/util/List;Ljava/util/List;)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -174,11 +174,11 @@
 .end method
 
 .method public synthetic constructor <init>(IILjava/time/Instant;Ljava/time/Instant;Ljava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 16
+    .locals 7
 
     and-int/lit8 p8, p7, 0x4
 
-    if-eqz p8, :cond_b
+    if-eqz p8, :cond_0
 
     .line 63
     sget-object p3, Ljava/time/Instant;->MIN:Ljava/time/Instant;
@@ -187,12 +187,12 @@
 
     invoke-static {p3, p8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_b
+    :cond_0
     move-object v3, p3
 
     and-int/lit8 p3, p7, 0x8
 
-    if-eqz p3, :cond_17
+    if-eqz p3, :cond_1
 
     .line 64
     sget-object p4, Ljava/time/Instant;->MAX:Ljava/time/Instant;
@@ -201,31 +201,31 @@
 
     invoke-static {p4, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_17
+    :cond_1
     move-object v4, p4
 
     and-int/lit8 p3, p7, 0x10
 
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_2
 
     .line 65
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p5
 
-    :cond_20
+    :cond_2
     move-object v5, p5
 
     and-int/lit8 p3, p7, 0x20
 
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_3
 
     .line 66
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p6
 
-    :cond_29
+    :cond_3
     move-object v6, p6
 
     move-object v0, p0
@@ -243,33 +243,33 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 81
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 82
-    :cond_a
+    :cond_1
     iget v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->deletionMode:I
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;
 
     iget v3, p1, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->deletionMode:I
 
-    if-ne v1, v3, :cond_5d
+    if-ne v1, v3, :cond_2
 
     .line 83
     new-instance v1, Ljava/util/HashSet;
@@ -292,7 +292,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 84
     new-instance v1, Ljava/util/HashSet;
@@ -315,7 +315,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 85
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->start:Ljava/time/Instant;
@@ -326,7 +326,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 86
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->end:Ljava/time/Instant;
@@ -337,26 +337,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 87
     iget v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->matchBehavior:I
 
     iget p1, p1, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->matchBehavior:I
 
-    if-ne v1, p1, :cond_5d
+    if-ne v1, p1, :cond_2
 
-    goto :goto_5e
+    goto :goto_0
 
-    :cond_5d
+    :cond_2
     move v0, v2
 
-    :goto_5e
+    :goto_0
     return v0
 .end method
 
 .method public final getDeletionMode()I
-    .registers 2
+    .locals 1
 
     .line 61
     iget v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->deletionMode:I
@@ -365,7 +365,7 @@
 .end method
 
 .method public final getDomainUris()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -382,7 +382,7 @@
 .end method
 
 .method public final getEnd()Ljava/time/Instant;
-    .registers 2
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->end:Ljava/time/Instant;
@@ -391,7 +391,7 @@
 .end method
 
 .method public final getMatchBehavior()I
-    .registers 2
+    .locals 1
 
     .line 62
     iget v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->matchBehavior:I
@@ -400,7 +400,7 @@
 .end method
 
 .method public final getOriginUris()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -417,7 +417,7 @@
 .end method
 
 .method public final getStart()Ljava/time/Instant;
-    .registers 2
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->start:Ljava/time/Instant;
@@ -426,7 +426,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 70
     iget v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->deletionMode:I
@@ -494,35 +494,35 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 91
     iget v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->deletionMode:I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, "DELETION_MODE_ALL"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, "DELETION_MODE_EXCLUDE_INTERNAL_DATA"
 
     .line 93
-    :goto_9
+    :goto_0
     iget v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;->matchBehavior:I
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_1
 
     const-string v1, "MATCH_BEHAVIOR_DELETE"
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_10
+    :cond_1
     const-string v1, "MATCH_BEHAVIOR_PRESERVE"
 
     .line 95
-    :goto_12
+    :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "DeletionRequest { DeletionMode="

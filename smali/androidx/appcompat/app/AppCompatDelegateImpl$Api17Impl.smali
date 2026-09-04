@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3910
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createConfigurationContext(Landroid/content/Context;Landroid/content/res/Configuration;)Landroid/content/Context;
-    .registers 2
+    .locals 0
 
     .line 3921
     invoke-virtual {p0, p1}, Landroid/content/Context;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
@@ -36,26 +36,26 @@
 .end method
 
 .method static generateConfigDelta_densityDpi(Landroid/content/res/Configuration;Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
-    .registers 4
+    .locals 1
 
     .line 3914
     iget p0, p0, Landroid/content/res/Configuration;->densityDpi:I
 
     iget v0, p1, Landroid/content/res/Configuration;->densityDpi:I
 
-    if-eq p0, v0, :cond_a
+    if-eq p0, v0, :cond_0
 
     .line 3915
     iget p0, p1, Landroid/content/res/Configuration;->densityDpi:I
 
     iput p0, p2, Landroid/content/res/Configuration;->densityDpi:I
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method static setLayoutDirection(Landroid/content/res/Configuration;Ljava/util/Locale;)V
-    .registers 2
+    .locals 0
 
     .line 3926
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setLayoutDirection(Ljava/util/Locale;)V
@@ -64,7 +64,7 @@
 .end method
 
 .method static setLocale(Landroid/content/res/Configuration;Ljava/util/Locale;)V
-    .registers 2
+    .locals 0
 
     .line 3931
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setLocale(Ljava/util/Locale;)V

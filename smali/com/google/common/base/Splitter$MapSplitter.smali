@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -57,7 +57,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter$1;)V
-    .registers 4
+    .locals 0
 
     .line 480
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Splitter$MapSplitter;-><init>(Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter;)V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public split(Ljava/lang/CharSequence;)Ljava/util/Map;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -106,12 +106,12 @@
 
     move-result-object p1
 
-    :goto_f
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -179,10 +179,10 @@
 
     invoke-static {v2, v4, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_f
+    goto :goto_0
 
     .line 516
-    :cond_55
+    :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p1

@@ -90,7 +90,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 66
     new-instance v0, Landroidx/media3/extractor/mp3/Mp3Extractor$$ExternalSyntheticLambda0;
@@ -110,7 +110,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -132,19 +132,19 @@
 .end method
 
 .method public constructor <init>(IJ)V
-    .registers 5
+    .locals 1
 
     .line 203
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     and-int/lit8 v0, p1, 0x2
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     or-int/lit8 p1, p1, 0x1
 
     .line 207
-    :cond_9
+    :cond_0
     iput p1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->flags:I
 
     .line 208
@@ -199,7 +199,7 @@
 .end method
 
 .method private assertInitialized()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "extractorOutput",
@@ -221,7 +221,7 @@
 .end method
 
 .method private computeSeeker(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/mp3/Seeker;
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -247,7 +247,7 @@
     .line 470
     iget-boolean v2, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->disableSeeking:Z
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 471
     new-instance p1, Landroidx/media3/extractor/mp3/Seeker$UnseekableSeeker;
@@ -257,14 +257,14 @@
     return-object p1
 
     .line 475
-    :cond_18
+    :cond_0
     iget v2, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->flags:I
 
     and-int/lit8 v2, v2, 0x4
 
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_3
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     .line 479
     invoke-interface {v1}, Landroidx/media3/extractor/mp3/Seeker;->getDurationUs()J
@@ -276,15 +276,15 @@
 
     move-result-wide v0
 
-    :goto_28
+    :goto_0
     move-wide v9, v0
 
     move-wide v5, v2
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_2b
-    if-eqz v0, :cond_36
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 482
     invoke-interface {v0}, Landroidx/media3/extractor/mp3/Seeker;->getDurationUs()J
@@ -296,10 +296,10 @@
 
     move-result-wide v0
 
-    goto :goto_28
+    goto :goto_0
 
     .line 485
-    :cond_36
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->metadata:Landroidx/media3/common/Metadata;
 
     invoke-static {v0}, Landroidx/media3/extractor/mp3/Mp3Extractor;->getId3TlenUs(Landroidx/media3/common/Metadata;)J
@@ -308,10 +308,10 @@
 
     const-wide/16 v0, -0x1
 
-    goto :goto_28
+    goto :goto_0
 
     .line 487
-    :goto_3f
+    :goto_1
     new-instance v0, Landroidx/media3/extractor/mp3/IndexSeeker;
 
     .line 489
@@ -323,66 +323,66 @@
 
     invoke-direct/range {v4 .. v10}, Landroidx/media3/extractor/mp3/IndexSeeker;-><init>(JJJ)V
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_4a
-    if-eqz v1, :cond_4e
+    :cond_3
+    if-eqz v1, :cond_4
 
     move-object v0, v1
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_4e
-    if-eqz v0, :cond_51
+    :cond_4
+    if-eqz v0, :cond_5
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_51
+    :cond_5
     const/4 v0, 0x0
 
-    :goto_52
+    :goto_2
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_6
 
     .line 497
     invoke-interface {v0}, Landroidx/media3/extractor/mp3/Seeker;->isSeekable()Z
 
     move-result v2
 
-    if-nez v2, :cond_6c
+    if-nez v2, :cond_8
 
     iget v2, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->flags:I
 
     and-int/2addr v2, v1
 
-    if-eqz v2, :cond_6c
+    if-eqz v2, :cond_8
 
     .line 498
-    :cond_60
+    :cond_6
     iget v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_7
 
-    goto :goto_68
+    goto :goto_3
 
-    :cond_67
+    :cond_7
     const/4 v1, 0x0
 
     .line 499
-    :goto_68
+    :goto_3
     invoke-direct {p0, p1, v1}, Landroidx/media3/extractor/mp3/Mp3Extractor;->getConstantBitrateSeeker(Landroidx/media3/extractor/ExtractorInput;Z)Landroidx/media3/extractor/mp3/Seeker;
 
     move-result-object v0
 
-    :cond_6c
+    :cond_8
     return-object v0
 .end method
 
 .method private computeTimeUs(J)J
-    .registers 7
+    .locals 4
 
     .line 367
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->basisTimeUs:J
@@ -405,7 +405,7 @@
 .end method
 
 .method private getConstantBitrateSeeker(JLandroidx/media3/extractor/mp3/XingFrame;J)Landroidx/media3/extractor/mp3/Seeker;
-    .registers 21
+    .locals 15
 
     move-object/from16 v0, p3
 
@@ -420,19 +420,19 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     return-object v2
 
     .line 605
-    :cond_11
+    :cond_0
     iget-wide v3, v0, Landroidx/media3/extractor/mp3/XingFrame;->dataSize:J
 
     const-wide/16 v7, -0x1
 
     cmp-long v1, v3, v7
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 606
     iget-wide v1, v0, Landroidx/media3/extractor/mp3/XingFrame;->dataSize:J
@@ -452,15 +452,15 @@
 
     move-wide v8, v1
 
-    :goto_26
+    :goto_0
     move-wide v10, v3
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_28
+    :cond_1
     cmp-long v1, p4, v7
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_2
 
     sub-long v1, p4, p1
 
@@ -475,9 +475,9 @@
 
     move-wide/from16 v8, p4
 
-    goto :goto_26
+    goto :goto_0
 
-    :goto_38
+    :goto_1
     const-wide/32 v3, 0x7a1200
 
     .line 619
@@ -528,12 +528,12 @@
 
     return-object v1
 
-    :cond_61
+    :cond_2
     return-object v2
 .end method
 
 .method private getConstantBitrateSeeker(Landroidx/media3/extractor/ExtractorInput;Z)Landroidx/media3/extractor/mp3/Seeker;
-    .registers 12
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -593,9 +593,9 @@
 .end method
 
 .method private static getId3TlenUs(Landroidx/media3/common/Metadata;)J
-    .registers 7
+    .locals 6
 
-    if-eqz p0, :cond_32
+    if-eqz p0, :cond_1
 
     .line 689
     invoke-virtual {p0}, Landroidx/media3/common/Metadata;->length()I
@@ -606,8 +606,8 @@
 
     move v2, v1
 
-    :goto_8
-    if-ge v2, v0, :cond_32
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 691
     invoke-virtual {p0, v2}, Landroidx/media3/common/Metadata;->get(I)Landroidx/media3/common/Metadata$Entry;
@@ -617,7 +617,7 @@
     .line 692
     instance-of v4, v3, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_0
 
     check-cast v3, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
@@ -630,7 +630,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_0
 
     .line 694
     iget-object p0, v3, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;->values:Lcom/google/common/collect/ImmutableList;
@@ -651,19 +651,19 @@
 
     return-wide v0
 
-    :cond_2f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_32
+    :cond_1
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide v0
 .end method
 
 .method private static getSeekFrameHeader(Landroidx/media3/common/util/ParsableByteArray;I)I
-    .registers 4
+    .locals 2
 
     .line 656
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -672,7 +672,7 @@
 
     add-int/lit8 v1, p1, 0x4
 
-    if-lt v0, v1, :cond_1a
+    if-lt v0, v1, :cond_1
 
     .line 657
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -684,24 +684,24 @@
 
     const v0, 0x58696e67
 
-    if-eq p1, v0, :cond_19
+    if-eq p1, v0, :cond_0
 
     const v0, 0x496e666f
 
-    if-ne p1, v0, :cond_1a
+    if-ne p1, v0, :cond_1
 
-    :cond_19
+    :cond_0
     return p1
 
     .line 663
-    :cond_1a
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
 
     move-result p1
 
     const/16 v0, 0x28
 
-    if-lt p1, v0, :cond_31
+    if-lt p1, v0, :cond_2
 
     const/16 p1, 0x24
 
@@ -715,18 +715,18 @@
 
     const p1, 0x56425249
 
-    if-ne p0, p1, :cond_31
+    if-ne p0, p1, :cond_2
 
     return p1
 
-    :cond_31
+    :cond_2
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method private static headersMatch(IJ)Z
-    .registers 7
+    .locals 4
 
     const v0, -0x1f400
 
@@ -740,21 +740,21 @@
 
     cmp-long p0, v0, p0
 
-    if-nez p0, :cond_10
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_11
+    :goto_0
     return p0
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -773,7 +773,7 @@
 .end method
 
 .method static synthetic lambda$static$1(IIIII)Z
-    .registers 8
+    .locals 3
 
     const/16 v0, 0x43
 
@@ -781,49 +781,49 @@
 
     const/16 v2, 0x4d
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     const/16 v0, 0x4f
 
-    if-ne p2, v0, :cond_11
+    if-ne p2, v0, :cond_0
 
-    if-ne p3, v2, :cond_11
+    if-ne p3, v2, :cond_0
 
-    if-eq p4, v2, :cond_1f
+    if-eq p4, v2, :cond_1
 
-    if-eq p0, v1, :cond_1f
+    if-eq p0, v1, :cond_1
 
-    :cond_11
-    if-ne p1, v2, :cond_21
+    :cond_0
+    if-ne p1, v2, :cond_2
 
     const/16 p1, 0x4c
 
-    if-ne p2, p1, :cond_21
+    if-ne p2, p1, :cond_2
 
-    if-ne p3, p1, :cond_21
+    if-ne p3, p1, :cond_2
 
     const/16 p1, 0x54
 
-    if-eq p4, p1, :cond_1f
+    if-eq p4, p1, :cond_1
 
-    if-ne p0, v1, :cond_21
+    if-ne p0, v1, :cond_2
 
-    :cond_1f
+    :cond_1
     const/4 p0, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     const/4 p0, 0x0
 
-    :goto_22
+    :goto_0
     return p0
 .end method
 
 .method private static maybeHandleSeekMetadata(Landroidx/media3/common/Metadata;J)Landroidx/media3/extractor/mp3/MlltSeeker;
-    .registers 7
+    .locals 4
 
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_1
 
     .line 676
     invoke-virtual {p0}, Landroidx/media3/common/Metadata;->length()I
@@ -832,8 +832,8 @@
 
     const/4 v1, 0x0
 
-    :goto_7
-    if-ge v1, v0, :cond_1f
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 678
     invoke-virtual {p0, v1}, Landroidx/media3/common/Metadata;->get(I)Landroidx/media3/common/Metadata$Entry;
@@ -843,7 +843,7 @@
     .line 679
     instance-of v3, v2, Landroidx/media3/extractor/metadata/id3/MlltFrame;
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_0
 
     .line 680
     check-cast v2, Landroidx/media3/extractor/metadata/id3/MlltFrame;
@@ -858,19 +858,19 @@
 
     return-object p0
 
-    :cond_1c
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private maybeReadSeekFrame(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/mp3/Seeker;
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -910,35 +910,35 @@
 
     const/16 v2, 0x15
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 522
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     iget v0, v0, Landroidx/media3/extractor/MpegAudioUtil$Header;->channels:I
 
-    if-eq v0, v1, :cond_31
+    if-eq v0, v1, :cond_2
 
     const/16 v2, 0x24
 
-    goto :goto_31
+    goto :goto_0
 
     .line 523
-    :cond_28
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     iget v0, v0, Landroidx/media3/extractor/MpegAudioUtil$Header;->channels:I
 
-    if-eq v0, v1, :cond_2f
+    if-eq v0, v1, :cond_1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_2f
+    :cond_1
     const/16 v2, 0xd
 
     .line 524
-    :cond_31
-    :goto_31
+    :cond_2
+    :goto_0
     invoke-static {v5, v2}, Landroidx/media3/extractor/mp3/Mp3Extractor;->getSeekFrameHeader(Landroidx/media3/common/util/ParsableByteArray;I)I
 
     move-result v0
@@ -947,23 +947,23 @@
 
     const v2, 0x58696e67
 
-    if-eq v0, v1, :cond_62
+    if-eq v0, v1, :cond_4
 
     const v1, 0x56425249
 
-    if-eq v0, v1, :cond_4a
+    if-eq v0, v1, :cond_3
 
-    if-eq v0, v2, :cond_62
+    if-eq v0, v2, :cond_4
 
     .line 568
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     const/4 p1, 0x0
 
-    goto/16 :goto_e6
+    goto/16 :goto_1
 
     .line 561
-    :cond_4a
+    :cond_3
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v0
@@ -987,10 +987,10 @@
 
     move-object p1, v0
 
-    goto/16 :goto_e6
+    goto/16 :goto_1
 
     .line 529
-    :cond_62
+    :cond_4
     iget-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     invoke-static {v1, v5}, Landroidx/media3/extractor/mp3/XingFrame;->parse(Landroidx/media3/extractor/MpegAudioUtil$Header;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/mp3/XingFrame;
@@ -1004,17 +1004,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_85
+    if-nez v1, :cond_5
 
     iget v1, v9, Landroidx/media3/extractor/mp3/XingFrame;->encoderDelay:I
 
     const/4 v3, -0x1
 
-    if-eq v1, v3, :cond_85
+    if-eq v1, v3, :cond_5
 
     iget v1, v9, Landroidx/media3/extractor/mp3/XingFrame;->encoderPadding:I
 
-    if-eq v1, v3, :cond_85
+    if-eq v1, v3, :cond_5
 
     .line 533
     iget-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->gaplessInfoHolder:Landroidx/media3/extractor/GaplessInfoHolder;
@@ -1031,7 +1031,7 @@
     iput v3, v1, Landroidx/media3/extractor/GaplessInfoHolder;->encoderPadding:I
 
     .line 536
-    :cond_85
+    :cond_5
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v7
@@ -1045,13 +1045,13 @@
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_cf
+    if-eqz v1, :cond_6
 
     iget-wide v3, v9, Landroidx/media3/extractor/mp3/XingFrame;->dataSize:J
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_cf
+    if-eqz v1, :cond_6
 
     .line 539
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -1064,7 +1064,7 @@
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_cf
+    if-eqz v1, :cond_6
 
     .line 540
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1112,24 +1112,24 @@
     invoke-static {v3, v1}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 548
-    :cond_cf
+    :cond_6
     iget-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     iget v1, v1, Landroidx/media3/extractor/MpegAudioUtil$Header;->frameSize:I
 
     invoke-interface {p1, v1}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    if-ne v0, v2, :cond_dd
+    if-ne v0, v2, :cond_7
 
     .line 554
     invoke-static {v9, v7, v8}, Landroidx/media3/extractor/mp3/XingSeeker;->create(Landroidx/media3/extractor/mp3/XingFrame;J)Landroidx/media3/extractor/mp3/XingSeeker;
 
     move-result-object p1
 
-    goto :goto_e6
+    goto :goto_1
 
     .line 556
-    :cond_dd
+    :cond_7
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v10
@@ -1140,12 +1140,12 @@
 
     move-result-object p1
 
-    :goto_e6
+    :goto_1
     return-object p1
 .end method
 
 .method private peekEndOfStreamOrHeader(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1157,7 +1157,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 450
     invoke-interface {v0}, Landroidx/media3/extractor/mp3/Seeker;->getDataEndPosition()J
@@ -1168,7 +1168,7 @@
 
     cmp-long v0, v2, v4
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 452
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
@@ -1181,13 +1181,13 @@
 
     cmp-long v0, v4, v2
 
-    if-lez v0, :cond_1b
+    if-lez v0, :cond_0
 
     return v1
 
     .line 457
-    :cond_1b
-    :try_start_1b
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 458
@@ -1203,19 +1203,19 @@
     invoke-interface {p1, v0, v2, v3, v1}, Landroidx/media3/extractor/ExtractorInput;->peekFully([BIIZ)Z
 
     move-result p1
-    :try_end_27
-    .catch Ljava/io/EOFException; {:try_start_1b .. :try_end_27} :catch_29
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
     xor-int/2addr p1, v1
 
     return p1
 
-    :catch_29
+    :catch_0
     return v1
 .end method
 
 .method private readInternal(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1232,29 +1232,29 @@
     .line 279
     iget v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeaderData:I
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     .line 281
-    :try_start_5
+    :try_start_0
     invoke-direct {p0, p1, v0}, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronize(Landroidx/media3/extractor/ExtractorInput;Z)Z
-    :try_end_8
-    .catch Ljava/io/EOFException; {:try_start_5 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     const/4 p1, -0x1
 
     return p1
 
     .line 286
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seeker:Landroidx/media3/extractor/mp3/Seeker;
 
-    if-nez v0, :cond_7f
+    if-nez v0, :cond_3
 
     .line 287
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mp3/Mp3Extractor;->computeSeeker(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/mp3/Seeker;
@@ -1330,16 +1330,16 @@
 
     and-int/lit8 v1, v1, 0x8
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x0
 
-    goto :goto_57
+    goto :goto_1
 
-    :cond_55
+    :cond_1
     iget-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->metadata:Landroidx/media3/common/Metadata;
 
-    :goto_57
+    :goto_1
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
 
     move-result-object v0
@@ -1353,7 +1353,7 @@
 
     const v2, -0x7fffffff
 
-    if-eq v1, v2, :cond_6f
+    if-eq v1, v2, :cond_2
 
     .line 299
     iget-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seeker:Landroidx/media3/extractor/mp3/Seeker;
@@ -1365,7 +1365,7 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setAverageBitrate(I)Landroidx/media3/common/Format$Builder;
 
     .line 301
-    :cond_6f
+    :cond_2
     iget-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->currentTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
     invoke-virtual {v0}, Landroidx/media3/common/Format$Builder;->build()Landroidx/media3/common/Format;
@@ -1381,17 +1381,17 @@
 
     iput-wide v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->firstSamplePosition:J
 
-    goto :goto_96
+    goto :goto_2
 
     .line 303
-    :cond_7f
+    :cond_3
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->firstSamplePosition:J
 
     const-wide/16 v2, 0x0
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_96
+    if-eqz v0, :cond_4
 
     .line 304
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -1403,7 +1403,7 @@
 
     cmp-long v4, v0, v2
 
-    if-gez v4, :cond_96
+    if-gez v4, :cond_4
 
     sub-long/2addr v2, v0
 
@@ -1413,8 +1413,8 @@
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
     .line 310
-    :cond_96
-    :goto_96
+    :cond_4
+    :goto_2
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mp3/Mp3Extractor;->readSample(Landroidx/media3/extractor/ExtractorInput;)I
 
     move-result p1
@@ -1423,7 +1423,7 @@
 .end method
 
 .method private readSample(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1446,7 +1446,7 @@
 
     const/4 v3, 0x0
 
-    if-nez v0, :cond_9e
+    if-nez v0, :cond_4
 
     .line 316
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -1456,12 +1456,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     return v2
 
     .line 320
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -1482,19 +1482,19 @@
 
     move-result v4
 
-    if-eqz v4, :cond_98
+    if-eqz v4, :cond_3
 
     .line 323
     invoke-static {v0}, Landroidx/media3/extractor/MpegAudioUtil;->getFrameSize(I)I
 
     move-result v4
 
-    if-ne v4, v2, :cond_2c
+    if-ne v4, v2, :cond_1
 
-    goto :goto_98
+    goto :goto_0
 
     .line 329
-    :cond_2c
+    :cond_1
     iget-object v4, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     invoke-virtual {v4, v0}, Landroidx/media3/extractor/MpegAudioUtil$Header;->setForHeaderData(I)Z
@@ -1506,7 +1506,7 @@
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_2
 
     .line 331
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seeker:Landroidx/media3/extractor/mp3/Seeker;
@@ -1526,7 +1526,7 @@
 
     cmp-long v0, v4, v6
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_2
 
     .line 333
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seeker:Landroidx/media3/extractor/mp3/Seeker;
@@ -1549,7 +1549,7 @@
     iput-wide v6, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->basisTimeUs:J
 
     .line 337
-    :cond_5e
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     iget v0, v0, Landroidx/media3/extractor/MpegAudioUtil$Header;->frameSize:I
@@ -1561,7 +1561,7 @@
 
     instance-of v4, v0, Landroidx/media3/extractor/mp3/IndexSeeker;
 
-    if-eqz v4, :cond_9e
+    if-eqz v4, :cond_4
 
     .line 339
     check-cast v0, Landroidx/media3/extractor/mp3/IndexSeeker;
@@ -1601,7 +1601,7 @@
     .line 345
     iget-boolean v4, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->isSeekInProgress:Z
 
-    if-eqz v4, :cond_9e
+    if-eqz v4, :cond_4
 
     iget-wide v4, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seekTimeUs:J
 
@@ -1609,7 +1609,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_4
 
     .line 346
     iput-boolean v3, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->isSeekInProgress:Z
@@ -1619,11 +1619,11 @@
 
     iput-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->currentTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
-    goto :goto_9e
+    goto :goto_1
 
     .line 325
-    :cond_98
-    :goto_98
+    :cond_3
+    :goto_0
     invoke-interface {p1, v1}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
     .line 326
@@ -1632,8 +1632,8 @@
     return v3
 
     .line 351
-    :cond_9e
-    :goto_9e
+    :cond_4
+    :goto_1
     iget-object v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->currentTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
     iget v4, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->sampleBytesRemaining:I
@@ -1642,24 +1642,24 @@
 
     move-result p1
 
-    if-ne p1, v2, :cond_a9
+    if-ne p1, v2, :cond_5
 
     return v2
 
     .line 355
-    :cond_a9
+    :cond_5
     iget v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->sampleBytesRemaining:I
 
     sub-int/2addr v0, p1
 
     iput v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->sampleBytesRemaining:I
 
-    if-lez v0, :cond_b1
+    if-lez v0, :cond_6
 
     return v3
 
     .line 359
-    :cond_b1
+    :cond_6
     iget-object v4, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->currentTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->samplesRead:J
@@ -1702,24 +1702,24 @@
 .end method
 
 .method private synchronize(Landroidx/media3/extractor/ExtractorInput;Z)Z
-    .registers 14
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     const v0, 0x8000
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/high16 v0, 0x20000
 
     .line 376
-    :goto_8
+    :goto_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     .line 377
@@ -1737,35 +1737,35 @@
 
     const/4 v4, 0x0
 
-    if-nez v1, :cond_42
+    if-nez v1, :cond_5
 
     .line 380
     iget v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->flags:I
 
     and-int/lit8 v1, v1, 0x8
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     move v1, v3
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     move v1, v4
 
-    :goto_21
-    if-eqz v1, :cond_25
+    :goto_1
+    if-eqz v1, :cond_2
 
     move-object v1, v2
 
-    goto :goto_27
+    goto :goto_2
 
     .line 382
-    :cond_25
+    :cond_2
     sget-object v1, Landroidx/media3/extractor/mp3/Mp3Extractor;->REQUIRED_ID3_FRAME_PREDICATE:Landroidx/media3/extractor/metadata/id3/Id3Decoder$FramePredicate;
 
     .line 383
-    :goto_27
+    :goto_2
     iget-object v5, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->id3Peeker:Landroidx/media3/extractor/Id3Peeker;
 
     invoke-virtual {v5, p1, v1}, Landroidx/media3/extractor/Id3Peeker;->peekId3Data(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/metadata/id3/Id3Decoder$FramePredicate;)Landroidx/media3/common/Metadata;
@@ -1774,7 +1774,7 @@
 
     iput-object v1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->metadata:Landroidx/media3/common/Metadata;
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_3
 
     .line 385
     iget-object v5, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->gaplessInfoHolder:Landroidx/media3/extractor/GaplessInfoHolder;
@@ -1782,47 +1782,47 @@
     invoke-virtual {v5, v1}, Landroidx/media3/extractor/GaplessInfoHolder;->setFromMetadata(Landroidx/media3/common/Metadata;)Z
 
     .line 387
-    :cond_36
+    :cond_3
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
 
     move-result-wide v5
 
     long-to-int v1, v5
 
-    if-nez p2, :cond_40
+    if-nez p2, :cond_4
 
     .line 389
     invoke-interface {p1, v1}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    :cond_40
+    :cond_4
     move v5, v4
 
-    goto :goto_44
+    goto :goto_3
 
-    :cond_42
+    :cond_5
     move v1, v4
 
     move v5, v1
 
-    :goto_44
+    :goto_3
     move v6, v5
 
     move v7, v6
 
     .line 393
-    :goto_46
+    :goto_4
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mp3/Mp3Extractor;->peekEndOfStreamOrHeader(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_55
+    if-eqz v8, :cond_7
 
-    if-lez v6, :cond_4f
+    if-lez v6, :cond_6
 
-    goto :goto_9e
+    goto :goto_6
 
     .line 398
-    :cond_4f
+    :cond_6
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -1830,7 +1830,7 @@
     throw p1
 
     .line 400
-    :cond_55
+    :cond_7
     iget-object v8, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v8, v4}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -1842,7 +1842,7 @@
 
     move-result v8
 
-    if-eqz v5, :cond_69
+    if-eqz v5, :cond_8
 
     int-to-long v9, v5
 
@@ -1851,28 +1851,28 @@
 
     move-result v9
 
-    if-eqz v9, :cond_70
+    if-eqz v9, :cond_9
 
     .line 405
-    :cond_69
+    :cond_8
     invoke-static {v8}, Landroidx/media3/extractor/MpegAudioUtil;->getFrameSize(I)I
 
     move-result v9
 
     const/4 v10, -0x1
 
-    if-ne v9, v10, :cond_90
+    if-ne v9, v10, :cond_d
 
-    :cond_70
+    :cond_9
     add-int/lit8 v5, v7, 0x1
 
-    if-ne v7, v0, :cond_7e
+    if-ne v7, v0, :cond_b
 
-    if-eqz p2, :cond_77
+    if-eqz p2, :cond_a
 
     return v4
 
-    :cond_77
+    :cond_a
     const-string p1, "Searched too many bytes."
 
     .line 409
@@ -1882,8 +1882,8 @@
 
     throw p1
 
-    :cond_7e
-    if-eqz p2, :cond_89
+    :cond_b
+    if-eqz p2, :cond_c
 
     .line 417
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -1893,25 +1893,25 @@
     .line 418
     invoke-interface {p1, v6}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_8c
+    goto :goto_5
 
     .line 420
-    :cond_89
+    :cond_c
     invoke-interface {p1, v3}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    :goto_8c
+    :goto_5
     move v6, v4
 
     move v7, v5
 
     move v5, v6
 
-    goto :goto_46
+    goto :goto_4
 
-    :cond_90
+    :cond_d
     add-int/lit8 v6, v6, 0x1
 
-    if-ne v6, v3, :cond_9b
+    if-ne v6, v3, :cond_e
 
     .line 426
     iget-object v5, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeader:Landroidx/media3/extractor/MpegAudioUtil$Header;
@@ -1920,47 +1920,47 @@
 
     move v5, v8
 
-    goto :goto_ab
+    goto :goto_8
 
-    :cond_9b
+    :cond_e
     const/4 v8, 0x4
 
-    if-ne v6, v8, :cond_ab
+    if-ne v6, v8, :cond_10
 
-    :goto_9e
-    if-eqz p2, :cond_a5
+    :goto_6
+    if-eqz p2, :cond_f
 
     add-int/2addr v1, v7
 
     .line 436
     invoke-interface {p1, v1}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    goto :goto_a8
+    goto :goto_7
 
     .line 438
-    :cond_a5
+    :cond_f
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     .line 440
-    :goto_a8
+    :goto_7
     iput v5, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->synchronizedHeaderData:I
 
     return v3
 
-    :cond_ab
-    :goto_ab
+    :cond_10
+    :goto_8
     add-int/lit8 v9, v9, -0x4
 
     .line 431
     invoke-interface {p1, v9}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_46
+    goto :goto_4
 .end method
 
 
 # virtual methods
 .method public disableSeeking()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1971,7 +1971,7 @@
 .end method
 
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 4
+    .locals 2
 
     .line 227
     iput-object p1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -1999,7 +1999,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2016,14 +2016,14 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_2e
+    if-ne p1, p2, :cond_0
 
     .line 255
     iget-object p2, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seeker:Landroidx/media3/extractor/mp3/Seeker;
 
     instance-of p2, p2, Landroidx/media3/extractor/mp3/IndexSeeker;
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_0
 
     .line 257
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->samplesRead:J
@@ -2041,7 +2041,7 @@
 
     cmp-long p2, v2, v0
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_0
 
     .line 259
     iget-object p2, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->seeker:Landroidx/media3/extractor/mp3/Seeker;
@@ -2057,18 +2057,18 @@
 
     invoke-interface {p2, v0}, Landroidx/media3/extractor/ExtractorOutput;->seekMap(Landroidx/media3/extractor/SeekMap;)V
 
-    :cond_2e
+    :cond_0
     return p1
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 7
+    .locals 2
 
     const/4 p1, 0x0
 
@@ -2096,7 +2096,7 @@
 
     instance-of p2, p1, Landroidx/media3/extractor/mp3/IndexSeeker;
 
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_0
 
     check-cast p1, Landroidx/media3/extractor/mp3/IndexSeeker;
 
@@ -2104,7 +2104,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -2116,12 +2116,12 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/mp3/Mp3Extractor;->currentTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
-    :cond_27
+    :cond_0
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(IIJILandroidx/media3/extractor/TrackOutput;)V
-    .registers 9
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,18 +50,18 @@
 
     const/4 v1, 0x1
 
-    if-eq p2, v1, :cond_b
+    if-eq p2, v1, :cond_1
 
-    if-ne p2, v0, :cond_a
+    if-ne p2, v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
     .line 82
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 83
@@ -73,24 +73,24 @@
     .line 85
     iput-object p6, p0, Landroidx/media3/extractor/avi/ChunkReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
 
-    if-ne p2, v0, :cond_19
+    if-ne p2, v0, :cond_2
 
     const/high16 p3, 0x63640000
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_19
+    :cond_2
     const/high16 p3, 0x62770000
 
     .line 89
-    :goto_1b
+    :goto_1
     invoke-static {p1, p3}, Landroidx/media3/extractor/avi/ChunkReader;->getChunkIdFourCc(II)I
 
     move-result p3
 
     iput p3, p0, Landroidx/media3/extractor/avi/ChunkReader;->chunkId:I
 
-    if-ne p2, v0, :cond_2a
+    if-ne p2, v0, :cond_3
 
     const/high16 p2, 0x62640000
 
@@ -99,12 +99,12 @@
 
     move-result p1
 
-    goto :goto_2b
+    goto :goto_2
 
-    :cond_2a
+    :cond_3
     const/4 p1, -0x1
 
-    :goto_2b
+    :goto_2
     iput p1, p0, Landroidx/media3/extractor/avi/ChunkReader;->alternativeChunkId:I
 
     const/16 p1, 0x200
@@ -123,7 +123,7 @@
 .end method
 
 .method private static getChunkIdFourCc(II)I
-    .registers 3
+    .locals 1
 
     .line 209
     div-int/lit8 v0, p0, 0xa
@@ -145,7 +145,7 @@
 .end method
 
 .method private getChunkTimestampUs(I)J
-    .registers 6
+    .locals 4
 
     .line 200
     iget-wide v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->durationUs:J
@@ -164,7 +164,7 @@
 .end method
 
 .method private getSeekPoint(I)Landroidx/media3/extractor/SeekPoint;
-    .registers 7
+    .locals 5
 
     .line 204
     new-instance v0, Landroidx/media3/extractor/SeekPoint;
@@ -194,7 +194,7 @@
 
 # virtual methods
 .method public advanceCurrentChunk()V
-    .registers 2
+    .locals 1
 
     .line 107
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->currentChunkIndex:I
@@ -207,7 +207,7 @@
 .end method
 
 .method public appendKeyFrameToIndex(J)V
-    .registers 5
+    .locals 2
 
     .line 97
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->indexSize:I
@@ -216,7 +216,7 @@
 
     array-length v1, v1
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_0
 
     .line 98
     iget-object v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->keyFrameOffsets:[J
@@ -249,7 +249,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->keyFrameIndices:[I
 
     .line 101
-    :cond_21
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->keyFrameOffsets:[J
 
     iget v1, p0, Landroidx/media3/extractor/avi/ChunkReader;->indexSize:I
@@ -272,7 +272,7 @@
 .end method
 
 .method public compactIndex()V
-    .registers 3
+    .locals 2
 
     .line 123
     iget-object v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->keyFrameOffsets:[J
@@ -300,7 +300,7 @@
 .end method
 
 .method public getCurrentChunkTimestampUs()J
-    .registers 3
+    .locals 2
 
     .line 111
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->currentChunkIndex:I
@@ -313,7 +313,7 @@
 .end method
 
 .method public getFrameDurationUs()J
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -326,7 +326,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 5
+    .locals 2
 
     .line 183
     invoke-virtual {p0}, Landroidx/media3/extractor/avi/ChunkReader;->getFrameDurationUs()J
@@ -352,7 +352,7 @@
 
     aget v1, v1, p2
 
-    if-ne v1, p1, :cond_1d
+    if-ne v1, p1, :cond_0
 
     .line 188
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -366,7 +366,7 @@
     return-object p1
 
     .line 191
-    :cond_1d
+    :cond_0
     invoke-direct {p0, p2}, Landroidx/media3/extractor/avi/ChunkReader;->getSeekPoint(I)Landroidx/media3/extractor/SeekPoint;
 
     move-result-object p1
@@ -378,7 +378,7 @@
 
     array-length v0, v0
 
-    if-ge p2, v0, :cond_31
+    if-ge p2, v0, :cond_1
 
     .line 193
     new-instance v0, Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -392,7 +392,7 @@
     return-object v0
 
     .line 195
-    :cond_31
+    :cond_1
     new-instance p2, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p2, p1}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -401,34 +401,34 @@
 .end method
 
 .method public handlesChunkId(I)Z
-    .registers 3
+    .locals 1
 
     .line 128
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->chunkId:I
 
-    if-eq v0, p1, :cond_b
+    if-eq v0, p1, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->alternativeChunkId:I
 
-    if-ne v0, p1, :cond_9
+    if-ne v0, p1, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_c
+    :goto_1
     return p1
 .end method
 
 .method public incrementIndexChunkCount()V
-    .registers 2
+    .locals 1
 
     .line 119
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->indexChunkCount:I
@@ -441,7 +441,7 @@
 .end method
 
 .method public isAudio()Z
-    .registers 3
+    .locals 2
 
     .line 140
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->chunkId:I
@@ -450,21 +450,21 @@
 
     and-int/2addr v0, v1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public isCurrentFrameAKeyFrame()Z
-    .registers 3
+    .locals 2
 
     .line 132
     iget-object v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->keyFrameIndices:[I
@@ -475,21 +475,21 @@
 
     move-result v0
 
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public isVideo()Z
-    .registers 3
+    .locals 2
 
     .line 136
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->chunkId:I
@@ -498,21 +498,21 @@
 
     and-int/2addr v0, v1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public onChunkData(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -535,17 +535,17 @@
 
     iput v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->bytesRemainingInCurrentChunk:I
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 v2, 0x1
 
-    :cond_f
-    if-eqz v2, :cond_29
+    :cond_0
+    if-eqz v2, :cond_2
 
     .line 158
     iget p1, p0, Landroidx/media3/extractor/avi/ChunkReader;->currentChunkSize:I
 
-    if-lez p1, :cond_26
+    if-lez p1, :cond_1
 
     .line 159
     iget-object v3, p0, Landroidx/media3/extractor/avi/ChunkReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -570,15 +570,15 @@
     invoke-interface/range {v3 .. v9}, Landroidx/media3/extractor/TrackOutput;->sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
 
     .line 166
-    :cond_26
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/extractor/avi/ChunkReader;->advanceCurrentChunk()V
 
-    :cond_29
+    :cond_2
     return v2
 .end method
 
 .method public onChunkStart(I)V
-    .registers 2
+    .locals 0
 
     .line 145
     iput p1, p0, Landroidx/media3/extractor/avi/ChunkReader;->currentChunkSize:I
@@ -590,22 +590,22 @@
 .end method
 
 .method public seekToPosition(J)V
-    .registers 5
+    .locals 2
 
     .line 172
     iget v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->indexSize:I
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     .line 173
     iput p1, p0, Landroidx/media3/extractor/avi/ChunkReader;->currentChunkIndex:I
 
-    goto :goto_15
+    goto :goto_0
 
     .line 175
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/avi/ChunkReader;->keyFrameOffsets:[J
 
     const/4 v1, 0x1
@@ -622,6 +622,6 @@
 
     iput p1, p0, Landroidx/media3/extractor/avi/ChunkReader;->currentChunkIndex:I
 
-    :goto_15
+    :goto_0
     return-void
 .end method

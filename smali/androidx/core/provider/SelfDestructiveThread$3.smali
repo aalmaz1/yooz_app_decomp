@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/provider/SelfDestructiveThread;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/Callable;Ljava/util/concurrent/locks/ReentrantLock;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/locks/Condition;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 179
     :try_start_0
@@ -74,17 +74,17 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_b} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 183
-    :catch_b
+    :catch_0
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$3;->val$lock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     .line 185
-    :try_start_10
+    :try_start_1
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$3;->val$running:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -95,8 +95,8 @@
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$3;->val$cond:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
-    :try_end_1b
-    .catchall {:try_start_10 .. :try_end_1b} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 188
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$3;->val$lock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -105,7 +105,7 @@
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Landroidx/core/provider/SelfDestructiveThread$3;->val$lock:Ljava/util/concurrent/locks/ReentrantLock;

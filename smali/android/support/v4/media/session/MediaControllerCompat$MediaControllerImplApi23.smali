@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/support/v4/media/session/MediaSessionCompat$Token;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public getTransportControls()Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
-    .registers 3
+    .locals 2
 
     .line 2455
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi23;->mControllerObj:Ljava/lang/Object;
@@ -41,18 +41,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 2456
     new-instance v1, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi23;
 
     invoke-direct {v1, v0}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi23;-><init>(Ljava/lang/Object;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_f
+    :goto_0
     return-object v1
 .end method

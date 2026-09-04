@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(ILandroidx/camera/video/StreamInfo$StreamState;Landroidx/camera/core/SurfaceRequest$TransformationInfo;)V
-    .registers 4
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Landroidx/camera/video/StreamInfo;-><init>()V
@@ -21,7 +21,7 @@
     .line 22
     iput p1, p0, Landroidx/camera/video/AutoValue_StreamInfo;->id:I
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 26
     iput-object p2, p0, Landroidx/camera/video/AutoValue_StreamInfo;->streamState:Landroidx/camera/video/StreamInfo$StreamState;
@@ -32,7 +32,7 @@
     return-void
 
     .line 24
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null streamState"
@@ -45,21 +45,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 61
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/StreamInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_3
 
     .line 62
     check-cast p1, Landroidx/camera/video/StreamInfo;
@@ -71,7 +71,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_35
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_StreamInfo;->streamState:Landroidx/camera/video/StreamInfo$StreamState;
 
@@ -84,22 +84,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_StreamInfo;->inProgressTransformationInfo:Landroidx/camera/core/SurfaceRequest$TransformationInfo;
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_1
 
     .line 65
     invoke-virtual {p1}, Landroidx/camera/video/StreamInfo;->getInProgressTransformationInfo()Landroidx/camera/core/SurfaceRequest$TransformationInfo;
 
     move-result-object p1
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/StreamInfo;->getInProgressTransformationInfo()Landroidx/camera/core/SurfaceRequest$TransformationInfo;
 
     move-result-object p1
@@ -108,22 +108,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_2
     move v0, v2
 
-    :goto_36
+    :goto_0
     return v0
 
-    :cond_37
+    :cond_3
     return v2
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 32
     iget v0, p0, Landroidx/camera/video/AutoValue_StreamInfo;->id:I
@@ -132,7 +132,7 @@
 .end method
 
 .method public getInProgressTransformationInfo()Landroidx/camera/core/SurfaceRequest$TransformationInfo;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/camera/video/AutoValue_StreamInfo;->inProgressTransformationInfo:Landroidx/camera/core/SurfaceRequest$TransformationInfo;
@@ -141,7 +141,7 @@
 .end method
 
 .method public getStreamState()Landroidx/camera/video/StreamInfo$StreamState;
-    .registers 2
+    .locals 1
 
     .line 38
     iget-object v0, p0, Landroidx/camera/video/AutoValue_StreamInfo;->streamState:Landroidx/camera/video/StreamInfo$StreamState;
@@ -150,7 +150,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 74
     iget v0, p0, Landroidx/camera/video/AutoValue_StreamInfo;->id:I
@@ -175,25 +175,25 @@
     .line 78
     iget-object v1, p0, Landroidx/camera/video/AutoValue_StreamInfo;->inProgressTransformationInfo:Landroidx/camera/core/SurfaceRequest$TransformationInfo;
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_19
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 49
     new-instance v0, Ljava/lang/StringBuilder;

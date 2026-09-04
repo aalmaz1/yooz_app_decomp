@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static create(Landroid/util/Size;Ljava/util/Map;Landroid/util/Size;Ljava/util/Map;Landroid/util/Size;Ljava/util/Map;Ljava/util/Map;)Landroidx/camera/core/impl/SurfaceSizeDefinition;
-    .registers 16
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,7 +71,7 @@
 .end method
 
 .method public getMaximumSize(I)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 142
     invoke-virtual {p0}, Landroidx/camera/core/impl/SurfaceSizeDefinition;->getMaximumSizeMap()Ljava/util/Map;
@@ -110,7 +110,7 @@
 .end method
 
 .method public getS1440pSize(I)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 133
     invoke-virtual {p0}, Landroidx/camera/core/impl/SurfaceSizeDefinition;->getS1440pSizeMap()Ljava/util/Map;
@@ -143,7 +143,7 @@
 .end method
 
 .method public getS720pSize(I)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 124
     invoke-virtual {p0}, Landroidx/camera/core/impl/SurfaceSizeDefinition;->getS720pSizeMap()Ljava/util/Map;
@@ -176,7 +176,7 @@
 .end method
 
 .method public getUltraMaximumSize(I)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 151
     invoke-virtual {p0}, Landroidx/camera/core/impl/SurfaceSizeDefinition;->getUltraMaximumSizeMap()Ljava/util/Map;

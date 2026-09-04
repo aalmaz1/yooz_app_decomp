@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 2
+    .locals 0
 
     .line 156
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public array()[B
-    .registers 2
+    .locals 1
 
     .line 175
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -46,7 +46,7 @@
 .end method
 
 .method public arrayOffset()I
-    .registers 2
+    .locals 1
 
     .line 180
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -59,7 +59,7 @@
 .end method
 
 .method public hasArray()Z
-    .registers 2
+    .locals 1
 
     .line 170
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -72,7 +72,7 @@
 .end method
 
 .method public hasNioBuffer()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public limit()I
-    .registers 2
+    .locals 1
 
     .line 196
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -93,7 +93,7 @@
 .end method
 
 .method public nioBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 165
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -102,7 +102,7 @@
 .end method
 
 .method public position()I
-    .registers 2
+    .locals 1
 
     .line 185
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -115,7 +115,7 @@
 .end method
 
 .method public position(I)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 3
+    .locals 1
 
     .line 190
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;
@@ -126,7 +126,7 @@
 .end method
 
 .method public remaining()I
-    .registers 2
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$1;->val$buffer:Ljava/nio/ByteBuffer;

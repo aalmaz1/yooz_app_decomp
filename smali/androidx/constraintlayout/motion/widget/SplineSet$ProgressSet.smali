@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 301
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/SplineSet;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public setProperty(Landroid/view/View;F)V
-    .registers 11
+    .locals 8
 
     const-string/jumbo v0, "unable to setProgress"
 
@@ -45,7 +45,7 @@
     .line 306
     instance-of v2, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 307
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -56,23 +56,23 @@
 
     invoke-virtual {p1, p2}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
 
-    goto :goto_49
+    goto :goto_1
 
     .line 309
-    :cond_13
+    :cond_0
     iget-boolean v2, p0, Landroidx/constraintlayout/motion/widget/SplineSet$ProgressSet;->mNoMethod:Z
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_1
 
     return-void
 
-    :cond_18
+    :cond_1
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
     .line 314
-    :try_start_1a
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v4
@@ -88,21 +88,21 @@
     invoke-virtual {v4, v5, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
-    :try_end_2a
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1a .. :try_end_2a} :catch_2b
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 316
-    :catch_2b
+    :catch_0
     iput-boolean v3, p0, Landroidx/constraintlayout/motion/widget/SplineSet$ProgressSet;->mNoMethod:Z
 
     const/4 v4, 0x0
 
-    :goto_2e
-    if-eqz v4, :cond_49
+    :goto_0
+    if-eqz v4, :cond_2
 
-    :try_start_30
+    :try_start_1
     new-array v3, v3, [Ljava/lang/Object;
 
     .line 320
@@ -117,27 +117,27 @@
     aput-object p2, v3, v2
 
     invoke-virtual {v4, p1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_3f
-    .catch Ljava/lang/IllegalAccessException; {:try_start_30 .. :try_end_3f} :catch_45
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_30 .. :try_end_3f} :catch_40
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_49
+    goto :goto_1
 
-    :catch_40
+    :catch_1
     move-exception p1
 
     .line 324
     invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_49
+    goto :goto_1
 
-    :catch_45
+    :catch_2
     move-exception p1
 
     .line 322
     invoke-static {v1, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_49
-    :goto_49
+    :cond_2
+    :goto_1
     return-void
 .end method

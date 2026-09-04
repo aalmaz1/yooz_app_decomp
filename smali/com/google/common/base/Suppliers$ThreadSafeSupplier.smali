@@ -47,7 +47,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Supplier;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation runtime Lcom/google/common/base/ParametricNullness;
     .end annotation
 
@@ -99,7 +99,7 @@
     monitor-enter v0
 
     .line 348
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;->delegate:Lcom/google/common/base/Supplier;
 
     invoke-interface {v1}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
@@ -110,19 +110,19 @@
 
     return-object v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 349
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 354
     new-instance v0, Ljava/lang/StringBuilder;

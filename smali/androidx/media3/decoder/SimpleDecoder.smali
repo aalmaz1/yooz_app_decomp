@@ -93,7 +93,7 @@
 
 # direct methods
 .method protected constructor <init>([Landroidx/media3/decoder/DecoderInputBuffer;[Landroidx/media3/decoder/DecoderOutputBuffer;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TI;[TO;)V"
@@ -142,10 +142,10 @@
     move v0, p1
 
     .line 65
-    :goto_26
+    :goto_0
     iget v1, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBufferCount:I
 
-    if-ge v0, v1, :cond_35
+    if-ge v0, v1, :cond_0
 
     .line 66
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBuffers:[Landroidx/media3/decoder/DecoderInputBuffer;
@@ -158,10 +158,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 68
-    :cond_35
+    :cond_0
     iput-object p2, p0, Landroidx/media3/decoder/SimpleDecoder;->availableOutputBuffers:[Landroidx/media3/decoder/DecoderOutputBuffer;
 
     .line 69
@@ -170,10 +170,10 @@
     iput p2, p0, Landroidx/media3/decoder/SimpleDecoder;->availableOutputBufferCount:I
 
     .line 70
-    :goto_3a
+    :goto_1
     iget p2, p0, Landroidx/media3/decoder/SimpleDecoder;->availableOutputBufferCount:I
 
-    if-ge p1, p2, :cond_49
+    if-ge p1, p2, :cond_1
 
     .line 71
     iget-object p2, p0, Landroidx/media3/decoder/SimpleDecoder;->availableOutputBuffers:[Landroidx/media3/decoder/DecoderOutputBuffer;
@@ -186,10 +186,10 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 73
-    :cond_49
+    :cond_1
     new-instance p1, Landroidx/media3/decoder/SimpleDecoder$1;
 
     const-string p2, "ExoPlayer:SimpleDecoder"
@@ -205,7 +205,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/decoder/SimpleDecoder;)V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->run()V
@@ -214,7 +214,7 @@
 .end method
 
 .method private canDecodeBuffer()Z
-    .registers 2
+    .locals 1
 
     .line 308
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedInputBuffers:Ljava/util/ArrayDeque;
@@ -223,25 +223,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     iget v0, p0, Landroidx/media3/decoder/SimpleDecoder;->availableOutputBufferCount:I
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method private decode()Z
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;
@@ -254,32 +254,32 @@
     monitor-enter v0
 
     .line 246
-    :goto_3
-    :try_start_3
+    :goto_0
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/decoder/SimpleDecoder;->released:Z
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->canDecodeBuffer()Z
 
     move-result v1
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     .line 247
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 249
-    :cond_13
+    :cond_0
     iget-boolean v1, p0, Landroidx/media3/decoder/SimpleDecoder;->released:Z
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 250
     monitor-exit v0
@@ -287,7 +287,7 @@
     return v2
 
     .line 252
-    :cond_1a
+    :cond_1
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedInputBuffers:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
@@ -317,25 +317,25 @@
 
     .line 256
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_3 .. :try_end_31} :catchall_9c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 258
     invoke-virtual {v1}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x4
 
     .line 259
     invoke-virtual {v3, v0}, Landroidx/media3/decoder/DecoderOutputBuffer;->addFlag(I)V
 
-    goto :goto_71
+    goto :goto_2
 
     .line 261
-    :cond_3c
+    :cond_2
     iget-wide v6, v1, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
     iput-wide v6, v3, Landroidx/media3/decoder/DecoderOutputBuffer;->timeUs:J
@@ -345,7 +345,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_3
 
     const/high16 v0, 0x8000000
 
@@ -353,31 +353,31 @@
     invoke-virtual {v3, v0}, Landroidx/media3/decoder/DecoderOutputBuffer;->addFlag(I)V
 
     .line 265
-    :cond_4b
+    :cond_3
     iget-wide v6, v1, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
     invoke-virtual {p0, v6, v7}, Landroidx/media3/decoder/SimpleDecoder;->isAtLeastOutputStartTimeUs(J)Z
 
     move-result v0
 
-    if-nez v0, :cond_55
+    if-nez v0, :cond_4
 
     .line 266
     iput-boolean v5, v3, Landroidx/media3/decoder/DecoderOutputBuffer;->shouldBeSkipped:Z
 
     .line 270
-    :cond_55
-    :try_start_55
+    :cond_4
+    :try_start_1
     invoke-virtual {p0, v1, v3, v4}, Landroidx/media3/decoder/SimpleDecoder;->decode(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/decoder/DecoderOutputBuffer;Z)Landroidx/media3/decoder/DecoderException;
 
     move-result-object v0
-    :try_end_59
-    .catch Ljava/lang/RuntimeException; {:try_start_55 .. :try_end_59} :catch_60
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_55 .. :try_end_59} :catch_5a
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_65
+    goto :goto_1
 
-    :catch_5a
+    :catch_0
     move-exception v0
 
     .line 279
@@ -385,9 +385,9 @@
 
     move-result-object v0
 
-    goto :goto_65
+    goto :goto_1
 
-    :catch_60
+    :catch_1
     move-exception v0
 
     .line 274
@@ -395,8 +395,8 @@
 
     move-result-object v0
 
-    :goto_65
-    if-eqz v0, :cond_71
+    :goto_1
+    if-eqz v0, :cond_5
 
     .line 282
     iget-object v4, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
@@ -404,7 +404,7 @@
     monitor-enter v4
 
     .line 283
-    :try_start_6a
+    :try_start_2
     iput-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->exception:Landroidx/media3/decoder/DecoderException;
 
     .line 284
@@ -412,38 +412,38 @@
 
     return v2
 
-    :catchall_6e
+    :catchall_0
     move-exception v0
 
     monitor-exit v4
-    :try_end_70
-    .catchall {:try_start_6a .. :try_end_70} :catchall_6e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
     .line 289
-    :cond_71
-    :goto_71
+    :cond_5
+    :goto_2
     iget-object v4, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
 
     monitor-enter v4
 
     .line 290
-    :try_start_74
+    :try_start_3
     iget-boolean v0, p0, Landroidx/media3/decoder/SimpleDecoder;->flushed:Z
 
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_6
 
     .line 291
     invoke-virtual {v3}, Landroidx/media3/decoder/DecoderOutputBuffer;->release()V
 
-    goto :goto_94
+    goto :goto_3
 
     .line 292
-    :cond_7c
+    :cond_6
     iget-boolean v0, v3, Landroidx/media3/decoder/DecoderOutputBuffer;->shouldBeSkipped:Z
 
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_7
 
     .line 293
     iget v0, p0, Landroidx/media3/decoder/SimpleDecoder;->skippedOutputBufferCount:I
@@ -455,10 +455,10 @@
     .line 294
     invoke-virtual {v3}, Landroidx/media3/decoder/DecoderOutputBuffer;->release()V
 
-    goto :goto_94
+    goto :goto_3
 
     .line 296
-    :cond_89
+    :cond_7
     iget v0, p0, Landroidx/media3/decoder/SimpleDecoder;->skippedOutputBufferCount:I
 
     iput v0, v3, Landroidx/media3/decoder/DecoderOutputBuffer;->skippedOutputBufferCount:I
@@ -472,7 +472,7 @@
     invoke-virtual {v0, v3}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
     .line 301
-    :goto_94
+    :goto_3
     invoke-direct {p0, v1}, Landroidx/media3/decoder/SimpleDecoder;->releaseInputBufferInternal(Landroidx/media3/decoder/DecoderInputBuffer;)V
 
     .line 302
@@ -480,48 +480,48 @@
 
     return v5
 
-    :catchall_99
+    :catchall_1
     move-exception v0
 
     monitor-exit v4
-    :try_end_9b
-    .catchall {:try_start_74 .. :try_end_9b} :catchall_99
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw v0
 
-    :catchall_9c
+    :catchall_2
     move-exception v1
 
     .line 256
-    :try_start_9d
+    :try_start_4
     monitor-exit v0
-    :try_end_9e
-    .catchall {:try_start_9d .. :try_end_9e} :catchall_9c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     throw v1
 .end method
 
 .method private maybeNotifyDecodeLoop()V
-    .registers 2
+    .locals 1
 
     .line 223
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->canDecodeBuffer()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 224
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method private maybeThrowException()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V^TE;"
@@ -537,17 +537,17 @@
     .line 210
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->exception:Landroidx/media3/decoder/DecoderException;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 212
-    :cond_5
+    :cond_0
     throw v0
 .end method
 
 .method private releaseInputBufferInternal(Landroidx/media3/decoder/DecoderInputBuffer;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TI;)V"
@@ -572,7 +572,7 @@
 .end method
 
 .method private releaseOutputBufferInternal(Landroidx/media3/decoder/DecoderOutputBuffer;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TO;)V"
@@ -597,7 +597,7 @@
 .end method
 
 .method private run()V
-    .registers 3
+    .locals 2
 
     .line 230
     :goto_0
@@ -605,17 +605,17 @@
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->decode()Z
 
     move-result v0
-    :try_end_4
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_4} :catch_8
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
-    :cond_7
+    :cond_0
     return-void
 
-    :catch_8
+    :catch_0
     move-exception v0
 
     .line 235
@@ -663,7 +663,7 @@
 .end method
 
 .method public final dequeueInputBuffer()Landroidx/media3/decoder/DecoderInputBuffer;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TI;^TE;"
@@ -682,7 +682,7 @@
     monitor-enter v0
 
     .line 126
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->maybeThrowException()V
 
     .line 127
@@ -690,29 +690,29 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 129
     iget v1, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBufferCount:I
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_1
 
     const/4 v1, 0x0
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 131
-    :cond_17
+    :cond_1
     iget-object v3, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBuffers:[Landroidx/media3/decoder/DecoderInputBuffer;
 
     sub-int/2addr v1, v2
@@ -721,7 +721,7 @@
 
     aget-object v1, v3, v1
 
-    :goto_1e
+    :goto_1
     iput-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->dequeuedInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     .line 132
@@ -729,19 +729,19 @@
 
     return-object v1
 
-    :catchall_22
+    :catchall_0
     move-exception v1
 
     .line 133
     monitor-exit v0
-    :try_end_24
-    .catchall {:try_start_3 .. :try_end_24} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public bridge synthetic dequeueInputBuffer()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;
@@ -757,7 +757,7 @@
 .end method
 
 .method public final dequeueOutputBuffer()Landroidx/media3/decoder/DecoderOutputBuffer;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TO;^TE;"
@@ -776,7 +776,7 @@
     monitor-enter v0
 
     .line 151
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->maybeThrowException()V
 
     .line 152
@@ -786,7 +786,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 153
     monitor-exit v0
@@ -796,7 +796,7 @@
     return-object v0
 
     .line 155
-    :cond_11
+    :cond_0
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedOutputBuffers:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
@@ -809,19 +809,19 @@
 
     return-object v1
 
-    :catchall_1b
+    :catchall_0
     move-exception v1
 
     .line 156
     monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public bridge synthetic dequeueOutputBuffer()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;
@@ -837,7 +837,7 @@
 .end method
 
 .method public final flush()V
-    .registers 3
+    .locals 2
 
     .line 174
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
@@ -847,7 +847,7 @@
     const/4 v1, 0x1
 
     .line 175
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/media3/decoder/SimpleDecoder;->flushed:Z
 
     const/4 v1, 0x0
@@ -858,7 +858,7 @@
     .line 177
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->dequeuedInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 178
     invoke-direct {p0, v1}, Landroidx/media3/decoder/SimpleDecoder;->releaseInputBufferInternal(Landroidx/media3/decoder/DecoderInputBuffer;)V
@@ -869,15 +869,15 @@
     iput-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->dequeuedInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     .line 181
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedInputBuffers:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     .line 182
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedInputBuffers:Ljava/util/ArrayDeque;
@@ -890,18 +890,18 @@
 
     invoke-direct {p0, v1}, Landroidx/media3/decoder/SimpleDecoder;->releaseInputBufferInternal(Landroidx/media3/decoder/DecoderInputBuffer;)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 184
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_1
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedOutputBuffers:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_2
 
     .line 185
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->queuedOutputBuffers:Ljava/util/ArrayDeque;
@@ -914,26 +914,26 @@
 
     invoke-virtual {v1}, Landroidx/media3/decoder/DecoderOutputBuffer;->release()V
 
-    goto :goto_27
+    goto :goto_1
 
     .line 187
-    :cond_3b
+    :cond_2
     monitor-exit v0
 
     return-void
 
-    :catchall_3d
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_3f
-    .catchall {:try_start_4 .. :try_end_3f} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method protected final isAtLeastOutputStartTimeUs(J)Z
-    .registers 8
+    .locals 5
 
     .line 109
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
@@ -941,48 +941,48 @@
     monitor-enter v0
 
     .line 110
-    :try_start_3
+    :try_start_0
     iget-wide v1, p0, Landroidx/media3/decoder/SimpleDecoder;->outputStartTimeUs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_1
 
     cmp-long p1, p1, v1
 
-    if-ltz p1, :cond_13
+    if-ltz p1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_16
+    :goto_1
     monitor-exit v0
 
     return p1
 
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     .line 111
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_3 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final queueInputBuffer(Landroidx/media3/decoder/DecoderInputBuffer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TI;)V^TE;"
@@ -1001,22 +1001,22 @@
     monitor-enter v0
 
     .line 139
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/decoder/SimpleDecoder;->maybeThrowException()V
 
     .line 140
     iget-object v1, p0, Landroidx/media3/decoder/SimpleDecoder;->dequeuedInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-ne p1, v1, :cond_c
+    if-ne p1, v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 141
@@ -1037,18 +1037,18 @@
 
     return-void
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_3 .. :try_end_1f} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public bridge synthetic queueInputBuffer(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;
@@ -1064,7 +1064,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 193
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
@@ -1074,7 +1074,7 @@
     const/4 v1, 0x1
 
     .line 194
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/media3/decoder/SimpleDecoder;->released:Z
 
     .line 195
@@ -1084,44 +1084,44 @@
 
     .line 196
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_4 .. :try_end_c} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 198
-    :try_start_c
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->decodeThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->join()V
-    :try_end_11
-    .catch Ljava/lang/InterruptedException; {:try_start_c .. :try_end_11} :catch_12
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 200
-    :catch_12
+    :catch_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
-    :goto_19
+    :goto_0
     return-void
 
-    :catchall_1a
+    :catchall_0
     move-exception v1
 
     .line 196
-    :try_start_1b
+    :try_start_2
     monitor-exit v0
-    :try_end_1c
-    .catchall {:try_start_1b .. :try_end_1c} :catchall_1a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v1
 .end method
 
 .method protected releaseOutputBuffer(Landroidx/media3/decoder/DecoderOutputBuffer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TO;)V"
@@ -1134,7 +1134,7 @@
     monitor-enter v0
 
     .line 167
-    :try_start_3
+    :try_start_0
     invoke-direct {p0, p1}, Landroidx/media3/decoder/SimpleDecoder;->releaseOutputBufferInternal(Landroidx/media3/decoder/DecoderOutputBuffer;)V
 
     .line 168
@@ -1145,18 +1145,18 @@
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method protected final setInitialInputBufferSize(I)V
-    .registers 6
+    .locals 4
 
     .line 92
     iget v0, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBufferCount:I
@@ -1167,16 +1167,16 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v2
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 93
@@ -1184,8 +1184,8 @@
 
     array-length v1, v0
 
-    :goto_11
-    if-ge v2, v1, :cond_1b
+    :goto_1
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -1194,14 +1194,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_1b
+    :cond_1
     return-void
 .end method
 
 .method public final setOutputStartTimeUs(J)V
-    .registers 6
+    .locals 3
 
     .line 116
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder;->lock:Ljava/lang/Object;
@@ -1209,31 +1209,31 @@
     monitor-enter v0
 
     .line 117
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBufferCount:I
 
     iget-object v2, p0, Landroidx/media3/decoder/SimpleDecoder;->availableInputBuffers:[Landroidx/media3/decoder/DecoderInputBuffer;
 
     array-length v2, v2
 
-    if-eq v1, v2, :cond_11
+    if-eq v1, v2, :cond_1
 
     iget-boolean v1, p0, Landroidx/media3/decoder/SimpleDecoder;->flushed:Z
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
-    :goto_12
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 118
@@ -1244,12 +1244,12 @@
 
     return-void
 
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

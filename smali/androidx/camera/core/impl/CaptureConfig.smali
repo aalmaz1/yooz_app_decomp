@@ -80,7 +80,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.captureConfig.rotation"
 
@@ -110,7 +110,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/List;Landroidx/camera/core/impl/Config;ILandroid/util/Range;Ljava/util/List;ZLandroidx/camera/core/impl/TagBundle;Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -166,7 +166,7 @@
 .end method
 
 .method public static defaultEmptyCaptureConfig()Landroidx/camera/core/impl/CaptureConfig;
-    .registers 1
+    .locals 1
 
     .line 134
     new-instance v0, Landroidx/camera/core/impl/CaptureConfig$Builder;
@@ -183,7 +183,7 @@
 
 # virtual methods
 .method public getCameraCaptureCallbacks()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
 .end method
 
 .method public getCameraCaptureResult()Landroidx/camera/core/impl/CameraCaptureResult;
-    .registers 2
+    .locals 1
 
     .line 144
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig;->mCameraCaptureResult:Landroidx/camera/core/impl/CameraCaptureResult;
@@ -209,7 +209,7 @@
 .end method
 
 .method public getExpectedFrameRateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -226,7 +226,7 @@
 .end method
 
 .method public getImplementationOptions()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 155
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig;->mImplementationOptions:Landroidx/camera/core/impl/Config;
@@ -235,7 +235,7 @@
 .end method
 
 .method public getSurfaces()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -256,7 +256,7 @@
 .end method
 
 .method public getTagBundle()Landroidx/camera/core/impl/TagBundle;
-    .registers 2
+    .locals 1
 
     .line 184
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig;->mTagBundle:Landroidx/camera/core/impl/TagBundle;
@@ -265,7 +265,7 @@
 .end method
 
 .method public getTemplateType()I
-    .registers 2
+    .locals 1
 
     .line 164
     iget v0, p0, Landroidx/camera/core/impl/CaptureConfig;->mTemplateType:I
@@ -274,7 +274,7 @@
 .end method
 
 .method public isUseRepeatingSurface()Z
-    .registers 2
+    .locals 1
 
     .line 173
     iget-boolean v0, p0, Landroidx/camera/core/impl/CaptureConfig;->mUseRepeatingSurface:Z

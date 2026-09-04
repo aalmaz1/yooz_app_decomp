@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
-    .registers 2
+    .locals 0
 
     .line 466
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EntrySet;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;Landroidx/datastore/preferences/protobuf/SmallSortedMap$1;)V
-    .registers 3
+    .locals 0
 
     .line 466
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EntrySet;-><init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 466
     check-cast p1, Ljava/util/Map$Entry;
@@ -63,7 +63,7 @@
 .end method
 
 .method public add(Ljava/util/Map$Entry;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -77,7 +77,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 495
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EntrySet;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -98,14 +98,14 @@
 
     return p1
 
-    :cond_17
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 519
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EntrySet;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -116,7 +116,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 486
     check-cast p1, Ljava/util/Map$Entry;
@@ -137,34 +137,34 @@
 
     move-result-object p1
 
-    if-eq v0, p1, :cond_1d
+    if-eq v0, p1, :cond_1
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 489
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_1e
+    :goto_1
     return p1
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -187,7 +187,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 509
     check-cast p1, Ljava/util/Map$Entry;
@@ -197,7 +197,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 511
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EntrySet;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -212,14 +212,14 @@
 
     return p1
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 475
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EntrySet;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;

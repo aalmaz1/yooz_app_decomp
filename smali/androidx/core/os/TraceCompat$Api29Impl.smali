@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 188
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static beginAsyncSection(Ljava/lang/String;I)V
-    .registers 2
+    .locals 0
 
     .line 204
     invoke-static {p0, p1}, Landroid/os/Trace;->beginAsyncSection(Ljava/lang/String;I)V
@@ -34,7 +34,7 @@
 .end method
 
 .method static endAsyncSection(Ljava/lang/String;I)V
-    .registers 2
+    .locals 0
 
     .line 199
     invoke-static {p0, p1}, Landroid/os/Trace;->endAsyncSection(Ljava/lang/String;I)V
@@ -43,7 +43,7 @@
 .end method
 
 .method static isEnabled()Z
-    .registers 1
+    .locals 1
 
     .line 194
     invoke-static {}, Landroid/os/Trace;->isEnabled()Z
@@ -54,7 +54,7 @@
 .end method
 
 .method static setCounter(Ljava/lang/String;J)V
-    .registers 3
+    .locals 0
 
     .line 209
     invoke-static {p0, p1, p2}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V

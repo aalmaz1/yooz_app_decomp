@@ -18,7 +18,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/camera/camera2/internal/ProcessingCaptureSession;Landroidx/camera/core/impl/SessionConfig;Landroid/hardware/camera2/CameraDevice;Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 6
+    .locals 4
 
     iget-object v0, p0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$$ExternalSyntheticLambda3;->f$0:Landroidx/camera/camera2/internal/ProcessingCaptureSession;
 

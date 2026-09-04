@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,16 +14,16 @@
 .end method
 
 .method public static getDurationAfterSpeedProviderApplied(Landroidx/media3/common/audio/SpeedProvider;J)J
-    .registers 11
+    .locals 8
 
     const-wide/16 v0, 0x0
 
     const-wide/16 v2, 0x0
 
-    :goto_4
+    :goto_0
     cmp-long v4, v0, p1
 
-    if-gez v4, :cond_29
+    if-gez v4, :cond_1
 
     .line 39
     invoke-interface {p0, v0, v1}, Landroidx/media3/common/audio/SpeedProvider;->getNextSpeedChangeTimeUs(J)J
@@ -34,12 +34,12 @@
 
     cmp-long v6, v4, v6
 
-    if-nez v6, :cond_1a
+    if-nez v6, :cond_0
 
     const-wide v4, 0x7fffffffffffffffL
 
     .line 44
-    :cond_1a
+    :cond_0
     invoke-static {v4, v5, p1, p2}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v6
@@ -61,10 +61,10 @@
 
     move-wide v0, v4
 
-    goto :goto_4
+    goto :goto_0
 
     .line 48
-    :cond_29
+    :cond_1
     invoke-static {v2, v3}, Ljava/lang/Math;->round(D)J
 
     move-result-wide p0

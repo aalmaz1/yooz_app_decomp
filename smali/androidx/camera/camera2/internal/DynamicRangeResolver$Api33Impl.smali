@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 409
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getRecommended10BitDynamicRange(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Landroidx/camera/core/DynamicRange;
-    .registers 3
+    .locals 2
 
     .line 417
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_RECOMMENDED_TEN_BIT_DYNAMIC_RANGE_PROFILE:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -37,7 +37,7 @@
 
     check-cast p0, Ljava/lang/Long;
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     .line 420
     invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
@@ -50,7 +50,7 @@
 
     return-object p0
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0

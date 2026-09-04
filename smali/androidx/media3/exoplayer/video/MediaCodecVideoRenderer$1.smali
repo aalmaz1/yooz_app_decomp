@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer;)V
-    .registers 2
+    .locals 0
 
     .line 655
     iput-object p1, p0, Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer$1;->this$0:Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onError(Landroidx/media3/exoplayer/video/VideoSink;Landroidx/media3/exoplayer/video/VideoSink$VideoSinkException;)V
-    .registers 5
+    .locals 2
 
     .line 678
     iget-object p1, p0, Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer$1;->this$0:Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer;
@@ -57,7 +57,7 @@
 .end method
 
 .method public onFirstFrameRendered(Landroidx/media3/exoplayer/video/VideoSink;)V
-    .registers 2
+    .locals 0
 
     .line 658
     iget-object p1, p0, Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer$1;->this$0:Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer;
@@ -77,7 +77,7 @@
 .end method
 
 .method public onFrameDropped(Landroidx/media3/exoplayer/video/VideoSink;)V
-    .registers 4
+    .locals 2
 
     .line 664
     iget-object p1, p0, Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer$1;->this$0:Landroidx/media3/exoplayer/video/MediaCodecVideoRenderer;
@@ -92,7 +92,7 @@
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/exoplayer/video/VideoSink;Landroidx/media3/common/VideoSize;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

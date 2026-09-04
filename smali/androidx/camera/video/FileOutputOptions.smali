@@ -18,7 +18,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;)V
-    .registers 2
+    .locals 0
 
     .line 42
     invoke-direct {p0, p1}, Landroidx/camera/video/OutputOptions;-><init>(Landroidx/camera/video/OutputOptions$OutputOptionsInternal;)V
@@ -32,26 +32,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 65
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/camera/video/FileOutputOptions;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 68
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/FileOutputOptions;->mFileOutputOptionsInternal:Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;
 
     check-cast p1, Landroidx/camera/video/FileOutputOptions;
@@ -66,7 +66,7 @@
 .end method
 
 .method public getFile()Ljava/io/File;
-    .registers 2
+    .locals 1
 
     .line 49
     iget-object v0, p0, Landroidx/camera/video/FileOutputOptions;->mFileOutputOptionsInternal:Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;
@@ -79,7 +79,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/camera/video/FileOutputOptions;->mFileOutputOptionsInternal:Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;
@@ -92,7 +92,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 56
     iget-object v0, p0, Landroidx/camera/video/FileOutputOptions;->mFileOutputOptionsInternal:Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;

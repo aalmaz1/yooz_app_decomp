@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 6
+    .locals 4
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,7 +135,7 @@
 .end method
 
 .method private computePosition(Landroid/view/View;IIZLandroid/view/WindowManager$LayoutParams;)V
-    .registers 14
+    .locals 8
 
     .line 105
     invoke-virtual {p1}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
@@ -162,12 +162,12 @@
 
     move-result v1
 
-    if-lt v1, v0, :cond_19
+    if-lt v1, v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 115
-    :cond_19
+    :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result p2
@@ -175,14 +175,14 @@
     div-int/lit8 p2, p2, 0x2
 
     .line 120
-    :goto_1f
+    :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-lt v1, v0, :cond_36
+    if-lt v1, v0, :cond_1
 
     .line 122
     iget-object v0, p0, Landroidx/appcompat/widget/TooltipPopup;->mContext:Landroid/content/Context;
@@ -201,17 +201,17 @@
 
     sub-int/2addr p3, v0
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 128
-    :cond_36
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
     move p3, v2
 
-    :goto_3b
+    :goto_1
     const/16 v0, 0x31
 
     .line 132
@@ -224,18 +224,18 @@
 
     move-result-object v0
 
-    if-eqz p4, :cond_4a
+    if-eqz p4, :cond_2
 
     .line 135
     sget v3, Landroidx/appcompat/R$dimen;->tooltip_y_offset_touch:I
 
-    goto :goto_4c
+    goto :goto_2
 
-    :cond_4a
+    :cond_2
     sget v3, Landroidx/appcompat/R$dimen;->tooltip_y_offset_non_touch:I
 
     .line 134
-    :goto_4c
+    :goto_2
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v0
@@ -245,7 +245,7 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_5e
+    if-nez v3, :cond_3
 
     const-string p1, "TooltipPopup"
 
@@ -257,7 +257,7 @@
     return-void
 
     .line 142
-    :cond_5e
+    :cond_3
     iget-object v4, p0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v4}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
@@ -267,13 +267,13 @@
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
 
-    if-gez v4, :cond_94
+    if-gez v4, :cond_5
 
     iget-object v4, p0, Landroidx/appcompat/widget/TooltipPopup;->mTmpDisplayFrame:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
-    if-gez v4, :cond_94
+    if-gez v4, :cond_5
 
     .line 146
     iget-object v4, p0, Landroidx/appcompat/widget/TooltipPopup;->mContext:Landroid/content/Context;
@@ -293,20 +293,20 @@
 
     move-result v5
 
-    if-eqz v5, :cond_86
+    if-eqz v5, :cond_4
 
     .line 150
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v5
 
-    goto :goto_87
+    goto :goto_3
 
-    :cond_86
+    :cond_4
     move v5, v2
 
     .line 154
-    :goto_87
+    :goto_3
     invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v4
@@ -321,7 +321,7 @@
     invoke-virtual {v6, v2, v5, v7, v4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 157
-    :cond_94
+    :cond_5
     iget-object v4, p0, Landroidx/appcompat/widget/TooltipPopup;->mTmpAppPos:[I
 
     invoke-virtual {v3, v4}, Landroid/view/View;->getLocationOnScreen([I)V
@@ -400,22 +400,22 @@
 
     add-int/2addr p2, v0
 
-    if-eqz p4, :cond_dd
+    if-eqz p4, :cond_7
 
-    if-ltz p3, :cond_da
+    if-ltz p3, :cond_6
 
     .line 174
     iput p3, p5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    goto :goto_eb
+    goto :goto_4
 
     .line 176
-    :cond_da
+    :cond_6
     iput p2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    goto :goto_eb
+    goto :goto_4
 
-    :cond_dd
+    :cond_7
     add-int/2addr p1, p2
 
     .line 179
@@ -425,23 +425,23 @@
 
     move-result p4
 
-    if-gt p1, p4, :cond_e9
+    if-gt p1, p4, :cond_8
 
     .line 180
     iput p2, p5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    goto :goto_eb
+    goto :goto_4
 
     .line 182
-    :cond_e9
+    :cond_8
     iput p3, p5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    :goto_eb
+    :goto_4
     return-void
 .end method
 
 .method private static getAppRootView(Landroid/view/View;)Landroid/view/View;
-    .registers 4
+    .locals 3
 
     .line 188
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
@@ -456,7 +456,7 @@
     .line 190
     instance-of v2, v1, Landroid/view/WindowManager$LayoutParams;
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     check-cast v1, Landroid/view/WindowManager$LayoutParams;
 
@@ -464,26 +464,26 @@
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_14
+    if-ne v1, v2, :cond_0
 
     return-object v0
 
     .line 198
-    :cond_14
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
     .line 199
-    :goto_18
+    :goto_0
     instance-of v1, p0, Landroid/content/ContextWrapper;
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_2
 
     .line 200
     instance-of v1, p0, Landroid/app/Activity;
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     .line 201
     check-cast p0, Landroid/app/Activity;
@@ -499,35 +499,35 @@
     return-object p0
 
     .line 203
-    :cond_2b
+    :cond_1
     check-cast p0, Landroid/content/ContextWrapper;
 
     invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
 
     move-result-object p0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_32
+    :cond_2
     return-object v0
 .end method
 
 
 # virtual methods
 .method hide()V
-    .registers 3
+    .locals 2
 
     .line 91
     invoke-virtual {p0}, Landroidx/appcompat/widget/TooltipPopup;->isShowing()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 95
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/TooltipPopup;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "window"
@@ -547,7 +547,7 @@
 .end method
 
 .method isShowing()Z
-    .registers 2
+    .locals 1
 
     .line 100
     iget-object v0, p0, Landroidx/appcompat/widget/TooltipPopup;->mContentView:Landroid/view/View;
@@ -556,34 +556,34 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method show(Landroid/view/View;IIZLjava/lang/CharSequence;)V
-    .registers 13
+    .locals 7
 
     .line 78
     invoke-virtual {p0}, Landroidx/appcompat/widget/TooltipPopup;->isShowing()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 79
     invoke-virtual {p0}, Landroidx/appcompat/widget/TooltipPopup;->hide()V
 
     .line 82
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/TooltipPopup;->mMessageView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

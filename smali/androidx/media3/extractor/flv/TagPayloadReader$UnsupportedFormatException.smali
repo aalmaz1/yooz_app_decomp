@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 

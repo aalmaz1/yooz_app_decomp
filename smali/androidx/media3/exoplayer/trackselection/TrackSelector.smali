@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method protected final getBandwidthMeter()Landroidx/media3/exoplayer/upstream/BandwidthMeter;
-    .registers 2
+    .locals 1
 
     .line 237
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/TrackSelector;->bandwidthMeter:Landroidx/media3/exoplayer/upstream/BandwidthMeter;
@@ -45,7 +45,7 @@
 .end method
 
 .method public getParameters()Landroidx/media3/common/TrackSelectionParameters;
-    .registers 2
+    .locals 1
 
     .line 170
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->DEFAULT_WITHOUT_CONTEXT:Landroidx/media3/common/TrackSelectionParameters;
@@ -54,7 +54,7 @@
 .end method
 
 .method public getRendererCapabilitiesListener()Landroidx/media3/exoplayer/RendererCapabilities$Listener;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public init(Landroidx/media3/exoplayer/trackselection/TrackSelector$InvalidationListener;Landroidx/media3/exoplayer/upstream/BandwidthMeter;)V
-    .registers 3
+    .locals 0
 
     .line 128
     iput-object p1, p0, Landroidx/media3/exoplayer/trackselection/TrackSelector;->listener:Landroidx/media3/exoplayer/trackselection/TrackSelector$InvalidationListener;
@@ -74,37 +74,37 @@
 .end method
 
 .method protected final invalidate()V
-    .registers 2
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/TrackSelector;->listener:Landroidx/media3/exoplayer/trackselection/TrackSelector$InvalidationListener;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 215
     invoke-interface {v0}, Landroidx/media3/exoplayer/trackselection/TrackSelector$InvalidationListener;->onTrackSelectionsInvalidated()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method protected final invalidateForRendererCapabilitiesChange(Landroidx/media3/exoplayer/Renderer;)V
-    .registers 3
+    .locals 1
 
     .line 226
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/TrackSelector;->listener:Landroidx/media3/exoplayer/trackselection/TrackSelector$InvalidationListener;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 227
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/trackselection/TrackSelector$InvalidationListener;->onRendererCapabilitiesChanged(Landroidx/media3/exoplayer/Renderer;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public isSetParametersSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -137,13 +137,13 @@
 .end method
 
 .method public setAudioAttributes(Landroidx/media3/common/AudioAttributes;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setParameters(Landroidx/media3/common/TrackSelectionParameters;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

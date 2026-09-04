@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/net/Uri;)V
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/util/List;)V
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

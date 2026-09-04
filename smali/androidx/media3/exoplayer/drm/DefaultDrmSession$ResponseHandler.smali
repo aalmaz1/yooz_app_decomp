@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSession;Landroid/os/Looper;)V
-    .registers 3
+    .locals 0
 
     .line 614
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ResponseHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 5
+    .locals 3
 
     .line 621
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -52,28 +52,28 @@
 
     const/4 v2, 0x1
 
-    if-eq p1, v2, :cond_17
+    if-eq p1, v2, :cond_1
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_11
+    if-eq p1, v2, :cond_0
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 629
-    :cond_11
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ResponseHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     invoke-static {p1, v1, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->access$100(Landroidx/media3/exoplayer/drm/DefaultDrmSession;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 626
-    :cond_17
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$ResponseHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     invoke-static {p1, v1, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->access$000(Landroidx/media3/exoplayer/drm/DefaultDrmSession;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :goto_1c
+    :goto_0
     return-void
 .end method

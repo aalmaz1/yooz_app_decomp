@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,13 +25,13 @@
 .end method
 
 .method static castToParcelable(Landroid/graphics/drawable/Icon;)Landroid/os/Parcelable;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static createActionBuilder(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Action$Builder;
-    .registers 4
+    .locals 1
 
     .line 5144
     new-instance v0, Landroid/app/Notification$Action$Builder;
@@ -42,7 +42,7 @@
 .end method
 
 .method static setLargeIcon(Landroid/app/Notification$Builder;Landroid/graphics/drawable/Icon;)V
-    .registers 2
+    .locals 0
 
     .line 5136
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$Builder;

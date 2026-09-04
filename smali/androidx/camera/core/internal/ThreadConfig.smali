@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.thread.backgroundExecutor"
 
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public getBackgroundExecutor()Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 64
     sget-object v0, Landroidx/camera/core/internal/ThreadConfig;->OPTION_BACKGROUND_EXECUTOR:Landroidx/camera/core/impl/Config$Option;
@@ -63,7 +63,7 @@
 .end method
 
 .method public getBackgroundExecutor(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
-    .registers 3
+    .locals 1
 
     .line 52
     sget-object v0, Landroidx/camera/core/internal/ThreadConfig;->OPTION_BACKGROUND_EXECUTOR:Landroidx/camera/core/impl/Config$Option;

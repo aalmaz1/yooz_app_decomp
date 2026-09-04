@@ -33,13 +33,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/ClassNotFoundException;,
@@ -59,41 +59,41 @@
     move-result-object v0
 
     .line 693
-    :try_start_9
+    :try_start_0
     new-instance v1, Landroidx/multidex/MultiDex$V14$ICSElementConstructor;
 
     invoke-direct {v1, v0}, Landroidx/multidex/MultiDex$V14$ICSElementConstructor;-><init>(Ljava/lang/Class;)V
-    :try_end_e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_9 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 696
-    :catch_f
-    :try_start_f
+    :catch_0
+    :try_start_1
     new-instance v1, Landroidx/multidex/MultiDex$V14$JBMR11ElementConstructor;
 
     invoke-direct {v1, v0}, Landroidx/multidex/MultiDex$V14$JBMR11ElementConstructor;-><init>(Ljava/lang/Class;)V
-    :try_end_14
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_f .. :try_end_14} :catch_15
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 698
-    :catch_15
+    :catch_1
     new-instance v1, Landroidx/multidex/MultiDex$V14$JBMR2ElementConstructor;
 
     invoke-direct {v1, v0}, Landroidx/multidex/MultiDex$V14$JBMR2ElementConstructor;-><init>(Ljava/lang/Class;)V
 
     .line 701
-    :goto_1a
+    :goto_0
     iput-object v1, p0, Landroidx/multidex/MultiDex$V14;->elementConstructor:Landroidx/multidex/MultiDex$V14$ElementConstructor;
 
     return-void
 .end method
 
 .method static install(Ljava/lang/ClassLoader;Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -140,17 +140,17 @@
 
     move-result-object p1
 
-    :try_start_13
+    :try_start_0
     const-string v0, "dexElements"
 
     .line 680
     invoke-static {p0, v0, p1}, Landroidx/multidex/MultiDex;->access$100(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_18
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_13 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_26
+    goto :goto_0
 
-    :catch_19
+    :catch_0
     move-exception v0
 
     const-string v1, "MultiDex"
@@ -165,12 +165,12 @@
     .line 685
     invoke-static {p0, v0, p1}, Landroidx/multidex/MultiDex;->access$100(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :goto_26
+    :goto_0
     return-void
 .end method
 
 .method private makeDexElements(Ljava/util/List;)[Ljava/lang/Object;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -204,8 +204,8 @@
 
     move v3, v2
 
-    :goto_8
-    if-ge v3, v0, :cond_27
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 715
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -239,14 +239,14 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     return-object v1
 .end method
 
 .method private static optimizedPathFor(Ljava/io/File;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 731
     invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 3
+    .locals 0
 
     .line 949
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public acquire(Landroidx/media3/common/Format;)V
-    .registers 4
+    .locals 2
 
     .line 959
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -71,7 +71,7 @@
 .end method
 
 .method synthetic lambda$acquire$0$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference(Landroidx/media3/common/Format;)V
-    .registers 6
+    .locals 4
 
     .line 962
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -80,16 +80,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->isReleased:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 967
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     .line 969
@@ -123,26 +123,26 @@
 
     invoke-interface {p1, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :cond_2b
-    :goto_2b
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$release$1$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference()V
-    .registers 3
+    .locals 2
 
     .line 984
     iget-boolean v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->isReleased:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 987
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->session:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 988
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->eventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -150,7 +150,7 @@
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/drm/DrmSession;->release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
 
     .line 990
-    :cond_e
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$1300(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)Ljava/util/Set;
@@ -168,7 +168,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 981
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$PreacquiredSessionReference;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;

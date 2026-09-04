@@ -88,7 +88,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -176,11 +176,11 @@
 
     check-cast p1, Lkotlinx/coroutines/Job;
 
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_0
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_3f
+    :cond_0
     new-instance p4, Landroidx/datastore/core/SimpleActor$1;
 
     invoke-direct {p4, p2, p0, p3}, Landroidx/datastore/core/SimpleActor$1;-><init>(Lkotlin/jvm/functions/Function1;Landroidx/datastore/core/SimpleActor;Lkotlin/jvm/functions/Function2;)V
@@ -189,12 +189,12 @@
 
     invoke-interface {p1, p4}, Lkotlinx/coroutines/Job;->invokeOnCompletion(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
 
-    :goto_49
+    :goto_0
     return-void
 .end method
 
 .method public static final synthetic access$getConsumeMessage$p(Landroidx/datastore/core/SimpleActor;)Lkotlin/jvm/functions/Function2;
-    .registers 1
+    .locals 0
 
     .line 29
     iget-object p0, p0, Landroidx/datastore/core/SimpleActor;->consumeMessage:Lkotlin/jvm/functions/Function2;
@@ -203,7 +203,7 @@
 .end method
 
 .method public static final synthetic access$getMessageQueue$p(Landroidx/datastore/core/SimpleActor;)Lkotlinx/coroutines/channels/Channel;
-    .registers 1
+    .locals 0
 
     .line 29
     iget-object p0, p0, Landroidx/datastore/core/SimpleActor;->messageQueue:Lkotlinx/coroutines/channels/Channel;
@@ -212,7 +212,7 @@
 .end method
 
 .method public static final synthetic access$getRemainingMessages$p(Landroidx/datastore/core/SimpleActor;)Ljava/util/concurrent/atomic/AtomicInteger;
-    .registers 1
+    .locals 0
 
     .line 29
     iget-object p0, p0, Landroidx/datastore/core/SimpleActor;->remainingMessages:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -221,7 +221,7 @@
 .end method
 
 .method public static final synthetic access$getScope$p(Landroidx/datastore/core/SimpleActor;)Lkotlinx/coroutines/CoroutineScope;
-    .registers 1
+    .locals 0
 
     .line 29
     iget-object p0, p0, Landroidx/datastore/core/SimpleActor;->scope:Lkotlinx/coroutines/CoroutineScope;
@@ -232,7 +232,7 @@
 
 # virtual methods
 .method public final offer(Ljava/lang/Object;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -249,13 +249,13 @@
     .line 132
     instance-of v0, p1, Lkotlinx/coroutines/channels/ChannelResult$Closed;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     invoke-static {p1}, Lkotlinx/coroutines/channels/ChannelResult;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p1
 
-    if-nez p1, :cond_19
+    if-nez p1, :cond_0
 
     .line 105
     new-instance p1, Lkotlinx/coroutines/channels/ClosedSendChannelException;
@@ -266,16 +266,16 @@
 
     check-cast p1, Ljava/lang/Throwable;
 
-    :cond_19
+    :cond_0
     throw p1
 
     .line 106
-    :cond_1a
+    :cond_1
     invoke-static {p1}, Lkotlinx/coroutines/channels/ChannelResult;->isSuccess-impl(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_3
 
     .line 111
     iget-object p1, p0, Landroidx/datastore/core/SimpleActor;->remainingMessages:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -284,7 +284,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_3a
+    if-nez p1, :cond_2
 
     .line 112
     iget-object v0, p0, Landroidx/datastore/core/SimpleActor;->scope:Lkotlinx/coroutines/CoroutineScope;
@@ -309,11 +309,11 @@
 
     invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    :cond_3a
+    :cond_2
     return-void
 
     .line 103
-    :cond_3b
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Check failed."

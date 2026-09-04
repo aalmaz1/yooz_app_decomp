@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/WindowInsetsAnimation$Bounds;)V
-    .registers 3
+    .locals 1
 
     .line 228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/core/graphics/Insets;Landroidx/core/graphics/Insets;)V
-    .registers 3
+    .locals 0
 
     .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public static toBoundsCompat(Landroid/view/WindowInsetsAnimation$Bounds;)Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
-    .registers 2
+    .locals 1
 
     .line 324
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public getLowerBound()Landroidx/core/graphics/Insets;
-    .registers 2
+    .locals 1
 
     .line 254
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;->mLowerBound:Landroidx/core/graphics/Insets;
@@ -82,7 +82,7 @@
 .end method
 
 .method public getUpperBound()Landroidx/core/graphics/Insets;
-    .registers 2
+    .locals 1
 
     .line 278
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;->mUpperBound:Landroidx/core/graphics/Insets;
@@ -91,7 +91,7 @@
 .end method
 
 .method public inset(Landroidx/core/graphics/Insets;)Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
-    .registers 8
+    .locals 6
 
     .line 294
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
@@ -132,7 +132,7 @@
 .end method
 
 .method public toBounds()Landroid/view/WindowInsetsAnimation$Bounds;
-    .registers 2
+    .locals 1
 
     .line 314
     invoke-static {p0}, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30;->createPlatformBounds(Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;)Landroid/view/WindowInsetsAnimation$Bounds;
@@ -143,7 +143,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 305
     new-instance v0, Ljava/lang/StringBuilder;

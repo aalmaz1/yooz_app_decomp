@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(D)V
-    .registers 3
+    .locals 0
 
     .line 711
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method toMetersPerSecond()D
-    .registers 5
+    .locals 4
 
     .line 716
     iget-wide v0, p0, Landroidx/camera/core/impl/utils/Exif$Speed$Converter;->mMph:D

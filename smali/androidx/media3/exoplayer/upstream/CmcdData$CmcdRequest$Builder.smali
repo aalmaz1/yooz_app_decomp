@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 594
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 584
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->deadlineMs:J
@@ -78,7 +78,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 584
     iget-boolean p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->startup:Z
@@ -87,7 +87,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 584
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->nextObjectRequest:Ljava/lang/String;
@@ -96,7 +96,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 584
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->nextRangeRequest:Ljava/lang/String;
@@ -105,7 +105,7 @@
 .end method
 
 .method static synthetic access$1400(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)Lcom/google/common/collect/ImmutableList;
-    .registers 1
+    .locals 0
 
     .line 584
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->customDataList:Lcom/google/common/collect/ImmutableList;
@@ -114,7 +114,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 584
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->bufferLengthMs:J
@@ -123,7 +123,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 584
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->measuredThroughputInKbps:J
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;
-    .registers 3
+    .locals 2
 
     .line 677
     new-instance v0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;
@@ -147,33 +147,33 @@
 .end method
 
 .method public setBufferLengthMs(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gez v0, :cond_12
+    if-gez v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 610
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const-wide/16 v0, 0x32
@@ -193,7 +193,7 @@
 .end method
 
 .method public setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,33 +215,33 @@
 .end method
 
 .method public setDeadlineMs(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gez v0, :cond_12
+    if-gez v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 640
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const-wide/16 v0, 0x32
@@ -261,33 +261,33 @@
 .end method
 
 .method public setMeasuredThroughputInKbps(J)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gez v0, :cond_10
+    if-gez v0, :cond_1
 
     const-wide/32 v0, -0x7fffffff
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 624
-    :goto_11
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const-wide/16 v0, 0x32
@@ -307,28 +307,28 @@
 .end method
 
 .method public setNextObjectRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 658
-    :cond_4
+    :cond_0
     invoke-static {p1}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->nextObjectRequest:Ljava/lang/String;
 
     return-object p0
 .end method
 
 .method public setNextRangeRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 2
+    .locals 0
 
     .line 665
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->nextRangeRequest:Ljava/lang/String;
@@ -337,7 +337,7 @@
 .end method
 
 .method public setStartup(Z)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;
-    .registers 2
+    .locals 0
 
     .line 648
     iput-boolean p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;->startup:Z

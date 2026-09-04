@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -76,7 +76,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public static bundleCustomSpans(Landroid/text/Spanned;)Ljava/util/ArrayList;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,8 +121,8 @@
 
     move v4, v3
 
-    :goto_14
-    if-ge v4, v2, :cond_27
+    :goto_0
+    if-ge v4, v2, :cond_0
 
     aget-object v5, v1, v4
 
@@ -142,10 +142,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 85
-    :cond_27
+    :cond_0
     invoke-interface {p0}, Landroid/text/Spanned;->length()I
 
     move-result v1
@@ -162,8 +162,8 @@
 
     move v4, v3
 
-    :goto_35
-    if-ge v4, v2, :cond_48
+    :goto_1
+    if-ge v4, v2, :cond_1
 
     aget-object v5, v1, v4
 
@@ -183,10 +183,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_35
+    goto :goto_1
 
     .line 91
-    :cond_48
+    :cond_1
     invoke-interface {p0}, Landroid/text/Spanned;->length()I
 
     move-result v1
@@ -201,8 +201,8 @@
 
     array-length v2, v1
 
-    :goto_55
-    if-ge v3, v2, :cond_65
+    :goto_2
+    if-ge v3, v2, :cond_2
 
     aget-object v4, v1, v3
 
@@ -220,14 +220,14 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_55
+    goto :goto_2
 
-    :cond_65
+    :cond_2
     return-object v0
 .end method
 
 .method private static spanToBundle(Landroid/text/Spanned;Ljava/lang/Object;ILandroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 7
+    .locals 3
 
     .line 123
     new-instance v0, Landroid/os/Bundle;
@@ -266,19 +266,19 @@
 
     invoke-virtual {v0, p0, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    if-eqz p3, :cond_2c
+    if-eqz p3, :cond_0
 
     .line 129
     sget-object p0, Landroidx/media3/common/text/CustomSpanBundler;->FIELD_PARAMS:Ljava/lang/String;
 
     invoke-virtual {v0, p0, p3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_2c
+    :cond_0
     return-object v0
 .end method
 
 .method public static unbundleAndApplyCustomSpan(Landroid/os/Bundle;Landroid/text/Spannable;)V
-    .registers 7
+    .locals 5
 
     .line 101
     sget-object v0, Landroidx/media3/common/text/CustomSpanBundler;->FIELD_START_INDEX:Ljava/lang/String;
@@ -319,30 +319,30 @@
 
     const/4 v4, 0x1
 
-    if-eq v3, v4, :cond_40
+    if-eq v3, v4, :cond_2
 
     const/4 v4, 0x2
 
-    if-eq v3, v4, :cond_32
+    if-eq v3, v4, :cond_1
 
     const/4 p0, 0x3
 
-    if-eq v3, p0, :cond_29
+    if-eq v3, p0, :cond_0
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 114
-    :cond_29
+    :cond_0
     new-instance p0, Landroidx/media3/common/text/HorizontalTextInVerticalContextSpan;
 
     invoke-direct {p0}, Landroidx/media3/common/text/HorizontalTextInVerticalContextSpan;-><init>()V
 
     invoke-interface {p1, p0, v0, v1, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 111
-    :cond_32
+    :cond_1
     invoke-static {p0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -355,10 +355,10 @@
 
     invoke-interface {p1, p0, v0, v1, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 108
-    :cond_40
+    :cond_2
     invoke-static {p0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -371,6 +371,6 @@
 
     invoke-interface {p1, p0, v0, v1, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    :goto_4d
+    :goto_0
     return-void
 .end method

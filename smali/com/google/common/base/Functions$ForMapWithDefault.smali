@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Map;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p2    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 201
     iget-object v1, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->map:Ljava/util/Map;
@@ -144,29 +144,29 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 203
-    :cond_11
+    :cond_0
     iget-object p1, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->defaultValue:Ljava/lang/Object;
 
-    goto :goto_18
+    goto :goto_1
 
     .line 202
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     invoke-static {v0}, Lcom/google/common/base/NullnessCasts;->uncheckedCastNullableTToT(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    :goto_18
+    :goto_1
     return-object p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -185,7 +185,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 209
     check-cast p1, Lcom/google/common/base/Functions$ForMapWithDefault;
@@ -199,7 +199,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/base/Functions$ForMapWithDefault;->defaultValue:Ljava/lang/Object;
 
@@ -209,16 +209,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -245,7 +245,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 223
     new-instance v0, Ljava/lang/StringBuilder;

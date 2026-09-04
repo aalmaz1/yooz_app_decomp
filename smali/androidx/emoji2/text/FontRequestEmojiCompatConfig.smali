@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 442
     new-instance v0, Landroidx/emoji2/text/FontRequestEmojiCompatConfig$FontProviderHelper;
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/core/provider/FontRequest;)V
-    .registers 5
+    .locals 2
 
     .line 122
     new-instance v0, Landroidx/emoji2/text/FontRequestEmojiCompatConfig$FontRequestMetadataLoader;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/core/provider/FontRequest;Landroidx/emoji2/text/FontRequestEmojiCompatConfig$FontProviderHelper;)V
-    .registers 5
+    .locals 1
 
     .line 131
     new-instance v0, Landroidx/emoji2/text/FontRequestEmojiCompatConfig$FontRequestMetadataLoader;
@@ -63,16 +63,16 @@
 
 # virtual methods
 .method public setHandler(Landroid/os/Handler;)Landroidx/emoji2/text/FontRequestEmojiCompatConfig;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-object p0
 
     .line 177
-    :cond_3
+    :cond_0
     invoke-static {p1}, Landroidx/emoji2/text/ConcurrencyHelpers;->convertHandlerToExecutor(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
 
     move-result-object p1
@@ -83,7 +83,7 @@
 .end method
 
 .method public setLoadingExecutor(Ljava/util/concurrent/Executor;)Landroidx/emoji2/text/FontRequestEmojiCompatConfig;
-    .registers 3
+    .locals 1
 
     .line 148
     invoke-virtual {p0}, Landroidx/emoji2/text/FontRequestEmojiCompatConfig;->getMetadataRepoLoader()Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;
@@ -98,7 +98,7 @@
 .end method
 
 .method public setRetryPolicy(Landroidx/emoji2/text/FontRequestEmojiCompatConfig$RetryPolicy;)Landroidx/emoji2/text/FontRequestEmojiCompatConfig;
-    .registers 3
+    .locals 1
 
     .line 191
     invoke-virtual {p0}, Landroidx/emoji2/text/FontRequestEmojiCompatConfig;->getMetadataRepoLoader()Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;

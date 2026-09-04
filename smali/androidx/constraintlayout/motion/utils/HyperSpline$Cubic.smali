@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(DDDD)V
-    .registers 9
+    .locals 0
 
     .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public eval(D)D
-    .registers 7
+    .locals 4
 
     .line 192
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/HyperSpline$Cubic;->mD:D
@@ -82,7 +82,7 @@
 .end method
 
 .method public vel(D)D
-    .registers 9
+    .locals 6
 
     .line 201
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/HyperSpline$Cubic;->mD:D

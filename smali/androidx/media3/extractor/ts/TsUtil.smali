@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 127
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,28 +14,28 @@
 .end method
 
 .method public static findSyncBytePosition([BII)I
-    .registers 5
+    .locals 2
 
     :goto_0
-    if-ge p1, p2, :cond_b
+    if-ge p1, p2, :cond_0
 
     .line 64
     aget-byte v0, p0, p1
 
     const/16 v1, 0x47
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
-    :cond_b
+    :cond_0
     return p1
 .end method
 
 .method public static isStartOfTsPacket([BIII)Z
-    .registers 9
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -43,54 +43,54 @@
 
     move v2, v0
 
-    :goto_3
+    :goto_0
     const/4 v3, 0x4
 
-    if-gt v1, v3, :cond_1e
+    if-gt v1, v3, :cond_3
 
     mul-int/lit16 v3, v1, 0xbc
 
     add-int/2addr v3, p3
 
-    if-lt v3, p1, :cond_1a
+    if-lt v3, p1, :cond_1
 
-    if-ge v3, p2, :cond_1a
+    if-ge v3, p2, :cond_1
 
     .line 47
     aget-byte v3, p0, v3
 
     const/16 v4, 0x47
 
-    if-eq v3, v4, :cond_14
+    if-eq v3, v4, :cond_0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_14
+    :cond_0
     const/4 v3, 0x1
 
     add-int/2addr v2, v3
 
     const/4 v4, 0x5
 
-    if-ne v2, v4, :cond_1b
+    if-ne v2, v4, :cond_2
 
     return v3
 
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_1
     move v2, v0
 
-    :cond_1b
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_1e
+    :cond_3
     return v0
 .end method
 
 .method public static readPcrFromPacket(Landroidx/media3/common/util/ParsableByteArray;II)J
-    .registers 7
+    .locals 4
 
     .line 81
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -104,12 +104,12 @@
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ge p1, v0, :cond_10
+    if-ge p1, v0, :cond_0
 
     return-wide v1
 
     .line 87
-    :cond_10
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result p1
@@ -118,58 +118,58 @@
 
     and-int/2addr v0, p1
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     return-wide v1
 
-    :cond_1a
+    :cond_1
     const v0, 0x1fff00
 
     and-int/2addr v0, p1
 
     shr-int/lit8 v0, v0, 0x8
 
-    if-eq v0, p2, :cond_23
+    if-eq v0, p2, :cond_2
 
     return-wide v1
 
-    :cond_23
+    :cond_2
     and-int/lit8 p1, p1, 0x20
 
     const/4 p2, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     move p1, p2
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_3
     move p1, v0
 
-    :goto_2c
-    if-nez p1, :cond_2f
+    :goto_0
+    if-nez p1, :cond_4
 
     return-wide v1
 
     .line 101
-    :cond_2f
+    :cond_4
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p1
 
     const/4 v3, 0x7
 
-    if-lt p1, v3, :cond_54
+    if-lt p1, v3, :cond_6
 
     .line 102
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p1
 
-    if-lt p1, v3, :cond_54
+    if-lt p1, v3, :cond_6
 
     .line 103
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -180,15 +180,15 @@
 
     and-int/2addr p1, v3
 
-    if-ne p1, v3, :cond_46
+    if-ne p1, v3, :cond_5
 
-    goto :goto_47
+    goto :goto_1
 
-    :cond_46
+    :cond_5
     move p2, v0
 
-    :goto_47
-    if-eqz p2, :cond_54
+    :goto_1
+    if-eqz p2, :cond_6
 
     const/4 p1, 0x6
 
@@ -204,12 +204,12 @@
 
     return-wide p0
 
-    :cond_54
+    :cond_6
     return-wide v1
 .end method
 
 .method private static readPcrValueFromPcrBytes([B)J
-    .registers 9
+    .locals 8
 
     const/4 v0, 0x0
 

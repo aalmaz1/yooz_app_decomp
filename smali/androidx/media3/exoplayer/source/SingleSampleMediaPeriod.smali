@@ -72,7 +72,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSpec;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/datasource/TransferListener;Landroidx/media3/common/Format;JLandroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;Z)V
-    .registers 10
+    .locals 0
 
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 1
+    .locals 0
 
     .line 49
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->eventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -155,14 +155,14 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 24
+    .locals 22
 
     move-object/from16 v0, p0
 
     .line 150
     iget-boolean v1, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loadingFinished:Z
 
-    if-nez v1, :cond_56
+    if-nez v1, :cond_2
 
     iget-object v1, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -170,7 +170,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_56
+    if-nez v1, :cond_2
 
     iget-object v1, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -178,12 +178,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
-    goto :goto_56
+    goto :goto_0
 
     .line 153
-    :cond_17
+    :cond_0
     iget-object v1, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->dataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
     invoke-interface {v1}, Landroidx/media3/datasource/DataSource$Factory;->createDataSource()Landroidx/media3/datasource/DataSource;
@@ -193,13 +193,13 @@
     .line 154
     iget-object v2, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->transferListener:Landroidx/media3/datasource/TransferListener;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     .line 155
     invoke-interface {v1, v2}, Landroidx/media3/datasource/DataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
     .line 157
-    :cond_24
+    :cond_1
     new-instance v2, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;
 
     iget-object v3, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -256,51 +256,51 @@
 
     return v4
 
-    :cond_56
-    :goto_56
+    :cond_2
+    :goto_0
     const/4 v1, 0x0
 
     return v1
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 4
+    .locals 0
 
     return-wide p1
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 192
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loadingFinished:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-wide/16 v0, 0x0
 
-    :goto_9
+    :goto_0
     return-wide v0
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 187
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loadingFinished:Z
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -308,25 +308,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const-wide/16 v0, 0x0
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const-wide/high16 v0, -0x8000000000000000L
 
-    :goto_12
+    :goto_1
     return-wide v0
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->tracks:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -335,7 +335,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -348,13 +348,13 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;JJZ)V
-    .registers 23
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -427,7 +427,7 @@
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 49
     check-cast p1, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;
@@ -438,7 +438,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;JJ)V
-    .registers 22
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -541,7 +541,7 @@
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 49
     check-cast p1, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;
@@ -552,7 +552,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 44
+    .locals 36
 
     move-object/from16 v0, p0
 
@@ -649,7 +649,7 @@
 
     const/4 v8, 0x1
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_1
 
     .line 292
     iget-object v9, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -659,26 +659,26 @@
 
     move-result v9
 
-    if-lt v2, v9, :cond_63
+    if-lt v2, v9, :cond_0
 
-    goto :goto_65
+    goto :goto_0
 
-    :cond_63
+    :cond_0
     move v2, v7
 
-    goto :goto_66
+    goto :goto_1
 
-    :cond_65
-    :goto_65
+    :cond_1
+    :goto_0
     move v2, v8
 
     .line 298
-    :goto_66
+    :goto_1
     iget-boolean v9, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->treatLoadErrorsAsEndOfStream:Z
 
-    if-eqz v9, :cond_79
+    if-eqz v9, :cond_2
 
-    if-eqz v2, :cond_79
+    if-eqz v2, :cond_2
 
     const-string v2, "SingleSampleMediaPeriod"
 
@@ -693,29 +693,29 @@
     .line 301
     sget-object v2, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    :goto_77
+    :goto_2
     move-object v15, v2
 
-    goto :goto_83
+    goto :goto_3
 
-    :cond_79
-    if-eqz v3, :cond_80
+    :cond_2
+    if-eqz v3, :cond_3
 
     .line 305
     invoke-static {v7, v5, v6}, Landroidx/media3/exoplayer/upstream/Loader;->createRetryAction(ZJ)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     move-result-object v2
 
-    goto :goto_77
+    goto :goto_2
 
     .line 306
-    :cond_80
+    :cond_3
     sget-object v2, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    goto :goto_77
+    goto :goto_2
 
     .line 308
-    :goto_83
+    :goto_3
     invoke-virtual {v15}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v2
@@ -759,7 +759,7 @@
 
     invoke-virtual/range {v2 .. v14}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJLjava/io/IOException;Z)V
 
-    if-eqz v16, :cond_ac
+    if-eqz v16, :cond_4
 
     .line 321
     iget-object v2, v0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -768,12 +768,12 @@
 
     invoke-interface {v2, v3, v4}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->onLoadTaskConcluded(J)V
 
-    :cond_ac
+    :cond_4
     return-object v15
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 49
     check-cast p1, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;
@@ -786,7 +786,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 103
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
@@ -795,7 +795,7 @@
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -803,13 +803,13 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 98
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -820,19 +820,19 @@
 .end method
 
 .method public seekToUs(J)J
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 197
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 198
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
@@ -847,40 +847,40 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-wide p1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 11
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 123
-    :goto_1
+    :goto_0
     array-length v1, p1
 
-    if-ge v0, v1, :cond_32
+    if-ge v0, v1, :cond_3
 
     .line 124
     aget-object v1, p3, v0
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     aget-object v3, p1, v0
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_0
 
     aget-boolean v3, p2, v0
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_1
 
     .line 125
-    :cond_11
+    :cond_0
     iget-object v3, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -889,14 +889,14 @@
     aput-object v2, p3, v0
 
     .line 128
-    :cond_18
+    :cond_1
     aget-object v1, p3, v0
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_2
 
     aget-object v1, p1, v0
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     .line 129
     new-instance v1, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SampleStreamImpl;
@@ -916,11 +916,11 @@
     .line 132
     aput-boolean v1, p4, v0
 
-    :cond_2f
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_32
+    :cond_3
     return-wide p5
 .end method

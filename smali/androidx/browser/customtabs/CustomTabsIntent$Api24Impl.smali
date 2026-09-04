@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1813
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getDefaultLocale()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     .line 1817
     invoke-static {}, Landroid/os/LocaleList;->getAdjustedDefault()Landroid/os/LocaleList;
@@ -37,7 +37,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_14
+    if-lez v1, :cond_0
 
     const/4 v1, 0x0
 
@@ -49,11 +49,11 @@
 
     move-result-object v0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_15
+    :goto_0
     return-object v0
 .end method

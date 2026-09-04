@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/widget/ActionMenuPresenter;Landroid/content/Context;Landroidx/appcompat/view/menu/SubMenuBuilder;Landroid/view/View;)V
-    .registers 11
+    .locals 6
 
     .line 733
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
@@ -52,12 +52,12 @@
 
     move-result p2
 
-    if-nez p2, :cond_28
+    if-nez p2, :cond_1
 
     .line 739
     iget-object p2, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton:Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
 
-    if-nez p2, :cond_23
+    if-nez p2, :cond_0
 
     invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuPresenter;->access$200(Landroidx/appcompat/widget/ActionMenuPresenter;)Landroidx/appcompat/view/menu/MenuView;
 
@@ -65,16 +65,16 @@
 
     check-cast p2, Landroid/view/View;
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     iget-object p2, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->mOverflowButton:Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;
 
-    :goto_25
+    :goto_0
     invoke-virtual {p0, p2}, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->setAnchorView(Landroid/view/View;)V
 
     .line 742
-    :cond_28
+    :cond_1
     iget-object p1, p1, Landroidx/appcompat/widget/ActionMenuPresenter;->mPopupPresenterCallback:Landroidx/appcompat/widget/ActionMenuPresenter$PopupPresenterCallback;
 
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->setPresenterCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method protected onDismiss()V
-    .registers 3
+    .locals 2
 
     .line 747
     iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Landroidx/media3/extractor/ogg/StreamReader;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method private getFlacFrameBlockSize(Landroidx/media3/common/util/ParsableByteArray;)I
-    .registers 5
+    .locals 3
 
     .line 107
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -53,21 +53,21 @@
 
     const/4 v2, 0x6
 
-    if-eq v0, v2, :cond_11
+    if-eq v0, v2, :cond_0
 
     const/4 v2, 0x7
 
-    if-ne v0, v2, :cond_17
+    if-ne v0, v2, :cond_1
 
     .line 110
-    :cond_11
+    :cond_0
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 111
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUtf8EncodedLong()J
 
     .line 113
-    :cond_17
+    :cond_1
     invoke-static {p1, v0}, Landroidx/media3/extractor/FlacFrameReader;->readFrameBlockSizeSamplesFromKey(Landroidx/media3/common/util/ParsableByteArray;I)I
 
     move-result v0
@@ -81,7 +81,7 @@
 .end method
 
 .method private static isAudioPacket([B)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -90,16 +90,16 @@
 
     const/4 v1, -0x1
 
-    if-ne p0, v1, :cond_7
+    if-ne p0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_7
+    :cond_0
     return v0
 .end method
 
 .method public static verifyBitstreamType(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 5
+    .locals 4
 
     .line 46
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -108,7 +108,7 @@
 
     const/4 v1, 0x5
 
-    if-lt v0, v1, :cond_1c
+    if-lt v0, v1, :cond_0
 
     .line 47
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -117,7 +117,7 @@
 
     const/16 v1, 0x7f
 
-    if-ne v0, v1, :cond_1c
+    if-ne v0, v1, :cond_0
 
     .line 49
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
@@ -128,23 +128,23 @@
 
     cmp-long p0, v0, v2
 
-    if-nez p0, :cond_1c
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_1d
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method protected preparePayload(Landroidx/media3/common/util/ParsableByteArray;)J
-    .registers 4
+    .locals 2
 
     .line 67
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -155,14 +155,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const-wide/16 v0, -0x1
 
     return-wide v0
 
     .line 70
-    :cond_d
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/FlacReader;->getFlacFrameBlockSize(Landroidx/media3/common/util/ParsableByteArray;)I
 
     move-result p1
@@ -173,7 +173,7 @@
 .end method
 
 .method protected readHeaders(Landroidx/media3/common/util/ParsableByteArray;JLandroidx/media3/extractor/ogg/StreamReader$SetupData;)Z
-    .registers 11
+    .locals 6
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "#3.format"
@@ -191,7 +191,7 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
     .line 79
     new-instance p2, Landroidx/media3/extractor/FlacStreamMetadata;
@@ -225,7 +225,7 @@
 
     return v2
 
-    :cond_24
+    :cond_0
     const/4 v3, 0x0
 
     .line 86
@@ -235,7 +235,7 @@
 
     const/4 v5, 0x3
 
-    if-ne v4, v5, :cond_3e
+    if-ne v4, v5, :cond_1
 
     .line 87
     invoke-static {p1}, Landroidx/media3/extractor/FlacMetadataReader;->readSeekTableMetadataBlock(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;
@@ -260,17 +260,17 @@
     return v2
 
     .line 94
-    :cond_3e
+    :cond_1
     invoke-static {v0}, Landroidx/media3/extractor/ogg/FlacReader;->isAudioPacket([B)Z
 
     move-result p1
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_3
 
     .line 95
     iget-object p1, p0, Landroidx/media3/extractor/ogg/FlacReader;->flacOggSeeker:Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;
 
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_2
 
     .line 96
     invoke-virtual {p1, p2, p3}, Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;->setFirstFrameOffset(J)V
@@ -281,24 +281,24 @@
     iput-object p1, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
 
     .line 99
-    :cond_4f
+    :cond_2
     iget-object p1, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return v3
 
-    :cond_55
+    :cond_3
     return v2
 .end method
 
 .method protected reset(Z)V
-    .registers 2
+    .locals 0
 
     .line 54
     invoke-super {p0, p1}, Landroidx/media3/extractor/ogg/StreamReader;->reset(Z)V
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -308,6 +308,6 @@
     .line 57
     iput-object p1, p0, Landroidx/media3/extractor/ogg/FlacReader;->flacOggSeeker:Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;
 
-    :cond_a
+    :cond_0
     return-void
 .end method

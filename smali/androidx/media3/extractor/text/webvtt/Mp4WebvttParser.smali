@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method private static parseVttCueBox(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/common/text/Cue;
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x0
 
@@ -48,22 +48,22 @@
 
     move-object v2, v1
 
-    :cond_3
-    :goto_3
-    if-lez p1, :cond_48
+    :cond_0
+    :goto_0
+    if-lez p1, :cond_3
 
     const/16 v3, 0x8
 
-    if-lt p1, v3, :cond_b
+    if-lt p1, v3, :cond_1
 
     const/4 v4, 0x1
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
+    :cond_1
     const/4 v4, 0x0
 
-    :goto_c
+    :goto_1
     const-string v5, "Incomplete vtt cue box header found."
 
     .line 102
@@ -103,19 +103,19 @@
 
     const v4, 0x73747467
 
-    if-ne v5, v4, :cond_36
+    if-ne v5, v4, :cond_2
 
     .line 113
     invoke-static {v3}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->parseCueSettingsList(Ljava/lang/String;)Landroidx/media3/common/text/Cue$Builder;
 
     move-result-object v2
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_36
+    :cond_2
     const v4, 0x7061796c
 
-    if-ne v5, v4, :cond_3
+    if-ne v5, v4, :cond_0
 
     .line 117
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -131,15 +131,15 @@
 
     move-result-object v1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_48
-    if-nez v1, :cond_4c
+    :cond_3
+    if-nez v1, :cond_4
 
     const-string v1, ""
 
-    :cond_4c
-    if-eqz v2, :cond_57
+    :cond_4
+    if-eqz v2, :cond_5
 
     .line 126
     invoke-virtual {v2, v1}, Landroidx/media3/common/text/Cue$Builder;->setText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue$Builder;
@@ -150,22 +150,22 @@
 
     move-result-object p0
 
-    goto :goto_5b
+    goto :goto_2
 
     .line 127
-    :cond_57
+    :cond_5
     invoke-static {v1}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->newCueForText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue;
 
     move-result-object p0
 
-    :goto_5b
+    :goto_2
     return-object p0
 .end method
 
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -173,7 +173,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -202,14 +202,14 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 79
-    :goto_10
+    :goto_0
     iget-object p1, p0, Landroidx/media3/extractor/text/webvtt/Mp4WebvttParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p1
 
-    if-lez p1, :cond_4f
+    if-lez p1, :cond_2
 
     .line 82
     iget-object p1, p0, Landroidx/media3/extractor/text/webvtt/Mp4WebvttParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -221,16 +221,16 @@
 
     const/16 p2, 0x8
 
-    if-lt p1, p2, :cond_24
+    if-lt p1, p2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_25
+    :goto_1
     const-string p2, "Incomplete Mp4Webvtt Top Level box header found."
 
     .line 82
@@ -252,7 +252,7 @@
 
     const p3, 0x76747463
 
-    if-ne p2, p3, :cond_47
+    if-ne p2, p3, :cond_1
 
     .line 88
     iget-object p2, p0, Landroidx/media3/extractor/text/webvtt/Mp4WebvttParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -265,20 +265,20 @@
 
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_10
+    goto :goto_0
 
     .line 91
-    :cond_47
+    :cond_1
     iget-object p2, p0, Landroidx/media3/extractor/text/webvtt/Mp4WebvttParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
 
     add-int/lit8 p1, p1, -0x8
 
     invoke-virtual {p2, p1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_10
+    goto :goto_0
 
     .line 94
-    :cond_4f
+    :cond_2
     new-instance p1, Landroidx/media3/extractor/text/CuesWithTiming;
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324

@@ -51,7 +51,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -81,7 +81,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$1;)V
-    .registers 2
+    .locals 0
 
     .line 639
     invoke-direct {p0}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$DrmConfiguration;)V
-    .registers 3
+    .locals 1
 
     .line 673
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -141,7 +141,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$DrmConfiguration;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 639
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;-><init>(Landroidx/media3/common/MediaItem$DrmConfiguration;)V
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/UUID;)V
-    .registers 2
+    .locals 0
 
     .line 658
     invoke-direct {p0}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;-><init>()V
@@ -162,7 +162,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;Ljava/util/UUID;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 639
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->setNullableScheme(Ljava/util/UUID;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
@@ -173,7 +173,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 639
     iget-boolean p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->multiSession:Z
@@ -182,7 +182,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 639
     iget-boolean p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->playClearContentWithoutKey:Z
@@ -191,7 +191,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Lcom/google/common/collect/ImmutableList;
-    .registers 1
+    .locals 0
 
     .line 639
     iget-object p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->forcedSessionTrackTypes:Lcom/google/common/collect/ImmutableList;
@@ -200,7 +200,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)[B
-    .registers 1
+    .locals 0
 
     .line 639
     iget-object p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->keySetId:[B
@@ -209,7 +209,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 639
     iget-object p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->licenseUri:Landroid/net/Uri;
@@ -218,7 +218,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Ljava/util/UUID;
-    .registers 1
+    .locals 0
 
     .line 639
     iget-object p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->scheme:Ljava/util/UUID;
@@ -227,7 +227,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 639
     iget-boolean p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->forceDefaultLicenseUri:Z
@@ -236,7 +236,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;)Lcom/google/common/collect/ImmutableMap;
-    .registers 1
+    .locals 0
 
     .line 639
     iget-object p0, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->licenseRequestHeaders:Lcom/google/common/collect/ImmutableMap;
@@ -245,7 +245,7 @@
 .end method
 
 .method private setNullableScheme(Ljava/util/UUID;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -258,7 +258,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem$DrmConfiguration;
-    .registers 3
+    .locals 2
 
     .line 824
     new-instance v0, Landroidx/media3/common/MediaItem$DrmConfiguration;
@@ -271,7 +271,7 @@
 .end method
 
 .method public forceSessionsForAudioAndVideoTracks(Z)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -284,7 +284,7 @@
 .end method
 
 .method public setForceDefaultLicenseUri(Z)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 742
     iput-boolean p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->forceDefaultLicenseUri:Z
@@ -293,9 +293,9 @@
 .end method
 
 .method public setForceSessionsForAudioAndVideoTracks(Z)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x2
 
@@ -314,23 +314,23 @@
 
     move-result-object p1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 787
-    :cond_11
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
 
     .line 784
-    :goto_15
+    :goto_0
     invoke-virtual {p0, p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->setForcedSessionTrackTypes(Ljava/util/List;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     return-object p0
 .end method
 
 .method public setForcedSessionTrackTypes(Ljava/util/List;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -352,9 +352,9 @@
 .end method
 
 .method public setKeySetId([B)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 819
     array-length v0, p1
@@ -363,19 +363,19 @@
 
     move-result-object p1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->keySetId:[B
 
     return-object p0
 .end method
 
 .method public setLicenseRequestHeaders(Ljava/util/Map;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -398,7 +398,7 @@
 .end method
 
 .method public setLicenseUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 705
     iput-object p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->licenseUri:Landroid/net/Uri;
@@ -407,28 +407,28 @@
 .end method
 
 .method public setLicenseUri(Ljava/lang/String;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 712
-    :cond_4
+    :cond_0
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->licenseUri:Landroid/net/Uri;
 
     return-object p0
 .end method
 
 .method public setMultiSession(Z)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 730
     iput-boolean p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->multiSession:Z
@@ -437,7 +437,7 @@
 .end method
 
 .method public setPlayClearContentWithoutKey(Z)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 754
     iput-boolean p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->playClearContentWithoutKey:Z
@@ -446,7 +446,7 @@
 .end method
 
 .method public setScheme(Ljava/util/UUID;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 687
     iput-object p1, p0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->scheme:Ljava/util/UUID;

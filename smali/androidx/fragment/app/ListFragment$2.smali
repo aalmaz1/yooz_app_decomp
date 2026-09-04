@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/ListFragment;)V
-    .registers 2
+    .locals 0
 
     .line 61
     iput-object p1, p0, Landroidx/fragment/app/ListFragment$2;->this$0:Landroidx/fragment/app/ListFragment;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

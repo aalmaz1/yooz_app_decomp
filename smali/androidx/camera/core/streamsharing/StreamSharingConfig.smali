@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.streamSharing.captureTypes"
 
@@ -58,7 +58,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/core/impl/OptionsBundle;)V
-    .registers 2
+    .locals 0
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public getCaptureTypes()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -95,7 +95,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharingConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;

@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(JJLandroidx/camera/video/AudioStats;)V
-    .registers 6
+    .locals 0
 
     .line 19
     invoke-direct {p0}, Landroidx/camera/video/RecordingStats;-><init>()V
@@ -24,7 +24,7 @@
     .line 21
     iput-wide p3, p0, Landroidx/camera/video/AutoValue_RecordingStats;->numBytesRecorded:J
 
-    if-eqz p5, :cond_c
+    if-eqz p5, :cond_0
 
     .line 25
     iput-object p5, p0, Landroidx/camera/video/AutoValue_RecordingStats;->audioStats:Landroidx/camera/video/AudioStats;
@@ -32,7 +32,7 @@
     return-void
 
     .line 23
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null audioStats"
@@ -45,21 +45,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 58
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/RecordingStats;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 59
     check-cast p1, Landroidx/camera/video/RecordingStats;
@@ -73,7 +73,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     iget-wide v3, p0, Landroidx/camera/video/AutoValue_RecordingStats;->numBytesRecorded:J
 
@@ -84,7 +84,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_RecordingStats;->audioStats:Landroidx/camera/video/AudioStats;
 
@@ -97,22 +97,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v0, v2
 
-    :goto_2d
+    :goto_0
     return v0
 
-    :cond_2e
+    :cond_2
     return v2
 .end method
 
 .method public getAudioStats()Landroidx/camera/video/AudioStats;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/camera/video/AutoValue_RecordingStats;->audioStats:Landroidx/camera/video/AudioStats;
@@ -121,7 +121,7 @@
 .end method
 
 .method public getNumBytesRecorded()J
-    .registers 3
+    .locals 2
 
     .line 35
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_RecordingStats;->numBytesRecorded:J
@@ -130,7 +130,7 @@
 .end method
 
 .method public getRecordedDurationNanos()J
-    .registers 3
+    .locals 2
 
     .line 30
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_RecordingStats;->recordedDurationNanos:J
@@ -139,7 +139,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 8
+    .locals 7
 
     .line 71
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_RecordingStats;->recordedDurationNanos:J
@@ -184,7 +184,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 46
     new-instance v0, Ljava/lang/StringBuilder;

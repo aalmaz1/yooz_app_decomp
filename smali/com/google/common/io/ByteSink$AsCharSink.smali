@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/io/ByteSink;Ljava/nio/charset/Charset;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -52,7 +52,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/io/ByteSink;Ljava/nio/charset/Charset;Lcom/google/common/io/ByteSink$1;)V
-    .registers 4
+    .locals 0
 
     .line 142
     invoke-direct {p0, p1, p2}, Lcom/google/common/io/ByteSink$AsCharSink;-><init>(Lcom/google/common/io/ByteSink;Ljava/nio/charset/Charset;)V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public openStream()Ljava/io/Writer;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -87,7 +87,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 157
     new-instance v0, Ljava/lang/StringBuilder;

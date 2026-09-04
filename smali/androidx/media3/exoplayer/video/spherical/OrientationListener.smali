@@ -32,7 +32,7 @@
 
 # direct methods
 .method public varargs constructor <init>(Landroid/view/Display;[Landroidx/media3/exoplayer/video/spherical/OrientationListener$Listener;)V
-    .registers 5
+    .locals 2
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method private extractRoll([F)F
-    .registers 5
+    .locals 3
 
     const/16 v0, 0x83
 
@@ -100,7 +100,7 @@
 .end method
 
 .method private notifyListeners([FF)V
-    .registers 7
+    .locals 4
 
     .line 74
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->listeners:[Landroidx/media3/exoplayer/video/spherical/OrientationListener$Listener;
@@ -109,8 +109,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -119,19 +119,19 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private recenter([F)V
-    .registers 11
+    .locals 9
 
     .line 80
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->recenterMatrixComputed:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 81
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->recenterMatrix4x4:[F
@@ -144,7 +144,7 @@
     iput-boolean v0, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->recenterMatrixComputed:Z
 
     .line 84
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->tempMatrix4x4:[F
 
     array-length v1, v0
@@ -172,9 +172,9 @@
 .end method
 
 .method private rotateAroundZ([FI)V
-    .registers 7
+    .locals 4
 
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_3
 
     const/16 v0, 0x81
 
@@ -182,40 +182,40 @@
 
     const/4 v2, 0x1
 
-    if-eq p2, v2, :cond_19
+    if-eq p2, v2, :cond_2
 
     const/16 v3, 0x82
 
-    if-eq p2, v1, :cond_17
+    if-eq p2, v1, :cond_1
 
     const/4 v0, 0x3
 
-    if-ne p2, v0, :cond_11
+    if-ne p2, v0, :cond_0
 
     move v0, v3
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 116
-    :cond_11
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_17
+    :cond_1
     move v2, v3
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_2
     move v2, v0
 
     move v0, v1
 
     .line 118
-    :goto_1b
+    :goto_0
     iget-object p2, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->tempMatrix4x4:[F
 
     array-length v1, p2
@@ -229,12 +229,12 @@
 
     invoke-static {p2, v0, v2, p1}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
 
-    :cond_27
+    :cond_3
     return-void
 .end method
 
 .method private static rotateYtoSky([F)V
-    .registers 7
+    .locals 6
 
     const/4 v1, 0x0
 
@@ -257,13 +257,13 @@
 
 # virtual methods
 .method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .registers 3
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/OrientationListener;->deviceOrientationMatrix4x4:[F

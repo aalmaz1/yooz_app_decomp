@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)V
-    .registers 3
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

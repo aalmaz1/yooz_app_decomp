@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 22
+    .locals 22
 
     .line 112
     new-instance v0, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -405,7 +405,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILandroidx/datastore/preferences/protobuf/WireFormat$JavaType;I)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -427,7 +427,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILandroidx/datastore/preferences/protobuf/WireFormat$JavaType;ILandroidx/datastore/preferences/protobuf/WireFormat$1;)V
-    .registers 6
+    .locals 0
 
     .line 111
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;-><init>(Ljava/lang/String;ILandroidx/datastore/preferences/protobuf/WireFormat$JavaType;I)V
@@ -436,7 +436,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
-    .registers 2
+    .locals 1
 
     .line 111
     const-class v0, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -451,7 +451,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
-    .registers 1
+    .locals 1
 
     .line 111
     sget-object v0, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->$VALUES:[Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -468,7 +468,7 @@
 
 # virtual methods
 .method public getJavaType()Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->javaType:Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
@@ -477,7 +477,7 @@
 .end method
 
 .method public getWireType()I
-    .registers 2
+    .locals 1
 
     .line 164
     iget v0, p0, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->wireType:I
@@ -486,7 +486,7 @@
 .end method
 
 .method public isPackable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

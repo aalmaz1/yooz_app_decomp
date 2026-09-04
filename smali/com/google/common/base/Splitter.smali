@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Splitter$Strategy;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>(Lcom/google/common/base/Splitter$Strategy;ZLcom/google/common/base/CharMatcher;I)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -88,7 +88,7 @@
 .end method
 
 .method static synthetic access$000(Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;)Ljava/util/Iterator;
-    .registers 2
+    .locals 0
 
     .line 102
     invoke-direct {p0, p1}, Lcom/google/common/base/Splitter;->splittingIterator(Ljava/lang/CharSequence;)Ljava/util/Iterator;
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$200(Lcom/google/common/base/Splitter;)Lcom/google/common/base/CharMatcher;
-    .registers 1
+    .locals 0
 
     .line 102
     iget-object p0, p0, Lcom/google/common/base/Splitter;->trimmer:Lcom/google/common/base/CharMatcher;
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$300(Lcom/google/common/base/Splitter;)Z
-    .registers 1
+    .locals 0
 
     .line 102
     iget-boolean p0, p0, Lcom/google/common/base/Splitter;->omitEmptyStrings:Z
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$400(Lcom/google/common/base/Splitter;)I
-    .registers 1
+    .locals 0
 
     .line 102
     iget p0, p0, Lcom/google/common/base/Splitter;->limit:I
@@ -126,7 +126,7 @@
 .end method
 
 .method public static fixedLength(I)Lcom/google/common/base/Splitter;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10
@@ -136,16 +136,16 @@
         }
     .end annotation
 
-    if-lez p0, :cond_4
+    if-lez p0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     const-string v1, "The length may not be less than 1"
 
     .line 285
@@ -164,7 +164,7 @@
 .end method
 
 .method public static on(C)Lcom/google/common/base/Splitter;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -187,7 +187,7 @@
 .end method
 
 .method public static on(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/Splitter;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10
@@ -213,7 +213,7 @@
 .end method
 
 .method public static on(Ljava/lang/String;)Lcom/google/common/base/Splitter;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10
@@ -232,16 +232,16 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v2
 
-    :goto_b
+    :goto_0
     const-string v3, "The separator may not be the empty string."
 
     invoke-static {v0, v3}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
@@ -251,7 +251,7 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     .line 173
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -265,7 +265,7 @@
     return-object p0
 
     .line 175
-    :cond_1f
+    :cond_1
     new-instance v0, Lcom/google/common/base/Splitter;
 
     new-instance v1, Lcom/google/common/base/Splitter$2;
@@ -278,7 +278,7 @@
 .end method
 
 .method public static on(Ljava/util/regex/Pattern;)Lcom/google/common/base/Splitter;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -301,7 +301,7 @@
 .end method
 
 .method public static onPattern(Ljava/lang/String;)Lcom/google/common/base/Splitter;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -324,7 +324,7 @@
 .end method
 
 .method static onPatternInternal(Lcom/google/common/base/CommonPattern;)Lcom/google/common/base/Splitter;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10
@@ -365,7 +365,7 @@
 .end method
 
 .method private splittingIterator(Ljava/lang/CharSequence;)Ljava/util/Iterator;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -399,7 +399,7 @@
 
 # virtual methods
 .method public limit(I)Lcom/google/common/base/Splitter;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -409,16 +409,16 @@
         }
     .end annotation
 
-    if-lez p1, :cond_4
+    if-lez p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     const-string v1, "must be greater than zero: %s"
 
     .line 344
@@ -439,7 +439,7 @@
 .end method
 
 .method public omitEmptyStrings()Lcom/google/common/base/Splitter;
-    .registers 6
+    .locals 5
 
     .line 324
     new-instance v0, Lcom/google/common/base/Splitter;
@@ -458,7 +458,7 @@
 .end method
 
 .method public split(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10
@@ -491,7 +491,7 @@
 .end method
 
 .method public splitToList(Ljava/lang/CharSequence;)Ljava/util/List;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -526,12 +526,12 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 422
-    :goto_c
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 423
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -542,10 +542,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_c
+    goto :goto_0
 
     .line 426
-    :cond_1c
+    :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
@@ -554,7 +554,7 @@
 .end method
 
 .method public trimResults()Lcom/google/common/base/Splitter;
-    .registers 2
+    .locals 1
 
     .line 358
     invoke-static {}, Lcom/google/common/base/CharMatcher;->whitespace()Lcom/google/common/base/CharMatcher;
@@ -569,7 +569,7 @@
 .end method
 
 .method public trimResults(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/Splitter;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -597,7 +597,7 @@
 .end method
 
 .method public withKeyValueSeparator(C)Lcom/google/common/base/Splitter$MapSplitter;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -620,7 +620,7 @@
 .end method
 
 .method public withKeyValueSeparator(Lcom/google/common/base/Splitter;)Lcom/google/common/base/Splitter$MapSplitter;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -641,7 +641,7 @@
 .end method
 
 .method public withKeyValueSeparator(Ljava/lang/String;)Lcom/google/common/base/Splitter$MapSplitter;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

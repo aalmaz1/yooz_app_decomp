@@ -52,7 +52,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Function;Lcom/google/common/base/Function;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -99,7 +99,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Function;Lcom/google/common/base/Function;Lcom/google/common/base/Converter$1;)V
-    .registers 4
+    .locals 0
 
     .line 520
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Converter$FunctionBasedConverter;-><init>(Lcom/google/common/base/Function;Lcom/google/common/base/Function;)V
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method protected doBackward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -137,7 +137,7 @@
 .end method
 
 .method protected doForward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -164,7 +164,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -183,7 +183,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 545
     check-cast p1, Lcom/google/common/base/Converter$FunctionBasedConverter;
@@ -197,7 +197,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/base/Converter$FunctionBasedConverter;->backwardFunction:Lcom/google/common/base/Function;
 
@@ -208,16 +208,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 554
     iget-object v0, p0, Lcom/google/common/base/Converter$FunctionBasedConverter;->forwardFunction:Lcom/google/common/base/Function;
@@ -240,7 +240,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 559
     new-instance v0, Ljava/lang/StringBuilder;

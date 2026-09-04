@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method private advancePeekPositionToNextSegment(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -122,7 +122,7 @@
 .end method
 
 .method private endReading()V
-    .registers 5
+    .locals 4
 
     .line 269
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -155,7 +155,7 @@
 .end method
 
 .method private static getMotionPhotoMetadata(Ljava/lang/String;J)Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -168,22 +168,22 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 308
-    :cond_8
+    :cond_0
     invoke-static {p0}, Landroidx/media3/extractor/jpeg/XmpMotionPhotoDescriptionParser;->parse(Ljava/lang/String;)Landroidx/media3/extractor/jpeg/MotionPhotoDescription;
 
     move-result-object p0
 
-    if-nez p0, :cond_f
+    if-nez p0, :cond_1
 
     return-object v1
 
     .line 312
-    :cond_f
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/jpeg/MotionPhotoDescription;->getMotionPhotoMetadata(J)Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
 
     move-result-object p0
@@ -192,7 +192,7 @@
 .end method
 
 .method private outputImageTrack(Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;)V
-    .registers 7
+    .locals 5
 
     .line 275
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -253,7 +253,7 @@
 .end method
 
 .method private peekMarker(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -289,7 +289,7 @@
 .end method
 
 .method private readMarker(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -325,7 +325,7 @@
 
     const v0, 0xffda
 
-    if-ne p1, v0, :cond_2d
+    if-ne p1, v0, :cond_1
 
     .line 200
     iget-wide v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4StartPosition:J
@@ -334,47 +334,47 @@
 
     cmp-long p1, v0, v2
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x4
 
     .line 201
     iput p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->state:I
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 203
-    :cond_29
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->endReading()V
 
-    goto :goto_3f
+    goto :goto_0
 
-    :cond_2d
+    :cond_1
     const v0, 0xffd0
 
-    if-lt p1, v0, :cond_37
+    if-lt p1, v0, :cond_2
 
     const v0, 0xffd9
 
-    if-le p1, v0, :cond_3f
+    if-le p1, v0, :cond_3
 
-    :cond_37
+    :cond_2
     const v0, 0xff01
 
-    if-eq p1, v0, :cond_3f
+    if-eq p1, v0, :cond_3
 
     const/4 p1, 0x1
 
     .line 206
     iput p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->state:I
 
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private readSegment(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -388,7 +388,7 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_3f
+    if-ne v0, v1, :cond_0
 
     .line 219
     new-instance v0, Landroidx/media3/common/util/ParsableByteArray;
@@ -409,7 +409,7 @@
     .line 221
     iget-object v1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->motionPhotoMetadata:Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
 
-    if-nez v1, :cond_44
+    if-nez v1, :cond_1
 
     const-string v1, "http://ns.adobe.com/xap/1.0/"
 
@@ -422,14 +422,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     .line 223
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readNullTerminatedString()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_1
 
     .line 225
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -442,31 +442,31 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->motionPhotoMetadata:Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
 
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_1
 
     .line 227
     iget-wide v0, p1, Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;->videoStartPosition:J
 
     iput-wide v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4StartPosition:J
 
-    goto :goto_44
+    goto :goto_0
 
     .line 232
-    :cond_3f
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->segmentLength:I
 
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
     .line 234
-    :cond_44
-    :goto_44
+    :cond_1
+    :goto_0
     iput v2, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->state:I
 
     return-void
 .end method
 
 .method private readSegmentLength(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -509,7 +509,7 @@
 .end method
 
 .method private sniffMotionPhotoVideo(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -533,21 +533,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 243
     invoke-direct {p0}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->endReading()V
 
-    goto :goto_50
+    goto :goto_0
 
     .line 245
-    :cond_12
+    :cond_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     .line 246
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     .line 247
     new-instance v0, Landroidx/media3/extractor/mp4/Mp4Extractor;
@@ -561,7 +561,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
 
     .line 251
-    :cond_24
+    :cond_1
     new-instance v0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorInput;
 
     iget-wide v1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4StartPosition:J
@@ -577,7 +577,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_2
 
     .line 254
     iget-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
@@ -603,18 +603,18 @@
     .line 256
     invoke-direct {p0}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->startReadingMotionPhoto()V
 
-    goto :goto_50
+    goto :goto_0
 
     .line 258
-    :cond_4d
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->endReading()V
 
-    :goto_50
+    :goto_0
     return-void
 .end method
 
 .method private startReadingMotionPhoto()V
-    .registers 2
+    .locals 1
 
     .line 264
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->motionPhotoMetadata:Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
@@ -638,7 +638,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 2
+    .locals 0
 
     .line 122
     iput-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -647,7 +647,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -659,34 +659,34 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_9
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_5c
+    if-eq v0, v2, :cond_8
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_58
+    if-eq v0, v3, :cond_7
 
     const/4 v3, 0x4
 
-    if-eq v0, v3, :cond_47
+    if-eq v0, v3, :cond_5
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     const/4 p1, 0x6
 
-    if-ne v0, p1, :cond_16
+    if-ne v0, p1, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 161
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -694,17 +694,17 @@
     throw p1
 
     .line 146
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4ExtractorStartOffsetExtractorInput:Landroidx/media3/extractor/jpeg/StartOffsetExtractorInput;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->lastExtractorInput:Landroidx/media3/extractor/ExtractorInput;
 
-    if-eq p1, v0, :cond_2f
+    if-eq p1, v0, :cond_3
 
     .line 147
-    :cond_24
+    :cond_2
     iput-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->lastExtractorInput:Landroidx/media3/extractor/ExtractorInput;
 
     .line 148
@@ -717,7 +717,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4ExtractorStartOffsetExtractorInput:Landroidx/media3/extractor/jpeg/StartOffsetExtractorInput;
 
     .line 152
-    :cond_2f
+    :cond_3
     iget-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
 
     .line 153
@@ -733,7 +733,7 @@
 
     move-result p1
 
-    if-ne p1, v2, :cond_46
+    if-ne p1, v2, :cond_4
 
     .line 155
     iget-wide v0, p2, Landroidx/media3/extractor/PositionHolder;->position:J
@@ -744,11 +744,11 @@
 
     iput-wide v0, p2, Landroidx/media3/extractor/PositionHolder;->position:J
 
-    :cond_46
+    :cond_4
     return p1
 
     .line 139
-    :cond_47
+    :cond_5
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v3
@@ -757,7 +757,7 @@
 
     cmp-long v0, v3, v5
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_6
 
     .line 140
     iput-wide v5, p2, Landroidx/media3/extractor/PositionHolder;->position:J
@@ -765,53 +765,53 @@
     return v2
 
     .line 143
-    :cond_54
+    :cond_6
     invoke-direct {p0, p1}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->sniffMotionPhotoVideo(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v1
 
     .line 136
-    :cond_58
+    :cond_7
     invoke-direct {p0, p1}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->readSegment(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v1
 
     .line 133
-    :cond_5c
+    :cond_8
     invoke-direct {p0, p1}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->readSegmentLength(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v1
 
     .line 130
-    :cond_60
+    :cond_9
     invoke-direct {p0, p1}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->readMarker(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v1
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 178
     invoke-virtual {v0}, Landroidx/media3/extractor/mp4/Mp4Extractor;->release()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 7
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
@@ -823,15 +823,15 @@
     .line 169
     iput-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 170
-    :cond_d
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->state:I
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1
 
     .line 171
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->mp4Extractor:Landroidx/media3/extractor/mp4/Mp4Extractor;
@@ -844,13 +844,13 @@
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroidx/media3/extractor/mp4/Mp4Extractor;->seek(JJ)V
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -866,12 +866,12 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     return v2
 
     .line 103
-    :cond_b
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->peekMarker(Landroidx/media3/extractor/ExtractorInput;)I
 
     move-result v0
@@ -880,7 +880,7 @@
 
     const v1, 0xffe0
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     .line 108
     invoke-direct {p0, p1}, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->advancePeekPositionToNextSegment(Landroidx/media3/extractor/ExtractorInput;)V
@@ -893,16 +893,16 @@
     iput v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->marker:I
 
     .line 111
-    :cond_1f
+    :cond_1
     iget v0, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->marker:I
 
     const v1, 0xffe1
 
-    if-eq v0, v1, :cond_27
+    if-eq v0, v1, :cond_2
 
     return v2
 
-    :cond_27
+    :cond_2
     const/4 v0, 0x2
 
     .line 114
@@ -935,7 +935,7 @@
 
     cmp-long p1, v0, v3
 
-    if-nez p1, :cond_50
+    if-nez p1, :cond_3
 
     iget-object p1, p0, Landroidx/media3/extractor/jpeg/JpegMotionPhotoExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -943,10 +943,10 @@
 
     move-result p1
 
-    if-nez p1, :cond_50
+    if-nez p1, :cond_3
 
     const/4 v2, 0x1
 
-    :cond_50
+    :cond_3
     return v2
 .end method

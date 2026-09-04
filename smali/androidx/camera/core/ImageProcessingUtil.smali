@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "image_processing_util_jni"
 
@@ -30,7 +30,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public static applyPixelShiftForYUV(Landroidx/camera/core/ImageProxy;)Z
-    .registers 4
+    .locals 3
 
     .line 297
     invoke-static {p0}, Landroidx/camera/core/ImageProcessingUtil;->isSupportedYUVFormat(Landroidx/camera/core/ImageProxy;)Z
@@ -50,7 +50,7 @@
 
     const-string v2, "ImageProcessingUtil"
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const-string p0, "Unsupported format for YUV to RGB"
 
@@ -60,7 +60,7 @@
     return v1
 
     .line 302
-    :cond_f
+    :cond_0
     invoke-static {p0}, Landroidx/camera/core/ImageProcessingUtil;->applyPixelShiftInternal(Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/ImageProcessingUtil$Result;
 
     move-result-object p0
@@ -68,7 +68,7 @@
     .line 304
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
 
-    if-ne p0, v0, :cond_1d
+    if-ne p0, v0, :cond_1
 
     const-string p0, "One pixel shift for YUV failure"
 
@@ -77,14 +77,14 @@
 
     return v1
 
-    :cond_1d
+    :cond_1
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static applyPixelShiftInternal(Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/ImageProcessingUtil$Result;
-    .registers 14
+    .locals 13
 
     .line 437
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getWidth()I
@@ -211,7 +211,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_6c
+    if-eqz p0, :cond_0
 
     .line 464
     sget-object p0, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
@@ -219,14 +219,14 @@
     return-object p0
 
     .line 466
-    :cond_6c
+    :cond_0
     sget-object p0, Landroidx/camera/core/ImageProcessingUtil$Result;->SUCCESS:Landroidx/camera/core/ImageProcessingUtil$Result;
 
     return-object p0
 .end method
 
 .method public static convertJpegBytesToImage(Landroidx/camera/core/impl/ImageReaderProxy;[B)Landroidx/camera/core/ImageProxy;
-    .registers 4
+    .locals 2
 
     .line 79
     invoke-interface {p0}, Landroidx/camera/core/impl/ImageReaderProxy;->getImageFormat()I
@@ -235,16 +235,16 @@
 
     const/16 v1, 0x100
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 80
@@ -265,7 +265,7 @@
 
     const-string v0, "ImageProcessingUtil"
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     const-string p0, "Failed to enqueue JPEG image."
 
@@ -277,24 +277,24 @@
     return-object p0
 
     .line 90
-    :cond_27
+    :cond_1
     invoke-interface {p0}, Landroidx/camera/core/impl/ImageReaderProxy;->acquireLatestImage()Landroidx/camera/core/ImageProxy;
 
     move-result-object p0
 
-    if-nez p0, :cond_32
+    if-nez p0, :cond_2
 
     const-string p1, "Failed to get acquire JPEG image."
 
     .line 92
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_32
+    :cond_2
     return-object p0
 .end method
 
 .method public static convertYUVToBitmap(Landroidx/camera/core/ImageProxy;)Landroid/graphics/Bitmap;
-    .registers 15
+    .locals 14
 
     .line 255
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getFormat()I
@@ -303,7 +303,7 @@
 
     const/16 v1, 0x23
 
-    if-ne v0, v1, :cond_88
+    if-ne v0, v1, :cond_1
 
     .line 259
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getWidth()I
@@ -444,12 +444,12 @@
 
     move-result p0
 
-    if-nez p0, :cond_80
+    if-nez p0, :cond_0
 
     return-object v0
 
     .line 285
-    :cond_80
+    :cond_0
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "YUV to RGB conversion failed"
@@ -459,7 +459,7 @@
     throw p0
 
     .line 256
-    :cond_88
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Input image format must be YUV_420_888"
@@ -470,7 +470,7 @@
 .end method
 
 .method public static convertYUVToRGB(Landroidx/camera/core/ImageProxy;Landroidx/camera/core/impl/ImageReaderProxy;Ljava/nio/ByteBuffer;IZ)Landroidx/camera/core/ImageProxy;
-    .registers 12
+    .locals 7
 
     .line 191
     invoke-static {p0}, Landroidx/camera/core/ImageProcessingUtil;->isSupportedYUVFormat(Landroidx/camera/core/ImageProxy;)Z
@@ -481,7 +481,7 @@
 
     const-string v2, "ImageProcessingUtil"
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const-string p0, "Unsupported format for YUV to RGB"
 
@@ -491,7 +491,7 @@
     return-object v1
 
     .line 195
-    :cond_f
+    :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -501,7 +501,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     const-string p0, "Unsupported rotation degrees for rotate RGB"
 
@@ -511,7 +511,7 @@
     return-object v1
 
     .line 205
-    :cond_1f
+    :cond_1
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->getSurface()Landroid/view/Surface;
 
     move-result-object v0
@@ -524,7 +524,7 @@
     .line 210
     sget-object p3, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
 
-    if-ne p2, p3, :cond_31
+    if-ne p2, p3, :cond_2
 
     const-string p0, "YUV to RGB conversion failure"
 
@@ -533,7 +533,7 @@
 
     return-object v1
 
-    :cond_31
+    :cond_2
     const-string p2, "MH"
 
     const/4 p3, 0x3
@@ -543,7 +543,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_62
+    if-eqz p2, :cond_3
 
     .line 217
     sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -594,12 +594,12 @@
     sput p2, Landroidx/camera/core/ImageProcessingUtil;->sImageCount:I
 
     .line 224
-    :cond_62
+    :cond_3
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->acquireLatestImage()Landroidx/camera/core/ImageProxy;
 
     move-result-object p1
 
-    if-nez p1, :cond_6e
+    if-nez p1, :cond_4
 
     const-string p0, "YUV to RGB acquireLatestImage failure"
 
@@ -609,7 +609,7 @@
     return-object v1
 
     .line 231
-    :cond_6e
+    :cond_4
     new-instance p2, Landroidx/camera/core/SingleCloseImageProxy;
 
     invoke-direct {p2, p1}, Landroidx/camera/core/SingleCloseImageProxy;-><init>(Landroidx/camera/core/ImageProxy;)V
@@ -625,7 +625,7 @@
 .end method
 
 .method private static convertYUVToRGBInternal(Landroidx/camera/core/ImageProxy;Landroid/view/Surface;Ljava/nio/ByteBuffer;IZ)Landroidx/camera/core/ImageProcessingUtil$Result;
-    .registers 21
+    .locals 16
 
     .line 400
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getWidth()I
@@ -698,37 +698,37 @@
 
     move-result v8
 
-    if-eqz p4, :cond_41
+    if-eqz p4, :cond_0
 
     move v12, v7
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_41
+    :cond_0
     move v12, v1
 
-    :goto_42
-    if-eqz p4, :cond_46
+    :goto_0
+    if-eqz p4, :cond_1
 
     move v13, v8
 
-    goto :goto_47
+    goto :goto_1
 
-    :cond_46
+    :cond_1
     move v13, v1
 
-    :goto_47
-    if-eqz p4, :cond_4b
+    :goto_1
+    if-eqz p4, :cond_2
 
     move v14, v8
 
-    goto :goto_4c
+    goto :goto_2
 
-    :cond_4b
+    :cond_2
     move v14, v1
 
     .line 413
-    :goto_4c
+    :goto_2
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
 
     move-result-object v0
@@ -786,7 +786,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_80
+    if-eqz v0, :cond_3
 
     .line 430
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
@@ -794,19 +794,19 @@
     return-object v0
 
     .line 432
-    :cond_80
+    :cond_3
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->SUCCESS:Landroidx/camera/core/ImageProcessingUtil$Result;
 
     return-object v0
 .end method
 
 .method public static convertYuvToJpegBytesIntoSurface(Landroidx/camera/core/ImageProxy;IILandroid/view/Surface;)Z
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
     .line 160
-    :try_start_1
+    :try_start_0
     invoke-static {p0, v0, p1, p2}, Landroidx/camera/core/internal/utils/ImageUtil;->yuvImageToJpegByteArray(Landroidx/camera/core/ImageProxy;Landroid/graphics/Rect;II)[B
 
     move-result-object p0
@@ -815,12 +815,12 @@
     invoke-static {p3, p0}, Landroidx/camera/core/ImageProcessingUtil;->writeJpegBytesToSurface(Landroid/view/Surface;[B)Z
 
     move-result p0
-    :try_end_9
-    .catch Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException; {:try_start_1 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_a
+    :catch_0
     move-exception p0
 
     const-string p1, "ImageProcessingUtil"
@@ -836,7 +836,7 @@
 .end method
 
 .method public static copyBitmapToByteBuffer(Landroid/graphics/Bitmap;Ljava/nio/ByteBuffer;I)V
-    .registers 10
+    .locals 7
 
     .line 107
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getRowBytes()I
@@ -868,7 +868,7 @@
 .end method
 
 .method public static copyByteBufferToBitmap(Landroid/graphics/Bitmap;Ljava/nio/ByteBuffer;I)V
-    .registers 10
+    .locals 7
 
     .line 124
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getRowBytes()I
@@ -900,39 +900,39 @@
 .end method
 
 .method private static isSupportedRotationDegrees(I)Z
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_1
 
     const/16 v0, 0x5a
 
-    if-eq p0, v0, :cond_11
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0xb4
 
-    if-eq p0, v0, :cond_11
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x10e
 
-    if-ne p0, v0, :cond_f
+    if-ne p0, v0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_12
+    :goto_1
     return p0
 .end method
 
 .method private static isSupportedYUVFormat(Landroidx/camera/core/ImageProxy;)Z
-    .registers 3
+    .locals 2
 
     .line 381
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getFormat()I
@@ -941,7 +941,7 @@
 
     const/16 v1, 0x23
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 382
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
@@ -952,44 +952,44 @@
 
     const/4 v0, 0x3
 
-    if-ne p0, v0, :cond_12
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_13
+    :goto_0
     return p0
 .end method
 
 .method static synthetic lambda$convertYUVToRGB$0(Landroidx/camera/core/ImageProxy;Landroidx/camera/core/ImageProxy;Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 235
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->close()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method static synthetic lambda$rotateYUV$1(Landroidx/camera/core/ImageProxy;Landroidx/camera/core/ImageProxy;Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 373
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->close()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
@@ -1012,7 +1012,7 @@
 .end method
 
 .method public static rotateYUV(Landroidx/camera/core/ImageProxy;Landroidx/camera/core/impl/ImageReaderProxy;Landroid/media/ImageWriter;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)Landroidx/camera/core/ImageProxy;
-    .registers 16
+    .locals 9
 
     .line 332
     invoke-static {p0}, Landroidx/camera/core/ImageProcessingUtil;->isSupportedYUVFormat(Landroidx/camera/core/ImageProxy;)Z
@@ -1023,7 +1023,7 @@
 
     const-string v2, "ImageProcessingUtil"
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const-string p0, "Unsupported format for rotate YUV"
 
@@ -1033,12 +1033,12 @@
     return-object v1
 
     .line 337
-    :cond_f
+    :cond_0
     invoke-static {p6}, Landroidx/camera/core/ImageProcessingUtil;->isSupportedRotationDegrees(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     const-string p0, "Unsupported rotation degrees for rotate YUV"
 
@@ -1048,10 +1048,10 @@
     return-object v1
 
     .line 342
-    :cond_1b
+    :cond_1
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
 
-    if-lez p6, :cond_29
+    if-lez p6, :cond_2
 
     move-object v3, p0
 
@@ -1071,10 +1071,10 @@
     move-result-object v0
 
     .line 356
-    :cond_29
+    :cond_2
     sget-object p2, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
 
-    if-ne v0, p2, :cond_33
+    if-ne v0, p2, :cond_3
 
     const-string p0, "rotate YUV failure"
 
@@ -1084,12 +1084,12 @@
     return-object v1
 
     .line 362
-    :cond_33
+    :cond_3
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->acquireLatestImage()Landroidx/camera/core/ImageProxy;
 
     move-result-object p1
 
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_4
 
     const-string p0, "YUV rotation acquireLatestImage failure"
 
@@ -1099,7 +1099,7 @@
     return-object v1
 
     .line 368
-    :cond_3f
+    :cond_4
     new-instance p2, Landroidx/camera/core/SingleCloseImageProxy;
 
     invoke-direct {p2, p1}, Landroidx/camera/core/SingleCloseImageProxy;-><init>(Landroidx/camera/core/ImageProxy;)V
@@ -1115,7 +1115,7 @@
 .end method
 
 .method private static rotateYUVInternal(Landroidx/camera/core/ImageProxy;Landroid/media/ImageWriter;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)Landroidx/camera/core/ImageProcessingUtil$Result;
-    .registers 29
+    .locals 23
 
     .line 478
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getWidth()I
@@ -1182,7 +1182,7 @@
 
     move-result-object v14
 
-    if-nez v14, :cond_3c
+    if-nez v14, :cond_0
 
     .line 487
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
@@ -1190,7 +1190,7 @@
     return-object v0
 
     .line 491
-    :cond_3c
+    :cond_0
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
 
     move-result-object v0
@@ -1351,14 +1351,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d0
+    if-eqz v0, :cond_1
 
     .line 515
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->ERROR_CONVERSION:Landroidx/camera/core/ImageProcessingUtil$Result;
 
     return-object v0
 
-    :cond_d0
+    :cond_1
     move-object/from16 v0, p1
 
     move-object/from16 v1, v22
@@ -1373,7 +1373,7 @@
 .end method
 
 .method public static writeJpegBytesToSurface(Landroid/view/Surface;[B)Z
-    .registers 2
+    .locals 0
 
     .line 138
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1386,7 +1386,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_0
 
     const-string p0, "ImageProcessingUtil"
 
@@ -1399,7 +1399,7 @@
 
     return p0
 
-    :cond_15
+    :cond_0
     const/4 p0, 0x1
 
     return p0

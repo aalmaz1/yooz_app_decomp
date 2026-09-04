@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;Lcom/google/common/collect/ImmutableMap;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,16 +53,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_d
+    if-ne v0, v2, :cond_0
 
     move v0, v2
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v1
 
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 1021
@@ -71,12 +71,12 @@
     invoke-direct {v0}, Landroidx/media3/common/Timeline$Period;-><init>()V
 
     .line 1022
-    :goto_16
+    :goto_1
     invoke-virtual {p1}, Landroidx/media3/common/Timeline;->getPeriodCount()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_2f
+    if-ge v1, v3, :cond_1
 
     .line 1023
     invoke-virtual {p1, v1, v0, v2}, Landroidx/media3/common/Timeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
@@ -96,10 +96,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_16
+    goto :goto_1
 
     .line 1026
-    :cond_2f
+    :cond_1
     iput-object p2, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$ServerSideAdInsertionTimeline;->adPlaybackStates:Lcom/google/common/collect/ImmutableMap;
 
     return-void
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 16
+    .locals 12
 
     const/4 p3, 0x1
 
@@ -143,20 +143,20 @@
 
     const/4 v3, -0x1
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_0
 
     .line 1072
     iget-wide v0, v9, Landroidx/media3/common/AdPlaybackState;->contentDurationUs:J
 
-    goto :goto_28
+    goto :goto_0
 
     .line 1075
-    :cond_24
+    :cond_0
     invoke-static {v0, v1, v3, v9}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionUtil;->getMediaPeriodPositionUsForContent(JILandroidx/media3/common/AdPlaybackState;)J
 
     move-result-wide v0
 
-    :goto_28
+    :goto_0
     move-wide v5, v0
 
     .line 1079
@@ -170,10 +170,10 @@
 
     move-wide v7, v1
 
-    :goto_32
+    :goto_1
     add-int/lit8 v1, p1, 0x1
 
-    if-ge v4, v1, :cond_63
+    if-ge v4, v1, :cond_3
 
     .line 1081
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$ServerSideAdInsertionTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -197,7 +197,7 @@
 
     check-cast v1, Landroidx/media3/common/AdPlaybackState;
 
-    if-nez v4, :cond_57
+    if-nez v4, :cond_1
 
     .line 1086
     invoke-virtual {v0}, Landroidx/media3/common/Timeline$Period;->getPositionInWindowUs()J
@@ -213,8 +213,8 @@
 
     neg-long v7, v7
 
-    :cond_57
-    if-eq v4, p1, :cond_60
+    :cond_1
+    if-eq v4, p1, :cond_2
 
     .line 1091
     iget-wide v10, v0, Landroidx/media3/common/Timeline$Period;->durationUs:J
@@ -226,13 +226,13 @@
 
     add-long/2addr v7, v1
 
-    :cond_60
+    :cond_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_32
+    goto :goto_1
 
     .line 1098
-    :cond_63
+    :cond_3
     iget-object v2, p2, Landroidx/media3/common/Timeline$Period;->id:Ljava/lang/Object;
 
     iget-object v3, p2, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
@@ -249,7 +249,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 12
+    .locals 7
 
     .line 1031
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
@@ -307,14 +307,14 @@
 
     cmp-long v3, v3, v5
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_0
 
     .line 1042
     iget-wide v2, p3, Landroidx/media3/common/AdPlaybackState;->contentDurationUs:J
 
     cmp-long p1, v2, v5
 
-    if-eqz p1, :cond_6b
+    if-eqz p1, :cond_1
 
     .line 1043
     iget-wide p3, p3, Landroidx/media3/common/AdPlaybackState;->contentDurationUs:J
@@ -323,10 +323,10 @@
 
     iput-wide p3, p2, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
-    goto :goto_6b
+    goto :goto_0
 
     .line 1046
-    :cond_41
+    :cond_0
     iget p3, p2, Landroidx/media3/common/Timeline$Window;->lastPeriodIndex:I
 
     .line 1047
@@ -380,8 +380,8 @@
     iput-wide v2, p2, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
     .line 1062
-    :cond_6b
-    :goto_6b
+    :cond_1
+    :goto_0
     iput-wide v0, p2, Landroidx/media3/common/Timeline$Window;->positionInFirstPeriodUs:J
 
     return-object p2

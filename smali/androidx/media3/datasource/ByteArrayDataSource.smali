@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/ByteArrayDataSource$UriResolver;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 63
     new-instance v0, Landroidx/media3/datasource/ByteArrayDataSource$$ExternalSyntheticLambda0;
@@ -59,23 +59,23 @@
     .line 64
     array-length p1, p1
 
-    if-lez p1, :cond_d
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     return-void
 .end method
 
 .method static synthetic lambda$new$0([BLandroid/net/Uri;)[B
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -88,12 +88,12 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 120
     iget-boolean v0, p0, Landroidx/media3/datasource/ByteArrayDataSource;->opened:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -103,7 +103,7 @@
     .line 122
     invoke-virtual {p0}, Landroidx/media3/datasource/ByteArrayDataSource;->transferEnded()V
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 124
@@ -116,7 +116,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 115
     iget-object v0, p0, Landroidx/media3/datasource/ByteArrayDataSource;->uri:Landroid/net/Uri;
@@ -125,7 +125,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -160,7 +160,7 @@
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_4e
+    if-gtz v0, :cond_2
 
     .line 86
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->position:J
@@ -189,7 +189,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_0
 
     .line 89
     iget v0, p0, Landroidx/media3/datasource/ByteArrayDataSource;->bytesRemaining:I
@@ -206,7 +206,7 @@
 
     iput v0, p0, Landroidx/media3/datasource/ByteArrayDataSource;->bytesRemaining:I
 
-    :cond_3b
+    :cond_0
     const/4 v0, 0x1
 
     .line 91
@@ -220,22 +220,22 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_1
 
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
-    goto :goto_4d
+    goto :goto_0
 
-    :cond_4a
+    :cond_1
     iget p1, p0, Landroidx/media3/datasource/ByteArrayDataSource;->bytesRemaining:I
 
     int-to-long v0, p1
 
-    :goto_4d
+    :goto_0
     return-wide v0
 
     .line 84
-    :cond_4e
+    :cond_2
     new-instance p1, Landroidx/media3/datasource/DataSourceException;
 
     const/16 v0, 0x7d8
@@ -246,26 +246,26 @@
 .end method
 
 .method public read([BII)I
-    .registers 6
+    .locals 2
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 100
-    :cond_4
+    :cond_0
     iget v0, p0, Landroidx/media3/datasource/ByteArrayDataSource;->bytesRemaining:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, -0x1
 
     return p1
 
     .line 104
-    :cond_a
+    :cond_1
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3

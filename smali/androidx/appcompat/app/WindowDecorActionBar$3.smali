@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/WindowDecorActionBar;)V
-    .registers 2
+    .locals 0
 
     .line 160
     iput-object p1, p0, Landroidx/appcompat/app/WindowDecorActionBar$3;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onAnimationUpdate(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 163
     iget-object p1, p0, Landroidx/appcompat/app/WindowDecorActionBar$3;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;

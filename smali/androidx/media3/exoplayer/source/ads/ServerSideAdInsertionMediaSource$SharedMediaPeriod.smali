@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaPeriod;Ljava/lang/Object;Landroidx/media3/common/AdPlaybackState;)V
-    .registers 4
+    .locals 0
 
     .line 651
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -111,7 +111,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 635
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->periodUid:Ljava/lang/Object;
@@ -120,7 +120,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;)Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
-    .registers 1
+    .locals 0
 
     .line 635
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->loadingPeriod:Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
@@ -129,7 +129,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 635
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -138,34 +138,34 @@
 .end method
 
 .method private findMatchingStreamIndex(Landroidx/media3/exoplayer/source/MediaLoadData;)I
-    .registers 10
+    .locals 8
 
     .line 977
     iget-object v0, p1, Landroidx/media3/exoplayer/source/MediaLoadData;->trackFormat:Landroidx/media3/common/Format;
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     move v2, v0
 
     .line 980
-    :goto_8
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->trackSelections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     array-length v4, v3
 
-    if-ge v2, v4, :cond_55
+    if-ge v2, v4, :cond_5
 
     .line 981
     aget-object v3, v3, v2
 
-    if-eqz v3, :cond_52
+    if-eqz v3, :cond_4
 
     .line 982
     invoke-interface {v3}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getTrackGroup()Landroidx/media3/common/TrackGroup;
@@ -175,7 +175,7 @@
     .line 985
     iget v4, p1, Landroidx/media3/exoplayer/source/MediaLoadData;->trackType:I
 
-    if-nez v4, :cond_29
+    if-nez v4, :cond_1
 
     .line 987
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -190,23 +190,23 @@
 
     move-result v4
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_1
 
     const/4 v4, 0x1
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     move v4, v0
 
-    :goto_2a
+    :goto_1
     move v5, v0
 
     .line 988
-    :goto_2b
+    :goto_2
     iget v6, v3, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v5, v6, :cond_52
+    if-ge v5, v6, :cond_4
 
     .line 989
     invoke-virtual {v3, v5}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -220,13 +220,13 @@
 
     move-result v7
 
-    if-nez v7, :cond_51
+    if-nez v7, :cond_3
 
-    if-eqz v4, :cond_4e
+    if-eqz v4, :cond_2
 
     iget-object v7, v6, Landroidx/media3/common/Format;->id:Ljava/lang/String;
 
-    if-eqz v7, :cond_4e
+    if-eqz v7, :cond_2
 
     iget-object v6, v6, Landroidx/media3/common/Format;->id:Ljava/lang/String;
 
@@ -239,41 +239,41 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4e
+    if-eqz v6, :cond_2
 
-    goto :goto_51
+    goto :goto_3
 
-    :cond_4e
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_2b
+    goto :goto_2
 
-    :cond_51
-    :goto_51
+    :cond_3
+    :goto_3
     return v2
 
-    :cond_52
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_55
+    :cond_5
     return v1
 .end method
 
 .method private getMediaPeriodPositionUsWithEndOfSourceHandling(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;J)J
-    .registers 8
+    .locals 4
 
     const-wide/high16 v0, -0x8000000000000000L
 
     cmp-long v2, p2, v0
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_0
 
     return-wide v0
 
     .line 970
-    :cond_7
+    :cond_0
     iget-object v2, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -292,26 +292,26 @@
 
     cmp-long p1, p2, v2
 
-    if-ltz p1, :cond_1a
+    if-ltz p1, :cond_1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     move-wide v0, p2
 
-    :goto_1b
+    :goto_0
     return-wide v0
 .end method
 
 .method private getStreamPositionUsWithNotYetStartedHandling(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;J)J
-    .registers 8
+    .locals 4
 
     .line 956
     iget-wide v0, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->lastStartPositionUs:J
 
     cmp-long v0, p2, v0
 
-    if-gez v0, :cond_15
+    if-gez v0, :cond_0
 
     .line 957
     iget-wide v0, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->lastStartPositionUs:J
@@ -335,7 +335,7 @@
     return-wide v0
 
     .line 962
-    :cond_15
+    :cond_0
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -348,20 +348,20 @@
 .end method
 
 .method private maybeNotifyDownstreamFormatChanged(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;I)V
-    .registers 5
+    .locals 2
 
     .line 1003
     iget-object v0, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->hasNotifiedDownstreamFormatChange:[Z
 
     aget-boolean v0, v0, p2
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->lastDownstreamFormatChangeData:[Landroidx/media3/exoplayer/source/MediaLoadData;
 
     aget-object v0, v0, p2
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 1005
     iget-object v0, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->hasNotifiedDownstreamFormatChange:[Z
@@ -387,14 +387,14 @@
     .line 1006
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->downstreamFormatChanged(Landroidx/media3/exoplayer/source/MediaLoadData;)V
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public add(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;)V
-    .registers 3
+    .locals 1
 
     .line 667
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -405,7 +405,7 @@
 .end method
 
 .method public canReuseMediaPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;J)Z
-    .registers 8
+    .locals 4
 
     .line 687
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -442,33 +442,33 @@
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_22
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_23
+    :goto_0
     return p1
 .end method
 
 .method public continueLoading(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 10
+    .locals 7
 
     .line 746
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->loadingPeriod:Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_0
 
     .line 747
     invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_47
+    if-nez v1, :cond_0
 
     .line 748
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->activeLoads:Ljava/util/Map;
@@ -481,12 +481,12 @@
 
     move-result-object v1
 
-    :goto_14
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -536,10 +536,10 @@
     .line 752
     invoke-virtual {v3, v4, v2}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadStarted(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 756
-    :cond_47
+    :cond_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->loadingPeriod:Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
 
     .line 757
@@ -575,7 +575,7 @@
 .end method
 
 .method public discardBuffer(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;JZ)V
-    .registers 6
+    .locals 1
 
     .line 796
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -596,7 +596,7 @@
 .end method
 
 .method public getAdjustedSeekPositionUs(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 7
+    .locals 2
 
     .line 787
     iget-object v0, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -629,7 +629,7 @@
 .end method
 
 .method public getBufferedPositionUs(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;)J
-    .registers 4
+    .locals 2
 
     .line 768
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -648,9 +648,9 @@
 .end method
 
 .method public getMediaPeriodForEvent(Landroidx/media3/exoplayer/source/MediaLoadData;)Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
-    .registers 10
+    .locals 8
 
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_2
 
     .line 699
     iget-wide v0, p1, Landroidx/media3/exoplayer/source/MediaLoadData;->mediaStartTimeMs:J
@@ -659,19 +659,19 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x0
 
     .line 700
-    :goto_e
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_45
+    if-ge v0, v1, :cond_2
 
     .line 701
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -685,12 +685,12 @@
     .line 702
     iget-boolean v2, v1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->isPrepared:Z
 
-    if-nez v2, :cond_23
+    if-nez v2, :cond_0
 
-    goto :goto_42
+    goto :goto_1
 
     .line 705
-    :cond_23
+    :cond_0
     iget-wide v2, p1, Landroidx/media3/exoplayer/source/MediaLoadData;->mediaStartTimeMs:J
 
     .line 707
@@ -718,28 +718,28 @@
 
     cmp-long v6, v2, v6
 
-    if-ltz v6, :cond_42
+    if-ltz v6, :cond_1
 
     cmp-long v2, v2, v4
 
-    if-gez v2, :cond_42
+    if-gez v2, :cond_1
 
     return-object v1
 
-    :cond_42
-    :goto_42
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_45
+    :cond_2
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public getNextLoadPositionUs(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;)J
-    .registers 4
+    .locals 2
 
     .line 773
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -758,7 +758,7 @@
 .end method
 
 .method public getStreamKeys(Ljava/util/List;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -782,7 +782,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 738
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -795,7 +795,7 @@
 .end method
 
 .method public isLoading(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;)Z
-    .registers 3
+    .locals 1
 
     .line 764
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->loadingPeriod:Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
@@ -804,7 +804,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
@@ -812,21 +812,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_13
+    :goto_0
     return p1
 .end method
 
 .method public isReady(I)Z
-    .registers 3
+    .locals 1
 
     .line 914
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/SampleStream;
@@ -847,7 +847,7 @@
 .end method
 
 .method public isUnused()Z
-    .registers 2
+    .locals 1
 
     .line 679
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -860,7 +860,7 @@
 .end method
 
 .method public maybeThrowError(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -884,7 +884,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -900,17 +900,17 @@
 .end method
 
 .method public onContinueLoadingRequested(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 948
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->loadingPeriod:Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     return-void
 
     .line 951
-    :cond_5
+    :cond_0
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -927,7 +927,7 @@
 .end method
 
 .method public bridge synthetic onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
-    .registers 2
+    .locals 0
 
     .line 635
     check-cast p1, Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -938,7 +938,7 @@
 .end method
 
 .method public onDownstreamFormatChanged(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 5
+    .locals 2
 
     .line 923
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->findMatchingStreamIndex(Landroidx/media3/exoplayer/source/MediaLoadData;)I
@@ -947,7 +947,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     .line 925
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->lastDownstreamFormatChangeData:[Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -961,12 +961,12 @@
 
     aput-boolean p2, p1, v0
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public onLoadFinished(Landroidx/media3/exoplayer/source/LoadEventInfo;)V
-    .registers 5
+    .locals 3
 
     .line 935
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->activeLoads:Ljava/util/Map;
@@ -983,7 +983,7 @@
 .end method
 
 .method public onLoadStarted(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 6
+    .locals 3
 
     .line 931
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->activeLoads:Ljava/util/Map;
@@ -1004,7 +1004,7 @@
 .end method
 
 .method public onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     const/4 p1, 0x1
 
@@ -1014,14 +1014,14 @@
     const/4 p1, 0x0
 
     .line 941
-    :goto_4
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge p1, v0, :cond_1a
+    if-ge p1, v0, :cond_0
 
     .line 942
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -1036,14 +1036,14 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;J)V
-    .registers 5
+    .locals 1
 
     .line 720
     iput-wide p2, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->lastStartPositionUs:J
@@ -1051,20 +1051,20 @@
     .line 721
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->hasStartedPreparing:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 722
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->isPrepared:Z
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     .line 723
     invoke-virtual {p1}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->onPrepared()V
 
-    :cond_d
+    :cond_0
     return-void
 
-    :cond_e
+    :cond_1
     const/4 v0, 0x1
 
     .line 727
@@ -1089,7 +1089,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;ILandroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 16
+    .locals 10
 
     or-int/lit8 v0, p5, 0x1
 
@@ -1130,28 +1130,28 @@
 
     const/4 v8, -0x4
 
-    if-ne v0, v8, :cond_25
+    if-ne v0, v8, :cond_0
 
     cmp-long v9, v4, v6
 
-    if-eqz v9, :cond_30
+    if-eqz v9, :cond_1
 
-    :cond_25
+    :cond_0
     const/4 v9, -0x3
 
-    if-ne v0, v9, :cond_3a
+    if-ne v0, v9, :cond_2
 
     cmp-long v2, v2, v6
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_2
 
     .line 890
     iget-boolean v2, p4, Landroidx/media3/decoder/DecoderInputBuffer;->waitingForKeys:Z
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_2
 
     .line 894
-    :cond_30
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->maybeNotifyDownstreamFormatChanged(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;I)V
 
     .line 895
@@ -1162,8 +1162,8 @@
 
     return v8
 
-    :cond_3a
-    if-ne v0, v8, :cond_4e
+    :cond_2
+    if-ne v0, v8, :cond_3
 
     .line 900
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->maybeNotifyDownstreamFormatChanged(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;I)V
@@ -1184,12 +1184,12 @@
     .line 902
     iput-wide v4, p4, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
-    :cond_4e
+    :cond_3
     return v0
 .end method
 
 .method public readDiscontinuity(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;)J
-    .registers 7
+    .locals 5
 
     .line 807
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
@@ -1206,12 +1206,12 @@
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     return-wide v1
 
     .line 810
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaPeriod;->readDiscontinuity()J
@@ -1220,12 +1220,12 @@
 
     cmp-long v0, v3, v1
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 813
-    :cond_1e
+    :cond_1
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -1234,12 +1234,12 @@
 
     move-result-wide v1
 
-    :goto_26
+    :goto_0
     return-wide v1
 .end method
 
 .method public reevaluateBuffer(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;J)V
-    .registers 5
+    .locals 1
 
     .line 802
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -1256,7 +1256,7 @@
 .end method
 
 .method public release(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     .line 683
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->actualMediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -1267,7 +1267,7 @@
 .end method
 
 .method public remove(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;)V
-    .registers 3
+    .locals 1
 
     .line 671
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->loadingPeriod:Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;
@@ -1276,7 +1276,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -1289,7 +1289,7 @@
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     .line 675
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->mediaPeriods:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -1298,7 +1298,7 @@
 .end method
 
 .method public seekToUs(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;J)J
-    .registers 6
+    .locals 2
 
     .line 778
     iget-object v0, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -1330,7 +1330,7 @@
 .end method
 
 .method public selectTracks(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 20
+    .locals 12
 
     move-object v0, p0
 
@@ -1358,7 +1358,7 @@
 
     const/4 v10, 0x0
 
-    if-eqz v2, :cond_83
+    if-eqz v2, :cond_5
 
     .line 827
     array-length v2, v3
@@ -1386,17 +1386,17 @@
 
     array-length v4, v2
 
-    if-nez v4, :cond_2f
+    if-nez v4, :cond_0
 
     .line 833
     array-length v2, v3
 
     new-array v2, v2, [Landroidx/media3/exoplayer/source/SampleStream;
 
-    goto :goto_36
+    goto :goto_0
 
     .line 834
-    :cond_2f
+    :cond_0
     array-length v4, v2
 
     invoke-static {v2, v4}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -1405,7 +1405,7 @@
 
     check-cast v2, [Landroidx/media3/exoplayer/source/SampleStream;
 
-    :goto_36
+    :goto_0
     move-object v11, v2
 
     .line 835
@@ -1450,15 +1450,15 @@
     iput-object v4, v0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->lastDownstreamFormatChangeData:[Landroidx/media3/exoplayer/source/MediaLoadData;
 
     .line 845
-    :goto_56
+    :goto_1
     array-length v4, v11
 
-    if-ge v9, v4, :cond_7a
+    if-ge v9, v4, :cond_4
 
     .line 846
     aget-object v4, v11, v9
 
-    if-nez v4, :cond_64
+    if-nez v4, :cond_1
 
     .line 847
     aput-object v10, p4, v9
@@ -1468,20 +1468,20 @@
 
     aput-object v10, v4, v9
 
-    goto :goto_77
+    goto :goto_2
 
     .line 849
-    :cond_64
+    :cond_1
     aget-object v4, p4, v9
 
-    if-eqz v4, :cond_6c
+    if-eqz v4, :cond_2
 
     aget-boolean v4, p5, v9
 
-    if-eqz v4, :cond_77
+    if-eqz v4, :cond_3
 
     .line 850
-    :cond_6c
+    :cond_2
     new-instance v4, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SampleStreamImpl;
 
     invoke-direct {v4, p1, v9}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SampleStreamImpl;-><init>(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;I)V
@@ -1493,14 +1493,14 @@
 
     aput-object v10, v4, v9
 
-    :cond_77
-    :goto_77
+    :cond_3
+    :goto_2
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_56
+    goto :goto_1
 
     .line 854
-    :cond_7a
+    :cond_4
     iget-object v1, v1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget-object v4, v0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -1511,41 +1511,41 @@
 
     return-wide v1
 
-    :cond_83
+    :cond_5
     move v2, v9
 
     .line 859
-    :goto_84
+    :goto_3
     array-length v6, v3
 
-    if-ge v2, v6, :cond_b9
+    if-ge v2, v6, :cond_b
 
     .line 860
     aget-object v6, v3, v2
 
     const/4 v7, 0x1
 
-    if-eqz v6, :cond_b2
+    if-eqz v6, :cond_9
 
     .line 861
     aget-boolean v8, p3, v2
 
-    if-eqz v8, :cond_96
+    if-eqz v8, :cond_7
 
     aget-object v8, p4, v2
 
-    if-nez v8, :cond_95
+    if-nez v8, :cond_6
 
-    goto :goto_96
+    goto :goto_4
 
-    :cond_95
+    :cond_6
     move v7, v9
 
-    :cond_96
-    :goto_96
+    :cond_7
+    :goto_4
     aput-boolean v7, p5, v2
 
-    if-eqz v7, :cond_b6
+    if-eqz v7, :cond_a
 
     .line 864
     iget-object v7, v0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->trackSelections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -1556,45 +1556,45 @@
 
     move-result v6
 
-    if-eqz v6, :cond_aa
+    if-eqz v6, :cond_8
 
     .line 865
     new-instance v6, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SampleStreamImpl;
 
     invoke-direct {v6, p1, v2}, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SampleStreamImpl;-><init>(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;I)V
 
-    goto :goto_af
+    goto :goto_5
 
     .line 866
-    :cond_aa
+    :cond_8
     new-instance v6, Landroidx/media3/exoplayer/source/EmptySampleStream;
 
     invoke-direct {v6}, Landroidx/media3/exoplayer/source/EmptySampleStream;-><init>()V
 
-    :goto_af
+    :goto_5
     aput-object v6, p4, v2
 
-    goto :goto_b6
+    goto :goto_6
 
     .line 869
-    :cond_b2
+    :cond_9
     aput-object v10, p4, v2
 
     .line 870
     aput-boolean v7, p5, v2
 
-    :cond_b6
-    :goto_b6
+    :cond_a
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_84
+    goto :goto_3
 
-    :cond_b9
+    :cond_b
     return-wide v4
 .end method
 
 .method public skipData(Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;IJ)I
-    .registers 6
+    .locals 1
 
     .line 908
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$MediaPeriodImpl;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -1625,7 +1625,7 @@
 .end method
 
 .method public updateAdPlaybackState(Landroidx/media3/common/AdPlaybackState;)V
-    .registers 2
+    .locals 0
 
     .line 663
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/ServerSideAdInsertionMediaSource$SharedMediaPeriod;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public static make(Landroid/content/Context;Landroid/net/Uri;)Landroidx/core/provider/FontProvider$ContentQueryWrapper;
-    .registers 3
+    .locals 1
 
     .line 244
     new-instance v0, Landroidx/core/provider/FontProvider$ContentQueryWrapperApi24Impl;

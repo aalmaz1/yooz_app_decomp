@@ -50,7 +50,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;Landroid/net/Uri;Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/common/util/ConditionVariable;)V
-    .registers 7
+    .locals 0
 
     .line 1019
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;)Landroidx/media3/datasource/StatsDataSource;
-    .registers 1
+    .locals 0
 
     .line 995
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;)J
-    .registers 3
+    .locals 2
 
     .line 995
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadTaskId:J
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;)Landroidx/media3/datasource/DataSpec;
-    .registers 1
+    .locals 0
 
     .line 995
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;)J
-    .registers 3
+    .locals 2
 
     .line 995
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->seekTimeUs:J
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;JJ)V
-    .registers 5
+    .locals 0
 
     .line 995
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->setLoadPosition(JJ)V
@@ -153,7 +153,7 @@
 .end method
 
 .method private buildDataSpec(J)Landroidx/media3/datasource/DataSpec;
-    .registers 5
+    .locals 2
 
     .line 1124
     new-instance v0, Landroidx/media3/datasource/DataSpec$Builder;
@@ -208,7 +208,7 @@
 .end method
 
 .method private setLoadPosition(JJ)V
-    .registers 6
+    .locals 1
 
     .line 1135
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -234,7 +234,7 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -245,7 +245,7 @@
 .end method
 
 .method public load()V
-    .registers 18
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -258,20 +258,20 @@
 
     move v2, v0
 
-    :goto_4
-    if-nez v2, :cond_13a
+    :goto_0
+    if-nez v2, :cond_c
 
     .line 1041
     iget-boolean v3, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadCanceled:Z
 
-    if-nez v3, :cond_13a
+    if-nez v3, :cond_c
 
     const/4 v3, 0x1
 
     const-wide/16 v4, -0x1
 
     .line 1043
-    :try_start_d
+    :try_start_0
     iget-object v6, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Landroidx/media3/extractor/PositionHolder;
 
     iget-wide v13, v6, Landroidx/media3/extractor/PositionHolder;->position:J
@@ -292,17 +292,17 @@
 
     .line 1046
     iget-boolean v8, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadCanceled:Z
-    :try_end_1f
-    .catchall {:try_start_d .. :try_end_1f} :catchall_11b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v8, :cond_3f
+    if-eqz v8, :cond_2
 
-    if-ne v2, v3, :cond_24
+    if-ne v2, v3, :cond_0
 
-    goto :goto_38
+    goto :goto_1
 
     .line 1093
-    :cond_24
+    :cond_0
     iget-object v0, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;->getCurrentInputPosition()J
@@ -311,7 +311,7 @@
 
     cmp-long v0, v2, v4
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 1094
     iget-object v0, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -325,28 +325,28 @@
     iput-wide v2, v0, Landroidx/media3/extractor/PositionHolder;->position:J
 
     .line 1096
-    :cond_38
-    :goto_38
+    :cond_1
+    :goto_1
     iget-object v0, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     invoke-static {v0}, Landroidx/media3/datasource/DataSourceUtil;->closeQuietly(Landroidx/media3/datasource/DataSource;)V
 
-    goto/16 :goto_13a
+    goto/16 :goto_4
 
-    :cond_3f
+    :cond_2
     cmp-long v8, v6, v4
 
-    if-eqz v8, :cond_49
+    if-eqz v8, :cond_3
 
     add-long/2addr v6, v13
 
     .line 1051
-    :try_start_44
+    :try_start_1
     iget-object v8, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
 
     invoke-static {v8}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->access$700(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)V
 
-    :cond_49
+    :cond_3
     move-wide v15, v6
 
     .line 1053
@@ -374,7 +374,7 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_8c
+    if-eqz v7, :cond_4
 
     iget-object v7, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
 
@@ -386,7 +386,7 @@
 
     const/4 v8, -0x1
 
-    if-eq v7, v8, :cond_8c
+    if-eq v7, v8, :cond_4
 
     .line 1056
     new-instance v6, Landroidx/media3/exoplayer/source/IcyDataSource;
@@ -419,7 +419,7 @@
 
     invoke-interface {v7, v8}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    :cond_8c
+    :cond_4
     move-object v8, v6
 
     .line 1060
@@ -454,7 +454,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_ad
+    if-eqz v6, :cond_5
 
     .line 1069
     iget-object v6, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
@@ -462,10 +462,10 @@
     invoke-interface {v6}, Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;->disableSeekingOnMp3Streams()V
 
     .line 1072
-    :cond_ad
+    :cond_5
     iget-boolean v6, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->pendingExtractorSeek:Z
 
-    if-eqz v6, :cond_ba
+    if-eqz v6, :cond_6
 
     .line 1073
     iget-object v6, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
@@ -477,31 +477,31 @@
     .line 1074
     iput-boolean v0, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->pendingExtractorSeek:Z
 
-    :cond_ba
-    :goto_ba
+    :cond_6
+    :goto_2
     move-wide v13, v4
 
-    :cond_bb
-    if-nez v2, :cond_fa
+    :cond_7
+    if-nez v2, :cond_8
 
     .line 1076
     iget-boolean v4, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadCanceled:Z
-    :try_end_bf
-    .catchall {:try_start_44 .. :try_end_bf} :catchall_11b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez v4, :cond_fa
+    if-nez v4, :cond_8
 
     .line 1078
-    :try_start_c1
+    :try_start_2
     iget-object v4, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadCondition:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {v4}, Landroidx/media3/common/util/ConditionVariable;->block()V
-    :try_end_c6
-    .catch Ljava/lang/InterruptedException; {:try_start_c1 .. :try_end_c6} :catch_f4
-    .catchall {:try_start_c1 .. :try_end_c6} :catchall_11b
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 1082
-    :try_start_c6
+    :try_start_3
     iget-object v4, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
 
     iget-object v5, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -528,7 +528,7 @@
 
     cmp-long v6, v4, v6
 
-    if-lez v6, :cond_bb
+    if-lez v6, :cond_7
 
     .line 1086
     iget-object v6, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->loadCondition:Landroidx/media3/common/util/ConditionVariable;
@@ -550,27 +550,27 @@
 
     invoke-virtual {v6, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_ba
+    goto :goto_2
 
     .line 1080
-    :catch_f4
+    :catch_0
     new-instance v0, Ljava/io/InterruptedIOException;
 
     invoke-direct {v0}, Ljava/io/InterruptedIOException;-><init>()V
 
     throw v0
-    :try_end_fa
-    .catchall {:try_start_c6 .. :try_end_fa} :catchall_11b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    :cond_fa
-    if-ne v2, v3, :cond_fe
+    :cond_8
+    if-ne v2, v3, :cond_9
 
     move v2, v0
 
-    goto :goto_114
+    goto :goto_3
 
     .line 1093
-    :cond_fe
+    :cond_9
     iget-object v3, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
 
     invoke-interface {v3}, Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;->getCurrentInputPosition()J
@@ -581,7 +581,7 @@
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_114
+    if-eqz v3, :cond_a
 
     .line 1094
     iget-object v3, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -595,18 +595,18 @@
     iput-wide v4, v3, Landroidx/media3/extractor/PositionHolder;->position:J
 
     .line 1096
-    :cond_114
-    :goto_114
+    :cond_a
+    :goto_3
     iget-object v3, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     invoke-static {v3}, Landroidx/media3/datasource/DataSourceUtil;->closeQuietly(Landroidx/media3/datasource/DataSource;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_0
 
-    :catchall_11b
+    :catchall_0
     move-exception v0
 
-    if-eq v2, v3, :cond_134
+    if-eq v2, v3, :cond_b
 
     .line 1093
     iget-object v2, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
@@ -619,7 +619,7 @@
 
     cmp-long v2, v2, v4
 
-    if-eqz v2, :cond_134
+    if-eqz v2, :cond_b
 
     .line 1094
     iget-object v2, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -633,7 +633,7 @@
     iput-wide v3, v2, Landroidx/media3/extractor/PositionHolder;->position:J
 
     .line 1096
-    :cond_134
+    :cond_b
     iget-object v2, v1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     invoke-static {v2}, Landroidx/media3/datasource/DataSourceUtil;->closeQuietly(Landroidx/media3/datasource/DataSource;)V
@@ -641,28 +641,28 @@
     .line 1097
     throw v0
 
-    :cond_13a
-    :goto_13a
+    :cond_c
+    :goto_4
     return-void
 .end method
 
 .method public onIcyMetadata(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 13
+    .locals 11
 
     .line 1108
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->seenIcyMetadata:Z
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 1109
     iget-wide v2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->seekTimeUs:J
 
-    goto :goto_14
+    goto :goto_0
 
     .line 1110
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
 
     invoke-static {v0, v1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->access$1300(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;Z)J
@@ -675,7 +675,7 @@
 
     move-result-wide v2
 
-    :goto_14
+    :goto_0
     move-wide v5, v2
 
     .line 1111

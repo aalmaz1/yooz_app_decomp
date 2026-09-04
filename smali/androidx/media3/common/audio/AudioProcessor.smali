@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public getDurationAfterProcessorApplied(J)J
-    .registers 3
+    .locals 0
 
     return-wide p1
 .end method

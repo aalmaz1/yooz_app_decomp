@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentActivity;)V
-    .registers 2
+    .locals 0
 
     .line 140
     iput-object p1, p0, Landroidx/fragment/app/FragmentActivity$2;->this$0:Landroidx/fragment/app/FragmentActivity;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onContextAvailable(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 143
     iget-object p1, p0, Landroidx/fragment/app/FragmentActivity$2;->this$0:Landroidx/fragment/app/FragmentActivity;
@@ -61,7 +61,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 148
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -75,6 +75,6 @@
 
     invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V
 
-    :cond_21
+    :cond_0
     return-void
 .end method

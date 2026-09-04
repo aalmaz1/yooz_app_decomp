@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method disable()V
-    .registers 3
+    .locals 2
 
     .line 225
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;->mActive:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -93,7 +93,7 @@
 .end method
 
 .method synthetic lambda$onChanged$0$androidx-camera-core-impl-LiveDataObservable$LiveDataObserverAdapter(Landroidx/camera/core/impl/LiveDataObservable$Result;)V
-    .registers 3
+    .locals 1
 
     .line 231
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;->mActive:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -102,17 +102,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 236
-    :cond_9
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/core/impl/LiveDataObservable$Result;->completedSuccessfully()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 237
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;->mObserver:Landroidx/camera/core/impl/Observable$Observer;
@@ -123,10 +123,10 @@
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/Observable$Observer;->onNewData(Ljava/lang/Object;)V
 
-    goto :goto_29
+    goto :goto_0
 
     .line 239
-    :cond_19
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/impl/LiveDataObservable$Result;->getError()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -142,12 +142,12 @@
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/Observable$Observer;->onError(Ljava/lang/Throwable;)V
 
-    :goto_29
+    :goto_0
     return-void
 .end method
 
 .method public onChanged(Landroidx/camera/core/impl/LiveDataObservable$Result;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,7 +169,7 @@
 .end method
 
 .method public bridge synthetic onChanged(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 212
     check-cast p1, Landroidx/camera/core/impl/LiveDataObservable$Result;

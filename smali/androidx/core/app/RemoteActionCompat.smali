@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/core/app/RemoteActionCompat;)V
-    .registers 3
+    .locals 1
 
     .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/core/graphics/drawable/IconCompat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
-    .registers 5
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,7 +135,7 @@
 .end method
 
 .method public static createFromRemoteAction(Landroid/app/RemoteAction;)Landroidx/core/app/RemoteActionCompat;
-    .registers 6
+    .locals 5
 
     .line 119
     invoke-static {p0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -190,7 +190,7 @@
 
 # virtual methods
 .method public getActionIntent()Landroid/app/PendingIntent;
-    .registers 2
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mActionIntent:Landroid/app/PendingIntent;
@@ -199,7 +199,7 @@
 .end method
 
 .method public getContentDescription()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 179
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mContentDescription:Ljava/lang/CharSequence;
@@ -208,7 +208,7 @@
 .end method
 
 .method public getIcon()Landroidx/core/graphics/drawable/IconCompat;
-    .registers 2
+    .locals 1
 
     .line 165
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mIcon:Landroidx/core/graphics/drawable/IconCompat;
@@ -217,7 +217,7 @@
 .end method
 
 .method public getTitle()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mTitle:Ljava/lang/CharSequence;
@@ -226,7 +226,7 @@
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 143
     iget-boolean v0, p0, Landroidx/core/app/RemoteActionCompat;->mEnabled:Z
@@ -235,7 +235,7 @@
 .end method
 
 .method public setEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 136
     iput-boolean p1, p0, Landroidx/core/app/RemoteActionCompat;->mEnabled:Z
@@ -244,7 +244,7 @@
 .end method
 
 .method public setShouldShowIcon(Z)V
-    .registers 2
+    .locals 0
 
     .line 150
     iput-boolean p1, p0, Landroidx/core/app/RemoteActionCompat;->mShouldShowIcon:Z
@@ -253,7 +253,7 @@
 .end method
 
 .method public shouldShowIcon()Z
-    .registers 2
+    .locals 1
 
     .line 158
     iget-boolean v0, p0, Landroidx/core/app/RemoteActionCompat;->mShouldShowIcon:Z
@@ -262,7 +262,7 @@
 .end method
 
 .method public toRemoteAction()Landroid/app/RemoteAction;
-    .registers 5
+    .locals 4
 
     .line 198
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mIcon:Landroidx/core/graphics/drawable/IconCompat;

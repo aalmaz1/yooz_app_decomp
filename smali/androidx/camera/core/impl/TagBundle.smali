@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 42
     new-instance v0, Landroidx/camera/core/impl/TagBundle;
@@ -43,7 +43,7 @@
 .end method
 
 .method protected constructor <init>(Ljava/util/Map;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,7 +64,7 @@
 .end method
 
 .method public static create(Landroid/util/Pair;)Landroidx/camera/core/impl/TagBundle;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,7 +99,7 @@
 .end method
 
 .method public static emptyBundle()Landroidx/camera/core/impl/TagBundle;
-    .registers 1
+    .locals 1
 
     .line 54
     sget-object v0, Landroidx/camera/core/impl/TagBundle;->EMPTY_TAGBUNDLE:Landroidx/camera/core/impl/TagBundle;
@@ -108,7 +108,7 @@
 .end method
 
 .method public static from(Landroidx/camera/core/impl/TagBundle;)Landroidx/camera/core/impl/TagBundle;
-    .registers 5
+    .locals 4
 
     .line 79
     new-instance v0, Landroid/util/ArrayMap;
@@ -124,12 +124,12 @@
 
     move-result-object v1
 
-    :goto_d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -144,10 +144,10 @@
 
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_0
 
     .line 84
-    :cond_21
+    :cond_0
     new-instance p0, Landroidx/camera/core/impl/TagBundle;
 
     invoke-direct {p0, v0}, Landroidx/camera/core/impl/TagBundle;-><init>(Ljava/util/Map;)V
@@ -158,7 +158,7 @@
 
 # virtual methods
 .method public getTag(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 95
     iget-object v0, p0, Landroidx/camera/core/impl/TagBundle;->mTagMap:Ljava/util/Map;
@@ -171,7 +171,7 @@
 .end method
 
 .method public listKeys()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -192,7 +192,7 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "android.hardware.camera2.CaptureRequest.setTag.CX"
 

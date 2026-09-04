@@ -112,7 +112,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -178,7 +178,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -190,7 +190,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -216,7 +216,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .locals 10
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -229,11 +229,11 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_2
 
-    if-eq v1, v3, :cond_24
+    if-eq v1, v3, :cond_1
 
-    if-ne v1, v2, :cond_1c
+    if-ne v1, v2, :cond_0
 
     iget-object v1, p0, Landroidx/datastore/core/DataMigrationInitializer$Companion$runMigrations$2;->L$1:Ljava/lang/Object;
 
@@ -247,10 +247,10 @@
 
     move-object v7, p0
 
-    goto/16 :goto_8e
+    goto/16 :goto_2
 
     .line 43
-    :cond_1c
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -260,7 +260,7 @@
     throw p1
 
     .line 42
-    :cond_24
+    :cond_1
     iget-object v1, p0, Landroidx/datastore/core/DataMigrationInitializer$Companion$runMigrations$2;->L$3:Ljava/lang/Object;
 
     iget-object v4, p0, Landroidx/datastore/core/DataMigrationInitializer$Companion$runMigrations$2;->L$2:Ljava/lang/Object;
@@ -285,9 +285,9 @@
 
     move-object v4, v9
 
-    goto :goto_6c
+    goto :goto_1
 
-    :cond_3a
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/datastore/core/DataMigrationInitializer$Companion$runMigrations$2;->L$0:Ljava/lang/Object;
@@ -306,12 +306,12 @@
 
     move-object v5, p0
 
-    :goto_4a
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_93
+    if-eqz v6, :cond_6
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -334,11 +334,11 @@
 
     move-result-object v7
 
-    if-ne v7, v0, :cond_67
+    if-ne v7, v0, :cond_3
 
     return-object v0
 
-    :cond_67
+    :cond_3
     move-object v9, v1
 
     move-object v1, p1
@@ -349,14 +349,14 @@
 
     move-object v5, v9
 
-    :goto_6c
+    :goto_1
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-eqz p1, :cond_90
+    if-eqz p1, :cond_4
 
     .line 45
     new-instance p1, Landroidx/datastore/core/DataMigrationInitializer$Companion$runMigrations$2$1$1;
@@ -382,23 +382,23 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_91
+    if-ne p1, v0, :cond_5
 
     return-object v0
 
-    :goto_8e
+    :goto_2
     move-object v5, v7
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_90
+    :cond_4
     move-object p1, v1
 
-    :cond_91
+    :cond_5
     move-object v1, v5
 
-    goto :goto_8e
+    goto :goto_2
 
-    :cond_93
+    :cond_6
     return-object p1
 .end method

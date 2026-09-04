@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/SpecialEffectsController$Operation;)V
-    .registers 2
+    .locals 0
 
     .line 527
     iput-object p1, p0, Landroidx/fragment/app/SpecialEffectsController$Operation$1;->this$0:Landroidx/fragment/app/SpecialEffectsController$Operation;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCancel()V
-    .registers 2
+    .locals 1
 
     .line 530
     iget-object v0, p0, Landroidx/fragment/app/SpecialEffectsController$Operation$1;->this$0:Landroidx/fragment/app/SpecialEffectsController$Operation;

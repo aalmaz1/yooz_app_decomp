@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static final toHalf(D)Landroid/util/Half;
-    .registers 2
+    .locals 0
 
     double-to-float p0, p0
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public static final toHalf(F)Landroid/util/Half;
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-static {p0}, Landroid/util/Half;->valueOf(F)Landroid/util/Half;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static final toHalf(Ljava/lang/String;)Landroid/util/Half;
-    .registers 1
+    .locals 0
 
     .line 59
     invoke-static {p0}, Landroid/util/Half;->valueOf(Ljava/lang/String;)Landroid/util/Half;
@@ -68,7 +68,7 @@
 .end method
 
 .method public static final toHalf(S)Landroid/util/Half;
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-static {p0}, Landroid/util/Half;->valueOf(S)Landroid/util/Half;

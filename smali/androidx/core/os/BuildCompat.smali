@@ -69,7 +69,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     new-instance v0, Landroidx/core/os/BuildCompat;
 
@@ -84,7 +84,7 @@
 
     const/16 v2, 0x1e
 
-    if-lt v0, v2, :cond_15
+    if-lt v0, v2, :cond_0
 
     .line 289
     sget-object v0, Landroidx/core/os/BuildCompat$Api30Impl;->INSTANCE:Landroidx/core/os/BuildCompat$Api30Impl;
@@ -93,19 +93,19 @@
 
     move-result v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v0, v1
 
     .line 288
-    :goto_16
+    :goto_0
     sput v0, Landroidx/core/os/BuildCompat;->R_EXTENSION_INT:I
 
     .line 303
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v0, v2, :cond_25
+    if-lt v0, v2, :cond_1
 
     .line 304
     sget-object v0, Landroidx/core/os/BuildCompat$Api30Impl;->INSTANCE:Landroidx/core/os/BuildCompat$Api30Impl;
@@ -116,19 +116,19 @@
 
     move-result v0
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
+    :cond_1
     move v0, v1
 
     .line 303
-    :goto_26
+    :goto_1
     sput v0, Landroidx/core/os/BuildCompat;->S_EXTENSION_INT:I
 
     .line 319
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v0, v2, :cond_35
+    if-lt v0, v2, :cond_2
 
     .line 320
     sget-object v0, Landroidx/core/os/BuildCompat$Api30Impl;->INSTANCE:Landroidx/core/os/BuildCompat$Api30Impl;
@@ -139,19 +139,19 @@
 
     move-result v0
 
-    goto :goto_36
+    goto :goto_2
 
-    :cond_35
+    :cond_2
     move v0, v1
 
     .line 319
-    :goto_36
+    :goto_2
     sput v0, Landroidx/core/os/BuildCompat;->T_EXTENSION_INT:I
 
     .line 335
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v0, v2, :cond_45
+    if-lt v0, v2, :cond_3
 
     .line 336
     sget-object v0, Landroidx/core/os/BuildCompat$Api30Impl;->INSTANCE:Landroidx/core/os/BuildCompat$Api30Impl;
@@ -163,14 +163,14 @@
     move-result v1
 
     .line 335
-    :cond_45
+    :cond_3
     sput v1, Landroidx/core/os/BuildCompat;->AD_SERVICES_EXTENSION_INT:I
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -179,7 +179,7 @@
 .end method
 
 .method public static final isAtLeastN()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Android N is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 24`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -197,7 +197,7 @@
 .end method
 
 .method public static final isAtLeastNMR1()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Android N MR1 is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 25`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -215,7 +215,7 @@
 .end method
 
 .method public static final isAtLeastO()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Android O is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead use `Build.VERSION.SDK_INT >= 26`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -233,7 +233,7 @@
 .end method
 
 .method public static final isAtLeastOMR1()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Android O MR1 is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 27`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -251,7 +251,7 @@
 .end method
 
 .method public static final isAtLeastP()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Android P is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 28`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -269,7 +269,7 @@
 .end method
 
 .method public static final isAtLeastPreReleaseCodename(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 5
+    .locals 3
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -290,12 +290,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 53
-    :cond_14
+    :cond_0
     sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -318,16 +318,16 @@
 
     move-result p0
 
-    if-ltz p0, :cond_2f
+    if-ltz p0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_2f
+    :cond_1
     return v1
 .end method
 
 .method public static final isAtLeastQ()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         message = "Android Q is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 29`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -344,21 +344,21 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public static final isAtLeastR()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         message = "Android R is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 30`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -375,21 +375,21 @@
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public static final isAtLeastS()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         message = "Android S is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 31`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -406,13 +406,13 @@
 
     const/16 v1, 0x1f
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_1
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_1c
+    if-lt v0, v1, :cond_0
 
     .line 178
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -428,25 +428,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1f
+    :goto_1
     return v0
 .end method
 
 .method public static final isAtLeastSv2()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         message = "Android Sv2 is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 32`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -463,13 +463,13 @@
 
     const/16 v1, 0x20
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_1
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_1c
+    if-lt v0, v1, :cond_0
 
     .line 198
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -485,25 +485,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1f
+    :goto_1
     return v0
 .end method
 
 .method public static final isAtLeastT()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         message = "Android Tiramisu is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 33`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -520,13 +520,13 @@
 
     const/16 v1, 0x21
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_1
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x20
 
-    if-lt v0, v1, :cond_1c
+    if-lt v0, v1, :cond_0
 
     .line 221
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -542,25 +542,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1f
+    :goto_1
     return v0
 .end method
 
 .method public static final isAtLeastU()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         message = "Android UpsideDownCase is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 34`."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -577,13 +577,13 @@
 
     const/16 v1, 0x22
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_1
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_1c
+    if-lt v0, v1, :cond_0
 
     .line 244
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -599,25 +599,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1f
+    :goto_1
     return v0
 .end method
 
 .method public static final isAtLeastV()Z
-    .registers 2
+    .locals 2
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -626,7 +626,7 @@
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_17
+    if-lt v0, v1, :cond_0
 
     .line 261
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
@@ -642,15 +642,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     return v0
 .end method

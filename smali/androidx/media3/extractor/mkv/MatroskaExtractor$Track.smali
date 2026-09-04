@@ -132,7 +132,7 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 2059
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -268,7 +268,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;)V
-    .registers 1
+    .locals 0
 
     .line 2059
     invoke-direct {p0}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->assertOutputInitialized()V
@@ -277,7 +277,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;)I
-    .registers 1
+    .locals 0
 
     .line 2059
     iget p0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->blockAddIdType:I
@@ -286,7 +286,7 @@
 .end method
 
 .method static synthetic access$202(Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;I)I
-    .registers 2
+    .locals 0
 
     .line 2059
     iput p1, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->blockAddIdType:I
@@ -295,7 +295,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 2059
     iput-object p1, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->language:Ljava/lang/String;
@@ -304,7 +304,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;Z)Z
-    .registers 2
+    .locals 0
 
     .line 2059
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->samplesHaveSupplementalData(Z)Z
@@ -315,7 +315,7 @@
 .end method
 
 .method private assertOutputInitialized()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "output"
@@ -331,7 +331,7 @@
 .end method
 
 .method private getCodecPrivate(Ljava/lang/String;)[B
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -347,12 +347,12 @@
     .line 2648
     iget-object v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecPrivate:[B
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 2649
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Missing CodecPrivate for codec "
@@ -377,7 +377,7 @@
 .end method
 
 .method private getHdrStaticInfo()[B
-    .registers 6
+    .locals 5
 
     .line 2479
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->primaryRChromaticityX:F
@@ -386,65 +386,65 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->primaryRChromaticityY:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->primaryGChromaticityX:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->primaryGChromaticityY:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->primaryBChromaticityX:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->primaryBChromaticityY:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->whitePointChromaticityX:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->whitePointChromaticityY:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->maxMasteringLuminance:F
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->minMasteringLuminance:F
 
     cmpl-float v0, v0, v1
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_0
 
-    goto :goto_bb
+    goto :goto_0
 
-    :cond_3f
+    :cond_0
     const/16 v0, 0x19
 
     new-array v0, v0, [B
@@ -611,15 +611,15 @@
 
     return-object v0
 
-    :cond_bb
-    :goto_bb
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method private static parseFourCcPrivate(Landroidx/media3/common/util/ParsableByteArray;)Landroid/util/Pair;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -643,7 +643,7 @@
     const/4 v1, 0x0
 
     .line 2521
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 2522
@@ -655,7 +655,7 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 2524
     new-instance p0, Landroid/util/Pair;
@@ -666,12 +666,12 @@
 
     return-object p0
 
-    :cond_1a
+    :cond_0
     const-wide/32 v4, 0x33363248
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     .line 2526
     new-instance p0, Landroid/util/Pair;
@@ -682,12 +682,12 @@
 
     return-object p0
 
-    :cond_2a
+    :cond_1
     const-wide/32 v4, 0x31435657
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_75
+    if-nez v0, :cond_4
 
     .line 2530
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -702,23 +702,23 @@
     move-result-object p0
 
     .line 2532
-    :goto_3b
+    :goto_0
     array-length v2, p0
 
     add-int/lit8 v2, v2, -0x4
 
-    if-ge v0, v2, :cond_6e
+    if-ge v0, v2, :cond_3
 
     .line 2533
     aget-byte v2, p0, v0
 
-    if-nez v2, :cond_6b
+    if-nez v2, :cond_2
 
     add-int/lit8 v2, v0, 0x1
 
     aget-byte v2, p0, v2
 
-    if-nez v2, :cond_6b
+    if-nez v2, :cond_2
 
     add-int/lit8 v2, v0, 0x2
 
@@ -726,7 +726,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_6b
+    if-ne v2, v3, :cond_2
 
     add-int/lit8 v2, v0, 0x3
 
@@ -734,7 +734,7 @@
 
     const/16 v3, 0xf
 
-    if-ne v2, v3, :cond_6b
+    if-ne v2, v3, :cond_2
 
     .line 2538
     array-length v2, p0
@@ -756,12 +756,12 @@
 
     return-object v0
 
-    :cond_6b
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_6e
+    :cond_3
     const-string p0, "Failed to find FourCC VC1 initialization data"
 
     .line 2542
@@ -770,10 +770,10 @@
     move-result-object p0
 
     throw p0
-    :try_end_75
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_3 .. :try_end_75} :catch_85
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_75
+    :cond_4
     const-string p0, "MatroskaExtractor"
 
     const-string v0, "Unknown FourCC. Setting mimeType to video/x-unknown"
@@ -790,7 +790,7 @@
 
     return-object p0
 
-    :catch_85
+    :catch_0
     const-string p0, "Error parsing FourCC private data"
 
     .line 2546
@@ -802,7 +802,7 @@
 .end method
 
 .method private static parseMsAcmCodecPrivate(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -817,16 +817,16 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     return v1
 
-    :cond_8
+    :cond_0
     const v2, 0xfffe
 
     const/4 v3, 0x0
 
-    if-ne v0, v2, :cond_36
+    if-ne v0, v2, :cond_2
 
     const/16 v0, 0x18
 
@@ -848,7 +848,7 @@
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_1
 
     .line 2624
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
@@ -862,25 +862,25 @@
     invoke-virtual {p0}, Ljava/util/UUID;->getLeastSignificantBits()J
 
     move-result-wide v6
-    :try_end_2f
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_2f} :catch_37
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     cmp-long p0, v4, v6
 
-    if-nez p0, :cond_34
+    if-nez p0, :cond_1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_1
     move v1, v3
 
-    :goto_35
+    :goto_0
     return v1
 
-    :cond_36
+    :cond_2
     return v3
 
-    :catch_37
+    :catch_0
     const-string p0, "Error parsing MS/ACM codec private"
 
     const/4 v0, 0x0
@@ -894,7 +894,7 @@
 .end method
 
 .method private static parseVorbisCodecPrivate([B)Ljava/util/List;
-    .registers 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -916,12 +916,12 @@
     const/4 v2, 0x0
 
     .line 2563
-    :try_start_4
+    :try_start_0
     aget-byte v3, p0, v2
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_64
+    if-ne v3, v4, :cond_5
 
     const/4 v3, 0x1
 
@@ -930,22 +930,22 @@
     move v5, v3
 
     .line 2569
-    :goto_c
+    :goto_0
     aget-byte v7, p0, v5
 
     and-int/lit16 v8, v7, 0xff
 
     const/16 v9, 0xff
 
-    if-ne v8, v9, :cond_19
+    if-ne v8, v9, :cond_0
 
     add-int/lit16 v6, v6, 0xff
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     add-int/2addr v5, v3
 
     and-int/2addr v7, v9
@@ -955,20 +955,20 @@
     move v7, v2
 
     .line 2576
-    :goto_1d
+    :goto_1
     aget-byte v8, p0, v5
 
     and-int/lit16 v10, v8, 0xff
 
-    if-ne v10, v9, :cond_28
+    if-ne v10, v9, :cond_1
 
     add-int/lit16 v7, v7, 0xff
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_28
+    :cond_1
     add-int/2addr v5, v3
 
     and-int/2addr v8, v9
@@ -978,7 +978,7 @@
     .line 2582
     aget-byte v8, p0, v5
 
-    if-ne v8, v3, :cond_5f
+    if-ne v8, v3, :cond_4
 
     .line 2586
     new-array v3, v6, [B
@@ -993,7 +993,7 @@
 
     const/4 v8, 0x3
 
-    if-ne v6, v8, :cond_5a
+    if-ne v6, v8, :cond_3
 
     add-int/2addr v5, v7
 
@@ -1002,7 +1002,7 @@
 
     const/4 v7, 0x5
 
-    if-ne v6, v7, :cond_55
+    if-ne v6, v7, :cond_2
 
     .line 2598
     array-length v6, p0
@@ -1032,7 +1032,7 @@
     return-object p0
 
     .line 2595
-    :cond_55
+    :cond_2
     invoke-static {v0, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
@@ -1040,7 +1040,7 @@
     throw p0
 
     .line 2590
-    :cond_5a
+    :cond_3
     invoke-static {v0, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
@@ -1048,7 +1048,7 @@
     throw p0
 
     .line 2583
-    :cond_5f
+    :cond_4
     invoke-static {v0, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
@@ -1056,17 +1056,17 @@
     throw p0
 
     .line 2564
-    :cond_64
+    :cond_5
     invoke-static {v0, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
 
     throw p0
-    :try_end_69
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_4 .. :try_end_69} :catch_69
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2605
-    :catch_69
+    :catch_0
     invoke-static {v0, v1}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
@@ -1075,7 +1075,7 @@
 .end method
 
 .method private samplesHaveSupplementalData(Z)Z
-    .registers 4
+    .locals 2
 
     const-string v0, "A_OPUS"
 
@@ -1086,31 +1086,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return p1
 
     .line 2472
-    :cond_b
+    :cond_0
     iget p1, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->maxBlockAdditionId:I
 
-    if-lez p1, :cond_11
+    if-lez p1, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_12
+    :goto_0
     return p1
 .end method
 
 
 # virtual methods
 .method public initializeOutput(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 23
+    .locals 20
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1152,540 +1152,540 @@
 
     const/4 v10, 0x3
 
-    sparse-switch v2, :sswitch_data_5b6
+    sparse-switch v2, :sswitch_data_0
 
-    :goto_18
+    :goto_0
     const/4 v1, -0x1
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_1b
+    :sswitch_0
     const-string v2, "A_OPUS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     move v1, v6
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_27
+    :sswitch_1
     const-string v2, "A_FLAC"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     const/16 v1, 0x1f
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_34
+    :sswitch_2
     const-string v2, "A_EAC3"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_2
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_3d
+    :cond_2
     const/16 v1, 0x1e
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_41
+    :sswitch_3
     const-string v2, "V_MPEG2"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_4a
+    if-nez v1, :cond_3
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_4a
+    :cond_3
     const/16 v1, 0x1d
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_4e
+    :sswitch_4
     const-string v2, "S_TEXT/UTF8"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_57
+    if-nez v1, :cond_4
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_57
+    :cond_4
     const/16 v1, 0x1c
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_5b
+    :sswitch_5
     const-string v2, "S_TEXT/WEBVTT"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_64
+    if-nez v1, :cond_5
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_64
+    :cond_5
     const/16 v1, 0x1b
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_68
+    :sswitch_6
     const-string v2, "V_MPEGH/ISO/HEVC"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_71
+    if-nez v1, :cond_6
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_71
+    :cond_6
     const/16 v1, 0x1a
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_75
+    :sswitch_7
     const-string v2, "S_TEXT/ASS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_7e
+    if-nez v1, :cond_7
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_7e
+    :cond_7
     const/16 v1, 0x19
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_82
+    :sswitch_8
     const-string v2, "A_PCM/INT/LIT"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_8b
+    if-nez v1, :cond_8
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_8b
+    :cond_8
     move v1, v3
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_8e
+    :sswitch_9
     const-string v2, "A_PCM/INT/BIG"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_97
+    if-nez v1, :cond_9
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_97
+    :cond_9
     const/16 v1, 0x17
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_9b
+    :sswitch_a
     const-string v2, "A_PCM/FLOAT/IEEE"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_a5
+    if-nez v1, :cond_a
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_a5
+    :cond_a
     const/16 v1, 0x16
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_a9
+    :sswitch_b
     const-string v2, "A_DTS/EXPRESS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_b3
+    if-nez v1, :cond_b
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_b3
+    :cond_b
     const/16 v1, 0x15
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_b7
+    :sswitch_c
     const-string v2, "V_THEORA"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_c1
+    if-nez v1, :cond_c
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_c1
+    :cond_c
     const/16 v1, 0x14
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_c5
+    :sswitch_d
     const-string v2, "S_HDMV/PGS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_cf
+    if-nez v1, :cond_d
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_cf
+    :cond_d
     const/16 v1, 0x13
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_d3
+    :sswitch_e
     const-string v2, "V_VP9"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_dd
+    if-nez v1, :cond_e
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_dd
+    :cond_e
     const/16 v1, 0x12
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_e1
+    :sswitch_f
     const-string v2, "V_VP8"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_eb
+    if-nez v1, :cond_f
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_eb
+    :cond_f
     const/16 v1, 0x11
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_ef
+    :sswitch_10
     const-string v2, "V_AV1"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_f9
+    if-nez v1, :cond_10
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_f9
+    :cond_10
     move v1, v4
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_fc
+    :sswitch_11
     const-string v2, "A_DTS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_106
+    if-nez v1, :cond_11
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_106
+    :cond_11
     const/16 v1, 0xf
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_10a
+    :sswitch_12
     const-string v2, "A_AC3"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_114
+    if-nez v1, :cond_12
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_114
+    :cond_12
     const/16 v1, 0xe
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_118
+    :sswitch_13
     const-string v2, "A_AAC"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_122
+    if-nez v1, :cond_13
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_122
+    :cond_13
     const/16 v1, 0xd
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_126
+    :sswitch_14
     const-string v2, "A_DTS/LOSSLESS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_130
+    if-nez v1, :cond_14
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_130
+    :cond_14
     const/16 v1, 0xc
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_134
+    :sswitch_15
     const-string v2, "S_VOBSUB"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_13e
+    if-nez v1, :cond_15
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_13e
+    :cond_15
     const/16 v1, 0xb
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_142
+    :sswitch_16
     const-string v2, "V_MPEG4/ISO/AVC"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_14c
+    if-nez v1, :cond_16
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_14c
+    :cond_16
     const/16 v1, 0xa
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_150
+    :sswitch_17
     const-string v2, "V_MPEG4/ISO/ASP"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_15a
+    if-nez v1, :cond_17
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_15a
+    :cond_17
     const/16 v1, 0x9
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_15e
+    :sswitch_18
     const-string v2, "S_DVBSUB"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_168
+    if-nez v1, :cond_18
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_168
+    :cond_18
     move v1, v8
 
-    goto/16 :goto_1ca
+    goto/16 :goto_1
 
-    :sswitch_16b
+    :sswitch_19
     const-string v2, "V_MS/VFW/FOURCC"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_175
+    if-nez v1, :cond_19
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_175
+    :cond_19
     const/4 v1, 0x7
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_177
+    :sswitch_1a
     const-string v2, "A_MPEG/L3"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_181
+    if-nez v1, :cond_1a
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_181
+    :cond_1a
     const/4 v1, 0x6
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_183
+    :sswitch_1b
     const-string v2, "A_MPEG/L2"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_18d
+    if-nez v1, :cond_1b
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_18d
+    :cond_1b
     const/4 v1, 0x5
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_18f
+    :sswitch_1c
     const-string v2, "A_VORBIS"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_199
+    if-nez v1, :cond_1c
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_199
+    :cond_1c
     move v1, v9
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_19b
+    :sswitch_1d
     const-string v2, "A_TRUEHD"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1a5
+    if-nez v1, :cond_1d
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_1a5
+    :cond_1d
     move v1, v10
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_1a7
+    :sswitch_1e
     const-string v2, "A_MS/ACM"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1b1
+    if-nez v1, :cond_1e
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_1b1
+    :cond_1e
     const/4 v1, 0x2
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_1b3
+    :sswitch_1f
     const-string v2, "V_MPEG4/ISO/SP"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1bd
+    if-nez v1, :cond_1f
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_1bd
+    :cond_1f
     const/4 v1, 0x1
 
-    goto :goto_1ca
+    goto :goto_1
 
-    :sswitch_1bf
+    :sswitch_20
     const-string v2, "V_MPEG4/ISO/AP"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1c9
+    if-nez v1, :cond_20
 
-    goto/16 :goto_18
+    goto/16 :goto_0
 
-    :cond_1c9
+    :cond_20
     const/4 v1, 0x0
 
-    :goto_1ca
+    :goto_1
     const-string v2, "application/pgs"
 
     const-string v13, "application/vobsub"
@@ -1708,7 +1708,7 @@
 
     const/4 v11, 0x0
 
-    packed-switch v1, :pswitch_data_63c
+    packed-switch v1, :pswitch_data_0
 
     const-string v1, "Unrecognized codec identifier."
 
@@ -1720,7 +1720,7 @@
     throw v1
 
     .line 2194
-    :pswitch_1e9
+    :pswitch_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v10}, Ljava/util/ArrayList;-><init>(I)V
@@ -1786,10 +1786,10 @@
 
     const/16 v16, 0x1680
 
-    goto/16 :goto_3a4
+    goto/16 :goto_9
 
     .line 2238
-    :pswitch_22b
+    :pswitch_1
     iget-object v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->getCodecPrivate(Ljava/lang/String;)[B
@@ -1802,34 +1802,34 @@
 
     const-string v17, "audio/flac"
 
-    goto/16 :goto_38b
+    goto/16 :goto_7
 
-    :pswitch_239
+    :pswitch_2
     const-string v17, "audio/eac3"
 
-    goto/16 :goto_2fe
+    goto/16 :goto_3
 
-    :pswitch_23d
+    :pswitch_3
     const-string/jumbo v17, "video/mpeg2"
 
-    goto/16 :goto_2fe
+    goto/16 :goto_3
 
-    :pswitch_242
+    :pswitch_4
     move-object/from16 v17, v5
 
-    goto/16 :goto_2fe
+    goto/16 :goto_3
 
-    :pswitch_246
+    :pswitch_5
     move-object v1, v11
 
     move-object v3, v1
 
     move-object/from16 v17, v14
 
-    goto/16 :goto_300
+    goto/16 :goto_4
 
     .line 2170
-    :pswitch_24c
+    :pswitch_6
     new-instance v1, Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object v3, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
@@ -1857,10 +1857,10 @@
 
     const-string/jumbo v17, "video/hevc"
 
-    goto/16 :goto_356
+    goto/16 :goto_6
 
     .line 2314
-    :pswitch_268
+    :pswitch_7
     invoke-static {}, Landroidx/media3/extractor/mkv/MatroskaExtractor;->access$500()[B
 
     move-result-object v1
@@ -1879,17 +1879,17 @@
 
     move-object/from16 v17, v15
 
-    goto/16 :goto_300
+    goto/16 :goto_4
 
     .line 2261
-    :pswitch_27b
+    :pswitch_8
     iget v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->audioBitDepth:I
 
     invoke-static {v1}, Landroidx/media3/common/util/Util;->getPcmEncoding(I)I
 
     move-result v9
 
-    if-nez v9, :cond_29d
+    if-nez v9, :cond_21
 
     .line 2265
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1914,51 +1914,51 @@
 
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_3eb
+    goto/16 :goto_b
 
-    :cond_29d
-    :goto_29d
+    :cond_21
+    :goto_2
     move-object v1, v11
 
     move-object v3, v1
 
     const/4 v4, -0x1
 
-    goto/16 :goto_3ff
+    goto/16 :goto_d
 
     .line 2275
-    :pswitch_2a2
+    :pswitch_9
     iget v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->audioBitDepth:I
 
-    if-ne v1, v8, :cond_2a8
+    if-ne v1, v8, :cond_22
 
     move v9, v10
 
-    goto :goto_29d
+    goto :goto_2
 
-    :cond_2a8
-    if-ne v1, v4, :cond_2ad
+    :cond_22
+    if-ne v1, v4, :cond_23
 
     const/high16 v9, 0x10000000
 
-    goto :goto_29d
+    goto :goto_2
 
-    :cond_2ad
-    if-ne v1, v3, :cond_2b2
+    :cond_23
+    if-ne v1, v3, :cond_24
 
     const/high16 v9, 0x50000000
 
-    goto :goto_29d
+    goto :goto_2
 
-    :cond_2b2
-    if-ne v1, v6, :cond_2b7
+    :cond_24
+    if-ne v1, v6, :cond_25
 
     const/high16 v9, 0x60000000
 
-    goto :goto_29d
+    goto :goto_2
 
     .line 2286
-    :cond_2b7
+    :cond_25
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v3, "Unsupported big endian PCM bit depth: "
@@ -1981,18 +1981,18 @@
 
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_3eb
+    goto/16 :goto_b
 
     .line 2296
-    :pswitch_2d1
+    :pswitch_a
     iget v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->audioBitDepth:I
 
-    if-ne v1, v6, :cond_2d6
+    if-ne v1, v6, :cond_26
 
-    goto :goto_29d
+    goto :goto_2
 
     .line 2301
-    :cond_2d6
+    :cond_26
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v3, "Unsupported floating point PCM bit depth: "
@@ -2015,56 +2015,56 @@
 
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_3eb
+    goto/16 :goto_b
 
-    :pswitch_2f0
+    :pswitch_b
     const-string/jumbo v17, "video/x-unknown"
 
-    goto :goto_2fe
+    goto :goto_3
 
-    :pswitch_2f4
+    :pswitch_c
     move-object/from16 v17, v2
 
-    goto :goto_2fe
+    goto :goto_3
 
-    :pswitch_2f7
+    :pswitch_d
     const-string/jumbo v17, "video/x-vnd.on2.vp9"
 
-    goto :goto_2fe
+    goto :goto_3
 
-    :pswitch_2fb
+    :pswitch_e
     const-string/jumbo v17, "video/x-vnd.on2.vp8"
 
-    :goto_2fe
+    :goto_3
     move-object v1, v11
 
     move-object v3, v1
 
-    :goto_300
+    :goto_4
     const/4 v4, -0x1
 
-    :goto_301
+    :goto_5
     const/4 v9, -0x1
 
-    goto/16 :goto_3ff
+    goto/16 :goto_d
 
-    :pswitch_304
+    :pswitch_f
     const-string/jumbo v17, "video/av01"
 
-    goto :goto_2fe
+    goto :goto_3
 
-    :pswitch_308
+    :pswitch_10
     const-string v17, "audio/vnd.dts"
 
-    goto :goto_2fe
+    goto :goto_3
 
-    :pswitch_30b
+    :pswitch_11
     const-string v17, "audio/ac3"
 
-    goto :goto_2fe
+    goto :goto_3
 
     .line 2203
-    :pswitch_30e
+    :pswitch_12
     iget-object v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->getCodecPrivate(Ljava/lang/String;)[B
@@ -2097,15 +2097,15 @@
 
     const-string v17, "audio/mp4a-latm"
 
-    goto :goto_300
+    goto :goto_4
 
-    :pswitch_32b
+    :pswitch_13
     const-string v17, "audio/vnd.dts.hd"
 
-    goto :goto_2fe
+    goto :goto_3
 
     .line 2321
-    :pswitch_32e
+    :pswitch_14
     iget-object v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->getCodecPrivate(Ljava/lang/String;)[B
@@ -2120,10 +2120,10 @@
 
     move-object/from16 v17, v13
 
-    goto :goto_300
+    goto :goto_4
 
     .line 2163
-    :pswitch_33c
+    :pswitch_15
     new-instance v1, Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object v3, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
@@ -2151,7 +2151,7 @@
 
     const-string/jumbo v17, "video/avc"
 
-    :goto_356
+    :goto_6
     const/4 v4, -0x1
 
     const/4 v9, -0x1
@@ -2162,9 +2162,9 @@
 
     move-object/from16 v1, v19
 
-    goto/16 :goto_3ff
+    goto/16 :goto_d
 
-    :pswitch_35f
+    :pswitch_16
     new-array v1, v9, [B
 
     .line 2330
@@ -2185,10 +2185,10 @@
 
     const-string v17, "application/dvbsubs"
 
-    goto :goto_38b
+    goto :goto_7
 
     .line 2176
-    :pswitch_372
+    :pswitch_17
     new-instance v1, Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object v3, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
@@ -2216,28 +2216,28 @@
 
     check-cast v1, Ljava/util/List;
 
-    :goto_38b
+    :goto_7
     move-object v3, v11
 
-    goto/16 :goto_300
+    goto/16 :goto_4
 
-    :pswitch_38e
+    :pswitch_18
     const-string v17, "audio/mpeg"
 
-    goto :goto_393
+    goto :goto_8
 
-    :pswitch_391
+    :pswitch_19
     const-string v17, "audio/mpeg-L2"
 
-    :goto_393
+    :goto_8
     move-object v1, v11
 
     move-object v3, v1
 
-    goto :goto_3a5
+    goto :goto_a
 
     .line 2189
-    :pswitch_396
+    :pswitch_1a
     iget-object v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->getCodecPrivate(Ljava/lang/String;)[B
@@ -2252,16 +2252,16 @@
 
     const/16 v16, 0x2000
 
-    :goto_3a4
+    :goto_9
     move-object v3, v11
 
-    :goto_3a5
+    :goto_a
     move/from16 v4, v16
 
-    goto/16 :goto_301
+    goto/16 :goto_5
 
     .line 2227
-    :pswitch_3a9
+    :pswitch_1b
     new-instance v1, Landroidx/media3/extractor/TrueHdSampleRechunker;
 
     invoke-direct {v1}, Landroidx/media3/extractor/TrueHdSampleRechunker;-><init>()V
@@ -2270,10 +2270,10 @@
 
     const-string v17, "audio/true-hd"
 
-    goto/16 :goto_2fe
+    goto/16 :goto_3
 
     .line 2242
-    :pswitch_3b4
+    :pswitch_1c
     new-instance v1, Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object v3, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecId:Ljava/lang/String;
@@ -2288,7 +2288,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3e6
+    if-eqz v1, :cond_27
 
     .line 2243
     iget v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->audioBitDepth:I
@@ -2297,7 +2297,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_29d
+    if-nez v9, :cond_21
 
     .line 2247
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2322,48 +2322,48 @@
 
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_3eb
+    goto :goto_b
 
-    :cond_3e6
+    :cond_27
     const-string v1, "Non-PCM MS/ACM is unsupported. Setting mimeType to audio/x-unknown"
 
     .line 2256
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_3eb
+    :goto_b
     move-object v1, v11
 
     move-object v3, v1
 
     move-object/from16 v17, v18
 
-    goto/16 :goto_300
+    goto/16 :goto_4
 
     .line 2159
-    :pswitch_3f1
+    :pswitch_1d
     iget-object v1, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->codecPrivate:[B
 
-    if-nez v1, :cond_3f7
+    if-nez v1, :cond_28
 
     move-object v1, v11
 
-    goto :goto_3fb
+    goto :goto_c
 
-    :cond_3f7
+    :cond_28
     invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    :goto_3fb
+    :goto_c
     const-string/jumbo v17, "video/mp4v-es"
 
-    goto :goto_38b
+    goto :goto_7
 
     .line 2338
-    :goto_3ff
+    :goto_d
     iget-object v6, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->dolbyVisionConfigBytes:[B
 
-    if-eqz v6, :cond_415
+    if-eqz v6, :cond_29
 
     .line 2340
     new-instance v6, Landroidx/media3/common/util/ParsableByteArray;
@@ -2377,14 +2377,14 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_415
+    if-eqz v6, :cond_29
 
     .line 2343
     iget-object v3, v6, Landroidx/media3/extractor/DolbyVisionConfig;->codecs:Ljava/lang/String;
 
     const-string/jumbo v17, "video/dolby-vision"
 
-    :cond_415
+    :cond_29
     move-object/from16 v6, v17
 
     .line 2349
@@ -2397,16 +2397,16 @@
     .line 2350
     iget-boolean v12, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->flagForced:Z
 
-    if-eqz v12, :cond_421
+    if-eqz v12, :cond_2a
 
     const/4 v12, 0x2
 
-    goto :goto_422
+    goto :goto_e
 
-    :cond_421
+    :cond_2a
     move v12, v8
 
-    :goto_422
+    :goto_e
     or-int/2addr v7, v12
 
     .line 2353
@@ -2419,7 +2419,7 @@
 
     move-result v16
 
-    if-eqz v16, :cond_440
+    if-eqz v16, :cond_2b
 
     .line 2358
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->channelCount:I
@@ -2441,57 +2441,57 @@
 
     const/4 v5, 0x1
 
-    goto/16 :goto_568
+    goto/16 :goto_14
 
     .line 2362
-    :cond_440
+    :cond_2b
     invoke-static {v6}, Landroidx/media3/common/MimeTypes;->isVideo(Ljava/lang/String;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_539
+    if-eqz v9, :cond_37
 
     .line 2364
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayUnit:I
 
-    if-nez v2, :cond_45c
+    if-nez v2, :cond_2e
 
     .line 2365
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayWidth:I
 
     const/4 v5, -0x1
 
-    if-ne v2, v5, :cond_451
+    if-ne v2, v5, :cond_2c
 
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->width:I
 
-    :cond_451
+    :cond_2c
     iput v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayWidth:I
 
     .line 2366
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayHeight:I
 
-    if-ne v2, v5, :cond_459
+    if-ne v2, v5, :cond_2d
 
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->height:I
 
-    :cond_459
+    :cond_2d
     iput v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayHeight:I
 
-    goto :goto_45d
+    goto :goto_f
 
-    :cond_45c
+    :cond_2e
     const/4 v5, -0x1
 
     .line 2369
-    :goto_45d
+    :goto_f
     iget v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayWidth:I
 
-    if-eq v2, v5, :cond_46f
+    if-eq v2, v5, :cond_2f
 
     iget v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->displayHeight:I
 
-    if-eq v9, v5, :cond_46f
+    if-eq v9, v5, :cond_2f
 
     .line 2370
     iget v10, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->height:I
@@ -2508,16 +2508,16 @@
 
     div-float/2addr v2, v9
 
-    goto :goto_471
+    goto :goto_10
 
-    :cond_46f
+    :cond_2f
     const/high16 v2, -0x40800000    # -1.0f
 
     .line 2373
-    :goto_471
+    :goto_10
     iget-boolean v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->hasColorInfo:Z
 
-    if-eqz v9, :cond_4a4
+    if-eqz v9, :cond_30
 
     .line 2374
     invoke-direct/range {p0 .. p0}, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->getHdrStaticInfo()[B
@@ -2575,10 +2575,10 @@
     move-result-object v11
 
     .line 2387
-    :cond_4a4
+    :cond_30
     iget-object v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->name:Ljava/lang/String;
 
-    if-eqz v9, :cond_4c4
+    if-eqz v9, :cond_31
 
     invoke-static {}, Landroidx/media3/extractor/mkv/MatroskaExtractor;->access$600()Ljava/util/Map;
 
@@ -2590,7 +2590,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_4c4
+    if-eqz v9, :cond_31
 
     .line 2388
     invoke-static {}, Landroidx/media3/extractor/mkv/MatroskaExtractor;->access$600()Ljava/util/Map;
@@ -2610,10 +2610,10 @@
     move-result v5
 
     .line 2390
-    :cond_4c4
+    :cond_31
     iget v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionType:I
 
-    if-nez v9, :cond_514
+    if-nez v9, :cond_36
 
     iget v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPoseYaw:F
 
@@ -2624,7 +2624,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_514
+    if-nez v9, :cond_36
 
     iget v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPosePitch:F
 
@@ -2633,7 +2633,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_514
+    if-nez v9, :cond_36
 
     .line 2394
     iget v9, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPoseRoll:F
@@ -2642,14 +2642,14 @@
 
     move-result v9
 
-    if-nez v9, :cond_4e3
+    if-nez v9, :cond_32
 
     move v5, v8
 
-    goto :goto_514
+    goto :goto_12
 
     .line 2396
-    :cond_4e3
+    :cond_32
     iget v8, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPoseRoll:F
 
     const/high16 v9, 0x42b40000    # 90.0f
@@ -2658,14 +2658,14 @@
 
     move-result v8
 
-    if-nez v8, :cond_4f0
+    if-nez v8, :cond_33
 
     const/16 v5, 0x5a
 
-    goto :goto_514
+    goto :goto_12
 
     .line 2398
-    :cond_4f0
+    :cond_33
     iget v8, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPoseRoll:F
 
     const/high16 v9, -0x3ccc0000    # -180.0f
@@ -2674,7 +2674,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_512
+    if-eqz v8, :cond_35
 
     iget v8, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPoseRoll:F
 
@@ -2685,12 +2685,12 @@
 
     move-result v8
 
-    if-nez v8, :cond_505
+    if-nez v8, :cond_34
 
-    goto :goto_512
+    goto :goto_11
 
     .line 2401
-    :cond_505
+    :cond_34
     iget v8, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->projectionPoseRoll:F
 
     const/high16 v9, -0x3d4c0000    # -90.0f
@@ -2699,19 +2699,19 @@
 
     move-result v8
 
-    if-nez v8, :cond_514
+    if-nez v8, :cond_36
 
     const/16 v5, 0x10e
 
-    goto :goto_514
+    goto :goto_12
 
-    :cond_512
-    :goto_512
+    :cond_35
+    :goto_11
     const/16 v5, 0xb4
 
     .line 2405
-    :cond_514
-    :goto_514
+    :cond_36
+    :goto_12
     iget v8, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->width:I
 
     .line 2406
@@ -2755,43 +2755,43 @@
 
     const/4 v5, 0x2
 
-    goto :goto_568
+    goto :goto_14
 
     .line 2413
-    :cond_539
+    :cond_37
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_567
+    if-nez v5, :cond_39
 
     .line 2414
     invoke-virtual {v15, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_567
+    if-nez v5, :cond_39
 
     .line 2415
     invoke-virtual {v14, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_567
+    if-nez v5, :cond_39
 
     .line 2416
     invoke-virtual {v13, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_567
+    if-nez v5, :cond_39
 
     .line 2417
     invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_567
+    if-nez v2, :cond_39
 
     const-string v2, "application/dvbsubs"
 
@@ -2800,11 +2800,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_560
+    if-eqz v2, :cond_38
 
-    goto :goto_567
+    goto :goto_13
 
-    :cond_560
+    :cond_38
     const-string v1, "Unexpected MIME type."
 
     .line 2421
@@ -2814,15 +2814,15 @@
 
     throw v1
 
-    :cond_567
-    :goto_567
+    :cond_39
+    :goto_13
     move v5, v10
 
     .line 2425
-    :goto_568
+    :goto_14
     iget-object v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->name:Ljava/lang/String;
 
-    if-eqz v2, :cond_57d
+    if-eqz v2, :cond_3a
 
     invoke-static {}, Landroidx/media3/extractor/mkv/MatroskaExtractor;->access$600()Ljava/util/Map;
 
@@ -2834,14 +2834,14 @@
 
     move-result v2
 
-    if-nez v2, :cond_57d
+    if-nez v2, :cond_3a
 
     .line 2426
     iget-object v2, v0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->name:Ljava/lang/String;
 
     invoke-virtual {v12, v2}, Landroidx/media3/common/Format$Builder;->setLabel(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
-    :cond_57d
+    :cond_3a
     move/from16 v2, p2
 
     .line 2431
@@ -2911,83 +2911,83 @@
 
     nop
 
-    :sswitch_data_5b6
+    :sswitch_data_0
     .sparse-switch
-        -0x7ce7f5de -> :sswitch_1bf
-        -0x7ce7f3b0 -> :sswitch_1b3
-        -0x76567dc0 -> :sswitch_1a7
-        -0x6a615338 -> :sswitch_19b
-        -0x672350af -> :sswitch_18f
-        -0x585f4fce -> :sswitch_183
-        -0x585f4fcd -> :sswitch_177
-        -0x51dc40b2 -> :sswitch_16b
-        -0x37a9c464 -> :sswitch_15e
-        -0x2016c535 -> :sswitch_150
-        -0x2016c4e5 -> :sswitch_142
-        -0x19552dbd -> :sswitch_134
-        -0x1538b2ba -> :sswitch_126
-        0x3c02325 -> :sswitch_118
-        0x3c02353 -> :sswitch_10a
-        0x3c030c5 -> :sswitch_fc
-        0x4e81333 -> :sswitch_ef
-        0x4e86155 -> :sswitch_e1
-        0x4e86156 -> :sswitch_d3
-        0x5e8da3e -> :sswitch_c5
-        0x1a8350d6 -> :sswitch_b7
-        0x2056f406 -> :sswitch_a9
-        0x25e26ee2 -> :sswitch_9b
-        0x2b45174d -> :sswitch_8e
-        0x2b453ce4 -> :sswitch_82
-        0x2c0618eb -> :sswitch_75
-        0x32fdf009 -> :sswitch_68
-        0x3e4ca2d8 -> :sswitch_5b
-        0x54c61e47 -> :sswitch_4e
-        0x6bd6c624 -> :sswitch_41
-        0x7446132a -> :sswitch_34
-        0x7446b0a6 -> :sswitch_27
-        0x744ad97d -> :sswitch_1b
+        -0x7ce7f5de -> :sswitch_20
+        -0x7ce7f3b0 -> :sswitch_1f
+        -0x76567dc0 -> :sswitch_1e
+        -0x6a615338 -> :sswitch_1d
+        -0x672350af -> :sswitch_1c
+        -0x585f4fce -> :sswitch_1b
+        -0x585f4fcd -> :sswitch_1a
+        -0x51dc40b2 -> :sswitch_19
+        -0x37a9c464 -> :sswitch_18
+        -0x2016c535 -> :sswitch_17
+        -0x2016c4e5 -> :sswitch_16
+        -0x19552dbd -> :sswitch_15
+        -0x1538b2ba -> :sswitch_14
+        0x3c02325 -> :sswitch_13
+        0x3c02353 -> :sswitch_12
+        0x3c030c5 -> :sswitch_11
+        0x4e81333 -> :sswitch_10
+        0x4e86155 -> :sswitch_f
+        0x4e86156 -> :sswitch_e
+        0x5e8da3e -> :sswitch_d
+        0x1a8350d6 -> :sswitch_c
+        0x2056f406 -> :sswitch_b
+        0x25e26ee2 -> :sswitch_a
+        0x2b45174d -> :sswitch_9
+        0x2b453ce4 -> :sswitch_8
+        0x2c0618eb -> :sswitch_7
+        0x32fdf009 -> :sswitch_6
+        0x3e4ca2d8 -> :sswitch_5
+        0x54c61e47 -> :sswitch_4
+        0x6bd6c624 -> :sswitch_3
+        0x7446132a -> :sswitch_2
+        0x7446b0a6 -> :sswitch_1
+        0x744ad97d -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_63c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3f1
-        :pswitch_3f1
-        :pswitch_3b4
-        :pswitch_3a9
-        :pswitch_396
-        :pswitch_391
-        :pswitch_38e
-        :pswitch_372
-        :pswitch_35f
-        :pswitch_3f1
-        :pswitch_33c
-        :pswitch_32e
-        :pswitch_32b
-        :pswitch_30e
-        :pswitch_30b
-        :pswitch_308
-        :pswitch_304
-        :pswitch_2fb
-        :pswitch_2f7
-        :pswitch_2f4
-        :pswitch_2f0
-        :pswitch_308
-        :pswitch_2d1
-        :pswitch_2a2
-        :pswitch_27b
-        :pswitch_268
-        :pswitch_24c
-        :pswitch_246
-        :pswitch_242
-        :pswitch_23d
-        :pswitch_239
-        :pswitch_22b
-        :pswitch_1e9
+        :pswitch_1d
+        :pswitch_1d
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_1d
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_10
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public outputPendingSampleMetadata()V
-    .registers 4
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -2997,7 +2997,7 @@
     .line 2448
     iget-object v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->trueHdSampleRechunker:Landroidx/media3/extractor/TrueHdSampleRechunker;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 2449
     iget-object v1, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->output:Landroidx/media3/extractor/TrackOutput;
@@ -3006,21 +3006,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/media3/extractor/TrueHdSampleRechunker;->outputPendingSampleMetadata(Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/TrackOutput$CryptoData;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 2455
     iget-object v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$Track;->trueHdSampleRechunker:Landroidx/media3/extractor/TrueHdSampleRechunker;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 2456
     invoke-virtual {v0}, Landroidx/media3/extractor/TrueHdSampleRechunker;->reset()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method

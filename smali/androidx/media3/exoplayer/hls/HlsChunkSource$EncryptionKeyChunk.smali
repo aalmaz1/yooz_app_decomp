@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Landroidx/media3/common/Format;ILjava/lang/Object;[B)V
-    .registers 15
+    .locals 8
 
     const/4 v3, 0x3
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method protected consume([BI)V
-    .registers 3
+    .locals 0
 
     .line 1062
     invoke-static {p1, p2}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -60,7 +60,7 @@
 .end method
 
 .method public getResult()[B
-    .registers 2
+    .locals 1
 
     .line 1068
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsChunkSource$EncryptionKeyChunk;->result:[B

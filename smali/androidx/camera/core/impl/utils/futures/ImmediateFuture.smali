@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public static nullFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 6
+    .locals 3
 
     .line 58
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -71,14 +71,14 @@
     invoke-static {p2}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 62
-    :try_start_6
+    :try_start_0
     invoke-interface {p2, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_9
-    .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_29
+    goto :goto_0
 
-    :catch_a
+    :catch_0
     move-exception v0
 
     .line 66
@@ -110,12 +110,12 @@
 
     invoke-static {p2, p1, v0}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_29
+    :goto_0
     return-void
 .end method
 
 .method public cancel(Z)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -137,7 +137,7 @@
 .end method
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -164,7 +164,7 @@
 .end method
 
 .method public isCancelled()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -172,7 +172,7 @@
 .end method
 
 .method public isDone()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

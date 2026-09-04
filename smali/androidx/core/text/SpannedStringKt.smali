@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final synthetic getSpans(Landroid/text/Spanned;II)[Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -66,25 +66,25 @@
 .end method
 
 .method public static synthetic getSpans$default(Landroid/text/Spanned;IIILjava/lang/Object;)[Ljava/lang/Object;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_1
 
     .line 33
     invoke-interface {p0}, Landroid/text/Spanned;->length()I
 
     move-result p2
 
-    :cond_d
+    :cond_1
     const/4 p3, 0x4
 
     const-string p4, "T"
@@ -106,7 +106,7 @@
 .end method
 
 .method public static final toSpanned(Ljava/lang/CharSequence;)Landroid/text/Spanned;
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-static {p0}, Landroid/text/SpannedString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannedString;

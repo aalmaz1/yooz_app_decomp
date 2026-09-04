@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 54
     new-instance v0, Ljava/util/HashMap;
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 .end method
 
 .method private static isSamsungDistortion()Z
-    .registers 5
+    .locals 5
 
     const-string v0, "samsung"
 
@@ -111,7 +111,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk;->SAMSUNG_DISTORTION_MODELS_TO_API_LEVEL_MAP:Ljava/util/Map;
 
@@ -129,22 +129,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     move v0, v2
 
-    :goto_1f
-    if-nez v0, :cond_22
+    :goto_0
+    if-nez v0, :cond_1
 
     return v2
 
     .line 109
-    :cond_22
+    :cond_1
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk;->SAMSUNG_DISTORTION_MODELS_TO_API_LEVEL_MAP:Ljava/util/Map;
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
@@ -162,12 +162,12 @@
 
     check-cast v0, Landroid/util/Range;
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_2
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 112
-    :cond_35
+    :cond_2
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -178,12 +178,12 @@
 
     move-result v1
 
-    :goto_3f
+    :goto_1
     return v1
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 67
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk;->isSamsungDistortion()Z
@@ -196,7 +196,7 @@
 
 # virtual methods
 .method public getVerifiedResolution(Landroidx/camera/core/impl/SurfaceConfig$ConfigType;)Landroid/util/Size;
-    .registers 4
+    .locals 2
 
     .line 81
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk;->isSamsungDistortion()Z
@@ -205,7 +205,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3
 
     .line 83
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk$1;->$SwitchMap$androidx$camera$core$impl$SurfaceConfig$ConfigType:[I
@@ -218,20 +218,20 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_2d
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_23
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_19
+    if-eq p1, v0, :cond_0
 
     return-object v1
 
     .line 89
-    :cond_19
+    :cond_0
     new-instance p1, Landroid/util/Size;
 
     const/16 v0, 0xcc0
@@ -243,7 +243,7 @@
     return-object p1
 
     .line 87
-    :cond_23
+    :cond_1
     new-instance p1, Landroid/util/Size;
 
     const/16 v0, 0x500
@@ -255,7 +255,7 @@
     return-object p1
 
     .line 85
-    :cond_2d
+    :cond_2
     new-instance p1, Landroid/util/Size;
 
     const/16 v0, 0x780
@@ -266,6 +266,6 @@
 
     return-object p1
 
-    :cond_37
+    :cond_3
     return-object v1
 .end method

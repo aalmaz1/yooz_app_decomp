@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final component1(Landroid/util/SizeF;)F
-    .registers 1
+    .locals 0
 
     .line 61
     invoke-virtual {p0}, Landroid/util/SizeF;->getWidth()F
@@ -41,7 +41,7 @@
 .end method
 
 .method public static final component1(Landroidx/core/util/SizeFCompat;)F
-    .registers 1
+    .locals 0
 
     .line 84
     invoke-virtual {p0}, Landroidx/core/util/SizeFCompat;->getWidth()F
@@ -52,7 +52,7 @@
 .end method
 
 .method public static final component1(Landroid/util/Size;)I
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
@@ -63,7 +63,7 @@
 .end method
 
 .method public static final component2(Landroid/util/SizeF;)F
-    .registers 1
+    .locals 0
 
     .line 73
     invoke-virtual {p0}, Landroid/util/SizeF;->getHeight()F
@@ -74,7 +74,7 @@
 .end method
 
 .method public static final component2(Landroidx/core/util/SizeFCompat;)F
-    .registers 1
+    .locals 0
 
     .line 95
     invoke-virtual {p0}, Landroidx/core/util/SizeFCompat;->getHeight()F
@@ -85,7 +85,7 @@
 .end method
 
 .method public static final component2(Landroid/util/Size;)I
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-virtual {p0}, Landroid/util/Size;->getHeight()I

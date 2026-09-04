@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/SearchView;)V
-    .registers 2
+    .locals 0
 
     .line 338
     iput-object p1, p0, Landroidx/appcompat/widget/SearchView$3;->this$0:Landroidx/appcompat/widget/SearchView;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
-    .registers 4
+    .locals 1
 
     .line 341
     iget-object p1, p0, Landroidx/appcompat/widget/SearchView$3;->this$0:Landroidx/appcompat/widget/SearchView;
 
     iget-object p1, p1, Landroidx/appcompat/widget/SearchView;->mOnQueryTextFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 342
     iget-object p1, p0, Landroidx/appcompat/widget/SearchView$3;->this$0:Landroidx/appcompat/widget/SearchView;
@@ -54,6 +54,6 @@
 
     invoke-interface {p1, v0, p2}, Landroid/view/View$OnFocusChangeListener;->onFocusChange(Landroid/view/View;Z)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method

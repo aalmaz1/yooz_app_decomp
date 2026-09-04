@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 54
     new-instance v0, Landroidx/media3/extractor/ts/AdtsExtractor$$ExternalSyntheticLambda0;
@@ -69,7 +69,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -80,19 +80,19 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     and-int/lit8 v0, p1, 0x2
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     or-int/lit8 p1, p1, 0x1
 
     .line 135
-    :cond_9
+    :cond_0
     iput p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->flags:I
 
     .line 136
@@ -147,7 +147,7 @@
 .end method
 
 .method private calculateAverageFrameSize(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -157,11 +157,11 @@
     .line 298
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->hasCalculatedAverageFrameSize:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, -0x1
 
     .line 301
@@ -179,21 +179,21 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1
 
     .line 305
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/AdtsExtractor;->peekId3Header(Landroidx/media3/extractor/ExtractorInput;)I
 
-    :cond_18
+    :cond_1
     const/4 v1, 0x0
 
     move v2, v1
 
-    :cond_1a
+    :cond_2
     const/4 v5, 0x1
 
     .line 311
-    :try_start_1b
+    :try_start_0
     iget-object v6, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 312
@@ -208,7 +208,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_76
+    if-eqz v6, :cond_7
 
     .line 313
     iget-object v6, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
@@ -227,12 +227,12 @@
 
     move-result v6
 
-    if-nez v6, :cond_3a
+    if-nez v6, :cond_3
 
-    goto :goto_77
+    goto :goto_2
 
     .line 322
-    :cond_3a
+    :cond_3
     iget-object v6, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 323
@@ -247,12 +247,12 @@
 
     move-result v6
 
-    if-nez v6, :cond_48
+    if-nez v6, :cond_4
 
-    goto :goto_76
+    goto :goto_1
 
     .line 326
-    :cond_48
+    :cond_4
     iget-object v6, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratchBits:Landroidx/media3/common/util/ParsableBitArray;
 
     const/16 v7, 0xe
@@ -270,7 +270,7 @@
 
     const/4 v7, 0x6
 
-    if-le v6, v7, :cond_6c
+    if-le v6, v7, :cond_6
 
     int-to-long v7, v6
 
@@ -280,11 +280,11 @@
 
     const/16 v7, 0x3e8
 
-    if-ne v2, v7, :cond_63
+    if-ne v2, v7, :cond_5
 
-    goto :goto_6b
+    goto :goto_0
 
-    :cond_63
+    :cond_5
     add-int/lit8 v6, v6, -0x6
 
     .line 338
@@ -292,13 +292,13 @@
 
     move-result v6
 
-    if-nez v6, :cond_1a
+    if-nez v6, :cond_2
 
-    :goto_6b
-    goto :goto_76
+    :goto_0
+    goto :goto_1
 
     .line 330
-    :cond_6c
+    :cond_6
     iput-boolean v5, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->hasCalculatedAverageFrameSize:Z
 
     const-string v1, "Malformed ADTS stream"
@@ -311,19 +311,19 @@
     move-result-object v1
 
     throw v1
-    :try_end_76
-    .catch Ljava/io/EOFException; {:try_start_1b .. :try_end_76} :catch_76
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_76
-    :cond_76
-    :goto_76
+    :catch_0
+    :cond_7
+    :goto_1
     move v1, v2
 
     .line 349
-    :goto_77
+    :goto_2
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
-    if-lez v1, :cond_82
+    if-lez v1, :cond_8
 
     int-to-long v0, v1
 
@@ -334,21 +334,21 @@
 
     iput p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->averageFrameSize:I
 
-    goto :goto_84
+    goto :goto_3
 
     .line 353
-    :cond_82
+    :cond_8
     iput v0, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->averageFrameSize:I
 
     .line 355
-    :goto_84
+    :goto_3
     iput-boolean v5, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->hasCalculatedAverageFrameSize:Z
 
     return-void
 .end method
 
 .method private static getBitrateFromFrameSize(IJ)I
-    .registers 7
+    .locals 4
 
     int-to-long v0, p0
 
@@ -369,7 +369,7 @@
 .end method
 
 .method private getConstantBitrateSeekMap(JZ)Landroidx/media3/extractor/SeekMap;
-    .registers 15
+    .locals 11
 
     .line 359
     iget v0, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->averageFrameSize:I
@@ -403,7 +403,7 @@
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -422,7 +422,7 @@
 .end method
 
 .method private maybeOutputSeekMap(JZ)V
-    .registers 11
+    .locals 7
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "extractorOutput"
@@ -432,12 +432,12 @@
     .line 273
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->hasOutputSeekMap:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 277
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->flags:I
 
     const/4 v1, 0x1
@@ -446,23 +446,23 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->averageFrameSize:I
 
-    if-lez v0, :cond_12
+    if-lez v0, :cond_1
 
     move v0, v1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     move v0, v2
 
-    :goto_13
+    :goto_0
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 279
     iget-object v5, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->reader:Landroidx/media3/extractor/ts/AdtsReader;
@@ -474,14 +474,14 @@
 
     cmp-long v5, v5, v3
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_2
 
-    if-nez p3, :cond_27
+    if-nez p3, :cond_2
 
     return-void
 
-    :cond_27
-    if-eqz v0, :cond_44
+    :cond_2
+    if-eqz v0, :cond_4
 
     .line 287
     iget-object p3, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->reader:Landroidx/media3/extractor/ts/AdtsReader;
@@ -492,7 +492,7 @@
 
     cmp-long p3, v5, v3
 
-    if-eqz p3, :cond_44
+    if-eqz p3, :cond_4
 
     .line 288
     iget-object p3, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -501,12 +501,12 @@
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3
 
     move v2, v1
 
     .line 289
-    :cond_3c
+    :cond_3
     invoke-direct {p0, p1, p2, v2}, Landroidx/media3/extractor/ts/AdtsExtractor;->getConstantBitrateSeekMap(JZ)Landroidx/media3/extractor/SeekMap;
 
     move-result-object p1
@@ -514,10 +514,10 @@
     .line 288
     invoke-interface {p3, p1}, Landroidx/media3/extractor/ExtractorOutput;->seekMap(Landroidx/media3/extractor/SeekMap;)V
 
-    goto :goto_4e
+    goto :goto_1
 
     .line 292
-    :cond_44
+    :cond_4
     iget-object p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
 
     new-instance p2, Landroidx/media3/extractor/SeekMap$Unseekable;
@@ -527,14 +527,14 @@
     invoke-interface {p1, p2}, Landroidx/media3/extractor/ExtractorOutput;->seekMap(Landroidx/media3/extractor/SeekMap;)V
 
     .line 294
-    :goto_4e
+    :goto_1
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->hasOutputSeekMap:Z
 
     return-void
 .end method
 
 .method private peekId3Header(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -546,7 +546,7 @@
     move v1, v0
 
     .line 253
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v2}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -571,7 +571,7 @@
 
     const v3, 0x494433
 
-    if-eq v2, v3, :cond_2f
+    if-eq v2, v3, :cond_1
 
     .line 263
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -586,18 +586,18 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_0
 
     int-to-long v2, v1
 
     .line 266
     iput-wide v2, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->firstFramePosition:J
 
-    :cond_2e
+    :cond_0
     return v1
 
     .line 258
-    :cond_2f
+    :cond_1
     iget-object v2, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     const/4 v3, 0x3
@@ -618,13 +618,13 @@
     .line 261
     invoke-interface {p1, v2}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_2
+    goto :goto_0
 .end method
 
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 6
+    .locals 4
 
     .line 198
     iput-object p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -649,7 +649,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -675,37 +675,37 @@
 
     const/4 v4, 0x0
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
     and-int/2addr p2, v3
 
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_0
 
     const-wide/16 v5, -0x1
 
     cmp-long p2, v0, v5
 
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move p2, v4
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     move p2, v3
 
-    :goto_1e
-    if-eqz p2, :cond_23
+    :goto_1
+    if-eqz p2, :cond_2
 
     .line 225
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/AdtsExtractor;->calculateAverageFrameSize(Landroidx/media3/extractor/ExtractorInput;)V
 
     .line 228
-    :cond_23
+    :cond_2
     iget-object p2, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -720,25 +720,25 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_34
+    if-ne p1, p2, :cond_3
 
     move v2, v3
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_34
+    :cond_3
     move v2, v4
 
     .line 230
-    :goto_35
+    :goto_2
     invoke-direct {p0, v0, v1, v2}, Landroidx/media3/extractor/ts/AdtsExtractor;->maybeOutputSeekMap(JZ)V
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_4
 
     return p2
 
     .line 236
-    :cond_3b
+    :cond_4
     iget-object p2, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2, v4}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -751,7 +751,7 @@
     .line 239
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->startedPacket:Z
 
-    if-nez p1, :cond_53
+    if-nez p1, :cond_5
 
     .line 241
     iget-object p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->reader:Landroidx/media3/extractor/ts/AdtsReader;
@@ -766,7 +766,7 @@
     iput-boolean v3, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->startedPacket:Z
 
     .line 246
-    :cond_53
+    :cond_5
     iget-object p1, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->reader:Landroidx/media3/extractor/ts/AdtsReader;
 
     iget-object p2, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -777,13 +777,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -802,7 +802,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -823,7 +823,7 @@
     move v4, v2
 
     .line 157
-    :cond_8
+    :cond_0
     iget-object v5, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v5}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -851,7 +851,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_2e
+    if-nez v5, :cond_1
 
     add-int/lit8 v3, v3, 0x1
 
@@ -861,30 +861,30 @@
     .line 167
     invoke-interface {p1, v3}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    :goto_2b
+    :goto_0
     move v2, v1
 
     move v4, v2
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     const/4 v5, 0x1
 
     add-int/2addr v2, v5
 
     const/4 v6, 0x4
 
-    if-lt v2, v6, :cond_38
+    if-lt v2, v6, :cond_2
 
     const/16 v7, 0xbc
 
-    if-le v4, v7, :cond_38
+    if-le v4, v7, :cond_2
 
     return v5
 
     .line 174
-    :cond_38
+    :cond_2
     iget-object v5, p0, Landroidx/media3/extractor/ts/AdtsExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v5}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -911,7 +911,7 @@
 
     const/4 v6, 0x6
 
-    if-gt v5, v6, :cond_5c
+    if-gt v5, v6, :cond_3
 
     add-int/lit8 v3, v3, 0x1
 
@@ -921,9 +921,9 @@
     .line 184
     invoke-interface {p1, v3}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_5c
+    :cond_3
     add-int/lit8 v6, v5, -0x6
 
     .line 186
@@ -931,12 +931,12 @@
 
     add-int/2addr v4, v5
 
-    :goto_62
+    :goto_1
     sub-int v5, v3, v0
 
     const/16 v6, 0x2000
 
-    if-lt v5, v6, :cond_8
+    if-lt v5, v6, :cond_0
 
     return v1
 .end method

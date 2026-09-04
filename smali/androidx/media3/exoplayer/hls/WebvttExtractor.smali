@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "LOCAL:([^,]+)"
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/common/util/TimestampAdjuster;)V
-    .registers 5
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/text/SubtitleParser$Factory;Z)V
-    .registers 5
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method private buildTrackOutput(J)Landroidx/media3/extractor/TrackOutput;
-    .registers 6
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -169,7 +169,7 @@
 .end method
 
 .method private processSample()V
-    .registers 13
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -204,14 +204,14 @@
     move-wide v6, v4
 
     .line 179
-    :goto_12
+    :goto_0
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v8
 
     const/4 v9, 0x1
 
-    if-nez v8, :cond_88
+    if-nez v8, :cond_3
 
     const-string v8, "X-TIMESTAMP-MAP"
 
@@ -220,7 +220,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_83
+    if-eqz v8, :cond_2
 
     .line 182
     sget-object v4, Landroidx/media3/exoplayer/hls/WebvttExtractor;->LOCAL_TIMESTAMP:Ljava/util/regex/Pattern;
@@ -236,7 +236,7 @@
 
     const/4 v6, 0x0
 
-    if-eqz v5, :cond_6f
+    if-eqz v5, :cond_1
 
     .line 187
     sget-object v5, Landroidx/media3/exoplayer/hls/WebvttExtractor;->MEDIA_TIMESTAMP:Ljava/util/regex/Pattern;
@@ -250,7 +250,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_5b
+    if-eqz v7, :cond_0
 
     .line 194
     invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -288,10 +288,10 @@
 
     move-result-wide v4
 
-    goto :goto_83
+    goto :goto_1
 
     .line 189
-    :cond_5b
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "X-TIMESTAMP-MAP doesn\'t contain media timestamp: "
@@ -313,7 +313,7 @@
     throw v0
 
     .line 184
-    :cond_6f
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "X-TIMESTAMP-MAP doesn\'t contain local timestamp: "
@@ -335,21 +335,21 @@
     throw v0
 
     .line 180
-    :cond_83
-    :goto_83
+    :cond_2
+    :goto_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object v1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 202
-    :cond_88
+    :cond_3
     invoke-static {v0}, Landroidx/media3/extractor/text/webvtt/WebvttParserUtil;->findNextCueHeader(Landroidx/media3/common/util/ParsableByteArray;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
-    if-nez v0, :cond_92
+    if-nez v0, :cond_4
 
     .line 205
     invoke-direct {p0, v2, v3}, Landroidx/media3/exoplayer/hls/WebvttExtractor;->buildTrackOutput(J)Landroidx/media3/extractor/TrackOutput;
@@ -357,7 +357,7 @@
     return-void
 
     .line 210
-    :cond_92
+    :cond_4
     invoke-virtual {v0, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -429,12 +429,12 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 5
+    .locals 3
 
     .line 121
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->parseSubtitlesDuringExtraction:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 122
     new-instance v0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;
@@ -443,13 +443,13 @@
 
     invoke-direct {v0, p1, v1}, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;-><init>(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/text/SubtitleParser$Factory;)V
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move-object v0, p1
 
     .line 123
-    :goto_d
+    :goto_0
     iput-object v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->output:Landroidx/media3/extractor/ExtractorOutput;
 
     .line 124
@@ -465,7 +465,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -493,19 +493,19 @@
 
     const/4 v3, -0x1
 
-    if-ne v0, v2, :cond_21
+    if-ne v0, v2, :cond_1
 
-    if-eq p2, v3, :cond_16
+    if-eq p2, v3, :cond_0
 
     move v0, p2
 
-    goto :goto_17
+    goto :goto_0
 
     .line 149
-    :cond_16
+    :cond_0
     array-length v0, v1
 
-    :goto_17
+    :goto_0
     mul-int/lit8 v0, v0, 0x3
 
     div-int/lit8 v0, v0, 0x2
@@ -518,7 +518,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->sampleData:[B
 
     .line 153
-    :cond_21
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->sampleData:[B
 
     iget v1, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->sampleSize:I
@@ -531,7 +531,7 @@
 
     move-result p1
 
-    if-eq p1, v3, :cond_38
+    if-eq p1, v3, :cond_3
 
     .line 155
     iget v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->sampleSize:I
@@ -540,30 +540,30 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->sampleSize:I
 
-    if-eq p2, v3, :cond_36
+    if-eq p2, v3, :cond_2
 
-    if-eq v0, p2, :cond_38
+    if-eq v0, p2, :cond_3
 
-    :cond_36
+    :cond_2
     const/4 p1, 0x0
 
     return p1
 
     .line 162
-    :cond_38
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/WebvttExtractor;->processSample()V
 
     return v3
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 130
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -574,7 +574,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -604,14 +604,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 109
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/WebvttExtractor;->sampleData:[B
 
     const/4 v3, 0x3

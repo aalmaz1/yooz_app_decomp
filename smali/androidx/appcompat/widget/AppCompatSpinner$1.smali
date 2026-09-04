@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatSpinner;Landroid/view/View;Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;)V
-    .registers 4
+    .locals 0
 
     .line 272
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$1;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
-    .registers 2
+    .locals 1
 
     .line 275
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$1;->val$popup:Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
@@ -46,7 +46,7 @@
 .end method
 
 .method public onForwardingStarted()Z
-    .registers 2
+    .locals 1
 
     .line 281
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$1;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
@@ -59,14 +59,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 282
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$1;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
 
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatSpinner;->showPopup()V
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x1
 
     return v0

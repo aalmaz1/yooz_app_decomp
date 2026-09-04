@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final asAndroidXConsumer(Lkotlin/coroutines/Continuation;)Landroidx/core/util/Consumer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

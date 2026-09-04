@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/customtabs/PostMessageService;)V
-    .registers 2
+    .locals 0
 
     .line 34
     iput-object p1, p0, Landroidx/browser/customtabs/PostMessageService$1;->this$0:Landroidx/browser/customtabs/PostMessageService;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onMessageChannelReady(Landroid/support/customtabs/ICustomTabsCallback;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -47,7 +47,7 @@
 .end method
 
 .method public onPostMessage(Landroid/support/customtabs/ICustomTabsCallback;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

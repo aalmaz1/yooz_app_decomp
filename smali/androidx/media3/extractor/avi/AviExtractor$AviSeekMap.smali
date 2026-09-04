@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/avi/AviExtractor;J)V
-    .registers 4
+    .locals 0
 
     .line 552
     iput-object p1, p0, Landroidx/media3/extractor/avi/AviExtractor$AviSeekMap;->this$0:Landroidx/media3/extractor/avi/AviExtractor;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 563
     iget-wide v0, p0, Landroidx/media3/extractor/avi/AviExtractor$AviSeekMap;->durationUs:J
@@ -50,7 +50,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 10
+    .locals 7
 
     .line 568
     iget-object v0, p0, Landroidx/media3/extractor/avi/AviExtractor$AviSeekMap;->this$0:Landroidx/media3/extractor/avi/AviExtractor;
@@ -70,7 +70,7 @@
     const/4 v1, 0x1
 
     .line 569
-    :goto_e
+    :goto_0
     iget-object v2, p0, Landroidx/media3/extractor/avi/AviExtractor$AviSeekMap;->this$0:Landroidx/media3/extractor/avi/AviExtractor;
 
     invoke-static {v2}, Landroidx/media3/extractor/avi/AviExtractor;->access$100(Landroidx/media3/extractor/avi/AviExtractor;)[Landroidx/media3/extractor/avi/ChunkReader;
@@ -79,7 +79,7 @@
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_33
+    if-ge v1, v2, :cond_1
 
     .line 570
     iget-object v2, p0, Landroidx/media3/extractor/avi/AviExtractor$AviSeekMap;->this$0:Landroidx/media3/extractor/avi/AviExtractor;
@@ -105,21 +105,21 @@
 
     cmp-long v3, v3, v5
 
-    if-gez v3, :cond_30
+    if-gez v3, :cond_0
 
     move-object v0, v2
 
-    :cond_30
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_33
+    :cond_1
     return-object v0
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

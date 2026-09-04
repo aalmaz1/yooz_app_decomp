@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 592
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static getDirectPlaybackSupportedEncodings(Landroidx/media3/common/AudioAttributes;)Lcom/google/common/collect/ImmutableList;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,13 +53,13 @@
 
     move-result-object v1
 
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -78,12 +78,12 @@
 
     move-result v4
 
-    if-ge v3, v4, :cond_27
+    if-ge v3, v4, :cond_1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 603
-    :cond_27
+    :cond_1
     new-instance v3, Landroid/media/AudioFormat$Builder;
 
     invoke-direct {v3}, Landroid/media/AudioFormat$Builder;-><init>()V
@@ -124,7 +124,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_0
 
     .line 610
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -133,9 +133,9 @@
 
     invoke-virtual {v0, v2}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_55
+    :cond_2
     const/4 p0, 0x2
 
     .line 613
@@ -154,24 +154,24 @@
 .end method
 
 .method public static getMaxSupportedChannelCountForPassthrough(IILandroidx/media3/common/AudioAttributes;)I
-    .registers 6
+    .locals 3
 
     const/16 v0, 0xa
 
-    :goto_2
-    if-lez v0, :cond_30
+    :goto_0
+    if-lez v0, :cond_2
 
     .line 627
     invoke-static {v0}, Landroidx/media3/common/util/Util;->getAudioTrackChannelConfig(I)I
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 631
-    :cond_b
+    :cond_0
     new-instance v2, Landroid/media/AudioFormat$Builder;
 
     invoke-direct {v2}, Landroid/media/AudioFormat$Builder;-><init>()V
@@ -208,17 +208,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_1
 
     return v0
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     const/4 p0, 0x0
 
     return p0

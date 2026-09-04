@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/Fragment;)V
-    .registers 2
+    .locals 0
 
     .line 3449
     iput-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
-    .registers 2
+    .locals 0
 
     .line 3452
     iget-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
@@ -55,7 +55,7 @@
 
     instance-of p1, p1, Landroidx/activity/result/ActivityResultRegistryOwner;
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 3453
     iget-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
@@ -71,7 +71,7 @@
     return-object p1
 
     .line 3455
-    :cond_13
+    :cond_0
     iget-object p1, p0, Landroidx/fragment/app/Fragment$6;->this$0:Landroidx/fragment/app/Fragment;
 
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
@@ -86,7 +86,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 3449
     check-cast p1, Ljava/lang/Void;

@@ -103,7 +103,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/CompletableDeferred;Landroidx/datastore/core/State;Lkotlin/coroutines/CoroutineContext;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,7 +157,7 @@
 
 # virtual methods
 .method public final getAck()Lkotlinx/coroutines/CompletableDeferred;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -173,7 +173,7 @@
 .end method
 
 .method public final getCallerContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;->callerContext:Lkotlin/coroutines/CoroutineContext;
@@ -182,7 +182,7 @@
 .end method
 
 .method public getLastState()Landroidx/datastore/core/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -198,7 +198,7 @@
 .end method
 
 .method public final getTransform()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

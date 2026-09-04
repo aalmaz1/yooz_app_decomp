@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;)V
-    .registers 2
+    .locals 0
 
     .line 488
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$4;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public createController(Landroid/view/ViewGroup;)Landroidx/fragment/app/SpecialEffectsController;
-    .registers 3
+    .locals 1
 
     .line 492
     new-instance v0, Landroidx/fragment/app/DefaultSpecialEffectsController;

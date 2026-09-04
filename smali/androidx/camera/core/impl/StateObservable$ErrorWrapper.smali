@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static wrap(Ljava/lang/Throwable;)Landroidx/camera/core/impl/StateObservable$ErrorWrapper;
-    .registers 2
+    .locals 1
 
     .line 286
     new-instance v0, Landroidx/camera/core/impl/AutoValue_StateObservable_ErrorWrapper;

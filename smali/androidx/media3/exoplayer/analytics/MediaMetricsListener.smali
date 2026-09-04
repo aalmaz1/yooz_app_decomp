@@ -92,7 +92,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;Landroid/media/metrics/PlaybackSession;)V
-    .registers 3
+    .locals 0
 
     .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -165,7 +165,7 @@
 .end method
 
 .method private canReportPendingFormatUpdate(Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;)Z
-    .registers 3
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "#1"
@@ -173,7 +173,7 @@
         result = true
     .end annotation
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 410
     iget-object p1, p1, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;->sessionId:Ljava/lang/String;
@@ -189,21 +189,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_13
+    :goto_0
     return p1
 .end method
 
 .method public static create(Landroid/content/Context;)Landroidx/media3/exoplayer/analytics/MediaMetricsListener;
-    .registers 3
+    .locals 2
 
     const-string v0, "media_metrics"
 
@@ -214,14 +214,14 @@
 
     check-cast v0, Landroid/media/metrics/MediaMetricsManager;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 107
-    :cond_c
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;
 
     invoke-virtual {v0}, Landroid/media/metrics/MediaMetricsManager;->createPlaybackSession()Landroid/media/metrics/PlaybackSession;
@@ -232,23 +232,23 @@
 
     move-object p0, v1
 
-    :goto_16
+    :goto_0
     return-object p0
 .end method
 
 .method private finishCurrentSession()V
-    .registers 8
+    .locals 7
 
     .line 602
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_3
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->reportedEventsForCurrentSession:Z
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_3
 
     .line 603
     iget v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->audioUnderruns:I
@@ -285,18 +285,18 @@
 
     const-wide/16 v3, 0x0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_0
 
     move-wide v5, v3
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v5
 
-    :goto_32
+    :goto_0
     invoke-virtual {v2, v5, v6}, Landroid/media/metrics/PlaybackMetrics$Builder;->setNetworkTransferDurationMillis(J)Landroid/media/metrics/PlaybackMetrics$Builder;
 
     .line 609
@@ -313,24 +313,24 @@
     .line 610
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     move-wide v5, v3
 
-    goto :goto_49
+    goto :goto_1
 
-    :cond_45
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v5
 
-    :goto_49
+    :goto_1
     invoke-virtual {v2, v5, v6}, Landroid/media/metrics/PlaybackMetrics$Builder;->setNetworkBytesRead(J)Landroid/media/metrics/PlaybackMetrics$Builder;
 
     .line 612
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_2
 
     .line 613
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
@@ -339,17 +339,17 @@
 
     cmp-long v0, v5, v3
 
-    if-lez v0, :cond_5a
+    if-lez v0, :cond_2
 
     const/4 v0, 0x1
 
-    goto :goto_5b
+    goto :goto_2
 
-    :cond_5a
+    :cond_2
     move v0, v1
 
     .line 612
-    :goto_5b
+    :goto_2
     invoke-virtual {v2, v0}, Landroid/media/metrics/PlaybackMetrics$Builder;->setStreamSource(I)Landroid/media/metrics/PlaybackMetrics$Builder;
 
     .line 616
@@ -363,7 +363,7 @@
 
     invoke-virtual {v0, v2}, Landroid/media/metrics/PlaybackSession;->reportPlaybackMetrics(Landroid/media/metrics/PlaybackMetrics;)V
 
-    :cond_69
+    :cond_3
     const/4 v0, 0x0
 
     .line 618
@@ -397,50 +397,50 @@
 .end method
 
 .method private static getDrmErrorCode(I)I
-    .registers 1
+    .locals 0
 
     .line 857
     invoke-static {p0}, Landroidx/media3/common/util/Util;->getErrorCodeForMediaDrmErrorCode(I)I
 
     move-result p0
 
-    packed-switch p0, :pswitch_data_16
+    packed-switch p0, :pswitch_data_0
 
     const/16 p0, 0x1b
 
     return p0
 
-    :pswitch_a
+    :pswitch_0
     const/16 p0, 0x1a
 
     return p0
 
-    :pswitch_d
+    :pswitch_1
     const/16 p0, 0x19
 
     return p0
 
-    :pswitch_10
+    :pswitch_2
     const/16 p0, 0x1c
 
     return p0
 
-    :pswitch_13
+    :pswitch_3
     const/16 p0, 0x18
 
     return p0
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1772
-        :pswitch_13
-        :pswitch_10
-        :pswitch_d
-        :pswitch_a
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static getDrmInitData(Lcom/google/common/collect/ImmutableList;)Landroidx/media3/common/DrmInitData;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -456,12 +456,12 @@
 
     move-result-object p0
 
-    :cond_4
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -472,17 +472,17 @@
     const/4 v1, 0x0
 
     .line 825
-    :goto_11
+    :goto_0
     iget v2, v0, Landroidx/media3/common/Tracks$Group;->length:I
 
-    if-ge v1, v2, :cond_4
+    if-ge v1, v2, :cond_0
 
     .line 826
     invoke-virtual {v0, v1}, Landroidx/media3/common/Tracks$Group;->isTrackSelected(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     .line 827
     invoke-virtual {v0, v1}, Landroidx/media3/common/Tracks$Group;->getTrackFormat(I)Landroidx/media3/common/Format;
@@ -491,31 +491,31 @@
 
     iget-object v2, v2, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     return-object v2
 
-    :cond_24
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getDrmType(Landroidx/media3/common/DrmInitData;)I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 838
-    :goto_1
+    :goto_0
     iget v1, p0, Landroidx/media3/common/DrmInitData;->schemeDataCount:I
 
-    if-ge v0, v1, :cond_2c
+    if-ge v0, v1, :cond_3
 
     .line 839
     invoke-virtual {p0, v0}, Landroidx/media3/common/DrmInitData;->get(I)Landroidx/media3/common/DrmInitData$SchemeData;
@@ -531,53 +531,53 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     const/4 p0, 0x3
 
     return p0
 
     .line 845
-    :cond_15
+    :cond_0
     sget-object v2, Landroidx/media3/common/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v1, v2}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     const/4 p0, 0x2
 
     return p0
 
     .line 848
-    :cond_1f
+    :cond_1
     sget-object v2, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v1, v2}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_2
 
     const/4 p0, 0x6
 
     return p0
 
-    :cond_29
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2c
+    :cond_3
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static getErrorInfo(Landroidx/media3/common/PlaybackException;Landroid/content/Context;Z)Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
-    .registers 11
+    .locals 8
 
     .line 697
     iget v0, p0, Landroidx/media3/common/PlaybackException;->errorCode:I
@@ -586,7 +586,7 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 698
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -598,12 +598,12 @@
     return-object p0
 
     .line 704
-    :cond_f
+    :cond_0
     instance-of v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 705
     move-object v0, p0
@@ -613,28 +613,28 @@
     .line 706
     iget v3, v0, Landroidx/media3/exoplayer/ExoPlaybackException;->type:I
 
-    if-ne v3, v1, :cond_1d
+    if-ne v3, v1, :cond_1
 
     move v3, v1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v3, v2
 
     .line 708
-    :goto_1e
+    :goto_0
     iget v0, v0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormatSupport:I
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_21
+    :cond_2
     move v0, v2
 
     move v3, v0
 
     .line 710
-    :goto_23
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/PlaybackException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v4
@@ -652,12 +652,12 @@
 
     const/16 v7, 0x17
 
-    if-eqz v5, :cond_165
+    if-eqz v5, :cond_17
 
     .line 712
     instance-of v0, v4, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_3
 
     .line 713
     check-cast v4, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
@@ -674,38 +674,38 @@
     return-object p1
 
     .line 716
-    :cond_43
+    :cond_3
     instance-of v0, v4, Landroidx/media3/datasource/HttpDataSource$InvalidContentTypeException;
 
-    if-nez v0, :cond_158
+    if-nez v0, :cond_15
 
     instance-of v0, v4, Landroidx/media3/common/ParserException;
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_4
 
-    goto/16 :goto_158
+    goto/16 :goto_3
 
     .line 723
-    :cond_4d
+    :cond_4
     instance-of p2, v4, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
-    if-nez p2, :cond_117
+    if-nez p2, :cond_10
 
     instance-of v0, v4, Landroidx/media3/datasource/UdpDataSource$UdpDataSourceException;
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_5
 
-    goto/16 :goto_117
+    goto/16 :goto_2
 
     .line 745
-    :cond_57
+    :cond_5
     iget p0, p0, Landroidx/media3/common/PlaybackException;->errorCode:I
 
     const/16 p1, 0x3ea
 
     const/16 p2, 0x15
 
-    if-ne p0, p1, :cond_65
+    if-ne p0, p1, :cond_6
 
     .line 746
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -715,10 +715,10 @@
     return-object p0
 
     .line 748
-    :cond_65
+    :cond_6
     instance-of p0, v4, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
 
-    if-eqz p0, :cond_d5
+    if-eqz p0, :cond_d
 
     .line 750
     invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
@@ -734,11 +734,11 @@
     .line 751
     sget p1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-lt p1, p2, :cond_8f
+    if-lt p1, p2, :cond_7
 
     instance-of p1, p0, Landroid/media/MediaDrm$MediaDrmStateException;
 
-    if-eqz p1, :cond_8f
+    if-eqz p1, :cond_7
 
     .line 752
     check-cast p0, Landroid/media/MediaDrm$MediaDrmStateException;
@@ -765,14 +765,14 @@
     return-object p2
 
     .line 756
-    :cond_8f
+    :cond_7
     sget p1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-lt p1, v7, :cond_9f
+    if-lt p1, v7, :cond_8
 
     instance-of p1, p0, Landroid/media/MediaDrmResetException;
 
-    if-eqz p1, :cond_9f
+    if-eqz p1, :cond_8
 
     .line 757
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -784,10 +784,10 @@
     return-object p0
 
     .line 758
-    :cond_9f
+    :cond_8
     instance-of p1, p0, Landroid/media/NotProvisionedException;
 
-    if-eqz p1, :cond_ab
+    if-eqz p1, :cond_9
 
     .line 759
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -799,10 +799,10 @@
     return-object p0
 
     .line 761
-    :cond_ab
+    :cond_9
     instance-of p1, p0, Landroid/media/DeniedByServerException;
 
-    if-eqz p1, :cond_b7
+    if-eqz p1, :cond_a
 
     .line 762
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -814,10 +814,10 @@
     return-object p0
 
     .line 763
-    :cond_b7
+    :cond_a
     instance-of p1, p0, Landroidx/media3/exoplayer/drm/UnsupportedDrmException;
 
-    if-eqz p1, :cond_c1
+    if-eqz p1, :cond_b
 
     .line 764
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -827,10 +827,10 @@
     return-object p0
 
     .line 766
-    :cond_c1
+    :cond_b
     instance-of p0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$MissingSchemeDataException;
 
-    if-eqz p0, :cond_cd
+    if-eqz p0, :cond_c
 
     .line 767
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -842,7 +842,7 @@
     return-object p0
 
     .line 769
-    :cond_cd
+    :cond_c
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     const/16 p1, 0x1e
@@ -852,10 +852,10 @@
     return-object p0
 
     .line 771
-    :cond_d5
+    :cond_d
     instance-of p0, v4, Landroidx/media3/datasource/FileDataSource$FileDataSourceException;
 
-    if-eqz p0, :cond_10f
+    if-eqz p0, :cond_f
 
     .line 772
     invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
@@ -864,7 +864,7 @@
 
     instance-of p0, p0, Ljava/io/FileNotFoundException;
 
-    if-eqz p0, :cond_10f
+    if-eqz p0, :cond_f
 
     .line 773
     invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
@@ -884,11 +884,11 @@
     .line 774
     sget p1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-lt p1, p2, :cond_107
+    if-lt p1, p2, :cond_e
 
     instance-of p1, p0, Landroid/system/ErrnoException;
 
-    if-eqz p1, :cond_107
+    if-eqz p1, :cond_e
 
     check-cast p0, Landroid/system/ErrnoException;
 
@@ -896,7 +896,7 @@
 
     sget p1, Landroid/system/OsConstants;->EACCES:I
 
-    if-ne p0, p1, :cond_107
+    if-ne p0, p1, :cond_e
 
     .line 777
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -908,7 +908,7 @@
     return-object p0
 
     .line 779
-    :cond_107
+    :cond_e
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     const/16 p1, 0x1f
@@ -918,7 +918,7 @@
     return-object p0
 
     .line 782
-    :cond_10f
+    :cond_f
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     const/16 p1, 0x9
@@ -928,8 +928,8 @@
     return-object p0
 
     .line 725
-    :cond_117
-    :goto_117
+    :cond_10
+    :goto_2
     invoke-static {p1}, Landroidx/media3/common/util/NetworkTypeObserver;->getInstance(Landroid/content/Context;)Landroidx/media3/common/util/NetworkTypeObserver;
 
     move-result-object p0
@@ -938,7 +938,7 @@
 
     move-result p0
 
-    if-ne p0, v1, :cond_127
+    if-ne p0, v1, :cond_11
 
     .line 726
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -948,7 +948,7 @@
     return-object p0
 
     .line 729
-    :cond_127
+    :cond_11
     invoke-virtual {v4}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object p0
@@ -956,7 +956,7 @@
     .line 730
     instance-of p1, p0, Ljava/net/UnknownHostException;
 
-    if-eqz p1, :cond_136
+    if-eqz p1, :cond_12
 
     .line 731
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -968,10 +968,10 @@
     return-object p0
 
     .line 732
-    :cond_136
+    :cond_12
     instance-of p0, p0, Ljava/net/SocketTimeoutException;
 
-    if-eqz p0, :cond_141
+    if-eqz p0, :cond_13
 
     .line 733
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -982,15 +982,15 @@
 
     return-object p0
 
-    :cond_141
-    if-eqz p2, :cond_150
+    :cond_13
+    if-eqz p2, :cond_14
 
     .line 735
     check-cast v4, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     iget p0, v4, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;->type:I
 
-    if-ne p0, v1, :cond_150
+    if-ne p0, v1, :cond_14
 
     .line 738
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -1002,7 +1002,7 @@
     return-object p0
 
     .line 741
-    :cond_150
+    :cond_14
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     const/16 p1, 0x8
@@ -1012,34 +1012,34 @@
     return-object p0
 
     .line 718
-    :cond_158
-    :goto_158
+    :cond_15
+    :goto_3
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
-    if-eqz p2, :cond_15f
+    if-eqz p2, :cond_16
 
     const/16 p1, 0xa
 
-    goto :goto_161
+    goto :goto_4
 
-    :cond_15f
+    :cond_16
     const/16 p1, 0xb
 
     .line 721
-    :goto_161
+    :goto_4
     invoke-direct {p0, p1, v2}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;-><init>(II)V
 
     return-object p0
 
-    :cond_165
-    if-eqz v3, :cond_173
+    :cond_17
+    if-eqz v3, :cond_19
 
-    if-eqz v0, :cond_16b
+    if-eqz v0, :cond_18
 
-    if-ne v0, v1, :cond_173
+    if-ne v0, v1, :cond_19
 
     .line 787
-    :cond_16b
+    :cond_18
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     const/16 p1, 0x23
@@ -1048,10 +1048,10 @@
 
     return-object p0
 
-    :cond_173
-    if-eqz v3, :cond_17f
+    :cond_19
+    if-eqz v3, :cond_1a
 
-    if-ne v0, v6, :cond_17f
+    if-ne v0, v6, :cond_1a
 
     .line 791
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -1062,12 +1062,12 @@
 
     return-object p0
 
-    :cond_17f
-    if-eqz v3, :cond_18a
+    :cond_1a
+    if-eqz v3, :cond_1b
 
     const/4 p0, 0x2
 
-    if-ne v0, p0, :cond_18a
+    if-ne v0, p0, :cond_1b
 
     .line 795
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -1077,10 +1077,10 @@
     return-object p0
 
     .line 796
-    :cond_18a
+    :cond_1b
     instance-of p0, v4, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;
 
-    if-eqz p0, :cond_19e
+    if-eqz p0, :cond_1c
 
     .line 798
     check-cast v4, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;
@@ -1102,12 +1102,12 @@
     return-object p1
 
     .line 802
-    :cond_19e
+    :cond_1c
     instance-of p0, v4, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;
 
     const/16 p1, 0xe
 
-    if-eqz p0, :cond_1ae
+    if-eqz p0, :cond_1d
 
     .line 803
     check-cast v4, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;
@@ -1122,10 +1122,10 @@
     return-object p2
 
     .line 805
-    :cond_1ae
+    :cond_1d
     instance-of p0, v4, Ljava/lang/OutOfMemoryError;
 
-    if-eqz p0, :cond_1b8
+    if-eqz p0, :cond_1e
 
     .line 806
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
@@ -1135,10 +1135,10 @@
     return-object p0
 
     .line 807
-    :cond_1b8
+    :cond_1e
     instance-of p0, v4, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;
 
-    if-eqz p0, :cond_1c8
+    if-eqz p0, :cond_1f
 
     .line 808
     check-cast v4, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;
@@ -1155,10 +1155,10 @@
     return-object p1
 
     .line 810
-    :cond_1c8
+    :cond_1f
     instance-of p0, v4, Landroidx/media3/exoplayer/audio/AudioSink$WriteException;
 
-    if-eqz p0, :cond_1d8
+    if-eqz p0, :cond_20
 
     .line 811
     check-cast v4, Landroidx/media3/exoplayer/audio/AudioSink$WriteException;
@@ -1175,10 +1175,10 @@
     return-object p1
 
     .line 813
-    :cond_1d8
+    :cond_20
     instance-of p0, v4, Landroid/media/MediaCodec$CryptoException;
 
-    if-eqz p0, :cond_1ec
+    if-eqz p0, :cond_21
 
     .line 814
     check-cast v4, Landroid/media/MediaCodec$CryptoException;
@@ -1200,7 +1200,7 @@
     return-object p2
 
     .line 818
-    :cond_1ec
+    :cond_21
     new-instance p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     const/16 p1, 0x16
@@ -1211,7 +1211,7 @@
 .end method
 
 .method private static getLanguageAndRegion(Ljava/lang/String;)Landroid/util/Pair;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1240,18 +1240,18 @@
 
     const/4 v2, 0x2
 
-    if-lt v1, v2, :cond_11
+    if-lt v1, v2, :cond_0
 
     const/4 v1, 0x1
 
     aget-object p0, p0, v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_12
+    :goto_0
     invoke-static {v0, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object p0
@@ -1260,7 +1260,7 @@
 .end method
 
 .method private static getNetworkType(Landroid/content/Context;)I
-    .registers 1
+    .locals 0
 
     .line 650
     invoke-static {p0}, Landroidx/media3/common/util/NetworkTypeObserver;->getInstance(Landroid/content/Context;)Landroidx/media3/common/util/NetworkTypeObserver;
@@ -1271,90 +1271,90 @@
 
     move-result p0
 
-    packed-switch p0, :pswitch_data_22
+    packed-switch p0, :pswitch_data_0
 
-    :pswitch_b
+    :pswitch_0
     const/4 p0, 0x1
 
     return p0
 
-    :pswitch_d
+    :pswitch_1
     const/4 p0, 0x7
 
     return p0
 
-    :pswitch_f
+    :pswitch_2
     const/16 p0, 0x8
 
     return p0
 
-    :pswitch_12
+    :pswitch_3
     const/4 p0, 0x3
 
     return p0
 
-    :pswitch_14
+    :pswitch_4
     const/4 p0, 0x6
 
     return p0
 
-    :pswitch_16
+    :pswitch_5
     const/4 p0, 0x5
 
     return p0
 
-    :pswitch_18
+    :pswitch_6
     const/4 p0, 0x4
 
     return p0
 
-    :pswitch_1a
+    :pswitch_7
     const/4 p0, 0x2
 
     return p0
 
-    :pswitch_1c
+    :pswitch_8
     const/16 p0, 0x9
 
     return p0
 
-    :pswitch_1f
+    :pswitch_9
     const/4 p0, 0x0
 
     return p0
 
     nop
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_1a
-        :pswitch_18
-        :pswitch_16
-        :pswitch_14
-        :pswitch_b
-        :pswitch_12
-        :pswitch_b
-        :pswitch_f
-        :pswitch_d
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method private static getStreamType(Landroidx/media3/common/MediaItem;)I
-    .registers 3
+    .locals 2
 
     .line 675
     iget-object v0, p0, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 679
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v0, v0, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -1368,75 +1368,75 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_3
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_2
 
     const/4 v1, 0x2
 
-    if-eq p0, v1, :cond_1b
+    if-eq p0, v1, :cond_1
 
     return v0
 
-    :cond_1b
+    :cond_1
     const/4 p0, 0x4
 
     return p0
 
-    :cond_1d
+    :cond_2
     const/4 p0, 0x5
 
     return p0
 
-    :cond_1f
+    :cond_3
     const/4 p0, 0x3
 
     return p0
 .end method
 
 .method private static getTrackChangeReason(I)I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
-    if-eq p0, v1, :cond_d
+    if-eq p0, v1, :cond_2
 
     const/4 v2, 0x3
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_1
 
-    if-eq p0, v2, :cond_a
+    if-eq p0, v2, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     const/4 p0, 0x4
 
     return p0
 
-    :cond_c
+    :cond_1
     return v2
 
-    :cond_d
+    :cond_2
     return v0
 .end method
 
 .method private maybeAddSessions(Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 321
-    :goto_1
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_2b
+    if-ge v0, v1, :cond_2
 
     .line 322
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->get(I)I
@@ -1448,19 +1448,19 @@
 
     move-result-object v2
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     .line 325
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->sessionManager:Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;
 
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;->updateSessionsWithTimelineChange(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_17
+    :cond_0
     const/16 v3, 0xb
 
-    if-ne v1, v3, :cond_23
+    if-ne v1, v3, :cond_1
 
     .line 327
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->sessionManager:Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;
@@ -1469,25 +1469,25 @@
 
     invoke-interface {v1, v2, v3}, Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;->updateSessionsWithDiscontinuity(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
 
-    goto :goto_28
+    goto :goto_1
 
     .line 329
-    :cond_23
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->sessionManager:Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;
 
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;->updateSessions(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
 
-    :goto_28
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     return-void
 .end method
 
 .method private maybeReportNetworkChange(J)V
-    .registers 7
+    .locals 4
 
     .line 415
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->context:Landroid/content/Context;
@@ -1499,7 +1499,7 @@
     .line 416
     iget v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentNetworkType:I
 
-    if-eq v0, v1, :cond_25
+    if-eq v0, v1, :cond_0
 
     .line 417
     iput v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentNetworkType:I
@@ -1533,22 +1533,22 @@
     .line 418
     invoke-virtual {v1, p1}, Landroid/media/metrics/PlaybackSession;->reportNetworkEvent(Landroid/media/metrics/NetworkEvent;)V
 
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 .method private maybeReportPlaybackError(J)V
-    .registers 10
+    .locals 7
 
     .line 353
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingPlayerError:Landroidx/media3/common/PlaybackException;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 357
-    :cond_5
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->context:Landroid/content/Context;
 
     iget v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->ioErrorType:I
@@ -1557,17 +1557,17 @@
 
     const/4 v4, 0x1
 
-    if-ne v2, v3, :cond_f
+    if-ne v2, v3, :cond_1
 
     move v2, v4
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 v2, 0x0
 
     .line 358
-    :goto_10
+    :goto_0
     invoke-static {v0, v1, v2}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->getErrorInfo(Landroidx/media3/common/PlaybackException;Landroid/content/Context;Z)Landroidx/media3/exoplayer/analytics/MediaMetricsListener$ErrorInfo;
 
     move-result-object v1
@@ -1627,7 +1627,7 @@
 .end method
 
 .method private maybeReportPlaybackStateChange(Landroidx/media3/common/Player;Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;J)V
-    .registers 8
+    .locals 3
 
     .line 427
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlaybackState()I
@@ -1638,27 +1638,27 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_0
 
     .line 428
     iput-boolean v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->isSeeking:Z
 
     .line 430
-    :cond_a
+    :cond_0
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlayerError()Landroidx/media3/common/PlaybackException;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 431
     iput-boolean v2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->hasFatalError:Z
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/16 v0, 0xa
 
     .line 432
@@ -1666,14 +1666,14 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_2
 
     .line 433
     iput-boolean v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->hasFatalError:Z
 
     .line 435
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->resolveNewPlaybackState(Landroidx/media3/common/Player;)I
 
     move-result p1
@@ -1681,7 +1681,7 @@
     .line 436
     iget p2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentPlaybackState:I
 
-    if-eq p2, p1, :cond_45
+    if-eq p2, p1, :cond_3
 
     .line 437
     iput p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentPlaybackState:I
@@ -1720,12 +1720,12 @@
     .line 439
     invoke-virtual {p1, p2}, Landroid/media/metrics/PlaybackSession;->reportPlaybackStateEvent(Landroid/media/metrics/PlaybackStateEvent;)V
 
-    :cond_45
+    :cond_3
     return-void
 .end method
 
 .method private maybeReportTrackChanges(Landroidx/media3/common/Player;Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;J)V
-    .registers 8
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -1736,7 +1736,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_30
+    if-eqz p2, :cond_3
 
     .line 373
     invoke-interface {p1}, Landroidx/media3/common/Player;->getCurrentTracks()Landroidx/media3/common/Tracks;
@@ -1762,41 +1762,41 @@
 
     move-result p1
 
-    if-nez p2, :cond_20
+    if-nez p2, :cond_0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_3
 
-    :cond_20
+    :cond_0
     const/4 v2, 0x0
 
-    if-nez p2, :cond_26
+    if-nez p2, :cond_1
 
     .line 380
     invoke-direct {p0, p3, p4, v1, v2}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->maybeUpdateVideoFormat(JLandroidx/media3/common/Format;I)V
 
-    :cond_26
-    if-nez v0, :cond_2b
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 383
     invoke-direct {p0, p3, p4, v1, v2}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->maybeUpdateAudioFormat(JLandroidx/media3/common/Format;I)V
 
-    :cond_2b
-    if-nez p1, :cond_30
+    :cond_2
+    if-nez p1, :cond_3
 
     .line 386
     invoke-direct {p0, p3, p4, v1, v2}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->maybeUpdateTextFormat(JLandroidx/media3/common/Format;I)V
 
     .line 390
-    :cond_30
+    :cond_3
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->canReportPendingFormatUpdate(Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_4
 
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
@@ -1806,7 +1806,7 @@
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_4e
+    if-eq p1, p2, :cond_4
 
     .line 392
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
@@ -1823,14 +1823,14 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
     .line 396
-    :cond_4e
+    :cond_4
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingAudioFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->canReportPendingFormatUpdate(Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_63
+    if-eqz p1, :cond_5
 
     .line 397
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingAudioFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
@@ -1847,14 +1847,14 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingAudioFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
     .line 401
-    :cond_63
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingTextFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->canReportPendingFormatUpdate(Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_78
+    if-eqz p1, :cond_6
 
     .line 402
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingTextFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
@@ -1870,12 +1870,12 @@
     .line 404
     iput-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingTextFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
-    :cond_78
+    :cond_6
     return-void
 .end method
 
 .method private maybeUpdateAudioFormat(JLandroidx/media3/common/Format;I)V
-    .registers 11
+    .locals 6
 
     .line 499
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentAudioFormat:Landroidx/media3/common/Format;
@@ -1884,21 +1884,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 502
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentAudioFormat:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    if-nez p4, :cond_10
+    if-nez p4, :cond_1
 
     const/4 p4, 0x1
 
-    :cond_10
+    :cond_1
     move v5, p4
 
     .line 505
@@ -1919,7 +1919,7 @@
 .end method
 
 .method private maybeUpdateMetricsBuilderValues(Landroidx/media3/common/Player;Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1928,7 +1928,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 336
     invoke-virtual {p2, v0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->getEventTime(I)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1938,7 +1938,7 @@
     .line 337
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 338
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->timeline:Landroidx/media3/common/Timeline;
@@ -1947,7 +1947,7 @@
 
     invoke-direct {p0, v1, v0}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->maybeUpdateTimelineMetadata(Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x2
 
     .line 341
@@ -1955,11 +1955,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     .line 342
     invoke-interface {p1}, Landroidx/media3/common/Player;->getCurrentTracks()Landroidx/media3/common/Tracks;
@@ -1974,7 +1974,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_1
 
     .line 344
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
@@ -1991,7 +1991,7 @@
 
     invoke-virtual {v0, p1}, Landroid/media/metrics/PlaybackMetrics$Builder;->setDrmType(I)Landroid/media/metrics/PlaybackMetrics$Builder;
 
-    :cond_3e
+    :cond_1
     const/16 p1, 0x3f3
 
     .line 347
@@ -1999,7 +1999,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_2
 
     .line 348
     iget p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->audioUnderruns:I
@@ -2008,12 +2008,12 @@
 
     iput p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->audioUnderruns:I
 
-    :cond_4c
+    :cond_2
     return-void
 .end method
 
 .method private maybeUpdateTextFormat(JLandroidx/media3/common/Format;I)V
-    .registers 11
+    .locals 6
 
     .line 512
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentTextFormat:Landroidx/media3/common/Format;
@@ -2022,21 +2022,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 515
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentTextFormat:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    if-nez p4, :cond_10
+    if-nez p4, :cond_1
 
     const/4 p4, 0x1
 
-    :cond_10
+    :cond_1
     move v5, p4
 
     .line 518
@@ -2057,7 +2057,7 @@
 .end method
 
 .method private maybeUpdateTimelineMetadata(Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 6
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "metricsBuilder"
@@ -2067,12 +2067,12 @@
     .line 579
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->metricsBuilder:Landroid/media/metrics/PlaybackMetrics$Builder;
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
     return-void
 
     .line 583
-    :cond_5
+    :cond_0
     iget-object p2, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-virtual {p1, p2}, Landroidx/media3/common/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
@@ -2081,12 +2081,12 @@
 
     const/4 v1, -0x1
 
-    if-ne p2, v1, :cond_f
+    if-ne p2, v1, :cond_1
 
     return-void
 
     .line 587
-    :cond_f
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->period:Landroidx/media3/common/Timeline$Period;
 
     invoke-virtual {p1, p2, v1}, Landroidx/media3/common/Timeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
@@ -2120,19 +2120,19 @@
 
     cmp-long p1, p1, v1
 
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->window:Landroidx/media3/common/Timeline$Window;
 
     iget-boolean p1, p1, Landroidx/media3/common/Timeline$Window;->isPlaceholder:Z
 
-    if-nez p1, :cond_52
+    if-nez p1, :cond_2
 
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->window:Landroidx/media3/common/Timeline$Window;
 
     iget-boolean p1, p1, Landroidx/media3/common/Timeline$Window;->isDynamic:Z
 
-    if-nez p1, :cond_52
+    if-nez p1, :cond_2
 
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->window:Landroidx/media3/common/Timeline$Window;
 
@@ -2141,7 +2141,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_52
+    if-nez p1, :cond_2
 
     .line 594
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->window:Landroidx/media3/common/Timeline$Window;
@@ -2153,7 +2153,7 @@
     invoke-virtual {v0, p1, p2}, Landroid/media/metrics/PlaybackMetrics$Builder;->setMediaDurationMillis(J)Landroid/media/metrics/PlaybackMetrics$Builder;
 
     .line 597
-    :cond_52
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->window:Landroidx/media3/common/Timeline$Window;
 
     invoke-virtual {p1}, Landroidx/media3/common/Timeline$Window;->isLive()Z
@@ -2162,17 +2162,17 @@
 
     const/4 p2, 0x1
 
-    if-eqz p1, :cond_5d
+    if-eqz p1, :cond_3
 
     const/4 p1, 0x2
 
-    goto :goto_5e
+    goto :goto_0
 
-    :cond_5d
+    :cond_3
     move p1, p2
 
     .line 596
-    :goto_5e
+    :goto_0
     invoke-virtual {v0, p1}, Landroid/media/metrics/PlaybackMetrics$Builder;->setPlaybackType(I)Landroid/media/metrics/PlaybackMetrics$Builder;
 
     .line 598
@@ -2182,7 +2182,7 @@
 .end method
 
 .method private maybeUpdateVideoFormat(JLandroidx/media3/common/Format;I)V
-    .registers 11
+    .locals 6
 
     .line 486
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentVideoFormat:Landroidx/media3/common/Format;
@@ -2191,21 +2191,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 489
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentVideoFormat:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    if-nez p4, :cond_10
+    if-nez p4, :cond_1
 
     const/4 p4, 0x1
 
-    :cond_10
+    :cond_1
     move v5, p4
 
     .line 492
@@ -2226,7 +2226,7 @@
 .end method
 
 .method private reportTrackChangeEvent(IJLandroidx/media3/common/Format;I)V
-    .registers 9
+    .locals 3
 
     .line 528
     new-instance v0, Landroid/media/metrics/TrackChangeEvent$Builder;
@@ -2244,7 +2244,7 @@
 
     const/4 p2, 0x1
 
-    if-eqz p4, :cond_8c
+    if-eqz p4, :cond_9
 
     .line 531
     invoke-virtual {p1, p2}, Landroid/media/metrics/TrackChangeEvent$Builder;->setTrackState(I)Landroid/media/metrics/TrackChangeEvent$Builder;
@@ -2259,7 +2259,7 @@
     .line 533
     iget-object p3, p4, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
 
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_0
 
     .line 535
     iget-object p3, p4, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
@@ -2267,10 +2267,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setContainerMimeType(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 537
-    :cond_22
+    :cond_0
     iget-object p3, p4, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_1
 
     .line 538
     iget-object p3, p4, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -2278,10 +2278,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setSampleMimeType(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 540
-    :cond_2b
+    :cond_1
     iget-object p3, p4, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-eqz p3, :cond_34
+    if-eqz p3, :cond_2
 
     .line 541
     iget-object p3, p4, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
@@ -2289,12 +2289,12 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setCodecName(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 543
-    :cond_34
+    :cond_2
     iget p3, p4, Landroidx/media3/common/Format;->bitrate:I
 
     const/4 p5, -0x1
 
-    if-eq p3, p5, :cond_3e
+    if-eq p3, p5, :cond_3
 
     .line 544
     iget p3, p4, Landroidx/media3/common/Format;->bitrate:I
@@ -2302,10 +2302,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setBitrate(I)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 546
-    :cond_3e
+    :cond_3
     iget p3, p4, Landroidx/media3/common/Format;->width:I
 
-    if-eq p3, p5, :cond_47
+    if-eq p3, p5, :cond_4
 
     .line 547
     iget p3, p4, Landroidx/media3/common/Format;->width:I
@@ -2313,10 +2313,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setWidth(I)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 549
-    :cond_47
+    :cond_4
     iget p3, p4, Landroidx/media3/common/Format;->height:I
 
-    if-eq p3, p5, :cond_50
+    if-eq p3, p5, :cond_5
 
     .line 550
     iget p3, p4, Landroidx/media3/common/Format;->height:I
@@ -2324,10 +2324,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setHeight(I)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 552
-    :cond_50
+    :cond_5
     iget p3, p4, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq p3, p5, :cond_59
+    if-eq p3, p5, :cond_6
 
     .line 553
     iget p3, p4, Landroidx/media3/common/Format;->channelCount:I
@@ -2335,10 +2335,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setChannelCount(I)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 555
-    :cond_59
+    :cond_6
     iget p3, p4, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-eq p3, p5, :cond_62
+    if-eq p3, p5, :cond_7
 
     .line 556
     iget p3, p4, Landroidx/media3/common/Format;->sampleRate:I
@@ -2346,10 +2346,10 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setAudioSampleRate(I)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 558
-    :cond_62
+    :cond_7
     iget-object p3, p4, Landroidx/media3/common/Format;->language:Ljava/lang/String;
 
-    if-eqz p3, :cond_7e
+    if-eqz p3, :cond_8
 
     .line 559
     iget-object p3, p4, Landroidx/media3/common/Format;->language:Ljava/lang/String;
@@ -2369,7 +2369,7 @@
     .line 562
     iget-object p5, p3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    if-eqz p5, :cond_7e
+    if-eqz p5, :cond_8
 
     .line 563
     iget-object p3, p3, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -2379,31 +2379,31 @@
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setLanguageRegion(Ljava/lang/String;)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 566
-    :cond_7e
+    :cond_8
     iget p3, p4, Landroidx/media3/common/Format;->frameRate:F
 
     const/high16 p5, -0x40800000    # -1.0f
 
     cmpl-float p3, p3, p5
 
-    if-eqz p3, :cond_90
+    if-eqz p3, :cond_a
 
     .line 567
     iget p3, p4, Landroidx/media3/common/Format;->frameRate:F
 
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setVideoFrameRate(F)Landroid/media/metrics/TrackChangeEvent$Builder;
 
-    goto :goto_90
+    goto :goto_0
 
-    :cond_8c
+    :cond_9
     const/4 p3, 0x0
 
     .line 570
     invoke-virtual {p1, p3}, Landroid/media/metrics/TrackChangeEvent$Builder;->setTrackState(I)Landroid/media/metrics/TrackChangeEvent$Builder;
 
     .line 572
-    :cond_90
-    :goto_90
+    :cond_a
+    :goto_0
     iput-boolean p2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->reportedEventsForCurrentSession:Z
 
     .line 573
@@ -2419,7 +2419,7 @@
 .end method
 
 .method private resolveNewPlaybackState(Landroidx/media3/common/Player;)I
-    .registers 6
+    .locals 4
 
     .line 448
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlaybackState()I
@@ -2429,124 +2429,124 @@
     .line 449
     iget-boolean v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->isSeeking:Z
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     const/4 p1, 0x5
 
     return p1
 
     .line 452
-    :cond_a
+    :cond_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->hasFatalError:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     const/16 p1, 0xd
 
     return p1
 
-    :cond_11
+    :cond_1
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_2
 
     const/16 p1, 0xb
 
     return p1
 
-    :cond_17
+    :cond_2
     const/16 v2, 0xc
 
     const/4 v3, 0x2
 
-    if-ne v0, v3, :cond_39
+    if-ne v0, v3, :cond_7
 
     .line 457
     iget v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentPlaybackState:I
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_6
 
-    if-eq v0, v3, :cond_38
+    if-eq v0, v3, :cond_6
 
-    if-ne v0, v2, :cond_25
+    if-ne v0, v2, :cond_3
 
-    goto :goto_38
+    goto :goto_1
 
     .line 462
-    :cond_25
+    :cond_3
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlayWhenReady()Z
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_4
 
     const/4 p1, 0x7
 
     return p1
 
     .line 465
-    :cond_2d
+    :cond_4
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlaybackSuppressionReason()I
 
     move-result p1
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_5
 
     const/16 p1, 0xa
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_36
+    :cond_5
     const/4 p1, 0x6
 
-    :goto_37
+    :goto_0
     return p1
 
-    :cond_38
-    :goto_38
+    :cond_6
+    :goto_1
     return v3
 
-    :cond_39
+    :cond_7
     const/4 v3, 0x3
 
-    if-ne v0, v3, :cond_4c
+    if-ne v0, v3, :cond_a
 
     .line 469
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlayWhenReady()Z
 
     move-result v0
 
-    if-nez v0, :cond_43
+    if-nez v0, :cond_8
 
     return v1
 
     .line 472
-    :cond_43
+    :cond_8
     invoke-interface {p1}, Landroidx/media3/common/Player;->getPlaybackSuppressionReason()I
 
     move-result p1
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_9
 
     const/16 v3, 0x9
 
-    :cond_4b
+    :cond_9
     return v3
 
-    :cond_4c
+    :cond_a
     const/4 p1, 0x1
 
-    if-ne v0, p1, :cond_54
+    if-ne v0, p1, :cond_b
 
     .line 475
     iget p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentPlaybackState:I
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_b
 
     return v2
 
     .line 481
-    :cond_54
+    :cond_b
     iget p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->currentPlaybackState:I
 
     return p1
@@ -2555,7 +2555,7 @@
 
 # virtual methods
 .method public getLogSessionId()Landroid/media/metrics/LogSessionId;
-    .registers 2
+    .locals 1
 
     .line 161
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->playbackSession:Landroid/media/metrics/PlaybackSession;
@@ -2568,18 +2568,18 @@
 .end method
 
 .method public onAdPlaybackStarted(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onBandwidthEstimate(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJJ)V
-    .registers 12
+    .locals 5
 
     .line 225
     iget-object p5, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-eqz p5, :cond_4a
+    if-eqz p5, :cond_2
 
     .line 226
     iget-object p5, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->sessionManager:Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;
@@ -2623,19 +2623,19 @@
 
     const-wide/16 v1, 0x0
 
-    if-nez p5, :cond_2c
+    if-nez p5, :cond_0
 
     move-wide v3, v1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 232
-    :cond_2c
+    :cond_0
     invoke-virtual {p5}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v3
 
-    :goto_30
+    :goto_0
     add-long/2addr v3, p3
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2648,17 +2648,17 @@
     .line 233
     iget-object p3, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->bandwidthTimeMs:Ljava/util/HashMap;
 
-    if-nez p6, :cond_3d
+    if-nez p6, :cond_1
 
-    goto :goto_41
+    goto :goto_1
 
     .line 234
-    :cond_3d
+    :cond_1
     invoke-virtual {p6}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v1
 
-    :goto_41
+    :goto_1
     int-to-long p4, p2
 
     add-long/2addr v1, p4
@@ -2670,22 +2670,22 @@
     .line 233
     invoke-virtual {p3, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_4a
+    :cond_2
     return-void
 .end method
 
 .method public onDownstreamFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 8
+    .locals 5
 
     .line 240
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 245
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
     iget-object v1, p2, Landroidx/media3/exoplayer/source/MediaLoadData;->trackFormat:Landroidx/media3/common/Format;
@@ -2722,56 +2722,56 @@
     .line 251
     iget p1, p2, Landroidx/media3/exoplayer/source/MediaLoadData;->trackType:I
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_3
 
     const/4 p2, 0x1
 
-    if-eq p1, p2, :cond_35
+    if-eq p1, p2, :cond_2
 
     const/4 p2, 0x2
 
-    if-eq p1, p2, :cond_38
+    if-eq p1, p2, :cond_3
 
     const/4 p2, 0x3
 
-    if-eq p1, p2, :cond_32
+    if-eq p1, p2, :cond_1
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 260
-    :cond_32
+    :cond_1
     iput-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingTextFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 257
-    :cond_35
+    :cond_2
     iput-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingAudioFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 254
-    :cond_38
+    :cond_3
     iput-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
-    :goto_3a
+    :goto_0
     return-void
 .end method
 
 .method public onEvents(Landroidx/media3/common/Player;Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;)V
-    .registers 5
+    .locals 2
 
     .line 303
     invoke-virtual {p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 306
-    :cond_7
+    :cond_0
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->maybeAddSessions(Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;)V
 
     .line 308
@@ -2801,7 +2801,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     .line 316
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->sessionManager:Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;
@@ -2812,12 +2812,12 @@
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/analytics/PlaybackSessionManager;->finishAllSessions(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
 
-    :cond_2e
+    :cond_1
     return-void
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;Z)V
-    .registers 6
+    .locals 0
 
     .line 293
     iget p1, p3, Landroidx/media3/exoplayer/source/MediaLoadData;->dataType:I
@@ -2828,7 +2828,7 @@
 .end method
 
 .method public onPlayerError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackException;)V
-    .registers 3
+    .locals 0
 
     .line 298
     iput-object p2, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingPlayerError:Landroidx/media3/common/PlaybackException;
@@ -2837,29 +2837,29 @@
 .end method
 
 .method public onPositionDiscontinuity(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Player$PositionInfo;Landroidx/media3/common/Player$PositionInfo;I)V
-    .registers 5
+    .locals 0
 
     const/4 p1, 0x1
 
-    if-ne p4, p1, :cond_5
+    if-ne p4, p1, :cond_0
 
     .line 210
     iput-boolean p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->isSeeking:Z
 
     .line 212
-    :cond_5
+    :cond_0
     iput p4, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->discontinuityReason:I
 
     return-void
 .end method
 
 .method public onSessionActive(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 171
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -2867,12 +2867,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 175
-    :cond_d
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->finishCurrentSession()V
 
     .line 176
@@ -2910,18 +2910,18 @@
 .end method
 
 .method public onSessionCreated(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onSessionFinished(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Z)V
-    .registers 4
+    .locals 0
 
     .line 191
     iget-object p3, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_0
 
     iget-object p1, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -2929,9 +2929,9 @@
 
     move-result p1
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_2
 
-    :cond_c
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->activeSessionId:Ljava/lang/String;
 
     .line 192
@@ -2939,17 +2939,17 @@
 
     move-result p1
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_1
 
-    goto :goto_18
+    goto :goto_0
 
     .line 195
-    :cond_15
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->finishCurrentSession()V
 
     .line 197
-    :cond_18
-    :goto_18
+    :cond_2
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->bandwidthTimeMs:Ljava/util/HashMap;
 
     invoke-virtual {p1, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2963,7 +2963,7 @@
 .end method
 
 .method public onVideoDisabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 1
 
     .line 218
     iget p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->droppedFrames:I
@@ -2987,12 +2987,12 @@
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/VideoSize;)V
-    .registers 5
+    .locals 2
 
     .line 269
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_0
 
     .line 270
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;->format:Landroidx/media3/common/Format;
@@ -3001,7 +3001,7 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     .line 271
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;->format:Landroidx/media3/common/Format;
@@ -3041,6 +3041,6 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->pendingVideoFormat:Landroidx/media3/exoplayer/analytics/MediaMetricsListener$PendingFormatUpdate;
 
-    :cond_2c
+    :cond_0
     return-void
 .end method

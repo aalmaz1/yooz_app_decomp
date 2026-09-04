@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(IILandroid/util/Rational;Landroid/graphics/Rect;Landroid/graphics/Matrix;Ljava/util/concurrent/Executor;Landroidx/camera/core/ImageCapture$OnImageCapturedCallback;)V
-    .registers 10
+    .locals 2
 
     .line 1719
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .line 1721
     iput p2, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mJpegQuality:I
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_1
 
     .line 1723
     invoke-virtual {p3}, Landroid/util/Rational;->isZero()Z
@@ -78,17 +78,17 @@
 
     cmpl-float p1, p1, v0
 
-    if-lez p1, :cond_26
+    if-lez p1, :cond_0
 
     move v1, p2
 
-    :cond_26
+    :cond_0
     const-string p1, "Target ratio must be positive"
 
     invoke-static {v1, p1}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 1727
-    :cond_2b
+    :cond_1
     iput-object p3, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mTargetRatio:Landroid/util/Rational;
 
     .line 1728
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method dispatchImage(Landroidx/camera/core/ImageProxy;)V
-    .registers 8
+    .locals 6
 
     .line 1736
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mDispatched:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 1737
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->close()V
@@ -130,17 +130,17 @@
     return-void
 
     .line 1746
-    :cond_e
+    :cond_0
     sget-object v0, Landroidx/camera/core/ImageCapture;->EXIF_ROTATION_AVAILABILITY:Landroidx/camera/core/internal/compat/workaround/ExifRotationAvailability;
 
     invoke-virtual {v0, p1}, Landroidx/camera/core/internal/compat/workaround/ExifRotationAvailability;->shouldUseExifOrientation(Landroidx/camera/core/ImageProxy;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 1749
-    :try_start_16
+    :try_start_0
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
 
     move-result-object v0
@@ -194,12 +194,12 @@
     invoke-virtual {v1}, Landroidx/camera/core/impl/utils/Exif;->getRotation()I
 
     move-result v1
-    :try_end_49
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_49} :catch_4a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_63
+    goto :goto_0
 
-    :catch_4a
+    :catch_0
     move-exception v0
 
     const-string v1, "Unable to parse JPEG exif"
@@ -213,7 +213,7 @@
     return-void
 
     .line 1769
-    :cond_54
+    :cond_1
     new-instance v0, Landroid/util/Size;
 
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getWidth()I
@@ -230,7 +230,7 @@
     iget v1, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mRotationDegrees:I
 
     .line 1775
-    :goto_63
+    :goto_0
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getImageInfo()Landroidx/camera/core/ImageInfo;
 
     move-result-object v2
@@ -275,7 +275,7 @@
     invoke-interface {v3, v0}, Landroidx/camera/core/ImageProxy;->setCropRect(Landroid/graphics/Rect;)V
 
     .line 1790
-    :try_start_8b
+    :try_start_1
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mListenerExecutor:Ljava/util/concurrent/Executor;
 
     new-instance v1, Landroidx/camera/core/ImageCapture$ImageCaptureRequest$$ExternalSyntheticLambda1;
@@ -283,12 +283,12 @@
     invoke-direct {v1, p0, v3}, Landroidx/camera/core/ImageCapture$ImageCaptureRequest$$ExternalSyntheticLambda1;-><init>(Landroidx/camera/core/ImageCapture$ImageCaptureRequest;Landroidx/camera/core/ImageProxy;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_95
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_8b .. :try_end_95} :catch_96
+    :try_end_1
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_a0
+    goto :goto_1
 
-    :catch_96
+    :catch_1
     const-string v0, "ImageCapture"
 
     const-string v1, "Unable to post to the supplied executor."
@@ -299,12 +299,12 @@
     .line 1795
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->close()V
 
-    :goto_a0
+    :goto_1
     return-void
 .end method
 
 .method synthetic lambda$dispatchImage$0$androidx-camera-core-ImageCapture$ImageCaptureRequest(Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 1
 
     .line 1790
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mCallback:Landroidx/camera/core/ImageCapture$OnImageCapturedCallback;
@@ -315,7 +315,7 @@
 .end method
 
 .method synthetic lambda$notifyCallbackError$1$androidx-camera-core-ImageCapture$ImageCaptureRequest(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 2
 
     .line 1807
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mCallback:Landroidx/camera/core/ImageCapture$OnImageCapturedCallback;
@@ -330,7 +330,7 @@
 .end method
 
 .method notifyCallbackError(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 3
 
     .line 1802
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mDispatched:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -343,13 +343,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     return-void
 
     .line 1807
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$ImageCaptureRequest;->mListenerExecutor:Ljava/util/concurrent/Executor;
 
     new-instance v1, Landroidx/camera/core/ImageCapture$ImageCaptureRequest$$ExternalSyntheticLambda0;
@@ -357,12 +357,12 @@
     invoke-direct {v1, p0, p1, p2, p3}, Landroidx/camera/core/ImageCapture$ImageCaptureRequest$$ExternalSyntheticLambda0;-><init>(Landroidx/camera/core/ImageCapture$ImageCaptureRequest;ILjava/lang/String;Ljava/lang/Throwable;)V
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_15
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_b .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_16
+    :catch_0
     const-string p1, "ImageCapture"
 
     const-string p2, "Unable to post to the supplied executor."
@@ -370,6 +370,6 @@
     .line 1810
     invoke-static {p1, p2}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_1d
+    :goto_0
     return-void
 .end method

@@ -72,7 +72,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final getKey$datastore_preferences_core()Landroidx/datastore/preferences/core/Preferences$Key;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -114,7 +114,7 @@
 .end method
 
 .method public final getValue$datastore_preferences_core()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"

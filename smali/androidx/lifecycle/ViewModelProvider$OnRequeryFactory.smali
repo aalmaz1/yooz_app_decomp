@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public onRequery(Landroidx/lifecycle/ViewModel;)V
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "viewModel"
 

@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(IJ)V
-    .registers 4
+    .locals 0
 
     .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method synthetic constructor <init>(IJLandroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$1;)V
-    .registers 5
+    .locals 0
 
     .line 208
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;-><init>(IJ)V
@@ -46,7 +46,7 @@
 .end method
 
 .method static synthetic access$000(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
-    .registers 1
+    .locals 0
 
     .line 208
     invoke-static {p0}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;->createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 208
     invoke-direct {p0, p1}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;->writeToParcel(Landroid/os/Parcel;)V
@@ -66,7 +66,7 @@
 .end method
 
 .method private static createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
-    .registers 5
+    .locals 4
 
     .line 219
     new-instance v0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
@@ -85,7 +85,7 @@
 .end method
 
 .method private writeToParcel(Landroid/os/Parcel;)V
-    .registers 4
+    .locals 2
 
     .line 223
     iget v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;->componentTag:I

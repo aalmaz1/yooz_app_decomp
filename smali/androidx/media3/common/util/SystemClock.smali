@@ -8,7 +8,7 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public createHandler(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroidx/media3/common/util/HandlerWrapper;
-    .registers 5
+    .locals 2
 
     .line 57
     new-instance v0, Landroidx/media3/common/util/SystemHandlerWrapper;
@@ -34,7 +34,7 @@
 .end method
 
 .method public currentTimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 35
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -45,7 +45,7 @@
 .end method
 
 .method public elapsedRealtime()J
-    .registers 3
+    .locals 2
 
     .line 40
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -56,7 +56,7 @@
 .end method
 
 .method public nanoTime()J
-    .registers 3
+    .locals 2
 
     .line 50
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -67,13 +67,13 @@
 .end method
 
 .method public onThreadBlocked()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public uptimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 45
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J

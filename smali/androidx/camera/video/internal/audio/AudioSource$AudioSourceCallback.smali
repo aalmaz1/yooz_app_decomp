@@ -25,7 +25,7 @@
 .end method
 
 .method public onSuspendStateChanged(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

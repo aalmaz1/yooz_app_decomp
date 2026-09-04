@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2599
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getClipToPadding(Landroid/view/ViewGroup;)Z
-    .registers 1
+    .locals 0
 
     .line 2605
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getClipToPadding()Z

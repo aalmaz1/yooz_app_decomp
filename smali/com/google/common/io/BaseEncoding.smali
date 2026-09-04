@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 336
     new-instance v0, Lcom/google/common/io/BaseEncoding$Base64Encoding;
@@ -104,7 +104,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method public static base16()Lcom/google/common/io/BaseEncoding;
-    .registers 1
+    .locals 1
 
     .line 433
     sget-object v0, Lcom/google/common/io/BaseEncoding;->BASE16:Lcom/google/common/io/BaseEncoding;
@@ -122,7 +122,7 @@
 .end method
 
 .method public static base32()Lcom/google/common/io/BaseEncoding;
-    .registers 1
+    .locals 1
 
     .line 395
     sget-object v0, Lcom/google/common/io/BaseEncoding;->BASE32:Lcom/google/common/io/BaseEncoding;
@@ -131,7 +131,7 @@
 .end method
 
 .method public static base32Hex()Lcom/google/common/io/BaseEncoding;
-    .registers 1
+    .locals 1
 
     .line 414
     sget-object v0, Lcom/google/common/io/BaseEncoding;->BASE32_HEX:Lcom/google/common/io/BaseEncoding;
@@ -140,7 +140,7 @@
 .end method
 
 .method public static base64()Lcom/google/common/io/BaseEncoding;
-    .registers 1
+    .locals 1
 
     .line 354
     sget-object v0, Lcom/google/common/io/BaseEncoding;->BASE64:Lcom/google/common/io/BaseEncoding;
@@ -149,7 +149,7 @@
 .end method
 
 .method public static base64Url()Lcom/google/common/io/BaseEncoding;
-    .registers 1
+    .locals 1
 
     .line 376
     sget-object v0, Lcom/google/common/io/BaseEncoding;->BASE64_URL:Lcom/google/common/io/BaseEncoding;
@@ -158,7 +158,7 @@
 .end method
 
 .method private static extract([BI)[B
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -173,12 +173,12 @@
     .line 195
     array-length v0, p0
 
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_0
 
     return-object p0
 
     .line 198
-    :cond_4
+    :cond_0
     new-array v0, p1, [B
 
     const/4 v1, 0x0
@@ -190,7 +190,7 @@
 .end method
 
 .method static ignoringReader(Ljava/io/Reader;Ljava/lang/String;)Ljava/io/Reader;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -217,7 +217,7 @@
 .end method
 
 .method static separatingAppendable(Ljava/lang/Appendable;Ljava/lang/String;I)Ljava/lang/Appendable;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -237,17 +237,17 @@
     .line 1088
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-lez p2, :cond_a
+    if-lez p2, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     .line 1089
-    :goto_b
+    :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     .line 1090
@@ -259,7 +259,7 @@
 .end method
 
 .method static separatingWriter(Ljava/io/Writer;Ljava/lang/String;I)Ljava/io/Writer;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -300,7 +300,7 @@
 .end method
 
 .method public final decode(Ljava/lang/CharSequence;)[B
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -315,12 +315,12 @@
     invoke-virtual {p0, p1}, Lcom/google/common/io/BaseEncoding;->decodeChecked(Ljava/lang/CharSequence;)[B
 
     move-result-object p1
-    :try_end_4
-    .catch Lcom/google/common/io/BaseEncoding$DecodingException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Lcom/google/common/io/BaseEncoding$DecodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_5
+    :catch_0
     move-exception p1
 
     .line 222
@@ -332,7 +332,7 @@
 .end method
 
 .method final decodeChecked(Ljava/lang/CharSequence;)[B
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -397,7 +397,7 @@
 .end method
 
 .method public final decodingSource(Lcom/google/common/io/CharSource;)Lcom/google/common/io/ByteSource;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -430,7 +430,7 @@
 .end method
 
 .method public encode([B)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -453,7 +453,7 @@
 .end method
 
 .method public final encode([BII)Ljava/lang/String;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -484,10 +484,10 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 161
-    :try_start_f
+    :try_start_0
     invoke-virtual {p0, v0, p1, p2, p3}, Lcom/google/common/io/BaseEncoding;->encodeTo(Ljava/lang/Appendable;[BII)V
-    :try_end_12
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_12} :catch_17
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 165
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -496,7 +496,7 @@
 
     return-object p1
 
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 163
@@ -531,7 +531,7 @@
 .end method
 
 .method public final encodingSink(Lcom/google/common/io/CharSink;)Lcom/google/common/io/ByteSink;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -595,7 +595,7 @@
 .end method
 
 .method trimTrailingPadding(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public peekId3Data(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/metadata/id3/Id3Decoder$FramePredicate;)Landroidx/media3/common/Metadata;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -43,8 +43,8 @@
     move v2, v0
 
     .line 57
-    :goto_3
-    :try_start_3
+    :goto_0
+    :try_start_0
     iget-object v3, p0, Landroidx/media3/extractor/Id3Peeker;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v3}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -54,8 +54,8 @@
     const/16 v4, 0xa
 
     invoke-interface {p1, v3, v0, v4}, Landroidx/media3/extractor/ExtractorInput;->peekFully([BII)V
-    :try_end_e
-    .catch Ljava/io/EOFException; {:try_start_3 .. :try_end_e} :catch_4c
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 62
     iget-object v3, p0, Landroidx/media3/extractor/Id3Peeker;->scratch:Landroidx/media3/common/util/ParsableByteArray;
@@ -71,12 +71,12 @@
 
     const v5, 0x494433
 
-    if-eq v3, v5, :cond_1f
+    if-eq v3, v5, :cond_0
 
-    goto :goto_4c
+    goto :goto_2
 
     .line 67
-    :cond_1f
+    :cond_0
     iget-object v3, p0, Landroidx/media3/extractor/Id3Peeker;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     const/4 v5, 0x3
@@ -92,7 +92,7 @@
 
     add-int/lit8 v5, v3, 0xa
 
-    if-nez v1, :cond_47
+    if-nez v1, :cond_1
 
     .line 72
     new-array v1, v5, [B
@@ -118,20 +118,20 @@
 
     move-result-object v1
 
-    goto :goto_4a
+    goto :goto_1
 
     .line 78
-    :cond_47
+    :cond_1
     invoke-interface {p1, v3}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    :goto_4a
+    :goto_1
     add-int/2addr v2, v5
 
-    goto :goto_3
+    goto :goto_0
 
     .line 84
-    :catch_4c
-    :goto_4c
+    :catch_0
+    :goto_2
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     .line 85

@@ -80,7 +80,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/datastore/preferences/core/PreferencesSerializer;
 
@@ -97,7 +97,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,20 +106,20 @@
 .end method
 
 .method private final addProtoEntryToPreferences(Ljava/lang/String;Landroidx/datastore/preferences/PreferencesProto$Value;Landroidx/datastore/preferences/core/MutablePreferences;)V
-    .registers 7
+    .locals 3
 
     .line 93
     invoke-virtual {p2}, Landroidx/datastore/preferences/PreferencesProto$Value;->getValueCase()Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     sget-object v1, Landroidx/datastore/preferences/core/PreferencesSerializer$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v0}, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->ordinal()I
@@ -128,15 +128,15 @@
 
     aget v0, v1, v0
 
-    :goto_10
+    :goto_0
     const/4 v1, 0x2
 
     const/4 v2, 0x0
 
-    packed-switch v0, :pswitch_data_aa
+    packed-switch v0, :pswitch_data_0
 
     .line 107
-    :pswitch_15
+    :pswitch_0
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -144,7 +144,7 @@
     throw p1
 
     .line 106
-    :pswitch_1b
+    :pswitch_1
     new-instance p1, Landroidx/datastore/core/CorruptionException;
 
     const-string p2, "Value not set."
@@ -154,7 +154,7 @@
     throw p1
 
     .line 103
-    :pswitch_23
+    :pswitch_2
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->stringSetKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -181,10 +181,10 @@
     .line 103
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_a0
+    goto :goto_1
 
     .line 101
-    :pswitch_3f
+    :pswitch_3
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->stringKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -199,10 +199,10 @@
 
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_a0
+    goto :goto_1
 
     .line 100
-    :pswitch_51
+    :pswitch_4
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->longKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -217,10 +217,10 @@
 
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_a0
+    goto :goto_1
 
     .line 99
-    :pswitch_61
+    :pswitch_5
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->intKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -235,10 +235,10 @@
 
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_a0
+    goto :goto_1
 
     .line 98
-    :pswitch_71
+    :pswitch_6
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->doubleKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -253,10 +253,10 @@
 
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_a0
+    goto :goto_1
 
     .line 97
-    :pswitch_81
+    :pswitch_7
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->floatKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -271,10 +271,10 @@
 
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_a0
+    goto :goto_1
 
     .line 95
-    :pswitch_91
+    :pswitch_8
     invoke-static {p1}, Landroidx/datastore/preferences/core/PreferencesKeys;->booleanKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object p1
@@ -291,11 +291,11 @@
     .line 95
     invoke-virtual {p3, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    :goto_a0
+    :goto_1
     return-void
 
     .line 107
-    :pswitch_a1
+    :pswitch_9
     new-instance p1, Landroidx/datastore/core/CorruptionException;
 
     const-string p2, "Value case is null."
@@ -306,28 +306,28 @@
 
     nop
 
-    :pswitch_data_aa
+    :pswitch_data_0
     .packed-switch -0x1
-        :pswitch_a1
-        :pswitch_15
-        :pswitch_91
-        :pswitch_81
-        :pswitch_71
-        :pswitch_61
-        :pswitch_51
-        :pswitch_3f
-        :pswitch_23
-        :pswitch_1b
+        :pswitch_9
+        :pswitch_0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method private final getValueProto(Ljava/lang/Object;)Landroidx/datastore/preferences/PreferencesProto$Value;
-    .registers 5
+    .locals 3
 
     .line 71
     instance-of v0, p1, Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
 
@@ -353,13 +353,13 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    goto/16 :goto_d6
+    goto/16 :goto_0
 
     .line 72
-    :cond_1f
+    :cond_0
     instance-of v0, p1, Ljava/lang/Float;
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
 
@@ -385,13 +385,13 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    goto/16 :goto_d6
+    goto/16 :goto_0
 
     .line 73
-    :cond_3e
+    :cond_1
     instance-of v0, p1, Ljava/lang/Double;
 
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
 
@@ -417,13 +417,13 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    goto/16 :goto_d6
+    goto/16 :goto_0
 
     .line 74
-    :cond_5d
+    :cond_2
     instance-of v0, p1, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_3
 
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
 
@@ -449,13 +449,13 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    goto :goto_d6
+    goto :goto_0
 
     .line 75
-    :cond_7b
+    :cond_3
     instance-of v0, p1, Ljava/lang/Long;
 
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_4
 
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
 
@@ -481,13 +481,13 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    goto :goto_d6
+    goto :goto_0
 
     .line 76
-    :cond_99
+    :cond_4
     instance-of v0, p1, Ljava/lang/String;
 
-    if-eqz v0, :cond_b3
+    if-eqz v0, :cond_5
 
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
 
@@ -509,13 +509,13 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    goto :goto_d6
+    goto :goto_0
 
     .line 77
-    :cond_b3
+    :cond_5
     instance-of v0, p1, Ljava/util/Set;
 
-    if-eqz v0, :cond_d7
+    if-eqz v0, :cond_6
 
     .line 79
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->newBuilder()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
@@ -552,11 +552,11 @@
 
     check-cast p1, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    :goto_d6
+    :goto_0
     return-object p1
 
     .line 82
-    :cond_d7
+    :cond_6
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 83
@@ -583,7 +583,7 @@
 
 # virtual methods
 .method public getDefaultValue()Landroidx/datastore/preferences/core/Preferences;
-    .registers 2
+    .locals 1
 
     .line 41
     invoke-static {}, Landroidx/datastore/preferences/core/PreferencesFactory;->createEmpty()Landroidx/datastore/preferences/core/Preferences;
@@ -594,7 +594,7 @@
 .end method
 
 .method public bridge synthetic getDefaultValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 36
     invoke-virtual {p0}, Landroidx/datastore/preferences/core/PreferencesSerializer;->getDefaultValue()Landroidx/datastore/preferences/core/Preferences;
@@ -605,7 +605,7 @@
 .end method
 
 .method public final getFileExtension()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 37
     sget-object v0, Landroidx/datastore/preferences/core/PreferencesSerializer;->fileExtension:Ljava/lang/String;
@@ -614,7 +614,7 @@
 .end method
 
 .method public readFrom(Ljava/io/InputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -668,12 +668,12 @@
 
     move-result-object p1
 
-    :goto_1e
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -707,10 +707,10 @@
 
     invoke-direct {v2, v1, v0, p2}, Landroidx/datastore/preferences/core/PreferencesSerializer;->addProtoEntryToPreferences(Ljava/lang/String;Landroidx/datastore/preferences/PreferencesProto$Value;Landroidx/datastore/preferences/core/MutablePreferences;)V
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 54
-    :cond_47
+    :cond_0
     invoke-virtual {p2}, Landroidx/datastore/preferences/core/MutablePreferences;->toPreferences()Landroidx/datastore/preferences/core/Preferences;
 
     move-result-object p1
@@ -719,7 +719,7 @@
 .end method
 
 .method public writeTo(Landroidx/datastore/preferences/core/Preferences;Ljava/io/OutputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -759,12 +759,12 @@
 
     move-result-object p1
 
-    :goto_10
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -793,10 +793,10 @@
 
     invoke-virtual {p3, v1, v0}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;->putPreferences(Ljava/lang/String;Landroidx/datastore/preferences/PreferencesProto$Value;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
 
-    goto :goto_10
+    goto :goto_0
 
     .line 66
-    :cond_32
+    :cond_0
     invoke-virtual {p3}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;->build()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     move-result-object p1
@@ -812,7 +812,7 @@
 .end method
 
 .method public bridge synthetic writeTo(Ljava/lang/Object;Ljava/io/OutputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 0
 
     .line 36
     check-cast p1, Landroidx/datastore/preferences/core/Preferences;

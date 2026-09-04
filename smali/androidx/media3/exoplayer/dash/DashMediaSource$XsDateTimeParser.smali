@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1446
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/dash/DashMediaSource$1;)V
-    .registers 2
+    .locals 0
 
     .line 1446
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource$XsDateTimeParser;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Long;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -81,7 +81,7 @@
 .end method
 
 .method public bridge synthetic parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

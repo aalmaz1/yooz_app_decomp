@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ads/AdsMediaSource;)V
-    .registers 2
+    .locals 0
 
     .line 394
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -47,17 +47,17 @@
 
 # virtual methods
 .method synthetic lambda$onAdPlaybackState$0$androidx-media3-exoplayer-source-ads-AdsMediaSource$ComponentListener(Landroidx/media3/common/AdPlaybackState;)V
-    .registers 3
+    .locals 1
 
     .line 411
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 414
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
 
     invoke-static {v0, p1}, Landroidx/media3/exoplayer/source/ads/AdsMediaSource;->access$100(Landroidx/media3/exoplayer/source/ads/AdsMediaSource;Landroidx/media3/common/AdPlaybackState;)V
@@ -66,17 +66,17 @@
 .end method
 
 .method public onAdLoadError(Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;Landroidx/media3/datasource/DataSpec;)V
-    .registers 11
+    .locals 8
 
     .line 420
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 423
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
 
     const/4 v1, 0x0
@@ -114,17 +114,17 @@
 .end method
 
 .method public onAdPlaybackState(Landroidx/media3/common/AdPlaybackState;)V
-    .registers 4
+    .locals 2
 
     .line 406
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 409
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener;->playerHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$ComponentListener$$ExternalSyntheticLambda0;
@@ -137,7 +137,7 @@
 .end method
 
 .method public stop()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 

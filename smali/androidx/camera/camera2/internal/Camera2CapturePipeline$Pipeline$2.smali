@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 3
+    .locals 0
 
     .line 355
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline$2;->this$0:Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onCaptureCancelled()V
-    .registers 6
+    .locals 5
 
     .line 372
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline$2;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -58,7 +58,7 @@
 .end method
 
 .method public onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 3
+    .locals 1
 
     .line 358
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline$2;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -71,7 +71,7 @@
 .end method
 
 .method public onCaptureFailed(Landroidx/camera/core/impl/CameraCaptureFailure;)V
-    .registers 6
+    .locals 4
 
     .line 363
     new-instance v0, Ljava/lang/StringBuilder;

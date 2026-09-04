@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/EmojiCompat;)V
-    .registers 2
+    .locals 0
 
     .line 1566
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method getAssetSignature()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, ""
 
@@ -42,7 +42,7 @@
 .end method
 
 .method public getEmojiMatch(Ljava/lang/CharSequence;I)I
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -50,7 +50,7 @@
 .end method
 
 .method hasEmojiGlyph(Ljava/lang/CharSequence;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -58,7 +58,7 @@
 .end method
 
 .method hasEmojiGlyph(Ljava/lang/CharSequence;I)Z
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -66,7 +66,7 @@
 .end method
 
 .method loadMetadata()V
-    .registers 2
+    .locals 1
 
     .line 1572
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$CompatInternal;->mEmojiCompat:Landroidx/emoji2/text/EmojiCompat;
@@ -77,13 +77,13 @@
 .end method
 
 .method process(Ljava/lang/CharSequence;IIIZ)Ljava/lang/CharSequence;
-    .registers 6
+    .locals 0
 
     return-object p1
 .end method
 
 .method updateEditorInfoAttrs(Landroid/view/inputmethod/EditorInfo;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

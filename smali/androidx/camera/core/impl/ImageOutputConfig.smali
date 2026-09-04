@@ -130,7 +130,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.imageOutput.targetAspectRatio"
 
@@ -256,7 +256,7 @@
 .end method
 
 .method public static validateConfig(Landroidx/camera/core/impl/ImageOutputConfig;)V
-    .registers 4
+    .locals 3
 
     .line 356
     invoke-interface {p0}, Landroidx/camera/core/impl/ImageOutputConfig;->hasTargetAspectRatio()Z
@@ -270,24 +270,24 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_e
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_2
 
-    if-nez v2, :cond_13
+    if-nez v2, :cond_1
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 362
-    :cond_13
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Cannot use both setTargetResolution and setTargetAspectRatio on the same config."
@@ -297,22 +297,22 @@
     throw p0
 
     .line 367
-    :cond_1b
-    :goto_1b
+    :cond_2
+    :goto_1
     invoke-interface {p0, v1}, Landroidx/camera/core/impl/ImageOutputConfig;->getResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/core/resolutionselector/ResolutionSelector;
 
     move-result-object p0
 
-    if-eqz p0, :cond_2e
+    if-eqz p0, :cond_4
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_3
 
-    if-nez v2, :cond_26
+    if-nez v2, :cond_3
 
-    goto :goto_2e
+    goto :goto_2
 
     .line 373
-    :cond_26
+    :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Cannot use setTargetResolution or setTargetAspectRatio with setResolutionSelector on the same config."
@@ -321,15 +321,15 @@
 
     throw p0
 
-    :cond_2e
-    :goto_2e
+    :cond_4
+    :goto_2
     return-void
 .end method
 
 
 # virtual methods
 .method public getAppTargetRotation(I)I
-    .registers 3
+    .locals 1
 
     .line 162
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_APP_TARGET_ROTATION:Landroidx/camera/core/impl/Config$Option;
@@ -352,7 +352,7 @@
 .end method
 
 .method public getCustomOrderedResolutions()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -385,7 +385,7 @@
 .end method
 
 .method public getCustomOrderedResolutions(Ljava/util/List;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -407,24 +407,24 @@
 
     check-cast p1, Ljava/util/List;
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 330
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return-object v0
 .end method
 
 .method public getDefaultResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 235
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_DEFAULT_RESOLUTION:Landroidx/camera/core/impl/Config$Option;
@@ -439,7 +439,7 @@
 .end method
 
 .method public getDefaultResolution(Landroid/util/Size;)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 224
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_DEFAULT_RESOLUTION:Landroidx/camera/core/impl/Config$Option;
@@ -454,7 +454,7 @@
 .end method
 
 .method public getMaxResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 260
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_MAX_RESOLUTION:Landroidx/camera/core/impl/Config$Option;
@@ -469,7 +469,7 @@
 .end method
 
 .method public getMaxResolution(Landroid/util/Size;)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 248
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_MAX_RESOLUTION:Landroidx/camera/core/impl/Config$Option;
@@ -484,7 +484,7 @@
 .end method
 
 .method public getMirrorMode(I)I
-    .registers 3
+    .locals 1
 
     .line 201
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_MIRROR_MODE:Landroidx/camera/core/impl/Config$Option;
@@ -507,7 +507,7 @@
 .end method
 
 .method public getResolutionSelector()Landroidx/camera/core/resolutionselector/ResolutionSelector;
-    .registers 2
+    .locals 1
 
     .line 300
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_RESOLUTION_SELECTOR:Landroidx/camera/core/impl/Config$Option;
@@ -522,7 +522,7 @@
 .end method
 
 .method public getResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/core/resolutionselector/ResolutionSelector;
-    .registers 3
+    .locals 1
 
     .line 289
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_RESOLUTION_SELECTOR:Landroidx/camera/core/impl/Config$Option;
@@ -537,7 +537,7 @@
 .end method
 
 .method public getSupportedResolutions()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -563,7 +563,7 @@
 .end method
 
 .method public getSupportedResolutions(Ljava/util/List;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -595,7 +595,7 @@
 .end method
 
 .method public getTargetAspectRatio()I
-    .registers 2
+    .locals 1
 
     .line 134
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_TARGET_ASPECT_RATIO:Landroidx/camera/core/impl/Config$Option;
@@ -614,7 +614,7 @@
 .end method
 
 .method public getTargetResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 212
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_TARGET_RESOLUTION:Landroidx/camera/core/impl/Config$Option;
@@ -629,7 +629,7 @@
 .end method
 
 .method public getTargetResolution(Landroid/util/Size;)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 189
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_TARGET_RESOLUTION:Landroidx/camera/core/impl/Config$Option;
@@ -644,7 +644,7 @@
 .end method
 
 .method public getTargetRotation()I
-    .registers 2
+    .locals 1
 
     .line 177
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_TARGET_ROTATION:Landroidx/camera/core/impl/Config$Option;
@@ -663,7 +663,7 @@
 .end method
 
 .method public getTargetRotation(I)I
-    .registers 3
+    .locals 1
 
     .line 150
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_TARGET_ROTATION:Landroidx/camera/core/impl/Config$Option;
@@ -686,7 +686,7 @@
 .end method
 
 .method public hasTargetAspectRatio()Z
-    .registers 2
+    .locals 1
 
     .line 123
     sget-object v0, Landroidx/camera/core/impl/ImageOutputConfig;->OPTION_TARGET_ASPECT_RATIO:Landroidx/camera/core/impl/Config$Option;

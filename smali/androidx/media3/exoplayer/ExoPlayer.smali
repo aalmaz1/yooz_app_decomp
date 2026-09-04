@@ -115,7 +115,7 @@
 .end method
 
 .method public bridge synthetic getPlayerError()Landroidx/media3/common/PlaybackException;
-    .registers 2
+    .locals 1
 
     .line 165
     invoke-interface {p0}, Landroidx/media3/exoplayer/ExoPlayer;->getPlayerError()Landroidx/media3/exoplayer/ExoPlaybackException;

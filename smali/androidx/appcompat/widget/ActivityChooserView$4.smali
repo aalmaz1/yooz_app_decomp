@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/ActivityChooserView;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 261
     iput-object p1, p0, Landroidx/appcompat/widget/ActivityChooserView$4;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getPopup()Landroidx/appcompat/view/menu/ShowableListMenu;
-    .registers 2
+    .locals 1
 
     .line 264
     iget-object v0, p0, Landroidx/appcompat/widget/ActivityChooserView$4;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
@@ -46,7 +46,7 @@
 .end method
 
 .method protected onForwardingStarted()Z
-    .registers 2
+    .locals 1
 
     .line 269
     iget-object v0, p0, Landroidx/appcompat/widget/ActivityChooserView$4;->this$0:Landroidx/appcompat/widget/ActivityChooserView;
@@ -59,7 +59,7 @@
 .end method
 
 .method protected onForwardingStopped()Z
-    .registers 2
+    .locals 1
 
     .line 275
     iget-object v0, p0, Landroidx/appcompat/widget/ActivityChooserView$4;->this$0:Landroidx/appcompat/widget/ActivityChooserView;

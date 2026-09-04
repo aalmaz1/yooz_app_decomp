@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 992
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getExternalMediaDirs(Landroid/content/Context;)[Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 999
     invoke-virtual {p0}, Landroid/content/Context;->getExternalMediaDirs()[Ljava/io/File;

@@ -83,7 +83,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -161,7 +161,7 @@
 .end method
 
 .method private constructor <init>(Landroid/net/Uri;Ljava/lang/String;Landroidx/media3/common/MediaItem$DrmConfiguration;Landroidx/media3/common/MediaItem$AdsConfiguration;Ljava/util/List;Ljava/lang/String;Lcom/google/common/collect/ImmutableList;Ljava/lang/Object;J)V
-    .registers 11
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -217,12 +217,12 @@
     const/4 p2, 0x0
 
     .line 1193
-    :goto_1a
+    :goto_0
     invoke-virtual {p7}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result p3
 
-    if-ge p2, p3, :cond_34
+    if-ge p2, p3, :cond_0
 
     .line 1194
     invoke-virtual {p7, p2}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -243,10 +243,10 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 1196
-    :cond_34
+    :cond_0
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
@@ -263,7 +263,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/net/Uri;Ljava/lang/String;Landroidx/media3/common/MediaItem$DrmConfiguration;Landroidx/media3/common/MediaItem$AdsConfiguration;Ljava/util/List;Ljava/lang/String;Lcom/google/common/collect/ImmutableList;Ljava/lang/Object;JLandroidx/media3/common/MediaItem$1;)V
-    .registers 12
+    .locals 0
 
     .line 1128
     invoke-direct/range {p0 .. p10}, Landroidx/media3/common/MediaItem$LocalConfiguration;-><init>(Landroid/net/Uri;Ljava/lang/String;Landroidx/media3/common/MediaItem$DrmConfiguration;Landroidx/media3/common/MediaItem$AdsConfiguration;Ljava/util/List;Ljava/lang/String;Lcom/google/common/collect/ImmutableList;Ljava/lang/Object;J)V
@@ -272,7 +272,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$LocalConfiguration;
-    .registers 14
+    .locals 13
 
     .line 1287
     sget-object v0, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_DRM_CONFIGURATION:Ljava/lang/String;
@@ -283,14 +283,14 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     move-object v5, v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1289
-    :cond_b
+    :cond_0
     invoke-static {v0}, Landroidx/media3/common/MediaItem$DrmConfiguration;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$DrmConfiguration;
 
     move-result-object v0
@@ -298,24 +298,24 @@
     move-object v5, v0
 
     .line 1290
-    :goto_10
+    :goto_0
     sget-object v0, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_ADS_CONFIGURATION:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
-    goto :goto_1d
+    goto :goto_1
 
     .line 1292
-    :cond_19
+    :cond_1
     invoke-static {v0}, Landroidx/media3/common/MediaItem$AdsConfiguration;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$AdsConfiguration;
 
     move-result-object v1
 
-    :goto_1d
+    :goto_1
     move-object v6, v1
 
     .line 1293
@@ -325,17 +325,17 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
     .line 1296
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    goto :goto_34
+    goto :goto_2
 
     .line 1297
-    :cond_2b
+    :cond_2
     new-instance v1, Landroidx/media3/common/MediaItem$LocalConfiguration$$ExternalSyntheticLambda2;
 
     invoke-direct {v1}, Landroidx/media3/common/MediaItem$LocalConfiguration$$ExternalSyntheticLambda2;-><init>()V
@@ -344,7 +344,7 @@
 
     move-result-object v0
 
-    :goto_34
+    :goto_2
     move-object v7, v0
 
     .line 1299
@@ -354,17 +354,17 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_42
+    if-nez v0, :cond_3
 
     .line 1302
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    goto :goto_4b
+    goto :goto_3
 
     .line 1303
-    :cond_42
+    :cond_3
     new-instance v1, Landroidx/media3/common/MediaItem$LocalConfiguration$$ExternalSyntheticLambda3;
 
     invoke-direct {v1}, Landroidx/media3/common/MediaItem$LocalConfiguration$$ExternalSyntheticLambda3;-><init>()V
@@ -373,7 +373,7 @@
 
     move-result-object v0
 
-    :goto_4b
+    :goto_3
     move-object v9, v0
 
     .line 1305
@@ -431,26 +431,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1206
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1209
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     .line 1211
@@ -462,7 +462,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->mimeType:Ljava/lang/String;
 
@@ -473,7 +473,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
@@ -484,7 +484,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->adsConfiguration:Landroidx/media3/common/MediaItem$AdsConfiguration;
 
@@ -495,7 +495,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
 
@@ -506,7 +506,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->customCacheKey:Ljava/lang/String;
 
@@ -517,7 +517,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->subtitleConfigurations:Lcom/google/common/collect/ImmutableList;
 
@@ -528,7 +528,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->tag:Ljava/lang/Object;
 
@@ -539,7 +539,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->imageDurationMs:J
 
@@ -558,19 +558,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_2
 
-    goto :goto_70
+    goto :goto_0
 
-    :cond_6f
+    :cond_2
     move v0, v2
 
-    :goto_70
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1224
     iget-object v0, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -586,18 +586,18 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_13
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -605,18 +605,18 @@
     .line 1226
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1
 
     move v1, v2
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     invoke-virtual {v1}, Landroidx/media3/common/MediaItem$DrmConfiguration;->hashCode()I
 
     move-result v1
 
-    :goto_20
+    :goto_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -624,18 +624,18 @@
     .line 1227
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->adsConfiguration:Landroidx/media3/common/MediaItem$AdsConfiguration;
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_2
 
     move v1, v2
 
-    goto :goto_2d
+    goto :goto_2
 
-    :cond_29
+    :cond_2
     invoke-virtual {v1}, Landroidx/media3/common/MediaItem$AdsConfiguration;->hashCode()I
 
     move-result v1
 
-    :goto_2d
+    :goto_2
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -654,18 +654,18 @@
     .line 1229
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->customCacheKey:Ljava/lang/String;
 
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_3
 
     move v1, v2
 
-    goto :goto_43
+    goto :goto_3
 
-    :cond_3f
+    :cond_3
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_43
+    :goto_3
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -684,16 +684,16 @@
     .line 1231
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->tag:Ljava/lang/Object;
 
-    if-nez v1, :cond_54
+    if-nez v1, :cond_4
 
-    goto :goto_58
+    goto :goto_4
 
-    :cond_54
+    :cond_4
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    :goto_58
+    :goto_4
     add-int/2addr v0, v2
 
     const-wide/16 v1, 0x1f
@@ -713,7 +713,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 6
+    .locals 5
 
     .line 1253
     new-instance v0, Landroid/os/Bundle;
@@ -730,7 +730,7 @@
     .line 1255
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->mimeType:Ljava/lang/String;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 1256
     sget-object v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_MIME_TYPE:Ljava/lang/String;
@@ -738,10 +738,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1258
-    :cond_15
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 1259
     sget-object v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_DRM_CONFIGURATION:Ljava/lang/String;
@@ -753,10 +753,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 1261
-    :cond_22
+    :cond_1
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->adsConfiguration:Landroidx/media3/common/MediaItem$AdsConfiguration;
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     .line 1262
     sget-object v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_ADS_CONFIGURATION:Ljava/lang/String;
@@ -768,14 +768,14 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 1264
-    :cond_2f
+    :cond_2
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_47
+    if-nez v1, :cond_3
 
     .line 1265
     sget-object v1, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_STREAM_KEYS:Ljava/lang/String;
@@ -795,10 +795,10 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     .line 1269
-    :cond_47
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->customCacheKey:Ljava/lang/String;
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_4
 
     .line 1270
     sget-object v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_CUSTOM_CACHE_KEY:Ljava/lang/String;
@@ -806,14 +806,14 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1272
-    :cond_50
+    :cond_4
     iget-object v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->subtitleConfigurations:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableList;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_68
+    if-nez v1, :cond_5
 
     .line 1273
     sget-object v1, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_SUBTITLE_CONFIGURATION:Ljava/lang/String;
@@ -833,20 +833,20 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     .line 1278
-    :cond_68
+    :cond_5
     iget-wide v1, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->imageDurationMs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_78
+    if-eqz v3, :cond_6
 
     .line 1279
     sget-object v3, Landroidx/media3/common/MediaItem$LocalConfiguration;->FIELD_IMAGE_DURATION_MS:Ljava/lang/String;
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    :cond_78
+    :cond_6
     return-object v0
 .end method

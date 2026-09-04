@@ -15,7 +15,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method public static getProtection(Landroid/content/pm/PermissionInfo;)I
-    .registers 1
+    .locals 0
 
     .line 75
     invoke-static {p0}, Landroidx/core/content/pm/PermissionInfoCompat$Api28Impl;->getProtection(Landroid/content/pm/PermissionInfo;)I
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getProtectionFlags(Landroid/content/pm/PermissionInfo;)I
-    .registers 1
+    .locals 0
 
     .line 89
     invoke-static {p0}, Landroidx/core/content/pm/PermissionInfoCompat$Api28Impl;->getProtectionFlags(Landroid/content/pm/PermissionInfo;)I

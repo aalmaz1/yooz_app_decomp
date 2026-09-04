@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 47
     new-instance v0, Landroidx/media3/datasource/DataSourceBitmapLoader$$ExternalSyntheticLambda1;
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 60
     sget-object v0, Landroidx/media3/datasource/DataSourceBitmapLoader;->DEFAULT_EXECUTOR_SERVICE:Lcom/google/common/base/Supplier;
@@ -73,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Lcom/google/common/util/concurrent/ListeningExecutorService;Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Lcom/google/common/util/concurrent/ListeningExecutorService;Landroidx/media3/datasource/DataSource$Factory;Landroid/graphics/BitmapFactory$Options;)V
-    .registers 4
+    .locals 0
 
     .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 .end method
 
 .method static synthetic lambda$static$0()Lcom/google/common/util/concurrent/ListeningExecutorService;
-    .registers 1
+    .locals 1
 
     .line 49
     invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
@@ -117,7 +117,7 @@
 .end method
 
 .method private static load(Landroidx/media3/datasource/DataSource;Landroid/net/Uri;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -144,15 +144,15 @@
     invoke-static {p1, v0, p2}, Landroidx/media3/datasource/BitmapUtil;->decode([BILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p1
-    :try_end_11
-    .catchall {:try_start_0 .. :try_end_11} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 116
     invoke-interface {p0}, Landroidx/media3/datasource/DataSource;->close()V
 
     return-object p1
 
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     invoke-interface {p0}, Landroidx/media3/datasource/DataSource;->close()V
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public decodeBitmap([B)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -189,7 +189,7 @@
 .end method
 
 .method synthetic lambda$decodeBitmap$1$androidx-media3-datasource-DataSourceBitmapLoader([B)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -209,7 +209,7 @@
 .end method
 
 .method synthetic lambda$loadBitmap$2$androidx-media3-datasource-DataSourceBitmapLoader(Landroid/net/Uri;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -233,7 +233,7 @@
 .end method
 
 .method public loadBitmap(Landroid/net/Uri;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -260,7 +260,7 @@
 .end method
 
 .method public supportsMimeType(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 94
     invoke-static {p1}, Landroidx/media3/common/util/Util;->isBitmapFactorySupportedMimeType(Ljava/lang/String;)Z

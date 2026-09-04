@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Field;Ljava/lang/reflect/Field;Ljava/lang/reflect/Field;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "hField"
 
@@ -92,61 +92,61 @@
 
 # virtual methods
 .method public clearNextServedView(Landroid/view/inputmethod/InputMethodManager;)Z
-    .registers 4
+    .locals 2
 
     const-string v0, "<this>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 104
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Landroidx/activity/ImmLeaksCleaner$ValidCleaner;->nextServedViewField:Ljava/lang/reflect/Field;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_5 .. :try_end_b} :catch_d
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :catch_d
+    :catch_0
     const/4 p1, 0x0
 
-    :goto_e
+    :goto_0
     return p1
 .end method
 
 .method public getLock(Landroid/view/inputmethod/InputMethodManager;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 89
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Landroidx/activity/ImmLeaksCleaner$ValidCleaner;->hField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_5 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :catch_c
+    :catch_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return-object p1
 .end method
 
 .method public getServedView(Landroid/view/inputmethod/InputMethodManager;)Landroid/view/View;
-    .registers 4
+    .locals 2
 
     const-string v0, "<this>"
 
@@ -155,7 +155,7 @@
     const/4 v0, 0x0
 
     .line 96
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/activity/ImmLeaksCleaner$ValidCleaner;->servedViewField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v1, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -163,12 +163,12 @@
     move-result-object p1
 
     check-cast p1, Landroid/view/View;
-    :try_end_e
-    .catch Ljava/lang/IllegalAccessException; {:try_start_6 .. :try_end_e} :catch_f
-    .catch Ljava/lang/ClassCastException; {:try_start_6 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-object v0, p1
 
-    :catch_f
+    :catch_0
     return-object v0
 .end method

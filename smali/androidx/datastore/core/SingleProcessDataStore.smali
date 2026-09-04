@@ -222,7 +222,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 163
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$Companion;
@@ -253,7 +253,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/datastore/core/Serializer;Ljava/util/List;Landroidx/datastore/core/CorruptionHandler;Lkotlinx/coroutines/CoroutineScope;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -399,23 +399,23 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/datastore/core/Serializer;Ljava/util/List;Landroidx/datastore/core/CorruptionHandler;Lkotlinx/coroutines/CoroutineScope;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 14
+    .locals 6
 
     and-int/lit8 p7, p6, 0x4
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 86
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p3
 
-    :cond_8
+    :cond_0
     move-object v3, p3
 
     and-int/lit8 p3, p6, 0x8
 
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_1
 
     .line 87
     new-instance p3, Landroidx/datastore/core/handlers/NoOpCorruptionHandler;
@@ -426,12 +426,12 @@
 
     check-cast p4, Landroidx/datastore/core/CorruptionHandler;
 
-    :cond_15
+    :cond_1
     move-object v4, p4
 
     and-int/lit8 p3, p6, 0x10
 
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_2
 
     .line 88
     sget-object p3, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
@@ -458,7 +458,7 @@
 
     move-result-object p5
 
-    :cond_30
+    :cond_2
     move-object v5, p5
 
     move-object v0, p0
@@ -474,7 +474,7 @@
 .end method
 
 .method public static final synthetic access$getActiveFiles$cp()Ljava/util/Set;
-    .registers 1
+    .locals 1
 
     .line 76
     sget-object v0, Landroidx/datastore/core/SingleProcessDataStore;->activeFiles:Ljava/util/Set;
@@ -483,7 +483,7 @@
 .end method
 
 .method public static final synthetic access$getActiveFilesLock$cp()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 76
     sget-object v0, Landroidx/datastore/core/SingleProcessDataStore;->activeFilesLock:Ljava/lang/Object;
@@ -492,7 +492,7 @@
 .end method
 
 .method public static final synthetic access$getActor$p(Landroidx/datastore/core/SingleProcessDataStore;)Landroidx/datastore/core/SimpleActor;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/datastore/core/SingleProcessDataStore;->actor:Landroidx/datastore/core/SimpleActor;
@@ -501,7 +501,7 @@
 .end method
 
 .method public static final synthetic access$getDownstreamFlow$p(Landroidx/datastore/core/SingleProcessDataStore;)Lkotlinx/coroutines/flow/MutableStateFlow;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/datastore/core/SingleProcessDataStore;->downstreamFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
@@ -510,7 +510,7 @@
 .end method
 
 .method public static final synthetic access$getFile(Landroidx/datastore/core/SingleProcessDataStore;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Landroidx/datastore/core/SingleProcessDataStore;->getFile()Ljava/io/File;
@@ -521,7 +521,7 @@
 .end method
 
 .method public static final synthetic access$getProduceFile$p(Landroidx/datastore/core/SingleProcessDataStore;)Lkotlin/jvm/functions/Function0;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/datastore/core/SingleProcessDataStore;->produceFile:Lkotlin/jvm/functions/Function0;
@@ -530,7 +530,7 @@
 .end method
 
 .method public static final synthetic access$handleRead(Landroidx/datastore/core/SingleProcessDataStore;Landroidx/datastore/core/SingleProcessDataStore$Message$Read;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1, p2}, Landroidx/datastore/core/SingleProcessDataStore;->handleRead(Landroidx/datastore/core/SingleProcessDataStore$Message$Read;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -541,7 +541,7 @@
 .end method
 
 .method public static final synthetic access$handleUpdate(Landroidx/datastore/core/SingleProcessDataStore;Landroidx/datastore/core/SingleProcessDataStore$Message$Update;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1, p2}, Landroidx/datastore/core/SingleProcessDataStore;->handleUpdate(Landroidx/datastore/core/SingleProcessDataStore$Message$Update;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -552,7 +552,7 @@
 .end method
 
 .method public static final synthetic access$readAndInit(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInit(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -563,7 +563,7 @@
 .end method
 
 .method public static final synthetic access$readAndInitOrPropagateAndThrowFailure(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInitOrPropagateAndThrowFailure(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -574,7 +574,7 @@
 .end method
 
 .method public static final synthetic access$readAndInitOrPropagateFailure(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInitOrPropagateFailure(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -585,7 +585,7 @@
 .end method
 
 .method public static final synthetic access$readData(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/datastore/core/SingleProcessDataStore;->readData(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -596,7 +596,7 @@
 .end method
 
 .method public static final synthetic access$readDataOrHandleCorruption(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/datastore/core/SingleProcessDataStore;->readDataOrHandleCorruption(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -607,7 +607,7 @@
 .end method
 
 .method public static final synthetic access$transformAndWrite(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1, p2, p3}, Landroidx/datastore/core/SingleProcessDataStore;->transformAndWrite(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -618,7 +618,7 @@
 .end method
 
 .method private final createParentDirectories(Ljava/io/File;)V
-    .registers 4
+    .locals 2
 
     .line 449
     invoke-virtual {p1}, Ljava/io/File;->getCanonicalFile()Ljava/io/File;
@@ -629,12 +629,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 452
-    :cond_b
+    :cond_0
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     .line 453
@@ -642,13 +642,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
-    :goto_14
+    :goto_0
     return-void
 
     .line 454
-    :cond_15
+    :cond_1
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Unable to create parent directories of "
@@ -663,13 +663,13 @@
 .end method
 
 .method private static synthetic getDownstreamFlow$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final getFile()Ljava/io/File;
-    .registers 2
+    .locals 1
 
     .line 163
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore;->file$delegate:Lkotlin/Lazy;
@@ -684,7 +684,7 @@
 .end method
 
 .method private final handleRead(Landroidx/datastore/core/SingleProcessDataStore$Message$Read;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -710,22 +710,22 @@
     .line 249
     instance-of v1, v0, Landroidx/datastore/core/Data;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 252
-    :cond_d
+    :cond_0
     instance-of v1, v0, Landroidx/datastore/core/ReadException;
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     .line 253
     invoke-virtual {p1}, Landroidx/datastore/core/SingleProcessDataStore$Message$Read;->getLastState()Landroidx/datastore/core/State;
 
     move-result-object p1
 
-    if-ne v0, p1, :cond_3f
+    if-ne v0, p1, :cond_5
 
     .line 254
     invoke-direct {p0, p2}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInitOrPropagateFailure(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -736,24 +736,24 @@
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_22
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
-    :cond_22
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     .line 260
-    :cond_25
+    :cond_2
     sget-object p1, Landroidx/datastore/core/UnInitialized;->INSTANCE:Landroidx/datastore/core/UnInitialized;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_4
 
     .line 261
     invoke-direct {p0, p2}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInitOrPropagateFailure(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -764,30 +764,30 @@
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_38
+    if-ne p1, p2, :cond_3
 
     return-object p1
 
-    :cond_38
+    :cond_3
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     .line 263
-    :cond_3b
+    :cond_4
     instance-of p1, v0, Landroidx/datastore/core/Final;
 
-    if-nez p1, :cond_42
+    if-nez p1, :cond_6
 
     .line 265
-    :cond_3f
-    :goto_3f
+    :cond_5
+    :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     .line 263
-    :cond_42
+    :cond_6
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Can\'t read in final state."
@@ -804,7 +804,7 @@
 .end method
 
 .method private final handleUpdate(Landroidx/datastore/core/SingleProcessDataStore$Message$Update;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -820,7 +820,7 @@
 
     instance-of v0, p2, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -832,7 +832,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->label:I
 
@@ -840,14 +840,14 @@
 
     iput p2, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p2, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -863,22 +863,22 @@
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_57
+    if-eqz v2, :cond_4
 
-    if-eq v2, v5, :cond_4b
+    if-eq v2, v5, :cond_3
 
-    if-eq v2, v4, :cond_39
+    if-eq v2, v4, :cond_2
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_1
 
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lkotlinx/coroutines/CompletableDeferred;
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 298
-    :cond_31
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
@@ -888,7 +888,7 @@
     throw p1
 
     .line 267
-    :cond_39
+    :cond_2
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->L$2:Ljava/lang/Object;
 
     check-cast p1, Lkotlinx/coroutines/CompletableDeferred;
@@ -901,36 +901,36 @@
 
     check-cast v4, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;
 
-    :try_start_45
+    :try_start_0
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_48
-    .catchall {:try_start_45 .. :try_end_48} :catchall_54
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-object p2, p1
 
     move-object p1, v4
 
-    goto :goto_a5
+    goto :goto_3
 
-    :cond_4b
+    :cond_3
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lkotlinx/coroutines/CompletableDeferred;
 
-    :goto_4f
-    :try_start_4f
+    :goto_1
+    :try_start_1
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_52
-    .catchall {:try_start_4f .. :try_end_52} :catchall_54
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto/16 :goto_bd
+    goto/16 :goto_4
 
-    :catchall_54
+    :catchall_0
     move-exception p2
 
-    goto/16 :goto_de
+    goto/16 :goto_5
 
-    :cond_57
+    :cond_4
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 270
@@ -939,7 +939,7 @@
     move-result-object p2
 
     .line 271
-    :try_start_5e
+    :try_start_2
     sget-object v2, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     move-object v2, p0
@@ -958,7 +958,7 @@
     .line 274
     instance-of v6, v2, Landroidx/datastore/core/Data;
 
-    if-eqz v6, :cond_86
+    if-eqz v6, :cond_6
 
     .line 276
     invoke-virtual {p1}, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;->getTransform()Lkotlin/jvm/functions/Function2;
@@ -977,39 +977,39 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_82
+    if-ne p1, v1, :cond_5
 
     return-object v1
 
-    :cond_82
+    :cond_5
     move-object v7, p2
 
     move-object p2, p1
 
     move-object p1, v7
 
-    goto :goto_bd
+    goto :goto_4
 
     .line 278
-    :cond_86
+    :cond_6
     instance-of v6, v2, Landroidx/datastore/core/ReadException;
 
-    if-eqz v6, :cond_8b
+    if-eqz v6, :cond_7
 
-    goto :goto_8d
+    goto :goto_2
 
-    :cond_8b
+    :cond_7
     instance-of v5, v2, Landroidx/datastore/core/UnInitialized;
 
-    :goto_8d
-    if-eqz v5, :cond_c9
+    :goto_2
+    if-eqz v5, :cond_a
 
     .line 279
     invoke-virtual {p1}, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;->getLastState()Landroidx/datastore/core/State;
 
     move-result-object v5
 
-    if-ne v2, v5, :cond_c2
+    if-ne v2, v5, :cond_9
 
     .line 281
     iput-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$handleUpdate$1;->L$0:Ljava/lang/Object;
@@ -1024,15 +1024,15 @@
 
     move-result-object v2
 
-    if-ne v2, v1, :cond_a4
+    if-ne v2, v1, :cond_8
 
     return-object v1
 
-    :cond_a4
+    :cond_8
     move-object v2, p0
 
     .line 284
-    :goto_a5
+    :goto_3
     invoke-virtual {p1}, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;->getTransform()Lkotlin/jvm/functions/Function2;
 
     move-result-object v4
@@ -1054,27 +1054,27 @@
     invoke-direct {v2, v4, p1, v0}, Landroidx/datastore/core/SingleProcessDataStore;->transformAndWrite(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_ba
-    .catchall {:try_start_5e .. :try_end_ba} :catchall_da
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne p1, v1, :cond_82
+    if-ne p1, v1, :cond_5
 
     return-object v1
 
     .line 271
-    :goto_bd
-    :try_start_bd
+    :goto_4
+    :try_start_3
     invoke-static {p2}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
-    :try_end_c1
-    .catchall {:try_start_bd .. :try_end_c1} :catchall_54
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_e8
+    goto :goto_6
 
     .line 290
-    :cond_c2
-    :try_start_c2
+    :cond_9
+    :try_start_4
     check-cast v2, Landroidx/datastore/core/ReadException;
 
     invoke-virtual {v2}, Landroidx/datastore/core/ReadException;->getReadException()Ljava/lang/Throwable;
@@ -1084,10 +1084,10 @@
     throw p1
 
     .line 294
-    :cond_c9
+    :cond_a
     instance-of p1, v2, Landroidx/datastore/core/Final;
 
-    if-eqz p1, :cond_d4
+    if-eqz p1, :cond_b
 
     check-cast v2, Landroidx/datastore/core/Final;
 
@@ -1097,16 +1097,16 @@
 
     throw p1
 
-    :cond_d4
+    :cond_b
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p1
-    :try_end_da
-    .catchall {:try_start_c2 .. :try_end_da} :catchall_da
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    :catchall_da
+    :catchall_1
     move-exception p1
 
     move-object v7, p2
@@ -1116,7 +1116,7 @@
     move-object p1, v7
 
     .line 271
-    :goto_de
+    :goto_5
     sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     invoke-static {p2}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
@@ -1128,7 +1128,7 @@
     move-result-object p2
 
     .line 270
-    :goto_e8
+    :goto_6
     invoke-static {p1, p2}, Lkotlinx/coroutines/CompletableDeferredKt;->completeWith(Lkotlinx/coroutines/CompletableDeferred;Ljava/lang/Object;)Z
 
     .line 298
@@ -1138,7 +1138,7 @@
 .end method
 
 .method private final readAndInit(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1152,7 +1152,7 @@
 
     instance-of v0, p1, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -1164,7 +1164,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;->label:I
 
@@ -1172,14 +1172,14 @@
 
     iput p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -1199,13 +1199,13 @@
 
     const/4 v7, 0x0
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_4
 
-    if-eq v2, v6, :cond_68
+    if-eq v2, v6, :cond_3
 
-    if-eq v2, v4, :cond_4b
+    if-eq v2, v4, :cond_2
 
-    if-ne v2, v3, :cond_43
+    if-ne v2, v3, :cond_1
 
     iget-object v1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;->L$3:Ljava/lang/Object;
 
@@ -1225,10 +1225,10 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_11a
+    goto/16 :goto_6
 
     .line 355
-    :cond_43
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -1238,7 +1238,7 @@
     throw p1
 
     .line 317
-    :cond_4b
+    :cond_2
     iget-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;->L$5:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/Iterator;
@@ -1265,9 +1265,9 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_db
+    goto/16 :goto_4
 
-    :cond_68
+    :cond_3
     iget-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInit$1;->L$3:Ljava/lang/Object;
 
     check-cast v2, Lkotlin/jvm/internal/Ref$ObjectRef;
@@ -1286,9 +1286,9 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_b9
+    goto :goto_3
 
-    :cond_7c
+    :cond_4
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 319
@@ -1304,7 +1304,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_9a
+    if-nez p1, :cond_6
 
     iget-object p1, p0, Landroidx/datastore/core/SingleProcessDataStore;->downstreamFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
 
@@ -1314,21 +1314,21 @@
 
     instance-of p1, p1, Landroidx/datastore/core/ReadException;
 
-    if-eqz p1, :cond_98
+    if-eqz p1, :cond_5
 
-    goto :goto_9a
+    goto :goto_1
 
-    :cond_98
+    :cond_5
     move p1, v5
 
-    goto :goto_9b
+    goto :goto_2
 
-    :cond_9a
-    :goto_9a
+    :cond_6
+    :goto_1
     move p1, v6
 
-    :goto_9b
-    if-eqz p1, :cond_13d
+    :goto_2
+    if-eqz p1, :cond_d
 
     .line 321
     invoke-static {v5, v6, v7}, Lkotlinx/coroutines/sync/MutexKt;->Mutex$default(ZILjava/lang/Object;)Lkotlinx/coroutines/sync/Mutex;
@@ -1354,17 +1354,17 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_b7
+    if-ne p1, v1, :cond_7
 
     return-object v1
 
-    :cond_b7
+    :cond_7
     move-object v10, p0
 
     move-object v8, v2
 
     .line 317
-    :goto_b9
+    :goto_3
     iput-object p1, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     .line 324
@@ -1380,7 +1380,7 @@
     .line 348
     iget-object v11, v10, Landroidx/datastore/core/SingleProcessDataStore;->initTasks:Ljava/util/List;
 
-    if-nez v11, :cond_cf
+    if-nez v11, :cond_8
 
     move-object v2, v1
 
@@ -1392,9 +1392,9 @@
 
     move-object v0, v10
 
-    goto :goto_101
+    goto :goto_5
 
-    :cond_cf
+    :cond_8
     check-cast v11, Ljava/lang/Iterable;
 
     .line 498
@@ -1414,13 +1414,13 @@
 
     move-object v9, p1
 
-    :cond_db
-    :goto_db
+    :cond_9
+    :goto_4
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-eqz p1, :cond_fc
+    if-eqz p1, :cond_a
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1447,11 +1447,11 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_db
+    if-ne p1, v1, :cond_9
 
     return-object v1
 
-    :cond_fc
+    :cond_a
     move-object p1, v0
 
     move-object v2, v1
@@ -1463,7 +1463,7 @@
     move-object v0, v12
 
     .line 349
-    :goto_101
+    :goto_5
     iput-object v7, v0, Landroidx/datastore/core/SingleProcessDataStore;->initTasks:Ljava/util/List;
 
     .line 505
@@ -1485,24 +1485,24 @@
 
     move-result-object p1
 
-    if-ne p1, v2, :cond_118
+    if-ne p1, v2, :cond_b
 
     return-object v2
 
-    :cond_118
+    :cond_b
     move-object v3, v8
 
     move-object v2, v9
 
     .line 351
-    :goto_11a
-    :try_start_11a
+    :goto_6
+    :try_start_0
     iput-boolean v6, v2, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     .line 352
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_11e
-    .catchall {:try_start_11a .. :try_end_11e} :catchall_138
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 509
     invoke-interface {v1, v7}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
@@ -1516,13 +1516,13 @@
 
     iget-object v2, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    if-eqz v2, :cond_12f
+    if-eqz v2, :cond_c
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v5
 
-    :cond_12f
+    :cond_c
     invoke-direct {v0, v1, v5}, Landroidx/datastore/core/Data;-><init>(Ljava/lang/Object;I)V
 
     invoke-interface {p1, v0}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
@@ -1532,7 +1532,7 @@
 
     return-object p1
 
-    :catchall_138
+    :catchall_0
     move-exception p1
 
     .line 509
@@ -1541,7 +1541,7 @@
     throw p1
 
     .line 319
-    :cond_13d
+    :cond_d
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Check failed."
@@ -1558,7 +1558,7 @@
 .end method
 
 .method private final readAndInitOrPropagateAndThrowFailure(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1572,7 +1572,7 @@
 
     instance-of v0, p1, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -1584,7 +1584,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;->label:I
 
@@ -1592,14 +1592,14 @@
 
     iput p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -1611,28 +1611,28 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_30
+    if-ne v2, v3, :cond_1
 
     iget-object v0, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;->L$0:Ljava/lang/Object;
 
     check-cast v0, Landroidx/datastore/core/SingleProcessDataStore;
 
-    :try_start_2a
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2d
-    .catchall {:try_start_2a .. :try_end_2d} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_46
+    goto :goto_1
 
-    :catchall_2e
+    :catchall_0
     move-exception p1
 
-    goto :goto_4b
+    goto :goto_2
 
     .line 307
-    :cond_30
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -1642,11 +1642,11 @@
     throw p1
 
     .line 300
-    :cond_38
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 302
-    :try_start_3b
+    :try_start_1
     iput-object p0, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateAndThrowFailure$1;->label:I
@@ -1654,27 +1654,27 @@
     invoke-direct {p0, v0}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInit(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_43
-    .catchall {:try_start_3b .. :try_end_43} :catchall_49
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne p1, v1, :cond_46
+    if-ne p1, v1, :cond_3
 
     return-object v1
 
     .line 307
-    :cond_46
-    :goto_46
+    :cond_3
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
-    :catchall_49
+    :catchall_1
     move-exception p1
 
     move-object v0, p0
 
     .line 304
-    :goto_4b
+    :goto_2
     iget-object v0, v0, Landroidx/datastore/core/SingleProcessDataStore;->downstreamFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
 
     new-instance v1, Landroidx/datastore/core/ReadException;
@@ -1688,7 +1688,7 @@
 .end method
 
 .method private final readAndInitOrPropagateFailure(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1702,7 +1702,7 @@
 
     instance-of v0, p1, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -1714,7 +1714,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;->label:I
 
@@ -1722,14 +1722,14 @@
 
     iput p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -1741,28 +1741,28 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_30
+    if-ne v2, v3, :cond_1
 
     iget-object v0, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;->L$0:Ljava/lang/Object;
 
     check-cast v0, Landroidx/datastore/core/SingleProcessDataStore;
 
-    :try_start_2a
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2d
-    .catchall {:try_start_2a .. :try_end_2d} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_52
+    goto :goto_2
 
-    :catchall_2e
+    :catchall_0
     move-exception p1
 
-    goto :goto_48
+    goto :goto_1
 
     .line 315
-    :cond_30
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -1772,11 +1772,11 @@
     throw p1
 
     .line 309
-    :cond_38
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 311
-    :try_start_3b
+    :try_start_1
     iput-object p0, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Landroidx/datastore/core/SingleProcessDataStore$readAndInitOrPropagateFailure$1;->label:I
@@ -1784,20 +1784,20 @@
     invoke-direct {p0, v0}, Landroidx/datastore/core/SingleProcessDataStore;->readAndInit(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_43
-    .catchall {:try_start_3b .. :try_end_43} :catchall_46
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne p1, v1, :cond_52
+    if-ne p1, v1, :cond_3
 
     return-object v1
 
-    :catchall_46
+    :catchall_1
     move-exception p1
 
     move-object v0, p0
 
     .line 313
-    :goto_48
+    :goto_1
     iget-object v0, v0, Landroidx/datastore/core/SingleProcessDataStore;->downstreamFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
 
     new-instance v1, Landroidx/datastore/core/ReadException;
@@ -1807,15 +1807,15 @@
     invoke-interface {v0, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
     .line 315
-    :cond_52
-    :goto_52
+    :cond_3
+    :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method private final readData(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1827,7 +1827,7 @@
 
     instance-of v0, p1, Landroidx/datastore/core/SingleProcessDataStore$readData$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -1839,7 +1839,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readData$1;->label:I
 
@@ -1847,14 +1847,14 @@
 
     iput p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readData$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$readData$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/datastore/core/SingleProcessDataStore$readData$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readData$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -1866,9 +1866,9 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_38
+    if-ne v2, v3, :cond_1
 
     iget-object v1, v0, Landroidx/datastore/core/SingleProcessDataStore$readData$1;->L$2:Ljava/lang/Object;
 
@@ -1882,20 +1882,20 @@
 
     check-cast v0, Landroidx/datastore/core/SingleProcessDataStore;
 
-    :try_start_32
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_35
-    .catchall {:try_start_32 .. :try_end_35} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_6c
+    goto :goto_1
 
-    :catchall_36
+    :catchall_0
     move-exception p1
 
-    goto :goto_74
+    goto :goto_2
 
     .line 387
-    :cond_38
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -1905,11 +1905,11 @@
     throw p1
 
     .line 378
-    :cond_40
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 380
-    :try_start_43
+    :try_start_1
     new-instance p1, Ljava/io/FileInputStream;
 
     invoke-direct {p0}, Landroidx/datastore/core/SingleProcessDataStore;->getFile()Ljava/io/File;
@@ -1927,10 +1927,10 @@
     move-object v4, p1
 
     check-cast v4, Ljava/lang/Throwable;
-    :try_end_53
-    .catch Ljava/io/FileNotFoundException; {:try_start_43 .. :try_end_53} :catch_7a
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :try_start_53
+    :try_start_2
     move-object v4, v2
 
     check-cast v4, Ljava/io/FileInputStream;
@@ -1951,61 +1951,61 @@
     invoke-interface {v5, v4, v0}, Landroidx/datastore/core/Serializer;->readFrom(Ljava/io/InputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_66
-    .catchall {:try_start_53 .. :try_end_66} :catchall_72
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne v0, v1, :cond_69
+    if-ne v0, v1, :cond_3
 
     return-object v1
 
-    :cond_69
+    :cond_3
     move-object v1, p1
 
     move-object p1, v0
 
     move-object v0, p0
 
-    :goto_6c
-    :try_start_6c
+    :goto_1
+    :try_start_3
     invoke-static {v2, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-    :try_end_6f
-    .catch Ljava/io/FileNotFoundException; {:try_start_6c .. :try_end_6f} :catch_70
+    :try_end_3
+    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
 
     return-object p1
 
-    :catch_70
+    :catch_0
     move-exception p1
 
-    goto :goto_7c
+    goto :goto_3
 
-    :catchall_72
+    :catchall_1
     move-exception p1
 
     move-object v0, p0
 
-    :goto_74
-    :try_start_74
+    :goto_2
+    :try_start_4
     throw p1
-    :try_end_75
-    .catchall {:try_start_74 .. :try_end_75} :catchall_75
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    :catchall_75
+    :catchall_2
     move-exception v1
 
-    :try_start_76
+    :try_start_5
     invoke-static {v2, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
-    :try_end_7a
-    .catch Ljava/io/FileNotFoundException; {:try_start_76 .. :try_end_7a} :catch_70
+    :try_end_5
+    .catch Ljava/io/FileNotFoundException; {:try_start_5 .. :try_end_5} :catch_0
 
-    :catch_7a
+    :catch_1
     move-exception p1
 
     move-object v0, p0
 
     .line 384
-    :goto_7c
+    :goto_3
     invoke-direct {v0}, Landroidx/datastore/core/SingleProcessDataStore;->getFile()Ljava/io/File;
 
     move-result-object v1
@@ -2014,7 +2014,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_8d
+    if-nez v1, :cond_4
 
     .line 387
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore;->serializer:Landroidx/datastore/core/Serializer;
@@ -2026,12 +2026,12 @@
     return-object p1
 
     .line 385
-    :cond_8d
+    :cond_4
     throw p1
 .end method
 
 .method private final readDataOrHandleCorruption(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2043,7 +2043,7 @@
 
     instance-of v0, p1, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -2055,7 +2055,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->label:I
 
@@ -2063,14 +2063,14 @@
 
     iput p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -2086,13 +2086,13 @@
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_4
 
-    if-eq v2, v5, :cond_4c
+    if-eq v2, v5, :cond_3
 
-    if-eq v2, v4, :cond_40
+    if-eq v2, v4, :cond_2
 
-    if-ne v2, v3, :cond_38
+    if-ne v2, v3, :cond_1
 
     iget-object v1, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$1:Ljava/lang/Object;
 
@@ -2100,20 +2100,20 @@
 
     check-cast v0, Landroidx/datastore/core/CorruptionException;
 
-    :try_start_32
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_35
-    .catch Ljava/io/IOException; {:try_start_32 .. :try_end_35} :catch_36
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_88
+    goto :goto_4
 
-    :catch_36
+    :catch_0
     move-exception p1
 
-    goto :goto_8b
+    goto :goto_5
 
     .line 374
-    :cond_38
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -2123,7 +2123,7 @@
     throw p1
 
     .line 357
-    :cond_40
+    :cond_2
     iget-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$1:Ljava/lang/Object;
 
     check-cast v2, Landroidx/datastore/core/CorruptionException;
@@ -2134,30 +2134,30 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_7a
+    goto :goto_3
 
-    :cond_4c
+    :cond_3
     iget-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$0:Ljava/lang/Object;
 
     check-cast v2, Landroidx/datastore/core/SingleProcessDataStore;
 
-    :try_start_50
+    :try_start_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_53
-    .catch Landroidx/datastore/core/CorruptionException; {:try_start_50 .. :try_end_53} :catch_54
+    :try_end_1
+    .catch Landroidx/datastore/core/CorruptionException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_64
+    goto :goto_1
 
-    :catch_54
+    :catch_1
     move-exception p1
 
-    goto :goto_67
+    goto :goto_2
 
-    :cond_56
+    :cond_4
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 359
-    :try_start_59
+    :try_start_2
     iput-object p0, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$0:Ljava/lang/Object;
 
     iput v5, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->label:I
@@ -2165,24 +2165,24 @@
     invoke-direct {p0, v0}, Landroidx/datastore/core/SingleProcessDataStore;->readData(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_61
-    .catch Landroidx/datastore/core/CorruptionException; {:try_start_59 .. :try_end_61} :catch_65
+    :try_end_2
+    .catch Landroidx/datastore/core/CorruptionException; {:try_start_2 .. :try_end_2} :catch_2
 
-    if-ne p1, v1, :cond_64
+    if-ne p1, v1, :cond_5
 
     return-object v1
 
-    :cond_64
-    :goto_64
+    :cond_5
+    :goto_1
     return-object p1
 
-    :catch_65
+    :catch_2
     move-exception p1
 
     move-object v2, p0
 
     .line 362
-    :goto_67
+    :goto_2
     iget-object v5, v2, Landroidx/datastore/core/SingleProcessDataStore;->corruptionHandler:Landroidx/datastore/core/CorruptionHandler;
 
     iput-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$0:Ljava/lang/Object;
@@ -2195,11 +2195,11 @@
 
     move-result-object v4
 
-    if-ne v4, v1, :cond_76
+    if-ne v4, v1, :cond_6
 
     return-object v1
 
-    :cond_76
+    :cond_6
     move-object v6, v2
 
     move-object v2, p1
@@ -2209,8 +2209,8 @@
     move-object v4, v6
 
     .line 365
-    :goto_7a
-    :try_start_7a
+    :goto_3
+    :try_start_3
     iput-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$readDataOrHandleCorruption$1;->L$1:Ljava/lang/Object;
@@ -2220,26 +2220,26 @@
     invoke-virtual {v4, p1, v0}, Landroidx/datastore/core/SingleProcessDataStore;->writeData$datastore_core(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_84
-    .catch Ljava/io/IOException; {:try_start_7a .. :try_end_84} :catch_89
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
-    if-ne v0, v1, :cond_87
+    if-ne v0, v1, :cond_7
 
     return-object v1
 
-    :cond_87
+    :cond_7
     move-object v1, p1
 
-    :goto_88
+    :goto_4
     return-object v1
 
-    :catch_89
+    :catch_3
     move-exception p1
 
     move-object v0, v2
 
     .line 369
-    :goto_8b
+    :goto_5
     move-object v1, v0
 
     check-cast v1, Ljava/lang/Throwable;
@@ -2253,7 +2253,7 @@
 .end method
 
 .method private final transformAndWrite(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2272,7 +2272,7 @@
 
     instance-of v0, p3, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p3
 
@@ -2284,7 +2284,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p3, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->label:I
 
@@ -2292,14 +2292,14 @@
 
     iput p3, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;
 
     invoke-direct {v0, p0, p3}, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p3, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -2315,11 +2315,11 @@
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_3
 
-    if-eq v2, v5, :cond_3c
+    if-eq v2, v5, :cond_2
 
-    if-ne v2, v4, :cond_34
+    if-ne v2, v4, :cond_1
 
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->L$1:Ljava/lang/Object;
 
@@ -2329,10 +2329,10 @@
 
     invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_91
+    goto :goto_2
 
     .line 407
-    :cond_34
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
@@ -2342,7 +2342,7 @@
     throw p1
 
     .line 392
-    :cond_3c
+    :cond_2
     iget-object p1, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->L$2:Ljava/lang/Object;
 
     iget-object p2, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->L$1:Ljava/lang/Object;
@@ -2355,9 +2355,9 @@
 
     invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_76
+    goto :goto_1
 
-    :cond_4a
+    :cond_3
     invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 398
@@ -2396,11 +2396,11 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_72
+    if-ne p1, v1, :cond_4
 
     return-object v1
 
-    :cond_72
+    :cond_4
     move-object p2, p3
 
     move-object p3, p1
@@ -2410,7 +2410,7 @@
     move-object v2, p0
 
     .line 405
-    :goto_76
+    :goto_1
     invoke-virtual {p2}, Landroidx/datastore/core/Data;->checkHashCode()V
 
     .line 407
@@ -2418,12 +2418,12 @@
 
     move-result p2
 
-    if-eqz p2, :cond_80
+    if-eqz p2, :cond_5
 
-    goto :goto_a3
+    goto :goto_4
 
     .line 410
-    :cond_80
+    :cond_5
     iput-object v2, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->L$0:Ljava/lang/Object;
 
     iput-object p3, v0, Landroidx/datastore/core/SingleProcessDataStore$transformAndWrite$1;->L$1:Ljava/lang/Object;
@@ -2436,45 +2436,45 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_8f
+    if-ne p1, v1, :cond_6
 
     return-object v1
 
-    :cond_8f
+    :cond_6
     move-object p1, p3
 
     move-object p2, v2
 
     .line 411
-    :goto_91
+    :goto_2
     iget-object p2, p2, Landroidx/datastore/core/SingleProcessDataStore;->downstreamFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
 
     new-instance p3, Landroidx/datastore/core/Data;
 
-    if-eqz p1, :cond_9c
+    if-eqz p1, :cond_7
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    goto :goto_9d
+    goto :goto_3
 
-    :cond_9c
+    :cond_7
     const/4 v0, 0x0
 
-    :goto_9d
+    :goto_3
     invoke-direct {p3, p1, v0}, Landroidx/datastore/core/Data;-><init>(Ljava/lang/Object;I)V
 
     invoke-interface {p2, p3}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
-    :goto_a3
+    :goto_4
     return-object p1
 .end method
 
 
 # virtual methods
 .method public getData()Lkotlinx/coroutines/flow/Flow;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2490,7 +2490,7 @@
 .end method
 
 .method public updateData(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2547,7 +2547,7 @@
 .end method
 
 .method public final writeData$datastore_core(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 12
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -2563,7 +2563,7 @@
 
     instance-of v1, p2, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     move-object v1, p2
 
@@ -2575,7 +2575,7 @@
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     iget p2, v1, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;->label:I
 
@@ -2583,14 +2583,14 @@
 
     iput p2, v1, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;->label:I
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     new-instance v1, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;
 
     invoke-direct {v1, p0, p2}, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
 
-    :goto_1b
+    :goto_0
     iget-object p2, v1, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -2602,9 +2602,9 @@
 
     const/4 v4, 0x1
 
-    if-eqz v3, :cond_4b
+    if-eqz v3, :cond_2
 
-    if-ne v3, v4, :cond_43
+    if-ne v3, v4, :cond_1
 
     iget-object p1, v1, Landroidx/datastore/core/SingleProcessDataStore$writeData$1;->L$4:Ljava/lang/Object;
 
@@ -2626,20 +2626,20 @@
 
     check-cast v1, Landroidx/datastore/core/SingleProcessDataStore;
 
-    :try_start_3c
+    :try_start_0
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_3f
-    .catchall {:try_start_3c .. :try_end_3f} :catchall_40
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_96
+    goto :goto_1
 
-    :catchall_40
+    :catchall_0
     move-exception p1
 
-    goto/16 :goto_ca
+    goto/16 :goto_2
 
     .line 446
-    :cond_43
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
@@ -2649,7 +2649,7 @@
     throw p1
 
     .line 420
-    :cond_4b
+    :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 421
@@ -2679,7 +2679,7 @@
     invoke-direct {p2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 425
-    :try_start_68
+    :try_start_1
     new-instance v3, Ljava/io/FileOutputStream;
 
     invoke-direct {v3, p2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
@@ -2691,10 +2691,10 @@
     move-object v6, v5
 
     check-cast v6, Ljava/lang/Throwable;
-    :try_end_73
-    .catch Ljava/io/IOException; {:try_start_68 .. :try_end_73} :catch_d3
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :try_start_73
+    :try_start_2
     move-object v6, v3
 
     check-cast v6, Ljava/io/FileOutputStream;
@@ -2723,14 +2723,14 @@
     invoke-interface {v7, p1, v8, v1}, Landroidx/datastore/core/Serializer;->writeTo(Ljava/lang/Object;Ljava/io/OutputStream;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_8f
-    .catchall {:try_start_73 .. :try_end_8f} :catchall_c8
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne p1, v2, :cond_92
+    if-ne p1, v2, :cond_3
 
     return-object v2
 
-    :cond_92
+    :cond_3
     move-object v1, p0
 
     move-object v4, p2
@@ -2740,8 +2740,8 @@
     move-object p1, v6
 
     .line 427
-    :goto_96
-    :try_start_96
+    :goto_1
+    :try_start_3
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object p1
@@ -2750,11 +2750,11 @@
 
     .line 430
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_9f
-    .catchall {:try_start_96 .. :try_end_9f} :catchall_40
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 425
-    :try_start_9f
+    :try_start_4
     invoke-static {v3, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     .line 432
@@ -2765,10 +2765,10 @@
     invoke-virtual {v4, p1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     move-result p1
-    :try_end_aa
-    .catch Ljava/io/IOException; {:try_start_9f .. :try_end_aa} :catch_d0
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_4
 
     .line 446
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -2776,8 +2776,8 @@
     return-object p1
 
     .line 433
-    :cond_af
-    :try_start_af
+    :cond_4
+    :try_start_5
     new-instance p1, Ljava/io/IOException;
 
     .line 434
@@ -2803,53 +2803,53 @@
     invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_c8
-    .catch Ljava/io/IOException; {:try_start_af .. :try_end_c8} :catch_d0
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
-    :catchall_c8
+    :catchall_1
     move-exception p1
 
     move-object v4, p2
 
     .line 425
-    :goto_ca
-    :try_start_ca
+    :goto_2
+    :try_start_6
     throw p1
-    :try_end_cb
-    .catchall {:try_start_ca .. :try_end_cb} :catchall_cb
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    :catchall_cb
+    :catchall_2
     move-exception p2
 
-    :try_start_cc
+    :try_start_7
     invoke-static {v3, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw p2
-    :try_end_d0
-    .catch Ljava/io/IOException; {:try_start_cc .. :try_end_d0} :catch_d0
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_0
 
-    :catch_d0
+    :catch_0
     move-exception p1
 
     move-object p2, v4
 
-    goto :goto_d4
+    goto :goto_3
 
-    :catch_d3
+    :catch_1
     move-exception p1
 
     .line 441
-    :goto_d4
+    :goto_3
     invoke-virtual {p2}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    if-eqz v0, :cond_dd
+    if-eqz v0, :cond_5
 
     .line 442
     invoke-virtual {p2}, Ljava/io/File;->delete()Z
 
     .line 444
-    :cond_dd
+    :cond_5
     throw p1
 .end method

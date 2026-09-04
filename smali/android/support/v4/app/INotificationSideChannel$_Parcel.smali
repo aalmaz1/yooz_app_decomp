@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static synthetic access$000(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 184
     invoke-static {p0, p1}, Landroid/support/v4/app/INotificationSideChannel$_Parcel;->readTypedObject(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -36,7 +36,7 @@
 .end method
 
 .method static synthetic access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
-    .registers 3
+    .locals 0
 
     .line 184
     invoke-static {p0, p1, p2}, Landroid/support/v4/app/INotificationSideChannel$_Parcel;->writeTypedObject(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
@@ -45,7 +45,7 @@
 .end method
 
 .method private static readTypedObject(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -62,7 +62,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 189
     invoke-interface {p1, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -71,14 +71,14 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static writeTypedObject(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -89,7 +89,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
@@ -99,14 +99,14 @@
     .line 198
     invoke-interface {p1, p0, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
     .line 200
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    :goto_e
+    :goto_0
     return-void
 .end method

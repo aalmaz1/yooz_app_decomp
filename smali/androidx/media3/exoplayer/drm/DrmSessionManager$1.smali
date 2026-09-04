@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,19 +30,19 @@
 
 # virtual methods
 .method public acquireSession(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/drm/DrmSession;
-    .registers 5
+    .locals 2
 
     .line 58
     iget-object p1, p2, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 61
-    :cond_6
+    :cond_0
     new-instance p1, Landroidx/media3/exoplayer/drm/ErrorStateDrmSession;
 
     new-instance p2, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -63,26 +63,26 @@
 .end method
 
 .method public getCryptoType(Landroidx/media3/common/Format;)I
-    .registers 2
+    .locals 0
 
     .line 70
     iget-object p1, p1, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     return p1
 .end method
 
 .method public setPlayer(Landroid/os/Looper;Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

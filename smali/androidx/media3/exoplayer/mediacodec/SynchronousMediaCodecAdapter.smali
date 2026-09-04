@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/media/MediaCodec;)V
-    .registers 4
+    .locals 2
 
     .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
     const/16 v1, 0x15
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 89
     invoke-virtual {p1}, Landroid/media/MediaCodec;->getInputBuffers()[Ljava/nio/ByteBuffer;
@@ -53,12 +53,12 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->outputByteBuffers:[Ljava/nio/ByteBuffer;
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/media/MediaCodec;Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter$1;)V
-    .registers 3
+    .locals 0
 
     .line 42
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;-><init>(Landroid/media/MediaCodec;)V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public dequeueInputBufferIndex()I
-    .registers 4
+    .locals 3
 
     .line 101
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -84,7 +84,7 @@
 .end method
 
 .method public dequeueOutputBufferIndex(Landroid/media/MediaCodec$BufferInfo;)I
-    .registers 6
+    .locals 4
 
     .line 108
     :cond_0
@@ -98,14 +98,14 @@
 
     const/4 v1, -0x3
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_1
 
     .line 109
     sget v2, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v3, 0x15
 
-    if-ge v2, v3, :cond_19
+    if-ge v2, v3, :cond_1
 
     .line 110
     iget-object v2, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -116,14 +116,14 @@
 
     iput-object v2, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->outputByteBuffers:[Ljava/nio/ByteBuffer;
 
-    :cond_19
+    :cond_1
     if-eq v0, v1, :cond_0
 
     return v0
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
 
     .line 168
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -134,14 +134,14 @@
 .end method
 
 .method public getInputBuffer(I)Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 2
 
     .line 125
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 126
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -153,7 +153,7 @@
     return-object p1
 
     .line 128
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->inputByteBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -168,7 +168,7 @@
 .end method
 
 .method public getMetrics()Landroid/os/PersistableBundle;
-    .registers 2
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -181,14 +181,14 @@
 .end method
 
 .method public getOutputBuffer(I)Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 2
 
     .line 135
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 136
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -200,7 +200,7 @@
     return-object p1
 
     .line 138
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->outputByteBuffers:[Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -215,7 +215,7 @@
 .end method
 
 .method public getOutputFormat()Landroid/media/MediaFormat;
-    .registers 2
+    .locals 1
 
     .line 119
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -228,7 +228,7 @@
 .end method
 
 .method synthetic lambda$setOnFrameRenderedListener$0$androidx-media3-exoplayer-mediacodec-SynchronousMediaCodecAdapter(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnFrameRenderedListener;Landroid/media/MediaCodec;JJ)V
-    .registers 13
+    .locals 6
 
     move-object v0, p1
 
@@ -245,7 +245,7 @@
 .end method
 
 .method public needsReconfiguration()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -253,7 +253,7 @@
 .end method
 
 .method public queueInputBuffer(IIIJI)V
-    .registers 14
+    .locals 7
 
     .line 145
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -274,7 +274,7 @@
 .end method
 
 .method public queueSecureInputBuffer(IILandroidx/media3/decoder/CryptoInfo;JI)V
-    .registers 14
+    .locals 7
 
     .line 151
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -299,7 +299,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -310,35 +310,35 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->outputByteBuffers:[Ljava/nio/ByteBuffer;
 
     .line 176
-    :try_start_5
+    :try_start_0
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_0
 
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-ge v0, v1, :cond_16
+    if-ge v0, v1, :cond_0
 
     .line 181
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->stop()V
-    :try_end_16
-    .catchall {:try_start_5 .. :try_end_16} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 184
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->release()V
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -350,7 +350,7 @@
 .end method
 
 .method public releaseOutputBuffer(IJ)V
-    .registers 5
+    .locals 1
 
     .line 163
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -361,7 +361,7 @@
 .end method
 
 .method public releaseOutputBuffer(IZ)V
-    .registers 4
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -372,7 +372,7 @@
 .end method
 
 .method public setOnFrameRenderedListener(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnFrameRenderedListener;Landroid/os/Handler;)V
-    .registers 5
+    .locals 2
 
     .line 191
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -387,7 +387,7 @@
 .end method
 
 .method public setOutputSurface(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -398,7 +398,7 @@
 .end method
 
 .method public setParameters(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 206
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;
@@ -409,7 +409,7 @@
 .end method
 
 .method public setVideoScalingMode(I)V
-    .registers 3
+    .locals 1
 
     .line 211
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;->codec:Landroid/media/MediaCodec;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public getAverageBitrate()I
-    .registers 2
+    .locals 1
 
     const v0, -0x7fffffff
 
@@ -40,7 +40,7 @@
 .end method
 
 .method public getDataEndPosition()J
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -48,7 +48,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 3
+    .locals 0
 
     const-wide/16 p1, 0x0
 

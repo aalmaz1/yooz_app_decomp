@@ -26,7 +26,7 @@
 
 # direct methods
 .method protected constructor <init>(Z)V
-    .registers 3
+    .locals 1
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public final addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 54
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 56
     iget-object v0, p0, Landroidx/media3/datasource/BaseDataSource;->listeners:Ljava/util/ArrayList;
@@ -75,12 +75,12 @@
 
     iput p1, p0, Landroidx/media3/datasource/BaseDataSource;->listenerCount:I
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method protected final bytesTransferred(I)V
-    .registers 6
+    .locals 4
 
     .line 91
     iget-object v0, p0, Landroidx/media3/datasource/BaseDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -94,10 +94,10 @@
     const/4 v1, 0x0
 
     .line 92
-    :goto_9
+    :goto_0
     iget v2, p0, Landroidx/media3/datasource/BaseDataSource;->listenerCount:I
 
-    if-ge v1, v2, :cond_1d
+    if-ge v1, v2, :cond_0
 
     .line 93
     iget-object v2, p0, Landroidx/media3/datasource/BaseDataSource;->listeners:Ljava/util/ArrayList;
@@ -116,14 +116,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method protected final transferEnded()V
-    .registers 5
+    .locals 4
 
     .line 101
     iget-object v0, p0, Landroidx/media3/datasource/BaseDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -137,10 +137,10 @@
     const/4 v1, 0x0
 
     .line 102
-    :goto_9
+    :goto_0
     iget v2, p0, Landroidx/media3/datasource/BaseDataSource;->listenerCount:I
 
-    if-ge v1, v2, :cond_1d
+    if-ge v1, v2, :cond_0
 
     .line 103
     iget-object v2, p0, Landroidx/media3/datasource/BaseDataSource;->listeners:Ljava/util/ArrayList;
@@ -157,9 +157,9 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
     .line 105
@@ -169,15 +169,15 @@
 .end method
 
 .method protected final transferInitializing(Landroidx/media3/datasource/DataSpec;)V
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 67
-    :goto_1
+    :goto_0
     iget v1, p0, Landroidx/media3/datasource/BaseDataSource;->listenerCount:I
 
-    if-ge v0, v1, :cond_15
+    if-ge v0, v1, :cond_0
 
     .line 68
     iget-object v1, p0, Landroidx/media3/datasource/BaseDataSource;->listeners:Ljava/util/ArrayList;
@@ -194,14 +194,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method protected final transferStarted(Landroidx/media3/datasource/DataSpec;)V
-    .registers 5
+    .locals 3
 
     .line 78
     iput-object p1, p0, Landroidx/media3/datasource/BaseDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -209,10 +209,10 @@
     const/4 v0, 0x0
 
     .line 79
-    :goto_3
+    :goto_0
     iget v1, p0, Landroidx/media3/datasource/BaseDataSource;->listenerCount:I
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 80
     iget-object v1, p0, Landroidx/media3/datasource/BaseDataSource;->listeners:Ljava/util/ArrayList;
@@ -229,8 +229,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method

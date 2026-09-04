@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JLjava/util/List;)V
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public getChunkEndTimeUs()J
-    .registers 6
+    .locals 5
 
     .line 1114
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/HlsChunkSource$HlsMediaPlaylistSegmentIterator;->checkInBounds()V
@@ -108,7 +108,7 @@
 .end method
 
 .method public getChunkStartTimeUs()J
-    .registers 6
+    .locals 5
 
     .line 1107
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/HlsChunkSource$HlsMediaPlaylistSegmentIterator;->checkInBounds()V
@@ -139,7 +139,7 @@
 .end method
 
 .method public getDataSpec()Landroidx/media3/datasource/DataSpec;
-    .registers 10
+    .locals 9
 
     .line 1099
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/HlsChunkSource$HlsMediaPlaylistSegmentIterator;->checkInBounds()V

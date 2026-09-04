@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 74
     new-instance v0, Ljava/lang/Object;
@@ -37,7 +37,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,25 +46,25 @@
 .end method
 
 .method static isApplicationUid(I)Z
-    .registers 8
+    .locals 7
 
     const/4 v0, 0x1
 
     .line 89
-    :try_start_1
+    :try_start_0
     sget-object v1, Landroidx/core/os/ProcessCompat$Api19Impl;->sResolvedLock:Ljava/lang/Object;
 
     monitor-enter v1
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_4} :catch_3f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 90
-    :try_start_4
+    :try_start_1
     sget-boolean v2, Landroidx/core/os/ProcessCompat$Api19Impl;->sResolved:Z
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_0
 
     .line 91
     sput-boolean v0, Landroidx/core/os/ProcessCompat$Api19Impl;->sResolved:Z
@@ -87,16 +87,16 @@
     sput-object v2, Landroidx/core/os/ProcessCompat$Api19Impl;->sMethodUserHandleIsAppMethod:Ljava/lang/reflect/Method;
 
     .line 95
-    :cond_1b
+    :cond_0
     monitor-exit v1
-    :try_end_1c
-    .catchall {:try_start_4 .. :try_end_1c} :catchall_3c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 96
-    :try_start_1c
+    :try_start_2
     sget-object v1, Landroidx/core/os/ProcessCompat$Api19Impl;->sMethodUserHandleIsAppMethod:Ljava/lang/reflect/Method;
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     new-array v2, v0, [Ljava/lang/Object;
 
@@ -115,7 +115,7 @@
 
     check-cast p0, Ljava/lang/Boolean;
 
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_1
 
     .line 102
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -125,35 +125,35 @@
     return p0
 
     .line 100
-    :cond_36
+    :cond_1
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-direct {p0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw p0
-    :try_end_3c
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_3c} :catch_3f
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    :catchall_3c
+    :catchall_0
     move-exception p0
 
     .line 95
-    :try_start_3d
+    :try_start_3
     monitor-exit v1
-    :try_end_3e
-    .catchall {:try_start_3d .. :try_end_3e} :catchall_3c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    :try_start_3e
+    :try_start_4
     throw p0
-    :try_end_3f
-    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_3f} :catch_3f
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
-    :catch_3f
+    :catch_0
     move-exception p0
 
     .line 105
     invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
-    :cond_43
+    :cond_2
     return v0
 .end method

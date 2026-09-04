@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method private static checkAndReadBlockSizeSamples(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/FlacStreamMetadata;I)Z
-    .registers 3
+    .locals 0
 
     .line 280
     invoke-static {p0, p2}, Landroidx/media3/extractor/FlacFrameReader;->readFrameBlockSizeSamplesFromKey(Landroidx/media3/common/util/ParsableByteArray;I)I
@@ -31,26 +31,26 @@
 
     const/4 p2, -0x1
 
-    if-eq p0, p2, :cond_d
+    if-eq p0, p2, :cond_0
 
     .line 281
     iget p1, p1, Landroidx/media3/extractor/FlacStreamMetadata;->maxBlockSizeSamples:I
 
-    if-gt p0, p1, :cond_d
+    if-gt p0, p1, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_e
+    :goto_0
     return p0
 .end method
 
 .method private static checkAndReadCrc(Landroidx/media3/common/util/ParsableByteArray;I)Z
-    .registers 6
+    .locals 4
 
     .line 329
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -77,55 +77,55 @@
 
     move-result p0
 
-    if-ne v0, p0, :cond_16
+    if-ne v0, p0, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v2, v3
 
-    :goto_17
+    :goto_0
     return v2
 .end method
 
 .method private static checkAndReadFirstSampleNumber(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/FlacStreamMetadata;ZLandroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;)Z
-    .registers 6
+    .locals 2
 
     .line 255
     :try_start_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUtf8EncodedLong()J
 
     move-result-wide v0
-    :try_end_4
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_4} :catch_f
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 261
-    :cond_7
+    :cond_0
     iget p0, p1, Landroidx/media3/extractor/FlacStreamMetadata;->maxBlockSizeSamples:I
 
     int-to-long p0, p0
 
     mul-long/2addr v0, p0
 
-    :goto_b
+    :goto_0
     iput-wide v0, p3, Landroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;->sampleNumber:J
 
     const/4 p0, 0x1
 
     return p0
 
-    :catch_f
+    :catch_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static checkAndReadFrameHeader(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/FlacStreamMetadata;ILandroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;)Z
-    .registers 21
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -153,11 +153,11 @@
 
     const/4 v8, 0x0
 
-    if-eqz v7, :cond_19
+    if-eqz v7, :cond_0
 
     return v8
 
-    :cond_19
+    :cond_0
     const-wide/16 v9, 0x1
 
     and-long/2addr v5, v9
@@ -166,16 +166,16 @@
 
     const/4 v6, 0x1
 
-    if-nez v5, :cond_23
+    if-nez v5, :cond_1
 
     move v5, v6
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     move v5, v8
 
-    :goto_24
+    :goto_0
     const/16 v7, 0xc
 
     shr-long v11, v3, v7
@@ -214,31 +214,31 @@
 
     cmp-long v3, v3, v9
 
-    if-nez v3, :cond_45
+    if-nez v3, :cond_2
 
     move v3, v6
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_45
+    :cond_2
     move v3, v8
 
     .line 70
-    :goto_46
+    :goto_1
     invoke-static {v12, v1}, Landroidx/media3/extractor/FlacFrameReader;->checkChannelAssignment(ILandroidx/media3/extractor/FlacStreamMetadata;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_6f
+    if-eqz v4, :cond_3
 
     .line 71
     invoke-static {v13, v1}, Landroidx/media3/extractor/FlacFrameReader;->checkBitsPerSample(ILandroidx/media3/extractor/FlacStreamMetadata;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_6f
+    if-eqz v4, :cond_3
 
-    if-nez v3, :cond_6f
+    if-nez v3, :cond_3
 
     move-object/from16 v3, p3
 
@@ -247,71 +247,71 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6f
+    if-eqz v3, :cond_3
 
     .line 75
     invoke-static {v0, v1, v7}, Landroidx/media3/extractor/FlacFrameReader;->checkAndReadBlockSizeSamples(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/FlacStreamMetadata;I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_6f
+    if-eqz v3, :cond_3
 
     .line 76
     invoke-static {v0, v1, v11}, Landroidx/media3/extractor/FlacFrameReader;->checkAndReadSampleRate(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/FlacStreamMetadata;I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_3
 
     .line 77
     invoke-static {v0, v2}, Landroidx/media3/extractor/FlacFrameReader;->checkAndReadCrc(Landroidx/media3/common/util/ParsableByteArray;I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_3
 
     move v8, v6
 
-    :cond_6f
+    :cond_3
     return v8
 .end method
 
 .method private static checkAndReadSampleRate(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/FlacStreamMetadata;I)Z
-    .registers 7
+    .locals 4
 
     .line 298
     iget v0, p1, Landroidx/media3/extractor/FlacStreamMetadata;->sampleRate:I
 
     const/4 v1, 0x1
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     const/16 v2, 0xb
 
     const/4 v3, 0x0
 
-    if-gt p2, v2, :cond_12
+    if-gt p2, v2, :cond_2
 
     .line 302
     iget p0, p1, Landroidx/media3/extractor/FlacStreamMetadata;->sampleRateLookupKey:I
 
-    if-ne p2, p0, :cond_10
+    if-ne p2, p0, :cond_1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     move v1, v3
 
-    :goto_11
+    :goto_0
     return v1
 
-    :cond_12
+    :cond_2
     const/16 p1, 0xc
 
-    if-ne p2, p1, :cond_21
+    if-ne p2, p1, :cond_4
 
     .line 304
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -320,71 +320,71 @@
 
     mul-int/lit16 p0, p0, 0x3e8
 
-    if-ne p0, v0, :cond_1f
+    if-ne p0, v0, :cond_3
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_3
     move v1, v3
 
-    :goto_20
+    :goto_1
     return v1
 
-    :cond_21
+    :cond_4
     const/16 p1, 0xe
 
-    if-gt p2, p1, :cond_32
+    if-gt p2, p1, :cond_7
 
     .line 306
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p0
 
-    if-ne p2, p1, :cond_2d
+    if-ne p2, p1, :cond_5
 
     mul-int/lit8 p0, p0, 0xa
 
-    :cond_2d
-    if-ne p0, v0, :cond_30
+    :cond_5
+    if-ne p0, v0, :cond_6
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_30
+    :cond_6
     move v1, v3
 
-    :goto_31
+    :goto_2
     return v1
 
-    :cond_32
+    :cond_7
     return v3
 .end method
 
 .method private static checkBitsPerSample(ILandroidx/media3/extractor/FlacStreamMetadata;)Z
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 230
-    :cond_4
+    :cond_0
     iget p1, p1, Landroidx/media3/extractor/FlacStreamMetadata;->bitsPerSampleLookupKey:I
 
-    if-ne p0, p1, :cond_9
+    if-ne p0, p1, :cond_1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method private static checkChannelAssignment(ILandroidx/media3/extractor/FlacStreamMetadata;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x7
 
@@ -392,40 +392,40 @@
 
     const/4 v2, 0x1
 
-    if-gt p0, v0, :cond_c
+    if-gt p0, v0, :cond_1
 
     .line 210
     iget p1, p1, Landroidx/media3/extractor/FlacStreamMetadata;->channels:I
 
     sub-int/2addr p1, v2
 
-    if-ne p0, p1, :cond_b
+    if-ne p0, p1, :cond_0
 
     move v1, v2
 
-    :cond_b
+    :cond_0
     return v1
 
-    :cond_c
+    :cond_1
     const/16 v0, 0xa
 
-    if-gt p0, v0, :cond_16
+    if-gt p0, v0, :cond_2
 
     .line 212
     iget p0, p1, Landroidx/media3/extractor/FlacStreamMetadata;->channels:I
 
     const/4 p1, 0x2
 
-    if-ne p0, p1, :cond_16
+    if-ne p0, p1, :cond_2
 
     move v1, v2
 
-    :cond_16
+    :cond_2
     return v1
 .end method
 
 .method public static checkFrameHeaderFromPeek(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/FlacStreamMetadata;ILandroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;)Z
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -460,7 +460,7 @@
 
     or-int/2addr v5, v6
 
-    if-eq v5, p2, :cond_26
+    if-eq v5, p2, :cond_0
 
     .line 105
     invoke-interface {p0}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -479,7 +479,7 @@
     return v4
 
     .line 110
-    :cond_26
+    :cond_0
     new-instance v5, Landroidx/media3/common/util/ParsableByteArray;
 
     const/16 v6, 0x10
@@ -532,7 +532,7 @@
 .end method
 
 .method public static getFirstSampleNumber(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/FlacStreamMetadata;)J
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -558,30 +558,30 @@
 
     and-int/2addr v1, v0
 
-    if-ne v1, v0, :cond_13
+    if-ne v1, v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v0, v2
 
-    :goto_14
+    :goto_0
     const/4 v1, 0x2
 
     .line 147
     invoke-interface {p0, v1}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x7
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     const/4 v1, 0x6
 
     .line 150
-    :goto_1d
+    :goto_1
     new-instance v3, Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-direct {v3, v1}, Landroidx/media3/common/util/ParsableByteArray;-><init>(I)V
@@ -611,14 +611,14 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_2
 
     .line 162
     iget-wide p0, p0, Landroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;->sampleNumber:J
 
     return-wide p0
 
-    :cond_3e
+    :cond_2
     const/4 p0, 0x0
 
     .line 159
@@ -630,15 +630,15 @@
 .end method
 
 .method public static readFrameBlockSizeSamplesFromKey(Landroidx/media3/common/util/ParsableByteArray;I)I
-    .registers 2
+    .locals 0
 
-    packed-switch p1, :pswitch_data_22
+    packed-switch p1, :pswitch_data_0
 
     const/4 p0, -0x1
 
     return p0
 
-    :pswitch_5
+    :pswitch_0
     add-int/lit8 p1, p1, -0x8
 
     const/16 p0, 0x100
@@ -648,7 +648,7 @@
     return p0
 
     .line 185
-    :pswitch_b
+    :pswitch_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p0
@@ -658,7 +658,7 @@
     return p0
 
     .line 183
-    :pswitch_12
+    :pswitch_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -667,7 +667,7 @@
 
     return p0
 
-    :pswitch_19
+    :pswitch_3
     add-int/lit8 p1, p1, -0x2
 
     const/16 p0, 0x240
@@ -676,27 +676,27 @@
 
     return p0
 
-    :pswitch_1f
+    :pswitch_4
     const/16 p0, 0xc0
 
     return p0
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1f
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-        :pswitch_12
-        :pswitch_b
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

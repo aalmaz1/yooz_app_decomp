@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 903
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method static synthetic access$3200(Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 898
     iget p0, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;->audioOffloadMode:I
@@ -53,7 +53,7 @@
 .end method
 
 .method static synthetic access$3300(Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 898
     iget-boolean p0, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;->isGaplessSupportRequired:Z
@@ -62,7 +62,7 @@
 .end method
 
 .method static synthetic access$3400(Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 898
     iget-boolean p0, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;->isSpeedChangeSupportRequired:Z
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
-    .registers 3
+    .locals 2
 
     .line 955
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
@@ -86,7 +86,7 @@
 .end method
 
 .method public setAudioOffloadMode(I)Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
-    .registers 2
+    .locals 0
 
     .line 921
     iput p1, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;->audioOffloadMode:I
@@ -95,7 +95,7 @@
 .end method
 
 .method public setIsGaplessSupportRequired(Z)Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
-    .registers 2
+    .locals 0
 
     .line 935
     iput-boolean p1, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;->isGaplessSupportRequired:Z
@@ -104,7 +104,7 @@
 .end method
 
 .method public setIsSpeedChangeSupportRequired(Z)Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;
-    .registers 2
+    .locals 0
 
     .line 949
     iput-boolean p1, p0, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences$Builder;->isSpeedChangeSupportRequired:Z

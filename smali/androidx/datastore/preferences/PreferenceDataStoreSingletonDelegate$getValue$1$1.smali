@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroidx/datastore/preferences/PreferenceDataStoreSingletonDelegate;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/datastore/preferences/PreferenceDataStoreSingletonDelegate$getValue$1$1;->$applicationContext:Landroid/content/Context;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/io/File;
-    .registers 3
+    .locals 2
 
     .line 107
     iget-object v0, p0, Landroidx/datastore/preferences/PreferenceDataStoreSingletonDelegate$getValue$1$1;->$applicationContext:Landroid/content/Context;
@@ -90,7 +90,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 106
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferenceDataStoreSingletonDelegate$getValue$1$1;->invoke()Ljava/io/File;

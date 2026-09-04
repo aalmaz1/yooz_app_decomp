@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Equivalence;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method protected doEquivalent(Ljava/lang/Iterable;Ljava/lang/Iterable;)Z
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -109,20 +109,20 @@
     move-result-object p2
 
     .line 38
-    :cond_8
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 39
     iget-object v0, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
@@ -139,32 +139,32 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 44
-    :cond_26
+    :cond_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-nez p1, :cond_33
+    if-nez p1, :cond_2
 
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-nez p1, :cond_33
+    if-nez p1, :cond_2
 
     const/4 v1, 0x1
 
-    :cond_33
+    :cond_2
     return v1
 .end method
 
 .method protected bridge synthetic doEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -189,7 +189,7 @@
 .end method
 
 .method protected doHash(Ljava/lang/Iterable;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -214,12 +214,12 @@
 
     const v0, 0x13381
 
-    :goto_7
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -236,14 +236,14 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return v0
 .end method
 
 .method protected bridge synthetic doHash(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -264,7 +264,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -281,7 +281,7 @@
     .line 58
     instance-of v0, p1, Lcom/google/common/base/PairwiseEquivalence;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 60
     check-cast p1, Lcom/google/common/base/PairwiseEquivalence;
@@ -297,14 +297,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 69
     iget-object v0, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
@@ -321,7 +321,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 74
     new-instance v0, Ljava/lang/StringBuilder;

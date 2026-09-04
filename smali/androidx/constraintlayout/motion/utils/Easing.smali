@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 29
     new-instance v0, Landroidx/constraintlayout/motion/utils/Easing;
@@ -67,7 +67,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,15 +81,15 @@
 .end method
 
 .method public static getInterpolator(Ljava/lang/String;)Landroidx/constraintlayout/motion/utils/Easing;
-    .registers 3
+    .locals 2
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_4
+    :cond_0
     const-string v0, "cubic"
 
     .line 46
@@ -97,7 +97,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     .line 47
     new-instance v0, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;
@@ -107,7 +107,7 @@
     return-object v0
 
     .line 49
-    :cond_12
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -116,74 +116,74 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_8a
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_49
+    goto :goto_0
 
-    :sswitch_1e
+    :sswitch_0
     const-string v0, "standard"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_27
+    if-nez p0, :cond_2
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     const/4 v1, 0x3
 
-    goto :goto_49
+    goto :goto_0
 
-    :sswitch_29
+    :sswitch_1
     const-string v0, "linear"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_32
+    if-nez p0, :cond_3
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_32
+    :cond_3
     const/4 v1, 0x2
 
-    goto :goto_49
+    goto :goto_0
 
-    :sswitch_34
+    :sswitch_2
     const-string v0, "decelerate"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_3d
+    if-nez p0, :cond_4
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_3d
+    :cond_4
     const/4 v1, 0x1
 
-    goto :goto_49
+    goto :goto_0
 
-    :sswitch_3f
+    :sswitch_3
     const-string v0, "accelerate"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_48
+    if-nez p0, :cond_5
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_48
+    :cond_5
     const/4 v1, 0x0
 
-    :goto_49
-    packed-switch v1, :pswitch_data_9c
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     .line 59
     new-instance p0, Ljava/lang/StringBuilder;
@@ -218,7 +218,7 @@
     return-object p0
 
     .line 51
-    :pswitch_6a
+    :pswitch_0
     new-instance p0, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;
 
     const-string v0, "cubic(0.4, 0.0, 0.2, 1)"
@@ -228,7 +228,7 @@
     return-object p0
 
     .line 57
-    :pswitch_72
+    :pswitch_1
     new-instance p0, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;
 
     const-string v0, "cubic(1, 1, 0, 0)"
@@ -238,7 +238,7 @@
     return-object p0
 
     .line 55
-    :pswitch_7a
+    :pswitch_2
     new-instance p0, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;
 
     const-string v0, "cubic(0.0, 0.0, 0.2, 0.95)"
@@ -248,7 +248,7 @@
     return-object p0
 
     .line 53
-    :pswitch_82
+    :pswitch_3
     new-instance p0, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;
 
     const-string v0, "cubic(0.4, 0.05, 0.8, 0.7)"
@@ -257,33 +257,33 @@
 
     return-object p0
 
-    :sswitch_data_8a
+    :sswitch_data_0
     .sparse-switch
-        -0x50bb8523 -> :sswitch_3f
-        -0x4b5653c4 -> :sswitch_34
-        -0x41b970db -> :sswitch_29
-        0x4e3d1ebd -> :sswitch_1e
+        -0x50bb8523 -> :sswitch_3
+        -0x4b5653c4 -> :sswitch_2
+        -0x41b970db -> :sswitch_1
+        0x4e3d1ebd -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_9c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_82
-        :pswitch_7a
-        :pswitch_72
-        :pswitch_6a
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public get(D)D
-    .registers 3
+    .locals 0
 
     return-wide p1
 .end method
 
 .method public getDiff(D)D
-    .registers 3
+    .locals 0
 
     const-wide/high16 p1, 0x3ff0000000000000L    # 1.0
 
@@ -291,7 +291,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/constraintlayout/motion/utils/Easing;->str:Ljava/lang/String;

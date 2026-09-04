@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/compat/CameraManagerCompatApi29Impl;-><init>(Landroid/content/Context;)V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public getConcurrentCameraIds()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -40,12 +40,12 @@
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraManager;->getConcurrentCameraIds()Ljava/util/Set;
 
     move-result-object v0
-    :try_end_6
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_7
+    :catch_0
     move-exception v0
 
     .line 40

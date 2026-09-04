@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ClippingMediaPeriod;Landroidx/media3/exoplayer/source/SampleStream;)V
-    .registers 3
+    .locals 0
 
     .line 310
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public clearSentEos()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     .line 320
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -63,7 +63,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->childStream:Landroidx/media3/exoplayer/source/SampleStream;
 
@@ -71,21 +71,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -101,7 +101,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 16
+    .locals 12
 
     .line 331
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -112,19 +112,19 @@
 
     const/4 v1, -0x3
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 334
-    :cond_a
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->sentEos:Z
 
     const/4 v2, 0x4
 
     const/4 v3, -0x4
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 335
     invoke-virtual {p2, v2}, Landroidx/media3/decoder/DecoderInputBuffer;->setFlags(I)V
@@ -132,7 +132,7 @@
     return v3
 
     .line 338
-    :cond_14
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->getBufferedPositionUs()J
@@ -150,7 +150,7 @@
 
     const-wide/high16 v6, -0x8000000000000000L
 
-    if-ne p3, v0, :cond_62
+    if-ne p3, v0, :cond_6
 
     .line 341
     iget-object p2, p1, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
@@ -164,14 +164,14 @@
     .line 342
     iget p3, p2, Landroidx/media3/common/Format;->encoderDelay:I
 
-    if-nez p3, :cond_35
+    if-nez p3, :cond_2
 
     iget p3, p2, Landroidx/media3/common/Format;->encoderPadding:I
 
-    if-eqz p3, :cond_61
+    if-eqz p3, :cond_5
 
     .line 344
-    :cond_35
+    :cond_2
     iget-object p3, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
 
     iget-wide v1, p3, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->startUs:J
@@ -182,32 +182,32 @@
 
     const/4 v1, 0x0
 
-    if-eqz p3, :cond_42
+    if-eqz p3, :cond_3
 
     move p3, v1
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_42
+    :cond_3
     iget p3, p2, Landroidx/media3/common/Format;->encoderDelay:I
 
     .line 345
-    :goto_44
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
 
     iget-wide v2, v2, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->endUs:J
 
     cmp-long v2, v2, v6
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_4
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_4d
+    :cond_4
     iget v1, p2, Landroidx/media3/common/Format;->encoderPadding:I
 
     .line 348
-    :goto_4f
+    :goto_1
     invoke-virtual {p2}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
 
     move-result-object p2
@@ -229,20 +229,20 @@
 
     iput-object p2, p1, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
 
-    :cond_61
+    :cond_5
     return v0
 
     .line 355
-    :cond_62
+    :cond_6
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
 
     iget-wide v8, p1, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->endUs:J
 
     cmp-long p1, v8, v6
 
-    if-eqz p1, :cond_8a
+    if-eqz p1, :cond_9
 
-    if-ne p3, v3, :cond_76
+    if-ne p3, v3, :cond_7
 
     iget-wide v8, p2, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
@@ -252,21 +252,21 @@
 
     cmp-long p1, v8, v10
 
-    if-gez p1, :cond_80
+    if-gez p1, :cond_8
 
-    :cond_76
-    if-ne p3, v1, :cond_8a
+    :cond_7
+    if-ne p3, v1, :cond_9
 
     cmp-long p1, v4, v6
 
-    if-nez p1, :cond_8a
+    if-nez p1, :cond_9
 
     iget-boolean p1, p2, Landroidx/media3/decoder/DecoderInputBuffer;->waitingForKeys:Z
 
-    if-nez p1, :cond_8a
+    if-nez p1, :cond_9
 
     .line 360
-    :cond_80
+    :cond_8
     invoke-virtual {p2}, Landroidx/media3/decoder/DecoderInputBuffer;->clear()V
 
     .line 361
@@ -279,12 +279,12 @@
 
     return v3
 
-    :cond_8a
+    :cond_9
     return p3
 .end method
 
 .method public skipData(J)I
-    .registers 4
+    .locals 1
 
     .line 370
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->this$0:Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -293,14 +293,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 p1, -0x3
 
     return p1
 
     .line 373
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod$ClippingSampleStream;->childStream:Landroidx/media3/exoplayer/source/SampleStream;
 
     invoke-interface {v0, p1, p2}, Landroidx/media3/exoplayer/source/SampleStream;->skipData(J)I

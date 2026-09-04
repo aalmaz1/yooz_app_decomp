@@ -24,7 +24,7 @@
 .end method
 
 .method public createFallbackDataChannelFactory()Landroidx/media3/exoplayer/rtsp/RtpDataChannel$Factory;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

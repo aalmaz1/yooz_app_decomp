@@ -107,7 +107,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,7 +156,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -212,11 +212,11 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 39
     sget-object p4, Landroidx/lifecycle/ViewModelLazy$1;->INSTANCE:Landroidx/lifecycle/ViewModelLazy$1;
@@ -224,7 +224,7 @@
     check-cast p4, Lkotlin/jvm/functions/Function0;
 
     .line 35
-    :cond_8
+    :cond_0
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/lifecycle/ViewModelLazy;-><init>(Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
 
     return-void
@@ -233,7 +233,7 @@
 
 # virtual methods
 .method public getValue()Landroidx/lifecycle/ViewModel;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TVM;"
@@ -243,7 +243,7 @@
     .line 45
     iget-object v0, p0, Landroidx/lifecycle/ViewModelLazy;->cached:Landroidx/lifecycle/ViewModel;
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_0
 
     .line 47
     iget-object v0, p0, Landroidx/lifecycle/ViewModelLazy;->factoryProducer:Lkotlin/jvm/functions/Function0;
@@ -292,12 +292,12 @@
     .line 54
     iput-object v0, p0, Landroidx/lifecycle/ViewModelLazy;->cached:Landroidx/lifecycle/ViewModel;
 
-    :cond_2d
+    :cond_0
     return-object v0
 .end method
 
 .method public bridge synthetic getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 35
     invoke-virtual {p0}, Landroidx/lifecycle/ViewModelLazy;->getValue()Landroidx/lifecycle/ViewModel;
@@ -308,20 +308,20 @@
 .end method
 
 .method public isInitialized()Z
-    .registers 2
+    .locals 1
 
     .line 61
     iget-object v0, p0, Landroidx/lifecycle/ViewModelLazy;->cached:Landroidx/lifecycle/ViewModel;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

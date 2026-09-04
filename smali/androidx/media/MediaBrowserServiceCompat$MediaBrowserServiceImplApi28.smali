@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat;)V
-    .registers 2
+    .locals 0
 
     .line 572
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi28;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public getCurrentBrowserInfo()Landroidx/media/MediaSessionManager$RemoteUserInfo;
-    .registers 3
+    .locals 2
 
     .line 576
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi28;->this$0:Landroidx/media/MediaBrowserServiceCompat;
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 577
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi28;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -52,7 +52,7 @@
     return-object v0
 
     .line 579
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi28;->mServiceObj:Ljava/lang/Object;
 
     check-cast v0, Landroid/service/media/MediaBrowserService;

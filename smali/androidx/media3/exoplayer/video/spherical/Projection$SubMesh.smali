@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(I[F[FI)V
-    .registers 11
+    .locals 6
 
     .line 216
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,16 +57,16 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_16
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 221
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public getVertexCount()I
-    .registers 2
+    .locals 1
 
     .line 228
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;->vertices:[F

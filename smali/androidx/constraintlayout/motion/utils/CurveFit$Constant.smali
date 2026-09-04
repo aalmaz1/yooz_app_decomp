@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(D[D)V
-    .registers 4
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Landroidx/constraintlayout/motion/utils/CurveFit;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public getPos(DI)D
-    .registers 4
+    .locals 0
 
     .line 82
     iget-object p1, p0, Landroidx/constraintlayout/motion/utils/CurveFit$Constant;->mValue:[D
@@ -50,7 +50,7 @@
 .end method
 
 .method public getPos(D[D)V
-    .registers 5
+    .locals 1
 
     .line 70
     iget-object p1, p0, Landroidx/constraintlayout/motion/utils/CurveFit$Constant;->mValue:[D
@@ -65,17 +65,17 @@
 .end method
 
 .method public getPos(D[F)V
-    .registers 6
+    .locals 2
 
     const/4 p1, 0x0
 
     .line 75
-    :goto_1
+    :goto_0
     iget-object p2, p0, Landroidx/constraintlayout/motion/utils/CurveFit$Constant;->mValue:[D
 
     array-length v0, p2
 
-    if-ge p1, v0, :cond_e
+    if-ge p1, v0, :cond_0
 
     .line 76
     aget-wide v0, p2, p1
@@ -86,14 +86,14 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public getSlope(DI)D
-    .registers 4
+    .locals 0
 
     const-wide/16 p1, 0x0
 
@@ -101,17 +101,17 @@
 .end method
 
 .method public getSlope(D[D)V
-    .registers 6
+    .locals 2
 
     const/4 p1, 0x0
 
     .line 87
-    :goto_1
+    :goto_0
     iget-object p2, p0, Landroidx/constraintlayout/motion/utils/CurveFit$Constant;->mValue:[D
 
     array-length p2, p2
 
-    if-ge p1, p2, :cond_d
+    if-ge p1, p2, :cond_0
 
     const-wide/16 v0, 0x0
 
@@ -120,14 +120,14 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public getTimePoints()[D
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 

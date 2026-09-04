@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;II)V
-    .registers 4
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method protected addItemView(Landroid/view/View;I)V
-    .registers 4
+    .locals 1
 
     .line 134
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -66,13 +66,13 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 136
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     .line 138
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/MenuView;
 
     check-cast v0, Landroid/view/ViewGroup;
@@ -86,7 +86,7 @@
 .end method
 
 .method public collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public createItemView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView$ItemView;
-    .registers 5
+    .locals 3
 
     .line 167
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mSystemInflater:Landroid/view/LayoutInflater;
@@ -113,7 +113,7 @@
 .end method
 
 .method public expandItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -121,7 +121,7 @@
 .end method
 
 .method protected filterLeftoverView(Landroid/view/ViewGroup;I)Z
-    .registers 3
+    .locals 0
 
     .line 148
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeViewAt(I)V
@@ -132,7 +132,7 @@
 .end method
 
 .method public flagActionItems()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -140,7 +140,7 @@
 .end method
 
 .method public getCallback()Landroidx/appcompat/view/menu/MenuPresenter$Callback;
-    .registers 2
+    .locals 1
 
     .line 158
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
@@ -149,7 +149,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 244
     iget v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mId:I
@@ -158,26 +158,26 @@
 .end method
 
 .method public getItemView(Landroidx/appcompat/view/menu/MenuItemImpl;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 5
+    .locals 1
 
     .line 183
     instance-of v0, p2, Landroidx/appcompat/view/menu/MenuView$ItemView;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 184
     check-cast p2, Landroidx/appcompat/view/menu/MenuView$ItemView;
 
-    goto :goto_b
+    goto :goto_0
 
     .line 186
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p3}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->createItemView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView$ItemView;
 
     move-result-object p2
 
     .line 188
-    :goto_b
+    :goto_0
     invoke-virtual {p0, p1, p2}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->bindItemView(Landroidx/appcompat/view/menu/MenuItemImpl;Landroidx/appcompat/view/menu/MenuView$ItemView;)V
 
     .line 189
@@ -187,12 +187,12 @@
 .end method
 
 .method public getMenuView(Landroid/view/ViewGroup;)Landroidx/appcompat/view/menu/MenuView;
-    .registers 5
+    .locals 3
 
     .line 77
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/MenuView;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 78
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mSystemInflater:Landroid/view/LayoutInflater;
@@ -220,14 +220,14 @@
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->updateMenuView(Z)V
 
     .line 83
-    :cond_1a
+    :cond_0
     iget-object p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/MenuView;
 
     return-object p1
 .end method
 
 .method public initForMenu(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;)V
-    .registers 3
+    .locals 0
 
     .line 70
     iput-object p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mContext:Landroid/content/Context;
@@ -246,51 +246,51 @@
 .end method
 
 .method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
-    .registers 4
+    .locals 1
 
     .line 213
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 214
     invoke-interface {v0, p1, p2}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public onSubMenuSelected(Landroidx/appcompat/view/menu/SubMenuBuilder;)Z
-    .registers 3
+    .locals 1
 
     .line 220
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 222
-    :cond_7
+    :cond_0
     iget-object p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    :goto_9
+    :goto_0
     invoke-interface {v0, p1}, Landroidx/appcompat/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
 
     move-result p1
 
     return p1
 
-    :cond_e
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public setCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V
-    .registers 2
+    .locals 0
 
     .line 154
     iput-object p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mCallback:Landroidx/appcompat/view/menu/MenuPresenter$Callback;
@@ -299,7 +299,7 @@
 .end method
 
 .method public setId(I)V
-    .registers 2
+    .locals 0
 
     .line 248
     iput p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mId:I
@@ -308,7 +308,7 @@
 .end method
 
 .method public shouldIncludeItem(ILandroidx/appcompat/view/menu/MenuItemImpl;)Z
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -316,24 +316,24 @@
 .end method
 
 .method public updateMenuView(Z)V
-    .registers 11
+    .locals 9
 
     .line 91
     iget-object p1, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenuView:Landroidx/appcompat/view/menu/MenuView;
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     return-void
 
     .line 95
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/BaseMenuPresenter;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_6
 
     .line 96
     invoke-virtual {v0}, Landroidx/appcompat/view/menu/MenuBuilder;->flagActionItems()V
@@ -354,8 +354,8 @@
 
     move v4, v3
 
-    :goto_1b
-    if-ge v3, v2, :cond_50
+    :goto_0
+    if-ge v3, v2, :cond_5
 
     .line 100
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -369,7 +369,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4d
+    if-eqz v6, :cond_4
 
     .line 102
     invoke-virtual {p1, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -379,7 +379,7 @@
     .line 103
     instance-of v7, v6, Landroidx/appcompat/view/menu/MenuView$ItemView;
 
-    if-eqz v7, :cond_39
+    if-eqz v7, :cond_1
 
     .line 104
     move-object v7, v6
@@ -390,18 +390,18 @@
 
     move-result-object v7
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_39
+    :cond_1
     const/4 v7, 0x0
 
     .line 105
-    :goto_3a
+    :goto_1
     invoke-virtual {p0, v5, v6, p1}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->getItemView(Landroidx/appcompat/view/menu/MenuItemImpl;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v8
 
-    if-eq v5, v7, :cond_46
+    if-eq v5, v7, :cond_2
 
     .line 108
     invoke-virtual {v8, v1}, Landroid/view/View;->setPressed(Z)V
@@ -409,43 +409,43 @@
     .line 109
     invoke-virtual {v8}, Landroid/view/View;->jumpDrawablesToCurrentState()V
 
-    :cond_46
-    if-eq v8, v6, :cond_4b
+    :cond_2
+    if-eq v8, v6, :cond_3
 
     .line 112
     invoke-virtual {p0, v8, v4}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->addItemView(Landroid/view/View;I)V
 
-    :cond_4b
+    :cond_3
     add-int/lit8 v4, v4, 0x1
 
-    :cond_4d
+    :cond_4
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_50
+    :cond_5
     move v1, v4
 
     .line 120
-    :cond_51
-    :goto_51
+    :cond_6
+    :goto_2
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_60
+    if-ge v1, v0, :cond_7
 
     .line 121
     invoke-virtual {p0, p1, v1}, Landroidx/appcompat/view/menu/BaseMenuPresenter;->filterLeftoverView(Landroid/view/ViewGroup;I)Z
 
     move-result v0
 
-    if-nez v0, :cond_51
+    if-nez v0, :cond_6
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_51
+    goto :goto_2
 
-    :cond_60
+    :cond_7
     return-void
 .end method

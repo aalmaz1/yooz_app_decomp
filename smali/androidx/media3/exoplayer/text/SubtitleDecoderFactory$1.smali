@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
 
 # virtual methods
 .method public createDecoder(Landroidx/media3/common/Format;)Landroidx/media3/extractor/text/SubtitleDecoder;
-    .registers 6
+    .locals 4
 
     .line 77
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_3
 
     .line 79
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -57,63 +57,63 @@
 
     const/4 v2, -0x1
 
-    sparse-switch v1, :sswitch_data_8c
+    sparse-switch v1, :sswitch_data_0
 
-    goto :goto_30
+    goto :goto_0
 
-    :sswitch_10
+    :sswitch_0
     const-string v1, "application/cea-708"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v2, 0x2
 
-    goto :goto_30
+    goto :goto_0
 
-    :sswitch_1b
+    :sswitch_1
     const-string v1, "application/cea-608"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_1
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v2, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
-    :sswitch_26
+    :sswitch_2
     const-string v1, "application/x-mp4-cea-608"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_2
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     const/4 v2, 0x0
 
-    :goto_30
-    packed-switch v2, :pswitch_data_9a
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
-    goto :goto_48
+    goto :goto_1
 
     .line 87
-    :pswitch_34
+    :pswitch_0
     new-instance v0, Landroidx/media3/extractor/text/cea/Cea708Decoder;
 
     iget v1, p1, Landroidx/media3/common/Format;->accessibilityChannel:I
@@ -125,7 +125,7 @@
     return-object v0
 
     .line 82
-    :pswitch_3e
+    :pswitch_1
     new-instance v1, Landroidx/media3/extractor/text/cea/Cea608Decoder;
 
     iget p1, p1, Landroidx/media3/common/Format;->accessibilityChannel:I
@@ -137,15 +137,15 @@
     return-object v1
 
     .line 92
-    :cond_48
-    :goto_48
+    :cond_3
+    :goto_1
     iget-object v1, p0, Landroidx/media3/exoplayer/text/SubtitleDecoderFactory$1;->delegate:Landroidx/media3/extractor/text/DefaultSubtitleParserFactory;
 
     invoke-virtual {v1, p1}, Landroidx/media3/extractor/text/DefaultSubtitleParserFactory;->supportsFormat(Landroidx/media3/common/Format;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_77
+    if-eqz v1, :cond_4
 
     .line 93
     iget-object v0, p0, Landroidx/media3/exoplayer/text/SubtitleDecoderFactory$1;->delegate:Landroidx/media3/extractor/text/DefaultSubtitleParserFactory;
@@ -189,7 +189,7 @@
     return-object v0
 
     .line 97
-    :cond_77
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -210,23 +210,23 @@
 
     throw p1
 
-    :sswitch_data_8c
+    :sswitch_data_0
     .sparse-switch
-        0x37713300 -> :sswitch_26
-        0x5d578071 -> :sswitch_1b
-        0x5d578432 -> :sswitch_10
+        0x37713300 -> :sswitch_2
+        0x5d578071 -> :sswitch_1
+        0x5d578432 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_9a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3e
-        :pswitch_3e
-        :pswitch_34
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)Z
-    .registers 4
+    .locals 2
 
     .line 68
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -238,7 +238,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_1
 
     const-string p1, "application/cea-608"
 
@@ -247,7 +247,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_1
 
     const-string p1, "application/x-mp4-cea-608"
 
@@ -256,7 +256,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_1
 
     const-string p1, "application/cea-708"
 
@@ -265,19 +265,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_26
+    :goto_1
     return p1
 .end method

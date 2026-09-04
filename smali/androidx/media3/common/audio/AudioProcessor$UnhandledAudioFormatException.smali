@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "Unhandled input format:"
 
@@ -31,7 +31,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
-    .registers 4
+    .locals 1
 
     .line 123
     new-instance v0, Ljava/lang/StringBuilder;

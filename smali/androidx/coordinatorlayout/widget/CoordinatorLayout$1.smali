@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
-    .registers 2
+    .locals 0
 
     .line 3312
     iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$1;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
-    .registers 3
+    .locals 0
 
     .line 3316
     iget-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$1;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;

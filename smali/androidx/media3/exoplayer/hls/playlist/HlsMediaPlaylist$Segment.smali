@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JJLjava/lang/String;Ljava/lang/String;)V
-    .registers 26
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLandroidx/media3/common/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
-    .registers 35
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public copyWith(JI)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;
-    .registers 24
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -151,14 +151,14 @@
     move-wide/from16 v2, p1
 
     .line 187
-    :goto_a
+    :goto_0
     iget-object v4, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v1, v4, :cond_29
+    if-ge v1, v4, :cond_0
 
     .line 188
     iget-object v4, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
@@ -185,9 +185,9 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     move/from16 v7, p3
 
     .line 192

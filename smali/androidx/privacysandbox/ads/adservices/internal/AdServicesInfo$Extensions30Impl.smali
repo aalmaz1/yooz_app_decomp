@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/privacysandbox/ads/adservices/internal/AdServicesInfo$Extensions30Impl;
 
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final getAdServicesVersion()I
-    .registers 2
+    .locals 1
 
     const v0, 0xf4240
 

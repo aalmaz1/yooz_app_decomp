@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback;)V
-    .registers 2
+    .locals 0
 
     .line 821
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback$StubApi26;->this$0:Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onChildrenLoaded(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,7 +63,7 @@
 .end method
 
 .method public onError(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 833
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback$StubApi26;->this$0:Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback;

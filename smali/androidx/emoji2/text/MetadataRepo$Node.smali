@@ -30,7 +30,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -41,7 +41,7 @@
 .end method
 
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 246
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,30 +59,30 @@
 
 # virtual methods
 .method get(I)Landroidx/emoji2/text/MetadataRepo$Node;
-    .registers 3
+    .locals 1
 
     .line 251
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo$Node;->mChildren:Landroid/util/SparseArray;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroidx/emoji2/text/MetadataRepo$Node;
 
-    :goto_c
+    :goto_0
     return-object p1
 .end method
 
 .method final getData()Landroidx/emoji2/text/EmojiMetadata;
-    .registers 2
+    .locals 1
 
     .line 255
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo$Node;->mData:Landroidx/emoji2/text/EmojiMetadata;
@@ -91,7 +91,7 @@
 .end method
 
 .method put(Landroidx/emoji2/text/EmojiMetadata;II)V
-    .registers 7
+    .locals 3
 
     .line 260
     invoke-virtual {p1, p2}, Landroidx/emoji2/text/EmojiMetadata;->getCodepointAt(I)I
@@ -102,7 +102,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 262
     new-instance v0, Landroidx/emoji2/text/MetadataRepo$Node;
@@ -118,20 +118,20 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    :cond_18
-    if-le p3, p2, :cond_20
+    :cond_0
+    if-le p3, p2, :cond_1
 
     add-int/lit8 p2, p2, 0x1
 
     .line 267
     invoke-virtual {v0, p1, p2, p3}, Landroidx/emoji2/text/MetadataRepo$Node;->put(Landroidx/emoji2/text/EmojiMetadata;II)V
 
-    goto :goto_22
+    goto :goto_0
 
     .line 269
-    :cond_20
+    :cond_1
     iput-object p1, v0, Landroidx/emoji2/text/MetadataRepo$Node;->mData:Landroidx/emoji2/text/EmojiMetadata;
 
-    :goto_22
+    :goto_0
     return-void
 .end method

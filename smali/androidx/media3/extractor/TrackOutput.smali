@@ -25,7 +25,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZ)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -51,7 +51,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 

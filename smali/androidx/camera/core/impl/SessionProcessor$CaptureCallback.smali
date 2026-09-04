@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public onCaptureCompleted(JILjava/util/Map;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JI",
@@ -31,31 +31,31 @@
 .end method
 
 .method public onCaptureFailed(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureProcessStarted(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureSequenceAborted(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureSequenceCompleted(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureStarted(IJ)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method

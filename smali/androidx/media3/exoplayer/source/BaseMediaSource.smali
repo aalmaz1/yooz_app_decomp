@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final addDrmEventListener(Landroid/os/Handler;Landroidx/media3/exoplayer/drm/DrmSessionEventListener;)V
-    .registers 4
+    .locals 1
 
     .line 222
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -98,7 +98,7 @@
 .end method
 
 .method public final addEventListener(Landroid/os/Handler;Landroidx/media3/exoplayer/source/MediaSourceEventListener;)V
-    .registers 4
+    .locals 1
 
     .line 208
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -115,7 +115,7 @@
 .end method
 
 .method protected final createDrmEventDispatcher(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
-    .registers 4
+    .locals 1
 
     .line 170
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->drmEventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -128,7 +128,7 @@
 .end method
 
 .method protected final createDrmEventDispatcher(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
-    .registers 4
+    .locals 2
 
     .line 156
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->drmEventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -143,7 +143,7 @@
 .end method
 
 .method protected final createEventDispatcher(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 4
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->eventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -156,7 +156,7 @@
 .end method
 
 .method protected final createEventDispatcher(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;J)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 5
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -171,7 +171,7 @@
 .end method
 
 .method protected final createEventDispatcher(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 4
+    .locals 2
 
     .line 104
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->eventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -186,7 +186,7 @@
 .end method
 
 .method protected final createEventDispatcher(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;J)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 4
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -206,7 +206,7 @@
 .end method
 
 .method public final disable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
-    .registers 4
+    .locals 2
 
     .line 276
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->enabledMediaSourceCallers:Ljava/util/HashSet;
@@ -222,7 +222,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 278
     iget-object p1, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->enabledMediaSourceCallers:Ljava/util/HashSet;
@@ -231,23 +231,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 279
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;->disableInternal()V
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method protected disableInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public final enable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
-    .registers 4
+    .locals 2
 
     .line 265
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->looper:Landroid/os/Looper;
@@ -266,23 +266,23 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 269
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;->enableInternal()V
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method protected enableInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected final getPlayerId()Landroidx/media3/exoplayer/analytics/PlayerId;
-    .registers 2
+    .locals 1
 
     .line 185
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->playerId:Landroidx/media3/exoplayer/analytics/PlayerId;
@@ -297,7 +297,7 @@
 .end method
 
 .method protected final isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 175
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->enabledMediaSourceCallers:Ljava/util/HashSet;
@@ -312,7 +312,7 @@
 .end method
 
 .method public final prepareSource(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 1
 
     .line 238
     sget-object v0, Landroidx/media3/exoplayer/analytics/PlayerId;->UNSET:Landroidx/media3/exoplayer/analytics/PlayerId;
@@ -323,7 +323,7 @@
 .end method
 
 .method public final prepareSource(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;Landroidx/media3/datasource/TransferListener;Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 6
+    .locals 2
 
     .line 247
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -333,22 +333,22 @@
     .line 248
     iget-object v1, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->looper:Landroid/os/Looper;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_1
 
-    if-ne v1, v0, :cond_b
+    if-ne v1, v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
-    :goto_e
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 249
@@ -365,7 +365,7 @@
     .line 252
     iget-object v1, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->looper:Landroid/os/Looper;
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_2
 
     .line 253
     iput-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->looper:Landroid/os/Looper;
@@ -378,10 +378,10 @@
     .line 255
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/source/BaseMediaSource;->prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_29
-    if-eqz p3, :cond_31
+    :cond_2
+    if-eqz p3, :cond_3
 
     .line 257
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/BaseMediaSource;->enable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
@@ -389,13 +389,13 @@
     .line 258
     invoke-interface {p1, p0, p3}, Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;->onSourceInfoRefreshed(Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
 
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_2
     return-void
 .end method
 
 .method protected final prepareSourceCalled()Z
-    .registers 2
+    .locals 1
 
     .line 202
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->mediaSourceCallers:Ljava/util/ArrayList;
@@ -413,7 +413,7 @@
 .end method
 
 .method protected final refreshSourceInfo(Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 2
 
     .line 88
     iput-object p1, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->timeline:Landroidx/media3/common/Timeline;
@@ -425,12 +425,12 @@
 
     move-result-object v0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -441,14 +441,14 @@
     .line 90
     invoke-interface {v1, p0, p1}, Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;->onSourceInfoRefreshed(Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public final releaseSource(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
-    .registers 3
+    .locals 1
 
     .line 286
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->mediaSourceCallers:Ljava/util/ArrayList;
@@ -462,7 +462,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
@@ -483,13 +483,13 @@
     .line 292
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;->releaseSourceInternal()V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 294
-    :cond_1d
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/BaseMediaSource;->disable(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;)V
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
@@ -497,7 +497,7 @@
 .end method
 
 .method public final removeDrmEventListener(Landroidx/media3/exoplayer/drm/DrmSessionEventListener;)V
-    .registers 3
+    .locals 1
 
     .line 230
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->drmEventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -508,7 +508,7 @@
 .end method
 
 .method public final removeEventListener(Landroidx/media3/exoplayer/source/MediaSourceEventListener;)V
-    .registers 3
+    .locals 1
 
     .line 216
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->eventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -519,7 +519,7 @@
 .end method
 
 .method protected final setPlayerId(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     .line 194
     iput-object p1, p0, Landroidx/media3/exoplayer/source/BaseMediaSource;->playerId:Landroidx/media3/exoplayer/analytics/PlayerId;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Landroidx/media3/extractor/metadata/SimpleMetadataDecoder;-><init>()V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method protected decode(Landroidx/media3/extractor/metadata/MetadataInputBuffer;Ljava/nio/ByteBuffer;)Landroidx/media3/common/Metadata;
-    .registers 6
+    .locals 3
 
     .line 34
     new-instance p1, Landroidx/media3/common/Metadata;
@@ -51,7 +51,7 @@
 .end method
 
 .method public decode(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/emsg/EventMessage;
-    .registers 11
+    .locals 9
 
     .line 38
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readNullTerminatedString()Ljava/lang/String;

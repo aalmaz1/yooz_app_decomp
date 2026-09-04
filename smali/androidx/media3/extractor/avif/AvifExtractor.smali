@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private readAndCompareFourBytes(Landroidx/media3/extractor/ExtractorInput;I)Z
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -87,18 +87,18 @@
 
     cmp-long p1, v0, p1
 
-    if-nez p1, :cond_1c
+    if-nez p1, :cond_0
 
     const/4 v2, 0x1
 
-    :cond_1c
+    :cond_0
     return v2
 .end method
 
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 3
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/media3/extractor/avif/AvifExtractor;->imageExtractor:Landroidx/media3/extractor/SingleSampleExtractor;
@@ -109,7 +109,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -127,13 +127,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/media3/extractor/avif/AvifExtractor;->imageExtractor:Landroidx/media3/extractor/SingleSampleExtractor;
@@ -144,7 +144,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -163,7 +163,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     const v0, 0x61766966
 
@@ -172,15 +172,15 @@
 
     move-result p1
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_19
+    :goto_0
     return p1
 .end method

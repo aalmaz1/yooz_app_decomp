@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 295
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public bridge synthetic run()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -55,7 +55,7 @@
 .end method
 
 .method public run()Lsun/misc/Unsafe;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -74,10 +74,10 @@
 
     const/4 v3, 0x0
 
-    :goto_8
+    :goto_0
     const/4 v4, 0x0
 
-    if-ge v3, v2, :cond_25
+    if-ge v3, v2, :cond_1
 
     aget-object v5, v1, v3
 
@@ -96,7 +96,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_22
+    if-eqz v5, :cond_0
 
     .line 304
     invoke-virtual {v0, v4}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
@@ -107,11 +107,11 @@
 
     return-object v0
 
-    :cond_22
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     return-object v4
 .end method

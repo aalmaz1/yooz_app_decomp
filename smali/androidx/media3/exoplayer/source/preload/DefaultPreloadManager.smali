@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/preload/TargetPreloadStatusControl;Landroidx/media3/exoplayer/source/MediaSource$Factory;Landroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/upstream/BandwidthMeter;Landroidx/media3/exoplayer/RendererCapabilitiesList$Factory;Landroidx/media3/exoplayer/upstream/Allocator;Landroid/os/Looper;)V
-    .registers 16
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method protected clearSourceInternal(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     .line 176
     instance-of v0, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;
@@ -112,7 +112,7 @@
 .end method
 
 .method public createMediaSourceForPreloading(Landroidx/media3/exoplayer/source/MediaSource;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 3
+    .locals 1
 
     .line 165
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/DefaultPreloadManager;->preloadMediaSourceFactory:Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$Factory;
@@ -125,7 +125,7 @@
 .end method
 
 .method protected preloadSourceInternal(Landroidx/media3/exoplayer/source/MediaSource;J)V
-    .registers 5
+    .locals 1
 
     .line 170
     instance-of v0, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;
@@ -141,7 +141,7 @@
 .end method
 
 .method protected releaseInternal()V
-    .registers 2
+    .locals 1
 
     .line 188
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/DefaultPreloadManager;->rendererCapabilitiesList:Landroidx/media3/exoplayer/RendererCapabilitiesList;
@@ -152,7 +152,7 @@
 .end method
 
 .method protected releaseSourceInternal(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     .line 182
     instance-of v0, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;
@@ -168,7 +168,7 @@
 .end method
 
 .method public setCurrentPlayingIndex(I)V
-    .registers 3
+    .locals 1
 
     .line 158
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/DefaultPreloadManager;->rankingDataComparator:Ljava/util/Comparator;

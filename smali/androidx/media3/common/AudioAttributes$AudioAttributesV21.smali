@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/AudioAttributes;)V
-    .registers 5
+    .locals 3
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
     const/16 v2, 0x1d
 
-    if-lt v1, v2, :cond_25
+    if-lt v1, v2, :cond_0
 
     .line 51
     iget v1, p1, Landroidx/media3/common/AudioAttributes;->allowedCapturePolicy:I
@@ -64,12 +64,12 @@
     invoke-static {v0, v1}, Landroidx/media3/common/AudioAttributes$Api29;->setAllowedCapturePolicy(Landroid/media/AudioAttributes$Builder;I)V
 
     .line 53
-    :cond_25
+    :cond_0
     sget v1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x20
 
-    if-lt v1, v2, :cond_30
+    if-lt v1, v2, :cond_1
 
     .line 54
     iget p1, p1, Landroidx/media3/common/AudioAttributes;->spatializationBehavior:I
@@ -77,7 +77,7 @@
     invoke-static {v0, p1}, Landroidx/media3/common/AudioAttributes$Api32;->setSpatializationBehavior(Landroid/media/AudioAttributes$Builder;I)V
 
     .line 56
-    :cond_30
+    :cond_1
     invoke-virtual {v0}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
 
     move-result-object p1
@@ -88,7 +88,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/AudioAttributes;Landroidx/media3/common/AudioAttributes$1;)V
-    .registers 3
+    .locals 0
 
     .line 41
     invoke-direct {p0, p1}, Landroidx/media3/common/AudioAttributes$AudioAttributesV21;-><init>(Landroidx/media3/common/AudioAttributes;)V

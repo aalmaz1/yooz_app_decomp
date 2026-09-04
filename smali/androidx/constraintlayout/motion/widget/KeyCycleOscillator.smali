@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method static makeSpline(Ljava/lang/String;)Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;
-    .registers 3
+    .locals 2
 
     const-string v0, "CUSTOM"
 
@@ -90,7 +90,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 98
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$CustomSet;
@@ -100,7 +100,7 @@
     return-object p0
 
     .line 100
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -109,241 +109,241 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_126
+    sparse-switch v0, :sswitch_data_0
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_1b
+    :sswitch_0
     const-string/jumbo v0, "waveOffset"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_26
+    if-nez p0, :cond_1
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :cond_26
+    :cond_1
     const/16 v1, 0xd
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_2a
+    :sswitch_1
     const-string v0, "alpha"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_34
+    if-nez p0, :cond_2
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :cond_34
+    :cond_2
     const/16 v1, 0xc
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_38
+    :sswitch_2
     const-string/jumbo v0, "transitionPathRotate"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_43
+    if-nez p0, :cond_3
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :cond_43
+    :cond_3
     const/16 v1, 0xb
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_47
+    :sswitch_3
     const-string v0, "elevation"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_51
+    if-nez p0, :cond_4
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :cond_51
+    :cond_4
     const/16 v1, 0xa
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_55
+    :sswitch_4
     const-string v0, "rotation"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_5f
+    if-nez p0, :cond_5
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :cond_5f
+    :cond_5
     const/16 v1, 0x9
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_63
+    :sswitch_5
     const-string/jumbo v0, "waveVariesBy"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_6e
+    if-nez p0, :cond_6
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :cond_6e
+    :cond_6
     const/16 v1, 0x8
 
-    goto/16 :goto_cc
+    goto/16 :goto_0
 
-    :sswitch_72
+    :sswitch_6
     const-string v0, "scaleY"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_7b
+    if-nez p0, :cond_7
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_7b
+    :cond_7
     const/4 v1, 0x7
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_7d
+    :sswitch_7
     const-string v0, "scaleX"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_86
+    if-nez p0, :cond_8
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_86
+    :cond_8
     const/4 v1, 0x6
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_88
+    :sswitch_8
     const-string v0, "progress"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_91
+    if-nez p0, :cond_9
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_91
+    :cond_9
     const/4 v1, 0x5
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_93
+    :sswitch_9
     const-string/jumbo v0, "translationZ"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_9d
+    if-nez p0, :cond_a
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_9d
+    :cond_a
     const/4 v1, 0x4
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_9f
+    :sswitch_a
     const-string/jumbo v0, "translationY"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_a9
+    if-nez p0, :cond_b
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_a9
+    :cond_b
     const/4 v1, 0x3
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_ab
+    :sswitch_b
     const-string/jumbo v0, "translationX"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_b5
+    if-nez p0, :cond_c
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_b5
+    :cond_c
     const/4 v1, 0x2
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_b7
+    :sswitch_c
     const-string v0, "rotationY"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_c0
+    if-nez p0, :cond_d
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_c0
+    :cond_d
     const/4 v1, 0x1
 
-    goto :goto_cc
+    goto :goto_0
 
-    :sswitch_c2
+    :sswitch_d
     const-string v0, "rotationX"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_cb
+    if-nez p0, :cond_e
 
-    goto :goto_cc
+    goto :goto_0
 
-    :cond_cb
+    :cond_e
     const/4 v1, 0x0
 
-    :goto_cc
-    packed-switch v1, :pswitch_data_160
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 118
-    :pswitch_d1
+    :pswitch_0
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$AlphaSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$AlphaSet;-><init>()V
@@ -351,7 +351,7 @@
     return-object p0
 
     .line 102
-    :pswitch_d7
+    :pswitch_1
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$AlphaSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$AlphaSet;-><init>()V
@@ -359,7 +359,7 @@
     return-object p0
 
     .line 112
-    :pswitch_dd
+    :pswitch_2
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$PathRotateSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$PathRotateSet;-><init>()V
@@ -367,7 +367,7 @@
     return-object p0
 
     .line 104
-    :pswitch_e3
+    :pswitch_3
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ElevationSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ElevationSet;-><init>()V
@@ -375,7 +375,7 @@
     return-object p0
 
     .line 106
-    :pswitch_e9
+    :pswitch_4
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$RotationSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$RotationSet;-><init>()V
@@ -383,7 +383,7 @@
     return-object p0
 
     .line 120
-    :pswitch_ef
+    :pswitch_5
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$AlphaSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$AlphaSet;-><init>()V
@@ -391,7 +391,7 @@
     return-object p0
 
     .line 116
-    :pswitch_f5
+    :pswitch_6
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ScaleYset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ScaleYset;-><init>()V
@@ -399,7 +399,7 @@
     return-object p0
 
     .line 114
-    :pswitch_fb
+    :pswitch_7
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ScaleXset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ScaleXset;-><init>()V
@@ -407,7 +407,7 @@
     return-object p0
 
     .line 128
-    :pswitch_101
+    :pswitch_8
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ProgressSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$ProgressSet;-><init>()V
@@ -415,7 +415,7 @@
     return-object p0
 
     .line 126
-    :pswitch_107
+    :pswitch_9
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationZset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationZset;-><init>()V
@@ -423,7 +423,7 @@
     return-object p0
 
     .line 124
-    :pswitch_10d
+    :pswitch_a
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationYset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationYset;-><init>()V
@@ -431,7 +431,7 @@
     return-object p0
 
     .line 122
-    :pswitch_113
+    :pswitch_b
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationXset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationXset;-><init>()V
@@ -439,7 +439,7 @@
     return-object p0
 
     .line 110
-    :pswitch_119
+    :pswitch_c
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$RotationYset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$RotationYset;-><init>()V
@@ -447,7 +447,7 @@
     return-object p0
 
     .line 108
-    :pswitch_11f
+    :pswitch_d
     new-instance p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$RotationXset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$RotationXset;-><init>()V
@@ -456,47 +456,47 @@
 
     nop
 
-    :sswitch_data_126
+    :sswitch_data_0
     .sparse-switch
-        -0x4a771f66 -> :sswitch_c2
-        -0x4a771f65 -> :sswitch_b7
-        -0x490b9c39 -> :sswitch_ab
-        -0x490b9c38 -> :sswitch_9f
-        -0x490b9c37 -> :sswitch_93
-        -0x3bab3dd3 -> :sswitch_88
-        -0x3621dfb2 -> :sswitch_7d
-        -0x3621dfb1 -> :sswitch_72
-        -0x2f893320 -> :sswitch_63
-        -0x266f082 -> :sswitch_55
-        -0x42d1a3 -> :sswitch_47
-        0x2382115 -> :sswitch_38
-        0x589b15e -> :sswitch_2a
-        0x94e04ec -> :sswitch_1b
+        -0x4a771f66 -> :sswitch_d
+        -0x4a771f65 -> :sswitch_c
+        -0x490b9c39 -> :sswitch_b
+        -0x490b9c38 -> :sswitch_a
+        -0x490b9c37 -> :sswitch_9
+        -0x3bab3dd3 -> :sswitch_8
+        -0x3621dfb2 -> :sswitch_7
+        -0x3621dfb1 -> :sswitch_6
+        -0x2f893320 -> :sswitch_5
+        -0x266f082 -> :sswitch_4
+        -0x42d1a3 -> :sswitch_3
+        0x2382115 -> :sswitch_2
+        0x589b15e -> :sswitch_1
+        0x94e04ec -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_160
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11f
-        :pswitch_119
-        :pswitch_113
-        :pswitch_10d
-        :pswitch_107
-        :pswitch_101
-        :pswitch_fb
-        :pswitch_f5
-        :pswitch_ef
-        :pswitch_e9
-        :pswitch_e3
-        :pswitch_dd
-        :pswitch_d7
-        :pswitch_d1
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public get(F)F
-    .registers 4
+    .locals 2
 
     .line 85
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mCycleOscillator:Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$CycleOscillator;
@@ -511,7 +511,7 @@
 .end method
 
 .method public getCurveFit()Landroidx/constraintlayout/motion/utils/CurveFit;
-    .registers 2
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mCurveFit:Landroidx/constraintlayout/motion/utils/CurveFit;
@@ -520,7 +520,7 @@
 .end method
 
 .method public getSlope(F)F
-    .registers 4
+    .locals 2
 
     .line 89
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mCycleOscillator:Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$CycleOscillator;
@@ -535,7 +535,7 @@
 .end method
 
 .method public setPoint(IIIFFF)V
-    .registers 9
+    .locals 2
 
     .line 164
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mWavePoints:Ljava/util/ArrayList;
@@ -548,20 +548,20 @@
 
     const/4 p1, -0x1
 
-    if-eq p3, p1, :cond_f
+    if-eq p3, p1, :cond_0
 
     .line 166
     iput p3, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mVariesBy:I
 
     .line 168
-    :cond_f
+    :cond_0
     iput p2, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mWaveShape:I
 
     return-void
 .end method
 
 .method public setPoint(IIIFFFLandroidx/constraintlayout/widget/ConstraintAttribute;)V
-    .registers 10
+    .locals 2
 
     .line 146
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mWavePoints:Ljava/util/ArrayList;
@@ -574,13 +574,13 @@
 
     const/4 p1, -0x1
 
-    if-eq p3, p1, :cond_f
+    if-eq p3, p1, :cond_0
 
     .line 148
     iput p3, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mVariesBy:I
 
     .line 150
-    :cond_f
+    :cond_0
     iput p2, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mWaveShape:I
 
     .line 151
@@ -593,7 +593,7 @@
 .end method
 
 .method public setType(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 79
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mType:Ljava/lang/String;
@@ -602,7 +602,7 @@
 .end method
 
 .method public setup(F)V
-    .registers 14
+    .locals 12
 
     .line 173
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mWavePoints:Ljava/util/ArrayList;
@@ -611,12 +611,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 177
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mWavePoints:Ljava/util/ArrayList;
 
     new-instance v2, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$1;
@@ -669,12 +669,12 @@
 
     move v11, v2
 
-    :goto_38
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_6e
+    if-eqz v5, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -730,10 +730,10 @@
 
     add-int/2addr v11, v4
 
-    goto :goto_38
+    goto :goto_0
 
     .line 194
-    :cond_6e
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mCycleOscillator:Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$CycleOscillator;
 
     invoke-virtual {v0, p1}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$CycleOscillator;->setup(F)V
@@ -749,7 +749,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 70
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mType:Ljava/lang/String;
@@ -768,12 +768,12 @@
 
     move-result-object v2
 
-    :goto_f
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -830,27 +830,27 @@
 
     move-result-object v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_4c
+    :cond_0
     return-object v0
 .end method
 
 .method public variesByPath()Z
-    .registers 3
+    .locals 2
 
     .line 51
     iget v0, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->mVariesBy:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method

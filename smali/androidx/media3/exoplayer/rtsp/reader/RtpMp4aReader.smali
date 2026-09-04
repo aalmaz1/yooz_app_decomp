@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 6
+    .locals 4
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->payloadFormat:Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;
 
     .line 68
-    :try_start_5
+    :try_start_0
     iget-object p1, p1, Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;->fmtpParameters:Lcom/google/common/collect/ImmutableMap;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->getNumOfSubframesFromMpeg4AudioConfig(Lcom/google/common/collect/ImmutableMap;)I
@@ -49,8 +49,8 @@
     move-result p1
 
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->numberOfSubframes:I
-    :try_end_d
-    .catch Landroidx/media3/common/ParserException; {:try_start_5 .. :try_end_d} :catch_21
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -77,7 +77,7 @@
 
     return-void
 
-    :catch_21
+    :catch_0
     move-exception p1
 
     .line 70
@@ -89,7 +89,7 @@
 .end method
 
 .method private static getNumOfSubframesFromMpeg4AudioConfig(Lcom/google/common/collect/ImmutableMap;)I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -119,7 +119,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz p0, :cond_6a
+    if-eqz p0, :cond_4
 
     .line 147
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -128,7 +128,7 @@
 
     rem-int/lit8 v2, v2, 0x2
 
-    if-nez v2, :cond_6a
+    if-nez v2, :cond_4
 
     .line 148
     invoke-static {p0}, Landroidx/media3/common/util/Util;->getBytesFromHexString(Ljava/lang/String;)[B
@@ -145,23 +145,23 @@
 
     move-result p0
 
-    if-nez p0, :cond_54
+    if-nez p0, :cond_3
 
     .line 152
     invoke-virtual {v2, v0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
 
-    if-ne p0, v0, :cond_2b
+    if-ne p0, v0, :cond_0
 
     move p0, v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     move p0, v1
 
-    :goto_2c
+    :goto_0
     const-string v3, "Only supports allStreamsSameTimeFraming."
 
     invoke-static {p0, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -180,16 +180,16 @@
 
     move-result v3
 
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_1
 
     move v3, v0
 
-    goto :goto_40
+    goto :goto_1
 
-    :cond_3f
+    :cond_1
     move v3, v1
 
-    :goto_40
+    :goto_1
     const-string v4, "Only suppors one program."
 
     invoke-static {v3, v4}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -201,21 +201,21 @@
 
     move-result v2
 
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_2
 
     move v1, v0
 
-    :cond_4d
+    :cond_2
     const-string v2, "Only suppors one layer."
 
     invoke-static {v1, v2}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     move v1, p0
 
-    goto :goto_6a
+    goto :goto_2
 
     .line 157
-    :cond_54
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "unsupported audio mux version: "
@@ -238,15 +238,15 @@
 
     throw p0
 
-    :cond_6a
-    :goto_6a
+    :cond_4
+    :goto_2
     add-int/2addr v1, v0
 
     return v1
 .end method
 
 .method private outputSampleMetadataForFragmentedPackets()V
-    .registers 9
+    .locals 8
 
     .line 171
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -288,7 +288,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 15
+    .locals 9
 
     .line 95
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -305,28 +305,28 @@
     .line 98
     iget v1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->fragmentedSampleSizeBytes:I
 
-    if-lez v1, :cond_14
+    if-lez v1, :cond_0
 
-    if-ge v0, p4, :cond_14
+    if-ge v0, p4, :cond_0
 
     .line 99
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->outputSampleMetadataForFragmentedPackets()V
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 102
-    :goto_16
+    :goto_0
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->numberOfSubframes:I
 
-    if-ge v1, v2, :cond_3b
+    if-ge v1, v2, :cond_3
 
     move v2, v0
 
     .line 106
-    :cond_1b
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v3
@@ -335,7 +335,7 @@
 
     move-result v4
 
-    if-ge v3, v4, :cond_2e
+    if-ge v3, v4, :cond_2
 
     .line 107
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -346,10 +346,10 @@
 
     const/16 v4, 0xff
 
-    if-eq v3, v4, :cond_1b
+    if-eq v3, v4, :cond_1
 
     .line 114
-    :cond_2e
+    :cond_2
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
 
     invoke-interface {v3, p1, v2}, Landroidx/media3/extractor/TrackOutput;->sampleData(Landroidx/media3/common/util/ParsableByteArray;I)V
@@ -363,10 +363,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 117
-    :cond_3b
+    :cond_3
     iget-wide v2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->startTimeOffsetUs:J
 
     iget-wide v6, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->firstReceivedTimestamp:J
@@ -384,20 +384,20 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->fragmentedSampleTimeUs:J
 
-    if-eqz p5, :cond_4f
+    if-eqz p5, :cond_4
 
     .line 121
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->outputSampleMetadataForFragmentedPackets()V
 
     .line 123
-    :cond_4f
+    :cond_4
     iput p4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->previousSequenceNumber:I
 
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -425,7 +425,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 8
+    .locals 4
 
     .line 88
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->firstReceivedTimestamp:J
@@ -434,16 +434,16 @@
 
     cmp-long p3, v0, v2
 
-    if-nez p3, :cond_d
+    if-nez p3, :cond_0
 
     const/4 p3, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p3, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {p3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 89
@@ -453,7 +453,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 128
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMp4aReader;->firstReceivedTimestamp:J

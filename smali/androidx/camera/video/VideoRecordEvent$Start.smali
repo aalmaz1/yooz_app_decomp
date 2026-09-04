@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)V
-    .registers 3
+    .locals 0
 
     .line 142
     invoke-direct {p0, p1, p2}, Landroidx/camera/video/VideoRecordEvent;-><init>(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)V

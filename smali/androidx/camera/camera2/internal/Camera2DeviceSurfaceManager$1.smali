@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public get(II)Landroid/media/CamcorderProfile;
-    .registers 3
+    .locals 0
 
     .line 78
     invoke-static {p1, p2}, Landroid/media/CamcorderProfile;->get(II)Landroid/media/CamcorderProfile;
@@ -41,7 +41,7 @@
 .end method
 
 .method public hasProfile(II)Z
-    .registers 3
+    .locals 0
 
     .line 72
     invoke-static {p1, p2}, Landroid/media/CamcorderProfile;->hasProfile(II)Z

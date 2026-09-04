@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;Landroid/widget/TextView;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 167
     iget-object p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$3;->val$urlTextView:Landroid/widget/TextView;
@@ -56,7 +56,7 @@
 
     const v0, 0x7fffffff
 
-    if-ne p1, v0, :cond_19
+    if-ne p1, v0, :cond_0
 
     .line 168
     iget-object p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$3;->val$urlTextView:Landroid/widget/TextView;
@@ -72,10 +72,10 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    goto :goto_24
+    goto :goto_0
 
     .line 171
-    :cond_19
+    :cond_0
     iget-object p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$3;->val$urlTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setMaxLines(I)V
@@ -87,6 +87,6 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    :goto_24
+    :goto_0
     return-void
 .end method

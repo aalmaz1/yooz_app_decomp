@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 92
     invoke-direct {p0}, Landroidx/emoji2/text/FontRequestEmojiCompatConfig$RetryPolicy;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public getRetryDelay()J
-    .registers 7
+    .locals 6
 
     .line 98
     iget-wide v0, p0, Landroidx/emoji2/text/FontRequestEmojiCompatConfig$ExponentialBackoffRetryPolicy;->mRetryOrigin:J
@@ -45,7 +45,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 99
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -57,7 +57,7 @@
     return-wide v2
 
     .line 106
-    :cond_f
+    :cond_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -71,13 +71,13 @@
 
     cmp-long v2, v0, v2
 
-    if-lez v2, :cond_1f
+    if-lez v2, :cond_1
 
     const-wide/16 v0, -0x1
 
     return-wide v0
 
-    :cond_1f
+    :cond_1
     const-wide/16 v2, 0x3e8
 
     .line 112

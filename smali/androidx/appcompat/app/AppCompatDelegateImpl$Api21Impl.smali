@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3937
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isPowerSaveMode(Landroid/os/PowerManager;)Z
-    .registers 1
+    .locals 0
 
     .line 3940
     invoke-virtual {p0}, Landroid/os/PowerManager;->isPowerSaveMode()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static toLanguageTag(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 3945
     invoke-virtual {p0}, Ljava/util/Locale;->toLanguageTag()Ljava/lang/String;

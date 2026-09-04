@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJZZZ)V
-    .registers 9
+    .locals 0
 
     .line 3353
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

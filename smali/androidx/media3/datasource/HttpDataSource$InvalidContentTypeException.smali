@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/datasource/DataSpec;)V
-    .registers 6
+    .locals 3
 
     .line 403
     new-instance v0, Ljava/lang/StringBuilder;

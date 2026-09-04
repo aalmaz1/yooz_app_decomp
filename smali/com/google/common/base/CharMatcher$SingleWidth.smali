@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1487
     new-instance v0, Lcom/google/common/base/CharMatcher$SingleWidth;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 4
+    .locals 3
 
     const-string v0, "\u0000\u05be\u05d0\u05f3\u0600\u0750\u0e00\u1e00\u2100\ufb50\ufe70\uff61"
 

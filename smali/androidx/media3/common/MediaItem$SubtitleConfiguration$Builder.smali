@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;)V
-    .registers 2
+    .locals 0
 
     .line 1575
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration;)V
-    .registers 3
+    .locals 1
 
     .line 1579
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1561
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;-><init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration;)V
@@ -97,7 +97,7 @@
 .end method
 
 .method static synthetic access$1800(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)Landroidx/media3/common/MediaItem$Subtitle;
-    .registers 1
+    .locals 0
 
     .line 1561
     invoke-direct {p0}, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->buildSubtitle()Landroidx/media3/common/MediaItem$Subtitle;
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$2800(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1561
     iget-object p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->uri:Landroid/net/Uri;
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$2900(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1561
     iget-object p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->mimeType:Ljava/lang/String;
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$3000(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1561
     iget-object p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->language:Ljava/lang/String;
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$3100(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 1561
     iget p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->selectionFlags:I
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$3200(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 1561
     iget p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->roleFlags:I
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$3300(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1561
     iget-object p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->label:Ljava/lang/String;
@@ -162,7 +162,7 @@
 .end method
 
 .method static synthetic access$3400(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1561
     iget-object p0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->id:Ljava/lang/String;
@@ -171,7 +171,7 @@
 .end method
 
 .method private buildSubtitle()Landroidx/media3/common/MediaItem$Subtitle;
-    .registers 3
+    .locals 2
 
     .line 1645
     new-instance v0, Landroidx/media3/common/MediaItem$Subtitle;
@@ -186,7 +186,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem$SubtitleConfiguration;
-    .registers 3
+    .locals 2
 
     .line 1640
     new-instance v0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;
@@ -199,7 +199,7 @@
 .end method
 
 .method public setId(Ljava/lang/String;)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1634
     iput-object p1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->id:Ljava/lang/String;
@@ -208,7 +208,7 @@
 .end method
 
 .method public setLabel(Ljava/lang/String;)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1627
     iput-object p1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->label:Ljava/lang/String;
@@ -217,7 +217,7 @@
 .end method
 
 .method public setLanguage(Ljava/lang/String;)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1606
     iput-object p1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->language:Ljava/lang/String;
@@ -226,7 +226,7 @@
 .end method
 
 .method public setMimeType(Ljava/lang/String;)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1599
     invoke-static {p1}, Landroidx/media3/common/MimeTypes;->normalizeMimeType(Ljava/lang/String;)Ljava/lang/String;
@@ -239,7 +239,7 @@
 .end method
 
 .method public setRoleFlags(I)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1620
     iput p1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->roleFlags:I
@@ -248,7 +248,7 @@
 .end method
 
 .method public setSelectionFlags(I)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1613
     iput p1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->selectionFlags:I
@@ -257,7 +257,7 @@
 .end method
 
 .method public setUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1592
     iput-object p1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;->uri:Landroid/net/Uri;

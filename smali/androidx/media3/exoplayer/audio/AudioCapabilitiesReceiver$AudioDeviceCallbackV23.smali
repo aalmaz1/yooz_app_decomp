@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;)V
-    .registers 2
+    .locals 0
 
     .line 249
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -31,7 +31,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$1;)V
-    .registers 3
+    .locals 0
 
     .line 249
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;-><init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;)V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
-    .registers 5
+    .locals 3
 
     .line 252
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -75,7 +75,7 @@
 .end method
 
 .method public onAudioDevicesRemoved([Landroid/media/AudioDeviceInfo;)V
-    .registers 5
+    .locals 3
 
     .line 258
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -88,7 +88,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 259
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -98,7 +98,7 @@
     invoke-static {p1, v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->access$302(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;)Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
 
     .line 261
-    :cond_12
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
 
     .line 262

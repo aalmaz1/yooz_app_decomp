@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/LifecycleObserver;Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "initialState"
 
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public final dispatchEvent(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 6
+    .locals 3
 
     const-string v0, "event"
 
@@ -125,7 +125,7 @@
 .end method
 
 .method public final getLifecycleObserver()Landroidx/lifecycle/LifecycleEventObserver;
-    .registers 2
+    .locals 1
 
     .line 304
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->lifecycleObserver:Landroidx/lifecycle/LifecycleEventObserver;
@@ -134,7 +134,7 @@
 .end method
 
 .method public final getState()Landroidx/lifecycle/Lifecycle$State;
-    .registers 2
+    .locals 1
 
     .line 303
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->state:Landroidx/lifecycle/Lifecycle$State;
@@ -143,7 +143,7 @@
 .end method
 
 .method public final setLifecycleObserver(Landroidx/lifecycle/LifecycleEventObserver;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<set-?>"
 
@@ -156,7 +156,7 @@
 .end method
 
 .method public final setState(Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<set-?>"
 

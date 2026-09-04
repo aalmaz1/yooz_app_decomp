@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 1318
     new-instance v0, Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public bridge synthetic getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 1312
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$Defaults;->getConfig()Landroidx/camera/core/impl/ImageCaptureConfig;
@@ -142,7 +142,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/ImageCaptureConfig;
-    .registers 2
+    .locals 1
 
     .line 1342
     sget-object v0, Landroidx/camera/core/ImageCapture$Defaults;->DEFAULT_CONFIG:Landroidx/camera/core/impl/ImageCaptureConfig;

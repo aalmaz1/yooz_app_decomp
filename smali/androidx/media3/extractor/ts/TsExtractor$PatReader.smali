@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ts/TsExtractor;)V
-    .registers 3
+    .locals 1
 
     .line 631
     iput-object p1, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->this$0:Landroidx/media3/extractor/ts/TsExtractor;
@@ -49,30 +49,30 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 11
+    .locals 9
 
     .line 645
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 651
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
     and-int/lit16 v0, v0, 0x80
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x6
 
     .line 658
@@ -91,8 +91,8 @@
 
     move v3, v2
 
-    :goto_1c
-    if-ge v3, v0, :cond_6a
+    :goto_0
+    if-ge v3, v0, :cond_4
 
     .line 662
     iget-object v4, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->patScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -117,17 +117,17 @@
 
     const/16 v5, 0xd
 
-    if-nez v4, :cond_3b
+    if-nez v4, :cond_2
 
     .line 666
     iget-object v4, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->patScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v4, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_67
+    goto :goto_1
 
     .line 668
-    :cond_3b
+    :cond_2
     iget-object v4, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->patScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v4, v5}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -145,7 +145,7 @@
 
     move-result-object v5
 
-    if-nez v5, :cond_67
+    if-nez v5, :cond_3
 
     .line 670
     iget-object v5, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->this$0:Landroidx/media3/extractor/ts/TsExtractor;
@@ -171,14 +171,14 @@
 
     invoke-static {v4}, Landroidx/media3/extractor/ts/TsExtractor;->access$108(Landroidx/media3/extractor/ts/TsExtractor;)I
 
-    :cond_67
-    :goto_67
+    :cond_3
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 675
-    :cond_6a
+    :cond_4
     iget-object p1, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->this$0:Landroidx/media3/extractor/ts/TsExtractor;
 
     invoke-static {p1}, Landroidx/media3/extractor/ts/TsExtractor;->access$200(Landroidx/media3/extractor/ts/TsExtractor;)I
@@ -187,7 +187,7 @@
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_7c
+    if-eq p1, v0, :cond_5
 
     .line 676
     iget-object p1, p0, Landroidx/media3/extractor/ts/TsExtractor$PatReader;->this$0:Landroidx/media3/extractor/ts/TsExtractor;
@@ -198,12 +198,12 @@
 
     invoke-virtual {p1, v2}, Landroid/util/SparseArray;->remove(I)V
 
-    :cond_7c
+    :cond_5
     return-void
 .end method
 
 .method public init(Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method

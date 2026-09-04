@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/MediaItem;JLandroidx/media3/exoplayer/source/ExternalLoader;)V
-    .registers 5
+    .locals 0
 
     .line 99
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem;JLandroidx/media3/exoplayer/source/ExternalLoader;Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource$1;)V
-    .registers 6
+    .locals 0
 
     .line 44
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;-><init>(Landroidx/media3/common/MediaItem;JLandroidx/media3/exoplayer/source/ExternalLoader;)V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 6
+    .locals 4
 
     .line 130
     iget-object p1, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -68,7 +68,7 @@
 
     check-cast v0, Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_1
 
     .line 132
     iget-object v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_1
 
     iget-object v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->mimeType:Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     iget-wide v0, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->imageDurationMs:J
 
@@ -99,7 +99,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_0
 
     iget-wide v0, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->imageDurationMs:J
 
@@ -112,22 +112,22 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_3d
+    if-nez p1, :cond_1
 
-    :cond_3b
+    :cond_0
     const/4 p1, 0x1
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_3d
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_3e
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 5
+    .locals 0
 
     .line 151
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -167,21 +167,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 125
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -190,13 +190,13 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 10
+    .locals 8
 
     .line 107
     new-instance p1, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
@@ -227,7 +227,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 161
     check-cast p1, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
@@ -238,28 +238,28 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 141
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 142
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

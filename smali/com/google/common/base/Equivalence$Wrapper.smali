@@ -55,7 +55,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Equivalence;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p2    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -98,7 +98,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Equivalence;Ljava/lang/Object;Lcom/google/common/base/Equivalence$1;)V
-    .registers 4
+    .locals 0
 
     .line 183
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Equivalence$Wrapper;-><init>(Lcom/google/common/base/Equivalence;Ljava/lang/Object;)V
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -123,17 +123,17 @@
         }
     .end annotation
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 217
-    :cond_4
+    :cond_0
     instance-of v0, p1, Lcom/google/common/base/Equivalence$Wrapper;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 218
     check-cast p1, Lcom/google/common/base/Equivalence$Wrapper;
@@ -147,7 +147,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 226
     iget-object v0, p0, Lcom/google/common/base/Equivalence$Wrapper;->equivalence:Lcom/google/common/base/Equivalence;
@@ -163,14 +163,14 @@
 
     return p1
 
-    :cond_1f
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation runtime Lcom/google/common/base/ParametricNullness;
     .end annotation
 
@@ -187,7 +187,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 236
     iget-object v0, p0, Lcom/google/common/base/Equivalence$Wrapper;->equivalence:Lcom/google/common/base/Equivalence;
@@ -202,7 +202,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 245
     new-instance v0, Ljava/lang/StringBuilder;

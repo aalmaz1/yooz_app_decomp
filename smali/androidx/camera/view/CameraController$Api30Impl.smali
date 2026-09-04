@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2004
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createAttributionContext(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Context;
-    .registers 2
+    .locals 0
 
     .line 2011
     invoke-virtual {p0, p1}, Landroid/content/Context;->createAttributionContext(Ljava/lang/String;)Landroid/content/Context;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getAttributionTag(Landroid/content/Context;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 2017
     invoke-virtual {p0}, Landroid/content/Context;->getAttributionTag()Ljava/lang/String;

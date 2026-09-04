@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final asConsumer(Lkotlin/coroutines/Continuation;)Ljava/util/function/Consumer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

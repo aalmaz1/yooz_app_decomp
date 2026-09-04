@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Function;Lcom/google/common/base/Supplier;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -126,7 +126,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 72
     check-cast p1, Lcom/google/common/base/Suppliers$SupplierComposition;
@@ -140,7 +140,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->supplier:Lcom/google/common/base/Supplier;
 
@@ -150,16 +150,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation runtime Lcom/google/common/base/ParametricNullness;
     .end annotation
 
@@ -186,7 +186,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -213,7 +213,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 85
     new-instance v0, Ljava/lang/StringBuilder;

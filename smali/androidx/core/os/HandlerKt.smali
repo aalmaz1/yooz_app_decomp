@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final postAtTime(Landroid/os/Handler;JLjava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Runnable;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,16 +63,16 @@
 .end method
 
 .method public static synthetic postAtTime$default(Landroid/os/Handler;JLjava/lang/Object;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Ljava/lang/Runnable;
-    .registers 7
+    .locals 0
 
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     const/4 p3, 0x0
 
     .line 65
-    :cond_5
+    :cond_0
     new-instance p5, Landroidx/core/os/HandlerKt$postAtTime$runnable$1;
 
     invoke-direct {p5, p4}, Landroidx/core/os/HandlerKt$postAtTime$runnable$1;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final postDelayed(Landroid/os/Handler;JLjava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Runnable;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -107,49 +107,49 @@
 
     check-cast v0, Ljava/lang/Runnable;
 
-    if-nez p3, :cond_d
+    if-nez p3, :cond_0
 
     .line 40
     invoke-virtual {p0, v0, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_10
+    goto :goto_0
 
     .line 42
-    :cond_d
+    :cond_0
     invoke-static {p0, v0, p3, p1, p2}, Landroidx/core/os/HandlerCompat;->postDelayed(Landroid/os/Handler;Ljava/lang/Runnable;Ljava/lang/Object;J)Z
 
-    :goto_10
+    :goto_0
     return-object v0
 .end method
 
 .method public static synthetic postDelayed$default(Landroid/os/Handler;JLjava/lang/Object;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Ljava/lang/Runnable;
-    .registers 7
+    .locals 0
 
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     const/4 p3, 0x0
 
     .line 38
-    :cond_5
+    :cond_0
     new-instance p5, Landroidx/core/os/HandlerKt$postDelayed$runnable$1;
 
     invoke-direct {p5, p4}, Landroidx/core/os/HandlerKt$postDelayed$runnable$1;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     check-cast p5, Ljava/lang/Runnable;
 
-    if-nez p3, :cond_12
+    if-nez p3, :cond_1
 
     .line 40
     invoke-virtual {p0, p5, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_15
+    goto :goto_0
 
     .line 42
-    :cond_12
+    :cond_1
     invoke-static {p0, p5, p3, p1, p2}, Landroidx/core/os/HandlerCompat;->postDelayed(Landroid/os/Handler;Ljava/lang/Runnable;Ljava/lang/Object;J)Z
 
-    :goto_15
+    :goto_0
     return-object p5
 .end method

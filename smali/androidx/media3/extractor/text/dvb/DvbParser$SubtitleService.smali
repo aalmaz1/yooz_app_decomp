@@ -76,7 +76,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 950
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 961
     iget-object v0, p0, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;

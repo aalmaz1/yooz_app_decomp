@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/provider/FontsContractCompat$FontRequestCallback;)V
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method constructor <init>(Landroidx/core/provider/FontsContractCompat$FontRequestCallback;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method private onTypefaceRequestFailed(I)V
-    .registers 5
+    .locals 3
 
     .line 67
     iget-object v0, p0, Landroidx/core/provider/CallbackWithHandler;->mCallback:Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
@@ -63,7 +63,7 @@
 .end method
 
 .method private onTypefaceRetrieved(Landroid/graphics/Typeface;)V
-    .registers 5
+    .locals 3
 
     .line 54
     iget-object v0, p0, Landroidx/core/provider/CallbackWithHandler;->mCallback:Landroidx/core/provider/FontsContractCompat$FontRequestCallback;
@@ -83,28 +83,28 @@
 
 # virtual methods
 .method onTypefaceResult(Landroidx/core/provider/FontRequestWorker$TypefaceResult;)V
-    .registers 3
+    .locals 1
 
     .line 80
     invoke-virtual {p1}, Landroidx/core/provider/FontRequestWorker$TypefaceResult;->isSuccess()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 81
     iget-object p1, p1, Landroidx/core/provider/FontRequestWorker$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
 
     invoke-direct {p0, p1}, Landroidx/core/provider/CallbackWithHandler;->onTypefaceRetrieved(Landroid/graphics/Typeface;)V
 
-    goto :goto_11
+    goto :goto_0
 
     .line 83
-    :cond_c
+    :cond_0
     iget p1, p1, Landroidx/core/provider/FontRequestWorker$TypefaceResult;->mResult:I
 
     invoke-direct {p0, p1}, Landroidx/core/provider/CallbackWithHandler;->onTypefaceRequestFailed(I)V
 
-    :goto_11
+    :goto_0
     return-void
 .end method

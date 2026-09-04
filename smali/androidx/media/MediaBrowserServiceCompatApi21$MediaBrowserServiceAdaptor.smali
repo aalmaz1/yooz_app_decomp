@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroidx/media/MediaBrowserServiceCompatApi21$ServiceCompatProxy;)V
-    .registers 3
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Landroid/service/media/MediaBrowserService;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onGetRoot(Ljava/lang/String;ILandroid/os/Bundle;)Landroid/service/media/MediaBrowserService$BrowserRoot;
-    .registers 7
+    .locals 3
 
     .line 122
     invoke-static {p3}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V
@@ -47,28 +47,28 @@
 
     const/4 v1, 0x0
 
-    if-nez p3, :cond_a
+    if-nez p3, :cond_0
 
     move-object v2, v1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2, p3}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    :goto_f
+    :goto_0
     invoke-interface {v0, p1, p2, v2}, Landroidx/media/MediaBrowserServiceCompatApi21$ServiceCompatProxy;->onGetRoot(Ljava/lang/String;ILandroid/os/Bundle;)Landroidx/media/MediaBrowserServiceCompatApi21$BrowserRoot;
 
     move-result-object p1
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 125
-    :cond_16
+    :cond_1
     new-instance v1, Landroid/service/media/MediaBrowserService$BrowserRoot;
 
     iget-object p2, p1, Landroidx/media/MediaBrowserServiceCompatApi21$BrowserRoot;->mRootId:Ljava/lang/String;
@@ -77,12 +77,12 @@
 
     invoke-direct {v1, p2, p1}, Landroid/service/media/MediaBrowserService$BrowserRoot;-><init>(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :goto_1f
+    :goto_1
     return-object v1
 .end method
 
 .method public onLoadChildren(Ljava/lang/String;Landroid/service/media/MediaBrowserService$Result;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final onKeyStatusChange(Landroid/media/MediaDrm;[BLjava/util/List;Z)V
-    .registers 11
+    .locals 6
 
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda3;->f$0:Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;
 

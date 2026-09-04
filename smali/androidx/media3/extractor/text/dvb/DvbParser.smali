@@ -85,21 +85,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/4 v0, 0x4
 
     new-array v1, v0, [B
 
     .line 89
-    fill-array-data v1, :array_1a
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultMap2To4:[B
 
     new-array v0, v0, [B
 
     .line 90
-    fill-array-data v0, :array_20
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultMap2To8:[B
 
@@ -108,7 +108,7 @@
     new-array v0, v0, [B
 
     .line 91
-    fill-array-data v0, :array_26
+    fill-array-data v0, :array_2
 
     sput-object v0, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultMap4To8:[B
 
@@ -116,7 +116,7 @@
 
     nop
 
-    :array_1a
+    :array_0
     .array-data 1
         0x0t
         0x7t
@@ -124,7 +124,7 @@
         0xft
     .end array-data
 
-    :array_20
+    :array_1
     .array-data 1
         0x0t
         0x77t
@@ -132,7 +132,7 @@
         -0x1t
     .end array-data
 
-    :array_26
+    :array_2
     .array-data 1
         0x0t
         0x11t
@@ -154,7 +154,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -300,15 +300,15 @@
 .end method
 
 .method private static buildClutMapTable(IILandroidx/media3/common/util/ParsableBitArray;)[B
-    .registers 6
+    .locals 3
 
     .line 926
     new-array v0, p0, [B
 
     const/4 v1, 0x0
 
-    :goto_3
-    if-ge v1, p0, :cond_f
+    :goto_0
+    if-ge v1, p0, :cond_0
 
     .line 928
     invoke-virtual {p2, p1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -321,27 +321,27 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     return-object v0
 .end method
 
 .method private static generateDefault2BitClutEntries()[I
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x4
 
     new-array v0, v0, [I
 
     .line 580
-    fill-array-data v0, :array_8
+    fill-array-data v0, :array_0
 
     return-object v0
 
     nop
 
-    :array_8
+    :array_0
     .array-data 4
         0x0
         -0x1
@@ -351,7 +351,7 @@
 .end method
 
 .method private static generateDefault4BitClutEntries()[I
-    .registers 9
+    .locals 9
 
     const/16 v0, 0x10
 
@@ -363,115 +363,115 @@
 
     const/4 v3, 0x1
 
-    :goto_8
-    if-ge v3, v0, :cond_4b
+    :goto_0
+    if-ge v3, v0, :cond_7
 
     const/16 v4, 0x8
 
     const/16 v5, 0xff
 
-    if-ge v3, v4, :cond_2c
+    if-ge v3, v4, :cond_3
 
     and-int/lit8 v4, v3, 0x1
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_0
 
     move v4, v5
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
+    :cond_0
     move v4, v2
 
-    :goto_17
+    :goto_1
     and-int/lit8 v6, v3, 0x2
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_1
 
     move v6, v5
 
-    goto :goto_1e
+    goto :goto_2
 
-    :cond_1d
+    :cond_1
     move v6, v2
 
-    :goto_1e
+    :goto_2
     and-int/lit8 v7, v3, 0x4
 
-    if-eqz v7, :cond_24
+    if-eqz v7, :cond_2
 
     move v7, v5
 
-    goto :goto_25
+    goto :goto_3
 
-    :cond_24
+    :cond_2
     move v7, v2
 
     .line 594
-    :goto_25
+    :goto_3
     invoke-static {v5, v4, v6, v7}, Landroidx/media3/extractor/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v4
 
     aput v4, v1, v3
 
-    goto :goto_48
+    goto :goto_7
 
-    :cond_2c
+    :cond_3
     and-int/lit8 v4, v3, 0x1
 
     const/16 v6, 0x7f
 
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_4
 
     move v4, v6
 
-    goto :goto_35
+    goto :goto_4
 
-    :cond_34
+    :cond_4
     move v4, v2
 
-    :goto_35
+    :goto_4
     and-int/lit8 v7, v3, 0x2
 
-    if-eqz v7, :cond_3b
+    if-eqz v7, :cond_5
 
     move v7, v6
 
-    goto :goto_3c
+    goto :goto_5
 
-    :cond_3b
+    :cond_5
     move v7, v2
 
-    :goto_3c
+    :goto_5
     and-int/lit8 v8, v3, 0x4
 
-    if-eqz v8, :cond_41
+    if-eqz v8, :cond_6
 
-    goto :goto_42
+    goto :goto_6
 
-    :cond_41
+    :cond_6
     move v6, v2
 
     .line 601
-    :goto_42
+    :goto_6
     invoke-static {v5, v4, v7, v6}, Landroidx/media3/extractor/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v4
 
     aput v4, v1, v3
 
-    :goto_48
+    :goto_7
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_4b
+    :cond_7
     return-object v1
 .end method
 
 .method private static generateDefault8BitClutEntries()[I
-    .registers 11
+    .locals 11
 
     const/16 v0, 0x100
 
@@ -483,49 +483,49 @@
 
     move v3, v2
 
-    :goto_8
-    if-ge v3, v0, :cond_116
+    :goto_0
+    if-ge v3, v0, :cond_20
 
     const/16 v4, 0x8
 
     const/16 v5, 0xff
 
-    if-ge v3, v4, :cond_2e
+    if-ge v3, v4, :cond_3
 
     and-int/lit8 v4, v3, 0x1
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_0
 
     move v4, v5
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
+    :cond_0
     move v4, v2
 
-    :goto_17
+    :goto_1
     and-int/lit8 v6, v3, 0x2
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_1
 
     move v6, v5
 
-    goto :goto_1e
+    goto :goto_2
 
-    :cond_1d
+    :cond_1
     move v6, v2
 
-    :goto_1e
+    :goto_2
     and-int/lit8 v7, v3, 0x4
 
-    if-eqz v7, :cond_23
+    if-eqz v7, :cond_2
 
-    goto :goto_24
+    goto :goto_3
 
-    :cond_23
+    :cond_2
     move v5, v2
 
-    :goto_24
+    :goto_3
     const/16 v7, 0x3f
 
     .line 617
@@ -535,106 +535,106 @@
 
     aput v4, v1, v3
 
-    goto/16 :goto_112
+    goto/16 :goto_1c
 
-    :cond_2e
+    :cond_3
     and-int/lit16 v6, v3, 0x88
 
     const/16 v7, 0xaa
 
     const/16 v8, 0x55
 
-    if-eqz v6, :cond_e1
+    if-eqz v6, :cond_19
 
     const/16 v9, 0x7f
 
-    if-eq v6, v4, :cond_af
+    if-eq v6, v4, :cond_12
 
     const/16 v4, 0x80
 
     const/16 v7, 0x2b
 
-    if-eq v6, v4, :cond_79
+    if-eq v6, v4, :cond_b
 
     const/16 v4, 0x88
 
-    if-eq v6, v4, :cond_46
+    if-eq v6, v4, :cond_4
 
-    goto/16 :goto_112
+    goto/16 :goto_1c
 
-    :cond_46
+    :cond_4
     and-int/lit8 v4, v3, 0x1
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_5
 
     move v4, v7
 
-    goto :goto_4d
+    goto :goto_4
 
-    :cond_4c
+    :cond_5
     move v4, v2
 
-    :goto_4d
+    :goto_4
     and-int/lit8 v6, v3, 0x10
 
-    if-eqz v6, :cond_53
+    if-eqz v6, :cond_6
 
     move v6, v8
 
-    goto :goto_54
+    goto :goto_5
 
-    :cond_53
+    :cond_6
     move v6, v2
 
-    :goto_54
+    :goto_5
     add-int/2addr v4, v6
 
     and-int/lit8 v6, v3, 0x2
 
-    if-eqz v6, :cond_5b
+    if-eqz v6, :cond_7
 
     move v6, v7
 
-    goto :goto_5c
+    goto :goto_6
 
-    :cond_5b
+    :cond_7
     move v6, v2
 
-    :goto_5c
+    :goto_6
     and-int/lit8 v9, v3, 0x20
 
-    if-eqz v9, :cond_62
+    if-eqz v9, :cond_8
 
     move v9, v8
 
-    goto :goto_63
+    goto :goto_7
 
-    :cond_62
+    :cond_8
     move v9, v2
 
-    :goto_63
+    :goto_7
     add-int/2addr v6, v9
 
     and-int/lit8 v9, v3, 0x4
 
-    if-eqz v9, :cond_69
+    if-eqz v9, :cond_9
 
-    goto :goto_6a
+    goto :goto_8
 
-    :cond_69
+    :cond_9
     move v7, v2
 
-    :goto_6a
+    :goto_8
     and-int/lit8 v9, v3, 0x40
 
-    if-eqz v9, :cond_6f
+    if-eqz v9, :cond_a
 
-    goto :goto_70
+    goto :goto_9
 
-    :cond_6f
+    :cond_a
     move v8, v2
 
-    :goto_70
+    :goto_9
     add-int/2addr v7, v8
 
     .line 650
@@ -644,87 +644,87 @@
 
     aput v4, v1, v3
 
-    goto/16 :goto_112
+    goto/16 :goto_1c
 
-    :cond_79
+    :cond_b
     and-int/lit8 v4, v3, 0x1
 
-    if-eqz v4, :cond_7f
+    if-eqz v4, :cond_c
 
     move v4, v7
 
-    goto :goto_80
+    goto :goto_a
 
-    :cond_7f
+    :cond_c
     move v4, v2
 
-    :goto_80
+    :goto_a
     add-int/2addr v4, v9
 
     and-int/lit8 v6, v3, 0x10
 
-    if-eqz v6, :cond_87
+    if-eqz v6, :cond_d
 
     move v6, v8
 
-    goto :goto_88
+    goto :goto_b
 
-    :cond_87
+    :cond_d
     move v6, v2
 
-    :goto_88
+    :goto_b
     add-int/2addr v4, v6
 
     and-int/lit8 v6, v3, 0x2
 
-    if-eqz v6, :cond_8f
+    if-eqz v6, :cond_e
 
     move v6, v7
 
-    goto :goto_90
+    goto :goto_c
 
-    :cond_8f
+    :cond_e
     move v6, v2
 
-    :goto_90
+    :goto_c
     add-int/2addr v6, v9
 
     and-int/lit8 v10, v3, 0x20
 
-    if-eqz v10, :cond_97
+    if-eqz v10, :cond_f
 
     move v10, v8
 
-    goto :goto_98
+    goto :goto_d
 
-    :cond_97
+    :cond_f
     move v10, v2
 
-    :goto_98
+    :goto_d
     add-int/2addr v6, v10
 
     and-int/lit8 v10, v3, 0x4
 
-    if-eqz v10, :cond_9e
+    if-eqz v10, :cond_10
 
-    goto :goto_9f
+    goto :goto_e
 
-    :cond_9e
+    :cond_10
     move v7, v2
 
-    :goto_9f
+    :goto_e
     add-int/2addr v7, v9
 
     and-int/lit8 v9, v3, 0x40
 
-    if-eqz v9, :cond_a5
+    if-eqz v9, :cond_11
 
-    goto :goto_a6
+    goto :goto_f
 
-    :cond_a5
+    :cond_11
     move v8, v2
 
-    :goto_a6
+    :goto_f
     add-int/2addr v7, v8
 
     .line 642
@@ -734,81 +734,81 @@
 
     aput v4, v1, v3
 
-    goto/16 :goto_112
+    goto/16 :goto_1c
 
-    :cond_af
+    :cond_12
     and-int/lit8 v4, v3, 0x1
 
-    if-eqz v4, :cond_b5
+    if-eqz v4, :cond_13
 
     move v4, v8
 
-    goto :goto_b6
+    goto :goto_10
 
-    :cond_b5
+    :cond_13
     move v4, v2
 
-    :goto_b6
+    :goto_10
     and-int/lit8 v5, v3, 0x10
 
-    if-eqz v5, :cond_bc
+    if-eqz v5, :cond_14
 
     move v5, v7
 
-    goto :goto_bd
+    goto :goto_11
 
-    :cond_bc
+    :cond_14
     move v5, v2
 
-    :goto_bd
+    :goto_11
     add-int/2addr v4, v5
 
     and-int/lit8 v5, v3, 0x2
 
-    if-eqz v5, :cond_c4
+    if-eqz v5, :cond_15
 
     move v5, v8
 
-    goto :goto_c5
+    goto :goto_12
 
-    :cond_c4
+    :cond_15
     move v5, v2
 
-    :goto_c5
+    :goto_12
     and-int/lit8 v6, v3, 0x20
 
-    if-eqz v6, :cond_cb
+    if-eqz v6, :cond_16
 
     move v6, v7
 
-    goto :goto_cc
+    goto :goto_13
 
-    :cond_cb
+    :cond_16
     move v6, v2
 
-    :goto_cc
+    :goto_13
     add-int/2addr v5, v6
 
     and-int/lit8 v6, v3, 0x4
 
-    if-eqz v6, :cond_d2
+    if-eqz v6, :cond_17
 
-    goto :goto_d3
+    goto :goto_14
 
-    :cond_d2
+    :cond_17
     move v8, v2
 
-    :goto_d3
+    :goto_14
     and-int/lit8 v6, v3, 0x40
 
-    if-eqz v6, :cond_d8
+    if-eqz v6, :cond_18
 
-    goto :goto_d9
+    goto :goto_15
 
-    :cond_d8
+    :cond_18
     move v7, v2
 
-    :goto_d9
+    :goto_15
     add-int/2addr v8, v7
 
     .line 634
@@ -818,81 +818,81 @@
 
     aput v4, v1, v3
 
-    goto :goto_112
+    goto :goto_1c
 
-    :cond_e1
+    :cond_19
     and-int/lit8 v4, v3, 0x1
 
-    if-eqz v4, :cond_e7
+    if-eqz v4, :cond_1a
 
     move v4, v8
 
-    goto :goto_e8
+    goto :goto_16
 
-    :cond_e7
+    :cond_1a
     move v4, v2
 
-    :goto_e8
+    :goto_16
     and-int/lit8 v6, v3, 0x10
 
-    if-eqz v6, :cond_ee
+    if-eqz v6, :cond_1b
 
     move v6, v7
 
-    goto :goto_ef
+    goto :goto_17
 
-    :cond_ee
+    :cond_1b
     move v6, v2
 
-    :goto_ef
+    :goto_17
     add-int/2addr v4, v6
 
     and-int/lit8 v6, v3, 0x2
 
-    if-eqz v6, :cond_f6
+    if-eqz v6, :cond_1c
 
     move v6, v8
 
-    goto :goto_f7
+    goto :goto_18
 
-    :cond_f6
+    :cond_1c
     move v6, v2
 
-    :goto_f7
+    :goto_18
     and-int/lit8 v9, v3, 0x20
 
-    if-eqz v9, :cond_fd
+    if-eqz v9, :cond_1d
 
     move v9, v7
 
-    goto :goto_fe
+    goto :goto_19
 
-    :cond_fd
+    :cond_1d
     move v9, v2
 
-    :goto_fe
+    :goto_19
     add-int/2addr v6, v9
 
     and-int/lit8 v9, v3, 0x4
 
-    if-eqz v9, :cond_104
+    if-eqz v9, :cond_1e
 
-    goto :goto_105
+    goto :goto_1a
 
-    :cond_104
+    :cond_1e
     move v8, v2
 
-    :goto_105
+    :goto_1a
     and-int/lit8 v9, v3, 0x40
 
-    if-eqz v9, :cond_10a
+    if-eqz v9, :cond_1f
 
-    goto :goto_10b
+    goto :goto_1b
 
-    :cond_10a
+    :cond_1f
     move v7, v2
 
-    :goto_10b
+    :goto_1b
     add-int/2addr v8, v7
 
     .line 626
@@ -902,17 +902,17 @@
 
     aput v4, v1, v3
 
-    :goto_112
+    :goto_1c
     add-int/lit8 v3, v3, 0x1
 
-    goto/16 :goto_8
+    goto/16 :goto_0
 
-    :cond_116
+    :cond_20
     return-object v1
 .end method
 
 .method private static getColor(IIII)I
-    .registers 4
+    .locals 0
 
     shl-int/lit8 p0, p0, 0x18
 
@@ -930,7 +930,7 @@
 .end method
 
 .method private static paint2BitPixelCodeString(Landroidx/media3/common/util/ParsableBitArray;[I[BIILandroid/graphics/Paint;Landroid/graphics/Canvas;)I
-    .registers 20
+    .locals 13
 
     move-object v0, p0
 
@@ -944,7 +944,7 @@
 
     move v2, v9
 
-    :goto_9
+    :goto_0
     const/4 v3, 0x2
 
     .line 786
@@ -954,23 +954,23 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_0
 
     move v11, v2
 
     move v12, v5
 
-    goto :goto_60
+    goto :goto_4
 
     .line 790
-    :cond_14
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
     const/4 v6, 0x3
 
-    if-eqz v4, :cond_28
+    if-eqz v4, :cond_1
 
     .line 791
     invoke-virtual {p0, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -984,56 +984,56 @@
 
     move-result v3
 
-    :goto_24
+    :goto_1
     move v11, v2
 
     move v12, v4
 
     move v4, v3
 
-    goto :goto_60
+    goto :goto_4
 
     .line 793
-    :cond_28
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_2
 
     move v11, v2
 
     move v12, v5
 
-    :goto_30
+    :goto_2
     move v4, v9
 
-    goto :goto_60
+    goto :goto_4
 
     .line 796
-    :cond_32
+    :cond_2
     invoke-virtual {p0, v3}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
-    if-eqz v4, :cond_5e
+    if-eqz v4, :cond_6
 
-    if-eq v4, v5, :cond_5b
+    if-eq v4, v5, :cond_5
 
-    if-eq v4, v3, :cond_4f
+    if-eq v4, v3, :cond_4
 
-    if-eq v4, v6, :cond_42
+    if-eq v4, v6, :cond_3
 
     move v11, v2
 
-    :goto_3f
+    :goto_3
     move v4, v9
 
     move v12, v4
 
-    goto :goto_60
+    goto :goto_4
 
-    :cond_42
+    :cond_3
     const/16 v4, 0x8
 
     .line 808
@@ -1048,9 +1048,9 @@
 
     move-result v3
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_4f
+    :cond_4
     const/4 v4, 0x4
 
     .line 804
@@ -1065,31 +1065,31 @@
 
     move-result v3
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_5b
+    :cond_5
     move v11, v2
 
     move v12, v3
 
-    goto :goto_30
+    goto :goto_2
 
-    :cond_5e
+    :cond_6
     move v11, v5
 
-    goto :goto_3f
+    goto :goto_3
 
-    :goto_60
-    if-eqz v12, :cond_7e
+    :goto_4
+    if-eqz v12, :cond_8
 
-    if-eqz v8, :cond_7e
+    if-eqz v8, :cond_8
 
-    if-eqz p2, :cond_68
+    if-eqz p2, :cond_7
 
     .line 815
     aget-byte v4, p2, v4
 
-    :cond_68
+    :cond_7
     aget v2, p1, v4
 
     invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setColor(I)V
@@ -1117,21 +1117,21 @@
     .line 816
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    :cond_7e
+    :cond_8
     add-int/2addr v10, v12
 
-    if-eqz v11, :cond_82
+    if-eqz v11, :cond_9
 
     return v10
 
-    :cond_82
+    :cond_9
     move v2, v11
 
-    goto :goto_9
+    goto :goto_0
 .end method
 
 .method private static paint4BitPixelCodeString(Landroidx/media3/common/util/ParsableBitArray;[I[BIILandroid/graphics/Paint;Landroid/graphics/Canvas;)I
-    .registers 20
+    .locals 13
 
     move-object v0, p0
 
@@ -1145,7 +1145,7 @@
 
     move v2, v9
 
-    :goto_9
+    :goto_0
     const/4 v3, 0x4
 
     .line 838
@@ -1155,30 +1155,30 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     move v11, v2
 
     move v12, v5
 
-    goto/16 :goto_6c
+    goto/16 :goto_4
 
     .line 842
-    :cond_15
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
     const/4 v6, 0x3
 
-    if-nez v4, :cond_2a
+    if-nez v4, :cond_2
 
     .line 843
     invoke-virtual {p0, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_1
 
     add-int/lit8 v3, v3, 0x2
 
@@ -1186,25 +1186,25 @@
 
     move v12, v3
 
-    :goto_26
+    :goto_1
     move v4, v9
 
-    goto :goto_6c
+    goto :goto_4
 
-    :cond_28
+    :cond_1
     move v11, v5
 
-    goto :goto_4b
+    goto :goto_3
 
     .line 850
-    :cond_2a
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
     const/4 v7, 0x2
 
-    if-nez v4, :cond_3e
+    if-nez v4, :cond_3
 
     .line 851
     invoke-virtual {p0, v7}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -1218,39 +1218,39 @@
 
     move-result v3
 
-    :goto_3a
+    :goto_2
     move v11, v2
 
     move v12, v4
 
     move v4, v3
 
-    goto :goto_6c
+    goto :goto_4
 
     .line 854
-    :cond_3e
+    :cond_3
     invoke-virtual {p0, v7}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
-    if-eqz v4, :cond_69
+    if-eqz v4, :cond_7
 
-    if-eq v4, v5, :cond_66
+    if-eq v4, v5, :cond_6
 
-    if-eq v4, v7, :cond_5b
+    if-eq v4, v7, :cond_5
 
-    if-eq v4, v6, :cond_4e
+    if-eq v4, v6, :cond_4
 
     move v11, v2
 
-    :goto_4b
+    :goto_3
     move v4, v9
 
     move v12, v4
 
-    goto :goto_6c
+    goto :goto_4
 
-    :cond_4e
+    :cond_4
     const/16 v4, 0x8
 
     .line 866
@@ -1265,10 +1265,10 @@
 
     move-result v3
 
-    goto :goto_3a
+    goto :goto_2
 
     .line 862
-    :cond_5b
+    :cond_5
     invoke-virtual {p0, v3}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1280,33 +1280,33 @@
 
     move-result v3
 
-    goto :goto_3a
+    goto :goto_2
 
-    :cond_66
+    :cond_6
     move v11, v2
 
     move v12, v7
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_69
+    :cond_7
     move v11, v2
 
     move v12, v5
 
-    goto :goto_26
+    goto :goto_1
 
-    :goto_6c
-    if-eqz v12, :cond_8a
+    :goto_4
+    if-eqz v12, :cond_9
 
-    if-eqz v8, :cond_8a
+    if-eqz v8, :cond_9
 
-    if-eqz p2, :cond_74
+    if-eqz p2, :cond_8
 
     .line 873
     aget-byte v4, p2, v4
 
-    :cond_74
+    :cond_8
     aget v2, p1, v4
 
     invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setColor(I)V
@@ -1334,21 +1334,21 @@
     .line 874
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    :cond_8a
+    :cond_9
     add-int/2addr v10, v12
 
-    if-eqz v11, :cond_8e
+    if-eqz v11, :cond_a
 
     return v10
 
-    :cond_8e
+    :cond_a
     move v2, v11
 
-    goto/16 :goto_9
+    goto/16 :goto_0
 .end method
 
 .method private static paint8BitPixelCodeString(Landroidx/media3/common/util/ParsableBitArray;[I[BIILandroid/graphics/Paint;Landroid/graphics/Canvas;)I
-    .registers 20
+    .locals 13
 
     move-object v0, p0
 
@@ -1362,7 +1362,7 @@
 
     move v2, v9
 
-    :goto_9
+    :goto_0
     const/16 v3, 0x8
 
     .line 896
@@ -1372,30 +1372,30 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     move v11, v2
 
     move v12, v5
 
-    goto :goto_35
+    goto :goto_1
 
     .line 901
-    :cond_15
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
     const/4 v6, 0x7
 
-    if-nez v4, :cond_2a
+    if-nez v4, :cond_2
 
     .line 902
     invoke-virtual {p0, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     move v11, v2
 
@@ -1403,19 +1403,19 @@
 
     move v4, v9
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_26
+    :cond_1
     move v11, v5
 
     move v4, v9
 
     move v12, v4
 
-    goto :goto_35
+    goto :goto_1
 
     .line 910
-    :cond_2a
+    :cond_2
     invoke-virtual {p0, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1431,17 +1431,17 @@
 
     move v4, v3
 
-    :goto_35
-    if-eqz v12, :cond_53
+    :goto_1
+    if-eqz v12, :cond_4
 
-    if-eqz v8, :cond_53
+    if-eqz v8, :cond_4
 
-    if-eqz p2, :cond_3d
+    if-eqz p2, :cond_3
 
     .line 916
     aget-byte v4, p2, v4
 
-    :cond_3d
+    :cond_3
     aget v2, p1, v4
 
     invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setColor(I)V
@@ -1469,21 +1469,21 @@
     .line 917
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    :cond_53
+    :cond_4
     add-int/2addr v10, v12
 
-    if-eqz v11, :cond_57
+    if-eqz v11, :cond_5
 
     return v10
 
-    :cond_57
+    :cond_5
     move v2, v11
 
-    goto :goto_9
+    goto :goto_0
 .end method
 
 .method private static paintPixelDataSubBlock([B[IIIILandroid/graphics/Paint;Landroid/graphics/Canvas;)V
-    .registers 21
+    .locals 14
 
     move/from16 v0, p2
 
@@ -1507,12 +1507,12 @@
     move-object v13, v12
 
     .line 719
-    :goto_10
+    :goto_0
     invoke-virtual {v8}, Landroidx/media3/common/util/ParsableBitArray;->bitsLeft()I
 
     move-result v1
 
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_7
 
     const/16 v1, 0x8
 
@@ -1523,19 +1523,19 @@
 
     const/16 v3, 0xf0
 
-    if-eq v2, v3, :cond_85
+    if-eq v2, v3, :cond_6
 
     const/4 v3, 0x3
 
-    packed-switch v2, :pswitch_data_8c
+    packed-switch v2, :pswitch_data_0
 
     const/4 v3, 0x4
 
-    packed-switch v2, :pswitch_data_96
+    packed-switch v2, :pswitch_data_1
 
-    goto :goto_10
+    goto :goto_0
 
-    :pswitch_29
+    :pswitch_0
     const/16 v2, 0x10
 
     .line 760
@@ -1543,25 +1543,25 @@
 
     move-result-object v12
 
-    goto :goto_10
+    goto :goto_0
 
     .line 757
-    :pswitch_30
+    :pswitch_1
     invoke-static {v3, v1, v8}, Landroidx/media3/extractor/text/dvb/DvbParser;->buildClutMapTable(IILandroidx/media3/common/util/ParsableBitArray;)[B
 
     move-result-object v11
 
-    goto :goto_10
+    goto :goto_0
 
     .line 754
-    :pswitch_35
+    :pswitch_2
     invoke-static {v3, v3, v8}, Landroidx/media3/extractor/text/dvb/DvbParser;->buildClutMapTable(IILandroidx/media3/common/util/ParsableBitArray;)[B
 
     move-result-object v13
 
-    goto :goto_10
+    goto :goto_0
 
-    :pswitch_3a
+    :pswitch_3
     const/4 v3, 0x0
 
     move-object v1, v8
@@ -1579,30 +1579,30 @@
 
     move-result v4
 
-    goto :goto_10
+    goto :goto_0
 
-    :pswitch_47
-    if-ne v0, v3, :cond_51
+    :pswitch_4
+    if-ne v0, v3, :cond_1
 
-    if-nez v12, :cond_4e
+    if-nez v12, :cond_0
 
     .line 739
     sget-object v1, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultMap4To8:[B
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_4e
+    :cond_0
     move-object v1, v12
 
-    :goto_4f
+    :goto_1
     move-object v3, v1
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_51
+    :cond_1
     move-object v3, v9
 
-    :goto_52
+    :goto_2
     move-object v1, v8
 
     move-object v2, p1
@@ -1621,47 +1621,47 @@
     .line 746
     invoke-virtual {v8}, Landroidx/media3/common/util/ParsableBitArray;->byteAlign()V
 
-    goto :goto_10
+    goto :goto_0
 
-    :pswitch_61
-    if-ne v0, v3, :cond_6b
+    :pswitch_5
+    if-ne v0, v3, :cond_3
 
-    if-nez v11, :cond_68
+    if-nez v11, :cond_2
 
     .line 725
     sget-object v1, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultMap2To8:[B
 
-    goto :goto_69
+    goto :goto_3
 
-    :cond_68
+    :cond_2
     move-object v1, v11
 
-    :goto_69
+    :goto_3
     move-object v3, v1
 
-    goto :goto_76
+    goto :goto_4
 
-    :cond_6b
+    :cond_3
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_75
+    if-ne v0, v1, :cond_5
 
-    if-nez v13, :cond_73
+    if-nez v13, :cond_4
 
     .line 727
     sget-object v1, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultMap2To4:[B
 
-    goto :goto_69
+    goto :goto_3
 
-    :cond_73
+    :cond_4
     move-object v1, v13
 
-    goto :goto_69
+    goto :goto_3
 
-    :cond_75
+    :cond_5
     move-object v3, v9
 
-    :goto_76
+    :goto_4
     move-object v1, v8
 
     move-object v2, p1
@@ -1680,63 +1680,63 @@
     .line 734
     invoke-virtual {v8}, Landroidx/media3/common/util/ParsableBitArray;->byteAlign()V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_85
+    :cond_6
     add-int/lit8 v10, v10, 0x2
 
     move/from16 v4, p3
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_8a
+    :cond_7
     return-void
 
     nop
 
-    :pswitch_data_8c
+    :pswitch_data_0
     .packed-switch 0x10
-        :pswitch_61
-        :pswitch_47
-        :pswitch_3a
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 
-    :pswitch_data_96
+    :pswitch_data_1
     .packed-switch 0x20
-        :pswitch_35
-        :pswitch_30
-        :pswitch_29
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static paintPixelDataSubBlocks(Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;IIILandroid/graphics/Paint;Landroid/graphics/Canvas;)V
-    .registers 14
+    .locals 7
 
     const/4 v0, 0x3
 
-    if-ne p2, v0, :cond_6
+    if-ne p2, v0, :cond_0
 
     .line 679
     iget-object p1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;->clutEntries8Bit:[I
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x2
 
-    if-ne p2, v0, :cond_c
+    if-ne p2, v0, :cond_1
 
     .line 681
     iget-object p1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;->clutEntries4Bit:[I
 
-    goto :goto_e
+    goto :goto_0
 
     .line 683
-    :cond_c
+    :cond_1
     iget-object p1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;->clutEntries2Bit:[I
 
     .line 685
-    :goto_e
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;->topFieldData:[B
 
     move-object v1, p1
@@ -1764,21 +1764,21 @@
 .end method
 
 .method private parse(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/text/CuesWithTiming;
-    .registers 22
+    .locals 20
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     .line 160
-    :goto_4
+    :goto_0
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableBitArray;->bitsLeft()I
 
     move-result v2
 
     const/16 v3, 0x30
 
-    if-lt v2, v3, :cond_1c
+    if-lt v2, v3, :cond_0
 
     const/16 v2, 0x8
 
@@ -1789,22 +1789,22 @@
 
     const/16 v3, 0xf
 
-    if-ne v2, v3, :cond_1c
+    if-ne v2, v3, :cond_0
 
     .line 162
     iget-object v2, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;
 
     invoke-static {v1, v2}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseSubtitlingSegment(Landroidx/media3/common/util/ParsableBitArray;Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;)V
 
-    goto :goto_4
+    goto :goto_0
 
     .line 165
-    :cond_1c
+    :cond_0
     iget-object v1, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;
 
     iget-object v1, v1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->pageComposition:Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_1
 
     .line 167
     new-instance v1, Landroidx/media3/extractor/text/CuesWithTiming;
@@ -1825,29 +1825,29 @@
     return-object v1
 
     .line 173
-    :cond_37
+    :cond_1
     iget-object v2, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;
 
     iget-object v2, v2, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->displayDefinition:Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_2
 
     .line 174
     iget-object v2, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;
 
     iget-object v2, v2, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->displayDefinition:Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
 
-    goto :goto_44
+    goto :goto_1
 
     .line 175
-    :cond_42
+    :cond_2
     iget-object v2, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultDisplayDefinition:Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
 
     .line 176
-    :goto_44
+    :goto_1
     iget-object v3, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->bitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v3, :cond_60
+    if-eqz v3, :cond_3
 
     iget v3, v2, Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;->width:I
 
@@ -1860,7 +1860,7 @@
 
     move-result v4
 
-    if-ne v3, v4, :cond_60
+    if-ne v3, v4, :cond_3
 
     iget v3, v2, Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;->height:I
 
@@ -1873,10 +1873,10 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_75
+    if-eq v3, v4, :cond_4
 
     .line 179
-    :cond_60
+    :cond_3
     iget v3, v2, Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;->width:I
 
     add-int/lit8 v3, v3, 0x1
@@ -1900,7 +1900,7 @@
     invoke-virtual {v4, v3}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
     .line 186
-    :cond_75
+    :cond_4
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
@@ -1913,12 +1913,12 @@
     move v4, v3
 
     .line 188
-    :goto_7e
+    :goto_2
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_1cc
+    if-ge v4, v5, :cond_d
 
     .line 190
     iget-object v5, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
@@ -2004,7 +2004,7 @@
 
     check-cast v9, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;
 
-    if-nez v9, :cond_dc
+    if-nez v9, :cond_5
 
     .line 211
     iget-object v9, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;
@@ -2019,24 +2019,24 @@
 
     check-cast v9, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;
 
-    if-nez v9, :cond_dc
+    if-nez v9, :cond_5
 
     .line 213
     iget-object v9, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultClutDefinition:Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;
 
     .line 217
-    :cond_dc
+    :cond_5
     iget-object v15, v7, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
 
     move v14, v3
 
     .line 218
-    :goto_df
+    :goto_3
     invoke-virtual {v15}, Landroid/util/SparseArray;->size()I
 
     move-result v10
 
-    if-ge v14, v10, :cond_138
+    if-ge v14, v10, :cond_9
 
     .line 219
     invoke-virtual {v15, v14}, Landroid/util/SparseArray;->keyAt(I)I
@@ -2061,7 +2061,7 @@
 
     check-cast v12, Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;
 
-    if-nez v12, :cond_106
+    if-nez v12, :cond_6
 
     .line 223
     iget-object v12, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;
@@ -2074,27 +2074,27 @@
 
     check-cast v10, Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;
 
-    goto :goto_107
+    goto :goto_4
 
-    :cond_106
+    :cond_6
     move-object v10, v12
 
-    :goto_107
-    if-eqz v10, :cond_12f
+    :goto_4
+    if-eqz v10, :cond_8
 
     .line 226
     iget-boolean v12, v10, Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;->nonModifyingColorFlag:Z
 
-    if-eqz v12, :cond_10f
+    if-eqz v12, :cond_7
 
     const/4 v12, 0x0
 
-    goto :goto_111
+    goto :goto_5
 
-    :cond_10f
+    :cond_7
     iget-object v12, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->defaultPaint:Landroid/graphics/Paint;
 
-    :goto_111
+    :goto_5
     move-object/from16 v16, v12
 
     .line 227
@@ -2126,32 +2126,32 @@
 
     invoke-static/range {v10 .. v16}, Landroidx/media3/extractor/text/dvb/DvbParser;->paintPixelDataSubBlocks(Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;IIILandroid/graphics/Paint;Landroid/graphics/Canvas;)V
 
-    goto :goto_133
+    goto :goto_6
 
-    :cond_12f
+    :cond_8
     move/from16 v19, v14
 
     move-object/from16 v17, v15
 
-    :goto_133
+    :goto_6
     add-int/lit8 v14, v19, 0x1
 
     move-object/from16 v15, v17
 
-    goto :goto_df
+    goto :goto_3
 
     .line 238
-    :cond_138
+    :cond_9
     iget-boolean v10, v7, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->fillFlag:Z
 
-    if-eqz v10, :cond_172
+    if-eqz v10, :cond_c
 
     .line 240
     iget v10, v7, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->depth:I
 
     const/4 v11, 0x3
 
-    if-ne v10, v11, :cond_148
+    if-ne v10, v11, :cond_a
 
     .line 241
     iget-object v9, v9, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;->clutEntries8Bit:[I
@@ -2160,15 +2160,15 @@
 
     aget v9, v9, v10
 
-    goto :goto_15a
+    goto :goto_7
 
     .line 242
-    :cond_148
+    :cond_a
     iget v10, v7, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->depth:I
 
     const/4 v11, 0x2
 
-    if-ne v10, v11, :cond_154
+    if-ne v10, v11, :cond_b
 
     .line 243
     iget-object v9, v9, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;->clutEntries4Bit:[I
@@ -2177,10 +2177,10 @@
 
     aget v9, v9, v10
 
-    goto :goto_15a
+    goto :goto_7
 
     .line 245
-    :cond_154
+    :cond_b
     iget-object v9, v9, Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;->clutEntries2Bit:[I
 
     iget v10, v7, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->pixelCode2Bit:I
@@ -2188,7 +2188,7 @@
     aget v9, v9, v10
 
     .line 247
-    :goto_15a
+    :goto_7
     iget-object v10, v0, Landroidx/media3/extractor/text/dvb/DvbParser;->fillRegionPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v10, v9}, Landroid/graphics/Paint;->setColor(I)V
@@ -2219,7 +2219,7 @@
     invoke-virtual/range {v11 .. v16}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 256
-    :cond_172
+    :cond_c
     new-instance v9, Landroidx/media3/common/text/Cue$Builder;
 
     invoke-direct {v9}, Landroidx/media3/common/text/Cue$Builder;-><init>()V
@@ -2328,10 +2328,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_7e
+    goto/16 :goto_2
 
     .line 279
-    :cond_1cc
+    :cond_d
     new-instance v1, Landroidx/media3/extractor/text/CuesWithTiming;
 
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
@@ -2346,7 +2346,7 @@
 .end method
 
 .method private static parseClutDefinition(Landroidx/media3/common/util/ParsableBitArray;I)Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;
-    .registers 26
+    .locals 24
 
     move-object/from16 v0, p0
 
@@ -2379,8 +2379,8 @@
 
     move-result-object v7
 
-    :goto_1a
-    if-lez v4, :cond_c5
+    :goto_0
+    if-lez v4, :cond_4
 
     .line 490
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2396,28 +2396,28 @@
 
     and-int/lit16 v10, v9, 0x80
 
-    if-eqz v10, :cond_2c
+    if-eqz v10, :cond_0
 
     move-object v10, v5
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_2c
+    :cond_0
     and-int/lit8 v10, v9, 0x40
 
-    if-eqz v10, :cond_32
+    if-eqz v10, :cond_1
 
     move-object v10, v6
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_32
+    :cond_1
     move-object v10, v7
 
-    :goto_33
+    :goto_1
     and-int/lit8 v9, v9, 0x1
 
-    if-eqz v9, :cond_4a
+    if-eqz v9, :cond_2
 
     .line 508
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2441,9 +2441,9 @@
 
     add-int/lit8 v4, v4, -0x4
 
-    goto :goto_6a
+    goto :goto_2
 
-    :cond_4a
+    :cond_2
     const/4 v9, 0x6
 
     .line 514
@@ -2486,10 +2486,10 @@
 
     move/from16 v11, v23
 
-    :goto_6a
+    :goto_2
     const/16 v15, 0xff
 
-    if-nez v9, :cond_71
+    if-nez v9, :cond_3
 
     move v13, v15
 
@@ -2497,7 +2497,7 @@
 
     const/4 v12, 0x0
 
-    :cond_71
+    :cond_3
     and-int/2addr v13, v15
 
     rsub-int v13, v13, 0xff
@@ -2584,9 +2584,9 @@
 
     const/4 v3, 0x2
 
-    goto/16 :goto_1a
+    goto/16 :goto_0
 
-    :cond_c5
+    :cond_4
     move/from16 v16, v2
 
     .line 539
@@ -2600,7 +2600,7 @@
 .end method
 
 .method private static parseDisplayDefinition(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
-    .registers 10
+    .locals 9
 
     const/4 v0, 0x4
 
@@ -2629,7 +2629,7 @@
 
     move-result v4
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 377
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2659,9 +2659,9 @@
 
     move v5, v0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     const/4 p0, 0x0
 
     move v5, p0
@@ -2673,7 +2673,7 @@
     move v8, v4
 
     .line 388
-    :goto_32
+    :goto_0
     new-instance p0, Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
 
     move-object v2, p0
@@ -2684,7 +2684,7 @@
 .end method
 
 .method private static parseObjectData(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;
-    .registers 8
+    .locals 7
 
     const/16 v0, 0x10
 
@@ -2721,7 +2721,7 @@
     .line 555
     sget-object v6, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
-    if-ne v2, v4, :cond_28
+    if-ne v2, v4, :cond_0
 
     const/16 v2, 0x8
 
@@ -2735,10 +2735,10 @@
     .line 560
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_28
-    if-nez v2, :cond_43
+    :cond_0
+    if-nez v2, :cond_3
 
     .line 562
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2752,7 +2752,7 @@
 
     const/4 v4, 0x0
 
-    if-lez v2, :cond_3a
+    if-lez v2, :cond_1
 
     .line 565
     new-array v5, v2, [B
@@ -2760,8 +2760,8 @@
     .line 566
     invoke-virtual {p0, v5, v4, v2}, Landroidx/media3/common/util/ParsableBitArray;->readBytes([BII)V
 
-    :cond_3a
-    if-lez v0, :cond_42
+    :cond_1
+    if-lez v0, :cond_2
 
     .line 569
     new-array v6, v0, [B
@@ -2769,14 +2769,14 @@
     .line 570
     invoke-virtual {p0, v6, v4, v0}, Landroidx/media3/common/util/ParsableBitArray;->readBytes([BII)V
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_42
+    :cond_2
     move-object v6, v5
 
     .line 576
-    :cond_43
-    :goto_43
+    :cond_3
+    :goto_0
     new-instance p0, Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;
 
     invoke-direct {p0, v1, v3, v5, v6}, Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;-><init>(IZ[B[B)V
@@ -2785,7 +2785,7 @@
 .end method
 
 .method private static parsePageComposition(Landroidx/media3/common/util/ParsableBitArray;I)Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
-    .registers 11
+    .locals 9
 
     const/16 v0, 0x8
 
@@ -2818,8 +2818,8 @@
 
     invoke-direct {v3}, Landroid/util/SparseArray;-><init>()V
 
-    :goto_19
-    if-lez p1, :cond_37
+    :goto_0
+    if-lez p1, :cond_0
 
     .line 407
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2850,10 +2850,10 @@
 
     invoke-virtual {v3, v5, v8}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto :goto_19
+    goto :goto_0
 
     .line 415
-    :cond_37
+    :cond_0
     new-instance p0, Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
 
     invoke-direct {p0, v1, v2, v4, v3}, Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;-><init>(IIILandroid/util/SparseArray;)V
@@ -2862,7 +2862,7 @@
 .end method
 
 .method private static parseRegionComposition(Landroidx/media3/common/util/ParsableBitArray;I)Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;
-    .registers 28
+    .locals 26
 
     move-object/from16 v0, p0
 
@@ -2945,8 +2945,8 @@
 
     invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
 
-    :goto_44
-    if-lez v15, :cond_95
+    :goto_0
+    if-lez v15, :cond_2
 
     .line 438
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2986,25 +2986,25 @@
 
     const/4 v5, 0x1
 
-    if-eq v6, v5, :cond_72
+    if-eq v6, v5, :cond_1
 
     const/4 v5, 0x2
 
-    if-ne v6, v5, :cond_6b
+    if-ne v6, v5, :cond_0
 
-    goto :goto_72
+    goto :goto_1
 
-    :cond_6b
+    :cond_0
     const/16 v17, 0x0
 
     move/from16 v23, v17
 
     move/from16 v24, v23
 
-    goto :goto_82
+    goto :goto_2
 
-    :cond_72
-    :goto_72
+    :cond_1
+    :goto_1
     const/16 v5, 0x8
 
     .line 449
@@ -3024,7 +3024,7 @@
     move/from16 v24, v17
 
     .line 454
-    :goto_82
+    :goto_2
     new-instance v5, Landroidx/media3/extractor/text/dvb/DvbParser$RegionObject;
 
     move-object/from16 v18, v5
@@ -3043,9 +3043,9 @@
 
     const/16 v6, 0x10
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_95
+    :cond_2
     move/from16 v25, v14
 
     .line 465
@@ -3077,7 +3077,7 @@
 .end method
 
 .method private static parseSubtitlingSegment(Landroidx/media3/common/util/ParsableBitArray;Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;)V
-    .registers 8
+    .locals 6
 
     const/16 v0, 0x8
 
@@ -3112,7 +3112,7 @@
 
     move-result v5
 
-    if-le v4, v5, :cond_2c
+    if-le v4, v5, :cond_0
 
     const-string p1, "DvbParser"
 
@@ -3130,16 +3130,16 @@
 
     return-void
 
-    :cond_2c
-    packed-switch v0, :pswitch_data_da
+    :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    goto/16 :goto_d0
+    goto/16 :goto_0
 
     .line 305
-    :pswitch_31
+    :pswitch_0
     iget v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
-    if-ne v2, v0, :cond_d0
+    if-ne v2, v0, :cond_5
 
     .line 306
     invoke-static {p0}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseDisplayDefinition(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
@@ -3148,13 +3148,13 @@
 
     iput-object v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->displayDefinition:Landroidx/media3/extractor/text/dvb/DvbParser$DisplayDefinition;
 
-    goto/16 :goto_d0
+    goto/16 :goto_0
 
     .line 347
-    :pswitch_3d
+    :pswitch_1
     iget v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
-    if-ne v2, v0, :cond_4e
+    if-ne v2, v0, :cond_1
 
     .line 348
     invoke-static {p0}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseObjectData(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;
@@ -3168,13 +3168,13 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto/16 :goto_d0
+    goto/16 :goto_0
 
     .line 350
-    :cond_4e
+    :cond_1
     iget v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->ancillaryPageId:I
 
-    if-ne v2, v0, :cond_d0
+    if-ne v2, v0, :cond_5
 
     .line 351
     invoke-static {p0}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseObjectData(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/text/dvb/DvbParser$ObjectData;
@@ -3188,13 +3188,13 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto/16 :goto_d0
+    goto/16 :goto_0
 
     .line 338
-    :pswitch_5f
+    :pswitch_2
     iget v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
-    if-ne v2, v0, :cond_6f
+    if-ne v2, v0, :cond_2
 
     .line 339
     invoke-static {p0, v1}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseClutDefinition(Landroidx/media3/common/util/ParsableBitArray;I)Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;
@@ -3208,13 +3208,13 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto :goto_d0
+    goto :goto_0
 
     .line 341
-    :cond_6f
+    :cond_2
     iget v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->ancillaryPageId:I
 
-    if-ne v2, v0, :cond_d0
+    if-ne v2, v0, :cond_5
 
     .line 342
     invoke-static {p0, v1}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseClutDefinition(Landroidx/media3/common/util/ParsableBitArray;I)Landroidx/media3/extractor/text/dvb/DvbParser$ClutDefinition;
@@ -3228,18 +3228,18 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto :goto_d0
+    goto :goto_0
 
     .line 324
-    :pswitch_7f
+    :pswitch_3
     iget-object v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->pageComposition:Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
 
     .line 325
     iget v4, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
-    if-ne v2, v4, :cond_d0
+    if-ne v2, v4, :cond_5
 
-    if-eqz v0, :cond_d0
+    if-eqz v0, :cond_5
 
     .line 326
     invoke-static {p0, v1}, Landroidx/media3/extractor/text/dvb/DvbParser;->parseRegionComposition(Landroidx/media3/common/util/ParsableBitArray;I)Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;
@@ -3249,7 +3249,7 @@
     .line 327
     iget v0, v0, Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;->state:I
 
-    if-nez v0, :cond_9e
+    if-nez v0, :cond_3
 
     .line 329
     iget-object v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;
@@ -3262,26 +3262,26 @@
 
     check-cast v0, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_3
 
     .line 331
     invoke-virtual {v1, v0}, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->mergeFrom(Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;)V
 
     .line 334
-    :cond_9e
+    :cond_3
     iget-object p1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;
 
     iget v0, v1, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->id:I
 
     invoke-virtual {p1, v0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto :goto_d0
+    goto :goto_0
 
     .line 310
-    :pswitch_a6
+    :pswitch_4
     iget v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
-    if-ne v2, v0, :cond_d0
+    if-ne v2, v0, :cond_5
 
     .line 311
     iget-object v0, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->pageComposition:Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
@@ -3294,7 +3294,7 @@
     .line 313
     iget v2, v1, Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;->state:I
 
-    if-eqz v2, :cond_c6
+    if-eqz v2, :cond_4
 
     .line 314
     iput-object v1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->pageComposition:Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
@@ -3314,24 +3314,24 @@
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->clear()V
 
-    goto :goto_d0
+    goto :goto_0
 
-    :cond_c6
-    if-eqz v0, :cond_d0
+    :cond_4
+    if-eqz v0, :cond_5
 
     .line 318
     iget v0, v0, Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;->version:I
 
     iget v2, v1, Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;->version:I
 
-    if-eq v0, v2, :cond_d0
+    if-eq v0, v2, :cond_5
 
     .line 319
     iput-object v1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;->pageComposition:Landroidx/media3/extractor/text/dvb/DvbParser$PageComposition;
 
     .line 361
-    :cond_d0
-    :goto_d0
+    :cond_5
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->getBytePosition()I
 
     move-result p1
@@ -3344,20 +3344,20 @@
 
     nop
 
-    :pswitch_data_da
+    :pswitch_data_0
     .packed-switch 0x10
-        :pswitch_a6
-        :pswitch_7f
-        :pswitch_5f
-        :pswitch_3d
-        :pswitch_31
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -3365,7 +3365,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -3397,7 +3397,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 138
     iget-object v0, p0, Landroidx/media3/extractor/text/dvb/DvbParser;->subtitleService:Landroidx/media3/extractor/text/dvb/DvbParser$SubtitleService;

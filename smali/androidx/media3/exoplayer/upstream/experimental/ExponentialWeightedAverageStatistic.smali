@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const-wide v0, 0x3fefff2e48e8a71eL    # 0.9999
 
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(D)V
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public addSample(JJ)V
-    .registers 9
+    .locals 4
 
     const-wide/32 v0, 0x7a1200
 
@@ -64,7 +64,7 @@
 
     cmp-long p3, p3, v2
 
-    if-nez p3, :cond_10
+    if-nez p3, :cond_0
 
     .line 52
     iput-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageStatistic;->bitrateEstimate:J
@@ -72,7 +72,7 @@
     return-void
 
     .line 56
-    :cond_10
+    :cond_0
     iget-wide p3, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageStatistic;->smoothingFactor:D
 
     long-to-double p1, p1
@@ -110,7 +110,7 @@
 .end method
 
 .method public getBandwidthEstimate()J
-    .registers 3
+    .locals 2
 
     .line 62
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageStatistic;->bitrateEstimate:J
@@ -119,7 +119,7 @@
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     const-wide/high16 v0, -0x8000000000000000L
 

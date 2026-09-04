@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -47,7 +47,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 1073
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1018
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$AdsConfiguration;-><init>(Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;)V
@@ -79,7 +79,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$AdsConfiguration;
-    .registers 2
+    .locals 1
 
     .line 1108
     sget-object v0, Landroidx/media3/common/MediaItem$AdsConfiguration;->FIELD_AD_TAG_URI:Ljava/lang/String;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;
-    .registers 3
+    .locals 2
 
     .line 1080
     new-instance v0, Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;
@@ -127,26 +127,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1088
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$AdsConfiguration;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1092
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$AdsConfiguration;
 
     .line 1093
@@ -158,7 +158,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$AdsConfiguration;->adsId:Ljava/lang/Object;
 
@@ -168,19 +168,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     move v0, v2
 
-    :goto_22
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1098
     iget-object v0, p0, Landroidx/media3/common/MediaItem$AdsConfiguration;->adTagUri:Landroid/net/Uri;
@@ -194,25 +194,25 @@
     .line 1099
     iget-object v1, p0, Landroidx/media3/common/MediaItem$AdsConfiguration;->adsId:Ljava/lang/Object;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_12
+    :goto_0
     add-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 1121
     new-instance v0, Landroid/os/Bundle;

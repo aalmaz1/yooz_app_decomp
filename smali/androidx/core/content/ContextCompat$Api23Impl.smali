@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1065
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getColor(Landroid/content/Context;I)I
-    .registers 2
+    .locals 0
 
     .line 1071
     invoke-virtual {p0, p1}, Landroid/content/Context;->getColor(I)I
@@ -36,7 +36,7 @@
 .end method
 
 .method static getSystemService(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -57,7 +57,7 @@
 .end method
 
 .method static getSystemServiceName(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

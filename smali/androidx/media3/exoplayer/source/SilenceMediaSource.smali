@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 96
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -125,7 +125,7 @@
 .end method
 
 .method public constructor <init>(J)V
-    .registers 4
+    .locals 1
 
     .line 123
     sget-object v0, Landroidx/media3/exoplayer/source/SilenceMediaSource;->MEDIA_ITEM:Landroidx/media3/common/MediaItem;
@@ -136,7 +136,7 @@
 .end method
 
 .method private constructor <init>(JLandroidx/media3/common/MediaItem;)V
-    .registers 6
+    .locals 2
 
     .line 132
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -145,17 +145,17 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 133
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 134
@@ -168,7 +168,7 @@
 .end method
 
 .method synthetic constructor <init>(JLandroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/source/SilenceMediaSource$1;)V
-    .registers 5
+    .locals 0
 
     .line 46
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/SilenceMediaSource;-><init>(JLandroidx/media3/common/MediaItem;)V
@@ -177,7 +177,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/media3/common/MediaItem;
-    .registers 1
+    .locals 1
 
     .line 46
     sget-object v0, Landroidx/media3/exoplayer/source/SilenceMediaSource;->MEDIA_ITEM:Landroidx/media3/common/MediaItem;
@@ -186,7 +186,7 @@
 .end method
 
 .method static synthetic access$200()Landroidx/media3/common/Format;
-    .registers 1
+    .locals 1
 
     .line 46
     sget-object v0, Landroidx/media3/exoplayer/source/SilenceMediaSource;->FORMAT:Landroidx/media3/common/Format;
@@ -195,7 +195,7 @@
 .end method
 
 .method static synthetic access$300(J)J
-    .registers 2
+    .locals 0
 
     .line 46
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/SilenceMediaSource;->getAudioByteCount(J)J
@@ -206,7 +206,7 @@
 .end method
 
 .method static synthetic access$400(J)J
-    .registers 2
+    .locals 0
 
     .line 46
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/SilenceMediaSource;->getAudioPositionUs(J)J
@@ -217,7 +217,7 @@
 .end method
 
 .method static synthetic access$500()[B
-    .registers 1
+    .locals 1
 
     .line 46
     sget-object v0, Landroidx/media3/exoplayer/source/SilenceMediaSource;->SILENCE_SAMPLE:[B
@@ -226,7 +226,7 @@
 .end method
 
 .method private static getAudioByteCount(J)J
-    .registers 4
+    .locals 2
 
     const-wide/32 v0, 0xac44
 
@@ -252,7 +252,7 @@
 .end method
 
 .method private static getAudioPositionUs(J)J
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -280,7 +280,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -288,7 +288,7 @@
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 5
+    .locals 0
 
     .line 155
     new-instance p1, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;
@@ -301,21 +301,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 163
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -324,13 +324,13 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 10
+    .locals 8
 
     .line 140
     new-instance p1, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
@@ -361,34 +361,34 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 173
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 174
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

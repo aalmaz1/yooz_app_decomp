@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static final synthetic viewModels(Landroidx/activity/ComponentActivity;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<VM:",
@@ -58,7 +58,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 48
     new-instance p1, Landroidx/activity/ActivityViewModelLazyKt$viewModels$factoryPromise$1;
@@ -68,7 +68,7 @@
     check-cast p1, Lkotlin/jvm/functions/Function0;
 
     .line 52
-    :cond_e
+    :cond_0
     new-instance v0, Landroidx/lifecycle/ViewModelLazy;
 
     const/4 v1, 0x4
@@ -106,7 +106,7 @@
 .end method
 
 .method public static final synthetic viewModels(Landroidx/activity/ComponentActivity;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<VM:",
@@ -130,7 +130,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p2, :cond_e
+    if-nez p2, :cond_0
 
     .line 79
     new-instance p2, Landroidx/activity/ActivityViewModelLazyKt$viewModels$factoryPromise$2;
@@ -140,7 +140,7 @@
     check-cast p2, Lkotlin/jvm/functions/Function0;
 
     .line 83
-    :cond_e
+    :cond_0
     new-instance v0, Landroidx/lifecycle/ViewModelLazy;
 
     const/4 v1, 0x4
@@ -178,21 +178,21 @@
 .end method
 
 .method public static synthetic viewModels$default(Landroidx/activity/ComponentActivity;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lkotlin/Lazy;
-    .registers 6
+    .locals 2
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     const-string p2, "<this>"
 
     .line 45
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_1
 
     .line 48
     new-instance p1, Landroidx/activity/ActivityViewModelLazyKt$viewModels$factoryPromise$1;
@@ -202,7 +202,7 @@
     check-cast p1, Lkotlin/jvm/functions/Function0;
 
     .line 52
-    :cond_13
+    :cond_1
     new-instance p2, Landroidx/lifecycle/ViewModelLazy;
 
     const/4 p3, 0x4
@@ -240,30 +240,30 @@
 .end method
 
 .method public static synthetic viewModels$default(Landroidx/activity/ComponentActivity;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lkotlin/Lazy;
-    .registers 7
+    .locals 2
 
     and-int/lit8 p4, p3, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     move-object p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_1
 
     move-object p2, v0
 
-    :cond_b
+    :cond_1
     const-string p3, "<this>"
 
     .line 75
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p2, :cond_19
+    if-nez p2, :cond_2
 
     .line 79
     new-instance p2, Landroidx/activity/ActivityViewModelLazyKt$viewModels$factoryPromise$2;
@@ -273,7 +273,7 @@
     check-cast p2, Lkotlin/jvm/functions/Function0;
 
     .line 83
-    :cond_19
+    :cond_2
     new-instance p3, Landroidx/lifecycle/ViewModelLazy;
 
     const/4 p4, 0x4

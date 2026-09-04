@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroidx/media3/exoplayer/StreamVolumeManager$Listener;)V
-    .registers 5
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,17 +110,17 @@
     invoke-direct {p3, v0}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
     .line 75
-    :try_start_3b
+    :try_start_0
     invoke-virtual {p1, p2, p3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 76
     iput-object p2, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->receiver:Landroidx/media3/exoplayer/StreamVolumeManager$VolumeChangeReceiver;
-    :try_end_40
-    .catch Ljava/lang/RuntimeException; {:try_start_3b .. :try_end_40} :catch_41
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_49
+    goto :goto_0
 
-    :catch_41
+    :catch_0
     move-exception p1
 
     const-string p2, "StreamVolumeManager"
@@ -130,12 +130,12 @@
     .line 78
     invoke-static {p2, p3, p1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_49
+    :goto_0
     return-void
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/StreamVolumeManager;)Landroid/os/Handler;
-    .registers 1
+    .locals 0
 
     .line 31
     iget-object p0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->eventHandler:Landroid/os/Handler;
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/StreamVolumeManager;)V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Landroidx/media3/exoplayer/StreamVolumeManager;->updateVolumeAndNotifyIfChanged()V
@@ -153,14 +153,14 @@
 .end method
 
 .method private static getMutedFromManager(Landroid/media/AudioManager;I)Z
-    .registers 4
+    .locals 2
 
     .line 213
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 214
     invoke-virtual {p0, p1}, Landroid/media/AudioManager;->isStreamMute(I)Z
@@ -170,38 +170,38 @@
     return p0
 
     .line 216
-    :cond_b
+    :cond_0
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/StreamVolumeManager;->getVolumeFromManager(Landroid/media/AudioManager;I)I
 
     move-result p0
 
-    if-nez p0, :cond_13
+    if-nez p0, :cond_1
 
     const/4 p0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
-    :goto_14
+    :goto_0
     return p0
 .end method
 
 .method private static getVolumeFromManager(Landroid/media/AudioManager;I)I
-    .registers 5
+    .locals 3
 
     .line 204
     :try_start_0
     invoke-virtual {p0, p1}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
     move-result p0
-    :try_end_4
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_5
+    :catch_0
     move-exception v0
 
     .line 206
@@ -232,7 +232,7 @@
 .end method
 
 .method private updateVolumeAndNotifyIfChanged()V
-    .registers 4
+    .locals 3
 
     .line 191
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
@@ -255,14 +255,14 @@
     .line 193
     iget v2, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->volume:I
 
-    if-ne v2, v0, :cond_18
+    if-ne v2, v0, :cond_0
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->muted:Z
 
-    if-eq v2, v1, :cond_21
+    if-eq v2, v1, :cond_1
 
     .line 194
-    :cond_18
+    :cond_0
     iput v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->volume:I
 
     .line 195
@@ -273,14 +273,14 @@
 
     invoke-interface {v2, v0, v1}, Landroidx/media3/exoplayer/StreamVolumeManager$Listener;->onStreamVolumeChanged(IZ)V
 
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public decreaseVolume(I)V
-    .registers 5
+    .locals 3
 
     .line 155
     iget v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->volume:I
@@ -289,12 +289,12 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_9
+    if-gt v0, v1, :cond_0
 
     return-void
 
     .line 158
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
@@ -310,7 +310,7 @@
 .end method
 
 .method public getMaxVolume()I
-    .registers 3
+    .locals 2
 
     .line 106
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
@@ -325,14 +325,14 @@
 .end method
 
 .method public getMinVolume()I
-    .registers 3
+    .locals 2
 
     .line 98
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1c
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
 
@@ -342,17 +342,17 @@
 
     move-result v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method public getVolume()I
-    .registers 2
+    .locals 1
 
     .line 111
     iget v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->volume:I
@@ -361,7 +361,7 @@
 .end method
 
 .method public increaseVolume(I)V
-    .registers 5
+    .locals 3
 
     .line 141
     iget v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->volume:I
@@ -370,12 +370,12 @@
 
     move-result v1
 
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     return-void
 
     .line 144
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
@@ -391,7 +391,7 @@
 .end method
 
 .method public isMuted()Z
-    .registers 2
+    .locals 1
 
     .line 116
     iget-boolean v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->muted:Z
@@ -400,24 +400,24 @@
 .end method
 
 .method public release()V
-    .registers 4
+    .locals 3
 
     .line 180
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->receiver:Landroidx/media3/exoplayer/StreamVolumeManager$VolumeChangeReceiver;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 182
-    :try_start_4
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_9
-    .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_a
+    :catch_0
     move-exception v0
 
     const-string v1, "StreamVolumeManager"
@@ -427,47 +427,47 @@
     .line 184
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_12
+    :goto_0
     const/4 v0, 0x0
 
     .line 186
     iput-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->receiver:Landroidx/media3/exoplayer/StreamVolumeManager$VolumeChangeReceiver;
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public setMuted(ZI)V
-    .registers 5
+    .locals 2
 
     .line 169
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_15
+    if-lt v0, v1, :cond_1
 
     .line 170
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const/16 p1, -0x64
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/16 p1, 0x64
 
-    :goto_11
+    :goto_0
     invoke-virtual {v0, v1, p1, p2}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 173
-    :cond_15
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
 
     iget v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
@@ -475,24 +475,24 @@
     invoke-virtual {p2, v0, p1}, Landroid/media/AudioManager;->setStreamMute(IZ)V
 
     .line 175
-    :goto_1c
+    :goto_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/StreamVolumeManager;->updateVolumeAndNotifyIfChanged()V
 
     return-void
 .end method
 
 .method public setStreamType(I)V
-    .registers 3
+    .locals 1
 
     .line 84
     iget v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
 
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 87
-    :cond_5
+    :cond_0
     iput p1, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
 
     .line 89
@@ -507,25 +507,25 @@
 .end method
 
 .method public setVolume(II)V
-    .registers 5
+    .locals 2
 
     .line 127
     invoke-virtual {p0}, Landroidx/media3/exoplayer/StreamVolumeManager;->getMinVolume()I
 
     move-result v0
 
-    if-lt p1, v0, :cond_17
+    if-lt p1, v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/StreamVolumeManager;->getMaxVolume()I
 
     move-result v0
 
-    if-le p1, v0, :cond_d
+    if-le p1, v0, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 130
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->audioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Landroidx/media3/exoplayer/StreamVolumeManager;->streamType:I
@@ -535,7 +535,7 @@
     .line 131
     invoke-direct {p0}, Landroidx/media3/exoplayer/StreamVolumeManager;->updateVolumeAndNotifyIfChanged()V
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     return-void
 .end method

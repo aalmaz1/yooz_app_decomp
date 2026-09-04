@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/text/TextEmphasisSpan;
-    .registers 5
+    .locals 4
 
     .line 116
     new-instance v0, Landroidx/media3/common/text/TextEmphasisSpan;
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 108
     new-instance v0, Landroid/os/Bundle;

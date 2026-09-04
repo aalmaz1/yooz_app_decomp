@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/TrackGroup;ILandroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;IZLcom/google/common/base/Predicate;I)V
-    .registers 12
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -93,37 +93,37 @@
     .line 3769
     iget-boolean p1, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioNonSeamlessAdaptiveness:Z
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/16 p1, 0x18
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/16 p1, 0x10
 
     .line 3773
-    :goto_e
+    :goto_0
     iget-boolean p2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedMimeTypeAdaptiveness:Z
 
     const/4 p3, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
     and-int p2, p8, p1
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
     move p2, p3
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move p2, v0
 
-    :goto_1b
+    :goto_1
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->allowMixedMimeTypes:Z
 
     .line 3776
@@ -147,7 +147,7 @@
     move p2, v0
 
     .line 3781
-    :goto_2e
+    :goto_2
     iget-object p8, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->preferredAudioLanguages:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {p8}, Lcom/google/common/collect/ImmutableList;->size()I
@@ -156,7 +156,7 @@
 
     const v1, 0x7fffffff
 
-    if-ge p2, p8, :cond_4d
+    if-ge p2, p8, :cond_3
 
     .line 3782
     iget-object p8, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
@@ -175,22 +175,22 @@
 
     move-result p8
 
-    if-lez p8, :cond_4a
+    if-lez p8, :cond_2
 
-    goto :goto_4f
+    goto :goto_3
 
-    :cond_4a
+    :cond_2
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_2e
+    goto :goto_2
 
-    :cond_4d
+    :cond_3
     move p8, v0
 
     move p2, v1
 
     .line 3793
-    :goto_4f
+    :goto_3
     iput p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->preferredLanguageIndex:I
 
     .line 3794
@@ -215,7 +215,7 @@
 
     iget p2, p2, Landroidx/media3/common/Format;->roleFlags:I
 
-    if-eqz p2, :cond_6f
+    if-eqz p2, :cond_5
 
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -223,20 +223,20 @@
 
     and-int/2addr p2, p3
 
-    if-eqz p2, :cond_6d
+    if-eqz p2, :cond_4
 
-    goto :goto_6f
+    goto :goto_4
 
-    :cond_6d
+    :cond_4
     move p2, v0
 
-    goto :goto_70
+    goto :goto_5
 
-    :cond_6f
-    :goto_6f
+    :cond_5
+    :goto_4
     move p2, p3
 
-    :goto_70
+    :goto_5
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->hasMainOrNoRoleFlag:Z
 
     .line 3798
@@ -246,16 +246,16 @@
 
     and-int/2addr p2, p3
 
-    if-eqz p2, :cond_7b
+    if-eqz p2, :cond_6
 
     move p2, p3
 
-    goto :goto_7c
+    goto :goto_6
 
-    :cond_7b
+    :cond_6
     move p2, v0
 
-    :goto_7c
+    :goto_6
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->isDefaultSelectionFlag:Z
 
     .line 3799
@@ -286,7 +286,7 @@
 
     const/4 p8, -0x1
 
-    if-eq p2, p8, :cond_9f
+    if-eq p2, p8, :cond_7
 
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -294,14 +294,14 @@
 
     iget v2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->maxAudioBitrate:I
 
-    if-gt p2, v2, :cond_b7
+    if-gt p2, v2, :cond_9
 
-    :cond_9f
+    :cond_7
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget p2, p2, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq p2, p8, :cond_ad
+    if-eq p2, p8, :cond_8
 
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -309,9 +309,9 @@
 
     iget p8, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->maxAudioChannelCount:I
 
-    if-gt p2, p8, :cond_b7
+    if-gt p2, p8, :cond_9
 
-    :cond_ad
+    :cond_8
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
     .line 3806
@@ -319,16 +319,16 @@
 
     move-result p2
 
-    if-eqz p2, :cond_b7
+    if-eqz p2, :cond_9
 
     move p2, p3
 
-    goto :goto_b8
+    goto :goto_7
 
-    :cond_b7
+    :cond_9
     move p2, v0
 
-    :goto_b8
+    :goto_7
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinConstraints:Z
 
     .line 3807
@@ -339,10 +339,10 @@
     move p7, v0
 
     .line 3810
-    :goto_bf
+    :goto_8
     array-length p8, p2
 
-    if-ge p7, p8, :cond_d0
+    if-ge p7, p8, :cond_b
 
     .line 3811
     iget-object p8, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
@@ -354,22 +354,22 @@
 
     move-result p8
 
-    if-lez p8, :cond_cd
+    if-lez p8, :cond_a
 
-    goto :goto_d2
+    goto :goto_9
 
-    :cond_cd
+    :cond_a
     add-int/lit8 p7, p7, 0x1
 
-    goto :goto_bf
+    goto :goto_8
 
-    :cond_d0
+    :cond_b
     move p8, v0
 
     move p7, v1
 
     .line 3820
-    :goto_d2
+    :goto_9
     iput p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->localeLanguageMatchIndex:I
 
     .line 3821
@@ -378,21 +378,21 @@
     move p2, v0
 
     .line 3823
-    :goto_d7
+    :goto_a
     iget-object p7, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->preferredAudioMimeTypes:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {p7}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result p7
 
-    if-ge p2, p7, :cond_fa
+    if-ge p2, p7, :cond_d
 
     .line 3824
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget-object p7, p7, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz p7, :cond_f7
+    if-eqz p7, :cond_c
 
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -409,20 +409,20 @@
 
     move-result p7
 
-    if-eqz p7, :cond_f7
+    if-eqz p7, :cond_c
 
     move v1, p2
 
-    goto :goto_fa
+    goto :goto_b
 
-    :cond_f7
+    :cond_c
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_d7
+    goto :goto_a
 
     .line 3830
-    :cond_fa
-    :goto_fa
+    :cond_d
+    :goto_b
     iput v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->preferredMimeTypeMatchIndex:I
 
     .line 3832
@@ -432,16 +432,16 @@
 
     const/16 p4, 0x80
 
-    if-ne p2, p4, :cond_106
+    if-ne p2, p4, :cond_e
 
     move p2, p3
 
-    goto :goto_107
+    goto :goto_c
 
-    :cond_106
+    :cond_e
     move p2, v0
 
-    :goto_107
+    :goto_c
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesPrimaryDecoder:Z
 
     .line 3835
@@ -451,14 +451,14 @@
 
     const/16 p4, 0x40
 
-    if-ne p2, p4, :cond_112
+    if-ne p2, p4, :cond_f
 
-    goto :goto_113
+    goto :goto_d
 
-    :cond_112
+    :cond_f
     move p3, v0
 
-    :goto_113
+    :goto_d
     iput-boolean p3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesHardwareAcceleration:Z
 
     .line 3838
@@ -472,7 +472,7 @@
 .end method
 
 .method public static compareSelections(Ljava/util/List;Ljava/util/List;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -506,7 +506,7 @@
 .end method
 
 .method public static createForTrackGroup(ILandroidx/media3/common/TrackGroup;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;[IZLcom/google/common/base/Predicate;I)Lcom/google/common/collect/ImmutableList;
-    .registers 20
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -532,10 +532,10 @@
     move-object v11, p1
 
     .line 3721
-    :goto_6
+    :goto_0
     iget v2, v11, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v1, v2, :cond_22
+    if-ge v1, v2, :cond_0
 
     .line 3722
     new-instance v12, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;
@@ -564,10 +564,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 3733
-    :cond_22
+    :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -576,7 +576,7 @@
 .end method
 
 .method private evaluateSelectionEligibility(IZI)I
-    .registers 8
+    .locals 4
 
     .line 3919
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
@@ -589,26 +589,26 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return v1
 
     .line 3922
-    :cond_c
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinConstraints:Z
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedAudioConstraintsIfNecessary:Z
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     return v1
 
     .line 3925
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->audioOffloadPreferences:Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
@@ -617,7 +617,7 @@
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_2b
+    if-ne v0, v2, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
@@ -628,21 +628,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
     return v1
 
     .line 3929
-    :cond_2b
+    :cond_2
     invoke-static {p1, v1}, Landroidx/media3/exoplayer/RendererCapabilities;->isFormatSupported(IZ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_4
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinConstraints:Z
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -650,73 +650,73 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_5c
+    if-eq v0, v1, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->forceHighestSupportedBitrate:Z
 
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->forceLowestBitrate:Z
 
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowMultipleAdaptiveSelections:Z
 
-    if-nez v0, :cond_50
+    if-nez v0, :cond_3
 
-    if-nez p2, :cond_5c
+    if-nez p2, :cond_4
 
-    :cond_50
+    :cond_3
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-object p2, p2, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->audioOffloadPreferences:Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
 
     iget p2, p2, Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;->audioOffloadMode:I
 
-    if-eq p2, v2, :cond_5c
+    if-eq p2, v2, :cond_4
 
     and-int/2addr p1, p3
 
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_4
 
-    goto :goto_5d
+    goto :goto_0
 
-    :cond_5c
+    :cond_4
     const/4 v2, 0x1
 
-    :goto_5d
+    :goto_0
     return v2
 .end method
 
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;)I
-    .registers 7
+    .locals 5
 
     .line 3868
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinConstraints:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->isWithinRendererCapabilities:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 3869
     invoke-static {}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;->access$4400()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 3870
-    :cond_d
+    :cond_0
     invoke-static {}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;->access$4400()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -726,7 +726,7 @@
     move-result-object v0
 
     .line 3872
-    :goto_15
+    :goto_0
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->start()Lcom/google/common/collect/ComparisonChain;
 
     move-result-object v1
@@ -883,7 +883,7 @@
 
     iget-boolean v2, v2, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->forceLowestBitrate:Z
 
-    if-eqz v2, :cond_b7
+    if-eqz v2, :cond_1
 
     .line 3897
     iget v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->bitrate:I
@@ -912,7 +912,7 @@
     move-result-object v1
 
     .line 3901
-    :cond_b7
+    :cond_1
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesPrimaryDecoder:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesPrimaryDecoder:Z
@@ -974,7 +974,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_101
+    if-eqz v2, :cond_2
 
     .line 3910
     iget v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->bitrate:I
@@ -994,7 +994,7 @@
     move-result-object v1
 
     .line 3912
-    :cond_101
+    :cond_2
     invoke-virtual {v1}, Lcom/google/common/collect/ComparisonChain;->result()I
 
     move-result p1
@@ -1003,7 +1003,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 3709
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;
@@ -1016,7 +1016,7 @@
 .end method
 
 .method public getSelectionEligibility()I
-    .registers 2
+    .locals 1
 
     .line 3844
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->selectionEligibility:I
@@ -1025,7 +1025,7 @@
 .end method
 
 .method public isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;)Z
-    .registers 5
+    .locals 3
 
     .line 3849
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
@@ -1034,13 +1034,13 @@
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget v0, v0, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq v0, v1, :cond_58
+    if-eq v0, v1, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -1050,18 +1050,18 @@
 
     iget v2, v2, Landroidx/media3/common/Format;->channelCount:I
 
-    if-ne v0, v2, :cond_58
+    if-ne v0, v2, :cond_3
 
-    :cond_17
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->allowMixedMimeTypes:Z
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget-object v0, v0, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -1076,20 +1076,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_3
 
-    :cond_2f
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedSampleRateAdaptiveness:Z
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget v0, v0, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-eq v0, v1, :cond_58
+    if-eq v0, v1, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -1099,44 +1099,44 @@
 
     iget v1, v1, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-ne v0, v1, :cond_58
+    if-ne v0, v1, :cond_3
 
-    :cond_45
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedDecoderSupportAdaptiveness:Z
 
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_4
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesPrimaryDecoder:Z
 
     iget-boolean v1, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesPrimaryDecoder:Z
 
-    if-ne v0, v1, :cond_58
+    if-ne v0, v1, :cond_3
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesHardwareAcceleration:Z
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;->usesHardwareAcceleration:Z
 
-    if-ne v0, p1, :cond_58
+    if-ne v0, p1, :cond_3
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_58
+    :cond_3
     const/4 p1, 0x0
 
-    goto :goto_5b
+    goto :goto_1
 
-    :cond_5a
-    :goto_5a
+    :cond_4
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_5b
+    :goto_1
     return p1
 .end method
 
 .method public bridge synthetic isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;)Z
-    .registers 2
+    .locals 0
 
     .line 3709
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$AudioTrackInfo;

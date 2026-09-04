@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/util/ParsableByteArray;)V
-    .registers 3
+    .locals 0
 
     .line 453
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mp4/Atom;-><init>(I)V

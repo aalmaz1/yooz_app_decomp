@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,14 +14,14 @@
 .end method
 
 .method public static append([III)[I
-    .registers 5
+    .locals 2
 
     add-int/lit8 v0, p1, 0x1
 
     .line 56
     array-length v1, p0
 
-    if-le v0, v1, :cond_10
+    if-le v0, v1, :cond_0
 
     .line 57
     invoke-static {p1}, Landroidx/core/content/res/GrowingArrayUtils;->growSize(I)I
@@ -38,21 +38,21 @@
     move-object p0, v0
 
     .line 61
-    :cond_10
+    :cond_0
     aput p2, p0, p1
 
     return-object p0
 .end method
 
 .method public static append([JIJ)[J
-    .registers 6
+    .locals 2
 
     add-int/lit8 v0, p1, 0x1
 
     .line 69
     array-length v1, p0
 
-    if-le v0, v1, :cond_10
+    if-le v0, v1, :cond_0
 
     .line 70
     invoke-static {p1}, Landroidx/core/content/res/GrowingArrayUtils;->growSize(I)I
@@ -69,14 +69,14 @@
     move-object p0, v0
 
     .line 74
-    :cond_10
+    :cond_0
     aput-wide p2, p0, p1
 
     return-object p0
 .end method
 
 .method public static append([Ljava/lang/Object;ILjava/lang/Object;)[Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -90,7 +90,7 @@
     .line 42
     array-length v1, p0
 
-    if-le v0, v1, :cond_1c
+    if-le v0, v1, :cond_0
 
     .line 43
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -121,21 +121,21 @@
     move-object p0, v0
 
     .line 48
-    :cond_1c
+    :cond_0
     aput-object p2, p0, p1
 
     return-object p0
 .end method
 
 .method public static append([ZIZ)[Z
-    .registers 5
+    .locals 2
 
     add-int/lit8 v0, p1, 0x1
 
     .line 82
     array-length v1, p0
 
-    if-le v0, v1, :cond_10
+    if-le v0, v1, :cond_0
 
     .line 83
     invoke-static {p1}, Landroidx/core/content/res/GrowingArrayUtils;->growSize(I)I
@@ -152,39 +152,39 @@
     move-object p0, v0
 
     .line 87
-    :cond_10
+    :cond_0
     aput-boolean p2, p0, p1
 
     return-object p0
 .end method
 
 .method public static growSize(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x4
 
-    if-gt p0, v0, :cond_6
+    if-gt p0, v0, :cond_0
 
     const/16 p0, 0x8
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     mul-int/lit8 p0, p0, 0x2
 
-    :goto_8
+    :goto_0
     return p0
 .end method
 
 .method public static insert([IIII)[I
-    .registers 6
+    .locals 2
 
     add-int/lit8 v0, p1, 0x1
 
     .line 122
     array-length v1, p0
 
-    if-gt v0, v1, :cond_e
+    if-gt v0, v1, :cond_0
 
     add-int/lit8 v0, p2, 0x1
 
@@ -199,7 +199,7 @@
     return-object p0
 
     .line 128
-    :cond_e
+    :cond_0
     invoke-static {p1}, Landroidx/core/content/res/GrowingArrayUtils;->growSize(I)I
 
     move-result p1
@@ -227,14 +227,14 @@
 .end method
 
 .method public static insert([JIIJ)[J
-    .registers 7
+    .locals 2
 
     add-int/lit8 v0, p1, 0x1
 
     .line 139
     array-length v1, p0
 
-    if-gt v0, v1, :cond_e
+    if-gt v0, v1, :cond_0
 
     add-int/lit8 v0, p2, 0x1
 
@@ -249,7 +249,7 @@
     return-object p0
 
     .line 145
-    :cond_e
+    :cond_0
     invoke-static {p1}, Landroidx/core/content/res/GrowingArrayUtils;->growSize(I)I
 
     move-result p1
@@ -277,7 +277,7 @@
 .end method
 
 .method public static insert([Ljava/lang/Object;IILjava/lang/Object;)[Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -291,7 +291,7 @@
     .line 104
     array-length v1, p0
 
-    if-gt v0, v1, :cond_e
+    if-gt v0, v1, :cond_0
 
     add-int/lit8 v0, p2, 0x1
 
@@ -306,7 +306,7 @@
     return-object p0
 
     .line 110
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -348,14 +348,14 @@
 .end method
 
 .method public static insert([ZIIZ)[Z
-    .registers 6
+    .locals 2
 
     add-int/lit8 v0, p1, 0x1
 
     .line 156
     array-length v1, p0
 
-    if-gt v0, v1, :cond_e
+    if-gt v0, v1, :cond_0
 
     add-int/lit8 v0, p2, 0x1
 
@@ -370,7 +370,7 @@
     return-object p0
 
     .line 162
-    :cond_e
+    :cond_0
     invoke-static {p1}, Landroidx/core/content/res/GrowingArrayUtils;->growSize(I)I
 
     move-result p1

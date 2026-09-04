@@ -32,21 +32,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/16 v0, 0x10
 
     new-array v1, v0, [I
 
     .line 47
-    fill-array-data v1, :array_12
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->AMR_NB_FRAME_TYPE_INDEX_TO_FRAME_SIZE:[I
 
     new-array v0, v0, [I
 
     .line 72
-    fill-array-data v0, :array_36
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->AMR_WB_FRAME_TYPE_INDEX_TO_FRAME_SIZE:[I
 
@@ -54,7 +54,7 @@
 
     nop
 
-    :array_12
+    :array_0
     .array-data 4
         0xd
         0xe
@@ -74,7 +74,7 @@
         0x1
     .end array-data
 
-    :array_36
+    :array_1
     .array-data 4
         0x12
         0x18
@@ -96,7 +96,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -146,46 +146,46 @@
 .end method
 
 .method public static getFrameSize(IZ)I
-    .registers 5
+    .locals 3
 
-    if-ltz p0, :cond_6
+    if-ltz p0, :cond_0
 
     const/16 v0, 0x8
 
-    if-le p0, v0, :cond_a
+    if-le p0, v0, :cond_1
 
-    :cond_6
+    :cond_0
     const/16 v0, 0xf
 
-    if-ne p0, v0, :cond_c
+    if-ne p0, v0, :cond_2
 
-    :cond_a
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_2
     const/4 v0, 0x0
 
     .line 179
-    :goto_d
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Illegal AMR "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_3
 
     const-string v2, "WB"
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_19
+    :cond_3
     const-string v2, "NB"
 
     .line 182
-    :goto_1b
+    :goto_1
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -207,29 +207,29 @@
     .line 179
     invoke-static {v0, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_4
 
     .line 185
     sget-object p1, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->AMR_WB_FRAME_TYPE_INDEX_TO_FRAME_SIZE:[I
 
     aget p0, p1, p0
 
-    goto :goto_3b
+    goto :goto_2
 
     .line 186
-    :cond_37
+    :cond_4
     sget-object p1, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->AMR_NB_FRAME_TYPE_INDEX_TO_FRAME_SIZE:[I
 
     aget p0, p1, p0
 
-    :goto_3b
+    :goto_2
     return p0
 .end method
 
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 16
+    .locals 10
 
     .line 127
     iget-object p5, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -245,14 +245,14 @@
 
     const/4 v2, 0x1
 
-    if-eq p5, v0, :cond_2c
+    if-eq p5, v0, :cond_0
 
     .line 130
     invoke-static {p5}, Landroidx/media3/exoplayer/rtsp/RtpPacket;->getNextSequenceNumber(I)I
 
     move-result p5
 
-    if-eq p4, p5, :cond_2c
+    if-eq p4, p5, :cond_0
 
     const/4 v0, 0x2
 
@@ -284,7 +284,7 @@
     invoke-static {v0, p5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 154
-    :cond_2c
+    :cond_0
     invoke-virtual {p1, v2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 157
@@ -308,11 +308,11 @@
 
     move-result v7
 
-    if-ne v7, p5, :cond_44
+    if-ne v7, p5, :cond_1
 
     move v1, v2
 
-    :cond_44
+    :cond_1
     const-string p5, "compound payload not supported currently"
 
     .line 160
@@ -355,7 +355,7 @@
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -377,7 +377,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 4
+    .locals 0
 
     .line 121
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->firstReceivedTimestamp:J
@@ -386,7 +386,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 172
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAmrReader;->firstReceivedTimestamp:J

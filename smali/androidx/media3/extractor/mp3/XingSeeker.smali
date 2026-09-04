@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>(JIJI)V
-    .registers 17
+    .locals 10
 
     const-wide/16 v7, -0x1
 
@@ -51,7 +51,7 @@
 .end method
 
 .method private constructor <init>(JIJIJ[J)V
-    .registers 10
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,22 +78,22 @@
 
     cmp-long p5, p7, p3
 
-    if-nez p5, :cond_16
+    if-nez p5, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     add-long p3, p1, p7
 
     .line 98
-    :goto_18
+    :goto_0
     iput-wide p3, p0, Landroidx/media3/extractor/mp3/XingSeeker;->dataEndPosition:J
 
     return-void
 .end method
 
 .method public static create(Landroidx/media3/extractor/mp3/XingFrame;J)Landroidx/media3/extractor/mp3/XingSeeker;
-    .registers 14
+    .locals 11
 
     .line 41
     invoke-virtual {p0}, Landroidx/media3/extractor/mp3/XingFrame;->computeDurationUs()J
@@ -104,30 +104,30 @@
 
     cmp-long v0, v4, v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 45
-    :cond_f
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/XingFrame;->dataSize:J
 
     const-wide/16 v2, -0x1
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/extractor/mp3/XingFrame;->tableOfContents:[J
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 50
-    :cond_1c
+    :cond_1
     new-instance v10, Landroidx/media3/extractor/mp3/XingSeeker;
 
     iget-object v0, p0, Landroidx/media3/extractor/mp3/XingFrame;->header:Landroidx/media3/extractor/MpegAudioUtil$Header;
@@ -151,8 +151,8 @@
     return-object v10
 
     .line 47
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_0
     new-instance v7, Landroidx/media3/extractor/mp3/XingSeeker;
 
     iget-object v0, p0, Landroidx/media3/extractor/mp3/XingFrame;->header:Landroidx/media3/extractor/MpegAudioUtil$Header;
@@ -173,7 +173,7 @@
 .end method
 
 .method private getTimeUsForTableIndex(I)J
-    .registers 6
+    .locals 4
 
     .line 177
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->durationUs:J
@@ -192,7 +192,7 @@
 
 # virtual methods
 .method public getAverageBitrate()I
-    .registers 2
+    .locals 1
 
     .line 167
     iget v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->bitrate:I
@@ -201,7 +201,7 @@
 .end method
 
 .method public getDataEndPosition()J
-    .registers 3
+    .locals 2
 
     .line 162
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->dataEndPosition:J
@@ -210,7 +210,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 157
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->durationUs:J
@@ -219,14 +219,14 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 15
+    .locals 12
 
     .line 108
     invoke-virtual {p0}, Landroidx/media3/extractor/mp3/XingSeeker;->isSeekable()Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 109
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -249,7 +249,7 @@
 
     return-object p1
 
-    :cond_19
+    :cond_0
     const-wide/16 v6, 0x0
 
     .line 111
@@ -280,20 +280,20 @@
 
     const-wide/high16 v7, 0x4070000000000000L    # 256.0
 
-    if-gtz v6, :cond_33
+    if-gtz v6, :cond_1
 
-    goto :goto_55
+    goto :goto_1
 
-    :cond_33
+    :cond_1
     cmpl-double v2, v0, v2
 
-    if-ltz v2, :cond_39
+    if-ltz v2, :cond_2
 
     move-wide v4, v7
 
-    goto :goto_55
+    goto :goto_1
 
-    :cond_39
+    :cond_2
     double-to-int v2, v0
 
     .line 120
@@ -312,13 +312,13 @@
 
     const/16 v6, 0x63
 
-    if-ne v2, v6, :cond_4b
+    if-ne v2, v6, :cond_3
 
     move-wide v9, v7
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_4b
+    :cond_3
     add-int/lit8 v6, v2, 0x1
 
     .line 122
@@ -326,7 +326,7 @@
 
     long-to-double v9, v9
 
-    :goto_50
+    :goto_0
     int-to-double v2, v2
 
     sub-double/2addr v0, v2
@@ -337,7 +337,7 @@
 
     add-double/2addr v4, v0
 
-    :goto_55
+    :goto_1
     div-double/2addr v4, v7
 
     .line 128
@@ -383,7 +383,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 14
+    .locals 11
 
     .line 136
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->dataStartPosition:J
@@ -395,7 +395,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_3
 
     iget v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->xingFrameSize:I
 
@@ -403,12 +403,12 @@
 
     cmp-long v0, p1, v0
 
-    if-gtz v0, :cond_11
+    if-gtz v0, :cond_0
 
-    goto :goto_51
+    goto :goto_2
 
     .line 140
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->tableOfContents:[J
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -456,26 +456,26 @@
 
     const/16 v9, 0x63
 
-    if-ne v1, v9, :cond_3a
+    if-ne v1, v9, :cond_1
 
     const-wide/16 v0, 0x100
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 146
-    :cond_3a
+    :cond_1
     aget-wide v0, v0, v6
 
-    :goto_3c
+    :goto_0
     cmp-long v6, v4, v0
 
-    if-nez v6, :cond_43
+    if-nez v6, :cond_2
 
     const-wide/16 p1, 0x0
 
-    goto :goto_48
+    goto :goto_1
 
-    :cond_43
+    :cond_2
     long-to-double v9, v4
 
     sub-double/2addr p1, v9
@@ -486,7 +486,7 @@
 
     div-double/2addr p1, v0
 
-    :goto_48
+    :goto_1
     sub-long/2addr v7, v2
 
     long-to-double v0, v7
@@ -502,28 +502,28 @@
 
     return-wide v2
 
-    :cond_51
-    :goto_51
+    :cond_3
+    :goto_2
     const-wide/16 p1, 0x0
 
     return-wide p1
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/media3/extractor/mp3/XingSeeker;->tableOfContents:[J
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

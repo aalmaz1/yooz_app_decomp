@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 764
     new-instance v0, Ljava/lang/Object;
@@ -37,7 +37,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 760
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method static rebase(Landroid/content/res/Resources$Theme;)V
-    .registers 7
+    .locals 6
 
     .line 771
     sget-object v0, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;->sRebaseMethodLock:Ljava/lang/Object;
@@ -54,19 +54,19 @@
     monitor-enter v0
 
     .line 772
-    :try_start_3
+    :try_start_0
     sget-boolean v1, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;->sRebaseMethodFetched:Z
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
     .line 774
-    :try_start_9
+    :try_start_1
     const-class v3, Landroid/content/res/Resources$Theme;
 
     const-string v4, "rebase"
@@ -81,16 +81,16 @@
 
     .line 775
     invoke-virtual {v3, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_18
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_9 .. :try_end_18} :catch_19
-    .catchall {:try_start_9 .. :try_end_18} :catchall_3c
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :catch_19
+    :catch_0
     move-exception v3
 
-    :try_start_1a
+    :try_start_2
     const-string v4, "ResourcesCompat"
 
     const-string v5, "Failed to retrieve rebase() method"
@@ -99,39 +99,39 @@
     invoke-static {v4, v5, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 779
-    :goto_21
+    :goto_0
     sput-boolean v1, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;->sRebaseMethodFetched:Z
 
     .line 781
-    :cond_23
+    :cond_0
     sget-object v1, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;->sRebaseMethod:Ljava/lang/reflect/Method;
-    :try_end_25
-    .catchall {:try_start_1a .. :try_end_25} :catchall_3c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_1
 
-    :try_start_27
+    :try_start_3
     new-array v2, v2, [Ljava/lang/Object;
 
     .line 783
     invoke-virtual {v1, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_27 .. :try_end_2c} :catch_2f
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_27 .. :try_end_2c} :catch_2d
-    .catchall {:try_start_27 .. :try_end_2c} :catchall_3c
+    :try_end_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_3a
+    goto :goto_2
 
-    :catch_2d
+    :catch_1
     move-exception p0
 
-    goto :goto_30
+    goto :goto_1
 
-    :catch_2f
+    :catch_2
     move-exception p0
 
-    :goto_30
-    :try_start_30
+    :goto_1
+    :try_start_4
     const-string v1, "ResourcesCompat"
 
     const-string v2, "Failed to invoke rebase() method via reflection"
@@ -145,18 +145,18 @@
     sput-object p0, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;->sRebaseMethod:Ljava/lang/reflect/Method;
 
     .line 789
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_2
     monitor-exit v0
 
     return-void
 
-    :catchall_3c
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_3e
-    .catchall {:try_start_30 .. :try_end_3e} :catchall_3c
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     throw p0
 .end method

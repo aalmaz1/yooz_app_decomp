@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 34
     new-instance v0, Landroidx/datastore/preferences/protobuf/ExtensionSchemaLite;
@@ -45,7 +45,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method static full()Landroidx/datastore/preferences/protobuf/ExtensionSchema;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -66,12 +66,12 @@
     .line 51
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionSchemas;->FULL_SCHEMA:Landroidx/datastore/preferences/protobuf/ExtensionSchema;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 52
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Protobuf runtime is not correctly loaded."
@@ -82,7 +82,7 @@
 .end method
 
 .method static lite()Landroidx/datastore/preferences/protobuf/ExtensionSchema;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -98,7 +98,7 @@
 .end method
 
 .method private static loadSchemaForFullRuntime()Landroidx/datastore/preferences/protobuf/ExtensionSchema;
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -131,12 +131,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/ExtensionSchema;
-    :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_16
+    :catch_0
     const/4 v0, 0x0
 
     return-object v0

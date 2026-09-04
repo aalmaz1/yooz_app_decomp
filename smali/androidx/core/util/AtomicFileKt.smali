@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static final readBytes(Landroid/util/AtomicFile;)[B
-    .registers 1
+    .locals 0
 
     .line 66
     invoke-virtual {p0}, Landroid/util/AtomicFile;->readFully()[B
@@ -57,7 +57,7 @@
 .end method
 
 .method public static final readText(Landroid/util/AtomicFile;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     new-instance v0, Ljava/lang/String;
 
@@ -72,16 +72,16 @@
 .end method
 
 .method public static synthetic readText$default(Landroid/util/AtomicFile;Ljava/nio/charset/Charset;ILjava/lang/Object;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     .line 73
     sget-object p1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    :cond_6
+    :cond_0
     invoke-static {p0, p1}, Landroidx/core/util/AtomicFileKt;->readText(Landroid/util/AtomicFile;Ljava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object p0
@@ -90,7 +90,7 @@
 .end method
 
 .method public static final tryWrite(Landroid/util/AtomicFile;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,10 +111,10 @@
     const/4 v1, 0x1
 
     .line 33
-    :try_start_5
+    :try_start_0
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 34
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -126,7 +126,7 @@
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 36
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final writeBytes(Landroid/util/AtomicFile;[B)V
-    .registers 3
+    .locals 1
 
     .line 77
     invoke-virtual {p0}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
@@ -149,17 +149,17 @@
     move-result-object v0
 
     .line 49
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0, p1}, Ljava/io/FileOutputStream;->write([B)V
-    :try_end_7
-    .catchall {:try_start_4 .. :try_end_7} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 84
     invoke-virtual {p0, v0}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     .line 86
@@ -169,7 +169,7 @@
 .end method
 
 .method public static final writeText(Landroid/util/AtomicFile;Ljava/lang/String;Ljava/nio/charset/Charset;)V
-    .registers 3
+    .locals 0
 
     .line 58
     invoke-virtual {p1, p2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
@@ -186,16 +186,16 @@
 .end method
 
 .method public static synthetic writeText$default(Landroid/util/AtomicFile;Ljava/lang/String;Ljava/nio/charset/Charset;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_0
 
     .line 57
     sget-object p2, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    :cond_6
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/core/util/AtomicFileKt;->writeText(Landroid/util/AtomicFile;Ljava/lang/String;Ljava/nio/charset/Charset;)V
 
     return-void

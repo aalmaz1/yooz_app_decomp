@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;Landroidx/camera/video/VideoEncoderSession;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 1149
     new-instance v0, Ljava/lang/StringBuilder;
@@ -84,7 +84,7 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/video/internal/encoder/Encoder;)V
-    .registers 5
+    .locals 3
 
     .line 1137
     new-instance v0, Ljava/lang/StringBuilder;
@@ -105,12 +105,12 @@
 
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_0
 
     return-void
 
     .line 1141
-    :cond_17
+    :cond_0
     iget-object p1, p0, Landroidx/camera/video/Recorder$1;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object p1, p1, Landroidx/camera/video/Recorder;->mVideoEncoderSession:Landroidx/camera/video/VideoEncoderSession;
@@ -121,16 +121,16 @@
 
     const/4 v2, 0x0
 
-    if-ne p1, v0, :cond_23
+    if-ne p1, v0, :cond_1
 
     move p1, v1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     move p1, v2
 
-    :goto_24
+    :goto_0
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 1142
@@ -138,14 +138,14 @@
 
     iget-object p1, p1, Landroidx/camera/video/Recorder;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
 
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_2
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_2e
+    :cond_2
     move v1, v2
 
-    :goto_2f
+    :goto_1
     invoke-static {v1}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 1143
@@ -164,7 +164,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1134
     check-cast p1, Landroidx/camera/video/internal/encoder/Encoder;

@@ -19,14 +19,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     const/4 v0, 0x4
 
     new-array v0, v0, [B
 
     .line 32
-    fill-array-data v0, :array_18
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/common/util/CodecSpecificDataUtil;->NAL_START_CODE:[B
 
@@ -49,7 +49,7 @@
 
     nop
 
-    :array_18
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -59,7 +59,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 292
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method public static buildAvcCodecString(III)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x3
 
@@ -110,7 +110,7 @@
 .end method
 
 .method public static buildCea708InitializationData(Z)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -123,21 +123,21 @@
 
     const/4 v1, 0x1
 
-    if-eqz p0, :cond_9
+    if-eqz p0, :cond_0
 
     new-array p0, v1, [B
 
     aput-byte v1, p0, v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     new-array p0, v1, [B
 
     aput-byte v0, p0, v0
 
     .line 66
-    :goto_d
+    :goto_0
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
@@ -146,7 +146,7 @@
 .end method
 
 .method public static buildHevcCodecString(IZII[II)Ljava/lang/String;
-    .registers 9
+    .locals 3
 
     .line 187
     new-instance v0, Ljava/lang/StringBuilder;
@@ -181,17 +181,17 @@
 
     aput-object p3, v1, p0
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     const/16 p0, 0x48
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/16 p0, 0x4c
 
     .line 194
-    :goto_21
+    :goto_0
     invoke-static {p0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object p0
@@ -221,25 +221,25 @@
     .line 197
     array-length p0, p4
 
-    :goto_39
-    if-lez p0, :cond_44
+    :goto_1
+    if-lez p0, :cond_1
 
     add-int/lit8 p1, p0, -0x1
 
     .line 198
     aget p1, p4, p1
 
-    if-nez p1, :cond_44
+    if-nez p1, :cond_1
 
     add-int/lit8 p0, p0, -0x1
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_44
+    :cond_1
     move p1, v2
 
-    :goto_45
-    if-ge p1, p0, :cond_5d
+    :goto_2
+    if-ge p1, p0, :cond_2
 
     new-array p3, p2, [Ljava/lang/Object;
 
@@ -262,10 +262,10 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_45
+    goto :goto_2
 
     .line 204
-    :cond_5d
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -274,7 +274,7 @@
 .end method
 
 .method public static buildNalUnit([BII)[B
-    .registers 7
+    .locals 4
 
     .line 216
     sget-object v0, Landroidx/media3/common/util/CodecSpecificDataUtil;->NAL_START_CODE:[B
@@ -301,7 +301,7 @@
 .end method
 
 .method private static findNalStartCode([BI)I
-    .registers 4
+    .locals 2
 
     .line 264
     array-length v0, p0
@@ -312,31 +312,31 @@
 
     sub-int/2addr v0, v1
 
-    :goto_5
-    if-gt p1, v0, :cond_11
+    :goto_0
+    if-gt p1, v0, :cond_1
 
     .line 266
     invoke-static {p0, p1}, Landroidx/media3/common/util/CodecSpecificDataUtil;->isNalStartCode([BI)Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     return p1
 
-    :cond_e
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_11
+    :cond_1
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method public static getVideoResolutionFromMpeg4VideoConfig([B)Landroid/util/Pair;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -356,7 +356,7 @@
 
     move v2, v1
 
-    :goto_7
+    :goto_0
     add-int/lit8 v3, v2, 0x3
 
     .line 95
@@ -366,14 +366,14 @@
 
     const/4 v6, 0x1
 
-    if-ge v3, v4, :cond_2a
+    if-ge v3, v4, :cond_2
 
     .line 96
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result v4
 
-    if-ne v4, v6, :cond_1f
+    if-ne v4, v6, :cond_1
 
     aget-byte v3, p0, v3
 
@@ -381,18 +381,18 @@
 
     const/16 v4, 0x20
 
-    if-eq v3, v4, :cond_1d
+    if-eq v3, v4, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1d
+    :cond_0
     move v0, v6
 
-    goto :goto_2b
+    goto :goto_2
 
     .line 98
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v3
@@ -403,12 +403,12 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_2a
+    :cond_2
     move v0, v1
 
-    :goto_2b
+    :goto_2
     const-string v3, "Invalid input: VOL not found."
 
     .line 106
@@ -441,7 +441,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_3
 
     .line 115
     invoke-virtual {v0, p0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -452,14 +452,14 @@
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 119
-    :cond_50
+    :cond_3
     invoke-virtual {v0, p0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
 
     const/16 v2, 0xf
 
-    if-ne p0, v2, :cond_5e
+    if-ne p0, v2, :cond_4
 
     .line 121
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -468,12 +468,12 @@
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 125
-    :cond_5e
+    :cond_4
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result p0
 
-    if-eqz p0, :cond_75
+    if-eqz p0, :cond_5
 
     .line 126
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -486,7 +486,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_75
+    if-eqz p0, :cond_5
 
     const/16 p0, 0x4f
 
@@ -494,21 +494,21 @@
     invoke-virtual {v0, p0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 133
-    :cond_75
+    :cond_5
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
 
-    if-nez p0, :cond_7d
+    if-nez p0, :cond_6
 
     move p0, v6
 
-    goto :goto_7e
+    goto :goto_3
 
-    :cond_7d
+    :cond_6
     move p0, v1
 
-    :goto_7e
+    :goto_3
     const-string v2, "Only supports rectangular video object layer shape."
 
     .line 134
@@ -540,38 +540,38 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b1
+    if-eqz v2, :cond_9
 
-    if-lez p0, :cond_a1
+    if-lez p0, :cond_7
 
     move v2, v6
 
-    goto :goto_a2
+    goto :goto_4
 
-    :cond_a1
+    :cond_7
     move v2, v1
 
     .line 143
-    :goto_a2
+    :goto_4
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     add-int/lit8 p0, p0, -0x1
 
-    :goto_a7
-    if-lez p0, :cond_ae
+    :goto_5
+    if-lez p0, :cond_8
 
     add-int/lit8 v1, v1, 0x1
 
     shr-int/lit8 p0, p0, 0x1
 
-    goto :goto_a7
+    goto :goto_5
 
     .line 150
-    :cond_ae
+    :cond_8
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 153
-    :cond_b1
+    :cond_9
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result p0
@@ -624,7 +624,7 @@
 .end method
 
 .method private static isNalStartCode([BI)Z
-    .registers 6
+    .locals 4
 
     .line 281
     array-length v0, p0
@@ -637,20 +637,20 @@
 
     const/4 v2, 0x0
 
-    if-gt v0, v1, :cond_9
+    if-gt v0, v1, :cond_0
 
     return v2
 
-    :cond_9
+    :cond_0
     move v0, v2
 
     .line 284
-    :goto_a
+    :goto_0
     sget-object v1, Landroidx/media3/common/util/CodecSpecificDataUtil;->NAL_START_CODE:[B
 
     array-length v3, v1
 
-    if-ge v0, v3, :cond_1b
+    if-ge v0, v3, :cond_2
 
     add-int v3, p1, v0
 
@@ -659,23 +659,23 @@
 
     aget-byte v1, v1, v0
 
-    if-eq v3, v1, :cond_18
+    if-eq v3, v1, :cond_1
 
     return v2
 
-    :cond_18
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static parseAlacAudioSpecificConfig([B)Landroid/util/Pair;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -728,7 +728,7 @@
 .end method
 
 .method public static parseCea708InitializationData(Ljava/util/List;)Z
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -746,7 +746,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_1c
+    if-ne v0, v2, :cond_0
 
     .line 79
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -757,7 +757,7 @@
 
     array-length v0, v0
 
-    if-ne v0, v2, :cond_1c
+    if-ne v0, v2, :cond_0
 
     .line 80
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -768,16 +768,16 @@
 
     aget-byte p0, p0, v1
 
-    if-ne p0, v2, :cond_1c
+    if-ne p0, v2, :cond_0
 
     move v1, v2
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public static splitNalUnits([B)[[B
-    .registers 8
+    .locals 7
 
     const/4 v0, 0x0
 
@@ -786,14 +786,14 @@
 
     move-result v1
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 239
-    :cond_9
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -801,7 +801,7 @@
     move v2, v0
 
     .line 242
-    :cond_f
+    :cond_1
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -821,7 +821,7 @@
 
     const/4 v3, -0x1
 
-    if-ne v2, v3, :cond_f
+    if-ne v2, v3, :cond_1
 
     .line 245
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -833,12 +833,12 @@
     move v3, v0
 
     .line 246
-    :goto_28
+    :goto_0
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_59
+    if-ge v3, v4, :cond_3
 
     .line 247
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -858,7 +858,7 @@
 
     add-int/lit8 v5, v5, -0x1
 
-    if-ge v3, v5, :cond_4d
+    if-ge v3, v5, :cond_2
 
     add-int/lit8 v5, v3, 0x1
 
@@ -872,12 +872,12 @@
 
     move-result v5
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_4d
+    :cond_2
     array-length v5, p0
 
-    :goto_4e
+    :goto_1
     sub-int/2addr v5, v4
 
     .line 249
@@ -891,8 +891,8 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_59
+    :cond_3
     return-object v2
 .end method

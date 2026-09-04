@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 53
     new-instance v0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$1;
@@ -45,7 +45,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Handler;)V
-    .registers 2
+    .locals 0
 
     .line 70
     invoke-direct {p0}, Ljava/util/concurrent/AbstractExecutorService;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method private createPostFailedException()Ljava/util/concurrent/RejectedExecutionException;
-    .registers 4
+    .locals 3
 
     .line 184
     new-instance v0, Ljava/util/concurrent/RejectedExecutionException;
@@ -88,7 +88,7 @@
 .end method
 
 .method static currentThreadExecutor()Ljava/util/concurrent/ScheduledExecutorService;
-    .registers 3
+    .locals 3
 
     .line 78
     sget-object v0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService;->sThreadLocalInstance:Ljava/lang/ThreadLocal;
@@ -99,14 +99,14 @@
 
     check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     .line 80
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 85
     new-instance v1, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService;
@@ -124,10 +124,10 @@
 
     move-object v0, v1
 
-    goto :goto_29
+    goto :goto_0
 
     .line 82
-    :cond_21
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Current thread has no looper!"
@@ -136,15 +136,15 @@
 
     throw v0
 
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
-    .registers 4
+    .locals 0
 
     .line 171
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -158,7 +158,7 @@
 .end method
 
 .method public execute(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 1
 
     .line 178
     iget-object v0, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService;->mHandler:Landroid/os/Handler;
@@ -167,12 +167,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     return-void
 
     .line 179
-    :cond_9
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService;->createPostFailedException()Ljava/util/concurrent/RejectedExecutionException;
 
     move-result-object p1
@@ -181,7 +181,7 @@
 .end method
 
 .method public isShutdown()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -189,7 +189,7 @@
 .end method
 
 .method public isTerminated()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -197,7 +197,7 @@
 .end method
 
 .method public schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -224,7 +224,7 @@
 .end method
 
 .method public schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -266,12 +266,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     return-object p2
 
     .line 120
-    :cond_1b
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService;->createPostFailedException()Ljava/util/concurrent/RejectedExecutionException;
 
     move-result-object p1
@@ -284,7 +284,7 @@
 .end method
 
 .method public scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -309,7 +309,7 @@
 .end method
 
 .method public scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -334,7 +334,7 @@
 .end method
 
 .method public shutdown()V
-    .registers 3
+    .locals 2
 
     .line 146
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -348,7 +348,7 @@
 .end method
 
 .method public shutdownNow()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

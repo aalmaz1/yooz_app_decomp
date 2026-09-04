@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 131
     new-instance v0, Landroidx/fragment/app/FragmentState$1;
@@ -61,7 +61,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 5
+    .locals 3
 
     .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,16 +89,16 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move v0, v2
 
-    :goto_1a
+    :goto_0
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mFromLayout:Z
 
     .line 62
@@ -127,16 +127,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     move v0, v1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_1
     move v0, v2
 
-    :goto_37
+    :goto_1
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mRetainInstance:Z
 
     .line 66
@@ -144,16 +144,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_2
 
     move v0, v1
 
-    goto :goto_42
+    goto :goto_2
 
-    :cond_41
+    :cond_2
     move v0, v2
 
-    :goto_42
+    :goto_2
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mRemoving:Z
 
     .line 67
@@ -161,16 +161,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_3
 
     move v0, v1
 
-    goto :goto_4d
+    goto :goto_3
 
-    :cond_4c
+    :cond_3
     move v0, v2
 
-    :goto_4d
+    :goto_3
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentState;->mDetached:Z
 
     .line 68
@@ -185,14 +185,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_4
 
-    goto :goto_5d
+    goto :goto_4
 
-    :cond_5c
+    :cond_4
     move v1, v2
 
-    :goto_5d
+    :goto_4
     iput-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mHidden:Z
 
     .line 70
@@ -213,7 +213,7 @@
 .end method
 
 .method constructor <init>(Landroidx/fragment/app/Fragment;)V
-    .registers 3
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -294,7 +294,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -302,7 +302,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 77
     new-instance v0, Ljava/lang/StringBuilder;
@@ -339,7 +339,7 @@
     .line 83
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mFromLayout:Z
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     const-string v1, " fromLayout"
 
@@ -347,10 +347,10 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 86
-    :cond_29
+    :cond_0
     iget v1, p0, Landroidx/fragment/app/FragmentState;->mContainerId:I
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_1
 
     const-string v1, " id=0x"
 
@@ -367,16 +367,16 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 90
-    :cond_3b
+    :cond_1
     iget-object v1, p0, Landroidx/fragment/app/FragmentState;->mTag:Ljava/lang/String;
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_4f
+    if-nez v1, :cond_2
 
     const-string v1, " tag="
 
@@ -389,10 +389,10 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 94
-    :cond_4f
+    :cond_2
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mRetainInstance:Z
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_3
 
     const-string v1, " retainInstance"
 
@@ -400,10 +400,10 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 97
-    :cond_58
+    :cond_3
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mRemoving:Z
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_4
 
     const-string v1, " removing"
 
@@ -411,10 +411,10 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 100
-    :cond_61
+    :cond_4
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mDetached:Z
 
-    if-eqz v1, :cond_6a
+    if-eqz v1, :cond_5
 
     const-string v1, " detached"
 
@@ -422,10 +422,10 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 103
-    :cond_6a
+    :cond_5
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentState;->mHidden:Z
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_6
 
     const-string v1, " hidden"
 
@@ -433,7 +433,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 106
-    :cond_73
+    :cond_6
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -442,7 +442,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 116
     iget-object p2, p0, Landroidx/fragment/app/FragmentState;->mClassName:Ljava/lang/String;

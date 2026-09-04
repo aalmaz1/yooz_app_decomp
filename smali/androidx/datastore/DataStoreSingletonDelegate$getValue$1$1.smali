@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroidx/datastore/DataStoreSingletonDelegate;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/io/File;
-    .registers 3
+    .locals 2
 
     .line 104
     iget-object v0, p0, Landroidx/datastore/DataStoreSingletonDelegate$getValue$1$1;->$applicationContext:Landroid/content/Context;
@@ -106,7 +106,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 104
     invoke-virtual {p0}, Landroidx/datastore/DataStoreSingletonDelegate$getValue$1$1;->invoke()Ljava/io/File;

@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 673
     const-class v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers;
@@ -44,7 +44,7 @@
 .end method
 
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)V
-    .registers 4
+    .locals 0
 
     .line 677
     invoke-direct {p0, p1, p2, p3}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Sized;-><init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static empty()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;
-    .registers 1
+    .locals 1
 
     .line 682
     sget-object v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->EMPTY:Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public data()Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 3
 
     .line 690
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -106,7 +106,7 @@
 .end method
 
 .method public get(I)B
-    .registers 4
+    .locals 2
 
     .line 715
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -123,7 +123,7 @@
 .end method
 
 .method public getBytes()[B
-    .registers 6
+    .locals 5
 
     .line 701
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->size()I
@@ -135,8 +135,8 @@
 
     const/4 v2, 0x0
 
-    :goto_7
-    if-ge v2, v0, :cond_17
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 704
     iget-object v3, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -153,14 +153,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-object v1
 .end method
 
 .method public bridge synthetic size()I
-    .registers 2
+    .locals 1
 
     .line 673
     invoke-super {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Sized;->size()I
@@ -171,7 +171,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 723
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -190,7 +190,7 @@
 .end method
 
 .method public toString(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
-    .registers 6
+    .locals 4
 
     const/16 v0, 0x22
 

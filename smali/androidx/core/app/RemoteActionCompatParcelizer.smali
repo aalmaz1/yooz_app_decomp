@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static read(Landroidx/versionedparcelable/VersionedParcel;)Landroidx/core/app/RemoteActionCompat;
-    .registers 4
+    .locals 3
 
     .line 11
     new-instance v0, Landroidx/core/app/RemoteActionCompat;
@@ -95,7 +95,7 @@
 .end method
 
 .method public static write(Landroidx/core/app/RemoteActionCompat;Landroidx/versionedparcelable/VersionedParcel;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 

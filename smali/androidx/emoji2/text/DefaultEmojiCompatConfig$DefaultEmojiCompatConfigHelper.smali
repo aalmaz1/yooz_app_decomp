@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 262
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public getProviderInfo(Landroid/content/pm/ResolveInfo;)Landroid/content/pm/ProviderInfo;
-    .registers 3
+    .locals 1
 
     .line 291
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -40,7 +40,7 @@
 .end method
 
 .method public getSigningSignatures(Landroid/content/pm/PackageManager;Ljava/lang/String;)[Landroid/content/pm/Signature;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -61,7 +61,7 @@
 .end method
 
 .method public queryIntentContentProviders(Landroid/content/pm/PackageManager;Landroid/content/Intent;I)Ljava/util/List;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

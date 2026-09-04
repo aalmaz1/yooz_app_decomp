@@ -39,7 +39,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/CaseFormat;Lcom/google/common/base/CaseFormat;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method protected bridge synthetic doBackward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -99,7 +99,7 @@
 .end method
 
 .method protected doBackward(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -122,7 +122,7 @@
 .end method
 
 .method protected bridge synthetic doForward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -143,7 +143,7 @@
 .end method
 
 .method protected doForward(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -166,7 +166,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -185,7 +185,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 187
     check-cast p1, Lcom/google/common/base/CaseFormat$StringConverter;
@@ -199,7 +199,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/base/CaseFormat$StringConverter;->targetFormat:Lcom/google/common/base/CaseFormat;
 
@@ -209,16 +209,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 195
     iget-object v0, p0, Lcom/google/common/base/CaseFormat$StringConverter;->sourceFormat:Lcom/google/common/base/CaseFormat;
@@ -239,7 +239,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 200
     new-instance v0, Ljava/lang/StringBuilder;

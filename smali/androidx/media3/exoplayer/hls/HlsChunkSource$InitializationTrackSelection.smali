@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;[I)V
-    .registers 4
+    .locals 1
 
     .line 994
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;-><init>(Landroidx/media3/common/TrackGroup;[I)V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public getSelectedIndex()I
-    .registers 2
+    .locals 1
 
     .line 1024
     iget v0, p0, Landroidx/media3/exoplayer/hls/HlsChunkSource$InitializationTrackSelection;->selectedIndex:I
@@ -55,7 +55,7 @@
 .end method
 
 .method public getSelectionData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public getSelectionReason()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public updateSelectedTrack(JJJLjava/util/List;[Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJ",
@@ -96,38 +96,38 @@
 
     move-result p3
 
-    if-nez p3, :cond_d
+    if-nez p3, :cond_0
 
     return-void
 
     .line 1012
-    :cond_d
+    :cond_0
     iget p3, p0, Landroidx/media3/exoplayer/hls/HlsChunkSource$InitializationTrackSelection;->length:I
 
     add-int/lit8 p3, p3, -0x1
 
-    :goto_11
-    if-ltz p3, :cond_1f
+    :goto_0
+    if-ltz p3, :cond_2
 
     .line 1013
     invoke-virtual {p0, p3, p1, p2}, Landroidx/media3/exoplayer/hls/HlsChunkSource$InitializationTrackSelection;->isTrackExcluded(IJ)Z
 
     move-result p4
 
-    if-nez p4, :cond_1c
+    if-nez p4, :cond_1
 
     .line 1014
     iput p3, p0, Landroidx/media3/exoplayer/hls/HlsChunkSource$InitializationTrackSelection;->selectedIndex:I
 
     return-void
 
-    :cond_1c
+    :cond_1
     add-int/lit8 p3, p3, -0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 1019
-    :cond_1f
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V

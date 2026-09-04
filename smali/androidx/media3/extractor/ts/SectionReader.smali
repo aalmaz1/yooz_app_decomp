@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ts/SectionPayloadReader;)V
-    .registers 3
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 9
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -61,19 +61,19 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     move p2, v0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move p2, v1
 
-    :goto_8
+    :goto_0
     const/4 v2, -0x1
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 71
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -87,23 +87,23 @@
 
     add-int/2addr v4, v3
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
+    :cond_1
     move v4, v2
 
     .line 75
-    :goto_16
+    :goto_1
     iget-boolean v3, p0, Landroidx/media3/extractor/ts/SectionReader;->waitingForPayloadStart:Z
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_3
 
-    if-nez p2, :cond_1d
+    if-nez p2, :cond_2
 
     return-void
 
     .line 79
-    :cond_1d
+    :cond_2
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/SectionReader;->waitingForPayloadStart:Z
 
     .line 80
@@ -113,22 +113,22 @@
     iput v1, p0, Landroidx/media3/extractor/ts/SectionReader;->bytesRead:I
 
     .line 84
-    :cond_24
-    :goto_24
+    :cond_3
+    :goto_2
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p2
 
-    if-lez p2, :cond_106
+    if-lez p2, :cond_9
 
     .line 85
     iget p2, p0, Landroidx/media3/extractor/ts/SectionReader;->bytesRead:I
 
     const/4 v3, 0x3
 
-    if-ge p2, v3, :cond_b1
+    if-ge p2, v3, :cond_6
 
-    if-nez p2, :cond_44
+    if-nez p2, :cond_4
 
     .line 89
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -146,7 +146,7 @@
 
     const/16 v4, 0xff
 
-    if-ne p2, v4, :cond_44
+    if-ne p2, v4, :cond_4
 
     .line 93
     iput-boolean v0, p0, Landroidx/media3/extractor/ts/SectionReader;->waitingForPayloadStart:Z
@@ -154,7 +154,7 @@
     return-void
 
     .line 97
-    :cond_44
+    :cond_4
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p2
@@ -185,7 +185,7 @@
 
     iput v4, p0, Landroidx/media3/extractor/ts/SectionReader;->bytesRead:I
 
-    if-ne v4, v3, :cond_24
+    if-ne v4, v3, :cond_3
 
     .line 103
     iget-object p2, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -218,17 +218,17 @@
 
     and-int/lit16 v5, p2, 0x80
 
-    if-eqz v5, :cond_83
+    if-eqz v5, :cond_5
 
     move v5, v0
 
-    goto :goto_84
+    goto :goto_3
 
-    :cond_83
+    :cond_5
     move v5, v1
 
     .line 108
-    :goto_84
+    :goto_3
     iput-boolean v5, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionSyntaxIndicator:Z
 
     and-int/lit8 p2, p2, 0xf
@@ -251,7 +251,7 @@
 
     iget v3, p0, Landroidx/media3/extractor/ts/SectionReader;->totalSectionLength:I
 
-    if-ge p2, v3, :cond_24
+    if-ge p2, v3, :cond_3
 
     .line 113
     iget-object p2, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -278,10 +278,10 @@
 
     invoke-virtual {v3, p2}, Landroidx/media3/common/util/ParsableByteArray;->ensureCapacity(I)V
 
-    goto/16 :goto_24
+    goto/16 :goto_2
 
     .line 120
-    :cond_b1
+    :cond_6
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p2
@@ -317,12 +317,12 @@
     .line 124
     iget p2, p0, Landroidx/media3/extractor/ts/SectionReader;->totalSectionLength:I
 
-    if-ne v3, p2, :cond_24
+    if-ne v3, p2, :cond_3
 
     .line 125
     iget-boolean v3, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionSyntaxIndicator:Z
 
-    if-eqz v3, :cond_f1
+    if-eqz v3, :cond_8
 
     .line 127
     iget-object p2, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -337,7 +337,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_e7
+    if-eqz p2, :cond_7
 
     .line 129
     iput-boolean v0, p0, Landroidx/media3/extractor/ts/SectionReader;->waitingForPayloadStart:Z
@@ -345,7 +345,7 @@
     return-void
 
     .line 132
-    :cond_e7
+    :cond_7
     iget-object p2, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionData:Landroidx/media3/common/util/ParsableByteArray;
 
     iget v3, p0, Landroidx/media3/extractor/ts/SectionReader;->totalSectionLength:I
@@ -354,16 +354,16 @@
 
     invoke-virtual {p2, v3}, Landroidx/media3/common/util/ParsableByteArray;->setLimit(I)V
 
-    goto :goto_f6
+    goto :goto_4
 
     .line 135
-    :cond_f1
+    :cond_8
     iget-object v3, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v3, p2}, Landroidx/media3/common/util/ParsableByteArray;->setLimit(I)V
 
     .line 137
-    :goto_f6
+    :goto_4
     iget-object p2, p0, Landroidx/media3/extractor/ts/SectionReader;->sectionData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -378,14 +378,14 @@
     .line 139
     iput v1, p0, Landroidx/media3/extractor/ts/SectionReader;->bytesRead:I
 
-    goto/16 :goto_24
+    goto/16 :goto_2
 
-    :cond_106
+    :cond_9
     return-void
 .end method
 
 .method public init(Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 5
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/media3/extractor/ts/SectionReader;->reader:Landroidx/media3/extractor/ts/SectionPayloadReader;
@@ -401,7 +401,7 @@
 .end method
 
 .method public seek()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

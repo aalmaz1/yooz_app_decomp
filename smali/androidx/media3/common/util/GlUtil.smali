@@ -47,21 +47,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/16 v0, 0xf
 
     new-array v1, v0, [I
 
     .line 66
-    fill-array-data v1, :array_2a
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/common/util/GlUtil;->EGL_CONFIG_ATTRIBUTES_RGBA_8888:[I
 
     new-array v0, v0, [I
 
     .line 77
-    fill-array-data v0, :array_4c
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/common/util/GlUtil;->EGL_CONFIG_ATTRIBUTES_RGBA_1010102:[I
 
@@ -70,14 +70,14 @@
     new-array v1, v0, [I
 
     .line 104
-    fill-array-data v1, :array_6e
+    fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/media3/common/util/GlUtil;->EGL_WINDOW_SURFACE_ATTRIBUTES_BT2020_PQ:[I
 
     new-array v0, v0, [I
 
     .line 109
-    fill-array-data v0, :array_7a
+    fill-array-data v0, :array_3
 
     sput-object v0, Landroidx/media3/common/util/GlUtil;->EGL_WINDOW_SURFACE_ATTRIBUTES_BT2020_HLG:[I
 
@@ -96,7 +96,7 @@
 
     return-void
 
-    :array_2a
+    :array_0
     .array-data 4
         0x3040
         0x4
@@ -115,7 +115,7 @@
         0x3038
     .end array-data
 
-    :array_4c
+    :array_1
     .array-data 4
         0x3040
         0x4
@@ -134,7 +134,7 @@
         0x3038
     .end array-data
 
-    :array_6e
+    :array_2
     .array-data 4
         0x309d
         0x3340
@@ -142,7 +142,7 @@
         0x3038
     .end array-data
 
-    :array_7a
+    :array_3
     .array-data 4
         0x309d
         0x3540
@@ -152,7 +152,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -161,7 +161,7 @@
 .end method
 
 .method private static assertValidTextureSize(II)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -181,31 +181,31 @@
 
     aget v1, v1, v3
 
-    if-lez v1, :cond_e
+    if-lez v1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v0, v3
 
-    :goto_f
+    :goto_0
     const-string v2, "Create a OpenGL context first or run the GL methods on an OpenGL thread."
 
     .line 535
     invoke-static {v0, v2}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
 
-    if-ltz p0, :cond_33
+    if-ltz p0, :cond_2
 
-    if-ltz p1, :cond_33
+    if-ltz p1, :cond_2
 
-    if-gt p0, v1, :cond_1d
+    if-gt p0, v1, :cond_1
 
-    if-gt p1, v1, :cond_1d
+    if-gt p1, v1, :cond_1
 
     return-void
 
     .line 543
-    :cond_1d
+    :cond_1
     new-instance p0, Landroidx/media3/common/util/GlUtil$GlException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -227,7 +227,7 @@
     throw p0
 
     .line 540
-    :cond_33
+    :cond_2
     new-instance p0, Landroidx/media3/common/util/GlUtil$GlException;
 
     const-string/jumbo p1, "width or height is less than 0"
@@ -238,7 +238,7 @@
 .end method
 
 .method public static awaitSyncObject(J)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -249,14 +249,14 @@
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 483
     invoke-static {}, Landroid/opengl/GLES20;->glFinish()V
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     const-wide/16 v1, -0x1
@@ -267,12 +267,12 @@
     .line 486
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method public static bindTexture(III)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -323,7 +323,7 @@
 .end method
 
 .method private static checkEglException(Ljava/lang/String;)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -337,12 +337,12 @@
 
     const/16 v1, 0x3000
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 877
-    :cond_9
+    :cond_0
     new-instance v1, Landroidx/media3/common/util/GlUtil$GlException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -377,7 +377,7 @@
 .end method
 
 .method public static checkGlError()V
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -392,14 +392,14 @@
     const/4 v1, 0x0
 
     .line 503
-    :goto_6
+    :goto_0
     invoke-static {}, Landroid/opengl/GLES20;->glGetError()I
 
     move-result v2
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_2
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     const/16 v1, 0xa
 
@@ -407,12 +407,12 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 507
-    :cond_13
+    :cond_0
     invoke-static {v2}, Landroid/opengl/GLU;->gluErrorString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     .line 509
     new-instance v1, Ljava/lang/StringBuilder;
@@ -433,7 +433,7 @@
 
     move-result-object v1
 
-    :cond_2c
+    :cond_1
     const-string v2, "glError: "
 
     .line 511
@@ -445,15 +445,15 @@
 
     const/4 v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_37
-    if-nez v1, :cond_3a
+    :cond_2
+    if-nez v1, :cond_3
 
     return-void
 
     .line 515
-    :cond_3a
+    :cond_3
     new-instance v1, Landroidx/media3/common/util/GlUtil$GlException;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -466,19 +466,19 @@
 .end method
 
 .method public static checkGlException(ZLjava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 834
-    :cond_3
+    :cond_0
     new-instance p0, Landroidx/media3/common/util/GlUtil$GlException;
 
     invoke-direct {p0, p1}, Landroidx/media3/common/util/GlUtil$GlException;-><init>(Ljava/lang/String;)V
@@ -487,7 +487,7 @@
 .end method
 
 .method public static clearFocusedBuffers()V
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -516,7 +516,7 @@
 .end method
 
 .method public static create4x4IdentityMatrix()[F
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x10
 
@@ -529,7 +529,7 @@
 .end method
 
 .method private static createBuffer(I)Ljava/nio/FloatBuffer;
-    .registers 2
+    .locals 1
 
     mul-int/lit8 p0, p0, 0x4
 
@@ -555,7 +555,7 @@
 .end method
 
 .method public static createBuffer([F)Ljava/nio/FloatBuffer;
-    .registers 2
+    .locals 1
 
     .line 616
     array-length v0, p0
@@ -578,7 +578,7 @@
 .end method
 
 .method public static createEglContext(Landroid/opengl/EGLContext;Landroid/opengl/EGLDisplay;I[I)Landroid/opengl/EGLContext;
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -597,7 +597,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     sget-object v0, Landroidx/media3/common/util/GlUtil;->EGL_CONFIG_ATTRIBUTES_RGBA_1010102:[I
 
@@ -606,44 +606,44 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v0, v2
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     move v0, v1
 
     .line 285
-    :goto_16
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const/4 v0, 0x3
 
     const/4 v3, 0x2
 
-    if-eq p2, v3, :cond_22
+    if-eq p2, v3, :cond_3
 
-    if-ne p2, v0, :cond_20
+    if-ne p2, v0, :cond_2
 
-    goto :goto_22
+    goto :goto_2
 
-    :cond_20
+    :cond_2
     move v4, v2
 
-    goto :goto_23
+    goto :goto_3
 
-    :cond_22
-    :goto_22
+    :cond_3
+    :goto_2
     move v4, v1
 
     .line 288
-    :goto_23
+    :goto_3
     invoke-static {v4}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     new-array v0, v0, [I
@@ -668,7 +668,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_40
+    if-eqz p0, :cond_4
 
     .line 304
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
@@ -676,7 +676,7 @@
     return-object p0
 
     .line 298
-    :cond_40
+    :cond_4
     invoke-static {p1}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
 
     .line 299
@@ -702,7 +702,7 @@
 .end method
 
 .method public static createEglContext(Landroid/opengl/EGLDisplay;)Landroid/opengl/EGLContext;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -724,7 +724,7 @@
 .end method
 
 .method public static createEglSurface(Landroid/opengl/EGLDisplay;Ljava/lang/Object;IZ)Landroid/opengl/EGLSurface;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -733,27 +733,27 @@
 
     const/4 v0, 0x3
 
-    if-eq p2, v0, :cond_4f
+    if-eq p2, v0, :cond_7
 
     const/16 v0, 0xa
 
-    if-ne p2, v0, :cond_8
+    if-ne p2, v0, :cond_0
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x7
 
     const/4 v1, 0x6
 
-    if-eq p2, v0, :cond_24
+    if-eq p2, v0, :cond_2
 
-    if-ne p2, v1, :cond_f
+    if-ne p2, v1, :cond_1
 
-    goto :goto_24
+    goto :goto_0
 
     .line 354
-    :cond_f
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -775,34 +775,34 @@
     throw p0
 
     .line 332
-    :cond_24
-    :goto_24
+    :cond_2
+    :goto_0
     sget-object v0, Landroidx/media3/common/util/GlUtil;->EGL_CONFIG_ATTRIBUTES_RGBA_1010102:[I
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_3
 
     .line 340
     sget-object p2, Landroidx/media3/common/util/GlUtil;->EGL_WINDOW_SURFACE_ATTRIBUTES_NONE:[I
 
-    goto :goto_53
+    goto :goto_2
 
-    :cond_2b
-    if-ne p2, v1, :cond_3e
+    :cond_3
+    if-ne p2, v1, :cond_5
 
     .line 342
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->isBt2020PqExtensionSupported()Z
 
     move-result p2
 
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_4
 
     .line 346
     sget-object p2, Landroidx/media3/common/util/GlUtil;->EGL_WINDOW_SURFACE_ATTRIBUTES_BT2020_PQ:[I
 
-    goto :goto_53
+    goto :goto_2
 
     .line 343
-    :cond_36
+    :cond_4
     new-instance p0, Landroidx/media3/common/util/GlUtil$GlException;
 
     const-string p1, "BT.2020 PQ OpenGL output isn\'t supported."
@@ -812,20 +812,20 @@
     throw p0
 
     .line 348
-    :cond_3e
+    :cond_5
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->isBt2020HlgExtensionSupported()Z
 
     move-result p2
 
-    if-eqz p2, :cond_47
+    if-eqz p2, :cond_6
 
     .line 351
     sget-object p2, Landroidx/media3/common/util/GlUtil;->EGL_WINDOW_SURFACE_ATTRIBUTES_BT2020_HLG:[I
 
-    goto :goto_53
+    goto :goto_2
 
     .line 349
-    :cond_47
+    :cond_6
     new-instance p0, Landroidx/media3/common/util/GlUtil$GlException;
 
     const-string p1, "BT.2020 HLG OpenGL output isn\'t supported."
@@ -835,15 +835,15 @@
     throw p0
 
     .line 329
-    :cond_4f
-    :goto_4f
+    :cond_7
+    :goto_1
     sget-object v0, Landroidx/media3/common/util/GlUtil;->EGL_CONFIG_ATTRIBUTES_RGBA_8888:[I
 
     .line 330
     sget-object p2, Landroidx/media3/common/util/GlUtil;->EGL_WINDOW_SURFACE_ATTRIBUTES_NONE:[I
 
     .line 359
-    :goto_53
+    :goto_2
     invoke-static {p0, v0}, Landroidx/media3/common/util/GlUtil;->getEglConfig(Landroid/opengl/EGLDisplay;[I)Landroid/opengl/EGLConfig;
 
     move-result-object p3
@@ -864,7 +864,7 @@
 .end method
 
 .method public static createExternalTexture()I
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -887,7 +887,7 @@
 .end method
 
 .method public static createFboForTexture(I)I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -932,7 +932,7 @@
 .end method
 
 .method public static createFocusedPlaceholderEglSurface(Landroid/opengl/EGLContext;Landroid/opengl/EGLDisplay;)Landroid/opengl/EGLSurface;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -949,28 +949,28 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 412
     sget-object v0, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    goto :goto_10
+    goto :goto_0
 
     .line 413
-    :cond_c
+    :cond_0
     invoke-static {p1, v2, v2, v0}, Landroidx/media3/common/util/GlUtil;->createPbufferSurface(Landroid/opengl/EGLDisplay;II[I)Landroid/opengl/EGLSurface;
 
     move-result-object v0
 
     .line 415
-    :goto_10
+    :goto_0
     invoke-static {p1, p0, v0, v2, v2}, Landroidx/media3/common/util/GlUtil;->focusEglSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;Landroid/opengl/EGLSurface;II)V
 
     return-object v0
 .end method
 
 .method public static createGlSyncFence()J
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -986,7 +986,7 @@
 
     cmp-long v0, v0, v2
 
-    if-ltz v0, :cond_1c
+    if-ltz v0, :cond_0
 
     const v0, 0x9117
 
@@ -1008,14 +1008,14 @@
 
     return-wide v0
 
-    :cond_1c
+    :cond_0
     const-wide/16 v0, 0x0
 
     return-wide v0
 .end method
 
 .method private static createPbufferSurface(Landroid/opengl/EGLDisplay;II[I)Landroid/opengl/EGLSurface;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1071,14 +1071,14 @@
 .end method
 
 .method public static createTexture(IIZ)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
         }
     .end annotation
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     const p2, 0x881a
 
@@ -1091,7 +1091,7 @@
 
     return p0
 
-    :cond_c
+    :cond_0
     const/16 p2, 0x1908
 
     const/16 v0, 0x1401
@@ -1105,7 +1105,7 @@
 .end method
 
 .method public static createTexture(Landroid/graphics/Bitmap;)I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1124,7 +1124,7 @@
 .end method
 
 .method private static createTextureUninitialized(IIII)I
-    .registers 16
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1174,7 +1174,7 @@
 .end method
 
 .method public static createVertexBuffer(Ljava/util/List;)[F
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1199,12 +1199,12 @@
     move v3, v2
 
     .line 153
-    :goto_a
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_1c
+    if-ge v3, v4, :cond_0
 
     .line 155
     invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1218,14 +1218,14 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-object v0
 .end method
 
 .method public static deleteFbo(I)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public static deleteRbo(I)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1275,7 +1275,7 @@
 .end method
 
 .method public static deleteSyncObject(J)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1292,7 +1292,7 @@
 .end method
 
 .method public static deleteSyncObjectQuietly(J)V
-    .registers 2
+    .locals 0
 
     .line 472
     invoke-static {p0, p1}, Landroid/opengl/GLES30;->glDeleteSync(J)V
@@ -1301,7 +1301,7 @@
 .end method
 
 .method public static deleteTexture(I)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1326,19 +1326,19 @@
 .end method
 
 .method public static destroyEglContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
         }
     .end annotation
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
     .line 785
-    :cond_3
+    :cond_0
     sget-object v0, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
     sget-object v1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
@@ -1352,7 +1352,7 @@
     .line 787
     invoke-static {v0}, Landroidx/media3/common/util/GlUtil;->checkEglException(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     .line 789
     invoke-static {p0, p1}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
@@ -1363,7 +1363,7 @@
     invoke-static {p1}, Landroidx/media3/common/util/GlUtil;->checkEglException(Ljava/lang/String;)V
 
     .line 792
-    :cond_1b
+    :cond_1
     invoke-static {}, Landroid/opengl/EGL14;->eglReleaseThread()Z
 
     const-string p1, "Error releasing thread"
@@ -1383,20 +1383,20 @@
 .end method
 
 .method public static destroyEglSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
         }
     .end annotation
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_2
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/16 v0, 0x3059
 
     .line 807
@@ -1406,12 +1406,12 @@
 
     sget-object v1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_1
 
     return-void
 
     .line 811
-    :cond_10
+    :cond_1
     invoke-static {p0, p1}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
     const-string p0, "Error destroying surface"
@@ -1419,13 +1419,13 @@
     .line 812
     invoke-static {p0}, Landroidx/media3/common/util/GlUtil;->checkEglException(Ljava/lang/String;)V
 
-    :cond_18
-    :goto_18
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public static focusEglSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;Landroid/opengl/EGLSurface;II)V
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1451,7 +1451,7 @@
 .end method
 
 .method public static focusFramebuffer(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;Landroid/opengl/EGLSurface;III)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1465,7 +1465,7 @@
 .end method
 
 .method public static focusFramebufferUsingCurrentContext(III)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1485,7 +1485,7 @@
 
     aget v0, v0, v2
 
-    if-eq v0, p0, :cond_14
+    if-eq v0, p0, :cond_0
 
     const v0, 0x8d40
 
@@ -1493,7 +1493,7 @@
     invoke-static {v0, p0}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
     .line 605
-    :cond_14
+    :cond_0
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
     .line 606
@@ -1506,7 +1506,7 @@
 .end method
 
 .method private static focusRenderTarget(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;Landroid/opengl/EGLSurface;III)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1528,7 +1528,7 @@
 .end method
 
 .method public static generateTexture()I
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1553,7 +1553,7 @@
 .end method
 
 .method public static getContextMajorVersion()J
-    .registers 5
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1592,7 +1592,7 @@
 .end method
 
 .method public static getCurrentContext()Landroid/opengl/EGLContext;
-    .registers 1
+    .locals 1
 
     .line 492
     invoke-static {}, Landroid/opengl/EGL14;->eglGetCurrentContext()Landroid/opengl/EGLContext;
@@ -1603,7 +1603,7 @@
 .end method
 
 .method public static getDefaultEglDisplay()Landroid/opengl/EGLDisplay;
-    .registers 5
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1653,7 +1653,7 @@
 .end method
 
 .method private static getEglConfig(Landroid/opengl/EGLDisplay;[I)Landroid/opengl/EGLConfig;
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -1685,7 +1685,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_16
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x0
 
@@ -1694,7 +1694,7 @@
     return-object p0
 
     .line 850
-    :cond_16
+    :cond_0
     new-instance p0, Landroidx/media3/common/util/GlUtil$GlException;
 
     const-string p1, "eglChooseConfig failed."
@@ -1705,18 +1705,18 @@
 .end method
 
 .method public static getNormalizedCoordinateBounds()[F
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x10
 
     new-array v0, v0, [F
 
     .line 120
-    fill-array-data v0, :array_8
+    fill-array-data v0, :array_0
 
     return-object v0
 
-    :array_8
+    :array_0
     .array-data 4
         -0x40800000    # -1.0f
         -0x40800000    # -1.0f
@@ -1738,18 +1738,18 @@
 .end method
 
 .method public static getTextureCoordinateBounds()[F
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x10
 
     new-array v0, v0, [F
 
     .line 130
-    fill-array-data v0, :array_8
+    fill-array-data v0, :array_0
 
     return-object v0
 
-    :array_8
+    :array_0
     .array-data 4
         0x0
         0x0
@@ -1771,7 +1771,7 @@
 .end method
 
 .method public static isBt2020HlgExtensionSupported()Z
-    .registers 1
+    .locals 1
 
     const-string v0, "EGL_EXT_gl_colorspace_bt2020_hlg"
 
@@ -1784,14 +1784,14 @@
 .end method
 
 .method public static isBt2020PqExtensionSupported()Z
-    .registers 2
+    .locals 2
 
     .line 232
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_10
+    if-lt v0, v1, :cond_0
 
     const-string v0, "EGL_EXT_gl_colorspace_bt2020_pq"
 
@@ -1799,21 +1799,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method private static isExtensionSupported(Ljava/lang/String;)Z
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1829,23 +1829,23 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 858
     invoke-virtual {v1, p0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_14
+    :cond_0
     return v0
 .end method
 
 .method public static isProtectedContentExtensionSupported(Landroid/content/Context;)Z
-    .registers 5
+    .locals 4
 
     .line 170
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -1854,17 +1854,17 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     return v2
 
     .line 173
-    :cond_8
+    :cond_0
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-ge v0, v1, :cond_23
+    if-ge v0, v1, :cond_2
 
     const-string v0, "samsung"
 
@@ -1874,7 +1874,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     const-string v0, "XT1650"
 
@@ -1884,16 +1884,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
-    :cond_22
+    :cond_1
     return v2
 
     .line 180
-    :cond_23
+    :cond_2
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-ge v0, v1, :cond_34
+    if-ge v0, v1, :cond_3
 
     .line 182
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -1907,11 +1907,11 @@
 
     move-result p0
 
-    if-nez p0, :cond_34
+    if-nez p0, :cond_3
 
     return v2
 
-    :cond_34
+    :cond_3
     const-string p0, "EGL_EXT_protected_content"
 
     .line 188
@@ -1923,7 +1923,7 @@
 .end method
 
 .method public static isSurfacelessContextExtensionSupported()Z
-    .registers 1
+    .locals 1
 
     const-string v0, "EGL_KHR_surfaceless_context"
 
@@ -1936,7 +1936,7 @@
 .end method
 
 .method public static isYuvTargetExtensionSupported()Z
-    .registers 4
+    .locals 4
 
     .line 210
     invoke-static {}, Landroid/opengl/EGL14;->eglGetCurrentContext()Landroid/opengl/EGLContext;
@@ -1953,10 +1953,10 @@
 
     const/16 v2, 0x1f03
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 213
-    :try_start_f
+    :try_start_0
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->getDefaultEglDisplay()Landroid/opengl/EGLDisplay;
 
     move-result-object v0
@@ -1976,22 +1976,22 @@
 
     .line 217
     invoke-static {v0, v3}, Landroidx/media3/common/util/GlUtil;->destroyEglContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)V
-    :try_end_21
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_f .. :try_end_21} :catch_22
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :catch_22
+    :catch_0
     return v1
 
     .line 222
-    :cond_23
+    :cond_0
     invoke-static {v2}, Landroid/opengl/GLES20;->glGetString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    :goto_27
-    if-eqz v2, :cond_32
+    :goto_0
+    if-eqz v2, :cond_1
 
     const-string v0, "GL_EXT_YUV_target"
 
@@ -2000,16 +2000,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_32
+    :cond_1
     return v1
 .end method
 
 .method public static setTexture(ILandroid/graphics/Bitmap;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -2046,7 +2046,7 @@
 .end method
 
 .method public static setToIdentity([F)V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

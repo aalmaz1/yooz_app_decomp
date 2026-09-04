@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/view/OnReceiveContentListener;)V
-    .registers 2
+    .locals 0
 
     .line 3273
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onReceiveContent(Landroid/view/View;Landroid/view/ContentInfo;)Landroid/view/ContentInfo;
-    .registers 5
+    .locals 2
 
     .line 3280
     invoke-static {p2}, Landroidx/core/view/ContentInfoCompat;->toContentInfoCompat(Landroid/view/ContentInfo;)Landroidx/core/view/ContentInfoCompat;
@@ -51,19 +51,19 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :cond_e
-    if-ne p1, v0, :cond_11
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     return-object p2
 
     .line 3289
-    :cond_11
+    :cond_1
     invoke-virtual {p1}, Landroidx/core/view/ContentInfoCompat;->toContentInfo()Landroid/view/ContentInfo;
 
     move-result-object p1

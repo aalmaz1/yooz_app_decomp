@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat;)V
-    .registers 2
+    .locals 0
 
     .line 479
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCreate()V
-    .registers 2
+    .locals 1
 
     .line 483
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -56,7 +56,7 @@
 .end method
 
 .method public onLoadItem(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompatApi21$ResultWrapper;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

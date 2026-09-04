@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 712
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createBuilder(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Notification$Builder;
-    .registers 3
+    .locals 1
 
     .line 716
     new-instance v0, Landroid/app/Notification$Builder;
@@ -36,7 +36,7 @@
 .end method
 
 .method static setBadgeIconType(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 732
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setBadgeIconType(I)Landroid/app/Notification$Builder;
@@ -47,7 +47,7 @@
 .end method
 
 .method static setColorized(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 727
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setColorized(Z)Landroid/app/Notification$Builder;
@@ -58,7 +58,7 @@
 .end method
 
 .method static setGroupAlertBehavior(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 722
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroupAlertBehavior(I)Landroid/app/Notification$Builder;
@@ -69,7 +69,7 @@
 .end method
 
 .method static setSettingsText(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 738
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setSettingsText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -80,7 +80,7 @@
 .end method
 
 .method static setShortcutId(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 743
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setShortcutId(Ljava/lang/String;)Landroid/app/Notification$Builder;
@@ -91,7 +91,7 @@
 .end method
 
 .method static setTimeoutAfter(Landroid/app/Notification$Builder;J)Landroid/app/Notification$Builder;
-    .registers 3
+    .locals 0
 
     .line 748
     invoke-virtual {p0, p1, p2}, Landroid/app/Notification$Builder;->setTimeoutAfter(J)Landroid/app/Notification$Builder;

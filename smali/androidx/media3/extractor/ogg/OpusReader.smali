@@ -15,21 +15,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/16 v0, 0x8
 
     new-array v1, v0, [B
 
     .line 36
-    fill-array-data v1, :array_12
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/extractor/ogg/OpusReader;->OPUS_ID_HEADER_SIGNATURE:[B
 
     new-array v0, v0, [B
 
     .line 37
-    fill-array-data v0, :array_1a
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/extractor/ogg/OpusReader;->OPUS_COMMENT_HEADER_SIGNATURE:[B
 
@@ -37,7 +37,7 @@
 
     nop
 
-    :array_12
+    :array_0
     .array-data 1
         0x4ft
         0x70t
@@ -49,7 +49,7 @@
         0x64t
     .end array-data
 
-    :array_1a
+    :array_1
     .array-data 1
         0x4ft
         0x70t
@@ -63,7 +63,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Landroidx/media3/extractor/ogg/StreamReader;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method private static peekPacketStartsWith(Landroidx/media3/common/util/ParsableByteArray;[B)Z
-    .registers 6
+    .locals 4
 
     .line 132
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -83,12 +83,12 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_0
 
     return v2
 
     .line 135
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v0
@@ -115,7 +115,7 @@
 .end method
 
 .method public static verifyBitstreamType(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 2
+    .locals 1
 
     .line 44
     sget-object v0, Landroidx/media3/extractor/ogg/OpusReader;->OPUS_ID_HEADER_SIGNATURE:[B
@@ -130,7 +130,7 @@
 
 # virtual methods
 .method protected preparePayload(Landroidx/media3/common/util/ParsableByteArray;)J
-    .registers 4
+    .locals 2
 
     .line 57
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -149,7 +149,7 @@
 .end method
 
 .method protected readHeaders(Landroidx/media3/common/util/ParsableByteArray;JLandroidx/media3/extractor/ogg/StreamReader$SetupData;)Z
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -172,7 +172,7 @@
 
     const/4 p3, 0x1
 
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_1
 
     .line 65
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -200,12 +200,12 @@
     .line 69
     iget-object v0, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     return p3
 
     .line 78
-    :cond_22
+    :cond_0
     new-instance v0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -244,7 +244,7 @@
     return p3
 
     .line 86
-    :cond_43
+    :cond_1
     sget-object p2, Landroidx/media3/extractor/ogg/OpusReader;->OPUS_COMMENT_HEADER_SIGNATURE:[B
 
     invoke-static {p1, p2}, Landroidx/media3/extractor/ogg/OpusReader;->peekPacketStartsWith(Landroidx/media3/common/util/ParsableByteArray;[B)Z
@@ -253,7 +253,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_86
+    if-eqz v0, :cond_4
 
     .line 89
     iget-object v0, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
@@ -263,12 +263,12 @@
     .line 90
     iget-boolean v0, p0, Landroidx/media3/extractor/ogg/OpusReader;->firstCommentHeaderSeen:Z
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_2
 
     return p3
 
     .line 98
-    :cond_56
+    :cond_2
     iput-boolean p3, p0, Landroidx/media3/extractor/ogg/OpusReader;->firstCommentHeaderSeen:Z
 
     .line 99
@@ -293,12 +293,12 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_6d
+    if-nez p1, :cond_3
 
     return p3
 
     .line 109
-    :cond_6d
+    :cond_3
     iget-object p2, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
 
     .line 112
@@ -329,7 +329,7 @@
     return p3
 
     .line 119
-    :cond_86
+    :cond_4
     iget-object p1, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -338,18 +338,18 @@
 .end method
 
 .method protected reset(Z)V
-    .registers 2
+    .locals 0
 
     .line 49
     invoke-super {p0, p1}, Landroidx/media3/extractor/ogg/StreamReader;->reset(Z)V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 51
     iput-boolean p1, p0, Landroidx/media3/extractor/ogg/OpusReader;->firstCommentHeaderSeen:Z
 
-    :cond_8
+    :cond_0
     return-void
 .end method

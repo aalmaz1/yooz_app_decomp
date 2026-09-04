@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,12 +30,12 @@
 
 # virtual methods
 .method public createDecoder(Landroidx/media3/common/Format;)Landroidx/media3/extractor/metadata/MetadataDecoder;
-    .registers 5
+    .locals 3
 
     .line 78
     iget-object p1, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz p1, :cond_68
+    if-eqz p1, :cond_5
 
     .line 80
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -46,95 +46,95 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_7e
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_10
+    :sswitch_0
     const-string v0, "application/x-scte35"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v1, 0x4
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_1b
+    :sswitch_1
     const-string v0, "application/x-emsg"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v1, 0x3
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_26
+    :sswitch_2
     const-string v0, "application/id3"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     const/4 v1, 0x2
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_31
+    :sswitch_3
     const-string v0, "application/x-icy"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_3a
+    :cond_3
     const/4 v1, 0x1
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_3c
+    :sswitch_4
     const-string v0, "application/vnd.dvb.ait"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_4
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_45
+    :cond_4
     const/4 v1, 0x0
 
-    :goto_46
-    packed-switch v1, :pswitch_data_94
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
-    goto :goto_68
+    goto :goto_1
 
     .line 86
-    :pswitch_4a
+    :pswitch_0
     new-instance p1, Landroidx/media3/extractor/metadata/scte35/SpliceInfoDecoder;
 
     invoke-direct {p1}, Landroidx/media3/extractor/metadata/scte35/SpliceInfoDecoder;-><init>()V
@@ -142,7 +142,7 @@
     return-object p1
 
     .line 84
-    :pswitch_50
+    :pswitch_1
     new-instance p1, Landroidx/media3/extractor/metadata/emsg/EventMessageDecoder;
 
     invoke-direct {p1}, Landroidx/media3/extractor/metadata/emsg/EventMessageDecoder;-><init>()V
@@ -150,7 +150,7 @@
     return-object p1
 
     .line 82
-    :pswitch_56
+    :pswitch_2
     new-instance p1, Landroidx/media3/extractor/metadata/id3/Id3Decoder;
 
     invoke-direct {p1}, Landroidx/media3/extractor/metadata/id3/Id3Decoder;-><init>()V
@@ -158,7 +158,7 @@
     return-object p1
 
     .line 88
-    :pswitch_5c
+    :pswitch_3
     new-instance p1, Landroidx/media3/extractor/metadata/icy/IcyDecoder;
 
     invoke-direct {p1}, Landroidx/media3/extractor/metadata/icy/IcyDecoder;-><init>()V
@@ -166,7 +166,7 @@
     return-object p1
 
     .line 90
-    :pswitch_62
+    :pswitch_4
     new-instance p1, Landroidx/media3/extractor/metadata/dvbsi/AppInfoTableDecoder;
 
     invoke-direct {p1}, Landroidx/media3/extractor/metadata/dvbsi/AppInfoTableDecoder;-><init>()V
@@ -174,8 +174,8 @@
     return-object p1
 
     .line 95
-    :cond_68
-    :goto_68
+    :cond_5
+    :goto_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -198,27 +198,27 @@
 
     nop
 
-    :sswitch_data_7e
+    :sswitch_data_0
     .sparse-switch
-        -0x50bb4913 -> :sswitch_3c
-        -0x505c61b5 -> :sswitch_31
-        -0x4a682ec7 -> :sswitch_26
-        0x44ce7ed0 -> :sswitch_1b
-        0x62816bb7 -> :sswitch_10
+        -0x50bb4913 -> :sswitch_4
+        -0x505c61b5 -> :sswitch_3
+        -0x4a682ec7 -> :sswitch_2
+        0x44ce7ed0 -> :sswitch_1
+        0x62816bb7 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_62
-        :pswitch_5c
-        :pswitch_56
-        :pswitch_50
-        :pswitch_4a
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)Z
-    .registers 3
+    .locals 1
 
     .line 68
     iget-object p1, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -230,7 +230,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     const-string v0, "application/x-emsg"
 
@@ -239,7 +239,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     const-string v0, "application/x-scte35"
 
@@ -248,7 +248,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     const-string v0, "application/x-icy"
 
@@ -257,7 +257,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     const-string v0, "application/vnd.dvb.ait"
 
@@ -266,19 +266,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_2e
+    :goto_1
     return p1
 .end method

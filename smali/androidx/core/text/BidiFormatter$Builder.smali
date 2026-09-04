@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Locale;)V
-    .registers 2
+    .locals 0
 
     .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,24 +72,24 @@
 .end method
 
 .method private static getDefaultInstanceFromContext(Z)Landroidx/core/text/BidiFormatter;
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 198
     sget-object p0, Landroidx/core/text/BidiFormatter;->DEFAULT_RTL_INSTANCE:Landroidx/core/text/BidiFormatter;
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     sget-object p0, Landroidx/core/text/BidiFormatter;->DEFAULT_LTR_INSTANCE:Landroidx/core/text/BidiFormatter;
 
-    :goto_7
+    :goto_0
     return-object p0
 .end method
 
 .method private initialize(Z)V
-    .registers 2
+    .locals 0
 
     .line 167
     iput-boolean p1, p0, Landroidx/core/text/BidiFormatter$Builder;->mIsRtlContext:Z
@@ -110,20 +110,20 @@
 
 # virtual methods
 .method public build()Landroidx/core/text/BidiFormatter;
-    .registers 5
+    .locals 4
 
     .line 205
     iget v0, p0, Landroidx/core/text/BidiFormatter$Builder;->mFlags:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/core/text/BidiFormatter$Builder;->mTextDirectionHeuristicCompat:Landroidx/core/text/TextDirectionHeuristicCompat;
 
     sget-object v1, Landroidx/core/text/BidiFormatter;->DEFAULT_TEXT_DIRECTION_HEURISTIC:Landroidx/core/text/TextDirectionHeuristicCompat;
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 207
     iget-boolean v0, p0, Landroidx/core/text/BidiFormatter$Builder;->mIsRtlContext:Z
@@ -135,7 +135,7 @@
     return-object v0
 
     .line 209
-    :cond_12
+    :cond_0
     new-instance v0, Landroidx/core/text/BidiFormatter;
 
     iget-boolean v1, p0, Landroidx/core/text/BidiFormatter$Builder;->mIsRtlContext:Z
@@ -150,7 +150,7 @@
 .end method
 
 .method public setTextDirectionHeuristic(Landroidx/core/text/TextDirectionHeuristicCompat;)Landroidx/core/text/BidiFormatter$Builder;
-    .registers 2
+    .locals 0
 
     .line 193
     iput-object p1, p0, Landroidx/core/text/BidiFormatter$Builder;->mTextDirectionHeuristicCompat:Landroidx/core/text/TextDirectionHeuristicCompat;
@@ -159,9 +159,9 @@
 .end method
 
 .method public stereoReset(Z)Landroidx/core/text/BidiFormatter$Builder;
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 178
     iget p1, p0, Landroidx/core/text/BidiFormatter$Builder;->mFlags:I
@@ -170,16 +170,16 @@
 
     iput p1, p0, Landroidx/core/text/BidiFormatter$Builder;->mFlags:I
 
-    goto :goto_f
+    goto :goto_0
 
     .line 180
-    :cond_9
+    :cond_0
     iget p1, p0, Landroidx/core/text/BidiFormatter$Builder;->mFlags:I
 
     and-int/lit8 p1, p1, -0x3
 
     iput p1, p0, Landroidx/core/text/BidiFormatter$Builder;->mFlags:I
 
-    :goto_f
+    :goto_0
     return-object p0
 .end method

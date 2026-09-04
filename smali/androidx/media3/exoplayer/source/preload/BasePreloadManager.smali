@@ -72,7 +72,7 @@
 
 # direct methods
 .method protected constructor <init>(Ljava/util/Comparator;Landroidx/media3/exoplayer/source/preload/TargetPreloadStatusControl;Landroidx/media3/exoplayer/source/MediaSource$Factory;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -129,14 +129,14 @@
 .end method
 
 .method private maybeStartPreloadNextSource()Z
-    .registers 5
+    .locals 4
 
     .line 296
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->shouldStartPreloadingNextSource()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     .line 297
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
@@ -165,7 +165,7 @@
 
     iput-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->targetPreloadStatusOfCurrentPreloadingSource:Landroidx/media3/exoplayer/source/preload/TargetPreloadStatusControl$PreloadStatus;
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     .line 301
     iget-object v1, v0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -179,12 +179,12 @@
     return v0
 
     .line 304
-    :cond_29
+    :cond_0
     iget-object v0, v0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->clearSourceInternal(Landroidx/media3/exoplayer/source/MediaSource;)V
 
-    :cond_2e
+    :cond_1
     const/4 v0, 0x0
 
     return v0
@@ -193,7 +193,7 @@
 
 # virtual methods
 .method public final add(Landroidx/media3/common/MediaItem;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,7 +215,7 @@
 .end method
 
 .method public final add(Landroidx/media3/exoplayer/source/MediaSource;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -250,13 +250,13 @@
 .end method
 
 .method protected createMediaSourceForPreloading(Landroidx/media3/exoplayer/source/MediaSource;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method
 
 .method public final getMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 3
+    .locals 1
 
     .line 144
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -265,14 +265,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 147
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -287,7 +287,7 @@
 .end method
 
 .method public final getSourceCount()I
-    .registers 2
+    .locals 1
 
     .line 95
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -300,7 +300,7 @@
 .end method
 
 .method protected final getTargetPreloadStatus(Landroidx/media3/exoplayer/source/MediaSource;)Landroidx/media3/exoplayer/source/preload/TargetPreloadStatusControl$PreloadStatus;
-    .registers 4
+    .locals 2
 
     .line 234
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->lock:Ljava/lang/Object;
@@ -308,14 +308,14 @@
     monitor-enter v0
 
     .line 235
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {v1}, Ljava/util/PriorityQueue;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
@@ -334,12 +334,12 @@
 
     iget-object v1, v1, Landroidx/media3/exoplayer/source/preload/BasePreloadManager$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-eq v1, p1, :cond_1e
+    if-eq v1, p1, :cond_0
 
-    goto :goto_22
+    goto :goto_0
 
     .line 239
-    :cond_1e
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->targetPreloadStatusOfCurrentPreloadingSource:Landroidx/media3/exoplayer/source/preload/TargetPreloadStatusControl$PreloadStatus;
 
     monitor-exit v0
@@ -347,27 +347,27 @@
     return-object p1
 
     .line 237
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     monitor-exit v0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :catchall_25
+    :catchall_0
     move-exception p1
 
     .line 240
     monitor-exit v0
-    :try_end_27
-    .catchall {:try_start_3 .. :try_end_27} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final invalidate()V
-    .registers 4
+    .locals 3
 
     .line 126
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->lock:Ljava/lang/Object;
@@ -375,7 +375,7 @@
     monitor-enter v0
 
     .line 127
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {v1}, Ljava/util/PriorityQueue;->clear()V
@@ -392,46 +392,46 @@
     invoke-virtual {v1, v2}, Ljava/util/PriorityQueue;->addAll(Ljava/util/Collection;)Z
 
     .line 129
-    :goto_13
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {v1}, Ljava/util/PriorityQueue;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->maybeStartPreloadNextSource()Z
 
     move-result v1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     .line 130
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {v1}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
 
-    goto :goto_13
+    goto :goto_0
 
     .line 132
-    :cond_27
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_29
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_2b
-    .catchall {:try_start_3 .. :try_end_2b} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method synthetic lambda$onPreloadCompleted$0$androidx-media3-exoplayer-source-preload-BasePreloadManager(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 4
+    .locals 2
 
     .line 215
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->lock:Ljava/lang/Object;
@@ -439,14 +439,14 @@
     monitor-enter v0
 
     .line 216
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {v1}, Ljava/util/PriorityQueue;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
@@ -465,12 +465,12 @@
 
     iget-object v1, v1, Landroidx/media3/exoplayer/source/preload/BasePreloadManager$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-eq v1, p1, :cond_1e
+    if-eq v1, p1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 221
-    :cond_1e
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {p1}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
@@ -482,40 +482,40 @@
 
     move-result p1
 
-    if-nez p1, :cond_31
+    if-nez p1, :cond_1
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->maybeStartPreloadNextSource()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 223
-    :cond_31
+    :cond_1
     monitor-exit v0
 
     return-void
 
     .line 218
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_0
     monitor-exit v0
 
     return-void
 
-    :catchall_35
+    :catchall_0
     move-exception p1
 
     .line 223
     monitor-exit v0
-    :try_end_37
-    .catchall {:try_start_3 .. :try_end_37} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method protected final onPreloadCompleted(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 4
+    .locals 2
 
     .line 213
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->startPreloadingHandler:Landroid/os/Handler;
@@ -533,7 +533,7 @@
 .end method
 
 .method public final release()V
-    .registers 1
+    .locals 0
 
     .line 207
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->reset()V
@@ -545,7 +545,7 @@
 .end method
 
 .method protected releaseInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -554,7 +554,7 @@
 .end method
 
 .method public final remove(Landroidx/media3/common/MediaItem;)Z
-    .registers 4
+    .locals 2
 
     .line 158
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -563,7 +563,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 159
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -588,14 +588,14 @@
 
     return p1
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public final remove(Landroidx/media3/exoplayer/source/MediaSource;)Z
-    .registers 4
+    .locals 2
 
     .line 175
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/MediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -609,7 +609,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 177
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -622,7 +622,7 @@
 
     iget-object v1, v1, Landroidx/media3/exoplayer/source/preload/BasePreloadManager$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-ne p1, v1, :cond_22
+    if-ne p1, v1, :cond_0
 
     .line 179
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -636,14 +636,14 @@
 
     return p1
 
-    :cond_22
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 191
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
@@ -656,12 +656,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -674,10 +674,10 @@
 
     invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->releaseSourceInternal(Landroidx/media3/exoplayer/source/MediaSource;)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 194
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->mediaItemMediaSourceHolderMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
@@ -688,7 +688,7 @@
     monitor-enter v0
 
     .line 196
-    :try_start_24
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/BasePreloadManager;->sourceHolderPriorityQueue:Ljava/util/PriorityQueue;
 
     invoke-virtual {v1}, Ljava/util/PriorityQueue;->clear()V
@@ -703,18 +703,18 @@
 
     return-void
 
-    :catchall_2e
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_30
-    .catchall {:try_start_24 .. :try_end_30} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method protected shouldStartPreloadingNextSource()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

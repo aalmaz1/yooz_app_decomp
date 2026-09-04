@@ -60,13 +60,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
     new-array v1, v1, [I
 
     .line 41
-    fill-array-data v1, :array_28
+    fill-array-data v1, :array_0
 
     sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
@@ -117,7 +117,7 @@
 
     return-void
 
-    :array_28
+    :array_0
     .array-data 4
         0xa
         0x3
@@ -125,7 +125,7 @@
 .end method
 
 .method static makeCustomSpline(Ljava/lang/String;Landroid/util/SparseArray;)Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -146,7 +146,7 @@
 .end method
 
 .method static makeSpline(Ljava/lang/String;J)Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;
-    .registers 5
+    .locals 2
 
     .line 130
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -157,344 +157,344 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_f0
+    sparse-switch v0, :sswitch_data_0
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :sswitch_d
+    :sswitch_0
     const-string v0, "alpha"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_17
+    if-nez p0, :cond_0
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :cond_17
+    :cond_0
     const/16 v1, 0xb
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :sswitch_1b
+    :sswitch_1
     const-string/jumbo v0, "transitionPathRotate"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_26
+    if-nez p0, :cond_1
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :cond_26
+    :cond_1
     const/16 v1, 0xa
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :sswitch_2a
+    :sswitch_2
     const-string v0, "elevation"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_34
+    if-nez p0, :cond_2
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :cond_34
+    :cond_2
     const/16 v1, 0x9
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :sswitch_38
+    :sswitch_3
     const-string v0, "rotation"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_42
+    if-nez p0, :cond_3
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :cond_42
+    :cond_3
     const/16 v1, 0x8
 
-    goto/16 :goto_a0
+    goto/16 :goto_0
 
-    :sswitch_46
+    :sswitch_4
     const-string v0, "scaleY"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_4f
+    if-nez p0, :cond_4
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_4f
+    :cond_4
     const/4 v1, 0x7
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_51
+    :sswitch_5
     const-string v0, "scaleX"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_5a
+    if-nez p0, :cond_5
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_5a
+    :cond_5
     const/4 v1, 0x6
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_5c
+    :sswitch_6
     const-string v0, "progress"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_65
+    if-nez p0, :cond_6
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_65
+    :cond_6
     const/4 v1, 0x5
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_67
+    :sswitch_7
     const-string/jumbo v0, "translationZ"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_71
+    if-nez p0, :cond_7
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_71
+    :cond_7
     const/4 v1, 0x4
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_73
+    :sswitch_8
     const-string/jumbo v0, "translationY"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_7d
+    if-nez p0, :cond_8
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_7d
+    :cond_8
     const/4 v1, 0x3
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_7f
+    :sswitch_9
     const-string/jumbo v0, "translationX"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_89
+    if-nez p0, :cond_9
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_89
+    :cond_9
     const/4 v1, 0x2
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_8b
+    :sswitch_a
     const-string v0, "rotationY"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_94
+    if-nez p0, :cond_a
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_94
+    :cond_a
     const/4 v1, 0x1
 
-    goto :goto_a0
+    goto :goto_0
 
-    :sswitch_96
+    :sswitch_b
     const-string v0, "rotationX"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_9f
+    if-nez p0, :cond_b
 
-    goto :goto_a0
+    goto :goto_0
 
-    :cond_9f
+    :cond_b
     const/4 v1, 0x0
 
-    :goto_a0
-    packed-switch v1, :pswitch_data_122
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 132
-    :pswitch_a5
+    :pswitch_0
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$AlphaSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$AlphaSet;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 147
-    :pswitch_ab
+    :pswitch_1
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$PathRotate;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$PathRotate;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 135
-    :pswitch_b1
+    :pswitch_2
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ElevationSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ElevationSet;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 138
-    :pswitch_b7
+    :pswitch_3
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$RotationSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$RotationSet;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 153
-    :pswitch_bd
+    :pswitch_4
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ScaleYset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ScaleYset;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 150
-    :pswitch_c3
+    :pswitch_5
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ScaleXset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ScaleXset;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 165
-    :pswitch_c9
+    :pswitch_6
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ProgressSet;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ProgressSet;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 162
-    :pswitch_cf
+    :pswitch_7
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$TranslationZset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$TranslationZset;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 159
-    :pswitch_d5
+    :pswitch_8
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$TranslationYset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$TranslationYset;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 156
-    :pswitch_db
+    :pswitch_9
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$TranslationXset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$TranslationXset;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 144
-    :pswitch_e1
+    :pswitch_a
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$RotationYset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$RotationYset;-><init>()V
 
-    goto :goto_ec
+    goto :goto_1
 
     .line 141
-    :pswitch_e7
+    :pswitch_b
     new-instance p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$RotationXset;
 
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$RotationXset;-><init>()V
 
     .line 170
-    :goto_ec
+    :goto_1
     invoke-virtual {p0, p1, p2}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->setStartTime(J)V
 
     return-object p0
 
-    :sswitch_data_f0
+    :sswitch_data_0
     .sparse-switch
-        -0x4a771f66 -> :sswitch_96
-        -0x4a771f65 -> :sswitch_8b
-        -0x490b9c39 -> :sswitch_7f
-        -0x490b9c38 -> :sswitch_73
-        -0x490b9c37 -> :sswitch_67
-        -0x3bab3dd3 -> :sswitch_5c
-        -0x3621dfb2 -> :sswitch_51
-        -0x3621dfb1 -> :sswitch_46
-        -0x266f082 -> :sswitch_38
-        -0x42d1a3 -> :sswitch_2a
-        0x2382115 -> :sswitch_1b
-        0x589b15e -> :sswitch_d
+        -0x4a771f66 -> :sswitch_b
+        -0x4a771f65 -> :sswitch_a
+        -0x490b9c39 -> :sswitch_9
+        -0x490b9c38 -> :sswitch_8
+        -0x490b9c37 -> :sswitch_7
+        -0x3bab3dd3 -> :sswitch_6
+        -0x3621dfb2 -> :sswitch_5
+        -0x3621dfb1 -> :sswitch_4
+        -0x266f082 -> :sswitch_3
+        -0x42d1a3 -> :sswitch_2
+        0x2382115 -> :sswitch_1
+        0x589b15e -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_122
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_e7
-        :pswitch_e1
-        :pswitch_db
-        :pswitch_d5
-        :pswitch_cf
-        :pswitch_c9
-        :pswitch_c3
-        :pswitch_bd
-        :pswitch_b7
-        :pswitch_b1
-        :pswitch_ab
-        :pswitch_a5
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method protected calcWave(F)F
-    .registers 5
+    .locals 3
 
     .line 100
     iget v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mWaveShape:I
@@ -503,7 +503,7 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    packed-switch v0, :pswitch_data_42
+    packed-switch v0, :pswitch_data_0
 
     .line 103
     sget v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->VAL_2PI:F
@@ -520,7 +520,7 @@
 
     return p1
 
-    :pswitch_13
+    :pswitch_0
     const/high16 v0, 0x40800000    # 4.0f
 
     mul-float/2addr p1, v0
@@ -538,13 +538,13 @@
 
     mul-float/2addr p1, p1
 
-    :goto_1f
+    :goto_0
     sub-float/2addr v2, p1
 
     return v2
 
     .line 113
-    :pswitch_21
+    :pswitch_1
     sget v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->VAL_2PI:F
 
     mul-float/2addr p1, v0
@@ -559,16 +559,16 @@
 
     return p1
 
-    :pswitch_2b
+    :pswitch_2
     mul-float/2addr p1, v1
 
     add-float/2addr p1, v2
 
     rem-float/2addr p1, v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :pswitch_2f
+    :pswitch_3
     mul-float/2addr p1, v1
 
     add-float/2addr p1, v2
@@ -580,15 +580,15 @@
     return p1
 
     .line 107
-    :pswitch_34
+    :pswitch_4
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result p1
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 105
-    :pswitch_39
+    :pswitch_5
     sget v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->VAL_2PI:F
 
     mul-float/2addr p1, v0
@@ -601,19 +601,19 @@
 
     nop
 
-    :pswitch_data_42
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_39
-        :pswitch_34
-        :pswitch_2f
-        :pswitch_2b
-        :pswitch_21
-        :pswitch_13
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public get(FJLandroid/view/View;Landroidx/constraintlayout/motion/widget/KeyCache;)F
-    .registers 24
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -649,7 +649,7 @@
 
     const/4 v11, 0x0
 
-    if-nez v9, :cond_23
+    if-nez v9, :cond_0
 
     .line 73
     iput-boolean v11, v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mContinue:Z
@@ -660,14 +660,14 @@
     return v1
 
     .line 76
-    :cond_23
+    :cond_0
     iget v5, v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->last_cycle:F
 
     invoke-static {v5}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v5
 
-    if-eqz v5, :cond_3b
+    if-eqz v5, :cond_1
 
     .line 77
     iget-object v5, v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mType:Ljava/lang/String;
@@ -683,13 +683,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3b
+    if-eqz v5, :cond_1
 
     .line 79
     iput v8, v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->last_cycle:F
 
     .line 82
-    :cond_3b
+    :cond_1
     iget-wide v12, v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->last_time:J
 
     sub-long v12, v1, v12
@@ -750,30 +750,30 @@
 
     cmpl-float v1, v1, v8
 
-    if-nez v1, :cond_73
+    if-nez v1, :cond_3
 
-    if-eqz v9, :cond_71
+    if-eqz v9, :cond_2
 
-    goto :goto_73
+    goto :goto_0
 
-    :cond_71
+    :cond_2
     move v6, v11
 
-    goto :goto_74
+    goto :goto_1
 
-    :cond_73
-    :goto_73
+    :cond_3
+    :goto_0
     const/4 v6, 0x1
 
     .line 90
-    :goto_74
+    :goto_1
     iput-boolean v6, v0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mContinue:Z
 
     return v2
 .end method
 
 .method public getCurveFit()Landroidx/constraintlayout/motion/utils/CurveFit;
-    .registers 2
+    .locals 1
 
     .line 121
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mCurveFit:Landroidx/constraintlayout/motion/utils/CurveFit;
@@ -782,7 +782,7 @@
 .end method
 
 .method public setPoint(IFFIF)V
-    .registers 8
+    .locals 2
 
     .line 179
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mTimePoints:[I
@@ -833,7 +833,7 @@
 .end method
 
 .method protected setStartTime(J)V
-    .registers 3
+    .locals 0
 
     .line 175
     iput-wide p1, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->last_time:J
@@ -842,7 +842,7 @@
 .end method
 
 .method public setType(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 64
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mType:Ljava/lang/String;
@@ -851,12 +851,12 @@
 .end method
 
 .method public setup(I)V
-    .registers 13
+    .locals 11
 
     .line 188
     iget v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->count:I
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 189
     new-instance p1, Ljava/lang/StringBuilder;
@@ -882,7 +882,7 @@
     return-void
 
     .line 192
-    :cond_1b
+    :cond_0
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mTimePoints:[I
 
     iget-object v2, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mValues:[[F
@@ -900,12 +900,12 @@
     move v1, v4
 
     .line 194
-    :goto_27
+    :goto_0
     iget-object v2, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mTimePoints:[I
 
     array-length v5, v2
 
-    if-ge v0, v5, :cond_39
+    if-ge v0, v5, :cond_2
 
     .line 195
     aget v5, v2, v0
@@ -914,22 +914,22 @@
 
     aget v2, v2, v6
 
-    if-eq v5, v2, :cond_36
+    if-eq v5, v2, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    :cond_36
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_39
-    if-nez v1, :cond_3c
+    :cond_2
+    if-nez v1, :cond_3
 
     move v1, v3
 
     .line 202
-    :cond_3c
+    :cond_3
     new-array v0, v1, [D
 
     const/4 v2, 0x2
@@ -956,12 +956,12 @@
     move v6, v5
 
     .line 206
-    :goto_50
+    :goto_1
     iget v7, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->count:I
 
-    if-ge v5, v7, :cond_88
+    if-ge v5, v7, :cond_5
 
-    if-lez v5, :cond_61
+    if-lez v5, :cond_4
 
     .line 207
     iget-object v7, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mTimePoints:[I
@@ -972,12 +972,12 @@
 
     aget v7, v7, v9
 
-    if-ne v8, v7, :cond_61
+    if-ne v8, v7, :cond_4
 
-    goto :goto_85
+    goto :goto_2
 
     .line 210
-    :cond_61
+    :cond_4
     iget-object v7, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mTimePoints:[I
 
     aget v7, v7, v5
@@ -1019,13 +1019,13 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    :goto_85
+    :goto_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_50
+    goto :goto_1
 
     .line 216
-    :cond_88
+    :cond_5
     invoke-static {p1, v0, v1}, Landroidx/constraintlayout/motion/utils/CurveFit;->get(I[D[[D)Landroidx/constraintlayout/motion/utils/CurveFit;
 
     move-result-object p1
@@ -1036,7 +1036,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 55
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->mType:Ljava/lang/String;
@@ -1051,10 +1051,10 @@
     const/4 v2, 0x0
 
     .line 57
-    :goto_a
+    :goto_0
     iget v3, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;->count:I
 
-    if-ge v2, v3, :cond_44
+    if-ge v2, v3, :cond_0
 
     .line 58
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1109,8 +1109,8 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_44
+    :cond_0
     return-object v0
 .end method

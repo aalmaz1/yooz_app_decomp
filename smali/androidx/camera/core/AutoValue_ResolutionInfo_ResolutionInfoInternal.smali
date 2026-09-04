@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/util/Size;Landroid/graphics/Rect;I)V
-    .registers 4
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Landroidx/camera/core/ResolutionInfo$ResolutionInfoInternal;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/util/Size;Landroid/graphics/Rect;ILandroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal$1;)V
-    .registers 5
+    .locals 0
 
     .line 11
     invoke-direct {p0, p1, p2, p3}, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;-><init>(Landroid/util/Size;Landroid/graphics/Rect;I)V
@@ -50,21 +50,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 60
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/ResolutionInfo$ResolutionInfoInternal;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 61
     check-cast p1, Landroidx/camera/core/ResolutionInfo$ResolutionInfoInternal;
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;->cropRect:Landroid/graphics/Rect;
 
@@ -93,7 +93,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;->rotationDegrees:I
 
@@ -102,22 +102,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_2c
+    if-ne v1, p1, :cond_1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v0, v2
 
-    :goto_2d
+    :goto_0
     return v0
 
-    :cond_2e
+    :cond_2
     return v2
 .end method
 
 .method getCropRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 37
     iget-object v0, p0, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;->cropRect:Landroid/graphics/Rect;
@@ -126,7 +126,7 @@
 .end method
 
 .method getResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 31
     iget-object v0, p0, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;->resolution:Landroid/util/Size;
@@ -135,7 +135,7 @@
 .end method
 
 .method getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 43
     iget v0, p0, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;->rotationDegrees:I
@@ -144,7 +144,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 73
     iget-object v0, p0, Landroidx/camera/core/AutoValue_ResolutionInfo_ResolutionInfoInternal;->resolution:Landroid/util/Size;
@@ -179,7 +179,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 48
     new-instance v0, Ljava/lang/StringBuilder;

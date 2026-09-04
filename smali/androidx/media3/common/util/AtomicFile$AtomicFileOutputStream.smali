@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -60,11 +60,11 @@
     .line 169
     iget-boolean v0, p0, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;->closed:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 172
@@ -74,7 +74,7 @@
     invoke-virtual {p0}, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;->flush()V
 
     .line 175
-    :try_start_b
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;->fileOutputStream:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
@@ -82,12 +82,12 @@
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/io/FileDescriptor;->sync()V
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_15
+    :catch_0
     move-exception v0
 
     const-string v1, "AtomicFile"
@@ -98,7 +98,7 @@
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 179
-    :goto_1d
+    :goto_0
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;->fileOutputStream:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
@@ -107,7 +107,7 @@
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -123,7 +123,7 @@
 .end method
 
 .method public write(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -139,7 +139,7 @@
 .end method
 
 .method public write([B)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -155,7 +155,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

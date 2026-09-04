@@ -43,7 +43,7 @@
 .end method
 
 .method public toBitmap()Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 1
 
     .line 154
     invoke-static {p0}, Landroidx/camera/core/internal/utils/ImageUtil;->createBitmapFromImageProxy(Landroidx/camera/core/ImageProxy;)Landroid/graphics/Bitmap;

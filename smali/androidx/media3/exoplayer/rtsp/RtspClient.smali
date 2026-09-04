@@ -93,7 +93,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspClient$SessionInfoListener;Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;Ljava/lang/String;Landroid/net/Uri;Ljavax/net/SocketFactory;Z)V
-    .registers 7
+    .locals 0
 
     .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -180,7 +180,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/rtsp/RtspClient;)I
-    .registers 1
+    .locals 0
 
     .line 76
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspState:I
@@ -189,7 +189,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageChannel:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -198,7 +198,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/exoplayer/rtsp/RtspClient;I)I
-    .registers 2
+    .locals 0
 
     .line 76
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspState:I
@@ -207,7 +207,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageSender:Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;
@@ -216,7 +216,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspClient$SessionInfoListener;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->sessionInfoListener:Landroidx/media3/exoplayer/rtsp/RtspClient$SessionInfoListener;
@@ -225,7 +225,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->uri:Landroid/net/Uri;
@@ -234,7 +234,7 @@
 .end method
 
 .method static synthetic access$1302(Landroidx/media3/exoplayer/rtsp/RtspClient;Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 2
+    .locals 0
 
     .line 76
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->uri:Landroid/net/Uri;
@@ -243,7 +243,7 @@
 .end method
 
 .method static synthetic access$1400(Landroidx/media3/exoplayer/rtsp/RtspClient;)Z
-    .registers 1
+    .locals 0
 
     .line 76
     iget-boolean p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->receivedAuthorizationRequest:Z
@@ -252,7 +252,7 @@
 .end method
 
 .method static synthetic access$1402(Landroidx/media3/exoplayer/rtsp/RtspClient;Z)Z
-    .registers 2
+    .locals 0
 
     .line 76
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->receivedAuthorizationRequest:Z
@@ -261,7 +261,7 @@
 .end method
 
 .method static synthetic access$1500(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->keepAliveMonitor:Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;
@@ -270,7 +270,7 @@
 .end method
 
 .method static synthetic access$1502(Landroidx/media3/exoplayer/rtsp/RtspClient;Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;)Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;
-    .registers 2
+    .locals 0
 
     .line 76
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->keepAliveMonitor:Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;
@@ -279,7 +279,7 @@
 .end method
 
 .method static synthetic access$1600(Ljava/util/List;)Z
-    .registers 1
+    .locals 0
 
     .line 76
     invoke-static {p0}, Landroidx/media3/exoplayer/rtsp/RtspClient;->serverSupportsDescribe(Ljava/util/List;)Z
@@ -290,7 +290,7 @@
 .end method
 
 .method static synthetic access$1700(Landroidx/media3/exoplayer/rtsp/RtspDescribeResponse;Landroid/net/Uri;)Lcom/google/common/collect/ImmutableList;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspClient;->buildTrackList(Landroidx/media3/exoplayer/rtsp/RtspDescribeResponse;Landroid/net/Uri;)Lcom/google/common/collect/ImmutableList;
@@ -301,7 +301,7 @@
 .end method
 
 .method static synthetic access$1802(Landroidx/media3/exoplayer/rtsp/RtspClient;Z)Z
-    .registers 2
+    .locals 0
 
     .line 76
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->hasUpdatedTimelineAndTracks:Z
@@ -310,7 +310,7 @@
 .end method
 
 .method static synthetic access$1900(Landroidx/media3/exoplayer/rtsp/RtspClient;)J
-    .registers 3
+    .locals 2
 
     .line 76
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->sessionTimeoutMs:J
@@ -319,7 +319,7 @@
 .end method
 
 .method static synthetic access$1902(Landroidx/media3/exoplayer/rtsp/RtspClient;J)J
-    .registers 3
+    .locals 0
 
     .line 76
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->sessionTimeoutMs:J
@@ -328,7 +328,7 @@
 .end method
 
 .method static synthetic access$2000(Landroidx/media3/exoplayer/rtsp/RtspClient;)V
-    .registers 1
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/RtspClient;->continueSetupRtspTrack()V
@@ -337,7 +337,7 @@
 .end method
 
 .method static synthetic access$202(Landroidx/media3/exoplayer/rtsp/RtspClient;Z)Z
-    .registers 2
+    .locals 0
 
     .line 76
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->hasPendingPauseRequest:Z
@@ -346,7 +346,7 @@
 .end method
 
 .method static synthetic access$2100(Landroidx/media3/exoplayer/rtsp/RtspClient;)J
-    .registers 3
+    .locals 2
 
     .line 76
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->pendingSeekPositionUs:J
@@ -355,7 +355,7 @@
 .end method
 
 .method static synthetic access$2102(Landroidx/media3/exoplayer/rtsp/RtspClient;J)J
-    .registers 3
+    .locals 0
 
     .line 76
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->pendingSeekPositionUs:J
@@ -364,7 +364,7 @@
 .end method
 
 .method static synthetic access$2200(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->playbackEventListener:Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;
@@ -373,7 +373,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/RtspClient;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->sessionId:Ljava/lang/String;
@@ -382,7 +382,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/exoplayer/rtsp/RtspClient;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 76
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->sessionId:Ljava/lang/String;
@@ -391,7 +391,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/rtsp/RtspClient;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->userAgent:Ljava/lang/String;
@@ -400,7 +400,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspAuthenticationInfo:Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;
@@ -409,7 +409,7 @@
 .end method
 
 .method static synthetic access$502(Landroidx/media3/exoplayer/rtsp/RtspClient;Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;)Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;
-    .registers 2
+    .locals 0
 
     .line 76
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspAuthenticationInfo:Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;
@@ -418,7 +418,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspAuthUserInfo:Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;
@@ -427,7 +427,7 @@
 .end method
 
 .method static synthetic access$602(Landroidx/media3/exoplayer/rtsp/RtspClient;Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;)Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;
-    .registers 2
+    .locals 0
 
     .line 76
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspAuthUserInfo:Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;
@@ -436,7 +436,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/rtsp/RtspClient;Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspClient;->dispatchRtspError(Ljava/lang/Throwable;)V
@@ -445,7 +445,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/rtsp/RtspClient;)Landroid/util/SparseArray;
-    .registers 1
+    .locals 0
 
     .line 76
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->pendingRequests:Landroid/util/SparseArray;
@@ -454,7 +454,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/exoplayer/rtsp/RtspClient;Ljava/util/List;)V
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspClient;->maybeLogMessage(Ljava/util/List;)V
@@ -463,7 +463,7 @@
 .end method
 
 .method private static buildTrackList(Landroidx/media3/exoplayer/rtsp/RtspDescribeResponse;Landroid/net/Uri;)Lcom/google/common/collect/ImmutableList;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -484,7 +484,7 @@
     const/4 v1, 0x0
 
     .line 361
-    :goto_6
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtspDescribeResponse;->sessionDescription:Landroidx/media3/exoplayer/rtsp/SessionDescription;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/rtsp/SessionDescription;->mediaDescriptionList:Lcom/google/common/collect/ImmutableList;
@@ -493,7 +493,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_2d
+    if-ge v1, v2, :cond_1
 
     .line 362
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtspDescribeResponse;->sessionDescription:Landroidx/media3/exoplayer/rtsp/SessionDescription;
@@ -512,7 +512,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_0
 
     .line 366
     new-instance v3, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;
@@ -523,13 +523,13 @@
 
     invoke-virtual {v0, v3}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    :cond_2a
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 370
-    :cond_2d
+    :cond_1
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
@@ -538,7 +538,7 @@
 .end method
 
 .method private continueSetupRtspTrack()V
-    .registers 5
+    .locals 4
 
     .line 303
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->pendingSetupRtpLoadInfos:Ljava/util/ArrayDeque;
@@ -549,7 +549,7 @@
 
     check-cast v0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 305
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->playbackEventListener:Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;
@@ -559,7 +559,7 @@
     return-void
 
     .line 308
-    :cond_10
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageSender:Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->getTrackUri()Landroid/net/Uri;
@@ -578,41 +578,41 @@
 .end method
 
 .method private dispatchRtspError(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 326
     instance-of v0, p1, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 327
     move-object v0, p1
 
     check-cast v0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
 
-    goto :goto_d
+    goto :goto_0
 
     .line 328
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
 
     invoke-direct {v0, p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;-><init>(Ljava/lang/Throwable;)V
 
     .line 330
-    :goto_d
+    :goto_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->hasUpdatedTimelineAndTracks:Z
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 332
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->playbackEventListener:Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;
 
     invoke-interface {p1, v0}, Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;->onPlaybackError(Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;)V
 
-    goto :goto_24
+    goto :goto_1
 
     .line 334
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->sessionInfoListener:Landroidx/media3/exoplayer/rtsp/RtspClient$SessionInfoListener;
 
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -625,12 +625,12 @@
 
     invoke-interface {v0, v1, p1}, Landroidx/media3/exoplayer/rtsp/RtspClient$SessionInfoListener;->onSessionTimelineRequestFailed(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_24
+    :goto_1
     return-void
 .end method
 
 .method private getSocket(Landroid/net/Uri;)Ljava/net/Socket;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -642,16 +642,16 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 320
@@ -659,19 +659,19 @@
 
     move-result v0
 
-    if-lez v0, :cond_17
+    if-lez v0, :cond_1
 
     invoke-virtual {p1}, Landroid/net/Uri;->getPort()I
 
     move-result v0
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_17
+    :cond_1
     const/16 v0, 0x22a
 
     .line 321
-    :goto_19
+    :goto_1
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->socketFactory:Ljavax/net/SocketFactory;
 
     invoke-virtual {p1}, Landroid/net/Uri;->getHost()Ljava/lang/String;
@@ -692,7 +692,7 @@
 .end method
 
 .method private maybeLogMessage(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -705,7 +705,7 @@
     .line 312
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->debugLoggingEnabled:Z
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     const-string v0, "\n"
 
@@ -722,12 +722,12 @@
 
     invoke-static {v0, p1}, Landroidx/media3/common/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method private static serverSupportsDescribe(Ljava/util/List;)Z
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -742,7 +742,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     const/4 v0, 0x2
 
@@ -754,27 +754,27 @@
 
     move-result p0
 
-    if-eqz p0, :cond_12
+    if-eqz p0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_15
+    :goto_1
     return p0
 .end method
 
 
 # virtual methods
 .method public close()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -784,7 +784,7 @@
     .line 268
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->keepAliveMonitor:Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 271
     invoke-virtual {v0}, Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;->close()V
@@ -810,7 +810,7 @@
     invoke-virtual {v0, v1, v2}, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->sendTeardownRequest(Landroid/net/Uri;Ljava/lang/String;)V
 
     .line 275
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageChannel:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->close()V
@@ -819,7 +819,7 @@
 .end method
 
 .method public getState()I
-    .registers 2
+    .locals 1
 
     .line 221
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspState:I
@@ -828,7 +828,7 @@
 .end method
 
 .method public registerInterleavedDataChannel(ILandroidx/media3/exoplayer/rtsp/RtspMessageChannel$InterleavedBinaryDataListener;)V
-    .registers 4
+    .locals 1
 
     .line 299
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageChannel:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -839,7 +839,7 @@
 .end method
 
 .method public retryWithRtpTcp()V
-    .registers 4
+    .locals 3
 
     .line 285
     :try_start_0
@@ -877,12 +877,12 @@
 
     .line 290
     iput-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspAuthenticationInfo:Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;
-    :try_end_20
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :catch_21
+    :catch_0
     move-exception v0
 
     .line 292
@@ -894,23 +894,23 @@
 
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/rtsp/RtspClient$PlaybackEventListener;->onPlaybackError(Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;)V
 
-    :goto_2c
+    :goto_0
     return-void
 .end method
 
 .method public seekToUs(J)V
-    .registers 6
+    .locals 3
 
     .line 260
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->rtspState:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->hasPendingPauseRequest:Z
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 261
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageSender:Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;
@@ -928,14 +928,14 @@
     invoke-virtual {v0, v1, v2}, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->sendPauseRequest(Landroid/net/Uri;Ljava/lang/String;)V
 
     .line 263
-    :cond_18
+    :cond_0
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->pendingSeekPositionUs:J
 
     return-void
 .end method
 
 .method public setupSelectedTracks(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -957,7 +957,7 @@
 .end method
 
 .method public signalPlaybackEnded()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -968,7 +968,7 @@
 .end method
 
 .method public start()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -986,8 +986,8 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->open(Ljava/net/Socket;)V
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_b} :catch_15
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 216
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageSender:Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;
@@ -1000,7 +1000,7 @@
 
     return-void
 
-    :catch_15
+    :catch_0
     move-exception v0
 
     .line 213
@@ -1013,7 +1013,7 @@
 .end method
 
 .method public startPlayback(J)V
-    .registers 6
+    .locals 3
 
     .line 242
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient;->messageSender:Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;

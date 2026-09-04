@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 747
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,7 +104,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;Landroidx/media3/exoplayer/upstream/CmcdData$1;)V
-    .registers 3
+    .locals 0
 
     .line 581
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;-><init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest$Builder;)V
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public populateCmcdDataMap(Lcom/google/common/collect/ArrayListMultimap;)V
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -138,7 +138,7 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 766
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,14 +160,14 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 768
-    :cond_24
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;->measuredThroughputInKbps:J
 
     const-wide/32 v5, -0x7fffffff
 
     cmp-long v1, v1, v5
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     .line 769
     new-instance v1, Ljava/lang/StringBuilder;
@@ -189,12 +189,12 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 772
-    :cond_41
+    :cond_1
     iget-wide v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;->deadlineMs:J
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_2
 
     .line 773
     new-instance v1, Ljava/lang/StringBuilder;
@@ -216,10 +216,10 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 775
-    :cond_5b
+    :cond_2
     iget-boolean v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;->startup:Z
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_3
 
     const-string v1, "su"
 
@@ -227,7 +227,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 778
-    :cond_64
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;->nextObjectRequest:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -242,7 +242,7 @@
 
     const-string v5, "%s=\"%s\""
 
-    if-nez v1, :cond_82
+    if-nez v1, :cond_4
 
     new-array v1, v4, [Ljava/lang/Object;
 
@@ -264,14 +264,14 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 783
-    :cond_82
+    :cond_4
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;->nextRangeRequest:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_9b
+    if-nez v1, :cond_5
 
     new-array v1, v4, [Ljava/lang/Object;
 
@@ -293,7 +293,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 788
-    :cond_9b
+    :cond_5
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdRequest;->customDataList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -303,13 +303,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_ab
+    if-nez v1, :cond_6
 
     const-string v1, "CMCD-Request"
 
     .line 791
     invoke-virtual {p1, v1, v0}, Lcom/google/common/collect/ArrayListMultimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
 
-    :cond_ab
+    :cond_6
     return-void
 .end method

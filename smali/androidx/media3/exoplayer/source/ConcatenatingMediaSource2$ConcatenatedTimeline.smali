@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/ImmutableList;ZZJJLjava/lang/Object;)V
-    .registers 12
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -113,7 +113,7 @@
 .end method
 
 .method private getChildIndexByPeriodIndex(I)I
-    .registers 4
+    .locals 2
 
     .line 664
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->firstPeriodIndices:Lcom/google/common/collect/ImmutableList;
@@ -136,7 +136,7 @@
 .end method
 
 .method private getPeriodDurationUs(Landroidx/media3/common/Timeline$Period;I)J
-    .registers 7
+    .locals 4
 
     .line 670
     iget-wide v0, p1, Landroidx/media3/common/Timeline$Period;->durationUs:J
@@ -145,12 +145,12 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     return-wide v2
 
     .line 673
-    :cond_c
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->periodOffsetsInWindowUs:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {p1, p2}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -172,15 +172,15 @@
 
     add-int/lit8 p1, p1, -0x1
 
-    if-ne p2, p1, :cond_25
+    if-ne p2, p1, :cond_1
 
     .line 676
     iget-wide p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->durationUs:J
 
-    goto :goto_33
+    goto :goto_0
 
     .line 677
-    :cond_25
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->periodOffsetsInWindowUs:Lcom/google/common/collect/ImmutableList;
 
     add-int/lit8 p2, p2, 0x1
@@ -195,7 +195,7 @@
 
     move-result-wide p1
 
-    :goto_33
+    :goto_0
     sub-long/2addr p1, v0
 
     return-wide p1
@@ -204,14 +204,14 @@
 
 # virtual methods
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 5
+    .locals 3
 
     .line 643
     instance-of v0, p1, Landroid/util/Pair;
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2
 
     move-object v0, p1
 
@@ -221,12 +221,12 @@
 
     instance-of v0, v0, Ljava/lang/Integer;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
-    goto :goto_34
+    goto :goto_0
 
     .line 646
-    :cond_f
+    :cond_0
     invoke-static {p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2;->access$100(Ljava/lang/Object;)I
 
     move-result v0
@@ -249,12 +249,12 @@
 
     move-result p1
 
-    if-ne p1, v1, :cond_26
+    if-ne p1, v1, :cond_1
 
-    goto :goto_34
+    goto :goto_0
 
     .line 651
-    :cond_26
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->firstPeriodIndices:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v1, v0}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -269,13 +269,13 @@
 
     add-int v1, v0, p1
 
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 7
+    .locals 3
 
     .line 629
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->getChildIndexByPeriodIndex(I)I
@@ -335,7 +335,7 @@
 
     iput-wide v1, p2, Landroidx/media3/common/Timeline$Period;->durationUs:J
 
-    if-eqz p3, :cond_42
+    if-eqz p3, :cond_0
 
     .line 636
     iget-object p1, p2, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
@@ -350,12 +350,12 @@
 
     iput-object p1, p2, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
 
-    :cond_42
+    :cond_0
     return-object p2
 .end method
 
 .method public getPeriodByUid(Ljava/lang/Object;Landroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 7
+    .locals 4
 
     .line 614
     invoke-static {p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2;->access$100(Ljava/lang/Object;)I
@@ -433,7 +433,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 590
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->periodOffsetsInWindowUs:Lcom/google/common/collect/ImmutableList;
@@ -446,7 +446,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 656
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$ConcatenatedTimeline;->getChildIndexByPeriodIndex(I)I
@@ -491,7 +491,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 27
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -561,7 +561,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public consume(JLandroidx/media3/common/util/ParsableByteArray;)V
-    .registers 8
+    .locals 4
 
     .line 67
     invoke-virtual {p3}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -63,12 +63,12 @@
 
     const/16 v1, 0x9
 
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_0
 
     return-void
 
     .line 70
-    :cond_9
+    :cond_0
     invoke-virtual {p3}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result v0
@@ -85,39 +85,39 @@
 
     const/16 v3, 0x1b2
 
-    if-ne v0, v3, :cond_26
+    if-ne v0, v3, :cond_1
 
     const v0, 0x47413934
 
-    if-ne v1, v0, :cond_26
+    if-ne v1, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-ne v2, v0, :cond_26
+    if-ne v2, v0, :cond_1
 
     .line 76
     iget-object v0, p0, Landroidx/media3/extractor/ts/UserDataReader;->outputs:[Landroidx/media3/extractor/TrackOutput;
 
     invoke-static {p1, p2, p3, v0}, Landroidx/media3/extractor/CeaUtil;->consumeCcData(JLandroidx/media3/common/util/ParsableByteArray;[Landroidx/media3/extractor/TrackOutput;)V
 
-    :cond_26
+    :cond_1
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 11
+    .locals 8
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 44
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/extractor/ts/UserDataReader;->outputs:[Landroidx/media3/extractor/TrackOutput;
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_7a
+    if-ge v1, v2, :cond_2
 
     .line 45
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -152,7 +152,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_30
+    if-nez v5, :cond_1
 
     const-string v5, "application/cea-708"
 
@@ -161,20 +161,20 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_0
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2e
+    :cond_0
     move v5, v0
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_1
     const/4 v5, 0x1
 
-    :goto_31
+    :goto_2
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "Invalid closed caption MIME type provided: "
@@ -254,8 +254,8 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_7a
+    :cond_2
     return-void
 .end method

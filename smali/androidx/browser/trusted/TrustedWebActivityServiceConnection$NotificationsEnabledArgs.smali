@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/TrustedWebActivityServiceConnection$NotificationsEnabledArgs;
-    .registers 3
+    .locals 2
 
     const-string v0, "android.support.customtabs.trusted.CHANNEL_NAME"
 
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 301
     new-instance v0, Landroid/os/Bundle;

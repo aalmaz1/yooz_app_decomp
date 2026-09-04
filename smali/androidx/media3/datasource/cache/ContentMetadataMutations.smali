@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private checkAndSet(Ljava/lang/String;Ljava/lang/Object;)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 5
+    .locals 2
 
     .line 147
     iget-object v0, p0, Landroidx/media3/datasource/cache/ContentMetadataMutations;->editedValues:Ljava/util/Map;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static setContentLength(Landroidx/media3/datasource/cache/ContentMetadataMutations;J)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 4
+    .locals 1
 
     const-string v0, "exo_len"
 
@@ -90,11 +90,11 @@
 .end method
 
 .method public static setRedirectedUri(Landroidx/media3/datasource/cache/ContentMetadataMutations;Landroid/net/Uri;)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 3
+    .locals 1
 
     const-string v0, "exo_redir"
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 63
     invoke-virtual {p0, v0}, Landroidx/media3/datasource/cache/ContentMetadataMutations;->remove(Ljava/lang/String;)Landroidx/media3/datasource/cache/ContentMetadataMutations;
@@ -104,7 +104,7 @@
     return-object p0
 
     .line 65
-    :cond_9
+    :cond_0
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -119,7 +119,7 @@
 
 # virtual methods
 .method public getEditedValues()Ljava/util/Map;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -146,13 +146,13 @@
 
     move-result-object v1
 
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -168,7 +168,7 @@
     .line 137
     instance-of v4, v3, [B
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_0
 
     .line 138
     check-cast v3, [B
@@ -182,10 +182,10 @@
 
     invoke-interface {v2, v3}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_f
+    goto :goto_0
 
     .line 142
-    :cond_2e
+    :cond_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
@@ -194,7 +194,7 @@
 .end method
 
 .method public getRemovedValues()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -219,7 +219,7 @@
 .end method
 
 .method public remove(Ljava/lang/String;)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 3
+    .locals 1
 
     .line 122
     iget-object v0, p0, Landroidx/media3/datasource/cache/ContentMetadataMutations;->removedValues:Ljava/util/List;
@@ -235,7 +235,7 @@
 .end method
 
 .method public set(Ljava/lang/String;J)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 4
+    .locals 0
 
     .line 99
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -250,7 +250,7 @@
 .end method
 
 .method public set(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 3
+    .locals 0
 
     .line 87
     invoke-direct {p0, p1, p2}, Landroidx/media3/datasource/cache/ContentMetadataMutations;->checkAndSet(Ljava/lang/String;Ljava/lang/Object;)Landroidx/media3/datasource/cache/ContentMetadataMutations;
@@ -261,7 +261,7 @@
 .end method
 
 .method public set(Ljava/lang/String;[B)Landroidx/media3/datasource/cache/ContentMetadataMutations;
-    .registers 4
+    .locals 1
 
     .line 111
     array-length v0, p2

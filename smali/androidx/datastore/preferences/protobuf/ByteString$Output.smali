@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -53,12 +53,12 @@
 .end method
 
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 999
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    if-ltz p1, :cond_13
+    if-ltz p1, :cond_0
 
     .line 1003
     iput p1, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->initialCapacity:I
@@ -78,7 +78,7 @@
     return-void
 
     .line 1001
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Buffer size < 0"
@@ -89,7 +89,7 @@
 .end method
 
 .method private copyArray([BI)[B
-    .registers 5
+    .locals 2
 
     .line 1049
     new-array v0, p2, [B
@@ -109,7 +109,7 @@
 .end method
 
 .method private flushFullBuffer(I)V
-    .registers 5
+    .locals 3
 
     .line 1110
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
@@ -160,7 +160,7 @@
 .end method
 
 .method private flushLastBuffer()V
-    .registers 4
+    .locals 3
 
     .line 1125
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
@@ -169,9 +169,9 @@
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_18
+    if-ge v0, v2, :cond_0
 
-    if-lez v0, :cond_28
+    if-lez v0, :cond_1
 
     .line 1127
     invoke-direct {p0, v1, v0}, Landroidx/datastore/preferences/protobuf/ByteString$Output;->copyArray([BI)[B
@@ -187,10 +187,10 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_28
+    goto :goto_0
 
     .line 1133
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;
@@ -207,8 +207,8 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->buffer:[B
 
     .line 1141
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushedBuffersTotalBytes:I
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
@@ -228,12 +228,12 @@
 
 # virtual methods
 .method public declared-synchronized reset()V
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 1093
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -245,15 +245,15 @@
 
     .line 1095
     iput v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1096
     monitor-exit p0
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -262,17 +262,17 @@
 .end method
 
 .method public declared-synchronized size()I
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 1085
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushedBuffersTotalBytes:I
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-int/2addr v0, v1
 
@@ -280,7 +280,7 @@
 
     return v0
 
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -289,12 +289,12 @@
 .end method
 
 .method public declared-synchronized toByteString()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 1043
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushLastBuffer()V
 
     .line 1044
@@ -303,14 +303,14 @@
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/ByteString;->copyFrom(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object v0
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_c
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -319,7 +319,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -361,19 +361,19 @@
 .end method
 
 .method public declared-synchronized write(I)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 1010
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
 
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->buffer:[B
 
     array-length v1, v1
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -381,7 +381,7 @@
     invoke-direct {p0, v0}, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushFullBuffer(I)V
 
     .line 1013
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->buffer:[B
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
@@ -393,15 +393,15 @@
     int-to-byte p1, p1
 
     aput-byte p1, v0, v1
-    :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1014
     monitor-exit p0
 
     return-void
 
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -410,12 +410,12 @@
 .end method
 
 .method public declared-synchronized write([BII)V
-    .registers 7
+    .locals 3
 
     monitor-enter p0
 
     .line 1018
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->buffer:[B
 
     array-length v1, v0
@@ -424,7 +424,7 @@
 
     sub-int/2addr v1, v2
 
-    if-gt p3, v1, :cond_12
+    if-gt p3, v1, :cond_0
 
     .line 1020
     invoke-static {p1, p2, v0, v2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -436,10 +436,10 @@
 
     iput p1, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
 
-    goto :goto_24
+    goto :goto_0
 
     .line 1024
-    :cond_12
+    :cond_0
     array-length v1, v0
 
     sub-int/2addr v1, v2
@@ -463,16 +463,16 @@
 
     .line 1032
     iput p3, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->bufferPos:I
-    :try_end_24
-    .catchall {:try_start_1 .. :try_end_24} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1034
-    :goto_24
+    :goto_0
     monitor-exit p0
 
     return-void
 
-    :catchall_26
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -481,7 +481,7 @@
 .end method
 
 .method public writeTo(Ljava/io/OutputStream;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -492,7 +492,7 @@
     monitor-enter p0
 
     .line 1068
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$Output;->flushedBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -515,16 +515,16 @@
 
     .line 1071
     monitor-exit p0
-    :try_end_14
-    .catchall {:try_start_1 .. :try_end_14} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1072
     array-length v3, v0
 
     const/4 v4, 0x0
 
-    :goto_16
-    if-ge v4, v3, :cond_20
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     aget-object v5, v0, v4
 
@@ -533,10 +533,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 1076
-    :cond_20
+    :cond_0
     invoke-direct {p0, v1, v2}, Landroidx/datastore/preferences/protobuf/ByteString$Output;->copyArray([BI)[B
 
     move-result-object v0
@@ -545,14 +545,14 @@
 
     return-void
 
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 1071
-    :try_start_29
+    :try_start_1
     monitor-exit p0
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_28
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

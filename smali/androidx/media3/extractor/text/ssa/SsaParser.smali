@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)"
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -73,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,14 +102,14 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_0
 
     .line 113
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -164,10 +164,10 @@
 
     invoke-direct {p0, v0, p1}, Landroidx/media3/extractor/text/ssa/SsaParser;->parseHeader(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)V
 
-    goto :goto_52
+    goto :goto_0
 
     .line 124
-    :cond_4d
+    :cond_0
     iput-boolean v0, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->haveInitializationData:Z
 
     const/4 p1, 0x0
@@ -175,12 +175,12 @@
     .line 125
     iput-object p1, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->dialogueFormatFromInitializationData:Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;
 
-    :goto_52
+    :goto_0
     return-void
 .end method
 
 .method private static addCuePlacerholderByTime(JLjava/util/List;Ljava/util/List;)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -201,8 +201,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_6
-    if-ltz v0, :cond_2b
+    :goto_0
+    if-ltz v0, :cond_2
 
     .line 563
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -217,12 +217,12 @@
 
     cmp-long v1, v1, p0
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     return v0
 
     .line 567
-    :cond_17
+    :cond_0
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -235,22 +235,22 @@
 
     cmp-long v1, v1, p0
 
-    if-gez v1, :cond_28
+    if-gez v1, :cond_1
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_28
+    :cond_1
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const/4 v0, 0x0
 
     .line 572
-    :goto_2c
+    :goto_1
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -260,13 +260,13 @@
     .line 576
     new-instance p0, Ljava/util/ArrayList;
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_3
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    goto :goto_46
+    goto :goto_2
 
-    :cond_3b
+    :cond_3
     add-int/lit8 p1, v0, -0x1
 
     invoke-interface {p3, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -278,47 +278,47 @@
     invoke-direct {p0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     .line 574
-    :goto_46
+    :goto_2
     invoke-interface {p3, v0, p0}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return v0
 .end method
 
 .method private static computeDefaultLineOrPosition(I)F
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_0
 
     const p0, -0x800001
 
     return p0
 
-    :cond_c
+    :cond_0
     const p0, 0x3f733333    # 0.95f
 
     return p0
 
-    :cond_10
+    :cond_1
     const/high16 p0, 0x3f000000    # 0.5f
 
     return p0
 
-    :cond_13
+    :cond_2
     const p0, 0x3d4ccccd    # 0.05f
 
     return p0
 .end method
 
 .method private static createCue(Ljava/lang/String;Landroidx/media3/extractor/text/ssa/SsaStyle;Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;FF)Landroidx/media3/common/text/Cue;
-    .registers 12
+    .locals 7
 
     .line 389
     new-instance v0, Landroid/text/SpannableString;
@@ -338,14 +338,14 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_7
 
     .line 393
     iget-object v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->primaryColor:Ljava/lang/Integer;
 
     const/16 v4, 0x21
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_0
 
     .line 394
     new-instance v3, Landroid/text/style/ForegroundColorSpan;
@@ -368,16 +368,16 @@
     invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 400
-    :cond_2c
+    :cond_0
     iget v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->borderStyle:I
 
     const/4 v5, 0x3
 
-    if-ne v3, v5, :cond_47
+    if-ne v3, v5, :cond_1
 
     iget-object v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->outlineColor:Ljava/lang/Integer;
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_1
 
     .line 401
     new-instance v3, Landroid/text/style/BackgroundColorSpan;
@@ -400,18 +400,18 @@
     invoke-virtual {v0, v3, v2, v6, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 407
-    :cond_47
+    :cond_1
     iget v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->fontSize:F
 
     cmpl-float v3, v3, v1
 
     const/4 v6, 0x1
 
-    if-eqz v3, :cond_58
+    if-eqz v3, :cond_2
 
     cmpl-float v3, p4, v1
 
-    if-eqz v3, :cond_58
+    if-eqz v3, :cond_2
 
     .line 408
     iget v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->fontSize:F
@@ -421,14 +421,14 @@
     invoke-virtual {p0, v3, v6}, Landroidx/media3/common/text/Cue$Builder;->setTextSize(FI)Landroidx/media3/common/text/Cue$Builder;
 
     .line 411
-    :cond_58
+    :cond_2
     iget-boolean v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->bold:Z
 
-    if-eqz v3, :cond_6d
+    if-eqz v3, :cond_3
 
     iget-boolean v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->italic:Z
 
-    if-eqz v3, :cond_6d
+    if-eqz v3, :cond_3
 
     .line 412
     new-instance v3, Landroid/text/style/StyleSpan;
@@ -443,13 +443,13 @@
     .line 412
     invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_8f
+    goto :goto_0
 
     .line 417
-    :cond_6d
+    :cond_3
     iget-boolean v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->bold:Z
 
-    if-eqz v3, :cond_7e
+    if-eqz v3, :cond_4
 
     .line 418
     new-instance v3, Landroid/text/style/StyleSpan;
@@ -464,13 +464,13 @@
     .line 418
     invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_8f
+    goto :goto_0
 
     .line 423
-    :cond_7e
+    :cond_4
     iget-boolean v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->italic:Z
 
-    if-eqz v3, :cond_8f
+    if-eqz v3, :cond_5
 
     .line 424
     new-instance v3, Landroid/text/style/StyleSpan;
@@ -488,11 +488,11 @@
     invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 430
-    :cond_8f
-    :goto_8f
+    :cond_5
+    :goto_0
     iget-boolean v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->underline:Z
 
-    if-eqz v3, :cond_9f
+    if-eqz v3, :cond_6
 
     .line 431
     new-instance v3, Landroid/text/style/UnderlineSpan;
@@ -508,10 +508,10 @@
     invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 437
-    :cond_9f
+    :cond_6
     iget-boolean v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->strikeout:Z
 
-    if-eqz v3, :cond_af
+    if-eqz v3, :cond_7
 
     .line 438
     new-instance v3, Landroid/text/style/StrikethroughSpan;
@@ -527,27 +527,27 @@
     invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 447
-    :cond_af
+    :cond_7
     iget v0, p2, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->alignment:I
 
     const/4 v3, -0x1
 
-    if-eq v0, v3, :cond_b7
+    if-eq v0, v3, :cond_8
 
     .line 448
     iget v3, p2, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->alignment:I
 
-    goto :goto_bb
+    goto :goto_1
 
-    :cond_b7
-    if-eqz p1, :cond_bb
+    :cond_8
+    if-eqz p1, :cond_9
 
     .line 450
     iget v3, p1, Landroidx/media3/extractor/text/ssa/SsaStyle;->alignment:I
 
     .line 454
-    :cond_bb
-    :goto_bb
+    :cond_9
+    :goto_1
     invoke-static {v3}, Landroidx/media3/extractor/text/ssa/SsaParser;->toTextAlignment(I)Landroid/text/Layout$Alignment;
 
     move-result-object p1
@@ -575,15 +575,15 @@
     .line 458
     iget-object p1, p2, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->position:Landroid/graphics/PointF;
 
-    if-eqz p1, :cond_ef
+    if-eqz p1, :cond_a
 
     cmpl-float p1, p4, v1
 
-    if-eqz p1, :cond_ef
+    if-eqz p1, :cond_a
 
     cmpl-float p1, p3, v1
 
-    if-eqz p1, :cond_ef
+    if-eqz p1, :cond_a
 
     .line 461
     iget-object p1, p2, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->position:Landroid/graphics/PointF;
@@ -603,10 +603,10 @@
 
     invoke-virtual {p0, p1, v2}, Landroidx/media3/common/text/Cue$Builder;->setLine(FI)Landroidx/media3/common/text/Cue$Builder;
 
-    goto :goto_105
+    goto :goto_2
 
     .line 465
-    :cond_ef
+    :cond_a
     invoke-virtual {p0}, Landroidx/media3/common/text/Cue$Builder;->getPositionAnchor()I
 
     move-result p1
@@ -629,7 +629,7 @@
     invoke-virtual {p0, p1, v2}, Landroidx/media3/common/text/Cue$Builder;->setLine(FI)Landroidx/media3/common/text/Cue$Builder;
 
     .line 469
-    :goto_105
+    :goto_2
     invoke-virtual {p0}, Landroidx/media3/common/text/Cue$Builder;->build()Landroidx/media3/common/text/Cue;
 
     move-result-object p0
@@ -638,27 +638,27 @@
 .end method
 
 .method private detectUtfCharset(Landroidx/media3/common/util/ParsableByteArray;)Ljava/nio/charset/Charset;
-    .registers 2
+    .locals 0
 
     .line 191
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUtfCharsetFromBom()Ljava/nio/charset/Charset;
 
     move-result-object p1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 192
-    :cond_7
+    :cond_0
     sget-object p1, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    :goto_9
+    :goto_0
     return-object p1
 .end method
 
 .method private parseDialogueLine(Ljava/lang/String;Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;Ljava/util/List;Ljava/util/List;)V
-    .registers 15
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -705,7 +705,7 @@
 
     const-string v3, "SsaParser"
 
-    if-eq v1, v2, :cond_31
+    if-eq v1, v2, :cond_0
 
     .line 326
     new-instance p2, Ljava/lang/StringBuilder;
@@ -727,7 +727,7 @@
     return-void
 
     .line 330
-    :cond_31
+    :cond_0
     iget v1, p2, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;->startTimeIndex:I
 
     aget-object v1, v0, v1
@@ -742,7 +742,7 @@
 
     const-string v7, "Skipping invalid timing: "
 
-    if-nez v6, :cond_55
+    if-nez v6, :cond_1
 
     .line 332
     new-instance p2, Ljava/lang/StringBuilder;
@@ -762,7 +762,7 @@
     return-void
 
     .line 336
-    :cond_55
+    :cond_1
     iget v6, p2, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;->endTimeIndex:I
 
     aget-object v6, v0, v6
@@ -773,7 +773,7 @@
 
     cmp-long v4, v8, v4
 
-    if-nez v4, :cond_72
+    if-nez v4, :cond_2
 
     .line 338
     new-instance p2, Ljava/lang/StringBuilder;
@@ -793,16 +793,16 @@
     return-void
 
     .line 344
-    :cond_72
+    :cond_2
     iget-object p1, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->styles:Ljava/util/Map;
 
-    if-eqz p1, :cond_8c
+    if-eqz p1, :cond_3
 
     iget p1, p2, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;->styleIndex:I
 
     const/4 v3, -0x1
 
-    if-eq p1, v3, :cond_8c
+    if-eq p1, v3, :cond_3
 
     .line 345
     iget-object p1, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->styles:Ljava/util/Map;
@@ -821,13 +821,13 @@
 
     check-cast p1, Landroidx/media3/extractor/text/ssa/SsaStyle;
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_8c
+    :cond_3
     const/4 p1, 0x0
 
     .line 347
-    :goto_8d
+    :goto_0
     iget p2, p2, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;->textIndex:I
 
     aget-object p2, v0, p2
@@ -886,8 +886,8 @@
 
     move-result p4
 
-    :goto_c0
-    if-ge p2, p4, :cond_ce
+    :goto_1
+    if-ge p2, p4, :cond_4
 
     .line 360
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -900,14 +900,14 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_c0
+    goto :goto_1
 
-    :cond_ce
+    :cond_4
     return-void
 .end method
 
 .method private parseEventBody(Landroidx/media3/common/util/ParsableByteArray;Ljava/util/List;Ljava/util/List;Ljava/nio/charset/Charset;)V
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -927,23 +927,23 @@
     .line 297
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->haveInitializationData:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->dialogueFormatFromInitializationData:Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 299
-    :cond_8
-    :goto_8
+    :cond_1
+    :goto_0
     invoke-virtual {p1, p4}, Landroidx/media3/common/util/ParsableByteArray;->readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_4
 
     const-string v2, "Format:"
 
@@ -952,16 +952,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_2
 
     .line 301
     invoke-static {v1}, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;->fromFormatLine(Ljava/lang/String;)Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;
 
     move-result-object v0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     const-string v2, "Dialogue:"
 
     .line 302
@@ -969,9 +969,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_1
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 304
     new-instance v2, Ljava/lang/StringBuilder;
@@ -992,20 +992,20 @@
 
     invoke-static {v2, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_8
+    goto :goto_0
 
     .line 307
-    :cond_3a
+    :cond_3
     invoke-direct {p0, v1, v0, p2, p3}, Landroidx/media3/extractor/text/ssa/SsaParser;->parseDialogueLine(Ljava/lang/String;Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;Ljava/util/List;Ljava/util/List;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_3e
+    :cond_4
     return-void
 .end method
 
 .method private parseHeader(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)V
-    .registers 5
+    .locals 2
 
     .line 203
     :cond_0
@@ -1014,7 +1014,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_4
 
     const-string v1, "[Script Info]"
 
@@ -1023,14 +1023,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 205
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/text/ssa/SsaParser;->parseScriptInfo(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)V
 
     goto :goto_0
 
-    :cond_12
+    :cond_1
     const-string v1, "[V4+ Styles]"
 
     .line 206
@@ -1038,7 +1038,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     .line 207
     invoke-static {p1, p2}, Landroidx/media3/extractor/text/ssa/SsaParser;->parseStyles(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)Ljava/util/Map;
@@ -1049,7 +1049,7 @@
 
     goto :goto_0
 
-    :cond_21
+    :cond_2
     const-string v1, "[V4 Styles]"
 
     .line 208
@@ -1057,7 +1057,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_3
 
     const-string v0, "SsaParser"
 
@@ -1068,7 +1068,7 @@
 
     goto :goto_0
 
-    :cond_31
+    :cond_3
     const-string v1, "[Events]"
 
     .line 210
@@ -1078,12 +1078,12 @@
 
     if-eqz v0, :cond_0
 
-    :cond_39
+    :cond_4
     return-void
 .end method
 
 .method private parseScriptInfo(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)V
-    .registers 7
+    .locals 4
 
     .line 229
     :catch_0
@@ -1092,14 +1092,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_4
 
     .line 230
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     invoke-virtual {p1, p2}, Landroidx/media3/common/util/ParsableByteArray;->peekChar(Ljava/nio/charset/Charset;)C
 
@@ -1107,9 +1107,9 @@
 
     const/16 v2, 0x5b
 
-    if-eq v1, v2, :cond_59
+    if-eq v1, v2, :cond_4
 
-    :cond_14
+    :cond_0
     const-string v1, ":"
 
     .line 231
@@ -1122,11 +1122,11 @@
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_1f
+    if-eq v1, v2, :cond_1
 
     goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 v1, 0x0
 
     .line 235
@@ -1150,7 +1150,7 @@
 
     const/4 v3, 0x1
 
-    if-nez v2, :cond_4c
+    if-nez v2, :cond_3
 
     const-string v2, "playresy"
 
@@ -1158,13 +1158,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_2
 
     goto :goto_0
 
     .line 245
-    :cond_3f
-    :try_start_3f
+    :cond_2
+    :try_start_0
     aget-object v0, v0, v3
 
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1180,7 +1180,7 @@
     goto :goto_0
 
     .line 238
-    :cond_4c
+    :cond_3
     aget-object v0, v0, v3
 
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1192,17 +1192,17 @@
     move-result v0
 
     iput v0, p0, Landroidx/media3/extractor/text/ssa/SsaParser;->screenWidth:F
-    :try_end_58
-    .catch Ljava/lang/NumberFormatException; {:try_start_3f .. :try_end_58} :catch_0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_59
+    :cond_4
     return-void
 .end method
 
 .method private static parseStyles(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)Ljava/util/Map;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1224,20 +1224,20 @@
     const/4 v1, 0x0
 
     .line 268
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v2, :cond_52
+    if-eqz v2, :cond_4
 
     .line 269
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1
 
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->peekChar(Ljava/nio/charset/Charset;)C
 
@@ -1245,9 +1245,9 @@
 
     const/16 v4, 0x5b
 
-    if-eq v3, v4, :cond_52
+    if-eq v3, v4, :cond_4
 
-    :cond_1a
+    :cond_1
     const-string v3, "Format:"
 
     .line 270
@@ -1255,16 +1255,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_2
 
     .line 271
     invoke-static {v2}, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->fromFormatLine(Ljava/lang/String;)Landroidx/media3/extractor/text/ssa/SsaStyle$Format;
 
     move-result-object v1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     const-string v3, "Style:"
 
     .line 272
@@ -1272,9 +1272,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_0
 
-    if-nez v1, :cond_46
+    if-nez v1, :cond_3
 
     .line 274
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1295,29 +1295,29 @@
 
     invoke-static {v3, v2}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_6
+    goto :goto_0
 
     .line 277
-    :cond_46
+    :cond_3
     invoke-static {v2, v1}, Landroidx/media3/extractor/text/ssa/SsaStyle;->fromStyleLine(Ljava/lang/String;Landroidx/media3/extractor/text/ssa/SsaStyle$Format;)Landroidx/media3/extractor/text/ssa/SsaStyle;
 
     move-result-object v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     .line 279
     iget-object v3, v2, Landroidx/media3/extractor/text/ssa/SsaStyle;->name:Ljava/lang/String;
 
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_52
+    :cond_4
     return-object v0
 .end method
 
 .method private static parseTimecodeUs(Ljava/lang/String;)J
-    .registers 9
+    .locals 8
 
     .line 371
     sget-object v0, Landroidx/media3/extractor/text/ssa/SsaParser;->SSA_TIMECODE_PATTERN:Ljava/util/regex/Pattern;
@@ -1335,13 +1335,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide v0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x1
 
     .line 376
@@ -1440,14 +1440,14 @@
 .end method
 
 .method private static toLineAnchor(I)I
-    .registers 4
+    .locals 3
 
     const/high16 v0, -0x80000000
 
-    packed-switch p0, :pswitch_data_22
+    packed-switch p0, :pswitch_data_0
 
     .line 512
-    :pswitch_5
+    :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Unknown alignment: "
@@ -1468,51 +1468,51 @@
 
     return v0
 
-    :pswitch_1a
+    :pswitch_1
     const/4 p0, 0x0
 
     return p0
 
-    :pswitch_1c
+    :pswitch_2
     const/4 p0, 0x1
 
     return p0
 
-    :pswitch_1e
+    :pswitch_3
     const/4 p0, 0x2
 
     return p0
 
-    :pswitch_20
+    :pswitch_4
     return v0
 
     nop
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch -0x1
-        :pswitch_20
-        :pswitch_5
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1c
-        :pswitch_1c
-        :pswitch_1c
-        :pswitch_1a
-        :pswitch_1a
-        :pswitch_1a
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method private static toPositionAnchor(I)I
-    .registers 4
+    .locals 3
 
     const/high16 v0, -0x80000000
 
-    packed-switch p0, :pswitch_data_22
+    packed-switch p0, :pswitch_data_0
 
     .line 534
-    :pswitch_5
+    :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Unknown alignment: "
@@ -1533,51 +1533,51 @@
 
     return v0
 
-    :pswitch_1a
+    :pswitch_1
     const/4 p0, 0x2
 
     return p0
 
-    :pswitch_1c
+    :pswitch_2
     const/4 p0, 0x1
 
     return p0
 
-    :pswitch_1e
+    :pswitch_3
     const/4 p0, 0x0
 
     return p0
 
-    :pswitch_20
+    :pswitch_4
     return v0
 
     nop
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch -0x1
-        :pswitch_20
-        :pswitch_5
-        :pswitch_1e
-        :pswitch_1c
-        :pswitch_1a
-        :pswitch_1e
-        :pswitch_1c
-        :pswitch_1a
-        :pswitch_1e
-        :pswitch_1c
-        :pswitch_1a
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method private static toTextAlignment(I)Landroid/text/Layout$Alignment;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
-    packed-switch p0, :pswitch_data_24
+    packed-switch p0, :pswitch_data_0
 
     .line 490
-    :pswitch_4
+    :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Unknown alignment: "
@@ -1599,48 +1599,48 @@
     return-object v0
 
     .line 486
-    :pswitch_19
+    :pswitch_1
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_OPPOSITE:Landroid/text/Layout$Alignment;
 
     return-object p0
 
     .line 482
-    :pswitch_1c
+    :pswitch_2
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
     return-object p0
 
     .line 478
-    :pswitch_1f
+    :pswitch_3
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
     return-object p0
 
-    :pswitch_22
+    :pswitch_4
     return-object v0
 
     nop
 
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch -0x1
-        :pswitch_22
         :pswitch_4
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1648,7 +1648,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 24
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -1701,7 +1701,7 @@
     .line 148
     iget-boolean v6, v0, Landroidx/media3/extractor/text/ssa/SsaParser;->haveInitializationData:Z
 
-    if-nez v6, :cond_2f
+    if-nez v6, :cond_0
 
     .line 149
     iget-object v6, v0, Landroidx/media3/extractor/text/ssa/SsaParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -1709,7 +1709,7 @@
     invoke-direct {v0, v6, v1}, Landroidx/media3/extractor/text/ssa/SsaParser;->parseHeader(Landroidx/media3/common/util/ParsableByteArray;Ljava/nio/charset/Charset;)V
 
     .line 151
-    :cond_2f
+    :cond_0
     iget-object v6, v0, Landroidx/media3/extractor/text/ssa/SsaParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-direct {v0, v6, v4, v5, v1}, Landroidx/media3/extractor/text/ssa/SsaParser;->parseEventBody(Landroidx/media3/common/util/ParsableByteArray;Ljava/util/List;Ljava/util/List;Ljava/nio/charset/Charset;)V
@@ -1721,32 +1721,32 @@
 
     cmp-long v1, v6, v8
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_1
 
     iget-boolean v1, v2, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;->outputAllCues:Z
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_1
 
     .line 156
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_49
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_4a
+    :goto_0
     const/4 v6, 0x0
 
     .line 158
-    :goto_4b
+    :goto_1
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v7
 
-    if-ge v6, v7, :cond_bf
+    if-ge v6, v7, :cond_7
 
     .line 159
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1762,25 +1762,25 @@
 
     move-result v7
 
-    if-eqz v7, :cond_64
+    if-eqz v7, :cond_2
 
-    if-eqz v6, :cond_64
+    if-eqz v6, :cond_2
 
     move-object v7, v4
 
     move-object/from16 v16, v5
 
-    goto :goto_b3
+    goto :goto_3
 
     .line 164
-    :cond_64
+    :cond_2
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v7
 
     add-int/lit8 v7, v7, -0x1
 
-    if-eq v6, v7, :cond_b9
+    if-eq v6, v7, :cond_6
 
     .line 168
     invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1827,18 +1827,18 @@
 
     cmp-long v4, v4, v8
 
-    if-eqz v4, :cond_aa
+    if-eqz v4, :cond_4
 
     iget-wide v4, v2, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;->startTimeUs:J
 
     cmp-long v4, v12, v4
 
-    if-ltz v4, :cond_9e
+    if-ltz v4, :cond_3
 
-    goto :goto_aa
+    goto :goto_2
 
-    :cond_9e
-    if-eqz v1, :cond_b3
+    :cond_3
+    if-eqz v1, :cond_5
 
     .line 175
     new-instance v4, Landroidx/media3/extractor/text/CuesWithTiming;
@@ -1849,11 +1849,11 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b3
+    goto :goto_3
 
     .line 172
-    :cond_aa
-    :goto_aa
+    :cond_4
+    :goto_2
     new-instance v4, Landroidx/media3/extractor/text/CuesWithTiming;
 
     move-object v10, v4
@@ -1862,38 +1862,38 @@
 
     invoke-interface {v3, v4}, Landroidx/media3/common/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    :cond_b3
-    :goto_b3
+    :cond_5
+    :goto_3
     add-int/lit8 v6, v6, 0x1
 
     move-object v4, v7
 
     move-object/from16 v5, v16
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 166
-    :cond_b9
+    :cond_6
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v1
 
-    :cond_bf
-    if-eqz v1, :cond_d5
+    :cond_7
+    if-eqz v1, :cond_8
 
     .line 180
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_c5
+    :goto_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_d5
+    if-eqz v2, :cond_8
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1904,8 +1904,8 @@
     .line 181
     invoke-interface {v3, v2}, Landroidx/media3/common/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_c5
+    goto :goto_4
 
-    :cond_d5
+    :cond_8
     return-void
 .end method

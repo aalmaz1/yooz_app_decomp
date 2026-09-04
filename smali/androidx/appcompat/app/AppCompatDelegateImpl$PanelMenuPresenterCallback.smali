@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
-    .registers 2
+    .locals 0
 
     .line 3063
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
-    .registers 7
+    .locals 4
 
     .line 3068
     invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder;
@@ -45,31 +45,31 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     move v2, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v2, 0x0
 
     .line 3070
-    :goto_a
+    :goto_0
     iget-object v3, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_1
 
     move-object p1, v0
 
-    :cond_f
+    :cond_1
     invoke-virtual {v3, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->findMenuPanel(Landroid/view/Menu;)Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;
 
     move-result-object p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_3
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_2
 
     .line 3073
     iget-object p2, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -83,34 +83,34 @@
 
     invoke-virtual {p2, p1, v1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;Z)V
 
-    goto :goto_29
+    goto :goto_1
 
     .line 3078
-    :cond_24
+    :cond_2
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     invoke-virtual {v0, p1, p2}, Landroidx/appcompat/app/AppCompatDelegateImpl;->closePanel(Landroidx/appcompat/app/AppCompatDelegateImpl$PanelFeatureState;Z)V
 
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
-    .registers 4
+    .locals 2
 
     .line 3086
     invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuBuilder;->getRootMenu()Landroidx/appcompat/view/menu/MenuBuilder;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_1f
+    if-ne p1, v0, :cond_0
 
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     iget-boolean v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl;->mHasActionBar:Z
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 3087
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -119,21 +119,21 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 3088
     iget-object v1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$PanelMenuPresenterCallback;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
 
     iget-boolean v1, v1, Landroidx/appcompat/app/AppCompatDelegateImpl;->mDestroyed:Z
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
     const/16 v1, 0x6c
 
     .line 3089
     invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
-    :cond_1f
+    :cond_0
     const/4 p1, 0x1
 
     return p1

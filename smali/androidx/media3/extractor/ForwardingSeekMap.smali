@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/SeekMap;)V
-    .registers 2
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 41
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingSeekMap;->seekMap:Landroidx/media3/extractor/SeekMap;
@@ -39,7 +39,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 4
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingSeekMap;->seekMap:Landroidx/media3/extractor/SeekMap;
@@ -52,7 +52,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingSeekMap;->seekMap:Landroidx/media3/extractor/SeekMap;

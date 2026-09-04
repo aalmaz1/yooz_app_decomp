@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;Landroidx/media3/extractor/SeekMap;)V
-    .registers 3
+    .locals 0
 
     .line 818
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 821
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;

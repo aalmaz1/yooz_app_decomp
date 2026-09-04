@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/lang/Class;II)V
-    .registers 5
+    .locals 0
 
     .line 4704
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;-><init>(ILjava/lang/Class;II)V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method frameworkGet(Landroid/view/View;)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
 
     .line 4709
     invoke-static {p1}, Landroidx/core/view/ViewCompat$Api28Impl;->getAccessibilityPaneTitle(Landroid/view/View;)Ljava/lang/CharSequence;
@@ -46,7 +46,7 @@
 .end method
 
 .method bridge synthetic frameworkGet(Landroid/view/View;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 4704
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$2;->frameworkGet(Landroid/view/View;)Ljava/lang/CharSequence;
@@ -57,7 +57,7 @@
 .end method
 
 .method frameworkSet(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 0
 
     .line 4715
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat$Api28Impl;->setAccessibilityPaneTitle(Landroid/view/View;Ljava/lang/CharSequence;)V
@@ -66,7 +66,7 @@
 .end method
 
 .method bridge synthetic frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 4704
     check-cast p2, Ljava/lang/CharSequence;
@@ -77,7 +77,7 @@
 .end method
 
 .method shouldUpdate(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-    .registers 3
+    .locals 0
 
     .line 4720
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -90,7 +90,7 @@
 .end method
 
 .method bridge synthetic shouldUpdate(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 4704
     check-cast p1, Ljava/lang/CharSequence;

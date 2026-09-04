@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 210
     invoke-direct {p0}, Landroidx/camera/video/OutputOptions$OutputOptionsInternal$Builder;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method bridge synthetic build()Landroidx/camera/video/OutputOptions$OutputOptionsInternal;
-    .registers 2
+    .locals 1
 
     .line 208
     invoke-virtual {p0}, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;->build()Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;

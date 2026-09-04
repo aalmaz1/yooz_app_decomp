@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final detach()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -131,7 +131,7 @@
     .line 346
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;->handle:Landroidx/lifecycle/SavedStateHandle;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 347
     invoke-static {v0}, Landroidx/lifecycle/SavedStateHandle;->access$getRegular$p(Landroidx/lifecycle/SavedStateHandle;)Ljava/util/Map;
@@ -155,16 +155,16 @@
 
     check-cast v0, Lkotlinx/coroutines/flow/MutableStateFlow;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     invoke-interface {v0, p1}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
     .line 350
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     invoke-super {p0, p1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
     return-void

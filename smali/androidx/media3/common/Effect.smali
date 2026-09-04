@@ -5,7 +5,7 @@
 
 # virtual methods
 .method public getDurationAfterEffectApplied(J)J
-    .registers 3
+    .locals 0
 
     return-wide p1
 .end method

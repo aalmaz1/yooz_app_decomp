@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(FF)V
-    .registers 4
+    .locals 1
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method public static toSizeFCompat(Landroid/util/SizeF;)Landroidx/core/util/SizeFCompat;
-    .registers 1
+    .locals 0
 
     .line 87
     invoke-static {p0}, Landroidx/core/util/SizeFCompat$Api21Impl;->toSizeFCompat(Landroid/util/SizeF;)Landroidx/core/util/SizeFCompat;
@@ -59,26 +59,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 60
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/core/util/SizeFCompat;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 61
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/core/util/SizeFCompat;
 
     .line 62
@@ -88,7 +88,7 @@
 
     cmpl-float v1, v1, v3
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_2
 
     iget p1, p1, Landroidx/core/util/SizeFCompat;->mHeight:F
 
@@ -96,19 +96,19 @@
 
     cmpl-float p1, p1, v1
 
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_2
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_2
     move v0, v2
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method public getHeight()F
-    .registers 2
+    .locals 1
 
     .line 54
     iget v0, p0, Landroidx/core/util/SizeFCompat;->mHeight:F
@@ -117,7 +117,7 @@
 .end method
 
 .method public getWidth()F
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/core/util/SizeFCompat;->mWidth:F
@@ -126,7 +126,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 67
     iget v0, p0, Landroidx/core/util/SizeFCompat;->mWidth:F
@@ -147,7 +147,7 @@
 .end method
 
 .method public toSizeF()Landroid/util/SizeF;
-    .registers 2
+    .locals 1
 
     .line 80
     invoke-static {p0}, Landroidx/core/util/SizeFCompat$Api21Impl;->toSizeF(Landroidx/core/util/SizeFCompat;)Landroid/util/SizeF;
@@ -158,7 +158,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 73
     new-instance v0, Ljava/lang/StringBuilder;

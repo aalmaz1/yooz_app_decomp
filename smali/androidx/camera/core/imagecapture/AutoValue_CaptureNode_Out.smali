@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/processing/Edge;Landroidx/camera/core/processing/Edge;II)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,12 +47,12 @@
     .line 23
     invoke-direct {p0}, Landroidx/camera/core/imagecapture/CaptureNode$Out;-><init>()V
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 27
     iput-object p1, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->imageEdge:Landroidx/camera/core/processing/Edge;
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_0
 
     .line 31
     iput-object p2, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->requestEdge:Landroidx/camera/core/processing/Edge;
@@ -66,7 +66,7 @@
     return-void
 
     .line 29
-    :cond_10
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null requestEdge"
@@ -76,7 +76,7 @@
     throw p1
 
     .line 25
-    :cond_18
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null imageEdge"
@@ -89,21 +89,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 71
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/imagecapture/CaptureNode$Out;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2
 
     .line 72
     check-cast p1, Landroidx/camera/core/imagecapture/CaptureNode$Out;
@@ -119,7 +119,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->requestEdge:Landroidx/camera/core/processing/Edge;
 
@@ -132,7 +132,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->inputFormat:I
 
@@ -141,7 +141,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_34
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->outputFormat:I
 
@@ -150,22 +150,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_34
+    if-ne v1, p1, :cond_1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_1
     move v0, v2
 
-    :goto_35
+    :goto_0
     return v0
 
-    :cond_36
+    :cond_2
     return v2
 .end method
 
 .method getImageEdge()Landroidx/camera/core/processing/Edge;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -182,7 +182,7 @@
 .end method
 
 .method getInputFormat()I
-    .registers 2
+    .locals 1
 
     .line 48
     iget v0, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->inputFormat:I
@@ -191,7 +191,7 @@
 .end method
 
 .method getOutputFormat()I
-    .registers 2
+    .locals 1
 
     .line 53
     iget v0, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->outputFormat:I
@@ -200,7 +200,7 @@
 .end method
 
 .method getRequestEdge()Landroidx/camera/core/processing/Edge;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -217,7 +217,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 85
     iget-object v0, p0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;->imageEdge:Landroidx/camera/core/processing/Edge;
@@ -259,7 +259,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 58
     new-instance v0, Ljava/lang/StringBuilder;

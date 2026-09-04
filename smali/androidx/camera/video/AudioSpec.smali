@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 104
     new-instance v0, Landroid/util/Range;
@@ -104,7 +104,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method public static builder()Landroidx/camera/video/AudioSpec$Builder;
-    .registers 2
+    .locals 2
 
     .line 124
     new-instance v0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;

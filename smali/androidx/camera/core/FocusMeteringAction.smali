@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/FocusMeteringAction$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public getAutoCancelDurationInMillis()J
-    .registers 3
+    .locals 2
 
     .line 110
     iget-wide v0, p0, Landroidx/camera/core/FocusMeteringAction;->mAutoCancelDurationInMillis:J
@@ -112,7 +112,7 @@
 .end method
 
 .method public getMeteringPointsAe()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -129,7 +129,7 @@
 .end method
 
 .method public getMeteringPointsAf()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -146,7 +146,7 @@
 .end method
 
 .method public getMeteringPointsAwb()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -163,7 +163,7 @@
 .end method
 
 .method public isAutoCancelEnabled()Z
-    .registers 5
+    .locals 4
 
     .line 141
     iget-wide v0, p0, Landroidx/camera/core/FocusMeteringAction;->mAutoCancelDurationInMillis:J
@@ -172,15 +172,15 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method

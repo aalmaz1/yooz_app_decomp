@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 612
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
-    .registers 3
+    .locals 1
 
     .line 615
     new-instance v0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
@@ -50,7 +50,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 612
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
@@ -61,7 +61,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
-    .registers 2
+    .locals 0
 
     .line 620
     new-array p1, p1, [Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;
@@ -70,7 +70,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 612
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState$1;->newArray(I)[Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;

@@ -77,7 +77,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 44
     const-class v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;
@@ -305,23 +305,23 @@
 
     sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v0, v1, :cond_bf
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c0
+    goto :goto_0
 
-    :cond_bf
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c0
+    :goto_0
     sput-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -330,7 +330,7 @@
 .end method
 
 .method static synthetic access$000(Ljava/lang/Object;J)B
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getByteBigEndian(Ljava/lang/Object;J)B
@@ -341,7 +341,7 @@
 .end method
 
 .method static synthetic access$100(Ljava/lang/Object;J)B
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getByteLittleEndian(Ljava/lang/Object;J)B
@@ -352,7 +352,7 @@
 .end method
 
 .method static synthetic access$200(Ljava/lang/Object;JB)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putByteBigEndian(Ljava/lang/Object;JB)V
@@ -361,7 +361,7 @@
 .end method
 
 .method static synthetic access$300(Ljava/lang/Object;JB)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putByteLittleEndian(Ljava/lang/Object;JB)V
@@ -370,7 +370,7 @@
 .end method
 
 .method static synthetic access$400(Ljava/lang/Object;J)Z
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getBooleanBigEndian(Ljava/lang/Object;J)Z
@@ -381,7 +381,7 @@
 .end method
 
 .method static synthetic access$500(Ljava/lang/Object;J)Z
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getBooleanLittleEndian(Ljava/lang/Object;J)Z
@@ -392,7 +392,7 @@
 .end method
 
 .method static synthetic access$600(Ljava/lang/Object;JZ)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putBooleanBigEndian(Ljava/lang/Object;JZ)V
@@ -401,7 +401,7 @@
 .end method
 
 .method static synthetic access$700(Ljava/lang/Object;JZ)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-static {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putBooleanLittleEndian(Ljava/lang/Object;JZ)V
@@ -410,7 +410,7 @@
 .end method
 
 .method static addressOffset(Ljava/nio/ByteBuffer;)J
-    .registers 4
+    .locals 3
 
     .line 280
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -425,7 +425,7 @@
 .end method
 
 .method static allocateInstance(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -443,12 +443,12 @@
     invoke-virtual {v0, p0}, Lsun/misc/Unsafe;->allocateInstance(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_6
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_7
+    :catch_0
     move-exception p0
 
     .line 104
@@ -460,7 +460,7 @@
 .end method
 
 .method private static arrayBaseOffset(Ljava/lang/Class;)I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -472,7 +472,7 @@
     .line 113
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
 
@@ -480,17 +480,17 @@
 
     move-result p0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, -0x1
 
-    :goto_c
+    :goto_0
     return p0
 .end method
 
 .method private static arrayIndexScale(Ljava/lang/Class;)I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -502,7 +502,7 @@
     .line 117
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
 
@@ -510,24 +510,24 @@
 
     move-result p0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, -0x1
 
-    :goto_c
+    :goto_0
     return p0
 .end method
 
 .method private static bufferAddressField()Ljava/lang/reflect/Field;
-    .registers 3
+    .locals 3
 
     .line 429
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Android;->isOnAndroidDevice()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 432
     const-class v0, Ljava/nio/Buffer;
@@ -538,12 +538,12 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 437
-    :cond_11
+    :cond_0
     const-class v0, Ljava/nio/Buffer;
 
     const-string v1, "address"
@@ -552,7 +552,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 438
     invoke-virtual {v0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
@@ -561,19 +561,19 @@
 
     sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    if-ne v1, v2, :cond_24
+    if-ne v1, v2, :cond_1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_25
+    :goto_0
     return-object v0
 .end method
 
 .method static copyMemory(J[BJJ)V
-    .registers 15
+    .locals 8
 
     .line 247
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -592,7 +592,7 @@
 .end method
 
 .method static copyMemory([BJJJ)V
-    .registers 15
+    .locals 8
 
     .line 243
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -611,7 +611,7 @@
 .end method
 
 .method static copyMemory([BJ[BJJ)V
-    .registers 8
+    .locals 0
 
     long-to-int p1, p1
 
@@ -626,7 +626,7 @@
 .end method
 
 .method private static determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
-    .registers 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -644,13 +644,13 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     return v2
 
     .line 412
-    :cond_a
-    :try_start_a
+    :cond_0
+    :try_start_0
     sget-object v1, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_CLASS:Ljava/lang/Class;
 
     const-string v3, "peekLong"
@@ -780,17 +780,17 @@
     aput-object p0, v6, v5
 
     invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_88
-    .catchall {:try_start_a .. :try_end_88} :catchall_89
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return v7
 
-    :catchall_89
+    :catchall_0
     return v2
 .end method
 
 .method private static field(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -807,52 +807,52 @@
     invoke-virtual {p0, p1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object p0
-    :try_end_4
-    .catchall {:try_start_0 .. :try_end_4} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_6
+    goto :goto_0
 
-    :catchall_5
+    :catchall_0
     const/4 p0, 0x0
 
-    :goto_6
+    :goto_0
     return-object p0
 .end method
 
 .method private static fieldOffset(Ljava/lang/reflect/Field;)J
-    .registers 3
+    .locals 2
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_1
 
     .line 520
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0, p0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     move-result-wide v0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     const-wide/16 v0, -0x1
 
-    :goto_e
+    :goto_1
     return-wide v0
 .end method
 
 .method private static firstDifferingByteIndexNativeEndian(JJ)I
-    .registers 5
+    .locals 1
 
     .line 449
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     xor-long/2addr p0, p2
 
@@ -861,9 +861,9 @@
 
     move-result p0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     xor-long/2addr p0, p2
 
     .line 452
@@ -871,14 +871,14 @@
 
     move-result p0
 
-    :goto_f
+    :goto_0
     shr-int/lit8 p0, p0, 0x3
 
     return p0
 .end method
 
 .method static getBoolean(Ljava/lang/Object;J)Z
-    .registers 4
+    .locals 1
 
     .line 145
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -891,7 +891,7 @@
 .end method
 
 .method static getBoolean([ZJ)Z
-    .registers 8
+    .locals 5
 
     .line 203
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -912,49 +912,49 @@
 .end method
 
 .method private static getBooleanBigEndian(Ljava/lang/Object;J)Z
-    .registers 3
+    .locals 0
 
     .line 963
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getByteBigEndian(Ljava/lang/Object;J)B
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method private static getBooleanLittleEndian(Ljava/lang/Object;J)Z
-    .registers 3
+    .locals 0
 
     .line 967
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getByteLittleEndian(Ljava/lang/Object;J)B
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method static getByte(J)B
-    .registers 3
+    .locals 1
 
     .line 255
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -967,7 +967,7 @@
 .end method
 
 .method static getByte(Ljava/lang/Object;J)B
-    .registers 4
+    .locals 1
 
     .line 121
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -980,7 +980,7 @@
 .end method
 
 .method static getByte([BJ)B
-    .registers 6
+    .locals 3
 
     .line 177
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -997,7 +997,7 @@
 .end method
 
 .method private static getByteBigEndian(Ljava/lang/Object;J)B
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, -0x4
 
@@ -1030,7 +1030,7 @@
 .end method
 
 .method private static getByteLittleEndian(Ljava/lang/Object;J)B
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, -0x4
 
@@ -1061,7 +1061,7 @@
 .end method
 
 .method static getDouble(Ljava/lang/Object;J)D
-    .registers 4
+    .locals 1
 
     .line 161
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1074,7 +1074,7 @@
 .end method
 
 .method static getDouble([DJ)D
-    .registers 8
+    .locals 5
 
     .line 223
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1095,7 +1095,7 @@
 .end method
 
 .method static getFloat(Ljava/lang/Object;J)F
-    .registers 4
+    .locals 1
 
     .line 153
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1108,7 +1108,7 @@
 .end method
 
 .method static getFloat([FJ)F
-    .registers 8
+    .locals 5
 
     .line 213
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1129,7 +1129,7 @@
 .end method
 
 .method static getInt(J)I
-    .registers 3
+    .locals 1
 
     .line 263
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1142,7 +1142,7 @@
 .end method
 
 .method static getInt(Ljava/lang/Object;J)I
-    .registers 4
+    .locals 1
 
     .line 129
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1155,7 +1155,7 @@
 .end method
 
 .method static getInt([IJ)I
-    .registers 8
+    .locals 5
 
     .line 185
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1176,7 +1176,7 @@
 .end method
 
 .method static getLong(J)J
-    .registers 3
+    .locals 1
 
     .line 271
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1189,7 +1189,7 @@
 .end method
 
 .method static getLong(Ljava/lang/Object;J)J
-    .registers 4
+    .locals 1
 
     .line 137
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1202,7 +1202,7 @@
 .end method
 
 .method static getLong([JJ)J
-    .registers 8
+    .locals 5
 
     .line 193
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1223,29 +1223,29 @@
 .end method
 
 .method private static getMemoryAccessor()Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
-    .registers 3
+    .locals 3
 
     .line 320
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 323
-    :cond_6
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Android;->isOnAndroidDevice()Z
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_3
 
     .line 324
     sget-boolean v2, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_ANDROID_64:Z
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_1
 
     .line 325
     new-instance v1, Landroidx/datastore/preferences/protobuf/UnsafeUtil$Android64MemoryAccessor;
@@ -1255,21 +1255,21 @@
     return-object v1
 
     .line 326
-    :cond_16
+    :cond_1
     sget-boolean v2, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_ANDROID_32:Z
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_2
 
     .line 327
     new-instance v1, Landroidx/datastore/preferences/protobuf/UnsafeUtil$Android32MemoryAccessor;
 
     invoke-direct {v1, v0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$Android32MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
 
-    :cond_1f
+    :cond_2
     return-object v1
 
     .line 333
-    :cond_20
+    :cond_3
     new-instance v1, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;
 
     invoke-direct {v1, v0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
@@ -1278,7 +1278,7 @@
 .end method
 
 .method static getObject(Ljava/lang/Object;J)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     .line 169
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1291,7 +1291,7 @@
 .end method
 
 .method static getObject([Ljava/lang/Object;J)Ljava/lang/Object;
-    .registers 8
+    .locals 5
 
     .line 233
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1312,7 +1312,7 @@
 .end method
 
 .method static getStaticObject(Ljava/lang/reflect/Field;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 284
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1325,7 +1325,7 @@
 .end method
 
 .method static getUnsafe()Lsun/misc/Unsafe;
-    .registers 1
+    .locals 1
 
     .line 293
     :try_start_0
@@ -1339,20 +1339,20 @@
     move-result-object v0
 
     check-cast v0, Lsun/misc/Unsafe;
-    :try_end_b
-    .catchall {:try_start_0 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :catchall_c
+    :catchall_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return-object v0
 .end method
 
 .method static hasUnsafeArrayOperations()Z
-    .registers 1
+    .locals 1
 
     .line 88
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
@@ -1361,7 +1361,7 @@
 .end method
 
 .method static hasUnsafeByteBufferOperations()Z
-    .registers 1
+    .locals 1
 
     .line 92
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->HAS_UNSAFE_BYTEBUFFER_OPERATIONS:Z
@@ -1370,7 +1370,7 @@
 .end method
 
 .method static isAndroid64()Z
-    .registers 1
+    .locals 1
 
     .line 96
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_ANDROID_64:Z
@@ -1379,33 +1379,33 @@
 .end method
 
 .method static mismatch([BI[BII)I
-    .registers 15
+    .locals 10
 
-    if-ltz p1, :cond_67
+    if-ltz p1, :cond_6
 
-    if-ltz p3, :cond_67
+    if-ltz p3, :cond_6
 
-    if-ltz p4, :cond_67
+    if-ltz p4, :cond_6
 
     add-int v0, p1, p4
 
     .line 465
     array-length v1, p0
 
-    if-gt v0, v1, :cond_67
+    if-gt v0, v1, :cond_6
 
     add-int v0, p3, p4
 
     array-length v1, p2
 
-    if-gt v0, v1, :cond_67
+    if-gt v0, v1, :cond_6
 
     .line 474
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_3
 
     .line 475
     sget v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->BYTE_ARRAY_ALIGNMENT:I
@@ -1414,12 +1414,12 @@
 
     and-int/lit8 v0, v0, 0x7
 
-    :goto_1a
-    if-ge v1, p4, :cond_30
+    :goto_0
+    if-ge v1, p4, :cond_1
 
     and-int/lit8 v2, v0, 0x7
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     add-int v2, p1, v1
 
@@ -1430,26 +1430,26 @@
 
     aget-byte v3, p2, v3
 
-    if-eq v2, v3, :cond_2b
+    if-eq v2, v3, :cond_0
 
     return v1
 
-    :cond_2b
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     sub-int v0, p4, v1
 
     and-int/lit8 v0, v0, -0x8
 
     add-int/2addr v0, v1
 
-    :goto_35
-    if-ge v1, v0, :cond_55
+    :goto_1
+    if-ge v1, v0, :cond_3
 
     .line 496
     sget-wide v2, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->BYTE_ARRAY_BASE_OFFSET:J
@@ -1479,7 +1479,7 @@
 
     cmp-long v6, v4, v2
 
-    if-eqz v6, :cond_52
+    if-eqz v6, :cond_2
 
     .line 500
     invoke-static {v4, v5, v2, v3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->firstDifferingByteIndexNativeEndian(JJ)I
@@ -1490,14 +1490,14 @@
 
     return v1
 
-    :cond_52
+    :cond_2
     add-int/lit8 v1, v1, 0x8
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_55
-    :goto_55
-    if-ge v1, p4, :cond_65
+    :cond_3
+    :goto_2
+    if-ge v1, p4, :cond_5
 
     add-int v0, p1, v1
 
@@ -1508,22 +1508,22 @@
 
     aget-byte v2, p2, v2
 
-    if-eq v0, v2, :cond_62
+    if-eq v0, v2, :cond_4
 
     return v1
 
-    :cond_62
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_55
+    goto :goto_2
 
-    :cond_65
+    :cond_5
     const/4 p0, -0x1
 
     return p0
 
     .line 470
-    :cond_67
+    :cond_6
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -1532,7 +1532,7 @@
 .end method
 
 .method static objectFieldOffset(Ljava/lang/reflect/Field;)J
-    .registers 3
+    .locals 2
 
     .line 109
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1545,7 +1545,7 @@
 .end method
 
 .method static putBoolean(Ljava/lang/Object;JZ)V
-    .registers 5
+    .locals 1
 
     .line 149
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1556,7 +1556,7 @@
 .end method
 
 .method static putBoolean([ZJZ)V
-    .registers 9
+    .locals 5
 
     .line 208
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1575,7 +1575,7 @@
 .end method
 
 .method private static putBooleanBigEndian(Ljava/lang/Object;JZ)V
-    .registers 4
+    .locals 0
 
     int-to-byte p3, p3
 
@@ -1586,7 +1586,7 @@
 .end method
 
 .method private static putBooleanLittleEndian(Ljava/lang/Object;JZ)V
-    .registers 4
+    .locals 0
 
     int-to-byte p3, p3
 
@@ -1597,7 +1597,7 @@
 .end method
 
 .method static putByte(JB)V
-    .registers 4
+    .locals 1
 
     .line 259
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1608,7 +1608,7 @@
 .end method
 
 .method static putByte(Ljava/lang/Object;JB)V
-    .registers 5
+    .locals 1
 
     .line 125
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1619,7 +1619,7 @@
 .end method
 
 .method static putByte([BJB)V
-    .registers 7
+    .locals 3
 
     .line 181
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1634,7 +1634,7 @@
 .end method
 
 .method private static putByteBigEndian(Ljava/lang/Object;JB)V
-    .registers 8
+    .locals 4
 
     const-wide/16 v0, -0x4
 
@@ -1674,7 +1674,7 @@
 .end method
 
 .method private static putByteLittleEndian(Ljava/lang/Object;JB)V
-    .registers 8
+    .locals 4
 
     const-wide/16 v0, -0x4
 
@@ -1712,7 +1712,7 @@
 .end method
 
 .method static putDouble(Ljava/lang/Object;JD)V
-    .registers 11
+    .locals 6
 
     .line 165
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1729,7 +1729,7 @@
 .end method
 
 .method static putDouble([DJD)V
-    .registers 11
+    .locals 6
 
     .line 228
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1752,7 +1752,7 @@
 .end method
 
 .method static putFloat(Ljava/lang/Object;JF)V
-    .registers 5
+    .locals 1
 
     .line 157
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1763,7 +1763,7 @@
 .end method
 
 .method static putFloat([FJF)V
-    .registers 9
+    .locals 5
 
     .line 218
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1782,7 +1782,7 @@
 .end method
 
 .method static putInt(JI)V
-    .registers 4
+    .locals 1
 
     .line 267
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1793,7 +1793,7 @@
 .end method
 
 .method static putInt(Ljava/lang/Object;JI)V
-    .registers 5
+    .locals 1
 
     .line 133
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1804,7 +1804,7 @@
 .end method
 
 .method static putInt([IJI)V
-    .registers 9
+    .locals 5
 
     .line 189
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1823,7 +1823,7 @@
 .end method
 
 .method static putLong(JJ)V
-    .registers 5
+    .locals 1
 
     .line 275
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1834,7 +1834,7 @@
 .end method
 
 .method static putLong(Ljava/lang/Object;JJ)V
-    .registers 11
+    .locals 6
 
     .line 141
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1851,7 +1851,7 @@
 .end method
 
 .method static putLong([JJJ)V
-    .registers 11
+    .locals 6
 
     .line 198
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1874,7 +1874,7 @@
 .end method
 
 .method static putObject(Ljava/lang/Object;JLjava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     .line 173
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1885,7 +1885,7 @@
 .end method
 
 .method static putObject([Ljava/lang/Object;JLjava/lang/Object;)V
-    .registers 9
+    .locals 5
 
     .line 238
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;
@@ -1904,20 +1904,20 @@
 .end method
 
 .method private static supportsUnsafeArrayOperations()Z
-    .registers 8
+    .locals 8
 
     .line 338
     sget-object v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 342
-    :cond_6
-    :try_start_6
+    :cond_0
+    :try_start_0
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -2068,11 +2068,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9b
+    if-eqz v2, :cond_1
 
     return v3
 
-    :cond_9b
+    :cond_1
     const-string v2, "getByte"
 
     new-array v6, v4, [Ljava/lang/Class;
@@ -2208,12 +2208,12 @@
     aput-object v6, v5, v4
 
     invoke-virtual {v0, v2, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_123
-    .catchall {:try_start_6 .. :try_end_123} :catchall_124
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return v3
 
-    :catchall_124
+    :catchall_0
     move-exception v0
 
     .line 366
@@ -2241,7 +2241,7 @@
 .end method
 
 .method private static supportsUnsafeByteBufferOperations()Z
-    .registers 9
+    .locals 9
 
     const-string v0, "copyMemory"
 
@@ -2252,13 +2252,13 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     return v3
 
     .line 378
-    :cond_a
-    :try_start_a
+    :cond_0
+    :try_start_0
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -2296,21 +2296,21 @@
 
     move-result-object v6
 
-    if-nez v6, :cond_2f
+    if-nez v6, :cond_1
 
     return v3
 
     .line 387
-    :cond_2f
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Android;->isOnAndroidDevice()Z
 
     move-result v6
 
-    if-eqz v6, :cond_36
+    if-eqz v6, :cond_2
 
     return v5
 
-    :cond_36
+    :cond_2
     const-string v6, "getByte"
 
     new-array v7, v5, [Ljava/lang/Class;
@@ -2434,12 +2434,12 @@
     aput-object v1, v6, v4
 
     invoke-virtual {v2, v0, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_af
-    .catchall {:try_start_a .. :try_end_af} :catchall_b0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return v5
 
-    :catchall_b0
+    :catchall_0
     move-exception v0
 
     .line 400

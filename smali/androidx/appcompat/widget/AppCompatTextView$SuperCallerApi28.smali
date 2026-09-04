@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatTextView;)V
-    .registers 2
+    .locals 0
 
     .line 884
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi28;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public setFirstBaselineToTopHeight(I)V
-    .registers 3
+    .locals 1
 
     .line 888
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi28;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -44,7 +44,7 @@
 .end method
 
 .method public setLastBaselineToBottomHeight(I)V
-    .registers 3
+    .locals 1
 
     .line 893
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi28;->this$0:Landroidx/appcompat/widget/AppCompatTextView;

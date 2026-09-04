@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
-    .registers 3
+    .locals 0
 
     .line 1246
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl21;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
@@ -25,7 +25,7 @@
 .end method
 
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroidx/core/view/WindowInsetsCompat$Impl28;)V
-    .registers 3
+    .locals 0
 
     .line 1250
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl21;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroidx/core/view/WindowInsetsCompat$Impl21;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method consumeDisplayCutout()Landroidx/core/view/WindowInsetsCompat;
-    .registers 2
+    .locals 1
 
     .line 1262
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
@@ -53,26 +53,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1268
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/core/view/WindowInsetsCompat$Impl28;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1269
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/core/view/WindowInsetsCompat$Impl28;
 
     .line 1271
@@ -84,7 +84,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mRootViewVisibleInsets:Landroidx/core/graphics/Insets;
 
@@ -95,19 +95,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     move v0, v2
 
-    :goto_22
+    :goto_0
     return v0
 .end method
 
 .method getDisplayCutout()Landroidx/core/view/DisplayCutoutCompat;
-    .registers 2
+    .locals 1
 
     .line 1256
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;
@@ -124,7 +124,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 1277
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl28;->mPlatformInsets:Landroid/view/WindowInsets;

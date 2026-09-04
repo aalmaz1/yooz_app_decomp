@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/util/NetworkTypeObserver;)V
-    .registers 2
+    .locals 0
 
     .line 250
     invoke-direct {p0}, Landroid/telephony/TelephonyCallback;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onDisplayInfoChanged(Landroid/telephony/TelephonyDisplayInfo;)V
-    .registers 4
+    .locals 2
 
     .line 256
     invoke-virtual {p1}, Landroid/telephony/TelephonyDisplayInfo;->getOverrideNetworkType()I
@@ -48,34 +48,34 @@
 
     const/4 v1, 0x5
 
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_1
 
-    if-ne p1, v1, :cond_e
+    if-ne p1, v1, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
     .line 261
-    :goto_11
+    :goto_1
     iget-object v0, p0, Landroidx/media3/common/util/NetworkTypeObserver$Api31$DisplayInfoCallback;->instance:Landroidx/media3/common/util/NetworkTypeObserver;
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_2
 
     const/16 v1, 0xa
 
-    :cond_17
+    :cond_2
     invoke-static {v0, v1}, Landroidx/media3/common/util/NetworkTypeObserver;->access$200(Landroidx/media3/common/util/NetworkTypeObserver;I)V
 
     return-void

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x20
 
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public add(J)V
-    .registers 6
+    .locals 3
 
     .line 46
     iget v0, p0, Landroidx/media3/common/util/LongArray;->size:I
@@ -51,7 +51,7 @@
 
     array-length v2, v1
 
-    if-ne v0, v2, :cond_f
+    if-ne v0, v2, :cond_0
 
     mul-int/lit8 v0, v0, 0x2
 
@@ -63,7 +63,7 @@
     iput-object v0, p0, Landroidx/media3/common/util/LongArray;->values:[J
 
     .line 49
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/util/LongArray;->values:[J
 
     iget v1, p0, Landroidx/media3/common/util/LongArray;->size:I
@@ -78,14 +78,14 @@
 .end method
 
 .method public get(I)J
-    .registers 5
+    .locals 3
 
-    if-ltz p1, :cond_b
+    if-ltz p1, :cond_0
 
     .line 61
     iget v0, p0, Landroidx/media3/common/util/LongArray;->size:I
 
-    if-ge p1, v0, :cond_b
+    if-ge p1, v0, :cond_0
 
     .line 64
     iget-object v0, p0, Landroidx/media3/common/util/LongArray;->values:[J
@@ -95,7 +95,7 @@
     return-wide v0
 
     .line 62
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -130,7 +130,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 69
     iget v0, p0, Landroidx/media3/common/util/LongArray;->size:I
@@ -139,7 +139,7 @@
 .end method
 
 .method public toArray()[J
-    .registers 3
+    .locals 2
 
     .line 78
     iget-object v0, p0, Landroidx/media3/common/util/LongArray;->values:[J

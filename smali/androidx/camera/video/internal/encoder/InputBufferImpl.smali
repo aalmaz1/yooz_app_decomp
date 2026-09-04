@@ -42,7 +42,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/MediaCodec;I)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCodec$CodecException;
@@ -127,7 +127,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Ljava/util/concurrent/atomic/AtomicReference;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -143,7 +143,7 @@
 .end method
 
 .method private throwIfTerminated()V
-    .registers 3
+    .locals 2
 
     .line 126
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mTerminated:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -152,12 +152,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 127
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The buffer is submitted or canceled."
@@ -170,7 +170,7 @@
 
 # virtual methods
 .method public cancel()Z
-    .registers 10
+    .locals 9
 
     .line 106
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mTerminated:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -181,15 +181,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 110
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     iget-object v2, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     iget v3, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mBufferIndex:I
@@ -210,12 +210,12 @@
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
-    :try_end_1d
-    .catch Ljava/lang/IllegalStateException; {:try_start_b .. :try_end_1d} :catch_1e
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_24
+    goto :goto_0
 
-    :catch_1e
+    :catch_0
     move-exception v0
 
     .line 113
@@ -223,12 +223,12 @@
 
     invoke-virtual {v2, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_24
+    :goto_0
     return v1
 .end method
 
 .method public getByteBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 64
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/InputBufferImpl;->throwIfTerminated()V
@@ -240,7 +240,7 @@
 .end method
 
 .method public getTerminationFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -261,7 +261,7 @@
 .end method
 
 .method public setEndOfStream(Z)V
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/InputBufferImpl;->throwIfTerminated()V
@@ -273,7 +273,7 @@
 .end method
 
 .method public setPresentationTimeUs(J)V
-    .registers 5
+    .locals 2
 
     .line 71
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/InputBufferImpl;->throwIfTerminated()V
@@ -282,17 +282,17 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 72
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 73
@@ -302,7 +302,7 @@
 .end method
 
 .method public submit()Z
-    .registers 11
+    .locals 10
 
     .line 86
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mTerminated:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -315,13 +315,13 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return v2
 
     .line 90
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     iget-object v3, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     iget v4, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mBufferIndex:I
@@ -345,19 +345,19 @@
     .line 94
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/InputBufferImpl;->mIsEndOfStream:Z
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x4
 
     move v9, v0
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     move v9, v2
 
     .line 90
-    :goto_25
+    :goto_0
     invoke-virtual/range {v3 .. v9}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
     .line 95
@@ -366,12 +366,12 @@
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
-    :try_end_2e
-    .catch Ljava/lang/IllegalStateException; {:try_start_b .. :try_end_2e} :catch_2f
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     return v1
 
-    :catch_2f
+    :catch_0
     move-exception v0
 
     .line 98

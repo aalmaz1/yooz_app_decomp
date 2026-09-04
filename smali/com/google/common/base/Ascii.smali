@@ -94,7 +94,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,7 +103,7 @@
 .end method
 
 .method public static equalsIgnoreCase(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -122,27 +122,27 @@
 
     const/4 v1, 0x1
 
-    if-ne p0, p1, :cond_8
+    if-ne p0, p1, :cond_0
 
     return v1
 
     .line 607
-    :cond_8
+    :cond_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
     const/4 v3, 0x0
 
-    if-eq v0, v2, :cond_10
+    if-eq v0, v2, :cond_1
 
     return v3
 
-    :cond_10
+    :cond_1
     move v2, v3
 
-    :goto_11
-    if-ge v2, v0, :cond_30
+    :goto_0
+    if-ge v2, v0, :cond_4
 
     .line 611
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -154,41 +154,41 @@
 
     move-result v5
 
-    if-ne v4, v5, :cond_1e
+    if-ne v4, v5, :cond_2
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 616
-    :cond_1e
+    :cond_2
     invoke-static {v4}, Lcom/google/common/base/Ascii;->getAlphaIndex(C)I
 
     move-result v4
 
     const/16 v6, 0x1a
 
-    if-ge v4, v6, :cond_2f
+    if-ge v4, v6, :cond_3
 
     .line 619
     invoke-static {v5}, Lcom/google/common/base/Ascii;->getAlphaIndex(C)I
 
     move-result v5
 
-    if-ne v4, v5, :cond_2f
+    if-ne v4, v5, :cond_3
 
-    :goto_2c
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_2f
+    :cond_3
     return v3
 
-    :cond_30
+    :cond_4
     return v1
 .end method
 
 .method private static getAlphaIndex(C)I
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -208,7 +208,7 @@
 .end method
 
 .method public static isLowerCase(C)Z
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -220,25 +220,25 @@
 
     const/16 v0, 0x61
 
-    if-lt p0, v0, :cond_a
+    if-lt p0, v0, :cond_0
 
     const/16 v0, 0x7a
 
-    if-gt p0, v0, :cond_a
+    if-gt p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_b
+    :goto_0
     return p0
 .end method
 
 .method public static isUpperCase(C)Z
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -250,25 +250,25 @@
 
     const/16 v0, 0x41
 
-    if-lt p0, v0, :cond_a
+    if-lt p0, v0, :cond_0
 
     const/16 v0, 0x5a
 
-    if-gt p0, v0, :cond_a
+    if-gt p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_b
+    :goto_0
     return p0
 .end method
 
 .method public static toLowerCase(C)C
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -283,18 +283,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     xor-int/lit8 p0, p0, 0x20
 
     int-to-char p0, p0
 
-    :cond_9
+    :cond_0
     return p0
 .end method
 
 .method public static toLowerCase(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -307,7 +307,7 @@
     .line 432
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 433
     check-cast p0, Ljava/lang/String;
@@ -319,7 +319,7 @@
     return-object p0
 
     .line 435
-    :cond_b
+    :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -328,8 +328,8 @@
 
     const/4 v2, 0x0
 
-    :goto_12
-    if-ge v2, v0, :cond_21
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 437
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -344,10 +344,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 439
-    :cond_21
+    :cond_1
     invoke-static {v1}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object p0
@@ -356,7 +356,7 @@
 .end method
 
 .method public static toLowerCase(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -373,8 +373,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_2f
+    :goto_0
+    if-ge v1, v0, :cond_3
 
     .line 410
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -385,15 +385,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 411
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object p0
 
-    :goto_15
-    if-ge v1, v0, :cond_27
+    :goto_1
+    if-ge v1, v0, :cond_1
 
     .line 413
     aget-char v2, p0, v1
@@ -403,7 +403,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     xor-int/lit8 v2, v2, 0x20
 
@@ -412,30 +412,30 @@
     .line 415
     aput-char v2, p0, v1
 
-    :cond_24
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_15
+    goto :goto_1
 
     .line 418
-    :cond_27
+    :cond_1
     invoke-static {p0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_2c
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_2f
+    :cond_3
     return-object p0
 .end method
 
 .method public static toUpperCase(C)C
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -450,18 +450,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     xor-int/lit8 p0, p0, 0x20
 
     int-to-char p0, p0
 
-    :cond_9
+    :cond_0
     return p0
 .end method
 
 .method public static toUpperCase(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -474,7 +474,7 @@
     .line 480
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 481
     check-cast p0, Ljava/lang/String;
@@ -486,7 +486,7 @@
     return-object p0
 
     .line 483
-    :cond_b
+    :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -495,8 +495,8 @@
 
     const/4 v2, 0x0
 
-    :goto_12
-    if-ge v2, v0, :cond_21
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 485
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -511,10 +511,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 487
-    :cond_21
+    :cond_1
     invoke-static {v1}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object p0
@@ -523,7 +523,7 @@
 .end method
 
 .method public static toUpperCase(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -540,8 +540,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_2f
+    :goto_0
+    if-ge v1, v0, :cond_3
 
     .line 458
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -552,15 +552,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 459
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object p0
 
-    :goto_15
-    if-ge v1, v0, :cond_27
+    :goto_1
+    if-ge v1, v0, :cond_1
 
     .line 461
     aget-char v2, p0, v1
@@ -570,7 +570,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     xor-int/lit8 v2, v2, 0x20
 
@@ -579,30 +579,30 @@
     .line 463
     aput-char v2, p0, v1
 
-    :cond_24
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_15
+    goto :goto_1
 
     .line 466
-    :cond_27
+    :cond_1
     invoke-static {p0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_2c
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_2f
+    :cond_3
     return-object p0
 .end method
 
 .method public static truncate(Ljava/lang/CharSequence;ILjava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -628,16 +628,16 @@
 
     const/4 v1, 0x0
 
-    if-ltz v0, :cond_e
+    if-ltz v0, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v2, v1
 
-    :goto_f
+    :goto_0
     const-string v3, "maxLength (%s) must be >= length of the truncation indicator (%s)"
 
     .line 562
@@ -653,7 +653,7 @@
 
     move-result v2
 
-    if-gt v2, p1, :cond_29
+    if-gt v2, p1, :cond_1
 
     .line 565
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -665,12 +665,12 @@
 
     move-result v2
 
-    if-gt v2, p1, :cond_29
+    if-gt v2, p1, :cond_1
 
     return-object p0
 
     .line 573
-    :cond_29
+    :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, p1}, Ljava/lang/StringBuilder;-><init>(I)V

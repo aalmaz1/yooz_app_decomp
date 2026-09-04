@@ -91,21 +91,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/16 v0, 0x10
 
     new-array v1, v0, [I
 
     .line 192
-    fill-array-data v1, :array_46
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->CHANNELS_BY_AMODE:[I
 
     new-array v1, v0, [I
 
     .line 196
-    fill-array-data v1, :array_6a
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->SAMPLE_RATE_BY_SFREQ:[I
 
@@ -114,14 +114,14 @@
     new-array v1, v1, [I
 
     .line 203
-    fill-array-data v1, :array_8e
+    fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->TWICE_BITRATE_KBPS_BY_RATE:[I
 
     new-array v0, v0, [I
 
     .line 213
-    fill-array-data v0, :array_cc
+    fill-array-data v0, :array_3
 
     sput-object v0, Landroidx/media3/extractor/DtsUtil;->SAMPLE_RATE_BY_INDEX:[I
 
@@ -130,35 +130,35 @@
     new-array v1, v0, [I
 
     .line 223
-    fill-array-data v1, :array_f0
+    fill-array-data v1, :array_4
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->UHD_FTOC_PAYLOAD_LENGTH_TABLE:[I
 
     new-array v1, v0, [I
 
     .line 226
-    fill-array-data v1, :array_fc
+    fill-array-data v1, :array_5
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->UHD_METADATA_CHUNK_SIZE_LENGTH_TABLE:[I
 
     new-array v1, v0, [I
 
     .line 229
-    fill-array-data v1, :array_108
+    fill-array-data v1, :array_6
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->UHD_AUDIO_CHUNK_ID_LENGTH_TABLE:[I
 
     new-array v1, v0, [I
 
     .line 232
-    fill-array-data v1, :array_114
+    fill-array-data v1, :array_7
 
     sput-object v1, Landroidx/media3/extractor/DtsUtil;->UHD_AUDIO_CHUNK_SIZE_LENGTH_TABLE:[I
 
     new-array v0, v0, [I
 
     .line 235
-    fill-array-data v0, :array_120
+    fill-array-data v0, :array_8
 
     sput-object v0, Landroidx/media3/extractor/DtsUtil;->UHD_HEADER_SIZE_LENGTH_TABLE:[I
 
@@ -166,7 +166,7 @@
 
     nop
 
-    :array_46
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -186,7 +186,7 @@
         0x8
     .end array-data
 
-    :array_6a
+    :array_1
     .array-data 4
         -0x1
         0x1f40
@@ -206,7 +206,7 @@
         -0x1
     .end array-data
 
-    :array_8e
+    :array_2
     .array-data 4
         0x40
         0x70
@@ -239,7 +239,7 @@
         0x1e00
     .end array-data
 
-    :array_cc
+    :array_3
     .array-data 4
         0x1f40
         0x3e80
@@ -259,7 +259,7 @@
         0x5dc00
     .end array-data
 
-    :array_f0
+    :array_4
     .array-data 4
         0x5
         0x8
@@ -267,7 +267,7 @@
         0xc
     .end array-data
 
-    :array_fc
+    :array_5
     .array-data 4
         0x6
         0x9
@@ -275,7 +275,7 @@
         0xf
     .end array-data
 
-    :array_108
+    :array_6
     .array-data 4
         0x2
         0x4
@@ -283,7 +283,7 @@
         0x8
     .end array-data
 
-    :array_114
+    :array_7
     .array-data 4
         0x9
         0xb
@@ -291,7 +291,7 @@
         0x10
     .end array-data
 
-    :array_120
+    :array_8
     .array-data 4
         0x5
         0x8
@@ -301,7 +301,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 758
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -310,7 +310,7 @@
 .end method
 
 .method private static checkCrc([BI)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -343,11 +343,11 @@
 
     move-result p0
 
-    if-ne p1, p0, :cond_19
+    if-ne p1, p0, :cond_0
 
     return-void
 
-    :cond_19
+    :cond_0
     const-string p0, "CRC check failed"
 
     const/4 p1, 0x0
@@ -361,7 +361,7 @@
 .end method
 
 .method public static getDtsFrameSize([B)I
-    .registers 8
+    .locals 7
 
     const/4 v0, 0x0
 
@@ -378,15 +378,15 @@
 
     const/4 v6, 0x4
 
-    if-eq v1, v2, :cond_4a
+    if-eq v1, v2, :cond_2
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_32
+    if-eq v1, v2, :cond_1
 
     const/16 v2, 0x1f
 
-    if-eq v1, v2, :cond_21
+    if-eq v1, v2, :cond_0
 
     const/4 v1, 0x5
 
@@ -407,10 +407,10 @@
 
     aget-byte p0, p0, v4
 
-    goto :goto_58
+    goto :goto_1
 
     .line 374
-    :cond_21
+    :cond_0
     aget-byte v0, p0, v3
 
     and-int/lit8 v0, v0, 0x3
@@ -429,10 +429,10 @@
 
     aget-byte p0, p0, v1
 
-    goto :goto_42
+    goto :goto_0
 
     .line 381
-    :cond_32
+    :cond_1
     aget-byte v0, p0, v4
 
     and-int/lit8 v0, v0, 0x3
@@ -451,7 +451,7 @@
 
     aget-byte p0, p0, v1
 
-    :goto_42
+    :goto_0
     and-int/lit8 p0, p0, 0x3c
 
     shr-int/lit8 p0, p0, 0x2
@@ -462,10 +462,10 @@
 
     move v0, v5
 
-    goto :goto_5d
+    goto :goto_2
 
     .line 378
-    :cond_4a
+    :cond_2
     aget-byte v1, p0, v6
 
     and-int/lit8 v1, v1, 0x3
@@ -482,7 +482,7 @@
 
     aget-byte p0, p0, v3
 
-    :goto_58
+    :goto_1
     and-int/lit16 p0, p0, 0xf0
 
     shr-int/2addr p0, v6
@@ -491,104 +491,104 @@
 
     add-int/2addr p0, v5
 
-    :goto_5d
-    if-eqz v0, :cond_63
+    :goto_2
+    if-eqz v0, :cond_3
 
     mul-int/lit8 p0, p0, 0x10
 
     .line 390
     div-int/lit8 p0, p0, 0xe
 
-    :cond_63
+    :cond_3
     return p0
 .end method
 
 .method public static getFrameType(I)I
-    .registers 2
+    .locals 1
 
     const v0, 0x7ffe8001
 
-    if-eq p0, v0, :cond_3e
+    if-eq p0, v0, :cond_7
 
     const v0, -0x180fe80
 
-    if-eq p0, v0, :cond_3e
+    if-eq p0, v0, :cond_7
 
     const v0, 0x1fffe800
 
-    if-eq p0, v0, :cond_3e
+    if-eq p0, v0, :cond_7
 
     const v0, -0xe0ff18
 
-    if-ne p0, v0, :cond_15
+    if-ne p0, v0, :cond_0
 
-    goto :goto_3e
+    goto :goto_3
 
-    :cond_15
+    :cond_0
     const v0, 0x64582025
 
-    if-eq p0, v0, :cond_3c
+    if-eq p0, v0, :cond_6
 
     const v0, 0x25205864
 
-    if-ne p0, v0, :cond_20
+    if-ne p0, v0, :cond_1
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_20
+    :cond_1
     const v0, 0x40411bf2
 
-    if-eq p0, v0, :cond_3a
+    if-eq p0, v0, :cond_5
 
     const v0, -0xde4bec0
 
-    if-ne p0, v0, :cond_2b
+    if-ne p0, v0, :cond_2
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_2b
+    :cond_2
     const v0, 0x71c442e8
 
-    if-eq p0, v0, :cond_38
+    if-eq p0, v0, :cond_4
 
     const v0, -0x17bd3b8f
 
-    if-ne p0, v0, :cond_36
+    if-ne p0, v0, :cond_3
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_36
+    :cond_3
     const/4 p0, 0x0
 
     return p0
 
-    :cond_38
-    :goto_38
+    :cond_4
+    :goto_0
     const/4 p0, 0x4
 
     return p0
 
-    :cond_3a
-    :goto_3a
+    :cond_5
+    :goto_1
     const/4 p0, 0x3
 
     return p0
 
-    :cond_3c
-    :goto_3c
+    :cond_6
+    :goto_2
     const/4 p0, 0x2
 
     return p0
 
-    :cond_3e
-    :goto_3e
+    :cond_7
+    :goto_3
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static getNormalizedFrame([B)Landroidx/media3/common/util/ParsableBitArray;
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -597,24 +597,24 @@
 
     const/16 v2, 0x7f
 
-    if-eq v1, v2, :cond_5c
+    if-eq v1, v2, :cond_3
 
     const/16 v2, 0x64
 
-    if-eq v1, v2, :cond_5c
+    if-eq v1, v2, :cond_3
 
     const/16 v2, 0x40
 
-    if-eq v1, v2, :cond_5c
+    if-eq v1, v2, :cond_3
 
     const/16 v2, 0x71
 
-    if-ne v1, v2, :cond_14
+    if-ne v1, v2, :cond_0
 
-    goto :goto_5c
+    goto :goto_2
 
     .line 728
-    :cond_14
+    :cond_0
     array-length v1, p0
 
     invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -626,17 +626,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_1
 
     move v1, v0
 
     .line 731
-    :goto_20
+    :goto_0
     array-length v2, p0
 
     add-int/lit8 v2, v2, -0x1
 
-    if-ge v1, v2, :cond_32
+    if-ge v1, v2, :cond_1
 
     .line 732
     aget-byte v2, p0, v1
@@ -653,10 +653,10 @@
 
     add-int/lit8 v1, v1, 0x2
 
-    goto :goto_20
+    goto :goto_0
 
     .line 737
-    :cond_32
+    :cond_1
     new-instance v1, Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-direct {v1, p0}, Landroidx/media3/common/util/ParsableBitArray;-><init>([B)V
@@ -666,7 +666,7 @@
 
     const/16 v2, 0x1f
 
-    if-ne v0, v2, :cond_58
+    if-ne v0, v2, :cond_2
 
     .line 740
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
@@ -674,14 +674,14 @@
     invoke-direct {v0, p0}, Landroidx/media3/common/util/ParsableBitArray;-><init>([B)V
 
     .line 741
-    :goto_42
+    :goto_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->bitsLeft()I
 
     move-result v2
 
     const/16 v3, 0x10
 
-    if-lt v2, v3, :cond_58
+    if-lt v2, v3, :cond_2
 
     const/4 v2, 0x2
 
@@ -697,17 +697,17 @@
 
     invoke-virtual {v1, v3, v2}, Landroidx/media3/common/util/ParsableBitArray;->putInt(II)V
 
-    goto :goto_42
+    goto :goto_1
 
     .line 746
-    :cond_58
+    :cond_2
     invoke-virtual {v1, p0}, Landroidx/media3/common/util/ParsableBitArray;->reset([B)V
 
     return-object v1
 
     .line 725
-    :cond_5c
-    :goto_5c
+    :cond_3
+    :goto_2
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-direct {v0, p0}, Landroidx/media3/common/util/ParsableBitArray;-><init>([B)V
@@ -716,7 +716,7 @@
 .end method
 
 .method private static isLittleEndianFrameHeader([B)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -725,33 +725,33 @@
 
     const/4 v1, -0x2
 
-    if-eq p0, v1, :cond_15
+    if-eq p0, v1, :cond_0
 
     const/4 v1, -0x1
 
-    if-eq p0, v1, :cond_15
+    if-eq p0, v1, :cond_0
 
     const/16 v1, 0x25
 
-    if-eq p0, v1, :cond_15
+    if-eq p0, v1, :cond_0
 
     const/16 v1, -0xe
 
-    if-eq p0, v1, :cond_15
+    if-eq p0, v1, :cond_0
 
     const/16 v1, -0x18
 
-    if-ne p0, v1, :cond_16
+    if-ne p0, v1, :cond_1
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x1
 
-    :cond_16
+    :cond_1
     return v0
 .end method
 
 .method public static parseDtsAudioSampleCount(Ljava/nio/ByteBuffer;)I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -762,7 +762,7 @@
 
     const v2, -0xde4bec0
 
-    if-eq v1, v2, :cond_81
+    if-eq v1, v2, :cond_5
 
     .line 333
     invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->getInt(I)I
@@ -771,26 +771,26 @@
 
     const v2, -0x17bd3b8f
 
-    if-ne v1, v2, :cond_14
+    if-ne v1, v2, :cond_0
 
-    goto :goto_81
+    goto :goto_3
 
     .line 337
-    :cond_14
+    :cond_0
     invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->getInt(I)I
 
     move-result v0
 
     const v1, 0x25205864
 
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_1
 
     const/16 p0, 0x1000
 
     return p0
 
     .line 344
-    :cond_20
+    :cond_1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
@@ -802,15 +802,15 @@
 
     const/4 v2, -0x2
 
-    if-eq v1, v2, :cond_67
+    if-eq v1, v2, :cond_4
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_54
+    if-eq v1, v2, :cond_3
 
     const/16 v2, 0x1f
 
-    if-eq v1, v2, :cond_43
+    if-eq v1, v2, :cond_2
 
     add-int/lit8 v1, v0, 0x4
 
@@ -829,9 +829,9 @@
 
     move-result p0
 
-    goto :goto_77
+    goto :goto_1
 
-    :cond_43
+    :cond_2
     add-int/lit8 v1, v0, 0x5
 
     .line 354
@@ -849,9 +849,9 @@
 
     move-result p0
 
-    goto :goto_64
+    goto :goto_0
 
-    :cond_54
+    :cond_3
     add-int/lit8 v1, v0, 0x4
 
     .line 351
@@ -869,12 +869,12 @@
 
     move-result p0
 
-    :goto_64
+    :goto_0
     and-int/lit8 p0, p0, 0x3c
 
-    goto :goto_79
+    goto :goto_2
 
-    :cond_67
+    :cond_4
     add-int/lit8 v1, v0, 0x5
 
     .line 348
@@ -892,10 +892,10 @@
 
     move-result p0
 
-    :goto_77
+    :goto_1
     and-int/lit16 p0, p0, 0xfc
 
-    :goto_79
+    :goto_2
     shr-int/lit8 p0, p0, 0x2
 
     or-int/2addr p0, v1
@@ -906,15 +906,15 @@
 
     return p0
 
-    :cond_81
-    :goto_81
+    :cond_5
+    :goto_3
     const/16 p0, 0x400
 
     return p0
 .end method
 
 .method public static parseDtsAudioSampleCount([B)I
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -929,17 +929,17 @@
 
     const/4 v4, 0x4
 
-    if-eq v0, v1, :cond_29
+    if-eq v0, v1, :cond_2
 
     const/4 v1, -0x1
 
     const/4 v5, 0x7
 
-    if-eq v0, v1, :cond_20
+    if-eq v0, v1, :cond_1
 
     const/16 v1, 0x1f
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_0
 
     .line 319
     aget-byte v0, p0, v4
@@ -950,10 +950,10 @@
 
     aget-byte p0, p0, v3
 
-    goto :goto_30
+    goto :goto_1
 
     .line 315
-    :cond_19
+    :cond_0
     aget-byte v0, p0, v3
 
     and-int/2addr v0, v5
@@ -962,10 +962,10 @@
 
     aget-byte p0, p0, v2
 
-    goto :goto_26
+    goto :goto_0
 
     .line 312
-    :cond_20
+    :cond_1
     aget-byte v0, p0, v4
 
     and-int/2addr v0, v5
@@ -974,13 +974,13 @@
 
     aget-byte p0, p0, v5
 
-    :goto_26
+    :goto_0
     and-int/lit8 p0, p0, 0x3c
 
-    goto :goto_32
+    goto :goto_2
 
     .line 309
-    :cond_29
+    :cond_2
     aget-byte v0, p0, v3
 
     and-int/lit8 v0, v0, 0x1
@@ -989,10 +989,10 @@
 
     aget-byte p0, p0, v4
 
-    :goto_30
+    :goto_1
     and-int/lit16 p0, p0, 0xfc
 
-    :goto_32
+    :goto_2
     shr-int/lit8 p0, p0, 0x2
 
     or-int/2addr p0, v0
@@ -1005,7 +1005,7 @@
 .end method
 
 .method public static parseDtsFormat([BLjava/lang/String;Ljava/lang/String;ILandroidx/media3/common/DrmInitData;)Landroidx/media3/common/Format;
-    .registers 11
+    .locals 6
 
     .line 274
     invoke-static {p0}, Landroidx/media3/extractor/DtsUtil;->getNormalizedFrame([B)Landroidx/media3/common/util/ParsableBitArray;
@@ -1055,21 +1055,21 @@
 
     const/4 v5, 0x2
 
-    if-lt v2, v4, :cond_28
+    if-lt v2, v4, :cond_0
 
     const/4 v2, -0x1
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 284
-    :cond_28
+    :cond_0
     aget v2, v3, v2
 
     mul-int/lit16 v2, v2, 0x3e8
 
     div-int/2addr v2, v5
 
-    :goto_2d
+    :goto_0
     const/16 v3, 0xa
 
     .line 285
@@ -1080,16 +1080,16 @@
 
     move-result p0
 
-    if-lez p0, :cond_3a
+    if-lez p0, :cond_1
 
     const/4 p0, 0x1
 
-    goto :goto_3b
+    goto :goto_1
 
-    :cond_3a
+    :cond_1
     const/4 p0, 0x0
 
-    :goto_3b
+    :goto_1
     add-int/2addr v0, p0
 
     .line 287
@@ -1148,7 +1148,7 @@
 .end method
 
 .method public static parseDtsHdHeader([B)Landroidx/media3/extractor/DtsUtil$DtsHeader;
-    .registers 18
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1181,21 +1181,21 @@
 
     const/16 v5, 0x8
 
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_0
 
     const/16 v3, 0x10
 
     move v6, v5
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/16 v3, 0x14
 
     move v6, v4
 
     .line 414
-    :goto_1f
+    :goto_0
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 416
@@ -1216,7 +1216,7 @@
 
     const/4 v9, 0x0
 
-    if-eqz v6, :cond_8e
+    if-eqz v6, :cond_6
 
     .line 424
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -1239,7 +1239,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_48
+    if-eqz v14, :cond_1
 
     const/16 v14, 0x24
 
@@ -1247,7 +1247,7 @@
     invoke-virtual {v0, v14}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 431
-    :cond_48
+    :cond_1
     invoke-virtual {v0, v11}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v14
@@ -1261,9 +1261,9 @@
 
     add-int/2addr v11, v7
 
-    if-ne v14, v7, :cond_87
+    if-ne v14, v7, :cond_5
 
-    if-ne v11, v7, :cond_87
+    if-ne v11, v7, :cond_5
 
     add-int/2addr v2, v7
 
@@ -1274,30 +1274,30 @@
 
     move v14, v9
 
-    :goto_5c
-    if-ge v14, v2, :cond_69
+    :goto_1
+    if-ge v14, v2, :cond_3
 
     shr-int v15, v11, v14
 
     and-int/2addr v15, v7
 
-    if-ne v15, v7, :cond_66
+    if-ne v15, v7, :cond_2
 
     .line 444
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_66
+    :cond_2
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_5c
+    goto :goto_1
 
     .line 448
-    :cond_69
+    :cond_3
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_85
+    if-eqz v2, :cond_4
 
     .line 449
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -1318,22 +1318,22 @@
 
     add-int/2addr v11, v7
 
-    :goto_7d
-    if-ge v9, v11, :cond_85
+    :goto_2
+    if-ge v9, v11, :cond_4
 
     .line 454
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_7d
+    goto :goto_2
 
-    :cond_85
+    :cond_4
     move v9, v13
 
-    goto :goto_8f
+    goto :goto_3
 
-    :cond_87
+    :cond_5
     const-string v0, "Multiple audio presentations or assets not supported"
 
     .line 434
@@ -1343,17 +1343,17 @@
 
     throw v0
 
-    :cond_8e
+    :cond_6
     move v10, v8
 
     .line 465
-    :goto_8f
+    :goto_3
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 470
     invoke-virtual {v0, v4}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    if-eqz v6, :cond_cf
+    if-eqz v6, :cond_a
 
     .line 472
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
@@ -1362,18 +1362,18 @@
 
     const/4 v3, 0x4
 
-    if-eqz v2, :cond_a1
+    if-eqz v2, :cond_7
 
     .line 473
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 475
-    :cond_a1
+    :cond_7
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_ac
+    if-eqz v2, :cond_8
 
     const/16 v2, 0x18
 
@@ -1381,12 +1381,12 @@
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 478
-    :cond_ac
+    :cond_8
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_bc
+    if-eqz v2, :cond_9
 
     const/16 v2, 0xa
 
@@ -1400,7 +1400,7 @@
     .line 480
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBytes(I)V
 
-    :cond_bc
+    :cond_9
     const/4 v2, 0x5
 
     .line 482
@@ -1424,30 +1424,30 @@
 
     move v11, v2
 
-    goto :goto_d4
+    goto :goto_4
 
-    :cond_cf
+    :cond_a
     const v0, -0x7fffffff
 
     move v11, v0
 
     move v0, v8
 
-    :goto_d4
-    if-eqz v6, :cond_105
+    :goto_4
+    if-eqz v6, :cond_e
 
-    if-eqz v10, :cond_f9
+    if-eqz v10, :cond_d
 
-    if-eq v10, v7, :cond_f5
+    if-eq v10, v7, :cond_c
 
-    if-ne v10, v1, :cond_e0
+    if-ne v10, v1, :cond_b
 
     const v1, 0xbb80
 
-    goto :goto_fb
+    goto :goto_5
 
     .line 503
-    :cond_e0
+    :cond_b
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Unsupported reference clock code in DTS HD header: "
@@ -1470,15 +1470,15 @@
 
     throw v0
 
-    :cond_f5
+    :cond_c
     const v1, 0xac44
 
-    goto :goto_fb
+    goto :goto_5
 
-    :cond_f9
+    :cond_d
     const/16 v1, 0x7d00
 
-    :goto_fb
+    :goto_5
     int-to-long v2, v9
 
     const-wide/32 v4, 0xf4240
@@ -1490,12 +1490,12 @@
 
     move-result-wide v1
 
-    goto :goto_10a
+    goto :goto_6
 
-    :cond_105
+    :cond_e
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_10a
+    :goto_6
     move-wide v13, v1
 
     .line 512
@@ -1517,7 +1517,7 @@
 .end method
 
 .method public static parseDtsHdHeaderSize([B)I
-    .registers 2
+    .locals 1
 
     .line 529
     invoke-static {p0}, Landroidx/media3/extractor/DtsUtil;->getNormalizedFrame([B)Landroidx/media3/common/util/ParsableBitArray;
@@ -1534,17 +1534,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/16 v0, 0xc
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/16 v0, 0x8
 
     .line 534
-    :goto_14
+    :goto_0
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
@@ -1555,7 +1555,7 @@
 .end method
 
 .method public static parseDtsUhdHeader([BLjava/util/concurrent/atomic/AtomicInteger;)Landroidx/media3/extractor/DtsUtil$DtsHeader;
-    .registers 19
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1580,17 +1580,17 @@
 
     const/4 v4, 0x1
 
-    if-ne v1, v2, :cond_13
+    if-ne v1, v2, :cond_0
 
     move v1, v4
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v1, v3
 
     .line 555
-    :goto_14
+    :goto_0
     sget-object v2, Landroidx/media3/extractor/DtsUtil;->UHD_FTOC_PAYLOAD_LENGTH_TABLE:[I
 
     .line 556
@@ -1600,14 +1600,14 @@
 
     add-int/2addr v2, v4
 
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_9
 
     .line 565
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v5
 
-    if-eqz v5, :cond_9b
+    if-eqz v5, :cond_8
 
     move-object/from16 v5, p0
 
@@ -1623,18 +1623,18 @@
 
     const/4 v7, 0x0
 
-    if-eqz v6, :cond_4e
+    if-eqz v6, :cond_3
 
-    if-eq v6, v4, :cond_4b
+    if-eq v6, v4, :cond_2
 
-    if-ne v6, v5, :cond_37
+    if-ne v6, v5, :cond_1
 
     const/16 v6, 0x180
 
-    goto :goto_50
+    goto :goto_1
 
     .line 587
-    :cond_37
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Unsupported base duration index in DTS UHD header: "
@@ -1655,15 +1655,15 @@
 
     throw v0
 
-    :cond_4b
+    :cond_2
     const/16 v6, 0x1e0
 
-    goto :goto_50
+    goto :goto_1
 
-    :cond_4e
+    :cond_3
     const/16 v6, 0x200
 
-    :goto_50
+    :goto_1
     const/4 v8, 0x3
 
     .line 593
@@ -1680,18 +1680,18 @@
 
     move-result v8
 
-    if-eqz v8, :cond_7d
+    if-eqz v8, :cond_6
 
-    if-eq v8, v4, :cond_79
+    if-eq v8, v4, :cond_5
 
-    if-ne v8, v5, :cond_65
+    if-ne v8, v5, :cond_4
 
     const v7, 0xbb80
 
-    goto :goto_7f
+    goto :goto_2
 
     .line 607
-    :cond_65
+    :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Unsupported clock rate index in DTS UHD header: "
@@ -1712,21 +1712,21 @@
 
     throw v0
 
-    :cond_79
+    :cond_5
     const v7, 0xac44
 
-    goto :goto_7f
+    goto :goto_2
 
-    :cond_7d
+    :cond_6
     const/16 v7, 0x7d00
 
     .line 612
-    :goto_7f
+    :goto_2
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v8
 
-    if-eqz v8, :cond_8a
+    if-eqz v8, :cond_7
 
     const/16 v8, 0x24
 
@@ -1734,7 +1734,7 @@
     invoke-virtual {v0, v8}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 616
-    :cond_8a
+    :cond_7
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v5
@@ -1754,9 +1754,9 @@
 
     move-result-wide v6
 
-    goto :goto_aa
+    goto :goto_3
 
-    :cond_9b
+    :cond_8
     const-string v0, "Only supports full channel mask-based audio presentation"
 
     .line 566
@@ -1766,12 +1766,12 @@
 
     throw v0
 
-    :cond_a2
+    :cond_9
     const v5, -0x7fffffff
 
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_aa
+    :goto_3
     move v11, v5
 
     move-wide v13, v6
@@ -1780,8 +1780,8 @@
 
     move v6, v5
 
-    :goto_ae
-    if-ge v5, v1, :cond_ba
+    :goto_4
+    if-ge v5, v1, :cond_a
 
     .line 628
     sget-object v7, Landroidx/media3/extractor/DtsUtil;->UHD_METADATA_CHUNK_SIZE_LENGTH_TABLE:[I
@@ -1795,10 +1795,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_ae
+    goto :goto_4
 
-    :cond_ba
-    if-eqz v1, :cond_c8
+    :cond_a
+    if-eqz v1, :cond_b
 
     .line 640
     sget-object v1, Landroidx/media3/extractor/DtsUtil;->UHD_AUDIO_CHUNK_ID_LENGTH_TABLE:[I
@@ -1813,18 +1813,18 @@
     .line 640
     invoke-virtual {v5, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    goto :goto_ca
+    goto :goto_5
 
-    :cond_c8
+    :cond_b
     move-object/from16 v5, p1
 
     .line 645
-    :goto_ca
+    :goto_5
     invoke-virtual/range {p1 .. p1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v1
 
-    if-eqz v1, :cond_d6
+    if-eqz v1, :cond_c
 
     .line 646
     sget-object v1, Landroidx/media3/extractor/DtsUtil;->UHD_AUDIO_CHUNK_SIZE_LENGTH_TABLE:[I
@@ -1833,7 +1833,7 @@
 
     move-result v3
 
-    :cond_d6
+    :cond_c
     add-int/2addr v6, v3
 
     add-int v12, v2, v6
@@ -1857,7 +1857,7 @@
 .end method
 
 .method public static parseDtsUhdHeaderSize([B)I
-    .registers 3
+    .locals 2
 
     .line 674
     invoke-static {p0}, Landroidx/media3/extractor/DtsUtil;->getNormalizedFrame([B)Landroidx/media3/common/util/ParsableBitArray;
@@ -1884,7 +1884,7 @@
 .end method
 
 .method private static parseUnsignedVarInt(Landroidx/media3/common/util/ParsableBitArray;[IZ)I
-    .registers 7
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -1892,31 +1892,31 @@
 
     move v2, v1
 
-    :goto_3
+    :goto_0
     const/4 v3, 0x3
 
-    if-ge v1, v3, :cond_11
+    if-ge v1, v3, :cond_0
 
     .line 703
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_11
-    if-eqz p2, :cond_20
+    :cond_0
+    if-eqz p2, :cond_2
 
     move p2, v0
 
-    :goto_14
-    if-ge v0, v2, :cond_1f
+    :goto_1
+    if-ge v0, v2, :cond_1
 
     .line 713
     aget v1, p1, v0
@@ -1929,13 +1929,13 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     move v0, p2
 
     .line 716
-    :cond_20
+    :cond_2
     aget p1, p1, v2
 
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I

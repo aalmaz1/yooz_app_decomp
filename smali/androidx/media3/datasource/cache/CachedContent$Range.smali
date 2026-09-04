@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 290
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public contains(JJ)Z
-    .registers 12
+    .locals 7
 
     .line 304
     iget-wide v0, p0, Landroidx/media3/datasource/cache/CachedContent$Range;->length:J
@@ -52,37 +52,37 @@
 
     const/4 v6, 0x0
 
-    if-nez v4, :cond_13
+    if-nez v4, :cond_1
 
     .line 305
     iget-wide p3, p0, Landroidx/media3/datasource/cache/CachedContent$Range;->position:J
 
     cmp-long p1, p1, p3
 
-    if-ltz p1, :cond_11
+    if-ltz p1, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v5, v6
 
-    :goto_12
+    :goto_0
     return v5
 
-    :cond_13
+    :cond_1
     cmp-long v2, p3, v2
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_2
 
     return v6
 
     .line 309
-    :cond_18
+    :cond_2
     iget-wide v2, p0, Landroidx/media3/datasource/cache/CachedContent$Range;->position:J
 
     cmp-long v4, v2, p1
 
-    if-gtz v4, :cond_25
+    if-gtz v4, :cond_3
 
     add-long/2addr p1, p3
 
@@ -90,19 +90,19 @@
 
     cmp-long p1, p1, v2
 
-    if-gtz p1, :cond_25
+    if-gtz p1, :cond_3
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
+    :cond_3
     move v5, v6
 
-    :goto_26
+    :goto_1
     return v5
 .end method
 
 .method public intersects(JJ)Z
-    .registers 12
+    .locals 7
 
     .line 322
     iget-wide v0, p0, Landroidx/media3/datasource/cache/CachedContent$Range;->position:J
@@ -115,41 +115,41 @@
 
     const-wide/16 v5, -0x1
 
-    if-gtz v2, :cond_17
+    if-gtz v2, :cond_2
 
     .line 323
     iget-wide p3, p0, Landroidx/media3/datasource/cache/CachedContent$Range;->length:J
 
     cmp-long v2, p3, v5
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     add-long/2addr v0, p3
 
     cmp-long p1, v0, p1
 
-    if-lez p1, :cond_16
+    if-lez p1, :cond_1
 
-    :cond_15
+    :cond_0
     move v3, v4
 
-    :cond_16
+    :cond_1
     return v3
 
-    :cond_17
+    :cond_2
     cmp-long v2, p3, v5
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_3
 
     add-long/2addr p1, p3
 
     cmp-long p1, p1, v0
 
-    if-lez p1, :cond_21
+    if-lez p1, :cond_4
 
-    :cond_20
+    :cond_3
     move v3, v4
 
-    :cond_21
+    :cond_4
     return v3
 .end method

@@ -84,7 +84,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 11
+    .locals 10
 
     .line 277
     new-instance v1, Landroidx/media3/exoplayer/upstream/DefaultAllocator;
@@ -119,7 +119,7 @@
 .end method
 
 .method protected constructor <init>(Landroidx/media3/exoplayer/upstream/DefaultAllocator;IIIIIZIZ)V
-    .registers 15
+    .locals 5
 
     .line 298
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -229,7 +229,7 @@
 .end method
 
 .method static synthetic access$000(IILjava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 42
     invoke-static {p0, p1, p2, p3}, Landroidx/media3/exoplayer/DefaultLoadControl;->assertGreaterOrEqual(IILjava/lang/String;Ljava/lang/String;)V
@@ -238,19 +238,19 @@
 .end method
 
 .method private static assertGreaterOrEqual(IILjava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
-    if-lt p0, p1, :cond_4
+    if-lt p0, p1, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 p0, 0x0
 
     .line 501
-    :goto_5
+    :goto_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -279,61 +279,61 @@
 .end method
 
 .method private static getDefaultBufferSize(I)I
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x20000
 
-    packed-switch p0, :pswitch_data_18
+    packed-switch p0, :pswitch_data_0
 
     .line 496
-    :pswitch_5
+    :pswitch_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p0
 
-    :pswitch_b
+    :pswitch_1
     return v0
 
-    :pswitch_c
+    :pswitch_2
     const/high16 p0, 0x7d00000
 
     return p0
 
-    :pswitch_f
+    :pswitch_3
     const/high16 p0, 0xc80000
 
     return p0
 
-    :pswitch_12
+    :pswitch_4
     const/high16 p0, 0x89a0000
 
     return p0
 
-    :pswitch_15
+    :pswitch_5
     const/4 p0, 0x0
 
     return p0
 
     nop
 
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch -0x2
-        :pswitch_15
         :pswitch_5
-        :pswitch_12
-        :pswitch_f
-        :pswitch_c
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
+        :pswitch_0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method private removePlayer(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 3
+    .locals 1
 
     .line 463
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -342,17 +342,17 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 464
     invoke-direct {p0}, Landroidx/media3/exoplayer/DefaultLoadControl;->updateAllocator()V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method private resetPlayerLoadingState(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 4
+    .locals 2
 
     .line 454
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -374,12 +374,12 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
     const/high16 v0, 0xc80000
 
     .line 458
-    :cond_15
+    :cond_0
     iput v0, p1, Landroidx/media3/exoplayer/DefaultLoadControl$PlayerLoadingState;->targetBufferBytes:I
 
     const/4 v0, 0x0
@@ -391,7 +391,7 @@
 .end method
 
 .method private updateAllocator()V
-    .registers 3
+    .locals 2
 
     .line 469
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -400,17 +400,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 470
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->reset()V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 472
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/DefaultLoadControl;->calculateTotalTargetBufferBytes()I
@@ -419,29 +419,29 @@
 
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->setTargetBufferSize(I)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method protected calculateTargetBufferBytes([Landroidx/media3/exoplayer/Renderer;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)I
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 436
-    :goto_2
+    :goto_0
     array-length v2, p1
 
-    if-ge v0, v2, :cond_17
+    if-ge v0, v2, :cond_1
 
     .line 437
     aget-object v2, p2, v0
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 438
     aget-object v2, p1, v0
@@ -456,12 +456,12 @@
 
     add-int/2addr v1, v2
 
-    :cond_14
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     const/high16 p1, 0xc80000
 
     .line 441
@@ -473,7 +473,7 @@
 .end method
 
 .method calculateTotalTargetBufferBytes()I
-    .registers 4
+    .locals 3
 
     .line 447
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -488,12 +488,12 @@
 
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -506,14 +506,14 @@
 
     add-int/2addr v1, v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return v1
 .end method
 
 .method public getAllocator()Landroidx/media3/exoplayer/upstream/Allocator;
-    .registers 2
+    .locals 1
 
     .line 368
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
@@ -522,7 +522,7 @@
 .end method
 
 .method public getBackBufferDurationUs(Landroidx/media3/exoplayer/analytics/PlayerId;)J
-    .registers 4
+    .locals 2
 
     .line 373
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->backBufferDurationUs:J
@@ -531,7 +531,7 @@
 .end method
 
 .method public onPrepared(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 8
+    .locals 6
 
     .line 326
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -549,24 +549,24 @@
 
     cmp-long v4, v2, v4
 
-    if-eqz v4, :cond_17
+    if-eqz v4, :cond_1
 
     cmp-long v2, v2, v0
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v2, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 v2, 0x1
 
-    :goto_18
+    :goto_1
     const-string v3, "Players that share the same LoadControl must share the same playback thread. See ExoPlayer.Builder.setPlaybackLooper(Looper)."
 
     invoke-static {v2, v3}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
@@ -581,7 +581,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_2
 
     .line 333
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -595,14 +595,14 @@
     invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 335
-    :cond_32
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/DefaultLoadControl;->resetPlayerLoadingState(Landroidx/media3/exoplayer/analytics/PlayerId;)V
 
     return-void
 .end method
 
 .method public onReleased(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 4
+    .locals 2
 
     .line 360
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/DefaultLoadControl;->removePlayer(Landroidx/media3/exoplayer/analytics/PlayerId;)V
@@ -614,19 +614,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const-wide/16 v0, -0x1
 
     .line 362
     iput-wide v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->threadId:J
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onStopped(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     .line 355
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/DefaultLoadControl;->removePlayer(Landroidx/media3/exoplayer/analytics/PlayerId;)V
@@ -635,7 +635,7 @@
 .end method
 
 .method public onTracksSelected(Landroidx/media3/exoplayer/analytics/PlayerId;Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;[Landroidx/media3/exoplayer/Renderer;Landroidx/media3/exoplayer/source/TrackGroupArray;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)V
-    .registers 7
+    .locals 0
 
     .line 346
     iget-object p2, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -657,7 +657,7 @@
 
     const/4 p3, -0x1
 
-    if-ne p2, p3, :cond_17
+    if-ne p2, p3, :cond_0
 
     .line 348
     invoke-virtual {p0, p4, p6}, Landroidx/media3/exoplayer/DefaultLoadControl;->calculateTargetBufferBytes([Landroidx/media3/exoplayer/Renderer;[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)I
@@ -665,7 +665,7 @@
     move-result p2
 
     .line 349
-    :cond_17
+    :cond_0
     iput p2, p1, Landroidx/media3/exoplayer/DefaultLoadControl$PlayerLoadingState;->targetBufferBytes:I
 
     .line 350
@@ -675,7 +675,7 @@
 .end method
 
 .method public retainBackBufferFromKeyframe(Landroidx/media3/exoplayer/analytics/PlayerId;)Z
-    .registers 2
+    .locals 0
 
     .line 378
     iget-boolean p1, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->retainBackBufferFromKeyframe:Z
@@ -684,7 +684,7 @@
 .end method
 
 .method public shouldContinueLoading(Landroidx/media3/exoplayer/LoadControl$Parameters;)Z
-    .registers 13
+    .locals 11
 
     .line 383
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->loadingStates:Ljava/util/HashMap;
@@ -719,17 +719,17 @@
 
     const/4 v4, 0x0
 
-    if-lt v1, v2, :cond_20
+    if-lt v1, v2, :cond_0
 
     move v1, v3
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v1, v4
 
     .line 386
-    :goto_21
+    :goto_0
     iget-wide v5, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->minBufferUs:J
 
     .line 387
@@ -739,7 +739,7 @@
 
     cmpl-float v2, v2, v7
 
-    if-lez v2, :cond_37
+    if-lez v2, :cond_1
 
     .line 390
     iget v2, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->playbackSpeed:F
@@ -756,7 +756,7 @@
 
     move-result-wide v5
 
-    :cond_37
+    :cond_1
     const-wide/32 v7, 0x7a120
 
     .line 395
@@ -769,34 +769,34 @@
 
     cmp-long v2, v9, v5
 
-    if-gez v2, :cond_60
+    if-gez v2, :cond_4
 
     .line 397
     iget-boolean v2, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->prioritizeTimeOverSizeThresholds:Z
 
-    if-nez v2, :cond_4c
+    if-nez v2, :cond_3
 
-    if-nez v1, :cond_4b
+    if-nez v1, :cond_2
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_4b
+    :cond_2
     move v3, v4
 
-    :cond_4c
-    :goto_4c
+    :cond_3
+    :goto_1
     iput-boolean v3, v0, Landroidx/media3/exoplayer/DefaultLoadControl$PlayerLoadingState;->isLoading:Z
 
     .line 398
     iget-boolean v1, v0, Landroidx/media3/exoplayer/DefaultLoadControl$PlayerLoadingState;->isLoading:Z
 
-    if-nez v1, :cond_6c
+    if-nez v1, :cond_6
 
     iget-wide v1, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->bufferedDurationUs:J
 
     cmp-long p1, v1, v7
 
-    if-gez p1, :cond_6c
+    if-gez p1, :cond_6
 
     const-string p1, "DefaultLoadControl"
 
@@ -805,34 +805,34 @@
     .line 399
     invoke-static {p1, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_6c
+    goto :goto_2
 
     .line 403
-    :cond_60
+    :cond_4
     iget-wide v2, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->bufferedDurationUs:J
 
     iget-wide v5, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->maxBufferUs:J
 
     cmp-long p1, v2, v5
 
-    if-gez p1, :cond_6a
+    if-gez p1, :cond_5
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_6
 
     .line 404
-    :cond_6a
+    :cond_5
     iput-boolean v4, v0, Landroidx/media3/exoplayer/DefaultLoadControl$PlayerLoadingState;->isLoading:Z
 
     .line 406
-    :cond_6c
-    :goto_6c
+    :cond_6
+    :goto_2
     iget-boolean p1, v0, Landroidx/media3/exoplayer/DefaultLoadControl$PlayerLoadingState;->isLoading:Z
 
     return p1
 .end method
 
 .method public shouldStartPlayback(Landroidx/media3/exoplayer/LoadControl$Parameters;)Z
-    .registers 10
+    .locals 8
 
     .line 411
     iget-wide v0, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->bufferedDurationUs:J
@@ -847,24 +847,24 @@
     .line 415
     iget-boolean v2, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->rebuffering:Z
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->bufferForPlaybackAfterRebufferUs:J
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->bufferForPlaybackUs:J
 
     .line 416
-    :goto_11
+    :goto_0
     iget-wide v4, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->targetLiveOffsetUs:J
 
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v4, v4, v6
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_1
 
     .line 417
     iget-wide v4, p1, Landroidx/media3/exoplayer/LoadControl$Parameters;->targetLiveOffsetUs:J
@@ -877,21 +877,21 @@
 
     move-result-wide v2
 
-    :cond_25
+    :cond_1
     const-wide/16 v4, 0x0
 
     cmp-long p1, v2, v4
 
-    if-lez p1, :cond_42
+    if-lez p1, :cond_3
 
     cmp-long p1, v0, v2
 
-    if-gez p1, :cond_42
+    if-gez p1, :cond_3
 
     .line 419
     iget-boolean p1, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->prioritizeTimeOverSizeThresholds:Z
 
-    if-nez p1, :cond_40
+    if-nez p1, :cond_2
 
     iget-object p1, p0, Landroidx/media3/exoplayer/DefaultLoadControl;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
 
@@ -904,19 +904,19 @@
 
     move-result v0
 
-    if-lt p1, v0, :cond_40
+    if-lt p1, v0, :cond_2
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_40
+    :cond_2
     const/4 p1, 0x0
 
-    goto :goto_43
+    goto :goto_2
 
-    :cond_42
-    :goto_42
+    :cond_3
+    :goto_1
     const/4 p1, 0x1
 
-    :goto_43
+    :goto_2
     return p1
 .end method

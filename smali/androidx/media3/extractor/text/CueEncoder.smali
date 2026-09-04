@@ -5,7 +5,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$GVbQy0LLVYXS_twuS9GD2rJm3Xg(Landroidx/media3/common/text/Cue;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     invoke-virtual {p0}, Landroidx/media3/common/text/Cue;->toSerializableBundle()Landroid/os/Bundle;
 
@@ -15,7 +15,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public encode(Ljava/util/List;J)[B
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

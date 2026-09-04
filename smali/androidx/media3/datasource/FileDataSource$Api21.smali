@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 214
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static synthetic access$000(Ljava/lang/Throwable;)Z
-    .registers 1
+    .locals 0
 
     .line 214
     invoke-static {p0}, Landroidx/media3/datasource/FileDataSource$Api21;->isPermissionError(Ljava/lang/Throwable;)Z
@@ -36,12 +36,12 @@
 .end method
 
 .method private static isPermissionError(Ljava/lang/Throwable;)Z
-    .registers 2
+    .locals 1
 
     .line 217
     instance-of v0, p0, Landroid/system/ErrnoException;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     check-cast p0, Landroid/system/ErrnoException;
 
@@ -49,15 +49,15 @@
 
     sget v0, Landroid/system/OsConstants;->EACCES:I
 
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;)V
-    .registers 2
+    .locals 0
 
     .line 138
     iput-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$1;->this$0:Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public onCaptureSequenceAborted(Landroid/hardware/camera2/CameraCaptureSession;I)V
-    .registers 3
+    .locals 0
 
     .line 151
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$1;->this$0:Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;
 
     iget-object p1, p1, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 152
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$1;->this$0:Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;
@@ -56,19 +56,19 @@
 
     iput-object p2, p1, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;JJ)V
-    .registers 7
+    .locals 0
 
     .line 142
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$1;->this$0:Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;
 
     iget-object p1, p1, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 143
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart$1;->this$0:Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;
@@ -84,6 +84,6 @@
 
     iput-object p2, p1, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;->mStartStreamingCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_12
+    :cond_0
     return-void
 .end method

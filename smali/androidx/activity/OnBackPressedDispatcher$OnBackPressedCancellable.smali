@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/OnBackPressedCallback;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public cancel()V
-    .registers 4
+    .locals 3
 
     .line 307
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$OnBackPressedCancellable;->this$0:Landroidx/activity/OnBackPressedDispatcher;
@@ -103,7 +103,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 309
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$OnBackPressedCancellable;->onBackPressedCallback:Landroidx/activity/OnBackPressedCallback;
@@ -116,7 +116,7 @@
     invoke-static {v0, v1}, Landroidx/activity/OnBackPressedDispatcher;->access$setInProgressCallback$p(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/OnBackPressedCallback;)V
 
     .line 312
-    :cond_24
+    :cond_0
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$OnBackPressedCancellable;->onBackPressedCallback:Landroidx/activity/OnBackPressedCallback;
 
     move-object v2, p0
@@ -132,12 +132,12 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_1
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 314
-    :cond_37
+    :cond_1
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$OnBackPressedCancellable;->onBackPressedCallback:Landroidx/activity/OnBackPressedCallback;
 
     invoke-virtual {v0, v1}, Landroidx/activity/OnBackPressedCallback;->setEnabledChangedCallback$activity_release(Lkotlin/jvm/functions/Function0;)V

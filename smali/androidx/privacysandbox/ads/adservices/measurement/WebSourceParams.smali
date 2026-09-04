@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Z)V
-    .registers 4
+    .locals 1
 
     const-string v0, "registrationUri"
 
@@ -67,26 +67,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 39
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 40
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;->registrationUri:Landroid/net/Uri;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;
@@ -97,26 +97,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_2
 
     .line 41
     iget-boolean v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;->debugKeyAllowed:Z
 
     iget-boolean p1, p1, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;->debugKeyAllowed:Z
 
-    if-ne v1, p1, :cond_1d
+    if-ne v1, p1, :cond_2
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_2
     move v0, v2
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method public final getDebugKeyAllowed()Z
-    .registers 2
+    .locals 1
 
     .line 34
     iget-boolean v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;->debugKeyAllowed:Z
@@ -125,7 +125,7 @@
 .end method
 
 .method public final getRegistrationUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 33
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;->registrationUri:Landroid/net/Uri;
@@ -134,7 +134,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 45
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceParams;->registrationUri:Landroid/net/Uri;
@@ -158,7 +158,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 51
     new-instance v0, Ljava/lang/StringBuilder;

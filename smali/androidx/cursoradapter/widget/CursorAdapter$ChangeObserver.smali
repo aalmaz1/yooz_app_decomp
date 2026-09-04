@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/cursoradapter/widget/CursorAdapter;)V
-    .registers 2
+    .locals 0
 
     .line 476
     iput-object p1, p0, Landroidx/cursoradapter/widget/CursorAdapter$ChangeObserver;->this$0:Landroidx/cursoradapter/widget/CursorAdapter;
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public deliverSelfNotifications()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public onChange(Z)V
-    .registers 2
+    .locals 0
 
     .line 487
     iget-object p1, p0, Landroidx/cursoradapter/widget/CursorAdapter$ChangeObserver;->this$0:Landroidx/cursoradapter/widget/CursorAdapter;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 12
+    .locals 7
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;)V
-    .registers 16
+    .locals 9
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -86,7 +86,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1798
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$Subtitle;-><init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)V

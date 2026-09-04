@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/camera/core/impl/CameraThreadConfig;Landroidx/camera/core/CameraSelector;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/InitializationException;
@@ -120,7 +120,7 @@
 .end method
 
 .method private getBackwardCompatibleCameraIds(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,12 +149,12 @@
 
     move-result-object p1
 
-    :goto_9
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -169,7 +169,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_4b
+    if-nez v2, :cond_2
 
     const-string v2, "1"
 
@@ -177,25 +177,25 @@
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_0
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 140
-    :cond_26
+    :cond_0
     invoke-direct {p0, v1}, Landroidx/camera/camera2/internal/Camera2CameraFactory;->isBackwardCompatible(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     .line 141
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
     .line 143
-    :cond_30
+    :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "Camera "
@@ -220,21 +220,21 @@
 
     invoke-static {v2, v1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_9
+    goto :goto_0
 
     .line 138
-    :cond_4b
-    :goto_4b
+    :cond_2
+    :goto_1
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_4f
+    :cond_3
     return-object v0
 .end method
 
 .method private isBackwardCompatible(Ljava/lang/String;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/InitializationException;
@@ -252,13 +252,13 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 162
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraFactory;->mCameraManager:Landroidx/camera/camera2/internal/compat/CameraManagerCompat;
 
     invoke-virtual {v0, p1}, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;->getCameraCharacteristicsCompat(Ljava/lang/String;)Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -272,36 +272,36 @@
     move-result-object p1
 
     check-cast p1, [I
-    :try_end_1a
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_c .. :try_end_1a} :catch_2a
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
     .line 169
     array-length v2, p1
 
     move v3, v0
 
-    :goto_1f
-    if-ge v3, v2, :cond_29
+    :goto_0
+    if-ge v3, v2, :cond_2
 
     aget v4, p1, v3
 
-    if-nez v4, :cond_26
+    if-nez v4, :cond_1
 
     return v1
 
-    :cond_26
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     return v0
 
-    :catch_2a
+    :catch_0
     move-exception p1
 
     .line 165
@@ -319,7 +319,7 @@
 
 # virtual methods
 .method public getAvailableCameraIds()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -340,7 +340,7 @@
 .end method
 
 .method public getCamera(Ljava/lang/String;)Landroidx/camera/core/impl/CameraInternal;
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/CameraUnavailableException;
@@ -354,7 +354,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 87
     new-instance v0, Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -395,7 +395,7 @@
     return-object v0
 
     .line 84
-    :cond_28
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "The given camera id is not on the available camera id list."
@@ -406,7 +406,7 @@
 .end method
 
 .method public getCameraCoordinator()Landroidx/camera/core/concurrent/CameraCoordinator;
-    .registers 2
+    .locals 1
 
     .line 121
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraFactory;->mCameraCoordinator:Landroidx/camera/core/concurrent/CameraCoordinator;
@@ -415,7 +415,7 @@
 .end method
 
 .method getCameraInfo(Ljava/lang/String;)Landroidx/camera/camera2/internal/Camera2CameraInfoImpl;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/CameraUnavailableException;
@@ -432,7 +432,7 @@
 
     check-cast v0, Landroidx/camera/camera2/internal/Camera2CameraInfoImpl;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 102
     new-instance v0, Landroidx/camera/camera2/internal/Camera2CameraInfoImpl;
@@ -445,13 +445,13 @@
     iget-object v1, p0, Landroidx/camera/camera2/internal/Camera2CameraFactory;->mCameraInfos:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_16
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_16
+    :cond_0
     return-object v0
 
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 108
@@ -463,7 +463,7 @@
 .end method
 
 .method public getCameraManager()Landroidx/camera/camera2/internal/compat/CameraManagerCompat;
-    .registers 2
+    .locals 1
 
     .line 127
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraFactory;->mCameraManager:Landroidx/camera/camera2/internal/compat/CameraManagerCompat;
@@ -472,7 +472,7 @@
 .end method
 
 .method public bridge synthetic getCameraManager()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/Camera2CameraFactory;->getCameraManager()Landroidx/camera/camera2/internal/compat/CameraManagerCompat;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,23 +14,23 @@
 .end method
 
 .method public static closeQuietly(Landroidx/media3/datasource/DataSource;)V
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 87
-    :try_start_2
+    :try_start_0
     invoke-interface {p0}, Landroidx/media3/datasource/DataSource;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_5
-    :cond_5
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method public static readExactly(Landroidx/media3/datasource/DataSource;I)[B
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -42,8 +42,8 @@
 
     const/4 v1, 0x0
 
-    :goto_3
-    if-ge v1, p1, :cond_2f
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     sub-int v2, p1, v1
 
@@ -54,14 +54,14 @@
 
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_10
+    if-eq v2, v3, :cond_0
 
     add-int/2addr v1, v2
 
-    goto :goto_3
+    goto :goto_0
 
     .line 71
-    :cond_10
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -92,12 +92,12 @@
 
     throw p0
 
-    :cond_2f
+    :cond_1
     return-object v0
 .end method
 
 .method public static readToEnd(Landroidx/media3/datasource/DataSource;)[B
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -112,16 +112,16 @@
 
     move v2, v1
 
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     const/4 v3, -0x1
 
-    if-eq v1, v3, :cond_1d
+    if-eq v1, v3, :cond_2
 
     .line 43
     array-length v1, v0
 
-    if-ne v2, v1, :cond_13
+    if-ne v2, v1, :cond_1
 
     .line 44
     array-length v1, v0
@@ -133,7 +133,7 @@
     move-result-object v0
 
     .line 46
-    :cond_13
+    :cond_1
     array-length v1, v0
 
     sub-int/2addr v1, v2
@@ -142,14 +142,14 @@
 
     move-result v1
 
-    if-eq v1, v3, :cond_6
+    if-eq v1, v3, :cond_0
 
     add-int/2addr v2, v1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 51
-    :cond_1d
+    :cond_2
     invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object p0

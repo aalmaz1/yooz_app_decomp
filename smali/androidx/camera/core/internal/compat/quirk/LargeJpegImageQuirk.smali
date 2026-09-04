@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 24
+    .locals 24
 
     .line 40
     new-instance v0, Ljava/util/HashSet;
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 .end method
 
 .method static load()Z
-    .registers 3
+    .locals 3
 
     .line 74
     sget-object v0, Landroidx/camera/core/internal/compat/quirk/LargeJpegImageQuirk;->DEVICE_MODELS:Ljava/util/Set;

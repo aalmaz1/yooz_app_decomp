@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/extractor/text/SimpleSubtitleDecoder;)V
-    .registers 2
+    .locals 0
 
     .line 59
     iput-object p1, p0, Landroidx/media3/extractor/text/SimpleSubtitleDecoder$1;->this$0:Landroidx/media3/extractor/text/SimpleSubtitleDecoder;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/media3/extractor/text/SimpleSubtitleDecoder$1;->this$0:Landroidx/media3/extractor/text/SimpleSubtitleDecoder;

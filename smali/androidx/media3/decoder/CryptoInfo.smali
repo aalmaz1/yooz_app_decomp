@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    if-lt v1, v2, :cond_17
+    if-lt v1, v2, :cond_0
 
     new-instance v1, Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;
 
@@ -62,7 +62,7 @@
 
     move-object v3, v1
 
-    :cond_17
+    :cond_0
     iput-object v3, p0, Landroidx/media3/decoder/CryptoInfo;->patternHolder:Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;
 
     return-void
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public getFrameworkCryptoInfo()Landroid/media/MediaCodec$CryptoInfo;
-    .registers 2
+    .locals 1
 
     .line 139
     iget-object v0, p0, Landroidx/media3/decoder/CryptoInfo;->frameworkCryptoInfo:Landroid/media/MediaCodec$CryptoInfo;
@@ -80,17 +80,17 @@
 .end method
 
 .method public increaseClearDataFirstSubSampleBy(I)V
-    .registers 5
+    .locals 3
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 158
-    :cond_3
+    :cond_0
     iget-object v0, p0, Landroidx/media3/decoder/CryptoInfo;->numBytesOfClearData:[I
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -105,7 +105,7 @@
     iput-object v0, v1, Landroid/media/MediaCodec$CryptoInfo;->numBytesOfClearData:[I
 
     .line 162
-    :cond_10
+    :cond_1
     iget-object v0, p0, Landroidx/media3/decoder/CryptoInfo;->numBytesOfClearData:[I
 
     const/4 v1, 0x0
@@ -120,7 +120,7 @@
 .end method
 
 .method public set(I[I[I[B[BIII)V
-    .registers 10
+    .locals 1
 
     .line 108
     iput p1, p0, Landroidx/media3/decoder/CryptoInfo;->numSubSamples:I
@@ -181,7 +181,7 @@
 
     const/16 p2, 0x18
 
-    if-lt p1, p2, :cond_39
+    if-lt p1, p2, :cond_0
 
     .line 125
     iget-object p1, p0, Landroidx/media3/decoder/CryptoInfo;->patternHolder:Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;
@@ -194,6 +194,6 @@
 
     invoke-static {p1, p7, p8}, Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;->access$100(Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;II)V
 
-    :cond_39
+    :cond_0
     return-void
 .end method

@@ -15,7 +15,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method public static buildInitializationData([B)Ljava/util/List;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -80,7 +80,7 @@
 .end method
 
 .method private static buildNativeOrderByteArray(J)[B
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x8
 
@@ -109,7 +109,7 @@
 .end method
 
 .method public static getChannelCount([B)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x9
 
@@ -122,7 +122,7 @@
 .end method
 
 .method private static getPacketDurationUs(BB)J
-    .registers 7
+    .locals 5
 
     and-int/lit16 p0, p0, 0xff
 
@@ -130,23 +130,23 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v2, 0x2
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_1
 
-    if-eq v0, v2, :cond_10
+    if-eq v0, v2, :cond_1
 
     and-int/lit8 v2, p1, 0x3f
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v2, v1
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 p1, 0x3
 
     shr-int/2addr p0, p1
@@ -155,38 +155,38 @@
 
     const/16 v3, 0x10
 
-    if-lt p0, v3, :cond_1c
+    if-lt p0, v3, :cond_2
 
     const/16 p0, 0x9c4
 
     shl-int/2addr p0, v0
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_1c
+    :cond_2
     const/16 v3, 0xc
 
     const/16 v4, 0x2710
 
-    if-lt p0, v3, :cond_27
+    if-lt p0, v3, :cond_3
 
     and-int/lit8 p0, v0, 0x1
 
     shl-int p0, v4, p0
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_27
-    if-ne v0, p1, :cond_2d
+    :cond_3
+    if-ne v0, p1, :cond_4
 
     const p0, 0xea60
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_2d
+    :cond_4
     shl-int p0, v4, v0
 
-    :goto_2f
+    :goto_1
     int-to-long v0, v2
 
     int-to-long p0, p0
@@ -197,7 +197,7 @@
 .end method
 
 .method public static getPacketDurationUs([B)J
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -208,11 +208,11 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_9
+    if-le v2, v3, :cond_0
 
     aget-byte v0, p0, v3
 
-    :cond_9
+    :cond_0
     invoke-static {v1, v0}, Landroidx/media3/extractor/OpusUtil;->getPacketDurationUs(BB)J
 
     move-result-wide v0
@@ -221,7 +221,7 @@
 .end method
 
 .method public static getPreSkipSamples([B)I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0xb
 
@@ -244,7 +244,7 @@
 .end method
 
 .method public static needToDecodeOpusFrame(JJ)Z
-    .registers 6
+    .locals 2
 
     sub-long/2addr p0, p2
 
@@ -261,21 +261,21 @@
 
     cmp-long p0, p0, p2
 
-    if-gtz p0, :cond_10
+    if-gtz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_11
+    :goto_0
     return p0
 .end method
 
 .method public static parseOggPacketAudioSampleCount(Ljava/nio/ByteBuffer;)I
-    .registers 5
+    .locals 4
 
     .line 79
     invoke-static {p0}, Landroidx/media3/extractor/OpusUtil;->parseOggPacketForPreAudioSampleByteCount(Ljava/nio/ByteBuffer;)I
@@ -307,7 +307,7 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_1f
+    if-le v2, v3, :cond_0
 
     add-int/2addr v1, v3
 
@@ -315,13 +315,13 @@
 
     move-result p0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 p0, 0x0
 
     .line 84
-    :goto_20
+    :goto_0
     invoke-static {v0, p0}, Landroidx/media3/extractor/OpusUtil;->getPacketDurationUs(BB)J
 
     move-result-wide v0
@@ -341,7 +341,7 @@
 .end method
 
 .method public static parseOggPacketForPreAudioSampleByteCount(Ljava/nio/ByteBuffer;)I
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x5
 
@@ -354,11 +354,11 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_b
+    :cond_0
     const/16 v0, 0x1a
 
     .line 104
@@ -372,8 +372,8 @@
 
     move v4, v2
 
-    :goto_15
-    if-ge v3, v0, :cond_21
+    :goto_0
+    if-ge v3, v0, :cond_1
 
     add-int/lit8 v5, v3, 0x1b
 
@@ -386,9 +386,9 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     add-int/lit8 v0, v4, 0x1a
 
     .line 111
@@ -396,8 +396,8 @@
 
     move-result v0
 
-    :goto_27
-    if-ge v1, v0, :cond_34
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     add-int/lit8 v3, v4, 0x1b
 
@@ -412,16 +412,16 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_34
+    :cond_2
     add-int/2addr v4, v2
 
     return v4
 .end method
 
 .method public static parsePacketAudioSampleCount(Ljava/nio/ByteBuffer;)I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -436,13 +436,13 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_10
+    if-le v2, v3, :cond_0
 
     invoke-virtual {p0, v3}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v0
 
-    :cond_10
+    :cond_0
     invoke-static {v1, v0}, Landroidx/media3/extractor/OpusUtil;->getPacketDurationUs(BB)J
 
     move-result-wide v0
@@ -462,7 +462,7 @@
 .end method
 
 .method private static sampleCountToNanoseconds(J)J
-    .registers 4
+    .locals 2
 
     const-wide/32 v0, 0x3b9aca00
 

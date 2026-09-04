@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 0
 
     .line 1056
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public dispatch()V
-    .registers 3
+    .locals 2
 
     .line 1062
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;->handler:Landroid/os/Handler;

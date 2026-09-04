@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/Internal$MapAdapter;Ljava/util/Map$Entry;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,26 +63,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 549
-    :cond_4
+    :cond_0
     instance-of v1, p1, Ljava/util/Map$Entry;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 553
-    :cond_a
+    :cond_1
     check-cast p1, Ljava/util/Map$Entry;
 
     .line 554
@@ -98,7 +98,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$EntryAdapter;->getValue()Ljava/lang/Object;
 
@@ -112,19 +112,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v2
 
-    :goto_2a
+    :goto_0
     return v0
 .end method
 
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -142,7 +142,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -170,7 +170,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 559
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$EntryAdapter;->realEntry:Ljava/util/Map$Entry;
@@ -183,7 +183,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)TV;"
@@ -207,14 +207,14 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 541
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$EntryAdapter;->this$0:Landroidx/datastore/preferences/protobuf/Internal$MapAdapter;
 
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter;->access$000(Landroidx/datastore/preferences/protobuf/Internal$MapAdapter;)Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$Converter;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-static {p0, p1}, Landroidx/core/content/ContextCompat;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
@@ -25,7 +25,7 @@
 .end method
 
 .method public static getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 1
 
     .line 66
     invoke-static {}, Landroidx/appcompat/widget/ResourceManagerInternal;->get()Landroidx/appcompat/widget/ResourceManagerInternal;

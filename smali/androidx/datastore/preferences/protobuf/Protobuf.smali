@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 45
     new-instance v0, Landroidx/datastore/preferences/protobuf/Protobuf;
@@ -38,7 +38,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public static getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
-    .registers 1
+    .locals 1
 
     .line 55
     sget-object v0, Landroidx/datastore/preferences/protobuf/Protobuf;->INSTANCE:Landroidx/datastore/preferences/protobuf/Protobuf;
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method getTotalSchemaSize()I
-    .registers 5
+    .locals 4
 
     .line 145
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Protobuf;->schemaCache:Ljava/util/concurrent/ConcurrentMap;
@@ -87,13 +87,13 @@
 
     const/4 v1, 0x0
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
     .line 146
     instance-of v3, v2, Landroidx/datastore/preferences/protobuf/MessageSchema;
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_0
 
     .line 147
     check-cast v2, Landroidx/datastore/preferences/protobuf/MessageSchema;
@@ -115,14 +115,14 @@
 
     add-int/2addr v1, v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     return v1
 .end method
 
 .method public isInitialized(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -144,7 +144,7 @@
 .end method
 
 .method public makeImmutable(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -164,7 +164,7 @@
 .end method
 
 .method public mergeFrom(Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/Reader;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -192,7 +192,7 @@
 .end method
 
 .method public mergeFrom(Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/Reader;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -221,7 +221,7 @@
 .end method
 
 .method public registerSchema(Ljava/lang/Class;Landroidx/datastore/preferences/protobuf/Schema;)Landroidx/datastore/preferences/protobuf/Schema;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -257,7 +257,7 @@
 .end method
 
 .method public registerSchemaOverride(Ljava/lang/Class;Landroidx/datastore/preferences/protobuf/Schema;)Landroidx/datastore/preferences/protobuf/Schema;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -293,7 +293,7 @@
 .end method
 
 .method public schemaFor(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/Schema;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -320,7 +320,7 @@
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/Schema;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 93
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Protobuf;->schemaFactory:Landroidx/datastore/preferences/protobuf/SchemaFactory;
@@ -334,16 +334,16 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     move-object v0, p1
 
-    :cond_1c
+    :cond_0
     return-object v0
 .end method
 
 .method public schemaFor(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/Schema;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -367,7 +367,7 @@
 .end method
 
 .method public writeTo(Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "signals"
 
@@ -57,26 +57,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 41
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 42
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;->signals:Ljava/lang/String;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final getSignals()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 27
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;->signals:Ljava/lang/String;
@@ -100,7 +100,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;->signals:Ljava/lang/String;
@@ -113,7 +113,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 60
     new-instance v0, Ljava/lang/StringBuilder;

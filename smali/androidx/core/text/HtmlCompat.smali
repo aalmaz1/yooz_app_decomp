@@ -37,7 +37,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method public static fromHtml(Ljava/lang/String;I)Landroid/text/Spanned;
-    .registers 2
+    .locals 0
 
     .line 148
     invoke-static {p0, p1}, Landroidx/core/text/HtmlCompat$Api24Impl;->fromHtml(Ljava/lang/String;I)Landroid/text/Spanned;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static fromHtml(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
-    .registers 4
+    .locals 0
 
     .line 163
     invoke-static {p0, p1, p2, p3}, Landroidx/core/text/HtmlCompat$Api24Impl;->fromHtml(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
@@ -68,7 +68,7 @@
 .end method
 
 .method public static toHtml(Landroid/text/Spanned;I)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 176
     invoke-static {p0, p1}, Landroidx/core/text/HtmlCompat$Api24Impl;->toHtml(Landroid/text/Spanned;I)Ljava/lang/String;

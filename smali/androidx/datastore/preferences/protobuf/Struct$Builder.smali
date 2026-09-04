@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 240
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Struct;->access$000()Landroidx/datastore/preferences/protobuf/Struct;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Struct$1;)V
-    .registers 2
+    .locals 0
 
     .line 233
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Struct$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearFields()Landroidx/datastore/preferences/protobuf/Struct$Builder;
-    .registers 2
+    .locals 1
 
     .line 265
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Struct$Builder;->copyOnWrite()V
@@ -73,7 +73,7 @@
 .end method
 
 .method public containsFields(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 260
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -95,7 +95,7 @@
 .end method
 
 .method public getFields()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -118,7 +118,7 @@
 .end method
 
 .method public getFieldsCount()I
-    .registers 2
+    .locals 1
 
     .line 247
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Struct$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -137,7 +137,7 @@
 .end method
 
 .method public getFieldsMap()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -167,7 +167,7 @@
 .end method
 
 .method public getFieldsOrDefault(Ljava/lang/String;Landroidx/datastore/preferences/protobuf/Value;)Landroidx/datastore/preferences/protobuf/Value;
-    .registers 5
+    .locals 2
 
     .line 316
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -187,7 +187,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -197,12 +197,12 @@
 
     check-cast p2, Landroidx/datastore/preferences/protobuf/Value;
 
-    :cond_18
+    :cond_0
     return-object p2
 .end method
 
 .method public getFieldsOrThrow(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Value;
-    .registers 4
+    .locals 2
 
     .line 332
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -222,7 +222,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 338
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -234,7 +234,7 @@
     return-object p1
 
     .line 336
-    :cond_18
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -243,7 +243,7 @@
 .end method
 
 .method public putAllFields(Ljava/util/Map;)Landroidx/datastore/preferences/protobuf/Struct$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -273,7 +273,7 @@
 .end method
 
 .method public putFields(Ljava/lang/String;Landroidx/datastore/preferences/protobuf/Value;)Landroidx/datastore/preferences/protobuf/Struct$Builder;
-    .registers 4
+    .locals 1
 
     .line 350
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -299,7 +299,7 @@
 .end method
 
 .method public removeFields(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Struct$Builder;
-    .registers 3
+    .locals 1
 
     .line 279
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

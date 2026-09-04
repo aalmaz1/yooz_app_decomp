@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 60
     const-class v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream;
@@ -65,7 +65,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 224
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ByteOutput;-><init>()V
@@ -74,7 +74,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/CodedOutputStream$1;)V
-    .registers 2
+    .locals 0
 
     .line 59
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;-><init>()V
@@ -83,7 +83,7 @@
 .end method
 
 .method static synthetic access$100()Z
-    .registers 1
+    .locals 1
 
     .line 59
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
@@ -92,7 +92,7 @@
 .end method
 
 .method public static computeBoolSize(IZ)I
-    .registers 2
+    .locals 0
 
     .line 604
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -109,7 +109,7 @@
 .end method
 
 .method public static computeBoolSizeNoTag(Z)I
-    .registers 1
+    .locals 0
 
     const/4 p0, 0x1
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public static computeByteArraySize(I[B)I
-    .registers 2
+    .locals 0
 
     .line 637
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -134,7 +134,7 @@
 .end method
 
 .method public static computeByteArraySizeNoTag([B)I
-    .registers 1
+    .locals 0
 
     .line 867
     array-length p0, p0
@@ -147,7 +147,7 @@
 .end method
 
 .method public static computeByteBufferSize(ILjava/nio/ByteBuffer;)I
-    .registers 2
+    .locals 0
 
     .line 645
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -164,7 +164,7 @@
 .end method
 
 .method public static computeByteBufferSizeNoTag(Ljava/nio/ByteBuffer;)I
-    .registers 1
+    .locals 0
 
     .line 872
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
@@ -179,7 +179,7 @@
 .end method
 
 .method public static computeBytesSize(ILandroidx/datastore/preferences/protobuf/ByteString;)I
-    .registers 2
+    .locals 0
 
     .line 629
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -196,7 +196,7 @@
 .end method
 
 .method public static computeBytesSizeNoTag(Landroidx/datastore/preferences/protobuf/ByteString;)I
-    .registers 1
+    .locals 0
 
     .line 862
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString;->size()I
@@ -211,7 +211,7 @@
 .end method
 
 .method public static computeDoubleSize(ID)I
-    .registers 3
+    .locals 0
 
     .line 597
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -228,7 +228,7 @@
 .end method
 
 .method public static computeDoubleSizeNoTag(D)I
-    .registers 2
+    .locals 0
 
     const/16 p0, 0x8
 
@@ -236,7 +236,7 @@
 .end method
 
 .method public static computeEnumSize(II)I
-    .registers 2
+    .locals 0
 
     .line 613
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -253,7 +253,7 @@
 .end method
 
 .method public static computeEnumSizeNoTag(I)I
-    .registers 1
+    .locals 0
 
     .line 835
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeInt32SizeNoTag(I)I
@@ -264,7 +264,7 @@
 .end method
 
 .method public static computeFixed32Size(II)I
-    .registers 2
+    .locals 0
 
     .line 533
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -281,7 +281,7 @@
 .end method
 
 .method public static computeFixed32SizeNoTag(I)I
-    .registers 1
+    .locals 0
 
     const/4 p0, 0x4
 
@@ -289,7 +289,7 @@
 .end method
 
 .method public static computeFixed64Size(IJ)I
-    .registers 3
+    .locals 0
 
     .line 573
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -306,7 +306,7 @@
 .end method
 
 .method public static computeFixed64SizeNoTag(J)I
-    .registers 2
+    .locals 0
 
     const/16 p0, 0x8
 
@@ -314,7 +314,7 @@
 .end method
 
 .method public static computeFloatSize(IF)I
-    .registers 2
+    .locals 0
 
     .line 589
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -331,7 +331,7 @@
 .end method
 
 .method public static computeFloatSizeNoTag(F)I
-    .registers 1
+    .locals 0
 
     const/4 p0, 0x4
 
@@ -339,7 +339,7 @@
 .end method
 
 .method public static computeGroupSize(ILandroidx/datastore/preferences/protobuf/MessageLite;)I
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -360,7 +360,7 @@
 .end method
 
 .method static computeGroupSize(ILandroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -381,7 +381,7 @@
 .end method
 
 .method public static computeGroupSizeNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -394,7 +394,7 @@
 .end method
 
 .method static computeGroupSizeNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -409,7 +409,7 @@
 .end method
 
 .method public static computeInt32Size(II)I
-    .registers 2
+    .locals 0
 
     .line 509
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -426,9 +426,9 @@
 .end method
 
 .method public static computeInt32SizeNoTag(I)I
-    .registers 1
+    .locals 0
 
-    if-ltz p0, :cond_7
+    if-ltz p0, :cond_0
 
     .line 719
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeUInt32SizeNoTag(I)I
@@ -437,14 +437,14 @@
 
     return p0
 
-    :cond_7
+    :cond_0
     const/16 p0, 0xa
 
     return p0
 .end method
 
 .method public static computeInt64Size(IJ)I
-    .registers 3
+    .locals 0
 
     .line 549
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -461,7 +461,7 @@
 .end method
 
 .method public static computeInt64SizeNoTag(J)I
-    .registers 2
+    .locals 0
 
     .line 763
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeUInt64SizeNoTag(J)I
@@ -472,7 +472,7 @@
 .end method
 
 .method public static computeLazyFieldMessageSetExtensionSize(ILandroidx/datastore/preferences/protobuf/LazyFieldLite;)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -505,7 +505,7 @@
 .end method
 
 .method public static computeLazyFieldSize(ILandroidx/datastore/preferences/protobuf/LazyFieldLite;)I
-    .registers 2
+    .locals 0
 
     .line 653
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -522,7 +522,7 @@
 .end method
 
 .method public static computeLazyFieldSizeNoTag(Landroidx/datastore/preferences/protobuf/LazyFieldLite;)I
-    .registers 1
+    .locals 0
 
     .line 857
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyFieldLite;->getSerializedSize()I
@@ -537,7 +537,7 @@
 .end method
 
 .method static computeLengthDelimitedFieldSize(I)I
-    .registers 2
+    .locals 1
 
     .line 886
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeUInt32SizeNoTag(I)I
@@ -550,7 +550,7 @@
 .end method
 
 .method public static computeMessageSetExtensionSize(ILandroidx/datastore/preferences/protobuf/MessageLite;)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -583,7 +583,7 @@
 .end method
 
 .method public static computeMessageSize(ILandroidx/datastore/preferences/protobuf/MessageLite;)I
-    .registers 2
+    .locals 0
 
     .line 661
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -600,7 +600,7 @@
 .end method
 
 .method static computeMessageSize(ILandroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 3
+    .locals 0
 
     .line 670
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -617,7 +617,7 @@
 .end method
 
 .method public static computeMessageSizeNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;)I
-    .registers 1
+    .locals 0
 
     .line 877
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/MessageLite;->getSerializedSize()I
@@ -632,7 +632,7 @@
 .end method
 
 .method static computeMessageSizeNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 2
+    .locals 0
 
     .line 882
     check-cast p0, Landroidx/datastore/preferences/protobuf/AbstractMessageLite;
@@ -649,20 +649,20 @@
 .end method
 
 .method static computePreferredBufferSize(I)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x1000
 
-    if-le p0, v0, :cond_5
+    if-le p0, v0, :cond_0
 
     return v0
 
-    :cond_5
+    :cond_0
     return p0
 .end method
 
 .method public static computeRawMessageSetExtensionSize(ILandroidx/datastore/preferences/protobuf/ByteString;)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -695,7 +695,7 @@
 .end method
 
 .method public static computeRawVarint32Size(I)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -708,7 +708,7 @@
 .end method
 
 .method public static computeRawVarint64Size(J)I
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -721,7 +721,7 @@
 .end method
 
 .method public static computeSFixed32Size(II)I
-    .registers 2
+    .locals 0
 
     .line 541
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -738,7 +738,7 @@
 .end method
 
 .method public static computeSFixed32SizeNoTag(I)I
-    .registers 1
+    .locals 0
 
     const/4 p0, 0x4
 
@@ -746,7 +746,7 @@
 .end method
 
 .method public static computeSFixed64Size(IJ)I
-    .registers 3
+    .locals 0
 
     .line 581
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -763,7 +763,7 @@
 .end method
 
 .method public static computeSFixed64SizeNoTag(J)I
-    .registers 2
+    .locals 0
 
     const/16 p0, 0x8
 
@@ -771,7 +771,7 @@
 .end method
 
 .method public static computeSInt32Size(II)I
-    .registers 2
+    .locals 0
 
     .line 525
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -788,7 +788,7 @@
 .end method
 
 .method public static computeSInt32SizeNoTag(I)I
-    .registers 1
+    .locals 0
 
     .line 745
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->encodeZigZag32(I)I
@@ -803,7 +803,7 @@
 .end method
 
 .method public static computeSInt64Size(IJ)I
-    .registers 3
+    .locals 0
 
     .line 565
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -820,7 +820,7 @@
 .end method
 
 .method public static computeSInt64SizeNoTag(J)I
-    .registers 2
+    .locals 0
 
     .line 796
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->encodeZigZag64(J)J
@@ -835,7 +835,7 @@
 .end method
 
 .method public static computeStringSize(ILjava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 621
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -852,20 +852,20 @@
 .end method
 
 .method public static computeStringSizeNoTag(Ljava/lang/String;)I
-    .registers 2
+    .locals 1
 
     .line 842
     :try_start_0
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/Utf8;->encodedLength(Ljava/lang/CharSequence;)I
 
     move-result p0
-    :try_end_4
-    .catch Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 845
-    :catch_5
+    :catch_0
     sget-object v0, Landroidx/datastore/preferences/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
@@ -876,7 +876,7 @@
     array-length p0, p0
 
     .line 849
-    :goto_c
+    :goto_0
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p0
@@ -885,7 +885,7 @@
 .end method
 
 .method public static computeTagSize(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -902,7 +902,7 @@
 .end method
 
 .method public static computeUInt32Size(II)I
-    .registers 2
+    .locals 0
 
     .line 517
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -919,55 +919,55 @@
 .end method
 
 .method public static computeUInt32SizeNoTag(I)I
-    .registers 2
+    .locals 1
 
     and-int/lit8 v0, p0, -0x80
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_6
+    :cond_0
     and-int/lit16 v0, p0, -0x4000
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     const/4 p0, 0x2
 
     return p0
 
-    :cond_c
+    :cond_1
     const/high16 v0, -0x200000
 
     and-int/2addr v0, p0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_2
 
     const/4 p0, 0x3
 
     return p0
 
-    :cond_13
+    :cond_2
     const/high16 v0, -0x10000000
 
     and-int/2addr p0, v0
 
-    if-nez p0, :cond_1a
+    if-nez p0, :cond_3
 
     const/4 p0, 0x4
 
     return p0
 
-    :cond_1a
+    :cond_3
     const/4 p0, 0x5
 
     return p0
 .end method
 
 .method public static computeUInt64Size(IJ)I
-    .registers 3
+    .locals 0
 
     .line 557
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -984,7 +984,7 @@
 .end method
 
 .method public static computeUInt64SizeNoTag(J)I
-    .registers 8
+    .locals 6
 
     const-wide/16 v0, -0x80
 
@@ -994,29 +994,29 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_b
+    :cond_0
     cmp-long v0, p0, v2
 
-    if-gez v0, :cond_12
+    if-gez v0, :cond_1
 
     const/16 p0, 0xa
 
     return p0
 
-    :cond_12
+    :cond_1
     const-wide v0, -0x800000000L
 
     and-long/2addr v0, p0
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     const/16 v0, 0x1c
 
@@ -1024,19 +1024,19 @@
 
     const/4 v0, 0x6
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     const/4 v0, 0x2
 
-    :goto_22
+    :goto_0
     const-wide/32 v4, -0x200000
 
     and-long/2addr v4, p0
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_3
 
     add-int/lit8 v0, v0, 0x2
 
@@ -1044,23 +1044,23 @@
 
     ushr-long/2addr p0, v1
 
-    :cond_2f
+    :cond_3
     const-wide/16 v4, -0x4000
 
     and-long/2addr p0, v4
 
     cmp-long p0, p0, v2
 
-    if-eqz p0, :cond_38
+    if-eqz p0, :cond_4
 
     add-int/lit8 v0, v0, 0x1
 
-    :cond_38
+    :cond_4
     return v0
 .end method
 
 .method public static encodeZigZag32(I)I
-    .registers 2
+    .locals 1
 
     shl-int/lit8 v0, p0, 0x1
 
@@ -1072,7 +1072,7 @@
 .end method
 
 .method public static encodeZigZag64(J)J
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -1088,9 +1088,9 @@
 .end method
 
 .method static newInstance(Landroidx/datastore/preferences/protobuf/ByteOutput;I)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_0
 
     .line 220
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;
@@ -1100,7 +1100,7 @@
     return-object v0
 
     .line 217
-    :cond_8
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "bufferSize must be positive"
@@ -1111,7 +1111,7 @@
 .end method
 
 .method public static newInstance(Ljava/io/OutputStream;)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x1000
 
@@ -1124,7 +1124,7 @@
 .end method
 
 .method public static newInstance(Ljava/io/OutputStream;I)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 3
+    .locals 1
 
     .line 105
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$OutputStreamEncoder;
@@ -1135,14 +1135,14 @@
 .end method
 
 .method public static newInstance(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 2
+    .locals 1
 
     .line 131
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 132
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$HeapNioEncoder;
@@ -1152,44 +1152,44 @@
     return-object v0
 
     .line 134
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->isReadOnly()Z
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_2
 
     .line 135
     invoke-static {}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$UnsafeDirectNioEncoder;->isSupported()Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 136
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->newUnsafeInstance(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
 
     move-result-object p0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 137
-    :cond_23
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->newSafeInstance(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
 
     move-result-object p0
 
-    :goto_27
+    :goto_0
     return-object p0
 
     .line 139
-    :cond_28
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "ByteBuffer is read-only"
@@ -1200,7 +1200,7 @@
 .end method
 
 .method public static newInstance(Ljava/nio/ByteBuffer;I)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1213,7 +1213,7 @@
 .end method
 
 .method public static newInstance([B)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1228,7 +1228,7 @@
 .end method
 
 .method public static newInstance([BII)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 4
+    .locals 1
 
     .line 126
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ArrayEncoder;
@@ -1239,7 +1239,7 @@
 .end method
 
 .method static newSafeInstance(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 2
+    .locals 1
 
     .line 149
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$SafeDirectNioEncoder;
@@ -1250,7 +1250,7 @@
 .end method
 
 .method static newUnsafeInstance(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 2
+    .locals 1
 
     .line 144
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$UnsafeDirectNioEncoder;
@@ -1263,19 +1263,19 @@
 
 # virtual methods
 .method public final checkNoSpaceLeft()V
-    .registers 3
+    .locals 2
 
     .line 938
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->spaceLeft()I
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 939
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Did not write as much data as expected."
@@ -1297,7 +1297,7 @@
 .end method
 
 .method final inefficientWriteStringNoTag(Ljava/lang/String;Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1321,7 +1321,7 @@
     move-result-object p1
 
     .line 995
-    :try_start_f
+    :try_start_0
     array-length p2, p1
 
     invoke-virtual {p0, p2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
@@ -1332,19 +1332,19 @@
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, p2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->writeLazy([BII)V
-    :try_end_18
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_f .. :try_end_18} :catch_1b
-    .catch Landroidx/datastore/preferences/protobuf/CodedOutputStream$OutOfSpaceException; {:try_start_f .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroidx/datastore/preferences/protobuf/CodedOutputStream$OutOfSpaceException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_19
+    :catch_0
     move-exception p1
 
     .line 1000
     throw p1
 
-    :catch_1b
+    :catch_1
     move-exception p1
 
     .line 998
@@ -1356,7 +1356,7 @@
 .end method
 
 .method isSerializationDeterministic()Z
-    .registers 2
+    .locals 1
 
     .line 186
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->serializationDeterministic:Z
@@ -1368,7 +1368,7 @@
 .end method
 
 .method public useDeterministicSerialization()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1411,7 +1411,7 @@
 .end method
 
 .method public final writeBoolNoTag(Z)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1443,7 +1443,7 @@
 .end method
 
 .method public final writeByteArrayNoTag([B)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1493,7 +1493,7 @@
 .end method
 
 .method public final writeDouble(ID)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1511,7 +1511,7 @@
 .end method
 
 .method public final writeDoubleNoTag(D)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1529,7 +1529,7 @@
 .end method
 
 .method public final writeEnum(II)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1543,7 +1543,7 @@
 .end method
 
 .method public final writeEnumNoTag(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1589,7 +1589,7 @@
 .end method
 
 .method public final writeFloat(IF)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1607,7 +1607,7 @@
 .end method
 
 .method public final writeFloatNoTag(F)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1625,7 +1625,7 @@
 .end method
 
 .method public final writeGroup(ILandroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1652,7 +1652,7 @@
 .end method
 
 .method final writeGroup(ILandroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1679,7 +1679,7 @@
 .end method
 
 .method public final writeGroupNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1696,7 +1696,7 @@
 .end method
 
 .method final writeGroupNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1731,7 +1731,7 @@
 .end method
 
 .method public final writeInt64(IJ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1745,7 +1745,7 @@
 .end method
 
 .method public final writeInt64NoTag(J)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1815,7 +1815,7 @@
 .end method
 
 .method public final writeRawByte(B)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1829,7 +1829,7 @@
 .end method
 
 .method public final writeRawByte(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1845,7 +1845,7 @@
 .end method
 
 .method public final writeRawBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1867,7 +1867,7 @@
 .end method
 
 .method public final writeRawBytes([B)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1885,7 +1885,7 @@
 .end method
 
 .method public final writeRawBytes([BII)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1899,7 +1899,7 @@
 .end method
 
 .method public final writeRawLittleEndian32(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1916,7 +1916,7 @@
 .end method
 
 .method public final writeRawLittleEndian64(J)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1941,7 +1941,7 @@
 .end method
 
 .method public final writeRawVarint32(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1958,7 +1958,7 @@
 .end method
 
 .method public final writeRawVarint64(J)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1975,7 +1975,7 @@
 .end method
 
 .method public final writeSFixed32(II)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1989,7 +1989,7 @@
 .end method
 
 .method public final writeSFixed32NoTag(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2003,7 +2003,7 @@
 .end method
 
 .method public final writeSFixed64(IJ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2017,7 +2017,7 @@
 .end method
 
 .method public final writeSFixed64NoTag(J)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2031,7 +2031,7 @@
 .end method
 
 .method public final writeSInt32(II)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2049,7 +2049,7 @@
 .end method
 
 .method public final writeSInt32NoTag(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2067,7 +2067,7 @@
 .end method
 
 .method public final writeSInt64(IJ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2085,7 +2085,7 @@
 .end method
 
 .method public final writeSInt64NoTag(J)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

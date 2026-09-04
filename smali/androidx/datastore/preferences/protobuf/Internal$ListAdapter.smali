@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Landroidx/datastore/preferences/protobuf/Internal$ListAdapter$Converter;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public get(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TT;"
@@ -104,7 +104,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 416
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Internal$ListAdapter;->fromList:Ljava/util/List;

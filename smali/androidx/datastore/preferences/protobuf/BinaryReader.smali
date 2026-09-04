@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/BinaryReader$1;)V
-    .registers 2
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BinaryReader;-><init>()V
@@ -40,14 +40,14 @@
 .end method
 
 .method public static newInstance(Ljava/nio/ByteBuffer;Z)Landroidx/datastore/preferences/protobuf/BinaryReader;
-    .registers 3
+    .locals 1
 
     .line 68
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 70
     new-instance v0, Landroidx/datastore/preferences/protobuf/BinaryReader$SafeHeapReader;
@@ -57,7 +57,7 @@
     return-object v0
 
     .line 73
-    :cond_c
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Direct buffers not yet supported"
@@ -73,7 +73,7 @@
 .end method
 
 .method public shouldDiscardUnknownFields()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

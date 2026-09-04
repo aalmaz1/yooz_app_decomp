@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final launch(Landroidx/activity/result/ActivityResultLauncher;Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,23 +55,23 @@
 .end method
 
 .method public static synthetic launch$default(Landroidx/activity/result/ActivityResultLauncher;Landroidx/core/app/ActivityOptionsCompat;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
     .line 70
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/activity/result/ActivityResultLauncherKt;->launch(Landroidx/activity/result/ActivityResultLauncher;Landroidx/core/app/ActivityOptionsCompat;)V
 
     return-void
 .end method
 
 .method public static final launchUnit(Landroidx/activity/result/ActivityResultLauncher;Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,16 +96,16 @@
 .end method
 
 .method public static synthetic launchUnit$default(Landroidx/activity/result/ActivityResultLauncher;Landroidx/core/app/ActivityOptionsCompat;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
     .line 78
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/activity/result/ActivityResultLauncherKt;->launchUnit(Landroidx/activity/result/ActivityResultLauncher;Landroidx/core/app/ActivityOptionsCompat;)V
 
     return-void

@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(IDLjava/lang/Throwable;)V
-    .registers 5
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/camera/video/AudioStats;-><init>()V
@@ -33,21 +33,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 58
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/AudioStats;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_3
 
     .line 59
     check-cast p1, Landroidx/camera/video/AudioStats;
@@ -59,7 +59,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_3b
+    if-ne v1, v3, :cond_2
 
     iget-wide v3, p0, Landroidx/camera/video/AutoValue_AudioStats;->audioAmplitudeInternal:D
 
@@ -78,22 +78,22 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioStats;->errorCause:Ljava/lang/Throwable;
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_1
 
     .line 62
     invoke-virtual {p1}, Landroidx/camera/video/AudioStats;->getErrorCause()Ljava/lang/Throwable;
 
     move-result-object p1
 
-    if-nez p1, :cond_3b
+    if-nez p1, :cond_2
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/AudioStats;->getErrorCause()Ljava/lang/Throwable;
 
     move-result-object p1
@@ -102,22 +102,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_2
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_3b
+    :cond_2
     move v0, v2
 
-    :goto_3c
+    :goto_0
     return v0
 
-    :cond_3d
+    :cond_3
     return v2
 .end method
 
 .method getAudioAmplitudeInternal()D
-    .registers 3
+    .locals 2
 
     .line 35
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_AudioStats;->audioAmplitudeInternal:D
@@ -126,7 +126,7 @@
 .end method
 
 .method public getAudioState()I
-    .registers 2
+    .locals 1
 
     .line 29
     iget v0, p0, Landroidx/camera/video/AutoValue_AudioStats;->audioState:I
@@ -135,7 +135,7 @@
 .end method
 
 .method public getErrorCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/camera/video/AutoValue_AudioStats;->errorCause:Ljava/lang/Throwable;
@@ -144,7 +144,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 71
     iget v0, p0, Landroidx/camera/video/AutoValue_AudioStats;->audioState:I
@@ -183,25 +183,25 @@
     .line 75
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioStats;->errorCause:Ljava/lang/Throwable;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_24
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 46
     new-instance v0, Ljava/lang/StringBuilder;

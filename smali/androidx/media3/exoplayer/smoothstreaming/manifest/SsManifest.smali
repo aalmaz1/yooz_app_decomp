@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>(IIJJIZLandroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;[Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;)V
-    .registers 11
+    .locals 0
 
     .line 316
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(IIJJJIZLandroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;[Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;)V
-    .registers 34
+    .locals 21
 
     const-wide/16 v0, 0x0
 
@@ -89,13 +89,13 @@
 
     const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_0
 
     move-wide v13, v8
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const-wide/32 v4, 0xf4240
 
     move-wide/from16 v2, p5
@@ -109,14 +109,14 @@
 
     move-wide v13, v2
 
-    :goto_19
+    :goto_0
     cmp-long v0, p7, v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     const-wide/32 v4, 0xf4240
 
     move-wide/from16 v2, p7
@@ -128,7 +128,7 @@
 
     move-result-wide v8
 
-    :goto_29
+    :goto_1
     move-wide v15, v8
 
     move-object/from16 v10, p0
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public final copy(Ljava/util/List;)Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -190,12 +190,12 @@
     move v4, v3
 
     .line 335
-    :goto_15
+    :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_4a
+    if-ge v4, v5, :cond_1
 
     .line 336
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -211,9 +211,9 @@
 
     aget-object v6, v6, v7
 
-    if-eq v6, v2, :cond_3d
+    if-eq v6, v2, :cond_0
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_0
 
     new-array v7, v3, [Landroidx/media3/common/Format;
 
@@ -234,7 +234,7 @@
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
     .line 344
-    :cond_3d
+    :cond_0
     iget-object v2, v6, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Landroidx/media3/common/Format;
 
     iget v5, v5, Landroidx/media3/common/StreamKey;->streamIndex:I
@@ -247,10 +247,10 @@
 
     move-object v2, v6
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_4a
-    if-eqz v2, :cond_5b
+    :cond_1
+    if-eqz v2, :cond_2
 
     new-array v0, v3, [Landroidx/media3/common/Format;
 
@@ -267,7 +267,7 @@
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_5b
+    :cond_2
     new-array v0, v3, [Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
 
     .line 351
@@ -304,7 +304,7 @@
 .end method
 
 .method public bridge synthetic copy(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 40
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->copy(Ljava/util/List;)Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;

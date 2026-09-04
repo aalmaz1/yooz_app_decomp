@@ -105,7 +105,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 202
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -187,7 +187,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/Format;)V
-    .registers 4
+    .locals 2
 
     .line 235
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -376,7 +376,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/Format;Landroidx/media3/common/Format$1;)V
-    .registers 3
+    .locals 0
 
     .line 141
     invoke-direct {p0, p1}, Landroidx/media3/common/Format$Builder;-><init>(Landroidx/media3/common/Format;)V
@@ -385,7 +385,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->labels:Ljava/util/List;
@@ -394,7 +394,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/common/Format$Builder;)Landroidx/media3/common/Metadata;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->metadata:Landroidx/media3/common/Metadata;
@@ -403,7 +403,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/common/Format$Builder;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->customData:Ljava/lang/Object;
@@ -412,7 +412,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->containerMimeType:Ljava/lang/String;
@@ -421,7 +421,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->sampleMimeType:Ljava/lang/String;
@@ -430,7 +430,7 @@
 .end method
 
 .method static synthetic access$1400(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->maxInputSize:I
@@ -439,7 +439,7 @@
 .end method
 
 .method static synthetic access$1500(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->maxNumReorderSamples:I
@@ -448,7 +448,7 @@
 .end method
 
 .method static synthetic access$1600(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->initializationData:Ljava/util/List;
@@ -457,7 +457,7 @@
 .end method
 
 .method static synthetic access$1700(Landroidx/media3/common/Format$Builder;)Landroidx/media3/common/DrmInitData;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -466,7 +466,7 @@
 .end method
 
 .method static synthetic access$1800(Landroidx/media3/common/Format$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 141
     iget-wide v0, p0, Landroidx/media3/common/Format$Builder;->subsampleOffsetUs:J
@@ -475,7 +475,7 @@
 .end method
 
 .method static synthetic access$1900(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->width:I
@@ -484,7 +484,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->label:Ljava/lang/String;
@@ -493,7 +493,7 @@
 .end method
 
 .method static synthetic access$2000(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->height:I
@@ -502,7 +502,7 @@
 .end method
 
 .method static synthetic access$2100(Landroidx/media3/common/Format$Builder;)F
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->frameRate:F
@@ -511,7 +511,7 @@
 .end method
 
 .method static synthetic access$2200(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->rotationDegrees:I
@@ -520,7 +520,7 @@
 .end method
 
 .method static synthetic access$2300(Landroidx/media3/common/Format$Builder;)F
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->pixelWidthHeightRatio:F
@@ -529,7 +529,7 @@
 .end method
 
 .method static synthetic access$2400(Landroidx/media3/common/Format$Builder;)[B
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->projectionData:[B
@@ -538,7 +538,7 @@
 .end method
 
 .method static synthetic access$2500(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->stereoMode:I
@@ -547,7 +547,7 @@
 .end method
 
 .method static synthetic access$2600(Landroidx/media3/common/Format$Builder;)Landroidx/media3/common/ColorInfo;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->colorInfo:Landroidx/media3/common/ColorInfo;
@@ -556,7 +556,7 @@
 .end method
 
 .method static synthetic access$2700(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->channelCount:I
@@ -565,7 +565,7 @@
 .end method
 
 .method static synthetic access$2800(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->sampleRate:I
@@ -574,7 +574,7 @@
 .end method
 
 .method static synthetic access$2900(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->pcmEncoding:I
@@ -583,7 +583,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->id:Ljava/lang/String;
@@ -592,7 +592,7 @@
 .end method
 
 .method static synthetic access$3000(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->encoderDelay:I
@@ -601,7 +601,7 @@
 .end method
 
 .method static synthetic access$3100(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->encoderPadding:I
@@ -610,7 +610,7 @@
 .end method
 
 .method static synthetic access$3200(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->accessibilityChannel:I
@@ -619,7 +619,7 @@
 .end method
 
 .method static synthetic access$3300(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->cueReplacementBehavior:I
@@ -628,7 +628,7 @@
 .end method
 
 .method static synthetic access$3400(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->tileCountHorizontal:I
@@ -637,7 +637,7 @@
 .end method
 
 .method static synthetic access$3500(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->tileCountVertical:I
@@ -646,7 +646,7 @@
 .end method
 
 .method static synthetic access$3600(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->cryptoType:I
@@ -655,7 +655,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->language:Ljava/lang/String;
@@ -664,7 +664,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->selectionFlags:I
@@ -673,7 +673,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->roleFlags:I
@@ -682,7 +682,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->averageBitrate:I
@@ -691,7 +691,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/common/Format$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 141
     iget p0, p0, Landroidx/media3/common/Format$Builder;->peakBitrate:I
@@ -700,7 +700,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 141
     iget-object p0, p0, Landroidx/media3/common/Format$Builder;->codecs:Ljava/lang/String;
@@ -711,7 +711,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/Format;
-    .registers 3
+    .locals 2
 
     .line 754
     new-instance v0, Landroidx/media3/common/Format;
@@ -724,7 +724,7 @@
 .end method
 
 .method public setAccessibilityChannel(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 694
     iput p1, p0, Landroidx/media3/common/Format$Builder;->accessibilityChannel:I
@@ -733,7 +733,7 @@
 .end method
 
 .method public setAverageBitrate(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 380
     iput p1, p0, Landroidx/media3/common/Format$Builder;->averageBitrate:I
@@ -742,7 +742,7 @@
 .end method
 
 .method public setChannelCount(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 632
     iput p1, p0, Landroidx/media3/common/Format$Builder;->channelCount:I
@@ -751,7 +751,7 @@
 .end method
 
 .method public setCodecs(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 404
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->codecs:Ljava/lang/String;
@@ -760,7 +760,7 @@
 .end method
 
 .method public setColorInfo(Landroidx/media3/common/ColorInfo;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 618
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->colorInfo:Landroidx/media3/common/ColorInfo;
@@ -769,7 +769,7 @@
 .end method
 
 .method public setContainerMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 446
     invoke-static {p1}, Landroidx/media3/common/MimeTypes;->normalizeMimeType(Ljava/lang/String;)Ljava/lang/String;
@@ -782,7 +782,7 @@
 .end method
 
 .method public setCryptoType(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 747
     iput p1, p0, Landroidx/media3/common/Format$Builder;->cryptoType:I
@@ -791,7 +791,7 @@
 .end method
 
 .method public setCueReplacementBehavior(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 707
     iput p1, p0, Landroidx/media3/common/Format$Builder;->cueReplacementBehavior:I
@@ -800,7 +800,7 @@
 .end method
 
 .method public setCustomData(Ljava/lang/Object;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 432
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->customData:Ljava/lang/Object;
@@ -809,7 +809,7 @@
 .end method
 
 .method public setDrmInitData(Landroidx/media3/common/DrmInitData;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 508
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -818,7 +818,7 @@
 .end method
 
 .method public setEncoderDelay(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 668
     iput p1, p0, Landroidx/media3/common/Format$Builder;->encoderDelay:I
@@ -827,7 +827,7 @@
 .end method
 
 .method public setEncoderPadding(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 680
     iput p1, p0, Landroidx/media3/common/Format$Builder;->encoderPadding:I
@@ -836,7 +836,7 @@
 .end method
 
 .method public setFrameRate(F)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 558
     iput p1, p0, Landroidx/media3/common/Format$Builder;->frameRate:F
@@ -845,7 +845,7 @@
 .end method
 
 .method public setHeight(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 546
     iput p1, p0, Landroidx/media3/common/Format$Builder;->height:I
@@ -854,7 +854,7 @@
 .end method
 
 .method public setId(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 302
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -867,7 +867,7 @@
 .end method
 
 .method public setId(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 289
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->id:Ljava/lang/String;
@@ -876,7 +876,7 @@
 .end method
 
 .method public setInitializationData(Ljava/util/List;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -893,7 +893,7 @@
 .end method
 
 .method public setLabel(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 317
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->label:Ljava/lang/String;
@@ -902,7 +902,7 @@
 .end method
 
 .method public setLabels(Ljava/util/List;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -924,7 +924,7 @@
 .end method
 
 .method public setLanguage(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 344
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->language:Ljava/lang/String;
@@ -933,7 +933,7 @@
 .end method
 
 .method public setMaxInputSize(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 472
     iput p1, p0, Landroidx/media3/common/Format$Builder;->maxInputSize:I
@@ -942,7 +942,7 @@
 .end method
 
 .method public setMaxNumReorderSamples(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 484
     iput p1, p0, Landroidx/media3/common/Format$Builder;->maxNumReorderSamples:I
@@ -951,7 +951,7 @@
 .end method
 
 .method public setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 416
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->metadata:Landroidx/media3/common/Metadata;
@@ -960,7 +960,7 @@
 .end method
 
 .method public setPcmEncoding(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 656
     iput p1, p0, Landroidx/media3/common/Format$Builder;->pcmEncoding:I
@@ -969,7 +969,7 @@
 .end method
 
 .method public setPeakBitrate(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 392
     iput p1, p0, Landroidx/media3/common/Format$Builder;->peakBitrate:I
@@ -978,7 +978,7 @@
 .end method
 
 .method public setPixelWidthHeightRatio(F)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 582
     iput p1, p0, Landroidx/media3/common/Format$Builder;->pixelWidthHeightRatio:F
@@ -987,7 +987,7 @@
 .end method
 
 .method public setProjectionData([B)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 594
     iput-object p1, p0, Landroidx/media3/common/Format$Builder;->projectionData:[B
@@ -996,7 +996,7 @@
 .end method
 
 .method public setRoleFlags(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 368
     iput p1, p0, Landroidx/media3/common/Format$Builder;->roleFlags:I
@@ -1005,7 +1005,7 @@
 .end method
 
 .method public setRotationDegrees(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 570
     iput p1, p0, Landroidx/media3/common/Format$Builder;->rotationDegrees:I
@@ -1014,7 +1014,7 @@
 .end method
 
 .method public setSampleMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 460
     invoke-static {p1}, Landroidx/media3/common/MimeTypes;->normalizeMimeType(Ljava/lang/String;)Ljava/lang/String;
@@ -1027,7 +1027,7 @@
 .end method
 
 .method public setSampleRate(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 644
     iput p1, p0, Landroidx/media3/common/Format$Builder;->sampleRate:I
@@ -1036,7 +1036,7 @@
 .end method
 
 .method public setSelectionFlags(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 356
     iput p1, p0, Landroidx/media3/common/Format$Builder;->selectionFlags:I
@@ -1045,7 +1045,7 @@
 .end method
 
 .method public setStereoMode(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 606
     iput p1, p0, Landroidx/media3/common/Format$Builder;->stereoMode:I
@@ -1054,7 +1054,7 @@
 .end method
 
 .method public setSubsampleOffsetUs(J)Landroidx/media3/common/Format$Builder;
-    .registers 3
+    .locals 0
 
     .line 520
     iput-wide p1, p0, Landroidx/media3/common/Format$Builder;->subsampleOffsetUs:J
@@ -1063,7 +1063,7 @@
 .end method
 
 .method public setTileCountHorizontal(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 721
     iput p1, p0, Landroidx/media3/common/Format$Builder;->tileCountHorizontal:I
@@ -1072,7 +1072,7 @@
 .end method
 
 .method public setTileCountVertical(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 733
     iput p1, p0, Landroidx/media3/common/Format$Builder;->tileCountVertical:I
@@ -1081,7 +1081,7 @@
 .end method
 
 .method public setWidth(I)Landroidx/media3/common/Format$Builder;
-    .registers 2
+    .locals 0
 
     .line 534
     iput p1, p0, Landroidx/media3/common/Format$Builder;->width:I

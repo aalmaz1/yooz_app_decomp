@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method getLength()J
-    .registers 3
+    .locals 2
 
     .line 181
     iget-wide v0, p0, Landroidx/emoji2/text/MetadataListReader$OffsetInfo;->mLength:J
@@ -48,7 +48,7 @@
 .end method
 
 .method getStartOffset()J
-    .registers 3
+    .locals 2
 
     .line 177
     iget-wide v0, p0, Landroidx/emoji2/text/MetadataListReader$OffsetInfo;->mStartOffset:J

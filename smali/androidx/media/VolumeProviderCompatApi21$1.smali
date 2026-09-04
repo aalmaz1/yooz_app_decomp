@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(IIILandroidx/media/VolumeProviderCompatApi21$Delegate;)V
-    .registers 5
+    .locals 0
 
     .line 27
     iput-object p4, p0, Landroidx/media/VolumeProviderCompatApi21$1;->val$delegate:Landroidx/media/VolumeProviderCompatApi21$Delegate;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onAdjustVolume(I)V
-    .registers 3
+    .locals 1
 
     .line 35
     iget-object v0, p0, Landroidx/media/VolumeProviderCompatApi21$1;->val$delegate:Landroidx/media/VolumeProviderCompatApi21$Delegate;
@@ -44,7 +44,7 @@
 .end method
 
 .method public onSetVolumeTo(I)V
-    .registers 3
+    .locals 1
 
     .line 30
     iget-object v0, p0, Landroidx/media/VolumeProviderCompatApi21$1;->val$delegate:Landroidx/media/VolumeProviderCompatApi21$Delegate;

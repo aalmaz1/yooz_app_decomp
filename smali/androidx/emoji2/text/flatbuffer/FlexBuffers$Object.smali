@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)V
-    .registers 4
+    .locals 0
 
     .line 637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 645
     new-instance v0, Ljava/lang/StringBuilder;

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,24 +28,24 @@
 
     check-cast v0, Landroidx/camera/video/internal/compat/quirk/MediaFormatMustNotUseFrameRateToFindEncoderQuirk;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 58
-    :goto_10
+    :goto_0
     iput-boolean v0, p0, Landroidx/camera/video/internal/workaround/EncoderFinder;->mShouldRemoveKeyFrameRate:Z
 
     return-void
 .end method
 
 .method private findEncoderWithNearestCompatibleBitrate(Landroid/media/MediaFormat;[Landroid/media/MediaCodecInfo;)Ljava/lang/String;
-    .registers 16
+    .locals 13
 
     const-string v0, "bitrate"
 
@@ -60,7 +60,7 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     const-string p1, "MediaFormat does not contain mime info."
 
@@ -70,15 +70,15 @@
     return-object v3
 
     .line 151
-    :cond_13
+    :cond_0
     array-length v4, p2
 
     const/4 v5, 0x0
 
     move v6, v5
 
-    :goto_16
-    if-ge v6, v4, :cond_a8
+    :goto_0
+    if-ge v6, v4, :cond_9
 
     aget-object v7, p2, v6
 
@@ -87,29 +87,29 @@
 
     move-result v8
 
-    if-nez v8, :cond_22
+    if-nez v8, :cond_1
 
-    goto/16 :goto_a4
+    goto/16 :goto_6
 
     .line 157
-    :cond_22
-    :try_start_22
+    :cond_1
+    :try_start_0
     invoke-virtual {v7, v1}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     move-result-object v8
 
     const/4 v9, 0x1
 
-    if-eqz v8, :cond_2b
+    if-eqz v8, :cond_2
 
     move v10, v9
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_2
     move v10, v5
 
-    :goto_2c
+    :goto_1
     const-string v11, "MIME type is not supported"
 
     .line 158
@@ -120,23 +120,23 @@
 
     move-result v10
 
-    if-eqz v10, :cond_5f
+    if-eqz v10, :cond_4
 
     .line 164
     invoke-virtual {v8}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
 
     move-result-object v10
 
-    if-eqz v10, :cond_3f
+    if-eqz v10, :cond_3
 
     move v11, v9
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_3f
+    :cond_3
     move v11, v5
 
-    :goto_40
+    :goto_2
     const-string v12, "Not video codec"
 
     .line 165
@@ -150,12 +150,12 @@
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
-    :try_end_4d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_22 .. :try_end_4d} :catch_9a
-    .catchall {:try_start_22 .. :try_end_4d} :catchall_8f
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 168
-    :try_start_4d
+    :try_start_1
     invoke-virtual {v10}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getBitrateRange()Landroid/util/Range;
 
     move-result-object v10
@@ -173,20 +173,20 @@
     .line 169
     invoke-virtual {p1, v0, v10}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    goto :goto_61
+    goto :goto_3
 
-    :cond_5f
+    :cond_4
     const/4 v10, -0x1
 
     move-object v11, v3
 
     .line 171
-    :goto_61
+    :goto_3
     invoke-virtual {v8, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFormatSupported(Landroid/media/MediaFormat;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_89
+    if-eqz v8, :cond_6
 
     const-string v8, "No encoder found that supports requested bitrate. Adjusting bitrate to nearest supported bitrate [requested: %dbps, nearest: %dbps]"
 
@@ -214,11 +214,11 @@
     invoke-virtual {v7}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
     move-result-object p2
-    :try_end_7f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4d .. :try_end_7f} :catch_9b
-    .catchall {:try_start_4d .. :try_end_7f} :catchall_8c
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v11, :cond_88
+    if-eqz v11, :cond_5
 
     .line 181
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
@@ -227,26 +227,26 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_88
+    :cond_5
     return-object p2
 
-    :cond_89
-    if-eqz v11, :cond_a4
+    :cond_6
+    if-eqz v11, :cond_8
 
-    goto :goto_9d
+    goto :goto_5
 
-    :catchall_8c
+    :catchall_0
     move-exception p2
 
     move-object v3, v11
 
-    goto :goto_90
+    goto :goto_4
 
-    :catchall_8f
+    :catchall_1
     move-exception p2
 
-    :goto_90
-    if-eqz v3, :cond_99
+    :goto_4
+    if-eqz v3, :cond_7
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
@@ -255,35 +255,35 @@
     invoke-virtual {p1, v0, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 183
-    :cond_99
+    :cond_7
     throw p2
 
-    :catch_9a
+    :catch_0
     move-object v11, v3
 
-    :catch_9b
-    if-eqz v11, :cond_a4
+    :catch_1
+    if-eqz v11, :cond_8
 
     .line 181
-    :goto_9d
+    :goto_5
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
     invoke-virtual {p1, v0, v7}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_a4
-    :goto_a4
+    :cond_8
+    :goto_6
     add-int/lit8 v6, v6, 0x1
 
-    goto/16 :goto_16
+    goto/16 :goto_0
 
-    :cond_a8
+    :cond_9
     return-object v3
 .end method
 
 .method private shouldCreateCodecByType(Landroid/media/MediaFormat;)Z
-    .registers 3
+    .locals 1
 
     .line 189
     const-class v0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;
@@ -295,14 +295,14 @@
 
     check-cast v0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 194
-    :cond_c
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isUnSupportMediaCodecInfo(Landroid/media/MediaFormat;)Z
 
     move-result p1
@@ -313,7 +313,7 @@
 
 # virtual methods
 .method public findEncoder(Landroid/media/MediaFormat;)Landroid/media/MediaCodec;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -333,12 +333,12 @@
     move-result-object v2
 
     .line 78
-    :try_start_a
+    :try_start_0
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     const-string v3, "mime"
 
@@ -378,36 +378,36 @@
 
     invoke-static {v5, v1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_36
+    goto :goto_0
 
     .line 87
-    :cond_32
+    :cond_0
     invoke-static {v2}, Landroid/media/MediaCodec;->createByCodecName(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v4
-    :try_end_36
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_36} :catch_3b
-    .catch Ljava/lang/NullPointerException; {:try_start_a .. :try_end_36} :catch_39
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_a .. :try_end_36} :catch_37
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_36
+    :goto_0
     return-object v4
 
-    :catch_37
+    :catch_0
     move-exception v1
 
-    goto :goto_3c
+    goto :goto_1
 
-    :catch_39
+    :catch_1
     move-exception v1
 
-    goto :goto_3c
+    goto :goto_1
 
-    :catch_3b
+    :catch_2
     move-exception v1
 
     .line 90
-    :goto_3c
+    :goto_1
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/workaround/EncoderFinder;->shouldCreateCodecByType(Landroid/media/MediaFormat;)Z
 
     move-result v3
@@ -460,23 +460,23 @@
 .end method
 
 .method findEncoderForFormat(Landroid/media/MediaFormat;Landroid/media/MediaCodecList;)Ljava/lang/String;
-    .registers 6
+    .locals 3
 
     const-string v0, "frame-rate"
 
     const/4 v1, 0x0
 
     .line 107
-    :try_start_3
+    :try_start_0
     iget-boolean v2, p0, Landroidx/camera/video/internal/workaround/EncoderFinder;->mShouldRemoveKeyFrameRate:Z
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     invoke-virtual {p1, v0}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     .line 108
     invoke-virtual {p1, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
@@ -486,35 +486,35 @@
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 110
-    :try_start_15
+    :try_start_1
     invoke-virtual {p1, v0, v1}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_18
-    .catchall {:try_start_15 .. :try_end_18} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object v1, v2
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catchall_1a
+    :catchall_0
     move-exception p2
 
     move-object v1, v2
 
-    goto :goto_36
+    goto :goto_1
 
     .line 123
-    :cond_1d
-    :goto_1d
-    :try_start_1d
+    :cond_0
+    :goto_0
+    :try_start_2
     invoke-virtual {p2, p1}, Landroid/media/MediaCodecList;->findEncoderForFormat(Landroid/media/MediaFormat;)Ljava/lang/String;
 
     move-result-object v2
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_1
 
     .line 126
     invoke-virtual {p2}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
@@ -525,11 +525,11 @@
     invoke-direct {p0, p1, p2}, Landroidx/camera/video/internal/workaround/EncoderFinder;->findEncoderWithNearestCompatibleBitrate(Landroid/media/MediaFormat;[Landroid/media/MediaCodecInfo;)Ljava/lang/String;
 
     move-result-object v2
-    :try_end_2b
-    .catchall {:try_start_1d .. :try_end_2b} :catchall_35
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :cond_2b
-    if-eqz v1, :cond_34
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 132
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -538,14 +538,14 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_34
+    :cond_2
     return-object v2
 
-    :catchall_35
+    :catchall_1
     move-exception p2
 
-    :goto_36
-    if-eqz v1, :cond_3f
+    :goto_1
+    if-eqz v1, :cond_3
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -554,6 +554,6 @@
     invoke-virtual {p1, v0, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 139
-    :cond_3f
+    :cond_3
     throw p2
 .end method

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
-    .registers 5
+    .locals 1
 
     .line 1050
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,16 +36,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_2
 
     .line 1055
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_0
 
     .line 1063
     iput-object p1, p0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction$Builder;->mAction:Ljava/lang/String;
@@ -59,7 +59,7 @@
     return-void
 
     .line 1060
-    :cond_18
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "You must specify an icon resource id to build a CustomAction."
@@ -69,7 +69,7 @@
     throw p1
 
     .line 1056
-    :cond_20
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "You must specify a name to build a CustomAction."
@@ -79,7 +79,7 @@
     throw p1
 
     .line 1052
-    :cond_28
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "You must specify an action to build a CustomAction."
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public build()Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
-    .registers 6
+    .locals 5
 
     .line 1089
     new-instance v0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
@@ -111,7 +111,7 @@
 .end method
 
 .method public setExtras(Landroid/os/Bundle;)Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction$Builder;
-    .registers 2
+    .locals 0
 
     .line 1078
     iput-object p1, p0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction$Builder;->mExtras:Landroid/os/Bundle;

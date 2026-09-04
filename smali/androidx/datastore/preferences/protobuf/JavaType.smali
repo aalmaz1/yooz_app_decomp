@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 27
+    .locals 27
 
     .line 36
     new-instance v6, Landroidx/datastore/preferences/protobuf/JavaType;
@@ -320,7 +320,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -349,7 +349,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/JavaType;
-    .registers 2
+    .locals 1
 
     .line 34
     const-class v0, Landroidx/datastore/preferences/protobuf/JavaType;
@@ -364,7 +364,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/JavaType;
-    .registers 1
+    .locals 1
 
     .line 34
     sget-object v0, Landroidx/datastore/preferences/protobuf/JavaType;->$VALUES:[Landroidx/datastore/preferences/protobuf/JavaType;
@@ -381,7 +381,7 @@
 
 # virtual methods
 .method public getBoxedType()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -397,7 +397,7 @@
 .end method
 
 .method public getDefaultDefault()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/JavaType;->defaultDefault:Ljava/lang/Object;
@@ -406,7 +406,7 @@
 .end method
 
 .method public getType()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -422,7 +422,7 @@
 .end method
 
 .method public isValidType(Ljava/lang/Class;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

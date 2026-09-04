@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/ExoPlayerImpl;)V
-    .registers 2
+    .locals 0
 
     .line 3491
     iput-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -31,7 +31,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/ExoPlayerImpl;Landroidx/media3/exoplayer/ExoPlayerImpl$1;)V
-    .registers 3
+    .locals 0
 
     .line 3491
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;-><init>(Landroidx/media3/exoplayer/ExoPlayerImpl;)V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
-    .registers 5
+    .locals 3
 
     .line 3496
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -51,7 +51,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
 
@@ -64,7 +64,7 @@
 
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_20
+    if-ne p1, v0, :cond_0
 
     .line 3499
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -83,12 +83,12 @@
     .line 3499
     invoke-static {p1, v0, v1, v2}, Landroidx/media3/exoplayer/ExoPlayerImpl;->access$3000(Landroidx/media3/exoplayer/ExoPlayerImpl;ZII)V
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method public onAudioDevicesRemoved([Landroid/media/AudioDeviceInfo;)V
-    .registers 5
+    .locals 3
 
     .line 3508
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -97,7 +97,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     .line 3509
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$NoSuitableOutputPlaybackSuppressionAudioDeviceCallback;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -116,6 +116,6 @@
     .line 3509
     invoke-static {p1, v0, v1, v2}, Landroidx/media3/exoplayer/ExoPlayerImpl;->access$3000(Landroidx/media3/exoplayer/ExoPlayerImpl;ZII)V
 
-    :cond_15
+    :cond_0
     return-void
 .end method

@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 793
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,13 +30,13 @@
 
 # virtual methods
 .method public onCloseMenu(Landroidx/appcompat/view/menu/MenuBuilder;Z)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onOpenSubMenu(Landroidx/appcompat/view/menu/MenuBuilder;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

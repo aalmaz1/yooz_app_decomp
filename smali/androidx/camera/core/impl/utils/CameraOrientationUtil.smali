@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,28 +18,28 @@
 .end method
 
 .method public static degreesToSurfaceRotation(I)I
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_29
+    if-eqz p0, :cond_3
 
     const/16 v0, 0x5a
 
-    if-eq p0, v0, :cond_27
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0xb4
 
-    if-eq p0, v0, :cond_25
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x10e
 
-    if-ne p0, v0, :cond_10
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x3
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 131
-    :cond_10
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -60,27 +60,27 @@
 
     throw v0
 
-    :cond_25
+    :cond_1
     const/4 p0, 0x2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     const/4 p0, 0x1
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_3
     const/4 p0, 0x0
 
-    :goto_2a
+    :goto_0
     return p0
 .end method
 
 .method public static getRelativeImageRotation(IIZ)I
-    .registers 7
+    .locals 4
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     sub-int v0, p1, p0
 
@@ -89,15 +89,15 @@
     .line 53
     rem-int/lit16 v0, v0, 0x168
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     add-int v0, p1, p0
 
     .line 55
     rem-int/lit16 v0, v0, 0x168
 
-    :goto_d
+    :goto_0
     const-string v1, "CameraOrientationUtil"
 
     .line 57
@@ -105,7 +105,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_1
 
     const/4 v2, 0x4
 
@@ -154,33 +154,33 @@
     .line 58
     invoke-static {v1, p0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_3d
+    :cond_1
     return v0
 .end method
 
 .method public static surfaceRotationToDegrees(I)I
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_29
+    if-eqz p0, :cond_3
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_26
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_0
 
     const/16 p0, 0x10e
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 97
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -201,19 +201,19 @@
 
     throw v0
 
-    :cond_23
+    :cond_1
     const/16 p0, 0xb4
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_26
+    :cond_2
     const/16 p0, 0x5a
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_3
     const/4 p0, 0x0
 
-    :goto_2a
+    :goto_0
     return p0
 .end method

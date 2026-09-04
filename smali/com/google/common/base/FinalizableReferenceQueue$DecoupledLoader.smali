@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 278
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method getBaseUrl()Ljava/net/URL;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -83,7 +83,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_1
 
     .line 316
     invoke-virtual {v1}, Ljava/net/URL;->toString()Ljava/lang/String;
@@ -95,7 +95,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_49
+    if-eqz v3, :cond_0
 
     .line 320
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -122,7 +122,7 @@
     return-object v2
 
     .line 318
-    :cond_49
+    :cond_0
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -144,7 +144,7 @@
     throw v0
 
     .line 312
-    :cond_5e
+    :cond_1
     new-instance v1, Ljava/io/FileNotFoundException;
 
     invoke-direct {v1, v0}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
@@ -153,7 +153,7 @@
 .end method
 
 .method public loadFinalizer()Ljava/lang/Class;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -181,12 +181,12 @@
     invoke-virtual {v0, v1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_f
+    :catch_0
     move-exception v0
 
     .line 301
@@ -206,7 +206,7 @@
 .end method
 
 .method newLoader(Ljava/net/URL;)Ljava/net/URLClassLoader;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

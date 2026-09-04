@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 306
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadRequest$1;
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 6
+    .locals 4
 
     .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,8 +120,8 @@
 
     const/4 v2, 0x0
 
-    :goto_2f
-    if-ge v2, v0, :cond_43
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 178
     const-class v3, Landroidx/media3/common/StreamKey;
@@ -140,10 +140,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 180
-    :cond_43
+    :cond_0
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -181,7 +181,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
-    .registers 12
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -206,24 +206,24 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v2, 0x2
 
-    if-eq v0, v2, :cond_f
+    if-eq v0, v2, :cond_0
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_2
 
-    :cond_f
-    if-nez p6, :cond_12
+    :cond_0
+    if-nez p6, :cond_1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     const/4 v1, 0x0
 
     .line 157
-    :goto_13
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "customCacheKey must be null for type: "
@@ -241,7 +241,7 @@
     invoke-static {v1, v0}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 160
-    :cond_25
+    :cond_2
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
 
     .line 161
@@ -265,7 +265,7 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
-    if-eqz p5, :cond_41
+    if-eqz p5, :cond_3
 
     .line 166
     array-length p1, p5
@@ -274,18 +274,18 @@
 
     move-result-object p1
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_41
+    :cond_3
     const/4 p1, 0x0
 
-    :goto_42
+    :goto_1
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->keySetId:[B
 
     .line 167
     iput-object p6, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
-    if-eqz p7, :cond_4e
+    if-eqz p7, :cond_4
 
     .line 168
     array-length p1, p7
@@ -294,19 +294,19 @@
 
     move-result-object p1
 
-    goto :goto_50
+    goto :goto_2
 
-    :cond_4e
+    :cond_4
     sget-object p1, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
-    :goto_50
+    :goto_2
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->data:[B
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[BLandroidx/media3/exoplayer/offline/DownloadRequest$1;)V
-    .registers 9
+    .locals 0
 
     .line 41
     invoke-direct/range {p0 .. p7}, Landroidx/media3/exoplayer/offline/DownloadRequest;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
@@ -317,7 +317,7 @@
 
 # virtual methods
 .method public copyWithId(Ljava/lang/String;)Landroidx/media3/exoplayer/offline/DownloadRequest;
-    .registers 11
+    .locals 9
 
     .line 193
     new-instance v8, Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -344,7 +344,7 @@
 .end method
 
 .method public copyWithKeySetId([B)Landroidx/media3/exoplayer/offline/DownloadRequest;
-    .registers 11
+    .locals 9
 
     .line 203
     new-instance v8, Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -371,7 +371,7 @@
 .end method
 
 .method public copyWithMergedRequest(Landroidx/media3/exoplayer/offline/DownloadRequest;)Landroidx/media3/exoplayer/offline/DownloadRequest;
-    .registers 11
+    .locals 9
 
     .line 218
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -391,7 +391,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_40
+    if-nez v0, :cond_2
 
     iget-object v0, p1, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
@@ -399,12 +399,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
-    goto :goto_40
+    goto :goto_1
 
     .line 224
-    :cond_1c
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
@@ -414,14 +414,14 @@
     const/4 v1, 0x0
 
     .line 225
-    :goto_24
+    :goto_0
     iget-object v2, p1, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_44
+    if-ge v1, v2, :cond_3
 
     .line 226
     iget-object v2, p1, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
@@ -437,24 +437,24 @@
 
     move-result v3
 
-    if-nez v3, :cond_3d
+    if-nez v3, :cond_1
 
     .line 228
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_3d
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_24
+    goto :goto_0
 
     .line 222
-    :cond_40
-    :goto_40
+    :cond_2
+    :goto_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    :cond_44
+    :cond_3
     move-object v5, v0
 
     .line 232
@@ -480,7 +480,7 @@
 .end method
 
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -488,19 +488,19 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 260
     instance-of v0, p1, Landroidx/media3/exoplayer/offline/DownloadRequest;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 263
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/media3/exoplayer/offline/DownloadRequest;
 
     .line 264
@@ -512,7 +512,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
@@ -523,7 +523,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
@@ -534,7 +534,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
@@ -545,7 +545,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->keySetId:[B
 
@@ -556,7 +556,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
@@ -567,7 +567,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->data:[B
 
@@ -578,16 +578,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4f
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_4f
+    :cond_1
     return v1
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .locals 3
 
     .line 275
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -616,18 +616,18 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     move v1, v2
 
-    :goto_1e
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -657,13 +657,13 @@
     .line 280
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :cond_3b
+    :cond_1
     add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
@@ -681,7 +681,7 @@
 .end method
 
 .method public toMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 3
+    .locals 2
 
     .line 244
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -732,7 +732,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 255
     new-instance v0, Ljava/lang/StringBuilder;
@@ -765,7 +765,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 294
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -800,14 +800,14 @@
     move v0, p2
 
     .line 298
-    :goto_1e
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_34
+    if-ge v0, v1, :cond_0
 
     .line 299
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->streamKeys:Ljava/util/List;
@@ -822,10 +822,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 301
-    :cond_34
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/DownloadRequest;->keySetId:[B
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V

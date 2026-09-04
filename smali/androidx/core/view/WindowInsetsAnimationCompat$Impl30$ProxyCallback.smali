@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/view/WindowInsetsAnimationCompat$Callback;)V
-    .registers 3
+    .locals 1
 
     .line 1018
     invoke-virtual {p1}, Landroidx/core/view/WindowInsetsAnimationCompat$Callback;->getDispatchMode()I
@@ -74,7 +74,7 @@
 .end method
 
 .method private getWindowInsetsAnimationCompat(Landroid/view/WindowInsetsAnimation;)Landroidx/core/view/WindowInsetsAnimationCompat;
-    .registers 4
+    .locals 2
 
     .line 1030
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mAnimations:Ljava/util/HashMap;
@@ -85,7 +85,7 @@
 
     check-cast v0, Landroidx/core/view/WindowInsetsAnimationCompat;
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 1033
     invoke-static {p1}, Landroidx/core/view/WindowInsetsAnimationCompat;->toWindowInsetsAnimationCompat(Landroid/view/WindowInsetsAnimation;)Landroidx/core/view/WindowInsetsAnimationCompat;
@@ -97,14 +97,14 @@
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_13
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public onEnd(Landroid/view/WindowInsetsAnimation;)V
-    .registers 4
+    .locals 2
 
     .line 1079
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mCompat:Landroidx/core/view/WindowInsetsAnimationCompat$Callback;
@@ -124,7 +124,7 @@
 .end method
 
 .method public onPrepare(Landroid/view/WindowInsetsAnimation;)V
-    .registers 3
+    .locals 1
 
     .line 1041
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mCompat:Landroidx/core/view/WindowInsetsAnimationCompat$Callback;
@@ -139,7 +139,7 @@
 .end method
 
 .method public onProgress(Landroid/view/WindowInsets;Ljava/util/List;)Landroid/view/WindowInsets;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,7 +154,7 @@
     .line 1058
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mTmpRunningAnimations:Ljava/util/ArrayList;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 1059
     new-instance v0, Ljava/util/ArrayList;
@@ -174,22 +174,22 @@
 
     iput-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mRORunningAnimations:Ljava/util/List;
 
-    goto :goto_19
+    goto :goto_0
 
     .line 1062
-    :cond_16
+    :cond_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 1065
-    :goto_19
+    :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_1f
-    if-ltz v0, :cond_3a
+    :goto_1
+    if-ltz v0, :cond_1
 
     .line 1066
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -217,10 +217,10 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 1072
-    :cond_3a
+    :cond_1
     iget-object p2, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mCompat:Landroidx/core/view/WindowInsetsAnimationCompat$Callback;
 
     .line 1073
@@ -244,7 +244,7 @@
 .end method
 
 .method public onStart(Landroid/view/WindowInsetsAnimation;Landroid/view/WindowInsetsAnimation$Bounds;)Landroid/view/WindowInsetsAnimation$Bounds;
-    .registers 4
+    .locals 1
 
     .line 1049
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback;->mCompat:Landroidx/core/view/WindowInsetsAnimationCompat$Callback;

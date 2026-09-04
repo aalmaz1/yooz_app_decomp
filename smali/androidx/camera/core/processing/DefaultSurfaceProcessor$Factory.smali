@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 435
     new-instance v0, Landroidx/camera/core/processing/DefaultSurfaceProcessor$Factory$$ExternalSyntheticLambda0;
@@ -42,7 +42,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 432
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public static newInstance(Landroidx/camera/core/DynamicRange;)Landroidx/camera/core/processing/SurfaceProcessorInternal;
-    .registers 2
+    .locals 1
 
     .line 443
     sget-object v0, Landroidx/camera/core/processing/DefaultSurfaceProcessor$Factory;->sSupplier:Landroidx/arch/core/util/Function;
@@ -66,7 +66,7 @@
 .end method
 
 .method public static setSupplier(Landroidx/arch/core/util/Function;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

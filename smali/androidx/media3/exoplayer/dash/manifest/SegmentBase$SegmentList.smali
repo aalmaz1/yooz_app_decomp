@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;JJJJLjava/util/List;JLjava/util/List;JJ)V
-    .registers 35
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public getSegmentCount(J)J
-    .registers 3
+    .locals 0
 
     .line 358
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentList;->mediaSegments:Ljava/util/List;
@@ -92,7 +92,7 @@
 .end method
 
 .method public getSegmentUrl(Landroidx/media3/exoplayer/dash/manifest/Representation;J)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 6
+    .locals 2
 
     .line 353
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentList;->mediaSegments:Ljava/util/List;
@@ -113,7 +113,7 @@
 .end method
 
 .method public isExplicit()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

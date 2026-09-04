@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method public varargs constructor <init>([Ljava/io/Closeable;)V
-    .registers 4
+    .locals 2
 
     .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,24 +93,24 @@
 .end method
 
 .method private static closeWithRuntimeException(Ljava/lang/Object;)V
-    .registers 2
+    .locals 1
 
     .line 238
     instance-of v0, p0, Ljava/io/Closeable;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 240
-    :try_start_4
+    :try_start_0
     check-cast p0, Ljava/io/Closeable;
 
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_a
+    :catch_0
     move-exception p0
 
     .line 242
@@ -120,26 +120,26 @@
 
     throw v0
 
-    :cond_11
-    :goto_11
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public addCloseable(Ljava/io/Closeable;)V
-    .registers 4
+    .locals 2
 
     .line 150
     iget-object v0, p0, Landroidx/lifecycle/ViewModel;->mCloseables:Ljava/util/Set;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 151
     monitor-enter v0
 
     .line 152
-    :try_start_5
+    :try_start_0
     iget-object v1, p0, Landroidx/lifecycle/ViewModel;->mCloseables:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -147,24 +147,24 @@
     .line 153
     monitor-exit v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_5 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method final clear()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -174,13 +174,13 @@
     .line 174
     iget-object v0, p0, Landroidx/lifecycle/ViewModel;->mBagOfTags:Ljava/util/Map;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 175
     monitor-enter v0
 
     .line 176
-    :try_start_8
+    :try_start_0
     iget-object v1, p0, Landroidx/lifecycle/ViewModel;->mBagOfTags:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -191,12 +191,12 @@
 
     move-result-object v1
 
-    :goto_12
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -205,47 +205,47 @@
     .line 178
     invoke-static {v2}, Landroidx/lifecycle/ViewModel;->closeWithRuntimeException(Ljava/lang/Object;)V
 
-    goto :goto_12
+    goto :goto_0
 
     .line 180
-    :cond_20
+    :cond_0
     monitor-exit v0
 
-    goto :goto_25
+    goto :goto_1
 
-    :catchall_22
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_24
-    .catchall {:try_start_8 .. :try_end_24} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 
     .line 183
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_1
     iget-object v0, p0, Landroidx/lifecycle/ViewModel;->mCloseables:Ljava/util/Set;
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_3
 
     .line 184
     monitor-enter v0
 
     .line 185
-    :try_start_2a
+    :try_start_1
     iget-object v1, p0, Landroidx/lifecycle/ViewModel;->mCloseables:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_30
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -256,33 +256,33 @@
     .line 186
     invoke-static {v2}, Landroidx/lifecycle/ViewModel;->closeWithRuntimeException(Ljava/lang/Object;)V
 
-    goto :goto_30
+    goto :goto_2
 
     .line 188
-    :cond_40
+    :cond_2
     monitor-exit v0
 
-    goto :goto_45
+    goto :goto_3
 
-    :catchall_42
+    :catchall_1
     move-exception v1
 
     monitor-exit v0
-    :try_end_44
-    .catchall {:try_start_2a .. :try_end_44} :catchall_42
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     throw v1
 
     .line 190
-    :cond_45
-    :goto_45
+    :cond_3
+    :goto_3
     invoke-virtual {p0}, Landroidx/lifecycle/ViewModel;->onCleared()V
 
     return-void
 .end method
 
 .method getTag(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -296,18 +296,18 @@
     .line 229
     iget-object v0, p0, Landroidx/lifecycle/ViewModel;->mBagOfTags:Ljava/util/Map;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 232
-    :cond_6
+    :cond_0
     monitor-enter v0
 
     .line 233
-    :try_start_7
+    :try_start_0
     iget-object v1, p0, Landroidx/lifecycle/ViewModel;->mBagOfTags:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -318,25 +318,25 @@
 
     return-object p1
 
-    :catchall_f
+    :catchall_0
     move-exception p1
 
     .line 234
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_7 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method protected onCleared()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method setTagIfAbsent(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -353,14 +353,14 @@
     monitor-enter v0
 
     .line 209
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/lifecycle/ViewModel;->mBagOfTags:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 211
     iget-object v2, p0, Landroidx/lifecycle/ViewModel;->mBagOfTags:Ljava/util/Map;
@@ -368,38 +368,38 @@
     invoke-interface {v2, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 213
-    :cond_10
+    :cond_0
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     move-object p2, v1
 
     .line 215
-    :goto_15
+    :goto_0
     iget-boolean p1, p0, Landroidx/lifecycle/ViewModel;->mCleared:Z
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_2
 
     .line 219
     invoke-static {p2}, Landroidx/lifecycle/ViewModel;->closeWithRuntimeException(Ljava/lang/Object;)V
 
-    :cond_1c
+    :cond_2
     return-object p2
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 213
-    :try_start_1e
+    :try_start_1
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_1e .. :try_end_1f} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

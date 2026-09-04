@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
-    .registers 2
+    .locals 0
 
     .line 3218
     iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$HierarchyChangeListener;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
-    .registers 4
+    .locals 1
 
     .line 3223
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$HierarchyChangeListener;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
     iget-object v0, v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 3224
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$HierarchyChangeListener;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
@@ -52,12 +52,12 @@
 
     invoke-interface {v0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
-    .registers 5
+    .locals 2
 
     .line 3230
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$HierarchyChangeListener;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
@@ -71,7 +71,7 @@
 
     iget-object v0, v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 3233
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$HierarchyChangeListener;->this$0:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
@@ -80,6 +80,6 @@
 
     invoke-interface {v0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method

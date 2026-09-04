@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static asByteSource(Ljava/net/URL;)Lcom/google/common/io/ByteSource;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -46,7 +46,7 @@
 .end method
 
 .method public static asCharSource(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -71,7 +71,7 @@
 .end method
 
 .method public static copy(Ljava/net/URL;Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -100,7 +100,7 @@
 .end method
 
 .method public static getResource(Ljava/lang/Class;Ljava/lang/String;)Ljava/net/URL;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -128,16 +128,16 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_9
+    :goto_0
     const-string v2, "resource %s relative to %s not found."
 
     .line 210
@@ -152,7 +152,7 @@
 .end method
 
 .method public static getResource(Ljava/lang/String;)Ljava/net/URL;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -189,16 +189,16 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_1d
+    :goto_0
     const-string v2, "resource %s not found."
 
     .line 196
@@ -208,7 +208,7 @@
 .end method
 
 .method public static readLines(Ljava/net/URL;Ljava/nio/charset/Charset;Lcom/google/common/io/LineProcessor;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation runtime Lcom/google/common/io/ParametricNullness;
     .end annotation
 
@@ -256,7 +256,7 @@
 .end method
 
 .method public static readLines(Ljava/net/URL;Ljava/nio/charset/Charset;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -301,7 +301,7 @@
 .end method
 
 .method public static toByteArray(Ljava/net/URL;)[B
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -330,7 +330,7 @@
 .end method
 
 .method public static toString(Ljava/net/URL;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

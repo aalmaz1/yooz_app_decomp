@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/lifecycle/ProcessCameraProvider;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/core/CameraX;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 213
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider$1;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -69,7 +69,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 205
     check-cast p1, Ljava/lang/Void;
@@ -80,7 +80,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 3
+    .locals 1
 
     .line 208
     iget-object p1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider$1;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;

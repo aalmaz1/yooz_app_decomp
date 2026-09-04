@@ -49,7 +49,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 464
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/FieldInfo$1;)V
-    .registers 2
+    .locals 0
 
     .line 450
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;-><init>()V
@@ -69,12 +69,12 @@
 
 # virtual methods
 .method public build()Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 9
+    .locals 8
 
     .line 541
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->oneof:Landroidx/datastore/preferences/protobuf/OneofInfo;
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 542
     iget v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->fieldNumber:I
@@ -94,10 +94,10 @@
     return-object v0
 
     .line 545
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->mapDefaultEntry:Ljava/lang/Object;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 546
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
@@ -113,15 +113,15 @@
     return-object v0
 
     .line 548
-    :cond_22
+    :cond_1
     iget-object v4, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->presenceField:Ljava/lang/reflect/Field;
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_3
 
     .line 549
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->required:Z
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 550
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
@@ -143,7 +143,7 @@
     return-object v0
 
     .line 553
-    :cond_3b
+    :cond_2
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
 
     iget v2, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->fieldNumber:I
@@ -163,15 +163,15 @@
     return-object v0
 
     .line 557
-    :cond_4c
+    :cond_3
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->enumVerifier:Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_5
 
     .line 558
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->cachedSizeField:Ljava/lang/reflect/Field;
 
-    if-nez v1, :cond_5f
+    if-nez v1, :cond_4
 
     .line 559
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
@@ -187,7 +187,7 @@
     return-object v0
 
     .line 561
-    :cond_5f
+    :cond_4
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
 
     iget v3, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->fieldNumber:I
@@ -201,10 +201,10 @@
     return-object v0
 
     .line 565
-    :cond_6a
+    :cond_5
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->cachedSizeField:Ljava/lang/reflect/Field;
 
-    if-nez v0, :cond_7b
+    if-nez v0, :cond_6
 
     .line 566
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
@@ -222,7 +222,7 @@
     return-object v0
 
     .line 568
-    :cond_7b
+    :cond_6
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
 
     iget v2, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->fieldNumber:I
@@ -237,7 +237,7 @@
 .end method
 
 .method public withCachedSizeField(Ljava/lang/reflect/Field;)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 536
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->cachedSizeField:Ljava/lang/reflect/Field;
@@ -246,7 +246,7 @@
 .end method
 
 .method public withEnforceUtf8(Z)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 526
     iput-boolean p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->enforceUtf8:Z
@@ -255,7 +255,7 @@
 .end method
 
 .method public withEnumVerifier(Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 531
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->enumVerifier:Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;
@@ -264,12 +264,12 @@
 .end method
 
 .method public withField(Ljava/lang/reflect/Field;)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 3
+    .locals 1
 
     .line 471
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->oneof:Landroidx/datastore/preferences/protobuf/OneofInfo;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 474
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
@@ -277,7 +277,7 @@
     return-object p0
 
     .line 472
-    :cond_7
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Cannot set field when building a oneof."
@@ -288,7 +288,7 @@
 .end method
 
 .method public withFieldNumber(I)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 486
     iput p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->fieldNumber:I
@@ -297,7 +297,7 @@
 .end method
 
 .method public withMapDefaultEntry(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 521
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->mapDefaultEntry:Ljava/lang/Object;
@@ -306,7 +306,7 @@
 .end method
 
 .method public withOneof(Landroidx/datastore/preferences/protobuf/OneofInfo;Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -320,11 +320,11 @@
     .line 506
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->field:Ljava/lang/reflect/Field;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->presenceField:Ljava/lang/reflect/Field;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 510
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->oneof:Landroidx/datastore/preferences/protobuf/OneofInfo;
@@ -335,7 +335,7 @@
     return-object p0
 
     .line 507
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Cannot set oneof when field or presenceField have been provided"
@@ -346,7 +346,7 @@
 .end method
 
 .method public withPresence(Ljava/lang/reflect/Field;I)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 4
+    .locals 1
 
     const-string v0, "presenceField"
 
@@ -366,7 +366,7 @@
 .end method
 
 .method public withRequired(Z)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 516
     iput-boolean p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->required:Z
@@ -375,7 +375,7 @@
 .end method
 
 .method public withType(Landroidx/datastore/preferences/protobuf/FieldType;)Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 480
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;->type:Landroidx/datastore/preferences/protobuf/FieldType;

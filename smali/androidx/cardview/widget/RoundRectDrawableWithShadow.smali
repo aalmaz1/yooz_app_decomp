@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-wide v0, 0x4046800000000000L    # 45.0
 
@@ -74,7 +74,7 @@
 .end method
 
 .method constructor <init>(Landroid/content/res/Resources;Landroid/content/res/ColorStateList;FFF)V
-    .registers 8
+    .locals 2
 
     .line 92
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
@@ -180,7 +180,7 @@
 .end method
 
 .method private buildComponents(Landroid/graphics/Rect;)V
-    .registers 8
+    .locals 6
 
     .line 334
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F
@@ -229,7 +229,7 @@
 .end method
 
 .method private buildShadowCorners()V
-    .registers 26
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -261,7 +261,7 @@
     .line 301
     iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_0
 
     .line 302
     new-instance v3, Landroid/graphics/Path;
@@ -270,14 +270,14 @@
 
     iput-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
-    goto :goto_26
+    goto :goto_0
 
     .line 304
-    :cond_23
+    :cond_0
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
     .line 306
-    :goto_26
+    :goto_0
     iget-object v3, v0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerShadowPath:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
@@ -424,7 +424,7 @@
 
     new-array v4, v4, [F
 
-    fill-array-data v4, :array_c2
+    fill-array-data v4, :array_0
 
     sget-object v24, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
@@ -445,7 +445,7 @@
 
     return-void
 
-    :array_c2
+    :array_0
     .array-data 4
         0x0
         0x3f000000    # 0.5f
@@ -454,9 +454,9 @@
 .end method
 
 .method static calculateHorizontalPadding(FFZ)F
-    .registers 9
+    .locals 6
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     float-to-double v0, p0
 
@@ -475,16 +475,16 @@
 
     double-to-float p0, v0
 
-    :cond_c
+    :cond_0
     return p0
 .end method
 
 .method static calculateVerticalPadding(FFZ)F
-    .registers 9
+    .locals 6
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_0
 
     mul-float/2addr p0, v0
 
@@ -507,14 +507,14 @@
 
     return p0
 
-    :cond_10
+    :cond_0
     mul-float/2addr p0, v0
 
     return p0
 .end method
 
 .method private drawShadow(Landroid/graphics/Canvas;)V
-    .registers 14
+    .locals 12
 
     .line 249
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
@@ -559,17 +559,17 @@
 
     const/4 v5, 0x0
 
-    if-lez v2, :cond_22
+    if-lez v2, :cond_0
 
     move v2, v4
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move v2, v5
 
     .line 252
-    :goto_23
+    :goto_0
     iget-object v6, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCardBounds:Landroid/graphics/RectF;
 
     invoke-virtual {v6}, Landroid/graphics/RectF;->height()F
@@ -580,17 +580,17 @@
 
     cmpl-float v3, v6, v3
 
-    if-lez v3, :cond_30
+    if-lez v3, :cond_1
 
     move v10, v4
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_30
+    :cond_1
     move v10, v5
 
     .line 254
-    :goto_31
+    :goto_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v11
@@ -617,7 +617,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    if-eqz v2, :cond_5e
+    if-eqz v2, :cond_2
 
     const/4 v4, 0x0
 
@@ -645,7 +645,7 @@
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 262
-    :cond_5e
+    :cond_2
     invoke-virtual {p1, v11}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 264
@@ -680,7 +680,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    if-eqz v2, :cond_97
+    if-eqz v2, :cond_3
 
     const/4 v4, 0x0
 
@@ -712,7 +712,7 @@
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 273
-    :cond_97
+    :cond_3
     invoke-virtual {p1, v11}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 275
@@ -747,7 +747,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    if-eqz v10, :cond_cc
+    if-eqz v10, :cond_4
 
     const/4 v4, 0x0
 
@@ -775,7 +775,7 @@
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 283
-    :cond_cc
+    :cond_4
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 285
@@ -810,7 +810,7 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    if-eqz v10, :cond_101
+    if-eqz v10, :cond_5
 
     const/4 v4, 0x0
 
@@ -838,16 +838,16 @@
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 293
-    :cond_101
+    :cond_5
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     return-void
 .end method
 
 .method private setBackground(Landroid/content/res/ColorStateList;)V
-    .registers 5
+    .locals 3
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -856,7 +856,7 @@
 
     move-result-object p1
 
-    :cond_7
+    :cond_0
     iput-object p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mBackground:Landroid/content/res/ColorStateList;
 
     .line 109
@@ -882,7 +882,7 @@
 .end method
 
 .method private setShadowSize(FF)V
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -890,11 +890,11 @@
 
     const-string v2, ". Must be >= 0"
 
-    if-ltz v1, :cond_5f
+    if-ltz v1, :cond_4
 
     cmpg-float v0, p2, v0
 
-    if-ltz v0, :cond_46
+    if-ltz v0, :cond_3
 
     .line 150
     invoke-direct {p0, p1}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->toEven(F)I
@@ -914,37 +914,37 @@
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_21
+    if-lez v0, :cond_1
 
     .line 154
     iget-boolean p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPrintedShadowClipWarning:Z
 
-    if-nez p1, :cond_20
+    if-nez p1, :cond_0
 
     .line 155
     iput-boolean v1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPrintedShadowClipWarning:Z
 
-    :cond_20
+    :cond_0
     move p1, p2
 
     .line 158
-    :cond_21
+    :cond_1
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawShadowSize:F
 
     cmpl-float v0, v0, p1
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F
 
     cmpl-float v0, v0, p2
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
     return-void
 
     .line 161
-    :cond_2e
+    :cond_2
     iput p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawShadowSize:F
 
     .line 162
@@ -980,7 +980,7 @@
     return-void
 
     .line 147
-    :cond_46
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1006,7 +1006,7 @@
     throw p1
 
     .line 143
-    :cond_5f
+    :cond_4
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1033,7 +1033,7 @@
 .end method
 
 .method private toEven(F)I
-    .registers 4
+    .locals 2
 
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -1046,23 +1046,23 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     sub-int/2addr p1, v1
 
-    :cond_a
+    :cond_0
     return p1
 .end method
 
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 6
+    .locals 4
 
     .line 238
     iget-boolean v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mDirty:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 239
     invoke-virtual {p0}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->getBounds()Landroid/graphics/Rect;
@@ -1077,7 +1077,7 @@
     iput-boolean v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mDirty:Z
 
     .line 242
-    :cond_e
+    :cond_0
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawShadowSize:F
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -1115,7 +1115,7 @@
 .end method
 
 .method getColor()Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 1
 
     .line 382
     iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mBackground:Landroid/content/res/ColorStateList;
@@ -1124,7 +1124,7 @@
 .end method
 
 .method getCornerRadius()F
-    .registers 2
+    .locals 1
 
     .line 341
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
@@ -1133,7 +1133,7 @@
 .end method
 
 .method getMaxShadowAndCornerPadding(Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 345
     invoke-virtual {p0, p1}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->getPadding(Landroid/graphics/Rect;)Z
@@ -1142,7 +1142,7 @@
 .end method
 
 .method getMaxShadowSize()F
-    .registers 2
+    .locals 1
 
     .line 361
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F
@@ -1151,7 +1151,7 @@
 .end method
 
 .method getMinHeight()F
-    .registers 6
+    .locals 5
 
     .line 371
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F
@@ -1199,7 +1199,7 @@
 .end method
 
 .method getMinWidth()F
-    .registers 5
+    .locals 4
 
     .line 365
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F
@@ -1242,7 +1242,7 @@
 .end method
 
 .method public getOpacity()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x3
 
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public getPadding(Landroid/graphics/Rect;)Z
-    .registers 6
+    .locals 4
 
     .line 170
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F
@@ -1299,7 +1299,7 @@
 .end method
 
 .method getShadowSize()F
-    .registers 2
+    .locals 1
 
     .line 357
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawShadowSize:F
@@ -1308,40 +1308,40 @@
 .end method
 
 .method public isStateful()Z
-    .registers 2
+    .locals 1
 
     .line 210
     iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mBackground:Landroid/content/res/ColorStateList;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    :cond_a
+    :cond_0
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_2
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 137
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
@@ -1355,7 +1355,7 @@
 .end method
 
 .method protected onStateChange([I)Z
-    .registers 4
+    .locals 2
 
     .line 198
     iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mBackground:Landroid/content/res/ColorStateList;
@@ -1375,14 +1375,14 @@
 
     move-result v0
 
-    if-ne v0, p1, :cond_14
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 202
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
@@ -1399,7 +1399,7 @@
 .end method
 
 .method setAddPaddingForCorners(Z)V
-    .registers 2
+    .locals 0
 
     .line 124
     iput-boolean p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mAddPaddingForCorners:Z
@@ -1411,7 +1411,7 @@
 .end method
 
 .method public setAlpha(I)V
-    .registers 3
+    .locals 1
 
     .line 130
     iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPaint:Landroid/graphics/Paint;
@@ -1432,7 +1432,7 @@
 .end method
 
 .method setColor(Landroid/content/res/ColorStateList;)V
-    .registers 2
+    .locals 0
 
     .line 377
     invoke-direct {p0, p1}, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->setBackground(Landroid/content/res/ColorStateList;)V
@@ -1444,7 +1444,7 @@
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
 
     .line 215
     iget-object v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mPaint:Landroid/graphics/Paint;
@@ -1455,13 +1455,13 @@
 .end method
 
 .method setCornerRadius(F)V
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
 
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_1
 
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -1476,12 +1476,12 @@
 
     cmpl-float v0, v0, p1
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     return-void
 
     .line 231
-    :cond_11
+    :cond_0
     iput p1, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mCornerRadius:F
 
     const/4 p1, 0x1
@@ -1495,7 +1495,7 @@
     return-void
 
     .line 225
-    :cond_1a
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1524,7 +1524,7 @@
 .end method
 
 .method setMaxShadowSize(F)V
-    .registers 3
+    .locals 1
 
     .line 353
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawShadowSize:F
@@ -1535,7 +1535,7 @@
 .end method
 
 .method setShadowSize(F)V
-    .registers 3
+    .locals 1
 
     .line 349
     iget v0, p0, Landroidx/cardview/widget/RoundRectDrawableWithShadow;->mRawMaxShadowSize:F

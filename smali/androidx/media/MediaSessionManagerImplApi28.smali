@@ -17,7 +17,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 29
     invoke-direct {p0, p1}, Landroidx/media/MediaSessionManagerImplApi21;-><init>(Landroid/content/Context;)V
@@ -39,12 +39,12 @@
 
 # virtual methods
 .method public isTrustedForMediaControl(Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;)Z
-    .registers 3
+    .locals 1
 
     .line 36
     instance-of v0, p1, Landroidx/media/MediaSessionManagerImplApi28$RemoteUserInfoImplApi28;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 37
     iget-object v0, p0, Landroidx/media/MediaSessionManagerImplApi28;->mObject:Landroid/media/session/MediaSessionManager;
@@ -59,7 +59,7 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1

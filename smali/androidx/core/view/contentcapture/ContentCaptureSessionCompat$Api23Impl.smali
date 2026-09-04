@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 297
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getExtras(Landroid/view/ViewStructure;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 303
     invoke-virtual {p0}, Landroid/view/ViewStructure;->getExtras()Landroid/os/Bundle;

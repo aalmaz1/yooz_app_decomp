@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public static create(Landroid/content/Context;)Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;
-    .registers 2
+    .locals 1
 
     .line 67
     new-instance v0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;
@@ -66,7 +66,7 @@
 .end method
 
 .method private createServiceIntent(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Set;Z)Landroid/content/Intent;
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,19 +81,19 @@
 
     const/4 v0, 0x0
 
-    if-eqz p3, :cond_d4
+    if-eqz p3, :cond_9
 
     .line 211
     invoke-interface {p3}, Ljava/util/Set;->size()I
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
-    goto/16 :goto_d4
+    goto/16 :goto_1
 
     .line 216
-    :cond_b
+    :cond_0
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
@@ -125,13 +125,13 @@
 
     move-object v2, v0
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -149,12 +149,12 @@
 
     move-result-object v4
 
-    :cond_3b
+    :cond_2
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_27
+    if-eqz v5, :cond_1
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -171,18 +171,18 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3b
+    if-eqz v5, :cond_2
 
     move-object v2, v3
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_53
+    :cond_3
     const-string p3, "TWAConnectionPool"
 
-    if-nez v2, :cond_72
+    if-nez v2, :cond_5
 
-    if-eqz p4, :cond_71
+    if-eqz p4, :cond_4
 
     .line 236
     new-instance p1, Ljava/lang/StringBuilder;
@@ -207,11 +207,11 @@
 
     invoke-static {p3, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_71
+    :cond_4
     return-object v0
 
     .line 241
-    :cond_72
+    :cond_5
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
@@ -235,9 +235,9 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_a0
+    if-nez p1, :cond_7
 
-    if-eqz p4, :cond_9f
+    if-eqz p4, :cond_6
 
     .line 249
     new-instance p1, Ljava/lang/StringBuilder;
@@ -256,11 +256,11 @@
 
     invoke-static {p3, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_9f
+    :cond_6
     return-object v0
 
-    :cond_a0
-    if-eqz p4, :cond_c2
+    :cond_7
+    if-eqz p4, :cond_8
 
     .line 254
     new-instance p4, Ljava/lang/StringBuilder;
@@ -294,7 +294,7 @@
     invoke-static {p3, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 256
-    :cond_c2
+    :cond_8
     new-instance p2, Landroid/content/Intent;
 
     invoke-direct {p2}, Landroid/content/Intent;-><init>()V
@@ -312,15 +312,15 @@
 
     return-object p2
 
-    :cond_d4
-    :goto_d4
+    :cond_9
+    :goto_1
     return-object v0
 .end method
 
 
 # virtual methods
 .method public connect(Landroid/net/Uri;Ljava/util/Set;Ljava/util/concurrent/Executor;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -345,7 +345,7 @@
 
     check-cast v0, Landroidx/browser/trusted/ConnectionHolder;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 110
     invoke-virtual {v0}, Landroidx/browser/trusted/ConnectionHolder;->getServiceWrapper()Lcom/google/common/util/concurrent/ListenableFuture;
@@ -355,7 +355,7 @@
     return-object p1
 
     .line 114
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;->mContext:Landroid/content/Context;
 
     const/4 v1, 0x1
@@ -365,7 +365,7 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_24
+    if-nez p2, :cond_1
 
     .line 117
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -381,7 +381,7 @@
     return-object p1
 
     .line 121
-    :cond_24
+    :cond_1
     new-instance v0, Landroidx/browser/trusted/ConnectionHolder;
 
     new-instance v1, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool$$ExternalSyntheticLambda0;
@@ -418,7 +418,7 @@
 .end method
 
 .method synthetic lambda$connect$0$androidx-browser-trusted-TrustedWebActivityServiceConnectionPool(Landroid/net/Uri;)V
-    .registers 3
+    .locals 1
 
     .line 121
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;->mConnections:Ljava/util/Map;
@@ -429,7 +429,7 @@
 .end method
 
 .method public serviceExistsForScope(Landroid/net/Uri;Ljava/util/Set;)Z
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -449,12 +449,12 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 190
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;->mContext:Landroid/content/Context;
 
     const/4 v2, 0x0
@@ -463,19 +463,19 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     move v1, v2
 
-    :goto_15
+    :goto_0
     return v1
 .end method
 
 .method unbindAllConnections()V
-    .registers 4
+    .locals 3
 
     .line 197
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;->mConnections:Ljava/util/Map;
@@ -488,12 +488,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -506,10 +506,10 @@
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 200
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool;->mConnections:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V

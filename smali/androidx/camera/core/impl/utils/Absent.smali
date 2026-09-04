@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 32
     new-instance v0, Landroidx/camera/core/impl/utils/Absent;
@@ -44,7 +44,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroidx/camera/core/impl/utils/Optional;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method private readResolve()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 96
     sget-object v0, Landroidx/camera/core/impl/utils/Absent;->sInstance:Landroidx/camera/core/impl/utils/Absent;
@@ -62,7 +62,7 @@
 .end method
 
 .method static withType()Landroidx/camera/core/impl/utils/Optional;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -82,23 +82,23 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_5
+    :goto_0
     return p1
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -116,7 +116,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     const v0, 0x79a31aac
 
@@ -124,7 +124,7 @@
 .end method
 
 .method public isPresent()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -132,7 +132,7 @@
 .end method
 
 .method public or(Landroidx/camera/core/impl/utils/Optional;)Landroidx/camera/core/impl/utils/Optional;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,7 +154,7 @@
 .end method
 
 .method public or(Landroidx/core/util/Supplier;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,7 +179,7 @@
 .end method
 
 .method public or(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)TT;"
@@ -197,7 +197,7 @@
 .end method
 
 .method public orNull()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -210,7 +210,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "Optional.absent()"
 

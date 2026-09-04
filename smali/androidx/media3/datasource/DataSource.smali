@@ -27,7 +27,7 @@
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,22 +31,22 @@
 
 # virtual methods
 .method public getDisplaySize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 48
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/workaround/DisplaySizeCorrector;->mSmallDisplaySizeQuirk:Landroidx/camera/camera2/internal/compat/quirk/SmallDisplaySizeQuirk;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/compat/quirk/SmallDisplaySizeQuirk;->getDisplaySize()Landroid/util/Size;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method

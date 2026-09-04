@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 55
     sget-object v0, Landroid/media/MediaMetadata;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getBitmap(Ljava/lang/Object;Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 0
 
     .line 35
     check-cast p0, Landroid/media/MediaMetadata;
@@ -48,7 +48,7 @@
 .end method
 
 .method public static getLong(Ljava/lang/Object;Ljava/lang/String;)J
-    .registers 2
+    .locals 0
 
     .line 39
     check-cast p0, Landroid/media/MediaMetadata;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static getRating(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 43
     check-cast p0, Landroid/media/MediaMetadata;
@@ -74,7 +74,7 @@
 .end method
 
 .method public static getText(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
 
     .line 47
     check-cast p0, Landroid/media/MediaMetadata;
@@ -87,7 +87,7 @@
 .end method
 
 .method public static keySet(Ljava/lang/Object;)Ljava/util/Set;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,7 +110,7 @@
 .end method
 
 .method public static writeToParcel(Ljava/lang/Object;Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 51
     check-cast p0, Landroid/media/MediaMetadata;

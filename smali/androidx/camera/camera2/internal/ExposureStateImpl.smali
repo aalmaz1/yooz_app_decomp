@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;I)V
-    .registers 4
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public getExposureCompensationIndex()I
-    .registers 3
+    .locals 2
 
     .line 47
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureStateImpl;->mLock:Ljava/lang/Object;
@@ -48,26 +48,26 @@
     monitor-enter v0
 
     .line 48
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/camera/camera2/internal/ExposureStateImpl;->mExposureCompensation:I
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 49
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getExposureCompensationRange()Landroid/util/Range;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -92,14 +92,14 @@
 .end method
 
 .method public getExposureCompensationStep()Landroid/util/Rational;
-    .registers 3
+    .locals 2
 
     .line 67
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/ExposureStateImpl;->isExposureCompensationSupported()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 68
     sget-object v0, Landroid/util/Rational;->ZERO:Landroid/util/Rational;
@@ -107,7 +107,7 @@
     return-object v0
 
     .line 70
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureStateImpl;->mCameraCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_COMPENSATION_STEP:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -122,7 +122,7 @@
 .end method
 
 .method public isExposureCompensationSupported()Z
-    .registers 3
+    .locals 2
 
     .line 76
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureStateImpl;->mCameraCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -136,7 +136,7 @@
 
     check-cast v0, Landroid/util/Range;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 79
     invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
@@ -149,7 +149,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_0
 
     .line 80
     invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
@@ -162,21 +162,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_27
+    :goto_0
     return v0
 .end method
 
 .method setExposureCompensationIndex(I)V
-    .registers 3
+    .locals 1
 
     .line 53
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureStateImpl;->mLock:Ljava/lang/Object;
@@ -184,7 +184,7 @@
     monitor-enter v0
 
     .line 54
-    :try_start_3
+    :try_start_0
     iput p1, p0, Landroidx/camera/camera2/internal/ExposureStateImpl;->mExposureCompensation:I
 
     .line 55
@@ -192,12 +192,12 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

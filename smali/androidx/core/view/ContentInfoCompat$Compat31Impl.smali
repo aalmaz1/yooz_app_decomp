@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/ContentInfo;)V
-    .registers 2
+    .locals 0
 
     .line 443
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public getClip()Landroid/content/ClipData;
-    .registers 2
+    .locals 1
 
     .line 456
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$Compat31Impl;->mWrapped:Landroid/view/ContentInfo;
@@ -56,7 +56,7 @@
 .end method
 
 .method public getExtras()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 480
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$Compat31Impl;->mWrapped:Landroid/view/ContentInfo;
@@ -69,7 +69,7 @@
 .end method
 
 .method public getFlags()I
-    .registers 2
+    .locals 1
 
     .line 468
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$Compat31Impl;->mWrapped:Landroid/view/ContentInfo;
@@ -82,7 +82,7 @@
 .end method
 
 .method public getLinkUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 474
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$Compat31Impl;->mWrapped:Landroid/view/ContentInfo;
@@ -95,7 +95,7 @@
 .end method
 
 .method public getSource()I
-    .registers 2
+    .locals 1
 
     .line 462
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$Compat31Impl;->mWrapped:Landroid/view/ContentInfo;
@@ -108,7 +108,7 @@
 .end method
 
 .method public getWrapped()Landroid/view/ContentInfo;
-    .registers 2
+    .locals 1
 
     .line 450
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$Compat31Impl;->mWrapped:Landroid/view/ContentInfo;
@@ -117,7 +117,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 486
     new-instance v0, Ljava/lang/StringBuilder;

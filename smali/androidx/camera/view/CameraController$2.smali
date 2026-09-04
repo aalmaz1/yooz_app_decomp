@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/CameraController;)V
-    .registers 2
+    .locals 0
 
     .line 1605
     iput-object p1, p0, Landroidx/camera/view/CameraController$2;->this$0:Landroidx/camera/view/CameraController;
@@ -45,14 +45,14 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 1619
     instance-of v0, p1, Landroidx/camera/core/CameraControl$OperationCanceledException;
 
     const-string v1, "CameraController"
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const-string p1, "Tap-to-focus is canceled by new action."
 
@@ -61,7 +61,7 @@
 
     return-void
 
-    :cond_c
+    :cond_0
     const-string v0, "Tap to focus failed."
 
     .line 1623
@@ -84,14 +84,14 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/core/FocusMeteringResult;)V
-    .registers 4
+    .locals 2
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 1612
-    :cond_3
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Tap to focus onSuccess: "
@@ -123,16 +123,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x2
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     const/4 p1, 0x3
 
-    :goto_28
+    :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -143,7 +143,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1605
     check-cast p1, Landroidx/camera/core/FocusMeteringResult;

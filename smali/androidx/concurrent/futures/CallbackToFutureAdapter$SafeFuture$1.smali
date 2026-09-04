@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;)V
-    .registers 2
+    .locals 0
 
     .line 147
     iput-object p1, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture$1;->this$0:Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method protected pendingToString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 151
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture$1;->this$0:Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;
@@ -53,14 +53,14 @@
 
     check-cast v0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const-string v0, "Completer object has been garbage collected, future will fail soon"
 
     return-object v0
 
     .line 155
-    :cond_f
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "tag=["

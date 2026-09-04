@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.decoder"
 
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 4
+    .locals 1
 
     .line 145
     invoke-direct {p0}, Landroidx/media3/decoder/Buffer;-><init>()V
@@ -84,14 +84,14 @@
 .end method
 
 .method private createReplacementByteBuffer(I)Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 2
 
     .line 238
     iget v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->bufferReplacementMode:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     .line 239
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
@@ -100,10 +100,10 @@
 
     return-object p1
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_1
 
     .line 241
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -113,22 +113,22 @@
     return-object p1
 
     .line 243
-    :cond_12
+    :cond_1
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_2
 
     const/4 v0, 0x0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_18
+    :cond_2
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v0
 
     .line 244
-    :goto_1c
+    :goto_0
     new-instance v1, Landroidx/media3/decoder/DecoderInputBuffer$InsufficientCapacityException;
 
     invoke-direct {v1, v0, p1}, Landroidx/media3/decoder/DecoderInputBuffer$InsufficientCapacityException;-><init>(II)V
@@ -137,7 +137,7 @@
 .end method
 
 .method public static newNoDataInstance()Landroidx/media3/decoder/DecoderInputBuffer;
-    .registers 2
+    .locals 2
 
     .line 123
     new-instance v0, Landroidx/media3/decoder/DecoderInputBuffer;
@@ -152,7 +152,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 227
     invoke-super {p0}, Landroidx/media3/decoder/Buffer;->clear()V
@@ -160,21 +160,21 @@
     .line 228
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 229
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
     .line 231
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 232
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    :cond_11
+    :cond_1
     const/4 v0, 0x0
 
     .line 234
@@ -184,7 +184,7 @@
 .end method
 
 .method public ensureSpaceForWrite(I)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "data"
@@ -199,7 +199,7 @@
     .line 181
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 183
     invoke-direct {p0, p1}, Landroidx/media3/decoder/DecoderInputBuffer;->createReplacementByteBuffer(I)Ljava/nio/ByteBuffer;
@@ -211,7 +211,7 @@
     return-void
 
     .line 187
-    :cond_e
+    :cond_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v1
@@ -223,7 +223,7 @@
 
     add-int/2addr p1, v2
 
-    if-lt v1, p1, :cond_1c
+    if-lt v1, p1, :cond_1
 
     .line 191
     iput-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -231,7 +231,7 @@
     return-void
 
     .line 195
-    :cond_1c
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/decoder/DecoderInputBuffer;->createReplacementByteBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -243,7 +243,7 @@
 
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    if-lez v2, :cond_2f
+    if-lez v2, :cond_2
 
     .line 199
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
@@ -252,38 +252,38 @@
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     .line 203
-    :cond_2f
+    :cond_2
     iput-object p1, p0, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
 .method public final flip()V
-    .registers 2
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 218
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
     .line 220
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 221
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    :cond_e
+    :cond_1
     return-void
 .end method
 
 .method public final isEncrypted()Z
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x40000000    # 2.0f
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public resetSupplementalData(I)V
-    .registers 3
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "supplementalData"
@@ -306,33 +306,33 @@
     .line 159
     iget-object v0, p0, Landroidx/media3/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v0
 
-    if-ge v0, p1, :cond_b
+    if-ge v0, p1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 162
-    :cond_b
+    :cond_0
     iget-object p1, p0, Landroidx/media3/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    goto :goto_17
+    goto :goto_1
 
     .line 160
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object p1
 
     iput-object p1, p0, Landroidx/media3/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
-    :goto_17
+    :goto_1
     return-void
 .end method

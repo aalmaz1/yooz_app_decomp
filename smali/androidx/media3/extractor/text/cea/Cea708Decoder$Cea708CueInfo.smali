@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1409
     new-instance v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo$$ExternalSyntheticLambda0;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;FIIFIFZII)V
-    .registers 13
+    .locals 1
 
     .line 1447
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,13 +92,13 @@
 
     move-result-object p1
 
-    if-eqz p9, :cond_29
+    if-eqz p9, :cond_0
 
     .line 1458
     invoke-virtual {p1, p10}, Landroidx/media3/common/text/Cue$Builder;->setWindowColor(I)Landroidx/media3/common/text/Cue$Builder;
 
     .line 1460
-    :cond_29
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/text/Cue$Builder;->build()Landroidx/media3/common/text/Cue;
 
     move-result-object p1
@@ -112,7 +112,7 @@
 .end method
 
 .method static synthetic access$000()Ljava/util/Comparator;
-    .registers 1
+    .locals 1
 
     .line 1403
     sget-object v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;->LEAST_IMPORTANT_FIRST:Ljava/util/Comparator;
@@ -121,7 +121,7 @@
 .end method
 
 .method static synthetic lambda$static$0(Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;)I
-    .registers 2
+    .locals 0
 
     .line 1410
     iget p1, p1, Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;->priority:I

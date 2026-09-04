@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 38
     new-instance v0, Ljava/lang/Object;
@@ -42,7 +42,7 @@
 .end method
 
 .method public getIdentifier()Landroidx/camera/core/impl/Identifier;
-    .registers 2
+    .locals 1
 
     .line 77
     sget-object v0, Landroidx/camera/core/CameraFilter;->DEFAULT_ID:Landroidx/camera/core/impl/Identifier;

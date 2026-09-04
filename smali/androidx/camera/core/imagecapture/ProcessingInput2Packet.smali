@@ -21,7 +21,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method private static createPacket(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/impl/utils/Exif;Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/processing/Packet;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +75,7 @@
 .end method
 
 .method private static createPacketWithHalRotation(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/impl/utils/Exif;Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/processing/Packet;
-    .registers 12
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -200,7 +200,7 @@
 .end method
 
 .method private static getCameraCaptureResult(Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/impl/CameraCaptureResult;
-    .registers 1
+    .locals 0
 
     .line 125
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getImageInfo()Landroidx/camera/core/ImageInfo;
@@ -217,7 +217,7 @@
 .end method
 
 .method private static getRotatedSize(ILandroid/util/Size;)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 153
     invoke-static {p0}, Landroidx/camera/core/impl/utils/TransformUtils;->within360(I)I
@@ -228,7 +228,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_0
 
     .line 154
     new-instance p0, Landroid/util/Size;
@@ -245,12 +245,12 @@
 
     move-object p1, p0
 
-    :cond_18
+    :cond_0
     return-object p1
 .end method
 
 .method private static getUpdatedCropRect(Landroid/graphics/Rect;Landroid/graphics/Matrix;)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 144
     new-instance v0, Landroid/graphics/RectF;
@@ -275,7 +275,7 @@
 .end method
 
 .method private static getUpdatedTransform(Landroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
-    .registers 3
+    .locals 1
 
     .line 134
     new-instance v0, Landroid/graphics/Matrix;
@@ -291,7 +291,7 @@
 
 # virtual methods
 .method public apply(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)Landroidx/camera/core/processing/Packet;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -326,10 +326,10 @@
 
     const/16 v2, 0x100
 
-    if-ne v1, v2, :cond_2d
+    if-ne v1, v2, :cond_0
 
     .line 70
-    :try_start_10
+    :try_start_0
     invoke-static {v0}, Landroidx/camera/core/impl/utils/Exif;->createFromImageProxy(Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/impl/utils/Exif;
 
     move-result-object v1
@@ -348,12 +348,12 @@
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
-    :try_end_22
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2e
+    goto :goto_0
 
-    :catch_23
+    :catch_0
     move-exception p1
 
     .line 74
@@ -367,18 +367,18 @@
 
     throw v0
 
-    :cond_2d
+    :cond_0
     const/4 v1, 0x0
 
     .line 77
-    :goto_2e
+    :goto_0
     sget-object v2, Landroidx/camera/core/imagecapture/ImagePipeline;->EXIF_ROTATION_AVAILABILITY:Landroidx/camera/core/internal/compat/workaround/ExifRotationAvailability;
 
     invoke-virtual {v2, v0}, Landroidx/camera/core/internal/compat/workaround/ExifRotationAvailability;->shouldUseExifOrientation(Landroidx/camera/core/ImageProxy;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_1
 
     const-string v2, "JPEG image must have exif."
 
@@ -393,7 +393,7 @@
     return-object p1
 
     .line 81
-    :cond_40
+    :cond_1
     invoke-static {p1, v1, v0}, Landroidx/camera/core/imagecapture/ProcessingInput2Packet;->createPacket(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/impl/utils/Exif;Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/processing/Packet;
 
     move-result-object p1
@@ -402,7 +402,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;

@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 848
     new-instance v0, Lcom/google/common/io/Files$2;
@@ -43,7 +43,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public static append(Ljava/lang/CharSequence;Ljava/io/File;Ljava/nio/charset/Charset;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -96,7 +96,7 @@
 .end method
 
 .method public static varargs asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -119,7 +119,7 @@
 .end method
 
 .method public static asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -140,7 +140,7 @@
 .end method
 
 .method public static varargs asCharSink(Ljava/io/File;Ljava/nio/charset/Charset;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/CharSink;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -167,7 +167,7 @@
 .end method
 
 .method public static asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -192,7 +192,7 @@
 .end method
 
 .method public static copy(Ljava/io/File;Ljava/io/File;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -240,7 +240,7 @@
 .end method
 
 .method public static copy(Ljava/io/File;Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -269,7 +269,7 @@
 .end method
 
 .method public static copy(Ljava/io/File;Ljava/nio/charset/Charset;Ljava/lang/Appendable;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -303,7 +303,7 @@
 .end method
 
 .method public static createParentDirs(Ljava/io/File;)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -331,12 +331,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     return-void
 
     .line 477
-    :cond_e
+    :cond_0
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     .line 478
@@ -344,12 +344,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 479
-    :cond_18
+    :cond_1
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -372,7 +372,7 @@
 .end method
 
 .method public static createTempDir()Ljava/io/File;
-    .registers 1
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -387,7 +387,7 @@
 .end method
 
 .method public static equal(Ljava/io/File;Ljava/io/File;)Z
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -411,19 +411,19 @@
     .line 377
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eq p0, p1, :cond_34
+    if-eq p0, p1, :cond_2
 
     .line 378
     invoke-virtual {p0, p1}, Ljava/io/File;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_34
+    goto :goto_0
 
     .line 387
-    :cond_f
+    :cond_0
     invoke-virtual {p0}, Ljava/io/File;->length()J
 
     move-result-wide v0
@@ -437,22 +437,22 @@
 
     cmp-long v6, v0, v4
 
-    if-eqz v6, :cond_27
+    if-eqz v6, :cond_1
 
     cmp-long v4, v2, v4
 
-    if-eqz v4, :cond_27
+    if-eqz v4, :cond_1
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
 
     .line 392
-    :cond_27
+    :cond_1
     invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object p0
@@ -467,15 +467,15 @@
 
     return p0
 
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static fileTraverser()Lcom/google/common/graph/Traverser;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -496,7 +496,7 @@
 .end method
 
 .method public static getFileExtension(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -527,13 +527,13 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
     const-string p0, ""
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 802
@@ -541,12 +541,12 @@
 
     move-result-object p0
 
-    :goto_1e
+    :goto_0
     return-object p0
 .end method
 
 .method public static getNameWithoutExtension(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -577,11 +577,11 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v1, 0x0
 
     .line 819
@@ -589,12 +589,12 @@
 
     move-result-object p0
 
-    :goto_1b
+    :goto_0
     return-object p0
 .end method
 
 .method public static hash(Ljava/io/File;Lcom/google/common/hash/HashFunction;)Lcom/google/common/hash/HashCode;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -628,7 +628,7 @@
 .end method
 
 .method public static isDirectory()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -645,7 +645,7 @@
 .end method
 
 .method public static isFile()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -662,7 +662,7 @@
 .end method
 
 .method public static map(Ljava/io/File;)Ljava/nio/MappedByteBuffer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -692,7 +692,7 @@
 .end method
 
 .method public static map(Ljava/io/File;Ljava/nio/channels/FileChannel$MapMode;)Ljava/nio/MappedByteBuffer;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -721,7 +721,7 @@
 .end method
 
 .method public static map(Ljava/io/File;Ljava/nio/channels/FileChannel$MapMode;J)Ljava/nio/MappedByteBuffer;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -745,16 +745,16 @@
 
     cmp-long v0, p2, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const-string v1, "size (%s) may not be negative"
 
     .line 696
@@ -769,7 +769,7 @@
 .end method
 
 .method private static mapInternal(Ljava/io/File;Ljava/nio/channels/FileChannel$MapMode;J)Ljava/nio/MappedByteBuffer;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -801,22 +801,22 @@
     move-result-object v0
 
     .line 707
-    :try_start_a
+    :try_start_0
     new-instance v1, Ljava/io/RandomAccessFile;
 
     .line 708
     sget-object v2, Ljava/nio/channels/FileChannel$MapMode;->READ_ONLY:Ljava/nio/channels/FileChannel$MapMode;
 
-    if-ne p1, v2, :cond_13
+    if-ne p1, v2, :cond_0
 
     const-string v2, "r"
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const-string v2, "rw"
 
-    :goto_15
+    :goto_0
     invoke-direct {v1, p0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/google/common/io/Closer;->register(Ljava/io/Closeable;)Ljava/io/Closeable;
@@ -844,14 +844,14 @@
 
     cmp-long p0, p2, v5
 
-    if-nez p0, :cond_35
+    if-nez p0, :cond_1
 
     .line 710
     invoke-virtual {v1}, Ljava/nio/channels/FileChannel;->size()J
 
     move-result-wide p2
 
-    :cond_35
+    :cond_1
     move-wide v5, p2
 
     move-object v2, p1
@@ -859,28 +859,28 @@
     invoke-virtual/range {v1 .. v6}, Ljava/nio/channels/FileChannel;->map(Ljava/nio/channels/FileChannel$MapMode;JJ)Ljava/nio/MappedByteBuffer;
 
     move-result-object p0
-    :try_end_3b
-    .catchall {:try_start_a .. :try_end_3b} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 714
     invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
     return-object p0
 
-    :catchall_3f
+    :catchall_0
     move-exception p0
 
     .line 712
-    :try_start_40
+    :try_start_1
     invoke-virtual {v0, p0}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object p0
 
     throw p0
-    :try_end_45
-    .catchall {:try_start_40 .. :try_end_45} :catchall_45
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_45
+    :catchall_1
     move-exception p0
 
     .line 714
@@ -891,7 +891,7 @@
 .end method
 
 .method public static move(Ljava/io/File;Ljava/io/File;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -931,7 +931,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_1
 
     .line 501
     invoke-static {p0, p1}, Lcom/google/common/io/Files;->copy(Ljava/io/File;Ljava/io/File;)V
@@ -941,7 +941,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_1
 
     .line 503
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
@@ -950,7 +950,7 @@
 
     const-string v1, "Unable to delete "
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_0
 
     .line 504
     new-instance p0, Ljava/io/IOException;
@@ -972,7 +972,7 @@
     throw p0
 
     .line 506
-    :cond_3b
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -991,12 +991,12 @@
 
     throw p1
 
-    :cond_4e
+    :cond_1
     return-void
 .end method
 
 .method public static newReader(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/io/BufferedReader;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1037,7 +1037,7 @@
 .end method
 
 .method public static newWriter(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/io/BufferedWriter;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1078,7 +1078,7 @@
 .end method
 
 .method public static readBytes(Ljava/io/File;Lcom/google/common/io/ByteProcessor;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation runtime Lcom/google/common/io/ParametricNullness;
     .end annotation
 
@@ -1126,7 +1126,7 @@
 .end method
 
 .method public static readFirstLine(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1163,7 +1163,7 @@
 .end method
 
 .method public static readLines(Ljava/io/File;Ljava/nio/charset/Charset;Lcom/google/common/io/LineProcessor;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation runtime Lcom/google/common/io/ParametricNullness;
     .end annotation
 
@@ -1214,7 +1214,7 @@
 .end method
 
 .method public static readLines(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/util/List;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1264,7 +1264,7 @@
 .end method
 
 .method public static simplifyPath(Ljava/lang/String;)Ljava/lang/String;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -1284,11 +1284,11 @@
 
     const-string v1, "."
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return-object v1
 
-    :cond_c
+    :cond_0
     const/16 v0, 0x2f
 
     .line 745
@@ -1314,13 +1314,13 @@
 
     move-result-object v2
 
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_6a
+    if-eqz v4, :cond_4
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1335,7 +1335,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_23
+    if-nez v5, :cond_1
 
     const-string v5, ".."
 
@@ -1343,20 +1343,20 @@
 
     move-result v6
 
-    if-nez v6, :cond_44
+    if-nez v6, :cond_2
 
     .line 761
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_23
+    goto :goto_0
 
     .line 754
-    :cond_44
+    :cond_2
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-lez v4, :cond_66
+    if-lez v4, :cond_3
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -1374,7 +1374,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_66
+    if-nez v4, :cond_3
 
     .line 755
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -1385,16 +1385,16 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    goto :goto_23
+    goto :goto_0
 
     .line 757
-    :cond_66
+    :cond_3
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_23
+    goto :goto_0
 
     .line 767
-    :cond_6a
+    :cond_4
     invoke-static {v0}, Lcom/google/common/base/Joiner;->on(C)Lcom/google/common/base/Joiner;
 
     move-result-object v2
@@ -1412,7 +1412,7 @@
 
     const-string v3, "/"
 
-    if-ne p0, v0, :cond_88
+    if-ne p0, v0, :cond_5
 
     .line 769
     new-instance p0, Ljava/lang/StringBuilder;
@@ -1427,8 +1427,8 @@
 
     move-result-object v2
 
-    :cond_88
-    :goto_88
+    :cond_5
+    :goto_1
     const-string p0, "/../"
 
     .line 772
@@ -1436,7 +1436,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_96
+    if-eqz p0, :cond_6
 
     const/4 p0, 0x3
 
@@ -1445,9 +1445,9 @@
 
     move-result-object v2
 
-    goto :goto_88
+    goto :goto_1
 
-    :cond_96
+    :cond_6
     const-string p0, "/.."
 
     .line 775
@@ -1455,13 +1455,13 @@
 
     move-result p0
 
-    if-eqz p0, :cond_a0
+    if-eqz p0, :cond_7
 
     move-object v1, v3
 
-    goto :goto_aa
+    goto :goto_2
 
-    :cond_a0
+    :cond_7
     const-string p0, ""
 
     .line 777
@@ -1469,19 +1469,19 @@
 
     move-result p0
 
-    if-eqz p0, :cond_a9
+    if-eqz p0, :cond_8
 
-    goto :goto_aa
+    goto :goto_2
 
-    :cond_a9
+    :cond_8
     move-object v1, v2
 
-    :goto_aa
+    :goto_2
     return-object v1
 .end method
 
 .method public static toByteArray(Ljava/io/File;)[B
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -1510,7 +1510,7 @@
 .end method
 
 .method public static toString(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1544,7 +1544,7 @@
 .end method
 
 .method public static touch(Ljava/io/File;)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -1568,7 +1568,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1578,12 +1578,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
-    goto :goto_29
+    goto :goto_0
 
     .line 452
-    :cond_14
+    :cond_0
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1604,13 +1604,13 @@
 
     throw v0
 
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public static write(Ljava/lang/CharSequence;Ljava/io/File;Ljava/nio/charset/Charset;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1648,7 +1648,7 @@
 .end method
 
 .method public static write([BLjava/io/File;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

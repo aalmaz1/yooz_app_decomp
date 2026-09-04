@@ -93,7 +93,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$W1eUszxthPIjGJ9Snc-jdv_b04Q(Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->startLoadingManifest()V
 
@@ -101,7 +101,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.exoplayer.smoothstreaming"
 
@@ -112,7 +112,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;J)V
-    .registers 16
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,25 +139,25 @@
 
     const/4 v1, 0x1
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_1
 
     .line 389
     iget-boolean v2, p2, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->isLive:Z
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move v2, v0
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     move v2, v1
 
-    :goto_f
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 390
@@ -186,21 +186,21 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2
 
     move-object p1, v3
 
-    goto :goto_31
+    goto :goto_2
 
     .line 396
-    :cond_2b
+    :cond_2
     iget-object p1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
 
     invoke-static {p1}, Landroidx/media3/common/util/Util;->fixSmoothStreamingIsmManifestUri(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object p1
 
-    :goto_31
+    :goto_2
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestUri:Landroid/net/Uri;
 
     .line 397
@@ -234,12 +234,12 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestEventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
 
-    if-eqz p2, :cond_4c
+    if-eqz p2, :cond_3
 
     move v0, v1
 
     .line 406
-    :cond_4c
+    :cond_3
     iput-boolean v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->sideloadedManifest:Z
 
     .line 407
@@ -253,7 +253,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;JLandroidx/media3/exoplayer/smoothstreaming/SsMediaSource$1;)V
-    .registers 13
+    .locals 0
 
     .line 77
     invoke-direct/range {p0 .. p11}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;-><init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;J)V
@@ -262,7 +262,7 @@
 .end method
 
 .method private processManifest()V
-    .registers 31
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -271,14 +271,14 @@
     move v2, v1
 
     .line 574
-    :goto_4
+    :goto_0
     iget-object v3, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->mediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_1c
+    if-ge v2, v3, :cond_0
 
     .line 575
     iget-object v3, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->mediaPeriods:Ljava/util/ArrayList;
@@ -295,10 +295,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 580
-    :cond_1c
+    :cond_0
     iget-object v2, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->streamElements:[Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
@@ -313,15 +313,15 @@
 
     move-wide v14, v4
 
-    :goto_2a
-    if-ge v8, v3, :cond_52
+    :goto_1
+    if-ge v8, v3, :cond_2
 
     aget-object v9, v2, v8
 
     .line 581
     iget v10, v9, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkCount:I
 
-    if-lez v10, :cond_4f
+    if-lez v10, :cond_1
 
     .line 582
     invoke-virtual {v9, v1}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->getStartTimeUs(I)J
@@ -358,36 +358,36 @@
 
     move-result-wide v6
 
-    :cond_4f
+    :cond_1
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_52
+    :cond_2
     cmp-long v1, v14, v4
 
     const-wide/16 v2, 0x0
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v1, :cond_89
+    if-nez v1, :cond_4
 
     .line 593
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->isLive:Z
 
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_3
 
     move-wide v7, v4
 
-    goto :goto_66
+    goto :goto_2
 
-    :cond_65
+    :cond_3
     move-wide v7, v2
 
     .line 594
-    :goto_66
+    :goto_2
     new-instance v1, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
 
     const-wide/16 v9, 0x0
@@ -423,15 +423,15 @@
 
     invoke-direct/range {v6 .. v19}, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Landroidx/media3/common/MediaItem;)V
 
-    goto/16 :goto_109
+    goto/16 :goto_4
 
     .line 605
-    :cond_89
+    :cond_4
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->isLive:Z
 
-    if-eqz v1, :cond_e1
+    if-eqz v1, :cond_7
 
     .line 606
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
@@ -440,7 +440,7 @@
 
     cmp-long v1, v8, v4
 
-    if-eqz v1, :cond_a9
+    if-eqz v1, :cond_5
 
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
@@ -448,7 +448,7 @@
 
     cmp-long v1, v4, v2
 
-    if-lez v1, :cond_a9
+    if-lez v1, :cond_5
 
     .line 607
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
@@ -461,7 +461,7 @@
 
     move-result-wide v14
 
-    :cond_a9
+    :cond_5
     move-wide/from16 v21, v14
 
     sub-long v19, v6, v21
@@ -479,7 +479,7 @@
 
     cmp-long v5, v1, v3
 
-    if-gez v5, :cond_c4
+    if-gez v5, :cond_6
 
     const-wide/16 v1, 0x2
 
@@ -490,7 +490,7 @@
 
     move-result-wide v1
 
-    :cond_c4
+    :cond_6
     move-wide/from16 v23, v1
 
     .line 617
@@ -517,17 +517,17 @@
 
     invoke-direct/range {v16 .. v29}, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Landroidx/media3/common/MediaItem;)V
 
-    goto :goto_109
+    goto :goto_4
 
     .line 630
-    :cond_e1
+    :cond_7
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     iget-wide v1, v1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->durationUs:J
 
     cmp-long v1, v1, v4
 
-    if-eqz v1, :cond_ef
+    if-eqz v1, :cond_8
 
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
@@ -535,15 +535,15 @@
 
     move-wide v12, v1
 
-    goto :goto_f1
+    goto :goto_3
 
-    :cond_ef
+    :cond_8
     sub-long/2addr v6, v14
 
     move-wide v12, v6
 
     .line 631
-    :goto_f1
+    :goto_3
     new-instance v1, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
 
     add-long v10, v14, v12
@@ -570,26 +570,26 @@
     invoke-direct/range {v9 .. v22}, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Landroidx/media3/common/MediaItem;)V
 
     .line 643
-    :goto_109
+    :goto_4
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
     return-void
 .end method
 
 .method private scheduleManifestRefresh()V
-    .registers 5
+    .locals 4
 
     .line 647
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->isLive:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 650
-    :cond_7
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestLoadStartTimestamp:J
 
     const-wide/16 v2, 0x1388
@@ -622,7 +622,7 @@
 .end method
 
 .method private startLoadingManifest()V
-    .registers 10
+    .locals 9
 
     .line 656
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestLoader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -631,12 +631,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 659
-    :cond_9
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestDataSource:Landroidx/media3/datasource/DataSource;
@@ -689,7 +689,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 5
+    .locals 3
 
     .line 420
     invoke-virtual {p0}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -707,7 +707,7 @@
     .line 421
     iget-object p1, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_0
 
     .line 422
     iget-object v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -719,7 +719,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     iget-object v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
 
@@ -730,7 +730,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     iget-object p1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
@@ -741,21 +741,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_31
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 19
+    .locals 14
 
     move-object v0, p0
 
@@ -803,21 +803,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 414
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -826,7 +826,7 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -842,7 +842,7 @@
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 76
     check-cast p1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
@@ -853,7 +853,7 @@
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJZ)V
-    .registers 22
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -915,7 +915,7 @@
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 76
     check-cast p1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
@@ -926,7 +926,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJ)V
-    .registers 21
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1008,7 +1008,7 @@
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 76
     check-cast p1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
@@ -1021,7 +1021,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 24
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1095,14 +1095,14 @@
 
     cmp-long v5, v3, v5
 
-    if-nez v5, :cond_40
+    if-nez v5, :cond_0
 
     .line 561
     sget-object v3, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_40
+    :cond_0
     const/4 v5, 0x0
 
     .line 562
@@ -1111,7 +1111,7 @@
     move-result-object v3
 
     .line 563
-    :goto_45
+    :goto_0
     invoke-virtual {v3}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v4
@@ -1125,7 +1125,7 @@
 
     invoke-virtual {v5, v15, v6, v2, v4}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;ILjava/io/IOException;Z)V
 
-    if-eqz v4, :cond_5b
+    if-eqz v4, :cond_1
 
     .line 566
     iget-object v2, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -1134,12 +1134,12 @@
 
     invoke-interface {v2, v4, v5}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->onLoadTaskConcluded(J)V
 
-    :cond_5b
+    :cond_1
     return-object v3
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 2
 
     .line 435
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->mediaTransferListener:Landroidx/media3/datasource/TransferListener;
@@ -1165,7 +1165,7 @@
     .line 438
     iget-boolean p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->sideloadedManifest:Z
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
     .line 439
     new-instance p1, Landroidx/media3/exoplayer/upstream/LoaderErrorThrower$Placeholder;
@@ -1177,10 +1177,10 @@
     .line 440
     invoke-direct {p0}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->processManifest()V
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 442
-    :cond_23
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
     invoke-interface {p1}, Landroidx/media3/datasource/DataSource$Factory;->createDataSource()Landroidx/media3/datasource/DataSource;
@@ -1211,12 +1211,12 @@
     .line 446
     invoke-direct {p0}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->startLoadingManifest()V
 
-    :goto_3f
+    :goto_0
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 478
     move-object v0, p1
@@ -1234,23 +1234,23 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 5
+    .locals 4
 
     .line 484
     iget-boolean v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->sideloadedManifest:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move-object v0, v1
 
-    :goto_9
+    :goto_0
     iput-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     .line 485
@@ -1264,7 +1264,7 @@
     .line 487
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestLoader:Landroidx/media3/exoplayer/upstream/Loader;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 488
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->release()V
@@ -1273,10 +1273,10 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestLoader:Landroidx/media3/exoplayer/upstream/Loader;
 
     .line 491
-    :cond_1a
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestRefreshHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 492
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
@@ -1285,7 +1285,7 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->manifestRefreshHandler:Landroid/os/Handler;
 
     .line 495
-    :cond_23
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/DrmSessionManager;->release()V
@@ -1294,22 +1294,22 @@
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 430
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 431
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

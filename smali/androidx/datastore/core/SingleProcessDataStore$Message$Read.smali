@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/core/State;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public getLastState()Landroidx/datastore/core/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

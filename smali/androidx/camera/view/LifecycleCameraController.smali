@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 72
     invoke-direct {p0, p1}, Landroidx/camera/view/CameraController;-><init>(Landroid/content/Context;)V
@@ -22,7 +22,7 @@
 .end method
 
 .method constructor <init>(Landroid/content/Context;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public bindToLifecycle(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 2
+    .locals 0
 
     .line 95
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -57,24 +57,24 @@
 .end method
 
 .method shutDownForTests()V
-    .registers 2
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/camera/view/LifecycleCameraController;->mCameraProvider:Landroidx/camera/view/ProcessCameraProviderWrapper;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 158
     iget-object v0, p0, Landroidx/camera/view/LifecycleCameraController;->mCameraProvider:Landroidx/camera/view/ProcessCameraProviderWrapper;
 
     invoke-interface {v0}, Landroidx/camera/view/ProcessCameraProviderWrapper;->shutdown()Lcom/google/common/util/concurrent/ListenableFuture;
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method startCamera()Landroidx/camera/core/Camera;
-    .registers 5
+    .locals 4
 
     .line 126
     iget-object v0, p0, Landroidx/camera/view/LifecycleCameraController;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -83,7 +83,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const-string v0, "Lifecycle is not set."
 
@@ -93,10 +93,10 @@
     return-object v2
 
     .line 130
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/view/LifecycleCameraController;->mCameraProvider:Landroidx/camera/view/ProcessCameraProviderWrapper;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     const-string v0, "CameraProvider is not ready."
 
@@ -106,18 +106,18 @@
     return-object v2
 
     .line 135
-    :cond_17
+    :cond_1
     invoke-virtual {p0}, Landroidx/camera/view/LifecycleCameraController;->createUseCaseGroup()Landroidx/camera/core/UseCaseGroup;
 
     move-result-object v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_2
 
     return-object v2
 
     .line 141
-    :cond_1e
-    :try_start_1e
+    :cond_2
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/view/LifecycleCameraController;->mCameraProvider:Landroidx/camera/view/ProcessCameraProviderWrapper;
 
     iget-object v2, p0, Landroidx/camera/view/LifecycleCameraController;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -127,12 +127,12 @@
     invoke-interface {v1, v2, v3, v0}, Landroidx/camera/view/ProcessCameraProviderWrapper;->bindToLifecycle(Landroidx/lifecycle/LifecycleOwner;Landroidx/camera/core/CameraSelector;Landroidx/camera/core/UseCaseGroup;)Landroidx/camera/core/Camera;
 
     move-result-object v0
-    :try_end_28
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1e .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_29
+    :catch_0
     move-exception v0
 
     .line 148
@@ -146,7 +146,7 @@
 .end method
 
 .method public unbind()V
-    .registers 2
+    .locals 1
 
     .line 107
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -162,13 +162,13 @@
     .line 110
     iget-object v0, p0, Landroidx/camera/view/LifecycleCameraController;->mCameraProvider:Landroidx/camera/view/ProcessCameraProviderWrapper;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 111
     iget-object v0, p0, Landroidx/camera/view/LifecycleCameraController;->mCameraProvider:Landroidx/camera/view/ProcessCameraProviderWrapper;
 
     invoke-interface {v0}, Landroidx/camera/view/ProcessCameraProviderWrapper;->unbindAll()V
 
-    :cond_11
+    :cond_0
     return-void
 .end method

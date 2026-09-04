@@ -41,7 +41,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/encoder/EncoderImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1474
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic lambda$notifySurfaceUpdate$0(Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;Landroid/view/Surface;)V
-    .registers 2
+    .locals 0
 
     .line 1561
     invoke-interface {p0, p1}, Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;->onSurfaceUpdate(Landroid/view/Surface;)V
@@ -75,7 +75,7 @@
 .end method
 
 .method private notifySurfaceUpdate(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;Landroid/view/Surface;)V
-    .registers 5
+    .locals 1
 
     .line 1561
     :try_start_0
@@ -84,12 +84,12 @@
     invoke-direct {v0, p2, p3}, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput$$ExternalSyntheticLambda0;-><init>(Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;Landroid/view/Surface;)V
 
     invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_8
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     move-exception p1
 
     .line 1563
@@ -101,14 +101,14 @@
 
     invoke-static {p2, p3, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method releaseSurface()V
-    .registers 5
+    .locals 4
 
     .line 1544
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mLock:Ljava/lang/Object;
@@ -116,7 +116,7 @@
     monitor-enter v0
 
     .line 1545
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mSurface:Landroid/view/Surface;
 
     const/4 v2, 0x0
@@ -138,26 +138,26 @@
 
     .line 1549
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 1551
     invoke-virtual {v1}, Landroid/view/Surface;->release()V
 
     .line 1553
-    :cond_1a
+    :cond_0
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_1e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -168,25 +168,25 @@
     .line 1554
     invoke-virtual {v1}, Landroid/view/Surface;->release()V
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-void
 
-    :catchall_2f
+    :catchall_0
     move-exception v1
 
     .line 1549
-    :try_start_30
+    :try_start_1
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_30 .. :try_end_31} :catchall_2f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method resetSurface()V
-    .registers 5
+    .locals 4
 
     .line 1515
     const-class v0, Landroidx/camera/video/internal/compat/quirk/EncoderNotUsePersistentInputSurfaceQuirk;
@@ -202,13 +202,13 @@
 
     monitor-enter v1
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
     .line 1519
-    :try_start_d
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mSurface:Landroid/view/Surface;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 1520
     invoke-static {}, Landroidx/camera/video/internal/encoder/EncoderImpl$Api23Impl;->createPersistentInputSurface()Landroid/view/Surface;
@@ -217,13 +217,13 @@
 
     iput-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mSurface:Landroid/view/Surface;
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
     .line 1525
-    :goto_19
+    :goto_0
     iget-object v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v2, v2, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
@@ -232,13 +232,13 @@
 
     invoke-static {v2, v3}, Landroidx/camera/video/internal/encoder/EncoderImpl$Api23Impl;->setInputSurface(Landroid/media/MediaCodec;Landroid/view/Surface;)V
 
-    goto :goto_36
+    goto :goto_1
 
     .line 1527
-    :cond_23
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mSurface:Landroid/view/Surface;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 1528
     iget-object v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mObsoleteSurfaces:Ljava/util/Set;
@@ -246,7 +246,7 @@
     invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 1530
-    :cond_2c
+    :cond_2
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
@@ -258,7 +258,7 @@
     iput-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mSurface:Landroid/view/Surface;
 
     .line 1533
-    :goto_36
+    :goto_1
     iget-object v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mSurfaceUpdateListener:Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;
 
     .line 1534
@@ -266,35 +266,35 @@
 
     .line 1535
     monitor-exit v1
-    :try_end_3b
-    .catchall {:try_start_d .. :try_end_3b} :catchall_45
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_3
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_3
 
     .line 1537
     invoke-direct {p0, v3, v2, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->notifySurfaceUpdate(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;Landroid/view/Surface;)V
 
-    :cond_44
+    :cond_3
     return-void
 
-    :catchall_45
+    :catchall_0
     move-exception v0
 
     .line 1535
-    :try_start_46
+    :try_start_1
     monitor-exit v1
-    :try_end_47
-    .catchall {:try_start_46 .. :try_end_47} :catchall_45
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method public setOnSurfaceUpdateListener(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;)V
-    .registers 5
+    .locals 2
 
     .line 1500
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->mLock:Ljava/lang/Object;
@@ -302,7 +302,7 @@
     monitor-enter v0
 
     .line 1501
-    :try_start_3
+    :try_start_0
     invoke-static {p2}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -325,25 +325,25 @@
 
     .line 1504
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 1506
     invoke-direct {p0, p1, p2, v1}, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->notifySurfaceUpdate(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;Landroid/view/Surface;)V
 
-    :cond_1b
+    :cond_0
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 1504
-    :try_start_1d
+    :try_start_1
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

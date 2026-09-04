@@ -68,7 +68,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Integer;FZZZZI)V
-    .registers 11
+    .locals 0
 
     .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,7 +107,7 @@
 .end method
 
 .method static synthetic access$000(Ljava/lang/String;)I
-    .registers 1
+    .locals 0
 
     .line 44
     invoke-static {p0}, Landroidx/media3/extractor/text/ssa/SsaStyle;->parseAlignment(Ljava/lang/String;)I
@@ -118,7 +118,7 @@
 .end method
 
 .method public static fromStyleLine(Ljava/lang/String;Landroidx/media3/extractor/text/ssa/SsaStyle$Format;)Landroidx/media3/extractor/text/ssa/SsaStyle;
-    .registers 20
+    .locals 18
 
     move-object/from16 v1, p0
 
@@ -159,7 +159,7 @@
 
     const/4 v8, 0x0
 
-    if-eq v3, v4, :cond_41
+    if-eq v3, v4, :cond_0
 
     const/4 v3, 0x3
 
@@ -200,8 +200,8 @@
     return-object v6
 
     .line 168
-    :cond_41
-    :try_start_41
+    :cond_0
+    :try_start_0
     new-instance v3, Landroidx/media3/extractor/text/ssa/SsaStyle;
 
     iget v4, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->nameIndex:I
@@ -218,7 +218,7 @@
 
     const/4 v10, -0x1
 
-    if-eq v9, v10, :cond_5d
+    if-eq v9, v10, :cond_1
 
     .line 171
     iget v9, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->alignmentIndex:I
@@ -233,16 +233,16 @@
 
     move-result v9
 
-    goto :goto_5e
+    goto :goto_0
 
-    :cond_5d
+    :cond_1
     move v9, v10
 
     .line 173
-    :goto_5e
+    :goto_0
     iget v11, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->primaryColorIndex:I
 
-    if-eq v11, v10, :cond_6f
+    if-eq v11, v10, :cond_2
 
     .line 174
     iget v11, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->primaryColorIndex:I
@@ -257,16 +257,16 @@
 
     move-result-object v11
 
-    goto :goto_70
+    goto :goto_1
 
-    :cond_6f
+    :cond_2
     move-object v11, v6
 
     .line 176
-    :goto_70
+    :goto_1
     iget v12, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->outlineColorIndex:I
 
-    if-eq v12, v10, :cond_81
+    if-eq v12, v10, :cond_3
 
     .line 177
     iget v12, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->outlineColorIndex:I
@@ -281,16 +281,16 @@
 
     move-result-object v12
 
-    goto :goto_82
+    goto :goto_2
 
-    :cond_81
+    :cond_3
     move-object v12, v6
 
     .line 179
-    :goto_82
+    :goto_2
     iget v13, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->fontSizeIndex:I
 
-    if-eq v13, v10, :cond_93
+    if-eq v13, v10, :cond_4
 
     .line 180
     iget v13, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->fontSizeIndex:I
@@ -305,16 +305,16 @@
 
     move-result v13
 
-    goto :goto_96
+    goto :goto_3
 
-    :cond_93
+    :cond_4
     const v13, -0x800001
 
     .line 181
-    :goto_96
+    :goto_3
     iget v14, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->boldIndex:I
 
-    if-eq v14, v10, :cond_aa
+    if-eq v14, v10, :cond_5
 
     iget v14, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->boldIndex:I
 
@@ -329,19 +329,19 @@
 
     move-result v14
 
-    if-eqz v14, :cond_aa
+    if-eqz v14, :cond_5
 
     move v14, v7
 
-    goto :goto_ab
+    goto :goto_4
 
-    :cond_aa
+    :cond_5
     move v14, v8
 
-    :goto_ab
+    :goto_4
     iget v15, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->italicIndex:I
 
-    if-eq v15, v10, :cond_bf
+    if-eq v15, v10, :cond_6
 
     iget v15, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->italicIndex:I
 
@@ -356,19 +356,19 @@
 
     move-result v15
 
-    if-eqz v15, :cond_bf
+    if-eqz v15, :cond_6
 
     move v15, v7
 
-    goto :goto_c0
+    goto :goto_5
 
-    :cond_bf
+    :cond_6
     move v15, v8
 
-    :goto_c0
+    :goto_5
     iget v7, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->underlineIndex:I
 
-    if-eq v7, v10, :cond_d5
+    if-eq v7, v10, :cond_7
 
     iget v7, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->underlineIndex:I
 
@@ -383,19 +383,19 @@
 
     move-result v7
 
-    if-eqz v7, :cond_d5
+    if-eqz v7, :cond_7
 
     const/16 v17, 0x1
 
-    goto :goto_d7
+    goto :goto_6
 
-    :cond_d5
+    :cond_7
     move/from16 v17, v8
 
-    :goto_d7
+    :goto_6
     iget v7, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->strikeoutIndex:I
 
-    if-eq v7, v10, :cond_ec
+    if-eq v7, v10, :cond_8
 
     iget v7, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->strikeoutIndex:I
 
@@ -410,20 +410,20 @@
 
     move-result v7
 
-    if-eqz v7, :cond_ec
+    if-eqz v7, :cond_8
 
     const/16 v16, 0x1
 
-    goto :goto_ee
+    goto :goto_7
 
-    :cond_ec
+    :cond_8
     move/from16 v16, v8
 
     .line 190
-    :goto_ee
+    :goto_7
     iget v7, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->borderStyleIndex:I
 
-    if-eq v7, v10, :cond_ff
+    if-eq v7, v10, :cond_9
 
     .line 191
     iget v0, v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Format;->borderStyleIndex:I
@@ -438,12 +438,12 @@
 
     move-result v0
 
-    goto :goto_100
+    goto :goto_8
 
-    :cond_ff
+    :cond_9
     move v0, v10
 
-    :goto_100
+    :goto_8
     move-object v7, v3
 
     move-object v8, v4
@@ -464,12 +464,12 @@
 
     .line 192
     invoke-direct/range {v7 .. v17}, Landroidx/media3/extractor/text/ssa/SsaStyle;-><init>(Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Integer;FZZZZI)V
-    :try_end_10e
-    .catch Ljava/lang/RuntimeException; {:try_start_41 .. :try_end_10e} :catch_10f
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v3
 
-    :catch_10f
+    :catch_0
     move-exception v0
 
     .line 194
@@ -499,56 +499,56 @@
 .end method
 
 .method private static isValidAlignment(I)Z
-    .registers 1
+    .locals 0
 
-    packed-switch p0, :pswitch_data_8
+    packed-switch p0, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :pswitch_5
+    :pswitch_0
     const/4 p0, 0x1
 
     return p0
 
     nop
 
-    :pswitch_data_8
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static isValidBorderStyle(I)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_8
+    if-eq p0, v0, :cond_0
 
     const/4 v1, 0x3
 
-    if-eq p0, v1, :cond_8
+    if-eq p0, v1, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_8
+    :cond_0
     return v0
 .end method
 
 .method private static parseAlignment(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 201
     :try_start_0
@@ -564,16 +564,16 @@
     invoke-static {v0}, Landroidx/media3/extractor/text/ssa/SsaStyle;->isValidAlignment(I)Z
 
     move-result v1
-    :try_end_c
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_c} :catch_f
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     return v0
 
     .line 208
-    :catch_f
-    :cond_f
+    :catch_0
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Ignoring unknown alignment: "
@@ -598,33 +598,33 @@
 .end method
 
 .method private static parseBooleanValue(Ljava/lang/String;)Z
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 303
-    :try_start_1
+    :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
-    :try_end_5
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_5} :catch_d
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v1, 0x1
 
-    if-eq p0, v1, :cond_b
+    if-eq p0, v1, :cond_0
 
     const/4 v2, -0x1
 
-    if-ne p0, v2, :cond_c
+    if-ne p0, v2, :cond_1
 
-    :cond_b
+    :cond_0
     move v0, v1
 
-    :cond_c
+    :cond_1
     return v0
 
-    :catch_d
+    :catch_0
     move-exception v1
 
     .line 306
@@ -656,7 +656,7 @@
 .end method
 
 .method private static parseBorderStyle(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 232
     :try_start_0
@@ -672,16 +672,16 @@
     invoke-static {v0}, Landroidx/media3/extractor/text/ssa/SsaStyle;->isValidBorderStyle(I)Z
 
     move-result v1
-    :try_end_c
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_c} :catch_f
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     return v0
 
     .line 239
-    :catch_f
-    :cond_f
+    :catch_0
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Ignoring unknown BorderStyle: "
@@ -706,7 +706,7 @@
 .end method
 
 .method public static parseColor(Ljava/lang/String;)Ljava/lang/Integer;
-    .registers 9
+    .locals 8
 
     :try_start_0
     const-string v0, "&H"
@@ -718,7 +718,7 @@
 
     const/16 v1, 0x10
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
@@ -731,33 +731,33 @@
 
     move-result-wide v2
 
-    goto :goto_18
+    goto :goto_0
 
     .line 277
-    :cond_14
+    :cond_0
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v2
 
-    :goto_18
+    :goto_0
     const-wide v4, 0xffffffffL
 
     cmp-long v0, v2, v4
 
-    if-gtz v0, :cond_23
+    if-gtz v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     const/4 v0, 0x0
 
     .line 279
-    :goto_24
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
-    :try_end_27
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_27} :catch_51
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/16 p0, 0x18
 
@@ -812,7 +812,7 @@
 
     return-object p0
 
-    :catch_51
+    :catch_0
     move-exception v0
 
     .line 281
@@ -846,19 +846,19 @@
 .end method
 
 .method private static parseFontSize(Ljava/lang/String;)F
-    .registers 4
+    .locals 3
 
     .line 294
     :try_start_0
     invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p0
-    :try_end_4
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_5
+    :catch_0
     move-exception v0
 
     .line 296

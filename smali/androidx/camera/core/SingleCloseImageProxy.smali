@@ -9,7 +9,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 1
 
     .line 34
     invoke-direct {p0, p1}, Landroidx/camera/core/ForwardingImageProxy;-><init>(Landroidx/camera/core/ImageProxy;)V
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 39
     iget-object v0, p0, Landroidx/camera/core/SingleCloseImageProxy;->mClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -40,11 +40,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 40
     invoke-super {p0}, Landroidx/camera/core/ForwardingImageProxy;->close()V
 
-    :cond_c
+    :cond_0
     return-void
 .end method

@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/Internal$MapAdapter;Ljava/util/Set;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public iterator()Ljava/util/Iterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -89,7 +89,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 491
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$SetAdapter;->realSet:Ljava/util/Set;

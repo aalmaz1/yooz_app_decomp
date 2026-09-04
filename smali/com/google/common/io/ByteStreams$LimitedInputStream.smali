@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/io/InputStream;J)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -49,16 +49,16 @@
 
     cmp-long p1, p2, v0
 
-    if-ltz p1, :cond_12
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_13
+    :goto_0
     const-string v0, "limit must be non-negative"
 
     .line 709
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -101,7 +101,7 @@
 .end method
 
 .method public declared-synchronized mark(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -114,7 +114,7 @@
     monitor-enter p0
 
     .line 721
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
@@ -123,15 +123,15 @@
     iget-wide v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->left:J
 
     iput-wide v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->mark:J
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 723
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -140,7 +140,7 @@
 .end method
 
 .method public read()I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -156,19 +156,19 @@
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return v1
 
     .line 731
-    :cond_a
+    :cond_0
     iget-object v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_1
 
     .line 733
     iget-wide v1, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->left:J
@@ -179,12 +179,12 @@
 
     iput-wide v1, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->left:J
 
-    :cond_19
+    :cond_1
     return v0
 .end method
 
 .method public read([BII)I
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -213,11 +213,11 @@
 
     const/4 v3, -0x1
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     return v3
 
-    :cond_a
+    :cond_0
     int-to-long v4, p3
 
     .line 744
@@ -234,7 +234,7 @@
 
     move-result p1
 
-    if-eq p1, v3, :cond_1e
+    if-eq p1, v3, :cond_1
 
     .line 747
     iget-wide p2, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->left:J
@@ -245,12 +245,12 @@
 
     iput-wide p2, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->left:J
 
-    :cond_1e
+    :cond_1
     return p1
 .end method
 
 .method public declared-synchronized reset()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -260,14 +260,14 @@
     monitor-enter p0
 
     .line 754
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 757
     iget-wide v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->mark:J
@@ -276,7 +276,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 761
     iget-object v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->in:Ljava/io/InputStream;
@@ -287,8 +287,8 @@
     iget-wide v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->mark:J
 
     iput-wide v0, p0, Lcom/google/common/io/ByteStreams$LimitedInputStream;->left:J
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 763
     monitor-exit p0
@@ -296,8 +296,8 @@
     return-void
 
     .line 758
-    :cond_1c
-    :try_start_1c
+    :cond_0
+    :try_start_1
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Mark not set"
@@ -307,7 +307,7 @@
     throw v0
 
     .line 755
-    :cond_24
+    :cond_1
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Mark not supported"
@@ -315,10 +315,10 @@
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_2c
-    .catchall {:try_start_1c .. :try_end_2c} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_2c
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -327,7 +327,7 @@
 .end method
 
 .method public skip(J)J
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

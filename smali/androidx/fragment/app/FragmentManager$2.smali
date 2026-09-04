@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;)V
-    .registers 2
+    .locals 0
 
     .line 451
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$2;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -36,26 +36,26 @@
 
 # virtual methods
 .method public onComplete(Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
-    .registers 4
+    .locals 1
 
     .line 460
     invoke-virtual {p2}, Landroidx/core/os/CancellationSignal;->isCanceled()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 461
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$2;->this$0:Landroidx/fragment/app/FragmentManager;
 
     invoke-virtual {v0, p1, p2}, Landroidx/fragment/app/FragmentManager;->removeCancellationSignal(Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onStart(Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
-    .registers 4
+    .locals 1
 
     .line 455
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$2;->this$0:Landroidx/fragment/app/FragmentManager;

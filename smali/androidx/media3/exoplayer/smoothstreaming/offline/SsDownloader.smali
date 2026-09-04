@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/cache/CacheDataSource$Factory;)V
-    .registers 4
+    .locals 1
 
     .line 73
     new-instance v0, Landroidx/media3/exoplayer/dash/offline/DashDownloader$$ExternalSyntheticLambda0;
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 11
+    .locals 7
 
     .line 90
     invoke-virtual {p1}, Landroidx/media3/common/MediaItem;->buildUpon()Landroidx/media3/common/MediaItem$Builder;
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -116,7 +116,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;J)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,7 +139,7 @@
 
 # virtual methods
 .method protected bridge synthetic getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/offline/FilterableManifest;Z)Ljava/util/List;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -158,7 +158,7 @@
 .end method
 
 .method protected getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Z)Ljava/util/List;
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -185,28 +185,28 @@
 
     move v1, v0
 
-    :goto_a
-    if-ge v1, p3, :cond_37
+    :goto_0
+    if-ge v1, p3, :cond_2
 
     aget-object v2, p2, v1
 
     move v3, v0
 
     .line 152
-    :goto_f
+    :goto_1
     iget-object v4, v2, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Landroidx/media3/common/Format;
 
     array-length v4, v4
 
-    if-ge v3, v4, :cond_34
+    if-ge v3, v4, :cond_1
 
     move v4, v0
 
     .line 153
-    :goto_15
+    :goto_2
     iget v5, v2, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkCount:I
 
-    if-ge v4, v5, :cond_31
+    if-ge v4, v5, :cond_0
 
     .line 154
     new-instance v5, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;
@@ -232,18 +232,18 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_15
+    goto :goto_2
 
-    :cond_31
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_34
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_37
+    :cond_2
     return-object p1
 .end method

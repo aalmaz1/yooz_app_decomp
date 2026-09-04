@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/EditText;)V
-    .registers 4
+    .locals 2
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,14 +34,14 @@
 
 # virtual methods
 .method getKeyListener(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
-    .registers 3
+    .locals 1
 
     .line 123
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/AppCompatEmojiEditTextHelper;->isEmojiCapableKeyListener(Landroid/text/method/KeyListener;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 124
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiEditTextHelper;->mEmojiEditTextHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;
@@ -50,12 +50,12 @@
 
     move-result-object p1
 
-    :cond_c
+    :cond_0
     return-object p1
 .end method
 
 .method isEmojiCapableKeyListener(Landroid/text/method/KeyListener;)Z
-    .registers 2
+    .locals 0
 
     .line 86
     instance-of p1, p1, Landroid/text/method/NumberKeyListener;
@@ -66,7 +66,7 @@
 .end method
 
 .method isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiEditTextHelper;->mEmojiEditTextHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;
@@ -79,7 +79,7 @@
 .end method
 
 .method loadFromAttributes(Landroid/util/AttributeSet;I)V
-    .registers 6
+    .locals 3
 
     .line 63
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiEditTextHelper;->mView:Landroid/widget/EditText;
@@ -98,7 +98,7 @@
     move-result-object p1
 
     .line 68
-    :try_start_d
+    :try_start_0
     sget p2, Landroidx/appcompat/R$styleable;->AppCompatTextView_emojiCompatEnabled:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
@@ -107,7 +107,7 @@
 
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_0
 
     .line 69
     sget p2, Landroidx/appcompat/R$styleable;->AppCompatTextView_emojiCompatEnabled:I
@@ -115,11 +115,11 @@
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v0
-    :try_end_1c
-    .catchall {:try_start_d .. :try_end_1c} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 72
-    :cond_1c
+    :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 74
@@ -127,7 +127,7 @@
 
     return-void
 
-    :catchall_23
+    :catchall_0
     move-exception p2
 
     .line 72
@@ -138,7 +138,7 @@
 .end method
 
 .method onCreateInputConnection(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-    .registers 4
+    .locals 1
 
     .line 148
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiEditTextHelper;->mEmojiEditTextHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;
@@ -151,7 +151,7 @@
 .end method
 
 .method setEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 96
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiEditTextHelper;->mEmojiEditTextHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;

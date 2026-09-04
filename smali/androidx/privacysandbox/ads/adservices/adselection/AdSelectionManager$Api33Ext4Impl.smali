@@ -79,7 +79,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/adservices/adselection/AdSelectionManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "mAdSelectionManager"
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public static final synthetic access$convertReportImpressionRequest(Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;)Landroid/adservices/adselection/ReportImpressionRequest;
-    .registers 2
+    .locals 0
 
     .line 78
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;->convertReportImpressionRequest(Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;)Landroid/adservices/adselection/ReportImpressionRequest;
@@ -132,7 +132,7 @@
 .end method
 
 .method public static final synthetic access$getMAdSelectionManager$p(Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;)Landroid/adservices/adselection/AdSelectionManager;
-    .registers 1
+    .locals 0
 
     .line 78
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;->mAdSelectionManager:Landroid/adservices/adselection/AdSelectionManager;
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final synthetic access$selectAdsInternal(Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;Landroid/adservices/adselection/AdSelectionConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 78
     invoke-direct {p0, p1, p2}, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;->selectAdsInternal(Landroid/adservices/adselection/AdSelectionConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -152,7 +152,7 @@
 .end method
 
 .method private final convertAdSelectionConfig(Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionConfig;)Landroid/adservices/adselection/AdSelectionConfig;
-    .registers 4
+    .locals 2
 
     .line 110
     new-instance v0, Landroid/adservices/adselection/AdSelectionConfig$Builder;
@@ -260,7 +260,7 @@
 .end method
 
 .method private final convertAdSelectionSignals(Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;)Landroid/adservices/common/AdSelectionSignals;
-    .registers 3
+    .locals 1
 
     .line 125
     invoke-virtual {p1}, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;->getSignals()Ljava/lang/String;
@@ -279,7 +279,7 @@
 .end method
 
 .method private final convertBuyers(Ljava/util/List;)Ljava/util/List;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -304,12 +304,12 @@
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -332,14 +332,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     return-object v0
 .end method
 
 .method private final convertPerBuyerSignals(Ljava/util/Map;)Ljava/util/Map;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -368,12 +368,12 @@
 
     move-result-object v1
 
-    :goto_d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -399,7 +399,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_0
 
     invoke-interface {p1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -413,30 +413,30 @@
 
     move-result-object v2
 
-    goto :goto_3b
+    goto :goto_1
 
-    :cond_3a
+    :cond_0
     const/4 v2, 0x0
 
     .line 148
-    :goto_3b
+    :goto_1
     move-object v4, v0
 
     check-cast v4, Ljava/util/Map;
 
     invoke-interface {v4, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_0
 
     .line 150
-    :cond_42
+    :cond_1
     check-cast v0, Ljava/util/Map;
 
     return-object v0
 .end method
 
 .method private final convertReportImpressionRequest(Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;)Landroid/adservices/adselection/ReportImpressionRequest;
-    .registers 5
+    .locals 3
 
     .line 174
     new-instance v0, Landroid/adservices/adselection/ReportImpressionRequest;
@@ -462,7 +462,7 @@
 .end method
 
 .method private final convertResponse(Landroid/adservices/adselection/AdSelectionOutcome;)Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionOutcome;
-    .registers 6
+    .locals 4
 
     .line 156
     new-instance v0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionOutcome;
@@ -485,7 +485,7 @@
 .end method
 
 .method private final selectAdsInternal(Landroid/adservices/adselection/AdSelectionConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -547,18 +547,18 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_2f
+    :cond_0
     return-object p1
 .end method
 
 
 # virtual methods
 .method public reportImpression(Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -624,28 +624,28 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_33
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_33
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 221
-    :cond_3a
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public selectAds(Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -660,7 +660,7 @@
 
     instance-of v0, p2, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -672,7 +672,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;->label:I
 
@@ -680,14 +680,14 @@
 
     iput p2, v0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;-><init>(Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p2, v0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -699,9 +699,9 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_2e
+    if-ne v2, v3, :cond_1
 
     iget-object p1, v0, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl$selectAds$1;->L$0:Ljava/lang/Object;
 
@@ -709,9 +709,9 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_49
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
@@ -720,7 +720,7 @@
 
     throw p1
 
-    :cond_36
+    :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 92
@@ -736,14 +736,14 @@
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_48
+    if-ne p2, v1, :cond_3
 
     return-object v1
 
-    :cond_48
+    :cond_3
     move-object p1, p0
 
-    :goto_49
+    :goto_1
     check-cast p2, Landroid/adservices/adselection/AdSelectionOutcome;
 
     invoke-direct {p1, p2}, Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionManager$Api33Ext4Impl;->convertResponse(Landroid/adservices/adselection/AdSelectionOutcome;)Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionOutcome;

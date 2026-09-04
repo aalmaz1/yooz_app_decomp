@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static isLowRamDevice(Landroid/app/ActivityManager;)Z
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-virtual {p0}, Landroid/app/ActivityManager;->isLowRamDevice()Z

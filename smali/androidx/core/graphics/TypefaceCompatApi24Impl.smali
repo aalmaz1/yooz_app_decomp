@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     :try_start_0
     const-string v0, "android.graphics.FontFamily"
@@ -118,22 +118,22 @@
     invoke-virtual {v5, v7, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
-    :try_end_42
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_42} :catch_45
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_42} :catch_43
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_57
+    goto :goto_1
 
-    :catch_43
+    :catch_0
     move-exception v0
 
-    goto :goto_46
+    goto :goto_0
 
-    :catch_45
+    :catch_1
     move-exception v0
 
     .line 77
-    :goto_46
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -155,7 +155,7 @@
     move-object v3, v2
 
     .line 83
-    :goto_57
+    :goto_1
     sput-object v2, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sFontFamilyCtor:Ljava/lang/reflect/Constructor;
 
     .line 84
@@ -171,7 +171,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Landroidx/core/graphics/TypefaceCompatBaseImpl;-><init>()V
@@ -180,12 +180,12 @@
 .end method
 
 .method private static addFontWeightStyle(Ljava/lang/Object;Ljava/nio/ByteBuffer;IIZ)Z
-    .registers 8
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 111
-    :try_start_1
+    :try_start_0
     sget-object v1, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
 
     const/4 v2, 0x5
@@ -236,23 +236,23 @@
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
-    :try_end_2b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_2b} :catch_2c
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_2b} :catch_2c
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_2c
+    :catch_0
     return v0
 .end method
 
 .method private static createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 121
-    :try_start_1
+    :try_start_0
     sget-object v1, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sFontFamily:Ljava/lang/Class;
 
     const/4 v2, 0x1
@@ -278,23 +278,23 @@
     move-result-object p0
 
     check-cast p0, Landroid/graphics/Typeface;
-    :try_end_18
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_18} :catch_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_19
+    :catch_0
     return-object v0
 .end method
 
 .method public static isUsable()Z
-    .registers 3
+    .locals 3
 
     .line 93
     sget-object v0, Landroidx/core/graphics/TypefaceCompatApi24Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const-string v1, "TypefaceCompatApi24Impl"
 
@@ -303,22 +303,22 @@
     .line 94
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
-    if-eqz v0, :cond_f
+    :cond_0
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method private static newFamily()Ljava/lang/Object;
-    .registers 2
+    .locals 2
 
     .line 102
     :try_start_0
@@ -331,14 +331,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_9
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_9} :catch_a
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_9} :catch_a
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_a
+    :catch_0
     const/4 v0, 0x0
 
     return-object v0
@@ -347,7 +347,7 @@
 
 # virtual methods
 .method public createFromFontFamilyFilesResourceEntry(Landroid/content/Context;Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;Landroid/content/res/Resources;I)Landroid/graphics/Typeface;
-    .registers 12
+    .locals 7
 
     .line 166
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi24Impl;->newFamily()Ljava/lang/Object;
@@ -356,12 +356,12 @@
 
     const/4 v0, 0x0
 
-    if-nez p4, :cond_8
+    if-nez p4, :cond_0
 
     return-object v0
 
     .line 170
-    :cond_8
+    :cond_0
     invoke-virtual {p2}, Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;->getEntries()[Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
 
     move-result-object p2
@@ -370,8 +370,8 @@
 
     const/4 v2, 0x0
 
-    :goto_e
-    if-ge v2, v1, :cond_33
+    :goto_0
+    if-ge v2, v1, :cond_3
 
     aget-object v3, p2, v2
 
@@ -384,12 +384,12 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_1d
+    if-nez v4, :cond_1
 
     return-object v0
 
     .line 176
-    :cond_1d
+    :cond_1
     invoke-virtual {v3}, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->getTtcIndex()I
 
     move-result v5
@@ -406,17 +406,17 @@
 
     move-result v3
 
-    if-nez v3, :cond_30
+    if-nez v3, :cond_2
 
     return-object v0
 
-    :cond_30
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 180
-    :cond_33
+    :cond_3
     invoke-static {p4}, Landroidx/core/graphics/TypefaceCompatApi24Impl;->createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
 
     move-result-object p1
@@ -425,7 +425,7 @@
 .end method
 
 .method public createFromFontInfo(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroidx/core/provider/FontsContractCompat$FontInfo;I)Landroid/graphics/Typeface;
-    .registers 14
+    .locals 9
 
     .line 134
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi24Impl;->newFamily()Ljava/lang/Object;
@@ -434,12 +434,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 138
-    :cond_8
+    :cond_0
     new-instance v2, Landroidx/collection/SimpleArrayMap;
 
     invoke-direct {v2}, Landroidx/collection/SimpleArrayMap;-><init>()V
@@ -449,8 +449,8 @@
 
     const/4 v4, 0x0
 
-    :goto_f
-    if-ge v4, v3, :cond_3f
+    :goto_0
+    if-ge v4, v3, :cond_4
 
     aget-object v5, p3, v4
 
@@ -466,7 +466,7 @@
 
     check-cast v7, Ljava/nio/ByteBuffer;
 
-    if-nez v7, :cond_26
+    if-nez v7, :cond_1
 
     .line 144
     invoke-static {p1, p2, v6}, Landroidx/core/graphics/TypefaceCompatUtil;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
@@ -476,13 +476,13 @@
     .line 145
     invoke-virtual {v2, v6, v7}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_26
-    if-nez v7, :cond_29
+    :cond_1
+    if-nez v7, :cond_2
 
     return-object v1
 
     .line 150
-    :cond_29
+    :cond_2
     invoke-virtual {v5}, Landroidx/core/provider/FontsContractCompat$FontInfo;->getTtcIndex()I
 
     move-result v6
@@ -501,27 +501,27 @@
 
     move-result v5
 
-    if-nez v5, :cond_3c
+    if-nez v5, :cond_3
 
     return-object v1
 
-    :cond_3c
+    :cond_3
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 155
-    :cond_3f
+    :cond_4
     invoke-static {v0}, Landroidx/core/graphics/TypefaceCompatApi24Impl;->createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
 
     move-result-object p1
 
-    if-nez p1, :cond_46
+    if-nez p1, :cond_5
 
     return-object v1
 
     .line 159
-    :cond_46
+    :cond_5
     invoke-static {p1, p4}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
     move-result-object p1
@@ -530,29 +530,29 @@
 .end method
 
 .method createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
-    .registers 6
+    .locals 1
 
     .line 189
     :try_start_0
     invoke-static {p2, p3, p4}, Landroidx/core/graphics/WeightTypefaceApi21;->createWeightStyle(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
 
     move-result-object v0
-    :try_end_4
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_6
+    goto :goto_0
 
-    :catch_5
+    :catch_0
     const/4 v0, 0x0
 
-    :goto_6
-    if-nez v0, :cond_c
+    :goto_0
+    if-nez v0, :cond_0
 
     .line 195
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/core/graphics/TypefaceCompatBaseImpl;->createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
 
     move-result-object v0
 
-    :cond_c
+    :cond_0
     return-object v0
 .end method

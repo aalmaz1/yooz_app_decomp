@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 142
     new-instance v0, Landroidx/media3/container/Mp4TimestampData$1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(JJJ)V
-    .registers 7
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .registers 4
+    .locals 2
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroidx/media3/container/Mp4TimestampData$1;)V
-    .registers 3
+    .locals 0
 
     .line 27
     invoke-direct {p0, p1}, Landroidx/media3/container/Mp4TimestampData;-><init>(Landroid/os/Parcel;)V
@@ -122,7 +122,7 @@
 .end method
 
 .method public static unixTimeToMp4TimeSeconds(J)J
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, 0x3e8
 
@@ -139,7 +139,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -147,26 +147,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 98
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/container/Mp4TimestampData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 102
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/container/Mp4TimestampData;
 
     .line 104
@@ -176,7 +176,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/container/Mp4TimestampData;->modificationTimestampSeconds:J
 
@@ -184,7 +184,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/container/Mp4TimestampData;->timescale:J
 
@@ -192,19 +192,19 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v2
 
-    :goto_26
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 112
     iget-wide v0, p0, Landroidx/media3/container/Mp4TimestampData;->creationTimestampSeconds:J
@@ -243,7 +243,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 120
     new-instance v0, Ljava/lang/StringBuilder;
@@ -290,7 +290,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 137
     iget-wide v0, p0, Landroidx/media3/container/Mp4TimestampData;->creationTimestampSeconds:J

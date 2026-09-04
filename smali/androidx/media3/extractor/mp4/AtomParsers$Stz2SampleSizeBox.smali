@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/mp4/Atom$LeafAtom;)V
-    .registers 3
+    .locals 1
 
     .line 2306
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public getFixedSampleSize()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -76,7 +76,7 @@
 .end method
 
 .method public getSampleCount()I
-    .registers 2
+    .locals 1
 
     .line 2315
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->sampleCount:I
@@ -85,14 +85,14 @@
 .end method
 
 .method public readNextSampleSize()I
-    .registers 3
+    .locals 2
 
     .line 2325
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->fieldSize:I
 
     const/16 v1, 0x8
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 2326
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Landroidx/media3/common/util/ParsableByteArray;
@@ -103,10 +103,10 @@
 
     return v0
 
-    :cond_d
+    :cond_0
     const/16 v1, 0x10
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     .line 2328
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Landroidx/media3/common/util/ParsableByteArray;
@@ -118,7 +118,7 @@
     return v0
 
     .line 2331
-    :cond_18
+    :cond_1
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->sampleIndex:I
 
     add-int/lit8 v1, v0, 0x1
@@ -127,7 +127,7 @@
 
     rem-int/lit8 v0, v0, 0x2
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 2333
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Landroidx/media3/common/util/ParsableByteArray;
@@ -145,7 +145,7 @@
     return v0
 
     .line 2338
-    :cond_2f
+    :cond_2
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->currentByte:I
 
     and-int/lit8 v0, v0, 0xf

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -58,7 +58,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -87,7 +87,7 @@
 .end method
 
 .method public writeBoolean(Z)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -114,7 +114,7 @@
 .end method
 
 .method public writeByte(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -141,7 +141,7 @@
 .end method
 
 .method public writeBytes(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -171,7 +171,7 @@
 .end method
 
 .method public writeChar(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -194,7 +194,7 @@
 .end method
 
 .method public writeChars(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -213,12 +213,12 @@
     const/4 v0, 0x0
 
     .line 97
-    :goto_1
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_11
+    if-ge v0, v1, :cond_0
 
     .line 98
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
@@ -229,14 +229,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public writeDouble(D)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -263,7 +263,7 @@
 .end method
 
 .method public writeFloat(F)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -290,7 +290,7 @@
 .end method
 
 .method public writeInt(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -344,7 +344,7 @@
 .end method
 
 .method public writeLong(J)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -380,7 +380,7 @@
 .end method
 
 .method public writeShort(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -416,7 +416,7 @@
 .end method
 
 .method public writeUTF(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

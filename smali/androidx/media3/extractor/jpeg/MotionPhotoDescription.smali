@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(JLjava/util/List;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public getMotionPhotoMetadata(J)Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
-    .registers 24
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -67,12 +67,12 @@
 
     const/4 v3, 0x0
 
-    if-ge v1, v2, :cond_d
+    if-ge v1, v2, :cond_0
 
     return-object v3
 
     .line 95
-    :cond_d
+    :cond_0
     iget-object v1, v0, Landroidx/media3/extractor/jpeg/MotionPhotoDescription;->items:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -95,8 +95,8 @@
 
     const/4 v8, 0x0
 
-    :goto_1f
-    if-ltz v1, :cond_57
+    :goto_0
+    if-ltz v1, :cond_4
 
     .line 96
     iget-object v13, v0, Landroidx/media3/extractor/jpeg/MotionPhotoDescription;->items:Ljava/util/List;
@@ -118,7 +118,7 @@
 
     or-int/2addr v2, v8
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_1
 
     .line 102
     iget-wide v13, v13, Landroidx/media3/extractor/jpeg/MotionPhotoDescription$ContainerItem;->padding:J
@@ -127,26 +127,26 @@
 
     const-wide/16 v13, 0x0
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 104
-    :cond_3b
+    :cond_1
     iget-wide v13, v13, Landroidx/media3/extractor/jpeg/MotionPhotoDescription$ContainerItem;->length:J
 
     sub-long v13, v6, v13
 
-    :goto_3f
+    :goto_1
     move-wide/from16 v19, v6
 
     move-wide v6, v13
 
     move-wide/from16 v13, v19
 
-    if-eqz v2, :cond_4f
+    if-eqz v2, :cond_2
 
     cmp-long v8, v6, v13
 
-    if-eqz v8, :cond_4f
+    if-eqz v8, :cond_2
 
     sub-long v17, v13, v6
 
@@ -154,44 +154,44 @@
 
     const/4 v8, 0x0
 
-    goto :goto_50
+    goto :goto_2
 
-    :cond_4f
+    :cond_2
     move v8, v2
 
-    :goto_50
-    if-nez v1, :cond_54
+    :goto_2
+    if-nez v1, :cond_3
 
     move-wide v9, v6
 
     move-wide v11, v13
 
-    :cond_54
+    :cond_3
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_57
+    :cond_4
     cmp-long v1, v15, v4
 
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_6
 
     cmp-long v1, v17, v4
 
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_6
 
     cmp-long v1, v9, v4
 
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_6
 
     cmp-long v1, v11, v4
 
-    if-nez v1, :cond_68
+    if-nez v1, :cond_5
 
-    goto :goto_71
+    goto :goto_3
 
     .line 123
-    :cond_68
+    :cond_5
     new-instance v1, Landroidx/media3/extractor/metadata/mp4/MotionPhotoMetadata;
 
     iget-wide v13, v0, Landroidx/media3/extractor/jpeg/MotionPhotoDescription;->photoPresentationTimestampUs:J
@@ -202,7 +202,7 @@
 
     return-object v1
 
-    :cond_71
-    :goto_71
+    :cond_6
+    :goto_3
     return-object v3
 .end method

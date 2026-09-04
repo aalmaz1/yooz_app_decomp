@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public areNotificationsEnabled(Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -55,7 +55,7 @@
     move-result-object v1
 
     .line 172
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -83,8 +83,8 @@
     move-result-object p1
 
     check-cast p1, Landroid/os/Bundle;
-    :try_end_22
-    .catchall {:try_start_8 .. :try_end_22} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 179
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -94,7 +94,7 @@
 
     return-object p1
 
-    :catchall_29
+    :catchall_0
     move-exception p1
 
     .line 179
@@ -108,7 +108,7 @@
 .end method
 
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -117,7 +117,7 @@
 .end method
 
 .method public cancelNotification(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -135,7 +135,7 @@
     move-result-object v1
 
     .line 207
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -154,8 +154,8 @@
 
     .line 210
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1a
-    .catchall {:try_start_8 .. :try_end_1a} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 213
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -165,7 +165,7 @@
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     .line 213
@@ -179,7 +179,7 @@
 .end method
 
 .method public extraCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/IBinder;)Landroid/os/Bundle;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -197,7 +197,7 @@
     move-result-object v1
 
     .line 274
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -231,8 +231,8 @@
     move-result-object p1
 
     check-cast p1, Landroid/os/Bundle;
-    :try_end_29
-    .catchall {:try_start_8 .. :try_end_29} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 283
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -242,7 +242,7 @@
 
     return-object p1
 
-    :catchall_30
+    :catchall_0
     move-exception p1
 
     .line 283
@@ -256,7 +256,7 @@
 .end method
 
 .method public getActiveNotifications()Landroid/os/Bundle;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -274,7 +274,7 @@
     move-result-object v1
 
     .line 223
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -299,8 +299,8 @@
     move-result-object v2
 
     check-cast v2, Landroid/os/Bundle;
-    :try_end_1f
-    .catchall {:try_start_8 .. :try_end_1f} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 229
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -310,7 +310,7 @@
 
     return-object v2
 
-    :catchall_26
+    :catchall_0
     move-exception v2
 
     .line 229
@@ -324,7 +324,7 @@
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 164
     sget-object v0, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
@@ -333,7 +333,7 @@
 .end method
 
 .method public getSmallIconBitmap()Landroid/os/Bundle;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -351,7 +351,7 @@
     move-result-object v1
 
     .line 257
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -376,8 +376,8 @@
     move-result-object v2
 
     check-cast v2, Landroid/os/Bundle;
-    :try_end_1f
-    .catchall {:try_start_8 .. :try_end_1f} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 263
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -387,7 +387,7 @@
 
     return-object v2
 
-    :catchall_26
+    :catchall_0
     move-exception v2
 
     .line 263
@@ -401,7 +401,7 @@
 .end method
 
 .method public getSmallIconId()I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -419,7 +419,7 @@
     move-result-object v1
 
     .line 240
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -440,8 +440,8 @@
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
-    :try_end_1b
-    .catchall {:try_start_8 .. :try_end_1b} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 246
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -451,7 +451,7 @@
 
     return v2
 
-    :catchall_22
+    :catchall_0
     move-exception v2
 
     .line 246
@@ -465,7 +465,7 @@
 .end method
 
 .method public notifyNotificationWithChannel(Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -483,7 +483,7 @@
     move-result-object v1
 
     .line 190
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -511,8 +511,8 @@
     move-result-object p1
 
     check-cast p1, Landroid/os/Bundle;
-    :try_end_22
-    .catchall {:try_start_8 .. :try_end_22} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 197
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -522,7 +522,7 @@
 
     return-object p1
 
-    :catchall_29
+    :catchall_0
     move-exception p1
 
     .line 197

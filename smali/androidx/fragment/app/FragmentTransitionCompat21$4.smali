@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentTransitionCompat21;Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 0
 
     .line 271
     iput-object p1, p0, Landroidx/fragment/app/FragmentTransitionCompat21$4;->this$0:Landroidx/fragment/app/FragmentTransitionCompat21;
@@ -40,13 +40,13 @@
 
 # virtual methods
 .method public onTransitionCancel(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionEnd(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     .line 277
     iget-object p1, p0, Landroidx/fragment/app/FragmentTransitionCompat21$4;->val$transitionCompleteRunnable:Ljava/lang/Runnable;
@@ -57,19 +57,19 @@
 .end method
 
 .method public onTransitionPause(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionResume(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionStart(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

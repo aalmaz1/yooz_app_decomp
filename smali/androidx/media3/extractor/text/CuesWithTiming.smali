@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;JJ)V
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,20 +53,20 @@
 
     cmp-long p1, p2, v0
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_1
 
     cmp-long p1, p4, v0
 
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     add-long v0, p2, p4
 
     .line 77
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     iput-wide v0, p0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     return-void

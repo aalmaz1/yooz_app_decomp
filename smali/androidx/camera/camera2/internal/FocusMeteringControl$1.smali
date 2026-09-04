@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/FocusMeteringControl;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 3
+    .locals 0
 
     .line 400
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl$1;->this$0:Landroidx/camera/camera2/internal/FocusMeteringControl;
@@ -37,12 +37,12 @@
 
 # virtual methods
 .method public onCaptureCancelled()V
-    .registers 4
+    .locals 3
 
     .line 418
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl$1;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 419
     new-instance v1, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -53,32 +53,32 @@
 
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 3
+    .locals 1
 
     .line 403
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl$1;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 404
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public onCaptureFailed(Landroidx/camera/core/impl/CameraCaptureFailure;)V
-    .registers 4
+    .locals 2
 
     .line 410
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl$1;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 411
     new-instance v1, Landroidx/camera/core/impl/CameraControlInternal$CameraControlException;
@@ -87,6 +87,6 @@
 
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method

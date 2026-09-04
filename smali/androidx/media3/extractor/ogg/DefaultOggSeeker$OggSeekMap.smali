@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/extractor/ogg/DefaultOggSeeker;)V
-    .registers 2
+    .locals 0
 
     .line 252
     iput-object p1, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;->this$0:Landroidx/media3/extractor/ogg/DefaultOggSeeker;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/ogg/DefaultOggSeeker;Landroidx/media3/extractor/ogg/DefaultOggSeeker$1;)V
-    .registers 3
+    .locals 0
 
     .line 252
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;-><init>(Landroidx/media3/extractor/ogg/DefaultOggSeeker;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 4
+    .locals 3
 
     .line 278
     iget-object v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;->this$0:Landroidx/media3/extractor/ogg/DefaultOggSeeker;
@@ -68,7 +68,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 13
+    .locals 10
 
     .line 261
     iget-object v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;->this$0:Landroidx/media3/extractor/ogg/DefaultOggSeeker;
@@ -178,7 +178,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

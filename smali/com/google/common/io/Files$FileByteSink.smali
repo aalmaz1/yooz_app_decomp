@@ -30,7 +30,7 @@
 
 # direct methods
 .method private varargs constructor <init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -65,7 +65,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;Lcom/google/common/io/Files$1;)V
-    .registers 4
+    .locals 0
 
     .line 185
     invoke-direct {p0, p1, p2}, Lcom/google/common/io/Files$FileByteSink;-><init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)V
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public openStream()Ljava/io/FileOutputStream;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -102,7 +102,7 @@
 .end method
 
 .method public bridge synthetic openStream()Ljava/io/OutputStream;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -118,7 +118,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 202
     new-instance v0, Ljava/lang/StringBuilder;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/dynamicanimation/animation/AnimationHandler$AnimationCallbackDispatcher;)V
-    .registers 2
+    .locals 0
 
     .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

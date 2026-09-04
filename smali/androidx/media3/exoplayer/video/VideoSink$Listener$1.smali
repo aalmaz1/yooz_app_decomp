@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,25 +30,25 @@
 
 # virtual methods
 .method public onError(Landroidx/media3/exoplayer/video/VideoSink;Landroidx/media3/exoplayer/video/VideoSink$VideoSinkException;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onFirstFrameRendered(Landroidx/media3/exoplayer/video/VideoSink;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onFrameDropped(Landroidx/media3/exoplayer/video/VideoSink;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/exoplayer/video/VideoSink;Landroidx/media3/common/VideoSize;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

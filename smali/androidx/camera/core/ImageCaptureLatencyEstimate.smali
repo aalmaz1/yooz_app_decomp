@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 43
     new-instance v0, Landroidx/camera/core/ImageCaptureLatencyEstimate;
@@ -34,7 +34,7 @@
 .end method
 
 .method constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,26 +51,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 69
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/ImageCaptureLatencyEstimate;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 70
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/camera/core/ImageCaptureLatencyEstimate;
 
     .line 71
@@ -80,7 +80,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/camera/core/ImageCaptureLatencyEstimate;->processingLatencyMillis:J
 
@@ -88,19 +88,19 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_2
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_2
     move v0, v2
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -135,7 +135,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 83
     new-instance v0, Ljava/lang/StringBuilder;

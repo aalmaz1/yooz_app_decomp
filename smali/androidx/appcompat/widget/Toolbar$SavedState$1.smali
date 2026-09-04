@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2652
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/appcompat/widget/Toolbar$SavedState;
-    .registers 4
+    .locals 2
 
     .line 2660
     new-instance v0, Landroidx/appcompat/widget/Toolbar$SavedState;
@@ -52,7 +52,7 @@
 .end method
 
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/appcompat/widget/Toolbar$SavedState;
-    .registers 4
+    .locals 1
 
     .line 2655
     new-instance v0, Landroidx/appcompat/widget/Toolbar$SavedState;
@@ -63,7 +63,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 2652
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/appcompat/widget/Toolbar$SavedState;
@@ -74,7 +74,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 2652
     invoke-virtual {p0, p1, p2}, Landroidx/appcompat/widget/Toolbar$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/appcompat/widget/Toolbar$SavedState;
@@ -85,7 +85,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/appcompat/widget/Toolbar$SavedState;
-    .registers 2
+    .locals 0
 
     .line 2665
     new-array p1, p1, [Landroidx/appcompat/widget/Toolbar$SavedState;
@@ -94,7 +94,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 2652
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/Toolbar$SavedState$1;->newArray(I)[Landroidx/appcompat/widget/Toolbar$SavedState;

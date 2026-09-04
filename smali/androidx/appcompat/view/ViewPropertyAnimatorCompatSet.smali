@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,29 +57,29 @@
 
 # virtual methods
 .method public cancel()V
-    .registers 3
+    .locals 2
 
     .line 90
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 93
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -90,9 +90,9 @@
     .line 94
     invoke-virtual {v1}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 v0, 0x0
 
     .line 96
@@ -102,7 +102,7 @@
 .end method
 
 .method onAnimationsEnded()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -113,24 +113,24 @@
 .end method
 
 .method public play(Landroidx/core/view/ViewPropertyAnimatorCompat;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
-    .registers 3
+    .locals 1
 
     .line 53
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 54
     iget-object v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_9
+    :cond_0
     return-object p0
 .end method
 
 .method public playSequentially(Landroidx/core/view/ViewPropertyAnimatorCompat;Landroidx/core/view/ViewPropertyAnimatorCompat;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
-    .registers 5
+    .locals 2
 
     .line 61
     iget-object v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators:Ljava/util/ArrayList;
@@ -153,74 +153,74 @@
 .end method
 
 .method public setDuration(J)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
-    .registers 4
+    .locals 1
 
     .line 100
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 101
     iput-wide p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mDuration:J
 
-    :cond_6
+    :cond_0
     return-object p0
 .end method
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
-    .registers 3
+    .locals 1
 
     .line 107
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 108
     iput-object p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    :cond_6
+    :cond_0
     return-object p0
 .end method
 
 .method public setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
-    .registers 3
+    .locals 1
 
     .line 114
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 115
     iput-object p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener:Landroidx/core/view/ViewPropertyAnimatorListener;
 
-    :cond_6
+    :cond_0
     return-object p0
 .end method
 
 .method public start()V
-    .registers 7
+    .locals 6
 
     .line 68
     iget-boolean v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mIsStarted:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 69
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mAnimators:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -235,25 +235,25 @@
 
     cmp-long v4, v2, v4
 
-    if-ltz v4, :cond_22
+    if-ltz v4, :cond_1
 
     .line 71
     invoke-virtual {v1, v2, v3}, Landroidx/core/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     .line 73
-    :cond_22
+    :cond_1
     iget-object v2, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     .line 74
     invoke-virtual {v1, v2}, Landroidx/core/view/ViewPropertyAnimatorCompat;->setInterpolator(Landroid/view/animation/Interpolator;)Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     .line 76
-    :cond_29
+    :cond_2
     iget-object v2, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener:Landroidx/core/view/ViewPropertyAnimatorListener;
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_3
 
     .line 77
     iget-object v2, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mProxyListener:Landroidx/core/view/ViewPropertyAnimatorListenerAdapter;
@@ -261,12 +261,12 @@
     invoke-virtual {v1, v2}, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
 
     .line 79
-    :cond_32
+    :cond_3
     invoke-virtual {v1}, Landroidx/core/view/ViewPropertyAnimatorCompat;->start()V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_36
+    :cond_4
     const/4 v0, 0x1
 
     .line 82

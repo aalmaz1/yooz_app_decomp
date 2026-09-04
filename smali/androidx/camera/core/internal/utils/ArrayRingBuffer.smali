@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(ILandroidx/camera/core/internal/utils/RingBuffer$OnRemoveCallback;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public dequeue()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -111,7 +111,7 @@
     monitor-enter v0
 
     .line 71
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->removeLast()Ljava/lang/Object;
@@ -122,19 +122,19 @@
 
     return-object v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 72
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public enqueue(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -147,7 +147,7 @@
     monitor-enter v0
 
     .line 57
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->size()I
@@ -156,56 +156,56 @@
 
     iget v2, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mRingBufferCapacity:I
 
-    if-lt v1, v2, :cond_12
+    if-lt v1, v2, :cond_0
 
     .line 58
     invoke-virtual {p0}, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->dequeue()Ljava/lang/Object;
 
     move-result-object v1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 60
-    :goto_13
+    :goto_0
     iget-object v2, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayDeque;->addFirst(Ljava/lang/Object;)V
 
     .line 61
     monitor-exit v0
-    :try_end_19
-    .catchall {:try_start_3 .. :try_end_19} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 63
     iget-object p1, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mOnRemoveCallback:Landroidx/camera/core/internal/utils/RingBuffer$OnRemoveCallback;
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 64
     invoke-interface {p1, v1}, Landroidx/camera/core/internal/utils/RingBuffer$OnRemoveCallback;->onRemove(Ljava/lang/Object;)V
 
-    :cond_22
+    :cond_1
     return-void
 
-    :catchall_23
+    :catchall_0
     move-exception p1
 
     .line 61
-    :try_start_24
+    :try_start_1
     monitor-exit v0
-    :try_end_25
-    .catchall {:try_start_24 .. :try_end_25} :catchall_23
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public getMaxCapacity()I
-    .registers 2
+    .locals 1
 
     .line 77
     iget v0, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mRingBufferCapacity:I
@@ -214,7 +214,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 82
     iget-object v0, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mLock:Ljava/lang/Object;
@@ -222,7 +222,7 @@
     monitor-enter v0
 
     .line 83
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/utils/ArrayRingBuffer;->mBuffer:Ljava/util/ArrayDeque;
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
@@ -233,13 +233,13 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 84
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

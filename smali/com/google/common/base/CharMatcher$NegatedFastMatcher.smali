@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/CharMatcher;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final precomputed()Lcom/google/common/base/CharMatcher;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method

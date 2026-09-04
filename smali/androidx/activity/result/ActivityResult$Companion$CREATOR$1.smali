@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/activity/result/ActivityResult;
-    .registers 3
+    .locals 1
 
     const-string v0, "parcel"
 
@@ -81,7 +81,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-virtual {p0, p1}, Landroidx/activity/result/ActivityResult$Companion$CREATOR$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/activity/result/ActivityResult;
@@ -92,7 +92,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/activity/result/ActivityResult;
-    .registers 2
+    .locals 0
 
     .line 79
     new-array p1, p1, [Landroidx/activity/result/ActivityResult;
@@ -101,7 +101,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-virtual {p0, p1}, Landroidx/activity/result/ActivityResult$Companion$CREATOR$1;->newArray(I)[Landroidx/activity/result/ActivityResult;

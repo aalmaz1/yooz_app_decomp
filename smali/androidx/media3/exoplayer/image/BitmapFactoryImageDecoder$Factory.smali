@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$BitmapDecoder;)V
-    .registers 2
+    .locals 0
 
     .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method static synthetic lambda$new$0([BI)Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public createImageDecoder()Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;
-    .registers 4
+    .locals 3
 
     .line 100
     new-instance v0, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;
@@ -84,7 +84,7 @@
 .end method
 
 .method public bridge synthetic createImageDecoder()Landroidx/media3/exoplayer/image/ImageDecoder;
-    .registers 2
+    .locals 1
 
     .line 68
     invoke-virtual {p0}, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$Factory;->createImageDecoder()Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;
@@ -95,12 +95,12 @@
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)I
-    .registers 3
+    .locals 1
 
     .line 90
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
@@ -108,19 +108,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
-    goto :goto_21
+    goto :goto_1
 
     .line 93
-    :cond_d
+    :cond_0
     iget-object p1, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
     invoke-static {p1}, Landroidx/media3/common/util/Util;->isBitmapFactorySupportedMimeType(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x4
 
@@ -129,9 +129,9 @@
 
     move-result p1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 p1, 0x1
 
     .line 95
@@ -139,11 +139,11 @@
 
     move-result p1
 
-    :goto_20
+    :goto_0
     return p1
 
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_1
     const/4 p1, 0x0
 
     .line 91

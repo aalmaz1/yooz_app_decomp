@@ -31,7 +31,7 @@
 .end method
 
 .method public getStreamKeys(Ljava/util/List;)Ljava/util/List;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

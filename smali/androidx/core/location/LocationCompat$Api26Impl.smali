@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 815
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getBearingAccuracyDegrees(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 885
     invoke-virtual {p0}, Landroid/location/Location;->getBearingAccuracyDegrees()F
@@ -36,7 +36,7 @@
 .end method
 
 .method static getSpeedAccuracyMetersPerSecond(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 853
     invoke-virtual {p0}, Landroid/location/Location;->getSpeedAccuracyMetersPerSecond()F
@@ -47,7 +47,7 @@
 .end method
 
 .method static getVerticalAccuracyMeters(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 825
     invoke-virtual {p0}, Landroid/location/Location;->getVerticalAccuracyMeters()F
@@ -58,7 +58,7 @@
 .end method
 
 .method static hasBearingAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 880
     invoke-virtual {p0}, Landroid/location/Location;->hasBearingAccuracy()Z
@@ -69,7 +69,7 @@
 .end method
 
 .method static hasSpeedAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 848
     invoke-virtual {p0}, Landroid/location/Location;->hasSpeedAccuracy()Z
@@ -80,7 +80,7 @@
 .end method
 
 .method static hasVerticalAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 820
     invoke-virtual {p0}, Landroid/location/Location;->hasVerticalAccuracy()Z
@@ -91,7 +91,7 @@
 .end method
 
 .method static removeBearingAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 896
     :try_start_0
@@ -120,13 +120,13 @@
     move-result-object v1
 
     invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->setByte(Ljava/lang/Object;B)V
-    :try_end_16
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_16} :catch_21
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 904
@@ -140,7 +140,7 @@
     .line 906
     throw v0
 
-    :catch_21
+    :catch_1
     move-exception p0
 
     .line 900
@@ -156,7 +156,7 @@
 .end method
 
 .method static removeSpeedAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 864
     :try_start_0
@@ -185,13 +185,13 @@
     move-result-object v1
 
     invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->setByte(Ljava/lang/Object;B)V
-    :try_end_16
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_16} :catch_21
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_17
+    :catch_0
     move-exception p0
 
     .line 872
@@ -205,7 +205,7 @@
     .line 874
     throw v0
 
-    :catch_21
+    :catch_1
     move-exception p0
 
     .line 868
@@ -221,7 +221,7 @@
 .end method
 
 .method static removeVerticalAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 836
     :try_start_0
@@ -250,22 +250,22 @@
     move-result-object v1
 
     invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->setByte(Ljava/lang/Object;B)V
-    :try_end_16
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_16} :catch_19
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_17
+    :catch_0
     move-exception p0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :catch_19
+    :catch_1
     move-exception p0
 
     .line 840
-    :goto_1a
+    :goto_0
     new-instance v0, Ljava/lang/IllegalAccessError;
 
     invoke-direct {v0}, Ljava/lang/IllegalAccessError;-><init>()V
@@ -278,7 +278,7 @@
 .end method
 
 .method static setBearingAccuracyDegrees(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 890
     invoke-virtual {p0, p1}, Landroid/location/Location;->setBearingAccuracyDegrees(F)V
@@ -287,7 +287,7 @@
 .end method
 
 .method static setSpeedAccuracyMetersPerSecond(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 858
     invoke-virtual {p0, p1}, Landroid/location/Location;->setSpeedAccuracyMetersPerSecond(F)V
@@ -296,7 +296,7 @@
 .end method
 
 .method static setVerticalAccuracyMeters(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 830
     invoke-virtual {p0, p1}, Landroid/location/Location;->setVerticalAccuracyMeters(F)V

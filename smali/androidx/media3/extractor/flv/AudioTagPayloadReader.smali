@@ -29,14 +29,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x4
 
     new-array v0, v0, [I
 
     .line 38
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/flv/AudioTagPayloadReader;->AUDIO_SAMPLING_RATE_TABLE:[I
 
@@ -44,7 +44,7 @@
 
     nop
 
-    :array_a
+    :array_0
     .array-data 4
         0x1588
         0x2b11
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/extractor/TrackOutput;)V
-    .registers 2
+    .locals 0
 
     .line 46
     invoke-direct {p0, p1}, Landroidx/media3/extractor/flv/TagPayloadReader;-><init>(Landroidx/media3/extractor/TrackOutput;)V
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method protected parseHeader(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/flv/TagPayloadReader$UnsupportedFormatException;
@@ -77,7 +77,7 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_84
+    if-nez v0, :cond_5
 
     .line 57
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -93,7 +93,7 @@
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_38
+    if-ne v0, v2, :cond_0
 
     shr-int/2addr p1, v2
 
@@ -139,28 +139,28 @@
     .line 69
     iput-boolean v1, p0, Landroidx/media3/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
 
-    goto :goto_81
+    goto :goto_2
 
-    :cond_38
+    :cond_0
     const/4 p1, 0x7
 
-    if-eq v0, p1, :cond_5c
+    if-eq v0, p1, :cond_3
 
     const/16 v2, 0x8
 
-    if-ne v0, v2, :cond_40
+    if-ne v0, v2, :cond_1
 
-    goto :goto_5c
+    goto :goto_0
 
-    :cond_40
+    :cond_1
     const/16 p1, 0xa
 
-    if-ne v0, p1, :cond_45
+    if-ne v0, p1, :cond_2
 
-    goto :goto_81
+    goto :goto_2
 
     .line 82
-    :cond_45
+    :cond_2
     new-instance p1, Landroidx/media3/extractor/flv/TagPayloadReader$UnsupportedFormatException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -183,19 +183,19 @@
 
     throw p1
 
-    :cond_5c
-    :goto_5c
-    if-ne v0, p1, :cond_61
+    :cond_3
+    :goto_0
+    if-ne v0, p1, :cond_4
 
     const-string p1, "audio/g711-alaw"
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_61
+    :cond_4
     const-string p1, "audio/g711-mlaw"
 
     .line 73
-    :goto_63
+    :goto_1
     new-instance v0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -231,21 +231,21 @@
     iput-boolean v1, p0, Landroidx/media3/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
 
     .line 84
-    :goto_81
+    :goto_2
     iput-boolean v1, p0, Landroidx/media3/extractor/flv/AudioTagPayloadReader;->hasParsedAudioDataHeader:Z
 
-    goto :goto_87
+    goto :goto_3
 
     .line 87
-    :cond_84
+    :cond_5
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    :goto_87
+    :goto_3
     return v1
 .end method
 
 .method protected parsePayload(Landroidx/media3/common/util/ParsableByteArray;J)Z
-    .registers 16
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -259,7 +259,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     .line 95
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -287,19 +287,19 @@
     return v2
 
     .line 100
-    :cond_19
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_1
 
     .line 101
     iget-boolean v3, p0, Landroidx/media3/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
 
-    if-nez v3, :cond_62
+    if-nez v3, :cond_1
 
     .line 103
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -374,23 +374,23 @@
     return v1
 
     .line 117
-    :cond_62
+    :cond_1
     iget v3, p0, Landroidx/media3/extractor/flv/AudioTagPayloadReader;->audioFormat:I
 
     const/16 v4, 0xa
 
-    if-ne v3, v4, :cond_6c
+    if-ne v3, v4, :cond_3
 
-    if-ne v0, v2, :cond_6b
+    if-ne v0, v2, :cond_2
 
-    goto :goto_6c
+    goto :goto_0
 
-    :cond_6b
+    :cond_2
     return v1
 
     .line 118
-    :cond_6c
-    :goto_6c
+    :cond_3
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v9
@@ -417,7 +417,7 @@
 .end method
 
 .method public seek()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

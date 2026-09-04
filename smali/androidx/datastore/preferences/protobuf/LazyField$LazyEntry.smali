@@ -45,7 +45,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/Map$Entry;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +66,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Map$Entry;Landroidx/datastore/preferences/protobuf/LazyField$1;)V
-    .registers 3
+    .locals 0
 
     .line 91
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/LazyField$LazyEntry;-><init>(Ljava/util/Map$Entry;)V
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public getField()Landroidx/datastore/preferences/protobuf/LazyField;
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyField$LazyEntry;->entry:Ljava/util/Map$Entry;
@@ -92,7 +92,7 @@
 .end method
 
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -110,7 +110,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyField$LazyEntry;->entry:Ljava/util/Map$Entry;
@@ -121,14 +121,14 @@
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/LazyField;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 109
-    :cond_c
+    :cond_0
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/LazyField;->getValue()Landroidx/datastore/preferences/protobuf/MessageLite;
 
     move-result-object v0
@@ -137,12 +137,12 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 118
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/MessageLite;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 123
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyField$LazyEntry;->entry:Ljava/util/Map$Entry;
@@ -162,7 +162,7 @@
     return-object p1
 
     .line 119
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite"

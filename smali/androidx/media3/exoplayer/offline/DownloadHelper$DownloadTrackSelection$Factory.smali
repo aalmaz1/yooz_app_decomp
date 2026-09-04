@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1020
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/offline/DownloadHelper$1;)V
-    .registers 2
+    .locals 0
 
     .line 1020
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper$DownloadTrackSelection$Factory;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createTrackSelections([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection$Definition;Landroidx/media3/exoplayer/upstream/BandwidthMeter;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/common/Timeline;)[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
-    .registers 7
+    .locals 2
 
     .line 1028
     array-length p2, p1
@@ -49,22 +49,22 @@
     const/4 p3, 0x0
 
     .line 1029
-    :goto_4
+    :goto_0
     array-length p4, p1
 
-    if-ge p3, p4, :cond_1f
+    if-ge p3, p4, :cond_1
 
     .line 1031
     aget-object p4, p1, p3
 
-    if-nez p4, :cond_d
+    if-nez p4, :cond_0
 
     const/4 p4, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 1033
-    :cond_d
+    :cond_0
     new-instance p4, Landroidx/media3/exoplayer/offline/DownloadHelper$DownloadTrackSelection;
 
     aget-object v0, p1, p3
@@ -77,13 +77,13 @@
 
     invoke-direct {p4, v0, v1}, Landroidx/media3/exoplayer/offline/DownloadHelper$DownloadTrackSelection;-><init>(Landroidx/media3/common/TrackGroup;[I)V
 
-    :goto_1a
+    :goto_1
     aput-object p4, p2, p3
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     return-object p2
 .end method

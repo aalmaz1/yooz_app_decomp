@@ -66,7 +66,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/lifecycle/ReportFragment$Companion;
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
@@ -89,14 +89,14 @@
 .end method
 
 .method private final dispatch(Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 5
+    .locals 3
 
     .line 83
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-ge v0, v1, :cond_14
+    if-ge v0, v1, :cond_0
 
     .line 87
     sget-object v0, Landroidx/lifecycle/ReportFragment;->Companion:Landroidx/lifecycle/ReportFragment$Companion;
@@ -111,12 +111,12 @@
 
     invoke-virtual {v0, v1, p1}, Landroidx/lifecycle/ReportFragment$Companion;->dispatch$lifecycle_runtime_release(Landroid/app/Activity;Landroidx/lifecycle/Lifecycle$Event;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public static final dispatch$lifecycle_runtime_release(Landroid/app/Activity;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -128,43 +128,43 @@
 .end method
 
 .method private final dispatchCreate(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 36
     invoke-interface {p1}, Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;->onCreate()V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method private final dispatchResume(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 44
     invoke-interface {p1}, Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;->onResume()V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method private final dispatchStart(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 40
     invoke-interface {p1}, Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;->onStart()V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static final get(Landroid/app/Activity;)Landroidx/lifecycle/ReportFragment;
-    .registers 2
+    .locals 1
 
     sget-object v0, Landroidx/lifecycle/ReportFragment;->Companion:Landroidx/lifecycle/ReportFragment$Companion;
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public static final injectIfNeededIn(Landroid/app/Activity;)V
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -190,7 +190,7 @@
 
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
@@ -209,7 +209,7 @@
 .end method
 
 .method public onDestroy()V
-    .registers 2
+    .locals 1
 
     .line 76
     invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
@@ -228,7 +228,7 @@
 .end method
 
 .method public onPause()V
-    .registers 2
+    .locals 1
 
     .line 66
     invoke-super {p0}, Landroid/app/Fragment;->onPause()V
@@ -242,7 +242,7 @@
 .end method
 
 .method public onResume()V
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-super {p0}, Landroid/app/Fragment;->onResume()V
@@ -261,7 +261,7 @@
 .end method
 
 .method public onStart()V
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-super {p0}, Landroid/app/Fragment;->onStart()V
@@ -280,7 +280,7 @@
 .end method
 
 .method public onStop()V
-    .registers 2
+    .locals 1
 
     .line 71
     invoke-super {p0}, Landroid/app/Fragment;->onStop()V
@@ -294,7 +294,7 @@
 .end method
 
 .method public final setProcessListener(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
-    .registers 2
+    .locals 0
 
     .line 92
     iput-object p1, p0, Landroidx/lifecycle/ReportFragment;->processListener:Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;

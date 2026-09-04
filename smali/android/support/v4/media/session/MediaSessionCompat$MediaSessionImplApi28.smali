@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 0
 
     .line 3906
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
@@ -25,7 +25,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 3910
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;-><init>(Ljava/lang/Object;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public final getCurrentControllerInfo()Landroidx/media/MediaSessionManager$RemoteUserInfo;
-    .registers 3
+    .locals 2
 
     .line 3920
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi28;->mSessionObj:Ljava/lang/Object;
@@ -57,7 +57,7 @@
 .end method
 
 .method public setCurrentControllerInfo(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

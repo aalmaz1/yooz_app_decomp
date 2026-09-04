@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/arch/core/util/Function;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 226
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/Futures$3;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -64,7 +64,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TI;)V"
@@ -82,12 +82,12 @@
     move-result-object p1
 
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
-    :try_end_b
-    .catchall {:try_start_0 .. :try_end_b} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     .line 220
@@ -95,6 +95,6 @@
 
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_12
+    :goto_0
     return-void
 .end method

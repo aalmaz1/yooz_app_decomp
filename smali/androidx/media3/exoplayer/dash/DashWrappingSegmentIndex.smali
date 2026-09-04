@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ChunkIndex;J)V
-    .registers 4
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public getAvailableSegmentCount(JJ)J
-    .registers 5
+    .locals 0
 
     .line 59
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/DashWrappingSegmentIndex;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
@@ -44,7 +44,7 @@
 .end method
 
 .method public getDurationUs(JJ)J
-    .registers 5
+    .locals 0
 
     .line 74
     iget-object p3, p0, Landroidx/media3/exoplayer/dash/DashWrappingSegmentIndex;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
@@ -59,7 +59,7 @@
 .end method
 
 .method public getFirstAvailableSegmentNum(JJ)J
-    .registers 5
+    .locals 0
 
     const-wide/16 p1, 0x0
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public getFirstSegmentNum()J
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -75,7 +75,7 @@
 .end method
 
 .method public getNextSegmentAvailableTimeUs(JJ)J
-    .registers 5
+    .locals 0
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public getSegmentCount(J)J
-    .registers 3
+    .locals 0
 
     .line 54
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/DashWrappingSegmentIndex;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
@@ -96,7 +96,7 @@
 .end method
 
 .method public getSegmentNum(JJ)J
-    .registers 7
+    .locals 2
 
     .line 85
     iget-object p3, p0, Landroidx/media3/exoplayer/dash/DashWrappingSegmentIndex;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
@@ -115,7 +115,7 @@
 .end method
 
 .method public getSegmentUrl(J)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 10
+    .locals 7
 
     .line 79
     new-instance v6, Landroidx/media3/exoplayer/dash/manifest/RangedUri;
@@ -146,7 +146,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 5
+    .locals 2
 
     .line 69
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashWrappingSegmentIndex;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
@@ -165,7 +165,7 @@
 .end method
 
 .method public isExplicit()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

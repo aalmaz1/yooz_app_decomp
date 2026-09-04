@@ -9,12 +9,12 @@
 
 # direct methods
 .method constructor <init>(Landroid/net/Uri;)V
-    .registers 3
+    .locals 1
 
     .line 14
     invoke-direct {p0}, Landroidx/camera/video/OutputResults;-><init>()V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 18
     iput-object p1, p0, Landroidx/camera/video/AutoValue_OutputResults;->outputUri:Landroid/net/Uri;
@@ -22,7 +22,7 @@
     return-void
 
     .line 16
-    :cond_8
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null outputUri"
@@ -35,19 +35,19 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 39
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/camera/video/OutputResults;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 40
     check-cast p1, Landroidx/camera/video/OutputResults;
@@ -65,14 +65,14 @@
 
     return p1
 
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public getOutputUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 24
     iget-object v0, p0, Landroidx/camera/video/AutoValue_OutputResults;->outputUri:Landroid/net/Uri;
@@ -81,7 +81,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 50
     iget-object v0, p0, Landroidx/camera/video/AutoValue_OutputResults;->outputUri:Landroid/net/Uri;
@@ -98,7 +98,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 29
     new-instance v0, Ljava/lang/StringBuilder;

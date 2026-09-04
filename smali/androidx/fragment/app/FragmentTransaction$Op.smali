@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method constructor <init>(ILandroidx/fragment/app/Fragment;)V
-    .registers 3
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method constructor <init>(ILandroidx/fragment/app/Fragment;Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 4
+    .locals 0
 
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

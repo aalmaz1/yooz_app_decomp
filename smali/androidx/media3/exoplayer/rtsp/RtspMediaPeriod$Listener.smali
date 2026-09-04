@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public onSeekingUnsupported()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

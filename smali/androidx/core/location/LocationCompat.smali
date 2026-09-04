@@ -41,7 +41,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,35 +50,35 @@
 .end method
 
 .method private static containsExtra(Landroid/location/Location;Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 981
     invoke-virtual {p0}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
     move-result-object p0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     .line 982
     invoke-virtual {p0, p1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 .method public static getBearingAccuracyDegrees(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 289
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api26Impl;->getBearingAccuracyDegrees(Landroid/location/Location;)F
@@ -89,7 +89,7 @@
 .end method
 
 .method public static getElapsedRealtimeMillis(Landroid/location/Location;)J
-    .registers 4
+    .locals 3
 
     .line 120
     sget-object v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static getElapsedRealtimeNanos(Landroid/location/Location;)J
-    .registers 3
+    .locals 2
 
     .line 111
     invoke-virtual {p0}, Landroid/location/Location;->getElapsedRealtimeNanos()J
@@ -117,7 +117,7 @@
 .end method
 
 .method static getFieldsMaskField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchFieldException;
@@ -127,7 +127,7 @@
     .line 923
     sget-object v0, Landroidx/core/location/LocationCompat;->sFieldsMaskField:Ljava/lang/reflect/Field;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 924
     const-class v0, Landroid/location/Location;
@@ -146,14 +146,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 928
-    :cond_12
+    :cond_0
     sget-object v0, Landroidx/core/location/LocationCompat;->sFieldsMaskField:Ljava/lang/reflect/Field;
 
     return-object v0
 .end method
 
 .method static getHasBearingAccuracyMask()I
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchFieldException;,
@@ -164,7 +164,7 @@
     .line 947
     sget-object v0, Landroidx/core/location/LocationCompat;->sHasBearingAccuracyMask:Ljava/lang/Integer;
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 948
     const-class v0, Landroid/location/Location;
@@ -194,7 +194,7 @@
     sput-object v0, Landroidx/core/location/LocationCompat;->sHasBearingAccuracyMask:Ljava/lang/Integer;
 
     .line 954
-    :cond_1b
+    :cond_0
     sget-object v0, Landroidx/core/location/LocationCompat;->sHasBearingAccuracyMask:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -205,7 +205,7 @@
 .end method
 
 .method static getHasSpeedAccuracyMask()I
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchFieldException;,
@@ -216,7 +216,7 @@
     .line 934
     sget-object v0, Landroidx/core/location/LocationCompat;->sHasSpeedAccuracyMask:Ljava/lang/Integer;
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 935
     const-class v0, Landroid/location/Location;
@@ -246,7 +246,7 @@
     sput-object v0, Landroidx/core/location/LocationCompat;->sHasSpeedAccuracyMask:Ljava/lang/Integer;
 
     .line 941
-    :cond_1b
+    :cond_0
     sget-object v0, Landroidx/core/location/LocationCompat;->sHasSpeedAccuracyMask:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -257,7 +257,7 @@
 .end method
 
 .method static getHasVerticalAccuracyMask()I
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchFieldException;,
@@ -268,7 +268,7 @@
     .line 960
     sget-object v0, Landroidx/core/location/LocationCompat;->sHasVerticalAccuracyMask:Ljava/lang/Integer;
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 961
     const-class v0, Landroid/location/Location;
@@ -298,7 +298,7 @@
     sput-object v0, Landroidx/core/location/LocationCompat;->sHasVerticalAccuracyMask:Ljava/lang/Integer;
 
     .line 967
-    :cond_1b
+    :cond_0
     sget-object v0, Landroidx/core/location/LocationCompat;->sHasVerticalAccuracyMask:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -309,14 +309,14 @@
 .end method
 
 .method public static getMslAltitudeAccuracyMeters(Landroid/location/Location;)F
-    .registers 3
+    .locals 2
 
     .line 423
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 424
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api34Impl;->getMslAltitudeAccuracyMeters(Landroid/location/Location;)F
@@ -326,7 +326,7 @@
     return p0
 
     .line 426
-    :cond_b
+    :cond_0
     invoke-static {p0}, Landroidx/core/location/LocationCompat;->getOrCreateExtras(Landroid/location/Location;)Landroid/os/Bundle;
 
     move-result-object p0
@@ -341,14 +341,14 @@
 .end method
 
 .method public static getMslAltitudeMeters(Landroid/location/Location;)D
-    .registers 3
+    .locals 2
 
     .line 348
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 349
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api34Impl;->getMslAltitudeMeters(Landroid/location/Location;)D
@@ -358,7 +358,7 @@
     return-wide v0
 
     .line 351
-    :cond_b
+    :cond_0
     invoke-static {p0}, Landroidx/core/location/LocationCompat;->getOrCreateExtras(Landroid/location/Location;)Landroid/os/Bundle;
 
     move-result-object p0
@@ -373,14 +373,14 @@
 .end method
 
 .method private static getOrCreateExtras(Landroid/location/Location;)Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 971
     invoke-virtual {p0}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 973
     new-instance v0, Landroid/os/Bundle;
@@ -394,12 +394,12 @@
 
     move-result-object v0
 
-    :cond_12
+    :cond_0
     return-object v0
 .end method
 
 .method private static getSetIsFromMockProviderMethod()Ljava/lang/reflect/Method;
-    .registers 5
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchMethodException;
@@ -409,7 +409,7 @@
     .line 912
     sget-object v0, Landroidx/core/location/LocationCompat;->sSetIsFromMockProviderMethod:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 913
     const-class v0, Landroid/location/Location;
@@ -436,14 +436,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 918
-    :cond_19
+    :cond_0
     sget-object v0, Landroidx/core/location/LocationCompat;->sSetIsFromMockProviderMethod:Ljava/lang/reflect/Method;
 
     return-object v0
 .end method
 
 .method public static getSpeedAccuracyMetersPerSecond(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 218
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api26Impl;->getSpeedAccuracyMetersPerSecond(Landroid/location/Location;)F
@@ -454,7 +454,7 @@
 .end method
 
 .method public static getVerticalAccuracyMeters(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 147
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api26Impl;->getVerticalAccuracyMeters(Landroid/location/Location;)F
@@ -465,7 +465,7 @@
 .end method
 
 .method public static hasBearingAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 272
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api26Impl;->hasBearingAccuracy(Landroid/location/Location;)Z
@@ -476,14 +476,14 @@
 .end method
 
 .method public static hasMslAltitude(Landroid/location/Location;)Z
-    .registers 3
+    .locals 2
 
     .line 383
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 384
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api34Impl;->hasMslAltitude(Landroid/location/Location;)Z
@@ -492,7 +492,7 @@
 
     return p0
 
-    :cond_b
+    :cond_0
     const-string v0, "androidx.core.location.extra.MSL_ALTITUDE"
 
     .line 386
@@ -504,14 +504,14 @@
 .end method
 
 .method public static hasMslAltitudeAccuracy(Landroid/location/Location;)Z
-    .registers 3
+    .locals 2
 
     .line 460
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 461
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api34Impl;->hasMslAltitudeAccuracy(Landroid/location/Location;)Z
@@ -520,7 +520,7 @@
 
     return p0
 
-    :cond_b
+    :cond_0
     const-string v0, "androidx.core.location.extra.MSL_ALTITUDE_ACCURACY"
 
     .line 463
@@ -532,7 +532,7 @@
 .end method
 
 .method public static hasSpeedAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 201
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api26Impl;->hasSpeedAccuracy(Landroid/location/Location;)Z
@@ -543,7 +543,7 @@
 .end method
 
 .method public static hasVerticalAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 130
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api26Impl;->hasVerticalAccuracy(Landroid/location/Location;)Z
@@ -554,7 +554,7 @@
 .end method
 
 .method public static isMock(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 496
     invoke-virtual {p0}, Landroid/location/Location;->isFromMockProvider()Z
@@ -565,50 +565,50 @@
 .end method
 
 .method public static removeBearingAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 323
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 324
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api33Impl;->removeBearingAccuracy(Landroid/location/Location;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 325
-    :cond_a
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_1
 
     .line 326
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api29Impl;->removeBearingAccuracy(Landroid/location/Location;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 328
-    :cond_14
+    :cond_1
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api28Impl;->removeBearingAccuracy(Landroid/location/Location;)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 .method private static removeExtra(Landroid/location/Location;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 986
     invoke-virtual {p0}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 988
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
@@ -618,141 +618,141 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 990
     invoke-virtual {p0, p1}, Landroid/location/Location;->setExtras(Landroid/os/Bundle;)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public static removeMslAltitude(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 399
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 400
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api34Impl;->removeMslAltitude(Landroid/location/Location;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const-string v0, "androidx.core.location.extra.MSL_ALTITUDE"
 
     .line 402
     invoke-static {p0, v0}, Landroidx/core/location/LocationCompat;->removeExtra(Landroid/location/Location;Ljava/lang/String;)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public static removeMslAltitudeAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 476
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 477
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api34Impl;->removeMslAltitudeAccuracy(Landroid/location/Location;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const-string v0, "androidx.core.location.extra.MSL_ALTITUDE_ACCURACY"
 
     .line 479
     invoke-static {p0, v0}, Landroidx/core/location/LocationCompat;->removeExtra(Landroid/location/Location;Ljava/lang/String;)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public static removeSpeedAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 252
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 253
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api33Impl;->removeSpeedAccuracy(Landroid/location/Location;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 254
-    :cond_a
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_1
 
     .line 255
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api29Impl;->removeSpeedAccuracy(Landroid/location/Location;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 257
-    :cond_14
+    :cond_1
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api28Impl;->removeSpeedAccuracy(Landroid/location/Location;)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 .method public static removeVerticalAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 181
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 182
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api33Impl;->removeVerticalAccuracy(Landroid/location/Location;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 183
-    :cond_a
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_1
 
     .line 184
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api29Impl;->removeVerticalAccuracy(Landroid/location/Location;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 186
-    :cond_14
+    :cond_1
     invoke-static {p0}, Landroidx/core/location/LocationCompat$Api28Impl;->removeVerticalAccuracy(Landroid/location/Location;)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 .method public static setBearingAccuracyDegrees(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 313
     invoke-static {p0, p1}, Landroidx/core/location/LocationCompat$Api26Impl;->setBearingAccuracyDegrees(Landroid/location/Location;F)V
@@ -761,7 +761,7 @@
 .end method
 
 .method public static setMock(Landroid/location/Location;Z)V
-    .registers 5
+    .locals 3
 
     .line 510
     :try_start_0
@@ -782,14 +782,14 @@
     aput-object p1, v1, v2
 
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_11
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_11} :catch_23
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_11} :catch_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_12
+    :catch_0
     move-exception p0
 
     .line 520
@@ -799,7 +799,7 @@
 
     throw p1
 
-    :catch_19
+    :catch_1
     move-exception p0
 
     .line 516
@@ -813,7 +813,7 @@
     .line 518
     throw p1
 
-    :catch_23
+    :catch_2
     move-exception p0
 
     .line 512
@@ -829,22 +829,22 @@
 .end method
 
 .method public static setMslAltitudeAccuracyMeters(Landroid/location/Location;F)V
-    .registers 4
+    .locals 2
 
     .line 442
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 443
     invoke-static {p0, p1}, Landroidx/core/location/LocationCompat$Api34Impl;->setMslAltitudeAccuracyMeters(Landroid/location/Location;F)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 445
-    :cond_a
+    :cond_0
     invoke-static {p0}, Landroidx/core/location/LocationCompat;->getOrCreateExtras(Landroid/location/Location;)Landroid/os/Bundle;
 
     move-result-object p0
@@ -853,27 +853,27 @@
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method public static setMslAltitudeMeters(Landroid/location/Location;D)V
-    .registers 5
+    .locals 2
 
     .line 366
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 367
     invoke-static {p0, p1, p2}, Landroidx/core/location/LocationCompat$Api34Impl;->setMslAltitudeMeters(Landroid/location/Location;D)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 369
-    :cond_a
+    :cond_0
     invoke-static {p0}, Landroidx/core/location/LocationCompat;->getOrCreateExtras(Landroid/location/Location;)Landroid/os/Bundle;
 
     move-result-object p0
@@ -882,12 +882,12 @@
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method public static setSpeedAccuracyMetersPerSecond(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 242
     invoke-static {p0, p1}, Landroidx/core/location/LocationCompat$Api26Impl;->setSpeedAccuracyMetersPerSecond(Landroid/location/Location;F)V
@@ -896,7 +896,7 @@
 .end method
 
 .method public static setVerticalAccuracyMeters(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 171
     invoke-static {p0, p1}, Landroidx/core/location/LocationCompat$Api26Impl;->setVerticalAccuracyMeters(Landroid/location/Location;F)V

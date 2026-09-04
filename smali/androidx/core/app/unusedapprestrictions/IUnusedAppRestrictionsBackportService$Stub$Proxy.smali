@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 98
     sget-object v0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
@@ -55,7 +55,7 @@
 .end method
 
 .method public isPermissionRevocationEnabledForApp(Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -68,7 +68,7 @@
     move-result-object v0
 
     .line 115
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -84,15 +84,15 @@
     const/4 v2, 0x1
 
     invoke-interface {p1, v2, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_13
-    .catchall {:try_start_4 .. :try_end_13} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 120
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V

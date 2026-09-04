@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)V
-    .registers 3
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method private static getCropRectByRatio(Landroid/graphics/Rect;F)Landroid/graphics/Rect;
-    .registers 7
+    .locals 5
 
     .line 96
     invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
@@ -115,7 +115,7 @@
 .end method
 
 .method private getSensorRect()Landroid/graphics/Rect;
-    .registers 3
+    .locals 2
 
     .line 89
     iget-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mCameraCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -142,12 +142,12 @@
 
 # virtual methods
 .method public addRequestOption(Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 69
     iget-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mCurrentCropRect:Landroid/graphics/Rect;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 70
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -156,31 +156,31 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public getCropSensorRegion()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 142
     iget-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mCurrentCropRect:Landroid/graphics/Rect;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->getSensorRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    :goto_9
+    :goto_0
     return-object v0
 .end method
 
 .method public getMaxZoom()F
-    .registers 4
+    .locals 3
 
     .line 54
     iget-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mCameraCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -193,14 +193,14 @@
 
     check-cast v0, Ljava/lang/Float;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
 
     .line 60
-    :cond_f
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v1
@@ -211,7 +211,7 @@
 
     cmpg-float v1, v1, v2
 
-    if-gez v1, :cond_20
+    if-gez v1, :cond_1
 
     .line 61
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->getMinZoom()F
@@ -221,7 +221,7 @@
     return v0
 
     .line 63
-    :cond_20
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
@@ -230,7 +230,7 @@
 .end method
 
 .method public getMinZoom()F
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -238,12 +238,12 @@
 .end method
 
 .method public onCaptureResult(Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 4
+    .locals 2
 
     .line 125
     iget-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomRatioCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 126
     invoke-virtual {p1}, Landroid/hardware/camera2/TotalCaptureResult;->getRequest()Landroid/hardware/camera2/CaptureRequest;
@@ -252,14 +252,14 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     move-object p1, v0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 128
-    :cond_d
+    :cond_0
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, v1}, Landroid/hardware/camera2/CaptureRequest;->get(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
@@ -269,17 +269,17 @@
     check-cast p1, Landroid/graphics/Rect;
 
     .line 130
-    :goto_15
+    :goto_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomCropRegion:Landroid/graphics/Rect;
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 131
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_1
 
     .line 132
     iget-object p1, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomRatioCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -292,12 +292,12 @@
     .line 134
     iput-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomCropRegion:Landroid/graphics/Rect;
 
-    :cond_28
+    :cond_1
     return-void
 .end method
 
 .method public resetZoom()V
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -310,7 +310,7 @@
     .line 80
     iget-object v1, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomRatioCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 81
     new-instance v2, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -325,12 +325,12 @@
     .line 84
     iput-object v0, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomRatioCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public setZoomRatio(FLandroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F",
@@ -355,7 +355,7 @@
     .line 110
     iget-object p1, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomRatioCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 111
     new-instance v0, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -367,7 +367,7 @@
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
     .line 117
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mCurrentCropRect:Landroid/graphics/Rect;
 
     iput-object p1, p0, Landroidx/camera/camera2/internal/CropRegionZoomImpl;->mPendingZoomCropRegion:Landroid/graphics/Rect;

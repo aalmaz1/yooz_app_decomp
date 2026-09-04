@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1857
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$ClippingConfiguration;)V
-    .registers 4
+    .locals 2
 
     .line 1861
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$ClippingConfiguration;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1849
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;-><init>(Landroidx/media3/common/MediaItem$ClippingConfiguration;)V
@@ -85,7 +85,7 @@
 .end method
 
 .method static synthetic access$3900(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1849
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->startPositionUs:J
@@ -94,7 +94,7 @@
 .end method
 
 .method static synthetic access$4000(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1849
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->endPositionUs:J
@@ -103,7 +103,7 @@
 .end method
 
 .method static synthetic access$4100(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 1849
     iget-boolean p0, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->relativeToLiveWindow:Z
@@ -112,7 +112,7 @@
 .end method
 
 .method static synthetic access$4200(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 1849
     iget-boolean p0, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->relativeToDefaultPosition:Z
@@ -121,7 +121,7 @@
 .end method
 
 .method static synthetic access$4300(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 1849
     iget-boolean p0, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->startsAtKeyFrame:Z
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem$ClippingConfiguration;
-    .registers 3
+    .locals 2
 
     .line 1949
     new-instance v0, Landroidx/media3/common/MediaItem$ClippingConfiguration;
@@ -145,7 +145,7 @@
 .end method
 
 .method public buildClippingProperties()Landroidx/media3/common/MediaItem$ClippingProperties;
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -160,7 +160,7 @@
 .end method
 
 .method public setEndPositionMs(J)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 3
+    .locals 0
 
     .line 1897
     invoke-static {p1, p2}, Landroidx/media3/common/util/Util;->msToUs(J)J
@@ -175,33 +175,33 @@
 .end method
 
 .method public setEndPositionUs(J)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/high16 v0, -0x8000000000000000L
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_d
+    if-ltz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 1908
-    :goto_10
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1909
@@ -211,7 +211,7 @@
 .end method
 
 .method public setRelativeToDefaultPosition(Z)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1930
     iput-boolean p1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->relativeToDefaultPosition:Z
@@ -220,7 +220,7 @@
 .end method
 
 .method public setRelativeToLiveWindow(Z)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1920
     iput-boolean p1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->relativeToLiveWindow:Z
@@ -229,7 +229,7 @@
 .end method
 
 .method public setStartPositionMs(J)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 3
+    .locals 0
 
     .line 1875
     invoke-static {p1, p2}, Landroidx/media3/common/util/Util;->msToUs(J)J
@@ -244,23 +244,23 @@
 .end method
 
 .method public setStartPositionUs(J)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 1885
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1886
@@ -270,7 +270,7 @@
 .end method
 
 .method public setStartsAtKeyFrame(Z)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1940
     iput-boolean p1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->startsAtKeyFrame:Z

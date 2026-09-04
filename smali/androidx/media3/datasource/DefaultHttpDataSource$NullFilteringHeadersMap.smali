@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,69 +62,69 @@
 .end method
 
 .method static synthetic lambda$entrySet$1(Ljava/util/Map$Entry;)Z
-    .registers 1
+    .locals 0
 
     .line 881
     invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method static synthetic lambda$keySet$0(Ljava/lang/String;)Z
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_5
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public containsKey(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 865
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method public containsValue(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 896
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingMap;->standardContainsValue(Ljava/lang/Object;)Z
@@ -135,7 +135,7 @@
 .end method
 
 .method protected bridge synthetic delegate()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 850
     invoke-virtual {p0}, Landroidx/media3/datasource/DefaultHttpDataSource$NullFilteringHeadersMap;->delegate()Ljava/util/Map;
@@ -146,7 +146,7 @@
 .end method
 
 .method protected delegate()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -165,7 +165,7 @@
 .end method
 
 .method public entrySet()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -195,30 +195,30 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 901
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingMap;->standardEquals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 850
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/DefaultHttpDataSource$NullFilteringHeadersMap;->get(Ljava/lang/Object;)Ljava/util/List;
@@ -229,7 +229,7 @@
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/util/List;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -241,26 +241,26 @@
         }
     .end annotation
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
     .line 871
-    :cond_4
+    :cond_0
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/util/List;
 
-    :goto_a
+    :goto_0
     return-object p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 906
     invoke-super {p0}, Lcom/google/common/collect/ForwardingMap;->standardHashCode()I
@@ -271,7 +271,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 891
     invoke-super {p0}, Lcom/google/common/collect/ForwardingMap;->isEmpty()Z
@@ -280,13 +280,13 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     invoke-super {p0}, Lcom/google/common/collect/ForwardingMap;->size()I
 
     move-result v0
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -294,20 +294,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method public keySet()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -334,7 +334,7 @@
 .end method
 
 .method public size()I
-    .registers 3
+    .locals 2
 
     .line 886
     invoke-super {p0}, Lcom/google/common/collect/ForwardingMap;->size()I

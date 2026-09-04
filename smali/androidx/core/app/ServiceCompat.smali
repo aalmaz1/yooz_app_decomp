@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,43 +37,43 @@
 .end method
 
 .method public static startForeground(Landroid/app/Service;ILandroid/app/Notification;I)V
-    .registers 6
+    .locals 2
 
     .line 171
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 172
     invoke-static {p0, p1, p2, p3}, Landroidx/core/app/ServiceCompat$Api34Impl;->startForeground(Landroid/app/Service;ILandroid/app/Notification;I)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 173
-    :cond_a
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_1
 
     .line 174
     invoke-static {p0, p1, p2, p3}, Landroidx/core/app/ServiceCompat$Api29Impl;->startForeground(Landroid/app/Service;ILandroid/app/Notification;I)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 176
-    :cond_14
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 .method public static stopForeground(Landroid/app/Service;I)V
-    .registers 2
+    .locals 0
 
     .line 191
     invoke-static {p0, p1}, Landroidx/core/app/ServiceCompat$Api24Impl;->stopForeground(Landroid/app/Service;I)V

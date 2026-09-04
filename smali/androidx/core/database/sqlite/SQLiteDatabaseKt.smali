@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final transaction(Landroid/database/sqlite/SQLiteDatabase;ZLkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -47,30 +47,30 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     .line 31
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    goto :goto_9
+    goto :goto_0
 
     .line 33
-    :cond_6
+    :cond_0
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
 
-    :goto_9
+    :goto_0
     const/4 p1, 0x1
 
     .line 36
-    :try_start_a
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
     .line 37
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_11
-    .catchall {:try_start_a .. :try_end_11} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -82,7 +82,7 @@
 
     return-object p2
 
-    :catchall_1b
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -95,39 +95,39 @@
 .end method
 
 .method public static synthetic transaction$default(Landroid/database/sqlite/SQLiteDatabase;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 0
 
     const/4 p4, 0x1
 
     and-int/2addr p3, p4
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     move p1, p4
 
-    :cond_5
-    if-eqz p1, :cond_b
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 31
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    goto :goto_e
+    goto :goto_0
 
     .line 33
-    :cond_b
+    :cond_1
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
 
     .line 36
-    :goto_e
-    :try_start_e
+    :goto_0
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     .line 37
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_15
-    .catchall {:try_start_e .. :try_end_15} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 38
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -139,7 +139,7 @@
 
     return-object p1
 
-    :catchall_1f
+    :catchall_0
     move-exception p1
 
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

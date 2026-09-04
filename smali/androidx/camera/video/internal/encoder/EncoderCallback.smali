@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 68
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderCallback$1;
@@ -27,7 +27,7 @@
 .end method
 
 .method public onEncodePaused()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

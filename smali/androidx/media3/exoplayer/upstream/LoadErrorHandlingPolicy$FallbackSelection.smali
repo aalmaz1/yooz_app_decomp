@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(IJ)V
-    .registers 6
+    .locals 2
 
     .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,17 +31,17 @@
 
     cmp-long v0, p2, v0
 
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 153
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 154

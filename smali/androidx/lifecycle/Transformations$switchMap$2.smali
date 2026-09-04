@@ -86,7 +86,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/arch/core/util/Function;Landroidx/lifecycle/MediatorLiveData;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final getLiveData()Landroidx/lifecycle/LiveData;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -128,7 +128,7 @@
 .end method
 
 .method public onChanged(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TX;)V"
@@ -147,12 +147,12 @@
     .line 154
     iget-object v0, p0, Landroidx/lifecycle/Transformations$switchMap$2;->liveData:Landroidx/lifecycle/LiveData;
 
-    if-ne v0, p1, :cond_d
+    if-ne v0, p1, :cond_0
 
     return-void
 
-    :cond_d
-    if-eqz v0, :cond_17
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 158
     iget-object v1, p0, Landroidx/lifecycle/Transformations$switchMap$2;->$result:Landroidx/lifecycle/MediatorLiveData;
@@ -162,10 +162,10 @@
     invoke-virtual {v1, v0}, Landroidx/lifecycle/MediatorLiveData;->removeSource(Landroidx/lifecycle/LiveData;)V
 
     .line 160
-    :cond_17
+    :cond_1
     iput-object p1, p0, Landroidx/lifecycle/Transformations$switchMap$2;->liveData:Landroidx/lifecycle/LiveData;
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_2
 
     .line 162
     iget-object v0, p0, Landroidx/lifecycle/Transformations$switchMap$2;->$result:Landroidx/lifecycle/MediatorLiveData;
@@ -188,12 +188,12 @@
 
     invoke-virtual {v0, p1, v2}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
 
-    :cond_33
+    :cond_2
     return-void
 .end method
 
 .method public final setLiveData(Landroidx/lifecycle/LiveData;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

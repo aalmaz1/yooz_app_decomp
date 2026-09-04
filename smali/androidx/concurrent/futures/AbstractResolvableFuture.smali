@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     const-string v0, "guava.concurrent.generate_cancellation_cause"
 
@@ -86,7 +86,7 @@
     sput-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture;->log:Ljava/util/logging/Logger;
 
     .line 85
-    :try_start_1a
+    :try_start_0
     new-instance v1, Landroidx/concurrent/futures/AbstractResolvableFuture$SafeAtomicHelper;
 
     const-class v2, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -141,14 +141,14 @@
     move-object v2, v1
 
     invoke-direct/range {v2 .. v7}, Landroidx/concurrent/futures/AbstractResolvableFuture$SafeAtomicHelper;-><init>(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;)V
-    :try_end_4e
-    .catchall {:try_start_1a .. :try_end_4e} :catchall_50
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v0, 0x0
 
-    goto :goto_56
+    goto :goto_0
 
-    :catchall_50
+    :catchall_0
     move-exception v0
 
     .line 101
@@ -157,13 +157,13 @@
     invoke-direct {v1}, Landroidx/concurrent/futures/AbstractResolvableFuture$SynchronizedHelper;-><init>()V
 
     .line 104
-    :goto_56
+    :goto_0
     sput-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture;->ATOMIC_HELPER:Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;
 
     .line 109
     const-class v1, Ljava/util/concurrent/locks/LockSupport;
 
-    if-eqz v0, :cond_65
+    if-eqz v0, :cond_0
 
     .line 114
     sget-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture;->log:Ljava/util/logging/Logger;
@@ -175,7 +175,7 @@
     invoke-virtual {v1, v2, v3, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 217
-    :cond_65
+    :cond_0
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -186,7 +186,7 @@
 .end method
 
 .method protected constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -195,12 +195,12 @@
 .end method
 
 .method private addDoneString(Ljava/lang/StringBuilder;)V
-    .registers 5
+    .locals 3
 
     const-string v0, "]"
 
     .line 1026
-    :try_start_2
+    :try_start_0
     invoke-static {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getUninterruptibly(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v1
@@ -221,14 +221,14 @@
     move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_17
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_2 .. :try_end_17} :catch_33
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_2 .. :try_end_17} :catch_2d
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_45
+    goto :goto_0
 
-    :catch_18
+    :catch_0
     move-exception v0
 
     const-string v1, "UNKNOWN, cause=["
@@ -250,17 +250,17 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_45
+    goto :goto_0
 
-    :catch_2d
+    :catch_1
     const-string v0, "CANCELLED"
 
     .line 1031
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_45
+    goto :goto_0
 
-    :catch_33
+    :catch_2
     move-exception v1
 
     const-string v2, "FAILURE, cause=["
@@ -280,12 +280,12 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_45
+    :goto_0
     return-void
 .end method
 
 .method private static cancellationExceptionWithCause(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/util/concurrent/CancellationException;
-    .registers 3
+    .locals 1
 
     .line 1195
     new-instance v0, Ljava/util/concurrent/CancellationException;
@@ -299,7 +299,7 @@
 .end method
 
 .method static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -315,7 +315,7 @@
 .end method
 
 .method private clearListeners(Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;)Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
-    .registers 6
+    .locals 4
 
     .line 963
     :cond_0
@@ -338,8 +338,8 @@
 
     move-object p1, v3
 
-    :goto_f
-    if-eqz p1, :cond_18
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 968
     iget-object v1, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
@@ -351,14 +351,14 @@
 
     move-object p1, v1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     return-object v0
 .end method
 
 .method static complete(Landroidx/concurrent/futures/AbstractResolvableFuture;)V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -370,7 +370,7 @@
     const/4 v0, 0x0
 
     .line 874
-    :goto_1
+    :goto_0
     invoke-direct {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->releaseWaiters()V
 
     .line 880
@@ -381,8 +381,8 @@
 
     move-result-object p0
 
-    :goto_b
-    if-eqz p0, :cond_33
+    :goto_1
+    if-eqz p0, :cond_2
 
     .line 886
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
@@ -393,7 +393,7 @@
     .line 888
     instance-of v2, v1, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     .line 889
     check-cast v1, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
@@ -404,7 +404,7 @@
     .line 897
     iget-object v2, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-ne v2, v1, :cond_31
+    if-ne v2, v1, :cond_1
 
     .line 898
     iget-object v2, v1, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;->future:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -420,37 +420,37 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 905
-    :cond_2c
+    :cond_0
     iget-object p0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;->executor:Ljava/util/concurrent/Executor;
 
     invoke-static {v1, p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->executeListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    :cond_31
+    :cond_1
     move-object p0, v0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_33
+    :cond_2
     return-void
 .end method
 
 .method private static executeListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 7
+    .locals 5
 
     .line 1056
     :try_start_0
     invoke-interface {p1, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_3
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :catch_4
+    :catch_0
     move-exception v0
 
     .line 1061
@@ -484,12 +484,12 @@
 
     invoke-virtual {v1, v2, p0, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method private getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -507,25 +507,25 @@
     .line 513
     instance-of v0, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_2
 
     .line 517
     instance-of v0, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_1
 
     .line 519
     sget-object v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->NULL:Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_d
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_d
+    :cond_0
     return-object p1
 
     .line 518
-    :cond_e
+    :cond_1
     new-instance v0, Ljava/util/concurrent/ExecutionException;
 
     check-cast p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
@@ -537,7 +537,7 @@
     throw v0
 
     .line 514
-    :cond_18
+    :cond_2
     check-cast p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
     iget-object p1, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->cause:Ljava/lang/Throwable;
@@ -552,7 +552,7 @@
 .end method
 
 .method static getFutureValue(Lcom/google/common/util/concurrent/ListenableFuture;)Ljava/lang/Object;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -567,7 +567,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 806
     check-cast p0, Landroidx/concurrent/futures/AbstractResolvableFuture;
@@ -577,7 +577,7 @@
     .line 807
     instance-of v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 811
     move-object v0, p0
@@ -587,12 +587,12 @@
     .line 812
     iget-boolean v2, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->wasInterrupted:Z
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_1
 
     .line 813
     iget-object p0, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->cause:Ljava/lang/Throwable;
 
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_0
 
     new-instance p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
@@ -600,18 +600,18 @@
 
     invoke-direct {p0, v1, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;-><init>(ZLjava/lang/Throwable;)V
 
-    goto :goto_22
+    goto :goto_0
 
     .line 814
-    :cond_20
+    :cond_0
     sget-object p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_CANCELLED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     return-object p0
 
     .line 819
-    :cond_23
+    :cond_2
     invoke-interface {p0}, Lcom/google/common/util/concurrent/ListenableFuture;->isCancelled()Z
 
     move-result v0
@@ -623,7 +623,7 @@
 
     and-int/2addr v2, v0
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_3
 
     .line 822
     sget-object p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_CANCELLED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
@@ -631,25 +631,25 @@
     return-object p0
 
     .line 826
-    :cond_31
-    :try_start_31
+    :cond_3
+    :try_start_0
     invoke-static {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getUninterruptibly(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v2
 
-    if-nez v2, :cond_39
+    if-nez v2, :cond_4
 
     .line 827
     sget-object v2, Landroidx/concurrent/futures/AbstractResolvableFuture;->NULL:Ljava/lang/Object;
-    :try_end_39
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_31 .. :try_end_39} :catch_64
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_31 .. :try_end_39} :catch_41
-    .catchall {:try_start_31 .. :try_end_39} :catchall_3a
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_39
+    :cond_4
     return-object v2
 
-    :catchall_3a
+    :catchall_0
     move-exception p0
 
     .line 841
@@ -659,10 +659,10 @@
 
     return-object v0
 
-    :catch_41
+    :catch_0
     move-exception v2
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_5
 
     .line 832
     new-instance v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
@@ -690,14 +690,14 @@
     return-object v0
 
     .line 839
-    :cond_5e
+    :cond_5
     new-instance p0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
     invoke-direct {p0, v1, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;-><init>(ZLjava/lang/Throwable;)V
 
     return-object p0
 
-    :catch_64
+    :catch_1
     move-exception p0
 
     .line 829
@@ -713,7 +713,7 @@
 .end method
 
 .method static getUninterruptibly(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -733,16 +733,16 @@
     const/4 v0, 0x0
 
     .line 856
-    :goto_1
-    :try_start_1
+    :goto_0
+    :try_start_0
     invoke-interface {p0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_5
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_5} :catch_1a
-    .catchall {:try_start_1 .. :try_end_5} :catchall_f
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 863
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -751,13 +751,13 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
-    :cond_e
+    :cond_0
     return-object p0
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -766,17 +766,17 @@
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
     .line 865
-    :cond_19
+    :cond_1
     throw p0
 
-    :catch_1a
+    :catch_0
     const/4 v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private releaseWaiters()V
-    .registers 4
+    .locals 3
 
     .line 942
     :cond_0
@@ -793,8 +793,8 @@
 
     if-eqz v1, :cond_0
 
-    :goto_c
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 946
     invoke-virtual {v0}, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->unpark()V
@@ -802,14 +802,14 @@
     .line 945
     iget-object v0, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     return-void
 .end method
 
 .method private removeWaiter(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -817,21 +817,21 @@
     iput-object v0, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->thread:Ljava/lang/Thread;
 
     .line 175
-    :goto_3
+    :goto_0
     iget-object p1, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
     .line 176
     sget-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    if-ne p1, v1, :cond_a
+    if-ne p1, v1, :cond_0
 
     return-void
 
-    :cond_a
+    :cond_0
     move-object v1, v0
 
-    :goto_b
-    if-eqz p1, :cond_29
+    :goto_1
+    if-eqz p1, :cond_4
 
     .line 181
     iget-object v2, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -839,14 +839,14 @@
     .line 182
     iget-object v3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->thread:Ljava/lang/Thread;
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_1
 
     move-object v1, p1
 
-    goto :goto_27
+    goto :goto_2
 
-    :cond_15
-    if-eqz v1, :cond_1e
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 185
     iput-object v2, v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -854,43 +854,43 @@
     .line 186
     iget-object p1, v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->thread:Ljava/lang/Thread;
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_3
 
-    goto :goto_3
+    goto :goto_0
 
     .line 190
-    :cond_1e
+    :cond_2
     sget-object v3, Landroidx/concurrent/futures/AbstractResolvableFuture;->ATOMIC_HELPER:Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;
 
     invoke-virtual {v3, p0, p1, v2}, Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;->casWaiters(Landroidx/concurrent/futures/AbstractResolvableFuture;Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)Z
 
     move-result p1
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_3
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_2
     move-object p1, v2
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_29
+    :cond_4
     return-void
 .end method
 
 .method private userObjectToString(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
-    if-ne p1, p0, :cond_5
+    if-ne p1, p0, :cond_0
 
     const-string p1, "this future"
 
     return-object p1
 
     .line 1047
-    :cond_5
+    :cond_0
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -901,7 +901,7 @@
 
 # virtual methods
 .method public final addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 6
+    .locals 3
 
     .line 653
     invoke-static {p1}, Landroidx/concurrent/futures/AbstractResolvableFuture;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -915,7 +915,7 @@
     .line 656
     sget-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_2
 
     .line 657
     new-instance v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
@@ -923,7 +923,7 @@
     invoke-direct {v1, p1, p2}, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;-><init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     .line 659
-    :cond_11
+    :cond_0
     iput-object v0, v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
 
     .line 660
@@ -933,34 +933,34 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 663
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->listeners:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
 
     .line 664
     sget-object v2, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
 
-    if-ne v0, v2, :cond_11
+    if-ne v0, v2, :cond_0
 
     .line 668
-    :cond_22
+    :cond_2
     invoke-static {p1, p2}, Landroidx/concurrent/futures/AbstractResolvableFuture;->executeListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     return-void
 .end method
 
 .method protected afterDone()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public final cancel(Z)Z
-    .registers 9
+    .locals 7
 
     .line 555
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
@@ -969,27 +969,27 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     move v3, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v3, v2
 
     .line 557
-    :goto_9
+    :goto_0
     instance-of v4, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     or-int/2addr v3, v4
 
-    if-eqz v3, :cond_61
+    if-eqz v3, :cond_8
 
     .line 561
     sget-boolean v3, Landroidx/concurrent/futures/AbstractResolvableFuture;->GENERATE_CANCELLATION_CAUSES:Z
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1
 
     .line 562
     new-instance v3, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
@@ -1002,49 +1002,49 @@
 
     invoke-direct {v3, p1, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;-><init>(ZLjava/lang/Throwable;)V
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_1f
-    if-eqz p1, :cond_24
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 566
     sget-object v3, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_INTERRUPTED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    goto :goto_26
+    goto :goto_1
 
     .line 567
-    :cond_24
+    :cond_2
     sget-object v3, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_CANCELLED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    :goto_26
+    :goto_1
     move-object v4, p0
 
     move v5, v2
 
     .line 570
-    :cond_28
-    :goto_28
+    :cond_3
+    :goto_2
     sget-object v6, Landroidx/concurrent/futures/AbstractResolvableFuture;->ATOMIC_HELPER:Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;
 
     invoke-virtual {v6, v4, v0, v3}, Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;->casValue(Landroidx/concurrent/futures/AbstractResolvableFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_59
+    if-eqz v6, :cond_7
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_4
 
     .line 575
     invoke-virtual {v4}, Landroidx/concurrent/futures/AbstractResolvableFuture;->interruptTask()V
 
     .line 577
-    :cond_35
+    :cond_4
     invoke-static {v4}, Landroidx/concurrent/futures/AbstractResolvableFuture;->complete(Landroidx/concurrent/futures/AbstractResolvableFuture;)V
 
     .line 578
     instance-of v4, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_9
 
     .line 582
     check-cast v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
@@ -1054,7 +1054,7 @@
     .line 583
     instance-of v4, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;
 
-    if-eqz v4, :cond_55
+    if-eqz v4, :cond_6
 
     .line 592
     move-object v4, v0
@@ -1064,56 +1064,56 @@
     .line 594
     iget-object v0, v4, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_5
 
     move v5, v1
 
-    goto :goto_4e
+    goto :goto_3
 
-    :cond_4d
+    :cond_5
     move v5, v2
 
     .line 595
-    :goto_4e
+    :goto_3
     instance-of v6, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     or-int/2addr v5, v6
 
-    if-eqz v5, :cond_62
+    if-eqz v5, :cond_9
 
     move v5, v1
 
-    goto :goto_28
+    goto :goto_2
 
     .line 601
-    :cond_55
+    :cond_6
     invoke-interface {v0, p1}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    goto :goto_62
+    goto :goto_4
 
     .line 607
-    :cond_59
+    :cond_7
     iget-object v0, v4, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     .line 608
     instance-of v6, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
-    if-nez v6, :cond_28
+    if-nez v6, :cond_3
 
     move v1, v5
 
-    goto :goto_62
+    goto :goto_4
 
-    :cond_61
+    :cond_8
     move v1, v2
 
-    :cond_62
-    :goto_62
+    :cond_9
+    :goto_4
     return v1
 .end method
 
 .method public final get()Ljava/lang/Object;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -1132,7 +1132,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_61
+    if-nez v0, :cond_8
 
     .line 473
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
@@ -1141,24 +1141,24 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move v3, v2
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v3, v1
 
     .line 474
-    :goto_f
+    :goto_0
     instance-of v4, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     xor-int/2addr v4, v2
 
     and-int/2addr v3, v4
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1
 
     .line 475
     invoke-direct {p0, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1168,13 +1168,13 @@
     return-object v0
 
     .line 477
-    :cond_1a
+    :cond_1
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
     .line 478
     sget-object v3, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    if-eq v0, v3, :cond_5a
+    if-eq v0, v3, :cond_7
 
     .line 479
     new-instance v3, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -1182,7 +1182,7 @@
     invoke-direct {v3}, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;-><init>()V
 
     .line 481
-    :cond_25
+    :cond_2
     invoke-virtual {v3, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->setNext(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
 
     .line 482
@@ -1192,10 +1192,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_6
 
     .line 485
-    :cond_30
+    :cond_3
     invoke-static {p0}, Ljava/util/concurrent/locks/LockSupport;->park(Ljava/lang/Object;)V
 
     .line 488
@@ -1203,29 +1203,29 @@
 
     move-result v0
 
-    if-nez v0, :cond_4b
+    if-nez v0, :cond_5
 
     .line 495
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_4
 
     move v4, v2
 
-    goto :goto_40
+    goto :goto_1
 
-    :cond_3f
+    :cond_4
     move v4, v1
 
     .line 496
-    :goto_40
+    :goto_1
     instance-of v5, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     xor-int/2addr v5, v2
 
     and-int/2addr v4, v5
 
-    if-eqz v4, :cond_30
+    if-eqz v4, :cond_3
 
     .line 497
     invoke-direct {p0, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1235,7 +1235,7 @@
     return-object v0
 
     .line 489
-    :cond_4b
+    :cond_5
     invoke-direct {p0, v3}, Landroidx/concurrent/futures/AbstractResolvableFuture;->removeWaiter(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
 
     .line 490
@@ -1246,16 +1246,16 @@
     throw v0
 
     .line 501
-    :cond_54
+    :cond_6
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
     .line 502
     sget-object v4, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    if-ne v0, v4, :cond_25
+    if-ne v0, v4, :cond_2
 
     .line 506
-    :cond_5a
+    :cond_7
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     invoke-direct {p0, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1265,7 +1265,7 @@
     return-object v0
 
     .line 471
-    :cond_61
+    :cond_8
     new-instance v0, Ljava/lang/InterruptedException;
 
     invoke-direct {v0}, Ljava/lang/InterruptedException;-><init>()V
@@ -1274,7 +1274,7 @@
 .end method
 
 .method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 23
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -1307,31 +1307,31 @@
 
     move-result v6
 
-    if-nez v6, :cond_1c2
+    if-nez v6, :cond_16
 
     .line 364
     iget-object v6, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     const/4 v8, 0x1
 
-    if-eqz v6, :cond_17
+    if-eqz v6, :cond_0
 
     move v9, v8
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v9, 0x0
 
     .line 365
-    :goto_18
+    :goto_0
     instance-of v10, v6, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     xor-int/2addr v10, v8
 
     and-int/2addr v9, v10
 
-    if-eqz v9, :cond_23
+    if-eqz v9, :cond_1
 
     .line 366
     invoke-direct {v0, v6}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1340,12 +1340,12 @@
 
     return-object v1
 
-    :cond_23
+    :cond_1
     const-wide/16 v9, 0x0
 
     cmp-long v6, v4, v9
 
-    if-lez v6, :cond_2f
+    if-lez v6, :cond_2
 
     .line 369
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -1354,17 +1354,17 @@
 
     add-long/2addr v11, v4
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
+    :cond_2
     move-wide v11, v9
 
-    :goto_30
+    :goto_1
     const-wide/16 v13, 0x3e8
 
     cmp-long v6, v4, v13
 
-    if-ltz v6, :cond_8b
+    if-ltz v6, :cond_a
 
     .line 372
     iget-object v6, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -1372,7 +1372,7 @@
     .line 373
     sget-object v15, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    if-eq v6, v15, :cond_84
+    if-eq v6, v15, :cond_9
 
     .line 374
     new-instance v15, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -1380,7 +1380,7 @@
     invoke-direct {v15}, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;-><init>()V
 
     .line 376
-    :cond_41
+    :cond_3
     invoke-virtual {v15, v6}, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->setNext(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
 
     .line 377
@@ -1390,10 +1390,10 @@
 
     move-result v6
 
-    if-eqz v6, :cond_7e
+    if-eqz v6, :cond_8
 
     .line 379
-    :cond_4c
+    :cond_4
     invoke-static {v0, v4, v5}, Ljava/util/concurrent/locks/LockSupport;->parkNanos(Ljava/lang/Object;J)V
 
     .line 382
@@ -1401,29 +1401,29 @@
 
     move-result v4
 
-    if-nez v4, :cond_75
+    if-nez v4, :cond_7
 
     .line 389
     iget-object v4, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-eqz v4, :cond_5b
+    if-eqz v4, :cond_5
 
     move v5, v8
 
-    goto :goto_5c
+    goto :goto_2
 
-    :cond_5b
+    :cond_5
     const/4 v5, 0x0
 
     .line 390
-    :goto_5c
+    :goto_2
     instance-of v6, v4, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     xor-int/2addr v6, v8
 
     and-int/2addr v5, v6
 
-    if-eqz v5, :cond_67
+    if-eqz v5, :cond_6
 
     .line 391
     invoke-direct {v0, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1433,7 +1433,7 @@
     return-object v1
 
     .line 395
-    :cond_67
+    :cond_6
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v4
@@ -1442,15 +1442,15 @@
 
     cmp-long v6, v4, v13
 
-    if-gez v6, :cond_4c
+    if-gez v6, :cond_4
 
     .line 399
     invoke-direct {v0, v15}, Landroidx/concurrent/futures/AbstractResolvableFuture;->removeWaiter(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
 
-    goto :goto_8b
+    goto :goto_3
 
     .line 383
-    :cond_75
+    :cond_7
     invoke-direct {v0, v15}, Landroidx/concurrent/futures/AbstractResolvableFuture;->removeWaiter(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
 
     .line 384
@@ -1461,16 +1461,16 @@
     throw v1
 
     .line 404
-    :cond_7e
+    :cond_8
     iget-object v6, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
     .line 405
     sget-object v7, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->TOMBSTONE:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    if-ne v6, v7, :cond_41
+    if-ne v6, v7, :cond_3
 
     .line 409
-    :cond_84
+    :cond_9
     iget-object v1, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     invoke-direct {v0, v1}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1479,33 +1479,33 @@
 
     return-object v1
 
-    :cond_8b
-    :goto_8b
+    :cond_a
+    :goto_3
     cmp-long v6, v4, v9
 
-    if-lez v6, :cond_b4
+    if-lez v6, :cond_e
 
     .line 414
     iget-object v4, v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-eqz v4, :cond_95
+    if-eqz v4, :cond_b
 
     move v5, v8
 
-    goto :goto_96
+    goto :goto_4
 
-    :cond_95
+    :cond_b
     const/4 v5, 0x0
 
     .line 415
-    :goto_96
+    :goto_4
     instance-of v6, v4, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     xor-int/2addr v6, v8
 
     and-int/2addr v5, v6
 
-    if-eqz v5, :cond_a1
+    if-eqz v5, :cond_c
 
     .line 416
     invoke-direct {v0, v4}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getDoneValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1515,12 +1515,12 @@
     return-object v1
 
     .line 418
-    :cond_a1
+    :cond_c
     invoke-static {}, Ljava/lang/Thread;->interrupted()Z
 
     move-result v4
 
-    if-nez v4, :cond_ae
+    if-nez v4, :cond_d
 
     .line 421
     invoke-static {}, Ljava/lang/System;->nanoTime()J
@@ -1529,10 +1529,10 @@
 
     sub-long v4, v11, v4
 
-    goto :goto_8b
+    goto :goto_3
 
     .line 419
-    :cond_ae
+    :cond_d
     new-instance v1, Ljava/lang/InterruptedException;
 
     invoke-direct {v1}, Ljava/lang/InterruptedException;-><init>()V
@@ -1540,7 +1540,7 @@
     throw v1
 
     .line 424
-    :cond_b4
+    :cond_e
     invoke-virtual/range {p0 .. p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->toString()Ljava/lang/String;
 
     move-result-object v6
@@ -1595,7 +1595,7 @@
 
     cmp-long v11, v11, v9
 
-    if-gez v11, :cond_186
+    if-gez v11, :cond_14
 
     .line 431
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1634,25 +1634,25 @@
 
     cmp-long v3, v11, v9
 
-    if-eqz v3, :cond_117
+    if-eqz v3, :cond_10
 
     cmp-long v9, v4, v13
 
-    if-lez v9, :cond_114
+    if-lez v9, :cond_f
 
-    goto :goto_117
+    goto :goto_5
 
-    :cond_114
+    :cond_f
     const/16 v16, 0x0
 
-    goto :goto_119
+    goto :goto_6
 
-    :cond_117
-    :goto_117
+    :cond_10
+    :goto_5
     move/from16 v16, v8
 
-    :goto_119
-    if-lez v3, :cond_15a
+    :goto_6
+    if-lez v3, :cond_12
 
     .line 438
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1679,7 +1679,7 @@
 
     move-result-object v1
 
-    if-eqz v16, :cond_149
+    if-eqz v16, :cond_11
 
     .line 440
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1701,7 +1701,7 @@
     move-result-object v1
 
     .line 442
-    :cond_149
+    :cond_11
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1718,8 +1718,8 @@
 
     move-result-object v1
 
-    :cond_15a
-    if-eqz v16, :cond_173
+    :cond_12
+    if-eqz v16, :cond_13
 
     .line 445
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1745,7 +1745,7 @@
     move-result-object v1
 
     .line 448
-    :cond_173
+    :cond_13
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1765,12 +1765,12 @@
     move-result-object v1
 
     .line 453
-    :cond_186
+    :cond_14
     invoke-virtual/range {p0 .. p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->isDone()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1a5
+    if-eqz v2, :cond_15
 
     .line 454
     new-instance v2, Ljava/util/concurrent/TimeoutException;
@@ -1798,7 +1798,7 @@
     throw v2
 
     .line 456
-    :cond_1a5
+    :cond_15
     new-instance v2, Ljava/util/concurrent/TimeoutException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1828,7 +1828,7 @@
     throw v2
 
     .line 362
-    :cond_1c2
+    :cond_16
     new-instance v1, Ljava/lang/InterruptedException;
 
     invoke-direct {v1}, Ljava/lang/InterruptedException;-><init>()V
@@ -1837,13 +1837,13 @@
 .end method
 
 .method protected interruptTask()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public final isCancelled()Z
-    .registers 2
+    .locals 1
 
     .line 536
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
@@ -1855,24 +1855,24 @@
 .end method
 
 .method public final isDone()Z
-    .registers 4
+    .locals 3
 
     .line 530
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     move v2, v1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v2, 0x0
 
     .line 531
-    :goto_8
+    :goto_0
     instance-of v0, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     xor-int/2addr v0, v1
@@ -1883,7 +1883,7 @@
 .end method
 
 .method final maybePropagateCancellationTo(Ljava/util/concurrent/Future;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1892,24 +1892,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 933
-    :goto_5
+    :goto_0
     invoke-virtual {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->isCancelled()Z
 
     move-result v1
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 934
     invoke-virtual {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->wasInterrupted()Z
@@ -1918,12 +1918,12 @@
 
     invoke-interface {p1, v0}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method protected pendingToString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1013
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
@@ -1931,7 +1931,7 @@
     .line 1014
     instance-of v1, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 1015
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1965,10 +1965,10 @@
     return-object v0
 
     .line 1016
-    :cond_24
+    :cond_0
     instance-of v0, p0, Ljava/util/concurrent/ScheduledFuture;
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     .line 1017
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2004,27 +2004,27 @@
 
     return-object v0
 
-    :cond_47
+    :cond_1
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method protected set(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)Z"
         }
     .end annotation
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     .line 685
     sget-object p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->NULL:Ljava/lang/Object;
 
     .line 686
-    :cond_4
+    :cond_0
     sget-object v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->ATOMIC_HELPER:Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;
 
     const/4 v1, 0x0
@@ -2033,7 +2033,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     .line 687
     invoke-static {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->complete(Landroidx/concurrent/futures/AbstractResolvableFuture;)V
@@ -2042,14 +2042,14 @@
 
     return p1
 
-    :cond_12
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method protected setException(Ljava/lang/Throwable;)Z
-    .registers 4
+    .locals 2
 
     .line 710
     new-instance v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
@@ -2071,7 +2071,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 712
     invoke-static {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->complete(Landroidx/concurrent/futures/AbstractResolvableFuture;)V
@@ -2080,14 +2080,14 @@
 
     return p1
 
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method protected setFuture(Lcom/google/common/util/concurrent/ListenableFuture;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2104,7 +2104,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_3
 
     .line 749
     invoke-interface {p1}, Lcom/google/common/util/concurrent/ListenableFuture;->isDone()Z
@@ -2115,7 +2115,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 750
     invoke-static {p1}, Landroidx/concurrent/futures/AbstractResolvableFuture;->getFutureValue(Lcom/google/common/util/concurrent/ListenableFuture;)Ljava/lang/Object;
@@ -2129,18 +2129,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_0
 
     .line 752
     invoke-static {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->complete(Landroidx/concurrent/futures/AbstractResolvableFuture;)V
 
     return v2
 
-    :cond_20
+    :cond_0
     return v1
 
     .line 757
-    :cond_21
+    :cond_1
     new-instance v0, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;
 
     invoke-direct {v0, p0, p1}, Landroidx/concurrent/futures/AbstractResolvableFuture$SetFuture;-><init>(Landroidx/concurrent/futures/AbstractResolvableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
@@ -2152,53 +2152,53 @@
 
     move-result v3
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_2
 
     .line 763
-    :try_start_2e
+    :try_start_0
     sget-object v1, Landroidx/concurrent/futures/DirectExecutor;->INSTANCE:Landroidx/concurrent/futures/DirectExecutor;
 
     invoke-interface {p1, v0, v1}, Lcom/google/common/util/concurrent/ListenableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    :try_end_33
-    .catchall {:try_start_2e .. :try_end_33} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_42
+    goto :goto_1
 
-    :catchall_34
+    :catchall_0
     move-exception p1
 
     .line 771
-    :try_start_35
+    :try_start_1
     new-instance v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
 
     invoke-direct {v1, p1}, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;-><init>(Ljava/lang/Throwable;)V
-    :try_end_3a
-    .catchall {:try_start_35 .. :try_end_3a} :catchall_3b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 773
-    :catchall_3b
+    :catchall_1
     sget-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;->FALLBACK_INSTANCE:Landroidx/concurrent/futures/AbstractResolvableFuture$Failure;
 
     .line 777
-    :goto_3d
+    :goto_0
     sget-object p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->ATOMIC_HELPER:Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;
 
     invoke-virtual {p1, p0, v0, v1}, Landroidx/concurrent/futures/AbstractResolvableFuture$AtomicHelper;->casValue(Landroidx/concurrent/futures/AbstractResolvableFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :goto_42
+    :goto_1
     return v2
 
     .line 781
-    :cond_43
+    :cond_2
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     .line 785
-    :cond_45
+    :cond_3
     instance-of v2, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_4
 
     .line 787
     check-cast v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
@@ -2207,12 +2207,12 @@
 
     invoke-interface {p1, v0}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    :cond_50
+    :cond_4
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 978
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2240,40 +2240,40 @@
 
     const-string v2, "]"
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     const-string v1, "CANCELLED"
 
     .line 980
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_69
+    goto :goto_1
 
     .line 981
-    :cond_21
+    :cond_0
     invoke-virtual {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->isDone()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     .line 982
     invoke-direct {p0, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->addDoneString(Ljava/lang/StringBuilder;)V
 
-    goto :goto_69
+    goto :goto_1
 
     .line 986
-    :cond_2b
-    :try_start_2b
+    :cond_1
+    :try_start_0
     invoke-virtual {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->pendingToString()Ljava/lang/String;
 
     move-result-object v1
-    :try_end_2f
-    .catch Ljava/lang/RuntimeException; {:try_start_2b .. :try_end_2f} :catch_30
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_44
+    goto :goto_0
 
-    :catch_30
+    :catch_0
     move-exception v1
 
     .line 990
@@ -2295,15 +2295,15 @@
 
     move-result-object v1
 
-    :goto_44
-    if-eqz v1, :cond_5a
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 994
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_5a
+    if-nez v3, :cond_2
 
     const-string v3, "PENDING, info=["
 
@@ -2318,29 +2318,29 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_69
+    goto :goto_1
 
     .line 996
-    :cond_5a
+    :cond_2
     invoke-virtual {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->isDone()Z
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_3
 
     .line 997
     invoke-direct {p0, v0}, Landroidx/concurrent/futures/AbstractResolvableFuture;->addDoneString(Ljava/lang/StringBuilder;)V
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_64
+    :cond_3
     const-string v1, "PENDING"
 
     .line 999
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1002
-    :goto_69
+    :goto_1
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -2353,7 +2353,7 @@
 .end method
 
 .method protected final wasInterrupted()Z
-    .registers 3
+    .locals 2
 
     .line 642
     iget-object v0, p0, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
@@ -2361,21 +2361,21 @@
     .line 643
     instance-of v1, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
     iget-boolean v0, v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->wasInterrupted:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method

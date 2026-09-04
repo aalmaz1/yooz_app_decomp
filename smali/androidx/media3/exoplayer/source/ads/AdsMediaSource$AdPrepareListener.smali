@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ads/AdsMediaSource;Landroidx/media3/common/MediaItem;)V
-    .registers 3
+    .locals 0
 
     .line 439
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdPrepareListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method synthetic lambda$onPrepareComplete$0$androidx-media3-exoplayer-source-ads-AdsMediaSource$AdPrepareListener(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 5
+    .locals 3
 
     .line 447
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdPrepareListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -62,7 +62,7 @@
 .end method
 
 .method synthetic lambda$onPrepareError$1$androidx-media3-exoplayer-source-ads-AdsMediaSource$AdPrepareListener(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Ljava/io/IOException;)V
-    .registers 6
+    .locals 3
 
     .line 466
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdPrepareListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -83,7 +83,7 @@
 .end method
 
 .method public onPrepareComplete(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 2
 
     .line 445
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdPrepareListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -102,7 +102,7 @@
 .end method
 
 .method public onPrepareError(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Ljava/io/IOException;)V
-    .registers 11
+    .locals 8
 
     .line 455
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdPrepareListener;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;

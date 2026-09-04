@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getBasebandCn0DbHz(Landroid/location/GnssStatus;I)F
-    .registers 2
+    .locals 0
 
     .line 168
     invoke-virtual {p0, p1}, Landroid/location/GnssStatus;->getBasebandCn0DbHz(I)F
@@ -36,7 +36,7 @@
 .end method
 
 .method static hasBasebandCn0DbHz(Landroid/location/GnssStatus;I)Z
-    .registers 2
+    .locals 0
 
     .line 163
     invoke-virtual {p0, p1}, Landroid/location/GnssStatus;->hasBasebandCn0DbHz(I)Z

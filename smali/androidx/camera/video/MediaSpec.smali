@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static builder()Landroidx/camera/video/MediaSpec$Builder;
-    .registers 2
+    .locals 2
 
     .line 147
     new-instance v0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;
@@ -85,24 +85,24 @@
 .end method
 
 .method public static outputFormatToAudioMime(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_6
+    if-eq p0, v0, :cond_0
 
     const-string p0, "audio/mp4a-latm"
 
     return-object p0
 
-    :cond_6
+    :cond_0
     const-string p0, "audio/vorbis"
 
     return-object p0
 .end method
 
 .method public static outputFormatToAudioProfile(I)I
-    .registers 2
+    .locals 1
 
     .line 84
     invoke-static {p0}, Landroidx/camera/video/MediaSpec;->outputFormatToAudioMime(I)Ljava/lang/String;
@@ -116,45 +116,45 @@
 
     move-result p0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x2
 
     return p0
 
-    :cond_e
+    :cond_0
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method static outputFormatToMuxerFormat(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_5
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_5
+    :cond_0
     return v0
 .end method
 
 .method public static outputFormatToVideoMime(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_7
+    if-eq p0, v0, :cond_0
 
     const-string/jumbo p0, "video/avc"
 
     return-object p0
 
-    :cond_7
+    :cond_0
     const-string/jumbo p0, "video/x-vnd.on2.vp8"
 
     return-object p0

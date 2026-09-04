@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -16,13 +16,13 @@
 
 # virtual methods
 .method public onAllShortcutsRemoved()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onShortcutAdded(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,7 +36,7 @@
 .end method
 
 .method public onShortcutRemoved(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +50,7 @@
 .end method
 
 .method public onShortcutUpdated(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,7 +64,7 @@
 .end method
 
 .method public onShortcutUsageReported(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

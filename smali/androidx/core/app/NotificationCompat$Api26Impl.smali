@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 9513
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getBadgeIconType(Landroid/app/Notification;)I
-    .registers 1
+    .locals 0
 
     .line 9532
     invoke-virtual {p0}, Landroid/app/Notification;->getBadgeIconType()I
@@ -36,7 +36,7 @@
 .end method
 
 .method static getChannelId(Landroid/app/Notification;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 9542
     invoke-virtual {p0}, Landroid/app/Notification;->getChannelId()Ljava/lang/String;
@@ -47,7 +47,7 @@
 .end method
 
 .method static getGroupAlertBehavior(Landroid/app/Notification;)I
-    .registers 1
+    .locals 0
 
     .line 9517
     invoke-virtual {p0}, Landroid/app/Notification;->getGroupAlertBehavior()I
@@ -58,7 +58,7 @@
 .end method
 
 .method static getSettingsText(Landroid/app/Notification;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 9522
     invoke-virtual {p0}, Landroid/app/Notification;->getSettingsText()Ljava/lang/CharSequence;
@@ -69,7 +69,7 @@
 .end method
 
 .method static getShortcutId(Landroid/app/Notification;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 9527
     invoke-virtual {p0}, Landroid/app/Notification;->getShortcutId()Ljava/lang/String;
@@ -80,7 +80,7 @@
 .end method
 
 .method static getTimeoutAfter(Landroid/app/Notification;)J
-    .registers 3
+    .locals 2
 
     .line 9537
     invoke-virtual {p0}, Landroid/app/Notification;->getTimeoutAfter()J

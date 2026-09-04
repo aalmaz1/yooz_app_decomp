@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public static absent()Landroidx/camera/core/impl/utils/Optional;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -53,7 +53,7 @@
 .end method
 
 .method public static fromNullable(Ljava/lang/Object;)Landroidx/camera/core/impl/utils/Optional;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -64,28 +64,28 @@
         }
     .end annotation
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
     .line 110
     invoke-static {}, Landroidx/camera/core/impl/utils/Optional;->absent()Landroidx/camera/core/impl/utils/Optional;
 
     move-result-object p0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/utils/Present;
 
     invoke-direct {v0, p0}, Landroidx/camera/core/impl/utils/Present;-><init>(Ljava/lang/Object;)V
 
     move-object p0, v0
 
-    :goto_d
+    :goto_0
     return-object p0
 .end method
 
 .method public static of(Ljava/lang/Object;)Landroidx/camera/core/impl/utils/Optional;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

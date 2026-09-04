@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,14 +70,14 @@
 .end method
 
 .method private maybeInflateData(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 4
+    .locals 2
 
     .line 93
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_32
+    if-lez v0, :cond_1
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->peekUnsignedByte()I
 
@@ -85,12 +85,12 @@
 
     const/16 v1, 0x78
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_1
 
     .line 94
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->inflater:Ljava/util/zip/Inflater;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 95
     new-instance v0, Ljava/util/zip/Inflater;
@@ -100,7 +100,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->inflater:Ljava/util/zip/Inflater;
 
     .line 97
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->inflatedBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object v1, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->inflater:Ljava/util/zip/Inflater;
@@ -109,7 +109,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 98
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->inflatedBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -126,12 +126,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/media3/common/util/ParsableByteArray;->reset([BI)V
 
-    :cond_32
+    :cond_1
     return-void
 .end method
 
 .method private static readNextSection(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;)Landroidx/media3/common/text/Cue;
-    .registers 7
+    .locals 5
 
     .line 105
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -157,42 +157,42 @@
 
     const/4 v4, 0x0
 
-    if-le v3, v0, :cond_18
+    if-le v3, v0, :cond_0
 
     .line 111
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v4
 
-    :cond_18
+    :cond_0
     const/16 v0, 0x80
 
-    if-eq v1, v0, :cond_2c
+    if-eq v1, v0, :cond_1
 
-    packed-switch v1, :pswitch_data_38
+    packed-switch v1, :pswitch_data_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 124
-    :pswitch_20
+    :pswitch_0
     invoke-static {p1, p0, v2}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->access$200(Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;Landroidx/media3/common/util/ParsableByteArray;I)V
 
-    goto :goto_33
+    goto :goto_0
 
     .line 121
-    :pswitch_24
+    :pswitch_1
     invoke-static {p1, p0, v2}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->access$100(Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;Landroidx/media3/common/util/ParsableByteArray;I)V
 
-    goto :goto_33
+    goto :goto_0
 
     .line 118
-    :pswitch_28
+    :pswitch_2
     invoke-static {p1, p0, v2}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->access$000(Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;Landroidx/media3/common/util/ParsableByteArray;I)V
 
-    goto :goto_33
+    goto :goto_0
 
     .line 127
-    :cond_2c
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->build()Landroidx/media3/common/text/Cue;
 
     move-result-object v4
@@ -201,25 +201,25 @@
     invoke-virtual {p1}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->reset()V
 
     .line 134
-    :goto_33
+    :goto_0
     invoke-virtual {p0, v3}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v4
 
     nop
 
-    :pswitch_data_38
+    :pswitch_data_0
     .packed-switch 0x14
-        :pswitch_28
-        :pswitch_24
-        :pswitch_20
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -227,7 +227,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -266,8 +266,8 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 82
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     iget-object p1, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->buffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -276,7 +276,7 @@
 
     const/4 p2, 0x3
 
-    if-lt p1, p2, :cond_31
+    if-lt p1, p2, :cond_1
 
     .line 83
     iget-object p1, p0, Landroidx/media3/extractor/text/pgs/PgsParser;->buffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -287,15 +287,15 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 85
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 88
-    :cond_31
+    :cond_1
     new-instance p1, Landroidx/media3/extractor/text/CuesWithTiming;
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324

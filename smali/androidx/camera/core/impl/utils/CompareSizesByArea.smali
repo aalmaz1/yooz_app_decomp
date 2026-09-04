@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public compare(Landroid/util/Size;Landroid/util/Size;)I
-    .registers 7
+    .locals 4
 
     .line 46
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
@@ -90,16 +90,16 @@
     .line 49
     iget-boolean p2, p0, Landroidx/camera/core/impl/utils/CompareSizesByArea;->mReverse:Z
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_0
 
     mul-int/lit8 p1, p1, -0x1
 
-    :cond_21
+    :cond_0
     return p1
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 27
     check-cast p1, Landroid/util/Size;

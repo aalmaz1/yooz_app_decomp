@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,12 +60,12 @@
 .end method
 
 .method private declared-synchronized addToQueue(Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 154
-    :try_start_1
+    :try_start_0
     iget-object v0, p1, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;->packet:Landroidx/media3/exoplayer/rtsp/RtpPacket;
 
     iget v0, v0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->sequenceNumber:I
@@ -76,15 +76,15 @@
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->packetQueue:Ljava/util/TreeSet;
 
     invoke-virtual {v0, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 156
     monitor-exit p0
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -93,7 +93,7 @@
 .end method
 
 .method private static calculateSequenceNumberShift(II)I
-    .registers 6
+    .locals 4
 
     sub-int v0, p0, p1
 
@@ -104,7 +104,7 @@
 
     const/16 v2, 0x3e8
 
-    if-le v1, v2, :cond_1e
+    if-le v1, v2, :cond_1
 
     .line 182
     invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
@@ -122,24 +122,24 @@
 
     add-int/2addr v1, v3
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_1
 
-    if-ge p0, p1, :cond_1c
+    if-ge p0, p1, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     neg-int v1, v1
 
-    :goto_1d
+    :goto_0
     return v1
 
-    :cond_1e
+    :cond_1
     return v0
 .end method
 
 .method static synthetic lambda$new$0(Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;)I
-    .registers 2
+    .locals 0
 
     .line 58
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;->packet:Landroidx/media3/exoplayer/rtsp/RtpPacket;
@@ -160,12 +160,12 @@
 
 # virtual methods
 .method public declared-synchronized offer(Landroidx/media3/exoplayer/rtsp/RtpPacket;J)Z
-    .registers 8
+    .locals 4
 
     monitor-enter p0
 
     .line 89
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->packetQueue:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->size()I
@@ -174,7 +174,7 @@
 
     const/16 v1, 0x1388
 
-    if-ge v0, v1, :cond_63
+    if-ge v0, v1, :cond_3
 
     .line 94
     iget v0, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->sequenceNumber:I
@@ -184,7 +184,7 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     .line 96
     invoke-virtual {p0}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->reset()V
@@ -205,8 +205,8 @@
     invoke-direct {v0, p1, p2, p3}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;-><init>(Landroidx/media3/exoplayer/rtsp/RtpPacket;J)V
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->addToQueue(Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;)V
-    :try_end_25
-    .catchall {:try_start_1 .. :try_end_25} :catchall_6b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 100
     monitor-exit p0
@@ -214,8 +214,8 @@
     return v2
 
     .line 103
-    :cond_27
-    :try_start_27
+    :cond_0
+    :try_start_1
     iget v1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->lastReceivedSequenceNumber:I
 
     invoke-static {v1}, Landroidx/media3/exoplayer/rtsp/RtpPacket;->getNextSequenceNumber(I)I
@@ -234,7 +234,7 @@
 
     const/16 v3, 0x3e8
 
-    if-ge v1, v3, :cond_4e
+    if-ge v1, v3, :cond_2
 
     .line 108
     iget v1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->lastDequeuedSequenceNumber:I
@@ -243,7 +243,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_4b
+    if-lez v0, :cond_1
 
     .line 110
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;
@@ -251,8 +251,8 @@
     invoke-direct {v0, p1, p2, p3}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;-><init>(Landroidx/media3/exoplayer/rtsp/RtpPacket;J)V
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->addToQueue(Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;)V
-    :try_end_49
-    .catchall {:try_start_27 .. :try_end_49} :catchall_6b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 111
     monitor-exit p0
@@ -260,7 +260,7 @@
     return v2
 
     .line 120
-    :cond_4b
+    :cond_1
     monitor-exit p0
 
     const/4 p1, 0x0
@@ -268,8 +268,8 @@
     return p1
 
     .line 115
-    :cond_4e
-    :try_start_4e
+    :cond_2
+    :try_start_2
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/RtpPacket;->getPreviousSequenceNumber(I)I
 
     move-result v0
@@ -287,8 +287,8 @@
     invoke-direct {v0, p1, p2, p3}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;-><init>(Landroidx/media3/exoplayer/rtsp/RtpPacket;J)V
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->addToQueue(Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;)V
-    :try_end_61
-    .catchall {:try_start_4e .. :try_end_61} :catchall_6b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 118
     monitor-exit p0
@@ -296,8 +296,8 @@
     return v2
 
     .line 90
-    :cond_63
-    :try_start_63
+    :cond_3
+    :try_start_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Queue size limit of 5000 reached."
@@ -305,10 +305,10 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_6b
-    .catchall {:try_start_63 .. :try_end_6b} :catchall_6b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    :catchall_6b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -317,23 +317,23 @@
 .end method
 
 .method public declared-synchronized poll(J)Landroidx/media3/exoplayer/rtsp/RtpPacket;
-    .registers 8
+    .locals 5
 
     monitor-enter p0
 
     .line 134
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->packetQueue:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
 
     move-result v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 135
     monitor-exit p0
@@ -341,8 +341,8 @@
     return-object v1
 
     .line 138
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->packetQueue:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
@@ -363,28 +363,28 @@
 
     move-result v3
 
-    if-eq v2, v3, :cond_29
+    if-eq v2, v3, :cond_2
 
     iget-wide v3, v0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;->receivedTimestampMs:J
-    :try_end_22
-    .catchall {:try_start_c .. :try_end_22} :catchall_34
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     cmp-long p1, p1, v3
 
-    if-ltz p1, :cond_27
+    if-ltz p1, :cond_1
 
-    goto :goto_29
+    goto :goto_0
 
     .line 148
-    :cond_27
+    :cond_1
     monitor-exit p0
 
     return-object v1
 
     .line 143
-    :cond_29
-    :goto_29
-    :try_start_29
+    :cond_2
+    :goto_0
+    :try_start_2
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->packetQueue:Ljava/util/TreeSet;
 
     invoke-virtual {p1}, Ljava/util/TreeSet;->pollFirst()Ljava/lang/Object;
@@ -394,14 +394,14 @@
 
     .line 145
     iget-object p1, v0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue$RtpPacketContainer;->packet:Landroidx/media3/exoplayer/rtsp/RtpPacket;
-    :try_end_32
-    .catchall {:try_start_29 .. :try_end_32} :catchall_34
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_34
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -410,12 +410,12 @@
 .end method
 
 .method public declared-synchronized reset()V
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 66
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->packetQueue:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->clear()V
@@ -432,15 +432,15 @@
 
     .line 69
     iput v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;->lastReceivedSequenceNumber:I
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 70
     monitor-exit p0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception v0
 
     monitor-exit p0

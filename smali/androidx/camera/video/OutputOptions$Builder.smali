@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/OutputOptions$OutputOptionsInternal$Builder;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +75,7 @@
 .end method
 
 .method public setDurationLimitMillis(J)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)TB;"
@@ -86,16 +86,16 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const-string v1, "The specified duration limit can\'t be negative."
 
     .line 140
@@ -110,7 +110,7 @@
 .end method
 
 .method public setFileSizeLimit(J)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)TB;"
@@ -121,16 +121,16 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const-string v1, "The specified file size limit can\'t be negative."
 
     .line 117
@@ -145,7 +145,7 @@
 .end method
 
 .method public setLocation(Landroid/location/Location;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,7 +154,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_2
 
     .line 165
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
@@ -169,7 +169,7 @@
 
     const/4 v2, 0x0
 
-    if-ltz v0, :cond_20
+    if-ltz v0, :cond_0
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
@@ -179,16 +179,16 @@
 
     cmpg-double v0, v3, v5
 
-    if-gtz v0, :cond_20
+    if-gtz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v0, v2
 
-    :goto_21
+    :goto_0
     const-string v3, "Latitude must be in the range [-90, 90]"
 
     .line 164
@@ -203,7 +203,7 @@
 
     cmpl-double v0, v3, v5
 
-    if-ltz v0, :cond_41
+    if-ltz v0, :cond_1
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
@@ -213,21 +213,21 @@
 
     cmpg-double v0, v3, v5
 
-    if-gtz v0, :cond_41
+    if-gtz v0, :cond_1
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_41
+    :cond_1
     move v1, v2
 
-    :goto_42
+    :goto_1
     const-string v0, "Longitude must be in the range [-180, 180]"
 
     .line 167
     invoke-static {v1, v0}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 171
-    :cond_47
+    :cond_2
     iget-object v0, p0, Landroidx/camera/video/OutputOptions$Builder;->mRootInternalBuilder:Landroidx/camera/video/OutputOptions$OutputOptionsInternal$Builder;
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/OutputOptions$OutputOptionsInternal$Builder;->setLocation(Landroid/location/Location;)Ljava/lang/Object;

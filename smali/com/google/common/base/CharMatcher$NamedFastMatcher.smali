@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 968
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$NamedFastMatcher;->description:Ljava/lang/String;

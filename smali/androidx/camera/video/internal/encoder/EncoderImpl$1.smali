@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/encoder/EncoderImpl;)V
-    .registers 2
+    .locals 0
 
     .line 737
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$1;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 3
 
     .line 768
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$1;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -60,7 +60,7 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/video/internal/encoder/InputBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 740
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$1;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -98,7 +98,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 737
     check-cast p1, Landroidx/camera/video/internal/encoder/InputBuffer;

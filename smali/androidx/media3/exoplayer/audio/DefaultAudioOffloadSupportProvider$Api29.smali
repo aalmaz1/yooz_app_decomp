@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,14 +25,14 @@
 .end method
 
 .method public static getOffloadedPlaybackSupport(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;Z)Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
-    .registers 3
+    .locals 0
 
     .line 146
     invoke-static {p0, p1}, Landroid/media/AudioManager;->isOffloadedPlaybackSupported(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z
 
     move-result p0
 
-    if-nez p0, :cond_9
+    if-nez p0, :cond_0
 
     .line 147
     sget-object p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;->DEFAULT_UNSUPPORTED:Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
@@ -40,7 +40,7 @@
     return-object p0
 
     .line 149
-    :cond_9
+    :cond_0
     new-instance p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;-><init>()V

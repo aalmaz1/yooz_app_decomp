@@ -180,7 +180,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -197,7 +197,7 @@
 .end method
 
 .method constructor <init>(I[JLjava/util/List;Ljava/util/List;JIIIIJIIIIIJILjava/util/List;Ljava/util/List;JJJJJJIIIJIJJJJJIIILjava/util/List;Ljava/util/List;)V
-    .registers 59
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[J",
@@ -442,7 +442,7 @@
 .end method
 
 .method public static varargs merge([Landroidx/media3/exoplayer/analytics/PlaybackStats;)Landroidx/media3/exoplayer/analytics/PlaybackStats;
-    .registers 67
+    .locals 66
 
     move-object/from16 v0, p0
 
@@ -523,8 +523,8 @@
 
     const/16 v59, 0x0
 
-    :goto_51
-    if-ge v3, v2, :cond_14b
+    :goto_0
+    if-ge v3, v2, :cond_d
 
     aget-object v9, v0, v3
 
@@ -535,8 +535,8 @@
 
     const/4 v5, 0x0
 
-    :goto_59
-    if-ge v5, v1, :cond_68
+    :goto_1
+    if-ge v5, v1, :cond_0
 
     .line 298
     aget-wide v62, v4, v5
@@ -551,23 +551,23 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_59
+    goto :goto_1
 
-    :cond_68
+    :cond_0
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v60, v12, v5
 
-    if-nez v60, :cond_76
+    if-nez v60, :cond_1
 
     .line 301
     iget-wide v12, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->firstReportedTimeMs:J
 
     move/from16 v63, v2
 
-    goto :goto_82
+    goto :goto_2
 
-    :cond_76
+    :cond_1
     move/from16 v63, v2
 
     .line 302
@@ -575,7 +575,7 @@
 
     cmp-long v64, v1, v5
 
-    if-eqz v64, :cond_82
+    if-eqz v64, :cond_2
 
     .line 303
     invoke-static {v12, v13, v1, v2}, Ljava/lang/Math;->min(JJ)J
@@ -583,8 +583,8 @@
     move-result-wide v12
 
     .line 305
-    :cond_82
-    :goto_82
+    :cond_2
+    :goto_2
     iget v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
     add-int/2addr v14, v1
@@ -608,28 +608,28 @@
 
     cmp-long v5, v18, v1
 
-    if-nez v5, :cond_9e
+    if-nez v5, :cond_3
 
     .line 310
     iget-wide v5, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalValidJoinTimeMs:J
 
     move-wide/from16 v18, v5
 
-    goto :goto_a6
+    goto :goto_3
 
     .line 311
-    :cond_9e
+    :cond_3
     iget-wide v5, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalValidJoinTimeMs:J
 
     cmp-long v64, v5, v1
 
-    if-eqz v64, :cond_a6
+    if-eqz v64, :cond_4
 
     add-long v18, v18, v5
 
     .line 314
-    :cond_a6
-    :goto_a6
+    :cond_4
+    :goto_3
     iget v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->validJoinTimeCount:I
 
     add-int v20, v20, v1
@@ -658,20 +658,20 @@
 
     cmp-long v5, v10, v1
 
-    if-nez v5, :cond_c6
+    if-nez v5, :cond_5
 
     .line 320
     iget-wide v10, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->maxRebufferTimeMs:J
 
-    goto :goto_d0
+    goto :goto_4
 
     .line 321
-    :cond_c6
+    :cond_5
     iget-wide v5, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->maxRebufferTimeMs:J
 
     cmp-long v60, v5, v1
 
-    if-eqz v60, :cond_d0
+    if-eqz v60, :cond_6
 
     .line 322
     invoke-static {v10, v11, v5, v6}, Ljava/lang/Math;->max(JJ)J
@@ -679,8 +679,8 @@
     move-result-wide v10
 
     .line 324
-    :cond_d0
-    :goto_d0
+    :cond_6
+    :goto_4
     iget v5, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->adPlaybackCount:I
 
     add-int v27, v27, v5
@@ -727,77 +727,77 @@
 
     const/4 v5, -0x1
 
-    if-ne v8, v5, :cond_fa
+    if-ne v8, v5, :cond_7
 
     .line 334
     iget v8, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialVideoFormatHeight:I
 
-    goto :goto_ff
+    goto :goto_5
 
     .line 335
-    :cond_fa
+    :cond_7
     iget v6, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialVideoFormatHeight:I
 
-    if-eq v6, v5, :cond_ff
+    if-eq v6, v5, :cond_8
 
     add-int/2addr v8, v6
 
-    :cond_ff
-    :goto_ff
+    :cond_8
+    :goto_5
     const-wide/16 v23, -0x1
 
     cmp-long v6, v42, v23
 
-    if-nez v6, :cond_10a
+    if-nez v6, :cond_9
 
     .line 339
     iget-wide v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialVideoFormatBitrate:J
 
     move-wide/from16 v42, v1
 
-    goto :goto_112
+    goto :goto_6
 
     .line 340
-    :cond_10a
+    :cond_9
     iget-wide v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialVideoFormatBitrate:J
 
     cmp-long v6, v1, v23
 
-    if-eqz v6, :cond_112
+    if-eqz v6, :cond_a
 
     add-long v42, v42, v1
 
     .line 343
-    :cond_112
-    :goto_112
+    :cond_a
+    :goto_6
     iget v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->initialAudioFormatBitrateCount:I
 
     add-int v44, v44, v1
 
     cmp-long v1, v45, v23
 
-    if-nez v1, :cond_11f
+    if-nez v1, :cond_b
 
     .line 345
     iget-wide v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialAudioFormatBitrate:J
 
     move-wide/from16 v45, v1
 
-    goto :goto_127
+    goto :goto_7
 
     .line 346
-    :cond_11f
+    :cond_b
     iget-wide v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialAudioFormatBitrate:J
 
     cmp-long v6, v1, v23
 
-    if-eqz v6, :cond_127
+    if-eqz v6, :cond_c
 
     add-long v45, v45, v1
 
     .line 349
-    :cond_127
-    :goto_127
+    :cond_c
+    :goto_7
     iget-wide v1, v9, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalBandwidthTimeMs:J
 
     add-long v47, v47, v1
@@ -838,10 +838,10 @@
 
     const/16 v1, 0x10
 
-    goto/16 :goto_51
+    goto/16 :goto_0
 
     .line 357
-    :cond_14b
+    :cond_d
     new-instance v0, Landroidx/media3/exoplayer/analytics/PlaybackStats;
 
     move-object v2, v0
@@ -954,7 +954,7 @@
 
 # virtual methods
 .method public getAbandonedBeforeReadyRatio()F
-    .registers 4
+    .locals 3
 
     .line 906
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->abandonedBeforeReadyCount:I
@@ -967,25 +967,25 @@
 
     sub-int/2addr v0, v1
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     int-to-float v0, v0
 
     int-to-float v1, v2
 
     div-float/2addr v0, v1
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public getAudioUnderrunRate()F
-    .registers 5
+    .locals 4
 
     .line 1101
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -996,14 +996,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1102
-    :cond_c
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalAudioUnderruns:J
 
     long-to-float v2, v2
@@ -1016,12 +1016,12 @@
 
     div-float v0, v2, v0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public getDroppedFramesRate()F
-    .registers 5
+    .locals 4
 
     .line 1092
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -1032,14 +1032,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1093
-    :cond_c
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalDroppedFrames:J
 
     long-to-float v2, v2
@@ -1052,23 +1052,23 @@
 
     div-float v0, v2, v0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public getEndedRatio()F
-    .registers 3
+    .locals 2
 
     .line 918
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->endedCount:I
 
     int-to-float v1, v1
@@ -1077,12 +1077,12 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getFatalErrorRate()F
-    .registers 5
+    .locals 4
 
     .line 1120
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -1093,14 +1093,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1121
-    :cond_c
+    :cond_0
     iget v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->fatalErrorCount:I
 
     int-to-float v2, v2
@@ -1113,24 +1113,24 @@
 
     div-float v0, v2, v0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public getFatalErrorRatio()F
-    .registers 3
+    .locals 2
 
     .line 1110
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 1112
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->fatalErrorPlaybackCount:I
 
     int-to-float v1, v1
@@ -1139,12 +1139,12 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getJoinTimeRatio()F
-    .registers 5
+    .locals 4
 
     .line 973
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -1155,14 +1155,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 974
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalJoinTimeMs()J
 
     move-result-wide v2
@@ -1173,12 +1173,12 @@
 
     div-float v0, v2, v0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public getMeanAudioFormatBitrate()I
-    .registers 5
+    .locals 4
 
     .line 1072
     iget-wide v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalAudioFormatTimeMs:J
@@ -1187,26 +1187,26 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1074
-    :cond_a
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalAudioFormatBitrateTimeProduct:J
 
     div-long/2addr v2, v0
 
     long-to-int v0, v2
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method public getMeanBandwidth()I
-    .registers 7
+    .locals 6
 
     .line 1082
     iget-wide v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalBandwidthTimeMs:J
@@ -1215,14 +1215,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 1084
-    :cond_a
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalBandwidthBytes:J
 
     const-wide/16 v4, 0x1f40
@@ -1233,23 +1233,23 @@
 
     long-to-int v0, v2
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public getMeanElapsedTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 898
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->playbackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalElapsedTimeMs()J
 
     move-result-wide v0
@@ -1260,24 +1260,24 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanInitialAudioFormatBitrate()I
-    .registers 6
+    .locals 5
 
     .line 1039
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->initialAudioFormatBitrateCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 1041
-    :cond_6
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialAudioFormatBitrate:J
 
     int-to-long v3, v0
@@ -1286,24 +1286,24 @@
 
     long-to-int v0, v1
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public getMeanInitialVideoFormatBitrate()I
-    .registers 6
+    .locals 5
 
     .line 1029
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->initialVideoFormatBitrateCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 1031
-    :cond_6
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialVideoFormatBitrate:J
 
     int-to-long v3, v0
@@ -1312,68 +1312,68 @@
 
     long-to-int v0, v1
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public getMeanInitialVideoFormatHeight()I
-    .registers 3
+    .locals 2
 
     .line 1019
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->initialVideoFormatHeightCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 1021
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalInitialVideoFormatHeight:I
 
     div-int v0, v1, v0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public getMeanJoinTimeMs()J
-    .registers 6
+    .locals 5
 
     .line 746
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->validJoinTimeCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalValidJoinTimeMs:J
 
     int-to-long v3, v0
 
     div-long v0, v1, v3
 
-    :goto_f
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanNonFatalErrorCount()F
-    .registers 3
+    .locals 2
 
     .line 1137
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->nonFatalErrorCount:I
 
     int-to-float v1, v1
@@ -1382,24 +1382,24 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getMeanPauseBufferCount()F
-    .registers 3
+    .locals 2
 
     .line 934
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 936
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalPauseBufferCount:I
 
     int-to-float v1, v1
@@ -1408,23 +1408,23 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getMeanPauseCount()F
-    .registers 3
+    .locals 2
 
     .line 926
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalPauseCount:I
 
     int-to-float v1, v1
@@ -1433,24 +1433,24 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getMeanPausedTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 784
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
     .line 786
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPausedTimeMs()J
 
     move-result-wide v0
@@ -1461,24 +1461,24 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanPlayAndWaitTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 879
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
     .line 881
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
 
     move-result-wide v0
@@ -1489,24 +1489,24 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanPlayTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 768
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
     .line 770
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
 
     move-result-wide v0
@@ -1517,23 +1517,23 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanRebufferCount()F
-    .registers 3
+    .locals 2
 
     .line 953
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalRebufferCount:I
 
     int-to-float v1, v1
@@ -1542,24 +1542,24 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getMeanRebufferTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 803
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
     .line 805
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalRebufferTimeMs()J
 
     move-result-wide v0
@@ -1570,23 +1570,23 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanSeekCount()F
-    .registers 3
+    .locals 2
 
     .line 945
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalSeekCount:I
 
     int-to-float v1, v1
@@ -1595,24 +1595,24 @@
 
     div-float v0, v1, v0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getMeanSeekTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 833
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
     .line 835
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalSeekTimeMs()J
 
     move-result-wide v0
@@ -1623,23 +1623,23 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanSingleRebufferTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 813
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalRebufferCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x6
 
     .line 815
@@ -1662,23 +1662,23 @@
 
     div-long/2addr v0, v2
 
-    :goto_19
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanSingleSeekTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 843
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalSeekCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalSeekTimeMs()J
 
     move-result-wide v0
@@ -1689,12 +1689,12 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMeanTimeBetweenFatalErrors()F
-    .registers 3
+    .locals 2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1709,7 +1709,7 @@
 .end method
 
 .method public getMeanTimeBetweenNonFatalErrors()F
-    .registers 3
+    .locals 2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1724,7 +1724,7 @@
 .end method
 
 .method public getMeanTimeBetweenRebuffers()F
-    .registers 3
+    .locals 2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1739,7 +1739,7 @@
 .end method
 
 .method public getMeanVideoFormatBitrate()I
-    .registers 5
+    .locals 4
 
     .line 1061
     iget-wide v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalVideoFormatBitrateTimeMs:J
@@ -1748,26 +1748,26 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1063
-    :cond_a
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalVideoFormatBitrateTimeProduct:J
 
     div-long/2addr v2, v0
 
     long-to-int v0, v2
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method public getMeanVideoFormatHeight()I
-    .registers 5
+    .locals 4
 
     .line 1050
     iget-wide v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalVideoFormatHeightTimeMs:J
@@ -1776,38 +1776,38 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1052
-    :cond_a
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalVideoFormatHeightTimeProduct:J
 
     div-long/2addr v2, v0
 
     long-to-int v0, v2
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method public getMeanWaitTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 864
     iget v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->foregroundPlaybackCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_12
+    goto :goto_0
 
     .line 866
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalWaitTimeMs()J
 
     move-result-wide v0
@@ -1818,12 +1818,12 @@
 
     div-long/2addr v0, v2
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public getMediaTimeMsAtRealtimeMs(J)J
-    .registers 14
+    .locals 11
 
     .line 714
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
@@ -1832,26 +1832,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide p1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 718
-    :goto_10
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_29
+    if-ge v1, v2, :cond_1
 
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
 
@@ -1866,16 +1866,16 @@
 
     cmp-long v2, v2, p1
 
-    if-gtz v2, :cond_29
+    if-gtz v2, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_29
+    :cond_1
     const/4 v2, 0x1
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 723
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
@@ -1891,14 +1891,14 @@
     return-wide p1
 
     .line 725
-    :cond_37
+    :cond_2
     iget-object v3, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ne v1, v3, :cond_4f
+    if-ne v1, v3, :cond_3
 
     .line 726
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
@@ -1920,7 +1920,7 @@
     return-wide p1
 
     .line 728
-    :cond_4f
+    :cond_3
     iget-object v3, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->mediaTimeHistory:Ljava/util/List;
 
     add-int/lit8 v4, v1, -0x1
@@ -1972,11 +1972,11 @@
 
     cmp-long v2, v7, v9
 
-    if-nez v2, :cond_81
+    if-nez v2, :cond_4
 
     return-wide v3
 
-    :cond_81
+    :cond_4
     sub-long/2addr p1, v5
 
     long-to-float p1, p1
@@ -1999,7 +1999,7 @@
 .end method
 
 .method public getNonFatalErrorRate()F
-    .registers 5
+    .locals 4
 
     .line 1145
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -2010,14 +2010,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1146
-    :cond_c
+    :cond_0
     iget v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->nonFatalErrorCount:I
 
     int-to-float v2, v2
@@ -2030,12 +2030,12 @@
 
     div-float v0, v2, v0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public getPlaybackStateAtTime(J)I
-    .registers 8
+    .locals 5
 
     .line 696
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->playbackStateHistory:Ljava/util/List;
@@ -2046,12 +2046,12 @@
 
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2066,23 +2066,23 @@
 
     cmp-long v3, v3, p1
 
-    if-lez v3, :cond_1c
+    if-lez v3, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 700
-    :cond_1c
+    :cond_0
     iget v1, v2, Landroidx/media3/exoplayer/analytics/PlaybackStats$EventTimeAndPlaybackState;->playbackState:I
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_1
     return v1
 .end method
 
 .method public getPlaybackStateDurationMs(I)J
-    .registers 4
+    .locals 2
 
     .line 684
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->playbackStateDurationsMs:[J
@@ -2093,7 +2093,7 @@
 .end method
 
 .method public getRebufferRate()F
-    .registers 5
+    .locals 4
 
     .line 1002
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -2104,14 +2104,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1003
-    :cond_c
+    :cond_0
     iget v2, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->totalRebufferCount:I
 
     int-to-float v2, v2
@@ -2124,12 +2124,12 @@
 
     div-float v0, v2, v0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public getRebufferTimeRatio()F
-    .registers 5
+    .locals 4
 
     .line 983
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -2140,14 +2140,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 984
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalRebufferTimeMs()J
 
     move-result-wide v2
@@ -2158,12 +2158,12 @@
 
     div-float v0, v2, v0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public getSeekTimeRatio()F
-    .registers 5
+    .locals 4
 
     .line 993
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -2174,14 +2174,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 994
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalSeekTimeMs()J
 
     move-result-wide v2
@@ -2192,21 +2192,21 @@
 
     div-float v0, v2, v0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public getTotalElapsedTimeMs()J
-    .registers 6
+    .locals 5
 
     const-wide/16 v0, 0x0
 
     const/4 v2, 0x0
 
-    :goto_3
+    :goto_0
     const/16 v3, 0x10
 
-    if-ge v2, v3, :cond_f
+    if-ge v2, v3, :cond_0
 
     .line 888
     iget-object v3, p0, Landroidx/media3/exoplayer/analytics/PlaybackStats;->playbackStateDurationsMs:[J
@@ -2217,14 +2217,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     return-wide v0
 .end method
 
 .method public getTotalJoinTimeMs()J
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -2237,7 +2237,7 @@
 .end method
 
 .method public getTotalPausedTimeMs()J
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x4
 
@@ -2259,7 +2259,7 @@
 .end method
 
 .method public getTotalPlayAndWaitTimeMs()J
-    .registers 5
+    .locals 4
 
     .line 871
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayTimeMs()J
@@ -2276,7 +2276,7 @@
 .end method
 
 .method public getTotalPlayTimeMs()J
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x3
 
@@ -2289,7 +2289,7 @@
 .end method
 
 .method public getTotalRebufferTimeMs()J
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x6
 
@@ -2302,7 +2302,7 @@
 .end method
 
 .method public getTotalSeekTimeMs()J
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x5
 
@@ -2315,7 +2315,7 @@
 .end method
 
 .method public getTotalWaitTimeMs()J
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x2
 
@@ -2346,7 +2346,7 @@
 .end method
 
 .method public getWaitTimeRatio()F
-    .registers 5
+    .locals 4
 
     .line 963
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalPlayAndWaitTimeMs()J
@@ -2357,14 +2357,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 964
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/PlaybackStats;->getTotalWaitTimeMs()J
 
     move-result-wide v2
@@ -2375,6 +2375,6 @@
 
     div-float v0, v2, v0
 
-    :goto_14
+    :goto_0
     return v0
 .end method

@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 247
     new-instance v0, Landroidx/media3/extractor/metadata/icy/IcyHeaders$1;
@@ -65,30 +65,30 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V
-    .registers 8
+    .locals 1
 
     .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    if-eq p6, v0, :cond_b
+    if-eq p6, v0, :cond_1
 
-    if-lez p6, :cond_9
+    if-lez p6, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 161
-    :goto_c
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 162
@@ -113,7 +113,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -164,7 +164,7 @@
 .end method
 
 .method public static parse(Ljava/util/Map;)Landroidx/media3/extractor/metadata/icy/IcyHeaders;
-    .registers 15
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -198,7 +198,7 @@
 
     const/4 v6, -0x1
 
-    if-eqz v2, :cond_4c
+    if-eqz v2, :cond_1
 
     .line 66
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -208,24 +208,24 @@
     check-cast v2, Ljava/lang/String;
 
     .line 68
-    :try_start_19
+    :try_start_0
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v7
-    :try_end_1d
-    .catch Ljava/lang/NumberFormatException; {:try_start_19 .. :try_end_1d} :catch_36
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     mul-int/lit16 v7, v7, 0x3e8
 
-    if-lez v7, :cond_23
+    if-lez v7, :cond_0
 
     move v1, v4
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 72
-    :cond_23
-    :try_start_23
+    :cond_0
+    :try_start_1
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -239,20 +239,20 @@
     move-result-object v1
 
     invoke-static {v3, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_33
-    .catch Ljava/lang/NumberFormatException; {:try_start_23 .. :try_end_33} :catch_37
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
 
     move v1, v5
 
     move v7, v6
 
-    goto :goto_4a
+    goto :goto_0
 
-    :catch_36
+    :catch_0
     move v7, v6
 
     .line 76
-    :catch_37
+    :catch_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v8, "Invalid bitrate header: "
@@ -271,17 +271,17 @@
 
     move v1, v5
 
-    :goto_4a
+    :goto_0
     move v8, v7
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_4c
+    :cond_1
     move v1, v5
 
     move v8, v6
 
-    :goto_4e
+    :goto_1
     const-string v2, "icy-genre"
 
     .line 79
@@ -293,7 +293,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_2
 
     .line 81
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -306,12 +306,12 @@
 
     move v1, v4
 
-    goto :goto_63
+    goto :goto_2
 
-    :cond_62
+    :cond_2
     move-object v9, v7
 
-    :goto_63
+    :goto_2
     const-string v2, "icy-name"
 
     .line 84
@@ -321,7 +321,7 @@
 
     check-cast v2, Ljava/util/List;
 
-    if-eqz v2, :cond_76
+    if-eqz v2, :cond_3
 
     .line 86
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -334,12 +334,12 @@
 
     move v1, v4
 
-    goto :goto_77
+    goto :goto_3
 
-    :cond_76
+    :cond_3
     move-object v10, v7
 
-    :goto_77
+    :goto_3
     const-string v2, "icy-url"
 
     .line 89
@@ -349,7 +349,7 @@
 
     check-cast v2, Ljava/util/List;
 
-    if-eqz v2, :cond_8a
+    if-eqz v2, :cond_4
 
     .line 91
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -362,12 +362,12 @@
 
     move v1, v4
 
-    goto :goto_8b
+    goto :goto_4
 
-    :cond_8a
+    :cond_4
     move-object v11, v7
 
-    :goto_8b
+    :goto_4
     const-string v2, "icy-pub"
 
     .line 94
@@ -377,7 +377,7 @@
 
     check-cast v2, Ljava/util/List;
 
-    if-eqz v2, :cond_a4
+    if-eqz v2, :cond_5
 
     .line 96
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -396,12 +396,12 @@
 
     move v1, v4
 
-    goto :goto_a5
+    goto :goto_5
 
-    :cond_a4
+    :cond_5
     move v12, v5
 
-    :goto_a5
+    :goto_5
     const-string v2, "icy-metaint"
 
     .line 99
@@ -411,7 +411,7 @@
 
     check-cast p0, Ljava/util/List;
 
-    if-eqz p0, :cond_e1
+    if-eqz p0, :cond_7
 
     .line 101
     invoke-interface {p0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -421,22 +421,22 @@
     check-cast p0, Ljava/lang/String;
 
     .line 103
-    :try_start_b5
+    :try_start_2
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
-    :try_end_b9
-    .catch Ljava/lang/NumberFormatException; {:try_start_b5 .. :try_end_b9} :catch_d1
+    :try_end_2
+    .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_3
 
-    if-lez v2, :cond_bd
+    if-lez v2, :cond_6
 
     move v6, v2
 
-    goto :goto_ce
+    goto :goto_6
 
     .line 107
-    :cond_bd
-    :try_start_bd
+    :cond_6
+    :try_start_3
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -450,21 +450,21 @@
     move-result-object v4
 
     invoke-static {v3, v4}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_cd
-    .catch Ljava/lang/NumberFormatException; {:try_start_bd .. :try_end_cd} :catch_d0
+    :try_end_3
+    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_2
 
     move v4, v1
 
-    :goto_ce
+    :goto_6
     move v1, v4
 
-    goto :goto_e1
+    goto :goto_7
 
-    :catch_d0
+    :catch_2
     move v6, v2
 
     .line 111
-    :catch_d1
+    :catch_3
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -479,11 +479,11 @@
 
     invoke-static {v3, p0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_e1
-    :goto_e1
+    :cond_7
+    :goto_7
     move v13, v6
 
-    if-eqz v1, :cond_ea
+    if-eqz v1, :cond_8
 
     .line 115
     new-instance p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;
@@ -492,14 +492,14 @@
 
     invoke-direct/range {v7 .. v13}, Landroidx/media3/extractor/metadata/icy/IcyHeaders;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V
 
-    :cond_ea
+    :cond_8
     return-object v7
 .end method
 
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -507,18 +507,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_3
 
     .line 194
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -529,12 +529,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_47
+    goto :goto_1
 
     .line 197
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/icy/IcyHeaders;
 
     .line 198
@@ -542,7 +542,7 @@
 
     iget v3, p1, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->bitrate:I
 
-    if-ne v2, v3, :cond_45
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->genre:Ljava/lang/String;
 
@@ -553,7 +553,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->name:Ljava/lang/String;
 
@@ -564,7 +564,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->url:Ljava/lang/String;
 
@@ -575,35 +575,35 @@
 
     move-result v2
 
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->isPublic:Z
 
     iget-boolean v3, p1, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->isPublic:Z
 
-    if-ne v2, v3, :cond_45
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->metadataInterval:I
 
     iget p1, p1, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->metadataInterval:I
 
-    if-ne v2, p1, :cond_45
+    if-ne v2, p1, :cond_2
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_45
+    :cond_2
     move v0, v1
 
-    :goto_46
+    :goto_0
     return v0
 
-    :cond_47
-    :goto_47
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x20f
 
@@ -619,18 +619,18 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v1, v2
 
-    :goto_12
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -638,18 +638,18 @@
     .line 211
     iget-object v1, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->name:Ljava/lang/String;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     move v1, v2
 
-    :goto_1f
+    :goto_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -657,13 +657,13 @@
     .line 212
     iget-object v1, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->url:Ljava/lang/String;
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :cond_2a
+    :cond_2
     add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
@@ -684,31 +684,31 @@
 .end method
 
 .method public populateMediaMetadata(Landroidx/media3/common/MediaMetadata$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 181
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->name:Ljava/lang/String;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 182
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setStation(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
     .line 184
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->genre:Ljava/lang/String;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 185
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setGenre(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    :cond_e
+    :cond_1
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 220
     new-instance v0, Ljava/lang/StringBuilder;
@@ -767,7 +767,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 234
     iget p2, p0, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->bitrate:I

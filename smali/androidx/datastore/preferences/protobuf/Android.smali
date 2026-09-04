@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "libcore.io.Memory"
 
@@ -36,23 +36,23 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     sput-boolean v0, Landroidx/datastore/preferences/protobuf/Android;->IS_ROBOLECTRIC:Z
 
     return-void
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method private static getClassForName(Ljava/lang/String;)Ljava/lang/Class;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -79,19 +79,19 @@
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p0
-    :try_end_4
-    .catchall {:try_start_0 .. :try_end_4} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p0
 
-    :catchall_5
+    :catchall_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method static getMemoryClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -107,24 +107,24 @@
 .end method
 
 .method static isOnAndroidDevice()Z
-    .registers 1
+    .locals 1
 
     .line 41
     sget-object v0, Landroidx/datastore/preferences/protobuf/Android;->MEMORY_CLASS:Ljava/lang/Class;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/Android;->IS_ROBOLECTRIC:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method

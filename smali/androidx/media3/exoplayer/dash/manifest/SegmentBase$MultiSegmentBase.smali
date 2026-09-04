@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;JJJJLjava/util/List;JJJ)V
-    .registers 20
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public getAvailableSegmentCount(JJ)J
-    .registers 9
+    .locals 4
 
     .line 266
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
@@ -102,12 +102,12 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     return-wide v0
 
     .line 272
-    :cond_b
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->periodStartUnixTimeUs:J
 
     sub-long v0, p3, v0
@@ -137,7 +137,7 @@
 .end method
 
 .method public getFirstAvailableSegmentNum(JJ)J
-    .registers 9
+    .locals 4
 
     .line 251
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
@@ -148,7 +148,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 252
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->timeShiftBufferDepthUs:J
@@ -157,12 +157,12 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_16
+    if-nez v2, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 257
-    :cond_16
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->periodStartUnixTimeUs:J
 
     sub-long/2addr p3, v2
@@ -186,8 +186,8 @@
     return-wide p1
 
     .line 253
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
 
     move-result-wide p1
@@ -196,7 +196,7 @@
 .end method
 
 .method public getFirstSegmentNum()J
-    .registers 3
+    .locals 2
 
     .line 246
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
@@ -205,19 +205,19 @@
 .end method
 
 .method public getNextSegmentAvailableTimeUs(JJ)J
-    .registers 7
+    .locals 2
 
     .line 282
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide p1
 
     .line 286
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstAvailableSegmentNum(JJ)J
 
     move-result-wide v0
@@ -252,14 +252,14 @@
 .end method
 
 .method public final getSegmentDurationUs(JJ)J
-    .registers 12
+    .locals 7
 
     .line 211
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
     const-wide/32 v1, 0xf4240
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 212
     iget-wide p3, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
@@ -286,7 +286,7 @@
     return-wide p1
 
     .line 215
-    :cond_18
+    :cond_0
     invoke-virtual {p0, p3, p4}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
 
     move-result-wide v3
@@ -295,7 +295,7 @@
 
     cmp-long v0, v3, v5
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 217
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
@@ -310,7 +310,7 @@
 
     cmp-long v0, p1, v5
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_1
 
     .line 218
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentTimeUs(J)J
@@ -319,10 +319,10 @@
 
     sub-long/2addr p3, p1
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 219
-    :cond_34
+    :cond_1
     iget-wide p1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
 
     mul-long/2addr p1, v1
@@ -331,12 +331,12 @@
 
     div-long p3, p1, p3
 
-    :goto_3b
+    :goto_0
     return-wide p3
 .end method
 
 .method public getSegmentNum(JJ)J
-    .registers 16
+    .locals 11
 
     .line 175
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
@@ -352,17 +352,17 @@
 
     cmp-long v2, p3, v2
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_0
 
     return-wide v0
 
     .line 180
-    :cond_f
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
     const-wide/16 v3, 0x1
 
-    if-nez v2, :cond_36
+    if-nez v2, :cond_3
 
     .line 182
     iget-wide v5, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
@@ -384,22 +384,22 @@
 
     cmp-long p1, v7, v0
 
-    if-gez p1, :cond_27
+    if-gez p1, :cond_1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     const-wide/16 p1, -0x1
 
     cmp-long p1, p3, p1
 
-    if-nez p1, :cond_2f
+    if-nez p1, :cond_2
 
     move-wide v0, v7
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     add-long/2addr v0, p3
 
     sub-long/2addr v0, v3
@@ -409,20 +409,20 @@
 
     move-result-wide v0
 
-    :goto_35
+    :goto_0
     return-wide v0
 
-    :cond_36
+    :cond_3
     add-long/2addr p3, v0
 
     sub-long/2addr p3, v3
 
     move-wide v5, v0
 
-    :goto_39
+    :goto_1
     cmp-long v2, v5, p3
 
-    if-gtz v2, :cond_54
+    if-gtz v2, :cond_6
 
     sub-long v7, p3, v5
 
@@ -440,42 +440,42 @@
 
     cmp-long v2, v9, p1
 
-    if-gez v2, :cond_4e
+    if-gez v2, :cond_4
 
     add-long v5, v7, v3
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_4e
-    if-lez v2, :cond_53
+    :cond_4
+    if-lez v2, :cond_5
 
     sub-long/2addr v7, v3
 
     move-wide p3, v7
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_53
+    :cond_5
     return-wide v7
 
-    :cond_54
+    :cond_6
     cmp-long p1, v5, v0
 
-    if-nez p1, :cond_59
+    if-nez p1, :cond_7
 
     move-wide p3, v5
 
-    :cond_59
+    :cond_7
     return-wide p3
 .end method
 
 .method public final getSegmentTimeUs(J)J
-    .registers 9
+    .locals 6
 
     .line 226
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 227
     iget-wide v1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
@@ -497,10 +497,10 @@
 
     sub-long/2addr p1, v0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 231
-    :cond_14
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
     sub-long/2addr p1, v0
@@ -509,7 +509,7 @@
 
     mul-long/2addr p1, v0
 
-    :goto_1a
+    :goto_0
     move-wide v0, p1
 
     const-wide/32 v2, 0xf4240
@@ -528,20 +528,20 @@
 .end method
 
 .method public isExplicit()Z
-    .registers 2
+    .locals 1
 
     .line 295
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

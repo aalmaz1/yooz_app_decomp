@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static final addListener(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorListener;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,41 +93,41 @@
 .end method
 
 .method public static synthetic addListener$default(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroid/animation/Animator$AnimatorListener;
-    .registers 7
+    .locals 0
 
     and-int/lit8 p6, p5, 0x1
 
-    if-eqz p6, :cond_8
+    if-eqz p6, :cond_0
 
     .line 92
     sget-object p1, Landroidx/core/animation/AnimatorKt$addListener$1;->INSTANCE:Landroidx/core/animation/AnimatorKt$addListener$1;
 
     check-cast p1, Lkotlin/jvm/functions/Function1;
 
-    :cond_8
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_10
+    if-eqz p6, :cond_1
 
     .line 93
     sget-object p2, Landroidx/core/animation/AnimatorKt$addListener$2;->INSTANCE:Landroidx/core/animation/AnimatorKt$addListener$2;
 
     check-cast p2, Lkotlin/jvm/functions/Function1;
 
-    :cond_10
+    :cond_1
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_18
+    if-eqz p6, :cond_2
 
     .line 94
     sget-object p3, Landroidx/core/animation/AnimatorKt$addListener$3;->INSTANCE:Landroidx/core/animation/AnimatorKt$addListener$3;
 
     check-cast p3, Lkotlin/jvm/functions/Function1;
 
-    :cond_18
+    :cond_2
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_20
+    if-eqz p5, :cond_3
 
     .line 95
     sget-object p4, Landroidx/core/animation/AnimatorKt$addListener$4;->INSTANCE:Landroidx/core/animation/AnimatorKt$addListener$4;
@@ -135,7 +135,7 @@
     check-cast p4, Lkotlin/jvm/functions/Function1;
 
     .line 97
-    :cond_20
+    :cond_3
     new-instance p5, Landroidx/core/animation/AnimatorKt$addListener$listener$1;
 
     invoke-direct {p5, p4, p1, p3, p2}, Landroidx/core/animation/AnimatorKt$addListener$listener$1;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final addPauseListener(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorPauseListener;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -182,21 +182,21 @@
 .end method
 
 .method public static synthetic addPauseListener$default(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroid/animation/Animator$AnimatorPauseListener;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_0
 
     .line 113
     sget-object p1, Landroidx/core/animation/AnimatorKt$addPauseListener$1;->INSTANCE:Landroidx/core/animation/AnimatorKt$addPauseListener$1;
 
     check-cast p1, Lkotlin/jvm/functions/Function1;
 
-    :cond_8
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_10
+    if-eqz p3, :cond_1
 
     .line 114
     sget-object p2, Landroidx/core/animation/AnimatorKt$addPauseListener$2;->INSTANCE:Landroidx/core/animation/AnimatorKt$addPauseListener$2;
@@ -204,7 +204,7 @@
     check-cast p2, Lkotlin/jvm/functions/Function1;
 
     .line 112
-    :cond_10
+    :cond_1
     invoke-static {p0, p1, p2}, Landroidx/core/animation/AnimatorKt;->addPauseListener(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorPauseListener;
 
     move-result-object p0
@@ -213,7 +213,7 @@
 .end method
 
 .method public static final doOnCancel(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -241,7 +241,7 @@
 .end method
 
 .method public static final doOnEnd(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -269,7 +269,7 @@
 .end method
 
 .method public static final doOnPause(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorPauseListener;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -296,7 +296,7 @@
 .end method
 
 .method public static final doOnRepeat(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -324,7 +324,7 @@
 .end method
 
 .method public static final doOnResume(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorPauseListener;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -351,7 +351,7 @@
 .end method
 
 .method public static final doOnStart(Landroid/animation/Animator;Lkotlin/jvm/functions/Function1;)Landroid/animation/Animator$AnimatorListener;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

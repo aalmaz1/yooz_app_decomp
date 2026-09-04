@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 381
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public setProperty(Landroid/view/View;FJLandroidx/constraintlayout/motion/widget/KeyCache;)Z
-    .registers 19
+    .locals 13
 
     move-object v7, p0
 
@@ -49,7 +49,7 @@
     .line 386
     instance-of v1, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 387
     move-object v8, v0
@@ -72,23 +72,23 @@
 
     invoke-virtual {v8, v0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
 
-    goto :goto_5b
+    goto :goto_1
 
     .line 389
-    :cond_1d
+    :cond_0
     iget-boolean v1, v7, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ProgressSet;->mNoMethod:Z
 
     const/4 v10, 0x0
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     return v10
 
-    :cond_23
+    :cond_1
     const/4 v1, 0x1
 
     .line 394
-    :try_start_24
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -104,23 +104,23 @@
     invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v2
-    :try_end_34
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_24 .. :try_end_34} :catch_35
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 396
-    :catch_35
+    :catch_0
     iput-boolean v1, v7, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ProgressSet;->mNoMethod:Z
 
     const/4 v2, 0x0
 
-    :goto_38
+    :goto_0
     move-object v11, v2
 
-    if-eqz v11, :cond_5b
+    if-eqz v11, :cond_2
 
-    :try_start_3b
+    :try_start_1
     new-array v12, v1, [Ljava/lang/Object;
 
     move-object v1, p0
@@ -145,29 +145,29 @@
     aput-object v1, v12, v10
 
     invoke-virtual {v11, p1, v12}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_51
-    .catch Ljava/lang/IllegalAccessException; {:try_start_3b .. :try_end_51} :catch_57
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_3b .. :try_end_51} :catch_52
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_5b
+    goto :goto_1
 
-    :catch_52
+    :catch_1
     move-exception v0
 
     .line 404
     invoke-static {v9, v8, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_5b
+    goto :goto_1
 
-    :catch_57
+    :catch_2
     move-exception v0
 
     .line 402
     invoke-static {v9, v8, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 408
-    :cond_5b
-    :goto_5b
+    :cond_2
+    :goto_1
     iget-boolean v0, v7, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$ProgressSet;->mContinue:Z
 
     return v0

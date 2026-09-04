@@ -45,13 +45,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 343
     invoke-direct {p0}, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsBaseImpl;-><init>()V
@@ -86,12 +86,12 @@
 
 # virtual methods
 .method public add(Landroid/app/Activity;)V
-    .registers 6
+    .locals 4
 
     .line 410
     sget-object v0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->sHandlerThread:Landroid/os/HandlerThread;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 411
     new-instance v0, Landroid/os/HandlerThread;
@@ -118,20 +118,20 @@
 
     sput-object v0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->sHandler:Landroid/os/Handler;
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1e
+    :goto_0
     const/16 v1, 0x8
 
-    if-gt v0, v1, :cond_39
+    if-gt v0, v1, :cond_2
 
     .line 416
     iget-object v1, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mMetrics:[Landroid/util/SparseIntArray;
 
     aget-object v2, v1, v0
 
-    if-nez v2, :cond_36
+    if-nez v2, :cond_1
 
     iget v2, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mTrackingFlags:I
 
@@ -141,7 +141,7 @@
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_1
 
     .line 417
     new-instance v2, Landroid/util/SparseIntArray;
@@ -150,13 +150,13 @@
 
     aput-object v2, v1, v0
 
-    :cond_36
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 420
-    :cond_39
+    :cond_2
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -180,9 +180,9 @@
 .end method
 
 .method addDurationItem(Landroid/util/SparseIntArray;J)V
-    .registers 8
+    .locals 4
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     const-wide/32 v0, 0x7a120
 
@@ -199,7 +199,7 @@
 
     cmp-long p2, p2, v1
 
-    if-ltz p2, :cond_1a
+    if-ltz p2, :cond_0
 
     .line 402
     invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->get(I)I
@@ -211,12 +211,12 @@
     .line 403
     invoke-virtual {p1, v0, p2}, Landroid/util/SparseIntArray;->put(II)V
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method public getMetrics()[Landroid/util/SparseIntArray;
-    .registers 2
+    .locals 1
 
     .line 452
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mMetrics:[Landroid/util/SparseIntArray;
@@ -225,7 +225,7 @@
 .end method
 
 .method public remove(Landroid/app/Activity;)[Landroid/util/SparseIntArray;
-    .registers 5
+    .locals 3
 
     .line 426
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mActivities:Ljava/util/ArrayList;
@@ -234,12 +234,12 @@
 
     move-result-object v0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -252,7 +252,7 @@
 
     move-result-object v2
 
-    if-ne v2, p1, :cond_6
+    if-ne v2, p1, :cond_0
 
     .line 428
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mActivities:Ljava/util/ArrayList;
@@ -260,7 +260,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 432
-    :cond_1d
+    :cond_1
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p1
@@ -276,7 +276,7 @@
 .end method
 
 .method public reset()[Landroid/util/SparseIntArray;
-    .registers 3
+    .locals 2
 
     .line 457
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mMetrics:[Landroid/util/SparseIntArray;
@@ -292,7 +292,7 @@
 .end method
 
 .method public stop()[Landroid/util/SparseIntArray;
-    .registers 4
+    .locals 3
 
     .line 438
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mActivities:Ljava/util/ArrayList;
@@ -303,8 +303,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_2f
+    :goto_0
+    if-ltz v0, :cond_1
 
     .line 440
     iget-object v1, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mActivities:Ljava/util/ArrayList;
@@ -327,7 +327,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     .line 443
     invoke-virtual {v2}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
@@ -343,13 +343,13 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    :cond_2c
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 447
-    :cond_2f
+    :cond_1
     iget-object v0, p0, Landroidx/core/app/FrameMetricsAggregator$FrameMetricsApi24Impl;->mMetrics:[Landroid/util/SparseIntArray;
 
     return-object v0

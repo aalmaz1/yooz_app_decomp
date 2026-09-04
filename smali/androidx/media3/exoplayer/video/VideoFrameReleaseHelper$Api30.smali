@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 432
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,31 +25,31 @@
 .end method
 
 .method public static setSurfaceFrameRate(Landroid/view/Surface;F)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     .line 440
-    :goto_8
-    :try_start_8
+    :goto_0
+    :try_start_0
     invoke-virtual {p0, p1, v0}, Landroid/view/Surface;->setFrameRate(FI)V
-    :try_end_b
-    .catch Ljava/lang/IllegalStateException; {:try_start_8 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_14
+    goto :goto_1
 
-    :catch_c
+    :catch_0
     move-exception p0
 
     const-string p1, "VideoFrameReleaseHelper"
@@ -59,6 +59,6 @@
     .line 442
     invoke-static {p1, v0, p0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_14
+    :goto_1
     return-void
 .end method

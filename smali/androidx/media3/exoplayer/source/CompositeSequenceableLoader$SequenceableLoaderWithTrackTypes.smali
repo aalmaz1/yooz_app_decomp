@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/SequenceableLoader;Ljava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 178
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeSequenceableLoader$SequenceableLoaderWithTrackTypes;->loader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -76,7 +76,7 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 168
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeSequenceableLoader$SequenceableLoaderWithTrackTypes;->loader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -89,7 +89,7 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 173
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeSequenceableLoader$SequenceableLoaderWithTrackTypes;->loader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -102,7 +102,7 @@
 .end method
 
 .method public getTrackTypes()Lcom/google/common/collect/ImmutableList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -119,7 +119,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 183
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeSequenceableLoader$SequenceableLoaderWithTrackTypes;->loader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -132,7 +132,7 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 4
+    .locals 1
 
     .line 188
     iget-object v0, p0, Landroidx/media3/exoplayer/source/CompositeSequenceableLoader$SequenceableLoaderWithTrackTypes;->loader:Landroidx/media3/exoplayer/source/SequenceableLoader;

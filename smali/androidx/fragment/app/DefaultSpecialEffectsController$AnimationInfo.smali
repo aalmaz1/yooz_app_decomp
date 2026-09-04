@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/SpecialEffectsController$Operation;Landroidx/core/os/CancellationSignal;Z)V
-    .registers 4
+    .locals 0
 
     .line 789
     invoke-direct {p0, p1, p2}, Landroidx/fragment/app/DefaultSpecialEffectsController$SpecialEffectsInfo;-><init>(Landroidx/fragment/app/SpecialEffectsController$Operation;Landroidx/core/os/CancellationSignal;)V
@@ -43,12 +43,12 @@
 
 # virtual methods
 .method getAnimation(Landroid/content/Context;)Landroidx/fragment/app/FragmentAnim$AnimationOrAnimator;
-    .registers 6
+    .locals 4
 
     .line 795
     iget-boolean v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;->mLoadedAnim:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 796
     iget-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;->mAnimation:Landroidx/fragment/app/FragmentAnim$AnimationOrAnimator;
@@ -56,7 +56,7 @@
     return-object p1
 
     .line 799
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;->getOperation()Landroidx/fragment/app/SpecialEffectsController$Operation;
 
     move-result-object v0
@@ -78,16 +78,16 @@
 
     const/4 v3, 0x1
 
-    if-ne v1, v2, :cond_1e
+    if-ne v1, v2, :cond_1
 
     move v1, v3
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_1f
+    :goto_0
     iget-boolean v2, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;->mIsPop:Z
 
     .line 798

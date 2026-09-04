@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/PlaybackParameters;JJ)V
-    .registers 6
+    .locals 0
 
     .line 2042
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/PlaybackParameters;JJLandroidx/media3/exoplayer/audio/DefaultAudioSink$1;)V
-    .registers 7
+    .locals 0
 
     .line 2030
     invoke-direct/range {p0 .. p5}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$MediaPositionParameters;-><init>(Landroidx/media3/common/PlaybackParameters;JJ)V

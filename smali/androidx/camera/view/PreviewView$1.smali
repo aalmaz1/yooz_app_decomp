@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/PreviewView;)V
-    .registers 2
+    .locals 0
 
     .line 192
     iput-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method synthetic lambda$onSurfaceRequested$0$androidx-camera-view-PreviewView$1(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 3
+    .locals 1
 
     .line 200
     iget-object v0, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -49,7 +49,7 @@
 .end method
 
 .method synthetic lambda$onSurfaceRequested$1$androidx-camera-view-PreviewView$1(Landroidx/camera/core/impl/CameraInternal;Landroidx/camera/core/SurfaceRequest;Landroidx/camera/core/SurfaceRequest$TransformationInfo;)V
-    .registers 7
+    .locals 3
 
     .line 209
     new-instance v0, Ljava/lang/StringBuilder;
@@ -87,33 +87,33 @@
 
     const/4 v2, 0x1
 
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_0
 
     const-string p1, "The lens facing is null, probably an external."
 
     .line 219
     invoke-static {v1, p1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_29
+    :goto_0
     move p1, v2
 
-    goto :goto_33
+    goto :goto_1
 
     .line 222
-    :cond_2b
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_32
+    :cond_1
     move p1, v0
 
     .line 224
-    :goto_33
+    :goto_1
     iget-object v1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
     iget-object v1, v1, Landroidx/camera/view/PreviewView;->mPreviewTransform:Landroidx/camera/view/PreviewTransformation;
@@ -133,13 +133,13 @@
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_59
+    if-eq p1, p2, :cond_3
 
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
     iget-object p1, p1, Landroidx/camera/view/PreviewView;->mImplementation:Landroidx/camera/view/PreviewViewImplementation;
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
@@ -147,27 +147,27 @@
 
     instance-of p1, p1, Landroidx/camera/view/SurfaceViewImplementation;
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_2
 
-    goto :goto_59
+    goto :goto_2
 
     .line 234
-    :cond_54
+    :cond_2
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
     iput-boolean v0, p1, Landroidx/camera/view/PreviewView;->mUseDisplayRotation:Z
 
-    goto :goto_5d
+    goto :goto_3
 
     .line 232
-    :cond_59
-    :goto_59
+    :cond_3
+    :goto_2
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
     iput-boolean v2, p1, Landroidx/camera/view/PreviewView;->mUseDisplayRotation:Z
 
     .line 236
-    :goto_5d
+    :goto_3
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
     invoke-virtual {p1}, Landroidx/camera/view/PreviewView;->redrawPreview()V
@@ -176,7 +176,7 @@
 .end method
 
 .method synthetic lambda$onSurfaceRequested$2$androidx-camera-view-PreviewView$1(Landroidx/camera/view/PreviewStreamStateObserver;Landroidx/camera/core/impl/CameraInternal;)V
-    .registers 5
+    .locals 2
 
     .line 257
     iget-object v0, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -189,7 +189,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 258
     sget-object v0, Landroidx/camera/view/PreviewView$StreamState;->IDLE:Landroidx/camera/view/PreviewView$StreamState;
@@ -197,7 +197,7 @@
     invoke-virtual {p1, v0}, Landroidx/camera/view/PreviewStreamStateObserver;->updatePreviewStreamState(Landroidx/camera/view/PreviewView$StreamState;)V
 
     .line 260
-    :cond_10
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/view/PreviewStreamStateObserver;->clear()V
 
     .line 261
@@ -211,14 +211,14 @@
 .end method
 
 .method public onSurfaceRequested(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 7
+    .locals 5
 
     .line 197
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->isMainThread()Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 199
     iget-object v0, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -239,7 +239,7 @@
 
     return-void
 
-    :cond_19
+    :cond_0
     const-string v0, "PreviewView"
 
     const-string v1, "Surface requested by Preview."
@@ -293,7 +293,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_6b
+    if-nez v1, :cond_2
 
     .line 240
     iget-object v1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -304,7 +304,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_60
+    if-eqz v2, :cond_1
 
     .line 241
     new-instance v2, Landroidx/camera/view/TextureViewImplementation;
@@ -315,10 +315,10 @@
 
     invoke-direct {v2, v3, v4}, Landroidx/camera/view/TextureViewImplementation;-><init>(Landroid/widget/FrameLayout;Landroidx/camera/view/PreviewTransformation;)V
 
-    goto :goto_69
+    goto :goto_0
 
     .line 242
-    :cond_60
+    :cond_1
     new-instance v2, Landroidx/camera/view/SurfaceViewImplementation;
 
     iget-object v3, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -327,11 +327,11 @@
 
     invoke-direct {v2, v3, v4}, Landroidx/camera/view/SurfaceViewImplementation;-><init>(Landroid/widget/FrameLayout;Landroidx/camera/view/PreviewTransformation;)V
 
-    :goto_69
+    :goto_0
     iput-object v2, v1, Landroidx/camera/view/PreviewView;->mImplementation:Landroidx/camera/view/PreviewViewImplementation;
 
     .line 245
-    :cond_6b
+    :cond_2
     new-instance v1, Landroidx/camera/view/PreviewStreamStateObserver;
 
     .line 246
@@ -391,13 +391,13 @@
 
     iget-object p1, p1, Landroidx/camera/view/PreviewView;->mOnFrameUpdateListener:Landroidx/camera/view/PreviewView$OnFrameUpdateListener;
 
-    if-eqz p1, :cond_bb
+    if-eqz p1, :cond_3
 
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
 
     iget-object p1, p1, Landroidx/camera/view/PreviewView;->mOnFrameUpdateListenerExecutor:Ljava/util/concurrent/Executor;
 
-    if-eqz p1, :cond_bb
+    if-eqz p1, :cond_3
 
     .line 265
     iget-object p1, p0, Landroidx/camera/view/PreviewView$1;->this$0:Landroidx/camera/view/PreviewView;
@@ -414,6 +414,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/camera/view/PreviewViewImplementation;->setFrameUpdateListener(Ljava/util/concurrent/Executor;Landroidx/camera/view/PreviewView$OnFrameUpdateListener;)V
 
-    :cond_bb
+    :cond_3
     return-void
 .end method

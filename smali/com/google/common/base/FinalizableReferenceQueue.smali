@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 136
     const-class v0, Lcom/google/common/base/FinalizableReferenceQueue;
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,7 +136,7 @@
     const/4 v2, 0x0
 
     .line 164
-    :try_start_12
+    :try_start_0
     sget-object v3, Lcom/google/common/base/FinalizableReferenceQueue;->startFinalizer:Ljava/lang/reflect/Method;
 
     const/4 v4, 0x3
@@ -158,15 +158,15 @@
     const/4 v0, 0x0
 
     invoke-virtual {v3, v0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_25
-    .catch Ljava/lang/IllegalAccessException; {:try_start_12 .. :try_end_25} :catch_34
-    .catchall {:try_start_12 .. :try_end_25} :catchall_27
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move v2, v5
 
-    goto :goto_31
+    goto :goto_0
 
-    :catchall_27
+    :catchall_0
     move-exception v0
 
     .line 169
@@ -179,12 +179,12 @@
     invoke-virtual {v1, v3, v4, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 176
-    :goto_31
+    :goto_0
     iput-boolean v2, p0, Lcom/google/common/base/FinalizableReferenceQueue;->threadStarted:Z
 
     return-void
 
-    :catch_34
+    :catch_0
     move-exception v0
 
     .line 167
@@ -196,7 +196,7 @@
 .end method
 
 .method static synthetic access$000()Ljava/util/logging/Logger;
-    .registers 1
+    .locals 1
 
     .line 95
     sget-object v0, Lcom/google/common/base/FinalizableReferenceQueue;->logger:Ljava/util/logging/Logger;
@@ -205,7 +205,7 @@
 .end method
 
 .method static getStartFinalizer(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -253,12 +253,12 @@
     invoke-virtual {p0, v0, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object p0
-    :try_end_18
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_19
+    :catch_0
     move-exception p0
 
     .line 354
@@ -270,7 +270,7 @@
 .end method
 
 .method private static varargs loadFinalizer([Lcom/google/common/base/FinalizableReferenceQueue$FinalizerLoader;)Ljava/lang/Class;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -295,8 +295,8 @@
 
     const/4 v1, 0x0
 
-    :goto_2
-    if-ge v1, v0, :cond_10
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     aget-object v2, p0, v1
 
@@ -305,17 +305,17 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     return-object v2
 
-    :cond_d
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 223
-    :cond_10
+    :cond_1
     new-instance p0, Ljava/lang/AssertionError;
 
     invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
@@ -326,40 +326,40 @@
 
 # virtual methods
 .method cleanUp()V
-    .registers 5
+    .locals 4
 
     .line 191
     iget-boolean v0, p0, Lcom/google/common/base/FinalizableReferenceQueue;->threadStarted:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 196
-    :cond_5
-    :goto_5
+    :cond_0
+    :goto_0
     iget-object v0, p0, Lcom/google/common/base/FinalizableReferenceQueue;->queue:Ljava/lang/ref/ReferenceQueue;
 
     invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 201
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->clear()V
 
     .line 203
-    :try_start_10
+    :try_start_0
     check-cast v0, Lcom/google/common/base/FinalizableReference;
 
     invoke-interface {v0}, Lcom/google/common/base/FinalizableReference;->finalizeReferent()V
-    :try_end_15
-    .catchall {:try_start_10 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_5
+    goto :goto_0
 
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     .line 205
@@ -371,14 +371,14 @@
 
     invoke-virtual {v1, v2, v3, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 181
     iget-object v0, p0, Lcom/google/common/base/FinalizableReferenceQueue;->frqRef:Ljava/lang/ref/PhantomReference;

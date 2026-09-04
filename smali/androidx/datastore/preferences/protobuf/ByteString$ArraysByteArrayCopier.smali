@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/ByteString$1;)V
-    .registers 2
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ByteString$ArraysByteArrayCopier;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public copyFrom([BII)[B
-    .registers 4
+    .locals 0
 
     add-int/2addr p3, p2
 

@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/ClipData;I)V
-    .registers 3
+    .locals 0
 
     .line 615
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method constructor <init>(Landroidx/core/view/ContentInfoCompat;)V
-    .registers 3
+    .locals 1
 
     .line 620
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public build()Landroidx/core/view/ContentInfoCompat;
-    .registers 3
+    .locals 2
 
     .line 656
     new-instance v0, Landroidx/core/view/ContentInfoCompat;
@@ -107,7 +107,7 @@
 .end method
 
 .method public setClip(Landroid/content/ClipData;)V
-    .registers 2
+    .locals 0
 
     .line 630
     iput-object p1, p0, Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;->mClip:Landroid/content/ClipData;
@@ -116,7 +116,7 @@
 .end method
 
 .method public setExtras(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     .line 650
     iput-object p1, p0, Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;->mExtras:Landroid/os/Bundle;
@@ -125,7 +125,7 @@
 .end method
 
 .method public setFlags(I)V
-    .registers 2
+    .locals 0
 
     .line 640
     iput p1, p0, Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;->mFlags:I
@@ -134,7 +134,7 @@
 .end method
 
 .method public setLinkUri(Landroid/net/Uri;)V
-    .registers 2
+    .locals 0
 
     .line 645
     iput-object p1, p0, Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;->mLinkUri:Landroid/net/Uri;
@@ -143,7 +143,7 @@
 .end method
 
 .method public setSource(I)V
-    .registers 2
+    .locals 0
 
     .line 635
     iput p1, p0, Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;->mSource:I

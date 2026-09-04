@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,13 +49,13 @@
 
 # virtual methods
 .method public isFallbackAvailable(I)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_c
+    if-ne p1, v1, :cond_0
 
     .line 132
     iget p1, p0, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;->numberOfLocations:I
@@ -64,23 +64,23 @@
 
     sub-int/2addr p1, v2
 
-    if-le p1, v1, :cond_14
+    if-le p1, v1, :cond_1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 133
-    :cond_c
+    :cond_0
     iget p1, p0, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;->numberOfTracks:I
 
     iget v2, p0, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;->numberOfExcludedTracks:I
 
     sub-int/2addr p1, v2
 
-    if-le p1, v1, :cond_14
+    if-le p1, v1, :cond_1
 
-    :goto_13
+    :goto_0
     move v0, v1
 
-    :cond_14
+    :cond_1
     return v0
 .end method

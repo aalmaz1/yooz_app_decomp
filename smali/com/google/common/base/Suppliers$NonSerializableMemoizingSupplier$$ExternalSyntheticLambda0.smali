@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     invoke-static {}, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->lambda$static$0()Ljava/lang/Void;
 

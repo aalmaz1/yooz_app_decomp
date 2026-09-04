@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 389
     new-instance v0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;
@@ -101,7 +101,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -115,17 +115,17 @@
 .end method
 
 .method static from(I)Landroidx/fragment/app/SpecialEffectsController$Operation$State;
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_24
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_21
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-ne p0, v0, :cond_c
+    if-ne p0, v0, :cond_0
 
     .line 432
     sget-object p0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->GONE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
@@ -133,7 +133,7 @@
     return-object p0
 
     .line 434
-    :cond_c
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -155,20 +155,20 @@
     throw v0
 
     .line 430
-    :cond_21
+    :cond_1
     sget-object p0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->INVISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
 
     return-object p0
 
     .line 428
-    :cond_24
+    :cond_2
     sget-object p0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->VISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
 
     return-object p0
 .end method
 
 .method static from(Landroid/view/View;)Landroidx/fragment/app/SpecialEffectsController$Operation$State;
-    .registers 3
+    .locals 2
 
     .line 412
     invoke-virtual {p0}, Landroid/view/View;->getAlpha()F
@@ -179,13 +179,13 @@
 
     cmpl-float v0, v0, v1
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 413
     sget-object p0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->INVISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
@@ -193,7 +193,7 @@
     return-object p0
 
     .line 415
-    :cond_12
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p0
@@ -206,7 +206,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/fragment/app/SpecialEffectsController$Operation$State;
-    .registers 2
+    .locals 1
 
     .line 385
     const-class v0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;
@@ -221,7 +221,7 @@
 .end method
 
 .method public static values()[Landroidx/fragment/app/SpecialEffectsController$Operation$State;
-    .registers 1
+    .locals 1
 
     .line 385
     sget-object v0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->$VALUES:[Landroidx/fragment/app/SpecialEffectsController$Operation$State;
@@ -238,7 +238,7 @@
 
 # virtual methods
 .method applyState(Landroid/view/View;)V
-    .registers 7
+    .locals 5
 
     .line 444
     sget-object v0, Landroidx/fragment/app/SpecialEffectsController$3;->$SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State:[I
@@ -255,29 +255,29 @@
 
     const/4 v3, 0x2
 
-    if-eq v0, v1, :cond_7d
+    if-eq v0, v1, :cond_6
 
     const-string v1, "SpecialEffectsController: Setting view "
 
-    if-eq v0, v3, :cond_5c
+    if-eq v0, v3, :cond_4
 
     const/4 v4, 0x3
 
-    if-eq v0, v4, :cond_3a
+    if-eq v0, v4, :cond_2
 
     const/4 v4, 0x4
 
-    if-eq v0, v4, :cond_1a
+    if-eq v0, v4, :cond_0
 
-    goto/16 :goto_aa
+    goto/16 :goto_0
 
     .line 470
-    :cond_1a
+    :cond_0
     invoke-static {v3}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     .line 471
     new-instance v0, Ljava/lang/StringBuilder;
@@ -301,18 +301,18 @@
     invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 475
-    :cond_36
+    :cond_1
     invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_aa
+    goto :goto_0
 
     .line 463
-    :cond_3a
+    :cond_2
     invoke-static {v3}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_3
 
     .line 464
     new-instance v0, Ljava/lang/StringBuilder;
@@ -335,21 +335,21 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_56
+    :cond_3
     const/16 v0, 0x8
 
     .line 467
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_aa
+    goto :goto_0
 
     .line 456
-    :cond_5c
+    :cond_4
     invoke-static {v3}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_5
 
     .line 457
     new-instance v0, Ljava/lang/StringBuilder;
@@ -372,30 +372,30 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_78
+    :cond_5
     const/4 v0, 0x0
 
     .line 460
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_aa
+    goto :goto_0
 
     .line 446
-    :cond_7d
+    :cond_6
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_aa
+    if-eqz v0, :cond_8
 
     .line 448
     invoke-static {v3}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_a7
+    if-eqz v1, :cond_7
 
     .line 449
     new-instance v1, Ljava/lang/StringBuilder;
@@ -425,10 +425,10 @@
     invoke-static {v2, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 452
-    :cond_a7
+    :cond_7
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    :cond_aa
-    :goto_aa
+    :cond_8
+    :goto_0
     return-void
 .end method

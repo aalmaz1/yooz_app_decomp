@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 243
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->access$000()Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/PreferencesProto$1;)V
-    .registers 2
+    .locals 0
 
     .line 236
     invoke-direct {p0}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearPreferences()Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
-    .registers 2
+    .locals 1
 
     .line 264
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;->copyOnWrite()V
@@ -73,7 +73,7 @@
 .end method
 
 .method public containsPreferences(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 259
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -95,7 +95,7 @@
 .end method
 
 .method public getPreferences()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -118,7 +118,7 @@
 .end method
 
 .method public getPreferencesCount()I
-    .registers 2
+    .locals 1
 
     .line 250
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -137,7 +137,7 @@
 .end method
 
 .method public getPreferencesMap()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -167,7 +167,7 @@
 .end method
 
 .method public getPreferencesOrDefault(Ljava/lang/String;Landroidx/datastore/preferences/PreferencesProto$Value;)Landroidx/datastore/preferences/PreferencesProto$Value;
-    .registers 5
+    .locals 2
 
     .line 303
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -187,7 +187,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -197,12 +197,12 @@
 
     check-cast p2, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    :cond_18
+    :cond_0
     return-object p2
 .end method
 
 .method public getPreferencesOrThrow(Ljava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$Value;
-    .registers 4
+    .locals 2
 
     .line 315
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -222,7 +222,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 321
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -234,7 +234,7 @@
     return-object p1
 
     .line 319
-    :cond_18
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -243,7 +243,7 @@
 .end method
 
 .method public putAllPreferences(Ljava/util/Map;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -273,7 +273,7 @@
 .end method
 
 .method public putPreferences(Ljava/lang/String;Landroidx/datastore/preferences/PreferencesProto$Value;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
-    .registers 4
+    .locals 1
 
     .line 329
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -299,7 +299,7 @@
 .end method
 
 .method public removePreferences(Ljava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
-    .registers 3
+    .locals 1
 
     .line 274
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     const-string v0, "\\{([^}]*)\\}"
 
@@ -101,7 +101,7 @@
 .end method
 
 .method private constructor <init>(ILandroid/graphics/PointF;)V
-    .registers 3
+    .locals 0
 
     .line 457
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -116,7 +116,7 @@
 .end method
 
 .method private static parseAlignmentOverride(Ljava/lang/String;)I
-    .registers 2
+    .locals 1
 
     .line 533
     sget-object v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->ALIGNMENT_OVERRIDE_PATTERN:Ljava/util/regex/Pattern;
@@ -130,7 +130,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -149,17 +149,17 @@
 
     move-result p0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 p0, -0x1
 
-    :goto_1d
+    :goto_0
     return p0
 .end method
 
 .method public static parseFromDialogue(Ljava/lang/String;)Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;
-    .registers 6
+    .locals 5
 
     .line 465
     sget-object v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->BRACES_PATTERN:Ljava/util/regex/Pattern;
@@ -175,14 +175,14 @@
     move v2, v0
 
     .line 466
-    :catch_9
-    :cond_9
-    :goto_9
+    :catch_0
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2
 
     const/4 v3, 0x1
 
@@ -198,35 +198,35 @@
     check-cast v3, Ljava/lang/String;
 
     .line 469
-    :try_start_1a
+    :try_start_0
     invoke-static {v3}, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->parsePosition(Ljava/lang/String;)Landroid/graphics/PointF;
 
     move-result-object v4
-    :try_end_1e
-    .catch Ljava/lang/RuntimeException; {:try_start_1a .. :try_end_1e} :catch_21
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_1
 
     move-object v1, v4
 
     .line 477
-    :catch_21
-    :cond_21
-    :try_start_21
+    :catch_1
+    :cond_1
+    :try_start_1
     invoke-static {v3}, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->parseAlignmentOverride(Ljava/lang/String;)I
 
     move-result v3
-    :try_end_25
-    .catch Ljava/lang/RuntimeException; {:try_start_21 .. :try_end_25} :catch_9
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
 
-    if-eq v3, v0, :cond_9
+    if-eq v3, v0, :cond_0
 
     move v2, v3
 
-    goto :goto_9
+    goto :goto_0
 
     .line 485
-    :cond_29
+    :cond_2
     new-instance p0, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;
 
     invoke-direct {p0, v2, v1}, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;-><init>(ILandroid/graphics/PointF;)V
@@ -235,7 +235,7 @@
 .end method
 
 .method private static parsePosition(Ljava/lang/String;)Landroid/graphics/PointF;
-    .registers 7
+    .locals 6
 
     .line 504
     sget-object v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->POSITION_PATTERN:Ljava/util/regex/Pattern;
@@ -265,9 +265,9 @@
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_1
 
-    if-eqz v3, :cond_34
+    if-eqz v3, :cond_0
 
     .line 513
     new-instance v1, Ljava/lang/StringBuilder;
@@ -295,7 +295,7 @@
     invoke-static {v1, p0}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 519
-    :cond_34
+    :cond_0
     invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
@@ -305,10 +305,10 @@
 
     move-result-object v0
 
-    goto :goto_47
+    goto :goto_0
 
-    :cond_3d
-    if-eqz v3, :cond_69
+    :cond_1
+    if-eqz v3, :cond_2
 
     .line 522
     invoke-virtual {v1, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -321,7 +321,7 @@
     move-result-object v0
 
     .line 527
-    :goto_47
+    :goto_0
     new-instance v1, Landroid/graphics/PointF;
 
     .line 528
@@ -358,14 +358,14 @@
 
     return-object v1
 
-    :cond_69
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static stripStyleOverrides(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 489
     sget-object v0, Landroidx/media3/extractor/text/ssa/SsaStyle$Overrides;->BRACES_PATTERN:Ljava/util/regex/Pattern;

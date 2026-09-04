@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.video.VideoCapture.videoOutput"
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/OptionsBundle;)V
-    .registers 2
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 90
     iget-object v0, p0, Landroidx/camera/video/impl/VideoCaptureConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -107,7 +107,7 @@
 .end method
 
 .method public getInputFormat()I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x22
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public getVideoEncoderInfoFinder()Landroidx/arch/core/util/Function;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -145,7 +145,7 @@
 .end method
 
 .method public getVideoOutput()Landroidx/camera/video/VideoOutput;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"

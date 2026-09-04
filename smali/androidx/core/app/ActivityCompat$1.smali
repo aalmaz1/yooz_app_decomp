@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>([Ljava/lang/String;Landroid/app/Activity;I)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .locals 6
 
     .line 551
     iget-object v0, p0, Landroidx/core/app/ActivityCompat$1;->val$permissionsArray:[Ljava/lang/String;
@@ -79,8 +79,8 @@
 
     const/4 v4, 0x0
 
-    :goto_15
-    if-ge v4, v3, :cond_24
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     .line 558
     iget-object v5, p0, Landroidx/core/app/ActivityCompat$1;->val$permissionsArray:[Ljava/lang/String;
@@ -95,10 +95,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 562
-    :cond_24
+    :cond_0
     iget-object v1, p0, Landroidx/core/app/ActivityCompat$1;->val$activity:Landroid/app/Activity;
 
     check-cast v1, Landroidx/core/app/ActivityCompat$OnRequestPermissionsResultCallback;

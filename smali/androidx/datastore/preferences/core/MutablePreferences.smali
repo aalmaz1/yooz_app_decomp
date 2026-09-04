@@ -90,7 +90,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;Z)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,11 +137,11 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/Map;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_0
 
     .line 127
     new-instance p1, Ljava/util/LinkedHashMap;
@@ -150,15 +150,15 @@
 
     check-cast p1, Ljava/util/Map;
 
-    :cond_b
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_10
+    if-eqz p3, :cond_1
 
     const/4 p2, 0x1
 
     .line 126
-    :cond_10
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/core/MutablePreferences;-><init>(Ljava/util/Map;Z)V
 
     return-void
@@ -167,7 +167,7 @@
 
 # virtual methods
 .method public asMap()Ljava/util/Map;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -194,7 +194,7 @@
 .end method
 
 .method public final checkNotFrozen$datastore_preferences_core()V
-    .registers 3
+    .locals 2
 
     .line 137
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->frozen:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -205,11 +205,11 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Do mutate preferences once returned to DataStore."
@@ -226,7 +226,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 262
     invoke-virtual {p0}, Landroidx/datastore/preferences/core/MutablePreferences;->checkNotFrozen$datastore_preferences_core()V
@@ -240,7 +240,7 @@
 .end method
 
 .method public contains(Landroidx/datastore/preferences/core/Preferences$Key;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -266,12 +266,12 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 268
     instance-of v0, p1, Landroidx/datastore/preferences/core/MutablePreferences;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 269
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->preferencesMap:Ljava/util/Map;
@@ -286,14 +286,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public final freeze$datastore_preferences_core()V
-    .registers 3
+    .locals 2
 
     .line 144
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->frozen:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -306,7 +306,7 @@
 .end method
 
 .method public get(Landroidx/datastore/preferences/core/Preferences$Key;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -332,7 +332,7 @@
 .end method
 
 .method public final getPreferencesMap$datastore_preferences_core()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -351,7 +351,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 275
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->preferencesMap:Ljava/util/Map;
@@ -364,7 +364,7 @@
 .end method
 
 .method public final minusAssign(Landroidx/datastore/preferences/core/Preferences$Key;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -387,7 +387,7 @@
 .end method
 
 .method public final plusAssign(Landroidx/datastore/preferences/core/Preferences$Pair;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -418,7 +418,7 @@
 .end method
 
 .method public final plusAssign(Landroidx/datastore/preferences/core/Preferences;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "prefs"
 
@@ -440,7 +440,7 @@
 .end method
 
 .method public final varargs putAll([Landroidx/datastore/preferences/core/Preferences$Pair;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -461,8 +461,8 @@
 
     const/4 v1, 0x0
 
-    :goto_a
-    if-ge v1, v0, :cond_1c
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget-object v2, p1, v1
 
@@ -479,14 +479,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public final remove(Landroidx/datastore/preferences/core/Preferences$Key;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -515,7 +515,7 @@
 .end method
 
 .method public final set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -537,7 +537,7 @@
 .end method
 
 .method public final setUnchecked$datastore_preferences_core(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -555,18 +555,18 @@
     .line 184
     invoke-virtual {p0}, Landroidx/datastore/preferences/core/MutablePreferences;->checkNotFrozen$datastore_preferences_core()V
 
-    if-nez p2, :cond_e
+    if-nez p2, :cond_0
 
     .line 187
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/core/MutablePreferences;->remove(Landroidx/datastore/preferences/core/Preferences$Key;)Ljava/lang/Object;
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 190
-    :cond_e
+    :cond_0
     instance-of v0, p2, Ljava/util/Set;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->preferencesMap:Ljava/util/Map;
 
@@ -586,20 +586,20 @@
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 191
-    :cond_28
+    :cond_1
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->preferencesMap:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_2d
+    :goto_0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 11
+    .locals 10
 
     .line 282
     iget-object v0, p0, Landroidx/datastore/preferences/core/MutablePreferences;->preferencesMap:Ljava/util/Map;

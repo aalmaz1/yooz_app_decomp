@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 39
     new-instance v0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;
@@ -53,19 +53,19 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/hls/HlsExtractorFactory;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method public getOutputTextFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/hls/HlsExtractorFactory;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method

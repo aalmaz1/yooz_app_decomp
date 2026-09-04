@@ -74,7 +74,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/result/ActivityResult$Companion;
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(ILandroid/content/Intent;)V
-    .registers 3
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "parcel"
 
@@ -128,13 +128,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     sget-object v1, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v1, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -144,14 +144,14 @@
     check-cast p1, Landroid/content/Intent;
 
     .line 42
-    :goto_19
+    :goto_0
     invoke-direct {p0, v0, p1}, Landroidx/activity/result/ActivityResult;-><init>(ILandroid/content/Intent;)V
 
     return-void
 .end method
 
 .method public static final resultCodeToString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -167,7 +167,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -175,7 +175,7 @@
 .end method
 
 .method public final getData()Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/activity/result/ActivityResult;->data:Landroid/content/Intent;
@@ -184,7 +184,7 @@
 .end method
 
 .method public final getResultCode()I
-    .registers 2
+    .locals 1
 
     .line 34
     iget v0, p0, Landroidx/activity/result/ActivityResult;->resultCode:I
@@ -193,7 +193,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 48
     new-instance v0, Ljava/lang/StringBuilder;
@@ -240,7 +240,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "dest"
 
@@ -254,25 +254,25 @@
     .line 53
     iget-object v0, p0, Landroidx/activity/result/ActivityResult;->data:Landroid/content/Intent;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x1
 
-    :goto_11
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 54
     iget-object v0, p0, Landroidx/activity/result/ActivityResult;->data:Landroid/content/Intent;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0, p1, p2}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    :cond_1b
+    :cond_1
     return-void
 .end method

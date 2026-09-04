@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method private setCompletedNormally()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -85,34 +85,34 @@
 
 # virtual methods
 .method public addCancellationListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 4
+    .locals 1
 
     .line 306
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->cancellationFuture:Landroidx/concurrent/futures/ResolvableFuture;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 308
     invoke-interface {v0, p1, p2}, Lcom/google/common/util/concurrent/ListenableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method protected finalize()V
-    .registers 5
+    .locals 4
 
     .line 332
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->future:Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 336
     invoke-virtual {v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->isDone()Z
 
     move-result v1
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_0
 
     .line 337
     new-instance v1, Landroidx/concurrent/futures/CallbackToFutureAdapter$FutureGarbageCollectedException;
@@ -138,27 +138,27 @@
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->setException(Ljava/lang/Throwable;)Z
 
     .line 344
-    :cond_23
+    :cond_0
     iget-boolean v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->attemptedSetting:Z
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     .line 345
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->cancellationFuture:Landroidx/concurrent/futures/ResolvableFuture;
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
     .line 349
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
 
-    :cond_2f
+    :cond_1
     return-void
 .end method
 
 .method fireCancellationListeners()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -177,7 +177,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -192,32 +192,32 @@
     .line 248
     iget-object v1, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->future:Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 249
     invoke-virtual {v1, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->set(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 251
     invoke-direct {p0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setCompletedNormally()V
 
-    :cond_14
+    :cond_1
     return v0
 .end method
 
 .method public setCancelled()Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -227,32 +227,32 @@
     .line 286
     iget-object v1, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->future:Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 287
     invoke-virtual {v1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->cancelWithoutNotifyingCompleter(Z)Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 290
     invoke-direct {p0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setCompletedNormally()V
 
-    :cond_14
+    :cond_1
     return v0
 .end method
 
 .method public setException(Ljava/lang/Throwable;)Z
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -262,26 +262,26 @@
     .line 268
     iget-object v1, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->future:Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 269
     invoke-virtual {v1, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->setException(Ljava/lang/Throwable;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 271
     invoke-direct {p0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setCompletedNormally()V
 
-    :cond_14
+    :cond_1
     return v0
 .end method

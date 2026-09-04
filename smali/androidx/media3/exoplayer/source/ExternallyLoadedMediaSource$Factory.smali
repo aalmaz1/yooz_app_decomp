@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/media3/exoplayer/source/ExternalLoader;)V
-    .registers 4
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;
-    .registers 9
+    .locals 7
 
     .line 89
     new-instance v6, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;
@@ -63,7 +63,7 @@
 .end method
 
 .method public bridge synthetic createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 2
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource$Factory;->createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/ExternallyLoadedMediaSource;
@@ -74,7 +74,7 @@
 .end method
 
 .method public getSupportedTypes()[I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -90,13 +90,13 @@
 .end method
 
 .method public setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method

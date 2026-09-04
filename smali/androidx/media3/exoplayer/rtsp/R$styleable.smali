@@ -105,13 +105,13 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/4 v0, 0x2
 
     new-array v1, v0, [I
 
-    fill-array-data v1, :array_32
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/exoplayer/rtsp/R$styleable;->Capability:[I
 
@@ -119,7 +119,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_3a
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/exoplayer/rtsp/R$styleable;->ColorStateListItem:[I
 
@@ -127,7 +127,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_48
+    fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/media3/exoplayer/rtsp/R$styleable;->FontFamily:[I
 
@@ -135,7 +135,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_5a
+    fill-array-data v1, :array_3
 
     sput-object v1, Landroidx/media3/exoplayer/rtsp/R$styleable;->FontFamilyFont:[I
 
@@ -143,25 +143,25 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_72
+    fill-array-data v1, :array_4
 
     sput-object v1, Landroidx/media3/exoplayer/rtsp/R$styleable;->GradientColor:[I
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8e
+    fill-array-data v0, :array_5
 
     sput-object v0, Landroidx/media3/exoplayer/rtsp/R$styleable;->GradientColorItem:[I
 
     return-void
 
-    :array_32
+    :array_0
     .array-data 4
         0x7f0402b2
         0x7f0402d6
     .end array-data
 
-    :array_3a
+    :array_1
     .array-data 4
         0x10101a5
         0x101031f
@@ -170,7 +170,7 @@
         0x7f0401ce
     .end array-data
 
-    :array_48
+    :array_2
     .array-data 4
         0x7f040177
         0x7f040178
@@ -181,7 +181,7 @@
         0x7f04017d
     .end array-data
 
-    :array_5a
+    :array_3
     .array-data 4
         0x1010532
         0x1010533
@@ -195,7 +195,7 @@
         0x7f04038c
     .end array-data
 
-    :array_72
+    :array_4
     .array-data 4
         0x101019d
         0x101019e
@@ -211,7 +211,7 @@
         0x1010513
     .end array-data
 
-    :array_8e
+    :array_5
     .array-data 4
         0x10101a5
         0x1010514
@@ -219,7 +219,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

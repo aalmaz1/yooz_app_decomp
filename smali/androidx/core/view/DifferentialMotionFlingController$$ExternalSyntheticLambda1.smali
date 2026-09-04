@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final getCurrentVelocity(Landroid/view/VelocityTracker;Landroid/view/MotionEvent;I)F
-    .registers 4
+    .locals 0
 
     invoke-static {p1, p2, p3}, Landroidx/core/view/DifferentialMotionFlingController;->$r8$lambda$kW3lwUZVQIj0GhmsuwxWObzpxIU(Landroid/view/VelocityTracker;Landroid/view/MotionEvent;I)F
 

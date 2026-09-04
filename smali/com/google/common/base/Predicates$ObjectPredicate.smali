@@ -42,7 +42,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/google/common/base/Predicates$ObjectPredicate;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x4
 
@@ -77,7 +77,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 262
     new-instance v0, Lcom/google/common/base/Predicates$ObjectPredicate$1;
@@ -134,7 +134,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -159,7 +159,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/google/common/base/Predicates$1;)V
-    .registers 4
+    .locals 0
 
     .line 260
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Predicates$ObjectPredicate;-><init>(Ljava/lang/String;I)V
@@ -168,7 +168,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/Predicates$ObjectPredicate;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8000
@@ -191,7 +191,7 @@
 .end method
 
 .method public static values()[Lcom/google/common/base/Predicates$ObjectPredicate;
-    .registers 1
+    .locals 1
 
     .line 260
     sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->$VALUES:[Lcom/google/common/base/Predicates$ObjectPredicate;
@@ -208,7 +208,7 @@
 
 # virtual methods
 .method withNarrowedType()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

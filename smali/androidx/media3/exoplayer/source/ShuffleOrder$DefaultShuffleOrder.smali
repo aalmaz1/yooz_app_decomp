@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 47
     new-instance v0, Ljava/util/Random;
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(IJ)V
-    .registers 5
+    .locals 1
 
     .line 58
     new-instance v0, Ljava/util/Random;
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>(ILjava/util/Random;)V
-    .registers 3
+    .locals 0
 
     .line 73
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->createShuffledList(ILjava/util/Random;)[I
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>([IJ)V
-    .registers 5
+    .locals 1
 
     .line 69
     array-length v0, p1
@@ -85,7 +85,7 @@
 .end method
 
 .method private constructor <init>([ILjava/util/Random;)V
-    .registers 5
+    .locals 2
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,10 +106,10 @@
     const/4 p2, 0x0
 
     .line 80
-    :goto_d
+    :goto_0
     array-length v0, p1
 
-    if-ge p2, v0, :cond_19
+    if-ge p2, v0, :cond_0
 
     .line 81
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->indexInShuffled:[I
@@ -120,22 +120,22 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method private static createShuffledList(ILjava/util/Random;)[I
-    .registers 7
+    .locals 5
 
     .line 162
     new-array v0, p0, [I
 
     const/4 v1, 0x0
 
-    :goto_3
-    if-ge v1, p0, :cond_13
+    :goto_0
+    if-ge v1, p0, :cond_0
 
     add-int/lit8 v2, v1, 0x1
 
@@ -154,16 +154,16 @@
 
     move v1, v2
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public cloneAndClear()Landroidx/media3/exoplayer/source/ShuffleOrder;
-    .registers 5
+    .locals 4
 
     .line 158
     new-instance v0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;
@@ -186,7 +186,7 @@
 .end method
 
 .method public cloneAndInsert(II)Landroidx/media3/exoplayer/source/ShuffleOrder;
-    .registers 11
+    .locals 8
 
     .line 114
     new-array v0, p2, [I
@@ -198,8 +198,8 @@
 
     move v3, v2
 
-    :goto_6
-    if-ge v3, p2, :cond_26
+    :goto_0
+    if-ge v3, p2, :cond_0
 
     .line 117
     iget-object v4, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->random:Ljava/util/Random;
@@ -237,10 +237,10 @@
 
     move v3, v5
 
-    goto :goto_6
+    goto :goto_0
 
     .line 122
-    :cond_26
+    :cond_0
     invoke-static {v0}, Ljava/util/Arrays;->sort([I)V
 
     .line 123
@@ -257,21 +257,21 @@
     move v5, v4
 
     .line 126
-    :goto_31
+    :goto_1
     iget-object v6, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->shuffled:[I
 
     array-length v7, v6
 
     add-int/2addr v7, p2
 
-    if-ge v2, v7, :cond_54
+    if-ge v2, v7, :cond_3
 
-    if-ge v4, p2, :cond_45
+    if-ge v4, p2, :cond_1
 
     .line 127
     aget v7, v0, v4
 
-    if-ne v5, v7, :cond_45
+    if-ne v5, v7, :cond_1
 
     add-int/lit8 v6, v4, 0x1
 
@@ -282,9 +282,9 @@
 
     move v4, v6
 
-    goto :goto_51
+    goto :goto_2
 
-    :cond_45
+    :cond_1
     add-int/lit8 v7, v5, 0x1
 
     .line 131
@@ -292,23 +292,23 @@
 
     aput v5, v3, v2
 
-    if-lt v5, p1, :cond_50
+    if-lt v5, p1, :cond_2
 
     add-int/2addr v5, p2
 
     .line 133
     aput v5, v3, v2
 
-    :cond_50
+    :cond_2
     move v5, v7
 
-    :goto_51
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_31
+    goto :goto_1
 
     .line 137
-    :cond_54
+    :cond_3
     new-instance p1, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;
 
     new-instance p2, Ljava/util/Random;
@@ -327,7 +327,7 @@
 .end method
 
 .method public cloneAndRemove(II)Landroidx/media3/exoplayer/source/ShuffleOrder;
-    .registers 9
+    .locals 6
 
     sub-int v0, p2, p1
 
@@ -345,42 +345,42 @@
     move v3, v2
 
     .line 145
-    :goto_a
+    :goto_0
     iget-object v4, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->shuffled:[I
 
     array-length v5, v4
 
-    if-ge v2, v5, :cond_22
+    if-ge v2, v5, :cond_2
 
     .line 146
     aget v4, v4, v2
 
-    if-lt v4, p1, :cond_18
+    if-lt v4, p1, :cond_0
 
-    if-ge v4, p2, :cond_18
+    if-ge v4, p2, :cond_0
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_18
+    :cond_0
     sub-int v5, v2, v3
 
-    if-lt v4, p1, :cond_1d
+    if-lt v4, p1, :cond_1
 
     sub-int/2addr v4, v0
 
     .line 150
-    :cond_1d
+    :cond_1
     aput v4, v1, v5
 
-    :goto_1f
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 153
-    :cond_22
+    :cond_2
     new-instance p1, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;
 
     new-instance p2, Ljava/util/Random;
@@ -399,37 +399,37 @@
 .end method
 
 .method public getFirstIndex()I
-    .registers 3
+    .locals 2
 
     .line 109
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->shuffled:[I
 
     array-length v1, v0
 
-    if-lez v1, :cond_9
+    if-lez v1, :cond_0
 
     const/4 v1, 0x0
 
     aget v0, v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public getLastIndex()I
-    .registers 3
+    .locals 2
 
     .line 104
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->shuffled:[I
 
     array-length v1, v0
 
-    if-lez v1, :cond_b
+    if-lez v1, :cond_0
 
     array-length v1, v0
 
@@ -437,17 +437,17 @@
 
     aget v0, v0, v1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public getLength()I
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->shuffled:[I
@@ -458,7 +458,7 @@
 .end method
 
 .method public getNextIndex(I)I
-    .registers 4
+    .locals 2
 
     .line 92
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->indexInShuffled:[I
@@ -472,21 +472,21 @@
 
     array-length v1, v0
 
-    if-ge p1, v1, :cond_e
+    if-ge p1, v1, :cond_0
 
     aget p1, v0, p1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method public getPreviousIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 98
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->indexInShuffled:[I
@@ -497,13 +497,13 @@
 
     add-int/2addr p1, v0
 
-    if-ltz p1, :cond_c
+    if-ltz p1, :cond_0
 
     .line 99
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;->shuffled:[I
 
     aget v0, v0, p1
 
-    :cond_c
+    :cond_0
     return v0
 .end method

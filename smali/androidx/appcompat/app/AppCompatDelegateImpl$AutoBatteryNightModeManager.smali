@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
 
     .line 3708
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoBatteryNightModeManager;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method createIntentFilterForBroadcastReceiver()Landroid/content/IntentFilter;
-    .registers 3
+    .locals 2
 
     .line 3730
     new-instance v0, Landroid/content/IntentFilter;
@@ -67,7 +67,7 @@
 .end method
 
 .method public getApplyableNightMode()I
-    .registers 2
+    .locals 1
 
     .line 3717
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoBatteryNightModeManager;->mPowerManager:Landroid/os/PowerManager;
@@ -76,21 +76,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x1
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public onChange()V
-    .registers 2
+    .locals 1
 
     .line 3724
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$AutoBatteryNightModeManager;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;

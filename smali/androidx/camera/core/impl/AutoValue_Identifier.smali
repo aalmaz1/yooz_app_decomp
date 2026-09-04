@@ -9,12 +9,12 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 13
     invoke-direct {p0}, Landroidx/camera/core/impl/Identifier;-><init>()V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 17
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_Identifier;->value:Ljava/lang/Object;
@@ -22,7 +22,7 @@
     return-void
 
     .line 15
-    :cond_8
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null value"
@@ -35,19 +35,19 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 38
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/camera/core/impl/Identifier;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 39
     check-cast p1, Landroidx/camera/core/impl/Identifier;
@@ -65,14 +65,14 @@
 
     return p1
 
-    :cond_15
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 23
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_Identifier;->value:Ljava/lang/Object;
@@ -81,7 +81,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 49
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_Identifier;->value:Ljava/lang/Object;
@@ -98,7 +98,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 28
     new-instance v0, Ljava/lang/StringBuilder;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/CaptureSession;)V
-    .registers 2
+    .locals 0
 
     .line 825
     iput-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$3;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 5
+    .locals 1
 
     .line 832
     iget-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$3;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -43,12 +43,12 @@
     monitor-enter p1
 
     .line 833
-    :try_start_5
+    :try_start_0
     iget-object p2, p0, Landroidx/camera/camera2/internal/CaptureSession$3;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     iget-object p2, p2, Landroidx/camera/camera2/internal/CaptureSession;->mSessionConfig:Landroidx/camera/core/impl/SessionConfig;
 
-    if-nez p2, :cond_d
+    if-nez p2, :cond_0
 
     .line 834
     monitor-exit p1
@@ -56,7 +56,7 @@
     return-void
 
     .line 836
-    :cond_d
+    :cond_0
     iget-object p2, p0, Landroidx/camera/camera2/internal/CaptureSession$3;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     iget-object p2, p2, Landroidx/camera/camera2/internal/CaptureSession;->mSessionConfig:Landroidx/camera/core/impl/SessionConfig;
@@ -95,12 +95,12 @@
 
     return-void
 
-    :catchall_2d
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_2f
-    .catchall {:try_start_5 .. :try_end_2f} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method

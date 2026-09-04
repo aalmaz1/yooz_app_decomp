@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method static synthetic access$800(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 44
     invoke-static {p0, p1}, Lcom/google/common/base/Predicates;->toStringHelper(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static alwaysFalse()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -68,7 +68,7 @@
 .end method
 
 .method public static alwaysTrue()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -90,7 +90,7 @@
 .end method
 
 .method public static and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -143,7 +143,7 @@
 .end method
 
 .method public static and(Ljava/lang/Iterable;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -182,7 +182,7 @@
 .end method
 
 .method public static varargs and([Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -222,7 +222,7 @@
 .end method
 
 .method private static asList(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Ljava/util/List;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -270,7 +270,7 @@
 .end method
 
 .method public static compose(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;)Lcom/google/common/base/Predicate;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -309,7 +309,7 @@
 .end method
 
 .method public static contains(Ljava/util/regex/Pattern;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -343,7 +343,7 @@
 .end method
 
 .method public static containsPattern(Ljava/lang/String;)Lcom/google/common/base/Predicate;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -373,7 +373,7 @@
 .end method
 
 .method static defensiveCopy(Ljava/lang/Iterable;)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -405,12 +405,12 @@
 
     move-result-object p0
 
-    :goto_9
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -423,14 +423,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return-object v0
 .end method
 
 .method private static varargs defensiveCopy([Ljava/lang/Object;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -463,7 +463,7 @@
 .end method
 
 .method public static equalTo(Ljava/lang/Object;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -487,17 +487,17 @@
         }
     .end annotation
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
     .line 162
     invoke-static {}, Lcom/google/common/base/Predicates;->isNull()Lcom/google/common/base/Predicate;
 
     move-result-object p0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 163
-    :cond_7
+    :cond_0
     new-instance v0, Lcom/google/common/base/Predicates$IsEqualToPredicate;
 
     const/4 v1, 0x0
@@ -508,12 +508,12 @@
 
     move-result-object p0
 
-    :goto_11
+    :goto_0
     return-object p0
 .end method
 
 .method public static in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -546,7 +546,7 @@
 .end method
 
 .method public static instanceOf(Ljava/lang/Class;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -579,7 +579,7 @@
 .end method
 
 .method public static isNull()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -601,7 +601,7 @@
 .end method
 
 .method public static not(Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -632,7 +632,7 @@
 .end method
 
 .method public static notNull()Lcom/google/common/base/Predicate;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -654,7 +654,7 @@
 .end method
 
 .method public static or(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -707,7 +707,7 @@
 .end method
 
 .method public static or(Ljava/lang/Iterable;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -746,7 +746,7 @@
 .end method
 
 .method public static varargs or([Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -786,7 +786,7 @@
 .end method
 
 .method public static subtypeOf(Ljava/lang/Class;)Lcom/google/common/base/Predicate;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -818,7 +818,7 @@
 .end method
 
 .method private static toStringHelper(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -864,18 +864,18 @@
 
     const/4 v0, 0x1
 
-    :goto_16
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_0
 
     const/16 v0, 0x2c
 
@@ -883,14 +883,14 @@
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 445
-    :cond_27
+    :cond_0
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     const/16 p1, 0x29
 
     .line 448

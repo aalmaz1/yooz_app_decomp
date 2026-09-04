@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-direct {p0, p1}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;-><init>(Ljava/lang/String;)V
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroidx/dynamicanimation/animation/DynamicAnimation$1;)V
-    .registers 3
+    .locals 0
 
     .line 48
     invoke-direct {p0, p1}, Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;-><init>(Ljava/lang/String;)V

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/view/menu/CascadingMenuPopup;)V
-    .registers 2
+    .locals 0
 
     .line 120
     iput-object p1, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$2;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -36,20 +36,20 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 127
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$2;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
 
     iget-object v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mTreeObserver:Landroid/view/ViewTreeObserver;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 128
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$2;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 129
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$2;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -72,7 +72,7 @@
     iput-object v1, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mTreeObserver:Landroid/view/ViewTreeObserver;
 
     .line 131
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$2;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
 
     iget-object v0, v0, Landroidx/appcompat/view/menu/CascadingMenuPopup;->mTreeObserver:Landroid/view/ViewTreeObserver;
@@ -84,7 +84,7 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
     .line 133
-    :cond_23
+    :cond_1
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     return-void

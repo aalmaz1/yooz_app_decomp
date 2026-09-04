@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Landroid/content/Context;Landroidx/core/provider/FontRequest;I)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public call()Landroidx/core/provider/FontRequestWorker$TypefaceResult;
-    .registers 5
+    .locals 4
 
     .line 198
     :try_start_0
@@ -77,13 +77,13 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/core/provider/FontRequestWorker;->getFontSync(Ljava/lang/String;Landroid/content/Context;Landroidx/core/provider/FontRequest;I)Landroidx/core/provider/FontRequestWorker$TypefaceResult;
 
     move-result-object v0
-    :try_end_c
-    .catchall {:try_start_0 .. :try_end_c} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
     .line 200
-    :catchall_d
+    :catchall_0
     new-instance v0, Landroidx/core/provider/FontRequestWorker$TypefaceResult;
 
     const/4 v1, -0x3
@@ -94,7 +94,7 @@
 .end method
 
 .method public bridge synthetic call()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;

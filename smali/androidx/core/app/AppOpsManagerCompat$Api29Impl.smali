@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,16 +25,16 @@
 .end method
 
 .method static checkOpNoThrow(Landroid/app/AppOpsManager;Ljava/lang/String;ILjava/lang/String;)I
-    .registers 4
+    .locals 0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
     .line 238
-    :cond_4
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/AppOpsManager;->checkOpNoThrow(Ljava/lang/String;ILjava/lang/String;)I
 
     move-result p0
@@ -43,7 +43,7 @@
 .end method
 
 .method static getOpPackageName(Landroid/content/Context;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 246
     invoke-virtual {p0}, Landroid/content/Context;->getOpPackageName()Ljava/lang/String;
@@ -54,7 +54,7 @@
 .end method
 
 .method static getSystemService(Landroid/content/Context;)Landroid/app/AppOpsManager;
-    .registers 2
+    .locals 1
 
     .line 225
     const-class v0, Landroid/app/AppOpsManager;

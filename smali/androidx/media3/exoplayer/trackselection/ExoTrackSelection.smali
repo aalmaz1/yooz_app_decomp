@@ -38,7 +38,7 @@
 .end method
 
 .method public getLatestBitrateEstimate()J
-    .registers 3
+    .locals 2
 
     const-wide/32 v0, -0x7fffffff
 
@@ -64,13 +64,13 @@
 .end method
 
 .method public onDiscontinuity()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onPlayWhenReadyChanged(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
@@ -79,13 +79,13 @@
 .end method
 
 .method public onRebuffer()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public shouldCancelChunkLoad(JLandroidx/media3/exoplayer/source/chunk/Chunk;Ljava/util/List;)Z
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",

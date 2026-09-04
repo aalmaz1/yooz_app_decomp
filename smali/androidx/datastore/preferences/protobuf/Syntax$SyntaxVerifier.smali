@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 99
     new-instance v0, Landroidx/datastore/preferences/protobuf/Syntax$SyntaxVerifier;
@@ -36,7 +36,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,22 +47,22 @@
 
 # virtual methods
 .method public isInRange(I)Z
-    .registers 2
+    .locals 0
 
     .line 102
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/Syntax;->forNumber(I)Landroidx/datastore/preferences/protobuf/Syntax;
 
     move-result-object p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     return p1
 .end method

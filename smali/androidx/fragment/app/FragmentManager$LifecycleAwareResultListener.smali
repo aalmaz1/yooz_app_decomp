@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/Lifecycle;Landroidx/fragment/app/FragmentResultListener;Landroidx/lifecycle/LifecycleEventObserver;)V
-    .registers 4
+    .locals 0
 
     .line 244
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public isAtLeast(Landroidx/lifecycle/Lifecycle$State;)Z
-    .registers 3
+    .locals 1
 
     .line 251
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$LifecycleAwareResultListener;->mLifecycle:Landroidx/lifecycle/Lifecycle;
@@ -64,7 +64,7 @@
 .end method
 
 .method public onFragmentResult(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 256
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$LifecycleAwareResultListener;->mListener:Landroidx/fragment/app/FragmentResultListener;
@@ -75,7 +75,7 @@
 .end method
 
 .method public removeObserver()V
-    .registers 3
+    .locals 2
 
     .line 260
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$LifecycleAwareResultListener;->mLifecycle:Landroidx/lifecycle/Lifecycle;

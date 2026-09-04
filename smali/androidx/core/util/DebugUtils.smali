@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,19 +14,19 @@
 .end method
 
 .method public static buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
-    .registers 4
+    .locals 2
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const-string p0, "null"
 
     .line 32
     invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_41
+    goto :goto_0
 
     .line 34
-    :cond_8
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -35,17 +35,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 35
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-gtz v1, :cond_2e
+    if-gtz v1, :cond_2
 
     .line 36
-    :cond_18
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -61,7 +61,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_2e
+    if-lez v1, :cond_2
 
     add-int/lit8 v1, v1, 0x1
 
@@ -71,7 +71,7 @@
     move-result-object v0
 
     .line 42
-    :cond_2e
+    :cond_2
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v0, 0x7b
@@ -90,6 +90,6 @@
 
     invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_41
+    :goto_0
     return-void
 .end method

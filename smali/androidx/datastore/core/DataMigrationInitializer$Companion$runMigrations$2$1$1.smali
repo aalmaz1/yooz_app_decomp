@@ -75,7 +75,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/core/DataMigration;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public final create(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,7 +124,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     check-cast p1, Lkotlin/coroutines/Continuation;
 
@@ -136,7 +136,7 @@
 .end method
 
 .method public final invoke(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -164,7 +164,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -175,15 +175,15 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -192,7 +192,7 @@
 
     throw p1
 
-    :cond_17
+    :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/datastore/core/DataMigrationInitializer$Companion$runMigrations$2$1$1;->$migration:Landroidx/datastore/core/DataMigration;
@@ -207,12 +207,12 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_28
+    if-ne p1, v0, :cond_2
 
     return-object v0
 
-    :cond_28
-    :goto_28
+    :cond_2
+    :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

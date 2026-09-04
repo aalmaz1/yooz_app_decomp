@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/State;Landroidx/constraintlayout/solver/state/State$Helper;)V
-    .registers 4
+    .locals 1
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,15 +47,15 @@
 
 # virtual methods
 .method public varargs add([Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/HelperReference;
-    .registers 6
+    .locals 4
 
     .line 37
     array-length v0, p1
 
     const/4 v1, 0x0
 
-    :goto_2
-    if-ge v1, v0, :cond_e
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget-object v2, p1, v1
 
@@ -66,20 +66,20 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-object p0
 .end method
 
 .method public apply()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public getHelperWidget()Landroidx/constraintlayout/solver/widgets/HelperWidget;
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/HelperReference;->mHelperWidget:Landroidx/constraintlayout/solver/widgets/HelperWidget;
@@ -88,7 +88,7 @@
 .end method
 
 .method public getType()Landroidx/constraintlayout/solver/state/State$Helper;
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/HelperReference;->mType:Landroidx/constraintlayout/solver/state/State$Helper;
@@ -97,7 +97,7 @@
 .end method
 
 .method public setHelperWidget(Landroidx/constraintlayout/solver/widgets/HelperWidget;)V
-    .registers 2
+    .locals 0
 
     .line 44
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/HelperReference;->mHelperWidget:Landroidx/constraintlayout/solver/widgets/HelperWidget;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/ZslControlImpl;)V
-    .registers 2
+    .locals 0
 
     .line 198
     iput-object p1, p0, Landroidx/camera/camera2/internal/ZslControlImpl$1;->this$0:Landroidx/camera/camera2/internal/ZslControlImpl;
@@ -33,20 +33,20 @@
 
 # virtual methods
 .method public onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 202
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraCaptureSession;->getInputSurface()Landroid/view/Surface;
 
     move-result-object p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 204
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl$1;->this$0:Landroidx/camera/camera2/internal/ZslControlImpl;
@@ -60,6 +60,6 @@
 
     iput-object p1, v0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageWriter:Landroid/media/ImageWriter;
 
-    :cond_f
+    :cond_0
     return-void
 .end method

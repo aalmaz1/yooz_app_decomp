@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/CharMatcher;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -72,7 +72,7 @@
 .end method
 
 .method public countIn(Ljava/lang/CharSequence;)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -99,7 +99,7 @@
 .end method
 
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -122,7 +122,7 @@
 .end method
 
 .method public matchesAllOf(Ljava/lang/CharSequence;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -143,7 +143,7 @@
 .end method
 
 .method public matchesNoneOf(Ljava/lang/CharSequence;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -164,7 +164,7 @@
 .end method
 
 .method public negate()Lcom/google/common/base/CharMatcher;
-    .registers 2
+    .locals 1
 
     .line 1540
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$Negated;->original:Lcom/google/common/base/CharMatcher;
@@ -173,7 +173,7 @@
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -207,7 +207,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1545
     new-instance v0, Ljava/lang/StringBuilder;

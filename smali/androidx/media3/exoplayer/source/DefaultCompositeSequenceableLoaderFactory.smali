@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public create(Ljava/util/List;Ljava/util/List;)Landroidx/media3/exoplayer/source/SequenceableLoader;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +44,7 @@
 .end method
 
 .method public varargs createCompositeSequenceableLoader([Landroidx/media3/exoplayer/source/SequenceableLoader;)Landroidx/media3/exoplayer/source/SequenceableLoader;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -57,7 +57,7 @@
 .end method
 
 .method public empty()Landroidx/media3/exoplayer/source/SequenceableLoader;
-    .registers 4
+    .locals 3
 
     .line 30
     new-instance v0, Landroidx/media3/exoplayer/source/CompositeSequenceableLoader;

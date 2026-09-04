@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 75
     new-instance v0, Landroidx/media3/extractor/metadata/scte35/PrivateCommand$1;
@@ -38,7 +38,7 @@
 .end method
 
 .method private constructor <init>(J[BJ)V
-    .registers 6
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/media3/extractor/metadata/scte35/SpliceCommand;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .registers 4
+    .locals 2
 
     .line 43
     invoke-direct {p0}, Landroidx/media3/extractor/metadata/scte35/SpliceCommand;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroidx/media3/extractor/metadata/scte35/PrivateCommand$1;)V
-    .registers 3
+    .locals 0
 
     .line 26
     invoke-direct {p0, p1}, Landroidx/media3/extractor/metadata/scte35/PrivateCommand;-><init>(Landroid/os/Parcel;)V
@@ -101,7 +101,7 @@
 .end method
 
 .method static parseFromSection(Landroidx/media3/common/util/ParsableByteArray;IJ)Landroidx/media3/extractor/metadata/scte35/PrivateCommand;
-    .registers 10
+    .locals 6
 
     .line 51
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
@@ -133,7 +133,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 59
     new-instance v0, Ljava/lang/StringBuilder;
@@ -174,7 +174,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 70
     iget-wide v0, p0, Landroidx/media3/extractor/metadata/scte35/PrivateCommand;->ptsAdjustment:J

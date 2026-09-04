@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/text/Cue;JJ)V
-    .registers 6
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/util/SparseArray;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public setPoint(IFFIF)V
-    .registers 6
+    .locals 0
 
     .line 350
     new-instance p1, Ljava/lang/RuntimeException;
@@ -99,7 +99,7 @@
 .end method
 
 .method public setPoint(ILandroidx/constraintlayout/widget/ConstraintAttribute;FIF)V
-    .registers 8
+    .locals 2
 
     .line 354
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
@@ -136,7 +136,7 @@
 .end method
 
 .method public setProperty(Landroid/view/View;FJLandroidx/constraintlayout/motion/widget/KeyCache;)Z
-    .registers 14
+    .locals 8
 
     .line 361
     iget-object p5, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mCurveFit:Landroidx/constraintlayout/motion/utils/CurveFit;
@@ -213,12 +213,12 @@
     move v0, p4
 
     .line 369
-    :goto_37
+    :goto_0
     iget-object v2, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mCache:[F
 
     array-length v2, v2
 
-    if-ge v0, v2, :cond_5c
+    if-ge v0, v2, :cond_1
 
     .line 370
     iget-boolean v2, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mContinue:Z
@@ -233,16 +233,16 @@
 
     cmpl-double v3, v3, v5
 
-    if-eqz v3, :cond_4b
+    if-eqz v3, :cond_0
 
     move v3, v1
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_4b
+    :cond_0
     move v3, p4
 
-    :goto_4c
+    :goto_1
     or-int/2addr v2, v3
 
     iput-boolean v2, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mContinue:Z
@@ -262,10 +262,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_37
+    goto :goto_0
 
     .line 373
-    :cond_5c
+    :cond_1
     iget-object p2, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
 
     invoke-virtual {p2, p4}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -282,20 +282,20 @@
 
     cmpl-float p1, p5, p1
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_2
 
     .line 375
     iput-boolean v1, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mContinue:Z
 
     .line 377
-    :cond_70
+    :cond_2
     iget-boolean p1, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mContinue:Z
 
     return p1
 .end method
 
 .method public setup(I)V
-    .registers 16
+    .locals 14
 
     .line 328
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
@@ -355,8 +355,8 @@
 
     move v5, v2
 
-    :goto_30
-    if-ge v5, v0, :cond_77
+    :goto_0
+    if-ge v5, v0, :cond_1
 
     .line 335
     iget-object v7, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
@@ -400,12 +400,12 @@
     move v7, v2
 
     .line 340
-    :goto_57
+    :goto_1
     iget-object v8, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$CustomSet;->mTempValues:[F
 
     array-length v10, v8
 
-    if-ge v7, v10, :cond_66
+    if-ge v7, v10, :cond_0
 
     .line 341
     aget-object v10, v4, v5
@@ -418,10 +418,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_57
+    goto :goto_1
 
     .line 343
-    :cond_66
+    :cond_0
     aget-object v7, v4, v5
 
     aget v8, v9, v2
@@ -441,10 +441,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 346
-    :cond_77
+    :cond_1
     invoke-static {p1, v3, v4}, Landroidx/constraintlayout/motion/utils/CurveFit;->get(I[D[[D)Landroidx/constraintlayout/motion/utils/CurveFit;
 
     move-result-object p1

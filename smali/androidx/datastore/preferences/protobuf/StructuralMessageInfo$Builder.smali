@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,17 +82,17 @@
 
 # virtual methods
 .method public build()Landroidx/datastore/preferences/protobuf/StructuralMessageInfo;
-    .registers 8
+    .locals 7
 
     .line 151
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->wasBuilt:Z
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     .line 154
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->syntax:Landroidx/datastore/preferences/protobuf/ProtoSyntax;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -137,7 +137,7 @@
     return-object v0
 
     .line 155
-    :cond_2b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Must specify a proto syntax"
@@ -147,7 +147,7 @@
     throw v0
 
     .line 152
-    :cond_33
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Builder can only build once"
@@ -158,7 +158,7 @@
 .end method
 
 .method public withCheckInitialized([I)V
-    .registers 2
+    .locals 0
 
     .line 140
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->checkInitialized:[I
@@ -167,7 +167,7 @@
 .end method
 
 .method public withDefaultInstance(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 128
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->defaultInstance:Ljava/lang/Object;
@@ -176,12 +176,12 @@
 .end method
 
 .method public withField(Landroidx/datastore/preferences/protobuf/FieldInfo;)V
-    .registers 3
+    .locals 1
 
     .line 144
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->wasBuilt:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 147
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->fields:Ljava/util/List;
@@ -191,7 +191,7 @@
     return-void
 
     .line 145
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Builder can only build once"
@@ -202,7 +202,7 @@
 .end method
 
 .method public withMessageSetWireFormat(Z)V
-    .registers 2
+    .locals 0
 
     .line 136
     iput-boolean p1, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;->messageSetWireFormat:Z
@@ -211,7 +211,7 @@
 .end method
 
 .method public withSyntax(Landroidx/datastore/preferences/protobuf/ProtoSyntax;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "syntax"
 

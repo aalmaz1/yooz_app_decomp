@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static getSizePrefix(Ljava/nio/ByteBuffer;)I
-    .registers 2
+    .locals 1
 
     .line 39
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
@@ -29,7 +29,7 @@
 .end method
 
 .method public static removeSizePrefix(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;

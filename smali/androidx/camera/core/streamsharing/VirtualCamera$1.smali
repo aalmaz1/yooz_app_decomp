@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/streamsharing/VirtualCamera;)V
-    .registers 2
+    .locals 0
 
     .line 402
     iput-object p1, p0, Landroidx/camera/core/streamsharing/VirtualCamera$1;->this$0:Landroidx/camera/core/streamsharing/VirtualCamera;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 4
+    .locals 2
 
     .line 405
     invoke-super {p0, p1}, Landroidx/camera/core/impl/CameraCaptureCallback;->onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
@@ -47,12 +47,12 @@
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -68,8 +68,8 @@
     .line 407
     invoke-static {p1, v1}, Landroidx/camera/core/streamsharing/VirtualCamera;->sendCameraCaptureResultToChild(Landroidx/camera/core/impl/CameraCaptureResult;Landroidx/camera/core/impl/SessionConfig;)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 .end method

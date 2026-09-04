@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;)V
-    .registers 9
+    .locals 6
 
     const-string v1, "Cleartext HTTP traffic not permitted. See https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted"
 

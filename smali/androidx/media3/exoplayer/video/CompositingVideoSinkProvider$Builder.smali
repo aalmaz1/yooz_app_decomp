@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;)V
-    .registers 3
+    .locals 0
 
     .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;)Landroid/content/Context;
-    .registers 1
+    .locals 0
 
     .line 118
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->context:Landroid/content/Context;
@@ -63,7 +63,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;)Landroidx/media3/common/util/Clock;
-    .registers 1
+    .locals 0
 
     .line 118
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->clock:Landroidx/media3/common/util/Clock;
@@ -72,7 +72,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;)Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
-    .registers 1
+    .locals 0
 
     .line 118
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->videoFrameReleaseControl:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
@@ -81,7 +81,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;)Landroidx/media3/common/PreviewingVideoGraph$Factory;
-    .registers 1
+    .locals 0
 
     .line 118
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->previewingVideoGraphFactory:Landroidx/media3/common/PreviewingVideoGraph$Factory;
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
-    .registers 5
+    .locals 4
 
     .line 188
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->built:Z
@@ -108,12 +108,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 191
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->videoFrameProcessorFactory:Landroidx/media3/common/VideoFrameProcessor$Factory;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 192
     new-instance v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ReflectiveDefaultVideoFrameProcessorFactory;
@@ -123,7 +123,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->videoFrameProcessorFactory:Landroidx/media3/common/VideoFrameProcessor$Factory;
 
     .line 194
-    :cond_17
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ReflectivePreviewingSingleInputVideoGraphFactory;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->videoFrameProcessorFactory:Landroidx/media3/common/VideoFrameProcessor$Factory;
@@ -133,7 +133,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->previewingVideoGraphFactory:Landroidx/media3/common/PreviewingVideoGraph$Factory;
 
     .line 197
-    :cond_20
+    :cond_1
     new-instance v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
 
     invoke-direct {v0, p0, v2}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;-><init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$1;)V
@@ -145,7 +145,7 @@
 .end method
 
 .method public setClock(Landroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 177
     iput-object p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->clock:Landroidx/media3/common/util/Clock;
@@ -154,7 +154,7 @@
 .end method
 
 .method public setPreviewingVideoGraphFactory(Landroidx/media3/common/PreviewingVideoGraph$Factory;)Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 163
     iput-object p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->previewingVideoGraphFactory:Landroidx/media3/common/PreviewingVideoGraph$Factory;
@@ -163,7 +163,7 @@
 .end method
 
 .method public setVideoFrameProcessorFactory(Landroidx/media3/common/VideoFrameProcessor$Factory;)Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 147
     iput-object p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;->videoFrameProcessorFactory:Landroidx/media3/common/VideoFrameProcessor$Factory;

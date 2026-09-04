@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ZZ)V
-    .registers 4
+    .locals 0
 
     .line 1118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,18 +44,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 1139
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -64,12 +64,12 @@
 
     const-class v3, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;
 
-    if-eq v2, v3, :cond_10
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 1142
-    :cond_10
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;
 
     .line 1143
@@ -81,35 +81,35 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
 
-    if-ne v2, v3, :cond_29
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
 
-    if-ne v2, p1, :cond_29
+    if-ne v2, p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 1128
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;->mimeType:Ljava/lang/String;
@@ -131,16 +131,16 @@
 
     const/16 v4, 0x4d5
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v2, v4
 
-    :goto_15
+    :goto_0
     add-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -148,14 +148,14 @@
     .line 1130
     iget-boolean v1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     move v3, v4
 
-    :goto_1d
+    :goto_1
     add-int/2addr v0, v3
 
     return v0

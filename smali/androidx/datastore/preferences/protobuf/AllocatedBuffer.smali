@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static wrap(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 2
+    .locals 1
 
     const-string v0, "buffer"
 
@@ -30,7 +30,7 @@
 .end method
 
 .method public static wrap([B)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -45,18 +45,18 @@
 .end method
 
 .method public static wrap([BII)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 6
+    .locals 3
 
-    if-ltz p1, :cond_e
+    if-ltz p1, :cond_0
 
-    if-ltz p2, :cond_e
+    if-ltz p2, :cond_0
 
     add-int v0, p1, p2
 
     .line 141
     array-length v1, p0
 
-    if-gt v0, v1, :cond_e
+    if-gt v0, v1, :cond_0
 
     .line 146
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/AllocatedBuffer;->wrapNoCheck([BII)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
@@ -66,7 +66,7 @@
     return-object p0
 
     .line 142
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     const/4 v1, 0x3
@@ -112,7 +112,7 @@
 .end method
 
 .method private static wrapNoCheck([BII)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 4
+    .locals 1
 
     .line 208
     new-instance v0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;

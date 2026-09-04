@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat;)V
-    .registers 2
+    .locals 0
 
     .line 195
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -38,14 +38,14 @@
 
 # virtual methods
 .method public getBrowserRootHints()Landroid/os/Bundle;
-    .registers 3
+    .locals 2
 
     .line 277
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 281
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -54,13 +54,13 @@
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->rootHints:Landroid/os/Bundle;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     iget-object v1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -71,11 +71,11 @@
 
     invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    :goto_1b
+    :goto_0
     return-object v0
 
     .line 278
-    :cond_1c
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This should be called inside of onLoadChildren, onLoadItem, onSearch, or onCustomAction methods"
@@ -86,14 +86,14 @@
 .end method
 
 .method public getCurrentBrowserInfo()Landroidx/media/MediaSessionManager$RemoteUserInfo;
-    .registers 3
+    .locals 2
 
     .line 286
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 290
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -105,7 +105,7 @@
     return-object v0
 
     .line 287
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This should be called inside of onLoadChildren, onLoadItem, onSearch, or onCustomAction methods"
@@ -116,7 +116,7 @@
 .end method
 
 .method public notifyChildrenChanged(Landroidx/media/MediaSessionManager$RemoteUserInfo;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 2
 
     .line 247
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -133,7 +133,7 @@
 .end method
 
 .method public notifyChildrenChanged(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 2
 
     .line 233
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -150,7 +150,7 @@
 .end method
 
 .method notifyChildrenChangedOnHandler(Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 7
+    .locals 3
 
     .line 264
     iget-object v0, p1, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->subscriptions:Ljava/util/HashMap;
@@ -161,20 +161,20 @@
 
     check-cast v0, Ljava/util/List;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     .line 266
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -191,7 +191,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     .line 268
     iget-object v2, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -202,14 +202,14 @@
 
     invoke-virtual {v2, p2, p1, v1, p3}, Landroidx/media/MediaBrowserServiceCompat;->performLoadChildren(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/os/Bundle;Landroid/os/Bundle;)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-void
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 3
+    .locals 1
 
     const-string v0, "android.media.browse.MediaBrowserService"
 
@@ -222,7 +222,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 206
     iget-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->mMessenger:Landroid/os/Messenger;
@@ -233,14 +233,14 @@
 
     return-object p1
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public onCreate()V
-    .registers 3
+    .locals 2
 
     .line 200
     new-instance v0, Landroid/os/Messenger;
@@ -257,7 +257,7 @@
 .end method
 
 .method public setSessionToken(Landroid/support/v4/media/session/MediaSessionCompat$Token;)V
-    .registers 4
+    .locals 2
 
     .line 213
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;

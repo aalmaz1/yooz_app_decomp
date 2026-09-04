@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -16,13 +16,13 @@
 
 # virtual methods
 .method public postLayoutChange(II)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public preLayoutChange(II)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

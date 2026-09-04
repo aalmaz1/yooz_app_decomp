@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static of(ILandroidx/camera/core/SurfaceOutput;)Landroidx/camera/core/SurfaceOutput$Event;
-    .registers 3
+    .locals 1
 
     .line 234
     new-instance v0, Landroidx/camera/core/AutoValue_SurfaceOutput_Event;

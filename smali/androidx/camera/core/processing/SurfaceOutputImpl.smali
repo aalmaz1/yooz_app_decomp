@@ -76,7 +76,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/Surface;IILandroid/util/Size;Landroid/util/Size;Landroid/graphics/Rect;IZLandroidx/camera/core/impl/CameraInternal;Landroid/graphics/Matrix;)V
-    .registers 13
+    .locals 2
 
     .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -160,7 +160,7 @@
 .end method
 
 .method private calculateAdditionalTransform()V
-    .registers 15
+    .locals 14
 
     .line 298
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mAdditionalTransform:[F
@@ -192,7 +192,7 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 314
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mAdditionalTransform:[F
@@ -207,7 +207,7 @@
     invoke-static {v0, v1, v4, v3, v3}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
     .line 320
-    :cond_28
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mInputSize:Landroid/util/Size;
 
     iget v4, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mRotationDegrees:I
@@ -342,7 +342,7 @@
 .end method
 
 .method private calculateInvertedTextureTransform()V
-    .registers 5
+    .locals 4
 
     .line 353
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mInvertedTextureTransform:[F
@@ -361,7 +361,7 @@
     .line 360
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_0
 
     .line 361
     invoke-interface {v0}, Landroidx/camera/core/impl/CameraInternal;->getHasTransform()Z
@@ -398,7 +398,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_0
 
     .line 371
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mInvertedTextureTransform:[F
@@ -417,7 +417,7 @@
     invoke-static {v0, v1, v3, v2, v2}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
     .line 377
-    :cond_41
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mInvertedTextureTransform:[F
 
     invoke-static {v0, v1, v0, v1}, Landroid/opengl/Matrix;->invertM([FI[FI)Z
@@ -428,7 +428,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 235
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mLock:Ljava/lang/Object;
@@ -436,10 +436,10 @@
     monitor-enter v0
 
     .line 236
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mIsClosed:Z
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -447,10 +447,10 @@
     iput-boolean v1, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mIsClosed:Z
 
     .line 239
-    :cond_a
+    :cond_0
     monitor-exit v0
-    :try_end_b
-    .catchall {:try_start_3 .. :try_end_b} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 240
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mCloseFutureCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -461,20 +461,20 @@
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception v1
 
     .line 239
-    :try_start_13
+    :try_start_1
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method public getCamera()Landroidx/camera/core/impl/CameraInternal;
-    .registers 2
+    .locals 1
 
     .line 224
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -483,7 +483,7 @@
 .end method
 
 .method public getCloseFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -500,7 +500,7 @@
 .end method
 
 .method public getFormat()I
-    .registers 2
+    .locals 1
 
     .line 190
     iget v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mFormat:I
@@ -509,7 +509,7 @@
 .end method
 
 .method public getInputCropRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mInputCropRect:Landroid/graphics/Rect;
@@ -518,7 +518,7 @@
 .end method
 
 .method public getInputSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mInputSize:Landroid/util/Size;
@@ -527,7 +527,7 @@
 .end method
 
 .method public getMirroring()Z
-    .registers 2
+    .locals 1
 
     .line 219
     iget-boolean v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mMirroring:Z
@@ -536,7 +536,7 @@
 .end method
 
 .method public getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 214
     iget v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mRotationDegrees:I
@@ -545,7 +545,7 @@
 .end method
 
 .method public getSensorToBufferTransform()Landroid/graphics/Matrix;
-    .registers 3
+    .locals 2
 
     .line 276
     new-instance v0, Landroid/graphics/Matrix;
@@ -558,7 +558,7 @@
 .end method
 
 .method public getSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 199
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mSize:Landroid/util/Size;
@@ -567,7 +567,7 @@
 .end method
 
 .method public getSurface(Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)Landroid/view/Surface;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -585,7 +585,7 @@
     monitor-enter v0
 
     .line 139
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mExecutor:Ljava/util/concurrent/Executor;
 
     .line 140
@@ -596,34 +596,34 @@
 
     .line 142
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 144
     invoke-virtual {p0}, Landroidx/camera/core/processing/SurfaceOutputImpl;->requestClose()V
 
     .line 146
-    :cond_f
+    :cond_0
     iget-object p1, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mSurface:Landroid/view/Surface;
 
     return-object p1
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 142
-    :try_start_13
+    :try_start_1
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public getTargets()I
-    .registers 2
+    .locals 1
 
     .line 184
     iget v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mTargets:I
@@ -632,7 +632,7 @@
 .end method
 
 .method public isClosed()Z
-    .registers 3
+    .locals 2
 
     .line 248
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mLock:Ljava/lang/Object;
@@ -640,26 +640,26 @@
     monitor-enter v0
 
     .line 249
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mIsClosed:Z
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 250
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-core-processing-SurfaceOutputImpl(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -675,7 +675,7 @@
 .end method
 
 .method synthetic lambda$requestClose$1$androidx-camera-core-processing-SurfaceOutputImpl(Ljava/util/concurrent/atomic/AtomicReference;)V
-    .registers 3
+    .locals 1
 
     .line 168
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -698,7 +698,7 @@
 .end method
 
 .method public requestClose()V
-    .registers 5
+    .locals 4
 
     .line 153
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
@@ -711,22 +711,22 @@
     monitor-enter v1
 
     .line 156
-    :try_start_8
+    :try_start_0
     iget-object v2, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mExecutor:Ljava/util/concurrent/Executor;
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1
 
     iget-object v2, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mEventListener:Landroidx/core/util/Consumer;
 
-    if-nez v2, :cond_11
+    if-nez v2, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 160
-    :cond_11
+    :cond_0
     iget-boolean v3, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mIsClosed:Z
 
-    if-nez v3, :cond_21
+    if-nez v3, :cond_2
 
     .line 161
     invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
@@ -739,39 +739,39 @@
     .line 163
     iput-boolean v3, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mHasPendingCloseRequest:Z
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v2, 0x1
 
     .line 159
     iput-boolean v2, p0, Landroidx/camera/core/processing/SurfaceOutputImpl;->mHasPendingCloseRequest:Z
 
-    :cond_21
+    :cond_2
     const/4 v2, 0x0
 
     .line 165
-    :goto_22
+    :goto_1
     monitor-exit v1
-    :try_end_23
-    .catchall {:try_start_8 .. :try_end_23} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_3
 
     .line 168
-    :try_start_25
+    :try_start_1
     new-instance v1, Landroidx/camera/core/processing/SurfaceOutputImpl$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0, v0}, Landroidx/camera/core/processing/SurfaceOutputImpl$$ExternalSyntheticLambda1;-><init>(Landroidx/camera/core/processing/SurfaceOutputImpl;Ljava/util/concurrent/atomic/AtomicReference;)V
 
     invoke-interface {v2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_2d
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_25 .. :try_end_2d} :catch_2e
+    :try_end_1
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_36
+    goto :goto_2
 
-    :catch_2e
+    :catch_0
     move-exception v0
 
     const-string v1, "SurfaceOutputImpl"
@@ -781,24 +781,24 @@
     .line 174
     invoke-static {v1, v2, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_36
-    :goto_36
+    :cond_3
+    :goto_2
     return-void
 
-    :catchall_37
+    :catchall_0
     move-exception v0
 
     .line 165
-    :try_start_38
+    :try_start_2
     monitor-exit v1
-    :try_end_39
-    .catchall {:try_start_38 .. :try_end_39} :catchall_37
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 .end method
 
 .method public updateTransformMatrix([F[F)V
-    .registers 9
+    .locals 6
 
     const/4 v1, 0x0
 

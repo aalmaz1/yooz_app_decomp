@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/extractor/text/webvtt/WebvttCssStyle;)V
-    .registers 3
+    .locals 0
 
     .line 917
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StyleMatch;)I
-    .registers 3
+    .locals 1
 
     .line 924
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StyleMatch;->score:I
@@ -66,7 +66,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 912
     check-cast p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StyleMatch;

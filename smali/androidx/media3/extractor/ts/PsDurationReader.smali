@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method private static checkMarkerBits([B)Z
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -76,11 +76,11 @@
 
     const/16 v2, 0x44
 
-    if-eq v1, v2, :cond_a
+    if-eq v1, v2, :cond_0
 
     return v0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x2
 
     .line 229
@@ -90,21 +90,21 @@
 
     and-int/2addr v1, v2
 
-    if-eq v1, v2, :cond_12
+    if-eq v1, v2, :cond_1
 
     return v0
 
     .line 234
-    :cond_12
+    :cond_1
     aget-byte v1, p0, v2
 
     and-int/2addr v1, v2
 
-    if-eq v1, v2, :cond_18
+    if-eq v1, v2, :cond_2
 
     return v0
 
-    :cond_18
+    :cond_2
     const/4 v1, 0x5
 
     .line 238
@@ -114,11 +114,11 @@
 
     and-int/2addr v1, v2
 
-    if-eq v1, v2, :cond_20
+    if-eq v1, v2, :cond_3
 
     return v0
 
-    :cond_20
+    :cond_3
     const/16 v1, 0x8
 
     .line 243
@@ -128,16 +128,16 @@
 
     and-int/2addr p0, v1
 
-    if-ne p0, v1, :cond_29
+    if-ne p0, v1, :cond_4
 
     move v0, v2
 
-    :cond_29
+    :cond_4
     return v0
 .end method
 
 .method private finishReadDuration(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 4
+    .locals 2
 
     .line 136
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -160,7 +160,7 @@
 .end method
 
 .method private peekIntAtPosition([BI)I
-    .registers 5
+    .locals 2
 
     .line 216
     aget-byte v0, p1, p2
@@ -201,7 +201,7 @@
 .end method
 
 .method private readFirstScrValue(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -234,7 +234,7 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 147
     iput-wide v4, p2, Landroidx/media3/extractor/PositionHolder;->position:J
@@ -242,7 +242,7 @@
     return v2
 
     .line 151
-    :cond_19
+    :cond_0
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsDurationReader;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2, v0}, Landroidx/media3/common/util/ParsableByteArray;->reset(I)V
@@ -275,7 +275,7 @@
 .end method
 
 .method private readFirstScrValueFromBuffer(Landroidx/media3/common/util/ParsableByteArray;)J
-    .registers 9
+    .locals 7
 
     .line 161
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -287,12 +287,12 @@
 
     move-result v1
 
-    :goto_8
+    :goto_0
     add-int/lit8 v2, v1, -0x3
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ge v0, v2, :cond_2e
+    if-ge v0, v2, :cond_1
 
     .line 166
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -305,7 +305,7 @@
 
     const/16 v5, 0x1ba
 
-    if-ne v2, v5, :cond_2b
+    if-ne v2, v5, :cond_0
 
     add-int/lit8 v2, v0, 0x4
 
@@ -319,21 +319,21 @@
 
     cmp-long v2, v5, v3
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     return-wide v5
 
-    :cond_2b
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-wide v3
 .end method
 
 .method private readLastScrValue(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -367,7 +367,7 @@
 
     const/4 v4, 0x1
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_0
 
     .line 184
     iput-wide v0, p2, Landroidx/media3/extractor/PositionHolder;->position:J
@@ -375,7 +375,7 @@
     return v4
 
     .line 188
-    :cond_19
+    :cond_0
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsDurationReader;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2, v2}, Landroidx/media3/common/util/ParsableByteArray;->reset(I)V
@@ -410,7 +410,7 @@
 .end method
 
 .method private readLastScrValueFromBuffer(Landroidx/media3/common/util/ParsableByteArray;)J
-    .registers 8
+    .locals 6
 
     .line 198
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -424,10 +424,10 @@
 
     add-int/lit8 v1, v1, -0x4
 
-    :goto_a
+    :goto_0
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-lt v1, v0, :cond_2e
+    if-lt v1, v0, :cond_1
 
     .line 203
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -440,7 +440,7 @@
 
     const/16 v5, 0x1ba
 
-    if-ne v4, v5, :cond_2b
+    if-ne v4, v5, :cond_0
 
     add-int/lit8 v4, v1, 0x4
 
@@ -454,21 +454,21 @@
 
     cmp-long v2, v4, v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     return-wide v4
 
-    :cond_2b
+    :cond_0
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-wide v2
 .end method
 
 .method public static readScrValueFromPack(Landroidx/media3/common/util/ParsableByteArray;)J
-    .registers 7
+    .locals 6
 
     .line 121
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -484,11 +484,11 @@
 
     const/16 v4, 0x9
 
-    if-ge v1, v4, :cond_12
+    if-ge v1, v4, :cond_0
 
     return-wide v2
 
-    :cond_12
+    :cond_0
     new-array v1, v4, [B
 
     const/4 v5, 0x0
@@ -504,12 +504,12 @@
 
     move-result p0
 
-    if-nez p0, :cond_22
+    if-nez p0, :cond_1
 
     return-wide v2
 
     .line 132
-    :cond_22
+    :cond_1
     invoke-static {v1}, Landroidx/media3/extractor/ts/PsDurationReader;->readScrValueFromPackHeader([B)J
 
     move-result-wide v0
@@ -518,7 +518,7 @@
 .end method
 
 .method private static readScrValueFromPackHeader([B)J
-    .registers 14
+    .locals 13
 
     const/4 v0, 0x0
 
@@ -625,7 +625,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 113
     iget-wide v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->durationUs:J
@@ -634,7 +634,7 @@
 .end method
 
 .method public getScrTimestampAdjuster()Landroidx/media3/common/util/TimestampAdjuster;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->scrTimestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -643,7 +643,7 @@
 .end method
 
 .method public isDurationReadFinished()Z
-    .registers 2
+    .locals 1
 
     .line 69
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->isDurationRead:Z
@@ -652,7 +652,7 @@
 .end method
 
 .method public readDuration(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -662,7 +662,7 @@
     .line 91
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->isLastScrValueRead:Z
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 92
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/ts/PsDurationReader;->readLastScrValue(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
@@ -672,14 +672,14 @@
     return p1
 
     .line 94
-    :cond_9
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->lastScrValue:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     .line 95
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/PsDurationReader;->finishReadDuration(Landroidx/media3/extractor/ExtractorInput;)I
@@ -689,10 +689,10 @@
     return p1
 
     .line 97
-    :cond_19
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->isFirstScrValueRead:Z
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     .line 98
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/ts/PsDurationReader;->readFirstScrValue(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
@@ -702,12 +702,12 @@
     return p1
 
     .line 100
-    :cond_22
+    :cond_2
     iget-wide v0, p0, Landroidx/media3/extractor/ts/PsDurationReader;->firstScrValue:J
 
     cmp-long p2, v0, v2
 
-    if-nez p2, :cond_2d
+    if-nez p2, :cond_3
 
     .line 101
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/PsDurationReader;->finishReadDuration(Landroidx/media3/extractor/ExtractorInput;)I
@@ -717,7 +717,7 @@
     return p1
 
     .line 104
-    :cond_2d
+    :cond_3
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsDurationReader;->scrTimestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
 
     invoke-virtual {p2, v0, v1}, Landroidx/media3/common/util/TimestampAdjuster;->adjustTsTimestamp(J)J

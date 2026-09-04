@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentAnim$2;)V
-    .registers 2
+    .locals 0
 
     .line 176
     iput-object p1, p0, Landroidx/fragment/app/FragmentAnim$2$1;->this$0:Landroidx/fragment/app/FragmentAnim$2;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 179
     iget-object v0, p0, Landroidx/fragment/app/FragmentAnim$2$1;->this$0:Landroidx/fragment/app/FragmentAnim$2;
@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 180
     iget-object v0, p0, Landroidx/fragment/app/FragmentAnim$2$1;->this$0:Landroidx/fragment/app/FragmentAnim$2;
@@ -73,6 +73,6 @@
 
     invoke-interface {v0, v1, v2}, Landroidx/fragment/app/FragmentTransition$Callback;->onComplete(Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
 
-    :cond_21
+    :cond_0
     return-void
 .end method

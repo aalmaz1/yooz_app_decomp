@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/audio/AudioSource;)V
-    .registers 2
+    .locals 0
 
     .line 200
     iput-object p1, p0, Landroidx/camera/video/internal/audio/AudioSource$AudioStreamCallback;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onSilenceStateChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$AudioStreamCallback;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -50,13 +50,13 @@
 
     sget-object v0, Landroidx/camera/video/internal/audio/AudioSource$InternalState;->STARTED:Landroidx/camera/video/internal/audio/AudioSource$InternalState;
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     .line 206
     iget-object p1, p0, Landroidx/camera/video/internal/audio/AudioSource$AudioStreamCallback;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     invoke-virtual {p1}, Landroidx/camera/video/internal/audio/AudioSource;->notifySilenced()V
 
-    :cond_11
+    :cond_0
     return-void
 .end method

@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/Handler;JLjava/util/concurrent/Callable;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public cancel(Z)Z
-    .registers 3
+    .locals 1
 
     .line 254
     iget-object v0, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$HandlerScheduledFuture;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -121,7 +121,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 187
     check-cast p1, Ljava/util/concurrent/Delayed;
@@ -134,7 +134,7 @@
 .end method
 
 .method public compareTo(Ljava/util/concurrent/Delayed;)I
-    .registers 6
+    .locals 4
 
     .line 236
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
@@ -157,7 +157,7 @@
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -182,7 +182,7 @@
 .end method
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -210,7 +210,7 @@
 .end method
 
 .method public getDelay(Ljava/util/concurrent/TimeUnit;)J
-    .registers 6
+    .locals 4
 
     .line 230
     iget-wide v0, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$HandlerScheduledFuture;->mRunAtMillis:J
@@ -231,7 +231,7 @@
 .end method
 
 .method public isCancelled()Z
-    .registers 2
+    .locals 1
 
     .line 259
     iget-object v0, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$HandlerScheduledFuture;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -244,7 +244,7 @@
 .end method
 
 .method public isDone()Z
-    .registers 2
+    .locals 1
 
     .line 264
     iget-object v0, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$HandlerScheduledFuture;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -257,7 +257,7 @@
 .end method
 
 .method public isPeriodic()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -265,7 +265,7 @@
 .end method
 
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 242
     iget-object v0, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$HandlerScheduledFuture;->mCompleter:Ljava/util/concurrent/atomic/AtomicReference;
@@ -278,10 +278,10 @@
 
     check-cast v0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 245
-    :try_start_b
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$HandlerScheduledFuture;->mTask:Ljava/util/concurrent/Callable;
 
     invoke-interface {v1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
@@ -289,18 +289,18 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :catch_15
+    :catch_0
     move-exception v1
 
     .line 247
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :cond_19
-    :goto_19
+    :cond_0
+    :goto_0
     return-void
 .end method

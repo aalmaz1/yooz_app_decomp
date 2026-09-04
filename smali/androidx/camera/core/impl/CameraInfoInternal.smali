@@ -8,7 +8,7 @@
 
 # direct methods
 .method public static synthetic lambda$getCameraSelector$0(Landroidx/camera/core/impl/CameraInfoInternal;Ljava/util/List;)Ljava/util/List;
-    .registers 5
+    .locals 3
     .param p0, "_this"    # Landroidx/camera/core/impl/CameraInfoInternal;
 
     .line 125
@@ -21,12 +21,12 @@
 
     move-result-object p1
 
-    :cond_8
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -53,7 +53,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_0
 
     .line 131
     invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -63,7 +63,7 @@
     return-object p1
 
     .line 134
-    :cond_2b
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getCameraSelector()Landroidx/camera/core/CameraSelector;
-    .registers 4
+    .locals 3
 
     .line 123
     new-instance v0, Landroidx/camera/core/CameraSelector$Builder;
@@ -144,7 +144,7 @@
 .end method
 
 .method public getImplementation()Landroidx/camera/core/impl/CameraInfoInternal;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method

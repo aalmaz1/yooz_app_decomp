@@ -41,7 +41,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method constructor <init>(Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,7 +86,7 @@
 .end method
 
 .method public static from(Lcom/google/common/util/concurrent/ListenableFuture;)Landroidx/camera/core/impl/utils/futures/FutureChain;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -102,28 +102,28 @@
     .line 64
     instance-of v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 65
     check-cast p0, Landroidx/camera/core/impl/utils/futures/FutureChain;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/utils/futures/FutureChain;
 
     invoke-direct {v0, p0}, Landroidx/camera/core/impl/utils/futures/FutureChain;-><init>(Lcom/google/common/util/concurrent/ListenableFuture;)V
 
     move-object p0, v0
 
-    :goto_d
+    :goto_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public final addCallback(Landroidx/camera/core/impl/utils/futures/FutureCallback;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,7 +141,7 @@
 .end method
 
 .method public addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 4
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -152,7 +152,7 @@
 .end method
 
 .method public cancel(Z)Z
-    .registers 3
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -165,7 +165,7 @@
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -190,7 +190,7 @@
 .end method
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -218,7 +218,7 @@
 .end method
 
 .method public isCancelled()Z
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -231,7 +231,7 @@
 .end method
 
 .method public isDone()Z
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;->mDelegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -244,7 +244,7 @@
 .end method
 
 .method set(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)Z"
@@ -254,7 +254,7 @@
     .line 168
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;->mCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 169
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
@@ -263,19 +263,19 @@
 
     return p1
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method setException(Ljava/lang/Throwable;)Z
-    .registers 3
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/FutureChain;->mCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 177
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
@@ -284,14 +284,14 @@
 
     return p1
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public final transform(Landroidx/arch/core/util/Function;Ljava/util/concurrent/Executor;)Landroidx/camera/core/impl/utils/futures/FutureChain;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -317,7 +317,7 @@
 .end method
 
 .method public final transformAsync(Landroidx/camera/core/impl/utils/futures/AsyncFunction;Ljava/util/concurrent/Executor;)Landroidx/camera/core/impl/utils/futures/FutureChain;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

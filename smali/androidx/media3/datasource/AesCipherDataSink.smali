@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>([BLandroidx/media3/datasource/DataSink;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>([BLandroidx/media3/datasource/DataSink;[B)V
-    .registers 4
+    .locals 0
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -70,7 +70,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)V
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -107,7 +107,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -117,7 +117,7 @@
     .line 79
     iget-object v0, p0, Landroidx/media3/datasource/AesCipherDataSink;->scratch:[B
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 81
     iget-object v0, p0, Landroidx/media3/datasource/AesCipherDataSink;->cipher:Landroidx/media3/datasource/AesFlushingCipher;
@@ -135,15 +135,15 @@
 
     invoke-interface {v0, p1, p2, p3}, Landroidx/media3/datasource/DataSink;->write([BII)V
 
-    goto :goto_3e
+    goto :goto_1
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     move v1, v0
 
-    :goto_17
-    if-ge v1, p3, :cond_3e
+    :goto_0
+    if-ge v1, p3, :cond_1
 
     sub-int v2, p3, v1
 
@@ -189,9 +189,9 @@
 
     add-int/2addr v1, v2
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_3e
-    :goto_3e
+    :cond_1
+    :goto_1
     return-void
 .end method

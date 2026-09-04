@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/text/RubySpan;
-    .registers 4
+    .locals 3
 
     .line 64
     new-instance v0, Landroidx/media3/common/text/RubySpan;
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 57
     new-instance v0, Landroid/os/Bundle;

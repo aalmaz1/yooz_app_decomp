@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;)V
-    .registers 4
+    .locals 2
 
     .line 1956
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method canScheduleCameraReopen()Z
-    .registers 5
+    .locals 4
 
     .line 2002
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->getElapsedTime()J
@@ -71,29 +71,29 @@
 
     const/4 v2, 0x0
 
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v0, v2
 
-    :goto_12
-    if-eqz v0, :cond_18
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 2007
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->reset()V
 
     return v2
 
-    :cond_18
+    :cond_1
     return v1
 .end method
 
 .method getElapsedTime()J
-    .registers 7
+    .locals 6
 
     .line 1992
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -107,13 +107,13 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     .line 1995
     iput-wide v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->mFirstReopenTime:J
 
     .line 1998
-    :cond_e
+    :cond_0
     iget-wide v2, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->mFirstReopenTime:J
 
     sub-long/2addr v0, v2
@@ -122,7 +122,7 @@
 .end method
 
 .method getReopenDelayMs()I
-    .registers 5
+    .locals 4
 
     .line 1969
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
@@ -131,14 +131,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const/16 v0, 0x2bc
 
     return v0
 
     .line 1972
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->getElapsedTime()J
 
     move-result-wide v0
@@ -147,31 +147,31 @@
 
     cmp-long v2, v0, v2
 
-    if-gtz v2, :cond_19
+    if-gtz v2, :cond_1
 
     const/16 v0, 0x3e8
 
     return v0
 
-    :cond_19
+    :cond_1
     const-wide/32 v2, 0x493e0
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_23
+    if-gtz v0, :cond_2
 
     const/16 v0, 0x7d0
 
     return v0
 
-    :cond_23
+    :cond_2
     const/16 v0, 0xfa0
 
     return v0
 .end method
 
 .method getReopenLimitMs()I
-    .registers 2
+    .locals 1
 
     .line 1984
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback$CameraReopenMonitor;->this$1:Landroidx/camera/camera2/internal/Camera2CameraImpl$StateCallback;
@@ -180,20 +180,20 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const/16 v0, 0x2710
 
     return v0
 
-    :cond_b
+    :cond_0
     const v0, 0x1b7740
 
     return v0
 .end method
 
 .method reset()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/regex/Pattern;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

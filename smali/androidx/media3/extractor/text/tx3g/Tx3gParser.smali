@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 
     const/4 v4, 0x1
 
-    if-ne v0, v4, :cond_a3
+    if-ne v0, v4, :cond_4
 
     .line 102
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -105,7 +105,7 @@
 
     const/16 v5, 0x30
 
-    if-eq v0, v5, :cond_2d
+    if-eq v0, v5, :cond_0
 
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -117,10 +117,10 @@
 
     const/16 v5, 0x35
 
-    if-ne v0, v5, :cond_a3
+    if-ne v0, v5, :cond_4
 
     .line 103
-    :cond_2d
+    :cond_0
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -192,11 +192,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_1
 
     const-string v2, "serif"
 
-    :cond_6e
+    :cond_1
     iput-object v2, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->defaultFontFamily:Ljava/lang/String;
 
     const/16 v0, 0x19
@@ -213,14 +213,14 @@
 
     and-int/lit8 v2, v2, 0x20
 
-    if-eqz v2, :cond_7f
+    if-eqz v2, :cond_2
 
     move v3, v4
 
-    :cond_7f
+    :cond_2
     iput-boolean v3, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->customVerticalPlacement:Z
 
-    if-eqz v3, :cond_a0
+    if-eqz v3, :cond_3
 
     const/16 v1, 0xa
 
@@ -256,16 +256,16 @@
 
     iput p1, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->defaultVerticalPlacement:F
 
-    goto :goto_b0
+    goto :goto_0
 
     .line 123
-    :cond_a0
+    :cond_3
     iput v1, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->defaultVerticalPlacement:F
 
-    goto :goto_b0
+    goto :goto_0
 
     .line 126
-    :cond_a3
+    :cond_4
     iput v3, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->defaultFontFace:I
 
     const/4 p1, -0x1
@@ -285,12 +285,12 @@
     .line 131
     iput p1, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->calculatedVideoTrackHeight:I
 
-    :goto_b0
+    :goto_0
     return-void
 .end method
 
 .method private applyStyleRecord(Landroidx/media3/common/util/ParsableByteArray;Landroid/text/SpannableStringBuilder;)V
-    .registers 12
+    .locals 9
 
     .line 212
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -301,16 +301,16 @@
 
     const/4 v2, 0x1
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 213
@@ -350,7 +350,7 @@
 
     const-string v5, "Tx3gParser"
 
-    if-le v1, v2, :cond_58
+    if-le v1, v2, :cond_1
 
     .line 221
     new-instance v2, Ljava/lang/StringBuilder;
@@ -394,8 +394,8 @@
 
     move-result v1
 
-    :cond_58
-    if-lt v0, v1, :cond_7b
+    :cond_1
+    if-lt v0, v1, :cond_2
 
     .line 226
     new-instance p1, Ljava/lang/StringBuilder;
@@ -431,7 +431,7 @@
     return-void
 
     .line 229
-    :cond_7b
+    :cond_2
     iget v5, p0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->defaultFontFace:I
 
     const/4 v8, 0x0
@@ -455,9 +455,9 @@
 .end method
 
 .method private static attachColor(Landroid/text/SpannableStringBuilder;IIIII)V
-    .registers 6
+    .locals 0
 
-    if-eq p1, p2, :cond_13
+    if-eq p1, p2, :cond_0
 
     and-int/lit16 p2, p1, 0xff
 
@@ -476,14 +476,14 @@
 
     invoke-virtual {p0, p2, p3, p4, p1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method private static attachFontFace(Landroid/text/SpannableStringBuilder;IIIII)V
-    .registers 11
+    .locals 5
 
-    if-eq p1, p2, :cond_54
+    if-eq p1, p2, :cond_7
 
     or-int/lit8 p2, p5, 0x21
 
@@ -493,31 +493,31 @@
 
     const/4 v1, 0x1
 
-    if-eqz p5, :cond_c
+    if-eqz p5, :cond_0
 
     move p5, v1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move p5, v0
 
-    :goto_d
+    :goto_0
     and-int/lit8 v2, p1, 0x2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_1
 
     move v2, v1
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
+    :cond_1
     move v2, v0
 
-    :goto_14
-    if-eqz p5, :cond_2b
+    :goto_1
+    if-eqz p5, :cond_3
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_2
 
     .line 246
     new-instance v3, Landroid/text/style/StyleSpan;
@@ -528,20 +528,20 @@
 
     invoke-virtual {p0, v3, p3, p4, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_36
+    goto :goto_2
 
     .line 248
-    :cond_22
+    :cond_2
     new-instance v3, Landroid/text/style/StyleSpan;
 
     invoke-direct {v3, v1}, Landroid/text/style/StyleSpan;-><init>(I)V
 
     invoke-virtual {p0, v3, p3, p4, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_36
+    goto :goto_2
 
-    :cond_2b
-    if-eqz v2, :cond_36
+    :cond_3
+    if-eqz v2, :cond_4
 
     .line 251
     new-instance v3, Landroid/text/style/StyleSpan;
@@ -552,19 +552,19 @@
 
     invoke-virtual {p0, v3, p3, p4, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_36
-    :goto_36
+    :cond_4
+    :goto_2
     and-int/lit8 p1, p1, 0x4
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_5
 
-    goto :goto_3c
+    goto :goto_3
 
-    :cond_3b
+    :cond_5
     move v1, v0
 
-    :goto_3c
-    if-eqz v1, :cond_46
+    :goto_3
+    if-eqz v1, :cond_6
 
     .line 255
     new-instance p1, Landroid/text/style/UnderlineSpan;
@@ -573,12 +573,12 @@
 
     invoke-virtual {p0, p1, p3, p4, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_46
-    if-nez v1, :cond_54
+    :cond_6
+    if-nez v1, :cond_7
 
-    if-nez p5, :cond_54
+    if-nez p5, :cond_7
 
-    if-nez v2, :cond_54
+    if-nez v2, :cond_7
 
     .line 258
     new-instance p1, Landroid/text/style/StyleSpan;
@@ -587,16 +587,16 @@
 
     invoke-virtual {p0, p1, p3, p4, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_54
+    :cond_7
     return-void
 .end method
 
 .method private static attachFontFamily(Landroid/text/SpannableStringBuilder;Ljava/lang/String;II)V
-    .registers 5
+    .locals 1
 
     const-string v0, "sans-serif"
 
-    if-eq p1, v0, :cond_f
+    if-eq p1, v0, :cond_0
 
     .line 284
     new-instance v0, Landroid/text/style/TypefaceSpan;
@@ -607,12 +607,12 @@
 
     invoke-virtual {p0, v0, p2, p3, p1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private static readSubtitleText(Landroidx/media3/common/util/ParsableByteArray;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 198
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -621,16 +621,16 @@
 
     const/4 v1, 0x2
 
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 199
@@ -638,14 +638,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     const-string p0, ""
 
     return-object p0
 
     .line 203
-    :cond_16
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v1
@@ -664,16 +664,16 @@
 
     sub-int/2addr v0, v3
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_2
 
-    goto :goto_29
+    goto :goto_1
 
     .line 207
-    :cond_27
+    :cond_2
     sget-object v2, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     .line 206
-    :goto_29
+    :goto_1
     invoke-virtual {p0, v0, v2}, Landroidx/media3/common/util/ParsableByteArray;->readString(ILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object p0
@@ -684,7 +684,7 @@
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -692,7 +692,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 22
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -735,7 +735,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_0
 
     .line 151
     new-instance v1, Landroidx/media3/extractor/text/CuesWithTiming;
@@ -759,7 +759,7 @@
     return-void
 
     .line 159
-    :cond_38
+    :cond_0
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v3, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
@@ -809,7 +809,7 @@
     iget v1, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->defaultVerticalPlacement:F
 
     .line 166
-    :goto_61
+    :goto_0
     iget-object v4, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v4}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -818,7 +818,7 @@
 
     const/16 v6, 0x8
 
-    if-lt v4, v6, :cond_d2
+    if-lt v4, v6, :cond_5
 
     .line 167
     iget-object v4, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -847,7 +847,7 @@
 
     const/4 v10, 0x1
 
-    if-ne v7, v8, :cond_a2
+    if-ne v7, v8, :cond_2
 
     .line 171
     iget-object v7, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -856,14 +856,14 @@
 
     move-result v7
 
-    if-lt v7, v9, :cond_8d
+    if-lt v7, v9, :cond_1
 
-    goto :goto_8e
+    goto :goto_1
 
-    :cond_8d
+    :cond_1
     move v10, v5
 
-    :goto_8e
+    :goto_1
     invoke-static {v10}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 172
@@ -875,8 +875,8 @@
 
     move v8, v5
 
-    :goto_98
-    if-ge v8, v7, :cond_cb
+    :goto_2
+    if-ge v8, v7, :cond_4
 
     .line 174
     iget-object v9, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -885,17 +885,17 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_98
+    goto :goto_2
 
-    :cond_a2
+    :cond_2
     const v8, 0x74626f78
 
-    if-ne v7, v8, :cond_cb
+    if-ne v7, v8, :cond_4
 
     .line 176
     iget-boolean v7, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->customVerticalPlacement:Z
 
-    if-eqz v7, :cond_cb
+    if-eqz v7, :cond_4
 
     .line 177
     iget-object v1, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -904,14 +904,14 @@
 
     move-result v1
 
-    if-lt v1, v9, :cond_b4
+    if-lt v1, v9, :cond_3
 
-    goto :goto_b5
+    goto :goto_3
 
-    :cond_b4
+    :cond_3
     move v10, v5
 
-    :goto_b5
+    :goto_3
     invoke-static {v10}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 178
@@ -940,17 +940,17 @@
     move-result v1
 
     .line 182
-    :cond_cb
+    :cond_4
     iget-object v7, v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;->parsableByteArray:Landroidx/media3/common/util/ParsableByteArray;
 
     add-int/2addr v4, v6
 
     invoke-virtual {v7, v4}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_61
+    goto :goto_0
 
     .line 184
-    :cond_d2
+    :cond_5
     new-instance v4, Landroidx/media3/common/text/Cue$Builder;
 
     invoke-direct {v4}, Landroidx/media3/common/text/Cue$Builder;-><init>()V

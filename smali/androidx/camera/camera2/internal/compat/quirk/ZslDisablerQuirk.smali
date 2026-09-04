@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method private static isSamsungFold4()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "samsung"
 
@@ -28,7 +28,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -45,21 +45,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 .method private static isXiaoMiMi8()Z
-    .registers 2
+    .locals 2
 
     const-string/jumbo v0, "xiaomi"
 
@@ -70,7 +70,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -87,46 +87,46 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 39
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ZslDisablerQuirk;->isSamsungFold4()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ZslDisablerQuirk;->isXiaoMiMi8()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method

@@ -20,21 +20,21 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/location/GnssStatusCompat$Callback;)V
-    .registers 4
+    .locals 2
 
     .line 884
     invoke-direct {p0}, Landroid/location/GnssStatus$Callback;-><init>()V
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     const-string v1, "invalid null callback"
 
     .line 885
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public onFirstFix(I)V
-    .registers 3
+    .locals 1
 
     .line 901
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssStatusTransport;->mCallback:Landroidx/core/location/GnssStatusCompat$Callback;
@@ -60,7 +60,7 @@
 .end method
 
 .method public onSatelliteStatusChanged(Landroid/location/GnssStatus;)V
-    .registers 3
+    .locals 1
 
     .line 906
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssStatusTransport;->mCallback:Landroidx/core/location/GnssStatusCompat$Callback;
@@ -75,7 +75,7 @@
 .end method
 
 .method public onStarted()V
-    .registers 2
+    .locals 1
 
     .line 891
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssStatusTransport;->mCallback:Landroidx/core/location/GnssStatusCompat$Callback;
@@ -86,7 +86,7 @@
 .end method
 
 .method public onStopped()V
-    .registers 2
+    .locals 1
 
     .line 896
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssStatusTransport;->mCallback:Landroidx/core/location/GnssStatusCompat$Callback;

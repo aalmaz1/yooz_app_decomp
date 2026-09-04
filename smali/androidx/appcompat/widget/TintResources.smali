@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources;)V
-    .registers 3
+    .locals 0
 
     .line 35
     invoke-direct {p0, p2}, Landroidx/appcompat/widget/ResourcesWrapper;-><init>(Landroid/content/res/Resources;)V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public getDrawable(I)Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -56,9 +56,9 @@
 
     check-cast v1, Landroid/content/Context;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 49
     invoke-static {}, Landroidx/appcompat/widget/ResourceManagerInternal;->get()Landroidx/appcompat/widget/ResourceManagerInternal;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v2, v1, p1, v0}, Landroidx/appcompat/widget/ResourceManagerInternal;->tintDrawableUsingColorFilter(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
 
-    :cond_17
+    :cond_0
     return-object v0
 .end method

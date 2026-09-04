@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->minPcmBufferDurationUs:I
@@ -81,7 +81,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->maxPcmBufferDurationUs:I
@@ -90,7 +90,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->pcmBufferMultiplicationFactor:I
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->passthroughBufferDurationUs:I
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->offloadBufferDurationUs:I
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->ac3BufferMultiplicationFactor:I
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 72
     iget p0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->dtshdBufferMultiplicationFactor:I
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;
-    .registers 2
+    .locals 1
 
     .line 165
     new-instance v0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;
@@ -148,7 +148,7 @@
 .end method
 
 .method public setAc3BufferMultiplicationFactor(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 149
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->ac3BufferMultiplicationFactor:I
@@ -157,7 +157,7 @@
 .end method
 
 .method public setDtshdBufferMultiplicationFactor(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 159
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->dtshdBufferMultiplicationFactor:I
@@ -166,7 +166,7 @@
 .end method
 
 .method public setMaxPcmBufferDurationUs(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 109
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->maxPcmBufferDurationUs:I
@@ -175,7 +175,7 @@
 .end method
 
 .method public setMinPcmBufferDurationUs(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 99
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->minPcmBufferDurationUs:I
@@ -184,7 +184,7 @@
 .end method
 
 .method public setOffloadBufferDurationUs(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 139
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->offloadBufferDurationUs:I
@@ -193,7 +193,7 @@
 .end method
 
 .method public setPassthroughBufferDurationUs(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 129
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->passthroughBufferDurationUs:I
@@ -202,7 +202,7 @@
 .end method
 
 .method public setPcmBufferMultiplicationFactor(I)Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;
-    .registers 2
+    .locals 0
 
     .line 119
     iput p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;->pcmBufferMultiplicationFactor:I

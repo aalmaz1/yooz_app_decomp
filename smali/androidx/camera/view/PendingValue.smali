@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method synthetic lambda$setValue$0$androidx-camera-view-PendingValue(Ljava/lang/Object;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -50,7 +50,7 @@
     .line 61
     iget-object v0, p0, Landroidx/camera/view/PendingValue;->mCompleterAndValue:Landroidx/core/util/Pair;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 62
     iget-object v0, v0, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
@@ -66,7 +66,7 @@
     invoke-virtual {v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setCancelled()Z
 
     .line 64
-    :cond_11
+    :cond_0
     new-instance v0, Landroidx/core/util/Pair;
 
     invoke-direct {v0, p2, p1}, Landroidx/core/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -92,7 +92,7 @@
 .end method
 
 .method propagateIfHasValue(Landroidx/arch/core/util/Function;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,7 +110,7 @@
     .line 77
     iget-object v0, p0, Landroidx/camera/view/PendingValue;->mCompleterAndValue:Landroidx/core/util/Pair;
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 78
     iget-object v0, v0, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
@@ -142,12 +142,12 @@
     .line 80
     iput-object p1, p0, Landroidx/camera/view/PendingValue;->mCompleterAndValue:Landroidx/core/util/Pair;
 
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method setValue(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",

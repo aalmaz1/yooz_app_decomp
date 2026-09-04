@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/wav/WavFormat;Ljava/lang/String;I)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -68,7 +68,7 @@
     .line 312
     iget p2, p3, Landroidx/media3/extractor/wav/WavFormat;->blockSize:I
 
-    if-ne p2, p1, :cond_50
+    if-ne p2, p1, :cond_0
 
     .line 318
     iget p2, p3, Landroidx/media3/extractor/wav/WavFormat;->frameRateHz:I
@@ -145,7 +145,7 @@
     return-void
 
     .line 313
-    :cond_50
+    :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string p4, "Expected block size: "
@@ -184,7 +184,7 @@
 
 # virtual methods
 .method public init(IJ)V
-    .registers 13
+    .locals 9
 
     .line 342
     iget-object v0, p0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -216,7 +216,7 @@
 .end method
 
 .method public reset(J)V
-    .registers 3
+    .locals 0
 
     .line 335
     iput-wide p1, p0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->startTimeUs:J
@@ -235,7 +235,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/extractor/ExtractorInput;J)Z
-    .registers 20
+    .locals 16
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -246,21 +246,21 @@
 
     move-wide/from16 v1, p2
 
-    :goto_4
+    :goto_0
     const-wide/16 v3, 0x0
 
     cmp-long v5, v1, v3
 
     const/4 v6, 0x1
 
-    if-lez v5, :cond_2d
+    if-lez v5, :cond_1
 
     .line 350
     iget v7, v0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
     iget v8, v0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->targetSampleSizeBytes:I
 
-    if-ge v7, v8, :cond_2d
+    if-ge v7, v8, :cond_1
 
     sub-int/2addr v8, v7
 
@@ -284,14 +284,14 @@
 
     const/4 v6, -0x1
 
-    if-ne v5, v6, :cond_25
+    if-ne v5, v6, :cond_0
 
     move-wide v1, v3
 
-    goto :goto_4
+    goto :goto_0
 
     .line 356
-    :cond_25
+    :cond_0
     iget v3, v0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
     add-int/2addr v3, v5
@@ -302,10 +302,10 @@
 
     sub-long/2addr v1, v3
 
-    goto :goto_4
+    goto :goto_0
 
     .line 364
-    :cond_2d
+    :cond_1
     iget-object v1, v0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
 
     iget v1, v1, Landroidx/media3/extractor/wav/WavFormat;->blockSize:I
@@ -315,7 +315,7 @@
 
     div-int/2addr v2, v1
 
-    if-lez v2, :cond_5d
+    if-lez v2, :cond_2
 
     .line 367
     iget-wide v3, v0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->startTimeUs:J
@@ -367,14 +367,14 @@
     .line 376
     iput v1, v0, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;->pendingOutputBytes:I
 
-    :cond_5d
-    if-gtz v5, :cond_60
+    :cond_2
+    if-gtz v5, :cond_3
 
-    goto :goto_61
+    goto :goto_1
 
-    :cond_60
+    :cond_3
     const/4 v6, 0x0
 
-    :goto_61
+    :goto_1
     return v6
 .end method

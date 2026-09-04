@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1407
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static canUseFullScreenIntent(Landroid/app/NotificationManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1411
     invoke-virtual {p0}, Landroid/app/NotificationManager;->canUseFullScreenIntent()Z

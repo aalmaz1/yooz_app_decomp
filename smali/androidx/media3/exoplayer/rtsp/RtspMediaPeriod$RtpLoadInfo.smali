@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;ILandroidx/media3/extractor/TrackOutput;Landroidx/media3/exoplayer/rtsp/RtpDataChannel$Factory;)V
-    .registers 13
+    .locals 7
 
     .line 888
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;)Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;
-    .registers 1
+    .locals 0
 
     .line 875
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->loadable:Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public getTrackUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 936
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->loadable:Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;
@@ -90,7 +90,7 @@
 .end method
 
 .method public getTransport()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 930
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->transport:Ljava/lang/String;
@@ -104,26 +104,26 @@
 .end method
 
 .method public isTransportReady()Z
-    .registers 2
+    .locals 1
 
     .line 921
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->transport:Ljava/lang/String;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method synthetic lambda$new$0$androidx-media3-exoplayer-rtsp-RtspMediaPeriod$RtpLoadInfo(Ljava/lang/String;Landroidx/media3/exoplayer/rtsp/RtpDataChannel;)V
-    .registers 4
+    .locals 1
 
     .line 894
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->transport:Ljava/lang/String;
@@ -133,7 +133,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 900
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -158,7 +158,7 @@
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$602(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Z)Z
 
     .line 904
-    :cond_1b
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$2700(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 728
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getAutoSizeStepGranularity(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 739
     invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeStepGranularity()I
@@ -36,7 +36,7 @@
 .end method
 
 .method static setAutoSizeTextTypeUniformWithConfiguration(Landroid/widget/TextView;IIII)V
-    .registers 5
+    .locals 0
 
     .line 746
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
@@ -45,7 +45,7 @@
 .end method
 
 .method static setAutoSizeTextTypeUniformWithPresetSizes(Landroid/widget/TextView;[II)V
-    .registers 3
+    .locals 0
 
     .line 753
     invoke-virtual {p0, p1, p2}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithPresetSizes([II)V
@@ -54,7 +54,7 @@
 .end method
 
 .method static setFontVariationSettings(Landroid/widget/TextView;Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 734
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z

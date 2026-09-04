@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;)V
-    .registers 2
+    .locals 0
 
     .line 313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,25 +46,25 @@
 
 # virtual methods
 .method public onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 319
     iget-object p1, p0, Landroidx/media3/exoplayer/util/SntpClient$NtpTimeCallback;->callback:Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 320
     invoke-static {}, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized()Z
 
     move-result p1
 
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_0
 
     .line 323
     iget-object p1, p0, Landroidx/media3/exoplayer/util/SntpClient$NtpTimeCallback;->callback:Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;
@@ -79,32 +79,32 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;->onInitializationFailed(Ljava/io/IOException;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 325
-    :cond_1a
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/util/SntpClient$NtpTimeCallback;->callback:Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;->onInitialized()V
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 343
     iget-object p1, p0, Landroidx/media3/exoplayer/util/SntpClient$NtpTimeCallback;->callback:Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 344
     invoke-interface {p1, p6}, Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;->onInitializationFailed(Ljava/io/IOException;)V
 
     .line 346
-    :cond_7
+    :cond_0
     sget-object p1, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     return-object p1

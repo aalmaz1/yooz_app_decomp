@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1332
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$LiveConfiguration;)V
-    .registers 4
+    .locals 2
 
     .line 1340
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$LiveConfiguration;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1324
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;-><init>(Landroidx/media3/common/MediaItem$LiveConfiguration;)V
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$2000(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1324
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->targetOffsetMs:J
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$2100(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1324
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->minOffsetMs:J
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$2200(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 1324
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->maxOffsetMs:J
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$2300(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)F
-    .registers 1
+    .locals 0
 
     .line 1324
     iget p0, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->minPlaybackSpeed:F
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$2400(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)F
-    .registers 1
+    .locals 0
 
     .line 1324
     iget p0, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->maxPlaybackSpeed:F
@@ -146,7 +146,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem$LiveConfiguration;
-    .registers 3
+    .locals 2
 
     .line 1411
     new-instance v0, Landroidx/media3/common/MediaItem$LiveConfiguration;
@@ -159,7 +159,7 @@
 .end method
 
 .method public setMaxOffsetMs(J)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
-    .registers 3
+    .locals 0
 
     .line 1383
     iput-wide p1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->maxOffsetMs:J
@@ -168,7 +168,7 @@
 .end method
 
 .method public setMaxPlaybackSpeed(F)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1405
     iput p1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->maxPlaybackSpeed:F
@@ -177,7 +177,7 @@
 .end method
 
 .method public setMinOffsetMs(J)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
-    .registers 3
+    .locals 0
 
     .line 1370
     iput-wide p1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->minOffsetMs:J
@@ -186,7 +186,7 @@
 .end method
 
 .method public setMinPlaybackSpeed(F)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1394
     iput p1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->minPlaybackSpeed:F
@@ -195,7 +195,7 @@
 .end method
 
 .method public setTargetOffsetMs(J)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
-    .registers 3
+    .locals 0
 
     .line 1357
     iput-wide p1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->targetOffsetMs:J

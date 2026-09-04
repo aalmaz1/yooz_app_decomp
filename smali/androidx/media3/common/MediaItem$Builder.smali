@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,7 +118,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem;)V
-    .registers 4
+    .locals 2
 
     .line 106
     invoke-direct {p0}, Landroidx/media3/common/MediaItem$Builder;-><init>()V
@@ -159,7 +159,7 @@
     .line 112
     iget-object p1, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_56
+    if-eqz p1, :cond_1
 
     .line 114
     iget-object v0, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->customCacheKey:Ljava/lang/String;
@@ -194,7 +194,7 @@
     .line 121
     iget-object v0, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_0
 
     .line 122
     iget-object v0, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
@@ -203,17 +203,17 @@
 
     move-result-object v0
 
-    goto :goto_4c
+    goto :goto_0
 
     .line 123
-    :cond_46
+    :cond_0
     new-instance v0, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;-><init>(Landroidx/media3/common/MediaItem$1;)V
 
-    :goto_4c
+    :goto_0
     iput-object v0, p0, Landroidx/media3/common/MediaItem$Builder;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     .line 124
@@ -226,12 +226,12 @@
 
     iput-wide v0, p0, Landroidx/media3/common/MediaItem$Builder;->imageDurationMs:J
 
-    :cond_56
+    :cond_1
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 68
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$Builder;-><init>(Landroidx/media3/common/MediaItem;)V
@@ -242,7 +242,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem;
-    .registers 24
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -253,7 +253,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     iget-object v1, v0, Landroidx/media3/common/MediaItem$Builder;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
@@ -261,20 +261,20 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
-    :goto_16
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 612
@@ -282,7 +282,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v3, :cond_45
+    if-eqz v3, :cond_3
 
     .line 614
     new-instance v14, Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -296,7 +296,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_2
 
     iget-object v1, v0, Landroidx/media3/common/MediaItem$Builder;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
@@ -304,7 +304,7 @@
 
     move-result-object v1
 
-    :cond_30
+    :cond_2
     move-object v5, v1
 
     iget-object v6, v0, Landroidx/media3/common/MediaItem$Builder;->adsConfiguration:Landroidx/media3/common/MediaItem$AdsConfiguration;
@@ -327,26 +327,26 @@
 
     move-object/from16 v18, v14
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_45
+    :cond_3
     move-object/from16 v18, v1
 
     .line 626
-    :goto_47
+    :goto_2
     new-instance v1, Landroidx/media3/common/MediaItem;
 
     .line 627
     iget-object v2, v0, Landroidx/media3/common/MediaItem$Builder;->mediaId:Ljava/lang/String;
 
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_4
 
-    goto :goto_50
+    goto :goto_3
 
-    :cond_4e
+    :cond_4
     const-string v2, ""
 
-    :goto_50
+    :goto_3
     move-object/from16 v16, v2
 
     iget-object v2, v0, Landroidx/media3/common/MediaItem$Builder;->clippingConfiguration:Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
@@ -366,14 +366,14 @@
     .line 631
     iget-object v2, v0, Landroidx/media3/common/MediaItem$Builder;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
 
-    if-eqz v2, :cond_63
+    if-eqz v2, :cond_5
 
-    goto :goto_65
+    goto :goto_4
 
-    :cond_63
+    :cond_5
     sget-object v2, Landroidx/media3/common/MediaMetadata;->EMPTY:Landroidx/media3/common/MediaMetadata;
 
-    :goto_65
+    :goto_4
     move-object/from16 v20, v2
 
     iget-object v2, v0, Landroidx/media3/common/MediaItem$Builder;->requestMetadata:Landroidx/media3/common/MediaItem$RequestMetadata;
@@ -390,7 +390,7 @@
 .end method
 
 .method public setAdTagUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -405,11 +405,11 @@
 .end method
 
 .method public setAdTagUri(Landroid/net/Uri;Ljava/lang/Object;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 489
     new-instance v0, Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;
@@ -424,35 +424,35 @@
 
     move-result-object p1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_11
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->adsConfiguration:Landroidx/media3/common/MediaItem$AdsConfiguration;
 
     return-object p0
 .end method
 
 .method public setAdTagUri(Ljava/lang/String;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 464
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_8
+    :goto_0
     invoke-virtual {p0, p1}, Landroidx/media3/common/MediaItem$Builder;->setAdTagUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
 
     move-result-object p1
@@ -461,7 +461,7 @@
 .end method
 
 .method public setAdsConfiguration(Landroidx/media3/common/MediaItem$AdsConfiguration;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 450
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->adsConfiguration:Landroidx/media3/common/MediaItem$AdsConfiguration;
@@ -470,7 +470,7 @@
 .end method
 
 .method public setClipEndPositionMs(J)Landroidx/media3/common/MediaItem$Builder;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -483,7 +483,7 @@
 .end method
 
 .method public setClipRelativeToDefaultPosition(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -496,7 +496,7 @@
 .end method
 
 .method public setClipRelativeToLiveWindow(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -509,7 +509,7 @@
 .end method
 
 .method public setClipStartPositionMs(J)Landroidx/media3/common/MediaItem$Builder;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -522,7 +522,7 @@
 .end method
 
 .method public setClipStartsAtKeyFrame(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -535,7 +535,7 @@
 .end method
 
 .method public setClippingConfiguration(Landroidx/media3/common/MediaItem$ClippingConfiguration;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 183
     invoke-virtual {p1}, Landroidx/media3/common/MediaItem$ClippingConfiguration;->buildUpon()Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
@@ -548,7 +548,7 @@
 .end method
 
 .method public setCustomCacheKey(Ljava/lang/String;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 413
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->customCacheKey:Ljava/lang/String;
@@ -557,32 +557,32 @@
 .end method
 
 .method public setDrmConfiguration(Landroidx/media3/common/MediaItem$DrmConfiguration;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 253
     invoke-virtual {p1}, Landroidx/media3/common/MediaItem$DrmConfiguration;->buildUpon()Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     move-result-object p1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     new-instance p1, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     const/4 v0, 0x0
 
     invoke-direct {p1, v0}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;-><init>(Landroidx/media3/common/MediaItem$1;)V
 
-    :goto_d
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     return-object p0
 .end method
 
 .method public setDrmForceDefaultLicenseUri(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -595,7 +595,7 @@
 .end method
 
 .method public setDrmKeySetId([B)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -608,7 +608,7 @@
 .end method
 
 .method public setDrmLicenseRequestHeaders(Ljava/util/Map;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -626,25 +626,25 @@
     .line 292
     iget-object v0, p0, Landroidx/media3/common/MediaItem$Builder;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 293
-    :cond_5
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object p1
 
     .line 292
-    :goto_9
+    :goto_0
     invoke-virtual {v0, p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->setLicenseRequestHeaders(Ljava/util/Map;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     return-object p0
 .end method
 
 .method public setDrmLicenseUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -657,7 +657,7 @@
 .end method
 
 .method public setDrmLicenseUri(Ljava/lang/String;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -670,7 +670,7 @@
 .end method
 
 .method public setDrmMultiSession(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -683,7 +683,7 @@
 .end method
 
 .method public setDrmPlayClearContentWithoutKey(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -696,7 +696,7 @@
 .end method
 
 .method public setDrmSessionForClearPeriods(Z)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -709,7 +709,7 @@
 .end method
 
 .method public setDrmSessionForClearTypes(Ljava/util/List;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -726,25 +726,25 @@
     .line 369
     iget-object v0, p0, Landroidx/media3/common/MediaItem$Builder;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 370
-    :cond_5
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
 
     .line 369
-    :goto_9
+    :goto_0
     invoke-virtual {v0, p1}, Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;->setForcedSessionTrackTypes(Ljava/util/List;)Landroidx/media3/common/MediaItem$DrmConfiguration$Builder;
 
     return-object p0
 .end method
 
 .method public setDrmUuid(Ljava/util/UUID;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -757,33 +757,33 @@
 .end method
 
 .method public setImageDurationMs(J)Landroidx/media3/common/MediaItem$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gtz v0, :cond_12
+    if-gtz v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 587
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 588
@@ -793,7 +793,7 @@
 .end method
 
 .method public setLiveConfiguration(Landroidx/media3/common/MediaItem$LiveConfiguration;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 496
     invoke-virtual {p1}, Landroidx/media3/common/MediaItem$LiveConfiguration;->buildUpon()Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
@@ -806,7 +806,7 @@
 .end method
 
 .method public setLiveMaxOffsetMs(J)Landroidx/media3/common/MediaItem$Builder;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -819,7 +819,7 @@
 .end method
 
 .method public setLiveMaxPlaybackSpeed(F)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -832,7 +832,7 @@
 .end method
 
 .method public setLiveMinOffsetMs(J)Landroidx/media3/common/MediaItem$Builder;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -845,7 +845,7 @@
 .end method
 
 .method public setLiveMinPlaybackSpeed(F)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -858,7 +858,7 @@
 .end method
 
 .method public setLiveTargetOffsetMs(J)Landroidx/media3/common/MediaItem$Builder;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -871,7 +871,7 @@
 .end method
 
 .method public setMediaId(Ljava/lang/String;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 136
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -886,7 +886,7 @@
 .end method
 
 .method public setMediaMetadata(Landroidx/media3/common/MediaMetadata;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 595
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
@@ -895,7 +895,7 @@
 .end method
 
 .method public setMimeType(Ljava/lang/String;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 176
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->mimeType:Ljava/lang/String;
@@ -904,7 +904,7 @@
 .end method
 
 .method public setRequestMetadata(Landroidx/media3/common/MediaItem$RequestMetadata;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 602
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->requestMetadata:Landroidx/media3/common/MediaItem$RequestMetadata;
@@ -913,7 +913,7 @@
 .end method
 
 .method public setStreamKeys(Ljava/util/List;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -924,14 +924,14 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 399
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 400
     new-instance v0, Ljava/util/ArrayList;
@@ -942,22 +942,22 @@
 
     move-result-object p1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 401
-    :cond_12
+    :cond_0
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
-    :goto_16
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->streamKeys:Ljava/util/List;
 
     return-object p0
 .end method
 
 .method public setSubtitleConfigurations(Ljava/util/List;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -979,7 +979,7 @@
 .end method
 
 .method public setSubtitles(Ljava/util/List;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -993,28 +993,28 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 428
     invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->subtitleConfigurations:Lcom/google/common/collect/ImmutableList;
 
     return-object p0
 .end method
 
 .method public setTag(Ljava/lang/Object;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 569
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->tag:Ljava/lang/Object;
@@ -1023,7 +1023,7 @@
 .end method
 
 .method public setUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
     .line 161
     iput-object p1, p0, Landroidx/media3/common/MediaItem$Builder;->uri:Landroid/net/Uri;
@@ -1032,21 +1032,21 @@
 .end method
 
 .method public setUri(Ljava/lang/String;)Landroidx/media3/common/MediaItem$Builder;
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 149
-    :cond_4
+    :cond_0
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     invoke-virtual {p0, p1}, Landroidx/media3/common/MediaItem$Builder;->setUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
 
     move-result-object p1

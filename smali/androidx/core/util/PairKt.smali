@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final component1(Landroid/util/Pair;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final component1(Landroidx/core/util/Pair;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -75,7 +75,7 @@
 .end method
 
 .method public static final component2(Landroid/util/Pair;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -95,7 +95,7 @@
 .end method
 
 .method public static final component2(Landroidx/core/util/Pair;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -115,7 +115,7 @@
 .end method
 
 .method public static final toAndroidPair(Lkotlin/Pair;)Landroid/util/Pair;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -147,7 +147,7 @@
 .end method
 
 .method public static final toAndroidXPair(Lkotlin/Pair;)Landroidx/core/util/Pair;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -179,7 +179,7 @@
 .end method
 
 .method public static final toKotlinPair(Landroid/util/Pair;)Lkotlin/Pair;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",
@@ -207,7 +207,7 @@
 .end method
 
 .method public static final toKotlinPair(Landroidx/core/util/Pair;)Lkotlin/Pair;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<F:",

@@ -18,7 +18,7 @@
 
 # direct methods
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/TrustedWebActivityDisplayMode;
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.trusted.displaymode.KEY_ID"
 
@@ -29,7 +29,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     .line 39
     new-instance p0, Landroidx/browser/trusted/TrustedWebActivityDisplayMode$DefaultMode;
@@ -39,7 +39,7 @@
     return-object p0
 
     .line 36
-    :cond_f
+    :cond_0
     invoke-static {p0}, Landroidx/browser/trusted/TrustedWebActivityDisplayMode$ImmersiveMode;->fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/TrustedWebActivityDisplayMode;
 
     move-result-object p0

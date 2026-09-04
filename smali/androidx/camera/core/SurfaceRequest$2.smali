@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/SurfaceRequest;Landroid/util/Size;I)V
-    .registers 4
+    .locals 0
 
     .line 237
     iput-object p1, p0, Landroidx/camera/core/SurfaceRequest$2;->this$0:Landroidx/camera/core/SurfaceRequest;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method protected provideSurface()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

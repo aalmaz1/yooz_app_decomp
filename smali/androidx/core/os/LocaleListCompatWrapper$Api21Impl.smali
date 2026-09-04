@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 276
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getScript(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 282
     invoke-virtual {p0}, Ljava/util/Locale;->getScript()Ljava/lang/String;

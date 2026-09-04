@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 216
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,7 +136,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/upstream/Loader;)Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/Loader;->currentTask:Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
@@ -145,7 +145,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/exoplayer/upstream/Loader;Landroidx/media3/exoplayer/upstream/Loader$LoadTask;)Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
-    .registers 2
+    .locals 0
 
     .line 44
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/Loader;->currentTask:Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
@@ -154,7 +154,7 @@
 .end method
 
 .method static synthetic access$202(Landroidx/media3/exoplayer/upstream/Loader;Ljava/io/IOException;)Ljava/io/IOException;
-    .registers 2
+    .locals 0
 
     .line 44
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/Loader;->fatalError:Ljava/io/IOException;
@@ -163,7 +163,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/upstream/Loader;)Ljava/util/concurrent/ExecutorService;
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/Loader;->downloadExecutorService:Ljava/util/concurrent/ExecutorService;
@@ -172,7 +172,7 @@
 .end method
 
 .method public static createRetryAction(ZJ)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 5
+    .locals 2
 
     .line 229
     new-instance v0, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
@@ -188,7 +188,7 @@
 
 # virtual methods
 .method public cancelLoading()V
-    .registers 3
+    .locals 2
 
     .line 281
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->currentTask:Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
@@ -207,7 +207,7 @@
 .end method
 
 .method public clearFatalError()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -218,45 +218,45 @@
 .end method
 
 .method public hasFatalError()Z
-    .registers 2
+    .locals 1
 
     .line 239
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->fatalError:Ljava/io/IOException;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 272
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->currentTask:Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -272,7 +272,7 @@
 .end method
 
 .method public maybeThrowError(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -282,34 +282,34 @@
     .line 314
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->fatalError:Ljava/io/IOException;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_2
 
     .line 316
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->currentTask:Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     const/high16 v1, -0x80000000
 
-    if-ne p1, v1, :cond_e
+    if-ne p1, v1, :cond_0
 
     .line 318
     iget p1, v0, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->defaultMinRetryCount:I
 
     .line 317
-    :cond_e
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->maybeThrowError(I)V
 
-    :cond_11
+    :cond_1
     return-void
 
     .line 315
-    :cond_12
+    :cond_2
     throw v0
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -320,20 +320,20 @@
 .end method
 
 .method public release(Landroidx/media3/exoplayer/upstream/Loader$ReleaseCallback;)V
-    .registers 4
+    .locals 2
 
     .line 296
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->currentTask:Landroidx/media3/exoplayer/upstream/Loader$LoadTask;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
     .line 297
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/upstream/Loader$LoadTask;->cancel(Z)V
 
-    :cond_8
-    if-eqz p1, :cond_14
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 300
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader;->downloadExecutorService:Ljava/util/concurrent/ExecutorService;
@@ -345,7 +345,7 @@
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
     .line 302
-    :cond_14
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/Loader;->downloadExecutorService:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {p1}, Ljava/util/concurrent/ExecutorService;->shutdown()V
@@ -354,7 +354,7 @@
 .end method
 
 .method public startLoading(Landroidx/media3/exoplayer/upstream/Loader$Loadable;Landroidx/media3/exoplayer/upstream/Loader$Callback;I)J
-    .registers 15
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",

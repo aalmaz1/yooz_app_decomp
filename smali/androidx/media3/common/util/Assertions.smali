@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,16 +14,16 @@
 .end method
 
 .method public static checkArgument(Z)V
-    .registers 1
+    .locals 0
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 40
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -32,16 +32,16 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 55
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -54,18 +54,18 @@
 .end method
 
 .method public static checkIndex(III)I
-    .registers 3
+    .locals 0
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-lt p0, p1, :cond_5
+    if-lt p0, p1, :cond_0
 
-    if-ge p0, p2, :cond_5
+    if-ge p0, p2, :cond_0
 
     return p0
 
     .line 71
-    :cond_5
+    :cond_0
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -74,7 +74,7 @@
 .end method
 
 .method public static checkMainThread()V
-    .registers 2
+    .locals 2
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -87,12 +87,12 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 225
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Not in applications main thread"
@@ -103,7 +103,7 @@
 .end method
 
 .method public static checkNotEmpty(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "#1"
@@ -118,12 +118,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 192
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public static checkNotEmpty(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-    .registers 3
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "#1"
@@ -147,12 +147,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 211
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -165,7 +165,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -190,7 +190,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -210,12 +210,12 @@
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 175
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -228,16 +228,16 @@
 .end method
 
 .method public static checkState(Z)V
-    .registers 1
+    .locals 0
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 85
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -246,16 +246,16 @@
 .end method
 
 .method public static checkState(ZLjava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 100
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -268,7 +268,7 @@
 .end method
 
 .method public static checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -286,12 +286,12 @@
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 117
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -300,7 +300,7 @@
 .end method
 
 .method public static checkStateNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -320,12 +320,12 @@
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 137
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

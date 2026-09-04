@@ -57,7 +57,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Landroidx/lifecycle/viewmodel/ViewModelInitializer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public create(Ljava/lang/Class;Landroidx/lifecycle/viewmodel/CreationExtras;)Landroidx/lifecycle/ViewModel;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -115,8 +115,8 @@
 
     move-object v4, v2
 
-    :goto_10
-    if-ge v3, v1, :cond_31
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     aget-object v5, v0, v3
 
@@ -129,7 +129,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_2e
+    if-eqz v6, :cond_1
 
     .line 107
     invoke-virtual {v5}, Landroidx/lifecycle/viewmodel/ViewModelInitializer;->getInitializer$lifecycle_viewmodel_release()Lkotlin/jvm/functions/Function1;
@@ -142,28 +142,28 @@
 
     instance-of v5, v4, Landroidx/lifecycle/ViewModel;
 
-    if-eqz v5, :cond_2d
+    if-eqz v5, :cond_0
 
     check-cast v4, Landroidx/lifecycle/ViewModel;
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
+    :cond_0
     move-object v4, v2
 
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_31
-    if-eqz v4, :cond_34
+    :cond_2
+    if-eqz v4, :cond_3
 
     return-object v4
 
     .line 110
-    :cond_34
+    :cond_3
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     .line 111

@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 69
     new-instance v0, Landroidx/media3/extractor/metadata/dvbsi/AppInfoTable$1;
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 55
     new-instance v0, Ljava/lang/StringBuilder;
@@ -109,7 +109,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 65
     iget-object p2, p0, Landroidx/media3/extractor/metadata/dvbsi/AppInfoTable;->url:Ljava/lang/String;

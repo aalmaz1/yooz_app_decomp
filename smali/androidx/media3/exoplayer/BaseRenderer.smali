@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method private resetPosition(JZ)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final clearListener()V
-    .registers 3
+    .locals 2
 
     .line 252
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->lock:Ljava/lang/Object;
@@ -118,7 +118,7 @@
     const/4 v1, 0x0
 
     .line 253
-    :try_start_4
+    :try_start_0
     iput-object v1, p0, Landroidx/media3/exoplayer/BaseRenderer;->rendererCapabilitiesListener:Landroidx/media3/exoplayer/RendererCapabilities$Listener;
 
     .line 254
@@ -126,18 +126,18 @@
 
     return-void
 
-    :catchall_8
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_4 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method protected final createRendererException(Ljava/lang/Throwable;Landroidx/media3/common/Format;I)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -150,14 +150,14 @@
 .end method
 
 .method protected final createRendererException(Ljava/lang/Throwable;Landroidx/media3/common/Format;ZI)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 14
+    .locals 9
 
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_0
 
     .line 488
     iget-boolean v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->throwRendererExceptionIsExecuting:Z
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -167,7 +167,7 @@
     const/4 v0, 0x0
 
     .line 492
-    :try_start_a
+    :try_start_0
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/BaseRenderer;->supportsFormat(Landroidx/media3/common/Format;)I
 
     move-result v1
@@ -175,16 +175,16 @@
     invoke-static {v1}, Landroidx/media3/exoplayer/RendererCapabilities;->getFormatSupport(I)I
 
     move-result v1
-    :try_end_12
-    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_a .. :try_end_12} :catch_19
-    .catchall {:try_start_a .. :try_end_12} :catchall_15
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 496
     iput-boolean v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->throwRendererExceptionIsExecuting:Z
 
-    goto :goto_1c
+    goto :goto_0
 
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     iput-boolean v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->throwRendererExceptionIsExecuting:Z
@@ -193,13 +193,13 @@
     throw p1
 
     .line 496
-    :catch_19
+    :catch_0
     iput-boolean v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->throwRendererExceptionIsExecuting:Z
 
-    :cond_1b
+    :cond_0
     const/4 v1, 0x4
 
-    :goto_1c
+    :goto_0
     move v6, v1
 
     .line 500
@@ -228,7 +228,7 @@
 .end method
 
 .method public final disable()V
-    .registers 4
+    .locals 3
 
     .line 214
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->state:I
@@ -237,14 +237,14 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_7
+    if-ne v0, v2, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move v2, v1
 
-    :goto_8
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 215
@@ -273,7 +273,7 @@
 .end method
 
 .method public final enable(Landroidx/media3/exoplayer/RendererConfiguration;[Landroidx/media3/common/Format;Landroidx/media3/exoplayer/source/SampleStream;JZZJJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 23
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -289,16 +289,16 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     move-object v0, p1
@@ -338,13 +338,13 @@
 .end method
 
 .method public final getCapabilities()Landroidx/media3/exoplayer/RendererCapabilities;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method protected final getClock()Landroidx/media3/common/util/Clock;
-    .registers 2
+    .locals 1
 
     .line 447
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->clock:Landroidx/media3/common/util/Clock;
@@ -359,7 +359,7 @@
 .end method
 
 .method protected final getConfiguration()Landroidx/media3/exoplayer/RendererConfiguration;
-    .registers 2
+    .locals 1
 
     .line 420
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->configuration:Landroidx/media3/exoplayer/RendererConfiguration;
@@ -374,7 +374,7 @@
 .end method
 
 .method protected final getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
-    .registers 2
+    .locals 1
 
     .line 399
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->formatHolder:Landroidx/media3/exoplayer/FormatHolder;
@@ -388,7 +388,7 @@
 .end method
 
 .method protected final getIndex()I
-    .registers 2
+    .locals 1
 
     .line 429
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->index:I
@@ -397,7 +397,7 @@
 .end method
 
 .method protected final getLastResetPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 394
     iget-wide v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->lastResetPositionUs:J
@@ -406,7 +406,7 @@
 .end method
 
 .method public getMediaClock()Landroidx/media3/exoplayer/MediaClock;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -414,7 +414,7 @@
 .end method
 
 .method protected final getPlayerId()Landroidx/media3/exoplayer/analytics/PlayerId;
-    .registers 2
+    .locals 1
 
     .line 438
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->playerId:Landroidx/media3/exoplayer/analytics/PlayerId;
@@ -429,7 +429,7 @@
 .end method
 
 .method public final getReadingPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 167
     iget-wide v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->readingPositionUs:J
@@ -438,7 +438,7 @@
 .end method
 
 .method public final getState()I
-    .registers 2
+    .locals 1
 
     .line 106
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->state:I
@@ -447,7 +447,7 @@
 .end method
 
 .method public final getStream()Landroidx/media3/exoplayer/source/SampleStream;
-    .registers 2
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->stream:Landroidx/media3/exoplayer/source/SampleStream;
@@ -456,7 +456,7 @@
 .end method
 
 .method protected final getStreamFormats()[Landroidx/media3/common/Format;
-    .registers 2
+    .locals 1
 
     .line 410
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->streamFormats:[Landroidx/media3/common/Format;
@@ -471,7 +471,7 @@
 .end method
 
 .method protected final getTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 452
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->timeline:Landroidx/media3/common/Timeline;
@@ -480,7 +480,7 @@
 .end method
 
 .method public final getTrackType()I
-    .registers 2
+    .locals 1
 
     .line 82
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->trackType:I
@@ -489,7 +489,7 @@
 .end method
 
 .method public handleMessage(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -500,7 +500,7 @@
 .end method
 
 .method public final hasReadStreamToEnd()Z
-    .registers 5
+    .locals 4
 
     .line 162
     iget-wide v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->readingPositionUs:J
@@ -509,21 +509,21 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public final init(ILandroidx/media3/exoplayer/analytics/PlayerId;Landroidx/media3/common/util/Clock;)V
-    .registers 4
+    .locals 0
 
     .line 92
     iput p1, p0, Landroidx/media3/exoplayer/BaseRenderer;->index:I
@@ -541,7 +541,7 @@
 .end method
 
 .method public final isCurrentStreamFinal()Z
-    .registers 2
+    .locals 1
 
     .line 177
     iget-boolean v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->streamIsFinal:Z
@@ -550,20 +550,20 @@
 .end method
 
 .method protected final isSourceReady()Z
-    .registers 2
+    .locals 1
 
     .line 567
     invoke-virtual {p0}, Landroidx/media3/exoplayer/BaseRenderer;->hasReadStreamToEnd()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->streamIsFinal:Z
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->stream:Landroidx/media3/exoplayer/source/SampleStream;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -576,12 +576,12 @@
 
     move-result v0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public final maybeThrowStreamError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -603,13 +603,13 @@
 .end method
 
 .method protected onDisabled()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onEnabled(ZZ)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -620,13 +620,13 @@
 .end method
 
 .method protected onInit()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onPositionReset(JZ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -637,13 +637,13 @@
 .end method
 
 .method protected onRelease()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected final onRendererCapabilitiesChanged()V
-    .registers 3
+    .locals 2
 
     .line 573
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->lock:Ljava/lang/Object;
@@ -651,42 +651,42 @@
     monitor-enter v0
 
     .line 574
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/BaseRenderer;->rendererCapabilitiesListener:Landroidx/media3/exoplayer/RendererCapabilities$Listener;
 
     .line 575
     monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 577
     invoke-interface {v1, p0}, Landroidx/media3/exoplayer/RendererCapabilities$Listener;->onRendererCapabilitiesChanged(Landroidx/media3/exoplayer/Renderer;)V
 
-    :cond_b
+    :cond_0
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 575
-    :try_start_d
+    :try_start_1
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_d .. :try_end_e} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method protected onReset()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onStarted()V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -697,13 +697,13 @@
 .end method
 
 .method protected onStopped()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onStreamChanged([Landroidx/media3/common/Format;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -714,13 +714,13 @@
 .end method
 
 .method protected onTimelineChanged(Landroidx/media3/common/Timeline;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method protected final readSource(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 9
+    .locals 5
 
     .line 524
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->stream:Landroidx/media3/exoplayer/source/SampleStream;
@@ -737,14 +737,14 @@
 
     const/4 v0, -0x4
 
-    if-ne p3, v0, :cond_32
+    if-ne p3, v0, :cond_2
 
     .line 526
     invoke-virtual {p2}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
 
     move-result p1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
     const-wide/high16 p1, -0x8000000000000000L
 
@@ -754,18 +754,18 @@
     .line 528
     iget-boolean p1, p0, Landroidx/media3/exoplayer/BaseRenderer;->streamIsFinal:Z
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 v0, -0x3
 
-    :goto_1f
+    :goto_0
     return v0
 
     .line 530
-    :cond_20
+    :cond_1
     iget-wide v0, p2, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/BaseRenderer;->streamOffsetUs:J
@@ -785,12 +785,12 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/BaseRenderer;->readingPositionUs:J
 
-    goto :goto_5b
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     const/4 p2, -0x5
 
-    if-ne p3, p2, :cond_5b
+    if-ne p3, p2, :cond_3
 
     .line 533
     iget-object p2, p1, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
@@ -808,7 +808,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_3
 
     .line 537
     invoke-virtual {p2}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -834,27 +834,27 @@
     .line 540
     iput-object p2, p1, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
 
-    :cond_5b
-    :goto_5b
+    :cond_3
+    :goto_1
     return p3
 .end method
 
 .method public final release()V
-    .registers 2
+    .locals 1
 
     .line 232
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->state:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 233
@@ -864,7 +864,7 @@
 .end method
 
 .method public final replaceStream([Landroidx/media3/common/Format;Landroidx/media3/exoplayer/source/SampleStream;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 15
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -888,13 +888,13 @@
 
     cmp-long p2, v0, v2
 
-    if-nez p2, :cond_13
+    if-nez p2, :cond_0
 
     .line 147
     iput-wide p3, p0, Landroidx/media3/exoplayer/BaseRenderer;->readingPositionUs:J
 
     .line 149
-    :cond_13
+    :cond_0
     iput-object p1, p0, Landroidx/media3/exoplayer/BaseRenderer;->streamFormats:[Landroidx/media3/common/Format;
 
     .line 150
@@ -917,21 +917,21 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 225
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->state:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 226
@@ -946,7 +946,7 @@
 .end method
 
 .method public final resetPosition(J)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -962,7 +962,7 @@
 .end method
 
 .method public final setCurrentStreamFinal()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -973,7 +973,7 @@
 .end method
 
 .method public final setListener(Landroidx/media3/exoplayer/RendererCapabilities$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 245
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->lock:Ljava/lang/Object;
@@ -981,7 +981,7 @@
     monitor-enter v0
 
     .line 246
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/BaseRenderer;->rendererCapabilitiesListener:Landroidx/media3/exoplayer/RendererCapabilities$Listener;
 
     .line 247
@@ -989,18 +989,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final setTimeline(Landroidx/media3/common/Timeline;)V
-    .registers 3
+    .locals 1
 
     .line 187
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->timeline:Landroidx/media3/common/Timeline;
@@ -1009,7 +1009,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 188
     iput-object p1, p0, Landroidx/media3/exoplayer/BaseRenderer;->timeline:Landroidx/media3/common/Timeline;
@@ -1017,12 +1017,12 @@
     .line 189
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/BaseRenderer;->onTimelineChanged(Landroidx/media3/common/Timeline;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method protected skipSource(J)I
-    .registers 6
+    .locals 3
 
     .line 557
     iget-object v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->stream:Landroidx/media3/exoplayer/source/SampleStream;
@@ -1045,7 +1045,7 @@
 .end method
 
 .method public final start()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1057,14 +1057,14 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 v0, 0x2
@@ -1079,7 +1079,7 @@
 .end method
 
 .method public final stop()V
-    .registers 4
+    .locals 3
 
     .line 207
     iget v0, p0, Landroidx/media3/exoplayer/BaseRenderer;->state:I
@@ -1088,16 +1088,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 208
@@ -1110,7 +1110,7 @@
 .end method
 
 .method public supportsMixedMimeTypeAdaptation()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;

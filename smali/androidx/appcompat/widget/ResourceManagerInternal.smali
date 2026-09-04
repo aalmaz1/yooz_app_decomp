@@ -89,7 +89,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 87
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -109,7 +109,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,12 +127,12 @@
 .end method
 
 .method private addDelegate(Ljava/lang/String;Landroidx/appcompat/widget/ResourceManagerInternal$InflateDelegate;)V
-    .registers 4
+    .locals 1
 
     .line 372
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDelegates:Landroidx/collection/SimpleArrayMap;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 373
     new-instance v0, Landroidx/collection/SimpleArrayMap;
@@ -142,7 +142,7 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDelegates:Landroidx/collection/SimpleArrayMap;
 
     .line 375
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDelegates:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -151,17 +151,17 @@
 .end method
 
 .method private declared-synchronized addDrawableToCache(Landroid/content/Context;JLandroid/graphics/drawable/Drawable;)Z
-    .registers 7
+    .locals 2
 
     monitor-enter p0
 
     .line 341
-    :try_start_1
+    :try_start_0
     invoke-virtual {p4}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object p4
 
-    if-eqz p4, :cond_26
+    if-eqz p4, :cond_1
 
     .line 343
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDrawableCaches:Ljava/util/WeakHashMap;
@@ -172,7 +172,7 @@
 
     check-cast v0, Landroidx/collection/LongSparseArray;
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 345
     new-instance v0, Landroidx/collection/LongSparseArray;
@@ -185,14 +185,14 @@
     invoke-virtual {v1, p1, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 348
-    :cond_1b
+    :cond_0
     new-instance p1, Ljava/lang/ref/WeakReference;
 
     invoke-direct {p1, p4}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, p2, p3, p1}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
-    :try_end_23
-    .catchall {:try_start_1 .. :try_end_23} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 349
     monitor-exit p0
@@ -202,14 +202,14 @@
     return p1
 
     .line 351
-    :cond_26
+    :cond_1
     monitor-exit p0
 
     const/4 p1, 0x0
 
     return p1
 
-    :catchall_29
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -218,12 +218,12 @@
 .end method
 
 .method private addTintListToCache(Landroid/content/Context;ILandroid/content/res/ColorStateList;)V
-    .registers 6
+    .locals 2
 
     .line 407
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTintLists:Ljava/util/WeakHashMap;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 408
     new-instance v0, Ljava/util/WeakHashMap;
@@ -233,7 +233,7 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTintLists:Ljava/util/WeakHashMap;
 
     .line 410
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTintLists:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -242,7 +242,7 @@
 
     check-cast v0, Landroidx/collection/SparseArrayCompat;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 412
     new-instance v0, Landroidx/collection/SparseArrayCompat;
@@ -255,23 +255,23 @@
     invoke-virtual {v1, p1, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 415
-    :cond_1f
+    :cond_1
     invoke-virtual {v0, p2, p3}, Landroidx/collection/SparseArrayCompat;->append(ILjava/lang/Object;)V
 
     return-void
 .end method
 
 .method private checkVectorDrawableSetup(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 499
     iget-boolean v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHasCheckedVectorDrawableSetup:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 505
@@ -284,18 +284,18 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
     .line 507
     invoke-static {p1}, Landroidx/appcompat/widget/ResourceManagerInternal;->isVectorDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
     return-void
 
-    :cond_17
+    :cond_1
     const/4 p1, 0x0
 
     .line 508
@@ -312,7 +312,7 @@
 .end method
 
 .method private static createCacheKey(Landroid/util/TypedValue;)J
-    .registers 5
+    .locals 4
 
     .line 172
     iget v0, p0, Landroid/util/TypedValue;->assetCookie:I
@@ -333,12 +333,12 @@
 .end method
 
 .method private createDrawableIfNeeded(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-    .registers 7
+    .locals 4
 
     .line 177
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTypedValue:Landroid/util/TypedValue;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 178
     new-instance v0, Landroid/util/TypedValue;
@@ -348,7 +348,7 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTypedValue:Landroid/util/TypedValue;
 
     .line 180
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTypedValue:Landroid/util/TypedValue;
 
     .line 181
@@ -370,28 +370,28 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_1
 
     return-object v3
 
     .line 191
-    :cond_20
+    :cond_1
     iget-object v3, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHooks:Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
 
-    if-nez v3, :cond_26
+    if-nez v3, :cond_2
 
     const/4 p2, 0x0
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 192
-    :cond_26
+    :cond_2
     invoke-interface {v3, p0, p1, p2}, Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;->createDrawableFor(Landroidx/appcompat/widget/ResourceManagerInternal;Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
-    :goto_2a
-    if-eqz p2, :cond_34
+    :goto_0
+    if-eqz p2, :cond_3
 
     .line 195
     iget v0, v0, Landroid/util/TypedValue;->changingConfigurations:I
@@ -401,20 +401,20 @@
     .line 197
     invoke-direct {p0, p1, v1, v2, p2}, Landroidx/appcompat/widget/ResourceManagerInternal;->addDrawableToCache(Landroid/content/Context;JLandroid/graphics/drawable/Drawable;)Z
 
-    :cond_34
+    :cond_3
     return-object p2
 .end method
 
 .method private static createTintFilter(Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;[I)Landroid/graphics/PorterDuffColorFilter;
-    .registers 4
+    .locals 1
 
-    if-eqz p0, :cond_f
+    if-eqz p0, :cond_1
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 480
@@ -429,25 +429,25 @@
 
     return-object p0
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static declared-synchronized get()Landroidx/appcompat/widget/ResourceManagerInternal;
-    .registers 2
+    .locals 2
 
     const-class v0, Landroidx/appcompat/widget/ResourceManagerInternal;
 
     monitor-enter v0
 
     .line 98
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/appcompat/widget/ResourceManagerInternal;->INSTANCE:Landroidx/appcompat/widget/ResourceManagerInternal;
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 99
     new-instance v1, Landroidx/appcompat/widget/ResourceManagerInternal;
@@ -460,16 +460,16 @@
     invoke-static {v1}, Landroidx/appcompat/widget/ResourceManagerInternal;->installDefaultInflateDelegates(Landroidx/appcompat/widget/ResourceManagerInternal;)V
 
     .line 102
-    :cond_11
+    :cond_0
     sget-object v1, Landroidx/appcompat/widget/ResourceManagerInternal;->INSTANCE:Landroidx/appcompat/widget/ResourceManagerInternal;
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_15
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
@@ -478,12 +478,12 @@
 .end method
 
 .method private declared-synchronized getCachedDrawable(Landroid/content/Context;J)Landroid/graphics/drawable/Drawable;
-    .registers 7
+    .locals 3
 
     monitor-enter p0
 
     .line 320
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDrawableCaches:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -491,12 +491,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/collection/LongSparseArray;
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 322
     monitor-exit p0
@@ -504,15 +504,15 @@
     return-object v1
 
     .line 325
-    :cond_e
-    :try_start_e
+    :cond_0
+    :try_start_1
     invoke-virtual {v0, p2, p3}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2
 
     .line 328
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -521,7 +521,7 @@
 
     check-cast v2, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_1
 
     .line 330
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -531,27 +531,27 @@
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
-    :try_end_26
-    .catchall {:try_start_e .. :try_end_26} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
     .line 333
-    :cond_28
-    :try_start_28
+    :cond_1
+    :try_start_2
     invoke-virtual {v0, p2, p3}, Landroidx/collection/LongSparseArray;->remove(J)V
-    :try_end_2b
-    .catchall {:try_start_28 .. :try_end_2b} :catchall_2d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 336
-    :cond_2b
+    :cond_2
     monitor-exit p0
 
     return-object v1
 
-    :catchall_2d
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -560,21 +560,21 @@
 .end method
 
 .method public static declared-synchronized getPorterDuffColorFilter(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
-    .registers 5
+    .locals 3
 
     const-class v0, Landroidx/appcompat/widget/ResourceManagerInternal;
 
     monitor-enter v0
 
     .line 487
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/appcompat/widget/ResourceManagerInternal;->COLOR_FILTER_CACHE:Landroidx/appcompat/widget/ResourceManagerInternal$ColorFilterLruCache;
 
     invoke-virtual {v1, p0, p1}, Landroidx/appcompat/widget/ResourceManagerInternal$ColorFilterLruCache;->get(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffColorFilter;
 
     move-result-object v2
 
-    if-nez v2, :cond_13
+    if-nez v2, :cond_0
 
     .line 491
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -583,16 +583,16 @@
 
     .line 492
     invoke-virtual {v1, p0, p1, v2}, Landroidx/appcompat/widget/ResourceManagerInternal$ColorFilterLruCache;->put(ILandroid/graphics/PorterDuff$Mode;Landroid/graphics/PorterDuffColorFilter;)Landroid/graphics/PorterDuffColorFilter;
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 495
-    :cond_13
+    :cond_0
     monitor-exit v0
 
     return-object v2
 
-    :catchall_15
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
@@ -601,14 +601,14 @@
 .end method
 
 .method private getTintListFromCache(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .registers 5
+    .locals 2
 
     .line 398
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTintLists:Ljava/util/WeakHashMap;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 399
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -617,7 +617,7 @@
 
     check-cast p1, Landroidx/collection/SparseArrayCompat;
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 400
     invoke-virtual {p1, p2}, Landroidx/collection/SparseArrayCompat;->get(I)Ljava/lang/Object;
@@ -628,23 +628,23 @@
 
     check-cast v1, Landroid/content/res/ColorStateList;
 
-    :cond_14
+    :cond_0
     return-object v1
 .end method
 
 .method private static installDefaultInflateDelegates(Landroidx/appcompat/widget/ResourceManagerInternal;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method private static isVectorDrawable(Landroid/graphics/drawable/Drawable;)Z
-    .registers 2
+    .locals 1
 
     .line 515
     instance-of v0, p0, Landroidx/vectordrawable/graphics/drawable/VectorDrawableCompat;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 516
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -661,45 +661,45 @@
 
     move-result p0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_18
+    :goto_1
     return p0
 .end method
 
 .method private loadDrawableFromDelegates(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-    .registers 13
+    .locals 10
 
     .line 234
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDelegates:Landroidx/collection/SimpleArrayMap;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_b4
+    if-eqz v0, :cond_a
 
     invoke-virtual {v0}, Landroidx/collection/SimpleArrayMap;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b4
+    if-nez v0, :cond_a
 
     .line 235
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mKnownDrawableIdTags:Landroidx/collection/SparseArrayCompat;
 
     const-string v2, "appcompat_skip_skip"
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 236
     invoke-virtual {v0, p2}, Landroidx/collection/SparseArrayCompat;->get(I)Ljava/lang/Object;
@@ -713,9 +713,9 @@
 
     move-result v3
 
-    if-nez v3, :cond_27
+    if-nez v3, :cond_0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     iget-object v3, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDelegates:Landroidx/collection/SimpleArrayMap;
 
@@ -724,13 +724,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
-    :cond_27
+    :cond_0
     return-object v1
 
     .line 249
-    :cond_28
+    :cond_1
     new-instance v0, Landroidx/collection/SparseArrayCompat;
 
     invoke-direct {v0}, Landroidx/collection/SparseArrayCompat;-><init>()V
@@ -738,10 +738,10 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mKnownDrawableIdTags:Landroidx/collection/SparseArrayCompat;
 
     .line 252
-    :cond_2f
+    :cond_2
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTypedValue:Landroid/util/TypedValue;
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 253
     new-instance v0, Landroid/util/TypedValue;
@@ -751,7 +751,7 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTypedValue:Landroid/util/TypedValue;
 
     .line 255
-    :cond_3a
+    :cond_3
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mTypedValue:Landroid/util/TypedValue;
 
     .line 256
@@ -774,15 +774,15 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_4f
+    if-eqz v6, :cond_4
 
     return-object v6
 
     .line 271
-    :cond_4f
+    :cond_4
     iget-object v7, v0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
-    if-eqz v7, :cond_ac
+    if-eqz v7, :cond_8
 
     iget-object v7, v0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
@@ -796,10 +796,10 @@
 
     move-result v7
 
-    if-eqz v7, :cond_ac
+    if-eqz v7, :cond_8
 
     .line 274
-    :try_start_61
+    :try_start_0
     invoke-virtual {v1, p2}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
     move-result-object v1
@@ -810,21 +810,21 @@
     move-result-object v7
 
     .line 277
-    :goto_69
+    :goto_0
     invoke-interface {v1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v8
 
     const/4 v9, 0x2
 
-    if-eq v8, v9, :cond_73
+    if-eq v8, v9, :cond_5
 
-    if-eq v8, v3, :cond_73
+    if-eq v8, v3, :cond_5
 
-    goto :goto_69
+    goto :goto_0
 
-    :cond_73
-    if-ne v8, v9, :cond_9c
+    :cond_5
+    if-ne v8, v9, :cond_7
 
     .line 285
     invoke-interface {v1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -845,7 +845,7 @@
 
     check-cast v3, Landroidx/appcompat/widget/ResourceManagerInternal$InflateDelegate;
 
-    if-eqz v3, :cond_91
+    if-eqz v3, :cond_6
 
     .line 293
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
@@ -859,8 +859,8 @@
 
     move-object v6, v1
 
-    :cond_91
-    if-eqz v6, :cond_ac
+    :cond_6
+    if-eqz v6, :cond_8
 
     .line 297
     iget v0, v0, Landroid/util/TypedValue;->changingConfigurations:I
@@ -870,10 +870,10 @@
     .line 298
     invoke-direct {p0, p1, v4, v5, v6}, Landroidx/appcompat/widget/ResourceManagerInternal;->addDrawableToCache(Landroid/content/Context;JLandroid/graphics/drawable/Drawable;)Z
 
-    goto :goto_ac
+    goto :goto_1
 
     .line 282
-    :cond_9c
+    :cond_7
     new-instance p1, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v0, "No start tag found"
@@ -881,10 +881,10 @@
     invoke-direct {p1, v0}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_a4
-    .catch Ljava/lang/Exception; {:try_start_61 .. :try_end_a4} :catch_a4
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_a4
+    :catch_0
     move-exception p1
 
     const-string v0, "ResourceManagerInternal"
@@ -894,38 +894,38 @@
     .line 304
     invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_ac
-    :goto_ac
-    if-nez v6, :cond_b3
+    :cond_8
+    :goto_1
+    if-nez v6, :cond_9
 
     .line 310
     iget-object p1, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mKnownDrawableIdTags:Landroidx/collection/SparseArrayCompat;
 
     invoke-virtual {p1, p2, v2}, Landroidx/collection/SparseArrayCompat;->append(ILjava/lang/Object;)V
 
-    :cond_b3
+    :cond_9
     return-object v6
 
-    :cond_b4
+    :cond_a
     return-object v1
 .end method
 
 .method private tintDrawable(Landroid/content/Context;IZLandroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-    .registers 6
+    .locals 1
 
     .line 205
     invoke-virtual {p0, p1, p2}, Landroidx/appcompat/widget/ResourceManagerInternal;->getTintList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 208
     invoke-static {p4}, Landroidx/appcompat/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 209
     invoke-virtual {p4}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
@@ -933,7 +933,7 @@
     move-result-object p4
 
     .line 211
-    :cond_10
+    :cond_0
     invoke-static {p4}, Landroidx/core/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p4
@@ -946,46 +946,46 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
     .line 217
     invoke-static {p4, p1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
-    goto :goto_35
+    goto :goto_0
 
     .line 219
-    :cond_21
+    :cond_1
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHooks:Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     invoke-interface {v0, p1, p2, p4}, Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;->tintDrawable(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
-    goto :goto_35
+    goto :goto_0
 
     .line 223
-    :cond_2c
+    :cond_2
     invoke-virtual {p0, p1, p2, p4}, Landroidx/appcompat/widget/ResourceManagerInternal;->tintDrawableUsingColorFilter(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
 
     move-result p1
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_3
 
-    if-eqz p3, :cond_35
+    if-eqz p3, :cond_3
 
     const/4 p4, 0x0
 
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_0
     return-object p4
 .end method
 
 .method static tintDrawable(Landroid/graphics/drawable/Drawable;Landroidx/appcompat/widget/TintInfo;[I)V
-    .registers 6
+    .locals 3
 
     .line 441
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
@@ -999,24 +999,24 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 445
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    if-ne v1, p0, :cond_13
+    if-ne v1, p0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v1, v2
 
-    :goto_14
-    if-nez v1, :cond_1e
+    :goto_0
+    if-nez v1, :cond_1
 
     const-string p0, "ResourceManagerInternal"
 
@@ -1028,16 +1028,16 @@
     return-void
 
     .line 453
-    :cond_1e
+    :cond_1
     instance-of v1, p0, Landroid/graphics/drawable/LayerDrawable;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     new-array v1, v2, [I
 
@@ -1048,84 +1048,84 @@
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     .line 459
-    :cond_30
+    :cond_2
     iget-boolean v0, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_4
 
     iget-boolean v0, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintMode:Z
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 465
-    :cond_39
+    :cond_3
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->clearColorFilter()V
 
-    goto :goto_55
+    goto :goto_4
 
     .line 461
-    :cond_3d
-    :goto_3d
+    :cond_4
+    :goto_1
     iget-boolean v0, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintList:Z
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_5
 
     iget-object v0, p1, Landroidx/appcompat/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
 
-    goto :goto_45
+    goto :goto_2
 
-    :cond_44
+    :cond_5
     const/4 v0, 0x0
 
     .line 462
-    :goto_45
+    :goto_2
     iget-boolean v1, p1, Landroidx/appcompat/widget/TintInfo;->mHasTintMode:Z
 
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_6
 
     iget-object p1, p1, Landroidx/appcompat/widget/TintInfo;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    goto :goto_4e
+    goto :goto_3
 
-    :cond_4c
+    :cond_6
     sget-object p1, Landroidx/appcompat/widget/ResourceManagerInternal;->DEFAULT_MODE:Landroid/graphics/PorterDuff$Mode;
 
     .line 460
-    :goto_4e
+    :goto_3
     invoke-static {v0, p1, p2}, Landroidx/appcompat/widget/ResourceManagerInternal;->createTintFilter(Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;[I)Landroid/graphics/PorterDuffColorFilter;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    :goto_55
+    :goto_4
     return-void
 .end method
 
 
 # virtual methods
 .method public declared-synchronized getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-    .registers 4
+    .locals 1
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 137
-    :try_start_2
+    :try_start_0
     invoke-virtual {p0, p1, p2, v0}, Landroidx/appcompat/widget/ResourceManagerInternal;->getDrawable(Landroid/content/Context;IZ)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
-    :try_end_6
-    .catchall {:try_start_2 .. :try_end_6} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_8
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1134,12 +1134,12 @@
 .end method
 
 .method declared-synchronized getDrawable(Landroid/content/Context;IZ)Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 1
 
     monitor-enter p0
 
     .line 142
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1}, Landroidx/appcompat/widget/ResourceManagerInternal;->checkVectorDrawableSetup(Landroid/content/Context;)V
 
     .line 144
@@ -1147,44 +1147,44 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 146
     invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/ResourceManagerInternal;->createDrawableIfNeeded(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_e
-    if-nez v0, :cond_14
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 149
     invoke-static {p1, p2}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_14
-    if-eqz v0, :cond_1a
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 154
     invoke-direct {p0, p1, p2, p3, v0}, Landroidx/appcompat/widget/ResourceManagerInternal;->tintDrawable(Landroid/content/Context;IZLandroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_1a
-    if-eqz v0, :cond_1f
+    :cond_2
+    if-eqz v0, :cond_3
 
     .line 158
     invoke-static {v0}, Landroidx/appcompat/widget/DrawableUtils;->fixDrawable(Landroid/graphics/drawable/Drawable;)V
-    :try_end_1f
-    .catchall {:try_start_1 .. :try_end_1f} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 160
-    :cond_1f
+    :cond_3
     monitor-exit p0
 
     return-object v0
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1193,47 +1193,47 @@
 .end method
 
 .method declared-synchronized getTintList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .registers 4
+    .locals 1
 
     monitor-enter p0
 
     .line 384
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/ResourceManagerInternal;->getTintListFromCache(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 388
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHooks:Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     invoke-interface {v0, p1, p2}, Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;->getTintListForDrawableRes(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    :goto_11
-    if-eqz v0, :cond_16
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 391
     invoke-direct {p0, p1, p2, v0}, Landroidx/appcompat/widget/ResourceManagerInternal;->addTintListToCache(Landroid/content/Context;ILandroid/content/res/ColorStateList;)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 394
-    :cond_16
+    :cond_1
     monitor-exit p0
 
     return-object v0
 
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1242,33 +1242,33 @@
 .end method
 
 .method getTintMode(I)Landroid/graphics/PorterDuff$Mode;
-    .registers 3
+    .locals 1
 
     .line 379
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHooks:Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0, p1}, Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;->getTintModeForDrawableRes(I)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object p1
 
-    :goto_a
+    :goto_0
     return-object p1
 .end method
 
 .method public declared-synchronized onConfigurationChanged(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 164
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mDrawableCaches:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1277,20 +1277,20 @@
 
     check-cast p1, Landroidx/collection/LongSparseArray;
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 167
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->clear()V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 169
-    :cond_e
+    :cond_0
     monitor-exit p0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1299,25 +1299,25 @@
 .end method
 
 .method declared-synchronized onDrawableLoadedFromResources(Landroid/content/Context;Landroidx/appcompat/widget/VectorEnabledTintResources;I)Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 1
 
     monitor-enter p0
 
     .line 356
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p3}, Landroidx/appcompat/widget/ResourceManagerInternal;->loadDrawableFromDelegates(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 358
     invoke-virtual {p2, p3}, Landroidx/appcompat/widget/VectorEnabledTintResources;->getDrawableCanonical(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    :cond_b
-    if-eqz v0, :cond_14
+    :cond_0
+    if-eqz v0, :cond_1
 
     const/4 p2, 0x0
 
@@ -1325,22 +1325,22 @@
     invoke-direct {p0, p1, p3, p2, v0}, Landroidx/appcompat/widget/ResourceManagerInternal;->tintDrawable(Landroid/content/Context;IZLandroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
     .line 363
-    :cond_14
+    :cond_1
     monitor-exit p0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1349,22 +1349,22 @@
 .end method
 
 .method public declared-synchronized setHooks(Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 133
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHooks:Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 134
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1373,26 +1373,26 @@
 .end method
 
 .method tintDrawableUsingColorFilter(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
-    .registers 5
+    .locals 1
 
     .line 368
     iget-object v0, p0, Landroidx/appcompat/widget/ResourceManagerInternal;->mHooks:Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1, p2, p3}, Landroidx/appcompat/widget/ResourceManagerInternal$ResourceManagerHooks;->tintDrawableUsingColorFilter(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method

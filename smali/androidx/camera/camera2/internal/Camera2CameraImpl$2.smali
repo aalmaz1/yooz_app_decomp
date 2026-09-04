@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1224
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -45,12 +45,12 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 3
 
     .line 1238
     instance-of v0, p1, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 1239
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -67,21 +67,21 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 1244
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
     invoke-virtual {v0, p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->postSurfaceClosedError(Landroidx/camera/core/impl/SessionConfig;)V
 
-    :cond_17
+    :cond_0
     return-void
 
     .line 1254
-    :cond_18
+    :cond_1
     instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     .line 1255
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -93,14 +93,14 @@
     return-void
 
     .line 1260
-    :cond_24
+    :cond_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
     iget-object v0, v0, Landroidx/camera/camera2/internal/Camera2CameraImpl;->mState:Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;
 
     sget-object v1, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;->OPENED:Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;
 
-    if-ne v0, v1, :cond_38
+    if-ne v0, v1, :cond_3
 
     .line 1261
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -118,10 +118,10 @@
     invoke-virtual {v0, v1, v2}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->setState(Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;Landroidx/camera/core/CameraState$StateError;)V
 
     .line 1265
-    :cond_38
+    :cond_3
     instance-of v0, p1, Landroid/hardware/camera2/CameraAccessException;
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_4
 
     .line 1266
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -146,13 +146,13 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->debugLog(Ljava/lang/String;)V
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 1267
-    :cond_55
+    :cond_4
     instance-of p1, p1, Ljava/util/concurrent/TimeoutException;
 
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_5
 
     .line 1269
     new-instance p1, Ljava/lang/StringBuilder;
@@ -187,13 +187,13 @@
 
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_7b
-    :goto_7b
+    :cond_5
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1224
     check-cast p1, Ljava/lang/Void;
@@ -204,7 +204,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 3
+    .locals 1
 
     .line 1229
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -217,7 +217,7 @@
 
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_1a
+    if-ne p1, v0, :cond_0
 
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
@@ -225,7 +225,7 @@
 
     sget-object v0, Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;->OPENED:Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;
 
-    if-ne p1, v0, :cond_1a
+    if-ne p1, v0, :cond_0
 
     .line 1231
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$2;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -234,6 +234,6 @@
 
     invoke-virtual {p1, v0}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->setState(Landroidx/camera/camera2/internal/Camera2CameraImpl$InternalState;)V
 
-    :cond_1a
+    :cond_0
     return-void
 .end method

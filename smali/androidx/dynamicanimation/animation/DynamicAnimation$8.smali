@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public getValue(Landroid/view/View;)F
-    .registers 2
+    .locals 0
 
     .line 170
     invoke-virtual {p1}, Landroid/view/View;->getRotationY()F
@@ -40,7 +40,7 @@
 .end method
 
 .method public bridge synthetic getValue(Ljava/lang/Object;)F
-    .registers 2
+    .locals 0
 
     .line 162
     check-cast p1, Landroid/view/View;
@@ -53,7 +53,7 @@
 .end method
 
 .method public setValue(Landroid/view/View;F)V
-    .registers 3
+    .locals 0
 
     .line 165
     invoke-virtual {p1, p2}, Landroid/view/View;->setRotationY(F)V
@@ -62,7 +62,7 @@
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
-    .registers 3
+    .locals 0
 
     .line 162
     check-cast p1, Landroid/view/View;

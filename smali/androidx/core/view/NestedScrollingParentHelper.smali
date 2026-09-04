@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;)V
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public getNestedScrollAxes()I
-    .registers 3
+    .locals 2
 
     .line 92
     iget v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
@@ -35,7 +35,7 @@
 .end method
 
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -46,27 +46,27 @@
 .end method
 
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;II)V
-    .registers 5
+    .locals 0
 
     const/4 p1, 0x1
 
-    if-ne p4, p1, :cond_6
+    if-ne p4, p1, :cond_0
 
     .line 77
     iput p3, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesNonTouch:I
 
-    goto :goto_8
+    goto :goto_0
 
     .line 79
-    :cond_6
+    :cond_0
     iput p3, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
 
-    :goto_8
+    :goto_0
     return-void
 .end method
 
 .method public onStopNestedScroll(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -77,23 +77,23 @@
 .end method
 
 .method public onStopNestedScroll(Landroid/view/View;I)V
-    .registers 4
+    .locals 1
 
     const/4 p1, 0x1
 
     const/4 v0, 0x0
 
-    if-ne p2, p1, :cond_7
+    if-ne p2, p1, :cond_0
 
     .line 115
     iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesNonTouch:I
 
-    goto :goto_9
+    goto :goto_0
 
     .line 117
-    :cond_7
+    :cond_0
     iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
 
-    :goto_9
+    :goto_0
     return-void
 .end method

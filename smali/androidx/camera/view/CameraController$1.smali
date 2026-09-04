@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/CameraController;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -58,19 +58,19 @@
 
 # virtual methods
 .method public accept(Landroidx/camera/video/VideoRecordEvent;)V
-    .registers 4
+    .locals 2
 
     .line 1314
     instance-of v0, p1, Landroidx/camera/video/VideoRecordEvent$Finalize;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 1315
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->isMainThread()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 1317
     iget-object v0, p0, Landroidx/camera/view/CameraController$1;->val$mainExecutor:Ljava/util/concurrent/Executor;
@@ -81,17 +81,17 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 1319
-    :cond_15
+    :cond_0
     iget-object v0, p0, Landroidx/camera/view/CameraController$1;->this$0:Landroidx/camera/view/CameraController;
 
     invoke-virtual {v0, p0}, Landroidx/camera/view/CameraController;->deactivateRecordingByListener(Landroidx/core/util/Consumer;)V
 
     .line 1322
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/camera/view/CameraController$1;->val$listener:Landroidx/core/util/Consumer;
 
     invoke-interface {v0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -100,7 +100,7 @@
 .end method
 
 .method public bridge synthetic accept(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1311
     check-cast p1, Landroidx/camera/video/VideoRecordEvent;
@@ -111,7 +111,7 @@
 .end method
 
 .method synthetic lambda$accept$0$androidx-camera-view-CameraController$1()V
-    .registers 2
+    .locals 1
 
     .line 1317
     iget-object v0, p0, Landroidx/camera/view/CameraController$1;->this$0:Landroidx/camera/view/CameraController;

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/text/SubtitleParser$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method private ensureSampleDataCapacity(I)V
-    .registers 6
+    .locals 4
 
     .line 193
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleData:[B
@@ -81,12 +81,12 @@
 
     sub-int/2addr v0, v1
 
-    if-lt v0, p1, :cond_9
+    if-lt v0, p1, :cond_0
 
     return-void
 
     .line 196
-    :cond_9
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleDataStart:I
 
     sub-int/2addr v1, v0
@@ -105,17 +105,17 @@
 
     array-length v2, v0
 
-    if-gt p1, v2, :cond_1a
+    if-gt p1, v2, :cond_1
 
     move-object p1, v0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     new-array p1, p1, [B
 
     .line 202
-    :goto_1c
+    :goto_0
     iget v2, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleDataStart:I
 
     const/4 v3, 0x0
@@ -135,7 +135,7 @@
 .end method
 
 .method private outputSample(Landroidx/media3/extractor/text/CuesWithTiming;JI)V
-    .registers 13
+    .locals 8
 
     .line 161
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentFormat:Landroidx/media3/common/Format;
@@ -177,7 +177,7 @@
 
     const-wide v2, 0x7fffffffffffffffL
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_1
 
     .line 168
     iget-object p1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentFormat:Landroidx/media3/common/Format;
@@ -186,39 +186,39 @@
 
     cmp-long p1, v4, v2
 
-    if-nez p1, :cond_36
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_36
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_37
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 170
-    :cond_3b
+    :cond_1
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentFormat:Landroidx/media3/common/Format;
 
     iget-wide v4, v1, Landroidx/media3/common/Format;->subsampleOffsetUs:J
 
     cmp-long v1, v4, v2
 
-    if-nez v1, :cond_47
+    if-nez v1, :cond_2
 
     .line 171
     iget-wide v1, p1, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
 
     add-long/2addr p2, v1
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 173
-    :cond_47
+    :cond_2
     iget-wide p1, p1, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
 
     iget-object p3, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentFormat:Landroidx/media3/common/Format;
@@ -227,7 +227,7 @@
 
     add-long p2, p1, v1
 
-    :goto_4f
+    :goto_1
     move-wide v2, p2
 
     .line 175
@@ -249,7 +249,7 @@
 
 # virtual methods
 .method public format(Landroidx/media3/common/Format;)V
-    .registers 6
+    .locals 4
 
     .line 75
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -265,16 +265,16 @@
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 77
@@ -284,7 +284,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     .line 78
     iput-object p1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentFormat:Landroidx/media3/common/Format;
@@ -296,7 +296,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 81
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -305,30 +305,30 @@
 
     move-result-object v0
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
+    :cond_1
     const/4 v0, 0x0
 
     .line 82
-    :goto_2e
+    :goto_1
     iput-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentSubtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
     .line 84
-    :cond_30
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentSubtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 85
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->delegate:Landroidx/media3/extractor/TrackOutput;
 
     invoke-interface {v0, p1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    goto :goto_66
+    goto :goto_2
 
     .line 87
-    :cond_3a
+    :cond_3
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->delegate:Landroidx/media3/extractor/TrackOutput;
 
     .line 89
@@ -376,12 +376,12 @@
     .line 87
     invoke-interface {v0, p1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    :goto_66
+    :goto_2
     return-void
 .end method
 
 .method synthetic lambda$sampleMetadata$0$androidx-media3-extractor-text-SubtitleTranscodingTrackOutput(JILandroidx/media3/extractor/text/CuesWithTiming;)V
-    .registers 5
+    .locals 0
 
     .line 151
     invoke-direct {p0, p4, p1, p2, p3}, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->outputSample(Landroidx/media3/extractor/text/CuesWithTiming;JI)V
@@ -390,22 +390,22 @@
 .end method
 
 .method public resetSubtitleParser()V
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentSubtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 67
     invoke-interface {v0}, Landroidx/media3/extractor/text/SubtitleParser;->reset()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZI)I
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -415,7 +415,7 @@
     .line 104
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentSubtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 105
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->delegate:Landroidx/media3/extractor/TrackOutput;
@@ -427,7 +427,7 @@
     return p1
 
     .line 107
-    :cond_b
+    :cond_0
     invoke-direct {p0, p2}, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->ensureSampleDataCapacity(I)V
 
     .line 108
@@ -441,14 +441,14 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_22
+    if-ne p1, p2, :cond_2
 
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_1
 
     return p2
 
     .line 113
-    :cond_1c
+    :cond_1
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -456,7 +456,7 @@
     throw p1
 
     .line 116
-    :cond_22
+    :cond_2
     iget p2, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleDataEnd:I
 
     add-int/2addr p2, p1
@@ -467,12 +467,12 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
-    .registers 5
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentSubtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 124
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->delegate:Landroidx/media3/extractor/TrackOutput;
@@ -482,7 +482,7 @@
     return-void
 
     .line 127
-    :cond_a
+    :cond_0
     invoke-direct {p0, p2}, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->ensureSampleDataCapacity(I)V
 
     .line 128
@@ -503,12 +503,12 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 15
+    .locals 8
 
     .line 139
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->currentSubtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 140
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->delegate:Landroidx/media3/extractor/TrackOutput;
@@ -527,19 +527,19 @@
 
     return-void
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    if-nez p6, :cond_14
+    if-nez p6, :cond_1
 
     const/4 p6, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     move p6, v0
 
-    :goto_15
+    :goto_0
     const-string v1, "DRM on subtitles is not supported"
 
     .line 143
@@ -581,7 +581,7 @@
     .line 153
     iget p1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleDataEnd:I
 
-    if-ne p6, p1, :cond_3b
+    if-ne p6, p1, :cond_2
 
     .line 155
     iput v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleDataStart:I
@@ -589,6 +589,6 @@
     .line 156
     iput v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;->sampleDataEnd:I
 
-    :cond_3b
+    :cond_2
     return-void
 .end method

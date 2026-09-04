@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;[B[B)V
-    .registers 4
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public final addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 69
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -52,7 +52,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -62,7 +62,7 @@
     .line 121
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/Aes128DataSource;->cipherInputStream:Ljavax/crypto/CipherInputStream;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -74,12 +74,12 @@
 
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource;->close()V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method protected getCipherInstance()Ljavax/crypto/Cipher;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljavax/crypto/NoSuchPaddingException;,
@@ -98,7 +98,7 @@
 .end method
 
 .method public final getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -121,7 +121,7 @@
 .end method
 
 .method public final getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/Aes128DataSource;->upstream:Landroidx/media3/datasource/DataSource;
@@ -134,7 +134,7 @@
 .end method
 
 .method public final open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -146,9 +146,9 @@
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/Aes128DataSource;->getCipherInstance()Ljavax/crypto/Cipher;
 
     move-result-object v0
-    :try_end_4
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_4} :catch_37
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_4} :catch_35
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 82
     new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
@@ -169,11 +169,11 @@
     const/4 v3, 0x2
 
     .line 86
-    :try_start_15
+    :try_start_1
     invoke-virtual {v0, v3, v1, v2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_18
-    .catch Ljava/security/InvalidKeyException; {:try_start_15 .. :try_end_18} :catch_2e
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_15 .. :try_end_18} :catch_2c
+    :try_end_1
+    .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 91
     new-instance v1, Landroidx/media3/datasource/DataSourceInputStream;
@@ -196,32 +196,32 @@
 
     return-wide v0
 
-    :catch_2c
+    :catch_0
     move-exception p1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :catch_2e
+    :catch_1
     move-exception p1
 
     .line 88
-    :goto_2f
+    :goto_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
 
-    :catch_35
+    :catch_2
     move-exception p1
 
-    goto :goto_38
+    goto :goto_1
 
-    :catch_37
+    :catch_3
     move-exception p1
 
     .line 79
-    :goto_38
+    :goto_1
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -230,7 +230,7 @@
 .end method
 
 .method public final read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -249,10 +249,10 @@
 
     move-result p1
 
-    if-gez p1, :cond_e
+    if-gez p1, :cond_0
 
     const/4 p1, -0x1
 
-    :cond_e
+    :cond_0
     return p1
 .end method

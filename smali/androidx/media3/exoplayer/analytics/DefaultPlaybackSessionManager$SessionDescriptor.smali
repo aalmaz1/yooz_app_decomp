@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;Ljava/lang/String;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 5
+    .locals 0
 
     .line 354
     iput-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;
@@ -45,37 +45,37 @@
     .line 356
     iput p3, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
-    if-nez p4, :cond_e
+    if-nez p4, :cond_0
 
     const-wide/16 p1, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 358
-    :cond_e
+    :cond_0
     iget-wide p1, p4, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
-    :goto_10
+    :goto_0
     iput-wide p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
-    if-eqz p4, :cond_1c
+    if-eqz p4, :cond_1
 
     .line 359
     invoke-virtual {p4}, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->isAd()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
     .line 360
     iput-object p4, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 342
     iget-object p0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->sessionId:Ljava/lang/String;
@@ -84,7 +84,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)J
-    .registers 3
+    .locals 2
 
     .line 342
     iget-wide v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
@@ -93,7 +93,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)I
-    .registers 1
+    .locals 0
 
     .line 342
     iget p0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
@@ -102,7 +102,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Z
-    .registers 1
+    .locals 0
 
     .line 342
     iget-boolean p0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isCreated:Z
@@ -111,7 +111,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;Z)Z
-    .registers 2
+    .locals 0
 
     .line 342
     iput-boolean p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isCreated:Z
@@ -120,7 +120,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Z
-    .registers 1
+    .locals 0
 
     .line 342
     iget-boolean p0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isActive:Z
@@ -129,7 +129,7 @@
 .end method
 
 .method static synthetic access$402(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;Z)Z
-    .registers 2
+    .locals 0
 
     .line 342
     iput-boolean p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isActive:Z
@@ -138,7 +138,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 1
+    .locals 0
 
     .line 342
     iget-object p0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -147,7 +147,7 @@
 .end method
 
 .method private resolveWindowIndexToNewTimeline(Landroidx/media3/common/Timeline;Landroidx/media3/common/Timeline;I)I
-    .registers 6
+    .locals 2
 
     .line 450
     invoke-virtual {p1}, Landroidx/media3/common/Timeline;->getWindowCount()I
@@ -156,25 +156,25 @@
 
     const/4 v1, -0x1
 
-    if-lt p3, v0, :cond_10
+    if-lt p3, v0, :cond_1
 
     .line 451
     invoke-virtual {p2}, Landroidx/media3/common/Timeline;->getWindowCount()I
 
     move-result p1
 
-    if-ge p3, p1, :cond_e
+    if-ge p3, p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move p3, v1
 
-    :goto_f
+    :goto_0
     return p3
 
     .line 453
-    :cond_10
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;->access$700(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;)Landroidx/media3/common/Timeline$Window;
@@ -193,7 +193,7 @@
     iget p3, p3, Landroidx/media3/common/Timeline$Window;->firstPeriodIndex:I
 
     .line 455
-    :goto_21
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;->access$700(Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;)Landroidx/media3/common/Timeline$Window;
@@ -202,7 +202,7 @@
 
     iget v0, v0, Landroidx/media3/common/Timeline$Window;->lastPeriodIndex:I
 
-    if-gt p3, v0, :cond_45
+    if-gt p3, v0, :cond_3
 
     .line 457
     invoke-virtual {p1, p3}, Landroidx/media3/common/Timeline;->getUidOfPeriod(I)Ljava/lang/Object;
@@ -214,7 +214,7 @@
 
     move-result v0
 
-    if-eq v0, v1, :cond_42
+    if-eq v0, v1, :cond_2
 
     .line 460
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager;
@@ -231,51 +231,51 @@
 
     return p1
 
-    :cond_42
+    :cond_2
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_45
+    :cond_3
     return v1
 .end method
 
 
 # virtual methods
 .method public belongsToSession(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Z
-    .registers 9
+    .locals 6
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-nez p2, :cond_b
+    if-nez p2, :cond_1
 
     .line 380
     iget p2, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
-    if-ne p1, p2, :cond_9
+    if-ne p1, p2, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v1
 
-    :goto_a
+    :goto_0
     return v0
 
     .line 382
-    :cond_b
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-nez p1, :cond_20
+    if-nez p1, :cond_3
 
     .line 385
     invoke-virtual {p2}, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->isAd()Z
 
     move-result p1
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_2
 
     iget-wide p1, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
@@ -283,18 +283,18 @@
 
     cmp-long p1, p1, v2
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_2
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_2
     move v0, v1
 
-    :goto_1f
+    :goto_1
     return v0
 
     .line 389
-    :cond_20
+    :cond_3
     iget-wide v2, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -303,7 +303,7 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_3b
+    if-nez p1, :cond_4
 
     iget p1, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
@@ -311,7 +311,7 @@
 
     iget v2, v2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-ne p1, v2, :cond_3b
+    if-ne p1, v2, :cond_4
 
     iget p1, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
@@ -319,19 +319,19 @@
 
     iget p2, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
-    if-ne p1, p2, :cond_3b
+    if-ne p1, p2, :cond_4
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_3b
+    :cond_4
     move v0, v1
 
-    :goto_3c
+    :goto_2
     return v0
 .end method
 
 .method public isFinishedAtEventTime(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)Z
-    .registers 10
+    .locals 8
 
     .line 406
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -340,37 +340,37 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     .line 409
     iget v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
     iget p1, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->windowIndex:I
 
-    if-eq v0, p1, :cond_d
+    if-eq v0, p1, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v1, v2
 
-    :goto_e
+    :goto_0
     return v1
 
     .line 411
-    :cond_f
+    :cond_1
     iget-wide v3, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
     const-wide/16 v5, -0x1
 
     cmp-long v0, v3, v5
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_2
 
     return v2
 
     .line 415
-    :cond_18
+    :cond_2
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget-wide v3, v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
@@ -379,20 +379,20 @@
 
     cmp-long v0, v3, v5
 
-    if-lez v0, :cond_23
+    if-lez v0, :cond_3
 
     return v1
 
     .line 419
-    :cond_23
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_4
 
     return v2
 
     .line 423
-    :cond_28
+    :cond_4
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->timeline:Landroidx/media3/common/Timeline;
 
     iget-object v3, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -425,26 +425,26 @@
 
     cmp-long v4, v4, v6
 
-    if-ltz v4, :cond_87
+    if-ltz v4, :cond_c
 
-    if-ge v0, v3, :cond_4b
+    if-ge v0, v3, :cond_5
 
-    goto :goto_87
+    goto :goto_3
 
-    :cond_4b
-    if-le v0, v3, :cond_4e
+    :cond_5
+    if-le v0, v3, :cond_6
 
     return v1
 
     .line 434
-    :cond_4e
+    :cond_6
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->isAd()Z
 
     move-result v0
 
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_9
 
     .line 435
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -461,38 +461,38 @@
 
     iget v3, v3, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-gt v0, v3, :cond_72
+    if-gt v0, v3, :cond_8
 
     iget-object v3, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget v3, v3, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-ne v0, v3, :cond_71
+    if-ne v0, v3, :cond_7
 
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget v0, v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
-    if-le p1, v0, :cond_71
+    if-le p1, v0, :cond_7
 
-    goto :goto_72
+    goto :goto_1
 
-    :cond_71
+    :cond_7
     move v1, v2
 
-    :cond_72
-    :goto_72
+    :cond_8
+    :goto_1
     return v1
 
     .line 443
-    :cond_73
+    :cond_9
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget v0, v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
 
     const/4 v3, -0x1
 
-    if-eq v0, v3, :cond_86
+    if-eq v0, v3, :cond_b
 
     iget-object p1, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -502,24 +502,24 @@
 
     iget v0, v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-le p1, v0, :cond_85
+    if-le p1, v0, :cond_a
 
-    goto :goto_86
+    goto :goto_2
 
-    :cond_85
+    :cond_a
     move v1, v2
 
-    :cond_86
-    :goto_86
+    :cond_b
+    :goto_2
     return v1
 
-    :cond_87
-    :goto_87
+    :cond_c
+    :goto_3
     return v2
 .end method
 
 .method public maybeSetWindowSequenceNumber(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 7
+    .locals 4
 
     .line 396
     iget-wide v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
@@ -528,13 +528,13 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
-    if-ne p1, v0, :cond_1e
+    if-ne p1, v0, :cond_0
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     iget-wide v0, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
@@ -547,19 +547,19 @@
 
     cmp-long p1, v0, v2
 
-    if-ltz p1, :cond_1e
+    if-ltz p1, :cond_0
 
     .line 401
     iget-wide p1, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public tryResolvingToNewTimeline(Landroidx/media3/common/Timeline;Landroidx/media3/common/Timeline;)Z
-    .registers 6
+    .locals 3
 
     .line 365
     iget v0, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
@@ -574,32 +574,32 @@
 
     const/4 v1, -0x1
 
-    if-ne p1, v1, :cond_d
+    if-ne p1, v1, :cond_0
 
     return v0
 
     .line 369
-    :cond_d
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     const/4 v2, 0x1
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_1
 
     return v2
 
     .line 372
-    :cond_13
+    :cond_1
     iget-object p1, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-virtual {p2, p1}, Landroidx/media3/common/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
     move-result p1
 
-    if-eq p1, v1, :cond_1c
+    if-eq p1, v1, :cond_2
 
     move v0, v2
 
-    :cond_1c
+    :cond_2
     return v0
 .end method

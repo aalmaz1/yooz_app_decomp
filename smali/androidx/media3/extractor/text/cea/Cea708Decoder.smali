@@ -215,7 +215,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/util/List;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -248,31 +248,31 @@
 
     const/4 v1, 0x1
 
-    if-ne p1, v0, :cond_18
+    if-ne p1, v0, :cond_0
 
     move p1, v1
 
     .line 177
-    :cond_18
+    :cond_0
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->selectedServiceNumber:I
 
     const/4 p1, 0x0
 
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
     .line 180
     invoke-static {p2}, Landroidx/media3/common/util/CodecSpecificDataUtil;->parseCea708InitializationData(Ljava/util/List;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     move v1, p1
 
-    :goto_25
+    :goto_0
     iput-boolean v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->isWideAspectRatio:Z
 
     const/16 p2, 0x8
@@ -284,8 +284,8 @@
 
     move v0, p1
 
-    :goto_2e
-    if-ge v0, p2, :cond_3c
+    :goto_1
+    if-ge v0, p2, :cond_2
 
     .line 184
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -298,10 +298,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 187
-    :cond_3c
+    :cond_2
     iget-object p2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     aget-object p1, p2, p1
@@ -312,17 +312,17 @@
 .end method
 
 .method private finalizeCurrentPacket()V
-    .registers 2
+    .locals 1
 
     .line 285
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentDtvCcPacket:Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 290
-    :cond_5
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->processCurrentPacket()V
 
     const/4 v0, 0x0
@@ -334,7 +334,7 @@
 .end method
 
 .method private getDisplayCues()Ljava/util/List;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -353,10 +353,10 @@
 
     move v2, v1
 
-    :goto_7
+    :goto_0
     const/16 v3, 0x8
 
-    if-ge v2, v3, :cond_2f
+    if-ge v2, v3, :cond_1
 
     .line 817
     iget-object v3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -367,7 +367,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_0
 
     iget-object v3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
@@ -377,7 +377,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_0
 
     .line 818
     iget-object v3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -388,18 +388,18 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_0
 
     .line 820
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_2c
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 824
-    :cond_2f
+    :cond_1
     invoke-static {}, Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;->access$000()Ljava/util/Comparator;
 
     move-result-object v2
@@ -416,12 +416,12 @@
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 826
-    :goto_3f
+    :goto_1
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_53
+    if-ge v1, v3, :cond_2
 
     .line 827
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -436,10 +436,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 829
-    :cond_53
+    :cond_2
     invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -448,29 +448,29 @@
 .end method
 
 .method private handleC0Command(I)V
-    .registers 6
+    .locals 4
 
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_4
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_75
+    if-eq p1, v0, :cond_3
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_6f
+    if-eq p1, v0, :cond_2
 
-    packed-switch p1, :pswitch_data_7c
+    packed-switch p1, :pswitch_data_0
 
     const/16 v1, 0x11
 
     const-string v2, "Cea708Decoder"
 
-    if-lt p1, v1, :cond_2e
+    if-lt p1, v1, :cond_0
 
     const/16 v1, 0x17
 
-    if-gt p1, v1, :cond_2e
+    if-gt p1, v1, :cond_0
 
     .line 419
     new-instance v1, Ljava/lang/StringBuilder;
@@ -494,16 +494,16 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_7b
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     const/16 v0, 0x18
 
-    if-lt p1, v0, :cond_50
+    if-lt p1, v0, :cond_1
 
     const/16 v0, 0x1f
 
-    if-gt p1, v0, :cond_50
+    if-gt p1, v0, :cond_1
 
     .line 422
     new-instance v0, Ljava/lang/StringBuilder;
@@ -529,10 +529,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 425
-    :cond_50
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Invalid C0 command: "
@@ -549,55 +549,55 @@
 
     invoke-static {v2, p1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 412
-    :pswitch_63
+    :pswitch_0
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0xa
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 409
-    :pswitch_6b
+    :pswitch_1
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->resetCueBuilders()V
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 406
-    :cond_6f
+    :cond_2
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backspace()V
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 403
-    :cond_75
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->getDisplayCues()Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cues:Ljava/util/List;
 
-    :cond_7b
-    :goto_7b
-    :pswitch_7b
+    :cond_4
+    :goto_0
+    :pswitch_2
     return-void
 
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0xc
-        :pswitch_6b
-        :pswitch_63
-        :pswitch_7b
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
     .end packed-switch
 .end method
 
 .method private handleC1Command(I)V
-    .registers 6
+    .locals 4
 
     const/16 v0, 0x10
 
@@ -605,10 +605,10 @@
 
     const/4 v2, 0x1
 
-    packed-switch p1, :pswitch_data_116
+    packed-switch p1, :pswitch_data_0
 
     .line 542
-    :pswitch_8
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Invalid C1 command: "
@@ -627,9 +627,9 @@
 
     invoke-static {v0, p1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
-    :pswitch_1e
+    :pswitch_1
     add-int/lit16 p1, p1, -0x98
 
     .line 534
@@ -638,7 +638,7 @@
     .line 536
     iget v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentWindow:I
 
-    if-eq v0, p1, :cond_115
+    if-eq v0, p1, :cond_9
 
     .line 537
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentWindow:I
@@ -650,17 +650,17 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 518
-    :pswitch_31
+    :pswitch_2
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->isDefined()Z
 
     move-result p1
 
-    if-nez p1, :cond_42
+    if-nez p1, :cond_0
 
     .line 520
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -669,46 +669,46 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 522
-    :cond_42
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleSetWindowAttributes()V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 510
-    :pswitch_47
+    :pswitch_3
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->isDefined()Z
 
     move-result p1
 
-    if-nez p1, :cond_56
+    if-nez p1, :cond_1
 
     .line 512
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 514
-    :cond_56
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleSetPenLocation()V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 502
-    :pswitch_5b
+    :pswitch_4
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->isDefined()Z
 
     move-result p1
 
-    if-nez p1, :cond_6c
+    if-nez p1, :cond_2
 
     .line 504
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -717,54 +717,54 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 506
-    :cond_6c
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleSetPenColor()V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 494
-    :pswitch_71
+    :pswitch_5
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->isDefined()Z
 
     move-result p1
 
-    if-nez p1, :cond_80
+    if-nez p1, :cond_3
 
     .line 496
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 498
-    :cond_80
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleSetPenAttributes()V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 491
-    :pswitch_85
+    :pswitch_6
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->resetCueBuilders()V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
     .line 485
-    :pswitch_8a
+    :pswitch_7
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_115
+    goto/16 :goto_5
 
-    :goto_91
-    :pswitch_91
-    if-gt v2, v1, :cond_115
+    :goto_0
+    :pswitch_8
+    if-gt v2, v1, :cond_9
 
     .line 478
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -773,7 +773,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a4
+    if-eqz p1, :cond_4
 
     .line 479
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -784,16 +784,16 @@
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->reset()V
 
-    :cond_a4
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_91
+    goto :goto_0
 
-    :pswitch_a7
+    :pswitch_9
     move p1, v2
 
-    :goto_a8
-    if-gt p1, v1, :cond_115
+    :goto_1
+    if-gt p1, v1, :cond_9
 
     .line 470
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -802,7 +802,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c0
+    if-eqz v0, :cond_5
 
     .line 471
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -820,14 +820,14 @@
 
     invoke-virtual {v0, v3}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->setVisibility(Z)V
 
-    :cond_c0
+    :cond_5
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_a8
+    goto :goto_1
 
-    :goto_c3
-    :pswitch_c3
-    if-gt v2, v1, :cond_115
+    :goto_2
+    :pswitch_a
+    if-gt v2, v1, :cond_9
 
     .line 463
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -836,7 +836,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_d7
+    if-eqz p1, :cond_6
 
     .line 464
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -849,16 +849,16 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->setVisibility(Z)V
 
-    :cond_d7
+    :cond_6
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_c3
+    goto :goto_2
 
-    :pswitch_da
+    :pswitch_b
     move p1, v2
 
-    :goto_db
-    if-gt p1, v1, :cond_115
+    :goto_3
+    if-gt p1, v1, :cond_9
 
     .line 456
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -867,7 +867,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_ee
+    if-eqz v0, :cond_7
 
     .line 457
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -878,14 +878,14 @@
 
     invoke-virtual {v0, v2}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->setVisibility(Z)V
 
-    :cond_ee
+    :cond_7
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_db
+    goto :goto_3
 
-    :goto_f1
-    :pswitch_f1
-    if-gt v2, v1, :cond_115
+    :goto_4
+    :pswitch_c
+    if-gt v2, v1, :cond_9
 
     .line 449
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -894,7 +894,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_104
+    if-eqz p1, :cond_8
 
     .line 450
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -905,18 +905,18 @@
 
     invoke-virtual {p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->clear()V
 
-    :cond_104
+    :cond_8
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_f1
+    goto :goto_4
 
-    :pswitch_107
+    :pswitch_d
     add-int/lit8 p1, p1, -0x80
 
     .line 442
     iget v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentWindow:I
 
-    if-eq v0, p1, :cond_115
+    if-eq v0, p1, :cond_9
 
     .line 443
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentWindow:I
@@ -928,61 +928,61 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
-    :cond_115
-    :goto_115
-    :pswitch_115
+    :cond_9
+    :goto_5
+    :pswitch_e
     return-void
 
-    :pswitch_data_116
+    :pswitch_data_0
     .packed-switch 0x80
-        :pswitch_107
-        :pswitch_107
-        :pswitch_107
-        :pswitch_107
-        :pswitch_107
-        :pswitch_107
-        :pswitch_107
-        :pswitch_107
-        :pswitch_f1
-        :pswitch_da
-        :pswitch_c3
-        :pswitch_a7
-        :pswitch_91
-        :pswitch_8a
-        :pswitch_115
-        :pswitch_85
-        :pswitch_71
-        :pswitch_5b
-        :pswitch_47
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_31
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
+        :pswitch_7
+        :pswitch_e
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method private handleC2Command(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x7
 
-    if-gt p1, v0, :cond_4
+    if-gt p1, v0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/16 v0, 0xf
 
-    if-gt p1, v0, :cond_10
+    if-gt p1, v0, :cond_1
 
     .line 551
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -991,12 +991,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/16 v0, 0x17
 
-    if-gt p1, v0, :cond_1c
+    if-gt p1, v0, :cond_2
 
     .line 553
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1005,12 +1005,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_1c
+    :cond_2
     const/16 v0, 0x1f
 
-    if-gt p1, v0, :cond_27
+    if-gt p1, v0, :cond_3
 
     .line 555
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1019,17 +1019,17 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private handleC3Command(I)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x87
 
-    if-gt p1, v0, :cond_c
+    if-gt p1, v0, :cond_0
 
     .line 562
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1038,12 +1038,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/16 v0, 0x8f
 
-    if-gt p1, v0, :cond_18
+    if-gt p1, v0, :cond_1
 
     .line 564
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1052,12 +1052,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     const/16 v0, 0x9f
 
-    if-gt p1, v0, :cond_30
+    if-gt p1, v0, :cond_2
 
     .line 569
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1082,13 +1082,13 @@
 
     invoke-virtual {v0, p1}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method private handleDefineWindow(I)V
-    .registers 13
+    .locals 11
 
     .line 775
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -1208,11 +1208,11 @@
 .end method
 
 .method private handleG0Character(I)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x7f
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     .line 577
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -1221,10 +1221,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 579
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     and-int/lit16 p1, p1, 0xff
@@ -1233,12 +1233,12 @@
 
     invoke-virtual {v0, p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    :goto_14
+    :goto_0
     return-void
 .end method
 
 .method private handleG1Character(I)V
-    .registers 3
+    .locals 1
 
     .line 584
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -1253,51 +1253,51 @@
 .end method
 
 .method private handleG2Character(I)V
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x20
 
-    if-eq p1, v0, :cond_119
+    if-eq p1, v0, :cond_9
 
     const/16 v0, 0x21
 
-    if-eq p1, v0, :cond_111
+    if-eq p1, v0, :cond_8
 
     const/16 v0, 0x25
 
-    if-eq p1, v0, :cond_109
+    if-eq p1, v0, :cond_7
 
     const/16 v0, 0x2a
 
-    if-eq p1, v0, :cond_101
+    if-eq p1, v0, :cond_6
 
     const/16 v0, 0x2c
 
-    if-eq p1, v0, :cond_f9
+    if-eq p1, v0, :cond_5
 
     const/16 v0, 0x3f
 
-    if-eq p1, v0, :cond_f1
+    if-eq p1, v0, :cond_4
 
     const/16 v0, 0x39
 
-    if-eq p1, v0, :cond_e9
+    if-eq p1, v0, :cond_3
 
     const/16 v0, 0x3a
 
-    if-eq p1, v0, :cond_e1
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0x3c
 
-    if-eq p1, v0, :cond_d9
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x3d
 
-    if-eq p1, v0, :cond_d1
+    if-eq p1, v0, :cond_0
 
-    packed-switch p1, :pswitch_data_120
+    packed-switch p1, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_130
+    packed-switch p1, :pswitch_data_1
 
     .line 668
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1318,300 +1318,300 @@
 
     invoke-static {v0, p1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 665
-    :pswitch_44
+    :pswitch_0
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x250c
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 662
-    :pswitch_4d
+    :pswitch_1
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2518
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 659
-    :pswitch_56
+    :pswitch_2
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2500
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 656
-    :pswitch_5f
+    :pswitch_3
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2514
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 653
-    :pswitch_68
+    :pswitch_4
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2510
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 650
-    :pswitch_71
+    :pswitch_5
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2502
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 647
-    :pswitch_7a
+    :pswitch_6
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x215e
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 644
-    :pswitch_83
+    :pswitch_7
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x215d
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 641
-    :pswitch_8c
+    :pswitch_8
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x215c
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 638
-    :pswitch_95
+    :pswitch_9
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x215b
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 620
-    :pswitch_9e
+    :pswitch_a
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2022
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 617
-    :pswitch_a7
+    :pswitch_b
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x201d
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 614
-    :pswitch_b0
+    :pswitch_c
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x201c
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto/16 :goto_11e
+    goto/16 :goto_0
 
     .line 611
-    :pswitch_b9
+    :pswitch_d
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2019
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 608
-    :pswitch_c1
+    :pswitch_e
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2018
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 605
-    :pswitch_c9
+    :pswitch_f
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2588
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 632
-    :cond_d1
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2120
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 629
-    :cond_d9
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x153
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 626
-    :cond_e1
+    :cond_2
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x161
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 623
-    :cond_e9
+    :cond_3
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2122
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 635
-    :cond_f1
+    :cond_4
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x178
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 602
-    :cond_f9
+    :cond_5
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x152
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 599
-    :cond_101
+    :cond_6
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x160
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 596
-    :cond_109
+    :cond_7
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0x2026
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 593
-    :cond_111
+    :cond_8
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     const/16 v0, 0xa0
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_11e
+    goto :goto_0
 
     .line 590
-    :cond_119
+    :cond_9
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    :goto_11e
+    :goto_0
     return-void
 
     nop
 
-    :pswitch_data_120
+    :pswitch_data_0
     .packed-switch 0x30
-        :pswitch_c9
-        :pswitch_c1
-        :pswitch_b9
-        :pswitch_b0
-        :pswitch_a7
-        :pswitch_9e
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
     .end packed-switch
 
-    :pswitch_data_130
+    :pswitch_data_1
     .packed-switch 0x76
-        :pswitch_95
-        :pswitch_8c
-        :pswitch_83
-        :pswitch_7a
-        :pswitch_71
-        :pswitch_68
-        :pswitch_5f
-        :pswitch_56
-        :pswitch_4d
-        :pswitch_44
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private handleG3Character(I)V
-    .registers 4
+    .locals 2
 
     const/16 v0, 0xa0
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     .line 676
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentCueInfoBuilder:Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -1620,10 +1620,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    goto :goto_27
+    goto :goto_0
 
     .line 678
-    :cond_c
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Invalid G3 character: "
@@ -1649,12 +1649,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
-    :goto_27
+    :goto_0
     return-void
 .end method
 
 .method private handleSetPenAttributes()V
-    .registers 11
+    .locals 10
 
     .line 687
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1720,7 +1720,7 @@
 .end method
 
 .method private handleSetPenColor()V
-    .registers 7
+    .locals 6
 
     .line 703
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1830,7 +1830,7 @@
 .end method
 
 .method private handleSetPenLocation()V
-    .registers 4
+    .locals 3
 
     .line 729
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1871,7 +1871,7 @@
 .end method
 
 .method private handleSetWindowAttributes()V
-    .registers 14
+    .locals 13
 
     .line 741
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -1948,11 +1948,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_0
 
     or-int/lit8 v0, v0, 0x4
 
-    :cond_43
+    :cond_0
     move v9, v0
 
     .line 756
@@ -1999,7 +1999,7 @@
 .end method
 
 .method private processCurrentPacket()V
-    .registers 13
+    .locals 12
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "currentDtvCcPacket"
@@ -2025,7 +2025,7 @@
 
     const-string v4, "Cea708Decoder"
 
-    if-eq v0, v1, :cond_4a
+    if-eq v0, v1, :cond_0
 
     .line 297
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2087,7 +2087,7 @@
     invoke-static {v4, v0}, Landroidx/media3/common/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 324
-    :cond_4a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentDtvCcPacket:Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;
@@ -2103,15 +2103,15 @@
     const/4 v0, 0x0
 
     .line 325
-    :cond_58
-    :goto_58
+    :cond_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->bitsLeft()I
 
     move-result v1
 
-    if-lez v1, :cond_13b
+    if-lez v1, :cond_e
 
     .line 327
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -2133,7 +2133,7 @@
 
     const/4 v6, 0x7
 
-    if-ne v1, v6, :cond_91
+    if-ne v1, v6, :cond_2
 
     .line 331
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -2149,7 +2149,7 @@
 
     move-result v1
 
-    if-ge v1, v6, :cond_91
+    if-ge v1, v6, :cond_2
 
     .line 334
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2168,10 +2168,10 @@
 
     invoke-static {v4, v6}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_91
-    if-nez v5, :cond_af
+    :cond_2
+    if-nez v5, :cond_3
 
-    if-eqz v1, :cond_13b
+    if-eqz v1, :cond_e
 
     .line 341
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2196,23 +2196,23 @@
 
     invoke-static {v4, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_13b
+    goto/16 :goto_3
 
     .line 346
-    :cond_af
+    :cond_3
     iget v6, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->selectedServiceNumber:I
 
-    if-eq v1, v6, :cond_b9
+    if-eq v1, v6, :cond_4
 
     .line 347
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v1, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBytes(I)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 353
-    :cond_b9
+    :cond_4
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->getPosition()I
@@ -2224,14 +2224,14 @@
     add-int/2addr v1, v5
 
     .line 354
-    :goto_c2
+    :goto_1
     iget-object v5, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v5}, Landroidx/media3/common/util/ParsableBitArray;->getPosition()I
 
     move-result v5
 
-    if-ge v5, v1, :cond_58
+    if-ge v5, v1, :cond_1
 
     .line 355
     iget-object v5, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
@@ -2252,41 +2252,41 @@
 
     const/16 v11, 0x1f
 
-    if-eq v5, v7, :cond_109
+    if-eq v5, v7, :cond_9
 
-    if-gt v5, v11, :cond_e4
+    if-gt v5, v11, :cond_5
 
     .line 358
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleC0Command(I)V
 
-    goto :goto_c2
+    goto :goto_1
 
-    :cond_e4
-    if-gt v5, v10, :cond_ea
+    :cond_5
+    if-gt v5, v10, :cond_6
 
     .line 361
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleG0Character(I)V
 
-    goto :goto_11a
+    goto :goto_2
 
-    :cond_ea
-    if-gt v5, v9, :cond_f0
+    :cond_6
+    if-gt v5, v9, :cond_7
 
     .line 364
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleC1Command(I)V
 
-    goto :goto_11a
+    goto :goto_2
 
-    :cond_f0
-    if-gt v5, v8, :cond_f6
+    :cond_7
+    if-gt v5, v8, :cond_8
 
     .line 367
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleG1Character(I)V
 
-    goto :goto_11a
+    goto :goto_2
 
     .line 370
-    :cond_f6
+    :cond_8
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "Invalid base command: "
@@ -2303,52 +2303,52 @@
 
     invoke-static {v4, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_c2
+    goto :goto_1
 
     .line 374
-    :cond_109
+    :cond_9
     iget-object v5, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->captionChannelPacketData:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v5, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v5
 
-    if-gt v5, v11, :cond_115
+    if-gt v5, v11, :cond_a
 
     .line 376
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleC2Command(I)V
 
-    goto :goto_c2
+    goto :goto_1
 
-    :cond_115
-    if-gt v5, v10, :cond_11c
+    :cond_a
+    if-gt v5, v10, :cond_b
 
     .line 378
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleG2Character(I)V
 
-    :goto_11a
+    :goto_2
     move v0, v3
 
-    goto :goto_c2
+    goto :goto_1
 
-    :cond_11c
-    if-gt v5, v9, :cond_122
+    :cond_b
+    if-gt v5, v9, :cond_c
 
     .line 381
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleC3Command(I)V
 
-    goto :goto_c2
+    goto :goto_1
 
-    :cond_122
-    if-gt v5, v8, :cond_128
+    :cond_c
+    if-gt v5, v8, :cond_d
 
     .line 383
     invoke-direct {p0, v5}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->handleG3Character(I)V
 
-    goto :goto_11a
+    goto :goto_2
 
     .line 386
-    :cond_128
+    :cond_d
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "Invalid extended command: "
@@ -2365,11 +2365,11 @@
 
     invoke-static {v4, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_c2
+    goto :goto_1
 
-    :cond_13b
-    :goto_13b
-    if-eqz v0, :cond_143
+    :cond_e
+    :goto_3
+    if-eqz v0, :cond_f
 
     .line 393
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->getDisplayCues()Ljava/util/List;
@@ -2378,19 +2378,19 @@
 
     iput-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cues:Ljava/util/List;
 
-    :cond_143
+    :cond_f
     return-void
 .end method
 
 .method private resetCueBuilders()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
-    :goto_1
+    :goto_0
     const/16 v1, 0x8
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_0
 
     .line 834
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cueInfoBuilders:[Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;
@@ -2401,16 +2401,16 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method protected createSubtitle()Landroidx/media3/extractor/text/Subtitle;
-    .registers 3
+    .locals 2
 
     .line 213
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cues:Ljava/util/List;
@@ -2434,7 +2434,7 @@
 .end method
 
 .method protected decode(Landroidx/media3/extractor/text/SubtitleInputBuffer;)V
-    .registers 10
+    .locals 8
 
     .line 220
     iget-object p1, p1, Landroidx/media3/extractor/text/SubtitleInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -2460,8 +2460,8 @@
     invoke-virtual {v1, v0, p1}, Landroidx/media3/common/util/ParsableByteArray;->reset([BI)V
 
     .line 224
-    :cond_15
-    :goto_15
+    :cond_0
+    :goto_0
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->ccData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -2470,7 +2470,7 @@
 
     const/4 v0, 0x3
 
-    if-lt p1, v0, :cond_d6
+    if-lt p1, v0, :cond_9
 
     .line 225
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->ccData:Landroidx/media3/common/util/ParsableByteArray;
@@ -2491,17 +2491,17 @@
 
     const/4 v4, 0x1
 
-    if-ne p1, v2, :cond_30
+    if-ne p1, v2, :cond_1
 
     move p1, v4
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_30
+    :cond_1
     move p1, v3
 
     .line 229
-    :goto_31
+    :goto_1
     iget-object v5, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->ccData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v5}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -2521,21 +2521,21 @@
 
     const/4 v7, 0x2
 
-    if-eq v1, v7, :cond_45
+    if-eq v1, v7, :cond_2
 
-    if-eq v1, v0, :cond_45
+    if-eq v1, v0, :cond_2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_45
-    if-nez p1, :cond_48
+    :cond_2
+    if-nez p1, :cond_3
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_48
+    :cond_3
     const-string p1, "Cea708Decoder"
 
-    if-ne v1, v0, :cond_9a
+    if-ne v1, v0, :cond_6
 
     .line 243
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->finalizeCurrentPacket()V
@@ -2549,13 +2549,13 @@
 
     const/4 v3, -0x1
 
-    if-eq v1, v3, :cond_7e
+    if-eq v1, v3, :cond_4
 
     add-int/lit8 v1, v1, 0x1
 
     rem-int/2addr v1, v2
 
-    if-eq v0, v1, :cond_7e
+    if-eq v0, v1, :cond_4
 
     .line 248
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->resetCueBuilders()V
@@ -2590,17 +2590,17 @@
     invoke-static {p1, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 256
-    :cond_7e
+    :cond_4
     iput v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->previousSequenceNumber:I
 
     and-int/lit8 p1, v5, 0x3f
 
-    if-nez p1, :cond_86
+    if-nez p1, :cond_5
 
     const/16 p1, 0x40
 
     .line 263
-    :cond_86
+    :cond_5
     new-instance v1, Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;
 
     invoke-direct {v1, v0, p1}, Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;-><init>(II)V
@@ -2620,31 +2620,31 @@
 
     aput-byte v6, p1, v1
 
-    goto :goto_c5
+    goto :goto_2
 
-    :cond_9a
-    if-ne v1, v7, :cond_9d
+    :cond_6
+    if-ne v1, v7, :cond_7
 
     move v3, v4
 
     .line 267
-    :cond_9d
+    :cond_7
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 269
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentDtvCcPacket:Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;
 
-    if-nez v0, :cond_ab
+    if-nez v0, :cond_8
 
     const-string v0, "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START"
 
     .line 270
     invoke-static {p1, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_15
+    goto/16 :goto_0
 
     .line 274
-    :cond_ab
+    :cond_8
     iget-object p1, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;->packetData:[B
 
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentDtvCcPacket:Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;
@@ -2673,7 +2673,7 @@
     aput-byte v6, p1, v1
 
     .line 278
-    :goto_c5
+    :goto_2
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->currentDtvCcPacket:Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;
 
     iget p1, p1, Landroidx/media3/extractor/text/cea/Cea708Decoder$DtvCcPacket;->currentIndex:I
@@ -2686,19 +2686,19 @@
 
     sub-int/2addr v0, v4
 
-    if-ne p1, v0, :cond_15
+    if-ne p1, v0, :cond_0
 
     .line 279
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder;->finalizeCurrentPacket()V
 
-    goto/16 :goto_15
+    goto/16 :goto_0
 
-    :cond_d6
+    :cond_9
     return-void
 .end method
 
 .method public bridge synthetic dequeueInputBuffer()Landroidx/media3/extractor/text/SubtitleInputBuffer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -2714,7 +2714,7 @@
 .end method
 
 .method public bridge synthetic dequeueOutputBuffer()Landroidx/media3/extractor/text/SubtitleOutputBuffer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -2730,7 +2730,7 @@
 .end method
 
 .method public flush()V
-    .registers 4
+    .locals 3
 
     .line 197
     invoke-super {p0}, Landroidx/media3/extractor/text/cea/CeaDecoder;->flush()V
@@ -2765,7 +2765,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "Cea708Decoder"
 
@@ -2773,28 +2773,28 @@
 .end method
 
 .method protected isNewSubtitleDataAvailable()Z
-    .registers 3
+    .locals 2
 
     .line 208
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->cues:Ljava/util/List;
 
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder;->lastCues:Ljava/util/List;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public bridge synthetic queueInputBuffer(Landroidx/media3/extractor/text/SubtitleInputBuffer;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -2808,7 +2808,7 @@
 .end method
 
 .method public bridge synthetic release()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-super {p0}, Landroidx/media3/extractor/text/cea/CeaDecoder;->release()V
@@ -2817,7 +2817,7 @@
 .end method
 
 .method public bridge synthetic setPositionUs(J)V
-    .registers 3
+    .locals 0
 
     .line 50
     invoke-super {p0, p1, p2}, Landroidx/media3/extractor/text/cea/CeaDecoder;->setPositionUs(J)V

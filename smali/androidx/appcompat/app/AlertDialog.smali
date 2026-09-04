@@ -26,7 +26,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -37,7 +37,7 @@
 .end method
 
 .method protected constructor <init>(Landroid/content/Context;I)V
-    .registers 4
+    .locals 1
 
     .line 98
     invoke-static {p1, p2}, Landroidx/appcompat/app/AlertDialog;->resolveDialogTheme(Landroid/content/Context;I)I
@@ -65,7 +65,7 @@
 .end method
 
 .method protected constructor <init>(Landroid/content/Context;ZLandroid/content/DialogInterface$OnCancelListener;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -82,7 +82,7 @@
 .end method
 
 .method static resolveDialogTheme(Landroid/content/Context;I)I
-    .registers 4
+    .locals 2
 
     ushr-int/lit8 v0, p1, 0x18
 
@@ -90,12 +90,12 @@
 
     const/4 v1, 0x1
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_0
 
     return p1
 
     .line 114
-    :cond_8
+    :cond_0
     new-instance p1, Landroid/util/TypedValue;
 
     invoke-direct {p1}, Landroid/util/TypedValue;-><init>()V
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public getButton(I)Landroid/widget/Button;
-    .registers 3
+    .locals 1
 
     .line 131
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -131,7 +131,7 @@
 .end method
 
 .method public getListView()Landroid/widget/ListView;
-    .registers 2
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -144,7 +144,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     .line 278
     invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatDialog;->onCreate(Landroid/os/Bundle;)V
@@ -158,7 +158,7 @@
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 1
 
     .line 284
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -167,14 +167,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 287
-    :cond_a
+    :cond_0
     invoke-super {p0, p1, p2}, Landroidx/appcompat/app/AppCompatDialog;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result p1
@@ -183,7 +183,7 @@
 .end method
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 1
 
     .line 292
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -192,14 +192,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 295
-    :cond_a
+    :cond_0
     invoke-super {p0, p1, p2}, Landroidx/appcompat/app/AppCompatDialog;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result p1
@@ -208,7 +208,7 @@
 .end method
 
 .method public setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
-    .registers 10
+    .locals 6
 
     .line 226
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -229,7 +229,7 @@
 .end method
 
 .method public setButton(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Landroid/content/DialogInterface$OnClickListener;)V
-    .registers 11
+    .locals 6
 
     .line 244
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -250,7 +250,7 @@
 .end method
 
 .method public setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
-    .registers 10
+    .locals 6
 
     .line 211
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -271,7 +271,7 @@
 .end method
 
 .method setButtonPanelLayoutHint(I)V
-    .registers 3
+    .locals 1
 
     .line 196
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -282,7 +282,7 @@
 .end method
 
 .method public setCustomTitle(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 155
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -293,7 +293,7 @@
 .end method
 
 .method public setIcon(I)V
-    .registers 3
+    .locals 1
 
     .line 253
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -304,7 +304,7 @@
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     .line 262
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -315,7 +315,7 @@
 .end method
 
 .method public setIconAttribute(I)V
-    .registers 5
+    .locals 3
 
     .line 271
     new-instance v0, Landroid/util/TypedValue;
@@ -346,7 +346,7 @@
 .end method
 
 .method public setMessage(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 164
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -357,7 +357,7 @@
 .end method
 
 .method public setTitle(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 145
     invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatDialog;->setTitle(Ljava/lang/CharSequence;)V
@@ -371,7 +371,7 @@
 .end method
 
 .method public setView(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;
@@ -382,7 +382,7 @@
 .end method
 
 .method public setView(Landroid/view/View;IIII)V
-    .registers 12
+    .locals 6
 
     .line 187
     iget-object v0, p0, Landroidx/appcompat/app/AlertDialog;->mAlert:Landroidx/appcompat/app/AlertController;

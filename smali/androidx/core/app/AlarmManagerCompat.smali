@@ -15,7 +15,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 262
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,14 +24,14 @@
 .end method
 
 .method public static canScheduleExactAlarms(Landroid/app/AlarmManager;)Z
-    .registers 3
+    .locals 2
 
     .line 255
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 256
     invoke-static {p0}, Landroidx/core/app/AlarmManagerCompat$Api31Impl;->canScheduleExactAlarms(Landroid/app/AlarmManager;)Z
@@ -40,14 +40,14 @@
 
     return p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static setAlarmClock(Landroid/app/AlarmManager;JLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
-    .registers 5
+    .locals 0
 
     .line 68
     invoke-static {p1, p2, p3}, Landroidx/core/app/AlarmManagerCompat$Api21Impl;->createAlarmClockInfo(JLandroid/app/PendingIntent;)Landroid/app/AlarmManager$AlarmClockInfo;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static setAndAllowWhileIdle(Landroid/app/AlarmManager;IJLandroid/app/PendingIntent;)V
-    .registers 5
+    .locals 0
 
     .line 124
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/app/AlarmManagerCompat$Api23Impl;->setAndAllowWhileIdle(Landroid/app/AlarmManager;IJLandroid/app/PendingIntent;)V
@@ -70,7 +70,7 @@
 .end method
 
 .method public static setExact(Landroid/app/AlarmManager;IJLandroid/app/PendingIntent;)V
-    .registers 5
+    .locals 0
 
     .line 168
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
@@ -79,7 +79,7 @@
 .end method
 
 .method public static setExactAndAllowWhileIdle(Landroid/app/AlarmManager;IJLandroid/app/PendingIntent;)V
-    .registers 5
+    .locals 0
 
     .line 225
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/app/AlarmManagerCompat$Api23Impl;->setExactAndAllowWhileIdle(Landroid/app/AlarmManager;IJLandroid/app/PendingIntent;)V

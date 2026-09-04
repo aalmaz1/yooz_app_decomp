@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method private static forceSetFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-    .registers 8
+    .locals 6
 
     .line 74
     sget-boolean v0, Landroidx/core/view/LayoutInflaterCompat;->sCheckedField:Z
@@ -39,12 +39,12 @@
 
     const-string v2, "LayoutInflaterCompatHC"
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 76
-    :try_start_9
+    :try_start_0
     const-class v3, Landroid/view/LayoutInflater;
 
     const-string v4, "mFactory2"
@@ -57,12 +57,12 @@
 
     .line 77
     invoke-virtual {v3, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_16
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_9 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_34
+    goto :goto_0
 
-    :catch_17
+    :catch_0
     move-exception v3
 
     .line 79
@@ -95,24 +95,24 @@
     invoke-static {v2, v4, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 83
-    :goto_34
+    :goto_0
     sput-boolean v0, Landroidx/core/view/LayoutInflaterCompat;->sCheckedField:Z
 
     .line 85
-    :cond_36
+    :cond_0
     sget-object v0, Landroidx/core/view/LayoutInflaterCompat;->sLayoutInflaterFactory2Field:Ljava/lang/reflect/Field;
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_1
 
     .line 87
-    :try_start_3a
+    :try_start_1
     invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_3d
-    .catch Ljava/lang/IllegalAccessException; {:try_start_3a .. :try_end_3d} :catch_3e
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_55
+    goto :goto_1
 
-    :catch_3e
+    :catch_1
     move-exception p1
 
     .line 89
@@ -136,13 +136,13 @@
 
     invoke-static {v2, p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_55
-    :goto_55
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public static getFactory(Landroid/view/LayoutInflater;)Landroidx/core/view/LayoutInflaterFactory;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -154,7 +154,7 @@
     .line 172
     instance-of v0, p0, Landroidx/core/view/LayoutInflaterCompat$Factory2Wrapper;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 173
     check-cast p0, Landroidx/core/view/LayoutInflaterCompat$Factory2Wrapper;
@@ -163,14 +163,14 @@
 
     return-object p0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static setFactory(Landroid/view/LayoutInflater;Landroidx/core/view/LayoutInflaterFactory;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -185,7 +185,7 @@
 .end method
 
 .method public static setFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-    .registers 2
+    .locals 0
 
     .line 141
     invoke-virtual {p0, p1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V

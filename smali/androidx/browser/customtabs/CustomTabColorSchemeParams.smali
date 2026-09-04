@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V
-    .registers 5
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,9 +44,9 @@
 .end method
 
 .method static fromBundle(Landroid/os/Bundle;)Landroidx/browser/customtabs/CustomTabColorSchemeParams;
-    .registers 6
+    .locals 5
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     .line 99
     new-instance p0, Landroid/os/Bundle;
@@ -56,7 +56,7 @@
     invoke-direct {p0, v0}, Landroid/os/Bundle;-><init>(I)V
 
     .line 103
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;
 
     const-string v1, "android.support.customtabs.extra.TOOLBAR_COLOR"
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 75
     new-instance v0, Landroid/os/Bundle;
@@ -113,7 +113,7 @@
     .line 76
     iget-object v1, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->toolbarColor:Ljava/lang/Integer;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     const-string v2, "android.support.customtabs.extra.TOOLBAR_COLOR"
 
@@ -125,10 +125,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 79
-    :cond_12
+    :cond_0
     iget-object v1, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->secondaryToolbarColor:Ljava/lang/Integer;
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     const-string v2, "android.support.customtabs.extra.SECONDARY_TOOLBAR_COLOR"
 
@@ -140,10 +140,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 82
-    :cond_1f
+    :cond_1
     iget-object v1, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->navigationBarColor:Ljava/lang/Integer;
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     const-string v2, "androidx.browser.customtabs.extra.NAVIGATION_BAR_COLOR"
 
@@ -155,10 +155,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 85
-    :cond_2c
+    :cond_2
     iget-object v1, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->navigationBarDividerColor:Ljava/lang/Integer;
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_3
 
     const-string v2, "androidx.browser.customtabs.extra.NAVIGATION_BAR_DIVIDER_COLOR"
 
@@ -169,12 +169,12 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_39
+    :cond_3
     return-object v0
 .end method
 
 .method withDefaults(Landroidx/browser/customtabs/CustomTabColorSchemeParams;)Landroidx/browser/customtabs/CustomTabColorSchemeParams;
-    .registers 7
+    .locals 5
 
     .line 115
     new-instance v0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;
@@ -182,36 +182,36 @@
     .line 116
     iget-object v1, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->toolbarColor:Ljava/lang/Integer;
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
     iget-object v1, p1, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->toolbarColor:Ljava/lang/Integer;
 
     .line 117
-    :cond_8
+    :cond_0
     iget-object v2, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->secondaryToolbarColor:Ljava/lang/Integer;
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_1
 
     iget-object v2, p1, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->secondaryToolbarColor:Ljava/lang/Integer;
 
     .line 119
-    :cond_e
+    :cond_1
     iget-object v3, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->navigationBarColor:Ljava/lang/Integer;
 
-    if-nez v3, :cond_14
+    if-nez v3, :cond_2
 
     iget-object v3, p1, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->navigationBarColor:Ljava/lang/Integer;
 
     .line 120
-    :cond_14
+    :cond_2
     iget-object v4, p0, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->navigationBarDividerColor:Ljava/lang/Integer;
 
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_3
 
     iget-object v4, p1, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->navigationBarDividerColor:Ljava/lang/Integer;
 
     .line 121
-    :cond_1a
+    :cond_3
     invoke-direct {v0, v1, v2, v3, v4}, Landroidx/browser/customtabs/CustomTabColorSchemeParams;-><init>(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
     return-object v0

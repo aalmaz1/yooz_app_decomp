@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final accept(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$$ExternalSyntheticLambda1;->f$0:I
 

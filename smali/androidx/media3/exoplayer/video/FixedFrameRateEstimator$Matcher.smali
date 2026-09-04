@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method private static getRecentFrameOutlierIndex(J)I
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, 0xf
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public getFrameDurationNs()J
-    .registers 6
+    .locals 5
 
     .line 186
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
@@ -74,21 +74,21 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_9
+    if-nez v4, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
 
     div-long/2addr v2, v0
 
-    :goto_c
+    :goto_0
     return-wide v2
 .end method
 
 .method public getMatchingFrameDurationSumNs()J
-    .registers 3
+    .locals 2
 
     .line 182
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->matchingFrameDurationSumNs:J
@@ -97,7 +97,7 @@
 .end method
 
 .method public isLastFrameOutlier()Z
-    .registers 6
+    .locals 5
 
     .line 175
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->frameCount:J
@@ -106,14 +106,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 178
-    :cond_a
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierFlags:[Z
 
     const-wide/16 v3, 0x1
@@ -130,7 +130,7 @@
 .end method
 
 .method public isSynced()Z
-    .registers 5
+    .locals 4
 
     .line 170
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->frameCount:J
@@ -139,25 +139,25 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public onNextFrame(J)V
-    .registers 12
+    .locals 9
 
     .line 190
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->frameCount:J
@@ -168,17 +168,17 @@
 
     const-wide/16 v3, 0x1
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_0
 
     .line 191
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->firstFramePresentationTimeNs:J
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     cmp-long v2, v0, v3
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_1
 
     .line 194
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->firstFramePresentationTimeNs:J
@@ -193,10 +193,10 @@
     .line 196
     iput-wide v3, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
 
-    goto :goto_5a
+    goto :goto_0
 
     .line 198
-    :cond_1c
+    :cond_1
     iget-wide v5, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->lastFramePresentationTimeNs:J
 
     sub-long v5, p1, v5
@@ -221,7 +221,7 @@
 
     const/4 v2, 0x1
 
-    if-gtz v1, :cond_4d
+    if-gtz v1, :cond_2
 
     .line 202
     iget-wide v7, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->matchingFrameCount:J
@@ -242,7 +242,7 @@
 
     aget-boolean v5, v1, v0
 
-    if-eqz v5, :cond_5a
+    if-eqz v5, :cond_3
 
     const/4 v5, 0x0
 
@@ -256,15 +256,15 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
-    goto :goto_5a
+    goto :goto_0
 
     .line 209
-    :cond_4d
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierFlags:[Z
 
     aget-boolean v5, v1, v0
 
-    if-nez v5, :cond_5a
+    if-nez v5, :cond_3
 
     .line 210
     aput-boolean v2, v1, v0
@@ -277,8 +277,8 @@
     iput v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->recentFrameOutlierCount:I
 
     .line 216
-    :cond_5a
-    :goto_5a
+    :cond_3
+    :goto_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator$Matcher;->frameCount:J
 
     add-long/2addr v0, v3
@@ -292,7 +292,7 @@
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 

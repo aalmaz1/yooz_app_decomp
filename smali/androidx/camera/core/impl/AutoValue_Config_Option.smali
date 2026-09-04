@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,12 +47,12 @@
     .line 20
     invoke-direct {p0}, Landroidx/camera/core/impl/Config$Option;-><init>()V
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 24
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->id:Ljava/lang/String;
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 28
     iput-object p2, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->valueClass:Ljava/lang/Class;
@@ -63,7 +63,7 @@
     return-void
 
     .line 26
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null valueClass"
@@ -73,7 +73,7 @@
     throw p1
 
     .line 22
-    :cond_16
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null id"
@@ -86,21 +86,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 64
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/Config$Option;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_3
 
     .line 65
     check-cast p1, Landroidx/camera/core/impl/Config$Option;
@@ -116,7 +116,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->valueClass:Ljava/lang/Class;
 
@@ -129,22 +129,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->token:Ljava/lang/Object;
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1
 
     .line 68
     invoke-virtual {p1}, Landroidx/camera/core/impl/Config$Option;->getToken()Ljava/lang/Object;
 
     move-result-object p1
 
-    if-nez p1, :cond_39
+    if-nez p1, :cond_2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/impl/Config$Option;->getToken()Ljava/lang/Object;
 
     move-result-object p1
@@ -153,22 +153,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     move v0, v2
 
-    :goto_3a
+    :goto_0
     return v0
 
-    :cond_3b
+    :cond_3
     return v2
 .end method
 
 .method public getId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 35
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->id:Ljava/lang/String;
@@ -177,7 +177,7 @@
 .end method
 
 .method public getToken()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->token:Ljava/lang/Object;
@@ -186,7 +186,7 @@
 .end method
 
 .method public getValueClass()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -202,7 +202,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 77
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->id:Ljava/lang/String;
@@ -231,25 +231,25 @@
     .line 81
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_Config_Option;->token:Ljava/lang/Object;
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_1d
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 52
     new-instance v0, Ljava/lang/StringBuilder;

@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 136
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyField$LazyIterator;->iterator:Ljava/util/Iterator;
@@ -84,7 +84,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 127
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyField$LazyIterator;->next()Ljava/util/Map$Entry;
@@ -95,7 +95,7 @@
 .end method
 
 .method public next()Ljava/util/Map$Entry;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -122,7 +122,7 @@
 
     instance-of v1, v1, Landroidx/datastore/preferences/protobuf/LazyField;
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 144
     new-instance v1, Landroidx/datastore/preferences/protobuf/LazyField$LazyEntry;
@@ -133,12 +133,12 @@
 
     return-object v1
 
-    :cond_17
+    :cond_0
     return-object v0
 .end method
 
 .method public remove()V
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyField$LazyIterator;->iterator:Ljava/util/Iterator;

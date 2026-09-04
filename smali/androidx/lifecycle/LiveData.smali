@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 64
     new-instance v0, Ljava/lang/Object;
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -123,7 +123,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -174,7 +174,7 @@
 .end method
 
 .method static assertMainThread(Ljava/lang/String;)V
-    .registers 4
+    .locals 3
 
     .line 501
     invoke-static {}, Landroidx/arch/core/executor/ArchTaskExecutor;->getInstance()Landroidx/arch/core/executor/ArchTaskExecutor;
@@ -185,12 +185,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 502
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -219,7 +219,7 @@
 .end method
 
 .method private considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -231,17 +231,17 @@
     .line 117
     iget-boolean v0, p1, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 125
-    :cond_5
+    :cond_0
     invoke-virtual {p1}, Landroidx/lifecycle/LiveData$ObserverWrapper;->shouldBeActive()Z
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
@@ -251,17 +251,17 @@
     return-void
 
     .line 129
-    :cond_10
+    :cond_1
     iget v0, p1, Landroidx/lifecycle/LiveData$ObserverWrapper;->mLastVersion:I
 
     iget v1, p0, Landroidx/lifecycle/LiveData;->mVersion:I
 
-    if-lt v0, v1, :cond_17
+    if-lt v0, v1, :cond_2
 
     return-void
 
     .line 132
-    :cond_17
+    :cond_2
     iput v1, p1, Landroidx/lifecycle/LiveData$ObserverWrapper;->mLastVersion:I
 
     .line 133
@@ -277,7 +277,7 @@
 
 # virtual methods
 .method changeActiveCounter(I)V
-    .registers 6
+    .locals 4
 
     .line 393
     iget v0, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
@@ -290,77 +290,77 @@
     .line 395
     iget-boolean p1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     return-void
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x1
 
     .line 398
     iput-boolean p1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
-    :goto_d
+    :goto_0
     const/4 v1, 0x0
 
     .line 400
-    :try_start_e
+    :try_start_0
     iget v2, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
-    if-eq v0, v2, :cond_2d
+    if-eq v0, v2, :cond_5
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
-    if-lez v2, :cond_18
+    if-lez v2, :cond_1
 
     move v3, p1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v3, v1
 
-    :goto_19
-    if-lez v0, :cond_1f
+    :goto_1
+    if-lez v0, :cond_2
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_2
 
     move v0, p1
 
-    goto :goto_20
+    goto :goto_2
 
-    :cond_1f
+    :cond_2
     move v0, v1
 
-    :goto_20
-    if-eqz v3, :cond_26
+    :goto_2
+    if-eqz v3, :cond_3
 
     .line 405
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->onActive()V
 
-    goto :goto_2b
+    goto :goto_3
 
-    :cond_26
-    if-eqz v0, :cond_2b
+    :cond_3
+    if-eqz v0, :cond_4
 
     .line 407
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->onInactive()V
-    :try_end_2b
-    .catchall {:try_start_e .. :try_end_2b} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_2b
-    :goto_2b
+    :cond_4
+    :goto_3
     move v0, v2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 411
-    :cond_2d
+    :cond_5
     iput-boolean v1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
     return-void
 
-    :catchall_30
+    :catchall_0
     move-exception p1
 
     iput-boolean v1, p0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
@@ -370,7 +370,7 @@
 .end method
 
 .method dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -384,7 +384,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 139
     iput-boolean v1, p0, Landroidx/lifecycle/LiveData;->mDispatchInvalidated:Z
@@ -392,26 +392,26 @@
     return-void
 
     .line 142
-    :cond_8
+    :cond_0
     iput-boolean v1, p0, Landroidx/lifecycle/LiveData;->mDispatchingValue:Z
 
-    :cond_a
+    :cond_1
     const/4 v0, 0x0
 
     .line 144
     iput-boolean v0, p0, Landroidx/lifecycle/LiveData;->mDispatchInvalidated:Z
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_2
 
     .line 146
     invoke-direct {p0, p1}, Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V
 
     const/4 p1, 0x0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 149
-    :cond_14
+    :cond_2
     iget-object v1, p0, Landroidx/lifecycle/LiveData;->mObservers:Landroidx/arch/core/internal/SafeIterableMap;
 
     .line 150
@@ -419,12 +419,12 @@
 
     move-result-object v1
 
-    :cond_1a
+    :cond_3
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_4
 
     .line 151
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -444,14 +444,14 @@
     .line 152
     iget-boolean v2, p0, Landroidx/lifecycle/LiveData;->mDispatchInvalidated:Z
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_3
 
     .line 157
-    :cond_33
-    :goto_33
+    :cond_4
+    :goto_0
     iget-boolean v1, p0, Landroidx/lifecycle/LiveData;->mDispatchInvalidated:Z
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     .line 158
     iput-boolean v0, p0, Landroidx/lifecycle/LiveData;->mDispatchingValue:Z
@@ -460,7 +460,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -473,18 +473,18 @@
     .line 324
     sget-object v1, Landroidx/lifecycle/LiveData;->NOT_SET:Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_0
 
     return-object v0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method getVersion()I
-    .registers 2
+    .locals 1
 
     .line 345
     iget v0, p0, Landroidx/lifecycle/LiveData;->mVersion:I
@@ -493,26 +493,26 @@
 .end method
 
 .method public hasActiveObservers()Z
-    .registers 2
+    .locals 1
 
     .line 388
     iget v0, p0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public hasObservers()Z
-    .registers 2
+    .locals 1
 
     .line 378
     iget-object v0, p0, Landroidx/lifecycle/LiveData;->mObservers:Landroidx/arch/core/internal/SafeIterableMap;
@@ -521,42 +521,42 @@
 
     move-result v0
 
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public isInitialized()Z
-    .registers 3
+    .locals 2
 
     .line 341
     iget-object v0, p0, Landroidx/lifecycle/LiveData;->mData:Ljava/lang/Object;
 
     sget-object v1, Landroidx/lifecycle/LiveData;->NOT_SET:Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -582,12 +582,12 @@
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 196
-    :cond_12
+    :cond_0
     new-instance v0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
 
     invoke-direct {v0, p0, p1, p2}, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
@@ -601,19 +601,19 @@
 
     check-cast p2, Landroidx/lifecycle/LiveData$ObserverWrapper;
 
-    if-eqz p2, :cond_30
+    if-eqz p2, :cond_2
 
     .line 198
     invoke-virtual {p2, p1}, Landroidx/lifecycle/LiveData$ObserverWrapper;->isAttachedTo(Landroidx/lifecycle/LifecycleOwner;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 199
-    :cond_28
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Cannot add the same observer with different lifecycles"
@@ -622,14 +622,14 @@
 
     throw p1
 
-    :cond_30
-    :goto_30
-    if-eqz p2, :cond_33
+    :cond_2
+    :goto_0
+    if-eqz p2, :cond_3
 
     return-void
 
     .line 205
-    :cond_33
+    :cond_3
     invoke-interface {p1}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
     move-result-object p1
@@ -640,7 +640,7 @@
 .end method
 
 .method public observeForever(Landroidx/lifecycle/Observer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -671,13 +671,13 @@
     .line 227
     instance-of v1, p1, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     return-void
 
-    :cond_19
+    :cond_0
     const/4 p1, 0x1
 
     .line 234
@@ -686,7 +686,7 @@
     return-void
 
     .line 228
-    :cond_1e
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Cannot add the same observer with different lifecycles"
@@ -697,19 +697,19 @@
 .end method
 
 .method protected onActive()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onInactive()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected postValue(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -722,35 +722,35 @@
     monitor-enter v0
 
     .line 287
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/lifecycle/LiveData;->mPendingData:Ljava/lang/Object;
 
     sget-object v2, Landroidx/lifecycle/LiveData;->NOT_SET:Ljava/lang/Object;
 
-    if-ne v1, v2, :cond_b
+    if-ne v1, v2, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v1, 0x0
 
     .line 288
-    :goto_c
+    :goto_0
     iput-object p1, p0, Landroidx/lifecycle/LiveData;->mPendingData:Ljava/lang/Object;
 
     .line 289
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_1
 
     return-void
 
     .line 293
-    :cond_12
+    :cond_1
     invoke-static {}, Landroidx/arch/core/executor/ArchTaskExecutor;->getInstance()Landroidx/arch/core/executor/ArchTaskExecutor;
 
     move-result-object p1
@@ -761,20 +761,20 @@
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 289
-    :try_start_1d
+    :try_start_1
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public removeObserver(Landroidx/lifecycle/Observer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -797,12 +797,12 @@
 
     check-cast p1, Landroidx/lifecycle/LiveData$ObserverWrapper;
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     return-void
 
     .line 249
-    :cond_10
+    :cond_0
     invoke-virtual {p1}, Landroidx/lifecycle/LiveData$ObserverWrapper;->detachObserver()V
 
     const/4 v0, 0x0
@@ -814,7 +814,7 @@
 .end method
 
 .method public removeObservers(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 5
+    .locals 3
 
     const-string v0, "removeObservers"
 
@@ -828,13 +828,13 @@
 
     move-result-object v0
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -853,7 +853,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 264
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -864,14 +864,14 @@
 
     invoke-virtual {p0, v1}, Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_2d
+    :cond_1
     return-void
 .end method
 
 .method protected setValue(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"

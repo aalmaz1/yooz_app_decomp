@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 645
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createBuilder(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Action$Builder;
-    .registers 4
+    .locals 1
 
     .line 650
     new-instance v0, Landroid/app/Notification$Action$Builder;
@@ -36,7 +36,7 @@
 .end method
 
 .method static setLargeIcon(Landroid/app/Notification$Builder;Landroid/graphics/drawable/Icon;)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 661
     invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$Builder;
@@ -47,7 +47,7 @@
 .end method
 
 .method static setSmallIcon(Landroid/app/Notification$Builder;Ljava/lang/Object;)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 656
     check-cast p1, Landroid/graphics/drawable/Icon;

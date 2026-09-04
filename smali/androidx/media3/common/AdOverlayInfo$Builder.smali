@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;I)V
-    .registers 3
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/AdOverlayInfo;
-    .registers 5
+    .locals 4
 
     .line 95
     new-instance v0, Landroidx/media3/common/AdOverlayInfo;
@@ -58,7 +58,7 @@
 .end method
 
 .method public setDetailedReason(Ljava/lang/String;)Landroidx/media3/common/AdOverlayInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 87
     iput-object p1, p0, Landroidx/media3/common/AdOverlayInfo$Builder;->detailedReason:Ljava/lang/String;

@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 160
     new-instance v0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier$$ExternalSyntheticLambda0;
@@ -77,7 +77,7 @@
 .end method
 
 .method constructor <init>(Lcom/google/common/base/Supplier;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -111,7 +111,7 @@
 .end method
 
 .method static synthetic lambda$static$0()Ljava/lang/Void;
-    .registers 1
+    .locals 1
 
     .line 162
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation runtime Lcom/google/common/base/ParametricNullness;
     .end annotation
 
@@ -139,16 +139,16 @@
 
     sget-object v1, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->SUCCESSFULLY_COMPUTED:Lcom/google/common/base/Supplier;
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     .line 179
     monitor-enter p0
 
     .line 180
-    :try_start_7
+    :try_start_0
     iget-object v0, p0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_0
 
     .line 181
     iget-object v0, p0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
@@ -169,23 +169,23 @@
     return-object v0
 
     .line 186
-    :cond_17
+    :cond_0
     monitor-exit p0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_1b
-    .catchall {:try_start_7 .. :try_end_1b} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
     .line 189
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     iget-object v0, p0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->value:Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/google/common/base/NullnessCasts;->uncheckedCastNullableTToT(Ljava/lang/Object;)Ljava/lang/Object;
@@ -196,7 +196,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 194
     iget-object v0, p0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
@@ -211,7 +211,7 @@
     .line 196
     sget-object v2, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;->SUCCESSFULLY_COMPUTED:Lcom/google/common/base/Supplier;
 
-    if-ne v0, v2, :cond_24
+    if-ne v0, v2, :cond_0
 
     .line 197
     new-instance v0, Ljava/lang/StringBuilder;
@@ -237,7 +237,7 @@
     move-result-object v0
 
     .line 198
-    :cond_24
+    :cond_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0

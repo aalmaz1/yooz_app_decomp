@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 66
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -59,7 +59,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/ListFieldSchema$1;)V
-    .registers 2
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ListFieldSchema$ListFieldSchemaFull;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method static getList(Ljava/lang/Object;J)Ljava/util/List;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -92,7 +92,7 @@
 .end method
 
 .method private static mutableListAt(Ljava/lang/Object;JI)Ljava/util/List;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",
@@ -117,29 +117,29 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     .line 97
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/LazyStringList;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 98
     new-instance v0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
 
     invoke-direct {v0, p3}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;-><init>(I)V
 
-    goto :goto_29
+    goto :goto_0
 
     .line 99
-    :cond_14
+    :cond_0
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/PrimitiveNonBoxingCollection;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     .line 100
     check-cast v0, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -150,22 +150,22 @@
 
     move-object v0, p3
 
-    goto :goto_29
+    goto :goto_0
 
     .line 102
-    :cond_24
+    :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p3}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 104
-    :goto_29
+    :goto_0
     invoke-static {p0, p1, p2, v0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto :goto_7f
+    goto :goto_2
 
     .line 105
-    :cond_2d
+    :cond_2
     sget-object v1, Landroidx/datastore/preferences/protobuf/ListFieldSchema$ListFieldSchemaFull;->UNMODIFIABLE_LIST_CLASS:Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -176,7 +176,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_3
 
     .line 106
     new-instance v1, Ljava/util/ArrayList;
@@ -195,16 +195,16 @@
     .line 109
     invoke-static {p0, p1, p2, v1}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    :goto_49
+    :goto_1
     move-object v0, v1
 
-    goto :goto_7f
+    goto :goto_2
 
     .line 110
-    :cond_4b
+    :cond_3
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_4
 
     .line 111
     new-instance v1, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -225,17 +225,17 @@
     .line 114
     invoke-static {p0, p1, p2, v1}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    goto :goto_49
+    goto :goto_1
 
     .line 115
-    :cond_62
+    :cond_4
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/PrimitiveNonBoxingCollection;
 
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_5
 
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_5
 
     move-object v1, v0
 
@@ -246,7 +246,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_7f
+    if-nez v2, :cond_5
 
     .line 118
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -262,15 +262,15 @@
     .line 119
     invoke-static {p0, p1, p2, v0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
-    :cond_7f
-    :goto_7f
+    :cond_5
+    :goto_2
     return-object v0
 .end method
 
 
 # virtual methods
 .method makeImmutableListAt(Ljava/lang/Object;J)V
-    .registers 7
+    .locals 3
 
     .line 75
     invoke-static {p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
@@ -282,7 +282,7 @@
     .line 77
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/LazyStringList;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 78
     check-cast v0, Landroidx/datastore/preferences/protobuf/LazyStringList;
@@ -291,10 +291,10 @@
 
     move-result-object v0
 
-    goto :goto_36
+    goto :goto_0
 
     .line 79
-    :cond_11
+    :cond_0
     sget-object v1, Landroidx/datastore/preferences/protobuf/ListFieldSchema$ListFieldSchemaFull;->UNMODIFIABLE_LIST_CLASS:Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -305,19 +305,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     return-void
 
     .line 82
-    :cond_1e
+    :cond_1
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/PrimitiveNonBoxingCollection;
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_3
 
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_3
 
     .line 83
     check-cast v0, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -326,29 +326,29 @@
 
     move-result p1
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_2
 
     .line 84
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->makeImmutable()V
 
-    :cond_31
+    :cond_2
     return-void
 
     .line 88
-    :cond_32
+    :cond_3
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
     .line 90
-    :goto_36
+    :goto_0
     invoke-static {p1, p2, p3, v0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     return-void
 .end method
 
 .method mergeListsAt(Ljava/lang/Object;Ljava/lang/Object;J)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -384,27 +384,27 @@
 
     move-result v2
 
-    if-lez v1, :cond_1b
+    if-lez v1, :cond_0
 
-    if-lez v2, :cond_1b
+    if-lez v2, :cond_0
 
     .line 132
     invoke-interface {v0, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_1b
-    if-lez v1, :cond_1e
+    :cond_0
+    if-lez v1, :cond_1
 
     move-object p2, v0
 
     .line 136
-    :cond_1e
+    :cond_1
     invoke-static {p1, p3, p4, p2}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     return-void
 .end method
 
 .method mutableListAt(Ljava/lang/Object;J)Ljava/util/List;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",

@@ -64,7 +64,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,16 +73,16 @@
 .end method
 
 .method static getFeedbackConstantOrFallback(I)I
-    .registers 5
+    .locals 4
 
     const/4 v0, -0x1
 
-    if-ne p0, v0, :cond_4
+    if-ne p0, v0, :cond_0
 
     return v0
 
     .line 326
-    :cond_4
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
@@ -91,78 +91,78 @@
 
     const/4 v3, 0x6
 
-    if-ge v0, v1, :cond_15
+    if-ge v0, v1, :cond_1
 
-    packed-switch p0, :pswitch_data_32
+    packed-switch p0, :pswitch_data_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :pswitch_10
+    :pswitch_0
     move p0, v2
 
-    goto :goto_15
+    goto :goto_0
 
-    :pswitch_12
+    :pswitch_1
     const/4 p0, 0x4
 
-    goto :goto_15
+    goto :goto_0
 
-    :pswitch_14
+    :pswitch_2
     move p0, v3
 
     .line 343
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-ge v0, v1, :cond_30
+    if-ge v0, v1, :cond_4
 
     const/16 v0, 0xc
 
-    if-eq p0, v0, :cond_2e
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0xd
 
-    if-eq p0, v0, :cond_2c
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x10
 
-    if-eq p0, v0, :cond_2e
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x11
 
-    if-eq p0, v0, :cond_31
+    if-eq p0, v0, :cond_5
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2c
+    :cond_2
     move v2, v3
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_2e
+    :cond_3
     const/4 v2, 0x1
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_30
-    :goto_30
+    :cond_4
+    :goto_1
     move v2, p0
 
-    :cond_31
-    :goto_31
+    :cond_5
+    :goto_2
     return v2
 
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x15
-        :pswitch_14
-        :pswitch_12
-        :pswitch_14
-        :pswitch_12
-        :pswitch_10
-        :pswitch_14
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method

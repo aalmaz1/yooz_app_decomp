@@ -42,7 +42,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 499
     new-instance v0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
@@ -55,7 +55,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 510
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,12 +97,12 @@
 .end method
 
 .method private addObserverInternal()V
-    .registers 4
+    .locals 3
 
     .line 567
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->choreographer:Landroid/view/Choreographer;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 568
     iget v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->observerCount:I
@@ -113,17 +113,17 @@
 
     iput v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->observerCount:I
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
     .line 570
     invoke-virtual {v0, p0}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private createChoreographerInstanceInternal()V
-    .registers 4
+    .locals 3
 
     .line 559
     :try_start_0
@@ -132,12 +132,12 @@
     move-result-object v0
 
     iput-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->choreographer:Landroid/view/Choreographer;
-    :try_end_6
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_7
+    :catch_0
     move-exception v0
 
     const-string v1, "VideoFrameReleaseHelper"
@@ -147,12 +147,12 @@
     .line 562
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public static getInstance()Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
-    .registers 1
+    .locals 1
 
     .line 507
     sget-object v0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->INSTANCE:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
@@ -161,12 +161,12 @@
 .end method
 
 .method private removeObserverInternal()V
-    .registers 3
+    .locals 2
 
     .line 576
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->choreographer:Landroid/view/Choreographer;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 577
     iget v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->observerCount:I
@@ -175,7 +175,7 @@
 
     iput v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->observerCount:I
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 579
     invoke-virtual {v0, p0}, Landroid/view/Choreographer;->removeFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
@@ -185,14 +185,14 @@
     .line 580
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->sampledVsyncTimeNs:J
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public addObserver()V
-    .registers 3
+    .locals 2
 
     .line 523
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->handler:Landroid/os/Handler;
@@ -205,7 +205,7 @@
 .end method
 
 .method public doFrame(J)V
-    .registers 5
+    .locals 2
 
     .line 536
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->sampledVsyncTimeNs:J
@@ -227,48 +227,48 @@
 .end method
 
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 4
+    .locals 2
 
     .line 542
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_15
+    if-eq p1, v0, :cond_2
 
     const/4 v1, 0x2
 
-    if-eq p1, v1, :cond_11
+    if-eq p1, v1, :cond_1
 
     const/4 v1, 0x3
 
-    if-eq p1, v1, :cond_d
+    if-eq p1, v1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 550
-    :cond_d
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->removeObserverInternal()V
 
     return v0
 
     .line 547
-    :cond_11
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->addObserverInternal()V
 
     return v0
 
     .line 544
-    :cond_15
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->createChoreographerInstanceInternal()V
 
     return v0
 .end method
 
 .method public removeObserver()V
-    .registers 3
+    .locals 2
 
     .line 531
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->handler:Landroid/os/Handler;

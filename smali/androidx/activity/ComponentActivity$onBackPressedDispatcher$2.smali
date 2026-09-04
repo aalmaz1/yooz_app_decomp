@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$--QKuHIVx6mUB6xjGBRPiZ_cdMQ(Landroidx/activity/ComponentActivity;Landroidx/activity/OnBackPressedDispatcher;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/activity/ComponentActivity$onBackPressedDispatcher$2;->invoke$lambda$2$lambda$1(Landroidx/activity/ComponentActivity;Landroidx/activity/OnBackPressedDispatcher;)V
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$UIVbcf_4kkpmuk0z-sypxnD2AbY(Landroidx/activity/ComponentActivity;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/activity/ComponentActivity$onBackPressedDispatcher$2;->invoke$lambda$0(Landroidx/activity/ComponentActivity;)V
 
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>(Landroidx/activity/ComponentActivity;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/activity/ComponentActivity$onBackPressedDispatcher$2;->this$0:Landroidx/activity/ComponentActivity;
 
@@ -78,22 +78,22 @@
 .end method
 
 .method private static final invoke$lambda$0(Landroidx/activity/ComponentActivity;)V
-    .registers 3
+    .locals 2
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 627
-    :try_start_5
+    :try_start_0
     invoke-static {p0}, Landroidx/activity/ComponentActivity;->access$onBackPressed$s1027565324(Landroidx/activity/ComponentActivity;)V
-    :try_end_8
-    .catch Ljava/lang/IllegalStateException; {:try_start_5 .. :try_end_8} :catch_18
-    .catch Ljava/lang/NullPointerException; {:try_start_5 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     move-exception p0
 
     .line 633
@@ -107,15 +107,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 636
-    :cond_17
+    :cond_0
     throw p0
 
-    :catch_18
+    :catch_1
     move-exception p0
 
     .line 629
@@ -129,18 +129,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
-    :goto_25
+    :goto_0
     return-void
 
     .line 630
-    :cond_26
+    :cond_1
     throw p0
 .end method
 
 .method private static final invoke$lambda$2$lambda$1(Landroidx/activity/ComponentActivity;Landroidx/activity/OnBackPressedDispatcher;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "this$0"
 
@@ -159,7 +159,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/activity/OnBackPressedDispatcher;
-    .registers 5
+    .locals 4
 
     .line 622
     new-instance v0, Landroidx/activity/OnBackPressedDispatcher;
@@ -182,7 +182,7 @@
 
     const/16 v3, 0x21
 
-    if-lt v2, v3, :cond_37
+    if-lt v2, v3, :cond_1
 
     .line 641
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -197,7 +197,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_34
+    if-nez v2, :cond_0
 
     .line 642
     new-instance v2, Landroid/os/Handler;
@@ -214,19 +214,19 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_37
+    goto :goto_0
 
     .line 646
-    :cond_34
+    :cond_0
     invoke-static {v1, v0}, Landroidx/activity/ComponentActivity;->access$addObserverForBackInvoker(Landroidx/activity/ComponentActivity;Landroidx/activity/OnBackPressedDispatcher;)V
 
-    :cond_37
-    :goto_37
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 621
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity$onBackPressedDispatcher$2;->invoke()Landroidx/activity/OnBackPressedDispatcher;

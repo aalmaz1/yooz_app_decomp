@@ -64,20 +64,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
     new-array v0, v0, [D
 
     .line 51
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/ts/H262Reader;->FRAME_RATE_VALUES:[D
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 8
         0x4037f9dcb5112287L    # 23.976023976023978
         0x4038000000000000L    # 24.0
@@ -91,7 +91,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -102,7 +102,7 @@
 .end method
 
 .method constructor <init>(Landroidx/media3/extractor/ts/UserDataReader;)V
-    .registers 4
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -126,7 +126,7 @@
 
     iput-object v0, p0, Landroidx/media3/extractor/ts/H262Reader;->csdBuffer:Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 86
     new-instance p1, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -144,9 +144,9 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/ts/H262Reader;->userDataParsable:Landroidx/media3/common/util/ParsableByteArray;
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 p1, 0x0
 
     .line 89
@@ -155,7 +155,7 @@
     .line 90
     iput-object p1, p0, Landroidx/media3/extractor/ts/H262Reader;->userDataParsable:Landroidx/media3/common/util/ParsableByteArray;
 
-    :goto_2b
+    :goto_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 92
@@ -168,7 +168,7 @@
 .end method
 
 .method private static parseCsdBuffer(Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;Ljava/lang/String;)Landroid/util/Pair;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -235,50 +235,50 @@
 
     const/4 v7, 0x2
 
-    if-eq v6, v7, :cond_3d
+    if-eq v6, v7, :cond_2
 
     const/4 v7, 0x3
 
-    if-eq v6, v7, :cond_37
+    if-eq v6, v7, :cond_1
 
-    if-eq v6, v1, :cond_31
+    if-eq v6, v1, :cond_0
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_31
+    :cond_0
     mul-int/lit8 v1, v4, 0x79
 
     int-to-float v1, v1
 
     mul-int/lit8 v6, v2, 0x64
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     mul-int/lit8 v1, v4, 0x10
 
     int-to-float v1, v1
 
     mul-int/lit8 v6, v2, 0x9
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_3d
+    :cond_2
     mul-int/lit8 v1, v4, 0x4
 
     int-to-float v1, v1
 
     mul-int/lit8 v6, v2, 0x3
 
-    :goto_42
+    :goto_0
     int-to-float v6, v6
 
     div-float/2addr v1, v6
 
     .line 263
-    :goto_44
+    :goto_1
     new-instance v6, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v6}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -331,14 +331,14 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    if-ltz v1, :cond_99
+    if-ltz v1, :cond_4
 
     .line 275
     sget-object v2, Landroidx/media3/extractor/ts/H262Reader;->FRAME_RATE_VALUES:[D
 
     array-length v4, v2
 
-    if-ge v1, v4, :cond_99
+    if-ge v1, v4, :cond_4
 
     .line 276
     aget-wide v1, v2, v1
@@ -357,7 +357,7 @@
 
     and-int/lit8 p0, p0, 0x1f
 
-    if-eq v0, p0, :cond_91
+    if-eq v0, p0, :cond_3
 
     int-to-double v3, v0
 
@@ -373,20 +373,20 @@
 
     mul-double/2addr v1, v3
 
-    :cond_91
+    :cond_3
     const-wide v3, 0x412e848000000000L    # 1000000.0
 
     div-double/2addr v3, v1
 
     double-to-long v0, v3
 
-    goto :goto_9b
+    goto :goto_2
 
-    :cond_99
+    :cond_4
     const-wide/16 v0, 0x0
 
     .line 286
-    :goto_9b
+    :goto_2
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -401,7 +401,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 22
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -450,19 +450,19 @@
     invoke-interface {v4, v6, v5}, Landroidx/media3/extractor/TrackOutput;->sampleData(Landroidx/media3/common/util/ParsableByteArray;I)V
 
     .line 137
-    :goto_28
+    :goto_0
     iget-object v4, v0, Landroidx/media3/extractor/ts/H262Reader;->prefixFlags:[Z
 
     invoke-static {v3, v1, v2, v4}, Landroidx/media3/container/NalUnitUtil;->findNalUnit([BII[Z)I
 
     move-result v4
 
-    if-ne v4, v2, :cond_41
+    if-ne v4, v2, :cond_2
 
     .line 141
     iget-boolean v4, v0, Landroidx/media3/extractor/ts/H262Reader;->hasOutputFormat:Z
 
-    if-nez v4, :cond_39
+    if-nez v4, :cond_0
 
     .line 142
     iget-object v4, v0, Landroidx/media3/extractor/ts/H262Reader;->csdBuffer:Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;
@@ -470,19 +470,19 @@
     invoke-virtual {v4, v3, v1, v2}, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->onData([BII)V
 
     .line 144
-    :cond_39
+    :cond_0
     iget-object v4, v0, Landroidx/media3/extractor/ts/H262Reader;->userData:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
-    if-eqz v4, :cond_40
+    if-eqz v4, :cond_1
 
     .line 145
     invoke-virtual {v4, v3, v1, v2}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
 
-    :cond_40
+    :cond_1
     return-void
 
     .line 151
-    :cond_41
+    :cond_2
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v5
@@ -502,34 +502,34 @@
 
     const/4 v11, 0x1
 
-    if-nez v9, :cond_8a
+    if-nez v9, :cond_5
 
-    if-lez v8, :cond_5a
+    if-lez v8, :cond_3
 
     .line 158
     iget-object v9, v0, Landroidx/media3/extractor/ts/H262Reader;->csdBuffer:Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;
 
     invoke-virtual {v9, v3, v1, v4}, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->onData([BII)V
 
-    :cond_5a
-    if-gez v8, :cond_5e
+    :cond_3
+    if-gez v8, :cond_4
 
     neg-int v9, v8
 
-    goto :goto_5f
+    goto :goto_1
 
-    :cond_5e
+    :cond_4
     move v9, v10
 
     .line 163
-    :goto_5f
+    :goto_1
     iget-object v12, v0, Landroidx/media3/extractor/ts/H262Reader;->csdBuffer:Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;
 
     invoke-virtual {v12, v5, v9}, Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;->onStartCode(II)Z
 
     move-result v9
 
-    if-eqz v9, :cond_8a
+    if-eqz v9, :cond_5
 
     .line 165
     iget-object v9, v0, Landroidx/media3/extractor/ts/H262Reader;->csdBuffer:Landroidx/media3/extractor/ts/H262Reader$CsdBuffer;
@@ -570,32 +570,32 @@
     iput-boolean v11, v0, Landroidx/media3/extractor/ts/H262Reader;->hasOutputFormat:Z
 
     .line 171
-    :cond_8a
+    :cond_5
     iget-object v9, v0, Landroidx/media3/extractor/ts/H262Reader;->userData:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
-    if-eqz v9, :cond_db
+    if-eqz v9, :cond_8
 
-    if-lez v8, :cond_95
+    if-lez v8, :cond_6
 
     .line 174
     invoke-virtual {v9, v3, v1, v4}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
 
     move v1, v10
 
-    goto :goto_96
+    goto :goto_2
 
-    :cond_95
+    :cond_6
     neg-int v1, v8
 
     .line 179
-    :goto_96
+    :goto_2
     iget-object v8, v0, Landroidx/media3/extractor/ts/H262Reader;->userData:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
     invoke-virtual {v8, v1}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->endNalUnit(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_c8
+    if-eqz v1, :cond_7
 
     .line 180
     iget-object v1, v0, Landroidx/media3/extractor/ts/H262Reader;->userData:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -640,10 +640,10 @@
 
     invoke-virtual {v1, v8, v9, v12}, Landroidx/media3/extractor/ts/UserDataReader;->consume(JLandroidx/media3/common/util/ParsableByteArray;)V
 
-    :cond_c8
+    :cond_7
     const/16 v1, 0xb2
 
-    if-ne v5, v1, :cond_db
+    if-ne v5, v1, :cond_8
 
     .line 185
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -654,34 +654,34 @@
 
     aget-byte v1, v1, v8
 
-    if-ne v1, v11, :cond_db
+    if-ne v1, v11, :cond_8
 
     .line 186
     iget-object v1, v0, Landroidx/media3/extractor/ts/H262Reader;->userData:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
     invoke-virtual {v1, v5}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->startNalUnit(I)V
 
-    :cond_db
-    if-eqz v5, :cond_e9
+    :cond_8
+    if-eqz v5, :cond_a
 
     const/16 v1, 0xb3
 
-    if-ne v5, v1, :cond_e2
+    if-ne v5, v1, :cond_9
 
-    goto :goto_e9
+    goto :goto_3
 
-    :cond_e2
+    :cond_9
     const/16 v1, 0xb8
 
-    if-ne v5, v1, :cond_147
+    if-ne v5, v1, :cond_11
 
     .line 212
     iput-boolean v11, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleIsKeyframe:Z
 
-    goto :goto_147
+    goto :goto_8
 
-    :cond_e9
-    :goto_e9
+    :cond_a
+    :goto_3
     sub-int v1, v2, v4
 
     .line 191
@@ -689,17 +689,17 @@
 
     const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v4, :cond_114
+    if-eqz v4, :cond_b
 
     iget-boolean v4, v0, Landroidx/media3/extractor/ts/H262Reader;->hasOutputFormat:Z
 
-    if-eqz v4, :cond_114
+    if-eqz v4, :cond_b
 
     iget-wide v13, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleTimeUs:J
 
     cmp-long v4, v13, v8
 
-    if-eqz v4, :cond_114
+    if-eqz v4, :cond_b
 
     .line 193
     iget-boolean v15, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleIsKeyframe:Z
@@ -726,31 +726,31 @@
 
     invoke-interface/range {v12 .. v18}, Landroidx/media3/extractor/TrackOutput;->sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
 
-    goto :goto_116
+    goto :goto_4
 
-    :cond_114
+    :cond_b
     move/from16 v19, v5
 
     .line 197
-    :goto_116
+    :goto_4
     iget-boolean v4, v0, Landroidx/media3/extractor/ts/H262Reader;->startedFirstSample:Z
 
-    if-eqz v4, :cond_121
+    if-eqz v4, :cond_d
 
     iget-boolean v4, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleHasPicture:Z
 
-    if-eqz v4, :cond_11f
+    if-eqz v4, :cond_c
 
-    goto :goto_121
+    goto :goto_5
 
-    :cond_11f
+    :cond_c
     const/4 v1, 0x1
 
-    goto :goto_142
+    goto :goto_7
 
     .line 199
-    :cond_121
-    :goto_121
+    :cond_d
+    :goto_5
     iget-wide v4, v0, Landroidx/media3/extractor/ts/H262Reader;->totalBytesWritten:J
 
     int-to-long v11, v1
@@ -764,30 +764,30 @@
 
     cmp-long v1, v4, v8
 
-    if-eqz v1, :cond_12e
+    if-eqz v1, :cond_e
 
-    goto :goto_139
+    goto :goto_6
 
     .line 203
-    :cond_12e
+    :cond_e
     iget-wide v4, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleTimeUs:J
 
     cmp-long v1, v4, v8
 
-    if-eqz v1, :cond_138
+    if-eqz v1, :cond_f
 
     .line 204
     iget-wide v11, v0, Landroidx/media3/extractor/ts/H262Reader;->frameDurationUs:J
 
     add-long/2addr v4, v11
 
-    goto :goto_139
+    goto :goto_6
 
-    :cond_138
+    :cond_f
     move-wide v4, v8
 
     .line 205
-    :goto_139
+    :goto_6
     iput-wide v4, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleTimeUs:J
 
     .line 206
@@ -801,24 +801,24 @@
     .line 208
     iput-boolean v1, v0, Landroidx/media3/extractor/ts/H262Reader;->startedFirstSample:Z
 
-    :goto_142
-    if-nez v19, :cond_145
+    :goto_7
+    if-nez v19, :cond_10
 
     move v10, v1
 
     .line 210
-    :cond_145
+    :cond_10
     iput-boolean v10, v0, Landroidx/media3/extractor/ts/H262Reader;->sampleHasPicture:Z
 
-    :cond_147
-    :goto_147
+    :cond_11
+    :goto_8
     move v1, v7
 
-    goto/16 :goto_28
+    goto/16 :goto_0
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 5
+    .locals 2
 
     .line 111
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -846,24 +846,24 @@
     .line 114
     iget-object v0, p0, Landroidx/media3/extractor/ts/H262Reader;->userDataReader:Landroidx/media3/extractor/ts/UserDataReader;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 115
     invoke-virtual {v0, p1, p2}, Landroidx/media3/extractor/ts/UserDataReader;->createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
 
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 .method public packetFinished(Z)V
-    .registers 10
+    .locals 8
 
     .line 221
     iget-object v0, p0, Landroidx/media3/extractor/ts/H262Reader;->output:Landroidx/media3/extractor/TrackOutput;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 223
     iget-boolean v4, p0, Landroidx/media3/extractor/ts/H262Reader;->sampleIsKeyframe:Z
@@ -888,12 +888,12 @@
 
     invoke-interface/range {v1 .. v7}, Landroidx/media3/extractor/TrackOutput;->sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     .line 122
     iput-wide p1, p0, Landroidx/media3/extractor/ts/H262Reader;->pesTimeUs:J
@@ -902,7 +902,7 @@
 .end method
 
 .method public seek()V
-    .registers 3
+    .locals 2
 
     .line 98
     iget-object v0, p0, Landroidx/media3/extractor/ts/H262Reader;->prefixFlags:[Z
@@ -917,12 +917,12 @@
     .line 100
     iget-object v0, p0, Landroidx/media3/extractor/ts/H262Reader;->userData:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 101
     invoke-virtual {v0}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->reset()V
 
-    :cond_11
+    :cond_0
     const-wide/16 v0, 0x0
 
     .line 103

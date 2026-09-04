@@ -11,7 +11,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 266
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,52 +20,52 @@
 .end method
 
 .method public static getParentActivityIntent(Landroid/app/Activity;)Landroid/content/Intent;
-    .registers 4
+    .locals 3
 
     .line 118
     invoke-virtual {p0}, Landroid/app/Activity;->getParentActivityIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 123
-    :cond_7
+    :cond_0
     invoke-static {p0}, Landroidx/core/app/NavUtils;->getParentActivityName(Landroid/app/Activity;)Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     return-object v1
 
     .line 127
-    :cond_f
+    :cond_1
     new-instance v2, Landroid/content/ComponentName;
 
     invoke-direct {v2, p0, v0}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 129
-    :try_start_14
+    :try_start_0
     invoke-static {p0, v2}, Landroidx/core/app/NavUtils;->getParentActivityName(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
 
     move-result-object p0
 
-    if-nez p0, :cond_1f
+    if-nez p0, :cond_2
 
     .line 131
     invoke-static {v2}, Landroid/content/Intent;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object p0
 
-    goto :goto_28
+    goto :goto_0
 
     .line 132
-    :cond_1f
+    :cond_2
     new-instance p0, Landroid/content/Intent;
 
     invoke-direct {p0}, Landroid/content/Intent;-><init>()V
@@ -73,14 +73,14 @@
     invoke-virtual {p0, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object p0
-    :try_end_28
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_14 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_28
+    :goto_0
     return-object p0
 
     .line 134
-    :catch_29
+    :catch_0
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v2, "getParentActivityIntent: bad parentActivityName \'"
@@ -109,7 +109,7 @@
 .end method
 
 .method public static getParentActivityIntent(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/content/Intent;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -121,14 +121,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 185
-    :cond_8
+    :cond_0
     new-instance v1, Landroid/content/ComponentName;
 
     .line 186
@@ -143,17 +143,17 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_1c
+    if-nez p0, :cond_1
 
     .line 189
     invoke-static {v1}, Landroid/content/Intent;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object p0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 190
-    :cond_1c
+    :cond_1
     new-instance p0, Landroid/content/Intent;
 
     invoke-direct {p0}, Landroid/content/Intent;-><init>()V
@@ -162,12 +162,12 @@
 
     move-result-object p0
 
-    :goto_25
+    :goto_0
     return-object p0
 .end method
 
 .method public static getParentActivityIntent(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -193,14 +193,14 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 159
-    :cond_d
+    :cond_0
     new-instance v0, Landroid/content/ComponentName;
 
     invoke-direct {v0, p0, p1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
@@ -210,17 +210,17 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_1d
+    if-nez p0, :cond_1
 
     .line 162
     invoke-static {v0}, Landroid/content/Intent;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object p0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 163
-    :cond_1d
+    :cond_1
     new-instance p0, Landroid/content/Intent;
 
     invoke-direct {p0}, Landroid/content/Intent;-><init>()V
@@ -229,12 +229,12 @@
 
     move-result-object p0
 
-    :goto_26
+    :goto_0
     return-object p0
 .end method
 
 .method public static getParentActivityName(Landroid/app/Activity;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 206
     :try_start_0
@@ -245,12 +245,12 @@
     invoke-static {p0, v0}, Landroidx/core/app/NavUtils;->getParentActivityName(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
 
     move-result-object p0
-    :try_end_8
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_9
+    :catch_0
     move-exception p0
 
     .line 209
@@ -262,7 +262,7 @@
 .end method
 
 .method public static getParentActivityName(Landroid/content/Context;Landroid/content/ComponentName;)Ljava/lang/String;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
@@ -279,17 +279,17 @@
 
     const/16 v2, 0x1d
 
-    if-lt v1, v2, :cond_e
+    if-lt v1, v2, :cond_0
 
     const v1, 0x100c0280
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const v1, 0xc0280
 
     .line 247
-    :goto_11
+    :goto_0
     invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->getActivityInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
 
     move-result-object p1
@@ -297,22 +297,22 @@
     .line 248
     iget-object v0, p1, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     return-object v0
 
     .line 252
-    :cond_1a
+    :cond_1
     iget-object v0, p1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     return-object v1
 
     .line 255
-    :cond_20
+    :cond_2
     iget-object p1, p1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
     const-string v0, "android.support.PARENT_ACTIVITY"
@@ -321,11 +321,11 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_3
 
     return-object v1
 
-    :cond_2b
+    :cond_3
     const/4 v0, 0x0
 
     .line 259
@@ -335,7 +335,7 @@
 
     const/16 v1, 0x2e
 
-    if-ne v0, v1, :cond_49
+    if-ne v0, v1, :cond_4
 
     .line 260
     new-instance v0, Ljava/lang/StringBuilder;
@@ -358,19 +358,19 @@
 
     move-result-object p1
 
-    :cond_49
+    :cond_4
     return-object p1
 .end method
 
 .method public static navigateUpFromSameTask(Landroid/app/Activity;)V
-    .registers 4
+    .locals 3
 
     .line 76
     invoke-static {p0}, Landroidx/core/app/NavUtils;->getParentActivityIntent(Landroid/app/Activity;)Landroid/content/Intent;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 86
     invoke-static {p0, v0}, Landroidx/core/app/NavUtils;->navigateUpTo(Landroid/app/Activity;Landroid/content/Intent;)V
@@ -378,7 +378,7 @@
     return-void
 
     .line 79
-    :cond_a
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -416,7 +416,7 @@
 .end method
 
 .method public static navigateUpTo(Landroid/app/Activity;Landroid/content/Intent;)V
-    .registers 2
+    .locals 0
 
     .line 103
     invoke-virtual {p0, p1}, Landroid/app/Activity;->navigateUpTo(Landroid/content/Intent;)Z
@@ -425,7 +425,7 @@
 .end method
 
 .method public static shouldUpRecreateTask(Landroid/app/Activity;Landroid/content/Intent;)Z
-    .registers 2
+    .locals 0
 
     .line 60
     invoke-virtual {p0, p1}, Landroid/app/Activity;->shouldUpRecreateTask(Landroid/content/Intent;)Z

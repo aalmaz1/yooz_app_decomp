@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "name"
 
@@ -81,12 +81,12 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 47
     instance-of v0, p1, Landroidx/datastore/preferences/core/Preferences$Key;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 48
     iget-object v0, p0, Landroidx/datastore/preferences/core/Preferences$Key;->name:Ljava/lang/String;
@@ -99,17 +99,17 @@
 
     move-result p1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_10
+    :goto_0
     return p1
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 38
     iget-object v0, p0, Landroidx/datastore/preferences/core/Preferences$Key;->name:Ljava/lang/String;
@@ -118,7 +118,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/datastore/preferences/core/Preferences$Key;->name:Ljava/lang/String;
@@ -131,7 +131,7 @@
 .end method
 
 .method public final to(Ljava/lang/Object;)Landroidx/datastore/preferences/core/Preferences$Pair;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -149,7 +149,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/datastore/preferences/core/Preferences$Key;->name:Ljava/lang/String;

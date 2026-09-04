@@ -45,7 +45,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$LuOJQ0sg1wvLyxomp0-YWy0I_2g(Landroidx/camera/camera2/internal/Camera2CameraInfoImpl$RedirectableLiveData;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<S:",
@@ -94,7 +94,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -104,23 +104,23 @@
     .line 577
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraInfoImpl$RedirectableLiveData;->mLiveDataSource:Landroidx/lifecycle/LiveData;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraInfoImpl$RedirectableLiveData;->mInitialValue:Ljava/lang/Object;
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     return-object v0
 .end method
 
 .method redirectTo(Landroidx/lifecycle/LiveData;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,13 +132,13 @@
     .line 559
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraInfoImpl$RedirectableLiveData;->mLiveDataSource:Landroidx/lifecycle/LiveData;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 560
     invoke-super {p0, v0}, Landroidx/lifecycle/MediatorLiveData;->removeSource(Landroidx/lifecycle/LiveData;)V
 
     .line 562
-    :cond_7
+    :cond_0
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraInfoImpl$RedirectableLiveData;->mLiveDataSource:Landroidx/lifecycle/LiveData;
 
     .line 563

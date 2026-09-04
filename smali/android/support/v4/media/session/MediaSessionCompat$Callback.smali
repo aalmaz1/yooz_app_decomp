@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 977
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,16 +70,16 @@
 
 # virtual methods
 .method handleMediaPlayPauseKeySingleTapIfPending(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
-    .registers 13
+    .locals 11
 
     .line 1072
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->mMediaPlayPauseKeyPending:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 1075
@@ -101,32 +101,32 @@
 
     check-cast v1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     return-void
 
     .line 1082
-    :cond_19
+    :cond_1
     invoke-interface {v1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->getPlaybackState()Landroid/support/v4/media/session/PlaybackStateCompat;
 
     move-result-object v3
 
     const-wide/16 v4, 0x0
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_2
 
     move-wide v6, v4
 
-    goto :goto_27
+    goto :goto_0
 
     .line 1083
-    :cond_23
+    :cond_2
     invoke-virtual {v3}, Landroid/support/v4/media/session/PlaybackStateCompat;->getActions()J
 
     move-result-wide v6
 
-    :goto_27
-    if-eqz v3, :cond_32
+    :goto_0
+    if-eqz v3, :cond_3
 
     .line 1085
     invoke-virtual {v3}, Landroid/support/v4/media/session/PlaybackStateCompat;->getState()I
@@ -135,65 +135,65 @@
 
     const/4 v8, 0x3
 
-    if-ne v3, v8, :cond_32
+    if-ne v3, v8, :cond_3
 
     move v3, v2
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_32
+    :cond_3
     move v3, v0
 
-    :goto_33
+    :goto_1
     const-wide/16 v8, 0x204
 
     and-long/2addr v8, v6
 
     cmp-long v8, v8, v4
 
-    if-eqz v8, :cond_3c
+    if-eqz v8, :cond_4
 
     move v8, v2
 
-    goto :goto_3d
+    goto :goto_2
 
-    :cond_3c
+    :cond_4
     move v8, v0
 
-    :goto_3d
+    :goto_2
     const-wide/16 v9, 0x202
 
     and-long/2addr v6, v9
 
     cmp-long v4, v6, v4
 
-    if-eqz v4, :cond_45
+    if-eqz v4, :cond_5
 
     move v0, v2
 
     .line 1090
-    :cond_45
+    :cond_5
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
 
-    if-eqz v3, :cond_50
+    if-eqz v3, :cond_6
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_6
 
     .line 1092
     invoke-virtual {p0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPause()V
 
-    goto :goto_57
+    goto :goto_3
 
-    :cond_50
-    if-nez v3, :cond_57
+    :cond_6
+    if-nez v3, :cond_7
 
-    if-eqz v8, :cond_57
+    if-eqz v8, :cond_7
 
     .line 1094
     invoke-virtual {p0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPlay()V
 
-    :cond_57
-    :goto_57
+    :cond_7
+    :goto_3
     const/4 p1, 0x0
 
     .line 1096
@@ -203,37 +203,37 @@
 .end method
 
 .method public onAddQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAddQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;I)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onFastForward()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onMediaButtonEvent(Landroid/content/Intent;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -241,67 +241,67 @@
 .end method
 
 .method public onPause()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onPlay()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onPlayFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onPlayFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onPrepare()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onPrepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onPrepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onPrepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onRemoveQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onRemoveQueueItemAt(I)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -309,73 +309,73 @@
 .end method
 
 .method public onRewind()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onSeekTo(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onSetCaptioningEnabled(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSetRating(Landroid/support/v4/media/RatingCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSetRating(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onSetRepeatMode(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSetShuffleMode(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSkipToNext()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onSkipToPrevious()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onSkipToQueueItem(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onStop()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method setSessionImpl(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;Landroid/os/Handler;)V
-    .registers 4
+    .locals 1
 
     .line 990
     new-instance v0, Ljava/lang/ref/WeakReference;
@@ -387,7 +387,7 @@
     .line 991
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->mCallbackHandler:Landroid/support/v4/media/session/MediaSessionCompat$Callback$CallbackHandler;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
@@ -395,7 +395,7 @@
     invoke-virtual {p1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback$CallbackHandler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     .line 994
-    :cond_f
+    :cond_0
     new-instance p1, Landroid/support/v4/media/session/MediaSessionCompat$Callback$CallbackHandler;
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;

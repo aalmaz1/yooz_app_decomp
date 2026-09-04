@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/BackStackState;
-    .registers 3
+    .locals 1
 
     .line 173
     new-instance v0, Landroidx/fragment/app/BackStackState;
@@ -50,7 +50,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 170
     invoke-virtual {p0, p1}, Landroidx/fragment/app/BackStackState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/BackStackState;
@@ -61,7 +61,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/fragment/app/BackStackState;
-    .registers 2
+    .locals 0
 
     .line 178
     new-array p1, p1, [Landroidx/fragment/app/BackStackState;
@@ -70,7 +70,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 170
     invoke-virtual {p0, p1}, Landroidx/fragment/app/BackStackState$1;->newArray(I)[Landroidx/fragment/app/BackStackState;

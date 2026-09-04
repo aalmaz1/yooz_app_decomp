@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/ResolvingDataSource$Resolver;)V
-    .registers 3
+    .locals 0
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 102
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -56,7 +56,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -66,7 +66,7 @@
     .line 132
     iget-boolean v0, p0, Landroidx/media3/datasource/ResolvingDataSource;->upstreamOpened:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -78,12 +78,12 @@
 
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource;->close()V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -106,7 +106,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 3
+    .locals 2
 
     .line 121
     iget-object v0, p0, Landroidx/media3/datasource/ResolvingDataSource;->upstreamDataSource:Landroidx/media3/datasource/DataSource;
@@ -115,26 +115,26 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 122
-    :cond_a
+    :cond_0
     iget-object v1, p0, Landroidx/media3/datasource/ResolvingDataSource;->resolver:Landroidx/media3/datasource/ResolvingDataSource$Resolver;
 
     invoke-interface {v1, v0}, Landroidx/media3/datasource/ResolvingDataSource$Resolver;->resolveReportedUri(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object v0
 
-    :goto_10
+    :goto_0
     return-object v0
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -164,7 +164,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1070
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/offline/DownloadHelper$1;)V
-    .registers 2
+    .locals 0
 
     .line 1070
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper$FakeBandwidthMeter;-><init>()V
@@ -39,13 +39,13 @@
 
 # virtual methods
 .method public addEventListener(Landroid/os/Handler;Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public getBitrateEstimate()J
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public getTransferListener()Landroidx/media3/datasource/TransferListener;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public removeEventListener(Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

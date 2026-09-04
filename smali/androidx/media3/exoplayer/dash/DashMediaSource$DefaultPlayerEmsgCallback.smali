@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/dash/DashMediaSource;)V
-    .registers 2
+    .locals 0
 
     .line 1377
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DefaultPlayerEmsgCallback;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/dash/DashMediaSource;Landroidx/media3/exoplayer/dash/DashMediaSource$1;)V
-    .registers 3
+    .locals 0
 
     .line 1377
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource$DefaultPlayerEmsgCallback;-><init>(Landroidx/media3/exoplayer/dash/DashMediaSource;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onDashManifestPublishTimeExpired(J)V
-    .registers 4
+    .locals 1
 
     .line 1386
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DefaultPlayerEmsgCallback;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;
@@ -56,7 +56,7 @@
 .end method
 
 .method public onDashManifestRefreshRequested()V
-    .registers 2
+    .locals 1
 
     .line 1381
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$DefaultPlayerEmsgCallback;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;

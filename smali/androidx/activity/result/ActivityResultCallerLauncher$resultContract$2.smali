@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/activity/result/ActivityResultCallerLauncher;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/activity/result/ActivityResultCallerLauncher$resultContract$2$1;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -101,7 +101,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 118
     invoke-virtual {p0}, Landroidx/activity/result/ActivityResultCallerLauncher$resultContract$2;->invoke()Landroidx/activity/result/ActivityResultCallerLauncher$resultContract$2$1;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static builder()Landroidx/camera/video/internal/encoder/AudioEncoderConfig$Builder;
-    .registers 2
+    .locals 2
 
     .line 41
     new-instance v0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig$Builder;
@@ -63,7 +63,7 @@
 .end method
 
 .method public toMediaFormat()Landroid/media/MediaFormat;
-    .registers 4
+    .locals 3
 
     .line 75
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/AudioEncoderConfig;->getMimeType()Ljava/lang/String;
@@ -100,7 +100,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_3f
+    if-eq v1, v2, :cond_1
 
     .line 79
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/AudioEncoderConfig;->getMimeType()Ljava/lang/String;
@@ -113,7 +113,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_0
 
     const-string v1, "aac-profile"
 
@@ -124,9 +124,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    goto :goto_3f
+    goto :goto_0
 
-    :cond_36
+    :cond_0
     const-string v1, "profile"
 
     .line 82
@@ -136,7 +136,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_3f
-    :goto_3f
+    :cond_1
+    :goto_0
     return-object v0
 .end method

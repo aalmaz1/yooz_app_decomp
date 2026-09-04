@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 136
     new-instance v0, Landroidx/media3/common/StreamKey$1;
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -98,7 +98,7 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -116,7 +116,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -146,7 +146,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/StreamKey;
-    .registers 6
+    .locals 5
 
     .line 173
     new-instance v0, Landroidx/media3/common/StreamKey;
@@ -182,7 +182,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/common/StreamKey;)I
-    .registers 4
+    .locals 2
 
     .line 112
     iget v0, p0, Landroidx/media3/common/StreamKey;->periodIndex:I
@@ -191,7 +191,7 @@
 
     sub-int/2addr v0, v1
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 114
     iget v0, p0, Landroidx/media3/common/StreamKey;->groupIndex:I
@@ -200,7 +200,7 @@
 
     sub-int/2addr v0, v1
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 116
     iget v0, p0, Landroidx/media3/common/StreamKey;->streamIndex:I
@@ -209,12 +209,12 @@
 
     sub-int/2addr v0, p1
 
-    :cond_13
+    :cond_0
     return v0
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 39
     check-cast p1, Landroidx/media3/common/StreamKey;
@@ -227,7 +227,7 @@
 .end method
 
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -235,18 +235,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_3
 
     .line 90
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -257,12 +257,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_29
+    goto :goto_1
 
     .line 94
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/StreamKey;
 
     .line 95
@@ -270,35 +270,35 @@
 
     iget v3, p1, Landroidx/media3/common/StreamKey;->periodIndex:I
 
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/StreamKey;->groupIndex:I
 
     iget v3, p1, Landroidx/media3/common/StreamKey;->groupIndex:I
 
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/StreamKey;->streamIndex:I
 
     iget p1, p1, Landroidx/media3/common/StreamKey;->streamIndex:I
 
-    if-ne v2, p1, :cond_27
+    if-ne v2, p1, :cond_2
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     move v0, v1
 
-    :goto_28
+    :goto_0
     return v0
 
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 102
     iget v0, p0, Landroidx/media3/common/StreamKey;->periodIndex:I
@@ -321,7 +321,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 155
     new-instance v0, Landroid/os/Bundle;
@@ -331,7 +331,7 @@
     .line 156
     iget v1, p0, Landroidx/media3/common/StreamKey;->periodIndex:I
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 157
     sget-object v2, Landroidx/media3/common/StreamKey;->FIELD_PERIOD_INDEX:Ljava/lang/String;
@@ -339,10 +339,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 159
-    :cond_e
+    :cond_0
     iget v1, p0, Landroidx/media3/common/StreamKey;->groupIndex:I
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 160
     sget-object v2, Landroidx/media3/common/StreamKey;->FIELD_GROUP_INDEX:Ljava/lang/String;
@@ -350,22 +350,22 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 162
-    :cond_17
+    :cond_1
     iget v1, p0, Landroidx/media3/common/StreamKey;->streamIndex:I
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     .line 163
     sget-object v2, Landroidx/media3/common/StreamKey;->FIELD_STREAM_INDEX:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_20
+    :cond_2
     return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 82
     new-instance v0, Ljava/lang/StringBuilder;
@@ -408,7 +408,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 131
     iget p2, p0, Landroidx/media3/common/StreamKey;->periodIndex:I

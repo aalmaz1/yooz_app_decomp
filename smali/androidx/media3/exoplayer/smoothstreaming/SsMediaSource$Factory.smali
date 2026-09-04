@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 1
 
     .line 114
     new-instance v0, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;
-    .registers 17
+    .locals 15
 
     move-object v0, p0
 
@@ -127,7 +127,7 @@
     .line 307
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->manifestParser:Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 309
     new-instance v1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser;
@@ -135,7 +135,7 @@
     invoke-direct {v1}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser;-><init>()V
 
     .line 311
-    :cond_11
+    :cond_0
     iget-object v3, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v3, v3, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
@@ -145,7 +145,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_22
+    if-nez v4, :cond_1
 
     .line 313
     new-instance v4, Landroidx/media3/exoplayer/offline/FilteringManifestParser;
@@ -154,28 +154,28 @@
 
     move-object v5, v4
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     move-object v5, v1
 
     .line 317
-    :goto_23
+    :goto_0
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->cmcdConfigurationFactory:Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_2
 
     const/4 v1, 0x0
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 319
-    :cond_29
+    :cond_2
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;->createCmcdConfiguration(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     move-result-object v1
 
-    :goto_2d
+    :goto_1
     move-object v8, v1
 
     .line 321
@@ -212,7 +212,7 @@
 .end method
 
 .method public createMediaSource(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;
-    .registers 3
+    .locals 1
 
     .line 251
     sget-object v0, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
@@ -229,7 +229,7 @@
 .end method
 
 .method public createMediaSource(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;
-    .registers 21
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -249,49 +249,49 @@
     .line 266
     iget-object v3, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_0
 
     .line 267
     iget-object v3, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v3, v3, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 268
-    :cond_16
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v3
 
     .line 269
-    :goto_1a
+    :goto_0
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_24
+    if-nez v5, :cond_1
 
     .line 270
     invoke-virtual {v1, v3}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->copy(Ljava/util/List;)Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     move-result-object v1
 
-    :cond_24
+    :cond_1
     move-object v7, v1
 
     .line 272
     iget-object v1, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_2
     const/4 v4, 0x0
 
     .line 275
-    :goto_2b
+    :goto_1
     invoke-virtual/range {p2 .. p2}, Landroidx/media3/common/MediaItem;->buildUpon()Landroidx/media3/common/MediaItem$Builder;
 
     move-result-object v1
@@ -303,19 +303,19 @@
 
     move-result-object v1
 
-    if-eqz v4, :cond_3c
+    if-eqz v4, :cond_3
 
     .line 277
     iget-object v2, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v2, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
 
-    goto :goto_3e
+    goto :goto_2
 
-    :cond_3c
+    :cond_3
     sget-object v2, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
 
-    :goto_3e
+    :goto_2
     invoke-virtual {v1, v2}, Landroidx/media3/common/MediaItem$Builder;->setUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
 
     move-result-object v1
@@ -328,19 +328,19 @@
     .line 281
     iget-object v1, v0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->cmcdConfigurationFactory:Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;
 
-    if-nez v1, :cond_4c
+    if-nez v1, :cond_4
 
     const/4 v1, 0x0
 
-    goto :goto_50
+    goto :goto_3
 
     .line 283
-    :cond_4c
+    :cond_4
     invoke-interface {v1, v6}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;->createCmcdConfiguration(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     move-result-object v1
 
-    :goto_50
+    :goto_3
     move-object v12, v1
 
     .line 284
@@ -377,7 +377,7 @@
 .end method
 
 .method public bridge synthetic createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource;
@@ -388,7 +388,7 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -401,7 +401,7 @@
 .end method
 
 .method public bridge synthetic experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -414,7 +414,7 @@
 .end method
 
 .method public getSupportedTypes()[I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -428,7 +428,7 @@
 .end method
 
 .method public setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 225
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -443,7 +443,7 @@
 .end method
 
 .method public bridge synthetic setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
@@ -454,7 +454,7 @@
 .end method
 
 .method public setCompositeSequenceableLoaderFactory(Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "SsMediaSource.Factory#setCompositeSequenceableLoaderFactory no longer handles null by instantiating a new DefaultCompositeSequenceableLoaderFactory. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -471,7 +471,7 @@
 .end method
 
 .method public setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -488,7 +488,7 @@
 .end method
 
 .method public bridge synthetic setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
@@ -499,7 +499,7 @@
 .end method
 
 .method public setLivePresentationDelayMs(J)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 3
+    .locals 0
 
     .line 184
     iput-wide p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->livePresentationDelayMs:J
@@ -508,7 +508,7 @@
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -525,7 +525,7 @@
 .end method
 
 .method public bridge synthetic setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
@@ -536,7 +536,7 @@
 .end method
 
 .method public setManifestParser(Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -555,7 +555,7 @@
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->chunkSourceFactory:Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;
@@ -572,7 +572,7 @@
 .end method
 
 .method public bridge synthetic setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/smoothstreaming/SsMediaSource$Factory;

@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,12 +20,12 @@
 .end method
 
 .method private getCropRect(Landroidx/camera/core/ImageProxy;)Landroid/graphics/RectF;
-    .registers 5
+    .locals 3
 
     .line 126
     iget-boolean v0, p0, Landroidx/camera/view/transform/ImageProxyTransformFactory;->mUsingCropRect:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 127
     new-instance v0, Landroid/graphics/RectF;
@@ -39,7 +39,7 @@
     return-object v0
 
     .line 130
-    :cond_e
+    :cond_0
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getWidth()I
@@ -62,7 +62,7 @@
 .end method
 
 .method static getRotatedCropRect(Landroid/graphics/RectF;I)Landroid/graphics/RectF;
-    .registers 4
+    .locals 2
 
     .line 148
     invoke-static {p1}, Landroidx/camera/core/impl/utils/TransformUtils;->is90or270(I)Z
@@ -71,7 +71,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 149
     new-instance p1, Landroid/graphics/RectF;
@@ -89,7 +89,7 @@
     return-object p1
 
     .line 151
-    :cond_15
+    :cond_0
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/graphics/RectF;->width()F
@@ -106,12 +106,12 @@
 .end method
 
 .method private getRotationDegrees(Landroidx/camera/core/ImageProxy;)I
-    .registers 3
+    .locals 1
 
     .line 137
     iget-boolean v0, p0, Landroidx/camera/view/transform/ImageProxyTransformFactory;->mUsingRotationDegrees:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 138
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getImageInfo()Landroidx/camera/core/ImageInfo;
@@ -124,7 +124,7 @@
 
     return p1
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
     return p1
@@ -133,7 +133,7 @@
 
 # virtual methods
 .method public getOutputTransform(Landroidx/camera/core/ImageProxy;)Landroidx/camera/view/transform/OutputTransform;
-    .registers 5
+    .locals 3
 
     .line 111
     invoke-direct {p0, p1}, Landroidx/camera/view/transform/ImageProxyTransformFactory;->getRotationDegrees(Landroidx/camera/core/ImageProxy;)I
@@ -183,7 +183,7 @@
 .end method
 
 .method public isUsingCropRect()Z
-    .registers 2
+    .locals 1
 
     .line 74
     iget-boolean v0, p0, Landroidx/camera/view/transform/ImageProxyTransformFactory;->mUsingCropRect:Z
@@ -192,7 +192,7 @@
 .end method
 
 .method public isUsingRotationDegrees()Z
-    .registers 2
+    .locals 1
 
     .line 97
     iget-boolean v0, p0, Landroidx/camera/view/transform/ImageProxyTransformFactory;->mUsingRotationDegrees:Z
@@ -201,7 +201,7 @@
 .end method
 
 .method public setUsingCropRect(Z)V
-    .registers 2
+    .locals 0
 
     .line 65
     iput-boolean p1, p0, Landroidx/camera/view/transform/ImageProxyTransformFactory;->mUsingCropRect:Z
@@ -210,7 +210,7 @@
 .end method
 
 .method public setUsingRotationDegrees(Z)V
-    .registers 2
+    .locals 0
 
     .line 88
     iput-boolean p1, p0, Landroidx/camera/view/transform/ImageProxyTransformFactory;->mUsingRotationDegrees:Z

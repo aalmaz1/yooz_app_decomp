@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/text/PrecomputedTextCompat$Params;Ljava/lang/CharSequence;)V
-    .registers 4
+    .locals 1
 
     .line 562
     new-instance v0, Landroidx/core/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;

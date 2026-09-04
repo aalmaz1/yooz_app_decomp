@@ -41,7 +41,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CaptureBundle;Landroidx/camera/core/ImageCapture$OutputFileOptions;Landroid/graphics/Rect;IILandroid/graphics/Matrix;Landroidx/camera/core/imagecapture/TakePictureCallback;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,12 +111,12 @@
 
     move-result-object p1
 
-    :goto_2e
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_48
+    if-eqz p2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -137,10 +137,10 @@
 
     invoke-interface {p3, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 83
-    :cond_48
+    :cond_0
     iput-object p8, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCaptureFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
     return-void
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method getCaptureFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -166,7 +166,7 @@
 .end method
 
 .method getCropRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCropRect:Landroid/graphics/Rect;
@@ -175,7 +175,7 @@
 .end method
 
 .method getJpegQuality()I
-    .registers 2
+    .locals 1
 
     .line 111
     iget v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mJpegQuality:I
@@ -184,7 +184,7 @@
 .end method
 
 .method getOutputFileOptions()Landroidx/camera/core/ImageCapture$OutputFileOptions;
-    .registers 2
+    .locals 1
 
     .line 98
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mOutputFileOptions:Landroidx/camera/core/ImageCapture$OutputFileOptions;
@@ -193,7 +193,7 @@
 .end method
 
 .method getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 107
     iget v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mRotationDegrees:I
@@ -202,7 +202,7 @@
 .end method
 
 .method getSensorToBufferTransform()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mSensorToBufferTransform:Landroid/graphics/Matrix;
@@ -211,7 +211,7 @@
 .end method
 
 .method getStageIds()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -228,7 +228,7 @@
 .end method
 
 .method getTagBundleKey()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 88
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mTagBundleKey:Ljava/lang/String;
@@ -237,7 +237,7 @@
 .end method
 
 .method isAborted()Z
-    .registers 2
+    .locals 1
 
     .line 167
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;
@@ -250,28 +250,28 @@
 .end method
 
 .method isInMemoryCapture()Z
-    .registers 2
+    .locals 1
 
     .line 120
     invoke-virtual {p0}, Landroidx/camera/core/imagecapture/ProcessingRequest;->getOutputFileOptions()Landroidx/camera/core/ImageCapture$OutputFileOptions;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method onCaptureFailure(Landroidx/camera/core/ImageCaptureException;)V
-    .registers 3
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;
@@ -282,7 +282,7 @@
 .end method
 
 .method onFinalResult(Landroidx/camera/core/ImageCapture$OutputFileResults;)V
-    .registers 3
+    .locals 1
 
     .line 136
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;
@@ -293,7 +293,7 @@
 .end method
 
 .method onFinalResult(Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 1
 
     .line 144
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;
@@ -304,7 +304,7 @@
 .end method
 
 .method onImageCaptured()V
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;
@@ -315,7 +315,7 @@
 .end method
 
 .method onProcessFailure(Landroidx/camera/core/ImageCaptureException;)V
-    .registers 3
+    .locals 1
 
     .line 152
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;

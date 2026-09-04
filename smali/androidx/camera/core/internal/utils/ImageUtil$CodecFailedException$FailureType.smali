@@ -34,7 +34,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -63,7 +63,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 477
     new-instance v0, Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;
@@ -109,7 +109,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -123,7 +123,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;
-    .registers 2
+    .locals 1
 
     .line 476
     const-class v0, Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;
@@ -138,7 +138,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;
-    .registers 1
+    .locals 1
 
     .line 476
     sget-object v0, Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;->$VALUES:[Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException$FailureType;

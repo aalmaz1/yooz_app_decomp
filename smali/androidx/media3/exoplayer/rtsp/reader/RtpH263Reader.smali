@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method private outputSampleMetadataForFragmentedPackets()V
-    .registers 9
+    .locals 8
 
     .line 236
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -113,7 +113,7 @@
 .end method
 
 .method private parseVopHeader(Landroidx/media3/common/util/ParsableByteArray;Z)V
-    .registers 8
+    .locals 5
 
     .line 192
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -139,7 +139,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_46
+    if-nez v1, :cond_3
 
     .line 203
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->peekUnsignedByte()I
@@ -152,15 +152,15 @@
 
     and-int/2addr v3, v4
 
-    if-nez p2, :cond_3d
+    if-nez p2, :cond_1
 
-    if-nez v3, :cond_3d
+    if-nez v3, :cond_1
 
     shr-int/lit8 p2, v1, 0x2
 
     and-int/lit8 p2, p2, 0x7
 
-    if-ne p2, v4, :cond_30
+    if-ne p2, v4, :cond_0
 
     const/16 p2, 0x80
 
@@ -172,9 +172,9 @@
     .line 216
     iput p2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->height:I
 
-    goto :goto_3d
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     add-int/lit8 p2, p2, -0x2
 
     const/16 v1, 0xb0
@@ -192,22 +192,22 @@
     iput p2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->height:I
 
     .line 222
-    :cond_3d
-    :goto_3d
+    :cond_1
+    :goto_0
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    if-nez v3, :cond_43
+    if-nez v3, :cond_2
 
     move v2, v4
 
     .line 223
-    :cond_43
+    :cond_2
     iput-boolean v2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->isKeyFrame:Z
 
     return-void
 
     .line 226
-    :cond_46
+    :cond_3
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 227
@@ -219,7 +219,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 13
+    .locals 7
 
     .line 97
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -242,49 +242,49 @@
 
     const/4 v4, 0x1
 
-    if-lez v2, :cond_15
+    if-lez v2, :cond_0
 
     move v2, v4
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v2, v3
 
-    :goto_16
+    :goto_0
     and-int/lit16 v5, v1, 0x200
 
     const-string v6, "RtpH263Reader"
 
-    if-nez v5, :cond_ea
+    if-nez v5, :cond_b
 
     and-int/lit16 v5, v1, 0x1f8
 
-    if-nez v5, :cond_ea
+    if-nez v5, :cond_b
 
     and-int/lit8 v1, v1, 0x7
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
-    goto/16 :goto_ea
+    goto/16 :goto_2
 
-    :cond_26
-    if-eqz v2, :cond_57
+    :cond_1
+    if-eqz v2, :cond_4
 
     .line 119
     iget-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->gotFirstPacketOfH263Frame:Z
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->fragmentedSampleSizeBytes:I
 
-    if-lez v1, :cond_33
+    if-lez v1, :cond_2
 
     .line 121
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->outputSampleMetadataForFragmentedPackets()V
 
     .line 123
-    :cond_33
+    :cond_2
     iput-boolean v4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->gotFirstPacketOfH263Frame:Z
 
     .line 125
@@ -296,7 +296,7 @@
 
     const/16 v2, 0x80
 
-    if-ge v1, v2, :cond_45
+    if-ge v1, v2, :cond_3
 
     const-string p1, "Picture start Code (PSC) missing, dropping packet."
 
@@ -306,7 +306,7 @@
     return-void
 
     .line 132
-    :cond_45
+    :cond_3
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v1
@@ -325,13 +325,13 @@
     .line 134
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 135
-    :cond_57
+    :cond_4
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->gotFirstPacketOfH263Frame:Z
 
-    if-eqz v0, :cond_e4
+    if-eqz v0, :cond_a
 
     .line 137
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->previousSequenceNumber:I
@@ -340,7 +340,7 @@
 
     move-result v0
 
-    if-ge p4, v0, :cond_7c
+    if-ge p4, v0, :cond_5
 
     const/4 p1, 0x2
 
@@ -372,11 +372,11 @@
     return-void
 
     .line 155
-    :cond_7c
-    :goto_7c
+    :cond_5
+    :goto_1
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->fragmentedSampleSizeBytes:I
 
-    if-nez v0, :cond_c0
+    if-nez v0, :cond_8
 
     .line 156
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->isOutputFormatSet:Z
@@ -386,11 +386,11 @@
     .line 157
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->isOutputFormatSet:Z
 
-    if-nez v0, :cond_c0
+    if-nez v0, :cond_8
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->isKeyFrame:Z
 
-    if-eqz v0, :cond_c0
+    if-eqz v0, :cond_8
 
     .line 158
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->width:I
@@ -401,7 +401,7 @@
 
     iget v1, v1, Landroidx/media3/common/Format;->width:I
 
-    if-ne v0, v1, :cond_a1
+    if-ne v0, v1, :cond_6
 
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->height:I
 
@@ -411,10 +411,10 @@
 
     iget v1, v1, Landroidx/media3/common/Format;->height:I
 
-    if-eq v0, v1, :cond_be
+    if-eq v0, v1, :cond_7
 
     .line 159
-    :cond_a1
+    :cond_6
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->payloadFormat:Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;
@@ -446,11 +446,11 @@
     invoke-interface {v0, v1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
     .line 162
-    :cond_be
+    :cond_7
     iput-boolean v4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->isOutputFormatSet:Z
 
     .line 165
-    :cond_c0
+    :cond_8
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
@@ -483,18 +483,18 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->fragmentedSampleTimeUs:J
 
-    if-eqz p5, :cond_e1
+    if-eqz p5, :cond_9
 
     .line 173
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->outputSampleMetadataForFragmentedPackets()V
 
     .line 175
-    :cond_e1
+    :cond_9
     iput p4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->previousSequenceNumber:I
 
     return-void
 
-    :cond_e4
+    :cond_a
     const-string p1, "First payload octet of the H263 packet is not the beginning of a new H263 partition, Dropping current packet."
 
     .line 148
@@ -502,8 +502,8 @@
 
     return-void
 
-    :cond_ea
-    :goto_ea
+    :cond_b
+    :goto_2
     const-string p1, "Dropping packet: video reduncancy coding is not supported, packet header VRC, or PLEN or PEBIT is non-zero"
 
     .line 111
@@ -513,7 +513,7 @@
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -535,7 +535,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 8
+    .locals 4
 
     .line 90
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->firstReceivedTimestamp:J
@@ -544,16 +544,16 @@
 
     cmp-long p3, v0, v2
 
-    if-nez p3, :cond_d
+    if-nez p3, :cond_0
 
     const/4 p3, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p3, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {p3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 91
@@ -563,7 +563,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 180
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH263Reader;->firstReceivedTimestamp:J

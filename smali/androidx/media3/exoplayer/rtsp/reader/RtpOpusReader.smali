@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method private static validateOpusIdHeader(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 6
+    .locals 5
 
     .line 141
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -70,16 +70,16 @@
 
     const/4 v4, 0x1
 
-    if-le v1, v2, :cond_10
+    if-le v1, v2, :cond_0
 
     move v1, v4
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v1, v3
 
-    :goto_11
+    :goto_0
     const-string v2, "ID Header has insufficient data"
 
     .line 143
@@ -108,11 +108,11 @@
 
     move-result v1
 
-    if-ne v1, v4, :cond_2e
+    if-ne v1, v4, :cond_1
 
     move v3, v4
 
-    :cond_2e
+    :cond_1
     const-string/jumbo v1, "version number must always be 1"
 
     invoke-static {v3, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -126,7 +126,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 23
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -144,7 +144,7 @@
 
     const/4 v4, 0x1
 
-    if-nez v3, :cond_32
+    if-nez v3, :cond_0
 
     .line 90
     invoke-static/range {p1 .. p1}, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->validateOpusIdHeader(Landroidx/media3/common/util/ParsableByteArray;)V
@@ -182,15 +182,15 @@
     .line 95
     iput-boolean v4, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->foundOpusIDHeader:Z
 
-    goto :goto_97
+    goto :goto_0
 
     .line 96
-    :cond_32
+    :cond_0
     iget-boolean v3, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->foundOpusCommentHeader:Z
 
     const/4 v5, 0x0
 
-    if-nez v3, :cond_57
+    if-nez v3, :cond_2
 
     .line 98
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -199,11 +199,11 @@
 
     const/16 v6, 0x8
 
-    if-lt v3, v6, :cond_40
+    if-lt v3, v6, :cond_1
 
     move v5, v4
 
-    :cond_40
+    :cond_1
     const-string v3, "Comment Header has insufficient data"
 
     .line 99
@@ -228,17 +228,17 @@
     .line 102
     iput-boolean v4, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->foundOpusCommentHeader:Z
 
-    goto :goto_97
+    goto :goto_0
 
     .line 105
-    :cond_57
+    :cond_2
     iget v3, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->previousSequenceNumber:I
 
     invoke-static {v3}, Landroidx/media3/exoplayer/rtsp/RtpPacket;->getNextSequenceNumber(I)I
 
     move-result v3
 
-    if-eq v2, v3, :cond_79
+    if-eq v2, v3, :cond_3
 
     const/4 v6, 0x2
 
@@ -270,7 +270,7 @@
     invoke-static {v4, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 115
-    :cond_79
+    :cond_3
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v9
@@ -306,14 +306,14 @@
     invoke-interface/range {v5 .. v11}, Landroidx/media3/extractor/TrackOutput;->sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
 
     .line 123
-    :goto_97
+    :goto_0
     iput v2, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->previousSequenceNumber:I
 
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -335,7 +335,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 4
+    .locals 0
 
     .line 76
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->firstReceivedTimestamp:J
@@ -344,7 +344,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 128
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpOpusReader;->firstReceivedTimestamp:J

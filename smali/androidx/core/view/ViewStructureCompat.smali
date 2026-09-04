@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/ViewStructure;)V
-    .registers 2
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method public static toViewStructureCompat(Landroid/view/ViewStructure;)Landroidx/core/view/ViewStructureCompat;
-    .registers 2
+    .locals 1
 
     .line 51
     new-instance v0, Landroidx/core/view/ViewStructureCompat;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public setClassName(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/core/view/ViewStructureCompat;->mWrappedObj:Ljava/lang/Object;
@@ -55,7 +55,7 @@
 .end method
 
 .method public setContentDescription(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/core/view/ViewStructureCompat;->mWrappedObj:Ljava/lang/Object;
@@ -68,7 +68,7 @@
 .end method
 
 .method public setDimens(IIIIII)V
-    .registers 15
+    .locals 8
 
     .line 142
     iget-object v0, p0, Landroidx/core/view/ViewStructureCompat;->mWrappedObj:Ljava/lang/Object;
@@ -95,7 +95,7 @@
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 86
     iget-object v0, p0, Landroidx/core/view/ViewStructureCompat;->mWrappedObj:Ljava/lang/Object;
@@ -108,7 +108,7 @@
 .end method
 
 .method public toViewStructure()Landroid/view/ViewStructure;
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/core/view/ViewStructureCompat;->mWrappedObj:Ljava/lang/Object;

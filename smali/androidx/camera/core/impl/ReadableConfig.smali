@@ -8,7 +8,7 @@
 
 # virtual methods
 .method public containsOption(Landroidx/camera/core/impl/Config$Option;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30,7 +30,7 @@
 .end method
 
 .method public findOptions(Ljava/lang/String;Landroidx/camera/core/impl/Config$OptionMatcher;)V
-    .registers 4
+    .locals 1
 
     .line 62
     invoke-interface {p0}, Landroidx/camera/core/impl/ReadableConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -46,7 +46,7 @@
 .end method
 
 .method public getOptionPriority(Landroidx/camera/core/impl/Config$Option;)Landroidx/camera/core/impl/Config$OptionPriority;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,7 +69,7 @@
 .end method
 
 .method public getPriorities(Landroidx/camera/core/impl/Config$Option;)Ljava/util/Set;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +94,7 @@
 .end method
 
 .method public listOptions()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -117,7 +117,7 @@
 .end method
 
 .method public retrieveOption(Landroidx/camera/core/impl/Config$Option;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ValueT:",
@@ -141,7 +141,7 @@
 .end method
 
 .method public retrieveOption(Landroidx/camera/core/impl/Config$Option;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ValueT:",
@@ -165,7 +165,7 @@
 .end method
 
 .method public retrieveOptionWithPriority(Landroidx/camera/core/impl/Config$Option;Landroidx/camera/core/impl/Config$OptionPriority;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ValueT:",

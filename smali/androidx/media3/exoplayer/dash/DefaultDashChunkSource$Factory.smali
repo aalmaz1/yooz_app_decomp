@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;I)V
-    .registers 4
+    .locals 1
 
     .line 97
     sget-object v0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor;->FACTORY:Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;Landroidx/media3/datasource/DataSource$Factory;I)V
-    .registers 4
+    .locals 0
 
     .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public createDashChunkSource(Landroidx/media3/exoplayer/upstream/LoaderErrorThrower;Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;I[ILandroidx/media3/exoplayer/trackselection/ExoTrackSelection;IJZLjava/util/List;Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;Landroidx/media3/datasource/TransferListener;Landroidx/media3/exoplayer/analytics/PlayerId;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;)Landroidx/media3/exoplayer/dash/DashChunkSource;
-    .registers 37
+    .locals 21
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,13 +102,13 @@
 
     move-result-object v12
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 151
     invoke-interface {v12, v1}, Landroidx/media3/datasource/DataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
     .line 153
-    :cond_f
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;
 
     move-object v3, v1
@@ -149,7 +149,7 @@
 .end method
 
 .method public bridge synthetic experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 78
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;->experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;
@@ -160,7 +160,7 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;
-    .registers 3
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;->chunkExtractorFactory:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;
@@ -171,7 +171,7 @@
 .end method
 
 .method public getOutputTextFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 1
 
     .line 180
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;->chunkExtractorFactory:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;
@@ -184,7 +184,7 @@
 .end method
 
 .method public bridge synthetic setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 78
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;
@@ -195,7 +195,7 @@
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;
-    .registers 3
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;->chunkExtractorFactory:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;

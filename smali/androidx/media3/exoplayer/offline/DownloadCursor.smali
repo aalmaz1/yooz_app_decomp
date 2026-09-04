@@ -20,7 +20,7 @@
 .end method
 
 .method public isAfterLast()Z
-    .registers 4
+    .locals 3
 
     .line 120
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getCount()I
@@ -29,12 +29,12 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 123
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getPosition()I
 
     move-result v0
@@ -43,19 +43,19 @@
 
     move-result v2
 
-    if-ne v0, v2, :cond_13
+    if-ne v0, v2, :cond_1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_14
+    :goto_0
     return v1
 .end method
 
 .method public isBeforeFirst()Z
-    .registers 4
+    .locals 3
 
     .line 112
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getCount()I
@@ -64,26 +64,26 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 115
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getPosition()I
 
     move-result v0
 
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_10
+    if-ne v0, v2, :cond_1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_11
+    :goto_0
     return v1
 .end method
 
@@ -91,34 +91,34 @@
 .end method
 
 .method public isFirst()Z
-    .registers 2
+    .locals 1
 
     .line 101
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getPosition()I
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getCount()I
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public isLast()Z
-    .registers 4
+    .locals 3
 
     .line 106
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getCount()I
@@ -132,23 +132,23 @@
 
     add-int/lit8 v2, v0, -0x1
 
-    if-ne v1, v2, :cond_10
+    if-ne v1, v2, :cond_0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public moveToFirst()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -161,7 +161,7 @@
 .end method
 
 .method public moveToLast()Z
-    .registers 2
+    .locals 1
 
     .line 72
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getCount()I
@@ -178,7 +178,7 @@
 .end method
 
 .method public moveToNext()Z
-    .registers 2
+    .locals 1
 
     .line 84
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getPosition()I
@@ -198,7 +198,7 @@
 .end method
 
 .method public moveToPrevious()Z
-    .registers 2
+    .locals 1
 
     .line 96
     invoke-interface {p0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getPosition()I

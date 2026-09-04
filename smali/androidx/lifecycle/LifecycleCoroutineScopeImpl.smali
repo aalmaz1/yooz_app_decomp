@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/Lifecycle;Lkotlin/coroutines/CoroutineContext;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "lifecycle"
 
@@ -81,7 +81,7 @@
 
     sget-object p2, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne p1, p2, :cond_26
+    if-ne p1, p2, :cond_0
 
     .line 388
     invoke-virtual {p0}, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
@@ -94,14 +94,14 @@
 
     invoke-static {p1, v0, p2, v0}, Lkotlinx/coroutines/JobKt;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 381
     iget-object v0, p0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->coroutineContext:Lkotlin/coroutines/CoroutineContext;
@@ -110,7 +110,7 @@
 .end method
 
 .method public getLifecycle$lifecycle_common()Landroidx/lifecycle/Lifecycle;
-    .registers 2
+    .locals 1
 
     .line 380
     iget-object v0, p0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->lifecycle:Landroidx/lifecycle/Lifecycle;
@@ -119,7 +119,7 @@
 .end method
 
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "source"
 
@@ -146,7 +146,7 @@
 
     move-result p1
 
-    if-gtz p1, :cond_2f
+    if-gtz p1, :cond_0
 
     .line 404
     invoke-virtual {p0}, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->getLifecycle$lifecycle_common()Landroidx/lifecycle/Lifecycle;
@@ -170,12 +170,12 @@
 
     invoke-static {p1, v0, p2, v0}, Lkotlinx/coroutines/JobKt;->cancel$default(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
-    :cond_2f
+    :cond_0
     return-void
 .end method
 
 .method public final register()V
-    .registers 7
+    .locals 6
 
     .line 393
     move-object v0, p0

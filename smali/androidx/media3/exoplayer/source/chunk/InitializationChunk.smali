@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Landroidx/media3/common/Format;ILjava/lang/Object;Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;)V
-    .registers 18
+    .locals 11
 
     const/4 v3, 0x2
 
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public init(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;)V
-    .registers 2
+    .locals 0
 
     .line 79
     iput-object p1, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->trackOutputProvider:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;
@@ -69,7 +69,7 @@
 .end method
 
 .method public load()V
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -83,7 +83,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 93
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->chunkExtractor:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
@@ -97,8 +97,8 @@
     invoke-interface/range {v1 .. v6}, Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;->init(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;JJ)V
 
     .line 98
-    :cond_19
-    :try_start_19
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     iget-wide v1, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->nextLoadPosition:J
@@ -124,31 +124,31 @@
     move-object v1, v7
 
     invoke-direct/range {v1 .. v6}, Landroidx/media3/extractor/DefaultExtractorInput;-><init>(Landroidx/media3/common/DataReader;JJ)V
-    :try_end_31
-    .catchall {:try_start_19 .. :try_end_31} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 104
-    :goto_31
-    :try_start_31
+    :goto_0
+    :try_start_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->loadCanceled:Z
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->chunkExtractor:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
 
     invoke-interface {v0, v7}, Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;->read(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result v0
-    :try_end_3b
-    .catchall {:try_start_31 .. :try_end_3b} :catchall_4f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
-    goto :goto_31
+    goto :goto_0
 
     .line 106
-    :cond_3e
-    :try_start_3e
+    :cond_1
+    :try_start_2
     invoke-interface {v7}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v0
@@ -160,8 +160,8 @@
     sub-long/2addr v0, v2
 
     iput-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->nextLoadPosition:J
-    :try_end_49
-    .catchall {:try_start_3e .. :try_end_49} :catchall_5c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 109
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -170,11 +170,11 @@
 
     return-void
 
-    :catchall_4f
+    :catchall_0
     move-exception v0
 
     .line 106
-    :try_start_50
+    :try_start_3
     invoke-interface {v7}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v1
@@ -189,10 +189,10 @@
 
     .line 107
     throw v0
-    :try_end_5c
-    .catchall {:try_start_50 .. :try_end_5c} :catchall_5c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :catchall_5c
+    :catchall_1
     move-exception v0
 
     .line 109

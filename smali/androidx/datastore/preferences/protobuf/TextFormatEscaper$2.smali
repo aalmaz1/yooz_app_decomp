@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 126
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/TextFormatEscaper$2;->val$input:[B
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public byteAt(I)B
-    .registers 3
+    .locals 1
 
     .line 134
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/TextFormatEscaper$2;->val$input:[B
@@ -47,7 +47,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 129
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/TextFormatEscaper$2;->val$input:[B

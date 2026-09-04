@@ -78,7 +78,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1263
     new-instance v0, Landroidx/datastore/preferences/protobuf/Enum;
@@ -97,7 +97,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 18
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;-><init>()V
@@ -125,7 +125,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 1
+    .locals 1
 
     .line 13
     sget-object v0, Landroidx/datastore/preferences/protobuf/Enum;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Enum;
@@ -134,7 +134,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/datastore/preferences/protobuf/Enum;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->setName(Ljava/lang/String;)V
@@ -143,7 +143,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/datastore/preferences/protobuf/Enum;Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->addAllEnumvalue(Ljava/lang/Iterable;)V
@@ -152,7 +152,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/datastore/preferences/protobuf/Enum;)V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->clearEnumvalue()V
@@ -161,7 +161,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/datastore/preferences/protobuf/Enum;I)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->removeEnumvalue(I)V
@@ -170,7 +170,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->setOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
@@ -179,7 +179,7 @@
 .end method
 
 .method static synthetic access$1400(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->setOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
@@ -188,7 +188,7 @@
 .end method
 
 .method static synthetic access$1500(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/Option;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->addOptions(Landroidx/datastore/preferences/protobuf/Option;)V
@@ -197,7 +197,7 @@
 .end method
 
 .method static synthetic access$1600(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->addOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
@@ -206,7 +206,7 @@
 .end method
 
 .method static synthetic access$1700(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->addOptions(Landroidx/datastore/preferences/protobuf/Option$Builder;)V
@@ -215,7 +215,7 @@
 .end method
 
 .method static synthetic access$1800(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->addOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
@@ -224,7 +224,7 @@
 .end method
 
 .method static synthetic access$1900(Landroidx/datastore/preferences/protobuf/Enum;Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->addAllOptions(Ljava/lang/Iterable;)V
@@ -233,7 +233,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/datastore/preferences/protobuf/Enum;)V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->clearName()V
@@ -242,7 +242,7 @@
 .end method
 
 .method static synthetic access$2000(Landroidx/datastore/preferences/protobuf/Enum;)V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->clearOptions()V
@@ -251,7 +251,7 @@
 .end method
 
 .method static synthetic access$2100(Landroidx/datastore/preferences/protobuf/Enum;I)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->removeOptions(I)V
@@ -260,7 +260,7 @@
 .end method
 
 .method static synthetic access$2200(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
@@ -269,7 +269,7 @@
 .end method
 
 .method static synthetic access$2300(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)V
@@ -278,7 +278,7 @@
 .end method
 
 .method static synthetic access$2400(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->mergeSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
@@ -287,7 +287,7 @@
 .end method
 
 .method static synthetic access$2500(Landroidx/datastore/preferences/protobuf/Enum;)V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->clearSourceContext()V
@@ -296,7 +296,7 @@
 .end method
 
 .method static synthetic access$2600(Landroidx/datastore/preferences/protobuf/Enum;I)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->setSyntaxValue(I)V
@@ -305,7 +305,7 @@
 .end method
 
 .method static synthetic access$2700(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/Syntax;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->setSyntax(Landroidx/datastore/preferences/protobuf/Syntax;)V
@@ -314,7 +314,7 @@
 .end method
 
 .method static synthetic access$2800(Landroidx/datastore/preferences/protobuf/Enum;)V
-    .registers 1
+    .locals 0
 
     .line 13
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->clearSyntax()V
@@ -323,7 +323,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
@@ -332,7 +332,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/EnumValue;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->setEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue;)V
@@ -341,7 +341,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->setEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
@@ -350,7 +350,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/EnumValue;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->addEnumvalue(Landroidx/datastore/preferences/protobuf/EnumValue;)V
@@ -359,7 +359,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/EnumValue;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->addEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue;)V
@@ -368,7 +368,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/datastore/preferences/protobuf/Enum;Landroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Enum;->addEnumvalue(Landroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
@@ -377,7 +377,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/datastore/preferences/protobuf/Enum;ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Enum;->addEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
@@ -386,7 +386,7 @@
 .end method
 
 .method private addAllEnumvalue(Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -409,7 +409,7 @@
 .end method
 
 .method private addAllOptions(Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -432,7 +432,7 @@
 .end method
 
 .method private addEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 236
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureEnumvalueIsMutable()V
@@ -450,7 +450,7 @@
 .end method
 
 .method private addEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue;)V
-    .registers 4
+    .locals 1
 
     .line 210
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -467,7 +467,7 @@
 .end method
 
 .method private addEnumvalue(Landroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 224
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureEnumvalueIsMutable()V
@@ -485,7 +485,7 @@
 .end method
 
 .method private addEnumvalue(Landroidx/datastore/preferences/protobuf/EnumValue;)V
-    .registers 3
+    .locals 1
 
     .line 195
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -502,7 +502,7 @@
 .end method
 
 .method private addOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 415
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureOptionsIsMutable()V
@@ -520,7 +520,7 @@
 .end method
 
 .method private addOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 4
+    .locals 1
 
     .line 389
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -537,7 +537,7 @@
 .end method
 
 .method private addOptions(Landroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 403
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureOptionsIsMutable()V
@@ -555,7 +555,7 @@
 .end method
 
 .method private addOptions(Landroidx/datastore/preferences/protobuf/Option;)V
-    .registers 3
+    .locals 1
 
     .line 374
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -572,7 +572,7 @@
 .end method
 
 .method private clearEnumvalue()V
-    .registers 2
+    .locals 1
 
     .line 260
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Enum;->emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -585,7 +585,7 @@
 .end method
 
 .method private clearName()V
-    .registers 2
+    .locals 1
 
     .line 75
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Enum;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/Enum;
@@ -602,7 +602,7 @@
 .end method
 
 .method private clearOptions()V
-    .registers 2
+    .locals 1
 
     .line 439
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Enum;->emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -615,7 +615,7 @@
 .end method
 
 .method private clearSourceContext()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -626,7 +626,7 @@
 .end method
 
 .method private clearSyntax()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -637,7 +637,7 @@
 .end method
 
 .method private ensureEnumvalueIsMutable()V
-    .registers 2
+    .locals 1
 
     .line 153
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->enumvalue_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -646,7 +646,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 154
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->enumvalue_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -658,12 +658,12 @@
 
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->enumvalue_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method private ensureOptionsIsMutable()V
-    .registers 2
+    .locals 1
 
     .line 332
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -672,7 +672,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 333
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -684,12 +684,12 @@
 
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public static getDefaultInstance()Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 1
+    .locals 1
 
     .line 1272
     sget-object v0, Landroidx/datastore/preferences/protobuf/Enum;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Enum;
@@ -698,7 +698,7 @@
 .end method
 
 .method private mergeSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 4
+    .locals 2
 
     .line 513
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -706,14 +706,14 @@
     .line 515
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 516
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SourceContext;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/SourceContext;
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_0
 
     .line 517
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
@@ -737,18 +737,18 @@
 
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/Enum;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    goto :goto_24
+    goto :goto_0
 
     .line 520
-    :cond_22
+    :cond_0
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/Enum;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    :goto_24
+    :goto_0
     return-void
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 1
+    .locals 1
 
     .line 675
     sget-object v0, Landroidx/datastore/preferences/protobuf/Enum;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Enum;
@@ -763,7 +763,7 @@
 .end method
 
 .method public static newBuilder(Landroidx/datastore/preferences/protobuf/Enum;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 2
+    .locals 1
 
     .line 678
     sget-object v0, Landroidx/datastore/preferences/protobuf/Enum;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Enum;
@@ -778,7 +778,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -798,7 +798,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -818,7 +818,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -838,7 +838,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -858,7 +858,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -878,7 +878,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -898,7 +898,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -918,7 +918,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -938,7 +938,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -958,7 +958,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -978,7 +978,7 @@
 .end method
 
 .method public static parseFrom([B)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -998,7 +998,7 @@
 .end method
 
 .method public static parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Enum;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1018,7 +1018,7 @@
 .end method
 
 .method public static parser()Landroidx/datastore/preferences/protobuf/Parser;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1039,7 +1039,7 @@
 .end method
 
 .method private removeEnumvalue(I)V
-    .registers 3
+    .locals 1
 
     .line 270
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureEnumvalueIsMutable()V
@@ -1053,7 +1053,7 @@
 .end method
 
 .method private removeOptions(I)V
-    .registers 3
+    .locals 1
 
     .line 449
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureOptionsIsMutable()V
@@ -1067,7 +1067,7 @@
 .end method
 
 .method private setEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 183
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureEnumvalueIsMutable()V
@@ -1085,7 +1085,7 @@
 .end method
 
 .method private setEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue;)V
-    .registers 4
+    .locals 1
 
     .line 169
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1102,7 +1102,7 @@
 .end method
 
 .method private setName(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1114,7 +1114,7 @@
 .end method
 
 .method private setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 88
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1133,7 +1133,7 @@
 .end method
 
 .method private setOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 362
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum;->ensureOptionsIsMutable()V
@@ -1151,7 +1151,7 @@
 .end method
 
 .method private setOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 4
+    .locals 1
 
     .line 348
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1168,7 +1168,7 @@
 .end method
 
 .method private setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 500
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->build()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -1183,7 +1183,7 @@
 .end method
 
 .method private setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 2
+    .locals 0
 
     .line 486
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1195,7 +1195,7 @@
 .end method
 
 .method private setSyntax(Landroidx/datastore/preferences/protobuf/Syntax;)V
-    .registers 2
+    .locals 0
 
     .line 583
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1211,7 +1211,7 @@
 .end method
 
 .method private setSyntaxValue(I)V
-    .registers 2
+    .locals 0
 
     .line 571
     iput p1, p0, Landroidx/datastore/preferences/protobuf/Enum;->syntax_:I
@@ -1222,7 +1222,7 @@
 
 # virtual methods
 .method protected final dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 1208
     sget-object p2, Landroidx/datastore/preferences/protobuf/Enum$1;->$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke:[I
@@ -1237,7 +1237,7 @@
 
     const/4 p3, 0x0
 
-    packed-switch p1, :pswitch_data_70
+    packed-switch p1, :pswitch_data_0
 
     .line 1256
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -1246,11 +1246,11 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     return-object p3
 
     .line 1250
-    :pswitch_14
+    :pswitch_1
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
@@ -1258,10 +1258,10 @@
     return-object p1
 
     .line 1235
-    :pswitch_19
+    :pswitch_2
     sget-object p1, Landroidx/datastore/preferences/protobuf/Enum;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_1
 
     .line 1237
     const-class p2, Landroidx/datastore/preferences/protobuf/Enum;
@@ -1269,10 +1269,10 @@
     monitor-enter p2
 
     .line 1238
-    :try_start_20
+    :try_start_0
     sget-object p1, Landroidx/datastore/preferences/protobuf/Enum;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_0
 
     .line 1240
     new-instance p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
@@ -1285,31 +1285,31 @@
     sput-object p1, Landroidx/datastore/preferences/protobuf/Enum;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
     .line 1245
-    :cond_2d
+    :cond_0
     monitor-exit p2
 
-    goto :goto_32
+    goto :goto_0
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
-    :try_end_31
-    .catchall {:try_start_20 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-object p1
 
     .line 1232
-    :pswitch_33
+    :pswitch_3
     sget-object p1, Landroidx/datastore/preferences/protobuf/Enum;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Enum;
 
     return-object p1
 
-    :pswitch_36
+    :pswitch_4
     const/4 p1, 0x7
 
     new-array p1, p1, [Ljava/lang/Object;
@@ -1367,7 +1367,7 @@
     return-object p1
 
     .line 1213
-    :pswitch_64
+    :pswitch_5
     new-instance p1, Landroidx/datastore/preferences/protobuf/Enum$Builder;
 
     invoke-direct {p1, p3}, Landroidx/datastore/preferences/protobuf/Enum$Builder;-><init>(Landroidx/datastore/preferences/protobuf/Enum$1;)V
@@ -1375,27 +1375,27 @@
     return-object p1
 
     .line 1210
-    :pswitch_6a
+    :pswitch_6
     new-instance p1, Landroidx/datastore/preferences/protobuf/Enum;
 
     invoke-direct {p1}, Landroidx/datastore/preferences/protobuf/Enum;-><init>()V
 
     return-object p1
 
-    :pswitch_data_70
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_6a
-        :pswitch_64
-        :pswitch_36
-        :pswitch_33
-        :pswitch_19
-        :pswitch_14
-        :pswitch_13
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getEnumvalue(I)Landroidx/datastore/preferences/protobuf/EnumValue;
-    .registers 3
+    .locals 1
 
     .line 139
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->enumvalue_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1410,7 +1410,7 @@
 .end method
 
 .method public getEnumvalueCount()I
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->enumvalue_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1423,7 +1423,7 @@
 .end method
 
 .method public getEnumvalueList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1440,7 +1440,7 @@
 .end method
 
 .method public getEnumvalueOrBuilder(I)Landroidx/datastore/preferences/protobuf/EnumValueOrBuilder;
-    .registers 3
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->enumvalue_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1455,7 +1455,7 @@
 .end method
 
 .method public getEnumvalueOrBuilderList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1473,7 +1473,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 35
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->name_:Ljava/lang/String;
@@ -1482,7 +1482,7 @@
 .end method
 
 .method public getNameBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 48
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->name_:Ljava/lang/String;
@@ -1495,7 +1495,7 @@
 .end method
 
 .method public getOptions(I)Landroidx/datastore/preferences/protobuf/Option;
-    .registers 3
+    .locals 1
 
     .line 318
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1510,7 +1510,7 @@
 .end method
 
 .method public getOptionsCount()I
-    .registers 2
+    .locals 1
 
     .line 307
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1523,7 +1523,7 @@
 .end method
 
 .method public getOptionsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1540,7 +1540,7 @@
 .end method
 
 .method public getOptionsOrBuilder(I)Landroidx/datastore/preferences/protobuf/OptionOrBuilder;
-    .registers 3
+    .locals 1
 
     .line 329
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1555,7 +1555,7 @@
 .end method
 
 .method public getOptionsOrBuilderList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1573,23 +1573,23 @@
 .end method
 
 .method public getSourceContext()Landroidx/datastore/preferences/protobuf/SourceContext;
-    .registers 2
+    .locals 1
 
     .line 475
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SourceContext;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/SourceContext;
 
     move-result-object v0
 
-    :cond_8
+    :cond_0
     return-object v0
 .end method
 
 .method public getSyntax()Landroidx/datastore/preferences/protobuf/Syntax;
-    .registers 2
+    .locals 1
 
     .line 559
     iget v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->syntax_:I
@@ -1598,17 +1598,17 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 560
     sget-object v0, Landroidx/datastore/preferences/protobuf/Syntax;->UNRECOGNIZED:Landroidx/datastore/preferences/protobuf/Syntax;
 
-    :cond_a
+    :cond_0
     return-object v0
 .end method
 
 .method public getSyntaxValue()I
-    .registers 2
+    .locals 1
 
     .line 547
     iget v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->syntax_:I
@@ -1617,20 +1617,20 @@
 .end method
 
 .method public hasSourceContext()Z
-    .registers 2
+    .locals 1
 
     .line 464
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

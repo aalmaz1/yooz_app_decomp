@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/PopupMenu;)V
-    .registers 2
+    .locals 0
 
     .line 109
     iput-object p1, p0, Landroidx/appcompat/widget/PopupMenu$1;->this$0:Landroidx/appcompat/widget/PopupMenu;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public onMenuItemSelected(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
-    .registers 3
+    .locals 0
 
     .line 112
     iget-object p1, p0, Landroidx/appcompat/widget/PopupMenu$1;->this$0:Landroidx/appcompat/widget/PopupMenu;
 
     iget-object p1, p1, Landroidx/appcompat/widget/PopupMenu;->mMenuItemClickListener:Landroidx/appcompat/widget/PopupMenu$OnMenuItemClickListener;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 113
     iget-object p1, p0, Landroidx/appcompat/widget/PopupMenu$1;->this$0:Landroidx/appcompat/widget/PopupMenu;
@@ -56,14 +56,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public onMenuModeChange(Landroidx/appcompat/view/menu/MenuBuilder;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

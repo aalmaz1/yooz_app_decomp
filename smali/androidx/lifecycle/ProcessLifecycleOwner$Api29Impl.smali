@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/lifecycle/ProcessLifecycleOwner$Api29Impl;
 
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 191
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final registerActivityLifecycleCallbacks(Landroid/app/Activity;Landroid/app/Application$ActivityLifecycleCallbacks;)V
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 

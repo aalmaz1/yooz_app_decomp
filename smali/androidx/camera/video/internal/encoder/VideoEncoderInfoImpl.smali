@@ -12,7 +12,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static from(Landroidx/camera/video/internal/encoder/VideoEncoderConfig;)Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -66,12 +66,12 @@
 .end method
 
 .method private static toIllegalArgumentException(Ljava/lang/Throwable;)Ljava/lang/IllegalArgumentException;
-    .registers 2
+    .locals 1
 
     .line 113
     instance-of v0, p0, Ljava/lang/IllegalArgumentException;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 114
     check-cast p0, Ljava/lang/IllegalArgumentException;
@@ -79,7 +79,7 @@
     return-object p0
 
     .line 116
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public getHeightAlignment()I
-    .registers 2
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;->mVideoCapabilities:Landroid/media/MediaCodecInfo$VideoCapabilities;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getSupportedBitrateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -124,7 +124,7 @@
 .end method
 
 .method public getSupportedHeights()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -145,7 +145,7 @@
 .end method
 
 .method public getSupportedHeightsFor(I)Landroid/util/Range;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -162,12 +162,12 @@
     invoke-virtual {v0, p1}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedHeightsFor(I)Landroid/util/Range;
 
     move-result-object p1
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p1
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     .line 91
@@ -179,7 +179,7 @@
 .end method
 
 .method public getSupportedWidths()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
 .end method
 
 .method public getSupportedWidthsFor(I)Landroid/util/Range;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -217,12 +217,12 @@
     invoke-virtual {v0, p1}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedWidthsFor(I)Landroid/util/Range;
 
     move-result-object p1
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p1
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     .line 81
@@ -234,7 +234,7 @@
 .end method
 
 .method public getWidthAlignment()I
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;->mVideoCapabilities:Landroid/media/MediaCodecInfo$VideoCapabilities;
@@ -247,7 +247,7 @@
 .end method
 
 .method public isSizeSupported(II)Z
-    .registers 4
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;->mVideoCapabilities:Landroid/media/MediaCodecInfo$VideoCapabilities;

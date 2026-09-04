@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method casListeners(Landroidx/concurrent/futures/AbstractResolvableFuture;Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;)Z
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,10 +45,10 @@
     monitor-enter p1
 
     .line 1173
-    :try_start_1
+    :try_start_0
     iget-object v0, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->listeners:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
 
-    if-ne v0, p2, :cond_a
+    if-ne v0, p2, :cond_0
 
     .line 1174
     iput-object p3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->listeners:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
@@ -61,26 +61,26 @@
     return p1
 
     .line 1177
-    :cond_a
+    :cond_0
     monitor-exit p1
 
     const/4 p1, 0x0
 
     return p1
 
-    :catchall_d
+    :catchall_0
     move-exception p2
 
     .line 1178
     monitor-exit p1
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method casValue(Landroidx/concurrent/futures/AbstractResolvableFuture;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,10 +96,10 @@
     monitor-enter p1
 
     .line 1184
-    :try_start_1
+    :try_start_0
     iget-object v0, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
-    if-ne v0, p2, :cond_a
+    if-ne v0, p2, :cond_0
 
     .line 1185
     iput-object p3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
@@ -112,26 +112,26 @@
     return p1
 
     .line 1188
-    :cond_a
+    :cond_0
     monitor-exit p1
 
     const/4 p1, 0x0
 
     return p1
 
-    :catchall_d
+    :catchall_0
     move-exception p2
 
     .line 1189
     monitor-exit p1
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method casWaiters(Landroidx/concurrent/futures/AbstractResolvableFuture;Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)Z
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,10 +147,10 @@
     monitor-enter p1
 
     .line 1162
-    :try_start_1
+    :try_start_0
     iget-object v0, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
-    if-ne v0, p2, :cond_a
+    if-ne v0, p2, :cond_0
 
     .line 1163
     iput-object p3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -163,26 +163,26 @@
     return p1
 
     .line 1166
-    :cond_a
+    :cond_0
     monitor-exit p1
 
     const/4 p1, 0x0
 
     return p1
 
-    :catchall_d
+    :catchall_0
     move-exception p2
 
     .line 1167
     monitor-exit p1
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method putNext(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;)V
-    .registers 3
+    .locals 0
 
     .line 1156
     iput-object p2, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->next:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
@@ -191,7 +191,7 @@
 .end method
 
 .method putThread(Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;Ljava/lang/Thread;)V
-    .registers 3
+    .locals 0
 
     .line 1151
     iput-object p2, p1, Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;->thread:Ljava/lang/Thread;

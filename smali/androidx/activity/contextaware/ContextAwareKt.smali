@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final withContextAvailable(Landroidx/activity/contextaware/ContextAware;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 79
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -66,7 +66,7 @@
     return-object p0
 
     .line 96
-    :cond_b
+    :cond_0
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p2}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -116,16 +116,16 @@
 
     move-result-object p1
 
-    if-ne p0, p1, :cond_3d
+    if-ne p0, p1, :cond_1
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_3d
+    :cond_1
     return-object p0
 .end method
 
 .method private static final withContextAvailable$$forInline(Landroidx/activity/contextaware/ContextAware;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -146,7 +146,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 79
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -155,7 +155,7 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 95
@@ -214,11 +214,11 @@
 
     move-result-object p1
 
-    if-ne p0, p1, :cond_43
+    if-ne p0, p1, :cond_1
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_43
+    :cond_1
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
     return-object p0

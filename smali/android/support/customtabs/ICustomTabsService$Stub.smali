@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -67,28 +67,28 @@
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Landroid/support/customtabs/ICustomTabsService;
-    .registers 3
+    .locals 2
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 87
-    :cond_4
+    :cond_0
     sget-object v0, Landroid/support/customtabs/ICustomTabsService$Stub;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 88
     instance-of v1, v0, Landroid/support/customtabs/ICustomTabsService;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 89
     check-cast v0, Landroid/support/customtabs/ICustomTabsService;
@@ -96,7 +96,7 @@
     return-object v0
 
     .line 91
-    :cond_13
+    :cond_1
     new-instance v0, Landroid/support/customtabs/ICustomTabsService$Stub$Proxy;
 
     invoke-direct {v0, p0}, Landroid/support/customtabs/ICustomTabsService$Stub$Proxy;-><init>(Landroid/os/IBinder;)V
@@ -107,13 +107,13 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -125,27 +125,27 @@
 
     const/4 v1, 0x1
 
-    if-lt p1, v1, :cond_d
+    if-lt p1, v1, :cond_0
 
     const v2, 0xffffff
 
-    if-gt p1, v2, :cond_d
+    if-gt p1, v2, :cond_0
 
     .line 101
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    :cond_d
+    :cond_0
     const v2, 0x5f4e5446
 
-    if-ne p1, v2, :cond_16
+    if-ne p1, v2, :cond_1
 
     .line 104
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     return v1
 
-    :cond_16
-    packed-switch p1, :pswitch_data_1a4
+    :cond_1
+    packed-switch p1, :pswitch_data_0
 
     .line 268
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
@@ -155,7 +155,7 @@
     return p1
 
     .line 256
-    :pswitch_1e
+    :pswitch_0
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -189,10 +189,10 @@
     .line 263
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 245
-    :pswitch_3e
+    :pswitch_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -221,10 +221,10 @@
     .line 250
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 230
-    :pswitch_5a
+    :pswitch_2
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -267,10 +267,10 @@
     .line 239
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 189
-    :pswitch_82
+    :pswitch_3
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -308,10 +308,10 @@
     .line 196
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 130
-    :pswitch_a6
+    :pswitch_4
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -340,10 +340,10 @@
     .line 135
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 215
-    :pswitch_c2
+    :pswitch_5
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -386,10 +386,10 @@
     .line 224
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 202
-    :pswitch_ea
+    :pswitch_6
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -423,10 +423,10 @@
     .line 209
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 178
-    :pswitch_10a
+    :pswitch_7
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -455,10 +455,10 @@
     .line 183
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto/16 :goto_1a2
+    goto/16 :goto_0
 
     .line 167
-    :pswitch_126
+    :pswitch_8
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -487,10 +487,10 @@
     .line 172
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_1a2
+    goto :goto_0
 
     .line 156
-    :pswitch_141
+    :pswitch_9
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
@@ -515,10 +515,10 @@
     .line 161
     invoke-static {p3, p1, v1}, Landroid/support/customtabs/ICustomTabsService$_Parcel;->access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
-    goto :goto_1a2
+    goto :goto_0
 
     .line 141
-    :pswitch_158
+    :pswitch_a
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -563,10 +563,10 @@
     .line 150
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_1a2
+    goto :goto_0
 
     .line 121
-    :pswitch_181
+    :pswitch_b
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object p1
@@ -586,10 +586,10 @@
     .line 124
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_1a2
+    goto :goto_0
 
     .line 112
-    :pswitch_194
+    :pswitch_c
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide p1
@@ -605,25 +605,25 @@
     .line 115
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    :goto_1a2
+    :goto_0
     return v1
 
     nop
 
-    :pswitch_data_1a4
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_194
-        :pswitch_181
-        :pswitch_158
-        :pswitch_141
-        :pswitch_126
-        :pswitch_10a
-        :pswitch_ea
-        :pswitch_c2
-        :pswitch_a6
-        :pswitch_82
-        :pswitch_5a
-        :pswitch_3e
-        :pswitch_1e
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

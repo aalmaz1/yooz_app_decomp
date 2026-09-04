@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 59
     invoke-direct {p0}, Landroidx/camera/core/impl/CameraCaptureCallback;-><init>()V
@@ -27,13 +27,13 @@
 
 # virtual methods
 .method public onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureFailed(Landroidx/camera/core/impl/CameraCaptureFailure;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

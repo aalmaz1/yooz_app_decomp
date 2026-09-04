@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/ImageCapture;)V
-    .registers 2
+    .locals 0
 
     .line 953
     iput-object p1, p0, Landroidx/camera/core/ImageCapture$1;->this$0:Landroidx/camera/core/ImageCapture;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public lockFlashMode()V
-    .registers 2
+    .locals 1
 
     .line 958
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$1;->this$0:Landroidx/camera/core/ImageCapture;
@@ -47,7 +47,7 @@
 .end method
 
 .method public submitStillCaptureRequests(Ljava/util/List;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,7 +71,7 @@
 .end method
 
 .method public unlockFlashMode()V
-    .registers 2
+    .locals 1
 
     .line 964
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$1;->this$0:Landroidx/camera/core/ImageCapture;

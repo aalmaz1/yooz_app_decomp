@@ -78,7 +78,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 85
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$AfState;->PASSIVE_FOCUSED:Landroidx/camera/core/impl/CameraCaptureMetaData$AfState;
@@ -160,7 +160,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraControlImpl;Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;Landroidx/camera/core/impl/Quirks;Ljava/util/concurrent/Executor;)V
-    .registers 7
+    .locals 2
 
     .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -183,7 +183,7 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 155
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -192,14 +192,14 @@
 
     const/4 v1, 0x2
 
-    if-ne p1, v1, :cond_1a
+    if-ne p1, v1, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1b
+    :goto_0
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->mIsLegacyDevice:Z
 
     .line 156
@@ -232,16 +232,16 @@
 .end method
 
 .method static is3AConverged(Landroid/hardware/camera2/TotalCaptureResult;Z)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 430
-    :cond_4
+    :cond_0
     new-instance v1, Landroidx/camera/camera2/internal/Camera2CameraCaptureResult;
 
     invoke-direct {v1, p0}, Landroidx/camera/camera2/internal/Camera2CameraCaptureResult;-><init>(Landroid/hardware/camera2/CaptureResult;)V
@@ -255,7 +255,7 @@
 
     const/4 v4, 0x1
 
-    if-eq v2, v3, :cond_29
+    if-eq v2, v3, :cond_2
 
     .line 436
     invoke-virtual {v1}, Landroidx/camera/camera2/internal/Camera2CameraCaptureResult;->getAfMode()Landroidx/camera/core/impl/CameraCaptureMetaData$AfMode;
@@ -264,7 +264,7 @@
 
     sget-object v3, Landroidx/camera/core/impl/CameraCaptureMetaData$AfMode;->UNKNOWN:Landroidx/camera/core/impl/CameraCaptureMetaData$AfMode;
 
-    if-eq v2, v3, :cond_29
+    if-eq v2, v3, :cond_2
 
     sget-object v2, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->AF_CONVERGED_STATE_SET:Ljava/util/Set;
 
@@ -277,21 +277,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     move v2, v0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
-    :goto_29
+    :cond_2
+    :goto_0
     move v2, v4
 
     .line 440
-    :goto_2a
+    :goto_1
     sget-object v3, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p0, v3}, Landroid/hardware/camera2/TotalCaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -304,19 +304,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_3
 
     move v3, v4
 
-    goto :goto_3b
+    goto :goto_2
 
-    :cond_3a
+    :cond_3
     move v3, v0
 
-    :goto_3b
-    if-eqz p1, :cond_50
+    :goto_2
+    if-eqz p1, :cond_6
 
-    if-nez v3, :cond_4e
+    if-nez v3, :cond_5
 
     .line 443
     sget-object p1, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->AE_TORCH_AS_FLASH_CONVERGED_STATE_SET:Ljava/util/Set;
@@ -330,23 +330,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_4
 
-    goto :goto_4e
+    goto :goto_3
 
-    :cond_4c
+    :cond_4
     move p1, v0
 
-    goto :goto_5f
+    goto :goto_4
 
-    :cond_4e
-    :goto_4e
+    :cond_5
+    :goto_3
     move p1, v4
 
-    goto :goto_5f
+    goto :goto_4
 
-    :cond_50
-    if-nez v3, :cond_4e
+    :cond_6
+    if-nez v3, :cond_5
 
     .line 446
     sget-object p1, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->AE_CONVERGED_STATE_SET:Ljava/util/Set;
@@ -359,12 +359,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_4
 
-    goto :goto_4e
+    goto :goto_3
 
     .line 449
-    :goto_5f
+    :goto_4
     sget-object v3, Landroid/hardware/camera2/CaptureResult;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p0, v3}, Landroid/hardware/camera2/TotalCaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -377,17 +377,17 @@
 
     move-result p0
 
-    if-nez p0, :cond_6f
+    if-nez p0, :cond_7
 
     move p0, v4
 
-    goto :goto_70
+    goto :goto_5
 
-    :cond_6f
+    :cond_7
     move p0, v0
 
-    :goto_70
-    if-nez p0, :cond_81
+    :goto_5
+    if-nez p0, :cond_9
 
     .line 451
     sget-object p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->AWB_CONVERGED_STATE_SET:Ljava/util/Set;
@@ -401,21 +401,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_7f
+    if-eqz p0, :cond_8
 
-    goto :goto_81
+    goto :goto_6
 
-    :cond_7f
+    :cond_8
     move p0, v0
 
-    goto :goto_82
+    goto :goto_7
 
-    :cond_81
-    :goto_81
+    :cond_9
+    :goto_6
     move p0, v4
 
     .line 454
-    :goto_82
+    :goto_7
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v5, "checkCaptureResult, AE="
@@ -469,48 +469,48 @@
     .line 454
     invoke-static {v3, v1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v2, :cond_bd
+    if-eqz v2, :cond_a
 
-    if-eqz p1, :cond_bd
+    if-eqz p1, :cond_a
 
-    if-eqz p0, :cond_bd
+    if-eqz p0, :cond_a
 
     move v0, v4
 
-    :cond_bd
+    :cond_a
     return v0
 .end method
 
 .method static isFlashRequired(ILandroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_2
 
-    if-eq p0, v1, :cond_10
+    if-eq p0, v1, :cond_1
 
     const/4 p1, 0x2
 
-    if-ne p0, p1, :cond_a
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 671
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/AssertionError;
 
     invoke-direct {p1, p0}, Ljava/lang/AssertionError;-><init>(I)V
 
     throw p1
 
-    :cond_10
+    :cond_1
     return v1
 
-    :cond_11
-    if-eqz p1, :cond_1c
+    :cond_2
+    if-eqz p1, :cond_3
 
     .line 665
     sget-object p0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
@@ -521,13 +521,13 @@
 
     check-cast p0, Ljava/lang/Integer;
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_3
     const/4 p0, 0x0
 
-    :goto_1d
-    if-eqz p0, :cond_27
+    :goto_0
+    if-eqz p0, :cond_4
 
     .line 667
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -536,16 +536,16 @@
 
     const/4 p1, 0x4
 
-    if-ne p0, p1, :cond_27
+    if-ne p0, p1, :cond_4
 
     move v0, v1
 
-    :cond_27
+    :cond_4
     return v0
 .end method
 
 .method private isTorchAsFlash(I)Z
-    .registers 5
+    .locals 3
 
     .line 742
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->mUseTorchAsFlash:Landroidx/camera/camera2/internal/compat/workaround/UseTorchAsFlash;
@@ -556,28 +556,28 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     iget v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->mTemplate:I
 
     const/4 v2, 0x3
 
-    if-eq v0, v2, :cond_12
+    if-eq v0, v2, :cond_1
 
-    if-ne p1, v1, :cond_11
+    if-ne p1, v1, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method static waitForResult(JLandroidx/camera/camera2/internal/Camera2CameraControlImpl;Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener$Checker;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -609,7 +609,7 @@
 
 # virtual methods
 .method public setTemplate(I)V
-    .registers 2
+    .locals 0
 
     .line 164
     iput p1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->mTemplate:I
@@ -618,7 +618,7 @@
 .end method
 
 .method public submitStillCaptures(Ljava/util/List;III)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -656,7 +656,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;-><init>(ILjava/util/concurrent/Executor;Landroidx/camera/camera2/internal/Camera2CameraControlImpl;ZLandroidx/camera/camera2/internal/compat/workaround/OverrideAeModeForStillCapture;)V
 
-    if-nez p2, :cond_22
+    if-nez p2, :cond_0
 
     .line 187
     new-instance p2, Landroidx/camera/camera2/internal/Camera2CapturePipeline$AfTask;
@@ -668,17 +668,17 @@
     invoke-virtual {v7, p2}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;->addTask(Landroidx/camera/camera2/internal/Camera2CapturePipeline$PipelineTask;)V
 
     .line 190
-    :cond_22
+    :cond_0
     iget-boolean p2, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->mHasFlashUnit:Z
 
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_2
 
     .line 191
     invoke-direct {p0, p4}, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->isTorchAsFlash(I)Z
 
     move-result p2
 
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_1
 
     .line 192
     new-instance p2, Landroidx/camera/camera2/internal/Camera2CapturePipeline$TorchTask;
@@ -691,10 +691,10 @@
 
     invoke-virtual {v7, p2}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;->addTask(Landroidx/camera/camera2/internal/Camera2CapturePipeline$PipelineTask;)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 194
-    :cond_39
+    :cond_1
     new-instance p2, Landroidx/camera/camera2/internal/Camera2CapturePipeline$AePreCaptureTask;
 
     iget-object p4, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -704,8 +704,8 @@
     invoke-virtual {v7, p2}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;->addTask(Landroidx/camera/camera2/internal/Camera2CapturePipeline$PipelineTask;)V
 
     .line 199
-    :cond_43
-    :goto_43
+    :cond_2
+    :goto_0
     invoke-virtual {v7, p1, p3}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;->executeCapture(Ljava/util/List;I)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object p1

@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public getFingerprintsForPackage(Ljava/lang/String;Landroid/content/pm/PackageManager;)Ljava/util/List;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,8 +71,8 @@
 
     const/4 v1, 0x0
 
-    :goto_12
-    if-ge v1, v0, :cond_24
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     aget-object v2, p1, v1
 
@@ -81,26 +81,26 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 138
-    :cond_1e
+    :cond_0
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     return-object p2
 .end method
 
 .method public packageMatchesToken(Ljava/lang/String;Landroid/content/pm/PackageManager;Landroidx/browser/trusted/TokenContents;)Z
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -119,22 +119,22 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return v1
 
     .line 152
-    :cond_c
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/browser/trusted/PackageIdentityUtils$Pre28Implementation;->getFingerprintsForPackage(Ljava/lang/String;Landroid/content/pm/PackageManager;)Ljava/util/List;
 
     move-result-object p2
 
-    if-nez p2, :cond_13
+    if-nez p2, :cond_1
 
     return v1
 
     .line 155
-    :cond_13
+    :cond_1
     invoke-static {p1, p2}, Landroidx/browser/trusted/TokenContents;->create(Ljava/lang/String;Ljava/util/List;)Landroidx/browser/trusted/TokenContents;
 
     move-result-object p1

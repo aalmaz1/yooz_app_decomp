@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static isBluStudioX10()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "blu"
 
@@ -28,7 +28,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "studio x10"
 
@@ -38,21 +38,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public static isItelW6004()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "itel"
 
@@ -63,7 +63,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "itel w6004"
 
@@ -73,21 +73,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public static isPositivoTwist2Pro()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "positivo"
 
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "twist 2 pro"
 
@@ -108,21 +108,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     return v0
 .end method
 
 .method public static isVivo1805()Z
-    .registers 2
+    .locals 2
 
     const-string/jumbo v0, "vivo"
 
@@ -133,7 +133,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "vivo 1805"
 
@@ -143,58 +143,58 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_19
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 35
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->isBluStudioX10()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->isItelW6004()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->isVivo1805()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->isPositivoTwist2Pro()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1c
+    :goto_1
     return v0
 .end method

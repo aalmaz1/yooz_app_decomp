@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 58
     invoke-direct {p0}, Landroidx/media3/exoplayer/trackselection/TrackSelector;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method private static findRenderer([Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/common/TrackGroup;[IZ)I
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -47,10 +47,10 @@
     move v5, v2
 
     .line 506
-    :goto_6
+    :goto_0
     array-length v6, p0
 
-    if-ge v3, v6, :cond_3b
+    if-ge v3, v6, :cond_4
 
     .line 507
     aget-object v6, p0, v3
@@ -60,10 +60,10 @@
     move v8, v7
 
     .line 509
-    :goto_d
+    :goto_1
     iget v9, p1, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v7, v9, :cond_24
+    if-ge v7, v9, :cond_0
 
     .line 513
     invoke-virtual {p1, v7}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -86,50 +86,50 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_d
+    goto :goto_1
 
     .line 516
-    :cond_24
+    :cond_0
     aget v6, p2, v3
 
-    if-nez v6, :cond_2a
+    if-nez v6, :cond_1
 
     move v6, v2
 
-    goto :goto_2b
+    goto :goto_2
 
-    :cond_2a
+    :cond_1
     move v6, v1
 
-    :goto_2b
-    if-gt v8, v4, :cond_35
+    :goto_2
+    if-gt v8, v4, :cond_2
 
-    if-ne v8, v4, :cond_38
+    if-ne v8, v4, :cond_3
 
-    if-eqz p3, :cond_38
+    if-eqz p3, :cond_3
 
-    if-nez v5, :cond_38
+    if-nez v5, :cond_3
 
-    if-eqz v6, :cond_38
+    if-eqz v6, :cond_3
 
-    :cond_35
+    :cond_2
     move v0, v3
 
     move v5, v6
 
     move v4, v8
 
-    :cond_38
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_3b
+    :cond_4
     return v0
 .end method
 
 .method private static getFormatSupport(Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/common/TrackGroup;)[I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -144,10 +144,10 @@
     const/4 v1, 0x0
 
     .line 542
-    :goto_5
+    :goto_0
     iget v2, p1, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v1, v2, :cond_16
+    if-ge v1, v2, :cond_0
 
     .line 543
     invoke-virtual {p1, v1}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -162,14 +162,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-object v0
 .end method
 
 .method private static getMixedMimeTypeAdaptationSupports([Landroidx/media3/exoplayer/RendererCapabilities;)[I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -183,8 +183,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v0, :cond_11
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 561
     aget-object v3, p0, v2
@@ -197,16 +197,16 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return-object v1
 .end method
 
 
 # virtual methods
 .method public final getCurrentMappedTrackInfo()Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
-    .registers 2
+    .locals 1
 
     .line 340
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/MappingTrackSelector;->currentMappedTrackInfo:Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
@@ -215,7 +215,7 @@
 .end method
 
 .method public final onSelectionActivated(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 347
     check-cast p1, Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
@@ -251,7 +251,7 @@
 .end method
 
 .method public final selectTracks([Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/exoplayer/source/TrackGroupArray;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/common/Timeline;)Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
-    .registers 19
+    .locals 14
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -289,8 +289,8 @@
 
     move v8, v7
 
-    :goto_12
-    if-ge v8, v4, :cond_23
+    :goto_0
+    if-ge v8, v4, :cond_0
 
     .line 364
     iget v9, v1, Landroidx/media3/exoplayer/source/TrackGroupArray;->length:I
@@ -308,10 +308,10 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 371
-    :cond_23
+    :cond_0
     invoke-static {p1}, Landroidx/media3/exoplayer/trackselection/MappingTrackSelector;->getMixedMimeTypeAdaptationSupports([Landroidx/media3/exoplayer/RendererCapabilities;)[I
 
     move-result-object v4
@@ -319,10 +319,10 @@
     move v8, v7
 
     .line 375
-    :goto_28
+    :goto_1
     iget v9, v1, Landroidx/media3/exoplayer/source/TrackGroupArray;->length:I
 
-    if-ge v8, v9, :cond_5a
+    if-ge v8, v9, :cond_3
 
     .line 376
     invoke-virtual {v1, v8}, Landroidx/media3/exoplayer/source/TrackGroupArray;->get(I)Landroidx/media3/common/TrackGroup;
@@ -334,17 +334,17 @@
 
     const/4 v11, 0x5
 
-    if-ne v10, v11, :cond_37
+    if-ne v10, v11, :cond_1
 
     move v10, v3
 
-    goto :goto_38
+    goto :goto_2
 
-    :cond_37
+    :cond_1
     move v10, v7
 
     .line 380
-    :goto_38
+    :goto_2
     invoke-static {p1, v9, v2, v10}, Landroidx/media3/exoplayer/trackselection/MappingTrackSelector;->findRenderer([Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/common/TrackGroup;[IZ)I
 
     move-result v10
@@ -352,17 +352,17 @@
     .line 385
     array-length v11, v0
 
-    if-ne v10, v11, :cond_44
+    if-ne v10, v11, :cond_2
 
     .line 386
     iget v11, v9, Landroidx/media3/common/TrackGroup;->length:I
 
     new-array v11, v11, [I
 
-    goto :goto_4a
+    goto :goto_3
 
     .line 387
-    :cond_44
+    :cond_2
     aget-object v11, v0, v10
 
     invoke-static {v11, v9}, Landroidx/media3/exoplayer/trackselection/MappingTrackSelector;->getFormatSupport(Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/common/TrackGroup;)[I
@@ -370,7 +370,7 @@
     move-result-object v11
 
     .line 389
-    :goto_4a
+    :goto_3
     aget v12, v2, v10
 
     .line 390
@@ -390,10 +390,10 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_28
+    goto :goto_1
 
     .line 396
-    :cond_5a
+    :cond_3
     array-length v1, v0
 
     new-array v10, v1, [Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -409,10 +409,10 @@
     new-array v9, v1, [I
 
     .line 399
-    :goto_63
+    :goto_4
     array-length v1, v0
 
-    if-ge v7, v1, :cond_94
+    if-ge v7, v1, :cond_4
 
     .line 400
     aget v1, v2, v7
@@ -465,10 +465,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_63
+    goto :goto_4
 
     .line 411
-    :cond_94
+    :cond_4
     array-length v1, v0
 
     aget v1, v2, v1

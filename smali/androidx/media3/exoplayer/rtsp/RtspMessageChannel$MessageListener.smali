@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public onReceivingFailed(Ljava/lang/Exception;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
@@ -33,7 +33,7 @@
 .end method
 
 .method public onSendingFailed(Ljava/util/List;Ljava/lang/Exception;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

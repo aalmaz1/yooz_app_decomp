@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 11
+    .locals 10
 
     const/4 v1, 0x0
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;JJJJ)V
-    .registers 10
+    .locals 0
 
     .line 95
     invoke-direct/range {p0 .. p5}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase;-><init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;JJ)V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public getIndex()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 8
+    .locals 7
 
     .line 111
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SingleSegmentBase;->indexLength:J
@@ -69,14 +69,14 @@
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_a
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 113
-    :cond_a
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
     const/4 v2, 0x0
@@ -89,6 +89,6 @@
 
     invoke-direct/range {v1 .. v6}, Landroidx/media3/exoplayer/dash/manifest/RangedUri;-><init>(Ljava/lang/String;JJ)V
 
-    :goto_15
+    :goto_0
     return-object v0
 .end method

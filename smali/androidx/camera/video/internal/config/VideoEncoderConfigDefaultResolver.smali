@@ -65,7 +65,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 48
     new-instance v0, Landroid/util/Size;
@@ -101,7 +101,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/VideoSpec;Landroid/util/Size;Landroidx/camera/core/DynamicRange;Landroid/util/Range;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,7 +141,7 @@
 .end method
 
 .method private resolveFrameRate()I
-    .registers 5
+    .locals 4
 
     .line 130
     iget-object v0, p0, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;->mExpectedFrameRateRange:Landroid/util/Range;
@@ -152,7 +152,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 131
     sget-object v0, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;->VALID_FRAME_RATE_RANGE:Landroid/util/Range;
@@ -175,12 +175,12 @@
 
     move-result v0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/16 v0, 0x1e
 
-    :goto_21
+    :goto_0
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -202,17 +202,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_1
 
     .line 141
     iget-object v2, p0, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;->mExpectedFrameRateRange:Landroid/util/Range;
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_38
+    :cond_1
     const-string v2, "<UNSPECIFIED>"
 
-    :goto_3a
+    :goto_1
     const/4 v3, 0x1
 
     aput-object v2, v1, v3
@@ -235,7 +235,7 @@
 
 # virtual methods
 .method public get()Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
-    .registers 12
+    .locals 11
 
     .line 95
     invoke-direct {p0}, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;->resolveFrameRate()I
@@ -396,7 +396,7 @@
 .end method
 
 .method public bridge synthetic get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 40
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;->get()Landroidx/camera/video/internal/encoder/VideoEncoderConfig;

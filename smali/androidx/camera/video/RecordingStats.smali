@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static of(JJLandroidx/camera/video/AudioStats;)Landroidx/camera/video/RecordingStats;
-    .registers 15
+    .locals 10
 
     const-wide/16 v0, 0x0
 
@@ -24,16 +24,16 @@
 
     const/4 v4, 0x0
 
-    if-ltz v2, :cond_a
+    if-ltz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v4
 
-    :goto_b
+    :goto_0
     const-string v5, "duration must be positive value."
 
     .line 48
@@ -41,14 +41,14 @@
 
     cmp-long v0, p2, v0
 
-    if-ltz v0, :cond_15
+    if-ltz v0, :cond_1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
+    :cond_1
     move v3, v4
 
-    :goto_16
+    :goto_1
     const-string v0, "bytes must be positive value."
 
     .line 49

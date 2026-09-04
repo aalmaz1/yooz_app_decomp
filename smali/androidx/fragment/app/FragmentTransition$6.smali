@@ -45,7 +45,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentTransitionImpl;Landroidx/collection/ArrayMap;Ljava/lang/Object;Landroidx/fragment/app/FragmentTransition$FragmentContainerTransition;Ljava/util/ArrayList;Landroid/view/View;Landroidx/fragment/app/Fragment;Landroidx/fragment/app/Fragment;ZLjava/util/ArrayList;Ljava/lang/Object;Landroid/graphics/Rect;)V
-    .registers 13
+    .locals 0
 
     .line 783
     iput-object p1, p0, Landroidx/fragment/app/FragmentTransition$6;->val$impl:Landroidx/fragment/app/FragmentTransitionImpl;
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .locals 5
 
     .line 786
     iget-object v0, p0, Landroidx/fragment/app/FragmentTransition$6;->val$impl:Landroidx/fragment/app/FragmentTransitionImpl;
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 790
     iget-object v1, p0, Landroidx/fragment/app/FragmentTransition$6;->val$sharedElementsIn:Ljava/util/ArrayList;
@@ -114,7 +114,7 @@
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 794
-    :cond_1e
+    :cond_0
     iget-object v1, p0, Landroidx/fragment/app/FragmentTransition$6;->val$inFragment:Landroidx/fragment/app/Fragment;
 
     iget-object v2, p0, Landroidx/fragment/app/FragmentTransition$6;->val$outFragment:Landroidx/fragment/app/Fragment;
@@ -128,7 +128,7 @@
     .line 796
     iget-object v1, p0, Landroidx/fragment/app/FragmentTransition$6;->val$finalSharedElementTransition:Ljava/lang/Object;
 
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_1
 
     .line 797
     iget-object v2, p0, Landroidx/fragment/app/FragmentTransition$6;->val$impl:Landroidx/fragment/app/FragmentTransitionImpl;
@@ -150,7 +150,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_1
 
     .line 804
     iget-object v1, p0, Landroidx/fragment/app/FragmentTransition$6;->val$impl:Landroidx/fragment/app/FragmentTransitionImpl;
@@ -159,6 +159,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroidx/fragment/app/FragmentTransitionImpl;->getBoundsOnScreen(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    :cond_48
+    :cond_1
     return-void
 .end method

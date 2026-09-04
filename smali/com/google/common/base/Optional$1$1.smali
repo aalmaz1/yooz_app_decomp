@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Optional$1;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method protected computeNext()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -93,7 +93,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     .line 307
     iget-object v0, p0, Lcom/google/common/base/Optional$1$1;->iterator:Ljava/util/Iterator;
@@ -119,7 +119,7 @@
     return-object v0
 
     .line 312
-    :cond_1b
+    :cond_1
     invoke-virtual {p0}, Lcom/google/common/base/Optional$1$1;->endOfData()Ljava/lang/Object;
 
     move-result-object v0

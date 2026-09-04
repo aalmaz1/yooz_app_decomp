@@ -22,12 +22,12 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;Landroidx/media3/exoplayer/video/VideoRendererEventListener;)V
-    .registers 3
+    .locals 0
 
     .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 165
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -36,12 +36,12 @@
 
     check-cast p1, Landroid/os/Handler;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
     .line 166
@@ -53,12 +53,12 @@
 
 # virtual methods
 .method public decoderInitialized(Ljava/lang/String;JJ)V
-    .registers 15
+    .locals 9
 
     .line 179
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 180
     new-instance v8, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda6;
@@ -77,17 +77,17 @@
 
     invoke-virtual {v0, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public decoderReleased(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 236
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 237
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda9;
@@ -96,12 +96,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public disabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 243
     invoke-virtual {p1}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
@@ -109,7 +109,7 @@
     .line 244
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 245
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;
@@ -118,17 +118,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public droppedFrames(IJ)V
-    .registers 6
+    .locals 2
 
     .line 203
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 204
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda0;
@@ -137,17 +137,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public enabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 171
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 172
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda4;
@@ -156,17 +156,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public inputFormatChanged(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 5
+    .locals 2
 
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 196
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda7;
@@ -175,12 +175,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$decoderInitialized$1$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Ljava/lang/String;JJ)V
-    .registers 13
+    .locals 7
 
     .line 182
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -206,7 +206,7 @@
 .end method
 
 .method synthetic lambda$decoderReleased$7$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 237
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -223,7 +223,7 @@
 .end method
 
 .method synthetic lambda$disabled$8$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 247
     invoke-virtual {p1}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
@@ -243,7 +243,7 @@
 .end method
 
 .method synthetic lambda$droppedFrames$3$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(IJ)V
-    .registers 5
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -260,7 +260,7 @@
 .end method
 
 .method synthetic lambda$enabled$0$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -277,7 +277,7 @@
 .end method
 
 .method synthetic lambda$inputFormatChanged$2$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 4
+    .locals 1
 
     .line 197
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -294,7 +294,7 @@
 .end method
 
 .method synthetic lambda$renderedFirstFrame$6$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Ljava/lang/Object;J)V
-    .registers 5
+    .locals 1
 
     .line 230
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -311,7 +311,7 @@
 .end method
 
 .method synthetic lambda$reportVideoFrameProcessingOffset$4$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(JI)V
-    .registers 5
+    .locals 1
 
     .line 213
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -329,7 +329,7 @@
 .end method
 
 .method synthetic lambda$videoCodecError$9$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 256
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -346,7 +346,7 @@
 .end method
 
 .method synthetic lambda$videoSizeChanged$5$androidx-media3-exoplayer-video-VideoRendererEventListener$EventDispatcher(Landroidx/media3/common/VideoSize;)V
-    .registers 3
+    .locals 1
 
     .line 221
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/video/VideoRendererEventListener;
@@ -363,12 +363,12 @@
 .end method
 
 .method public renderedFirstFrame(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
 
     .line 227
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 229
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -384,17 +384,17 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public reportVideoFrameProcessingOffset(JI)V
-    .registers 6
+    .locals 2
 
     .line 210
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 211
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda3;
@@ -403,17 +403,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public videoCodecError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 255
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 256
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda2;
@@ -422,17 +422,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public videoSizeChanged(Landroidx/media3/common/VideoSize;)V
-    .registers 4
+    .locals 2
 
     .line 220
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 221
     new-instance v1, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda8;
@@ -441,6 +441,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method

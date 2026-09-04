@@ -32,7 +32,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/video/StreamInfo$StreamState;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -55,7 +55,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 68
     new-instance v0, Landroidx/camera/video/StreamInfo$StreamState;
@@ -90,7 +90,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -104,7 +104,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/video/StreamInfo$StreamState;
-    .registers 2
+    .locals 1
 
     .line 65
     const-class v0, Landroidx/camera/video/StreamInfo$StreamState;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/video/StreamInfo$StreamState;
-    .registers 1
+    .locals 1
 
     .line 65
     sget-object v0, Landroidx/camera/video/StreamInfo$StreamState;->$VALUES:[Landroidx/camera/video/StreamInfo$StreamState;

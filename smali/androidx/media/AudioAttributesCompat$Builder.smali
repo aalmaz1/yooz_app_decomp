@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 400
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media/AudioAttributesCompat;)V
-    .registers 3
+    .locals 1
 
     .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,12 +106,12 @@
 
 # virtual methods
 .method public build()Landroidx/media/AudioAttributesCompat;
-    .registers 6
+    .locals 5
 
     .line 423
     sget-boolean v0, Landroidx/media/AudioAttributesCompat;->sForceLegacyBehavior:Z
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     .line 424
     new-instance v0, Landroid/media/AudioAttributes$Builder;
@@ -144,13 +144,13 @@
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_23
+    if-eq v1, v2, :cond_0
 
     .line 431
     invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setLegacyStreamType(I)Landroid/media/AudioAttributes$Builder;
 
     .line 433
-    :cond_23
+    :cond_0
     new-instance v1, Landroidx/media/AudioAttributesImplApi21;
 
     invoke-virtual {v0}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
@@ -161,10 +161,10 @@
 
     invoke-direct {v1, v0, v2}, Landroidx/media/AudioAttributesImplApi21;-><init>(Landroid/media/AudioAttributes;I)V
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 435
-    :cond_2f
+    :cond_1
     new-instance v1, Landroidx/media/AudioAttributesImplBase;
 
     iget v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
@@ -178,7 +178,7 @@
     invoke-direct {v1, v0, v2, v3, v4}, Landroidx/media/AudioAttributesImplBase;-><init>(IIII)V
 
     .line 438
-    :goto_3c
+    :goto_0
     new-instance v0, Landroidx/media/AudioAttributesCompat;
 
     invoke-direct {v0, v1}, Landroidx/media/AudioAttributesCompat;-><init>(Landroidx/media/AudioAttributesImpl;)V
@@ -187,43 +187,43 @@
 .end method
 
 .method public setContentType(I)Landroidx/media/AudioAttributesCompat$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_0
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_0
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_0
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
     .line 518
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mUsage:I
 
-    goto :goto_14
+    goto :goto_0
 
     .line 515
-    :cond_12
+    :cond_0
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    :goto_14
+    :goto_0
     return-object p0
 .end method
 
 .method public setFlags(I)Landroidx/media/AudioAttributesCompat$Builder;
-    .registers 3
+    .locals 1
 
     and-int/lit16 p1, p1, 0x3ff
 
@@ -238,13 +238,13 @@
 .end method
 
 .method setInternalLegacyStreamType(I)Landroidx/media/AudioAttributesCompat$Builder;
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
     const/4 v1, 0x4
 
-    packed-switch p1, :pswitch_data_50
+    packed-switch p1, :pswitch_data_0
 
     .line 597
     new-instance v0, Ljava/lang/StringBuilder;
@@ -271,38 +271,38 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 594
-    :pswitch_20
+    :pswitch_0
     iput v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 591
-    :pswitch_23
+    :pswitch_1
     iput v1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 588
-    :pswitch_26
+    :pswitch_2
     iput v1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 566
-    :pswitch_29
+    :pswitch_3
     iget v2, p0, Landroidx/media/AudioAttributesCompat$Builder;->mFlags:I
 
     or-int/2addr v0, v2
 
     iput v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mFlags:I
 
-    goto :goto_44
+    goto :goto_0
 
     .line 584
-    :pswitch_2f
+    :pswitch_4
     iput v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
     .line 585
@@ -312,47 +312,47 @@
 
     iput v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mFlags:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 581
-    :pswitch_37
+    :pswitch_5
     iput v1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 578
-    :pswitch_3a
+    :pswitch_6
     iput v1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_3d
+    :pswitch_7
     const/4 v0, 0x2
 
     .line 575
     iput v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 572
-    :pswitch_41
+    :pswitch_8
     iput v1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 569
-    :goto_44
-    :pswitch_44
+    :goto_0
+    :pswitch_9
     iput v1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
-    goto :goto_49
+    goto :goto_1
 
     .line 563
-    :pswitch_47
+    :pswitch_a
     iput v0, p0, Landroidx/media/AudioAttributesCompat$Builder;->mContentType:I
 
     .line 599
-    :goto_49
+    :goto_1
     invoke-static {p1}, Landroidx/media/AudioAttributesCompat;->usageForStreamType(I)I
 
     move-result p1
@@ -361,28 +361,28 @@
 
     return-object p0
 
-    :pswitch_data_50
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_47
-        :pswitch_44
-        :pswitch_41
-        :pswitch_3d
-        :pswitch_3a
-        :pswitch_37
-        :pswitch_2f
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
-        :pswitch_20
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public setLegacyStreamType(I)Landroidx/media/AudioAttributesCompat$Builder;
-    .registers 3
+    .locals 1
 
     const/16 v0, 0xa
 
-    if-eq p1, v0, :cond_b
+    if-eq p1, v0, :cond_0
 
     .line 551
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mLegacyStream:I
@@ -395,7 +395,7 @@
     return-object p1
 
     .line 547
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "STREAM_ACCESSIBILITY is not a legacy stream type that was used for audio playback"
@@ -406,61 +406,61 @@
 .end method
 
 .method public setUsage(I)Landroidx/media/AudioAttributesCompat$Builder;
-    .registers 3
+    .locals 1
 
-    packed-switch p1, :pswitch_data_16
+    packed-switch p1, :pswitch_data_0
 
     const/4 p1, 0x0
 
     .line 491
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mUsage:I
 
-    goto :goto_15
+    goto :goto_0
 
     .line 484
-    :pswitch_7
+    :pswitch_0
     sget-boolean v0, Landroidx/media/AudioAttributesCompat;->sForceLegacyBehavior:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 485
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mUsage:I
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/16 p1, 0xc
 
     .line 487
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mUsage:I
 
-    goto :goto_15
+    goto :goto_0
 
     .line 481
-    :pswitch_13
+    :pswitch_1
     iput p1, p0, Landroidx/media/AudioAttributesCompat$Builder;->mUsage:I
 
-    :goto_15
+    :goto_0
     return-object p0
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_7
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

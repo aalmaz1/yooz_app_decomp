@@ -124,7 +124,7 @@
 
 # direct methods
 .method public constructor <init>(IIZIILandroid/os/Handler;Landroidx/heifwriter/HeifEncoder$Callback;)V
-    .registers 27
+    .locals 19
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -176,42 +176,42 @@
     .line 123
     iput-object v7, v0, Landroidx/heifwriter/HeifEncoder;->mTmpMatrix:[F
 
-    if-ltz v1, :cond_268
+    if-ltz v1, :cond_16
 
-    if-ltz v2, :cond_268
+    if-ltz v2, :cond_16
 
-    if-ltz v3, :cond_268
+    if-ltz v3, :cond_16
 
     const/16 v7, 0x64
 
-    if-gt v3, v7, :cond_268
+    if-gt v3, v7, :cond_16
 
     const/16 v7, 0x200
 
     const/4 v9, 0x1
 
-    if-gt v1, v7, :cond_41
+    if-gt v1, v7, :cond_1
 
-    if-le v2, v7, :cond_3f
+    if-le v2, v7, :cond_0
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_3f
+    :cond_0
     const/4 v10, 0x0
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_41
-    :goto_41
+    :cond_1
+    :goto_0
     move v10, v9
 
-    :goto_42
+    :goto_1
     and-int v10, p3, v10
 
     const/4 v11, 0x0
 
     .line 201
-    :try_start_45
+    :try_start_0
     invoke-static {v6}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v12
@@ -236,14 +236,14 @@
 
     move-result v13
 
-    if-eqz v13, :cond_5f
+    if-eqz v13, :cond_2
 
     move v13, v9
 
-    goto :goto_85
+    goto :goto_2
 
     .line 206
-    :cond_5f
+    :cond_2
     iget-object v12, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v12}, Landroid/media/MediaCodec;->release()V
@@ -257,11 +257,11 @@
     invoke-direct {v12}, Ljava/lang/Exception;-><init>()V
 
     throw v12
-    :try_end_6c
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_6c} :catch_6c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 212
-    :catch_6c
+    :catch_0
     invoke-static {v5}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v12
@@ -293,7 +293,7 @@
     const/4 v13, 0x0
 
     .line 218
-    :goto_85
+    :goto_2
     iput v4, v0, Landroidx/heifwriter/HeifEncoder;->mInputMode:I
 
     move-object/from16 v14, p7
@@ -301,20 +301,20 @@
     .line 220
     iput-object v14, v0, Landroidx/heifwriter/HeifEncoder;->mCallback:Landroidx/heifwriter/HeifEncoder$Callback;
 
-    if-eqz p6, :cond_92
+    if-eqz p6, :cond_3
 
     .line 222
     invoke-virtual/range {p6 .. p6}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v14
 
-    goto :goto_93
+    goto :goto_3
 
-    :cond_92
+    :cond_3
     move-object v14, v11
 
-    :goto_93
-    if-nez v14, :cond_a7
+    :goto_3
+    if-nez v14, :cond_4
 
     .line 224
     new-instance v14, Landroid/os/HandlerThread;
@@ -335,14 +335,14 @@
 
     move-result-object v14
 
-    goto :goto_a9
+    goto :goto_4
 
     .line 229
-    :cond_a7
+    :cond_4
     iput-object v11, v0, Landroidx/heifwriter/HeifEncoder;->mHandlerThread:Landroid/os/HandlerThread;
 
     .line 231
-    :goto_a9
+    :goto_4
     new-instance v8, Landroid/os/Handler;
 
     invoke-direct {v8, v14}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -351,32 +351,32 @@
 
     const/4 v14, 0x2
 
-    if-eq v4, v9, :cond_b8
+    if-eq v4, v9, :cond_6
 
-    if-ne v4, v14, :cond_b6
+    if-ne v4, v14, :cond_5
 
-    goto :goto_b8
+    goto :goto_5
 
-    :cond_b6
+    :cond_5
     const/4 v15, 0x0
 
-    goto :goto_b9
+    goto :goto_6
 
-    :cond_b8
-    :goto_b8
+    :cond_6
+    :goto_5
     move v15, v9
 
-    :goto_b9
-    if-eqz v15, :cond_bf
+    :goto_6
+    if-eqz v15, :cond_7
 
     const v16, 0x7f000789
 
-    goto :goto_c2
+    goto :goto_7
 
-    :cond_bf
+    :cond_7
     const v16, 0x7f420888
 
-    :goto_c2
+    :goto_7
     move/from16 v11, v16
 
     .line 237
@@ -388,7 +388,7 @@
     .line 239
     iput-boolean v10, v0, Landroidx/heifwriter/HeifEncoder;->mUseGrid:Z
 
-    if-eqz v10, :cond_db
+    if-eqz v10, :cond_8
 
     add-int/lit16 v14, v2, 0x200
 
@@ -412,33 +412,33 @@
 
     move v14, v7
 
-    goto :goto_de
+    goto :goto_8
 
-    :cond_db
+    :cond_8
     move v7, v1
 
     move v14, v2
 
     move v4, v9
 
-    :goto_de
-    if-eqz v13, :cond_e5
+    :goto_8
+    if-eqz v13, :cond_9
 
     .line 257
     invoke-static {v6, v1, v2}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
     move-result-object v5
 
-    goto :goto_e9
+    goto :goto_9
 
     .line 260
-    :cond_e5
+    :cond_9
     invoke-static {v5, v7, v14}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
     move-result-object v5
 
-    :goto_e9
-    if-eqz v10, :cond_ff
+    :goto_9
+    if-eqz v10, :cond_a
 
     const-string v6, "tile-width"
 
@@ -460,8 +460,8 @@
     .line 268
     invoke-virtual {v5, v6, v4}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_ff
-    if-eqz v13, :cond_10b
+    :cond_a
+    if-eqz v13, :cond_b
 
     .line 272
     iput v1, v0, Landroidx/heifwriter/HeifEncoder;->mGridWidth:I
@@ -477,10 +477,10 @@
     .line 275
     iput v4, v0, Landroidx/heifwriter/HeifEncoder;->mGridCols:I
 
-    goto :goto_113
+    goto :goto_a
 
     .line 277
-    :cond_10b
+    :cond_b
     iput v7, v0, Landroidx/heifwriter/HeifEncoder;->mGridWidth:I
 
     .line 278
@@ -493,7 +493,7 @@
     iput v9, v0, Landroidx/heifwriter/HeifEncoder;->mGridCols:I
 
     .line 282
-    :goto_113
+    :goto_a
     iget v4, v0, Landroidx/heifwriter/HeifEncoder;->mGridRows:I
 
     iget v6, v0, Landroidx/heifwriter/HeifEncoder;->mGridCols:I
@@ -542,7 +542,7 @@
 
     const-string v9, "HeifEncoder"
 
-    if-eqz v6, :cond_18b
+    if-eqz v6, :cond_c
 
     const-string v6, "Setting bitrate mode to constant quality"
 
@@ -627,9 +627,9 @@
     .line 298
     invoke-virtual {v5, v4, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    goto :goto_1bc
+    goto :goto_c
 
-    :cond_18b
+    :cond_c
     const/4 v6, 0x2
 
     .line 301
@@ -637,7 +637,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_19b
+    if-eqz v4, :cond_d
 
     const-string v4, "Setting bitrate mode to constant bitrate"
 
@@ -647,9 +647,9 @@
     .line 304
     invoke-virtual {v5, v7, v6}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    goto :goto_1a4
+    goto :goto_b
 
-    :cond_19b
+    :cond_d
     const-string v4, "Setting bitrate mode to variable bitrate"
 
     .line 307
@@ -660,7 +660,7 @@
     .line 308
     invoke-virtual {v5, v7, v4}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :goto_1a4
+    :goto_b
     mul-int v4, v1, v2
 
     int-to-double v6, v4
@@ -691,7 +691,7 @@
     invoke-virtual {v5, v4, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 318
-    :goto_1bc
+    :goto_c
     iget-object v3, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
     new-instance v4, Landroidx/heifwriter/HeifEncoder$EncoderCallback;
@@ -709,7 +709,7 @@
 
     invoke-virtual {v3, v5, v4, v4, v6}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    if-eqz v15, :cond_23c
+    if-eqz v15, :cond_14
 
     .line 322
     iget-object v3, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
@@ -720,42 +720,42 @@
 
     iput-object v3, v0, Landroidx/heifwriter/HeifEncoder;->mEncoderSurface:Landroid/view/Surface;
 
-    if-eqz v10, :cond_1df
+    if-eqz v10, :cond_f
 
-    if-eqz v13, :cond_1dc
+    if-eqz v13, :cond_e
 
-    goto :goto_1df
+    goto :goto_d
 
-    :cond_1dc
+    :cond_e
     move/from16 v3, p5
 
-    goto :goto_1e4
+    goto :goto_e
 
-    :cond_1df
-    :goto_1df
+    :cond_f
+    :goto_d
     move/from16 v3, p5
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_1e6
+    if-ne v3, v4, :cond_10
 
-    :goto_1e4
+    :goto_e
     const/4 v4, 0x1
 
-    goto :goto_1e7
+    goto :goto_f
 
-    :cond_1e6
+    :cond_10
     const/4 v4, 0x0
 
     .line 325
-    :goto_1e7
+    :goto_f
     new-instance v5, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
 
     invoke-direct {v5, v0, v4}, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;-><init>(Landroidx/heifwriter/HeifEncoder;Z)V
 
     iput-object v5, v0, Landroidx/heifwriter/HeifEncoder;->mEOSTracker:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
 
-    if-eqz v4, :cond_237
+    if-eqz v4, :cond_13
 
     .line 328
     new-instance v4, Landroidx/heifwriter/EglWindowSurface;
@@ -776,16 +776,16 @@
 
     const/4 v6, 0x2
 
-    if-ne v3, v6, :cond_205
+    if-ne v3, v6, :cond_11
 
     const/4 v6, 0x0
 
-    goto :goto_206
+    goto :goto_10
 
-    :cond_205
+    :cond_11
     const/4 v6, 0x1
 
-    :goto_206
+    :goto_10
     invoke-direct {v5, v6}, Landroidx/heifwriter/Texture2dProgram;-><init>(I)V
 
     invoke-direct {v4, v5, v1, v2}, Landroidx/heifwriter/EglRectBlt;-><init>(Landroidx/heifwriter/Texture2dProgram;II)V
@@ -801,7 +801,7 @@
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_231
+    if-ne v3, v4, :cond_12
 
     .line 341
     new-instance v3, Landroid/graphics/SurfaceTexture;
@@ -830,28 +830,28 @@
     iput-object v1, v0, Landroidx/heifwriter/HeifEncoder;->mInputSurface:Landroid/view/Surface;
 
     .line 349
-    :cond_231
+    :cond_12
     iget-object v1, v0, Landroidx/heifwriter/HeifEncoder;->mEncoderEglSurface:Landroidx/heifwriter/EglWindowSurface;
 
     invoke-virtual {v1}, Landroidx/heifwriter/EglWindowSurface;->makeUnCurrent()V
 
-    goto :goto_254
+    goto :goto_12
 
     .line 351
-    :cond_237
+    :cond_13
     iget-object v1, v0, Landroidx/heifwriter/HeifEncoder;->mEncoderSurface:Landroid/view/Surface;
 
     iput-object v1, v0, Landroidx/heifwriter/HeifEncoder;->mInputSurface:Landroid/view/Surface;
 
-    goto :goto_254
+    goto :goto_12
 
-    :cond_23c
+    :cond_14
     const/4 v1, 0x2
 
     const/4 v7, 0x0
 
-    :goto_23e
-    if-ge v7, v1, :cond_254
+    :goto_11
+    if-ge v7, v1, :cond_15
 
     .line 355
     iget-object v2, v0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
@@ -874,11 +874,11 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_23e
+    goto :goto_11
 
     .line 359
-    :cond_254
-    :goto_254
+    :cond_15
+    :goto_12
     new-instance v1, Landroid/graphics/Rect;
 
     iget v2, v0, Landroidx/heifwriter/HeifEncoder;->mGridWidth:I
@@ -901,7 +901,7 @@
     return-void
 
     .line 192
-    :cond_268
+    :cond_16
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "invalid encoder inputs"
@@ -912,7 +912,7 @@
 .end method
 
 .method private acquireEmptyBuffer()Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 3
 
     .line 634
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
@@ -920,46 +920,46 @@
     monitor-enter v0
 
     .line 636
-    :catch_3
-    :goto_3
-    :try_start_3
+    :catch_0
+    :goto_0
+    :try_start_0
     iget-boolean v1, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 638
-    :try_start_f
+    :try_start_1
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-    :try_end_14
-    .catch Ljava/lang/InterruptedException; {:try_start_f .. :try_end_14} :catch_3
-    .catchall {:try_start_f .. :try_end_14} :catchall_26
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_3
+    goto :goto_0
 
     .line 643
-    :cond_15
-    :try_start_15
+    :cond_0
+    :try_start_2
     iget-boolean v1, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_1b
+    :cond_1
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
@@ -970,45 +970,45 @@
 
     check-cast v1, Ljava/nio/ByteBuffer;
 
-    :goto_24
+    :goto_1
     monitor-exit v0
 
     return-object v1
 
-    :catchall_26
+    :catchall_0
     move-exception v1
 
     .line 644
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_15 .. :try_end_28} :catchall_26
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v1
 .end method
 
 .method private addYuvBufferInternal([B)V
-    .registers 4
+    .locals 2
 
     .line 534
     invoke-direct {p0}, Landroidx/heifwriter/HeifEncoder;->acquireEmptyBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 538
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_1
 
     .line 540
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     .line 542
-    :cond_f
+    :cond_1
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
     .line 543
@@ -1017,15 +1017,15 @@
     monitor-enter p1
 
     .line 544
-    :try_start_15
+    :try_start_0
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mFilledBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 545
     monitor-exit p1
-    :try_end_1b
-    .catchall {:try_start_15 .. :try_end_1b} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 546
     iget-object p1, p0, Landroidx/heifwriter/HeifEncoder;->mHandler:Landroid/os/Handler;
@@ -1038,20 +1038,20 @@
 
     return-void
 
-    :catchall_26
+    :catchall_0
     move-exception v0
 
     .line 545
-    :try_start_27
+    :try_start_1
     monitor-exit p1
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method private computePresentationTime(I)J
-    .registers 6
+    .locals 4
 
     int-to-long v0, p1
 
@@ -1074,7 +1074,7 @@
 .end method
 
 .method private static copyOneTileYUV(Ljava/nio/ByteBuffer;Landroid/media/Image;IILandroid/graphics/Rect;Landroid/graphics/Rect;)V
-    .registers 23
+    .locals 17
 
     move-object/from16 v0, p4
 
@@ -1089,7 +1089,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_df
+    if-ne v2, v3, :cond_6
 
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Rect;->height()I
 
@@ -1099,16 +1099,16 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_df
+    if-ne v2, v3, :cond_6
 
     .line 598
     rem-int/lit8 v2, p2, 0x2
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     rem-int/lit8 v2, p3, 0x2
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
 
@@ -1116,49 +1116,49 @@
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v0, Landroid/graphics/Rect;->top:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v0, Landroid/graphics/Rect;->right:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v0, Landroid/graphics/Rect;->bottom:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v1, Landroid/graphics/Rect;->top:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v1, Landroid/graphics/Rect;->right:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     iget v2, v1, Landroid/graphics/Rect;->bottom:I
 
     rem-int/2addr v2, v3
 
-    if-nez v2, :cond_d7
+    if-nez v2, :cond_5
 
     .line 606
     invoke-virtual/range {p1 .. p1}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
@@ -1168,10 +1168,10 @@
     const/4 v5, 0x0
 
     .line 607
-    :goto_4e
+    :goto_0
     array-length v6, v2
 
-    if-ge v5, v6, :cond_d6
+    if-ge v5, v6, :cond_4
 
     .line 608
     aget-object v6, v2, v5
@@ -1215,7 +1215,7 @@
 
     const/4 v10, 0x1
 
-    if-lez v5, :cond_81
+    if-lez v5, :cond_0
 
     mul-int v11, p2, p3
 
@@ -1228,21 +1228,21 @@
 
     move v12, v3
 
-    goto :goto_83
+    goto :goto_1
 
-    :cond_81
+    :cond_0
     move v12, v10
 
     const/4 v11, 0x0
 
-    :goto_83
+    :goto_1
     const/4 v13, 0x0
 
     .line 617
-    :goto_84
+    :goto_2
     div-int v14, v9, v12
 
-    if-ge v13, v14, :cond_cf
+    if-ge v13, v14, :cond_3
 
     .line 618
     iget v14, v0, Landroid/graphics/Rect;->top:I
@@ -1295,10 +1295,10 @@
     const/4 v3, 0x0
 
     .line 623
-    :goto_ae
+    :goto_3
     div-int v14, v8, v12
 
-    if-ge v3, v14, :cond_cb
+    if-ge v3, v14, :cond_2
 
     .line 624
     invoke-virtual/range {p0 .. p0}, Ljava/nio/ByteBuffer;->get()B
@@ -1307,11 +1307,11 @@
 
     invoke-virtual {v6, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    if-le v7, v10, :cond_c8
+    if-le v7, v10, :cond_1
 
     add-int/lit8 v14, v14, -0x1
 
-    if-eq v3, v14, :cond_c8
+    if-eq v3, v14, :cond_1
 
     .line 626
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->position()I
@@ -1324,32 +1324,32 @@
 
     invoke-virtual {v6, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    :cond_c8
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_ae
+    goto :goto_3
 
-    :cond_cb
+    :cond_2
     add-int/lit8 v13, v13, 0x1
 
     const/4 v3, 0x2
 
-    goto :goto_84
+    goto :goto_2
 
-    :cond_cf
+    :cond_3
     move-object/from16 v15, p0
 
     add-int/lit8 v5, v5, 0x1
 
     const/4 v3, 0x2
 
-    goto/16 :goto_4e
+    goto/16 :goto_0
 
-    :cond_d6
+    :cond_4
     return-void
 
     .line 603
-    :cond_d7
+    :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "src or dst are not aligned!"
@@ -1359,7 +1359,7 @@
     throw v0
 
     .line 596
-    :cond_df
+    :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "src and dst rect size are different!"
@@ -1370,7 +1370,7 @@
 .end method
 
 .method private copyTilesGL()V
-    .registers 9
+    .locals 8
 
     .line 368
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mGridWidth:I
@@ -1384,18 +1384,18 @@
     move v0, v2
 
     .line 370
-    :goto_9
+    :goto_0
     iget v1, p0, Landroidx/heifwriter/HeifEncoder;->mGridRows:I
 
-    if-ge v0, v1, :cond_49
+    if-ge v0, v1, :cond_1
 
     move v1, v2
 
     .line 371
-    :goto_e
+    :goto_1
     iget v3, p0, Landroidx/heifwriter/HeifEncoder;->mGridCols:I
 
-    if-ge v1, v3, :cond_46
+    if-ge v1, v3, :cond_0
 
     .line 372
     iget v3, p0, Landroidx/heifwriter/HeifEncoder;->mGridWidth:I
@@ -1455,30 +1455,30 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_46
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_49
+    :cond_1
     return-void
 .end method
 
 .method private getCurrentBuffer()Ljava/nio/ByteBuffer;
-    .registers 5
+    .locals 4
 
     .line 652
     iget-boolean v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mCurrentBuffer:Ljava/nio/ByteBuffer;
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     .line 653
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mFilledBuffers:Ljava/util/ArrayList;
@@ -1486,20 +1486,20 @@
     monitor-enter v0
 
     .line 654
-    :try_start_c
+    :try_start_0
     iget-object v2, p0, Landroidx/heifwriter/HeifEncoder;->mFilledBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     move-object v2, v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     iget-object v2, p0, Landroidx/heifwriter/HeifEncoder;->mFilledBuffers:Ljava/util/ArrayList;
 
     const/4 v3, 0x0
@@ -1511,41 +1511,41 @@
 
     check-cast v2, Ljava/nio/ByteBuffer;
 
-    :goto_1f
+    :goto_0
     iput-object v2, p0, Landroidx/heifwriter/HeifEncoder;->mCurrentBuffer:Ljava/nio/ByteBuffer;
 
     .line 656
     monitor-exit v0
 
-    goto :goto_26
+    goto :goto_1
 
-    :catchall_23
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_25
-    .catchall {:try_start_c .. :try_end_25} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 
     .line 658
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_1
     iget-boolean v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2
 
-    goto :goto_2d
+    goto :goto_2
 
-    :cond_2b
+    :cond_2
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mCurrentBuffer:Ljava/nio/ByteBuffer;
 
-    :goto_2d
+    :goto_2
     return-object v1
 .end method
 
 .method private returnEmptyBufferAndNotify(Z)V
-    .registers 4
+    .locals 2
 
     .line 666
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
@@ -1553,7 +1553,7 @@
     monitor-enter v0
 
     .line 667
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
     or-int/2addr p1, v1
@@ -1574,8 +1574,8 @@
 
     .line 670
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 p1, 0x0
 
@@ -1584,14 +1584,14 @@
 
     return-void
 
-    :catchall_19
+    :catchall_0
     move-exception p1
 
     .line 670
-    :try_start_1a
+    :try_start_1
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_1a .. :try_end_1b} :catchall_19
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
@@ -1599,14 +1599,14 @@
 
 # virtual methods
 .method public addBitmap(Landroid/graphics/Bitmap;)V
-    .registers 7
+    .locals 5
 
     .line 478
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputMode:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_40
+    if-ne v0, v1, :cond_2
 
     .line 482
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEOSTracker:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
@@ -1640,19 +1640,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     return-void
 
     .line 488
-    :cond_22
+    :cond_0
     monitor-enter p0
 
     .line 489
-    :try_start_23
+    :try_start_0
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEncoderEglSurface:Landroidx/heifwriter/EglWindowSurface;
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     .line 490
     monitor-exit p0
@@ -1660,7 +1660,7 @@
     return-void
 
     .line 493
-    :cond_29
+    :cond_1
     invoke-virtual {v0}, Landroidx/heifwriter/EglWindowSurface;->makeCurrent()V
 
     .line 495
@@ -1683,17 +1683,17 @@
 
     return-void
 
-    :catchall_3d
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_3f
-    .catchall {:try_start_23 .. :try_end_3f} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
     .line 479
-    :cond_40
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "addBitmap is only allowed in bitmap input mode"
@@ -1704,14 +1704,14 @@
 .end method
 
 .method public addYuvBuffer(I[B)V
-    .registers 5
+    .locals 2
 
     .line 434
     iget p1, p0, Landroidx/heifwriter/HeifEncoder;->mInputMode:I
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 438
     array-length p1, p2
@@ -1726,7 +1726,7 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    if-ne p1, v0, :cond_16
+    if-ne p1, v0, :cond_0
 
     .line 441
     invoke-direct {p0, p2}, Landroidx/heifwriter/HeifEncoder;->addYuvBufferInternal([B)V
@@ -1734,7 +1734,7 @@
     return-void
 
     .line 439
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "invalid data"
@@ -1744,7 +1744,7 @@
     throw p1
 
     .line 435
-    :cond_1e
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "addYuvBuffer is only allowed in buffer input mode"
@@ -1755,7 +1755,7 @@
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 915
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
@@ -1765,7 +1765,7 @@
     const/4 v1, 0x1
 
     .line 916
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
     .line 917
@@ -1775,8 +1775,8 @@
 
     .line 918
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_4 .. :try_end_c} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 920
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mHandler:Landroid/os/Handler;
@@ -1789,27 +1789,27 @@
 
     return-void
 
-    :catchall_17
+    :catchall_0
     move-exception v1
 
     .line 918
-    :try_start_18
+    :try_start_1
     monitor-exit v0
-    :try_end_19
-    .catchall {:try_start_18 .. :try_end_19} :catchall_17
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method public getInputSurface()Landroid/view/Surface;
-    .registers 3
+    .locals 2
 
     .line 450
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputMode:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     .line 454
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputSurface:Landroid/view/Surface;
@@ -1817,7 +1817,7 @@
     return-object v0
 
     .line 451
-    :cond_8
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "getInputSurface is only allowed in surface input mode"
@@ -1828,7 +1828,7 @@
 .end method
 
 .method maybeCopyOneTileYUV()V
-    .registers 16
+    .locals 15
 
     .line 562
     :cond_0
@@ -1837,7 +1837,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_6
 
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mCodecInputBuffers:Ljava/util/ArrayList;
 
@@ -1845,7 +1845,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_85
+    if-nez v1, :cond_6
 
     .line 563
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mCodecInputBuffers:Ljava/util/ArrayList;
@@ -1869,25 +1869,25 @@
 
     rem-int/2addr v1, v2
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_1
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_1
 
     const/4 v1, 0x1
 
     move v14, v1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_1
     move v14, v6
 
-    :goto_2c
-    if-nez v14, :cond_56
+    :goto_1
+    if-nez v14, :cond_2
 
     .line 569
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
@@ -1939,19 +1939,19 @@
     invoke-static/range {v0 .. v5}, Landroidx/heifwriter/HeifEncoder;->copyOneTileYUV(Ljava/nio/ByteBuffer;Landroid/media/Image;IILandroid/graphics/Rect;Landroid/graphics/Rect;)V
 
     .line 576
-    :cond_56
+    :cond_2
     iget-object v7, p0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
     const/4 v9, 0x0
 
-    if-eqz v14, :cond_5d
+    if-eqz v14, :cond_3
 
     move v10, v6
 
-    goto :goto_66
+    goto :goto_2
 
     .line 577
-    :cond_5d
+    :cond_3
     invoke-virtual {v7, v8}, Landroid/media/MediaCodec;->getInputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -1962,7 +1962,7 @@
 
     move v10, v0
 
-    :goto_66
+    :goto_2
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputIndex:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1974,17 +1974,17 @@
 
     move-result-wide v11
 
-    if-eqz v14, :cond_73
+    if-eqz v14, :cond_4
 
     const/4 v6, 0x4
 
-    :cond_73
+    :cond_4
     move v13, v6
 
     .line 576
     invoke-virtual/range {v7 .. v13}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    if-nez v14, :cond_80
+    if-nez v14, :cond_5
 
     .line 581
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputIndex:I
@@ -1996,26 +1996,26 @@
     if-nez v0, :cond_0
 
     .line 582
-    :cond_80
+    :cond_5
     invoke-direct {p0, v14}, Landroidx/heifwriter/HeifEncoder;->returnEmptyBufferAndNotify(Z)V
 
     goto/16 :goto_0
 
-    :cond_85
+    :cond_6
     return-void
 .end method
 
 .method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
-    .registers 7
+    .locals 5
 
     .line 385
     monitor-enter p0
 
     .line 386
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEncoderEglSurface:Landroidx/heifwriter/EglWindowSurface;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 387
     monitor-exit p0
@@ -2023,7 +2023,7 @@
     return-void
 
     .line 390
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Landroidx/heifwriter/EglWindowSurface;->makeCurrent()V
 
     .line 392
@@ -2060,13 +2060,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 403
     invoke-direct {p0}, Landroidx/heifwriter/HeifEncoder;->copyTilesGL()V
 
     .line 406
-    :cond_2c
+    :cond_1
     invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->releaseTexImage()V
 
     .line 410
@@ -2079,39 +2079,39 @@
 
     return-void
 
-    :catchall_36
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_38
-    .catchall {:try_start_1 .. :try_end_38} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setEndOfInputStreamTimestamp(J)V
-    .registers 5
+    .locals 2
 
     .line 465
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputMode:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_1
 
     .line 469
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEOSTracker:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 470
     invoke-virtual {v0, p1, p2}, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;->updateInputEOSTime(J)V
 
-    :cond_c
+    :cond_0
     return-void
 
     .line 466
-    :cond_d
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "setEndOfInputStreamTimestamp is only allowed in surface input mode"
@@ -2122,7 +2122,7 @@
 .end method
 
 .method public start()V
-    .registers 2
+    .locals 1
 
     .line 418
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
@@ -2133,14 +2133,14 @@
 .end method
 
 .method public stopAsync()V
-    .registers 4
+    .locals 3
 
     .line 511
     iget v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputMode:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 514
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEOSTracker:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
@@ -2149,30 +2149,30 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;->updateInputEOSTime(J)V
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_d
-    if-nez v0, :cond_13
+    :cond_0
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
     .line 516
     invoke-direct {p0, v0}, Landroidx/heifwriter/HeifEncoder;->addYuvBufferInternal([B)V
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method stopInternal()V
-    .registers 4
+    .locals 3
 
     .line 683
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 684
     invoke-virtual {v0}, Landroid/media/MediaCodec;->stop()V
@@ -2186,7 +2186,7 @@
     iput-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
     .line 690
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEmptyBuffers:Ljava/util/ArrayList;
 
     monitor-enter v0
@@ -2194,7 +2194,7 @@
     const/4 v2, 0x1
 
     .line 691
-    :try_start_13
+    :try_start_0
     iput-boolean v2, p0, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
     .line 692
@@ -2204,17 +2204,17 @@
 
     .line 693
     monitor-exit v0
-    :try_end_1b
-    .catchall {:try_start_13 .. :try_end_1b} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 695
     monitor-enter p0
 
     .line 696
-    :try_start_1c
+    :try_start_1
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mRectBlt:Landroidx/heifwriter/EglRectBlt;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     const/4 v2, 0x0
 
@@ -2225,10 +2225,10 @@
     iput-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mRectBlt:Landroidx/heifwriter/EglRectBlt;
 
     .line 701
-    :cond_26
+    :cond_1
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mEncoderEglSurface:Landroidx/heifwriter/EglWindowSurface;
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     .line 705
     invoke-virtual {v0}, Landroidx/heifwriter/EglWindowSurface;->release()V
@@ -2237,10 +2237,10 @@
     iput-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mEncoderEglSurface:Landroidx/heifwriter/EglWindowSurface;
 
     .line 709
-    :cond_2f
+    :cond_2
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder;->mInputTexture:Landroid/graphics/SurfaceTexture;
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3
 
     .line 710
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->release()V
@@ -2249,28 +2249,28 @@
     iput-object v1, p0, Landroidx/heifwriter/HeifEncoder;->mInputTexture:Landroid/graphics/SurfaceTexture;
 
     .line 713
-    :cond_38
+    :cond_3
     monitor-exit p0
 
     return-void
 
-    :catchall_3a
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_3c
-    .catchall {:try_start_1c .. :try_end_3c} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
-    :catchall_3d
+    :catchall_1
     move-exception v1
 
     .line 693
-    :try_start_3e
+    :try_start_2
     monitor-exit v0
-    :try_end_3f
-    .catchall {:try_start_3e .. :try_end_3f} :catchall_3d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     throw v1
 .end method

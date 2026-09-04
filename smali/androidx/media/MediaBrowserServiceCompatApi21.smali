@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static createService(Landroid/content/Context;Landroidx/media/MediaBrowserServiceCompatApi21$ServiceCompatProxy;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 38
     new-instance v0, Landroidx/media/MediaBrowserServiceCompatApi21$MediaBrowserServiceAdaptor;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static notifyChildrenChanged(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 54
     check-cast p0, Landroid/service/media/MediaBrowserService;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static onBind(Ljava/lang/Object;Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 2
+    .locals 0
 
     .line 46
     check-cast p0, Landroid/service/media/MediaBrowserService;
@@ -60,7 +60,7 @@
 .end method
 
 .method public static onCreate(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 42
     check-cast p0, Landroid/service/media/MediaBrowserService;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static setSessionToken(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 50
     check-cast p0, Landroid/service/media/MediaBrowserService;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;Landroid/hardware/display/DisplayManager;)V
-    .registers 3
+    .locals 0
 
     .line 451
     iput-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->this$0:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -39,7 +39,7 @@
 .end method
 
 .method private getDefaultDisplay()Landroid/view/Display;
-    .registers 3
+    .locals 2
 
     .line 482
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->displayManager:Landroid/hardware/display/DisplayManager;
@@ -56,15 +56,15 @@
 
 # virtual methods
 .method public onDisplayAdded(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onDisplayChanged(I)V
-    .registers 3
+    .locals 1
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
     .line 467
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->this$0:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -75,18 +75,18 @@
 
     invoke-static {p1, v0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->access$000(Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;Landroid/view/Display;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onDisplayRemoved(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public register()V
-    .registers 3
+    .locals 2
 
     .line 456
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->displayManager:Landroid/hardware/display/DisplayManager;
@@ -110,7 +110,7 @@
 .end method
 
 .method public unregister()V
-    .registers 2
+    .locals 1
 
     .line 461
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->displayManager:Landroid/hardware/display/DisplayManager;

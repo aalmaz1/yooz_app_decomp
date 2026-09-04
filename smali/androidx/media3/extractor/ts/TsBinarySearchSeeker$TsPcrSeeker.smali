@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/util/TimestampAdjuster;I)V
-    .registers 4
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method private searchForPcrValueInBuffer(Landroidx/media3/common/util/ParsableByteArray;JJ)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
-    .registers 22
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -76,14 +76,14 @@
     move-wide v11, v7
 
     .line 103
-    :goto_13
+    :goto_0
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v13
 
     const/16 v14, 0xbc
 
-    if-lt v13, v14, :cond_67
+    if-lt v13, v14, :cond_5
 
     .line 105
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -100,12 +100,12 @@
 
     add-int/lit16 v14, v13, 0xbc
 
-    if-le v14, v4, :cond_2c
+    if-le v14, v4, :cond_0
 
-    goto :goto_67
+    goto :goto_1
 
     .line 110
-    :cond_2c
+    :cond_0
     iget v5, v0, Landroidx/media3/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->pcrPid:I
 
     invoke-static {v1, v13, v5}, Landroidx/media3/extractor/ts/TsUtil;->readPcrFromPacket(Landroidx/media3/common/util/ParsableByteArray;II)J
@@ -114,7 +114,7 @@
 
     cmp-long v15, v5, v7
 
-    if-eqz v15, :cond_62
+    if-eqz v15, :cond_4
 
     .line 112
     iget-object v15, v0, Landroidx/media3/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->pcrTimestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -125,11 +125,11 @@
 
     cmp-long v15, v5, p2
 
-    if-lez v15, :cond_50
+    if-lez v15, :cond_2
 
     cmp-long v1, v11, v7
 
-    if-nez v1, :cond_49
+    if-nez v1, :cond_1
 
     .line 116
     invoke-static {v5, v6, v2, v3}, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->overestimatedResult(JJ)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
@@ -138,7 +138,7 @@
 
     return-object v1
 
-    :cond_49
+    :cond_1
     add-long v1, v2, v9
 
     .line 119
@@ -148,14 +148,14 @@
 
     return-object v1
 
-    :cond_50
+    :cond_2
     const-wide/32 v9, 0x186a0
 
     add-long/2addr v9, v5
 
     cmp-long v9, v9, p2
 
-    if-lez v9, :cond_60
+    if-lez v9, :cond_3
 
     int-to-long v4, v13
 
@@ -168,24 +168,24 @@
 
     return-object v1
 
-    :cond_60
+    :cond_3
     int-to-long v9, v13
 
     move-wide v11, v5
 
     .line 130
-    :cond_62
+    :cond_4
     invoke-virtual {v1, v14}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     int-to-long v5, v14
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_67
-    :goto_67
+    :cond_5
+    :goto_1
     cmp-long v1, v11, v7
 
-    if-eqz v1, :cond_72
+    if-eqz v1, :cond_6
 
     add-long v1, v2, v5
 
@@ -197,7 +197,7 @@
     return-object v1
 
     .line 139
-    :cond_72
+    :cond_6
     sget-object v1, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->NO_TIMESTAMP_IN_RANGE_RESULT:Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     return-object v1
@@ -206,7 +206,7 @@
 
 # virtual methods
 .method public onSeekFinished()V
-    .registers 3
+    .locals 2
 
     .line 145
     iget-object v0, p0, Landroidx/media3/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->packetBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -219,7 +219,7 @@
 .end method
 
 .method public searchForTimestamp(Landroidx/media3/extractor/ExtractorInput;J)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

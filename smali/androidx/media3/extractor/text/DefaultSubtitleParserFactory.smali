@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,12 +19,12 @@
 
 # virtual methods
 .method public create(Landroidx/media3/common/Format;)Landroidx/media3/extractor/text/SubtitleParser;
-    .registers 5
+    .locals 3
 
     .line 95
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_8
 
     .line 97
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -35,143 +35,143 @@
 
     const/4 v2, -0x1
 
-    sparse-switch v1, :sswitch_data_b8
+    sparse-switch v1, :sswitch_data_0
 
-    goto/16 :goto_68
+    goto/16 :goto_0
 
-    :sswitch_11
+    :sswitch_0
     const-string v1, "application/ttml+xml"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v2, 0x7
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_1c
+    :sswitch_1
     const-string v1, "application/x-subrip"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     const/4 v2, 0x6
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_27
+    :sswitch_2
     const-string v1, "text/x-ssa"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_2
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     const/4 v2, 0x5
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_32
+    :sswitch_3
     const-string v1, "application/x-quicktime-tx3g"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_3
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_3b
+    :cond_3
     const/4 v2, 0x4
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_3d
+    :sswitch_4
     const-string v1, "text/vtt"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_46
+    if-nez v1, :cond_4
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_46
+    :cond_4
     const/4 v2, 0x3
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_48
+    :sswitch_5
     const-string v1, "application/x-mp4-vtt"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_51
+    if-nez v1, :cond_5
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_51
+    :cond_5
     const/4 v2, 0x2
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_53
+    :sswitch_6
     const-string v1, "application/pgs"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_5c
+    if-nez v1, :cond_6
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_5c
+    :cond_6
     const/4 v2, 0x1
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_5e
+    :sswitch_7
     const-string v1, "application/dvbsubs"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_67
+    if-nez v1, :cond_7
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_67
+    :cond_7
     const/4 v2, 0x0
 
-    :goto_68
-    packed-switch v2, :pswitch_data_da
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
-    goto :goto_a2
+    goto :goto_1
 
     .line 113
-    :pswitch_6c
+    :pswitch_0
     new-instance p1, Landroidx/media3/extractor/text/ttml/TtmlParser;
 
     invoke-direct {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;-><init>()V
@@ -179,7 +179,7 @@
     return-object p1
 
     .line 105
-    :pswitch_72
+    :pswitch_1
     new-instance p1, Landroidx/media3/extractor/text/subrip/SubripParser;
 
     invoke-direct {p1}, Landroidx/media3/extractor/text/subrip/SubripParser;-><init>()V
@@ -187,7 +187,7 @@
     return-object p1
 
     .line 99
-    :pswitch_78
+    :pswitch_2
     new-instance v0, Landroidx/media3/extractor/text/ssa/SsaParser;
 
     iget-object p1, p1, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
@@ -197,7 +197,7 @@
     return-object v0
 
     .line 107
-    :pswitch_80
+    :pswitch_3
     new-instance v0, Landroidx/media3/extractor/text/tx3g/Tx3gParser;
 
     iget-object p1, p1, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
@@ -207,7 +207,7 @@
     return-object v0
 
     .line 101
-    :pswitch_88
+    :pswitch_4
     new-instance p1, Landroidx/media3/extractor/text/webvtt/WebvttParser;
 
     invoke-direct {p1}, Landroidx/media3/extractor/text/webvtt/WebvttParser;-><init>()V
@@ -215,7 +215,7 @@
     return-object p1
 
     .line 103
-    :pswitch_8e
+    :pswitch_5
     new-instance p1, Landroidx/media3/extractor/text/webvtt/Mp4WebvttParser;
 
     invoke-direct {p1}, Landroidx/media3/extractor/text/webvtt/Mp4WebvttParser;-><init>()V
@@ -223,7 +223,7 @@
     return-object p1
 
     .line 109
-    :pswitch_94
+    :pswitch_6
     new-instance p1, Landroidx/media3/extractor/text/pgs/PgsParser;
 
     invoke-direct {p1}, Landroidx/media3/extractor/text/pgs/PgsParser;-><init>()V
@@ -231,7 +231,7 @@
     return-object p1
 
     .line 111
-    :pswitch_9a
+    :pswitch_7
     new-instance v0, Landroidx/media3/extractor/text/dvb/DvbParser;
 
     iget-object p1, p1, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
@@ -241,8 +241,8 @@
     return-object v0
 
     .line 118
-    :cond_a2
-    :goto_a2
+    :cond_8
+    :goto_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -265,38 +265,38 @@
 
     nop
 
-    :sswitch_data_b8
+    :sswitch_data_0
     .sparse-switch
-        -0x5091057c -> :sswitch_5e
-        -0x4a6813e3 -> :sswitch_53
-        -0x3d28a9ba -> :sswitch_48
-        -0x3be2f26c -> :sswitch_3d
-        0x2935f49f -> :sswitch_32
-        0x310bebca -> :sswitch_27
-        0x63771bad -> :sswitch_1c
-        0x64f8068a -> :sswitch_11
+        -0x5091057c -> :sswitch_7
+        -0x4a6813e3 -> :sswitch_6
+        -0x3d28a9ba -> :sswitch_5
+        -0x3be2f26c -> :sswitch_4
+        0x2935f49f -> :sswitch_3
+        0x310bebca -> :sswitch_2
+        0x63771bad -> :sswitch_1
+        0x64f8068a -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_da
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9a
-        :pswitch_94
-        :pswitch_8e
-        :pswitch_88
-        :pswitch_80
-        :pswitch_78
-        :pswitch_72
-        :pswitch_6c
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getCueReplacementBehavior(Landroidx/media3/common/Format;)I
-    .registers 6
+    .locals 4
 
     .line 67
     iget-object p1, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz p1, :cond_72
+    if-eqz p1, :cond_8
 
     .line 69
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -311,156 +311,156 @@
 
     const/4 v3, -0x1
 
-    sparse-switch v0, :sswitch_data_88
+    sparse-switch v0, :sswitch_data_0
 
-    goto/16 :goto_6a
+    goto/16 :goto_0
 
-    :sswitch_13
+    :sswitch_0
     const-string v0, "application/ttml+xml"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v3, 0x7
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_1e
+    :sswitch_1
     const-string v0, "application/x-subrip"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     const/4 v3, 0x6
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_29
+    :sswitch_2
     const-string v0, "text/x-ssa"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_2
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_32
+    :cond_2
     const/4 v3, 0x5
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_34
+    :sswitch_3
     const-string v0, "application/x-quicktime-tx3g"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_3
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_3d
+    :cond_3
     const/4 v3, 0x4
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_3f
+    :sswitch_4
     const-string v0, "text/vtt"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_48
+    if-nez v0, :cond_4
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_48
+    :cond_4
     const/4 v3, 0x3
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_4a
+    :sswitch_5
     const-string v0, "application/x-mp4-vtt"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_5
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_53
+    :cond_5
     move v3, v1
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_55
+    :sswitch_6
     const-string v0, "application/pgs"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_6
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_5e
+    :cond_6
     move v3, v2
 
-    goto :goto_6a
+    goto :goto_0
 
-    :sswitch_60
+    :sswitch_7
     const-string v0, "application/dvbsubs"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_69
+    if-nez v0, :cond_7
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_69
+    :cond_7
     const/4 v3, 0x0
 
-    :goto_6a
-    packed-switch v3, :pswitch_data_aa
+    :goto_0
+    packed-switch v3, :pswitch_data_0
 
-    goto :goto_72
+    goto :goto_1
 
-    :pswitch_6e
+    :pswitch_0
     return v2
 
-    :pswitch_6f
+    :pswitch_1
     return v1
 
-    :pswitch_70
+    :pswitch_2
     return v2
 
-    :pswitch_71
+    :pswitch_3
     return v1
 
     .line 90
-    :cond_72
-    :goto_72
+    :cond_8
+    :goto_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -483,33 +483,33 @@
 
     nop
 
-    :sswitch_data_88
+    :sswitch_data_0
     .sparse-switch
-        -0x5091057c -> :sswitch_60
-        -0x4a6813e3 -> :sswitch_55
-        -0x3d28a9ba -> :sswitch_4a
-        -0x3be2f26c -> :sswitch_3f
-        0x2935f49f -> :sswitch_34
-        0x310bebca -> :sswitch_29
-        0x63771bad -> :sswitch_1e
-        0x64f8068a -> :sswitch_13
+        -0x5091057c -> :sswitch_7
+        -0x4a6813e3 -> :sswitch_6
+        -0x3d28a9ba -> :sswitch_5
+        -0x3be2f26c -> :sswitch_4
+        0x2935f49f -> :sswitch_3
+        0x310bebca -> :sswitch_2
+        0x63771bad -> :sswitch_1
+        0x64f8068a -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_aa
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_71
-        :pswitch_71
-        :pswitch_71
-        :pswitch_70
-        :pswitch_6f
-        :pswitch_6e
-        :pswitch_6e
-        :pswitch_6e
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)Z
-    .registers 3
+    .locals 1
 
     .line 54
     iget-object p1, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -521,7 +521,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "text/vtt"
 
@@ -530,7 +530,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "application/x-mp4-vtt"
 
@@ -539,7 +539,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "application/x-subrip"
 
@@ -548,7 +548,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "application/x-quicktime-tx3g"
 
@@ -557,7 +557,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "application/pgs"
 
@@ -566,7 +566,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "application/dvbsubs"
 
@@ -575,7 +575,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const-string v0, "application/ttml+xml"
 
@@ -584,19 +584,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_0
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_43
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_45
-    :goto_45
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_46
+    :goto_1
     return p1
 .end method

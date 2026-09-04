@@ -67,7 +67,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 44
     new-instance v0, Landroidx/media3/exoplayer/upstream/SlidingPercentile$$ExternalSyntheticLambda0;
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,14 +118,14 @@
 .end method
 
 .method private ensureSortedByIndex()V
-    .registers 4
+    .locals 3
 
     .line 138
     iget v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->currentSortOrder:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_e
+    if-eq v0, v1, :cond_0
 
     .line 139
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;
@@ -137,17 +137,17 @@
     .line 140
     iput v1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->currentSortOrder:I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private ensureSortedByValue()V
-    .registers 3
+    .locals 2
 
     .line 146
     iget v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->currentSortOrder:I
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 147
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;
@@ -161,12 +161,12 @@
     .line 148
     iput v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->currentSortOrder:I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method static synthetic lambda$static$0(Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;)I
-    .registers 2
+    .locals 0
 
     .line 44
     iget p0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;->index:I
@@ -179,7 +179,7 @@
 .end method
 
 .method static synthetic lambda$static$1(Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;)I
-    .registers 2
+    .locals 0
 
     .line 46
     iget p0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;->value:F
@@ -196,7 +196,7 @@
 
 # virtual methods
 .method public addSample(IF)V
-    .registers 6
+    .locals 3
 
     .line 89
     invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->ensureSortedByIndex()V
@@ -204,7 +204,7 @@
     .line 92
     iget v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->recycledSampleCount:I
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->recycledSamples:[Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;
 
@@ -214,9 +214,9 @@
 
     aget-object v0, v1, v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;
 
     const/4 v1, 0x0
@@ -224,7 +224,7 @@
     invoke-direct {v0, v1}, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;-><init>(Landroidx/media3/exoplayer/upstream/SlidingPercentile$1;)V
 
     .line 93
-    :goto_16
+    :goto_0
     iget v1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->nextSampleIndex:I
 
     add-int/lit8 v2, v1, 0x1
@@ -252,13 +252,13 @@
     iput p2, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->totalWeight:I
 
     .line 99
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_1
     iget p1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->totalWeight:I
 
     iget p2, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->maxWeight:I
 
-    if-le p1, p2, :cond_65
+    if-le p1, p2, :cond_3
 
     sub-int/2addr p1, p2
 
@@ -276,7 +276,7 @@
     .line 102
     iget v1, p2, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;->weight:I
 
-    if-gt v1, p1, :cond_5a
+    if-gt v1, p1, :cond_2
 
     .line 103
     iget p1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->totalWeight:I
@@ -297,7 +297,7 @@
 
     const/4 v0, 0x5
 
-    if-ge p1, v0, :cond_2c
+    if-ge p1, v0, :cond_1
 
     .line 106
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->recycledSamples:[Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;
@@ -308,10 +308,10 @@
 
     aput-object p2, v0, p1
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 109
-    :cond_5a
+    :cond_2
     iget v0, p2, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;->weight:I
 
     sub-int/2addr v0, p1
@@ -325,14 +325,14 @@
 
     iput p2, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->totalWeight:I
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_65
+    :cond_3
     return-void
 .end method
 
 .method public getPercentile(F)F
-    .registers 6
+    .locals 4
 
     .line 122
     invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->ensureSortedByValue()V
@@ -349,14 +349,14 @@
     move v1, v0
 
     .line 125
-    :goto_9
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_27
+    if-ge v0, v2, :cond_1
 
     .line 126
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;
@@ -376,33 +376,33 @@
 
     cmpl-float v3, v3, p1
 
-    if-ltz v3, :cond_24
+    if-ltz v3, :cond_0
 
     .line 129
     iget p1, v2, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;->value:F
 
     return p1
 
-    :cond_24
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 133
-    :cond_27
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_2
 
     const/high16 p1, 0x7fc00000    # Float.NaN
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -419,12 +419,12 @@
 
     iget p1, p1, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;->value:F
 
-    :goto_42
+    :goto_1
     return p1
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/SlidingPercentile;->samples:Ljava/util/ArrayList;

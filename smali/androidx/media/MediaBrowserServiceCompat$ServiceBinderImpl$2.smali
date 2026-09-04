@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;)V
-    .registers 3
+    .locals 0
 
     .line 932
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$2;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 935
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$2;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -62,7 +62,7 @@
 
     check-cast v0, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 941
     iget-object v1, v0, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -75,6 +75,6 @@
 
     invoke-interface {v1, v0, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    :cond_1e
+    :cond_0
     return-void
 .end method

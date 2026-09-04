@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1536
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public flush()V
-    .registers 4
+    .locals 3
 
     .line 1546
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$HeapNioEncoder;->byteBuffer:Ljava/nio/ByteBuffer;

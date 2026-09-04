@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ogg/StreamReader;JJJJZ)V
-    .registers 13
+    .locals 2
 
     .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,21 +71,21 @@
 
     const/4 v1, 0x0
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_0
 
     cmp-long v0, p4, p2
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v0, v1
 
     .line 78
-    :goto_11
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 80
@@ -101,21 +101,21 @@
 
     cmp-long p1, p6, p4
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_2
 
-    if-eqz p10, :cond_22
+    if-eqz p10, :cond_1
 
-    goto :goto_25
+    goto :goto_1
 
     .line 88
-    :cond_22
+    :cond_1
     iput v1, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->state:I
 
-    goto :goto_2a
+    goto :goto_2
 
     .line 85
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_1
     iput-wide p8, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->totalGranules:J
 
     const/4 p1, 0x4
@@ -124,7 +124,7 @@
     iput p1, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->state:I
 
     .line 90
-    :goto_2a
+    :goto_2
     new-instance p1, Landroidx/media3/extractor/ogg/OggPageHeader;
 
     invoke-direct {p1}, Landroidx/media3/extractor/ogg/OggPageHeader;-><init>()V
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/ogg/DefaultOggSeeker;)Landroidx/media3/extractor/ogg/StreamReader;
-    .registers 1
+    .locals 0
 
     .line 34
     iget-object p0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/ogg/DefaultOggSeeker;)J
-    .registers 3
+    .locals 2
 
     .line 34
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->payloadStartPosition:J
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/extractor/ogg/DefaultOggSeeker;)J
-    .registers 3
+    .locals 2
 
     .line 34
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->totalGranules:J
@@ -162,7 +162,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/extractor/ogg/DefaultOggSeeker;)J
-    .registers 3
+    .locals 2
 
     .line 34
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->payloadEndPosition:J
@@ -171,7 +171,7 @@
 .end method
 
 .method private getNextSeekPosition(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 19
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -191,12 +191,12 @@
 
     const-wide/16 v3, -0x1
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_0
 
     return-wide v3
 
     .line 160
-    :cond_f
+    :cond_0
     invoke-interface/range {p1 .. p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v5
@@ -210,19 +210,19 @@
 
     move-result v2
 
-    if-nez v2, :cond_2c
+    if-nez v2, :cond_2
 
     .line 162
     iget-wide v1, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->start:J
 
     cmp-long v3, v1, v5
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_1
 
     return-wide v1
 
     .line 163
-    :cond_24
+    :cond_1
     new-instance v1, Ljava/io/IOException;
 
     const-string v2, "No ogg page can be found."
@@ -232,7 +232,7 @@
     throw v1
 
     .line 168
-    :cond_2c
+    :cond_2
     iget-object v2, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
     const/4 v7, 0x0
@@ -266,20 +266,20 @@
 
     cmp-long v11, v9, v7
 
-    if-gtz v11, :cond_53
+    if-gtz v11, :cond_3
 
     const-wide/32 v11, 0x11940
 
     cmp-long v11, v7, v11
 
-    if-gez v11, :cond_53
+    if-gez v11, :cond_3
 
     return-wide v3
 
-    :cond_53
+    :cond_3
     cmp-long v3, v7, v9
 
-    if-gez v3, :cond_60
+    if-gez v3, :cond_4
 
     .line 178
     iput-wide v5, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->end:J
@@ -291,10 +291,10 @@
 
     iput-wide v4, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->endGranule:J
 
-    goto :goto_6e
+    goto :goto_0
 
     .line 181
-    :cond_60
+    :cond_4
     invoke-interface/range {p1 .. p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v4
@@ -313,7 +313,7 @@
     iput-wide v4, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->startGranule:J
 
     .line 185
-    :goto_6e
+    :goto_0
     iget-wide v4, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->end:J
 
     iget-wide v9, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->start:J
@@ -324,28 +324,28 @@
 
     cmp-long v4, v4, v11
 
-    if-gez v4, :cond_7d
+    if-gez v4, :cond_5
 
     .line 186
     iput-wide v9, v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->end:J
 
     return-wide v9
 
-    :cond_7d
+    :cond_5
     int-to-long v4, v2
 
     const-wide/16 v9, 0x1
 
-    if-gtz v3, :cond_85
+    if-gtz v3, :cond_6
 
     const-wide/16 v2, 0x2
 
-    goto :goto_86
+    goto :goto_1
 
-    :cond_85
+    :cond_6
     move-wide v2, v9
 
-    :goto_86
+    :goto_1
     mul-long/2addr v4, v2
 
     .line 192
@@ -384,7 +384,7 @@
 .end method
 
 .method private skipToPageOfTargetGranule(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -413,7 +413,7 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_19
+    if-lez v0, :cond_0
 
     .line 218
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -421,7 +421,7 @@
     return-void
 
     .line 214
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
     iget v0, v0, Landroidx/media3/extractor/ogg/OggPageHeader;->headerSize:I
@@ -454,7 +454,7 @@
 
 # virtual methods
 .method public bridge synthetic createSeekMap()Landroidx/media3/extractor/SeekMap;
-    .registers 2
+    .locals 1
 
     .line 34
     invoke-virtual {p0}, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->createSeekMap()Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;
@@ -465,7 +465,7 @@
 .end method
 
 .method public createSeekMap()Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;
-    .registers 5
+    .locals 4
 
     .line 131
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->totalGranules:J
@@ -476,7 +476,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroidx/media3/extractor/ogg/DefaultOggSeeker$OggSeekMap;
 
@@ -484,12 +484,12 @@
 
     move-object v1, v0
 
-    :cond_f
+    :cond_0
     return-object v1
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -503,9 +503,9 @@
 
     const/4 v2, 0x4
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_4
 
-    if-eq v0, v1, :cond_43
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x2
 
@@ -513,16 +513,16 @@
 
     const/4 v5, 0x3
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_1
 
-    if-eq v0, v5, :cond_24
+    if-eq v0, v5, :cond_3
 
-    if-ne v0, v2, :cond_13
+    if-ne v0, v2, :cond_0
 
     return-wide v3
 
     .line 124
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -530,23 +530,23 @@
     throw p1
 
     .line 112
-    :cond_19
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->getNextSeekPosition(Landroidx/media3/extractor/ExtractorInput;)J
 
     move-result-wide v0
 
     cmp-long v3, v0, v3
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_2
 
     return-wide v0
 
     .line 116
-    :cond_22
+    :cond_2
     iput v5, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->state:I
 
     .line 119
-    :cond_24
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->skipToPageOfTargetGranule(Landroidx/media3/extractor/ExtractorInput;)V
 
     .line 120
@@ -564,7 +564,7 @@
     return-wide v0
 
     .line 99
-    :cond_30
+    :cond_4
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v3
@@ -583,12 +583,12 @@
 
     cmp-long v3, v0, v3
 
-    if-lez v3, :cond_43
+    if-lez v3, :cond_5
 
     return-wide v0
 
     .line 108
-    :cond_43
+    :cond_5
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->readGranuleOfLastPage(Landroidx/media3/extractor/ExtractorInput;)J
 
     move-result-wide v0
@@ -605,7 +605,7 @@
 .end method
 
 .method readGranuleOfLastPage(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -624,7 +624,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_2
 
     .line 235
     iget-object v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -652,7 +652,7 @@
     iget-wide v0, v0, Landroidx/media3/extractor/ogg/OggPageHeader;->granulePosition:J
 
     .line 238
-    :goto_23
+    :goto_0
     iget-object v2, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
     iget v2, v2, Landroidx/media3/extractor/ogg/OggPageHeader;->type:I
@@ -661,7 +661,7 @@
 
     and-int/2addr v2, v3
 
-    if-eq v2, v3, :cond_5b
+    if-eq v2, v3, :cond_1
 
     iget-object v2, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
@@ -670,7 +670,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_1
 
     .line 240
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -681,7 +681,7 @@
 
     cmp-long v2, v2, v4
 
-    if-gez v2, :cond_5b
+    if-gez v2, :cond_1
 
     .line 241
     iget-object v2, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -692,7 +692,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_1
 
     .line 242
     iget-object v2, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -709,24 +709,24 @@
 
     move-result v2
 
-    if-nez v2, :cond_56
+    if-nez v2, :cond_0
 
-    goto :goto_5b
+    goto :goto_1
 
     .line 247
-    :cond_56
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ogg/DefaultOggSeeker;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
     iget-wide v0, v0, Landroidx/media3/extractor/ogg/OggPageHeader;->granulePosition:J
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_5b
-    :goto_5b
+    :cond_1
+    :goto_1
     return-wide v0
 
     .line 233
-    :cond_5c
+    :cond_2
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -735,7 +735,7 @@
 .end method
 
 .method public startSeek(J)V
-    .registers 9
+    .locals 6
 
     const-wide/16 v2, 0x0
 

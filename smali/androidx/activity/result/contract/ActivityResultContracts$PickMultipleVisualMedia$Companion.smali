@@ -38,7 +38,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 934
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia$Companion;-><init>()V
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final getMaxItems$activity_release()I
-    .registers 2
+    .locals 1
 
     .line 945
     sget-object v0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;
@@ -66,18 +66,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 946
     invoke-static {}, Landroid/provider/MediaStore;->getPickImagesMaxLimit()I
 
     move-result v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const v0, 0x7fffffff
 
-    :goto_10
+    :goto_0
     return v0
 .end method

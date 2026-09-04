@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V
-    .registers 4
+    .locals 1
 
     .line 317
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method synthetic lambda$onCameraAccessPrioritiesChanged$0$androidx-camera-camera2-internal-compat-CameraManagerCompat$AvailabilityCallbackExecutorWrapper()V
-    .registers 2
+    .locals 1
 
     .line 335
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
@@ -66,7 +66,7 @@
 .end method
 
 .method synthetic lambda$onCameraAvailable$1$androidx-camera-camera2-internal-compat-CameraManagerCompat$AvailabilityCallbackExecutorWrapper(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 345
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
@@ -77,7 +77,7 @@
 .end method
 
 .method synthetic lambda$onCameraUnavailable$2$androidx-camera-camera2-internal-compat-CameraManagerCompat$AvailabilityCallbackExecutorWrapper(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 354
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
@@ -88,7 +88,7 @@
 .end method
 
 .method public onCameraAccessPrioritiesChanged()V
-    .registers 4
+    .locals 3
 
     .line 333
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mLock:Ljava/lang/Object;
@@ -96,10 +96,10 @@
     monitor-enter v0
 
     .line 334
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mDisabled:Z
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 335
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -111,23 +111,23 @@
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 338
-    :cond_11
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_13
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public onCameraAvailable(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 343
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mLock:Ljava/lang/Object;
@@ -135,10 +135,10 @@
     monitor-enter v0
 
     .line 344
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mDisabled:Z
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 345
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -150,23 +150,23 @@
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 347
-    :cond_11
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public onCameraUnavailable(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 352
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mLock:Ljava/lang/Object;
@@ -174,10 +174,10 @@
     monitor-enter v0
 
     .line 353
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mDisabled:Z
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 354
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -189,23 +189,23 @@
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 356
-    :cond_11
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method setDisabled()V
-    .registers 3
+    .locals 2
 
     .line 325
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mLock:Ljava/lang/Object;
@@ -215,7 +215,7 @@
     const/4 v1, 0x1
 
     .line 326
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/camera/camera2/internal/compat/CameraManagerCompat$AvailabilityCallbackExecutorWrapper;->mDisabled:Z
 
     .line 327
@@ -223,12 +223,12 @@
 
     return-void
 
-    :catchall_8
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_4 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

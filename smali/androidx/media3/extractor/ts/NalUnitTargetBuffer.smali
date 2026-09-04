@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 4
+    .locals 1
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,16 +45,16 @@
 
 # virtual methods
 .method public appendToNalUnit([BII)V
-    .registers 8
+    .locals 4
 
     .line 77
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     sub-int/2addr p3, p2
 
     .line 81
@@ -66,7 +66,7 @@
 
     add-int v3, v2, p3
 
-    if-ge v1, v3, :cond_18
+    if-ge v1, v3, :cond_1
 
     add-int/2addr v2, p3
 
@@ -80,7 +80,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
     .line 84
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
     iget v1, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->nalLength:I
@@ -98,19 +98,19 @@
 .end method
 
 .method public endNalUnit(I)Z
-    .registers 4
+    .locals 2
 
     .line 96
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 99
-    :cond_6
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
     sub-int/2addr v0, p1
@@ -129,7 +129,7 @@
 .end method
 
 .method public isCompleted()Z
-    .registers 2
+    .locals 1
 
     .line 51
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
@@ -138,7 +138,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -152,7 +152,7 @@
 .end method
 
 .method public startNalUnit(I)V
-    .registers 5
+    .locals 3
 
     .line 60
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
@@ -168,17 +168,17 @@
 
     const/4 v2, 0x0
 
-    if-ne p1, v0, :cond_d
+    if-ne p1, v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v1, v2
 
-    :goto_e
+    :goto_0
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     const/4 p1, 0x3
 
@@ -188,6 +188,6 @@
     .line 65
     iput-boolean v2, p0, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
 
-    :cond_17
+    :cond_1
     return-void
 .end method

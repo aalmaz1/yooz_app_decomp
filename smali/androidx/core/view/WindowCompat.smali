@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static getInsetsController(Landroid/view/Window;Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;
-    .registers 3
+    .locals 1
 
     .line 136
     new-instance v0, Landroidx/core/view/WindowInsetsControllerCompat;
@@ -43,7 +43,7 @@
 .end method
 
 .method public static requireViewById(Landroid/view/Window;I)Landroid/view/View;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -65,24 +65,24 @@
 .end method
 
 .method public static setDecorFitsSystemWindows(Landroid/view/Window;Z)V
-    .registers 4
+    .locals 2
 
     .line 119
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 120
     invoke-static {p0, p1}, Landroidx/core/view/WindowCompat$Api30Impl;->setDecorFitsSystemWindows(Landroid/view/Window;Z)V
 
-    goto :goto_d
+    goto :goto_0
 
     .line 122
-    :cond_a
+    :cond_0
     invoke-static {p0, p1}, Landroidx/core/view/WindowCompat$Api16Impl;->setDecorFitsSystemWindows(Landroid/view/Window;Z)V
 
-    :goto_d
+    :goto_0
     return-void
 .end method

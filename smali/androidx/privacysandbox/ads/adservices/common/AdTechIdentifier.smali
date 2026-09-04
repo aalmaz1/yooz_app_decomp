@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "identifier"
 
@@ -57,26 +57,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 39
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 40
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;->identifier:Ljava/lang/String;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final getIdentifier()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 24
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;->identifier:Ljava/lang/String;
@@ -100,7 +100,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;->identifier:Ljava/lang/String;
@@ -113,7 +113,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;->identifier:Ljava/lang/String;

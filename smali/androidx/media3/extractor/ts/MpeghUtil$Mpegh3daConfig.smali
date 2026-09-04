@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>(III[B)V
-    .registers 5
+    .locals 0
 
     .line 732
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method synthetic constructor <init>(III[BLandroidx/media3/extractor/ts/MpeghUtil$1;)V
-    .registers 6
+    .locals 0
 
     .line 711
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/extractor/ts/MpeghUtil$Mpegh3daConfig;-><init>(III[B)V

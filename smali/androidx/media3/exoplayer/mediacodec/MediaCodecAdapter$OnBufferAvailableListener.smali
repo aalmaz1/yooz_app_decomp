@@ -16,13 +16,13 @@
 
 # virtual methods
 .method public onInputBufferAvailable()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onOutputBufferAvailable()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

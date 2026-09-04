@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;Z)V
-    .registers 4
+    .locals 1
 
     .line 904
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public reset(II)V
-    .registers 3
+    .locals 0
 
     .line 911
     iput p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I

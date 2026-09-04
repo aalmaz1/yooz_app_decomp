@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 35
     const-class v0, Lcom/google/common/io/Flushables;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public static flush(Ljava/io/Flushable;Z)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -63,15 +63,15 @@
     .line 54
     :try_start_0
     invoke-interface {p0}, Ljava/io/Flushable;->flush()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :catch_4
+    :catch_0
     move-exception p0
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 57
     sget-object p1, Lcom/google/common/io/Flushables;->logger:Ljava/util/logging/Logger;
@@ -82,16 +82,16 @@
 
     invoke-virtual {p1, v0, v1, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_10
+    :goto_0
     return-void
 
     .line 59
-    :cond_11
+    :cond_0
     throw p0
 .end method
 
 .method public static flushQuietly(Ljava/io/Flushable;)V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -104,14 +104,14 @@
     const/4 v0, 0x1
 
     .line 73
-    :try_start_1
+    :try_start_0
     invoke-static {p0, v0}, Lcom/google/common/io/Flushables;->flush(Ljava/io/Flushable;Z)V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_5
+    :catch_0
     move-exception p0
 
     .line 75
@@ -123,6 +123,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method

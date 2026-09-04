@@ -10,7 +10,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Landroidx/media3/common/audio/SonicAudioProcessor;-><init>()V

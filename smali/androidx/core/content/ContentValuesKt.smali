@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final varargs contentValuesOf([Lkotlin/Pair;)Landroid/content/ContentValues;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -56,8 +56,8 @@
 
     const/4 v2, 0x0
 
-    :goto_8
-    if-ge v2, v1, :cond_a5
+    :goto_0
+    if-ge v2, v1, :cond_a
 
     aget-object v3, p0, v2
 
@@ -71,126 +71,126 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_0
 
     .line 31
     invoke-virtual {v0, v4}, Landroid/content/ContentValues;->putNull(Ljava/lang/String;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 32
-    :cond_1c
+    :cond_0
     instance-of v5, v3, Ljava/lang/String;
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_1
 
     check-cast v3, Ljava/lang/String;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 33
-    :cond_26
+    :cond_1
     instance-of v5, v3, Ljava/lang/Integer;
 
-    if-eqz v5, :cond_30
+    if-eqz v5, :cond_2
 
     check-cast v3, Ljava/lang/Integer;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 34
-    :cond_30
+    :cond_2
     instance-of v5, v3, Ljava/lang/Long;
 
-    if-eqz v5, :cond_3a
+    if-eqz v5, :cond_3
 
     check-cast v3, Ljava/lang/Long;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 35
-    :cond_3a
+    :cond_3
     instance-of v5, v3, Ljava/lang/Boolean;
 
-    if-eqz v5, :cond_44
+    if-eqz v5, :cond_4
 
     check-cast v3, Ljava/lang/Boolean;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 36
-    :cond_44
+    :cond_4
     instance-of v5, v3, Ljava/lang/Float;
 
-    if-eqz v5, :cond_4e
+    if-eqz v5, :cond_5
 
     check-cast v3, Ljava/lang/Float;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Float;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 37
-    :cond_4e
+    :cond_5
     instance-of v5, v3, Ljava/lang/Double;
 
-    if-eqz v5, :cond_58
+    if-eqz v5, :cond_6
 
     check-cast v3, Ljava/lang/Double;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Double;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 38
-    :cond_58
+    :cond_6
     instance-of v5, v3, [B
 
-    if-eqz v5, :cond_62
+    if-eqz v5, :cond_7
 
     check-cast v3, [B
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 39
-    :cond_62
+    :cond_7
     instance-of v5, v3, Ljava/lang/Byte;
 
-    if-eqz v5, :cond_6c
+    if-eqz v5, :cond_8
 
     check-cast v3, Ljava/lang/Byte;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Byte;)V
 
-    goto :goto_75
+    goto :goto_1
 
     .line 40
-    :cond_6c
+    :cond_8
     instance-of v5, v3, Ljava/lang/Short;
 
-    if-eqz v5, :cond_78
+    if-eqz v5, :cond_9
 
     check-cast v3, Ljava/lang/Short;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Short;)V
 
-    :goto_75
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 42
-    :cond_78
+    :cond_9
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -236,6 +236,6 @@
 
     throw v0
 
-    :cond_a5
+    :cond_a
     return-object v0
 .end method

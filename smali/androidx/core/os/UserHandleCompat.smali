@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method private static getGetUserIdMethod()Ljava/lang/reflect/Method;
-    .registers 5
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchMethodException;
@@ -46,7 +46,7 @@
     .line 86
     sget-object v0, Landroidx/core/os/UserHandleCompat;->sGetUserIdMethod:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 87
     const-class v0, Landroid/os/UserHandle;
@@ -73,14 +73,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 91
-    :cond_19
+    :cond_0
     sget-object v0, Landroidx/core/os/UserHandleCompat;->sGetUserIdMethod:Ljava/lang/reflect/Method;
 
     return-object v0
 .end method
 
 .method private static getUserHandleConstructor()Ljava/lang/reflect/Constructor;
-    .registers 5
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -99,7 +99,7 @@
     .line 95
     sget-object v0, Landroidx/core/os/UserHandleCompat;->sUserHandleConstructor:Ljava/lang/reflect/Constructor;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 96
     const-class v0, Landroid/os/UserHandle;
@@ -124,14 +124,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
     .line 100
-    :cond_17
+    :cond_0
     sget-object v0, Landroidx/core/os/UserHandleCompat;->sUserHandleConstructor:Ljava/lang/reflect/Constructor;
 
     return-object v0
 .end method
 
 .method public static getUserHandleForUid(I)Landroid/os/UserHandle;
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-static {p0}, Landroidx/core/os/UserHandleCompat$Api24Impl;->getUserHandleForUid(I)Landroid/os/UserHandle;

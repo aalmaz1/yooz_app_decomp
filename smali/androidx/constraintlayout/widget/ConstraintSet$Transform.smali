@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1057
     new-instance v0, Landroid/util/SparseIntArray;
@@ -180,7 +180,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -238,7 +238,7 @@
 
 # virtual methods
 .method public copyFrom(Landroidx/constraintlayout/widget/ConstraintSet$Transform;)V
-    .registers 3
+    .locals 1
 
     .line 1042
     iget-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->mApply:Z
@@ -309,7 +309,7 @@
 .end method
 
 .method fillFromAttributeList(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 7
+    .locals 4
 
     .line 1085
     sget-object v0, Landroidx/constraintlayout/widget/R$styleable;->Transform:[I
@@ -330,8 +330,8 @@
 
     const/4 v1, 0x0
 
-    :goto_e
-    if-ge v1, v0, :cond_85
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 1089
     invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -345,12 +345,12 @@
 
     move-result v3
 
-    packed-switch v3, :pswitch_data_8a
+    packed-switch v3, :pswitch_data_0
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1126
-    :pswitch_1e
+    :pswitch_0
     iput-boolean p2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->applyElevation:Z
 
     .line 1127
@@ -362,10 +362,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->elevation:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1121
-    :pswitch_29
+    :pswitch_1
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationZ:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -374,10 +374,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationZ:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1117
-    :pswitch_32
+    :pswitch_2
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationY:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -386,10 +386,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationY:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1114
-    :pswitch_3b
+    :pswitch_3
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationX:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -398,10 +398,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->translationX:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1111
-    :pswitch_44
+    :pswitch_4
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotY:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -410,10 +410,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotY:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1108
-    :pswitch_4d
+    :pswitch_5
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotX:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -422,10 +422,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->transformPivotX:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1105
-    :pswitch_56
+    :pswitch_6
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleY:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -434,10 +434,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleY:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1102
-    :pswitch_5f
+    :pswitch_7
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleX:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -446,10 +446,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->scaleX:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1099
-    :pswitch_68
+    :pswitch_8
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationY:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -458,10 +458,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationY:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1096
-    :pswitch_71
+    :pswitch_9
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationX:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -470,10 +470,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotationX:F
 
-    goto :goto_82
+    goto :goto_1
 
     .line 1093
-    :pswitch_7a
+    :pswitch_a
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotation:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -482,31 +482,31 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Transform;->rotation:F
 
-    :goto_82
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1132
-    :cond_85
+    :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 
     nop
 
-    :pswitch_data_8a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7a
-        :pswitch_71
-        :pswitch_68
-        :pswitch_5f
-        :pswitch_56
-        :pswitch_4d
-        :pswitch_44
-        :pswitch_3b
-        :pswitch_32
-        :pswitch_29
-        :pswitch_1e
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

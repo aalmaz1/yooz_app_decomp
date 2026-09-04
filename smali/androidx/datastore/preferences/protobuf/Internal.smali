@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "UTF-8"
 
@@ -82,7 +82,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,7 +91,7 @@
 .end method
 
 .method public static byteArrayDefaultValue(Ljava/lang/String;)[B
-    .registers 2
+    .locals 1
 
     .line 119
     sget-object v0, Landroidx/datastore/preferences/protobuf/Internal;->ISO_8859_1:Ljava/nio/charset/Charset;
@@ -104,7 +104,7 @@
 .end method
 
 .method public static byteBufferDefaultValue(Ljava/lang/String;)Ljava/nio/ByteBuffer;
-    .registers 1
+    .locals 0
 
     .line 128
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/Internal;->byteArrayDefaultValue(Ljava/lang/String;)[B
@@ -119,7 +119,7 @@
 .end method
 
 .method public static bytesDefaultValue(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 111
     sget-object v0, Landroidx/datastore/preferences/protobuf/Internal;->ISO_8859_1:Ljava/nio/charset/Charset;
@@ -136,7 +136,7 @@
 .end method
 
 .method static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -152,7 +152,7 @@
 .end method
 
 .method static checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -163,12 +163,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 72
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
@@ -177,7 +177,7 @@
 .end method
 
 .method public static copyByteBuffer(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 139
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
@@ -206,7 +206,7 @@
 .end method
 
 .method public static equals(Ljava/util/List;Ljava/util/List;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -228,20 +228,20 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     return v2
 
-    :cond_c
+    :cond_0
     move v0, v2
 
     .line 260
-    :goto_d
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_29
+    if-ge v0, v1, :cond_2
 
     .line 261
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -260,23 +260,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_26
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static equalsByteBuffer(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z
-    .registers 4
+    .locals 2
 
     .line 306
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
@@ -287,14 +287,14 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 311
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
 
     move-result-object p0
@@ -319,7 +319,7 @@
 .end method
 
 .method public static equalsByteBuffer(Ljava/util/List;Ljava/util/List;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -343,20 +343,20 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     return v2
 
-    :cond_c
+    :cond_0
     move v0, v2
 
     .line 319
-    :goto_d
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_29
+    if-ge v0, v1, :cond_2
 
     .line 320
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -375,23 +375,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_26
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static getDefaultInstance(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -422,12 +422,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/MessageLite;
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 369
@@ -453,23 +453,23 @@
 .end method
 
 .method public static hashBoolean(Z)I
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     const/16 p0, 0x4cf
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/16 p0, 0x4d5
 
-    :goto_7
+    :goto_0
     return p0
 .end method
 
 .method public static hashCode(Ljava/util/List;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -485,12 +485,12 @@
 
     const/4 v0, 0x1
 
-    :goto_5
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -507,14 +507,14 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return v0
 .end method
 
 .method public static hashCode([B)I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -529,23 +529,23 @@
 .end method
 
 .method static hashCode([BII)I
-    .registers 3
+    .locals 0
 
     .line 292
     invoke-static {p2, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Internal;->partialHash(I[BII)I
 
     move-result p0
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    :cond_7
+    :cond_0
     return p0
 .end method
 
 .method public static hashCodeByteBuffer(Ljava/nio/ByteBuffer;)I
-    .registers 7
+    .locals 6
 
     .line 340
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasArray()Z
@@ -554,7 +554,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 342
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
@@ -577,35 +577,35 @@
 
     move-result p0
 
-    if-nez p0, :cond_1e
+    if-nez p0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     move v1, p0
 
-    :goto_1f
+    :goto_0
     return v1
 
     .line 348
-    :cond_20
+    :cond_1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v0
 
     const/16 v2, 0x1000
 
-    if-le v0, v2, :cond_29
+    if-le v0, v2, :cond_2
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_29
+    :cond_2
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v2
 
     .line 349
-    :goto_2d
+    :goto_1
     new-array v0, v2, [B
 
     .line 350
@@ -622,30 +622,30 @@
     move-result p0
 
     .line 353
-    :goto_3a
+    :goto_2
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v4
 
-    if-lez v4, :cond_55
+    if-lez v4, :cond_4
 
     .line 355
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v4
 
-    if-gt v4, v2, :cond_4b
+    if-gt v4, v2, :cond_3
 
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v4
 
-    goto :goto_4c
+    goto :goto_3
 
-    :cond_4b
+    :cond_3
     move v4, v2
 
-    :goto_4c
+    :goto_3
     const/4 v5, 0x0
 
     .line 356
@@ -656,22 +656,22 @@
 
     move-result p0
 
-    goto :goto_3a
+    goto :goto_2
 
-    :cond_55
-    if-nez p0, :cond_58
+    :cond_4
+    if-nez p0, :cond_5
 
-    goto :goto_59
+    goto :goto_4
 
-    :cond_58
+    :cond_5
     move v1, p0
 
-    :goto_59
+    :goto_4
     return v1
 .end method
 
 .method public static hashCodeByteBuffer(Ljava/util/List;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -688,12 +688,12 @@
 
     const/4 v0, 0x1
 
-    :goto_5
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -710,14 +710,14 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return v0
 .end method
 
 .method public static hashEnum(Landroidx/datastore/preferences/protobuf/Internal$EnumLite;)I
-    .registers 1
+    .locals 0
 
     .line 245
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Internal$EnumLite;->getNumber()I
@@ -728,7 +728,7 @@
 .end method
 
 .method public static hashEnumList(Ljava/util/List;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -746,12 +746,12 @@
 
     const/4 v0, 0x1
 
-    :goto_5
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -768,14 +768,14 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return v0
 .end method
 
 .method public static hashLong(J)I
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x20
 
@@ -789,7 +789,7 @@
 .end method
 
 .method public static isValidUtf8(Landroidx/datastore/preferences/protobuf/ByteString;)Z
-    .registers 1
+    .locals 0
 
     .line 176
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString;->isValidUtf8()Z
@@ -800,7 +800,7 @@
 .end method
 
 .method public static isValidUtf8([B)Z
-    .registers 1
+    .locals 0
 
     .line 181
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/Utf8;->isValidUtf8([B)Z
@@ -811,7 +811,7 @@
 .end method
 
 .method static mergeMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 387
     check-cast p0, Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -834,14 +834,14 @@
 .end method
 
 .method static partialHash(I[BII)I
-    .registers 6
+    .locals 2
 
     move v0, p2
 
-    :goto_1
+    :goto_0
     add-int v1, p2, p3
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_0
 
     mul-int/lit8 p0, p0, 0x1f
 
@@ -852,14 +852,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     return p0
 .end method
 
 .method public static stringDefaultValue(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 100
     new-instance v0, Ljava/lang/String;
@@ -878,7 +878,7 @@
 .end method
 
 .method public static toByteArray(Ljava/lang/String;)[B
-    .registers 2
+    .locals 1
 
     .line 186
     sget-object v0, Landroidx/datastore/preferences/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
@@ -891,7 +891,7 @@
 .end method
 
 .method public static toStringUtf8([B)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 191
     new-instance v0, Ljava/lang/String;

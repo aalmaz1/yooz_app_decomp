@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -42,32 +42,32 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ZLandroidx/media3/datasource/DataSource$Factory;)V
-    .registers 5
+    .locals 1
 
     .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_1
 
     .line 81
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_f
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 82
@@ -90,7 +90,7 @@
 .end method
 
 .method private static executePost(Landroidx/media3/datasource/DataSource$Factory;Ljava/lang/String;[BLjava/util/Map;)[B
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -163,46 +163,46 @@
     move-object p1, v2
 
     .line 184
-    :goto_2a
-    :try_start_2a
+    :goto_0
+    :try_start_0
     new-instance p2, Landroidx/media3/datasource/DataSourceInputStream;
 
     invoke-direct {p2, v0, p1}, Landroidx/media3/datasource/DataSourceInputStream;-><init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;)V
-    :try_end_2f
-    .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_2f} :catch_57
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 186
-    :try_start_2f
+    :try_start_1
     invoke-static {p2}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;)[B
 
     move-result-object p0
-    :try_end_33
-    .catch Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException; {:try_start_2f .. :try_end_33} :catch_39
-    .catchall {:try_start_2f .. :try_end_33} :catchall_37
+    :try_end_1
+    .catch Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 195
-    :try_start_33
+    :try_start_2
     invoke-static {p2}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
-    :try_end_36
-    .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_36} :catch_57
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     return-object p0
 
-    :catchall_37
+    :catchall_0
     move-exception p0
 
-    goto :goto_53
+    goto :goto_1
 
-    :catch_39
+    :catch_0
     move-exception p3
 
     .line 188
-    :try_start_3a
+    :try_start_3
     invoke-static {p3, p0}, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->getRedirectUrl(Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_0
 
     add-int/lit8 p0, p0, 0x1
 
@@ -218,35 +218,35 @@
     invoke-virtual {p1}, Landroidx/media3/datasource/DataSpec$Builder;->build()Landroidx/media3/datasource/DataSpec;
 
     move-result-object p1
-    :try_end_4e
-    .catchall {:try_start_3a .. :try_end_4e} :catchall_37
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 195
-    :try_start_4e
+    :try_start_4
     invoke-static {p2}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
-    :try_end_51
-    .catch Ljava/lang/Exception; {:try_start_4e .. :try_end_51} :catch_57
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 190
-    :cond_52
-    :try_start_52
+    :cond_0
+    :try_start_5
     throw p3
-    :try_end_53
-    .catchall {:try_start_52 .. :try_end_53} :catchall_37
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 195
-    :goto_53
-    :try_start_53
+    :goto_1
+    :try_start_6
     invoke-static {p2}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 196
     throw p0
-    :try_end_57
-    .catch Ljava/lang/Exception; {:try_start_53 .. :try_end_57} :catch_57
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
-    :catch_57
+    :catch_1
     move-exception p0
 
     move-object v7, p0
@@ -285,7 +285,7 @@
 .end method
 
 .method private static getRedirectUrl(Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;I)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 213
     iget v0, p0, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
@@ -294,38 +294,38 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_d
+    if-eq v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
     const/16 v1, 0x134
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_1
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x5
 
-    if-ge p1, v0, :cond_12
+    if-ge p1, v0, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     move p1, v2
 
-    :goto_13
+    :goto_0
     const/4 v0, 0x0
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_2
 
     return-object v0
 
     .line 219
-    :cond_17
+    :cond_2
     iget-object p0, p0, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->headerFields:Ljava/util/Map;
 
-    if-eqz p0, :cond_32
+    if-eqz p0, :cond_3
 
     const-string p1, "Location"
 
@@ -336,14 +336,14 @@
 
     check-cast p0, Ljava/util/List;
 
-    if-eqz p0, :cond_32
+    if-eqz p0, :cond_3
 
     .line 222
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_3
 
     .line 223
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -354,14 +354,14 @@
 
     return-object p0
 
-    :cond_32
+    :cond_3
     return-object v0
 .end method
 
 
 # virtual methods
 .method public clearAllKeyRequestProperties()V
-    .registers 3
+    .locals 2
 
     .line 116
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->keyRequestProperties:Ljava/util/Map;
@@ -369,7 +369,7 @@
     monitor-enter v0
 
     .line 117
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->keyRequestProperties:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->clear()V
@@ -379,18 +379,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public clearKeyRequestProperty(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 108
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -401,7 +401,7 @@
     monitor-enter v0
 
     .line 110
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->keyRequestProperties:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -411,18 +411,18 @@
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_6 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public executeKeyRequest(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;)[B
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/MediaDrmCallbackException;
@@ -437,25 +437,25 @@
     .line 136
     iget-boolean v1, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->forceDefaultLicenseUrl:Z
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_1
 
     .line 137
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->defaultLicenseUrl:Ljava/lang/String;
 
     .line 139
-    :cond_10
+    :cond_1
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_5e
+    if-nez v1, :cond_5
 
     .line 147
     new-instance v1, Ljava/util/HashMap;
@@ -469,30 +469,30 @@
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     const-string v2, "text/xml"
 
-    goto :goto_33
+    goto :goto_0
 
     .line 152
-    :cond_26
+    :cond_2
     sget-object v2, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v2, p1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_3
 
     const-string v2, "application/json"
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_31
+    :cond_3
     const-string v2, "application/octet-stream"
 
-    :goto_33
+    :goto_0
     const-string v3, "Content-Type"
 
     .line 153
@@ -505,7 +505,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_4
 
     const-string p1, "SOAPAction"
 
@@ -515,21 +515,21 @@
     invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 159
-    :cond_47
+    :cond_4
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->keyRequestProperties:Ljava/util/Map;
 
     monitor-enter p1
 
     .line 160
-    :try_start_4a
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->keyRequestProperties:Ljava/util/Map;
 
     invoke-interface {v1, v2}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     .line 161
     monitor-exit p1
-    :try_end_50
-    .catchall {:try_start_4a .. :try_end_50} :catchall_5b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 162
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->dataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
@@ -544,19 +544,19 @@
 
     return-object p1
 
-    :catchall_5b
+    :catchall_0
     move-exception p2
 
     .line 161
-    :try_start_5c
+    :try_start_1
     monitor-exit p1
-    :try_end_5d
-    .catchall {:try_start_5c .. :try_end_5d} :catchall_5b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p2
 
     .line 140
-    :cond_5e
+    :cond_5
     new-instance p1, Landroidx/media3/exoplayer/drm/MediaDrmCallbackException;
 
     new-instance p2, Landroidx/media3/datasource/DataSpec$Builder;
@@ -597,7 +597,7 @@
 .end method
 
 .method public executeProvisionRequest(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;)[B
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/MediaDrmCallbackException;
@@ -659,7 +659,7 @@
 .end method
 
 .method public setKeyRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 95
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -673,7 +673,7 @@
     monitor-enter v0
 
     .line 98
-    :try_start_9
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->keyRequestProperties:Ljava/util/Map;
 
     invoke-interface {v1, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -683,12 +683,12 @@
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_9 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

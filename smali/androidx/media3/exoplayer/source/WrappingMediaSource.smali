@@ -23,13 +23,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method protected constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 2
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 3
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -56,7 +56,7 @@
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 6
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -69,7 +69,7 @@
 .end method
 
 .method protected final disableChildSource()V
-    .registers 2
+    .locals 1
 
     .line 250
     sget-object v0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->CHILD_SOURCE_ID:Ljava/lang/Void;
@@ -80,7 +80,7 @@
 .end method
 
 .method protected final enableChildSource()V
-    .registers 2
+    .locals 1
 
     .line 245
     sget-object v0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->CHILD_SOURCE_ID:Ljava/lang/Void;
@@ -91,7 +91,7 @@
 .end method
 
 .method public getInitialTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -104,7 +104,7 @@
 .end method
 
 .method public getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     .line 100
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -117,13 +117,13 @@
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method
 
 .method protected bridge synthetic getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 0
 
     .line 49
     check-cast p1, Ljava/lang/Void;
@@ -136,7 +136,7 @@
 .end method
 
 .method protected final getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Void;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 0
 
     .line 190
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->getMediaPeriodIdForChildMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -147,13 +147,13 @@
 .end method
 
 .method protected getMediaTimeForChildMediaTime(JLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)J
-    .registers 4
+    .locals 0
 
     return-wide p1
 .end method
 
 .method protected bridge synthetic getMediaTimeForChildMediaTime(Ljava/lang/Object;JLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)J
-    .registers 5
+    .locals 0
 
     .line 49
     check-cast p1, Ljava/lang/Void;
@@ -166,7 +166,7 @@
 .end method
 
 .method protected final getMediaTimeForChildMediaTime(Ljava/lang/Void;JLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)J
-    .registers 5
+    .locals 0
 
     .line 210
     invoke-virtual {p0, p2, p3, p4}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->getMediaTimeForChildMediaTime(JLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)J
@@ -177,13 +177,13 @@
 .end method
 
 .method protected getWindowIndexForChildWindowIndex(I)I
-    .registers 2
+    .locals 0
 
     return p1
 .end method
 
 .method protected bridge synthetic getWindowIndexForChildWindowIndex(Ljava/lang/Object;I)I
-    .registers 3
+    .locals 0
 
     .line 49
     check-cast p1, Ljava/lang/Void;
@@ -196,7 +196,7 @@
 .end method
 
 .method protected final getWindowIndexForChildWindowIndex(Ljava/lang/Void;I)I
-    .registers 3
+    .locals 0
 
     .line 172
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->getWindowIndexForChildWindowIndex(I)I
@@ -207,7 +207,7 @@
 .end method
 
 .method public isSingleWindow()Z
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -220,7 +220,7 @@
 .end method
 
 .method protected onChildSourceInfoRefreshed(Landroidx/media3/common/Timeline;)V
-    .registers 2
+    .locals 0
 
     .line 167
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
@@ -229,7 +229,7 @@
 .end method
 
 .method protected bridge synthetic onChildSourceInfoRefreshed(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 0
 
     .line 49
     check-cast p1, Ljava/lang/Void;
@@ -240,7 +240,7 @@
 .end method
 
 .method protected final onChildSourceInfoRefreshed(Ljava/lang/Void;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 0
 
     .line 154
     invoke-virtual {p0, p3}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->onChildSourceInfoRefreshed(Landroidx/media3/common/Timeline;)V
@@ -249,7 +249,7 @@
 .end method
 
 .method protected final prepareChildSource()V
-    .registers 3
+    .locals 2
 
     .line 240
     sget-object v0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->CHILD_SOURCE_ID:Ljava/lang/Void;
@@ -262,7 +262,7 @@
 .end method
 
 .method protected prepareSourceInternal()V
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->prepareChildSource()V
@@ -271,7 +271,7 @@
 .end method
 
 .method protected final prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 2
+    .locals 0
 
     .line 68
     invoke-super {p0, p1}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
@@ -283,7 +283,7 @@
 .end method
 
 .method protected final releaseChildSource()V
-    .registers 2
+    .locals 1
 
     .line 255
     sget-object v0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->CHILD_SOURCE_ID:Ljava/lang/Void;
@@ -294,7 +294,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 148
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -305,7 +305,7 @@
 .end method
 
 .method public updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 3
+    .locals 1
 
     .line 122
     iget-object v0, p0, Landroidx/media3/exoplayer/source/WrappingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;

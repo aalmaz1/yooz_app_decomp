@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createCursorWindow(Ljava/lang/String;J)Landroid/database/CursorWindow;
-    .registers 4
+    .locals 1
 
     .line 59
     new-instance v0, Landroid/database/CursorWindow;

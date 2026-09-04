@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 .end method
 
 .method private assertInitialized()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "trackOutput",
@@ -97,7 +97,7 @@
 .end method
 
 .method private readHeaders(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -119,7 +119,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 p1, 0x3
 
@@ -131,7 +131,7 @@
     return p1
 
     .line 153
-    :cond_d
+    :cond_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v0
@@ -157,7 +157,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 156
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -168,14 +168,14 @@
 
     goto :goto_0
 
-    :cond_2d
+    :cond_1
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method private readHeadersAndUpdateState(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -193,14 +193,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 169
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->setupData:Landroidx/media3/extractor/ogg/StreamReader$SetupData;
 
     iget-object v0, v0, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
@@ -214,7 +214,7 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 171
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -229,14 +229,14 @@
     iput-boolean v1, p0, Landroidx/media3/extractor/ogg/StreamReader;->formatSet:Z
 
     .line 175
-    :cond_20
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->setupData:Landroidx/media3/extractor/ogg/StreamReader$SetupData;
 
     iget-object v0, v0, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
 
     const/4 v11, 0x0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 176
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->setupData:Landroidx/media3/extractor/ogg/StreamReader$SetupData;
@@ -245,10 +245,10 @@
 
     iput-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
 
-    goto :goto_67
+    goto :goto_1
 
     .line 177
-    :cond_2e
+    :cond_2
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v2
@@ -257,7 +257,7 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_41
+    if-nez v0, :cond_3
 
     .line 178
     new-instance v0, Landroidx/media3/extractor/ogg/StreamReader$UnseekableOggSeeker;
@@ -268,10 +268,10 @@
 
     iput-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
 
-    goto :goto_67
+    goto :goto_1
 
     .line 180
-    :cond_41
+    :cond_3
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->oggPacket:Landroidx/media3/extractor/ogg/OggPacket;
 
     invoke-virtual {v0}, Landroidx/media3/extractor/ogg/OggPacket;->getPageHeader()Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -283,17 +283,17 @@
 
     and-int/lit8 v2, v2, 0x4
 
-    if-eqz v2, :cond_4f
+    if-eqz v2, :cond_4
 
     move v10, v1
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_4f
+    :cond_4
     move v10, v11
 
     .line 182
-    :goto_50
+    :goto_0
     new-instance v12, Landroidx/media3/extractor/ogg/DefaultOggSeeker;
 
     iget-wide v2, p0, Landroidx/media3/extractor/ogg/StreamReader;->payloadStartPosition:J
@@ -321,7 +321,7 @@
 
     iput-object v12, p0, Landroidx/media3/extractor/ogg/StreamReader;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
 
-    :goto_67
+    :goto_1
     const/4 v0, 0x2
 
     .line 192
@@ -336,7 +336,7 @@
 .end method
 
 .method private readPayload(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 20
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -368,7 +368,7 @@
 
     const/4 v7, 0x1
 
-    if-ltz v6, :cond_16
+    if-ltz v6, :cond_0
 
     move-object/from16 v6, p2
 
@@ -377,12 +377,12 @@
 
     return v7
 
-    :cond_16
+    :cond_0
     const-wide/16 v8, -0x1
 
     cmp-long v6, v2, v8
 
-    if-gez v6, :cond_23
+    if-gez v6, :cond_1
 
     const-wide/16 v10, 0x2
 
@@ -394,10 +394,10 @@
     invoke-virtual {v0, v2, v3}, Landroidx/media3/extractor/ogg/StreamReader;->onSeekEnd(J)V
 
     .line 208
-    :cond_23
+    :cond_1
     iget-boolean v2, v0, Landroidx/media3/extractor/ogg/StreamReader;->seekMapSet:Z
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_2
 
     .line 209
     iget-object v2, v0, Landroidx/media3/extractor/ogg/StreamReader;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
@@ -421,12 +421,12 @@
     iput-boolean v7, v0, Landroidx/media3/extractor/ogg/StreamReader;->seekMapSet:Z
 
     .line 214
-    :cond_3a
+    :cond_2
     iget-wide v2, v0, Landroidx/media3/extractor/ogg/StreamReader;->lengthOfReadPacket:J
 
     cmp-long v2, v2, v4
 
-    if-gtz v2, :cond_4e
+    if-gtz v2, :cond_4
 
     iget-object v2, v0, Landroidx/media3/extractor/ogg/StreamReader;->oggPacket:Landroidx/media3/extractor/ogg/OggPacket;
 
@@ -434,11 +434,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_3
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_49
+    :cond_3
     const/4 v1, 0x3
 
     .line 227
@@ -449,8 +449,8 @@
     return v1
 
     .line 215
-    :cond_4e
-    :goto_4e
+    :cond_4
+    :goto_0
     iput-wide v4, v0, Landroidx/media3/extractor/ogg/StreamReader;->lengthOfReadPacket:J
 
     .line 216
@@ -467,7 +467,7 @@
 
     cmp-long v4, v2, v4
 
-    if-ltz v4, :cond_84
+    if-ltz v4, :cond_5
 
     .line 218
     iget-wide v4, v0, Landroidx/media3/extractor/ogg/StreamReader;->currentGranule:J
@@ -478,7 +478,7 @@
 
     cmp-long v6, v6, v10
 
-    if-ltz v6, :cond_84
+    if-ltz v6, :cond_5
 
     .line 220
     invoke-virtual {v0, v4, v5}, Landroidx/media3/extractor/ogg/StreamReader;->convertGranuleToTime(J)J
@@ -513,7 +513,7 @@
     iput-wide v8, v0, Landroidx/media3/extractor/ogg/StreamReader;->targetGranule:J
 
     .line 225
-    :cond_84
+    :cond_5
     iget-wide v4, v0, Landroidx/media3/extractor/ogg/StreamReader;->currentGranule:J
 
     add-long/2addr v4, v2
@@ -528,7 +528,7 @@
 
 # virtual methods
 .method protected convertGranuleToTime(J)J
-    .registers 5
+    .locals 2
 
     const-wide/32 v0, 0xf4240
 
@@ -545,7 +545,7 @@
 .end method
 
 .method protected convertTimeToGranule(J)J
-    .registers 5
+    .locals 2
 
     .line 250
     iget v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->sampleRate:I
@@ -562,7 +562,7 @@
 .end method
 
 .method init(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/TrackOutput;)V
-    .registers 3
+    .locals 0
 
     .line 71
     iput-object p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -579,7 +579,7 @@
 .end method
 
 .method protected onSeekEnd(J)V
-    .registers 3
+    .locals 0
 
     .line 280
     iput-wide p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->currentGranule:J
@@ -591,7 +591,7 @@
 .end method
 
 .method final read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -604,26 +604,26 @@
     .line 114
     iget v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->state:I
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_3
 
     const/4 v1, 0x1
 
     const/4 v2, 0x2
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_2
 
-    if-eq v0, v2, :cond_18
+    if-eq v0, v2, :cond_1
 
     const/4 p1, 0x3
 
-    if-ne v0, p1, :cond_12
+    if-ne v0, p1, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 128
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -631,7 +631,7 @@
     throw p1
 
     .line 122
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->oggSeeker:Landroidx/media3/extractor/ogg/OggSeeker;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -644,7 +644,7 @@
     return p1
 
     .line 118
-    :cond_22
+    :cond_2
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->payloadStartPosition:J
 
     long-to-int p2, v0
@@ -659,7 +659,7 @@
     return p1
 
     .line 116
-    :cond_2c
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/StreamReader;->readHeadersAndUpdateState(Landroidx/media3/extractor/ExtractorInput;)I
 
     move-result p1
@@ -683,11 +683,11 @@
 .end method
 
 .method protected reset(Z)V
-    .registers 6
+    .locals 4
 
     const-wide/16 v0, 0x0
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 83
     new-instance p1, Landroidx/media3/extractor/ogg/StreamReader$SetupData;
@@ -704,15 +704,15 @@
     .line 85
     iput p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->state:I
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x1
 
     .line 87
     iput p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->state:I
 
-    :goto_14
+    :goto_0
     const-wide/16 v2, -0x1
 
     .line 89
@@ -725,7 +725,7 @@
 .end method
 
 .method final seek(JJ)V
-    .registers 7
+    .locals 2
 
     .line 97
     iget-object v0, p0, Landroidx/media3/extractor/ogg/StreamReader;->oggPacket:Landroidx/media3/extractor/ogg/OggPacket;
@@ -736,7 +736,7 @@
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     .line 99
     iget-boolean p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->seekMapSet:Z
@@ -745,13 +745,13 @@
 
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/ogg/StreamReader;->reset(Z)V
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 101
-    :cond_13
+    :cond_0
     iget p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->state:I
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_1
 
     .line 102
     invoke-virtual {p0, p3, p4}, Landroidx/media3/extractor/ogg/StreamReader;->convertTimeToGranule(J)J
@@ -778,7 +778,7 @@
     .line 104
     iput p1, p0, Landroidx/media3/extractor/ogg/StreamReader;->state:I
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_0
     return-void
 .end method

@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/lang/Appendable;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public append(C)Ljava/lang/Appendable;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -80,7 +80,7 @@
     .line 1095
     iget v0, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 1096
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$4;->val$delegate:Ljava/lang/Appendable;
@@ -95,7 +95,7 @@
     iput v0, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
 
     .line 1099
-    :cond_f
+    :cond_0
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$4;->val$delegate:Ljava/lang/Appendable;
 
     invoke-interface {v0, p1}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
@@ -111,7 +111,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/CharSequence;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -134,7 +134,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
-    .registers 4
+    .locals 0
     .param p1    # Ljava/lang/CharSequence;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation

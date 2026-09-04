@@ -1,12 +1,13 @@
-# Временные файлы сборки
+# Build artifacts
 build/
 dist/
+*.apk
 *.idsig
 
-# Хранилище ключей (небезопасно пушить в паблик)
+# Developer keys
 *.keystore
+*.jks
 
-# Большие APK файлы (лучше выкладывать в Releases)
-*.apk
-yooz_LITE_LEGEND_62MB.apk
-patched_final_v2.apk
+# Logs and reports
+reports/baseline/
+reports/after/

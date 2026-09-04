@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/AudioAttributes;
-    .registers 9
+    .locals 8
 
     .line 127
     new-instance v7, Landroidx/media3/common/AudioAttributes;
@@ -83,7 +83,7 @@
 .end method
 
 .method public setAllowedCapturePolicy(I)Landroidx/media3/common/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 114
     iput p1, p0, Landroidx/media3/common/AudioAttributes$Builder;->allowedCapturePolicy:I
@@ -92,7 +92,7 @@
 .end method
 
 .method public setContentType(I)Landroidx/media3/common/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 93
     iput p1, p0, Landroidx/media3/common/AudioAttributes$Builder;->contentType:I
@@ -101,7 +101,7 @@
 .end method
 
 .method public setFlags(I)Landroidx/media3/common/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 100
     iput p1, p0, Landroidx/media3/common/AudioAttributes$Builder;->flags:I
@@ -110,7 +110,7 @@
 .end method
 
 .method public setSpatializationBehavior(I)Landroidx/media3/common/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 121
     iput p1, p0, Landroidx/media3/common/AudioAttributes$Builder;->spatializationBehavior:I
@@ -119,7 +119,7 @@
 .end method
 
 .method public setUsage(I)Landroidx/media3/common/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 107
     iput p1, p0, Landroidx/media3/common/AudioAttributes$Builder;->usage:I

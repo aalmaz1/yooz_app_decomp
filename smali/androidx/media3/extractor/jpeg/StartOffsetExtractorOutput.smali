@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/media3/extractor/ExtractorOutput;)V
-    .registers 4
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;)J
-    .registers 3
+    .locals 2
 
     .line 34
     iget-wide v0, p0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;->startOffset:J
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public endTracks()V
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -51,7 +51,7 @@
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 4
+    .locals 2
 
     .line 57
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -66,7 +66,7 @@
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 4
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;

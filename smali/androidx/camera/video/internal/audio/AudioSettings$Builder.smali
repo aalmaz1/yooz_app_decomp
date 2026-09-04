@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public final build()Landroidx/camera/video/internal/audio/AudioSettings;
-    .registers 5
+    .locals 4
 
     .line 138
     invoke-virtual {p0}, Landroidx/camera/video/internal/audio/AudioSettings$Builder;->autoBuild()Landroidx/camera/video/internal/audio/AudioSettings;
@@ -44,22 +44,22 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_e
+    if-ne v1, v2, :cond_0
 
     const-string v1, " audioSource"
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const-string v1, ""
 
     .line 143
-    :goto_10
+    :goto_0
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioSettings;->getSampleRate()I
 
     move-result v3
 
-    if-gtz v3, :cond_29
+    if-gtz v3, :cond_1
 
     .line 144
     new-instance v3, Ljava/lang/StringBuilder;
@@ -81,12 +81,12 @@
     move-result-object v1
 
     .line 146
-    :cond_29
+    :cond_1
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioSettings;->getChannelCount()I
 
     move-result v3
 
-    if-gtz v3, :cond_42
+    if-gtz v3, :cond_2
 
     .line 147
     new-instance v3, Ljava/lang/StringBuilder;
@@ -108,12 +108,12 @@
     move-result-object v1
 
     .line 149
-    :cond_42
+    :cond_2
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioSettings;->getAudioFormat()I
 
     move-result v3
 
-    if-ne v3, v2, :cond_5b
+    if-ne v3, v2, :cond_3
 
     .line 150
     new-instance v2, Ljava/lang/StringBuilder;
@@ -135,17 +135,17 @@
     move-result-object v1
 
     .line 153
-    :cond_5b
+    :cond_3
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_4
 
     return-object v0
 
     .line 154
-    :cond_62
+    :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;

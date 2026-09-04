@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraInfoInternal;Landroid/util/Size;)V
-    .registers 6
+    .locals 3
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,27 +45,27 @@
 
     iput v0, p0, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->mLensFacing:I
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_0
 
     .line 83
     invoke-direct {p0, p2}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->calculateFullFovRatioFromActiveArraySize(Landroid/util/Size;)Landroid/util/Rational;
 
     move-result-object p2
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 84
-    :cond_18
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->calculateFullFovRatioFromSupportedOutputSizes(Landroidx/camera/core/impl/CameraInfoInternal;)Landroid/util/Rational;
 
     move-result-object p2
 
-    :goto_1c
+    :goto_0
     iput-object p2, p0, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->mFullFovRatio:Landroid/util/Rational;
 
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_2d
+    if-eqz p2, :cond_2
 
     .line 87
     invoke-virtual {p2}, Landroid/util/Rational;->getNumerator()I
@@ -77,15 +77,15 @@
 
     move-result v2
 
-    if-lt v1, v2, :cond_2c
+    if-lt v1, v2, :cond_1
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_2c
+    :cond_1
     const/4 v0, 0x0
 
-    :cond_2d
-    :goto_2d
+    :cond_2
+    :goto_1
     iput-boolean v0, p0, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->mIsSensorLandscapeResolution:Z
 
     .line 89
@@ -99,7 +99,7 @@
 .end method
 
 .method private applyAspectRatioStrategy(Ljava/util/List;Landroidx/camera/core/resolutionselector/AspectRatioStrategy;)Ljava/util/LinkedHashMap;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,7 +130,7 @@
 .end method
 
 .method private applyAspectRatioStrategyFallbackRule(Ljava/util/Map;Landroidx/camera/core/resolutionselector/AspectRatioStrategy;)Ljava/util/LinkedHashMap;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -166,7 +166,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_1
 
     .line 352
     invoke-virtual {p2}, Landroidx/camera/core/resolutionselector/AspectRatioStrategy;->getPreferredAspectRatio()I
@@ -193,13 +193,13 @@
 
     move-result-object v1
 
-    :cond_27
-    :goto_27
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -212,15 +212,15 @@
 
     move-result v3
 
-    if-nez v3, :cond_27
+    if-nez v3, :cond_0
 
     .line 355
     invoke-interface {p1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_27
+    goto :goto_0
 
     .line 361
-    :cond_3d
+    :cond_1
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -248,12 +248,12 @@
 
     move-result-object p2
 
-    :goto_59
+    :goto_1
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_2
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -270,14 +270,14 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_59
+    goto :goto_1
 
-    :cond_6f
+    :cond_2
     return-object v0
 .end method
 
 .method private applyHighResolutionSettings(Ljava/util/List;Landroidx/camera/core/resolutionselector/ResolutionSelector;I)Ljava/util/List;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -299,7 +299,7 @@
 
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_21
+    if-ne p2, v0, :cond_0
 
     .line 302
     new-instance p2, Ljava/util/ArrayList;
@@ -327,12 +327,12 @@
 
     return-object p2
 
-    :cond_21
+    :cond_0
     return-object p1
 .end method
 
 .method private static applyMaxResolutionRestriction(Ljava/util/LinkedHashMap;Landroid/util/Size;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -360,12 +360,12 @@
 
     move-result-object v0
 
-    :goto_c
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -390,13 +390,13 @@
 
     move-result-object v3
 
-    :cond_27
-    :goto_27
+    :cond_0
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_3d
+    if-eqz v4, :cond_1
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -409,28 +409,28 @@
 
     move-result v5
 
-    if-gt v5, p1, :cond_27
+    if-gt v5, p1, :cond_0
 
     .line 464
     invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_27
+    goto :goto_1
 
     .line 467
-    :cond_3d
+    :cond_1
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
     .line 468
     invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_44
+    :cond_2
     return-void
 .end method
 
 .method private applyResolutionFilter(Ljava/util/List;Landroidx/camera/core/resolutionselector/ResolutionFilter;I)Ljava/util/List;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -445,12 +445,12 @@
         }
     .end annotation
 
-    if-nez p2, :cond_3
+    if-nez p2, :cond_0
 
     return-object p1
 
     .line 493
-    :cond_3
+    :cond_0
     invoke-static {p3}, Landroidx/camera/core/impl/utils/CameraOrientationUtil;->surfaceRotationToDegrees(I)I
 
     move-result p3
@@ -462,15 +462,15 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 v2, 0x0
 
     .line 496
-    :goto_10
+    :goto_0
     invoke-static {p3, v0, v2}, Landroidx/camera/core/impl/utils/CameraOrientationUtil;->getRelativeImageRotation(IIZ)I
 
     move-result p3
@@ -489,12 +489,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_2
 
     return-object p2
 
     .line 504
-    :cond_24
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The returned sizes list of the resolution filter must be a subset of the provided sizes list."
@@ -505,7 +505,7 @@
 .end method
 
 .method private static applyResolutionStrategy(Ljava/util/LinkedHashMap;Landroidx/camera/core/resolutionselector/ResolutionStrategy;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -519,12 +519,12 @@
         }
     .end annotation
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 394
-    :cond_3
+    :cond_0
     invoke-virtual {p0}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -533,12 +533,12 @@
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -555,14 +555,14 @@
 
     invoke-static {v1, p1}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->applyResolutionStrategyFallbackRule(Ljava/util/List;Landroidx/camera/core/resolutionselector/ResolutionStrategy;)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method private static applyResolutionStrategyFallbackRule(Ljava/util/List;Landroidx/camera/core/resolutionselector/ResolutionStrategy;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -579,12 +579,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 412
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/core/resolutionselector/ResolutionStrategy;->getFallbackRule()I
 
     move-result v0
@@ -600,12 +600,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     return-void
 
     .line 419
-    :cond_18
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/resolutionselector/ResolutionStrategy;->getBoundSize()Landroid/util/Size;
 
     move-result-object p1
@@ -615,62 +615,62 @@
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_6
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_3c
+    if-eq v0, v1, :cond_5
 
     const/4 v2, 0x2
 
     const/4 v3, 0x0
 
-    if-eq v0, v2, :cond_38
+    if-eq v0, v2, :cond_4
 
     const/4 v2, 0x3
 
-    if-eq v0, v2, :cond_34
+    if-eq v0, v2, :cond_3
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_30
+    if-eq v0, v1, :cond_2
 
-    goto :goto_43
+    goto :goto_0
 
     .line 438
-    :cond_30
+    :cond_2
     invoke-static {p0, p1, v3}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->sortSupportedSizesByFallbackRuleClosestLowerThenHigher(Ljava/util/List;Landroid/util/Size;Z)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 434
-    :cond_34
+    :cond_3
     invoke-static {p0, p1, v1}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->sortSupportedSizesByFallbackRuleClosestLowerThenHigher(Ljava/util/List;Landroid/util/Size;Z)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 430
-    :cond_38
+    :cond_4
     invoke-static {p0, p1, v3}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->sortSupportedSizesByFallbackRuleClosestHigherThenLower(Ljava/util/List;Landroid/util/Size;Z)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 426
-    :cond_3c
+    :cond_5
     invoke-static {p0, p1, v1}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->sortSupportedSizesByFallbackRuleClosestHigherThenLower(Ljava/util/List;Landroid/util/Size;Z)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 423
-    :cond_40
+    :cond_6
     invoke-static {p0, p1}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->sortSupportedSizesByFallbackRuleNone(Ljava/util/List;Landroid/util/Size;)V
 
-    :goto_43
+    :goto_0
     return-void
 .end method
 
 .method private calculateFullFovRatioFromActiveArraySize(Landroid/util/Size;)Landroid/util/Rational;
-    .registers 4
+    .locals 2
 
     .line 98
     new-instance v0, Landroid/util/Rational;
@@ -689,7 +689,7 @@
 .end method
 
 .method private calculateFullFovRatioFromSupportedOutputSizes(Landroidx/camera/core/impl/CameraInfoInternal;)Landroid/util/Rational;
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x100
 
@@ -703,14 +703,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 115
-    :cond_e
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/utils/CompareSizesByArea;
 
     invoke-direct {v0}, Landroidx/camera/core/impl/utils/CompareSizesByArea;-><init>()V
@@ -738,7 +738,7 @@
 .end method
 
 .method private getCustomizedSupportedResolutionsFromConfig(ILandroidx/camera/core/impl/ImageOutputConfig;)Ljava/util/List;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -757,19 +757,19 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_1
 
     .line 165
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
 
-    :cond_b
+    :cond_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -786,35 +786,35 @@
 
     move-result v2
 
-    if-ne v2, p1, :cond_b
+    if-ne v2, p1, :cond_0
 
     .line 167
     iget-object p1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast p1, [Landroid/util/Size;
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     move-object p1, v0
 
-    :goto_27
-    if-nez p1, :cond_2a
+    :goto_0
+    if-nez p1, :cond_2
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 173
-    :cond_2a
+    :cond_2
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    :goto_2e
+    :goto_1
     return-object v0
 .end method
 
 .method private getResolutionCandidateList(Landroidx/camera/core/impl/UseCaseConfig;)Ljava/util/List;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -839,7 +839,7 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
     .line 266
     iget-object p1, p0, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -849,7 +849,7 @@
     move-result-object p1
 
     .line 271
-    :cond_12
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
@@ -868,7 +868,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_1
 
     .line 276
     new-instance p1, Ljava/lang/StringBuilder;
@@ -895,12 +895,12 @@
 
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_40
+    :cond_1
     return-object v1
 .end method
 
 .method static getResolutionListGroupingAspectRatioKeys(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -933,13 +933,13 @@
 
     move-result-object p0
 
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -965,19 +965,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_0
 
     .line 647
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :cond_36
+    :cond_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_4a
+    if-eqz v4, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -990,39 +990,39 @@
 
     move-result v4
 
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_4b
+    goto :goto_1
 
-    :cond_4a
+    :cond_2
     const/4 v1, 0x0
 
-    :goto_4b
-    if-nez v1, :cond_13
+    :goto_1
+    if-nez v1, :cond_0
 
     .line 654
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_51
+    :cond_3
     return-object v0
 .end method
 
 .method static getTargetAspectRatioRationalValue(IZ)Landroid/util/Rational;
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_2d
+    if-eq p0, v0, :cond_4
 
-    if-eqz p0, :cond_25
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_0
 
     .line 616
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1043,46 +1043,46 @@
 
     invoke-static {p1, p0}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_1d
-    if-eqz p1, :cond_22
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 610
     sget-object p0, Landroidx/camera/core/impl/utils/AspectRatioUtil;->ASPECT_RATIO_16_9:Landroid/util/Rational;
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 611
-    :cond_22
+    :cond_1
     sget-object p0, Landroidx/camera/core/impl/utils/AspectRatioUtil;->ASPECT_RATIO_9_16:Landroid/util/Rational;
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_25
-    if-eqz p1, :cond_2a
+    :cond_2
+    if-eqz p1, :cond_3
 
     .line 606
     sget-object p0, Landroidx/camera/core/impl/utils/AspectRatioUtil;->ASPECT_RATIO_4_3:Landroid/util/Rational;
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 607
-    :cond_2a
+    :cond_3
     sget-object p0, Landroidx/camera/core/impl/utils/AspectRatioUtil;->ASPECT_RATIO_3_4:Landroid/util/Rational;
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
-    :goto_2d
+    :cond_4
+    :goto_0
     const/4 p0, 0x0
 
-    :goto_2e
+    :goto_1
     return-object p0
 .end method
 
 .method static groupSizesByAspectRatio(Ljava/util/List;)Ljava/util/Map;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1112,12 +1112,12 @@
 
     move-result-object v1
 
-    :goto_d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1132,20 +1132,20 @@
 
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_0
 
     .line 674
-    :cond_22
+    :cond_0
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :cond_26
+    :cond_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1162,13 +1162,13 @@
 
     move-result-object v2
 
-    :cond_3a
-    :goto_3a
+    :cond_2
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1181,7 +1181,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_2
 
     .line 679
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1192,14 +1192,14 @@
 
     invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_56
+    :cond_3
     return-object v0
 .end method
 
 .method private sortSupportedOutputSizesByResolutionSelector(Landroidx/camera/core/impl/UseCaseConfig;)Ljava/util/List;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1233,7 +1233,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_0
 
     .line 212
     invoke-interface {p1}, Landroidx/camera/core/impl/UseCaseConfig;->getInputFormat()I
@@ -1246,7 +1246,7 @@
     move-result-object v2
 
     .line 218
-    :cond_1a
+    :cond_0
     invoke-virtual {v1}, Landroidx/camera/core/resolutionselector/ResolutionSelector;->getAspectRatioStrategy()Landroidx/camera/core/resolutionselector/AspectRatioStrategy;
 
     move-result-object p1
@@ -1263,13 +1263,13 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_1
 
     .line 224
     invoke-static {p1, v2}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->applyMaxResolutionRestriction(Ljava/util/LinkedHashMap;Landroid/util/Size;)V
 
     .line 228
-    :cond_2c
+    :cond_1
     invoke-virtual {v1}, Landroidx/camera/core/resolutionselector/ResolutionSelector;->getResolutionStrategy()Landroidx/camera/core/resolutionselector/ResolutionStrategy;
 
     move-result-object v2
@@ -1290,12 +1290,12 @@
 
     move-result-object p1
 
-    :cond_40
+    :cond_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_66
+    if-eqz v4, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1308,13 +1308,13 @@
 
     move-result-object v4
 
-    :cond_50
-    :goto_50
+    :cond_3
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_40
+    if-eqz v5, :cond_2
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1327,15 +1327,15 @@
 
     move-result v6
 
-    if-nez v6, :cond_50
+    if-nez v6, :cond_3
 
     .line 237
     invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_50
+    goto :goto_0
 
     .line 243
-    :cond_66
+    :cond_4
     invoke-virtual {v1}, Landroidx/camera/core/resolutionselector/ResolutionSelector;->getResolutionFilter()Landroidx/camera/core/resolutionselector/ResolutionFilter;
 
     move-result-object p1
@@ -1354,7 +1354,7 @@
 .end method
 
 .method static sortSupportedSizesByFallbackRuleClosestHigherThenLower(Ljava/util/List;Landroid/util/Size;Z)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1378,8 +1378,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_b
-    if-ltz v1, :cond_2e
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 539
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1397,7 +1397,7 @@
 
     move-result v4
 
-    if-lt v3, v4, :cond_27
+    if-lt v3, v4, :cond_0
 
     .line 541
     invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
@@ -1408,9 +1408,9 @@
 
     move-result v4
 
-    if-ge v3, v4, :cond_2e
+    if-ge v3, v4, :cond_1
 
-    :cond_27
+    :cond_0
     const/4 v3, 0x0
 
     .line 545
@@ -1418,26 +1418,26 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 551
-    :cond_2e
+    :cond_1
     invoke-interface {p0, v0}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
     .line 554
     invoke-static {p0}, Ljava/util/Collections;->reverse(Ljava/util/List;)V
 
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_2
 
     .line 557
     invoke-interface {p0, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_39
+    :cond_2
     return-void
 .end method
 
 .method private static sortSupportedSizesByFallbackRuleClosestLowerThenHigher(Ljava/util/List;Landroid/util/Size;Z)V
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1459,12 +1459,12 @@
     move v2, v1
 
     .line 575
-    :goto_7
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_2d
+    if-ge v2, v3, :cond_1
 
     .line 576
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1482,7 +1482,7 @@
 
     move-result v5
 
-    if-gt v4, v5, :cond_27
+    if-gt v4, v5, :cond_0
 
     .line 578
     invoke-virtual {v3}, Landroid/util/Size;->getHeight()I
@@ -1493,31 +1493,31 @@
 
     move-result v5
 
-    if-le v4, v5, :cond_2d
+    if-le v4, v5, :cond_1
 
     .line 582
-    :cond_27
+    :cond_0
     invoke-interface {v0, v1, v3}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 589
-    :cond_2d
+    :cond_1
     invoke-interface {p0, v0}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_2
 
     .line 592
     invoke-interface {p0, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_35
+    :cond_2
     return-void
 .end method
 
 .method private static sortSupportedSizesByFallbackRuleNone(Ljava/util/List;Landroid/util/Size;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1537,19 +1537,19 @@
     .line 518
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 520
     invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method getSortedSupportedOutputSizes(Landroidx/camera/core/impl/UseCaseConfig;)Ljava/util/List;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1573,17 +1573,17 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     return-object v2
 
     .line 136
-    :cond_b
+    :cond_0
     invoke-interface {v0, v1}, Landroidx/camera/core/impl/ImageOutputConfig;->getResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/core/resolutionselector/ResolutionSelector;
 
     move-result-object v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     .line 139
     iget-object v0, p0, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->mSupportedOutputSizesSorterLegacy:Landroidx/camera/core/internal/SupportedOutputSizesSorterLegacy;
@@ -1601,7 +1601,7 @@
     return-object p1
 
     .line 142
-    :cond_1c
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;->sortSupportedOutputSizesByResolutionSelector(Landroidx/camera/core/impl/UseCaseConfig;)Ljava/util/List;
 
     move-result-object p1

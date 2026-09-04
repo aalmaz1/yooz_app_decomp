@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;Landroid/view/ViewTreeObserver$OnScrollChangedListener;Landroid/view/View$OnLayoutChangeListener;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "v"
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     const-string/jumbo v0, "v"
 

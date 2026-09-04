@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/ogg/StreamReader$1;)V
-    .registers 2
+    .locals 0
 
     .line 283
     invoke-direct {p0}, Landroidx/media3/extractor/ogg/StreamReader$UnseekableOggSeeker;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createSeekMap()Landroidx/media3/extractor/SeekMap;
-    .registers 4
+    .locals 3
 
     .line 297
     new-instance v0, Landroidx/media3/extractor/SeekMap$Unseekable;
@@ -52,7 +52,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public startSeek(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

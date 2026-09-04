@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Companion;-><init>()V
 
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final obtain(Landroid/content/Context;)Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager;
-    .registers 4
+    .locals 2
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -103,7 +103,7 @@
 
     const/4 v1, 0x5
 
-    if-lt v0, v1, :cond_30
+    if-lt v0, v1, :cond_0
 
     .line 256
     new-instance v0, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager$Api33Ext5Impl;
@@ -112,11 +112,11 @@
 
     check-cast v0, Landroidx/privacysandbox/ads/adservices/measurement/MeasurementManager;
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_31
+    :goto_0
     return-object v0
 .end method

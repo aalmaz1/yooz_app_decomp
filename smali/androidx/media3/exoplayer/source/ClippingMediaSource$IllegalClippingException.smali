@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 74
     new-instance v0, Ljava/lang/StringBuilder;
@@ -64,33 +64,33 @@
 .end method
 
 .method private static getReasonDescription(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_12
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_f
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_0
 
     const-string/jumbo p0, "unknown"
 
     return-object p0
 
-    :cond_c
+    :cond_0
     const-string p0, "start exceeds end"
 
     return-object p0
 
-    :cond_f
+    :cond_1
     const-string p0, "not seekable to start"
 
     return-object p0
 
-    :cond_12
+    :cond_2
     const-string p0, "invalid period count"
 
     return-object p0

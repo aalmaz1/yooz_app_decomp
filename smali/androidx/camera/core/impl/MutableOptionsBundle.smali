@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 37
     sget-object v0, Landroidx/camera/core/impl/Config$OptionPriority;->OPTIONAL:Landroidx/camera/core/impl/Config$OptionPriority;
@@ -23,7 +23,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/TreeMap;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +44,7 @@
 .end method
 
 .method public static create()Landroidx/camera/core/impl/MutableOptionsBundle;
-    .registers 3
+    .locals 3
 
     .line 51
     new-instance v0, Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static from(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/MutableOptionsBundle;
-    .registers 8
+    .locals 7
 
     .line 62
     new-instance v0, Ljava/util/TreeMap;
@@ -79,12 +79,12 @@
 
     move-result-object v1
 
-    :goto_f
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -107,12 +107,12 @@
 
     move-result-object v3
 
-    :goto_28
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_3c
+    if-eqz v5, :cond_0
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -127,16 +127,16 @@
 
     invoke-interface {v4, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_28
+    goto :goto_1
 
     .line 70
-    :cond_3c
+    :cond_0
     invoke-virtual {v0, v2, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_f
+    goto :goto_0
 
     .line 73
-    :cond_40
+    :cond_1
     new-instance p0, Landroidx/camera/core/impl/MutableOptionsBundle;
 
     invoke-direct {p0, v0}, Landroidx/camera/core/impl/MutableOptionsBundle;-><init>(Ljava/util/TreeMap;)V
@@ -147,7 +147,7 @@
 
 # virtual methods
 .method public insertOption(Landroidx/camera/core/impl/Config$Option;Landroidx/camera/core/impl/Config$OptionPriority;Ljava/lang/Object;)V
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ValueT:",
@@ -169,7 +169,7 @@
 
     check-cast v0, Ljava/util/Map;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 97
     new-instance v0, Landroid/util/ArrayMap;
@@ -187,7 +187,7 @@
     return-void
 
     .line 104
-    :cond_18
+    :cond_0
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -208,18 +208,18 @@
 
     move-result v2
 
-    if-nez v2, :cond_76
+    if-nez v2, :cond_2
 
     invoke-static {v1, p2}, Landroidx/camera/core/impl/Config;->hasConflict(Landroidx/camera/core/impl/Config$OptionPriority;Landroidx/camera/core/impl/Config$OptionPriority;)Z
 
     move-result v2
 
-    if-nez v2, :cond_33
+    if-nez v2, :cond_1
 
-    goto :goto_76
+    goto :goto_0
 
     .line 109
-    :cond_33
+    :cond_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -288,15 +288,15 @@
     throw v2
 
     .line 114
-    :cond_76
-    :goto_76
+    :cond_2
+    :goto_0
     invoke-interface {v0, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method public insertOption(Landroidx/camera/core/impl/Config$Option;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ValueT:",
@@ -316,7 +316,7 @@
 .end method
 
 .method public removeOption(Landroidx/camera/core/impl/Config$Option;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ValueT:",

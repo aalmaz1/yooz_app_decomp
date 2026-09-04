@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/core/widget/TextViewKt$addTextChangedListener$2;
 
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 0
 
     .line 77
     check-cast p1, Ljava/lang/CharSequence;
@@ -119,7 +119,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method

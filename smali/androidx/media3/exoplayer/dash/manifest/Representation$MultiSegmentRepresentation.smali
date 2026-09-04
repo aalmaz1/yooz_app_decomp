@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 19
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public getAvailableSegmentCount(JJ)J
-    .registers 6
+    .locals 1
 
     .line 388
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -89,7 +89,7 @@
 .end method
 
 .method public getCacheKey()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public getDurationUs(JJ)J
-    .registers 6
+    .locals 1
 
     .line 368
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -110,7 +110,7 @@
 .end method
 
 .method public getFirstAvailableSegmentNum(JJ)J
-    .registers 6
+    .locals 1
 
     .line 378
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -123,7 +123,7 @@
 .end method
 
 .method public getFirstSegmentNum()J
-    .registers 3
+    .locals 2
 
     .line 373
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -136,13 +136,13 @@
 .end method
 
 .method public getIndex()Landroidx/media3/exoplayer/dash/DashSegmentIndex;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public getIndexUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public getNextSegmentAvailableTimeUs(JJ)J
-    .registers 6
+    .locals 1
 
     .line 393
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -163,7 +163,7 @@
 .end method
 
 .method public getSegmentCount(J)J
-    .registers 4
+    .locals 1
 
     .line 383
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -176,7 +176,7 @@
 .end method
 
 .method public getSegmentNum(JJ)J
-    .registers 6
+    .locals 1
 
     .line 358
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -189,7 +189,7 @@
 .end method
 
 .method public getSegmentUrl(J)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 4
+    .locals 1
 
     .line 353
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -202,7 +202,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 4
+    .locals 1
 
     .line 363
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
@@ -215,7 +215,7 @@
 .end method
 
 .method public isExplicit()Z
-    .registers 2
+    .locals 1
 
     .line 398
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;->segmentBase:Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;

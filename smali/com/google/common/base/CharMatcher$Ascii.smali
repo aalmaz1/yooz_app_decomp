@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1288
     new-instance v0, Lcom/google/common/base/CharMatcher$Ascii;
@@ -33,7 +33,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "CharMatcher.ascii()"
 
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -58,15 +58,15 @@
 
     const/16 v0, 0x7f
 
-    if-gt p1, v0, :cond_6
+    if-gt p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     return p1
 .end method

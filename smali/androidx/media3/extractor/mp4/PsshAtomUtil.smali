@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static buildPsshAtom(Ljava/util/UUID;[B)[B
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -39,24 +39,24 @@
 .end method
 
 .method public static buildPsshAtom(Ljava/util/UUID;[Ljava/util/UUID;[B)[B
-    .registers 9
+    .locals 6
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 54
     array-length v1, p2
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     move v1, v0
 
-    :goto_6
+    :goto_0
     add-int/lit8 v1, v1, 0x20
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_1
 
     .line 57
     array-length v2, p1
@@ -68,7 +68,7 @@
     add-int/2addr v1, v2
 
     .line 59
-    :cond_10
+    :cond_1
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v2
@@ -81,17 +81,17 @@
     .line 61
     invoke-virtual {v2, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_2
 
     const/high16 v1, 0x1000000
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
+    :cond_2
     move v1, v0
 
     .line 62
-    :goto_23
+    :goto_1
     invoke-virtual {v2, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 63
@@ -108,7 +108,7 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_3
 
     .line 66
     array-length p0, p1
@@ -120,8 +120,8 @@
 
     move v1, v0
 
-    :goto_3c
-    if-ge v1, p0, :cond_51
+    :goto_2
+    if-ge v1, p0, :cond_3
 
     aget-object v3, p1, v1
 
@@ -141,15 +141,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_51
-    if-eqz p2, :cond_5e
+    :cond_3
+    if-eqz p2, :cond_4
 
     .line 72
     array-length p0, p2
 
-    if-eqz p0, :cond_5e
+    if-eqz p0, :cond_4
 
     .line 73
     array-length p0, p2
@@ -159,14 +159,14 @@
     .line 74
     invoke-virtual {v2, p2}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    goto :goto_61
+    goto :goto_3
 
     .line 76
-    :cond_5e
+    :cond_4
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     .line 78
-    :goto_61
+    :goto_3
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object p0
@@ -175,28 +175,28 @@
 .end method
 
 .method public static isPsshAtom([B)Z
-    .registers 1
+    .locals 0
 
     .line 88
     invoke-static {p0}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->parsePsshAtom([B)Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;
 
     move-result-object p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static parsePsshAtom([B)Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;
-    .registers 14
+    .locals 13
 
     .line 159
     new-instance v0, Landroidx/media3/common/util/ParsableByteArray;
@@ -212,11 +212,11 @@
 
     const/4 v2, 0x0
 
-    if-ge p0, v1, :cond_f
+    if-ge p0, v1, :cond_0
 
     return-object v2
 
-    :cond_f
+    :cond_0
     const/4 p0, 0x0
 
     .line 164
@@ -234,7 +234,7 @@
 
     const-string v4, "PsshAtomUtil"
 
-    if-eq v3, v1, :cond_3c
+    if-eq v3, v1, :cond_1
 
     .line 168
     new-instance p0, Ljava/lang/StringBuilder;
@@ -266,14 +266,14 @@
     return-object v2
 
     .line 173
-    :cond_3c
+    :cond_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result v1
 
     const v3, 0x70737368    # 3.013775E29f
 
-    if-eq v1, v3, :cond_58
+    if-eq v1, v3, :cond_2
 
     .line 175
     new-instance p0, Ljava/lang/StringBuilder;
@@ -295,7 +295,7 @@
     return-object v2
 
     .line 178
-    :cond_58
+    :cond_2
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result v1
@@ -306,7 +306,7 @@
 
     const/4 v3, 0x1
 
-    if-le v1, v3, :cond_76
+    if-le v1, v3, :cond_3
 
     .line 180
     new-instance p0, Ljava/lang/StringBuilder;
@@ -328,7 +328,7 @@
     return-object v2
 
     .line 183
-    :cond_76
+    :cond_3
     new-instance v5, Ljava/util/UUID;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
@@ -341,7 +341,7 @@
 
     invoke-direct {v5, v6, v7, v8, v9}, Ljava/util/UUID;-><init>(JJ)V
 
-    if-ne v1, v3, :cond_a0
+    if-ne v1, v3, :cond_4
 
     .line 186
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
@@ -353,8 +353,8 @@
 
     move v7, p0
 
-    :goto_8c
-    if-ge v7, v3, :cond_a1
+    :goto_0
+    if-ge v7, v3, :cond_5
 
     .line 189
     new-instance v8, Ljava/util/UUID;
@@ -373,13 +373,13 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_8c
+    goto :goto_0
 
-    :cond_a0
+    :cond_4
     move-object v6, v2
 
     .line 192
-    :cond_a1
+    :cond_5
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result v3
@@ -389,7 +389,7 @@
 
     move-result v7
 
-    if-eq v3, v7, :cond_c8
+    if-eq v3, v7, :cond_6
 
     .line 195
     new-instance p0, Ljava/lang/StringBuilder;
@@ -421,7 +421,7 @@
     return-object v2
 
     .line 199
-    :cond_c8
+    :cond_6
     new-array v2, v3, [B
 
     .line 200
@@ -436,7 +436,7 @@
 .end method
 
 .method public static parseSchemeSpecificData([BLjava/util/UUID;)[B
-    .registers 5
+    .locals 3
 
     .line 139
     invoke-static {p0}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->parsePsshAtom([B)Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;
@@ -445,19 +445,19 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     return-object v0
 
     .line 143
-    :cond_8
+    :cond_0
     iget-object v1, p0, Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;->uuid:Ljava/util/UUID;
 
     invoke-virtual {p1, v1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_1
 
     .line 144
     new-instance v1, Ljava/lang/StringBuilder;
@@ -499,49 +499,49 @@
     return-object v0
 
     .line 147
-    :cond_37
+    :cond_1
     iget-object p0, p0, Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;->schemeData:[B
 
     return-object p0
 .end method
 
 .method public static parseUuid([B)Ljava/util/UUID;
-    .registers 1
+    .locals 0
 
     .line 102
     invoke-static {p0}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->parsePsshAtom([B)Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;
 
     move-result-object p0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 106
-    :cond_8
+    :cond_0
     iget-object p0, p0, Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;->uuid:Ljava/util/UUID;
 
     return-object p0
 .end method
 
 .method public static parseVersion([B)I
-    .registers 1
+    .locals 0
 
     .line 119
     invoke-static {p0}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->parsePsshAtom([B)Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;
 
     move-result-object p0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const/4 p0, -0x1
 
     return p0
 
     .line 123
-    :cond_8
+    :cond_0
     iget p0, p0, Landroidx/media3/extractor/mp4/PsshAtomUtil$PsshAtom;->version:I
 
     return p0

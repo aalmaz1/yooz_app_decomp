@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/media3/extractor/ogg/StreamReader;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method static appendNumberOfSamples(Landroidx/media3/common/util/ParsableByteArray;J)V
-    .registers 9
+    .locals 6
 
     .line 178
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->capacity()I
@@ -47,7 +47,7 @@
 
     add-int/lit8 v1, v1, 0x4
 
-    if-ge v0, v1, :cond_1e
+    if-ge v0, v1, :cond_0
 
     .line 179
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -66,10 +66,10 @@
 
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->reset([B)V
 
-    goto :goto_27
+    goto :goto_0
 
     .line 181
-    :cond_1e
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
 
     move-result v0
@@ -79,7 +79,7 @@
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setLimit(I)V
 
     .line 185
-    :goto_27
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v0
@@ -162,7 +162,7 @@
 .end method
 
 .method private static decodeBlockSize(BLandroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;)I
-    .registers 4
+    .locals 2
 
     .line 194
     iget v0, p1, Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;->iLogModes:I
@@ -180,27 +180,27 @@
 
     iget-boolean p0, p0, Landroidx/media3/extractor/VorbisUtil$Mode;->blockFlag:Z
 
-    if-nez p0, :cond_14
+    if-nez p0, :cond_0
 
     .line 197
     iget-object p0, p1, Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;
 
     iget p0, p0, Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
 
-    goto :goto_18
+    goto :goto_0
 
     .line 199
-    :cond_14
+    :cond_0
     iget-object p0, p1, Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;
 
     iget p0, p0, Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;->blockSize1:I
 
-    :goto_18
+    :goto_0
     return p0
 .end method
 
 .method static readBits(BII)I
-    .registers 3
+    .locals 0
 
     shr-int/2addr p0, p2
 
@@ -216,21 +216,21 @@
 .end method
 
 .method public static verifyBitstreamType(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
     .line 48
-    :try_start_1
+    :try_start_0
     invoke-static {v0, p0, v0}, Landroidx/media3/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILandroidx/media3/common/util/ParsableByteArray;Z)Z
 
     move-result p0
-    :try_end_5
-    .catch Landroidx/media3/common/ParserException; {:try_start_1 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_6
+    :catch_0
     const/4 p0, 0x0
 
     return p0
@@ -239,7 +239,7 @@
 
 # virtual methods
 .method protected onSeekEnd(J)V
-    .registers 5
+    .locals 2
 
     .line 68
     invoke-super {p0, p1, p2}, Landroidx/media3/extractor/ogg/StreamReader;->onSeekEnd(J)V
@@ -250,34 +250,34 @@
 
     const/4 p2, 0x0
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move p1, p2
 
     .line 69
-    :goto_d
+    :goto_0
     iput-boolean p1, p0, Landroidx/media3/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
 
     .line 70
     iget-object p1, p0, Landroidx/media3/extractor/ogg/VorbisReader;->vorbisIdHeader:Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     iget p2, p1, Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
 
-    :cond_15
+    :cond_1
     iput p2, p0, Landroidx/media3/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
 
     return-void
 .end method
 
 .method protected preparePayload(Landroidx/media3/common/util/ParsableByteArray;)J
-    .registers 7
+    .locals 5
 
     .line 76
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -292,14 +292,14 @@
 
     and-int/2addr v0, v2
 
-    if-ne v0, v2, :cond_e
+    if-ne v0, v2, :cond_0
 
     const-wide/16 v0, -0x1
 
     return-wide v0
 
     .line 81
-    :cond_e
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v0
@@ -321,7 +321,7 @@
     .line 85
     iget-boolean v3, p0, Landroidx/media3/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_1
 
     iget v1, p0, Landroidx/media3/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
 
@@ -329,7 +329,7 @@
 
     div-int/lit8 v1, v1, 0x4
 
-    :cond_29
+    :cond_1
     int-to-long v3, v1
 
     .line 87
@@ -345,7 +345,7 @@
 .end method
 
 .method protected readHeaders(Landroidx/media3/common/util/ParsableByteArray;JLandroidx/media3/extractor/ogg/StreamReader$SetupData;)Z
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -362,7 +362,7 @@
     .line 99
     iget-object p2, p0, Landroidx/media3/extractor/ogg/VorbisReader;->vorbisSetup:Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 100
     iget-object p1, p4, Landroidx/media3/extractor/ogg/StreamReader$SetupData;->format:Landroidx/media3/common/Format;
@@ -374,7 +374,7 @@
     return p1
 
     .line 104
-    :cond_b
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/ogg/VorbisReader;->readSetupHeaders(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;
 
     move-result-object p1
@@ -383,12 +383,12 @@
 
     const/4 p2, 0x1
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_1
 
     return p2
 
     .line 110
-    :cond_15
+    :cond_1
     iget-object p3, p1, Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;
 
     .line 112
@@ -481,7 +481,7 @@
 .end method
 
 .method readSetupHeaders(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/ogg/VorbisReader$VorbisSetup;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -493,7 +493,7 @@
 
     const/4 v0, 0x0
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 138
     invoke-static {p1}, Landroidx/media3/extractor/VorbisUtil;->readVorbisIdentificationHeader(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;
@@ -505,10 +505,10 @@
     return-object v0
 
     .line 142
-    :cond_c
+    :cond_0
     iget-object v2, p0, Landroidx/media3/extractor/ogg/VorbisReader;->commentHeader:Landroidx/media3/extractor/VorbisUtil$CommentHeader;
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     .line 143
     invoke-static {p1}, Landroidx/media3/extractor/VorbisUtil;->readVorbisCommentHeader(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/VorbisUtil$CommentHeader;
@@ -520,7 +520,7 @@
     return-object v0
 
     .line 150
-    :cond_17
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
 
     move-result v0
@@ -567,12 +567,12 @@
 .end method
 
 .method protected reset(Z)V
-    .registers 2
+    .locals 0
 
     .line 56
     invoke-super {p0, p1}, Landroidx/media3/extractor/ogg/StreamReader;->reset(Z)V
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -585,7 +585,7 @@
     .line 60
     iput-object p1, p0, Landroidx/media3/extractor/ogg/VorbisReader;->commentHeader:Landroidx/media3/extractor/VorbisUtil$CommentHeader;
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
     .line 62

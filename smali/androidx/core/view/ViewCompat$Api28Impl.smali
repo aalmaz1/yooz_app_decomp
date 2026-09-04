@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5632
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static addOnUnhandledKeyEventListener(Landroid/view/View;Landroidx/core/view/ViewCompat$OnUnhandledKeyEventListenerCompat;)V
-    .registers 4
+    .locals 2
 
     .line 5678
     sget v0, Landroidx/core/R$id;->tag_unhandled_key_listeners:I
@@ -37,7 +37,7 @@
 
     check-cast v0, Landroidx/collection/SimpleArrayMap;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 5682
     new-instance v0, Landroidx/collection/SimpleArrayMap;
@@ -50,7 +50,7 @@
     invoke-virtual {p0, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 5686
-    :cond_14
+    :cond_0
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Landroidx/core/view/ViewCompat$Api28Impl$$ExternalSyntheticLambda0;
@@ -67,7 +67,7 @@
 .end method
 
 .method static getAccessibilityPaneTitle(Landroid/view/View;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 5644
     invoke-virtual {p0}, Landroid/view/View;->getAccessibilityPaneTitle()Ljava/lang/CharSequence;
@@ -78,7 +78,7 @@
 .end method
 
 .method static isAccessibilityHeading(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 5660
     invoke-virtual {p0}, Landroid/view/View;->isAccessibilityHeading()Z
@@ -89,7 +89,7 @@
 .end method
 
 .method static isScreenReaderFocusable(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 5665
     invoke-virtual {p0}, Landroid/view/View;->isScreenReaderFocusable()Z
@@ -100,7 +100,7 @@
 .end method
 
 .method static removeOnUnhandledKeyEventListener(Landroid/view/View;Landroidx/core/view/ViewCompat$OnUnhandledKeyEventListenerCompat;)V
-    .registers 3
+    .locals 1
 
     .line 5697
     sget v0, Landroidx/core/R$id;->tag_unhandled_key_listeners:I
@@ -112,29 +112,29 @@
 
     check-cast v0, Landroidx/collection/SimpleArrayMap;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     return-void
 
     .line 5703
-    :cond_b
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/view/View$OnUnhandledKeyEventListener;
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 5705
     invoke-virtual {p0, p1}, Landroid/view/View;->removeOnUnhandledKeyEventListener(Landroid/view/View$OnUnhandledKeyEventListener;)V
 
-    :cond_16
+    :cond_1
     return-void
 .end method
 
 .method static requireViewById(Landroid/view/View;I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -154,7 +154,7 @@
 .end method
 
 .method static setAccessibilityHeading(Landroid/view/View;Z)V
-    .registers 2
+    .locals 0
 
     .line 5655
     invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityHeading(Z)V
@@ -163,7 +163,7 @@
 .end method
 
 .method static setAccessibilityPaneTitle(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 5650
     invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityPaneTitle(Ljava/lang/CharSequence;)V
@@ -172,28 +172,28 @@
 .end method
 
 .method public static setAutofillId(Landroid/view/View;Landroidx/core/view/autofill/AutofillIdCompat;)V
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 5711
-    :cond_4
+    :cond_0
     invoke-virtual {p1}, Landroidx/core/view/autofill/AutofillIdCompat;->toAutofillId()Landroid/view/autofill/AutofillId;
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     invoke-virtual {p0, p1}, Landroid/view/View;->setAutofillId(Landroid/view/autofill/AutofillId;)V
 
     return-void
 .end method
 
 .method static setScreenReaderFocusable(Landroid/view/View;Z)V
-    .registers 2
+    .locals 0
 
     .line 5670
     invoke-virtual {p0, p1}, Landroid/view/View;->setScreenReaderFocusable(Z)V

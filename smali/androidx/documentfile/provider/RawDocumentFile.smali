@@ -9,7 +9,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/documentfile/provider/DocumentFile;Ljava/io/File;)V
-    .registers 3
+    .locals 0
 
     .line 33
     invoke-direct {p0, p1}, Landroidx/documentfile/provider/DocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;)V
@@ -21,7 +21,7 @@
 .end method
 
 .method private static deleteContents(Ljava/io/File;)Z
-    .registers 7
+    .locals 6
 
     .line 169
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
@@ -30,7 +30,7 @@
 
     const/4 v0, 0x1
 
-    if-eqz p0, :cond_37
+    if-eqz p0, :cond_2
 
     .line 172
     array-length v1, p0
@@ -39,8 +39,8 @@
 
     move v3, v2
 
-    :goto_a
-    if-ge v3, v1, :cond_37
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     aget-object v4, p0, v3
 
@@ -49,7 +49,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_19
+    if-eqz v5, :cond_0
 
     .line 174
     invoke-static {v4}, Landroidx/documentfile/provider/RawDocumentFile;->deleteContents(Ljava/io/File;)Z
@@ -59,12 +59,12 @@
     and-int/2addr v0, v5
 
     .line 176
-    :cond_19
+    :cond_0
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
 
     move-result v5
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_1
 
     .line 177
     new-instance v0, Ljava/lang/StringBuilder;
@@ -87,17 +87,17 @@
 
     move v0, v2
 
-    :cond_34
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_37
+    :cond_2
     return v0
 .end method
 
 .method private static getTypeForName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x2e
 
@@ -106,7 +106,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_1d
+    if-ltz v0, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -128,11 +128,11 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_1d
+    if-eqz p0, :cond_0
 
     return-object p0
 
-    :cond_1d
+    :cond_0
     const-string p0, "application/octet-stream"
 
     return-object p0
@@ -141,7 +141,7 @@
 
 # virtual methods
 .method public canRead()Z
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -154,7 +154,7 @@
 .end method
 
 .method public canWrite()Z
-    .registers 2
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -167,7 +167,7 @@
 .end method
 
 .method public createDirectory(Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 4
+    .locals 2
 
     .line 58
     new-instance v0, Ljava/io/File;
@@ -181,24 +181,24 @@
 
     move-result p1
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1
 
     invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 
     .line 60
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     new-instance p1, Landroidx/documentfile/provider/RawDocumentFile;
 
     invoke-direct {p1, p0, v0}, Landroidx/documentfile/provider/RawDocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;Ljava/io/File;)V
@@ -207,7 +207,7 @@
 .end method
 
 .method public createFile(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 4
+    .locals 1
 
     .line 41
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
@@ -218,7 +218,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 43
     new-instance v0, Ljava/lang/StringBuilder;
@@ -244,7 +244,7 @@
     move-result-object p2
 
     .line 45
-    :cond_21
+    :cond_0
     new-instance p1, Ljava/io/File;
 
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -252,19 +252,19 @@
     invoke-direct {p1, v0, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 47
-    :try_start_28
+    :try_start_0
     invoke-virtual {p1}, Ljava/io/File;->createNewFile()Z
 
     .line 48
     new-instance p2, Landroidx/documentfile/provider/RawDocumentFile;
 
     invoke-direct {p2, p0, p1}, Landroidx/documentfile/provider/RawDocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;Ljava/io/File;)V
-    :try_end_30
-    .catch Ljava/io/IOException; {:try_start_28 .. :try_end_30} :catch_31
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p2
 
-    :catch_31
+    :catch_0
     move-exception p1
 
     .line 50
@@ -292,7 +292,7 @@
 .end method
 
 .method public delete()Z
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -310,7 +310,7 @@
 .end method
 
 .method public exists()Z
-    .registers 2
+    .locals 1
 
     .line 129
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -323,7 +323,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -336,7 +336,7 @@
 .end method
 
 .method public getType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 79
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -345,14 +345,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 82
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -367,7 +367,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -380,7 +380,7 @@
 .end method
 
 .method public isDirectory()Z
-    .registers 2
+    .locals 1
 
     .line 88
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -393,7 +393,7 @@
 .end method
 
 .method public isFile()Z
-    .registers 2
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -406,7 +406,7 @@
 .end method
 
 .method public isVirtual()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -414,7 +414,7 @@
 .end method
 
 .method public lastModified()J
-    .registers 3
+    .locals 2
 
     .line 103
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -427,7 +427,7 @@
 .end method
 
 .method public length()J
-    .registers 3
+    .locals 2
 
     .line 108
     iget-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -440,7 +440,7 @@
 .end method
 
 .method public listFiles()[Landroidx/documentfile/provider/DocumentFile;
-    .registers 7
+    .locals 6
 
     .line 134
     new-instance v0, Ljava/util/ArrayList;
@@ -454,15 +454,15 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 137
     array-length v2, v1
 
     const/4 v3, 0x0
 
-    :goto_f
-    if-ge v3, v2, :cond_1e
+    :goto_0
+    if-ge v3, v2, :cond_0
 
     aget-object v4, v1, v3
 
@@ -475,10 +475,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 141
-    :cond_1e
+    :cond_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -495,7 +495,7 @@
 .end method
 
 .method public renameTo(Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 146
     new-instance v0, Ljava/io/File;
@@ -515,7 +515,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 148
     iput-object v0, p0, Landroidx/documentfile/provider/RawDocumentFile;->mFile:Ljava/io/File;
@@ -524,7 +524,7 @@
 
     return p1
 
-    :cond_17
+    :cond_0
     const/4 p1, 0x0
 
     return p1

@@ -122,7 +122,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 63
     new-instance v0, Landroidx/media3/common/text/Cue$Builder;
@@ -316,7 +316,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;Landroid/text/Layout$Alignment;Landroid/graphics/Bitmap;FIIFIIFFFZIIF)V
-    .registers 22
+    .locals 4
 
     move-object v0, p0
 
@@ -327,32 +327,32 @@
     .line 329
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 332
     invoke-static {p4}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_c
-    if-nez v2, :cond_10
+    :cond_0
+    if-nez v2, :cond_1
 
     const/4 v3, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v3, 0x0
 
     .line 334
-    :goto_11
+    :goto_0
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 336
-    :goto_14
+    :goto_1
     instance-of v3, v1, Landroid/text/Spanned;
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_2
 
     .line 337
     invoke-static {p1}, Landroid/text/SpannedString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannedString;
@@ -361,13 +361,13 @@
 
     iput-object v1, v0, Landroidx/media3/common/text/Cue;->text:Ljava/lang/CharSequence;
 
-    :goto_1e
+    :goto_2
     move-object v1, p2
 
-    goto :goto_2d
+    goto :goto_3
 
-    :cond_20
-    if-eqz v1, :cond_29
+    :cond_2
+    if-eqz v1, :cond_3
 
     .line 339
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -376,18 +376,18 @@
 
     iput-object v1, v0, Landroidx/media3/common/text/Cue;->text:Ljava/lang/CharSequence;
 
-    goto :goto_1e
+    goto :goto_2
 
-    :cond_29
+    :cond_3
     const/4 v1, 0x0
 
     .line 341
     iput-object v1, v0, Landroidx/media3/common/text/Cue;->text:Ljava/lang/CharSequence;
 
-    goto :goto_1e
+    goto :goto_2
 
     .line 343
-    :goto_2d
+    :goto_3
     iput-object v1, v0, Landroidx/media3/common/text/Cue;->textAlignment:Landroid/text/Layout$Alignment;
 
     move-object v1, p3
@@ -467,7 +467,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;Landroid/text/Layout$Alignment;Landroid/graphics/Bitmap;FIIFIIFFFZIIFLandroidx/media3/common/text/Cue$1;)V
-    .registers 19
+    .locals 0
 
     .line 57
     invoke-direct/range {p0 .. p17}, Landroidx/media3/common/text/Cue;-><init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;Landroid/text/Layout$Alignment;Landroid/graphics/Bitmap;FIIFIIFFFZIIF)V
@@ -476,7 +476,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/text/Cue;
-    .registers 6
+    .locals 5
 
     .line 932
     new-instance v0, Landroidx/media3/common/text/Cue$Builder;
@@ -490,7 +490,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_1
 
     .line 935
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue$Builder;
@@ -502,7 +502,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     .line 939
     invoke-static {v1}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;
@@ -514,12 +514,12 @@
 
     move-result-object v2
 
-    :goto_20
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -530,14 +530,14 @@
     .line 941
     invoke-static {v3, v1}, Landroidx/media3/common/text/CustomSpanBundler;->unbundleAndApplyCustomSpan(Landroid/os/Bundle;Landroid/text/Spannable;)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 943
-    :cond_30
+    :cond_0
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue$Builder;
 
     .line 946
-    :cond_33
+    :cond_1
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_TEXT_ALIGNMENT:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
@@ -546,13 +546,13 @@
 
     check-cast v1, Landroid/text/Layout$Alignment;
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_2
 
     .line 948
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setTextAlignment(Landroid/text/Layout$Alignment;)Landroidx/media3/common/text/Cue$Builder;
 
     .line 951
-    :cond_40
+    :cond_2
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_MULTI_ROW_ALIGNMENT:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
@@ -561,13 +561,13 @@
 
     check-cast v1, Landroid/text/Layout$Alignment;
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_3
 
     .line 953
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setMultiRowAlignment(Landroid/text/Layout$Alignment;)Landroidx/media3/common/text/Cue$Builder;
 
     .line 955
-    :cond_4d
+    :cond_3
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_BITMAP_PARCELABLE:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -578,22 +578,22 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_5c
+    if-eqz v1, :cond_4
 
     .line 957
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setBitmap(Landroid/graphics/Bitmap;)Landroidx/media3/common/text/Cue$Builder;
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 959
-    :cond_5c
+    :cond_4
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_BITMAP_BYTES:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
 
     move-result-object v1
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_5
 
     .line 961
     array-length v3, v1
@@ -607,15 +607,15 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setBitmap(Landroid/graphics/Bitmap;)Landroidx/media3/common/text/Cue$Builder;
 
     .line 965
-    :cond_6c
-    :goto_6c
+    :cond_5
+    :goto_1
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_LINE:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_87
+    if-eqz v3, :cond_6
 
     sget-object v3, Landroidx/media3/common/text/Cue;->FIELD_LINE_TYPE:Ljava/lang/String;
 
@@ -623,7 +623,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_87
+    if-eqz v4, :cond_6
 
     .line 966
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
@@ -637,14 +637,14 @@
     invoke-virtual {v0, v1, v3}, Landroidx/media3/common/text/Cue$Builder;->setLine(FI)Landroidx/media3/common/text/Cue$Builder;
 
     .line 968
-    :cond_87
+    :cond_6
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_LINE_ANCHOR:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_96
+    if-eqz v3, :cond_7
 
     .line 969
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -654,14 +654,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setLineAnchor(I)Landroidx/media3/common/text/Cue$Builder;
 
     .line 971
-    :cond_96
+    :cond_7
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_POSITION:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_a5
+    if-eqz v3, :cond_8
 
     .line 972
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
@@ -671,14 +671,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setPosition(F)Landroidx/media3/common/text/Cue$Builder;
 
     .line 974
-    :cond_a5
+    :cond_8
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_POSITION_ANCHOR:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_b4
+    if-eqz v3, :cond_9
 
     .line 975
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -688,14 +688,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setPositionAnchor(I)Landroidx/media3/common/text/Cue$Builder;
 
     .line 977
-    :cond_b4
+    :cond_9
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_TEXT_SIZE:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_cf
+    if-eqz v3, :cond_a
 
     sget-object v3, Landroidx/media3/common/text/Cue;->FIELD_TEXT_SIZE_TYPE:Ljava/lang/String;
 
@@ -703,7 +703,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_cf
+    if-eqz v4, :cond_a
 
     .line 978
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
@@ -717,14 +717,14 @@
     invoke-virtual {v0, v1, v3}, Landroidx/media3/common/text/Cue$Builder;->setTextSize(FI)Landroidx/media3/common/text/Cue$Builder;
 
     .line 980
-    :cond_cf
+    :cond_a
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_SIZE:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_de
+    if-eqz v3, :cond_b
 
     .line 981
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
@@ -734,14 +734,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setSize(F)Landroidx/media3/common/text/Cue$Builder;
 
     .line 983
-    :cond_de
+    :cond_b
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_BITMAP_HEIGHT:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_ed
+    if-eqz v3, :cond_c
 
     .line 984
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
@@ -751,14 +751,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setBitmapHeight(F)Landroidx/media3/common/text/Cue$Builder;
 
     .line 986
-    :cond_ed
+    :cond_c
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_WINDOW_COLOR:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_fc
+    if-eqz v3, :cond_d
 
     .line 987
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -768,27 +768,27 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setWindowColor(I)Landroidx/media3/common/text/Cue$Builder;
 
     .line 989
-    :cond_fc
+    :cond_d
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_WINDOW_COLOR_SET:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    if-nez v1, :cond_107
+    if-nez v1, :cond_e
 
     .line 990
     invoke-virtual {v0}, Landroidx/media3/common/text/Cue$Builder;->clearWindowColor()Landroidx/media3/common/text/Cue$Builder;
 
     .line 992
-    :cond_107
+    :cond_e
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_VERTICAL_TYPE:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_116
+    if-eqz v2, :cond_f
 
     .line 993
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -798,14 +798,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/text/Cue$Builder;->setVerticalType(I)Landroidx/media3/common/text/Cue$Builder;
 
     .line 995
-    :cond_116
+    :cond_f
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_SHEAR_DEGREES:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_125
+    if-eqz v2, :cond_10
 
     .line 996
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
@@ -815,7 +815,7 @@
     invoke-virtual {v0, p0}, Landroidx/media3/common/text/Cue$Builder;->setShearDegrees(F)Landroidx/media3/common/text/Cue$Builder;
 
     .line 998
-    :cond_125
+    :cond_10
     invoke-virtual {v0}, Landroidx/media3/common/text/Cue$Builder;->build()Landroidx/media3/common/text/Cue;
 
     move-result-object p0
@@ -824,7 +824,7 @@
 .end method
 
 .method private toBundleWithoutBitmap()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 901
     new-instance v0, Landroid/os/Bundle;
@@ -834,7 +834,7 @@
     .line 902
     iget-object v1, p0, Landroidx/media3/common/text/Cue;->text:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     .line 903
     sget-object v2, Landroidx/media3/common/text/Cue;->FIELD_TEXT:Ljava/lang/String;
@@ -846,7 +846,7 @@
 
     instance-of v2, v1, Landroid/text/Spanned;
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     .line 905
     check-cast v1, Landroid/text/Spanned;
@@ -860,7 +860,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_0
 
     .line 907
     sget-object v2, Landroidx/media3/common/text/Cue;->FIELD_CUSTOM_SPANS:Ljava/lang/String;
@@ -868,7 +868,7 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     .line 911
-    :cond_25
+    :cond_0
     sget-object v1, Landroidx/media3/common/text/Cue;->FIELD_TEXT_ALIGNMENT:Ljava/lang/String;
 
     iget-object v2, p0, Landroidx/media3/common/text/Cue;->textAlignment:Landroid/text/Layout$Alignment;
@@ -979,7 +979,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/text/Cue$Builder;
-    .registers 3
+    .locals 2
 
     .line 364
     new-instance v0, Landroidx/media3/common/text/Cue$Builder;
@@ -992,18 +992,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_9b
+    if-eqz p1, :cond_4
 
     .line 372
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1014,12 +1014,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_1
 
-    goto/16 :goto_9b
+    goto/16 :goto_2
 
     .line 375
-    :cond_13
+    :cond_1
     check-cast p1, Landroidx/media3/common/text/Cue;
 
     .line 376
@@ -1031,62 +1031,62 @@
 
     move-result v2
 
-    if-eqz v2, :cond_99
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/text/Cue;->textAlignment:Landroid/text/Layout$Alignment;
 
     iget-object v3, p1, Landroidx/media3/common/text/Cue;->textAlignment:Landroid/text/Layout$Alignment;
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/text/Cue;->multiRowAlignment:Landroid/text/Layout$Alignment;
 
     iget-object v3, p1, Landroidx/media3/common/text/Cue;->multiRowAlignment:Landroid/text/Layout$Alignment;
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/text/Cue;->bitmap:Landroid/graphics/Bitmap;
 
-    if-nez v2, :cond_34
+    if-nez v2, :cond_2
 
     iget-object v2, p1, Landroidx/media3/common/text/Cue;->bitmap:Landroid/graphics/Bitmap;
 
-    if-nez v2, :cond_99
+    if-nez v2, :cond_3
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_34
+    :cond_2
     iget-object v3, p1, Landroidx/media3/common/text/Cue;->bitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v3, :cond_99
+    if-eqz v3, :cond_3
 
     .line 381
     invoke-virtual {v2, v3}, Landroid/graphics/Bitmap;->sameAs(Landroid/graphics/Bitmap;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_99
+    if-eqz v2, :cond_3
 
-    :goto_3e
+    :goto_0
     iget v2, p0, Landroidx/media3/common/text/Cue;->line:F
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->line:F
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_99
+    if-nez v2, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->lineType:I
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->lineType:I
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->lineAnchor:I
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->lineAnchor:I
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->position:F
 
@@ -1094,13 +1094,13 @@
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_99
+    if-nez v2, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->positionAnchor:I
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->positionAnchor:I
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->size:F
 
@@ -1108,7 +1108,7 @@
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_99
+    if-nez v2, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->bitmapHeight:F
 
@@ -1116,25 +1116,25 @@
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_99
+    if-nez v2, :cond_3
 
     iget-boolean v2, p0, Landroidx/media3/common/text/Cue;->windowColorSet:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/text/Cue;->windowColorSet:Z
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->windowColor:I
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->windowColor:I
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->textSizeType:I
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->textSizeType:I
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->textSize:F
 
@@ -1142,13 +1142,13 @@
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_99
+    if-nez v2, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->verticalType:I
 
     iget v3, p1, Landroidx/media3/common/text/Cue;->verticalType:I
 
-    if-ne v2, v3, :cond_99
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/text/Cue;->shearDegrees:F
 
@@ -1156,23 +1156,23 @@
 
     cmpl-float p1, v2, p1
 
-    if-nez p1, :cond_99
+    if-nez p1, :cond_3
 
-    goto :goto_9a
+    goto :goto_1
 
-    :cond_99
+    :cond_3
     move v0, v1
 
-    :goto_9a
+    :goto_1
     return v0
 
-    :cond_9b
-    :goto_9b
+    :cond_4
+    :goto_2
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x11
 
@@ -1355,7 +1355,7 @@
 .end method
 
 .method public toBinderBasedBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 884
     invoke-direct {p0}, Landroidx/media3/common/text/Cue;->toBundleWithoutBitmap()Landroid/os/Bundle;
@@ -1365,19 +1365,19 @@
     .line 885
     iget-object v1, p0, Landroidx/media3/common/text/Cue;->bitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 886
     sget-object v2, Landroidx/media3/common/text/Cue;->FIELD_BITMAP_PARCELABLE:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    :cond_d
+    :cond_0
     return-object v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1390,7 +1390,7 @@
 .end method
 
 .method public toSerializableBundle()Landroid/os/Bundle;
-    .registers 6
+    .locals 5
 
     .line 863
     invoke-direct {p0}, Landroidx/media3/common/text/Cue;->toBundleWithoutBitmap()Landroid/os/Bundle;
@@ -1400,7 +1400,7 @@
     .line 864
     iget-object v1, p0, Landroidx/media3/common/text/Cue;->bitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 865
     new-instance v1, Ljava/io/ByteArrayOutputStream;
@@ -1429,6 +1429,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    :cond_22
+    :cond_0
     return-object v0
 .end method

@@ -94,7 +94,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1932
     new-instance v0, Landroidx/datastore/preferences/protobuf/Api;
@@ -113,7 +113,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 25
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;-><init>()V
@@ -151,7 +151,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/datastore/preferences/protobuf/Api;
-    .registers 1
+    .locals 1
 
     .line 20
     sget-object v0, Landroidx/datastore/preferences/protobuf/Api;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Api;
@@ -160,7 +160,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/datastore/preferences/protobuf/Api;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setName(Ljava/lang/String;)V
@@ -169,7 +169,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/datastore/preferences/protobuf/Api;Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addAllMethods(Ljava/lang/Iterable;)V
@@ -178,7 +178,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearMethods()V
@@ -187,7 +187,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/datastore/preferences/protobuf/Api;I)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->removeMethods(I)V
@@ -196,7 +196,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->setOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
@@ -205,7 +205,7 @@
 .end method
 
 .method static synthetic access$1400(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->setOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
@@ -214,7 +214,7 @@
 .end method
 
 .method static synthetic access$1500(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Option;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addOptions(Landroidx/datastore/preferences/protobuf/Option;)V
@@ -223,7 +223,7 @@
 .end method
 
 .method static synthetic access$1600(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->addOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
@@ -232,7 +232,7 @@
 .end method
 
 .method static synthetic access$1700(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addOptions(Landroidx/datastore/preferences/protobuf/Option$Builder;)V
@@ -241,7 +241,7 @@
 .end method
 
 .method static synthetic access$1800(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->addOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
@@ -250,7 +250,7 @@
 .end method
 
 .method static synthetic access$1900(Landroidx/datastore/preferences/protobuf/Api;Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addAllOptions(Ljava/lang/Iterable;)V
@@ -259,7 +259,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearName()V
@@ -268,7 +268,7 @@
 .end method
 
 .method static synthetic access$2000(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearOptions()V
@@ -277,7 +277,7 @@
 .end method
 
 .method static synthetic access$2100(Landroidx/datastore/preferences/protobuf/Api;I)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->removeOptions(I)V
@@ -286,7 +286,7 @@
 .end method
 
 .method static synthetic access$2200(Landroidx/datastore/preferences/protobuf/Api;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setVersion(Ljava/lang/String;)V
@@ -295,7 +295,7 @@
 .end method
 
 .method static synthetic access$2300(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearVersion()V
@@ -304,7 +304,7 @@
 .end method
 
 .method static synthetic access$2400(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setVersionBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
@@ -313,7 +313,7 @@
 .end method
 
 .method static synthetic access$2500(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
@@ -322,7 +322,7 @@
 .end method
 
 .method static synthetic access$2600(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)V
@@ -331,7 +331,7 @@
 .end method
 
 .method static synthetic access$2700(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->mergeSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
@@ -340,7 +340,7 @@
 .end method
 
 .method static synthetic access$2800(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearSourceContext()V
@@ -349,7 +349,7 @@
 .end method
 
 .method static synthetic access$2900(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Mixin;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->setMixins(ILandroidx/datastore/preferences/protobuf/Mixin;)V
@@ -358,7 +358,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
@@ -367,7 +367,7 @@
 .end method
 
 .method static synthetic access$3000(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Mixin$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->setMixins(ILandroidx/datastore/preferences/protobuf/Mixin$Builder;)V
@@ -376,7 +376,7 @@
 .end method
 
 .method static synthetic access$3100(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Mixin;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addMixins(Landroidx/datastore/preferences/protobuf/Mixin;)V
@@ -385,7 +385,7 @@
 .end method
 
 .method static synthetic access$3200(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Mixin;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->addMixins(ILandroidx/datastore/preferences/protobuf/Mixin;)V
@@ -394,7 +394,7 @@
 .end method
 
 .method static synthetic access$3300(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Mixin$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addMixins(Landroidx/datastore/preferences/protobuf/Mixin$Builder;)V
@@ -403,7 +403,7 @@
 .end method
 
 .method static synthetic access$3400(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Mixin$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->addMixins(ILandroidx/datastore/preferences/protobuf/Mixin$Builder;)V
@@ -412,7 +412,7 @@
 .end method
 
 .method static synthetic access$3500(Landroidx/datastore/preferences/protobuf/Api;Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addAllMixins(Ljava/lang/Iterable;)V
@@ -421,7 +421,7 @@
 .end method
 
 .method static synthetic access$3600(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearMixins()V
@@ -430,7 +430,7 @@
 .end method
 
 .method static synthetic access$3700(Landroidx/datastore/preferences/protobuf/Api;I)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->removeMixins(I)V
@@ -439,7 +439,7 @@
 .end method
 
 .method static synthetic access$3800(Landroidx/datastore/preferences/protobuf/Api;I)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setSyntaxValue(I)V
@@ -448,7 +448,7 @@
 .end method
 
 .method static synthetic access$3900(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Syntax;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->setSyntax(Landroidx/datastore/preferences/protobuf/Syntax;)V
@@ -457,7 +457,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Method;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->setMethods(ILandroidx/datastore/preferences/protobuf/Method;)V
@@ -466,7 +466,7 @@
 .end method
 
 .method static synthetic access$4000(Landroidx/datastore/preferences/protobuf/Api;)V
-    .registers 1
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->clearSyntax()V
@@ -475,7 +475,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Method$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->setMethods(ILandroidx/datastore/preferences/protobuf/Method$Builder;)V
@@ -484,7 +484,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Method;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addMethods(Landroidx/datastore/preferences/protobuf/Method;)V
@@ -493,7 +493,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Method;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->addMethods(ILandroidx/datastore/preferences/protobuf/Method;)V
@@ -502,7 +502,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/datastore/preferences/protobuf/Api;Landroidx/datastore/preferences/protobuf/Method$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Api;->addMethods(Landroidx/datastore/preferences/protobuf/Method$Builder;)V
@@ -511,7 +511,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/datastore/preferences/protobuf/Api;ILandroidx/datastore/preferences/protobuf/Method$Builder;)V
-    .registers 3
+    .locals 0
 
     .line 20
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Api;->addMethods(ILandroidx/datastore/preferences/protobuf/Method$Builder;)V
@@ -520,7 +520,7 @@
 .end method
 
 .method private addAllMethods(Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -543,7 +543,7 @@
 .end method
 
 .method private addAllMixins(Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -566,7 +566,7 @@
 .end method
 
 .method private addAllOptions(Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -589,7 +589,7 @@
 .end method
 
 .method private addMethods(ILandroidx/datastore/preferences/protobuf/Method$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 250
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMethodsIsMutable()V
@@ -607,7 +607,7 @@
 .end method
 
 .method private addMethods(ILandroidx/datastore/preferences/protobuf/Method;)V
-    .registers 4
+    .locals 1
 
     .line 224
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -624,7 +624,7 @@
 .end method
 
 .method private addMethods(Landroidx/datastore/preferences/protobuf/Method$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 238
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMethodsIsMutable()V
@@ -642,7 +642,7 @@
 .end method
 
 .method private addMethods(Landroidx/datastore/preferences/protobuf/Method;)V
-    .registers 3
+    .locals 1
 
     .line 209
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -659,7 +659,7 @@
 .end method
 
 .method private addMixins(ILandroidx/datastore/preferences/protobuf/Mixin$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 848
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMixinsIsMutable()V
@@ -677,7 +677,7 @@
 .end method
 
 .method private addMixins(ILandroidx/datastore/preferences/protobuf/Mixin;)V
-    .registers 4
+    .locals 1
 
     .line 822
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -694,7 +694,7 @@
 .end method
 
 .method private addMixins(Landroidx/datastore/preferences/protobuf/Mixin$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 836
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMixinsIsMutable()V
@@ -712,7 +712,7 @@
 .end method
 
 .method private addMixins(Landroidx/datastore/preferences/protobuf/Mixin;)V
-    .registers 3
+    .locals 1
 
     .line 807
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -729,7 +729,7 @@
 .end method
 
 .method private addOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 429
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureOptionsIsMutable()V
@@ -747,7 +747,7 @@
 .end method
 
 .method private addOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 4
+    .locals 1
 
     .line 403
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -764,7 +764,7 @@
 .end method
 
 .method private addOptions(Landroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 417
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureOptionsIsMutable()V
@@ -782,7 +782,7 @@
 .end method
 
 .method private addOptions(Landroidx/datastore/preferences/protobuf/Option;)V
-    .registers 3
+    .locals 1
 
     .line 388
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -799,7 +799,7 @@
 .end method
 
 .method private clearMethods()V
-    .registers 2
+    .locals 1
 
     .line 274
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Api;->emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -812,7 +812,7 @@
 .end method
 
 .method private clearMixins()V
-    .registers 2
+    .locals 1
 
     .line 872
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Api;->emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -825,7 +825,7 @@
 .end method
 
 .method private clearName()V
-    .registers 2
+    .locals 1
 
     .line 88
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Api;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/Api;
@@ -842,7 +842,7 @@
 .end method
 
 .method private clearOptions()V
-    .registers 2
+    .locals 1
 
     .line 453
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Api;->emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -855,7 +855,7 @@
 .end method
 
 .method private clearSourceContext()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -866,7 +866,7 @@
 .end method
 
 .method private clearSyntax()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -877,7 +877,7 @@
 .end method
 
 .method private clearVersion()V
-    .registers 2
+    .locals 1
 
     .line 583
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Api;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/Api;
@@ -894,7 +894,7 @@
 .end method
 
 .method private ensureMethodsIsMutable()V
-    .registers 2
+    .locals 1
 
     .line 167
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->methods_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -903,7 +903,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 168
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->methods_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -915,12 +915,12 @@
 
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->methods_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method private ensureMixinsIsMutable()V
-    .registers 2
+    .locals 1
 
     .line 765
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->mixins_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -929,7 +929,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 766
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->mixins_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -941,12 +941,12 @@
 
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->mixins_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method private ensureOptionsIsMutable()V
-    .registers 2
+    .locals 1
 
     .line 346
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -955,7 +955,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 347
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -967,12 +967,12 @@
 
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public static getDefaultInstance()Landroidx/datastore/preferences/protobuf/Api;
-    .registers 1
+    .locals 1
 
     .line 1941
     sget-object v0, Landroidx/datastore/preferences/protobuf/Api;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Api;
@@ -981,7 +981,7 @@
 .end method
 
 .method private mergeSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 4
+    .locals 2
 
     .line 684
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -989,14 +989,14 @@
     .line 686
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 687
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SourceContext;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/SourceContext;
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_0
 
     .line 688
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
@@ -1020,18 +1020,18 @@
 
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/Api;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    goto :goto_24
+    goto :goto_0
 
     .line 691
-    :cond_22
+    :cond_0
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/Api;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    :goto_24
+    :goto_0
     return-void
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/protobuf/Api$Builder;
-    .registers 1
+    .locals 1
 
     .line 1026
     sget-object v0, Landroidx/datastore/preferences/protobuf/Api;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Api;
@@ -1046,7 +1046,7 @@
 .end method
 
 .method public static newBuilder(Landroidx/datastore/preferences/protobuf/Api;)Landroidx/datastore/preferences/protobuf/Api$Builder;
-    .registers 2
+    .locals 1
 
     .line 1029
     sget-object v0, Landroidx/datastore/preferences/protobuf/Api;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Api;
@@ -1061,7 +1061,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1081,7 +1081,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1101,7 +1101,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1121,7 +1121,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1141,7 +1141,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1161,7 +1161,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1181,7 +1181,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1201,7 +1201,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1221,7 +1221,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1241,7 +1241,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1261,7 +1261,7 @@
 .end method
 
 .method public static parseFrom([B)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1281,7 +1281,7 @@
 .end method
 
 .method public static parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Api;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1301,7 +1301,7 @@
 .end method
 
 .method public static parser()Landroidx/datastore/preferences/protobuf/Parser;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1322,7 +1322,7 @@
 .end method
 
 .method private removeMethods(I)V
-    .registers 3
+    .locals 1
 
     .line 284
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMethodsIsMutable()V
@@ -1336,7 +1336,7 @@
 .end method
 
 .method private removeMixins(I)V
-    .registers 3
+    .locals 1
 
     .line 882
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMixinsIsMutable()V
@@ -1350,7 +1350,7 @@
 .end method
 
 .method private removeOptions(I)V
-    .registers 3
+    .locals 1
 
     .line 463
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureOptionsIsMutable()V
@@ -1364,7 +1364,7 @@
 .end method
 
 .method private setMethods(ILandroidx/datastore/preferences/protobuf/Method$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 197
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMethodsIsMutable()V
@@ -1382,7 +1382,7 @@
 .end method
 
 .method private setMethods(ILandroidx/datastore/preferences/protobuf/Method;)V
-    .registers 4
+    .locals 1
 
     .line 183
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1399,7 +1399,7 @@
 .end method
 
 .method private setMixins(ILandroidx/datastore/preferences/protobuf/Mixin$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 795
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureMixinsIsMutable()V
@@ -1417,7 +1417,7 @@
 .end method
 
 .method private setMixins(ILandroidx/datastore/preferences/protobuf/Mixin;)V
-    .registers 4
+    .locals 1
 
     .line 781
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1434,7 +1434,7 @@
 .end method
 
 .method private setName(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 73
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1446,7 +1446,7 @@
 .end method
 
 .method private setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 102
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1465,7 +1465,7 @@
 .end method
 
 .method private setOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)V
-    .registers 4
+    .locals 1
 
     .line 376
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Api;->ensureOptionsIsMutable()V
@@ -1483,7 +1483,7 @@
 .end method
 
 .method private setOptions(ILandroidx/datastore/preferences/protobuf/Option;)V
-    .registers 4
+    .locals 1
 
     .line 362
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1500,7 +1500,7 @@
 .end method
 
 .method private setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 670
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->build()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -1515,7 +1515,7 @@
 .end method
 
 .method private setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)V
-    .registers 2
+    .locals 0
 
     .line 655
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1527,7 +1527,7 @@
 .end method
 
 .method private setSyntax(Landroidx/datastore/preferences/protobuf/Syntax;)V
-    .registers 2
+    .locals 0
 
     .line 934
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1543,7 +1543,7 @@
 .end method
 
 .method private setSyntaxValue(I)V
-    .registers 2
+    .locals 0
 
     .line 922
     iput p1, p0, Landroidx/datastore/preferences/protobuf/Api;->syntax_:I
@@ -1552,7 +1552,7 @@
 .end method
 
 .method private setVersion(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 553
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1564,7 +1564,7 @@
 .end method
 
 .method private setVersionBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 612
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1585,7 +1585,7 @@
 
 # virtual methods
 .method protected final dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 1874
     sget-object p2, Landroidx/datastore/preferences/protobuf/Api$1;->$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke:[I
@@ -1600,7 +1600,7 @@
 
     const/4 p3, 0x0
 
-    packed-switch p1, :pswitch_data_84
+    packed-switch p1, :pswitch_data_0
 
     .line 1925
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -1609,11 +1609,11 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     return-object p3
 
     .line 1919
-    :pswitch_14
+    :pswitch_1
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
@@ -1621,10 +1621,10 @@
     return-object p1
 
     .line 1904
-    :pswitch_19
+    :pswitch_2
     sget-object p1, Landroidx/datastore/preferences/protobuf/Api;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_1
 
     .line 1906
     const-class p2, Landroidx/datastore/preferences/protobuf/Api;
@@ -1632,10 +1632,10 @@
     monitor-enter p2
 
     .line 1907
-    :try_start_20
+    :try_start_0
     sget-object p1, Landroidx/datastore/preferences/protobuf/Api;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_0
 
     .line 1909
     new-instance p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
@@ -1648,31 +1648,31 @@
     sput-object p1, Landroidx/datastore/preferences/protobuf/Api;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
     .line 1914
-    :cond_2d
+    :cond_0
     monitor-exit p2
 
-    goto :goto_32
+    goto :goto_0
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
-    :try_end_31
-    .catchall {:try_start_20 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-object p1
 
     .line 1901
-    :pswitch_33
+    :pswitch_3
     sget-object p1, Landroidx/datastore/preferences/protobuf/Api;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Api;
 
     return-object p1
 
-    :pswitch_36
+    :pswitch_4
     const/16 p1, 0xa
 
     new-array p1, p1, [Ljava/lang/Object;
@@ -1748,7 +1748,7 @@
     return-object p1
 
     .line 1879
-    :pswitch_77
+    :pswitch_5
     new-instance p1, Landroidx/datastore/preferences/protobuf/Api$Builder;
 
     invoke-direct {p1, p3}, Landroidx/datastore/preferences/protobuf/Api$Builder;-><init>(Landroidx/datastore/preferences/protobuf/Api$1;)V
@@ -1756,7 +1756,7 @@
     return-object p1
 
     .line 1876
-    :pswitch_7d
+    :pswitch_6
     new-instance p1, Landroidx/datastore/preferences/protobuf/Api;
 
     invoke-direct {p1}, Landroidx/datastore/preferences/protobuf/Api;-><init>()V
@@ -1765,20 +1765,20 @@
 
     nop
 
-    :pswitch_data_84
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_7d
-        :pswitch_77
-        :pswitch_36
-        :pswitch_33
-        :pswitch_19
-        :pswitch_14
-        :pswitch_13
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getMethods(I)Landroidx/datastore/preferences/protobuf/Method;
-    .registers 3
+    .locals 1
 
     .line 153
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->methods_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1793,7 +1793,7 @@
 .end method
 
 .method public getMethodsCount()I
-    .registers 2
+    .locals 1
 
     .line 142
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->methods_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1806,7 +1806,7 @@
 .end method
 
 .method public getMethodsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1823,7 +1823,7 @@
 .end method
 
 .method public getMethodsOrBuilder(I)Landroidx/datastore/preferences/protobuf/MethodOrBuilder;
-    .registers 3
+    .locals 1
 
     .line 164
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->methods_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1838,7 +1838,7 @@
 .end method
 
 .method public getMethodsOrBuilderList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1856,7 +1856,7 @@
 .end method
 
 .method public getMixins(I)Landroidx/datastore/preferences/protobuf/Mixin;
-    .registers 3
+    .locals 1
 
     .line 751
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->mixins_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1871,7 +1871,7 @@
 .end method
 
 .method public getMixinsCount()I
-    .registers 2
+    .locals 1
 
     .line 740
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->mixins_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1884,7 +1884,7 @@
 .end method
 
 .method public getMixinsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1901,7 +1901,7 @@
 .end method
 
 .method public getMixinsOrBuilder(I)Landroidx/datastore/preferences/protobuf/MixinOrBuilder;
-    .registers 3
+    .locals 1
 
     .line 762
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->mixins_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1916,7 +1916,7 @@
 .end method
 
 .method public getMixinsOrBuilderList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1934,7 +1934,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 45
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->name_:Ljava/lang/String;
@@ -1943,7 +1943,7 @@
 .end method
 
 .method public getNameBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->name_:Ljava/lang/String;
@@ -1956,7 +1956,7 @@
 .end method
 
 .method public getOptions(I)Landroidx/datastore/preferences/protobuf/Option;
-    .registers 3
+    .locals 1
 
     .line 332
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1971,7 +1971,7 @@
 .end method
 
 .method public getOptionsCount()I
-    .registers 2
+    .locals 1
 
     .line 321
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -1984,7 +1984,7 @@
 .end method
 
 .method public getOptionsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2001,7 +2001,7 @@
 .end method
 
 .method public getOptionsOrBuilder(I)Landroidx/datastore/preferences/protobuf/OptionOrBuilder;
-    .registers 3
+    .locals 1
 
     .line 343
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->options_:Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
@@ -2016,7 +2016,7 @@
 .end method
 
 .method public getOptionsOrBuilderList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2034,23 +2034,23 @@
 .end method
 
 .method public getSourceContext()Landroidx/datastore/preferences/protobuf/SourceContext;
-    .registers 2
+    .locals 1
 
     .line 643
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SourceContext;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/SourceContext;
 
     move-result-object v0
 
-    :cond_8
+    :cond_0
     return-object v0
 .end method
 
 .method public getSyntax()Landroidx/datastore/preferences/protobuf/Syntax;
-    .registers 2
+    .locals 1
 
     .line 910
     iget v0, p0, Landroidx/datastore/preferences/protobuf/Api;->syntax_:I
@@ -2059,17 +2059,17 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 911
     sget-object v0, Landroidx/datastore/preferences/protobuf/Syntax;->UNRECOGNIZED:Landroidx/datastore/preferences/protobuf/Syntax;
 
-    :cond_a
+    :cond_0
     return-object v0
 .end method
 
 .method public getSyntaxValue()I
-    .registers 2
+    .locals 1
 
     .line 898
     iget v0, p0, Landroidx/datastore/preferences/protobuf/Api;->syntax_:I
@@ -2078,7 +2078,7 @@
 .end method
 
 .method public getVersion()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 495
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->version_:Ljava/lang/String;
@@ -2087,7 +2087,7 @@
 .end method
 
 .method public getVersionBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 524
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->version_:Ljava/lang/String;
@@ -2100,20 +2100,20 @@
 .end method
 
 .method public hasSourceContext()Z
-    .registers 2
+    .locals 1
 
     .line 631
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Api;->sourceContext_:Landroidx/datastore/preferences/protobuf/SourceContext;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

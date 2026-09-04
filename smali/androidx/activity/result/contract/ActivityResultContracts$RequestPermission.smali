@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 219
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 219
     check-cast p2, Ljava/lang/String;
@@ -86,7 +86,7 @@
 .end method
 
 .method public createIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 5
+    .locals 2
 
     const-string v0, "context"
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public bridge synthetic getSynchronousResult(Landroid/content/Context;Ljava/lang/Object;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 3
+    .locals 0
 
     .line 219
     check-cast p2, Ljava/lang/String;
@@ -128,7 +128,7 @@
 .end method
 
 .method public getSynchronousResult(Landroid/content/Context;Ljava/lang/String;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,17 +156,17 @@
 
     const/4 p2, 0x1
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     move p1, p2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_14
-    if-eqz p1, :cond_20
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 243
     new-instance p1, Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
@@ -177,29 +177,29 @@
 
     invoke-direct {p1, p2}, Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;-><init>(Ljava/lang/Object;)V
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_21
+    :goto_1
     return-object p1
 .end method
 
 .method public parseResult(ILandroid/content/Intent;)Ljava/lang/Boolean;
-    .registers 7
+    .locals 4
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_2b
+    if-eqz p2, :cond_5
 
     const/4 v1, -0x1
 
-    if-eq p1, v1, :cond_7
+    if-eq p1, v1, :cond_0
 
-    goto :goto_2b
+    goto :goto_3
 
-    :cond_7
+    :cond_0
     const-string p1, "androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS"
 
     .line 228
@@ -207,51 +207,51 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_4
 
     .line 954
     array-length p2, p1
 
     move v1, v0
 
-    :goto_11
+    :goto_0
     const/4 v2, 0x1
 
-    if-ge v1, p2, :cond_22
+    if-ge v1, p2, :cond_3
 
     aget v3, p1, v1
 
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_1
 
     move v3, v2
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move v3, v0
 
-    :goto_1b
-    if-eqz v3, :cond_1f
+    :goto_1
+    if-eqz v3, :cond_2
 
     move p1, v2
 
-    goto :goto_23
+    goto :goto_2
 
-    :cond_1f
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_22
+    :cond_3
     move p1, v0
 
-    :goto_23
-    if-ne p1, v2, :cond_26
+    :goto_2
+    if-ne p1, v2, :cond_4
 
     move v0, v2
 
     .line 229
-    :cond_26
+    :cond_4
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -259,8 +259,8 @@
     return-object p1
 
     .line 226
-    :cond_2b
-    :goto_2b
+    :cond_5
+    :goto_3
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -269,7 +269,7 @@
 .end method
 
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 219
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$RequestPermission;->parseResult(ILandroid/content/Intent;)Ljava/lang/Boolean;

@@ -127,7 +127,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 21
+    .locals 21
 
     .line 122
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
@@ -470,19 +470,19 @@
 
     const/16 v9, 0x1d
 
-    if-lt v3, v9, :cond_13e
+    if-lt v3, v9, :cond_0
 
     .line 524
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_UP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v4, v3
 
-    goto :goto_13f
+    goto :goto_0
 
-    :cond_13e
+    :cond_0
     move-object v4, v2
 
-    :goto_13f
+    :goto_0
     const v5, 0x1020046
 
     const/4 v6, 0x0
@@ -503,19 +503,19 @@
     .line 532
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v9, :cond_155
+    if-lt v3, v9, :cond_1
 
     .line 533
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_DOWN:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v11, v3
 
-    goto :goto_156
+    goto :goto_1
 
-    :cond_155
+    :cond_1
     move-object v11, v2
 
-    :goto_156
+    :goto_1
     const v12, 0x1020047
 
     const/4 v13, 0x0
@@ -536,19 +536,19 @@
     .line 541
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v9, :cond_16c
+    if-lt v3, v9, :cond_2
 
     .line 542
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_LEFT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v4, v3
 
-    goto :goto_16d
+    goto :goto_2
 
-    :cond_16c
+    :cond_2
     move-object v4, v2
 
-    :goto_16d
+    :goto_2
     const v5, 0x1020048
 
     const/4 v6, 0x0
@@ -569,19 +569,19 @@
     .line 550
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v9, :cond_183
+    if-lt v3, v9, :cond_3
 
     .line 551
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PAGE_RIGHT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v11, v3
 
-    goto :goto_184
+    goto :goto_3
 
-    :cond_183
+    :cond_3
     move-object v11, v2
 
-    :goto_184
+    :goto_3
     const v12, 0x1020049
 
     const/4 v13, 0x0
@@ -704,19 +704,19 @@
 
     const/16 v4, 0x1e
 
-    if-lt v3, v4, :cond_1ee
+    if-lt v3, v4, :cond_4
 
     .line 647
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PRESS_AND_HOLD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v10, v3
 
-    goto :goto_1ef
+    goto :goto_4
 
-    :cond_1ee
+    :cond_4
     move-object v10, v2
 
-    :goto_1ef
+    :goto_4
     const v11, 0x102004a
 
     const/4 v12, 0x0
@@ -737,19 +737,19 @@
     .line 659
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v4, :cond_206
+    if-lt v3, v4, :cond_5
 
     .line 660
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_IME_ENTER:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object/from16 v16, v3
 
-    goto :goto_208
+    goto :goto_5
 
-    :cond_206
+    :cond_5
     move-object/from16 v16, v2
 
-    :goto_208
+    :goto_5
     const v17, 0x1020054
 
     const/16 v18, 0x0
@@ -770,19 +770,19 @@
     .line 676
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v1, :cond_221
+    if-lt v3, v1, :cond_6
 
     .line 677
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_DRAG_START:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v4, v3
 
-    goto :goto_222
+    goto :goto_6
 
-    :cond_221
+    :cond_6
     move-object v4, v2
 
-    :goto_222
+    :goto_6
     const v5, 0x1020055
 
     const/4 v6, 0x0
@@ -803,19 +803,19 @@
     .line 693
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v1, :cond_238
+    if-lt v3, v1, :cond_7
 
     .line 694
     sget-object v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_DRAG_DROP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v10, v3
 
-    goto :goto_239
+    goto :goto_7
 
-    :cond_238
+    :cond_7
     move-object v10, v2
 
-    :goto_239
+    :goto_7
     const v11, 0x1020056
 
     const/4 v12, 0x0
@@ -836,19 +836,19 @@
     .line 707
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v3, v1, :cond_24f
+    if-lt v3, v1, :cond_8
 
     .line 708
     sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_DRAG_CANCEL:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v4, v1
 
-    goto :goto_250
+    goto :goto_8
 
-    :cond_24f
+    :cond_8
     move-object v4, v2
 
-    :goto_250
+    :goto_8
     const v5, 0x1020057
 
     const/4 v6, 0x0
@@ -871,19 +871,19 @@
 
     const/16 v3, 0x21
 
-    if-lt v1, v3, :cond_268
+    if-lt v1, v3, :cond_9
 
     .line 717
     sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SHOW_TEXT_SUGGESTIONS:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-object v10, v1
 
-    goto :goto_269
+    goto :goto_9
 
-    :cond_268
+    :cond_9
     move-object v10, v2
 
-    :goto_269
+    :goto_9
     const v11, 0x1020058
 
     const/4 v12, 0x0
@@ -907,13 +907,13 @@
 
     const/16 v3, 0x22
 
-    if-lt v1, v3, :cond_281
+    if-lt v1, v3, :cond_a
 
     invoke-static {}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$Api34Impl;->getActionScrollInDirection()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     move-result-object v2
 
-    :cond_281
+    :cond_a
     move-object v4, v2
 
     const v5, 0x102005e
@@ -934,7 +934,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/CharSequence;)V
-    .registers 9
+    .locals 6
 
     const/4 v1, 0x0
 
@@ -955,7 +955,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)V
-    .registers 10
+    .locals 6
 
     const/4 v1, 0x0
 
@@ -976,7 +976,7 @@
 .end method
 
 .method private constructor <init>(ILjava/lang/CharSequence;Ljava/lang/Class;)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1007,7 +1007,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 8
+    .locals 6
 
     const/4 v2, 0x0
 
@@ -1028,7 +1028,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;ILjava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;Ljava/lang/Class;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1052,7 +1052,7 @@
     .line 796
     iput-object p4, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mCommand:Landroidx/core/view/accessibility/AccessibilityViewCommand;
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 798
     new-instance p1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -1061,14 +1061,14 @@
 
     iput-object p1, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
 
-    goto :goto_13
+    goto :goto_0
 
     .line 800
-    :cond_11
+    :cond_0
     iput-object p1, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
 
     .line 802
-    :goto_13
+    :goto_0
     iput-object p5, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mViewCommandArgumentClass:Ljava/lang/Class;
 
     return-void
@@ -1077,7 +1077,7 @@
 
 # virtual methods
 .method public createReplacementAction(Ljava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
-    .registers 10
+    .locals 7
 
     .line 864
     new-instance v6, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
@@ -1100,58 +1100,58 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
     .line 878
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_1
 
     return v0
 
     .line 881
-    :cond_9
+    :cond_1
     check-cast p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
     .line 883
     iget-object v1, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_2
 
     .line 884
     iget-object p1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_3
 
     return v0
 
     .line 887
-    :cond_14
+    :cond_2
     iget-object p1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
 
     invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_3
 
     return v0
 
-    :cond_1d
+    :cond_3
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 812
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
@@ -1166,7 +1166,7 @@
 .end method
 
 .method public getLabel()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 826
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
@@ -1181,44 +1181,44 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 870
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public perform(Landroid/view/View;Landroid/os/Bundle;)Z
-    .registers 7
+    .locals 4
 
     .line 840
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mCommand:Landroidx/core/view/accessibility/AccessibilityViewCommand;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_2
 
     .line 842
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mViewCommandArgumentClass:Ljava/lang/Class;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_1
 
-    :try_start_a
+    :try_start_0
     new-array v3, v1, [Ljava/lang/Class;
 
     .line 845
@@ -1233,47 +1233,47 @@
     move-result-object v0
 
     check-cast v0, Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_18} :catch_20
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 846
-    :try_start_18
+    :try_start_1
     invoke-virtual {v0, p2}, Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;->setBundle(Landroid/os/Bundle;)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_1b} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     move-object v2, v0
 
-    goto :goto_40
+    goto :goto_2
 
-    :catch_1d
+    :catch_0
     move-exception p2
 
     move-object v2, v0
 
-    goto :goto_21
+    goto :goto_0
 
-    :catch_20
+    :catch_1
     move-exception p2
 
     .line 848
-    :goto_21
+    :goto_0
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mViewCommandArgumentClass:Ljava/lang/Class;
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     const-string v0, "null"
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 849
-    :cond_28
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     .line 850
-    :goto_2c
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v3, "Failed to execute command with argument class ViewCommandArgument: "
@@ -1293,8 +1293,8 @@
     invoke-static {v1, v0, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 854
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_2
     iget-object p2, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mCommand:Landroidx/core/view/accessibility/AccessibilityViewCommand;
 
     invoke-interface {p2, p1, v2}, Landroidx/core/view/accessibility/AccessibilityViewCommand;->perform(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;)Z
@@ -1303,12 +1303,12 @@
 
     return p1
 
-    :cond_47
+    :cond_2
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 896
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1331,13 +1331,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_0
 
     invoke-virtual {p0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_0
 
     .line 901
     invoke-virtual {p0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getLabel()Ljava/lang/CharSequence;
@@ -1349,7 +1349,7 @@
     move-result-object v1
 
     .line 903
-    :cond_23
+    :cond_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 904

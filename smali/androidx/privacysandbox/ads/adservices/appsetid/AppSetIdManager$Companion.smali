@@ -39,7 +39,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager$Companion;-><init>()V
 
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final obtain(Landroid/content/Context;)Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager;
-    .registers 4
+    .locals 2
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -75,7 +75,7 @@
 
     const/4 v1, 0x4
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_0
 
     .line 87
     new-instance v0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager$Api33Ext4Impl;
@@ -84,11 +84,11 @@
 
     check-cast v0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager;
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return-object v0
 .end method

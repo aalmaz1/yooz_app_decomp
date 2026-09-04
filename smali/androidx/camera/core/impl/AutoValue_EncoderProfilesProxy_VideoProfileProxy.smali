@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/lang/String;IIIIIIII)V
-    .registers 11
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;-><init>()V
@@ -35,7 +35,7 @@
     .line 41
     iput p1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->codec:I
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_0
 
     .line 45
     iput-object p2, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->mediaType:Ljava/lang/String;
@@ -67,7 +67,7 @@
     return-void
 
     .line 43
-    :cond_1a
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null mediaType"
@@ -80,21 +80,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 129
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_2
 
     .line 130
     check-cast p1, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
@@ -106,7 +106,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->mediaType:Ljava/lang/String;
 
@@ -119,7 +119,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->bitrate:I
 
@@ -128,7 +128,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->frameRate:I
 
@@ -137,7 +137,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->width:I
 
@@ -146,7 +146,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->height:I
 
@@ -155,7 +155,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->profile:I
 
@@ -164,7 +164,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->bitDepth:I
 
@@ -173,7 +173,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->chromaSubsampling:I
 
@@ -182,7 +182,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_60
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->hdrFormat:I
 
@@ -191,22 +191,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_60
+    if-ne v1, p1, :cond_1
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_60
+    :cond_1
     move v0, v2
 
-    :goto_61
+    :goto_0
     return v0
 
-    :cond_62
+    :cond_2
     return v2
 .end method
 
 .method public getBitDepth()I
-    .registers 2
+    .locals 1
 
     .line 95
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->bitDepth:I
@@ -215,7 +215,7 @@
 .end method
 
 .method public getBitrate()I
-    .registers 2
+    .locals 1
 
     .line 70
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->bitrate:I
@@ -224,7 +224,7 @@
 .end method
 
 .method public getChromaSubsampling()I
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->chromaSubsampling:I
@@ -233,7 +233,7 @@
 .end method
 
 .method public getCodec()I
-    .registers 2
+    .locals 1
 
     .line 59
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->codec:I
@@ -242,7 +242,7 @@
 .end method
 
 .method public getFrameRate()I
-    .registers 2
+    .locals 1
 
     .line 75
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->frameRate:I
@@ -251,7 +251,7 @@
 .end method
 
 .method public getHdrFormat()I
-    .registers 2
+    .locals 1
 
     .line 105
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->hdrFormat:I
@@ -260,7 +260,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 85
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->height:I
@@ -269,7 +269,7 @@
 .end method
 
 .method public getMediaType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->mediaType:Ljava/lang/String;
@@ -278,7 +278,7 @@
 .end method
 
 .method public getProfile()I
-    .registers 2
+    .locals 1
 
     .line 90
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->profile:I
@@ -287,7 +287,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 80
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->width:I
@@ -296,7 +296,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 149
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_EncoderProfilesProxy_VideoProfileProxy;->codec:I
@@ -376,7 +376,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 110
     new-instance v0, Ljava/lang/StringBuilder;

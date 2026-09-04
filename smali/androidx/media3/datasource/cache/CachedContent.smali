@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 58
     sget-object v0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->EMPTY:Landroidx/media3/datasource/cache/DefaultContentMetadata;
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Landroidx/media3/datasource/cache/DefaultContentMetadata;)V
-    .registers 4
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public addSpan(Landroidx/media3/datasource/cache/SimpleCacheSpan;)V
-    .registers 3
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
@@ -101,7 +101,7 @@
 .end method
 
 .method public applyMetadataMutations(Landroidx/media3/datasource/cache/ContentMetadataMutations;)Z
-    .registers 3
+    .locals 1
 
     .line 80
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->metadata:Landroidx/media3/datasource/cache/DefaultContentMetadata;
@@ -124,18 +124,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_3
 
     .line 272
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -146,12 +146,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 275
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/datasource/cache/CachedContent;
 
     .line 276
@@ -159,7 +159,7 @@
 
     iget v3, p1, Landroidx/media3/datasource/cache/CachedContent;->id:I
 
-    if-ne v2, v3, :cond_39
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->key:Ljava/lang/String;
 
@@ -170,7 +170,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
@@ -181,7 +181,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->metadata:Landroidx/media3/datasource/cache/DefaultContentMetadata;
 
@@ -192,23 +192,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     move v0, v1
 
-    :goto_3a
+    :goto_0
     return v0
 
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getCachedBytesLength(JJ)J
-    .registers 14
+    .locals 9
 
     const-wide/16 v0, 0x0
 
@@ -218,30 +218,30 @@
 
     const/4 v4, 0x0
 
-    if-ltz v2, :cond_a
+    if-ltz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v4
 
     .line 183
-    :goto_b
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     cmp-long v2, p3, v0
 
-    if-ltz v2, :cond_13
+    if-ltz v2, :cond_1
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
+    :cond_1
     move v3, v4
 
     .line 184
-    :goto_14
+    :goto_1
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 185
@@ -256,21 +256,21 @@
 
     const-wide v5, 0x7fffffffffffffffL
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_3
 
     .line 188
     invoke-virtual {v2}, Landroidx/media3/datasource/cache/SimpleCacheSpan;->isOpenEnded()Z
 
     move-result p1
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_2d
+    :cond_2
     iget-wide v5, v2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->length:J
 
-    :goto_2f
+    :goto_2
     invoke-static {v5, v6, p3, p4}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p1
@@ -279,20 +279,20 @@
 
     return-wide p1
 
-    :cond_35
+    :cond_3
     add-long v7, p1, p3
 
     cmp-long v0, v7, v0
 
-    if-gez v0, :cond_3c
+    if-gez v0, :cond_4
 
-    goto :goto_3d
+    goto :goto_3
 
-    :cond_3c
+    :cond_4
     move-wide v5, v7
 
     .line 195
-    :goto_3d
+    :goto_3
     iget-wide v0, v2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->position:J
 
     iget-wide v7, v2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->length:J
@@ -301,7 +301,7 @@
 
     cmp-long v3, v0, v5
 
-    if-gez v3, :cond_70
+    if-gez v3, :cond_7
 
     .line 197
     iget-object v3, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
@@ -314,12 +314,12 @@
 
     move-result-object v2
 
-    :cond_50
+    :cond_5
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_70
+    if-eqz v3, :cond_7
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -332,12 +332,12 @@
 
     cmp-long v4, v7, v0
 
-    if-lez v4, :cond_63
+    if-lez v4, :cond_6
 
-    goto :goto_70
+    goto :goto_4
 
     .line 204
-    :cond_63
+    :cond_6
     iget-wide v7, v3, Landroidx/media3/datasource/cache/SimpleCacheSpan;->position:J
 
     iget-wide v3, v3, Landroidx/media3/datasource/cache/SimpleCacheSpan;->length:J
@@ -350,10 +350,10 @@
 
     cmp-long v3, v0, v5
 
-    if-ltz v3, :cond_50
+    if-ltz v3, :cond_5
 
-    :cond_70
-    :goto_70
+    :cond_7
+    :goto_4
     sub-long/2addr v0, p1
 
     .line 211
@@ -365,7 +365,7 @@
 .end method
 
 .method public getMetadata()Landroidx/media3/datasource/cache/DefaultContentMetadata;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->metadata:Landroidx/media3/datasource/cache/DefaultContentMetadata;
@@ -374,7 +374,7 @@
 .end method
 
 .method public getSpan(JJ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 11
+    .locals 6
 
     .line 158
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->key:Ljava/lang/String;
@@ -392,7 +392,7 @@
 
     check-cast v1, Landroidx/media3/datasource/cache/SimpleCacheSpan;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 160
     iget-wide v2, v1, Landroidx/media3/datasource/cache/SimpleCacheSpan;->position:J
@@ -403,12 +403,12 @@
 
     cmp-long v2, v2, p1
 
-    if-lez v2, :cond_1a
+    if-lez v2, :cond_0
 
     return-object v1
 
     .line 163
-    :cond_1a
+    :cond_0
     iget-object v1, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {v1, v0}, Ljava/util/TreeSet;->ceiling(Ljava/lang/Object;)Ljava/lang/Object;
@@ -417,7 +417,7 @@
 
     check-cast v0, Landroidx/media3/datasource/cache/SimpleCacheSpan;
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     .line 165
     iget-wide v0, v0, Landroidx/media3/datasource/cache/SimpleCacheSpan;->position:J
@@ -428,21 +428,21 @@
 
     cmp-long v2, p3, v2
 
-    if-nez v2, :cond_2f
+    if-nez v2, :cond_1
 
     move-wide p3, v0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 166
-    :cond_2f
+    :cond_1
     invoke-static {v0, v1, p3, p4}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p3
 
     .line 168
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->key:Ljava/lang/String;
 
     invoke-static {v0, p1, p2, p3, p4}, Landroidx/media3/datasource/cache/SimpleCacheSpan;->createHole(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
@@ -453,7 +453,7 @@
 .end method
 
 .method public getSpans()Ljava/util/TreeSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -470,7 +470,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 261
     iget v0, p0, Landroidx/media3/datasource/cache/CachedContent;->id:I
@@ -501,7 +501,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 245
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
@@ -514,21 +514,21 @@
 .end method
 
 .method public isFullyLocked(JJ)Z
-    .registers 8
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 98
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1d
+    if-ge v1, v2, :cond_1
 
     .line 99
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
@@ -543,23 +543,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1a
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     return v0
 .end method
 
 .method public isFullyUnlocked()Z
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
@@ -572,21 +572,21 @@
 .end method
 
 .method public lockRange(JJ)Z
-    .registers 8
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 114
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_1
 
     .line 115
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
@@ -601,17 +601,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_0
 
     return v0
 
-    :cond_19
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 119
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/media3/datasource/cache/CachedContent$Range;
@@ -626,7 +626,7 @@
 .end method
 
 .method public removeSpan(Landroidx/media3/datasource/cache/CacheSpan;)Z
-    .registers 3
+    .locals 1
 
     .line 250
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
@@ -635,31 +635,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 251
     iget-object v0, p1, Landroidx/media3/datasource/cache/CacheSpan;->file:Ljava/io/File;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 252
     iget-object p1, p1, Landroidx/media3/datasource/cache/CacheSpan;->file:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x1
 
     return p1
 
-    :cond_13
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public setLastTouchTimestamp(Landroidx/media3/datasource/cache/SimpleCacheSpan;JZ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 12
+    .locals 7
 
     .line 225
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
@@ -679,7 +679,7 @@
 
     check-cast v0, Ljava/io/File;
 
-    if-eqz p4, :cond_4d
+    if-eqz p4, :cond_1
 
     .line 228
     invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;
@@ -711,14 +711,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     move-object v0, p4
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 234
-    :cond_2f
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Failed to rename "
@@ -748,8 +748,8 @@
     invoke-static {v1, p4}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 238
-    :cond_4d
-    :goto_4d
+    :cond_1
+    :goto_0
     invoke-virtual {p1, v0, p2, p3}, Landroidx/media3/datasource/cache/SimpleCacheSpan;->copyWithFileAndLastTouchTimestamp(Ljava/io/File;J)Landroidx/media3/datasource/cache/SimpleCacheSpan;
 
     move-result-object p1
@@ -763,19 +763,19 @@
 .end method
 
 .method public unlockRange(J)V
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 130
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_20
+    if-ge v0, v1, :cond_1
 
     .line 131
     iget-object v1, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
@@ -790,7 +790,7 @@
 
     cmp-long v1, v1, p1
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_0
 
     .line 132
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
@@ -799,13 +799,13 @@
 
     return-void
 
-    :cond_1d
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 136
-    :cond_20
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V

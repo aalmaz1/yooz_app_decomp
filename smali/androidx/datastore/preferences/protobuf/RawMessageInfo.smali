@@ -18,7 +18,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/MessageLite;Ljava/lang/String;[Ljava/lang/Object;)V
-    .registers 7
+    .locals 3
 
     .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,21 +41,21 @@
 
     const p3, 0xd800
 
-    if-ge p1, p3, :cond_16
+    if-ge p1, p3, :cond_0
 
     .line 186
     iput p1, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->flags:I
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_16
+    :cond_0
     and-int/lit16 p1, p1, 0x1fff
 
     const/16 v0, 0xd
 
     const/4 v1, 0x1
 
-    :goto_1b
+    :goto_0
     add-int/lit8 v2, v1, 0x1
 
     .line 190
@@ -63,7 +63,7 @@
 
     move-result v1
 
-    if-lt v1, p3, :cond_2b
+    if-lt v1, p3, :cond_1
 
     and-int/lit16 v1, v1, 0x1fff
 
@@ -75,9 +75,9 @@
 
     move v1, v2
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     shl-int p2, v1, v0
 
     or-int/2addr p1, p2
@@ -85,14 +85,14 @@
     .line 194
     iput p1, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->flags:I
 
-    :goto_30
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public getDefaultInstance()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 208
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->defaultInstance:Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -101,7 +101,7 @@
 .end method
 
 .method getObjects()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 203
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->objects:[Ljava/lang/Object;
@@ -110,7 +110,7 @@
 .end method
 
 .method getStringInfo()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 199
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->info:Ljava/lang/String;
@@ -119,7 +119,7 @@
 .end method
 
 .method public getSyntax()Landroidx/datastore/preferences/protobuf/ProtoSyntax;
-    .registers 3
+    .locals 2
 
     .line 213
     iget v0, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->flags:I
@@ -128,21 +128,21 @@
 
     and-int/2addr v0, v1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/ProtoSyntax;->PROTO2:Landroidx/datastore/preferences/protobuf/ProtoSyntax;
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     sget-object v0, Landroidx/datastore/preferences/protobuf/ProtoSyntax;->PROTO3:Landroidx/datastore/preferences/protobuf/ProtoSyntax;
 
-    :goto_b
+    :goto_0
     return-object v0
 .end method
 
 .method public isMessageSetWireFormat()Z
-    .registers 3
+    .locals 2
 
     .line 218
     iget v0, p0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;->flags:I
@@ -151,15 +151,15 @@
 
     and-int/2addr v0, v1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method

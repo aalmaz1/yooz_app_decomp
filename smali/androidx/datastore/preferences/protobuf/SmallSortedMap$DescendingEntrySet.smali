@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
-    .registers 3
+    .locals 1
 
     .line 523
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntrySet;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -40,7 +40,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;Landroidx/datastore/preferences/protobuf/SmallSortedMap$1;)V
-    .registers 3
+    .locals 0
 
     .line 523
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntrySet;-><init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public iterator()Ljava/util/Iterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

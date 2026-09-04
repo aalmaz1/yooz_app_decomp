@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/utils/executor/IoExecutor;)V
-    .registers 3
+    .locals 1
 
     .line 41
     iput-object p1, p0, Landroidx/camera/core/impl/utils/executor/IoExecutor$1;->this$0:Landroidx/camera/core/impl/utils/executor/IoExecutor;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 6
+    .locals 4
 
     .line 49
     new-instance v0, Ljava/lang/Thread;

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(JZJLjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 747
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

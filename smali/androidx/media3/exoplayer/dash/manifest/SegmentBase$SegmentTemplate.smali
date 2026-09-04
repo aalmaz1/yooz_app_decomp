@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;JJJJJLjava/util/List;JLandroidx/media3/exoplayer/dash/manifest/UrlTemplate;Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;JJ)V
-    .registers 38
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,12 +85,12 @@
 
 # virtual methods
 .method public getInitialization(Landroidx/media3/exoplayer/dash/manifest/Representation;)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 15
+    .locals 13
 
     .line 432
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->initializationTemplate:Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 433
     iget-object v1, p1, Landroidx/media3/exoplayer/dash/manifest/Representation;->format:Landroidx/media3/common/Format;
@@ -124,7 +124,7 @@
     return-object p1
 
     .line 438
-    :cond_1f
+    :cond_0
     invoke-super {p0, p1}, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;->getInitialization(Landroidx/media3/exoplayer/dash/manifest/Representation;)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
     move-result-object p1
@@ -133,12 +133,12 @@
 .end method
 
 .method public getSegmentCount(J)J
-    .registers 8
+    .locals 5
 
     .line 458
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->segmentTimeline:Ljava/util/List;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 459
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->segmentTimeline:Ljava/util/List;
@@ -152,14 +152,14 @@
     return-wide p1
 
     .line 460
-    :cond_c
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->endNumber:J
 
     const-wide/16 v2, -0x1
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_1
 
     .line 461
     iget-wide p1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->startNumber:J
@@ -172,12 +172,12 @@
 
     return-wide v0
 
-    :cond_1b
+    :cond_1
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_2
 
     .line 464
     invoke-static {p1, p2}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
@@ -225,12 +225,12 @@
 
     return-wide p1
 
-    :cond_4e
+    :cond_2
     return-wide v2
 .end method
 
 .method public getSegmentUrl(Landroidx/media3/exoplayer/dash/manifest/Representation;J)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 18
+    .locals 14
 
     move-object v0, p0
 
@@ -239,7 +239,7 @@
     .line 445
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->segmentTimeline:Ljava/util/List;
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 446
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->segmentTimeline:Ljava/util/List;
@@ -258,10 +258,10 @@
 
     iget-wide v2, v2, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTimelineElement;->startTime:J
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 448
-    :cond_16
+    :cond_0
     iget-wide v2, v0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SegmentTemplate;->startNumber:J
 
     sub-long v2, p2, v2
@@ -270,7 +270,7 @@
 
     mul-long/2addr v2, v4
 
-    :goto_1d
+    :goto_0
     move-wide v6, v2
 
     .line 450

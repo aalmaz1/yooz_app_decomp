@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 169
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;-><init>()V
@@ -47,25 +47,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
-    .registers 14
+    .locals 13
 
     .line 231
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->mimeType:Ljava/lang/String;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " mimeType"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 234
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->profile:Ljava/lang/Integer;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 235
     new-instance v1, Ljava/lang/StringBuilder;
@@ -87,10 +87,10 @@
     move-result-object v0
 
     .line 237
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->inputTimebase:Landroidx/camera/core/impl/Timebase;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 238
     new-instance v1, Ljava/lang/StringBuilder;
@@ -112,10 +112,10 @@
     move-result-object v0
 
     .line 240
-    :cond_37
+    :cond_2
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->resolution:Landroid/util/Size;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_3
 
     .line 241
     new-instance v1, Ljava/lang/StringBuilder;
@@ -137,10 +137,10 @@
     move-result-object v0
 
     .line 243
-    :cond_4e
+    :cond_3
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->colorFormat:Ljava/lang/Integer;
 
-    if-nez v1, :cond_65
+    if-nez v1, :cond_4
 
     .line 244
     new-instance v1, Ljava/lang/StringBuilder;
@@ -162,10 +162,10 @@
     move-result-object v0
 
     .line 246
-    :cond_65
+    :cond_4
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->dataSpace:Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
 
-    if-nez v1, :cond_7c
+    if-nez v1, :cond_5
 
     .line 247
     new-instance v1, Ljava/lang/StringBuilder;
@@ -187,10 +187,10 @@
     move-result-object v0
 
     .line 249
-    :cond_7c
+    :cond_5
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->frameRate:Ljava/lang/Integer;
 
-    if-nez v1, :cond_93
+    if-nez v1, :cond_6
 
     .line 250
     new-instance v1, Ljava/lang/StringBuilder;
@@ -212,10 +212,10 @@
     move-result-object v0
 
     .line 252
-    :cond_93
+    :cond_6
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->IFrameInterval:Ljava/lang/Integer;
 
-    if-nez v1, :cond_aa
+    if-nez v1, :cond_7
 
     .line 253
     new-instance v1, Ljava/lang/StringBuilder;
@@ -237,10 +237,10 @@
     move-result-object v0
 
     .line 255
-    :cond_aa
+    :cond_7
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->bitrate:Ljava/lang/Integer;
 
-    if-nez v1, :cond_c1
+    if-nez v1, :cond_8
 
     .line 256
     new-instance v1, Ljava/lang/StringBuilder;
@@ -262,12 +262,12 @@
     move-result-object v0
 
     .line 258
-    :cond_c1
+    :cond_8
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_f5
+    if-eqz v1, :cond_9
 
     .line 261
     new-instance v0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;
@@ -324,7 +324,7 @@
     return-object v0
 
     .line 259
-    :cond_f5
+    :cond_9
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -347,7 +347,7 @@
 .end method
 
 .method public setBitrate(I)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 225
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -360,7 +360,7 @@
 .end method
 
 .method public setColorFormat(I)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 202
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -373,9 +373,9 @@
 .end method
 
 .method public setDataSpace(Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 210
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->dataSpace:Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
@@ -383,7 +383,7 @@
     return-object p0
 
     .line 208
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null dataSpace"
@@ -394,7 +394,7 @@
 .end method
 
 .method public setFrameRate(I)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 215
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -407,7 +407,7 @@
 .end method
 
 .method public setIFrameInterval(I)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 220
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -420,9 +420,9 @@
 .end method
 
 .method public setInputTimebase(Landroidx/camera/core/impl/Timebase;)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 189
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->inputTimebase:Landroidx/camera/core/impl/Timebase;
@@ -430,7 +430,7 @@
     return-object p0
 
     .line 187
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null inputTimebase"
@@ -441,9 +441,9 @@
 .end method
 
 .method public setMimeType(Ljava/lang/String;)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 176
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->mimeType:Ljava/lang/String;
@@ -451,7 +451,7 @@
     return-object p0
 
     .line 174
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null mimeType"
@@ -462,7 +462,7 @@
 .end method
 
 .method public setProfile(I)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 181
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -475,9 +475,9 @@
 .end method
 
 .method public setResolution(Landroid/util/Size;)Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 197
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;->resolution:Landroid/util/Size;
@@ -485,7 +485,7 @@
     return-object p0
 
     .line 195
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null resolution"

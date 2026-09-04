@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/emoji2/text/EmojiMetadata;)V
-    .registers 2
+    .locals 0
 
     .line 49
     invoke-direct {p0, p1}, Landroidx/emoji2/text/EmojiSpan;-><init>(Landroidx/emoji2/text/EmojiMetadata;)V
@@ -18,12 +18,12 @@
 .end method
 
 .method private static getDebugPaint()Landroid/graphics/Paint;
-    .registers 2
+    .locals 2
 
     .line 65
     sget-object v0, Landroidx/emoji2/text/TypefaceEmojiSpan;->sDebugPaint:Landroid/graphics/Paint;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 66
     new-instance v0, Landroid/text/TextPaint;
@@ -51,7 +51,7 @@
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 70
-    :cond_1d
+    :cond_0
     sget-object v0, Landroidx/emoji2/text/TypefaceEmojiSpan;->sDebugPaint:Landroid/graphics/Paint;
 
     return-object v0
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-    .registers 16
+    .locals 6
 
     .line 57
     invoke-static {}, Landroidx/emoji2/text/EmojiCompat;->get()Landroidx/emoji2/text/EmojiCompat;
@@ -71,7 +71,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_0
 
     int-to-float v2, p6
 
@@ -97,7 +97,7 @@
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 60
-    :cond_1c
+    :cond_0
     invoke-virtual {p0}, Landroidx/emoji2/text/TypefaceEmojiSpan;->getMetadata()Landroidx/emoji2/text/EmojiMetadata;
 
     move-result-object p2

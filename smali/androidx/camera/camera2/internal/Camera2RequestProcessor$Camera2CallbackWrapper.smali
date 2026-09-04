@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2RequestProcessor;Landroidx/camera/core/impl/RequestProcessor$Request;Landroidx/camera/core/impl/RequestProcessor$Callback;Z)V
-    .registers 5
+    .locals 0
 
     .line 225
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->this$0:Landroidx/camera/camera2/internal/Camera2RequestProcessor;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public onCaptureBufferLost(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
-    .registers 7
+    .locals 1
 
     .line 275
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;
@@ -69,7 +69,7 @@
 .end method
 
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 5
+    .locals 1
 
     .line 246
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;
@@ -86,7 +86,7 @@
 .end method
 
 .method public onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
-    .registers 6
+    .locals 2
 
     .line 252
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;
@@ -105,7 +105,7 @@
 .end method
 
 .method public onCaptureProgressed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
-    .registers 5
+    .locals 1
 
     .line 240
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;
@@ -122,41 +122,41 @@
 .end method
 
 .method public onCaptureSequenceAborted(Landroid/hardware/camera2/CameraCaptureSession;I)V
-    .registers 3
+    .locals 0
 
     .line 267
     iget-boolean p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mInvokeSequenceCallback:Z
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 268
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;
 
     invoke-interface {p1, p2}, Landroidx/camera/core/impl/RequestProcessor$Callback;->onCaptureSequenceAborted(I)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public onCaptureSequenceCompleted(Landroid/hardware/camera2/CameraCaptureSession;IJ)V
-    .registers 5
+    .locals 0
 
     .line 259
     iget-boolean p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mInvokeSequenceCallback:Z
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 260
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;
 
     invoke-interface {p1, p2, p3, p4}, Landroidx/camera/core/impl/RequestProcessor$Callback;->onCaptureSequenceCompleted(IJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;JJ)V
-    .registers 13
+    .locals 6
 
     .line 234
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2RequestProcessor$Camera2CallbackWrapper;->mCallback:Landroidx/camera/core/impl/RequestProcessor$Callback;

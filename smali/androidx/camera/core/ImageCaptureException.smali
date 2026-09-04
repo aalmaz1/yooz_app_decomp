@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 36
     invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public getImageCaptureError()I
-    .registers 2
+    .locals 1
 
     .line 50
     iget v0, p0, Landroidx/camera/core/ImageCaptureException;->mImageCaptureError:I

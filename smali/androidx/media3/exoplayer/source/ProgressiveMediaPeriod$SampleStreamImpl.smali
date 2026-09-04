@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;I)V
-    .registers 3
+    .locals 0
 
     .line 968
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
@@ -39,7 +39,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;)I
-    .registers 1
+    .locals 0
 
     .line 964
     iget p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;->track:I
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public isReady()Z
-    .registers 3
+    .locals 2
 
     .line 974
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
@@ -65,7 +65,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -83,7 +83,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 6
+    .locals 2
 
     .line 985
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
@@ -98,7 +98,7 @@
 .end method
 
 .method public skipData(J)I
-    .registers 5
+    .locals 2
 
     .line 990
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;

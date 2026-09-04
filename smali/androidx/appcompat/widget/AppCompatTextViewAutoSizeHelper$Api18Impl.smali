@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 945
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isInLayout(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 951
     invoke-virtual {p0}, Landroid/view/View;->isInLayout()Z

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1868
     invoke-direct {p0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method constructor <init>(Landroidx/core/view/WindowInsetsCompat;)V
-    .registers 2
+    .locals 0
 
     .line 1872
     invoke-direct {p0, p1}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;-><init>(Landroidx/core/view/WindowInsetsCompat;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method setInsets(ILandroidx/core/graphics/Insets;)V
-    .registers 4
+    .locals 1
 
     .line 1877
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;->mPlatBuilder:Landroid/view/WindowInsets$Builder;
@@ -58,7 +58,7 @@
 .end method
 
 .method setInsetsIgnoringVisibility(ILandroidx/core/graphics/Insets;)V
-    .registers 4
+    .locals 1
 
     .line 1885
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;->mPlatBuilder:Landroid/view/WindowInsets$Builder;
@@ -80,7 +80,7 @@
 .end method
 
 .method setVisible(IZ)V
-    .registers 4
+    .locals 1
 
     .line 1893
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;->mPlatBuilder:Landroid/view/WindowInsets$Builder;

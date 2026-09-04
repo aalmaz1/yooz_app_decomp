@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Appendable;Ljava/io/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -63,7 +63,7 @@
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -79,7 +79,7 @@
 .end method
 
 .method public write(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -106,7 +106,7 @@
 .end method
 
 .method public write([CII)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

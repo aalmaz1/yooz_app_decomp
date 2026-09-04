@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/ColorInfo;II)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/FrameInfo;)V
-    .registers 4
+    .locals 2
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/FrameInfo;
-    .registers 10
+    .locals 9
 
     .line 105
     new-instance v8, Landroidx/media3/common/FrameInfo;
@@ -112,7 +112,7 @@
 .end method
 
 .method public setColorInfo(Landroidx/media3/common/ColorInfo;)Landroidx/media3/common/FrameInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 62
     iput-object p1, p0, Landroidx/media3/common/FrameInfo$Builder;->colorInfo:Landroidx/media3/common/ColorInfo;
@@ -121,7 +121,7 @@
 .end method
 
 .method public setHeight(I)Landroidx/media3/common/FrameInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 76
     iput p1, p0, Landroidx/media3/common/FrameInfo$Builder;->height:I
@@ -130,7 +130,7 @@
 .end method
 
 .method public setOffsetToAddUs(J)Landroidx/media3/common/FrameInfo$Builder;
-    .registers 3
+    .locals 0
 
     .line 99
     iput-wide p1, p0, Landroidx/media3/common/FrameInfo$Builder;->offsetToAddUs:J
@@ -139,7 +139,7 @@
 .end method
 
 .method public setPixelWidthHeightRatio(F)Landroidx/media3/common/FrameInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 87
     iput p1, p0, Landroidx/media3/common/FrameInfo$Builder;->pixelWidthHeightRatio:F
@@ -148,7 +148,7 @@
 .end method
 
 .method public setWidth(I)Landroidx/media3/common/FrameInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 69
     iput p1, p0, Landroidx/media3/common/FrameInfo$Builder;->width:I

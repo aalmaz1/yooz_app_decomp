@@ -13,25 +13,25 @@
 
 # virtual methods
 .method public onDrmKeysLoaded(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrmKeysRemoved(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrmKeysRestored(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrmSessionAcquired(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -39,19 +39,19 @@
 .end method
 
 .method public onDrmSessionAcquired(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;I)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrmSessionManagerError(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrmSessionReleased(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

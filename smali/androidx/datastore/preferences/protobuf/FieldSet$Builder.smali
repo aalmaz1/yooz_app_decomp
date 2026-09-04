@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x10
 
@@ -59,7 +59,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/FieldSet$1;)V
-    .registers 2
+    .locals 0
 
     .line 920
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,12 +94,12 @@
 .end method
 
 .method private ensureIsMutable()V
-    .registers 3
+    .locals 2
 
     .line 1060
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->isMutable:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 1061
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -115,12 +115,12 @@
     .line 1062
     iput-boolean v1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->isMutable:Z
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public static fromFieldSet(Landroidx/datastore/preferences/protobuf/FieldSet;)Landroidx/datastore/preferences/protobuf/FieldSet$Builder;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -159,7 +159,7 @@
 .end method
 
 .method private mergeFromField(Ljava/util/Map$Entry;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -185,7 +185,7 @@
     .line 1262
     instance-of v1, p1, Landroidx/datastore/preferences/protobuf/LazyField;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 1263
     check-cast p1, Landroidx/datastore/preferences/protobuf/LazyField;
@@ -195,19 +195,19 @@
     move-result-object p1
 
     .line 1266
-    :cond_14
+    :cond_0
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->isRepeated()Z
 
     move-result v1
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_3
 
     .line 1267
     invoke-virtual {p0, v0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->getField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     .line 1269
     new-instance v1, Ljava/util/ArrayList;
@@ -215,19 +215,19 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 1271
-    :cond_25
+    :cond_1
     check-cast p1, Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :goto_2b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -244,32 +244,32 @@
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 1274
-    :cond_40
+    :cond_2
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-virtual {p1, v0, v1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_89
+    goto :goto_1
 
     .line 1275
-    :cond_46
+    :cond_3
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->getLiteJavaType()Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
 
     move-result-object v1
 
     sget-object v2, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;->MESSAGE:Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
 
-    if-ne v1, v2, :cond_80
+    if-ne v1, v2, :cond_6
 
     .line 1276
     invoke-virtual {p0, v0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->getField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_5e
+    if-nez v1, :cond_4
 
     .line 1278
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -280,13 +280,13 @@
 
     invoke-virtual {v1, v0, p1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_89
+    goto :goto_1
 
     .line 1281
-    :cond_5e
+    :cond_4
     instance-of v2, v1, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz v2, :cond_6a
+    if-eqz v2, :cond_5
 
     .line 1282
     check-cast v1, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
@@ -295,10 +295,10 @@
 
     invoke-interface {v0, v1, p1}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->internalMergeFrom(Landroidx/datastore/preferences/protobuf/MessageLite$Builder;Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    goto :goto_89
+    goto :goto_1
 
     .line 1284
-    :cond_6a
+    :cond_5
     check-cast v1, Landroidx/datastore/preferences/protobuf/MessageLite;
 
     .line 1286
@@ -322,10 +322,10 @@
 
     invoke-virtual {v1, v0, p1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_89
+    goto :goto_1
 
     .line 1292
-    :cond_80
+    :cond_6
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->access$700(Ljava/lang/Object;)Ljava/lang/Object;
@@ -334,17 +334,17 @@
 
     invoke-virtual {v1, v0, p1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_89
+    :goto_1
     return-void
 .end method
 
 .method private static replaceBuilder(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1005
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     check-cast p0, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
@@ -352,12 +352,12 @@
 
     move-result-object p0
 
-    :cond_a
+    :cond_0
     return-object p0
 .end method
 
 .method private static replaceBuilders(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -369,31 +369,31 @@
         }
     .end annotation
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-object p1
 
     .line 973
-    :cond_3
+    :cond_0
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->getLiteJavaType()Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
 
     move-result-object v0
 
     sget-object v1, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;->MESSAGE:Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
 
-    if-ne v0, v1, :cond_56
+    if-ne v0, v1, :cond_6
 
     .line 974
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->isRepeated()Z
 
     move-result p0
 
-    if-eqz p0, :cond_51
+    if-eqz p0, :cond_5
 
     .line 975
     instance-of p0, p1, Ljava/util/List;
 
-    if-eqz p0, :cond_38
+    if-eqz p0, :cond_4
 
     .line 981
     move-object p0, p1
@@ -403,12 +403,12 @@
     const/4 v0, 0x0
 
     .line 982
-    :goto_19
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_37
+    if-ge v0, v1, :cond_3
 
     .line 983
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -420,9 +420,9 @@
 
     move-result-object v2
 
-    if-eq v2, v1, :cond_34
+    if-eq v2, v1, :cond_2
 
-    if-ne p0, p1, :cond_31
+    if-ne p0, p1, :cond_1
 
     .line 991
     new-instance v1, Ljava/util/ArrayList;
@@ -432,19 +432,19 @@
     move-object p0, v1
 
     .line 993
-    :cond_31
+    :cond_1
     invoke-interface {p0, v0, v2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_34
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_37
+    :cond_3
     return-object p0
 
     .line 976
-    :cond_38
+    :cond_4
     new-instance p0, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -471,19 +471,19 @@
     throw p0
 
     .line 998
-    :cond_51
+    :cond_5
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->replaceBuilder(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_56
+    :cond_6
     return-object p1
 .end method
 
 .method private static replaceBuilders(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -499,12 +499,12 @@
     const/4 v0, 0x0
 
     .line 955
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->getNumArrayEntries()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_11
+    if-ge v0, v1, :cond_0
 
     .line 956
     invoke-virtual {p0, v0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->getArrayEntryAt(I)Ljava/util/Map$Entry;
@@ -515,10 +515,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 958
-    :cond_11
+    :cond_0
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->getOverflowEntries()Ljava/lang/Iterable;
 
     move-result-object p0
@@ -527,12 +527,12 @@
 
     move-result-object p0
 
-    :goto_19
+    :goto_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -543,14 +543,14 @@
     .line 959
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->replaceBuilders(Ljava/util/Map$Entry;)V
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     return-void
 .end method
 
 .method private static replaceBuilders(Ljava/util/Map$Entry;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -584,14 +584,14 @@
 .end method
 
 .method private static verifyType(Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 1215
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->access$500(Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 1217
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->getJavaType()Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
@@ -600,16 +600,16 @@
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;->MESSAGE:Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
 
-    if-ne p0, v0, :cond_13
+    if-ne p0, v0, :cond_0
 
     instance-of p0, p1, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 1221
-    :cond_13
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Wrong object type used with protocol message reflection."
@@ -618,14 +618,14 @@
 
     throw p0
 
-    :cond_1b
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public addRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -642,29 +642,29 @@
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_3
 
     .line 1191
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     instance-of v0, p2, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_15
+    :goto_1
     iput-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
     .line 1193
@@ -679,7 +679,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2
 
     .line 1198
     new-instance v0, Ljava/util/ArrayList;
@@ -691,20 +691,20 @@
 
     invoke-virtual {v1, p1, v0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_31
+    goto :goto_2
 
     .line 1201
-    :cond_2f
+    :cond_2
     check-cast v0, Ljava/util/List;
 
     .line 1204
-    :goto_31
+    :goto_2
     invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-void
 
     .line 1187
-    :cond_35
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "addRepeatedField() can only be called on repeated fields."
@@ -715,7 +715,7 @@
 .end method
 
 .method public build()Landroidx/datastore/preferences/protobuf/FieldSet;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -731,7 +731,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 939
     invoke-static {}, Landroidx/datastore/preferences/protobuf/FieldSet;->emptySet()Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -740,7 +740,7 @@
 
     return-object v0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 941
@@ -752,7 +752,7 @@
     .line 943
     iget-boolean v2, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 945
     invoke-static {v1, v0}, Landroidx/datastore/preferences/protobuf/FieldSet;->access$100(Landroidx/datastore/preferences/protobuf/SmallSortedMap;Z)Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -763,7 +763,7 @@
     invoke-static {v1}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->replaceBuilders(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
 
     .line 948
-    :cond_1d
+    :cond_1
     new-instance v0, Landroidx/datastore/preferences/protobuf/FieldSet;
 
     const/4 v2, 0x0
@@ -779,7 +779,7 @@
 .end method
 
 .method public clearField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -801,19 +801,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 1105
     iput-boolean p1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasLazyField:Z
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public getAllFields()Ljava/util/Map;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -827,7 +827,7 @@
     .line 1019
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasLazyField:Z
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     .line 1020
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -845,47 +845,47 @@
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 1022
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->makeImmutable()V
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 1024
-    :cond_17
+    :cond_0
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->replaceBuilders(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
 
-    :goto_1a
+    :goto_0
     return-object v0
 
     .line 1028
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->isImmutable()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_26
+    :cond_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    :goto_2c
+    :goto_1
     return-object v0
 .end method
 
 .method public getField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -907,7 +907,7 @@
 .end method
 
 .method getFieldAllowBuilders(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -925,7 +925,7 @@
     .line 1053
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/LazyField;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 1054
     check-cast p1, Landroidx/datastore/preferences/protobuf/LazyField;
@@ -934,12 +934,12 @@
 
     move-result-object p1
 
-    :cond_10
+    :cond_0
     return-object p1
 .end method
 
 .method public getRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;I)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)",
@@ -950,13 +950,13 @@
     .line 1130
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 1131
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->ensureIsMutable()V
 
     .line 1133
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->getRepeatedFieldAllowBuilders(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;I)Ljava/lang/Object;
 
     move-result-object p1
@@ -970,7 +970,7 @@
 .end method
 
 .method getRepeatedFieldAllowBuilders(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;I)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)",
@@ -983,14 +983,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 1147
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->getFieldAllowBuilders(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 1152
     check-cast p1, Ljava/util/List;
@@ -1002,7 +1002,7 @@
     return-object p1
 
     .line 1150
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -1010,7 +1010,7 @@
     throw p1
 
     .line 1143
-    :cond_19
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "getRepeatedField() can only be called on repeated fields."
@@ -1021,7 +1021,7 @@
 .end method
 
 .method public getRepeatedFieldCount(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)I"
@@ -1033,21 +1033,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 1118
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->getField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 1122
-    :cond_e
+    :cond_0
     check-cast p1, Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -1057,7 +1057,7 @@
     return p1
 
     .line 1114
-    :cond_15
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "getRepeatedField() can only be called on repeated fields."
@@ -1068,7 +1068,7 @@
 .end method
 
 .method public hasField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -1080,7 +1080,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     .line 1037
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -1089,20 +1089,20 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_11
+    :goto_0
     return p1
 
     .line 1034
-    :cond_12
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "hasField() can only be called on non-repeated fields."
@@ -1113,21 +1113,21 @@
 .end method
 
 .method public isInitialized()Z
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 1232
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-virtual {v2}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->getNumArrayEntries()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1a
+    if-ge v1, v2, :cond_1
 
     .line 1233
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -1140,17 +1140,17 @@
 
     move-result v2
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_0
 
     return v0
 
-    :cond_17
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 1237
-    :cond_1a
+    :cond_1
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->fields:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-virtual {v1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->getOverflowEntries()Ljava/lang/Iterable;
@@ -1161,12 +1161,12 @@
 
     move-result-object v1
 
-    :cond_24
+    :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1179,18 +1179,18 @@
 
     move-result v2
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_2
 
     return v0
 
-    :cond_37
+    :cond_3
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public mergeFrom(Landroidx/datastore/preferences/protobuf/FieldSet;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1205,7 +1205,7 @@
     const/4 v0, 0x0
 
     .line 1250
-    :goto_4
+    :goto_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->access$400(Landroidx/datastore/preferences/protobuf/FieldSet;)Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     move-result-object v1
@@ -1214,7 +1214,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1c
+    if-ge v0, v1, :cond_0
 
     .line 1251
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->access$400(Landroidx/datastore/preferences/protobuf/FieldSet;)Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -1229,10 +1229,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 1253
-    :cond_1c
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->access$400(Landroidx/datastore/preferences/protobuf/FieldSet;)Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     move-result-object p1
@@ -1245,12 +1245,12 @@
 
     move-result-object p1
 
-    :goto_28
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1261,14 +1261,14 @@
     .line 1254
     invoke-direct {p0, v0}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->mergeFromField(Ljava/util/Map$Entry;)V
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_38
+    :cond_1
     return-void
 .end method
 
 .method public setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -1289,12 +1289,12 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_4
 
     .line 1074
     instance-of v0, p2, Ljava/util/List;
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3
 
     .line 1081
     new-instance v0, Ljava/util/ArrayList;
@@ -1311,12 +1311,12 @@
 
     move-result-object p2
 
-    :goto_1d
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_2
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1332,35 +1332,35 @@
     .line 1085
     iget-boolean v4, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    if-nez v4, :cond_39
+    if-nez v4, :cond_1
 
     instance-of v3, v3, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz v3, :cond_37
+    if-eqz v3, :cond_0
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_37
+    :cond_0
     move v3, v1
 
-    goto :goto_3a
+    goto :goto_2
 
-    :cond_39
-    :goto_39
+    :cond_1
+    :goto_1
     move v3, v2
 
-    :goto_3a
+    :goto_2
     iput-boolean v3, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_3d
+    :cond_2
     move-object p2, v0
 
-    goto :goto_4e
+    goto :goto_3
 
     .line 1075
-    :cond_3f
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Wrong object type used with protocol message reflection."
@@ -1370,7 +1370,7 @@
     throw p1
 
     .line 1089
-    :cond_47
+    :cond_4
     invoke-interface {p1}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->getLiteType()Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
     move-result-object v0
@@ -1378,28 +1378,28 @@
     invoke-static {v0, p2}, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->verifyType(Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;)V
 
     .line 1092
-    :goto_4e
+    :goto_3
     instance-of v0, p2, Landroidx/datastore/preferences/protobuf/LazyField;
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_5
 
     .line 1093
     iput-boolean v2, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasLazyField:Z
 
     .line 1095
-    :cond_54
+    :cond_5
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_6
 
     instance-of v0, p2, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_7
 
-    :cond_5c
+    :cond_6
     move v1, v2
 
-    :cond_5d
+    :cond_7
     iput-boolean v1, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
     .line 1097
@@ -1411,7 +1411,7 @@
 .end method
 
 .method public setRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;ILjava/lang/Object;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I",
@@ -1428,29 +1428,29 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     .line 1168
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     instance-of v0, p3, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_15
+    :goto_1
     iput-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldSet$Builder;->hasNestedBuilders:Z
 
     .line 1170
@@ -1458,7 +1458,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 1175
     invoke-interface {p1}, Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;->getLiteType()Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -1475,7 +1475,7 @@
     return-void
 
     .line 1172
-    :cond_2a
+    :cond_2
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -1483,7 +1483,7 @@
     throw p1
 
     .line 1164
-    :cond_30
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "getRepeatedField() can only be called on repeated fields."

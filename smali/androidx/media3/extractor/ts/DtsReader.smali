@@ -64,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;II)V
-    .registers 6
+    .locals 2
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method private continueRead(Landroidx/media3/common/util/ParsableByteArray;[BI)Z
-    .registers 6
+    .locals 2
 
     .line 232
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -140,21 +140,21 @@
 
     iput p1, p0, Landroidx/media3/extractor/ts/DtsReader;->bytesRead:I
 
-    if-ne p1, p3, :cond_1a
+    if-ne p1, p3, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_1b
+    :goto_0
     return p1
 .end method
 
 .method private parseCoreHeader()V
-    .registers 6
+    .locals 5
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -171,7 +171,7 @@
     .line 268
     iget-object v1, p0, Landroidx/media3/extractor/ts/DtsReader;->format:Landroidx/media3/common/Format;
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     .line 269
     iget-object v1, p0, Landroidx/media3/extractor/ts/DtsReader;->formatId:Ljava/lang/String;
@@ -194,7 +194,7 @@
     invoke-interface {v2, v1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
     .line 272
-    :cond_1c
+    :cond_0
     invoke-static {v0}, Landroidx/media3/extractor/DtsUtil;->getDtsFrameSize([B)I
 
     move-result v1
@@ -230,7 +230,7 @@
 .end method
 
 .method private parseExtensionSubstreamHeader()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -269,23 +269,23 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
     const-wide/16 v0, 0x0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     iget-wide v0, v0, Landroidx/media3/extractor/DtsUtil$DtsHeader;->frameDurationUs:J
 
-    :goto_21
+    :goto_0
     iput-wide v0, p0, Landroidx/media3/extractor/ts/DtsReader;->sampleDurationUs:J
 
     return-void
 .end method
 
 .method private parseUhdHeader()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -317,13 +317,13 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_14
+    if-ne v1, v2, :cond_0
 
     .line 297
     invoke-direct {p0, v0}, Landroidx/media3/extractor/ts/DtsReader;->updateFormatWithDtsHeaderInfo(Landroidx/media3/extractor/DtsUtil$DtsHeader;)V
 
     .line 299
-    :cond_14
+    :cond_0
     iget v1, v0, Landroidx/media3/extractor/DtsUtil$DtsHeader;->frameSize:I
 
     iput v1, p0, Landroidx/media3/extractor/ts/DtsReader;->sampleSize:I
@@ -335,23 +335,23 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     const-wide/16 v0, 0x0
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     iget-wide v0, v0, Landroidx/media3/extractor/DtsUtil$DtsHeader;->frameDurationUs:J
 
-    :goto_28
+    :goto_0
     iput-wide v0, p0, Landroidx/media3/extractor/ts/DtsReader;->sampleDurationUs:J
 
     return-void
 .end method
 
 .method private skipToNextSyncWord(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 7
+    .locals 5
 
     .line 246
     :cond_0
@@ -361,7 +361,7 @@
 
     const/4 v1, 0x0
 
-    if-lez v0, :cond_47
+    if-lez v0, :cond_1
 
     .line 247
     iget v0, p0, Landroidx/media3/extractor/ts/DtsReader;->syncBytes:I
@@ -447,12 +447,12 @@
 
     return v3
 
-    :cond_47
+    :cond_1
     return v1
 .end method
 
 .method private updateFormatWithDtsHeaderInfo(Landroidx/media3/extractor/DtsUtil$DtsHeader;)V
-    .registers 4
+    .locals 2
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -464,21 +464,21 @@
 
     const v1, -0x7fffffff
 
-    if-eq v0, v1, :cond_6a
+    if-eq v0, v1, :cond_3
 
     iget v0, p1, Landroidx/media3/extractor/DtsUtil$DtsHeader;->channelCount:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
-    goto :goto_6a
+    goto :goto_1
 
     .line 308
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->format:Landroidx/media3/common/Format;
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     iget v0, p1, Landroidx/media3/extractor/DtsUtil$DtsHeader;->channelCount:I
 
@@ -486,7 +486,7 @@
 
     iget v1, v1, Landroidx/media3/common/Format;->channelCount:I
 
-    if-ne v0, v1, :cond_2d
+    if-ne v0, v1, :cond_1
 
     iget v0, p1, Landroidx/media3/extractor/DtsUtil$DtsHeader;->sampleRate:I
 
@@ -494,7 +494,7 @@
 
     iget v1, v1, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-ne v0, v1, :cond_2d
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p1, Landroidx/media3/extractor/DtsUtil$DtsHeader;->mimeType:Ljava/lang/String;
 
@@ -507,27 +507,27 @@
 
     move-result v0
 
-    if-nez v0, :cond_6a
+    if-nez v0, :cond_3
 
     .line 312
-    :cond_2d
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->format:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_2
 
     new-instance v0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Format$Builder;-><init>()V
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_37
+    :cond_2
     invoke-virtual {v0}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
 
     move-result-object v0
 
     .line 313
-    :goto_3b
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/ts/DtsReader;->formatId:Ljava/lang/String;
 
     .line 315
@@ -582,15 +582,15 @@
 
     invoke-interface {v0, p1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    :cond_6a
-    :goto_6a
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -603,13 +603,13 @@
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 135
-    :cond_5
-    :goto_5
+    :cond_0
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_130
+    if-lez v0, :cond_7
 
     .line 136
     iget v0, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
@@ -624,7 +624,7 @@
 
     const/4 v5, 0x0
 
-    packed-switch v0, :pswitch_data_132
+    packed-switch v0, :pswitch_data_0
 
     .line 212
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -634,7 +634,7 @@
     throw p1
 
     .line 195
-    :pswitch_1b
+    :pswitch_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
@@ -664,7 +664,7 @@
     .line 198
     iget v0, p0, Landroidx/media3/extractor/ts/DtsReader;->sampleSize:I
 
-    if-ne v1, v0, :cond_5
+    if-ne v1, v0, :cond_0
 
     .line 200
     iget-wide v0, p0, Landroidx/media3/extractor/ts/DtsReader;->timeUs:J
@@ -673,16 +673,16 @@
 
     cmp-long v0, v0, v6
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_1
 
     move v0, v3
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_43
+    :cond_1
     move v0, v5
 
-    :goto_44
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 201
@@ -693,16 +693,16 @@
     .line 203
     iget v0, p0, Landroidx/media3/extractor/ts/DtsReader;->frameType:I
 
-    if-ne v0, v2, :cond_51
+    if-ne v0, v2, :cond_2
 
     move v9, v5
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_51
+    :cond_2
     move v9, v3
 
-    :goto_52
+    :goto_2
     iget v10, p0, Landroidx/media3/extractor/ts/DtsReader;->sampleSize:I
 
     const/4 v11, 0x0
@@ -724,10 +724,10 @@
     .line 208
     iput v5, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
     .line 187
-    :pswitch_63
+    :pswitch_1
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -740,7 +740,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 188
     invoke-direct {p0}, Landroidx/media3/extractor/ts/DtsReader;->parseUhdHeader()V
@@ -762,10 +762,10 @@
     .line 191
     iput v4, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
     .line 175
-    :pswitch_85
+    :pswitch_2
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -776,7 +776,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 176
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
@@ -794,7 +794,7 @@
     .line 178
     iget v1, p0, Landroidx/media3/extractor/ts/DtsReader;->bytesRead:I
 
-    if-le v1, v0, :cond_ae
+    if-le v1, v0, :cond_3
 
     sub-int v0, v1, v0
 
@@ -812,16 +812,16 @@
 
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    :cond_ae
+    :cond_3
     const/4 v0, 0x5
 
     .line 183
     iput v0, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 166
-    :pswitch_b3
+    :pswitch_3
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -834,7 +834,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 167
     invoke-direct {p0}, Landroidx/media3/extractor/ts/DtsReader;->parseExtensionSubstreamHeader()V
@@ -856,10 +856,10 @@
     .line 170
     iput v4, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 159
-    :pswitch_d6
+    :pswitch_4
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -872,7 +872,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 160
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
@@ -891,10 +891,10 @@
     .line 162
     iput v1, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 150
-    :pswitch_f3
+    :pswitch_5
     iget-object v0, p0, Landroidx/media3/extractor/ts/DtsReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -907,7 +907,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 151
     invoke-direct {p0}, Landroidx/media3/extractor/ts/DtsReader;->parseCoreHeader()V
@@ -927,67 +927,67 @@
     .line 154
     iput v4, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 138
-    :pswitch_114
+    :pswitch_6
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/DtsReader;->skipToNextSyncWord(Landroidx/media3/common/util/ParsableByteArray;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 139
     iget v0, p0, Landroidx/media3/extractor/ts/DtsReader;->frameType:I
 
-    if-eq v0, v1, :cond_12c
+    if-eq v0, v1, :cond_6
 
-    if-ne v0, v2, :cond_121
+    if-ne v0, v2, :cond_4
 
-    goto :goto_12c
+    goto :goto_3
 
-    :cond_121
-    if-ne v0, v3, :cond_127
+    :cond_4
+    if-ne v0, v3, :cond_5
 
     .line 143
     iput v3, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
-    :cond_127
+    :cond_5
     const/4 v0, 0x2
 
     .line 145
     iput v0, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 141
-    :cond_12c
-    :goto_12c
+    :cond_6
+    :goto_3
     iput v2, p0, Landroidx/media3/extractor/ts/DtsReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
-    :cond_130
+    :cond_7
     return-void
 
     nop
 
-    :pswitch_data_132
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_114
-        :pswitch_f3
-        :pswitch_d6
-        :pswitch_b3
-        :pswitch_85
-        :pswitch_63
-        :pswitch_1b
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 4
+    .locals 1
 
     .line 122
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -1016,13 +1016,13 @@
 .end method
 
 .method public packetFinished(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     .line 129
     iput-wide p1, p0, Landroidx/media3/extractor/ts/DtsReader;->timeUs:J
@@ -1031,7 +1031,7 @@
 .end method
 
 .method public seek()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 

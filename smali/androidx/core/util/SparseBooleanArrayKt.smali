@@ -59,70 +59,70 @@
 
 # direct methods
 .method public static final contains(Landroid/util/SparseBooleanArray;I)Z
-    .registers 2
+    .locals 0
 
     .line 27
     invoke-virtual {p0, p1}, Landroid/util/SparseBooleanArray;->indexOfKey(I)I
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final containsKey(Landroid/util/SparseBooleanArray;I)Z
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-virtual {p0, p1}, Landroid/util/SparseBooleanArray;->indexOfKey(I)I
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final containsValue(Landroid/util/SparseBooleanArray;Z)Z
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-virtual {p0, p1}, Landroid/util/SparseBooleanArray;->indexOfValue(Z)I
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final forEach(Landroid/util/SparseBooleanArray;Lkotlin/jvm/functions/Function2;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,8 +144,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_1d
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 78
     invoke-virtual {p0, v1}, Landroid/util/SparseBooleanArray;->keyAt(I)I
@@ -168,14 +168,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public static final getOrDefault(Landroid/util/SparseBooleanArray;IZ)Z
-    .registers 3
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1, p2}, Landroid/util/SparseBooleanArray;->get(IZ)Z
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final getOrElse(Landroid/util/SparseBooleanArray;ILkotlin/jvm/functions/Function0;)Z
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -203,15 +203,15 @@
 
     move-result p1
 
-    if-ltz p1, :cond_b
+    if-ltz p1, :cond_0
 
     invoke-virtual {p0, p1}, Landroid/util/SparseBooleanArray;->valueAt(I)Z
 
     move-result p0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object p0
@@ -222,12 +222,12 @@
 
     move-result p0
 
-    :goto_15
+    :goto_0
     return p0
 .end method
 
 .method public static final getSize(Landroid/util/SparseBooleanArray;)I
-    .registers 1
+    .locals 0
 
     .line 24
     invoke-virtual {p0}, Landroid/util/SparseBooleanArray;->size()I
@@ -238,49 +238,49 @@
 .end method
 
 .method public static final isEmpty(Landroid/util/SparseBooleanArray;)Z
-    .registers 1
+    .locals 0
 
     .line 56
     invoke-virtual {p0}, Landroid/util/SparseBooleanArray;->size()I
 
     move-result p0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final isNotEmpty(Landroid/util/SparseBooleanArray;)Z
-    .registers 1
+    .locals 0
 
     .line 59
     invoke-virtual {p0}, Landroid/util/SparseBooleanArray;->size()I
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final keyIterator(Landroid/util/SparseBooleanArray;)Lkotlin/collections/IntIterator;
-    .registers 2
+    .locals 1
 
     .line 83
     new-instance v0, Landroidx/core/util/SparseBooleanArrayKt$keyIterator$1;
@@ -293,7 +293,7 @@
 .end method
 
 .method public static final plus(Landroid/util/SparseBooleanArray;Landroid/util/SparseBooleanArray;)Landroid/util/SparseBooleanArray;
-    .registers 5
+    .locals 3
 
     .line 34
     new-instance v0, Landroid/util/SparseBooleanArray;
@@ -320,7 +320,7 @@
 .end method
 
 .method public static final putAll(Landroid/util/SparseBooleanArray;Landroid/util/SparseBooleanArray;)V
-    .registers 6
+    .locals 4
 
     .line 97
     invoke-virtual {p1}, Landroid/util/SparseBooleanArray;->size()I
@@ -329,8 +329,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_15
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 98
     invoke-virtual {p1, v1}, Landroid/util/SparseBooleanArray;->keyAt(I)I
@@ -346,28 +346,28 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public static final remove(Landroid/util/SparseBooleanArray;IZ)Z
-    .registers 4
+    .locals 1
 
     .line 63
     invoke-virtual {p0, p1}, Landroid/util/SparseBooleanArray;->indexOfKey(I)I
 
     move-result v0
 
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
     .line 64
     invoke-virtual {p0, v0}, Landroid/util/SparseBooleanArray;->valueAt(I)Z
 
     move-result v0
 
-    if-ne p2, v0, :cond_11
+    if-ne p2, v0, :cond_0
 
     .line 66
     invoke-virtual {p0, p1}, Landroid/util/SparseBooleanArray;->delete(I)V
@@ -376,14 +376,14 @@
 
     return p0
 
-    :cond_11
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static final set(Landroid/util/SparseBooleanArray;IZ)V
-    .registers 3
+    .locals 0
 
     .line 30
     invoke-virtual {p0, p1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
@@ -392,7 +392,7 @@
 .end method
 
 .method public static final valueIterator(Landroid/util/SparseBooleanArray;)Lkotlin/collections/BooleanIterator;
-    .registers 2
+    .locals 1
 
     .line 90
     new-instance v0, Landroidx/core/util/SparseBooleanArrayKt$valueIterator$1;

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/print/PrintHelper$PrintUriAdapter$1;)V
-    .registers 2
+    .locals 0
 
     .line 429
     iput-object p1, p0, Landroidx/print/PrintHelper$PrintUriAdapter$1$1;->this$2:Landroidx/print/PrintHelper$PrintUriAdapter$1;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCancel()V
-    .registers 3
+    .locals 2
 
     .line 432
     iget-object v0, p0, Landroidx/print/PrintHelper$PrintUriAdapter$1$1;->this$2:Landroidx/print/PrintHelper$PrintUriAdapter$1;

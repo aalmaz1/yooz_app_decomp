@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(II)V
-    .registers 5
+    .locals 2
 
     .line 227
     new-instance v0, Ljava/lang/StringBuilder;

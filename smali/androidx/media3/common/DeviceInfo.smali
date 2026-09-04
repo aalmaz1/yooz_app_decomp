@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 54
     new-instance v0, Landroidx/media3/common/DeviceInfo$Builder;
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -116,7 +116,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/DeviceInfo$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -153,7 +153,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/DeviceInfo$Builder;Landroidx/media3/common/DeviceInfo$1;)V
-    .registers 3
+    .locals 0
 
     .line 35
     invoke-direct {p0, p1}, Landroidx/media3/common/DeviceInfo;-><init>(Landroidx/media3/common/DeviceInfo$Builder;)V
@@ -162,7 +162,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/DeviceInfo;
-    .registers 5
+    .locals 4
 
     .line 220
     sget-object v0, Landroidx/media3/common/DeviceInfo;->FIELD_PLAYBACK_TYPE:Ljava/lang/String;
@@ -225,26 +225,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 174
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/DeviceInfo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 177
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/DeviceInfo;
 
     .line 178
@@ -252,19 +252,19 @@
 
     iget v3, p1, Landroidx/media3/common/DeviceInfo;->playbackType:I
 
-    if-ne v1, v3, :cond_29
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/DeviceInfo;->minVolume:I
 
     iget v3, p1, Landroidx/media3/common/DeviceInfo;->minVolume:I
 
-    if-ne v1, v3, :cond_29
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/DeviceInfo;->maxVolume:I
 
     iget v3, p1, Landroidx/media3/common/DeviceInfo;->maxVolume:I
 
-    if-ne v1, v3, :cond_29
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/DeviceInfo;->routingControllerId:Ljava/lang/String;
 
@@ -275,19 +275,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v2
 
-    :goto_2a
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x20f
 
@@ -315,25 +315,25 @@
     .line 190
     iget-object v1, p0, Landroidx/media3/common/DeviceInfo;->routingControllerId:Ljava/lang/String;
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_1b
+    :goto_0
     add-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 201
     new-instance v0, Landroid/os/Bundle;
@@ -343,7 +343,7 @@
     .line 202
     iget v1, p0, Landroidx/media3/common/DeviceInfo;->playbackType:I
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 203
     sget-object v2, Landroidx/media3/common/DeviceInfo;->FIELD_PLAYBACK_TYPE:Ljava/lang/String;
@@ -351,10 +351,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 205
-    :cond_e
+    :cond_0
     iget v1, p0, Landroidx/media3/common/DeviceInfo;->minVolume:I
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 206
     sget-object v2, Landroidx/media3/common/DeviceInfo;->FIELD_MIN_VOLUME:Ljava/lang/String;
@@ -362,10 +362,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 208
-    :cond_17
+    :cond_1
     iget v1, p0, Landroidx/media3/common/DeviceInfo;->maxVolume:I
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     .line 209
     sget-object v2, Landroidx/media3/common/DeviceInfo;->FIELD_MAX_VOLUME:Ljava/lang/String;
@@ -373,16 +373,16 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 211
-    :cond_20
+    :cond_2
     iget-object v1, p0, Landroidx/media3/common/DeviceInfo;->routingControllerId:Ljava/lang/String;
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_3
 
     .line 212
     sget-object v2, Landroidx/media3/common/DeviceInfo;->FIELD_ROUTING_CONTROLLER_ID:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_29
+    :cond_3
     return-object v0
 .end method

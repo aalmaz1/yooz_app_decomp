@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/cache/Cache;Ljava/lang/String;Landroidx/media3/extractor/ChunkIndex;)V
-    .registers 6
+    .locals 2
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
     monitor-enter p0
 
     .line 57
-    :try_start_1a
+    :try_start_0
     invoke-interface {p1, p2, p0}, Landroidx/media3/datasource/cache/Cache;->addListener(Ljava/lang/String;Landroidx/media3/datasource/cache/Cache$Listener;)Ljava/util/NavigableSet;
 
     move-result-object p1
@@ -89,12 +89,12 @@
     move-result-object p1
 
     .line 61
-    :goto_22
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_0
 
     .line 62
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -106,26 +106,26 @@
     .line 63
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->mergeSpan(Landroidx/media3/datasource/cache/CacheSpan;)V
 
-    goto :goto_22
+    goto :goto_0
 
     .line 65
-    :cond_32
+    :cond_0
     monitor-exit p0
 
     return-void
 
-    :catchall_34
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_36
-    .catchall {:try_start_1a .. :try_end_36} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private mergeSpan(Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 9
+    .locals 7
 
     .line 142
     new-instance v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;
@@ -168,9 +168,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_1
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_0
 
     .line 151
     iget-wide v2, v1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
@@ -182,10 +182,10 @@
 
     iput v0, p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 155
-    :cond_31
+    :cond_0
     iget-wide v2, v1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
 
     iput-wide v2, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
@@ -201,15 +201,15 @@
     invoke-virtual {p1, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     .line 159
-    :goto_3e
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->regions:Ljava/util/TreeSet;
 
     invoke-virtual {p1, v1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_7d
+    goto :goto_2
 
-    :cond_44
-    if-eqz v2, :cond_67
+    :cond_1
+    if-eqz v2, :cond_3
 
     .line 162
     iget-wide v0, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
@@ -220,14 +220,14 @@
     iget v0, p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
     .line 164
-    :goto_4c
+    :goto_1
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
 
     iget v1, v1, Landroidx/media3/extractor/ChunkIndex;->length:I
 
     add-int/lit8 v1, v1, -0x1
 
-    if-ge v0, v1, :cond_64
+    if-ge v0, v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
 
@@ -241,20 +241,20 @@
 
     cmp-long v1, v3, v5
 
-    if-gtz v1, :cond_64
+    if-gtz v1, :cond_2
 
     move v0, v2
 
-    goto :goto_4c
+    goto :goto_1
 
     .line 168
-    :cond_64
+    :cond_2
     iput v0, p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
-    goto :goto_7d
+    goto :goto_2
 
     .line 171
-    :cond_67
+    :cond_3
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
 
     iget-object p1, p1, Landroidx/media3/extractor/ChunkIndex;->offsets:[J
@@ -265,14 +265,14 @@
 
     move-result p1
 
-    if-gez p1, :cond_76
+    if-gez p1, :cond_4
 
     neg-int p1, p1
 
     add-int/lit8 p1, p1, -0x2
 
     .line 172
-    :cond_76
+    :cond_4
     iput p1, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
     .line 173
@@ -280,16 +280,16 @@
 
     invoke-virtual {p1, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    :goto_7d
+    :goto_2
     return-void
 .end method
 
 .method private regionsConnect(Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;)Z
-    .registers 5
+    .locals 2
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 178
     iget-wide v0, p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
@@ -298,28 +298,28 @@
 
     cmp-long p1, v0, p1
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 
 # virtual methods
 .method public declared-synchronized getRegionEndTimeMs(J)I
-    .registers 10
+    .locals 7
 
     monitor-enter p0
 
     .line 83
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->lookupRegion:Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;
 
     iput-wide p1, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->startOffset:J
@@ -337,23 +337,23 @@
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_63
+    if-eqz v0, :cond_2
 
     .line 85
     iget-wide v2, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
 
     cmp-long p1, p1, v2
 
-    if-gtz p1, :cond_63
+    if-gtz p1, :cond_2
 
     iget p1, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
-    if-ne p1, v1, :cond_1d
+    if-ne p1, v1, :cond_0
 
-    goto :goto_63
+    goto :goto_0
 
     .line 90
-    :cond_1d
+    :cond_0
     iget p1, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
     .line 91
@@ -363,7 +363,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    if-ne p1, p2, :cond_3e
+    if-ne p1, p2, :cond_1
 
     iget-wide v1, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
 
@@ -378,8 +378,8 @@
     iget-object p2, p2, Landroidx/media3/extractor/ChunkIndex;->sizes:[I
 
     aget p2, p2, p1
-    :try_end_35
-    .catchall {:try_start_1 .. :try_end_35} :catchall_65
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     int-to-long v5, p2
 
@@ -387,7 +387,7 @@
 
     cmp-long p2, v1, v3
 
-    if-nez p2, :cond_3e
+    if-nez p2, :cond_1
 
     .line 93
     monitor-exit p0
@@ -397,8 +397,8 @@
     return p1
 
     .line 95
-    :cond_3e
-    :try_start_3e
+    :cond_1
+    :try_start_1
     iget-object p2, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->chunkIndex:Landroidx/media3/extractor/ChunkIndex;
 
     iget-object p2, p2, Landroidx/media3/extractor/ChunkIndex;->durationsUs:[J
@@ -439,8 +439,8 @@
     const-wide/16 v0, 0x3e8
 
     div-long/2addr p1, v0
-    :try_end_60
-    .catchall {:try_start_3e .. :try_end_60} :catchall_65
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     long-to-int p1, p1
 
@@ -449,13 +449,13 @@
     return p1
 
     .line 88
-    :cond_63
-    :goto_63
+    :cond_2
+    :goto_0
     monitor-exit p0
 
     return v1
 
-    :catchall_65
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -464,22 +464,22 @@
 .end method
 
 .method public declared-synchronized onSpanAdded(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 3
+    .locals 0
 
     monitor-enter p0
 
     .line 103
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->mergeSpan(Landroidx/media3/datasource/cache/CacheSpan;)V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 104
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -488,12 +488,12 @@
 .end method
 
 .method public declared-synchronized onSpanRemoved(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 9
+    .locals 6
 
     monitor-enter p0
 
     .line 108
-    :try_start_1
+    :try_start_0
     new-instance p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;
 
     iget-wide v0, p2, Landroidx/media3/datasource/cache/CacheSpan;->position:J
@@ -515,7 +515,7 @@
 
     check-cast p2, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;
 
-    if-nez p2, :cond_20
+    if-nez p2, :cond_0
 
     const-string p1, "CachedRegionTracker"
 
@@ -523,8 +523,8 @@
 
     .line 113
     invoke-static {p1, p2}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1e
-    .catchall {:try_start_1 .. :try_end_1e} :catchall_6b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 114
     monitor-exit p0
@@ -532,8 +532,8 @@
     return-void
 
     .line 118
-    :cond_20
-    :try_start_20
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->regions:Ljava/util/TreeSet;
 
     invoke-virtual {v0, p2}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
@@ -545,7 +545,7 @@
 
     cmp-long v0, v0, v2
 
-    if-gez v0, :cond_4c
+    if-gez v0, :cond_2
 
     .line 122
     new-instance v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;
@@ -567,14 +567,14 @@
 
     move-result v1
 
-    if-gez v1, :cond_45
+    if-gez v1, :cond_1
 
     neg-int v1, v1
 
     add-int/lit8 v1, v1, -0x2
 
     .line 125
-    :cond_45
+    :cond_1
     iput v1, v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffsetIndex:I
 
     .line 126
@@ -583,14 +583,14 @@
     invoke-virtual {v1, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     .line 129
-    :cond_4c
+    :cond_2
     iget-wide v0, p2, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
 
     iget-wide v2, p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->endOffset:J
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_69
+    if-lez v0, :cond_3
 
     .line 130
     new-instance v0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;
@@ -614,16 +614,16 @@
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->regions:Ljava/util/TreeSet;
 
     invoke-virtual {p1, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
-    :try_end_69
-    .catchall {:try_start_20 .. :try_end_69} :catchall_6b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 134
-    :cond_69
+    :cond_3
     monitor-exit p0
 
     return-void
 
-    :catchall_6b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -632,13 +632,13 @@
 .end method
 
 .method public onSpanTouched(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 69
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker;->cache:Landroidx/media3/datasource/cache/Cache;

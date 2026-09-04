@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;Z)V
-    .registers 4
+    .locals 1
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,7 +106,7 @@
 
     iput-object v0, p0, Landroidx/camera/core/impl/StateObservable;->mNotifySet:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_0
 
     .line 78
     instance-of p2, p1, Ljava/lang/Throwable;
@@ -128,22 +128,22 @@
 
     iput-object p2, p0, Landroidx/camera/core/impl/StateObservable;->mState:Ljava/util/concurrent/atomic/AtomicReference;
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 82
-    :cond_34
+    :cond_0
     new-instance p2, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {p2, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
     iput-object p2, p0, Landroidx/camera/core/impl/StateObservable;->mState:Ljava/util/concurrent/atomic/AtomicReference;
 
-    :goto_3b
+    :goto_0
     return-void
 .end method
 
 .method private removeObserverLocked(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -161,7 +161,7 @@
 
     check-cast p1, Landroidx/camera/core/impl/StateObservable$ObserverWrapper;
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 180
     invoke-virtual {p1}, Landroidx/camera/core/impl/StateObservable$ObserverWrapper;->close()V
@@ -171,12 +171,12 @@
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->remove(Ljava/lang/Object;)Z
 
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method private updateStateInternal(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
 
     .line 98
     iget-object v0, p0, Landroidx/camera/core/impl/StateObservable;->mLock:Ljava/lang/Object;
@@ -184,7 +184,7 @@
     monitor-enter v0
 
     .line 99
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/impl/StateObservable;->mState:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
@@ -196,14 +196,14 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     monitor-exit v0
 
     return-void
 
     .line 102
-    :cond_11
+    :cond_0
     iget p1, p0, Landroidx/camera/core/impl/StateObservable;->mVersion:I
 
     const/4 v1, 0x1
@@ -215,14 +215,14 @@
     .line 103
     iget-boolean v2, p0, Landroidx/camera/core/impl/StateObservable;->mUpdating:Z
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     monitor-exit v0
 
     return-void
 
     .line 104
-    :cond_1d
+    :cond_1
     iput-boolean v1, p0, Landroidx/camera/core/impl/StateObservable;->mUpdating:Z
 
     .line 105
@@ -234,16 +234,16 @@
 
     .line 106
     monitor-exit v0
-    :try_end_26
-    .catchall {:try_start_3 .. :try_end_26} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 110
-    :goto_26
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 111
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -254,19 +254,19 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/core/impl/StateObservable$ObserverWrapper;->update(I)V
 
-    goto :goto_26
+    goto :goto_0
 
     .line 115
-    :cond_36
+    :cond_2
     iget-object v1, p0, Landroidx/camera/core/impl/StateObservable;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 116
-    :try_start_39
+    :try_start_1
     iget v0, p0, Landroidx/camera/core/impl/StateObservable;->mVersion:I
 
-    if-ne v0, p1, :cond_42
+    if-ne v0, p1, :cond_3
 
     const/4 p1, 0x0
 
@@ -279,7 +279,7 @@
     return-void
 
     .line 124
-    :cond_42
+    :cond_3
     iget-object p1, p0, Landroidx/camera/core/impl/StateObservable;->mNotifySet:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
@@ -296,25 +296,25 @@
 
     move p1, v0
 
-    goto :goto_26
+    goto :goto_0
 
-    :catchall_4e
+    :catchall_0
     move-exception p1
 
     monitor-exit v1
-    :try_end_50
-    .catchall {:try_start_39 .. :try_end_50} :catchall_4e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 
-    :catchall_51
+    :catchall_1
     move-exception p1
 
     .line 106
-    :try_start_52
+    :try_start_2
     monitor-exit v0
-    :try_end_53
-    .catchall {:try_start_52 .. :try_end_53} :catchall_51
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     throw p1
 .end method
@@ -322,7 +322,7 @@
 
 # virtual methods
 .method public addObserver(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -338,7 +338,7 @@
     monitor-enter v0
 
     .line 156
-    :try_start_3
+    :try_start_0
     invoke-direct {p0, p2}, Landroidx/camera/core/impl/StateObservable;->removeObserverLocked(Landroidx/camera/core/impl/Observable$Observer;)V
 
     .line 158
@@ -360,8 +360,8 @@
 
     .line 161
     monitor-exit v0
-    :try_end_18
-    .catchall {:try_start_3 .. :try_end_18} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 p1, 0x0
 
@@ -370,20 +370,20 @@
 
     return-void
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 161
-    :try_start_1e
+    :try_start_1
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_1e .. :try_end_1f} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public fetchData()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -402,7 +402,7 @@
     .line 144
     instance-of v1, v0, Landroidx/camera/core/impl/StateObservable$ErrorWrapper;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 145
     check-cast v0, Landroidx/camera/core/impl/StateObservable$ErrorWrapper;
@@ -418,7 +418,7 @@
     return-object v0
 
     .line 147
-    :cond_15
+    :cond_0
     invoke-static {v0}, Landroidx/camera/core/impl/utils/futures/Futures;->immediateFuture(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -427,7 +427,7 @@
 .end method
 
 .method public removeObserver(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -442,7 +442,7 @@
     monitor-enter v0
 
     .line 172
-    :try_start_3
+    :try_start_0
     invoke-direct {p0, p1}, Landroidx/camera/core/impl/StateObservable;->removeObserverLocked(Landroidx/camera/core/impl/Observable$Observer;)V
 
     .line 173
@@ -450,18 +450,18 @@
 
     return-void
 
-    :catchall_8
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method updateState(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -475,7 +475,7 @@
 .end method
 
 .method updateStateAsError(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 92
     invoke-static {p1}, Landroidx/camera/core/impl/StateObservable$ErrorWrapper;->wrap(Ljava/lang/Throwable;)Landroidx/camera/core/impl/StateObservable$ErrorWrapper;

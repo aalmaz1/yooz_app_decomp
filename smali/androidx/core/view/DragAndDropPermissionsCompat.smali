@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/DragAndDropPermissions;)V
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,14 +29,14 @@
 .end method
 
 .method public static request(Landroid/app/Activity;Landroid/view/DragEvent;)Landroidx/core/view/DragAndDropPermissionsCompat;
-    .registers 2
+    .locals 0
 
     .line 55
     invoke-static {p0, p1}, Landroidx/core/view/DragAndDropPermissionsCompat$Api24Impl;->requestDragAndDropPermissions(Landroid/app/Activity;Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
 
     move-result-object p0
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_0
 
     .line 57
     new-instance p1, Landroidx/core/view/DragAndDropPermissionsCompat;
@@ -45,7 +45,7 @@
 
     return-object p1
 
-    :cond_c
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/core/view/DragAndDropPermissionsCompat;->mDragAndDropPermissions:Landroid/view/DragAndDropPermissions;

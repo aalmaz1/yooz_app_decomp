@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 2
+    .locals 0
 
     .line 70
     iget-object p1, p0, Landroidx/core/content/UnusedAppRestrictionsBackportService;->mBinder:Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub;

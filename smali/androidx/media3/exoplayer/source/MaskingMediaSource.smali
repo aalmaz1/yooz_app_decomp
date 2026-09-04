@@ -32,30 +32,30 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;Z)V
-    .registers 4
+    .locals 1
 
     .line 60
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/WrappingMediaSource;-><init>(Landroidx/media3/exoplayer/source/MediaSource;)V
 
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 61
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/MediaSource;->isSingleWindow()Z
 
     move-result p2
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     move p2, v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_f
+    :goto_0
     iput-boolean p2, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->useLazyPreparation:Z
 
     .line 62
@@ -77,7 +77,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_2f
+    if-eqz p2, :cond_1
 
     const/4 p1, 0x0
 
@@ -91,10 +91,10 @@
     .line 69
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->hasRealTimeline:Z
 
-    goto :goto_39
+    goto :goto_1
 
     .line 71
-    :cond_2f
+    :cond_1
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/MediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
 
     move-result-object p1
@@ -105,12 +105,12 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
-    :goto_39
+    :goto_1
     return-void
 .end method
 
 .method private getExternalPeriodUid(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 233
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
@@ -133,17 +133,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 234
     sget-object p1, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->MASKING_EXTERNAL_PERIOD_UID:Ljava/lang/Object;
 
-    :cond_16
+    :cond_0
     return-object p1
 .end method
 
 .method private getInternalPeriodUid(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 226
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -153,7 +153,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->MASKING_EXTERNAL_PERIOD_UID:Ljava/lang/Object;
 
@@ -162,7 +162,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 227
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -171,12 +171,12 @@
 
     move-result-object p1
 
-    :cond_16
+    :cond_0
     return-object p1
 .end method
 
 .method private setPreparePositionOverrideToUnpreparedMaskingPeriod(J)Z
-    .registers 8
+    .locals 5
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "unpreparedMaskingMediaPeriod"
@@ -199,14 +199,14 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_11
+    if-ne v1, v2, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 250
-    :cond_11
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->period:Landroidx/media3/common/Timeline$Period;
@@ -221,11 +221,11 @@
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_31
+    if-eqz v3, :cond_1
 
     cmp-long v3, p1, v1
 
-    if-ltz v3, :cond_31
+    if-ltz v3, :cond_1
 
     const-wide/16 p1, 0x1
 
@@ -239,7 +239,7 @@
     move-result-wide p1
 
     .line 257
-    :cond_31
+    :cond_1
     invoke-virtual {v0, p1, p2}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->overridePreparePositionUs(J)V
 
     const/4 p1, 0x1
@@ -250,7 +250,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 3
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -263,7 +263,7 @@
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
-    .registers 6
+    .locals 1
 
     .line 115
     new-instance v0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
@@ -278,7 +278,7 @@
     .line 117
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->isPrepared:Z
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_0
 
     .line 118
     iget-object p2, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -294,16 +294,16 @@
     .line 119
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 124
-    :cond_1c
+    :cond_0
     iput-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
 
     .line 125
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->hasStartedPreparing:Z
 
-    if-nez p1, :cond_28
+    if-nez p1, :cond_1
 
     const/4 p1, 0x1
 
@@ -313,13 +313,13 @@
     .line 127
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->prepareChildSource()V
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
 .method public bridge synthetic createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 5
+    .locals 0
 
     .line 38
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
@@ -330,7 +330,7 @@
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 1
 
     .line 221
     iget-object v0, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -347,7 +347,7 @@
 .end method
 
 .method public getTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -356,18 +356,18 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onChildSourceInfoRefreshed(Landroidx/media3/common/Timeline;)V
-    .registers 16
+    .locals 14
 
     .line 151
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->isPrepared:Z
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 152
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -381,7 +381,7 @@
     .line 153
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
 
-    if-eqz p1, :cond_b3
+    if-eqz p1, :cond_5
 
     .line 156
     invoke-virtual {p1}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->getPreparePositionOverrideUs()J
@@ -391,20 +391,20 @@
     .line 155
     invoke-direct {p0, v0, v1}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->setPreparePositionOverrideToUnpreparedMaskingPeriod(J)Z
 
-    goto/16 :goto_b3
+    goto/16 :goto_3
 
     .line 158
-    :cond_19
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/Timeline;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 160
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->hasRealTimeline:Z
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_1
 
     .line 161
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -413,10 +413,10 @@
 
     move-result-object p1
 
-    goto :goto_32
+    goto :goto_0
 
     .line 162
-    :cond_2a
+    :cond_1
     sget-object v0, Landroidx/media3/common/Timeline$Window;->SINGLE_WINDOW_UID:Ljava/lang/Object;
 
     sget-object v1, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->MASKING_EXTERNAL_PERIOD_UID:Ljava/lang/Object;
@@ -425,13 +425,13 @@
 
     move-result-object p1
 
-    :goto_32
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
-    goto/16 :goto_b3
+    goto/16 :goto_3
 
     .line 179
-    :cond_36
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->window:Landroidx/media3/common/Timeline$Window;
 
     const/4 v1, 0x0
@@ -453,7 +453,7 @@
     .line 182
     iget-object v4, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
 
-    if-eqz v4, :cond_74
+    if-eqz v4, :cond_3
 
     .line 183
     invoke-virtual {v4}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->getPreparePositionUs()J
@@ -498,17 +498,17 @@
 
     cmp-long v1, v6, v4
 
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_3
 
     move-wide v12, v6
 
-    goto :goto_75
+    goto :goto_1
 
-    :cond_74
+    :cond_3
     move-wide v12, v2
 
     .line 192
-    :goto_75
+    :goto_1
     iget-object v9, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->window:Landroidx/media3/common/Timeline$Window;
 
     iget-object v10, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->period:Landroidx/media3/common/Timeline$Period;
@@ -537,7 +537,7 @@
     .line 198
     iget-boolean v1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->hasRealTimeline:Z
 
-    if-eqz v1, :cond_94
+    if-eqz v1, :cond_4
 
     .line 199
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -546,28 +546,28 @@
 
     move-result-object p1
 
-    goto :goto_98
+    goto :goto_2
 
     .line 200
-    :cond_94
+    :cond_4
     invoke-static {p1, v0, v2}, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->createWithRealTimeline(Landroidx/media3/common/Timeline;Ljava/lang/Object;Ljava/lang/Object;)Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
     move-result-object p1
 
-    :goto_98
+    :goto_2
     iput-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
     .line 201
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
 
-    if-eqz p1, :cond_b3
+    if-eqz p1, :cond_5
 
     .line 203
     invoke-direct {p0, v3, v4}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->setPreparePositionOverrideToUnpreparedMaskingPeriod(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b3
+    if-eqz v0, :cond_5
 
     .line 204
     iget-object v0, p1, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -585,13 +585,13 @@
 
     move-result-object p1
 
-    goto :goto_b4
+    goto :goto_4
 
-    :cond_b3
-    :goto_b3
+    :cond_5
+    :goto_3
     const/4 p1, 0x0
 
-    :goto_b4
+    :goto_4
     const/4 v0, 0x1
 
     .line 209
@@ -605,7 +605,7 @@
 
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
-    if-eqz p1, :cond_cb
+    if-eqz p1, :cond_6
 
     .line 213
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
@@ -619,17 +619,17 @@
     .line 214
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
 
-    :cond_cb
+    :cond_6
     return-void
 .end method
 
 .method public prepareSourceInternal()V
-    .registers 2
+    .locals 1
 
     .line 99
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->useLazyPreparation:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -639,12 +639,12 @@
     .line 101
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->prepareChildSource()V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 135
     move-object v0, p1
@@ -656,19 +656,19 @@
     .line 136
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
 
-    if-ne p1, v0, :cond_d
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x0
 
     .line 137
     iput-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->unpreparedMaskingMediaPeriod:Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public releaseSourceInternal()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -685,12 +685,12 @@
 .end method
 
 .method public updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 5
+    .locals 3
 
     .line 87
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->hasRealTimeline:Z
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 88
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
@@ -710,10 +710,10 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 92
-    :cond_16
+    :cond_0
     invoke-static {p1}, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->createWithPlaceholderTimeline(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
     move-result-object v0
@@ -721,7 +721,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->timeline:Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;
 
     .line 94
-    :goto_1c
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/source/MediaSource;->updateMediaItem(Landroidx/media3/common/MediaItem;)V

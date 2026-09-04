@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1055
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,13 +25,13 @@
 .end method
 
 .method static castToCharSequence(Landroid/text/PrecomputedText;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static getDigitStrings(Landroid/icu/text/DecimalFormatSymbols;)[Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1071
     invoke-virtual {p0}, Landroid/icu/text/DecimalFormatSymbols;->getDigitStrings()[Ljava/lang/String;
@@ -42,7 +42,7 @@
 .end method
 
 .method static getTextMetricsParams(Landroid/widget/TextView;)Landroid/text/PrecomputedText$Params;
-    .registers 1
+    .locals 0
 
     .line 1066
     invoke-virtual {p0}, Landroid/widget/TextView;->getTextMetricsParams()Landroid/text/PrecomputedText$Params;
@@ -53,7 +53,7 @@
 .end method
 
 .method static setFirstBaselineToTopHeight(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 1061
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setFirstBaselineToTopHeight(I)V

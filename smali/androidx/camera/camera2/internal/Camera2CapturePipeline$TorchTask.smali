@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 550
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
@@ -50,7 +50,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraControlImpl;ILjava/util/concurrent/Executor;)V
-    .registers 5
+    .locals 1
 
     .line 559
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 .end method
 
 .method static synthetic lambda$preCapture$1(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -86,7 +86,7 @@
 .end method
 
 .method static synthetic lambda$preCapture$3(Landroid/hardware/camera2/TotalCaptureResult;)Ljava/lang/Boolean;
-    .registers 1
+    .locals 0
 
     const/4 p0, 0x0
 
@@ -101,26 +101,26 @@
 
 # virtual methods
 .method public isCaptureResultNeeded()Z
-    .registers 2
+    .locals 1
 
     .line 593
     iget v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$TorchTask;->mFlashMode:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method synthetic lambda$preCapture$0$androidx-camera-camera2-internal-Camera2CapturePipeline$TorchTask(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -144,7 +144,7 @@
 .end method
 
 .method synthetic lambda$preCapture$2$androidx-camera-camera2-internal-Camera2CapturePipeline$TorchTask(Ljava/lang/Void;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -168,12 +168,12 @@
 .end method
 
 .method public postCapture()V
-    .registers 4
+    .locals 3
 
     .line 599
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$TorchTask;->mIsExecuted:Z
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 600
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$TorchTask;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -195,12 +195,12 @@
     .line 601
     invoke-static {v0, v1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public preCapture(Landroid/hardware/camera2/TotalCaptureResult;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -219,7 +219,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_1
 
     .line 570
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$TorchTask;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -230,16 +230,16 @@
 
     const-string v0, "Camera2CapturePipeline"
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     const-string p1, "Torch already on, not turn on"
 
     .line 571
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const-string p1, "Turn on torch"
 
     .line 573
@@ -289,8 +289,8 @@
 
     return-object p1
 
-    :cond_46
-    :goto_46
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 587

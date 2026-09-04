@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/SwitchCompat;)V
-    .registers 3
+    .locals 1
 
     .line 1674
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat$InitCallback;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public onFailed(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 1689
     iget-object p1, p0, Landroidx/appcompat/widget/SwitchCompat$EmojiCompatInitCallback;->mOuterWeakRef:Ljava/lang/ref/Reference;
@@ -57,17 +57,17 @@
 
     check-cast p1, Landroidx/appcompat/widget/SwitchCompat;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 1691
     invoke-virtual {p1}, Landroidx/appcompat/widget/SwitchCompat;->onEmojiCompatInitializedForSwitchText()V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onInitialized()V
-    .registers 2
+    .locals 1
 
     .line 1681
     iget-object v0, p0, Landroidx/appcompat/widget/SwitchCompat$EmojiCompatInitCallback;->mOuterWeakRef:Ljava/lang/ref/Reference;
@@ -78,11 +78,11 @@
 
     check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 1683
     invoke-virtual {v0}, Landroidx/appcompat/widget/SwitchCompat;->onEmojiCompatInitializedForSwitchText()V
 
-    :cond_d
+    :cond_0
     return-void
 .end method

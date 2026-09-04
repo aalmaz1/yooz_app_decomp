@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraControlInternal;)V
-    .registers 3
+    .locals 1
 
     .line 62
     invoke-direct {p0, p1}, Landroidx/camera/core/impl/ForwardingCameraControl;-><init>(Landroidx/camera/core/impl/CameraControlInternal;)V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public cancelFocusAndMetering()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -87,7 +87,7 @@
 .end method
 
 .method public enableRestrictedOperations(ZLjava/util/Set;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -107,7 +107,7 @@
 .end method
 
 .method public enableTorch(Z)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -132,7 +132,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 104
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -148,7 +148,7 @@
     return-object p1
 
     .line 107
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mCameraControl:Landroidx/camera/core/impl/CameraControlInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/CameraControlInternal;->enableTorch(Z)Lcom/google/common/util/concurrent/ListenableFuture;
@@ -159,7 +159,7 @@
 .end method
 
 .method public getImplementation()Landroidx/camera/core/impl/CameraControlInternal;
-    .registers 2
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mCameraControl:Landroidx/camera/core/impl/CameraControlInternal;
@@ -168,7 +168,7 @@
 .end method
 
 .method getModifiedFocusMeteringAction(Landroidx/camera/core/FocusMeteringAction;)Landroidx/camera/core/FocusMeteringAction;
-    .registers 9
+    .locals 7
 
     .line 166
     new-instance v0, Landroidx/camera/core/FocusMeteringAction$Builder;
@@ -190,31 +190,31 @@
 
     const/4 v4, 0x0
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     new-array v1, v2, [I
 
-    fill-array-data v1, :array_82
+    fill-array-data v1, :array_0
 
     .line 168
     invoke-virtual {p0, v1}, Landroidx/camera/core/impl/RestrictedCameraControl;->isOperationSupported([I)Z
 
     move-result v1
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     .line 170
     invoke-virtual {v0, v3}, Landroidx/camera/core/FocusMeteringAction$Builder;->removePoints(I)Landroidx/camera/core/FocusMeteringAction$Builder;
 
     move v1, v3
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move v1, v4
 
     .line 173
-    :goto_23
+    :goto_0
     invoke-virtual {p1}, Landroidx/camera/core/FocusMeteringAction;->getMeteringPointsAe()Ljava/util/List;
 
     move-result-object v5
@@ -223,7 +223,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_3c
+    if-nez v5, :cond_1
 
     new-array v5, v3, [I
 
@@ -236,7 +236,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_3c
+    if-nez v5, :cond_1
 
     .line 176
     invoke-virtual {v0, v2}, Landroidx/camera/core/FocusMeteringAction$Builder;->removePoints(I)Landroidx/camera/core/FocusMeteringAction$Builder;
@@ -244,7 +244,7 @@
     move v1, v3
 
     .line 179
-    :cond_3c
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/FocusMeteringAction;->getMeteringPointsAwb()Ljava/util/List;
 
     move-result-object v2
@@ -253,7 +253,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_55
+    if-nez v2, :cond_2
 
     new-array v2, v3, [I
 
@@ -266,23 +266,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_55
+    if-nez v2, :cond_2
 
     .line 182
     invoke-virtual {v0, v5}, Landroidx/camera/core/FocusMeteringAction$Builder;->removePoints(I)Landroidx/camera/core/FocusMeteringAction$Builder;
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_55
+    :cond_2
     move v3, v1
 
-    :goto_56
-    if-nez v3, :cond_59
+    :goto_1
+    if-nez v3, :cond_3
 
     return-object p1
 
     .line 190
-    :cond_59
+    :cond_3
     invoke-virtual {v0}, Landroidx/camera/core/FocusMeteringAction$Builder;->build()Landroidx/camera/core/FocusMeteringAction;
 
     move-result-object p1
@@ -296,7 +296,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7d
+    if-eqz v1, :cond_4
 
     .line 192
     invoke-virtual {p1}, Landroidx/camera/core/FocusMeteringAction;->getMeteringPointsAe()Ljava/util/List;
@@ -307,7 +307,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7d
+    if-eqz v1, :cond_4
 
     .line 193
     invoke-virtual {p1}, Landroidx/camera/core/FocusMeteringAction;->getMeteringPointsAwb()Ljava/util/List;
@@ -318,21 +318,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_7d
+    if-eqz p1, :cond_4
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 197
-    :cond_7d
+    :cond_4
     invoke-virtual {v0}, Landroidx/camera/core/FocusMeteringAction$Builder;->build()Landroidx/camera/core/FocusMeteringAction;
 
     move-result-object p1
 
     return-object p1
 
-    :array_82
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -340,21 +340,21 @@
 .end method
 
 .method varargs isOperationSupported([I)Z
-    .registers 6
+    .locals 4
 
     .line 87
     iget-boolean v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mUseRestrictedCameraOperations:Z
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mRestrictedCameraOperations:Ljava/util/Set;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
-    goto :goto_26
+    goto :goto_1
 
     .line 92
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     array-length v1, p1
@@ -366,8 +366,8 @@
 
     const/4 v2, 0x0
 
-    :goto_11
-    if-ge v2, v1, :cond_1f
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget v3, p1, v2
 
@@ -380,10 +380,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 97
-    :cond_1f
+    :cond_1
     iget-object p1, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mRestrictedCameraOperations:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
@@ -392,15 +392,15 @@
 
     return p1
 
-    :cond_26
-    :goto_26
+    :cond_2
+    :goto_1
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public setExposureCompensationIndex(I)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -425,7 +425,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 153
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -441,7 +441,7 @@
     return-object p1
 
     .line 156
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mCameraControl:Landroidx/camera/core/impl/CameraControlInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/CameraControlInternal;->setExposureCompensationIndex(I)Lcom/google/common/util/concurrent/ListenableFuture;
@@ -452,7 +452,7 @@
 .end method
 
 .method public setLinearZoom(F)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)",
@@ -475,7 +475,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 143
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -491,7 +491,7 @@
     return-object p1
 
     .line 146
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mCameraControl:Landroidx/camera/core/impl/CameraControlInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/CameraControlInternal;->setLinearZoom(F)Lcom/google/common/util/concurrent/ListenableFuture;
@@ -502,7 +502,7 @@
 .end method
 
 .method public setZoomRatio(F)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)",
@@ -525,7 +525,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 133
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -541,7 +541,7 @@
     return-object p1
 
     .line 136
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mCameraControl:Landroidx/camera/core/impl/CameraControlInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/CameraControlInternal;->setZoomRatio(F)Lcom/google/common/util/concurrent/ListenableFuture;
@@ -552,7 +552,7 @@
 .end method
 
 .method public startFocusAndMetering(Landroidx/camera/core/FocusMeteringAction;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -569,7 +569,7 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
     .line 116
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -585,7 +585,7 @@
     return-object p1
 
     .line 120
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraControl;->mCameraControl:Landroidx/camera/core/impl/CameraControlInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/CameraControlInternal;->startFocusAndMetering(Landroidx/camera/core/FocusMeteringAction;)Lcom/google/common/util/concurrent/ListenableFuture;

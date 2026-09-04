@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;Landroidx/camera/video/internal/audio/AudioSource;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const/4 p1, 0x1
 
@@ -91,7 +91,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1367
     check-cast p1, Ljava/lang/Void;
@@ -102,7 +102,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 4
+    .locals 2
 
     const/4 p1, 0x1
 

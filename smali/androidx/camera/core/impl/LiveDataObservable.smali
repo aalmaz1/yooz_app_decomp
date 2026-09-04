@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public addObserver(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
     monitor-enter v0
 
     .line 107
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/impl/LiveDataObservable;->mObservers:Ljava/util/Map;
 
     invoke-interface {v1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -102,13 +102,13 @@
 
     check-cast v1, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 109
     invoke-virtual {v1}, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;->disable()V
 
     .line 112
-    :cond_10
+    :cond_0
     new-instance v2, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;
 
     invoke-direct {v2, p1, p2}, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;-><init>(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Observable$Observer;)V
@@ -134,18 +134,18 @@
 
     return-void
 
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_2a
-    .catchall {:try_start_3 .. :try_end_2a} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public fetchData()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -167,7 +167,7 @@
 .end method
 
 .method public getLiveData()Landroidx/lifecycle/LiveData;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -184,9 +184,9 @@
 .end method
 
 .method synthetic lambda$addObserver$2$androidx-camera-core-impl-LiveDataObservable(Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 118
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable;->mLiveData:Landroidx/lifecycle/MutableLiveData;
@@ -194,7 +194,7 @@
     invoke-virtual {v0, p1}, Landroidx/lifecycle/MutableLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V
 
     .line 120
-    :cond_7
+    :cond_0
     iget-object p1, p0, Landroidx/camera/core/impl/LiveDataObservable;->mLiveData:Landroidx/lifecycle/MutableLiveData;
 
     invoke-virtual {p1, p2}, Landroidx/lifecycle/MutableLiveData;->observeForever(Landroidx/lifecycle/Observer;)V
@@ -203,7 +203,7 @@
 .end method
 
 .method synthetic lambda$fetchData$0$androidx-camera-core-impl-LiveDataObservable(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 4
+    .locals 2
 
     .line 88
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable;->mLiveData:Landroidx/lifecycle/MutableLiveData;
@@ -214,7 +214,7 @@
 
     check-cast v0, Landroidx/camera/core/impl/LiveDataObservable$Result;
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 90
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -225,15 +225,15 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    goto :goto_31
+    goto :goto_0
 
     .line 92
-    :cond_15
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/core/impl/LiveDataObservable$Result;->completedSuccessfully()Z
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 93
     invoke-virtual {v0}, Landroidx/camera/core/impl/LiveDataObservable$Result;->getValue()Ljava/lang/Object;
@@ -242,10 +242,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    goto :goto_31
+    goto :goto_0
 
     .line 95
-    :cond_23
+    :cond_1
     invoke-virtual {v0}, Landroidx/camera/core/impl/LiveDataObservable$Result;->getError()Ljava/lang/Throwable;
 
     move-result-object v1
@@ -259,12 +259,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_31
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$fetchData$1$androidx-camera-core-impl-LiveDataObservable(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -319,7 +319,7 @@
 .end method
 
 .method synthetic lambda$removeObserver$3$androidx-camera-core-impl-LiveDataObservable(Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;)V
-    .registers 3
+    .locals 1
 
     .line 133
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable;->mLiveData:Landroidx/lifecycle/MutableLiveData;
@@ -330,7 +330,7 @@
 .end method
 
 .method public postError(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable;->mLiveData:Landroidx/lifecycle/MutableLiveData;
@@ -345,7 +345,7 @@
 .end method
 
 .method public postValue(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -365,7 +365,7 @@
 .end method
 
 .method public removeObserver(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -380,7 +380,7 @@
     monitor-enter v0
 
     .line 128
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/impl/LiveDataObservable;->mObservers:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -389,7 +389,7 @@
 
     check-cast p1, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 131
     invoke-virtual {p1}, Landroidx/camera/core/impl/LiveDataObservable$LiveDataObserverAdapter;->disable()V
@@ -406,17 +406,17 @@
     invoke-interface {v1, v2}, Ljava/util/concurrent/ScheduledExecutorService;->execute(Ljava/lang/Runnable;)V
 
     .line 135
-    :cond_1c
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_1e
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_20
-    .catchall {:try_start_3 .. :try_end_20} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

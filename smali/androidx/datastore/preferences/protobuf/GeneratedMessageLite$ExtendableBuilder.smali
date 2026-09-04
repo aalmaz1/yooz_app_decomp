@@ -33,7 +33,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)V"
@@ -47,7 +47,7 @@
 .end method
 
 .method private ensureExtensionsAreMutable()Landroidx/datastore/preferences/protobuf/FieldSet;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -69,7 +69,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 934
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/FieldSet;->clone()Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -83,12 +83,12 @@
 
     iput-object v0, v1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
-    :cond_16
+    :cond_0
     return-object v0
 .end method
 
 .method private verifyExtensionContainingType(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,12 +106,12 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 953
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "This extension is for a different message type.  Please make sure that you are not suppressing any generics type warnings."
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public final addExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -166,7 +166,7 @@
 .end method
 
 .method public final buildPartial()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TMessageType;"
@@ -176,7 +176,7 @@
     .line 942
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;->isBuilt:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 943
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -186,7 +186,7 @@
     return-object v0
 
     .line 946
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
@@ -206,7 +206,7 @@
 .end method
 
 .method public bridge synthetic buildPartial()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 2
+    .locals 1
 
     .line 905
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;->buildPartial()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
@@ -217,7 +217,7 @@
 .end method
 
 .method public bridge synthetic buildPartial()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 905
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;->buildPartial()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
@@ -228,7 +228,7 @@
 .end method
 
 .method public final clearExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -263,17 +263,17 @@
 .end method
 
 .method protected copyOnWrite()V
-    .registers 3
+    .locals 2
 
     .line 923
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;->isBuilt:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 927
-    :cond_5
+    :cond_0
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
     .line 928
@@ -297,7 +297,7 @@
 .end method
 
 .method public final getExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -321,7 +321,7 @@
 .end method
 
 .method public final getExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;I)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -347,7 +347,7 @@
 .end method
 
 .method public final getExtensionCount(Landroidx/datastore/preferences/protobuf/ExtensionLite;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -373,7 +373,7 @@
 .end method
 
 .method public final hasExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -397,7 +397,7 @@
 .end method
 
 .method internalSetExtensionSet(Landroidx/datastore/preferences/protobuf/FieldSet;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -421,7 +421,7 @@
 .end method
 
 .method public final setExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;ILjava/lang/Object;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -464,7 +464,7 @@
 .end method
 
 .method public final setExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableBuilder;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",

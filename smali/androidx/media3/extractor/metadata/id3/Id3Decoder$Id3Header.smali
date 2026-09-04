@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(IZI)V
-    .registers 4
+    .locals 0
 
     .line 892
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/metadata/id3/Id3Decoder$Id3Header;)I
-    .registers 1
+    .locals 0
 
     .line 886
     iget p0, p0, Landroidx/media3/extractor/metadata/id3/Id3Decoder$Id3Header;->majorVersion:I
@@ -51,7 +51,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/metadata/id3/Id3Decoder$Id3Header;)I
-    .registers 1
+    .locals 0
 
     .line 886
     iget p0, p0, Landroidx/media3/extractor/metadata/id3/Id3Decoder$Id3Header;->framesSize:I
@@ -60,7 +60,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/metadata/id3/Id3Decoder$Id3Header;)Z
-    .registers 1
+    .locals 0
 
     .line 886
     iget-boolean p0, p0, Landroidx/media3/extractor/metadata/id3/Id3Decoder$Id3Header;->isUnsynchronized:Z

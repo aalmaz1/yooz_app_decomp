@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public write(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -37,7 +37,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 45
     iget-object v0, p0, Landroidx/camera/core/internal/ByteBufferOutputStream;->mByteBuffer:Ljava/nio/ByteBuffer;
@@ -49,7 +49,7 @@
     return-void
 
     .line 42
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/io/EOFException;
 
     const-string v0, "Output ByteBuffer has no bytes remaining."
@@ -60,7 +60,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -70,36 +70,36 @@
     .line 51
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-ltz p2, :cond_2a
+    if-ltz p2, :cond_2
 
     .line 52
     array-length v0, p1
 
-    if-gt p2, v0, :cond_2a
+    if-gt p2, v0, :cond_2
 
-    if-ltz p3, :cond_2a
+    if-ltz p3, :cond_2
 
     add-int v0, p2, p3
 
     array-length v1, p1
 
-    if-gt v0, v1, :cond_2a
+    if-gt v0, v1, :cond_2
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_2
 
-    if-nez p3, :cond_14
+    if-nez p3, :cond_0
 
     return-void
 
     .line 57
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/internal/ByteBufferOutputStream;->mByteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
 
-    if-lt v0, p3, :cond_22
+    if-lt v0, p3, :cond_1
 
     .line 61
     iget-object v0, p0, Landroidx/camera/core/internal/ByteBufferOutputStream;->mByteBuffer:Ljava/nio/ByteBuffer;
@@ -109,7 +109,7 @@
     return-void
 
     .line 58
-    :cond_22
+    :cond_1
     new-instance p1, Ljava/io/EOFException;
 
     const-string p2, "Output ByteBuffer has insufficient bytes remaining."
@@ -119,7 +119,7 @@
     throw p1
 
     .line 54
-    :cond_2a
+    :cond_2
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V

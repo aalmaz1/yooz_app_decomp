@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroid/net/Uri;ILandroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;ILandroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,7 +134,7 @@
 .end method
 
 .method public static load(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroid/net/Uri;I)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -175,7 +175,7 @@
 .end method
 
 .method public static load(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/DataSpec;I)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -218,7 +218,7 @@
 
 # virtual methods
 .method public bytesLoaded()J
-    .registers 3
+    .locals 2
 
     .line 152
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/ParsingLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -231,13 +231,13 @@
 .end method
 
 .method public final cancelLoad()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -260,7 +260,7 @@
 .end method
 
 .method public final getResult()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -274,7 +274,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/ParsingLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -287,7 +287,7 @@
 .end method
 
 .method public final load()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -309,7 +309,7 @@
     invoke-direct {v0, v1, v2}, Landroidx/media3/datasource/DataSourceInputStream;-><init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;)V
 
     .line 182
-    :try_start_e
+    :try_start_0
     invoke-virtual {v0}, Landroidx/media3/datasource/DataSourceInputStream;->open()V
 
     .line 183
@@ -333,15 +333,15 @@
     move-result-object v1
 
     iput-object v1, p0, Landroidx/media3/exoplayer/upstream/ParsingLoadable;->result:Ljava/lang/Object;
-    :try_end_25
-    .catchall {:try_start_e .. :try_end_25} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 186
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-void
 
-    :catchall_29
+    :catchall_0
     move-exception v1
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V

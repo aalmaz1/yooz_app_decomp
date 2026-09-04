@@ -10,7 +10,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 511
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 .end method
 
 .method public static verify(Z)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -29,12 +29,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 102
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     invoke-direct {p0}, Lcom/google/common/base/VerifyException;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;C)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -57,12 +57,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 140
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x1
@@ -87,7 +87,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;CC)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -103,12 +103,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 197
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -141,7 +141,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;CI)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -157,12 +157,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 254
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -195,7 +195,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;CJ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -211,12 +211,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 311
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -249,7 +249,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;CLjava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -269,12 +269,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 369
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -303,7 +303,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;I)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -317,12 +317,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 154
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x1
@@ -347,7 +347,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;IC)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -363,12 +363,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 211
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -401,7 +401,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;II)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -417,12 +417,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 268
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -455,7 +455,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;IJ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -471,12 +471,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 325
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -509,7 +509,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;ILjava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -529,12 +529,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 384
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -563,7 +563,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;J)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -577,12 +577,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 168
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x1
@@ -607,7 +607,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;JC)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -623,12 +623,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 225
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -661,7 +661,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;JI)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -677,12 +677,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 282
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -715,7 +715,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;JJ)V
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -731,12 +731,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 339
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -769,7 +769,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;JLjava/lang/Object;)V
-    .registers 7
+    .locals 2
     .param p4    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -789,12 +789,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 399
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -823,7 +823,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -841,12 +841,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 183
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x1
@@ -867,7 +867,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;C)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -887,12 +887,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 240
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -921,7 +921,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;I)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -941,12 +941,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 297
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -975,7 +975,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;J)V
-    .registers 7
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -995,12 +995,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 354
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -1029,7 +1029,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1053,12 +1053,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 417
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x2
@@ -1083,7 +1083,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1113,12 +1113,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 436
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x3
@@ -1147,7 +1147,7 @@
 .end method
 
 .method public static verify(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 8
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1183,12 +1183,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 456
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     const/4 v0, 0x4
@@ -1221,7 +1221,7 @@
 .end method
 
 .method public static varargs verify(ZLjava/lang/String;[Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p2    # [Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1239,12 +1239,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 126
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Strings;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -1257,7 +1257,7 @@
 .end method
 
 .method public static verifyNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1294,7 +1294,7 @@
 .end method
 
 .method public static varargs verifyNotNull(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1328,12 +1328,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 503
-    :cond_3
+    :cond_0
     new-instance p0, Lcom/google/common/base/VerifyException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Strings;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;

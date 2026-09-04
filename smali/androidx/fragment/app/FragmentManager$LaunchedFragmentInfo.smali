@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 3642
     new-instance v0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo$1;
@@ -50,7 +50,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 3626
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 3621
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -98,7 +98,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 3638
     iget-object p2, p0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;

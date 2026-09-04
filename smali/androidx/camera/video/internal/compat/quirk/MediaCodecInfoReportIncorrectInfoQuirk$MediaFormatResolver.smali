@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/MediaFormat;)V
-    .registers 2
+    .locals 0
 
     .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method private getMime()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 201
     iget-object v0, p0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;->mMediaFormat:Landroid/media/MediaFormat;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method isAvc()Z
-    .registers 3
+    .locals 2
 
     const-string/jumbo v0, "video/avc"
 
@@ -66,7 +66,7 @@
 .end method
 
 .method isMpeg4()Z
-    .registers 3
+    .locals 2
 
     const-string/jumbo v0, "video/mp4v-es"
 
@@ -83,7 +83,7 @@
 .end method
 
 .method isSize(II)Z
-    .registers 6
+    .locals 3
 
     .line 194
     iget-object v0, p0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;->mMediaFormat:Landroid/media/MediaFormat;
@@ -103,30 +103,30 @@
 
     move-result v1
 
-    if-ne v0, p1, :cond_17
+    if-ne v0, p1, :cond_0
 
-    if-ne v1, p2, :cond_17
+    if-ne v1, p2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_18
+    :goto_0
     return p1
 .end method
 
 .method isVideo()Z
-    .registers 3
+    .locals 2
 
     .line 181
     invoke-direct {p0}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;->getMime()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     const-string/jumbo v1, "video/"
 
@@ -135,15 +135,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_12
+    :goto_0
     return v0
 .end method

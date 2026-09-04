@@ -32,24 +32,24 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 2060
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_8
+    if-eq p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 2061
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 2062
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>(Landroid/util/Size;)V
-    .registers 3
+    .locals 1
 
     .line 2072
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public getAspectRatio()I
-    .registers 2
+    .locals 1
 
     .line 2085
     iget v0, p0, Landroidx/camera/view/CameraController$OutputSize;->mAspectRatio:I
@@ -95,7 +95,7 @@
 .end method
 
 .method public getResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 2095
     iget-object v0, p0, Landroidx/camera/view/CameraController$OutputSize;->mResolution:Landroid/util/Size;
@@ -104,7 +104,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 2101
     new-instance v0, Ljava/lang/StringBuilder;

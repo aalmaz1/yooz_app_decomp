@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 126
     invoke-direct {p0}, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper$Impl;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method computeAndSetTextDirection(Landroid/text/StaticLayout$Builder;Landroid/widget/TextView;)V
-    .registers 5
+    .locals 2
 
     const-string v0, "getTextDirectionHeuristic"
 

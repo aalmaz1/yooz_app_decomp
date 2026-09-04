@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 64
     new-instance v0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0xa
 
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 84
     new-instance v0, Ljava/util/ArrayList;
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/LazyStringList;)V
-    .registers 4
+    .locals 2
 
     .line 87
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;-><init>()V
@@ -112,7 +112,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/ArrayList;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,7 +132,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/datastore/preferences/protobuf/LazyStringArrayList;I[B)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 61
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->setAndReturn(I[B)Ljava/lang/Object;
@@ -164,7 +164,7 @@
 .end method
 
 .method static synthetic access$100(Ljava/lang/Object;)[B
-    .registers 1
+    .locals 0
 
     .line 61
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->asByteArray(Ljava/lang/Object;)[B
@@ -175,7 +175,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/datastore/preferences/protobuf/LazyStringArrayList;I[B)V
-    .registers 3
+    .locals 0
 
     .line 61
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->add(I[B)V
@@ -184,7 +184,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/datastore/preferences/protobuf/LazyStringArrayList;ILandroidx/datastore/preferences/protobuf/ByteString;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 61
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->setAndReturn(ILandroidx/datastore/preferences/protobuf/ByteString;)Ljava/lang/Object;
@@ -195,7 +195,7 @@
 .end method
 
 .method static synthetic access$400(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 1
+    .locals 0
 
     .line 61
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->asByteString(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/ByteString;
@@ -206,7 +206,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/datastore/preferences/protobuf/LazyStringArrayList;ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 3
+    .locals 0
 
     .line 61
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->add(ILandroidx/datastore/preferences/protobuf/ByteString;)V
@@ -215,7 +215,7 @@
 .end method
 
 .method private add(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 4
+    .locals 1
 
     .line 152
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -236,7 +236,7 @@
 .end method
 
 .method private add(I[B)V
-    .registers 4
+    .locals 1
 
     .line 158
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -257,12 +257,12 @@
 .end method
 
 .method private static asByteArray(Ljava/lang/Object;)[B
-    .registers 2
+    .locals 1
 
     .line 295
     instance-of v0, p0, [B
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 296
     check-cast p0, [B
@@ -272,10 +272,10 @@
     return-object p0
 
     .line 297
-    :cond_9
+    :cond_0
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 298
     check-cast p0, Ljava/lang/String;
@@ -287,7 +287,7 @@
     return-object p0
 
     .line 300
-    :cond_14
+    :cond_1
     check-cast p0, Landroidx/datastore/preferences/protobuf/ByteString;
 
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString;->toByteArray()[B
@@ -298,12 +298,12 @@
 .end method
 
 .method private static asByteString(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 285
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 286
     check-cast p0, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -311,10 +311,10 @@
     return-object p0
 
     .line 287
-    :cond_7
+    :cond_0
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     .line 288
     check-cast p0, Ljava/lang/String;
@@ -326,7 +326,7 @@
     return-object p0
 
     .line 290
-    :cond_12
+    :cond_1
     check-cast p0, [B
 
     check-cast p0, [B
@@ -339,12 +339,12 @@
 .end method
 
 .method private static asString(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 275
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 276
     check-cast p0, Ljava/lang/String;
@@ -352,10 +352,10 @@
     return-object p0
 
     .line 277
-    :cond_7
+    :cond_0
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     .line 278
     check-cast p0, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -367,7 +367,7 @@
     return-object p0
 
     .line 280
-    :cond_12
+    :cond_1
     check-cast p0, [B
 
     check-cast p0, [B
@@ -380,7 +380,7 @@
 .end method
 
 .method static emptyList()Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
-    .registers 1
+    .locals 1
 
     .line 71
     sget-object v0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->EMPTY_LIST:Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -389,7 +389,7 @@
 .end method
 
 .method private setAndReturn(ILandroidx/datastore/preferences/protobuf/ByteString;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     .line 260
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -405,7 +405,7 @@
 .end method
 
 .method private setAndReturn(I[B)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     .line 270
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -423,7 +423,7 @@
 
 # virtual methods
 .method public bridge synthetic add(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 61
     check-cast p2, Ljava/lang/String;
@@ -434,7 +434,7 @@
 .end method
 
 .method public add(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 146
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -455,7 +455,7 @@
 .end method
 
 .method public add(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 3
+    .locals 1
 
     .line 217
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -476,7 +476,7 @@
 .end method
 
 .method public add([B)V
-    .registers 3
+    .locals 1
 
     .line 224
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -497,7 +497,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -514,7 +514,7 @@
     .line 177
     instance-of v0, p2, Landroidx/datastore/preferences/protobuf/LazyStringList;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     check-cast p2, Landroidx/datastore/preferences/protobuf/LazyStringList;
 
@@ -524,7 +524,7 @@
     move-result-object p2
 
     .line 179
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
@@ -542,7 +542,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -566,7 +566,7 @@
 .end method
 
 .method public addAllByteArray(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -596,7 +596,7 @@
 .end method
 
 .method public addAllByteString(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -628,7 +628,7 @@
 .end method
 
 .method public asByteArrayList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -646,7 +646,7 @@
 .end method
 
 .method public asByteStringList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -665,7 +665,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 210
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -686,7 +686,7 @@
 .end method
 
 .method public bridge synthetic equals(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-super {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->equals(Ljava/lang/Object;)Z
@@ -697,7 +697,7 @@
 .end method
 
 .method public bridge synthetic get(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->get(I)Ljava/lang/String;
@@ -708,7 +708,7 @@
 .end method
 
 .method public get(I)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 112
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
@@ -720,7 +720,7 @@
     .line 113
     instance-of v1, v0, Ljava/lang/String;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 114
     check-cast v0, Ljava/lang/String;
@@ -728,10 +728,10 @@
     return-object v0
 
     .line 115
-    :cond_d
+    :cond_0
     instance-of v1, v0, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     .line 116
     check-cast v0, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -746,18 +746,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 119
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_22
+    :cond_1
     return-object v1
 
     .line 123
-    :cond_23
+    :cond_2
     check-cast v0, [B
 
     check-cast v0, [B
@@ -772,19 +772,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 126
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_36
+    :cond_3
     return-object v1
 .end method
 
 .method public getByteArray(I)[B
-    .registers 4
+    .locals 2
 
     .line 246
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
@@ -798,19 +798,19 @@
 
     move-result-object v1
 
-    if-eq v1, v0, :cond_11
+    if-eq v1, v0, :cond_0
 
     .line 249
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_11
+    :cond_0
     return-object v1
 .end method
 
 .method public getByteString(I)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 4
+    .locals 2
 
     .line 236
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
@@ -824,19 +824,19 @@
 
     move-result-object v1
 
-    if-eq v1, v0, :cond_11
+    if-eq v1, v0, :cond_0
 
     .line 239
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_11
+    :cond_0
     return-object v1
 .end method
 
 .method public getRaw(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 231
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
@@ -849,7 +849,7 @@
 .end method
 
 .method public getUnderlyingElements()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -869,14 +869,14 @@
 .end method
 
 .method public getUnmodifiableView()Landroidx/datastore/preferences/protobuf/LazyStringList;
-    .registers 2
+    .locals 1
 
     .line 412
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->isModifiable()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 413
     new-instance v0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;
@@ -885,12 +885,12 @@
 
     return-object v0
 
-    :cond_c
+    :cond_0
     return-object p0
 .end method
 
 .method public bridge synthetic hashCode()I
-    .registers 2
+    .locals 1
 
     .line 61
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->hashCode()I
@@ -901,7 +901,7 @@
 .end method
 
 .method public bridge synthetic isModifiable()Z
-    .registers 2
+    .locals 1
 
     .line 61
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->isModifiable()Z
@@ -912,7 +912,7 @@
 .end method
 
 .method public mergeFrom(Landroidx/datastore/preferences/protobuf/LazyStringList;)V
-    .registers 5
+    .locals 3
 
     .line 311
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -926,12 +926,12 @@
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -940,7 +940,7 @@
     .line 313
     instance-of v1, v0, [B
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 314
     check-cast v0, [B
@@ -958,22 +958,22 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
     .line 319
-    :cond_28
+    :cond_0
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-void
 .end method
 
 .method public bridge synthetic mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -984,14 +984,14 @@
 .end method
 
 .method public mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
-    .registers 3
+    .locals 1
 
     .line 102
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->size()I
 
     move-result v0
 
-    if-lt p1, v0, :cond_16
+    if-lt p1, v0, :cond_0
 
     .line 105
     new-instance v0, Ljava/util/ArrayList;
@@ -1011,7 +1011,7 @@
     return-object p1
 
     .line 103
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -1020,7 +1020,7 @@
 .end method
 
 .method public bridge synthetic remove(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->remove(I)Ljava/lang/String;
@@ -1031,7 +1031,7 @@
 .end method
 
 .method public remove(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 202
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -1059,7 +1059,7 @@
 .end method
 
 .method public bridge synthetic remove(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-super {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->remove(Ljava/lang/Object;)Z
@@ -1070,7 +1070,7 @@
 .end method
 
 .method public bridge synthetic removeAll(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-super {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->removeAll(Ljava/util/Collection;)Z
@@ -1081,7 +1081,7 @@
 .end method
 
 .method public bridge synthetic retainAll(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-super {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->retainAll(Ljava/util/Collection;)Z
@@ -1092,7 +1092,7 @@
 .end method
 
 .method public bridge synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 61
     check-cast p2, Ljava/lang/String;
@@ -1105,7 +1105,7 @@
 .end method
 
 .method public set(ILjava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 139
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->ensureIsMutable()V
@@ -1126,7 +1126,7 @@
 .end method
 
 .method public set(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 3
+    .locals 0
 
     .line 256
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->setAndReturn(ILandroidx/datastore/preferences/protobuf/ByteString;)Ljava/lang/Object;
@@ -1135,7 +1135,7 @@
 .end method
 
 .method public set(I[B)V
-    .registers 3
+    .locals 0
 
     .line 266
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->setAndReturn(I[B)Ljava/lang/Object;
@@ -1144,7 +1144,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 134
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList;->list:Ljava/util/List;

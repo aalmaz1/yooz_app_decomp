@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public populate(Landroidx/media3/extractor/ExtractorInput;Z)Z
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -111,12 +111,12 @@
 
     cmp-long v0, v0, v3
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
-    goto/16 :goto_9f
+    goto/16 :goto_1
 
     .line 141
-    :cond_26
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -125,13 +125,13 @@
 
     iput v0, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->revision:I
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
-    if-eqz p2, :cond_33
+    if-eqz p2, :cond_1
 
     return v2
 
-    :cond_33
+    :cond_1
     const-string/jumbo p1, "unsupported bit stream revision"
 
     .line 146
@@ -142,7 +142,7 @@
     throw p1
 
     .line 150
-    :cond_3b
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -219,16 +219,16 @@
 
     move-result p1
 
-    if-nez p1, :cond_83
+    if-nez p1, :cond_3
 
     return v2
 
     .line 164
-    :cond_83
-    :goto_83
+    :cond_3
+    :goto_0
     iget p1, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    if-ge v2, p1, :cond_9d
+    if-ge v2, p1, :cond_4
 
     .line 165
     iget-object p1, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->laces:[I
@@ -254,20 +254,20 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_83
+    goto :goto_0
 
-    :cond_9d
+    :cond_4
     const/4 p1, 0x1
 
     return p1
 
-    :cond_9f
-    :goto_9f
+    :cond_5
+    :goto_1
     return v2
 .end method
 
 .method public reset()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -304,7 +304,7 @@
 .end method
 
 .method public skipToNextPage(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -322,7 +322,7 @@
 .end method
 
 .method public skipToNextPage(Landroidx/media3/extractor/ExtractorInput;J)Z
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -344,16 +344,16 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v0, v1
 
-    :goto_11
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 106
@@ -363,12 +363,12 @@
 
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableByteArray;->reset(I)V
 
-    :goto_1a
+    :goto_1
     const-wide/16 v4, -0x1
 
     cmp-long v0, p2, v4
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 107
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -381,9 +381,9 @@
 
     cmp-long v4, v4, p2
 
-    if-gez v4, :cond_51
+    if-gez v4, :cond_3
 
-    :cond_2b
+    :cond_1
     iget-object v4, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 109
@@ -396,7 +396,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_51
+    if-eqz v4, :cond_3
 
     .line 110
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPageHeader;->scratch:Landroidx/media3/common/util/ParsableByteArray;
@@ -414,7 +414,7 @@
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_2
 
     .line 112
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -422,14 +422,14 @@
     return v2
 
     .line 116
-    :cond_4d
+    :cond_2
     invoke-interface {p1, v2}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_51
-    :goto_51
-    if-eqz v0, :cond_5b
+    :cond_3
+    :goto_2
+    if-eqz v0, :cond_4
 
     .line 119
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -438,20 +438,20 @@
 
     cmp-long v3, v3, p2
 
-    if-gez v3, :cond_63
+    if-gez v3, :cond_5
 
     .line 120
-    :cond_5b
+    :cond_4
     invoke-interface {p1, v2}, Landroidx/media3/extractor/ExtractorInput;->skip(I)I
 
     move-result v3
 
     const/4 v4, -0x1
 
-    if-eq v3, v4, :cond_63
+    if-eq v3, v4, :cond_5
 
-    goto :goto_51
+    goto :goto_2
 
-    :cond_63
+    :cond_5
     return v1
 .end method

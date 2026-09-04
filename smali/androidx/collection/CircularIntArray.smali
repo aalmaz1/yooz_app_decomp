@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -26,25 +26,25 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    if-lt p1, v0, :cond_28
+    if-lt p1, v0, :cond_2
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    if-gt p1, v1, :cond_20
+    if-gt p1, v1, :cond_1
 
     .line 70
     invoke-static {p1}, Ljava/lang/Integer;->bitCount(I)I
 
     move-result v1
 
-    if-eq v1, v0, :cond_17
+    if-eq v1, v0, :cond_0
 
     add-int/lit8 p1, p1, -0x1
 
@@ -55,7 +55,7 @@
 
     shl-int/2addr p1, v0
 
-    :cond_17
+    :cond_0
     add-int/lit8 v0, p1, -0x1
 
     .line 76
@@ -69,7 +69,7 @@
     return-void
 
     .line 64
-    :cond_20
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "capacity must be <= 2^30"
@@ -79,7 +79,7 @@
     throw p1
 
     .line 61
-    :cond_28
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "capacity must be >= 1"
@@ -90,7 +90,7 @@
 .end method
 
 .method private doubleCapacity()V
-    .registers 8
+    .locals 7
 
     .line 31
     iget-object v0, p0, Landroidx/collection/CircularIntArray;->mElements:[I
@@ -104,7 +104,7 @@
 
     shl-int/lit8 v4, v1, 0x1
 
-    if-ltz v4, :cond_23
+    if-ltz v4, :cond_0
 
     .line 37
     new-array v5, v4, [I
@@ -138,7 +138,7 @@
     return-void
 
     .line 35
-    :cond_23
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Max array capacity exceeded"
@@ -151,7 +151,7 @@
 
 # virtual methods
 .method public addFirst(I)V
-    .registers 4
+    .locals 2
 
     .line 85
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
@@ -172,17 +172,17 @@
     .line 87
     iget p1, p0, Landroidx/collection/CircularIntArray;->mTail:I
 
-    if-ne v0, p1, :cond_14
+    if-ne v0, p1, :cond_0
 
     .line 88
     invoke-direct {p0}, Landroidx/collection/CircularIntArray;->doubleCapacity()V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public addLast(I)V
-    .registers 4
+    .locals 2
 
     .line 97
     iget-object v0, p0, Landroidx/collection/CircularIntArray;->mElements:[I
@@ -203,17 +203,17 @@
     .line 99
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
 
-    if-ne p1, v0, :cond_14
+    if-ne p1, v0, :cond_0
 
     .line 100
     invoke-direct {p0}, Landroidx/collection/CircularIntArray;->doubleCapacity()V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 133
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
@@ -224,16 +224,16 @@
 .end method
 
 .method public get(I)I
-    .registers 4
+    .locals 2
 
-    if-ltz p1, :cond_13
+    if-ltz p1, :cond_0
 
     .line 197
     invoke-virtual {p0}, Landroidx/collection/CircularIntArray;->size()I
 
     move-result v0
 
-    if-ge p1, v0, :cond_13
+    if-ge p1, v0, :cond_0
 
     .line 198
     iget-object v0, p0, Landroidx/collection/CircularIntArray;->mElements:[I
@@ -251,7 +251,7 @@
     return p1
 
     .line 197
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -260,14 +260,14 @@
 .end method
 
 .method public getFirst()I
-    .registers 3
+    .locals 2
 
     .line 176
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
 
     iget v1, p0, Landroidx/collection/CircularIntArray;->mTail:I
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     .line 177
     iget-object v1, p0, Landroidx/collection/CircularIntArray;->mElements:[I
@@ -277,7 +277,7 @@
     return v0
 
     .line 176
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -286,14 +286,14 @@
 .end method
 
 .method public getLast()I
-    .registers 4
+    .locals 3
 
     .line 186
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
 
     iget v1, p0, Landroidx/collection/CircularIntArray;->mTail:I
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     .line 187
     iget-object v0, p0, Landroidx/collection/CircularIntArray;->mElements:[I
@@ -309,7 +309,7 @@
     return v0
 
     .line 186
-    :cond_10
+    :cond_0
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -318,35 +318,35 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 214
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
 
     iget v1, p0, Landroidx/collection/CircularIntArray;->mTail:I
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public popFirst()I
-    .registers 4
+    .locals 3
 
     .line 110
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
 
     iget v1, p0, Landroidx/collection/CircularIntArray;->mTail:I
 
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_0
 
     .line 111
     iget-object v1, p0, Landroidx/collection/CircularIntArray;->mElements:[I
@@ -365,7 +365,7 @@
     return v1
 
     .line 110
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -374,14 +374,14 @@
 .end method
 
 .method public popLast()I
-    .registers 3
+    .locals 2
 
     .line 122
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
 
     iget v1, p0, Landroidx/collection/CircularIntArray;->mTail:I
 
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 v1, v1, -0x1
 
@@ -401,7 +401,7 @@
     return v1
 
     .line 122
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -410,19 +410,19 @@
 .end method
 
 .method public removeFromEnd(I)V
-    .registers 3
+    .locals 1
 
-    if-gtz p1, :cond_3
+    if-gtz p1, :cond_0
 
     return-void
 
     .line 164
-    :cond_3
+    :cond_0
     invoke-virtual {p0}, Landroidx/collection/CircularIntArray;->size()I
 
     move-result v0
 
-    if-gt p1, v0, :cond_12
+    if-gt p1, v0, :cond_1
 
     .line 167
     iget v0, p0, Landroidx/collection/CircularIntArray;->mTail:I
@@ -438,7 +438,7 @@
     return-void
 
     .line 165
-    :cond_12
+    :cond_1
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -447,19 +447,19 @@
 .end method
 
 .method public removeFromStart(I)V
-    .registers 3
+    .locals 1
 
-    if-gtz p1, :cond_3
+    if-gtz p1, :cond_0
 
     return-void
 
     .line 147
-    :cond_3
+    :cond_0
     invoke-virtual {p0}, Landroidx/collection/CircularIntArray;->size()I
 
     move-result v0
 
-    if-gt p1, v0, :cond_12
+    if-gt p1, v0, :cond_1
 
     .line 150
     iget v0, p0, Landroidx/collection/CircularIntArray;->mHead:I
@@ -475,7 +475,7 @@
     return-void
 
     .line 148
-    :cond_12
+    :cond_1
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -484,7 +484,7 @@
 .end method
 
 .method public size()I
-    .registers 3
+    .locals 2
 
     .line 206
     iget v0, p0, Landroidx/collection/CircularIntArray;->mTail:I

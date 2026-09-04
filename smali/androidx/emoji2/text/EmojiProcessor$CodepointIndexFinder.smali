@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 708
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method static findIndexBackward(Ljava/lang/CharSequence;II)I
-    .registers 8
+    .locals 5
 
     .line 725
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -38,96 +38,96 @@
 
     const/4 v1, -0x1
 
-    if-ltz p1, :cond_3c
+    if-ltz p1, :cond_9
 
-    if-ge v0, p1, :cond_a
+    if-ge v0, p1, :cond_0
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_a
-    if-gez p2, :cond_d
+    :cond_0
+    if-gez p2, :cond_1
 
     return v1
 
-    :cond_d
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     move v2, v0
 
-    :goto_f
-    if-nez p2, :cond_12
+    :goto_1
+    if-nez p2, :cond_2
 
     return p1
 
-    :cond_12
+    :cond_2
     add-int/lit8 p1, p1, -0x1
 
-    if-gez p1, :cond_1a
+    if-gez p1, :cond_4
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_3
 
     return v1
 
-    :cond_19
+    :cond_3
     return v0
 
     .line 746
-    :cond_1a
+    :cond_4
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_6
 
     .line 748
     invoke-static {v3}, Ljava/lang/Character;->isHighSurrogate(C)Z
 
     move-result v2
 
-    if-nez v2, :cond_27
+    if-nez v2, :cond_5
 
     return v1
 
-    :cond_27
+    :cond_5
     add-int/lit8 p2, p2, -0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 755
-    :cond_2a
+    :cond_6
     invoke-static {v3}, Ljava/lang/Character;->isSurrogate(C)Z
 
     move-result v4
 
-    if-nez v4, :cond_33
+    if-nez v4, :cond_7
 
     add-int/lit8 p2, p2, -0x1
 
-    goto :goto_f
+    goto :goto_1
 
     .line 759
-    :cond_33
+    :cond_7
     invoke-static {v3}, Ljava/lang/Character;->isHighSurrogate(C)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_8
 
     return v1
 
-    :cond_3a
+    :cond_8
     const/4 v2, 0x1
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_3c
-    :goto_3c
+    :cond_9
+    :goto_2
     return v1
 .end method
 
 .method static findIndexForward(Ljava/lang/CharSequence;II)I
-    .registers 9
+    .locals 6
 
     .line 781
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -136,94 +136,94 @@
 
     const/4 v1, -0x1
 
-    if-ltz p1, :cond_40
+    if-ltz p1, :cond_9
 
-    if-ge v0, p1, :cond_a
+    if-ge v0, p1, :cond_0
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_a
-    if-gez p2, :cond_d
+    :cond_0
+    if-gez p2, :cond_1
 
     return v1
 
-    :cond_d
+    :cond_1
     const/4 v2, 0x0
 
-    :goto_e
+    :goto_0
     move v3, v2
 
-    :goto_f
-    if-nez p2, :cond_12
+    :goto_1
+    if-nez p2, :cond_2
 
     return p1
 
-    :cond_12
-    if-lt p1, v0, :cond_18
+    :cond_2
+    if-lt p1, v0, :cond_4
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_3
 
     return v1
 
-    :cond_17
+    :cond_3
     return v0
 
     .line 802
-    :cond_18
+    :cond_4
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_6
 
     .line 804
     invoke-static {v4}, Ljava/lang/Character;->isLowSurrogate(C)Z
 
     move-result v3
 
-    if-nez v3, :cond_25
+    if-nez v3, :cond_5
 
     return v1
 
-    :cond_25
+    :cond_5
     add-int/lit8 p2, p2, -0x1
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 812
-    :cond_2a
+    :cond_6
     invoke-static {v4}, Ljava/lang/Character;->isSurrogate(C)Z
 
     move-result v5
 
-    if-nez v5, :cond_35
+    if-nez v5, :cond_7
 
     add-int/lit8 p2, p2, -0x1
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_f
+    goto :goto_1
 
     .line 817
-    :cond_35
+    :cond_7
     invoke-static {v4}, Ljava/lang/Character;->isLowSurrogate(C)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_8
 
     return v1
 
-    :cond_3c
+    :cond_8
     add-int/lit8 p1, p1, 0x1
 
     const/4 v3, 0x1
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_40
-    :goto_40
+    :cond_9
+    :goto_2
     return v1
 .end method

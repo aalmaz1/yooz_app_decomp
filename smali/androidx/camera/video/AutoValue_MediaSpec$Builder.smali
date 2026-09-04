@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 87
     invoke-direct {p0}, Landroidx/camera/video/MediaSpec$Builder;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/video/MediaSpec;)V
-    .registers 3
+    .locals 1
 
     .line 89
     invoke-direct {p0}, Landroidx/camera/video/MediaSpec$Builder;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/MediaSpec;Landroidx/camera/video/AutoValue_MediaSpec$1;)V
-    .registers 3
+    .locals 0
 
     .line 83
     invoke-direct {p0, p1}, Landroidx/camera/video/AutoValue_MediaSpec$Builder;-><init>(Landroidx/camera/video/MediaSpec;)V
@@ -78,25 +78,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/MediaSpec;
-    .registers 6
+    .locals 5
 
     .line 132
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->videoSpec:Landroidx/camera/video/VideoSpec;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " videoSpec"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 135
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->audioSpec:Landroidx/camera/video/AudioSpec;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 136
     new-instance v1, Ljava/lang/StringBuilder;
@@ -118,10 +118,10 @@
     move-result-object v0
 
     .line 138
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->outputFormat:Ljava/lang/Integer;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 139
     new-instance v1, Ljava/lang/StringBuilder;
@@ -143,12 +143,12 @@
     move-result-object v0
 
     .line 141
-    :cond_37
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_3
 
     .line 144
     new-instance v0, Landroidx/camera/video/AutoValue_MediaSpec;
@@ -171,7 +171,7 @@
     return-object v0
 
     .line 142
-    :cond_4e
+    :cond_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -194,17 +194,17 @@
 .end method
 
 .method getAudioSpec()Landroidx/camera/video/AudioSpec;
-    .registers 3
+    .locals 2
 
     .line 119
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->audioSpec:Landroidx/camera/video/AudioSpec;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 120
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Property \"audioSpec\" has not been set"
@@ -215,17 +215,17 @@
 .end method
 
 .method getVideoSpec()Landroidx/camera/video/VideoSpec;
-    .registers 3
+    .locals 2
 
     .line 104
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->videoSpec:Landroidx/camera/video/VideoSpec;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 105
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Property \"videoSpec\" has not been set"
@@ -236,9 +236,9 @@
 .end method
 
 .method public setAudioSpec(Landroidx/camera/video/AudioSpec;)Landroidx/camera/video/MediaSpec$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 114
     iput-object p1, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->audioSpec:Landroidx/camera/video/AudioSpec;
@@ -246,7 +246,7 @@
     return-object p0
 
     .line 112
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null audioSpec"
@@ -257,7 +257,7 @@
 .end method
 
 .method public setOutputFormat(I)Landroidx/camera/video/MediaSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 126
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -270,9 +270,9 @@
 .end method
 
 .method public setVideoSpec(Landroidx/camera/video/VideoSpec;)Landroidx/camera/video/MediaSpec$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 99
     iput-object p1, p0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;->videoSpec:Landroidx/camera/video/VideoSpec;
@@ -280,7 +280,7 @@
     return-object p0
 
     .line 97
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null videoSpec"

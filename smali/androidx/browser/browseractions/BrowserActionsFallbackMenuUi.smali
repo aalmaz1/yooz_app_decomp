@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/net/Uri;Ljava/util/List;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +75,7 @@
 .end method
 
 .method private buildCopyAction()Ljava/lang/Runnable;
-    .registers 2
+    .locals 1
 
     .line 122
     new-instance v0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$1;
@@ -86,7 +86,7 @@
 .end method
 
 .method private buildFallbackMenuItemList(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -175,7 +175,7 @@
 .end method
 
 .method private buildOpenInBrowserAction()Landroid/app/PendingIntent;
-    .registers 5
+    .locals 4
 
     .line 110
     new-instance v0, Landroid/content/Intent;
@@ -201,7 +201,7 @@
 .end method
 
 .method private buildShareAction()Landroid/app/PendingIntent;
-    .registers 5
+    .locals 4
 
     .line 115
     new-instance v0, Landroid/content/Intent;
@@ -241,7 +241,7 @@
 .end method
 
 .method private initMenuView(Landroid/view/View;)Landroidx/browser/browseractions/BrowserActionsFallbackMenuView;
-    .registers 6
+    .locals 4
 
     .line 159
     sget v0, Landroidx/browser/R$id;->browser_actions_menu_view:I
@@ -308,7 +308,7 @@
 
 # virtual methods
 .method public displayMenu()V
-    .registers 5
+    .locals 4
 
     .line 139
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;->mContext:Landroid/content/Context;
@@ -344,7 +344,7 @@
     .line 143
     iget-object v1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;->mMenuUiListener:Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener;
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_0
 
     .line 144
     iget-object v1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;->mBrowserActionsDialog:Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;
@@ -356,7 +356,7 @@
     invoke-virtual {v1, v2}, Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
     .line 155
-    :cond_2b
+    :cond_0
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;->mBrowserActionsDialog:Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;
 
     invoke-virtual {v0}, Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;->show()V
@@ -365,7 +365,7 @@
 .end method
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -392,21 +392,21 @@
 
     const-string p3, "BrowserActionskMenuUi"
 
-    if-eqz p2, :cond_1f
+    if-eqz p2, :cond_0
 
     .line 191
-    :try_start_10
+    :try_start_0
     invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getAction()Landroid/app/PendingIntent;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/app/PendingIntent;->send()V
-    :try_end_17
-    .catch Landroid/app/PendingIntent$CanceledException; {:try_start_10 .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :catch_18
+    :catch_0
     move-exception p1
 
     const-string p2, "Failed to send custom item action"
@@ -414,15 +414,15 @@
     .line 193
     invoke-static {p3, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 195
-    :cond_1f
+    :cond_0
     invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getRunnableAction()Ljava/lang/Runnable;
 
     move-result-object p2
 
-    if-eqz p2, :cond_2c
+    if-eqz p2, :cond_1
 
     .line 196
     invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getRunnableAction()Ljava/lang/Runnable;
@@ -432,11 +432,11 @@
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     .line 198
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_0
     iget-object p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;->mBrowserActionsDialog:Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;
 
-    if-nez p1, :cond_36
+    if-nez p1, :cond_2
 
     const-string p1, "Cannot dismiss dialog, it has already been dismissed."
 
@@ -446,14 +446,14 @@
     return-void
 
     .line 202
-    :cond_36
+    :cond_2
     invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;->dismiss()V
 
     return-void
 .end method
 
 .method setMenuUiListener(Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener;)V
-    .registers 2
+    .locals 0
 
     .line 92
     iput-object p1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi;->mMenuUiListener:Landroidx/browser/browseractions/BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;Landroid/os/Looper;)V
-    .registers 3
+    .locals 0
 
     .line 796
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$MediaDrmHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -34,19 +34,19 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 6
+    .locals 4
 
     .line 802
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [B
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 807
-    :cond_7
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$MediaDrmHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-static {v1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$400(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)Ljava/util/List;
@@ -57,12 +57,12 @@
 
     move-result-object v1
 
-    :cond_11
+    :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -75,13 +75,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_1
 
     .line 809
     iget p1, p1, Landroid/os/Message;->what:I
 
     invoke-virtual {v2, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->onMediaDrmEvent(I)V
 
-    :cond_28
+    :cond_2
     return-void
 .end method

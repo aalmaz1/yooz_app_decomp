@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "buyer"
 
@@ -71,26 +71,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 37
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 38
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;->buyer:Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;
@@ -101,7 +101,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;->name:Ljava/lang/String;
 
@@ -111,19 +111,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     move v0, v2
 
-    :goto_22
+    :goto_0
     return v0
 .end method
 
 .method public final getBuyer()Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
-    .registers 2
+    .locals 1
 
     .line 28
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;->buyer:Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
@@ -132,7 +132,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;->name:Ljava/lang/String;
@@ -141,7 +141,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 45
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;->buyer:Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
@@ -164,7 +164,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 49
     new-instance v0, Ljava/lang/StringBuilder;

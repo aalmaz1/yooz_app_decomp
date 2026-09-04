@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/video/internal/encoder/EncodedData;)V
-    .registers 3
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method private generateCopiedByteBuffer(Landroidx/camera/video/internal/encoder/EncodedData;)Ljava/nio/ByteBuffer;
-    .registers 5
+    .locals 3
 
     .line 77
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->getByteBuffer()Ljava/nio/ByteBuffer;
@@ -138,7 +138,7 @@
 .end method
 
 .method private generateCopiedByteInfo(Landroidx/camera/video/internal/encoder/EncodedData;)Landroid/media/MediaCodec$BufferInfo;
-    .registers 9
+    .locals 7
 
     .line 62
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->getBufferInfo()Landroid/media/MediaCodec$BufferInfo;
@@ -167,7 +167,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Ljava/util/concurrent/atomic/AtomicReference;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -185,7 +185,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 128
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/BufferCopiedEncodedData;->mClosedCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -198,7 +198,7 @@
 .end method
 
 .method public getBufferInfo()Landroid/media/MediaCodec$BufferInfo;
-    .registers 2
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/BufferCopiedEncodedData;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -207,7 +207,7 @@
 .end method
 
 .method public getByteBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 95
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/BufferCopiedEncodedData;->mByteBuffer:Ljava/nio/ByteBuffer;
@@ -216,7 +216,7 @@
 .end method
 
 .method public getClosedFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -237,7 +237,7 @@
 .end method
 
 .method public getPresentationTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 108
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/BufferCopiedEncodedData;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -248,7 +248,7 @@
 .end method
 
 .method public isKeyFrame()Z
-    .registers 3
+    .locals 2
 
     .line 120
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/BufferCopiedEncodedData;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -259,19 +259,19 @@
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_0
     return v1
 .end method
 
 .method public size()J
-    .registers 3
+    .locals 2
 
     .line 114
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/BufferCopiedEncodedData;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;

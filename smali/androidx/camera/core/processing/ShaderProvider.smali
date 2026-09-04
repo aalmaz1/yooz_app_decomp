@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 62
     new-instance v0, Landroidx/camera/core/processing/ShaderProvider$1;
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public createFragmentShader(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 

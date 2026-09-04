@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;Landroidx/media3/exoplayer/upstream/LoaderErrorThrower;Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;I[ILandroidx/media3/exoplayer/trackselection/ExoTrackSelection;ILandroidx/media3/datasource/DataSource;JIZLjava/util/List;Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;Landroidx/media3/exoplayer/analytics/PlayerId;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;)V
-    .registers 45
+    .locals 27
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,12 +169,12 @@
     move v15, v3
 
     .line 267
-    :goto_4e
+    :goto_0
     iget-object v5, v0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
     array-length v5, v5
 
-    if-ge v15, v5, :cond_9f
+    if-ge v15, v5, :cond_1
 
     .line 268
     invoke-interface {v4, v15}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getIndexInTrackGroup(I)I
@@ -201,12 +201,12 @@
 
     new-instance v25, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
-    if-eqz v5, :cond_6b
+    if-eqz v5, :cond_0
 
-    goto :goto_73
+    goto :goto_1
 
     .line 275
-    :cond_6b
+    :cond_0
     iget-object v5, v14, Landroidx/media3/exoplayer/dash/manifest/Representation;->baseUrls:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v5, v3}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -215,7 +215,7 @@
 
     check-cast v5, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
-    :goto_73
+    :goto_1
     move-object/from16 v18, v5
 
     iget-object v7, v14, Landroidx/media3/exoplayer/dash/manifest/Representation;->format:Landroidx/media3/common/Format;
@@ -262,14 +262,14 @@
 
     add-int/lit8 v15, v6, 0x1
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_9f
+    :cond_1
     return-void
 .end method
 
 .method private createFallbackOptions(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;Ljava/util/List;)Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -295,25 +295,25 @@
 
     move v4, v3
 
-    :goto_a
-    if-ge v3, v2, :cond_17
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 649
     invoke-interface {p1, v3, v0, v1}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->isTrackExcluded(IJ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_0
 
     add-int/lit8 v4, v4, 0x1
 
-    :cond_14
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 653
-    :cond_17
+    :cond_1
     invoke-static {p2}, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->getPriorityCount(Ljava/util/List;)I
 
     move-result p1
@@ -336,14 +336,14 @@
 .end method
 
 .method private getAvailableLiveDurationUs(JJ)J
-    .registers 11
+    .locals 6
 
     .line 688
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
@@ -359,12 +359,12 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
-    goto :goto_34
+    goto :goto_0
 
     .line 691
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
     aget-object v0, v0, v1
@@ -401,15 +401,15 @@
 
     return-wide p1
 
-    :cond_34
-    :goto_34
+    :cond_1
+    :goto_0
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide p1
 .end method
 
 .method private getNextObjectAndRangeRequest(JLandroidx/media3/exoplayer/dash/manifest/RangedUri;Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;)Landroid/util/Pair;
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -434,14 +434,14 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_d
+    if-ltz v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 895
-    :cond_d
+    :cond_0
     invoke-virtual {p4, p1, p2}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentUrl(J)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
     move-result-object p1
@@ -497,7 +497,7 @@
 
     cmp-long p4, v0, v2
 
-    if-eqz p4, :cond_58
+    if-eqz p4, :cond_1
 
     .line 902
     new-instance p4, Ljava/lang/StringBuilder;
@@ -523,7 +523,7 @@
     move-result-object p3
 
     .line 904
-    :cond_58
+    :cond_1
     new-instance p1, Landroid/util/Pair;
 
     invoke-direct {p1, p2, p3}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -532,7 +532,7 @@
 .end method
 
 .method private getNowPeriodTimeUs(J)J
-    .registers 7
+    .locals 4
 
     .line 699
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -543,12 +543,12 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 702
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-wide v0, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->availabilityStartTimeMs:J
@@ -573,12 +573,12 @@
 
     sub-long v2, p1, v0
 
-    :goto_23
+    :goto_0
     return-wide v2
 .end method
 
 .method private getRepresentations()Ljava/util/ArrayList;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -618,8 +618,8 @@
 
     const/4 v4, 0x0
 
-    :goto_13
-    if-ge v4, v3, :cond_25
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     aget v5, v2, v4
 
@@ -636,26 +636,26 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     return-object v1
 .end method
 
 .method private getSegmentNum(Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;Landroidx/media3/exoplayer/source/chunk/MediaChunk;JJJ)J
-    .registers 15
+    .locals 6
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     .line 669
     invoke-virtual {p2}, Landroidx/media3/exoplayer/source/chunk/MediaChunk;->getNextChunkIndex()J
 
     move-result-wide p1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 671
-    :cond_7
+    :cond_0
     invoke-virtual {p1, p3, p4}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentNum(J)J
 
     move-result-wide v0
@@ -669,12 +669,12 @@
 
     move-result-wide p1
 
-    :goto_11
+    :goto_0
     return-wide p1
 .end method
 
 .method private updateSelectedBaseUrl(I)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
-    .registers 5
+    .locals 3
 
     .line 908
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -693,7 +693,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 912
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
@@ -702,7 +702,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_0
 
     .line 913
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->copyWithNewSelectedBaseUrl(Landroidx/media3/exoplayer/dash/manifest/BaseUrl;)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -714,14 +714,14 @@
 
     aput-object v0, v1, p1
 
-    :cond_20
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 20
+    .locals 16
 
     move-wide/from16 v1, p1
 
@@ -734,15 +734,15 @@
 
     const/4 v4, 0x0
 
-    :goto_8
-    if-ge v4, v3, :cond_4e
+    :goto_0
+    if-ge v4, v3, :cond_4
 
     aget-object v5, v0, v4
 
     .line 292
     iget-object v6, v5, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
 
-    if-eqz v6, :cond_4b
+    if-eqz v6, :cond_3
 
     .line 293
     invoke-virtual {v5}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentCount()J
@@ -753,12 +753,12 @@
 
     cmp-long v6, v8, v10
 
-    if-nez v6, :cond_1b
+    if-nez v6, :cond_0
 
-    goto :goto_4b
+    goto :goto_2
 
     .line 297
-    :cond_1b
+    :cond_0
     invoke-virtual {v5, v1, v2}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentNum(J)J
 
     move-result-wide v3
@@ -770,7 +770,7 @@
 
     cmp-long v0, v10, v1
 
-    if-gez v0, :cond_40
+    if-gez v0, :cond_2
 
     const-wide/16 v12, -0x1
 
@@ -778,7 +778,7 @@
 
     const-wide/16 v12, 0x1
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 303
     invoke-virtual {v5}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstSegmentNum()J
@@ -791,9 +791,9 @@
 
     cmp-long v0, v3, v14
 
-    if-gez v0, :cond_40
+    if-gez v0, :cond_2
 
-    :cond_39
+    :cond_1
     add-long/2addr v3, v12
 
     .line 304
@@ -803,12 +803,12 @@
 
     move-wide v5, v3
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_40
+    :cond_2
     move-wide v5, v10
 
-    :goto_41
+    :goto_1
     move-object/from16 v0, p3
 
     move-wide/from16 v1, p1
@@ -822,18 +822,18 @@
 
     return-wide v0
 
-    :cond_4b
-    :goto_4b
+    :cond_3
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_4e
+    :cond_4
     return-wide v1
 .end method
 
 .method public getNextChunk(Landroidx/media3/exoplayer/LoadingInfo;JLjava/util/List;Landroidx/media3/exoplayer/source/chunk/ChunkHolder;)V
-    .registers 49
+    .locals 43
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -857,12 +857,12 @@
     .line 367
     iget-object v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->fatalError:Ljava/io/IOException;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 371
-    :cond_b
+    :cond_0
     iget-wide v10, v9, Landroidx/media3/exoplayer/LoadingInfo;->playbackPositionUs:J
 
     sub-long v12, p2, v10
@@ -899,19 +899,19 @@
     .line 378
     iget-object v2, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->playerTrackEmsgHandler:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     .line 379
     invoke-virtual {v2, v0, v1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->maybeRefreshManifestBeforeLoadingNextChunk(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 384
-    :cond_33
+    :cond_1
     iget-wide v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->elapsedRealtimeOffsetMs:J
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Util;->getNowUnixTimeMs(J)J
@@ -936,15 +936,15 @@
 
     const/4 v5, 0x1
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_2
 
     move-object/from16 v6, p4
 
     move-object/from16 v28, v27
 
-    goto :goto_5e
+    goto :goto_0
 
-    :cond_4f
+    :cond_2
     invoke-interface/range {p4 .. p4}, Ljava/util/List;->size()I
 
     move-result v0
@@ -962,7 +962,7 @@
     move-object/from16 v28, v0
 
     .line 387
-    :goto_5e
+    :goto_0
     iget-object v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
@@ -975,8 +975,8 @@
 
     move/from16 v2, v29
 
-    :goto_6a
-    if-ge v2, v3, :cond_c6
+    :goto_1
+    if-ge v2, v3, :cond_5
 
     .line 389
     iget-object v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -986,7 +986,7 @@
     .line 390
     iget-object v0, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
 
-    if-nez v0, :cond_81
+    if-nez v0, :cond_3
 
     .line 391
     sget-object v0, Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;->EMPTY:Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;
@@ -1003,10 +1003,10 @@
 
     move-wide v12, v7
 
-    goto :goto_b7
+    goto :goto_2
 
     .line 394
-    :cond_81
+    :cond_3
     invoke-virtual {v1, v7, v8}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstAvailableSegmentNum(J)J
 
     move-result-wide v16
@@ -1043,17 +1043,17 @@
 
     cmp-long v0, v18, v16
 
-    if-gez v0, :cond_a8
+    if-gez v0, :cond_4
 
     .line 405
     sget-object v0, Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;->EMPTY:Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;
 
     aput-object v0, v30, v14
 
-    goto :goto_b7
+    goto :goto_2
 
     .line 407
-    :cond_a8
+    :cond_4
     invoke-direct {v15, v14}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->updateSelectedBaseUrl(I)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
     move-result-object v17
@@ -1069,7 +1069,7 @@
 
     aput-object v0, v30, v14
 
-    :goto_b7
+    :goto_2
     add-int/lit8 v2, v14, 0x1
 
     move-object/from16 v6, p4
@@ -1086,9 +1086,9 @@
 
     const/4 v5, 0x1
 
-    goto :goto_6a
+    goto :goto_1
 
-    :cond_c6
+    :cond_5
     move-object/from16 v30, v4
 
     move-wide/from16 v31, v12
@@ -1127,14 +1127,14 @@
 
     const-wide/16 v2, 0x0
 
-    if-nez v1, :cond_ed
+    if-nez v1, :cond_6
 
     move-object/from16 v14, v27
 
-    goto :goto_119
+    goto :goto_3
 
     .line 424
-    :cond_ed
+    :cond_6
     new-instance v1, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
 
     iget-object v4, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->cmcdConfiguration:Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -1183,7 +1183,7 @@
     move-object v14, v1
 
     .line 433
-    :goto_119
+    :goto_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -1198,7 +1198,7 @@
     .line 436
     iget-object v0, v9, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->chunkExtractor:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
 
-    if-eqz v0, :cond_16a
+    if-eqz v0, :cond_a
 
     .line 437
     iget-object v0, v9, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->representation:Landroidx/media3/exoplayer/dash/manifest/Representation;
@@ -1210,7 +1210,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_137
+    if-nez v1, :cond_7
 
     .line 441
     invoke-virtual {v0}, Landroidx/media3/exoplayer/dash/manifest/Representation;->getInitializationUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
@@ -1219,16 +1219,16 @@
 
     move-object v6, v1
 
-    goto :goto_139
+    goto :goto_4
 
-    :cond_137
+    :cond_7
     move-object/from16 v6, v27
 
     .line 443
-    :goto_139
+    :goto_4
     iget-object v1, v9, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
 
-    if-nez v1, :cond_143
+    if-nez v1, :cond_8
 
     .line 444
     invoke-virtual {v0}, Landroidx/media3/exoplayer/dash/manifest/Representation;->getIndexUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
@@ -1237,18 +1237,18 @@
 
     move-object v7, v0
 
-    goto :goto_145
+    goto :goto_5
 
-    :cond_143
+    :cond_8
     move-object/from16 v7, v27
 
-    :goto_145
-    if-nez v6, :cond_149
+    :goto_5
+    if-nez v6, :cond_9
 
-    if-eqz v7, :cond_16a
+    if-eqz v7, :cond_a
 
     .line 448
-    :cond_149
+    :cond_9
     iget-object v2, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
     iget-object v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -1289,7 +1289,7 @@
 
     return-void
 
-    :cond_16a
+    :cond_a
     move-object/from16 v10, p5
 
     .line 462
@@ -1302,7 +1302,7 @@
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v0, :cond_184
+    if-eqz v0, :cond_b
 
     iget v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->periodIndex:I
 
@@ -1317,47 +1317,47 @@
 
     sub-int/2addr v1, v11
 
-    if-ne v0, v1, :cond_185
+    if-ne v0, v1, :cond_c
 
     move v5, v11
 
-    goto :goto_187
+    goto :goto_6
 
-    :cond_184
+    :cond_b
     const/4 v11, 0x1
 
-    :cond_185
+    :cond_c
     move/from16 v5, v29
 
-    :goto_187
+    :goto_6
     const-wide v18, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v5, :cond_196
+    if-eqz v5, :cond_e
 
     cmp-long v0, v16, v18
 
-    if-eqz v0, :cond_193
+    if-eqz v0, :cond_d
 
-    goto :goto_196
+    goto :goto_7
 
-    :cond_193
+    :cond_d
     move/from16 v0, v29
 
-    goto :goto_197
+    goto :goto_8
 
-    :cond_196
-    :goto_196
+    :cond_e
+    :goto_7
     move v0, v11
 
     .line 467
-    :goto_197
+    :goto_8
     invoke-virtual {v9}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentCount()J
 
     move-result-wide v6
 
     cmp-long v1, v6, v2
 
-    if-nez v1, :cond_1a2
+    if-nez v1, :cond_f
 
     .line 469
     iput-boolean v0, v10, Landroidx/media3/exoplayer/source/chunk/ChunkHolder;->endOfStream:Z
@@ -1365,7 +1365,7 @@
     return-void
 
     .line 473
-    :cond_1a2
+    :cond_f
     invoke-virtual {v9, v12, v13}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstAvailableSegmentNum(J)J
 
     move-result-wide v20
@@ -1375,7 +1375,7 @@
 
     move-result-wide v12
 
-    if-eqz v5, :cond_1c0
+    if-eqz v5, :cond_11
 
     .line 477
     invoke-virtual {v9, v12, v13}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentEndTimeUs(J)J
@@ -1393,19 +1393,19 @@
 
     cmp-long v1, v1, v16
 
-    if-ltz v1, :cond_1bd
+    if-ltz v1, :cond_10
 
     move v5, v11
 
-    goto :goto_1bf
+    goto :goto_9
 
-    :cond_1bd
+    :cond_10
     move/from16 v5, v29
 
-    :goto_1bf
+    :goto_9
     and-int/2addr v0, v5
 
-    :cond_1c0
+    :cond_11
     move v7, v0
 
     move-object/from16 v0, p0
@@ -1429,7 +1429,7 @@
 
     cmp-long v0, v7, v20
 
-    if-gez v0, :cond_1dc
+    if-gez v0, :cond_12
 
     .line 494
     new-instance v0, Landroidx/media3/exoplayer/source/BehindLiveWindowException;
@@ -1440,22 +1440,22 @@
 
     return-void
 
-    :cond_1dc
+    :cond_12
     cmp-long v0, v7, v12
 
-    if-gtz v0, :cond_246
+    if-gtz v0, :cond_17
 
     .line 498
     iget-boolean v1, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->missingLastSegment:Z
 
-    if-eqz v1, :cond_1e7
+    if-eqz v1, :cond_13
 
-    if-ltz v0, :cond_1e7
+    if-ltz v0, :cond_13
 
-    goto :goto_246
+    goto :goto_b
 
-    :cond_1e7
-    if-eqz v11, :cond_1f5
+    :cond_13
+    if-eqz v11, :cond_14
 
     .line 505
     invoke-virtual {v9, v7, v8}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentStartTimeUs(J)J
@@ -1464,7 +1464,7 @@
 
     cmp-long v0, v0, v16
 
-    if-ltz v0, :cond_1f5
+    if-ltz v0, :cond_14
 
     const/4 v0, 0x1
 
@@ -1474,7 +1474,7 @@
     return-void
 
     .line 511
-    :cond_1f5
+    :cond_14
     iget v0, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->maxSegmentsPerLoad:I
 
     int-to-long v0, v0
@@ -1493,12 +1493,12 @@
 
     cmp-long v1, v16, v18
 
-    if-eqz v1, :cond_216
+    if-eqz v1, :cond_15
 
     const/4 v1, 0x1
 
-    :goto_206
-    if-le v0, v1, :cond_216
+    :goto_a
+    if-le v0, v1, :cond_15
 
     int-to-long v4, v0
 
@@ -1513,13 +1513,13 @@
 
     cmp-long v4, v4, v16
 
-    if-ltz v4, :cond_216
+    if-ltz v4, :cond_15
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_206
+    goto :goto_a
 
-    :cond_216
+    :cond_15
     move v11, v0
 
     .line 522
@@ -1527,12 +1527,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21f
+    if-eqz v0, :cond_16
 
     move-wide/from16 v18, p2
 
     .line 523
-    :cond_21f
+    :cond_16
     iget-object v2, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
     iget v3, v15, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackType:I
@@ -1579,8 +1579,8 @@
 
     return-void
 
-    :cond_246
-    :goto_246
+    :cond_17
+    :goto_b
     move-object v15, v10
 
     .line 501
@@ -1590,7 +1590,7 @@
 .end method
 
 .method public getPreferredQueueSize(JLjava/util/List;)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -1604,7 +1604,7 @@
     .line 346
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->fatalError:Ljava/io/IOException;
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
@@ -1614,12 +1614,12 @@
 
     const/4 v1, 0x2
 
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 349
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     invoke-interface {v0, p1, p2, p3}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->evaluateQueueSize(JLjava/util/List;)I
@@ -1629,8 +1629,8 @@
     return p1
 
     .line 347
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result p1
@@ -1639,7 +1639,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1649,7 +1649,7 @@
     .line 337
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->fatalError:Ljava/io/IOException;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 340
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->manifestLoaderErrorThrower:Landroidx/media3/exoplayer/upstream/LoaderErrorThrower;
@@ -1659,12 +1659,12 @@
     return-void
 
     .line 338
-    :cond_a
+    :cond_0
     throw v0
 .end method
 
 .method protected newInitializationChunk(Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;Landroidx/media3/datasource/DataSource;Landroidx/media3/common/Format;ILjava/lang/Object;Landroidx/media3/exoplayer/dash/manifest/RangedUri;Landroidx/media3/exoplayer/dash/manifest/RangedUri;Landroidx/media3/exoplayer/upstream/CmcdData$Factory;)Landroidx/media3/exoplayer/source/chunk/Chunk;
-    .registers 16
+    .locals 7
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "#1.chunkExtractor"
@@ -1674,7 +1674,7 @@
     .line 730
     iget-object v0, p1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->representation:Landroidx/media3/exoplayer/dash/manifest/Representation;
 
-    if-eqz p6, :cond_11
+    if-eqz p6, :cond_1
 
     .line 735
     iget-object v1, p1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
@@ -1686,17 +1686,17 @@
 
     move-result-object p7
 
-    if-nez p7, :cond_f
+    if-nez p7, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object p6, p7
 
-    goto :goto_17
+    goto :goto_0
 
     .line 741
-    :cond_11
+    :cond_1
     invoke-static {p7}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p6
@@ -1704,7 +1704,7 @@
     check-cast p6, Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
     .line 743
-    :goto_17
+    :goto_0
     iget-object p7, p1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
     iget-object p7, p7, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->url:Ljava/lang/String;
@@ -1721,7 +1721,7 @@
 
     move-result-object p6
 
-    if-eqz p8, :cond_34
+    if-eqz p8, :cond_2
 
     const-string p7, "i"
 
@@ -1739,7 +1739,7 @@
 
     move-result-object p6
 
-    :cond_34
+    :cond_2
     move-object v2, p6
 
     .line 756
@@ -1763,7 +1763,7 @@
 .end method
 
 .method protected newMediaChunk(Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;Landroidx/media3/datasource/DataSource;ILandroidx/media3/common/Format;ILjava/lang/Object;JIJJLandroidx/media3/exoplayer/upstream/CmcdData$Factory;)Landroidx/media3/exoplayer/source/chunk/Chunk;
-    .registers 42
+    .locals 27
 
     move-object/from16 v0, p0
 
@@ -1791,7 +1791,7 @@
     .line 780
     iget-object v7, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->chunkExtractor:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
 
-    if-nez v7, :cond_7b
+    if-nez v7, :cond_3
 
     .line 781
     invoke-virtual {v1, v14, v15}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentEndTimeUs(J)J
@@ -1803,17 +1803,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_0
 
     const/4 v10, 0x0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     const/16 v10, 0x8
 
     .line 787
-    :goto_26
+    :goto_0
     iget-object v2, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->url:Ljava/lang/String;
@@ -1828,7 +1828,7 @@
 
     move-result-object v2
 
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_2
 
     sub-long v10, v12, v8
 
@@ -1851,7 +1851,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_1
 
     .line 802
     iget-object v3, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -1871,7 +1871,7 @@
     invoke-virtual {v3, v1}, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->setNextRangeRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
 
     .line 806
-    :cond_58
+    :cond_1
     invoke-virtual/range {p14 .. p14}, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->createCmcdData()Landroidx/media3/exoplayer/upstream/CmcdData;
 
     move-result-object v1
@@ -1883,13 +1883,13 @@
 
     move-object v3, v1
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_62
+    :cond_2
     move-object v3, v2
 
     .line 810
-    :goto_63
+    :goto_1
     new-instance v16, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;
 
     move-object/from16 v1, v16
@@ -1916,15 +1916,15 @@
 
     return-object v16
 
-    :cond_7b
+    :cond_3
     const/4 v7, 0x1
 
     move/from16 v13, p9
 
     move v12, v7
 
-    :goto_7f
-    if-ge v7, v13, :cond_98
+    :goto_2
+    if-ge v7, v13, :cond_5
 
     int-to-long v10, v7
 
@@ -1945,21 +1945,21 @@
 
     move-result-object v10
 
-    if-nez v10, :cond_92
+    if-nez v10, :cond_4
 
-    goto :goto_98
+    goto :goto_3
 
-    :cond_92
+    :cond_4
     add-int/lit8 v12, v12, 0x1
 
     add-int/lit8 v7, v7, 0x1
 
     move-object v6, v10
 
-    goto :goto_7f
+    goto :goto_2
 
-    :cond_98
-    :goto_98
+    :cond_5
+    :goto_3
     int-to-long v10, v12
 
     add-long/2addr v10, v14
@@ -1982,31 +1982,31 @@
 
     cmp-long v7, v20, v22
 
-    if-eqz v7, :cond_b5
+    if-eqz v7, :cond_6
 
     cmp-long v7, v20, v18
 
-    if-gtz v7, :cond_b5
+    if-gtz v7, :cond_6
 
     move-wide/from16 v22, v20
 
     .line 843
-    :cond_b5
+    :cond_6
     invoke-virtual {v1, v10, v11, v2, v3}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->isSegmentAvailableAtFullNetworkSpeed(JJ)Z
 
     move-result v2
 
-    if-eqz v2, :cond_bd
+    if-eqz v2, :cond_7
 
     const/4 v10, 0x0
 
-    goto :goto_bf
+    goto :goto_4
 
-    :cond_bd
+    :cond_7
     const/16 v10, 0x8
 
     .line 846
-    :goto_bf
+    :goto_4
     iget-object v2, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->url:Ljava/lang/String;
@@ -2021,7 +2021,7 @@
 
     move-result-object v2
 
-    if-eqz v4, :cond_f9
+    if-eqz v4, :cond_9
 
     sub-long v10, v18, v8
 
@@ -2044,7 +2044,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_f1
+    if-eqz v3, :cond_8
 
     .line 861
     iget-object v6, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -2064,7 +2064,7 @@
     invoke-virtual {v6, v3}, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->setNextRangeRequest(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/CmcdData$Factory;
 
     .line 865
-    :cond_f1
+    :cond_8
     invoke-virtual/range {p14 .. p14}, Landroidx/media3/exoplayer/upstream/CmcdData$Factory;->createCmcdData()Landroidx/media3/exoplayer/upstream/CmcdData;
 
     move-result-object v3
@@ -2074,7 +2074,7 @@
 
     move-result-object v2
 
-    :cond_f9
+    :cond_9
     move-object v4, v2
 
     .line 868
@@ -2091,11 +2091,11 @@
 
     move-result v6
 
-    if-eqz v6, :cond_108
+    if-eqz v6, :cond_a
 
     add-long/2addr v2, v8
 
-    :cond_108
+    :cond_a
     move-wide/from16 v24, v2
 
     .line 872
@@ -2135,12 +2135,12 @@
 .end method
 
 .method public onChunkLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;)V
-    .registers 9
+    .locals 7
 
     .line 540
     instance-of v0, p1, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 541
     move-object v0, p1
@@ -2164,7 +2164,7 @@
     .line 547
     iget-object v2, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
 
-    if-nez v2, :cond_36
+    if-nez v2, :cond_0
 
     .line 549
     iget-object v2, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->chunkExtractor:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
@@ -2180,7 +2180,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_0
 
     .line 552
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -2201,60 +2201,60 @@
     aput-object v1, v3, v0
 
     .line 559
-    :cond_36
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->playerTrackEmsgHandler:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 560
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->onChunkLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;)V
 
-    :cond_3d
+    :cond_1
     return-void
 .end method
 
 .method public onChunkLoadError(Landroidx/media3/exoplayer/source/chunk/Chunk;ZLandroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Z
-    .registers 11
+    .locals 6
 
     const/4 v0, 0x0
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_0
 
     return v0
 
     .line 573
-    :cond_4
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->playerTrackEmsgHandler:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;
 
     const/4 v1, 0x1
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_1
 
     invoke-virtual {p2, p1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->onChunkLoadError(Landroidx/media3/exoplayer/source/chunk/Chunk;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_1
 
     return v1
 
     .line 577
-    :cond_10
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-boolean p2, p2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-nez p2, :cond_5c
+    if-nez p2, :cond_2
 
     instance-of p2, p1, Landroidx/media3/exoplayer/source/chunk/MediaChunk;
 
-    if-eqz p2, :cond_5c
+    if-eqz p2, :cond_2
 
     iget-object p2, p3, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;->exception:Ljava/io/IOException;
 
     instance-of p2, p2, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
 
-    if-eqz p2, :cond_5c
+    if-eqz p2, :cond_2
 
     iget-object p2, p3, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;->exception:Ljava/io/IOException;
 
@@ -2264,7 +2264,7 @@
 
     const/16 v2, 0x194
 
-    if-ne p2, v2, :cond_5c
+    if-ne p2, v2, :cond_2
 
     .line 581
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -2289,13 +2289,13 @@
 
     cmp-long v4, v2, v4
 
-    if-eqz v4, :cond_5c
+    if-eqz v4, :cond_2
 
     const-wide/16 v4, 0x0
 
     cmp-long v4, v2, v4
 
-    if-eqz v4, :cond_5c
+    if-eqz v4, :cond_2
 
     .line 585
     invoke-virtual {p2}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstSegmentNum()J
@@ -2319,7 +2319,7 @@
 
     cmp-long p2, v2, v4
 
-    if-lez p2, :cond_5c
+    if-lez p2, :cond_2
 
     .line 587
     iput-boolean v1, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->missingLastSegment:Z
@@ -2327,7 +2327,7 @@
     return v1
 
     .line 593
-    :cond_5c
+    :cond_2
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     iget-object v2, p1, Landroidx/media3/exoplayer/source/chunk/Chunk;->trackFormat:Landroidx/media3/common/Format;
@@ -2353,7 +2353,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_7d
+    if-eqz v2, :cond_3
 
     .line 598
     iget-object v3, p2, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
@@ -2362,12 +2362,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_7d
+    if-nez v2, :cond_3
 
     return v1
 
     .line 604
-    :cond_7d
+    :cond_3
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     iget-object v3, p2, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->representation:Landroidx/media3/exoplayer/dash/manifest/Representation;
@@ -2386,24 +2386,24 @@
 
     move-result v4
 
-    if-nez v4, :cond_95
+    if-nez v4, :cond_4
 
     .line 607
     invoke-virtual {v2, v1}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;->isFallbackAvailable(I)Z
 
     move-result v4
 
-    if-nez v4, :cond_95
+    if-nez v4, :cond_4
 
     return v0
 
     .line 612
-    :cond_95
+    :cond_4
     invoke-interface {p4, v2, p3}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->getFallbackSelectionFor(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;)Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;
 
     move-result-object p3
 
-    if-eqz p3, :cond_c5
+    if-eqz p3, :cond_7
 
     .line 613
     iget p4, p3, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;->type:I
@@ -2412,15 +2412,15 @@
 
     move-result p4
 
-    if-nez p4, :cond_a4
+    if-nez p4, :cond_5
 
-    goto :goto_c5
+    goto :goto_0
 
     .line 619
-    :cond_a4
+    :cond_5
     iget p4, p3, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;->type:I
 
-    if-ne p4, v3, :cond_b7
+    if-ne p4, v3, :cond_6
 
     .line 620
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -2439,13 +2439,13 @@
 
     move-result v0
 
-    goto :goto_c5
+    goto :goto_0
 
     .line 623
-    :cond_b7
+    :cond_6
     iget p1, p3, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;->type:I
 
-    if-ne p1, v1, :cond_c5
+    if-ne p1, v1, :cond_7
 
     .line 624
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->baseUrlExclusionList:Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;
@@ -2458,13 +2458,13 @@
 
     move v0, v1
 
-    :cond_c5
-    :goto_c5
+    :cond_7
+    :goto_0
     return v0
 .end method
 
 .method public release()V
-    .registers 5
+    .locals 4
 
     .line 633
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -2473,30 +2473,30 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
     .line 634
     iget-object v3, v3, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->chunkExtractor:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     .line 636
     invoke-interface {v3}, Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;->release()V
 
-    :cond_f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     return-void
 .end method
 
 .method public shouldCancelLoad(JLandroidx/media3/exoplayer/source/chunk/Chunk;Ljava/util/List;)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -2511,14 +2511,14 @@
     .line 355
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->fatalError:Ljava/io/IOException;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 358
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->shouldCancelChunkLoad(JLandroidx/media3/exoplayer/source/chunk/Chunk;Ljava/util/List;)Z
@@ -2529,7 +2529,7 @@
 .end method
 
 .method public updateManifest(Landroidx/media3/exoplayer/dash/manifest/DashManifest;I)V
-    .registers 8
+    .locals 5
 
     .line 316
     :try_start_0
@@ -2551,12 +2551,12 @@
     const/4 v1, 0x0
 
     .line 320
-    :goto_d
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->representationHolders:[Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_2e
+    if-ge v1, v2, :cond_0
 
     .line 321
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -2582,25 +2582,25 @@
     move-result-object v2
 
     aput-object v2, v3, v1
-    :try_end_28
-    .catch Landroidx/media3/exoplayer/source/BehindLiveWindowException; {:try_start_0 .. :try_end_28} :catch_2b
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/source/BehindLiveWindowException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :catch_2b
+    :catch_0
     move-exception p1
 
     .line 326
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->fatalError:Ljava/io/IOException;
 
-    :cond_2e
+    :cond_0
     return-void
 .end method
 
 .method public updateTrackSelection(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)V
-    .registers 2
+    .locals 0
 
     .line 332
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;

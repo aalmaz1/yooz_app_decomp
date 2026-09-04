@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 68
     new-instance v0, Landroidx/camera/core/internal/compat/workaround/ExifRotationAvailability;
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/ImageCaptureConfig;Landroid/util/Size;)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/ImageCaptureConfig;Landroid/util/Size;Landroidx/camera/core/CameraEffect;Z)V
-    .registers 10
+    .locals 5
 
     .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,19 +107,19 @@
 
     check-cast v3, Ljava/util/concurrent/Executor;
 
-    if-eqz p3, :cond_38
+    if-eqz p3, :cond_0
 
     .line 112
     new-instance v4, Landroidx/camera/core/processing/InternalImageProcessor;
 
     invoke-direct {v4, p3}, Landroidx/camera/core/processing/InternalImageProcessor;-><init>(Landroidx/camera/core/CameraEffect;)V
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_0
     const/4 v4, 0x0
 
-    :goto_39
+    :goto_0
     invoke-direct {v2, v3, v4}, Landroidx/camera/core/imagecapture/ProcessingNode;-><init>(Ljava/util/concurrent/Executor;Landroidx/camera/core/processing/InternalImageProcessor;)V
 
     iput-object v2, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mProcessingNode:Landroidx/camera/core/imagecapture/ProcessingNode;
@@ -163,7 +163,7 @@
 .end method
 
 .method private createCameraRequest(Landroidx/camera/core/impl/CaptureBundle;Landroidx/camera/core/imagecapture/TakePictureRequest;Landroidx/camera/core/imagecapture/TakePictureCallback;)Landroidx/camera/core/imagecapture/CameraRequest;
-    .registers 10
+    .locals 6
 
     .line 255
     new-instance v0, Ljava/util/ArrayList;
@@ -194,12 +194,12 @@
 
     move-result-object p1
 
-    :goto_1b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_a2
+    if-eqz v2, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -256,7 +256,7 @@
 
     const/16 v5, 0x100
 
-    if-ne v4, v5, :cond_7a
+    if-ne v4, v5, :cond_1
 
     .line 270
     sget-object v4, Landroidx/camera/core/imagecapture/ImagePipeline;->EXIF_ROTATION_AVAILABILITY:Landroidx/camera/core/internal/compat/workaround/ExifRotationAvailability;
@@ -265,7 +265,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6d
+    if-eqz v4, :cond_0
 
     .line 271
     sget-object v4, Landroidx/camera/core/impl/CaptureConfig;->OPTION_ROTATION:Landroidx/camera/core/impl/Config$Option;
@@ -283,7 +283,7 @@
     invoke-virtual {v3, v4, v5}, Landroidx/camera/core/impl/CaptureConfig$Builder;->addImplementationOption(Landroidx/camera/core/impl/Config$Option;Ljava/lang/Object;)V
 
     .line 274
-    :cond_6d
+    :cond_0
     sget-object v4, Landroidx/camera/core/impl/CaptureConfig;->OPTION_JPEG_QUALITY:Landroidx/camera/core/impl/Config$Option;
 
     .line 275
@@ -299,7 +299,7 @@
     invoke-virtual {v3, v4, v5}, Landroidx/camera/core/impl/CaptureConfig$Builder;->addImplementationOption(Landroidx/camera/core/impl/Config$Option;Ljava/lang/Object;)V
 
     .line 280
-    :cond_7a
+    :cond_1
     invoke-interface {v2}, Landroidx/camera/core/impl/CaptureStage;->getCaptureConfig()Landroidx/camera/core/impl/CaptureConfig;
 
     move-result-object v4
@@ -338,10 +338,10 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1b
+    goto/16 :goto_0
 
     .line 288
-    :cond_a2
+    :cond_2
     new-instance p1, Landroidx/camera/core/imagecapture/CameraRequest;
 
     invoke-direct {p1, v0, p3}, Landroidx/camera/core/imagecapture/CameraRequest;-><init>(Ljava/util/List;Landroidx/camera/core/imagecapture/TakePictureCallback;)V
@@ -350,7 +350,7 @@
 .end method
 
 .method private createCaptureBundle()Landroidx/camera/core/impl/CaptureBundle;
-    .registers 3
+    .locals 2
 
     .line 231
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mUseCaseConfig:Landroidx/camera/core/impl/ImageCaptureConfig;
@@ -373,7 +373,7 @@
 .end method
 
 .method private createProcessingRequest(Landroidx/camera/core/impl/CaptureBundle;Landroidx/camera/core/imagecapture/TakePictureRequest;Landroidx/camera/core/imagecapture/TakePictureCallback;Lcom/google/common/util/concurrent/ListenableFuture;)Landroidx/camera/core/imagecapture/ProcessingRequest;
-    .registers 15
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -429,7 +429,7 @@
 .end method
 
 .method private getOutputFormat()I
-    .registers 4
+    .locals 3
 
     .line 220
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mUseCaseConfig:Landroidx/camera/core/impl/ImageCaptureConfig;
@@ -444,7 +444,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 223
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -453,7 +453,7 @@
 
     return v0
 
-    :cond_12
+    :cond_0
     const/16 v0, 0x100
 
     return v0
@@ -462,7 +462,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 145
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -486,7 +486,7 @@
 .end method
 
 .method createRequests(Landroidx/camera/core/imagecapture/TakePictureRequest;Landroidx/camera/core/imagecapture/TakePictureCallback;Lcom/google/common/util/concurrent/ListenableFuture;)Landroidx/core/util/Pair;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -529,7 +529,7 @@
 .end method
 
 .method public createSessionConfigBuilder(Landroid/util/Size;)Landroidx/camera/core/impl/SessionConfig$Builder;
-    .registers 3
+    .locals 1
 
     .line 131
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mUseCaseConfig:Landroidx/camera/core/impl/ImageCaptureConfig;
@@ -551,7 +551,7 @@
 .end method
 
 .method public expectsMetadata()Z
-    .registers 2
+    .locals 1
 
     .line 335
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mCaptureNode:Landroidx/camera/core/imagecapture/CaptureNode;
@@ -570,24 +570,24 @@
 .end method
 
 .method getCameraRequestJpegQuality(Landroidx/camera/core/imagecapture/TakePictureRequest;)I
-    .registers 5
+    .locals 3
 
     .line 300
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/TakePictureRequest;->getOnDiskCallback()Landroidx/camera/core/ImageCapture$OnImageSavedCallback;
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 301
-    :goto_9
+    :goto_0
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/TakePictureRequest;->getCropRect()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -602,28 +602,28 @@
 
     move-result v1
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 306
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/TakePictureRequest;->getCaptureMode()I
 
     move-result p1
 
-    if-nez p1, :cond_24
+    if-nez p1, :cond_1
 
     const/16 p1, 0x64
 
     return p1
 
-    :cond_24
+    :cond_1
     const/16 p1, 0x5f
 
     return p1
 
     .line 314
-    :cond_27
+    :cond_2
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/TakePictureRequest;->getJpegQuality()I
 
     move-result p1
@@ -632,7 +632,7 @@
 .end method
 
 .method public getCapacity()I
-    .registers 2
+    .locals 1
 
     .line 156
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -648,7 +648,7 @@
 .end method
 
 .method getCaptureNode()Landroidx/camera/core/imagecapture/CaptureNode;
-    .registers 2
+    .locals 1
 
     .line 320
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mCaptureNode:Landroidx/camera/core/imagecapture/CaptureNode;
@@ -657,7 +657,7 @@
 .end method
 
 .method getProcessingNode()Landroidx/camera/core/imagecapture/ProcessingNode;
-    .registers 2
+    .locals 1
 
     .line 326
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ImagePipeline;->mProcessingNode:Landroidx/camera/core/imagecapture/ProcessingNode;
@@ -666,7 +666,7 @@
 .end method
 
 .method notifyCaptureError(Landroidx/camera/core/ImageCaptureException;)V
-    .registers 3
+    .locals 1
 
     .line 213
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -684,7 +684,7 @@
 .end method
 
 .method public setOnImageCloseListener(Landroidx/camera/core/ForwardingImageProxy$OnImageCloseListener;)V
-    .registers 3
+    .locals 1
 
     .line 168
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -698,7 +698,7 @@
 .end method
 
 .method submitProcessingRequest(Landroidx/camera/core/imagecapture/ProcessingRequest;)V
-    .registers 3
+    .locals 1
 
     .line 207
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V

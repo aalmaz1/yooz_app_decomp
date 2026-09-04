@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/cache/CacheDataSource$Factory;)V
-    .registers 4
+    .locals 1
 
     .line 90
     new-instance v0, Landroidx/media3/exoplayer/dash/offline/DashDownloader$$ExternalSyntheticLambda0;
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 11
+    .locals 7
 
     .line 105
     new-instance v2, Landroidx/media3/exoplayer/dash/manifest/DashManifestParser;
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;J)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -119,7 +119,7 @@
 .end method
 
 .method private addSegmentsForAdaptationSet(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;JJZLjava/util/ArrayList;)V
-    .registers 35
+    .locals 26
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -152,14 +152,14 @@
     move v11, v0
 
     .line 186
-    :goto_a
+    :goto_0
     iget-object v0, v8, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->representations:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v11, v0, :cond_bc
+    if-ge v11, v0, :cond_6
 
     .line 187
     iget-object v0, v8, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->representations:Ljava/util/List;
@@ -171,21 +171,21 @@
     check-cast v0, Landroidx/media3/exoplayer/dash/manifest/Representation;
 
     .line 190
-    :try_start_1a
+    :try_start_0
     iget v1, v8, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->type:I
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_1a .. :try_end_1c} :catch_b0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
     move-object/from16 v12, p1
 
-    :try_start_1e
+    :try_start_1
     invoke-direct {v7, v12, v1, v0, v9}, Landroidx/media3/exoplayer/dash/offline/DashDownloader;->getSegmentIndex(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;Z)Landroidx/media3/exoplayer/dash/DashSegmentIndex;
 
     move-result-object v13
-    :try_end_22
-    .catch Ljava/io/IOException; {:try_start_1e .. :try_end_22} :catch_ae
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-eqz v13, :cond_a2
+    if-eqz v13, :cond_3
 
     move-wide/from16 v14, p5
 
@@ -198,7 +198,7 @@
 
     cmp-long v1, v16, v1
 
-    if-eqz v1, :cond_9a
+    if-eqz v1, :cond_2
 
     .line 208
     iget-object v1, v7, Landroidx/media3/exoplayer/dash/offline/DashDownloader;->baseUrlExclusionList:Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;
@@ -222,7 +222,7 @@
 
     move-result-object v18
 
-    if-eqz v18, :cond_58
+    if-eqz v18, :cond_0
 
     move-object/from16 v1, p0
 
@@ -243,18 +243,18 @@
 
     invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_5a
+    goto :goto_1
 
-    :cond_58
+    :cond_0
     move-object/from16 v19, v6
 
     .line 213
-    :goto_5a
+    :goto_1
     invoke-virtual {v0}, Landroidx/media3/exoplayer/dash/manifest/Representation;->getIndexUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
     move-result-object v6
 
-    if-eqz v6, :cond_6e
+    if-eqz v6, :cond_1
 
     move-object/from16 v1, p0
 
@@ -272,7 +272,7 @@
     invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 217
-    :cond_6e
+    :cond_1
     invoke-interface {v13}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getFirstSegmentNum()J
 
     move-result-wide v1
@@ -285,10 +285,10 @@
 
     move-wide v4, v1
 
-    :goto_79
+    :goto_2
     cmp-long v1, v4, v16
 
-    if-gtz v1, :cond_b7
+    if-gtz v1, :cond_4
 
     .line 224
     invoke-interface {v13, v4, v5}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getTimeUs(J)J
@@ -322,10 +322,10 @@
 
     add-long v4, v24, v20
 
-    goto :goto_79
+    goto :goto_2
 
     .line 205
-    :cond_9a
+    :cond_2
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadException;
 
     const-string v1, "Unbounded segment index"
@@ -334,11 +334,11 @@
 
     throw v0
 
-    :cond_a2
+    :cond_3
     move-wide/from16 v14, p5
 
     .line 193
-    :try_start_a4
+    :try_start_2
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadException;
 
     const-string v1, "Missing segment index"
@@ -346,45 +346,45 @@
     invoke-direct {v0, v1}, Landroidx/media3/exoplayer/offline/DownloadException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_ac
-    .catch Ljava/io/IOException; {:try_start_a4 .. :try_end_ac} :catch_ac
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :catch_ac
+    :catch_0
     move-exception v0
 
-    goto :goto_b5
+    goto :goto_4
 
-    :catch_ae
+    :catch_1
     move-exception v0
 
-    goto :goto_b3
+    goto :goto_3
 
-    :catch_b0
+    :catch_2
     move-exception v0
 
     move-object/from16 v12, p1
 
-    :goto_b3
+    :goto_3
     move-wide/from16 v14, p5
 
-    :goto_b5
-    if-eqz v9, :cond_bb
+    :goto_4
+    if-eqz v9, :cond_5
 
-    :cond_b7
+    :cond_4
     add-int/lit8 v11, v11, 0x1
 
-    goto/16 :goto_a
+    goto/16 :goto_0
 
     .line 197
-    :cond_bb
+    :cond_5
     throw v0
 
-    :cond_bc
+    :cond_6
     return-void
 .end method
 
 .method private createSegment(Landroidx/media3/exoplayer/dash/manifest/Representation;Ljava/lang/String;JLandroidx/media3/exoplayer/dash/manifest/RangedUri;)Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;
-    .registers 8
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -407,7 +407,7 @@
 .end method
 
 .method private getSegmentIndex(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;Z)Landroidx/media3/exoplayer/dash/DashSegmentIndex;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -420,12 +420,12 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 250
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/dash/offline/DashDownloader$1;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroidx/media3/exoplayer/dash/offline/DashDownloader$1;-><init>(Landroidx/media3/exoplayer/dash/offline/DashDownloader;Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;)V
@@ -437,14 +437,14 @@
 
     check-cast p1, Landroidx/media3/extractor/ChunkIndex;
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1
 
     const/4 p1, 0x0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 260
-    :cond_16
+    :cond_1
     new-instance p2, Landroidx/media3/exoplayer/dash/DashWrappingSegmentIndex;
 
     iget-wide p3, p3, Landroidx/media3/exoplayer/dash/manifest/Representation;->presentationTimeOffsetUs:J
@@ -453,14 +453,14 @@
 
     move-object p1, p2
 
-    :goto_1e
+    :goto_0
     return-object p1
 .end method
 
 
 # virtual methods
 .method protected getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/DashManifest;Z)Ljava/util/List;
-    .registers 23
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -492,12 +492,12 @@
     move v12, v11
 
     .line 165
-    :goto_9
+    :goto_0
     invoke-virtual/range {p2 .. p2}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodCount()I
 
     move-result v1
 
-    if-ge v12, v1, :cond_45
+    if-ge v12, v1, :cond_1
 
     .line 166
     invoke-virtual {v0, v12}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
@@ -522,12 +522,12 @@
     move v8, v11
 
     .line 170
-    :goto_20
+    :goto_1
     invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v8, v1, :cond_42
+    if-ge v8, v1, :cond_0
 
     .line 172
     invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -561,19 +561,19 @@
 
     move-object/from16 v9, v18
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_42
+    :cond_0
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_45
+    :cond_1
     return-object v10
 .end method
 
 .method protected bridge synthetic getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/offline/FilterableManifest;Z)Ljava/util/List;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,

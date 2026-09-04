@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 581
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/common/Timeline$Period;)Landroidx/media3/common/AdPlaybackState;
-    .registers 1
+    .locals 0
 
     .line 546
     iget-object p0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -118,7 +118,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Timeline$Period;
-    .registers 13
+    .locals 12
 
     .line 931
     sget-object v0, Landroidx/media3/common/Timeline$Period;->FIELD_WINDOW_INDEX:Ljava/lang/String;
@@ -161,20 +161,20 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_0
 
     .line 938
     invoke-static {p0}, Landroidx/media3/common/AdPlaybackState;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/AdPlaybackState;
 
     move-result-object p0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 939
-    :cond_2d
+    :cond_0
     sget-object p0, Landroidx/media3/common/AdPlaybackState;->NONE:Landroidx/media3/common/AdPlaybackState;
 
-    :goto_2f
+    :goto_0
     move-object v10, p0
 
     .line 941
@@ -197,18 +197,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_3
 
     .line 869
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -223,12 +223,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_16
+    if-nez v2, :cond_1
 
-    goto :goto_55
+    goto :goto_1
 
     .line 872
-    :cond_16
+    :cond_1
     check-cast p1, Landroidx/media3/common/Timeline$Period;
 
     .line 873
@@ -240,7 +240,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
 
@@ -251,13 +251,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/common/Timeline$Period;->windowIndex:I
 
     iget v3, p1, Landroidx/media3/common/Timeline$Period;->windowIndex:I
 
-    if-ne v2, v3, :cond_53
+    if-ne v2, v3, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/common/Timeline$Period;->durationUs:J
 
@@ -265,7 +265,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_53
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/common/Timeline$Period;->positionInWindowUs:J
 
@@ -273,13 +273,13 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_53
+    if-nez v2, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/Timeline$Period;->isPlaceholder:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/Timeline$Period;->isPlaceholder:Z
 
-    if-ne v2, v3, :cond_53
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
 
@@ -290,23 +290,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_2
 
-    goto :goto_54
+    goto :goto_0
 
-    :cond_53
+    :cond_2
     move v0, v1
 
-    :goto_54
+    :goto_0
     return v0
 
-    :cond_55
-    :goto_55
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getAdCountInAdGroup(I)I
-    .registers 3
+    .locals 1
 
     .line 787
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -321,7 +321,7 @@
 .end method
 
 .method public getAdDurationUs(II)J
-    .registers 5
+    .locals 2
 
     .line 799
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -335,23 +335,23 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     iget-object p1, p1, Landroidx/media3/common/AdPlaybackState$AdGroup;->durationsUs:[J
 
     aget-wide p1, p1, p2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_15
+    :goto_0
     return-wide p1
 .end method
 
 .method public getAdGroupCount()I
-    .registers 2
+    .locals 1
 
     .line 693
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -362,7 +362,7 @@
 .end method
 
 .method public getAdGroupIndexAfterPositionUs(J)I
-    .registers 6
+    .locals 3
 
     .line 776
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -377,7 +377,7 @@
 .end method
 
 .method public getAdGroupIndexForPositionUs(J)I
-    .registers 6
+    .locals 3
 
     .line 765
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -392,7 +392,7 @@
 .end method
 
 .method public getAdGroupTimeUs(I)J
-    .registers 4
+    .locals 2
 
     .line 713
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -407,7 +407,7 @@
 .end method
 
 .method public getAdResumePositionUs()J
-    .registers 3
+    .locals 2
 
     .line 837
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -418,7 +418,7 @@
 .end method
 
 .method public getAdState(II)I
-    .registers 5
+    .locals 2
 
     .line 814
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -432,24 +432,24 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     .line 816
     iget-object p1, p1, Landroidx/media3/common/AdPlaybackState$AdGroup;->states:[I
 
     aget p1, p1, p2
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_11
+    :goto_0
     return p1
 .end method
 
 .method public getAdsId()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 688
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -460,7 +460,7 @@
 .end method
 
 .method public getContentResumeOffsetUs(I)J
-    .registers 4
+    .locals 2
 
     .line 861
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -475,7 +475,7 @@
 .end method
 
 .method public getDurationMs()J
-    .registers 3
+    .locals 2
 
     .line 659
     iget-wide v0, p0, Landroidx/media3/common/Timeline$Period;->durationUs:J
@@ -488,7 +488,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 664
     iget-wide v0, p0, Landroidx/media3/common/Timeline$Period;->durationUs:J
@@ -497,7 +497,7 @@
 .end method
 
 .method public getFirstAdIndexToPlay(I)I
-    .registers 3
+    .locals 1
 
     .line 725
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -514,7 +514,7 @@
 .end method
 
 .method public getNextAdIndexToPlay(II)I
-    .registers 4
+    .locals 1
 
     .line 739
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -531,7 +531,7 @@
 .end method
 
 .method public getPositionInWindowMs()J
-    .registers 3
+    .locals 2
 
     .line 673
     iget-wide v0, p0, Landroidx/media3/common/Timeline$Period;->positionInWindowUs:J
@@ -544,7 +544,7 @@
 .end method
 
 .method public getPositionInWindowUs()J
-    .registers 3
+    .locals 2
 
     .line 682
     iget-wide v0, p0, Landroidx/media3/common/Timeline$Period;->positionInWindowUs:J
@@ -553,7 +553,7 @@
 .end method
 
 .method public getRemovedAdGroupCount()I
-    .registers 2
+    .locals 1
 
     .line 701
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -564,7 +564,7 @@
 .end method
 
 .method public hasPlayedAdGroup(I)Z
-    .registers 3
+    .locals 1
 
     .line 751
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -583,25 +583,25 @@
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 885
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->id:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_b
+    :goto_0
     const/16 v2, 0xd9
 
     add-int/2addr v2, v0
@@ -611,16 +611,16 @@
     .line 886
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_15
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_19
+    :goto_1
     add-int/2addr v2, v1
 
     mul-int/lit8 v2, v2, 0x1f
@@ -680,7 +680,7 @@
 .end method
 
 .method public isLivePostrollPlaceholder(I)Z
-    .registers 4
+    .locals 2
 
     .line 828
     invoke-virtual {p0}, Landroidx/media3/common/Timeline$Period;->getAdGroupCount()I
@@ -691,7 +691,7 @@
 
     sub-int/2addr v0, v1
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
 
@@ -700,19 +700,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_12
+    :goto_0
     return v1
 .end method
 
 .method public isServerSideInsertedAdGroup(I)Z
-    .registers 3
+    .locals 1
 
     .line 849
     iget-object v0, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
@@ -727,7 +727,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;Ljava/lang/Object;IJJ)Landroidx/media3/common/Timeline$Period;
-    .registers 18
+    .locals 10
 
     .line 608
     sget-object v8, Landroidx/media3/common/AdPlaybackState;->NONE:Landroidx/media3/common/AdPlaybackState;
@@ -754,7 +754,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;Ljava/lang/Object;IJJLandroidx/media3/common/AdPlaybackState;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 10
+    .locals 0
 
     .line 647
     iput-object p1, p0, Landroidx/media3/common/Timeline$Period;->id:Ljava/lang/Object;
@@ -781,7 +781,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 6
+    .locals 5
 
     .line 909
     new-instance v0, Landroid/os/Bundle;
@@ -791,7 +791,7 @@
     .line 910
     iget v1, p0, Landroidx/media3/common/Timeline$Period;->windowIndex:I
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 911
     sget-object v2, Landroidx/media3/common/Timeline$Period;->FIELD_WINDOW_INDEX:Ljava/lang/String;
@@ -799,14 +799,14 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 913
-    :cond_e
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/common/Timeline$Period;->durationUs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1
 
     .line 914
     sget-object v3, Landroidx/media3/common/Timeline$Period;->FIELD_DURATION_US:Ljava/lang/String;
@@ -814,14 +814,14 @@
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 916
-    :cond_1e
+    :cond_1
     iget-wide v1, p0, Landroidx/media3/common/Timeline$Period;->positionInWindowUs:J
 
     const-wide/16 v3, 0x0
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_2
 
     .line 917
     sget-object v3, Landroidx/media3/common/Timeline$Period;->FIELD_POSITION_IN_WINDOW_US:Ljava/lang/String;
@@ -829,10 +829,10 @@
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 919
-    :cond_2b
+    :cond_2
     iget-boolean v1, p0, Landroidx/media3/common/Timeline$Period;->isPlaceholder:Z
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_3
 
     .line 920
     sget-object v2, Landroidx/media3/common/Timeline$Period;->FIELD_PLACEHOLDER:Ljava/lang/String;
@@ -840,7 +840,7 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 922
-    :cond_34
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/Timeline$Period;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
 
     sget-object v2, Landroidx/media3/common/AdPlaybackState;->NONE:Landroidx/media3/common/AdPlaybackState;
@@ -849,7 +849,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_49
+    if-nez v1, :cond_4
 
     .line 923
     sget-object v1, Landroidx/media3/common/Timeline$Period;->FIELD_AD_PLAYBACK_STATE:Ljava/lang/String;
@@ -862,6 +862,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_49
+    :cond_4
     return-object v0
 .end method

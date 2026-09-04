@@ -206,7 +206,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$W3RdLufd4CyOoJ5aoAfP7tK_1WI(Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->onTracksEnded()V
 
@@ -214,7 +214,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$n_MpjkbSugVnCnE8WpH6RrpZ5gA(Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->maybeFinishPrepare()V
 
@@ -222,7 +222,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 130
     new-instance v0, Ljava/util/HashSet;
@@ -275,7 +275,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILandroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;Landroidx/media3/exoplayer/hls/HlsChunkSource;Ljava/util/Map;Landroidx/media3/exoplayer/upstream/Allocator;JLandroidx/media3/common/Format;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;I)V
-    .registers 15
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -453,7 +453,7 @@
 .end method
 
 .method private assertIsPrepared()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "trackGroups",
@@ -480,7 +480,7 @@
 .end method
 
 .method private buildTracksFromSampleStreams()V
-    .registers 16
+    .locals 15
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "trackGroups",
@@ -506,12 +506,12 @@
 
     move v4, v3
 
-    :goto_9
+    :goto_0
     const/4 v7, 0x2
 
     const/4 v8, 0x1
 
-    if-ge v4, v0, :cond_4a
+    if-ge v4, v0, :cond_5
 
     .line 1396
     iget-object v9, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -536,39 +536,39 @@
 
     move-result v10
 
-    if-eqz v10, :cond_24
+    if-eqz v10, :cond_0
 
-    goto :goto_35
+    goto :goto_1
 
     .line 1401
-    :cond_24
+    :cond_0
     invoke-static {v9}, Landroidx/media3/common/MimeTypes;->isAudio(Ljava/lang/String;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_2c
+    if-eqz v7, :cond_1
 
     move v7, v8
 
-    goto :goto_35
+    goto :goto_1
 
     .line 1403
-    :cond_2c
+    :cond_1
     invoke-static {v9}, Landroidx/media3/common/MimeTypes;->isText(Ljava/lang/String;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_34
+    if-eqz v7, :cond_2
 
     const/4 v7, 0x3
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_34
+    :cond_2
     move v7, v1
 
     .line 1408
-    :goto_35
+    :goto_1
     invoke-static {v7}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->getTrackTypeScore(I)I
 
     move-result v8
@@ -577,29 +577,29 @@
 
     move-result v9
 
-    if-le v8, v9, :cond_42
+    if-le v8, v9, :cond_3
 
     move v6, v4
 
     move v5, v7
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_42
-    if-ne v7, v5, :cond_47
+    :cond_3
+    if-ne v7, v5, :cond_4
 
-    if-eq v6, v2, :cond_47
+    if-eq v6, v2, :cond_4
 
     move v6, v2
 
-    :cond_47
-    :goto_47
+    :cond_4
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 1419
-    :cond_4a
+    :cond_5
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/hls/HlsChunkSource;->getTrackGroup()Landroidx/media3/common/TrackGroup;
@@ -619,8 +619,8 @@
 
     move v2, v3
 
-    :goto_59
-    if-ge v2, v0, :cond_62
+    :goto_3
+    if-ge v2, v0, :cond_6
 
     .line 1426
     iget-object v9, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->trackGroupToSampleQueueIndex:[I
@@ -629,16 +629,16 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_59
+    goto :goto_3
 
     .line 1430
-    :cond_62
+    :cond_6
     new-array v2, v0, [Landroidx/media3/common/TrackGroup;
 
     move v9, v3
 
-    :goto_65
-    if-ge v9, v0, :cond_e5
+    :goto_4
+    if-ge v9, v0, :cond_d
 
     .line 1432
     iget-object v10, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -655,58 +655,58 @@
 
     check-cast v10, Landroidx/media3/common/Format;
 
-    if-ne v9, v6, :cond_a6
+    if-ne v9, v6, :cond_a
 
     .line 1434
     new-array v11, v4, [Landroidx/media3/common/Format;
 
     move v12, v3
 
-    :goto_7a
-    if-ge v12, v4, :cond_9a
+    :goto_5
+    if-ge v12, v4, :cond_9
 
     .line 1436
     invoke-virtual {v1, v12}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
 
     move-result-object v13
 
-    if-ne v5, v8, :cond_8a
+    if-ne v5, v8, :cond_7
 
     .line 1437
     iget-object v14, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->muxedAudioFormat:Landroidx/media3/common/Format;
 
-    if-eqz v14, :cond_8a
+    if-eqz v14, :cond_7
 
     .line 1438
     invoke-virtual {v13, v14}, Landroidx/media3/common/Format;->withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object v13
 
-    :cond_8a
-    if-ne v4, v8, :cond_91
+    :cond_7
+    if-ne v4, v8, :cond_8
 
     .line 1445
     invoke-virtual {v10, v13}, Landroidx/media3/common/Format;->withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object v13
 
-    goto :goto_95
+    goto :goto_6
 
     .line 1446
-    :cond_91
+    :cond_8
     invoke-static {v13, v10, v8}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->deriveFormat(Landroidx/media3/common/Format;Landroidx/media3/common/Format;Z)Landroidx/media3/common/Format;
 
     move-result-object v13
 
-    :goto_95
+    :goto_6
     aput-object v13, v11, v12
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_7a
+    goto :goto_5
 
     .line 1448
-    :cond_9a
+    :cond_9
     new-instance v10, Landroidx/media3/common/TrackGroup;
 
     iget-object v12, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->uid:Ljava/lang/String;
@@ -718,10 +718,10 @@
     .line 1449
     iput v9, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primaryTrackGroupIndex:I
 
-    goto :goto_e2
+    goto :goto_9
 
-    :cond_a6
-    if-ne v5, v7, :cond_b3
+    :cond_a
+    if-ne v5, v7, :cond_b
 
     .line 1454
     iget-object v11, v10, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -730,18 +730,18 @@
 
     move-result v11
 
-    if-eqz v11, :cond_b3
+    if-eqz v11, :cond_b
 
     .line 1455
     iget-object v11, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->muxedAudioFormat:Landroidx/media3/common/Format;
 
-    goto :goto_b4
+    goto :goto_7
 
-    :cond_b3
+    :cond_b
     const/4 v11, 0x0
 
     .line 1457
-    :goto_b4
+    :goto_7
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -758,16 +758,16 @@
 
     move-result-object v12
 
-    if-ge v9, v6, :cond_c9
+    if-ge v9, v6, :cond_c
 
     move v13, v9
 
-    goto :goto_cb
+    goto :goto_8
 
-    :cond_c9
+    :cond_c
     add-int/lit8 v13, v9, -0x1
 
-    :goto_cb
+    :goto_8
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v12
@@ -792,13 +792,13 @@
 
     aput-object v13, v2, v9
 
-    :goto_e2
+    :goto_9
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_65
+    goto :goto_4
 
     .line 1464
-    :cond_e5
+    :cond_d
     invoke-direct {p0, v2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->createTrackGroupArrayWithDrmInfo([Landroidx/media3/common/TrackGroup;)Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     move-result-object v0
@@ -808,11 +808,11 @@
     .line 1465
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->optionalTrackGroups:Ljava/util/Set;
 
-    if-nez v0, :cond_f0
+    if-nez v0, :cond_e
 
     move v3, v8
 
-    :cond_f0
+    :cond_e
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 1466
@@ -826,12 +826,12 @@
 .end method
 
 .method private canDiscardUpstreamMediaChunksFromIndex(I)Z
-    .registers 6
+    .locals 4
 
     move v0, p1
 
     .line 1272
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -840,7 +840,7 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_1a
+    if-ge v0, v1, :cond_1
 
     .line 1273
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -853,17 +853,17 @@
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->shouldSpliceIn:Z
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     return v2
 
-    :cond_17
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 1280
-    :cond_1a
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -875,12 +875,12 @@
     move v0, v2
 
     .line 1281
-    :goto_23
+    :goto_1
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_3a
+    if-ge v0, v1, :cond_3
 
     .line 1282
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->getFirstSampleIndex(I)I
@@ -896,23 +896,23 @@
 
     move-result v3
 
-    if-le v3, v1, :cond_37
+    if-le v3, v1, :cond_2
 
     return v2
 
-    :cond_37
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_3a
+    :cond_3
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method private static createDiscardingTrackOutput(II)Landroidx/media3/extractor/DiscardingTrackOutput;
-    .registers 4
+    .locals 2
 
     .line 1650
     new-instance v0, Ljava/lang/StringBuilder;
@@ -952,7 +952,7 @@
 .end method
 
 .method private createSampleQueue(II)Landroidx/media3/exoplayer/source/SampleQueue;
-    .registers 12
+    .locals 9
 
     .line 1144
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -961,20 +961,20 @@
 
     const/4 v1, 0x1
 
-    if-eq p2, v1, :cond_b
+    if-eq p2, v1, :cond_1
 
     const/4 v2, 0x2
 
-    if-ne p2, v2, :cond_a
+    if-ne p2, v2, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
     .line 1147
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     new-instance v8, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->allocator:Landroidx/media3/exoplayer/upstream/Allocator;
@@ -996,7 +996,7 @@
 
     invoke-virtual {v8, v2, v3}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->setStartTimeUs(J)V
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2
 
     .line 1151
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -1004,7 +1004,7 @@
     invoke-virtual {v8, v2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->setDrmInitData(Landroidx/media3/common/DrmInitData;)V
 
     .line 1153
-    :cond_26
+    :cond_2
     iget-wide v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleOffsetUs:J
 
     invoke-virtual {v8, v2, v3}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->setSampleOffsetUs(J)V
@@ -1012,13 +1012,13 @@
     .line 1154
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sourceChunk:Landroidx/media3/exoplayer/hls/HlsMediaChunk;
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_3
 
     .line 1155
     invoke-virtual {v8, v2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->setSourceChunk(Landroidx/media3/exoplayer/hls/HlsMediaChunk;)V
 
     .line 1157
-    :cond_32
+    :cond_3
     invoke-virtual {v8, p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->setUpstreamFormatChangeListener(Landroidx/media3/exoplayer/source/SampleQueue$UpstreamFormatChangedListener;)V
 
     .line 1158
@@ -1090,7 +1090,7 @@
 
     move-result v1
 
-    if-le p1, v1, :cond_78
+    if-le p1, v1, :cond_4
 
     .line 1167
     iput v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primarySampleQueueIndex:I
@@ -1099,7 +1099,7 @@
     iput p2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primarySampleQueueType:I
 
     .line 1170
-    :cond_78
+    :cond_4
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesEnabledStates:[Z
 
     invoke-static {p1, v3}, Ljava/util/Arrays;->copyOf([ZI)[Z
@@ -1112,17 +1112,17 @@
 .end method
 
 .method private createTrackGroupArrayWithDrmInfo([Landroidx/media3/common/TrackGroup;)Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 1470
-    :goto_2
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_2f
+    if-ge v1, v2, :cond_1
 
     .line 1471
     aget-object v2, p1, v1
@@ -1135,10 +1135,10 @@
     move v4, v0
 
     .line 1473
-    :goto_c
+    :goto_1
     iget v5, v2, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v4, v5, :cond_23
+    if-ge v4, v5, :cond_0
 
     .line 1474
     invoke-virtual {v2, v4}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -1160,10 +1160,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_c
+    goto :goto_1
 
     .line 1477
-    :cond_23
+    :cond_0
     new-instance v4, Landroidx/media3/common/TrackGroup;
 
     iget-object v2, v2, Landroidx/media3/common/TrackGroup;->id:Ljava/lang/String;
@@ -1174,10 +1174,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 1479
-    :cond_2f
+    :cond_1
     new-instance v0, Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     invoke-direct {v0, p1}, Landroidx/media3/exoplayer/source/TrackGroupArray;-><init>([Landroidx/media3/common/TrackGroup;)V
@@ -1186,14 +1186,14 @@
 .end method
 
 .method private static deriveFormat(Landroidx/media3/common/Format;Landroidx/media3/common/Format;Z)Landroidx/media3/common/Format;
-    .registers 10
+    .locals 7
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-object p1
 
     .line 1572
-    :cond_3
+    :cond_0
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
     invoke-static {v0}, Landroidx/media3/common/MimeTypes;->getTrackType(Ljava/lang/String;)I
@@ -1209,7 +1209,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_1d
+    if-ne v1, v2, :cond_1
 
     .line 1578
     iget-object v1, p0, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
@@ -1223,10 +1223,10 @@
 
     move-result-object v3
 
-    goto :goto_27
+    goto :goto_0
 
     .line 1584
-    :cond_1d
+    :cond_1
     iget-object v1, p0, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
     iget-object v3, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -1240,7 +1240,7 @@
     iget-object v3, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
     .line 1592
-    :goto_27
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
 
     move-result-object v4
@@ -1289,32 +1289,32 @@
 
     const/4 v5, -0x1
 
-    if-eqz p2, :cond_55
+    if-eqz p2, :cond_2
 
     .line 1599
     iget v6, p0, Landroidx/media3/common/Format;->averageBitrate:I
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_55
+    :cond_2
     move v6, v5
 
-    :goto_56
+    :goto_1
     invoke-virtual {v4, v6}, Landroidx/media3/common/Format$Builder;->setAverageBitrate(I)Landroidx/media3/common/Format$Builder;
 
     move-result-object v4
 
-    if-eqz p2, :cond_5f
+    if-eqz p2, :cond_3
 
     .line 1600
     iget p2, p0, Landroidx/media3/common/Format;->peakBitrate:I
 
-    goto :goto_60
+    goto :goto_2
 
-    :cond_5f
+    :cond_3
     move p2, v5
 
-    :goto_60
+    :goto_2
     invoke-virtual {v4, p2}, Landroidx/media3/common/Format$Builder;->setPeakBitrate(I)Landroidx/media3/common/Format$Builder;
 
     move-result-object p2
@@ -1326,7 +1326,7 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_7c
+    if-ne v0, v1, :cond_4
 
     .line 1604
     iget v1, p0, Landroidx/media3/common/Format;->width:I
@@ -1348,19 +1348,19 @@
     .line 1607
     invoke-virtual {v1, v4}, Landroidx/media3/common/Format$Builder;->setFrameRate(F)Landroidx/media3/common/Format$Builder;
 
-    :cond_7c
-    if-eqz v3, :cond_81
+    :cond_4
+    if-eqz v3, :cond_5
 
     .line 1611
     invoke-virtual {p2, v3}, Landroidx/media3/common/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
     .line 1614
-    :cond_81
+    :cond_5
     iget v1, p0, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq v1, v5, :cond_8c
+    if-eq v1, v5, :cond_6
 
-    if-ne v0, v2, :cond_8c
+    if-ne v0, v2, :cond_6
 
     .line 1615
     iget v0, p0, Landroidx/media3/common/Format;->channelCount:I
@@ -1368,10 +1368,10 @@
     invoke-virtual {p2, v0}, Landroidx/media3/common/Format$Builder;->setChannelCount(I)Landroidx/media3/common/Format$Builder;
 
     .line 1618
-    :cond_8c
+    :cond_6
     iget-object v0, p0, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_8
 
     .line 1619
     iget-object p0, p0, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
@@ -1379,7 +1379,7 @@
     .line 1620
     iget-object v0, p1, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-eqz v0, :cond_9c
+    if-eqz v0, :cond_7
 
     .line 1621
     iget-object p1, p1, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
@@ -1389,11 +1389,11 @@
     move-result-object p0
 
     .line 1623
-    :cond_9c
+    :cond_7
     invoke-virtual {p2, p0}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
 
     .line 1626
-    :cond_9f
+    :cond_8
     invoke-virtual {p2}, Landroidx/media3/common/Format$Builder;->build()Landroidx/media3/common/Format;
 
     move-result-object p0
@@ -1402,7 +1402,7 @@
 .end method
 
 .method private discardUpstream(I)V
-    .registers 9
+    .locals 7
 
     .line 1051
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -1416,7 +1416,7 @@
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 1054
-    :goto_b
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1425,32 +1425,32 @@
 
     const/4 v1, -0x1
 
-    if-ge p1, v0, :cond_1e
+    if-ge p1, v0, :cond_1
 
     .line 1055
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->canDiscardUpstreamMediaChunksFromIndex(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1b
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move p1, v1
 
-    :goto_1f
-    if-ne p1, v1, :cond_22
+    :goto_1
+    if-ne p1, v1, :cond_2
 
     return-void
 
     .line 1064
-    :cond_22
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->getLastMediaChunk()Landroidx/media3/exoplayer/hls/HlsMediaChunk;
 
     move-result-object v0
@@ -1469,17 +1469,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3
 
     .line 1067
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
 
     iput-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
 
-    goto :goto_44
+    goto :goto_2
 
     .line 1069
-    :cond_39
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-static {v0}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -1490,7 +1490,7 @@
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->invalidateExtractor()V
 
-    :goto_44
+    :goto_2
     const/4 v0, 0x0
 
     .line 1071
@@ -1509,7 +1509,7 @@
 .end method
 
 .method private discardUpstreamMediaChunksFromIndex(I)Landroidx/media3/exoplayer/hls/HlsMediaChunk;
-    .registers 5
+    .locals 3
 
     .line 1294
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -1532,12 +1532,12 @@
     const/4 p1, 0x0
 
     .line 1296
-    :goto_12
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v1, v1
 
-    if-ge p1, v1, :cond_25
+    if-ge p1, v1, :cond_0
 
     .line 1297
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->getFirstSampleIndex(I)I
@@ -1553,14 +1553,14 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     return-object v0
 .end method
 
 .method private finishedReadingChunk(Landroidx/media3/exoplayer/hls/HlsMediaChunk;)Z
-    .registers 9
+    .locals 7
 
     .line 1261
     iget p1, p1, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->uid:I
@@ -1574,15 +1574,15 @@
 
     move v2, v1
 
-    :goto_7
-    if-ge v2, v0, :cond_20
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 1264
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesEnabledStates:[Z
 
     aget-boolean v3, v3, v2
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_0
 
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
@@ -1596,23 +1596,23 @@
 
     cmp-long v3, v3, v5
 
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_0
 
     return v1
 
-    :cond_1d
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method private static formatsMatch(Landroidx/media3/common/Format;Landroidx/media3/common/Format;)Z
-    .registers 8
+    .locals 6
 
     .line 1634
     iget-object v0, p0, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -1631,34 +1631,34 @@
 
     const/4 v5, 0x0
 
-    if-eq v2, v3, :cond_16
+    if-eq v2, v3, :cond_1
 
     .line 1638
     invoke-static {v1}, Landroidx/media3/common/MimeTypes;->getTrackType(Ljava/lang/String;)I
 
     move-result p0
 
-    if-ne v2, p0, :cond_14
+    if-ne v2, p0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v4, v5
 
-    :goto_15
+    :goto_0
     return v4
 
     .line 1639
-    :cond_16
+    :cond_1
     invoke-static {v0, v1}, Landroidx/media3/common/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_2
 
     return v5
 
-    :cond_1d
+    :cond_2
     const-string v1, "application/cea-608"
 
     .line 1642
@@ -1666,7 +1666,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_4
 
     const-string v1, "application/cea-708"
 
@@ -1675,33 +1675,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_2e
+    :cond_3
     return v4
 
     .line 1644
-    :cond_2f
-    :goto_2f
+    :cond_4
+    :goto_1
     iget p0, p0, Landroidx/media3/common/Format;->accessibilityChannel:I
 
     iget p1, p1, Landroidx/media3/common/Format;->accessibilityChannel:I
 
-    if-ne p0, p1, :cond_36
+    if-ne p0, p1, :cond_5
 
-    goto :goto_37
+    goto :goto_2
 
-    :cond_36
+    :cond_5
     move v4, v5
 
-    :goto_37
+    :goto_2
     return v4
 .end method
 
 .method private getLastMediaChunk()Landroidx/media3/exoplayer/hls/HlsMediaChunk;
-    .registers 3
+    .locals 2
 
     .line 1483
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -1722,7 +1722,7 @@
 .end method
 
 .method private getMappedTrackOutput(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 6
+    .locals 3
 
     .line 1129
     sget-object v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->MAPPABLE_TYPES:Ljava/util/Set;
@@ -1746,14 +1746,14 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 1135
-    :cond_18
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueMappingDoneByType:Ljava/util/Set;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1764,7 +1764,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 1136
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueTrackIds:[I
@@ -1772,61 +1772,61 @@
     aput p1, v1, v0
 
     .line 1138
-    :cond_28
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueTrackIds:[I
 
     aget v1, v1, v0
 
-    if-ne v1, p1, :cond_33
+    if-ne v1, p1, :cond_2
 
     .line 1139
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     aget-object p1, p1, v0
 
-    goto :goto_37
+    goto :goto_0
 
     .line 1140
-    :cond_33
+    :cond_2
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->createDiscardingTrackOutput(II)Landroidx/media3/extractor/DiscardingTrackOutput;
 
     move-result-object p1
 
-    :goto_37
+    :goto_0
     return-object p1
 .end method
 
 .method private static getTrackTypeScore(I)I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
-    if-eq p0, v1, :cond_d
+    if-eq p0, v1, :cond_2
 
     const/4 v2, 0x3
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_1
 
-    if-eq p0, v2, :cond_b
+    if-eq p0, v2, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_b
+    :cond_0
     return v1
 
-    :cond_c
+    :cond_1
     return v2
 
-    :cond_d
+    :cond_2
     return v0
 .end method
 
 .method private initMediaChunkLoad(Landroidx/media3/exoplayer/hls/HlsMediaChunk;)V
-    .registers 8
+    .locals 6
 
     .line 1033
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sourceChunk:Landroidx/media3/exoplayer/hls/HlsMediaChunk;
@@ -1860,8 +1860,8 @@
 
     move v4, v3
 
-    :goto_1b
-    if-ge v4, v2, :cond_2d
+    :goto_0
+    if-ge v4, v2, :cond_0
 
     aget-object v5, v1, v4
 
@@ -1878,10 +1878,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 1041
-    :cond_2d
+    :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -1893,8 +1893,8 @@
 
     array-length v1, v0
 
-    :goto_37
-    if-ge v3, v1, :cond_48
+    :goto_1
+    if-ge v3, v1, :cond_2
 
     aget-object v2, v0, v3
 
@@ -1904,22 +1904,22 @@
     .line 1044
     iget-boolean v4, p1, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->shouldSpliceIn:Z
 
-    if-eqz v4, :cond_45
+    if-eqz v4, :cond_1
 
     .line 1045
     invoke-virtual {v2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->splice()V
 
-    :cond_45
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_48
+    :cond_2
     return-void
 .end method
 
 .method private static isMediaChunk(Landroidx/media3/exoplayer/source/chunk/Chunk;)Z
-    .registers 1
+    .locals 0
 
     .line 1630
     instance-of p0, p0, Landroidx/media3/exoplayer/hls/HlsMediaChunk;
@@ -1928,7 +1928,7 @@
 .end method
 
 .method private isPendingReset()Z
-    .registers 5
+    .locals 4
 
     .line 1487
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
@@ -1937,21 +1937,21 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method private mapSampleQueuesToMatchTrackGroups()V
-    .registers 7
+    .locals 6
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "trackGroupToSampleQueueIndex"
@@ -1983,18 +1983,18 @@
 
     move v2, v1
 
-    :goto_e
-    if-ge v2, v0, :cond_3d
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     move v3, v1
 
     .line 1343
-    :goto_11
+    :goto_1
     iget-object v4, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v5, v4
 
-    if-ge v3, v5, :cond_3a
+    if-ge v3, v5, :cond_1
 
     .line 1344
     aget-object v4, v4, v3
@@ -2025,40 +2025,40 @@
 
     move-result v4
 
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_0
 
     .line 1347
     iget-object v4, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->trackGroupToSampleQueueIndex:[I
 
     aput v3, v4, v2
 
-    goto :goto_3a
+    goto :goto_2
 
-    :cond_37
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1352
-    :cond_3d
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->hlsSampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_43
+    :goto_3
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2069,40 +2069,40 @@
     .line 1353
     invoke-virtual {v1}, Landroidx/media3/exoplayer/hls/HlsSampleStream;->bindSampleQueue()V
 
-    goto :goto_43
+    goto :goto_3
 
-    :cond_53
+    :cond_3
     return-void
 .end method
 
 .method private maybeFinishPrepare()V
-    .registers 5
+    .locals 4
 
     .line 1316
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->released:Z
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->trackGroupToSampleQueueIndex:[I
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_4
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesBuilt:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
-    goto :goto_32
+    goto :goto_1
 
     .line 1319
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v1, v0
 
     const/4 v2, 0x0
 
-    :goto_11
-    if-ge v2, v1, :cond_1f
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     aget-object v3, v0, v2
 
@@ -2111,28 +2111,28 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_1
 
     return-void
 
-    :cond_1c
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 1324
-    :cond_1f
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
     .line 1327
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mapSampleQueuesToMatchTrackGroups()V
 
-    goto :goto_32
+    goto :goto_1
 
     .line 1330
-    :cond_27
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->buildTracksFromSampleStreams()V
 
     .line 1331
@@ -2143,13 +2143,13 @@
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;->onPrepared()V
 
-    :cond_32
-    :goto_32
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method private onTracksEnded()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -2163,7 +2163,7 @@
 .end method
 
 .method private resetSampleQueues()V
-    .registers 7
+    .locals 6
 
     .line 1304
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -2174,8 +2174,8 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v3, v1, :cond_11
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     aget-object v4, v0, v3
 
@@ -2186,17 +2186,17 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 1307
-    :cond_11
+    :cond_0
     iput-boolean v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetUpstreamFormats:Z
 
     return-void
 .end method
 
 .method private seekInsideBufferUs(JLandroidx/media3/exoplayer/hls/HlsMediaChunk;)Z
-    .registers 9
+    .locals 5
 
     .line 1499
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -2207,15 +2207,15 @@
 
     move v2, v1
 
-    :goto_5
-    if-ge v2, v0, :cond_2a
+    :goto_0
+    if-ge v2, v0, :cond_3
 
     .line 1501
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     aget-object v3, v3, v2
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_0
 
     .line 1504
     invoke-virtual {p3, v2}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->getFirstSampleIndex(I)I
@@ -2226,44 +2226,44 @@
 
     move-result v3
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 1506
-    :cond_16
+    :cond_0
     invoke-virtual {v3, p1, p2, v1}, Landroidx/media3/exoplayer/source/SampleQueue;->seekTo(JZ)Z
 
     move-result v3
 
-    :goto_1a
-    if-nez v3, :cond_27
+    :goto_1
+    if-nez v3, :cond_2
 
     .line 1512
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueIsAudioVideoFlags:[Z
 
     aget-boolean v3, v3, v2
 
-    if-nez v3, :cond_26
+    if-nez v3, :cond_1
 
     iget-boolean v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->haveAudioVideoSampleQueues:Z
 
-    if-nez v3, :cond_27
+    if-nez v3, :cond_2
 
-    :cond_26
+    :cond_1
     return v1
 
-    :cond_27
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_2a
+    :cond_3
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method private setIsPrepared()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "trackGroups",
@@ -2280,7 +2280,7 @@
 .end method
 
 .method private updateSampleStreams([Landroidx/media3/exoplayer/source/SampleStream;)V
-    .registers 6
+    .locals 4
 
     .line 1252
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->hlsSampleStreams:Ljava/util/ArrayList;
@@ -2292,12 +2292,12 @@
 
     const/4 v1, 0x0
 
-    :goto_7
-    if-ge v1, v0, :cond_17
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     aget-object v2, p1, v1
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 1255
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->hlsSampleStreams:Ljava/util/ArrayList;
@@ -2306,19 +2306,19 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_14
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public bindSampleQueueToSampleStream(I)I
-    .registers 5
+    .locals 3
 
     .line 310
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->assertIsPrepared()V
@@ -2337,7 +2337,7 @@
 
     const/4 v2, -0x2
 
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_1
 
     .line 315
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->optionalTrackGroups:Ljava/util/Set;
@@ -2352,24 +2352,24 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     const/4 v2, -0x3
 
-    :cond_1f
+    :cond_0
     return v2
 
     .line 319
-    :cond_20
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesEnabledStates:[Z
 
     aget-boolean v1, p1, v0
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     return v2
 
-    :cond_27
+    :cond_2
     const/4 v1, 0x1
 
     .line 323
@@ -2379,7 +2379,7 @@
 .end method
 
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 24
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -2388,7 +2388,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_cf
+    if-nez v1, :cond_a
 
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -2396,7 +2396,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_cf
+    if-nez v1, :cond_a
 
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -2404,17 +2404,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
-    goto/16 :goto_cf
+    goto/16 :goto_4
 
     .line 769
-    :cond_19
+    :cond_0
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 770
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -2431,8 +2431,8 @@
 
     move v7, v2
 
-    :goto_29
-    if-ge v7, v6, :cond_4c
+    :goto_0
+    if-ge v7, v6, :cond_3
 
     aget-object v8, v5, v7
 
@@ -2443,10 +2443,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_29
+    goto :goto_0
 
     .line 776
-    :cond_35
+    :cond_1
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->readOnlyMediaChunks:Ljava/util/List;
 
     .line 777
@@ -2459,15 +2459,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_2
 
     .line 780
     iget-wide v3, v3, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->endTimeUs:J
 
-    goto :goto_4c
+    goto :goto_1
 
     .line 781
-    :cond_44
+    :cond_2
     iget-wide v4, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
 
     iget-wide v6, v3, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->startTimeUs:J
@@ -2476,8 +2476,8 @@
 
     move-result-wide v3
 
-    :cond_4c
-    :goto_4c
+    :cond_3
+    :goto_1
     move-object v9, v1
 
     move-wide v7, v3
@@ -2494,27 +2494,27 @@
 
     const/4 v3, 0x1
 
-    if-nez v1, :cond_63
+    if-nez v1, :cond_5
 
     .line 788
     invoke-interface {v9}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_61
+    if-nez v1, :cond_4
 
-    goto :goto_63
+    goto :goto_2
 
-    :cond_61
+    :cond_4
     move v10, v2
 
-    goto :goto_64
+    goto :goto_3
 
-    :cond_63
-    :goto_63
+    :cond_5
+    :goto_2
     move v10, v3
 
-    :goto_64
+    :goto_3
     iget-object v11, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->nextChunkHolder:Landroidx/media3/exoplayer/hls/HlsChunkSource$HlsChunkHolder;
 
     move-object/from16 v6, p1
@@ -2537,7 +2537,7 @@
 
     iget-object v5, v5, Landroidx/media3/exoplayer/hls/HlsChunkSource$HlsChunkHolder;->playlistUrl:Landroid/net/Uri;
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_6
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -2549,26 +2549,26 @@
 
     return v3
 
-    :cond_83
-    if-nez v4, :cond_8d
+    :cond_6
+    if-nez v4, :cond_8
 
-    if-eqz v5, :cond_8c
+    if-eqz v5, :cond_7
 
     .line 802
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->callback:Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;
 
     invoke-interface {v1, v5}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;->onPlaylistRefreshRequired(Landroid/net/Uri;)V
 
-    :cond_8c
+    :cond_7
     return v2
 
     .line 807
-    :cond_8d
+    :cond_8
     invoke-static {v4}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isMediaChunk(Landroidx/media3/exoplayer/source/chunk/Chunk;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_9
 
     .line 808
     move-object v1, v4
@@ -2578,7 +2578,7 @@
     invoke-direct {v0, v1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->initMediaChunkLoad(Landroidx/media3/exoplayer/hls/HlsMediaChunk;)V
 
     .line 810
-    :cond_99
+    :cond_9
     iput-object v4, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadingChunk:Landroidx/media3/exoplayer/source/chunk/Chunk;
 
     .line 811
@@ -2637,18 +2637,18 @@
 
     return v3
 
-    :cond_cf
-    :goto_cf
+    :cond_a
+    :goto_4
     return v2
 .end method
 
 .method public continuePreparing()V
-    .registers 4
+    .locals 3
 
     .line 266
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->prepared:Z
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 267
     new-instance v0, Landroidx/media3/exoplayer/LoadingInfo$Builder;
@@ -2667,36 +2667,36 @@
 
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 8
+    .locals 4
 
     .line 479
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesBuilt:Z
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 482
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v0, v0
 
     const/4 v1, 0x0
 
-    :goto_f
-    if-ge v1, v0, :cond_1f
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 484
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -2711,15 +2711,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public endTracks()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -2737,7 +2737,7 @@
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 5
+    .locals 1
 
     .line 629
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -2750,24 +2750,24 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 8
+    .locals 7
 
     .line 729
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadingFinished:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
     return-wide v0
 
     .line 731
-    :cond_7
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 732
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
@@ -2775,7 +2775,7 @@
     return-wide v0
 
     .line 734
-    :cond_10
+    :cond_1
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
 
     .line 735
@@ -2788,12 +2788,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
     .line 739
-    :cond_1d
+    :cond_2
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -2802,7 +2802,7 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_35
+    if-le v2, v3, :cond_3
 
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
@@ -2818,13 +2818,13 @@
 
     check-cast v2, Landroidx/media3/exoplayer/hls/HlsMediaChunk;
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_3
     const/4 v2, 0x0
 
-    :goto_36
-    if-eqz v2, :cond_3e
+    :goto_0
+    if-eqz v2, :cond_4
 
     .line 741
     iget-wide v2, v2, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->endTimeUs:J
@@ -2834,10 +2834,10 @@
     move-result-wide v0
 
     .line 743
-    :cond_3e
+    :cond_4
     iget-boolean v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesBuilt:Z
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_5
 
     .line 744
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -2846,8 +2846,8 @@
 
     const/4 v4, 0x0
 
-    :goto_46
-    if-ge v4, v3, :cond_55
+    :goto_1
+    if-ge v4, v3, :cond_5
 
     aget-object v5, v2, v4
 
@@ -2862,21 +2862,21 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_55
+    :cond_5
     return-wide v0
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 754
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 755
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
@@ -2884,28 +2884,28 @@
     return-wide v0
 
     .line 757
-    :cond_9
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadingFinished:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->getLastMediaChunk()Landroidx/media3/exoplayer/hls/HlsMediaChunk;
 
     move-result-object v0
 
     iget-wide v0, v0, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->endTimeUs:J
 
-    :goto_16
+    :goto_0
     return-wide v0
 .end method
 
 .method public getPrimaryTrackGroupIndex()I
-    .registers 2
+    .locals 1
 
     .line 306
     iget v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primaryTrackGroupIndex:I
@@ -2914,7 +2914,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 301
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->assertIsPrepared()V
@@ -2926,7 +2926,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 828
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -2939,14 +2939,14 @@
 .end method
 
 .method public isReady(I)Z
-    .registers 3
+    .locals 1
 
     .line 635
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
@@ -2958,42 +2958,42 @@
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_15
+    :goto_0
     return p1
 .end method
 
 .method public isVideoSampleStream()Z
-    .registers 3
+    .locals 2
 
     .line 618
     iget v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primarySampleQueueType:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method synthetic lambda$onPlaylistUpdated$0$androidx-media3-exoplayer-hls-HlsSampleStreamWrapper(Landroidx/media3/exoplayer/hls/HlsMediaChunk;)V
-    .registers 3
+    .locals 1
 
     .line 552
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->callback:Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;
@@ -3006,7 +3006,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3027,7 +3027,7 @@
 .end method
 
 .method public maybeThrowError(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3048,7 +3048,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3061,15 +3061,15 @@
     .line 294
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadingFinished:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->prepared:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const-string v0, "Loading finished before preparation is complete."
 
     const/4 v1, 0x0
@@ -3081,13 +3081,13 @@
 
     throw v0
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/source/chunk/Chunk;JJZ)V
-    .registers 22
+    .locals 15
 
     move-object v0, p0
 
@@ -3156,40 +3156,40 @@
 
     invoke-virtual/range {v3 .. v13}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadCanceled(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
 
-    if-nez p6, :cond_53
+    if-nez p6, :cond_2
 
     .line 917
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v1
 
-    if-nez v1, :cond_47
+    if-nez v1, :cond_0
 
     iget v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->enabledTrackGroupCount:I
 
-    if-nez v1, :cond_4a
+    if-nez v1, :cond_1
 
     .line 918
-    :cond_47
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->resetSampleQueues()V
 
     .line 920
-    :cond_4a
+    :cond_1
     iget v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->enabledTrackGroupCount:I
 
-    if-lez v1, :cond_53
+    if-lez v1, :cond_2
 
     .line 921
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->callback:Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;
 
     invoke-interface {v1, p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_53
+    :cond_2
     return-void
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 95
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -3200,7 +3200,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;JJ)V
-    .registers 21
+    .locals 15
 
     move-object v0, p0
 
@@ -3277,7 +3277,7 @@
     .line 886
     iget-boolean v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->prepared:Z
 
-    if-nez v1, :cond_57
+    if-nez v1, :cond_0
 
     .line 887
     new-instance v1, Landroidx/media3/exoplayer/LoadingInfo$Builder;
@@ -3296,20 +3296,20 @@
 
     invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
 
-    goto :goto_5c
+    goto :goto_0
 
     .line 889
-    :cond_57
+    :cond_0
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->callback:Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;
 
     invoke-interface {v1, p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :goto_5c
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 95
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -3320,7 +3320,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/source/chunk/Chunk;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 38
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -3333,7 +3333,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_1
 
     .line 934
     move-object v3, v1
@@ -3345,11 +3345,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_29
+    if-nez v3, :cond_1
 
     instance-of v3, v13, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_1
 
     .line 937
     move-object v3, v13
@@ -3360,20 +3360,20 @@
 
     const/16 v4, 0x19a
 
-    if-eq v3, v4, :cond_26
+    if-eq v3, v4, :cond_0
 
     const/16 v4, 0x194
 
-    if-ne v3, v4, :cond_29
+    if-ne v3, v4, :cond_1
 
     .line 942
-    :cond_26
+    :cond_0
     sget-object v1, Landroidx/media3/exoplayer/upstream/Loader;->RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     return-object v1
 
     .line 945
-    :cond_29
+    :cond_1
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/exoplayer/source/chunk/Chunk;->bytesLoaded()J
 
     move-result-wide v3
@@ -3478,14 +3478,14 @@
 
     const/4 v8, 0x0
 
-    if-eqz v6, :cond_98
+    if-eqz v6, :cond_2
 
     .line 972
     iget v9, v6, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;->type:I
 
     const/4 v10, 0x2
 
-    if-ne v9, v10, :cond_98
+    if-ne v9, v10, :cond_2
 
     .line 974
     iget-object v9, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -3499,23 +3499,23 @@
 
     move v15, v6
 
-    goto :goto_99
+    goto :goto_0
 
-    :cond_98
+    :cond_2
     move v15, v8
 
-    :goto_99
+    :goto_0
     const/4 v6, 0x1
 
-    if-eqz v15, :cond_d4
+    if-eqz v15, :cond_6
 
-    if-eqz v2, :cond_cf
+    if-eqz v2, :cond_5
 
     const-wide/16 v9, 0x0
 
     cmp-long v2, v3, v9
 
-    if-nez v2, :cond_cf
+    if-nez v2, :cond_5
 
     .line 980
     iget-object v2, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -3532,12 +3532,12 @@
 
     check-cast v2, Landroidx/media3/exoplayer/hls/HlsMediaChunk;
 
-    if-ne v2, v1, :cond_b4
+    if-ne v2, v1, :cond_3
 
     move v8, v6
 
     .line 981
-    :cond_b4
+    :cond_3
     invoke-static {v8}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 982
@@ -3547,17 +3547,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c4
+    if-eqz v2, :cond_4
 
     .line 983
     iget-wide v2, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
 
     iput-wide v2, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
 
-    goto :goto_cf
+    goto :goto_1
 
     .line 985
-    :cond_c4
+    :cond_4
     iget-object v2, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-static {v2}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -3569,17 +3569,17 @@
     invoke-virtual {v2}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->invalidateExtractor()V
 
     .line 988
-    :cond_cf
-    :goto_cf
+    :cond_5
+    :goto_1
     sget-object v2, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    :goto_d1
+    :goto_2
     move-object/from16 v16, v2
 
-    goto :goto_eb
+    goto :goto_3
 
     .line 990
-    :cond_d4
+    :cond_6
     iget-object v2, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
 
     invoke-interface {v2, v7}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->getRetryDelayMsFor(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;)J
@@ -3590,23 +3590,23 @@
 
     cmp-long v4, v2, v9
 
-    if-eqz v4, :cond_e8
+    if-eqz v4, :cond_7
 
     .line 993
     invoke-static {v8, v2, v3}, Landroidx/media3/exoplayer/upstream/Loader;->createRetryAction(ZJ)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     move-result-object v2
 
-    goto :goto_d1
+    goto :goto_2
 
     .line 994
-    :cond_e8
+    :cond_7
     sget-object v2, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    goto :goto_d1
+    goto :goto_2
 
     .line 997
-    :goto_eb
+    :goto_3
     invoke-virtual/range {v16 .. v16}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v2
@@ -3650,7 +3650,7 @@
 
     invoke-virtual/range {v2 .. v14}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJLjava/io/IOException;Z)V
 
-    if-eqz v17, :cond_11b
+    if-eqz v17, :cond_8
 
     const/4 v2, 0x0
 
@@ -3664,13 +3664,13 @@
 
     invoke-interface {v2, v3, v4}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->onLoadTaskConcluded(J)V
 
-    :cond_11b
-    if-eqz v15, :cond_139
+    :cond_8
+    if-eqz v15, :cond_a
 
     .line 1015
     iget-boolean v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->prepared:Z
 
-    if-nez v1, :cond_134
+    if-nez v1, :cond_9
 
     .line 1016
     new-instance v1, Landroidx/media3/exoplayer/LoadingInfo$Builder;
@@ -3691,21 +3691,21 @@
     .line 1016
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
 
-    goto :goto_139
+    goto :goto_4
 
     .line 1019
-    :cond_134
+    :cond_9
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->callback:Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;
 
     invoke-interface {v1, v0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_139
-    :goto_139
+    :cond_a
+    :goto_4
     return-object v16
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 95
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -3718,7 +3718,7 @@
 .end method
 
 .method public onLoaderReleased()V
-    .registers 5
+    .locals 4
 
     .line 577
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -3727,8 +3727,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -3737,14 +3737,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public onNewExtractor()V
-    .registers 2
+    .locals 1
 
     .line 1196
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueMappingDoneByType:Ljava/util/Set;
@@ -3755,7 +3755,7 @@
 .end method
 
 .method public onPlaylistError(Landroid/net/Uri;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Z)Z
-    .registers 8
+    .locals 4
 
     .line 595
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -3766,14 +3766,14 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez p3, :cond_2b
+    if-nez p3, :cond_1
 
     .line 602
     iget-object p3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -3794,48 +3794,48 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_2b
+    if-eqz p2, :cond_1
 
     .line 605
     iget p3, p2, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;->type:I
 
     const/4 v0, 0x2
 
-    if-ne p3, v0, :cond_2b
+    if-ne p3, v0, :cond_1
 
     .line 607
     iget-wide p2, p2, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;->exclusionDurationMs:J
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     move-wide p2, v2
 
     .line 612
-    :goto_2c
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/media3/exoplayer/hls/HlsChunkSource;->onPlaylistError(Landroid/net/Uri;J)Z
 
     move-result p1
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
     cmp-long p1, p2, v2
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_39
+    :cond_2
     const/4 v1, 0x0
 
-    :goto_3a
+    :goto_1
     return v1
 .end method
 
 .method public onPlaylistUpdated()V
-    .registers 4
+    .locals 3
 
     .line 543
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -3844,12 +3844,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 546
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-static {v0}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -3867,15 +3867,15 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_1e
+    if-ne v1, v2, :cond_1
 
     .line 550
     invoke-virtual {v0}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->publish()V
 
-    goto :goto_3f
+    goto :goto_0
 
-    :cond_1e
-    if-nez v1, :cond_2b
+    :cond_1
+    if-nez v1, :cond_2
 
     .line 552
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->handler:Landroid/os/Handler;
@@ -3886,17 +3886,17 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_3f
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const/4 v0, 0x2
 
-    if-ne v1, v0, :cond_3f
+    if-ne v1, v0, :cond_3
 
     .line 553
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadingFinished:Z
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -3905,20 +3905,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3
 
     .line 556
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public onUpstreamFormatChanged(Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 1
 
     .line 1189
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->handler:Landroid/os/Handler;
@@ -3931,7 +3931,7 @@
 .end method
 
 .method public varargs prepareWithMultivariantPlaylistInfo([Landroidx/media3/common/TrackGroup;I[I)V
-    .registers 8
+    .locals 4
 
     .line 282
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->createTrackGroupArrayWithDrmInfo([Landroidx/media3/common/TrackGroup;)Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -3952,8 +3952,8 @@
 
     const/4 v0, 0x0
 
-    :goto_f
-    if-ge v0, p1, :cond_21
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     aget v1, p3, v0
 
@@ -3970,10 +3970,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 287
-    :cond_21
+    :cond_0
     iput p2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primaryTrackGroupIndex:I
 
     .line 288
@@ -3996,7 +3996,7 @@
 .end method
 
 .method public readData(ILandroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 16
+    .locals 11
 
     .line 653
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
@@ -4005,12 +4005,12 @@
 
     const/4 v1, -0x3
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 658
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -4019,12 +4019,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_54
+    if-nez v0, :cond_3
 
     move v0, v2
 
     .line 660
-    :goto_12
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -4033,7 +4033,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    if-ge v0, v3, :cond_2d
+    if-ge v0, v3, :cond_1
 
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
@@ -4048,14 +4048,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2d
+    if-eqz v3, :cond_1
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 664
-    :cond_2d
+    :cond_1
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-static {v3, v2, v0}, Landroidx/media3/common/util/Util;->removeRange(Ljava/util/List;II)V
@@ -4079,7 +4079,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_52
+    if-nez v3, :cond_2
 
     .line 668
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaSourceEventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -4097,18 +4097,18 @@
     invoke-virtual/range {v3 .. v9}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->downstreamFormatChanged(ILandroidx/media3/common/Format;ILjava/lang/Object;J)V
 
     .line 675
-    :cond_52
+    :cond_2
     iput-object v10, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->downstreamTrackFormat:Landroidx/media3/common/Format;
 
     .line 678
-    :cond_54
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
@@ -4122,12 +4122,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_4
 
     return v1
 
     .line 683
-    :cond_6b
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     aget-object v0, v0, p1
@@ -4141,7 +4141,7 @@
 
     const/4 p4, -0x5
 
-    if-ne p3, p4, :cond_c8
+    if-ne p3, p4, :cond_8
 
     .line 686
     iget-object p4, p2, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
@@ -4155,7 +4155,7 @@
     .line 687
     iget v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primarySampleQueueIndex:I
 
-    if-ne p1, v0, :cond_c6
+    if-ne p1, v0, :cond_7
 
     .line 689
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -4171,14 +4171,14 @@
     move-result p1
 
     .line 691
-    :goto_90
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v2, v0, :cond_a7
+    if-ge v2, v0, :cond_5
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
@@ -4190,21 +4190,21 @@
 
     iget v0, v0, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->uid:I
 
-    if-eq v0, p1, :cond_a7
+    if-eq v0, p1, :cond_5
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_90
+    goto :goto_1
 
     .line 695
-    :cond_a7
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
-    if-ge v2, p1, :cond_ba
+    if-ge v2, p1, :cond_6
 
     .line 696
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -4217,10 +4217,10 @@
 
     iget-object p1, p1, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->trackFormat:Landroidx/media3/common/Format;
 
-    goto :goto_c2
+    goto :goto_2
 
     .line 697
-    :cond_ba
+    :cond_6
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->upstreamTrackFormat:Landroidx/media3/common/Format;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4230,21 +4230,21 @@
     check-cast p1, Landroidx/media3/common/Format;
 
     .line 698
-    :goto_c2
+    :goto_2
     invoke-virtual {p4, p1}, Landroidx/media3/common/Format;->withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object p4
 
     .line 700
-    :cond_c6
+    :cond_7
     iput-object p4, p2, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
 
-    :cond_c8
+    :cond_8
     return p3
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 7
+    .locals 4
 
     .line 833
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -4253,25 +4253,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_6a
+    if-nez v0, :cond_5
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_6a
+    goto :goto_1
 
     .line 837
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->isLoading()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 838
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loadingChunk:Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -4289,26 +4289,26 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_1
 
     .line 840
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    :cond_2d
+    :cond_1
     return-void
 
     .line 845
-    :cond_2e
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->readOnlyMediaChunks:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    :goto_34
-    if-lez v0, :cond_4c
+    :goto_0
+    if-lez v0, :cond_3
 
     .line 846
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -4330,27 +4330,27 @@
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_4c
+    if-ne v1, v2, :cond_3
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_34
+    goto :goto_0
 
     .line 851
-    :cond_4c
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->readOnlyMediaChunks:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_57
+    if-ge v0, v1, :cond_4
 
     .line 852
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->discardUpstream(I)V
 
     .line 855
-    :cond_57
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->readOnlyMediaChunks:Ljava/util/List;
@@ -4366,23 +4366,23 @@
 
     move-result p2
 
-    if-ge p1, p2, :cond_6a
+    if-ge p1, p2, :cond_5
 
     .line 857
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->discardUpstream(I)V
 
-    :cond_6a
-    :goto_6a
+    :cond_5
+    :goto_1
     return-void
 .end method
 
 .method public release()V
-    .registers 5
+    .locals 4
 
     .line 561
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->prepared:Z
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 564
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -4391,8 +4391,8 @@
 
     const/4 v2, 0x0
 
-    :goto_8
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -4401,10 +4401,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 568
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/hls/HlsChunkSource;->reset()V
@@ -4435,13 +4435,13 @@
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public seekToUs(JZ)Z
-    .registers 10
+    .locals 6
 
     .line 497
     iput-wide p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
@@ -4453,7 +4453,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 500
     iput-wide p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
@@ -4461,7 +4461,7 @@
     return v1
 
     .line 506
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/hls/HlsChunkSource;->hasIndependentSegments()Z
@@ -4470,19 +4470,19 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     move v0, v2
 
     .line 507
-    :goto_16
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-ge v0, v3, :cond_30
+    if-ge v0, v3, :cond_2
 
     .line 508
     iget-object v3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
@@ -4498,36 +4498,36 @@
 
     cmp-long v4, v4, p1
 
-    if-nez v4, :cond_2d
+    if-nez v4, :cond_1
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_2d
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     const/4 v3, 0x0
 
     .line 518
-    :goto_31
+    :goto_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesBuilt:Z
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3
 
-    if-nez p3, :cond_3e
+    if-nez p3, :cond_3
 
     invoke-direct {p0, p1, p2, v3}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->seekInsideBufferUs(JLandroidx/media3/exoplayer/hls/HlsMediaChunk;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_3e
+    if-eqz p3, :cond_3
 
     return v2
 
     .line 523
-    :cond_3e
+    :cond_3
     iput-wide p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetPositionUs:J
 
     .line 524
@@ -4545,20 +4545,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_5
 
     .line 527
     iget-boolean p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesBuilt:Z
 
-    if-eqz p1, :cond_60
+    if-eqz p1, :cond_4
 
     .line 529
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length p2, p1
 
-    :goto_56
-    if-ge v2, p2, :cond_60
+    :goto_2
+    if-ge v2, p2, :cond_4
 
     aget-object p3, p1, v2
 
@@ -4567,18 +4567,18 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_56
+    goto :goto_2
 
     .line 533
-    :cond_60
+    :cond_4
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    goto :goto_6e
+    goto :goto_3
 
     .line 535
-    :cond_66
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/upstream/Loader;->clearFatalError()V
@@ -4586,12 +4586,12 @@
     .line 536
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->resetSampleQueues()V
 
-    :goto_6e
+    :goto_3
     return v1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJZ)Z
-    .registers 27
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -4612,33 +4612,33 @@
     move v4, v14
 
     .line 362
-    :goto_f
+    :goto_0
     array-length v5, v1
 
     const/4 v6, 0x0
 
     const/4 v15, 0x1
 
-    if-ge v4, v5, :cond_2f
+    if-ge v4, v5, :cond_2
 
     .line 363
     aget-object v5, v2, v4
 
     check-cast v5, Landroidx/media3/exoplayer/hls/HlsSampleStream;
 
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_1
 
     .line 364
     aget-object v7, v1, v4
 
-    if-eqz v7, :cond_22
+    if-eqz v7, :cond_0
 
     aget-boolean v7, p2, v4
 
-    if-nez v7, :cond_2c
+    if-nez v7, :cond_1
 
     .line 365
-    :cond_22
+    :cond_0
     iget v7, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->enabledTrackGroupCount:I
 
     sub-int/2addr v7, v15
@@ -4651,43 +4651,43 @@
     .line 367
     aput-object v6, v2, v4
 
-    :cond_2c
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_2f
-    if-nez p7, :cond_41
+    :cond_2
+    if-nez p7, :cond_5
 
     .line 373
     iget-boolean v4, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->seenFirstTrackSelection:Z
 
-    if-eqz v4, :cond_38
+    if-eqz v4, :cond_3
 
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_4
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_38
+    :cond_3
     iget-wide v3, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->lastSeekPositionUs:J
 
     cmp-long v3, v12, v3
 
-    if-eqz v3, :cond_3f
+    if-eqz v3, :cond_4
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_3f
+    :cond_4
     move v3, v14
 
-    goto :goto_42
+    goto :goto_2
 
-    :cond_41
-    :goto_41
+    :cond_5
+    :goto_1
     move v3, v15
 
     .line 380
-    :goto_42
+    :goto_2
     iget-object v4, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
 
     invoke-virtual {v4}, Landroidx/media3/exoplayer/hls/HlsChunkSource;->getTrackSelection()Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -4701,20 +4701,20 @@
     move v3, v14
 
     .line 383
-    :goto_4c
+    :goto_3
     array-length v5, v1
 
-    if-ge v3, v5, :cond_a3
+    if-ge v3, v5, :cond_a
 
     .line 384
     aget-object v5, v1, v3
 
-    if-nez v5, :cond_54
+    if-nez v5, :cond_6
 
-    goto :goto_a0
+    goto :goto_5
 
     .line 388
-    :cond_54
+    :cond_6
     iget-object v7, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     invoke-interface {v5}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getTrackGroup()Landroidx/media3/common/TrackGroup;
@@ -4728,7 +4728,7 @@
     .line 389
     iget v8, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->primaryTrackGroupIndex:I
 
-    if-ne v7, v8, :cond_68
+    if-ne v7, v8, :cond_7
 
     .line 391
     iget-object v8, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -4738,10 +4738,10 @@
     move-object v11, v5
 
     .line 393
-    :cond_68
+    :cond_7
     aget-object v5, v2, v3
 
-    if-nez v5, :cond_a0
+    if-nez v5, :cond_9
 
     .line 394
     iget v5, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->enabledTrackGroupCount:I
@@ -4763,7 +4763,7 @@
     .line 397
     iget-object v5, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->trackGroupToSampleQueueIndex:[I
 
-    if-eqz v5, :cond_a0
+    if-eqz v5, :cond_9
 
     .line 398
     aget-object v5, v2, v3
@@ -4772,7 +4772,7 @@
 
     invoke-virtual {v5}, Landroidx/media3/exoplayer/hls/HlsSampleStream;->bindSampleQueue()V
 
-    if-nez v16, :cond_a0
+    if-nez v16, :cond_9
 
     .line 401
     iget-object v5, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
@@ -4788,36 +4788,36 @@
 
     move-result v7
 
-    if-eqz v7, :cond_9d
+    if-eqz v7, :cond_8
 
     .line 407
     invoke-virtual {v5, v12, v13, v15}, Landroidx/media3/exoplayer/source/SampleQueue;->seekTo(JZ)Z
 
     move-result v5
 
-    if-nez v5, :cond_9d
+    if-nez v5, :cond_8
 
     move v5, v15
 
-    goto :goto_9e
+    goto :goto_4
 
-    :cond_9d
+    :cond_8
     move v5, v14
 
-    :goto_9e
+    :goto_4
     move/from16 v16, v5
 
-    :cond_a0
-    :goto_a0
+    :cond_9
+    :goto_5
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4c
+    goto :goto_3
 
     .line 413
-    :cond_a3
+    :cond_a
     iget v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->enabledTrackGroupCount:I
 
-    if-nez v1, :cond_da
+    if-nez v1, :cond_d
 
     .line 414
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -4842,20 +4842,20 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d5
+    if-eqz v1, :cond_c
 
     .line 419
     iget-boolean v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueuesBuilt:Z
 
-    if-eqz v1, :cond_ce
+    if-eqz v1, :cond_b
 
     .line 421
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v3, v1
 
-    :goto_c4
-    if-ge v14, v3, :cond_ce
+    :goto_6
+    if-ge v14, v3, :cond_b
 
     aget-object v4, v1, v14
 
@@ -4864,53 +4864,53 @@
 
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_c4
+    goto :goto_6
 
     .line 425
-    :cond_ce
+    :cond_b
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    goto/16 :goto_140
+    goto/16 :goto_b
 
     .line 427
-    :cond_d5
+    :cond_c
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->resetSampleQueues()V
 
-    goto/16 :goto_140
+    goto/16 :goto_b
 
     .line 430
-    :cond_da
+    :cond_d
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_12d
+    if-nez v1, :cond_11
 
     .line 431
     invoke-static {v11, v4}, Landroidx/media3/common/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_12d
+    if-nez v1, :cond_11
 
     .line 435
     iget-boolean v1, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->seenFirstTrackSelection:Z
 
-    if-nez v1, :cond_124
+    if-nez v1, :cond_10
 
     const-wide/16 v3, 0x0
 
     cmp-long v1, v12, v3
 
-    if-gez v1, :cond_f3
+    if-gez v1, :cond_e
 
     neg-long v3, v12
 
-    :cond_f3
+    :cond_e
     move-wide v6, v3
 
     .line 437
@@ -4959,21 +4959,21 @@
 
     move-result v3
 
-    if-eq v3, v1, :cond_122
+    if-eq v3, v1, :cond_f
 
-    goto :goto_124
+    goto :goto_7
 
-    :cond_122
+    :cond_f
     move v1, v14
 
-    goto :goto_125
+    goto :goto_8
 
-    :cond_124
-    :goto_124
+    :cond_10
+    :goto_7
     move v1, v15
 
-    :goto_125
-    if-eqz v1, :cond_12d
+    :goto_8
+    if-eqz v1, :cond_11
 
     .line 459
     iput-boolean v15, v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->pendingResetUpstreamFormats:Z
@@ -4982,39 +4982,39 @@
 
     move/from16 v16, v1
 
-    goto :goto_12f
+    goto :goto_9
 
-    :cond_12d
+    :cond_11
     move/from16 v1, p7
 
-    :goto_12f
-    if-eqz v16, :cond_140
+    :goto_9
+    if-eqz v16, :cond_13
 
     .line 463
     invoke-virtual {v0, v12, v13, v1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->seekToUs(JZ)Z
 
     .line 465
-    :goto_134
+    :goto_a
     array-length v1, v2
 
-    if-ge v14, v1, :cond_140
+    if-ge v14, v1, :cond_13
 
     .line 466
     aget-object v1, v2, v14
 
-    if-eqz v1, :cond_13d
+    if-eqz v1, :cond_12
 
     .line 467
     aput-boolean v15, p4, v14
 
-    :cond_13d
+    :cond_12
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_134
+    goto :goto_a
 
     .line 473
-    :cond_140
-    :goto_140
+    :cond_13
+    :goto_b
     invoke-direct {v0, v2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->updateSampleStreams([Landroidx/media3/exoplayer/source/SampleStream;)V
 
     .line 474
@@ -5024,7 +5024,7 @@
 .end method
 
 .method public setDrmInitData(Landroidx/media3/common/DrmInitData;)V
-    .registers 5
+    .locals 3
 
     .line 1239
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -5033,7 +5033,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 1240
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -5041,36 +5041,36 @@
     const/4 v0, 0x0
 
     .line 1241
-    :goto_b
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_1e
+    if-ge v0, v2, :cond_1
 
     .line 1242
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueIsAudioVideoFlags:[Z
 
     aget-boolean v2, v2, v0
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 1243
     aget-object v1, v1, v0
 
     invoke-virtual {v1, p1}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;->setDrmInitData(Landroidx/media3/common/DrmInitData;)V
 
-    :cond_1b
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     return-void
 .end method
 
 .method public setIsPrimaryTimestampSource(Z)V
-    .registers 3
+    .locals 1
 
     .line 583
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->chunkSource:Landroidx/media3/exoplayer/hls/HlsChunkSource;
@@ -5081,14 +5081,14 @@
 .end method
 
 .method public setSampleOffsetUs(J)V
-    .registers 7
+    .locals 4
 
     .line 1206
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleOffsetUs:J
 
     cmp-long v0, v0, p1
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 1207
     iput-wide p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleOffsetUs:J
@@ -5100,8 +5100,8 @@
 
     const/4 v2, 0x0
 
-    :goto_c
-    if-ge v2, v1, :cond_16
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -5110,28 +5110,28 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public skipData(IJ)I
-    .registers 6
+    .locals 2
 
     .line 706
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 710
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     aget-object v0, v0, p1
@@ -5154,14 +5154,14 @@
 
     check-cast p3, Landroidx/media3/exoplayer/hls/HlsMediaChunk;
 
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_1
 
     .line 715
     invoke-virtual {p3}, Landroidx/media3/exoplayer/hls/HlsMediaChunk;->isPublished()Z
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_1
 
     .line 716
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/SampleQueue;->getReadIndex()I
@@ -5181,14 +5181,14 @@
     move-result p2
 
     .line 721
-    :cond_30
+    :cond_1
     invoke-virtual {v0, p2}, Landroidx/media3/exoplayer/source/SampleQueue;->skip(I)V
 
     return p2
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 6
+    .locals 3
 
     .line 1082
     sget-object v0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->MAPPABLE_TYPES:Ljava/util/Set;
@@ -5201,53 +5201,53 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 1084
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->getMappedTrackOutput(II)Landroidx/media3/extractor/TrackOutput;
 
     move-result-object v0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 1086
-    :goto_12
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueues:[Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$HlsSampleQueue;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_23
+    if-ge v0, v2, :cond_2
 
     .line 1087
     iget-object v2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->sampleQueueTrackIds:[I
 
     aget v2, v2, v0
 
-    if-ne v2, p1, :cond_20
+    if-ne v2, p1, :cond_1
 
     .line 1088
     aget-object v0, v1, v0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_24
-    if-nez v0, :cond_33
+    :goto_1
+    if-nez v0, :cond_4
 
     .line 1095
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->tracksEnded:Z
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     .line 1096
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->createDiscardingTrackOutput(II)Landroidx/media3/extractor/DiscardingTrackOutput;
@@ -5257,20 +5257,20 @@
     return-object p1
 
     .line 1099
-    :cond_2f
+    :cond_3
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->createSampleQueue(II)Landroidx/media3/exoplayer/source/SampleQueue;
 
     move-result-object v0
 
-    :cond_33
+    :cond_4
     const/4 p1, 0x5
 
-    if-ne p2, p1, :cond_46
+    if-ne p2, p1, :cond_6
 
     .line 1104
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->emsgUnwrappingTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
-    if-nez p1, :cond_43
+    if-nez p1, :cond_5
 
     .line 1105
     new-instance p1, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;
@@ -5282,17 +5282,17 @@
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->emsgUnwrappingTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
     .line 1107
-    :cond_43
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->emsgUnwrappingTrackOutput:Landroidx/media3/extractor/TrackOutput;
 
     return-object p1
 
-    :cond_46
+    :cond_6
     return-object v0
 .end method
 
 .method public unbindSampleQueue(I)V
-    .registers 4
+    .locals 2
 
     .line 328
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper;->assertIsPrepared()V

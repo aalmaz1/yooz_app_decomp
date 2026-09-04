@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 3
+    .locals 1
 
     .line 48
     array-length v0, p1
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>([BI)V
-    .registers 3
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,32 +60,32 @@
 .end method
 
 .method private assertValidOffset()V
-    .registers 3
+    .locals 2
 
     .line 344
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->byteOffset:I
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_1
 
     iget v1, p0, Landroidx/media3/common/util/ParsableBitArray;->byteLimit:I
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_1
 
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     return-void
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public bitsLeft()I
-    .registers 3
+    .locals 2
 
     .line 97
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->byteLimit:I
@@ -113,16 +113,16 @@
 .end method
 
 .method public byteAlign()V
-    .registers 2
+    .locals 1
 
     .line 243
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 246
@@ -142,21 +142,21 @@
 .end method
 
 .method public getBytePosition()I
-    .registers 2
+    .locals 1
 
     .line 111
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 112
@@ -166,7 +166,7 @@
 .end method
 
 .method public getPosition()I
-    .registers 3
+    .locals 2
 
     .line 102
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->byteOffset:I
@@ -181,13 +181,13 @@
 .end method
 
 .method public putInt(II)V
-    .registers 11
+    .locals 8
 
     const/16 v0, 0x20
 
     const/4 v1, 0x1
 
-    if-ge p2, v0, :cond_9
+    if-ge p2, v0, :cond_0
 
     shl-int v0, v1, p2
 
@@ -196,7 +196,7 @@
     and-int/2addr p1, v0
 
     .line 319
-    :cond_9
+    :cond_0
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
     const/16 v2, 0x8
@@ -252,8 +252,8 @@
 
     add-int/2addr v6, v1
 
-    :goto_36
-    if-le v0, v2, :cond_47
+    :goto_0
+    if-le v0, v2, :cond_1
 
     .line 329
     iget-object v3, p0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -272,9 +272,9 @@
 
     move v6, v4
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_47
+    :cond_1
     rsub-int/lit8 v2, v0, 0x8
 
     .line 333
@@ -317,7 +317,7 @@
 .end method
 
 .method public readBit()Z
-    .registers 4
+    .locals 3
 
     .line 157
     iget-object v0, p0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -334,33 +334,33 @@
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     .line 158
-    :goto_11
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->skipBit()V
 
     return v0
 .end method
 
 .method public readBits(I)I
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
     .line 173
-    :cond_4
+    :cond_0
     iget v1, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
     add-int/2addr v1, p1
@@ -370,12 +370,12 @@
     move v1, v0
 
     .line 174
-    :goto_a
+    :goto_0
     iget v2, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
     const/16 v3, 0x8
 
-    if-le v2, v3, :cond_24
+    if-le v2, v3, :cond_1
 
     add-int/lit8 v2, v2, -0x8
 
@@ -399,10 +399,10 @@
 
     or-int/2addr v1, v2
 
-    goto :goto_a
+    goto :goto_0
 
     .line 178
-    :cond_24
+    :cond_1
     iget-object v4, p0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
 
     iget v5, p0, Landroidx/media3/common/util/ParsableBitArray;->byteOffset:I
@@ -425,7 +425,7 @@
 
     and-int/2addr p1, v1
 
-    if-ne v2, v3, :cond_3e
+    if-ne v2, v3, :cond_2
 
     .line 181
     iput v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
@@ -436,25 +436,25 @@
     iput v5, p0, Landroidx/media3/common/util/ParsableBitArray;->byteOffset:I
 
     .line 184
-    :cond_3e
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/common/util/ParsableBitArray;->assertValidOffset()V
 
     return p1
 .end method
 
 .method public readBits([BII)V
-    .registers 11
+    .locals 7
 
     shr-int/lit8 v0, p3, 0x3
 
     add-int/2addr v0, p2
 
-    :goto_3
+    :goto_0
     const/16 v1, 0xff
 
     const/16 v2, 0x8
 
-    if-ge p2, v0, :cond_25
+    if-ge p2, v0, :cond_0
 
     .line 214
     iget-object v3, p0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -492,17 +492,17 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     and-int/lit8 p2, p3, 0x7
 
-    if-nez p2, :cond_2a
+    if-nez p2, :cond_1
 
     return-void
 
     .line 223
-    :cond_2a
+    :cond_1
     aget-byte p3, p1, v0
 
     shr-int v3, v1, p2
@@ -518,7 +518,7 @@
 
     add-int v4, v3, p2
 
-    if-le v4, v2, :cond_4b
+    if-le v4, v2, :cond_2
 
     .line 226
     iget-object v4, p0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -547,7 +547,7 @@
     iput v3, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
     .line 229
-    :cond_4b
+    :cond_2
     iget p3, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
     add-int/2addr p3, p2
@@ -582,7 +582,7 @@
 
     aput-byte p2, p1, v0
 
-    if-ne p3, v2, :cond_6e
+    if-ne p3, v2, :cond_3
 
     const/4 p1, 0x0
 
@@ -595,18 +595,18 @@
     iput v4, p0, Landroidx/media3/common/util/ParsableBitArray;->byteOffset:I
 
     .line 236
-    :cond_6e
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/common/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
 .end method
 
 .method public readBitsToLong(I)J
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x20
 
-    if-gt p1, v0, :cond_d
+    if-gt p1, v0, :cond_0
 
     .line 196
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -619,7 +619,7 @@
 
     return-wide v0
 
-    :cond_d
+    :cond_0
     sub-int/2addr p1, v0
 
     .line 198
@@ -639,21 +639,21 @@
 .end method
 
 .method public readBytes([BII)V
-    .registers 6
+    .locals 2
 
     .line 262
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 263
@@ -677,7 +677,7 @@
 .end method
 
 .method public readBytesAsString(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 288
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -690,7 +690,7 @@
 .end method
 
 .method public readBytesAsString(ILjava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 300
     new-array v0, p1, [B
@@ -709,7 +709,7 @@
 .end method
 
 .method public reset(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 4
+    .locals 2
 
     .line 78
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -735,7 +735,7 @@
 .end method
 
 .method public reset([B)V
-    .registers 3
+    .locals 1
 
     .line 68
     array-length v0, p1
@@ -746,7 +746,7 @@
 .end method
 
 .method public reset([BI)V
-    .registers 3
+    .locals 0
 
     .line 89
     iput-object p1, p0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -766,7 +766,7 @@
 .end method
 
 .method public setPosition(I)V
-    .registers 3
+    .locals 1
 
     .line 121
     div-int/lit8 v0, p1, 0x8
@@ -787,7 +787,7 @@
 .end method
 
 .method public skipBit()V
-    .registers 3
+    .locals 2
 
     .line 128
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
@@ -798,7 +798,7 @@
 
     const/16 v1, 0x8
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -813,14 +813,14 @@
     iput v0, p0, Landroidx/media3/common/util/ParsableBitArray;->byteOffset:I
 
     .line 132
-    :cond_13
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/common/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
 .end method
 
 .method public skipBits(I)V
-    .registers 5
+    .locals 3
 
     .line 141
     div-int/lit8 v0, p1, 0x8
@@ -845,7 +845,7 @@
 
     const/4 p1, 0x7
 
-    if-le v2, p1, :cond_1a
+    if-le v2, p1, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
@@ -858,28 +858,28 @@
     iput v2, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
     .line 148
-    :cond_1a
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/common/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
 .end method
 
 .method public skipBytes(I)V
-    .registers 3
+    .locals 1
 
     .line 275
     iget v0, p0, Landroidx/media3/common/util/ParsableBitArray;->bitOffset:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 276

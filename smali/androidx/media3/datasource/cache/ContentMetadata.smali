@@ -13,7 +13,7 @@
 
 # direct methods
 .method public static getContentLength(Landroidx/media3/datasource/cache/ContentMetadata;)J
-    .registers 4
+    .locals 3
 
     const-string v0, "exo_len"
 
@@ -28,7 +28,7 @@
 .end method
 
 .method public static getRedirectedUri(Landroidx/media3/datasource/cache/ContentMetadata;)Landroid/net/Uri;
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -43,17 +43,17 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_d
+    if-nez p0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 87
-    :cond_d
+    :cond_0
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    :goto_11
+    :goto_0
     return-object v0
 .end method
 

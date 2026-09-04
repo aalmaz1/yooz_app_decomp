@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static compositeColors(Landroid/graphics/Color;Landroid/graphics/Color;)Landroid/graphics/Color;
-    .registers 9
+    .locals 7
 
     .line 106
     invoke-virtual {p0}, Landroid/graphics/Color;->getModel()Landroid/graphics/ColorSpace$Model;
@@ -40,7 +40,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_3
 
     .line 112
     invoke-virtual {p1}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
@@ -55,12 +55,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 114
-    :cond_1d
+    :cond_0
     invoke-virtual {p1}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
 
     move-result-object v0
@@ -70,7 +70,7 @@
     move-result-object p0
 
     .line 116
-    :goto_25
+    :goto_0
     invoke-virtual {p0}, Landroid/graphics/Color;->getComponents()[F
 
     move-result-object v0
@@ -112,17 +112,17 @@
 
     cmpl-float v5, v4, v5
 
-    if-lez v5, :cond_4a
+    if-lez v5, :cond_1
 
     div-float/2addr p0, v4
 
     div-float/2addr v2, v4
 
-    :cond_4a
+    :cond_1
     const/4 v4, 0x0
 
-    :goto_4b
-    if-ge v4, v3, :cond_59
+    :goto_1
+    if-ge v4, v3, :cond_2
 
     .line 138
     aget v5, v0, v4
@@ -139,10 +139,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 141
-    :cond_59
+    :cond_2
     invoke-virtual {p1}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
 
     move-result-object p0
@@ -154,7 +154,7 @@
     return-object p0
 
     .line 107
-    :cond_62
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;

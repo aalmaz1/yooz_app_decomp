@@ -18,7 +18,7 @@
 
 # direct methods
 .method constructor <init>(FF)V
-    .registers 3
+    .locals 0
 
     .line 56
     invoke-static {p1, p2}, Landroidx/core/view/animation/PathInterpolatorApi14;->createQuad(FF)Landroid/graphics/Path;
@@ -31,7 +31,7 @@
 .end method
 
 .method constructor <init>(FFFF)V
-    .registers 5
+    .locals 0
 
     .line 61
     invoke-static {p1, p2, p3, p4}, Landroidx/core/view/animation/PathInterpolatorApi14;->createCubic(FFFF)Landroid/graphics/Path;
@@ -44,7 +44,7 @@
 .end method
 
 .method constructor <init>(Landroid/graphics/Path;)V
-    .registers 10
+    .locals 8
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,8 +87,8 @@
 
     move v5, v1
 
-    :goto_21
-    if-ge v5, v2, :cond_3c
+    :goto_0
+    if-ge v5, v2, :cond_0
 
     int-to-float v6, v5
 
@@ -121,14 +121,14 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_3c
+    :cond_0
     return-void
 .end method
 
 .method private static createCubic(FFFF)Landroid/graphics/Path;
-    .registers 12
+    .locals 8
 
     .line 107
     new-instance v7, Landroid/graphics/Path;
@@ -161,7 +161,7 @@
 .end method
 
 .method private static createQuad(FF)Landroid/graphics/Path;
-    .registers 4
+    .locals 2
 
     .line 99
     new-instance v0, Landroid/graphics/Path;
@@ -184,27 +184,27 @@
 
 # virtual methods
 .method public getInterpolation(F)F
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x0
 
     cmpg-float v1, p1, v0
 
-    if-gtz v1, :cond_6
+    if-gtz v1, :cond_0
 
     return v0
 
-    :cond_6
+    :cond_0
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpl-float v2, p1, v1
 
-    if-ltz v2, :cond_d
+    if-ltz v2, :cond_1
 
     return v1
 
     .line 74
-    :cond_d
+    :cond_1
     iget-object v1, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F
 
     array-length v1, v1
@@ -215,10 +215,10 @@
 
     const/4 v3, 0x0
 
-    :goto_13
+    :goto_0
     sub-int v4, v1, v3
 
-    if-le v4, v2, :cond_27
+    if-le v4, v2, :cond_3
 
     add-int v4, v3, v1
 
@@ -232,19 +232,19 @@
 
     cmpg-float v5, p1, v5
 
-    if-gez v5, :cond_25
+    if-gez v5, :cond_2
 
     move v1, v4
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v3, v4
 
-    goto :goto_13
+    goto :goto_0
 
     .line 84
-    :cond_27
+    :cond_3
     iget-object v2, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mX:[F
 
     aget v4, v2, v1
@@ -255,7 +255,7 @@
 
     cmpl-float v0, v4, v0
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_4
 
     .line 86
     iget-object p1, p0, Landroidx/core/view/animation/PathInterpolatorApi14;->mY:[F
@@ -264,7 +264,7 @@
 
     return p1
 
-    :cond_37
+    :cond_4
     sub-float/2addr p1, v2
 
     div-float/2addr p1, v4

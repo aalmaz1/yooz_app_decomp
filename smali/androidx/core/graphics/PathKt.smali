@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static final and(Landroid/graphics/Path;Landroid/graphics/Path;)Landroid/graphics/Path;
-    .registers 4
+    .locals 2
 
     .line 67
     new-instance v0, Landroid/graphics/Path;
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final flatten(Landroid/graphics/Path;F)Ljava/lang/Iterable;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,16 +78,16 @@
 .end method
 
 .method public static synthetic flatten$default(Landroid/graphics/Path;FILjava/lang/Object;)Ljava/lang/Iterable;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     const/high16 p1, 0x3f000000    # 0.5f
 
     .line 36
-    :cond_6
+    :cond_0
     invoke-static {p0, p1}, Landroidx/core/graphics/PathKt;->flatten(Landroid/graphics/Path;F)Ljava/lang/Iterable;
 
     move-result-object p0
@@ -96,7 +96,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Path;Landroid/graphics/Path;)Landroid/graphics/Path;
-    .registers 3
+    .locals 1
 
     .line 52
     new-instance v0, Landroid/graphics/Path;
@@ -112,7 +112,7 @@
 .end method
 
 .method public static final or(Landroid/graphics/Path;Landroid/graphics/Path;)Landroid/graphics/Path;
-    .registers 3
+    .locals 1
 
     .line 81
     new-instance v0, Landroid/graphics/Path;
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Path;Landroid/graphics/Path;)Landroid/graphics/Path;
-    .registers 3
+    .locals 1
 
     .line 43
     new-instance v0, Landroid/graphics/Path;
@@ -144,7 +144,7 @@
 .end method
 
 .method public static final xor(Landroid/graphics/Path;Landroid/graphics/Path;)Landroid/graphics/Path;
-    .registers 3
+    .locals 1
 
     .line 76
     new-instance v0, Landroid/graphics/Path;

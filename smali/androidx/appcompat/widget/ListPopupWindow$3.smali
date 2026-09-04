@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/ListPopupWindow;)V
-    .registers 2
+    .locals 0
 
     .line 1189
     iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$3;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,26 +49,26 @@
 
     const/4 p1, -0x1
 
-    if-eq p3, p1, :cond_d
+    if-eq p3, p1, :cond_0
 
     .line 1195
     iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$3;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
 
     iget-object p1, p1, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList:Landroidx/appcompat/widget/DropDownListView;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     const/4 p2, 0x0
 
     .line 1198
     invoke-virtual {p1, p2}, Landroidx/appcompat/widget/DropDownListView;->setListSelectionHidden(Z)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

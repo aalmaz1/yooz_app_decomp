@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/ProcessingCaptureSession;Landroidx/camera/core/impl/CaptureConfig;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -43,7 +43,7 @@
 .end method
 
 .method static synthetic lambda$onCaptureFailed$0(Landroidx/camera/core/impl/CaptureConfig;)V
-    .registers 4
+    .locals 3
 
     .line 422
     invoke-virtual {p0}, Landroidx/camera/core/impl/CaptureConfig;->getCameraCaptureCallbacks()Ljava/util/List;
@@ -54,12 +54,12 @@
 
     move-result-object p0
 
-    :goto_8
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -76,14 +76,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/camera/core/impl/CameraCaptureCallback;->onCaptureFailed(Landroidx/camera/core/impl/CameraCaptureFailure;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method static synthetic lambda$onCaptureSequenceCompleted$1(Landroidx/camera/core/impl/CaptureConfig;)V
-    .registers 3
+    .locals 2
 
     .line 433
     invoke-virtual {p0}, Landroidx/camera/core/impl/CaptureConfig;->getCameraCaptureCallbacks()Ljava/util/List;
@@ -94,12 +94,12 @@
 
     move-result-object p0
 
-    :goto_8
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -114,16 +114,16 @@
 
     invoke-virtual {v0, v1}, Landroidx/camera/core/impl/CameraCaptureCallback;->onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public onCaptureFailed(I)V
-    .registers 4
+    .locals 2
 
     .line 420
     iget-object p1, p0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$3;->this$0:Landroidx/camera/camera2/internal/ProcessingCaptureSession;
@@ -142,7 +142,7 @@
 .end method
 
 .method public onCaptureSequenceCompleted(I)V
-    .registers 4
+    .locals 2
 
     .line 431
     iget-object p1, p0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$3;->this$0:Landroidx/camera/camera2/internal/ProcessingCaptureSession;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/app/ActivityOptions;)V
-    .registers 2
+    .locals 0
 
     .line 249
     invoke-direct {p0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public getLaunchBounds()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 289
     iget-object v0, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;
@@ -47,7 +47,7 @@
 .end method
 
 .method public requestUsageTimeReport(Landroid/app/PendingIntent;)V
-    .registers 3
+    .locals 1
 
     .line 270
     iget-object v0, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;
@@ -58,7 +58,7 @@
 .end method
 
 .method public setLaunchBounds(Landroid/graphics/Rect;)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 4
+    .locals 2
 
     .line 280
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -76,19 +76,19 @@
 .end method
 
 .method public setShareIdentityEnabled(Z)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 4
+    .locals 2
 
     .line 294
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-ge v0, v1, :cond_7
+    if-ge v0, v1, :cond_0
 
     return-object p0
 
     .line 297
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
 
     iget-object v1, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;
@@ -104,7 +104,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 255
     iget-object v0, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;
@@ -117,12 +117,12 @@
 .end method
 
 .method public update(Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 3
+    .locals 1
 
     .line 260
     instance-of v0, p1, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 261
     check-cast p1, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -134,6 +134,6 @@
 
     invoke-virtual {v0, p1}, Landroid/app/ActivityOptions;->update(Landroid/app/ActivityOptions;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method

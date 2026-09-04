@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -31,7 +31,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/io/TempFileCreator$1;)V
-    .registers 2
+    .locals 0
 
     .line 295
     invoke-direct {p0}, Lcom/google/common/io/TempFileCreator$ThrowingCreator;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method createTempDir()Ljava/io/File;
-    .registers 3
+    .locals 2
 
     .line 304
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -55,7 +55,7 @@
 .end method
 
 .method createTempFile(Ljava/lang/String;)Ljava/io/File;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

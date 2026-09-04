@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 118
     invoke-direct {p0}, Landroidx/camera/video/AudioSpec$Builder;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/video/AudioSpec;)V
-    .registers 3
+    .locals 1
 
     .line 120
     invoke-direct {p0}, Landroidx/camera/video/AudioSpec$Builder;-><init>()V
@@ -109,7 +109,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/AudioSpec;Landroidx/camera/video/AutoValue_AudioSpec$1;)V
-    .registers 3
+    .locals 0
 
     .line 112
     invoke-direct {p0, p1}, Landroidx/camera/video/AutoValue_AudioSpec$Builder;-><init>(Landroidx/camera/video/AudioSpec;)V
@@ -120,25 +120,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/AudioSpec;
-    .registers 10
+    .locals 9
 
     .line 161
     iget-object v0, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->bitrate:Landroid/util/Range;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " bitrate"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 164
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->sourceFormat:Ljava/lang/Integer;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 165
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,10 +160,10 @@
     move-result-object v0
 
     .line 167
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->source:Ljava/lang/Integer;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 168
     new-instance v1, Ljava/lang/StringBuilder;
@@ -185,10 +185,10 @@
     move-result-object v0
 
     .line 170
-    :cond_37
+    :cond_2
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->sampleRate:Landroid/util/Range;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_3
 
     .line 171
     new-instance v1, Ljava/lang/StringBuilder;
@@ -210,10 +210,10 @@
     move-result-object v0
 
     .line 173
-    :cond_4e
+    :cond_3
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->channelCount:Ljava/lang/Integer;
 
-    if-nez v1, :cond_65
+    if-nez v1, :cond_4
 
     .line 174
     new-instance v1, Ljava/lang/StringBuilder;
@@ -235,12 +235,12 @@
     move-result-object v0
 
     .line 176
-    :cond_65
+    :cond_4
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_89
+    if-eqz v1, :cond_5
 
     .line 179
     new-instance v0, Landroidx/camera/video/AutoValue_AudioSpec;
@@ -279,7 +279,7 @@
     return-object v0
 
     .line 177
-    :cond_89
+    :cond_5
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -302,7 +302,7 @@
 .end method
 
 .method public setBitrate(Landroid/util/Range;)Landroidx/camera/video/AudioSpec$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -313,7 +313,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 132
     iput-object p1, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->bitrate:Landroid/util/Range;
@@ -321,7 +321,7 @@
     return-object p0
 
     .line 130
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null bitrate"
@@ -332,7 +332,7 @@
 .end method
 
 .method public setChannelCount(I)Landroidx/camera/video/AudioSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 155
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -345,7 +345,7 @@
 .end method
 
 .method public setSampleRate(Landroid/util/Range;)Landroidx/camera/video/AudioSpec$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -356,7 +356,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 150
     iput-object p1, p0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;->sampleRate:Landroid/util/Range;
@@ -364,7 +364,7 @@
     return-object p0
 
     .line 148
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null sampleRate"
@@ -375,7 +375,7 @@
 .end method
 
 .method public setSource(I)Landroidx/camera/video/AudioSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 142
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -388,7 +388,7 @@
 .end method
 
 .method public setSourceFormat(I)Landroidx/camera/video/AudioSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 137
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

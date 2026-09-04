@@ -45,19 +45,19 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0xd
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/cardview/R$styleable;->CardView:[I
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 4
         0x101013f
         0x1010140
@@ -76,7 +76,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

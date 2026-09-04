@@ -100,7 +100,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public varargs constructor <init>(Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;Landroidx/media3/exoplayer/audio/AudioCapabilities;[Landroidx/media3/common/audio/AudioProcessor;)V
-    .registers 7
+    .locals 2
 
     .line 201
     new-instance v0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
@@ -153,7 +153,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;Landroidx/media3/exoplayer/audio/AudioSink;)V
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public varargs constructor <init>(Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;[Landroidx/media3/common/audio/AudioProcessor;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -221,7 +221,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;Z)Z
-    .registers 2
+    .locals 0
 
     .line 96
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->hasPendingReportedSkippedSilence:Z
@@ -230,7 +230,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;)Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;
-    .registers 1
+    .locals 0
 
     .line 96
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->eventDispatcher:Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;
@@ -239,7 +239,7 @@
 .end method
 
 .method private drainOutputBuffer()Z
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;,
@@ -255,7 +255,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2
 
     .line 412
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
@@ -268,15 +268,15 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     return v1
 
     .line 416
-    :cond_12
+    :cond_0
     iget v0, v0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->skippedOutputBufferCount:I
 
-    if-lez v0, :cond_26
+    if-lez v0, :cond_1
 
     .line 417
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
@@ -297,20 +297,20 @@
     invoke-interface {v0}, Landroidx/media3/exoplayer/audio/AudioSink;->handleDiscontinuity()V
 
     .line 420
-    :cond_26
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->isFirstSample()Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     .line 421
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->processFirstSampleOfStream()V
 
     .line 425
-    :cond_31
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->isEndOfStream()Z
@@ -321,14 +321,14 @@
 
     const/4 v3, 0x1
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_4
 
     .line 426
     iget v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReinitializationState:I
 
     const/4 v4, 0x2
 
-    if-ne v0, v4, :cond_49
+    if-ne v0, v4, :cond_3
 
     .line 428
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->releaseDecoder()V
@@ -339,10 +339,10 @@
     .line 431
     iput-boolean v3, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioTrackNeedsConfigure:Z
 
-    goto :goto_53
+    goto :goto_0
 
     .line 433
-    :cond_49
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->release()V
@@ -351,15 +351,15 @@
     iput-object v2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
     .line 436
-    :try_start_50
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->processEndOfStream()V
-    :try_end_53
-    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_50 .. :try_end_53} :catch_54
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_53
+    :goto_0
     return v1
 
-    :catch_54
+    :catch_0
     move-exception v0
 
     .line 438
@@ -376,10 +376,10 @@
     throw v0
 
     .line 445
-    :cond_60
+    :cond_4
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioTrackNeedsConfigure:Z
 
-    if-eqz v0, :cond_cb
+    if-eqz v0, :cond_5
 
     .line 446
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
@@ -500,7 +500,7 @@
     iput-boolean v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioTrackNeedsConfigure:Z
 
     .line 464
-    :cond_cb
+    :cond_5
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     iget-object v4, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
@@ -515,7 +515,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_ea
+    if-eqz v0, :cond_6
 
     .line 466
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
@@ -536,12 +536,12 @@
 
     return v3
 
-    :cond_ea
+    :cond_6
     return v1
 .end method
 
 .method private feedInputBuffer()Z
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;,
@@ -554,25 +554,25 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_8
 
     iget v2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReinitializationState:I
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_94
+    if-eq v2, v3, :cond_8
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputStreamEnded:Z
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
-    goto/16 :goto_94
+    goto/16 :goto_0
 
     .line 504
-    :cond_10
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_1
 
     .line 505
     invoke-interface {v0}, Landroidx/media3/decoder/Decoder;->dequeueInputBuffer()Ljava/lang/Object;
@@ -583,19 +583,19 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     return v1
 
     .line 511
-    :cond_1f
+    :cond_1
     iget v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReinitializationState:I
 
     const/4 v2, 0x0
 
     const/4 v4, 0x1
 
-    if-ne v0, v4, :cond_37
+    if-ne v0, v4, :cond_2
 
     .line 512
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -620,7 +620,7 @@
     return v1
 
     .line 519
-    :cond_37
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
 
     move-result-object v0
@@ -634,20 +634,20 @@
 
     const/4 v5, -0x5
 
-    if-eq v3, v5, :cond_90
+    if-eq v3, v5, :cond_7
 
     const/4 v0, -0x4
 
-    if-eq v3, v0, :cond_51
+    if-eq v3, v0, :cond_4
 
     const/4 v0, -0x3
 
-    if-ne v3, v0, :cond_4b
+    if-ne v3, v0, :cond_3
 
     return v1
 
     .line 545
-    :cond_4b
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -655,14 +655,14 @@
     throw v0
 
     .line 527
-    :cond_51
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
 
     move-result v0
 
-    if-eqz v0, :cond_65
+    if-eqz v0, :cond_5
 
     .line 528
     iput-boolean v4, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputStreamEnded:Z
@@ -680,10 +680,10 @@
     return v1
 
     .line 533
-    :cond_65
+    :cond_5
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->firstStreamSampleRead:Z
 
-    if-nez v0, :cond_72
+    if-nez v0, :cond_6
 
     .line 534
     iput-boolean v4, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->firstStreamSampleRead:Z
@@ -696,7 +696,7 @@
     invoke-virtual {v0, v1}, Landroidx/media3/decoder/DecoderInputBuffer;->addFlag(I)V
 
     .line 537
-    :cond_72
+    :cond_6
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->flip()V
@@ -733,18 +733,18 @@
     return v4
 
     .line 524
-    :cond_90
+    :cond_7
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->onInputFormatChanged(Landroidx/media3/exoplayer/FormatHolder;)V
 
     return v4
 
-    :cond_94
-    :goto_94
+    :cond_8
+    :goto_0
     return v1
 .end method
 
 .method private flushDecoder()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -754,7 +754,7 @@
     .line 555
     iget v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReinitializationState:I
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 556
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->releaseDecoder()V
@@ -762,9 +762,9 @@
     .line 557
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->maybeInitDecoder()V
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 559
@@ -773,7 +773,7 @@
     .line 560
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 561
     invoke-virtual {v1}, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->release()V
@@ -782,7 +782,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
     .line 564
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -806,12 +806,12 @@
     .line 567
     iput-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReceivedBuffers:Z
 
-    :goto_2c
+    :goto_0
     return-void
 .end method
 
 .method private maybeInitDecoder()V
-    .registers 13
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -821,12 +821,12 @@
     .line 724
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 728
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->sourceDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->setDecoderDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
@@ -834,14 +834,14 @@
     .line 731
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_2
 
     .line 732
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/DrmSession;->getCryptoConfig()Landroidx/media3/decoder/CryptoConfig;
 
     move-result-object v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_3
 
     .line 734
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
@@ -850,22 +850,22 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     return-void
 
-    :cond_1e
+    :cond_2
     const/4 v0, 0x0
 
-    :cond_1f
-    :goto_1f
+    :cond_3
+    :goto_0
     const/16 v1, 0xfa1
 
     .line 746
-    :try_start_21
+    :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -922,13 +922,13 @@
     add-int/lit8 v2, v2, 0x1
 
     iput v2, v0, Landroidx/media3/exoplayer/DecoderCounters;->decoderInitCount:I
-    :try_end_55
-    .catch Landroidx/media3/decoder/DecoderException; {:try_start_21 .. :try_end_55} :catch_5e
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_21 .. :try_end_55} :catch_56
+    :try_end_0
+    .catch Landroidx/media3/decoder/DecoderException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_56
+    :catch_0
     move-exception v0
 
     .line 763
@@ -940,7 +940,7 @@
 
     throw v0
 
-    :catch_5e
+    :catch_1
     move-exception v0
 
     const-string v2, "DecoderAudioRenderer"
@@ -966,7 +966,7 @@
 .end method
 
 .method private onInputFormatChanged(Landroidx/media3/exoplayer/FormatHolder;)V
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1008,7 +1008,7 @@
     .line 800
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-nez p1, :cond_2a
+    if-nez p1, :cond_0
 
     .line 801
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->maybeInitDecoder()V
@@ -1025,12 +1025,12 @@
     return-void
 
     .line 807
-    :cond_2a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->sourceDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eq v0, v1, :cond_40
+    if-eq v0, v1, :cond_1
 
     .line 808
     new-instance p1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1050,10 +1050,10 @@
 
     invoke-direct/range {v1 .. v6}, Landroidx/media3/exoplayer/DecoderReuseEvaluation;-><init>(Ljava/lang/String;Landroidx/media3/common/Format;Landroidx/media3/common/Format;II)V
 
-    goto :goto_48
+    goto :goto_0
 
     .line 816
-    :cond_40
+    :cond_1
     invoke-interface {p1}, Landroidx/media3/decoder/Decoder;->getName()Ljava/lang/String;
 
     move-result-object p1
@@ -1063,25 +1063,25 @@
     move-result-object p1
 
     .line 819
-    :goto_48
+    :goto_0
     iget v0, p1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->result:I
 
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_3
 
     .line 820
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReceivedBuffers:Z
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_2
 
     .line 822
     iput v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderReinitializationState:I
 
-    goto :goto_5c
+    goto :goto_1
 
     .line 825
-    :cond_54
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->releaseDecoder()V
 
     .line 826
@@ -1091,8 +1091,8 @@
     iput-boolean v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioTrackNeedsConfigure:Z
 
     .line 830
-    :cond_5c
-    :goto_5c
+    :cond_3
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->eventDispatcher:Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputFormat:Landroidx/media3/common/Format;
@@ -1103,7 +1103,7 @@
 .end method
 
 .method private processEndOfStream()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/audio/AudioSink$WriteException;
@@ -1124,7 +1124,7 @@
 .end method
 
 .method private processFirstSampleOfStream()V
-    .registers 5
+    .locals 4
 
     .line 476
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -1134,7 +1134,7 @@
     .line 477
     iget v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetCount:I
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 478
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetsUs:[J
@@ -1159,12 +1159,12 @@
 
     invoke-static {v3, v2, v3, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method private releaseDecoder()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1185,7 +1185,7 @@
     .line 773
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 774
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
@@ -1216,14 +1216,14 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
     .line 779
-    :cond_28
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->setDecoderDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
 
     return-void
 .end method
 
 .method private setDecoderDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 3
+    .locals 1
 
     .line 788
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
@@ -1237,7 +1237,7 @@
 .end method
 
 .method private setOutputStreamOffsetUs(J)V
-    .registers 5
+    .locals 2
 
     .line 490
     iput-wide p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputStreamOffsetUs:J
@@ -1246,19 +1246,19 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 492
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-interface {v0, p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink;->setOutputStreamOffsetUs(J)V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method private setSourceDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 3
+    .locals 1
 
     .line 783
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->sourceDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
@@ -1272,7 +1272,7 @@
 .end method
 
 .method private updateCurrentPosition()V
-    .registers 5
+    .locals 4
 
     .line 834
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -1289,24 +1289,24 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
     .line 837
     iget-boolean v2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->allowPositionDiscontinuity:Z
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 839
-    :cond_15
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->currentPositionUs:J
 
     invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
 
-    :goto_1b
+    :goto_0
     iput-wide v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->currentPositionUs:J
 
     const/4 v0, 0x0
@@ -1314,14 +1314,14 @@
     .line 840
     iput-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->allowPositionDiscontinuity:Z
 
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method protected canReuseDecoder(Ljava/lang/String;Landroidx/media3/common/Format;Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/DecoderReuseEvaluation;
-    .registers 11
+    .locals 7
 
     .line 401
     new-instance v6, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1361,7 +1361,7 @@
 .end method
 
 .method protected getChannelMapping(Landroidx/media3/decoder/Decoder;)[I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)[I"
@@ -1374,7 +1374,7 @@
 .end method
 
 .method public getMediaClock()Landroidx/media3/exoplayer/MediaClock;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
@@ -1389,7 +1389,7 @@
 .end method
 
 .method public getPlaybackParameters()Landroidx/media3/common/PlaybackParameters;
-    .registers 2
+    .locals 1
 
     .line 604
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -1402,7 +1402,7 @@
 .end method
 
 .method public getPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 584
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->getState()I
@@ -1411,20 +1411,20 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     .line 585
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->updateCurrentPosition()V
 
     .line 587
-    :cond_a
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->currentPositionUs:J
 
     return-wide v0
 .end method
 
 .method protected final getSinkFormatSupport(Landroidx/media3/common/Format;)I
-    .registers 3
+    .locals 1
 
     .line 277
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -1437,7 +1437,7 @@
 .end method
 
 .method public handleMessage(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1446,35 +1446,35 @@
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_4d
+    if-eq p1, v0, :cond_5
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_45
+    if-eq p1, v0, :cond_4
 
     const/4 v0, 0x6
 
-    if-eq p1, v0, :cond_3d
+    if-eq p1, v0, :cond_3
 
     const/16 v0, 0xc
 
-    if-eq p1, v0, :cond_31
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0x9
 
-    if-eq p1, v0, :cond_25
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0xa
 
-    if-eq p1, v0, :cond_19
+    if-eq p1, v0, :cond_0
 
     .line 718
     invoke-super {p0, p1, p2}, Landroidx/media3/exoplayer/BaseRenderer;->handleMessage(ILjava/lang/Object;)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 704
-    :cond_19
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     check-cast p2, Ljava/lang/Integer;
@@ -1485,10 +1485,10 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink;->setAudioSessionId(I)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 701
-    :cond_25
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     check-cast p2, Ljava/lang/Boolean;
@@ -1499,25 +1499,25 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink;->setSkipSilenceEnabled(Z)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 707
-    :cond_31
+    :cond_2
     sget p1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v0, 0x17
 
-    if-lt p1, v0, :cond_58
+    if-lt p1, v0, :cond_6
 
     .line 708
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer$Api23;->setAudioSinkPreferredDevice(Landroidx/media3/exoplayer/audio/AudioSink;Ljava/lang/Object;)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 697
-    :cond_3d
+    :cond_3
     check-cast p2, Landroidx/media3/common/AuxEffectInfo;
 
     .line 698
@@ -1525,10 +1525,10 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink;->setAuxEffectInfo(Landroidx/media3/common/AuxEffectInfo;)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 693
-    :cond_45
+    :cond_4
     check-cast p2, Landroidx/media3/common/AudioAttributes;
 
     .line 694
@@ -1536,10 +1536,10 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink;->setAudioAttributes(Landroidx/media3/common/AudioAttributes;)V
 
-    goto :goto_58
+    goto :goto_0
 
     .line 690
-    :cond_4d
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     check-cast p2, Ljava/lang/Float;
@@ -1550,13 +1550,13 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink;->setVolume(F)V
 
-    :cond_58
-    :goto_58
+    :cond_6
+    :goto_0
     return-void
 .end method
 
 .method public hasSkippedSilenceSinceLastCall()Z
-    .registers 3
+    .locals 2
 
     .line 592
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->hasPendingReportedSkippedSilence:Z
@@ -1570,12 +1570,12 @@
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 573
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputStreamEnded:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
@@ -1583,21 +1583,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     .line 578
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -1606,40 +1606,40 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputFormat:Landroidx/media3/common/Format;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 579
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->isSourceReady()Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->outputBuffer:Landroidx/media3/decoder/SimpleDecoderOutputBuffer;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1a
+    :goto_1
     return v0
 .end method
 
 .method protected onDisabled()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1662,7 +1662,7 @@
     iput-boolean v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->hasPendingReportedSkippedSilence:Z
 
     .line 653
-    :try_start_11
+    :try_start_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->setSourceDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
 
     .line 654
@@ -1672,8 +1672,8 @@
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/audio/AudioSink;->reset()V
-    :try_end_1c
-    .catchall {:try_start_11 .. :try_end_1c} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 657
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->eventDispatcher:Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;
@@ -1684,7 +1684,7 @@
 
     return-void
 
-    :catchall_24
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->eventDispatcher:Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;
@@ -1698,7 +1698,7 @@
 .end method
 
 .method protected onEnabled(ZZ)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1724,23 +1724,23 @@
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/RendererConfiguration;->tunneling:Z
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 613
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/audio/AudioSink;->enableTunnelingV21()V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 615
-    :cond_1a
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/audio/AudioSink;->disableTunneling()V
 
     .line 617
-    :goto_1f
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->getPlayerId()Landroidx/media3/exoplayer/analytics/PlayerId;
@@ -1762,7 +1762,7 @@
 .end method
 
 .method protected onPositionDiscontinuity()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1773,7 +1773,7 @@
 .end method
 
 .method protected onPositionReset(JZ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1807,17 +1807,17 @@
     .line 630
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 631
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->flushDecoder()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method protected onStarted()V
-    .registers 2
+    .locals 1
 
     .line 637
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -1828,7 +1828,7 @@
 .end method
 
 .method protected onStopped()V
-    .registers 2
+    .locals 1
 
     .line 642
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->updateCurrentPosition()V
@@ -1842,7 +1842,7 @@
 .end method
 
 .method protected onStreamChanged([Landroidx/media3/common/Format;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 9
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1864,22 +1864,22 @@
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     .line 671
     invoke-direct {p0, p4, p5}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->setOutputStreamOffsetUs(J)V
 
-    goto :goto_45
+    goto :goto_1
 
     .line 673
-    :cond_15
+    :cond_0
     iget p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetCount:I
 
     iget-object p2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetsUs:[J
 
     array-length p2, p2
 
-    if-ne p1, p2, :cond_39
+    if-ne p1, p2, :cond_1
 
     .line 674
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1908,16 +1908,16 @@
 
     invoke-static {p2, p1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_3d
+    goto :goto_0
 
-    :cond_39
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
     .line 679
     iput p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetCount:I
 
     .line 681
-    :goto_3d
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetsUs:[J
 
     iget p2, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->pendingOutputStreamOffsetCount:I
@@ -1926,12 +1926,12 @@
 
     aput-wide p4, p1, p2
 
-    :goto_45
+    :goto_1
     return-void
 .end method
 
 .method public render(JJ)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1943,19 +1943,19 @@
 
     const/16 p2, 0x138a
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 284
-    :try_start_6
+    :try_start_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/audio/AudioSink;->playToEndOfStream()V
-    :try_end_b
-    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_6 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_c
+    :catch_0
     move-exception p1
 
     .line 286
@@ -1970,10 +1970,10 @@
     throw p1
 
     .line 293
-    :cond_16
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputFormat:Landroidx/media3/common/Format;
 
-    if-nez p1, :cond_4c
+    if-nez p1, :cond_3
 
     .line 295
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
@@ -1996,17 +1996,17 @@
 
     const/4 p4, -0x5
 
-    if-ne p3, p4, :cond_31
+    if-ne p3, p4, :cond_1
 
     .line 299
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->onInputFormatChanged(Landroidx/media3/exoplayer/FormatHolder;)V
 
-    goto :goto_4c
+    goto :goto_0
 
-    :cond_31
+    :cond_1
     const/4 p1, -0x4
 
-    if-ne p3, p1, :cond_4b
+    if-ne p3, p1, :cond_2
 
     .line 302
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->flagsOnlyBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -2023,14 +2023,14 @@
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->inputStreamEnded:Z
 
     .line 305
-    :try_start_40
+    :try_start_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->processEndOfStream()V
-    :try_end_43
-    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_40 .. :try_end_43} :catch_44
+    :try_end_1
+    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_1 .. :try_end_1} :catch_1
 
     return-void
 
-    :catch_44
+    :catch_1
     move-exception p1
 
     const/4 p3, 0x0
@@ -2042,65 +2042,65 @@
 
     throw p1
 
-    :cond_4b
+    :cond_2
     return-void
 
     .line 318
-    :cond_4c
-    :goto_4c
+    :cond_3
+    :goto_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->maybeInitDecoder()V
 
     .line 320
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz p1, :cond_a3
+    if-eqz p1, :cond_6
 
     const/16 p1, 0x1389
 
-    :try_start_55
+    :try_start_2
     const-string p3, "drainAndFeed"
 
     .line 323
     invoke-static {p3}, Landroidx/media3/common/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
     .line 324
-    :goto_5a
+    :goto_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->drainOutputBuffer()Z
 
     move-result p3
 
-    if-eqz p3, :cond_61
+    if-eqz p3, :cond_4
 
-    goto :goto_5a
+    goto :goto_1
 
     .line 325
-    :cond_61
-    :goto_61
+    :cond_4
+    :goto_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->feedInputBuffer()Z
 
     move-result p3
 
-    if-eqz p3, :cond_68
+    if-eqz p3, :cond_5
 
-    goto :goto_61
+    goto :goto_2
 
     .line 326
-    :cond_68
+    :cond_5
     invoke-static {}, Landroidx/media3/common/util/TraceUtil;->endSection()V
-    :try_end_6b
-    .catch Landroidx/media3/decoder/DecoderException; {:try_start_55 .. :try_end_6b} :catch_8d
-    .catch Landroidx/media3/exoplayer/audio/AudioSink$ConfigurationException; {:try_start_55 .. :try_end_6b} :catch_85
-    .catch Landroidx/media3/exoplayer/audio/AudioSink$InitializationException; {:try_start_55 .. :try_end_6b} :catch_7b
-    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_55 .. :try_end_6b} :catch_71
+    :try_end_2
+    .catch Landroidx/media3/decoder/DecoderException; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Landroidx/media3/exoplayer/audio/AudioSink$ConfigurationException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Landroidx/media3/exoplayer/audio/AudioSink$InitializationException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Landroidx/media3/exoplayer/audio/AudioSink$WriteException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 342
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
 
-    goto :goto_a3
+    goto :goto_3
 
-    :catch_71
+    :catch_2
     move-exception p1
 
     .line 339
@@ -2114,7 +2114,7 @@
 
     throw p1
 
-    :catch_7b
+    :catch_3
     move-exception p2
 
     .line 336
@@ -2128,7 +2128,7 @@
 
     throw p1
 
-    :catch_85
+    :catch_4
     move-exception p2
 
     .line 333
@@ -2140,7 +2140,7 @@
 
     throw p1
 
-    :catch_8d
+    :catch_5
     move-exception p1
 
     const-string p2, "DecoderAudioRenderer"
@@ -2166,13 +2166,13 @@
 
     throw p1
 
-    :cond_a3
-    :goto_a3
+    :cond_6
+    :goto_3
     return-void
 .end method
 
 .method public setPlaybackParameters(Landroidx/media3/common/PlaybackParameters;)V
-    .registers 3
+    .locals 1
 
     .line 599
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -2183,7 +2183,7 @@
 .end method
 
 .method protected final sinkSupportsFormat(Landroidx/media3/common/Format;)Z
-    .registers 3
+    .locals 1
 
     .line 267
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->audioSink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -2196,7 +2196,7 @@
 .end method
 
 .method public final supportsFormat(Landroidx/media3/common/Format;)I
-    .registers 5
+    .locals 3
 
     .line 240
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -2207,7 +2207,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 241
     invoke-static {v1}, Landroidx/media3/exoplayer/RendererCapabilities;->create(I)I
@@ -2217,14 +2217,14 @@
     return p1
 
     .line 243
-    :cond_e
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/audio/DecoderAudioRenderer;->supportsFormatInternal(Landroidx/media3/common/Format;)I
 
     move-result p1
 
     const/4 v0, 0x2
 
-    if-gt p1, v0, :cond_1a
+    if-gt p1, v0, :cond_1
 
     .line 245
     invoke-static {p1}, Landroidx/media3/exoplayer/RendererCapabilities;->create(I)I
@@ -2234,16 +2234,16 @@
     return p1
 
     .line 248
-    :cond_1a
+    :cond_1
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x15
 
-    if-lt v0, v2, :cond_22
+    if-lt v0, v2, :cond_2
 
     const/16 v1, 0x20
 
-    :cond_22
+    :cond_2
     const/16 v0, 0x8
 
     .line 249

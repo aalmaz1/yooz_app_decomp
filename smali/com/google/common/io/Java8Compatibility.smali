@@ -10,7 +10,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 .end method
 
 .method static clear(Ljava/nio/Buffer;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -36,7 +36,7 @@
 .end method
 
 .method static flip(Ljava/nio/Buffer;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -53,7 +53,7 @@
 .end method
 
 .method static limit(Ljava/nio/Buffer;I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -72,7 +72,7 @@
 .end method
 
 .method static mark(Ljava/nio/Buffer;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -89,7 +89,7 @@
 .end method
 
 .method static position(Ljava/nio/Buffer;I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -108,7 +108,7 @@
 .end method
 
 .method static reset(Ljava/nio/Buffer;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

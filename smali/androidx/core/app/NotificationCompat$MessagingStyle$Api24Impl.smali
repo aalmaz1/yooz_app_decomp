@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 4437
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static addMessage(Landroid/app/Notification$MessagingStyle;Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
-    .registers 2
+    .locals 0
 
     .line 4448
     invoke-virtual {p0, p1}, Landroid/app/Notification$MessagingStyle;->addMessage(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
@@ -36,7 +36,7 @@
 .end method
 
 .method static createMessagingStyle(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
-    .registers 2
+    .locals 1
 
     .line 4441
     new-instance v0, Landroid/app/Notification$MessagingStyle;
@@ -47,7 +47,7 @@
 .end method
 
 .method static setConversationTitle(Landroid/app/Notification$MessagingStyle;Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
-    .registers 2
+    .locals 0
 
     .line 4454
     invoke-virtual {p0, p1}, Landroid/app/Notification$MessagingStyle;->setConversationTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;

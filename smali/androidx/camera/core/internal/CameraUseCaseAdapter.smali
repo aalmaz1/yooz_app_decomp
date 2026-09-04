@@ -92,7 +92,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/LinkedHashSet;Landroidx/camera/core/concurrent/CameraCoordinator;Landroidx/camera/core/impl/CameraDeviceSurfaceManager;Landroidx/camera/core/impl/UseCaseConfigFactory;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -218,7 +218,7 @@
 .end method
 
 .method private cacheInteropConfig()V
-    .registers 4
+    .locals 3
 
     .line 625
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -226,7 +226,7 @@
     monitor-enter v0
 
     .line 626
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
 
     .line 627
@@ -249,18 +249,18 @@
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method static calculateCameraUseCases(Ljava/util/Collection;Landroidx/camera/core/UseCase;Landroidx/camera/core/streamsharing/StreamSharing;)Ljava/util/Collection;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -281,13 +281,13 @@
 
     invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 526
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_a
-    if-eqz p2, :cond_16
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 529
     invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -299,34 +299,34 @@
 
     invoke-interface {v0, p0}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
-    :cond_16
+    :cond_1
     return-object v0
 .end method
 
 .method private static calculateSensorToBufferTransformMatrix(Landroid/graphics/Rect;Landroid/util/Size;)Landroid/graphics/Matrix;
-    .registers 6
+    .locals 4
 
     .line 807
     invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
 
     move-result v0
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
 
     move-result v0
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     const-string v1, "Cannot compute viewport crop rects zero sized sensor rect."
 
     .line 806
@@ -374,7 +374,7 @@
 .end method
 
 .method private calculateSuggestedStreamSpecs(ILandroidx/camera/core/impl/CameraInfoInternal;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Map;)Ljava/util/Map;
-    .registers 26
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -427,14 +427,14 @@
 
     move-result-object v7
 
-    :goto_1d
+    :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
     const/4 v9, 0x0
 
-    if-eqz v8, :cond_74
+    if-eqz v8, :cond_0
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -525,15 +525,15 @@
 
     invoke-interface {v5, v8, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 664
-    :cond_74
+    :cond_0
     invoke-interface/range {p3 .. p3}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v7
 
-    if-nez v7, :cond_12e
+    if-nez v7, :cond_5
 
     .line 665
     new-instance v7, Ljava/util/HashMap;
@@ -546,7 +546,7 @@
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     .line 669
-    :try_start_84
+    :try_start_0
     iget-object v10, v0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
 
     invoke-interface {v10}, Landroidx/camera/core/impl/CameraInternal;->getCameraControlInternal()Landroidx/camera/core/impl/CameraControlInternal;
@@ -556,26 +556,26 @@
     invoke-interface {v10}, Landroidx/camera/core/impl/CameraControlInternal;->getSensorRect()Landroid/graphics/Rect;
 
     move-result-object v10
-    :try_end_8e
-    .catch Ljava/lang/NullPointerException; {:try_start_84 .. :try_end_8e} :catch_8f
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_90
+    goto :goto_1
 
-    :catch_8f
+    :catch_0
     move-object v10, v9
 
     .line 675
-    :goto_90
+    :goto_1
     new-instance v11, Landroidx/camera/core/internal/SupportedOutputSizesSorter;
 
-    if-eqz v10, :cond_98
+    if-eqz v10, :cond_1
 
     .line 677
     invoke-static {v10}, Landroidx/camera/core/impl/utils/TransformUtils;->rectToSize(Landroid/graphics/Rect;)Landroid/util/Size;
 
     move-result-object v9
 
-    :cond_98
+    :cond_1
     invoke-direct {v11, v2, v9}, Landroidx/camera/core/internal/SupportedOutputSizesSorter;-><init>(Landroidx/camera/core/impl/CameraInfoInternal;Landroid/util/Size;)V
 
     .line 678
@@ -583,12 +583,12 @@
 
     move-result-object v9
 
-    :goto_9f
+    :goto_2
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v10
 
-    if-eqz v10, :cond_c6
+    if-eqz v10, :cond_2
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -626,10 +626,10 @@
     .line 685
     invoke-interface {v8, v13, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_9f
+    goto :goto_2
 
     .line 692
-    :cond_c6
+    :cond_2
     iget-object v2, v0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraDeviceSurfaceManager:Landroidx/camera/core/impl/CameraDeviceSurfaceManager;
 
     .line 693
@@ -646,12 +646,12 @@
 
     move-result-object v2
 
-    :goto_d4
+    :goto_3
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_f8
+    if-eqz v3, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -684,10 +684,10 @@
     .line 699
     invoke-interface {v5, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d4
+    goto :goto_3
 
     .line 703
-    :cond_f8
+    :cond_3
     iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v1, Ljava/util/Map;
@@ -700,13 +700,13 @@
 
     move-result-object v1
 
-    :cond_104
-    :goto_104
+    :cond_4
+    :goto_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_12e
+    if-eqz v2, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -723,7 +723,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_104
+    if-eqz v3, :cond_4
 
     .line 705
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -746,14 +746,14 @@
     .line 705
     invoke-interface {v5, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_104
+    goto :goto_4
 
-    :cond_12e
+    :cond_5
     return-object v5
 .end method
 
 .method private createExtraImageCapture()Landroidx/camera/core/ImageCapture;
-    .registers 3
+    .locals 2
 
     .line 1073
     new-instance v0, Landroidx/camera/core/ImageCapture$Builder;
@@ -774,7 +774,7 @@
 .end method
 
 .method private createExtraPreview()Landroidx/camera/core/Preview;
-    .registers 3
+    .locals 2
 
     .line 1052
     new-instance v0, Landroidx/camera/core/Preview$Builder;
@@ -802,7 +802,7 @@
 .end method
 
 .method private createOrReuseStreamSharing(Ljava/util/Collection;Z)Landroidx/camera/core/streamsharing/StreamSharing;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -819,7 +819,7 @@
     monitor-enter v0
 
     .line 477
-    :try_start_3
+    :try_start_0
     invoke-direct {p0, p1, p2}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getStreamSharingChildren(Ljava/util/Collection;Z)Ljava/util/Set;
 
     move-result-object p1
@@ -833,7 +833,7 @@
 
     const/4 v2, 0x0
 
-    if-ge p2, v1, :cond_11
+    if-ge p2, v1, :cond_0
 
     .line 481
     monitor-exit v0
@@ -841,10 +841,10 @@
     return-object v2
 
     .line 483
-    :cond_11
+    :cond_0
     iget-object p2, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mStreamSharing:Landroidx/camera/core/streamsharing/StreamSharing;
 
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_1
 
     invoke-virtual {p2}, Landroidx/camera/core/streamsharing/StreamSharing;->getChildren()Ljava/util/Set;
 
@@ -854,7 +854,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_1
 
     .line 485
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mStreamSharing:Landroidx/camera/core/streamsharing/StreamSharing;
@@ -870,12 +870,12 @@
     return-object p1
 
     .line 488
-    :cond_29
+    :cond_1
     invoke-static {p1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->isStreamSharingChildrenCombinationValid(Ljava/util/Collection;)Z
 
     move-result p2
 
-    if-nez p2, :cond_31
+    if-nez p2, :cond_2
 
     .line 489
     monitor-exit v0
@@ -883,7 +883,7 @@
     return-object v2
 
     .line 492
-    :cond_31
+    :cond_2
     new-instance p2, Landroidx/camera/core/streamsharing/StreamSharing;
 
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -896,19 +896,19 @@
 
     return-object p2
 
-    :catchall_3c
+    :catchall_0
     move-exception p1
 
     .line 493
     monitor-exit v0
-    :try_end_3e
-    .catchall {:try_start_3 .. :try_end_3e} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public static generateCameraId(Ljava/util/LinkedHashSet;)Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -928,7 +928,7 @@
 .end method
 
 .method private getCameraMode()I
-    .registers 4
+    .locals 3
 
     .line 407
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -936,7 +936,7 @@
     monitor-enter v0
 
     .line 408
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraCoordinator:Landroidx/camera/core/concurrent/CameraCoordinator;
 
     invoke-interface {v1}, Landroidx/camera/core/concurrent/CameraCoordinator;->getCameraOperatingMode()I
@@ -945,7 +945,7 @@
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
     .line 410
     monitor-exit v0
@@ -955,25 +955,25 @@
     return v0
 
     .line 412
-    :cond_f
+    :cond_0
     monitor-exit v0
 
     const/4 v0, 0x0
 
     return v0
 
-    :catchall_12
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private static getCaptureTypes(Landroidx/camera/core/UseCase;)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -995,7 +995,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_0
 
     .line 734
     check-cast p0, Landroidx/camera/core/streamsharing/StreamSharing;
@@ -1008,12 +1008,12 @@
 
     move-result-object p0
 
-    :goto_15
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1032,10 +1032,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_15
+    goto :goto_0
 
     .line 738
-    :cond_2d
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/UseCase;->getCurrentConfig()Landroidx/camera/core/impl/UseCaseConfig;
 
     move-result-object p0
@@ -1046,12 +1046,12 @@
 
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_38
+    :cond_1
     return-object v0
 .end method
 
 .method private getConfigs(Ljava/util/Collection;Landroidx/camera/core/impl/UseCaseConfigFactory;Landroidx/camera/core/impl/UseCaseConfigFactory;)Ljava/util/Map;
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1078,12 +1078,12 @@
 
     move-result-object p1
 
-    :goto_9
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1112,14 +1112,14 @@
     .line 836
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     return-object v0
 .end method
 
 .method private getSharingTargets(Z)I
-    .registers 9
+    .locals 7
 
     .line 445
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -1127,7 +1127,7 @@
     monitor-enter v0
 
     .line 448
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mEffects:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1136,15 +1136,15 @@
 
     const/4 v2, 0x0
 
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1163,13 +1163,13 @@
 
     const/4 v6, 0x1
 
-    if-le v5, v6, :cond_a
+    if-le v5, v6, :cond_0
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_1
 
     move v4, v6
 
-    :cond_25
+    :cond_1
     const-string v2, "Can only have one sharing effect."
 
     .line 450
@@ -1177,43 +1177,43 @@
 
     move-object v2, v3
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_2c
-    if-nez v2, :cond_2f
+    :cond_2
+    if-nez v2, :cond_3
 
-    goto :goto_33
+    goto :goto_1
 
     .line 454
-    :cond_2f
+    :cond_3
     invoke-virtual {v2}, Landroidx/camera/core/CameraEffect;->getTargets()I
 
     move-result v4
 
-    :goto_33
-    if-eqz p1, :cond_37
+    :goto_1
+    if-eqz p1, :cond_4
 
     or-int/lit8 v4, v4, 0x3
 
     .line 460
-    :cond_37
+    :cond_4
     monitor-exit v0
 
     return v4
 
-    :catchall_39
+    :catchall_0
     move-exception p1
 
     .line 461
     monitor-exit v0
-    :try_end_3b
-    .catchall {:try_start_3 .. :try_end_3b} :catchall_39
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private getStreamSharingChildren(Ljava/util/Collection;Z)Ljava/util/Set;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1241,13 +1241,13 @@
 
     move-result-object p1
 
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1271,19 +1271,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 437
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-object v0
 .end method
 
 .method private static hasImplementationOptionChanged(Landroidx/camera/core/impl/StreamSpec;Landroidx/camera/core/impl/SessionConfig;)Z
-    .registers 6
+    .locals 4
 
     .line 390
     invoke-virtual {p0}, Landroidx/camera/core/impl/StreamSpec;->getImplementationOptions()Landroidx/camera/core/impl/Config;
@@ -1319,12 +1319,12 @@
 
     const/4 v2, 0x1
 
-    if-eq v1, p1, :cond_20
+    if-eq v1, p1, :cond_0
 
     return v2
 
     .line 396
-    :cond_20
+    :cond_0
     invoke-interface {p0}, Landroidx/camera/core/impl/Config;->listOptions()Ljava/util/Set;
 
     move-result-object p1
@@ -1333,12 +1333,12 @@
 
     move-result-object p1
 
-    :cond_28
+    :cond_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1351,7 +1351,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_2
 
     .line 398
     invoke-interface {v0, v1}, Landroidx/camera/core/impl/Config;->retrieveOption(Landroidx/camera/core/impl/Config$Option;)Ljava/lang/Object;
@@ -1368,19 +1368,19 @@
 
     move-result v1
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_1
 
-    :cond_48
+    :cond_2
     return v2
 
-    :cond_49
+    :cond_3
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method private hasNoExtension()Z
-    .registers 4
+    .locals 3
 
     .line 421
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -1388,40 +1388,40 @@
     monitor-enter v0
 
     .line 422
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraConfig:Landroidx/camera/core/impl/CameraConfig;
 
     invoke-static {}, Landroidx/camera/core/impl/CameraConfigs;->emptyConfig()Landroidx/camera/core/impl/CameraConfig;
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_d
+    if-ne v1, v2, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     monitor-exit v0
 
     return v1
 
-    :catchall_10
+    :catchall_0
     move-exception v1
 
     .line 423
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private isCoexistingPreviewImageCaptureRequired()Z
-    .registers 4
+    .locals 3
 
     .line 995
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -1429,7 +1429,7 @@
     monitor-enter v0
 
     .line 996
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraConfig:Landroidx/camera/core/impl/CameraConfig;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/CameraConfig;->getUseCaseCombinationRequiredRule()I
@@ -1438,31 +1438,31 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_d
+    if-ne v1, v2, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_e
+    :goto_0
     monitor-exit v0
 
     return v2
 
-    :catchall_10
+    :catchall_0
     move-exception v1
 
     .line 998
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private isExtraImageCaptureRequired(Ljava/util/Collection;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1483,15 +1483,15 @@
 
     move v2, v1
 
-    :cond_7
-    :goto_7
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     const/4 v4, 0x1
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1504,37 +1504,37 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1
 
     move v1, v4
 
-    goto :goto_7
+    goto :goto_0
 
     .line 1031
-    :cond_1c
+    :cond_1
     invoke-static {v3}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->isImageCapture(Landroidx/camera/core/UseCase;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_0
 
     move v2, v4
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_24
-    if-eqz v1, :cond_29
+    :cond_2
+    if-eqz v1, :cond_3
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_3
 
     move v0, v4
 
-    :cond_29
+    :cond_3
     return v0
 .end method
 
 .method private isExtraPreviewRequired(Ljava/util/Collection;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1555,15 +1555,15 @@
 
     move v2, v1
 
-    :cond_7
-    :goto_7
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     const/4 v4, 0x1
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1576,37 +1576,37 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1
 
     move v2, v4
 
-    goto :goto_7
+    goto :goto_0
 
     .line 1012
-    :cond_1c
+    :cond_1
     invoke-static {v3}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->isImageCapture(Landroidx/camera/core/UseCase;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_0
 
     move v1, v4
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_24
-    if-eqz v1, :cond_29
+    :cond_2
+    if-eqz v1, :cond_3
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_3
 
     move v0, v4
 
-    :cond_29
+    :cond_3
     return v0
 .end method
 
 .method private static isImageCapture(Landroidx/camera/core/UseCase;)Z
-    .registers 1
+    .locals 0
 
     .line 1048
     instance-of p0, p0, Landroidx/camera/core/ImageCapture;
@@ -1615,7 +1615,7 @@
 .end method
 
 .method private static isPreview(Landroidx/camera/core/UseCase;)Z
-    .registers 1
+    .locals 0
 
     .line 1044
     instance-of p0, p0, Landroidx/camera/core/Preview;
@@ -1624,7 +1624,7 @@
 .end method
 
 .method private static isStreamSharing(Landroidx/camera/core/UseCase;)Z
-    .registers 1
+    .locals 0
 
     .line 1040
     instance-of p0, p0, Landroidx/camera/core/streamsharing/StreamSharing;
@@ -1633,7 +1633,7 @@
 .end method
 
 .method static isStreamSharingChildrenCombinationValid(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1648,7 +1648,7 @@
     new-array v1, v0, [I
 
     .line 501
-    fill-array-data v1, :array_3e
+    fill-array-data v1, :array_0
 
     .line 502
     new-instance v2, Ljava/util/HashSet;
@@ -1660,12 +1660,12 @@
 
     move-result-object p0
 
-    :cond_f
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1677,8 +1677,8 @@
 
     move v5, v4
 
-    :goto_1d
-    if-ge v5, v0, :cond_f
+    :goto_0
+    if-ge v5, v0, :cond_0
 
     .line 505
     aget v6, v1, v5
@@ -1688,7 +1688,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_39
+    if-eqz v7, :cond_2
 
     .line 507
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1699,29 +1699,29 @@
 
     move-result v7
 
-    if-eqz v7, :cond_32
+    if-eqz v7, :cond_1
 
     return v4
 
     .line 511
-    :cond_32
+    :cond_1
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-interface {v2, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :cond_39
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_3c
+    :cond_3
     const/4 p0, 0x1
 
     return p0
 
-    :array_3e
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -1730,7 +1730,7 @@
 .end method
 
 .method static synthetic lambda$createExtraPreview$0(Landroid/view/Surface;Landroid/graphics/SurfaceTexture;Landroidx/camera/core/SurfaceRequest$Result;)V
-    .registers 3
+    .locals 0
 
     .line 1064
     invoke-virtual {p0}, Landroid/view/Surface;->release()V
@@ -1742,7 +1742,7 @@
 .end method
 
 .method static synthetic lambda$createExtraPreview$1(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 5
+    .locals 4
 
     .line 1056
     new-instance v0, Landroid/graphics/SurfaceTexture;
@@ -1796,7 +1796,7 @@
 .end method
 
 .method private restoreInteropConfig()V
-    .registers 4
+    .locals 3
 
     .line 614
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -1804,10 +1804,10 @@
     monitor-enter v0
 
     .line 615
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mInteropConfig:Landroidx/camera/core/impl/Config;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 616
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -1821,23 +1821,23 @@
     invoke-interface {v1, v2}, Landroidx/camera/core/impl/CameraControlInternal;->addInteropConfig(Landroidx/camera/core/impl/Config;)V
 
     .line 618
-    :cond_12
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private static setEffectsOnUseCases(Ljava/util/List;Ljava/util/Collection;)Ljava/util/List;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1863,12 +1863,12 @@
 
     move-result-object p1
 
-    :cond_9
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1886,13 +1886,13 @@
 
     move-result-object v2
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1909,23 +1909,23 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_1
 
     .line 754
     invoke-virtual {v1}, Landroidx/camera/core/UseCase;->getEffect()Landroidx/camera/core/CameraEffect;
 
     move-result-object v4
 
-    if-nez v4, :cond_3b
+    if-nez v4, :cond_2
 
     const/4 v4, 0x1
 
-    goto :goto_3c
+    goto :goto_1
 
-    :cond_3b
+    :cond_2
     const/4 v4, 0x0
 
-    :goto_3c
+    :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1962,14 +1962,14 @@
     .line 757
     invoke-interface {v0, v3}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_61
+    :cond_3
     return-object v0
 .end method
 
 .method static updateEffects(Ljava/util/List;Ljava/util/Collection;Ljava/util/Collection;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2008,7 +2008,7 @@
 
     move-result p1
 
-    if-lez p1, :cond_2a
+    if-lez p1, :cond_0
 
     .line 726
     new-instance p1, Ljava/lang/StringBuilder;
@@ -2029,12 +2029,12 @@
 
     invoke-static {p1, p0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2a
+    :cond_0
     return-void
 .end method
 
 .method private updateViewPort(Ljava/util/Map;Ljava/util/Collection;)V
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2054,10 +2054,10 @@
     monitor-enter v0
 
     .line 767
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mViewPort:Landroidx/camera/core/ViewPort;
 
-    if-eqz v1, :cond_9b
+    if-eqz v1, :cond_2
 
     .line 768
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -2076,7 +2076,7 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_0
 
     const-string v1, "CameraUseCaseAdapter"
 
@@ -2085,22 +2085,22 @@
     .line 774
     invoke-static {v1, v3}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 777
-    :cond_20
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     const/4 v2, 0x0
 
-    :goto_28
+    :goto_0
     move v4, v2
 
     .line 780
@@ -2167,12 +2167,12 @@
 
     move-result-object p2
 
-    :goto_5e
+    :goto_1
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_9b
+    if-eqz v2, :cond_2
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2235,20 +2235,20 @@
     .line 792
     invoke-virtual {v2, v3}, Landroidx/camera/core/UseCase;->setSensorToBufferTransformMatrix(Landroid/graphics/Matrix;)V
 
-    goto :goto_5e
+    goto :goto_1
 
     .line 799
-    :cond_9b
+    :cond_2
     monitor-exit v0
 
     return-void
 
-    :catchall_9d
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9f
-    .catchall {:try_start_3 .. :try_end_9f} :catchall_9d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
@@ -2256,7 +2256,7 @@
 
 # virtual methods
 .method public addUseCases(Ljava/util/Collection;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2278,7 +2278,7 @@
     monitor-enter v0
 
     .line 240
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/LinkedHashSet;
 
     iget-object v2, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAppUseCases:Ljava/util/List;
@@ -2287,23 +2287,23 @@
 
     .line 243
     invoke-interface {v1, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 245
-    :try_start_d
+    :try_start_1
     invoke-virtual {p0, v1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->updateUseCases(Ljava/util/Collection;)V
-    :try_end_10
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_d .. :try_end_10} :catch_12
-    .catchall {:try_start_d .. :try_end_10} :catchall_1d
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 249
-    :try_start_10
+    :try_start_2
     monitor-exit v0
 
     return-void
 
-    :catch_12
+    :catch_0
     move-exception p1
 
     .line 247
@@ -2317,19 +2317,19 @@
 
     throw v1
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 249
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_10 .. :try_end_1f} :catchall_1d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
 .end method
 
 .method public attachUseCases()V
-    .registers 4
+    .locals 3
 
     .line 565
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -2337,10 +2337,10 @@
     monitor-enter v0
 
     .line 566
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAttached:Z
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_1
 
     .line 567
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -2359,12 +2359,12 @@
 
     move-result-object v1
 
-    :goto_17
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2375,32 +2375,32 @@
     .line 573
     invoke-virtual {v2}, Landroidx/camera/core/UseCase;->notifyState()V
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     const/4 v1, 0x1
 
     .line 576
     iput-boolean v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAttached:Z
 
     .line 578
-    :cond_2a
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_2c
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_2e
-    .catchall {:try_start_3 .. :try_end_2e} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method calculatePlaceholderForExtensions(Ljava/util/Collection;)Landroidx/camera/core/UseCase;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2417,19 +2417,19 @@
     monitor-enter v0
 
     .line 975
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->isCoexistingPreviewImageCaptureRequired()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_3
 
     .line 976
     invoke-direct {p0, p1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->isExtraPreviewRequired(Ljava/util/Collection;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     .line 977
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mPlaceholderForExtensions:Landroidx/camera/core/UseCase;
@@ -2438,28 +2438,28 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 978
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mPlaceholderForExtensions:Landroidx/camera/core/UseCase;
 
-    goto :goto_36
+    goto :goto_0
 
     .line 980
-    :cond_1a
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->createExtraPreview()Landroidx/camera/core/Preview;
 
     move-result-object p1
 
-    goto :goto_36
+    goto :goto_0
 
     .line 982
-    :cond_1f
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->isExtraImageCaptureRequired(Ljava/util/Collection;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
     .line 983
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mPlaceholderForExtensions:Landroidx/camera/core/UseCase;
@@ -2468,43 +2468,43 @@
 
     move-result p1
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_2
 
     .line 984
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mPlaceholderForExtensions:Landroidx/camera/core/UseCase;
 
-    goto :goto_36
+    goto :goto_0
 
     .line 986
-    :cond_30
+    :cond_2
     invoke-direct {p0}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->createExtraImageCapture()Landroidx/camera/core/ImageCapture;
 
     move-result-object p1
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_3
     const/4 p1, 0x0
 
     .line 990
-    :goto_36
+    :goto_0
     monitor-exit v0
 
     return-object p1
 
-    :catchall_38
+    :catchall_0
     move-exception p1
 
     .line 991
     monitor-exit v0
-    :try_end_3a
-    .catchall {:try_start_3 .. :try_end_3a} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public detachUseCases()V
-    .registers 5
+    .locals 4
 
     .line 601
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -2512,10 +2512,10 @@
     monitor-enter v0
 
     .line 602
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAttached:Z
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 603
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -2537,23 +2537,23 @@
     iput-boolean v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAttached:Z
 
     .line 607
-    :cond_19
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_1b
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getCameraControl()Landroidx/camera/core/CameraControl;
-    .registers 2
+    .locals 1
 
     .line 896
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mRestrictedCameraControl:Landroidx/camera/core/impl/RestrictedCameraControl;
@@ -2562,7 +2562,7 @@
 .end method
 
 .method public getCameraId()Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;
-    .registers 2
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mId:Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;
@@ -2571,7 +2571,7 @@
 .end method
 
 .method public getCameraInfo()Landroidx/camera/core/CameraInfo;
-    .registers 2
+    .locals 1
 
     .line 902
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mRestrictedCameraInfo:Landroidx/camera/core/impl/RestrictedCameraInfo;
@@ -2580,7 +2580,7 @@
 .end method
 
 .method public getCameraInternals()Ljava/util/LinkedHashSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2597,7 +2597,7 @@
 .end method
 
 .method getCameraUseCases()Ljava/util/Collection;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2613,7 +2613,7 @@
     monitor-enter v0
 
     .line 552
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraUseCases:Ljava/util/List;
@@ -2624,19 +2624,19 @@
 
     return-object v1
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 553
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getExtendedConfig()Landroidx/camera/core/impl/CameraConfig;
-    .registers 3
+    .locals 2
 
     .line 914
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -2644,26 +2644,26 @@
     monitor-enter v0
 
     .line 915
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraConfig:Landroidx/camera/core/impl/CameraConfig;
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 916
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getUseCases()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2679,7 +2679,7 @@
     monitor-enter v0
 
     .line 544
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAppUseCases:Ljava/util/List;
@@ -2690,19 +2690,19 @@
 
     return-object v1
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 545
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public isEquivalent(Landroidx/camera/core/internal/CameraUseCaseAdapter;)Z
-    .registers 3
+    .locals 1
 
     .line 211
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mId:Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;
@@ -2719,7 +2719,7 @@
 .end method
 
 .method public varargs isUseCasesCombinationSupported([Landroidx/camera/core/UseCase;)Z
-    .registers 12
+    .locals 10
 
     .line 949
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -2727,7 +2727,7 @@
     monitor-enter v0
 
     .line 952
-    :try_start_3
+    :try_start_0
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -2771,25 +2771,25 @@
 
     .line 954
     invoke-direct/range {v4 .. v9}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->calculateSuggestedStreamSpecs(ILandroidx/camera/core/impl/CameraInfoInternal;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Map;)Ljava/util/Map;
-    :try_end_29
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_29} :catch_2e
-    .catchall {:try_start_3 .. :try_end_29} :catchall_2c
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 962
-    :try_start_29
+    :try_start_1
     monitor-exit v0
 
     const/4 p1, 0x1
 
     return p1
 
-    :catchall_2c
+    :catchall_0
     move-exception p1
 
-    goto :goto_31
+    goto :goto_0
 
     .line 959
-    :catch_2e
+    :catch_0
     monitor-exit v0
 
     const/4 p1, 0x0
@@ -2797,16 +2797,16 @@
     return p1
 
     .line 963
-    :goto_31
+    :goto_0
     monitor-exit v0
-    :try_end_32
-    .catchall {:try_start_29 .. :try_end_32} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public removeUseCases(Ljava/util/Collection;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2822,7 +2822,7 @@
     monitor-enter v0
 
     .line 257
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/LinkedHashSet;
 
     iget-object v2, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAppUseCases:Ljava/util/List;
@@ -2840,18 +2840,18 @@
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setActiveResumingMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 590
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -2862,7 +2862,7 @@
 .end method
 
 .method public setEffects(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2878,7 +2878,7 @@
     monitor-enter v0
 
     .line 228
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mEffects:Ljava/util/List;
 
     .line 229
@@ -2886,41 +2886,41 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setExtendedConfig(Landroidx/camera/core/impl/CameraConfig;)V
-    .registers 5
+    .locals 3
 
     .line 921
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 923
-    :try_start_5
+    :try_start_0
     invoke-static {}, Landroidx/camera/core/impl/CameraConfigs;->emptyConfig()Landroidx/camera/core/impl/CameraConfig;
 
     move-result-object p1
 
     .line 926
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAppUseCases:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraConfig:Landroidx/camera/core/impl/CameraConfig;
 
@@ -2938,12 +2938,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 928
-    :cond_22
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v1, "Need to unbind all use cases before binding with extension enabled"
@@ -2953,8 +2953,8 @@
     throw p1
 
     .line 932
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_0
     iput-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraConfig:Landroidx/camera/core/impl/CameraConfig;
 
     const/4 v1, 0x0
@@ -2964,7 +2964,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_3
 
     .line 936
     invoke-interface {p1}, Landroidx/camera/core/impl/SessionProcessor;->getSupportedCameraOperations()Ljava/util/Set;
@@ -2978,10 +2978,10 @@
 
     invoke-virtual {v1, v2, p1}, Landroidx/camera/core/impl/RestrictedCameraControl;->enableRestrictedOperations(ZLjava/util/Set;)V
 
-    goto :goto_44
+    goto :goto_1
 
     .line 939
-    :cond_3e
+    :cond_3
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mRestrictedCameraControl:Landroidx/camera/core/impl/RestrictedCameraControl;
 
     const/4 v2, 0x0
@@ -2989,7 +2989,7 @@
     invoke-virtual {p1, v2, v1}, Landroidx/camera/core/impl/RestrictedCameraControl;->enableRestrictedOperations(ZLjava/util/Set;)V
 
     .line 943
-    :goto_44
+    :goto_1
     iget-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
 
     iget-object v1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraConfig:Landroidx/camera/core/impl/CameraConfig;
@@ -3001,18 +3001,18 @@
 
     return-void
 
-    :catchall_4d
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_4f
-    .catchall {:try_start_5 .. :try_end_4f} :catchall_4d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setViewPort(Landroidx/camera/core/ViewPort;)V
-    .registers 3
+    .locals 1
 
     .line 218
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mLock:Ljava/lang/Object;
@@ -3020,7 +3020,7 @@
     monitor-enter v0
 
     .line 219
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mViewPort:Landroidx/camera/core/ViewPort;
 
     .line 220
@@ -3028,18 +3028,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method updateUseCases(Ljava/util/Collection;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3058,7 +3058,7 @@
 .end method
 
 .method updateUseCases(Ljava/util/Collection;Z)V
-    .registers 19
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3078,7 +3078,7 @@
     monitor-enter v9
 
     .line 284
-    :try_start_7
+    :try_start_0
     invoke-virtual/range {p0 .. p1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->calculatePlaceholderForExtensions(Ljava/util/Collection;)Landroidx/camera/core/UseCase;
 
     move-result-object v0
@@ -3137,11 +3137,11 @@
     invoke-direct {v7, v12, v1, v2}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getConfigs(Ljava/util/Collection;Landroidx/camera/core/impl/UseCaseConfigFactory;Landroidx/camera/core/impl/UseCaseConfigFactory;)Ljava/util/Map;
 
     move-result-object v15
-    :try_end_3d
-    .catchall {:try_start_7 .. :try_end_3d} :catchall_12e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 306
-    :try_start_3d
+    :try_start_1
     invoke-direct/range {p0 .. p0}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getCameraMode()I
 
     move-result v2
@@ -3165,12 +3165,12 @@
     invoke-direct/range {v1 .. v6}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->calculateSuggestedStreamSpecs(ILandroidx/camera/core/impl/CameraInfoInternal;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v1
-    :try_end_50
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3d .. :try_end_50} :catch_115
-    .catchall {:try_start_3d .. :try_end_50} :catchall_12e
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 331
-    :try_start_50
+    :try_start_2
     invoke-direct {v7, v1, v11}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->updateViewPort(Ljava/util/Map;Ljava/util/Collection;)V
 
     .line 332
@@ -3183,12 +3183,12 @@
 
     move-result-object v2
 
-    :goto_5c
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_6e
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3201,10 +3201,10 @@
 
     invoke-virtual {v3, v4}, Landroidx/camera/core/UseCase;->unbindFromCamera(Landroidx/camera/core/impl/CameraInternal;)V
 
-    goto :goto_5c
+    goto :goto_0
 
     .line 338
-    :cond_6e
+    :cond_0
     iget-object v2, v7, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
 
     invoke-interface {v2, v14}, Landroidx/camera/core/impl/CameraInternal;->detachUseCases(Ljava/util/Collection;)V
@@ -3214,20 +3214,20 @@
 
     move-result v2
 
-    if-nez v2, :cond_a9
+    if-nez v2, :cond_2
 
     .line 344
     invoke-interface {v13}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_7d
-    :goto_7d
+    :cond_1
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_a9
+    if-eqz v3, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3240,7 +3240,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7d
+    if-eqz v4, :cond_1
 
     .line 346
     invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3254,7 +3254,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_7d
+    if-eqz v5, :cond_1
 
     .line 349
     invoke-virtual {v3}, Landroidx/camera/core/UseCase;->getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
@@ -3266,25 +3266,25 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7d
+    if-eqz v4, :cond_1
 
     .line 350
     invoke-virtual {v3, v5}, Landroidx/camera/core/UseCase;->updateSuggestedStreamSpecImplementationOptions(Landroidx/camera/core/impl/Config;)V
 
-    goto :goto_7d
+    goto :goto_1
 
     .line 357
-    :cond_a9
+    :cond_2
     invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :goto_ad
+    :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_de
+    if-eqz v3, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3330,13 +3330,13 @@
     .line 361
     invoke-virtual {v3, v4}, Landroidx/camera/core/UseCase;->updateSuggestedStreamSpec(Landroidx/camera/core/impl/StreamSpec;)V
 
-    goto :goto_ad
+    goto :goto_2
 
     .line 364
-    :cond_de
+    :cond_3
     iget-boolean v1, v7, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAttached:Z
 
-    if-eqz v1, :cond_e7
+    if-eqz v1, :cond_4
 
     .line 365
     iget-object v1, v7, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
@@ -3344,17 +3344,17 @@
     invoke-interface {v1, v12}, Landroidx/camera/core/impl/CameraInternal;->attachUseCases(Ljava/util/Collection;)V
 
     .line 369
-    :cond_e7
+    :cond_4
     invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_eb
+    :goto_3
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_fb
+    if-eqz v2, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3365,10 +3365,10 @@
     .line 370
     invoke-virtual {v2}, Landroidx/camera/core/UseCase;->notifyState()V
 
-    goto :goto_eb
+    goto :goto_3
 
     .line 374
-    :cond_fb
+    :cond_5
     iget-object v1, v7, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mAppUseCases:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
@@ -3399,17 +3399,17 @@
 
     return-void
 
-    :catch_115
+    :catch_0
     move-exception v0
 
-    if-nez p2, :cond_12d
+    if-nez p2, :cond_6
 
     .line 318
     invoke-direct/range {p0 .. p0}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->hasNoExtension()Z
 
     move-result v1
 
-    if-eqz v1, :cond_12d
+    if-eqz v1, :cond_6
 
     iget-object v1, v7, Landroidx/camera/core/internal/CameraUseCaseAdapter;->mCameraCoordinator:Landroidx/camera/core/concurrent/CameraCoordinator;
 
@@ -3420,7 +3420,7 @@
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_12d
+    if-eq v1, v2, :cond_6
 
     const/4 v0, 0x1
 
@@ -3433,16 +3433,16 @@
     return-void
 
     .line 326
-    :cond_12d
+    :cond_6
     throw v0
 
-    :catchall_12e
+    :catchall_0
     move-exception v0
 
     .line 380
     monitor-exit v9
-    :try_end_130
-    .catchall {:try_start_50 .. :try_end_130} :catchall_12e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 .end method

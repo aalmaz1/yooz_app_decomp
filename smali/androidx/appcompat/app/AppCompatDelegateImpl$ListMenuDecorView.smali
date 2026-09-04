@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
 
     .line 3347
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -32,13 +32,13 @@
 .end method
 
 .method private isOutOfBounds(II)Z
-    .registers 4
+    .locals 1
 
     const/4 v0, -0x5
 
-    if-lt p1, v0, :cond_18
+    if-lt p1, v0, :cond_1
 
-    if-lt p2, v0, :cond_18
+    if-lt p2, v0, :cond_1
 
     .line 3377
     invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->getWidth()I
@@ -47,7 +47,7 @@
 
     add-int/lit8 v0, v0, 0x5
 
-    if-gt p1, v0, :cond_18
+    if-gt p1, v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->getHeight()I
 
@@ -55,27 +55,27 @@
 
     add-int/lit8 p1, p1, 0x5
 
-    if-le p2, p1, :cond_16
+    if-le p2, p1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_19
+    :goto_1
     return p1
 .end method
 
 
 # virtual methods
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 3353
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -84,39 +84,39 @@
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 3354
     invoke-super {p0, p1}, Landroidx/appcompat/widget/ContentFrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_12
+    :goto_1
     return p1
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
 
     .line 3359
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 3361
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -137,7 +137,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 3364
     iget-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -151,7 +151,7 @@
     return p1
 
     .line 3368
-    :cond_1e
+    :cond_0
     invoke-super {p0, p1}, Landroidx/appcompat/widget/ContentFrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -160,7 +160,7 @@
 .end method
 
 .method public setBackgroundResource(I)V
-    .registers 3
+    .locals 1
 
     .line 3373
     invoke-virtual {p0}, Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;->getContext()Landroid/content/Context;

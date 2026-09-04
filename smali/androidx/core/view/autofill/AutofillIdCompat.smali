@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/autofill/AutofillId;)V
-    .registers 2
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public static toAutofillIdCompat(Landroid/view/autofill/AutofillId;)Landroidx/core/view/autofill/AutofillIdCompat;
-    .registers 2
+    .locals 1
 
     .line 48
     new-instance v0, Landroidx/core/view/autofill/AutofillIdCompat;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public toAutofillId()Landroid/view/autofill/AutofillId;
-    .registers 2
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroidx/core/view/autofill/AutofillIdCompat;->mWrappedObj:Ljava/lang/Object;

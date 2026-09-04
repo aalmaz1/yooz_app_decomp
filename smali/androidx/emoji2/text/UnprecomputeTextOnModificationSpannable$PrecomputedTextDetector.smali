@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method isPrecomputedText(Ljava/lang/CharSequence;)Z
-    .registers 2
+    .locals 0
 
     .line 168
     instance-of p1, p1, Landroidx/core/text/PrecomputedTextCompat;

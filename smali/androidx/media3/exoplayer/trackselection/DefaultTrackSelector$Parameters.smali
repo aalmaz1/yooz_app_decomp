@@ -115,7 +115,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1757
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
@@ -306,7 +306,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 1886
     invoke-direct {p0, p1}, Landroidx/media3/common/TrackSelectionParameters;-><init>(Landroidx/media3/common/TrackSelectionParameters$Builder;)V
@@ -434,7 +434,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$1;)V
-    .registers 3
+    .locals 0
 
     .line 821
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;-><init>(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;)V
@@ -443,7 +443,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;)Landroid/util/SparseArray;
-    .registers 1
+    .locals 0
 
     .line 821
     iget-object p0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->selectionOverrides:Landroid/util/SparseArray;
@@ -452,7 +452,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;)Landroid/util/SparseBooleanArray;
-    .registers 1
+    .locals 0
 
     .line 821
     iget-object p0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->rendererDisabledFlags:Landroid/util/SparseBooleanArray;
@@ -461,7 +461,7 @@
 .end method
 
 .method static synthetic access$1000()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_AUDIO_MIXED_DECODER_SUPPORT_ADAPTIVENESS:Ljava/lang/String;
@@ -470,7 +470,7 @@
 .end method
 
 .method static synthetic access$1100()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_AUDIO_NON_SEAMLESS_ADAPTIVENESS:Ljava/lang/String;
@@ -479,7 +479,7 @@
 .end method
 
 .method static synthetic access$1200()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_CONSTRAIN_AUDIO_CHANNEL_COUNT_TO_DEVICE_CAPABILITIES:Ljava/lang/String;
@@ -488,7 +488,7 @@
 .end method
 
 .method static synthetic access$1300()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_EXCEED_RENDERER_CAPABILITIES_IF_NECESSARY:Ljava/lang/String;
@@ -497,7 +497,7 @@
 .end method
 
 .method static synthetic access$1400()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_TUNNELING_ENABLED:Ljava/lang/String;
@@ -506,7 +506,7 @@
 .end method
 
 .method static synthetic access$1500()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_MULTIPLE_ADAPTIVE_SELECTIONS:Ljava/lang/String;
@@ -515,7 +515,7 @@
 .end method
 
 .method static synthetic access$1600()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_INVALIDATE_SELECTIONS_ON_RENDERER_CAPABILITIES_CHANGE:Ljava/lang/String;
@@ -524,7 +524,7 @@
 .end method
 
 .method static synthetic access$1700()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_RENDERER_DISABLED_INDICES:Ljava/lang/String;
@@ -533,7 +533,7 @@
 .end method
 
 .method static synthetic access$1900()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_SELECTION_OVERRIDES_RENDERER_INDICES:Ljava/lang/String;
@@ -542,7 +542,7 @@
 .end method
 
 .method static synthetic access$200()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_EXCEED_VIDEO_CONSTRAINTS_IF_NECESSARY:Ljava/lang/String;
@@ -551,7 +551,7 @@
 .end method
 
 .method static synthetic access$2000()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_SELECTION_OVERRIDES_TRACK_GROUP_ARRAYS:Ljava/lang/String;
@@ -560,7 +560,7 @@
 .end method
 
 .method static synthetic access$2100()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_SELECTION_OVERRIDES:Ljava/lang/String;
@@ -569,7 +569,7 @@
 .end method
 
 .method static synthetic access$300()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_VIDEO_MIXED_MIME_TYPE_ADAPTIVENESS:Ljava/lang/String;
@@ -578,7 +578,7 @@
 .end method
 
 .method static synthetic access$400()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_VIDEO_NON_SEAMLESS_ADAPTIVENESS:Ljava/lang/String;
@@ -587,7 +587,7 @@
 .end method
 
 .method static synthetic access$500()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_VIDEO_MIXED_DECODER_SUPPORT_ADAPTIVENESS:Ljava/lang/String;
@@ -596,7 +596,7 @@
 .end method
 
 .method static synthetic access$600()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_EXCEED_AUDIO_CONSTRAINTS_IF_NECESSARY:Ljava/lang/String;
@@ -605,7 +605,7 @@
 .end method
 
 .method static synthetic access$700()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_AUDIO_MIXED_MIME_TYPE_ADAPTIVENESS:Ljava/lang/String;
@@ -614,7 +614,7 @@
 .end method
 
 .method static synthetic access$800()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_AUDIO_MIXED_SAMPLE_RATE_ADAPTIVENESS:Ljava/lang/String;
@@ -623,7 +623,7 @@
 .end method
 
 .method static synthetic access$900()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 821
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_ALLOW_AUDIO_MIXED_CHANNEL_COUNT_ADAPTIVENESS:Ljava/lang/String;
@@ -632,7 +632,7 @@
 .end method
 
 .method private static areRendererDisabledFlagsEqual(Landroid/util/SparseBooleanArray;Landroid/util/SparseBooleanArray;)Z
-    .registers 6
+    .locals 4
 
     .line 2168
     invoke-virtual {p0}, Landroid/util/SparseBooleanArray;->size()I
@@ -646,15 +646,15 @@
 
     const/4 v2, 0x0
 
-    if-eq v1, v0, :cond_c
+    if-eq v1, v0, :cond_0
 
     return v2
 
-    :cond_c
+    :cond_0
     move v1, v2
 
-    :goto_d
-    if-ge v1, v0, :cond_1d
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 2174
     invoke-virtual {p0, v1}, Landroid/util/SparseBooleanArray;->keyAt(I)I
@@ -665,23 +665,23 @@
 
     move-result v3
 
-    if-gez v3, :cond_1a
+    if-gez v3, :cond_1
 
     return v2
 
-    :cond_1a
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_1d
+    :cond_2
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static areSelectionOverridesEqual(Landroid/util/SparseArray;Landroid/util/SparseArray;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -710,15 +710,15 @@
 
     const/4 v2, 0x0
 
-    if-eq v1, v0, :cond_c
+    if-eq v1, v0, :cond_0
 
     return v2
 
-    :cond_c
+    :cond_0
     move v1, v2
 
-    :goto_d
-    if-ge v1, v0, :cond_30
+    :goto_0
+    if-ge v1, v0, :cond_3
 
     .line 2189
     invoke-virtual {p0, v1}, Landroid/util/SparseArray;->keyAt(I)I
@@ -729,7 +729,7 @@
 
     move-result v3
 
-    if-ltz v3, :cond_2f
+    if-ltz v3, :cond_2
 
     .line 2192
     invoke-virtual {p0, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -749,27 +749,27 @@
 
     move-result v3
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_1
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_2c
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_2f
-    :goto_2f
+    :cond_2
+    :goto_1
     return v2
 
-    :cond_30
+    :cond_3
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static areSelectionOverridesEqual(Ljava/util/Map;Ljava/util/Map;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -796,12 +796,12 @@
 
     const/4 v2, 0x0
 
-    if-eq v1, v0, :cond_c
+    if-eq v1, v0, :cond_0
 
     return v2
 
     .line 2207
-    :cond_c
+    :cond_0
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -810,12 +810,12 @@
 
     move-result-object p0
 
-    :cond_14
+    :cond_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -835,7 +835,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_2
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -849,19 +849,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
-    :cond_3a
+    :cond_2
     return v2
 
-    :cond_3b
+    :cond_3
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
-    .registers 3
+    .locals 2
 
     .line 2121
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
@@ -878,7 +878,7 @@
 .end method
 
 .method public static getDefaults(Landroid/content/Context;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
-    .registers 2
+    .locals 1
 
     .line 1767
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
@@ -893,7 +893,7 @@
 .end method
 
 .method private static getKeysFromSparseBooleanArray(Landroid/util/SparseBooleanArray;)[I
-    .registers 4
+    .locals 3
 
     .line 2159
     invoke-virtual {p0}, Landroid/util/SparseBooleanArray;->size()I
@@ -905,12 +905,12 @@
     const/4 v1, 0x0
 
     .line 2160
-    :goto_7
+    :goto_0
     invoke-virtual {p0}, Landroid/util/SparseBooleanArray;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_16
+    if-ge v1, v2, :cond_0
 
     .line 2161
     invoke-virtual {p0, v1}, Landroid/util/SparseBooleanArray;->keyAt(I)I
@@ -921,14 +921,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-object v0
 .end method
 
 .method private static putSelectionOverridesToBundle(Landroid/os/Bundle;Landroid/util/SparseArray;)V
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -959,12 +959,12 @@
     const/4 v3, 0x0
 
     .line 2136
-    :goto_10
+    :goto_0
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_7c
+    if-ge v3, v4, :cond_2
 
     .line 2137
     invoke-virtual {p1, v3}, Landroid/util/SparseArray;->keyAt(I)I
@@ -986,12 +986,12 @@
 
     move-result-object v5
 
-    :goto_28
+    :goto_1
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_54
+    if-eqz v6, :cond_1
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1006,7 +1006,7 @@
 
     check-cast v7, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;
 
-    if-eqz v7, :cond_43
+    if-eqz v7, :cond_0
 
     .line 2142
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1016,7 +1016,7 @@
     invoke-virtual {v2, v8, v7}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 2144
-    :cond_43
+    :cond_0
     invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v6
@@ -1032,10 +1032,10 @@
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_28
+    goto :goto_1
 
     .line 2147
-    :cond_54
+    :cond_1
     sget-object v4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->FIELD_SELECTION_OVERRIDES_RENDERER_INDICES:Ljava/lang/String;
 
     .line 2148
@@ -1078,16 +1078,16 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_7c
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public bridge synthetic buildUpon()Landroidx/media3/common/TrackSelectionParameters$Builder;
-    .registers 2
+    .locals 1
 
     .line 821
     invoke-virtual {p0}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->buildUpon()Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
@@ -1098,7 +1098,7 @@
 .end method
 
 .method public buildUpon()Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
-    .registers 3
+    .locals 2
 
     .line 1962
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
@@ -1111,18 +1111,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_8c
+    if-eqz p1, :cond_3
 
     .line 1972
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1133,12 +1133,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_1
 
-    goto/16 :goto_8c
+    goto/16 :goto_1
 
     .line 1975
-    :cond_13
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     .line 1976
@@ -1146,97 +1146,97 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8a
+    if-eqz v2, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedVideoConstraintsIfNecessary:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedVideoConstraintsIfNecessary:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedMimeTypeAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedMimeTypeAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoNonSeamlessAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoNonSeamlessAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedDecoderSupportAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedDecoderSupportAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedAudioConstraintsIfNecessary:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedAudioConstraintsIfNecessary:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedMimeTypeAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedMimeTypeAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedSampleRateAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedSampleRateAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedChannelCountAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedChannelCountAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedDecoderSupportAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioMixedDecoderSupportAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioNonSeamlessAdaptiveness:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowAudioNonSeamlessAdaptiveness:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->constrainAudioChannelCountToDeviceCapabilities:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->constrainAudioChannelCountToDeviceCapabilities:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedRendererCapabilitiesIfNecessary:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedRendererCapabilitiesIfNecessary:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->tunnelingEnabled:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->tunnelingEnabled:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowMultipleAdaptiveSelections:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowMultipleAdaptiveSelections:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowInvalidateSelectionsOnRendererCapabilitiesChange:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowInvalidateSelectionsOnRendererCapabilitiesChange:Z
 
-    if-ne v2, v3, :cond_8a
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->rendererDisabledFlags:Landroid/util/SparseBooleanArray;
 
@@ -1247,7 +1247,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8a
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->selectionOverrides:Landroid/util/SparseArray;
 
@@ -1258,23 +1258,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_8a
+    if-eqz p1, :cond_2
 
-    goto :goto_8b
+    goto :goto_0
 
-    :cond_8a
+    :cond_2
     move v0, v1
 
-    :goto_8b
+    :goto_0
     return v0
 
-    :cond_8c
-    :goto_8c
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getRendererDisabled(I)Z
-    .registers 3
+    .locals 1
 
     .line 1919
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->rendererDisabledFlags:Landroid/util/SparseBooleanArray;
@@ -1287,7 +1287,7 @@
 .end method
 
 .method public getSelectionOverride(ILandroidx/media3/exoplayer/source/TrackGroupArray;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1301,7 +1301,7 @@
 
     check-cast p1, Ljava/util/Map;
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 1956
     invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1310,17 +1310,17 @@
 
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_12
+    :goto_0
     return-object p1
 .end method
 
 .method public hasSelectionOverride(ILandroidx/media3/exoplayer/source/TrackGroupArray;)Z
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1334,28 +1334,28 @@
 
     check-cast p1, Ljava/util/Map;
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 1937
     invoke-interface {p1, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_13
+    :goto_0
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 2008
     invoke-super {p0}, Landroidx/media3/common/TrackSelectionParameters;->hashCode()I
@@ -1475,7 +1475,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 2072
     invoke-super {p0}, Landroidx/media3/common/TrackSelectionParameters;->toBundle()Landroid/os/Bundle;

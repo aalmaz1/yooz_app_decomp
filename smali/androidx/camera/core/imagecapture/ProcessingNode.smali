@@ -137,7 +137,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -152,7 +152,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Quirks;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -163,7 +163,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroidx/camera/core/processing/InternalImageProcessor;)V
-    .registers 4
+    .locals 1
 
     .line 99
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/DeviceQuirks;->getAll()Landroidx/camera/core/impl/Quirks;
@@ -176,7 +176,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroidx/camera/core/processing/InternalImageProcessor;Landroidx/camera/core/impl/Quirks;)V
-    .registers 5
+    .locals 1
 
     .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -188,17 +188,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
-    if-eqz v0, :cond_17
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 112
     invoke-static {p1}, Landroidx/camera/core/impl/utils/executor/CameraXExecutors;->newSequentialExecutor(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
@@ -207,14 +207,14 @@
 
     iput-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBlockingExecutor:Ljava/util/concurrent/Executor;
 
-    goto :goto_19
+    goto :goto_1
 
     .line 114
-    :cond_17
+    :cond_1
     iput-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBlockingExecutor:Ljava/util/concurrent/Executor;
 
     .line 116
-    :goto_19
+    :goto_1
     iput-object p2, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mImageProcessor:Landroidx/camera/core/processing/InternalImageProcessor;
 
     .line 117
@@ -233,7 +233,7 @@
 .end method
 
 .method private cropAndMaybeApplyEffect(Landroidx/camera/core/processing/Packet;I)Landroidx/camera/core/processing/Packet;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -257,16 +257,16 @@
 
     const/16 v1, 0x100
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 227
@@ -281,7 +281,7 @@
     .line 228
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBitmapEffect:Landroidx/camera/core/processing/Operation;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 230
     invoke-interface {v0, p1}, Landroidx/camera/core/processing/Operation;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -291,7 +291,7 @@
     check-cast p1, Landroidx/camera/core/processing/Packet;
 
     .line 232
-    :cond_20
+    :cond_1
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBitmap2JpegBytes:Landroidx/camera/core/processing/Operation;
 
     .line 233
@@ -310,7 +310,7 @@
 .end method
 
 .method static synthetic lambda$processInputPacket$2(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageProxy;)V
-    .registers 2
+    .locals 0
 
     .line 168
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/ProcessingRequest;->onFinalResult(Landroidx/camera/core/ImageProxy;)V
@@ -319,7 +319,7 @@
 .end method
 
 .method static synthetic lambda$processInputPacket$3(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCapture$OutputFileResults;)V
-    .registers 2
+    .locals 0
 
     .line 171
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/ProcessingRequest;->onFinalResult(Landroidx/camera/core/ImageCapture$OutputFileResults;)V
@@ -328,7 +328,7 @@
 .end method
 
 .method static synthetic lambda$sendError$4(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCaptureException;)V
-    .registers 2
+    .locals 0
 
     .line 241
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/ProcessingRequest;->onProcessFailure(Landroidx/camera/core/ImageCaptureException;)V
@@ -337,7 +337,7 @@
 .end method
 
 .method private static sendError(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCaptureException;)V
-    .registers 4
+    .locals 2
 
     .line 241
     invoke-static {}, Landroidx/camera/core/impl/utils/executor/CameraXExecutors;->mainThreadExecutor()Ljava/util/concurrent/ScheduledExecutorService;
@@ -356,7 +356,7 @@
 
 # virtual methods
 .method injectProcessingInput2Packet(Landroidx/camera/core/processing/Operation;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -375,7 +375,7 @@
 .end method
 
 .method synthetic lambda$transform$0$androidx-camera-core-imagecapture-ProcessingNode(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)V
-    .registers 2
+    .locals 0
 
     .line 132
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/ProcessingNode;->processInputPacket(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)V
@@ -384,7 +384,7 @@
 .end method
 
 .method synthetic lambda$transform$1$androidx-camera-core-imagecapture-ProcessingNode(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)V
-    .registers 4
+    .locals 2
 
     .line 128
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;->getProcessingRequest()Landroidx/camera/core/imagecapture/ProcessingRequest;
@@ -395,12 +395,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 132
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBlockingExecutor:Ljava/util/concurrent/Executor;
 
     new-instance v1, Landroidx/camera/core/imagecapture/ProcessingNode$$ExternalSyntheticLambda2;
@@ -413,7 +413,7 @@
 .end method
 
 .method processInMemoryCapture(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)Landroidx/camera/core/ImageProxy;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -441,17 +441,17 @@
 
     const/16 v2, 0x23
 
-    if-eq v1, v2, :cond_1c
+    if-eq v1, v2, :cond_0
 
     iget-object v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBitmapEffect:Landroidx/camera/core/processing/Operation;
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     iget-boolean v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mHasIncorrectJpegMetadataQuirk:Z
 
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_2
 
-    :cond_1c
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mInputEdge:Landroidx/camera/core/imagecapture/ProcessingNode$In;
 
     .line 210
@@ -461,7 +461,7 @@
 
     const/16 v2, 0x100
 
-    if-ne v1, v2, :cond_4a
+    if-ne v1, v2, :cond_2
 
     .line 211
     iget-object v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mImage2JpegBytes:Landroidx/camera/core/processing/Operation;
@@ -485,7 +485,7 @@
     .line 213
     iget-object v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBitmapEffect:Landroidx/camera/core/processing/Operation;
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_1
 
     .line 214
     invoke-virtual {v0}, Landroidx/camera/core/imagecapture/ProcessingRequest;->getJpegQuality()I
@@ -497,7 +497,7 @@
     move-result-object p1
 
     .line 216
-    :cond_42
+    :cond_1
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mJpegBytes2Image:Landroidx/camera/core/processing/Operation;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/processing/Operation;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -507,7 +507,7 @@
     check-cast p1, Landroidx/camera/core/processing/Packet;
 
     .line 218
-    :cond_4a
+    :cond_2
     iget-object v0, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mJpegImage2Result:Landroidx/camera/core/processing/Operation;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/processing/Operation;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -520,7 +520,7 @@
 .end method
 
 .method processInputPacket(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)V
-    .registers 6
+    .locals 4
 
     .line 164
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;->getProcessingRequest()Landroidx/camera/core/imagecapture/ProcessingRequest;
@@ -530,7 +530,7 @@
     const/4 v1, 0x0
 
     .line 166
-    :try_start_5
+    :try_start_0
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;->getProcessingRequest()Landroidx/camera/core/imagecapture/ProcessingRequest;
 
     move-result-object v2
@@ -539,7 +539,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     .line 167
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/ProcessingNode;->processInMemoryCapture(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)Landroidx/camera/core/ImageProxy;
@@ -557,10 +557,10 @@
 
     invoke-interface {v2, v3}, Ljava/util/concurrent/ScheduledExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 170
-    :cond_20
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/ProcessingNode;->processOnDiskCapture(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)Landroidx/camera/core/ImageCapture$OutputFileResults;
 
     move-result-object p1
@@ -575,14 +575,14 @@
     invoke-direct {v3, v0, p1}, Landroidx/camera/core/imagecapture/ProcessingNode$$ExternalSyntheticLambda4;-><init>(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCapture$OutputFileResults;)V
 
     invoke-interface {v2, v3}, Ljava/util/concurrent/ScheduledExecutorService;->execute(Ljava/lang/Runnable;)V
-    :try_end_30
-    .catch Landroidx/camera/core/ImageCaptureException; {:try_start_5 .. :try_end_30} :catch_49
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_5 .. :try_end_30} :catch_3d
-    .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_30} :catch_31
+    :try_end_0
+    .catch Landroidx/camera/core/ImageCaptureException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4d
+    goto :goto_0
 
-    :catch_31
+    :catch_0
     move-exception p1
 
     .line 180
@@ -594,9 +594,9 @@
 
     invoke-static {v0, v2}, Landroidx/camera/core/imagecapture/ProcessingNode;->sendError(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCaptureException;)V
 
-    goto :goto_4d
+    goto :goto_0
 
-    :catch_3d
+    :catch_1
     move-exception p1
 
     .line 176
@@ -608,20 +608,20 @@
 
     invoke-static {v0, v2}, Landroidx/camera/core/imagecapture/ProcessingNode;->sendError(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCaptureException;)V
 
-    goto :goto_4d
+    goto :goto_0
 
-    :catch_49
+    :catch_2
     move-exception p1
 
     .line 174
     invoke-static {v0, p1}, Landroidx/camera/core/imagecapture/ProcessingNode;->sendError(Landroidx/camera/core/imagecapture/ProcessingRequest;Landroidx/camera/core/ImageCaptureException;)V
 
-    :goto_4d
+    :goto_0
     return-void
 .end method
 
 .method processOnDiskCapture(Landroidx/camera/core/imagecapture/ProcessingNode$InputPacket;)Landroidx/camera/core/ImageCapture$OutputFileResults;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -641,16 +641,16 @@
 
     const/4 v3, 0x0
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v0, v3
 
-    :goto_f
+    :goto_0
     new-array v1, v2, [Ljava/lang/Object;
 
     iget-object v2, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mInputEdge:Landroidx/camera/core/imagecapture/ProcessingNode$In;
@@ -714,14 +714,14 @@
 
     move-result v1
 
-    if-nez v1, :cond_4c
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBitmapEffect:Landroidx/camera/core/processing/Operation;
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_2
 
     .line 196
-    :cond_4c
+    :cond_1
     invoke-virtual {v0}, Landroidx/camera/core/imagecapture/ProcessingRequest;->getJpegQuality()I
 
     move-result v1
@@ -731,7 +731,7 @@
     move-result-object p1
 
     .line 198
-    :cond_54
+    :cond_2
     iget-object v1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mJpegBytes2Disk:Landroidx/camera/core/processing/Operation;
 
     .line 199
@@ -760,13 +760,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 63
     check-cast p1, Landroidx/camera/core/imagecapture/ProcessingNode$In;
@@ -779,7 +779,7 @@
 .end method
 
 .method public transform(Landroidx/camera/core/imagecapture/ProcessingNode$In;)Ljava/lang/Void;
-    .registers 4
+    .locals 2
 
     .line 124
     iput-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mInputEdge:Landroidx/camera/core/imagecapture/ProcessingNode$In;
@@ -846,18 +846,18 @@
 
     const/16 v0, 0x23
 
-    if-eq p1, v0, :cond_4a
+    if-eq p1, v0, :cond_0
 
     iget-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mImageProcessor:Landroidx/camera/core/processing/InternalImageProcessor;
 
-    if-nez p1, :cond_4a
+    if-nez p1, :cond_0
 
     iget-boolean p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mHasIncorrectJpegMetadataQuirk:Z
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_1
 
     .line 146
-    :cond_4a
+    :cond_0
     new-instance p1, Landroidx/camera/core/imagecapture/JpegBytes2Image;
 
     invoke-direct {p1}, Landroidx/camera/core/imagecapture/JpegBytes2Image;-><init>()V
@@ -865,10 +865,10 @@
     iput-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mJpegBytes2Image:Landroidx/camera/core/processing/Operation;
 
     .line 148
-    :cond_51
+    :cond_1
     iget-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mImageProcessor:Landroidx/camera/core/processing/InternalImageProcessor;
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_2
 
     .line 149
     new-instance p1, Landroidx/camera/core/imagecapture/BitmapEffect;
@@ -879,7 +879,7 @@
 
     iput-object p1, p0, Landroidx/camera/core/imagecapture/ProcessingNode;->mBitmapEffect:Landroidx/camera/core/processing/Operation;
 
-    :cond_5e
+    :cond_2
     const/4 p1, 0x0
 
     return-object p1

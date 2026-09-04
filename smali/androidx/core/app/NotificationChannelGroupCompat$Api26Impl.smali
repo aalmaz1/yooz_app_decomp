@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 227
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createNotificationChannelGroup(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/app/NotificationChannelGroup;
-    .registers 3
+    .locals 1
 
     .line 232
     new-instance v0, Landroid/app/NotificationChannelGroup;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getChannels(Landroid/app/NotificationChannelGroup;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,7 +57,7 @@
 .end method
 
 .method static getGroup(Landroid/app/NotificationChannel;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 253
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getGroup()Ljava/lang/String;
@@ -68,7 +68,7 @@
 .end method
 
 .method static getId(Landroid/app/NotificationChannelGroup;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 237
     invoke-virtual {p0}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
@@ -79,7 +79,7 @@
 .end method
 
 .method static getName(Landroid/app/NotificationChannelGroup;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 242
     invoke-virtual {p0}, Landroid/app/NotificationChannelGroup;->getName()Ljava/lang/CharSequence;

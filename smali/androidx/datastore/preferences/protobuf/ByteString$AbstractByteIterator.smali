@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public final next()Ljava/lang/Byte;
-    .registers 2
+    .locals 1
 
     .line 204
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$AbstractByteIterator;->nextByte()B
@@ -45,7 +45,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 200
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$AbstractByteIterator;->next()Ljava/lang/Byte;
@@ -56,7 +56,7 @@
 .end method
 
 .method public final remove()V
-    .registers 2
+    .locals 1
 
     .line 209
     new-instance v0, Ljava/lang/UnsupportedOperationException;

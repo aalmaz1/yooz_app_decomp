@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/net/http/UrlRequest;Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestCallback;)V
-    .registers 3
+    .locals 0
 
     .line 965
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 979
     iget-object v0, p0, Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestWrapper;->urlRequestCallback:Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestCallback;
@@ -55,7 +55,7 @@
 .end method
 
 .method public getStatus()I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;
@@ -91,7 +91,7 @@
 .end method
 
 .method public getUrlRequestCallback()Landroid/net/http/UrlRequest$Callback;
-    .registers 2
+    .locals 1
 
     .line 984
     iget-object v0, p0, Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestWrapper;->urlRequestCallback:Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestCallback;
@@ -100,7 +100,7 @@
 .end method
 
 .method public read(Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 975
     iget-object v0, p0, Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestWrapper;->urlRequest:Landroid/net/http/UrlRequest;
@@ -111,7 +111,7 @@
 .end method
 
 .method public start()V
-    .registers 2
+    .locals 1
 
     .line 971
     iget-object v0, p0, Landroidx/media3/datasource/HttpEngineDataSource$UrlRequestWrapper;->urlRequest:Landroid/net/http/UrlRequest;

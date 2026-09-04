@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(IJ)V
-    .registers 4
+    .locals 0
 
     .line 14
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;-><init>()V
@@ -28,21 +28,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 42
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     .line 43
     check-cast p1, Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
@@ -54,7 +54,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_1e
+    if-ne v1, v3, :cond_1
 
     iget-wide v3, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioStream_PacketInfo;->timestampNs:J
 
@@ -65,22 +65,22 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move v0, v2
 
-    :goto_1f
+    :goto_0
     return v0
 
-    :cond_20
+    :cond_2
     return v2
 .end method
 
 .method public getSizeInBytes()I
-    .registers 2
+    .locals 1
 
     .line 21
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioStream_PacketInfo;->sizeInBytes:I
@@ -89,7 +89,7 @@
 .end method
 
 .method public getTimestampNs()J
-    .registers 3
+    .locals 2
 
     .line 26
     iget-wide v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioStream_PacketInfo;->timestampNs:J
@@ -98,7 +98,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 54
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioStream_PacketInfo;->sizeInBytes:I
@@ -126,7 +126,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 31
     new-instance v0, Ljava/lang/StringBuilder;

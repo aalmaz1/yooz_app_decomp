@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public create(Landroid/content/Context;)Landroidx/lifecycle/LifecycleOwner;
-    .registers 4
+    .locals 2
 
     const-string v0, "context"
 
@@ -80,7 +80,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 36
     invoke-static {p1}, Landroidx/lifecycle/LifecycleDispatcher;->init(Landroid/content/Context;)V
@@ -100,7 +100,7 @@
     return-object p1
 
     .line 28
-    :cond_27
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name=\'androidx.lifecycle.ProcessLifecycleInitializer\'\n                   android:value=\'androidx.startup\' />\n               under InitializationProvider in your AndroidManifest.xml"
@@ -115,7 +115,7 @@
 .end method
 
 .method public bridge synthetic create(Landroid/content/Context;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 25
     invoke-virtual {p0, p1}, Landroidx/lifecycle/ProcessLifecycleInitializer;->create(Landroid/content/Context;)Landroidx/lifecycle/LifecycleOwner;
@@ -126,7 +126,7 @@
 .end method
 
 .method public dependencies()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

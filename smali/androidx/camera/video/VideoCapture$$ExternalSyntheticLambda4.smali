@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/camera/video/VideoCapture;Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/impl/CameraInternal;Landroidx/camera/video/impl/VideoCaptureConfig;Landroidx/camera/core/impl/Timebase;)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 6
+    .locals 5
 
     iget-object v0, p0, Landroidx/camera/video/VideoCapture$$ExternalSyntheticLambda4;->f$0:Landroidx/camera/video/VideoCapture;
 

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1021
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$3;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
-    .registers 7
+    .locals 4
 
     .line 1025
     invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
@@ -52,7 +52,7 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_1d
+    if-eq v0, v1, :cond_0
 
     .line 1030
     invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
@@ -75,7 +75,7 @@
     move-result-object p2
 
     .line 1037
-    :cond_1d
+    :cond_0
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p1

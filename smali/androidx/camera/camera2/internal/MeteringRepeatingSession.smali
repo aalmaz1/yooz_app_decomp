@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;Landroidx/camera/camera2/internal/DisplayInfoManager;Landroidx/camera/camera2/internal/MeteringRepeatingSession$SurfaceResetCallback;)V
-    .registers 5
+    .locals 1
 
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,7 +91,7 @@
 .end method
 
 .method private getProperPreviewSize(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;Landroidx/camera/camera2/internal/DisplayInfoManager;)Landroid/util/Size;
-    .registers 14
+    .locals 11
 
     .line 194
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->getStreamConfigurationMapCompat()Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
@@ -107,7 +107,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_0
 
     const-string p1, "MeteringRepeating"
 
@@ -124,7 +124,7 @@
     return-object p1
 
     .line 201
-    :cond_1a
+    :cond_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/MeteringRepeatingSession;->mSupportedRepeatingSurfaceSize:Landroidx/camera/camera2/internal/compat/workaround/SupportedRepeatingSurfaceSize;
 
     invoke-virtual {v1, p1}, Landroidx/camera/camera2/internal/compat/workaround/SupportedRepeatingSurfaceSize;->getSupportedSizes([Landroid/util/Size;)[Landroid/util/Size;
@@ -176,8 +176,8 @@
 
     move v5, v0
 
-    :goto_45
-    if-ge v5, p2, :cond_62
+    :goto_0
+    if-ge v5, p2, :cond_3
 
     aget-object v6, p1, v5
 
@@ -198,26 +198,26 @@
 
     cmp-long v7, v7, v2
 
-    if-nez v7, :cond_59
+    if-nez v7, :cond_1
 
     return-object v6
 
-    :cond_59
-    if-lez v7, :cond_5e
+    :cond_1
+    if-lez v7, :cond_2
 
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_3
 
     return-object v4
 
-    :cond_5e
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
     move-object v4, v6
 
-    goto :goto_45
+    goto :goto_0
 
     .line 232
-    :cond_62
+    :cond_3
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -228,7 +228,7 @@
 .end method
 
 .method static synthetic lambda$getProperPreviewSize$1(Landroid/util/Size;Landroid/util/Size;)I
-    .registers 6
+    .locals 4
 
     .line 205
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
@@ -273,7 +273,7 @@
 
 # virtual methods
 .method clear()V
-    .registers 3
+    .locals 2
 
     const-string v0, "MeteringRepeating"
 
@@ -285,12 +285,12 @@
     .line 156
     iget-object v0, p0, Landroidx/camera/camera2/internal/MeteringRepeatingSession;->mDeferrableSurface:Landroidx/camera/core/impl/DeferrableSurface;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 157
     invoke-virtual {v0}, Landroidx/camera/core/impl/DeferrableSurface;->close()V
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 159
@@ -300,7 +300,7 @@
 .end method
 
 .method createSessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 6
+    .locals 5
 
     .line 97
     new-instance v0, Landroid/graphics/SurfaceTexture;
@@ -390,7 +390,7 @@
 .end method
 
 .method getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "MeteringRepeating"
 
@@ -398,7 +398,7 @@
 .end method
 
 .method getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 2
+    .locals 1
 
     .line 142
     iget-object v0, p0, Landroidx/camera/camera2/internal/MeteringRepeatingSession;->mSessionConfig:Landroidx/camera/core/impl/SessionConfig;
@@ -407,7 +407,7 @@
 .end method
 
 .method getUseCaseConfig()Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -423,7 +423,7 @@
 .end method
 
 .method synthetic lambda$createSessionConfig$0$androidx-camera-camera2-internal-MeteringRepeatingSession(Landroidx/camera/core/impl/SessionConfig;Landroidx/camera/core/impl/SessionConfig$SessionError;)V
-    .registers 3
+    .locals 0
 
     .line 126
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/MeteringRepeatingSession;->createSessionConfig()Landroidx/camera/core/impl/SessionConfig;
@@ -435,11 +435,11 @@
     .line 127
     iget-object p1, p0, Landroidx/camera/camera2/internal/MeteringRepeatingSession;->mSurfaceResetCallback:Landroidx/camera/camera2/internal/MeteringRepeatingSession$SurfaceResetCallback;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 128
     invoke-interface {p1}, Landroidx/camera/camera2/internal/MeteringRepeatingSession$SurfaceResetCallback;->onSurfaceReset()V
 
-    :cond_d
+    :cond_0
     return-void
 .end method

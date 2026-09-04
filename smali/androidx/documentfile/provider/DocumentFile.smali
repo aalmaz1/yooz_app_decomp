@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/documentfile/provider/DocumentFile;)V
-    .registers 2
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static fromFile(Ljava/io/File;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 3
+    .locals 2
 
     .line 102
     new-instance v0, Landroidx/documentfile/provider/RawDocumentFile;
@@ -38,7 +38,7 @@
 .end method
 
 .method public static fromSingleUri(Landroid/content/Context;Landroid/net/Uri;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 4
+    .locals 2
 
     .line 118
     new-instance v0, Landroidx/documentfile/provider/SingleDocumentFile;
@@ -51,7 +51,7 @@
 .end method
 
 .method public static fromTreeUri(Landroid/content/Context;Landroid/net/Uri;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 4
+    .locals 2
 
     .line 136
     new-instance v0, Landroidx/documentfile/provider/TreeDocumentFile;
@@ -74,7 +74,7 @@
 .end method
 
 .method public static isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 2
+    .locals 0
 
     .line 150
     invoke-static {p0, p1}, Landroid/provider/DocumentsContract;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
@@ -105,7 +105,7 @@
 .end method
 
 .method public findFile(Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 7
+    .locals 5
 
     .line 338
     invoke-virtual {p0}, Landroidx/documentfile/provider/DocumentFile;->listFiles()[Landroidx/documentfile/provider/DocumentFile;
@@ -116,8 +116,8 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v1, :cond_18
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -130,16 +130,16 @@
 
     move-result v4
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     return-object v3
 
-    :cond_15
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
@@ -149,7 +149,7 @@
 .end method
 
 .method public getParentFile()Landroidx/documentfile/provider/DocumentFile;
-    .registers 2
+    .locals 1
 
     .line 229
     iget-object v0, p0, Landroidx/documentfile/provider/DocumentFile;->mParent:Landroidx/documentfile/provider/DocumentFile;

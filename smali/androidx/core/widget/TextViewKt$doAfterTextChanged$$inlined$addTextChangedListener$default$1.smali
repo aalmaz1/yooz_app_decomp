@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/core/widget/TextViewKt$doAfterTextChanged$$inlined$addTextChangedListener$default$1;->$afterTextChanged:Lkotlin/jvm/functions/Function1;
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
-    .registers 3
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/core/widget/TextViewKt$doAfterTextChanged$$inlined$addTextChangedListener$default$1;->$afterTextChanged:Lkotlin/jvm/functions/Function1;
@@ -82,13 +82,13 @@
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 534
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static canBypassDnd(Landroid/app/NotificationChannel;)Z
-    .registers 1
+    .locals 0
 
     .line 646
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->canBypassDnd()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static canShowBadge(Landroid/app/NotificationChannel;)Z
-    .registers 1
+    .locals 0
 
     .line 579
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->canShowBadge()Z
@@ -47,7 +47,7 @@
 .end method
 
 .method static createNotificationChannel(Ljava/lang/String;Ljava/lang/CharSequence;I)Landroid/app/NotificationChannel;
-    .registers 4
+    .locals 1
 
     .line 539
     new-instance v0, Landroid/app/NotificationChannel;
@@ -58,7 +58,7 @@
 .end method
 
 .method static enableLights(Landroid/app/NotificationChannel;Z)V
-    .registers 2
+    .locals 0
 
     .line 610
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->enableLights(Z)V
@@ -67,7 +67,7 @@
 .end method
 
 .method static enableVibration(Landroid/app/NotificationChannel;Z)V
-    .registers 2
+    .locals 0
 
     .line 630
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->enableVibration(Z)V
@@ -76,7 +76,7 @@
 .end method
 
 .method static getAudioAttributes(Landroid/app/NotificationChannel;)Landroid/media/AudioAttributes;
-    .registers 1
+    .locals 0
 
     .line 600
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getAudioAttributes()Landroid/media/AudioAttributes;
@@ -87,7 +87,7 @@
 .end method
 
 .method static getDescription(Landroid/app/NotificationChannel;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 559
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getDescription()Ljava/lang/String;
@@ -98,7 +98,7 @@
 .end method
 
 .method static getGroup(Landroid/app/NotificationChannel;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 569
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getGroup()Ljava/lang/String;
@@ -109,7 +109,7 @@
 .end method
 
 .method static getId(Landroid/app/NotificationChannel;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 544
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
@@ -120,7 +120,7 @@
 .end method
 
 .method static getImportance(Landroid/app/NotificationChannel;)I
-    .registers 1
+    .locals 0
 
     .line 549
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getImportance()I
@@ -131,7 +131,7 @@
 .end method
 
 .method static getLightColor(Landroid/app/NotificationChannel;)I
-    .registers 1
+    .locals 0
 
     .line 615
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getLightColor()I
@@ -142,7 +142,7 @@
 .end method
 
 .method static getLockscreenVisibility(Landroid/app/NotificationChannel;)I
-    .registers 1
+    .locals 0
 
     .line 651
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getLockscreenVisibility()I
@@ -153,7 +153,7 @@
 .end method
 
 .method static getName(Landroid/app/NotificationChannel;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 554
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getName()Ljava/lang/CharSequence;
@@ -164,7 +164,7 @@
 .end method
 
 .method static getSound(Landroid/app/NotificationChannel;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 589
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getSound()Landroid/net/Uri;
@@ -175,7 +175,7 @@
 .end method
 
 .method static getVibrationPattern(Landroid/app/NotificationChannel;)[J
-    .registers 1
+    .locals 0
 
     .line 635
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getVibrationPattern()[J
@@ -186,7 +186,7 @@
 .end method
 
 .method static setDescription(Landroid/app/NotificationChannel;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 564
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
@@ -195,7 +195,7 @@
 .end method
 
 .method static setGroup(Landroid/app/NotificationChannel;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 574
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->setGroup(Ljava/lang/String;)V
@@ -204,7 +204,7 @@
 .end method
 
 .method static setLightColor(Landroid/app/NotificationChannel;I)V
-    .registers 2
+    .locals 0
 
     .line 620
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->setLightColor(I)V
@@ -213,7 +213,7 @@
 .end method
 
 .method static setShowBadge(Landroid/app/NotificationChannel;Z)V
-    .registers 2
+    .locals 0
 
     .line 584
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->setShowBadge(Z)V
@@ -222,7 +222,7 @@
 .end method
 
 .method static setSound(Landroid/app/NotificationChannel;Landroid/net/Uri;Landroid/media/AudioAttributes;)V
-    .registers 3
+    .locals 0
 
     .line 595
     invoke-virtual {p0, p1, p2}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
@@ -231,7 +231,7 @@
 .end method
 
 .method static setVibrationPattern(Landroid/app/NotificationChannel;[J)V
-    .registers 2
+    .locals 0
 
     .line 641
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannel;->setVibrationPattern([J)V
@@ -240,7 +240,7 @@
 .end method
 
 .method static shouldShowLights(Landroid/app/NotificationChannel;)Z
-    .registers 1
+    .locals 0
 
     .line 605
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->shouldShowLights()Z
@@ -251,7 +251,7 @@
 .end method
 
 .method static shouldVibrate(Landroid/app/NotificationChannel;)Z
-    .registers 1
+    .locals 0
 
     .line 625
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->shouldVibrate()Z

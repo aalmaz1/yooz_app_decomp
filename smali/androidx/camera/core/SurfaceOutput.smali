@@ -19,7 +19,7 @@
 .end method
 
 .method public getFormat()I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x22
 
@@ -27,7 +27,7 @@
 .end method
 
 .method public getSensorToBufferTransform()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 180
     new-instance v0, Landroid/graphics/Matrix;

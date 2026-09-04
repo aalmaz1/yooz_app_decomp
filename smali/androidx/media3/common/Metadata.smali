@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 210
     new-instance v0, Landroidx/media3/common/Metadata$1;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(JLjava/util/List;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -75,7 +75,7 @@
 .end method
 
 .method public varargs constructor <init>(J[Landroidx/media3/common/Metadata$Entry;)V
-    .registers 4
+    .locals 0
 
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 5
+    .locals 3
 
     .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,12 +107,12 @@
     const/4 v0, 0x0
 
     .line 105
-    :goto_c
+    :goto_0
     iget-object v1, p0, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_22
+    if-ge v0, v2, :cond_0
 
     .line 106
     const-class v2, Landroidx/media3/common/Metadata$Entry;
@@ -131,10 +131,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 108
-    :cond_22
+    :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
@@ -145,7 +145,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,7 +173,7 @@
 .end method
 
 .method public varargs constructor <init>([Landroidx/media3/common/Metadata$Entry;)V
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -186,17 +186,17 @@
 
 # virtual methods
 .method public varargs copyWithAppendedEntries([Landroidx/media3/common/Metadata$Entry;)Landroidx/media3/common/Metadata;
-    .registers 6
+    .locals 4
 
     .line 148
     array-length v0, p1
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 151
-    :cond_4
+    :cond_0
     new-instance v0, Landroidx/media3/common/Metadata;
 
     iget-wide v1, p0, Landroidx/media3/common/Metadata;->presentationTimeUs:J
@@ -216,14 +216,14 @@
 .end method
 
 .method public copyWithAppendedEntriesFrom(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Metadata;
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-object p0
 
     .line 138
-    :cond_3
+    :cond_0
     iget-object p1, p1, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
 
     invoke-virtual {p0, p1}, Landroidx/media3/common/Metadata;->copyWithAppendedEntries([Landroidx/media3/common/Metadata$Entry;)Landroidx/media3/common/Metadata;
@@ -234,19 +234,19 @@
 .end method
 
 .method public copyWithPresentationTimeUs(J)Landroidx/media3/common/Metadata;
-    .registers 5
+    .locals 2
 
     .line 162
     iget-wide v0, p0, Landroidx/media3/common/Metadata;->presentationTimeUs:J
 
     cmp-long v0, v0, p1
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 165
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/media3/common/Metadata;
 
     iget-object v1, p0, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
@@ -257,7 +257,7 @@
 .end method
 
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -265,18 +265,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_3
 
     .line 173
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -287,12 +287,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_29
+    goto :goto_1
 
     .line 176
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/Metadata;
 
     .line 177
@@ -304,7 +304,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/common/Metadata;->presentationTimeUs:J
 
@@ -312,23 +312,23 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_2
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     move v0, v1
 
-    :goto_28
+    :goto_0
     return v0
 
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public get(I)Landroidx/media3/common/Metadata$Entry;
-    .registers 3
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
@@ -339,7 +339,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 182
     iget-object v0, p0, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
@@ -363,7 +363,7 @@
 .end method
 
 .method public length()I
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
@@ -374,7 +374,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 189
     new-instance v0, Ljava/lang/StringBuilder;
@@ -401,13 +401,13 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
     const-string v1, ""
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, ", presentationTimeUs="
@@ -424,7 +424,7 @@
 
     move-result-object v1
 
-    :goto_30
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -437,7 +437,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 7
+    .locals 4
 
     .line 203
     iget-object p2, p0, Landroidx/media3/common/Metadata;->entries:[Landroidx/media3/common/Metadata$Entry;
@@ -455,8 +455,8 @@
 
     move v2, v1
 
-    :goto_b
-    if-ge v2, v0, :cond_15
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     aget-object v3, p2, v2
 
@@ -465,10 +465,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 207
-    :cond_15
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/common/Metadata;->presentationTimeUs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V

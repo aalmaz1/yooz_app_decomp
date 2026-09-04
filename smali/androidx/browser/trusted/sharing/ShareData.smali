@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,7 +57,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/sharing/ShareData;
-    .registers 5
+    .locals 4
 
     .line 82
     new-instance v0, Landroidx/browser/trusted/sharing/ShareData;
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 69
     new-instance v0, Landroid/os/Bundle;
@@ -114,7 +114,7 @@
     .line 72
     iget-object v1, p0, Landroidx/browser/trusted/sharing/ShareData;->uris:Ljava/util/List;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     .line 73
     new-instance v1, Ljava/util/ArrayList;
@@ -127,6 +127,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    :cond_23
+    :cond_0
     return-object v0
 .end method

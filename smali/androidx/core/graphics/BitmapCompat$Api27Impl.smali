@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 331
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static copyBitmapIfHardware(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 3
 
     .line 360
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
@@ -34,7 +34,7 @@
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_1
 
     .line 361
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -44,14 +44,14 @@
 
     const/16 v2, 0x1f
 
-    if-lt v1, v2, :cond_14
+    if-lt v1, v2, :cond_0
 
     .line 363
     invoke-static {p0}, Landroidx/core/graphics/BitmapCompat$Api31Impl;->getHardwareBitmapConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
 
     move-result-object v0
 
-    :cond_14
+    :cond_0
     const/4 v1, 0x1
 
     .line 365
@@ -59,12 +59,12 @@
 
     move-result-object p0
 
-    :cond_19
+    :cond_1
     return-object p0
 .end method
 
 .method static createBitmapWithSourceColorspace(IILandroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
-    .registers 7
+    .locals 3
 
     .line 336
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
@@ -83,7 +83,7 @@
 
     move-result-object v2
 
-    if-eqz p3, :cond_1e
+    if-eqz p3, :cond_0
 
     .line 339
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getColorSpace()Landroid/graphics/ColorSpace;
@@ -94,24 +94,24 @@
 
     move-result p3
 
-    if-nez p3, :cond_1e
+    if-nez p3, :cond_0
 
     .line 341
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
     move-object v1, v2
 
-    goto :goto_32
+    goto :goto_0
 
     .line 343
-    :cond_1e
+    :cond_0
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object p3
 
     sget-object v2, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
-    if-ne p3, v2, :cond_32
+    if-ne p3, v2, :cond_1
 
     .line 344
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -121,7 +121,7 @@
 
     const/16 v2, 0x1f
 
-    if-lt p3, v2, :cond_32
+    if-lt p3, v2, :cond_1
 
     .line 346
     invoke-static {p2}, Landroidx/core/graphics/BitmapCompat$Api31Impl;->getHardwareBitmapConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
@@ -129,8 +129,8 @@
     move-result-object v0
 
     .line 349
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->hasAlpha()Z
 
     move-result p2
@@ -143,7 +143,7 @@
 .end method
 
 .method static isAlreadyF16AndLinear(Landroid/graphics/Bitmap;)Z
-    .registers 4
+    .locals 3
 
     .line 354
     sget-object v0, Landroid/graphics/ColorSpace$Named;->LINEAR_EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
@@ -159,7 +159,7 @@
 
     sget-object v2, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
-    if-ne v1, v2, :cond_1a
+    if-ne v1, v2, :cond_0
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getColorSpace()Landroid/graphics/ColorSpace;
 
@@ -169,15 +169,15 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1a
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_1b
+    :goto_0
     return p0
 .end method

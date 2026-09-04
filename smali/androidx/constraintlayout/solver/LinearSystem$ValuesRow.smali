@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/LinearSystem;Landroidx/constraintlayout/solver/Cache;)V
-    .registers 3
+    .locals 0
 
     .line 83
     iput-object p1, p0, Landroidx/constraintlayout/solver/LinearSystem$ValuesRow;->this$0:Landroidx/constraintlayout/solver/LinearSystem;

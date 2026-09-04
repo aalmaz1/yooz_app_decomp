@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/arch/core/util/Function;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)V
-    .registers 6
+    .locals 0
 
     .line 3493
     iput-object p1, p0, Landroidx/fragment/app/Fragment$8;->this$0:Landroidx/fragment/app/Fragment;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method onPreAttached()V
-    .registers 7
+    .locals 6
 
     .line 3496
     iget-object v0, p0, Landroidx/fragment/app/Fragment$8;->this$0:Landroidx/fragment/app/Fragment;

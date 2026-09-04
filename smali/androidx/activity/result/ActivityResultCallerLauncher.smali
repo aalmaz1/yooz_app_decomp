@@ -103,7 +103,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/activity/result/ActivityResultLauncher;Landroidx/activity/result/contract/ActivityResultContract;Ljava/lang/Object;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -158,7 +158,7 @@
 .end method
 
 .method private final getResultContract()Landroidx/activity/result/contract/ActivityResultContract;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -183,7 +183,7 @@
 
 # virtual methods
 .method public final getCallerContract()Landroidx/activity/result/contract/ActivityResultContract;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -199,7 +199,7 @@
 .end method
 
 .method public final getCallerInput()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TI;"
@@ -213,7 +213,7 @@
 .end method
 
 .method public getContract()Landroidx/activity/result/contract/ActivityResultContract;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -230,7 +230,7 @@
 .end method
 
 .method public bridge synthetic launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 3
+    .locals 0
 
     .line 113
     check-cast p1, Lkotlin/Unit;
@@ -241,7 +241,7 @@
 .end method
 
 .method public launch(Lkotlin/Unit;Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "input"
 
@@ -258,7 +258,7 @@
 .end method
 
 .method public unregister()V
-    .registers 2
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/activity/result/ActivityResultCallerLauncher;->launcher:Landroidx/activity/result/ActivityResultLauncher;

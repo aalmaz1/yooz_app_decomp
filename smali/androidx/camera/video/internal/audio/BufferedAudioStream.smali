@@ -60,7 +60,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$lSUSHX36_qgRNF7bYzUFMF6iF-4(Landroidx/camera/video/internal/audio/BufferedAudioStream;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/BufferedAudioStream;->collectAudioData()V
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/video/internal/audio/AudioStream;Landroidx/camera/video/internal/audio/AudioSettings;)V
-    .registers 11
+    .locals 8
 
     .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -152,16 +152,16 @@
 
     const/4 v2, 0x1
 
-    if-lez v0, :cond_4c
+    if-lez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_4d
+    goto :goto_0
 
-    :cond_4c
+    :cond_0
     move v0, v1
 
-    :goto_4d
+    :goto_0
     const-string v3, "mBytesPerFrame must be greater than 0."
 
     .line 89
@@ -171,11 +171,11 @@
 
     cmp-long p2, v6, v4
 
-    if-lez p2, :cond_58
+    if-lez p2, :cond_1
 
     move v1, v2
 
-    :cond_58
+    :cond_1
     const-string p2, "mSampleRate must be greater than 0."
 
     .line 90
@@ -195,7 +195,7 @@
 .end method
 
 .method private checkNotReleasedOrThrow()V
-    .registers 3
+    .locals 2
 
     .line 216
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsReleased:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -214,7 +214,7 @@
 .end method
 
 .method private checkStartedOrThrow()V
-    .registers 3
+    .locals 2
 
     .line 220
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -231,7 +231,7 @@
 .end method
 
 .method private collectAudioData()V
-    .registers 6
+    .locals 5
 
     .line 252
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsCollectingAudioData:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -240,12 +240,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 257
-    :cond_9
+    :cond_0
     iget v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mBufferSize:I
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -277,20 +277,20 @@
     monitor-enter v1
 
     .line 264
-    :try_start_23
+    :try_start_0
     iget-object v3, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataQueue:Ljava/util/Queue;
 
     invoke-interface {v3, v2}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
     .line 267
-    :goto_28
+    :goto_0
     iget-object v2, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataQueue:Ljava/util/Queue;
 
     invoke-interface {v2}, Ljava/util/Queue;->size()I
 
     move-result v2
 
-    if-le v2, v0, :cond_3d
+    if-le v2, v0, :cond_1
 
     .line 268
     iget-object v2, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataQueue:Ljava/util/Queue;
@@ -304,13 +304,13 @@
     .line 269
     invoke-static {v2, v3}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 271
-    :cond_3d
+    :cond_1
     monitor-exit v1
-    :try_end_3e
-    .catchall {:try_start_23 .. :try_end_3e} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 274
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsCollectingAudioData:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -319,7 +319,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_2
 
     .line 275
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mProducerExecutor:Ljava/util/concurrent/Executor;
@@ -330,23 +330,23 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    :cond_50
+    :cond_2
     return-void
 
-    :catchall_51
+    :catchall_0
     move-exception v0
 
     .line 271
-    :try_start_52
+    :try_start_1
     monitor-exit v1
-    :try_end_53
-    .catchall {:try_start_52 .. :try_end_53} :catchall_51
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method private startCollectingAudioData()V
-    .registers 3
+    .locals 2
 
     .line 243
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsCollectingAudioData:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -357,29 +357,29 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 247
-    :cond_a
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/BufferedAudioStream;->collectAudioData()V
 
     return-void
 .end method
 
 .method private updateCollectionBufferSize(I)V
-    .registers 4
+    .locals 2
 
     .line 229
     iget v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mBufferSize:I
 
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 235
-    :cond_5
+    :cond_0
     iget v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mBytesPerFrame:I
 
     div-int/2addr p1, v1
@@ -424,7 +424,7 @@
 .end method
 
 .method private updateCollectionBufferSizeAsync(I)V
-    .registers 4
+    .locals 2
 
     .line 224
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mProducerExecutor:Ljava/util/concurrent/Executor;
@@ -441,7 +441,7 @@
 
 # virtual methods
 .method synthetic lambda$release$2$androidx-camera-video-internal-audio-BufferedAudioStream()V
-    .registers 3
+    .locals 2
 
     .line 148
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsCollectingAudioData:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -463,7 +463,7 @@
     const/4 v1, 0x0
 
     .line 151
-    :try_start_f
+    :try_start_0
     iput-object v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataNotFullyRead:Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;
 
     .line 152
@@ -476,18 +476,18 @@
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_f .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method synthetic lambda$setCallback$3$androidx-camera-video-internal-audio-BufferedAudioStream(Landroidx/camera/video/internal/audio/AudioStream$AudioStreamCallback;Ljava/util/concurrent/Executor;)V
-    .registers 4
+    .locals 1
 
     .line 212
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioStream:Landroidx/camera/video/internal/audio/AudioStream;
@@ -498,7 +498,7 @@
 .end method
 
 .method synthetic lambda$start$0$androidx-camera-video-internal-audio-BufferedAudioStream()V
-    .registers 3
+    .locals 2
 
     .line 106
     :try_start_0
@@ -508,12 +508,12 @@
 
     .line 107
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/BufferedAudioStream;->startCollectingAudioData()V
-    :try_end_8
-    .catch Landroidx/camera/video/internal/audio/AudioStream$AudioStreamException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Landroidx/camera/video/internal/audio/AudioStream$AudioStreamException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_9
+    :catch_0
     move-exception v0
 
     .line 109
@@ -525,7 +525,7 @@
 .end method
 
 .method synthetic lambda$stop$1$androidx-camera-video-internal-audio-BufferedAudioStream()V
-    .registers 3
+    .locals 2
 
     .line 132
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsCollectingAudioData:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -547,7 +547,7 @@
     const/4 v1, 0x0
 
     .line 135
-    :try_start_f
+    :try_start_0
     iput-object v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataNotFullyRead:Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;
 
     .line 136
@@ -560,18 +560,18 @@
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_f .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method synthetic lambda$updateCollectionBufferSizeAsync$4$androidx-camera-video-internal-audio-BufferedAudioStream(I)V
-    .registers 2
+    .locals 0
 
     .line 224
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/audio/BufferedAudioStream;->updateCollectionBufferSize(I)V
@@ -580,7 +580,7 @@
 .end method
 
 .method public read(Ljava/nio/ByteBuffer;)Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
-    .registers 7
+    .locals 5
 
     .line 161
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/BufferedAudioStream;->checkNotReleasedOrThrow()V
@@ -605,13 +605,13 @@
     move-result-object v0
 
     .line 171
-    :cond_14
+    :cond_0
     iget-object v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 172
-    :try_start_17
+    :try_start_0
     iget-object v3, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataNotFullyRead:Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;
 
     const/4 v4, 0x0
@@ -619,7 +619,7 @@
     .line 173
     iput-object v4, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataNotFullyRead:Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;
 
-    if-nez v3, :cond_26
+    if-nez v3, :cond_1
 
     .line 175
     iget-object v3, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataQueue:Ljava/util/Queue;
@@ -630,8 +630,8 @@
 
     check-cast v3, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;
 
-    :cond_26
-    if-eqz v3, :cond_34
+    :cond_1
+    if-eqz v3, :cond_2
 
     .line 179
     invoke-virtual {v3, p1}, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;->read(Ljava/nio/ByteBuffer;)Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
@@ -643,23 +643,23 @@
 
     move-result v4
 
-    if-lez v4, :cond_34
+    if-lez v4, :cond_2
 
     .line 182
     iput-object v3, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mAudioDataNotFullyRead:Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;
 
     .line 185
-    :cond_34
+    :cond_2
     monitor-exit v1
-    :try_end_35
-    .catchall {:try_start_17 .. :try_end_35} :catchall_62
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 189
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;->getSizeInBytes()I
 
     move-result v1
 
-    if-gtz v1, :cond_4d
+    if-gtz v1, :cond_3
 
     iget-object v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -667,7 +667,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsReleased:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -675,29 +675,29 @@
 
     move-result v1
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_3
 
     const/4 v1, 0x1
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_4d
+    :cond_3
     move v1, v2
 
-    :goto_4e
-    if-eqz v1, :cond_5f
+    :goto_0
+    if-eqz v1, :cond_4
 
     const-wide/16 v3, 0x1
 
     .line 194
-    :try_start_52
+    :try_start_1
     invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_55
-    .catch Ljava/lang/InterruptedException; {:try_start_52 .. :try_end_55} :catch_56
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_5f
+    goto :goto_1
 
-    :catch_56
+    :catch_0
     move-exception p1
 
     const-string v1, "BufferedAudioStream"
@@ -707,29 +707,29 @@
     .line 196
     invoke-static {v1, v2, p1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_61
+    goto :goto_2
 
-    :cond_5f
-    :goto_5f
-    if-nez v1, :cond_14
+    :cond_4
+    :goto_1
+    if-nez v1, :cond_0
 
-    :goto_61
+    :goto_2
     return-object v0
 
-    :catchall_62
+    :catchall_0
     move-exception p1
 
     .line 185
-    :try_start_63
+    :try_start_2
     monitor-exit v1
-    :try_end_64
-    .catchall {:try_start_63 .. :try_end_64} :catchall_62
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 143
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsReleased:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -740,12 +740,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 147
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mProducerExecutor:Ljava/util/concurrent/Executor;
 
     new-instance v1, Landroidx/camera/video/internal/audio/BufferedAudioStream$$ExternalSyntheticLambda2;
@@ -758,7 +758,7 @@
 .end method
 
 .method public setCallback(Landroidx/camera/video/internal/audio/AudioStream$AudioStreamCallback;Ljava/util/concurrent/Executor;)V
-    .registers 6
+    .locals 3
 
     .line 207
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -778,17 +778,17 @@
     .line 208
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/BufferedAudioStream;->checkNotReleasedOrThrow()V
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     const-string v0, "executor can\'t be null with non-null callback."
 
     .line 209
@@ -807,7 +807,7 @@
 .end method
 
 .method public start()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/audio/AudioStream$AudioStreamException;,
@@ -827,12 +827,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 104
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/util/concurrent/FutureTask;
 
     new-instance v1, Landroidx/camera/video/internal/audio/BufferedAudioStream$$ExternalSyntheticLambda3;
@@ -849,24 +849,24 @@
     invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 116
-    :try_start_1d
+    :try_start_0
     invoke-interface {v0}, Ljava/util/concurrent/RunnableFuture;->get()Ljava/lang/Object;
-    :try_end_20
-    .catch Ljava/lang/InterruptedException; {:try_start_1d .. :try_end_20} :catch_23
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1d .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_21
+    :catch_0
     move-exception v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :catch_23
+    :catch_1
     move-exception v0
 
     .line 118
-    :goto_24
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v2, 0x0
@@ -882,7 +882,7 @@
 .end method
 
 .method public stop()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalStateException;
@@ -901,12 +901,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     return-void
 
     .line 131
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream;->mProducerExecutor:Ljava/util/concurrent/Executor;
 
     new-instance v1, Landroidx/camera/video/internal/audio/BufferedAudioStream$$ExternalSyntheticLambda5;

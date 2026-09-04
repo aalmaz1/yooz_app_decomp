@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/16 v0, 0xe6
 
@@ -81,7 +81,7 @@
 .end method
 
 .method public static final enable(Landroidx/activity/ComponentActivity;)V
-    .registers 3
+    .locals 2
 
     const-string v0, "<this>"
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public static final enable(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "<this>"
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public static final enable(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;)V
-    .registers 12
+    .locals 9
 
     const-string v0, "<this>"
 
@@ -191,13 +191,13 @@
     .line 78
     sget-object v0, Landroidx/activity/EdgeToEdge;->Impl:Landroidx/activity/EdgeToEdgeImpl;
 
-    if-nez v0, :cond_73
+    if-nez v0, :cond_2
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_5c
+    if-lt v0, v1, :cond_0
 
     .line 79
     new-instance v0, Landroidx/activity/EdgeToEdgeApi30;
@@ -206,15 +206,15 @@
 
     check-cast v0, Landroidx/activity/EdgeToEdgeBase;
 
-    goto :goto_71
+    goto :goto_0
 
     .line 80
-    :cond_5c
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_6a
+    if-lt v0, v1, :cond_1
 
     .line 81
     new-instance v0, Landroidx/activity/EdgeToEdgeApi29;
@@ -223,10 +223,10 @@
 
     check-cast v0, Landroidx/activity/EdgeToEdgeBase;
 
-    goto :goto_71
+    goto :goto_0
 
     .line 83
-    :cond_6a
+    :cond_1
     new-instance v0, Landroidx/activity/EdgeToEdgeApi28;
 
     invoke-direct {v0}, Landroidx/activity/EdgeToEdgeApi28;-><init>()V
@@ -234,11 +234,11 @@
     check-cast v0, Landroidx/activity/EdgeToEdgeBase;
 
     .line 92
-    :goto_71
+    :goto_0
     check-cast v0, Landroidx/activity/EdgeToEdgeImpl;
 
     .line 94
-    :cond_73
+    :cond_2
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -269,11 +269,11 @@
 .end method
 
 .method public static synthetic enable$default(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;ILjava/lang/Object;)V
-    .registers 11
+    .locals 6
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_f
+    if-eqz p4, :cond_0
 
     .line 72
     sget-object v0, Landroidx/activity/SystemBarStyle;->Companion:Landroidx/activity/SystemBarStyle$Companion;
@@ -292,10 +292,10 @@
 
     move-result-object p1
 
-    :cond_f
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_1
 
     .line 73
     sget-object v0, Landroidx/activity/SystemBarStyle;->Companion:Landroidx/activity/SystemBarStyle$Companion;
@@ -315,14 +315,14 @@
     move-result-object p2
 
     .line 71
-    :cond_20
+    :cond_1
     invoke-static {p0, p1, p2}, Landroidx/activity/EdgeToEdge;->enable(Landroidx/activity/ComponentActivity;Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;)V
 
     return-void
 .end method
 
 .method public static final getDefaultDarkScrim()I
-    .registers 1
+    .locals 1
 
     .line 44
     sget v0, Landroidx/activity/EdgeToEdge;->DefaultDarkScrim:I
@@ -331,13 +331,13 @@
 .end method
 
 .method public static synthetic getDefaultDarkScrim$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getDefaultLightScrim()I
-    .registers 1
+    .locals 1
 
     .line 38
     sget v0, Landroidx/activity/EdgeToEdge;->DefaultLightScrim:I
@@ -346,7 +346,7 @@
 .end method
 
 .method public static synthetic getDefaultLightScrim$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method

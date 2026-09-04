@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/camera/video/VideoSpec;Landroidx/camera/video/AudioSpec;I)V
-    .registers 4
+    .locals 0
 
     .line 19
     invoke-direct {p0}, Landroidx/camera/video/MediaSpec;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/VideoSpec;Landroidx/camera/video/AudioSpec;ILandroidx/camera/video/AutoValue_MediaSpec$1;)V
-    .registers 5
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1, p2, p3}, Landroidx/camera/video/AutoValue_MediaSpec;-><init>(Landroidx/camera/video/VideoSpec;Landroidx/camera/video/AudioSpec;I)V
@@ -50,21 +50,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 57
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/MediaSpec;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 58
     check-cast p1, Landroidx/camera/video/MediaSpec;
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaSpec;->audioSpec:Landroidx/camera/video/AudioSpec;
 
@@ -93,7 +93,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/AutoValue_MediaSpec;->outputFormat:I
 
@@ -102,22 +102,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_2c
+    if-ne v1, p1, :cond_1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v0, v2
 
-    :goto_2d
+    :goto_0
     return v0
 
-    :cond_2e
+    :cond_2
     return v2
 .end method
 
 .method public getAudioSpec()Landroidx/camera/video/AudioSpec;
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaSpec;->audioSpec:Landroidx/camera/video/AudioSpec;
@@ -126,7 +126,7 @@
 .end method
 
 .method public getOutputFormat()I
-    .registers 2
+    .locals 1
 
     .line 40
     iget v0, p0, Landroidx/camera/video/AutoValue_MediaSpec;->outputFormat:I
@@ -135,7 +135,7 @@
 .end method
 
 .method public getVideoSpec()Landroidx/camera/video/VideoSpec;
-    .registers 2
+    .locals 1
 
     .line 28
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaSpec;->videoSpec:Landroidx/camera/video/VideoSpec;
@@ -144,7 +144,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 70
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaSpec;->videoSpec:Landroidx/camera/video/VideoSpec;
@@ -179,7 +179,7 @@
 .end method
 
 .method public toBuilder()Landroidx/camera/video/MediaSpec$Builder;
-    .registers 3
+    .locals 2
 
     .line 80
     new-instance v0, Landroidx/camera/video/AutoValue_MediaSpec$Builder;
@@ -192,7 +192,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 45
     new-instance v0, Ljava/lang/StringBuilder;

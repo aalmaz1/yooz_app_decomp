@@ -115,7 +115,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -127,7 +127,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -138,23 +138,23 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Runnable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
     .line 75
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/activity/OnBackPressedDispatcher;-><init>(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/Runnable;Landroidx/core/util/Consumer;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -186,14 +186,14 @@
 
     const/16 p2, 0x21
 
-    if-lt p1, p2, :cond_4c
+    if-lt p1, p2, :cond_1
 
     .line 126
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p2, 0x22
 
-    if-lt p1, p2, :cond_3d
+    if-lt p1, p2, :cond_0
 
     .line 127
     sget-object p1, Landroidx/activity/OnBackPressedDispatcher$Api34Impl;->INSTANCE:Landroidx/activity/OnBackPressedDispatcher$Api34Impl;
@@ -226,10 +226,10 @@
 
     move-result-object p1
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 134
-    :cond_3d
+    :cond_0
     sget-object p1, Landroidx/activity/OnBackPressedDispatcher$Api33Impl;->INSTANCE:Landroidx/activity/OnBackPressedDispatcher$Api33Impl;
 
     new-instance p2, Landroidx/activity/OnBackPressedDispatcher$5;
@@ -243,15 +243,15 @@
     move-result-object p1
 
     .line 126
-    :goto_4a
+    :goto_0
     iput-object p1, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackInvokedCallback:Landroid/window/OnBackInvokedCallback;
 
-    :cond_4c
+    :cond_1
     return-void
 .end method
 
 .method public static final synthetic access$getInProgressCallback$p(Landroidx/activity/OnBackPressedDispatcher;)Landroidx/activity/OnBackPressedCallback;
-    .registers 1
+    .locals 0
 
     .line 63
     iget-object p0, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
@@ -260,7 +260,7 @@
 .end method
 
 .method public static final synthetic access$getOnBackPressedCallbacks$p(Landroidx/activity/OnBackPressedDispatcher;)Lkotlin/collections/ArrayDeque;
-    .registers 1
+    .locals 0
 
     .line 63
     iget-object p0, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackPressedCallbacks:Lkotlin/collections/ArrayDeque;
@@ -269,7 +269,7 @@
 .end method
 
 .method public static final synthetic access$onBackCancelled(Landroidx/activity/OnBackPressedDispatcher;)V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Landroidx/activity/OnBackPressedDispatcher;->onBackCancelled()V
@@ -278,7 +278,7 @@
 .end method
 
 .method public static final synthetic access$onBackProgressed(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/BackEventCompat;)V
-    .registers 2
+    .locals 0
 
     .line 63
     invoke-direct {p0, p1}, Landroidx/activity/OnBackPressedDispatcher;->onBackProgressed(Landroidx/activity/BackEventCompat;)V
@@ -287,7 +287,7 @@
 .end method
 
 .method public static final synthetic access$onBackStarted(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/BackEventCompat;)V
-    .registers 2
+    .locals 0
 
     .line 63
     invoke-direct {p0, p1}, Landroidx/activity/OnBackPressedDispatcher;->onBackStarted(Landroidx/activity/BackEventCompat;)V
@@ -296,7 +296,7 @@
 .end method
 
 .method public static final synthetic access$setInProgressCallback$p(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/OnBackPressedCallback;)V
-    .registers 2
+    .locals 0
 
     .line 63
     iput-object p1, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
@@ -305,7 +305,7 @@
 .end method
 
 .method public static final synthetic access$updateEnabledCallbacks(Landroidx/activity/OnBackPressedDispatcher;)V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Landroidx/activity/OnBackPressedDispatcher;->updateEnabledCallbacks()V
@@ -314,14 +314,14 @@
 .end method
 
 .method private final onBackCancelled()V
-    .registers 5
+    .locals 4
 
     .line 293
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackPressedCallbacks:Lkotlin/collections/ArrayDeque;
 
@@ -337,12 +337,12 @@
     move-result-object v0
 
     .line 456
-    :cond_11
+    :cond_0
     invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     .line 457
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
@@ -359,39 +359,39 @@
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     move-object v2, v1
 
     .line 460
-    :goto_26
+    :goto_0
     move-object v0, v2
 
     check-cast v0, Landroidx/activity/OnBackPressedCallback;
 
     .line 296
-    :cond_29
+    :cond_2
     iput-object v1, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     .line 298
     invoke-virtual {v0}, Landroidx/activity/OnBackPressedCallback;->handleOnBackCancelled()V
 
-    :cond_30
+    :cond_3
     return-void
 .end method
 
 .method private final onBackProgressed(Landroidx/activity/BackEventCompat;)V
-    .registers 5
+    .locals 3
 
     .line 254
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackPressedCallbacks:Lkotlin/collections/ArrayDeque;
 
@@ -407,12 +407,12 @@
     move-result-object v0
 
     .line 444
-    :cond_10
+    :cond_0
     invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     .line 445
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
@@ -429,31 +429,31 @@
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v1, 0x0
 
     .line 448
-    :goto_25
+    :goto_0
     move-object v0, v1
 
     check-cast v0, Landroidx/activity/OnBackPressedCallback;
 
-    :cond_28
-    if-eqz v0, :cond_2d
+    :cond_2
+    if-eqz v0, :cond_3
 
     .line 258
     invoke-virtual {v0, p1}, Landroidx/activity/OnBackPressedCallback;->handleOnBackProgressed(Landroidx/activity/BackEventCompat;)V
 
-    :cond_2d
+    :cond_3
     return-void
 .end method
 
 .method private final onBackStarted(Landroidx/activity/BackEventCompat;)V
-    .registers 5
+    .locals 3
 
     .line 233
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackPressedCallbacks:Lkotlin/collections/ArrayDeque;
@@ -470,12 +470,12 @@
     move-result-object v0
 
     .line 438
-    :cond_c
+    :cond_0
     invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 439
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
@@ -492,40 +492,40 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 v1, 0x0
 
     .line 233
-    :goto_21
+    :goto_0
     check-cast v1, Landroidx/activity/OnBackPressedCallback;
 
     .line 236
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 237
     invoke-direct {p0}, Landroidx/activity/OnBackPressedDispatcher;->onBackCancelled()V
 
     .line 239
-    :cond_2a
+    :cond_2
     iput-object v1, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_3
 
     .line 241
     invoke-virtual {v1, p1}, Landroidx/activity/OnBackPressedCallback;->handleOnBackStarted(Landroidx/activity/BackEventCompat;)V
 
-    :cond_31
+    :cond_3
     return-void
 .end method
 
 .method private final updateBackInvokedCallbackState(Z)V
-    .registers 6
+    .locals 4
 
     .line 92
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->invokedDispatcher:Landroid/window/OnBackInvokedDispatcher;
@@ -533,18 +533,18 @@
     .line 93
     iget-object v1, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackInvokedCallback:Landroid/window/OnBackInvokedCallback;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 95
     iget-boolean v3, p0, Landroidx/activity/OnBackPressedDispatcher;->backInvokedCallbackRegistered:Z
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_0
 
     .line 96
     sget-object p1, Landroidx/activity/OnBackPressedDispatcher$Api33Impl;->INSTANCE:Landroidx/activity/OnBackPressedDispatcher$Api33Impl;
@@ -556,15 +556,15 @@
     .line 101
     iput-boolean p1, p0, Landroidx/activity/OnBackPressedDispatcher;->backInvokedCallbackRegistered:Z
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_18
-    if-nez p1, :cond_25
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 102
     iget-boolean p1, p0, Landroidx/activity/OnBackPressedDispatcher;->backInvokedCallbackRegistered:Z
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     .line 103
     sget-object p1, Landroidx/activity/OnBackPressedDispatcher$Api33Impl;->INSTANCE:Landroidx/activity/OnBackPressedDispatcher$Api33Impl;
@@ -574,13 +574,13 @@
     .line 107
     iput-boolean v2, p0, Landroidx/activity/OnBackPressedDispatcher;->backInvokedCallbackRegistered:Z
 
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private final updateEnabledCallbacks()V
-    .registers 5
+    .locals 4
 
     .line 113
     iget-boolean v0, p0, Landroidx/activity/OnBackPressedDispatcher;->hasEnabledCallbacks:Z
@@ -595,7 +595,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     move-object v2, v1
 
@@ -605,22 +605,22 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 435
-    :cond_15
+    :cond_0
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_19
+    :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -633,21 +633,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_1
 
     const/4 v3, 0x1
 
     .line 115
-    :cond_2c
-    :goto_2c
+    :cond_2
+    :goto_0
     iput-boolean v3, p0, Landroidx/activity/OnBackPressedDispatcher;->hasEnabledCallbacks:Z
 
-    if-eq v3, v0, :cond_44
+    if-eq v3, v0, :cond_4
 
     .line 117
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->onHasEnabledCallbacksChanged:Landroidx/core/util/Consumer;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3
 
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -656,24 +656,24 @@
     invoke-interface {v0, v1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
     .line 118
-    :cond_3b
+    :cond_3
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_44
+    if-lt v0, v1, :cond_4
 
     .line 119
     invoke-direct {p0, v3}, Landroidx/activity/OnBackPressedDispatcher;->updateBackInvokedCallbackState(Z)V
 
-    :cond_44
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
 .method public final addCallback(Landroidx/activity/OnBackPressedCallback;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "onBackPressedCallback"
 
@@ -686,7 +686,7 @@
 .end method
 
 .method public final addCallback(Landroidx/lifecycle/LifecycleOwner;Landroidx/activity/OnBackPressedCallback;)V
-    .registers 5
+    .locals 2
 
     const-string v0, "owner"
 
@@ -708,12 +708,12 @@
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 210
-    :cond_17
+    :cond_0
     new-instance v0, Landroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;
 
     invoke-direct {v0, p0, p1, p2}, Landroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;-><init>(Landroidx/activity/OnBackPressedDispatcher;Landroidx/lifecycle/Lifecycle;Landroidx/activity/OnBackPressedCallback;)V
@@ -739,7 +739,7 @@
 .end method
 
 .method public final addCancellableCallback$activity_release(Landroidx/activity/OnBackPressedCallback;)Landroidx/activity/Cancellable;
-    .registers 4
+    .locals 2
 
     const-string v0, "onBackPressedCallback"
 
@@ -776,7 +776,7 @@
 .end method
 
 .method public final dispatchOnBackCancelled()V
-    .registers 1
+    .locals 0
 
     .line 288
     invoke-direct {p0}, Landroidx/activity/OnBackPressedDispatcher;->onBackCancelled()V
@@ -785,7 +785,7 @@
 .end method
 
 .method public final dispatchOnBackProgressed(Landroidx/activity/BackEventCompat;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "backEvent"
 
@@ -798,7 +798,7 @@
 .end method
 
 .method public final dispatchOnBackStarted(Landroidx/activity/BackEventCompat;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "backEvent"
 
@@ -811,7 +811,7 @@
 .end method
 
 .method public final hasEnabledCallbacks()Z
-    .registers 2
+    .locals 1
 
     .line 223
     iget-boolean v0, p0, Landroidx/activity/OnBackPressedDispatcher;->hasEnabledCallbacks:Z
@@ -820,14 +820,14 @@
 .end method
 
 .method public final onBackPressed()V
-    .registers 5
+    .locals 4
 
     .line 274
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->onBackPressedCallbacks:Lkotlin/collections/ArrayDeque;
 
@@ -843,12 +843,12 @@
     move-result-object v0
 
     .line 450
-    :cond_11
+    :cond_0
     invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     .line 451
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
@@ -865,24 +865,24 @@
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     move-object v2, v1
 
     .line 454
-    :goto_26
+    :goto_0
     move-object v0, v2
 
     check-cast v0, Landroidx/activity/OnBackPressedCallback;
 
     .line 277
-    :cond_29
+    :cond_2
     iput-object v1, p0, Landroidx/activity/OnBackPressedDispatcher;->inProgressCallback:Landroidx/activity/OnBackPressedCallback;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_3
 
     .line 279
     invoke-virtual {v0}, Landroidx/activity/OnBackPressedCallback;->handleOnBackPressed()V
@@ -890,19 +890,19 @@
     return-void
 
     .line 282
-    :cond_31
+    :cond_3
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher;->fallbackOnBackPressed:Ljava/lang/Runnable;
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_4
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    :cond_38
+    :cond_4
     return-void
 .end method
 
 .method public final setOnBackInvokedDispatcher(Landroid/window/OnBackInvokedDispatcher;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "invoker"
 

@@ -64,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/text/TextOutput;Landroid/os/Looper;)V
-    .registers 4
+    .locals 1
 
     .line 136
     sget-object v0, Landroidx/media3/exoplayer/text/SubtitleDecoderFactory;->DEFAULT:Landroidx/media3/exoplayer/text/SubtitleDecoderFactory;
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/text/TextOutput;Landroid/os/Looper;Landroidx/media3/exoplayer/text/SubtitleDecoderFactory;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -91,19 +91,19 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->output:Landroidx/media3/exoplayer/text/TextOutput;
 
-    if-nez p2, :cond_10
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 155
-    :cond_10
+    :cond_0
     invoke-static {p2, p0}, Landroidx/media3/common/util/Util;->createHandler(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;
 
     move-result-object p1
 
-    :goto_14
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputHandler:Landroid/os/Handler;
 
     .line 156
@@ -152,7 +152,7 @@
 .end method
 
 .method private assertLegacyDecodingEnabledIfRequired()V
-    .registers 4
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "streamFormat"
@@ -162,7 +162,7 @@
     .line 589
     iget-boolean v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->legacyDecodingEnabled:Z
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->streamFormat:Landroidx/media3/common/Format;
 
@@ -175,7 +175,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->streamFormat:Landroidx/media3/common/Format;
 
@@ -188,7 +188,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->streamFormat:Landroidx/media3/common/Format;
 
@@ -201,20 +201,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
-    :goto_2b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_2c
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Legacy decoding is disabled, can\'t handle "
@@ -246,7 +246,7 @@
 .end method
 
 .method private clearOutput()V
-    .registers 5
+    .locals 4
 
     .line 534
     new-instance v0, Landroidx/media3/common/text/CueGroup;
@@ -269,7 +269,7 @@
 .end method
 
 .method private getCurrentEventTimeUs(J)J
-    .registers 4
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "subtitle"
@@ -286,7 +286,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 570
     iget-object p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
@@ -295,14 +295,14 @@
 
     move-result p2
 
-    if-nez p2, :cond_11
+    if-nez p2, :cond_0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_11
+    :cond_0
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_21
+    if-ne p1, p2, :cond_1
 
     .line 575
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
@@ -317,10 +317,10 @@
 
     move-result-wide p1
 
-    goto :goto_29
+    goto :goto_0
 
     .line 576
-    :cond_21
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     add-int/lit8 p1, p1, -0x1
@@ -329,12 +329,12 @@
 
     move-result-wide p1
 
-    :goto_29
+    :goto_0
     return-wide p1
 
     .line 571
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     iget-wide p1, p1, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->timeUs:J
@@ -343,7 +343,7 @@
 .end method
 
 .method private getNextEventTime()J
-    .registers 5
+    .locals 4
 
     .line 516
     iget v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitleEventIndex:I
@@ -352,12 +352,12 @@
 
     const-wide v2, 0x7fffffffffffffffL
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     return-wide v2
 
     .line 519
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -371,12 +371,12 @@
 
     move-result v1
 
-    if-lt v0, v1, :cond_1b
+    if-lt v0, v1, :cond_1
 
-    goto :goto_23
+    goto :goto_0
 
     .line 522
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     iget v1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitleEventIndex:I
@@ -385,12 +385,12 @@
 
     move-result-wide v2
 
-    :goto_23
+    :goto_0
     return-wide v2
 .end method
 
 .method private getPresentationTimeUs(J)J
-    .registers 10
+    .locals 7
     .annotation runtime Lorg/checkerframework/dataflow/qual/SideEffectFree;
     .end annotation
 
@@ -402,17 +402,17 @@
 
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v2, v4
 
     .line 581
-    :goto_e
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 582
@@ -420,14 +420,14 @@
 
     cmp-long v0, v5, v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v3, v4
 
-    :goto_19
+    :goto_1
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 584
@@ -439,7 +439,7 @@
 .end method
 
 .method private handleDecoderError(Landroidx/media3/extractor/text/SubtitleDecoderException;)V
-    .registers 4
+    .locals 2
 
     .line 561
     new-instance v0, Ljava/lang/StringBuilder;
@@ -472,7 +472,7 @@
 .end method
 
 .method private initSubtitleDecoder()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -507,7 +507,7 @@
 .end method
 
 .method private invokeUpdateOutputInternal(Landroidx/media3/common/text/CueGroup;)V
-    .registers 4
+    .locals 2
 
     .line 550
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->output:Landroidx/media3/exoplayer/text/TextOutput;
@@ -525,7 +525,7 @@
 .end method
 
 .method private static isCuesWithTiming(Landroidx/media3/common/Format;)Z
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/SideEffectFree;
     .end annotation
 
@@ -542,7 +542,7 @@
 .end method
 
 .method private readAndDecodeCuesWithTiming(J)Z
-    .registers 10
+    .locals 7
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "this.cuesResolver"
@@ -554,12 +554,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 326
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->formatHolder:Landroidx/media3/exoplayer/FormatHolder;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cueDecoderInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -570,19 +570,19 @@
 
     const/4 v2, -0x4
 
-    if-eq v0, v2, :cond_12
+    if-eq v0, v2, :cond_1
 
     return v1
 
     .line 329
-    :cond_12
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cueDecoderInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_2
 
     const/4 p1, 0x1
 
@@ -592,7 +592,7 @@
     return v1
 
     .line 333
-    :cond_1e
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cueDecoderInputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->flip()V
@@ -651,7 +651,7 @@
 .end method
 
 .method private releaseSubtitleBuffers()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -666,7 +666,7 @@
     .line 487
     iget-object v1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 488
     invoke-virtual {v1}, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->release()V
@@ -675,10 +675,10 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     .line 491
-    :cond_f
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 492
     invoke-virtual {v1}, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->release()V
@@ -686,12 +686,12 @@
     .line 493
     iput-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
-    :cond_18
+    :cond_1
     return-void
 .end method
 
 .method private releaseSubtitleDecoder()V
-    .registers 2
+    .locals 1
 
     .line 498
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->releaseSubtitleBuffers()V
@@ -721,7 +721,7 @@
 .end method
 
 .method private renderFromCuesWithTiming(J)V
-    .registers 9
+    .locals 6
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "this.cuesResolver"
@@ -748,29 +748,29 @@
 
     const/4 v4, 0x1
 
-    if-nez v3, :cond_1b
+    if-nez v3, :cond_0
 
     .line 298
     iget-boolean v5, p0, Landroidx/media3/exoplayer/text/TextRenderer;->inputStreamEnded:Z
 
-    if-eqz v5, :cond_1b
+    if-eqz v5, :cond_0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 299
     iput-boolean v4, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputStreamEnded:Z
 
-    :cond_1b
-    if-eqz v3, :cond_22
+    :cond_0
+    if-eqz v3, :cond_1
 
     cmp-long v1, v1, p1
 
-    if-gtz v1, :cond_22
+    if-gtz v1, :cond_1
 
     move v0, v4
 
-    :cond_22
-    if-eqz v0, :cond_41
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 306
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cuesResolver:Landroidx/media3/exoplayer/text/CuesResolver;
@@ -803,14 +803,14 @@
     invoke-interface {v0, v1, v2}, Landroidx/media3/exoplayer/text/CuesResolver;->discardCuesBeforeTimeUs(J)V
 
     .line 311
-    :cond_41
+    :cond_2
     iput-wide p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->lastRendererPositionUs:J
 
     return-void
 .end method
 
 .method private renderFromSubtitles(J)V
-    .registers 13
+    .locals 10
 
     .line 352
     iput-wide p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->lastRendererPositionUs:J
@@ -818,7 +818,7 @@
     .line 353
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_0
 
     .line 354
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoder:Landroidx/media3/extractor/text/SubtitleDecoder;
@@ -832,7 +832,7 @@
     invoke-interface {v0, p1, p2}, Landroidx/media3/extractor/text/SubtitleDecoder;->setPositionUs(J)V
 
     .line 356
-    :try_start_11
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoder:Landroidx/media3/extractor/text/SubtitleDecoder;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -848,12 +848,12 @@
     check-cast v0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     iput-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
-    :try_end_21
-    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_11 .. :try_end_21} :catch_22
+    :try_end_0
+    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :catch_22
+    :catch_0
     move-exception p1
 
     .line 358
@@ -862,27 +862,27 @@
     return-void
 
     .line 363
-    :cond_27
-    :goto_27
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->getState()I
 
     move-result v0
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_2f
+    if-eq v0, v1, :cond_1
 
     return-void
 
     .line 368
-    :cond_2f
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 371
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->getNextEventTime()J
@@ -891,10 +891,10 @@
 
     move v0, v2
 
-    :goto_3a
+    :goto_1
     cmp-long v4, v4, p1
 
-    if-gtz v4, :cond_4a
+    if-gtz v4, :cond_3
 
     .line 373
     iget v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitleEventIndex:I
@@ -910,27 +910,27 @@
 
     move v0, v3
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_49
+    :cond_2
     move v0, v2
 
     .line 378
-    :cond_4a
+    :cond_3
     iget-object v4, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_8a
+    if-eqz v4, :cond_7
 
     .line 380
     invoke-virtual {v4}, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->isEndOfStream()Z
 
     move-result v6
 
-    if-eqz v6, :cond_72
+    if-eqz v6, :cond_5
 
-    if-nez v0, :cond_8a
+    if-nez v0, :cond_7
 
     .line 381
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->getNextEventTime()J
@@ -941,45 +941,45 @@
 
     cmp-long v4, v6, v8
 
-    if-nez v4, :cond_8a
+    if-nez v4, :cond_7
 
     .line 382
     iget v4, p0, Landroidx/media3/exoplayer/text/TextRenderer;->decoderReplacementState:I
 
-    if-ne v4, v1, :cond_6c
+    if-ne v4, v1, :cond_4
 
     .line 383
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->replaceSubtitleDecoder()V
 
-    goto :goto_8a
+    goto :goto_2
 
     .line 385
-    :cond_6c
+    :cond_4
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->releaseSubtitleBuffers()V
 
     .line 386
     iput-boolean v3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputStreamEnded:Z
 
-    goto :goto_8a
+    goto :goto_2
 
     .line 389
-    :cond_72
+    :cond_5
     iget-wide v6, v4, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->timeUs:J
 
     cmp-long v6, v6, p1
 
-    if-gtz v6, :cond_8a
+    if-gtz v6, :cond_7
 
     .line 391
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
 
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_6
 
     .line 392
     invoke-virtual {v0}, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->release()V
 
     .line 394
-    :cond_7f
+    :cond_6
     invoke-virtual {v4, p1, p2}, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->getNextEventTimeIndex(J)I
 
     move-result v0
@@ -994,9 +994,9 @@
 
     move v0, v3
 
-    :cond_8a
-    :goto_8a
-    if-eqz v0, :cond_a7
+    :cond_7
+    :goto_2
+    if-eqz v0, :cond_8
 
     .line 403
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitle:Landroidx/media3/extractor/text/SubtitleOutputBuffer;
@@ -1027,25 +1027,25 @@
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/text/TextRenderer;->updateOutput(Landroidx/media3/common/text/CueGroup;)V
 
     .line 410
-    :cond_a7
+    :cond_8
     iget p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->decoderReplacementState:I
 
-    if-ne p1, v1, :cond_ac
+    if-ne p1, v1, :cond_9
 
     return-void
 
     .line 415
-    :cond_ac
-    :goto_ac
-    :try_start_ac
+    :cond_9
+    :goto_3
+    :try_start_1
     iget-boolean p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->inputStreamEnded:Z
 
-    if-nez p1, :cond_129
+    if-nez p1, :cond_11
 
     .line 416
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitleInputBuffer:Landroidx/media3/extractor/text/SubtitleInputBuffer;
 
-    if-nez p1, :cond_c7
+    if-nez p1, :cond_b
 
     .line 418
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoder:Landroidx/media3/extractor/text/SubtitleDecoder;
@@ -1062,19 +1062,19 @@
 
     check-cast p1, Landroidx/media3/extractor/text/SubtitleInputBuffer;
 
-    if-nez p1, :cond_c5
+    if-nez p1, :cond_a
 
     return-void
 
     .line 422
-    :cond_c5
+    :cond_a
     iput-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitleInputBuffer:Landroidx/media3/extractor/text/SubtitleInputBuffer;
 
     .line 424
-    :cond_c7
+    :cond_b
     iget p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->decoderReplacementState:I
 
-    if-ne p2, v3, :cond_df
+    if-ne p2, v3, :cond_c
 
     const/4 p2, 0x4
 
@@ -1101,7 +1101,7 @@
     return-void
 
     .line 432
-    :cond_df
+    :cond_c
     iget-object p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->formatHolder:Landroidx/media3/exoplayer/FormatHolder;
 
     invoke-virtual {p0, p2, p1, v2}, Landroidx/media3/exoplayer/text/TextRenderer;->readSource(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
@@ -1110,14 +1110,14 @@
 
     const/4 v0, -0x4
 
-    if-ne p2, v0, :cond_121
+    if-ne p2, v0, :cond_10
 
     .line 434
     invoke-virtual {p1}, Landroidx/media3/extractor/text/SubtitleInputBuffer;->isEndOfStream()Z
 
     move-result p2
 
-    if-eqz p2, :cond_f3
+    if-eqz p2, :cond_d
 
     .line 435
     iput-boolean v3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->inputStreamEnded:Z
@@ -1125,20 +1125,20 @@
     .line 436
     iput-boolean v2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->waitingForKeyFrame:Z
 
-    goto :goto_10f
+    goto :goto_5
 
     .line 438
-    :cond_f3
+    :cond_d
     iget-object p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->formatHolder:Landroidx/media3/exoplayer/FormatHolder;
 
     iget-object p2, p2, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
 
-    if-nez p2, :cond_fa
+    if-nez p2, :cond_e
 
     return-void
 
     .line 443
-    :cond_fa
+    :cond_e
     iget-wide v6, p2, Landroidx/media3/common/Format;->subsampleOffsetUs:J
 
     iput-wide v6, p1, Landroidx/media3/extractor/text/SubtitleInputBuffer;->subsampleOffsetUs:J
@@ -1153,25 +1153,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_10b
+    if-nez v0, :cond_f
 
     move v0, v3
 
-    goto :goto_10c
+    goto :goto_4
 
-    :cond_10b
+    :cond_f
     move v0, v2
 
-    :goto_10c
+    :goto_4
     and-int/2addr p2, v0
 
     iput-boolean p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->waitingForKeyFrame:Z
 
     .line 447
-    :goto_10f
+    :goto_5
     iget-boolean p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->waitingForKeyFrame:Z
 
-    if-nez p2, :cond_ac
+    if-nez p2, :cond_9
 
     .line 448
     iget-object p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoder:Landroidx/media3/extractor/text/SubtitleDecoder;
@@ -1186,30 +1186,30 @@
 
     .line 449
     iput-object v5, p0, Landroidx/media3/exoplayer/text/TextRenderer;->nextSubtitleInputBuffer:Landroidx/media3/extractor/text/SubtitleInputBuffer;
-    :try_end_120
-    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_ac .. :try_end_120} :catch_125
+    :try_end_1
+    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_ac
+    goto :goto_3
 
-    :cond_121
+    :cond_10
     const/4 p1, -0x3
 
-    if-ne p2, p1, :cond_ac
+    if-ne p2, p1, :cond_9
 
     return-void
 
-    :catch_125
+    :catch_1
     move-exception p1
 
     .line 456
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/text/TextRenderer;->handleDecoderError(Landroidx/media3/extractor/text/SubtitleDecoderException;)V
 
-    :cond_129
+    :cond_11
     return-void
 .end method
 
 .method private replaceSubtitleDecoder()V
-    .registers 1
+    .locals 0
 
     .line 511
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->releaseSubtitleDecoder()V
@@ -1221,12 +1221,12 @@
 .end method
 
 .method private updateOutput(Landroidx/media3/common/text/CueGroup;)V
-    .registers 4
+    .locals 2
 
     .line 526
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
@@ -1237,20 +1237,20 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    goto :goto_10
+    goto :goto_0
 
     .line 529
-    :cond_d
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/text/TextRenderer;->invokeUpdateOutputInternal(Landroidx/media3/common/text/CueGroup;)V
 
-    :goto_10
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public experimentalSetLegacyDecodingEnabled(Z)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1261,7 +1261,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "TextRenderer"
 
@@ -1269,14 +1269,14 @@
 .end method
 
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 4
+    .locals 2
 
     .line 539
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 541
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1288,7 +1288,7 @@
     return v1
 
     .line 544
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -1297,7 +1297,7 @@
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 474
     iget-boolean v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputStreamEnded:Z
@@ -1306,7 +1306,7 @@
 .end method
 
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1314,7 +1314,7 @@
 .end method
 
 .method protected onDisabled()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1338,17 +1338,17 @@
     .line 467
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoder:Landroidx/media3/extractor/text/SubtitleDecoder;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 468
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->releaseSubtitleDecoder()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method protected onPositionReset(JZ)V
-    .registers 4
+    .locals 0
 
     .line 228
     iput-wide p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->lastRendererPositionUs:J
@@ -1356,13 +1356,13 @@
     .line 229
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cuesResolver:Landroidx/media3/exoplayer/text/CuesResolver;
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 230
     invoke-interface {p1}, Landroidx/media3/exoplayer/text/CuesResolver;->clear()V
 
     .line 232
-    :cond_9
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->clearOutput()V
 
     const/4 p1, 0x0
@@ -1381,26 +1381,26 @@
     .line 236
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->streamFormat:Landroidx/media3/common/Format;
 
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_2
 
     invoke-static {p1}, Landroidx/media3/exoplayer/text/TextRenderer;->isCuesWithTiming(Landroidx/media3/common/Format;)Z
 
     move-result p1
 
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_2
 
     .line 237
     iget p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->decoderReplacementState:I
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_1
 
     .line 238
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->replaceSubtitleDecoder()V
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 240
-    :cond_2a
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->releaseSubtitleBuffers()V
 
     .line 241
@@ -1422,13 +1422,13 @@
 
     invoke-interface {p1, p2, p3}, Landroidx/media3/extractor/text/SubtitleDecoder;->setOutputStartTimeUs(J)V
 
-    :cond_3f
-    :goto_3f
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method protected onStreamChanged([Landroidx/media3/common/Format;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 7
+    .locals 0
 
     .line 209
     iput-wide p4, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputStreamOffsetUs:J
@@ -1447,7 +1447,7 @@
 
     const/4 p2, 0x1
 
-    if-nez p1, :cond_1c
+    if-nez p1, :cond_1
 
     .line 212
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->assertLegacyDecodingEnabledIfRequired()V
@@ -1455,56 +1455,56 @@
     .line 213
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoder:Landroidx/media3/extractor/text/SubtitleDecoder;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 214
     iput p2, p0, Landroidx/media3/exoplayer/text/TextRenderer;->decoderReplacementState:I
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 216
-    :cond_18
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->initSubtitleDecoder()V
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 220
-    :cond_1c
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->streamFormat:Landroidx/media3/common/Format;
 
     iget p1, p1, Landroidx/media3/common/Format;->cueReplacementBehavior:I
 
-    if-ne p1, p2, :cond_28
+    if-ne p1, p2, :cond_2
 
     .line 221
     new-instance p1, Landroidx/media3/exoplayer/text/MergingCuesResolver;
 
     invoke-direct {p1}, Landroidx/media3/exoplayer/text/MergingCuesResolver;-><init>()V
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 222
-    :cond_28
+    :cond_2
     new-instance p1, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;
 
     invoke-direct {p1}, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;-><init>()V
 
-    :goto_2d
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cuesResolver:Landroidx/media3/exoplayer/text/CuesResolver;
 
-    :goto_2f
+    :goto_1
     return-void
 .end method
 
 .method public render(JJ)V
-    .registers 7
+    .locals 2
 
     .line 250
     invoke-virtual {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->isCurrentStreamFinal()Z
 
     move-result p3
 
-    if-eqz p3, :cond_1b
+    if-eqz p3, :cond_0
 
     iget-wide p3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->finalStreamEndPositionUs:J
 
@@ -1512,11 +1512,11 @@
 
     cmp-long v0, p3, v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     cmp-long p3, p1, p3
 
-    if-ltz p3, :cond_1b
+    if-ltz p3, :cond_0
 
     .line 253
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->releaseSubtitleBuffers()V
@@ -1527,15 +1527,15 @@
     iput-boolean p3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputStreamEnded:Z
 
     .line 257
-    :cond_1b
+    :cond_0
     iget-boolean p3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->outputStreamEnded:Z
 
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_1
 
     return-void
 
     .line 261
-    :cond_20
+    :cond_1
     iget-object p3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->streamFormat:Landroidx/media3/common/Format;
 
     invoke-static {p3}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1548,7 +1548,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_37
+    if-eqz p3, :cond_2
 
     .line 262
     iget-object p3, p0, Landroidx/media3/exoplayer/text/TextRenderer;->cuesResolver:Landroidx/media3/exoplayer/text/CuesResolver;
@@ -1558,21 +1558,21 @@
     .line 263
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/text/TextRenderer;->renderFromCuesWithTiming(J)V
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 265
-    :cond_37
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->assertLegacyDecodingEnabledIfRequired()V
 
     .line 266
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/text/TextRenderer;->renderFromSubtitles(J)V
 
-    :goto_3d
+    :goto_0
     return-void
 .end method
 
 .method public setFinalStreamEndPositionUs(J)V
-    .registers 4
+    .locals 1
 
     .line 199
     invoke-virtual {p0}, Landroidx/media3/exoplayer/text/TextRenderer;->isCurrentStreamFinal()Z
@@ -1588,14 +1588,14 @@
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)I
-    .registers 3
+    .locals 1
 
     .line 178
     invoke-static {p1}, Landroidx/media3/exoplayer/text/TextRenderer;->isCuesWithTiming(Landroidx/media3/common/Format;)Z
 
     move-result v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/text/TextRenderer;->subtitleDecoderFactory:Landroidx/media3/exoplayer/text/SubtitleDecoderFactory;
 
@@ -1603,19 +1603,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 181
-    :cond_f
+    :cond_0
     iget-object p1, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
     invoke-static {p1}, Landroidx/media3/common/MimeTypes;->isText(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x1
 
@@ -1626,7 +1626,7 @@
 
     return p1
 
-    :cond_1d
+    :cond_1
     const/4 p1, 0x0
 
     .line 184
@@ -1637,21 +1637,21 @@
     return p1
 
     .line 180
-    :cond_23
-    :goto_23
+    :cond_2
+    :goto_0
     iget p1, p1, Landroidx/media3/common/Format;->cryptoType:I
 
-    if-nez p1, :cond_29
+    if-nez p1, :cond_3
 
     const/4 p1, 0x4
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_3
     const/4 p1, 0x2
 
     .line 179
-    :goto_2a
+    :goto_1
     invoke-static {p1}, Landroidx/media3/exoplayer/RendererCapabilities;->create(I)I
 
     move-result p1

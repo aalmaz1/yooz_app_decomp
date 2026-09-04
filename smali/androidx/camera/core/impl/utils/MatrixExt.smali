@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x10
 
@@ -22,7 +22,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method private static denormalize([FFF)V
-    .registers 5
+    .locals 2
 
     neg-float p1, p1
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private static normalize([FFF)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public static postRotate([FFFF)V
-    .registers 11
+    .locals 7
 
     .line 81
     sget-object v6, Landroidx/camera/core/impl/utils/MatrixExt;->sTemp:[F
@@ -71,7 +71,7 @@
     const/4 v0, 0x0
 
     .line 82
-    :try_start_4
+    :try_start_0
     invoke-static {v6, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     .line 83
@@ -115,18 +115,18 @@
 
     return-void
 
-    :catchall_22
+    :catchall_0
     move-exception p0
 
     monitor-exit v6
-    :try_end_24
-    .catchall {:try_start_4 .. :try_end_24} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static preRotate([FFFF)V
-    .registers 10
+    .locals 6
 
     .line 64
     invoke-static {p0, p2, p3}, Landroidx/camera/core/impl/utils/MatrixExt;->normalize([FFF)V
@@ -153,7 +153,7 @@
 .end method
 
 .method public static preVerticalFlip([FF)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public static setRotate([FFFF)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -190,7 +190,7 @@
 .end method
 
 .method public static toString([FI)Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     .line 112
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;)V
-    .registers 2
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public onResult(ZZ)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

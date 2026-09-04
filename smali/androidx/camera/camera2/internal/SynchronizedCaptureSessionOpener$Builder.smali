@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;Landroid/os/Handler;Landroidx/camera/camera2/internal/CaptureSessionRepository;Landroidx/camera/core/impl/Quirks;Landroidx/camera/core/impl/Quirks;)V
-    .registers 7
+    .locals 0
 
     .line 191
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_33
+    if-nez p1, :cond_1
 
     new-instance p1, Landroidx/camera/camera2/internal/compat/workaround/WaitForRepeatingRequestStart;
 
@@ -76,7 +76,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_33
+    if-nez p1, :cond_1
 
     new-instance p1, Landroidx/camera/camera2/internal/compat/workaround/ForceCloseCaptureSession;
 
@@ -87,20 +87,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_34
+    :goto_1
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener$Builder;->mQuirkExist:Z
 
     return-void
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method build()Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener;
-    .registers 10
+    .locals 9
 
     .line 206
     new-instance v0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener;
@@ -117,7 +117,7 @@
     .line 207
     iget-boolean v1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener$Builder;->mQuirkExist:Z
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     new-instance v1, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionImpl;
 
@@ -137,10 +137,10 @@
 
     invoke-direct/range {v2 .. v8}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionImpl;-><init>(Landroidx/camera/core/impl/Quirks;Landroidx/camera/core/impl/Quirks;Landroidx/camera/camera2/internal/CaptureSessionRepository;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;Landroid/os/Handler;)V
 
-    goto :goto_26
+    goto :goto_0
 
     .line 210
-    :cond_19
+    :cond_0
     new-instance v1, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     iget-object v2, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener$Builder;->mCaptureSessionRepository:Landroidx/camera/camera2/internal/CaptureSessionRepository;
@@ -153,7 +153,7 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;-><init>(Landroidx/camera/camera2/internal/CaptureSessionRepository;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;Landroid/os/Handler;)V
 
-    :goto_26
+    :goto_0
     invoke-direct {v0, v1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener;-><init>(Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener$OpenerImpl;)V
 
     return-object v0

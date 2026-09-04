@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 6129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getExtras(Landroid/app/Notification$Action;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 6138
     invoke-virtual {p0}, Landroid/app/Notification$Action;->getExtras()Landroid/os/Bundle;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getRemoteInputs(Landroid/app/Notification$Action;)[Landroid/app/RemoteInput;
-    .registers 1
+    .locals 0
 
     .line 6133
     invoke-virtual {p0}, Landroid/app/Notification$Action;->getRemoteInputs()[Landroid/app/RemoteInput;

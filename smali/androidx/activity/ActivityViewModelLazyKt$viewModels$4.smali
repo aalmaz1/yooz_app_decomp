@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/activity/ComponentActivity;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,12 +93,12 @@
 
 # virtual methods
 .method public final invoke()Landroidx/lifecycle/viewmodel/CreationExtras;
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/activity/ActivityViewModelLazyKt$viewModels$4;->$extrasProducer:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
@@ -106,21 +106,21 @@
 
     check-cast v0, Landroidx/lifecycle/viewmodel/CreationExtras;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/activity/ActivityViewModelLazyKt$viewModels$4;->$this_viewModels:Landroidx/activity/ComponentActivity;
 
     invoke-virtual {v0}, Landroidx/activity/ComponentActivity;->getDefaultViewModelCreationExtras()Landroidx/lifecycle/viewmodel/CreationExtras;
 
     move-result-object v0
 
-    :cond_12
+    :cond_1
     return-object v0
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 87
     invoke-virtual {p0}, Landroidx/activity/ActivityViewModelLazyKt$viewModels$4;->invoke()Landroidx/lifecycle/viewmodel/CreationExtras;

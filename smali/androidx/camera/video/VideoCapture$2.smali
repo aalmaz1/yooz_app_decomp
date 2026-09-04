@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/VideoCapture;Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/core/impl/SessionConfig$Builder;)V
-    .registers 5
+    .locals 0
 
     .line 1194
     iput-object p1, p0, Landroidx/camera/video/VideoCapture$2;->this$0:Landroidx/camera/video/VideoCapture;
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method synthetic lambda$onCaptureCompleted$0$androidx-camera-video-VideoCapture$2(Landroidx/camera/core/impl/SessionConfig$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 1221
     invoke-virtual {p1, p0}, Landroidx/camera/core/impl/SessionConfig$Builder;->removeCameraCaptureCallback(Landroidx/camera/core/impl/CameraCaptureCallback;)Z
@@ -61,7 +61,7 @@
 .end method
 
 .method public onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 5
+    .locals 3
 
     .line 1199
     invoke-super {p0, p1}, Landroidx/camera/core/impl/CameraCaptureCallback;->onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
@@ -69,7 +69,7 @@
     .line 1201
     iget-boolean v0, p0, Landroidx/camera/video/VideoCapture$2;->mIsFirstCaptureResult:Z
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -132,14 +132,14 @@
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1210
-    :cond_3e
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/VideoCapture$2;->val$surfaceUpdateComplete:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v0
 
-    if-nez v0, :cond_80
+    if-nez v0, :cond_1
 
     .line 1211
     invoke-interface {p1}, Landroidx/camera/core/impl/CameraCaptureResult;->getTagBundle()Landroidx/camera/core/impl/TagBundle;
@@ -152,7 +152,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_80
+    if-eqz p1, :cond_1
 
     .line 1213
     check-cast p1, Ljava/lang/Integer;
@@ -168,7 +168,7 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_80
+    if-ne p1, v0, :cond_1
 
     iget-object p1, p0, Landroidx/camera/video/VideoCapture$2;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
@@ -179,7 +179,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_80
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/camera/video/VideoCapture$2;->val$surfaceUpdateComplete:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -190,7 +190,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_80
+    if-nez p1, :cond_1
 
     .line 1219
     invoke-static {}, Landroidx/camera/core/impl/utils/executor/CameraXExecutors;->mainThreadExecutor()Ljava/util/concurrent/ScheduledExecutorService;
@@ -205,6 +205,6 @@
 
     invoke-interface {p1, v1}, Ljava/util/concurrent/ScheduledExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    :cond_80
+    :cond_1
     return-void
 .end method

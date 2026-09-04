@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 3373
     new-instance v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$SavedState$1;
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .registers 8
+    .locals 5
 
     .line 3335
     invoke-direct {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -83,8 +83,8 @@
 
     const/4 p2, 0x0
 
-    :goto_18
-    if-ge p2, v0, :cond_26
+    :goto_0
+    if-ge p2, v0, :cond_0
 
     .line 3346
     iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$SavedState;->behaviorStates:Landroid/util/SparseArray;
@@ -97,14 +97,14 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcelable;)V
-    .registers 2
+    .locals 0
 
     .line 3351
     invoke-direct {p0, p1}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 8
+    .locals 5
 
     .line 3356
     invoke-super {p0, p1, p2}, Landroidx/customview/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
@@ -125,19 +125,19 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v1
 
     .line 3359
-    :goto_e
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 3361
@@ -146,8 +146,8 @@
     .line 3362
     new-array v3, v0, [Landroid/os/Parcelable;
 
-    :goto_15
-    if-ge v1, v0, :cond_2c
+    :goto_1
+    if-ge v1, v0, :cond_1
 
     .line 3365
     iget-object v4, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout$SavedState;->behaviorStates:Landroid/util/SparseArray;
@@ -171,10 +171,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_15
+    goto :goto_1
 
     .line 3368
-    :cond_2c
+    :cond_1
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 3369

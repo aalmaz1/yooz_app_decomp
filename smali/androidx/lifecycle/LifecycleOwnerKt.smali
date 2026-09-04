@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final getLifecycleScope(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleCoroutineScope;
-    .registers 2
+    .locals 1
 
     const-string v0, "<this>"
 

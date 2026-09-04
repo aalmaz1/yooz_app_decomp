@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/Surface;I)V
-    .registers 3
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroidx/camera/core/impl/DeferrableSurface;-><init>()V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public getOutputConfigId()I
-    .registers 2
+    .locals 1
 
     .line 45
     iget v0, p0, Landroidx/camera/core/impl/SessionProcessorSurface;->mOutputConfigId:I
@@ -37,7 +37,7 @@
 .end method
 
 .method public provideSurface()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

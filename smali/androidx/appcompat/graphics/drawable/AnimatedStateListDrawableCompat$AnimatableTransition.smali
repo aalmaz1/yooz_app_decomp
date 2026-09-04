@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/drawable/Animatable;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public start()V
-    .registers 2
+    .locals 1
 
     .line 375
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatableTransition;->mA:Landroid/graphics/drawable/Animatable;
@@ -47,7 +47,7 @@
 .end method
 
 .method public stop()V
-    .registers 2
+    .locals 1
 
     .line 380
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatableTransition;->mA:Landroid/graphics/drawable/Animatable;

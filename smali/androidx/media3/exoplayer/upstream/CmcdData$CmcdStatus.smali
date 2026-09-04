@@ -38,7 +38,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 1048
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;Landroidx/media3/exoplayer/upstream/CmcdData$1;)V
-    .registers 3
+    .locals 0
 
     .line 977
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus;-><init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;)V
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public populateCmcdDataMap(Lcom/google/common/collect/ArrayListMultimap;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +100,7 @@
 
     const v2, -0x7fffffff
 
-    if-eq v1, v2, :cond_20
+    if-eq v1, v2, :cond_0
 
     .line 1063
     new-instance v1, Ljava/lang/StringBuilder;
@@ -122,10 +122,10 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 1066
-    :cond_20
+    :cond_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus;->bufferStarvation:Z
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     const-string v1, "bs"
 
@@ -133,7 +133,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 1069
-    :cond_29
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus;->customDataList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -143,13 +143,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_39
+    if-nez v1, :cond_2
 
     const-string v1, "CMCD-Status"
 
     .line 1072
     invoke-virtual {p1, v1, v0}, Lcom/google/common/collect/ArrayListMultimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
 
-    :cond_39
+    :cond_2
     return-void
 .end method

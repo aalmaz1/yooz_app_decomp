@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/SavedStateHandlesProvider;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "provider"
 
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "source"
 
@@ -72,17 +72,17 @@
     .line 196
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p2, v0, :cond_10
+    if-ne p2, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
-    if-eqz v0, :cond_23
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 199
     invoke-interface {p1}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -103,7 +103,7 @@
     return-void
 
     .line 197
-    :cond_23
+    :cond_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Next event must be ON_CREATE, it was "

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/LifecycleOwner;Landroidx/camera/core/internal/CameraUseCaseAdapter;)V
-    .registers 5
+    .locals 2
 
     .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,19 +67,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 76
     invoke-virtual {p2}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->attachUseCases()V
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 78
-    :cond_29
+    :cond_0
     invoke-virtual {p2}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->detachUseCases()V
 
     .line 80
-    :goto_2c
+    :goto_0
     invoke-interface {p1}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
     move-result-object p1
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method bind(Ljava/util/Collection;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,7 +114,7 @@
     monitor-enter v0
 
     .line 206
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
 
     invoke-virtual {v1, p1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->addUseCases(Ljava/util/Collection;)V
@@ -124,18 +124,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public getCameraControl()Landroidx/camera/core/CameraControl;
-    .registers 2
+    .locals 1
 
     .line 257
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -148,7 +148,7 @@
 .end method
 
 .method public getCameraInfo()Landroidx/camera/core/CameraInfo;
-    .registers 2
+    .locals 1
 
     .line 263
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -161,7 +161,7 @@
 .end method
 
 .method public getCameraInternals()Ljava/util/LinkedHashSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -182,7 +182,7 @@
 .end method
 
 .method public getCameraUseCaseAdapter()Landroidx/camera/core/internal/CameraUseCaseAdapter;
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -191,7 +191,7 @@
 .end method
 
 .method public getExtendedConfig()Landroidx/camera/core/impl/CameraConfig;
-    .registers 2
+    .locals 1
 
     .line 275
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -204,7 +204,7 @@
 .end method
 
 .method public getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-    .registers 3
+    .locals 2
 
     .line 188
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -212,26 +212,26 @@
     monitor-enter v0
 
     .line 189
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 190
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getUseCases()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -247,7 +247,7 @@
     monitor-enter v0
 
     .line 183
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
 
     invoke-virtual {v1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getUseCases()Ljava/util/List;
@@ -262,19 +262,19 @@
 
     return-object v1
 
-    :catchall_f
+    :catchall_0
     move-exception v1
 
     .line 184
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public isActive()Z
-    .registers 3
+    .locals 2
 
     .line 169
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -282,26 +282,26 @@
     monitor-enter v0
 
     .line 170
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mIsActive:Z
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 171
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public isBound(Landroidx/camera/core/UseCase;)Z
-    .registers 4
+    .locals 2
 
     .line 175
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -309,7 +309,7 @@
     monitor-enter v0
 
     .line 176
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
 
     invoke-virtual {v1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getUseCases()Ljava/util/List;
@@ -324,19 +324,19 @@
 
     return p1
 
-    :catchall_f
+    :catchall_0
     move-exception p1
 
     .line 177
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public varargs isUseCasesCombinationSupported([Landroidx/camera/core/UseCase;)Z
-    .registers 3
+    .locals 1
 
     .line 285
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -349,7 +349,7 @@
 .end method
 
 .method public onDestroy(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 4
+    .locals 2
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -360,7 +360,7 @@
     monitor-enter p1
 
     .line 106
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
 
     invoke-virtual {v0}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getUseCases()Ljava/util/List;
@@ -374,18 +374,18 @@
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception v0
 
     monitor-exit p1
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
 .method public onPause(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -401,7 +401,7 @@
 .end method
 
 .method public onResume(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -417,7 +417,7 @@
 .end method
 
 .method public onStart(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -428,14 +428,14 @@
     monitor-enter p1
 
     .line 86
-    :try_start_3
+    :try_start_0
     iget-boolean v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mSuspended:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mReleased:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 87
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -448,23 +448,23 @@
     iput-boolean v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mIsActive:Z
 
     .line 90
-    :cond_13
+    :cond_0
     monitor-exit p1
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception v0
 
     monitor-exit p1
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
 .method public onStop(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
     .annotation runtime Landroidx/lifecycle/OnLifecycleEvent;
         value = .enum Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
     .end annotation
@@ -475,14 +475,14 @@
     monitor-enter p1
 
     .line 96
-    :try_start_3
+    :try_start_0
     iget-boolean v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mSuspended:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mReleased:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 97
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -495,23 +495,23 @@
     iput-boolean v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mIsActive:Z
 
     .line 100
-    :cond_13
+    :cond_0
     monitor-exit p1
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception v0
 
     monitor-exit p1
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
 .method release()V
-    .registers 3
+    .locals 2
 
     .line 244
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -521,7 +521,7 @@
     const/4 v1, 0x1
 
     .line 245
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mReleased:Z
 
     const/4 v1, 0x0
@@ -543,18 +543,18 @@
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_4 .. :try_end_16} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public setExtendedConfig(Landroidx/camera/core/impl/CameraConfig;)V
-    .registers 3
+    .locals 1
 
     .line 280
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
@@ -565,7 +565,7 @@
 .end method
 
 .method public suspend()V
-    .registers 3
+    .locals 2
 
     .line 135
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -573,10 +573,10 @@
     monitor-enter v0
 
     .line 136
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mSuspended:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 137
     monitor-exit v0
@@ -584,7 +584,7 @@
     return-void
 
     .line 140
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
     invoke-virtual {p0, v1}, Landroidx/camera/lifecycle/LifecycleCamera;->onStop(Landroidx/lifecycle/LifecycleOwner;)V
@@ -599,18 +599,18 @@
 
     return-void
 
-    :catchall_13
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method unbind(Ljava/util/Collection;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -626,7 +626,7 @@
     monitor-enter v0
 
     .line 217
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
@@ -650,18 +650,18 @@
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_3 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method unbindAll()V
-    .registers 4
+    .locals 3
 
     .line 229
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -669,7 +669,7 @@
     monitor-enter v0
 
     .line 230
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mCameraUseCaseAdapter:Landroidx/camera/core/internal/CameraUseCaseAdapter;
 
     invoke-virtual {v1}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->getUseCases()Ljava/util/List;
@@ -683,18 +683,18 @@
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public unsuspend()V
-    .registers 4
+    .locals 3
 
     .line 154
     iget-object v0, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLock:Ljava/lang/Object;
@@ -702,17 +702,17 @@
     monitor-enter v0
 
     .line 155
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mSuspended:Z
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     .line 156
     monitor-exit v0
 
     return-void
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
     .line 159
@@ -735,7 +735,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     .line 161
     iget-object v1, p0, Landroidx/camera/lifecycle/LifecycleCamera;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -743,17 +743,17 @@
     invoke-virtual {p0, v1}, Landroidx/camera/lifecycle/LifecycleCamera;->onStart(Landroidx/lifecycle/LifecycleOwner;)V
 
     .line 163
-    :cond_23
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_25
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_27
-    .catchall {:try_start_3 .. :try_end_27} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/multidex/MultiDexExtractor;)V
-    .registers 2
+    .locals 0
 
     .line 354
     iput-object p1, p0, Landroidx/multidex/MultiDexExtractor$1;->this$0:Landroidx/multidex/MultiDexExtractor;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public accept(Ljava/io/File;)Z
-    .registers 3
+    .locals 1
 
     .line 357
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;

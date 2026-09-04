@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static fromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 62
     sget-object v0, Landroid/media/MediaDescription;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getDescription(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 42
     check-cast p0, Landroid/media/MediaDescription;
@@ -48,7 +48,7 @@
 .end method
 
 .method public static getExtras(Ljava/lang/Object;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 54
     check-cast p0, Landroid/media/MediaDescription;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static getIconBitmap(Ljava/lang/Object;)Landroid/graphics/Bitmap;
-    .registers 1
+    .locals 0
 
     .line 46
     check-cast p0, Landroid/media/MediaDescription;
@@ -74,7 +74,7 @@
 .end method
 
 .method public static getIconUri(Ljava/lang/Object;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 50
     check-cast p0, Landroid/media/MediaDescription;
@@ -87,7 +87,7 @@
 .end method
 
 .method public static getMediaId(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 30
     check-cast p0, Landroid/media/MediaDescription;
@@ -100,7 +100,7 @@
 .end method
 
 .method public static getSubtitle(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 38
     check-cast p0, Landroid/media/MediaDescription;
@@ -113,7 +113,7 @@
 .end method
 
 .method public static getTitle(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 34
     check-cast p0, Landroid/media/MediaDescription;
@@ -126,7 +126,7 @@
 .end method
 
 .method public static writeToParcel(Ljava/lang/Object;Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 58
     check-cast p0, Landroid/media/MediaDescription;

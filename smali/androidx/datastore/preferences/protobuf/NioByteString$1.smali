@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/NioByteString;)V
-    .registers 2
+    .locals 0
 
     .line 221
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/NioByteString$1;->this$0:Landroidx/datastore/preferences/protobuf/NioByteString;
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -64,7 +64,7 @@
 .end method
 
 .method public mark(I)V
-    .registers 2
+    .locals 0
 
     .line 226
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/NioByteString$1;->buf:Ljava/nio/ByteBuffer;
@@ -75,7 +75,7 @@
 .end method
 
 .method public markSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public read()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -97,14 +97,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 253
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString$1;->buf:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
@@ -117,7 +117,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -131,14 +131,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 262
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString$1;->buf:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -158,7 +158,7 @@
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -170,12 +170,12 @@
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString$1;->buf:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->reset()Ljava/nio/Buffer;
-    :try_end_5
-    .catch Ljava/nio/InvalidMarkException; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Ljava/nio/InvalidMarkException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_6
+    :catch_0
     move-exception v0
 
     .line 239

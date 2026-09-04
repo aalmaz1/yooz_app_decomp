@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 956
     invoke-direct {p0}, Landroidx/media3/common/Timeline;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     const/4 p1, -0x1
 
@@ -35,7 +35,7 @@
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 4
+    .locals 0
 
     .line 975
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
@@ -46,7 +46,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 985
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
@@ -65,7 +65,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 5
+    .locals 0
 
     .line 965
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
@@ -76,7 +76,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

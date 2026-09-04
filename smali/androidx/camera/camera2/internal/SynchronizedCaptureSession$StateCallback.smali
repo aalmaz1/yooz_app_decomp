@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,49 +27,49 @@
 
 # virtual methods
 .method onActive(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method onCaptureQueueEmpty(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onClosed(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onConfigureFailed(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method onConfigured(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method onReady(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method onSessionFinished(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method onSurfacePrepared(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;Landroid/view/Surface;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

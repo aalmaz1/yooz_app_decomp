@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,7 +18,7 @@
 .end method
 
 .method public static applyStylesToSpan(Landroid/text/Spannable;IILandroidx/media3/extractor/text/ttml/TtmlStyle;Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;I)V
-    .registers 16
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +42,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_15
+    if-eq v0, v2, :cond_0
 
     .line 93
     new-instance v0, Landroid/text/style/StyleSpan;
@@ -58,12 +58,12 @@
     invoke-interface {p0, v0, p1, p2, v1}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     .line 96
-    :cond_15
+    :cond_0
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->isLinethrough()Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 97
     new-instance v0, Landroid/text/style/StrikethroughSpan;
@@ -73,12 +73,12 @@
     invoke-interface {p0, v0, p1, p2, v1}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     .line 99
-    :cond_23
+    :cond_1
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->isUnderline()Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     .line 100
     new-instance v0, Landroid/text/style/UnderlineSpan;
@@ -88,12 +88,12 @@
     invoke-interface {p0, v0, p1, p2, v1}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     .line 102
-    :cond_31
+    :cond_2
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasFontColor()Z
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_3
 
     .line 103
     new-instance v0, Landroid/text/style/ForegroundColorSpan;
@@ -109,12 +109,12 @@
     invoke-static {p0, v0, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 110
-    :cond_43
+    :cond_3
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasBackgroundColor()Z
 
     move-result v0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_4
 
     .line 111
     new-instance v0, Landroid/text/style/BackgroundColorSpan;
@@ -130,12 +130,12 @@
     invoke-static {p0, v0, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 118
-    :cond_55
+    :cond_4
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getFontFamily()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_5
 
     .line 119
     new-instance v0, Landroid/text/style/TypefaceSpan;
@@ -151,7 +151,7 @@
     invoke-static {p0, v0, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 126
-    :cond_67
+    :cond_5
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getTextEmphasis()Landroidx/media3/extractor/text/ttml/TextEmphasis;
 
     move-result-object v0
@@ -162,7 +162,7 @@
 
     const/4 v5, 0x1
 
-    if-eqz v0, :cond_9d
+    if-eqz v0, :cond_a
 
     .line 127
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getTextEmphasis()Landroidx/media3/extractor/text/ttml/TextEmphasis;
@@ -178,53 +178,53 @@
     .line 130
     iget v6, v0, Landroidx/media3/extractor/text/ttml/TextEmphasis;->markShape:I
 
-    if-ne v6, v2, :cond_88
+    if-ne v6, v2, :cond_8
 
-    if-eq p6, v4, :cond_85
+    if-eq p6, v4, :cond_7
 
-    if-ne p6, v5, :cond_83
+    if-ne p6, v5, :cond_6
 
-    goto :goto_85
+    goto :goto_0
 
-    :cond_83
+    :cond_6
     move p6, v5
 
-    goto :goto_86
+    goto :goto_1
 
-    :cond_85
-    :goto_85
+    :cond_7
+    :goto_0
     move p6, v3
 
-    :goto_86
+    :goto_1
     move v6, v5
 
-    goto :goto_8c
+    goto :goto_2
 
     .line 140
-    :cond_88
+    :cond_8
     iget p6, v0, Landroidx/media3/extractor/text/ttml/TextEmphasis;->markShape:I
 
     .line 141
     iget v6, v0, Landroidx/media3/extractor/text/ttml/TextEmphasis;->markFill:I
 
     .line 145
-    :goto_8c
+    :goto_2
     iget v7, v0, Landroidx/media3/extractor/text/ttml/TextEmphasis;->position:I
 
     const/4 v8, -0x2
 
-    if-ne v7, v8, :cond_93
+    if-ne v7, v8, :cond_9
 
     move v0, v5
 
-    goto :goto_95
+    goto :goto_3
 
     .line 150
-    :cond_93
+    :cond_9
     iget v0, v0, Landroidx/media3/extractor/text/ttml/TextEmphasis;->position:I
 
     .line 153
-    :goto_95
+    :goto_3
     new-instance v7, Landroidx/media3/common/text/TextEmphasisSpan;
 
     invoke-direct {v7, p6, v6, v0}, Landroidx/media3/common/text/TextEmphasisSpan;-><init>(III)V
@@ -232,58 +232,58 @@
     invoke-static {p0, v7, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 160
-    :cond_9d
+    :cond_a
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getRubyType()I
 
     move-result p6
 
-    if-eq p6, v4, :cond_b2
+    if-eq p6, v4, :cond_c
 
-    if-eq p6, v3, :cond_a9
+    if-eq p6, v3, :cond_b
 
     const/4 p4, 0x4
 
-    if-eq p6, p4, :cond_a9
+    if-eq p6, p4, :cond_b
 
-    goto :goto_10f
+    goto :goto_5
 
     .line 208
-    :cond_a9
+    :cond_b
     new-instance p4, Landroidx/media3/extractor/text/ttml/DeleteTextSpan;
 
     invoke-direct {p4}, Landroidx/media3/extractor/text/ttml/DeleteTextSpan;-><init>()V
 
     invoke-interface {p0, p4, p1, p2, v1}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_10f
+    goto :goto_5
 
     .line 163
-    :cond_b2
+    :cond_c
     invoke-static {p4, p5}, Landroidx/media3/extractor/text/ttml/TtmlRenderUtil;->findRubyContainerNode(Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;)Landroidx/media3/extractor/text/ttml/TtmlNode;
 
     move-result-object p4
 
-    if-nez p4, :cond_b9
+    if-nez p4, :cond_d
 
-    goto :goto_10f
+    goto :goto_5
 
     .line 168
-    :cond_b9
+    :cond_d
     invoke-static {p4, p5}, Landroidx/media3/extractor/text/ttml/TtmlRenderUtil;->findRubyTextNode(Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;)Landroidx/media3/extractor/text/ttml/TtmlNode;
 
     move-result-object p6
 
-    if-nez p6, :cond_c0
+    if-nez p6, :cond_e
 
-    goto :goto_10f
+    goto :goto_5
 
     .line 174
-    :cond_c0
+    :cond_e
     invoke-virtual {p6}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChildCount()I
 
     move-result v0
 
-    if-ne v0, v5, :cond_108
+    if-ne v0, v5, :cond_11
 
     const/4 v0, 0x0
 
@@ -293,7 +293,7 @@
 
     iget-object v6, v6, Landroidx/media3/extractor/text/ttml/TtmlNode;->text:Ljava/lang/String;
 
-    if-eqz v6, :cond_108
+    if-eqz v6, :cond_11
 
     .line 175
     invoke-virtual {p6, v0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChild(I)Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -319,20 +319,20 @@
 
     move-result-object p6
 
-    if-eqz p6, :cond_ec
+    if-eqz p6, :cond_f
 
     .line 187
     invoke-virtual {p6}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getRubyPosition()I
 
     move-result p6
 
-    goto :goto_ed
+    goto :goto_4
 
-    :cond_ec
+    :cond_f
     move p6, v2
 
-    :goto_ed
-    if-ne p6, v2, :cond_ff
+    :goto_4
+    if-ne p6, v2, :cond_10
 
     .line 192
     iget-object v2, p4, Landroidx/media3/extractor/text/ttml/TtmlNode;->style:Landroidx/media3/extractor/text/ttml/TtmlStyle;
@@ -346,7 +346,7 @@
 
     move-result-object p4
 
-    if-eqz p4, :cond_ff
+    if-eqz p4, :cond_10
 
     .line 194
     invoke-virtual {p4}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getRubyPosition()I
@@ -354,16 +354,16 @@
     move-result p6
 
     .line 197
-    :cond_ff
+    :cond_10
     new-instance p4, Landroidx/media3/common/text/RubySpan;
 
     invoke-direct {p4, v0, p6}, Landroidx/media3/common/text/RubySpan;-><init>(Ljava/lang/String;I)V
 
     invoke-interface {p0, p4, p1, p2, v1}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_10f
+    goto :goto_5
 
-    :cond_108
+    :cond_11
     const-string p4, "TtmlRenderUtil"
 
     const-string p5, "Skipping rubyText node without exactly one text child."
@@ -372,12 +372,12 @@
     invoke-static {p4, p5}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 216
-    :goto_10f
+    :goto_5
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getTextCombine()Z
 
     move-result p4
 
-    if-eqz p4, :cond_11d
+    if-eqz p4, :cond_12
 
     .line 217
     new-instance p4, Landroidx/media3/common/text/HorizontalTextInVerticalContextSpan;
@@ -387,21 +387,21 @@
     invoke-static {p0, p4, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 224
-    :cond_11d
+    :cond_12
     invoke-virtual {p3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getFontSizeUnit()I
 
     move-result p4
 
-    if-eq p4, v5, :cond_145
+    if-eq p4, v5, :cond_15
 
-    if-eq p4, v4, :cond_138
+    if-eq p4, v4, :cond_14
 
-    if-eq p4, v3, :cond_128
+    if-eq p4, v3, :cond_13
 
-    goto :goto_152
+    goto :goto_6
 
     .line 242
-    :cond_128
+    :cond_13
     new-instance p4, Landroid/text/style/RelativeSizeSpan;
 
     .line 244
@@ -418,10 +418,10 @@
     .line 242
     invoke-static {p0, p4, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
-    goto :goto_152
+    goto :goto_6
 
     .line 234
-    :cond_138
+    :cond_14
     new-instance p4, Landroid/text/style/RelativeSizeSpan;
 
     .line 236
@@ -434,10 +434,10 @@
     .line 234
     invoke-static {p0, p4, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
-    goto :goto_152
+    goto :goto_6
 
     .line 226
-    :cond_145
+    :cond_15
     new-instance p4, Landroid/text/style/AbsoluteSizeSpan;
 
     .line 228
@@ -452,12 +452,12 @@
     .line 226
     invoke-static {p0, p4, p1, p2, v1}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
-    :goto_152
+    :goto_6
     return-void
 .end method
 
 .method static applyTextElementSpacePolicy(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const-string v0, "\r\n"
 
@@ -493,7 +493,7 @@
 .end method
 
 .method static endParagraph(Landroid/text/SpannableStringBuilder;)V
-    .registers 4
+    .locals 3
 
     .line 295
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
@@ -502,8 +502,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_6
-    if-ltz v0, :cond_13
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 296
     invoke-virtual {p0, v0}, Landroid/text/SpannableStringBuilder;->charAt(I)C
@@ -512,14 +512,14 @@
 
     const/16 v2, 0x20
 
-    if-ne v1, v2, :cond_13
+    if-ne v1, v2, :cond_0
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_13
-    if-ltz v0, :cond_20
+    :cond_0
+    if-ltz v0, :cond_1
 
     .line 299
     invoke-virtual {p0, v0}, Landroid/text/SpannableStringBuilder;->charAt(I)C
@@ -528,17 +528,17 @@
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_20
+    if-eq v0, v1, :cond_1
 
     .line 300
     invoke-virtual {p0, v1}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method private static findRubyContainerNode(Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;)Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -552,7 +552,7 @@
     .end annotation
 
     :goto_0
-    if-eqz p0, :cond_19
+    if-eqz p0, :cond_1
 
     .line 279
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->style:Landroidx/media3/extractor/text/ttml/TtmlStyle;
@@ -565,7 +565,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 280
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getRubyType()I
@@ -574,24 +574,24 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
     return-object p0
 
     .line 283
-    :cond_16
+    :cond_0
     iget-object p0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->parent:Landroidx/media3/extractor/text/ttml/TtmlNode;
 
     goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static findRubyTextNode(Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;)Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -613,12 +613,12 @@
     invoke-interface {v0, p0}, Ljava/util/Deque;->push(Ljava/lang/Object;)V
 
     .line 260
-    :cond_8
+    :cond_0
     invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
 
     move-result p0
 
-    if-nez p0, :cond_3a
+    if-nez p0, :cond_2
 
     .line 261
     invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
@@ -638,7 +638,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     .line 264
     invoke-virtual {v1}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getRubyType()I
@@ -647,20 +647,20 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_28
+    if-ne v1, v2, :cond_1
 
     return-object p0
 
     .line 267
-    :cond_28
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChildCount()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_2e
-    if-ltz v1, :cond_8
+    :goto_0
+    if-ltz v1, :cond_0
 
     .line 268
     invoke-virtual {p0, v1}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChild(I)Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -671,16 +671,16 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_3a
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static resolveStyle(Landroidx/media3/extractor/text/ttml/TtmlStyle;[Ljava/lang/String;Ljava/util/Map;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -699,19 +699,19 @@
 
     const/4 v1, 0x1
 
-    if-nez p0, :cond_2e
+    if-nez p0, :cond_3
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 56
-    :cond_8
+    :cond_0
     array-length v2, p1
 
-    if-ne v2, v1, :cond_14
+    if-ne v2, v1, :cond_1
 
     .line 58
     aget-object p0, p1, v0
@@ -725,10 +725,10 @@
     return-object p0
 
     .line 59
-    :cond_14
+    :cond_1
     array-length v2, p1
 
-    if-le v2, v1, :cond_56
+    if-le v2, v1, :cond_5
 
     .line 61
     new-instance p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;
@@ -738,8 +738,8 @@
     .line 62
     array-length v1, p1
 
-    :goto_1d
-    if-ge v0, v1, :cond_2d
+    :goto_0
+    if-ge v0, v1, :cond_2
 
     aget-object v2, p1, v0
 
@@ -754,18 +754,18 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_2d
+    :cond_2
     return-object p0
 
-    :cond_2e
-    if-eqz p1, :cond_40
+    :cond_3
+    if-eqz p1, :cond_4
 
     .line 68
     array-length v2, p1
 
-    if-ne v2, v1, :cond_40
+    if-ne v2, v1, :cond_4
 
     .line 70
     aget-object p1, p1, v0
@@ -782,19 +782,19 @@
 
     return-object p0
 
-    :cond_40
-    if-eqz p1, :cond_56
+    :cond_4
+    if-eqz p1, :cond_5
 
     .line 71
     array-length v2, p1
 
-    if-le v2, v1, :cond_56
+    if-le v2, v1, :cond_5
 
     .line 73
     array-length v1, p1
 
-    :goto_46
-    if-ge v0, v1, :cond_56
+    :goto_1
+    if-ge v0, v1, :cond_5
 
     aget-object v2, p1, v0
 
@@ -809,8 +809,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_56
+    :cond_5
     return-object p0
 .end method

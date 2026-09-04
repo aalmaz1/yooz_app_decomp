@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;I)V
-    .registers 3
+    .locals 0
 
     .line 65
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;Ljava/util/List;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     .line 76
     invoke-static {p2}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_24
+    if-ltz v0, :cond_0
 
     invoke-static {p2}, Ljava/util/Collections;->max(Ljava/util/Collection;)Ljava/lang/Object;
 
@@ -112,12 +112,12 @@
 
     iget v1, p1, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_0
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 77
-    :cond_24
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -125,8 +125,8 @@
     throw p1
 
     .line 80
-    :cond_2a
-    :goto_2a
+    :cond_1
+    :goto_0
     iput-object p1, p0, Landroidx/media3/common/TrackSelectionOverride;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
 
     .line 81
@@ -140,7 +140,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/TrackSelectionOverride;
-    .registers 3
+    .locals 2
 
     .line 117
     sget-object v0, Landroidx/media3/common/TrackSelectionOverride;->FIELD_TRACK_GROUP:Ljava/lang/String;
@@ -188,18 +188,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 94
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -210,12 +210,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 97
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/TrackSelectionOverride;
 
     .line 98
@@ -227,7 +227,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionOverride;->trackIndices:Lcom/google/common/collect/ImmutableList;
 
@@ -237,23 +237,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getType()I
-    .registers 2
+    .locals 1
 
     .line 86
     iget-object v0, p0, Landroidx/media3/common/TrackSelectionOverride;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
@@ -264,7 +264,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 103
     iget-object v0, p0, Landroidx/media3/common/TrackSelectionOverride;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
@@ -287,7 +287,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 108
     new-instance v0, Landroid/os/Bundle;

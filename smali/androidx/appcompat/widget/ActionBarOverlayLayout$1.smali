@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;)V
-    .registers 2
+    .locals 0
 
     .line 114
     iput-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;->this$0:Landroidx/appcompat/widget/ActionBarOverlayLayout;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 3
+    .locals 1
 
     .line 123
     iget-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;->this$0:Landroidx/appcompat/widget/ActionBarOverlayLayout;
@@ -53,7 +53,7 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 3
+    .locals 1
 
     .line 117
     iget-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout$1;->this$0:Landroidx/appcompat/widget/ActionBarOverlayLayout;

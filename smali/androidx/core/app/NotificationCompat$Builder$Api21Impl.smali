@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2609
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static build(Landroid/media/AudioAttributes$Builder;)Landroid/media/AudioAttributes;
-    .registers 1
+    .locals 0
 
     .line 2635
     invoke-virtual {p0}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
@@ -36,7 +36,7 @@
 .end method
 
 .method static createBuilder()Landroid/media/AudioAttributes$Builder;
-    .registers 1
+    .locals 1
 
     .line 2613
     new-instance v0, Landroid/media/AudioAttributes$Builder;
@@ -47,7 +47,7 @@
 .end method
 
 .method static setContentType(Landroid/media/AudioAttributes$Builder;I)Landroid/media/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 2619
     invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
@@ -58,7 +58,7 @@
 .end method
 
 .method static setLegacyStreamType(Landroid/media/AudioAttributes$Builder;I)Landroid/media/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 2630
     invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setLegacyStreamType(I)Landroid/media/AudioAttributes$Builder;
@@ -69,7 +69,7 @@
 .end method
 
 .method static setUsage(Landroid/media/AudioAttributes$Builder;I)Landroid/media/AudioAttributes$Builder;
-    .registers 2
+    .locals 0
 
     .line 2624
     invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;

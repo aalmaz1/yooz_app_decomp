@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .locals 16
 
     .line 79
     new-instance v0, Ljava/util/HashMap;
@@ -447,7 +447,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -456,7 +456,7 @@
 .end method
 
 .method public static dynamicRangeToCodecProfileLevelForMime(Ljava/lang/String;Landroidx/camera/core/DynamicRange;)I
-    .registers 3
+    .locals 1
 
     .line 205
     sget-object v0, Landroidx/camera/video/internal/utils/DynamicRangeUtil;->MIME_TO_DEFAULT_PROFILE_LEVEL_MAP:Ljava/util/Map;
@@ -467,7 +467,7 @@
 
     check-cast p0, Ljava/util/Map;
 
-    if-eqz p0, :cond_17
+    if-eqz p0, :cond_0
 
     .line 207
     invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -476,7 +476,7 @@
 
     check-cast p0, Ljava/lang/Integer;
 
-    if-eqz p0, :cond_17
+    if-eqz p0, :cond_0
 
     .line 209
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -485,14 +485,14 @@
 
     return p0
 
-    :cond_17
+    :cond_0
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method public static dynamicRangeToVideoProfileBitDepth(Landroidx/camera/core/DynamicRange;)Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -521,19 +521,19 @@
 
     check-cast p0, Ljava/util/Set;
 
-    if-nez p0, :cond_16
+    if-nez p0, :cond_0
 
     .line 189
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object p0
 
-    :cond_16
+    :cond_0
     return-object p0
 .end method
 
 .method public static dynamicRangeToVideoProfileHdrFormats(Landroidx/camera/core/DynamicRange;)Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -562,13 +562,13 @@
 
     check-cast p0, Ljava/util/Set;
 
-    if-nez p0, :cond_16
+    if-nez p0, :cond_0
 
     .line 169
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object p0
 
-    :cond_16
+    :cond_0
     return-object p0
 .end method

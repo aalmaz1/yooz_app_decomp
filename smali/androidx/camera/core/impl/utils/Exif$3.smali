@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 71
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public bridge synthetic initialValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 71
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif$3;->initialValue()Ljava/text/SimpleDateFormat;
@@ -46,7 +46,7 @@
 .end method
 
 .method public initialValue()Ljava/text/SimpleDateFormat;
-    .registers 4
+    .locals 3
 
     .line 74
     new-instance v0, Ljava/text/SimpleDateFormat;

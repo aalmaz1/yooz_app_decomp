@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraInfoInternal;Landroidx/arch/core/util/Function;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     .line 106
     new-instance v1, Landroidx/camera/video/internal/BackupHdrProfileEncoderProfilesProvider;
@@ -95,7 +95,7 @@
     move-object v0, v1
 
     .line 111
-    :cond_21
+    :cond_0
     invoke-interface {p1}, Landroidx/camera/core/impl/CameraInfoInternal;->getCameraQuirks()Landroidx/camera/core/impl/Quirks;
 
     move-result-object p2
@@ -127,13 +127,13 @@
 
     move-result-object p1
 
-    :cond_3d
-    :goto_3d
+    :cond_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_65
+    if-eqz p2, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -162,21 +162,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_1
 
     .line 130
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities;->mCapabilitiesMapForFullySpecifiedDynamicRange:Ljava/util/Map;
 
     invoke-interface {v0, p2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_3d
+    goto :goto_0
 
-    :cond_65
+    :cond_2
     return-void
 .end method
 
 .method private static canMatchBitDepth(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;)Z
-    .registers 4
+    .locals 2
 
     .line 266
     invoke-static {p1}, Landroidx/camera/video/RecorderVideoCapabilities;->isFullySpecified(Landroidx/camera/core/DynamicRange;)Z
@@ -194,12 +194,12 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     return v1
 
     .line 272
-    :cond_11
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getBitDepth()I
 
     move-result p0
@@ -208,19 +208,19 @@
 
     move-result p1
 
-    if-ne p0, p1, :cond_1c
+    if-ne p0, p1, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_1d
+    :goto_0
     return v1
 .end method
 
 .method private static canMatchEncoding(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;)Z
-    .registers 4
+    .locals 2
 
     .line 277
     invoke-static {p1}, Landroidx/camera/video/RecorderVideoCapabilities;->isFullySpecified(Landroidx/camera/core/DynamicRange;)Z
@@ -238,38 +238,38 @@
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_11
+    if-nez p0, :cond_0
 
     return v0
 
     .line 284
-    :cond_11
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result p1
 
     const/4 v1, 0x2
 
-    if-ne p0, v1, :cond_1b
+    if-ne p0, v1, :cond_1
 
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     return v0
 
-    :cond_1b
-    if-ne p0, p1, :cond_1e
+    :cond_1
+    if-ne p0, p1, :cond_2
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_1f
+    :goto_0
     return v0
 .end method
 
 .method private static canResolve(Landroidx/camera/core/DynamicRange;Ljava/util/Set;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -285,7 +285,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 251
     invoke-interface {p1, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -295,17 +295,17 @@
     return p0
 
     .line 253
-    :cond_b
+    :cond_0
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_f
+    :cond_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -318,27 +318,27 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_1
 
     .line 255
     invoke-static {p0, v0}, Landroidx/camera/video/RecorderVideoCapabilities;->canMatchEncoding(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_29
+    :cond_2
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method static from(Landroidx/camera/core/CameraInfo;)Landroidx/camera/video/RecorderVideoCapabilities;
-    .registers 3
+    .locals 2
 
     .line 146
     new-instance v0, Landroidx/camera/video/RecorderVideoCapabilities;
@@ -353,7 +353,7 @@
 .end method
 
 .method private generateCapabilitiesForNonFullySpecifiedDynamicRange(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
-    .registers 4
+    .locals 2
 
     .line 229
     invoke-virtual {p0}, Landroidx/camera/video/RecorderVideoCapabilities;->getSupportedDynamicRanges()Ljava/util/Set;
@@ -364,14 +364,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 235
-    :cond_c
+    :cond_0
     new-instance v0, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;
 
     iget-object v1, p0, Landroidx/camera/video/RecorderVideoCapabilities;->mProfilesProvider:Landroidx/camera/core/impl/EncoderProfilesProvider;
@@ -387,14 +387,14 @@
 .end method
 
 .method private getCapabilities(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
-    .registers 4
+    .locals 2
 
     .line 197
     invoke-static {p1}, Landroidx/camera/video/RecorderVideoCapabilities;->isFullySpecified(Landroidx/camera/core/DynamicRange;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 198
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities;->mCapabilitiesMapForFullySpecifiedDynamicRange:Ljava/util/Map;
@@ -408,14 +408,14 @@
     return-object p1
 
     .line 202
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities;->mCapabilitiesMapForNonFullySpecifiedDynamicRange:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 203
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities;->mCapabilitiesMapForNonFullySpecifiedDynamicRange:Ljava/util/Map;
@@ -429,7 +429,7 @@
     return-object p1
 
     .line 206
-    :cond_20
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/camera/video/RecorderVideoCapabilities;->generateCapabilitiesForNonFullySpecifiedDynamicRange(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
 
     move-result-object v0
@@ -443,14 +443,14 @@
 .end method
 
 .method private static isFullySpecified(Landroidx/camera/core/DynamicRange;)Z
-    .registers 3
+    .locals 2
 
     .line 293
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 294
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
@@ -459,28 +459,28 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_0
 
     .line 295
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getBitDepth()I
 
     move-result p0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_16
+    :goto_0
     return p0
 .end method
 
 .method private static isHlg10SupportedByCamera(Landroidx/camera/core/impl/CameraInfoInternal;)Z
-    .registers 4
+    .locals 3
 
     .line 214
     invoke-interface {p0}, Landroidx/camera/core/impl/CameraInfoInternal;->getSupportedDynamicRanges()Ljava/util/Set;
@@ -492,12 +492,12 @@
 
     move-result-object p0
 
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -530,17 +530,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_0
 
     const/16 v1, 0xa
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_31
+    :cond_1
     const/4 p0, 0x0
 
     return p0
@@ -549,79 +549,79 @@
 
 # virtual methods
 .method public findHighestSupportedEncoderProfilesFor(Landroid/util/Size;Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 3
+    .locals 0
 
     .line 181
     invoke-direct {p0, p2}, Landroidx/camera/video/RecorderVideoCapabilities;->getCapabilities(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
 
     move-result-object p2
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 182
-    :cond_8
+    :cond_0
     invoke-virtual {p2, p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->findHighestSupportedEncoderProfilesFor(Landroid/util/Size;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
     move-result-object p1
 
-    :goto_c
+    :goto_0
     return-object p1
 .end method
 
 .method public findHighestSupportedQualityFor(Landroid/util/Size;Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/Quality;
-    .registers 3
+    .locals 0
 
     .line 190
     invoke-direct {p0, p2}, Landroidx/camera/video/RecorderVideoCapabilities;->getCapabilities(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
 
     move-result-object p2
 
-    if-nez p2, :cond_9
+    if-nez p2, :cond_0
 
     .line 191
     sget-object p1, Landroidx/camera/video/Quality;->NONE:Landroidx/camera/video/Quality;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     invoke-virtual {p2, p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->findHighestSupportedQualityFor(Landroid/util/Size;)Landroidx/camera/video/Quality;
 
     move-result-object p1
 
-    :goto_d
+    :goto_0
     return-object p1
 .end method
 
 .method public getProfiles(Landroidx/camera/video/Quality;Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 3
+    .locals 0
 
     .line 173
     invoke-direct {p0, p2}, Landroidx/camera/video/RecorderVideoCapabilities;->getCapabilities(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
 
     move-result-object p2
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 174
-    :cond_8
+    :cond_0
     invoke-virtual {p2, p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->getProfiles(Landroidx/camera/video/Quality;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
     move-result-object p1
 
-    :goto_c
+    :goto_0
     return-object p1
 .end method
 
 .method public getSupportedDynamicRanges()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -642,7 +642,7 @@
 .end method
 
 .method public getSupportedQualities(Landroidx/camera/core/DynamicRange;)Ljava/util/List;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -659,48 +659,48 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 159
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->getSupportedQualities()Ljava/util/List;
 
     move-result-object p1
 
-    :goto_10
+    :goto_0
     return-object p1
 .end method
 
 .method public isQualitySupported(Landroidx/camera/video/Quality;Landroidx/camera/core/DynamicRange;)Z
-    .registers 3
+    .locals 0
 
     .line 165
     invoke-direct {p0, p2}, Landroidx/camera/video/RecorderVideoCapabilities;->getCapabilities(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;
 
     move-result-object p2
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 166
     invoke-virtual {p2, p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->isQualitySupported(Landroidx/camera/video/Quality;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method

@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 96
     new-instance v0, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
@@ -43,7 +43,7 @@
 .end method
 
 .method private constructor <init>(JZ)V
-    .registers 4
+    .locals 0
 
     .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
-    .registers 1
+    .locals 1
 
     .line 94
     sget-object v0, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;->ALL:Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
@@ -67,7 +67,7 @@
 .end method
 
 .method public static allCues()Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
-    .registers 1
+    .locals 1
 
     .line 119
     sget-object v0, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;->ALL:Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
@@ -76,7 +76,7 @@
 .end method
 
 .method public static cuesAfterThenRemainingCuesBefore(J)Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
-    .registers 4
+    .locals 2
 
     .line 140
     new-instance v0, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
@@ -89,7 +89,7 @@
 .end method
 
 .method public static onlyCuesAfter(J)Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
-    .registers 4
+    .locals 2
 
     .line 129
     new-instance v0, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;

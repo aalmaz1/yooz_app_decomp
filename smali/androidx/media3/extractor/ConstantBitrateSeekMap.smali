@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(JJII)V
-    .registers 15
+    .locals 8
 
     const/4 v7, 0x0
 
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(JJIIZ)V
-    .registers 9
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,12 +58,12 @@
 
     const/4 v0, -0x1
 
-    if-ne p6, v0, :cond_b
+    if-ne p6, v0, :cond_0
 
     const/4 p6, 0x1
 
     .line 78
-    :cond_b
+    :cond_0
     iput p6, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->frameSize:I
 
     .line 79
@@ -76,7 +76,7 @@
 
     cmp-long v0, p1, p6
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     .line 83
     iput-wide p6, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->dataSize:J
@@ -86,9 +86,9 @@
     .line 84
     iput-wide p1, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->durationUs:J
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     sub-long p6, p1, p3
 
     .line 86
@@ -101,12 +101,12 @@
 
     iput-wide p1, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->durationUs:J
 
-    :goto_2b
+    :goto_0
     return-void
 .end method
 
 .method private getFramePositionForTimeUs(J)J
-    .registers 8
+    .locals 5
 
     .line 152
     iget v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->bitrate:I
@@ -137,7 +137,7 @@
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_0
 
     int-to-long v3, v0
 
@@ -148,7 +148,7 @@
 
     move-result-wide p1
 
-    :cond_1c
+    :cond_0
     const-wide/16 v0, 0x0
 
     .line 158
@@ -165,7 +165,7 @@
 .end method
 
 .method private static getTimeUsAtPosition(JJI)J
-    .registers 7
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -194,7 +194,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 121
     iget-wide v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->durationUs:J
@@ -203,7 +203,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 12
+    .locals 9
 
     .line 98
     iget-wide v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->dataSize:J
@@ -212,11 +212,11 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->allowSeeksIfLengthUnknown:Z
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 99
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -234,7 +234,7 @@
     return-object p1
 
     .line 101
-    :cond_1b
+    :cond_0
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/ConstantBitrateSeekMap;->getFramePositionForTimeUs(J)J
 
     move-result-wide v0
@@ -254,11 +254,11 @@
 
     cmp-long v2, v7, v2
 
-    if-eqz v2, :cond_4e
+    if-eqz v2, :cond_2
 
     cmp-long p1, v4, p1
 
-    if-gez p1, :cond_4e
+    if-gez p1, :cond_2
 
     iget p1, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->frameSize:I
 
@@ -270,11 +270,11 @@
 
     cmp-long p2, v2, v4
 
-    if-ltz p2, :cond_3d
+    if-ltz p2, :cond_1
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_3d
+    :cond_1
     int-to-long p1, p1
 
     add-long/2addr v0, p1
@@ -297,8 +297,8 @@
     return-object p1
 
     .line 110
-    :cond_4e
-    :goto_4e
+    :cond_2
+    :goto_0
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v6}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -307,7 +307,7 @@
 .end method
 
 .method public getTimeUsAtPosition(J)J
-    .registers 6
+    .locals 3
 
     .line 131
     iget-wide v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->firstFrameBytePosition:J
@@ -322,7 +322,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 5
+    .locals 4
 
     .line 93
     iget-wide v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->dataSize:J
@@ -331,23 +331,23 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/extractor/ConstantBitrateSeekMap;->allowSeeksIfLengthUnknown:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method

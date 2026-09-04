@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
 .end method
 
 .method public cancel(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -59,7 +59,7 @@
     move-result-object v0
 
     .line 147
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -83,15 +83,15 @@
     const/4 v1, 0x2
 
     invoke-interface {p1, v1, v0, p2, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_1a
-    .catchall {:try_start_4 .. :try_end_1a} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 154
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1e
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -101,7 +101,7 @@
 .end method
 
 .method public cancelAll(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -114,7 +114,7 @@
     move-result-object v0
 
     .line 162
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -132,15 +132,15 @@
     const/4 v3, 0x3
 
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_14
-    .catchall {:try_start_4 .. :try_end_14} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 167
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -150,7 +150,7 @@
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 124
     sget-object v0, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
@@ -159,7 +159,7 @@
 .end method
 
 .method public notify(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -172,7 +172,7 @@
     move-result-object v0
 
     .line 131
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -199,15 +199,15 @@
     const/4 p3, 0x1
 
     invoke-interface {p1, p3, v0, p2, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_1d
-    .catchall {:try_start_4 .. :try_end_1d} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 139
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V

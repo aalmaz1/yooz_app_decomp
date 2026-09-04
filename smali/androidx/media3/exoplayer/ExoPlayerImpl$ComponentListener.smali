@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/ExoPlayerImpl;)V
-    .registers 2
+    .locals 0
 
     .line 3039
     iput-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -44,7 +44,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/ExoPlayerImpl;Landroidx/media3/exoplayer/ExoPlayerImpl$1;)V
-    .registers 3
+    .locals 0
 
     .line 3039
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;-><init>(Landroidx/media3/exoplayer/ExoPlayerImpl;)V
@@ -53,7 +53,7 @@
 .end method
 
 .method static synthetic lambda$onCues$2(Ljava/util/List;Landroidx/media3/common/Player$Listener;)V
-    .registers 2
+    .locals 0
 
     .line 3195
     invoke-interface {p1, p0}, Landroidx/media3/common/Player$Listener;->onCues(Ljava/util/List;)V
@@ -62,7 +62,7 @@
 .end method
 
 .method static synthetic lambda$onCues$3(Landroidx/media3/common/text/CueGroup;Landroidx/media3/common/Player$Listener;)V
-    .registers 2
+    .locals 0
 
     .line 3201
     invoke-interface {p1, p0}, Landroidx/media3/common/Player$Listener;->onCues(Landroidx/media3/common/text/CueGroup;)V
@@ -71,7 +71,7 @@
 .end method
 
 .method static synthetic lambda$onMetadata$5(Landroidx/media3/common/Metadata;Landroidx/media3/common/Player$Listener;)V
-    .registers 2
+    .locals 0
 
     .line 3217
     invoke-interface {p1, p0}, Landroidx/media3/common/Player$Listener;->onMetadata(Landroidx/media3/common/Metadata;)V
@@ -80,7 +80,7 @@
 .end method
 
 .method static synthetic lambda$onSkipSilenceEnabledChanged$1(ZLandroidx/media3/common/Player$Listener;)V
-    .registers 2
+    .locals 0
 
     .line 3168
     invoke-interface {p1, p0}, Landroidx/media3/common/Player$Listener;->onSkipSilenceEnabledChanged(Z)V
@@ -89,7 +89,7 @@
 .end method
 
 .method static synthetic lambda$onStreamTypeChanged$6(Landroidx/media3/common/DeviceInfo;Landroidx/media3/common/Player$Listener;)V
-    .registers 2
+    .locals 0
 
     .line 3312
     invoke-interface {p1, p0}, Landroidx/media3/common/Player$Listener;->onDeviceInfoChanged(Landroidx/media3/common/DeviceInfo;)V
@@ -98,7 +98,7 @@
 .end method
 
 .method static synthetic lambda$onStreamVolumeChanged$7(IZLandroidx/media3/common/Player$Listener;)V
-    .registers 3
+    .locals 0
 
     .line 3320
     invoke-interface {p2, p0, p1}, Landroidx/media3/common/Player$Listener;->onDeviceVolumeChanged(IZ)V
@@ -107,7 +107,7 @@
 .end method
 
 .method static synthetic lambda$onVideoSizeChanged$0(Landroidx/media3/common/VideoSize;Landroidx/media3/common/Player$Listener;)V
-    .registers 2
+    .locals 0
 
     .line 3083
     invoke-interface {p1, p0}, Landroidx/media3/common/Player$Listener;->onVideoSizeChanged(Landroidx/media3/common/VideoSize;)V
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public executePlayerCommand(I)V
-    .registers 5
+    .locals 3
 
     .line 3289
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -142,7 +142,7 @@
 .end method
 
 .method synthetic lambda$onMetadata$4$androidx-media3-exoplayer-ExoPlayerImpl$ComponentListener(Landroidx/media3/common/Player$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 3215
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -157,7 +157,7 @@
 .end method
 
 .method public onAudioBecomingNoisy()V
-    .registers 5
+    .locals 4
 
     .line 3298
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -174,7 +174,7 @@
 .end method
 
 .method public onAudioCodecError(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 3178
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -189,7 +189,7 @@
 .end method
 
 .method public onAudioDecoderInitialized(Ljava/lang/String;JJ)V
-    .registers 13
+    .locals 7
 
     .line 3127
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -210,7 +210,7 @@
 .end method
 
 .method public onAudioDecoderReleased(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 3150
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -225,7 +225,7 @@
 .end method
 
 .method public onAudioDisabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 3155
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -252,7 +252,7 @@
 .end method
 
 .method public onAudioEnabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 3120
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -272,7 +272,7 @@
 .end method
 
 .method public onAudioInputFormatChanged(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 4
+    .locals 1
 
     .line 3134
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -292,7 +292,7 @@
 .end method
 
 .method public onAudioPositionAdvancing(J)V
-    .registers 4
+    .locals 1
 
     .line 3140
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -307,7 +307,7 @@
 .end method
 
 .method public onAudioSinkError(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 3173
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -322,7 +322,7 @@
 .end method
 
 .method public onAudioTrackInitialized(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 3
+    .locals 1
 
     .line 3183
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -337,7 +337,7 @@
 .end method
 
 .method public onAudioTrackReleased(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 3
+    .locals 1
 
     .line 3188
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -352,7 +352,7 @@
 .end method
 
 .method public onAudioUnderrun(IJJ)V
-    .registers 13
+    .locals 7
 
     .line 3145
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -373,7 +373,7 @@
 .end method
 
 .method public onCues(Landroidx/media3/common/text/CueGroup;)V
-    .registers 4
+    .locals 2
 
     .line 3200
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -399,7 +399,7 @@
 .end method
 
 .method public onCues(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -428,7 +428,7 @@
 .end method
 
 .method public onDroppedFrames(IJ)V
-    .registers 5
+    .locals 1
 
     .line 3076
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -443,7 +443,7 @@
 .end method
 
 .method public onMetadata(Landroidx/media3/common/Metadata;)V
-    .registers 5
+    .locals 3
 
     .line 3208
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -486,7 +486,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_0
 
     .line 3212
     iget-object v1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -509,7 +509,7 @@
     invoke-virtual {v0, v2, v1}, Landroidx/media3/common/util/ListenerSet;->queueEvent(ILandroidx/media3/common/util/ListenerSet$Event;)V
 
     .line 3217
-    :cond_3c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/ExoPlayerImpl;->access$800(Landroidx/media3/exoplayer/ExoPlayerImpl;)Landroidx/media3/common/util/ListenerSet;
@@ -537,7 +537,7 @@
 .end method
 
 .method public onRenderedFirstFrame(Ljava/lang/Object;J)V
-    .registers 5
+    .locals 1
 
     .line 3088
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -555,7 +555,7 @@
 
     move-result-object p2
 
-    if-ne p2, p1, :cond_21
+    if-ne p2, p1, :cond_0
 
     .line 3090
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -572,12 +572,12 @@
 
     invoke-virtual {p1, p3, p2}, Landroidx/media3/common/util/ListenerSet;->sendEvent(ILandroidx/media3/common/util/ListenerSet$Event;)V
 
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method public onSkipSilenceEnabledChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 3162
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -586,12 +586,12 @@
 
     move-result v0
 
-    if-ne v0, p1, :cond_9
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 3165
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
 
     invoke-static {v0, p1}, Landroidx/media3/exoplayer/ExoPlayerImpl;->access$1202(Landroidx/media3/exoplayer/ExoPlayerImpl;Z)Z
@@ -615,7 +615,7 @@
 .end method
 
 .method public onSleepingForOffloadChanged(Z)V
-    .registers 2
+    .locals 0
 
     .line 3327
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -626,7 +626,7 @@
 .end method
 
 .method public onStreamTypeChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 3308
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -650,7 +650,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 3310
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -672,12 +672,12 @@
 
     invoke-virtual {v0, p1, v1}, Landroidx/media3/common/util/ListenerSet;->sendEvent(ILandroidx/media3/common/util/ListenerSet$Event;)V
 
-    :cond_2b
+    :cond_0
     return-void
 .end method
 
 .method public onStreamVolumeChanged(IZ)V
-    .registers 5
+    .locals 2
 
     .line 3318
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -698,7 +698,7 @@
 .end method
 
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .registers 5
+    .locals 1
 
     .line 3247
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -714,7 +714,7 @@
 .end method
 
 .method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .registers 3
+    .locals 1
 
     .line 3258
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -736,7 +736,7 @@
 .end method
 
 .method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .registers 4
+    .locals 0
 
     .line 3253
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -747,13 +747,13 @@
 .end method
 
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onVideoCodecError(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 3113
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -768,7 +768,7 @@
 .end method
 
 .method public onVideoDecoderInitialized(Ljava/lang/String;JJ)V
-    .registers 13
+    .locals 7
 
     .line 3063
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -789,7 +789,7 @@
 .end method
 
 .method public onVideoDecoderReleased(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 3096
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -804,7 +804,7 @@
 .end method
 
 .method public onVideoDisabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 3101
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -831,7 +831,7 @@
 .end method
 
 .method public onVideoEnabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 3056
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -851,7 +851,7 @@
 .end method
 
 .method public onVideoFrameProcessingOffset(JI)V
-    .registers 5
+    .locals 1
 
     .line 3108
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -866,7 +866,7 @@
 .end method
 
 .method public onVideoInputFormatChanged(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 4
+    .locals 1
 
     .line 3070
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -886,7 +886,7 @@
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/common/VideoSize;)V
-    .registers 4
+    .locals 2
 
     .line 3081
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -912,7 +912,7 @@
 .end method
 
 .method public onVideoSurfaceCreated(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 3272
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -923,7 +923,7 @@
 .end method
 
 .method public onVideoSurfaceDestroyed(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 3277
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -936,7 +936,7 @@
 .end method
 
 .method public setVolumeMultiplier(F)V
-    .registers 2
+    .locals 0
 
     .line 3284
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -947,7 +947,7 @@
 .end method
 
 .method public surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .registers 5
+    .locals 0
 
     .line 3232
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -958,7 +958,7 @@
 .end method
 
 .method public surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .registers 3
+    .locals 1
 
     .line 3225
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -967,7 +967,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 3226
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -978,12 +978,12 @@
 
     invoke-static {v0, p1}, Landroidx/media3/exoplayer/ExoPlayerImpl;->access$1800(Landroidx/media3/exoplayer/ExoPlayerImpl;Ljava/lang/Object;)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .registers 3
+    .locals 1
 
     .line 3237
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -992,7 +992,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 3238
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -1002,7 +1002,7 @@
     invoke-static {p1, v0}, Landroidx/media3/exoplayer/ExoPlayerImpl;->access$1800(Landroidx/media3/exoplayer/ExoPlayerImpl;Ljava/lang/Object;)V
 
     .line 3240
-    :cond_e
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$ComponentListener;->this$0:Landroidx/media3/exoplayer/ExoPlayerImpl;
 
     const/4 v0, 0x0

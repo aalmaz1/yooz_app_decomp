@@ -290,7 +290,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 433
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -302,7 +302,7 @@
 .end method
 
 .method public static getAtomTypeString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 588
     new-instance v0, Ljava/lang/StringBuilder;
@@ -357,7 +357,7 @@
 .end method
 
 .method public static parseFullAtomFlags(I)I
-    .registers 2
+    .locals 1
 
     const v0, 0xffffff
 
@@ -367,7 +367,7 @@
 .end method
 
 .method public static parseFullAtomVersion(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x18
 
@@ -379,7 +379,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 439
     iget v0, p0, Landroidx/media3/extractor/mp4/Atom;->type:I

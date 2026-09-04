@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ResolveInfo;)V
-    .registers 2
+    .locals 0
 
     .line 870
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;)I
-    .registers 3
+    .locals 1
 
     .line 899
     iget p1, p1, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
@@ -69,7 +69,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 853
     check-cast p1, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;
@@ -82,23 +82,23 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_1
 
     return v1
 
     .line 887
-    :cond_8
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -107,12 +107,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_2
 
     return v1
 
     .line 890
-    :cond_13
+    :cond_2
     check-cast p1, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;
 
     .line 891
@@ -128,16 +128,16 @@
 
     move-result p1
 
-    if-eq v2, p1, :cond_24
+    if-eq v2, p1, :cond_3
 
     return v1
 
-    :cond_24
+    :cond_3
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 876
     iget v0, p0, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
@@ -152,7 +152,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 904
     new-instance v0, Ljava/lang/StringBuilder;

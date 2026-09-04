@@ -16,13 +16,13 @@
 
 # virtual methods
 .method public onOffloadedPlayback(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSleepingForOffloadChanged(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

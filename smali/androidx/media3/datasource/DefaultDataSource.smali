@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/datasource/DataSource;)V
-    .registers 3
+    .locals 0
 
     .line 225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
-    .registers 7
+    .locals 1
 
     .line 206
     new-instance v0, Landroidx/media3/datasource/DefaultHttpDataSource$Factory;
@@ -137,7 +137,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Z)V
-    .registers 10
+    .locals 6
 
     const/16 v3, 0x1f40
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Z)V
-    .registers 9
+    .locals 6
 
     const/4 v2, 0x0
 
@@ -179,19 +179,19 @@
 .end method
 
 .method private addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 378
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/datasource/DefaultDataSource;->transferListeners:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 379
     iget-object v1, p0, Landroidx/media3/datasource/DefaultDataSource;->transferListeners:Ljava/util/List;
@@ -206,19 +206,19 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method private getAssetDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 3
+    .locals 2
 
     .line 326
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->assetDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 327
     new-instance v0, Landroidx/media3/datasource/AssetDataSource;
@@ -233,19 +233,19 @@
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
 
     .line 330
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->assetDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private getContentDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 3
+    .locals 2
 
     .line 334
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->contentDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 335
     new-instance v0, Landroidx/media3/datasource/ContentDataSource;
@@ -260,19 +260,19 @@
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
 
     .line 338
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->contentDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private getDataSchemeDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 362
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSchemeDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 363
     new-instance v0, Landroidx/media3/datasource/DataSchemeDataSource;
@@ -285,19 +285,19 @@
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
 
     .line 366
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSchemeDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private getFileDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 318
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->fileDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 319
     new-instance v0, Landroidx/media3/datasource/FileDataSource;
@@ -310,19 +310,19 @@
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
 
     .line 322
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->fileDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private getRawResourceDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 3
+    .locals 2
 
     .line 370
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->rawResourceDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 371
     new-instance v0, Landroidx/media3/datasource/RawResourceDataSource;
@@ -337,21 +337,21 @@
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
 
     .line 374
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->rawResourceDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private getRtmpDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 4
+    .locals 3
 
     .line 342
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->rtmpDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_0
 
-    :try_start_4
+    :try_start_0
     const-string v0, "androidx.media3.datasource.rtmp.RtmpDataSource"
 
     .line 344
@@ -380,13 +380,13 @@
 
     .line 346
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
-    :try_end_1e
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_1e} :catch_28
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :catch_1f
+    :catch_0
     move-exception v0
 
     .line 352
@@ -398,7 +398,7 @@
 
     throw v1
 
-    :catch_28
+    :catch_1
     const-string v0, "DefaultDataSource"
 
     const-string v1, "Attempting to play RTMP stream without depending on the RTMP extension"
@@ -407,10 +407,10 @@
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 354
-    :goto_2f
+    :goto_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->rtmpDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_0
 
     .line 355
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->baseDataSource:Landroidx/media3/datasource/DataSource;
@@ -418,19 +418,19 @@
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->rtmpDataSource:Landroidx/media3/datasource/DataSource;
 
     .line 358
-    :cond_37
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->rtmpDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private getUdpDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 310
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->udpDataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 311
     new-instance v0, Landroidx/media3/datasource/UdpDataSource;
@@ -443,28 +443,28 @@
     invoke-direct {p0, v0}, Landroidx/media3/datasource/DefaultDataSource;->addListenersToDataSource(Landroidx/media3/datasource/DataSource;)V
 
     .line 314
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->udpDataSource:Landroidx/media3/datasource/DataSource;
 
     return-object v0
 .end method
 
 .method private maybeAddListenerToDataSource(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 386
     invoke-interface {p1, p2}, Landroidx/media3/datasource/DataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 234
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -518,7 +518,7 @@
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -528,22 +528,22 @@
     .line 300
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
     .line 302
-    :try_start_5
+    :try_start_0
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource;->close()V
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 304
     iput-object v1, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_f
+    goto :goto_0
 
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     iput-object v1, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
@@ -551,13 +551,13 @@
     .line 305
     throw v0
 
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -572,46 +572,46 @@
     .line 294
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource;->getResponseHeaders()Ljava/util/Map;
 
     move-result-object v0
 
-    :goto_d
+    :goto_0
     return-object v0
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 288
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource;->getUri()Landroid/net/Uri;
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -621,16 +621,16 @@
     .line 249
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 251
@@ -647,7 +647,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .line 253
     iget-object v0, p1, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
@@ -656,7 +656,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     const-string v1, "/android_asset/"
 
@@ -665,7 +665,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 255
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getAssetDataSource()Landroidx/media3/datasource/DataSource;
@@ -674,19 +674,19 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto/16 :goto_9f
+    goto/16 :goto_2
 
     .line 257
-    :cond_30
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getFileDataSource()Landroidx/media3/datasource/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_37
+    :cond_2
     const-string v1, "asset"
 
     .line 259
@@ -694,7 +694,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_3
 
     .line 260
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getAssetDataSource()Landroidx/media3/datasource/DataSource;
@@ -703,9 +703,9 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_46
+    :cond_3
     const-string v1, "content"
 
     .line 261
@@ -713,7 +713,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_4
 
     .line 262
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getContentDataSource()Landroidx/media3/datasource/DataSource;
@@ -722,9 +722,9 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_55
+    :cond_4
     const-string v1, "rtmp"
 
     .line 263
@@ -732,7 +732,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_5
 
     .line 264
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getRtmpDataSource()Landroidx/media3/datasource/DataSource;
@@ -741,9 +741,9 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_64
+    :cond_5
     const-string/jumbo v1, "udp"
 
     .line 265
@@ -751,7 +751,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_6
 
     .line 266
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getUdpDataSource()Landroidx/media3/datasource/DataSource;
@@ -760,9 +760,9 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_74
+    :cond_6
     const-string v1, "data"
 
     .line 267
@@ -770,7 +770,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_7
 
     .line 268
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getDataSchemeDataSource()Landroidx/media3/datasource/DataSource;
@@ -779,9 +779,9 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_83
+    :cond_7
     const-string v1, "rawresource"
 
     .line 269
@@ -789,7 +789,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_99
+    if-nez v1, :cond_9
 
     const-string v1, "android.resource"
 
@@ -797,21 +797,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_8
 
-    goto :goto_99
+    goto :goto_1
 
     .line 272
-    :cond_94
+    :cond_8
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->baseDataSource:Landroidx/media3/datasource/DataSource;
 
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
-    goto :goto_9f
+    goto :goto_2
 
     .line 270
-    :cond_99
-    :goto_99
+    :cond_9
+    :goto_1
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultDataSource;->getRawResourceDataSource()Landroidx/media3/datasource/DataSource;
 
     move-result-object v0
@@ -819,7 +819,7 @@
     iput-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
     .line 275
-    :goto_9f
+    :goto_2
     iget-object v0, p0, Landroidx/media3/datasource/DefaultDataSource;->dataSource:Landroidx/media3/datasource/DataSource;
 
     invoke-interface {v0, p1}, Landroidx/media3/datasource/DataSource;->open(Landroidx/media3/datasource/DataSpec;)J
@@ -830,7 +830,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

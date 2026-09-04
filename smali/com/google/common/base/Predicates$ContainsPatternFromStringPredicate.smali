@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 712
     new-instance v0, Ljava/lang/StringBuilder;

@@ -28,14 +28,14 @@
 
 # direct methods
 .method public static final getCoroutineScope(Landroidx/lifecycle/Lifecycle;)Landroidx/lifecycle/LifecycleCoroutineScope;
-    .registers 5
+    .locals 4
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 294
-    :cond_5
+    :cond_0
     invoke-virtual {p0}, Landroidx/lifecycle/Lifecycle;->getInternalScopeRef()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
@@ -46,7 +46,7 @@
 
     check-cast v0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 296
     check-cast v0, Landroidx/lifecycle/LifecycleCoroutineScope;
@@ -54,7 +54,7 @@
     return-object v0
 
     .line 298
-    :cond_14
+    :cond_1
     new-instance v0, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;
 
     const/4 v1, 0x1
@@ -92,7 +92,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_0
 
     .line 303
     invoke-virtual {v0}, Landroidx/lifecycle/LifecycleCoroutineScopeImpl;->register()V

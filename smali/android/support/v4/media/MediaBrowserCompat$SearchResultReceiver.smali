@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;Landroid/os/Handler;)V
-    .registers 5
+    .locals 0
 
     .line 2268
     invoke-direct {p0, p4}, Landroid/support/v4/os/ResultReceiver;-><init>(Landroid/os/Handler;)V
@@ -44,14 +44,14 @@
 
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
 
     .line 2276
     invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V
 
-    if-nez p1, :cond_34
+    if-nez p1, :cond_3
 
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_3
 
     const-string p1, "search_results"
 
@@ -60,17 +60,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_34
+    goto :goto_1
 
     .line 2282
-    :cond_10
+    :cond_0
     invoke-virtual {p2, p1}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
 
     move-result-object p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_1
 
     .line 2286
     new-instance p2, Ljava/util/ArrayList;
@@ -82,8 +82,8 @@
 
     const/4 v1, 0x0
 
-    :goto_1d
-    if-ge v1, v0, :cond_2a
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     aget-object v2, p1, v1
 
@@ -94,13 +94,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_29
+    :cond_1
     const/4 p2, 0x0
 
     .line 2291
-    :cond_2a
+    :cond_2
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;
 
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mQuery:Ljava/lang/String;
@@ -112,8 +112,8 @@
     return-void
 
     .line 2279
-    :cond_34
-    :goto_34
+    :cond_3
+    :goto_1
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;
 
     iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mQuery:Ljava/lang/String;

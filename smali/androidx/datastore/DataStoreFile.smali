@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final dataStoreFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-    .registers 4
+    .locals 2
 
     const-string v0, "<this>"
 

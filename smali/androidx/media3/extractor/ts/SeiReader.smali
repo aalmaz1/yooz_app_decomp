@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public consume(JLandroidx/media3/common/util/ParsableByteArray;)V
-    .registers 5
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/media3/extractor/ts/SeiReader;->outputs:[Landroidx/media3/extractor/TrackOutput;
@@ -61,19 +61,19 @@
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 11
+    .locals 8
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 47
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/extractor/ts/SeiReader;->outputs:[Landroidx/media3/extractor/TrackOutput;
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_81
+    if-ge v1, v2, :cond_3
 
     .line 48
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -108,7 +108,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_30
+    if-nez v5, :cond_1
 
     const-string v5, "application/cea-708"
 
@@ -117,20 +117,20 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_0
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2e
+    :cond_0
     move v5, v0
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_1
     const/4 v5, 0x1
 
-    :goto_31
+    :goto_2
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "Invalid closed caption MIME type provided: "
@@ -151,19 +151,19 @@
     .line 56
     iget-object v5, v3, Landroidx/media3/common/Format;->id:Ljava/lang/String;
 
-    if-eqz v5, :cond_4a
+    if-eqz v5, :cond_2
 
     iget-object v5, v3, Landroidx/media3/common/Format;->id:Ljava/lang/String;
 
-    goto :goto_4e
+    goto :goto_3
 
-    :cond_4a
+    :cond_2
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->getFormatId()Ljava/lang/String;
 
     move-result-object v5
 
     .line 57
-    :goto_4e
+    :goto_3
     new-instance v6, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v6}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -221,8 +221,8 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_81
+    :cond_3
     return-void
 .end method

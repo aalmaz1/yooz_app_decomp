@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 326
     new-instance v0, Landroid/util/SparseIntArray;
@@ -240,7 +240,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 306
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -249,7 +249,7 @@
 .end method
 
 .method public static read(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;Landroid/content/res/TypedArray;)V
-    .registers 7
+    .locals 5
 
     .line 351
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getIndexCount()I
@@ -258,8 +258,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_165
+    :goto_0
+    if-ge v1, v0, :cond_4
 
     .line 353
     invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -273,10 +273,10 @@
 
     move-result v3
 
-    packed-switch v3, :pswitch_data_166
+    packed-switch v3, :pswitch_data_0
 
     .line 431
-    :pswitch_14
+    :pswitch_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string/jumbo v4, "unused attribute 0x"
@@ -315,10 +315,10 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 391
-    :pswitch_3f
+    :pswitch_1
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v3
@@ -328,7 +328,7 @@
 
     const/4 v4, 0x5
 
-    if-ne v3, v4, :cond_55
+    if-ne v3, v4, :cond_0
 
     .line 393
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$600(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
@@ -341,10 +341,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$602(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 395
-    :cond_55
+    :cond_0
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$600(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -355,10 +355,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$602(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 388
-    :pswitch_62
+    :pswitch_2
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$500(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -369,10 +369,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$502(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 385
-    :pswitch_6f
+    :pswitch_3
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$400(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)I
 
     move-result v3
@@ -383,10 +383,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$402(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;I)I
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 428
-    :pswitch_7c
+    :pswitch_4
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1600(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -397,10 +397,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1602(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 424
-    :pswitch_89
+    :pswitch_5
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1500(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -411,10 +411,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1502(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 420
-    :pswitch_96
+    :pswitch_6
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1400(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -425,10 +425,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1402(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 417
-    :pswitch_a3
+    :pswitch_7
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1300(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -439,10 +439,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1302(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 411
-    :pswitch_b0
+    :pswitch_8
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1100(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -453,10 +453,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1102(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 382
-    :pswitch_bd
+    :pswitch_9
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$300(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)I
 
     move-result v3
@@ -467,10 +467,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$302(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;I)I
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 370
-    :pswitch_ca
+    :pswitch_a
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mFramePosition:I
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -479,13 +479,13 @@
 
     iput v2, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mFramePosition:I
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 356
-    :pswitch_d4
+    :pswitch_b
     sget-boolean v3, Landroidx/constraintlayout/motion/widget/MotionLayout;->IS_IN_EDIT_MODE:Z
 
-    if-eqz v3, :cond_ed
+    if-eqz v3, :cond_1
 
     .line 357
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mTargetId:I
@@ -501,7 +501,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v3, v4, :cond_161
+    if-ne v3, v4, :cond_3
 
     .line 359
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -510,10 +510,10 @@
 
     iput-object v2, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mTargetString:Ljava/lang/String;
 
-    goto/16 :goto_161
+    goto/16 :goto_1
 
     .line 362
-    :cond_ed
+    :cond_1
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v3
@@ -522,7 +522,7 @@
 
     const/4 v4, 0x3
 
-    if-ne v3, v4, :cond_fd
+    if-ne v3, v4, :cond_2
 
     .line 363
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -531,10 +531,10 @@
 
     iput-object v2, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mTargetString:Ljava/lang/String;
 
-    goto :goto_161
+    goto :goto_1
 
     .line 365
-    :cond_fd
+    :cond_2
     iget v3, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mTargetId:I
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -543,20 +543,20 @@
 
     iput v2, p0, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->mTargetId:I
 
-    goto :goto_161
+    goto :goto_1
 
     .line 408
-    :pswitch_106
+    :pswitch_c
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1002(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;Ljava/lang/String;)Ljava/lang/String;
 
-    goto :goto_161
+    goto :goto_1
 
     .line 414
-    :pswitch_10e
+    :pswitch_d
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1200(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -567,10 +567,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$1202(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto :goto_161
+    goto :goto_1
 
     .line 399
-    :pswitch_11a
+    :pswitch_e
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$700(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -581,10 +581,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$702(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto :goto_161
+    goto :goto_1
 
     .line 405
-    :pswitch_126
+    :pswitch_f
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$900(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -595,10 +595,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$902(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto :goto_161
+    goto :goto_1
 
     .line 402
-    :pswitch_132
+    :pswitch_10
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$800(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -609,10 +609,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$802(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto :goto_161
+    goto :goto_1
 
     .line 379
-    :pswitch_13e
+    :pswitch_11
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$200(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -623,10 +623,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$202(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto :goto_161
+    goto :goto_1
 
     .line 376
-    :pswitch_14a
+    :pswitch_12
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$100(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -637,10 +637,10 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$102(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    goto :goto_161
+    goto :goto_1
 
     .line 373
-    :pswitch_156
+    :pswitch_13
     invoke-static {p0}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$000(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;)F
 
     move-result v3
@@ -651,37 +651,37 @@
 
     invoke-static {p0, v2}, Landroidx/constraintlayout/motion/widget/KeyTimeCycle;->access$002(Landroidx/constraintlayout/motion/widget/KeyTimeCycle;F)F
 
-    :cond_161
-    :goto_161
+    :cond_3
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
-    :cond_165
+    :cond_4
     return-void
 
-    :pswitch_data_166
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_156
-        :pswitch_14a
-        :pswitch_14
-        :pswitch_13e
-        :pswitch_132
-        :pswitch_126
-        :pswitch_11a
-        :pswitch_10e
-        :pswitch_106
-        :pswitch_d4
-        :pswitch_14
-        :pswitch_ca
-        :pswitch_bd
-        :pswitch_b0
-        :pswitch_a3
-        :pswitch_96
-        :pswitch_89
-        :pswitch_7c
-        :pswitch_6f
-        :pswitch_62
-        :pswitch_3f
+        :pswitch_13
+        :pswitch_12
+        :pswitch_0
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_0
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/SampleStream;J)V
-    .registers 4
+    .locals 0
 
     .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getChildStream()Landroidx/media3/exoplayer/source/SampleStream;
-    .registers 2
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;->sampleStream:Landroidx/media3/exoplayer/source/SampleStream;
@@ -51,7 +51,7 @@
 .end method
 
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;->sampleStream:Landroidx/media3/exoplayer/source/SampleStream;
@@ -64,7 +64,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -80,7 +80,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 8
+    .locals 4
 
     .line 205
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;->sampleStream:Landroidx/media3/exoplayer/source/SampleStream;
@@ -91,7 +91,7 @@
 
     const/4 p3, -0x4
 
-    if-ne p1, p3, :cond_10
+    if-ne p1, p3, :cond_0
 
     .line 207
     iget-wide v0, p2, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
@@ -102,12 +102,12 @@
 
     iput-wide v0, p2, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
-    :cond_10
+    :cond_0
     return p1
 .end method
 
 .method public skipData(J)I
-    .registers 6
+    .locals 3
 
     .line 214
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;->sampleStream:Landroidx/media3/exoplayer/source/SampleStream;

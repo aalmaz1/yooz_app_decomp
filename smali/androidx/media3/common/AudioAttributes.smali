@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 65
     new-instance v0, Landroidx/media3/common/AudioAttributes$Builder;
@@ -106,7 +106,7 @@
 .end method
 
 .method private constructor <init>(IIIII)V
-    .registers 6
+    .locals 0
 
     .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -130,7 +130,7 @@
 .end method
 
 .method synthetic constructor <init>(IIIIILandroidx/media3/common/AudioAttributes$1;)V
-    .registers 7
+    .locals 0
 
     .line 37
     invoke-direct/range {p0 .. p5}, Landroidx/media3/common/AudioAttributes;-><init>(IIIII)V
@@ -139,7 +139,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/AudioAttributes;
-    .registers 4
+    .locals 3
 
     .line 223
     new-instance v0, Landroidx/media3/common/AudioAttributes$Builder;
@@ -153,7 +153,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 225
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -163,14 +163,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/AudioAttributes$Builder;->setContentType(I)Landroidx/media3/common/AudioAttributes$Builder;
 
     .line 227
-    :cond_14
+    :cond_0
     sget-object v1, Landroidx/media3/common/AudioAttributes;->FIELD_FLAGS:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     .line 228
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -180,14 +180,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/AudioAttributes$Builder;->setFlags(I)Landroidx/media3/common/AudioAttributes$Builder;
 
     .line 230
-    :cond_23
+    :cond_1
     sget-object v1, Landroidx/media3/common/AudioAttributes;->FIELD_USAGE:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_2
 
     .line 231
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -197,14 +197,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/AudioAttributes$Builder;->setUsage(I)Landroidx/media3/common/AudioAttributes$Builder;
 
     .line 233
-    :cond_32
+    :cond_2
     sget-object v1, Landroidx/media3/common/AudioAttributes;->FIELD_ALLOWED_CAPTURE_POLICY:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_3
 
     .line 234
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -214,14 +214,14 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/AudioAttributes$Builder;->setAllowedCapturePolicy(I)Landroidx/media3/common/AudioAttributes$Builder;
 
     .line 236
-    :cond_41
+    :cond_3
     sget-object v1, Landroidx/media3/common/AudioAttributes;->FIELD_SPATIALIZATION_BEHAVIOR:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_4
 
     .line 237
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -231,7 +231,7 @@
     invoke-virtual {v0, p0}, Landroidx/media3/common/AudioAttributes$Builder;->setSpatializationBehavior(I)Landroidx/media3/common/AudioAttributes$Builder;
 
     .line 239
-    :cond_50
+    :cond_4
     invoke-virtual {v0}, Landroidx/media3/common/AudioAttributes$Builder;->build()Landroidx/media3/common/AudioAttributes;
 
     move-result-object p0
@@ -242,18 +242,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
     .line 181
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -264,12 +264,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_35
+    goto :goto_1
 
     .line 184
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/AudioAttributes;
 
     .line 185
@@ -277,52 +277,52 @@
 
     iget v3, p1, Landroidx/media3/common/AudioAttributes;->contentType:I
 
-    if-ne v2, v3, :cond_33
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/AudioAttributes;->flags:I
 
     iget v3, p1, Landroidx/media3/common/AudioAttributes;->flags:I
 
-    if-ne v2, v3, :cond_33
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/AudioAttributes;->usage:I
 
     iget v3, p1, Landroidx/media3/common/AudioAttributes;->usage:I
 
-    if-ne v2, v3, :cond_33
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/AudioAttributes;->allowedCapturePolicy:I
 
     iget v3, p1, Landroidx/media3/common/AudioAttributes;->allowedCapturePolicy:I
 
-    if-ne v2, v3, :cond_33
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/AudioAttributes;->spatializationBehavior:I
 
     iget p1, p1, Landroidx/media3/common/AudioAttributes;->spatializationBehavior:I
 
-    if-ne v2, p1, :cond_33
+    if-ne v2, p1, :cond_2
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_33
+    :cond_2
     move v0, v1
 
-    :goto_34
+    :goto_0
     return v0
 
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getAudioAttributesV21()Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
-    .registers 3
+    .locals 2
 
     .line 170
     iget-object v0, p0, Landroidx/media3/common/AudioAttributes;->audioAttributesV21:Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 171
     new-instance v0, Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
@@ -334,14 +334,14 @@
     iput-object v0, p0, Landroidx/media3/common/AudioAttributes;->audioAttributesV21:Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
 
     .line 173
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/AudioAttributes;->audioAttributesV21:Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
 
     return-object v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x20f
 
@@ -382,7 +382,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 211
     new-instance v0, Landroid/os/Bundle;

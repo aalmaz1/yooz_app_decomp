@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 361
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,14 +14,14 @@
 .end method
 
 .method public static checkArgument(Z)V
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 37
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -30,14 +30,14 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/Object;)V
-    .registers 2
+    .locals 0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 51
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -50,14 +50,14 @@
 .end method
 
 .method public static varargs checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 69
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -70,26 +70,26 @@
 .end method
 
 .method public static checkArgumentFinite(FLjava/lang/String;)F
-    .registers 3
+    .locals 1
 
     .line 352
     invoke-static {p0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     .line 354
     invoke-static {p0}, Ljava/lang/Float;->isInfinite(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     return p0
 
     .line 355
-    :cond_d
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -115,7 +115,7 @@
     throw p0
 
     .line 353
-    :cond_26
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -142,7 +142,7 @@
 .end method
 
 .method public static checkArgumentInRange(DDDLjava/lang/String;)D
-    .registers 12
+    .locals 5
 
     cmpg-double v0, p0, p2
 
@@ -154,16 +154,16 @@
 
     const/4 v4, 0x3
 
-    if-ltz v0, :cond_2b
+    if-ltz v0, :cond_1
 
     cmpl-double v0, p0, p4
 
-    if-gtz v0, :cond_d
+    if-gtz v0, :cond_0
 
     return-wide p0
 
     .line 330
-    :cond_d
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -197,7 +197,7 @@
     throw p0
 
     .line 326
-    :cond_2b
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -232,7 +232,7 @@
 .end method
 
 .method public static checkArgumentInRange(FFFLjava/lang/String;)F
-    .registers 9
+    .locals 5
 
     cmpg-float v0, p0, p1
 
@@ -244,16 +244,16 @@
 
     const/4 v4, 0x3
 
-    if-ltz v0, :cond_2b
+    if-ltz v0, :cond_1
 
     cmpl-float v0, p0, p2
 
-    if-gtz v0, :cond_d
+    if-gtz v0, :cond_0
 
     return p0
 
     .line 303
-    :cond_d
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -287,7 +287,7 @@
     throw p0
 
     .line 299
-    :cond_2b
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -322,7 +322,7 @@
 .end method
 
 .method public static checkArgumentInRange(IIILjava/lang/String;)I
-    .registers 9
+    .locals 5
 
     const/4 v0, 0x2
 
@@ -332,14 +332,14 @@
 
     const/4 v3, 0x3
 
-    if-lt p0, p1, :cond_27
+    if-lt p0, p1, :cond_1
 
-    if-gt p0, p2, :cond_9
+    if-gt p0, p2, :cond_0
 
     return p0
 
     .line 249
-    :cond_9
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -373,7 +373,7 @@
     throw p0
 
     .line 245
-    :cond_27
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -408,7 +408,7 @@
 .end method
 
 .method public static checkArgumentInRange(JJJLjava/lang/String;)J
-    .registers 12
+    .locals 5
 
     cmp-long v0, p0, p2
 
@@ -420,16 +420,16 @@
 
     const/4 v4, 0x3
 
-    if-ltz v0, :cond_2b
+    if-ltz v0, :cond_1
 
     cmp-long v0, p0, p4
 
-    if-gtz v0, :cond_d
+    if-gtz v0, :cond_0
 
     return-wide p0
 
     .line 276
-    :cond_d
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -463,7 +463,7 @@
     throw p0
 
     .line 272
-    :cond_2b
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -498,14 +498,14 @@
 .end method
 
 .method public static checkArgumentNonnegative(I)I
-    .registers 1
+    .locals 0
 
-    if-ltz p0, :cond_3
+    if-ltz p0, :cond_0
 
     return p0
 
     .line 224
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -514,14 +514,14 @@
 .end method
 
 .method public static checkArgumentNonnegative(ILjava/lang/String;)I
-    .registers 2
+    .locals 0
 
-    if-ltz p0, :cond_3
+    if-ltz p0, :cond_0
 
     return p0
 
     .line 208
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
@@ -530,16 +530,16 @@
 .end method
 
 .method public static checkFlagsArgument(II)I
-    .registers 5
+    .locals 3
 
     and-int v0, p0, p1
 
-    if-ne v0, p0, :cond_5
+    if-ne v0, p0, :cond_0
 
     return p0
 
     .line 190
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -588,7 +588,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -604,7 +604,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -615,12 +615,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 153
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -633,7 +633,7 @@
 .end method
 
 .method public static checkState(Z)V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -644,14 +644,14 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;)V
-    .registers 2
+    .locals 0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 168
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
@@ -660,7 +660,7 @@
 .end method
 
 .method public static checkStringNotEmpty(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -674,12 +674,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 84
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -688,7 +688,7 @@
 .end method
 
 .method public static checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -704,12 +704,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 102
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -722,7 +722,7 @@
 .end method
 
 .method public static varargs checkStringNotEmpty(Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -740,12 +740,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 121
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;

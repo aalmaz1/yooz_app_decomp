@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 63
     new-instance v0, Landroidx/media3/extractor/wav/WavExtractor$$ExternalSyntheticLambda0;
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method private assertInitialized()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "extractorOutput",
@@ -114,7 +114,7 @@
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -133,7 +133,7 @@
 .end method
 
 .method private readFileType(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -151,16 +151,16 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 156
@@ -168,7 +168,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_1d
+    if-eq v0, v2, :cond_1
 
     .line 157
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
@@ -181,12 +181,12 @@
     return-void
 
     .line 161
-    :cond_1d
+    :cond_1
     invoke-static {p1}, Landroidx/media3/extractor/wav/WavHeaderReader;->checkFileType(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     .line 166
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
@@ -208,7 +208,7 @@
 
     return-void
 
-    :cond_33
+    :cond_2
     const-string p1, "Unsupported or unrecognized wav file type."
 
     const/4 v0, 0x0
@@ -222,7 +222,7 @@
 .end method
 
 .method private readFormat(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -246,7 +246,7 @@
 
     const/16 v0, 0x11
 
-    if-ne p1, v0, :cond_16
+    if-ne p1, v0, :cond_0
 
     .line 179
     new-instance p1, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;
@@ -259,15 +259,15 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->outputWriter:Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;
 
-    goto :goto_58
+    goto :goto_0
 
     .line 180
-    :cond_16
+    :cond_0
     iget p1, v3, Landroidx/media3/extractor/wav/WavFormat;->formatType:I
 
     const/4 v0, 0x6
 
-    if-ne p1, v0, :cond_2b
+    if-ne p1, v0, :cond_1
 
     .line 181
     new-instance p1, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;
@@ -286,15 +286,15 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->outputWriter:Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;
 
-    goto :goto_58
+    goto :goto_0
 
     .line 188
-    :cond_2b
+    :cond_1
     iget p1, v3, Landroidx/media3/extractor/wav/WavFormat;->formatType:I
 
     const/4 v0, 0x7
 
-    if-ne p1, v0, :cond_40
+    if-ne p1, v0, :cond_2
 
     .line 189
     new-instance p1, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;
@@ -313,10 +313,10 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->outputWriter:Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;
 
-    goto :goto_58
+    goto :goto_0
 
     .line 198
-    :cond_40
+    :cond_2
     iget p1, v3, Landroidx/media3/extractor/wav/WavFormat;->formatType:I
 
     iget v0, v3, Landroidx/media3/extractor/wav/WavFormat;->bitsPerSample:I
@@ -326,7 +326,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5c
+    if-eqz v5, :cond_3
 
     .line 204
     new-instance p1, Landroidx/media3/extractor/wav/WavExtractor$PassthroughOutputWriter;
@@ -343,7 +343,7 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->outputWriter:Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;
 
-    :goto_58
+    :goto_0
     const/4 p1, 0x3
 
     .line 208
@@ -352,7 +352,7 @@
     return-void
 
     .line 201
-    :cond_5c
+    :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Unsupported WAV format type: "
@@ -377,7 +377,7 @@
 .end method
 
 .method private readRf64SampleDataSize(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -400,7 +400,7 @@
 .end method
 
 .method private readSampleData(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -416,16 +416,16 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v1
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 232
@@ -450,16 +450,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     const/4 v1, -0x1
 
-    :cond_25
+    :cond_1
     return v1
 .end method
 
 .method private skipToSampleData(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -498,18 +498,18 @@
 
     cmp-long v6, v2, v4
 
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_0
 
     const-wide v6, 0xffffffffL
 
     cmp-long v6, v0, v6
 
-    if-nez v6, :cond_28
+    if-nez v6, :cond_0
 
     move-wide v0, v2
 
     .line 220
-    :cond_28
+    :cond_0
     iget v2, p0, Landroidx/media3/extractor/wav/WavExtractor;->dataStartPosition:I
 
     int-to-long v2, v2
@@ -525,14 +525,14 @@
 
     cmp-long p1, v0, v4
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_1
 
     .line 222
     iget-wide v2, p0, Landroidx/media3/extractor/wav/WavExtractor;->dataEndPosition:J
 
     cmp-long p1, v2, v0
 
-    if-lez p1, :cond_5e
+    if-lez p1, :cond_1
 
     .line 223
     new-instance p1, Ljava/lang/StringBuilder;
@@ -569,7 +569,7 @@
     iput-wide v0, p0, Landroidx/media3/extractor/wav/WavExtractor;->dataEndPosition:J
 
     .line 226
-    :cond_5e
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->outputWriter:Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -595,7 +595,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 4
+    .locals 2
 
     .line 106
     iput-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -618,7 +618,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -633,23 +633,23 @@
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_2b
+    if-eqz p2, :cond_4
 
     const/4 v1, 0x1
 
-    if-eq p2, v1, :cond_27
+    if-eq p2, v1, :cond_3
 
     const/4 v1, 0x2
 
-    if-eq p2, v1, :cond_23
+    if-eq p2, v1, :cond_2
 
     const/4 v1, 0x3
 
-    if-eq p2, v1, :cond_1f
+    if-eq p2, v1, :cond_1
 
     const/4 v0, 0x4
 
-    if-ne p2, v0, :cond_19
+    if-ne p2, v0, :cond_0
 
     .line 142
     invoke-direct {p0, p1}, Landroidx/media3/extractor/wav/WavExtractor;->readSampleData(Landroidx/media3/extractor/ExtractorInput;)I
@@ -659,7 +659,7 @@
     return p1
 
     .line 144
-    :cond_19
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -667,70 +667,70 @@
     throw p1
 
     .line 139
-    :cond_1f
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/extractor/wav/WavExtractor;->skipToSampleData(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v0
 
     .line 136
-    :cond_23
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/media3/extractor/wav/WavExtractor;->readFormat(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v0
 
     .line 133
-    :cond_27
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/media3/extractor/wav/WavExtractor;->readRf64SampleDataSize(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v0
 
     .line 130
-    :cond_2b
+    :cond_4
     invoke-direct {p0, p1}, Landroidx/media3/extractor/wav/WavExtractor;->readFileType(Landroidx/media3/extractor/ExtractorInput;)V
 
     return v0
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 7
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x4
 
     .line 113
-    :goto_9
+    :goto_0
     iput p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->state:I
 
     .line 114
     iget-object p1, p0, Landroidx/media3/extractor/wav/WavExtractor;->outputWriter:Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     .line 115
     invoke-interface {p1, p3, p4}, Landroidx/media3/extractor/wav/WavExtractor$OutputWriter;->reset(J)V
 
-    :cond_12
+    :cond_1
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

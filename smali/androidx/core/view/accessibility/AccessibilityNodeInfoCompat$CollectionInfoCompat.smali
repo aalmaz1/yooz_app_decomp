@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1018
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static obtain(IIZ)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
-    .registers 4
+    .locals 1
 
     .line 1014
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
@@ -55,7 +55,7 @@
 .end method
 
 .method public static obtain(IIZI)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
-    .registers 5
+    .locals 1
 
     .line 995
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public getColumnCount()I
-    .registers 2
+    .locals 1
 
     .line 1028
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;->mInfo:Ljava/lang/Object;
@@ -87,7 +87,7 @@
 .end method
 
 .method public getRowCount()I
-    .registers 2
+    .locals 1
 
     .line 1037
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;->mInfo:Ljava/lang/Object;
@@ -102,7 +102,7 @@
 .end method
 
 .method public getSelectionMode()I
-    .registers 2
+    .locals 1
 
     .line 1061
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;->mInfo:Ljava/lang/Object;
@@ -117,7 +117,7 @@
 .end method
 
 .method public isHierarchical()Z
-    .registers 2
+    .locals 1
 
     .line 1046
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;->mInfo:Ljava/lang/Object;

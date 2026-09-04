@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method public static create()Landroidx/camera/core/impl/CameraCaptureResult;
-    .registers 1
+    .locals 1
 
     .line 91
     new-instance v0, Landroidx/camera/core/impl/CameraCaptureResult$EmptyCameraCaptureResult;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public getAeState()Landroidx/camera/core/impl/CameraCaptureMetaData$AeState;
-    .registers 2
+    .locals 1
 
     .line 109
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$AeState;->UNKNOWN:Landroidx/camera/core/impl/CameraCaptureMetaData$AeState;
@@ -50,7 +50,7 @@
 .end method
 
 .method public getAfMode()Landroidx/camera/core/impl/CameraCaptureMetaData$AfMode;
-    .registers 2
+    .locals 1
 
     .line 97
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$AfMode;->UNKNOWN:Landroidx/camera/core/impl/CameraCaptureMetaData$AfMode;
@@ -59,7 +59,7 @@
 .end method
 
 .method public getAfState()Landroidx/camera/core/impl/CameraCaptureMetaData$AfState;
-    .registers 2
+    .locals 1
 
     .line 103
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$AfState;->UNKNOWN:Landroidx/camera/core/impl/CameraCaptureMetaData$AfState;
@@ -68,7 +68,7 @@
 .end method
 
 .method public getAwbState()Landroidx/camera/core/impl/CameraCaptureMetaData$AwbState;
-    .registers 2
+    .locals 1
 
     .line 115
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$AwbState;->UNKNOWN:Landroidx/camera/core/impl/CameraCaptureMetaData$AwbState;
@@ -77,7 +77,7 @@
 .end method
 
 .method public getFlashState()Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
-    .registers 2
+    .locals 1
 
     .line 121
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->UNKNOWN:Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
@@ -86,7 +86,7 @@
 .end method
 
 .method public getTagBundle()Landroidx/camera/core/impl/TagBundle;
-    .registers 2
+    .locals 1
 
     .line 132
     invoke-static {}, Landroidx/camera/core/impl/TagBundle;->emptyBundle()Landroidx/camera/core/impl/TagBundle;
@@ -97,7 +97,7 @@
 .end method
 
 .method public getTimestamp()J
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 

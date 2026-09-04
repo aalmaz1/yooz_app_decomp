@@ -72,7 +72,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "MBServiceCompat"
 
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 122
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method addSubscription(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/os/IBinder;Landroid/os/Bundle;)V
-    .registers 9
+    .locals 4
 
     .line 1515
     iget-object v0, p2, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->subscriptions:Ljava/util/HashMap;
@@ -125,7 +125,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 1517
     new-instance v0, Ljava/util/ArrayList;
@@ -133,17 +133,17 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 1519
-    :cond_f
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_13
+    :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -154,7 +154,7 @@
     .line 1520
     iget-object v3, v2, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
 
-    if-ne p3, v3, :cond_13
+    if-ne p3, v3, :cond_1
 
     iget-object v2, v2, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
 
@@ -165,12 +165,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_1
 
     return-void
 
     .line 1525
-    :cond_2e
+    :cond_2
     new-instance v1, Landroidx/core/util/Pair;
 
     invoke-direct {v1, p3, p4}, Landroidx/core/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -200,7 +200,7 @@
 .end method
 
 .method applyOptions(Ljava/util/List;Landroid/os/Bundle;)Ljava/util/List;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,13 +215,13 @@
         }
     .end annotation
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :cond_4
+    :cond_0
     const-string v0, "android.media.browse.extra.PAGE"
 
     const/4 v1, -0x1
@@ -238,39 +238,39 @@
 
     move-result p2
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_1
 
-    if-ne p2, v1, :cond_16
+    if-ne p2, v1, :cond_1
 
     return-object p1
 
-    :cond_16
+    :cond_1
     mul-int v1, p2, v0
 
     add-int v2, v1, p2
 
-    if-ltz v0, :cond_35
+    if-ltz v0, :cond_4
 
     const/4 v0, 0x1
 
-    if-lt p2, v0, :cond_35
+    if-lt p2, v0, :cond_4
 
     .line 1624
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-lt v1, p2, :cond_26
+    if-lt v1, p2, :cond_2
 
-    goto :goto_35
+    goto :goto_0
 
     .line 1627
-    :cond_26
+    :cond_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p2
 
-    if-le v2, p2, :cond_30
+    if-le v2, p2, :cond_3
 
     .line 1628
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -278,7 +278,7 @@
     move-result v2
 
     .line 1630
-    :cond_30
+    :cond_3
     invoke-interface {p1, v1, v2}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p1
@@ -286,8 +286,8 @@
     return-object p1
 
     .line 1625
-    :cond_35
-    :goto_35
+    :cond_4
+    :goto_0
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
@@ -296,7 +296,7 @@
 .end method
 
 .method public attachToBaseContext(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 1165
     invoke-virtual {p0, p1}, Landroidx/media/MediaBrowserServiceCompat;->attachBaseContext(Landroid/content/Context;)V
@@ -305,13 +305,13 @@
 .end method
 
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public final getBrowserRootHints()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 1412
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mImpl:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImpl;
@@ -324,7 +324,7 @@
 .end method
 
 .method public final getCurrentBrowserInfo()Landroidx/media/MediaSessionManager$RemoteUserInfo;
-    .registers 2
+    .locals 1
 
     .line 1423
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mImpl:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImpl;
@@ -337,7 +337,7 @@
 .end method
 
 .method public getSessionToken()Landroid/support/v4/media/session/MediaSessionCompat$Token;
-    .registers 2
+    .locals 1
 
     .line 1393
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mSession:Landroid/support/v4/media/session/MediaSessionCompat$Token;
@@ -346,16 +346,16 @@
 .end method
 
 .method isValidPackage(Ljava/lang/String;I)Z
-    .registers 7
+    .locals 4
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
     .line 1498
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Landroidx/media/MediaBrowserServiceCompat;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -370,8 +370,8 @@
 
     move v2, v0
 
-    :goto_e
-    if-ge v2, v1, :cond_1d
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 1502
     aget-object v3, p2, v2
@@ -380,29 +380,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1a
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_1d
+    :cond_2
     return v0
 .end method
 
 .method public notifyChildrenChanged(Landroidx/media/MediaSessionManager$RemoteUserInfo;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_2
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_1
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_0
 
     .line 1488
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mImpl:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImpl;
@@ -412,7 +412,7 @@
     return-void
 
     .line 1486
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "options cannot be null in notifyChildrenChanged"
@@ -422,7 +422,7 @@
     throw p1
 
     .line 1483
-    :cond_14
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "parentId cannot be null in notifyChildrenChanged"
@@ -432,7 +432,7 @@
     throw p1
 
     .line 1479
-    :cond_1c
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "remoteUserInfo cannot be null in notifyChildrenChanged"
@@ -443,9 +443,9 @@
 .end method
 
 .method public notifyChildrenChanged(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 1438
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mImpl:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImpl;
@@ -457,7 +457,7 @@
     return-void
 
     .line 1436
-    :cond_9
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "parentId cannot be null in notifyChildrenChanged"
@@ -468,11 +468,11 @@
 .end method
 
 .method public notifyChildrenChanged(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     .line 1459
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mImpl:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImpl;
@@ -482,7 +482,7 @@
     return-void
 
     .line 1457
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "options cannot be null in notifyChildrenChanged"
@@ -492,7 +492,7 @@
     throw p1
 
     .line 1454
-    :cond_12
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "parentId cannot be null in notifyChildrenChanged"
@@ -503,7 +503,7 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 3
+    .locals 1
 
     .line 1187
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mImpl:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImpl;
@@ -516,7 +516,7 @@
 .end method
 
 .method public onCreate()V
-    .registers 2
+    .locals 1
 
     .line 1170
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -535,7 +535,7 @@
 .end method
 
 .method public onCustomAction(Ljava/lang/String;Landroid/os/Bundle;Landroidx/media/MediaBrowserServiceCompat$Result;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -572,7 +572,7 @@
 .end method
 
 .method public onLoadChildren(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$Result;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -598,7 +598,7 @@
 .end method
 
 .method public onLoadItem(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$Result;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -623,7 +623,7 @@
 .end method
 
 .method public onSearch(Ljava/lang/String;Landroid/os/Bundle;Landroidx/media/MediaBrowserServiceCompat$Result;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -650,19 +650,19 @@
 .end method
 
 .method public onSubscribe(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onUnsubscribe(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method performCustomAction(Ljava/lang/String;Landroid/os/Bundle;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/support/v4/os/ResultReceiver;)V
-    .registers 6
+    .locals 1
 
     .line 1689
     new-instance v0, Landroidx/media/MediaBrowserServiceCompat$4;
@@ -685,12 +685,12 @@
 
     move-result p3
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_0
 
     return-void
 
     .line 1711
-    :cond_14
+    :cond_0
     new-instance p3, Ljava/lang/IllegalStateException;
 
     new-instance p4, Ljava/lang/StringBuilder;
@@ -723,7 +723,7 @@
 .end method
 
 .method performLoadChildren(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .registers 13
+    .locals 8
 
     .line 1572
     new-instance v7, Landroidx/media/MediaBrowserServiceCompat$1;
@@ -747,18 +747,18 @@
     .line 1598
     iput-object p2, p0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-nez p3, :cond_14
+    if-nez p3, :cond_0
 
     .line 1600
     invoke-virtual {p0, p1, v7}, Landroidx/media/MediaBrowserServiceCompat;->onLoadChildren(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$Result;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 1602
-    :cond_14
+    :cond_0
     invoke-virtual {p0, p1, v7, p3}, Landroidx/media/MediaBrowserServiceCompat;->onLoadChildren(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$Result;Landroid/os/Bundle;)V
 
-    :goto_17
+    :goto_0
     const/4 p3, 0x0
 
     .line 1604
@@ -769,12 +769,12 @@
 
     move-result p3
 
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_1
 
     return-void
 
     .line 1607
-    :cond_21
+    :cond_1
     new-instance p3, Ljava/lang/IllegalStateException;
 
     new-instance p4, Ljava/lang/StringBuilder;
@@ -809,7 +809,7 @@
 .end method
 
 .method performLoadItem(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/support/v4/os/ResultReceiver;)V
-    .registers 5
+    .locals 1
 
     .line 1635
     new-instance v0, Landroidx/media/MediaBrowserServiceCompat$2;
@@ -832,12 +832,12 @@
 
     move-result p2
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_0
 
     return-void
 
     .line 1654
-    :cond_14
+    :cond_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -860,7 +860,7 @@
 .end method
 
 .method performSearch(Ljava/lang/String;Landroid/os/Bundle;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/support/v4/os/ResultReceiver;)V
-    .registers 6
+    .locals 1
 
     .line 1661
     new-instance v0, Landroidx/media/MediaBrowserServiceCompat$3;
@@ -883,12 +883,12 @@
 
     move-result p2
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_0
 
     return-void
 
     .line 1682
-    :cond_14
+    :cond_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -911,7 +911,7 @@
 .end method
 
 .method removeSubscription(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Landroid/os/IBinder;)Z
-    .registers 10
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -919,27 +919,27 @@
 
     const/4 v2, 0x0
 
-    if-nez p3, :cond_17
+    if-nez p3, :cond_1
 
     .line 1541
-    :try_start_5
+    :try_start_0
     iget-object p3, p2, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->subscriptions:Ljava/util/HashMap;
 
     invoke-virtual {p3, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
-    :try_end_b
-    .catchall {:try_start_5 .. :try_end_b} :catchall_4d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v0, v1
 
     .line 1559
-    :goto_f
+    :goto_0
     iput-object p2, p0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
     .line 1560
@@ -951,8 +951,8 @@
     return v0
 
     .line 1544
-    :cond_17
-    :try_start_17
+    :cond_1
+    :try_start_1
     iget-object v3, p2, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->subscriptions:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -961,7 +961,7 @@
 
     check-cast v3, Ljava/util/List;
 
-    if-eqz v3, :cond_45
+    if-eqz v3, :cond_4
 
     .line 1546
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -969,13 +969,13 @@
     move-result-object v4
 
     .line 1547
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_1
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_3a
+    if-eqz v5, :cond_3
 
     .line 1548
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -986,32 +986,32 @@
 
     iget-object v5, v5, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
 
-    if-ne p3, v5, :cond_25
+    if-ne p3, v5, :cond_2
 
     .line 1550
     invoke-interface {v4}, Ljava/util/Iterator;->remove()V
 
     move v1, v0
 
-    goto :goto_25
+    goto :goto_1
 
     .line 1553
-    :cond_3a
+    :cond_3
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result p3
 
-    if-nez p3, :cond_45
+    if-nez p3, :cond_4
 
     .line 1554
     iget-object p3, p2, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->subscriptions:Ljava/util/HashMap;
 
     invoke-virtual {p3, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_45
-    .catchall {:try_start_17 .. :try_end_45} :catchall_4d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1559
-    :cond_45
+    :cond_4
     iput-object p2, p0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
     .line 1560
@@ -1022,7 +1022,7 @@
 
     return v1
 
-    :catchall_4d
+    :catchall_0
     move-exception p3
 
     .line 1559
@@ -1038,14 +1038,14 @@
 .end method
 
 .method public setSessionToken(Landroid/support/v4/media/session/MediaSessionCompat$Token;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 1381
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat;->mSession:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 1384
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat;->mSession:Landroid/support/v4/media/session/MediaSessionCompat$Token;
@@ -1058,7 +1058,7 @@
     return-void
 
     .line 1382
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "The session token has already been set."
@@ -1068,7 +1068,7 @@
     throw p1
 
     .line 1379
-    :cond_16
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Session token may not be null."

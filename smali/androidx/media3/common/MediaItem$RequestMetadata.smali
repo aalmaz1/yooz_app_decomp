@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 2139
     new-instance v0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
@@ -84,7 +84,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$RequestMetadata$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 2199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -114,7 +114,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$RequestMetadata$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 2136
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$RequestMetadata;-><init>(Landroidx/media3/common/MediaItem$RequestMetadata$Builder;)V
@@ -123,7 +123,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$RequestMetadata;
-    .registers 3
+    .locals 2
 
     .line 2254
     new-instance v0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
@@ -176,7 +176,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
-    .registers 3
+    .locals 2
 
     .line 2207
     new-instance v0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
@@ -189,26 +189,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 2215
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$RequestMetadata;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 2218
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$RequestMetadata;
 
     .line 2219
@@ -220,7 +220,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->searchQuery:Ljava/lang/String;
 
@@ -231,80 +231,80 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->extras:Landroid/os/Bundle;
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_2
 
     move v1, v0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_2
     move v1, v2
 
-    :goto_27
+    :goto_0
     iget-object p1, p1, Landroidx/media3/common/MediaItem$RequestMetadata;->extras:Landroid/os/Bundle;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_3
 
     move p1, v0
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
+    :cond_3
     move p1, v2
 
-    :goto_2e
-    if-ne v1, p1, :cond_31
+    :goto_1
+    if-ne v1, p1, :cond_4
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_31
+    :cond_4
     move v0, v2
 
-    :goto_32
+    :goto_2
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 2226
     iget-object v0, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->mediaUri:Landroid/net/Uri;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
 
     move-result v0
 
-    :goto_b
+    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
     .line 2227
     iget-object v2, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->searchQuery:Ljava/lang/String;
 
-    if-nez v2, :cond_13
+    if-nez v2, :cond_1
 
     move v2, v1
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_13
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :goto_17
+    :goto_1
     add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
@@ -312,21 +312,21 @@
     .line 2228
     iget-object v2, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->extras:Landroid/os/Bundle;
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_2
 
-    goto :goto_20
+    goto :goto_2
 
-    :cond_1f
+    :cond_2
     const/4 v1, 0x1
 
-    :goto_20
+    :goto_2
     add-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 2238
     new-instance v0, Landroid/os/Bundle;
@@ -336,7 +336,7 @@
     .line 2239
     iget-object v1, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->mediaUri:Landroid/net/Uri;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 2240
     sget-object v2, Landroidx/media3/common/MediaItem$RequestMetadata;->FIELD_MEDIA_URI:Ljava/lang/String;
@@ -344,10 +344,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 2242
-    :cond_e
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->searchQuery:Ljava/lang/String;
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 2243
     sget-object v2, Landroidx/media3/common/MediaItem$RequestMetadata;->FIELD_SEARCH_QUERY:Ljava/lang/String;
@@ -355,16 +355,16 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2245
-    :cond_17
+    :cond_1
     iget-object v1, p0, Landroidx/media3/common/MediaItem$RequestMetadata;->extras:Landroid/os/Bundle;
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     .line 2246
     sget-object v2, Landroidx/media3/common/MediaItem$RequestMetadata;->FIELD_EXTRAS:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_20
+    :cond_2
     return-object v0
 .end method

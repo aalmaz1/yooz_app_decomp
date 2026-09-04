@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     const/high16 v0, -0x80000000
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;II)V
-    .registers 5
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,26 +59,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 68
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 71
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
     .line 72
@@ -86,13 +86,13 @@
 
     iget v3, p1, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->priority:I
 
-    if-ne v1, v3, :cond_2d
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->weight:I
 
     iget v3, p1, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->weight:I
 
-    if-ne v1, v3, :cond_2d
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->url:Ljava/lang/String;
 
@@ -103,7 +103,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->serviceLocation:Ljava/lang/String;
 
@@ -114,19 +114,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_2d
+    :cond_2
     move v0, v2
 
-    :goto_2e
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x4
 

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public createAndOpenDataChannel(I)Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
-    .registers 5
+    .locals 3
 
     .line 37
     new-instance v0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;

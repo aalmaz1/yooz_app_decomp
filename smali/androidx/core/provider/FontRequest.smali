@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 6
+    .locals 1
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,17 +64,17 @@
     .line 82
     iput-object v0, p0, Landroidx/core/provider/FontRequest;->mCertificates:Ljava/util/List;
 
-    if-eqz p4, :cond_22
+    if-eqz p4, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 v0, 0x0
 
     .line 83
-    :goto_23
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 84
@@ -91,7 +91,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -159,7 +159,7 @@
 .end method
 
 .method private createIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 1
 
     .line 93
     new-instance v0, Ljava/lang/StringBuilder;
@@ -198,7 +198,7 @@
 
 # virtual methods
 .method public getCertificates()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -215,7 +215,7 @@
 .end method
 
 .method public getCertificatesArrayResId()I
-    .registers 2
+    .locals 1
 
     .line 144
     iget v0, p0, Landroidx/core/provider/FontRequest;->mCertificatesArray:I
@@ -224,7 +224,7 @@
 .end method
 
 .method getId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 161
     iget-object v0, p0, Landroidx/core/provider/FontRequest;->mIdentifier:Ljava/lang/String;
@@ -233,7 +233,7 @@
 .end method
 
 .method public getIdentifier()Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -244,7 +244,7 @@
 .end method
 
 .method public getProviderAuthority()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/core/provider/FontRequest;->mProviderAuthority:Ljava/lang/String;
@@ -253,7 +253,7 @@
 .end method
 
 .method public getProviderPackage()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/core/provider/FontRequest;->mProviderPackage:Ljava/lang/String;
@@ -262,7 +262,7 @@
 .end method
 
 .method public getQuery()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroidx/core/provider/FontRequest;->mQuery:Ljava/lang/String;
@@ -271,7 +271,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 166
     new-instance v0, Ljava/lang/StringBuilder;
@@ -332,14 +332,14 @@
     move v2, v1
 
     .line 172
-    :goto_39
+    :goto_0
     iget-object v3, p0, Landroidx/core/provider/FontRequest;->mCertificates:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_77
+    if-ge v2, v3, :cond_1
 
     const-string v3, " ["
 
@@ -358,12 +358,12 @@
     move v4, v1
 
     .line 175
-    :goto_4f
+    :goto_1
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_6f
+    if-ge v4, v5, :cond_0
 
     const-string v5, " \""
 
@@ -391,9 +391,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_6f
+    :cond_0
     const-string v3, " ]"
 
     .line 181
@@ -401,9 +401,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_77
+    :cond_1
     const-string/jumbo v1, "}"
 
     .line 183

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)V
-    .registers 4
+    .locals 0
 
     .line 657
     invoke-direct {p0, p1, p2, p3}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Object;-><init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 662
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Sized;->size:I

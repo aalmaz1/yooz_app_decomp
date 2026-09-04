@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final onActivityResult(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/activity/result/ActivityResultCallerKt$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 

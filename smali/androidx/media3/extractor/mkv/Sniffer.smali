@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method private readUint(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -66,29 +66,29 @@
 
     and-int/lit16 v0, v0, 0xff
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
     return-wide v0
 
-    :cond_1a
+    :cond_0
     const/16 v3, 0x80
 
     move v4, v1
 
-    :goto_1d
+    :goto_0
     and-int v5, v0, v3
 
-    if-nez v5, :cond_26
+    if-nez v5, :cond_1
 
     shr-int/lit8 v3, v3, 0x1
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     not-int v3, v3
 
     and-int/2addr v0, v3
@@ -102,8 +102,8 @@
 
     invoke-interface {p1, v3, v2, v4}, Landroidx/media3/extractor/ExtractorInput;->peekFully([BII)V
 
-    :goto_31
-    if-ge v1, v4, :cond_43
+    :goto_1
+    if-ge v1, v4, :cond_2
 
     shl-int/lit8 p1, v0, 0x8
 
@@ -122,10 +122,10 @@
 
     add-int/2addr v0, p1
 
-    goto :goto_31
+    goto :goto_1
 
     .line 109
-    :cond_43
+    :cond_2
     iget p1, p0, Landroidx/media3/extractor/mkv/Sniffer;->peekLength:I
 
     add-int/2addr v4, v2
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -160,19 +160,19 @@
 
     const-wide/16 v3, 0x400
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_1
 
     cmp-long v5, v0, v3
 
-    if-lez v5, :cond_11
+    if-lez v5, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move-wide v3, v0
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     long-to-int v3, v3
 
     .line 51
@@ -198,14 +198,14 @@
     .line 53
     iput v6, p0, Landroidx/media3/extractor/mkv/Sniffer;->peekLength:I
 
-    :goto_26
+    :goto_1
     const-wide/32 v9, 0x1a45dfa3
 
     cmp-long v4, v7, v9
 
     const/4 v6, 0x1
 
-    if-eqz v4, :cond_54
+    if-eqz v4, :cond_3
 
     .line 55
     iget v4, p0, Landroidx/media3/extractor/mkv/Sniffer;->peekLength:I
@@ -214,12 +214,12 @@
 
     iput v4, p0, Landroidx/media3/extractor/mkv/Sniffer;->peekLength:I
 
-    if-ne v4, v3, :cond_36
+    if-ne v4, v3, :cond_2
 
     return v5
 
     .line 58
-    :cond_36
+    :cond_2
     iget-object v4, p0, Landroidx/media3/extractor/mkv/Sniffer;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v4}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -251,10 +251,10 @@
 
     or-long v7, v6, v8
 
-    goto :goto_26
+    goto :goto_1
 
     .line 64
-    :cond_54
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mkv/Sniffer;->readUint(Landroidx/media3/extractor/ExtractorInput;)J
 
     move-result-wide v3
@@ -268,21 +268,21 @@
 
     cmp-long v11, v3, v9
 
-    if-eqz v11, :cond_a1
+    if-eqz v11, :cond_9
 
-    if-eqz v2, :cond_6a
+    if-eqz v2, :cond_4
 
     add-long v11, v7, v3
 
     cmp-long v0, v11, v0
 
-    if-ltz v0, :cond_6a
+    if-ltz v0, :cond_4
 
-    goto :goto_a1
+    goto :goto_4
 
     .line 72
-    :cond_6a
-    :goto_6a
+    :cond_4
+    :goto_2
     iget v0, p0, Landroidx/media3/extractor/mkv/Sniffer;->peekLength:I
 
     int-to-long v1, v0
@@ -291,7 +291,7 @@
 
     cmp-long v1, v1, v11
 
-    if-gez v1, :cond_9b
+    if-gez v1, :cond_8
 
     .line 73
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mkv/Sniffer;->readUint(Landroidx/media3/extractor/ExtractorInput;)J
@@ -300,12 +300,12 @@
 
     cmp-long v0, v0, v9
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_5
 
     return v5
 
     .line 77
-    :cond_7c
+    :cond_5
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mkv/Sniffer;->readUint(Landroidx/media3/extractor/ExtractorInput;)J
 
     move-result-wide v0
@@ -314,18 +314,18 @@
 
     cmp-long v2, v0, v11
 
-    if-ltz v2, :cond_9a
+    if-ltz v2, :cond_7
 
     const-wide/32 v11, 0x7fffffff
 
     cmp-long v11, v0, v11
 
-    if-lez v11, :cond_8e
+    if-lez v11, :cond_6
 
-    goto :goto_9a
+    goto :goto_3
 
-    :cond_8e
-    if-eqz v2, :cond_6a
+    :cond_6
+    if-eqz v2, :cond_4
 
     long-to-int v0, v0
 
@@ -339,22 +339,22 @@
 
     iput v1, p0, Landroidx/media3/extractor/mkv/Sniffer;->peekLength:I
 
-    goto :goto_6a
+    goto :goto_2
 
-    :cond_9a
-    :goto_9a
+    :cond_7
+    :goto_3
     return v5
 
-    :cond_9b
+    :cond_8
     int-to-long v0, v0
 
     cmp-long p1, v0, v11
 
-    if-nez p1, :cond_a1
+    if-nez p1, :cond_9
 
     move v5, v6
 
-    :cond_a1
-    :goto_a1
+    :cond_9
+    :goto_4
     return v5
 .end method

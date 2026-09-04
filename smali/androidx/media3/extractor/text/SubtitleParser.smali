@@ -14,7 +14,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$XcChrFa429h0DgFpSm1h9ueZBS0(Lcom/google/common/collect/ImmutableList$Builder;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
@@ -41,7 +41,7 @@
 .end method
 
 .method public parse([BLandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -71,7 +71,7 @@
 .end method
 
 .method public parseToLegacySubtitle([BII)Landroidx/media3/extractor/text/Subtitle;
-    .registers 11
+    .locals 7
 
     .line 203
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
@@ -112,7 +112,7 @@
 .end method
 
 .method public reset()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

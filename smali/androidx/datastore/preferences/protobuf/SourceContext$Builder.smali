@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 195
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SourceContext;->access$000()Landroidx/datastore/preferences/protobuf/SourceContext;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/SourceContext$1;)V
-    .registers 2
+    .locals 0
 
     .line 188
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearFileName()Landroidx/datastore/preferences/protobuf/SourceContext$Builder;
-    .registers 2
+    .locals 1
 
     .line 252
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public getFileName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 210
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -84,7 +84,7 @@
 .end method
 
 .method public getFileNameBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 224
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -99,7 +99,7 @@
 .end method
 
 .method public setFileName(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/SourceContext$Builder;
-    .registers 3
+    .locals 1
 
     .line 238
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->copyOnWrite()V
@@ -115,7 +115,7 @@
 .end method
 
 .method public setFileNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/SourceContext$Builder;
-    .registers 3
+    .locals 1
 
     .line 268
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/SourceContext$Builder;->copyOnWrite()V

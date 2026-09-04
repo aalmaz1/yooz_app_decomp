@@ -16,43 +16,43 @@
 
 # virtual methods
 .method public onAudioCapabilitiesChanged()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onAudioSinkError(Ljava/lang/Exception;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAudioTrackInitialized(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAudioTrackReleased(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onOffloadBufferEmptying()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onOffloadBufferFull()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onPositionAdvancing(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
@@ -61,7 +61,7 @@
 .end method
 
 .method public onSilenceSkipped()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

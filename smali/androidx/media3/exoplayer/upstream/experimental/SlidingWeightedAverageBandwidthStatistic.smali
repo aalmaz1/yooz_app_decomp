@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0xa
 
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$SampleEvictionFunction;)V
-    .registers 3
+    .locals 1
 
     .line 111
     sget-object v0, Landroidx/media3/common/util/Clock;->DEFAULT:Landroidx/media3/common/util/Clock;
@@ -67,7 +67,7 @@
 .end method
 
 .method constructor <init>(Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$SampleEvictionFunction;Landroidx/media3/common/util/Clock;)V
-    .registers 4
+    .locals 1
 
     .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 .end method
 
 .method public static getAgeBasedEvictionFunction(J)Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$SampleEvictionFunction;
-    .registers 3
+    .locals 1
 
     .line 75
     sget-object v0, Landroidx/media3/common/util/Clock;->DEFAULT:Landroidx/media3/common/util/Clock;
@@ -102,7 +102,7 @@
 .end method
 
 .method static getAgeBasedEvictionFunction(JLandroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$SampleEvictionFunction;
-    .registers 4
+    .locals 1
 
     .line 81
     new-instance v0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$$ExternalSyntheticLambda1;
@@ -113,7 +113,7 @@
 .end method
 
 .method public static getMaxCountEvictionFunction(J)Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$SampleEvictionFunction;
-    .registers 3
+    .locals 1
 
     .line 70
     new-instance v0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$$ExternalSyntheticLambda0;
@@ -124,7 +124,7 @@
 .end method
 
 .method static synthetic lambda$getAgeBasedEvictionFunction$1(JLandroidx/media3/common/util/Clock;Ljava/util/Deque;)Z
-    .registers 8
+    .locals 4
 
     .line 82
     invoke-interface {p3}, Ljava/util/Deque;->isEmpty()Z
@@ -133,12 +133,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 85
-    :cond_8
+    :cond_0
     invoke-interface {p3}, Ljava/util/Deque;->peek()Ljava/lang/Object;
 
     move-result-object p3
@@ -161,16 +161,16 @@
 
     cmp-long p0, v2, p0
 
-    if-gez p0, :cond_20
+    if-gez p0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_20
+    :cond_1
     return v1
 .end method
 
 .method static synthetic lambda$getMaxCountEvictionFunction$0(JLjava/util/Deque;)Z
-    .registers 5
+    .locals 2
 
     .line 70
     invoke-interface {p2}, Ljava/util/Deque;->size()I
@@ -181,23 +181,23 @@
 
     cmp-long p0, v0, p0
 
-    if-ltz p0, :cond_b
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_c
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public addSample(JJ)V
-    .registers 14
+    .locals 9
 
     .line 131
     :goto_0
@@ -209,7 +209,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 132
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic;->samples:Ljava/util/ArrayDeque;
@@ -246,7 +246,7 @@
 
     goto :goto_0
 
-    :cond_25
+    :cond_0
     long-to-double v0, p1
 
     .line 137
@@ -307,7 +307,7 @@
 .end method
 
 .method public getBandwidthEstimate()J
-    .registers 5
+    .locals 4
 
     .line 147
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic;->samples:Ljava/util/ArrayDeque;
@@ -316,14 +316,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
     return-wide v0
 
     .line 151
-    :cond_b
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic;->bitrateWeightProductSum:D
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic;->weightSum:D
@@ -336,7 +336,7 @@
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     .line 156
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic;->samples:Ljava/util/ArrayDeque;

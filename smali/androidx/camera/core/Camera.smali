@@ -25,7 +25,7 @@
 .end method
 
 .method public varargs isUseCasesCombinationSupported([Landroidx/camera/core/UseCase;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 

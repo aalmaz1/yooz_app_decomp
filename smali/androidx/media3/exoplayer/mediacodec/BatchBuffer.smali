@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -35,7 +35,7 @@
 .end method
 
 .method private canAppendSampleBuffer(Landroidx/media3/decoder/DecoderInputBuffer;)Z
-    .registers 6
+    .locals 4
 
     .line 118
     invoke-virtual {p0}, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->hasSamples()Z
@@ -44,32 +44,32 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 122
-    :cond_8
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->sampleCount:I
 
     iget v2, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->maxSampleCount:I
 
     const/4 v3, 0x0
 
-    if-lt v0, v2, :cond_10
+    if-lt v0, v2, :cond_1
 
     return v3
 
     .line 125
-    :cond_10
+    :cond_1
     iget-object p1, p1, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
     .line 126
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->data:Ljava/nio/ByteBuffer;
 
@@ -86,18 +86,18 @@
 
     const p1, 0x2ee000
 
-    if-le v0, p1, :cond_29
+    if-le v0, p1, :cond_2
 
     return v3
 
-    :cond_29
+    :cond_2
     return v1
 .end method
 
 
 # virtual methods
 .method public append(Landroidx/media3/decoder/DecoderInputBuffer;)Z
-    .registers 6
+    .locals 4
 
     .line 96
     invoke-virtual {p1}, Landroidx/media3/decoder/DecoderInputBuffer;->isEncrypted()Z
@@ -133,21 +133,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 102
-    :cond_21
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->sampleCount:I
 
     add-int/lit8 v2, v0, 0x1
 
     iput v2, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->sampleCount:I
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_1
 
     .line 103
     iget-wide v2, p1, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
@@ -159,16 +159,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     .line 105
     invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->setFlags(I)V
 
     .line 108
-    :cond_36
+    :cond_1
     iget-object v0, p1, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     .line 110
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -183,7 +183,7 @@
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     .line 113
-    :cond_46
+    :cond_2
     iget-wide v2, p1, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
     iput-wide v2, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->lastSampleTimeUs:J
@@ -192,7 +192,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-super {p0}, Landroidx/media3/decoder/DecoderInputBuffer;->clear()V
@@ -206,7 +206,7 @@
 .end method
 
 .method public getFirstSampleTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 66
     iget-wide v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->timeUs:J
@@ -215,7 +215,7 @@
 .end method
 
 .method public getLastSampleTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 74
     iget-wide v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->lastSampleTimeUs:J
@@ -224,7 +224,7 @@
 .end method
 
 .method public getSampleCount()I
-    .registers 2
+    .locals 1
 
     .line 79
     iget v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->sampleCount:I
@@ -233,38 +233,38 @@
 .end method
 
 .method public hasSamples()Z
-    .registers 2
+    .locals 1
 
     .line 84
     iget v0, p0, Landroidx/media3/exoplayer/mediacodec/BatchBuffer;->sampleCount:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public setMaxSampleCount(I)V
-    .registers 3
+    .locals 1
 
-    if-lez p1, :cond_4
+    if-lez p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 57
-    :goto_5
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 58

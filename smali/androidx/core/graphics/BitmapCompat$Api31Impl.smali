@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 385
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getHardwareBitmapConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
-    .registers 2
+    .locals 1
 
     .line 390
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHardwareBuffer()Landroid/hardware/HardwareBuffer;
@@ -38,7 +38,7 @@
 
     const/16 v0, 0x16
 
-    if-ne p0, v0, :cond_f
+    if-ne p0, v0, :cond_0
 
     .line 391
     sget-object p0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
@@ -46,7 +46,7 @@
     return-object p0
 
     .line 393
-    :cond_f
+    :cond_0
     sget-object p0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     return-object p0

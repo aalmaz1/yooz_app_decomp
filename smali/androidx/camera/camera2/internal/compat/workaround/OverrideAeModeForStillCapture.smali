@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/Quirks;)V
-    .registers 4
+    .locals 2
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,11 +28,11 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_f
+    :cond_0
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/OverrideAeModeForStillCapture;->mHasAutoFlashUnderExposedQuirk:Z
 
     return-void
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public onAePrecaptureFinished()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public onAePrecaptureStarted()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -63,26 +63,26 @@
 .end method
 
 .method public shouldSetAeModeAlwaysFlash(I)Z
-    .registers 3
+    .locals 1
 
     .line 59
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/OverrideAeModeForStillCapture;->mAePrecaptureStarted:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     iget-boolean p1, p0, Landroidx/camera/camera2/internal/compat/workaround/OverrideAeModeForStillCapture;->mHasAutoFlashUnderExposedQuirk:Z
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method

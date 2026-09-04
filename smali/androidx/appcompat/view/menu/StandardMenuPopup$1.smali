@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/view/menu/StandardMenuPopup;)V
-    .registers 2
+    .locals 0
 
     .line 61
     iput-object p1, p0, Landroidx/appcompat/view/menu/StandardMenuPopup$1;->this$0:Landroidx/appcompat/view/menu/StandardMenuPopup;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onGlobalLayout()V
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup$1;->this$0:Landroidx/appcompat/view/menu/StandardMenuPopup;
@@ -45,7 +45,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup$1;->this$0:Landroidx/appcompat/view/menu/StandardMenuPopup;
 
@@ -55,42 +55,42 @@
 
     move-result v0
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_2
 
     .line 68
     iget-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup$1;->this$0:Landroidx/appcompat/view/menu/StandardMenuPopup;
 
     iget-object v0, v0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mShownAnchorView:Landroid/view/View;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 69
     invoke-virtual {v0}, Landroid/view/View;->isShown()Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 73
-    :cond_1f
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup$1;->this$0:Landroidx/appcompat/view/menu/StandardMenuPopup;
 
     iget-object v0, v0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup:Landroidx/appcompat/widget/MenuPopupWindow;
 
     invoke-virtual {v0}, Landroidx/appcompat/widget/MenuPopupWindow;->show()V
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 70
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup$1;->this$0:Landroidx/appcompat/view/menu/StandardMenuPopup;
 
     invoke-virtual {v0}, Landroidx/appcompat/view/menu/StandardMenuPopup;->dismiss()V
 
-    :cond_2c
-    :goto_2c
+    :cond_2
+    :goto_1
     return-void
 .end method

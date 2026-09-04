@@ -47,7 +47,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Predicate;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -116,7 +116,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -133,7 +133,7 @@
     .line 337
     instance-of v0, p1, Lcom/google/common/base/Predicates$NotPredicate;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 338
     check-cast p1, Lcom/google/common/base/Predicates$NotPredicate;
@@ -149,14 +149,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 332
     iget-object v0, p0, Lcom/google/common/base/Predicates$NotPredicate;->predicate:Lcom/google/common/base/Predicate;
@@ -171,7 +171,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 346
     new-instance v0, Ljava/lang/StringBuilder;

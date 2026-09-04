@@ -24,7 +24,7 @@
 .end method
 
 .method public resolveReportedUri(Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method

@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 326
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Timestamp;->access$000()Landroidx/datastore/preferences/protobuf/Timestamp;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Timestamp$1;)V
-    .registers 2
+    .locals 0
 
     .line 319
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearNanos()Landroidx/datastore/preferences/protobuf/Timestamp$Builder;
-    .registers 2
+    .locals 1
 
     .line 420
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearSeconds()Landroidx/datastore/preferences/protobuf/Timestamp$Builder;
-    .registers 2
+    .locals 1
 
     .line 371
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;->copyOnWrite()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public getNanos()I
-    .registers 2
+    .locals 1
 
     .line 389
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -100,7 +100,7 @@
 .end method
 
 .method public getSeconds()J
-    .registers 3
+    .locals 2
 
     .line 342
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -115,7 +115,7 @@
 .end method
 
 .method public setNanos(I)Landroidx/datastore/preferences/protobuf/Timestamp$Builder;
-    .registers 3
+    .locals 1
 
     .line 404
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;->copyOnWrite()V
@@ -131,7 +131,7 @@
 .end method
 
 .method public setSeconds(J)Landroidx/datastore/preferences/protobuf/Timestamp$Builder;
-    .registers 4
+    .locals 1
 
     .line 356
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Timestamp$Builder;->copyOnWrite()V

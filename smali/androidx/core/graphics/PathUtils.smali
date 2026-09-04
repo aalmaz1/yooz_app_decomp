@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static flatten(Landroid/graphics/Path;)Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,7 +45,7 @@
 .end method
 
 .method public static flatten(Landroid/graphics/Path;F)Ljava/util/Collection;
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,8 +74,8 @@
 
     const/4 v1, 0x1
 
-    :goto_d
-    if-ge v1, p1, :cond_4a
+    :goto_0
+    if-ge v1, p1, :cond_2
 
     mul-int/lit8 v2, v1, 0x3
 
@@ -111,18 +111,18 @@
 
     cmpl-float v8, v4, v6
 
-    if-eqz v8, :cond_47
+    if-eqz v8, :cond_1
 
     cmpl-float v8, v5, v7
 
-    if-nez v8, :cond_35
+    if-nez v8, :cond_0
 
     cmpl-float v8, v2, v3
 
-    if-eqz v8, :cond_47
+    if-eqz v8, :cond_1
 
     .line 80
-    :cond_35
+    :cond_0
     new-instance v8, Landroidx/core/graphics/PathSegment;
 
     new-instance v9, Landroid/graphics/PointF;
@@ -137,11 +137,11 @@
 
     invoke-interface {v0, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_47
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_4a
+    :cond_2
     return-object v0
 .end method

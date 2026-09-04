@@ -14,7 +14,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$1nFWaQDaSUhXraEQ9fB6e1Auksw(Landroidx/camera/core/imagecapture/SingleBundlingNode;Landroidx/camera/core/imagecapture/ProcessingRequest;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/camera/core/imagecapture/SingleBundlingNode;->trackIncomingRequest(Landroidx/camera/core/imagecapture/ProcessingRequest;)V
 
@@ -22,7 +22,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$SxoehQYbSdImw8VxrENRLCChLrc(Landroidx/camera/core/imagecapture/SingleBundlingNode;Landroidx/camera/core/ImageProxy;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/camera/core/imagecapture/SingleBundlingNode;->matchImageWithRequest(Landroidx/camera/core/ImageProxy;)V
 
@@ -30,7 +30,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method private matchImageWithRequest(Landroidx/camera/core/ImageProxy;)V
-    .registers 6
+    .locals 4
 
     .line 91
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -51,16 +51,16 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v2
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 94
@@ -112,14 +112,14 @@
 
     move-result v3
 
-    if-ne v0, v3, :cond_3e
+    if-ne v0, v3, :cond_1
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_3e
+    :cond_1
     move v1, v2
 
-    :goto_3f
+    :goto_1
     invoke-static {v1}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 98
@@ -146,7 +146,7 @@
 .end method
 
 .method private trackIncomingRequest(Landroidx/camera/core/imagecapture/ProcessingRequest;)V
-    .registers 6
+    .locals 4
 
     .line 66
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -164,16 +164,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_11
+    if-ne v0, v2, :cond_0
 
     move v0, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v0, v1
 
-    :goto_12
+    :goto_0
     const-string v3, "Cannot handle multi-image capture."
 
     invoke-static {v0, v3}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -181,11 +181,11 @@
     .line 69
     iget-object v0, p0, Landroidx/camera/core/imagecapture/SingleBundlingNode;->mPendingRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     move v1, v2
 
-    :cond_1c
+    :cond_1
     const-string v0, "Already has an existing request."
 
     invoke-static {v1, v0}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -216,13 +216,13 @@
 
 # virtual methods
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public transform(Landroidx/camera/core/imagecapture/CaptureNode$Out;)Landroidx/camera/core/imagecapture/ProcessingNode$In;
-    .registers 4
+    .locals 2
 
     .line 51
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/CaptureNode$Out;->getImageEdge()Landroidx/camera/core/processing/Edge;
@@ -267,7 +267,7 @@
 .end method
 
 .method public bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 41
     check-cast p1, Landroidx/camera/core/imagecapture/CaptureNode$Out;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,25 +27,25 @@
 
 # virtual methods
 .method public onFirstFix(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSatelliteStatusChanged(Landroidx/core/location/GnssStatusCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onStarted()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onStopped()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

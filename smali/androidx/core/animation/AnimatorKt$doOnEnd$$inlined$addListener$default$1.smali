@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/core/animation/AnimatorKt$doOnEnd$$inlined$addListener$default$1;->$onEnd:Lkotlin/jvm/functions/Function1;
 
@@ -65,13 +65,13 @@
 
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 3
+    .locals 1
 
     .line 99
     iget-object v0, p0, Landroidx/core/animation/AnimatorKt$doOnEnd$$inlined$addListener$default$1;->$onEnd:Lkotlin/jvm/functions/Function1;
@@ -82,13 +82,13 @@
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

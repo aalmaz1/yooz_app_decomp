@@ -16,14 +16,14 @@
 
 # direct methods
 .method public static from(Landroid/content/Context;Landroid/os/Handler;)Landroidx/camera/camera2/internal/compat/CameraManagerCompat$CameraManagerCompatImpl;
-    .registers 3
+    .locals 1
 
     .line 293
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1e
 
-    if-lt p1, v0, :cond_c
+    if-lt p1, v0, :cond_0
 
     .line 294
     new-instance p1, Landroidx/camera/camera2/internal/compat/CameraManagerCompatApi30Impl;
@@ -33,12 +33,12 @@
     return-object p1
 
     .line 295
-    :cond_c
+    :cond_0
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1d
 
-    if-lt p1, v0, :cond_18
+    if-lt p1, v0, :cond_1
 
     .line 296
     new-instance p1, Landroidx/camera/camera2/internal/compat/CameraManagerCompatApi29Impl;
@@ -48,7 +48,7 @@
     return-object p1
 
     .line 299
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/camera/camera2/internal/compat/CameraManagerCompatApi28Impl;->create(Landroid/content/Context;)Landroidx/camera/camera2/internal/compat/CameraManagerCompatApi28Impl;
 
     move-result-object p0

@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final and(Landroid/util/Range;Landroid/util/Range;)Landroid/util/Range;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -61,7 +61,7 @@
 .end method
 
 .method public static final plus(Landroid/util/Range;Landroid/util/Range;)Landroid/util/Range;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -85,7 +85,7 @@
 .end method
 
 .method public static final plus(Landroid/util/Range;Ljava/lang/Comparable;)Landroid/util/Range;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -107,7 +107,7 @@
 .end method
 
 .method public static final rangeTo(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -127,7 +127,7 @@
 .end method
 
 .method public static final toClosedRange(Landroid/util/Range;)Lkotlin/ranges/ClosedRange;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -151,7 +151,7 @@
 .end method
 
 .method public static final toRange(Lkotlin/ranges/ClosedRange;)Landroid/util/Range;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",

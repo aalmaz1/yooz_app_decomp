@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
-    .registers 4
+    .locals 2
 
     .line 2132
     new-instance v0, Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
@@ -52,7 +52,7 @@
 .end method
 
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
-    .registers 4
+    .locals 1
 
     .line 2127
     new-instance v0, Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
@@ -63,7 +63,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 2124
     invoke-virtual {p0, p1}, Landroidx/drawerlayout/widget/DrawerLayout$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
@@ -74,7 +74,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 2124
     invoke-virtual {p0, p1, p2}, Landroidx/drawerlayout/widget/DrawerLayout$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
@@ -85,7 +85,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
-    .registers 2
+    .locals 0
 
     .line 2137
     new-array p1, p1, [Landroidx/drawerlayout/widget/DrawerLayout$SavedState;
@@ -94,7 +94,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 2124
     invoke-virtual {p0, p1}, Landroidx/drawerlayout/widget/DrawerLayout$SavedState$1;->newArray(I)[Landroidx/drawerlayout/widget/DrawerLayout$SavedState;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;)V
-    .registers 2
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Landroidx/media3/common/Timeline;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public getFirstWindowIndex(Z)I
-    .registers 3
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -36,7 +36,7 @@
 .end method
 
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -49,7 +49,7 @@
 .end method
 
 .method public getLastWindowIndex(Z)I
-    .registers 3
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -62,7 +62,7 @@
 .end method
 
 .method public getNextWindowIndex(IIZ)I
-    .registers 5
+    .locals 1
 
     .line 40
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -75,7 +75,7 @@
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 5
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -88,7 +88,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -101,7 +101,7 @@
 .end method
 
 .method public getPreviousWindowIndex(IIZ)I
-    .registers 5
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -114,7 +114,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -127,7 +127,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 6
+    .locals 1
 
     .line 61
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -140,7 +140,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ForwardingTimeline;->timeline:Landroidx/media3/common/Timeline;

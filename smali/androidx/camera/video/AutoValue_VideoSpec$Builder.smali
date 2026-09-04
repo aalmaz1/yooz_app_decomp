@@ -42,7 +42,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 104
     invoke-direct {p0}, Landroidx/camera/video/VideoSpec$Builder;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/video/VideoSpec;)V
-    .registers 3
+    .locals 1
 
     .line 106
     invoke-direct {p0}, Landroidx/camera/video/VideoSpec$Builder;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/VideoSpec;Landroidx/camera/video/AutoValue_VideoSpec$1;)V
-    .registers 3
+    .locals 0
 
     .line 99
     invoke-direct {p0, p1}, Landroidx/camera/video/AutoValue_VideoSpec$Builder;-><init>(Landroidx/camera/video/VideoSpec;)V
@@ -103,25 +103,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/VideoSpec;
-    .registers 9
+    .locals 8
 
     .line 144
     iget-object v0, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->qualitySelector:Landroidx/camera/video/QualitySelector;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " qualitySelector"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 147
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->frameRate:Landroid/util/Range;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 148
     new-instance v1, Ljava/lang/StringBuilder;
@@ -143,10 +143,10 @@
     move-result-object v0
 
     .line 150
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->bitrate:Landroid/util/Range;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 151
     new-instance v1, Ljava/lang/StringBuilder;
@@ -168,10 +168,10 @@
     move-result-object v0
 
     .line 153
-    :cond_37
+    :cond_2
     iget-object v1, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->aspectRatio:Ljava/lang/Integer;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_3
 
     .line 154
     new-instance v1, Ljava/lang/StringBuilder;
@@ -193,12 +193,12 @@
     move-result-object v0
 
     .line 156
-    :cond_4e
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_4
 
     .line 159
     new-instance v0, Landroidx/camera/video/AutoValue_VideoSpec;
@@ -225,7 +225,7 @@
     return-object v0
 
     .line 157
-    :cond_68
+    :cond_4
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -248,7 +248,7 @@
 .end method
 
 .method setAspectRatio(I)Landroidx/camera/video/VideoSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 138
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -261,7 +261,7 @@
 .end method
 
 .method public setBitrate(Landroid/util/Range;)Landroidx/camera/video/VideoSpec$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -272,7 +272,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 133
     iput-object p1, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->bitrate:Landroid/util/Range;
@@ -280,7 +280,7 @@
     return-object p0
 
     .line 131
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null bitrate"
@@ -291,7 +291,7 @@
 .end method
 
 .method public setFrameRate(Landroid/util/Range;)Landroidx/camera/video/VideoSpec$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -302,7 +302,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 125
     iput-object p1, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->frameRate:Landroid/util/Range;
@@ -310,7 +310,7 @@
     return-object p0
 
     .line 123
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null frameRate"
@@ -321,9 +321,9 @@
 .end method
 
 .method public setQualitySelector(Landroidx/camera/video/QualitySelector;)Landroidx/camera/video/VideoSpec$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 117
     iput-object p1, p0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;->qualitySelector:Landroidx/camera/video/QualitySelector;
@@ -331,7 +331,7 @@
     return-object p0
 
     .line 115
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null qualitySelector"

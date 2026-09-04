@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Listener;)V
-    .registers 6
+    .locals 3
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -58,35 +58,35 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Listener;Landroidx/media3/common/AudioAttributes;Landroid/media/AudioDeviceInfo;)V
-    .registers 7
+    .locals 2
 
     .line 93
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
-    if-eqz p4, :cond_e
+    if-eqz p4, :cond_0
 
     new-instance v0, Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
 
     invoke-direct {v0, p4}, Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;-><init>(Landroid/media/AudioDeviceInfo;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 89
-    :goto_f
+    :goto_0
     invoke-direct {p0, p1, p2, p3, v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;-><init>(Landroid/content/Context;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Listener;Landroidx/media3/common/AudioAttributes;Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;)V
 
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Listener;Landroidx/media3/common/AudioAttributes;Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;)V
-    .registers 6
+    .locals 1
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -128,18 +128,18 @@
 
     const/4 v0, 0x0
 
-    if-lt p3, p4, :cond_28
+    if-lt p3, p4, :cond_0
 
     new-instance p3, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;
 
     invoke-direct {p3, p0, v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;-><init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$1;)V
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     move-object p3, v0
 
-    :goto_29
+    :goto_0
     iput-object p3, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioDeviceCallback:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;
 
     .line 109
@@ -147,18 +147,18 @@
 
     const/16 p4, 0x15
 
-    if-lt p3, p4, :cond_37
+    if-lt p3, p4, :cond_1
 
     new-instance p3, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$HdmiAudioPlugBroadcastReceiver;
 
     invoke-direct {p3, p0, v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$HdmiAudioPlugBroadcastReceiver;-><init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$1;)V
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_37
+    :cond_1
     move-object p3, v0
 
-    :goto_38
+    :goto_1
     iput-object p3, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->hdmiAudioPlugBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     .line 110
@@ -166,7 +166,7 @@
 
     move-result-object p3
 
-    if-eqz p3, :cond_49
+    if-eqz p3, :cond_2
 
     .line 113
     new-instance v0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;
@@ -179,14 +179,14 @@
     invoke-direct {v0, p0, p2, p1, p3}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;-><init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroid/os/Handler;Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
     .line 115
-    :cond_49
+    :cond_2
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->externalSurroundSoundSettingObserver:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;
 
     return-void
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;)Landroidx/media3/common/AudioAttributes;
-    .registers 1
+    .locals 0
 
     .line 43
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioAttributes:Landroidx/media3/common/AudioAttributes;
@@ -195,7 +195,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;)Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
-    .registers 1
+    .locals 0
 
     .line 43
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->routedDevice:Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
@@ -204,7 +204,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;)Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
-    .registers 2
+    .locals 0
 
     .line 43
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->routedDevice:Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
@@ -213,7 +213,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroidx/media3/exoplayer/audio/AudioCapabilities;)V
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->onNewAudioCapabilities(Landroidx/media3/exoplayer/audio/AudioCapabilities;)V
@@ -222,7 +222,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;)Landroid/content/Context;
-    .registers 1
+    .locals 0
 
     .line 43
     iget-object p0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->context:Landroid/content/Context;
@@ -231,12 +231,12 @@
 .end method
 
 .method private onNewAudioCapabilities(Landroidx/media3/exoplayer/audio/AudioCapabilities;)V
-    .registers 3
+    .locals 1
 
     .line 203
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->registered:Z
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioCapabilities:Landroidx/media3/exoplayer/audio/AudioCapabilities;
 
@@ -244,7 +244,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 204
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioCapabilities:Landroidx/media3/exoplayer/audio/AudioCapabilities;
@@ -254,19 +254,19 @@
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Listener;->onAudioCapabilitiesChanged(Landroidx/media3/exoplayer/audio/AudioCapabilities;)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public register()Landroidx/media3/exoplayer/audio/AudioCapabilities;
-    .registers 6
+    .locals 5
 
     .line 155
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->registered:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 156
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioCapabilities:Landroidx/media3/exoplayer/audio/AudioCapabilities;
@@ -279,7 +279,7 @@
 
     return-object v0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x1
 
     .line 158
@@ -288,22 +288,22 @@
     .line 159
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->externalSurroundSoundSettingObserver:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 160
     invoke-virtual {v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;->register()V
 
     .line 162
-    :cond_17
+    :cond_1
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_28
+    if-lt v0, v1, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioDeviceCallback:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 163
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->context:Landroid/content/Context;
@@ -313,12 +313,12 @@
     invoke-static {v1, v0, v2}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Api23;->registerAudioDeviceCallback(Landroid/content/Context;Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V
 
     .line 166
-    :cond_28
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->hdmiAudioPlugBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3
 
     .line 167
     new-instance v0, Landroid/content/IntentFilter;
@@ -340,7 +340,7 @@
     move-result-object v1
 
     .line 175
-    :cond_3e
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->context:Landroid/content/Context;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioAttributes:Landroidx/media3/common/AudioAttributes;
@@ -358,7 +358,7 @@
 .end method
 
 .method public setAudioAttributes(Landroidx/media3/common/AudioAttributes;)V
-    .registers 4
+    .locals 2
 
     .line 124
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioAttributes:Landroidx/media3/common/AudioAttributes;
@@ -380,41 +380,41 @@
 .end method
 
 .method public setRoutedDevice(Landroid/media/AudioDeviceInfo;)V
-    .registers 4
+    .locals 2
 
     .line 138
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->routedDevice:Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     move-object v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object v0, v0, Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;->audioDeviceInfo:Landroid/media/AudioDeviceInfo;
 
     .line 137
-    :goto_9
+    :goto_0
     invoke-static {p1, v0}, Landroidx/media3/common/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     return-void
 
-    :cond_10
-    if-eqz p1, :cond_17
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 141
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
 
     invoke-direct {v1, p1}, Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;-><init>(Landroid/media/AudioDeviceInfo;)V
 
-    :cond_17
+    :cond_2
     iput-object v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->routedDevice:Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
 
     .line 142
@@ -434,16 +434,16 @@
 .end method
 
 .method public unregister()V
-    .registers 3
+    .locals 2
 
     .line 186
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->registered:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 189
@@ -454,11 +454,11 @@
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_17
+    if-lt v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->audioDeviceCallback:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$AudioDeviceCallbackV23;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 191
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->context:Landroid/content/Context;
@@ -466,10 +466,10 @@
     invoke-static {v1, v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$Api23;->unregisterAudioDeviceCallback(Landroid/content/Context;Landroid/media/AudioDeviceCallback;)V
 
     .line 193
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->hdmiAudioPlugBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_2
 
     .line 194
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->context:Landroid/content/Context;
@@ -477,15 +477,15 @@
     invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 196
-    :cond_20
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->externalSurroundSoundSettingObserver:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
     .line 197
     invoke-virtual {v0}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;->unregister()V
 
-    :cond_27
+    :cond_3
     const/4 v0, 0x0
 
     .line 199

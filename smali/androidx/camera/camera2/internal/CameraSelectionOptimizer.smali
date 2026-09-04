@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method private static decideSkippedCameraIdByHeuristic(Landroidx/camera/camera2/internal/compat/CameraManagerCompat;Ljava/lang/Integer;Ljava/util/List;)Ljava/lang/String;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -35,11 +35,11 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return-object v0
 
-    :cond_4
+    :cond_0
     const-string v1, "0"
 
     .line 106
@@ -47,7 +47,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_3
 
     const-string v2, "1"
 
@@ -55,19 +55,19 @@
 
     move-result p2
 
-    if-nez p2, :cond_15
+    if-nez p2, :cond_1
 
-    goto :goto_49
+    goto :goto_0
 
     .line 110
-    :cond_15
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
 
     const/4 v3, 0x1
 
-    if-ne p2, v3, :cond_30
+    if-ne p2, v3, :cond_2
 
     .line 111
     invoke-virtual {p0, v1}, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;->getCameraCharacteristicsCompat(Ljava/lang/String;)Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -86,19 +86,19 @@
 
     move-result p0
 
-    if-ne p0, v3, :cond_49
+    if-ne p0, v3, :cond_3
 
     move-object v0, v2
 
-    goto :goto_49
+    goto :goto_0
 
     .line 117
-    :cond_30
+    :cond_2
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-nez p1, :cond_49
+    if-nez p1, :cond_3
 
     .line 118
     invoke-virtual {p0, v2}, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;->getCameraCharacteristicsCompat(Ljava/lang/String;)Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -117,17 +117,17 @@
 
     move-result p0
 
-    if-nez p0, :cond_49
+    if-nez p0, :cond_3
 
     move-object v0, v1
 
-    :cond_49
-    :goto_49
+    :cond_3
+    :goto_0
     return-object v0
 .end method
 
 .method static getSelectedAvailableCameraIds(Landroidx/camera/camera2/internal/Camera2CameraFactory;Landroidx/camera/core/CameraSelector;)Ljava/util/List;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -165,19 +165,19 @@
 
     move-result-object v1
 
-    if-nez p1, :cond_28
+    if-nez p1, :cond_1
 
     .line 51
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :goto_17
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -187,18 +187,18 @@
 
     .line 52
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_26
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_26} :catch_80
-    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_0 .. :try_end_26} :catch_79
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_0 .. :try_end_0} :catch_1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     return-object v0
 
     .line 60
-    :cond_28
-    :try_start_28
+    :cond_1
+    :try_start_1
     invoke-virtual {p1}, Landroidx/camera/core/CameraSelector;->getLensFacing()Ljava/lang/Integer;
 
     move-result-object v2
@@ -212,19 +212,19 @@
     invoke-static {v3, v2, v1}, Landroidx/camera/camera2/internal/CameraSelectionOptimizer;->decideSkippedCameraIdByHeuristic(Landroidx/camera/camera2/internal/compat/CameraManagerCompat;Ljava/lang/Integer;Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v2
-    :try_end_34
-    .catch Ljava/lang/IllegalStateException; {:try_start_28 .. :try_end_34} :catch_35
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_28 .. :try_end_34} :catch_80
-    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_28 .. :try_end_34} :catch_79
+    :try_end_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_36
+    goto :goto_1
 
-    :catch_35
+    :catch_0
     const/4 v2, 0x0
 
     .line 68
-    :goto_36
-    :try_start_36
+    :goto_1
+    :try_start_2
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -234,12 +234,12 @@
 
     move-result-object v1
 
-    :goto_3f
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_5a
+    if-eqz v4, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -252,12 +252,12 @@
 
     move-result v5
 
-    if-eqz v5, :cond_52
+    if-eqz v5, :cond_2
 
-    goto :goto_3f
+    goto :goto_2
 
     .line 74
-    :cond_52
+    :cond_2
     invoke-virtual {p0, v4}, Landroidx/camera/camera2/internal/Camera2CameraFactory;->getCameraInfo(Ljava/lang/String;)Landroidx/camera/camera2/internal/Camera2CameraInfoImpl;
 
     move-result-object v4
@@ -265,10 +265,10 @@
     .line 75
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3f
+    goto :goto_2
 
     .line 79
-    :cond_5a
+    :cond_3
     invoke-virtual {p1, v3}, Landroidx/camera/core/CameraSelector;->filter(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
@@ -278,12 +278,12 @@
 
     move-result-object p0
 
-    :goto_62
+    :goto_3
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-eqz p1, :cond_78
+    if-eqz p1, :cond_4
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -300,16 +300,16 @@
 
     .line 83
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_77
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_36 .. :try_end_77} :catch_80
-    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_36 .. :try_end_77} :catch_79
+    :try_end_2
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_62
+    goto :goto_3
 
-    :cond_78
+    :cond_4
     return-object v0
 
-    :catch_79
+    :catch_1
     move-exception p0
 
     .line 90
@@ -319,7 +319,7 @@
 
     throw p1
 
-    :catch_80
+    :catch_2
     move-exception p0
 
     .line 88

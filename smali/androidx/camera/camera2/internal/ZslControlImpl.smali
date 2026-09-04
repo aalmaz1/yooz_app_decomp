@@ -38,7 +38,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$_HsY_HLKVfTHfh0rHMSnjRiMSRI(Landroidx/camera/core/SafeCloseImageReaderProxy;)V
-    .registers 1
+    .locals 0
 
     invoke-virtual {p0}, Landroidx/camera/core/SafeCloseImageReaderProxy;->safeClose()V
 
@@ -46,7 +46,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)V
-    .registers 4
+    .locals 2
 
     .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,11 +84,11 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_1e
+    :cond_0
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mShouldZslDisabledByQuirks:Z
 
     .line 106
@@ -108,18 +108,18 @@
 .end method
 
 .method private cleanup()V
-    .registers 6
+    .locals 5
 
     .line 255
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mImageRingBuffer:Landroidx/camera/core/internal/utils/ZslRingBuffer;
 
     .line 256
-    :goto_2
+    :goto_0
     invoke-virtual {v0}, Landroidx/camera/core/internal/utils/ZslRingBuffer;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 257
     invoke-virtual {v0}, Landroidx/camera/core/internal/utils/ZslRingBuffer;->dequeue()Ljava/lang/Object;
@@ -131,20 +131,20 @@
     .line 258
     invoke-interface {v1}, Landroidx/camera/core/ImageProxy;->close()V
 
-    goto :goto_2
+    goto :goto_0
 
     .line 261
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageDeferrableSurface:Landroidx/camera/core/impl/DeferrableSurface;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     .line 263
     iget-object v2, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageReader:Landroidx/camera/core/SafeCloseImageReaderProxy;
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     .line 265
     invoke-virtual {v0}, Landroidx/camera/core/impl/DeferrableSurface;->getTerminationFuture()Lcom/google/common/util/concurrent/ListenableFuture;
@@ -170,17 +170,17 @@
     iput-object v1, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageReader:Landroidx/camera/core/SafeCloseImageReaderProxy;
 
     .line 270
-    :cond_30
+    :cond_1
     invoke-virtual {v0}, Landroidx/camera/core/impl/DeferrableSurface;->close()V
 
     .line 271
     iput-object v1, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageDeferrableSurface:Landroidx/camera/core/impl/DeferrableSurface;
 
     .line 274
-    :cond_35
+    :cond_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageWriter:Landroid/media/ImageWriter;
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3
 
     .line 276
     invoke-virtual {v0}, Landroid/media/ImageWriter;->close()V
@@ -188,12 +188,12 @@
     .line 277
     iput-object v1, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mReprocessingImageWriter:Landroid/media/ImageWriter;
 
-    :cond_3e
+    :cond_3
     return-void
 .end method
 
 .method private createReprocessingInputSizeMap(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Ljava/util/Map;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,12 +215,12 @@
     move-result-object p1
 
     check-cast p1, Landroid/hardware/camera2/params/StreamConfigurationMap;
-    :try_end_8
-    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_23
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     move-exception p1
 
     .line 290
@@ -250,20 +250,20 @@
 
     const/4 p1, 0x0
 
-    :goto_23
-    if-eqz p1, :cond_58
+    :goto_0
+    if-eqz p1, :cond_3
 
     .line 294
     invoke-virtual {p1}, Landroid/hardware/camera2/params/StreamConfigurationMap;->getInputFormats()[I
 
     move-result-object v0
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
-    goto :goto_58
+    goto :goto_2
 
     .line 298
-    :cond_2c
+    :cond_0
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -279,8 +279,8 @@
 
     move v4, v3
 
-    :goto_38
-    if-ge v4, v2, :cond_57
+    :goto_1
+    if-ge v4, v2, :cond_2
 
     aget v5, v1, v4
 
@@ -289,7 +289,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_54
+    if-eqz v6, :cond_1
 
     .line 303
     new-instance v7, Landroidx/camera/core/impl/utils/CompareSizesByArea;
@@ -309,17 +309,17 @@
 
     invoke-interface {v0, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_54
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_57
+    :cond_2
     return-object v0
 
     .line 295
-    :cond_58
-    :goto_58
+    :cond_3
+    :goto_2
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
@@ -328,7 +328,7 @@
 .end method
 
 .method private isJpegValidOutputForInputFormat(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;I)Z
-    .registers 7
+    .locals 4
 
     .line 316
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -342,50 +342,50 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     return v0
 
     .line 324
-    :cond_c
+    :cond_0
     invoke-virtual {p1, p2}, Landroid/hardware/camera2/params/StreamConfigurationMap;->getValidOutputFormatsForInput(I)[I
 
     move-result-object p1
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_1
 
     return v0
 
     .line 328
-    :cond_13
+    :cond_1
     array-length p2, p1
 
     move v1, v0
 
-    :goto_15
-    if-ge v1, p2, :cond_22
+    :goto_0
+    if-ge v1, p2, :cond_3
 
     aget v2, p1, v1
 
     const/16 v3, 0x100
 
-    if-ne v2, v3, :cond_1f
+    if-ne v2, v3, :cond_2
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1f
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_22
+    :cond_3
     return v0
 .end method
 
 .method static synthetic lambda$new$0(Landroidx/camera/core/ImageProxy;)V
-    .registers 1
+    .locals 0
 
     .line 108
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->close()V
@@ -396,7 +396,7 @@
 
 # virtual methods
 .method public addZslConfig(Landroidx/camera/core/impl/SessionConfig$Builder;)V
-    .registers 8
+    .locals 6
 
     .line 133
     invoke-direct {p0}, Landroidx/camera/camera2/internal/ZslControlImpl;->cleanup()V
@@ -404,20 +404,20 @@
     .line 139
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mIsZslDisabledByUseCaseConfig:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 143
-    :cond_8
+    :cond_0
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mShouldZslDisabledByQuirks:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 147
-    :cond_d
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mCameraCharacteristicsCompat:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     .line 148
@@ -428,14 +428,14 @@
     .line 152
     iget-boolean v1, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mIsPrivateReprocessingSupported:Z
 
-    if-eqz v1, :cond_c4
+    if-eqz v1, :cond_3
 
     .line 153
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_c4
+    if-nez v1, :cond_3
 
     const/16 v1, 0x22
 
@@ -448,7 +448,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c4
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mCameraCharacteristicsCompat:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
@@ -457,12 +457,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_33
+    if-nez v2, :cond_2
 
-    goto/16 :goto_c4
+    goto/16 :goto_0
 
     .line 160
-    :cond_33
+    :cond_2
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -618,13 +618,13 @@
     .line 215
     invoke-virtual {p1, v0}, Landroidx/camera/core/impl/SessionConfig$Builder;->setInputConfiguration(Landroid/hardware/camera2/params/InputConfiguration;)Landroidx/camera/core/impl/SessionConfig$Builder;
 
-    :cond_c4
-    :goto_c4
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public dequeueImageFromBuffer()Landroidx/camera/core/ImageProxy;
-    .registers 3
+    .locals 2
 
     .line 226
     :try_start_0
@@ -635,12 +635,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/camera/core/ImageProxy;
-    :try_end_8
-    .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     const-string v0, "ZslControlImpl"
 
     const-string v1, "dequeueImageFromBuffer no such element"
@@ -650,12 +650,12 @@
 
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return-object v0
 .end method
 
 .method public enqueueImageToImageWriter(Landroidx/camera/core/ImageProxy;)Z
-    .registers 5
+    .locals 3
 
     .line 237
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getImage()Landroid/media/Image;
@@ -667,21 +667,21 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     .line 241
-    :try_start_b
+    :try_start_0
     invoke-static {v0, p1}, Landroidx/camera/core/internal/compat/ImageWriterCompat;->queueInputImage(Landroid/media/ImageWriter;Landroid/media/Image;)V
-    :try_end_e
-    .catch Ljava/lang/IllegalStateException; {:try_start_b .. :try_end_e} :catch_10
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 243
@@ -709,12 +709,12 @@
     .line 243
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_29
+    :cond_0
     return v1
 .end method
 
 .method public isZslDisabledByFlashMode()Z
-    .registers 2
+    .locals 1
 
     .line 128
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mIsZslDisabledByFlashMode:Z
@@ -723,7 +723,7 @@
 .end method
 
 .method public isZslDisabledByUserCaseConfig()Z
-    .registers 2
+    .locals 1
 
     .line 118
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mIsZslDisabledByUseCaseConfig:Z
@@ -732,7 +732,7 @@
 .end method
 
 .method synthetic lambda$addZslConfig$1$androidx-camera-camera2-internal-ZslControlImpl(Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 4
+    .locals 2
 
     .line 171
     :try_start_0
@@ -740,18 +740,18 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_0
 
     .line 173
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mImageRingBuffer:Landroidx/camera/core/internal/utils/ZslRingBuffer;
 
     invoke-virtual {v0, p1}, Landroidx/camera/core/internal/utils/ZslRingBuffer;->enqueue(Landroidx/camera/core/ImageProxy;)V
-    :try_end_b
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :catch_c
+    :catch_0
     move-exception p1
 
     .line 176
@@ -779,13 +779,13 @@
     .line 176
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_25
-    :goto_25
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public setZslDisabledByFlashMode(Z)V
-    .registers 2
+    .locals 0
 
     .line 123
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mIsZslDisabledByFlashMode:Z
@@ -794,7 +794,7 @@
 .end method
 
 .method public setZslDisabledByUserCaseConfig(Z)V
-    .registers 2
+    .locals 0
 
     .line 113
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/ZslControlImpl;->mIsZslDisabledByUseCaseConfig:Z

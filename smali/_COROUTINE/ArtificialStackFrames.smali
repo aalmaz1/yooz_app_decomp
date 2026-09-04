@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final coroutineBoundary()Ljava/lang/StackTraceElement;
-    .registers 3
+    .locals 2
 
     .line 46
     new-instance v0, Ljava/lang/Exception;
@@ -61,7 +61,7 @@
 .end method
 
 .method public final coroutineCreation()Ljava/lang/StackTraceElement;
-    .registers 3
+    .locals 2
 
     .line 34
     new-instance v0, Ljava/lang/Exception;

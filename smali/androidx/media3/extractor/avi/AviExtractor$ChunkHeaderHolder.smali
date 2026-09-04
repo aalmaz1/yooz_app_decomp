@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 579
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/avi/AviExtractor$1;)V
-    .registers 2
+    .locals 0
 
     .line 579
     invoke-direct {p0}, Landroidx/media3/extractor/avi/AviExtractor$ChunkHeaderHolder;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public populateFrom(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 3
+    .locals 1
 
     .line 594
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
@@ -69,7 +69,7 @@
 .end method
 
 .method public populateWithListHeaderFrom(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -84,7 +84,7 @@
 
     const v1, 0x5453494c
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 590
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
@@ -96,7 +96,7 @@
     return-void
 
     .line 587
-    :cond_11
+    :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "LIST expected, found: "

@@ -36,7 +36,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x4
 
@@ -71,7 +71,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 128
     new-instance v0, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
@@ -128,7 +128,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -142,7 +142,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
-    .registers 2
+    .locals 1
 
     .line 125
     const-class v0, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
@@ -157,7 +157,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
-    .registers 1
+    .locals 1
 
     .line 125
     sget-object v0, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->$VALUES:[Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;

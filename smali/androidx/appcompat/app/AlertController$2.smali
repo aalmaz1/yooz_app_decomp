@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AlertController;Landroid/view/View;Landroid/view/View;)V
-    .registers 4
+    .locals 0
 
     .line 591
     iput-object p1, p0, Landroidx/appcompat/app/AlertController$2;->this$0:Landroidx/appcompat/app/AlertController;
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public onScrollChange(Landroidx/core/widget/NestedScrollView;IIII)V
-    .registers 6
+    .locals 0
 
     .line 596
     iget-object p2, p0, Landroidx/appcompat/app/AlertController$2;->val$top:Landroid/view/View;

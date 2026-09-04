@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Collection;Landroidx/media3/exoplayer/source/ShuffleOrder;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,7 +58,7 @@
 .end method
 
 .method private constructor <init>([Landroidx/media3/common/Timeline;[Ljava/lang/Object;Landroidx/media3/exoplayer/source/ShuffleOrder;)V
-    .registers 11
+    .locals 7
 
     const/4 v0, 0x0
 
@@ -100,8 +100,8 @@
 
     move v3, v2
 
-    :goto_1c
-    if-ge v0, p3, :cond_4b
+    :goto_0
+    if-ge v0, p3, :cond_0
 
     aget-object v4, p1, v0
 
@@ -155,10 +155,10 @@
 
     move v3, v6
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 67
-    :cond_4b
+    :cond_0
     iput v1, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->windowCount:I
 
     .line 68
@@ -168,7 +168,7 @@
 .end method
 
 .method private static getTimelines(Ljava/util/Collection;)[Landroidx/media3/common/Timeline;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -194,12 +194,12 @@
 
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -218,14 +218,14 @@
 
     move v1, v3
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     return-object v0
 .end method
 
 .method private static getUids(Ljava/util/Collection;)[Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -251,12 +251,12 @@
 
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -275,16 +275,16 @@
 
     move v1, v3
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public copyWithPlaceholderTimeline(Landroidx/media3/exoplayer/source/ShuffleOrder;)Landroidx/media3/exoplayer/PlaylistTimeline;
-    .registers 6
+    .locals 4
 
     .line 137
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->timelines:[Landroidx/media3/common/Timeline;
@@ -296,12 +296,12 @@
     const/4 v1, 0x0
 
     .line 138
-    :goto_6
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->timelines:[Landroidx/media3/common/Timeline;
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_19
+    if-ge v1, v2, :cond_0
 
     .line 139
     new-instance v2, Landroidx/media3/exoplayer/PlaylistTimeline$1;
@@ -316,10 +316,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 163
-    :cond_19
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/PlaylistTimeline;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->uids:[Ljava/lang/Object;
@@ -330,7 +330,7 @@
 .end method
 
 .method protected getChildIndexByChildUid(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 88
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->childIndexByUid:Ljava/util/HashMap;
@@ -341,24 +341,24 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     const/4 p1, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 89
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    :goto_10
+    :goto_0
     return p1
 .end method
 
 .method protected getChildIndexByPeriodIndex(I)I
-    .registers 4
+    .locals 2
 
     .line 78
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->firstPeriodInChildIndices:[I
@@ -375,7 +375,7 @@
 .end method
 
 .method protected getChildIndexByWindowIndex(I)I
-    .registers 4
+    .locals 2
 
     .line 83
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->firstWindowInChildIndices:[I
@@ -392,7 +392,7 @@
 .end method
 
 .method getChildTimelines()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -413,7 +413,7 @@
 .end method
 
 .method protected getChildUidByChildIndex(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 109
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->uids:[Ljava/lang/Object;
@@ -424,7 +424,7 @@
 .end method
 
 .method protected getFirstPeriodIndexByChildIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 99
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->firstPeriodInChildIndices:[I
@@ -435,7 +435,7 @@
 .end method
 
 .method protected getFirstWindowIndexByChildIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 104
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->firstWindowInChildIndices:[I
@@ -446,7 +446,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 119
     iget v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->periodCount:I
@@ -455,7 +455,7 @@
 .end method
 
 .method protected getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
-    .registers 3
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->timelines:[Landroidx/media3/common/Timeline;
@@ -466,7 +466,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     .line 114
     iget v0, p0, Landroidx/media3/exoplayer/PlaylistTimeline;->windowCount:I

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V
-    .registers 3
+    .locals 0
 
     .line 444
     invoke-direct {p0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V
@@ -37,38 +37,38 @@
 .end method
 
 .method private hideForType(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_15
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_11
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_b
+    if-eq p1, v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 494
-    :cond_b
+    :cond_0
     iget-object p1, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->mSoftwareKeyboardControllerCompat:Landroidx/core/view/SoftwareKeyboardControllerCompat;
 
     invoke-virtual {p1}, Landroidx/core/view/SoftwareKeyboardControllerCompat;->hide()V
 
-    :goto_10
+    :goto_0
     return-void
 
     .line 491
-    :cond_11
+    :cond_1
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->setSystemUiFlag(I)V
 
     return-void
 
-    :cond_15
+    :cond_2
     const/4 p1, 0x4
 
     .line 488
@@ -78,38 +78,38 @@
 .end method
 
 .method private showForType(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_15
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_11
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_b
+    if-eq p1, v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 470
-    :cond_b
+    :cond_0
     iget-object p1, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->mSoftwareKeyboardControllerCompat:Landroidx/core/view/SoftwareKeyboardControllerCompat;
 
     invoke-virtual {p1}, Landroidx/core/view/SoftwareKeyboardControllerCompat;->show()V
 
-    :goto_10
+    :goto_0
     return-void
 
     .line 467
-    :cond_11
+    :cond_1
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->unsetSystemUiFlag(I)V
 
     return-void
 
-    :cond_15
+    :cond_2
     const/4 p1, 0x4
 
     .line 463
@@ -126,19 +126,19 @@
 
 # virtual methods
 .method addOnControllableInsetsChangedListener(Landroidx/core/view/WindowInsetsControllerCompat$OnControllableInsetsChangedListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method controlWindowInsetsAnimation(IJLandroid/view/animation/Interpolator;Landroid/os/CancellationSignal;Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method
 
 .method getSystemBarsBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -146,44 +146,44 @@
 .end method
 
 .method hide(I)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
-    :goto_1
+    :goto_0
     const/16 v1, 0x100
 
-    if-gt v0, v1, :cond_10
+    if-gt v0, v1, :cond_1
 
     and-int v1, p1, v0
 
-    if-nez v1, :cond_a
-
-    goto :goto_d
-
-    .line 481
-    :cond_a
-    invoke-direct {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->hideForType(I)V
-
-    :goto_d
-    shl-int/lit8 v0, v0, 0x1
+    if-nez v1, :cond_0
 
     goto :goto_1
 
-    :cond_10
+    .line 481
+    :cond_0
+    invoke-direct {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->hideForType(I)V
+
+    :goto_1
+    shl-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 
 .method removeOnControllableInsetsChangedListener(Landroidx/core/view/WindowInsetsControllerCompat$OnControllableInsetsChangedListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method setSystemBarsBehavior(I)V
-    .registers 5
+    .locals 3
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_2
 
     const/4 v0, 0x1
 
@@ -191,44 +191,44 @@
 
     const/16 v2, 0x1000
 
-    if-eq p1, v0, :cond_14
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_d
+    if-eq p1, v0, :cond_0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 534
-    :cond_d
+    :cond_0
     invoke-virtual {p0, v1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->unsetSystemUiFlag(I)V
 
     .line 535
     invoke-virtual {p0, v2}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->setSystemUiFlag(I)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 530
-    :cond_14
+    :cond_1
     invoke-virtual {p0, v2}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->unsetSystemUiFlag(I)V
 
     .line 531
     invoke-virtual {p0, v1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->setSystemUiFlag(I)V
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     const/16 p1, 0x1800
 
     .line 538
     invoke-virtual {p0, p1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->unsetSystemUiFlag(I)V
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
 .method protected setSystemUiFlag(I)V
-    .registers 4
+    .locals 2
 
     .line 499
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->mWindow:Landroid/view/Window;
@@ -251,7 +251,7 @@
 .end method
 
 .method protected setWindowFlag(I)V
-    .registers 3
+    .locals 1
 
     .line 513
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->mWindow:Landroid/view/Window;
@@ -262,36 +262,36 @@
 .end method
 
 .method show(I)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
-    :goto_1
+    :goto_0
     const/16 v1, 0x100
 
-    if-gt v0, v1, :cond_10
+    if-gt v0, v1, :cond_1
 
     and-int v1, p1, v0
 
-    if-nez v1, :cond_a
-
-    goto :goto_d
-
-    .line 456
-    :cond_a
-    invoke-direct {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->showForType(I)V
-
-    :goto_d
-    shl-int/lit8 v0, v0, 0x1
+    if-nez v1, :cond_0
 
     goto :goto_1
 
-    :cond_10
+    .line 456
+    :cond_0
+    invoke-direct {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->showForType(I)V
+
+    :goto_1
+    shl-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 
 .method protected unsetSystemUiFlag(I)V
-    .registers 4
+    .locals 2
 
     .line 506
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->mWindow:Landroid/view/Window;
@@ -316,7 +316,7 @@
 .end method
 
 .method protected unsetWindowFlag(I)V
-    .registers 3
+    .locals 1
 
     .line 517
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl20;->mWindow:Landroid/view/Window;

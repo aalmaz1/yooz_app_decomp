@@ -20,12 +20,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 823
-    :try_start_1
+    :try_start_0
     const-class v1, Landroid/widget/AbsListView;
 
     const-string v2, "mIsChildViewEnabled"
@@ -38,26 +38,26 @@
 
     .line 824
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_d
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_e
+    :catch_0
     move-exception v1
 
     .line 826
     invoke-virtual {v1}, Ljava/lang/NoSuchFieldException;->printStackTrace()V
 
     .line 829
-    :goto_12
+    :goto_0
     sput-object v0, Landroidx/appcompat/widget/DropDownListView$PreApi33Impl;->sIsChildViewEnabled:Ljava/lang/reflect/Field;
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 832
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,62 +66,62 @@
 .end method
 
 .method static isSelectedChildViewEnabled(Landroid/widget/AbsListView;)Z
-    .registers 2
+    .locals 1
 
     .line 837
     sget-object v0, Landroidx/appcompat/widget/DropDownListView$PreApi33Impl;->sIsChildViewEnabled:Ljava/lang/reflect/Field;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 839
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->getBoolean(Ljava/lang/Object;)Z
 
     move-result p0
-    :try_end_8
-    .catch Ljava/lang/IllegalAccessException; {:try_start_4 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_9
+    :catch_0
     move-exception p0
 
     .line 841
     invoke-virtual {p0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method static setSelectedChildViewEnabled(Landroid/widget/AbsListView;Z)V
-    .registers 3
+    .locals 1
 
     .line 849
     sget-object v0, Landroidx/appcompat/widget/DropDownListView$PreApi33Impl;->sIsChildViewEnabled:Ljava/lang/reflect/Field;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 851
-    :try_start_4
+    :try_start_0
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_4 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :catch_c
+    :catch_0
     move-exception p0
 
     .line 853
     invoke-virtual {p0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     return-void
 .end method

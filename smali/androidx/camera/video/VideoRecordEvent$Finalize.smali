@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;Landroidx/camera/video/OutputResults;ILjava/lang/Throwable;)V
-    .registers 6
+    .locals 0
 
     .line 372
     invoke-direct {p0, p1, p2}, Landroidx/camera/video/VideoRecordEvent;-><init>(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)V
@@ -72,9 +72,9 @@
 .end method
 
 .method static errorToString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    packed-switch p0, :pswitch_data_3a
+    packed-switch p0, :pswitch_data_0
 
     .line 437
     new-instance v0, Ljava/lang/StringBuilder;
@@ -99,81 +99,81 @@
 
     return-object p0
 
-    :pswitch_19
+    :pswitch_0
     const-string p0, "ERROR_RECORDING_GARBAGE_COLLECTED"
 
     return-object p0
 
-    :pswitch_1c
+    :pswitch_1
     const-string p0, "ERROR_DURATION_LIMIT_REACHED"
 
     return-object p0
 
-    :pswitch_1f
+    :pswitch_2
     const-string p0, "ERROR_NO_VALID_DATA"
 
     return-object p0
 
-    :pswitch_22
+    :pswitch_3
     const-string p0, "ERROR_RECORDER_ERROR"
 
     return-object p0
 
-    :pswitch_25
+    :pswitch_4
     const-string p0, "ERROR_ENCODING_FAILED"
 
     return-object p0
 
-    :pswitch_28
+    :pswitch_5
     const-string p0, "ERROR_INVALID_OUTPUT_OPTIONS"
 
     return-object p0
 
-    :pswitch_2b
+    :pswitch_6
     const-string p0, "ERROR_SOURCE_INACTIVE"
 
     return-object p0
 
-    :pswitch_2e
+    :pswitch_7
     const-string p0, "ERROR_INSUFFICIENT_STORAGE"
 
     return-object p0
 
-    :pswitch_31
+    :pswitch_8
     const-string p0, "ERROR_FILE_SIZE_LIMIT_REACHED"
 
     return-object p0
 
-    :pswitch_34
+    :pswitch_9
     const-string p0, "ERROR_UNKNOWN"
 
     return-object p0
 
-    :pswitch_37
+    :pswitch_a
     const-string p0, "ERROR_NONE"
 
     return-object p0
 
-    :pswitch_data_3a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_37
-        :pswitch_34
-        :pswitch_31
-        :pswitch_2e
-        :pswitch_2b
-        :pswitch_28
-        :pswitch_25
-        :pswitch_22
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public getCause()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 417
     iget-object v0, p0, Landroidx/camera/video/VideoRecordEvent$Finalize;->mCause:Ljava/lang/Throwable;
@@ -182,7 +182,7 @@
 .end method
 
 .method public getError()I
-    .registers 2
+    .locals 1
 
     .line 407
     iget v0, p0, Landroidx/camera/video/VideoRecordEvent$Finalize;->mError:I
@@ -191,7 +191,7 @@
 .end method
 
 .method public getOutputResults()Landroidx/camera/video/OutputResults;
-    .registers 2
+    .locals 1
 
     .line 383
     iget-object v0, p0, Landroidx/camera/video/VideoRecordEvent$Finalize;->mOutputResults:Landroidx/camera/video/OutputResults;
@@ -200,20 +200,20 @@
 .end method
 
 .method public hasError()Z
-    .registers 2
+    .locals 1
 
     .line 393
     iget v0, p0, Landroidx/camera/video/VideoRecordEvent$Finalize;->mError:I
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

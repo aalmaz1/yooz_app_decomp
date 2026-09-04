@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 26
     new-instance v0, Landroidx/media3/datasource/cache/CacheKeyFactory$$ExternalSyntheticLambda0;
@@ -22,25 +22,25 @@
 .end method
 
 .method public static synthetic lambda$static$0(Landroidx/media3/datasource/DataSpec;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 27
     iget-object v0, p0, Landroidx/media3/datasource/DataSpec;->key:Ljava/lang/String;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     iget-object p0, p0, Landroidx/media3/datasource/DataSpec;->key:Ljava/lang/String;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object p0, p0, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
 
     invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_d
+    :goto_0
     return-object p0
 .end method
 

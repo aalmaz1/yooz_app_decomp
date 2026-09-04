@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>(JZZZLjava/util/List;JZJIII)V
-    .registers 15
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JZZZ",
@@ -102,7 +102,7 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .registers 8
+    .locals 6
 
     .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -123,16 +123,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_13
+    if-ne v0, v2, :cond_0
 
     move v0, v2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v0, v1
 
-    :goto_14
+    :goto_0
     iput-boolean v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventCancelIndicator:Z
 
     .line 114
@@ -140,16 +140,16 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_1e
+    if-ne v0, v2, :cond_1
 
     move v0, v2
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     move v0, v1
 
-    :goto_1f
+    :goto_1
     iput-boolean v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->outOfNetworkIndicator:Z
 
     .line 115
@@ -157,16 +157,16 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_29
+    if-ne v0, v2, :cond_2
 
     move v0, v2
 
-    goto :goto_2a
+    goto :goto_2
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_2
     iput-boolean v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->programSpliceFlag:Z
 
     .line 116
@@ -181,8 +181,8 @@
 
     move v4, v1
 
-    :goto_36
-    if-ge v4, v0, :cond_42
+    :goto_3
+    if-ge v4, v0, :cond_3
 
     .line 119
     invoke-static {p1}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;->access$000(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
@@ -193,10 +193,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_36
+    goto :goto_3
 
     .line 121
-    :cond_42
+    :cond_3
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -215,11 +215,11 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_55
+    if-ne v0, v2, :cond_4
 
     move v1, v2
 
-    :cond_55
+    :cond_4
     iput-boolean v1, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->autoReturn:Z
 
     .line 124
@@ -254,7 +254,7 @@
 .end method
 
 .method static synthetic access$300(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-static {p0}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
@@ -265,7 +265,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-static {p0}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->parseFromSection(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
@@ -276,7 +276,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 32
     invoke-direct {p0, p1}, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->writeToParcel(Landroid/os/Parcel;)V
@@ -285,7 +285,7 @@
 .end method
 
 .method private static createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
-    .registers 2
+    .locals 1
 
     .line 203
     new-instance v0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
@@ -296,7 +296,7 @@
 .end method
 
 .method private static parseFromSection(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
-    .registers 22
+    .locals 21
 
     .line 131
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
@@ -310,22 +310,22 @@
 
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v5, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v5, 0x0
 
     .line 137
-    :goto_f
+    :goto_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez v5, :cond_ae
+    if-nez v5, :cond_9
 
     .line 144
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -334,56 +334,56 @@
 
     and-int/lit16 v9, v8, 0x80
 
-    if-eqz v9, :cond_20
+    if-eqz v9, :cond_1
 
     const/4 v9, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     const/4 v9, 0x0
 
-    :goto_21
+    :goto_1
     and-int/lit8 v10, v8, 0x40
 
-    if-eqz v10, :cond_27
+    if-eqz v10, :cond_2
 
     const/4 v10, 0x1
 
-    goto :goto_28
+    goto :goto_2
 
-    :cond_27
+    :cond_2
     const/4 v10, 0x0
 
-    :goto_28
+    :goto_2
     const/16 v11, 0x20
 
     and-int/2addr v8, v11
 
-    if-eqz v8, :cond_2f
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x1
 
-    goto :goto_30
+    goto :goto_3
 
-    :cond_2f
+    :cond_3
     const/4 v8, 0x0
 
-    :goto_30
-    if-eqz v10, :cond_37
+    :goto_3
+    if-eqz v10, :cond_4
 
     .line 149
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v12
 
-    goto :goto_3c
+    goto :goto_4
 
-    :cond_37
+    :cond_4
     const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_3c
-    if-nez v10, :cond_61
+    :goto_4
+    if-nez v10, :cond_6
 
     .line 152
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -397,8 +397,8 @@
 
     const/4 v15, 0x0
 
-    :goto_48
-    if-ge v15, v0, :cond_60
+    :goto_5
+    if-ge v15, v0, :cond_5
 
     .line 155
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -423,13 +423,13 @@
 
     const/16 v11, 0x20
 
-    goto :goto_48
+    goto :goto_5
 
-    :cond_60
+    :cond_5
     move-object v0, v14
 
-    :cond_61
-    if-eqz v8, :cond_8b
+    :cond_6
+    if-eqz v8, :cond_8
 
     .line 161
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -446,16 +446,16 @@
 
     cmp-long v6, v6, v14
 
-    if-eqz v6, :cond_74
+    if-eqz v6, :cond_7
 
     const/16 v16, 0x1
 
-    goto :goto_76
+    goto :goto_6
 
-    :cond_74
+    :cond_7
     const/16 v16, 0x0
 
-    :goto_76
+    :goto_6
     const-wide/16 v6, 0x1
 
     and-long/2addr v3, v6
@@ -482,15 +482,15 @@
 
     move/from16 v4, v16
 
-    goto :goto_91
+    goto :goto_7
 
-    :cond_8b
+    :cond_8
     const/4 v4, 0x0
 
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 166
-    :goto_91
+    :goto_7
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v3
@@ -527,9 +527,9 @@
 
     move/from16 v4, v20
 
-    goto :goto_c0
+    goto :goto_8
 
-    :cond_ae
+    :cond_9
     move-object v6, v0
 
     const/4 v4, 0x0
@@ -549,7 +549,7 @@
     const/16 v17, 0x0
 
     .line 170
-    :goto_c0
+    :goto_8
     new-instance v15, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;
 
     move-object v0, v15
@@ -564,7 +564,7 @@
 .end method
 
 .method private writeToParcel(Landroid/os/Parcel;)V
-    .registers 5
+    .locals 3
 
     .line 185
     iget-wide v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventId:J
@@ -604,8 +604,8 @@
 
     const/4 v1, 0x0
 
-    :goto_21
-    if-ge v1, v0, :cond_31
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 192
     iget-object v2, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->componentSpliceList:Ljava/util/List;
@@ -620,10 +620,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 194
-    :cond_31
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceScheduleCommand$Event;->utcSpliceTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V

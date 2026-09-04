@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/Exception;)V
-    .registers 3
+    .locals 0
 
     .line 71
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V

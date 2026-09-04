@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,16 +22,16 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/TorchStateReset;->mIsImageCaptureTorchIsClosedQuirkEnabled:Z
 
     return-void
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public createTorchResetRequest(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/impl/CaptureConfig;
-    .registers 5
+    .locals 3
 
     .line 78
     new-instance v0, Landroidx/camera/core/impl/CaptureConfig$Builder;
@@ -63,12 +63,12 @@
 
     move-result-object v1
 
-    :goto_14
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -79,10 +79,10 @@
     .line 83
     invoke-virtual {v0, v2}, Landroidx/camera/core/impl/CaptureConfig$Builder;->addSurface(Landroidx/camera/core/impl/DeferrableSurface;)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 86
-    :cond_24
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/core/impl/CaptureConfig;->getImplementationOptions()Landroidx/camera/core/impl/Config;
 
     move-result-object p1
@@ -121,7 +121,7 @@
 .end method
 
 .method public isTorchResetRequired(Ljava/util/List;Z)Z
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,21 +134,21 @@
     .line 53
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/TorchStateReset;->mIsImageCaptureTorchIsClosedQuirkEnabled:Z
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_1
 
     .line 54
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_a
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -165,7 +165,7 @@
 
     check-cast p2, Ljava/lang/Integer;
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     .line 56
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -174,13 +174,13 @@
 
     const/4 v0, 0x2
 
-    if-ne p2, v0, :cond_a
+    if-ne p2, v0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_29
+    :cond_1
     const/4 p1, 0x0
 
     return p1

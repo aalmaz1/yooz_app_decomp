@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/content/UnusedAppRestrictionsBackportService;)V
-    .registers 2
+    .locals 0
 
     .line 51
     iput-object p1, p0, Landroidx/core/content/UnusedAppRestrictionsBackportService$1;->this$0:Landroidx/core/content/UnusedAppRestrictionsBackportService;
@@ -33,19 +33,19 @@
 
 # virtual methods
 .method public isPermissionRevocationEnabledForApp(Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 59
-    :cond_3
+    :cond_0
     new-instance v0, Landroidx/core/content/UnusedAppRestrictionsBackportCallback;
 
     invoke-direct {v0, p1}, Landroidx/core/content/UnusedAppRestrictionsBackportCallback;-><init>(Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;)V

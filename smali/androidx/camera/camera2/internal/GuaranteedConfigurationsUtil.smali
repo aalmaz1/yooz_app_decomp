@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static generateSupportedCombinationList(IZZ)Ljava/util/List;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IZZ)",
@@ -40,35 +40,35 @@
 
     const/4 v2, 0x3
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
-    if-eq p0, v1, :cond_14
+    if-eq p0, v1, :cond_0
 
-    if-ne p0, v2, :cond_1b
+    if-ne p0, v2, :cond_1
 
     .line 848
-    :cond_14
+    :cond_0
     invoke-static {}, Landroidx/camera/camera2/internal/GuaranteedConfigurationsUtil;->getLimitedSupportedCombinationList()Ljava/util/List;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_1b
-    if-eq p0, v1, :cond_1f
+    :cond_1
+    if-eq p0, v1, :cond_2
 
-    if-ne p0, v2, :cond_26
+    if-ne p0, v2, :cond_3
 
     .line 853
-    :cond_1f
+    :cond_2
     invoke-static {}, Landroidx/camera/camera2/internal/GuaranteedConfigurationsUtil;->getFullSupportedCombinationList()Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_26
-    if-eqz p1, :cond_2f
+    :cond_3
+    if-eqz p1, :cond_4
 
     .line 857
     invoke-static {}, Landroidx/camera/camera2/internal/GuaranteedConfigurationsUtil;->getRAWSupportedCombinationList()Ljava/util/List;
@@ -77,10 +77,10 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_2f
-    if-eqz p2, :cond_3a
+    :cond_4
+    if-eqz p2, :cond_5
 
-    if-nez p0, :cond_3a
+    if-nez p0, :cond_5
 
     .line 862
     invoke-static {}, Landroidx/camera/camera2/internal/GuaranteedConfigurationsUtil;->getBurstSupportedCombinationList()Ljava/util/List;
@@ -89,8 +89,8 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_3a
-    if-ne p0, v2, :cond_43
+    :cond_5
+    if-ne p0, v2, :cond_6
 
     .line 866
     invoke-static {}, Landroidx/camera/camera2/internal/GuaranteedConfigurationsUtil;->getLevel3SupportedCombinationList()Ljava/util/List;
@@ -99,12 +99,12 @@
 
     invoke-interface {v0, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_43
+    :cond_6
     return-object v0
 .end method
 
 .method public static get10BitSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -395,7 +395,7 @@
 .end method
 
 .method public static getBurstSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -516,7 +516,7 @@
 .end method
 
 .method public static getConcurrentSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -802,7 +802,7 @@
 .end method
 
 .method public static getFullSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1064,7 +1064,7 @@
 .end method
 
 .method public static getLegacySupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1329,7 +1329,7 @@
 .end method
 
 .method public static getLevel3SupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1468,7 +1468,7 @@
 .end method
 
 .method public static getLimitedSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1730,7 +1730,7 @@
 .end method
 
 .method public static getRAWSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2073,7 +2073,7 @@
 .end method
 
 .method public static getStreamUseCaseSupportedCombinationList()Ljava/util/List;
-    .registers 10
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2537,7 +2537,7 @@
 .end method
 
 .method public static getUltraHighResolutionSupportedCombinationList()Ljava/util/List;
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

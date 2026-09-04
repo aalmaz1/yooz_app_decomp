@@ -80,7 +80,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/core/SimpleActor;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,7 +130,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -144,7 +144,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,7 +173,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -186,20 +186,20 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
-    if-eq v1, v3, :cond_1c
+    if-eq v1, v3, :cond_1
 
-    if-ne v1, v2, :cond_14
+    if-ne v1, v2, :cond_0
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p1, p0
 
-    goto/16 :goto_72
+    goto/16 :goto_2
 
     .line 124
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -209,7 +209,7 @@
     throw p1
 
     .line 112
-    :cond_1c
+    :cond_1
     iget-object v1, p0, Landroidx/datastore/core/SimpleActor$offer$2;->L$0:Ljava/lang/Object;
 
     check-cast v1, Lkotlin/jvm/functions/Function2;
@@ -222,9 +222,9 @@
 
     move-object v0, p0
 
-    goto :goto_64
+    goto :goto_1
 
-    :cond_27
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 114
@@ -238,22 +238,22 @@
 
     move-result p1
 
-    if-lez p1, :cond_38
+    if-lez p1, :cond_3
 
     move p1, v3
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_3
     const/4 p1, 0x0
 
-    :goto_39
-    if-eqz p1, :cond_81
+    :goto_0
+    if-eqz p1, :cond_7
 
     move-object p1, p0
 
     .line 120
-    :cond_3c
+    :cond_4
     iget-object v1, p1, Landroidx/datastore/core/SimpleActor$offer$2;->this$0:Landroidx/datastore/core/SimpleActor;
 
     invoke-static {v1}, Landroidx/datastore/core/SimpleActor;->access$getScope$p(Landroidx/datastore/core/SimpleActor;)Lkotlinx/coroutines/CoroutineScope;
@@ -287,11 +287,11 @@
 
     move-result-object v4
 
-    if-ne v4, v0, :cond_5f
+    if-ne v4, v0, :cond_5
 
     return-object v0
 
-    :cond_5f
+    :cond_5
     move-object v6, v0
 
     move-object v0, p1
@@ -302,7 +302,7 @@
 
     move-object v1, v6
 
-    :goto_64
+    :goto_1
     const/4 v5, 0x0
 
     iput-object v5, v0, Landroidx/datastore/core/SimpleActor$offer$2;->L$0:Ljava/lang/Object;
@@ -313,17 +313,17 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_70
+    if-ne p1, v1, :cond_6
 
     return-object v1
 
-    :cond_70
+    :cond_6
     move-object p1, v0
 
     move-object v0, v1
 
     .line 123
-    :goto_72
+    :goto_2
     iget-object v1, p1, Landroidx/datastore/core/SimpleActor$offer$2;->this$0:Landroidx/datastore/core/SimpleActor;
 
     invoke-static {v1}, Landroidx/datastore/core/SimpleActor;->access$getRemainingMessages$p(Landroidx/datastore/core/SimpleActor;)Ljava/util/concurrent/atomic/AtomicInteger;
@@ -334,7 +334,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_4
 
     .line 124
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -342,7 +342,7 @@
     return-object p1
 
     .line 114
-    :cond_81
+    :cond_7
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Check failed."

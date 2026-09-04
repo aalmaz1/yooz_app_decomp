@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 62
     new-instance v0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$$ExternalSyntheticLambda0;
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(Landroid/media/MediaParser;Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;Landroidx/media3/common/Format;ZLcom/google/common/collect/ImmutableList;ILandroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,7 +110,7 @@
 .end method
 
 .method private static varargs createMediaParserInstance(Landroid/media/MediaParser$OutputConsumer;Landroidx/media3/common/Format;ZLcom/google/common/collect/ImmutableList;Landroidx/media3/exoplayer/analytics/PlayerId;[Ljava/lang/String;)Landroid/media/MediaParser;
-    .registers 9
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -138,7 +138,7 @@
 
     move-result-object v2
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -149,15 +149,15 @@
 
     move-result-object p0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 252
-    :cond_10
+    :cond_0
     invoke-static {p0, p5}, Landroid/media/MediaParser;->create(Landroid/media/MediaParser$OutputConsumer;[Ljava/lang/String;)Landroid/media/MediaParser;
 
     move-result-object p0
 
-    :goto_14
+    :goto_0
     const-string p5, "android.media.mediaParser.exposeCaptionFormats"
 
     .line 253
@@ -208,7 +208,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_68
+    if-nez p2, :cond_2
 
     const-string p2, "audio/mp4a-latm"
 
@@ -221,14 +221,14 @@
 
     move-result p2
 
-    if-nez p2, :cond_56
+    if-nez p2, :cond_1
 
     const-string p2, "android.media.mediaparser.ts.ignoreAacStream"
 
     .line 267
     invoke-virtual {p0, p2, v2}, Landroid/media/MediaParser;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Landroid/media/MediaParser;
 
-    :cond_56
+    :cond_1
     const-string/jumbo p2, "video/avc"
 
     .line 269
@@ -240,7 +240,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_68
+    if-nez p1, :cond_2
 
     const-string p1, "android.media.mediaparser.ts.ignoreAvcStream"
 
@@ -248,22 +248,22 @@
     invoke-virtual {p0, p1, v2}, Landroid/media/MediaParser;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Landroid/media/MediaParser;
 
     .line 273
-    :cond_68
+    :cond_2
     sget p1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 p2, 0x1f
 
-    if-lt p1, p2, :cond_71
+    if-lt p1, p2, :cond_3
 
     .line 274
     invoke-static {p0, p4}, Landroidx/media3/exoplayer/source/mediaparser/MediaParserUtil;->setLogSessionIdOnMediaParser(Landroid/media/MediaParser;Landroidx/media3/exoplayer/analytics/PlayerId;)V
 
-    :cond_71
+    :cond_3
     return-object p0
 .end method
 
 .method static synthetic lambda$static$0(Landroid/net/Uri;Landroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/common/util/TimestampAdjuster;Ljava/util/Map;Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/hls/HlsMediaChunkExtractor;
-    .registers 16
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -281,7 +281,7 @@
 
     const/4 v0, 0x0
 
-    if-ne p0, p4, :cond_1a
+    if-ne p0, p4, :cond_0
 
     .line 73
     new-instance p0, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;
@@ -298,31 +298,31 @@
 
     return-object p0
 
-    :cond_1a
-    if-eqz p2, :cond_1e
+    :cond_0
+    if-eqz p2, :cond_1
 
     const/4 p0, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move p0, v0
 
     .line 85
-    :goto_1f
+    :goto_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
 
     move-result-object p4
 
-    if-eqz p2, :cond_3b
+    if-eqz p2, :cond_2
 
     .line 89
-    :goto_25
+    :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_51
+    if-ge v0, v1, :cond_3
 
     .line 91
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -340,10 +340,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_25
+    goto :goto_1
 
     .line 96
-    :cond_3b
+    :cond_2
     new-instance v0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -368,7 +368,7 @@
     invoke-virtual {p4, v0}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
     .line 102
-    :cond_51
+    :cond_3
     invoke-virtual {p4}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p4
@@ -378,18 +378,18 @@
 
     invoke-direct {v0}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;-><init>()V
 
-    if-eqz p2, :cond_5d
+    if-eqz p2, :cond_4
 
-    goto :goto_61
+    goto :goto_2
 
     .line 107
-    :cond_5d
+    :cond_4
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p2
 
     .line 106
-    :goto_61
+    :goto_2
     invoke-virtual {v0, p2}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->setMuxedCaptionFormats(Ljava/util/List;)V
 
     .line 108
@@ -472,7 +472,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 3
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor;->outputConsumerAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
@@ -483,7 +483,7 @@
 .end method
 
 .method public isPackedAudioExtractor()Z
-    .registers 3
+    .locals 2
 
     .line 202
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor;->mediaParser:Landroid/media/MediaParser;
@@ -499,7 +499,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     const-string v1, "android.media.mediaparser.Ac4Parser"
 
@@ -508,7 +508,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     const-string v1, "android.media.mediaparser.AdtsParser"
 
@@ -517,7 +517,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     const-string v1, "android.media.mediaparser.Mp3Parser"
 
@@ -526,25 +526,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_2a
+    :goto_1
     return v0
 .end method
 
 .method public isReusable()Z
-    .registers 3
+    .locals 2
 
     .line 211
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor;->mediaParser:Landroid/media/MediaParser;
@@ -560,7 +560,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     const-string v1, "android.media.mediaparser.TsParser"
 
@@ -569,25 +569,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1a
+    :goto_1
     return v0
 .end method
 
 .method public onTruncatedSegmentParsed()V
-    .registers 3
+    .locals 2
 
     .line 237
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor;->mediaParser:Landroid/media/MediaParser;
@@ -600,7 +600,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -639,7 +639,7 @@
 .end method
 
 .method public recreate()Landroidx/media3/exoplayer/hls/HlsMediaChunkExtractor;
-    .registers 11
+    .locals 10
 
     .line 218
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor;->isReusable()Z

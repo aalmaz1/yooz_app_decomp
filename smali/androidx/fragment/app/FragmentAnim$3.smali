@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/fragment/app/Fragment;Landroidx/fragment/app/FragmentTransition$Callback;Landroidx/core/os/CancellationSignal;)V
-    .registers 6
+    .locals 0
 
     .line 195
     iput-object p1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$container:Landroid/view/ViewGroup;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 4
+    .locals 2
 
     .line 198
     iget-object p1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$container:Landroid/view/ViewGroup;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setAnimator(Landroid/animation/Animator;)V
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_0
 
     .line 203
     iget-object p1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$container:Landroid/view/ViewGroup;
@@ -83,7 +83,7 @@
 
     move-result p1
 
-    if-gez p1, :cond_28
+    if-gez p1, :cond_0
 
     .line 204
     iget-object p1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$callback:Landroidx/fragment/app/FragmentTransition$Callback;
@@ -94,6 +94,6 @@
 
     invoke-interface {p1, v0, v1}, Landroidx/fragment/app/FragmentTransition$Callback;->onComplete(Landroidx/fragment/app/Fragment;Landroidx/core/os/CancellationSignal;)V
 
-    :cond_28
+    :cond_0
     return-void
 .end method

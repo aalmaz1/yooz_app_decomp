@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 90
     new-instance v0, Landroid/os/Handler;
@@ -97,7 +97,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,7 +106,7 @@
 .end method
 
 .method private static getActivityThreadClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -122,19 +122,19 @@
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_7
+    :catchall_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method private static getMainThreadField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 2
 
     .line 357
     :try_start_0
@@ -150,19 +150,19 @@
 
     .line 358
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_c
-    .catchall {:try_start_0 .. :try_end_c} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_d
+    :catchall_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method private static getPerformStopActivity2Params(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -174,12 +174,12 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     const-string v1, "performStopActivity"
 
     const/4 v2, 0x2
@@ -205,17 +205,17 @@
 
     .line 321
     invoke-virtual {p0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_1a
-    .catchall {:try_start_4 .. :try_end_1a} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p0
 
-    :catchall_1b
+    :catchall_0
     return-object v0
 .end method
 
 .method private static getPerformStopActivity3Params(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -227,12 +227,12 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_4
-    :try_start_4
+    :cond_0
+    :try_start_0
     const-string v1, "performStopActivity"
 
     const/4 v2, 0x3
@@ -264,17 +264,17 @@
 
     .line 307
     invoke-virtual {p0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_1f
-    .catchall {:try_start_4 .. :try_end_1f} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p0
 
-    :catchall_20
+    :catchall_0
     return-object v0
 .end method
 
 .method private static getRequestRelaunchActivityMethod(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -291,14 +291,14 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_1
 
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_a
-    :try_start_a
+    :cond_0
+    :try_start_0
     const-string v0, "requestRelaunchActivity"
 
     const/16 v2, 0x9
@@ -366,19 +366,19 @@
 
     .line 348
     invoke-virtual {p0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_45
-    .catchall {:try_start_a .. :try_end_45} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p0
 
-    :catchall_46
-    :cond_46
-    :goto_46
+    :catchall_0
+    :cond_1
+    :goto_0
     return-object v1
 .end method
 
 .method private static getTokenField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 2
 
     .line 367
     :try_start_0
@@ -394,19 +394,19 @@
 
     .line 368
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_c
-    .catchall {:try_start_0 .. :try_end_c} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_d
+    :catchall_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method private static needsRelaunchCall()Z
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -414,31 +414,31 @@
 .end method
 
 .method protected static queueOnStopIfNecessary(Ljava/lang/Object;ILandroid/app/Activity;)Z
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 256
-    :try_start_1
+    :try_start_0
     sget-object v1, Landroidx/core/app/ActivityRecreator;->tokenField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v1, p2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-ne v1, p0, :cond_22
+    if-ne v1, p0, :cond_1
 
     .line 258
     invoke-virtual {p2}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    if-eq p0, p1, :cond_10
+    if-eq p0, p1, :cond_0
 
-    goto :goto_22
+    goto :goto_0
 
     .line 264
-    :cond_10
+    :cond_0
     sget-object p0, Landroidx/core/app/ActivityRecreator;->mainThreadField:Ljava/lang/reflect/Field;
 
     invoke-virtual {p0, p2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -453,18 +453,18 @@
     invoke-direct {p2, p0, v1}, Landroidx/core/app/ActivityRecreator$3;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
-    :try_end_20
-    .catchall {:try_start_1 .. :try_end_20} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     return v0
 
-    :catchall_23
+    :catchall_0
     move-exception p0
 
     const-string p1, "ActivityRecreator"
@@ -478,7 +478,7 @@
 .end method
 
 .method static recreate(Landroid/app/Activity;)Z
-    .registers 1
+    .locals 0
 
     .line 109
     invoke-virtual {p0}, Landroid/app/Activity;->recreate()V

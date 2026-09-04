@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 545
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method private static getAllBluetoothDeviceTypes()Lcom/google/common/collect/ImmutableSet;
-    .registers 6
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -74,7 +74,7 @@
 
     const/16 v3, 0x1f
 
-    if-lt v2, v3, :cond_38
+    if-lt v2, v3, :cond_0
 
     new-array v1, v1, [Ljava/lang/Integer;
 
@@ -99,12 +99,12 @@
     invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableSet$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
 
     .line 582
-    :cond_38
+    :cond_0
     sget v1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x21
 
-    if-lt v1, v2, :cond_47
+    if-lt v1, v2, :cond_1
 
     const/16 v1, 0x1e
 
@@ -116,7 +116,7 @@
     invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
 
     .line 585
-    :cond_47
+    :cond_1
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet$Builder;->build()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -125,13 +125,13 @@
 .end method
 
 .method public static isBluetoothConnected(Landroid/media/AudioManager;Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     .line 553
     invoke-static {p0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -146,9 +146,9 @@
 
     move-result-object p0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     new-array p0, v1, [Landroid/media/AudioDeviceInfo;
 
     .line 554
@@ -157,7 +157,7 @@
     aput-object p1, p0, v0
 
     .line 555
-    :goto_16
+    :goto_0
     invoke-static {}, Landroidx/media3/exoplayer/audio/AudioCapabilities$Api23;->getAllBluetoothDeviceTypes()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object p1
@@ -167,8 +167,8 @@
 
     move v3, v0
 
-    :goto_1c
-    if-ge v3, v2, :cond_32
+    :goto_1
+    if-ge v3, v2, :cond_2
 
     aget-object v4, p0, v3
 
@@ -185,15 +185,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_1
 
     return v1
 
-    :cond_2f
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v0
 .end method

@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 462
     new-instance v0, Landroidx/datastore/preferences/protobuf/Duration;
@@ -69,7 +69,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;-><init>()V
@@ -78,7 +78,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 1
+    .locals 1
 
     .line 57
     sget-object v0, Landroidx/datastore/preferences/protobuf/Duration;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Duration;
@@ -87,7 +87,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/datastore/preferences/protobuf/Duration;J)V
-    .registers 3
+    .locals 0
 
     .line 57
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Duration;->setSeconds(J)V
@@ -96,7 +96,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/datastore/preferences/protobuf/Duration;)V
-    .registers 1
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Duration;->clearSeconds()V
@@ -105,7 +105,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/datastore/preferences/protobuf/Duration;I)V
-    .registers 2
+    .locals 0
 
     .line 57
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Duration;->setNanos(I)V
@@ -114,7 +114,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/datastore/preferences/protobuf/Duration;)V
-    .registers 1
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Duration;->clearNanos()V
@@ -123,7 +123,7 @@
 .end method
 
 .method private clearNanos()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -134,7 +134,7 @@
 .end method
 
 .method private clearSeconds()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -145,7 +145,7 @@
 .end method
 
 .method public static getDefaultInstance()Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 1
+    .locals 1
 
     .line 471
     sget-object v0, Landroidx/datastore/preferences/protobuf/Duration;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Duration;
@@ -154,7 +154,7 @@
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/protobuf/Duration$Builder;
-    .registers 1
+    .locals 1
 
     .line 236
     sget-object v0, Landroidx/datastore/preferences/protobuf/Duration;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Duration;
@@ -169,7 +169,7 @@
 .end method
 
 .method public static newBuilder(Landroidx/datastore/preferences/protobuf/Duration;)Landroidx/datastore/preferences/protobuf/Duration$Builder;
-    .registers 2
+    .locals 1
 
     .line 239
     sget-object v0, Landroidx/datastore/preferences/protobuf/Duration;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Duration;
@@ -184,7 +184,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -204,7 +204,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -224,7 +224,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -244,7 +244,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -264,7 +264,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -284,7 +284,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -304,7 +304,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -324,7 +324,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -344,7 +344,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -364,7 +364,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -384,7 +384,7 @@
 .end method
 
 .method public static parseFrom([B)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -404,7 +404,7 @@
 .end method
 
 .method public static parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Duration;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -424,7 +424,7 @@
 .end method
 
 .method public static parser()Landroidx/datastore/preferences/protobuf/Parser;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -445,7 +445,7 @@
 .end method
 
 .method private setNanos(I)V
-    .registers 2
+    .locals 0
 
     .line 142
     iput p1, p0, Landroidx/datastore/preferences/protobuf/Duration;->nanos_:I
@@ -454,7 +454,7 @@
 .end method
 
 .method private setSeconds(J)V
-    .registers 3
+    .locals 0
 
     .line 92
     iput-wide p1, p0, Landroidx/datastore/preferences/protobuf/Duration;->seconds_:J
@@ -465,7 +465,7 @@
 
 # virtual methods
 .method protected final dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 412
     sget-object p2, Landroidx/datastore/preferences/protobuf/Duration$1;->$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke:[I
@@ -480,7 +480,7 @@
 
     const/4 p3, 0x0
 
-    packed-switch p1, :pswitch_data_58
+    packed-switch p1, :pswitch_data_0
 
     .line 455
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -489,11 +489,11 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     return-object p3
 
     .line 449
-    :pswitch_14
+    :pswitch_1
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
@@ -501,10 +501,10 @@
     return-object p1
 
     .line 434
-    :pswitch_19
+    :pswitch_2
     sget-object p1, Landroidx/datastore/preferences/protobuf/Duration;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_1
 
     .line 436
     const-class p2, Landroidx/datastore/preferences/protobuf/Duration;
@@ -512,10 +512,10 @@
     monitor-enter p2
 
     .line 437
-    :try_start_20
+    :try_start_0
     sget-object p1, Landroidx/datastore/preferences/protobuf/Duration;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_0
 
     .line 439
     new-instance p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
@@ -528,31 +528,31 @@
     sput-object p1, Landroidx/datastore/preferences/protobuf/Duration;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
     .line 444
-    :cond_2d
+    :cond_0
     monitor-exit p2
 
-    goto :goto_32
+    goto :goto_0
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
-    :try_end_31
-    .catchall {:try_start_20 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-object p1
 
     .line 431
-    :pswitch_33
+    :pswitch_3
     sget-object p1, Landroidx/datastore/preferences/protobuf/Duration;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Duration;
 
     return-object p1
 
-    :pswitch_36
+    :pswitch_4
     const/4 p1, 0x2
 
     new-array p1, p1, [Ljava/lang/Object;
@@ -579,7 +579,7 @@
     return-object p1
 
     .line 417
-    :pswitch_4b
+    :pswitch_5
     new-instance p1, Landroidx/datastore/preferences/protobuf/Duration$Builder;
 
     invoke-direct {p1, p3}, Landroidx/datastore/preferences/protobuf/Duration$Builder;-><init>(Landroidx/datastore/preferences/protobuf/Duration$1;)V
@@ -587,7 +587,7 @@
     return-object p1
 
     .line 414
-    :pswitch_51
+    :pswitch_6
     new-instance p1, Landroidx/datastore/preferences/protobuf/Duration;
 
     invoke-direct {p1}, Landroidx/datastore/preferences/protobuf/Duration;-><init>()V
@@ -596,20 +596,20 @@
 
     nop
 
-    :pswitch_data_58
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_51
-        :pswitch_4b
-        :pswitch_36
-        :pswitch_33
-        :pswitch_19
-        :pswitch_14
-        :pswitch_13
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getNanos()I
-    .registers 2
+    .locals 1
 
     .line 125
     iget v0, p0, Landroidx/datastore/preferences/protobuf/Duration;->nanos_:I
@@ -618,7 +618,7 @@
 .end method
 
 .method public getSeconds()J
-    .registers 3
+    .locals 2
 
     .line 78
     iget-wide v0, p0, Landroidx/datastore/preferences/protobuf/Duration;->seconds_:J

@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 106
     new-instance v0, Landroidx/media3/extractor/metadata/icy/IcyInfo$1;
@@ -41,7 +41,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method public constructor <init>([BLjava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -105,16 +105,16 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_4
-    if-eqz p1, :cond_1c
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 72
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -125,12 +125,12 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 75
-    :cond_11
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/icy/IcyInfo;
 
     .line 77
@@ -144,15 +144,15 @@
 
     return p1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyInfo;->rawMetadata:[B
@@ -165,22 +165,22 @@
 .end method
 
 .method public populateMediaMetadata(Landroidx/media3/common/MediaMetadata$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyInfo;->title:Ljava/lang/String;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 63
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setTitle(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -223,7 +223,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 96
     iget-object p2, p0, Landroidx/media3/extractor/metadata/icy/IcyInfo;->rawMetadata:[B

@@ -128,7 +128,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$AhFP8_Da86SSkED5yzGwK0UeGmw(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;Landroid/os/Message;)Z
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->handleMessage(Landroid/os/Message;)Z
 
@@ -138,7 +138,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 70
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -162,7 +162,7 @@
 .end method
 
 .method public varargs constructor <init>(ZLandroidx/media3/exoplayer/source/ShuffleOrder;[Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -173,7 +173,7 @@
 .end method
 
 .method public varargs constructor <init>(ZZLandroidx/media3/exoplayer/source/ShuffleOrder;[Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 8
+    .locals 3
 
     .line 141
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;-><init>()V
@@ -183,8 +183,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_f
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget-object v2, p4, v1
 
@@ -193,21 +193,21 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 145
-    :cond_f
+    :cond_0
     invoke-interface {p3}, Landroidx/media3/exoplayer/source/ShuffleOrder;->getLength()I
 
     move-result v0
 
-    if-lez v0, :cond_19
+    if-lez v0, :cond_1
 
     invoke-interface {p3}, Landroidx/media3/exoplayer/source/ShuffleOrder;->cloneAndClear()Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     move-result-object p3
 
-    :cond_19
+    :cond_1
     iput-object p3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     .line 146
@@ -276,7 +276,7 @@
 .end method
 
 .method public varargs constructor <init>(Z[Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 5
+    .locals 2
 
     .line 111
     new-instance v0, Landroidx/media3/exoplayer/source/ShuffleOrder$DefaultShuffleOrder;
@@ -291,7 +291,7 @@
 .end method
 
 .method public varargs constructor <init>([Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -302,7 +302,7 @@
 .end method
 
 .method static synthetic access$100()Landroidx/media3/common/MediaItem;
-    .registers 1
+    .locals 1
 
     .line 61
     sget-object v0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->PLACEHOLDER_MEDIA_ITEM:Landroidx/media3/common/MediaItem;
@@ -311,9 +311,9 @@
 .end method
 
 .method private addMediaSourceInternal(ILandroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;)V
-    .registers 5
+    .locals 2
 
-    if-lez p1, :cond_1d
+    if-lez p1, :cond_0
 
     .line 790
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
@@ -346,16 +346,16 @@
     .line 792
     invoke-virtual {p2, p1, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->reset(II)V
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
     .line 795
     invoke-virtual {p2, p1, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->reset(II)V
 
     .line 797
-    :goto_21
+    :goto_0
     iget-object v0, p2, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MaskingMediaSource;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->getTimeline()Landroidx/media3/common/Timeline;
@@ -393,7 +393,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
 
@@ -401,25 +401,25 @@
 
     move-result p1
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_1
 
     .line 803
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_57
+    goto :goto_1
 
     .line 805
-    :cond_54
+    :cond_1
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->disableChildSource(Ljava/lang/Object;)V
 
-    :goto_57
+    :goto_1
     return-void
 .end method
 
 .method private addMediaSourcesInternal(ILjava/util/Collection;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -434,12 +434,12 @@
 
     move-result-object p2
 
-    :goto_4
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -454,14 +454,14 @@
 
     move p1, v1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method private addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -478,32 +478,32 @@
 
     const/4 v1, 0x1
 
-    if-nez p3, :cond_6
+    if-nez p3, :cond_0
 
     move v2, v1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v0
 
-    :goto_7
-    if-nez p4, :cond_b
+    :goto_0
+    if-nez p4, :cond_1
 
     move v3, v1
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
+    :cond_1
     move v3, v0
 
-    :goto_c
-    if-ne v2, v3, :cond_f
+    :goto_1
+    if-ne v2, v3, :cond_2
 
     move v0, v1
 
     .line 588
-    :cond_f
+    :cond_2
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 589
@@ -514,12 +514,12 @@
 
     move-result-object v2
 
-    :goto_18
+    :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -530,10 +530,10 @@
     .line 591
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_18
+    goto :goto_2
 
     .line 593
-    :cond_28
+    :cond_3
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-interface {p2}, Ljava/util/Collection;->size()I
@@ -547,12 +547,12 @@
 
     move-result-object v3
 
-    :goto_35
+    :goto_3
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_4
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -569,22 +569,22 @@
 
     invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_35
+    goto :goto_3
 
     .line 597
-    :cond_4c
+    :cond_4
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v3, p1, v2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_5
 
     .line 598
     invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p2
 
-    if-nez p2, :cond_6a
+    if-nez p2, :cond_5
 
     .line 600
     invoke-direct {p0, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
@@ -604,23 +604,23 @@
     .line 603
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    goto :goto_71
+    goto :goto_4
 
-    :cond_6a
-    if-eqz p4, :cond_71
+    :cond_5
+    if-eqz p4, :cond_6
 
-    if-eqz p3, :cond_71
+    if-eqz p3, :cond_6
 
     .line 605
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_71
-    :goto_71
+    :cond_6
+    :goto_4
     return-void
 .end method
 
 .method private correctOffsets(III)V
-    .registers 6
+    .locals 2
 
     .line 848
     :goto_0
@@ -630,7 +630,7 @@
 
     move-result v0
 
-    if-ge p1, v0, :cond_1d
+    if-ge p1, v0, :cond_0
 
     .line 849
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
@@ -659,21 +659,21 @@
 
     goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method private createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
-    .registers 4
+    .locals 1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_1
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 685
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     invoke-direct {v0, p1, p2}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;-><init>(Landroid/os/Handler;Ljava/lang/Runnable;)V
@@ -685,15 +685,15 @@
 
     return-object v0
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method private disableUnusedMediaSources()V
-    .registers 4
+    .locals 3
 
     .line 869
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
@@ -703,13 +703,13 @@
     move-result-object v0
 
     .line 870
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 871
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -725,7 +725,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     .line 873
     invoke-virtual {p0, v1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->disableChildSource(Ljava/lang/Object;)V
@@ -733,14 +733,14 @@
     .line 874
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method private declared-synchronized dispatchOnCompletionActions(Ljava/util/Set;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -753,17 +753,17 @@
     monitor-enter p0
 
     .line 775
-    :try_start_1
+    :try_start_0
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_5
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -774,22 +774,22 @@
     .line 776
     invoke-virtual {v1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;->dispatch()V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 778
-    :cond_15
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->pendingOnCompletionActions:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 779
     monitor-exit p0
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -798,7 +798,7 @@
 .end method
 
 .method private enableMediaSource(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;)V
-    .registers 3
+    .locals 1
 
     .line 864
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
@@ -812,7 +812,7 @@
 .end method
 
 .method private static getChildPeriodUid(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 886
     invoke-static {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->getChildPeriodUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
@@ -823,7 +823,7 @@
 .end method
 
 .method private static getMediaSourceHolderUid(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 881
     invoke-static {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->getChildTimelineUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
@@ -834,7 +834,7 @@
 .end method
 
 .method private static getPeriodUid(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 890
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->uid:Ljava/lang/Object;
@@ -847,7 +847,7 @@
 .end method
 
 .method private getPlaybackThreadHandlerOnPlaybackThread()Landroid/os/Handler;
-    .registers 2
+    .locals 1
 
     .line 770
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
@@ -862,14 +862,14 @@
 .end method
 
 .method private handleMessage(Landroid/os/Message;)Z
-    .registers 6
+    .locals 4
 
     .line 694
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
-    packed-switch v0, :pswitch_data_ce
+    packed-switch v0, :pswitch_data_0
 
     .line 737
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -879,7 +879,7 @@
     throw p1
 
     .line 733
-    :pswitch_c
+    :pswitch_0
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -891,16 +891,16 @@
     .line 734
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->dispatchOnCompletionActions(Ljava/util/Set;)V
 
-    goto/16 :goto_cd
+    goto/16 :goto_2
 
     .line 730
-    :pswitch_19
+    :pswitch_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->updateTimelineAndScheduleOnCompletionActions()V
 
-    goto/16 :goto_cd
+    goto/16 :goto_2
 
     .line 724
-    :pswitch_1e
+    :pswitch_2
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     .line 725
@@ -922,10 +922,10 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
-    goto/16 :goto_cd
+    goto/16 :goto_2
 
     .line 717
-    :pswitch_33
+    :pswitch_3
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -982,10 +982,10 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
-    goto :goto_cd
+    goto :goto_2
 
     .line 703
-    :pswitch_69
+    :pswitch_4
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1006,7 +1006,7 @@
 
     move-result v2
 
-    if-nez v0, :cond_8e
+    if-nez v0, :cond_0
 
     .line 706
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -1015,7 +1015,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_8e
+    if-ne v2, v3, :cond_0
 
     .line 707
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -1026,10 +1026,10 @@
 
     iput-object v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
-    goto :goto_96
+    goto :goto_0
 
     .line 709
-    :cond_8e
+    :cond_0
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     invoke-interface {v3, v0, v2}, Landroidx/media3/exoplayer/source/ShuffleOrder;->cloneAndRemove(II)Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -1038,29 +1038,29 @@
 
     iput-object v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
-    :goto_96
+    :goto_0
     sub-int/2addr v2, v1
 
-    :goto_97
-    if-lt v2, v0, :cond_9f
+    :goto_1
+    if-lt v2, v0, :cond_1
 
     .line 712
     invoke-direct {p0, v2}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removeMediaSourceInternal(I)V
 
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_97
+    goto :goto_1
 
     .line 714
-    :cond_9f
+    :cond_1
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MessageData;->onCompletionAction:Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
-    goto :goto_cd
+    goto :goto_2
 
     .line 696
-    :pswitch_a5
+    :pswitch_5
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     .line 697
@@ -1103,27 +1103,27 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
-    :goto_cd
+    :goto_2
     return v1
 
-    :pswitch_data_ce
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_a5
-        :pswitch_69
-        :pswitch_33
-        :pswitch_1e
-        :pswitch_19
-        :pswitch_c
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private maybeReleaseChildSource(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;)V
-    .registers 3
+    .locals 1
 
     .line 857
     iget-boolean v0, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->isRemoved:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     iget-object v0, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
@@ -1131,7 +1131,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 858
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
@@ -1141,12 +1141,12 @@
     .line 859
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->releaseChildSource(Ljava/lang/Object;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method private moveMediaSourceInternal(II)V
-    .registers 7
+    .locals 4
 
     .line 833
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
@@ -1180,8 +1180,8 @@
 
     invoke-interface {v3, p2, p1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    :goto_1d
-    if-gt v0, v1, :cond_39
+    :goto_0
+    if-gt v0, v1, :cond_0
 
     .line 838
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
@@ -1213,48 +1213,48 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     return-void
 .end method
 
 .method private movePublicMediaSource(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 9
+    .locals 4
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-nez p3, :cond_6
+    if-nez p3, :cond_0
 
     move v2, v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v1
 
-    :goto_7
-    if-nez p4, :cond_b
+    :goto_0
+    if-nez p4, :cond_1
 
     move v3, v0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
+    :cond_1
     move v3, v1
 
-    :goto_c
-    if-ne v2, v3, :cond_f
+    :goto_1
+    if-ne v2, v3, :cond_2
 
-    goto :goto_10
+    goto :goto_2
 
-    :cond_f
+    :cond_2
     move v0, v1
 
     .line 635
-    :goto_10
+    :goto_2
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 636
@@ -1271,7 +1271,7 @@
 
     invoke-interface {v1, p2, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3
 
     .line 640
     invoke-direct {p0, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
@@ -1297,23 +1297,23 @@
     .line 643
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    goto :goto_3f
+    goto :goto_3
 
-    :cond_38
-    if-eqz p4, :cond_3f
+    :cond_3
+    if-eqz p4, :cond_4
 
-    if-eqz p3, :cond_3f
+    if-eqz p3, :cond_4
 
     .line 645
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_3f
-    :goto_3f
+    :cond_4
+    :goto_3
     return-void
 .end method
 
 .method private removeMediaSourceInternal(I)V
-    .registers 5
+    .locals 3
 
     .line 824
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
@@ -1361,41 +1361,41 @@
 .end method
 
 .method private removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 9
+    .locals 4
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-nez p3, :cond_6
+    if-nez p3, :cond_0
 
     move v2, v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v1
 
-    :goto_7
-    if-nez p4, :cond_b
+    :goto_0
+    if-nez p4, :cond_1
 
     move v3, v0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
+    :cond_1
     move v3, v1
 
-    :goto_c
-    if-ne v2, v3, :cond_f
+    :goto_1
+    if-ne v2, v3, :cond_2
 
-    goto :goto_10
+    goto :goto_2
 
-    :cond_f
+    :cond_2
     move v0, v1
 
     .line 615
-    :goto_10
+    :goto_2
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 616
@@ -1406,7 +1406,7 @@
 
     invoke-static {v1, p1, p2}, Landroidx/media3/common/util/Util;->removeRange(Ljava/util/List;II)V
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_3
 
     .line 620
     invoke-direct {p0, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
@@ -1432,23 +1432,23 @@
     .line 623
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    goto :goto_39
+    goto :goto_3
 
-    :cond_32
-    if-eqz p4, :cond_39
+    :cond_3
+    if-eqz p4, :cond_4
 
-    if-eqz p3, :cond_39
+    if-eqz p3, :cond_4
 
     .line 625
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_39
-    :goto_39
+    :cond_4
+    :goto_3
     return-void
 .end method
 
 .method private scheduleTimelineUpdate()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1459,12 +1459,12 @@
 .end method
 
 .method private scheduleTimelineUpdate(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
-    .registers 4
+    .locals 2
 
     .line 747
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->timelineUpdateScheduled:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 748
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->getPlaybackThreadHandlerOnPlaybackThread()Landroid/os/Handler;
@@ -1484,60 +1484,60 @@
     .line 749
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->timelineUpdateScheduled:Z
 
-    :cond_13
-    if-eqz p1, :cond_1a
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 752
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->nextTimelineUpdateOnCompletionActions:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :cond_1a
+    :cond_1
     return-void
 .end method
 
 .method private setPublicShuffleOrder(Landroidx/media3/exoplayer/source/ShuffleOrder;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 8
+    .locals 4
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     move v2, v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v1
 
-    :goto_7
-    if-nez p3, :cond_b
+    :goto_0
+    if-nez p3, :cond_1
 
     move v3, v0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
+    :cond_1
     move v3, v1
 
-    :goto_c
-    if-ne v2, v3, :cond_f
+    :goto_1
+    if-ne v2, v3, :cond_2
 
-    goto :goto_10
+    goto :goto_2
 
-    :cond_f
+    :cond_2
     move v0, v1
 
     .line 652
-    :goto_10
+    :goto_2
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 653
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     .line 655
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->getSize()I
@@ -1549,7 +1549,7 @@
 
     move-result v3
 
-    if-eq v3, v2, :cond_29
+    if-eq v3, v2, :cond_3
 
     .line 659
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/ShuffleOrder;->cloneAndClear()Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -1562,7 +1562,7 @@
     move-result-object p1
 
     .line 663
-    :cond_29
+    :cond_3
     invoke-direct {p0, p2, p3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     move-result-object p2
@@ -1582,37 +1582,37 @@
     .line 668
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    goto :goto_4e
+    goto :goto_3
 
     .line 671
-    :cond_3b
+    :cond_4
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/ShuffleOrder;->getLength()I
 
     move-result v0
 
-    if-lez v0, :cond_45
+    if-lez v0, :cond_5
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/ShuffleOrder;->cloneAndClear()Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     move-result-object p1
 
-    :cond_45
+    :cond_5
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
-    if-eqz p3, :cond_4e
+    if-eqz p3, :cond_6
 
-    if-eqz p2, :cond_4e
+    if-eqz p2, :cond_6
 
     .line 673
     invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_4e
-    :goto_4e
+    :cond_6
+    :goto_3
     return-void
 .end method
 
 .method private updateMediaSourceInternal(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;Landroidx/media3/common/Timeline;)V
-    .registers 5
+    .locals 2
 
     .line 810
     iget v0, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
@@ -1625,7 +1625,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_2c
+    if-ge v0, v1, :cond_0
 
     .line 811
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
@@ -1653,7 +1653,7 @@
 
     sub-int/2addr p2, v0
 
-    if-eqz p2, :cond_2c
+    if-eqz p2, :cond_0
 
     .line 816
     iget p1, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
@@ -1665,14 +1665,14 @@
     invoke-direct {p0, p1, v0, p2}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->correctOffsets(III)V
 
     .line 820
-    :cond_2c
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->scheduleTimelineUpdate()V
 
     return-void
 .end method
 
 .method private updateTimelineAndScheduleOnCompletionActions()V
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -1723,12 +1723,12 @@
 
 # virtual methods
 .method public declared-synchronized addMediaSource(ILandroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 4
+    .locals 1
 
     monitor-enter p0
 
     .line 207
-    :try_start_1
+    :try_start_0
     invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p2
@@ -1737,15 +1737,15 @@
 
     .line 205
     invoke-direct {p0, p1, p2, v0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 210
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1754,27 +1754,27 @@
 .end method
 
 .method public declared-synchronized addMediaSource(ILandroidx/media3/exoplayer/source/MediaSource;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 0
 
     monitor-enter p0
 
     .line 225
-    :try_start_1
+    :try_start_0
     invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p2
 
     .line 224
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 226
     monitor-exit p0
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1783,12 +1783,12 @@
 .end method
 
 .method public declared-synchronized addMediaSource(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 181
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1796,15 +1796,15 @@
     move-result v0
 
     invoke-virtual {p0, v0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addMediaSource(ILandroidx/media3/exoplayer/source/MediaSource;)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 182
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1813,12 +1813,12 @@
 .end method
 
 .method public declared-synchronized addMediaSource(Landroidx/media3/exoplayer/source/MediaSource;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 1
 
     monitor-enter p0
 
     .line 194
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1826,15 +1826,15 @@
     move-result v0
 
     invoke-virtual {p0, v0, p1, p2, p3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addMediaSource(ILandroidx/media3/exoplayer/source/MediaSource;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 195
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1843,7 +1843,7 @@
 .end method
 
 .method public declared-synchronized addMediaSources(ILjava/util/Collection;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1858,17 +1858,17 @@
     const/4 v0, 0x0
 
     .line 266
-    :try_start_2
+    :try_start_0
     invoke-direct {p0, p1, p2, v0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_5
-    .catchall {:try_start_2 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 267
     monitor-exit p0
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1877,7 +1877,7 @@
 .end method
 
 .method public declared-synchronized addMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1893,17 +1893,17 @@
     monitor-enter p0
 
     .line 285
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 286
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1912,7 +1912,7 @@
 .end method
 
 .method public declared-synchronized addMediaSources(Ljava/util/Collection;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1925,7 +1925,7 @@
     monitor-enter p0
 
     .line 235
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     .line 236
@@ -1937,15 +1937,15 @@
 
     .line 235
     invoke-direct {p0, v0, p1, v1, v1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 240
     monitor-exit p0
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1954,7 +1954,7 @@
 .end method
 
 .method public declared-synchronized addMediaSources(Ljava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1970,7 +1970,7 @@
     monitor-enter p0
 
     .line 254
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1978,15 +1978,15 @@
     move-result v0
 
     invoke-direct {p0, v0, p1, p2, p3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 255
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1995,12 +1995,12 @@
 .end method
 
 .method public declared-synchronized clear()V
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 403
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->getSize()I
 
     move-result v0
@@ -2008,15 +2008,15 @@
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removeMediaSourceRange(II)V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 404
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2025,12 +2025,12 @@
 .end method
 
 .method public declared-synchronized clear(Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 2
 
     monitor-enter p0
 
     .line 414
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->getSize()I
 
     move-result v0
@@ -2038,15 +2038,15 @@
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1, v0, p1, p2}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removeMediaSourceRange(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 415
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2055,7 +2055,7 @@
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 8
+    .locals 3
 
     .line 485
     iget-object v0, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -2084,7 +2084,7 @@
 
     check-cast v0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_0
 
     .line 490
     new-instance v0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;
@@ -2110,7 +2110,7 @@
     invoke-virtual {p0, v0, v1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->prepareChildSource(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;)V
 
     .line 494
-    :cond_2f
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->enableMediaSource(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;)V
 
     .line 495
@@ -2138,7 +2138,7 @@
 .end method
 
 .method protected disableInternal()V
-    .registers 2
+    .locals 1
 
     .line 517
     invoke-super {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->disableInternal()V
@@ -2152,18 +2152,18 @@
 .end method
 
 .method protected enableInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public declared-synchronized getInitialTimeline()Landroidx/media3/common/Timeline;
-    .registers 5
+    .locals 4
 
     monitor-enter p0
 
     .line 161
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/ShuffleOrder;->getLength()I
@@ -2176,7 +2176,7 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_21
+    if-eq v0, v1, :cond_0
 
     .line 164
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -2200,14 +2200,14 @@
 
     move-result-object v0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 166
-    :cond_21
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     .line 167
-    :goto_23
+    :goto_0
     new-instance v1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
@@ -2215,14 +2215,14 @@
     iget-boolean v3, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->isAtomic:Z
 
     invoke-direct {v1, v2, v0, v3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;-><init>(Ljava/util/Collection;Landroidx/media3/exoplayer/source/ShuffleOrder;Z)V
-    :try_end_2c
-    .catchall {:try_start_1 .. :try_end_2c} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v1
 
-    :catchall_2e
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2231,7 +2231,7 @@
 .end method
 
 .method public getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     .line 460
     sget-object v0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->PLACEHOLDER_MEDIA_ITEM:Landroidx/media3/common/MediaItem;
@@ -2240,19 +2240,19 @@
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 8
+    .locals 5
 
     const/4 v0, 0x0
 
     .line 557
-    :goto_1
+    :goto_0
     iget-object v1, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_27
+    if-ge v0, v1, :cond_1
 
     .line 560
     iget-object v1, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
@@ -2269,7 +2269,7 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
     .line 562
     iget-object v0, p2, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -2285,19 +2285,19 @@
 
     return-object p1
 
-    :cond_24
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method protected bridge synthetic getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 0
 
     .line 59
     check-cast p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;
@@ -2310,12 +2310,12 @@
 .end method
 
 .method public declared-synchronized getMediaSource(I)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 429
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2325,14 +2325,14 @@
     check-cast p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MaskingMediaSource;
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2341,25 +2341,25 @@
 .end method
 
 .method public declared-synchronized getSize()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 419
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_9
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2368,7 +2368,7 @@
 .end method
 
 .method protected getWindowIndexForChildWindowIndex(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;I)I
-    .registers 3
+    .locals 0
 
     .line 577
     iget p1, p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;->firstWindowIndexInChild:I
@@ -2379,7 +2379,7 @@
 .end method
 
 .method protected bridge synthetic getWindowIndexForChildWindowIndex(Ljava/lang/Object;I)I
-    .registers 3
+    .locals 0
 
     .line 59
     check-cast p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;
@@ -2392,7 +2392,7 @@
 .end method
 
 .method public isSingleWindow()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -2400,24 +2400,24 @@
 .end method
 
 .method public declared-synchronized moveMediaSource(II)V
-    .registers 4
+    .locals 1
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 380
-    :try_start_2
+    :try_start_0
     invoke-direct {p0, p1, p2, v0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->movePublicMediaSource(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_5
-    .catchall {:try_start_2 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 382
     monitor-exit p0
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2426,22 +2426,22 @@
 .end method
 
 .method public declared-synchronized moveMediaSource(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 0
 
     monitor-enter p0
 
     .line 398
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->movePublicMediaSource(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 399
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2450,7 +2450,7 @@
 .end method
 
 .method protected onChildSourceInfoRefreshed(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 0
 
     .line 545
     invoke-direct {p0, p1, p3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->updateMediaSourceInternal(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;Landroidx/media3/common/Timeline;)V
@@ -2459,7 +2459,7 @@
 .end method
 
 .method protected bridge synthetic onChildSourceInfoRefreshed(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 0
 
     .line 59
     check-cast p1, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;
@@ -2470,12 +2470,12 @@
 .end method
 
 .method protected declared-synchronized prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
     .line 466
-    :try_start_1
+    :try_start_0
     invoke-super {p0, p1}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
 
     .line 467
@@ -2496,15 +2496,15 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 469
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->updateTimelineAndScheduleOnCompletionActions()V
 
-    goto :goto_33
+    goto :goto_0
 
     .line 471
-    :cond_1c
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
@@ -2528,16 +2528,16 @@
 
     .line 473
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->scheduleTimelineUpdate()V
-    :try_end_33
-    .catchall {:try_start_1 .. :try_end_33} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 475
-    :goto_33
+    :goto_0
     monitor-exit p0
 
     return-void
 
-    :catchall_35
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2546,7 +2546,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 4
+    .locals 2
 
     .line 505
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
@@ -2585,25 +2585,25 @@
 
     move-result p1
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_0
 
     .line 510
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->disableUnusedMediaSources()V
 
     .line 512
-    :cond_27
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->maybeReleaseChildSource(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$MediaSourceHolder;)V
 
     return-void
 .end method
 
 .method protected declared-synchronized releaseSourceInternal()V
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 523
-    :try_start_1
+    :try_start_0
     invoke-super {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->releaseSourceInternal()V
 
     .line 524
@@ -2633,7 +2633,7 @@
     .line 528
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -2643,7 +2643,7 @@
     .line 530
     iput-object v1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    :cond_25
+    :cond_0
     const/4 v0, 0x0
 
     .line 532
@@ -2658,15 +2658,15 @@
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->pendingOnCompletionActions:Ljava/util/Set;
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->dispatchOnCompletionActions(Ljava/util/Set;)V
-    :try_end_32
-    .catchall {:try_start_1 .. :try_end_32} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 535
     monitor-exit p0
 
     return-void
 
-    :catchall_34
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2675,12 +2675,12 @@
 .end method
 
 .method public declared-synchronized removeMediaSource(I)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 302
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->getMediaSource(I)Landroidx/media3/exoplayer/source/MediaSource;
 
     move-result-object v0
@@ -2691,15 +2691,15 @@
 
     .line 303
     invoke-direct {p0, p1, v1, v2, v2}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 304
     monitor-exit p0
 
     return-object v0
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2708,12 +2708,12 @@
 .end method
 
 .method public declared-synchronized removeMediaSource(ILandroid/os/Handler;Ljava/lang/Runnable;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 6
+    .locals 2
 
     monitor-enter p0
 
     .line 325
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->getMediaSource(I)Landroidx/media3/exoplayer/source/MediaSource;
 
     move-result-object v0
@@ -2722,15 +2722,15 @@
 
     .line 326
     invoke-direct {p0, p1, v1, p2, p3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 327
     monitor-exit p0
 
     return-object v0
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2739,24 +2739,24 @@
 .end method
 
 .method public declared-synchronized removeMediaSourceRange(II)V
-    .registers 4
+    .locals 1
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 345
-    :try_start_2
+    :try_start_0
     invoke-direct {p0, p1, p2, v0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_5
-    .catchall {:try_start_2 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 347
     monitor-exit p0
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2765,22 +2765,22 @@
 .end method
 
 .method public declared-synchronized removeMediaSourceRange(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 0
 
     monitor-enter p0
 
     .line 368
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 369
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2789,24 +2789,24 @@
 .end method
 
 .method public declared-synchronized setShuffleOrder(Landroidx/media3/exoplayer/source/ShuffleOrder;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 438
-    :try_start_2
+    :try_start_0
     invoke-direct {p0, p1, v0, v0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->setPublicShuffleOrder(Landroidx/media3/exoplayer/source/ShuffleOrder;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_5
-    .catchall {:try_start_2 .. :try_end_5} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 439
     monitor-exit p0
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2815,22 +2815,22 @@
 .end method
 
 .method public declared-synchronized setShuffleOrder(Landroidx/media3/exoplayer/source/ShuffleOrder;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    .registers 4
+    .locals 0
 
     monitor-enter p0
 
     .line 451
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->setPublicShuffleOrder(Landroidx/media3/exoplayer/source/ShuffleOrder;Landroid/os/Handler;Ljava/lang/Runnable;)V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 452
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

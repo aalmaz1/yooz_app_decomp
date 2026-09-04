@@ -43,12 +43,12 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 5
+    .locals 3
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-lez p1, :cond_13
+    if-lez p1, :cond_0
 
     .line 55
     iput p1, p0, Landroidx/collection/LruCache;->maxSize:I
@@ -69,7 +69,7 @@
     return-void
 
     .line 53
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "maxSize <= 0"
@@ -80,7 +80,7 @@
 .end method
 
 .method private safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)I"
@@ -92,12 +92,12 @@
 
     move-result v0
 
-    if-ltz v0, :cond_7
+    if-ltz v0, :cond_0
 
     return v0
 
     .line 261
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method protected create(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"
@@ -145,21 +145,21 @@
 .end method
 
 .method public final declared-synchronized createCount()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 322
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->createCount:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -168,7 +168,7 @@
 .end method
 
 .method protected entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZTK;TV;TV;)V"
@@ -179,7 +179,7 @@
 .end method
 
 .method public final evictAll()V
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -190,21 +190,21 @@
 .end method
 
 .method public final declared-synchronized evictionCount()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 336
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->evictionCount:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -213,27 +213,27 @@
 .end method
 
 .method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"
         }
     .end annotation
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_4
 
     .line 88
     monitor-enter p0
 
     .line 89
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 91
     iget p1, p0, Landroidx/collection/LruCache;->hitCount:I
@@ -248,7 +248,7 @@
     return-object v0
 
     .line 94
-    :cond_13
+    :cond_0
     iget v0, p0, Landroidx/collection/LruCache;->missCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -257,26 +257,26 @@
 
     .line 95
     monitor-exit p0
-    :try_end_1a
-    .catchall {:try_start_3 .. :try_end_1a} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 104
     invoke-virtual {p0, p1}, Landroidx/collection/LruCache;->create(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 109
-    :cond_22
+    :cond_1
     monitor-enter p0
 
     .line 110
-    :try_start_23
+    :try_start_1
     iget v1, p0, Landroidx/collection/LruCache;->createCount:I
 
     add-int/lit8 v1, v1, 0x1
@@ -290,17 +290,17 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .line 115
     iget-object v2, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_40
+    goto :goto_0
 
     .line 117
-    :cond_37
+    :cond_2
     iget v2, p0, Landroidx/collection/LruCache;->size:I
 
     invoke-direct {p0, p1, v0}, Landroidx/collection/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -312,12 +312,12 @@
     iput v2, p0, Landroidx/collection/LruCache;->size:I
 
     .line 119
-    :goto_40
+    :goto_0
     monitor-exit p0
-    :try_end_41
-    .catchall {:try_start_23 .. :try_end_41} :catchall_4e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_3
 
     const/4 v2, 0x0
 
@@ -327,37 +327,37 @@
     return-object v1
 
     .line 125
-    :cond_48
+    :cond_3
     iget p1, p0, Landroidx/collection/LruCache;->maxSize:I
 
     invoke-virtual {p0, p1}, Landroidx/collection/LruCache;->trimToSize(I)V
 
     return-object v0
 
-    :catchall_4e
+    :catchall_0
     move-exception p1
 
     .line 119
-    :try_start_4f
+    :try_start_2
     monitor-exit p0
-    :try_end_50
-    .catchall {:try_start_4f .. :try_end_50} :catchall_4e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
 
-    :catchall_51
+    :catchall_1
     move-exception p1
 
     .line 95
-    :try_start_52
+    :try_start_3
     monitor-exit p0
-    :try_end_53
-    .catchall {:try_start_52 .. :try_end_53} :catchall_51
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw p1
 
     .line 84
-    :cond_54
+    :cond_4
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "key == null"
@@ -368,21 +368,21 @@
 .end method
 
 .method public final declared-synchronized hitCount()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 307
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->hitCount:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -391,21 +391,21 @@
 .end method
 
 .method public final declared-synchronized maxSize()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 299
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->maxSize:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -414,21 +414,21 @@
 .end method
 
 .method public final declared-synchronized missCount()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 315
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->missCount:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -437,22 +437,22 @@
 .end method
 
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
         }
     .end annotation
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_2
 
     .line 143
     monitor-enter p0
 
     .line 144
-    :try_start_5
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->putCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -477,7 +477,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 148
     iget v1, p0, Landroidx/collection/LruCache;->size:I
@@ -491,12 +491,12 @@
     iput v1, p0, Landroidx/collection/LruCache;->size:I
 
     .line 150
-    :cond_25
+    :cond_0
     monitor-exit p0
-    :try_end_26
-    .catchall {:try_start_5 .. :try_end_26} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
@@ -504,26 +504,26 @@
     invoke-virtual {p0, v1, p1, v0, p2}, Landroidx/collection/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 156
-    :cond_2c
+    :cond_1
     iget p1, p0, Landroidx/collection/LruCache;->maxSize:I
 
     invoke-virtual {p0, p1}, Landroidx/collection/LruCache;->trimToSize(I)V
 
     return-object v0
 
-    :catchall_32
+    :catchall_0
     move-exception p1
 
     .line 150
-    :try_start_33
+    :try_start_1
     monitor-exit p0
-    :try_end_34
-    .catchall {:try_start_33 .. :try_end_34} :catchall_32
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 
     .line 139
-    :cond_35
+    :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "key == null || value == null"
@@ -534,21 +534,21 @@
 .end method
 
 .method public final declared-synchronized putCount()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 329
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->putCount:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -557,27 +557,27 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"
         }
     .end annotation
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_2
 
     .line 205
     monitor-enter p0
 
     .line 206
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 208
     iget v1, p0, Landroidx/collection/LruCache;->size:I
@@ -591,12 +591,12 @@
     iput v1, p0, Landroidx/collection/LruCache;->size:I
 
     .line 210
-    :cond_14
+    :cond_0
     monitor-exit p0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
@@ -605,22 +605,22 @@
     .line 213
     invoke-virtual {p0, v1, p1, v0, v2}, Landroidx/collection/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_1c
+    :cond_1
     return-object v0
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 210
-    :try_start_1e
+    :try_start_1
     monitor-exit p0
-    :try_end_1f
-    .catchall {:try_start_1e .. :try_end_1f} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 
     .line 201
-    :cond_20
+    :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "key == null"
@@ -631,40 +631,40 @@
 .end method
 
 .method public resize(I)V
-    .registers 3
+    .locals 1
 
-    if-lez p1, :cond_d
+    if-lez p1, :cond_0
 
     .line 69
     monitor-enter p0
 
     .line 70
-    :try_start_3
+    :try_start_0
     iput p1, p0, Landroidx/collection/LruCache;->maxSize:I
 
     .line 71
     monitor-exit p0
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 72
     invoke-virtual {p0, p1}, Landroidx/collection/LruCache;->trimToSize(I)V
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 71
-    :try_start_b
+    :try_start_1
     monitor-exit p0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 
     .line 66
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "maxSize <= 0"
@@ -675,21 +675,21 @@
 .end method
 
 .method public final declared-synchronized size()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 290
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->size:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -698,7 +698,7 @@
 .end method
 
 .method protected sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)I"
@@ -711,7 +711,7 @@
 .end method
 
 .method public final declared-synchronized snapshot()Ljava/util/Map;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -723,20 +723,20 @@
     monitor-enter p0
 
     .line 344
-    :try_start_1
+    :try_start_0
     new-instance v0, Ljava/util/LinkedHashMap;
 
     iget-object v1, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-direct {v0, v1}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -745,12 +745,12 @@
 .end method
 
 .method public final declared-synchronized toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     monitor-enter p0
 
     .line 348
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->hitCount:I
 
     iget v1, p0, Landroidx/collection/LruCache;->missCount:I
@@ -759,20 +759,20 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     mul-int/lit8 v0, v0, 0x64
 
     .line 349
     div-int/2addr v0, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v2
 
     .line 350
-    :goto_e
+    :goto_0
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v3, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]"
@@ -822,14 +822,14 @@
     invoke-static {v1, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
-    :try_end_3a
-    .catchall {:try_start_1 .. :try_end_3a} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_3c
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -838,17 +838,17 @@
 .end method
 
 .method public trimToSize(I)V
-    .registers 6
+    .locals 4
 
     .line 171
     :goto_0
     monitor-enter p0
 
     .line 172
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/collection/LruCache;->size:I
 
-    if-ltz v0, :cond_52
+    if-ltz v0, :cond_3
 
     iget-object v0, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
@@ -856,17 +856,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/collection/LruCache;->size:I
 
-    if-nez v0, :cond_52
+    if-nez v0, :cond_3
 
     .line 177
-    :cond_11
+    :cond_0
     iget v0, p0, Landroidx/collection/LruCache;->size:I
 
-    if-le v0, p1, :cond_50
+    if-le v0, p1, :cond_2
 
     iget-object v0, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
@@ -874,12 +874,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
-    goto :goto_50
+    goto :goto_1
 
     .line 181
-    :cond_1e
+    :cond_1
     iget-object v0, p0, Landroidx/collection/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
@@ -933,8 +933,8 @@
 
     .line 187
     monitor-exit p0
-    :try_end_4b
-    .catchall {:try_start_1 .. :try_end_4b} :catchall_73
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v2, 0x0
 
@@ -944,15 +944,15 @@
     goto :goto_0
 
     .line 178
-    :cond_50
-    :goto_50
-    :try_start_50
+    :cond_2
+    :goto_1
+    :try_start_1
     monitor-exit p0
 
     return-void
 
     .line 173
-    :cond_52
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -985,13 +985,13 @@
 
     throw p1
 
-    :catchall_73
+    :catchall_0
     move-exception p1
 
     .line 187
     monitor-exit p0
-    :try_end_75
-    .catchall {:try_start_50 .. :try_end_75} :catchall_73
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

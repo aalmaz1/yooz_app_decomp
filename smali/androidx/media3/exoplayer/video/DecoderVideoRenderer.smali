@@ -103,7 +103,7 @@
 
 # direct methods
 .method protected constructor <init>(JLandroid/os/Handler;Landroidx/media3/exoplayer/video/VideoRendererEventListener;I)V
-    .registers 7
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -166,7 +166,7 @@
 .end method
 
 .method private drainOutputBuffer(JJ)Z
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;,
@@ -179,7 +179,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_1
 
     .line 811
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
@@ -198,12 +198,12 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     return v1
 
     .line 815
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
 
     iget v2, v0, Landroidx/media3/exoplayer/DecoderCounters;->skippedOutputBufferCount:I
@@ -228,7 +228,7 @@
     iput v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->buffersInCodecCount:I
 
     .line 819
-    :cond_2c
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->isEndOfStream()Z
@@ -237,14 +237,14 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_3
 
     .line 820
     iget p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderReinitializationState:I
 
     const/4 p2, 0x2
 
-    if-ne p1, p2, :cond_41
+    if-ne p1, p2, :cond_2
 
     .line 822
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->releaseDecoder()V
@@ -252,10 +252,10 @@
     .line 823
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeInitDecoder()V
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 825
-    :cond_41
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
     invoke-virtual {p1}, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->release()V
@@ -268,16 +268,16 @@
     .line 827
     iput-boolean p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputStreamEnded:Z
 
-    :goto_4b
+    :goto_0
     return v1
 
     .line 832
-    :cond_4c
+    :cond_3
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->processOutputBuffer(JJ)Z
 
     move-result p1
 
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_4
 
     .line 834
     iget-object p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
@@ -295,12 +295,12 @@
     .line 835
     iput-object v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    :cond_61
+    :cond_4
     return p1
 .end method
 
 .method private feedInputBuffer()Z
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;,
@@ -313,25 +313,25 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_ae
+    if-eqz v0, :cond_8
 
     iget v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderReinitializationState:I
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_ae
+    if-eq v2, v3, :cond_8
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputStreamEnded:Z
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
-    goto/16 :goto_ae
+    goto/16 :goto_0
 
     .line 750
-    :cond_10
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_1
 
     .line 751
     invoke-interface {v0}, Landroidx/media3/decoder/Decoder;->dequeueInputBuffer()Ljava/lang/Object;
@@ -342,12 +342,12 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     return v1
 
     .line 757
-    :cond_1f
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -363,7 +363,7 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_41
+    if-ne v2, v5, :cond_2
 
     const/4 v2, 0x4
 
@@ -390,7 +390,7 @@
     return v1
 
     .line 766
-    :cond_41
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
 
     move-result-object v2
@@ -402,20 +402,20 @@
 
     const/4 v6, -0x5
 
-    if-eq v3, v6, :cond_aa
+    if-eq v3, v6, :cond_7
 
     const/4 v2, -0x4
 
-    if-eq v3, v2, :cond_59
+    if-eq v3, v2, :cond_4
 
     const/4 v0, -0x3
 
-    if-ne v3, v0, :cond_53
+    if-ne v3, v0, :cond_3
 
     return v1
 
     .line 794
-    :cond_53
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -423,12 +423,12 @@
     throw v0
 
     .line 774
-    :cond_59
+    :cond_4
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6f
+    if-eqz v2, :cond_5
 
     .line 775
     iput-boolean v5, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputStreamEnded:Z
@@ -450,10 +450,10 @@
     return v1
 
     .line 780
-    :cond_6f
+    :cond_5
     iget-boolean v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->waitingForFirstSampleInFormat:Z
 
-    if-eqz v2, :cond_84
+    if-eqz v2, :cond_6
 
     .line 781
     iget-object v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->formatQueue:Landroidx/media3/common/util/TimedValueQueue;
@@ -474,7 +474,7 @@
     iput-boolean v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->waitingForFirstSampleInFormat:Z
 
     .line 784
-    :cond_84
+    :cond_6
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->flip()V
 
     .line 785
@@ -521,79 +521,79 @@
     return v5
 
     .line 771
-    :cond_aa
+    :cond_7
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->onInputFormatChanged(Landroidx/media3/exoplayer/FormatHolder;)V
 
     return v5
 
-    :cond_ae
-    :goto_ae
+    :cond_8
+    :goto_0
     return v1
 .end method
 
 .method private hasOutput()Z
-    .registers 3
+    .locals 2
 
     .line 924
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputMode:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method private static isBufferLate(J)Z
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, -0x7530
 
     cmp-long p0, p0, v0
 
-    if-gez p0, :cond_8
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method private static isBufferVeryLate(J)Z
-    .registers 4
+    .locals 2
 
     const-wide/32 v0, -0x7a120
 
     cmp-long p0, p0, v0
 
-    if-gez p0, :cond_9
+    if-gez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_a
+    :goto_0
     return p0
 .end method
 
 .method private lowerFirstFrameState(I)V
-    .registers 3
+    .locals 1
 
     .line 957
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
@@ -608,7 +608,7 @@
 .end method
 
 .method private maybeInitDecoder()V
-    .registers 11
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -618,12 +618,12 @@
     .line 699
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 703
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->sourceDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setDecoderDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
@@ -631,14 +631,14 @@
     .line 706
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_2
 
     .line 707
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/DrmSession;->getCryptoConfig()Landroidx/media3/decoder/CryptoConfig;
 
     move-result-object v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_3
 
     .line 709
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
@@ -647,22 +647,22 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     return-void
 
-    :cond_1e
+    :cond_2
     const/4 v0, 0x0
 
-    :cond_1f
-    :goto_1f
+    :cond_3
+    :goto_0
     const/16 v1, 0xfa1
 
     .line 721
-    :try_start_21
+    :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -728,13 +728,13 @@
     add-int/lit8 v2, v2, 0x1
 
     iput v2, v0, Landroidx/media3/exoplayer/DecoderCounters;->decoderInitCount:I
-    :try_end_5e
-    .catch Landroidx/media3/decoder/DecoderException; {:try_start_21 .. :try_end_5e} :catch_67
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_21 .. :try_end_5e} :catch_5f
+    :try_end_0
+    .catch Landroidx/media3/decoder/DecoderException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_5f
+    :catch_0
     move-exception v0
 
     .line 737
@@ -746,7 +746,7 @@
 
     throw v0
 
-    :catch_67
+    :catch_1
     move-exception v0
 
     const-string v2, "DecoderVideoRenderer"
@@ -772,12 +772,12 @@
 .end method
 
 .method private maybeNotifyDroppedFrames()V
-    .registers 7
+    .locals 6
 
     .line 991
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->droppedFrames:I
 
-    if-lez v0, :cond_18
+    if-lez v0, :cond_0
 
     .line 992
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -804,19 +804,19 @@
     .line 996
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->droppedFrameAccumulationStartTimeMs:J
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method private maybeNotifyRenderedFirstFrame()V
-    .registers 3
+    .locals 2
 
     .line 961
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     .line 962
     iput v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
@@ -824,37 +824,37 @@
     .line 963
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->output:Ljava/lang/Object;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 964
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->eventDispatcher:Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v1, v0}, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->renderedFirstFrame(Ljava/lang/Object;)V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method private maybeNotifyVideoSizeChanged(II)V
-    .registers 4
+    .locals 1
 
     .line 976
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->reportedVideoSize:Landroidx/media3/common/VideoSize;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     iget v0, v0, Landroidx/media3/common/VideoSize;->width:I
 
-    if-ne v0, p1, :cond_e
+    if-ne v0, p1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->reportedVideoSize:Landroidx/media3/common/VideoSize;
 
     iget v0, v0, Landroidx/media3/common/VideoSize;->height:I
 
-    if-eq v0, p2, :cond_1a
+    if-eq v0, p2, :cond_1
 
     .line 979
-    :cond_e
+    :cond_0
     new-instance v0, Landroidx/media3/common/VideoSize;
 
     invoke-direct {v0, p1, p2}, Landroidx/media3/common/VideoSize;-><init>(II)V
@@ -866,52 +866,52 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->videoSizeChanged(Landroidx/media3/common/VideoSize;)V
 
-    :cond_1a
+    :cond_1
     return-void
 .end method
 
 .method private maybeRenotifyRenderedFirstFrame()V
-    .registers 3
+    .locals 2
 
     .line 970
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->output:Ljava/lang/Object;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 971
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->eventDispatcher:Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v1, v0}, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->renderedFirstFrame(Ljava/lang/Object;)V
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private maybeRenotifyVideoSizeChanged()V
-    .registers 3
+    .locals 2
 
     .line 985
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->reportedVideoSize:Landroidx/media3/common/VideoSize;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 986
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->eventDispatcher:Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;
 
     invoke-virtual {v1, v0}, Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;->videoSizeChanged(Landroidx/media3/common/VideoSize;)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method private onOutputChanged()V
-    .registers 3
+    .locals 2
 
     .line 929
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeRenotifyVideoSizeChanged()V
@@ -928,17 +928,17 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 933
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setJoiningDeadlineMs()V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method private onOutputRemoved()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -954,7 +954,7 @@
 .end method
 
 .method private onOutputReset()V
-    .registers 1
+    .locals 0
 
     .line 945
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeRenotifyVideoSizeChanged()V
@@ -966,7 +966,7 @@
 .end method
 
 .method private processOutputBuffer(JJ)Z
-    .registers 15
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;,
@@ -981,13 +981,13 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 853
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->initialPositionUs:J
 
     .line 856
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1010,25 +1010,25 @@
 
     const/4 v7, 0x0
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2
 
     .line 861
     invoke-static {v3, v4}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->isBufferLate(J)Z
 
     move-result p1
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     .line 862
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->skipOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
 
     return v6
 
-    :cond_2b
+    :cond_1
     return v7
 
     .line 868
-    :cond_2c
+    :cond_2
     iget-object v5, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->formatQueue:Landroidx/media3/common/util/TimedValueQueue;
 
     invoke-virtual {v5, v1, v2}, Landroidx/media3/common/util/TimedValueQueue;->pollFloor(J)Ljava/lang/Object;
@@ -1037,18 +1037,18 @@
 
     check-cast v5, Landroidx/media3/common/Format;
 
-    if-eqz v5, :cond_39
+    if-eqz v5, :cond_3
 
     .line 870
     iput-object v5, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputFormat:Landroidx/media3/common/Format;
 
-    goto :goto_47
+    goto :goto_0
 
     .line 871
-    :cond_39
+    :cond_3
     iget-object v5, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputFormat:Landroidx/media3/common/Format;
 
-    if-nez v5, :cond_47
+    if-nez v5, :cond_4
 
     .line 875
     iget-object v5, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->formatQueue:Landroidx/media3/common/util/TimedValueQueue;
@@ -1062,8 +1062,8 @@
     iput-object v5, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputFormat:Landroidx/media3/common/Format;
 
     .line 878
-    :cond_47
-    :goto_47
+    :cond_4
+    :goto_0
     iget-wide v8, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputStreamOffsetUs:J
 
     sub-long/2addr v1, v8
@@ -1073,7 +1073,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5c
+    if-eqz v5, :cond_5
 
     .line 880
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputFormat:Landroidx/media3/common/Format;
@@ -1089,70 +1089,70 @@
     return v6
 
     .line 884
-    :cond_5c
+    :cond_5
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->getState()I
 
     move-result v5
 
     const/4 v8, 0x2
 
-    if-ne v5, v8, :cond_65
+    if-ne v5, v8, :cond_6
 
     move v5, v6
 
-    goto :goto_66
+    goto :goto_1
 
-    :cond_65
+    :cond_6
     move v5, v7
 
-    :goto_66
-    if-eqz v5, :cond_98
+    :goto_1
+    if-eqz v5, :cond_a
 
     .line 885
     iget-wide v8, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->initialPositionUs:J
 
     cmp-long v5, p1, v8
 
-    if-nez v5, :cond_6f
+    if-nez v5, :cond_7
 
-    goto :goto_98
+    goto :goto_2
 
     .line 890
-    :cond_6f
+    :cond_7
     invoke-virtual {p0, v3, v4, p3, p4}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->shouldDropBuffersToKeyframe(JJ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_7c
+    if-eqz v5, :cond_8
 
     .line 891
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeDropBuffersToKeyframe(J)Z
 
     move-result p1
 
-    if-eqz p1, :cond_7c
+    if-eqz p1, :cond_8
 
     return v7
 
     .line 893
-    :cond_7c
+    :cond_8
     invoke-virtual {p0, v3, v4, p3, p4}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->shouldDropOutputBuffer(JJ)Z
 
     move-result p1
 
-    if-eqz p1, :cond_86
+    if-eqz p1, :cond_9
 
     .line 894
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->dropOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
 
     return v6
 
-    :cond_86
+    :cond_9
     const-wide/16 p1, 0x7530
 
     cmp-long p1, v3, p1
 
-    if-gez p1, :cond_98
+    if-gez p1, :cond_a
 
     .line 899
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputFormat:Landroidx/media3/common/Format;
@@ -1167,13 +1167,13 @@
 
     return v6
 
-    :cond_98
-    :goto_98
+    :cond_a
+    :goto_2
     return v7
 .end method
 
 .method private setDecoderDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 3
+    .locals 1
 
     .line 694
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
@@ -1187,7 +1187,7 @@
 .end method
 
 .method private setJoiningDeadlineMs()V
-    .registers 5
+    .locals 4
 
     .line 951
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->allowedJoiningTimeMs:J
@@ -1196,7 +1196,7 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     .line 952
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1207,20 +1207,20 @@
 
     add-long/2addr v0, v2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 953
-    :goto_15
+    :goto_0
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
     return-void
 .end method
 
 .method private setSourceDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 3
+    .locals 1
 
     .line 689
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->sourceDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
@@ -1234,7 +1234,7 @@
 .end method
 
 .method private shouldForceRender(J)Z
-    .registers 11
+    .locals 8
 
     .line 909
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->getState()I
@@ -1247,26 +1247,26 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     move v0, v3
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v2
 
     .line 910
-    :goto_c
+    :goto_0
     iget v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_4
 
-    if-eq v1, v3, :cond_30
+    if-eq v1, v3, :cond_3
 
     const/4 v4, 0x3
 
-    if-ne v1, v4, :cond_2a
+    if-ne v1, v4, :cond_2
 
     .line 916
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1281,39 +1281,39 @@
 
     sub-long/2addr v4, v6
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 917
     invoke-virtual {p0, p1, p2, v4, v5}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->shouldForceRenderOutputBuffer(JJ)Z
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_1
 
     move v2, v3
 
-    :cond_29
+    :cond_1
     return v2
 
     .line 919
-    :cond_2a
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_30
+    :cond_3
     return v3
 
-    :cond_31
+    :cond_4
     return v0
 .end method
 
 
 # virtual methods
 .method protected canReuseDecoder(Ljava/lang/String;Landroidx/media3/common/Format;Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/DecoderReuseEvaluation;
-    .registers 11
+    .locals 7
 
     .line 682
     new-instance v6, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1360,7 +1360,7 @@
 .end method
 
 .method protected dropOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1376,24 +1376,24 @@
 .end method
 
 .method public enableMayRenderStartOfStream()V
-    .registers 2
+    .locals 1
 
     .line 289
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 290
     iput v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method protected flushDecoder()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1408,7 +1408,7 @@
     .line 360
     iget v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderReinitializationState:I
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 361
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->releaseDecoder()V
@@ -1416,9 +1416,9 @@
     .line 362
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeInitDecoder()V
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v1, 0x0
 
     .line 364
@@ -1427,7 +1427,7 @@
     .line 365
     iget-object v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_1
 
     .line 366
     invoke-virtual {v2}, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->release()V
@@ -1436,7 +1436,7 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
     .line 369
-    :cond_1a
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1458,12 +1458,12 @@
     .line 372
     iput-boolean v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderReceivedBuffers:Z
 
-    :goto_2e
+    :goto_0
     return-void
 .end method
 
 .method public handleMessage(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1472,35 +1472,35 @@
 
     const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_0
 
     .line 266
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setOutput(Ljava/lang/Object;)V
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x7
 
-    if-ne p1, v0, :cond_f
+    if-ne p1, v0, :cond_1
 
     .line 268
     check-cast p2, Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
     iput-object p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->frameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
-    goto :goto_12
+    goto :goto_0
 
     .line 270
-    :cond_f
+    :cond_1
     invoke-super {p0, p1, p2}, Landroidx/media3/exoplayer/BaseRenderer;->handleMessage(ILjava/lang/Object;)V
 
-    :goto_12
+    :goto_0
     return-void
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 236
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputStreamEnded:Z
@@ -1509,7 +1509,7 @@
 .end method
 
 .method public isReady()Z
-    .registers 10
+    .locals 9
 
     .line 241
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputFormat:Landroidx/media3/common/Format;
@@ -1518,53 +1518,53 @@
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
     .line 242
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->isSourceReady()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
-    :cond_14
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->firstFrameState:I
 
     const/4 v4, 0x3
 
-    if-eq v0, v4, :cond_1f
+    if-eq v0, v4, :cond_1
 
     .line 243
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->hasOutput()Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     .line 245
-    :cond_1f
+    :cond_1
     iput-wide v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
     return v1
 
     .line 247
-    :cond_22
+    :cond_2
     iget-wide v4, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
     cmp-long v0, v4, v2
 
     const/4 v4, 0x0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_3
 
     return v4
 
     .line 250
-    :cond_2a
+    :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v5
@@ -1573,19 +1573,19 @@
 
     cmp-long v0, v5, v7
 
-    if-gez v0, :cond_35
+    if-gez v0, :cond_4
 
     return v1
 
     .line 255
-    :cond_35
+    :cond_4
     iput-wide v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
     return v4
 .end method
 
 .method protected maybeDropBuffersToKeyframe(J)Z
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1597,14 +1597,14 @@
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 534
-    :cond_8
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
 
     iget v0, p2, Landroidx/media3/exoplayer/DecoderCounters;->droppedToKeyframeCount:I
@@ -1627,7 +1627,7 @@
 .end method
 
 .method protected onDisabled()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1643,13 +1643,13 @@
     invoke-direct {p0, v1}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->lowerFirstFrameState(I)V
 
     .line 331
-    :try_start_9
+    :try_start_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setSourceDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
 
     .line 332
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->releaseDecoder()V
-    :try_end_f
-    .catchall {:try_start_9 .. :try_end_f} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 334
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->eventDispatcher:Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;
@@ -1660,7 +1660,7 @@
 
     return-void
 
-    :catchall_17
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->eventDispatcher:Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;
@@ -1674,7 +1674,7 @@
 .end method
 
 .method protected onEnabled(ZZ)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1700,7 +1700,7 @@
 .end method
 
 .method protected onInputFormatChanged(Landroidx/media3/exoplayer/FormatHolder;)V
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1737,7 +1737,7 @@
     .line 407
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_0
 
     .line 408
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeInitDecoder()V
@@ -1762,12 +1762,12 @@
     return-void
 
     .line 415
-    :cond_2b
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->sourceDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eq v2, v3, :cond_48
+    if-eq v2, v3, :cond_1
 
     .line 416
     new-instance v1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1796,10 +1796,10 @@
 
     invoke-direct/range {v2 .. v7}, Landroidx/media3/exoplayer/DecoderReuseEvaluation;-><init>(Ljava/lang/String;Landroidx/media3/common/Format;Landroidx/media3/common/Format;II)V
 
-    goto :goto_56
+    goto :goto_0
 
     .line 424
-    :cond_48
+    :cond_1
     invoke-interface {v1}, Landroidx/media3/decoder/Decoder;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -1815,31 +1815,31 @@
     move-result-object v1
 
     .line 427
-    :goto_56
+    :goto_0
     iget p1, v1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->result:I
 
-    if-nez p1, :cond_67
+    if-nez p1, :cond_3
 
     .line 428
     iget-boolean p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderReceivedBuffers:Z
 
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_2
 
     .line 430
     iput v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderReinitializationState:I
 
-    goto :goto_67
+    goto :goto_1
 
     .line 433
-    :cond_61
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->releaseDecoder()V
 
     .line 434
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeInitDecoder()V
 
     .line 437
-    :cond_67
-    :goto_67
+    :cond_3
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->eventDispatcher:Landroidx/media3/exoplayer/video/VideoRendererEventListener$EventDispatcher;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputFormat:Landroidx/media3/common/Format;
@@ -1856,7 +1856,7 @@
 .end method
 
 .method protected onPositionReset(JZ)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1887,25 +1887,25 @@
     .line 301
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 302
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->flushDecoder()V
 
-    :cond_19
-    if-eqz p3, :cond_1f
+    :cond_0
+    if-eqz p3, :cond_1
 
     .line 305
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setJoiningDeadlineMs()V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 307
-    :cond_1f
+    :cond_1
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->joiningDeadlineMs:J
 
     .line 309
-    :goto_21
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->formatQueue:Landroidx/media3/common/util/TimedValueQueue;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/TimedValueQueue;->clear()V
@@ -1914,7 +1914,7 @@
 .end method
 
 .method protected onProcessedOutputBuffer(J)V
-    .registers 3
+    .locals 0
 
     .line 458
     iget p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->buffersInCodecCount:I
@@ -1927,13 +1927,13 @@
 .end method
 
 .method protected onQueueInputBuffer(Landroidx/media3/decoder/DecoderInputBuffer;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method protected onStarted()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -1962,7 +1962,7 @@
 .end method
 
 .method protected onStopped()V
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -1976,7 +1976,7 @@
 .end method
 
 .method protected onStreamChanged([Landroidx/media3/common/Format;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1993,7 +1993,7 @@
 .end method
 
 .method protected releaseDecoder()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -2017,7 +2017,7 @@
     .line 384
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     .line 385
     iget-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
@@ -2048,14 +2048,14 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
     .line 390
-    :cond_2a
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setDecoderDrmSession(Landroidx/media3/exoplayer/drm/DrmSession;)V
 
     return-void
 .end method
 
 .method public render(JJ)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -2065,15 +2065,15 @@
     .line 192
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputStreamEnded:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 196
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->inputFormat:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_3
 
     .line 198
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
@@ -2096,17 +2096,17 @@
 
     const/4 v2, -0x5
 
-    if-ne v1, v2, :cond_20
+    if-ne v1, v2, :cond_1
 
     .line 202
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->onInputFormatChanged(Landroidx/media3/exoplayer/FormatHolder;)V
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 p1, -0x4
 
-    if-ne v1, p1, :cond_31
+    if-ne v1, p1, :cond_2
 
     .line 205
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->flagsOnlyBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -2125,60 +2125,60 @@
     .line 207
     iput-boolean p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputStreamEnded:Z
 
-    :cond_31
+    :cond_2
     return-void
 
     .line 216
-    :cond_32
-    :goto_32
+    :cond_3
+    :goto_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeInitDecoder()V
 
     .line 218
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_6
 
-    :try_start_39
+    :try_start_0
     const-string v0, "drainAndFeed"
 
     .line 221
     invoke-static {v0}, Landroidx/media3/common/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
     .line 222
-    :goto_3e
+    :goto_1
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->drainOutputBuffer(JJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_4
 
-    goto :goto_3e
+    goto :goto_1
 
     .line 223
-    :cond_45
-    :goto_45
+    :cond_4
+    :goto_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->feedInputBuffer()Z
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_5
 
-    goto :goto_45
+    goto :goto_2
 
     .line 224
-    :cond_4c
+    :cond_5
     invoke-static {}, Landroidx/media3/common/util/TraceUtil;->endSection()V
-    :try_end_4f
-    .catch Landroidx/media3/decoder/DecoderException; {:try_start_39 .. :try_end_4f} :catch_55
+    :try_end_0
+    .catch Landroidx/media3/decoder/DecoderException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 230
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
 
-    goto :goto_6b
+    goto :goto_3
 
-    :catch_55
+    :catch_0
     move-exception p1
 
     const-string p2, "DecoderVideoRenderer"
@@ -2204,13 +2204,13 @@
 
     throw p1
 
-    :cond_6b
-    :goto_6b
+    :cond_6
+    :goto_3
     return-void
 .end method
 
 .method protected renderOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;JLandroidx/media3/common/Format;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;
@@ -2220,7 +2220,7 @@
     .line 592
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->frameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 594
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->getClock()Landroidx/media3/common/util/Clock;
@@ -2241,7 +2241,7 @@
     invoke-interface/range {v0 .. v6}, Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;->onVideoFrameAboutToBeRendered(JJLandroidx/media3/common/Format;Landroid/media/MediaFormat;)V
 
     .line 596
-    :cond_12
+    :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p2
@@ -2259,54 +2259,54 @@
 
     const/4 p4, 0x1
 
-    if-ne p2, p4, :cond_28
+    if-ne p2, p4, :cond_1
 
     .line 598
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputSurface:Landroid/view/Surface;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     move v0, p4
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     move v0, p3
 
-    :goto_29
-    if-nez p2, :cond_31
+    :goto_0
+    if-nez p2, :cond_2
 
     .line 599
     iget-object p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBufferRenderer:Landroidx/media3/exoplayer/video/VideoDecoderOutputBufferRenderer;
 
-    if-eqz p2, :cond_31
+    if-eqz p2, :cond_2
 
     move p2, p4
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_2
     move p2, p3
 
-    :goto_32
-    if-nez p2, :cond_3a
+    :goto_1
+    if-nez p2, :cond_3
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 601
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->dropOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
 
-    goto :goto_66
+    goto :goto_3
 
     .line 603
-    :cond_3a
+    :cond_3
     iget v0, p1, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->width:I
 
     iget v1, p1, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->height:I
 
     invoke-direct {p0, v0, v1}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeNotifyVideoSizeChanged(II)V
 
-    if-eqz p2, :cond_4f
+    if-eqz p2, :cond_4
 
     .line 605
     iget-object p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputBufferRenderer:Landroidx/media3/exoplayer/video/VideoDecoderOutputBufferRenderer;
@@ -2319,10 +2319,10 @@
 
     invoke-interface {p2, p1}, Landroidx/media3/exoplayer/video/VideoDecoderOutputBufferRenderer;->setOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
 
-    goto :goto_5a
+    goto :goto_2
 
     .line 607
-    :cond_4f
+    :cond_4
     iget-object p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputSurface:Landroid/view/Surface;
 
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2334,7 +2334,7 @@
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->renderOutputBufferToSurface(Landroidx/media3/decoder/VideoDecoderOutputBuffer;Landroid/view/Surface;)V
 
     .line 609
-    :goto_5a
+    :goto_2
     iput p3, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->consecutiveDroppedFrameCount:I
 
     .line 610
@@ -2349,7 +2349,7 @@
     .line 611
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeNotifyRenderedFirstFrame()V
 
-    :goto_66
+    :goto_3
     return-void
 .end method
 
@@ -2365,14 +2365,14 @@
 .end method
 
 .method protected final setOutput(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 630
     instance-of v0, p1, Landroid/view/Surface;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 631
     move-object v0, p1
@@ -2389,13 +2389,13 @@
     .line 633
     iput v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputMode:I
 
-    goto :goto_27
+    goto :goto_0
 
     .line 634
-    :cond_10
+    :cond_0
     instance-of v0, p1, Landroidx/media3/exoplayer/video/VideoDecoderOutputBufferRenderer;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 635
     iput-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputSurface:Landroid/view/Surface;
@@ -2412,10 +2412,10 @@
     .line 637
     iput v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputMode:I
 
-    goto :goto_27
+    goto :goto_0
 
     .line 641
-    :cond_1f
+    :cond_1
     iput-object v1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputSurface:Landroid/view/Surface;
 
     .line 642
@@ -2429,20 +2429,20 @@
     move-object p1, v1
 
     .line 645
-    :goto_27
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->output:Ljava/lang/Object;
 
-    if-eq v0, p1, :cond_40
+    if-eq v0, p1, :cond_4
 
     .line 646
     iput-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->output:Ljava/lang/Object;
 
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_3
 
     .line 648
     iget-object p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoder:Landroidx/media3/decoder/Decoder;
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_2
 
     .line 649
     iget p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->outputMode:I
@@ -2450,30 +2450,30 @@
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->setDecoderOutputMode(I)V
 
     .line 651
-    :cond_38
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->onOutputChanged()V
 
-    goto :goto_45
+    goto :goto_1
 
     .line 655
-    :cond_3c
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->onOutputRemoved()V
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_40
-    if-eqz p1, :cond_45
+    :cond_4
+    if-eqz p1, :cond_5
 
     .line 659
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->onOutputReset()V
 
-    :cond_45
-    :goto_45
+    :cond_5
+    :goto_1
     return-void
 .end method
 
 .method protected shouldDropBuffersToKeyframe(JJ)Z
-    .registers 5
+    .locals 0
 
     .line 483
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->isBufferVeryLate(J)Z
@@ -2484,7 +2484,7 @@
 .end method
 
 .method protected shouldDropOutputBuffer(JJ)Z
-    .registers 5
+    .locals 0
 
     .line 470
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->isBufferLate(J)Z
@@ -2495,34 +2495,34 @@
 .end method
 
 .method protected shouldForceRenderOutputBuffer(JJ)Z
-    .registers 5
+    .locals 0
 
     .line 496
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->isBufferLate(J)Z
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const-wide/32 p1, 0x186a0
 
     cmp-long p1, p3, p1
 
-    if-lez p1, :cond_f
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_10
+    :goto_0
     return p1
 .end method
 
 .method protected skipOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 505
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
@@ -2540,7 +2540,7 @@
 .end method
 
 .method protected updateDroppedBufferCounters(II)V
-    .registers 5
+    .locals 2
 
     .line 553
     iget-object v0, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->decoderCounters:Landroidx/media3/exoplayer/DecoderCounters;
@@ -2591,15 +2591,15 @@
     .line 560
     iget p1, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maxDroppedFramesToNotify:I
 
-    if-lez p1, :cond_2e
+    if-lez p1, :cond_0
 
     iget p2, p0, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->droppedFrames:I
 
-    if-lt p2, p1, :cond_2e
+    if-lt p2, p1, :cond_0
 
     .line 561
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/DecoderVideoRenderer;->maybeNotifyDroppedFrames()V
 
-    :cond_2e
+    :cond_0
     return-void
 .end method

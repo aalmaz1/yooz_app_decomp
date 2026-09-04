@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;)V
-    .registers 4
+    .locals 2
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method private restoreBackup()V
-    .registers 3
+    .locals 2
 
     .line 152
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->backupName:Ljava/io/File;
@@ -73,7 +73,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 153
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
@@ -87,14 +87,14 @@
 
     invoke-virtual {v0, v1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public delete()V
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
@@ -110,7 +110,7 @@
 .end method
 
 .method public endWrite(Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -129,7 +129,7 @@
 .end method
 
 .method public exists()Z
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
@@ -138,7 +138,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->backupName:Ljava/io/File;
 
@@ -146,25 +146,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     return v0
 .end method
 
 .method public openRead()Ljava/io/InputStream;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;
@@ -185,7 +185,7 @@
 .end method
 
 .method public startWrite()Ljava/io/OutputStream;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -199,7 +199,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     .line 97
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->backupName:Ljava/io/File;
@@ -208,7 +208,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_0
 
     .line 98
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
@@ -219,7 +219,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_42
+    if-nez v0, :cond_1
 
     .line 99
     new-instance v0, Ljava/lang/StringBuilder;
@@ -254,29 +254,29 @@
 
     invoke-static {v1, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_42
+    goto :goto_0
 
     .line 102
-    :cond_3d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     .line 107
-    :cond_42
-    :goto_42
-    :try_start_42
+    :cond_1
+    :goto_0
+    :try_start_0
     new-instance v0, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;
 
     iget-object v1, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
 
     invoke-direct {v0, v1}, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_49
-    .catch Ljava/io/FileNotFoundException; {:try_start_42 .. :try_end_49} :catch_4a
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_62
+    goto :goto_1
 
-    :catch_4a
+    :catch_0
     move-exception v0
 
     .line 109
@@ -288,29 +288,29 @@
 
     const-string v2, "Couldn\'t create "
 
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_2
 
     .line 110
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
     move-result v1
 
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_2
 
     .line 115
-    :try_start_5b
+    :try_start_1
     new-instance v0, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;
 
     iget-object v1, p0, Landroidx/media3/common/util/AtomicFile;->baseName:Ljava/io/File;
 
     invoke-direct {v0, v1}, Landroidx/media3/common/util/AtomicFile$AtomicFileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_62
-    .catch Ljava/io/FileNotFoundException; {:try_start_5b .. :try_end_62} :catch_63
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :goto_62
+    :goto_1
     return-object v0
 
-    :catch_63
+    :catch_1
     move-exception v0
 
     .line 117
@@ -335,7 +335,7 @@
     throw v1
 
     .line 111
-    :cond_79
+    :cond_2
     new-instance v1, Ljava/io/IOException;
 
     new-instance v3, Ljava/lang/StringBuilder;

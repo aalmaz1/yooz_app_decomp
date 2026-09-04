@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 3
+    .locals 0
 
     .line 323
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$2;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaSource;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 4
+    .locals 0
 
     .line 334
     invoke-super {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
@@ -47,7 +47,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 5
+    .locals 0
 
     .line 327
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;

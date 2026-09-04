@@ -73,7 +73,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 .end method
 
 .method private static parseCommentAttribute(ILandroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/CommentFrame;
-    .registers 5
+    .locals 3
 
     .line 257
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -96,7 +96,7 @@
 
     const v2, 0x64617461
 
-    if-ne v1, v2, :cond_21
+    if-ne v1, v2, :cond_0
 
     const/16 p0, 0x8
 
@@ -120,7 +120,7 @@
     return-object p1
 
     .line 264
-    :cond_21
+    :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Failed to parse comment attribute: "
@@ -149,7 +149,7 @@
 .end method
 
 .method private static parseCoverArt(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/ApicFrame;
-    .registers 6
+    .locals 5
 
     .line 349
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -167,7 +167,7 @@
 
     const/4 v4, 0x0
 
-    if-ne v1, v2, :cond_4f
+    if-ne v1, v2, :cond_3
 
     .line 352
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -181,26 +181,26 @@
 
     const/16 v2, 0xd
 
-    if-ne v1, v2, :cond_1f
+    if-ne v1, v2, :cond_0
 
     const-string v2, "image/jpeg"
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/16 v2, 0xe
 
-    if-ne v1, v2, :cond_26
+    if-ne v1, v2, :cond_1
 
     const-string v2, "image/png"
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     move-object v2, v4
 
-    :goto_27
-    if-nez v2, :cond_3c
+    :goto_0
+    if-nez v2, :cond_2
 
     .line 356
     new-instance p0, Ljava/lang/StringBuilder;
@@ -221,7 +221,7 @@
 
     return-object v4
 
-    :cond_3c
+    :cond_2
     const/4 v1, 0x4
 
     .line 359
@@ -246,7 +246,7 @@
 
     return-object p0
 
-    :cond_4f
+    :cond_3
     const-string p0, "Failed to parse cover art attribute"
 
     .line 368
@@ -256,7 +256,7 @@
 .end method
 
 .method public static parseIlstElement(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/Metadata$Entry;
-    .registers 7
+    .locals 6
 
     const-string v0, "Skipped unknown metadata entry: "
 
@@ -283,544 +283,544 @@
 
     const/16 v4, 0xa9
 
-    if-eq v3, v4, :cond_118
+    if-eq v3, v4, :cond_11
 
     const/16 v4, 0xfd
 
-    if-ne v3, v4, :cond_1d
+    if-ne v3, v4, :cond_0
 
-    goto/16 :goto_118
+    goto/16 :goto_0
 
-    :cond_1d
+    :cond_0
     const v3, 0x676e7265
 
-    if-ne v2, v3, :cond_2a
+    if-ne v2, v3, :cond_1
 
     .line 172
-    :try_start_22
+    :try_start_0
     invoke-static {p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseStandardGenreAttribute(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_26
-    .catchall {:try_start_22 .. :try_end_26} :catchall_129
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_2a
+    :cond_1
     const v3, 0x6469736b
 
-    if-ne v2, v3, :cond_39
+    if-ne v2, v3, :cond_2
 
-    :try_start_2f
+    :try_start_1
     const-string v0, "TPOS"
 
     .line 174
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIndexAndCountAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_35
-    .catchall {:try_start_2f .. :try_end_35} :catchall_129
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_39
+    :cond_2
     const v3, 0x74726b6e
 
-    if-ne v2, v3, :cond_48
+    if-ne v2, v3, :cond_3
 
-    :try_start_3e
+    :try_start_2
     const-string v0, "TRCK"
 
     .line 176
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIndexAndCountAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_44
-    .catchall {:try_start_3e .. :try_end_44} :catchall_129
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_48
+    :cond_3
     const v3, 0x746d706f
 
     const/4 v4, 0x0
 
     const/4 v5, 0x1
 
-    if-ne v2, v3, :cond_59
+    if-ne v2, v3, :cond_4
 
-    :try_start_4f
+    :try_start_3
     const-string v0, "TBPM"
 
     .line 178
     invoke-static {v2, v0, p0, v5, v4}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIntegerAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;ZZ)Landroidx/media3/extractor/metadata/id3/Id3Frame;
 
     move-result-object v0
-    :try_end_55
-    .catchall {:try_start_4f .. :try_end_55} :catchall_129
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_59
+    :cond_4
     const v3, 0x6370696c
 
-    if-ne v2, v3, :cond_68
+    if-ne v2, v3, :cond_5
 
-    :try_start_5e
+    :try_start_4
     const-string v0, "TCMP"
 
     .line 180
     invoke-static {v2, v0, p0, v5, v5}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIntegerAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;ZZ)Landroidx/media3/extractor/metadata/id3/Id3Frame;
 
     move-result-object v0
-    :try_end_64
-    .catchall {:try_start_5e .. :try_end_64} :catchall_129
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_68
+    :cond_5
     const v3, 0x636f7672
 
-    if-ne v2, v3, :cond_75
+    if-ne v2, v3, :cond_6
 
     .line 182
-    :try_start_6d
+    :try_start_5
     invoke-static {p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseCoverArt(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/ApicFrame;
 
     move-result-object v0
-    :try_end_71
-    .catchall {:try_start_6d .. :try_end_71} :catchall_129
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_75
+    :cond_6
     const v3, 0x61415254
 
-    if-ne v2, v3, :cond_84
+    if-ne v2, v3, :cond_7
 
-    :try_start_7a
+    :try_start_6
     const-string v0, "TPE2"
 
     .line 184
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_80
-    .catchall {:try_start_7a .. :try_end_80} :catchall_129
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_84
+    :cond_7
     const v3, 0x736f6e6d
 
-    if-ne v2, v3, :cond_93
+    if-ne v2, v3, :cond_8
 
-    :try_start_89
+    :try_start_7
     const-string v0, "TSOT"
 
     .line 186
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_8f
-    .catchall {:try_start_89 .. :try_end_8f} :catchall_129
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_93
+    :cond_8
     const v3, 0x736f616c
 
-    if-ne v2, v3, :cond_a2
+    if-ne v2, v3, :cond_9
 
-    :try_start_98
+    :try_start_8
     const-string v0, "TSOA"
 
     .line 188
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_9e
-    .catchall {:try_start_98 .. :try_end_9e} :catchall_129
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_a2
+    :cond_9
     const v3, 0x736f6172
 
-    if-ne v2, v3, :cond_b1
+    if-ne v2, v3, :cond_a
 
-    :try_start_a7
+    :try_start_9
     const-string v0, "TSOP"
 
     .line 190
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_ad
-    .catchall {:try_start_a7 .. :try_end_ad} :catchall_129
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_b1
+    :cond_a
     const v3, 0x736f6161
 
-    if-ne v2, v3, :cond_c0
+    if-ne v2, v3, :cond_b
 
-    :try_start_b6
+    :try_start_a
     const-string v0, "TSO2"
 
     .line 192
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_bc
-    .catchall {:try_start_b6 .. :try_end_bc} :catchall_129
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_c0
+    :cond_b
     const v3, 0x736f636f
 
-    if-ne v2, v3, :cond_cf
+    if-ne v2, v3, :cond_c
 
-    :try_start_c5
+    :try_start_b
     const-string v0, "TSOC"
 
     .line 194
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_cb
-    .catchall {:try_start_c5 .. :try_end_cb} :catchall_129
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_cf
+    :cond_c
     const v3, 0x72746e67
 
-    if-ne v2, v3, :cond_de
+    if-ne v2, v3, :cond_d
 
-    :try_start_d4
+    :try_start_c
     const-string v0, "ITUNESADVISORY"
 
     .line 196
     invoke-static {v2, v0, p0, v4, v4}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIntegerAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;ZZ)Landroidx/media3/extractor/metadata/id3/Id3Frame;
 
     move-result-object v0
-    :try_end_da
-    .catchall {:try_start_d4 .. :try_end_da} :catchall_129
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_de
+    :cond_d
     const v3, 0x70676170
 
-    if-ne v2, v3, :cond_ed
+    if-ne v2, v3, :cond_e
 
-    :try_start_e3
+    :try_start_d
     const-string v0, "ITUNESGAPLESS"
 
     .line 198
     invoke-static {v2, v0, p0, v4, v5}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIntegerAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;ZZ)Landroidx/media3/extractor/metadata/id3/Id3Frame;
 
     move-result-object v0
-    :try_end_e9
-    .catchall {:try_start_e3 .. :try_end_e9} :catchall_129
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_ed
+    :cond_e
     const v3, 0x736f736e
 
-    if-ne v2, v3, :cond_fc
+    if-ne v2, v3, :cond_f
 
-    :try_start_f2
+    :try_start_e
     const-string v0, "TVSHOWSORT"
 
     .line 200
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_f8
-    .catchall {:try_start_f2 .. :try_end_f8} :catchall_129
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_fc
+    :cond_f
     const v3, 0x74767368
 
-    if-ne v2, v3, :cond_10b
+    if-ne v2, v3, :cond_10
 
-    :try_start_101
+    :try_start_f
     const-string v0, "TVSHOW"
 
     .line 202
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_107
-    .catchall {:try_start_101 .. :try_end_107} :catchall_129
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_10b
+    :cond_10
     const v3, 0x2d2d2d2d
 
-    if-ne v2, v3, :cond_1ad
+    if-ne v2, v3, :cond_1b
 
     .line 204
-    :try_start_110
+    :try_start_10
     invoke-static {p0, v1}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseInternalAttribute(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/extractor/metadata/id3/Id3Frame;
 
     move-result-object v0
-    :try_end_114
-    .catchall {:try_start_110 .. :try_end_114} :catchall_129
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_118
-    :goto_118
+    :cond_11
+    :goto_0
     const v3, 0xffffff
 
     and-int/2addr v3, v2
 
     const v4, 0x636d74
 
-    if-ne v3, v4, :cond_12c
+    if-ne v3, v4, :cond_12
 
     .line 151
-    :try_start_121
+    :try_start_11
     invoke-static {v2, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseCommentAttribute(ILandroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/CommentFrame;
 
     move-result-object v0
-    :try_end_125
-    .catchall {:try_start_121 .. :try_end_125} :catchall_129
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :catchall_129
+    :catchall_0
     move-exception v0
 
-    goto/16 :goto_1dc
+    goto/16 :goto_3
 
-    :cond_12c
+    :cond_12
     const v4, 0x6e616d
 
-    if-eq v3, v4, :cond_1d2
+    if-eq v3, v4, :cond_1d
 
     const v4, 0x74726b
 
-    if-ne v3, v4, :cond_138
+    if-ne v3, v4, :cond_13
 
-    goto/16 :goto_1d2
+    goto/16 :goto_2
 
-    :cond_138
+    :cond_13
     const v4, 0x636f6d
 
-    if-eq v3, v4, :cond_1c8
+    if-eq v3, v4, :cond_1c
 
     const v4, 0x777274
 
-    if-ne v3, v4, :cond_144
+    if-ne v3, v4, :cond_14
 
-    goto/16 :goto_1c8
+    goto/16 :goto_1
 
-    :cond_144
+    :cond_14
     const v4, 0x646179
 
-    if-ne v3, v4, :cond_153
+    if-ne v3, v4, :cond_15
 
-    :try_start_149
+    :try_start_12
     const-string v0, "TDRC"
 
     .line 157
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_14f
-    .catchall {:try_start_149 .. :try_end_14f} :catchall_129
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_153
+    :cond_15
     const v4, 0x415254
 
-    if-ne v3, v4, :cond_162
+    if-ne v3, v4, :cond_16
 
-    :try_start_158
+    :try_start_13
     const-string v0, "TPE1"
 
     .line 159
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_15e
-    .catchall {:try_start_158 .. :try_end_15e} :catchall_129
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_162
+    :cond_16
     const v4, 0x746f6f
 
-    if-ne v3, v4, :cond_171
+    if-ne v3, v4, :cond_17
 
-    :try_start_167
+    :try_start_14
     const-string v0, "TSSE"
 
     .line 161
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_16d
-    .catchall {:try_start_167 .. :try_end_16d} :catchall_129
+    :try_end_14
+    .catchall {:try_start_14 .. :try_end_14} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_171
+    :cond_17
     const v4, 0x616c62
 
-    if-ne v3, v4, :cond_180
+    if-ne v3, v4, :cond_18
 
-    :try_start_176
+    :try_start_15
     const-string v0, "TALB"
 
     .line 163
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_17c
-    .catchall {:try_start_176 .. :try_end_17c} :catchall_129
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_180
+    :cond_18
     const v4, 0x6c7972
 
-    if-ne v3, v4, :cond_18f
+    if-ne v3, v4, :cond_19
 
-    :try_start_185
+    :try_start_16
     const-string v0, "USLT"
 
     .line 165
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_18b
-    .catchall {:try_start_185 .. :try_end_18b} :catchall_129
+    :try_end_16
+    .catchall {:try_start_16 .. :try_end_16} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_18f
+    :cond_19
     const v4, 0x67656e
 
-    if-ne v3, v4, :cond_19e
+    if-ne v3, v4, :cond_1a
 
-    :try_start_194
+    :try_start_17
     const-string v0, "TCON"
 
     .line 167
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_19a
-    .catchall {:try_start_194 .. :try_end_19a} :catchall_129
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_19e
+    :cond_1a
     const v4, 0x677270
 
-    if-ne v3, v4, :cond_1ad
+    if-ne v3, v4, :cond_1b
 
-    :try_start_1a3
+    :try_start_18
     const-string v0, "TIT1"
 
     .line 169
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_1a9
-    .catchall {:try_start_1a3 .. :try_end_1a9} :catchall_129
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_1ad
-    :try_start_1ad
+    :cond_1b
+    :try_start_19
     const-string v3, "MetadataUtil"
 
     .line 206
@@ -841,8 +841,8 @@
     move-result-object v0
 
     invoke-static {v3, v0}, Landroidx/media3/common/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1c3
-    .catchall {:try_start_1ad .. :try_end_1c3} :catchall_129
+    :try_end_19
+    .catchall {:try_start_19 .. :try_end_19} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -851,41 +851,41 @@
 
     return-object p0
 
-    :cond_1c8
-    :goto_1c8
-    :try_start_1c8
+    :cond_1c
+    :goto_1
+    :try_start_1a
     const-string v0, "TCOM"
 
     .line 155
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_1ce
-    .catchall {:try_start_1c8 .. :try_end_1ce} :catchall_129
+    :try_end_1a
+    .catchall {:try_start_1a .. :try_end_1a} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :cond_1d2
-    :goto_1d2
-    :try_start_1d2
+    :cond_1d
+    :goto_2
+    :try_start_1b
     const-string v0, "TIT2"
 
     .line 153
     invoke-static {v2, v0, p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     move-result-object v0
-    :try_end_1d8
-    .catchall {:try_start_1d2 .. :try_end_1d8} :catchall_129
+    :try_end_1b
+    .catchall {:try_start_1b .. :try_end_1b} :catchall_0
 
     .line 209
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-object v0
 
-    :goto_1dc
+    :goto_3
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 210
@@ -893,7 +893,7 @@
 .end method
 
 .method private static parseIndexAndCountAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
-    .registers 7
+    .locals 4
 
     .line 314
     invoke-virtual {p2}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -909,11 +909,11 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_53
+    if-ne v1, v2, :cond_1
 
     const/16 v1, 0x16
 
-    if-lt v0, v1, :cond_53
+    if-lt v0, v1, :cond_1
 
     const/16 v0, 0xa
 
@@ -925,7 +925,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_53
+    if-lez v0, :cond_1
 
     .line 320
     new-instance p0, Ljava/lang/StringBuilder;
@@ -947,7 +947,7 @@
 
     move-result p2
 
-    if-lez p2, :cond_49
+    if-lez p2, :cond_0
 
     .line 323
     new-instance v0, Ljava/lang/StringBuilder;
@@ -973,7 +973,7 @@
     move-result-object p0
 
     .line 325
-    :cond_49
+    :cond_0
     new-instance p2, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
 
     .line 326
@@ -986,7 +986,7 @@
     return-object p2
 
     .line 329
-    :cond_53
+    :cond_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Failed to parse index/count attribute: "
@@ -1013,7 +1013,7 @@
 .end method
 
 .method private static parseIntegerAttribute(Landroidx/media3/common/util/ParsableByteArray;)I
-    .registers 4
+    .locals 3
 
     .line 290
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -1027,7 +1027,7 @@
 
     const v2, 0x64617461
 
-    if-ne v1, v2, :cond_3d
+    if-ne v1, v2, :cond_4
 
     const/16 v1, 0x8
 
@@ -1038,31 +1038,31 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_38
+    if-eq v0, v1, :cond_3
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_33
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_21
+    if-eq v0, v1, :cond_0
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 302
-    :cond_21
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->peekUnsignedByte()I
 
     move-result v0
 
     and-int/lit16 v0, v0, 0x80
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_4
 
     .line 303
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
@@ -1072,7 +1072,7 @@
     return p0
 
     .line 300
-    :cond_2e
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result p0
@@ -1080,7 +1080,7 @@
     return p0
 
     .line 298
-    :cond_33
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p0
@@ -1088,15 +1088,15 @@
     return p0
 
     .line 296
-    :cond_38
+    :cond_3
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
 
     return p0
 
-    :cond_3d
-    :goto_3d
+    :cond_4
+    :goto_0
     const-string p0, "MetadataUtil"
 
     const-string v0, "Failed to parse data atom to int"
@@ -1110,14 +1110,14 @@
 .end method
 
 .method private static parseIntegerAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;ZZ)Landroidx/media3/extractor/metadata/id3/Id3Frame;
-    .registers 5
+    .locals 0
 
     .line 275
     invoke-static {p2}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIntegerAttribute(Landroidx/media3/common/util/ParsableByteArray;)I
 
     move-result p2
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_0
 
     const/4 p4, 0x1
 
@@ -1126,12 +1126,12 @@
 
     move-result p2
 
-    :cond_b
+    :cond_0
     const/4 p4, 0x0
 
-    if-ltz p2, :cond_2b
+    if-ltz p2, :cond_2
 
-    if-eqz p3, :cond_1e
+    if-eqz p3, :cond_1
 
     .line 281
     new-instance p0, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
@@ -1147,10 +1147,10 @@
 
     invoke-direct {p0, p1, p4, p2}, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 283
-    :cond_1e
+    :cond_1
     new-instance p0, Landroidx/media3/extractor/metadata/id3/CommentFrame;
 
     const-string/jumbo p3, "und"
@@ -1161,11 +1161,11 @@
 
     invoke-direct {p0, p3, p1, p2}, Landroidx/media3/extractor/metadata/id3/CommentFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_2a
+    :goto_0
     return-object p0
 
     .line 285
-    :cond_2b
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Failed to parse uint8 attribute: "
@@ -1192,7 +1192,7 @@
 .end method
 
 .method private static parseInternalAttribute(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/extractor/metadata/id3/Id3Frame;
-    .registers 12
+    .locals 10
 
     const/4 v0, 0x0
 
@@ -1207,12 +1207,12 @@
     move v5, v4
 
     .line 378
-    :goto_6
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v6
 
-    if-ge v6, p1, :cond_41
+    if-ge v6, p1, :cond_3
 
     .line 379
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -1236,7 +1236,7 @@
 
     const v9, 0x6d65616e
 
-    if-ne v8, v9, :cond_28
+    if-ne v8, v9, :cond_0
 
     add-int/lit8 v7, v7, -0xc
 
@@ -1245,12 +1245,12 @@
 
     move-result-object v2
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     const v9, 0x6e616d65
 
-    if-ne v8, v9, :cond_34
+    if-ne v8, v9, :cond_1
 
     add-int/lit8 v7, v7, -0xc
 
@@ -1259,36 +1259,36 @@
 
     move-result-object v3
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_34
+    :cond_1
     const v9, 0x64617461
 
-    if-ne v8, v9, :cond_3b
+    if-ne v8, v9, :cond_2
 
     move v4, v6
 
     move v5, v7
 
-    :cond_3b
+    :cond_2
     add-int/lit8 v7, v7, -0xc
 
     .line 392
     invoke-virtual {p0, v7}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_41
-    if-eqz v2, :cond_5b
+    :cond_3
+    if-eqz v2, :cond_5
 
-    if-eqz v3, :cond_5b
+    if-eqz v3, :cond_5
 
-    if-ne v4, v1, :cond_48
+    if-ne v4, v1, :cond_4
 
-    goto :goto_5b
+    goto :goto_1
 
     .line 398
-    :cond_48
+    :cond_4
     invoke-virtual {p0, v4}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     const/16 p1, 0x10
@@ -1310,13 +1310,13 @@
 
     return-object p1
 
-    :cond_5b
-    :goto_5b
+    :cond_5
+    :goto_1
     return-object v0
 .end method
 
 .method public static parseMdtaMetadataEntryFromIlst(Landroidx/media3/common/util/ParsableByteArray;ILjava/lang/String;)Landroidx/media3/container/MdtaMetadataEntry;
-    .registers 7
+    .locals 4
 
     .line 225
     :goto_0
@@ -1324,7 +1324,7 @@
 
     move-result v0
 
-    if-ge v0, p1, :cond_2e
+    if-ge v0, p1, :cond_1
 
     .line 226
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -1338,7 +1338,7 @@
 
     const v3, 0x64617461
 
-    if-ne v2, v3, :cond_29
+    if-ne v2, v3, :cond_0
 
     .line 229
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -1367,7 +1367,7 @@
 
     return-object p0
 
-    :cond_29
+    :cond_0
     add-int/2addr v0, v1
 
     .line 236
@@ -1375,14 +1375,14 @@
 
     goto :goto_0
 
-    :cond_2e
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static parseStandardGenreAttribute(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
-    .registers 4
+    .locals 3
 
     .line 335
     invoke-static {p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIntegerAttribute(Landroidx/media3/common/util/ParsableByteArray;)I
@@ -1398,7 +1398,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_19
+    if-eqz p0, :cond_0
 
     .line 340
     new-instance v1, Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
@@ -1414,7 +1414,7 @@
 
     return-object v1
 
-    :cond_19
+    :cond_0
     const-string p0, "MetadataUtil"
 
     const-string v1, "Failed to parse standard genre code"
@@ -1426,7 +1426,7 @@
 .end method
 
 .method private static parseTextAttribute(ILjava/lang/String;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/id3/TextInformationFrame;
-    .registers 7
+    .locals 4
 
     .line 244
     invoke-virtual {p2}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -1442,7 +1442,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_23
+    if-ne v1, v2, :cond_0
 
     const/16 p0, 0x8
 
@@ -1468,7 +1468,7 @@
     return-object p2
 
     .line 251
-    :cond_23
+    :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Failed to parse text attribute: "
@@ -1495,18 +1495,18 @@
 .end method
 
 .method public static setFormatGaplessInfo(ILandroidx/media3/extractor/GaplessInfoHolder;Landroidx/media3/common/Format$Builder;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-ne p0, v0, :cond_14
+    if-ne p0, v0, :cond_0
 
     .line 125
     invoke-virtual {p1}, Landroidx/media3/extractor/GaplessInfoHolder;->hasGaplessInfo()Z
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     .line 126
     iget p0, p1, Landroidx/media3/extractor/GaplessInfoHolder;->encoderDelay:I
@@ -1521,12 +1521,12 @@
     .line 128
     invoke-virtual {p0, p1}, Landroidx/media3/common/Format$Builder;->setEncoderPadding(I)Landroidx/media3/common/Format$Builder;
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public static varargs setFormatMetadata(ILandroidx/media3/common/Metadata;Landroidx/media3/common/Format$Builder;[Landroidx/media3/common/Metadata;)V
-    .registers 10
+    .locals 6
 
     .line 92
     new-instance v0, Landroidx/media3/common/Metadata;
@@ -1537,17 +1537,17 @@
 
     invoke-direct {v0, v2}, Landroidx/media3/common/Metadata;-><init>([Landroidx/media3/common/Metadata$Entry;)V
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
     move v2, v1
 
     .line 95
-    :goto_b
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/Metadata;->length()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_3d
+    if-ge v2, v3, :cond_2
 
     .line 96
     invoke-virtual {p1, v2}, Landroidx/media3/common/Metadata;->get(I)Landroidx/media3/common/Metadata$Entry;
@@ -1557,7 +1557,7 @@
     .line 97
     instance-of v4, v3, Landroidx/media3/container/MdtaMetadataEntry;
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_1
 
     .line 98
     check-cast v3, Landroidx/media3/container/MdtaMetadataEntry;
@@ -1573,11 +1573,11 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_0
 
     const/4 v4, 0x2
 
-    if-ne p0, v4, :cond_3a
+    if-ne p0, v4, :cond_1
 
     new-array v4, v5, [Landroidx/media3/common/Metadata$Entry;
 
@@ -1588,9 +1588,9 @@
 
     move-result-object v0
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_32
+    :cond_0
     new-array v4, v5, [Landroidx/media3/common/Metadata$Entry;
 
     aput-object v3, v4, v1
@@ -1600,18 +1600,18 @@
 
     move-result-object v0
 
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 111
-    :cond_3d
+    :cond_2
     array-length p0, p3
 
-    :goto_3e
-    if-ge v1, p0, :cond_49
+    :goto_2
+    if-ge v1, p0, :cond_3
 
     aget-object p1, p3, v1
 
@@ -1622,19 +1622,19 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3e
+    goto :goto_2
 
     .line 115
-    :cond_49
+    :cond_3
     invoke-virtual {v0}, Landroidx/media3/common/Metadata;->length()I
 
     move-result p0
 
-    if-lez p0, :cond_52
+    if-lez p0, :cond_4
 
     .line 116
     invoke-virtual {p2, v0}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
 
-    :cond_52
+    :cond_4
     return-void
 .end method

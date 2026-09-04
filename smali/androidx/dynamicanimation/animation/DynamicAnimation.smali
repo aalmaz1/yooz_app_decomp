@@ -113,7 +113,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 57
     new-instance v0, Landroidx/dynamicanimation/animation/DynamicAnimation$1;
@@ -245,7 +245,7 @@
 .end method
 
 .method constructor <init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
-    .registers 4
+    .locals 2
 
     .line 333
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -318,7 +318,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -386,71 +386,71 @@
     .line 359
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->ROTATION:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
-    if-eq p2, p1, :cond_52
+    if-eq p2, p1, :cond_4
 
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->ROTATION_X:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
-    if-eq p2, p1, :cond_52
+    if-eq p2, p1, :cond_4
 
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->ROTATION_Y:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
-    if-ne p2, p1, :cond_38
+    if-ne p2, p1, :cond_0
 
-    goto :goto_52
+    goto :goto_1
 
     .line 362
-    :cond_38
+    :cond_0
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->ALPHA:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
     const/high16 v0, 0x3b800000    # 0.00390625f
 
-    if-ne p2, p1, :cond_41
+    if-ne p2, p1, :cond_1
 
     .line 363
     iput v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
 
-    goto :goto_57
+    goto :goto_2
 
     .line 364
-    :cond_41
+    :cond_1
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->SCALE_X:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
-    if-eq p2, p1, :cond_4f
+    if-eq p2, p1, :cond_3
 
     sget-object p1, Landroidx/dynamicanimation/animation/DynamicAnimation;->SCALE_Y:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
 
-    if-ne p2, p1, :cond_4a
+    if-ne p2, p1, :cond_2
 
-    goto :goto_4f
+    goto :goto_0
 
-    :cond_4a
+    :cond_2
     const/high16 p1, 0x3f800000    # 1.0f
 
     .line 367
     iput p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
 
-    goto :goto_57
+    goto :goto_2
 
     .line 365
-    :cond_4f
-    :goto_4f
+    :cond_3
+    :goto_0
     iput v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
 
-    goto :goto_57
+    goto :goto_2
 
-    :cond_52
-    :goto_52
+    :cond_4
+    :goto_1
     const p1, 0x3dcccccd    # 0.1f
 
     .line 361
     iput p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
 
-    :goto_57
+    :goto_2
     return-void
 .end method
 
 .method private endAnimationInternal(Z)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -473,14 +473,14 @@
     iput-boolean v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mStartValueIsSet:Z
 
     .line 678
-    :goto_10
+    :goto_0
     iget-object v1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mEndListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_32
+    if-ge v0, v1, :cond_1
 
     .line 679
     iget-object v1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mEndListeners:Ljava/util/ArrayList;
@@ -489,7 +489,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 680
     iget-object v1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mEndListeners:Ljava/util/ArrayList;
@@ -506,13 +506,13 @@
 
     invoke-interface {v1, p0, p1, v2, v3}, Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;->onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
-    :cond_2f
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 683
-    :cond_32
+    :cond_1
     iget-object p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mEndListeners:Ljava/util/ArrayList;
 
     invoke-static {p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->removeNullEntries(Ljava/util/ArrayList;)V
@@ -521,7 +521,7 @@
 .end method
 
 .method private getPropertyValue()F
-    .registers 3
+    .locals 2
 
     .line 710
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
@@ -536,7 +536,7 @@
 .end method
 
 .method private static removeEntry(Ljava/util/ArrayList;Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -552,19 +552,19 @@
 
     move-result p1
 
-    if-ltz p1, :cond_a
+    if-ltz p1, :cond_0
 
     const/4 v0, 0x0
 
     .line 560
     invoke-virtual {p0, p1, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method private static removeNullEntries(Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -582,35 +582,35 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_6
-    if-ltz v0, :cond_14
+    :goto_0
+    if-ltz v0, :cond_1
 
     .line 548
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     .line 549
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    :cond_11
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     return-void
 .end method
 
 .method private startAnimationInternal()V
-    .registers 4
+    .locals 3
 
     .line 613
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mRunning:Z
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
@@ -620,7 +620,7 @@
     .line 615
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mStartValueIsSet:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 616
     invoke-direct {p0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->getPropertyValue()F
@@ -630,20 +630,20 @@
     iput v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mValue:F
 
     .line 619
-    :cond_11
+    :cond_0
     iget v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mValue:F
 
     iget v1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMaxValue:F
 
     cmpl-float v1, v0, v1
 
-    if-gtz v1, :cond_29
+    if-gtz v1, :cond_1
 
     iget v1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinValue:F
 
     cmpg-float v0, v0, v1
 
-    if-ltz v0, :cond_29
+    if-ltz v0, :cond_1
 
     .line 623
     invoke-static {}, Landroidx/dynamicanimation/animation/AnimationHandler;->getInstance()Landroidx/dynamicanimation/animation/AnimationHandler;
@@ -654,10 +654,10 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroidx/dynamicanimation/animation/AnimationHandler;->addAnimationFrameCallback(Landroidx/dynamicanimation/animation/AnimationHandler$AnimationFrameCallback;J)V
 
-    goto :goto_31
+    goto :goto_0
 
     .line 620
-    :cond_29
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Starting value need to be in between min value and max value"
@@ -666,15 +666,15 @@
 
     throw v0
 
-    :cond_31
-    :goto_31
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -690,19 +690,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 446
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mEndListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_d
+    :cond_0
     return-object p0
 .end method
 
 .method public addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -716,7 +716,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 479
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
@@ -725,18 +725,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 480
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_13
+    :cond_0
     return-object p0
 
     .line 476
-    :cond_14
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Error: Update listeners must be added beforethe animation."
@@ -747,7 +747,7 @@
 .end method
 
 .method public cancel()V
-    .registers 3
+    .locals 2
 
     .line 591
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -758,23 +758,23 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_1
 
     .line 594
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mRunning:Z
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 595
     invoke-direct {p0, v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->endAnimationInternal(Z)V
 
-    :cond_12
+    :cond_0
     return-void
 
     .line 592
-    :cond_13
+    :cond_1
     new-instance v0, Landroid/util/AndroidRuntimeException;
 
     const-string v1, "Animations may only be canceled on the main thread"
@@ -785,7 +785,7 @@
 .end method
 
 .method public doAnimationFrame(J)Z
-    .registers 7
+    .locals 4
 
     .line 639
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mLastFrameTime:J
@@ -796,7 +796,7 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_11
+    if-nez v2, :cond_0
 
     .line 641
     iput-wide p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mLastFrameTime:J
@@ -808,7 +808,7 @@
 
     return v3
 
-    :cond_11
+    :cond_0
     sub-long v0, p1, v0
 
     .line 646
@@ -842,12 +842,12 @@
     .line 652
     invoke-virtual {p0, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setPropertyValue(F)V
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_1
 
     .line 655
     invoke-direct {p0, v3}, Landroidx/dynamicanimation/animation/DynamicAnimation;->endAnimationInternal(Z)V
 
-    :cond_33
+    :cond_1
     return p1
 .end method
 
@@ -855,7 +855,7 @@
 .end method
 
 .method public getMinimumVisibleChange()F
-    .registers 2
+    .locals 1
 
     .line 539
     iget v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
@@ -864,7 +864,7 @@
 .end method
 
 .method getValueThreshold()F
-    .registers 3
+    .locals 2
 
     .line 703
     iget v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
@@ -880,7 +880,7 @@
 .end method
 
 .method public isRunning()Z
-    .registers 2
+    .locals 1
 
     .line 605
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mRunning:Z
@@ -889,7 +889,7 @@
 .end method
 
 .method public removeEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)V
-    .registers 3
+    .locals 1
 
     .line 457
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mEndListeners:Ljava/util/ArrayList;
@@ -900,7 +900,7 @@
 .end method
 
 .method public removeUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)V
-    .registers 3
+    .locals 1
 
     .line 492
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
@@ -911,7 +911,7 @@
 .end method
 
 .method public setMaxValue(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)TT;"
@@ -925,7 +925,7 @@
 .end method
 
 .method public setMinValue(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)TT;"
@@ -939,7 +939,7 @@
 .end method
 
 .method public setMinimumVisibleChange(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)TT;"
@@ -950,7 +950,7 @@
 
     cmpg-float v0, p1, v0
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     .line 527
     iput p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
@@ -965,7 +965,7 @@
     return-object p0
 
     .line 525
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Minimum visible change must be positive."
@@ -976,7 +976,7 @@
 .end method
 
 .method setPropertyValue(F)V
-    .registers 5
+    .locals 3
 
     .line 690
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mProperty:Landroidx/dynamicanimation/animation/FloatPropertyCompat;
@@ -988,14 +988,14 @@
     const/4 p1, 0x0
 
     .line 691
-    :goto_8
+    :goto_0
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge p1, v0, :cond_2a
+    if-ge p1, v0, :cond_1
 
     .line 692
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
@@ -1004,7 +1004,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 693
     iget-object v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
@@ -1021,13 +1021,13 @@
 
     invoke-interface {v0, p0, v1, v2}, Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;->onAnimationUpdate(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
-    :cond_27
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 696
-    :cond_2a
+    :cond_1
     iget-object p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mUpdateListeners:Ljava/util/ArrayList;
 
     invoke-static {p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->removeNullEntries(Ljava/util/ArrayList;)V
@@ -1036,7 +1036,7 @@
 .end method
 
 .method public setStartValue(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)TT;"
@@ -1055,7 +1055,7 @@
 .end method
 
 .method public setStartVelocity(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)TT;"
@@ -1072,7 +1072,7 @@
 .end method
 
 .method public start()V
-    .registers 3
+    .locals 2
 
     .line 576
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -1083,21 +1083,21 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_1
 
     .line 579
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mRunning:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 580
     invoke-direct {p0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->startAnimationInternal()V
 
-    :cond_11
+    :cond_0
     return-void
 
     .line 577
-    :cond_12
+    :cond_1
     new-instance v0, Landroid/util/AndroidRuntimeException;
 
     const-string v1, "Animations may only be started on the main thread"

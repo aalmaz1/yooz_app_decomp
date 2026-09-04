@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 5
+    .locals 3
 
     .line 171
     new-instance v0, Landroidx/core/provider/RequestExecutor$DefaultThreadFactory$ProcessPriorityThread;

@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 8
+    .locals 5
 
     .line 98
     invoke-direct {p0, p1, p2}, Landroid/opengl/GLSurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -116,7 +116,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_0
 
     const/16 v0, 0xb
 
@@ -126,7 +126,7 @@
     move-result-object v0
 
     .line 114
-    :cond_31
+    :cond_0
     iput-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->orientationSensor:Landroid/hardware/Sensor;
 
     .line 116
@@ -205,7 +205,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;Landroid/graphics/SurfaceTexture;)V
-    .registers 2
+    .locals 0
 
     .line 58
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;)V
@@ -214,7 +214,7 @@
 .end method
 
 .method private onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;)V
-    .registers 4
+    .locals 2
 
     .line 233
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->mainHandler:Landroid/os/Handler;
@@ -229,58 +229,58 @@
 .end method
 
 .method private static releaseSurface(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
-    .registers 2
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 250
     invoke-virtual {p0}, Landroid/graphics/SurfaceTexture;->release()V
 
-    :cond_5
-    if-eqz p1, :cond_a
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 253
     invoke-virtual {p1}, Landroid/view/Surface;->release()V
 
-    :cond_a
+    :cond_1
     return-void
 .end method
 
 .method private updateOrientationListenerRegistration()V
-    .registers 6
+    .locals 5
 
     .line 218
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->useSensorRotation:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->isStarted:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v1
 
     .line 219
-    :goto_c
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->orientationSensor:Landroid/hardware/Sensor;
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_3
 
     iget-boolean v3, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->isOrientationListenerRegistered:Z
 
-    if-ne v0, v3, :cond_15
+    if-ne v0, v3, :cond_1
 
-    goto :goto_28
+    goto :goto_2
 
-    :cond_15
-    if-eqz v0, :cond_1f
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 223
     iget-object v3, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->sensorManager:Landroid/hardware/SensorManager;
@@ -289,10 +289,10 @@
 
     invoke-virtual {v3, v4, v2, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    goto :goto_26
+    goto :goto_1
 
     .line 226
-    :cond_1f
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->sensorManager:Landroid/hardware/SensorManager;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->orientationListener:Landroidx/media3/exoplayer/video/spherical/OrientationListener;
@@ -300,18 +300,18 @@
     invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
     .line 228
-    :goto_26
+    :goto_1
     iput-boolean v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->isOrientationListenerRegistered:Z
 
-    :cond_28
-    :goto_28
+    :cond_3
+    :goto_2
     return-void
 .end method
 
 
 # virtual methods
 .method public addVideoSurfaceListener(Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$VideoSurfaceListener;)V
-    .registers 3
+    .locals 1
 
     .line 136
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->videoSurfaceListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -322,7 +322,7 @@
 .end method
 
 .method public getCameraMotionListener()Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
-    .registers 2
+    .locals 1
 
     .line 164
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->scene:Landroidx/media3/exoplayer/video/spherical/SceneRenderer;
@@ -331,7 +331,7 @@
 .end method
 
 .method public getVideoFrameMetadataListener()Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
-    .registers 2
+    .locals 1
 
     .line 159
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->scene:Landroidx/media3/exoplayer/video/spherical/SceneRenderer;
@@ -340,7 +340,7 @@
 .end method
 
 .method public getVideoSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 154
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->surface:Landroid/view/Surface;
@@ -349,12 +349,12 @@
 .end method
 
 .method synthetic lambda$onDetachedFromWindow$0$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView()V
-    .registers 4
+    .locals 3
 
     .line 205
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->surface:Landroid/view/Surface;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 207
     iget-object v1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->videoSurfaceListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -363,12 +363,12 @@
 
     move-result-object v1
 
-    :goto_a
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -379,10 +379,10 @@
     .line 208
     invoke-interface {v2, v0}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$VideoSurfaceListener;->onVideoSurfaceDestroyed(Landroid/view/Surface;)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 211
-    :cond_1a
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-static {v1, v0}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->releaseSurface(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
@@ -399,7 +399,7 @@
 .end method
 
 .method synthetic lambda$onSurfaceTextureAvailable$1$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView(Landroid/graphics/SurfaceTexture;)V
-    .registers 6
+    .locals 4
 
     .line 235
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->surfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -425,12 +425,12 @@
 
     move-result-object p1
 
-    :goto_13
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -441,17 +441,17 @@
     .line 241
     invoke-interface {v3, v2}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$VideoSurfaceListener;->onVideoSurfaceCreated(Landroid/view/Surface;)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 243
-    :cond_23
+    :cond_0
     invoke-static {v0, v1}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->releaseSurface(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
 
     return-void
 .end method
 
 .method protected onDetachedFromWindow()V
-    .registers 3
+    .locals 2
 
     .line 200
     invoke-super {p0}, Landroid/opengl/GLSurfaceView;->onDetachedFromWindow()V
@@ -469,7 +469,7 @@
 .end method
 
 .method public onPause()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -486,7 +486,7 @@
 .end method
 
 .method public onResume()V
-    .registers 2
+    .locals 1
 
     .line 185
     invoke-super {p0}, Landroid/opengl/GLSurfaceView;->onResume()V
@@ -503,7 +503,7 @@
 .end method
 
 .method public removeVideoSurfaceListener(Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$VideoSurfaceListener;)V
-    .registers 3
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->videoSurfaceListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -514,7 +514,7 @@
 .end method
 
 .method public setDefaultStereoMode(I)V
-    .registers 3
+    .locals 1
 
     .line 174
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->scene:Landroidx/media3/exoplayer/video/spherical/SceneRenderer;
@@ -525,7 +525,7 @@
 .end method
 
 .method public setUseSensorRotation(Z)V
-    .registers 2
+    .locals 0
 
     .line 179
     iput-boolean p1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->useSensorRotation:Z

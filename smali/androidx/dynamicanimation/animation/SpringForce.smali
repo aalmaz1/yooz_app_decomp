@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method public constructor <init>(F)V
-    .registers 4
+    .locals 2
 
     .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -137,24 +137,24 @@
 .end method
 
 .method private init()V
-    .registers 9
+    .locals 8
 
     .line 247
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mInitialized:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 251
-    :cond_5
+    :cond_0
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mFinalPosition:D
 
     const-wide v2, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
     cmpl-double v0, v0, v2
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_3
 
     .line 256
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mDampingRatio:D
@@ -163,7 +163,7 @@
 
     cmpl-double v4, v0, v2
 
-    if-lez v4, :cond_37
+    if-lez v4, :cond_1
 
     neg-double v4, v0
 
@@ -211,18 +211,18 @@
 
     iput-wide v4, p0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaMinus:D
 
-    goto :goto_4c
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     const-wide/16 v4, 0x0
 
     cmpl-double v4, v0, v4
 
-    if-ltz v4, :cond_4c
+    if-ltz v4, :cond_2
 
     cmpg-double v4, v0, v2
 
-    if-gez v4, :cond_4c
+    if-gez v4, :cond_2
 
     .line 264
     iget-wide v4, p0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
@@ -239,8 +239,8 @@
 
     iput-wide v4, p0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
-    :cond_4c
-    :goto_4c
+    :cond_2
+    :goto_0
     const/4 v0, 0x1
 
     .line 267
@@ -249,7 +249,7 @@
     return-void
 
     .line 252
-    :cond_50
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Error: Final position of the spring must be set before the animation starts"
@@ -262,7 +262,7 @@
 
 # virtual methods
 .method public getAcceleration(FF)F
-    .registers 9
+    .locals 6
 
     .line 218
     invoke-virtual {p0}, Landroidx/dynamicanimation/animation/SpringForce;->getFinalPosition()F
@@ -303,7 +303,7 @@
 .end method
 
 .method public getDampingRatio()F
-    .registers 3
+    .locals 2
 
     .line 186
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mDampingRatio:D
@@ -314,7 +314,7 @@
 .end method
 
 .method public getFinalPosition()F
-    .registers 3
+    .locals 2
 
     .line 206
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mFinalPosition:D
@@ -325,7 +325,7 @@
 .end method
 
 .method public getStiffness()F
-    .registers 3
+    .locals 2
 
     .line 152
     iget-wide v0, p0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
@@ -338,7 +338,7 @@
 .end method
 
 .method public isAtEquilibrium(FF)Z
-    .registers 7
+    .locals 4
 
     .line 232
     invoke-static {p2}, Ljava/lang/Math;->abs(F)F
@@ -351,7 +351,7 @@
 
     cmpg-double p2, v0, v2
 
-    if-gez p2, :cond_1d
+    if-gez p2, :cond_0
 
     .line 233
     invoke-virtual {p0}, Landroidx/dynamicanimation/animation/SpringForce;->getFinalPosition()F
@@ -370,26 +370,26 @@
 
     cmpg-double p1, p1, v0
 
-    if-gez p1, :cond_1d
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1d
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
 
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_0
 
     float-to-double v0, p1
 
@@ -404,7 +404,7 @@
     return-object p0
 
     .line 172
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Damping ratio must be non-negative"
@@ -415,7 +415,7 @@
 .end method
 
 .method public setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
-    .registers 4
+    .locals 2
 
     float-to-double v0, p1
 
@@ -426,13 +426,13 @@
 .end method
 
 .method public setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     float-to-double v0, p1
 
@@ -451,7 +451,7 @@
     return-object p0
 
     .line 138
-    :cond_10
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Spring stiffness constant must be positive."
@@ -462,7 +462,7 @@
 .end method
 
 .method setValueThreshold(D)V
-    .registers 5
+    .locals 2
 
     .line 329
     invoke-static {p1, p2}, Ljava/lang/Math;->abs(D)D
@@ -482,7 +482,7 @@
 .end method
 
 .method updateValues(DDJ)Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
-    .registers 23
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -511,7 +511,7 @@
 
     const-wide v10, 0x4005bf0a8b145769L    # Math.E
 
-    if-lez v9, :cond_56
+    if-lez v9, :cond_0
 
     .line 284
     iget-wide v5, v0, Landroidx/dynamicanimation/animation/SpringForce;->mGammaMinus:D
@@ -586,12 +586,12 @@
 
     add-double/2addr v7, v3
 
-    goto/16 :goto_d2
+    goto/16 :goto_0
 
-    :cond_56
+    :cond_0
     cmpl-double v9, v5, v7
 
-    if-nez v9, :cond_80
+    if-nez v9, :cond_1
 
     .line 295
     iget-wide v5, v0, Landroidx/dynamicanimation/animation/SpringForce;->mNaturalFreq:D
@@ -647,10 +647,10 @@
 
     add-double/2addr v7, v3
 
-    goto :goto_d2
+    goto :goto_0
 
     .line 302
-    :cond_80
+    :cond_1
     iget-wide v12, v0, Landroidx/dynamicanimation/animation/SpringForce;->mDampedFreq:D
 
     div-double/2addr v7, v12
@@ -765,7 +765,7 @@
     move-wide/from16 v5, p1
 
     .line 313
-    :goto_d2
+    :goto_0
     iget-object v1, v0, Landroidx/dynamicanimation/animation/SpringForce;->mMassState:Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
 
     iget-wide v2, v0, Landroidx/dynamicanimation/animation/SpringForce;->mFinalPosition:D

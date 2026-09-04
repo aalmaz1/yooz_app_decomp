@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Class;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,7 +65,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,7 +98,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/CharSequence;II)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,19 +131,19 @@
 .end method
 
 .method private blockWatchers()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 277
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 278
     iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
@@ -158,14 +158,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method public static create(Ljava/lang/Class;Ljava/lang/CharSequence;)Landroidx/emoji2/text/SpannableBuilder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -186,21 +186,21 @@
 .end method
 
 .method private fireWatchers()V
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 296
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_20
+    if-ge v1, v2, :cond_0
 
     .line 297
     iget-object v2, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
@@ -223,26 +223,26 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method private getWatcherFor(Ljava/lang/Object;)Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 247
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_1
 
     .line 248
     iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
@@ -256,23 +256,23 @@
     .line 249
     iget-object v2, v1, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;->mObject:Ljava/lang/Object;
 
-    if-ne v2, p1, :cond_16
+    if-ne v2, p1, :cond_0
 
     return-object v1
 
-    :cond_16
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method private isWatcher(Ljava/lang/Class;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -284,23 +284,23 @@
     .line 119
     iget-object v0, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatcherClass:Ljava/lang/Class;
 
-    if-ne v0, p1, :cond_6
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     return p1
 .end method
 
 .method private isWatcher(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 108
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -311,33 +311,33 @@
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method private unblockwatchers()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 286
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 287
     iget-object v1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
@@ -352,16 +352,16 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public bridge synthetic append(C)Landroid/text/Editable;
-    .registers 2
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->append(C)Landroid/text/SpannableStringBuilder;
@@ -372,7 +372,7 @@
 .end method
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;)Landroid/text/Editable;
-    .registers 2
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -383,7 +383,7 @@
 .end method
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;II)Landroid/text/Editable;
-    .registers 4
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1, p2, p3}, Landroidx/emoji2/text/SpannableBuilder;->append(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
@@ -394,7 +394,7 @@
 .end method
 
 .method public append(C)Landroid/text/SpannableStringBuilder;
-    .registers 2
+    .locals 0
 
     .line 351
     invoke-super {p0, p1}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
@@ -403,7 +403,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-    .registers 2
+    .locals 0
 
     .line 344
     invoke-super {p0, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -412,7 +412,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
-    .registers 4
+    .locals 0
 
     .line 360
     invoke-super {p0, p1, p2, p3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
@@ -421,7 +421,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;Ljava/lang/Object;I)Landroid/text/SpannableStringBuilder;
-    .registers 4
+    .locals 0
 
     .line 367
     invoke-super {p0, p1, p2, p3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;Ljava/lang/Object;I)Landroid/text/SpannableStringBuilder;
@@ -430,7 +430,7 @@
 .end method
 
 .method public bridge synthetic append(C)Ljava/lang/Appendable;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -446,7 +446,7 @@
 .end method
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -462,7 +462,7 @@
 .end method
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -478,7 +478,7 @@
 .end method
 
 .method public beginBatchEdit()V
-    .registers 1
+    .locals 0
 
     .line 261
     invoke-direct {p0}, Landroidx/emoji2/text/SpannableBuilder;->blockWatchers()V
@@ -487,7 +487,7 @@
 .end method
 
 .method public bridge synthetic delete(II)Landroid/text/Editable;
-    .registers 3
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1, p2}, Landroidx/emoji2/text/SpannableBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
@@ -498,7 +498,7 @@
 .end method
 
 .method public delete(II)Landroid/text/SpannableStringBuilder;
-    .registers 3
+    .locals 0
 
     .line 337
     invoke-super {p0, p1, p2}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
@@ -507,7 +507,7 @@
 .end method
 
 .method public endBatchEdit()V
-    .registers 1
+    .locals 0
 
     .line 269
     invoke-direct {p0}, Landroidx/emoji2/text/SpannableBuilder;->unblockwatchers()V
@@ -519,26 +519,26 @@
 .end method
 
 .method public getSpanEnd(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 205
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->isWatcher(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 206
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->getWatcherFor(Ljava/lang/Object;)Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object p1, v0
 
     .line 211
-    :cond_d
+    :cond_0
     invoke-super {p0, p1}, Landroid/text/SpannableStringBuilder;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result p1
@@ -547,26 +547,26 @@
 .end method
 
 .method public getSpanFlags(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 219
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->isWatcher(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 220
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->getWatcherFor(Ljava/lang/Object;)Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object p1, v0
 
     .line 225
-    :cond_d
+    :cond_0
     invoke-super {p0, p1}, Landroid/text/SpannableStringBuilder;->getSpanFlags(Ljava/lang/Object;)I
 
     move-result p1
@@ -575,26 +575,26 @@
 .end method
 
 .method public getSpanStart(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 191
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->isWatcher(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 192
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->getWatcherFor(Ljava/lang/Object;)Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object p1, v0
 
     .line 197
-    :cond_d
+    :cond_0
     invoke-super {p0, p1}, Landroid/text/SpannableStringBuilder;->getSpanStart(Ljava/lang/Object;)I
 
     move-result p1
@@ -603,7 +603,7 @@
 .end method
 
 .method public getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -619,7 +619,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 152
     const-class v0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
@@ -642,10 +642,10 @@
     const/4 p3, 0x0
 
     .line 155
-    :goto_16
+    :goto_0
     array-length v0, p1
 
-    if-ge p3, v0, :cond_22
+    if-ge p3, v0, :cond_0
 
     .line 156
     aget-object v0, p1, p3
@@ -656,13 +656,13 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     return-object p2
 
     .line 160
-    :cond_23
+    :cond_1
     invoke-super {p0, p1, p2, p3}, Landroid/text/SpannableStringBuilder;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object p1
@@ -671,7 +671,7 @@
 .end method
 
 .method public bridge synthetic insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
-    .registers 3
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1, p2}, Landroidx/emoji2/text/SpannableBuilder;->insert(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -682,7 +682,7 @@
 .end method
 
 .method public bridge synthetic insert(ILjava/lang/CharSequence;II)Landroid/text/Editable;
-    .registers 5
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/emoji2/text/SpannableBuilder;->insert(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
@@ -693,7 +693,7 @@
 .end method
 
 .method public insert(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-    .registers 3
+    .locals 0
 
     .line 323
     invoke-super {p0, p1, p2}, Landroid/text/SpannableStringBuilder;->insert(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -702,7 +702,7 @@
 .end method
 
 .method public insert(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
-    .registers 5
+    .locals 0
 
     .line 330
     invoke-super {p0, p1, p2, p3, p4}, Landroid/text/SpannableStringBuilder;->insert(ILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
@@ -711,23 +711,23 @@
 .end method
 
 .method public nextSpanTransition(IILjava/lang/Class;)I
-    .registers 5
+    .locals 1
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_0
 
     .line 233
     invoke-direct {p0, p3}, Landroidx/emoji2/text/SpannableBuilder;->isWatcher(Ljava/lang/Class;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_1
 
     .line 234
-    :cond_8
+    :cond_0
     const-class p3, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
 
     .line 236
-    :cond_a
+    :cond_1
     invoke-super {p0, p1, p2, p3}, Landroid/text/SpannableStringBuilder;->nextSpanTransition(IILjava/lang/Class;)I
 
     move-result p1
@@ -736,47 +736,47 @@
 .end method
 
 .method public removeSpan(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 170
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->isWatcher(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 171
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->getWatcherFor(Ljava/lang/Object;)Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     move-object p1, v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 179
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     invoke-super {p0, p1}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_2
 
     .line 182
     iget-object p1, p0, Landroidx/emoji2/text/SpannableBuilder;->mWatchers:Ljava/util/List;
 
     invoke-interface {p1, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    :cond_19
+    :cond_2
     return-void
 .end method
 
 .method public bridge synthetic replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
-    .registers 4
+    .locals 0
 
     .line 49
     invoke-virtual {p0, p1, p2, p3}, Landroidx/emoji2/text/SpannableBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -787,7 +787,7 @@
 .end method
 
 .method public bridge synthetic replace(IILjava/lang/CharSequence;II)Landroid/text/Editable;
-    .registers 6
+    .locals 0
 
     .line 49
     invoke-virtual/range {p0 .. p5}, Landroidx/emoji2/text/SpannableBuilder;->replace(IILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
@@ -798,7 +798,7 @@
 .end method
 
 .method public replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-    .registers 4
+    .locals 0
 
     .line 304
     invoke-direct {p0}, Landroidx/emoji2/text/SpannableBuilder;->blockWatchers()V
@@ -813,7 +813,7 @@
 .end method
 
 .method public replace(IILjava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
-    .registers 6
+    .locals 0
 
     .line 314
     invoke-direct {p0}, Landroidx/emoji2/text/SpannableBuilder;->blockWatchers()V
@@ -828,14 +828,14 @@
 .end method
 
 .method public setSpan(Ljava/lang/Object;III)V
-    .registers 6
+    .locals 1
 
     .line 135
     invoke-direct {p0, p1}, Landroidx/emoji2/text/SpannableBuilder;->isWatcher(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 136
     new-instance v0, Landroidx/emoji2/text/SpannableBuilder$WatcherWrapper;
@@ -850,14 +850,14 @@
     move-object p1, v0
 
     .line 140
-    :cond_11
+    :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     return-void
 .end method
 
 .method public subSequence(II)Ljava/lang/CharSequence;
-    .registers 5
+    .locals 2
 
     .line 125
     new-instance v0, Landroidx/emoji2/text/SpannableBuilder;

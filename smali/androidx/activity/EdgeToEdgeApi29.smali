@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 299
     invoke-direct {p0}, Landroidx/activity/EdgeToEdgeApi28;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public setUp(Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;Landroid/view/Window;Landroid/view/View;ZZ)V
-    .registers 8
+    .locals 1
 
     const-string v0, "statusBarStyle"
 
@@ -97,12 +97,12 @@
 
     const/4 p2, 0x1
 
-    if-nez p1, :cond_33
+    if-nez p1, :cond_0
 
     move v0, p2
 
     .line 315
-    :cond_33
+    :cond_0
     invoke-virtual {p3, v0}, Landroid/view/Window;->setNavigationBarContrastEnforced(Z)V
 
     .line 317

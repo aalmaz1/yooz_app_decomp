@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static from(Landroid/content/Context;)Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;
-    .registers 2
+    .locals 1
 
     .line 57
     new-instance v0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;
@@ -46,7 +46,7 @@
 .end method
 
 .method private static getFingerprintManagerOrNull(Landroid/content/Context;)Landroid/hardware/fingerprint/FingerprintManager;
-    .registers 1
+    .locals 0
 
     .line 152
     invoke-static {p0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->getFingerprintManagerOrNull(Landroid/content/Context;)Landroid/hardware/fingerprint/FingerprintManager;
@@ -57,7 +57,7 @@
 .end method
 
 .method static unwrapCryptoObject(Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;)Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;
-    .registers 1
+    .locals 0
 
     .line 162
     invoke-static {p0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->unwrapCryptoObject(Ljava/lang/Object;)Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;
@@ -68,7 +68,7 @@
 .end method
 
 .method private static wrapCallback(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;)Landroid/hardware/fingerprint/FingerprintManager$AuthenticationCallback;
-    .registers 2
+    .locals 1
 
     .line 168
     new-instance v0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$1;
@@ -79,7 +79,7 @@
 .end method
 
 .method private static wrapCryptoObject(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;)Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;
-    .registers 1
+    .locals 0
 
     .line 157
     invoke-static {p0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->wrapCryptoObject(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;)Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public authenticate(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;ILandroid/os/CancellationSignal;Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;Landroid/os/Handler;)V
-    .registers 13
+    .locals 7
 
     .line 141
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->mContext:Landroid/content/Context;
@@ -101,7 +101,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 143
     invoke-static {p1}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->wrapCryptoObject(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;)Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;
@@ -122,16 +122,16 @@
     .line 143
     invoke-static/range {v1 .. v6}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->authenticate(Ljava/lang/Object;Ljava/lang/Object;Landroid/os/CancellationSignal;ILjava/lang/Object;Landroid/os/Handler;)V
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public authenticate(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;ILandroidx/core/os/CancellationSignal;Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;Landroid/os/Handler;)V
-    .registers 12
+    .locals 6
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_0
 
     .line 118
     invoke-virtual {p3}, Landroidx/core/os/CancellationSignal;->getCancellationSignalObject()Ljava/lang/Object;
@@ -140,12 +140,12 @@
 
     check-cast p3, Landroid/os/CancellationSignal;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p3, 0x0
 
-    :goto_a
+    :goto_0
     move-object v3, p3
 
     move-object v0, p0
@@ -165,7 +165,7 @@
 .end method
 
 .method public hasEnrolledFingerprints()Z
-    .registers 2
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->mContext:Landroid/content/Context;
@@ -174,28 +174,28 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 73
     invoke-static {v0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->hasEnrolledFingerprints(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public isHardwareDetected()Z
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->mContext:Landroid/content/Context;
@@ -204,22 +204,22 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 88
     invoke-static {v0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->isHardwareDetected(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method

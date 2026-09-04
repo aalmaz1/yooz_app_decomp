@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/privacysandbox/ads/adservices/adid/AdIdManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "mAdIdManager"
 
@@ -59,7 +59,7 @@
 .end method
 
 .method public static final synthetic access$getMAdIdManager$p(Landroidx/privacysandbox/ads/adservices/java/adid/AdIdManagerFutures$Api33Ext4JavaImpl;)Landroidx/privacysandbox/ads/adservices/adid/AdIdManager;
-    .registers 1
+    .locals 0
 
     .line 49
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/java/adid/AdIdManagerFutures$Api33Ext4JavaImpl;->mAdIdManager:Landroidx/privacysandbox/ads/adservices/adid/AdIdManager;
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public getAdIdAsync()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

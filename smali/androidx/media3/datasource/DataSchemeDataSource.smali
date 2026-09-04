@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -32,14 +32,14 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 110
     iget-object v0, p0, Landroidx/media3/datasource/DataSchemeDataSource;->data:[B
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 111
     iput-object v1, p0, Landroidx/media3/datasource/DataSchemeDataSource;->data:[B
@@ -48,33 +48,33 @@
     invoke-virtual {p0}, Landroidx/media3/datasource/DataSchemeDataSource;->transferEnded()V
 
     .line 114
-    :cond_a
+    :cond_0
     iput-object v1, p0, Landroidx/media3/datasource/DataSchemeDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     return-void
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/media3/datasource/DataSchemeDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     iget-object v0, v0, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return-object v0
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -140,7 +140,7 @@
 
     const/4 v4, 0x0
 
-    if-ne v2, v3, :cond_b3
+    if-ne v2, v3, :cond_4
 
     const/4 v0, 0x1
 
@@ -158,21 +158,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_0
 
     .line 64
-    :try_start_44
+    :try_start_0
     invoke-static {v0, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
     move-result-object v1
 
     iput-object v1, p0, Landroidx/media3/datasource/DataSchemeDataSource;->data:[B
-    :try_end_4a
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_44 .. :try_end_4a} :catch_4b
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_70
+    goto :goto_0
 
-    :catch_4b
+    :catch_0
     move-exception p1
 
     .line 66
@@ -197,7 +197,7 @@
     throw p1
 
     .line 71
-    :cond_60
+    :cond_0
     sget-object v1, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
     invoke-virtual {v1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -215,7 +215,7 @@
     iput-object v0, p0, Landroidx/media3/datasource/DataSchemeDataSource;->data:[B
 
     .line 73
-    :goto_70
+    :goto_0
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->position:J
 
     iget-object v2, p0, Landroidx/media3/datasource/DataSchemeDataSource;->data:[B
@@ -226,7 +226,7 @@
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_a9
+    if-gtz v0, :cond_3
 
     .line 77
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->position:J
@@ -251,7 +251,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_1
 
     .line 80
     iget v0, p0, Landroidx/media3/datasource/DataSchemeDataSource;->bytesRemaining:I
@@ -269,7 +269,7 @@
     iput v0, p0, Landroidx/media3/datasource/DataSchemeDataSource;->bytesRemaining:I
 
     .line 82
-    :cond_99
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/DataSchemeDataSource;->transferStarted(Landroidx/media3/datasource/DataSpec;)V
 
     .line 83
@@ -277,22 +277,22 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_a5
+    if-eqz v0, :cond_2
 
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
-    goto :goto_a8
+    goto :goto_1
 
-    :cond_a5
+    :cond_2
     iget p1, p0, Landroidx/media3/datasource/DataSchemeDataSource;->bytesRemaining:I
 
     int-to-long v0, p1
 
-    :goto_a8
+    :goto_1
     return-wide v0
 
     .line 74
-    :cond_a9
+    :cond_3
     iput-object v4, p0, Landroidx/media3/datasource/DataSchemeDataSource;->data:[B
 
     .line 75
@@ -305,7 +305,7 @@
     throw p1
 
     .line 58
-    :cond_b3
+    :cond_4
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v1, "Unexpected URI format: "
@@ -328,26 +328,26 @@
 .end method
 
 .method public read([BII)I
-    .registers 6
+    .locals 2
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 91
-    :cond_4
+    :cond_0
     iget v0, p0, Landroidx/media3/datasource/DataSchemeDataSource;->bytesRemaining:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, -0x1
 
     return p1
 
     .line 94
-    :cond_a
+    :cond_1
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3

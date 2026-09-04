@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -29,7 +29,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/IOException;I)V
-    .registers 3
+    .locals 0
 
     .line 54
     invoke-direct {p0, p1, p2}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Throwable;I)V

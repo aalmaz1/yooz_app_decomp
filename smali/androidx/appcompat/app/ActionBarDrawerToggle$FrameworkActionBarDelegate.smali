@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
-    .registers 2
+    .locals 0
 
     .line 521
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public getActionBarThemedContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 540
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity:Landroid/app/Activity;
@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 542
     invoke-virtual {v0}, Landroid/app/ActionBar;->getThemedContext()Landroid/content/Context;
@@ -64,14 +64,14 @@
     return-object v0
 
     .line 544
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity:Landroid/app/Activity;
 
     return-object v0
 .end method
 
 .method public getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
-    .registers 6
+    .locals 5
 
     .line 528
     invoke-virtual {p0}, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->getActionBarThemedContext()Landroid/content/Context;
@@ -108,7 +108,7 @@
 .end method
 
 .method public isNavigationVisible()Z
-    .registers 2
+    .locals 1
 
     .line 549
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity:Landroid/app/Activity;
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 551
     invoke-virtual {v0}, Landroid/app/ActionBar;->getDisplayOptions()I
@@ -126,21 +126,21 @@
 
     and-int/lit8 v0, v0, 0x4
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method public setActionBarDescription(I)V
-    .registers 3
+    .locals 1
 
     .line 573
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity:Landroid/app/Activity;
@@ -149,17 +149,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 575
     invoke-static {v0, p1}, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate$Api18Impl;->setHomeActionContentDescription(Landroid/app/ActionBar;I)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public setActionBarUpIndicator(Landroid/graphics/drawable/Drawable;I)V
-    .registers 4
+    .locals 1
 
     .line 556
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate;->mActivity:Landroid/app/Activity;
@@ -168,7 +168,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 559
     invoke-static {v0, p1}, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate$Api18Impl;->setHomeAsUpIndicator(Landroid/app/ActionBar;Landroid/graphics/drawable/Drawable;)V
@@ -176,6 +176,6 @@
     .line 560
     invoke-static {v0, p2}, Landroidx/appcompat/app/ActionBarDrawerToggle$FrameworkActionBarDelegate$Api18Impl;->setHomeActionContentDescription(Landroid/app/ActionBar;I)V
 
-    :cond_e
+    :cond_0
     return-void
 .end method

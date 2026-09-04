@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(C)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public and(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -59,23 +59,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     move-object p1, p0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     invoke-static {}, Lcom/google/common/base/CharMatcher$Is;->none()Lcom/google/common/base/CharMatcher;
 
     move-result-object p1
 
-    :goto_e
+    :goto_0
     return-object p1
 .end method
 
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -88,21 +88,21 @@
     .line 1626
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$Is;->match:C
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     return p1
 .end method
 
 .method public negate()Lcom/google/common/base/CharMatcher;
-    .registers 2
+    .locals 1
 
     .line 1646
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$Is;->match:C
@@ -115,7 +115,7 @@
 .end method
 
 .method public or(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -132,21 +132,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     invoke-super {p0, p1}, Lcom/google/common/base/CharMatcher$FastMatcher;->or(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
 
     move-result-object p1
 
-    :goto_d
+    :goto_0
     return-object p1
 .end method
 
 .method public replaceFrom(Ljava/lang/CharSequence;C)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -173,7 +173,7 @@
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -192,7 +192,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1658
     new-instance v0, Ljava/lang/StringBuilder;

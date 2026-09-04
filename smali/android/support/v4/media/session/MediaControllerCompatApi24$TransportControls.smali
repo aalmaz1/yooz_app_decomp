@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static prepare(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 30
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static prepareFromMediaId(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 34
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static prepareFromSearch(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 38
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -58,7 +58,7 @@
 .end method
 
 .method public static prepareFromUri(Ljava/lang/Object;Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 42
     check-cast p0, Landroid/media/session/MediaController$TransportControls;

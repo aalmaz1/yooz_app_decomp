@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static create(Ljava/lang/Object;)Landroidx/camera/core/impl/Identifier;
-    .registers 2
+    .locals 1
 
     .line 37
     new-instance v0, Landroidx/camera/core/impl/AutoValue_Identifier;

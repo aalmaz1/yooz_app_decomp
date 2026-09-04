@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public getCompatibilityId()Landroidx/camera/core/impl/Identifier;
-    .registers 2
+    .locals 1
 
     .line 43
     iget-object v0, p0, Landroidx/camera/core/impl/CameraConfigs$EmptyCameraConfig;->mIdentifier:Landroidx/camera/core/impl/Identifier;
@@ -54,7 +54,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-static {}, Landroidx/camera/core/impl/OptionsBundle;->emptyBundle()Landroidx/camera/core/impl/OptionsBundle;

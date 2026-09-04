@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/mp4/Atom$LeafAtom;Landroidx/media3/common/Format;)V
-    .registers 6
+    .locals 3
 
     .line 2256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_1
 
     .line 2261
     iget v1, p2, Landroidx/media3/common/Format;->pcmEncoding:I
@@ -67,15 +67,15 @@
 
     move-result p2
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 2262
     rem-int v1, v0, p2
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_1
 
     .line 2266
-    :cond_28
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Audio sample size mismatch. stsd sample size: "
@@ -106,13 +106,13 @@
 
     move v0, p2
 
-    :cond_47
-    if-nez v0, :cond_4a
+    :cond_1
+    if-nez v0, :cond_2
 
     const/4 v0, -0x1
 
     .line 2275
-    :cond_4a
+    :cond_2
     iput v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;->fixedSampleSize:I
 
     .line 2276
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public getFixedSampleSize()I
-    .registers 2
+    .locals 1
 
     .line 2286
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;->fixedSampleSize:I
@@ -137,7 +137,7 @@
 .end method
 
 .method public getSampleCount()I
-    .registers 2
+    .locals 1
 
     .line 2281
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;->sampleCount:I
@@ -146,14 +146,14 @@
 .end method
 
 .method public readNextSampleSize()I
-    .registers 3
+    .locals 2
 
     .line 2291
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;->fixedSampleSize:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;->data:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -161,6 +161,6 @@
 
     move-result v0
 
-    :cond_b
+    :cond_0
     return v0
 .end method

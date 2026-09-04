@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     invoke-static {}, Landroidx/media3/datasource/PlaceholderDataSource;->$r8$lambda$vtmV5Njo8kR2KAgmyl6w_Qrh-mI()Landroidx/media3/datasource/PlaceholderDataSource;
 

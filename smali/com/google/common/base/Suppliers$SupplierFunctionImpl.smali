@@ -36,7 +36,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/google/common/base/Suppliers$SupplierFunctionImpl;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -53,7 +53,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 377
     new-instance v0, Lcom/google/common/base/Suppliers$SupplierFunctionImpl;
@@ -77,7 +77,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -102,7 +102,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/Suppliers$SupplierFunctionImpl;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8000
@@ -125,7 +125,7 @@
 .end method
 
 .method public static values()[Lcom/google/common/base/Suppliers$SupplierFunctionImpl;
-    .registers 1
+    .locals 1
 
     .line 376
     sget-object v0, Lcom/google/common/base/Suppliers$SupplierFunctionImpl;->$VALUES:[Lcom/google/common/base/Suppliers$SupplierFunctionImpl;
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public apply(Lcom/google/common/base/Supplier;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -174,7 +174,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -198,7 +198,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "Suppliers.supplierFunction()"
 

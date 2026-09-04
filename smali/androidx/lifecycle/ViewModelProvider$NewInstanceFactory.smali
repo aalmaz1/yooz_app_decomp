@@ -67,7 +67,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion;
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,7 +97,7 @@
 .end method
 
 .method public static final synthetic access$getSInstance$cp()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
-    .registers 1
+    .locals 1
 
     .line 197
     sget-object v0, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->sInstance:Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static final synthetic access$setSInstance$cp(Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;)V
-    .registers 1
+    .locals 0
 
     .line 197
     sput-object p0, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->sInstance:Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
@@ -115,7 +115,7 @@
 .end method
 
 .method public static final getInstance()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->Companion:Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion;
 
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -148,7 +148,7 @@
 
     const/4 v1, 0x0
 
-    :try_start_8
+    :try_start_0
     new-array v2, v1, [Ljava/lang/Class;
 
     .line 202
@@ -168,14 +168,14 @@
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v1, Landroidx/lifecycle/ViewModel;
-    :try_end_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_8 .. :try_end_1c} :catch_49
-    .catch Ljava/lang/InstantiationException; {:try_start_8 .. :try_end_1c} :catch_33
-    .catch Ljava/lang/IllegalAccessException; {:try_start_8 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v1
 
-    :catch_1d
+    :catch_0
     move-exception v1
 
     .line 208
@@ -199,7 +199,7 @@
 
     throw v2
 
-    :catch_33
+    :catch_1
     move-exception v1
 
     .line 206
@@ -223,7 +223,7 @@
 
     throw v2
 
-    :catch_49
+    :catch_2
     move-exception v1
 
     .line 204

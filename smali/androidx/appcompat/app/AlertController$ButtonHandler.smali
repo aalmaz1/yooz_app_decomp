@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 156
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -50,41 +50,41 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 4
+    .locals 2
 
     .line 162
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, -0x3
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_1
 
     const/4 v1, -0x2
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_1
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
-    goto :goto_28
+    goto :goto_0
 
     .line 171
-    :cond_f
+    :cond_0
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Landroid/content/DialogInterface;
 
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 167
-    :cond_17
+    :cond_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/content/DialogInterface$OnClickListener;
@@ -101,6 +101,6 @@
 
     invoke-interface {v0, v1, p1}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    :goto_28
+    :goto_0
     return-void
 .end method

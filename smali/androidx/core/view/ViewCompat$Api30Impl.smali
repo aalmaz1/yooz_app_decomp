@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5463
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getImportantForContentCapture(Landroid/view/View;)I
-    .registers 1
+    .locals 0
 
     .line 5497
     invoke-virtual {p0}, Landroid/view/View;->getImportantForContentCapture()I
@@ -36,7 +36,7 @@
 .end method
 
 .method static getStateDescription(Landroid/view/View;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 5482
     invoke-virtual {p0}, Landroid/view/View;->getStateDescription()Ljava/lang/CharSequence;
@@ -47,31 +47,31 @@
 .end method
 
 .method public static getWindowInsetsController(Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;
-    .registers 1
+    .locals 0
 
     .line 5469
     invoke-virtual {p0}, Landroid/view/View;->getWindowInsetsController()Landroid/view/WindowInsetsController;
 
     move-result-object p0
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
     .line 5471
     invoke-static {p0}, Landroidx/core/view/WindowInsetsControllerCompat;->toWindowInsetsControllerCompat(Landroid/view/WindowInsetsController;)Landroidx/core/view/WindowInsetsControllerCompat;
 
     move-result-object p0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_c
+    :goto_0
     return-object p0
 .end method
 
 .method static isImportantForContentCapture(Landroid/view/View;)Z
-    .registers 1
+    .locals 0
 
     .line 5492
     invoke-virtual {p0}, Landroid/view/View;->isImportantForContentCapture()Z
@@ -82,7 +82,7 @@
 .end method
 
 .method static setImportantForContentCapture(Landroid/view/View;I)V
-    .registers 2
+    .locals 0
 
     .line 5487
     invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForContentCapture(I)V
@@ -91,7 +91,7 @@
 .end method
 
 .method static setStateDescription(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 5477
     invoke-virtual {p0, p1}, Landroid/view/View;->setStateDescription(Ljava/lang/CharSequence;)V

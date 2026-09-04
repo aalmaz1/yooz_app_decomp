@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v4/media/session/MediaSessionCompatApi24$Callback;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public onPrepare()V
-    .registers 2
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompatApi24$CallbackProxy;->mCallback:Landroid/support/v4/media/session/MediaSessionCompatApi21$Callback;
@@ -55,7 +55,7 @@
 .end method
 
 .method public onPrepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 68
     invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V
@@ -71,7 +71,7 @@
 .end method
 
 .method public onPrepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 74
     invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V
@@ -87,7 +87,7 @@
 .end method
 
 .method public onPrepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 80
     invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V

@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 45
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->getGeneratedMessageClass()Ljava/lang/Class;
@@ -83,7 +83,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method static computeSizeBoolList(ILjava/util/List;Z)I
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -106,14 +106,14 @@
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_8
-    if-eqz p2, :cond_14
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 632
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -129,7 +129,7 @@
 
     return p0
 
-    :cond_14
+    :cond_1
     const/4 p2, 0x1
 
     .line 635
@@ -143,7 +143,7 @@
 .end method
 
 .method static computeSizeBoolListNoTag(Ljava/util/List;)I
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -161,7 +161,7 @@
 .end method
 
 .method static computeSizeByteStringList(ILjava/util/List;)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -178,12 +178,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 715
-    :cond_8
+    :cond_0
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -191,12 +191,12 @@
     mul-int/2addr v0, p0
 
     .line 716
-    :goto_d
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p0
 
-    if-ge v1, p0, :cond_21
+    if-ge v1, p0, :cond_1
 
     .line 717
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -213,14 +213,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return v0
 .end method
 
 .method static computeSizeEnumList(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -235,19 +235,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 465
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeEnumListNoTag(Ljava/util/List;)I
 
     move-result p1
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 468
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -264,7 +264,7 @@
     return p0
 
     .line 471
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -277,7 +277,7 @@
 .end method
 
 .method static computeSizeEnumListNoTag(Ljava/util/List;)I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -294,23 +294,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 447
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 448
     check-cast p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 450
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->getInt(I)I
@@ -325,13 +325,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 454
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -352,14 +352,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static computeSizeFixed32List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -375,12 +375,12 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     return v0
 
-    :cond_8
-    if-eqz p2, :cond_16
+    :cond_0
+    if-eqz p2, :cond_1
 
     mul-int/lit8 p1, p1, 0x4
 
@@ -399,7 +399,7 @@
     return p0
 
     .line 598
-    :cond_16
+    :cond_1
     invoke-static {p0, v0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeFixed32Size(II)I
 
     move-result p0
@@ -410,7 +410,7 @@
 .end method
 
 .method static computeSizeFixed32ListNoTag(Ljava/util/List;)I
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -430,7 +430,7 @@
 .end method
 
 .method static computeSizeFixed64List(ILjava/util/List;Z)I
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -444,14 +444,14 @@
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_8
-    if-eqz p2, :cond_16
+    :cond_0
+    if-eqz p2, :cond_1
 
     mul-int/lit8 p1, p1, 0x8
 
@@ -469,7 +469,7 @@
 
     return p0
 
-    :cond_16
+    :cond_1
     const-wide/16 v0, 0x0
 
     .line 616
@@ -483,7 +483,7 @@
 .end method
 
 .method static computeSizeFixed64ListNoTag(Ljava/util/List;)I
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -503,7 +503,7 @@
 .end method
 
 .method static computeSizeGroupList(ILjava/util/List;)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -520,15 +520,15 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_8
+    :cond_0
     move v2, v1
 
-    :goto_9
-    if-ge v1, v0, :cond_19
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 729
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -545,14 +545,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     return v2
 .end method
 
 .method static computeSizeGroupList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -571,15 +571,15 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_8
+    :cond_0
     move v2, v1
 
-    :goto_9
-    if-ge v1, v0, :cond_19
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 741
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -596,14 +596,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     return v2
 .end method
 
 .method static computeSizeInt32List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -618,19 +618,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 501
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeInt32ListNoTag(Ljava/util/List;)I
 
     move-result p1
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 504
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -647,7 +647,7 @@
     return p0
 
     .line 507
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -660,7 +660,7 @@
 .end method
 
 .method static computeSizeInt32ListNoTag(Ljava/util/List;)I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -677,23 +677,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 483
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 484
     check-cast p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 486
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->getInt(I)I
@@ -708,13 +708,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 490
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -735,14 +735,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static computeSizeInt64List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -757,19 +757,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 357
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeInt64ListNoTag(Ljava/util/List;)I
 
     move-result v0
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 360
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -786,7 +786,7 @@
     return p0
 
     .line 363
-    :cond_18
+    :cond_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -803,7 +803,7 @@
 .end method
 
 .method static computeSizeInt64ListNoTag(Ljava/util/List;)I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -820,23 +820,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 339
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 340
     check-cast p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 342
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->getLong(I)J
@@ -851,13 +851,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 346
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -878,19 +878,19 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static computeSizeMessage(ILjava/lang/Object;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 4
+    .locals 1
 
     .line 669
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/LazyFieldLite;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 670
     check-cast p1, Landroidx/datastore/preferences/protobuf/LazyFieldLite;
@@ -902,7 +902,7 @@
     return p0
 
     .line 672
-    :cond_b
+    :cond_0
     check-cast p1, Landroidx/datastore/preferences/protobuf/MessageLite;
 
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeMessageSize(ILandroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)I
@@ -913,7 +913,7 @@
 .end method
 
 .method static computeSizeMessageList(ILjava/util/List;)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -929,20 +929,20 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 681
-    :cond_8
+    :cond_0
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
     mul-int/2addr p0, v0
 
-    :goto_d
-    if-ge v1, v0, :cond_28
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 683
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -952,7 +952,7 @@
     .line 684
     instance-of v3, v2, Landroidx/datastore/preferences/protobuf/LazyFieldLite;
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1
 
     .line 685
     check-cast v2, Landroidx/datastore/preferences/protobuf/LazyFieldLite;
@@ -961,29 +961,29 @@
 
     move-result v2
 
-    goto :goto_24
+    goto :goto_1
 
     .line 687
-    :cond_1e
+    :cond_1
     check-cast v2, Landroidx/datastore/preferences/protobuf/MessageLite;
 
     invoke-static {v2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeMessageSizeNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;)I
 
     move-result v2
 
-    :goto_24
+    :goto_1
     add-int/2addr p0, v2
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     return p0
 .end method
 
 .method static computeSizeMessageList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1001,20 +1001,20 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 698
-    :cond_8
+    :cond_0
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
 
     mul-int/2addr p0, v0
 
-    :goto_d
-    if-ge v1, v0, :cond_28
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 700
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1024,7 +1024,7 @@
     .line 701
     instance-of v3, v2, Landroidx/datastore/preferences/protobuf/LazyFieldLite;
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1
 
     .line 702
     check-cast v2, Landroidx/datastore/preferences/protobuf/LazyFieldLite;
@@ -1033,29 +1033,29 @@
 
     move-result v2
 
-    goto :goto_24
+    goto :goto_1
 
     .line 704
-    :cond_1e
+    :cond_1
     check-cast v2, Landroidx/datastore/preferences/protobuf/MessageLite;
 
     invoke-static {v2, p2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeMessageSizeNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)I
 
     move-result v2
 
-    :goto_24
+    :goto_1
     add-int/2addr p0, v2
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     return p0
 .end method
 
 .method static computeSizeSInt32List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1070,19 +1070,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 574
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeSInt32ListNoTag(Ljava/util/List;)I
 
     move-result p1
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 577
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -1099,7 +1099,7 @@
     return p0
 
     .line 580
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -1112,7 +1112,7 @@
 .end method
 
 .method static computeSizeSInt32ListNoTag(Ljava/util/List;)I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1129,23 +1129,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 555
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 556
     check-cast p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 558
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->getInt(I)I
@@ -1160,13 +1160,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 562
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1187,14 +1187,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static computeSizeSInt64List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1209,19 +1209,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 429
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeSInt64ListNoTag(Ljava/util/List;)I
 
     move-result p1
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 432
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -1238,7 +1238,7 @@
     return p0
 
     .line 435
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -1251,7 +1251,7 @@
 .end method
 
 .method static computeSizeSInt64ListNoTag(Ljava/util/List;)I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1268,23 +1268,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 411
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 412
     check-cast p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 414
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->getLong(I)J
@@ -1299,13 +1299,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 418
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1326,14 +1326,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static computeSizeStringList(ILjava/util/List;)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1349,12 +1349,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 644
-    :cond_8
+    :cond_0
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -1364,13 +1364,13 @@
     .line 645
     instance-of v2, p1, Landroidx/datastore/preferences/protobuf/LazyStringList;
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_2
 
     .line 646
     check-cast p1, Landroidx/datastore/preferences/protobuf/LazyStringList;
 
-    :goto_13
-    if-ge v1, v0, :cond_49
+    :goto_0
+    if-ge v1, v0, :cond_4
 
     .line 648
     invoke-interface {p1, v1}, Landroidx/datastore/preferences/protobuf/LazyStringList;->getRaw(I)Ljava/lang/Object;
@@ -1380,7 +1380,7 @@
     .line 649
     instance-of v3, v2, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_1
 
     .line 650
     check-cast v2, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -1389,26 +1389,26 @@
 
     move-result v2
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 652
-    :cond_24
+    :cond_1
     check-cast v2, Ljava/lang/String;
 
     invoke-static {v2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeStringSizeNoTag(Ljava/lang/String;)I
 
     move-result v2
 
-    :goto_2a
+    :goto_1
     add-int/2addr p0, v2
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_2e
-    :goto_2e
-    if-ge v1, v0, :cond_49
+    :cond_2
+    :goto_2
+    if-ge v1, v0, :cond_4
 
     .line 657
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1418,7 +1418,7 @@
     .line 658
     instance-of v3, v2, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz v3, :cond_3f
+    if-eqz v3, :cond_3
 
     .line 659
     check-cast v2, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -1427,29 +1427,29 @@
 
     move-result v2
 
-    goto :goto_45
+    goto :goto_3
 
     .line 661
-    :cond_3f
+    :cond_3
     check-cast v2, Ljava/lang/String;
 
     invoke-static {v2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeStringSizeNoTag(Ljava/lang/String;)I
 
     move-result v2
 
-    :goto_45
+    :goto_3
     add-int/2addr p0, v2
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2e
+    goto :goto_2
 
-    :cond_49
+    :cond_4
     return p0
 .end method
 
 .method static computeSizeUInt32List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1464,19 +1464,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 537
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeUInt32ListNoTag(Ljava/util/List;)I
 
     move-result p1
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 540
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -1493,7 +1493,7 @@
     return p0
 
     .line 543
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -1506,7 +1506,7 @@
 .end method
 
 .method static computeSizeUInt32ListNoTag(Ljava/util/List;)I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1523,23 +1523,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 519
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 520
     check-cast p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 522
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->getInt(I)I
@@ -1554,13 +1554,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 526
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1581,14 +1581,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static computeSizeUInt64List(ILjava/util/List;Z)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1603,19 +1603,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 393
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->computeSizeUInt64ListNoTag(Ljava/util/List;)I
 
     move-result p1
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_1
 
     .line 396
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
@@ -1632,7 +1632,7 @@
     return p0
 
     .line 399
-    :cond_18
+    :cond_1
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
@@ -1645,7 +1645,7 @@
 .end method
 
 .method static computeSizeUInt64ListNoTag(Ljava/util/List;)I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1662,23 +1662,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 375
-    :cond_8
+    :cond_0
     instance-of v2, p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 376
     check-cast p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
     move v2, v1
 
-    :goto_f
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 378
     invoke-virtual {p0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->getLong(I)J
@@ -1693,13 +1693,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v2, v1
 
-    :goto_1e
-    if-ge v1, v0, :cond_32
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 382
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1720,14 +1720,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     return v2
 .end method
 
 .method static filterUnknownEnumList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Internal$EnumLiteMap;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
-    .registers 10
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<UT:",
@@ -1745,15 +1745,15 @@
         }
     .end annotation
 
-    if-nez p2, :cond_3
+    if-nez p2, :cond_0
 
     return-object p3
 
     .line 913
-    :cond_3
+    :cond_0
     instance-of v0, p1, Ljava/util/RandomAccess;
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 915
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -1764,8 +1764,8 @@
 
     move v2, v1
 
-    :goto_d
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_3
 
     .line 917
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1783,9 +1783,9 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2
 
-    if-eq v1, v2, :cond_28
+    if-eq v1, v2, :cond_1
 
     .line 920
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1794,24 +1794,24 @@
 
     invoke-interface {p1, v2, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_28
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 924
-    :cond_2b
+    :cond_2
     invoke-static {p0, v3, p3, p4}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p3
 
-    :goto_2f
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_32
-    if-eq v2, v0, :cond_5e
+    :cond_3
+    if-eq v2, v0, :cond_6
 
     .line 928
     invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
@@ -1820,21 +1820,21 @@
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    goto :goto_5e
+    goto :goto_3
 
     .line 931
-    :cond_3c
+    :cond_4
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_40
-    :goto_40
+    :cond_5
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_6
 
     .line 932
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -1852,7 +1852,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_40
+    if-nez v1, :cond_5
 
     .line 934
     invoke-static {p0, v0, p3, p4}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
@@ -1862,15 +1862,15 @@
     .line 935
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_5e
-    :goto_5e
+    :cond_6
+    :goto_3
     return-object p3
 .end method
 
 .method static filterUnknownEnumList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
-    .registers 10
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<UT:",
@@ -1888,15 +1888,15 @@
         }
     .end annotation
 
-    if-nez p2, :cond_3
+    if-nez p2, :cond_0
 
     return-object p3
 
     .line 953
-    :cond_3
+    :cond_0
     instance-of v0, p1, Ljava/util/RandomAccess;
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 955
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -1907,8 +1907,8 @@
 
     move v2, v1
 
-    :goto_d
-    if-ge v1, v0, :cond_32
+    :goto_0
+    if-ge v1, v0, :cond_3
 
     .line 957
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1926,9 +1926,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2
 
-    if-eq v1, v2, :cond_28
+    if-eq v1, v2, :cond_1
 
     .line 960
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1937,24 +1937,24 @@
 
     invoke-interface {p1, v2, v3}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_28
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 964
-    :cond_2b
+    :cond_2
     invoke-static {p0, v3, p3, p4}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object p3
 
-    :goto_2f
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_32
-    if-eq v2, v0, :cond_5e
+    :cond_3
+    if-eq v2, v0, :cond_6
 
     .line 968
     invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
@@ -1963,21 +1963,21 @@
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    goto :goto_5e
+    goto :goto_3
 
     .line 971
-    :cond_3c
+    :cond_4
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_40
-    :goto_40
+    :cond_5
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_6
 
     .line 972
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -1995,7 +1995,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_40
+    if-nez v1, :cond_5
 
     .line 974
     invoke-static {p0, v0, p3, p4}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
@@ -2005,15 +2005,15 @@
     .line 975
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_5e
-    :goto_5e
+    :cond_6
+    :goto_3
     return-object p3
 .end method
 
 .method private static getGeneratedMessageClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2029,19 +2029,19 @@
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_7
+    :catchall_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method static getMapDefaultEntry(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2056,7 +2056,7 @@
     const-string v0, "Unable to look up map field default entry holder class for "
 
     .line 827
-    :try_start_2
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2108,7 +2108,7 @@
     .line 830
     array-length v3, v1
 
-    if-ne v3, v2, :cond_3b
+    if-ne v3, v2, :cond_0
 
     const/4 p0, 0x0
 
@@ -2122,7 +2122,7 @@
     return-object p0
 
     .line 831
-    :cond_3b
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2155,10 +2155,10 @@
     invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v1
-    :try_end_5c
-    .catchall {:try_start_2 .. :try_end_5c} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_5c
+    :catchall_0
     move-exception p0
 
     .line 839
@@ -2170,7 +2170,7 @@
 .end method
 
 .method private static getUnknownFieldSetSchema(Z)Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -2182,16 +2182,16 @@
     const/4 v0, 0x0
 
     .line 799
-    :try_start_1
+    :try_start_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->getUnknownFieldSetSchemaClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
     return-object v0
 
-    :cond_8
+    :cond_0
     const/4 v2, 0x1
 
     new-array v3, v2, [Ljava/lang/Class;
@@ -2220,17 +2220,17 @@
     move-result-object p0
 
     check-cast p0, Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
-    :try_end_22
-    .catchall {:try_start_1 .. :try_end_22} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object p0
 
-    :catchall_23
+    :catchall_0
     return-object v0
 .end method
 
 .method private static getUnknownFieldSetSchemaClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2246,19 +2246,19 @@
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_6
-    .catchall {:try_start_0 .. :try_end_6} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :catchall_7
+    :catchall_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method static mergeExtensions(Landroidx/datastore/preferences/protobuf/ExtensionSchema;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -2281,7 +2281,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 889
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/ExtensionSchema;->getMutableExtensions(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -2291,12 +2291,12 @@
     .line 890
     invoke-virtual {p0, p2}, Landroidx/datastore/preferences/protobuf/FieldSet;->mergeFrom(Landroidx/datastore/preferences/protobuf/FieldSet;)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method static mergeMap(Landroidx/datastore/preferences/protobuf/MapFieldSchema;Ljava/lang/Object;Ljava/lang/Object;J)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -2328,7 +2328,7 @@
 .end method
 
 .method static mergeUnknownFields(Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -2365,7 +2365,7 @@
 .end method
 
 .method public static proto2UnknownFieldSetSchema()Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2381,7 +2381,7 @@
 .end method
 
 .method public static proto3UnknownFieldSetSchema()Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2397,7 +2397,7 @@
 .end method
 
 .method public static requireGeneratedMessage(Ljava/lang/Class;)V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2413,23 +2413,23 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     .line 64
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 65
-    :cond_13
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Message classes must extend GeneratedMessage or GeneratedMessageLite"
@@ -2438,52 +2438,52 @@
 
     throw p0
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method static safeEquals(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
-    if-eq p0, p1, :cond_d
+    if-eq p0, p1, :cond_1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
     .line 875
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_e
+    :goto_1
     return p0
 .end method
 
 .method public static shouldUseTableSwitch(III)Z
-    .registers 13
+    .locals 10
 
     const/16 v0, 0x28
 
     const/4 v1, 0x1
 
-    if-ge p1, v0, :cond_6
+    if-ge p1, v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     int-to-long v2, p1
 
     int-to-long p0, p0
@@ -2516,31 +2516,31 @@
 
     cmp-long p0, v2, v4
 
-    if-gtz p0, :cond_1e
+    if-gtz p0, :cond_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_1f
+    :goto_0
     return v1
 .end method
 
 .method public static shouldUseTableSwitch([Landroidx/datastore/preferences/protobuf/FieldInfo;)Z
-    .registers 3
+    .locals 2
 
     .line 754
     array-length v0, p0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return v1
 
     .line 758
-    :cond_5
+    :cond_0
     aget-object v0, p0, v1
 
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/FieldInfo;->getFieldNumber()I
@@ -2569,7 +2569,7 @@
 .end method
 
 .method static storeUnknownEnum(IILjava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<UT:",
@@ -2582,14 +2582,14 @@
         }
     .end annotation
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_0
 
     .line 986
     invoke-virtual {p3}, Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object p2
 
-    :cond_6
+    :cond_0
     int-to-long v0, p1
 
     .line 988
@@ -2599,7 +2599,7 @@
 .end method
 
 .method static toCamelCase(Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 844
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2611,12 +2611,12 @@
     move v2, v1
 
     .line 845
-    :goto_7
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_4e
+    if-ge v2, v3, :cond_5
 
     .line 846
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -2625,13 +2625,13 @@
 
     const/16 v4, 0x61
 
-    if-gt v4, v3, :cond_27
+    if-gt v4, v3, :cond_1
 
     const/16 v4, 0x7a
 
-    if-gt v3, v4, :cond_27
+    if-gt v3, v4, :cond_1
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_0
 
     add-int/lit8 v3, v3, -0x20
 
@@ -2640,29 +2640,29 @@
     .line 850
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_25
+    goto :goto_1
 
     .line 852
-    :cond_22
+    :cond_0
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :goto_25
+    :goto_1
     move p1, v1
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_27
+    :cond_1
     const/16 v4, 0x41
 
-    if-gt v4, v3, :cond_3e
+    if-gt v4, v3, :cond_3
 
     const/16 v4, 0x5a
 
-    if-gt v3, v4, :cond_3e
+    if-gt v3, v4, :cond_3
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_2
 
-    if-nez p1, :cond_3a
+    if-nez p1, :cond_2
 
     add-int/lit8 v3, v3, 0x20
 
@@ -2671,38 +2671,38 @@
     .line 858
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_25
+    goto :goto_1
 
     .line 860
-    :cond_3a
+    :cond_2
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_3e
+    :cond_3
     const/16 p1, 0x30
 
     const/4 v4, 0x1
 
-    if-gt p1, v3, :cond_4a
+    if-gt p1, v3, :cond_4
 
     const/16 p1, 0x39
 
-    if-gt v3, p1, :cond_4a
+    if-gt v3, p1, :cond_4
 
     .line 864
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :cond_4a
+    :cond_4
     move p1, v4
 
-    :goto_4b
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 870
-    :cond_4e
+    :cond_5
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -2711,7 +2711,7 @@
 .end method
 
 .method public static unknownFieldSetLiteSchema()Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2727,26 +2727,26 @@
 .end method
 
 .method public static writeBool(IZLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
     .line 150
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeBool(IZ)V
 
-    :cond_6
+    :cond_0
     return-void
 .end method
 
 .method public static writeBoolList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2764,48 +2764,48 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 275
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 276
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeBoolList(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeBytes(ILandroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 171
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/ByteString;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 172
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeBytes(ILandroidx/datastore/preferences/protobuf/ByteString;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeBytesList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2823,24 +2823,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 289
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 290
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeBytesList(ILjava/util/List;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeDouble(IDLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2854,17 +2854,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 72
     invoke-interface {p3, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Writer;->writeDouble(ID)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeDoubleList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2882,41 +2882,41 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 184
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 185
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeDoubleList(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeEnum(IILandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 144
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeEnum(II)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeEnumList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2934,41 +2934,41 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 268
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 269
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeEnumList(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeFixed32(IILandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 132
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeFixed32(II)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeFixed32List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2986,24 +2986,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 254
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 255
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeFixed32List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeFixed64(IJLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3014,17 +3014,17 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 102
     invoke-interface {p3, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Writer;->writeFixed64(IJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static writeFixed64List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3042,24 +3042,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 219
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 220
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeFixed64List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeFloat(IFLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3073,17 +3073,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 78
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeFloat(IF)V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public static writeFloatList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3101,24 +3101,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 191
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 192
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeFloatList(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeGroupList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3135,24 +3135,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 319
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 320
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeGroupList(ILjava/util/List;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeGroupList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3170,41 +3170,41 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 326
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 327
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeGroupList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Schema;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeInt32(IILandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 114
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeInt32(II)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeInt32List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3222,24 +3222,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 233
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 234
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeInt32List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeInt64(IJLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3250,17 +3250,17 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 84
     invoke-interface {p3, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Writer;->writeInt64(IJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static writeInt64List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3278,24 +3278,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 198
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 199
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeInt64List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeLazyFieldList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3312,26 +3312,26 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 310
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 311
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :goto_c
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3342,31 +3342,31 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/LazyFieldLite;->writeTo(Landroidx/datastore/preferences/protobuf/Writer;I)V
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public static writeMessage(ILjava/lang/Object;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 178
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeMessage(ILjava/lang/Object;)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeMessageList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3383,24 +3383,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 296
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 297
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeMessageList(ILjava/util/List;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeMessageList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3418,41 +3418,41 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 303
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 304
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeMessageList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Schema;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeSFixed32(IILandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 138
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeSFixed32(II)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeSFixed32List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3470,24 +3470,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 261
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 262
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeSFixed32List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeSFixed64(IJLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3498,17 +3498,17 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 108
     invoke-interface {p3, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Writer;->writeSFixed64(IJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static writeSFixed64List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3526,41 +3526,41 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 226
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 227
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeSFixed64List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeSInt32(IILandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 126
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeSInt32(II)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeSInt32List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3578,24 +3578,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 247
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 248
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeSInt32List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeSInt64(IJLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3606,17 +3606,17 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 96
     invoke-interface {p3, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Writer;->writeSInt64(IJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static writeSInt64List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3634,24 +3634,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 212
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 213
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeSInt64List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeString(ILjava/lang/Object;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3661,51 +3661,51 @@
     .line 155
     instance-of v0, p1, Ljava/lang/String;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 156
     check-cast p1, Ljava/lang/String;
 
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->writeStringInternal(ILjava/lang/String;Landroidx/datastore/preferences/protobuf/Writer;)V
 
-    goto :goto_f
+    goto :goto_0
 
     .line 158
-    :cond_a
+    :cond_0
     check-cast p1, Landroidx/datastore/preferences/protobuf/ByteString;
 
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->writeBytes(ILandroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/Writer;)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method private static writeStringInternal(ILjava/lang/String;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 164
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 165
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeString(ILjava/lang/String;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeStringList(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3723,41 +3723,41 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 282
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 283
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeStringList(ILjava/util/List;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeUInt32(IILandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 120
     invoke-interface {p2, p0, p1}, Landroidx/datastore/preferences/protobuf/Writer;->writeUInt32(II)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public static writeUInt32List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3775,24 +3775,24 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 240
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 241
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeUInt32List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public static writeUInt64(IJLandroidx/datastore/preferences/protobuf/Writer;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3803,17 +3803,17 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 90
     invoke-interface {p3, p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Writer;->writeUInt64(IJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static writeUInt64List(ILjava/util/List;Landroidx/datastore/preferences/protobuf/Writer;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -3831,18 +3831,18 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 205
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 206
     invoke-interface {p2, p0, p1, p3}, Landroidx/datastore/preferences/protobuf/Writer;->writeUInt64List(ILjava/util/List;Z)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method

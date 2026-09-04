@@ -19,7 +19,7 @@
 .end method
 
 .method public getTimeToFirstByteEstimateUs()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 

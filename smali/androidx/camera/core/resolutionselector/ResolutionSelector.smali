@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/resolutionselector/AspectRatioStrategy;Landroidx/camera/core/resolutionselector/ResolutionStrategy;Landroidx/camera/core/resolutionselector/ResolutionFilter;I)V
-    .registers 5
+    .locals 0
 
     .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public getAllowedResolutionMode()I
-    .registers 2
+    .locals 1
 
     .line 180
     iget v0, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector;->mAllowedResolutionMode:I
@@ -62,7 +62,7 @@
 .end method
 
 .method public getAspectRatioStrategy()Landroidx/camera/core/resolutionselector/AspectRatioStrategy;
-    .registers 2
+    .locals 1
 
     .line 156
     iget-object v0, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector;->mAspectRatioStrategy:Landroidx/camera/core/resolutionselector/AspectRatioStrategy;
@@ -71,7 +71,7 @@
 .end method
 
 .method public getResolutionFilter()Landroidx/camera/core/resolutionselector/ResolutionFilter;
-    .registers 2
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector;->mResolutionFilter:Landroidx/camera/core/resolutionselector/ResolutionFilter;
@@ -80,7 +80,7 @@
 .end method
 
 .method public getResolutionStrategy()Landroidx/camera/core/resolutionselector/ResolutionStrategy;
-    .registers 2
+    .locals 1
 
     .line 164
     iget-object v0, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector;->mResolutionStrategy:Landroidx/camera/core/resolutionselector/ResolutionStrategy;

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/lang/Class;I)V
-    .registers 4
+    .locals 0
 
     .line 4784
     invoke-direct {p0, p1, p2, p3}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;-><init>(ILjava/lang/Class;I)V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method frameworkGet(Landroid/view/View;)Ljava/lang/Boolean;
-    .registers 2
+    .locals 0
 
     .line 4789
     invoke-static {p1}, Landroidx/core/view/ViewCompat$Api28Impl;->isAccessibilityHeading(Landroid/view/View;)Z
@@ -50,7 +50,7 @@
 .end method
 
 .method bridge synthetic frameworkGet(Landroid/view/View;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 4784
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$4;->frameworkGet(Landroid/view/View;)Ljava/lang/Boolean;
@@ -61,7 +61,7 @@
 .end method
 
 .method frameworkSet(Landroid/view/View;Ljava/lang/Boolean;)V
-    .registers 3
+    .locals 0
 
     .line 4795
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -74,7 +74,7 @@
 .end method
 
 .method bridge synthetic frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 4784
     check-cast p2, Ljava/lang/Boolean;
@@ -85,7 +85,7 @@
 .end method
 
 .method shouldUpdate(Ljava/lang/Boolean;Ljava/lang/Boolean;)Z
-    .registers 3
+    .locals 0
 
     .line 4800
     invoke-virtual {p0, p1, p2}, Landroidx/core/view/ViewCompat$4;->booleanNullToFalseEquals(Ljava/lang/Boolean;Ljava/lang/Boolean;)Z
@@ -98,7 +98,7 @@
 .end method
 
 .method bridge synthetic shouldUpdate(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 4784
     check-cast p1, Ljava/lang/Boolean;

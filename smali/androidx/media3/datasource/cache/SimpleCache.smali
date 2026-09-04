@@ -60,7 +60,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 65
     new-instance v0, Ljava/util/HashSet;
@@ -73,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/File;Landroidx/media3/datasource/cache/CacheEvictor;)V
-    .registers 10
+    .locals 7
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -98,7 +98,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/File;Landroidx/media3/datasource/cache/CacheEvictor;Landroidx/media3/database/DatabaseProvider;)V
-    .registers 11
+    .locals 7
 
     const/4 v4, 0x0
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/File;Landroidx/media3/datasource/cache/CacheEvictor;Landroidx/media3/database/DatabaseProvider;[BZZ)V
-    .registers 14
+    .locals 7
 
     .line 196
     new-instance v6, Landroidx/media3/datasource/cache/CachedContentIndex;
@@ -140,29 +140,29 @@
 
     invoke-direct/range {v0 .. v5}, Landroidx/media3/datasource/cache/CachedContentIndex;-><init>(Landroidx/media3/database/DatabaseProvider;Ljava/io/File;[BZZ)V
 
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_0
 
-    if-nez p6, :cond_15
+    if-nez p6, :cond_0
 
     .line 206
     new-instance p4, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;
 
     invoke-direct {p4, p3}, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;-><init>(Landroidx/media3/database/DatabaseProvider;)V
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p4, 0x0
 
     .line 196
-    :goto_16
+    :goto_0
     invoke-direct {p0, p1, p2, v6, p4}, Landroidx/media3/datasource/cache/SimpleCache;-><init>(Ljava/io/File;Landroidx/media3/datasource/cache/CacheEvictor;Landroidx/media3/datasource/cache/CachedContentIndex;Landroidx/media3/datasource/cache/CacheFileMetadataIndex;)V
 
     return-void
 .end method
 
 .method constructor <init>(Ljava/io/File;Landroidx/media3/datasource/cache/CacheEvictor;Landroidx/media3/datasource/cache/CachedContentIndex;Landroidx/media3/datasource/cache/CacheFileMetadataIndex;)V
-    .registers 6
+    .locals 1
 
     .line 214
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -172,7 +172,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_0
 
     .line 219
     iput-object p1, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
@@ -233,7 +233,7 @@
     return-void
 
     .line 216
-    :cond_3c
+    :cond_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -256,7 +256,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/datasource/cache/SimpleCache;)V
-    .registers 1
+    .locals 0
 
     .line 51
     invoke-direct {p0}, Landroidx/media3/datasource/cache/SimpleCache;->initialize()V
@@ -265,7 +265,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/datasource/cache/SimpleCache;)Landroidx/media3/datasource/cache/CacheEvictor;
-    .registers 1
+    .locals 0
 
     .line 51
     iget-object p0, p0, Landroidx/media3/datasource/cache/SimpleCache;->evictor:Landroidx/media3/datasource/cache/CacheEvictor;
@@ -274,7 +274,7 @@
 .end method
 
 .method private addSpan(Landroidx/media3/datasource/cache/SimpleCacheSpan;)V
-    .registers 6
+    .locals 4
 
     .line 693
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
@@ -303,7 +303,7 @@
 .end method
 
 .method private static createCacheDirectories(Ljava/io/File;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/cache/Cache$CacheException;
@@ -315,18 +315,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 810
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Failed to create cache directory: "
@@ -353,13 +353,13 @@
 
     throw v0
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private static createUid(Ljava/io/File;)J
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -379,19 +379,19 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_0
 
     const-wide/16 v0, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 792
-    :cond_12
+    :cond_0
     invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide v0
 
-    :goto_16
+    :goto_0
     const/16 v2, 0x10
 
     .line 794
@@ -427,12 +427,12 @@
 
     move-result p0
 
-    if-eqz p0, :cond_3b
+    if-eqz p0, :cond_1
 
     return-wide v0
 
     .line 798
-    :cond_3b
+    :cond_1
     new-instance p0, Ljava/io/IOException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -455,7 +455,7 @@
 .end method
 
 .method public static delete(Ljava/io/File;Landroidx/media3/database/DatabaseProvider;)V
-    .registers 8
+    .locals 6
 
     const-string v0, "Failed to delete file metadata: "
 
@@ -466,25 +466,25 @@
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
     return-void
 
     .line 103
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     .line 105
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
     return-void
 
-    :cond_15
-    if-eqz p1, :cond_49
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 112
     invoke-static {v2}, Landroidx/media3/datasource/cache/SimpleCache;->loadUid([Ljava/io/File;)J
@@ -495,18 +495,18 @@
 
     cmp-long v4, v2, v4
 
-    if-eqz v4, :cond_49
+    if-eqz v4, :cond_2
 
     .line 115
-    :try_start_21
+    :try_start_0
     invoke-static {p1, v2, v3}, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;->delete(Landroidx/media3/database/DatabaseProvider;J)V
-    :try_end_24
-    .catch Landroidx/media3/database/DatabaseIOException; {:try_start_21 .. :try_end_24} :catch_25
+    :try_end_0
+    .catch Landroidx/media3/database/DatabaseIOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_35
+    goto :goto_0
 
     .line 117
-    :catch_25
+    :catch_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -522,16 +522,16 @@
     invoke-static {v1, v4}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 120
-    :goto_35
-    :try_start_35
+    :goto_0
+    :try_start_1
     invoke-static {p1, v2, v3}, Landroidx/media3/datasource/cache/CachedContentIndex;->delete(Landroidx/media3/database/DatabaseProvider;J)V
-    :try_end_38
-    .catch Landroidx/media3/database/DatabaseIOException; {:try_start_35 .. :try_end_38} :catch_39
+    :try_end_1
+    .catch Landroidx/media3/database/DatabaseIOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_49
+    goto :goto_1
 
     .line 122
-    :catch_39
+    :catch_1
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -547,15 +547,15 @@
     invoke-static {v1, p1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 127
-    :cond_49
-    :goto_49
+    :cond_2
+    :goto_1
     invoke-static {p0}, Landroidx/media3/common/util/Util;->recursiveDelete(Ljava/io/File;)V
 
     return-void
 .end method
 
 .method private getSpan(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 11
+    .locals 5
 
     .line 671
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
@@ -564,7 +564,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 673
     invoke-static {p1, p2, p3, p4, p5}, Landroidx/media3/datasource/cache/SimpleCacheSpan;->createHole(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
@@ -574,8 +574,8 @@
     return-object p1
 
     .line 676
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-virtual {v0, p2, p3, p4, p5}, Landroidx/media3/datasource/cache/CachedContent;->getSpan(JJ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
 
     move-result-object p1
@@ -583,7 +583,7 @@
     .line 677
     iget-boolean v1, p1, Landroidx/media3/datasource/cache/SimpleCacheSpan;->isCached:Z
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     iget-object v1, p1, Landroidx/media3/datasource/cache/SimpleCacheSpan;->file:Ljava/io/File;
 
@@ -601,19 +601,19 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     .line 680
     invoke-direct {p0}, Landroidx/media3/datasource/cache/SimpleCache;->removeStaleSpans()V
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     return-object p1
 .end method
 
 .method private initialize()V
-    .registers 7
+    .locals 6
 
     .line 519
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
@@ -622,19 +622,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 521
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     invoke-static {v0}, Landroidx/media3/datasource/cache/SimpleCache;->createCacheDirectories(Ljava/io/File;)V
-    :try_end_d
-    .catch Landroidx/media3/datasource/cache/Cache$CacheException; {:try_start_8 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Landroidx/media3/datasource/cache/Cache$CacheException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_e
+    :catch_0
     move-exception v0
 
     .line 523
@@ -643,8 +643,8 @@
     return-void
 
     .line 528
-    :cond_12
-    :goto_12
+    :cond_0
+    :goto_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
@@ -653,7 +653,7 @@
 
     const-string v1, "SimpleCache"
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_1
 
     .line 530
     new-instance v0, Ljava/lang/StringBuilder;
@@ -685,7 +685,7 @@
     return-void
 
     .line 536
-    :cond_38
+    :cond_1
     invoke-static {v0}, Landroidx/media3/datasource/cache/SimpleCache;->loadUid([Ljava/io/File;)J
 
     move-result-wide v2
@@ -696,10 +696,10 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_6a
+    if-nez v2, :cond_2
 
     .line 539
-    :try_start_44
+    :try_start_1
     iget-object v2, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     invoke-static {v2}, Landroidx/media3/datasource/cache/SimpleCache;->createUid(Ljava/io/File;)J
@@ -707,12 +707,12 @@
     move-result-wide v2
 
     iput-wide v2, p0, Landroidx/media3/datasource/cache/SimpleCache;->uid:J
-    :try_end_4c
-    .catch Ljava/io/IOException; {:try_start_44 .. :try_end_4c} :catch_4d
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_6a
+    goto :goto_1
 
-    :catch_4d
+    :catch_1
     move-exception v0
 
     .line 541
@@ -745,9 +745,9 @@
     return-void
 
     .line 549
-    :cond_6a
-    :goto_6a
-    :try_start_6a
+    :cond_2
+    :goto_1
+    :try_start_2
     iget-object v2, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     iget-wide v3, p0, Landroidx/media3/datasource/cache/SimpleCache;->uid:J
@@ -759,7 +759,7 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_90
+    if-eqz v2, :cond_3
 
     .line 551
     iget-wide v4, p0, Landroidx/media3/datasource/cache/SimpleCache;->uid:J
@@ -787,35 +787,35 @@
 
     invoke-virtual {v0, v2}, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;->removeAll(Ljava/util/Set;)V
 
-    goto :goto_96
+    goto :goto_2
 
     .line 556
-    :cond_90
+    :cond_3
     iget-object v2, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     const/4 v4, 0x0
 
     invoke-direct {p0, v2, v3, v0, v4}, Landroidx/media3/datasource/cache/SimpleCache;->loadDirectory(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
-    :try_end_96
-    .catch Ljava/io/IOException; {:try_start_6a .. :try_end_96} :catch_a8
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 565
-    :goto_96
+    :goto_2
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {v0}, Landroidx/media3/datasource/cache/CachedContentIndex;->removeEmpty()V
 
     .line 567
-    :try_start_9b
+    :try_start_3
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {v0}, Landroidx/media3/datasource/cache/CachedContentIndex;->store()V
-    :try_end_a0
-    .catch Ljava/io/IOException; {:try_start_9b .. :try_end_a0} :catch_a1
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_a7
+    goto :goto_3
 
-    :catch_a1
+    :catch_2
     move-exception v0
 
     const-string v2, "Storing index file failed"
@@ -823,10 +823,10 @@
     .line 569
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_a7
+    :goto_3
     return-void
 
-    :catch_a8
+    :catch_3
     move-exception v0
 
     .line 559
@@ -860,14 +860,14 @@
 .end method
 
 .method public static declared-synchronized isCacheFolderLocked(Ljava/io/File;)Z
-    .registers 3
+    .locals 2
 
     const-class v0, Landroidx/media3/datasource/cache/SimpleCache;
 
     monitor-enter v0
 
     .line 85
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/media3/datasource/cache/SimpleCache;->lockedCacheDirs:Ljava/util/HashSet;
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
@@ -877,14 +877,14 @@
     invoke-virtual {v1, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result p0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v0
 
     return p0
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
@@ -893,7 +893,7 @@
 .end method
 
 .method private loadDirectory(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
-    .registers 14
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -907,25 +907,25 @@
         }
     .end annotation
 
-    if-eqz p3, :cond_63
+    if-eqz p3, :cond_8
 
     .line 588
     array-length v0, p3
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
-    goto :goto_63
+    goto :goto_4
 
     .line 597
-    :cond_6
+    :cond_0
     array-length p1, p3
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    :goto_9
-    if-ge v1, p1, :cond_62
+    :goto_0
+    if-ge v1, p1, :cond_7
 
     aget-object v8, p3, v1
 
@@ -934,7 +934,7 @@
 
     move-result-object v2
 
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_1
 
     const/16 v3, 0x2e
 
@@ -945,7 +945,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v3, v4, :cond_24
+    if-ne v3, v4, :cond_1
 
     .line 600
     invoke-virtual {v8}, Ljava/io/File;->listFiles()[Ljava/io/File;
@@ -954,17 +954,17 @@
 
     invoke-direct {p0, v8, v0, v2, p4}, Landroidx/media3/datasource/cache/SimpleCache;->loadDirectory(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
 
-    goto :goto_5f
+    goto :goto_3
 
-    :cond_24
-    if-eqz p2, :cond_35
+    :cond_1
+    if-eqz p2, :cond_2
 
     .line 603
     invoke-static {v2}, Landroidx/media3/datasource/cache/CachedContentIndex;->isIndexFile(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-nez v3, :cond_5f
+    if-nez v3, :cond_6
 
     const-string v3, ".uid"
 
@@ -972,12 +972,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_2
 
-    goto :goto_5f
+    goto :goto_3
 
-    :cond_35
-    if-eqz p4, :cond_3e
+    :cond_2
+    if-eqz p4, :cond_3
 
     .line 610
     invoke-interface {p4, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -986,13 +986,13 @@
 
     check-cast v2, Landroidx/media3/datasource/cache/CacheFileMetadata;
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_3e
+    :cond_3
     const/4 v2, 0x0
 
-    :goto_3f
-    if-eqz v2, :cond_46
+    :goto_1
+    if-eqz v2, :cond_4
 
     .line 612
     iget-wide v3, v2, Landroidx/media3/datasource/cache/CacheFileMetadata;->length:J
@@ -1000,9 +1000,9 @@
     .line 613
     iget-wide v5, v2, Landroidx/media3/datasource/cache/CacheFileMetadata;->lastTouchTimestamp:J
 
-    goto :goto_4f
+    goto :goto_2
 
-    :cond_46
+    :cond_4
     const-wide/16 v2, -0x1
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
@@ -1012,7 +1012,7 @@
     move-wide v3, v2
 
     .line 616
-    :goto_4f
+    :goto_2
     iget-object v7, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     move-object v2, v8
@@ -1022,47 +1022,47 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_5c
+    if-eqz v2, :cond_5
 
     .line 619
     invoke-direct {p0, v2}, Landroidx/media3/datasource/cache/SimpleCache;->addSpan(Landroidx/media3/datasource/cache/SimpleCacheSpan;)V
 
-    goto :goto_5f
+    goto :goto_3
 
     .line 621
-    :cond_5c
+    :cond_5
     invoke-virtual {v8}, Ljava/io/File;->delete()Z
 
-    :cond_5f
-    :goto_5f
+    :cond_6
+    :goto_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_62
+    :cond_7
     return-void
 
-    :cond_63
-    :goto_63
-    if-nez p2, :cond_68
+    :cond_8
+    :goto_4
+    if-nez p2, :cond_9
 
     .line 593
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    :cond_68
+    :cond_9
     return-void
 .end method
 
 .method private static loadUid([Ljava/io/File;)J
-    .registers 6
+    .locals 5
 
     .line 773
     array-length v0, p0
 
     const/4 v1, 0x0
 
-    :goto_2
-    if-ge v1, v0, :cond_31
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     aget-object v2, p0, v1
 
@@ -1078,20 +1078,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_0
 
     .line 777
-    :try_start_12
+    :try_start_0
     invoke-static {v3}, Landroidx/media3/datasource/cache/SimpleCache;->parseUid(Ljava/lang/String;)J
 
     move-result-wide v0
-    :try_end_16
-    .catch Ljava/lang/NumberFormatException; {:try_start_12 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-wide v0
 
     .line 780
-    :catch_17
+    :catch_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "Malformed UID file: "
@@ -1113,26 +1113,26 @@
     .line 781
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    :cond_2e
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_31
+    :cond_1
     const-wide/16 v0, -0x1
 
     return-wide v0
 .end method
 
 .method private static declared-synchronized lockFolder(Ljava/io/File;)Z
-    .registers 3
+    .locals 2
 
     const-class v0, Landroidx/media3/datasource/cache/SimpleCache;
 
     monitor-enter v0
 
     .line 817
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/media3/datasource/cache/SimpleCache;->lockedCacheDirs:Ljava/util/HashSet;
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
@@ -1142,14 +1142,14 @@
     invoke-virtual {v1, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     move-result p0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v0
 
     return p0
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
@@ -1158,7 +1158,7 @@
 .end method
 
 .method private notifySpanAdded(Landroidx/media3/datasource/cache/SimpleCacheSpan;)V
-    .registers 5
+    .locals 3
 
     .line 747
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->listeners:Ljava/util/HashMap;
@@ -1171,7 +1171,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 749
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1180,8 +1180,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_12
-    if-ltz v1, :cond_20
+    :goto_0
+    if-ltz v1, :cond_0
 
     .line 750
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1194,10 +1194,10 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 753
-    :cond_20
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->evictor:Landroidx/media3/datasource/cache/CacheEvictor;
 
     invoke-interface {v0, p0, p1}, Landroidx/media3/datasource/cache/CacheEvictor;->onSpanAdded(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
@@ -1206,7 +1206,7 @@
 .end method
 
 .method private notifySpanRemoved(Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 5
+    .locals 3
 
     .line 737
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->listeners:Ljava/util/HashMap;
@@ -1219,7 +1219,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 739
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1228,8 +1228,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_12
-    if-ltz v1, :cond_20
+    :goto_0
+    if-ltz v1, :cond_0
 
     .line 740
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1242,10 +1242,10 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 743
-    :cond_20
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->evictor:Landroidx/media3/datasource/cache/CacheEvictor;
 
     invoke-interface {v0, p0, p1}, Landroidx/media3/datasource/cache/CacheEvictor;->onSpanRemoved(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
@@ -1254,7 +1254,7 @@
 .end method
 
 .method private notifySpanTouched(Landroidx/media3/datasource/cache/SimpleCacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 6
+    .locals 3
 
     .line 757
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->listeners:Ljava/util/HashMap;
@@ -1267,7 +1267,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 759
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1276,8 +1276,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_12
-    if-ltz v1, :cond_20
+    :goto_0
+    if-ltz v1, :cond_0
 
     .line 760
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1290,10 +1290,10 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 763
-    :cond_20
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->evictor:Landroidx/media3/datasource/cache/CacheEvictor;
 
     invoke-interface {v0, p0, p1, p2}, Landroidx/media3/datasource/cache/CacheEvictor;->onSpanTouched(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)V
@@ -1302,7 +1302,7 @@
 .end method
 
 .method private static parseUid(Ljava/lang/String;)J
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x2e
 
@@ -1327,7 +1327,7 @@
 .end method
 
 .method private removeSpanInternal(Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 7
+    .locals 5
 
     .line 699
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
@@ -1338,19 +1338,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     .line 700
     invoke-virtual {v0, p1}, Landroidx/media3/datasource/cache/CachedContent;->removeSpan(Landroidx/media3/datasource/cache/CacheSpan;)Z
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
-    goto :goto_4c
+    goto :goto_1
 
     .line 703
-    :cond_11
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->totalSpace:J
 
     iget-wide v3, p1, Landroidx/media3/datasource/cache/CacheSpan;->length:J
@@ -1362,7 +1362,7 @@
     .line 704
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->fileIndex:Landroidx/media3/datasource/cache/CacheFileMetadataIndex;
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_1
 
     .line 705
     iget-object v1, p1, Landroidx/media3/datasource/cache/CacheSpan;->file:Ljava/io/File;
@@ -1378,17 +1378,17 @@
     move-result-object v1
 
     .line 707
-    :try_start_28
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/datasource/cache/SimpleCache;->fileIndex:Landroidx/media3/datasource/cache/CacheFileMetadataIndex;
 
     invoke-virtual {v2, v1}, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;->remove(Ljava/lang/String;)V
-    :try_end_2d
-    .catch Ljava/io/IOException; {:try_start_28 .. :try_end_2d} :catch_2e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 711
-    :catch_2e
+    :catch_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "Failed to remove file index entry for: "
@@ -1408,8 +1408,8 @@
     invoke-static {v2, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 714
-    :cond_42
-    :goto_42
+    :cond_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     iget-object v0, v0, Landroidx/media3/datasource/cache/CachedContent;->key:Ljava/lang/String;
@@ -1419,13 +1419,13 @@
     .line 715
     invoke-direct {p0, p1}, Landroidx/media3/datasource/cache/SimpleCache;->notifySpanRemoved(Landroidx/media3/datasource/cache/CacheSpan;)V
 
-    :cond_4c
-    :goto_4c
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private removeStaleSpans()V
-    .registers 9
+    .locals 8
 
     .line 723
     new-instance v0, Ljava/util/ArrayList;
@@ -1443,12 +1443,12 @@
 
     move-result-object v1
 
-    :cond_f
+    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1465,13 +1465,13 @@
 
     move-result-object v2
 
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1496,23 +1496,23 @@
 
     cmp-long v4, v4, v6
 
-    if-eqz v4, :cond_23
+    if-eqz v4, :cond_1
 
     .line 727
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_45
+    :cond_2
     const/4 v1, 0x0
 
     .line 731
-    :goto_46
+    :goto_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_58
+    if-ge v1, v2, :cond_3
 
     .line 732
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1525,24 +1525,24 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_58
+    :cond_3
     return-void
 .end method
 
 .method private touchSpan(Ljava/lang/String;Landroidx/media3/datasource/cache/SimpleCacheSpan;)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 12
+    .locals 9
 
     .line 636
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->touchCacheSpans:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-object p2
 
     .line 639
-    :cond_5
+    :cond_0
     iget-object v0, p2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->file:Ljava/io/File;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1566,19 +1566,19 @@
     .line 643
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->fileIndex:Landroidx/media3/datasource/cache/CacheFileMetadataIndex;
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     move-wide v5, v7
 
     .line 645
-    :try_start_1c
+    :try_start_0
     invoke-virtual/range {v1 .. v6}, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;->set(Ljava/lang/String;JJ)V
-    :try_end_1f
-    .catch Ljava/io/IOException; {:try_start_1c .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :catch_20
+    :catch_0
     const-string v0, "SimpleCache"
 
     const-string v1, "Failed to update index with new touch timestamp."
@@ -1586,16 +1586,16 @@
     .line 647
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_27
+    :goto_0
     const/4 v0, 0x0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     const/4 v0, 0x1
 
     .line 654
-    :goto_2a
+    :goto_1
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     .line 655
@@ -1621,14 +1621,14 @@
 .end method
 
 .method private static declared-synchronized unlockFolder(Ljava/io/File;)V
-    .registers 3
+    .locals 2
 
     const-class v0, Landroidx/media3/datasource/cache/SimpleCache;
 
     monitor-enter v0
 
     .line 821
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/media3/datasource/cache/SimpleCache;->lockedCacheDirs:Ljava/util/HashSet;
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
@@ -1636,15 +1636,15 @@
     move-result-object p0
 
     invoke-virtual {v1, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 822
     monitor-exit v0
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
@@ -1655,7 +1655,7 @@
 
 # virtual methods
 .method public declared-synchronized addListener(Ljava/lang/String;Landroidx/media3/datasource/cache/Cache$Listener;)Ljava/util/NavigableSet;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1671,19 +1671,19 @@
     monitor-enter p0
 
     .line 278
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 279
@@ -1701,7 +1701,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 283
     new-instance v0, Ljava/util/ArrayList;
@@ -1714,21 +1714,21 @@
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 286
-    :cond_25
+    :cond_1
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 287
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/cache/SimpleCache;->getCachedSpans(Ljava/lang/String;)Ljava/util/NavigableSet;
 
     move-result-object p1
-    :try_end_2c
-    .catchall {:try_start_1 .. :try_end_2c} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_2e
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1737,7 +1737,7 @@
 .end method
 
 .method public declared-synchronized applyContentMetadataMutations(Ljava/lang/String;Landroidx/media3/datasource/cache/ContentMetadataMutations;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/cache/Cache$CacheException;
@@ -1747,19 +1747,19 @@
     monitor-enter p0
 
     .line 500
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 501
@@ -1769,37 +1769,37 @@
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/datasource/cache/CachedContentIndex;->applyContentMetadataMutations(Ljava/lang/String;Landroidx/media3/datasource/cache/ContentMetadataMutations;)V
-    :try_end_13
-    .catchall {:try_start_1 .. :try_end_13} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 505
-    :try_start_13
+    :try_start_1
     iget-object p1, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->store()V
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_13 .. :try_end_18} :catch_1a
-    .catchall {:try_start_13 .. :try_end_18} :catchall_21
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 509
     monitor-exit p0
 
     return-void
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
     .line 507
-    :try_start_1b
+    :try_start_2
     new-instance p2, Landroidx/media3/datasource/cache/Cache$CacheException;
 
     invoke-direct {p2, p1}, Landroidx/media3/datasource/cache/Cache$CacheException;-><init>(Ljava/lang/Throwable;)V
 
     throw p2
-    :try_end_21
-    .catchall {:try_start_1b .. :try_end_21} :catchall_21
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1808,7 +1808,7 @@
 .end method
 
 .method public declared-synchronized checkInitialization()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/cache/Cache$CacheException;
@@ -1818,12 +1818,12 @@
     monitor-enter p0
 
     .line 249
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->initializationException:Landroidx/media3/datasource/cache/Cache$CacheException;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 252
     monitor-exit p0
@@ -1831,13 +1831,13 @@
     return-void
 
     .line 250
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     throw v0
-    :try_end_8
-    .catchall {:try_start_7 .. :try_end_8} :catchall_8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -1846,7 +1846,7 @@
 .end method
 
 .method public declared-synchronized commitFile(Ljava/io/File;J)V
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/cache/Cache$CacheException;
@@ -1856,51 +1856,51 @@
     monitor-enter p0
 
     .line 397
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v2
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 398
     invoke-virtual {p1}, Ljava/io/File;->exists()Z
 
     move-result v0
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_8e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     .line 399
     monitor-exit p0
 
     return-void
 
-    :cond_15
+    :cond_1
     const-wide/16 v3, 0x0
 
     cmp-long v0, p2, v3
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     .line 402
-    :try_start_1b
+    :try_start_1
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
-    :try_end_1e
-    .catchall {:try_start_1b .. :try_end_1e} :catchall_8e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 403
     monitor-exit p0
@@ -1908,8 +1908,8 @@
     return-void
 
     .line 406
-    :cond_20
-    :try_start_20
+    :cond_2
+    :try_start_2
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     .line 407
@@ -1962,7 +1962,7 @@
 
     cmp-long p3, v3, v5
 
-    if-eqz p3, :cond_61
+    if-eqz p3, :cond_4
 
     .line 414
     iget-wide v5, p2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->position:J
@@ -1973,31 +1973,31 @@
 
     cmp-long p3, v5, v3
 
-    if-gtz p3, :cond_5d
+    if-gtz p3, :cond_3
 
-    goto :goto_5e
+    goto :goto_1
 
-    :cond_5d
+    :cond_3
     move v1, v2
 
-    :goto_5e
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 417
-    :cond_61
+    :cond_4
     iget-object p3, p0, Landroidx/media3/datasource/cache/SimpleCache;->fileIndex:Landroidx/media3/datasource/cache/CacheFileMetadataIndex;
 
-    if-eqz p3, :cond_7a
+    if-eqz p3, :cond_5
 
     .line 418
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v1
-    :try_end_69
-    .catchall {:try_start_20 .. :try_end_69} :catchall_8e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 420
-    :try_start_69
+    :try_start_3
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->fileIndex:Landroidx/media3/datasource/cache/CacheFileMetadataIndex;
 
     iget-wide v2, p2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->length:J
@@ -2005,17 +2005,17 @@
     iget-wide v4, p2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->lastTouchTimestamp:J
 
     invoke-virtual/range {v0 .. v5}, Landroidx/media3/datasource/cache/CacheFileMetadataIndex;->set(Ljava/lang/String;JJ)V
-    :try_end_72
-    .catch Ljava/io/IOException; {:try_start_69 .. :try_end_72} :catch_73
-    .catchall {:try_start_69 .. :try_end_72} :catchall_8e
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_7a
+    goto :goto_2
 
-    :catch_73
+    :catch_0
     move-exception p1
 
     .line 422
-    :try_start_74
+    :try_start_4
     new-instance p2, Landroidx/media3/datasource/cache/Cache$CacheException;
 
     invoke-direct {p2, p1}, Landroidx/media3/datasource/cache/Cache$CacheException;-><init>(Ljava/lang/Throwable;)V
@@ -2023,46 +2023,46 @@
     throw p2
 
     .line 425
-    :cond_7a
-    :goto_7a
+    :cond_5
+    :goto_2
     invoke-direct {p0, p2}, Landroidx/media3/datasource/cache/SimpleCache;->addSpan(Landroidx/media3/datasource/cache/SimpleCacheSpan;)V
-    :try_end_7d
-    .catchall {:try_start_74 .. :try_end_7d} :catchall_8e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 427
-    :try_start_7d
+    :try_start_5
     iget-object p1, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->store()V
-    :try_end_82
-    .catch Ljava/io/IOException; {:try_start_7d .. :try_end_82} :catch_87
-    .catchall {:try_start_7d .. :try_end_82} :catchall_8e
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 431
-    :try_start_82
+    :try_start_6
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_85
-    .catchall {:try_start_82 .. :try_end_85} :catchall_8e
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 432
     monitor-exit p0
 
     return-void
 
-    :catch_87
+    :catch_1
     move-exception p1
 
     .line 429
-    :try_start_88
+    :try_start_7
     new-instance p2, Landroidx/media3/datasource/cache/Cache$CacheException;
 
     invoke-direct {p2, p1}, Landroidx/media3/datasource/cache/Cache$CacheException;-><init>(Ljava/lang/Throwable;)V
 
     throw p2
-    :try_end_8e
-    .catchall {:try_start_88 .. :try_end_8e} :catchall_8e
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    :catchall_8e
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2071,36 +2071,36 @@
 .end method
 
 .method public declared-synchronized getCacheSpace()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 321
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 322
     iget-wide v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->totalSpace:J
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2109,7 +2109,7 @@
 .end method
 
 .method public declared-synchronized getCachedBytes(Ljava/lang/String;JJ)J
-    .registers 21
+    .locals 15
 
     monitor-enter p0
 
@@ -2119,38 +2119,38 @@
 
     const-wide v1, 0x7fffffffffffffffL
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     move-wide v3, v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     add-long v3, p2, p4
 
-    :goto_10
+    :goto_0
     const-wide/16 v7, 0x0
 
     cmp-long v0, v3, v7
 
-    if-gez v0, :cond_18
+    if-gez v0, :cond_1
 
     move-wide v9, v1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move-wide v9, v3
 
-    :goto_19
+    :goto_1
     move-wide/from16 v11, p2
 
     move-wide v13, v7
 
-    :goto_1c
+    :goto_2
     cmp-long v0, v11, v9
 
-    if-gez v0, :cond_37
+    if-gez v0, :cond_3
 
     sub-long v5, v9, v11
 
@@ -2161,30 +2161,30 @@
     move-wide v3, v11
 
     .line 485
-    :try_start_26
+    :try_start_0
     invoke-virtual/range {v1 .. v6}, Landroidx/media3/datasource/cache/SimpleCache;->getCachedLength(Ljava/lang/String;JJ)J
 
     move-result-wide v0
-    :try_end_2a
-    .catchall {:try_start_26 .. :try_end_2a} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     cmp-long v2, v0, v7
 
-    if-lez v2, :cond_30
+    if-lez v2, :cond_2
 
     add-long/2addr v13, v0
 
-    goto :goto_31
+    goto :goto_3
 
-    :cond_30
+    :cond_2
     neg-long v0, v0
 
-    :goto_31
+    :goto_3
     add-long/2addr v11, v0
 
-    goto :goto_1c
+    goto :goto_2
 
-    :catchall_33
+    :catchall_0
     move-exception v0
 
     move-object v1, v0
@@ -2194,69 +2194,69 @@
     throw v1
 
     .line 494
-    :cond_37
+    :cond_3
     monitor-exit p0
 
     return-wide v13
 .end method
 
 .method public declared-synchronized getCachedLength(Ljava/lang/String;JJ)J
-    .registers 8
+    .locals 2
 
     monitor-enter p0
 
     .line 466
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const-wide/16 v0, -0x1
 
     cmp-long v0, p4, v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     const-wide p4, 0x7fffffffffffffffL
 
     .line 470
-    :cond_16
+    :cond_1
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {v0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->get(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
 
     move-result-object p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_2
 
     .line 471
     invoke-virtual {p1, p2, p3, p4, p5}, Landroidx/media3/datasource/cache/CachedContent;->getCachedBytesLength(JJ)J
 
     move-result-wide p1
-    :try_end_22
-    .catchall {:try_start_1 .. :try_end_22} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_2
     neg-long p1, p4
 
-    :goto_24
+    :goto_1
     monitor-exit p0
 
     return-wide p1
 
-    :catchall_26
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2265,7 +2265,7 @@
 .end method
 
 .method public declared-synchronized getCachedSpans(Ljava/lang/String;)Ljava/util/NavigableSet;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2280,19 +2280,19 @@
     monitor-enter p0
 
     .line 306
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 307
@@ -2302,19 +2302,19 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_2
 
     .line 308
     invoke-virtual {p1}, Landroidx/media3/datasource/cache/CachedContent;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
-    goto :goto_24
+    goto :goto_1
 
     .line 310
-    :cond_1a
+    :cond_1
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-virtual {p1}, Landroidx/media3/datasource/cache/CachedContent;->getSpans()Ljava/util/TreeSet;
@@ -2323,24 +2323,24 @@
 
     invoke-direct {v0, p1}, Ljava/util/TreeSet;-><init>(Ljava/util/Collection;)V
 
-    goto :goto_29
+    goto :goto_2
 
     .line 309
-    :cond_24
-    :goto_24
+    :cond_2
+    :goto_1
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
-    :try_end_29
-    .catchall {:try_start_1 .. :try_end_29} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 308
-    :goto_29
+    :goto_2
     monitor-exit p0
 
     return-object v0
 
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2349,24 +2349,24 @@
 .end method
 
 .method public declared-synchronized getContentMetadata(Ljava/lang/String;)Landroidx/media3/datasource/cache/ContentMetadata;
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 513
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 514
@@ -2375,14 +2375,14 @@
     invoke-virtual {v0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->getContentMetadata(Ljava/lang/String;)Landroidx/media3/datasource/cache/ContentMetadata;
 
     move-result-object p1
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2391,7 +2391,7 @@
 .end method
 
 .method public declared-synchronized getKeys()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2404,19 +2404,19 @@
     monitor-enter p0
 
     .line 315
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 316
@@ -2429,14 +2429,14 @@
     move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2445,21 +2445,21 @@
 .end method
 
 .method public declared-synchronized getUid()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 256
-    :try_start_1
+    :try_start_0
     iget-wide v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->uid:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2468,28 +2468,28 @@
 .end method
 
 .method public declared-synchronized isCached(Ljava/lang/String;JJ)Z
-    .registers 9
+    .locals 3
 
     monitor-enter p0
 
     .line 459
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v2
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 460
@@ -2499,30 +2499,30 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     .line 461
     invoke-virtual {p1, p2, p3, p4, p5}, Landroidx/media3/datasource/cache/CachedContent;->getCachedBytesLength(JJ)J
 
     move-result-wide p1
-    :try_end_19
-    .catchall {:try_start_1 .. :try_end_19} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     cmp-long p1, p1, p4
 
-    if-ltz p1, :cond_1e
+    if-ltz p1, :cond_1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     move v1, v2
 
-    :goto_1f
+    :goto_1
     monitor-exit p0
 
     return v1
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2531,17 +2531,17 @@
 .end method
 
 .method public declared-synchronized release()V
-    .registers 5
+    .locals 4
 
     monitor-enter p0
 
     .line 261
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 262
     monitor-exit p0
@@ -2549,79 +2549,79 @@
     return-void
 
     .line 264
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->listeners:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
     .line 265
     invoke-direct {p0}, Landroidx/media3/datasource/cache/SimpleCache;->removeStaleSpans()V
-    :try_end_f
-    .catchall {:try_start_7 .. :try_end_f} :catchall_37
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     const/4 v0, 0x1
 
     .line 267
-    :try_start_10
+    :try_start_2
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {v1}, Landroidx/media3/datasource/cache/CachedContentIndex;->store()V
-    :try_end_15
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_15} :catch_1f
-    .catchall {:try_start_10 .. :try_end_15} :catchall_1d
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 271
-    :try_start_15
+    :try_start_3
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     invoke-static {v1}, Landroidx/media3/datasource/cache/SimpleCache;->unlockFolder(Ljava/io/File;)V
 
     .line 272
-    :goto_1a
+    :goto_0
     iput-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
-    :try_end_1c
-    .catchall {:try_start_15 .. :try_end_1c} :catchall_37
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_2d
+    goto :goto_1
 
-    :catchall_1d
+    :catchall_0
     move-exception v1
 
-    goto :goto_2f
+    goto :goto_2
 
-    :catch_1f
+    :catch_0
     move-exception v1
 
-    :try_start_20
+    :try_start_4
     const-string v2, "SimpleCache"
 
     const-string v3, "Storing index file failed"
 
     .line 269
     invoke-static {v2, v3, v1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_27
-    .catchall {:try_start_20 .. :try_end_27} :catchall_1d
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 271
-    :try_start_27
+    :try_start_5
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     invoke-static {v1}, Landroidx/media3/datasource/cache/SimpleCache;->unlockFolder(Ljava/io/File;)V
-    :try_end_2c
-    .catchall {:try_start_27 .. :try_end_2c} :catchall_37
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 274
-    :goto_2d
+    :goto_1
     monitor-exit p0
 
     return-void
 
     .line 271
-    :goto_2f
-    :try_start_2f
+    :goto_2
+    :try_start_6
     iget-object v2, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
 
     invoke-static {v2}, Landroidx/media3/datasource/cache/SimpleCache;->unlockFolder(Ljava/io/File;)V
@@ -2631,10 +2631,10 @@
 
     .line 273
     throw v1
-    :try_end_37
-    .catchall {:try_start_2f .. :try_end_37} :catchall_37
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    :catchall_37
+    :catchall_1
     move-exception v0
 
     monitor-exit p0
@@ -2643,24 +2643,24 @@
 .end method
 
 .method public declared-synchronized releaseHoleSpan(Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 436
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 437
@@ -2692,15 +2692,15 @@
 
     .line 440
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_28
-    .catchall {:try_start_1 .. :try_end_28} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 441
     monitor-exit p0
 
     return-void
 
-    :catchall_2a
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2709,17 +2709,17 @@
 .end method
 
 .method public declared-synchronized removeListener(Ljava/lang/String;Landroidx/media3/datasource/cache/Cache$Listener;)V
-    .registers 4
+    .locals 1
 
     monitor-enter p0
 
     .line 292
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 293
     monitor-exit p0
@@ -2727,8 +2727,8 @@
     return-void
 
     .line 295
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->listeners:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2737,7 +2737,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 297
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -2747,22 +2747,22 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1f
+    if-eqz p2, :cond_1
 
     .line 299
     iget-object p2, p0, Landroidx/media3/datasource/cache/SimpleCache;->listeners:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1f
-    .catchall {:try_start_7 .. :try_end_1f} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 302
-    :cond_1f
+    :cond_1
     monitor-exit p0
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2771,24 +2771,24 @@
 .end method
 
 .method public declared-synchronized removeResource(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 445
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 446
@@ -2800,12 +2800,12 @@
 
     move-result-object p1
 
-    :goto_13
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2815,18 +2815,18 @@
 
     .line 447
     invoke-direct {p0, v0}, Landroidx/media3/datasource/cache/SimpleCache;->removeSpanInternal(Landroidx/media3/datasource/cache/CacheSpan;)V
-    :try_end_22
-    .catchall {:try_start_1 .. :try_end_22} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_13
+    goto :goto_1
 
     .line 449
-    :cond_23
+    :cond_1
     monitor-exit p0
 
     return-void
 
-    :catchall_25
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2835,37 +2835,37 @@
 .end method
 
 .method public declared-synchronized removeSpan(Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 453
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 454
     invoke-direct {p0, p1}, Landroidx/media3/datasource/cache/SimpleCache;->removeSpanInternal(Landroidx/media3/datasource/cache/CacheSpan;)V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 455
     monitor-exit p0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2874,7 +2874,7 @@
 .end method
 
 .method public declared-synchronized startFile(Ljava/lang/String;JJ)Ljava/io/File;
-    .registers 14
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/cache/Cache$CacheException;
@@ -2884,19 +2884,19 @@
     monitor-enter p0
 
     .line 372
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 373
@@ -2926,7 +2926,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1
 
     .line 381
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->cacheDir:Ljava/io/File;
@@ -2937,7 +2937,7 @@
     invoke-direct {p0}, Landroidx/media3/datasource/cache/SimpleCache;->removeStaleSpans()V
 
     .line 384
-    :cond_2e
+    :cond_1
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache;->evictor:Landroidx/media3/datasource/cache/CacheEvictor;
 
     move-object v2, p0
@@ -2974,13 +2974,13 @@
 
     move-result p1
 
-    if-nez p1, :cond_53
+    if-nez p1, :cond_2
 
     .line 388
     invoke-static {v2}, Landroidx/media3/datasource/cache/SimpleCache;->createCacheDirectories(Ljava/io/File;)V
 
     .line 390
-    :cond_53
+    :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -2993,14 +2993,14 @@
     invoke-static/range {v2 .. v7}, Landroidx/media3/datasource/cache/SimpleCacheSpan;->getCacheFile(Ljava/io/File;IJJ)Ljava/io/File;
 
     move-result-object p1
-    :try_end_5e
-    .catchall {:try_start_1 .. :try_end_5e} :catchall_60
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_60
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -3009,7 +3009,7 @@
 .end method
 
 .method public declared-synchronized startReadWrite(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/CacheSpan;
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;,
@@ -3020,33 +3020,33 @@
     monitor-enter p0
 
     .line 328
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 329
     invoke-virtual {p0}, Landroidx/media3/datasource/cache/SimpleCache;->checkInitialization()V
 
     .line 332
-    :goto_e
+    :goto_1
     invoke-virtual/range {p0 .. p5}, Landroidx/media3/datasource/cache/SimpleCache;->startReadWriteNonBlocking(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/CacheSpan;
 
     move-result-object v0
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 334
     monitor-exit p0
@@ -3054,15 +3054,15 @@
     return-object v0
 
     .line 341
-    :cond_16
-    :try_start_16
+    :cond_1
+    :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_19
-    .catchall {:try_start_16 .. :try_end_19} :catchall_1a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_e
+    goto :goto_1
 
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -3071,7 +3071,7 @@
 .end method
 
 .method public declared-synchronized startReadWriteNonBlocking(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/CacheSpan;
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/cache/Cache$CacheException;
@@ -3081,19 +3081,19 @@
     monitor-enter p0
 
     .line 350
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCache;->released:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 351
@@ -3107,22 +3107,22 @@
     .line 355
     iget-boolean p5, p4, Landroidx/media3/datasource/cache/SimpleCacheSpan;->isCached:Z
 
-    if-eqz p5, :cond_1c
+    if-eqz p5, :cond_1
 
     .line 357
     invoke-direct {p0, p1, p4}, Landroidx/media3/datasource/cache/SimpleCache;->touchSpan(Ljava/lang/String;Landroidx/media3/datasource/cache/SimpleCacheSpan;)Landroidx/media3/datasource/cache/SimpleCacheSpan;
 
     move-result-object p1
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
     .line 360
-    :cond_1c
-    :try_start_1c
+    :cond_1
+    :try_start_1
     iget-object p5, p0, Landroidx/media3/datasource/cache/SimpleCache;->contentIndex:Landroidx/media3/datasource/cache/CachedContentIndex;
 
     invoke-virtual {p5, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->getOrAdd(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
@@ -3135,10 +3135,10 @@
     invoke-virtual {p1, p2, p3, v0, v1}, Landroidx/media3/datasource/cache/CachedContent;->lockRange(JJ)Z
 
     move-result p1
-    :try_end_28
-    .catchall {:try_start_1c .. :try_end_28} :catchall_2f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_2
 
     .line 363
     monitor-exit p0
@@ -3146,14 +3146,14 @@
     return-object p4
 
     .line 367
-    :cond_2c
+    :cond_2
     monitor-exit p0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

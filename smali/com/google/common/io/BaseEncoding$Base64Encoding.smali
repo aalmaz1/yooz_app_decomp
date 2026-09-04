@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)V
-    .registers 3
+    .locals 0
     .param p2    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -44,23 +44,23 @@
 
     const/16 p2, 0x40
 
-    if-ne p1, p2, :cond_e
+    if-ne p1, p2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     return-void
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
-    .registers 5
+    .locals 1
     .param p3    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method decodeTo([BLjava/lang/CharSequence;)I
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -132,19 +132,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7e
+    if-eqz v0, :cond_3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 1036
-    :goto_15
+    :goto_0
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_7d
+    if-ge v0, v2, :cond_2
 
     .line 1037
     iget-object v2, p0, Lcom/google/common/io/BaseEncoding$Base64Encoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -192,7 +192,7 @@
 
     move-result v1
 
-    if-ge v4, v1, :cond_7a
+    if-ge v4, v1, :cond_1
 
     .line 1041
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$Base64Encoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -227,7 +227,7 @@
 
     move-result v2
 
-    if-ge v3, v2, :cond_78
+    if-ge v3, v2, :cond_0
 
     .line 1044
     iget-object v2, p0, Lcom/google/common/io/BaseEncoding$Base64Encoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -253,26 +253,26 @@
     .line 1045
     aput-byte v0, p1, v1
 
-    goto :goto_7a
+    goto :goto_1
 
-    :cond_78
+    :cond_0
     move v0, v3
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_7a
-    :goto_7a
+    :cond_1
+    :goto_1
     move v1, v2
 
     move v0, v4
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_7d
+    :cond_2
     return v1
 
     .line 1033
-    :cond_7e
+    :cond_3
     new-instance p1, Lcom/google/common/io/BaseEncoding$DecodingException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -299,7 +299,7 @@
 .end method
 
 .method encodeTo(Ljava/lang/Appendable;[BII)V
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -331,10 +331,10 @@
 
     invoke-static {p3, v0, v1}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
 
-    :goto_9
+    :goto_0
     const/4 v1, 0x3
 
-    if-lt p4, v1, :cond_58
+    if-lt p4, v1, :cond_0
 
     add-int/lit8 v1, p3, 0x1
 
@@ -415,22 +415,22 @@
 
     move p3, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_58
-    if-ge p3, v0, :cond_5e
+    :cond_0
+    if-ge p3, v0, :cond_1
 
     sub-int/2addr v0, p3
 
     .line 1024
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/common/io/BaseEncoding$Base64Encoding;->encodeChunkTo(Ljava/lang/Appendable;[BII)V
 
-    :cond_5e
+    :cond_1
     return-void
 .end method
 
 .method newInstance(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 1
     .param p2    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation

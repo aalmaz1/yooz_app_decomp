@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/processing/SurfaceProcessorNode;)V
-    .registers 2
+    .locals 0
 
     .line 207
     iput-object p1, p0, Landroidx/camera/core/processing/SurfaceProcessorNode$1;->this$0:Landroidx/camera/core/processing/SurfaceProcessorNode;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "SurfaceProcessorNode"
 
@@ -58,24 +58,24 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/core/SurfaceOutput;)V
-    .registers 4
+    .locals 2
 
     .line 210
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 212
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorNode$1;->this$0:Landroidx/camera/core/processing/SurfaceProcessorNode;
 
     iget-object v0, v0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mSurfaceProcessor:Landroidx/camera/core/processing/SurfaceProcessorInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/processing/SurfaceProcessorInternal;->onOutputSurface(Landroidx/camera/core/SurfaceOutput;)V
-    :try_end_a
-    .catch Landroidx/camera/core/ProcessingException; {:try_start_3 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :catch_b
+    :catch_0
     move-exception p1
 
     const-string v0, "SurfaceProcessorNode"
@@ -85,12 +85,12 @@
     .line 214
     invoke-static {v0, v1, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 207
     check-cast p1, Landroidx/camera/core/SurfaceOutput;

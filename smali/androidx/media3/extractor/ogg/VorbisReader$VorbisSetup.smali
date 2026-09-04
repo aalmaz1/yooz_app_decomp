@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;Landroidx/media3/extractor/VorbisUtil$CommentHeader;[B[Landroidx/media3/extractor/VorbisUtil$Mode;I)V
-    .registers 6
+    .locals 0
 
     .line 218
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

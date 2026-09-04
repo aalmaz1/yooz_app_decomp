@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/Region;)V
-    .registers 3
+    .locals 1
 
     .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 147
     iget-boolean v0, p0, Landroidx/core/graphics/RegionKt$iterator$1;->hasMore:Z
@@ -105,12 +105,12 @@
 .end method
 
 .method public next()Landroid/graphics/Rect;
-    .registers 4
+    .locals 3
 
     .line 150
     iget-boolean v0, p0, Landroidx/core/graphics/RegionKt$iterator$1;->hasMore:Z
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 151
     new-instance v0, Landroid/graphics/Rect;
@@ -133,7 +133,7 @@
     return-object v0
 
     .line 155
-    :cond_16
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -142,7 +142,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 142
     invoke-virtual {p0}, Landroidx/core/graphics/RegionKt$iterator$1;->next()Landroid/graphics/Rect;
@@ -153,7 +153,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

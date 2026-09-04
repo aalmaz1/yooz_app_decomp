@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 3
+    .locals 0
 
     .line 138
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->parsePaletteSection(Landroidx/media3/common/util/ParsableByteArray;I)V
@@ -68,7 +68,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 3
+    .locals 0
 
     .line 138
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->parseBitmapSection(Landroidx/media3/common/util/ParsableByteArray;I)V
@@ -77,7 +77,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 3
+    .locals 0
 
     .line 138
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->parseIdentifierSection(Landroidx/media3/common/util/ParsableByteArray;I)V
@@ -86,15 +86,15 @@
 .end method
 
 .method private parseBitmapSection(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x4
 
-    if-ge p2, v0, :cond_4
+    if-ge p2, v0, :cond_0
 
     return-void
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x3
 
     .line 187
@@ -107,38 +107,38 @@
 
     and-int/lit16 v1, v1, 0x80
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_13
+    :goto_0
     add-int/lit8 p2, p2, -0x4
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_4
 
     const/4 v1, 0x7
 
-    if-ge p2, v1, :cond_1b
+    if-ge p2, v1, :cond_2
 
     return-void
 
     .line 195
-    :cond_1b
+    :cond_2
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result v1
 
-    if-ge v1, v0, :cond_22
+    if-ge v1, v0, :cond_3
 
     return-void
 
     .line 199
-    :cond_22
+    :cond_3
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v2
@@ -162,7 +162,7 @@
     add-int/lit8 p2, p2, -0x7
 
     .line 205
-    :cond_36
+    :cond_4
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -176,9 +176,9 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_5a
+    if-ge v0, v1, :cond_5
 
-    if-lez p2, :cond_5a
+    if-lez p2, :cond_5
 
     sub-int/2addr v1, v0
 
@@ -203,21 +203,21 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    :cond_5a
+    :cond_5
     return-void
 .end method
 
 .method private parseIdentifierSection(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0x13
 
-    if-ge p2, v0, :cond_5
+    if-ge p2, v0, :cond_0
 
     return-void
 
     .line 218
-    :cond_5
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p2
@@ -254,7 +254,7 @@
 .end method
 
 .method private parsePaletteSection(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 22
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -263,11 +263,11 @@
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_8
+    if-eq v1, v2, :cond_0
 
     return-void
 
-    :cond_8
+    :cond_0
     move-object/from16 v1, p1
 
     .line 161
@@ -285,8 +285,8 @@
 
     move v4, v3
 
-    :goto_16
-    if-ge v4, v2, :cond_73
+    :goto_0
+    if-ge v4, v2, :cond_1
 
     .line 166
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -389,9 +389,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_73
+    :cond_1
     const/4 v1, 0x1
 
     .line 180
@@ -403,24 +403,24 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/text/Cue;
-    .registers 8
+    .locals 7
 
     .line 227
     iget v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->planeWidth:I
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_6
 
     iget v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->planeHeight:I
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_6
 
     iget v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapWidth:I
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_6
 
     iget v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapHeight:I
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -429,7 +429,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -444,16 +444,16 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_cc
+    if-ne v0, v1, :cond_6
 
     iget-boolean v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->colorsSet:Z
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
-    goto/16 :goto_cc
+    goto/16 :goto_4
 
     .line 237
-    :cond_2c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
 
     const/4 v1, 0x0
@@ -471,9 +471,9 @@
 
     move v3, v1
 
-    :cond_3a
-    :goto_3a
-    if-ge v3, v0, :cond_80
+    :cond_1
+    :goto_0
+    if-ge v3, v0, :cond_5
 
     .line 241
     iget-object v4, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
@@ -482,7 +482,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4e
+    if-eqz v4, :cond_2
 
     add-int/lit8 v5, v3, 0x1
 
@@ -493,30 +493,30 @@
 
     aput v4, v2, v3
 
-    :goto_4c
+    :goto_1
     move v3, v5
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 245
-    :cond_4e
+    :cond_2
     iget-object v4, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v4}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v4
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_1
 
     and-int/lit8 v5, v4, 0x40
 
-    if-nez v5, :cond_5d
+    if-nez v5, :cond_3
 
     and-int/lit8 v5, v4, 0x3f
 
-    goto :goto_68
+    goto :goto_2
 
-    :cond_5d
+    :cond_3
     and-int/lit8 v5, v4, 0x3f
 
     shl-int/lit8 v5, v5, 0x8
@@ -530,19 +530,19 @@
 
     or-int/2addr v5, v6
 
-    :goto_68
+    :goto_2
     and-int/lit16 v4, v4, 0x80
 
-    if-nez v4, :cond_71
+    if-nez v4, :cond_4
 
     .line 252
     iget-object v4, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->colors:[I
 
     aget v4, v4, v1
 
-    goto :goto_7b
+    goto :goto_3
 
-    :cond_71
+    :cond_4
     iget-object v4, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->colors:[I
 
     iget-object v6, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapData:Landroidx/media3/common/util/ParsableByteArray;
@@ -553,16 +553,16 @@
 
     aget v4, v4, v6
 
-    :goto_7b
+    :goto_3
     add-int/2addr v5, v3
 
     .line 253
     invoke-static {v2, v3, v5, v4}, Ljava/util/Arrays;->fill([IIII)V
 
-    goto :goto_4c
+    goto :goto_1
 
     .line 259
-    :cond_80
+    :cond_5
     iget v0, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapWidth:I
 
     iget v3, p0, Landroidx/media3/extractor/text/pgs/PgsParser$CueBuilder;->bitmapHeight:I
@@ -661,15 +661,15 @@
 
     return-object v0
 
-    :cond_cc
-    :goto_cc
+    :cond_6
+    :goto_4
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 

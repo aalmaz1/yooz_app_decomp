@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Landroidx/media3/exoplayer/source/ExternalLoader;)V
-    .registers 8
+    .locals 4
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -125,7 +125,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)Ljava/util/concurrent/atomic/AtomicBoolean;
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -134,7 +134,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)Ljava/util/concurrent/atomic/AtomicReference;
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingThrowable:Ljava/util/concurrent/atomic/AtomicReference;
@@ -143,7 +143,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->tracks:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -152,7 +152,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)[B
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->sampleData:[B
@@ -163,7 +163,7 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 2
+    .locals 0
 
     .line 146
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -178,19 +178,19 @@
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 4
+    .locals 0
 
     return-wide p1
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 136
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -199,21 +199,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const-wide/16 v0, 0x0
 
-    :goto_d
+    :goto_0
     return-wide v0
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 141
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -222,21 +222,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const-wide/16 v0, 0x0
 
-    :goto_d
+    :goto_0
     return-wide v0
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->tracks:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -245,7 +245,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -260,13 +260,13 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 66
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
@@ -303,7 +303,7 @@
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -311,73 +311,73 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public releasePeriod()V
-    .registers 3
+    .locals 2
 
     .line 160
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->loadingFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
     .line 161
     invoke-interface {v0, v1}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    :cond_8
+    :cond_0
     return-void
 .end method
 
 .method public seekToUs(J)J
-    .registers 3
+    .locals 0
 
     return-wide p1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 9
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 101
-    :goto_1
+    :goto_0
     array-length v1, p1
 
-    if-ge v0, v1, :cond_28
+    if-ge v0, v1, :cond_3
 
     .line 102
     aget-object v1, p3, v0
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     aget-object v1, p1, v0
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     aget-boolean v1, p2, v0
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_1
 
-    :cond_10
+    :cond_0
     const/4 v1, 0x0
 
     .line 103
     aput-object v1, p3, v0
 
     .line 105
-    :cond_13
+    :cond_1
     aget-object v1, p3, v0
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     aget-object v1, p1, v0
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     .line 106
     new-instance v1, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;
@@ -392,11 +392,11 @@
     .line 108
     aput-boolean v1, p4, v0
 
-    :cond_25
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_28
+    :cond_3
     return-wide p5
 .end method

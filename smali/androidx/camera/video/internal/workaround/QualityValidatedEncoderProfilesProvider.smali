@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 55
     new-instance v0, Ljava/util/HashMap;
@@ -108,7 +108,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/EncoderProfilesProvider;Landroidx/camera/core/impl/CameraInfoInternal;Landroidx/camera/core/impl/Quirks;)V
-    .registers 4
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -126,7 +126,7 @@
 .end method
 
 .method private isDeviceValidQuality(I)Z
-    .registers 5
+    .locals 3
 
     .line 95
     sget-object v0, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->CAMCORDER_TO_VIDEO_QUALITY_MAP:Ljava/util/Map;
@@ -141,7 +141,7 @@
 
     check-cast p1, Landroidx/camera/video/Quality;
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_1
 
     .line 99
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->mQuirks:Landroidx/camera/core/impl/Quirks;
@@ -156,12 +156,12 @@
 
     move-result-object v0
 
-    :cond_1a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -169,7 +169,7 @@
 
     check-cast v1, Landroidx/camera/video/internal/compat/quirk/VideoQualityQuirk;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 100
     iget-object v2, p0, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -178,20 +178,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 101
     invoke-interface {v1}, Landroidx/camera/video/internal/compat/quirk/VideoQualityQuirk;->workaroundBySurfaceProcessing()Z
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
-    :cond_38
+    :cond_1
     const/4 p1, 0x1
 
     return p1
@@ -200,21 +200,21 @@
 
 # virtual methods
 .method public getAll(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 3
+    .locals 1
 
     .line 87
     invoke-virtual {p0, p1}, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->hasProfile(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 91
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->mProvider:Landroidx/camera/core/impl/EncoderProfilesProvider;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/EncoderProfilesProvider;->getAll(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
@@ -225,7 +225,7 @@
 .end method
 
 .method public hasProfile(I)Z
-    .registers 3
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->mProvider:Landroidx/camera/core/impl/EncoderProfilesProvider;
@@ -234,21 +234,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/workaround/QualityValidatedEncoderProfilesProvider;->isDeviceValidQuality(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_11
+    :goto_0
     return p1
 .end method

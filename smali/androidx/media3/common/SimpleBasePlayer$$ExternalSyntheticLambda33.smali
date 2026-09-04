@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/media3/common/SimpleBasePlayer;Landroidx/media3/common/SimpleBasePlayer$State;Ljava/util/List;II)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final get()Ljava/lang/Object;
-    .registers 6
+    .locals 5
 
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$$ExternalSyntheticLambda33;->f$0:Landroidx/media3/common/SimpleBasePlayer;
 

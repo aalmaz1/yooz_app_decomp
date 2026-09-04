@@ -13,12 +13,12 @@
 
 # direct methods
 .method constructor <init>(Landroid/opengl/EGLSurface;II)V
-    .registers 4
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/camera/core/processing/OpenGlRenderer$OutputSurface;-><init>()V
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 24
     iput-object p1, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->eglSurface:Landroid/opengl/EGLSurface;
@@ -32,7 +32,7 @@
     return-void
 
     .line 22
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null eglSurface"
@@ -45,21 +45,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 59
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/processing/OpenGlRenderer$OutputSurface;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
     .line 60
     check-cast p1, Landroidx/camera/core/processing/OpenGlRenderer$OutputSurface;
@@ -75,7 +75,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->width:I
 
@@ -84,7 +84,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_28
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->height:I
 
@@ -93,22 +93,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_28
+    if-ne v1, p1, :cond_1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     move v0, v2
 
-    :goto_29
+    :goto_0
     return v0
 
-    :cond_2a
+    :cond_2
     return v2
 .end method
 
 .method getEglSurface()Landroid/opengl/EGLSurface;
-    .registers 2
+    .locals 1
 
     .line 32
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->eglSurface:Landroid/opengl/EGLSurface;
@@ -117,7 +117,7 @@
 .end method
 
 .method getHeight()I
-    .registers 2
+    .locals 1
 
     .line 42
     iget v0, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->height:I
@@ -126,7 +126,7 @@
 .end method
 
 .method getWidth()I
-    .registers 2
+    .locals 1
 
     .line 37
     iget v0, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->width:I
@@ -135,7 +135,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 72
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_OpenGlRenderer_OutputSurface;->eglSurface:Landroid/opengl/EGLSurface;
@@ -166,7 +166,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 47
     new-instance v0, Ljava/lang/StringBuilder;

@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/core/SingleProcessDataStore;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 213
     check-cast p1, Ljava/lang/Throwable;
@@ -94,14 +94,14 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 214
-    :cond_3
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore$actor$1;->this$0:Landroidx/datastore/core/SingleProcessDataStore;
 
     .line 215
@@ -116,7 +116,7 @@
     invoke-interface {v0, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
     .line 220
-    :goto_11
+    :goto_0
     sget-object p1, Landroidx/datastore/core/SingleProcessDataStore;->Companion:Landroidx/datastore/core/SingleProcessDataStore$Companion;
 
     invoke-virtual {p1}, Landroidx/datastore/core/SingleProcessDataStore$Companion;->getActiveFilesLock$datastore_core()Ljava/lang/Object;
@@ -128,7 +128,7 @@
     monitor-enter p1
 
     .line 221
-    :try_start_1a
+    :try_start_0
     sget-object v1, Landroidx/datastore/core/SingleProcessDataStore;->Companion:Landroidx/datastore/core/SingleProcessDataStore$Companion;
 
     invoke-virtual {v1}, Landroidx/datastore/core/SingleProcessDataStore$Companion;->getActiveFiles$datastore_core()Ljava/util/Set;
@@ -147,15 +147,15 @@
 
     .line 222
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_2d
-    .catchall {:try_start_1a .. :try_end_2d} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 220
     monitor-exit p1
 
     return-void
 
-    :catchall_2f
+    :catchall_0
     move-exception v0
 
     monitor-exit p1

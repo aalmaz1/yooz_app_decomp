@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILandroid/app/Notification;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/TrustedWebActivityServiceConnection$NotifyNotificationArgs;
-    .registers 6
+    .locals 5
 
     const-string v0, "android.support.customtabs.trusted.PLATFORM_TAG"
 
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 215
     new-instance v0, Landroid/os/Bundle;

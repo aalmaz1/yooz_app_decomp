@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 37
     new-instance v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageInfoFactory;
@@ -25,7 +25,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static getInstance()Landroidx/datastore/preferences/protobuf/GeneratedMessageInfoFactory;
-    .registers 1
+    .locals 1
 
     .line 43
     sget-object v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageInfoFactory;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageInfoFactory;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public isSupported(Ljava/lang/Class;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,7 +65,7 @@
 .end method
 
 .method public messageInfoFor(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/MessageInfo;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,10 +82,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 58
-    :try_start_8
+    :try_start_0
     const-class v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     .line 59
@@ -104,12 +104,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/MessageInfo;
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_19
+    :catch_0
     move-exception v0
 
     .line 62
@@ -138,7 +138,7 @@
     throw v1
 
     .line 54
-    :cond_33
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;

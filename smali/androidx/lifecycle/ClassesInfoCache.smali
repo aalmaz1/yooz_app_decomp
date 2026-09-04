@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 39
     new-instance v0, Landroidx/lifecycle/ClassesInfoCache;
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 .end method
 
 .method private createInfo(Ljava/lang/Class;[Ljava/lang/reflect/Method;)Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
-    .registers 14
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,14 +111,14 @@
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 112
     invoke-virtual {p0, v0}, Landroidx/lifecycle/ClassesInfoCache;->getInfo(Ljava/lang/Class;)Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 114
     iget-object v0, v0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mHandlerToEvent:Ljava/util/Map;
@@ -126,7 +126,7 @@
     invoke-interface {v1, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     .line 118
-    :cond_16
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
 
     move-result-object v0
@@ -138,8 +138,8 @@
 
     move v4, v3
 
-    :goto_1d
-    if-ge v4, v2, :cond_4e
+    :goto_0
+    if-ge v4, v2, :cond_2
 
     aget-object v5, v0, v4
 
@@ -160,12 +160,12 @@
 
     move-result-object v5
 
-    :goto_2f
+    :goto_1
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_4b
+    if-eqz v6, :cond_1
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -188,34 +188,34 @@
 
     invoke-direct {p0, v1, v7, v6, p1}, Landroidx/lifecycle/ClassesInfoCache;->verifyAndPutHandler(Ljava/util/Map;Landroidx/lifecycle/ClassesInfoCache$MethodReference;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Class;)V
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_4b
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_4e
-    if-eqz p2, :cond_51
+    :cond_2
+    if-eqz p2, :cond_3
 
-    goto :goto_55
+    goto :goto_2
 
     .line 126
-    :cond_51
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/lifecycle/ClassesInfoCache;->getDeclaredMethods(Ljava/lang/Class;)[Ljava/lang/reflect/Method;
 
     move-result-object p2
 
     .line 128
-    :goto_55
+    :goto_2
     array-length v0, p2
 
     move v2, v3
 
     move v4, v2
 
-    :goto_58
-    if-ge v2, v0, :cond_c3
+    :goto_3
+    if-ge v2, v0, :cond_b
 
     aget-object v5, p2, v2
 
@@ -228,12 +228,12 @@
 
     check-cast v6, Landroidx/lifecycle/OnLifecycleEvent;
 
-    if-nez v6, :cond_67
+    if-nez v6, :cond_4
 
-    goto :goto_b8
+    goto :goto_6
 
     .line 134
-    :cond_67
+    :cond_4
     invoke-virtual {v5}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
     move-result-object v4
@@ -243,7 +243,7 @@
 
     const/4 v8, 0x1
 
-    if-lez v7, :cond_83
+    if-lez v7, :cond_6
 
     .line 138
     const-class v7, Landroidx/lifecycle/LifecycleOwner;
@@ -254,14 +254,14 @@
 
     move-result v7
 
-    if-eqz v7, :cond_7b
+    if-eqz v7, :cond_5
 
     move v7, v8
 
-    goto :goto_84
+    goto :goto_4
 
     .line 139
-    :cond_7b
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "invalid parameter type. Must be one and instanceof LifecycleOwner"
@@ -270,11 +270,11 @@
 
     throw p1
 
-    :cond_83
+    :cond_6
     move v7, v3
 
     .line 143
-    :goto_84
+    :goto_4
     invoke-interface {v6}, Landroidx/lifecycle/OnLifecycleEvent;->value()Landroidx/lifecycle/Lifecycle$Event;
 
     move-result-object v6
@@ -284,7 +284,7 @@
 
     const/4 v10, 0x2
 
-    if-le v9, v8, :cond_ac
+    if-le v9, v8, :cond_9
 
     .line 147
     const-class v7, Landroidx/lifecycle/Lifecycle$Event;
@@ -295,19 +295,19 @@
 
     move-result v7
 
-    if-eqz v7, :cond_a4
+    if-eqz v7, :cond_8
 
     .line 151
     sget-object v7, Landroidx/lifecycle/Lifecycle$Event;->ON_ANY:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne v6, v7, :cond_9c
+    if-ne v6, v7, :cond_7
 
     move v7, v10
 
-    goto :goto_ac
+    goto :goto_5
 
     .line 152
-    :cond_9c
+    :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Second arg is supported only for ON_ANY value"
@@ -317,7 +317,7 @@
     throw p1
 
     .line 148
-    :cond_a4
+    :cond_8
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "invalid parameter type. second arg must be an event"
@@ -327,11 +327,11 @@
     throw p1
 
     .line 156
-    :cond_ac
-    :goto_ac
+    :cond_9
+    :goto_5
     array-length v4, v4
 
-    if-gt v4, v10, :cond_bb
+    if-gt v4, v10, :cond_a
 
     .line 159
     new-instance v4, Landroidx/lifecycle/ClassesInfoCache$MethodReference;
@@ -343,13 +343,13 @@
 
     move v4, v8
 
-    :goto_b8
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_58
+    goto :goto_3
 
     .line 157
-    :cond_bb
+    :cond_a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "cannot have more than 2 params"
@@ -359,7 +359,7 @@
     throw p1
 
     .line 162
-    :cond_c3
+    :cond_b
     new-instance p2, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
 
     invoke-direct {p2, v1}, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;-><init>(Ljava/util/Map;)V
@@ -382,7 +382,7 @@
 .end method
 
 .method private getDeclaredMethods(Ljava/lang/Class;)[Ljava/lang/reflect/Method;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -397,12 +397,12 @@
     invoke-virtual {p1}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
 
     move-result-object p1
-    :try_end_4
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_5
+    :catch_0
     move-exception p1
 
     .line 76
@@ -416,7 +416,7 @@
 .end method
 
 .method private verifyAndPutHandler(Ljava/util/Map;Landroidx/lifecycle/ClassesInfoCache$MethodReference;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Class;)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -438,14 +438,14 @@
 
     check-cast v0, Landroidx/lifecycle/Lifecycle$Event;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_1
 
-    if-ne p3, v0, :cond_b
+    if-ne p3, v0, :cond_0
 
-    goto :goto_48
+    goto :goto_0
 
     .line 97
-    :cond_b
+    :cond_0
     iget-object p1, p2, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mMethod:Ljava/lang/reflect/Method;
 
     .line 98
@@ -508,21 +508,21 @@
 
     throw p2
 
-    :cond_48
-    :goto_48
-    if-nez v0, :cond_4d
+    :cond_1
+    :goto_0
+    if-nez v0, :cond_2
 
     .line 104
     invoke-interface {p1, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_4d
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method getInfo(Ljava/lang/Class;)Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -541,11 +541,11 @@
 
     check-cast v0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     .line 89
@@ -557,7 +557,7 @@
 .end method
 
 .method hasLifecycleMethods(Ljava/lang/Class;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -575,7 +575,7 @@
 
     check-cast v0, Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 51
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -585,7 +585,7 @@
     return p1
 
     .line 54
-    :cond_f
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/lifecycle/ClassesInfoCache;->getDeclaredMethods(Ljava/lang/Class;)[Ljava/lang/reflect/Method;
 
     move-result-object v0
@@ -597,8 +597,8 @@
 
     move v3, v2
 
-    :goto_16
-    if-ge v3, v1, :cond_2c
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     aget-object v4, v0, v3
 
@@ -611,7 +611,7 @@
 
     check-cast v4, Landroidx/lifecycle/OnLifecycleEvent;
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_1
 
     .line 64
     invoke-direct {p0, p1, v0}, Landroidx/lifecycle/ClassesInfoCache;->createInfo(Ljava/lang/Class;[Ljava/lang/reflect/Method;)Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;
@@ -620,13 +620,13 @@
 
     return p1
 
-    :cond_29
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 68
-    :cond_2c
+    :cond_2
     iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache;->mHasLifecycleMethods:Ljava/util/Map;
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/http/HttpEngine;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
 
     .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public bridge synthetic createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 73
     invoke-virtual {p0}, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->createDataSource()Landroidx/media3/datasource/HttpDataSource;
@@ -107,7 +107,7 @@
 .end method
 
 .method public createDataSource()Landroidx/media3/datasource/HttpDataSource;
-    .registers 14
+    .locals 13
 
     .line 260
     new-instance v12, Landroidx/media3/datasource/HttpEngineDataSource;
@@ -141,17 +141,17 @@
     .line 273
     iget-object v0, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->transferListener:Landroidx/media3/datasource/TransferListener;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 274
     invoke-virtual {v12, v0}, Landroidx/media3/datasource/HttpEngineDataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
-    :cond_23
+    :cond_0
     return-object v12
 .end method
 
 .method public setConnectionTimeoutMs(I)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 161
     iput p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->connectTimeoutMs:I
@@ -160,7 +160,7 @@
 .end method
 
 .method public setContentTypePredicate(Lcom/google/common/base/Predicate;)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -178,7 +178,7 @@
 .end method
 
 .method public bridge synthetic setDefaultRequestProperties(Ljava/util/Map;)Landroidx/media3/datasource/HttpDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 73
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->setDefaultRequestProperties(Ljava/util/Map;)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
@@ -189,7 +189,7 @@
 .end method
 
 .method public final setDefaultRequestProperties(Ljava/util/Map;)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -210,7 +210,7 @@
 .end method
 
 .method public setHandleSetCookieRequests(Z)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 193
     iput-boolean p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->handleSetCookieRequests:Z
@@ -219,7 +219,7 @@
 .end method
 
 .method public setKeepPostFor302Redirects(Z)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 236
     iput-boolean p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->keepPostFor302Redirects:Z
@@ -228,7 +228,7 @@
 .end method
 
 .method public setReadTimeoutMs(I)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 208
     iput p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->readTimeoutMs:I
@@ -237,7 +237,7 @@
 .end method
 
 .method public setRequestPriority(I)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 146
     iput p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->requestPriority:I
@@ -246,7 +246,7 @@
 .end method
 
 .method public setResetTimeoutOnRedirects(Z)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 176
     iput-boolean p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->resetTimeoutOnRedirects:Z
@@ -255,7 +255,7 @@
 .end method
 
 .method public setTransferListener(Landroidx/media3/datasource/TransferListener;)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 253
     iput-object p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->transferListener:Landroidx/media3/datasource/TransferListener;
@@ -264,7 +264,7 @@
 .end method
 
 .method public setUserAgent(Ljava/lang/String;)Landroidx/media3/datasource/HttpEngineDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 129
     iput-object p1, p0, Landroidx/media3/datasource/HttpEngineDataSource$Factory;->userAgent:Ljava/lang/String;

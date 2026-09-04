@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/arch/core/executor/DefaultTaskExecutor;)V
-    .registers 3
+    .locals 1
 
     .line 42
     iput-object p1, p0, Landroidx/arch/core/executor/DefaultTaskExecutor$1;->this$0:Landroidx/arch/core/executor/DefaultTaskExecutor;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 4
+    .locals 2
 
     .line 49
     new-instance v0, Ljava/lang/Thread;

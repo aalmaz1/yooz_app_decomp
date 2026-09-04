@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>([D[[D)V
-    .registers 24
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -76,13 +76,13 @@
 
     move v10, v4
 
-    :goto_2f
-    if-ge v10, v5, :cond_71
+    :goto_0
+    if-ge v10, v5, :cond_2
 
     move v11, v4
 
-    :goto_32
-    if-ge v11, v6, :cond_64
+    :goto_1
+    if-ge v11, v6, :cond_1
 
     add-int/lit8 v12, v11, 0x1
 
@@ -110,17 +110,17 @@
 
     aput-wide v16, v15, v10
 
-    if-nez v11, :cond_52
+    if-nez v11, :cond_0
 
     .line 39
     aget-object v11, v9, v11
 
     aput-wide v16, v11, v10
 
-    goto :goto_62
+    goto :goto_2
 
     .line 41
-    :cond_52
+    :cond_0
     aget-object v13, v9, v11
 
     add-int/lit8 v11, v11, -0x1
@@ -137,13 +137,13 @@
 
     aput-wide v14, v13, v10
 
-    :goto_62
+    :goto_2
     move v11, v12
 
-    goto :goto_32
+    goto :goto_1
 
     .line 44
-    :cond_64
+    :cond_1
     aget-object v11, v9, v6
 
     add-int/lit8 v12, v3, -0x2
@@ -156,18 +156,18 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_71
+    :cond_2
     move v3, v4
 
-    :goto_72
-    if-ge v3, v6, :cond_c3
+    :goto_3
+    if-ge v3, v6, :cond_6
 
     move v7, v4
 
-    :goto_75
-    if-ge v7, v5, :cond_c0
+    :goto_4
+    if-ge v7, v5, :cond_5
 
     .line 49
     aget-object v10, v8, v3
@@ -178,7 +178,7 @@
 
     cmpl-double v14, v10, v12
 
-    if-nez v14, :cond_8c
+    if-nez v14, :cond_3
 
     .line 50
     aget-object v10, v9, v3
@@ -192,10 +192,10 @@
 
     aput-wide v12, v10, v7
 
-    goto :goto_bd
+    goto :goto_5
 
     .line 53
-    :cond_8c
+    :cond_3
     aget-object v12, v9, v3
 
     aget-wide v12, v12, v7
@@ -220,7 +220,7 @@
 
     cmpl-double v17, v15, v17
 
-    if-lez v17, :cond_bd
+    if-lez v17, :cond_4
 
     const-wide/high16 v17, 0x4008000000000000L    # 3.0
 
@@ -250,19 +250,19 @@
 
     aput-wide v17, v12, v7
 
-    :cond_bd
-    :goto_bd
+    :cond_4
+    :goto_5
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_75
+    goto :goto_4
 
-    :cond_c0
+    :cond_5
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_72
+    goto :goto_3
 
     .line 64
-    :cond_c3
+    :cond_6
     iput-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
 
     .line 65
@@ -275,7 +275,7 @@
 .end method
 
 .method private static diff(DDDDDD)D
-    .registers 22
+    .locals 10
 
     mul-double v0, p2, p2
 
@@ -347,7 +347,7 @@
 .end method
 
 .method private static interpolate(DDDDDD)D
-    .registers 24
+    .locals 12
 
     mul-double v0, p2, p2
 
@@ -415,7 +415,7 @@
 
 # virtual methods
 .method public getPos(DI)D
-    .registers 25
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -431,7 +431,7 @@
 
     cmpg-double v4, p1, v4
 
-    if-gtz v4, :cond_13
+    if-gtz v4, :cond_0
 
     .line 149
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -442,7 +442,7 @@
 
     return-wide v1
 
-    :cond_13
+    :cond_0
     add-int/lit8 v2, v2, -0x1
 
     .line 151
@@ -450,7 +450,7 @@
 
     cmpl-double v1, p1, v4
 
-    if-ltz v1, :cond_22
+    if-ltz v1, :cond_1
 
     .line 152
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -461,9 +461,9 @@
 
     return-wide v1
 
-    :cond_22
-    :goto_22
-    if-ge v3, v2, :cond_5c
+    :cond_1
+    :goto_0
+    if-ge v3, v2, :cond_4
 
     .line 156
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
@@ -472,7 +472,7 @@
 
     cmpl-double v6, p1, v4
 
-    if-nez v6, :cond_33
+    if-nez v6, :cond_2
 
     .line 157
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -483,7 +483,7 @@
 
     return-wide v1
 
-    :cond_33
+    :cond_2
     add-int/lit8 v6, v3, 0x1
 
     .line 159
@@ -491,7 +491,7 @@
 
     cmpg-double v1, p1, v7
 
-    if-gez v1, :cond_5a
+    if-gez v1, :cond_3
 
     sub-double v9, v7, v4
 
@@ -530,19 +530,19 @@
 
     return-wide v1
 
-    :cond_5a
+    :cond_3
     move v3, v6
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_5c
+    :cond_4
     const-wide/16 v1, 0x0
 
     return-wide v1
 .end method
 
 .method public getPos(D[D)V
-    .registers 27
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -565,12 +565,12 @@
 
     cmpg-double v5, p1, v5
 
-    if-gtz v5, :cond_20
+    if-gtz v5, :cond_1
 
     move v1, v4
 
-    :goto_12
-    if-ge v1, v3, :cond_1f
+    :goto_0
+    if-ge v1, v3, :cond_0
 
     .line 75
     iget-object v2, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -583,12 +583,12 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 
-    :cond_20
+    :cond_1
     add-int/lit8 v2, v2, -0x1
 
     .line 79
@@ -596,10 +596,10 @@
 
     cmpl-double v1, p1, v5
 
-    if-ltz v1, :cond_36
+    if-ltz v1, :cond_3
 
-    :goto_28
-    if-ge v4, v3, :cond_35
+    :goto_1
+    if-ge v4, v3, :cond_2
 
     .line 81
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -612,16 +612,16 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_35
+    :cond_2
     return-void
 
-    :cond_36
+    :cond_3
     move v1, v4
 
-    :goto_37
-    if-ge v1, v2, :cond_83
+    :goto_2
+    if-ge v1, v2, :cond_7
 
     .line 87
     iget-object v5, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
@@ -630,12 +630,12 @@
 
     cmpl-double v5, p1, v5
 
-    if-nez v5, :cond_4f
+    if-nez v5, :cond_4
 
     move v5, v4
 
-    :goto_42
-    if-ge v5, v3, :cond_4f
+    :goto_3
+    if-ge v5, v3, :cond_4
 
     .line 89
     iget-object v6, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -648,10 +648,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_42
+    goto :goto_3
 
     .line 92
-    :cond_4f
+    :cond_4
     iget-object v5, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
 
     add-int/lit8 v6, v1, 0x1
@@ -660,7 +660,7 @@
 
     cmpg-double v9, p1, v7
 
-    if-gez v9, :cond_81
+    if-gez v9, :cond_6
 
     .line 93
     aget-wide v9, v5, v1
@@ -671,8 +671,8 @@
 
     div-double/2addr v9, v7
 
-    :goto_5f
-    if-ge v4, v3, :cond_80
+    :goto_4
+    if-ge v4, v3, :cond_5
 
     .line 96
     iget-object v2, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -711,22 +711,22 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_5f
+    goto :goto_4
 
-    :cond_80
+    :cond_5
     return-void
 
-    :cond_81
+    :cond_6
     move v1, v6
 
-    goto :goto_37
+    goto :goto_2
 
-    :cond_83
+    :cond_7
     return-void
 .end method
 
 .method public getPos(D[F)V
-    .registers 27
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -749,12 +749,12 @@
 
     cmpg-double v5, p1, v5
 
-    if-gtz v5, :cond_21
+    if-gtz v5, :cond_1
 
     move v1, v4
 
-    :goto_12
-    if-ge v1, v3, :cond_20
+    :goto_0
+    if-ge v1, v3, :cond_0
 
     .line 113
     iget-object v2, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -769,12 +769,12 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     return-void
 
-    :cond_21
+    :cond_1
     add-int/lit8 v2, v2, -0x1
 
     .line 117
@@ -782,10 +782,10 @@
 
     cmpl-double v1, p1, v5
 
-    if-ltz v1, :cond_38
+    if-ltz v1, :cond_3
 
-    :goto_29
-    if-ge v4, v3, :cond_37
+    :goto_1
+    if-ge v4, v3, :cond_2
 
     .line 119
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -800,16 +800,16 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_37
+    :cond_2
     return-void
 
-    :cond_38
+    :cond_3
     move v1, v4
 
-    :goto_39
-    if-ge v1, v2, :cond_87
+    :goto_2
+    if-ge v1, v2, :cond_7
 
     .line 125
     iget-object v5, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
@@ -818,12 +818,12 @@
 
     cmpl-double v5, p1, v5
 
-    if-nez v5, :cond_52
+    if-nez v5, :cond_4
 
     move v5, v4
 
-    :goto_44
-    if-ge v5, v3, :cond_52
+    :goto_3
+    if-ge v5, v3, :cond_4
 
     .line 127
     iget-object v6, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -838,10 +838,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_44
+    goto :goto_3
 
     .line 130
-    :cond_52
+    :cond_4
     iget-object v5, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
 
     add-int/lit8 v6, v1, 0x1
@@ -850,7 +850,7 @@
 
     cmpg-double v9, p1, v7
 
-    if-gez v9, :cond_85
+    if-gez v9, :cond_6
 
     .line 131
     aget-wide v9, v5, v1
@@ -861,8 +861,8 @@
 
     div-double/2addr v9, v7
 
-    :goto_62
-    if-ge v4, v3, :cond_84
+    :goto_4
+    if-ge v4, v3, :cond_5
 
     .line 134
     iget-object v2, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -903,22 +903,22 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_62
+    goto :goto_4
 
-    :cond_84
+    :cond_5
     return-void
 
-    :cond_85
+    :cond_6
     move v1, v6
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_87
+    :cond_7
     return-void
 .end method
 
 .method public getSlope(DI)D
-    .registers 25
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -934,11 +934,11 @@
 
     cmpg-double v6, p1, v4
 
-    if-gez v6, :cond_d
+    if-gez v6, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     add-int/lit8 v4, v2, -0x1
 
     .line 206
@@ -946,17 +946,17 @@
 
     cmpl-double v1, p1, v4
 
-    if-ltz v1, :cond_16
+    if-ltz v1, :cond_1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     move-wide/from16 v4, p1
 
-    :goto_18
+    :goto_0
     add-int/lit8 v1, v2, -0x1
 
-    if-ge v3, v1, :cond_49
+    if-ge v3, v1, :cond_3
 
     .line 210
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
@@ -967,7 +967,7 @@
 
     cmpg-double v9, v4, v7
 
-    if-gtz v9, :cond_47
+    if-gtz v9, :cond_2
 
     .line 211
     aget-wide v1, v1, v3
@@ -1013,19 +1013,19 @@
 
     return-wide v1
 
-    :cond_47
+    :cond_2
     move v3, v6
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_49
+    :cond_3
     const-wide/16 v1, 0x0
 
     return-wide v1
 .end method
 
 .method public getSlope(D[D)V
-    .registers 29
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -1048,11 +1048,11 @@
 
     cmpg-double v7, p1, v5
 
-    if-gtz v7, :cond_12
+    if-gtz v7, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     add-int/lit8 v5, v2, -0x1
 
     .line 179
@@ -1060,20 +1060,20 @@
 
     cmpl-double v1, p1, v5
 
-    if-ltz v1, :cond_1b
+    if-ltz v1, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     move-wide/from16 v5, p1
 
-    :goto_1d
+    :goto_0
     move v1, v4
 
-    :goto_1e
+    :goto_1
     add-int/lit8 v7, v2, -0x1
 
-    if-ge v1, v7, :cond_55
+    if-ge v1, v7, :cond_3
 
     .line 184
     iget-object v7, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D
@@ -1084,7 +1084,7 @@
 
     cmpg-double v11, v5, v9
 
-    if-gtz v11, :cond_53
+    if-gtz v11, :cond_2
 
     .line 185
     aget-wide v11, v7, v1
@@ -1095,8 +1095,8 @@
 
     div-double/2addr v5, v9
 
-    :goto_31
-    if-ge v4, v3, :cond_55
+    :goto_2
+    if-ge v4, v3, :cond_3
 
     .line 188
     iget-object v2, v0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mY:[[D
@@ -1137,19 +1137,19 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_53
+    :cond_2
     move v1, v8
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_55
+    :cond_3
     return-void
 .end method
 
 .method public getTimePoints()[D
-    .registers 2
+    .locals 1
 
     .line 225
     iget-object v0, p0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;->mT:[D

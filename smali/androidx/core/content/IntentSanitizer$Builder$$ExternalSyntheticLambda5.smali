@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Ljava/lang/Class;Landroidx/core/util/Predicate;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final test(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/core/content/IntentSanitizer$Builder$$ExternalSyntheticLambda5;->f$0:Ljava/lang/Class;
 

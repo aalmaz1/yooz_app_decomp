@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/video/internal/encoder/TimeProvider;Landroidx/camera/core/impl/Timebase;)V
-    .registers 5
+    .locals 2
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method private calculateUptimeToRealtimeOffsetUs()J
-    .registers 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -49,10 +49,10 @@
 
     move-wide v6, v3
 
-    :goto_b
+    :goto_0
     const/4 v8, 0x3
 
-    if-ge v5, v8, :cond_32
+    if-ge v5, v8, :cond_2
 
     .line 102
     iget-object v8, v0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mTimeProvider:Landroidx/camera/video/internal/encoder/TimeProvider;
@@ -77,13 +77,13 @@
 
     sub-long v14, v12, v8
 
-    if-eqz v5, :cond_28
+    if-eqz v5, :cond_0
 
     cmp-long v16, v14, v1
 
-    if-gez v16, :cond_2f
+    if-gez v16, :cond_1
 
-    :cond_28
+    :cond_0
     add-long/2addr v8, v12
 
     const/4 v1, 0x1
@@ -94,13 +94,13 @@
 
     move-wide v1, v14
 
-    :cond_2f
+    :cond_1
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 111
-    :cond_32
+    :cond_2
     invoke-static {v3, v4, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v1
@@ -109,7 +109,7 @@
 .end method
 
 .method private isCloseToRealtime(J)Z
-    .registers 7
+    .locals 4
 
     .line 90
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mTimeProvider:Landroidx/camera/video/internal/encoder/TimeProvider;
@@ -140,53 +140,53 @@
 
     cmp-long p1, v2, p1
 
-    if-gez p1, :cond_1d
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_1e
+    :goto_0
     return p1
 .end method
 
 
 # virtual methods
 .method public convertToUptimeUs(J)J
-    .registers 9
+    .locals 6
 
     .line 67
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mInputTimebase:Landroidx/camera/core/impl/Timebase;
 
     const-string v1, "VideoTimebaseConverter"
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     .line 68
     invoke-direct {p0, p1, p2}, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->isCloseToRealtime(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 69
     sget-object v0, Landroidx/camera/core/impl/Timebase;->REALTIME:Landroidx/camera/core/impl/Timebase;
 
     iput-object v0, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mInputTimebase:Landroidx/camera/core/impl/Timebase;
 
-    goto :goto_15
+    goto :goto_0
 
     .line 71
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/camera/core/impl/Timebase;->UPTIME:Landroidx/camera/core/impl/Timebase;
 
     iput-object v0, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mInputTimebase:Landroidx/camera/core/impl/Timebase;
 
     .line 73
-    :goto_15
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "Detect input timebase = "
@@ -206,7 +206,7 @@
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 75
-    :cond_29
+    :cond_1
     sget-object v0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter$1;->$SwitchMap$androidx$camera$core$impl$Timebase:[I
 
     iget-object v2, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mInputTimebase:Landroidx/camera/core/impl/Timebase;
@@ -219,16 +219,16 @@
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_51
+    if-eq v0, v2, :cond_3
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_3a
+    if-ne v0, v1, :cond_2
 
     return-wide p1
 
     .line 85
-    :cond_3a
+    :cond_2
     new-instance p1, Ljava/lang/AssertionError;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -252,14 +252,14 @@
     throw p1
 
     .line 77
-    :cond_51
+    :cond_3
     iget-wide v2, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mUptimeToRealtimeOffsetUs:J
 
     const-wide/16 v4, -0x1
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_73
+    if-nez v0, :cond_4
 
     .line 78
     invoke-direct {p0}, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->calculateUptimeToRealtimeOffsetUs()J
@@ -288,7 +288,7 @@
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 81
-    :cond_73
+    :cond_4
     iget-wide v0, p0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;->mUptimeToRealtimeOffsetUs:J
 
     sub-long/2addr p1, v0

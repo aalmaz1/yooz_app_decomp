@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static fastForward(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 155
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static pause(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 143
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static play(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 139
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -58,7 +58,7 @@
 .end method
 
 .method public static playFromMediaId(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 175
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static playFromSearch(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 179
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -80,7 +80,7 @@
 .end method
 
 .method public static rewind(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 159
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -91,7 +91,7 @@
 .end method
 
 .method public static seekTo(Ljava/lang/Object;J)V
-    .registers 3
+    .locals 0
 
     .line 151
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -102,7 +102,7 @@
 .end method
 
 .method public static sendCustomAction(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 187
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -113,7 +113,7 @@
 .end method
 
 .method public static setRating(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 171
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -126,7 +126,7 @@
 .end method
 
 .method public static skipToNext(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 163
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -137,7 +137,7 @@
 .end method
 
 .method public static skipToPrevious(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 167
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -148,7 +148,7 @@
 .end method
 
 .method public static skipToQueueItem(Ljava/lang/Object;J)V
-    .registers 3
+    .locals 0
 
     .line 183
     check-cast p0, Landroid/media/session/MediaController$TransportControls;
@@ -159,7 +159,7 @@
 .end method
 
 .method public static stop(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 147
     check-cast p0, Landroid/media/session/MediaController$TransportControls;

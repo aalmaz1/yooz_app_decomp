@@ -29,7 +29,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/RenderersFactory;Landroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/source/MediaSource$Factory;Landroidx/media3/exoplayer/LoadControl;Landroidx/media3/exoplayer/upstream/BandwidthMeter;Landroidx/media3/exoplayer/analytics/AnalyticsCollector;ZLandroidx/media3/common/util/Clock;Landroid/os/Looper;)V
-    .registers 20
+    .locals 9
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -84,7 +84,7 @@
 .end method
 
 .method constructor <init>(Landroidx/media3/exoplayer/ExoPlayer$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 441
     invoke-direct {p0}, Landroidx/media3/common/BasePlayer;-><init>()V
@@ -97,21 +97,21 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/SimpleExoPlayer;->constructorFinished:Landroidx/media3/common/util/ConditionVariable;
 
     .line 444
-    :try_start_a
+    :try_start_0
     new-instance v1, Landroidx/media3/exoplayer/ExoPlayerImpl;
 
     invoke-direct {v1, p1, p0}, Landroidx/media3/exoplayer/ExoPlayerImpl;-><init>(Landroidx/media3/exoplayer/ExoPlayer$Builder;Landroidx/media3/common/Player;)V
 
     iput-object v1, p0, Landroidx/media3/exoplayer/SimpleExoPlayer;->player:Landroidx/media3/exoplayer/ExoPlayerImpl;
-    :try_end_11
-    .catchall {:try_start_a .. :try_end_11} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 446
     invoke-virtual {v0}, Landroidx/media3/common/util/ConditionVariable;->open()Z
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/SimpleExoPlayer;->constructorFinished:Landroidx/media3/common/util/ConditionVariable;
@@ -123,7 +123,7 @@
 .end method
 
 .method protected constructor <init>(Landroidx/media3/exoplayer/SimpleExoPlayer$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 435
     invoke-static {p1}, Landroidx/media3/exoplayer/SimpleExoPlayer$Builder;->access$000(Landroidx/media3/exoplayer/SimpleExoPlayer$Builder;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
@@ -136,7 +136,7 @@
 .end method
 
 .method private blockUntilConstructorFinished()V
-    .registers 2
+    .locals 1
 
     .line 1368
     iget-object v0, p0, Landroidx/media3/exoplayer/SimpleExoPlayer;->constructorFinished:Landroidx/media3/common/util/ConditionVariable;
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public addAnalyticsListener(Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 1
 
     .line 684
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -163,7 +163,7 @@
 .end method
 
 .method public addAudioOffloadListener(Landroidx/media3/exoplayer/ExoPlayer$AudioOffloadListener;)V
-    .registers 3
+    .locals 1
 
     .line 593
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -177,7 +177,7 @@
 .end method
 
 .method public addListener(Landroidx/media3/common/Player$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 792
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -191,7 +191,7 @@
 .end method
 
 .method public addMediaItems(ILjava/util/List;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -213,7 +213,7 @@
 .end method
 
 .method public addMediaSource(ILandroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 4
+    .locals 1
 
     .line 919
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -227,7 +227,7 @@
 .end method
 
 .method public addMediaSource(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     .line 913
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -241,7 +241,7 @@
 .end method
 
 .method public addMediaSources(ILjava/util/List;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -263,7 +263,7 @@
 .end method
 
 .method public addMediaSources(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -285,7 +285,7 @@
 .end method
 
 .method public clearAuxEffectInfo()V
-    .registers 2
+    .locals 1
 
     .line 635
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -299,7 +299,7 @@
 .end method
 
 .method public clearCameraMotionListener(Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;)V
-    .registers 3
+    .locals 1
 
     .line 760
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -313,7 +313,7 @@
 .end method
 
 .method public clearVideoFrameMetadataListener(Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;)V
-    .registers 3
+    .locals 1
 
     .line 748
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -327,7 +327,7 @@
 .end method
 
 .method public clearVideoSurface()V
-    .registers 2
+    .locals 1
 
     .line 539
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -341,7 +341,7 @@
 .end method
 
 .method public clearVideoSurface(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 545
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -355,7 +355,7 @@
 .end method
 
 .method public clearVideoSurfaceHolder(Landroid/view/SurfaceHolder;)V
-    .registers 3
+    .locals 1
 
     .line 563
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -369,7 +369,7 @@
 .end method
 
 .method public clearVideoSurfaceView(Landroid/view/SurfaceView;)V
-    .registers 3
+    .locals 1
 
     .line 575
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -383,7 +383,7 @@
 .end method
 
 .method public clearVideoTextureView(Landroid/view/TextureView;)V
-    .registers 3
+    .locals 1
 
     .line 587
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -397,7 +397,7 @@
 .end method
 
 .method public createMessage(Landroidx/media3/exoplayer/PlayerMessage$Target;)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 3
+    .locals 1
 
     .line 1099
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -413,7 +413,7 @@
 .end method
 
 .method public decreaseDeviceVolume()V
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -429,7 +429,7 @@
 .end method
 
 .method public decreaseDeviceVolume(I)V
-    .registers 3
+    .locals 1
 
     .line 1323
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -443,7 +443,7 @@
 .end method
 
 .method public getAnalyticsCollector()Landroidx/media3/exoplayer/analytics/AnalyticsCollector;
-    .registers 2
+    .locals 1
 
     .line 678
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -459,7 +459,7 @@
 .end method
 
 .method public getApplicationLooper()Landroid/os/Looper;
-    .registers 2
+    .locals 1
 
     .line 780
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -475,7 +475,7 @@
 .end method
 
 .method public getAudioAttributes()Landroidx/media3/common/AudioAttributes;
-    .registers 2
+    .locals 1
 
     .line 611
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -491,7 +491,7 @@
 .end method
 
 .method public getAudioComponent()Landroidx/media3/exoplayer/ExoPlayer$AudioComponent;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -499,7 +499,7 @@
 .end method
 
 .method public getAudioDecoderCounters()Landroidx/media3/exoplayer/DecoderCounters;
-    .registers 2
+    .locals 1
 
     .line 736
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -515,7 +515,7 @@
 .end method
 
 .method public getAudioFormat()Landroidx/media3/common/Format;
-    .registers 2
+    .locals 1
 
     .line 722
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -531,7 +531,7 @@
 .end method
 
 .method public getAudioSessionId()I
-    .registers 2
+    .locals 1
 
     .line 623
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -547,7 +547,7 @@
 .end method
 
 .method public getAvailableCommands()Landroidx/media3/common/Player$Commands;
-    .registers 2
+    .locals 1
 
     .line 823
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -563,7 +563,7 @@
 .end method
 
 .method public getBufferedPosition()J
-    .registers 3
+    .locals 2
 
     .line 1215
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -579,7 +579,7 @@
 .end method
 
 .method public getClock()Landroidx/media3/common/util/Clock;
-    .registers 2
+    .locals 1
 
     .line 786
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -595,7 +595,7 @@
 .end method
 
 .method public getContentBufferedPosition()J
-    .registers 3
+    .locals 2
 
     .line 1251
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -611,7 +611,7 @@
 .end method
 
 .method public getContentPosition()J
-    .registers 3
+    .locals 2
 
     .line 1245
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -627,7 +627,7 @@
 .end method
 
 .method public getCurrentAdGroupIndex()I
-    .registers 2
+    .locals 1
 
     .line 1233
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -643,7 +643,7 @@
 .end method
 
 .method public getCurrentAdIndexInAdGroup()I
-    .registers 2
+    .locals 1
 
     .line 1239
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -659,7 +659,7 @@
 .end method
 
 .method public getCurrentCues()Landroidx/media3/common/text/CueGroup;
-    .registers 2
+    .locals 1
 
     .line 766
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -675,7 +675,7 @@
 .end method
 
 .method public getCurrentMediaItemIndex()I
-    .registers 2
+    .locals 1
 
     .line 1197
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -691,7 +691,7 @@
 .end method
 
 .method public getCurrentPeriodIndex()I
-    .registers 2
+    .locals 1
 
     .line 1191
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -707,7 +707,7 @@
 .end method
 
 .method public getCurrentPosition()J
-    .registers 3
+    .locals 2
 
     .line 1209
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -723,7 +723,7 @@
 .end method
 
 .method public getCurrentTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 1185
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -739,7 +739,7 @@
 .end method
 
 .method public getCurrentTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -757,7 +757,7 @@
 .end method
 
 .method public getCurrentTrackSelections()Landroidx/media3/exoplayer/trackselection/TrackSelectionArray;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -775,7 +775,7 @@
 .end method
 
 .method public getCurrentTracks()Landroidx/media3/common/Tracks;
-    .registers 2
+    .locals 1
 
     .line 1149
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -791,7 +791,7 @@
 .end method
 
 .method public getDeviceComponent()Landroidx/media3/exoplayer/ExoPlayer$DeviceComponent;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -799,7 +799,7 @@
 .end method
 
 .method public getDeviceInfo()Landroidx/media3/common/DeviceInfo;
-    .registers 2
+    .locals 1
 
     .line 1263
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -815,7 +815,7 @@
 .end method
 
 .method public getDeviceVolume()I
-    .registers 2
+    .locals 1
 
     .line 1269
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -831,7 +831,7 @@
 .end method
 
 .method public getDuration()J
-    .registers 3
+    .locals 2
 
     .line 1203
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -847,7 +847,7 @@
 .end method
 
 .method public getMaxSeekToPreviousPosition()J
-    .registers 3
+    .locals 2
 
     .line 1051
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -863,7 +863,7 @@
 .end method
 
 .method public getMediaMetadata()Landroidx/media3/common/MediaMetadata;
-    .registers 2
+    .locals 1
 
     .line 1167
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -879,7 +879,7 @@
 .end method
 
 .method public getPauseAtEndOfMediaItems()Z
-    .registers 2
+    .locals 1
 
     .line 979
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -895,7 +895,7 @@
 .end method
 
 .method public getPlayWhenReady()Z
-    .registers 2
+    .locals 1
 
     .line 967
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -911,7 +911,7 @@
 .end method
 
 .method public getPlaybackLooper()Landroid/os/Looper;
-    .registers 2
+    .locals 1
 
     .line 774
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -927,7 +927,7 @@
 .end method
 
 .method public getPlaybackParameters()Landroidx/media3/common/PlaybackParameters;
-    .registers 2
+    .locals 1
 
     .line 1063
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -943,7 +943,7 @@
 .end method
 
 .method public getPlaybackState()I
-    .registers 2
+    .locals 1
 
     .line 804
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -959,7 +959,7 @@
 .end method
 
 .method public getPlaybackSuppressionReason()I
-    .registers 2
+    .locals 1
 
     .line 810
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -975,7 +975,7 @@
 .end method
 
 .method public bridge synthetic getPlayerError()Landroidx/media3/common/PlaybackException;
-    .registers 2
+    .locals 1
 
     .line 71
     invoke-virtual {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->getPlayerError()Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -986,7 +986,7 @@
 .end method
 
 .method public getPlayerError()Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 2
+    .locals 1
 
     .line 817
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1002,7 +1002,7 @@
 .end method
 
 .method public getPlaylistMetadata()Landroidx/media3/common/MediaMetadata;
-    .registers 2
+    .locals 1
 
     .line 1173
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1018,7 +1018,7 @@
 .end method
 
 .method public getPreloadConfiguration()Landroidx/media3/exoplayer/ExoPlayer$PreloadConfiguration;
-    .registers 2
+    .locals 1
 
     .line 1003
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1034,7 +1034,7 @@
 .end method
 
 .method public getRenderer(I)Landroidx/media3/exoplayer/Renderer;
-    .registers 3
+    .locals 1
 
     .line 1117
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1050,7 +1050,7 @@
 .end method
 
 .method public getRendererCount()I
-    .registers 2
+    .locals 1
 
     .line 1105
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1066,7 +1066,7 @@
 .end method
 
 .method public getRendererType(I)I
-    .registers 3
+    .locals 1
 
     .line 1111
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1082,7 +1082,7 @@
 .end method
 
 .method public getRepeatMode()I
-    .registers 2
+    .locals 1
 
     .line 985
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1098,7 +1098,7 @@
 .end method
 
 .method public getSeekBackIncrement()J
-    .registers 3
+    .locals 2
 
     .line 1039
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1114,7 +1114,7 @@
 .end method
 
 .method public getSeekForwardIncrement()J
-    .registers 3
+    .locals 2
 
     .line 1045
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1130,7 +1130,7 @@
 .end method
 
 .method public getSeekParameters()Landroidx/media3/exoplayer/SeekParameters;
-    .registers 2
+    .locals 1
 
     .line 1075
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1146,7 +1146,7 @@
 .end method
 
 .method public getShuffleModeEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 1015
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1162,7 +1162,7 @@
 .end method
 
 .method public getSkipSilenceEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 660
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1178,7 +1178,7 @@
 .end method
 
 .method public getSurfaceSize()Landroidx/media3/common/util/Size;
-    .registers 2
+    .locals 1
 
     .line 533
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1194,7 +1194,7 @@
 .end method
 
 .method public getTextComponent()Landroidx/media3/exoplayer/ExoPlayer$TextComponent;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1202,7 +1202,7 @@
 .end method
 
 .method public getTotalBufferedDuration()J
-    .registers 3
+    .locals 2
 
     .line 1221
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1218,7 +1218,7 @@
 .end method
 
 .method public getTrackSelectionParameters()Landroidx/media3/common/TrackSelectionParameters;
-    .registers 2
+    .locals 1
 
     .line 1155
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1234,7 +1234,7 @@
 .end method
 
 .method public getTrackSelector()Landroidx/media3/exoplayer/trackselection/TrackSelector;
-    .registers 2
+    .locals 1
 
     .line 1123
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public getVideoChangeFrameRateStrategy()I
-    .registers 2
+    .locals 1
 
     .line 521
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1266,7 +1266,7 @@
 .end method
 
 .method public getVideoComponent()Landroidx/media3/exoplayer/ExoPlayer$VideoComponent;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1274,7 +1274,7 @@
 .end method
 
 .method public getVideoDecoderCounters()Landroidx/media3/exoplayer/DecoderCounters;
-    .registers 2
+    .locals 1
 
     .line 729
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1290,7 +1290,7 @@
 .end method
 
 .method public getVideoFormat()Landroidx/media3/common/Format;
-    .registers 2
+    .locals 1
 
     .line 715
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1306,7 +1306,7 @@
 .end method
 
 .method public getVideoScalingMode()I
-    .registers 2
+    .locals 1
 
     .line 508
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1322,7 +1322,7 @@
 .end method
 
 .method public getVideoSize()Landroidx/media3/common/VideoSize;
-    .registers 2
+    .locals 1
 
     .line 527
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1338,7 +1338,7 @@
 .end method
 
 .method public getVolume()F
-    .registers 2
+    .locals 1
 
     .line 654
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1354,7 +1354,7 @@
 .end method
 
 .method public increaseDeviceVolume()V
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1370,7 +1370,7 @@
 .end method
 
 .method public increaseDeviceVolume(I)V
-    .registers 3
+    .locals 1
 
     .line 1307
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1384,7 +1384,7 @@
 .end method
 
 .method public isDeviceMuted()Z
-    .registers 2
+    .locals 1
 
     .line 1275
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1400,7 +1400,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 1021
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1416,7 +1416,7 @@
 .end method
 
 .method public isPlayingAd()Z
-    .registers 2
+    .locals 1
 
     .line 1227
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1432,7 +1432,7 @@
 .end method
 
 .method public isReleased()Z
-    .registers 2
+    .locals 1
 
     .line 1351
     iget-object v0, p0, Landroidx/media3/exoplayer/SimpleExoPlayer;->player:Landroidx/media3/exoplayer/ExoPlayerImpl;
@@ -1445,7 +1445,7 @@
 .end method
 
 .method public isSleepingForOffload()Z
-    .registers 2
+    .locals 1
 
     .line 452
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1461,7 +1461,7 @@
 .end method
 
 .method public isTunnelingEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 1345
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1477,7 +1477,7 @@
 .end method
 
 .method public moveMediaItems(III)V
-    .registers 5
+    .locals 1
 
     .line 937
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1491,7 +1491,7 @@
 .end method
 
 .method public prepare()V
-    .registers 2
+    .locals 1
 
     .line 829
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1505,7 +1505,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1521,7 +1521,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaSource;ZZ)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1537,7 +1537,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 1093
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1551,7 +1551,7 @@
 .end method
 
 .method public removeAnalyticsListener(Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 1
 
     .line 690
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1565,7 +1565,7 @@
 .end method
 
 .method public removeAudioOffloadListener(Landroidx/media3/exoplayer/ExoPlayer$AudioOffloadListener;)V
-    .registers 3
+    .locals 1
 
     .line 599
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1579,7 +1579,7 @@
 .end method
 
 .method public removeListener(Landroidx/media3/common/Player$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 798
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1593,7 +1593,7 @@
 .end method
 
 .method public removeMediaItems(II)V
-    .registers 4
+    .locals 1
 
     .line 949
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1607,7 +1607,7 @@
 .end method
 
 .method public replaceMediaItems(IILjava/util/List;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -1629,7 +1629,7 @@
 .end method
 
 .method public seekTo(IJIZ)V
-    .registers 12
+    .locals 6
 
     .line 1033
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1651,7 +1651,7 @@
 .end method
 
 .method public setAudioAttributes(Landroidx/media3/common/AudioAttributes;Z)V
-    .registers 4
+    .locals 1
 
     .line 605
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1665,7 +1665,7 @@
 .end method
 
 .method public setAudioSessionId(I)V
-    .registers 3
+    .locals 1
 
     .line 617
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1679,7 +1679,7 @@
 .end method
 
 .method public setAuxEffectInfo(Landroidx/media3/common/AuxEffectInfo;)V
-    .registers 3
+    .locals 1
 
     .line 629
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1693,7 +1693,7 @@
 .end method
 
 .method public setCameraMotionListener(Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;)V
-    .registers 3
+    .locals 1
 
     .line 754
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1707,7 +1707,7 @@
 .end method
 
 .method public setDeviceMuted(Z)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1723,7 +1723,7 @@
 .end method
 
 .method public setDeviceMuted(ZI)V
-    .registers 4
+    .locals 1
 
     .line 1339
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1737,7 +1737,7 @@
 .end method
 
 .method public setDeviceVolume(I)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1753,7 +1753,7 @@
 .end method
 
 .method public setDeviceVolume(II)V
-    .registers 4
+    .locals 1
 
     .line 1291
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1767,7 +1767,7 @@
 .end method
 
 .method public setForegroundMode(Z)V
-    .registers 3
+    .locals 1
 
     .line 1081
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1781,7 +1781,7 @@
 .end method
 
 .method public setHandleAudioBecomingNoisy(Z)V
-    .registers 3
+    .locals 1
 
     .line 696
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1795,7 +1795,7 @@
 .end method
 
 .method public setImageOutput(Landroidx/media3/exoplayer/image/ImageOutput;)V
-    .registers 3
+    .locals 1
 
     .line 1356
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1809,7 +1809,7 @@
 .end method
 
 .method public setMediaItems(Ljava/util/List;IJ)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1831,7 +1831,7 @@
 .end method
 
 .method public setMediaItems(Ljava/util/List;Z)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1853,7 +1853,7 @@
 .end method
 
 .method public setMediaSource(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     .line 889
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1867,7 +1867,7 @@
 .end method
 
 .method public setMediaSource(Landroidx/media3/exoplayer/source/MediaSource;J)V
-    .registers 5
+    .locals 1
 
     .line 901
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1881,7 +1881,7 @@
 .end method
 
 .method public setMediaSource(Landroidx/media3/exoplayer/source/MediaSource;Z)V
-    .registers 4
+    .locals 1
 
     .line 895
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1895,7 +1895,7 @@
 .end method
 
 .method public setMediaSources(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1917,7 +1917,7 @@
 .end method
 
 .method public setMediaSources(Ljava/util/List;IJ)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1939,7 +1939,7 @@
 .end method
 
 .method public setMediaSources(Ljava/util/List;Z)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1961,7 +1961,7 @@
 .end method
 
 .method public setPauseAtEndOfMediaItems(Z)V
-    .registers 3
+    .locals 1
 
     .line 973
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1975,7 +1975,7 @@
 .end method
 
 .method public setPlayWhenReady(Z)V
-    .registers 3
+    .locals 1
 
     .line 961
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -1989,7 +1989,7 @@
 .end method
 
 .method public setPlaybackParameters(Landroidx/media3/common/PlaybackParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1057
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2003,7 +2003,7 @@
 .end method
 
 .method public setPlaylistMetadata(Landroidx/media3/common/MediaMetadata;)V
-    .registers 3
+    .locals 1
 
     .line 1179
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2017,7 +2017,7 @@
 .end method
 
 .method public setPreferredAudioDevice(Landroid/media/AudioDeviceInfo;)V
-    .registers 3
+    .locals 1
 
     .line 642
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2031,7 +2031,7 @@
 .end method
 
 .method public setPreloadConfiguration(Landroidx/media3/exoplayer/ExoPlayer$PreloadConfiguration;)V
-    .registers 3
+    .locals 1
 
     .line 997
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2045,7 +2045,7 @@
 .end method
 
 .method public setPriority(I)V
-    .registers 3
+    .locals 1
 
     .line 702
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2059,7 +2059,7 @@
 .end method
 
 .method public setPriorityTaskManager(Landroidx/media3/common/PriorityTaskManager;)V
-    .registers 3
+    .locals 1
 
     .line 708
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2073,7 +2073,7 @@
 .end method
 
 .method public setRepeatMode(I)V
-    .registers 3
+    .locals 1
 
     .line 991
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2087,7 +2087,7 @@
 .end method
 
 .method public setSeekParameters(Landroidx/media3/exoplayer/SeekParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1069
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2101,7 +2101,7 @@
 .end method
 
 .method public setShuffleModeEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 1009
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2115,7 +2115,7 @@
 .end method
 
 .method public setShuffleOrder(Landroidx/media3/exoplayer/source/ShuffleOrder;)V
-    .registers 3
+    .locals 1
 
     .line 955
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2129,7 +2129,7 @@
 .end method
 
 .method public setSkipSilenceEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 672
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2143,7 +2143,7 @@
 .end method
 
 .method setThrowsWhenUsingWrongThread(Z)V
-    .registers 3
+    .locals 1
 
     .line 1361
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2157,7 +2157,7 @@
 .end method
 
 .method public setTrackSelectionParameters(Landroidx/media3/common/TrackSelectionParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1161
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2171,7 +2171,7 @@
 .end method
 
 .method public setVideoChangeFrameRateStrategy(I)V
-    .registers 3
+    .locals 1
 
     .line 515
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2185,7 +2185,7 @@
 .end method
 
 .method public setVideoEffects(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2207,7 +2207,7 @@
 .end method
 
 .method public setVideoFrameMetadataListener(Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;)V
-    .registers 3
+    .locals 1
 
     .line 742
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2221,7 +2221,7 @@
 .end method
 
 .method public setVideoScalingMode(I)V
-    .registers 3
+    .locals 1
 
     .line 502
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2235,7 +2235,7 @@
 .end method
 
 .method public setVideoSurface(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 551
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2249,7 +2249,7 @@
 .end method
 
 .method public setVideoSurfaceHolder(Landroid/view/SurfaceHolder;)V
-    .registers 3
+    .locals 1
 
     .line 557
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2263,7 +2263,7 @@
 .end method
 
 .method public setVideoSurfaceView(Landroid/view/SurfaceView;)V
-    .registers 3
+    .locals 1
 
     .line 569
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2277,7 +2277,7 @@
 .end method
 
 .method public setVideoTextureView(Landroid/view/TextureView;)V
-    .registers 3
+    .locals 1
 
     .line 581
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2291,7 +2291,7 @@
 .end method
 
 .method public setVolume(F)V
-    .registers 3
+    .locals 1
 
     .line 648
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2305,7 +2305,7 @@
 .end method
 
 .method public setWakeMode(I)V
-    .registers 3
+    .locals 1
 
     .line 1257
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V
@@ -2319,7 +2319,7 @@
 .end method
 
 .method public stop()V
-    .registers 2
+    .locals 1
 
     .line 1087
     invoke-direct {p0}, Landroidx/media3/exoplayer/SimpleExoPlayer;->blockUntilConstructorFinished()V

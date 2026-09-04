@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>([BII)V
-    .registers 4
+    .locals 0
 
     .line 208
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->val$bytes:[B
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public array()[B
-    .registers 2
+    .locals 1
 
     .line 229
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->val$bytes:[B
@@ -52,7 +52,7 @@
 .end method
 
 .method public arrayOffset()I
-    .registers 2
+    .locals 1
 
     .line 234
     iget v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->val$offset:I
@@ -61,7 +61,7 @@
 .end method
 
 .method public hasArray()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public hasNioBuffer()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -77,7 +77,7 @@
 .end method
 
 .method public limit()I
-    .registers 2
+    .locals 1
 
     .line 254
     iget v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->val$length:I
@@ -86,7 +86,7 @@
 .end method
 
 .method public nioBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 219
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -97,7 +97,7 @@
 .end method
 
 .method public position()I
-    .registers 2
+    .locals 1
 
     .line 239
     iget v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->position:I
@@ -106,14 +106,14 @@
 .end method
 
 .method public position(I)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 5
+    .locals 3
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
     .line 244
     iget v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->val$length:I
 
-    if-gt p1, v0, :cond_9
+    if-gt p1, v0, :cond_0
 
     .line 247
     iput p1, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->position:I
@@ -121,7 +121,7 @@
     return-object p0
 
     .line 245
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -144,7 +144,7 @@
 .end method
 
 .method public remaining()I
-    .registers 3
+    .locals 2
 
     .line 259
     iget v0, p0, Landroidx/datastore/preferences/protobuf/AllocatedBuffer$2;->val$length:I

@@ -9,12 +9,12 @@
 
 # direct methods
 .method private constructor <init>(Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)V
-    .registers 3
+    .locals 1
 
     .line 34
     invoke-direct {p0}, Landroidx/camera/core/impl/CameraCaptureCallback;-><init>()V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 38
     iput-object p1, p0, Landroidx/camera/camera2/internal/CaptureCallbackContainer;->mCaptureCallback:Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
@@ -22,7 +22,7 @@
     return-void
 
     .line 36
-    :cond_8
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "captureCallback is null"
@@ -33,7 +33,7 @@
 .end method
 
 .method static create(Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)Landroidx/camera/camera2/internal/CaptureCallbackContainer;
-    .registers 2
+    .locals 1
 
     .line 42
     new-instance v0, Landroidx/camera/camera2/internal/CaptureCallbackContainer;
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method getCaptureCallback()Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureCallbackContainer;->mCaptureCallback:Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;

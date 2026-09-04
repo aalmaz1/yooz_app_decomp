@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x3e9
 
@@ -111,7 +111,7 @@
 .end method
 
 .method private constructor <init>(ILjava/lang/Throwable;I)V
-    .registers 14
+    .locals 10
 
     const/4 v3, 0x0
 
@@ -140,7 +140,7 @@
 .end method
 
 .method private constructor <init>(ILjava/lang/Throwable;Ljava/lang/String;ILjava/lang/String;ILandroidx/media3/common/Format;IZ)V
-    .registers 24
+    .locals 14
 
     move v0, p1
 
@@ -191,7 +191,7 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Bundle;)V
-    .registers 5
+    .locals 3
 
     .line 258
     invoke-direct {p0, p1}, Landroidx/media3/common/PlaybackException;-><init>(Landroid/os/Bundle;)V
@@ -236,19 +236,19 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     move-object v0, v1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 263
-    :cond_28
+    :cond_0
     invoke-static {v0}, Landroidx/media3/common/Format;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Format;
 
     move-result-object v0
 
-    :goto_2c
+    :goto_0
     iput-object v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormat:Landroidx/media3/common/Format;
 
     .line 264
@@ -281,7 +281,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;IILjava/lang/String;ILandroidx/media3/common/Format;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JZ)V
-    .registers 23
+    .locals 10
 
     move-object v7, p0
 
@@ -308,36 +308,36 @@
 
     const/4 v1, 0x1
 
-    if-eqz v9, :cond_18
+    if-eqz v9, :cond_1
 
-    if-ne v8, v1, :cond_16
+    if-ne v8, v1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v2, v0
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     move v2, v1
 
     .line 283
-    :goto_19
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-nez p2, :cond_21
+    if-nez p2, :cond_2
 
     const/4 v2, 0x3
 
-    if-ne v8, v2, :cond_22
+    if-ne v8, v2, :cond_3
 
-    :cond_21
+    :cond_2
     move v0, v1
 
     .line 284
-    :cond_22
+    :cond_3
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 285
@@ -375,7 +375,7 @@
 .end method
 
 .method public static createForRemote(Ljava/lang/String;)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 12
+    .locals 11
 
     .line 202
     new-instance v10, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -406,7 +406,7 @@
 .end method
 
 .method public static createForRenderer(Ljava/lang/Throwable;Ljava/lang/String;ILandroidx/media3/common/Format;IZI)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 18
+    .locals 11
 
     .line 159
     new-instance v10, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -415,18 +415,18 @@
 
     const/4 v3, 0x0
 
-    if-nez p3, :cond_9
+    if-nez p3, :cond_0
 
     const/4 v0, 0x4
 
     move v8, v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v8, p4
 
-    :goto_a
+    :goto_0
     move-object v0, v10
 
     move-object v2, p0
@@ -448,7 +448,7 @@
 .end method
 
 .method public static createForSource(Ljava/io/IOException;I)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 4
+    .locals 2
 
     .line 131
     new-instance v0, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -461,7 +461,7 @@
 .end method
 
 .method public static createForUnexpected(Ljava/lang/RuntimeException;)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -476,7 +476,7 @@
 .end method
 
 .method public static createForUnexpected(Ljava/lang/RuntimeException;I)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 4
+    .locals 2
 
     .line 191
     new-instance v0, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -489,29 +489,29 @@
 .end method
 
 .method private static deriveMessage(ILjava/lang/String;Ljava/lang/String;ILandroidx/media3/common/Format;I)Ljava/lang/String;
-    .registers 7
+    .locals 1
 
-    if-eqz p0, :cond_3e
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_e
+    if-eq p0, v0, :cond_1
 
     const/4 p2, 0x3
 
-    if-eq p0, p2, :cond_b
+    if-eq p0, p2, :cond_0
 
     const-string p0, "Unexpected runtime error"
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const-string p0, "Remote error"
 
-    goto :goto_40
+    goto :goto_0
 
     .line 379
-    :cond_e
+    :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -559,18 +559,18 @@
 
     move-result-object p0
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3e
+    :cond_2
     const-string p0, "Source error"
 
     .line 397
-    :goto_40
+    :goto_0
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p2
 
-    if-nez p2, :cond_5d
+    if-nez p2, :cond_3
 
     .line 398
     new-instance p2, Ljava/lang/StringBuilder;
@@ -595,12 +595,12 @@
 
     move-result-object p0
 
-    :cond_5d
+    :cond_3
     return-object p0
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 2
+    .locals 1
 
     .line 406
     new-instance v0, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -613,7 +613,7 @@
 
 # virtual methods
 .method copyWithMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/ExoPlaybackException;
-    .registers 16
+    .locals 14
 
     .line 352
     new-instance v13, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -662,7 +662,7 @@
 .end method
 
 .method public errorInfoEquals(Landroidx/media3/common/PlaybackException;)Z
-    .registers 5
+    .locals 3
 
     .line 329
     invoke-super {p0, p1}, Landroidx/media3/common/PlaybackException;->errorInfoEquals(Landroidx/media3/common/PlaybackException;)Z
@@ -671,12 +671,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 334
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -688,7 +688,7 @@
 
     iget v2, p1, Landroidx/media3/exoplayer/ExoPlaybackException;->type:I
 
-    if-ne v0, v2, :cond_45
+    if-ne v0, v2, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererName:Ljava/lang/String;
 
@@ -699,13 +699,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererIndex:I
 
     iget v2, p1, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererIndex:I
 
-    if-ne v0, v2, :cond_45
+    if-ne v0, v2, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormat:Landroidx/media3/common/Format;
 
@@ -716,13 +716,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormatSupport:I
 
     iget v2, p1, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormatSupport:I
 
-    if-ne v0, v2, :cond_45
+    if-ne v0, v2, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -733,36 +733,36 @@
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->isRecoverable:Z
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/ExoPlaybackException;->isRecoverable:Z
 
-    if-ne v0, p1, :cond_45
+    if-ne v0, p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_45
+    :cond_1
     return v1
 .end method
 
 .method public getRendererException()Ljava/lang/Exception;
-    .registers 3
+    .locals 2
 
     .line 312
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->type:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 313
@@ -780,21 +780,21 @@
 .end method
 
 .method public getSourceException()Ljava/io/IOException;
-    .registers 2
+    .locals 1
 
     .line 301
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->type:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 302
@@ -812,23 +812,23 @@
 .end method
 
 .method public getUnexpectedException()Ljava/lang/RuntimeException;
-    .registers 3
+    .locals 2
 
     .line 323
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->type:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 324
@@ -846,7 +846,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 430
     invoke-super {p0}, Landroidx/media3/common/PlaybackException;->toBundle()Landroid/os/Bundle;
@@ -877,7 +877,7 @@
     .line 434
     iget-object v1, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormat:Landroidx/media3/common/Format;
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_0
 
     .line 435
     sget-object v2, Landroidx/media3/exoplayer/ExoPlaybackException;->FIELD_RENDERER_FORMAT:Ljava/lang/String;
@@ -893,7 +893,7 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 438
-    :cond_27
+    :cond_0
     sget-object v1, Landroidx/media3/exoplayer/ExoPlaybackException;->FIELD_RENDERER_FORMAT_SUPPORT:Ljava/lang/String;
 
     iget v2, p0, Landroidx/media3/exoplayer/ExoPlaybackException;->rendererFormatSupport:I

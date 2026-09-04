@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/CaptureSession;)V
-    .registers 2
+    .locals 0
 
     .line 235
     iput-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$2;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 4
 
     const-string v0, "Opening session with fail "
 
@@ -57,7 +57,7 @@
     monitor-enter v1
 
     .line 245
-    :try_start_7
+    :try_start_0
     iget-object v2, p0, Landroidx/camera/camera2/internal/CaptureSession$2;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     iget-object v2, v2, Landroidx/camera/camera2/internal/CaptureSession;->mSynchronizedCaptureSessionOpener:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionOpener;
@@ -79,23 +79,23 @@
 
     const/4 v3, 0x4
 
-    if-eq v2, v3, :cond_24
+    if-eq v2, v3, :cond_0
 
     const/4 v3, 0x6
 
-    if-eq v2, v3, :cond_24
+    if-eq v2, v3, :cond_0
 
     const/4 v3, 0x7
 
-    if-eq v2, v3, :cond_24
+    if-eq v2, v3, :cond_0
 
-    goto :goto_43
+    goto :goto_0
 
     .line 250
-    :cond_24
+    :cond_0
     instance-of v2, p1, Ljava/util/concurrent/CancellationException;
 
-    if-nez v2, :cond_43
+    if-nez v2, :cond_1
 
     const-string v2, "CaptureSession"
 
@@ -124,24 +124,24 @@
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/CaptureSession;->finishClose()V
 
     .line 257
-    :cond_43
-    :goto_43
+    :cond_1
+    :goto_0
     monitor-exit v1
 
     return-void
 
-    :catchall_45
+    :catchall_0
     move-exception p1
 
     monitor-exit v1
-    :try_end_47
-    .catchall {:try_start_7 .. :try_end_47} :catchall_45
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 235
     check-cast p1, Ljava/lang/Void;
@@ -152,7 +152,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

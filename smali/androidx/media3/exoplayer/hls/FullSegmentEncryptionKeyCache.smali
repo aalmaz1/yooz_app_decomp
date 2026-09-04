@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 9
+    .locals 7
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public containsUri(Landroid/net/Uri;)Z
-    .registers 3
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/FullSegmentEncryptionKeyCache;->backingMap:Ljava/util/LinkedHashMap;
@@ -64,16 +64,16 @@
 .end method
 
 .method public get(Landroid/net/Uri;)[B
-    .registers 3
+    .locals 1
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 53
-    :cond_4
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/FullSegmentEncryptionKeyCache;->backingMap:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -86,7 +86,7 @@
 .end method
 
 .method public put(Landroid/net/Uri;[B)[B
-    .registers 4
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/FullSegmentEncryptionKeyCache;->backingMap:Ljava/util/LinkedHashMap;
@@ -113,7 +113,7 @@
 .end method
 
 .method public remove(Landroid/net/Uri;)[B
-    .registers 3
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/FullSegmentEncryptionKeyCache;->backingMap:Ljava/util/LinkedHashMap;

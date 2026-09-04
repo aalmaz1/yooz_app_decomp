@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 120
     new-instance v0, Landroidx/media3/extractor/metadata/flac/VorbisComment$1;
@@ -44,7 +44,7 @@
 .end method
 
 .method protected constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -108,18 +108,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 92
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -130,12 +130,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 95
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/flac/VorbisComment;
 
     .line 96
@@ -147,7 +147,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->value:Ljava/lang/String;
 
@@ -157,23 +157,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 102
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->key:Ljava/lang/String;
@@ -201,7 +201,7 @@
 .end method
 
 .method public populateMediaMetadata(Landroidx/media3/common/MediaMetadata$Builder;)V
-    .registers 5
+    .locals 3
 
     .line 61
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->key:Ljava/lang/String;
@@ -214,155 +214,155 @@
 
     const/4 v2, -0x1
 
-    sparse-switch v1, :sswitch_data_66
+    sparse-switch v1, :sswitch_data_0
 
-    goto :goto_44
+    goto :goto_0
 
-    :sswitch_e
+    :sswitch_0
     const-string v1, "ARTIST"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v2, 0x4
 
-    goto :goto_44
+    goto :goto_0
 
-    :sswitch_19
+    :sswitch_1
     const-string v1, "ALBUMARTIST"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 v2, 0x3
 
-    goto :goto_44
+    goto :goto_0
 
-    :sswitch_24
+    :sswitch_2
     const-string v1, "DESCRIPTION"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_2
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_2d
+    :cond_2
     const/4 v2, 0x2
 
-    goto :goto_44
+    goto :goto_0
 
-    :sswitch_2f
+    :sswitch_3
     const-string v1, "TITLE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_3
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_38
+    :cond_3
     const/4 v2, 0x1
 
-    goto :goto_44
+    goto :goto_0
 
-    :sswitch_3a
+    :sswitch_4
     const-string v1, "ALBUM"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_43
+    if-nez v0, :cond_4
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_43
+    :cond_4
     const/4 v2, 0x0
 
-    :goto_44
-    packed-switch v2, :pswitch_data_7c
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
-    goto :goto_65
+    goto :goto_1
 
     .line 66
-    :pswitch_48
+    :pswitch_0
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setArtist(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    goto :goto_65
+    goto :goto_1
 
     .line 72
-    :pswitch_4e
+    :pswitch_1
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setAlbumArtist(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    goto :goto_65
+    goto :goto_1
 
     .line 75
-    :pswitch_54
+    :pswitch_2
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setDescription(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    goto :goto_65
+    goto :goto_1
 
     .line 63
-    :pswitch_5a
+    :pswitch_3
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setTitle(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    goto :goto_65
+    goto :goto_1
 
     .line 69
-    :pswitch_60
+    :pswitch_4
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->value:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/MediaMetadata$Builder;->setAlbumTitle(Ljava/lang/CharSequence;)Landroidx/media3/common/MediaMetadata$Builder;
 
-    :goto_65
+    :goto_1
     return-void
 
-    :sswitch_data_66
+    :sswitch_data_0
     .sparse-switch
-        0x3b7864f -> :sswitch_3a
-        0x4c22a38 -> :sswitch_2f
-        0x198917dc -> :sswitch_24
-        0x681d2256 -> :sswitch_19
-        0x7395d347 -> :sswitch_e
+        0x3b7864f -> :sswitch_4
+        0x4c22a38 -> :sswitch_3
+        0x198917dc -> :sswitch_2
+        0x681d2256 -> :sswitch_1
+        0x7395d347 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_60
-        :pswitch_5a
-        :pswitch_54
-        :pswitch_4e
-        :pswitch_48
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 84
     new-instance v0, Ljava/lang/StringBuilder;
@@ -397,7 +397,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 111
     iget-object p2, p0, Landroidx/media3/extractor/metadata/flac/VorbisComment;->key:Ljava/lang/String;

@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .locals 16
 
     .line 85
     new-instance v0, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
@@ -220,7 +220,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -239,7 +239,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
-    .registers 2
+    .locals 1
 
     .line 84
     const-class v0, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
@@ -254,7 +254,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
-    .registers 1
+    .locals 1
 
     .line 84
     sget-object v0, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;->$VALUES:[Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
@@ -271,7 +271,7 @@
 
 # virtual methods
 .method getDefaultDefault()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;->defaultDefault:Ljava/lang/Object;

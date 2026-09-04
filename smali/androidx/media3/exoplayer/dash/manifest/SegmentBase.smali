@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/RangedUri;JJ)V
-    .registers 6
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public getInitialization(Landroidx/media3/exoplayer/dash/manifest/Representation;)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 2
+    .locals 0
 
     .line 66
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase;->initialization:Landroidx/media3/exoplayer/dash/manifest/RangedUri;
@@ -54,7 +54,7 @@
 .end method
 
 .method public getPresentationTimeOffsetUs()J
-    .registers 7
+    .locals 6
 
     .line 71
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase;->presentationTimeOffset:J

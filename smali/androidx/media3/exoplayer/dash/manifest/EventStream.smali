@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;J[J[Landroidx/media3/extractor/metadata/emsg/EventMessage;)V
-    .registers 7
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public id()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 55
     new-instance v0, Ljava/lang/StringBuilder;

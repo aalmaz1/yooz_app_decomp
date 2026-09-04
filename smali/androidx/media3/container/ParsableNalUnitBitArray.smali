@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>([BII)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,87 +27,87 @@
 .end method
 
 .method private assertValidOffset()V
-    .registers 3
+    .locals 2
 
     .line 212
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_1
 
     iget v1, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteLimit:I
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_1
 
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     return-void
 .end method
 
 .method private readExpGolombCodeNum()I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 196
-    :goto_2
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->readBit()Z
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v2, 0x1
 
     shl-int v3, v2, v1
 
     sub-int/2addr v3, v2
 
-    if-lez v1, :cond_15
+    if-lez v1, :cond_1
 
     .line 199
     invoke-virtual {p0, v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->readBits(I)I
 
     move-result v0
 
-    :cond_15
+    :cond_1
     add-int/2addr v3, v0
 
     return v3
 .end method
 
 .method private shouldSkipByte(I)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x2
 
-    if-gt v0, p1, :cond_1b
+    if-gt v0, p1, :cond_0
 
     .line 203
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteLimit:I
 
-    if-ge p1, v0, :cond_1b
+    if-ge p1, v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->data:[B
 
@@ -115,13 +115,13 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_1b
+    if-ne v1, v2, :cond_0
 
     add-int/lit8 v1, p1, -0x2
 
     aget-byte v1, v0, v1
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -129,21 +129,21 @@
 
     aget-byte p1, v0, p1
 
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_1c
+    :goto_0
     return v1
 .end method
 
 
 # virtual methods
 .method public canReadBits(I)Z
-    .registers 6
+    .locals 4
 
     .line 103
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
@@ -164,61 +164,61 @@
 
     const/4 p1, 0x7
 
-    if-le v3, p1, :cond_13
+    if-le v3, p1, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
     add-int/lit8 v3, v3, -0x8
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     add-int/2addr v0, p1
 
-    if-gt v0, v2, :cond_26
+    if-gt v0, v2, :cond_2
 
     .line 111
     iget v1, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteLimit:I
 
-    if-ge v2, v1, :cond_26
+    if-ge v2, v1, :cond_2
 
     .line 112
     invoke-direct {p0, v0}, Landroidx/media3/container/ParsableNalUnitBitArray;->shouldSkipByte(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     add-int/lit8 v2, v2, 0x1
 
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_14
+    goto :goto_0
 
     .line 118
-    :cond_26
+    :cond_2
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteLimit:I
 
-    if-lt v2, v0, :cond_30
+    if-lt v2, v0, :cond_4
 
-    if-ne v2, v0, :cond_2f
+    if-ne v2, v0, :cond_3
 
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_3
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
+    :cond_3
     const/4 p1, 0x0
 
-    :cond_30
-    :goto_30
+    :cond_4
+    :goto_1
     return p1
 .end method
 
 .method public canReadExpGolombCodedNum()Z
-    .registers 8
+    .locals 7
 
     .line 163
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
@@ -231,48 +231,48 @@
     move v3, v2
 
     .line 166
-    :goto_6
+    :goto_0
     iget v4, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
     iget v5, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteLimit:I
 
-    if-ge v4, v5, :cond_15
+    if-ge v4, v5, :cond_0
 
     invoke-virtual {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->readBit()Z
 
     move-result v4
 
-    if-nez v4, :cond_15
+    if-nez v4, :cond_0
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 169
-    :cond_15
+    :cond_0
     iget v4, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
     iget v5, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteLimit:I
 
     const/4 v6, 0x1
 
-    if-ne v4, v5, :cond_1e
+    if-ne v4, v5, :cond_1
 
     move v4, v6
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     move v4, v2
 
     .line 170
-    :goto_1f
+    :goto_1
     iput v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
     .line 171
     iput v1, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
 
-    if-nez v4, :cond_2f
+    if-nez v4, :cond_2
 
     mul-int/lit8 v3, v3, 0x2
 
@@ -283,16 +283,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2
 
     move v2, v6
 
-    :cond_2f
+    :cond_2
     return v2
 .end method
 
 .method public readBit()Z
-    .registers 4
+    .locals 3
 
     .line 127
     iget-object v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->data:[B
@@ -309,24 +309,24 @@
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     .line 128
-    :goto_11
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->skipBit()V
 
     return v0
 .end method
 
 .method public readBits(I)I
-    .registers 11
+    .locals 9
 
     .line 140
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
@@ -340,7 +340,7 @@
     move v1, v0
 
     .line 141
-    :goto_7
+    :goto_0
     iget v2, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
 
     const/4 v3, 0x2
@@ -349,7 +349,7 @@
 
     const/16 v5, 0x8
 
-    if-le v2, v5, :cond_2c
+    if-le v2, v5, :cond_1
 
     add-int/lit8 v2, v2, -0x8
 
@@ -376,22 +376,22 @@
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
+    :cond_0
     move v3, v4
 
-    :goto_28
+    :goto_1
     add-int/2addr v6, v3
 
     iput v6, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
-    goto :goto_7
+    goto :goto_0
 
     .line 146
-    :cond_2c
+    :cond_1
     iget-object v6, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->data:[B
 
     iget v7, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
@@ -414,7 +414,7 @@
 
     and-int/2addr p1, v1
 
-    if-ne v2, v5, :cond_4f
+    if-ne v2, v5, :cond_3
 
     .line 149
     iput v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
@@ -426,27 +426,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_2
 
-    goto :goto_4c
+    goto :goto_2
 
-    :cond_4b
+    :cond_2
     move v3, v4
 
-    :goto_4c
+    :goto_2
     add-int/2addr v7, v3
 
     iput v7, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
     .line 152
-    :cond_4f
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->assertValidOffset()V
 
     return p1
 .end method
 
 .method public readSignedExpGolombCodedInt()I
-    .registers 4
+    .locals 3
 
     .line 190
     invoke-direct {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->readExpGolombCodeNum()I
@@ -458,16 +458,16 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
     const/4 v1, -0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v1, v2
 
-    :goto_c
+    :goto_0
     add-int/2addr v0, v2
 
     div-int/lit8 v0, v0, 0x2
@@ -478,7 +478,7 @@
 .end method
 
 .method public readUnsignedExpGolombCodedInt()I
-    .registers 2
+    .locals 1
 
     .line 181
     invoke-direct {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->readExpGolombCodeNum()I
@@ -489,7 +489,7 @@
 .end method
 
 .method public reset([BII)V
-    .registers 4
+    .locals 0
 
     .line 55
     iput-object p1, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->data:[B
@@ -512,7 +512,7 @@
 .end method
 
 .method public skipBit()V
-    .registers 4
+    .locals 3
 
     .line 64
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
@@ -525,7 +525,7 @@
 
     const/16 v2, 0x8
 
-    if-ne v0, v2, :cond_1b
+    if-ne v0, v2, :cond_1
 
     const/4 v0, 0x0
 
@@ -541,24 +541,24 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     const/4 v1, 0x2
 
-    :cond_18
+    :cond_0
     add-int/2addr v0, v1
 
     iput v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
     .line 68
-    :cond_1b
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->assertValidOffset()V
 
     return-void
 .end method
 
 .method public skipBits(I)V
-    .registers 6
+    .locals 4
 
     .line 77
     iget v0, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
@@ -584,7 +584,7 @@
 
     const/4 p1, 0x7
 
-    if-le v3, p1, :cond_1b
+    if-le v3, p1, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
@@ -596,21 +596,21 @@
     .line 83
     iput v3, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->bitOffset:I
 
-    :cond_1b
-    :goto_1b
+    :cond_0
+    :goto_0
     add-int/lit8 v0, v0, 0x1
 
     .line 85
     iget p1, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
 
-    if-gt v0, p1, :cond_30
+    if-gt v0, p1, :cond_1
 
     .line 86
     invoke-direct {p0, v0}, Landroidx/media3/container/ParsableNalUnitBitArray;->shouldSkipByte(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 88
     iget p1, p0, Landroidx/media3/container/ParsableNalUnitBitArray;->byteOffset:I
@@ -621,10 +621,10 @@
 
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 92
-    :cond_30
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/container/ParsableNalUnitBitArray;->assertValidOffset()V
 
     return-void

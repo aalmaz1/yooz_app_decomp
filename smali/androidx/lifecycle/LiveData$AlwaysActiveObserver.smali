@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method shouldBeActive()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

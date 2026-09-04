@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;Landroidx/media3/datasource/cache/CacheDataSource;Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;[B)V
-    .registers 6
+    .locals 1
 
     .line 496
     invoke-direct {p0}, Landroidx/media3/common/util/RunnableFutureTask;-><init>()V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method protected cancelWork()V
-    .registers 2
+    .locals 1
 
     .line 516
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->cacheWriter:Landroidx/media3/datasource/cache/CacheWriter;
@@ -80,7 +80,7 @@
 .end method
 
 .method protected bridge synthetic doWork()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -96,7 +96,7 @@
 .end method
 
 .method protected doWork()Ljava/lang/Void;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -111,12 +111,12 @@
     .line 508
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->progressNotifier:Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 509
     invoke-virtual {v0}, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->onSegmentDownloaded()V
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     return-object v0

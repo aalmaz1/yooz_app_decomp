@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v4/media/session/MediaSessionCompatApi23$Callback;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 43
     invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V

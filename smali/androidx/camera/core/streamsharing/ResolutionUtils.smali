@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static getMergedResolutions(Ljava/util/List;Landroid/util/Size;Ljava/util/Set;)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,12 +36,12 @@
 
     move-result-object p1
 
-    :cond_4
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -61,10 +61,10 @@
 
     check-cast p2, Ljava/util/List;
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_0
 
     return-object p2
 
-    :cond_1c
+    :cond_1
     return-object p0
 .end method

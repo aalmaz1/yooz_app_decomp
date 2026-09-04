@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 80
     new-instance v0, Landroidx/camera/core/resolutionselector/AspectRatioStrategy;
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public getFallbackRule()I
-    .registers 2
+    .locals 1
 
     .line 142
     iget v0, p0, Landroidx/camera/core/resolutionselector/AspectRatioStrategy;->mFallbackRule:I
@@ -79,7 +79,7 @@
 .end method
 
 .method public getPreferredAspectRatio()I
-    .registers 2
+    .locals 1
 
     .line 133
     iget v0, p0, Landroidx/camera/core/resolutionselector/AspectRatioStrategy;->mPreferredAspectRatio:I

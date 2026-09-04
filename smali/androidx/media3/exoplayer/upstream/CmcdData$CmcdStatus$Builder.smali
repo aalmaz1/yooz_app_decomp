@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 986
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method static synthetic access$2300(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 980
     iget p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->maximumRequestedThroughputKbps:I
@@ -62,7 +62,7 @@
 .end method
 
 .method static synthetic access$2400(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 980
     iget-boolean p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->bufferStarvation:Z
@@ -71,7 +71,7 @@
 .end method
 
 .method static synthetic access$2500(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;)Lcom/google/common/collect/ImmutableList;
-    .registers 1
+    .locals 0
 
     .line 980
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->customDataList:Lcom/google/common/collect/ImmutableList;
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus;
-    .registers 3
+    .locals 2
 
     .line 1027
     new-instance v0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus;
@@ -95,7 +95,7 @@
 .end method
 
 .method public setBufferStarvation(Z)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
-    .registers 2
+    .locals 0
 
     .line 1015
     iput-boolean p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->bufferStarvation:Z
@@ -104,7 +104,7 @@
 .end method
 
 .method public setCustomDataList(Ljava/util/List;)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -126,34 +126,34 @@
 .end method
 
 .method public setMaximumRequestedThroughputKbps(I)Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;
-    .registers 4
+    .locals 2
 
     const v0, -0x7fffffff
 
-    if-gez p1, :cond_a
+    if-gez p1, :cond_1
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
     .line 1000
-    :goto_b
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_2
 
-    goto :goto_17
+    goto :goto_2
 
-    :cond_11
+    :cond_2
     add-int/lit8 p1, p1, 0x32
 
     .line 1007
@@ -161,7 +161,7 @@
 
     mul-int/lit8 p1, p1, 0x64
 
-    :goto_17
+    :goto_2
     iput p1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdStatus$Builder;->maximumRequestedThroughputKbps:I
 
     return-object p0

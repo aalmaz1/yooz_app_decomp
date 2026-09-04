@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 1
 
     .line 83
     new-instance v0, Landroidx/media3/extractor/DefaultExtractorsFactory;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor$Factory;)V
-    .registers 9
+    .locals 6
 
     .line 124
     new-instance v3, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;
@@ -69,7 +69,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;I)V
-    .registers 6
+    .locals 0
 
     .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/extractor/ExtractorsFactory;)V
-    .registers 4
+    .locals 1
 
     .line 103
     new-instance v0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory$$ExternalSyntheticLambda0;
@@ -106,7 +106,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Landroidx/media3/extractor/ExtractorsFactory;Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
-    .registers 2
+    .locals 0
 
     .line 103
     new-instance p1, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;
@@ -119,7 +119,7 @@
 
 # virtual methods
 .method public bridge synthetic createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 2
+    .locals 0
 
     .line 58
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;->createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/ProgressiveMediaSource;
@@ -130,7 +130,7 @@
 .end method
 
 .method public createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/ProgressiveMediaSource;
-    .registers 11
+    .locals 9
 
     .line 209
     iget-object v0, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -167,7 +167,7 @@
 .end method
 
 .method public getSupportedTypes()[I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public setContinueLoadingCheckIntervalBytes(I)Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 183
     iput p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;->continueLoadingCheckIntervalBytes:I
@@ -192,7 +192,7 @@
 .end method
 
 .method public bridge synthetic setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 58
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;->setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;
@@ -203,7 +203,7 @@
 .end method
 
 .method public setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -220,7 +220,7 @@
 .end method
 
 .method public bridge synthetic setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 58
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;->setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;
@@ -231,7 +231,7 @@
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior."
 

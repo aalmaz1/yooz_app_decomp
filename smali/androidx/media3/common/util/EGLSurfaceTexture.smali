@@ -50,20 +50,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x11
 
     new-array v0, v0, [I
 
     .line 67
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/common/util/EGLSurfaceTexture;->EGL_CONFIG_ATTRIBUTES:[I
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 4
         0x3040
         0x4
@@ -86,7 +86,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Handler;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Handler;Landroidx/media3/common/util/EGLSurfaceTexture$TextureImageListener;)V
-    .registers 3
+    .locals 0
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -119,7 +119,7 @@
 .end method
 
 .method private static chooseEGLConfig(Landroid/opengl/EGLDisplay;)Landroid/opengl/EGLConfig;
-    .registers 12
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -156,24 +156,24 @@
 
     const/4 v1, 0x0
 
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_0
 
     aget v2, v10, v1
 
-    if-lez v2, :cond_1f
+    if-lez v2, :cond_0
 
     aget-object v2, v9, v1
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     move v2, v0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     move v2, v1
 
-    :goto_20
+    :goto_0
     const/4 v3, 0x3
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -215,34 +215,34 @@
 .end method
 
 .method private static createEGLContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;I)Landroid/opengl/EGLContext;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
         }
     .end annotation
 
-    if-nez p2, :cond_9
+    if-nez p2, :cond_0
 
     const/4 p2, 0x3
 
     new-array p2, p2, [I
 
     .line 236
-    fill-array-data p2, :array_20
+    fill-array-data p2, :array_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p2, 0x5
 
     new-array p2, p2, [I
 
     .line 238
-    fill-array-data p2, :array_2a
+    fill-array-data p2, :array_1
 
     .line 247
-    :goto_f
+    :goto_0
     sget-object v0, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     const/4 v1, 0x0
@@ -252,11 +252,11 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_19
+    if-eqz p0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_19
+    :cond_1
     const-string p1, "eglCreateContext failed"
 
     .line 250
@@ -266,14 +266,14 @@
 
     nop
 
-    :array_20
+    :array_0
     .array-data 4
         0x3098
         0x2
         0x3038
     .end array-data
 
-    :array_2a
+    :array_1
     .array-data 4
         0x3098
         0x2
@@ -284,7 +284,7 @@
 .end method
 
 .method private static createEGLSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Landroid/opengl/EGLContext;I)Landroid/opengl/EGLSurface;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -293,36 +293,36 @@
 
     const/4 v0, 0x1
 
-    if-ne p3, v0, :cond_6
+    if-ne p3, v0, :cond_0
 
     .line 259
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    goto :goto_24
+    goto :goto_2
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x2
 
-    if-ne p3, v1, :cond_10
+    if-ne p3, v1, :cond_1
 
     const/4 p3, 0x7
 
     new-array p3, p3, [I
 
     .line 263
-    fill-array-data p3, :array_2e
+    fill-array-data p3, :array_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 p3, 0x5
 
     new-array p3, p3, [I
 
     .line 274
-    fill-array-data p3, :array_40
+    fill-array-data p3, :array_1
 
-    :goto_16
+    :goto_0
     const/4 v1, 0x0
 
     .line 283
@@ -330,21 +330,21 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_2
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_2
     move v0, v1
 
-    :goto_1f
+    :goto_1
     const-string p3, "eglCreatePbufferSurface failed"
 
     .line 284
     invoke-static {v0, p3}, Landroidx/media3/common/util/GlUtil;->checkGlException(ZLjava/lang/String;)V
 
     .line 288
-    :goto_24
+    :goto_2
     invoke-static {p0, p1, p1, p2}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
     move-result p0
@@ -356,7 +356,7 @@
 
     return-object p1
 
-    :array_2e
+    :array_0
     .array-data 4
         0x3057
         0x1
@@ -367,7 +367,7 @@
         0x3038
     .end array-data
 
-    :array_40
+    :array_1
     .array-data 4
         0x3057
         0x1
@@ -378,22 +378,22 @@
 .end method
 
 .method private dispatchOnFrameAvailable()V
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->callback:Landroidx/media3/common/util/EGLSurfaceTexture$TextureImageListener;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 195
     invoke-interface {v0}, Landroidx/media3/common/util/EGLSurfaceTexture$TextureImageListener;->onFrameAvailable()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method private static generateTextureIds([I)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -414,7 +414,7 @@
 .end method
 
 .method private static getDefaultDisplay()Landroid/opengl/EGLDisplay;
-    .registers 5
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -430,16 +430,16 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     move v3, v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v3, v0
 
-    :goto_b
+    :goto_0
     const-string v4, "eglGetDisplay failed"
 
     .line 201
@@ -465,7 +465,7 @@
 
 # virtual methods
 .method public getSurfaceTexture()Landroid/graphics/SurfaceTexture;
-    .registers 2
+    .locals 1
 
     .line 168
     iget-object v0, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->texture:Landroid/graphics/SurfaceTexture;
@@ -480,7 +480,7 @@
 .end method
 
 .method public init(I)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -542,7 +542,7 @@
 .end method
 
 .method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
-    .registers 2
+    .locals 0
 
     .line 175
     iget-object p1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->handler:Landroid/os/Handler;
@@ -553,7 +553,7 @@
 .end method
 
 .method public release()V
-    .registers 7
+    .locals 6
 
     .line 134
     iget-object v0, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->handler:Landroid/os/Handler;
@@ -563,10 +563,10 @@
     const/4 v0, 0x0
 
     .line 136
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->texture:Landroid/graphics/SurfaceTexture;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 137
     invoke-virtual {v1}, Landroid/graphics/SurfaceTexture;->release()V
@@ -579,14 +579,14 @@
     const/4 v3, 0x1
 
     invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
-    :try_end_14
-    .catchall {:try_start_6 .. :try_end_14} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 141
-    :cond_14
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
@@ -594,7 +594,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_1
 
     .line 142
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -608,10 +608,10 @@
     invoke-static {v1, v2, v3, v4}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
     .line 145
-    :cond_2b
+    :cond_1
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->surface:Landroid/opengl/EGLSurface;
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_2
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
@@ -619,7 +619,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_2
 
     .line 146
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -629,10 +629,10 @@
     invoke-static {v1, v2}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
     .line 148
-    :cond_3e
+    :cond_2
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->context:Landroid/opengl/EGLContext;
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_3
 
     .line 149
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -640,13 +640,13 @@
     invoke-static {v2, v1}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
 
     .line 151
-    :cond_47
+    :cond_3
     invoke-static {}, Landroid/opengl/EGL14;->eglReleaseThread()Z
 
     .line 152
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_4
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
@@ -654,7 +654,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_5b
+    if-nez v1, :cond_4
 
     .line 155
     iget-object v1, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -662,7 +662,7 @@
     invoke-static {v1}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
 
     .line 157
-    :cond_5b
+    :cond_4
     iput-object v0, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
 
     .line 158
@@ -676,13 +676,13 @@
 
     return-void
 
-    :catchall_64
+    :catchall_0
     move-exception v1
 
     .line 141
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_5
 
     sget-object v3, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
@@ -690,7 +690,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_7c
+    if-nez v2, :cond_5
 
     .line 142
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -704,10 +704,10 @@
     invoke-static {v2, v3, v4, v5}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
     .line 145
-    :cond_7c
+    :cond_5
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->surface:Landroid/opengl/EGLSurface;
 
-    if-eqz v2, :cond_8f
+    if-eqz v2, :cond_6
 
     sget-object v3, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
@@ -715,7 +715,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8f
+    if-nez v2, :cond_6
 
     .line 146
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -725,10 +725,10 @@
     invoke-static {v2, v3}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
     .line 148
-    :cond_8f
+    :cond_6
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->context:Landroid/opengl/EGLContext;
 
-    if-eqz v2, :cond_98
+    if-eqz v2, :cond_7
 
     .line 149
     iget-object v3, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -736,13 +736,13 @@
     invoke-static {v3, v2}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
 
     .line 151
-    :cond_98
+    :cond_7
     invoke-static {}, Landroid/opengl/EGL14;->eglReleaseThread()Z
 
     .line 152
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
 
-    if-eqz v2, :cond_ac
+    if-eqz v2, :cond_8
 
     sget-object v3, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
@@ -750,7 +750,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_ac
+    if-nez v2, :cond_8
 
     .line 155
     iget-object v2, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
@@ -758,7 +758,7 @@
     invoke-static {v2}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
 
     .line 157
-    :cond_ac
+    :cond_8
     iput-object v0, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->display:Landroid/opengl/EGLDisplay;
 
     .line 158
@@ -775,7 +775,7 @@
 .end method
 
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 183
     invoke-direct {p0}, Landroidx/media3/common/util/EGLSurfaceTexture;->dispatchOnFrameAvailable()V
@@ -783,15 +783,15 @@
     .line 184
     iget-object v0, p0, Landroidx/media3/common/util/EGLSurfaceTexture;->texture:Landroid/graphics/SurfaceTexture;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 186
-    :try_start_7
+    :try_start_0
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
-    :try_end_a
-    .catch Ljava/lang/RuntimeException; {:try_start_7 .. :try_end_a} :catch_a
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_a
-    :cond_a
+    :catch_0
+    :cond_0
     return-void
 .end method

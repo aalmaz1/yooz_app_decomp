@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,25 +26,25 @@
 .end method
 
 .method public static getRelativePath(Landroid/net/Uri;Landroid/net/Uri;)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 299
     invoke-virtual {p0}, Landroid/net/Uri;->isOpaque()Z
 
     move-result v0
 
-    if-nez v0, :cond_a2
+    if-nez v0, :cond_a
 
     invoke-virtual {p1}, Landroid/net/Uri;->isOpaque()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
-    goto/16 :goto_a2
+    goto/16 :goto_7
 
     .line 303
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v0
@@ -58,32 +58,32 @@
 
     const/4 v3, 0x1
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_2
 
-    :goto_1c
+    :goto_0
     move v0, v3
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_1e
-    if-eqz v1, :cond_27
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 308
     invoke-static {v0, v1}, Lcom/google/common/base/Ascii;->equalsIgnoreCase(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     move v0, v2
 
-    :goto_28
-    if-eqz v0, :cond_9d
+    :goto_1
+    if-eqz v0, :cond_9
 
     .line 309
     invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
@@ -98,12 +98,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_3
 
-    goto :goto_9d
+    goto :goto_6
 
     .line 314
-    :cond_39
+    :cond_3
     invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object p0
@@ -128,8 +128,8 @@
 
     move v1, v2
 
-    :goto_4e
-    if-ge v2, v0, :cond_66
+    :goto_2
+    if-ge v2, v0, :cond_5
 
     .line 321
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -146,20 +146,20 @@
 
     move-result v4
 
-    if-nez v4, :cond_61
+    if-nez v4, :cond_4
 
-    goto :goto_66
+    goto :goto_3
 
-    :cond_61
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4e
+    goto :goto_2
 
     .line 327
-    :cond_66
-    :goto_66
+    :cond_5
+    :goto_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -167,12 +167,12 @@
     move v2, v1
 
     .line 328
-    :goto_6c
+    :goto_4
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v2, v4, :cond_7a
+    if-ge v2, v4, :cond_6
 
     const-string v4, "../"
 
@@ -181,16 +181,16 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6c
+    goto :goto_4
 
     .line 332
-    :cond_7a
-    :goto_7a
+    :cond_6
+    :goto_5
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p0
 
-    if-ge v1, p0, :cond_98
+    if-ge v1, p0, :cond_8
 
     .line 333
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -208,20 +208,20 @@
 
     sub-int/2addr p0, v3
 
-    if-ge v1, p0, :cond_95
+    if-ge v1, p0, :cond_7
 
     const-string p0, "/"
 
     .line 335
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_95
+    :cond_7
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7a
+    goto :goto_5
 
     .line 339
-    :cond_98
+    :cond_8
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -229,8 +229,8 @@
     return-object p0
 
     .line 311
-    :cond_9d
-    :goto_9d
+    :cond_9
+    :goto_6
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -238,8 +238,8 @@
     return-object p0
 
     .line 300
-    :cond_a2
-    :goto_a2
+    :cond_a
+    :goto_7
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -248,7 +248,7 @@
 .end method
 
 .method private static getUriIndices(Ljava/lang/String;)[I
-    .registers 11
+    .locals 10
 
     const/4 v0, 0x4
 
@@ -263,14 +263,14 @@
 
     const/4 v3, -0x1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     aput v3, v0, v2
 
     return-object v0
 
     .line 246
-    :cond_e
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -282,14 +282,14 @@
 
     move-result v4
 
-    if-ne v4, v3, :cond_1b
+    if-ne v4, v3, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     move v1, v4
 
-    :goto_1c
+    :goto_0
     const/16 v4, 0x3f
 
     .line 251
@@ -297,14 +297,14 @@
 
     move-result v4
 
-    if-eq v4, v3, :cond_26
+    if-eq v4, v3, :cond_2
 
-    if-le v4, v1, :cond_27
+    if-le v4, v1, :cond_3
 
-    :cond_26
+    :cond_2
     move v4, v1
 
-    :cond_27
+    :cond_3
     const/16 v5, 0x2f
 
     .line 258
@@ -312,14 +312,14 @@
 
     move-result v6
 
-    if-eq v6, v3, :cond_31
+    if-eq v6, v3, :cond_4
 
-    if-le v6, v4, :cond_32
+    if-le v6, v4, :cond_5
 
-    :cond_31
+    :cond_4
     move v6, v4
 
-    :cond_32
+    :cond_5
     const/16 v7, 0x3a
 
     .line 262
@@ -327,16 +327,16 @@
 
     move-result v7
 
-    if-le v7, v6, :cond_3b
+    if-le v7, v6, :cond_6
 
     move v7, v3
 
-    :cond_3b
+    :cond_6
     add-int/lit8 v6, v7, 0x2
 
     const/4 v8, 0x1
 
-    if-ge v6, v4, :cond_50
+    if-ge v6, v4, :cond_7
 
     add-int/lit8 v9, v7, 0x1
 
@@ -345,24 +345,24 @@
 
     move-result v9
 
-    if-ne v9, v5, :cond_50
+    if-ne v9, v5, :cond_7
 
     .line 273
     invoke-virtual {p0, v6}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
 
-    if-ne v6, v5, :cond_50
+    if-ne v6, v5, :cond_7
 
     move v6, v8
 
-    goto :goto_51
+    goto :goto_1
 
-    :cond_50
+    :cond_7
     move v6, v2
 
-    :goto_51
-    if-eqz v6, :cond_5f
+    :goto_1
+    if-eqz v6, :cond_9
 
     add-int/lit8 v6, v7, 0x3
 
@@ -371,20 +371,20 @@
 
     move-result p0
 
-    if-eq p0, v3, :cond_5d
+    if-eq p0, v3, :cond_8
 
-    if-le p0, v4, :cond_61
+    if-le p0, v4, :cond_a
 
-    :cond_5d
+    :cond_8
     move p0, v4
 
-    goto :goto_61
+    goto :goto_2
 
-    :cond_5f
+    :cond_9
     add-int/lit8 p0, v7, 0x1
 
-    :cond_61
-    :goto_61
+    :cond_a
+    :goto_2
     aput v7, v0, v2
 
     aput p0, v0, v8
@@ -401,11 +401,11 @@
 .end method
 
 .method public static isAbsolute(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
     .line 154
     invoke-static {p0}, Landroidx/media3/common/util/UriUtil;->getUriIndices(Ljava/lang/String;)[I
@@ -416,18 +416,18 @@
 
     const/4 v1, -0x1
 
-    if-eq p0, v1, :cond_d
+    if-eq p0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_d
+    :cond_0
     return v0
 .end method
 
 .method private static removeDotSegments(Ljava/lang/StringBuilder;II)Ljava/lang/String;
-    .registers 10
+    .locals 7
 
-    if-lt p1, p2, :cond_7
+    if-lt p1, p2, :cond_0
 
     .line 187
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -437,54 +437,54 @@
     return-object p0
 
     .line 189
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v0
 
     const/16 v1, 0x2f
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_1
 
     add-int/lit8 p1, p1, 0x1
 
-    :cond_11
+    :cond_1
     move v0, p1
 
     move v2, v0
 
-    :goto_13
-    if-gt v0, p2, :cond_60
+    :goto_0
+    if-gt v0, p2, :cond_7
 
-    if-ne v0, p2, :cond_19
+    if-ne v0, p2, :cond_2
 
     move v3, v0
 
-    goto :goto_21
+    goto :goto_1
 
     .line 200
-    :cond_19
+    :cond_2
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v3
 
-    if-ne v3, v1, :cond_5d
+    if-ne v3, v1, :cond_6
 
     add-int/lit8 v3, v0, 0x1
 
-    :goto_21
+    :goto_1
     add-int/lit8 v4, v2, 0x1
 
     const/16 v5, 0x2e
 
-    if-ne v0, v4, :cond_33
+    if-ne v0, v4, :cond_3
 
     .line 208
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v6
 
-    if-ne v6, v5, :cond_33
+    if-ne v6, v5, :cond_3
 
     .line 210
     invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
@@ -493,26 +493,26 @@
 
     sub-int/2addr p2, v3
 
-    goto :goto_5b
+    goto :goto_4
 
-    :cond_33
+    :cond_3
     add-int/lit8 v6, v2, 0x2
 
-    if-ne v0, v6, :cond_58
+    if-ne v0, v6, :cond_5
 
     .line 214
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v6
 
-    if-ne v6, v5, :cond_58
+    if-ne v6, v5, :cond_5
 
     .line 215
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v4
 
-    if-ne v4, v5, :cond_58
+    if-ne v4, v5, :cond_5
 
     const-string v0, "/"
 
@@ -525,43 +525,43 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    if-le v0, p1, :cond_51
+    if-le v0, p1, :cond_4
 
     move v2, v0
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_51
+    :cond_4
     move v2, p1
 
     .line 219
-    :goto_52
+    :goto_2
     invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
     sub-int/2addr v3, v2
 
     sub-int/2addr p2, v3
 
-    goto :goto_5a
+    goto :goto_3
 
-    :cond_58
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
-    :goto_5a
+    :goto_3
     move v2, v0
 
-    :goto_5b
+    :goto_4
     move v0, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_5d
+    :cond_6
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 228
-    :cond_60
+    :cond_7
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -570,7 +570,7 @@
 .end method
 
 .method public static removeQueryParameter(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-    .registers 7
+    .locals 5
 
     .line 165
     invoke-virtual {p0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -589,12 +589,12 @@
 
     move-result-object v1
 
-    :cond_f
+    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -607,7 +607,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_0
 
     .line 169
     invoke-virtual {p0, v2}, Landroid/net/Uri;->getQueryParameters(Ljava/lang/String;)Ljava/util/List;
@@ -618,12 +618,12 @@
 
     move-result-object v3
 
-    :goto_29
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_0
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -634,10 +634,10 @@
     .line 170
     invoke-virtual {v0, v2, v4}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    goto :goto_29
+    goto :goto_0
 
     .line 174
-    :cond_39
+    :cond_1
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object p0
@@ -646,7 +646,7 @@
 .end method
 
 .method public static resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 12
+    .locals 10
 
     .line 91
     new-instance v0, Ljava/lang/StringBuilder;
@@ -655,17 +655,17 @@
 
     const-string v1, ""
 
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
     move-object p0, v1
 
-    :cond_a
-    if-nez p1, :cond_d
+    :cond_0
+    if-nez p1, :cond_1
 
     move-object p1, v1
 
     .line 97
-    :cond_d
+    :cond_1
     invoke-static {p1}, Landroidx/media3/common/util/UriUtil;->getUriIndices(Ljava/lang/String;)[I
 
     move-result-object v1
@@ -681,7 +681,7 @@
 
     const/4 v6, 0x1
 
-    if-eq v3, v4, :cond_28
+    if-eq v3, v4, :cond_2
 
     .line 100
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -701,7 +701,7 @@
     return-object p0
 
     .line 105
-    :cond_28
+    :cond_2
     invoke-static {p0}, Landroidx/media3/common/util/UriUtil;->getUriIndices(Ljava/lang/String;)[I
 
     move-result-object v3
@@ -711,7 +711,7 @@
     .line 106
     aget v8, v1, v7
 
-    if-nez v8, :cond_40
+    if-nez v8, :cond_3
 
     .line 109
     aget v1, v3, v7
@@ -731,10 +731,10 @@
     return-object p0
 
     .line 112
-    :cond_40
+    :cond_3
     aget v7, v1, v5
 
-    if-nez v7, :cond_53
+    if-nez v7, :cond_4
 
     .line 115
     aget v1, v3, v5
@@ -754,10 +754,10 @@
     return-object p0
 
     .line 118
-    :cond_53
+    :cond_4
     aget v7, v1, v6
 
-    if-eqz v7, :cond_6c
+    if-eqz v7, :cond_5
 
     .line 120
     aget v3, v3, v2
@@ -787,14 +787,14 @@
     return-object p0
 
     .line 125
-    :cond_6c
+    :cond_5
     invoke-virtual {p1, v7}, Ljava/lang/String;->charAt(I)C
 
     move-result v7
 
     const/16 v8, 0x2f
 
-    if-ne v7, v8, :cond_87
+    if-ne v7, v8, :cond_6
 
     .line 128
     aget v4, v3, v6
@@ -819,18 +819,18 @@
     return-object p0
 
     .line 134
-    :cond_87
+    :cond_6
     aget v7, v3, v2
 
     add-int/2addr v7, v5
 
     aget v9, v3, v6
 
-    if-ge v7, v9, :cond_a8
+    if-ge v7, v9, :cond_7
 
     aget v7, v3, v5
 
-    if-ne v9, v7, :cond_a8
+    if-ne v9, v7, :cond_7
 
     .line 138
     invoke-virtual {v0, p0, v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
@@ -859,7 +859,7 @@
     return-object p0
 
     .line 145
-    :cond_a8
+    :cond_7
     aget v7, v3, v5
 
     sub-int/2addr v7, v6
@@ -868,18 +868,18 @@
 
     move-result v7
 
-    if-ne v7, v4, :cond_b4
+    if-ne v7, v4, :cond_8
 
     .line 146
     aget v4, v3, v6
 
-    goto :goto_b6
+    goto :goto_0
 
-    :cond_b4
+    :cond_8
     add-int/lit8 v4, v7, 0x1
 
     .line 147
-    :goto_b6
+    :goto_0
     invoke-virtual {v0, p0, v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
     move-result-object p0
@@ -901,7 +901,7 @@
 .end method
 
 .method public static resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-static {p0, p1}, Landroidx/media3/common/util/UriUtil;->resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/util/TimestampAdjuster;JJII)V
-    .registers 24
+    .locals 16
 
     .line 47
     new-instance v1, Landroidx/media3/extractor/BinarySearchSeeker$DefaultSeekTimestampConverter;

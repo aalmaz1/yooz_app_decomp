@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(ZLandroid/content/res/Configuration;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "newConfig"
 
@@ -71,16 +71,16 @@
 
 # virtual methods
 .method public final getNewConfig()Landroid/content/res/Configuration;
-    .registers 3
+    .locals 2
 
     .line 70
     iget-object v0, p0, Landroidx/core/app/PictureInPictureModeChangedInfo;->newConfiguration:Landroid/content/res/Configuration;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "PictureInPictureModeChangedInfo must be constructed with the constructor that takes a Configuration to access the newConfig. Are you running on an API 26 or higher device that makes this information available?"
@@ -95,7 +95,7 @@
 .end method
 
 .method public final isInPictureInPictureMode()Z
-    .registers 2
+    .locals 1
 
     .line 33
     iget-boolean v0, p0, Landroidx/core/app/PictureInPictureModeChangedInfo;->isInPictureInPictureMode:Z

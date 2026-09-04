@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/flac/VorbisComment;
-    .registers 3
+    .locals 1
 
     .line 125
     new-instance v0, Landroidx/media3/extractor/metadata/flac/VorbisComment;
@@ -50,7 +50,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 121
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/metadata/flac/VorbisComment$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/flac/VorbisComment;
@@ -61,7 +61,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/media3/extractor/metadata/flac/VorbisComment;
-    .registers 2
+    .locals 0
 
     .line 130
     new-array p1, p1, [Landroidx/media3/extractor/metadata/flac/VorbisComment;
@@ -70,7 +70,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 121
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/metadata/flac/VorbisComment$1;->newArray(I)[Landroidx/media3/extractor/metadata/flac/VorbisComment;

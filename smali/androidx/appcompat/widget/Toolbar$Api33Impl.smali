@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2811
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static findOnBackInvokedDispatcher(Landroid/view/View;)Landroid/window/OnBackInvokedDispatcher;
-    .registers 1
+    .locals 0
 
     .line 2833
     invoke-virtual {p0}, Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
@@ -36,7 +36,7 @@
 .end method
 
 .method static newOnBackInvokedCallback(Ljava/lang/Runnable;)Landroid/window/OnBackInvokedCallback;
-    .registers 2
+    .locals 1
 
     .line 2839
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -49,7 +49,7 @@
 .end method
 
 .method static tryRegisterOnBackInvokedCallback(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 2818
     check-cast p0, Landroid/window/OnBackInvokedDispatcher;
@@ -65,7 +65,7 @@
 .end method
 
 .method static tryUnregisterOnBackInvokedCallback(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 2826
     check-cast p0, Landroid/window/OnBackInvokedDispatcher;

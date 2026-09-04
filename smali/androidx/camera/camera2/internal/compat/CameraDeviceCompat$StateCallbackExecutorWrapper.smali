@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraDevice$StateCallback;)V
-    .registers 3
+    .locals 0
 
     .line 145
     invoke-direct {p0}, Landroid/hardware/camera2/CameraDevice$StateCallback;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method synthetic lambda$onClosed$3$androidx-camera-camera2-internal-compat-CameraDeviceCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 3
+    .locals 1
 
     .line 167
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraDevice$StateCallback;
@@ -50,7 +50,7 @@
 .end method
 
 .method synthetic lambda$onDisconnected$1$androidx-camera-camera2-internal-compat-CameraDeviceCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 3
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraDevice$StateCallback;
@@ -61,7 +61,7 @@
 .end method
 
 .method synthetic lambda$onError$2$androidx-camera-camera2-internal-compat-CameraDeviceCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraDevice;I)V
-    .registers 4
+    .locals 1
 
     .line 162
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraDevice$StateCallback;
@@ -72,7 +72,7 @@
 .end method
 
 .method synthetic lambda$onOpened$0$androidx-camera-camera2-internal-compat-CameraDeviceCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 3
+    .locals 1
 
     .line 152
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraDevice$StateCallback;
@@ -83,7 +83,7 @@
 .end method
 
 .method public onClosed(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 4
+    .locals 2
 
     .line 167
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -98,7 +98,7 @@
 .end method
 
 .method public onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 4
+    .locals 2
 
     .line 157
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -113,7 +113,7 @@
 .end method
 
 .method public onError(Landroid/hardware/camera2/CameraDevice;I)V
-    .registers 5
+    .locals 2
 
     .line 162
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -128,7 +128,7 @@
 .end method
 
 .method public onOpened(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 4
+    .locals 2
 
     .line 152
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;

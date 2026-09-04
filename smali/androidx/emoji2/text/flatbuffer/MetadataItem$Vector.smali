@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 82
     invoke-direct {p0}, Landroidx/emoji2/text/flatbuffer/BaseVector;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public __assign(IILjava/nio/ByteBuffer;)Landroidx/emoji2/text/flatbuffer/MetadataItem$Vector;
-    .registers 4
+    .locals 0
 
     .line 83
     invoke-virtual {p0, p1, p2, p3}, Landroidx/emoji2/text/flatbuffer/MetadataItem$Vector;->__reset(IILjava/nio/ByteBuffer;)V
@@ -36,7 +36,7 @@
 .end method
 
 .method public get(I)Landroidx/emoji2/text/flatbuffer/MetadataItem;
-    .registers 3
+    .locals 1
 
     .line 85
     new-instance v0, Landroidx/emoji2/text/flatbuffer/MetadataItem;
@@ -51,7 +51,7 @@
 .end method
 
 .method public get(Landroidx/emoji2/text/flatbuffer/MetadataItem;I)Landroidx/emoji2/text/flatbuffer/MetadataItem;
-    .registers 4
+    .locals 1
 
     .line 86
     invoke-virtual {p0, p2}, Landroidx/emoji2/text/flatbuffer/MetadataItem$Vector;->__element(I)I

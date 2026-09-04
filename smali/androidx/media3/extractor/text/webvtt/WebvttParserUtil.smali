@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "^NOTE([ \t].*)?$"
 
@@ -26,7 +26,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static findNextCueHeader(Landroidx/media3/common/util/ParsableByteArray;)Ljava/util/regex/Matcher;
-    .registers 3
+    .locals 2
 
     .line 106
     :cond_0
@@ -43,7 +43,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 107
     sget-object v1, Landroidx/media3/extractor/text/webvtt/WebvttParserUtil;->COMMENT:Ljava/util/regex/Pattern;
@@ -56,10 +56,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     .line 109
-    :goto_12
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object v0
@@ -72,10 +72,10 @@
 
     if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
     .line 111
-    :cond_1f
+    :cond_1
     sget-object v1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->CUE_HEADER_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -91,21 +91,21 @@
 
     return-object v0
 
-    :cond_2c
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static isWebvttHeaderLine(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 2
+    .locals 1
 
     .line 56
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object p0
 
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_0
 
     const-string v0, "WEBVTT"
 
@@ -114,21 +114,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_11
+    :goto_0
     return p0
 .end method
 
 .method public static parsePercentage(Ljava/lang/String;)F
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NumberFormatException;
@@ -142,7 +142,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 92
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -168,7 +168,7 @@
     return p0
 
     .line 90
-    :cond_1b
+    :cond_0
     new-instance p0, Ljava/lang/NumberFormatException;
 
     const-string v0, "Percentages must end with %"
@@ -179,7 +179,7 @@
 .end method
 
 .method public static parseTimestampUs(Ljava/lang/String;)J
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NumberFormatException;
@@ -209,8 +209,8 @@
 
     const-wide/16 v3, 0x0
 
-    :goto_12
-    if-ge v0, v2, :cond_21
+    :goto_0
+    if-ge v0, v2, :cond_0
 
     aget-object v5, v1, v0
 
@@ -227,9 +227,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     const-wide/16 v0, 0x3e8
 
     mul-long/2addr v3, v0
@@ -239,7 +239,7 @@
 
     const/4 v5, 0x2
 
-    if-ne v2, v5, :cond_30
+    if-ne v2, v5, :cond_1
 
     const/4 v2, 0x1
 
@@ -252,14 +252,14 @@
 
     add-long/2addr v3, v5
 
-    :cond_30
+    :cond_1
     mul-long/2addr v3, v0
 
     return-wide v3
 .end method
 
 .method public static validateWebvttHeaderLine(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -276,12 +276,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     return-void
 
     .line 44
-    :cond_b
+    :cond_0
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 45

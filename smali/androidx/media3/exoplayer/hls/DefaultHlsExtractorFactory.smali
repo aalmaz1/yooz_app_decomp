@@ -22,14 +22,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
     .line 59
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->DEFAULT_EXTRACTOR_ORDER:[I
 
@@ -37,7 +37,7 @@
 
     nop
 
-    :array_a
+    :array_0
     .array-data 4
         0x8
         0xd
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(IZ)V
-    .registers 3
+    .locals 0
 
     .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -85,7 +85,7 @@
 .end method
 
 .method private static addFileTypeIfValidAndNotPresent(ILjava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -104,7 +104,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_1b
+    if-eq v0, v1, :cond_1
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -114,25 +114,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 213
-    :cond_14
+    :cond_0
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private createExtractorByFileType(ILandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/common/util/TimestampAdjuster;)Landroidx/media3/extractor/Extractor;
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -146,38 +146,38 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_6
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_4d
+    if-eq p1, v0, :cond_5
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_47
+    if-eq p1, v0, :cond_4
 
     const/4 v0, 0x7
 
-    if-eq p1, v0, :cond_3e
+    if-eq p1, v0, :cond_3
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_35
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0xb
 
-    if-eq p1, v0, :cond_25
+    if-eq p1, v0, :cond_1
 
     const/16 p3, 0xd
 
-    if-eq p1, p3, :cond_19
+    if-eq p1, p3, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 226
-    :cond_19
+    :cond_0
     new-instance p1, Landroidx/media3/exoplayer/hls/WebvttExtractor;
 
     iget-object p2, p2, Landroidx/media3/common/Format;->language:Ljava/lang/String;
@@ -191,7 +191,7 @@
     return-object p1
 
     .line 247
-    :cond_25
+    :cond_1
     iget v1, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->payloadReaderFactoryFlags:I
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->exposeCea608WhenMissingDeclarations:Z
@@ -213,7 +213,7 @@
     return-object p1
 
     .line 240
-    :cond_35
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->parseSubtitlesDuringExtraction:Z
@@ -225,7 +225,7 @@
     return-object p1
 
     .line 238
-    :cond_3e
+    :cond_3
     new-instance p1, Landroidx/media3/extractor/mp3/Mp3Extractor;
 
     const/4 p2, 0x0
@@ -237,7 +237,7 @@
     return-object p1
 
     .line 232
-    :cond_47
+    :cond_4
     new-instance p1, Landroidx/media3/extractor/ts/AdtsExtractor;
 
     invoke-direct {p1}, Landroidx/media3/extractor/ts/AdtsExtractor;-><init>()V
@@ -245,7 +245,7 @@
     return-object p1
 
     .line 236
-    :cond_4d
+    :cond_5
     new-instance p1, Landroidx/media3/extractor/ts/Ac4Extractor;
 
     invoke-direct {p1}, Landroidx/media3/extractor/ts/Ac4Extractor;-><init>()V
@@ -253,7 +253,7 @@
     return-object p1
 
     .line 234
-    :cond_53
+    :cond_6
     new-instance p1, Landroidx/media3/extractor/ts/Ac3Extractor;
 
     invoke-direct {p1}, Landroidx/media3/extractor/ts/Ac3Extractor;-><init>()V
@@ -262,7 +262,7 @@
 .end method
 
 .method private static createFragmentedMp4Extractor(Landroidx/media3/extractor/text/SubtitleParser$Factory;ZLandroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/common/Format;Ljava/util/List;)Landroidx/media3/extractor/mp4/FragmentedMp4Extractor;
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -282,24 +282,24 @@
 
     move-result p3
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_0
 
     const/4 p3, 0x4
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p3, 0x0
 
-    :goto_9
-    if-nez p1, :cond_f
+    :goto_0
+    if-nez p1, :cond_1
 
     .line 321
     sget-object p0, Landroidx/media3/extractor/text/SubtitleParser$Factory;->UNSUPPORTED:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
     or-int/lit8 p3, p3, 0x20
 
-    :cond_f
+    :cond_1
     move-object v1, p0
 
     move v2, p3
@@ -309,17 +309,17 @@
 
     const/4 v4, 0x0
 
-    if-eqz p4, :cond_17
+    if-eqz p4, :cond_2
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 329
-    :cond_17
+    :cond_2
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p4
 
-    :goto_1b
+    :goto_1
     move-object v5, p4
 
     const/4 v6, 0x0
@@ -334,7 +334,7 @@
 .end method
 
 .method private static createTsExtractor(IZLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/text/SubtitleParser$Factory;Z)Landroidx/media3/extractor/ts/TsExtractor;
-    .registers 14
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IZ",
@@ -351,14 +351,14 @@
 
     or-int/lit8 p0, p0, 0x10
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_0
 
     or-int/lit8 p0, p0, 0x20
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_7
-    if-eqz p1, :cond_1d
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 278
     new-instance p1, Landroidx/media3/common/Format$Builder;
@@ -381,16 +381,16 @@
 
     move-result-object p3
 
-    goto :goto_21
+    goto :goto_0
 
     .line 282
-    :cond_1d
+    :cond_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p3
 
     .line 284
-    :goto_21
+    :goto_0
     iget-object p1, p2, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
     .line 285
@@ -398,7 +398,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_3e
+    if-nez p2, :cond_3
 
     const-string p2, "audio/mp4a-latm"
 
@@ -407,11 +407,11 @@
 
     move-result p2
 
-    if-nez p2, :cond_33
+    if-nez p2, :cond_2
 
     or-int/lit8 p0, p0, 0x2
 
-    :cond_33
+    :cond_2
     const-string/jumbo p2, "video/avc"
 
     .line 292
@@ -419,24 +419,24 @@
 
     move-result p1
 
-    if-nez p1, :cond_3e
+    if-nez p1, :cond_3
 
     or-int/lit8 p0, p0, 0x4
 
-    :cond_3e
-    if-nez p6, :cond_44
+    :cond_3
+    if-nez p6, :cond_4
 
     .line 298
     sget-object p5, Landroidx/media3/extractor/text/SubtitleParser$Factory;->UNSUPPORTED:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
     const/4 p1, 0x1
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_44
+    :cond_4
     const/4 p1, 0x0
 
-    :goto_45
+    :goto_1
     move v2, p1
 
     move-object v3, p5
@@ -462,27 +462,27 @@
 .end method
 
 .method private static isFmp4Variant(Landroidx/media3/common/Format;)Z
-    .registers 5
+    .locals 4
 
     .line 335
     iget-object p0, p0, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_6
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_6
+    :cond_0
     move v1, v0
 
     .line 339
-    :goto_7
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/Metadata;->length()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_2
 
     .line 340
     invoke-virtual {p0, v1}, Landroidx/media3/common/Metadata;->get(I)Landroidx/media3/common/Metadata$Entry;
@@ -492,7 +492,7 @@
     .line 341
     instance-of v3, v2, Landroidx/media3/exoplayer/hls/HlsTrackMetadataEntry;
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_1
 
     .line 342
     check-cast v2, Landroidx/media3/exoplayer/hls/HlsTrackMetadataEntry;
@@ -507,17 +507,17 @@
 
     return p0
 
-    :cond_20
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     return v0
 .end method
 
 .method private static sniffQuietly(Landroidx/media3/extractor/Extractor;Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -529,16 +529,16 @@
     invoke-interface {p0, p1}, Landroidx/media3/extractor/Extractor;->sniff(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p0
-    :try_end_4
-    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_4} :catch_d
-    .catchall {:try_start_0 .. :try_end_4} :catchall_8
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 356
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
-    goto :goto_11
+    goto :goto_0
 
-    :catchall_8
+    :catchall_0
     move-exception p0
 
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -547,19 +547,19 @@
     throw p0
 
     .line 356
-    :catch_d
+    :catch_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     const/4 p0, 0x0
 
-    :goto_11
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public createExtractor(Landroid/net/Uri;Landroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/common/util/TimestampAdjuster;Ljava/util/Map;Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;
-    .registers 22
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -633,8 +633,8 @@
 
     move v9, v8
 
-    :goto_25
-    if-ge v9, v7, :cond_2f
+    :goto_0
+    if-ge v9, v7, :cond_0
 
     aget v10, v6, v9
 
@@ -643,21 +643,21 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
     .line 133
-    :cond_2f
+    :cond_0
     invoke-interface/range {p6 .. p6}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     const/4 v6, 0x0
 
     .line 134
-    :goto_33
+    :goto_1
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v7
 
-    if-ge v8, v7, :cond_79
+    if-ge v8, v7, :cond_4
 
     .line 135
     invoke-interface {v5, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -693,7 +693,7 @@
 
     move-result v13
 
-    if-eqz v13, :cond_69
+    if-eqz v13, :cond_1
 
     .line 140
     new-instance v7, Landroidx/media3/exoplayer/hls/BundledHlsMediaChunkExtractor;
@@ -714,28 +714,28 @@
 
     return-object v7
 
-    :cond_69
-    if-nez v6, :cond_76
+    :cond_1
+    if-nez v6, :cond_3
 
-    if-eq v7, v1, :cond_75
+    if-eq v7, v1, :cond_2
 
-    if-eq v7, v2, :cond_75
+    if-eq v7, v2, :cond_2
 
-    if-eq v7, v4, :cond_75
+    if-eq v7, v4, :cond_2
 
     const/16 v13, 0xb
 
-    if-ne v7, v13, :cond_76
+    if-ne v7, v13, :cond_3
 
-    :cond_75
+    :cond_2
     move-object v6, v11
 
-    :cond_76
+    :cond_3
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_79
+    :cond_4
     move-object/from16 v10, p4
 
     .line 158
@@ -766,7 +766,7 @@
 .end method
 
 .method public bridge synthetic createExtractor(Landroid/net/Uri;Landroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/common/util/TimestampAdjuster;Ljava/util/Map;Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/hls/HlsMediaChunkExtractor;
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -782,7 +782,7 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;
-    .registers 2
+    .locals 0
 
     .line 178
     iput-boolean p1, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->parseSubtitlesDuringExtraction:Z
@@ -791,7 +791,7 @@
 .end method
 
 .method public bridge synthetic experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/hls/HlsExtractorFactory;
-    .registers 2
+    .locals 0
 
     .line 54
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;
@@ -802,12 +802,12 @@
 .end method
 
 .method public getOutputTextFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 6
+    .locals 4
 
     .line 193
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->parseSubtitlesDuringExtraction:Z
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
@@ -815,7 +815,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 195
     invoke-virtual {p1}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -853,7 +853,7 @@
     .line 200
     iget-object v2, p1, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_0
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -871,12 +871,12 @@
 
     move-result-object p1
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_41
+    :cond_0
     const-string p1, ""
 
-    :goto_43
+    :goto_0
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -902,12 +902,12 @@
 
     move-result-object p1
 
-    :cond_5c
+    :cond_1
     return-object p1
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;
-    .registers 2
+    .locals 0
 
     .line 170
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -916,7 +916,7 @@
 .end method
 
 .method public bridge synthetic setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/hls/HlsExtractorFactory;
-    .registers 2
+    .locals 0
 
     .line 54
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/hls/DefaultHlsExtractorFactory;

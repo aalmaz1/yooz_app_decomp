@@ -14,33 +14,33 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
-    .registers 4
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 58
     new-instance v0, Landroid/widget/OverScroller;
 
     invoke-direct {v0, p1, p2}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     new-instance v0, Landroid/widget/OverScroller;
 
     invoke-direct {v0, p1}, Landroid/widget/OverScroller;-><init>(Landroid/content/Context;)V
 
-    :goto_10
+    :goto_0
     iput-object v0, p0, Landroidx/core/widget/ScrollerCompat;->mScroller:Landroid/widget/OverScroller;
 
     return-void
 .end method
 
 .method public static create(Landroid/content/Context;)Landroidx/core/widget/ScrollerCompat;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public static create(Landroid/content/Context;Landroid/view/animation/Interpolator;)Landroidx/core/widget/ScrollerCompat;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public abortAnimation()V
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public computeScrollOffset()Z
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -98,7 +98,7 @@
 .end method
 
 .method public fling(IIIIIIII)V
-    .registers 19
+    .locals 10
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -129,7 +129,7 @@
 .end method
 
 .method public fling(IIIIIIIIII)V
-    .registers 23
+    .locals 12
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -164,7 +164,7 @@
 .end method
 
 .method public getCurrVelocity()F
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -179,7 +179,7 @@
 .end method
 
 .method public getCurrX()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -194,7 +194,7 @@
 .end method
 
 .method public getCurrY()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -209,7 +209,7 @@
 .end method
 
 .method public getFinalX()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -224,7 +224,7 @@
 .end method
 
 .method public getFinalY()I
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -239,7 +239,7 @@
 .end method
 
 .method public isFinished()Z
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -254,7 +254,7 @@
 .end method
 
 .method public isOverScrolled()Z
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -269,7 +269,7 @@
 .end method
 
 .method public notifyHorizontalEdgeReached(III)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -282,7 +282,7 @@
 .end method
 
 .method public notifyVerticalEdgeReached(III)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -295,7 +295,7 @@
 .end method
 
 .method public springBack(IIIIII)Z
-    .registers 14
+    .locals 7
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -322,7 +322,7 @@
 .end method
 
 .method public startScroll(IIII)V
-    .registers 6
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -335,7 +335,7 @@
 .end method
 
 .method public startScroll(IIIII)V
-    .registers 12
+    .locals 6
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

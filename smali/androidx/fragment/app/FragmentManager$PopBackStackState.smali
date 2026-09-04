@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;II)V
-    .registers 5
+    .locals 0
 
     .line 3519
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public generateOps(Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,15 +69,15 @@
 
     iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mPrimaryNav:Landroidx/fragment/app/Fragment;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->mId:I
 
-    if-gez v0, :cond_1e
+    if-gez v0, :cond_0
 
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->mName:Ljava/lang/String;
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 3531
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -93,14 +93,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 3538
-    :cond_1e
+    :cond_0
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->this$0:Landroidx/fragment/app/FragmentManager;
 
     iget-object v3, p0, Landroidx/fragment/app/FragmentManager$PopBackStackState;->mName:Ljava/lang/String;

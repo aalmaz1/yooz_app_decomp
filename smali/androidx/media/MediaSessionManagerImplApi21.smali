@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 28
     invoke-direct {p0, p1}, Landroidx/media/MediaSessionManagerImplBase;-><init>(Landroid/content/Context;)V
@@ -17,7 +17,7 @@
 .end method
 
 .method private hasMediaControlPermission(Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;)Z
-    .registers 5
+    .locals 3
 
     .line 44
     invoke-virtual {p0}, Landroidx/media/MediaSessionManagerImplApi21;->getContext()Landroid/content/Context;
@@ -40,48 +40,48 @@
 
     move-result p1
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_17
+    :goto_0
     return p1
 .end method
 
 
 # virtual methods
 .method public isTrustedForMediaControl(Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;)Z
-    .registers 3
+    .locals 1
 
     .line 36
     invoke-direct {p0, p1}, Landroidx/media/MediaSessionManagerImplApi21;->hasMediaControlPermission(Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-super {p0, p1}, Landroidx/media/MediaSessionManagerImplBase;->isTrustedForMediaControl(Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_10
+    :goto_1
     return p1
 .end method

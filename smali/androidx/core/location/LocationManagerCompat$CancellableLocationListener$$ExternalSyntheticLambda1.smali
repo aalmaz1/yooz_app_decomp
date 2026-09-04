@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/core/util/Consumer;Landroid/location/Location;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener$$ExternalSyntheticLambda1;->f$0:Landroidx/core/util/Consumer;
 

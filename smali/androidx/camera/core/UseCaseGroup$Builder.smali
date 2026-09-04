@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     const/4 v0, 0x5
 
@@ -116,7 +116,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -139,7 +139,7 @@
 .end method
 
 .method private checkEffectTargets()V
-    .registers 6
+    .locals 5
 
     .line 153
     iget-object v0, p0, Landroidx/camera/core/UseCaseGroup$Builder;->mEffects:Ljava/util/List;
@@ -152,12 +152,12 @@
 
     move v2, v1
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -177,14 +177,14 @@
 
     and-int v4, v2, v3
 
-    if-gtz v4, :cond_23
+    if-gtz v4, :cond_0
 
     or-int/2addr v2, v3
 
-    goto :goto_8
+    goto :goto_0
 
     .line 158
-    :cond_23
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -211,14 +211,14 @@
 
     throw v0
 
-    :cond_3a
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public addEffect(Landroidx/camera/core/CameraEffect;)Landroidx/camera/core/UseCaseGroup$Builder;
-    .registers 3
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/camera/core/UseCaseGroup$Builder;->mEffects:Ljava/util/List;
@@ -229,7 +229,7 @@
 .end method
 
 .method public addUseCase(Landroidx/camera/core/UseCase;)Landroidx/camera/core/UseCaseGroup$Builder;
-    .registers 3
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/camera/core/UseCaseGroup$Builder;->mUseCases:Ljava/util/List;
@@ -240,7 +240,7 @@
 .end method
 
 .method public build()Landroidx/camera/core/UseCaseGroup;
-    .registers 5
+    .locals 4
 
     .line 181
     iget-object v0, p0, Landroidx/camera/core/UseCaseGroup$Builder;->mUseCases:Ljava/util/List;
@@ -273,7 +273,7 @@
 .end method
 
 .method public setViewPort(Landroidx/camera/core/ViewPort;)Landroidx/camera/core/UseCaseGroup$Builder;
-    .registers 2
+    .locals 0
 
     .line 112
     iput-object p1, p0, Landroidx/camera/core/UseCaseGroup$Builder;->mViewPort:Landroidx/camera/core/ViewPort;

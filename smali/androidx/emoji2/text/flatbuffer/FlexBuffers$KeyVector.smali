@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;)V
-    .registers 2
+    .locals 0
 
     .line 1039
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,14 +34,14 @@
 
 # virtual methods
 .method public get(I)Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;
-    .registers 6
+    .locals 4
 
     .line 1050
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$KeyVector;->size()I
 
     move-result v0
 
-    if-lt p1, v0, :cond_b
+    if-lt p1, v0, :cond_0
 
     .line 1051
     invoke-static {}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;->access$700()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;
@@ -51,7 +51,7 @@
     return-object p1
 
     .line 1052
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$KeyVector;->vec:Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;
 
     iget v0, v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;->end:I
@@ -91,7 +91,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 1062
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$KeyVector;->vec:Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;
@@ -104,7 +104,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1069
     new-instance v0, Ljava/lang/StringBuilder;
@@ -119,14 +119,14 @@
     const/4 v1, 0x0
 
     .line 1071
-    :goto_b
+    :goto_0
     iget-object v2, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$KeyVector;->vec:Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;
 
     invoke-virtual {v2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_2e
+    if-ge v1, v2, :cond_1
 
     .line 1072
     iget-object v2, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$KeyVector;->vec:Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;
@@ -146,19 +146,19 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    if-eq v1, v2, :cond_2b
+    if-eq v1, v2, :cond_0
 
     const-string v2, ", "
 
     .line 1074
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_2b
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     const-string v1, "]"
 
     .line 1077

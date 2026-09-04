@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(IILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(IILjava/lang/String;Landroidx/media3/extractor/AacUtil$1;)V
-    .registers 5
+    .locals 0
 
     .line 38
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/extractor/AacUtil$Config;-><init>(IILjava/lang/String;)V

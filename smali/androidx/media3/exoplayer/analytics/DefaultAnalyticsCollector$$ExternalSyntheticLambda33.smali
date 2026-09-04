@@ -20,7 +20,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;Z)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 8
+    .locals 6
 
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$$ExternalSyntheticLambda33;->f$0:Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
 

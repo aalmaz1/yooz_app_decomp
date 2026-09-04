@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 7959
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,21 +59,21 @@
 
 # virtual methods
 .method public addMessage(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 7973
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mMessages:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_7
+    :cond_0
     return-object p0
 .end method
 
 .method public build()Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation;
-    .registers 10
+    .locals 9
 
     .line 8032
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mMessages:Ljava/util/List;
@@ -122,7 +122,7 @@
 .end method
 
 .method public setLatestTimestamp(J)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
-    .registers 3
+    .locals 0
 
     .line 8022
     iput-wide p1, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mLatestTimestamp:J
@@ -131,7 +131,7 @@
 .end method
 
 .method public setReadPendingIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
-    .registers 2
+    .locals 0
 
     .line 8006
     iput-object p1, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mReadPendingIntent:Landroid/app/PendingIntent;
@@ -140,7 +140,7 @@
 .end method
 
 .method public setReplyAction(Landroid/app/PendingIntent;Landroidx/core/app/RemoteInput;)Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;
-    .registers 3
+    .locals 0
 
     .line 7991
     iput-object p2, p0, Landroidx/core/app/NotificationCompat$CarExtender$UnreadConversation$Builder;->mRemoteInput:Landroidx/core/app/RemoteInput;

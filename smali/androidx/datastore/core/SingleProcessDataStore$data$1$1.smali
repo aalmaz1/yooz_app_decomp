@@ -79,7 +79,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/core/State;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,7 +131,7 @@
 .end method
 
 .method public final invoke(Landroidx/datastore/core/State;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -161,7 +161,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Landroidx/datastore/core/State;
 
@@ -175,14 +175,14 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     .line 118
     iget v0, p0, Landroidx/datastore/core/SingleProcessDataStore$data$1$1;->label:I
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -197,23 +197,23 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1
 
     .line 120
     instance-of v1, v0, Landroidx/datastore/core/Final;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1a
-    if-ne p1, v0, :cond_1d
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     const/4 v2, 0x1
 
     .line 128
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     invoke-static {v2}, Lkotlin/coroutines/jvm/internal/Boxing;->boxBoolean(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -221,7 +221,7 @@
     return-object p1
 
     .line 119
-    :cond_22
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"

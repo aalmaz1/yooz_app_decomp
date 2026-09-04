@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Landroid/app/AppComponentFactory;-><init>()V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public final instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -40,7 +40,7 @@
 .end method
 
 .method public instantiateActivityCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -52,7 +52,7 @@
     const/4 p3, 0x0
 
     .line 137
-    :try_start_1
+    :try_start_0
     invoke-static {p2, p3, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object p1
@@ -77,22 +77,22 @@
     move-result-object p1
 
     check-cast p1, Landroid/app/Activity;
-    :try_end_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_19} :catch_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_1
     move-exception p1
 
     .line 140
-    :goto_1d
+    :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
     const-string p3, "Couldn\'t call constructor"
@@ -103,7 +103,7 @@
 .end method
 
 .method public final instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -127,7 +127,7 @@
 .end method
 
 .method public instantiateApplicationCompat(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -139,7 +139,7 @@
     const/4 v0, 0x0
 
     .line 113
-    :try_start_1
+    :try_start_0
     invoke-static {p2, v0, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object p1
@@ -164,22 +164,22 @@
     move-result-object p1
 
     check-cast p1, Landroid/app/Application;
-    :try_end_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_19} :catch_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_1
     move-exception p1
 
     .line 116
-    :goto_1d
+    :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
     const-string v0, "Couldn\'t call constructor"
@@ -190,7 +190,7 @@
 .end method
 
 .method public final instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -214,7 +214,7 @@
 .end method
 
 .method public instantiateProviderCompat(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -226,7 +226,7 @@
     const/4 v0, 0x0
 
     .line 204
-    :try_start_1
+    :try_start_0
     invoke-static {p2, v0, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object p1
@@ -251,22 +251,22 @@
     move-result-object p1
 
     check-cast p1, Landroid/content/ContentProvider;
-    :try_end_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_19} :catch_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_1
     move-exception p1
 
     .line 207
-    :goto_1d
+    :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
     const-string v0, "Couldn\'t call constructor"
@@ -277,7 +277,7 @@
 .end method
 
 .method public final instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -301,7 +301,7 @@
 .end method
 
 .method public instantiateReceiverCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -313,7 +313,7 @@
     const/4 p3, 0x0
 
     .line 157
-    :try_start_1
+    :try_start_0
     invoke-static {p2, p3, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object p1
@@ -338,22 +338,22 @@
     move-result-object p1
 
     check-cast p1, Landroid/content/BroadcastReceiver;
-    :try_end_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_19} :catch_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_1
     move-exception p1
 
     .line 160
-    :goto_1d
+    :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
     const-string p3, "Couldn\'t call constructor"
@@ -364,7 +364,7 @@
 .end method
 
 .method public final instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -388,7 +388,7 @@
 .end method
 
 .method public instantiateServiceCompat(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -400,7 +400,7 @@
     const/4 p3, 0x0
 
     .line 181
-    :try_start_1
+    :try_start_0
     invoke-static {p2, p3, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object p1
@@ -425,22 +425,22 @@
     move-result-object p1
 
     check-cast p1, Landroid/app/Service;
-    :try_end_19
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_19} :catch_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_1
     move-exception p1
 
     .line 184
-    :goto_1d
+    :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
     const-string p3, "Couldn\'t call constructor"

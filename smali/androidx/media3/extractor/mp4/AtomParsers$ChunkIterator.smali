@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/common/util/ParsableByteArray;Z)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -84,14 +84,14 @@
 
     const/4 p2, 0x1
 
-    if-ne p1, p2, :cond_25
+    if-ne p1, p2, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_26
+    :goto_0
     const-string p1, "first_chunk must be 1"
 
     invoke-static {p2, p1}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public moveNext()Z
-    .registers 5
+    .locals 4
 
     .line 2167
     iget v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->index:I
@@ -120,17 +120,17 @@
 
     iget v2, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->length:I
 
-    if-ne v0, v2, :cond_c
+    if-ne v0, v2, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 2171
-    :cond_c
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->chunkOffsetsAreLongs:Z
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 2172
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->chunkOffsets:Landroidx/media3/common/util/ParsableByteArray;
@@ -139,17 +139,17 @@
 
     move-result-wide v2
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 2173
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->chunkOffsets:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v2
 
-    :goto_1d
+    :goto_0
     iput-wide v2, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->offset:J
 
     .line 2174
@@ -157,7 +157,7 @@
 
     iget v2, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->nextSamplesPerChunkChangeIndex:I
 
-    if-ne v0, v2, :cond_45
+    if-ne v0, v2, :cond_3
 
     .line 2175
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->stsc:Landroidx/media3/common/util/ParsableByteArray;
@@ -182,7 +182,7 @@
 
     iput v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->remainingSamplesPerChunkChanges:I
 
-    if-lez v0, :cond_42
+    if-lez v0, :cond_2
 
     .line 2179
     iget-object v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->stsc:Landroidx/media3/common/util/ParsableByteArray;
@@ -193,15 +193,15 @@
 
     sub-int/2addr v0, v1
 
-    goto :goto_43
+    goto :goto_1
 
-    :cond_42
+    :cond_2
     const/4 v0, -0x1
 
     .line 2180
-    :goto_43
+    :goto_1
     iput v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->nextSamplesPerChunkChangeIndex:I
 
-    :cond_45
+    :cond_3
     return v1
 .end method

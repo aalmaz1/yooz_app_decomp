@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 38
     new-instance v0, Landroidx/media3/extractor/metadata/vorbis/VorbisComment$1;
@@ -30,7 +30,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-direct {p0, p1}, Landroidx/media3/extractor/metadata/flac/VorbisComment;-><init>(Landroid/os/Parcel;)V
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 31
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/metadata/flac/VorbisComment;-><init>(Ljava/lang/String;Ljava/lang/String;)V

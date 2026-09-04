@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/io/InputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -31,7 +31,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 7691
     iget-object p1, p0, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->mDataInputStream:Ljava/io/DataInputStream;
@@ -43,7 +43,7 @@
     return-void
 
     .line 7684
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Cannot create SeekableByteOrderedDataInputStream with stream that does not support mark/reset"
@@ -54,7 +54,7 @@
 .end method
 
 .method constructor <init>([B)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public seek(J)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -91,7 +91,7 @@
 
     cmp-long v0, v0, p1
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -103,17 +103,17 @@
 
     invoke-virtual {v0}, Ljava/io/DataInputStream;->reset()V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 7703
-    :cond_10
+    :cond_0
     iget v0, p0, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->mPosition:I
 
     int-to-long v0, v0
 
     sub-long/2addr p1, v0
 
-    :goto_14
+    :goto_0
     long-to-int p1, p1
 
     .line 7705

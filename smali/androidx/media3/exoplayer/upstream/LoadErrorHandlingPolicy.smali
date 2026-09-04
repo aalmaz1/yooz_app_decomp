@@ -31,7 +31,7 @@
 .end method
 
 .method public onLoadTaskConcluded(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

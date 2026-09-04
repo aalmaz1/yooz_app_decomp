@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 1
+    .locals 0
 
     invoke-static {}, Landroidx/camera/camera2/internal/Camera2CameraControlImpl;->lambda$clearInteropConfig$2()V
 

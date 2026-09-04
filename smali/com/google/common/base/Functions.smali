@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static compose(Lcom/google/common/base/Function;Lcom/google/common/base/Function;)Lcom/google/common/base/Function;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -71,7 +71,7 @@
 .end method
 
 .method public static constant(Ljava/lang/Object;)Lcom/google/common/base/Function;
-    .registers 2
+    .locals 1
     .param p0    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -105,7 +105,7 @@
 .end method
 
 .method public static forMap(Ljava/util/Map;)Lcom/google/common/base/Function;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -138,7 +138,7 @@
 .end method
 
 .method public static forMap(Ljava/util/Map;Ljava/lang/Object;)Lcom/google/common/base/Function;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -177,7 +177,7 @@
 .end method
 
 .method public static forPredicate(Lcom/google/common/base/Predicate;)Lcom/google/common/base/Function;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -212,7 +212,7 @@
 .end method
 
 .method public static forSupplier(Lcom/google/common/base/Supplier;)Lcom/google/common/base/Function;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -247,7 +247,7 @@
 .end method
 
 .method public static identity()Lcom/google/common/base/Function;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -265,7 +265,7 @@
 .end method
 
 .method public static toStringFunction()Lcom/google/common/base/Function;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

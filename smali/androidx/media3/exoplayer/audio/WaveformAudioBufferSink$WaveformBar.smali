@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public addSample(F)V
-    .registers 8
+    .locals 6
 
     const/high16 v0, -0x40800000    # -1.0f
 
@@ -55,23 +55,23 @@
 
     const/4 v1, 0x1
 
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpg-float v0, p1, v0
 
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 78
-    :goto_10
+    :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     .line 79
@@ -114,7 +114,7 @@
 .end method
 
 .method public getMaxSampleValue()D
-    .registers 3
+    .locals 2
 
     .line 59
     iget v0, p0, Landroidx/media3/exoplayer/audio/WaveformAudioBufferSink$WaveformBar;->maxSampleValue:F
@@ -125,7 +125,7 @@
 .end method
 
 .method public getMinSampleValue()D
-    .registers 3
+    .locals 2
 
     .line 54
     iget v0, p0, Landroidx/media3/exoplayer/audio/WaveformAudioBufferSink$WaveformBar;->minSampleValue:F
@@ -136,7 +136,7 @@
 .end method
 
 .method public getRootMeanSquare()D
-    .registers 5
+    .locals 4
 
     .line 69
     iget-wide v0, p0, Landroidx/media3/exoplayer/audio/WaveformAudioBufferSink$WaveformBar;->squareSum:D
@@ -155,7 +155,7 @@
 .end method
 
 .method public getSampleCount()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/media3/exoplayer/audio/WaveformAudioBufferSink$WaveformBar;->sampleCount:I

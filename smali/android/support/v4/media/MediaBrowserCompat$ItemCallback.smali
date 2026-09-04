@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 844
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,13 +48,13 @@
 
 # virtual methods
 .method public onError(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onItemLoaded(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

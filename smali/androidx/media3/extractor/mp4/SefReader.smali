@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x3a
 
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method private checkForSefData(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -147,7 +147,7 @@
 
     const v1, 0x53454654
 
-    if-eq v0, v1, :cond_24
+    if-eq v0, v1, :cond_0
 
     const-wide/16 v0, 0x0
 
@@ -157,7 +157,7 @@
     return-void
 
     .line 157
-    :cond_24
+    :cond_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v0
@@ -181,7 +181,7 @@
 .end method
 
 .method private static nameToDataType(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -197,90 +197,90 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_5c
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_c
+    :sswitch_0
     const-string v0, "Super_SlowMotion_BGM"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_15
+    if-nez p0, :cond_0
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x4
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_17
+    :sswitch_1
     const-string v0, "Super_SlowMotion_Deflickering_On"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_20
+    if-nez p0, :cond_1
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 v1, 0x3
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_22
+    :sswitch_2
     const-string v0, "Super_SlowMotion_Data"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_2b
+    if-nez p0, :cond_2
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const/4 v1, 0x2
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_2d
+    :sswitch_3
     const-string v0, "Super_SlowMotion_Edit_Data"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_36
+    if-nez p0, :cond_3
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_36
+    :cond_3
     const/4 v1, 0x1
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_38
+    :sswitch_4
     const-string v0, "SlowMotion_Data"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_41
+    if-nez p0, :cond_4
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_41
+    :cond_4
     const/4 v1, 0x0
 
-    :goto_42
-    packed-switch v1, :pswitch_data_72
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     const-string p0, "Invalid SEF name"
 
@@ -293,52 +293,52 @@
 
     throw p0
 
-    :pswitch_4d
+    :pswitch_0
     const/16 p0, 0xb01
 
     return p0
 
-    :pswitch_50
+    :pswitch_1
     const/16 p0, 0xb04
 
     return p0
 
-    :pswitch_53
+    :pswitch_2
     const/16 p0, 0xb00
 
     return p0
 
-    :pswitch_56
+    :pswitch_3
     const/16 p0, 0xb03
 
     return p0
 
-    :pswitch_59
+    :pswitch_4
     const/16 p0, 0x890
 
     return p0
 
-    :sswitch_data_5c
+    :sswitch_data_0
     .sparse-switch
-        -0x6604662e -> :sswitch_38
-        -0x4f6659e5 -> :sswitch_2d
-        -0x4a96a712 -> :sswitch_22
-        -0x3182f331 -> :sswitch_17
-        0x68f2d704 -> :sswitch_c
+        -0x6604662e -> :sswitch_4
+        -0x4f6659e5 -> :sswitch_3
+        -0x4a96a712 -> :sswitch_2
+        -0x3182f331 -> :sswitch_1
+        0x68f2d704 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_72
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_59
-        :pswitch_56
-        :pswitch_53
-        :pswitch_50
-        :pswitch_4d
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private readSdrs(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)V
-    .registers 15
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -376,10 +376,10 @@
     move p1, v6
 
     .line 167
-    :goto_19
+    :goto_0
     div-int/lit8 v5, v2, 0xc
 
-    if-ge p1, v5, :cond_59
+    if-ge p1, v5, :cond_1
 
     const/4 v5, 0x2
 
@@ -393,31 +393,31 @@
 
     const/16 v7, 0x890
 
-    if-eq v5, v7, :cond_3d
+    if-eq v5, v7, :cond_0
 
     const/16 v7, 0xb00
 
-    if-eq v5, v7, :cond_3d
+    if-eq v5, v7, :cond_0
 
     const/16 v7, 0xb01
 
-    if-eq v5, v7, :cond_3d
+    if-eq v5, v7, :cond_0
 
     const/16 v7, 0xb03
 
-    if-eq v5, v7, :cond_3d
+    if-eq v5, v7, :cond_0
 
     const/16 v7, 0xb04
 
-    if-eq v5, v7, :cond_3d
+    if-eq v5, v7, :cond_0
 
     .line 183
     invoke-virtual {v4, v3}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_56
+    goto :goto_1
 
     .line 178
-    :cond_3d
+    :cond_0
     iget v7, p0, Landroidx/media3/extractor/mp4/SefReader;->tailLength:I
 
     int-to-long v7, v7
@@ -446,20 +446,20 @@
 
     invoke-interface {v10, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_56
+    :goto_1
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 187
-    :cond_59
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/mp4/SefReader;->dataReferences:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_2
 
     const-wide/16 v0, 0x0
 
@@ -468,7 +468,7 @@
 
     return-void
 
-    :cond_66
+    :cond_2
     const/4 p1, 0x3
 
     .line 192
@@ -491,7 +491,7 @@
 .end method
 
 .method private readSefData(Landroidx/media3/extractor/ExtractorInput;Ljava/util/List;)V
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -547,14 +547,14 @@
     invoke-interface {p1, v4, v5, v2}, Landroidx/media3/extractor/ExtractorInput;->readFully([BII)V
 
     .line 203
-    :goto_1f
+    :goto_0
     iget-object p1, p0, Landroidx/media3/extractor/mp4/SefReader;->dataReferences:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-ge v5, p1, :cond_70
+    if-ge v5, p1, :cond_3
 
     .line 204
     iget-object p1, p0, Landroidx/media3/extractor/mp4/SefReader;->dataReferences:Ljava/util/List;
@@ -604,28 +604,28 @@
 
     const/16 v2, 0x890
 
-    if-eq v4, v2, :cond_66
+    if-eq v4, v2, :cond_1
 
     const/16 p1, 0xb00
 
-    if-eq v4, p1, :cond_6d
+    if-eq v4, p1, :cond_2
 
     const/16 p1, 0xb01
 
-    if-eq v4, p1, :cond_6d
+    if-eq v4, p1, :cond_2
 
     const/16 p1, 0xb03
 
-    if-eq v4, p1, :cond_6d
+    if-eq v4, p1, :cond_2
 
     const/16 p1, 0xb04
 
-    if-ne v4, p1, :cond_60
+    if-ne v4, p1, :cond_0
 
-    goto :goto_6d
+    goto :goto_1
 
     .line 226
-    :cond_60
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -633,25 +633,25 @@
     throw p1
 
     .line 218
-    :cond_66
+    :cond_1
     invoke-static {v3, p1}, Landroidx/media3/extractor/mp4/SefReader;->readSlowMotionData(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/extractor/metadata/mp4/SlowMotionData;
 
     move-result-object p1
 
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_6d
-    :goto_6d
+    :cond_2
+    :goto_1
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_70
+    :cond_3
     return-void
 .end method
 
 .method private static readSlowMotionData(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/extractor/metadata/mp4/SlowMotionData;
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -680,12 +680,12 @@
     move v1, p1
 
     .line 236
-    :goto_11
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_65
+    if-ge v1, v2, :cond_1
 
     .line 237
     sget-object v2, Landroidx/media3/extractor/mp4/SefReader;->COLON_SPLITTER:Lcom/google/common/base/Splitter;
@@ -709,10 +709,10 @@
 
     const/4 v5, 0x0
 
-    if-ne v3, v4, :cond_60
+    if-ne v3, v4, :cond_0
 
     .line 242
-    :try_start_2b
+    :try_start_0
     invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -761,14 +761,14 @@
     invoke-direct/range {v6 .. v11}, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;-><init>(JJI)V
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_57
-    .catch Ljava/lang/NumberFormatException; {:try_start_2b .. :try_end_57} :catch_5a
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_5a
+    :catch_0
     move-exception p0
 
     .line 248
@@ -779,7 +779,7 @@
     throw p0
 
     .line 239
-    :cond_60
+    :cond_0
     invoke-static {v5, v5}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
@@ -787,7 +787,7 @@
     throw p0
 
     .line 251
-    :cond_65
+    :cond_1
     new-instance p0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData;
 
     invoke-direct {p0, v0}, Landroidx/media3/extractor/metadata/mp4/SlowMotionData;-><init>(Ljava/util/List;)V
@@ -798,7 +798,7 @@
 
 # virtual methods
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;Ljava/util/List;)I
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -823,17 +823,17 @@
 
     const/4 v3, 0x1
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_3
 
-    if-eq v0, v3, :cond_1f
+    if-eq v0, v3, :cond_2
 
     const/4 v4, 0x2
 
-    if-eq v0, v4, :cond_1b
+    if-eq v0, v4, :cond_1
 
     const/4 v4, 0x3
 
-    if-ne v0, v4, :cond_15
+    if-ne v0, v4, :cond_0
 
     .line 136
     invoke-direct {p0, p1, p3}, Landroidx/media3/extractor/mp4/SefReader;->readSefData(Landroidx/media3/extractor/ExtractorInput;Ljava/util/List;)V
@@ -841,10 +841,10 @@
     .line 137
     iput-wide v1, p2, Landroidx/media3/extractor/PositionHolder;->position:J
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 140
-    :cond_15
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -852,19 +852,19 @@
     throw p1
 
     .line 133
-    :cond_1b
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/mp4/SefReader;->readSdrs(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)V
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 130
-    :cond_1f
+    :cond_2
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/mp4/SefReader;->checkForSefData(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)V
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 122
-    :cond_23
+    :cond_3
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v4
@@ -873,33 +873,33 @@
 
     cmp-long p1, v4, v6
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_5
 
     const-wide/16 v6, 0x8
 
     cmp-long p1, v4, v6
 
-    if-gez p1, :cond_34
+    if-gez p1, :cond_4
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_34
+    :cond_4
     sub-long v1, v4, v6
 
     .line 126
-    :cond_36
-    :goto_36
+    :cond_5
+    :goto_0
     iput-wide v1, p2, Landroidx/media3/extractor/PositionHolder;->position:J
 
     .line 127
     iput v3, p0, Landroidx/media3/extractor/mp4/SefReader;->readerState:I
 
-    :goto_3a
+    :goto_1
     return v3
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/media3/extractor/mp4/SefReader;->dataReferences:Ljava/util/List;

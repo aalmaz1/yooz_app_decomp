@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JLjava/util/List;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;JLjava/util/List;Ljava/util/List;)V
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +100,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;JLjava/util/List;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/Descriptor;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public getAdaptationSetIndex(I)I
-    .registers 5
+    .locals 3
 
     .line 94
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -160,8 +160,8 @@
 
     const/4 v1, 0x0
 
-    :goto_7
-    if-ge v1, v0, :cond_19
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 96
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -174,16 +174,16 @@
 
     iget v2, v2, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->type:I
 
-    if-ne v2, p1, :cond_16
+    if-ne v2, p1, :cond_0
 
     return v1
 
-    :cond_16
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p1, -0x1
 
     return p1

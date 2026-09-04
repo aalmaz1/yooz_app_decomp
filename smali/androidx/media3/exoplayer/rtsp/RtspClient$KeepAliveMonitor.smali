@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspClient;J)V
-    .registers 4
+    .locals 0
 
     .line 790
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 807
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -103,16 +103,16 @@
 .end method
 
 .method public start()V
-    .registers 4
+    .locals 3
 
     .line 797
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$KeepAliveMonitor;->isStarted:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 801

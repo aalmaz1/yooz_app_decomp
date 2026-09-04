@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 445
     new-instance v0, Landroidx/media3/exoplayer/ExoPlayer$PreloadConfiguration;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 460
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

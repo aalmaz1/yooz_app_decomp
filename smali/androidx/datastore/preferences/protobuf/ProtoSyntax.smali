@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 36
     new-instance v0, Landroidx/datastore/preferences/protobuf/ProtoSyntax;
@@ -62,7 +62,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -76,7 +76,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/ProtoSyntax;
-    .registers 2
+    .locals 1
 
     .line 34
     const-class v0, Landroidx/datastore/preferences/protobuf/ProtoSyntax;
@@ -91,7 +91,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/ProtoSyntax;
-    .registers 1
+    .locals 1
 
     .line 34
     sget-object v0, Landroidx/datastore/preferences/protobuf/ProtoSyntax;->$VALUES:[Landroidx/datastore/preferences/protobuf/ProtoSyntax;

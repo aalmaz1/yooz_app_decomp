@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 59
     invoke-direct {p0}, Landroidx/camera/video/internal/config/MimeInfo$Builder;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/camera/video/internal/config/MimeInfo;
-    .registers 2
+    .locals 1
 
     .line 57
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;->build()Landroidx/camera/video/internal/config/AudioMimeInfo;

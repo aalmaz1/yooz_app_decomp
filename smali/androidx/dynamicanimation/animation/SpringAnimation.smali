@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
-    .registers 2
+    .locals 0
 
     .line 78
     invoke-direct {p0, p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;-><init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Landroidx/dynamicanimation/animation/FloatPropertyCompat;F)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -124,12 +124,12 @@
 .end method
 
 .method private sanityCheck()V
-    .registers 5
+    .locals 4
 
     .line 197
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 201
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringForce;->getFinalPosition()F
@@ -145,7 +145,7 @@
 
     cmpl-double v2, v0, v2
 
-    if-gtz v2, :cond_20
+    if-gtz v2, :cond_1
 
     .line 205
     iget v2, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mMinValue:F
@@ -154,12 +154,12 @@
 
     cmpg-double v0, v0, v2
 
-    if-ltz v0, :cond_18
+    if-ltz v0, :cond_0
 
     return-void
 
     .line 206
-    :cond_18
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Final position of the spring cannot be less than the min value."
@@ -169,7 +169,7 @@
     throw v0
 
     .line 203
-    :cond_20
+    :cond_1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Final position of the spring cannot be greater than the max value."
@@ -179,7 +179,7 @@
     throw v0
 
     .line 198
-    :cond_28
+    :cond_2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Incomplete SpringAnimation: Either final position or a spring force needs to be set."
@@ -192,25 +192,25 @@
 
 # virtual methods
 .method public animateToFinalPosition(F)V
-    .registers 3
+    .locals 1
 
     .line 152
     invoke-virtual {p0}, Landroidx/dynamicanimation/animation/SpringAnimation;->isRunning()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 153
     iput p1, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mPendingPosition:F
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 155
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 156
     new-instance v0, Landroidx/dynamicanimation/animation/SpringForce;
@@ -220,7 +220,7 @@
     iput-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
 
     .line 158
-    :cond_14
+    :cond_1
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
 
     invoke-virtual {v0, p1}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
@@ -228,12 +228,12 @@
     .line 159
     invoke-virtual {p0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
-    :goto_1c
+    :goto_0
     return-void
 .end method
 
 .method public canSkipToEnd()Z
-    .registers 5
+    .locals 4
 
     .line 191
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -244,21 +244,21 @@
 
     cmpl-double v0, v0, v2
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method getAcceleration(FF)F
-    .registers 4
+    .locals 1
 
     .line 257
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -271,7 +271,7 @@
 .end method
 
 .method public getSpring()Landroidx/dynamicanimation/animation/SpringForce;
-    .registers 2
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -280,7 +280,7 @@
 .end method
 
 .method isAtEquilibrium(FF)Z
-    .registers 4
+    .locals 1
 
     .line 262
     iget-object v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -293,7 +293,7 @@
 .end method
 
 .method public setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
-    .registers 2
+    .locals 0
 
     .line 128
     iput-object p1, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -302,20 +302,20 @@
 .end method
 
 .method setValueThreshold(F)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public skipToEnd()V
-    .registers 3
+    .locals 2
 
     .line 173
     invoke-virtual {p0}, Landroidx/dynamicanimation/animation/SpringAnimation;->canSkipToEnd()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_2
 
     .line 177
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -326,23 +326,23 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     .line 180
     iget-boolean v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mRunning:Z
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 181
     iput-boolean v0, p0, Landroidx/dynamicanimation/animation/SpringAnimation;->mEndRequested:Z
 
-    :cond_17
+    :cond_0
     return-void
 
     .line 178
-    :cond_18
+    :cond_1
     new-instance v0, Landroid/util/AndroidRuntimeException;
 
     const-string v1, "Animations may only be started on the main thread"
@@ -352,7 +352,7 @@
     throw v0
 
     .line 174
-    :cond_20
+    :cond_2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Spring animations can only come to an end when there is damping"
@@ -363,7 +363,7 @@
 .end method
 
 .method public start()V
-    .registers 4
+    .locals 3
 
     .line 134
     invoke-direct {p0}, Landroidx/dynamicanimation/animation/SpringAnimation;->sanityCheck()V
@@ -386,7 +386,7 @@
 .end method
 
 .method updateValueAndVelocity(J)Z
-    .registers 23
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -401,14 +401,14 @@
 
     const v5, 0x7f7fffff    # Float.MAX_VALUE
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 216
     iget v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mPendingPosition:F
 
     cmpl-float v6, v1, v5
 
-    if-eqz v6, :cond_19
+    if-eqz v6, :cond_0
 
     .line 217
     iget-object v6, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -419,7 +419,7 @@
     iput v5, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mPendingPosition:F
 
     .line 220
-    :cond_19
+    :cond_0
     iget-object v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
 
     invoke-virtual {v1}, Landroidx/dynamicanimation/animation/SpringForce;->getFinalPosition()F
@@ -437,12 +437,12 @@
     return v2
 
     .line 226
-    :cond_26
+    :cond_1
     iget v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mPendingPosition:F
 
     cmpl-float v1, v1, v5
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_2
 
     .line 227
     iget-object v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -507,10 +507,10 @@
 
     iput v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mVelocity:F
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 239
-    :cond_63
+    :cond_2
     iget-object v13, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
 
     iget v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mValue:F
@@ -540,7 +540,7 @@
     iput v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mVelocity:F
 
     .line 244
-    :goto_7b
+    :goto_0
     iget v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mValue:F
 
     iget v5, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mMinValue:F
@@ -571,7 +571,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a4
+    if-eqz v1, :cond_3
 
     .line 248
     iget-object v1, v0, Landroidx/dynamicanimation/animation/SpringAnimation;->mSpring:Landroidx/dynamicanimation/animation/SpringForce;
@@ -587,6 +587,6 @@
 
     return v2
 
-    :cond_a4
+    :cond_3
     return v3
 .end method

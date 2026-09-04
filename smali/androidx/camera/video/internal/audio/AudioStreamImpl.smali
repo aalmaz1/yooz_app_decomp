@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/video/internal/audio/AudioSettings;Landroid/content/Context;)V
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;,
@@ -111,7 +111,7 @@
 
     const/4 v3, 0x1
 
-    if-eqz v0, :cond_a8
+    if-eqz v0, :cond_3
 
     .line 112
     iput-object p1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mSettings:Landroidx/camera/video/internal/audio/AudioSettings;
@@ -142,12 +142,12 @@
 
     move-result v0
 
-    if-lez v0, :cond_49
+    if-lez v0, :cond_0
 
     move v1, v3
 
     .line 119
-    :cond_49
+    :cond_0
     invoke-static {v1}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     mul-int/2addr v0, v2
@@ -206,15 +206,15 @@
 
     const/16 v5, 0x1f
 
-    if-lt v4, v5, :cond_83
+    if-lt v4, v5, :cond_1
 
-    if-eqz p2, :cond_83
+    if-eqz p2, :cond_1
 
     .line 130
     invoke-static {v2, p2}, Landroidx/camera/video/internal/compat/Api31Impl;->setContext(Landroid/media/AudioRecord$Builder;Landroid/content/Context;)V
 
     .line 132
-    :cond_83
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/internal/audio/AudioSettings;->getAudioSource()I
 
     move-result p1
@@ -239,12 +239,12 @@
 
     move-result p2
 
-    if-ne p2, v3, :cond_9d
+    if-ne p2, v3, :cond_2
 
     return-void
 
     .line 145
-    :cond_9d
+    :cond_2
     invoke-virtual {p1}, Landroid/media/AudioRecord;->release()V
 
     .line 146
@@ -257,7 +257,7 @@
     throw p1
 
     .line 105
-    :cond_a8
+    :cond_3
     new-instance p2, Ljava/lang/UnsupportedOperationException;
 
     const/4 v0, 0x3
@@ -309,7 +309,7 @@
 .end method
 
 .method private checkNotReleasedOrThrow()V
-    .registers 3
+    .locals 2
 
     .line 277
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mIsReleased:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -328,7 +328,7 @@
 .end method
 
 .method private checkStartedOrThrow()V
-    .registers 3
+    .locals 2
 
     .line 281
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -345,7 +345,7 @@
 .end method
 
 .method private static computeInterpolatedTimeNs(IJLandroid/media/AudioTimestamp;)J
-    .registers 6
+    .locals 2
 
     .line 298
     iget-wide v0, p3, Landroid/media/AudioTimestamp;->framePosition:J
@@ -366,16 +366,16 @@
 
     cmp-long v0, p2, p0
 
-    if-gez v0, :cond_11
+    if-gez v0, :cond_0
 
     move-wide p2, p0
 
-    :cond_11
+    :cond_0
     return-wide p2
 .end method
 
 .method private generatePresentationTimeNs()J
-    .registers 7
+    .locals 6
 
     .line 260
     invoke-static {}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->hasAudioTimestampQuirk()Z
@@ -384,7 +384,7 @@
 
     const-wide/16 v1, -0x1
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     .line 261
     new-instance v0, Landroid/media/AudioTimestamp;
@@ -400,7 +400,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_0
 
     .line 264
     iget-object v3, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mSettings:Landroidx/camera/video/internal/audio/AudioSettings;
@@ -415,9 +415,9 @@
 
     move-result-wide v3
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     const-string v0, "AudioStreamImpl"
 
     const-string v3, "Unable to get audio timestamp"
@@ -425,25 +425,25 @@
     .line 267
     invoke-static {v0, v3}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2a
+    :cond_1
     move-wide v3, v1
 
-    :goto_2b
+    :goto_0
     cmp-long v0, v3, v1
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_2
 
     .line 271
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v3
 
-    :cond_33
+    :cond_2
     return-wide v3
 .end method
 
 .method private static getMinBufferSize(III)I
-    .registers 3
+    .locals 0
 
     .line 305
     invoke-static {p1}, Landroidx/camera/video/internal/audio/AudioUtils;->channelCountToChannelConfig(I)I
@@ -458,7 +458,7 @@
 .end method
 
 .method private static hasAudioTimestampQuirk()Z
-    .registers 1
+    .locals 1
 
     .line 293
     const-class v0, Landroidx/camera/video/internal/compat/quirk/AudioTimestampFramePositionIncorrectQuirk;
@@ -467,47 +467,47 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public static isSettingsSupported(III)Z
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
-    if-lez p0, :cond_d
+    if-lez p0, :cond_1
 
-    if-gtz p1, :cond_6
+    if-gtz p1, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
     .line 289
-    :cond_6
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->getMinBufferSize(III)I
 
     move-result p0
 
-    if-lez p0, :cond_d
+    if-lez p0, :cond_1
 
     const/4 v0, 0x1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     return v0
 .end method
 
 .method static synthetic lambda$notifySilenced$0(Landroidx/camera/video/internal/audio/AudioStream$AudioStreamCallback;Z)V
-    .registers 2
+    .locals 0
 
     .line 253
     invoke-interface {p0, p1}, Landroidx/camera/video/internal/audio/AudioStream$AudioStreamCallback;->onSilenceStateChanged(Z)V
@@ -518,7 +518,7 @@
 
 # virtual methods
 .method notifySilenced(Z)V
-    .registers 6
+    .locals 4
 
     .line 249
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mCallbackExecutor:Ljava/util/concurrent/Executor;
@@ -526,9 +526,9 @@
     .line 250
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioStreamCallback:Landroidx/camera/video/internal/audio/AudioStream$AudioStreamCallback;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 252
     iget-object v2, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mNotifiedSilenceState:Ljava/util/concurrent/atomic/AtomicReference;
@@ -549,7 +549,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_0
 
     .line 253
     new-instance v2, Landroidx/camera/video/internal/audio/AudioStreamImpl$$ExternalSyntheticLambda0;
@@ -558,12 +558,12 @@
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    :cond_24
+    :cond_0
     return-void
 .end method
 
 .method public read(Ljava/nio/ByteBuffer;)Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
-    .registers 9
+    .locals 7
 
     .line 212
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->checkNotReleasedOrThrow()V
@@ -580,7 +580,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_24
+    if-lez v0, :cond_0
 
     .line 218
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
@@ -605,13 +605,13 @@
 
     iput-wide v3, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mTotalFramesRead:J
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     const-wide/16 v1, 0x0
 
     .line 222
-    :goto_26
+    :goto_0
     invoke-static {v0, v1, v2}, Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;->of(IJ)Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
 
     move-result-object p1
@@ -620,7 +620,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 188
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mIsReleased:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -631,21 +631,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 191
-    :cond_a
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_19
+    if-lt v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecordingCallback:Landroid/media/AudioManager$AudioRecordingCallback;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 192
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
@@ -653,7 +653,7 @@
     invoke-static {v1, v0}, Landroidx/camera/video/internal/compat/Api29Impl;->unregisterAudioRecordingCallback(Landroid/media/AudioRecord;Landroid/media/AudioManager$AudioRecordingCallback;)V
 
     .line 194
-    :cond_19
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
 
     invoke-virtual {v0}, Landroid/media/AudioRecord;->release()V
@@ -662,7 +662,7 @@
 .end method
 
 .method public setCallback(Landroidx/camera/video/internal/audio/AudioStream$AudioStreamCallback;Ljava/util/concurrent/Executor;)V
-    .registers 6
+    .locals 3
 
     .line 227
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -682,17 +682,17 @@
     .line 228
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->checkNotReleasedOrThrow()V
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     const-string v0, "executor can\'t be null with non-null callback."
 
     .line 229
@@ -709,28 +709,28 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_43
+    if-lt v0, v1, :cond_5
 
     .line 234
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecordingCallback:Landroid/media/AudioManager$AudioRecordingCallback;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 235
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
 
     invoke-static {v1, v0}, Landroidx/camera/video/internal/compat/Api29Impl;->unregisterAudioRecordingCallback(Landroid/media/AudioRecord;Landroid/media/AudioManager$AudioRecordingCallback;)V
 
-    :cond_2e
-    if-nez p1, :cond_31
+    :cond_2
+    if-nez p1, :cond_3
 
     return-void
 
     .line 240
-    :cond_31
+    :cond_3
     iget-object p1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecordingCallback:Landroid/media/AudioManager$AudioRecordingCallback;
 
-    if-nez p1, :cond_3c
+    if-nez p1, :cond_4
 
     .line 241
     new-instance p1, Landroidx/camera/video/internal/audio/AudioStreamImpl$AudioRecordingApi29Callback;
@@ -740,19 +740,19 @@
     iput-object p1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecordingCallback:Landroid/media/AudioManager$AudioRecordingCallback;
 
     .line 243
-    :cond_3c
+    :cond_4
     iget-object p1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
 
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecordingCallback:Landroid/media/AudioManager$AudioRecordingCallback;
 
     invoke-static {p1, p2, v0}, Landroidx/camera/video/internal/compat/Api29Impl;->registerAudioRecordingCallback(Landroid/media/AudioRecord;Ljava/util/concurrent/Executor;Landroid/media/AudioManager$AudioRecordingCallback;)V
 
-    :cond_43
+    :cond_5
     return-void
 .end method
 
 .method public start()V
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/audio/AudioStream$AudioStreamException;
@@ -771,12 +771,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 156
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
 
     invoke-virtual {v0}, Landroid/media/AudioRecord;->startRecording()V
@@ -792,7 +792,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v0, v2, :cond_41
+    if-ne v0, v2, :cond_3
 
     const-wide/16 v4, 0x0
 
@@ -811,7 +811,7 @@
 
     const/16 v2, 0x1d
 
-    if-lt v0, v2, :cond_3d
+    if-lt v0, v2, :cond_2
 
     .line 166
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
@@ -820,31 +820,31 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     .line 168
     invoke-static {v0}, Landroidx/camera/video/internal/compat/Api29Impl;->isClientSilenced(Landroid/media/AudioRecordingConfiguration;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_3b
+    :cond_1
     move v1, v3
 
-    :goto_3c
+    :goto_0
     move v3, v1
 
     .line 170
-    :cond_3d
+    :cond_2
     invoke-virtual {p0, v3}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->notifySilenced(Z)V
 
     return-void
 
     .line 158
-    :cond_41
+    :cond_3
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mIsStarted:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
@@ -879,7 +879,7 @@
 .end method
 
 .method public stop()V
-    .registers 3
+    .locals 2
 
     .line 175
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->checkNotReleasedOrThrow()V
@@ -893,12 +893,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     return-void
 
     .line 179
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl;->mAudioRecord:Landroid/media/AudioRecord;
 
     invoke-virtual {v0}, Landroid/media/AudioRecord;->stop()V
@@ -912,7 +912,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_35
+    if-eq v0, v1, :cond_1
 
     .line 181
     new-instance v0, Ljava/lang/StringBuilder;
@@ -941,6 +941,6 @@
     .line 181
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_35
+    :cond_1
     return-void
 .end method

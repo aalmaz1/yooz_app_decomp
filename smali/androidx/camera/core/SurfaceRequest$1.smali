@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/SurfaceRequest;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -58,12 +58,12 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 208
     instance-of p1, p1, Landroidx/camera/core/SurfaceRequest$RequestCancelledException;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 210
     iget-object p1, p0, Landroidx/camera/core/SurfaceRequest$1;->val$requestCancellationFuture:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -76,10 +76,10 @@
 
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
-    goto :goto_19
+    goto :goto_0
 
     .line 214
-    :cond_f
+    :cond_0
     iget-object p1, p0, Landroidx/camera/core/SurfaceRequest$1;->val$requestCancellationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     const/4 v0, 0x0
@@ -90,12 +90,12 @@
 
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
-    :goto_19
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 197
     check-cast p1, Ljava/lang/Void;
@@ -106,7 +106,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 3
+    .locals 1
 
     .line 203
     iget-object p1, p0, Landroidx/camera/core/SurfaceRequest$1;->val$requestCancellationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;

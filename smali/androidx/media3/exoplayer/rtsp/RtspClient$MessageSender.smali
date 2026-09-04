@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspClient;)V
-    .registers 2
+    .locals 0
 
     .line 373
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -35,7 +35,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspClient;Landroidx/media3/exoplayer/rtsp/RtspClient$1;)V
-    .registers 3
+    .locals 0
 
     .line 373
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;-><init>(Landroidx/media3/exoplayer/rtsp/RtspClient;)V
@@ -44,7 +44,7 @@
 .end method
 
 .method private getRequestWithCommonHeaders(ILjava/lang/String;Ljava/util/Map;Landroid/net/Uri;)Landroidx/media3/exoplayer/rtsp/RtspRequest;
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -83,7 +83,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_0
 
     .line 473
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -94,7 +94,7 @@
 
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :try_start_22
+    :try_start_0
     const-string p2, "Authorization"
 
     .line 475
@@ -117,12 +117,12 @@
 
     .line 475
     invoke-virtual {v0, p2, v1}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->add(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
-    :try_end_37
-    .catch Landroidx/media3/common/ParserException; {:try_start_22 .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_43
+    goto :goto_0
 
-    :catch_38
+    :catch_0
     move-exception p2
 
     .line 479
@@ -135,8 +135,8 @@
     invoke-static {v1, v2}, Landroidx/media3/exoplayer/rtsp/RtspClient;->access$700(Landroidx/media3/exoplayer/rtsp/RtspClient;Ljava/lang/Throwable;)V
 
     .line 483
-    :cond_43
-    :goto_43
+    :cond_0
+    :goto_0
     invoke-virtual {v0, p3}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->addAll(Ljava/util/Map;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
 
     .line 484
@@ -154,7 +154,7 @@
 .end method
 
 .method private sendRequest(Landroidx/media3/exoplayer/rtsp/RtspRequest;)V
-    .registers 4
+    .locals 2
 
     .line 488
     iget-object v0, p1, Landroidx/media3/exoplayer/rtsp/RtspRequest;->headers:Landroidx/media3/exoplayer/rtsp/RtspHeaders;
@@ -186,16 +186,16 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_21
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 490
@@ -233,7 +233,7 @@
 .end method
 
 .method private sendResponse(Landroidx/media3/exoplayer/rtsp/RtspResponse;)V
-    .registers 3
+    .locals 1
 
     .line 498
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMessageUtil;->serializeResponse(Landroidx/media3/exoplayer/rtsp/RtspResponse;)Lcom/google/common/collect/ImmutableList;
@@ -260,7 +260,7 @@
 
 # virtual methods
 .method public retryLastRequest()V
-    .registers 6
+    .locals 5
 
     .line 433
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->lastRequest:Landroidx/media3/exoplayer/rtsp/RtspRequest;
@@ -290,13 +290,13 @@
 
     move-result-object v2
 
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -311,7 +311,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_0
 
     const-string v4, "User-Agent"
 
@@ -320,7 +320,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_0
 
     const-string v4, "Session"
 
@@ -329,7 +329,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_1a
+    if-nez v4, :cond_0
 
     const-string v4, "Authorization"
 
@@ -338,12 +338,12 @@
 
     move-result v4
 
-    if-eqz v4, :cond_47
+    if-eqz v4, :cond_1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 446
-    :cond_47
+    :cond_1
     invoke-interface {v0, v3}, Lcom/google/common/collect/Multimap;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v4
@@ -356,10 +356,10 @@
 
     invoke-interface {v1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 449
-    :cond_55
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->lastRequest:Landroidx/media3/exoplayer/rtsp/RtspRequest;
 
     iget v0, v0, Landroidx/media3/exoplayer/rtsp/RtspRequest;->method:I
@@ -387,7 +387,7 @@
 .end method
 
 .method public sendDescribeRequest(Landroid/net/Uri;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -408,7 +408,7 @@
 .end method
 
 .method public sendMethodNotAllowedResponse(I)V
-    .registers 6
+    .locals 4
 
     .line 456
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtspResponse;
@@ -456,7 +456,7 @@
 .end method
 
 .method public sendOptionsRequest(Landroid/net/Uri;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x4
 
@@ -477,7 +477,7 @@
 .end method
 
 .method public sendPauseRequest(Landroid/net/Uri;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 425
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -490,16 +490,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 v0, 0x5
@@ -526,7 +526,7 @@
 .end method
 
 .method public sendPlayRequest(Landroid/net/Uri;JLjava/lang/String;)V
-    .registers 8
+    .locals 3
 
     .line 401
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -537,7 +537,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
 
@@ -547,15 +547,15 @@
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_13
+    if-ne v0, v2, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const-string v0, "Range"
@@ -584,7 +584,7 @@
 .end method
 
 .method public sendSetupRequest(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 2
 
     .line 391
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -614,7 +614,7 @@
 .end method
 
 .method public sendTeardownRequest(Landroid/net/Uri;Ljava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 412
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -625,7 +625,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_25
+    if-eq v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
 
@@ -633,12 +633,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 418
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspClient;
 
     const/4 v1, 0x0
@@ -660,7 +660,7 @@
     .line 419
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspClient$MessageSender;->sendRequest(Landroidx/media3/exoplayer/rtsp/RtspRequest;)V
 
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     return-void
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/location/GnssMeasurementsEvent$Callback;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
 
     .line 839
     invoke-direct {p0}, Landroid/location/GnssMeasurementsEvent$Callback;-><init>()V
@@ -39,17 +39,17 @@
 
 # virtual methods
 .method synthetic lambda$onGnssMeasurementsReceived$0$androidx-core-location-LocationManagerCompat$GnssMeasurementsTransport(Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent;)V
-    .registers 4
+    .locals 1
 
     .line 856
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->mExecutor:Ljava/util/concurrent/Executor;
 
-    if-eq v0, p1, :cond_5
+    if-eq v0, p1, :cond_0
 
     return-void
 
     .line 859
-    :cond_5
+    :cond_0
     iget-object p1, p0, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->mCallback:Landroid/location/GnssMeasurementsEvent$Callback;
 
     invoke-virtual {p1, p2}, Landroid/location/GnssMeasurementsEvent$Callback;->onGnssMeasurementsReceived(Landroid/location/GnssMeasurementsEvent;)V
@@ -58,17 +58,17 @@
 .end method
 
 .method synthetic lambda$onStatusChanged$1$androidx-core-location-LocationManagerCompat$GnssMeasurementsTransport(Ljava/util/concurrent/Executor;I)V
-    .registers 4
+    .locals 1
 
     .line 871
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->mExecutor:Ljava/util/concurrent/Executor;
 
-    if-eq v0, p1, :cond_5
+    if-eq v0, p1, :cond_0
 
     return-void
 
     .line 874
-    :cond_5
+    :cond_0
     iget-object p1, p0, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->mCallback:Landroid/location/GnssMeasurementsEvent$Callback;
 
     invoke-virtual {p1, p2}, Landroid/location/GnssMeasurementsEvent$Callback;->onStatusChanged(I)V
@@ -77,17 +77,17 @@
 .end method
 
 .method public onGnssMeasurementsReceived(Landroid/location/GnssMeasurementsEvent;)V
-    .registers 4
+    .locals 2
 
     .line 850
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->mExecutor:Ljava/util/concurrent/Executor;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 855
-    :cond_5
+    :cond_0
     new-instance v1, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, v0, p1}, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport$$ExternalSyntheticLambda0;-><init>(Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent;)V
@@ -98,17 +98,17 @@
 .end method
 
 .method public onStatusChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 865
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->mExecutor:Ljava/util/concurrent/Executor;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 870
-    :cond_5
+    :cond_0
     new-instance v1, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0, v0, p1}, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport$$ExternalSyntheticLambda1;-><init>(Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;Ljava/util/concurrent/Executor;I)V
@@ -119,7 +119,7 @@
 .end method
 
 .method public unregister()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

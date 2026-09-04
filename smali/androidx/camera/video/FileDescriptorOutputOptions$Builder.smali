@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/ParcelFileDescriptor;)V
-    .registers 3
+    .locals 1
 
     .line 98
     new-instance v0, Landroidx/camera/video/AutoValue_FileDescriptorOutputOptions_FileDescriptorOutputOptionsInternal$Builder;
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/FileDescriptorOutputOptions;
-    .registers 3
+    .locals 2
 
     .line 109
     new-instance v0, Landroidx/camera/video/FileDescriptorOutputOptions;
@@ -76,7 +76,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/camera/video/OutputOptions;
-    .registers 2
+    .locals 1
 
     .line 86
     invoke-virtual {p0}, Landroidx/camera/video/FileDescriptorOutputOptions$Builder;->build()Landroidx/camera/video/FileDescriptorOutputOptions;
@@ -87,7 +87,7 @@
 .end method
 
 .method public bridge synthetic setDurationLimitMillis(J)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 86
     invoke-super {p0, p1, p2}, Landroidx/camera/video/OutputOptions$Builder;->setDurationLimitMillis(J)Ljava/lang/Object;
@@ -98,7 +98,7 @@
 .end method
 
 .method public bridge synthetic setFileSizeLimit(J)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 86
     invoke-super {p0, p1, p2}, Landroidx/camera/video/OutputOptions$Builder;->setFileSizeLimit(J)Ljava/lang/Object;
@@ -109,7 +109,7 @@
 .end method
 
 .method public bridge synthetic setLocation(Landroid/location/Location;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 86
     invoke-super {p0, p1}, Landroidx/camera/video/OutputOptions$Builder;->setLocation(Landroid/location/Location;)Ljava/lang/Object;

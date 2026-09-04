@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/activity/ImmLeaksCleaner$Companion$cleaner$2;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/activity/ImmLeaksCleaner$Cleaner;
-    .registers 6
+    .locals 5
 
     .line 114
     :try_start_0
@@ -130,25 +130,25 @@
     invoke-direct {v2, v0, v1, v3}, Landroidx/activity/ImmLeaksCleaner$ValidCleaner;-><init>(Ljava/lang/reflect/Field;Ljava/lang/reflect/Field;Ljava/lang/reflect/Field;)V
 
     check-cast v2, Landroidx/activity/ImmLeaksCleaner$Cleaner;
-    :try_end_34
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_34} :catch_35
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 128
-    :catch_35
+    :catch_0
     sget-object v0, Landroidx/activity/ImmLeaksCleaner$FailedInitialization;->INSTANCE:Landroidx/activity/ImmLeaksCleaner$FailedInitialization;
 
     move-object v2, v0
 
     check-cast v2, Landroidx/activity/ImmLeaksCleaner$Cleaner;
 
-    :goto_3a
+    :goto_0
     return-object v2
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 113
     invoke-virtual {p0}, Landroidx/activity/ImmLeaksCleaner$Companion$cleaner$2;->invoke()Landroidx/activity/ImmLeaksCleaner$Cleaner;

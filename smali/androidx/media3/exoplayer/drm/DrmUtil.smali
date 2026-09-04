@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,20 +32,20 @@
 .end method
 
 .method public static getErrorCodeForMediaDrmException(Ljava/lang/Throwable;I)I
-    .registers 5
+    .locals 3
 
     .line 80
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/DrmUtil$Api21;->isMediaDrmStateException(Ljava/lang/Throwable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 81
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/DrmUtil$Api21;->mediaDrmStateExceptionToErrorCode(Ljava/lang/Throwable;)I
@@ -55,136 +55,136 @@
     return p0
 
     .line 82
-    :cond_11
+    :cond_0
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
     const/16 v2, 0x1776
 
-    if-lt v0, v1, :cond_20
+    if-lt v0, v1, :cond_1
 
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/DrmUtil$Api23;->isMediaDrmResetException(Ljava/lang/Throwable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     return v2
 
     .line 84
-    :cond_20
+    :cond_1
     instance-of v0, p0, Landroid/media/NotProvisionedException;
 
     const/16 v1, 0x1772
 
-    if-nez v0, :cond_5d
+    if-nez v0, :cond_a
 
     .line 85
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/DrmUtil;->isFailureToConstructNotProvisionedException(Ljava/lang/Throwable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
-    goto :goto_5d
+    goto :goto_0
 
     .line 87
-    :cond_2d
+    :cond_2
     instance-of v0, p0, Landroid/media/DeniedByServerException;
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_3
 
     const/16 p0, 0x1777
 
     return p0
 
     .line 89
-    :cond_34
+    :cond_3
     instance-of v0, p0, Landroidx/media3/exoplayer/drm/UnsupportedDrmException;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const/16 p0, 0x1771
 
     return p0
 
     .line 91
-    :cond_3b
+    :cond_4
     instance-of v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$MissingSchemeDataException;
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_5
 
     const/16 p0, 0x1773
 
     return p0
 
     .line 93
-    :cond_42
+    :cond_5
     instance-of p0, p0, Landroidx/media3/exoplayer/drm/KeysExpiredException;
 
-    if-eqz p0, :cond_49
+    if-eqz p0, :cond_6
 
     const/16 p0, 0x1778
 
     return p0
 
-    :cond_49
+    :cond_6
     const/4 p0, 0x1
 
-    if-ne p1, p0, :cond_4d
+    if-ne p1, p0, :cond_7
 
     return v2
 
-    :cond_4d
+    :cond_7
     const/4 p0, 0x2
 
-    if-ne p1, p0, :cond_53
+    if-ne p1, p0, :cond_8
 
     const/16 p0, 0x1774
 
     return p0
 
-    :cond_53
+    :cond_8
     const/4 p0, 0x3
 
-    if-ne p1, p0, :cond_57
+    if-ne p1, p0, :cond_9
 
     return v1
 
     .line 105
-    :cond_57
+    :cond_9
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p0
 
-    :cond_5d
-    :goto_5d
+    :cond_a
+    :goto_0
     return v1
 .end method
 
 .method public static isFailureToConstructNotProvisionedException(Ljava/lang/Throwable;)Z
-    .registers 3
+    .locals 2
 
     .line 114
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
     instance-of v0, p0, Ljava/lang/NoSuchMethodError;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 116
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 117
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -197,39 +197,39 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1e
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_1f
+    :goto_0
     return p0
 .end method
 
 .method public static isFailureToConstructResourceBusyException(Ljava/lang/Throwable;)Z
-    .registers 3
+    .locals 2
 
     .line 125
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
     instance-of v0, p0, Ljava/lang/NoSuchMethodError;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 127
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 128
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -242,15 +242,15 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1e
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_1f
+    :goto_0
     return p0
 .end method

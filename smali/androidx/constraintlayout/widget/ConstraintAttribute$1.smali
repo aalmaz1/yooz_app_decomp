@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 88
     invoke-static {}, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->values()[Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -33,7 +33,7 @@
 
     sput-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
-    :try_start_9
+    :try_start_0
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->COLOR_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
 
     invoke-virtual {v1}, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->ordinal()I
@@ -43,11 +43,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_12
-    :try_start_12
+    :catch_0
+    :try_start_1
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->COLOR_DRAWABLE_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -59,11 +59,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    :catch_1d
-    :try_start_1d
+    :catch_1
+    :try_start_2
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->INT_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -75,11 +75,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_28
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_28} :catch_28
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_28
-    :try_start_28
+    :catch_2
+    :try_start_3
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->FLOAT_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -91,11 +91,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_33
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_28 .. :try_end_33} :catch_33
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    :catch_33
-    :try_start_33
+    :catch_3
+    :try_start_4
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->STRING_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -107,11 +107,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_3e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_3e
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :catch_3e
-    :try_start_3e
+    :catch_4
+    :try_start_5
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->BOOLEAN_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -123,11 +123,11 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
-    :try_end_49
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3e .. :try_end_49} :catch_49
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    :catch_49
-    :try_start_49
+    :catch_5
+    :try_start_6
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->DIMENSION_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -139,9 +139,9 @@
     const/4 v2, 0x7
 
     aput v2, v0, v1
-    :try_end_54
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_49 .. :try_end_54} :catch_54
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    :catch_54
+    :catch_6
     return-void
 .end method

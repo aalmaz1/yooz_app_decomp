@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final component1(Landroidx/activity/result/ActivityResult;)I
-    .registers 2
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public static final component2(Landroidx/activity/result/ActivityResult;)Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     const-string v0, "<this>"
 

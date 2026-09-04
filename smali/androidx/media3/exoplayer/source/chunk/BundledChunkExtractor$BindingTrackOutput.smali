@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(IILandroidx/media3/common/Format;)V
-    .registers 4
+    .locals 0
 
     .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,9 +62,9 @@
 
 # virtual methods
 .method public bind(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;J)V
-    .registers 4
+    .locals 0
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 300
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->fakeTrackOutput:Landroidx/media3/extractor/DiscardingTrackOutput;
@@ -74,7 +74,7 @@
     return-void
 
     .line 303
-    :cond_7
+    :cond_0
     iput-wide p2, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->endTimeUs:J
 
     .line 304
@@ -91,28 +91,28 @@
     .line 305
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->sampleFormat:Landroidx/media3/common/Format;
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
     .line 306
     invoke-interface {p1, p2}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    :cond_1a
+    :cond_1
     return-void
 .end method
 
 .method public format(Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 1
 
     .line 313
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->manifestFormat:Landroidx/media3/common/Format;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/Format;->withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object p1
 
-    :cond_8
+    :cond_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->sampleFormat:Landroidx/media3/common/Format;
 
     .line 314
@@ -132,7 +132,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZI)I
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -156,7 +156,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
-    .registers 4
+    .locals 0
 
     .line 326
     iget-object p3, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -173,7 +173,7 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 15
+    .locals 8
 
     .line 336
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->endTimeUs:J
@@ -182,11 +182,11 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_13
+    if-ltz v0, :cond_0
 
     .line 337
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->fakeTrackOutput:Landroidx/media3/extractor/DiscardingTrackOutput;
@@ -194,7 +194,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->trackOutput:Landroidx/media3/extractor/TrackOutput;
 
     .line 339
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$BindingTrackOutput;->trackOutput:Landroidx/media3/extractor/TrackOutput;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;

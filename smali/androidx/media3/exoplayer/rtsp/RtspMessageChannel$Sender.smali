@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$7HecldtNx9CUzQpud0GqXIDuFH0(Landroid/os/HandlerThread;)Z
-    .registers 1
+    .locals 0
 
     invoke-virtual {p0}, Landroid/os/HandlerThread;->quit()Z
 
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 0
 
     .line 215
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 4
+    .locals 3
 
     .line 247
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->senderThreadHandler:Landroid/os/Handler;
@@ -94,39 +94,39 @@
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 250
-    :try_start_f
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->senderThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->join()V
-    :try_end_14
-    .catch Ljava/lang/InterruptedException; {:try_start_f .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 252
-    :catch_15
+    :catch_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->senderThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->interrupt()V
 
-    :goto_1a
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$send$0$androidx-media3-exoplayer-rtsp-RtspMessageChannel$Sender([BLjava/util/List;)V
-    .registers 4
+    .locals 1
 
     .line 236
     :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->outputStream:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :catch_6
+    :catch_0
     move-exception p1
 
     .line 238
@@ -136,7 +136,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 239
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -147,13 +147,13 @@
 
     invoke-interface {v0, p2, p1}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageListener;->onSendingFailed(Ljava/util/List;Ljava/lang/Exception;)V
 
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public send(Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -42,14 +42,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x3
 
     new-array v0, v0, [B
 
     .line 321
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->START_CODE:[B
 
@@ -57,7 +57,7 @@
 
     nop
 
-    :array_a
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 348
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,16 +82,16 @@
 
 # virtual methods
 .method public onData([BII)V
-    .registers 8
+    .locals 4
 
     .line 417
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->isFilling:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     sub-int/2addr p3, p2
 
     .line 421
@@ -103,7 +103,7 @@
 
     add-int v3, v2, p3
 
-    if-ge v1, v3, :cond_18
+    if-ge v1, v3, :cond_1
 
     add-int/2addr v2, p3
 
@@ -117,7 +117,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->data:[B
 
     .line 424
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->data:[B
 
     iget v1, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->length:I
@@ -135,7 +135,7 @@
 .end method
 
 .method public onStartCode(II)Z
-    .registers 11
+    .locals 8
 
     .line 369
     iget v0, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->state:I
@@ -144,7 +144,7 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_8
 
     const/16 v3, 0xb5
 
@@ -154,26 +154,26 @@
 
     const-string v6, "H263Reader"
 
-    if-eq v0, v2, :cond_4d
+    if-eq v0, v2, :cond_6
 
     const/4 v7, 0x3
 
-    if-eq v0, v4, :cond_3f
+    if-eq v0, v4, :cond_4
 
     const/4 v4, 0x4
 
-    if-eq v0, v7, :cond_2b
+    if-eq v0, v7, :cond_2
 
-    if-ne v0, v4, :cond_25
+    if-ne v0, v4, :cond_1
 
     const/16 v0, 0xb3
 
-    if-eq p1, v0, :cond_1d
+    if-eq p1, v0, :cond_0
 
-    if-ne p1, v3, :cond_61
+    if-ne p1, v3, :cond_9
 
     .line 404
-    :cond_1d
+    :cond_0
     iget p1, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->length:I
 
     sub-int/2addr p1, p2
@@ -186,19 +186,19 @@
     return v2
 
     .line 410
-    :cond_25
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_2b
+    :cond_2
     and-int/lit16 p1, p1, 0xf0
 
     const/16 p2, 0x20
 
-    if-eq p1, p2, :cond_38
+    if-eq p1, p2, :cond_3
 
     .line 394
     invoke-static {v6, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
@@ -206,10 +206,10 @@
     .line 395
     invoke-virtual {p0}, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->reset()V
 
-    goto :goto_61
+    goto :goto_0
 
     .line 397
-    :cond_38
+    :cond_3
     iget p1, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->length:I
 
     iput p1, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->volStartPosition:I
@@ -217,12 +217,12 @@
     .line 398
     iput v4, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->state:I
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_3f
+    :cond_4
     const/16 p2, 0x1f
 
-    if-le p1, p2, :cond_4a
+    if-le p1, p2, :cond_5
 
     .line 386
     invoke-static {v6, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
@@ -230,16 +230,16 @@
     .line 387
     invoke-virtual {p0}, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->reset()V
 
-    goto :goto_61
+    goto :goto_0
 
     .line 389
-    :cond_4a
+    :cond_5
     iput v7, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->state:I
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_4d
-    if-eq p1, v3, :cond_56
+    :cond_6
+    if-eq p1, v3, :cond_7
 
     .line 378
     invoke-static {v6, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
@@ -247,18 +247,18 @@
     .line 379
     invoke-virtual {p0}, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->reset()V
 
-    goto :goto_61
+    goto :goto_0
 
     .line 381
-    :cond_56
+    :cond_7
     iput v4, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->state:I
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_59
+    :cond_8
     const/16 p2, 0xb0
 
-    if-ne p1, p2, :cond_61
+    if-ne p1, p2, :cond_9
 
     .line 372
     iput v2, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->state:I
@@ -267,8 +267,8 @@
     iput-boolean v2, p0, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->isFilling:Z
 
     .line 412
-    :cond_61
-    :goto_61
+    :cond_9
+    :goto_0
     sget-object p1, Landroidx/media3/extractor/ts/H263Reader$CsdBuffer;->START_CODE:[B
 
     array-length p2, p1
@@ -279,7 +279,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

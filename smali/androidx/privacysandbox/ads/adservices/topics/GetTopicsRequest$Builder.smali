@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final build()Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest;
-    .registers 4
+    .locals 3
 
     .line 83
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest$Builder;->adsSdkName:Ljava/lang/String;
@@ -85,17 +85,17 @@
 
     move-result v0
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
-    if-eqz v0, :cond_19
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 84
     new-instance v0, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest;
@@ -109,7 +109,7 @@
     return-object v0
 
     .line 83
-    :cond_19
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "adsSdkName must be set"
@@ -124,7 +124,7 @@
 .end method
 
 .method public final setAdsSdkName(Ljava/lang/String;)Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "adsSdkName"
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public final setShouldRecordObservation(Z)Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest$Builder;
-    .registers 3
+    .locals 1
 
     .line 77
     move-object v0, p0

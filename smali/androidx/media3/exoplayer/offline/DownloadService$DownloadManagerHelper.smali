@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/offline/DownloadManager;ZLandroidx/media3/exoplayer/scheduler/Scheduler;Ljava/lang/Class;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/offline/DownloadManager;ZLandroidx/media3/exoplayer/scheduler/Scheduler;Ljava/lang/Class;Landroidx/media3/exoplayer/offline/DownloadService$1;)V
-    .registers 7
+    .locals 0
 
     .line 943
     invoke-direct/range {p0 .. p5}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;-><init>(Landroid/content/Context;Landroidx/media3/exoplayer/offline/DownloadManager;ZLandroidx/media3/exoplayer/scheduler/Scheduler;Ljava/lang/Class;)V
@@ -96,7 +96,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;)Landroidx/media3/exoplayer/offline/DownloadManager;
-    .registers 1
+    .locals 0
 
     .line 943
     iget-object p0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadManager:Landroidx/media3/exoplayer/offline/DownloadManager;
@@ -105,7 +105,7 @@
 .end method
 
 .method private cancelScheduler()V
-    .registers 3
+    .locals 2
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "scheduler"
@@ -124,7 +124,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 1106
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->scheduler:Landroidx/media3/exoplayer/scheduler/Scheduler;
@@ -134,22 +134,22 @@
     .line 1107
     iput-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->scheduledRequirements:Landroidx/media3/exoplayer/scheduler/Requirements;
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method private restartService()V
-    .registers 5
+    .locals 4
 
     .line 1116
     iget-boolean v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->foregroundAllowed:Z
 
     const-string v1, "DownloadService"
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 1118
-    :try_start_6
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->context:Landroid/content/Context;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->serviceClass:Ljava/lang/Class;
@@ -164,22 +164,22 @@
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->context:Landroid/content/Context;
 
     invoke-static {v2, v0}, Landroidx/media3/common/util/Util;->startForegroundService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
-    :try_end_15
-    .catch Ljava/lang/IllegalStateException; {:try_start_6 .. :try_end_15} :catch_16
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :catch_16
+    :catch_0
     const-string v0, "Failed to restart (foreground launch restriction)"
 
     .line 1124
     invoke-static {v1, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_31
+    goto :goto_0
 
     .line 1130
-    :cond_1c
-    :try_start_1c
+    :cond_0
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->context:Landroid/content/Context;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->serviceClass:Ljava/lang/Class;
@@ -194,23 +194,23 @@
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-    :try_end_2b
-    .catch Ljava/lang/IllegalStateException; {:try_start_1c .. :try_end_2b} :catch_2c
+    :try_end_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_31
+    goto :goto_0
 
-    :catch_2c
+    :catch_1
     const-string v0, "Failed to restart (process is idle)"
 
     .line 1135
     invoke-static {v1, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_31
+    :goto_0
     return-void
 .end method
 
 .method private schedulerNeedsUpdate(Landroidx/media3/exoplayer/scheduler/Requirements;)Z
-    .registers 3
+    .locals 1
 
     .line 1099
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->scheduledRequirements:Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -225,52 +225,52 @@
 .end method
 
 .method private serviceMayNeedRestart()Z
-    .registers 2
+    .locals 1
 
     .line 1112
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_1
 
     invoke-static {v0}, Landroidx/media3/exoplayer/offline/DownloadService;->access$800(Landroidx/media3/exoplayer/offline/DownloadService;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public attachService(Landroidx/media3/exoplayer/offline/DownloadService;)V
-    .registers 4
+    .locals 2
 
     .line 970
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 971
@@ -283,7 +283,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 978
     invoke-static {}, Landroidx/media3/common/util/Util;->createHandlerForCurrentOrMainLooper()Landroid/os/Handler;
@@ -297,26 +297,26 @@
     .line 979
     invoke-virtual {v0, v1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
 
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method public detachService(Landroidx/media3/exoplayer/offline/DownloadService;)V
-    .registers 3
+    .locals 1
 
     .line 985
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-ne v0, p1, :cond_6
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 p1, 0x0
@@ -328,7 +328,7 @@
 .end method
 
 .method synthetic lambda$attachService$0$androidx-media3-exoplayer-offline-DownloadService$DownloadManagerHelper(Landroidx/media3/exoplayer/offline/DownloadService;)V
-    .registers 3
+    .locals 1
 
     .line 980
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadManager:Landroidx/media3/exoplayer/offline/DownloadManager;
@@ -343,23 +343,23 @@
 .end method
 
 .method public onDownloadChanged(Landroidx/media3/exoplayer/offline/DownloadManager;Landroidx/media3/exoplayer/offline/Download;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 0
 
     .line 1042
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 1043
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/offline/DownloadService;->access$400(Landroidx/media3/exoplayer/offline/DownloadService;Landroidx/media3/exoplayer/offline/Download;)V
 
     .line 1045
-    :cond_7
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->serviceMayNeedRestart()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     iget p1, p2, Landroidx/media3/exoplayer/offline/Download;->state:I
 
@@ -367,7 +367,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     const-string p1, "DownloadService"
 
@@ -379,47 +379,47 @@
     .line 1051
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->restartService()V
 
-    :cond_1f
+    :cond_1
     return-void
 .end method
 
 .method public onDownloadRemoved(Landroidx/media3/exoplayer/offline/DownloadManager;Landroidx/media3/exoplayer/offline/Download;)V
-    .registers 3
+    .locals 0
 
     .line 1057
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 1058
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadService;->access$600(Landroidx/media3/exoplayer/offline/DownloadService;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public final onIdle(Landroidx/media3/exoplayer/offline/DownloadManager;)V
-    .registers 2
+    .locals 0
 
     .line 1064
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 1065
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadService;->access$700(Landroidx/media3/exoplayer/offline/DownloadService;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public onInitialized(Landroidx/media3/exoplayer/offline/DownloadManager;)V
-    .registers 3
+    .locals 1
 
     .line 1034
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadService:Landroidx/media3/exoplayer/offline/DownloadService;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 1035
     invoke-virtual {p1}, Landroidx/media3/exoplayer/offline/DownloadManager;->getCurrentDownloads()Ljava/util/List;
@@ -428,12 +428,12 @@
 
     invoke-static {v0, p1}, Landroidx/media3/exoplayer/offline/DownloadService;->access$300(Landroidx/media3/exoplayer/offline/DownloadService;Ljava/util/List;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onRequirementsStateChanged(Landroidx/media3/exoplayer/offline/DownloadManager;Landroidx/media3/exoplayer/scheduler/Requirements;I)V
-    .registers 4
+    .locals 0
 
     .line 1074
     invoke-virtual {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->updateScheduler()Z
@@ -442,23 +442,23 @@
 .end method
 
 .method public onWaitingForRequirementsChanged(Landroidx/media3/exoplayer/offline/DownloadManager;Z)V
-    .registers 4
+    .locals 1
 
-    if-nez p2, :cond_2a
+    if-nez p2, :cond_1
 
     .line 1081
     invoke-virtual {p1}, Landroidx/media3/exoplayer/offline/DownloadManager;->getDownloadsPaused()Z
 
     move-result p2
 
-    if-nez p2, :cond_2a
+    if-nez p2, :cond_1
 
     .line 1082
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->serviceMayNeedRestart()Z
 
     move-result p2
 
-    if-eqz p2, :cond_2a
+    if-eqz p2, :cond_1
 
     .line 1086
     invoke-virtual {p1}, Landroidx/media3/exoplayer/offline/DownloadManager;->getCurrentDownloads()Ljava/util/List;
@@ -468,12 +468,12 @@
     const/4 p2, 0x0
 
     .line 1087
-    :goto_13
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge p2, v0, :cond_2a
+    if-ge p2, v0, :cond_1
 
     .line 1088
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -484,24 +484,24 @@
 
     iget v0, v0, Landroidx/media3/exoplayer/offline/Download;->state:I
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_0
 
     .line 1089
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->restartService()V
 
     return-void
 
-    :cond_27
+    :cond_0
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     return-void
 .end method
 
 .method public updateScheduler()Z
-    .registers 7
+    .locals 6
 
     .line 998
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadManager:Landroidx/media3/exoplayer/offline/DownloadManager;
@@ -515,14 +515,14 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     xor-int/2addr v0, v2
 
     return v0
 
-    :cond_d
-    if-nez v0, :cond_13
+    :cond_0
+    if-nez v0, :cond_1
 
     .line 1004
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->cancelScheduler()V
@@ -530,7 +530,7 @@
     return v2
 
     .line 1008
-    :cond_13
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->downloadManager:Landroidx/media3/exoplayer/offline/DownloadManager;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/offline/DownloadManager;->getRequirements()Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -551,7 +551,7 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_2
 
     .line 1011
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->cancelScheduler()V
@@ -559,17 +559,17 @@
     return v3
 
     .line 1015
-    :cond_2a
+    :cond_2
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->schedulerNeedsUpdate(Landroidx/media3/exoplayer/scheduler/Requirements;)Z
 
     move-result v1
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_3
 
     return v2
 
     .line 1019
-    :cond_31
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -585,14 +585,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_4
 
     .line 1021
     iput-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$DownloadManagerHelper;->scheduledRequirements:Landroidx/media3/exoplayer/scheduler/Requirements;
 
     return v2
 
-    :cond_44
+    :cond_4
     const-string v0, "DownloadService"
 
     const-string v1, "Failed to schedule restart"

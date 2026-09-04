@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 64
     iget-boolean p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->padding:Z
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 64
     iget-boolean p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->marker:Z
@@ -75,7 +75,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)B
-    .registers 1
+    .locals 0
 
     .line 64
     iget-byte p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->payloadType:B
@@ -84,7 +84,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 64
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->sequenceNumber:I
@@ -93,7 +93,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 64
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->timestamp:J
@@ -102,7 +102,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 64
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->ssrc:I
@@ -111,7 +111,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)[B
-    .registers 1
+    .locals 0
 
     .line 64
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->csrc:[B
@@ -120,7 +120,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)[B
-    .registers 1
+    .locals 0
 
     .line 64
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->payloadData:[B
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/rtsp/RtpPacket;
-    .registers 3
+    .locals 2
 
     .line 135
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtpPacket;
@@ -144,7 +144,7 @@
 .end method
 
 .method public setCsrc([B)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 2
+    .locals 0
 
     .line 120
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -156,7 +156,7 @@
 .end method
 
 .method public setMarker(Z)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 2
+    .locals 0
 
     .line 84
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->marker:Z
@@ -165,7 +165,7 @@
 .end method
 
 .method public setPadding(Z)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 2
+    .locals 0
 
     .line 77
     iput-boolean p1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->padding:Z
@@ -174,7 +174,7 @@
 .end method
 
 .method public setPayloadData([B)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 2
+    .locals 0
 
     .line 128
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -186,7 +186,7 @@
 .end method
 
 .method public setPayloadType(B)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 2
+    .locals 0
 
     .line 91
     iput-byte p1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->payloadType:B
@@ -195,23 +195,23 @@
 .end method
 
 .method public setSequenceNumber(I)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 4
+    .locals 2
 
     const v0, 0xffff
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
-    if-gt p1, v0, :cond_9
+    if-gt p1, v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
     .line 98
-    :goto_a
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     and-int/2addr p1, v0
@@ -223,7 +223,7 @@
 .end method
 
 .method public setSsrc(I)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 2
+    .locals 0
 
     .line 113
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->ssrc:I
@@ -232,7 +232,7 @@
 .end method
 
 .method public setTimestamp(J)Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;
-    .registers 3
+    .locals 0
 
     .line 106
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;->timestamp:J

@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/TrackGroup;I)V
-    .registers 4
+    .locals 0
 
     .line 3462
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

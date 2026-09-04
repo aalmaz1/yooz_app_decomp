@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;Z)V
-    .registers 4
+    .locals 1
 
     .line 512
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public getTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 531
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaSourceList$MediaSourceHolder;->mediaSource:Landroidx/media3/exoplayer/source/MaskingMediaSource;
@@ -84,7 +84,7 @@
 .end method
 
 .method public getUid()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 526
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaSourceList$MediaSourceHolder;->uid:Ljava/lang/Object;
@@ -93,7 +93,7 @@
 .end method
 
 .method public reset(I)V
-    .registers 2
+    .locals 0
 
     .line 519
     iput p1, p0, Landroidx/media3/exoplayer/MediaSourceList$MediaSourceHolder;->firstWindowIndexInChild:I

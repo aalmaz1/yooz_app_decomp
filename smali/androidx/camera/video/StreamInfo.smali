@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 51
     sget-object v0, Landroidx/camera/video/StreamInfo$StreamState;->INACTIVE:Landroidx/camera/video/StreamInfo$StreamState;
@@ -109,7 +109,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,7 +118,7 @@
 .end method
 
 .method static of(ILandroidx/camera/video/StreamInfo$StreamState;)Landroidx/camera/video/StreamInfo;
-    .registers 4
+    .locals 2
 
     .line 79
     new-instance v0, Landroidx/camera/video/AutoValue_StreamInfo;
@@ -131,7 +131,7 @@
 .end method
 
 .method static of(ILandroidx/camera/video/StreamInfo$StreamState;Landroidx/camera/core/SurfaceRequest$TransformationInfo;)Landroidx/camera/video/StreamInfo;
-    .registers 4
+    .locals 1
 
     .line 85
     new-instance v0, Landroidx/camera/video/AutoValue_StreamInfo;

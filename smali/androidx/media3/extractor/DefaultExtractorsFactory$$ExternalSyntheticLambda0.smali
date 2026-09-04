@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final getConstructor()Ljava/lang/reflect/Constructor;
-    .registers 2
+    .locals 1
 
     invoke-static {}, Landroidx/media3/extractor/DefaultExtractorsFactory;->$r8$lambda$6W2W1-5R-UwlVLNHyyNaCk7TSbw()Ljava/lang/reflect/Constructor;
 

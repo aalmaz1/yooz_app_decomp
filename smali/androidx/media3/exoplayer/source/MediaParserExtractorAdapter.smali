@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 54
     new-instance v0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter$$ExternalSyntheticLambda0;
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -61,7 +61,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/exoplayer/analytics/PlayerId;Ljava/util/Map;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,12 +131,12 @@
 
     move-result-object p2
 
-    :goto_36
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_0
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -159,9 +159,9 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/media/MediaParser;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Landroid/media/MediaParser;
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_52
+    :cond_0
     const-string p2, "android.media.mediaparser.UNKNOWN"
 
     .line 109
@@ -172,19 +172,19 @@
 
     const/16 v0, 0x1f
 
-    if-lt p2, v0, :cond_61
+    if-lt p2, v0, :cond_1
 
     .line 111
     iget-object p2, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->mediaParser:Landroid/media/MediaParser;
 
     invoke-static {p2, p1}, Landroidx/media3/exoplayer/source/mediaparser/MediaParserUtil;->setLogSessionIdOnMediaParser(Landroid/media/MediaParser;Landroidx/media3/exoplayer/analytics/PlayerId;)V
 
-    :cond_61
+    :cond_1
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/analytics/PlayerId;Ljava/util/Map;Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter$1;)V
-    .registers 4
+    .locals 0
 
     .line 48
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;-><init>(Landroidx/media3/exoplayer/analytics/PlayerId;Ljava/util/Map;)V
@@ -193,7 +193,7 @@
 .end method
 
 .method static synthetic lambda$static$0(Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
-    .registers 3
+    .locals 2
 
     .line 55
     new-instance v0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;
@@ -210,7 +210,7 @@
 
 # virtual methods
 .method public disableSeekingOnMp3Streams()V
-    .registers 3
+    .locals 2
 
     const-string v0, "android.media.mediaparser.Mp3Parser"
 
@@ -221,19 +221,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->outputConsumerAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->disableSeeking()V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public getCurrentInputPosition()J
-    .registers 3
+    .locals 2
 
     .line 156
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->inputReaderAdapter:Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;
@@ -246,7 +246,7 @@
 .end method
 
 .method public init(Landroidx/media3/common/DataReader;Landroid/net/Uri;Ljava/util/Map;JJLandroidx/media3/extractor/ExtractorOutput;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -297,7 +297,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_0
 
     .line 130
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->mediaParser:Landroid/media/MediaParser;
@@ -320,17 +320,17 @@
 
     invoke-virtual {p2, p1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->setSelectedParserName(Ljava/lang/String;)V
 
-    goto :goto_47
+    goto :goto_0
 
     .line 133
-    :cond_32
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->parserName:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_47
+    if-nez p1, :cond_1
 
     .line 135
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->mediaParser:Landroid/media/MediaParser;
@@ -346,13 +346,13 @@
 
     invoke-virtual {p2, p1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->setSelectedParserName(Ljava/lang/String;)V
 
-    :cond_47
-    :goto_47
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public read(Landroidx/media3/extractor/PositionHolder;)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -377,35 +377,35 @@
 
     iput-wide v1, p1, Landroidx/media3/extractor/PositionHolder;->position:J
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 172
-    :cond_14
+    :cond_0
     iget-wide v0, p1, Landroidx/media3/extractor/PositionHolder;->position:J
 
     const-wide/16 v2, -0x1
 
     cmp-long p1, v0, v2
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_1f
+    :goto_0
     return p1
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 144
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->mediaParser:Landroid/media/MediaParser;
@@ -416,7 +416,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 7
+    .locals 2
 
     .line 161
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;->inputReaderAdapter:Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;
@@ -441,16 +441,16 @@
 
     cmp-long p1, v0, p1
 
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_0
 
     iget-object p1, p3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     iget-object p1, p3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    :goto_1c
+    :goto_0
     check-cast p1, Landroid/media/MediaParser$SeekPoint;
 
     invoke-virtual {p4, p1}, Landroid/media/MediaParser;->seek(Landroid/media/MediaParser$SeekPoint;)V

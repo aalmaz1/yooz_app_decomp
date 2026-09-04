@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;Landroidx/media3/common/MediaItem$SubtitleConfiguration;Landroidx/media3/datasource/DataSource$Factory;JLandroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;ZLjava/lang/Object;)V
-    .registers 19
+    .locals 10
 
     move-object v0, p0
 
@@ -159,16 +159,16 @@
     .line 180
     iget-object v5, v1, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->id:Ljava/lang/String;
 
-    if-eqz v5, :cond_6e
+    if-eqz v5, :cond_0
 
     iget-object v5, v1, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->id:Ljava/lang/String;
 
-    goto :goto_6f
+    goto :goto_0
 
-    :cond_6e
+    :cond_0
     move-object v5, p1
 
-    :goto_6f
+    :goto_0
     invoke-virtual {v4, v5}, Landroidx/media3/common/Format$Builder;->setId(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
     move-result-object v4
@@ -227,7 +227,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroidx/media3/common/MediaItem$SubtitleConfiguration;Landroidx/media3/datasource/DataSource$Factory;JLandroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;ZLjava/lang/Object;Landroidx/media3/exoplayer/source/SingleSampleMediaSource$1;)V
-    .registers 10
+    .locals 0
 
     .line 41
     invoke-direct/range {p0 .. p8}, Landroidx/media3/exoplayer/source/SingleSampleMediaSource;-><init>(Ljava/lang/String;Landroidx/media3/common/MediaItem$SubtitleConfiguration;Landroidx/media3/datasource/DataSource$Factory;JLandroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;ZLjava/lang/Object;)V
@@ -238,7 +238,7 @@
 
 # virtual methods
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 15
+    .locals 10
 
     .line 217
     new-instance p2, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;
@@ -270,7 +270,7 @@
 .end method
 
 .method public getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -279,13 +279,13 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 2
+    .locals 0
 
     .line 206
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaSource;->transferListener:Landroidx/media3/datasource/TransferListener;
@@ -299,7 +299,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 230
     check-cast p1, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod;
@@ -310,7 +310,7 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2666
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createBigContentView(Landroid/app/Notification$Builder;)Landroid/widget/RemoteViews;
-    .registers 1
+    .locals 0
 
     .line 2685
     invoke-virtual {p0}, Landroid/app/Notification$Builder;->createHeadsUpContentView()Landroid/widget/RemoteViews;
@@ -36,7 +36,7 @@
 .end method
 
 .method static createContentView(Landroid/app/Notification$Builder;)Landroid/widget/RemoteViews;
-    .registers 1
+    .locals 0
 
     .line 2675
     invoke-virtual {p0}, Landroid/app/Notification$Builder;->createContentView()Landroid/widget/RemoteViews;
@@ -47,7 +47,7 @@
 .end method
 
 .method static createHeadsUpContentView(Landroid/app/Notification$Builder;)Landroid/widget/RemoteViews;
-    .registers 1
+    .locals 0
 
     .line 2680
     invoke-virtual {p0}, Landroid/app/Notification$Builder;->createHeadsUpContentView()Landroid/widget/RemoteViews;
@@ -58,7 +58,7 @@
 .end method
 
 .method static recoverBuilder(Landroid/content/Context;Landroid/app/Notification;)Landroid/app/Notification$Builder;
-    .registers 2
+    .locals 0
 
     .line 2670
     invoke-static {p0, p1}, Landroid/app/Notification$Builder;->recoverBuilder(Landroid/content/Context;Landroid/app/Notification;)Landroid/app/Notification$Builder;

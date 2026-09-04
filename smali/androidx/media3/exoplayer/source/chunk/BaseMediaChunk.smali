@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Landroidx/media3/common/Format;ILjava/lang/Object;JJJJJ)V
-    .registers 29
+    .locals 13
 
     move-object v12, p0
 
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final getFirstSampleIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 100
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->firstSampleIndices:[I
@@ -73,7 +73,7 @@
 .end method
 
 .method protected final getOutput()Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->output:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;
@@ -88,7 +88,7 @@
 .end method
 
 .method public init(Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;)V
-    .registers 2
+    .locals 0
 
     .line 91
     iput-object p1, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->output:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;

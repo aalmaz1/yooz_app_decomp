@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1404
     new-instance v0, Lcom/google/common/base/CharMatcher$JavaLetterOrDigit;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1402
     invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -68,7 +68,7 @@
 .end method
 
 .method public matches(C)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -87,7 +87,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "CharMatcher.javaLetterOrDigit()"
 

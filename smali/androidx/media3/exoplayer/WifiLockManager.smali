@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,49 +37,49 @@
 .end method
 
 .method private updateWifiLock()V
-    .registers 3
+    .locals 2
 
     .line 86
     iget-object v0, p0, Landroidx/media3/exoplayer/WifiLockManager;->wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 90
-    :cond_5
+    :cond_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/WifiLockManager;->enabled:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     iget-boolean v1, p0, Landroidx/media3/exoplayer/WifiLockManager;->stayAwake:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     .line 91
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->acquire()V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 93
-    :cond_11
+    :cond_1
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager$WifiLock;->release()V
 
-    :goto_14
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public setEnabled(Z)V
-    .registers 5
+    .locals 3
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_1
 
     .line 55
     iget-object v0, p0, Landroidx/media3/exoplayer/WifiLockManager;->wifiLock:Landroid/net/wifi/WifiManager$WifiLock;
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_1
 
     .line 56
     iget-object v0, p0, Landroidx/media3/exoplayer/WifiLockManager;->applicationContext:Landroid/content/Context;
@@ -97,7 +97,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     const-string p1, "WifiLockManager"
 
@@ -108,7 +108,7 @@
 
     return-void
 
-    :cond_1f
+    :cond_0
     const/4 v1, 0x3
 
     const-string v2, "ExoPlayer:WifiLockManager"
@@ -126,7 +126,7 @@
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager$WifiLock;->setReferenceCounted(Z)V
 
     .line 67
-    :cond_2c
+    :cond_1
     iput-boolean p1, p0, Landroidx/media3/exoplayer/WifiLockManager;->enabled:Z
 
     .line 68
@@ -136,7 +136,7 @@
 .end method
 
 .method public setStayAwake(Z)V
-    .registers 2
+    .locals 0
 
     .line 81
     iput-boolean p1, p0, Landroidx/media3/exoplayer/WifiLockManager;->stayAwake:Z

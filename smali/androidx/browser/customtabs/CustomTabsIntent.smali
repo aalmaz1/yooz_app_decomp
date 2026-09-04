@@ -195,7 +195,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Intent;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 666
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -210,7 +210,7 @@
 .end method
 
 .method public static getActivityResizeBehavior(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.ACTIVITY_HEIGHT_RESIZE_BEHAVIOR"
 
@@ -225,7 +225,7 @@
 .end method
 
 .method public static getActivitySideSheetBreakpointDp(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.ACTIVITY_SIDE_SHEET_BREAKPOINT_DP"
 
@@ -240,7 +240,7 @@
 .end method
 
 .method public static getActivitySideSheetDecorationType(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.ACTIVITY_SIDE_SHEET_DECORATION_TYPE"
 
@@ -255,7 +255,7 @@
 .end method
 
 .method public static getActivitySideSheetPosition(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.ACTIVITY_SIDE_SHEET_POSITION"
 
@@ -270,7 +270,7 @@
 .end method
 
 .method public static getActivitySideSheetRoundedCornersPosition(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION"
 
@@ -285,7 +285,7 @@
 .end method
 
 .method public static getCloseButtonPosition(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.CLOSE_BUTTON_POSITION"
 
@@ -300,22 +300,22 @@
 .end method
 
 .method public static getColorSchemeParams(Landroid/content/Intent;I)Landroidx/browser/customtabs/CustomTabColorSchemeParams;
-    .registers 4
+    .locals 2
 
-    if-ltz p1, :cond_31
+    if-ltz p1, :cond_2
 
     const/4 v0, 0x2
 
-    if-gt p1, v0, :cond_31
+    if-gt p1, v0, :cond_2
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_2
 
     .line 1570
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object p0
 
-    if-nez p0, :cond_13
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
@@ -327,7 +327,7 @@
     return-object p0
 
     .line 1575
-    :cond_13
+    :cond_0
     invoke-static {p0}, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->fromBundle(Landroid/os/Bundle;)Landroidx/browser/customtabs/CustomTabColorSchemeParams;
 
     move-result-object v0
@@ -339,7 +339,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_30
+    if-eqz p0, :cond_1
 
     .line 1579
     invoke-virtual {p0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -348,7 +348,7 @@
 
     check-cast p0, Landroid/os/Bundle;
 
-    if-eqz p0, :cond_30
+    if-eqz p0, :cond_1
 
     .line 1581
     invoke-static {p0}, Landroidx/browser/customtabs/CustomTabColorSchemeParams;->fromBundle(Landroid/os/Bundle;)Landroidx/browser/customtabs/CustomTabColorSchemeParams;
@@ -362,11 +362,11 @@
 
     return-object p0
 
-    :cond_30
+    :cond_1
     return-object v0
 
     .line 1567
-    :cond_31
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -389,7 +389,7 @@
 .end method
 
 .method public static getInitialActivityHeightPx(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.INITIAL_ACTIVITY_HEIGHT_PX"
 
@@ -404,7 +404,7 @@
 .end method
 
 .method public static getInitialActivityWidthPx(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.INITIAL_ACTIVITY_WIDTH_PX"
 
@@ -419,7 +419,7 @@
 .end method
 
 .method private static getLocaleForLanguageTag(Landroid/content/Intent;)Ljava/util/Locale;
-    .registers 1
+    .locals 0
 
     .line 1767
     invoke-static {p0}, Landroidx/browser/customtabs/CustomTabsIntent$Api21Impl;->getLocaleForLanguageTag(Landroid/content/Intent;)Ljava/util/Locale;
@@ -430,7 +430,7 @@
 .end method
 
 .method public static getMaxToolbarItems()I
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x5
 
@@ -438,7 +438,7 @@
 .end method
 
 .method public static getSecondaryToolbarSwipeUpGesture(Landroid/content/Intent;)Landroid/app/PendingIntent;
-    .registers 2
+    .locals 1
 
     const-string v0, "androidx.browser.customtabs.extra.SECONDARY_TOOLBAR_SWIPE_UP_GESTURE"
 
@@ -453,7 +453,7 @@
 .end method
 
 .method public static getToolbarCornerRadiusDp(Landroid/content/Intent;)I
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.TOOLBAR_CORNER_RADIUS_DP"
 
@@ -468,7 +468,7 @@
 .end method
 
 .method public static getTranslateLocale(Landroid/content/Intent;)Ljava/util/Locale;
-    .registers 1
+    .locals 0
 
     .line 1759
     invoke-static {p0}, Landroidx/browser/customtabs/CustomTabsIntent;->getLocaleForLanguageTag(Landroid/content/Intent;)Ljava/util/Locale;
@@ -479,7 +479,7 @@
 .end method
 
 .method public static isActivitySideSheetMaximizationEnabled(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.ACTIVITY_SIDE_SHEET_ENABLE_MAXIMIZATION"
 
@@ -494,7 +494,7 @@
 .end method
 
 .method public static isBackgroundInteractionEnabled(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "androidx.browser.customtabs.extra.DISABLE_BACKGROUND_INTERACTION"
 
@@ -511,7 +511,7 @@
 .end method
 
 .method public static isBookmarksButtonEnabled(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_STAR_BUTTON"
 
@@ -528,7 +528,7 @@
 .end method
 
 .method public static isDownloadButtonEnabled(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_DOWNLOAD_BUTTON"
 
@@ -545,7 +545,7 @@
 .end method
 
 .method public static isSendToExternalDefaultHandlerEnabled(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "android.support.customtabs.extra.SEND_TO_EXTERNAL_HANDLER"
 
@@ -560,9 +560,9 @@
 .end method
 
 .method public static setAlwaysUseBrowserUI(Landroid/content/Intent;)Landroid/content/Intent;
-    .registers 3
+    .locals 2
 
-    if-nez p0, :cond_9
+    if-nez p0, :cond_0
 
     .line 1533
     new-instance p0, Landroid/content/Intent;
@@ -571,7 +571,7 @@
 
     invoke-direct {p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    :cond_9
+    :cond_0
     const/high16 v0, 0x10000000
 
     .line 1534
@@ -588,7 +588,7 @@
 .end method
 
 .method public static shouldAlwaysUseBrowserUI(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "android.support.customtabs.extra.user_opt_out"
 
@@ -599,7 +599,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 1548
     invoke-virtual {p0}, Landroid/content/Intent;->getFlags()I
@@ -610,18 +610,18 @@
 
     and-int/2addr p0, v0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_13
+    :cond_0
     return v1
 .end method
 
 
 # virtual methods
 .method public launchUrl(Landroid/content/Context;Landroid/net/Uri;)V
-    .registers 4
+    .locals 1
 
     .line 661
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsIntent;->intent:Landroid/content/Intent;

@@ -36,7 +36,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/google/common/base/AbstractIterator$State;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x4
 
@@ -71,7 +71,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 39
     new-instance v0, Lcom/google/common/base/AbstractIterator$State;
@@ -128,7 +128,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -153,7 +153,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/AbstractIterator$State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8000
@@ -176,7 +176,7 @@
 .end method
 
 .method public static values()[Lcom/google/common/base/AbstractIterator$State;
-    .registers 1
+    .locals 1
 
     .line 38
     sget-object v0, Lcom/google/common/base/AbstractIterator$State;->$VALUES:[Lcom/google/common/base/AbstractIterator$State;

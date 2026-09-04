@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
     move-result-object p1
 
     .line 251
-    :try_start_9
+    :try_start_0
     sget-object v0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->PARAM_TYPES:[Ljava/lang/Class;
 
     invoke-virtual {p1, p2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
@@ -78,12 +78,12 @@
     move-result-object v0
 
     iput-object v0, p0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->mMethod:Ljava/lang/reflect/Method;
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_12
+    :catch_0
     move-exception v0
 
     .line 253
@@ -130,7 +130,7 @@
 
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
-    .registers 7
+    .locals 5
 
     .line 264
     :try_start_0
@@ -146,7 +146,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_0
 
     .line 265
     iget-object v0, p0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->mMethod:Ljava/lang/reflect/Method;
@@ -170,7 +170,7 @@
     return p1
 
     .line 267
-    :cond_1f
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->mMethod:Ljava/lang/reflect/Method;
 
     iget-object v1, p0, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener;->mRealOwner:Ljava/lang/Object;
@@ -180,12 +180,12 @@
     aput-object p1, v4, v2
 
     invoke-virtual {v0, v1, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2a} :catch_2b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return v3
 
-    :catch_2b
+    :catch_0
     move-exception p1
 
     .line 271

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;ILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
-    .registers 12
+    .locals 1
 
     .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public final bytesLoaded()J
-    .registers 3
+    .locals 2
 
     .line 119
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/Chunk;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -93,7 +93,7 @@
 .end method
 
 .method public final getDurationUs()J
-    .registers 5
+    .locals 4
 
     .line 111
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/Chunk;->endTimeUs:J
@@ -106,7 +106,7 @@
 .end method
 
 .method public final getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -129,7 +129,7 @@
 .end method
 
 .method public final getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/Chunk;->dataSource:Landroidx/media3/datasource/StatsDataSource;

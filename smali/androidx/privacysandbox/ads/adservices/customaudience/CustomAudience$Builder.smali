@@ -92,7 +92,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;Ljava/util/List;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -150,7 +150,7 @@
 
 # virtual methods
 .method public final build()Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;
-    .registers 12
+    .locals 11
 
     .line 248
     new-instance v10, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;
@@ -191,7 +191,7 @@
 .end method
 
 .method public final setActivationTime(Ljava/time/Instant;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "activationTime"
 
@@ -209,7 +209,7 @@
 .end method
 
 .method public final setAds(Ljava/util/List;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -236,7 +236,7 @@
 .end method
 
 .method public final setBiddingLogicUri(Landroid/net/Uri;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "biddingLogicUri"
 
@@ -254,7 +254,7 @@
 .end method
 
 .method public final setBuyer(Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "buyer"
 
@@ -272,7 +272,7 @@
 .end method
 
 .method public final setDailyUpdateUri(Landroid/net/Uri;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "dailyUpdateUri"
 
@@ -290,7 +290,7 @@
 .end method
 
 .method public final setExpirationTime(Ljava/time/Instant;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "expirationTime"
 
@@ -308,7 +308,7 @@
 .end method
 
 .method public final setName(Ljava/lang/String;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "name"
 
@@ -326,7 +326,7 @@
 .end method
 
 .method public final setTrustedBiddingData(Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "trustedBiddingSignals"
 
@@ -344,7 +344,7 @@
 .end method
 
 .method public final setUserBiddingSignals(Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;)Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience$Builder;
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "userBiddingSignals"
 

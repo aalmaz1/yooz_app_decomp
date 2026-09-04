@@ -48,7 +48,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,7 +106,7 @@
 .end method
 
 .method protected static durationUsToBytes(III)I
-    .registers 5
+    .locals 2
 
     int-to-long v0, p0
 
@@ -131,19 +131,19 @@
 .end method
 
 .method protected static getMaximumEncodedRateBytesPerSecond(I)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x14
 
-    if-eq p0, v0, :cond_41
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x1e
 
-    if-eq p0, v0, :cond_3d
+    if-eq p0, v0, :cond_0
 
-    packed-switch p0, :pswitch_data_46
+    packed-switch p0, :pswitch_data_0
 
-    packed-switch p0, :pswitch_data_5a
+    packed-switch p0, :pswitch_data_1
 
     .line 325
     new-instance p0, Ljava/lang/IllegalArgumentException;
@@ -152,110 +152,110 @@
 
     throw p0
 
-    :pswitch_14
+    :pswitch_0
     const p0, 0x52080
 
     return p0
 
-    :pswitch_18
+    :pswitch_1
     const p0, 0x3e800
 
     return p0
 
-    :pswitch_1c
+    :pswitch_2
     const/16 p0, 0x1f40
 
     return p0
 
-    :pswitch_1f
+    :pswitch_3
     const p0, 0x2ebae4
 
     return p0
 
-    :pswitch_23
+    :pswitch_4
     const/16 p0, 0x1b58
 
     return p0
 
-    :pswitch_26
+    :pswitch_5
     const/16 p0, 0x3e80
 
     return p0
 
-    :pswitch_29
+    :pswitch_6
     const p0, 0x186a0
 
     return p0
 
-    :pswitch_2d
+    :pswitch_7
     const p0, 0x9c40
 
     return p0
 
-    :pswitch_31
+    :pswitch_8
     const p0, 0x2ee00
 
     return p0
 
-    :pswitch_35
+    :pswitch_9
     const p0, 0xbb800
 
     return p0
 
-    :pswitch_39
+    :pswitch_a
     const p0, 0x13880
 
     return p0
 
-    :cond_3d
-    :pswitch_3d
+    :cond_0
+    :pswitch_b
     const p0, 0x225510
 
     return p0
 
-    :cond_41
+    :cond_1
     const p0, 0xf906
 
     return p0
 
     nop
 
-    :pswitch_data_46
+    :pswitch_data_0
     .packed-switch 0x5
-        :pswitch_39
-        :pswitch_35
-        :pswitch_31
-        :pswitch_3d
-        :pswitch_2d
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_b
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
     .end packed-switch
 
-    :pswitch_data_5a
+    :pswitch_data_1
     .packed-switch 0xe
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_18
-        :pswitch_14
-        :pswitch_35
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_9
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method protected get1xBufferSizeInBytes(IIIIII)I
-    .registers 7
+    .locals 0
 
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_2
 
     const/4 p1, 0x1
 
-    if-eq p3, p1, :cond_13
+    if-eq p3, p1, :cond_1
 
     const/4 p1, 0x2
 
-    if-ne p3, p1, :cond_d
+    if-ne p3, p1, :cond_0
 
     .line 238
     invoke-virtual {p0, p2, p6}, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->getPassthroughBufferSizeInBytes(II)I
@@ -265,7 +265,7 @@
     return p1
 
     .line 242
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -273,7 +273,7 @@
     throw p1
 
     .line 240
-    :cond_13
+    :cond_1
     invoke-virtual {p0, p2}, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->getOffloadBufferSizeInBytes(I)I
 
     move-result p1
@@ -281,7 +281,7 @@
     return p1
 
     .line 236
-    :cond_18
+    :cond_2
     invoke-virtual {p0, p1, p5, p4}, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->getPcmBufferSizeInBytes(III)I
 
     move-result p1
@@ -290,7 +290,7 @@
 .end method
 
 .method public getBufferSizeInBytes(IIIIIID)I
-    .registers 9
+    .locals 0
 
     .line 216
     invoke-virtual/range {p0 .. p6}, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->get1xBufferSizeInBytes(IIIIII)I
@@ -321,7 +321,7 @@
 .end method
 
 .method protected getOffloadBufferSizeInBytes(I)I
-    .registers 6
+    .locals 4
 
     .line 275
     invoke-static {p1}, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->getMaximumEncodedRateBytesPerSecond(I)I
@@ -349,7 +349,7 @@
 .end method
 
 .method protected getPassthroughBufferSizeInBytes(II)I
-    .registers 6
+    .locals 3
 
     .line 256
     iget v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->passthroughBufferDurationUs:I
@@ -358,29 +358,29 @@
 
     const/16 v2, 0x8
 
-    if-ne p1, v1, :cond_b
+    if-ne p1, v1, :cond_0
 
     .line 258
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->ac3BufferMultiplicationFactor:I
 
-    :goto_9
+    :goto_0
     mul-int/2addr v0, v1
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_b
-    if-ne p1, v2, :cond_10
+    :cond_0
+    if-ne p1, v2, :cond_1
 
     .line 263
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->dtshdBufferMultiplicationFactor:I
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_1
     const/4 v1, -0x1
 
-    if-eq p2, v1, :cond_1a
+    if-eq p2, v1, :cond_2
 
     .line 268
     sget-object p1, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
@@ -389,15 +389,15 @@
 
     move-result p1
 
-    goto :goto_1e
+    goto :goto_2
 
     .line 269
-    :cond_1a
+    :cond_2
     invoke-static {p1}, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->getMaximumEncodedRateBytesPerSecond(I)I
 
     move-result p1
 
-    :goto_1e
+    :goto_2
     int-to-long v0, v0
 
     int-to-long p1, p1
@@ -417,7 +417,7 @@
 .end method
 
 .method protected getPcmBufferSizeInBytes(III)I
-    .registers 6
+    .locals 2
 
     .line 248
     iget v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioTrackBufferSizeProvider;->pcmBufferMultiplicationFactor:I

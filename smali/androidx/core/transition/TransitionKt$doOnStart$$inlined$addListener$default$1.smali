@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/core/transition/TransitionKt$doOnStart$$inlined$addListener$default$1;->$onStart:Lkotlin/jvm/functions/Function1;
 
@@ -66,31 +66,31 @@
 
 # virtual methods
 .method public onTransitionCancel(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionEnd(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionPause(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionResume(Landroid/transition/Transition;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransitionStart(Landroid/transition/Transition;)V
-    .registers 3
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/core/transition/TransitionKt$doOnStart$$inlined$addListener$default$1;->$onStart:Lkotlin/jvm/functions/Function1;

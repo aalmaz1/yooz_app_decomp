@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method private assertInitialized()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "timestampAdjuster",
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 10
+    .locals 8
 
     .line 66
     invoke-direct {p0}, Landroidx/media3/extractor/ts/PassthroughSectionPayloadReader;->assertInitialized()V
@@ -87,23 +87,23 @@
 
     cmp-long v6, v2, v4
 
-    if-eqz v6, :cond_4b
+    if-eqz v6, :cond_2
 
     cmp-long v4, v0, v4
 
-    if-nez v4, :cond_1d
+    if-nez v4, :cond_0
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 73
-    :cond_1d
+    :cond_0
     iget-object v4, p0, Landroidx/media3/extractor/ts/PassthroughSectionPayloadReader;->format:Landroidx/media3/common/Format;
 
     iget-wide v4, v4, Landroidx/media3/common/Format;->subsampleOffsetUs:J
 
     cmp-long v4, v0, v4
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_1
 
     .line 74
     iget-object v4, p0, Landroidx/media3/extractor/ts/PassthroughSectionPayloadReader;->format:Landroidx/media3/common/Format;
@@ -128,7 +128,7 @@
     invoke-interface {v1, v0}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
     .line 77
-    :cond_3a
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v5
@@ -149,13 +149,13 @@
 
     invoke-interface/range {v1 .. v7}, Landroidx/media3/extractor/TrackOutput;->sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
 
-    :cond_4b
-    :goto_4b
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public init(Landroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 4
+    .locals 0
 
     .line 56
     iput-object p1, p0, Landroidx/media3/extractor/ts/PassthroughSectionPayloadReader;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;

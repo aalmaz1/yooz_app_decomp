@@ -40,7 +40,7 @@
 
 # direct methods
 .method public static final clearSpans(Landroid/text/Spannable;)V
-    .registers 5
+    .locals 4
 
     .line 32
     move-object v0, p0
@@ -64,8 +64,8 @@
     .line 71
     array-length v1, v0
 
-    :goto_f
-    if-ge v3, v1, :cond_19
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     aget-object v2, v0, v3
 
@@ -74,14 +74,14 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public static final set(Landroid/text/Spannable;IILjava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     const/16 v0, 0x11
 
@@ -92,7 +92,7 @@
 .end method
 
 .method public static final set(Landroid/text/Spannable;Lkotlin/ranges/IntRange;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
 
     .line 64
     invoke-virtual {p1}, Lkotlin/ranges/IntRange;->getStart()Ljava/lang/Integer;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static final toSpannable(Ljava/lang/CharSequence;)Landroid/text/Spannable;
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-static {p0}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;

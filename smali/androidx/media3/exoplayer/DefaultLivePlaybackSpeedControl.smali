@@ -72,7 +72,7 @@
 
 # direct methods
 .method private constructor <init>(FFJFJJF)V
-    .registers 11
+    .locals 0
 
     .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -142,7 +142,7 @@
 .end method
 
 .method synthetic constructor <init>(FFJFJJFLandroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$1;)V
-    .registers 12
+    .locals 0
 
     .line 52
     invoke-direct/range {p0 .. p10}, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;-><init>(FFJFJJF)V
@@ -151,7 +151,7 @@
 .end method
 
 .method private adjustTargetLiveOffsetUs(J)V
-    .registers 15
+    .locals 12
 
     .line 431
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->smoothedMinPossibleLiveOffsetUs:J
@@ -171,7 +171,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-lez v0, :cond_3b
+    if-lez v0, :cond_0
 
     .line 437
     iget-wide p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->minUpdateIntervalMs:J
@@ -232,10 +232,10 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
 
-    goto :goto_62
+    goto :goto_0
 
     .line 448
-    :cond_3b
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
     sub-float/2addr v0, v1
@@ -272,22 +272,22 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_1
 
     cmp-long p1, p1, v0
 
-    if-lez p1, :cond_62
+    if-lez p1, :cond_1
 
     .line 454
     iput-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
 
-    :cond_62
-    :goto_62
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private maybeResetTargetLiveOffsetUs()V
-    .registers 8
+    .locals 7
 
     .line 381
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->mediaConfigurationTargetLiveOffsetUs:J
@@ -296,65 +296,65 @@
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_2a
+    if-eqz v4, :cond_3
 
     .line 382
     iget-wide v4, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->targetLiveOffsetOverrideUs:J
 
     cmp-long v6, v4, v2
 
-    if-eqz v6, :cond_12
+    if-eqz v6, :cond_0
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 386
-    :cond_12
+    :cond_0
     iget-wide v4, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->minTargetLiveOffsetUs:J
 
     cmp-long v6, v4, v2
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_1
 
     cmp-long v6, v0, v4
 
-    if-gez v6, :cond_1d
+    if-gez v6, :cond_1
 
     move-wide v0, v4
 
     .line 389
-    :cond_1d
+    :cond_1
     iget-wide v4, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->maxTargetLiveOffsetUs:J
 
     cmp-long v6, v4, v2
 
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_2
 
     cmp-long v6, v0, v4
 
-    if-lez v6, :cond_28
+    if-lez v6, :cond_2
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     move-wide v4, v0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_2a
+    :cond_3
     move-wide v4, v2
 
     .line 394
-    :goto_2b
+    :goto_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->idealTargetLiveOffsetUs:J
 
     cmp-long v0, v0, v4
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_4
 
     return-void
 
     .line 397
-    :cond_32
+    :cond_4
     iput-wide v4, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->idealTargetLiveOffsetUs:J
 
     .line 398
@@ -373,7 +373,7 @@
 .end method
 
 .method private static smooth(JJF)J
-    .registers 5
+    .locals 0
 
     long-to-float p0, p0
 
@@ -395,7 +395,7 @@
 .end method
 
 .method private updateSmoothedMinPossibleLiveOffsetUs(JJ)V
-    .registers 7
+    .locals 2
 
     sub-long/2addr p1, p3
 
@@ -406,7 +406,7 @@
 
     cmp-long v0, p3, v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 407
     iput-wide p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->smoothedMinPossibleLiveOffsetUs:J
@@ -416,10 +416,10 @@
     .line 408
     iput-wide p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->smoothedMinPossibleLiveOffsetDeviationUs:J
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 412
-    :cond_13
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->minPossibleLiveOffsetSmoothingFactor:F
 
     .line 415
@@ -453,14 +453,14 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->smoothedMinPossibleLiveOffsetDeviationUs:J
 
-    :goto_2e
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getAdjustedPlaybackSpeed(JJ)F
-    .registers 9
+    .locals 4
 
     .line 350
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->mediaConfigurationTargetLiveOffsetUs:J
@@ -471,12 +471,12 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     return v1
 
     .line 354
-    :cond_e
+    :cond_0
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->updateSmoothedMinPossibleLiveOffsetUs(JJ)V
 
     .line 356
@@ -484,7 +484,7 @@
 
     cmp-long p3, p3, v2
 
-    if-eqz p3, :cond_27
+    if-eqz p3, :cond_1
 
     .line 357
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -499,7 +499,7 @@
 
     cmp-long p3, p3, v2
 
-    if-gez p3, :cond_27
+    if-gez p3, :cond_1
 
     .line 358
     iget p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
@@ -507,7 +507,7 @@
     return p1
 
     .line 360
-    :cond_27
+    :cond_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p3
@@ -531,15 +531,15 @@
 
     cmp-long p3, p3, v2
 
-    if-gez p3, :cond_40
+    if-gez p3, :cond_2
 
     .line 365
     iput v1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
-    goto :goto_4f
+    goto :goto_0
 
     .line 367
-    :cond_40
+    :cond_2
     iget p3, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->proportionalControlFactor:F
 
     long-to-float p1, p1
@@ -561,14 +561,14 @@
     iput p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
     .line 371
-    :goto_4f
+    :goto_0
     iget p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->adjustedPlaybackSpeed:F
 
     return p1
 .end method
 
 .method public getTargetLiveOffsetUs()J
-    .registers 3
+    .locals 2
 
     .line 376
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
@@ -577,7 +577,7 @@
 .end method
 
 .method public notifyRebuffer()V
-    .registers 8
+    .locals 7
 
     .line 337
     iget-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
@@ -586,12 +586,12 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_c
+    if-nez v4, :cond_0
 
     return-void
 
     .line 340
-    :cond_c
+    :cond_0
     iget-wide v4, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->targetLiveOffsetRebufferDeltaUs:J
 
     add-long/2addr v0, v4
@@ -603,24 +603,24 @@
 
     cmp-long v6, v4, v2
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_1
 
     cmp-long v0, v0, v4
 
-    if-lez v0, :cond_1d
+    if-lez v0, :cond_1
 
     .line 343
     iput-wide v4, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->currentTargetLiveOffsetUs:J
 
     .line 345
-    :cond_1d
+    :cond_1
     iput-wide v2, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->lastPlaybackSpeedUpdateMs:J
 
     return-void
 .end method
 
 .method public setLiveConfiguration(Landroidx/media3/common/MediaItem$LiveConfiguration;)V
-    .registers 4
+    .locals 2
 
     .line 311
     iget-wide v0, p1, Landroidx/media3/common/MediaItem$LiveConfiguration;->targetOffsetMs:J
@@ -656,18 +656,18 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 316
     iget v0, p1, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
-    goto :goto_26
+    goto :goto_0
 
     .line 317
-    :cond_24
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->fallbackMinPlaybackSpeed:F
 
-    :goto_26
+    :goto_0
     iput v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->minPlaybackSpeed:F
 
     .line 319
@@ -675,18 +675,18 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 320
     iget p1, p1, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
-    goto :goto_33
+    goto :goto_1
 
     .line 321
-    :cond_31
+    :cond_1
     iget p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->fallbackMaxPlaybackSpeed:F
 
-    :goto_33
+    :goto_1
     iput p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->maxPlaybackSpeed:F
 
     .line 322
@@ -696,11 +696,11 @@
 
     cmpl-float v0, v0, v1
 
-    if-nez v0, :cond_48
+    if-nez v0, :cond_2
 
     cmpl-float p1, p1, v1
 
-    if-nez p1, :cond_48
+    if-nez p1, :cond_2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -708,14 +708,14 @@
     iput-wide v0, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->mediaConfigurationTargetLiveOffsetUs:J
 
     .line 326
-    :cond_48
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->maybeResetTargetLiveOffsetUs()V
 
     return-void
 .end method
 
 .method public setTargetLiveOffsetOverrideUs(J)V
-    .registers 3
+    .locals 0
 
     .line 331
     iput-wide p1, p0, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;->targetLiveOffsetOverrideUs:J

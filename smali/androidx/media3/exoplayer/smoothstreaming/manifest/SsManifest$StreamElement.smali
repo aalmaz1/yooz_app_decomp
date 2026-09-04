@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;JLjava/lang/String;IIIILjava/lang/String;[Landroidx/media3/common/Format;Ljava/util/List;J)V
-    .registers 36
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -155,7 +155,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;JLjava/lang/String;IIIILjava/lang/String;[Landroidx/media3/common/Format;Ljava/util/List;[JJ)V
-    .registers 22
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,7 +268,7 @@
 
 # virtual methods
 .method public buildRequestUri(II)Landroid/net/Uri;
-    .registers 6
+    .locals 3
 
     .line 217
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Landroidx/media3/common/Format;
@@ -277,31 +277,31 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v0, v2
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 218
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimes:Ljava/util/List;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     move v0, v1
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
+    :cond_1
     move v0, v2
 
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 219
@@ -311,14 +311,14 @@
 
     move-result v0
 
-    if-ge p2, v0, :cond_1f
+    if-ge p2, v0, :cond_2
 
-    goto :goto_20
+    goto :goto_2
 
-    :cond_1f
+    :cond_2
     move v1, v2
 
-    :goto_20
+    :goto_2
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 220
@@ -387,7 +387,7 @@
 .end method
 
 .method public copy([Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
-    .registers 23
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -444,22 +444,22 @@
 .end method
 
 .method public getChunkDurationUs(I)J
-    .registers 7
+    .locals 5
 
     .line 204
     iget v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkCount:I
 
     add-int/lit8 v0, v0, -0x1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 205
     iget-wide v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->lastChunkDurationUs:J
 
-    goto :goto_13
+    goto :goto_0
 
     .line 206
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J
 
     add-int/lit8 v1, p1, 0x1
@@ -470,12 +470,12 @@
 
     sub-long v0, v1, v3
 
-    :goto_13
+    :goto_0
     return-wide v0
 .end method
 
 .method public getChunkIndex(J)I
-    .registers 5
+    .locals 2
 
     .line 184
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J
@@ -490,7 +490,7 @@
 .end method
 
 .method public getStartTimeUs(I)J
-    .registers 4
+    .locals 2
 
     .line 194
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J

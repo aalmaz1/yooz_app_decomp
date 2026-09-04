@@ -85,7 +85,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 103
     new-instance v0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,7 +115,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/emoji2/text/flatbuffer/ReadBuf;
-    .registers 1
+    .locals 1
 
     .line 45
     sget-object v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->EMPTY_BB:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -124,7 +124,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)I
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->readInt(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)I
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)I
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->indirect(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)I
@@ -146,7 +146,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->readUInt(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
@@ -157,7 +157,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)D
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->readDouble(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)D
@@ -168,7 +168,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->readLong(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
@@ -179,7 +179,7 @@
 .end method
 
 .method public static getRoot(Landroidx/emoji2/text/flatbuffer/ReadBuf;)Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;
-    .registers 5
+    .locals 4
 
     .line 214
     invoke-interface {p0}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->limit()I
@@ -215,7 +215,7 @@
 .end method
 
 .method public static getRoot(Ljava/nio/ByteBuffer;)Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -224,7 +224,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;
 
@@ -238,14 +238,14 @@
 
     invoke-direct {v0, v1, p0}, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;-><init>([BI)V
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;
 
     invoke-direct {v0, p0}, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;-><init>(Ljava/nio/ByteBuffer;)V
 
-    :goto_19
+    :goto_0
     invoke-static {v0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->getRoot(Landroidx/emoji2/text/flatbuffer/ReadBuf;)Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;
 
     move-result-object p0
@@ -254,7 +254,7 @@
 .end method
 
 .method private static indirect(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)I
-    .registers 5
+    .locals 2
 
     int-to-long v0, p1
 
@@ -271,102 +271,102 @@
 .end method
 
 .method static isTypeInline(I)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
-    if-le p0, v0, :cond_a
+    if-le p0, v0, :cond_1
 
     const/16 v0, 0x1a
 
-    if-ne p0, v0, :cond_8
+    if-ne p0, v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_b
+    :goto_1
     return p0
 .end method
 
 .method static isTypedVector(I)Z
-    .registers 2
+    .locals 1
 
     const/16 v0, 0xb
 
-    if-lt p0, v0, :cond_8
+    if-lt p0, v0, :cond_0
 
     const/16 v0, 0xf
 
-    if-le p0, v0, :cond_c
+    if-le p0, v0, :cond_1
 
-    :cond_8
+    :cond_0
     const/16 v0, 0x24
 
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_2
 
-    :cond_c
+    :cond_1
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_2
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 .method static isTypedVectorElementType(I)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-lt p0, v0, :cond_6
+    if-lt p0, v0, :cond_0
 
     const/4 v1, 0x4
 
-    if-le p0, v1, :cond_c
+    if-le p0, v1, :cond_2
 
-    :cond_6
+    :cond_0
     const/16 v1, 0x1a
 
-    if-ne p0, v1, :cond_b
+    if-ne p0, v1, :cond_1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_1
     const/4 v0, 0x0
 
-    :cond_c
-    :goto_c
+    :cond_2
+    :goto_0
     return v0
 .end method
 
 .method private static readDouble(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)D
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x4
 
-    if-eq p2, v0, :cond_f
+    if-eq p2, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p2, v0, :cond_a
+    if-eq p2, v0, :cond_0
 
     const-wide/high16 p0, -0x4010000000000000L    # -1.0
 
     return-wide p0
 
     .line 189
-    :cond_a
+    :cond_0
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getDouble(I)D
 
     move-result-wide p0
@@ -374,7 +374,7 @@
     return-wide p0
 
     .line 188
-    :cond_f
+    :cond_1
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getFloat(I)F
 
     move-result p0
@@ -385,7 +385,7 @@
 .end method
 
 .method private static readInt(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)I
-    .registers 3
+    .locals 0
 
     .line 172
     invoke-static {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->readLong(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
@@ -398,30 +398,30 @@
 .end method
 
 .method private static readLong(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p2, v0, :cond_20
+    if-eq p2, v0, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p2, v0, :cond_1b
+    if-eq p2, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p2, v0, :cond_15
+    if-eq p2, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p2, v0, :cond_10
+    if-eq p2, v0, :cond_0
 
     const-wide/16 p0, -0x1
 
     return-wide p0
 
     .line 181
-    :cond_10
+    :cond_0
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getLong(I)J
 
     move-result-wide p0
@@ -429,58 +429,58 @@
     return-wide p0
 
     .line 180
-    :cond_15
+    :cond_1
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getInt(I)I
 
     move-result p0
 
-    :goto_19
+    :goto_0
     int-to-long p0, p0
 
     return-wide p0
 
     .line 179
-    :cond_1b
+    :cond_2
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getShort(I)S
 
     move-result p0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 178
-    :cond_20
+    :cond_3
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->get(I)B
 
     move-result p0
 
-    goto :goto_19
+    goto :goto_0
 .end method
 
 .method private static readUInt(Landroidx/emoji2/text/flatbuffer/ReadBuf;II)J
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p2, v0, :cond_28
+    if-eq p2, v0, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p2, v0, :cond_1e
+    if-eq p2, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p2, v0, :cond_15
+    if-eq p2, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p2, v0, :cond_10
+    if-eq p2, v0, :cond_0
 
     const-wide/16 p0, -0x1
 
     return-wide p0
 
     .line 165
-    :cond_10
+    :cond_0
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getLong(I)J
 
     move-result-wide p0
@@ -488,7 +488,7 @@
     return-wide p0
 
     .line 164
-    :cond_15
+    :cond_1
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getInt(I)I
 
     move-result p0
@@ -500,7 +500,7 @@
     return-wide p0
 
     .line 163
-    :cond_1e
+    :cond_2
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->getShort(I)S
 
     move-result p0
@@ -514,7 +514,7 @@
     return-wide p0
 
     .line 162
-    :cond_28
+    :cond_3
     invoke-interface {p0, p1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->get(I)B
 
     move-result p0
@@ -529,48 +529,48 @@
 .end method
 
 .method static toTypedVector(II)I
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_12
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_d
+    if-eq p1, v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_d
+    :cond_0
     add-int/lit8 p0, p0, -0x1
 
     add-int/lit8 p0, p0, 0x16
 
     return p0
 
-    :cond_12
+    :cond_1
     add-int/lit8 p0, p0, -0x1
 
     add-int/lit8 p0, p0, 0x13
 
     return p0
 
-    :cond_17
+    :cond_2
     add-int/lit8 p0, p0, -0x1
 
     add-int/lit8 p0, p0, 0x10
 
     return p0
 
-    :cond_1c
+    :cond_3
     add-int/lit8 p0, p0, -0x1
 
     add-int/lit8 p0, p0, 0xb
@@ -579,7 +579,7 @@
 .end method
 
 .method static toTypedVectorElementType(I)I
-    .registers 1
+    .locals 0
 
     add-int/lit8 p0, p0, -0xb
 

@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 663
     new-instance v0, Lcom/google/common/io/ByteSource$EmptyByteSource;
@@ -33,7 +33,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public asCharSource(Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -70,7 +70,7 @@
 .end method
 
 .method public read()[B
-    .registers 2
+    .locals 1
 
     .line 677
     iget-object v0, p0, Lcom/google/common/io/ByteSource$EmptyByteSource;->bytes:[B
@@ -79,7 +79,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "ByteSource.empty()"
 

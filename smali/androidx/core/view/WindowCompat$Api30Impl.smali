@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static setDecorFitsSystemWindows(Landroid/view/Window;Z)V
-    .registers 2
+    .locals 0
 
     .line 167
     invoke-virtual {p0, p1}, Landroid/view/Window;->setDecorFitsSystemWindows(Z)V

@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/encoder/VideoEncoderInfo;Landroid/util/Size;)V
-    .registers 9
+    .locals 6
 
     .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,13 +135,13 @@
 
     iput-object p1, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mSupportedHeights:Landroid/util/Range;
 
-    if-eqz p2, :cond_4c
+    if-eqz p2, :cond_0
 
     .line 117
     invoke-interface {v0, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 120
-    :cond_4c
+    :cond_0
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->getExtraSupportedSizes()Ljava/util/Set;
 
     move-result-object p1
@@ -153,19 +153,19 @@
 .end method
 
 .method public static from(Landroidx/camera/video/internal/encoder/VideoEncoderInfo;Landroid/util/Size;)Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
-    .registers 6
+    .locals 4
 
     .line 81
     instance-of v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 83
-    :cond_6
+    :cond_0
     const-class v0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;
 
     invoke-static {v0}, Landroidx/camera/video/internal/compat/quirk/DeviceQuirks;->get(Ljava/lang/Class;)Landroidx/camera/core/impl/Quirk;
@@ -174,15 +174,15 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
-    :goto_f
+    :goto_0
     move v1, v2
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_11
-    if-eqz p1, :cond_3f
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 86
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
@@ -198,7 +198,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_2
 
     const/4 v0, 0x3
 
@@ -233,11 +233,11 @@
 
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_3f
-    :goto_3f
-    if-eqz v1, :cond_47
+    :cond_2
+    :goto_1
+    if-eqz v1, :cond_3
 
     .line 99
     new-instance v0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;
@@ -246,14 +246,14 @@
 
     move-object p0, v0
 
-    :cond_47
+    :cond_3
     return-object p0
 .end method
 
 
 # virtual methods
 .method public getHeightAlignment()I
-    .registers 2
+    .locals 1
 
     .line 182
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
@@ -266,7 +266,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 126
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
@@ -279,7 +279,7 @@
 .end method
 
 .method public getSupportedBitrateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -300,7 +300,7 @@
 .end method
 
 .method public getSupportedHeights()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -317,7 +317,7 @@
 .end method
 
 .method public getSupportedHeightsFor(I)Landroid/util/Range;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -338,7 +338,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
 
@@ -349,16 +349,16 @@
 
     rem-int v0, p1, v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_19
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Not supported width: "
@@ -412,7 +412,7 @@
 .end method
 
 .method public getSupportedWidths()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -429,7 +429,7 @@
 .end method
 
 .method public getSupportedWidthsFor(I)Landroid/util/Range;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -450,7 +450,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
 
@@ -461,16 +461,16 @@
 
     rem-int v0, p1, v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_19
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Not supported height: "
@@ -524,7 +524,7 @@
 .end method
 
 .method public getWidthAlignment()I
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
@@ -537,7 +537,7 @@
 .end method
 
 .method public isSizeSupported(II)Z
-    .registers 6
+    .locals 3
 
     .line 131
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mExtraSupportedSizes:Ljava/util/Set;
@@ -548,7 +548,7 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mExtraSupportedSizes:Ljava/util/Set;
 
@@ -560,12 +560,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 135
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mSupportedWidths:Landroid/util/Range;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -576,7 +576,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mSupportedHeights:Landroid/util/Range;
 
@@ -589,7 +589,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
 
@@ -600,7 +600,7 @@
 
     rem-int/2addr p1, v0
 
-    if-nez p1, :cond_42
+    if-nez p1, :cond_1
 
     iget-object p1, p0, Landroidx/camera/video/internal/workaround/VideoEncoderInfoWrapper;->mVideoEncoderInfo:Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
 
@@ -611,13 +611,13 @@
 
     rem-int/2addr p2, p1
 
-    if-nez p2, :cond_42
+    if-nez p2, :cond_1
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_42
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_43
+    :goto_0
     return v1
 .end method

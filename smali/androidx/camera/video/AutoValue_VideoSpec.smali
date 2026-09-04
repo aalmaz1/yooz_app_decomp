@@ -39,7 +39,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/camera/video/QualitySelector;Landroid/util/Range;Landroid/util/Range;I)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,7 +72,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/QualitySelector;Landroid/util/Range;Landroid/util/Range;ILandroidx/camera/video/AutoValue_VideoSpec$1;)V
-    .registers 6
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/camera/video/AutoValue_VideoSpec;-><init>(Landroidx/camera/video/QualitySelector;Landroid/util/Range;Landroid/util/Range;I)V
@@ -83,21 +83,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 70
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/VideoSpec;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_2
 
     .line 71
     check-cast p1, Landroidx/camera/video/VideoSpec;
@@ -113,7 +113,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_VideoSpec;->frameRate:Landroid/util/Range;
 
@@ -126,7 +126,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_VideoSpec;->bitrate:Landroid/util/Range;
 
@@ -139,7 +139,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/AutoValue_VideoSpec;->aspectRatio:I
 
@@ -148,22 +148,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_38
+    if-ne v1, p1, :cond_1
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_1
     move v0, v2
 
-    :goto_39
+    :goto_0
     return v0
 
-    :cond_3a
+    :cond_2
     return v2
 .end method
 
 .method getAspectRatio()I
-    .registers 2
+    .locals 1
 
     .line 52
     iget v0, p0, Landroidx/camera/video/AutoValue_VideoSpec;->aspectRatio:I
@@ -172,7 +172,7 @@
 .end method
 
 .method public getBitrate()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -189,7 +189,7 @@
 .end method
 
 .method public getFrameRate()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -206,7 +206,7 @@
 .end method
 
 .method public getQualitySelector()Landroidx/camera/video/QualitySelector;
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/camera/video/AutoValue_VideoSpec;->qualitySelector:Landroidx/camera/video/QualitySelector;
@@ -215,7 +215,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 84
     iget-object v0, p0, Landroidx/camera/video/AutoValue_VideoSpec;->qualitySelector:Landroidx/camera/video/QualitySelector;
@@ -261,7 +261,7 @@
 .end method
 
 .method public toBuilder()Landroidx/camera/video/VideoSpec$Builder;
-    .registers 3
+    .locals 2
 
     .line 96
     new-instance v0, Landroidx/camera/video/AutoValue_VideoSpec$Builder;
@@ -274,7 +274,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 57
     new-instance v0, Ljava/lang/StringBuilder;

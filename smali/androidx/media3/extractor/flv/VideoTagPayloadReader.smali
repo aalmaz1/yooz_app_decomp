@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/TrackOutput;)V
-    .registers 3
+    .locals 1
 
     .line 55
     invoke-direct {p0, p1}, Landroidx/media3/extractor/flv/TagPayloadReader;-><init>(Landroidx/media3/extractor/TrackOutput;)V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method protected parseHeader(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/flv/TagPayloadReader$UnsupportedFormatException;
@@ -80,27 +80,27 @@
 
     const/4 v1, 0x7
 
-    if-ne p1, v1, :cond_16
+    if-ne p1, v1, :cond_1
 
     .line 74
     iput v0, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->frameType:I
 
     const/4 p1, 0x5
 
-    if-eq v0, p1, :cond_14
+    if-eq v0, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_15
+    :goto_0
     return p1
 
     .line 72
-    :cond_16
+    :cond_1
     new-instance v0, Landroidx/media3/extractor/flv/TagPayloadReader$UnsupportedFormatException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -123,7 +123,7 @@
 .end method
 
 .method protected parsePayload(Landroidx/media3/common/util/ParsableByteArray;J)Z
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -152,12 +152,12 @@
 
     const/4 p3, 0x0
 
-    if-nez v0, :cond_6a
+    if-nez v0, :cond_0
 
     .line 85
     iget-boolean v1, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->hasOutputFormat:Z
 
-    if-nez v1, :cond_6a
+    if-nez v1, :cond_0
 
     .line 86
     new-instance v0, Landroidx/media3/common/util/ParsableByteArray;
@@ -253,38 +253,38 @@
 
     return p3
 
-    :cond_6a
-    if-ne v0, p2, :cond_cc
+    :cond_0
+    if-ne v0, p2, :cond_4
 
     .line 103
     iget-boolean v0, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->hasOutputFormat:Z
 
-    if-eqz v0, :cond_cc
+    if-eqz v0, :cond_4
 
     .line 104
     iget v0, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->frameType:I
 
-    if-ne v0, p2, :cond_76
+    if-ne v0, p2, :cond_1
 
     move v6, p2
 
-    goto :goto_77
+    goto :goto_0
 
-    :cond_76
+    :cond_1
     move v6, p3
 
     .line 105
-    :goto_77
+    :goto_0
     iget-boolean v0, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->hasOutputKeyframe:Z
 
-    if-nez v0, :cond_7e
+    if-nez v0, :cond_2
 
-    if-nez v6, :cond_7e
+    if-nez v6, :cond_2
 
     return p3
 
     .line 111
-    :cond_7e
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->nalLength:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -312,12 +312,12 @@
     move v7, p3
 
     .line 121
-    :goto_91
+    :goto_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v2
 
-    if-lez v2, :cond_c2
+    if-lez v2, :cond_3
 
     .line 123
     iget-object v2, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->nalLength:Landroidx/media3/common/util/ParsableByteArray;
@@ -363,10 +363,10 @@
 
     add-int/2addr v7, v2
 
-    goto :goto_91
+    goto :goto_1
 
     .line 136
-    :cond_c2
+    :cond_3
     iget-object v3, p0, Landroidx/media3/extractor/flv/VideoTagPayloadReader;->output:Landroidx/media3/extractor/TrackOutput;
 
     const/4 v8, 0x0
@@ -380,12 +380,12 @@
 
     return p2
 
-    :cond_cc
+    :cond_4
     return p3
 .end method
 
 .method public seek()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

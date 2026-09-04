@@ -100,7 +100,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 135
     new-instance v0, Landroidx/media3/extractor/DefaultExtractorsFactory;
@@ -117,7 +117,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorsFactory;Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 4
+    .locals 1
 
     .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -201,7 +201,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/MediaExtractorCompat;)Landroid/util/SparseArray;
-    .registers 1
+    .locals 0
 
     .line 85
     iget-object p0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->sampleQueues:Landroid/util/SparseArray;
@@ -210,7 +210,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/MediaExtractorCompat;)Z
-    .registers 1
+    .locals 0
 
     .line 85
     iget-boolean p0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracksEnded:Z
@@ -219,7 +219,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/exoplayer/MediaExtractorCompat;Z)Z
-    .registers 2
+    .locals 0
 
     .line 85
     iput-boolean p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracksEnded:Z
@@ -228,7 +228,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/MediaExtractorCompat;)Landroidx/media3/exoplayer/upstream/Allocator;
-    .registers 1
+    .locals 0
 
     .line 85
     iget-object p0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->allocator:Landroidx/media3/exoplayer/upstream/Allocator;
@@ -237,7 +237,7 @@
 .end method
 
 .method static synthetic access$502(Landroidx/media3/exoplayer/MediaExtractorCompat;Landroidx/media3/extractor/SeekMap;)Landroidx/media3/extractor/SeekMap;
-    .registers 2
+    .locals 0
 
     .line 85
     iput-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->seekMap:Landroidx/media3/extractor/SeekMap;
@@ -246,7 +246,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/MediaExtractorCompat;Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 0
 
     .line 85
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/MediaExtractorCompat;->onSampleQueueFormatInitialized(Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;Landroidx/media3/common/Format;)V
@@ -255,7 +255,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/MediaExtractorCompat;)Ljava/util/ArrayDeque;
-    .registers 1
+    .locals 0
 
     .line 85
     iget-object p0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->trackIndicesPerSampleInQueuedOrder:Ljava/util/ArrayDeque;
@@ -264,7 +264,7 @@
 .end method
 
 .method private advanceToSampleOrEndOfInput()Z
-    .registers 9
+    .locals 8
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "trackIndicesPerSampleInQueuedOrder.peekFirst()"
@@ -279,16 +279,16 @@
     const/4 v2, 0x0
 
     .line 483
-    :try_start_5
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->maybeResolvePendingSeek()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_8} :catch_57
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
     move v3, v2
 
     .line 491
-    :cond_9
-    :goto_9
+    :cond_0
+    :goto_0
     iget-object v4, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->trackIndicesPerSampleInQueuedOrder:Ljava/util/ArrayDeque;
 
     invoke-virtual {v4}, Ljava/util/ArrayDeque;->isEmpty()Z
@@ -297,7 +297,7 @@
 
     const/4 v5, 0x1
 
-    if-nez v4, :cond_25
+    if-nez v4, :cond_2
 
     .line 493
     iget-object v4, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->selectedTrackIndices:Ljava/util/Set;
@@ -312,21 +312,21 @@
 
     move-result v4
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_1
 
     return v5
 
     .line 497
-    :cond_21
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->skipOneSample()V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_25
-    if-nez v3, :cond_56
+    :cond_2
+    if-nez v3, :cond_4
 
     .line 504
-    :try_start_27
+    :try_start_1
     iget-object v4, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->currentExtractor:Landroidx/media3/extractor/Extractor;
 
     .line 505
@@ -353,12 +353,12 @@
 
     const/4 v6, -0x1
 
-    if-ne v4, v6, :cond_41
+    if-ne v4, v6, :cond_3
 
-    goto :goto_54
+    goto :goto_2
 
-    :cond_41
-    if-ne v4, v5, :cond_9
+    :cond_3
+    if-ne v4, v5, :cond_0
 
     .line 510
     iget-object v4, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -370,33 +370,33 @@
     move-result-object v4
 
     iput-object v4, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->currentExtractorInput:Landroidx/media3/extractor/ExtractorInput;
-    :try_end_4d
-    .catch Ljava/lang/Exception; {:try_start_27 .. :try_end_4d} :catch_50
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_27 .. :try_end_4d} :catch_4e
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :catch_4e
+    :catch_0
     move-exception v3
 
-    goto :goto_51
+    goto :goto_1
 
-    :catch_50
+    :catch_1
     move-exception v3
 
     .line 513
-    :goto_51
+    :goto_1
     invoke-static {v1, v0, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_54
+    :goto_2
     move v3, v5
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_56
+    :cond_4
     return v2
 
-    :catch_57
+    :catch_2
     move-exception v3
 
     .line 485
@@ -406,7 +406,7 @@
 .end method
 
 .method private static buildDataSpec(Landroid/net/Uri;J)Landroidx/media3/datasource/DataSpec;
-    .registers 4
+    .locals 1
 
     .line 584
     new-instance v0, Landroidx/media3/datasource/DataSpec$Builder;
@@ -439,7 +439,7 @@
 .end method
 
 .method static synthetic lambda$selectExtractor$0(Landroidx/media3/extractor/Extractor;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 463
     invoke-interface {p0}, Landroidx/media3/extractor/Extractor;->getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
@@ -458,7 +458,7 @@
 .end method
 
 .method private maybeResolvePendingSeek()V
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -468,12 +468,12 @@
     .line 568
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->pendingSeek:Landroidx/media3/extractor/SeekPoint;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 571
-    :cond_5
+    :cond_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -513,7 +513,7 @@
 .end method
 
 .method private onSampleQueueFormatInitialized(Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;Landroidx/media3/common/Format;)V
-    .registers 8
+    .locals 5
 
     .line 547
     iget v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->upstreamFormatsCount:I
@@ -551,7 +551,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_0
 
     .line 558
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracks:Ljava/util/ArrayList;
@@ -571,12 +571,12 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_34
+    :cond_0
     return-void
 .end method
 
 .method private peekNextSelectedTrackSample(Landroidx/media3/decoder/DecoderInputBuffer;Z)V
-    .registers 10
+    .locals 7
 
     .line 405
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracks:Ljava/util/ArrayList;
@@ -613,16 +613,16 @@
 
     const/4 v3, 0x0
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_0
 
     move p2, v2
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move p2, v3
 
-    :goto_23
+    :goto_0
     const/4 v4, 0x1
 
     or-int/2addr p2, v4
@@ -637,7 +637,7 @@
 
     const/4 v6, -0x5
 
-    if-ne v5, v6, :cond_34
+    if-ne v5, v6, :cond_1
 
     .line 414
     iget-object v5, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->formatHolder:Landroidx/media3/exoplayer/FormatHolder;
@@ -648,19 +648,19 @@
     move-result v5
 
     .line 418
-    :cond_34
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->formatHolder:Landroidx/media3/exoplayer/FormatHolder;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/FormatHolder;->clear()V
 
     const/4 p1, -0x4
 
-    if-ne v5, p1, :cond_3d
+    if-ne v5, p1, :cond_2
 
     return-void
 
     .line 422
-    :cond_3d
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-array p2, v2, [Ljava/lang/Object;
@@ -699,7 +699,7 @@
 .end method
 
 .method private reopenCurrentDataSource(J)Landroidx/media3/extractor/ExtractorInput;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -750,11 +750,11 @@
 
     cmp-long v3, v0, v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_0
 
     add-long/2addr v0, p1
 
-    :cond_28
+    :cond_0
     move-wide v5, v0
 
     .line 542
@@ -770,7 +770,7 @@
 .end method
 
 .method private selectExtractor(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/Extractor;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -789,28 +789,28 @@
 
     const/4 v2, 0x0
 
-    :goto_8
-    if-ge v2, v1, :cond_21
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
     .line 444
-    :try_start_c
+    :try_start_0
     invoke-interface {v3, p1}, Landroidx/media3/extractor/Extractor;->sniff(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result v4
-    :try_end_10
-    .catch Ljava/io/EOFException; {:try_start_c .. :try_end_10} :catch_1b
-    .catchall {:try_start_c .. :try_end_10} :catchall_16
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_0
 
     .line 452
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
-    goto :goto_22
+    goto :goto_1
 
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -819,24 +819,24 @@
     throw v0
 
     .line 452
-    :catch_1b
-    :cond_1b
+    :catch_0
+    :cond_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     const/4 v3, 0x0
 
-    :goto_22
-    if-eqz v3, :cond_25
+    :goto_1
+    if-eqz v3, :cond_2
 
     return-object v3
 
     .line 456
-    :cond_25
+    :cond_2
     new-instance p1, Landroidx/media3/exoplayer/source/UnrecognizedInputFormatException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -915,7 +915,7 @@
 .end method
 
 .method private skipOneSample()V
-    .registers 3
+    .locals 2
 
     .line 524
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->trackIndicesPerSampleInQueuedOrder:Ljava/util/ArrayDeque;
@@ -942,33 +942,33 @@
     .line 526
     iget-boolean v1, v0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorTrack;->isCompatibilityTrack:Z
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_0
 
     .line 528
     invoke-virtual {v0}, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorTrack;->discardFrontSample()V
 
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public advance()Z
-    .registers 2
+    .locals 1
 
     .line 321
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->advanceToSampleOrEndOfInput()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 325
-    :cond_8
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->skipOneSample()V
 
     .line 326
@@ -980,7 +980,7 @@
 .end method
 
 .method public getAllocator()Landroidx/media3/exoplayer/upstream/Allocator;
-    .registers 2
+    .locals 1
 
     .line 392
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->allocator:Landroidx/media3/exoplayer/upstream/Allocator;
@@ -989,21 +989,21 @@
 .end method
 
 .method public getSampleFlags()I
-    .registers 3
+    .locals 2
 
     .line 380
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->advanceToSampleOrEndOfInput()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 383
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->noDataBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     const/4 v1, 0x1
@@ -1019,16 +1019,16 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x2
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     move v0, v1
 
-    :goto_1a
+    :goto_0
     or-int/2addr v0, v1
 
     .line 386
@@ -1044,21 +1044,21 @@
 .end method
 
 .method public getSampleTime()J
-    .registers 3
+    .locals 2
 
     .line 371
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->advanceToSampleOrEndOfInput()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const-wide/16 v0, -0x1
 
     return-wide v0
 
     .line 374
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->noDataBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     const/4 v1, 0x1
@@ -1074,21 +1074,21 @@
 .end method
 
 .method public getSampleTrackIndex()I
-    .registers 2
+    .locals 1
 
     .line 360
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->advanceToSampleOrEndOfInput()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 363
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->trackIndicesPerSampleInQueuedOrder:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->peekFirst()Ljava/lang/Object;
@@ -1105,7 +1105,7 @@
 .end method
 
 .method public getTrackCount()I
-    .registers 2
+    .locals 1
 
     .line 235
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracks:Ljava/util/ArrayList;
@@ -1118,7 +1118,7 @@
 .end method
 
 .method public getTrackFormat(I)Landroid/media/MediaFormat;
-    .registers 4
+    .locals 2
 
     .line 240
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracks:Ljava/util/ArrayList;
@@ -1141,21 +1141,21 @@
 .end method
 
 .method public readSampleData(Ljava/nio/ByteBuffer;I)I
-    .registers 5
+    .locals 2
 
     .line 341
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->advanceToSampleOrEndOfInput()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 345
-    :cond_8
+    :cond_0
     invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 346
@@ -1199,19 +1199,19 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 219
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->sampleQueues:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 220
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->sampleQueues:Landroid/util/SparseArray;
@@ -1226,10 +1226,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 222
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->sampleQueues:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
@@ -1239,7 +1239,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 224
     invoke-interface {v0}, Landroidx/media3/extractor/Extractor;->release()V
@@ -1248,7 +1248,7 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->currentExtractor:Landroidx/media3/extractor/Extractor;
 
     .line 227
-    :cond_26
+    :cond_1
     iput-object v1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->currentExtractorInput:Landroidx/media3/extractor/ExtractorInput;
 
     .line 228
@@ -1266,17 +1266,17 @@
 .end method
 
 .method public seekTo(JI)V
-    .registers 9
+    .locals 5
 
     .line 271
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->seekMap:Landroidx/media3/extractor/SeekMap;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 276
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->selectedTrackIndices:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I
@@ -1285,13 +1285,13 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_37
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->currentExtractor:Landroidx/media3/extractor/Extractor;
 
     instance-of v2, v0, Landroidx/media3/extractor/mp4/Mp4Extractor;
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_1
 
     .line 279
     check-cast v0, Landroidx/media3/extractor/mp4/Mp4Extractor;
@@ -1330,24 +1330,24 @@
 
     move-result-object v0
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 284
-    :cond_37
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->seekMap:Landroidx/media3/extractor/SeekMap;
 
     invoke-interface {v0, p1, p2}, Landroidx/media3/extractor/SeekMap;->getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     move-result-object v0
 
-    :goto_3d
-    if-eqz p3, :cond_6a
+    :goto_0
+    if-eqz p3, :cond_5
 
-    if-eq p3, v1, :cond_67
+    if-eq p3, v1, :cond_4
 
     const/4 v1, 0x2
 
-    if-ne p3, v1, :cond_61
+    if-ne p3, v1, :cond_3
 
     .line 290
     iget-object p3, v0, Landroidx/media3/extractor/SeekMap$SeekPoints;->second:Landroidx/media3/extractor/SeekPoint;
@@ -1372,21 +1372,21 @@
 
     cmp-long p1, v1, p1
 
-    if-gez p1, :cond_5e
+    if-gez p1, :cond_2
 
     .line 291
     iget-object p1, v0, Landroidx/media3/extractor/SeekMap$SeekPoints;->second:Landroidx/media3/extractor/SeekPoint;
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 292
-    :cond_5e
+    :cond_2
     iget-object p1, v0, Landroidx/media3/extractor/SeekMap$SeekPoints;->first:Landroidx/media3/extractor/SeekPoint;
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 302
-    :cond_61
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -1394,17 +1394,17 @@
     throw p1
 
     .line 295
-    :cond_67
+    :cond_4
     iget-object p1, v0, Landroidx/media3/extractor/SeekMap$SeekPoints;->second:Landroidx/media3/extractor/SeekPoint;
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 298
-    :cond_6a
+    :cond_5
     iget-object p1, v0, Landroidx/media3/extractor/SeekMap$SeekPoints;->first:Landroidx/media3/extractor/SeekPoint;
 
     .line 304
-    :goto_6c
+    :goto_1
     iget-object p2, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->trackIndicesPerSampleInQueuedOrder:Ljava/util/ArrayDeque;
 
     invoke-virtual {p2}, Ljava/util/ArrayDeque;->clear()V
@@ -1412,14 +1412,14 @@
     const/4 p2, 0x0
 
     .line 305
-    :goto_72
+    :goto_2
     iget-object p3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->sampleQueues:Landroid/util/SparseArray;
 
     invoke-virtual {p3}, Landroid/util/SparseArray;->size()I
 
     move-result p3
 
-    if-ge p2, p3, :cond_88
+    if-ge p2, p3, :cond_6
 
     .line 306
     iget-object p3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->sampleQueues:Landroid/util/SparseArray;
@@ -1434,17 +1434,17 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_72
+    goto :goto_2
 
     .line 308
-    :cond_88
+    :cond_6
     iput-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->pendingSeek:Landroidx/media3/extractor/SeekPoint;
 
     return-void
 .end method
 
 .method public selectTrack(I)V
-    .registers 3
+    .locals 1
 
     .line 253
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->selectedTrackIndices:Ljava/util/Set;
@@ -1459,7 +1459,7 @@
 .end method
 
 .method public setDataSource(Landroid/net/Uri;J)V
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1527,40 +1527,40 @@
 
     move p3, v1
 
-    :goto_33
-    if-eqz p3, :cond_79
+    :goto_0
+    if-eqz p3, :cond_6
 
     const/4 p3, -0x1
 
     .line 188
-    :try_start_36
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->positionHolder:Landroidx/media3/extractor/PositionHolder;
 
     invoke-interface {p2, p1, v2}, Landroidx/media3/extractor/Extractor;->read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
 
     move-result v2
-    :try_end_3c
-    .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_3c} :catch_3f
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_36 .. :try_end_3c} :catch_3d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_41
+    goto :goto_2
 
-    :catch_3d
+    :catch_0
     move-exception v0
 
-    goto :goto_40
+    goto :goto_1
 
-    :catch_3f
+    :catch_1
     move-exception v0
 
-    :goto_40
+    :goto_1
     move v2, p3
 
     .line 194
-    :goto_41
+    :goto_2
     iget-boolean v3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->tracksEnded:Z
 
-    if-eqz v3, :cond_56
+    if-eqz v3, :cond_1
 
     iget v3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->upstreamFormatsCount:I
 
@@ -1570,34 +1570,34 @@
 
     move-result v4
 
-    if-lt v3, v4, :cond_56
+    if-lt v3, v4, :cond_1
 
     iget-object v3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->seekMap:Landroidx/media3/extractor/SeekMap;
 
-    if-nez v3, :cond_54
+    if-nez v3, :cond_0
 
-    goto :goto_56
+    goto :goto_3
 
-    :cond_54
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_57
+    goto :goto_4
 
-    :cond_56
-    :goto_56
+    :cond_1
+    :goto_3
     move v3, v1
 
-    :goto_57
-    if-nez v0, :cond_6a
+    :goto_4
+    if-nez v0, :cond_4
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_2
 
-    if-ne v2, p3, :cond_5e
+    if-ne v2, p3, :cond_2
 
-    goto :goto_6a
+    goto :goto_5
 
-    :cond_5e
-    if-ne v2, v1, :cond_68
+    :cond_2
+    if-ne v2, v1, :cond_3
 
     .line 204
     iget-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->positionHolder:Landroidx/media3/extractor/PositionHolder;
@@ -1608,27 +1608,27 @@
 
     move-result-object p1
 
-    :cond_68
+    :cond_3
     move p3, v3
 
-    goto :goto_33
+    goto :goto_0
 
     .line 197
-    :cond_6a
-    :goto_6a
+    :cond_4
+    :goto_5
     invoke-virtual {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat;->release()V
 
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_5
 
     const-string p1, "Exception encountered while parsing input media."
 
-    goto :goto_74
+    goto :goto_6
 
-    :cond_72
+    :cond_5
     const-string p1, "Reached end of input before preparation completed."
 
     .line 202
-    :goto_74
+    :goto_6
     invoke-static {p1, v0}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p1
@@ -1636,7 +1636,7 @@
     throw p1
 
     .line 207
-    :cond_79
+    :cond_6
     iput-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->currentExtractorInput:Landroidx/media3/extractor/ExtractorInput;
 
     .line 208
@@ -1646,7 +1646,7 @@
 .end method
 
 .method public unselectTrack(I)V
-    .registers 3
+    .locals 1
 
     .line 263
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat;->selectedTrackIndices:Ljava/util/Set;

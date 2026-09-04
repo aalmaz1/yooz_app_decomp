@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 2464
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;-><init>(Ljava/lang/Object;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 2469
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi23;->mControlsObj:Ljava/lang/Object;

@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,22 +60,22 @@
 .end method
 
 .method private maybeOutputSampleMetadata()V
-    .registers 2
+    .locals 1
 
     .line 198
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->numBytesPendingMetadataOutput:I
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     .line 199
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->outputSampleMetadataForFragmentedPackets()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method private outputSampleMetadataForFragmentedPackets()V
-    .registers 9
+    .locals 8
 
     .line 204
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -110,7 +110,7 @@
 .end method
 
 .method private processFragmentedPacket(Landroidx/media3/common/util/ParsableByteArray;ZIJ)V
-    .registers 8
+    .locals 2
 
     .line 174
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -138,21 +138,21 @@
     .line 177
     iput-wide p4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->sampleTimeUsOfFramePendingMetadataOutput:J
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x3
 
-    if-ne p3, p1, :cond_1e
+    if-ne p3, p1, :cond_0
 
     .line 181
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->outputSampleMetadataForFragmentedPackets()V
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method private processMultiFramePacket(Landroidx/media3/common/util/ParsableByteArray;IJ)V
-    .registers 14
+    .locals 9
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->scratchBitBuffer:Landroidx/media3/common/util/ParsableBitArray;
@@ -172,8 +172,8 @@
 
     const/4 v0, 0x0
 
-    :goto_10
-    if-ge v0, p2, :cond_4b
+    :goto_0
+    if-ge v0, p2, :cond_0
 
     .line 155
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->scratchBitBuffer:Landroidx/media3/common/util/ParsableBitArray;
@@ -241,14 +241,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_4b
+    :cond_0
     return-void
 .end method
 
 .method private processSingleFramePacket(Landroidx/media3/common/util/ParsableByteArray;J)V
-    .registers 11
+    .locals 7
 
     .line 137
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -294,7 +294,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 20
+    .locals 14
 
     move-object v6, p0
 
@@ -334,20 +334,20 @@
 
     const/4 v7, 0x1
 
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_2
 
-    if-eq v3, v7, :cond_32
+    if-eq v3, v7, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq v3, v0, :cond_32
+    if-eq v3, v0, :cond_1
 
-    if-ne v3, v2, :cond_28
+    if-ne v3, v2, :cond_0
 
-    goto :goto_35
+    goto :goto_0
 
     .line 126
-    :cond_28
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -359,10 +359,10 @@
     throw v0
 
     .line 118
-    :cond_32
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->maybeOutputSampleMetadata()V
 
-    :goto_35
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -372,29 +372,29 @@
     .line 122
     invoke-direct/range {v0 .. v5}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->processFragmentedPacket(Landroidx/media3/common/util/ParsableByteArray;ZIJ)V
 
-    goto :goto_49
+    goto :goto_1
 
     .line 106
-    :cond_3d
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->maybeOutputSampleMetadata()V
 
-    if-ne v0, v7, :cond_46
+    if-ne v0, v7, :cond_3
 
     .line 109
     invoke-direct {p0, p1, v4, v5}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->processSingleFramePacket(Landroidx/media3/common/util/ParsableByteArray;J)V
 
-    goto :goto_49
+    goto :goto_1
 
     .line 112
-    :cond_46
+    :cond_3
     invoke-direct {p0, p1, v0, v4, v5}, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->processMultiFramePacket(Landroidx/media3/common/util/ParsableByteArray;IJ)V
 
-    :goto_49
+    :goto_1
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -416,7 +416,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 8
+    .locals 4
 
     .line 74
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->firstReceivedTimestamp:J
@@ -425,16 +425,16 @@
 
     cmp-long p3, v0, v2
 
-    if-nez p3, :cond_d
+    if-nez p3, :cond_0
 
     const/4 p3, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p3, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {p3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 75
@@ -444,7 +444,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 132
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAc3Reader;->firstReceivedTimestamp:J

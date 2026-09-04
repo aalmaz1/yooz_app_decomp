@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/constraintlayout/motion/widget/MotionScene;Landroidx/constraintlayout/motion/utils/Easing;)V
-    .registers 3
+    .locals 0
 
     .line 1368
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/MotionScene$1;->this$0:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public getInterpolation(F)F
-    .registers 5
+    .locals 3
 
     .line 1371
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionScene$1;->val$easing:Landroidx/constraintlayout/motion/utils/Easing;

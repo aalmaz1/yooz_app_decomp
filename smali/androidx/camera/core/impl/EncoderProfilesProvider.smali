@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 48
     new-instance v0, Landroidx/camera/core/impl/EncoderProfilesProvider$1;

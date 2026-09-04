@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/CameraEffect;)V
-    .registers 3
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public getExecutor()Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;->mExecutor:Ljava/util/concurrent/Executor;
@@ -75,7 +75,7 @@
 .end method
 
 .method public getProcessor()Landroidx/camera/core/SurfaceProcessor;
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;->mSurfaceProcessor:Landroidx/camera/core/SurfaceProcessor;
@@ -84,19 +84,19 @@
 .end method
 
 .method synthetic lambda$onInputSurface$0$androidx-camera-core-processing-SurfaceProcessorWithExecutor(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 4
+    .locals 2
 
     .line 82
     :try_start_0
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;->mSurfaceProcessor:Landroidx/camera/core/SurfaceProcessor;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/SurfaceProcessor;->onInputSurface(Landroidx/camera/core/SurfaceRequest;)V
-    :try_end_5
-    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :catch_6
+    :catch_0
     move-exception p1
 
     const-string v0, "SurfaceProcessor"
@@ -111,24 +111,24 @@
 
     invoke-interface {v0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$onOutputSurface$1$androidx-camera-core-processing-SurfaceProcessorWithExecutor(Landroidx/camera/core/SurfaceOutput;)V
-    .registers 4
+    .locals 2
 
     .line 94
     :try_start_0
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;->mSurfaceProcessor:Landroidx/camera/core/SurfaceProcessor;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/SurfaceProcessor;->onOutputSurface(Landroidx/camera/core/SurfaceOutput;)V
-    :try_end_5
-    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :catch_6
+    :catch_0
     move-exception p1
 
     const-string v0, "SurfaceProcessor"
@@ -143,12 +143,12 @@
 
     invoke-interface {v0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method public onInputSurface(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 4
+    .locals 2
 
     .line 80
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;->mExecutor:Ljava/util/concurrent/Executor;
@@ -163,7 +163,7 @@
 .end method
 
 .method public onOutputSurface(Landroidx/camera/core/SurfaceOutput;)V
-    .registers 4
+    .locals 2
 
     .line 92
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorWithExecutor;->mExecutor:Ljava/util/concurrent/Executor;
@@ -178,13 +178,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public snapshot(II)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",

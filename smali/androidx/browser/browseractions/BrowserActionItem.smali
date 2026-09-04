@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/app/PendingIntent;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/app/PendingIntent;I)V
-    .registers 4
+    .locals 0
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroid/app/PendingIntent;Landroid/net/Uri;)V
-    .registers 4
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 0
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,17 +91,17 @@
 
 # virtual methods
 .method public getAction()Landroid/app/PendingIntent;
-    .registers 3
+    .locals 2
 
     .line 116
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionItem;->mAction:Landroid/app/PendingIntent;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 120
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Can\'t call getAction on BrowserActionItem with null action."
@@ -112,7 +112,7 @@
 .end method
 
 .method public getIconId()I
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/browser/browseractions/BrowserActionItem;->mIconId:I
@@ -121,7 +121,7 @@
 .end method
 
 .method public getIconUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 132
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionItem;->mIconUri:Landroid/net/Uri;
@@ -130,7 +130,7 @@
 .end method
 
 .method getRunnableAction()Ljava/lang/Runnable;
-    .registers 2
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionItem;->mRunnableAction:Ljava/lang/Runnable;
@@ -139,7 +139,7 @@
 .end method
 
 .method public getTitle()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 108
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionItem;->mTitle:Ljava/lang/String;

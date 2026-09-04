@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/Toolbar;)V
-    .registers 3
+    .locals 1
 
     .line 611
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public getActionBarThemedContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 639
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar:Landroidx/appcompat/widget/Toolbar;
@@ -68,7 +68,7 @@
 .end method
 
 .method public getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
 
     .line 634
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mDefaultUpIndicator:Landroid/graphics/drawable/Drawable;
@@ -77,7 +77,7 @@
 .end method
 
 .method public isNavigationVisible()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -85,9 +85,9 @@
 .end method
 
 .method public setActionBarDescription(I)V
-    .registers 3
+    .locals 1
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     .line 626
     iget-object p1, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar:Landroidx/appcompat/widget/Toolbar;
@@ -96,20 +96,20 @@
 
     invoke-virtual {p1, v0}, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(Ljava/lang/CharSequence;)V
 
-    goto :goto_f
+    goto :goto_0
 
     .line 628
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar:Landroidx/appcompat/widget/Toolbar;
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/Toolbar;->setNavigationContentDescription(I)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public setActionBarUpIndicator(Landroid/graphics/drawable/Drawable;I)V
-    .registers 4
+    .locals 1
 
     .line 619
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggle$ToolbarCompatDelegate;->mToolbar:Landroidx/appcompat/widget/Toolbar;

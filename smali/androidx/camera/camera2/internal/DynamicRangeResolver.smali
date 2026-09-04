@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)V
-    .registers 7
+    .locals 5
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,41 +52,41 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     .line 71
     array-length v1, p1
 
     move v2, v0
 
-    :goto_18
-    if-ge v2, v1, :cond_25
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget v3, p1, v2
 
     const/16 v4, 0x12
 
-    if-ne v3, v4, :cond_22
+    if-ne v3, v4, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_22
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
     .line 79
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_1
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/DynamicRangeResolver;->mIs10BitSupported:Z
 
     return-void
 .end method
 
 .method private static canResolve(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;)Z
-    .registers 6
+    .locals 4
 
     .line 479
     invoke-virtual {p1}, Landroidx/camera/core/DynamicRange;->isFullySpecified()Z
@@ -108,31 +108,31 @@
 
     const/4 v3, 0x2
 
-    if-ne v0, v3, :cond_19
+    if-ne v0, v3, :cond_0
 
     .line 482
     invoke-virtual {p1}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     return v2
 
     .line 486
-    :cond_19
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
 
-    if-eq v0, v3, :cond_30
+    if-eq v0, v3, :cond_1
 
     .line 487
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 488
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
@@ -143,17 +143,17 @@
 
     move-result v3
 
-    if-eq v0, v3, :cond_30
+    if-eq v0, v3, :cond_1
 
     return v2
 
     .line 492
-    :cond_30
+    :cond_1
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getBitDepth()I
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_3
 
     .line 493
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getBitDepth()I
@@ -164,20 +164,20 @@
 
     move-result p1
 
-    if-ne p0, p1, :cond_41
+    if-ne p0, p1, :cond_2
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_41
+    :cond_2
     move v1, v2
 
-    :cond_42
-    :goto_42
+    :cond_3
+    :goto_0
     return v1
 .end method
 
 .method private static canResolveWithinConstraints(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;Ljava/util/Set;)Z
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -194,7 +194,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_1b
+    if-nez p2, :cond_0
 
     const/4 p2, 0x2
 
@@ -222,7 +222,7 @@
     return v0
 
     .line 466
-    :cond_1b
+    :cond_0
     invoke-static {p0, p1}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->canResolve(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;)Z
 
     move-result p0
@@ -231,7 +231,7 @@
 .end method
 
 .method private static findSupportedHdrMatch(Landroidx/camera/core/DynamicRange;Ljava/util/Collection;Ljava/util/Set;)Landroidx/camera/core/DynamicRange;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -255,23 +255,23 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_9
+    if-ne v0, v2, :cond_0
 
     return-object v1
 
     .line 389
-    :cond_9
+    :cond_0
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -298,26 +298,26 @@
 
     invoke-static {v4, v5}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
-    if-ne v3, v2, :cond_2e
+    if-ne v3, v2, :cond_2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 400
-    :cond_2e
+    :cond_2
     invoke-static {p0, v0, p2}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->canResolveWithinConstraints(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;Ljava/util/Set;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_1
 
     return-object v0
 
-    :cond_35
+    :cond_3
     return-object v1
 .end method
 
 .method private static isFullyUnspecified(Landroidx/camera/core/DynamicRange;)Z
-    .registers 2
+    .locals 1
 
     .line 430
     sget-object v0, Landroidx/camera/core/DynamicRange;->UNSPECIFIED:Landroidx/camera/core/DynamicRange;
@@ -330,7 +330,7 @@
 .end method
 
 .method private static isPartiallySpecified(Landroidx/camera/core/DynamicRange;)Z
-    .registers 3
+    .locals 2
 
     .line 438
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
@@ -339,54 +339,54 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_2
 
     .line 439
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 440
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getBitDepth()I
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
     .line 441
-    :cond_13
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 442
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getBitDepth()I
 
     move-result p0
 
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 p0, 0x0
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
-    :goto_22
+    :cond_2
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_23
+    :goto_1
     return p0
 .end method
 
 .method private resolveDynamicRange(Landroidx/camera/core/DynamicRange;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;Ljava/lang/String;)Landroidx/camera/core/DynamicRange;
-    .registers 14
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -413,22 +413,22 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     .line 225
     invoke-interface {p2, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     return-object p1
 
-    :cond_e
+    :cond_0
     return-object v1
 
     .line 235
-    :cond_f
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/DynamicRange;->getEncoding()I
 
     move-result v0
@@ -440,9 +440,9 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v3, :cond_28
+    if-ne v0, v3, :cond_3
 
-    if-nez v2, :cond_28
+    if-nez v2, :cond_3
 
     .line 238
     sget-object p1, Landroidx/camera/core/DynamicRange;->SDR:Landroidx/camera/core/DynamicRange;
@@ -451,18 +451,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_2
 
     .line 239
     sget-object p1, Landroidx/camera/core/DynamicRange;->SDR:Landroidx/camera/core/DynamicRange;
 
     return-object p1
 
-    :cond_27
+    :cond_2
     return-object v1
 
     .line 247
-    :cond_28
+    :cond_3
     invoke-static {p1, p3, p2}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->findSupportedHdrMatch(Landroidx/camera/core/DynamicRange;Ljava/util/Collection;Ljava/util/Set;)Landroidx/camera/core/DynamicRange;
 
     move-result-object p3
@@ -475,7 +475,7 @@
 
     const/4 v7, 0x2
 
-    if-eqz p3, :cond_45
+    if-eqz p3, :cond_4
 
     new-array p2, v5, [Ljava/lang/Object;
 
@@ -497,12 +497,12 @@
     return-object p3
 
     .line 258
-    :cond_45
+    :cond_4
     invoke-static {p1, p4, p2}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->findSupportedHdrMatch(Landroidx/camera/core/DynamicRange;Ljava/util/Collection;Ljava/util/Set;)Landroidx/camera/core/DynamicRange;
 
     move-result-object p3
 
-    if-eqz p3, :cond_5d
+    if-eqz p3, :cond_5
 
     new-array p2, v5, [Ljava/lang/Object;
 
@@ -524,14 +524,14 @@
     return-object p3
 
     .line 271
-    :cond_5d
+    :cond_5
     sget-object p3, Landroidx/camera/core/DynamicRange;->SDR:Landroidx/camera/core/DynamicRange;
 
     invoke-static {p1, p3, p2}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->canResolveWithinConstraints(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;Ljava/util/Set;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_7b
+    if-eqz p3, :cond_6
 
     new-array p2, v5, [Ljava/lang/Object;
 
@@ -557,17 +557,17 @@
 
     return-object p1
 
-    :cond_7b
-    if-ne v0, v7, :cond_c6
+    :cond_6
+    if-ne v0, v7, :cond_b
 
     const/16 p3, 0xa
 
-    if-eq v2, p3, :cond_83
+    if-eq v2, p3, :cond_7
 
-    if-nez v2, :cond_c6
+    if-nez v2, :cond_b
 
     .line 285
-    :cond_83
+    :cond_7
     new-instance p3, Ljava/util/LinkedHashSet;
 
     invoke-direct {p3}, Ljava/util/LinkedHashSet;-><init>()V
@@ -577,7 +577,7 @@
 
     const/16 v0, 0x21
 
-    if-lt p4, v0, :cond_9a
+    if-lt p4, v0, :cond_8
 
     .line 290
     iget-object p4, p0, Landroidx/camera/camera2/internal/DynamicRangeResolver;->mCharacteristics:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -586,19 +586,19 @@
 
     move-result-object p4
 
-    if-eqz p4, :cond_9b
+    if-eqz p4, :cond_9
 
     .line 292
     invoke-interface {p3, p4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9b
+    goto :goto_0
 
-    :cond_9a
+    :cond_8
     move-object p4, v1
 
     .line 297
-    :cond_9b
-    :goto_9b
+    :cond_9
+    :goto_0
     sget-object v0, Landroidx/camera/core/DynamicRange;->HLG_10_BIT:Landroidx/camera/core/DynamicRange;
 
     invoke-interface {p3, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -608,7 +608,7 @@
 
     move-result-object p3
 
-    if-eqz p3, :cond_c6
+    if-eqz p3, :cond_b
 
     const/4 p2, 0x4
 
@@ -621,16 +621,16 @@
 
     move-result p4
 
-    if-eqz p4, :cond_b4
+    if-eqz p4, :cond_a
 
     const-string p4, "recommended"
 
-    goto :goto_b6
+    goto :goto_1
 
-    :cond_b4
+    :cond_a
     const-string p4, "required"
 
-    :goto_b6
+    :goto_1
     aput-object p4, p2, v3
 
     aput-object p1, p2, v7
@@ -649,18 +649,18 @@
     return-object p3
 
     .line 317
-    :cond_c6
+    :cond_b
     invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
 
-    :cond_ca
-    :goto_ca
+    :cond_c
+    :goto_2
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
-    if-eqz p3, :cond_100
+    if-eqz p3, :cond_e
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -684,17 +684,17 @@
 
     move-result p4
 
-    if-eqz p4, :cond_e8
+    if-eqz p4, :cond_d
 
-    goto :goto_ca
+    goto :goto_2
 
     .line 326
-    :cond_e8
+    :cond_d
     invoke-static {p1, p3}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->canResolve(Landroidx/camera/core/DynamicRange;Landroidx/camera/core/DynamicRange;)Z
 
     move-result p4
 
-    if-eqz p4, :cond_ca
+    if-eqz p4, :cond_c
 
     new-array p2, v5, [Ljava/lang/Object;
 
@@ -715,12 +715,12 @@
 
     return-object p3
 
-    :cond_100
+    :cond_e
     return-object v1
 .end method
 
 .method private resolveDynamicRangeAndUpdateConstraints(Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;Landroidx/camera/core/impl/UseCaseConfig;Ljava/util/Set;)Landroidx/camera/core/DynamicRange;
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -767,7 +767,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_0
 
     .line 180
     iget-object p1, p0, Landroidx/camera/camera2/internal/DynamicRangeResolver;->mDynamicRangesInfo:Landroidx/camera/camera2/internal/compat/params/DynamicRangesCompat;
@@ -777,7 +777,7 @@
     return-object p2
 
     .line 182
-    :cond_19
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     const/4 p3, 0x4
@@ -830,7 +830,7 @@
 .end method
 
 .method private static updateConstraints(Ljava/util/Set;Landroidx/camera/core/DynamicRange;Landroidx/camera/camera2/internal/compat/params/DynamicRangesCompat;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -866,7 +866,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     .line 358
     new-instance v0, Ljava/util/HashSet;
@@ -881,12 +881,12 @@
 
     move-result p0
 
-    if-nez p0, :cond_24
+    if-nez p0, :cond_0
 
-    goto :goto_45
+    goto :goto_0
 
     .line 366
-    :cond_24
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v2, 0x3
@@ -926,15 +926,15 @@
 
     throw p0
 
-    :cond_45
-    :goto_45
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method is10BitDynamicRangeSupported()Z
-    .registers 2
+    .locals 1
 
     .line 86
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/DynamicRangeResolver;->mIs10BitSupported:Z
@@ -943,7 +943,7 @@
 .end method
 
 .method resolveAndValidateDynamicRanges(Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/util/Map;
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -974,12 +974,12 @@
 
     move-result-object p1
 
-    :goto_9
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -994,10 +994,10 @@
 
     invoke-interface {v6, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
     .line 108
-    :cond_1d
+    :cond_0
     iget-object p1, p0, Landroidx/camera/camera2/internal/DynamicRangeResolver;->mDynamicRangesInfo:Landroidx/camera/camera2/internal/compat/params/DynamicRangesCompat;
 
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/compat/params/DynamicRangesCompat;->getSupportedDynamicRanges()Ljava/util/Set;
@@ -1014,12 +1014,12 @@
 
     move-result-object v0
 
-    :goto_2c
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1032,10 +1032,10 @@
 
     invoke-static {v7, v1, v2}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->updateConstraints(Ljava/util/Set;Landroidx/camera/core/DynamicRange;Landroidx/camera/camera2/internal/compat/params/DynamicRangesCompat;)V
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 129
-    :cond_3e
+    :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1055,12 +1055,12 @@
 
     move-result-object p3
 
-    :goto_51
+    :goto_2
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_83
+    if-eqz v3, :cond_4
 
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1089,34 +1089,34 @@
 
     move-result v5
 
-    if-eqz v5, :cond_75
+    if-eqz v5, :cond_2
 
     .line 136
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_51
+    goto :goto_2
 
     .line 137
-    :cond_75
+    :cond_2
     invoke-static {v4}, Landroidx/camera/camera2/internal/DynamicRangeResolver;->isPartiallySpecified(Landroidx/camera/core/DynamicRange;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_7f
+    if-eqz v4, :cond_3
 
     .line 138
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_51
+    goto :goto_2
 
     .line 140
-    :cond_7f
+    :cond_3
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_51
+    goto :goto_2
 
     .line 144
-    :cond_83
+    :cond_4
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
@@ -1145,13 +1145,13 @@
 
     move-result-object v8
 
-    :cond_9f
-    :goto_9f
+    :cond_5
+    :goto_3
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c3
+    if-eqz v0, :cond_6
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1186,13 +1186,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_9f
+    if-nez v1, :cond_5
 
     .line 161
     invoke-interface {p3, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9f
+    goto :goto_3
 
-    :cond_c3
+    :cond_6
     return-object p2
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/FileBackedOutputStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010
@@ -41,19 +41,19 @@
 
 # virtual methods
 .method protected finalize()V
-    .registers 3
+    .locals 2
 
     .line 142
     :try_start_0
     iget-object v0, p0, Lcom/google/common/io/FileBackedOutputStream$1;->this$0:Lcom/google/common/io/FileBackedOutputStream;
 
     invoke-virtual {v0}, Lcom/google/common/io/FileBackedOutputStream;->reset()V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :catchall_6
+    :catchall_0
     move-exception v0
 
     .line 144
@@ -61,12 +61,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintStream;)V
 
-    :goto_c
+    :goto_0
     return-void
 .end method
 
 .method public openStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

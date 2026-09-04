@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;)V
-    .registers 2
+    .locals 0
 
     .line 1031
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method static synthetic access$1600(Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 1021
     iget-object p0, p0, Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;->adTagUri:Landroid/net/Uri;
@@ -43,7 +43,7 @@
 .end method
 
 .method static synthetic access$1700(Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 1021
     iget-object p0, p0, Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;->adsId:Ljava/lang/Object;
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem$AdsConfiguration;
-    .registers 3
+    .locals 2
 
     .line 1055
     new-instance v0, Landroidx/media3/common/MediaItem$AdsConfiguration;
@@ -67,7 +67,7 @@
 .end method
 
 .method public setAdTagUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1038
     iput-object p1, p0, Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;->adTagUri:Landroid/net/Uri;
@@ -76,7 +76,7 @@
 .end method
 
 .method public setAdsId(Ljava/lang/Object;)Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;
-    .registers 2
+    .locals 0
 
     .line 1050
     iput-object p1, p0, Landroidx/media3/common/MediaItem$AdsConfiguration$Builder;->adsId:Ljava/lang/Object;

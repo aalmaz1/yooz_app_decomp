@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Landroidx/camera/video/internal/audio/AudioSettings;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method synthetic constructor <init>(IIIILandroidx/camera/video/internal/audio/AutoValue_AudioSettings$1;)V
-    .registers 6
+    .locals 0
 
     .line 8
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;-><init>(IIII)V
@@ -55,21 +55,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 66
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/audio/AudioSettings;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 67
     check-cast p1, Landroidx/camera/video/internal/audio/AudioSettings;
@@ -81,7 +81,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_2c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->sampleRate:I
 
@@ -90,7 +90,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_2c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->channelCount:I
 
@@ -99,7 +99,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_2c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->audioFormat:I
 
@@ -108,22 +108,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_2c
+    if-ne v1, p1, :cond_1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v0, v2
 
-    :goto_2d
+    :goto_0
     return v0
 
-    :cond_2e
+    :cond_2
     return v2
 .end method
 
 .method public getAudioFormat()I
-    .registers 2
+    .locals 1
 
     .line 48
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->audioFormat:I
@@ -132,7 +132,7 @@
 .end method
 
 .method public getAudioSource()I
-    .registers 2
+    .locals 1
 
     .line 31
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->audioSource:I
@@ -141,7 +141,7 @@
 .end method
 
 .method public getChannelCount()I
-    .registers 2
+    .locals 1
 
     .line 43
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->channelCount:I
@@ -150,7 +150,7 @@
 .end method
 
 .method public getSampleRate()I
-    .registers 2
+    .locals 1
 
     .line 37
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->sampleRate:I
@@ -159,7 +159,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 80
     iget v0, p0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings;->audioSource:I
@@ -193,7 +193,7 @@
 .end method
 
 .method public toBuilder()Landroidx/camera/video/internal/audio/AudioSettings$Builder;
-    .registers 3
+    .locals 2
 
     .line 92
     new-instance v0, Landroidx/camera/video/internal/audio/AutoValue_AudioSettings$Builder;
@@ -206,7 +206,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 53
     new-instance v0, Ljava/lang/StringBuilder;

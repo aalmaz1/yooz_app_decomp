@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public createProgressiveMediaExtractor(ILandroidx/media3/common/Format;ZLjava/util/List;Landroidx/media3/extractor/TrackOutput;Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
-    .registers 14
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -67,19 +67,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 124
     iget-boolean p3, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->parseSubtitlesDuringExtraction:Z
 
-    if-nez p3, :cond_e
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 128
-    :cond_e
+    :cond_0
     new-instance p3, Landroidx/media3/extractor/text/SubtitleExtractor;
 
     iget-object p4, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -91,36 +91,36 @@
 
     invoke-direct {p3, p4, p2}, Landroidx/media3/extractor/text/SubtitleExtractor;-><init>(Landroidx/media3/extractor/text/SubtitleParser;Landroidx/media3/common/Format;)V
 
-    goto :goto_62
+    goto :goto_1
 
     .line 132
-    :cond_1a
+    :cond_1
     invoke-static {p6}, Landroidx/media3/common/MimeTypes;->isMatroska(Ljava/lang/String;)Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
     .line 134
     iget-boolean p3, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->parseSubtitlesDuringExtraction:Z
 
-    if-nez p3, :cond_26
+    if-nez p3, :cond_2
 
     const/4 v1, 0x3
 
     .line 137
-    :cond_26
+    :cond_2
     new-instance p3, Landroidx/media3/extractor/mkv/MatroskaExtractor;
 
     iget-object p4, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
     invoke-direct {p3, p4, v1}, Landroidx/media3/extractor/mkv/MatroskaExtractor;-><init>(Landroidx/media3/extractor/text/SubtitleParser$Factory;I)V
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_2e
+    :cond_3
     const-string v0, "image/jpeg"
 
     .line 138
@@ -128,16 +128,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 139
     new-instance p3, Landroidx/media3/extractor/jpeg/JpegExtractor;
 
     invoke-direct {p3, v1}, Landroidx/media3/extractor/jpeg/JpegExtractor;-><init>(I)V
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_3c
+    :cond_4
     const-string v0, "image/png"
 
     .line 140
@@ -145,34 +145,34 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_5
 
     .line 141
     new-instance p3, Landroidx/media3/extractor/png/PngExtractor;
 
     invoke-direct {p3}, Landroidx/media3/extractor/png/PngExtractor;-><init>()V
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_4a
-    if-eqz p3, :cond_4e
+    :cond_5
+    if-eqz p3, :cond_6
 
     const/4 p3, 0x4
 
-    goto :goto_4f
+    goto :goto_0
 
-    :cond_4e
+    :cond_6
     const/4 p3, 0x0
 
     .line 147
-    :goto_4f
+    :goto_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->parseSubtitlesDuringExtraction:Z
 
-    if-nez v0, :cond_55
+    if-nez v0, :cond_7
 
     or-int/lit8 p3, p3, 0x20
 
-    :cond_55
+    :cond_7
     move v2, p3
 
     .line 150
@@ -193,17 +193,17 @@
     invoke-direct/range {v0 .. v6}, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor;-><init>(Landroidx/media3/extractor/text/SubtitleParser$Factory;ILandroidx/media3/common/util/TimestampAdjuster;Landroidx/media3/extractor/mp4/Track;Ljava/util/List;Landroidx/media3/extractor/TrackOutput;)V
 
     .line 159
-    :goto_62
+    :goto_1
     iget-boolean p4, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->parseSubtitlesDuringExtraction:Z
 
-    if-eqz p4, :cond_84
+    if-eqz p4, :cond_8
 
     .line 160
     invoke-static {p6}, Landroidx/media3/common/MimeTypes;->isText(Ljava/lang/String;)Z
 
     move-result p4
 
-    if-nez p4, :cond_84
+    if-nez p4, :cond_8
 
     .line 161
     invoke-interface {p3}, Landroidx/media3/extractor/Extractor;->getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
@@ -212,7 +212,7 @@
 
     instance-of p4, p4, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor;
 
-    if-nez p4, :cond_84
+    if-nez p4, :cond_8
 
     .line 162
     invoke-interface {p3}, Landroidx/media3/extractor/Extractor;->getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
@@ -221,7 +221,7 @@
 
     instance-of p4, p4, Landroidx/media3/extractor/mkv/MatroskaExtractor;
 
-    if-nez p4, :cond_84
+    if-nez p4, :cond_8
 
     .line 163
     new-instance p4, Landroidx/media3/extractor/text/SubtitleTranscodingExtractor;
@@ -233,7 +233,7 @@
     move-object p3, p4
 
     .line 165
-    :cond_84
+    :cond_8
     new-instance p4, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor;
 
     invoke-direct {p4, p3, p1, p2}, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor;-><init>(Landroidx/media3/extractor/Extractor;ILandroidx/media3/common/Format;)V
@@ -242,7 +242,7 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;
-    .registers 2
+    .locals 0
 
     .line 81
     iput-boolean p1, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->parseSubtitlesDuringExtraction:Z
@@ -251,7 +251,7 @@
 .end method
 
 .method public bridge synthetic experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;
@@ -262,12 +262,12 @@
 .end method
 
 .method public getOutputTextFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 6
+    .locals 4
 
     .line 96
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->parseSubtitlesDuringExtraction:Z
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
@@ -275,7 +275,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 98
     invoke-virtual {p1}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -314,7 +314,7 @@
     .line 104
     iget-object v2, p1, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_0
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -332,12 +332,12 @@
 
     move-result-object p1
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_41
+    :cond_0
     const-string p1, ""
 
-    :goto_43
+    :goto_0
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -363,12 +363,12 @@
 
     move-result-object p1
 
-    :cond_5c
+    :cond_1
     return-object p1
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;
-    .registers 2
+    .locals 0
 
     .line 73
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -383,7 +383,7 @@
 .end method
 
 .method public bridge synthetic setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$Factory;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor$Factory;

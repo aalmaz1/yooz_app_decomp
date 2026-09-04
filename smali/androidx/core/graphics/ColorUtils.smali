@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 48
     new-instance v0, Ljava/lang/ThreadLocal;
@@ -51,7 +51,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public static HSLToColor([F)I
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -124,7 +124,7 @@
 
     const/high16 v2, 0x437f0000    # 255.0f
 
-    packed-switch v1, :pswitch_data_b6
+    packed-switch v1, :pswitch_data_0
 
     move p0, v0
 
@@ -132,9 +132,9 @@
 
     move v3, v1
 
-    goto :goto_a2
+    goto :goto_0
 
-    :pswitch_33
+    :pswitch_0
     add-float/2addr v4, p0
 
     mul-float/2addr v4, v2
@@ -160,9 +160,9 @@
 
     move-result p0
 
-    goto :goto_a2
+    goto :goto_0
 
-    :pswitch_46
+    :pswitch_1
     add-float/2addr v5, p0
 
     mul-float/2addr v5, v2
@@ -188,9 +188,9 @@
 
     move-result p0
 
-    goto :goto_a2
+    goto :goto_0
 
-    :pswitch_59
+    :pswitch_2
     mul-float v1, p0, v2
 
     .line 350
@@ -216,9 +216,9 @@
 
     move-result p0
 
-    goto :goto_a2
+    goto :goto_0
 
-    :pswitch_6c
+    :pswitch_3
     mul-float v1, p0, v2
 
     .line 345
@@ -244,9 +244,9 @@
 
     move-result p0
 
-    goto :goto_a2
+    goto :goto_0
 
-    :pswitch_7f
+    :pswitch_4
     add-float/2addr v5, p0
 
     mul-float/2addr v5, v2
@@ -272,9 +272,9 @@
 
     move-result p0
 
-    goto :goto_a2
+    goto :goto_0
 
-    :pswitch_91
+    :pswitch_5
     add-float/2addr v4, p0
 
     mul-float/2addr v4, v2
@@ -300,7 +300,7 @@
 
     move-result p0
 
-    :goto_a2
+    :goto_0
     const/16 v2, 0xff
 
     .line 367
@@ -327,20 +327,20 @@
 
     nop
 
-    :pswitch_data_b6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_91
-        :pswitch_7f
-        :pswitch_6c
-        :pswitch_59
-        :pswitch_46
-        :pswitch_33
-        :pswitch_33
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static LABToColor(DDD)I
-    .registers 14
+    .locals 8
 
     .line 585
     invoke-static {}, Landroidx/core/graphics/ColorUtils;->getTempDouble3Array()[D
@@ -379,7 +379,7 @@
 .end method
 
 .method public static LABToXYZ(DDD[D)V
-    .registers 26
+    .locals 19
 
     const-wide/high16 v0, 0x4030000000000000L    # 16.0
 
@@ -414,54 +414,54 @@
 
     const-wide v17, 0x408c3a6666666666L    # 903.3
 
-    if-lez v16, :cond_2a
+    if-lez v16, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     mul-double/2addr v6, v4
 
     sub-double/2addr v6, v0
 
     div-double v12, v6, v17
 
-    :goto_2e
+    :goto_0
     const-wide v6, 0x401fff9da4c11507L    # 7.9996247999999985
 
     cmpl-double v6, p0, v6
 
-    if-lez v6, :cond_3c
+    if-lez v6, :cond_1
 
     .line 534
     invoke-static {v2, v3, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v2
 
-    goto :goto_3e
+    goto :goto_1
 
-    :cond_3c
+    :cond_1
     div-double v2, p0, v17
 
     .line 536
-    :goto_3e
+    :goto_1
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v6
 
     cmpl-double v10, v6, v14
 
-    if-lez v10, :cond_47
+    if-lez v10, :cond_2
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_47
+    :cond_2
     mul-double/2addr v8, v4
 
     sub-double/2addr v8, v0
 
     div-double v6, v8, v17
 
-    :goto_4b
+    :goto_2
     const-wide v0, 0x4057c3020c49ba5eL    # 95.047
 
     mul-double/2addr v12, v0
@@ -493,7 +493,7 @@
 .end method
 
 .method public static M3HCTToColor(FFF)I
-    .registers 3
+    .locals 0
 
     .line 703
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/CamColor;->toColor(FFF)I
@@ -504,7 +504,7 @@
 .end method
 
 .method public static RGBToHSL(III[F)V
-    .registers 11
+    .locals 7
 
     int-to-float p0, p0
 
@@ -552,18 +552,18 @@
 
     const/4 v6, 0x0
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_0
 
     move p1, v6
 
     move v2, p1
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_29
+    :cond_0
     cmpl-float v1, v0, p0
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_1
 
     sub-float/2addr p1, p2
 
@@ -573,12 +573,12 @@
 
     rem-float/2addr p1, p0
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_33
+    :cond_1
     cmpl-float v0, v0, p1
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_2
 
     sub-float/2addr p2, p0
 
@@ -586,9 +586,9 @@
 
     add-float p1, p2, v4
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_3c
+    :cond_2
     sub-float/2addr p0, p1
 
     div-float/2addr p0, v2
@@ -597,7 +597,7 @@
 
     add-float/2addr p1, p0
 
-    :goto_41
+    :goto_0
     mul-float/2addr v4, v3
 
     sub-float/2addr v4, v5
@@ -611,7 +611,7 @@
 
     div-float/2addr v2, p0
 
-    :goto_4a
+    :goto_1
     const/high16 p0, 0x42700000    # 60.0f
 
     mul-float/2addr p1, p0
@@ -622,11 +622,11 @@
 
     cmpg-float p2, p1, v6
 
-    if-gez p2, :cond_55
+    if-gez p2, :cond_3
 
     add-float/2addr p1, p0
 
-    :cond_55
+    :cond_3
     const/4 p2, 0x0
 
     .line 287
@@ -658,7 +658,7 @@
 .end method
 
 .method public static RGBToLAB(III[D)V
-    .registers 11
+    .locals 7
 
     .line 414
     invoke-static {p0, p1, p2, p3}, Landroidx/core/graphics/ColorUtils;->RGBToXYZ(III[D)V
@@ -684,7 +684,7 @@
 .end method
 
 .method public static RGBToXYZ(III[D)V
-    .registers 20
+    .locals 16
 
     move-object/from16 v0, p3
 
@@ -693,7 +693,7 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_ae
+    if-ne v1, v2, :cond_3
 
     move/from16 v1, p0
 
@@ -715,13 +715,13 @@
 
     const-wide v14, 0x3fac28f5c28f5c29L    # 0.055
 
-    if-gez v7, :cond_2e
+    if-gez v7, :cond_0
 
     div-double/2addr v1, v8
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     add-double/2addr v1, v14
 
     div-double/2addr v1, v12
@@ -731,7 +731,7 @@
 
     move-result-wide v1
 
-    :goto_34
+    :goto_0
     move/from16 v7, p1
 
     int-to-double v10, v7
@@ -740,13 +740,13 @@
 
     cmpg-double v7, v10, v5
 
-    if-gez v7, :cond_3e
+    if-gez v7, :cond_1
 
     div-double/2addr v10, v8
 
-    goto :goto_49
+    goto :goto_1
 
-    :cond_3e
+    :cond_1
     add-double/2addr v10, v14
 
     div-double/2addr v10, v12
@@ -758,7 +758,7 @@
 
     move-result-wide v10
 
-    :goto_49
+    :goto_1
     move/from16 v7, p2
 
     int-to-double v12, v7
@@ -767,13 +767,13 @@
 
     cmpg-double v3, v12, v5
 
-    if-gez v3, :cond_53
+    if-gez v3, :cond_2
 
     div-double/2addr v12, v8
 
-    goto :goto_63
+    goto :goto_2
 
-    :cond_53
+    :cond_2
     add-double/2addr v12, v14
 
     const-wide v3, 0x3ff0e147ae147ae1L    # 1.055
@@ -787,7 +787,7 @@
 
     move-result-wide v12
 
-    :goto_63
+    :goto_2
     const-wide v3, 0x3fda64c2f837b4a2L    # 0.4124
 
     mul-double/2addr v3, v1
@@ -862,7 +862,7 @@
     return-void
 
     .line 460
-    :cond_ae
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "outXyz must have a length of 3."
@@ -873,7 +873,7 @@
 .end method
 
 .method public static XYZToColor(DDD)I
-    .registers 23
+    .locals 17
 
     const-wide v0, 0x4009ecbfb15b573fL    # 3.2406
 
@@ -943,7 +943,7 @@
 
     const-wide v15, 0x4029d70a3d70a3d7L    # 12.92
 
-    if-lez v8, :cond_6e
+    if-lez v8, :cond_0
 
     .line 563
     invoke-static {v0, v1, v11, v12}, Ljava/lang/Math;->pow(DD)D
@@ -954,15 +954,15 @@
 
     sub-double/2addr v0, v9
 
-    goto :goto_6f
+    goto :goto_0
 
-    :cond_6e
+    :cond_0
     mul-double/2addr v0, v15
 
-    :goto_6f
+    :goto_0
     cmpl-double v8, v4, v2
 
-    if-lez v8, :cond_7a
+    if-lez v8, :cond_1
 
     .line 564
     invoke-static {v4, v5, v11, v12}, Ljava/lang/Math;->pow(DD)D
@@ -973,15 +973,15 @@
 
     sub-double/2addr v4, v9
 
-    goto :goto_7b
+    goto :goto_1
 
-    :cond_7a
+    :cond_1
     mul-double/2addr v4, v15
 
-    :goto_7b
+    :goto_1
     cmpl-double v2, v6, v2
 
-    if-lez v2, :cond_86
+    if-lez v2, :cond_2
 
     .line 565
     invoke-static {v6, v7, v11, v12}, Ljava/lang/Math;->pow(DD)D
@@ -992,12 +992,12 @@
 
     sub-double/2addr v2, v9
 
-    goto :goto_88
+    goto :goto_2
 
-    :cond_86
+    :cond_2
     mul-double v2, v6, v15
 
-    :goto_88
+    :goto_2
     const-wide v6, 0x406fe00000000000L    # 255.0
 
     mul-double/2addr v0, v6
@@ -1052,14 +1052,14 @@
 .end method
 
 .method public static XYZToLAB(DDD[D)V
-    .registers 11
+    .locals 4
 
     .line 496
     array-length v0, p6
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_40
+    if-ne v0, v1, :cond_0
 
     const-wide v0, 0x4057c3020c49ba5eL    # 95.047
 
@@ -1132,7 +1132,7 @@
     return-void
 
     .line 497
-    :cond_40
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "outLab must have a length of 3."
@@ -1143,7 +1143,7 @@
 .end method
 
 .method public static blendARGB(IIF)I
-    .registers 8
+    .locals 5
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1242,14 +1242,14 @@
 .end method
 
 .method public static blendHSL([F[FF[F)V
-    .registers 8
+    .locals 4
 
     .line 653
     array-length v0, p3
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1301,7 +1301,7 @@
     return-void
 
     .line 654
-    :cond_27
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "result must have a length of 3."
@@ -1312,14 +1312,14 @@
 .end method
 
 .method public static blendLAB([D[DD[D)V
-    .registers 12
+    .locals 7
 
     .line 677
     array-length v0, p4
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_26
+    if-ne v0, v1, :cond_0
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
@@ -1373,7 +1373,7 @@
     return-void
 
     .line 678
-    :cond_26
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "outResult must have a length of 3."
@@ -1384,7 +1384,7 @@
 .end method
 
 .method public static calculateContrast(II)D
-    .registers 6
+    .locals 4
 
     .line 174
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
@@ -1393,14 +1393,14 @@
 
     const/16 v1, 0xff
 
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_1
 
     .line 178
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v0
 
-    if-ge v0, v1, :cond_12
+    if-ge v0, v1, :cond_0
 
     .line 180
     invoke-static {p0, p1}, Landroidx/core/graphics/ColorUtils;->compositeColors(II)I
@@ -1408,7 +1408,7 @@
     move-result p0
 
     .line 183
-    :cond_12
+    :cond_0
     invoke-static {p0}, Landroidx/core/graphics/ColorUtils;->calculateLuminance(I)D
 
     move-result-wide v0
@@ -1438,7 +1438,7 @@
     return-wide v2
 
     .line 175
-    :cond_2b
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1466,7 +1466,7 @@
 .end method
 
 .method public static calculateLuminance(I)D
-    .registers 5
+    .locals 4
 
     .line 160
     invoke-static {}, Landroidx/core/graphics/ColorUtils;->getTempDouble3Array()[D
@@ -1489,7 +1489,7 @@
 .end method
 
 .method public static calculateMinimumAlpha(IIF)I
-    .registers 11
+    .locals 8
 
     .line 202
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
@@ -1498,7 +1498,7 @@
 
     const/16 v1, 0xff
 
-    if-ne v0, v1, :cond_39
+    if-ne v0, v1, :cond_3
 
     .line 208
     invoke-static {p0, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
@@ -1514,27 +1514,27 @@
 
     cmpg-double p2, v2, v4
 
-    if-gez p2, :cond_17
+    if-gez p2, :cond_0
 
     const/4 p0, -0x1
 
     return p0
 
-    :cond_17
+    :cond_0
     const/4 p2, 0x0
 
     move v0, p2
 
-    :goto_19
+    :goto_0
     const/16 v2, 0xa
 
-    if-gt p2, v2, :cond_38
+    if-gt p2, v2, :cond_2
 
     sub-int v2, v1, v0
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_38
+    if-le v2, v3, :cond_2
 
     add-int v2, v0, v1
 
@@ -1553,25 +1553,25 @@
 
     cmpg-double v3, v6, v4
 
-    if-gez v3, :cond_34
+    if-gez v3, :cond_1
 
     move v0, v2
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_34
+    :cond_1
     move v1, v2
 
-    :goto_35
+    :goto_1
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_38
+    :cond_2
     return v1
 
     .line 203
-    :cond_39
+    :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1599,7 +1599,7 @@
 .end method
 
 .method static circularInterpolate(FFF)F
-    .registers 5
+    .locals 2
 
     sub-float v0, p1, p0
 
@@ -1614,21 +1614,21 @@
 
     const/high16 v1, 0x43b40000    # 360.0f
 
-    if-lez v0, :cond_15
+    if-lez v0, :cond_1
 
     cmpl-float v0, p1, p0
 
-    if-lez v0, :cond_14
+    if-lez v0, :cond_0
 
     add-float/2addr p0, v1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     add-float/2addr p1, v1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     sub-float/2addr p1, p0
 
     mul-float/2addr p1, p2
@@ -1641,7 +1641,7 @@
 .end method
 
 .method public static colorToHSL(I[F)V
-    .registers 4
+    .locals 2
 
     .line 304
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
@@ -1662,7 +1662,7 @@
 .end method
 
 .method public static colorToLAB(I[D)V
-    .registers 4
+    .locals 2
 
     .line 393
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
@@ -1683,7 +1683,7 @@
 .end method
 
 .method public static colorToM3HCT(I[F)V
-    .registers 2
+    .locals 0
 
     .line 726
     invoke-static {p0, p1}, Landroidx/core/content/res/CamColor;->getM3HCTfromColor(I[F)V
@@ -1692,7 +1692,7 @@
 .end method
 
 .method public static colorToXYZ(I[D)V
-    .registers 4
+    .locals 2
 
     .line 436
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
@@ -1713,7 +1713,7 @@
 .end method
 
 .method private static compositeAlpha(II)I
-    .registers 2
+    .locals 0
 
     rsub-int p1, p1, 0xff
 
@@ -1730,7 +1730,7 @@
 .end method
 
 .method public static compositeColors(II)I
-    .registers 8
+    .locals 6
 
     .line 56
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
@@ -1801,7 +1801,7 @@
 .end method
 
 .method public static compositeColors(Landroid/graphics/Color;Landroid/graphics/Color;)Landroid/graphics/Color;
-    .registers 2
+    .locals 0
 
     .line 95
     invoke-static {p0, p1}, Landroidx/core/graphics/ColorUtils$Api26Impl;->compositeColors(Landroid/graphics/Color;Landroid/graphics/Color;)Landroid/graphics/Color;
@@ -1812,15 +1812,15 @@
 .end method
 
 .method private static compositeComponent(IIIII)I
-    .registers 5
+    .locals 0
 
-    if-nez p4, :cond_4
+    if-nez p4, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_4
+    :cond_0
     mul-int/lit16 p0, p0, 0xff
 
     mul-int/2addr p0, p1
@@ -1842,43 +1842,43 @@
 .end method
 
 .method private static constrain(FFF)F
-    .registers 4
+    .locals 1
 
     cmpg-float v0, p0, p1
 
-    if-gez v0, :cond_5
+    if-gez v0, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 602
-    :cond_5
+    :cond_0
     invoke-static {p0, p2}, Ljava/lang/Math;->min(FF)F
 
     move-result p1
 
-    :goto_9
+    :goto_0
     return p1
 .end method
 
 .method private static constrain(III)I
-    .registers 3
+    .locals 0
 
-    if-ge p0, p1, :cond_3
+    if-ge p0, p1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
     .line 607
-    :cond_3
+    :cond_0
     invoke-static {p0, p2}, Ljava/lang/Math;->min(II)I
 
     move-result p1
 
-    :goto_7
+    :goto_0
     return p1
 .end method
 
 .method public static distanceEuclidean([D[D)D
-    .registers 11
+    .locals 9
 
     const/4 v0, 0x0
 
@@ -1934,7 +1934,7 @@
 .end method
 
 .method private static getTempDouble3Array()[D
-    .registers 2
+    .locals 2
 
     .line 742
     sget-object v0, Landroidx/core/graphics/ColorUtils;->TEMP_ARRAY:Ljava/lang/ThreadLocal;
@@ -1945,7 +1945,7 @@
 
     check-cast v1, [D
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     const/4 v1, 0x3
 
@@ -1954,18 +1954,18 @@
     .line 745
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    :cond_10
+    :cond_0
     return-object v1
 .end method
 
 .method private static pivotXyzComponent(D)D
-    .registers 4
+    .locals 2
 
     const-wide v0, 0x3f82231832fcac8eL    # 0.008856
 
     cmpl-double v0, p0, v0
 
-    if-lez v0, :cond_13
+    if-lez v0, :cond_0
 
     const-wide v0, 0x3fd5555555555555L    # 0.3333333333333333
 
@@ -1974,9 +1974,9 @@
 
     move-result-wide p0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const-wide v0, 0x408c3a6666666666L    # 903.3
 
     mul-double/2addr p0, v0
@@ -1989,18 +1989,18 @@
 
     div-double/2addr p0, v0
 
-    :goto_1f
+    :goto_0
     return-wide p0
 .end method
 
 .method public static setAlphaComponent(II)I
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_e
+    if-ltz p1, :cond_0
 
     const/16 v0, 0xff
 
-    if-gt p1, v0, :cond_e
+    if-gt p1, v0, :cond_0
 
     const v0, 0xffffff
 
@@ -2013,7 +2013,7 @@
     return p0
 
     .line 381
-    :cond_e
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "alpha must be between 0 and 255."

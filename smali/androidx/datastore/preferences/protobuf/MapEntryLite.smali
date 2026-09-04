@@ -57,7 +57,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -113,7 +113,7 @@
 .end method
 
 .method static computeSerializedSize(Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -150,7 +150,7 @@
 .end method
 
 .method public static newDefaultInstance(Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/MapEntryLite;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -176,7 +176,7 @@
 .end method
 
 .method static parseEntry(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/util/Map$Entry;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -207,18 +207,18 @@
     iget-object v1, p1, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->defaultValue:Ljava/lang/Object;
 
     .line 177
-    :cond_4
-    :goto_4
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readTag()I
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_1
 
-    goto :goto_39
+    goto :goto_1
 
     .line 181
-    :cond_b
+    :cond_1
     iget-object v3, p1, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->keyType:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
     invoke-virtual {v3}, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->getWireType()I
@@ -231,7 +231,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_1f
+    if-ne v2, v3, :cond_2
 
     .line 182
     iget-object v2, p1, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->keyType:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -240,10 +240,10 @@
 
     move-result-object v0
 
-    goto :goto_4
+    goto :goto_0
 
     .line 183
-    :cond_1f
+    :cond_2
     iget-object v3, p1, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->valueType:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
     invoke-virtual {v3}, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->getWireType()I
@@ -256,7 +256,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_33
+    if-ne v2, v3, :cond_3
 
     .line 184
     iget-object v2, p1, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->valueType:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -265,18 +265,18 @@
 
     move-result-object v1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 186
-    :cond_33
+    :cond_3
     invoke-virtual {p0, v2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->skipField(I)Z
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_0
 
     .line 191
-    :goto_39
+    :goto_1
     new-instance p0, Ljava/util/AbstractMap$SimpleImmutableEntry;
 
     invoke-direct {p0, v0, v1}, Ljava/util/AbstractMap$SimpleImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -285,7 +285,7 @@
 .end method
 
 .method static parseField(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -315,15 +315,15 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_27
+    if-eq v0, v1, :cond_2
 
     const/4 p1, 0x2
 
-    if-eq v0, p1, :cond_1e
+    if-eq v0, p1, :cond_1
 
     const/4 p1, 0x3
 
-    if-eq v0, p1, :cond_16
+    if-eq v0, p1, :cond_0
 
     .line 135
     invoke-static {p0, p2, v1}, Landroidx/datastore/preferences/protobuf/FieldSet;->readPrimitiveField(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
@@ -333,7 +333,7 @@
     return-object p0
 
     .line 133
-    :cond_16
+    :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "Groups are not allowed in maps."
@@ -343,7 +343,7 @@
     throw p0
 
     .line 131
-    :cond_1e
+    :cond_1
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readEnum()I
 
     move-result p0
@@ -355,7 +355,7 @@
     return-object p0
 
     .line 127
-    :cond_27
+    :cond_2
     check-cast p3, Landroidx/datastore/preferences/protobuf/MessageLite;
 
     invoke-interface {p3}, Landroidx/datastore/preferences/protobuf/MessageLite;->toBuilder()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
@@ -374,7 +374,7 @@
 .end method
 
 .method static writeTo(Landroidx/datastore/preferences/protobuf/CodedOutputStream;Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -414,7 +414,7 @@
 
 # virtual methods
 .method public computeMessageSize(ILjava/lang/Object;Ljava/lang/Object;)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITK;TV;)I"
@@ -444,7 +444,7 @@
 .end method
 
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -458,7 +458,7 @@
 .end method
 
 .method getMetadata()Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -474,7 +474,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -488,7 +488,7 @@
 .end method
 
 .method public parseEntry(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/util/Map$Entry;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -521,7 +521,7 @@
 .end method
 
 .method public parseInto(Landroidx/datastore/preferences/protobuf/MapFieldLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -560,18 +560,18 @@
     iget-object v2, v2, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->defaultValue:Ljava/lang/Object;
 
     .line 207
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readTag()I
 
     move-result v3
 
-    if-nez v3, :cond_17
+    if-nez v3, :cond_1
 
-    goto :goto_4d
+    goto :goto_1
 
     .line 211
-    :cond_17
+    :cond_1
     iget-object v4, p0, Landroidx/datastore/preferences/protobuf/MapEntryLite;->metadata:Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;
 
     iget-object v4, v4, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->keyType:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -586,7 +586,7 @@
 
     move-result v4
 
-    if-ne v3, v4, :cond_2f
+    if-ne v3, v4, :cond_2
 
     .line 212
     iget-object v3, p0, Landroidx/datastore/preferences/protobuf/MapEntryLite;->metadata:Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;
@@ -597,10 +597,10 @@
 
     move-result-object v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 213
-    :cond_2f
+    :cond_2
     iget-object v4, p0, Landroidx/datastore/preferences/protobuf/MapEntryLite;->metadata:Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;
 
     iget-object v4, v4, Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;->valueType:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -615,7 +615,7 @@
 
     move-result v4
 
-    if-ne v3, v4, :cond_47
+    if-ne v3, v4, :cond_3
 
     .line 214
     iget-object v3, p0, Landroidx/datastore/preferences/protobuf/MapEntryLite;->metadata:Landroidx/datastore/preferences/protobuf/MapEntryLite$Metadata;
@@ -626,17 +626,17 @@
 
     move-result-object v2
 
-    goto :goto_10
+    goto :goto_0
 
     .line 216
-    :cond_47
+    :cond_3
     invoke-virtual {p2, v3}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->skipField(I)Z
 
     move-result v3
 
-    if-nez v3, :cond_10
+    if-nez v3, :cond_0
 
-    :goto_4d
+    :goto_1
     const/4 p3, 0x0
 
     .line 222
@@ -652,7 +652,7 @@
 .end method
 
 .method public serializeTo(Landroidx/datastore/preferences/protobuf/CodedOutputStream;ILjava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

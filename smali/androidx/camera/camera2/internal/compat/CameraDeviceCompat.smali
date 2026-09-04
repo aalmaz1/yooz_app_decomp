@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/hardware/camera2/CameraDevice;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static toCameraDeviceCompat(Landroid/hardware/camera2/CameraDevice;)Landroidx/camera/camera2/internal/compat/CameraDeviceCompat;
-    .registers 2
+    .locals 1
 
     .line 83
     invoke-static {}, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;->getInstance()Landroid/os/Handler;
@@ -56,7 +56,7 @@
 .end method
 
 .method public static toCameraDeviceCompat(Landroid/hardware/camera2/CameraDevice;Landroid/os/Handler;)Landroidx/camera/camera2/internal/compat/CameraDeviceCompat;
-    .registers 3
+    .locals 1
 
     .line 99
     new-instance v0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public createCaptureSession(Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
@@ -85,7 +85,7 @@
 .end method
 
 .method public toCameraDevice()Landroid/hardware/camera2/CameraDevice;
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompat;->mImpl:Landroidx/camera/camera2/internal/compat/CameraDeviceCompat$CameraDeviceCompatImpl;

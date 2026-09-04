@@ -34,7 +34,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/Set;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +66,7 @@
 .end method
 
 .method public static buildStartTag(Ljava/lang/String;I)Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;
-    .registers 7
+    .locals 5
 
     .line 943
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -95,14 +95,14 @@
 
     const/4 v3, 0x0
 
-    if-ne v0, v2, :cond_1a
+    if-ne v0, v2, :cond_0
 
     const-string v0, ""
 
-    goto :goto_27
+    goto :goto_0
 
     .line 950
-    :cond_1a
+    :cond_0
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v2
@@ -118,7 +118,7 @@
 
     move-object v0, v2
 
-    :goto_27
+    :goto_0
     const-string v2, "\\."
 
     .line 953
@@ -135,10 +135,10 @@
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
     .line 956
-    :goto_34
+    :goto_1
     array-length v4, p0
 
-    if-ge v1, v4, :cond_3f
+    if-ge v1, v4, :cond_1
 
     .line 957
     aget-object v4, p0, v1
@@ -147,10 +147,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_34
+    goto :goto_1
 
     .line 959
-    :cond_3f
+    :cond_1
     new-instance p0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;
 
     invoke-direct {p0, v2, p1, v0, v3}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/Set;)V
@@ -159,7 +159,7 @@
 .end method
 
 .method public static buildWholeCueVirtualTag()Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;
-    .registers 4
+    .locals 4
 
     .line 963
     new-instance v0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;

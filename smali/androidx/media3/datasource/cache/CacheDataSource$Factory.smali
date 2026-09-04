@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method private createDataSourceInternal(Landroidx/media3/datasource/DataSource;II)Landroidx/media3/datasource/cache/CacheDataSource;
-    .registers 16
+    .locals 12
 
     .line 304
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cache:Landroidx/media3/datasource/cache/Cache;
@@ -78,27 +78,27 @@
     .line 306
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheIsReadOnly:Z
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_2
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 308
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheWriteDataSinkFactory:Landroidx/media3/datasource/DataSink$Factory;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 309
     invoke-interface {v0}, Landroidx/media3/datasource/DataSink$Factory;->createDataSink()Landroidx/media3/datasource/DataSink;
 
     move-result-object v0
 
-    goto :goto_28
+    goto :goto_1
 
     .line 311
-    :cond_19
+    :cond_1
     new-instance v0, Landroidx/media3/datasource/cache/CacheDataSink$Factory;
 
     invoke-direct {v0}, Landroidx/media3/datasource/cache/CacheDataSink$Factory;-><init>()V
@@ -111,13 +111,13 @@
 
     move-result-object v0
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     const/4 v0, 0x0
 
-    :goto_28
+    :goto_1
     move-object v5, v0
 
     .line 313
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public bridge synthetic createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 66
     invoke-virtual {p0}, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->createDataSource()Landroidx/media3/datasource/cache/CacheDataSource;
@@ -165,23 +165,23 @@
 .end method
 
 .method public createDataSource()Landroidx/media3/datasource/cache/CacheDataSource;
-    .registers 4
+    .locals 3
 
     .line 258
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource$Factory;->createDataSource()Landroidx/media3/datasource/DataSource;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     iget v1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->flags:I
 
     iget v2, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamPriority:I
@@ -195,23 +195,23 @@
 .end method
 
 .method public createDataSourceForDownloading()Landroidx/media3/datasource/cache/CacheDataSource;
-    .registers 4
+    .locals 3
 
     .line 276
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/media3/datasource/DataSource$Factory;->createDataSource()Landroidx/media3/datasource/DataSource;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     iget v1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->flags:I
 
     or-int/lit8 v1, v1, 0x1
@@ -227,7 +227,7 @@
 .end method
 
 .method public createDataSourceForRemovingDownload()Landroidx/media3/datasource/cache/CacheDataSource;
-    .registers 4
+    .locals 3
 
     .line 296
     iget v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->flags:I
@@ -246,7 +246,7 @@
 .end method
 
 .method public getCache()Landroidx/media3/datasource/cache/Cache;
-    .registers 2
+    .locals 1
 
     .line 104
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cache:Landroidx/media3/datasource/cache/Cache;
@@ -255,7 +255,7 @@
 .end method
 
 .method public getCacheKeyFactory()Landroidx/media3/datasource/cache/CacheKeyFactory;
-    .registers 2
+    .locals 1
 
     .line 156
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheKeyFactory:Landroidx/media3/datasource/cache/CacheKeyFactory;
@@ -264,7 +264,7 @@
 .end method
 
 .method public getUpstreamPriorityTaskManager()Landroidx/media3/common/PriorityTaskManager;
-    .registers 2
+    .locals 1
 
     .line 208
     iget-object v0, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamPriorityTaskManager:Landroidx/media3/common/PriorityTaskManager;
@@ -273,7 +273,7 @@
 .end method
 
 .method public setCache(Landroidx/media3/datasource/cache/Cache;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 94
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cache:Landroidx/media3/datasource/cache/Cache;
@@ -282,7 +282,7 @@
 .end method
 
 .method public setCacheKeyFactory(Landroidx/media3/datasource/cache/CacheKeyFactory;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 150
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheKeyFactory:Landroidx/media3/datasource/cache/CacheKeyFactory;
@@ -291,7 +291,7 @@
 .end method
 
 .method public setCacheReadDataSourceFactory(Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 118
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheReadDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
@@ -300,29 +300,29 @@
 .end method
 
 .method public setCacheWriteDataSinkFactory(Landroidx/media3/datasource/DataSink$Factory;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 135
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheWriteDataSinkFactory:Landroidx/media3/datasource/DataSink$Factory;
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
     .line 136
-    :goto_7
+    :goto_0
     iput-boolean p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->cacheIsReadOnly:Z
 
     return-object p0
 .end method
 
 .method public setEventListener(Landroidx/media3/datasource/cache/CacheDataSource$EventListener;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 251
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->eventListener:Landroidx/media3/datasource/cache/CacheDataSource$EventListener;
@@ -331,7 +331,7 @@
 .end method
 
 .method public setFlags(I)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 237
     iput p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->flags:I
@@ -340,7 +340,7 @@
 .end method
 
 .method public setUpstreamDataSourceFactory(Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 173
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
@@ -349,7 +349,7 @@
 .end method
 
 .method public setUpstreamPriority(I)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 223
     iput p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamPriority:I
@@ -358,7 +358,7 @@
 .end method
 
 .method public setUpstreamPriorityTaskManager(Landroidx/media3/common/PriorityTaskManager;)Landroidx/media3/datasource/cache/CacheDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 198
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->upstreamPriorityTaskManager:Landroidx/media3/common/PriorityTaskManager;

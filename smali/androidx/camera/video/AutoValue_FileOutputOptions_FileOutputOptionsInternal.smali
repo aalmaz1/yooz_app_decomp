@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(JJLandroid/location/Location;Ljava/io/File;)V
-    .registers 7
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method synthetic constructor <init>(JJLandroid/location/Location;Ljava/io/File;Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal$1;)V
-    .registers 8
+    .locals 0
 
     .line 12
     invoke-direct/range {p0 .. p6}, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;-><init>(JJLandroid/location/Location;Ljava/io/File;)V
@@ -55,21 +55,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 72
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_3
 
     .line 73
     check-cast p1, Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;
@@ -83,7 +83,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->durationLimitMillis:J
 
@@ -94,22 +94,22 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->location:Landroid/location/Location;
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_1
 
     .line 76
     invoke-virtual {p1}, Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;->getLocation()Landroid/location/Location;
 
     move-result-object v1
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_2
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/FileOutputOptions$FileOutputOptionsInternal;->getLocation()Landroid/location/Location;
 
     move-result-object v3
@@ -118,9 +118,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_2
 
-    :goto_34
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->file:Ljava/io/File;
 
     .line 77
@@ -132,22 +132,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_2
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_41
+    :cond_2
     move v0, v2
 
-    :goto_42
+    :goto_1
     return v0
 
-    :cond_43
+    :cond_3
     return v2
 .end method
 
 .method getDurationLimitMillis()J
-    .registers 3
+    .locals 2
 
     .line 42
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->durationLimitMillis:J
@@ -156,7 +156,7 @@
 .end method
 
 .method getFile()Ljava/io/File;
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->file:Ljava/io/File;
@@ -165,7 +165,7 @@
 .end method
 
 .method getFileSizeLimit()J
-    .registers 3
+    .locals 2
 
     .line 36
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->fileSizeLimit:J
@@ -174,7 +174,7 @@
 .end method
 
 .method getLocation()Landroid/location/Location;
-    .registers 2
+    .locals 1
 
     .line 48
     iget-object v0, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->location:Landroid/location/Location;
@@ -183,7 +183,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 8
+    .locals 7
 
     .line 86
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->fileSizeLimit:J
@@ -218,18 +218,18 @@
     .line 90
     iget-object v2, p0, Landroidx/camera/video/AutoValue_FileOutputOptions_FileOutputOptionsInternal;->location:Landroid/location/Location;
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_0
 
     const/4 v2, 0x0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     invoke-virtual {v2}, Landroid/location/Location;->hashCode()I
 
     move-result v2
 
-    :goto_20
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -247,7 +247,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 59
     new-instance v0, Ljava/lang/StringBuilder;

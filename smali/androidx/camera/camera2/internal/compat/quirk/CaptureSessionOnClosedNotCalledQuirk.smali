@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 

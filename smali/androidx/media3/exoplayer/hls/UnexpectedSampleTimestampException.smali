@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/chunk/MediaChunk;JJ)V
-    .registers 9
+    .locals 3
 
     .line 54
     new-instance v0, Ljava/lang/StringBuilder;

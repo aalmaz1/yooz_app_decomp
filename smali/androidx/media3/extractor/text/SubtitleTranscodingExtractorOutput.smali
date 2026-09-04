@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/text/SubtitleParser$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public endTracks()V
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->delegate:Landroidx/media3/extractor/ExtractorOutput;
@@ -59,19 +59,19 @@
 .end method
 
 .method public resetSubtitleParsers()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 57
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->textTrackOutputs:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 58
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->textTrackOutputs:Landroid/util/SparseArray;
@@ -86,14 +86,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 3
+    .locals 1
 
     .line 86
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->delegate:Landroidx/media3/extractor/ExtractorOutput;
@@ -104,11 +104,11 @@
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x3
 
-    if-eq p2, v0, :cond_a
+    if-eq p2, v0, :cond_0
 
     .line 67
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->delegate:Landroidx/media3/extractor/ExtractorOutput;
@@ -120,7 +120,7 @@
     return-object p1
 
     .line 69
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->textTrackOutputs:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -129,12 +129,12 @@
 
     check-cast v0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     return-object v0
 
     .line 73
-    :cond_15
+    :cond_1
     new-instance v0, Landroidx/media3/extractor/text/SubtitleTranscodingTrackOutput;
 
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->delegate:Landroidx/media3/extractor/ExtractorOutput;

@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/io/File;
-    .registers 4
+    .locals 3
 
     .line 69
     iget-object v0, p0, Landroidx/datastore/preferences/core/PreferenceDataStoreFactory$create$delegate$1;->$produceFile:Lkotlin/jvm/functions/Function0;
@@ -106,12 +106,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     return-object v0
 
     .line 71
-    :cond_19
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "File extension for file: "
@@ -159,7 +159,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 68
     invoke-virtual {p0}, Landroidx/datastore/preferences/core/PreferenceDataStoreFactory$create$delegate$1;->invoke()Ljava/io/File;

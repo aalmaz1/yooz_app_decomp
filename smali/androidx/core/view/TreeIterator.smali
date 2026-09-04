@@ -89,7 +89,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,7 +124,7 @@
 .end method
 
 .method private final prepareNextIterator(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -140,14 +140,14 @@
 
     check-cast p1, Ljava/util/Iterator;
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 165
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 166
     iget-object v0, p0, Landroidx/core/view/TreeIterator;->stack:Ljava/util/List;
@@ -159,18 +159,18 @@
     .line 167
     iput-object p1, p0, Landroidx/core/view/TreeIterator;->iterator:Ljava/util/Iterator;
 
-    goto :goto_3e
+    goto :goto_1
 
     .line 169
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     iget-object p1, p0, Landroidx/core/view/TreeIterator;->iterator:Ljava/util/Iterator;
 
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-nez p1, :cond_3e
+    if-nez p1, :cond_1
 
     iget-object p1, p0, Landroidx/core/view/TreeIterator;->stack:Ljava/util/List;
 
@@ -182,7 +182,7 @@
 
     xor-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_1
 
     .line 170
     iget-object p1, p0, Landroidx/core/view/TreeIterator;->stack:Ljava/util/List;
@@ -200,17 +200,17 @@
 
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->removeLast(Ljava/util/List;)Ljava/lang/Object;
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_3e
-    :goto_3e
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 148
     iget-object v0, p0, Landroidx/core/view/TreeIterator;->iterator:Ljava/util/Iterator;
@@ -223,7 +223,7 @@
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -244,7 +244,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

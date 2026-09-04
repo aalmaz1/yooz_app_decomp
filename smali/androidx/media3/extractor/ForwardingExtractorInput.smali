@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 2
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public advancePeekPosition(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -42,7 +42,7 @@
 .end method
 
 .method public advancePeekPosition(IZ)Z
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -60,7 +60,7 @@
 .end method
 
 .method public getLength()J
-    .registers 3
+    .locals 2
 
     .line 105
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingExtractorInput;->input:Landroidx/media3/extractor/ExtractorInput;
@@ -73,7 +73,7 @@
 .end method
 
 .method public getPeekPosition()J
-    .registers 3
+    .locals 2
 
     .line 95
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingExtractorInput;->input:Landroidx/media3/extractor/ExtractorInput;
@@ -86,7 +86,7 @@
 .end method
 
 .method public getPosition()J
-    .registers 3
+    .locals 2
 
     .line 100
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingExtractorInput;->input:Landroidx/media3/extractor/ExtractorInput;
@@ -99,7 +99,7 @@
 .end method
 
 .method public peek([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -117,7 +117,7 @@
 .end method
 
 .method public peekFully([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -133,7 +133,7 @@
 .end method
 
 .method public peekFully([BIIZ)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -151,7 +151,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -169,7 +169,7 @@
 .end method
 
 .method public readFully([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -185,7 +185,7 @@
 .end method
 
 .method public readFully([BIIZ)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -203,7 +203,7 @@
 .end method
 
 .method public resetPeekPosition()V
-    .registers 2
+    .locals 1
 
     .line 90
     iget-object v0, p0, Landroidx/media3/extractor/ForwardingExtractorInput;->input:Landroidx/media3/extractor/ExtractorInput;
@@ -214,7 +214,7 @@
 .end method
 
 .method public setRetryPosition(JLjava/lang/Throwable;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -238,7 +238,7 @@
 .end method
 
 .method public skip(I)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -256,7 +256,7 @@
 .end method
 
 .method public skipFully(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -272,7 +272,7 @@
 .end method
 
 .method public skipFully(IZ)Z
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/widgets/analyzer/WidgetRun;)V
-    .registers 2
+    .locals 0
 
     .line 22
     invoke-direct {p0, p1}, Landroidx/constraintlayout/solver/widgets/analyzer/DimensionDependency;-><init>(Landroidx/constraintlayout/solver/widgets/analyzer/WidgetRun;)V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public update(Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;)V
-    .registers 3
+    .locals 1
 
     .line 26
     iget-object p1, p0, Landroidx/constraintlayout/solver/widgets/analyzer/BaselineDimensionDependency;->run:Landroidx/constraintlayout/solver/widgets/analyzer/WidgetRun;

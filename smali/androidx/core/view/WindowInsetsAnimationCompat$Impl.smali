@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(ILandroid/view/animation/Interpolator;J)V
-    .registers 5
+    .locals 0
 
     .line 542
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 573
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mAlpha:F
@@ -57,7 +57,7 @@
 .end method
 
 .method public getDurationMillis()J
-    .registers 3
+    .locals 2
 
     .line 569
     iget-wide v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mDurationMillis:J
@@ -66,7 +66,7 @@
 .end method
 
 .method public getFraction()F
-    .registers 2
+    .locals 1
 
     .line 553
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
@@ -75,12 +75,12 @@
 .end method
 
 .method public getInterpolatedFraction()F
-    .registers 3
+    .locals 2
 
     .line 557
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 558
     iget v1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
@@ -92,14 +92,14 @@
     return v0
 
     .line 560
-    :cond_b
+    :cond_0
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F
 
     return v0
 .end method
 
 .method public getInterpolator()Landroid/view/animation/Interpolator;
-    .registers 2
+    .locals 1
 
     .line 565
     iget-object v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mInterpolator:Landroid/view/animation/Interpolator;
@@ -108,7 +108,7 @@
 .end method
 
 .method public getTypeMask()I
-    .registers 2
+    .locals 1
 
     .line 549
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mTypeMask:I
@@ -117,7 +117,7 @@
 .end method
 
 .method public setAlpha(F)V
-    .registers 2
+    .locals 0
 
     .line 581
     iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mAlpha:F
@@ -126,7 +126,7 @@
 .end method
 
 .method public setFraction(F)V
-    .registers 2
+    .locals 0
 
     .line 577
     iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Impl;->mFraction:F

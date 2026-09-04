@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 786
     invoke-static {}, Landroidx/camera/core/impl/MutableOptionsBundle;->create()Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -55,7 +55,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/core/impl/MutableOptionsBundle;)V
-    .registers 5
+    .locals 3
 
     .line 789
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
     check-cast v0, Ljava/lang/Class;
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 794
     const-class v1, Landroidx/camera/core/Preview;
@@ -84,12 +84,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 795
-    :cond_19
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -121,8 +121,8 @@
     throw p1
 
     .line 802
-    :cond_38
-    :goto_38
+    :cond_1
+    :goto_0
     const-class v0, Landroidx/camera/core/Preview;
 
     invoke-virtual {p0, v0}, Landroidx/camera/core/Preview$Builder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/Preview$Builder;
@@ -142,7 +142,7 @@
 .end method
 
 .method static fromConfig(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/Preview$Builder;
-    .registers 2
+    .locals 1
 
     .line 812
     new-instance v0, Landroidx/camera/core/Preview$Builder;
@@ -157,7 +157,7 @@
 .end method
 
 .method public static fromConfig(Landroidx/camera/core/impl/PreviewConfig;)Landroidx/camera/core/Preview$Builder;
-    .registers 2
+    .locals 1
 
     .line 824
     new-instance v0, Landroidx/camera/core/Preview$Builder;
@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/Preview;
-    .registers 3
+    .locals 2
 
     .line 854
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getUseCaseConfig()Landroidx/camera/core/impl/PreviewConfig;
@@ -193,7 +193,7 @@
 .end method
 
 .method public bridge synthetic build()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 776
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->build()Landroidx/camera/core/Preview;
@@ -204,7 +204,7 @@
 .end method
 
 .method public getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
-    .registers 2
+    .locals 1
 
     .line 834
     iget-object v0, p0, Landroidx/camera/core/Preview$Builder;->mMutableConfig:Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -213,7 +213,7 @@
 .end method
 
 .method public getUseCaseConfig()Landroidx/camera/core/impl/PreviewConfig;
-    .registers 3
+    .locals 2
 
     .line 841
     new-instance v0, Landroidx/camera/core/impl/PreviewConfig;
@@ -230,7 +230,7 @@
 .end method
 
 .method public bridge synthetic getUseCaseConfig()Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 2
+    .locals 1
 
     .line 776
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getUseCaseConfig()Landroidx/camera/core/impl/PreviewConfig;
@@ -241,7 +241,7 @@
 .end method
 
 .method public setBackgroundExecutor(Ljava/util/concurrent/Executor;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1123
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -256,7 +256,7 @@
 .end method
 
 .method public bridge synthetic setBackgroundExecutor(Ljava/util/concurrent/Executor;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setBackgroundExecutor(Ljava/util/concurrent/Executor;)Landroidx/camera/core/Preview$Builder;
@@ -267,7 +267,7 @@
 .end method
 
 .method public setCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1199
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -282,7 +282,7 @@
 .end method
 
 .method public bridge synthetic setCameraSelector(Landroidx/camera/core/CameraSelector;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/Preview$Builder;
@@ -293,7 +293,7 @@
 .end method
 
 .method public setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1183
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -308,7 +308,7 @@
 .end method
 
 .method public bridge synthetic setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/core/Preview$Builder;
@@ -319,7 +319,7 @@
 .end method
 
 .method public setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1232
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -334,7 +334,7 @@
 .end method
 
 .method public bridge synthetic setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Landroidx/camera/core/Preview$Builder;
@@ -345,7 +345,7 @@
 .end method
 
 .method public setCustomOrderedResolutions(Ljava/util/List;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -369,7 +369,7 @@
 .end method
 
 .method public bridge synthetic setCustomOrderedResolutions(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setCustomOrderedResolutions(Ljava/util/List;)Landroidx/camera/core/Preview$Builder;
@@ -380,7 +380,7 @@
 .end method
 
 .method public setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1165
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -395,7 +395,7 @@
 .end method
 
 .method public bridge synthetic setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/Preview$Builder;
@@ -406,7 +406,7 @@
 .end method
 
 .method public setDefaultResolution(Landroid/util/Size;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1050
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -421,7 +421,7 @@
 .end method
 
 .method public bridge synthetic setDefaultResolution(Landroid/util/Size;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setDefaultResolution(Landroid/util/Size;)Landroidx/camera/core/Preview$Builder;
@@ -432,7 +432,7 @@
 .end method
 
 .method public setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1157
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -447,7 +447,7 @@
 .end method
 
 .method public bridge synthetic setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/core/Preview$Builder;
@@ -458,7 +458,7 @@
 .end method
 
 .method public setHighResolutionDisabled(Z)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1224
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -477,7 +477,7 @@
 .end method
 
 .method public bridge synthetic setHighResolutionDisabled(Z)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setHighResolutionDisabled(Z)Landroidx/camera/core/Preview$Builder;
@@ -488,7 +488,7 @@
 .end method
 
 .method public setMaxResolution(Landroid/util/Size;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1058
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -503,7 +503,7 @@
 .end method
 
 .method public bridge synthetic setMaxResolution(Landroid/util/Size;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setMaxResolution(Landroid/util/Size;)Landroidx/camera/core/Preview$Builder;
@@ -514,7 +514,7 @@
 .end method
 
 .method public setMirrorMode(I)Landroidx/camera/core/Preview$Builder;
-    .registers 3
+    .locals 1
 
     .line 987
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -527,7 +527,7 @@
 .end method
 
 .method public bridge synthetic setMirrorMode(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setMirrorMode(I)Landroidx/camera/core/Preview$Builder;
@@ -538,7 +538,7 @@
 .end method
 
 .method public setResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1104
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -553,7 +553,7 @@
 .end method
 
 .method public bridge synthetic setResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/core/Preview$Builder;
@@ -564,7 +564,7 @@
 .end method
 
 .method public setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1174
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -579,7 +579,7 @@
 .end method
 
 .method public bridge synthetic setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/core/Preview$Builder;
@@ -590,7 +590,7 @@
 .end method
 
 .method public setSupportedResolutions(Ljava/util/List;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -617,7 +617,7 @@
 .end method
 
 .method public bridge synthetic setSupportedResolutions(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setSupportedResolutions(Ljava/util/List;)Landroidx/camera/core/Preview$Builder;
@@ -628,7 +628,7 @@
 .end method
 
 .method public setSurfaceOccupancyPriority(I)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1191
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -647,7 +647,7 @@
 .end method
 
 .method public bridge synthetic setSurfaceOccupancyPriority(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setSurfaceOccupancyPriority(I)Landroidx/camera/core/Preview$Builder;
@@ -658,18 +658,18 @@
 .end method
 
 .method public setTargetAspectRatio(I)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x0
 
     .line 938
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
 
     move-result-object v0
@@ -686,7 +686,7 @@
 .end method
 
 .method public bridge synthetic setTargetAspectRatio(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -699,7 +699,7 @@
 .end method
 
 .method public setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/Preview$Builder;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -732,7 +732,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     .line 869
     new-instance v0, Ljava/lang/StringBuilder;
@@ -768,12 +768,12 @@
     .line 870
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setTargetName(Ljava/lang/String;)Landroidx/camera/core/Preview$Builder;
 
-    :cond_38
+    :cond_0
     return-object p0
 .end method
 
 .method public bridge synthetic setTargetClass(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/Preview$Builder;
@@ -784,7 +784,7 @@
 .end method
 
 .method public setTargetFrameRate(Landroid/util/Range;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -808,7 +808,7 @@
 .end method
 
 .method public setTargetName(Ljava/lang/String;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 892
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -823,7 +823,7 @@
 .end method
 
 .method public bridge synthetic setTargetName(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setTargetName(Ljava/lang/String;)Landroidx/camera/core/Preview$Builder;
@@ -834,7 +834,7 @@
 .end method
 
 .method public setTargetResolution(Landroid/util/Size;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -852,7 +852,7 @@
 .end method
 
 .method public bridge synthetic setTargetResolution(Landroid/util/Size;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -865,7 +865,7 @@
 .end method
 
 .method public setTargetRotation(I)Landroidx/camera/core/Preview$Builder;
-    .registers 5
+    .locals 3
 
     .line 973
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -897,7 +897,7 @@
 .end method
 
 .method public bridge synthetic setTargetRotation(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setTargetRotation(I)Landroidx/camera/core/Preview$Builder;
@@ -908,7 +908,7 @@
 .end method
 
 .method public setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1208
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -923,7 +923,7 @@
 .end method
 
 .method public bridge synthetic setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/core/Preview$Builder;
@@ -934,7 +934,7 @@
 .end method
 
 .method public setZslDisabled(Z)Landroidx/camera/core/Preview$Builder;
-    .registers 4
+    .locals 2
 
     .line 1216
     invoke-virtual {p0}, Landroidx/camera/core/Preview$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -953,7 +953,7 @@
 .end method
 
 .method public bridge synthetic setZslDisabled(Z)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 776
     invoke-virtual {p0, p1}, Landroidx/camera/core/Preview$Builder;->setZslDisabled(Z)Landroidx/camera/core/Preview$Builder;

@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 2149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method private sendRequest(ILandroid/os/Bundle;Landroid/os/Messenger;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method addSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Bundle;Landroid/os/Messenger;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -114,7 +114,7 @@
 .end method
 
 .method connect(Landroid/content/Context;Landroid/os/Messenger;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -151,7 +151,7 @@
 .end method
 
 .method disconnect(Landroid/os/Messenger;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -169,7 +169,7 @@
 .end method
 
 .method getMediaItem(Ljava/lang/String;Landroid/support/v4/os/ResultReceiver;Landroid/os/Messenger;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -200,7 +200,7 @@
 .end method
 
 .method registerCallbackMessenger(Landroid/content/Context;Landroid/os/Messenger;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -237,7 +237,7 @@
 .end method
 
 .method removeSubscription(Ljava/lang/String;Landroid/os/IBinder;Landroid/os/Messenger;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -268,7 +268,7 @@
 .end method
 
 .method search(Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/os/ResultReceiver;Landroid/os/Messenger;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -304,7 +304,7 @@
 .end method
 
 .method sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/os/ResultReceiver;Landroid/os/Messenger;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -340,7 +340,7 @@
 .end method
 
 .method unregisterCallbackMessenger(Landroid/os/Messenger;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

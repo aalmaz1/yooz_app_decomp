@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/core/view/accessibility/AccessibilityNodeInfoCompat;I)V
-    .registers 4
+    .locals 0
 
     .line 53
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 67
     new-instance p1, Landroid/os/Bundle;

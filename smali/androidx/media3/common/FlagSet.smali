@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/util/SparseBooleanArray;)V
-    .registers 2
+    .locals 0
 
     .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/util/SparseBooleanArray;Landroidx/media3/common/FlagSet$1;)V
-    .registers 3
+    .locals 0
 
     .line 36
     invoke-direct {p0, p1}, Landroidx/media3/common/FlagSet;-><init>(Landroid/util/SparseBooleanArray;)V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public contains(I)Z
-    .registers 3
+    .locals 1
 
     .line 181
     iget-object v0, p0, Landroidx/media3/common/FlagSet;->flags:Landroid/util/SparseBooleanArray;
@@ -53,7 +53,7 @@
 .end method
 
 .method public varargs containsAny([I)Z
-    .registers 6
+    .locals 4
 
     .line 191
     array-length v0, p1
@@ -62,8 +62,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, v0, :cond_12
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     aget v3, p1, v2
 
@@ -72,42 +72,42 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     return v1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 221
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/FlagSet;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 224
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/FlagSet;
 
     .line 225
@@ -115,7 +115,7 @@
 
     const/16 v3, 0x18
 
-    if-ge v1, v3, :cond_33
+    if-ge v1, v3, :cond_5
 
     .line 227
     invoke-virtual {p0}, Landroidx/media3/common/FlagSet;->size()I
@@ -126,20 +126,20 @@
 
     move-result v3
 
-    if-eq v1, v3, :cond_1d
+    if-eq v1, v3, :cond_2
 
     return v2
 
-    :cond_1d
+    :cond_2
     move v1, v2
 
     .line 230
-    :goto_1e
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/FlagSet;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_32
+    if-ge v1, v3, :cond_4
 
     .line 231
     invoke-virtual {p0, v1}, Landroidx/media3/common/FlagSet;->get(I)I
@@ -150,20 +150,20 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_2f
+    if-eq v3, v4, :cond_3
 
     return v2
 
-    :cond_2f
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_32
+    :cond_4
     return v0
 
     .line 237
-    :cond_33
+    :cond_5
     iget-object v0, p0, Landroidx/media3/common/FlagSet;->flags:Landroid/util/SparseBooleanArray;
 
     iget-object p1, p1, Landroidx/media3/common/FlagSet;->flags:Landroid/util/SparseBooleanArray;
@@ -176,7 +176,7 @@
 .end method
 
 .method public get(I)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -198,14 +198,14 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 243
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-ge v0, v1, :cond_1c
+    if-ge v0, v1, :cond_1
 
     .line 245
     invoke-virtual {p0}, Landroidx/media3/common/FlagSet;->size()I
@@ -215,12 +215,12 @@
     const/4 v1, 0x0
 
     .line 246
-    :goto_b
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/FlagSet;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1b
+    if-ge v1, v2, :cond_0
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -233,13 +233,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return v0
 
     .line 251
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/media3/common/FlagSet;->flags:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->hashCode()I
@@ -250,7 +250,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/media3/common/FlagSet;->flags:Landroid/util/SparseBooleanArray;

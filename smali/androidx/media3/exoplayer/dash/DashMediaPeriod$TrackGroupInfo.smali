@@ -56,7 +56,7 @@
 
 # direct methods
 .method private constructor <init>(II[IIIIILcom/google/common/collect/ImmutableList;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II[IIIII",
@@ -97,7 +97,7 @@
 .end method
 
 .method public static embeddedClosedCaptionTrack([IILcom/google/common/collect/ImmutableList;)Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([II",
@@ -135,7 +135,7 @@
 .end method
 
 .method public static embeddedEmsgTrack([II)Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
-    .registers 12
+    .locals 10
 
     .line 1000
     new-instance v9, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
@@ -167,7 +167,7 @@
 .end method
 
 .method public static mpdEventTrack(I)Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
-    .registers 11
+    .locals 10
 
     .line 1027
     new-instance v9, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
@@ -201,7 +201,7 @@
 .end method
 
 .method public static primaryTrack(I[IIII)Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
-    .registers 15
+    .locals 10
 
     .line 987
     new-instance v9, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;

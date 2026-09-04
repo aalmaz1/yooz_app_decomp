@@ -79,7 +79,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$bio3pd12v5B_9b5UeFaPn9XBQ90(Landroidx/media3/common/util/ListenerSet;Landroid/os/Message;)Z
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/media3/common/util/ListenerSet;->handleMessage(Landroid/os/Message;)Z
 
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Looper;Landroidx/media3/common/util/Clock;Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,7 +121,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/concurrent/CopyOnWriteArraySet;Landroid/os/Looper;Landroidx/media3/common/util/Clock;Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;Z)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -187,7 +187,7 @@
 .end method
 
 .method private handleMessage(Landroid/os/Message;)Z
-    .registers 5
+    .locals 3
 
     .line 293
     iget-object p1, p0, Landroidx/media3/common/util/ListenerSet;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -196,14 +196,14 @@
 
     move-result-object p1
 
-    :cond_6
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -223,26 +223,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
-    :cond_20
+    :cond_1
     return v1
 .end method
 
 .method static synthetic lambda$queueEvent$0(Ljava/util/concurrent/CopyOnWriteArraySet;ILandroidx/media3/common/util/ListenerSet$Event;)V
-    .registers 4
+    .locals 1
 
     .line 222
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :goto_4
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -253,24 +253,24 @@
     .line 223
     invoke-virtual {v0, p1, p2}, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->invoke(ILandroidx/media3/common/util/ListenerSet$Event;)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method private verifyCurrentThread()V
-    .registers 3
+    .locals 2
 
     .line 306
     iget-boolean v0, p0, Landroidx/media3/common/util/ListenerSet;->throwsWhenUsingWrongThread:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 309
-    :cond_5
+    :cond_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -285,16 +285,16 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     return-void
@@ -303,7 +303,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -319,10 +319,10 @@
     monitor-enter v0
 
     .line 174
-    :try_start_6
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/common/util/ListenerSet;->released:Z
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 175
     monitor-exit v0
@@ -330,7 +330,7 @@
     return-void
 
     .line 177
-    :cond_c
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/util/ListenerSet;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     new-instance v2, Landroidx/media3/common/util/ListenerSet$ListenerHolder;
@@ -344,18 +344,18 @@
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_6 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 200
     invoke-direct {p0}, Landroidx/media3/common/util/ListenerSet;->verifyCurrentThread()V
@@ -369,7 +369,7 @@
 .end method
 
 .method public copy(Landroid/os/Looper;Landroidx/media3/common/util/Clock;Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;)Landroidx/media3/common/util/ListenerSet;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -403,7 +403,7 @@
 .end method
 
 .method public copy(Landroid/os/Looper;Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;)Landroidx/media3/common/util/ListenerSet;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -426,7 +426,7 @@
 .end method
 
 .method public flushEvents()V
-    .registers 4
+    .locals 3
 
     .line 230
     invoke-direct {p0}, Landroidx/media3/common/util/ListenerSet;->verifyCurrentThread()V
@@ -438,12 +438,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 234
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->handler:Landroidx/media3/common/util/HandlerWrapper;
 
     const/4 v1, 0x1
@@ -452,7 +452,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 235
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->handler:Landroidx/media3/common/util/HandlerWrapper;
@@ -464,7 +464,7 @@
     invoke-interface {v0, v2}, Landroidx/media3/common/util/HandlerWrapper;->sendMessageAtFrontOfQueue(Landroidx/media3/common/util/HandlerWrapper$Message;)Z
 
     .line 237
-    :cond_1e
+    :cond_1
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->flushingEvents:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
@@ -485,20 +485,20 @@
 
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->clear()V
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2
 
     return-void
 
     .line 244
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->flushingEvents:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_3
 
     .line 245
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->flushingEvents:Ljava/util/ArrayDeque;
@@ -516,14 +516,14 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_4d
+    :cond_3
     return-void
 .end method
 
 .method public queueEvent(ILandroidx/media3/common/util/ListenerSet$Event;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -555,7 +555,7 @@
 .end method
 
 .method public release()V
-    .registers 4
+    .locals 3
 
     .line 269
     invoke-direct {p0}, Landroidx/media3/common/util/ListenerSet;->verifyCurrentThread()V
@@ -568,13 +568,13 @@
     const/4 v1, 0x1
 
     .line 271
-    :try_start_7
+    :try_start_0
     iput-boolean v1, p0, Landroidx/media3/common/util/ListenerSet;->released:Z
 
     .line 272
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_7 .. :try_end_a} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 273
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -583,12 +583,12 @@
 
     move-result-object v0
 
-    :goto_10
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -601,30 +601,30 @@
 
     invoke-virtual {v1, v2}, Landroidx/media3/common/util/ListenerSet$ListenerHolder;->release(Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;)V
 
-    goto :goto_10
+    goto :goto_0
 
     .line 276
-    :cond_22
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/util/ListenerSet;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;->clear()V
 
     return-void
 
-    :catchall_28
+    :catchall_0
     move-exception v1
 
     .line 272
-    :try_start_29
+    :try_start_1
     monitor-exit v0
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_28
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method public remove(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -641,13 +641,13 @@
 
     move-result-object v0
 
-    :cond_9
-    :goto_9
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -662,7 +662,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_0
 
     .line 192
     iget-object v2, p0, Landroidx/media3/common/util/ListenerSet;->iterationFinishedEvent:Landroidx/media3/common/util/ListenerSet$IterationFinishedEvent;
@@ -674,14 +674,14 @@
 
     invoke-virtual {v2, v1}, Ljava/util/concurrent/CopyOnWriteArraySet;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     return-void
 .end method
 
 .method public sendEvent(ILandroidx/media3/common/util/ListenerSet$Event;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -700,7 +700,7 @@
 .end method
 
 .method public setThrowsWhenUsingWrongThread(Z)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -711,7 +711,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 206
     invoke-direct {p0}, Landroidx/media3/common/util/ListenerSet;->verifyCurrentThread()V

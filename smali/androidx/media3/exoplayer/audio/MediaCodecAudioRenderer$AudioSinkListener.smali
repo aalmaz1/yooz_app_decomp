@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;)V
-    .registers 2
+    .locals 0
 
     .line 1045
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$1;)V
-    .registers 3
+    .locals 0
 
     .line 1045
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;-><init>(Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onAudioCapabilitiesChanged()V
-    .registers 2
+    .locals 1
 
     .line 1096
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -56,7 +56,7 @@
 .end method
 
 .method public onAudioSinkError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "MediaCodecAudioRenderer"
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public onAudioTrackInitialized(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 3
+    .locals 1
 
     .line 1101
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -93,7 +93,7 @@
 .end method
 
 .method public onAudioTrackReleased(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 3
+    .locals 1
 
     .line 1106
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -108,7 +108,7 @@
 .end method
 
 .method public onOffloadBufferEmptying()V
-    .registers 2
+    .locals 1
 
     .line 1074
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -117,17 +117,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 1076
     invoke-interface {v0}, Landroidx/media3/exoplayer/Renderer$WakeupListener;->onWakeup()V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onOffloadBufferFull()V
-    .registers 2
+    .locals 1
 
     .line 1082
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -136,17 +136,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 1084
     invoke-interface {v0}, Landroidx/media3/exoplayer/Renderer$WakeupListener;->onSleep()V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onPositionAdvancing(J)V
-    .registers 4
+    .locals 1
 
     .line 1059
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -161,7 +161,7 @@
 .end method
 
 .method public onPositionDiscontinuity()V
-    .registers 2
+    .locals 1
 
     .line 1049
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -172,7 +172,7 @@
 .end method
 
 .method public onSilenceSkipped()V
-    .registers 3
+    .locals 2
 
     .line 1054
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -185,7 +185,7 @@
 .end method
 
 .method public onSkipSilenceEnabledChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 1069
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;
@@ -200,7 +200,7 @@
 .end method
 
 .method public onUnderrun(IJJ)V
-    .registers 13
+    .locals 7
 
     .line 1064
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer$AudioSinkListener;->this$0:Landroidx/media3/exoplayer/audio/MediaCodecAudioRenderer;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,25 +30,25 @@
 
 # virtual methods
 .method public onDrawerClosed(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrawerOpened(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrawerSlide(Landroid/view/View;F)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onDrawerStateChanged(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

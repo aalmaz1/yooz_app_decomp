@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/app/ActionBar$OnNavigationListener;)V
-    .registers 2
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,17 +40,17 @@
     .line 36
     iget-object p1, p0, Landroidx/appcompat/app/NavItemSelectedListener;->mListener:Landroidx/appcompat/app/ActionBar$OnNavigationListener;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 37
     invoke-interface {p1, p3, p4, p5}, Landroidx/appcompat/app/ActionBar$OnNavigationListener;->onNavigationItemSelected(IJ)Z
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

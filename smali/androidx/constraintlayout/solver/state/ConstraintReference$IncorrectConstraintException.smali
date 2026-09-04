@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/ConstraintReference;Ljava/util/ArrayList;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public getErrors()Ljava/util/ArrayList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -71,7 +71,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 133
     new-instance v0, Ljava/lang/StringBuilder;

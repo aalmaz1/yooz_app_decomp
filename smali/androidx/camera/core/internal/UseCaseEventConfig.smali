@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.useCaseEventCallback"
 
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public getUseCaseEventCallback()Landroidx/camera/core/UseCase$EventCallback;
-    .registers 2
+    .locals 1
 
     .line 58
     sget-object v0, Landroidx/camera/core/internal/UseCaseEventConfig;->OPTION_USE_CASE_EVENT_CALLBACK:Landroidx/camera/core/impl/Config$Option;
@@ -63,7 +63,7 @@
 .end method
 
 .method public getUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/core/UseCase$EventCallback;
-    .registers 3
+    .locals 1
 
     .line 48
     sget-object v0, Landroidx/camera/core/internal/UseCaseEventConfig;->OPTION_USE_CASE_EVENT_CALLBACK:Landroidx/camera/core/impl/Config$Option;

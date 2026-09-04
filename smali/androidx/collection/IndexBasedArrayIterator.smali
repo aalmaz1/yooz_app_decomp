@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,28 +51,28 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 36
     iget v0, p0, Landroidx/collection/IndexBasedArrayIterator;->mIndex:I
 
     iget v1, p0, Landroidx/collection/IndexBasedArrayIterator;->mSize:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -84,7 +84,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 42
     iget v0, p0, Landroidx/collection/IndexBasedArrayIterator;->mIndex:I
@@ -108,7 +108,7 @@
     return-object v0
 
     .line 41
-    :cond_15
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -117,12 +117,12 @@
 .end method
 
 .method public remove()V
-    .registers 2
+    .locals 1
 
     .line 50
     iget-boolean v0, p0, Landroidx/collection/IndexBasedArrayIterator;->mCanRemove:Z
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 54
     iget v0, p0, Landroidx/collection/IndexBasedArrayIterator;->mIndex:I
@@ -148,7 +148,7 @@
     return-void
 
     .line 51
-    :cond_17
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V

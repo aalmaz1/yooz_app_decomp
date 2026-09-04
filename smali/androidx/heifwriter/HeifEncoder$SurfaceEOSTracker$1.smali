@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;)V
-    .registers 2
+    .locals 0
 
     .line 809
     iput-object p1, p0, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker$1;->this$1:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 811
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker$1;->this$1:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
@@ -45,7 +45,7 @@
 
     iget-object v0, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 812
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker$1;->this$1:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->signalEndOfInputStream()V
 
-    :cond_11
+    :cond_0
     return-void
 .end method

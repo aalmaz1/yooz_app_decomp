@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "itel w6004"
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 .end method
 
 .method static load(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Z
-    .registers 6
+    .locals 5
 
     .line 54
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/ImageCaptureFlashNotFireQuirk;->BUILD_MODELS_FRONT_CAMERA:Ljava/util/List;
@@ -95,7 +95,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -110,17 +110,17 @@
 
     move-result p0
 
-    if-nez p0, :cond_22
+    if-nez p0, :cond_0
 
     move p0, v1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move p0, v2
 
     .line 58
-    :goto_23
+    :goto_0
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/ImageCaptureFlashNotFireQuirk;->BUILD_MODELS:Ljava/util/List;
 
     sget-object v3, Landroid/os/Build;->MODEL:Ljava/lang/String;
@@ -135,16 +135,16 @@
 
     move-result v0
 
-    if-nez p0, :cond_37
+    if-nez p0, :cond_2
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_1
     move v1, v2
 
-    :cond_37
-    :goto_37
+    :cond_2
+    :goto_1
     return v1
 .end method

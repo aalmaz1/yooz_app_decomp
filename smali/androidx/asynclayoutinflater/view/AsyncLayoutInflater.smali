@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,9 +71,9 @@
 
 # virtual methods
 .method public inflate(ILandroid/view/ViewGroup;Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$OnInflateFinishedListener;)V
-    .registers 5
+    .locals 1
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_0
 
     .line 87
     iget-object v0, p0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;->mInflateThread:Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$InflateThread;
@@ -102,7 +102,7 @@
     return-void
 
     .line 85
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "callback argument may not be null!"

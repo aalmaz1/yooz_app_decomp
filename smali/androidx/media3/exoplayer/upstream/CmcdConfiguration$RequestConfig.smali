@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public getCustomData()Lcom/google/common/collect/ImmutableListMultimap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -36,7 +36,7 @@
 .end method
 
 .method public getRequestedMaximumThroughputKbps(I)I
-    .registers 2
+    .locals 0
 
     const p1, -0x7fffffff
 
@@ -44,7 +44,7 @@
 .end method
 
 .method public isKeyAllowed(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 

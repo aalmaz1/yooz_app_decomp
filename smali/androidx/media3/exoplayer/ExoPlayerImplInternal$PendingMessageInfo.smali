@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/PlayerMessage;)V
-    .registers 2
+    .locals 0
 
     .line 3371
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;)I
-    .registers 7
+    .locals 5
 
     .line 3383
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodUid:Ljava/lang/Object;
@@ -61,56 +61,56 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     move v3, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v3, v2
 
-    :goto_9
+    :goto_0
     iget-object v4, p1, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodUid:Ljava/lang/Object;
 
-    if-nez v4, :cond_f
+    if-nez v4, :cond_1
 
     move v4, v1
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
+    :cond_1
     move v4, v2
 
-    :goto_10
-    if-eq v3, v4, :cond_16
+    :goto_1
+    if-eq v3, v4, :cond_3
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_2
 
     const/4 v1, -0x1
 
-    :cond_15
+    :cond_2
     return v1
 
-    :cond_16
-    if-nez v0, :cond_19
+    :cond_3
+    if-nez v0, :cond_4
 
     return v2
 
     .line 3392
-    :cond_19
+    :cond_4
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodIndex:I
 
     iget v1, p1, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodIndex:I
 
     sub-int/2addr v0, v1
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_5
 
     return v0
 
     .line 3396
-    :cond_21
+    :cond_5
     iget-wide v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodTimeUs:J
 
     iget-wide v2, p1, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodTimeUs:J
@@ -123,7 +123,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 3363
     check-cast p1, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;
@@ -136,7 +136,7 @@
 .end method
 
 .method public setResolvedPosition(IJLjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 3376
     iput p1, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodIndex:I

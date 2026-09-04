@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/video/AudioSpec;Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;)V
-    .registers 3
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public get()Landroidx/camera/video/internal/audio/AudioSettings;
-    .registers 9
+    .locals 8
 
     .line 59
     iget-object v0, p0, Landroidx/camera/video/internal/config/AudioSettingsAudioProfileResolver;->mAudioSpec:Landroidx/camera/video/AudioSpec;
@@ -87,7 +87,7 @@
 
     const-string v6, "AudioSrcAdPrflRslvr"
 
-    if-ne v2, v5, :cond_37
+    if-ne v2, v5, :cond_0
 
     .line 71
     new-instance v2, Ljava/lang/StringBuilder;
@@ -108,10 +108,10 @@
 
     move v2, v4
 
-    goto :goto_59
+    goto :goto_0
 
     .line 75
-    :cond_37
+    :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v7, "Media spec AUDIO channel count overrides AudioProfile [AudioProfile channel count: "
@@ -145,7 +145,7 @@
     invoke-static {v6, v4}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 80
-    :goto_59
+    :goto_0
     iget-object v4, p0, Landroidx/camera/video/internal/config/AudioSettingsAudioProfileResolver;->mAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
     invoke-virtual {v4}, Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;->getSampleRate()I
@@ -224,7 +224,7 @@
 .end method
 
 .method public bridge synthetic get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 33
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/AudioSettingsAudioProfileResolver;->get()Landroidx/camera/video/internal/audio/AudioSettings;

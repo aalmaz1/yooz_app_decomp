@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/io/Reader;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -63,7 +63,7 @@
 .end method
 
 .method public read()I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -80,7 +80,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_1
 
     .line 1069
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$3;->val$toIgnore:Ljava/lang/String;
@@ -93,12 +93,12 @@
 
     if-gez v1, :cond_0
 
-    :cond_12
+    :cond_1
     return v0
 .end method
 
 .method public read([CII)I
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

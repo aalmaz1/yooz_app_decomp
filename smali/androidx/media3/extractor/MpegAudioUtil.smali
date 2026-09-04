@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const-string v0, "audio/mpeg-L2"
 
@@ -61,7 +61,7 @@
     new-array v0, v0, [I
 
     .line 242
-    fill-array-data v0, :array_3a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/MpegAudioUtil;->SAMPLING_RATE_V1:[I
 
@@ -70,48 +70,48 @@
     new-array v1, v0, [I
 
     .line 243
-    fill-array-data v1, :array_44
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L1:[I
 
     new-array v1, v0, [I
 
     .line 247
-    fill-array-data v1, :array_64
+    fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V2_L1:[I
 
     new-array v1, v0, [I
 
     .line 251
-    fill-array-data v1, :array_84
+    fill-array-data v1, :array_3
 
     sput-object v1, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L2:[I
 
     new-array v1, v0, [I
 
     .line 255
-    fill-array-data v1, :array_a4
+    fill-array-data v1, :array_4
 
     sput-object v1, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L3:[I
 
     new-array v0, v0, [I
 
     .line 259
-    fill-array-data v0, :array_c4
+    fill-array-data v0, :array_5
 
     sput-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V2:[I
 
     return-void
 
-    :array_3a
+    :array_0
     .array-data 4
         0xac44
         0xbb80
         0x7d00
     .end array-data
 
-    :array_44
+    :array_1
     .array-data 4
         0x7d00
         0xfa00
@@ -129,7 +129,7 @@
         0x6d600
     .end array-data
 
-    :array_64
+    :array_2
     .array-data 4
         0x7d00
         0xbb80
@@ -147,7 +147,7 @@
         0x3e800
     .end array-data
 
-    :array_84
+    :array_3
     .array-data 4
         0x7d00
         0xbb80
@@ -165,7 +165,7 @@
         0x5dc00
     .end array-data
 
-    :array_a4
+    :array_4
     .array-data 4
         0x7d00
         0x9c40
@@ -183,7 +183,7 @@
         0x4e200
     .end array-data
 
-    :array_c4
+    :array_5
     .array-data 4
         0x1f40
         0x3e80
@@ -203,7 +203,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -212,7 +212,7 @@
 .end method
 
 .method static synthetic access$000(I)Z
-    .registers 1
+    .locals 0
 
     .line 25
     invoke-static {p0}, Landroidx/media3/extractor/MpegAudioUtil;->isMagicPresent(I)Z
@@ -223,7 +223,7 @@
 .end method
 
 .method static synthetic access$100()[Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->MIME_TYPE_BY_LAYER:[Ljava/lang/String;
@@ -232,7 +232,7 @@
 .end method
 
 .method static synthetic access$200()[I
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->SAMPLING_RATE_V1:[I
@@ -241,7 +241,7 @@
 .end method
 
 .method static synthetic access$300(II)I
-    .registers 2
+    .locals 0
 
     .line 25
     invoke-static {p0, p1}, Landroidx/media3/extractor/MpegAudioUtil;->getFrameSizeInSamples(II)I
@@ -252,7 +252,7 @@
 .end method
 
 .method static synthetic access$400()[I
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L1:[I
@@ -261,7 +261,7 @@
 .end method
 
 .method static synthetic access$500()[I
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V2_L1:[I
@@ -270,7 +270,7 @@
 .end method
 
 .method static synthetic access$600()[I
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L2:[I
@@ -279,7 +279,7 @@
 .end method
 
 .method static synthetic access$700()[I
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L3:[I
@@ -288,7 +288,7 @@
 .end method
 
 .method static synthetic access$800()[I
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V2:[I
@@ -297,7 +297,7 @@
 .end method
 
 .method public static getFrameSize(I)I
-    .registers 8
+    .locals 7
 
     .line 138
     invoke-static {p0}, Landroidx/media3/extractor/MpegAudioUtil;->isMagicPresent(I)Z
@@ -306,11 +306,11 @@
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_8
+    :cond_0
     ushr-int/lit8 v0, p0, 0x13
 
     const/4 v2, 0x3
@@ -319,71 +319,71 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v3, :cond_10
+    if-ne v0, v3, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     ushr-int/lit8 v4, p0, 0x11
 
     and-int/2addr v4, v2
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_2
 
     return v1
 
-    :cond_16
+    :cond_2
     ushr-int/lit8 v5, p0, 0xc
 
     const/16 v6, 0xf
 
     and-int/2addr v5, v6
 
-    if-eqz v5, :cond_72
+    if-eqz v5, :cond_d
 
-    if-ne v5, v6, :cond_20
+    if-ne v5, v6, :cond_3
 
-    goto :goto_72
+    goto :goto_3
 
-    :cond_20
+    :cond_3
     ushr-int/lit8 v6, p0, 0xa
 
     and-int/2addr v6, v2
 
-    if-ne v6, v2, :cond_26
+    if-ne v6, v2, :cond_4
 
     return v1
 
     .line 163
-    :cond_26
+    :cond_4
     sget-object v1, Landroidx/media3/extractor/MpegAudioUtil;->SAMPLING_RATE_V1:[I
 
     aget v1, v1, v6
 
     const/4 v6, 0x2
 
-    if-ne v0, v6, :cond_30
+    if-ne v0, v6, :cond_5
 
     .line 166
     div-int/lit8 v1, v1, 0x2
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_30
-    if-nez v0, :cond_34
+    :cond_5
+    if-nez v0, :cond_6
 
     .line 169
     div-int/lit8 v1, v1, 0x4
 
-    :cond_34
-    :goto_34
+    :cond_6
+    :goto_0
     ushr-int/lit8 p0, p0, 0x9
 
     and-int/2addr p0, v3
 
-    if-ne v4, v2, :cond_4d
+    if-ne v4, v2, :cond_8
 
-    if-ne v0, v2, :cond_41
+    if-ne v0, v2, :cond_7
 
     .line 176
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L1:[I
@@ -392,16 +392,16 @@
 
     aget v0, v0, v5
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_41
+    :cond_7
     sget-object v0, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V2_L1:[I
 
     sub-int/2addr v5, v3
 
     aget v0, v0, v5
 
-    :goto_46
+    :goto_1
     mul-int/lit8 v0, v0, 0xc
 
     .line 177
@@ -413,10 +413,10 @@
 
     return v0
 
-    :cond_4d
-    if-ne v0, v2, :cond_5d
+    :cond_8
+    if-ne v0, v2, :cond_a
 
-    if-ne v4, v6, :cond_57
+    if-ne v4, v6, :cond_9
 
     .line 181
     sget-object v6, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L2:[I
@@ -425,29 +425,29 @@
 
     aget v5, v6, v5
 
-    goto :goto_62
+    goto :goto_2
 
-    :cond_57
+    :cond_9
     sget-object v6, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V1_L3:[I
 
     sub-int/2addr v5, v3
 
     aget v5, v6, v5
 
-    goto :goto_62
+    goto :goto_2
 
     .line 184
-    :cond_5d
+    :cond_a
     sget-object v6, Landroidx/media3/extractor/MpegAudioUtil;->BITRATE_V2:[I
 
     sub-int/2addr v5, v3
 
     aget v5, v6, v5
 
-    :goto_62
+    :goto_2
     const/16 v6, 0x90
 
-    if-ne v0, v2, :cond_6a
+    if-ne v0, v2, :cond_b
 
     mul-int/2addr v5, v6
 
@@ -458,12 +458,12 @@
 
     return v5
 
-    :cond_6a
-    if-ne v4, v3, :cond_6e
+    :cond_b
+    if-ne v4, v3, :cond_c
 
     const/16 v6, 0x48
 
-    :cond_6e
+    :cond_c
     mul-int/2addr v6, v5
 
     .line 193
@@ -473,13 +473,13 @@
 
     return v6
 
-    :cond_72
-    :goto_72
+    :cond_d
+    :goto_3
     return v1
 .end method
 
 .method private static getFrameSizeInSamples(II)I
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -487,63 +487,63 @@
 
     const/4 v2, 0x3
 
-    if-eq p1, v0, :cond_15
+    if-eq p1, v0, :cond_2
 
     const/4 p0, 0x2
 
-    if-eq p1, p0, :cond_14
+    if-eq p1, p0, :cond_1
 
-    if-ne p1, v2, :cond_e
+    if-ne p1, v2, :cond_0
 
     const/16 p0, 0x180
 
     return p0
 
     .line 284
-    :cond_e
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p0
 
-    :cond_14
+    :cond_1
     return v1
 
-    :cond_15
-    if-ne p0, v2, :cond_18
+    :cond_2
+    if-ne p0, v2, :cond_3
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_18
+    :cond_3
     const/16 v1, 0x240
 
-    :goto_1a
+    :goto_0
     return v1
 .end method
 
 .method private static isMagicPresent(I)Z
-    .registers 2
+    .locals 1
 
     const/high16 v0, -0x200000
 
     and-int/2addr p0, v0
 
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_8
+    :goto_0
     return p0
 .end method
 
 .method public static parseMpegAudioFrameSampleCount(I)I
-    .registers 7
+    .locals 6
 
     .line 202
     invoke-static {p0}, Landroidx/media3/extractor/MpegAudioUtil;->isMagicPresent(I)Z
@@ -552,11 +552,11 @@
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_8
+    :cond_0
     ushr-int/lit8 v0, p0, 0x13
 
     const/4 v2, 0x3
@@ -565,20 +565,20 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v3, :cond_10
+    if-ne v0, v3, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     ushr-int/lit8 v3, p0, 0x11
 
     and-int/2addr v3, v2
 
-    if-nez v3, :cond_16
+    if-nez v3, :cond_2
 
     return v1
 
-    :cond_16
+    :cond_2
     ushr-int/lit8 v4, p0, 0xc
 
     const/16 v5, 0xf
@@ -589,23 +589,23 @@
 
     and-int/2addr p0, v2
 
-    if-eqz v4, :cond_2a
+    if-eqz v4, :cond_4
 
-    if-eq v4, v5, :cond_2a
+    if-eq v4, v5, :cond_4
 
-    if-ne p0, v2, :cond_25
+    if-ne p0, v2, :cond_3
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 223
-    :cond_25
+    :cond_3
     invoke-static {v0, v3}, Landroidx/media3/extractor/MpegAudioUtil;->getFrameSizeInSamples(II)I
 
     move-result p0
 
     return p0
 
-    :cond_2a
-    :goto_2a
+    :cond_4
+    :goto_0
     return v1
 .end method

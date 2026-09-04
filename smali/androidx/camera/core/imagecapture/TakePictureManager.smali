@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/imagecapture/ImageCaptureControl;)V
-    .registers 3
+    .locals 1
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method private submitCameraRequest(Landroidx/camera/core/imagecapture/CameraRequest;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -126,7 +126,7 @@
 .end method
 
 .method private trackCurrentRequests(Landroidx/camera/core/imagecapture/RequestWithCallback;)V
-    .registers 5
+    .locals 3
 
     .line 222
     invoke-virtual {p0}, Landroidx/camera/core/imagecapture/TakePictureManager;->hasCapturingRequest()Z
@@ -185,7 +185,7 @@
 
 # virtual methods
 .method public abortRequests()V
-    .registers 5
+    .locals 4
 
     .line 160
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -208,12 +208,12 @@
 
     move-result-object v1
 
-    :goto_12
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -224,10 +224,10 @@
     .line 166
     invoke-virtual {v2, v0}, Landroidx/camera/core/imagecapture/TakePictureRequest;->onError(Landroidx/camera/core/ImageCaptureException;)V
 
-    goto :goto_12
+    goto :goto_0
 
     .line 168
-    :cond_22
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mNewRequests:Ljava/util/Deque;
 
     invoke-interface {v1}, Ljava/util/Deque;->clear()V
@@ -244,12 +244,12 @@
 
     move-result-object v1
 
-    :goto_32
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -260,14 +260,14 @@
     .line 175
     invoke-virtual {v2, v0}, Landroidx/camera/core/imagecapture/RequestWithCallback;->abortAndSendErrorToApp(Landroidx/camera/core/ImageCaptureException;)V
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_42
+    :cond_1
     return-void
 .end method
 
 .method public getImagePipeline()Landroidx/camera/core/imagecapture/ImagePipeline;
-    .registers 2
+    .locals 1
 
     .line 293
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mImagePipeline:Landroidx/camera/core/imagecapture/ImagePipeline;
@@ -276,7 +276,7 @@
 .end method
 
 .method getIncompleteRequests()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -293,26 +293,26 @@
 .end method
 
 .method hasCapturingRequest()Z
-    .registers 2
+    .locals 1
 
     .line 282
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mCapturingRequest:Landroidx/camera/core/imagecapture/RequestWithCallback;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method issueNextRequest()V
-    .registers 5
+    .locals 4
 
     .line 184
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -329,7 +329,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "There is already a request in-flight."
 
@@ -339,10 +339,10 @@
     return-void
 
     .line 190
-    :cond_16
+    :cond_0
     iget-boolean v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mPaused:Z
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     const-string v0, "The class is paused."
 
@@ -352,14 +352,14 @@
     return-void
 
     .line 194
-    :cond_20
+    :cond_1
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mImagePipeline:Landroidx/camera/core/imagecapture/ImagePipeline;
 
     invoke-virtual {v0}, Landroidx/camera/core/imagecapture/ImagePipeline;->getCapacity()I
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
     const-string v0, "Too many acquire images. Close image to be able to process next."
 
@@ -369,7 +369,7 @@
     return-void
 
     .line 198
-    :cond_2e
+    :cond_2
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mNewRequests:Ljava/util/Deque;
 
     invoke-interface {v0}, Ljava/util/Deque;->poll()Ljava/lang/Object;
@@ -378,7 +378,7 @@
 
     check-cast v0, Landroidx/camera/core/imagecapture/TakePictureRequest;
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_3
 
     const-string v0, "No new request."
 
@@ -388,7 +388,7 @@
     return-void
 
     .line 204
-    :cond_3e
+    :cond_3
     new-instance v1, Landroidx/camera/core/imagecapture/RequestWithCallback;
 
     invoke-direct {v1, v0, p0}, Landroidx/camera/core/imagecapture/RequestWithCallback;-><init>(Landroidx/camera/core/imagecapture/TakePictureRequest;Landroidx/camera/core/imagecapture/TakePictureRequest$RetryControl;)V
@@ -448,7 +448,7 @@
 .end method
 
 .method synthetic lambda$trackCurrentRequests$0$androidx-camera-core-imagecapture-TakePictureManager()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -462,7 +462,7 @@
 .end method
 
 .method synthetic lambda$trackCurrentRequests$1$androidx-camera-core-imagecapture-TakePictureManager(Landroidx/camera/core/imagecapture/RequestWithCallback;)V
-    .registers 3
+    .locals 1
 
     .line 234
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mIncompleteRequests:Ljava/util/List;
@@ -473,7 +473,7 @@
 .end method
 
 .method public offerRequest(Landroidx/camera/core/imagecapture/TakePictureRequest;)V
-    .registers 3
+    .locals 1
 
     .line 115
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -490,7 +490,7 @@
 .end method
 
 .method public onImageClose(Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 1
 
     .line 298
     invoke-static {}, Landroidx/camera/core/impl/utils/executor/CameraXExecutors;->mainThreadExecutor()Ljava/util/concurrent/ScheduledExecutorService;
@@ -507,7 +507,7 @@
 .end method
 
 .method public pause()V
-    .registers 2
+    .locals 1
 
     .line 136
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -520,17 +520,17 @@
     .line 140
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager;->mCapturingRequest:Landroidx/camera/core/imagecapture/RequestWithCallback;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 141
     invoke-virtual {v0}, Landroidx/camera/core/imagecapture/RequestWithCallback;->abortSilentlyAndRetry()V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public resume()V
-    .registers 2
+    .locals 1
 
     .line 150
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -547,7 +547,7 @@
 .end method
 
 .method public retryRequest(Landroidx/camera/core/imagecapture/TakePictureRequest;)V
-    .registers 4
+    .locals 2
 
     .line 123
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -571,7 +571,7 @@
 .end method
 
 .method public setImagePipeline(Landroidx/camera/core/imagecapture/ImagePipeline;)V
-    .registers 2
+    .locals 0
 
     .line 103
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V

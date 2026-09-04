@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 218
     iget-object v0, p0, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
 .end method
 
 .method public extraCallback(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -59,7 +59,7 @@
     move-result-object v0
 
     .line 241
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -82,15 +82,15 @@
     const/4 v2, 0x3
 
     invoke-interface {p1, v2, v0, p2, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_18
-    .catchall {:try_start_4 .. :try_end_18} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 247
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -100,7 +100,7 @@
 .end method
 
 .method public extraCallbackWithResult(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -118,7 +118,7 @@
     move-result-object v1
 
     .line 304
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -149,8 +149,8 @@
     move-result-object p1
 
     check-cast p1, Landroid/os/Bundle;
-    :try_end_25
-    .catchall {:try_start_8 .. :try_end_25} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 312
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -160,7 +160,7 @@
 
     return-object p1
 
-    :catchall_2c
+    :catchall_0
     move-exception p1
 
     .line 312
@@ -174,7 +174,7 @@
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 222
     sget-object v0, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
@@ -183,7 +183,7 @@
 .end method
 
 .method public onActivityLayout(IIIIILandroid/os/Bundle;)V
-    .registers 9
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -196,7 +196,7 @@
     move-result-object v0
 
     .line 347
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -231,15 +231,15 @@
     const/16 p4, 0xa
 
     invoke-interface {p1, p4, v0, p2, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_25
-    .catchall {:try_start_4 .. :try_end_25} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 357
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_29
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -249,7 +249,7 @@
 .end method
 
 .method public onActivityResized(IILandroid/os/Bundle;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -262,7 +262,7 @@
     move-result-object v0
 
     .line 321
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -288,15 +288,15 @@
     const/16 v1, 0x8
 
     invoke-interface {p1, v1, v0, p2, p3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_1c
-    .catchall {:try_start_4 .. :try_end_1c} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 328
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -306,7 +306,7 @@
 .end method
 
 .method public onMessageChannelReady(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -324,7 +324,7 @@
     move-result-object v1
 
     .line 256
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -343,8 +343,8 @@
 
     .line 259
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1a
-    .catchall {:try_start_8 .. :try_end_1a} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 262
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -354,7 +354,7 @@
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     .line 262
@@ -368,7 +368,7 @@
 .end method
 
 .method public onMinimized(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -381,7 +381,7 @@
     move-result-object v0
 
     .line 364
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -401,15 +401,15 @@
     const/16 v3, 0xb
 
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_16
-    .catchall {:try_start_4 .. :try_end_16} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 369
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -419,7 +419,7 @@
 .end method
 
 .method public onNavigationEvent(ILandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -432,7 +432,7 @@
     move-result-object v0
 
     .line 228
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -455,15 +455,15 @@
     const/4 v2, 0x2
 
     invoke-interface {p1, v2, v0, p2, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_18
-    .catchall {:try_start_4 .. :try_end_18} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 234
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -473,7 +473,7 @@
 .end method
 
 .method public onPostMessage(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -491,7 +491,7 @@
     move-result-object v1
 
     .line 271
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -513,8 +513,8 @@
 
     .line 275
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1d
-    .catchall {:try_start_8 .. :try_end_1d} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 278
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -524,7 +524,7 @@
 
     return-void
 
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     .line 278
@@ -538,7 +538,7 @@
 .end method
 
 .method public onRelationshipValidationResult(ILandroid/net/Uri;ZLandroid/os/Bundle;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -551,7 +551,7 @@
     move-result-object v0
 
     .line 286
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -566,17 +566,17 @@
 
     const/4 p2, 0x1
 
-    if-eqz p3, :cond_15
+    if-eqz p3, :cond_0
 
     move p3, p2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move p3, p1
 
     .line 289
-    :goto_16
+    :goto_0
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 290
@@ -590,15 +590,15 @@
     const/4 p4, 0x0
 
     invoke-interface {p1, p3, v0, p4, p2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_23
-    .catchall {:try_start_4 .. :try_end_23} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 294
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -608,7 +608,7 @@
 .end method
 
 .method public onUnminimized(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -621,7 +621,7 @@
     move-result-object v0
 
     .line 376
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -641,15 +641,15 @@
     const/16 v3, 0xc
 
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_16
-    .catchall {:try_start_4 .. :try_end_16} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 381
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -659,7 +659,7 @@
 .end method
 
 .method public onWarmupCompleted(Landroid/os/Bundle;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -672,7 +672,7 @@
     move-result-object v0
 
     .line 335
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/ICustomTabsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -692,15 +692,15 @@
     const/16 v3, 0x9
 
     invoke-interface {p1, v3, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_16
-    .catchall {:try_start_4 .. :try_end_16} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 340
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V

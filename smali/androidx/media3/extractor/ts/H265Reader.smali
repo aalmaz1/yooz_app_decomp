@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ts/SeiReader;)V
-    .registers 4
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -146,7 +146,7 @@
 .end method
 
 .method private assertTracksCreated()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "output",
@@ -168,7 +168,7 @@
 .end method
 
 .method private endNalUnit(JIIJ)V
-    .registers 9
+    .locals 2
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output",
@@ -186,7 +186,7 @@
     .line 209
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/H265Reader;->hasOutputFormat:Z
 
-    if-nez p1, :cond_46
+    if-nez p1, :cond_0
 
     .line 210
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->vps:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -210,7 +210,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->sps:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
@@ -218,7 +218,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->pps:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
@@ -226,7 +226,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_0
 
     .line 214
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->output:Landroidx/media3/extractor/TrackOutput;
@@ -251,7 +251,7 @@
     iput-boolean p1, p0, Landroidx/media3/extractor/ts/H265Reader;->hasOutputFormat:Z
 
     .line 218
-    :cond_46
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->prefixSei:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
     invoke-virtual {p1, p4}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->endNalUnit(I)Z
@@ -260,7 +260,7 @@
 
     const/4 p2, 0x5
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_1
 
     .line 219
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->prefixSei:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -297,14 +297,14 @@
     invoke-virtual {p1, p5, p6, p3}, Landroidx/media3/extractor/ts/SeiReader;->consume(JLandroidx/media3/common/util/ParsableByteArray;)V
 
     .line 226
-    :cond_70
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->suffixSei:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
     invoke-virtual {p1, p4}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->endNalUnit(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_99
+    if-eqz p1, :cond_2
 
     .line 227
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->suffixSei:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -340,12 +340,12 @@
 
     invoke-virtual {p1, p5, p6, p2}, Landroidx/media3/extractor/ts/SeiReader;->consume(JLandroidx/media3/common/util/ParsableByteArray;)V
 
-    :cond_99
+    :cond_2
     return-void
 .end method
 
 .method private nalUnitData([BII)V
-    .registers 5
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "sampleReader"
@@ -360,7 +360,7 @@
     .line 197
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H265Reader;->hasOutputFormat:Z
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 198
     iget-object v0, p0, Landroidx/media3/extractor/ts/H265Reader;->vps:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -378,7 +378,7 @@
     invoke-virtual {v0, p1, p2, p3}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
 
     .line 202
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/H265Reader;->prefixSei:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
@@ -392,7 +392,7 @@
 .end method
 
 .method private static parseMediaFormat(Ljava/lang/String;Landroidx/media3/extractor/ts/NalUnitTargetBuffer;Landroidx/media3/extractor/ts/NalUnitTargetBuffer;Landroidx/media3/extractor/ts/NalUnitTargetBuffer;)Landroidx/media3/common/Format;
-    .registers 11
+    .locals 7
 
     .line 242
     iget v0, p1, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->nalLength:I
@@ -589,7 +589,7 @@
 .end method
 
 .method private startNalUnit(JIIJ)V
-    .registers 15
+    .locals 8
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "sampleReader"
@@ -614,7 +614,7 @@
     .line 185
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/H265Reader;->hasOutputFormat:Z
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_0
 
     .line 186
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->vps:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
@@ -632,7 +632,7 @@
     invoke-virtual {p1, p4}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->startNalUnit(I)V
 
     .line 190
-    :cond_1e
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->prefixSei:Landroidx/media3/extractor/ts/NalUnitTargetBuffer;
 
     invoke-virtual {p1, p4}, Landroidx/media3/extractor/ts/NalUnitTargetBuffer;->startNalUnit(I)V
@@ -648,7 +648,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 18
+    .locals 16
 
     move-object/from16 v7, p0
 
@@ -656,12 +656,12 @@
     invoke-direct/range {p0 .. p0}, Landroidx/media3/extractor/ts/H265Reader;->assertTracksCreated()V
 
     .line 127
-    :cond_5
+    :cond_0
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_64
+    if-lez v0, :cond_4
 
     .line 128
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -702,8 +702,8 @@
 
     invoke-interface {v1, v10, v2}, Landroidx/media3/extractor/TrackOutput;->sampleData(Landroidx/media3/common/util/ParsableByteArray;I)V
 
-    :goto_2c
-    if-ge v0, v8, :cond_5
+    :goto_0
+    if-ge v0, v8, :cond_0
 
     .line 138
     iget-object v1, v7, Landroidx/media3/extractor/ts/H265Reader;->prefixFlags:[Z
@@ -712,7 +712,7 @@
 
     move-result v11
 
-    if-ne v11, v8, :cond_3a
+    if-ne v11, v8, :cond_1
 
     .line 142
     invoke-direct {v7, v9, v0, v8}, Landroidx/media3/extractor/ts/H265Reader;->nalUnitData([BII)V
@@ -720,19 +720,19 @@
     return-void
 
     .line 147
-    :cond_3a
+    :cond_1
     invoke-static {v9, v11}, Landroidx/media3/container/NalUnitUtil;->getH265NalUnitType([BI)I
 
     move-result v12
 
     sub-int v1, v11, v0
 
-    if-lez v1, :cond_45
+    if-lez v1, :cond_2
 
     .line 153
     invoke-direct {v7, v9, v0, v11}, Landroidx/media3/extractor/ts/H265Reader;->nalUnitData([BII)V
 
-    :cond_45
+    :cond_2
     sub-int v13, v8, v11
 
     .line 157
@@ -742,16 +742,16 @@
 
     sub-long v14, v2, v4
 
-    if-gez v1, :cond_50
+    if-gez v1, :cond_3
 
     neg-int v0, v1
 
-    goto :goto_51
+    goto :goto_1
 
-    :cond_50
+    :cond_3
     const/4 v0, 0x0
 
-    :goto_51
+    :goto_1
     move v4, v0
 
     .line 164
@@ -775,14 +775,14 @@
 
     add-int/lit8 v0, v11, 0x3
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_64
+    :cond_4
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 5
+    .locals 2
 
     .line 110
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -825,12 +825,12 @@
 .end method
 
 .method public packetFinished(Z)V
-    .registers 4
+    .locals 2
 
     .line 176
     invoke-direct {p0}, Landroidx/media3/extractor/ts/H265Reader;->assertTracksCreated()V
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 178
     iget-object p1, p0, Landroidx/media3/extractor/ts/H265Reader;->sampleReader:Landroidx/media3/extractor/ts/H265Reader$SampleReader;
@@ -839,12 +839,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/media3/extractor/ts/H265Reader$SampleReader;->end(J)V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     .line 120
     iput-wide p1, p0, Landroidx/media3/extractor/ts/H265Reader;->pesTimeUs:J
@@ -853,7 +853,7 @@
 .end method
 
 .method public seek()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -898,11 +898,11 @@
     .line 103
     iget-object v0, p0, Landroidx/media3/extractor/ts/H265Reader;->sampleReader:Landroidx/media3/extractor/ts/H265Reader$SampleReader;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     .line 104
     invoke-virtual {v0}, Landroidx/media3/extractor/ts/H265Reader$SampleReader;->reset()V
 
-    :cond_30
+    :cond_0
     return-void
 .end method

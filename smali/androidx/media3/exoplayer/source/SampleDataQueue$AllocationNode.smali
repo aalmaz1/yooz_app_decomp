@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(JI)V
-    .registers 4
+    .locals 0
 
     .line 486
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public clear()Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public getAllocation()Landroidx/media3/exoplayer/upstream/Allocation;
-    .registers 2
+    .locals 1
 
     .line 540
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->allocation:Landroidx/media3/exoplayer/upstream/Allocation;
@@ -75,7 +75,7 @@
 .end method
 
 .method public initialize(Landroidx/media3/exoplayer/upstream/Allocation;Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;)V
-    .registers 3
+    .locals 0
 
     .line 509
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->allocation:Landroidx/media3/exoplayer/upstream/Allocation;
@@ -87,45 +87,45 @@
 .end method
 
 .method public next()Landroidx/media3/exoplayer/upstream/Allocator$AllocationNode;
-    .registers 3
+    .locals 2
 
     .line 546
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_1
 
     iget-object v1, v0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->allocation:Landroidx/media3/exoplayer/upstream/Allocation;
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     return-object v0
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public reset(JI)V
-    .registers 6
+    .locals 2
 
     .line 497
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->allocation:Landroidx/media3/exoplayer/upstream/Allocation;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 498
@@ -142,7 +142,7 @@
 .end method
 
 .method public translateOffset(J)I
-    .registers 5
+    .locals 2
 
     .line 521
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->startPosition:J

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;Landroidx/camera/video/FallbackStrategy;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,24 +43,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     sget-object v0, Landroidx/camera/video/FallbackStrategy;->NONE:Landroidx/camera/video/FallbackStrategy;
 
-    if-eq p2, v0, :cond_e
+    if-eq p2, v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_11
+    :goto_1
     const-string v1, "No preferred quality and fallback strategy."
 
     .line 180
@@ -84,7 +84,7 @@
 .end method
 
 .method private addByFallbackStrategy(Ljava/util/List;Ljava/util/Set;)V
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,22 +102,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 337
-    :cond_7
+    :cond_0
     invoke-interface {p2, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 342
-    :cond_e
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Select quality by fallbackStrategy = "
@@ -143,12 +143,12 @@
 
     sget-object v2, Landroidx/camera/video/FallbackStrategy;->NONE:Landroidx/camera/video/FallbackStrategy;
 
-    if-ne v0, v2, :cond_2b
+    if-ne v0, v2, :cond_2
 
     return-void
 
     .line 347
-    :cond_2b
+    :cond_2
     iget-object v0, p0, Landroidx/camera/video/QualitySelector;->mFallbackStrategy:Landroidx/camera/video/FallbackStrategy;
 
     instance-of v0, v0, Landroidx/camera/video/FallbackStrategy$RuleStrategy;
@@ -178,7 +178,7 @@
 
     const/4 v6, 0x1
 
-    if-ne v3, v4, :cond_4d
+    if-ne v3, v4, :cond_3
 
     .line 358
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -187,17 +187,17 @@
 
     check-cast v3, Landroidx/camera/video/Quality;
 
-    goto :goto_65
+    goto :goto_0
 
     .line 359
-    :cond_4d
+    :cond_3
     invoke-virtual {v0}, Landroidx/camera/video/FallbackStrategy$RuleStrategy;->getFallbackQuality()Landroidx/camera/video/Quality;
 
     move-result-object v3
 
     sget-object v4, Landroidx/camera/video/Quality;->LOWEST:Landroidx/camera/video/Quality;
 
-    if-ne v3, v4, :cond_61
+    if-ne v3, v4, :cond_4
 
     .line 360
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -212,28 +212,28 @@
 
     check-cast v3, Landroidx/camera/video/Quality;
 
-    goto :goto_65
+    goto :goto_0
 
     .line 362
-    :cond_61
+    :cond_4
     invoke-virtual {v0}, Landroidx/camera/video/FallbackStrategy$RuleStrategy;->getFallbackQuality()Landroidx/camera/video/Quality;
 
     move-result-object v3
 
     .line 365
-    :goto_65
+    :goto_0
     invoke-interface {v2, v3}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result v4
 
     const/4 v7, -0x1
 
-    if-eq v4, v7, :cond_6d
+    if-eq v4, v7, :cond_5
 
     move v5, v6
 
     .line 366
-    :cond_6d
+    :cond_5
     invoke-static {v5}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 369
@@ -243,8 +243,8 @@
 
     add-int/lit8 v7, v4, -0x1
 
-    :goto_77
-    if-ltz v7, :cond_8b
+    :goto_1
+    if-ltz v7, :cond_7
 
     .line 371
     invoke-interface {v2, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -258,18 +258,18 @@
 
     move-result v9
 
-    if-eqz v9, :cond_88
+    if-eqz v9, :cond_6
 
     .line 373
     invoke-interface {v5, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_88
+    :cond_6
     add-int/lit8 v7, v7, -0x1
 
-    goto :goto_77
+    goto :goto_1
 
     .line 378
-    :cond_8b
+    :cond_7
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
@@ -277,12 +277,12 @@
     add-int/2addr v4, v6
 
     .line 379
-    :goto_91
+    :goto_2
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v8
 
-    if-ge v4, v8, :cond_a9
+    if-ge v4, v8, :cond_9
 
     .line 380
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -296,18 +296,18 @@
 
     move-result v9
 
-    if-eqz v9, :cond_a6
+    if-eqz v9, :cond_8
 
     .line 382
     invoke-interface {v7, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_a6
+    :cond_8
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_91
+    goto :goto_2
 
     .line 386
-    :cond_a9
+    :cond_9
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v4, "sizeSortedQualities = "
@@ -359,29 +359,29 @@
 
     move-result p1
 
-    if-eqz p1, :cond_116
+    if-eqz p1, :cond_e
 
-    if-eq p1, v6, :cond_110
+    if-eq p1, v6, :cond_d
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_10c
+    if-eq p1, v0, :cond_c
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_105
+    if-eq p1, v0, :cond_b
 
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_ee
+    if-ne p1, v0, :cond_a
 
     .line 404
     invoke-interface {p2, v7}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_116
+    goto :goto_3
 
     .line 410
-    :cond_ee
+    :cond_a
     new-instance p1, Ljava/lang/AssertionError;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -405,34 +405,34 @@
     throw p1
 
     .line 400
-    :cond_105
+    :cond_b
     invoke-interface {p2, v7}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 401
     invoke-interface {p2, v5}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_116
+    goto :goto_3
 
     .line 397
-    :cond_10c
+    :cond_c
     invoke-interface {p2, v5}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_116
+    goto :goto_3
 
     .line 393
-    :cond_110
+    :cond_d
     invoke-interface {p2, v5}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     .line 394
     invoke-interface {p2, v7}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    :cond_116
-    :goto_116
+    :cond_e
+    :goto_3
     return-void
 .end method
 
 .method private static checkQualityConstantsOrThrow(Landroidx/camera/video/Quality;)V
-    .registers 4
+    .locals 3
 
     .line 428
     invoke-static {p0}, Landroidx/camera/video/Quality;->containsQuality(Landroidx/camera/video/Quality;)Z
@@ -459,7 +459,7 @@
 .end method
 
 .method private static checkQualityConstantsOrThrow(Ljava/util/List;)V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -474,12 +474,12 @@
 
     move-result-object p0
 
-    :goto_4
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -508,14 +508,14 @@
 
     invoke-static {v1, v0}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     return-void
 .end method
 
 .method public static from(Landroidx/camera/video/Quality;)Landroidx/camera/video/QualitySelector;
-    .registers 2
+    .locals 1
 
     .line 199
     sget-object v0, Landroidx/camera/video/FallbackStrategy;->NONE:Landroidx/camera/video/FallbackStrategy;
@@ -528,7 +528,7 @@
 .end method
 
 .method public static from(Landroidx/camera/video/Quality;Landroidx/camera/video/FallbackStrategy;)Landroidx/camera/video/QualitySelector;
-    .registers 3
+    .locals 1
 
     const-string v0, "quality cannot be null"
 
@@ -556,7 +556,7 @@
 .end method
 
 .method public static fromOrderedList(Ljava/util/List;)Landroidx/camera/video/QualitySelector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -578,7 +578,7 @@
 .end method
 
 .method public static fromOrderedList(Ljava/util/List;Landroidx/camera/video/FallbackStrategy;)Landroidx/camera/video/QualitySelector;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -624,7 +624,7 @@
 .end method
 
 .method private static getProfileVideoSize(Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;)Landroid/util/Size;
-    .registers 3
+    .locals 2
 
     .line 416
     invoke-virtual {p0}, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;->getDefaultVideoProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
@@ -648,7 +648,7 @@
 .end method
 
 .method public static getQualityToResolutionMap(Landroidx/camera/video/VideoCapabilities;Landroidx/camera/core/DynamicRange;)Ljava/util/Map;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -676,12 +676,12 @@
 
     move-result-object v1
 
-    :goto_d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -707,14 +707,14 @@
 
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     return-object v0
 .end method
 
 .method public static getResolution(Landroidx/camera/core/CameraInfo;Landroidx/camera/video/Quality;)Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 151
     invoke-static {p1}, Landroidx/camera/video/QualitySelector;->checkQualityConstantsOrThrow(Landroidx/camera/video/Quality;)V
@@ -731,24 +731,24 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     .line 154
     invoke-static {p0}, Landroidx/camera/video/QualitySelector;->getProfileVideoSize(Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;)Landroid/util/Size;
 
     move-result-object p0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_15
+    :goto_0
     return-object p0
 .end method
 
 .method public static getSupportedQualities(Landroidx/camera/core/CameraInfo;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -778,7 +778,7 @@
 .end method
 
 .method public static isQualitySupported(Landroidx/camera/core/CameraInfo;Landroidx/camera/video/Quality;)Z
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -799,7 +799,7 @@
 
 # virtual methods
 .method getPrioritizedQualities(Ljava/util/List;)Ljava/util/List;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -819,7 +819,7 @@
 
     const-string v1, "QualitySelector"
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     const-string p1, "No supported quality on the device."
 
@@ -834,7 +834,7 @@
     return-object p1
 
     .line 291
-    :cond_13
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "supportedQualities = "
@@ -863,12 +863,12 @@
 
     move-result-object v2
 
-    :goto_30
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_71
+    if-eqz v3, :cond_4
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -879,18 +879,18 @@
     .line 297
     sget-object v4, Landroidx/camera/video/Quality;->HIGHEST:Landroidx/camera/video/Quality;
 
-    if-ne v3, v4, :cond_44
+    if-ne v3, v4, :cond_1
 
     .line 300
     invoke-interface {v0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_71
+    goto :goto_1
 
     .line 302
-    :cond_44
+    :cond_1
     sget-object v4, Landroidx/camera/video/Quality;->LOWEST:Landroidx/camera/video/Quality;
 
-    if-ne v3, v4, :cond_54
+    if-ne v3, v4, :cond_2
 
     .line 304
     new-instance v1, Ljava/util/ArrayList;
@@ -903,23 +903,23 @@
     .line 306
     invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_71
+    goto :goto_1
 
     .line 309
-    :cond_54
+    :cond_2
     invoke-interface {p1, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5e
+    if-eqz v4, :cond_3
 
     .line 310
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_30
+    goto :goto_0
 
     .line 312
-    :cond_5e
+    :cond_3
     new-instance v4, Ljava/lang/StringBuilder;
 
     const-string v5, "quality is not supported and will be ignored: "
@@ -936,11 +936,11 @@
 
     invoke-static {v1, v3}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_30
+    goto :goto_0
 
     .line 318
-    :cond_71
-    :goto_71
+    :cond_4
+    :goto_1
     invoke-direct {p0, p1, v0}, Landroidx/camera/video/QualitySelector;->addByFallbackStrategy(Ljava/util/List;Ljava/util/Set;)V
 
     .line 320
@@ -952,7 +952,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 326
     new-instance v0, Ljava/lang/StringBuilder;

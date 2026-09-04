@@ -52,7 +52,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;JIJLandroidx/media3/common/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZ)V
-    .registers 16
+    .locals 0
 
     .line 350
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +94,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;JIJLandroidx/media3/common/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLandroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$1;)V
-    .registers 17
+    .locals 0
 
     .line 285
     invoke-direct/range {p0 .. p15}, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$SegmentBase;-><init>(Ljava/lang/String;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;JIJLandroidx/media3/common/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZ)V
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public compareTo(Ljava/lang/Long;)I
-    .registers 6
+    .locals 4
 
     .line 366
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$SegmentBase;->relativeStartTimeUs:J
@@ -116,14 +116,14 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 368
-    :cond_c
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$SegmentBase;->relativeStartTimeUs:J
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -132,21 +132,21 @@
 
     cmp-long p1, v0, v2
 
-    if-gez p1, :cond_18
+    if-gez p1, :cond_1
 
     const/4 p1, -0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_19
+    :goto_0
     return p1
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 284
     check-cast p1, Ljava/lang/Long;

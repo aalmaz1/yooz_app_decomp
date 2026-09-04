@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public bridge synthetic get(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -68,7 +68,7 @@
 .end method
 
 .method public get(I)Ljava/lang/StackTraceElement;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -126,7 +126,7 @@
 .end method
 
 .method public size()I
-    .registers 6
+    .locals 5
 
     .line 426
     invoke-static {}, Lcom/google/common/base/Throwables;->access$300()Ljava/lang/reflect/Method;

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/FlacStreamMetadata;Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;)V
-    .registers 3
+    .locals 0
 
     .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public createSeekMap()Landroidx/media3/extractor/SeekMap;
-    .registers 5
+    .locals 4
 
     .line 157
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
@@ -63,16 +63,16 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 158
@@ -88,7 +88,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 8
+    .locals 6
 
     .line 138
     iget-wide v0, p0, Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J
@@ -99,7 +99,7 @@
 
     const-wide/16 v2, -0x1
 
-    if-ltz p1, :cond_11
+    if-ltz p1, :cond_0
 
     const-wide/16 v4, 0x2
 
@@ -112,12 +112,12 @@
 
     return-wide v0
 
-    :cond_11
+    :cond_0
     return-wide v2
 .end method
 
 .method public setFirstFrameOffset(J)V
-    .registers 3
+    .locals 0
 
     .line 133
     iput-wide p1, p0, Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
@@ -126,7 +126,7 @@
 .end method
 
 .method public startSeek(J)V
-    .registers 5
+    .locals 2
 
     .line 148
     iget-object v0, p0, Landroidx/media3/extractor/ogg/FlacReader$FlacOggSeeker;->seekTable:Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;

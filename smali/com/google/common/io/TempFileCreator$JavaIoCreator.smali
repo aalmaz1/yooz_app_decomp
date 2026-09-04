@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -31,7 +31,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/io/TempFileCreator$1;)V
-    .registers 2
+    .locals 0
 
     .line 259
     invoke-direct {p0}, Lcom/google/common/io/TempFileCreator$JavaIoCreator;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method createTempDir()Ljava/io/File;
-    .registers 6
+    .locals 5
 
     .line 262
     new-instance v0, Ljava/io/File;
@@ -80,10 +80,10 @@
 
     const/4 v2, 0x0
 
-    :goto_23
+    :goto_0
     const/16 v3, 0x2710
 
-    if-ge v2, v3, :cond_47
+    if-ge v2, v3, :cond_1
 
     .line 267
     new-instance v3, Ljava/io/File;
@@ -111,17 +111,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_0
 
     return-object v3
 
-    :cond_44
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
     .line 272
-    :cond_47
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -160,7 +160,7 @@
 .end method
 
 .method createTempFile(Ljava/lang/String;)Ljava/io/File;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,19 +36,19 @@
 .end method
 
 .method private getIndexOfCuesStartingAfter(J)I
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 150
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_1
 
     .line 151
     iget-object v1, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -63,17 +63,17 @@
 
     cmp-long v1, p1, v1
 
-    if-gez v1, :cond_18
+    if-gez v1, :cond_0
 
     return v0
 
-    :cond_18
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 155
-    :cond_1b
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public addCues(Landroidx/media3/extractor/text/CuesWithTiming;J)Z
-    .registers 13
+    .locals 9
 
     .line 49
     iget-wide v0, p1, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
@@ -99,16 +99,16 @@
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v0, v4
 
-    :goto_10
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 50
@@ -116,30 +116,30 @@
 
     cmp-long v0, v5, p2
 
-    if-gtz v0, :cond_27
+    if-gtz v0, :cond_2
 
     iget-wide v5, p1, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long v0, v5, v2
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     iget-wide v2, p1, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long v0, p2, v2
 
-    if-gez v0, :cond_27
+    if-gez v0, :cond_2
 
-    :cond_25
+    :cond_1
     move v0, v1
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
+    :cond_2
     move v0, v4
 
     .line 53
-    :goto_28
+    :goto_1
     iget-object v2, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -148,8 +148,8 @@
 
     sub-int/2addr v2, v1
 
-    :goto_2f
-    if-ltz v2, :cond_5a
+    :goto_2
+    if-ltz v2, :cond_5
 
     .line 54
     iget-wide v5, p1, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
@@ -166,7 +166,7 @@
 
     cmp-long v3, v5, v7
 
-    if-ltz v3, :cond_48
+    if-ltz v3, :cond_3
 
     .line 55
     iget-object p2, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -178,7 +178,7 @@
     return v0
 
     .line 57
-    :cond_48
+    :cond_3
     iget-object v3, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -191,17 +191,17 @@
 
     cmp-long v3, v5, p2
 
-    if-gtz v3, :cond_57
+    if-gtz v3, :cond_4
 
     move v0, v4
 
-    :cond_57
+    :cond_4
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_2f
+    goto :goto_2
 
     .line 63
-    :cond_5a
+    :cond_5
     iget-object p2, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v4, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
@@ -210,7 +210,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -221,14 +221,14 @@
 .end method
 
 .method public discardCuesBeforeTimeUs(J)V
-    .registers 4
+    .locals 1
 
     .line 82
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->getIndexOfCuesStartingAfter(J)I
 
     move-result p1
 
-    if-lez p1, :cond_10
+    if-lez p1, :cond_0
 
     .line 84
     iget-object p2, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -241,12 +241,12 @@
 
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public getCuesAtTimeUs(J)Lcom/google/common/collect/ImmutableList;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -261,7 +261,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 72
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
@@ -271,7 +271,7 @@
     return-object p1
 
     .line 74
-    :cond_b
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     add-int/lit8 v0, v0, -0x1
@@ -289,35 +289,35 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     iget-wide v1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long p1, p1, v1
 
-    if-gez p1, :cond_27
+    if-gez p1, :cond_1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 77
-    :cond_27
+    :cond_1
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 76
-    :cond_2c
-    :goto_2c
+    :cond_2
+    :goto_0
     iget-object p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->cues:Lcom/google/common/collect/ImmutableList;
 
-    :goto_2e
+    :goto_1
     return-object p1
 .end method
 
 .method public getNextCueChangeTimeUs(J)J
-    .registers 12
+    .locals 9
 
     .line 114
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -328,12 +328,12 @@
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-wide v1
 
     .line 117
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     const/4 v3, 0x0
@@ -348,7 +348,7 @@
 
     cmp-long v0, p1, v4
 
-    if-gez v0, :cond_25
+    if-gez v0, :cond_1
 
     .line 118
     iget-object p1, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -363,13 +363,13 @@
 
     return-wide p1
 
-    :cond_25
+    :cond_1
     const/4 v0, 0x1
 
     move v3, v0
 
     .line 121
-    :goto_27
+    :goto_0
     iget-object v4, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -378,7 +378,7 @@
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ge v3, v4, :cond_68
+    if-ge v3, v4, :cond_4
 
     .line 122
     iget-object v4, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -394,7 +394,7 @@
 
     cmp-long v7, p1, v7
 
-    if-gez v7, :cond_65
+    if-gez v7, :cond_3
 
     .line 124
     iget-object v1, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -412,13 +412,13 @@
 
     cmp-long v1, v1, v5
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_2
 
     iget-wide v1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long p1, v1, p1
 
-    if-lez p1, :cond_62
+    if-lez p1, :cond_2
 
     iget-wide p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
@@ -426,27 +426,27 @@
 
     cmp-long p1, p1, v1
 
-    if-gez p1, :cond_62
+    if-gez p1, :cond_2
 
     .line 128
     iget-wide p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
-    goto :goto_64
+    goto :goto_1
 
     .line 129
-    :cond_62
+    :cond_2
     iget-wide p1, v4, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
 
-    :goto_64
+    :goto_1
     return-wide p1
 
-    :cond_65
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
     .line 132
-    :cond_68
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-static {v0}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -460,23 +460,23 @@
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_7e
+    if-eqz v3, :cond_5
 
     iget-wide v3, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long p1, p1, v3
 
-    if-gez p1, :cond_7e
+    if-gez p1, :cond_5
 
     .line 134
     iget-wide v1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
-    :cond_7e
+    :cond_5
     return-wide v1
 .end method
 
 .method public getPreviousCueChangeTimeUs(J)J
-    .registers 10
+    .locals 7
 
     .line 90
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -487,7 +487,7 @@
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v0, :cond_71
+    if-nez v0, :cond_7
 
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
@@ -503,24 +503,24 @@
 
     cmp-long v0, p1, v3
 
-    if-gez v0, :cond_1d
+    if-gez v0, :cond_0
 
-    goto :goto_71
+    goto :goto_4
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x1
 
     move v3, v0
 
     .line 94
-    :goto_1f
+    :goto_0
     iget-object v4, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_56
+    if-ge v3, v4, :cond_4
 
     .line 95
     iget-object v4, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -535,12 +535,12 @@
 
     cmp-long v6, p1, v4
 
-    if-nez v6, :cond_36
+    if-nez v6, :cond_1
 
     return-wide v4
 
-    :cond_36
-    if-gez v6, :cond_53
+    :cond_1
+    if-gez v6, :cond_3
 
     .line 100
     iget-object v4, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
@@ -558,33 +558,33 @@
 
     cmp-long v1, v3, v1
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_2
 
     iget-wide v1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long p1, v1, p1
 
-    if-gtz p1, :cond_50
+    if-gtz p1, :cond_2
 
     .line 102
     iget-wide p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
-    goto :goto_52
+    goto :goto_1
 
     .line 103
-    :cond_50
+    :cond_2
     iget-wide p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
 
-    :goto_52
+    :goto_1
     return-wide p1
 
-    :cond_53
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 106
-    :cond_56
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/text/ReplacingCuesResolver;->cuesWithTimingList:Ljava/util/ArrayList;
 
     invoke-static {v0}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -598,31 +598,31 @@
 
     cmp-long v1, v3, v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_6
 
     iget-wide v1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
     cmp-long p1, p1, v1
 
-    if-gez p1, :cond_6b
+    if-gez p1, :cond_5
 
-    goto :goto_6e
+    goto :goto_2
 
     .line 109
-    :cond_6b
+    :cond_5
     iget-wide p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->endTimeUs:J
 
-    goto :goto_70
+    goto :goto_3
 
     .line 108
-    :cond_6e
-    :goto_6e
+    :cond_6
+    :goto_2
     iget-wide p1, v0, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
 
-    :goto_70
+    :goto_3
     return-wide p1
 
-    :cond_71
-    :goto_71
+    :cond_7
+    :goto_4
     return-wide v1
 .end method

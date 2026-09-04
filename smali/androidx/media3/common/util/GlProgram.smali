@@ -50,7 +50,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -123,17 +123,17 @@
 
     aget p2, p2, v1
 
-    if-ne p2, p1, :cond_2d
+    if-ne p2, p1, :cond_0
 
     move p2, p1
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     move p2, v1
 
     .line 87
-    :goto_2e
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "Unable to link shader program: \n"
@@ -182,10 +182,10 @@
 
     move v0, v1
 
-    :goto_5d
+    :goto_1
     aget v2, p2, v1
 
-    if-ge v0, v2, :cond_75
+    if-ge v0, v2, :cond_1
 
     .line 96
     iget v2, p0, Landroidx/media3/common/util/GlProgram;->programId:I
@@ -208,10 +208,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5d
+    goto :goto_1
 
     .line 100
-    :cond_75
+    :cond_1
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
@@ -236,10 +236,10 @@
 
     move p2, v1
 
-    :goto_8d
+    :goto_2
     aget v0, p1, v1
 
-    if-ge p2, v0, :cond_a5
+    if-ge p2, v0, :cond_2
 
     .line 105
     iget v0, p0, Landroidx/media3/common/util/GlProgram;->programId:I
@@ -262,17 +262,17 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_8d
+    goto :goto_2
 
     .line 109
-    :cond_a5
+    :cond_2
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
     return-void
 .end method
 
 .method static synthetic access$000([B)I
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-static {p0}, Landroidx/media3/common/util/GlProgram;->getCStringLength([B)I
@@ -283,7 +283,7 @@
 .end method
 
 .method static synthetic access$100(ILjava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-static {p0, p1}, Landroidx/media3/common/util/GlProgram;->getAttributeLocation(ILjava/lang/String;)I
@@ -294,7 +294,7 @@
 .end method
 
 .method static synthetic access$200(ILjava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-static {p0, p1}, Landroidx/media3/common/util/GlProgram;->getUniformLocation(ILjava/lang/String;)I
@@ -305,7 +305,7 @@
 .end method
 
 .method private static addShader(IILjava/lang/String;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -338,15 +338,15 @@
 
     aget v1, v1, v2
 
-    if-ne v1, v0, :cond_1b
+    if-ne v1, v0, :cond_0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move v0, v2
 
     .line 119
-    :goto_1c
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -390,7 +390,7 @@
 .end method
 
 .method private static getAttributeLocation(ILjava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 128
     invoke-static {p0, p1}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
@@ -401,7 +401,7 @@
 .end method
 
 .method private getAttributeLocation(Ljava/lang/String;)I
-    .registers 3
+    .locals 1
 
     .line 133
     iget v0, p0, Landroidx/media3/common/util/GlProgram;->programId:I
@@ -414,37 +414,37 @@
 .end method
 
 .method private static getCStringLength([B)I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 240
-    :goto_1
+    :goto_0
     array-length v1, p0
 
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_1
 
     .line 241
     aget-byte v1, p0, v0
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     return v0
 
-    :cond_9
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 245
-    :cond_c
+    :cond_1
     array-length p0, p0
 
     return p0
 .end method
 
 .method private static getUniformLocation(ILjava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 137
     invoke-static {p0, p1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
@@ -457,7 +457,7 @@
 
 # virtual methods
 .method public bindAttributesAndUniforms()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -473,8 +473,8 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v3, v1, :cond_f
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     aget-object v4, v0, v3
 
@@ -483,16 +483,16 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 223
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniforms:[Landroidx/media3/common/util/GlProgram$Uniform;
 
     array-length v1, v0
 
-    :goto_12
-    if-ge v2, v1, :cond_1e
+    :goto_1
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -503,14 +503,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     return-void
 .end method
 
 .method public delete()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -529,7 +529,7 @@
 .end method
 
 .method public getAttributeArrayLocationAndEnable(Ljava/lang/String;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -551,7 +551,7 @@
 .end method
 
 .method public getUniformLocation(Ljava/lang/String;)I
-    .registers 3
+    .locals 1
 
     .line 142
     iget v0, p0, Landroidx/media3/common/util/GlProgram;->programId:I
@@ -564,7 +564,7 @@
 .end method
 
 .method public setBufferAttribute(Ljava/lang/String;[FI)V
-    .registers 5
+    .locals 1
 
     .line 174
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->attributeByName:Ljava/util/Map;
@@ -587,7 +587,7 @@
 .end method
 
 .method public setExternalTexturesRequireNearestSampling(Z)V
-    .registers 2
+    .locals 0
 
     .line 235
     iput-boolean p1, p0, Landroidx/media3/common/util/GlProgram;->externalTexturesRequireNearestSampling:Z
@@ -596,7 +596,7 @@
 .end method
 
 .method public setFloatUniform(Ljava/lang/String;F)V
-    .registers 4
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniformByName:Ljava/util/Map;
@@ -619,7 +619,7 @@
 .end method
 
 .method public setFloatsUniform(Ljava/lang/String;[F)V
-    .registers 4
+    .locals 1
 
     .line 206
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniformByName:Ljava/util/Map;
@@ -642,7 +642,7 @@
 .end method
 
 .method public setFloatsUniformIfPresent(Ljava/lang/String;[F)V
-    .registers 4
+    .locals 1
 
     .line 211
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniformByName:Ljava/util/Map;
@@ -653,19 +653,19 @@
 
     check-cast p1, Landroidx/media3/common/util/GlProgram$Uniform;
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
     return-void
 
     .line 215
-    :cond_b
+    :cond_0
     invoke-virtual {p1, p2}, Landroidx/media3/common/util/GlProgram$Uniform;->setFloats([F)V
 
     return-void
 .end method
 
 .method public setIntUniform(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     .line 191
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniformByName:Ljava/util/Map;
@@ -688,7 +688,7 @@
 .end method
 
 .method public setIntsUniform(Ljava/lang/String;[I)V
-    .registers 4
+    .locals 1
 
     .line 196
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniformByName:Ljava/util/Map;
@@ -711,7 +711,7 @@
 .end method
 
 .method public setSamplerTexIdUniform(Ljava/lang/String;II)V
-    .registers 5
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram;->uniformByName:Ljava/util/Map;
@@ -734,7 +734,7 @@
 .end method
 
 .method public use()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;

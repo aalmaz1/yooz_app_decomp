@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 44
     new-instance v0, Ljava/util/HashSet;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method static load()Z
-    .registers 3
+    .locals 3
 
     .line 48
     sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public getRetryCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static validateCameras(Landroid/content/Context;Landroidx/camera/core/impl/CameraRepository;Landroidx/camera/core/CameraSelector;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/impl/CameraValidator$CameraIdListIncorrectException;
@@ -35,26 +35,26 @@
 
     const-string v0, "CameraValidator"
 
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_0
 
     .line 61
-    :try_start_4
+    :try_start_0
     invoke-virtual {p2}, Landroidx/camera/core/CameraSelector;->getLensFacing()Ljava/lang/Integer;
 
     move-result-object v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1
 
     const-string p0, "No lens facing info in the availableCamerasSelector, don\'t verify the camera lens facing."
 
     .line 62
     invoke-static {v0, p0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_f
-    .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_10
+    :catch_0
     move-exception p0
 
     const-string p1, "Cannot get lens facing from the availableCamerasSelector don\'t verify the camera lens facing."
@@ -64,11 +64,11 @@
 
     return-void
 
-    :cond_17
+    :cond_0
     const/4 v1, 0x0
 
     .line 72
-    :cond_18
+    :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "Verifying camera lens facing on "
@@ -102,7 +102,7 @@
 
     move-result-object p0
 
-    :try_start_3a
+    :try_start_1
     const-string v2, "android.hardware.camera"
 
     .line 78
@@ -110,9 +110,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_3
 
-    if-eqz p2, :cond_4b
+    if-eqz p2, :cond_2
 
     .line 80
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -121,10 +121,10 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_54
+    if-ne v2, v3, :cond_3
 
     .line 83
-    :cond_4b
+    :cond_2
     sget-object v2, Landroidx/camera/core/CameraSelector;->DEFAULT_BACK_CAMERA:Landroidx/camera/core/CameraSelector;
 
     invoke-virtual {p1}, Landroidx/camera/core/impl/CameraRepository;->getCameras()Ljava/util/LinkedHashSet;
@@ -133,7 +133,7 @@
 
     invoke-virtual {v2, v3}, Landroidx/camera/core/CameraSelector;->select(Ljava/util/LinkedHashSet;)Landroidx/camera/core/impl/CameraInternal;
 
-    :cond_54
+    :cond_3
     const-string v2, "android.hardware.camera.front"
 
     .line 86
@@ -141,19 +141,19 @@
 
     move-result p0
 
-    if-eqz p0, :cond_6d
+    if-eqz p0, :cond_5
 
-    if-eqz p2, :cond_64
+    if-eqz p2, :cond_4
 
     .line 88
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
 
-    if-nez p0, :cond_6d
+    if-nez p0, :cond_5
 
     .line 91
-    :cond_64
+    :cond_4
     sget-object p0, Landroidx/camera/core/CameraSelector;->DEFAULT_FRONT_CAMERA:Landroidx/camera/core/CameraSelector;
 
     invoke-virtual {p1}, Landroidx/camera/core/impl/CameraRepository;->getCameras()Ljava/util/LinkedHashSet;
@@ -161,13 +161,13 @@
     move-result-object p2
 
     invoke-virtual {p0, p2}, Landroidx/camera/core/CameraSelector;->select(Ljava/util/LinkedHashSet;)Landroidx/camera/core/impl/CameraInternal;
-    :try_end_6d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3a .. :try_end_6d} :catch_6e
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :cond_6d
+    :cond_5
     return-void
 
-    :catch_6e
+    :catch_1
     move-exception p0
 
     .line 95

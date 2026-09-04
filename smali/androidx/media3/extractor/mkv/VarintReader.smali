@@ -21,20 +21,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
     new-array v0, v0, [J
 
     .line 35
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/mkv/VarintReader;->VARINT_LENGTH_MASKS:[J
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 8
         0x80
         0x40
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static assembleVarint([BIZ)J
-    .registers 9
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -77,7 +77,7 @@
 
     and-long/2addr v0, v2
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_0
 
     .line 143
     sget-object p2, Landroidx/media3/extractor/mkv/VarintReader;->VARINT_LENGTH_MASKS:[J
@@ -90,11 +90,11 @@
 
     and-long/2addr v0, v4
 
-    :cond_11
+    :cond_0
     const/4 p2, 0x1
 
-    :goto_12
-    if-ge p2, p1, :cond_1f
+    :goto_0
+    if-ge p2, p1, :cond_1
 
     const/16 v4, 0x8
 
@@ -111,24 +111,24 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     return-wide v0
 .end method
 
 .method public static parseUnsignedVarintLength(I)I
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
     .line 122
-    :goto_1
+    :goto_0
     sget-object v1, Landroidx/media3/extractor/mkv/VarintReader;->VARINT_LENGTH_MASKS:[J
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_16
+    if-ge v0, v2, :cond_1
 
     .line 123
     aget-wide v1, v1, v0
@@ -141,28 +141,28 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_17
-
-    :cond_13
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    :cond_16
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
     const/4 v0, -0x1
 
-    :goto_17
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public getLastLength()I
-    .registers 2
+    .locals 1
 
     .line 110
     iget v0, p0, Landroidx/media3/extractor/mkv/VarintReader;->length:I
@@ -171,7 +171,7 @@
 .end method
 
 .method public readUnsignedVarint(Landroidx/media3/extractor/ExtractorInput;ZZI)J
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -185,7 +185,7 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
     .line 83
     iget-object v0, p0, Landroidx/media3/extractor/mkv/VarintReader;->scratch:[B
@@ -194,14 +194,14 @@
 
     move-result p2
 
-    if-nez p2, :cond_11
+    if-nez p2, :cond_0
 
     const-wide/16 p1, -0x1
 
     return-wide p1
 
     .line 86
-    :cond_11
+    :cond_0
     iget-object p2, p0, Landroidx/media3/extractor/mkv/VarintReader;->scratch:[B
 
     aget-byte p2, p2, v1
@@ -217,15 +217,15 @@
 
     const/4 v0, -0x1
 
-    if-eq p2, v0, :cond_23
+    if-eq p2, v0, :cond_1
 
     .line 91
     iput v2, p0, Landroidx/media3/extractor/mkv/VarintReader;->state:I
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 89
-    :cond_23
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "No valid varint length mask found"
@@ -235,11 +235,11 @@
     throw p1
 
     .line 94
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_0
     iget p2, p0, Landroidx/media3/extractor/mkv/VarintReader;->length:I
 
-    if-le p2, p4, :cond_34
+    if-le p2, p4, :cond_3
 
     .line 95
     iput v1, p0, Landroidx/media3/extractor/mkv/VarintReader;->state:I
@@ -248,8 +248,8 @@
 
     return-wide p1
 
-    :cond_34
-    if-eq p2, v2, :cond_3c
+    :cond_3
+    if-eq p2, v2, :cond_4
 
     .line 101
     iget-object p4, p0, Landroidx/media3/extractor/mkv/VarintReader;->scratch:[B
@@ -259,7 +259,7 @@
     invoke-interface {p1, p4, v2, p2}, Landroidx/media3/extractor/ExtractorInput;->readFully([BII)V
 
     .line 104
-    :cond_3c
+    :cond_4
     iput v1, p0, Landroidx/media3/extractor/mkv/VarintReader;->state:I
 
     .line 105
@@ -275,7 +275,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

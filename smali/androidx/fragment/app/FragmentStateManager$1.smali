@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentStateManager;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 534
     iput-object p1, p0, Landroidx/fragment/app/FragmentStateManager$1;->this$0:Landroidx/fragment/app/FragmentStateManager;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 537
     iget-object p1, p0, Landroidx/fragment/app/FragmentStateManager$1;->val$fragmentView:Landroid/view/View;
@@ -56,7 +56,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

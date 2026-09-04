@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaSessionCompat$Callback;)V
-    .registers 2
+    .locals 0
 
     .line 1508
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi23;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 1513
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi23;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;

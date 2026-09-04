@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1043
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$4;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onFitSystemWindows(Landroid/graphics/Rect;)V
-    .registers 4
+    .locals 2
 
     .line 1046
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$4;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;

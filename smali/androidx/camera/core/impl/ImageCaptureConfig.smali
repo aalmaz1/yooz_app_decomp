@@ -119,7 +119,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.imageCapture.captureMode"
 
@@ -233,7 +233,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/OptionsBundle;)V
-    .registers 2
+    .locals 0
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -247,7 +247,7 @@
 
 # virtual methods
 .method public getBufferFormat()Ljava/lang/Integer;
-    .registers 2
+    .locals 1
 
     .line 164
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_BUFFER_FORMAT:Landroidx/camera/core/impl/Config$Option;
@@ -262,7 +262,7 @@
 .end method
 
 .method public getBufferFormat(Ljava/lang/Integer;)Ljava/lang/Integer;
-    .registers 3
+    .locals 1
 
     .line 153
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_BUFFER_FORMAT:Landroidx/camera/core/impl/Config$Option;
@@ -277,7 +277,7 @@
 .end method
 
 .method public getCaptureBundle()Landroidx/camera/core/impl/CaptureBundle;
-    .registers 2
+    .locals 1
 
     .line 141
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_CAPTURE_BUNDLE:Landroidx/camera/core/impl/Config$Option;
@@ -292,7 +292,7 @@
 .end method
 
 .method public getCaptureBundle(Landroidx/camera/core/impl/CaptureBundle;)Landroidx/camera/core/impl/CaptureBundle;
-    .registers 3
+    .locals 1
 
     .line 130
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_CAPTURE_BUNDLE:Landroidx/camera/core/impl/Config$Option;
@@ -307,7 +307,7 @@
 .end method
 
 .method public getCaptureMode()I
-    .registers 2
+    .locals 1
 
     .line 96
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_IMAGE_CAPTURE_MODE:Landroidx/camera/core/impl/Config$Option;
@@ -326,7 +326,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/camera/core/impl/ImageCaptureConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -335,7 +335,7 @@
 .end method
 
 .method public getFlashMode()I
-    .registers 2
+    .locals 1
 
     .line 118
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_FLASH_MODE:Landroidx/camera/core/impl/Config$Option;
@@ -354,7 +354,7 @@
 .end method
 
 .method public getFlashMode(I)I
-    .registers 3
+    .locals 1
 
     .line 107
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_FLASH_MODE:Landroidx/camera/core/impl/Config$Option;
@@ -377,7 +377,7 @@
 .end method
 
 .method public getFlashType()I
-    .registers 2
+    .locals 1
 
     .line 236
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_FLASH_TYPE:Landroidx/camera/core/impl/Config$Option;
@@ -396,7 +396,7 @@
 .end method
 
 .method public getFlashType(I)I
-    .registers 3
+    .locals 1
 
     .line 225
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_FLASH_TYPE:Landroidx/camera/core/impl/Config$Option;
@@ -419,7 +419,7 @@
 .end method
 
 .method public getImageReaderProxyProvider()Landroidx/camera/core/ImageReaderProxyProvider;
-    .registers 3
+    .locals 2
 
     .line 205
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_IMAGE_READER_PROXY_PROVIDER:Landroidx/camera/core/impl/Config$Option;
@@ -436,7 +436,7 @@
 .end method
 
 .method public getInputFormat()I
-    .registers 2
+    .locals 1
 
     .line 174
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_INPUT_FORMAT:Landroidx/camera/core/impl/Config$Option;
@@ -455,7 +455,7 @@
 .end method
 
 .method public getIoExecutor()Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 297
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_IO_EXECUTOR:Landroidx/camera/core/impl/Config$Option;
@@ -470,7 +470,7 @@
 .end method
 
 .method public getIoExecutor(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
-    .registers 3
+    .locals 1
 
     .line 280
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_IO_EXECUTOR:Landroidx/camera/core/impl/Config$Option;
@@ -485,7 +485,7 @@
 .end method
 
 .method public getJpegQuality()I
-    .registers 2
+    .locals 1
 
     .line 260
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_JPEG_COMPRESSION_QUALITY:Landroidx/camera/core/impl/Config$Option;
@@ -504,7 +504,7 @@
 .end method
 
 .method public getJpegQuality(I)I
-    .registers 3
+    .locals 1
 
     .line 248
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_JPEG_COMPRESSION_QUALITY:Landroidx/camera/core/impl/Config$Option;
@@ -527,7 +527,7 @@
 .end method
 
 .method public getMaxCaptureStages()I
-    .registers 2
+    .locals 1
 
     .line 195
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_MAX_CAPTURE_STAGES:Landroidx/camera/core/impl/Config$Option;
@@ -546,7 +546,7 @@
 .end method
 
 .method public getMaxCaptureStages(I)I
-    .registers 3
+    .locals 1
 
     .line 185
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_MAX_CAPTURE_STAGES:Landroidx/camera/core/impl/Config$Option;
@@ -569,7 +569,7 @@
 .end method
 
 .method public hasCaptureMode()Z
-    .registers 2
+    .locals 1
 
     .line 85
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_IMAGE_CAPTURE_MODE:Landroidx/camera/core/impl/Config$Option;
@@ -582,7 +582,7 @@
 .end method
 
 .method public isSoftwareJpegEncoderRequested()Z
-    .registers 3
+    .locals 2
 
     .line 214
     sget-object v0, Landroidx/camera/core/impl/ImageCaptureConfig;->OPTION_USE_SOFTWARE_JPEG_ENCODER:Landroidx/camera/core/impl/Config$Option;

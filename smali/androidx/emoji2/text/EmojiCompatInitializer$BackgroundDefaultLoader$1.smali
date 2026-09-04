@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader;Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoaderCallback;Ljava/util/concurrent/ThreadPoolExecutor;)V
-    .registers 4
+    .locals 0
 
     .line 180
     iput-object p1, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->this$0:Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader;
@@ -41,15 +41,15 @@
 
 # virtual methods
 .method public onFailed(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 195
     :try_start_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->val$loaderCallback:Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoaderCallback;
 
     invoke-virtual {v0, p1}, Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoaderCallback;->onFailed(Ljava/lang/Throwable;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 197
     iget-object p1, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->val$executor:Ljava/util/concurrent/ThreadPoolExecutor;
@@ -58,7 +58,7 @@
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->val$executor:Ljava/util/concurrent/ThreadPoolExecutor;
@@ -70,15 +70,15 @@
 .end method
 
 .method public onLoaded(Landroidx/emoji2/text/MetadataRepo;)V
-    .registers 3
+    .locals 1
 
     .line 185
     :try_start_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->val$loaderCallback:Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoaderCallback;
 
     invoke-virtual {v0, p1}, Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoaderCallback;->onLoaded(Landroidx/emoji2/text/MetadataRepo;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 187
     iget-object p1, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->val$executor:Ljava/util/concurrent/ThreadPoolExecutor;
@@ -87,7 +87,7 @@
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader$1;->val$executor:Ljava/util/concurrent/ThreadPoolExecutor;

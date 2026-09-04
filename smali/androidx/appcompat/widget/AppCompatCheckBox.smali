@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     .line 74
     sget v0, Landroidx/appcompat/R$attr;->checkboxStyle:I
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .locals 0
 
     .line 79
     invoke-static {p1}, Landroidx/appcompat/widget/TintContextWrapper;->wrap(Landroid/content/Context;)Landroid/content/Context;
@@ -101,12 +101,12 @@
 .end method
 
 .method private getEmojiTextViewHelper()Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mAppCompatEmojiTextHelper:Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 102
     new-instance v0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
@@ -116,7 +116,7 @@
     iput-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mAppCompatEmojiTextHelper:Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
 
     .line 104
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mAppCompatEmojiTextHelper:Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
 
     return-object v0
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method protected drawableStateChanged()V
-    .registers 2
+    .locals 1
 
     .line 251
     invoke-super {p0}, Landroid/widget/CheckBox;->drawableStateChanged()V
@@ -133,26 +133,26 @@
     .line 252
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 253
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->applySupportBackgroundTint()V
 
     .line 255
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 256
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatTextHelper;->applyCompoundDrawablesTints()V
 
-    :cond_11
+    :cond_1
     return-void
 .end method
 
 .method public getCompoundPaddingLeft()I
-    .registers 3
+    .locals 2
 
     .line 122
     invoke-super {p0}, Landroid/widget/CheckBox;->getCompoundPaddingLeft()I
@@ -162,107 +162,107 @@
     .line 123
     iget-object v1, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 124
     invoke-virtual {v1, v0}, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->getCompoundPaddingLeft(I)I
 
     move-result v0
 
-    :cond_c
+    :cond_0
     return v0
 .end method
 
 .method public getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 202
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
-    .registers 2
+    .locals 1
 
     .line 229
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 230
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public getSupportButtonTintList()Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 1
 
     .line 148
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 149
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->getSupportButtonTintList()Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public getSupportButtonTintMode()Landroid/graphics/PorterDuff$Mode;
-    .registers 2
+    .locals 1
 
     .line 173
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 174
     invoke-virtual {v0}, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->getSupportButtonTintMode()Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public getSupportCompoundDrawablesTintList()Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 1
 
     .line 314
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
@@ -275,7 +275,7 @@
 .end method
 
 .method public getSupportCompoundDrawablesTintMode()Landroid/graphics/PorterDuff$Mode;
-    .registers 2
+    .locals 1
 
     .line 357
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
@@ -288,7 +288,7 @@
 .end method
 
 .method public isEmojiCompatEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 278
     invoke-direct {p0}, Landroidx/appcompat/widget/AppCompatCheckBox;->getEmojiTextViewHelper()Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
@@ -303,7 +303,7 @@
 .end method
 
 .method public setAllCaps(Z)V
-    .registers 3
+    .locals 1
 
     .line 267
     invoke-super {p0, p1}, Landroid/widget/CheckBox;->setAllCaps(Z)V
@@ -319,7 +319,7 @@
 .end method
 
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     .line 235
     invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -327,17 +327,17 @@
     .line 236
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 237
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->onSetBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public setBackgroundResource(I)V
-    .registers 3
+    .locals 1
 
     .line 243
     invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackgroundResource(I)V
@@ -345,17 +345,17 @@
     .line 244
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 245
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->onSetBackgroundResource(I)V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public setButtonDrawable(I)V
-    .registers 3
+    .locals 1
 
     .line 117
     invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatCheckBox;->getContext()Landroid/content/Context;
@@ -372,7 +372,7 @@
 .end method
 
 .method public setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 2
+    .locals 0
 
     .line 109
     invoke-super {p0, p1}, Landroid/widget/CheckBox;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -380,17 +380,17 @@
     .line 110
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 111
     invoke-virtual {p1}, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->onSetButtonDrawable()V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .registers 5
+    .locals 0
 
     .line 284
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
@@ -398,17 +398,17 @@
     .line 285
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 286
     invoke-virtual {p1}, Landroidx/appcompat/widget/AppCompatTextHelper;->onSetCompoundDrawables()V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .registers 5
+    .locals 0
 
     .line 294
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/CheckBox;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
@@ -416,17 +416,17 @@
     .line 295
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 296
     invoke-virtual {p1}, Landroidx/appcompat/widget/AppCompatTextHelper;->onSetCompoundDrawables()V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public setEmojiCompatEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 273
     invoke-direct {p0}, Landroidx/appcompat/widget/AppCompatCheckBox;->getEmojiTextViewHelper()Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
@@ -439,7 +439,7 @@
 .end method
 
 .method public setFilters([Landroid/text/InputFilter;)V
-    .registers 3
+    .locals 1
 
     .line 262
     invoke-direct {p0}, Landroidx/appcompat/widget/AppCompatCheckBox;->getEmojiTextViewHelper()Landroidx/appcompat/widget/AppCompatEmojiTextHelper;
@@ -456,67 +456,67 @@
 .end method
 
 .method public setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
-    .registers 3
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 187
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .registers 3
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 215
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatBackgroundHelper;->setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public setSupportButtonTintList(Landroid/content/res/ColorStateList;)V
-    .registers 3
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 136
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->setSupportButtonTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .registers 3
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mCompoundButtonHelper:Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 161
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public setSupportCompoundDrawablesTintList(Landroid/content/res/ColorStateList;)V
-    .registers 3
+    .locals 1
 
     .line 337
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;
@@ -532,7 +532,7 @@
 .end method
 
 .method public setSupportCompoundDrawablesTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .registers 3
+    .locals 1
 
     .line 377
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCheckBox;->mTextHelper:Landroidx/appcompat/widget/AppCompatTextHelper;

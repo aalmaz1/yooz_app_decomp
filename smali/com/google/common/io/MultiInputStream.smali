@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Iterator;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -73,7 +73,7 @@
 .end method
 
 .method private advance()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -90,7 +90,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 66
     iget-object v0, p0, Lcom/google/common/io/MultiInputStream;->it:Ljava/util/Iterator;
@@ -107,14 +107,14 @@
 
     iput-object v0, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public available()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -124,14 +124,14 @@
     .line 72
     iget-object v0, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 75
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
 
     move-result v0
@@ -140,7 +140,7 @@
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -150,22 +150,22 @@
     .line 53
     iget-object v0, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
     .line 55
-    :try_start_5
+    :try_start_0
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 57
     iput-object v1, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
 
-    goto :goto_f
+    goto :goto_0
 
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     iput-object v1, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
@@ -173,13 +173,13 @@
     .line 58
     throw v0
 
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public markSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -187,7 +187,7 @@
 .end method
 
 .method public read()I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -200,29 +200,29 @@
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 86
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     return v0
 
     .line 90
-    :cond_c
+    :cond_0
     invoke-direct {p0}, Lcom/google/common/io/MultiInputStream;->advance()V
 
     goto :goto_0
 
-    :cond_10
+    :cond_1
     return v1
 .end method
 
 .method public read([BII)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -246,34 +246,34 @@
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 98
-    :goto_3
+    :goto_0
     iget-object v0, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 99
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     return v0
 
     .line 103
-    :cond_f
+    :cond_0
     invoke-direct {p0}, Lcom/google/common/io/MultiInputStream;->advance()V
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_13
+    :cond_1
     return v1
 .end method
 
 .method public skip(J)J
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -294,40 +294,40 @@
 
     const-wide/16 v1, 0x0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
     cmp-long v3, p1, v1
 
-    if-gtz v3, :cond_b
+    if-gtz v3, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 113
-    :cond_b
+    :cond_0
     invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
     move-result-wide v3
 
     cmp-long v0, v3, v1
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     return-wide v3
 
     .line 117
-    :cond_14
+    :cond_1
     invoke-virtual {p0}, Lcom/google/common/io/MultiInputStream;->read()I
 
     move-result v0
 
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_1c
+    if-ne v0, v3, :cond_2
 
     return-wide v1
 
     .line 120
-    :cond_1c
+    :cond_2
     iget-object v0, p0, Lcom/google/common/io/MultiInputStream;->in:Ljava/io/InputStream;
 
     const-wide/16 v1, 0x1
@@ -342,7 +342,7 @@
 
     return-wide p1
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_0
     return-wide v1
 .end method

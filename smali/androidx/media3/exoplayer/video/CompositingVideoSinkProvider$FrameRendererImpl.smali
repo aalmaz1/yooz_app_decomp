@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)V
-    .registers 2
+    .locals 0
 
     .line 883
     iput-object p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$1;)V
-    .registers 3
+    .locals 0
 
     .line 883
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;-><init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public dropFrame()V
-    .registers 4
+    .locals 3
 
     .line 924
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
@@ -58,12 +58,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -76,10 +76,10 @@
 
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Listener;->onFrameDropped(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 927
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->access$2200(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/common/PreviewingVideoGraph;
@@ -100,7 +100,7 @@
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/common/VideoSize;)V
-    .registers 5
+    .locals 3
 
     .line 887
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
@@ -149,12 +149,12 @@
 
     move-result-object v0
 
-    :goto_2b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -167,16 +167,16 @@
 
     invoke-interface {v1, v2, p1}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Listener;->onVideoSizeChanged(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;Landroidx/media3/common/VideoSize;)V
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_3d
+    :cond_0
     return-void
 .end method
 
 .method public renderFrame(JJJZ)V
-    .registers 15
+    .locals 7
 
-    if-eqz p7, :cond_26
+    if-eqz p7, :cond_0
 
     .line 904
     iget-object p5, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
@@ -185,7 +185,7 @@
 
     move-result-object p5
 
-    if-eqz p5, :cond_26
+    if-eqz p5, :cond_0
 
     .line 905
     iget-object p5, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
@@ -198,12 +198,12 @@
 
     move-result-object p5
 
-    :goto_14
+    :goto_0
     invoke-interface {p5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p6
 
-    if-eqz p6, :cond_26
+    if-eqz p6, :cond_0
 
     invoke-interface {p5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -216,17 +216,17 @@
 
     invoke-interface {p6, p7}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Listener;->onFirstFrameRendered(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 909
-    :cond_26
+    :cond_0
     iget-object p5, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
 
     invoke-static {p5}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->access$2000(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
     move-result-object p5
 
-    if-eqz p5, :cond_5c
+    if-eqz p5, :cond_2
 
     .line 912
     iget-object p5, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
@@ -235,7 +235,7 @@
 
     move-result-object p5
 
-    if-nez p5, :cond_40
+    if-nez p5, :cond_1
 
     new-instance p5, Landroidx/media3/common/Format$Builder;
 
@@ -245,16 +245,16 @@
 
     move-result-object p5
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_40
+    :cond_1
     iget-object p5, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
 
     invoke-static {p5}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->access$1700(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/common/Format;
 
     move-result-object p5
 
-    :goto_46
+    :goto_1
     move-object v5, p5
 
     .line 913
@@ -283,7 +283,7 @@
     invoke-interface/range {v0 .. v6}, Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;->onVideoFrameAboutToBeRendered(JJLandroidx/media3/common/Format;Landroid/media/MediaFormat;)V
 
     .line 919
-    :cond_5c
+    :cond_2
     iget-object p3, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$FrameRendererImpl;->this$0:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;
 
     invoke-static {p3}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->access$2200(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/common/PreviewingVideoGraph;

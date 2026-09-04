@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method protected static __has_identifier(Ljava/nio/ByteBuffer;Ljava/lang/String;)Z
-    .registers 7
+    .locals 5
 
     .line 214
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -42,14 +42,14 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_22
+    if-ne v0, v1, :cond_2
 
     const/4 v0, 0x0
 
     move v2, v0
 
-    :goto_9
-    if-ge v2, v1, :cond_20
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     .line 218
     invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
@@ -70,22 +70,22 @@
 
     int-to-char v4, v4
 
-    if-eq v3, v4, :cond_1d
+    if-eq v3, v4, :cond_0
 
     return v0
 
-    :cond_1d
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 p0, 0x1
 
     return p0
 
     .line 215
-    :cond_22
+    :cond_2
     new-instance p0, Ljava/lang/AssertionError;
 
     const-string p1, "FlatBuffers: file identifier must be length 4"
@@ -96,7 +96,7 @@
 .end method
 
 .method protected static __indirect(ILjava/nio/ByteBuffer;)I
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-virtual {p1, p0}, Ljava/nio/ByteBuffer;->getInt(I)I
@@ -109,7 +109,7 @@
 .end method
 
 .method protected static __offset(IILjava/nio/ByteBuffer;)I
-    .registers 4
+    .locals 1
 
     .line 57
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->capacity()I
@@ -137,7 +137,7 @@
 .end method
 
 .method protected static __string(ILjava/nio/ByteBuffer;Landroidx/emoji2/text/flatbuffer/Utf8;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 111
     invoke-virtual {p1, p0}, Ljava/nio/ByteBuffer;->getInt(I)I
@@ -162,7 +162,7 @@
 .end method
 
 .method protected static __union(Landroidx/emoji2/text/flatbuffer/Table;ILjava/nio/ByteBuffer;)Landroidx/emoji2/text/flatbuffer/Table;
-    .registers 3
+    .locals 0
 
     .line 201
     invoke-static {p1, p2}, Landroidx/emoji2/text/flatbuffer/Table;->__indirect(ILjava/nio/ByteBuffer;)I
@@ -175,7 +175,7 @@
 .end method
 
 .method protected static compareStrings(IILjava/nio/ByteBuffer;)I
-    .registers 11
+    .locals 8
 
     .line 257
     invoke-virtual {p2, p0}, Ljava/nio/ByteBuffer;->getInt(I)I
@@ -212,8 +212,8 @@
 
     const/4 v3, 0x0
 
-    :goto_1b
-    if-ge v3, v2, :cond_38
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     add-int v4, v3, p0
 
@@ -228,7 +228,7 @@
 
     move-result v7
 
-    if-eq v5, v7, :cond_35
+    if-eq v5, v7, :cond_0
 
     .line 266
     invoke-virtual {p2, v4}, Ljava/nio/ByteBuffer;->get(I)B
@@ -243,19 +243,19 @@
 
     return p0
 
-    :cond_35
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_38
+    :cond_1
     sub-int/2addr v0, v1
 
     return v0
 .end method
 
 .method protected static compareStrings(I[BLjava/nio/ByteBuffer;)I
-    .registers 10
+    .locals 7
 
     .line 279
     invoke-virtual {p2, p0}, Ljava/nio/ByteBuffer;->getInt(I)I
@@ -281,8 +281,8 @@
 
     const/4 v3, 0x0
 
-    :goto_11
-    if-ge v3, v2, :cond_28
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     add-int v4, v3, p0
 
@@ -293,7 +293,7 @@
 
     aget-byte v6, p1, v3
 
-    if-eq v5, v6, :cond_25
+    if-eq v5, v6, :cond_0
 
     .line 286
     invoke-virtual {p2, v4}, Ljava/nio/ByteBuffer;->get(I)B
@@ -306,12 +306,12 @@
 
     return p0
 
-    :cond_25
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     sub-int/2addr v0, v1
 
     return v0
@@ -320,7 +320,7 @@
 
 # virtual methods
 .method protected __indirect(I)I
-    .registers 3
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
@@ -335,12 +335,12 @@
 .end method
 
 .method protected __offset(I)I
-    .registers 4
+    .locals 2
 
     .line 53
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->vtable_size:I
 
-    if-ge p1, v0, :cond_e
+    if-ge p1, v0, :cond_0
 
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
 
@@ -352,17 +352,17 @@
 
     move-result p1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method public __reset()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -375,12 +375,12 @@
 .end method
 
 .method protected __reset(ILjava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 0
 
     .line 298
     iput-object p2, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 300
     iput p1, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb_pos:I
@@ -403,9 +403,9 @@
 
     iput p1, p0, Landroidx/emoji2/text/flatbuffer/Table;->vtable_size:I
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 p1, 0x0
 
     .line 304
@@ -417,12 +417,12 @@
     .line 306
     iput p1, p0, Landroidx/emoji2/text/flatbuffer/Table;->vtable_size:I
 
-    :goto_1d
+    :goto_0
     return-void
 .end method
 
 .method protected __string(I)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 94
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
@@ -437,7 +437,7 @@
 .end method
 
 .method protected __union(Landroidx/emoji2/text/flatbuffer/Table;I)Landroidx/emoji2/text/flatbuffer/Table;
-    .registers 4
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
@@ -450,7 +450,7 @@
 .end method
 
 .method protected __vector(I)I
-    .registers 3
+    .locals 1
 
     .line 135
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb_pos:I
@@ -472,21 +472,21 @@
 .end method
 
 .method protected __vector_as_bytebuffer(II)Ljava/nio/ByteBuffer;
-    .registers 5
+    .locals 2
 
     .line 151
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/flatbuffer/Table;->__offset(I)I
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 153
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
@@ -522,21 +522,21 @@
 .end method
 
 .method protected __vector_in_bytebuffer(Ljava/nio/ByteBuffer;II)Ljava/nio/ByteBuffer;
-    .registers 5
+    .locals 1
 
     .line 172
     invoke-virtual {p0, p2}, Landroidx/emoji2/text/flatbuffer/Table;->__offset(I)I
 
     move-result p2
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 174
-    :cond_8
+    :cond_0
     invoke-virtual {p0, p2}, Landroidx/emoji2/text/flatbuffer/Table;->__vector(I)I
 
     move-result v0
@@ -562,7 +562,7 @@
 .end method
 
 .method protected __vector_len(I)I
-    .registers 3
+    .locals 1
 
     .line 123
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb_pos:I
@@ -589,7 +589,7 @@
 .end method
 
 .method public getByteBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table;->bb:Ljava/nio/ByteBuffer;
@@ -598,7 +598,7 @@
 .end method
 
 .method protected keysCompare(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/nio/ByteBuffer;)I
-    .registers 4
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -606,7 +606,7 @@
 .end method
 
 .method protected sortTables([ILjava/nio/ByteBuffer;)V
-    .registers 7
+    .locals 4
 
     .line 230
     array-length v0, p1
@@ -618,10 +618,10 @@
     move v2, v1
 
     .line 231
-    :goto_5
+    :goto_0
     array-length v3, p1
 
-    if-ge v2, v3, :cond_13
+    if-ge v2, v3, :cond_0
 
     aget v3, p1, v2
 
@@ -633,10 +633,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 232
-    :cond_13
+    :cond_0
     new-instance v2, Landroidx/emoji2/text/flatbuffer/Table$1;
 
     invoke-direct {v2, p0, p2}, Landroidx/emoji2/text/flatbuffer/Table$1;-><init>(Landroidx/emoji2/text/flatbuffer/Table;Ljava/nio/ByteBuffer;)V
@@ -644,10 +644,10 @@
     invoke-static {v0, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
     .line 237
-    :goto_1b
+    :goto_1
     array-length p2, p1
 
-    if-ge v1, p2, :cond_29
+    if-ge v1, p2, :cond_1
 
     aget-object p2, v0, v1
 
@@ -659,8 +659,8 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     return-void
 .end method

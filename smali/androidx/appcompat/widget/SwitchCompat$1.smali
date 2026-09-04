@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 121
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public get(Landroidx/appcompat/widget/SwitchCompat;)Ljava/lang/Float;
-    .registers 2
+    .locals 0
 
     .line 124
     iget p1, p1, Landroidx/appcompat/widget/SwitchCompat;->mThumbPosition:F
@@ -49,7 +49,7 @@
 .end method
 
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 121
     check-cast p1, Landroidx/appcompat/widget/SwitchCompat;
@@ -62,7 +62,7 @@
 .end method
 
 .method public set(Landroidx/appcompat/widget/SwitchCompat;Ljava/lang/Float;)V
-    .registers 3
+    .locals 0
 
     .line 129
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -75,7 +75,7 @@
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 121
     check-cast p1, Landroidx/appcompat/widget/SwitchCompat;

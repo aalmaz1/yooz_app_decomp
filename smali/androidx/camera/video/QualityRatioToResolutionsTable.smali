@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 69
     new-instance v0, Ljava/util/HashMap;
@@ -178,7 +178,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/List;Ljava/util/Map;)V
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -213,12 +213,12 @@
 
     move-result-object v0
 
-    :cond_14
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -252,12 +252,12 @@
 
     move-result-object v2
 
-    :goto_39
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -282,10 +282,10 @@
 
     invoke-interface {v4, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_39
+    goto :goto_0
 
     .line 108
-    :cond_58
+    :cond_1
     invoke-direct {p0, p2}, Landroidx/camera/video/QualityRatioToResolutionsTable;->addProfileSizesToTable(Ljava/util/Map;)V
 
     .line 109
@@ -298,7 +298,7 @@
 .end method
 
 .method private addProfileSizesToTable(Ljava/util/Map;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -318,12 +318,12 @@
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -358,14 +358,14 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_2f
+    :cond_0
     return-void
 .end method
 
 .method private addResolutionsToTable(Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -380,12 +380,12 @@
 
     move-result-object p1
 
-    :goto_4
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -398,22 +398,22 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
-    goto :goto_4
+    goto :goto_0
 
     .line 136
-    :cond_17
+    :cond_0
     invoke-static {v0}, Landroidx/camera/video/QualityRatioToResolutionsTable;->findMappedAspectRatio(Landroid/util/Size;)Ljava/lang/Integer;
 
     move-result-object v2
 
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 140
-    :cond_1e
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -431,14 +431,14 @@
     .line 141
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     return-void
 .end method
 
 .method private static findMappedAspectRatio(Landroid/util/Size;)Ljava/lang/Integer;
-    .registers 5
+    .locals 4
 
     .line 174
     sget-object v0, Landroidx/camera/video/QualityRatioToResolutionsTable;->sAspectRatioMap:Ljava/util/Map;
@@ -451,12 +451,12 @@
 
     move-result-object v0
 
-    :cond_a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -477,7 +477,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
     .line 177
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -488,14 +488,14 @@
 
     return-object p0
 
-    :cond_2b
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static findMappedQuality(Landroid/util/Size;)Landroidx/camera/video/Quality;
-    .registers 5
+    .locals 4
 
     .line 164
     sget-object v0, Landroidx/camera/video/QualityRatioToResolutionsTable;->sQualityRangeMap:Ljava/util/Map;
@@ -508,12 +508,12 @@
 
     move-result-object v0
 
-    :cond_a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -540,7 +540,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
     .line 166
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -551,14 +551,14 @@
 
     return-object p0
 
-    :cond_31
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private getQualityRatioRow(Landroidx/camera/video/Quality;I)Ljava/util/List;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -587,7 +587,7 @@
 .end method
 
 .method static synthetic lambda$sortQualityRatioRow$0(ILandroid/util/Size;Landroid/util/Size;)I
-    .registers 3
+    .locals 0
 
     .line 155
     invoke-static {p1}, Landroidx/camera/core/internal/utils/SizeUtil;->getArea(Landroid/util/Size;)I
@@ -617,7 +617,7 @@
 .end method
 
 .method private sortQualityRatioRow(Ljava/util/Map;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -639,12 +639,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -669,12 +669,12 @@
 
     check-cast v2, Landroid/util/Size;
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
     .line 153
-    :cond_29
+    :cond_0
     invoke-static {v2}, Landroidx/camera/core/internal/utils/SizeUtil;->getArea(Landroid/util/Size;)I
 
     move-result v2
@@ -692,16 +692,16 @@
 
     invoke-static {v1, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_3c
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method getResolutions(Landroidx/camera/video/Quality;I)Ljava/util/List;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -721,17 +721,17 @@
     .line 121
     new-instance p2, Ljava/util/ArrayList;
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     invoke-direct {p2, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
     invoke-direct {p2, p1}, Ljava/util/ArrayList;-><init>(I)V
 
-    :goto_10
+    :goto_0
     return-object p2
 .end method

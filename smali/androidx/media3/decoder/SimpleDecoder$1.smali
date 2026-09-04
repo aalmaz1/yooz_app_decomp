@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/decoder/SimpleDecoder;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 74
     iput-object p1, p0, Landroidx/media3/decoder/SimpleDecoder$1;->this$0:Landroidx/media3/decoder/SimpleDecoder;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoder$1;->this$0:Landroidx/media3/decoder/SimpleDecoder;

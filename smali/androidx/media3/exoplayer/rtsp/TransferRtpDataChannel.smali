@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -65,19 +65,19 @@
 
 # virtual methods
 .method public close()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public getInterleavedBinaryDataListener()Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$InterleavedBinaryDataListener;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public getLocalPort()I
-    .registers 2
+    .locals 1
 
     .line 67
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->channelNumber:I
@@ -86,7 +86,7 @@
 .end method
 
 .method public getTransport()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 61
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->channelNumber:I
@@ -97,16 +97,16 @@
 
     const/4 v3, 0x1
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     move v0, v3
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v2
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 v0, 0x2
@@ -142,7 +142,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public needsClosingOnLoadCompletion()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public onInterleavedBinaryDataReceived([B)V
-    .registers 3
+    .locals 1
 
     .line 133
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->packetQueue:Ljava/util/concurrent/LinkedBlockingQueue;
@@ -169,7 +169,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 4
+    .locals 2
 
     .line 83
     iget-object p1, p1, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
@@ -186,16 +186,16 @@
 .end method
 
 .method public read([BII)I
-    .registers 11
+    .locals 7
 
     const/4 v0, 0x0
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     return v0
 
     .line 103
-    :cond_4
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->unreadData:[B
 
     array-length v1, v1
@@ -222,15 +222,15 @@
 
     iput-object v1, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->unreadData:[B
 
-    if-ne v2, p3, :cond_1e
+    if-ne v2, p3, :cond_1
 
     return v2
 
-    :cond_1e
+    :cond_1
     const/4 v1, -0x1
 
     .line 114
-    :try_start_1f
+    :try_start_0
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->packetQueue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     iget-wide v4, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->pollTimeoutMs:J
@@ -242,14 +242,14 @@
     move-result-object v3
 
     check-cast v3, [B
-    :try_end_2b
-    .catch Ljava/lang/InterruptedException; {:try_start_1f .. :try_end_2b} :catch_44
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v3, :cond_2e
+    if-nez v3, :cond_2
 
     return v1
 
-    :cond_2e
+    :cond_2
     sub-int/2addr p3, v2
 
     .line 123
@@ -267,7 +267,7 @@
     .line 125
     array-length p1, v3
 
-    if-ge p3, p1, :cond_42
+    if-ge p3, p1, :cond_3
 
     .line 126
     array-length p1, v3
@@ -278,13 +278,13 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/TransferRtpDataChannel;->unreadData:[B
 
-    :cond_42
+    :cond_3
     add-int/2addr v2, p3
 
     return v2
 
     .line 119
-    :catch_44
+    :catch_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1

@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 58
     invoke-static {}, Landroidx/camera/core/impl/MutableOptionsBundle;->create()Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -42,7 +42,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/core/impl/MutableOptionsBundle;)V
-    .registers 5
+    .locals 3
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 
     check-cast p1, Ljava/lang/Class;
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_1
 
     .line 65
     const-class v0, Landroidx/camera/core/streamsharing/StreamSharing;
@@ -71,12 +71,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 66
-    :cond_19
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,8 +108,8 @@
     throw v0
 
     .line 72
-    :cond_38
-    :goto_38
+    :cond_1
+    :goto_0
     const-class p1, Landroidx/camera/core/streamsharing/StreamSharing;
 
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/streamsharing/StreamSharing;
-    .registers 3
+    .locals 2
 
     .line 84
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -133,7 +133,7 @@
 .end method
 
 .method public bridge synthetic build()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->build()Landroidx/camera/core/streamsharing/StreamSharing;
@@ -144,7 +144,7 @@
 .end method
 
 .method public getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
-    .registers 2
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->mMutableConfig:Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -153,7 +153,7 @@
 .end method
 
 .method public bridge synthetic getUseCaseConfig()Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->getUseCaseConfig()Landroidx/camera/core/streamsharing/StreamSharingConfig;
@@ -164,7 +164,7 @@
 .end method
 
 .method public getUseCaseConfig()Landroidx/camera/core/streamsharing/StreamSharingConfig;
-    .registers 3
+    .locals 2
 
     .line 140
     new-instance v0, Landroidx/camera/core/streamsharing/StreamSharingConfig;
@@ -181,7 +181,7 @@
 .end method
 
 .method public setCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 122
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -194,7 +194,7 @@
 .end method
 
 .method public bridge synthetic setCameraSelector(Landroidx/camera/core/CameraSelector;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -205,7 +205,7 @@
 .end method
 
 .method public setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 110
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -218,7 +218,7 @@
 .end method
 
 .method public bridge synthetic setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -229,7 +229,7 @@
 .end method
 
 .method public setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 4
+    .locals 2
 
     .line 174
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -244,7 +244,7 @@
 .end method
 
 .method public bridge synthetic setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -255,7 +255,7 @@
 .end method
 
 .method public setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 96
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -268,7 +268,7 @@
 .end method
 
 .method public bridge synthetic setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -279,7 +279,7 @@
 .end method
 
 .method public setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 90
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -292,7 +292,7 @@
 .end method
 
 .method public bridge synthetic setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -303,7 +303,7 @@
 .end method
 
 .method public setHighResolutionDisabled(Z)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 134
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -316,7 +316,7 @@
 .end method
 
 .method public bridge synthetic setHighResolutionDisabled(Z)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setHighResolutionDisabled(Z)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -327,7 +327,7 @@
 .end method
 
 .method public setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 103
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -340,7 +340,7 @@
 .end method
 
 .method public bridge synthetic setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -351,7 +351,7 @@
 .end method
 
 .method public setSurfaceOccupancyPriority(I)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 116
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -364,7 +364,7 @@
 .end method
 
 .method public bridge synthetic setSurfaceOccupancyPriority(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setSurfaceOccupancyPriority(I)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -375,7 +375,7 @@
 .end method
 
 .method public setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -408,7 +408,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     .line 149
     new-instance v0, Ljava/lang/StringBuilder;
@@ -444,12 +444,12 @@
     .line 150
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setTargetName(Ljava/lang/String;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
 
-    :cond_38
+    :cond_0
     return-object p0
 .end method
 
 .method public bridge synthetic setTargetClass(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -460,7 +460,7 @@
 .end method
 
 .method public setTargetName(Ljava/lang/String;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 4
+    .locals 2
 
     .line 158
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -475,7 +475,7 @@
 .end method
 
 .method public bridge synthetic setTargetName(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setTargetName(Ljava/lang/String;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -486,7 +486,7 @@
 .end method
 
 .method public setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 166
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -499,7 +499,7 @@
 .end method
 
 .method public bridge synthetic setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
@@ -510,7 +510,7 @@
 .end method
 
 .method public setZslDisabled(Z)Landroidx/camera/core/streamsharing/StreamSharingBuilder;
-    .registers 3
+    .locals 1
 
     .line 128
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -523,7 +523,7 @@
 .end method
 
 .method public bridge synthetic setZslDisabled(Z)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/camera/core/streamsharing/StreamSharingBuilder;->setZslDisabled(Z)Landroidx/camera/core/streamsharing/StreamSharingBuilder;

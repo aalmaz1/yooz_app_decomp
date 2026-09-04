@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(IILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static parse(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/DolbyVisionConfig;
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x2
 
@@ -64,45 +64,45 @@
 
     const/4 v0, 0x4
 
-    if-eq v1, v0, :cond_30
+    if-eq v1, v0, :cond_3
 
-    if-eq v1, v2, :cond_30
+    if-eq v1, v2, :cond_3
 
     const/4 v0, 0x7
 
-    if-ne v1, v0, :cond_20
+    if-ne v1, v0, :cond_0
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/16 v0, 0x8
 
-    if-ne v1, v0, :cond_27
+    if-ne v1, v0, :cond_1
 
     const-string v0, "hev1"
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_27
+    :cond_1
     const/16 v0, 0x9
 
-    if-ne v1, v0, :cond_2e
+    if-ne v1, v0, :cond_2
 
     const-string v0, "avc3"
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_2e
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_0
     const-string v0, "dvhe"
 
     .line 50
-    :goto_32
+    :goto_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -123,14 +123,14 @@
 
     const/16 v3, 0xa
 
-    if-ge p0, v3, :cond_4a
+    if-ge p0, v3, :cond_4
 
-    goto :goto_4c
+    goto :goto_2
 
-    :cond_4a
+    :cond_4
     const-string v2, "."
 
-    :goto_4c
+    :goto_2
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

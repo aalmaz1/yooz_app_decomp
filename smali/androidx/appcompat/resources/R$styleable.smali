@@ -65,13 +65,13 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x6
 
     new-array v1, v0, [I
 
-    fill-array-data v1, :array_2c
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/appcompat/resources/R$styleable;->AnimatedStateListDrawableCompat:[I
 
@@ -79,7 +79,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_3c
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/appcompat/resources/R$styleable;->AnimatedStateListDrawableItem:[I
 
@@ -87,13 +87,13 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_44
+    fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/appcompat/resources/R$styleable;->AnimatedStateListDrawableTransition:[I
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_50
+    fill-array-data v0, :array_3
 
     sput-object v0, Landroidx/appcompat/resources/R$styleable;->StateListDrawable:[I
 
@@ -113,7 +113,7 @@
 
     nop
 
-    :array_2c
+    :array_0
     .array-data 4
         0x101011c
         0x1010194
@@ -123,13 +123,13 @@
         0x101030d
     .end array-data
 
-    :array_3c
+    :array_1
     .array-data 4
         0x10100d0
         0x1010199
     .end array-data
 
-    :array_44
+    :array_2
     .array-data 4
         0x1010199
         0x1010449
@@ -137,7 +137,7 @@
         0x101044b
     .end array-data
 
-    :array_50
+    :array_3
     .array-data 4
         0x101011c
         0x1010194
@@ -149,7 +149,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

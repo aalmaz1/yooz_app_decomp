@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;Ljava/lang/String;IILandroid/os/Bundle;)V
-    .registers 7
+    .locals 0
 
     .line 889
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$1;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .locals 9
 
     .line 892
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$1;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -133,7 +133,7 @@
 
     const-string v3, "MBServiceCompat"
 
-    if-nez v2, :cond_87
+    if-nez v2, :cond_0
 
     .line 905
     new-instance v0, Ljava/lang/StringBuilder;
@@ -175,17 +175,17 @@
     invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 908
-    :try_start_6c
+    :try_start_0
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$1;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
 
     invoke-interface {v0}, Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;->onConnectFailed()V
-    :try_end_71
-    .catch Landroid/os/RemoteException; {:try_start_6c .. :try_end_71} :catch_72
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_d1
+    goto :goto_0
 
     .line 910
-    :catch_72
+    :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Calling onConnectFailed() failed. Ignoring. pkg="
@@ -204,11 +204,11 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_d1
+    goto :goto_0
 
     .line 915
-    :cond_87
-    :try_start_87
+    :cond_0
+    :try_start_1
     iget-object v2, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$1;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
 
     iget-object v2, v2, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -229,7 +229,7 @@
 
     iget-object v2, v2, Landroidx/media/MediaBrowserServiceCompat;->mSession:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
-    if-eqz v2, :cond_d1
+    if-eqz v2, :cond_1
 
     .line 918
     iget-object v2, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$1;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -255,13 +255,13 @@
 
     .line 918
     invoke-interface {v2, v4, v5, v1}, Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;->onConnect(Ljava/lang/String;Landroid/support/v4/media/session/MediaSessionCompat$Token;Landroid/os/Bundle;)V
-    :try_end_b3
-    .catch Landroid/os/RemoteException; {:try_start_87 .. :try_end_b3} :catch_b4
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_d1
+    goto :goto_0
 
     .line 922
-    :catch_b4
+    :catch_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Calling onConnect() failed. Dropping client. pkg="
@@ -289,7 +289,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_d1
-    :goto_d1
+    :cond_1
+    :goto_0
     return-void
 .end method

@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(IIJJ)V
-    .registers 7
+    .locals 0
 
     .line 337
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method static readFromFile(Ljava/io/File;)Landroidx/profileinstaller/ProfileVerifier$Cache;
-    .registers 10
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -68,7 +68,7 @@
     invoke-direct {v0, v1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
     .line 377
-    :try_start_a
+    :try_start_0
     new-instance p0, Landroidx/profileinstaller/ProfileVerifier$Cache;
 
     .line 378
@@ -94,59 +94,59 @@
     move-object v2, p0
 
     invoke-direct/range {v2 .. v8}, Landroidx/profileinstaller/ProfileVerifier$Cache;-><init>(IIJJ)V
-    :try_end_20
-    .catchall {:try_start_a .. :try_end_20} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 383
     invoke-virtual {v0}, Ljava/io/DataInputStream;->close()V
 
     return-object p0
 
-    :catchall_24
+    :catchall_0
     move-exception p0
 
     .line 376
-    :try_start_25
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/DataInputStream;->close()V
-    :try_end_28
-    .catchall {:try_start_25 .. :try_end_28} :catchall_29
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :catchall_29
+    :catchall_1
     move-exception v0
 
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_2d
+    :goto_0
     throw p0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_3
 
     .line 347
     instance-of v2, p1, Landroidx/profileinstaller/ProfileVerifier$Cache;
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_1
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 348
-    :cond_c
+    :cond_1
     check-cast p1, Landroidx/profileinstaller/ProfileVerifier$Cache;
 
     .line 349
@@ -154,7 +154,7 @@
 
     iget v3, p1, Landroidx/profileinstaller/ProfileVerifier$Cache;->mResultCode:I
 
-    if-ne v2, v3, :cond_2b
+    if-ne v2, v3, :cond_2
 
     iget-wide v2, p0, Landroidx/profileinstaller/ProfileVerifier$Cache;->mPackageLastUpdateTime:J
 
@@ -162,13 +162,13 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/profileinstaller/ProfileVerifier$Cache;->mSchema:I
 
     iget v3, p1, Landroidx/profileinstaller/ProfileVerifier$Cache;->mSchema:I
 
-    if-ne v2, v3, :cond_2b
+    if-ne v2, v3, :cond_2
 
     iget-wide v2, p0, Landroidx/profileinstaller/ProfileVerifier$Cache;->mInstalledCurrentProfileSize:J
 
@@ -176,23 +176,23 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_2
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     move v0, v1
 
-    :goto_2c
+    :goto_0
     return v0
 
-    :cond_2d
-    :goto_2d
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x4
 
@@ -252,7 +252,7 @@
 .end method
 
 .method writeOnFile(Ljava/io/File;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -272,7 +272,7 @@
     invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     .line 368
-    :try_start_d
+    :try_start_0
     iget p1, p0, Landroidx/profileinstaller/ProfileVerifier$Cache;->mSchema:I
 
     invoke-virtual {v0, p1}, Ljava/io/DataOutputStream;->writeInt(I)V
@@ -291,30 +291,30 @@
     iget-wide v1, p0, Landroidx/profileinstaller/ProfileVerifier$Cache;->mInstalledCurrentProfileSize:J
 
     invoke-virtual {v0, v1, v2}, Ljava/io/DataOutputStream;->writeLong(J)V
-    :try_end_21
-    .catchall {:try_start_d .. :try_end_21} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 372
     invoke-virtual {v0}, Ljava/io/DataOutputStream;->close()V
 
     return-void
 
-    :catchall_25
+    :catchall_0
     move-exception p1
 
     .line 367
-    :try_start_26
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/DataOutputStream;->close()V
-    :try_end_29
-    .catchall {:try_start_26 .. :try_end_29} :catchall_2a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_2e
+    goto :goto_0
 
-    :catchall_2a
+    :catchall_1
     move-exception v0
 
     invoke-virtual {p1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_2e
+    :goto_0
     throw p1
 .end method

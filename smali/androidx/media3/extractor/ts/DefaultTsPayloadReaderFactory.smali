@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 125
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>(ILjava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -95,7 +95,7 @@
 .end method
 
 .method private buildSeiReader(Landroidx/media3/extractor/ts/TsPayloadReader$EsInfo;)Landroidx/media3/extractor/ts/SeiReader;
-    .registers 3
+    .locals 1
 
     .line 222
     new-instance v0, Landroidx/media3/extractor/ts/SeiReader;
@@ -110,7 +110,7 @@
 .end method
 
 .method private buildUserDataReader(Landroidx/media3/extractor/ts/TsPayloadReader$EsInfo;)Landroidx/media3/extractor/ts/UserDataReader;
-    .registers 3
+    .locals 1
 
     .line 235
     new-instance v0, Landroidx/media3/extractor/ts/UserDataReader;
@@ -125,7 +125,7 @@
 .end method
 
 .method private getClosedCaptionFormats(Landroidx/media3/extractor/ts/TsPayloadReader$EsInfo;)Ljava/util/List;
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,7 +144,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 249
     iget-object p1, p0, Landroidx/media3/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
@@ -152,7 +152,7 @@
     return-object p1
 
     .line 251
-    :cond_b
+    :cond_0
     new-instance v0, Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object p1, p1, Landroidx/media3/extractor/ts/TsPayloadReader$EsInfo;->descriptorBytes:[B
@@ -163,12 +163,12 @@
     iget-object p1, p0, Landroidx/media3/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
 
     .line 253
-    :goto_14
+    :goto_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v1
 
-    if-lez v1, :cond_8e
+    if-lez v1, :cond_6
 
     .line 254
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -189,7 +189,7 @@
 
     const/16 v2, 0x86
 
-    if-ne v1, v2, :cond_8a
+    if-ne v1, v2, :cond_5
 
     .line 259
     new-instance p1, Ljava/util/ArrayList;
@@ -207,8 +207,8 @@
 
     move v4, v2
 
-    :goto_38
-    if-ge v4, v1, :cond_8a
+    :goto_1
+    if-ge v4, v1, :cond_5
 
     const/4 v5, 0x3
 
@@ -226,31 +226,31 @@
 
     const/4 v8, 0x1
 
-    if-eqz v7, :cond_4a
+    if-eqz v7, :cond_1
 
     move v7, v8
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_4a
+    :cond_1
     move v7, v2
 
-    :goto_4b
-    if-eqz v7, :cond_52
+    :goto_2
+    if-eqz v7, :cond_2
 
     and-int/lit8 v6, v6, 0x3f
 
     const-string v9, "application/cea-708"
 
-    goto :goto_55
+    goto :goto_3
 
-    :cond_52
+    :cond_2
     const-string v9, "application/cea-608"
 
     move v6, v8
 
     .line 276
-    :goto_55
+    :goto_3
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v10
@@ -260,30 +260,30 @@
     .line 278
     invoke-virtual {v0, v8}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    if-eqz v7, :cond_6a
+    if-eqz v7, :cond_4
 
     and-int/lit8 v7, v10, 0x40
 
-    if-eqz v7, :cond_64
+    if-eqz v7, :cond_3
 
-    goto :goto_65
+    goto :goto_4
 
-    :cond_64
+    :cond_3
     move v8, v2
 
     .line 285
-    :goto_65
+    :goto_4
     invoke-static {v8}, Landroidx/media3/common/util/CodecSpecificDataUtil;->buildCea708InitializationData(Z)Ljava/util/List;
 
     move-result-object v7
 
-    goto :goto_6b
+    goto :goto_5
 
-    :cond_6a
+    :cond_4
     const/4 v7, 0x0
 
     .line 288
-    :goto_6b
+    :goto_5
     new-instance v8, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v8}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -318,43 +318,43 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_38
+    goto :goto_1
 
     .line 299
-    :cond_8a
+    :cond_5
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_8e
+    :cond_6
     return-object p1
 .end method
 
 .method private isSet(I)Z
-    .registers 3
+    .locals 1
 
     .line 306
     iget v0, p0, Landroidx/media3/extractor/ts/DefaultTsPayloadReaderFactory;->flags:I
 
     and-int/2addr p1, v0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_8
+    :goto_0
     return p1
 .end method
 
 
 # virtual methods
 .method public createInitialPayloadReaders()Landroid/util/SparseArray;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -373,67 +373,67 @@
 .end method
 
 .method public createPayloadReader(ILandroidx/media3/extractor/ts/TsPayloadReader$EsInfo;)Landroidx/media3/extractor/ts/TsPayloadReader;
-    .registers 7
+    .locals 4
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_150
+    if-eq p1, v0, :cond_e
 
     const/4 v1, 0x3
 
-    if-eq p1, v1, :cond_13f
+    if-eq p1, v1, :cond_d
 
     const/4 v1, 0x4
 
-    if-eq p1, v1, :cond_13f
+    if-eq p1, v1, :cond_d
 
     const/16 v2, 0x15
 
-    if-eq p1, v2, :cond_134
+    if-eq p1, v2, :cond_c
 
     const/16 v2, 0x1b
 
     const/4 v3, 0x0
 
-    if-eq p1, v2, :cond_113
+    if-eq p1, v2, :cond_a
 
     const/16 v1, 0x24
 
-    if-eq p1, v1, :cond_104
+    if-eq p1, v1, :cond_9
 
     const/16 v1, 0x2d
 
-    if-eq p1, v1, :cond_f9
+    if-eq p1, v1, :cond_8
 
     const/16 v1, 0x59
 
-    if-eq p1, v1, :cond_ec
+    if-eq p1, v1, :cond_7
 
     const/16 v1, 0xac
 
-    if-eq p1, v1, :cond_db
+    if-eq p1, v1, :cond_6
 
     const/16 v1, 0x101
 
-    if-eq p1, v1, :cond_ce
+    if-eq p1, v1, :cond_5
 
     const/16 v1, 0x8a
 
-    if-eq p1, v1, :cond_bb
+    if-eq p1, v1, :cond_4
 
     const/16 v1, 0x8b
 
-    if-eq p1, v1, :cond_a8
+    if-eq p1, v1, :cond_3
 
-    packed-switch p1, :pswitch_data_160
+    packed-switch p1, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_16a
+    packed-switch p1, :pswitch_data_1
 
-    packed-switch p1, :pswitch_data_174
+    packed-switch p1, :pswitch_data_2
 
     return-object v3
 
-    :pswitch_38
+    :pswitch_0
     const/16 p1, 0x10
 
     .line 196
@@ -441,12 +441,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_0
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 198
-    :cond_41
+    :cond_0
     new-instance v3, Landroidx/media3/extractor/ts/SectionReader;
 
     new-instance p1, Landroidx/media3/extractor/ts/PassthroughSectionPayloadReader;
@@ -457,10 +457,10 @@
 
     invoke-direct {v3, p1}, Landroidx/media3/extractor/ts/SectionReader;-><init>(Landroidx/media3/extractor/ts/SectionPayloadReader;)V
 
-    :goto_4d
+    :goto_0
     return-object v3
 
-    :pswitch_4e
+    :pswitch_1
     const/16 p1, 0x40
 
     .line 169
@@ -468,12 +468,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_bb
+    if-nez p1, :cond_4
 
     return-object v3
 
     .line 165
-    :pswitch_57
+    :pswitch_2
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/Ac3Reader;
@@ -491,17 +491,17 @@
     return-object p1
 
     .line 160
-    :pswitch_68
+    :pswitch_3
     invoke-direct {p0, v0}, Landroidx/media3/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_1
 
-    goto :goto_7f
+    goto :goto_1
 
     .line 162
-    :cond_6f
+    :cond_1
     new-instance v3, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance p1, Landroidx/media3/extractor/ts/LatmReader;
@@ -516,11 +516,11 @@
 
     invoke-direct {v3, p1}, Landroidx/media3/extractor/ts/PesReader;-><init>(Landroidx/media3/extractor/ts/ElementaryStreamReader;)V
 
-    :goto_7f
+    :goto_1
     return-object v3
 
     .line 184
-    :pswitch_80
+    :pswitch_4
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/H263Reader;
@@ -536,17 +536,17 @@
     return-object p1
 
     .line 156
-    :pswitch_8f
+    :pswitch_5
     invoke-direct {p0, v0}, Landroidx/media3/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_96
+    if-eqz p1, :cond_2
 
-    goto :goto_a7
+    goto :goto_2
 
     .line 158
-    :cond_96
+    :cond_2
     new-instance v3, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance p1, Landroidx/media3/extractor/ts/AdtsReader;
@@ -563,11 +563,11 @@
 
     invoke-direct {v3, p1}, Landroidx/media3/extractor/ts/PesReader;-><init>(Landroidx/media3/extractor/ts/ElementaryStreamReader;)V
 
-    :goto_a7
+    :goto_2
     return-object v3
 
     .line 178
-    :cond_a8
+    :cond_3
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/DtsReader;
@@ -588,8 +588,8 @@
     return-object p1
 
     .line 175
-    :cond_bb
-    :pswitch_bb
+    :cond_4
+    :pswitch_6
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/DtsReader;
@@ -610,7 +610,7 @@
     return-object p1
 
     .line 204
-    :cond_ce
+    :cond_5
     new-instance p1, Landroidx/media3/extractor/ts/SectionReader;
 
     new-instance p2, Landroidx/media3/extractor/ts/PassthroughSectionPayloadReader;
@@ -624,7 +624,7 @@
     return-object p1
 
     .line 167
-    :cond_db
+    :cond_6
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/Ac4Reader;
@@ -642,7 +642,7 @@
     return-object p1
 
     .line 202
-    :cond_ec
+    :cond_7
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/DvbSubtitleReader;
@@ -656,7 +656,7 @@
     return-object p1
 
     .line 206
-    :cond_f9
+    :cond_8
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance p2, Landroidx/media3/extractor/ts/MpeghReader;
@@ -668,7 +668,7 @@
     return-object p1
 
     .line 194
-    :cond_104
+    :cond_9
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/H265Reader;
@@ -684,17 +684,17 @@
     return-object p1
 
     .line 186
-    :cond_113
+    :cond_a
     invoke-direct {p0, v1}, Landroidx/media3/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_11a
+    if-eqz p1, :cond_b
 
-    goto :goto_133
+    goto :goto_3
 
     .line 188
-    :cond_11a
+    :cond_b
     new-instance v3, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance p1, Landroidx/media3/extractor/ts/H264Reader;
@@ -722,11 +722,11 @@
 
     invoke-direct {v3, p1}, Landroidx/media3/extractor/ts/PesReader;-><init>(Landroidx/media3/extractor/ts/ElementaryStreamReader;)V
 
-    :goto_133
+    :goto_3
     return-object v3
 
     .line 200
-    :cond_134
+    :cond_c
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance p2, Landroidx/media3/extractor/ts/Id3Reader;
@@ -738,7 +738,7 @@
     return-object p1
 
     .line 154
-    :cond_13f
+    :cond_d
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/MpegAudioReader;
@@ -756,8 +756,8 @@
     return-object p1
 
     .line 182
-    :cond_150
-    :pswitch_150
+    :cond_e
+    :pswitch_7
     new-instance p1, Landroidx/media3/extractor/ts/PesReader;
 
     new-instance v0, Landroidx/media3/extractor/ts/H262Reader;
@@ -774,24 +774,24 @@
 
     nop
 
-    :pswitch_data_160
+    :pswitch_data_0
     .packed-switch 0xf
-        :pswitch_8f
-        :pswitch_80
-        :pswitch_68
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 
-    :pswitch_data_16a
+    :pswitch_data_1
     .packed-switch 0x80
-        :pswitch_150
-        :pswitch_57
-        :pswitch_4e
+        :pswitch_7
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 
-    :pswitch_data_174
+    :pswitch_data_2
     .packed-switch 0x86
-        :pswitch_38
-        :pswitch_57
-        :pswitch_bb
+        :pswitch_0
+        :pswitch_2
+        :pswitch_6
     .end packed-switch
 .end method

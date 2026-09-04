@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/cardview/widget/CardViewBaseImpl;)V
-    .registers 2
+    .locals 0
 
     .line 38
     iput-object p1, p0, Landroidx/cardview/widget/CardViewBaseImpl$1;->this$0:Landroidx/cardview/widget/CardViewBaseImpl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/graphics/Paint;)V
-    .registers 21
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -70,7 +70,7 @@
 
     cmpl-float v1, p3, v9
 
-    if-ltz v1, :cond_a4
+    if-ltz v1, :cond_0
 
     const/high16 v1, 0x3f000000    # 0.5f
 
@@ -217,7 +217,7 @@
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 74
-    :cond_a4
+    :cond_0
     iget v2, v8, Landroid/graphics/RectF;->left:F
 
     iget v1, v8, Landroid/graphics/RectF;->top:F

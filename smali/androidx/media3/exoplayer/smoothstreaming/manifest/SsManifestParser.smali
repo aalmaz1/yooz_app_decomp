@@ -34,24 +34,24 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 64
-    :try_start_3
+    :try_start_0
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser;->xmlParserFactory:Lorg/xmlpull/v1/XmlPullParserFactory;
-    :try_end_9
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_a
+    :catch_0
     move-exception v0
 
     .line 66
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public parse(Landroid/net/Uri;Ljava/io/InputStream;)Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -77,7 +77,7 @@
     const/4 v0, 0x0
 
     .line 73
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser;->xmlParserFactory:Lorg/xmlpull/v1/XmlPullParserFactory;
 
     invoke-virtual {v1}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
@@ -103,12 +103,12 @@
     move-result-object p1
 
     check-cast p1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
-    :try_end_19
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_19} :catch_1a
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1a
+    :catch_0
     move-exception p1
 
     .line 79
@@ -120,7 +120,7 @@
 .end method
 
 .method public bridge synthetic parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

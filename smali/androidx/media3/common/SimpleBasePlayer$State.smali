@@ -108,7 +108,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)V
-    .registers 15
+    .locals 13
 
     .line 918
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -130,34 +130,34 @@
 
     const/4 v4, 0x1
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3
 
     .line 921
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-eq v0, v4, :cond_20
+    if-eq v0, v4, :cond_1
 
     .line 922
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     move v0, v2
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     move v0, v4
 
-    :goto_21
+    :goto_1
     const-string v5, "Empty playlist only allowed in STATE_IDLE or STATE_ENDED"
 
     .line 920
@@ -168,44 +168,44 @@
 
     move-result v0
 
-    if-ne v0, v3, :cond_34
+    if-ne v0, v3, :cond_2
 
     .line 926
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$400(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v3, :cond_34
+    if-ne v0, v3, :cond_2
 
     move v0, v4
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_34
+    :cond_2
     move v0, v2
 
-    :goto_35
+    :goto_2
     const-string v5, "Ads not allowed if playlist is empty"
 
     .line 924
     invoke-static {v0, v5}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    goto/16 :goto_bd
+    goto/16 :goto_8
 
     .line 929
-    :cond_3c
+    :cond_3
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$500(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v3, :cond_44
+    if-ne v0, v3, :cond_4
 
     move v8, v2
 
-    goto :goto_5b
+    goto :goto_4
 
     .line 934
-    :cond_44
+    :cond_4
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$500(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v5
@@ -218,16 +218,16 @@
 
     move-result v6
 
-    if-ge v5, v6, :cond_54
+    if-ge v5, v6, :cond_5
 
     move v5, v4
 
-    goto :goto_55
+    goto :goto_3
 
-    :cond_54
+    :cond_5
     move v5, v2
 
-    :goto_55
+    :goto_3
     const-string v6, "currentMediaItemIndex must be less than playlist.size()"
 
     .line 933
@@ -236,12 +236,12 @@
     move v8, v0
 
     .line 937
-    :goto_5b
+    :goto_4
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$300(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-eq v0, v3, :cond_bd
+    if-eq v0, v3, :cond_9
 
     .line 938
     new-instance v0, Landroidx/media3/common/Timeline$Period;
@@ -258,7 +258,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_7a
+    if-eqz v5, :cond_6
 
     .line 942
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$600(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
@@ -269,10 +269,10 @@
 
     move-result-wide v5
 
-    goto :goto_82
+    goto :goto_5
 
     .line 943
-    :cond_7a
+    :cond_6
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$700(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
     move-result-object v5
@@ -281,7 +281,7 @@
 
     move-result-wide v5
 
-    :goto_82
+    :goto_5
     move-wide v9, v5
 
     .line 946
@@ -312,16 +312,16 @@
 
     move-result v6
 
-    if-ge v5, v6, :cond_9f
+    if-ge v5, v6, :cond_7
 
     move v5, v4
 
-    goto :goto_a0
+    goto :goto_6
 
-    :cond_9f
+    :cond_7
     move v5, v2
 
-    :goto_a0
+    :goto_6
     const-string v6, "PeriodData has less ad groups than adGroupIndex"
 
     .line 948
@@ -336,69 +336,69 @@
 
     move-result v0
 
-    if-eq v0, v3, :cond_bd
+    if-eq v0, v3, :cond_9
 
     .line 954
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$400(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v5
 
-    if-ge v5, v0, :cond_b7
+    if-ge v5, v0, :cond_8
 
     move v0, v4
 
-    goto :goto_b8
+    goto :goto_7
 
-    :cond_b7
+    :cond_8
     move v0, v2
 
-    :goto_b8
+    :goto_7
     const-string v5, "Ad group has less ads than adIndexInGroupIndex"
 
     .line 953
     invoke-static {v0, v5}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 959
-    :cond_bd
-    :goto_bd
+    :cond_9
+    :goto_8
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$900(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Landroidx/media3/common/PlaybackException;
 
     move-result-object v0
 
-    if-eqz v0, :cond_cf
+    if-eqz v0, :cond_b
 
     .line 961
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_ca
+    if-ne v0, v4, :cond_a
 
     move v2, v4
 
-    :cond_ca
+    :cond_a
     const-string v0, "Player error only allowed in STATE_IDLE"
 
     .line 960
     invoke-static {v2, v0}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 963
-    :cond_cf
+    :cond_b
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-eq v0, v4, :cond_db
+    if-eq v0, v4, :cond_c
 
     .line 964
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v1, :cond_e5
+    if-ne v0, v1, :cond_d
 
     .line 966
-    :cond_db
+    :cond_c
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1000(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Z
 
     move-result v0
@@ -411,7 +411,7 @@
     invoke-static {v0, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 968
-    :cond_e5
+    :cond_d
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$700(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
     move-result-object v0
@@ -423,35 +423,35 @@
 
     const/4 v2, 0x3
 
-    if-eqz v1, :cond_138
+    if-eqz v1, :cond_f
 
     .line 970
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$300(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v3, :cond_12c
+    if-ne v0, v3, :cond_e
 
     .line 971
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1100(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12c
+    if-eqz v0, :cond_e
 
     .line 972
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-ne v0, v2, :cond_12c
+    if-ne v0, v2, :cond_e
 
     .line 973
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v0
 
-    if-nez v0, :cond_12c
+    if-nez v0, :cond_e
 
     .line 974
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$600(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
@@ -466,7 +466,7 @@
 
     cmp-long v0, v0, v4
 
-    if-eqz v0, :cond_12c
+    if-eqz v0, :cond_e
 
     .line 977
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$600(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
@@ -488,10 +488,10 @@
 
     move-result-object v0
 
-    goto :goto_138
+    goto :goto_9
 
     .line 979
-    :cond_12c
+    :cond_e
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$600(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
 
     move-result-object v0
@@ -505,8 +505,8 @@
     move-result-object v0
 
     .line 982
-    :cond_138
-    :goto_138
+    :cond_f
+    :goto_9
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1400(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
     move-result-object v1
@@ -516,35 +516,35 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_175
+    if-eqz v4, :cond_11
 
     .line 984
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$300(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v1
 
-    if-eq v1, v3, :cond_169
+    if-eq v1, v3, :cond_10
 
     .line 985
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1100(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_169
+    if-eqz v1, :cond_10
 
     .line 986
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v1
 
-    if-ne v1, v2, :cond_169
+    if-ne v1, v2, :cond_10
 
     .line 987
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1200(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)I
 
     move-result v1
 
-    if-nez v1, :cond_169
+    if-nez v1, :cond_10
 
     .line 989
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1500(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
@@ -561,10 +561,10 @@
 
     move-result-object v1
 
-    goto :goto_175
+    goto :goto_a
 
     .line 991
-    :cond_169
+    :cond_10
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1500(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Ljava/lang/Long;
 
     move-result-object v1
@@ -578,8 +578,8 @@
     move-result-object v1
 
     .line 994
-    :cond_175
-    :goto_175
+    :cond_11
+    :goto_a
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$State$Builder;->access$1600(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)Landroidx/media3/common/Player$Commands;
 
     move-result-object v2
@@ -841,7 +841,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/SimpleBasePlayer$State$Builder;Landroidx/media3/common/SimpleBasePlayer$1;)V
-    .registers 3
+    .locals 0
 
     .line 100
     invoke-direct {p0, p1}, Landroidx/media3/common/SimpleBasePlayer$State;-><init>(Landroidx/media3/common/SimpleBasePlayer$State$Builder;)V
@@ -852,7 +852,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/SimpleBasePlayer$State$Builder;
-    .registers 3
+    .locals 2
 
     .line 1036
     new-instance v0, Landroidx/media3/common/SimpleBasePlayer$State$Builder;
@@ -865,26 +865,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1044
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/SimpleBasePlayer$State;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1047
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/SimpleBasePlayer$State;
 
     .line 1048
@@ -892,13 +892,13 @@
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->playWhenReady:Z
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playWhenReadyChangeReason:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->playWhenReadyChangeReason:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->availableCommands:Landroidx/media3/common/Player$Commands;
 
@@ -909,19 +909,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playbackState:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->playbackState:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playbackSuppressionReason:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->playbackSuppressionReason:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playerError:Landroidx/media3/common/PlaybackException;
 
@@ -932,25 +932,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->repeatMode:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->repeatMode:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->shuffleModeEnabled:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->shuffleModeEnabled:Z
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->isLoading:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->isLoading:Z
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$State;->seekBackIncrementMs:J
 
@@ -958,7 +958,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_139
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$State;->seekForwardIncrementMs:J
 
@@ -966,7 +966,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_139
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$State;->maxSeekToPreviousPositionMs:J
 
@@ -974,7 +974,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_139
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playbackParameters:Landroidx/media3/common/PlaybackParameters;
 
@@ -985,7 +985,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->trackSelectionParameters:Landroidx/media3/common/TrackSelectionParameters;
 
@@ -996,7 +996,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->audioAttributes:Landroidx/media3/common/AudioAttributes;
 
@@ -1007,7 +1007,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->volume:F
 
@@ -1015,7 +1015,7 @@
 
     cmpl-float v1, v1, v3
 
-    if-nez v1, :cond_139
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->videoSize:Landroidx/media3/common/VideoSize;
 
@@ -1026,7 +1026,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->currentCues:Landroidx/media3/common/text/CueGroup;
 
@@ -1037,7 +1037,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->deviceInfo:Landroidx/media3/common/DeviceInfo;
 
@@ -1048,19 +1048,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->deviceVolume:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->deviceVolume:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->isDeviceMuted:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->isDeviceMuted:Z
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->surfaceSize:Landroidx/media3/common/util/Size;
 
@@ -1071,13 +1071,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->newlyRenderedFirstFrame:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->newlyRenderedFirstFrame:Z
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->timedMetadata:Landroidx/media3/common/Metadata;
 
@@ -1088,7 +1088,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playlist:Lcom/google/common/collect/ImmutableList;
 
@@ -1099,7 +1099,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playlistMetadata:Landroidx/media3/common/MediaMetadata;
 
@@ -1110,25 +1110,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->currentMediaItemIndex:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->currentMediaItemIndex:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->currentAdGroupIndex:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->currentAdGroupIndex:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->currentAdIndexInAdGroup:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->currentAdIndexInAdGroup:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->contentPositionMsSupplier:Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
@@ -1139,7 +1139,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->adPositionMsSupplier:Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
@@ -1150,7 +1150,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->contentBufferedPositionMsSupplier:Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
@@ -1161,7 +1161,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->adBufferedPositionMsSupplier:Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
@@ -1172,7 +1172,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->totalBufferedDurationMsSupplier:Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
 
@@ -1183,19 +1183,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->hasPositionDiscontinuity:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->hasPositionDiscontinuity:Z
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/SimpleBasePlayer$State;->positionDiscontinuityReason:I
 
     iget v3, p1, Landroidx/media3/common/SimpleBasePlayer$State;->positionDiscontinuityReason:I
 
-    if-ne v1, v3, :cond_139
+    if-ne v1, v3, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$State;->discontinuityPositionMs:J
 
@@ -1203,19 +1203,19 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_139
+    if-nez p1, :cond_2
 
-    goto :goto_13a
+    goto :goto_0
 
-    :cond_139
+    :cond_2
     move v0, v2
 
-    :goto_13a
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 1090
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$State;->availableCommands:Landroidx/media3/common/Player$Commands;
@@ -1261,18 +1261,18 @@
     .line 1095
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$State;->playerError:Landroidx/media3/common/PlaybackException;
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_29
+    :goto_0
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f

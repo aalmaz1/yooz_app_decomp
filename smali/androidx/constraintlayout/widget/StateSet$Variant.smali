@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 8
+    .locals 5
 
     .line 295
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,8 +78,8 @@
 
     move-result v1
 
-    :goto_21
-    if-ge v0, v1, :cond_90
+    :goto_0
+    if-ge v0, v1, :cond_6
 
     .line 304
     invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -89,7 +89,7 @@
     .line 305
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->Variant_constraints:I
 
-    if-ne v2, v3, :cond_52
+    if-ne v2, v3, :cond_0
 
     .line 306
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mConstraintID:I
@@ -127,20 +127,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8d
+    if-eqz v2, :cond_5
 
     const/4 v2, 0x1
 
     .line 311
     iput-boolean v2, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mIsLayout:Z
 
-    goto :goto_8d
+    goto :goto_1
 
     .line 313
-    :cond_52
+    :cond_0
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->Variant_region_heightLessThan:I
 
-    if-ne v2, v3, :cond_5f
+    if-ne v2, v3, :cond_1
 
     .line 314
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxHeight:F
@@ -151,13 +151,13 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxHeight:F
 
-    goto :goto_8d
+    goto :goto_1
 
     .line 315
-    :cond_5f
+    :cond_1
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->Variant_region_heightMoreThan:I
 
-    if-ne v2, v3, :cond_6c
+    if-ne v2, v3, :cond_2
 
     .line 316
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinHeight:F
@@ -168,13 +168,13 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinHeight:F
 
-    goto :goto_8d
+    goto :goto_1
 
     .line 317
-    :cond_6c
+    :cond_2
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->Variant_region_widthLessThan:I
 
-    if-ne v2, v3, :cond_79
+    if-ne v2, v3, :cond_3
 
     .line 318
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxWidth:F
@@ -185,13 +185,13 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxWidth:F
 
-    goto :goto_8d
+    goto :goto_1
 
     .line 319
-    :cond_79
+    :cond_3
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->Variant_region_widthMoreThan:I
 
-    if-ne v2, v3, :cond_86
+    if-ne v2, v3, :cond_4
 
     .line 320
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinWidth:F
@@ -202,9 +202,9 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinWidth:F
 
-    goto :goto_8d
+    goto :goto_1
 
-    :cond_86
+    :cond_4
     const-string v2, "ConstraintLayoutStates"
 
     const-string v3, "Unknown tag"
@@ -212,14 +212,14 @@
     .line 322
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8d
-    :goto_8d
+    :cond_5
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 325
-    :cond_90
+    :cond_6
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
@@ -228,7 +228,7 @@
 
 # virtual methods
 .method match(FF)Z
-    .registers 5
+    .locals 2
 
     .line 348
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinWidth:F
@@ -239,75 +239,75 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 349
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinWidth:F
 
     cmpg-float v0, p1, v0
 
-    if-gez v0, :cond_10
+    if-gez v0, :cond_0
 
     return v1
 
     .line 351
-    :cond_10
+    :cond_0
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinHeight:F
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 352
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMinHeight:F
 
     cmpg-float v0, p2, v0
 
-    if-gez v0, :cond_1f
+    if-gez v0, :cond_1
 
     return v1
 
     .line 354
-    :cond_1f
+    :cond_1
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxWidth:F
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
     .line 355
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxWidth:F
 
     cmpl-float p1, p1, v0
 
-    if-lez p1, :cond_2e
+    if-lez p1, :cond_2
 
     return v1
 
     .line 357
-    :cond_2e
+    :cond_2
     iget p1, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxHeight:F
 
     invoke-static {p1}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result p1
 
-    if-nez p1, :cond_3d
+    if-nez p1, :cond_3
 
     .line 358
     iget p1, p0, Landroidx/constraintlayout/widget/StateSet$Variant;->mMaxHeight:F
 
     cmpl-float p1, p2, p1
 
-    if-lez p1, :cond_3d
+    if-lez p1, :cond_3
 
     return v1
 
-    :cond_3d
+    :cond_3
     const/4 p1, 0x1
 
     return p1

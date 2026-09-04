@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/FileOutputStream;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "fileOutputStream"
 
@@ -70,13 +70,13 @@
 
 # virtual methods
 .method public close()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
 
     .line 480
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore$UncloseableOutputStream;->fileOutputStream:Ljava/io/FileOutputStream;
@@ -87,7 +87,7 @@
 .end method
 
 .method public final getFileOutputStream()Ljava/io/FileOutputStream;
-    .registers 2
+    .locals 1
 
     .line 460
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore$UncloseableOutputStream;->fileOutputStream:Ljava/io/FileOutputStream;
@@ -96,7 +96,7 @@
 .end method
 
 .method public write(I)V
-    .registers 3
+    .locals 1
 
     .line 463
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore$UncloseableOutputStream;->fileOutputStream:Ljava/io/FileOutputStream;
@@ -107,7 +107,7 @@
 .end method
 
 .method public write([B)V
-    .registers 3
+    .locals 1
 
     const-string v0, "b"
 
@@ -122,7 +122,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
 
     const-string v0, "bytes"
 

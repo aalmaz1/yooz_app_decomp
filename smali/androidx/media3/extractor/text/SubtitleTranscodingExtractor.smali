@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/Extractor;Landroidx/media3/extractor/text/SubtitleParser$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
-    .registers 2
+    .locals 1
 
     .line 96
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractor;->delegate:Landroidx/media3/extractor/Extractor;
@@ -42,7 +42,7 @@
 .end method
 
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 4
+    .locals 2
 
     .line 70
     new-instance v0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;
@@ -62,7 +62,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -80,7 +80,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractor;->delegate:Landroidx/media3/extractor/Extractor;
@@ -91,18 +91,18 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractor;->transcodingExtractorOutput:Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 84
     invoke-virtual {v0}, Landroidx/media3/extractor/text/SubtitleTranscodingExtractorOutput;->resetSubtitleParsers()V
 
     .line 86
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleTranscodingExtractor;->delegate:Landroidx/media3/extractor/Extractor;
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroidx/media3/extractor/Extractor;->seek(JJ)V
@@ -111,7 +111,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

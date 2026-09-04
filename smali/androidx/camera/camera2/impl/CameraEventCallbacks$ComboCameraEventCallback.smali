@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,12 +53,12 @@
 
     move-result-object p1
 
-    :goto_e
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -71,16 +71,16 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getCallbacks()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,7 +97,7 @@
 .end method
 
 .method public onDeInitSession()V
-    .registers 3
+    .locals 2
 
     .line 161
     iget-object v0, p0, Landroidx/camera/camera2/impl/CameraEventCallbacks$ComboCameraEventCallback;->mCallbacks:Ljava/util/List;
@@ -106,12 +106,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -122,14 +122,14 @@
     .line 162
     invoke-virtual {v1}, Landroidx/camera/camera2/impl/CameraEventCallback;->onDeInitSession()V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public onDisableSession()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -151,13 +151,13 @@
 
     move-result-object v1
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -170,19 +170,19 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 151
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-object v0
 .end method
 
 .method public onEnableSession()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -204,13 +204,13 @@
 
     move-result-object v1
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -223,19 +223,19 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 109
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-object v0
 .end method
 
 .method public onInitSession()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -257,13 +257,13 @@
 
     move-result-object v1
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -276,19 +276,19 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 86
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-object v0
 .end method
 
 .method public onRepeating()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -310,13 +310,13 @@
 
     move-result-object v1
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -329,13 +329,13 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 129
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-object v0
 .end method

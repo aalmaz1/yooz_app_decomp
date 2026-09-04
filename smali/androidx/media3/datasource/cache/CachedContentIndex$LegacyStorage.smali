@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;[BZ)V
-    .registers 9
+    .locals 5
 
     .line 508
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,42 +52,42 @@
 
     const/4 v1, 0x1
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_1
 
-    if-nez p3, :cond_a
+    if-nez p3, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v0
 
-    goto :goto_d
+    goto :goto_1
 
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     move v2, v1
 
     .line 509
-    :goto_d
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 v2, 0x0
 
-    if-eqz p2, :cond_33
+    if-eqz p2, :cond_3
 
     .line 513
     array-length v3, p2
 
     const/16 v4, 0x10
 
-    if-ne v3, v4, :cond_19
+    if-ne v3, v4, :cond_2
 
     move v0, v1
 
-    :cond_19
+    :cond_2
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    :try_start_1c
+    :try_start_0
     const-string v0, "AES/CBC/PKCS5PADDING"
 
     .line 515
@@ -101,29 +101,29 @@
     const-string v3, "AES"
 
     invoke-direct {v1, p2, v3}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
-    :try_end_29
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1c .. :try_end_29} :catch_2c
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_1c .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3a
+    goto :goto_3
 
-    :catch_2a
+    :catch_0
     move-exception p1
 
-    goto :goto_2d
+    goto :goto_2
 
-    :catch_2c
+    :catch_1
     move-exception p1
 
     .line 518
-    :goto_2d
+    :goto_2
     new-instance p2, Ljava/lang/IllegalStateException;
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     throw p2
 
-    :cond_33
+    :cond_3
     xor-int/lit8 p2, p3, 0x1
 
     .line 521
@@ -134,7 +134,7 @@
     move-object v1, v0
 
     .line 523
-    :goto_3a
+    :goto_3
     iput-boolean p3, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->encrypt:Z
 
     .line 524
@@ -143,14 +143,14 @@
     .line 525
     iput-object v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->secretKeySpec:Ljavax/crypto/spec/SecretKeySpec;
 
-    if-eqz p3, :cond_47
+    if-eqz p3, :cond_4
 
     .line 526
     new-instance v2, Ljava/security/SecureRandom;
 
     invoke-direct {v2}, Ljava/security/SecureRandom;-><init>()V
 
-    :cond_47
+    :cond_4
     iput-object v2, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->random:Ljava/security/SecureRandom;
 
     .line 527
@@ -164,7 +164,7 @@
 .end method
 
 .method private hashCachedContent(Landroidx/media3/datasource/cache/CachedContent;I)I
-    .registers 6
+    .locals 3
 
     .line 688
     iget v0, p1, Landroidx/media3/datasource/cache/CachedContent;->id:I
@@ -182,7 +182,7 @@
 
     const/4 v1, 0x2
 
-    if-ge p2, v1, :cond_1f
+    if-ge p2, v1, :cond_0
 
     .line 691
     invoke-virtual {p1}, Landroidx/media3/datasource/cache/CachedContent;->getMetadata()Landroidx/media3/datasource/cache/DefaultContentMetadata;
@@ -203,9 +203,9 @@
 
     long-to-int p1, p1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     mul-int/lit8 v0, v0, 0x1f
 
     .line 694
@@ -217,14 +217,14 @@
 
     move-result p1
 
-    :goto_29
+    :goto_0
     add-int/2addr v0, p1
 
     return v0
 .end method
 
 .method private readCachedContent(ILjava/io/DataInputStream;)Landroidx/media3/datasource/cache/CachedContent;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -243,7 +243,7 @@
 
     const/4 v2, 0x2
 
-    if-ge p1, v2, :cond_1e
+    if-ge p1, v2, :cond_0
 
     .line 711
     invoke-virtual {p2}, Ljava/io/DataInputStream;->readLong()J
@@ -265,16 +265,16 @@
 
     move-result-object p1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 716
-    :cond_1e
+    :cond_0
     invoke-static {p2}, Landroidx/media3/datasource/cache/CachedContentIndex;->access$000(Ljava/io/DataInputStream;)Landroidx/media3/datasource/cache/DefaultContentMetadata;
 
     move-result-object p1
 
     .line 718
-    :goto_22
+    :goto_0
     new-instance p2, Landroidx/media3/datasource/cache/CachedContent;
 
     invoke-direct {p2, v0, v1, p1}, Landroidx/media3/datasource/cache/CachedContent;-><init>(ILjava/lang/String;Landroidx/media3/datasource/cache/DefaultContentMetadata;)V
@@ -283,7 +283,7 @@
 .end method
 
 .method private readFile(Ljava/util/HashMap;Landroid/util/SparseArray;)Z
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -306,17 +306,17 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
     const/4 v2, 0x0
 
     .line 588
-    :try_start_c
+    :try_start_0
     new-instance v3, Ljava/io/BufferedInputStream;
 
     iget-object v4, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->atomicFile:Landroidx/media3/common/util/AtomicFile;
@@ -331,51 +331,51 @@
     new-instance v4, Ljava/io/DataInputStream;
 
     invoke-direct {v4, v3}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_1c} :catch_b7
-    .catchall {:try_start_c .. :try_end_1c} :catchall_b0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 590
-    :try_start_1c
+    :try_start_1
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v2
 
-    if-ltz v2, :cond_a7
+    if-ltz v2, :cond_9
 
     const/4 v5, 0x2
 
-    if-le v2, v5, :cond_27
+    if-le v2, v5, :cond_1
 
-    goto/16 :goto_a7
+    goto/16 :goto_5
 
     .line 595
-    :cond_27
+    :cond_1
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v6
 
     and-int/2addr v6, v1
 
-    if-eqz v6, :cond_66
+    if-eqz v6, :cond_3
 
     .line 597
     iget-object v6, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->cipher:Ljavax/crypto/Cipher;
-    :try_end_30
-    .catch Ljava/io/IOException; {:try_start_1c .. :try_end_30} :catch_ae
-    .catchall {:try_start_1c .. :try_end_30} :catchall_ab
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez v6, :cond_36
+    if-nez v6, :cond_2
 
     .line 630
     invoke-static {v4}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return v0
 
-    :cond_36
+    :cond_2
     const/16 v6, 0x10
 
-    :try_start_38
+    :try_start_2
     new-array v6, v6, [B
 
     .line 601
@@ -385,12 +385,12 @@
     new-instance v7, Ljavax/crypto/spec/IvParameterSpec;
 
     invoke-direct {v7, v6}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
-    :try_end_42
-    .catch Ljava/io/IOException; {:try_start_38 .. :try_end_42} :catch_ae
-    .catchall {:try_start_38 .. :try_end_42} :catchall_ab
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 604
-    :try_start_42
+    :try_start_3
     iget-object v6, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->cipher:Ljavax/crypto/Cipher;
 
     iget-object v8, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->secretKeySpec:Ljavax/crypto/spec/SecretKeySpec;
@@ -402,14 +402,14 @@
     check-cast v8, Ljava/security/Key;
 
     invoke-virtual {v6, v5, v8, v7}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_4f
-    .catch Ljava/security/InvalidKeyException; {:try_start_42 .. :try_end_4f} :catch_5f
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_42 .. :try_end_4f} :catch_5d
-    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_4f} :catch_ae
-    .catchall {:try_start_42 .. :try_end_4f} :catchall_ab
+    :try_end_3
+    .catch Ljava/security/InvalidKeyException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 608
-    :try_start_4f
+    :try_start_4
     new-instance v5, Ljava/io/DataInputStream;
 
     new-instance v6, Ljavax/crypto/CipherInputStream;
@@ -422,18 +422,18 @@
 
     move-object v4, v5
 
-    goto :goto_6c
+    goto :goto_1
 
-    :catch_5d
+    :catch_0
     move-exception p1
 
-    goto :goto_60
+    goto :goto_0
 
-    :catch_5f
+    :catch_1
     move-exception p1
 
     .line 606
-    :goto_60
+    :goto_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
@@ -441,17 +441,17 @@
     throw p2
 
     .line 609
-    :cond_66
+    :cond_3
     iget-boolean v3, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->encrypt:Z
 
-    if-eqz v3, :cond_6c
+    if-eqz v3, :cond_4
 
     .line 610
     iput-boolean v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->changed:Z
 
     .line 613
-    :cond_6c
-    :goto_6c
+    :cond_4
+    :goto_1
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v3
@@ -460,8 +460,8 @@
 
     move v6, v5
 
-    :goto_72
-    if-ge v5, v3, :cond_8c
+    :goto_2
+    if-ge v5, v3, :cond_5
 
     .line 616
     invoke-direct {p0, v2, v4}, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->readCachedContent(ILjava/io/DataInputStream;)Landroidx/media3/datasource/cache/CachedContent;
@@ -489,10 +489,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_72
+    goto :goto_2
 
     .line 621
-    :cond_8c
+    :cond_5
     invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
     move-result p1
@@ -501,83 +501,83 @@
     invoke-virtual {v4}, Ljava/io/DataInputStream;->read()I
 
     move-result p2
-    :try_end_94
-    .catch Ljava/io/IOException; {:try_start_4f .. :try_end_94} :catch_ae
-    .catchall {:try_start_4f .. :try_end_94} :catchall_ab
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     const/4 v2, -0x1
 
-    if-ne p2, v2, :cond_99
+    if-ne p2, v2, :cond_6
 
     move p2, v1
 
-    goto :goto_9a
+    goto :goto_3
 
-    :cond_99
+    :cond_6
     move p2, v0
 
-    :goto_9a
-    if-ne p1, v6, :cond_a3
+    :goto_3
+    if-ne p1, v6, :cond_8
 
-    if-nez p2, :cond_9f
+    if-nez p2, :cond_7
 
-    goto :goto_a3
+    goto :goto_4
 
     .line 630
-    :cond_9f
+    :cond_7
     invoke-static {v4}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return v1
 
-    :cond_a3
-    :goto_a3
+    :cond_8
+    :goto_4
     invoke-static {v4}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return v0
 
-    :cond_a7
-    :goto_a7
+    :cond_9
+    :goto_5
     invoke-static {v4}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return v0
 
-    :catchall_ab
+    :catchall_0
     move-exception p1
 
     move-object v2, v4
 
-    goto :goto_b1
+    goto :goto_6
 
-    :catch_ae
+    :catch_2
     move-object v2, v4
 
-    goto :goto_b7
+    goto :goto_7
 
-    :catchall_b0
+    :catchall_1
     move-exception p1
 
-    :goto_b1
-    if-eqz v2, :cond_b6
+    :goto_6
+    if-eqz v2, :cond_a
 
     invoke-static {v2}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 632
-    :cond_b6
+    :cond_a
     throw p1
 
-    :catch_b7
-    :goto_b7
-    if-eqz v2, :cond_bc
+    :catch_3
+    :goto_7
+    if-eqz v2, :cond_b
 
     .line 630
     invoke-static {v2}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    :cond_bc
+    :cond_b
     return v0
 .end method
 
 .method private writeCachedContent(Landroidx/media3/datasource/cache/CachedContent;Ljava/io/DataOutputStream;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -605,7 +605,7 @@
 .end method
 
 .method private writeFile(Ljava/util/HashMap;)V
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -625,7 +625,7 @@
     const/4 v0, 0x0
 
     .line 639
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->atomicFile:Landroidx/media3/common/util/AtomicFile;
 
     invoke-virtual {v1}, Landroidx/media3/common/util/AtomicFile;->startWrite()Ljava/io/OutputStream;
@@ -635,7 +635,7 @@
     .line 640
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->bufferedOutputStream:Landroidx/media3/datasource/cache/ReusableBufferedOutputStream;
 
-    if-nez v2, :cond_13
+    if-nez v2, :cond_0
 
     .line 641
     new-instance v2, Landroidx/media3/datasource/cache/ReusableBufferedOutputStream;
@@ -644,27 +644,27 @@
 
     iput-object v2, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->bufferedOutputStream:Landroidx/media3/datasource/cache/ReusableBufferedOutputStream;
 
-    goto :goto_16
+    goto :goto_0
 
     .line 643
-    :cond_13
+    :cond_0
     invoke-virtual {v2, v1}, Landroidx/media3/datasource/cache/ReusableBufferedOutputStream;->reset(Ljava/io/OutputStream;)V
 
     .line 645
-    :goto_16
+    :goto_0
     iget-object v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->bufferedOutputStream:Landroidx/media3/datasource/cache/ReusableBufferedOutputStream;
 
     .line 646
     new-instance v2, Ljava/io/DataOutputStream;
 
     invoke-direct {v2, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-    :try_end_1d
-    .catchall {:try_start_1 .. :try_end_1d} :catchall_a8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     const/4 v3, 0x2
 
     .line 647
-    :try_start_1e
+    :try_start_1
     invoke-virtual {v2, v3}, Ljava/io/DataOutputStream;->writeInt(I)V
 
     .line 649
@@ -674,23 +674,23 @@
 
     const/4 v6, 0x0
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_1
 
     move v4, v5
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     move v4, v6
 
     .line 650
-    :goto_2a
+    :goto_1
     invoke-virtual {v2, v4}, Ljava/io/DataOutputStream;->writeInt(I)V
 
     .line 652
     iget-boolean v4, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->encrypt:Z
 
-    if-eqz v4, :cond_75
+    if-eqz v4, :cond_2
 
     const/16 v4, 0x10
 
@@ -714,11 +714,11 @@
     new-instance v7, Ljavax/crypto/spec/IvParameterSpec;
 
     invoke-direct {v7, v4}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
-    :try_end_48
-    .catchall {:try_start_1e .. :try_end_48} :catchall_a5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 658
-    :try_start_48
+    :try_start_2
     iget-object v4, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->cipher:Ljavax/crypto/Cipher;
 
     invoke-static {v4}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -737,13 +737,13 @@
     check-cast v8, Ljava/security/Key;
 
     invoke-virtual {v4, v5, v8, v7}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
-    :try_end_5b
-    .catch Ljava/security/InvalidKeyException; {:try_start_48 .. :try_end_5b} :catch_6e
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_48 .. :try_end_5b} :catch_6c
-    .catchall {:try_start_48 .. :try_end_5b} :catchall_a5
+    :try_end_2
+    .catch Ljava/security/InvalidKeyException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 663
-    :try_start_5b
+    :try_start_3
     invoke-virtual {v2}, Ljava/io/DataOutputStream;->flush()V
 
     .line 664
@@ -759,18 +759,18 @@
 
     move-object v2, v4
 
-    goto :goto_75
+    goto :goto_3
 
-    :catch_6c
+    :catch_0
     move-exception p1
 
-    goto :goto_6f
+    goto :goto_2
 
-    :catch_6e
+    :catch_1
     move-exception p1
 
     .line 661
-    :goto_6f
+    :goto_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
@@ -778,8 +778,8 @@
     throw v0
 
     .line 667
-    :cond_75
-    :goto_75
+    :cond_2
+    :goto_3
     invoke-virtual {p1}, Ljava/util/HashMap;->size()I
 
     move-result v1
@@ -795,12 +795,12 @@
 
     move-result-object p1
 
-    :goto_84
+    :goto_4
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -818,35 +818,35 @@
 
     add-int/2addr v6, v1
 
-    goto :goto_84
+    goto :goto_4
 
     .line 673
-    :cond_99
+    :cond_3
     invoke-virtual {v2, v6}, Ljava/io/DataOutputStream;->writeInt(I)V
 
     .line 674
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->atomicFile:Landroidx/media3/common/util/AtomicFile;
 
     invoke-virtual {p1, v2}, Landroidx/media3/common/util/AtomicFile;->endWrite(Ljava/io/OutputStream;)V
-    :try_end_a1
-    .catchall {:try_start_5b .. :try_end_a1} :catchall_a5
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 679
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-void
 
-    :catchall_a5
+    :catchall_0
     move-exception p1
 
     move-object v0, v2
 
-    goto :goto_a9
+    goto :goto_5
 
-    :catchall_a8
+    :catchall_1
     move-exception p1
 
-    :goto_a9
+    :goto_5
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 680
@@ -856,7 +856,7 @@
 
 # virtual methods
 .method public delete()V
-    .registers 2
+    .locals 1
 
     .line 542
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->atomicFile:Landroidx/media3/common/util/AtomicFile;
@@ -867,7 +867,7 @@
 .end method
 
 .method public exists()Z
-    .registers 2
+    .locals 1
 
     .line 537
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->atomicFile:Landroidx/media3/common/util/AtomicFile;
@@ -880,13 +880,13 @@
 .end method
 
 .method public initialize(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public load(Ljava/util/HashMap;Landroid/util/SparseArray;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -912,7 +912,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 550
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
@@ -925,12 +925,12 @@
 
     invoke-virtual {p1}, Landroidx/media3/common/util/AtomicFile;->delete()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public onRemove(Landroidx/media3/datasource/cache/CachedContent;Z)V
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -941,7 +941,7 @@
 .end method
 
 .method public onUpdate(Landroidx/media3/datasource/cache/CachedContent;)V
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -952,7 +952,7 @@
 .end method
 
 .method public storeFully(Ljava/util/HashMap;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -981,7 +981,7 @@
 .end method
 
 .method public storeIncremental(Ljava/util/HashMap;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1001,12 +1001,12 @@
     .line 564
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->changed:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 567
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;->storeFully(Ljava/util/HashMap;)V
 
     return-void

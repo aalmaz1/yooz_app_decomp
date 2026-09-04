@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "MediaSessionManager"
 
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,12 +69,12 @@
 .end method
 
 .method public static getSessionManager(Landroid/content/Context;)Landroidx/media/MediaSessionManager;
-    .registers 3
+    .locals 2
 
     .line 55
     sget-object v0, Landroidx/media/MediaSessionManager;->sSessionManager:Landroidx/media/MediaSessionManager;
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 57
     sget-object v1, Landroidx/media/MediaSessionManager;->sLock:Ljava/lang/Object;
@@ -82,10 +82,10 @@
     monitor-enter v1
 
     .line 58
-    :try_start_7
+    :try_start_0
     sget-object v0, Landroidx/media/MediaSessionManager;->sSessionManager:Landroidx/media/MediaSessionManager;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 60
     new-instance v0, Landroidx/media/MediaSessionManager;
@@ -104,29 +104,29 @@
     move-object v0, p0
 
     .line 63
-    :cond_19
+    :cond_0
     monitor-exit v1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :catchall_1b
+    :catchall_0
     move-exception p0
 
     monitor-exit v1
-    :try_end_1d
-    .catchall {:try_start_7 .. :try_end_1d} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method getContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 98
     iget-object v0, p0, Landroidx/media/MediaSessionManager;->mImpl:Landroidx/media/MediaSessionManager$MediaSessionManagerImpl;
@@ -139,9 +139,9 @@
 .end method
 
 .method public isTrustedForMediaControl(Landroidx/media/MediaSessionManager$RemoteUserInfo;)Z
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 94
     iget-object v0, p0, Landroidx/media/MediaSessionManager;->mImpl:Landroidx/media/MediaSessionManager$MediaSessionManagerImpl;
@@ -155,7 +155,7 @@
     return p1
 
     .line 92
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v0, "userInfo should not be null"

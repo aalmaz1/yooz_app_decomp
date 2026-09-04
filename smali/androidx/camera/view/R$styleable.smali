@@ -23,13 +23,13 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/camera/view/R$styleable;->PreviewView:[I
 
@@ -37,7 +37,7 @@
 
     nop
 
-    :array_a
+    :array_0
     .array-data 4
         0x7f0401a7
         0x7f0402c2
@@ -45,7 +45,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

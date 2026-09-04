@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ILandroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final onCaptureResult(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 4
+    .locals 2
 
     iget v0, p0, Landroidx/camera/camera2/internal/ExposureControl$$ExternalSyntheticLambda2;->f$0:I
 

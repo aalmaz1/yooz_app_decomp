@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/view/menu/MenuItemImpl;)V
-    .registers 2
+    .locals 0
 
     .line 815
     iput-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onActionProviderVisibilityChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 818
     iget-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl$1;->this$0:Landroidx/appcompat/view/menu/MenuItemImpl;

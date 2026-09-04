@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 77
     iput-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onContinueLoadingRequested(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 80
     iget-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;
@@ -59,7 +59,7 @@
 .end method
 
 .method public bridge synthetic onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
-    .registers 2
+    .locals 0
 
     .line 77
     check-cast p1, Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -70,7 +70,7 @@
 .end method
 
 .method public onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 85
     iget-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;

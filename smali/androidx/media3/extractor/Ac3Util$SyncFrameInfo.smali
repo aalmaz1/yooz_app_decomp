@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;IIIIII)V
-    .registers 8
+    .locals 0
 
     .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;IIIIIILandroidx/media3/extractor/Ac3Util$1;)V
-    .registers 9
+    .locals 0
 
     .line 45
     invoke-direct/range {p0 .. p7}, Landroidx/media3/extractor/Ac3Util$SyncFrameInfo;-><init>(Ljava/lang/String;IIIIII)V

@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static loadQuirks()Ljava/util/List;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -34,7 +34,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 45
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/MediaFormatMustNotUseFrameRateToFindEncoderQuirk;
@@ -44,12 +44,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 47
-    :cond_13
+    :cond_0
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 48
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;
@@ -59,12 +59,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 50
-    :cond_21
+    :cond_1
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/DeactivateEncoderSurfaceBeforeStopEncoderQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     .line 51
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/DeactivateEncoderSurfaceBeforeStopEncoderQuirk;
@@ -74,12 +74,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 53
-    :cond_2f
+    :cond_2
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_3
 
     .line 54
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;
@@ -89,12 +89,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 56
-    :cond_3d
+    :cond_3
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_4
 
     .line 57
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;
@@ -104,12 +104,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 59
-    :cond_4b
+    :cond_4
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/EncoderNotUsePersistentInputSurfaceQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_5
 
     .line 60
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/EncoderNotUsePersistentInputSurfaceQuirk;
@@ -119,12 +119,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 62
-    :cond_59
+    :cond_5
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/VideoEncoderCrashQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_6
 
     .line 63
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/VideoEncoderCrashQuirk;
@@ -134,12 +134,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 65
-    :cond_67
+    :cond_6
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ExcludeStretchedVideoQualityQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_7
 
     .line 66
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/ExcludeStretchedVideoQualityQuirk;
@@ -149,12 +149,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 68
-    :cond_75
+    :cond_7
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaStoreVideoCannotWrite;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_8
 
     .line 69
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/MediaStoreVideoCannotWrite;
@@ -164,12 +164,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 71
-    :cond_83
+    :cond_8
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/AudioEncoderIgnoresInputTimestampQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_91
+    if-eqz v1, :cond_9
 
     .line 72
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/AudioEncoderIgnoresInputTimestampQuirk;
@@ -179,12 +179,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 74
-    :cond_91
+    :cond_9
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/VideoEncoderSuspendDoesNotIncludeSuspendTimeQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_9f
+    if-eqz v1, :cond_a
 
     .line 75
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/VideoEncoderSuspendDoesNotIncludeSuspendTimeQuirk;
@@ -194,12 +194,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 77
-    :cond_9f
+    :cond_a
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/NegativeLatLongSavesIncorrectlyQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_ad
+    if-eqz v1, :cond_b
 
     .line 78
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/NegativeLatLongSavesIncorrectlyQuirk;
@@ -209,12 +209,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 80
-    :cond_ad
+    :cond_b
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/PreviewStretchWhenVideoCaptureIsBoundQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_bb
+    if-eqz v1, :cond_c
 
     .line 81
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/PreviewStretchWhenVideoCaptureIsBoundQuirk;
@@ -224,12 +224,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 83
-    :cond_bb
+    :cond_c
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/PreviewDelayWhenVideoCaptureIsBoundQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_c9
+    if-eqz v1, :cond_d
 
     .line 84
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/PreviewDelayWhenVideoCaptureIsBoundQuirk;
@@ -239,12 +239,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 86
-    :cond_c9
+    :cond_d
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/AudioTimestampFramePositionIncorrectQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_d7
+    if-eqz v1, :cond_e
 
     .line 87
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/AudioTimestampFramePositionIncorrectQuirk;
@@ -254,12 +254,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 89
-    :cond_d7
+    :cond_e
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_e5
+    if-eqz v1, :cond_f
 
     .line 90
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;
@@ -269,12 +269,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 92
-    :cond_e5
+    :cond_f
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ExtraSupportedResolutionQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_f3
+    if-eqz v1, :cond_10
 
     .line 93
     new-instance v1, Landroidx/camera/video/internal/compat/quirk/ExtraSupportedResolutionQuirk;
@@ -283,6 +283,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_f3
+    :cond_10
     return-object v0
 .end method

@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,13 +30,13 @@
 
 # virtual methods
 .method public close()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public open(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "CloseMethodName must not be null."
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public warnIfOpen()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

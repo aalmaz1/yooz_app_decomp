@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method private static isMotorolaMotoG3()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "motorola"
 
@@ -28,7 +28,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "MotoG3"
 
@@ -38,21 +38,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isSamsungSMG532F()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "samsung"
 
@@ -63,7 +63,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "SM-G532F"
 
@@ -73,21 +73,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isSamsungSMGJ700F()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "samsung"
 
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "SM-J700F"
 
@@ -108,52 +108,52 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method static load(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Z
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/YuvImageOnePixelShiftQuirk;->isMotorolaMotoG3()Z
 
     move-result p0
 
-    if-nez p0, :cond_15
+    if-nez p0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/YuvImageOnePixelShiftQuirk;->isSamsungSMG532F()Z
 
     move-result p0
 
-    if-nez p0, :cond_15
+    if-nez p0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/YuvImageOnePixelShiftQuirk;->isSamsungSMGJ700F()Z
 
     move-result p0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_16
+    :goto_1
     return p0
 .end method

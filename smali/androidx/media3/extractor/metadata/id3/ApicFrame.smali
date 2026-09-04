@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 101
     new-instance v0, Landroidx/media3/extractor/metadata/id3/ApicFrame$1;
@@ -42,7 +42,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "APIC"
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I[B)V
-    .registers 6
+    .locals 1
 
     const-string v0, "APIC"
 
@@ -118,18 +118,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_3
 
     .line 66
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -140,12 +140,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 69
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/id3/ApicFrame;
 
     .line 70
@@ -153,7 +153,7 @@
 
     iget v3, p1, Landroidx/media3/extractor/metadata/id3/ApicFrame;->pictureType:I
 
-    if-ne v2, v3, :cond_39
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/ApicFrame;->mimeType:Ljava/lang/String;
 
@@ -164,7 +164,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/ApicFrame;->description:Ljava/lang/String;
 
@@ -175,7 +175,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/ApicFrame;->pictureData:[B
 
@@ -186,23 +186,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     move v0, v1
 
-    :goto_3a
+    :goto_0
     return v0
 
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x20f
 
@@ -218,18 +218,18 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v1, v2
 
-    :goto_12
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -237,13 +237,13 @@
     .line 81
     iget-object v1, p0, Landroidx/media3/extractor/metadata/id3/ApicFrame;->description:Ljava/lang/String;
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :cond_1d
+    :cond_1
     add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
@@ -261,7 +261,7 @@
 .end method
 
 .method public populateMediaMetadata(Landroidx/media3/common/MediaMetadata$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 58
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/ApicFrame;->pictureData:[B
@@ -274,7 +274,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 88
     new-instance v0, Ljava/lang/StringBuilder;
@@ -319,7 +319,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 95
     iget-object p2, p0, Landroidx/media3/extractor/metadata/id3/ApicFrame;->mimeType:Ljava/lang/String;

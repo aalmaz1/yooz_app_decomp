@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 4988
     new-instance v0, Ljava/util/ArrayList;
@@ -76,7 +76,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 4984
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 .end method
 
 .method static at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
-    .registers 3
+    .locals 2
 
     .line 5013
     sget v0, Landroidx/core/R$id;->tag_unhandled_key_event_manager:I
@@ -108,7 +108,7 @@
 
     check-cast v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 5016
     new-instance v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
@@ -120,33 +120,33 @@
 
     invoke-virtual {p0, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    :cond_14
+    :cond_0
     return-object v0
 .end method
 
 .method private dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;
-    .registers 7
+    .locals 4
 
     .line 5042
     iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
-    goto :goto_30
+    goto :goto_1
 
     .line 5045
-    :cond_c
+    :cond_0
     instance-of v0, p1, Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2
 
     .line 5046
     move-object v0, p1
@@ -160,8 +160,8 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    :goto_19
-    if-ltz v2, :cond_29
+    :goto_0
+    if-ltz v2, :cond_2
 
     .line 5049
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -173,32 +173,32 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     return-object v3
 
-    :cond_26
+    :cond_1
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 5056
-    :cond_29
+    :cond_2
     invoke-direct {p0, p1, p2}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_30
+    if-eqz p2, :cond_3
 
     return-object p1
 
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_1
     return-object v1
 .end method
 
 .method private getCapturedKeys()Landroid/util/SparseArray;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -212,7 +212,7 @@
     .line 5006
     iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 5007
     new-instance v0, Landroid/util/SparseArray;
@@ -222,14 +222,14 @@
     iput-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;
 
     .line 5009
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mCapturedKeys:Landroid/util/SparseArray;
 
     return-object v0
 .end method
 
 .method private onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
-    .registers 7
+    .locals 4
 
     .line 5101
     sget v0, Landroidx/core/R$id;->tag_unhandled_key_listeners:I
@@ -241,7 +241,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 5105
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -252,8 +252,8 @@
 
     sub-int/2addr v1, v2
 
-    :goto_10
-    if-ltz v1, :cond_22
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 5106
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -266,53 +266,53 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_0
 
     return v2
 
-    :cond_1f
+    :cond_0
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method private recalcViewsWithUnhandled()V
-    .registers 7
+    .locals 6
 
     .line 5141
     iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 5142
     invoke-virtual {v0}, Ljava/util/WeakHashMap;->clear()V
 
     .line 5144
-    :cond_7
+    :cond_0
     sget-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_1
 
     return-void
 
     .line 5147
-    :cond_10
+    :cond_1
     monitor-enter v0
 
     .line 5148
-    :try_start_11
+    :try_start_0
     iget-object v1, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_2
 
     .line 5149
     new-instance v1, Ljava/util/WeakHashMap;
@@ -322,15 +322,15 @@
     iput-object v1, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
 
     .line 5151
-    :cond_1c
+    :cond_2
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_22
-    if-ltz v1, :cond_59
+    :goto_0
+    if-ltz v1, :cond_5
 
     .line 5152
     sget-object v2, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;
@@ -348,15 +348,15 @@
 
     check-cast v3, Landroid/view/View;
 
-    if-nez v3, :cond_38
+    if-nez v3, :cond_3
 
     .line 5155
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    goto :goto_56
+    goto :goto_2
 
     .line 5157
-    :cond_38
+    :cond_3
     iget-object v2, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
 
     sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -369,10 +369,10 @@
     move-result-object v2
 
     .line 5159
-    :goto_43
+    :goto_1
     instance-of v3, v2, Landroid/view/View;
 
-    if-eqz v3, :cond_56
+    if-eqz v3, :cond_4
 
     .line 5160
     iget-object v3, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
@@ -390,32 +390,32 @@
 
     move-result-object v2
 
-    goto :goto_43
+    goto :goto_1
 
-    :cond_56
-    :goto_56
+    :cond_4
+    :goto_2
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 5165
-    :cond_59
+    :cond_5
     monitor-exit v0
 
     return-void
 
-    :catchall_5b
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_5d
-    .catchall {:try_start_11 .. :try_end_5d} :catchall_5b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method static registerListeningView(Landroid/view/View;)V
-    .registers 4
+    .locals 3
 
     .line 5119
     sget-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;
@@ -423,17 +423,17 @@
     monitor-enter v0
 
     .line 5120
-    :try_start_3
+    :try_start_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_7
+    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -446,7 +446,7 @@
 
     move-result-object v2
 
-    if-ne v2, p0, :cond_7
+    if-ne v2, p0, :cond_0
 
     .line 5122
     monitor-exit v0
@@ -454,7 +454,7 @@
     return-void
 
     .line 5125
-    :cond_1b
+    :cond_1
     sget-object v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;
 
     new-instance v2, Ljava/lang/ref/WeakReference;
@@ -468,18 +468,18 @@
 
     return-void
 
-    :catchall_27
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_29
-    .catchall {:try_start_3 .. :try_end_29} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method static unregisterListeningView(Landroid/view/View;)V
-    .registers 5
+    .locals 4
 
     .line 5130
     sget-object v0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;
@@ -489,15 +489,15 @@
     const/4 v1, 0x0
 
     .line 5131
-    :goto_4
-    :try_start_4
+    :goto_0
+    :try_start_0
     sget-object v2, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->sViewsWithListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_20
+    if-ge v1, v3, :cond_1
 
     .line 5132
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -510,7 +510,7 @@
 
     move-result-object v3
 
-    if-ne v3, p0, :cond_1d
+    if-ne v3, p0, :cond_0
 
     .line 5133
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -520,23 +520,23 @@
 
     return-void
 
-    :cond_1d
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 5137
-    :cond_20
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_22
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_24
-    .catchall {:try_start_4 .. :try_end_24} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
@@ -544,20 +544,20 @@
 
 # virtual methods
 .method dispatch(Landroid/view/View;Landroid/view/KeyEvent;)Z
-    .registers 5
+    .locals 2
 
     .line 5023
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 5024
     invoke-direct {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->recalcViewsWithUnhandled()V
 
     .line 5027
-    :cond_9
+    :cond_0
     invoke-direct {p0, p1, p2}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;
 
     move-result-object p1
@@ -567,21 +567,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     .line 5032
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result p2
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     .line 5033
     invoke-static {p2}, Landroid/view/KeyEvent;->isModifierKey(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     .line 5034
     invoke-direct {p0}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->getCapturedKeys()Landroid/util/SparseArray;
@@ -594,41 +594,41 @@
 
     invoke-virtual {v0, p2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    :cond_2b
-    if-eqz p1, :cond_2f
+    :cond_1
+    if-eqz p1, :cond_2
 
     const/4 p1, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     const/4 p1, 0x0
 
-    :goto_30
+    :goto_0
     return p1
 .end method
 
 .method preDispatch(Landroid/view/KeyEvent;)Z
-    .registers 7
+    .locals 5
 
     .line 5068
     iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mLastDispatchedPreViewKeyEvent:Ljava/lang/ref/WeakReference;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 5069
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-ne v0, p1, :cond_c
+    if-ne v0, p1, :cond_0
 
     return v1
 
     .line 5072
-    :cond_c
+    :cond_0
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -647,7 +647,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_32
+    if-ne v2, v3, :cond_1
 
     .line 5079
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
@@ -658,7 +658,7 @@
 
     move-result v2
 
-    if-ltz v2, :cond_32
+    if-ltz v2, :cond_1
 
     .line 5081
     invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -670,13 +670,13 @@
     .line 5082
     invoke-virtual {v0, v2}, Landroid/util/SparseArray;->removeAt(I)V
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_32
+    :cond_1
     const/4 v4, 0x0
 
-    :goto_33
-    if-nez v4, :cond_40
+    :goto_0
+    if-nez v4, :cond_2
 
     .line 5086
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
@@ -691,8 +691,8 @@
 
     check-cast v4, Ljava/lang/ref/WeakReference;
 
-    :cond_40
-    if-eqz v4, :cond_54
+    :cond_2
+    if-eqz v4, :cond_4
 
     .line 5089
     invoke-virtual {v4}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -701,21 +701,21 @@
 
     check-cast v0, Landroid/view/View;
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_3
 
     .line 5090
     invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v1
 
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_3
 
     .line 5091
     invoke-direct {p0, v0, p1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
 
-    :cond_53
+    :cond_3
     return v3
 
-    :cond_54
+    :cond_4
     return v1
 .end method

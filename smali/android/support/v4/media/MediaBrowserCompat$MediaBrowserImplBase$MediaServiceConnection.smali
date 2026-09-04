@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;)V
-    .registers 2
+    .locals 0
 
     .line 1497
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
@@ -34,7 +34,7 @@
 .end method
 
 .method private postOrRun(Ljava/lang/Runnable;)V
-    .registers 4
+    .locals 2
 
     .line 1581
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -53,29 +53,29 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
     .line 1582
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 1584
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mHandler:Landroid/support/v4/media/MediaBrowserCompat$CallbackHandler;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/media/MediaBrowserCompat$CallbackHandler;->post(Ljava/lang/Runnable;)Z
 
-    :goto_1d
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method isCurrent(Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 1592
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
@@ -84,39 +84,39 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, p0, :cond_15
+    if-ne v0, p0, :cond_1
 
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
 
     iget v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
 
     iget v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     return v1
 
     .line 1594
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
 
     iget v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
 
     iget v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->mState:I
 
-    if-eq v0, v1, :cond_59
+    if-eq v0, v1, :cond_2
 
     .line 1597
     new-instance v0, Ljava/lang/StringBuilder;
@@ -173,14 +173,14 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_59
+    :cond_2
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .registers 4
+    .locals 1
 
     .line 1502
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection$1;
@@ -193,7 +193,7 @@
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 1
 
     .line 1552
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection$2;

@@ -40,12 +40,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     const/4 v0, 0x3
 
     .line 60
-    :try_start_1
+    :try_start_0
     const-class v1, Landroid/graphics/Typeface;
 
     const-string v2, "native_instance"
@@ -102,22 +102,22 @@
 
     .line 66
     invoke-virtual {v3, v7}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
-    :try_end_34
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_34} :catch_37
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_34} :catch_35
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_48
+    goto :goto_1
 
-    :catch_35
+    :catch_0
     move-exception v1
 
-    goto :goto_38
+    goto :goto_0
 
-    :catch_37
+    :catch_1
     move-exception v1
 
     .line 68
-    :goto_38
+    :goto_0
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -137,7 +137,7 @@
     move-object v3, v2
 
     .line 73
-    :goto_48
+    :goto_1
     sput-object v1, Landroidx/core/graphics/WeightTypefaceApi26;->sNativeInstance:Ljava/lang/reflect/Field;
 
     .line 74
@@ -164,7 +164,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -173,12 +173,12 @@
 .end method
 
 .method private static create(J)Landroid/graphics/Typeface;
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 150
-    :try_start_1
+    :try_start_0
     sget-object v1, Landroidx/core/graphics/WeightTypefaceApi26;->sConstructor:Ljava/lang/reflect/Constructor;
 
     const/4 v2, 0x1
@@ -198,32 +198,32 @@
     move-result-object p0
 
     check-cast p0, Landroid/graphics/Typeface;
-    :try_end_13
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_13} :catch_14
-    .catch Ljava/lang/InstantiationException; {:try_start_1 .. :try_end_13} :catch_14
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_14
+    :catch_0
     return-object v0
 .end method
 
 .method static createWeightStyle(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
-    .registers 9
+    .locals 6
 
     .line 98
     invoke-static {}, Landroidx/core/graphics/WeightTypefaceApi26;->isPrivateApiAvailable()Z
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_8
+    :cond_0
     shl-int/lit8 v0, p1, 0x1
 
     or-int/2addr v0, p2
@@ -234,7 +234,7 @@
     monitor-enter v1
 
     .line 106
-    :try_start_e
+    :try_start_0
     invoke-static {p0}, Landroidx/core/graphics/WeightTypefaceApi26;->getNativeInstance(Landroid/graphics/Typeface;)J
 
     move-result-wide v2
@@ -248,7 +248,7 @@
 
     check-cast v4, Landroid/util/SparseArray;
 
-    if-nez v4, :cond_26
+    if-nez v4, :cond_1
 
     .line 109
     new-instance v4, Landroid/util/SparseArray;
@@ -260,17 +260,17 @@
     .line 110
     invoke-virtual {p0, v2, v3, v4}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    goto :goto_30
+    goto :goto_0
 
     .line 112
-    :cond_26
+    :cond_1
     invoke-virtual {v4, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Landroid/graphics/Typeface;
 
-    if-eqz p0, :cond_30
+    if-eqz p0, :cond_2
 
     .line 114
     monitor-exit v1
@@ -278,8 +278,8 @@
     return-object p0
 
     .line 119
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_0
     invoke-static {v2, v3, p1, p2}, Landroidx/core/graphics/WeightTypefaceApi26;->nativeCreateFromTypefaceWithExactStyle(JIZ)J
 
     move-result-wide p0
@@ -297,18 +297,18 @@
 
     return-object p0
 
-    :catchall_3d
+    :catchall_0
     move-exception p0
 
     monitor-exit v1
-    :try_end_3f
-    .catchall {:try_start_e .. :try_end_3f} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method private static getNativeInstance(Landroid/graphics/Typeface;)J
-    .registers 3
+    .locals 2
 
     .line 127
     :try_start_0
@@ -317,12 +317,12 @@
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->getLong(Ljava/lang/Object;)J
 
     move-result-wide v0
-    :try_end_6
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-wide v0
 
-    :catch_7
+    :catch_0
     move-exception p0
 
     .line 129
@@ -334,26 +334,26 @@
 .end method
 
 .method private static isPrivateApiAvailable()Z
-    .registers 1
+    .locals 1
 
     .line 82
     sget-object v0, Landroidx/core/graphics/WeightTypefaceApi26;->sNativeInstance:Ljava/lang/reflect/Field;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method private static nativeCreateFromTypefaceWithExactStyle(JIZ)J
-    .registers 6
+    .locals 2
 
     .line 138
     :try_start_0
@@ -400,13 +400,13 @@
     invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide p0
-    :try_end_25
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_25} :catch_2d
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_25} :catch_26
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-wide p0
 
-    :catch_26
+    :catch_0
     move-exception p0
 
     .line 143
@@ -416,7 +416,7 @@
 
     throw p1
 
-    :catch_2d
+    :catch_1
     move-exception p0
 
     .line 141

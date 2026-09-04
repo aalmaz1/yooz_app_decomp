@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     const/4 v0, -0x2
 
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 1385
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 1390
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .locals 2
 
     .line 1377
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -92,7 +92,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 2
+    .locals 0
 
     .line 1405
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/appcompat/app/ActionBar$LayoutParams;)V
-    .registers 3
+    .locals 1
 
     .line 1399
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V

@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 1
 
     .line 828
     invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method addListener(Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CaptureResultListener;)V
-    .registers 3
+    .locals 1
 
     .line 834
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CameraControlSessionCallback;->mResultListeners:Ljava/util/Set;
@@ -62,7 +62,7 @@
 .end method
 
 .method synthetic lambda$onCaptureCompleted$0$androidx-camera-camera2-internal-Camera2CameraControlImpl$CameraControlSessionCallback(Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 6
+    .locals 4
 
     .line 849
     new-instance v0, Ljava/util/HashSet;
@@ -76,13 +76,13 @@
 
     move-result-object v1
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -95,32 +95,32 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_0
 
     .line 853
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
     .line 857
-    :cond_21
+    :cond_1
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_2
 
     .line 858
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CameraControlSessionCallback;->mResultListeners:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
 
-    :cond_2c
+    :cond_2
     return-void
 .end method
 
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 4
+    .locals 0
 
     .line 848
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CameraControlSessionCallback;->mExecutor:Ljava/util/concurrent/Executor;
@@ -135,7 +135,7 @@
 .end method
 
 .method removeListener(Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CaptureResultListener;)V
-    .registers 3
+    .locals 1
 
     .line 839
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CameraControlSessionCallback;->mResultListeners:Ljava/util/Set;

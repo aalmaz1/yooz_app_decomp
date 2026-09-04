@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
-    .registers 5
+    .locals 0
 
     .line 1174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public send(Landroid/support/v4/app/INotificationSideChannel;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -74,7 +74,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1189
     new-instance v0, Ljava/lang/StringBuilder;

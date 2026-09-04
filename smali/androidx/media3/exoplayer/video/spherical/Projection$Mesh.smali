@@ -20,7 +20,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;)V
-    .registers 2
+    .locals 0
 
     .line 236
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public getSubMesh(I)Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;
-    .registers 3
+    .locals 1
 
     .line 247
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;->subMeshes:[Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;
@@ -45,7 +45,7 @@
 .end method
 
 .method public getSubMeshCount()I
-    .registers 2
+    .locals 1
 
     .line 242
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;->subMeshes:[Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,14 +14,14 @@
 .end method
 
 .method static create()Landroid/os/Handler;
-    .registers 2
+    .locals 2
 
     .line 36
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 37
     new-instance v0, Landroid/os/Handler;
@@ -32,14 +32,14 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    goto :goto_15
+    goto :goto_0
 
     .line 39
-    :cond_10
+    :cond_0
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    :goto_15
+    :goto_0
     return-object v0
 .end method

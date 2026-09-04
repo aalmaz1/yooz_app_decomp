@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "\r\n|\n|\r"
 
@@ -39,7 +39,7 @@
 .end method
 
 .method protected constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -65,7 +65,7 @@
 .end method
 
 .method static synthetic access$100()Lcom/google/common/base/Splitter;
-    .registers 1
+    .locals 1
 
     .line 465
     sget-object v0, Lcom/google/common/io/CharSource$CharSequenceCharSource;->LINE_SPLITTER:Lcom/google/common/base/Splitter;
@@ -74,7 +74,7 @@
 .end method
 
 .method private linesIterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 487
     iget-object v0, p0, Lcom/google/common/io/CharSource$CharSequenceCharSource;->seq:Ljava/lang/CharSequence;
@@ -104,21 +104,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public length()J
-    .registers 3
+    .locals 2
 
     .line 492
     iget-object v0, p0, Lcom/google/common/io/CharSource$CharSequenceCharSource;->seq:Ljava/lang/CharSequence;
@@ -133,7 +133,7 @@
 .end method
 
 .method public lengthIfKnown()Lcom/google/common/base/Optional;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -164,7 +164,7 @@
 .end method
 
 .method public openStream()Ljava/io/Reader;
-    .registers 3
+    .locals 2
 
     .line 477
     new-instance v0, Lcom/google/common/io/CharSequenceReader;
@@ -177,7 +177,7 @@
 .end method
 
 .method public read()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 482
     iget-object v0, p0, Lcom/google/common/io/CharSource$CharSequenceCharSource;->seq:Ljava/lang/CharSequence;
@@ -190,7 +190,7 @@
 .end method
 
 .method public readFirstLine()Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation runtime Ljavax/annotation/CheckForNull;
     .end annotation
 
@@ -204,7 +204,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -212,17 +212,17 @@
 
     check-cast v0, Ljava/lang/String;
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_12
+    :goto_0
     return-object v0
 .end method
 
 .method public readLines()Lcom/google/common/collect/ImmutableList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -245,7 +245,7 @@
 .end method
 
 .method public readLines(Lcom/google/common/io/LineProcessor;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation runtime Lcom/google/common/io/ParametricNullness;
     .end annotation
 
@@ -280,12 +280,12 @@
     move-result-object v0
 
     .line 539
-    :cond_4
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_1
 
     .line 540
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -298,10 +298,10 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_0
 
     .line 544
-    :cond_16
+    :cond_1
     invoke-interface {p1}, Lcom/google/common/io/LineProcessor;->getResult()Ljava/lang/Object;
 
     move-result-object p1
@@ -310,7 +310,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 549
     new-instance v0, Ljava/lang/StringBuilder;

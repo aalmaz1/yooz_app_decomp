@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/fragment/app/Fragment;ZLandroidx/collection/ArrayMap;Landroid/view/View;Landroidx/fragment/app/FragmentTransitionImpl;Landroid/graphics/Rect;)V
-    .registers 8
+    .locals 0
 
     .line 671
     iput-object p1, p0, Landroidx/fragment/app/FragmentTransition$5;->val$inFragment:Landroidx/fragment/app/Fragment;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .locals 5
 
     .line 674
     iget-object v0, p0, Landroidx/fragment/app/FragmentTransition$5;->val$inFragment:Landroidx/fragment/app/Fragment;
@@ -78,7 +78,7 @@
     .line 676
     iget-object v0, p0, Landroidx/fragment/app/FragmentTransition$5;->val$epicenterView:Landroid/view/View;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 677
     iget-object v1, p0, Landroidx/fragment/app/FragmentTransition$5;->val$impl:Landroidx/fragment/app/FragmentTransitionImpl;
@@ -87,6 +87,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroidx/fragment/app/FragmentTransitionImpl;->getBoundsOnScreen(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    :cond_17
+    :cond_0
     return-void
 .end method

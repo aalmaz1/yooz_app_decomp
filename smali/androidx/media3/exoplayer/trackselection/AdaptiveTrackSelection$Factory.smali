@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x61a8
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(IIIF)V
-    .registers 14
+    .locals 9
 
     const/16 v4, 0x4ff
 
@@ -79,7 +79,7 @@
 .end method
 
 .method public constructor <init>(IIIFFLandroidx/media3/common/util/Clock;)V
-    .registers 16
+    .locals 9
 
     const/16 v4, 0x4ff
 
@@ -106,7 +106,7 @@
 .end method
 
 .method public constructor <init>(IIIIIF)V
-    .registers 16
+    .locals 9
 
     const/high16 v7, 0x3f400000    # 0.75f
 
@@ -133,7 +133,7 @@
 .end method
 
 .method public constructor <init>(IIIIIFFLandroidx/media3/common/util/Clock;)V
-    .registers 9
+    .locals 0
 
     .line 220
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -168,7 +168,7 @@
 
 # virtual methods
 .method protected createAdaptiveTrackSelection(Landroidx/media3/common/TrackGroup;[IILandroidx/media3/exoplayer/upstream/BandwidthMeter;Lcom/google/common/collect/ImmutableList;)Landroidx/media3/exoplayer/trackselection/AdaptiveTrackSelection;
-    .registers 25
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -233,7 +233,7 @@
 .end method
 
 .method public final createTrackSelections([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection$Definition;Landroidx/media3/exoplayer/upstream/BandwidthMeter;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/common/Timeline;)[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
-    .registers 20
+    .locals 15
 
     move-object/from16 v0, p1
 
@@ -252,34 +252,34 @@
     move v4, v3
 
     .line 241
-    :goto_b
+    :goto_0
     array-length v5, v0
 
-    if-ge v4, v5, :cond_45
+    if-ge v4, v5, :cond_3
 
     .line 242
     aget-object v5, v0, v4
 
-    if-eqz v5, :cond_42
+    if-eqz v5, :cond_2
 
     .line 243
     iget-object v6, v5, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection$Definition;->tracks:[I
 
     array-length v6, v6
 
-    if-nez v6, :cond_18
+    if-nez v6, :cond_0
 
-    goto :goto_42
+    goto :goto_2
 
     .line 247
-    :cond_18
+    :cond_0
     iget-object v6, v5, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection$Definition;->tracks:[I
 
     array-length v6, v6
 
     const/4 v7, 0x1
 
-    if-ne v6, v7, :cond_2c
+    if-ne v6, v7, :cond_1
 
     .line 248
     new-instance v6, Landroidx/media3/exoplayer/trackselection/FixedTrackSelection;
@@ -294,10 +294,10 @@
 
     invoke-direct {v6, v7, v8, v5}, Landroidx/media3/exoplayer/trackselection/FixedTrackSelection;-><init>(Landroidx/media3/common/TrackGroup;II)V
 
-    goto :goto_40
+    goto :goto_1
 
     .line 252
-    :cond_2c
+    :cond_1
     iget-object v10, v5, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection$Definition;->group:Landroidx/media3/common/TrackGroup;
 
     iget-object v11, v5, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection$Definition;->tracks:[I
@@ -322,15 +322,15 @@
 
     move-result-object v6
 
-    :goto_40
+    :goto_1
     aput-object v6, v2, v4
 
-    :cond_42
-    :goto_42
+    :cond_2
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_45
+    :cond_3
     return-object v2
 .end method

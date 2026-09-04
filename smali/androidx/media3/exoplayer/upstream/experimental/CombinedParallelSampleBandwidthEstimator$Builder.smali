@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;)Landroidx/media3/exoplayer/upstream/experimental/BandwidthStatistic;
-    .registers 1
+    .locals 0
 
     .line 38
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;->bandwidthStatistic:Landroidx/media3/exoplayer/upstream/experimental/BandwidthStatistic;
@@ -56,7 +56,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 38
     iget p0, p0, Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;->minSamples:I
@@ -65,7 +65,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 38
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;->minBytesTransferred:J
@@ -74,7 +74,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;)Landroidx/media3/common/util/Clock;
-    .registers 1
+    .locals 0
 
     .line 38
     iget-object p0, p0, Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;->clock:Landroidx/media3/common/util/Clock;
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator;
-    .registers 3
+    .locals 2
 
     .line 107
     new-instance v0, Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator;
@@ -98,7 +98,7 @@
 .end method
 
 .method public setBandwidthStatistic(Landroidx/media3/exoplayer/upstream/experimental/BandwidthStatistic;)Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;
-    .registers 2
+    .locals 0
 
     .line 59
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -110,7 +110,7 @@
 .end method
 
 .method setClock(Landroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;
-    .registers 2
+    .locals 0
 
     .line 102
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;->clock:Landroidx/media3/common/util/Clock;
@@ -119,23 +119,23 @@
 .end method
 
 .method public setMinBytesTransferred(J)Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 87
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 88
@@ -145,19 +145,19 @@
 .end method
 
 .method public setMinSamples(I)Landroidx/media3/exoplayer/upstream/experimental/CombinedParallelSampleBandwidthEstimator$Builder;
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_4
+    if-ltz p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 73
-    :goto_5
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 74

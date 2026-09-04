@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/audio/SpeedProvider;)V
-    .registers 4
+    .locals 2
 
     .line 95
     invoke-direct {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;-><init>()V
@@ -91,7 +91,7 @@
 .end method
 
 .method private calculateSpeedAdjustedTime(J)J
-    .registers 12
+    .locals 9
 
     .line 277
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->inputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
@@ -102,8 +102,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-lez v0, :cond_17
+    :goto_0
+    if-lez v0, :cond_0
 
     .line 278
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->inputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
@@ -114,14 +114,14 @@
 
     cmp-long v1, v1, p1
 
-    if-lez v1, :cond_17
+    if-lez v1, :cond_0
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 282
-    :cond_17
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->inputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
 
     invoke-virtual {v1}, Landroidx/media3/common/util/LongArray;->size()I
@@ -130,7 +130,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    if-ne v0, v1, :cond_46
+    if-ne v0, v1, :cond_2
 
     .line 283
     iget-wide v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastSpeedAdjustedInputTimeUs:J
@@ -143,7 +143,7 @@
 
     cmp-long v1, v1, v3
 
-    if-gez v1, :cond_3d
+    if-gez v1, :cond_1
 
     .line 284
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->inputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
@@ -164,7 +164,7 @@
     iput-wide v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastSpeedAdjustedOutputTimeUs:J
 
     .line 287
-    :cond_3d
+    :cond_1
     iget-wide v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastSpeedAdjustedInputTimeUs:J
 
     sub-long v0, p1, v0
@@ -174,10 +174,10 @@
 
     move-result-wide v0
 
-    goto :goto_70
+    goto :goto_1
 
     .line 290
-    :cond_46
+    :cond_2
     iget-wide v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastSpeedAdjustedInputTimeUs:J
 
     sub-long v1, p1, v1
@@ -232,7 +232,7 @@
     move-result-wide v0
 
     .line 300
-    :goto_70
+    :goto_1
     iput-wide p1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastSpeedAdjustedInputTimeUs:J
 
     .line 301
@@ -246,7 +246,7 @@
 .end method
 
 .method private static divide(JJ)D
-    .registers 4
+    .locals 0
 
     long-to-double p0, p0
 
@@ -258,14 +258,14 @@
 .end method
 
 .method private getMediaDurationUsAtCurrentSpeed(J)J
-    .registers 4
+    .locals 1
 
     .line 358
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->isUsingSonic()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 359
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
@@ -274,19 +274,19 @@
 
     move-result-wide p1
 
-    :cond_c
+    :cond_0
     return-wide p1
 .end method
 
 .method private getPlayoutDurationUsAtCurrentSpeed(J)J
-    .registers 4
+    .locals 1
 
     .line 352
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->isUsingSonic()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 353
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
@@ -295,12 +295,12 @@
 
     move-result-wide p1
 
-    :cond_c
+    :cond_0
     return-wide p1
 .end method
 
 .method private isUsingSonic()Z
-    .registers 4
+    .locals 3
 
     .line 387
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lock:Ljava/lang/Object;
@@ -308,40 +308,40 @@
     monitor-enter v0
 
     .line 388
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->currentSpeed:F
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     monitor-exit v0
 
     return v1
 
-    :catchall_10
+    :catchall_0
     move-exception v1
 
     .line 389
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private processPendingCallbacks()V
-    .registers 6
+    .locals 5
 
     .line 310
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lock:Ljava/lang/Object;
@@ -349,15 +349,15 @@
     monitor-enter v0
 
     .line 311
-    :goto_3
-    :try_start_3
+    :goto_0
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->pendingCallbacks:Ljava/util/Queue;
 
     invoke-interface {v1}, Ljava/util/Queue;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->pendingCallbackInputTimesUs:Landroidx/media3/common/util/LongArrayQueue;
 
@@ -370,16 +370,16 @@
 
     cmp-long v1, v1, v3
 
-    if-lez v1, :cond_1d
+    if-lez v1, :cond_0
 
     invoke-virtual {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->isEnded()Z
 
     move-result v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_1
 
     .line 313
-    :cond_1d
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->pendingCallbacks:Ljava/util/Queue;
 
     .line 314
@@ -402,26 +402,26 @@
 
     invoke-interface {v1, v2, v3}, Landroidx/media3/common/util/TimestampConsumer;->onTimestamp(J)V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 317
-    :cond_33
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_35
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_37
-    .catchall {:try_start_3 .. :try_end_37} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private resetState()V
-    .registers 5
+    .locals 4
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "inputSegmentStartTimesUs",
@@ -441,7 +441,7 @@
     monitor-enter v0
 
     .line 396
-    :try_start_3
+    :try_start_0
     new-instance v1, Landroidx/media3/common/util/LongArray;
 
     invoke-direct {v1}, Landroidx/media3/common/util/LongArray;-><init>()V
@@ -483,8 +483,8 @@
 
     .line 404
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_3 .. :try_end_28} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 406
     iput-wide v2, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->bytesRead:J
@@ -496,20 +496,20 @@
 
     return-void
 
-    :catchall_2e
+    :catchall_0
     move-exception v1
 
     .line 404
-    :try_start_2f
+    :try_start_1
     monitor-exit v0
-    :try_end_30
-    .catchall {:try_start_2f .. :try_end_30} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method private updateLastProcessedInputTime()V
-    .registers 11
+    .locals 10
 
     .line 364
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lock:Ljava/lang/Object;
@@ -517,12 +517,12 @@
     monitor-enter v0
 
     .line 365
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->isUsingSonic()Z
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     .line 368
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
@@ -571,10 +571,10 @@
 
     iput-wide v3, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastProcessedInputTimeUs:J
 
-    goto :goto_47
+    goto :goto_0
 
     .line 377
-    :cond_31
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->bytesRead:J
 
     const-wide/32 v4, 0xf4240
@@ -601,23 +601,23 @@
     iput-wide v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lastProcessedInputTimeUs:J
 
     .line 383
-    :goto_47
+    :goto_0
     monitor-exit v0
 
     return-void
 
-    :catchall_49
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_4b
-    .catchall {:try_start_3 .. :try_end_4b} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private updateSpeed(FJ)V
-    .registers 6
+    .locals 2
 
     .line 321
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lock:Ljava/lang/Object;
@@ -625,12 +625,12 @@
     monitor-enter v0
 
     .line 322
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->currentSpeed:F
 
     cmpl-float v1, p1, v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_1
 
     .line 323
     invoke-direct {p0, p2, p3}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->updateSpeedChangeArrays(J)V
@@ -643,7 +643,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     .line 326
     iget-object p2, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
@@ -656,7 +656,7 @@
     invoke-virtual {p2, p1}, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->setPitch(F)V
 
     .line 330
-    :cond_1e
+    :cond_0
     iget-object p1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
 
     invoke-virtual {p1}, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->flush()V
@@ -670,23 +670,23 @@
     invoke-super {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;->getOutput()Ljava/nio/ByteBuffer;
 
     .line 334
-    :cond_29
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_3 .. :try_end_2d} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private updateSpeedChangeArrays(J)V
-    .registers 8
+    .locals 5
 
     .line 339
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->outputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
@@ -742,7 +742,7 @@
 
 # virtual methods
 .method public getDurationAfterProcessorApplied(J)J
-    .registers 4
+    .locals 1
 
     .line 107
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->speedProvider:Landroidx/media3/common/audio/SpeedProvider;
@@ -755,7 +755,7 @@
 .end method
 
 .method public getMediaDurationUs(J)J
-    .registers 11
+    .locals 8
 
     .line 246
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lock:Ljava/lang/Object;
@@ -763,7 +763,7 @@
     monitor-enter v0
 
     .line 247
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->outputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
 
     invoke-virtual {v1}, Landroidx/media3/common/util/LongArray;->size()I
@@ -772,8 +772,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_b
-    if-lez v1, :cond_1a
+    :goto_0
+    if-lez v1, :cond_0
 
     .line 248
     iget-object v2, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->outputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
@@ -784,14 +784,14 @@
 
     cmp-long v2, v2, p1
 
-    if-lez v2, :cond_1a
+    if-lez v2, :cond_0
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 251
-    :cond_1a
+    :cond_0
     iget-object v2, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->outputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
 
     .line 252
@@ -810,16 +810,16 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    if-ne v1, v2, :cond_30
+    if-ne v1, v2, :cond_1
 
     .line 255
     invoke-direct {p0, p1, p2}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->getMediaDurationUsAtCurrentSpeed(J)J
 
     move-result-wide p1
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_30
+    :cond_1
     long-to-double p1, p1
 
     .line 258
@@ -870,7 +870,7 @@
     move-result-wide p1
 
     .line 267
-    :goto_56
+    :goto_1
     iget-object v2, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->inputSegmentStartTimesUs:Landroidx/media3/common/util/LongArray;
 
     invoke-virtual {v2, v1}, Landroidx/media3/common/util/LongArray;->get(I)J
@@ -883,26 +883,26 @@
 
     return-wide v1
 
-    :catchall_5f
+    :catchall_0
     move-exception p1
 
     .line 268
     monitor-exit v0
-    :try_end_61
-    .catchall {:try_start_3 .. :try_end_61} :catchall_5f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public getOutput()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 180
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->isUsingSonic()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
 
@@ -910,22 +910,22 @@
 
     move-result-object v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     invoke-super {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;->getOutput()Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
     .line 181
-    :goto_11
+    :goto_0
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->processPendingCallbacks()V
 
     return-object v0
 .end method
 
 .method public getSpeedAdjustedTimeAsync(JLandroidx/media3/common/util/TimestampConsumer;)V
-    .registers 7
+    .locals 3
 
     .line 221
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->lock:Ljava/lang/Object;
@@ -933,21 +933,21 @@
     monitor-enter v0
 
     .line 222
-    :try_start_3
+    :try_start_0
     iget-wide v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->speedAdjustedTimeAsyncInputTimeUs:J
 
     cmp-long v1, v1, p1
 
-    if-gez v1, :cond_b
+    if-gez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_c
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 223
@@ -958,7 +958,7 @@
 
     cmp-long v1, p1, v1
 
-    if-gtz v1, :cond_1f
+    if-gtz v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->pendingCallbackInputTimesUs:Landroidx/media3/common/util/LongArrayQueue;
 
@@ -966,18 +966,18 @@
 
     move-result v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     .line 225
-    :cond_1f
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->isEnded()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_3
 
     .line 226
-    :cond_25
+    :cond_2
     invoke-direct {p0, p1, p2}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->calculateSpeedAdjustedTime(J)J
 
     move-result-wide p1
@@ -990,7 +990,7 @@
     return-void
 
     .line 229
-    :cond_2e
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->pendingCallbackInputTimesUs:Landroidx/media3/common/util/LongArrayQueue;
 
     invoke-virtual {v1, p1, p2}, Landroidx/media3/common/util/LongArrayQueue;->add(J)V
@@ -1005,25 +1005,25 @@
 
     return-void
 
-    :catchall_3a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_3c
-    .catchall {:try_start_3 .. :try_end_3c} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 187
     invoke-super {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;->isEnded()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
 
@@ -1031,21 +1031,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public onConfigure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -1063,7 +1063,7 @@
 .end method
 
 .method protected onFlush()V
-    .registers 2
+    .locals 1
 
     .line 192
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->resetState()V
@@ -1077,12 +1077,12 @@
 .end method
 
 .method protected onQueueEndOfStream()V
-    .registers 2
+    .locals 1
 
     .line 172
     iget-boolean v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->endOfStreamQueuedToSonic:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 173
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
@@ -1094,12 +1094,12 @@
     .line 174
     iput-boolean v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->endOfStreamQueuedToSonic:Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method protected onReset()V
-    .registers 2
+    .locals 1
 
     .line 198
     invoke-direct {p0}, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->resetState()V
@@ -1113,7 +1113,7 @@
 .end method
 
 .method public queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 16
+    .locals 14
 
     .line 118
     iget-wide v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->bytesRead:J
@@ -1167,7 +1167,7 @@
 
     const/4 v6, -0x1
 
-    if-eqz v5, :cond_68
+    if-eqz v5, :cond_1
 
     sub-long v7, v3, v0
 
@@ -1215,12 +1215,12 @@
 
     iget v3, v3, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->bytesPerFrame:I
 
-    if-eq v1, v3, :cond_5b
+    if-eq v1, v3, :cond_0
 
     add-int/2addr v0, v1
 
     .line 145
-    :cond_5b
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
@@ -1233,13 +1233,13 @@
 
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    goto :goto_69
+    goto :goto_0
 
-    :cond_68
+    :cond_1
     move v0, v6
 
     .line 150
-    :goto_69
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
@@ -1251,14 +1251,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8f
+    if-eqz v1, :cond_2
 
     .line 152
     iget-object v1, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
 
     invoke-virtual {v1, p1}, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->queueInput(Ljava/nio/ByteBuffer;)V
 
-    if-eq v0, v6, :cond_a3
+    if-eq v0, v6, :cond_4
 
     .line 154
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
@@ -1273,7 +1273,7 @@
 
     cmp-long v0, v5, v0
 
-    if-nez v0, :cond_a3
+    if-nez v0, :cond_4
 
     .line 155
     iget-object v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;
@@ -1285,10 +1285,10 @@
     .line 156
     iput-boolean v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->endOfStreamQueuedToSonic:Z
 
-    goto :goto_a3
+    goto :goto_1
 
     .line 159
-    :cond_8f
+    :cond_2
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -1302,18 +1302,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a0
+    if-eqz v1, :cond_3
 
     .line 161
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     .line 163
-    :cond_a0
+    :cond_3
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
     .line 165
-    :cond_a3
-    :goto_a3
+    :cond_4
+    :goto_1
     iget-wide v0, p0, Landroidx/media3/common/audio/SpeedChangingAudioProcessor;->bytesRead:J
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I

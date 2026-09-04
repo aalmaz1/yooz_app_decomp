@@ -35,12 +35,12 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 1806
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 1811
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$BrowserRoot;->mRootId:Ljava/lang/String;
@@ -51,7 +51,7 @@
     return-void
 
     .line 1808
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The root id in BrowserRoot cannot be null. Use null for BrowserRoot instead."
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public getExtras()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 1826
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$BrowserRoot;->mExtras:Landroid/os/Bundle;
@@ -73,7 +73,7 @@
 .end method
 
 .method public getRootId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1819
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$BrowserRoot;->mRootId:Ljava/lang/String;

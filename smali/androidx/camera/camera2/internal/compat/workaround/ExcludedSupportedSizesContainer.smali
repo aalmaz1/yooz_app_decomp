@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public get(I)Ljava/util/List;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -42,7 +42,7 @@
 
     check-cast v0, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 58
     new-instance p1, Ljava/util/ArrayList;
@@ -52,7 +52,7 @@
     return-object p1
 
     .line 60
-    :cond_10
+    :cond_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/workaround/ExcludedSupportedSizesContainer;->mCameraId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p1}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
@@ -63,7 +63,7 @@
 .end method
 
 .method public get(Ljava/lang/Class;)Ljava/util/List;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 
     check-cast v0, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 72
     new-instance p1, Ljava/util/ArrayList;
@@ -94,7 +94,7 @@
     return-object p1
 
     .line 74
-    :cond_10
+    :cond_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/workaround/ExcludedSupportedSizesContainer;->mCameraId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p1}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getExcludedSizes(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/List;

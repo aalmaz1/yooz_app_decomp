@@ -342,7 +342,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$2cjYUgBL_h3GYXosVpuLYmdKjEI(Landroidx/activity/ComponentActivity;Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/activity/ComponentActivity;->_init_$lambda$5(Landroidx/activity/ComponentActivity;Landroid/content/Context;)V
 
@@ -350,7 +350,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$7a-KmqYuIF_m7fi95-T1aOJxSNE(Landroidx/activity/ComponentActivity;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/activity/ComponentActivity;->menuHostHelper$lambda$0(Landroidx/activity/ComponentActivity;)V
 
@@ -358,7 +358,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$DTZRGZitIBXEcu3Rq13U4SdaQt0(Landroidx/activity/ComponentActivity;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/activity/ComponentActivity;->_init_$lambda$4(Landroidx/activity/ComponentActivity;)Landroid/os/Bundle;
 
@@ -368,7 +368,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$O2bz0ZEuUtwXm7DlWI3o8br_Srs(Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 3
+    .locals 0
 
     invoke-static {p0, p1, p2}, Landroidx/activity/ComponentActivity;->_init_$lambda$2(Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
 
@@ -376,7 +376,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$TBM3L3VS_9NHmoEBNDr8MKJejY8(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 0
 
     invoke-static {p0, p1, p2, p3}, Landroidx/activity/ComponentActivity;->addObserverForBackInvoker$lambda$7(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
 
@@ -384,7 +384,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$rJQNM1M7Vkmb7bGfu3UBP50ggDI(Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 3
+    .locals 0
 
     invoke-static {p0, p1, p2}, Landroidx/activity/ComponentActivity;->_init_$lambda$3(Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
 
@@ -392,7 +392,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/ComponentActivity$Companion;
 
@@ -406,7 +406,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 112
     invoke-direct {p0}, Landroidx/core/app/ComponentActivity;-><init>()V
@@ -525,7 +525,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_d5
+    if-eqz v2, :cond_0
 
     .line 259
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -621,7 +621,7 @@
     return-void
 
     .line 252
-    :cond_d5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "getLifecycle() returned null in ComponentActivity\'s constructor. Please make sure you are lazily constructing your Lifecycle in the first call to getLifecycle() rather than relying on field initialization."
@@ -636,7 +636,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 317
     invoke-direct {p0}, Landroidx/activity/ComponentActivity;-><init>()V
@@ -648,7 +648,7 @@
 .end method
 
 .method private static final _init_$lambda$2(Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "this$0"
 
@@ -665,29 +665,29 @@
     .line 260
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p2, p1, :cond_22
+    if-ne p2, p1, :cond_0
 
     .line 261
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/view/Window;->peekDecorView()Landroid/view/View;
 
     move-result-object p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/view/View;->cancelPendingInputEvents()V
 
-    :cond_22
+    :cond_0
     return-void
 .end method
 
 .method private static final _init_$lambda$3(Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "this$0"
 
@@ -704,7 +704,7 @@
     .line 266
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p2, p1, :cond_2a
+    if-ne p2, p1, :cond_1
 
     .line 268
     iget-object p1, p0, Landroidx/activity/ComponentActivity;->contextAwareHelper:Landroidx/activity/contextaware/ContextAwareHelper;
@@ -716,7 +716,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_0
 
     .line 271
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getViewModelStore()Landroidx/lifecycle/ViewModelStore;
@@ -726,17 +726,17 @@
     invoke-virtual {p1}, Landroidx/lifecycle/ViewModelStore;->clear()V
 
     .line 273
-    :cond_25
+    :cond_0
     iget-object p0, p0, Landroidx/activity/ComponentActivity;->reportFullyDrawnExecutor:Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;
 
     invoke-interface {p0}, Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;->activityDestroyed()V
 
-    :cond_2a
+    :cond_1
     return-void
 .end method
 
 .method private static final _init_$lambda$4(Landroidx/activity/ComponentActivity;)Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     const-string v0, "this$0"
 
@@ -756,7 +756,7 @@
 .end method
 
 .method private static final _init_$lambda$5(Landroidx/activity/ComponentActivity;Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "this$0"
 
@@ -778,19 +778,19 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 303
     iget-object p0, p0, Landroidx/activity/ComponentActivity;->activityResultRegistry:Landroidx/activity/result/ActivityResultRegistry;
 
     invoke-virtual {p0, p1}, Landroidx/activity/result/ActivityResultRegistry;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 .method public static final synthetic access$addObserverForBackInvoker(Landroidx/activity/ComponentActivity;Landroidx/activity/OnBackPressedDispatcher;)V
-    .registers 2
+    .locals 0
 
     .line 112
     invoke-direct {p0, p1}, Landroidx/activity/ComponentActivity;->addObserverForBackInvoker(Landroidx/activity/OnBackPressedDispatcher;)V
@@ -799,7 +799,7 @@
 .end method
 
 .method public static final synthetic access$ensureViewModelStore(Landroidx/activity/ComponentActivity;)V
-    .registers 1
+    .locals 0
 
     .line 112
     invoke-direct {p0}, Landroidx/activity/ComponentActivity;->ensureViewModelStore()V
@@ -808,7 +808,7 @@
 .end method
 
 .method public static final synthetic access$getReportFullyDrawnExecutor$p(Landroidx/activity/ComponentActivity;)Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;
-    .registers 1
+    .locals 0
 
     .line 112
     iget-object p0, p0, Landroidx/activity/ComponentActivity;->reportFullyDrawnExecutor:Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;
@@ -817,7 +817,7 @@
 .end method
 
 .method public static final synthetic access$onBackPressed$s1027565324(Landroidx/activity/ComponentActivity;)V
-    .registers 1
+    .locals 0
 
     .line 112
     invoke-super {p0}, Landroidx/core/app/ComponentActivity;->onBackPressed()V
@@ -826,7 +826,7 @@
 .end method
 
 .method private final addObserverForBackInvoker(Landroidx/activity/OnBackPressedDispatcher;)V
-    .registers 4
+    .locals 2
 
     .line 654
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -845,7 +845,7 @@
 .end method
 
 .method private static final addObserverForBackInvoker$lambda$7(Landroidx/activity/OnBackPressedDispatcher;Landroidx/activity/ComponentActivity;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "$dispatcher"
 
@@ -866,7 +866,7 @@
     .line 655
     sget-object p2, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p3, p2, :cond_23
+    if-ne p3, p2, :cond_0
 
     .line 657
     sget-object p2, Landroidx/activity/ComponentActivity$Api33Impl;->INSTANCE:Landroidx/activity/ComponentActivity$Api33Impl;
@@ -880,12 +880,12 @@
     .line 656
     invoke-virtual {p0, p1}, Landroidx/activity/OnBackPressedDispatcher;->setOnBackInvokedDispatcher(Landroid/window/OnBackInvokedDispatcher;)V
 
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method private final createFullyDrawnExecutor()Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;
-    .registers 2
+    .locals 1
 
     .line 1075
     new-instance v0, Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutorImpl;
@@ -898,12 +898,12 @@
 .end method
 
 .method private final ensureViewModelStore()V
-    .registers 2
+    .locals 1
 
     .line 552
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->_viewModelStore:Landroidx/lifecycle/ViewModelStore;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 553
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getLastNonConfigurationInstance()Ljava/lang/Object;
@@ -912,7 +912,7 @@
 
     check-cast v0, Landroidx/activity/ComponentActivity$NonConfigurationInstances;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 556
     invoke-virtual {v0}, Landroidx/activity/ComponentActivity$NonConfigurationInstances;->getViewModelStore()Landroidx/lifecycle/ViewModelStore;
@@ -922,10 +922,10 @@
     iput-object v0, p0, Landroidx/activity/ComponentActivity;->_viewModelStore:Landroidx/lifecycle/ViewModelStore;
 
     .line 558
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->_viewModelStore:Landroidx/lifecycle/ViewModelStore;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 559
     new-instance v0, Landroidx/lifecycle/ViewModelStore;
@@ -934,24 +934,24 @@
 
     iput-object v0, p0, Landroidx/activity/ComponentActivity;->_viewModelStore:Landroidx/lifecycle/ViewModelStore;
 
-    :cond_1d
+    :cond_1
     return-void
 .end method
 
 .method public static synthetic getOnBackPressedDispatcher$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static synthetic getSavedStateRegistryController$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static final menuHostHelper$lambda$0(Landroidx/activity/ComponentActivity;)V
-    .registers 2
+    .locals 1
 
     const-string v0, "this$0"
 
@@ -966,7 +966,7 @@
 
 # virtual methods
 .method public addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 6
+    .locals 3
 
     .line 417
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->initializeViewTreeOwners()V
@@ -995,7 +995,7 @@
 .end method
 
 .method public addMenuProvider(Landroidx/core/view/MenuProvider;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "provider"
 
@@ -1010,7 +1010,7 @@
 .end method
 
 .method public addMenuProvider(Landroidx/core/view/MenuProvider;Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "provider"
 
@@ -1029,7 +1029,7 @@
 .end method
 
 .method public addMenuProvider(Landroidx/core/view/MenuProvider;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "provider"
 
@@ -1052,7 +1052,7 @@
 .end method
 
 .method public final addOnConfigurationChangedListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1075,7 +1075,7 @@
 .end method
 
 .method public final addOnContextAvailableListener(Landroidx/activity/contextaware/OnContextAvailableListener;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "listener"
 
@@ -1090,7 +1090,7 @@
 .end method
 
 .method public final addOnMultiWindowModeChangedListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1113,7 +1113,7 @@
 .end method
 
 .method public final addOnNewIntentListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1136,7 +1136,7 @@
 .end method
 
 .method public final addOnPictureInPictureModeChangedListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1159,7 +1159,7 @@
 .end method
 
 .method public final addOnTrimMemoryListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1182,7 +1182,7 @@
 .end method
 
 .method public final addOnUserLeaveHintListener(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "listener"
 
@@ -1197,7 +1197,7 @@
 .end method
 
 .method public final getActivityResultRegistry()Landroidx/activity/result/ActivityResultRegistry;
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->activityResultRegistry:Landroidx/activity/result/ActivityResultRegistry;
@@ -1206,7 +1206,7 @@
 .end method
 
 .method public getDefaultViewModelCreationExtras()Landroidx/lifecycle/viewmodel/CreationExtras;
-    .registers 6
+    .locals 5
 
     .line 582
     new-instance v0, Landroidx/lifecycle/viewmodel/MutableCreationExtras;
@@ -1222,7 +1222,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 584
     sget-object v1, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->APPLICATION_KEY:Landroidx/lifecycle/viewmodel/CreationExtras$Key;
@@ -1238,7 +1238,7 @@
     invoke-virtual {v0, v1, v3}, Landroidx/lifecycle/viewmodel/MutableCreationExtras;->set(Landroidx/lifecycle/viewmodel/CreationExtras$Key;Ljava/lang/Object;)V
 
     .line 586
-    :cond_1b
+    :cond_0
     sget-object v1, Landroidx/lifecycle/SavedStateHandleSupport;->SAVED_STATE_REGISTRY_OWNER_KEY:Landroidx/lifecycle/viewmodel/CreationExtras$Key;
 
     invoke-virtual {v0, v1, p0}, Landroidx/lifecycle/viewmodel/MutableCreationExtras;->set(Landroidx/lifecycle/viewmodel/CreationExtras$Key;Ljava/lang/Object;)V
@@ -1253,14 +1253,14 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
 
-    :cond_2f
-    if-eqz v2, :cond_36
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 590
     sget-object v1, Landroidx/lifecycle/SavedStateHandleSupport;->DEFAULT_ARGS_KEY:Landroidx/lifecycle/viewmodel/CreationExtras$Key;
@@ -1268,14 +1268,14 @@
     invoke-virtual {v0, v1, v2}, Landroidx/lifecycle/viewmodel/MutableCreationExtras;->set(Landroidx/lifecycle/viewmodel/CreationExtras$Key;Ljava/lang/Object;)V
 
     .line 592
-    :cond_36
+    :cond_2
     check-cast v0, Landroidx/lifecycle/viewmodel/CreationExtras;
 
     return-object v0
 .end method
 
 .method public getDefaultViewModelProviderFactory()Landroidx/lifecycle/ViewModelProvider$Factory;
-    .registers 2
+    .locals 1
 
     .line 564
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->defaultViewModelProviderFactory$delegate:Lkotlin/Lazy;
@@ -1290,7 +1290,7 @@
 .end method
 
 .method public getFullyDrawnReporter()Landroidx/activity/FullyDrawnReporter;
-    .registers 2
+    .locals 1
 
     .line 143
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->fullyDrawnReporter$delegate:Lkotlin/Lazy;
@@ -1305,7 +1305,7 @@
 .end method
 
 .method public getLastCustomNonConfigurationInstance()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Use a {@link androidx.lifecycle.ViewModel} to store non config state."
     .end annotation
@@ -1317,24 +1317,24 @@
 
     check-cast v0, Landroidx/activity/ComponentActivity$NonConfigurationInstances;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 392
     invoke-virtual {v0}, Landroidx/activity/ComponentActivity$NonConfigurationInstances;->getCustom()Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return-object v0
 .end method
 
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
-    .registers 2
+    .locals 1
 
     .line 529
     invoke-super {p0}, Landroidx/core/app/ComponentActivity;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -1345,7 +1345,7 @@
 .end method
 
 .method public final getOnBackPressedDispatcher()Landroidx/activity/OnBackPressedDispatcher;
-    .registers 2
+    .locals 1
 
     .line 621
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->onBackPressedDispatcher$delegate:Lkotlin/Lazy;
@@ -1360,7 +1360,7 @@
 .end method
 
 .method public final getSavedStateRegistry()Landroidx/savedstate/SavedStateRegistry;
-    .registers 2
+    .locals 1
 
     .line 664
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->savedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
@@ -1373,14 +1373,14 @@
 .end method
 
 .method public getViewModelStore()Landroidx/lifecycle/ViewModelStore;
-    .registers 3
+    .locals 2
 
     .line 543
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 547
     invoke-direct {p0}, Landroidx/activity/ComponentActivity;->ensureViewModelStore()V
@@ -1393,7 +1393,7 @@
     return-object v0
 
     .line 543
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Your activity is not yet attached to the Application instance. You can\'t request ViewModel before onCreate call."
@@ -1408,7 +1408,7 @@
 .end method
 
 .method public initializeViewTreeOwners()V
-    .registers 4
+    .locals 3
 
     .line 428
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getWindow()Landroid/view/Window;
@@ -1501,7 +1501,7 @@
 .end method
 
 .method public invalidateMenu()V
-    .registers 1
+    .locals 0
 
     .line 512
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->invalidateOptionsMenu()V
@@ -1510,7 +1510,7 @@
 .end method
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
-    .registers 5
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "This method has been deprecated in favor of using the Activity Result API\n      which brings increased type safety via an {@link ActivityResultContract} and the prebuilt\n      contracts for common intents available in\n      {@link androidx.activity.result.contract.ActivityResultContracts}, provides hooks for\n      testing, and allow receiving results in separate, testable classes independent from your\n      activity. Use\n      {@link #registerForActivityResult(ActivityResultContract, ActivityResultCallback)}\n      with the appropriate {@link ActivityResultContract} and handling the result in the\n      {@link ActivityResultCallback#onActivityResult(Object) callback}."
     .end annotation
@@ -1522,17 +1522,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 787
     invoke-super {p0, p1, p2, p3}, Landroidx/core/app/ComponentActivity;->onActivityResult(IILandroid/content/Intent;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onBackPressed()V
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects."
     .end annotation
@@ -1548,7 +1548,7 @@
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "newConfig"
 
@@ -1564,12 +1564,12 @@
 
     move-result-object v0
 
-    :goto_e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1580,14 +1580,14 @@
     .line 849
     invoke-interface {v1, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
 
     .line 330
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->savedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
@@ -1618,23 +1618,23 @@
     .line 334
     iget p1, p0, Landroidx/activity/ComponentActivity;->contentLayoutId:I
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 335
     invoke-virtual {p0, p1}, Landroidx/activity/ComponentActivity;->setContentView(I)V
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method public onCreatePanelMenu(ILandroid/view/Menu;)Z
-    .registers 4
+    .locals 1
 
     const-string v0, "menu"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     .line 470
     invoke-super {p0, p1, p2}, Landroidx/core/app/ComponentActivity;->onCreatePanelMenu(ILandroid/view/Menu;)Z
@@ -1648,14 +1648,14 @@
 
     invoke-virtual {p1, p2, v0}, Landroidx/core/view/MenuHostHelper;->onCreateMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public onMenuItemSelected(ILandroid/view/MenuItem;)Z
-    .registers 4
+    .locals 1
 
     const-string v0, "item"
 
@@ -1666,14 +1666,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_d
-    if-nez p1, :cond_16
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 481
     iget-object p1, p0, Landroidx/activity/ComponentActivity;->menuHostHelper:Landroidx/core/view/MenuHostHelper;
@@ -1682,17 +1682,17 @@
 
     move-result p1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_17
+    :goto_0
     return p1
 .end method
 
 .method public onMultiWindowModeChanged(Z)V
-    .registers 5
+    .locals 3
     .annotation runtime Lkotlin/Deprecated;
         message = "Deprecated in android.app.Activity"
     .end annotation
@@ -1700,24 +1700,24 @@
     .line 922
     iget-boolean v0, p0, Landroidx/activity/ComponentActivity;->dispatchingOnMultiWindowModeChanged:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 925
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->onMultiWindowModeChangedListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1732,14 +1732,14 @@
 
     invoke-interface {v1, v2}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method public onMultiWindowModeChanged(ZLandroid/content/res/Configuration;)V
-    .registers 6
+    .locals 3
 
     const-string v0, "newConfig"
 
@@ -1753,10 +1753,10 @@
     const/4 v0, 0x0
 
     .line 946
-    :try_start_9
+    :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/core/app/ComponentActivity;->onMultiWindowModeChanged(ZLandroid/content/res/Configuration;)V
-    :try_end_c
-    .catchall {:try_start_9 .. :try_end_c} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 948
     iput-boolean v0, p0, Landroidx/activity/ComponentActivity;->dispatchingOnMultiWindowModeChanged:Z
@@ -1768,12 +1768,12 @@
 
     move-result-object v0
 
-    :goto_14
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1788,12 +1788,12 @@
 
     invoke-interface {v1, v2}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     return-void
 
-    :catchall_2a
+    :catchall_0
     move-exception p1
 
     .line 948
@@ -1803,7 +1803,7 @@
 .end method
 
 .method protected onNewIntent(Landroid/content/Intent;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "intent"
 
@@ -1819,12 +1819,12 @@
 
     move-result-object v0
 
-    :goto_e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1835,14 +1835,14 @@
     .line 899
     invoke-interface {v1, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public onPanelClosed(ILandroid/view/Menu;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "menu"
 
@@ -1860,7 +1860,7 @@
 .end method
 
 .method public onPictureInPictureModeChanged(Z)V
-    .registers 5
+    .locals 3
     .annotation runtime Lkotlin/Deprecated;
         message = "Deprecated in android.app.Activity"
     .end annotation
@@ -1868,24 +1868,24 @@
     .line 978
     iget-boolean v0, p0, Landroidx/activity/ComponentActivity;->dispatchingOnPictureInPictureModeChanged:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 981
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->onPictureInPictureModeChangedListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1900,14 +1900,14 @@
 
     invoke-interface {v1, v2}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method public onPictureInPictureModeChanged(ZLandroid/content/res/Configuration;)V
-    .registers 6
+    .locals 3
 
     const-string v0, "newConfig"
 
@@ -1921,10 +1921,10 @@
     const/4 v0, 0x0
 
     .line 1003
-    :try_start_9
+    :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/core/app/ComponentActivity;->onPictureInPictureModeChanged(ZLandroid/content/res/Configuration;)V
-    :try_end_c
-    .catchall {:try_start_9 .. :try_end_c} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1005
     iput-boolean v0, p0, Landroidx/activity/ComponentActivity;->dispatchingOnPictureInPictureModeChanged:Z
@@ -1936,12 +1936,12 @@
 
     move-result-object v0
 
-    :goto_14
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1957,12 +1957,12 @@
     .line 1008
     invoke-interface {v1, v2}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     return-void
 
-    :catchall_2a
+    :catchall_0
     move-exception p1
 
     .line 1005
@@ -1972,13 +1972,13 @@
 .end method
 
 .method public onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
-    .registers 5
+    .locals 1
 
     const-string v0, "menu"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     .line 462
     invoke-super {p0, p1, p2, p3}, Landroidx/core/app/ComponentActivity;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
@@ -1988,14 +1988,14 @@
 
     invoke-virtual {p1, p3}, Landroidx/core/view/MenuHostHelper;->onPrepareMenu(Landroid/view/Menu;)V
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public onRequestPermissionsResult(I[Ljava/lang/String;[I)V
-    .registers 7
+    .locals 3
     .annotation runtime Lkotlin/Deprecated;
         message = "This method has been deprecated in favor of using the Activity Result API\n      which brings increased type safety via an {@link ActivityResultContract} and the prebuilt\n      contracts for common intents available in\n      {@link androidx.activity.result.contract.ActivityResultContracts}, provides hooks for\n      testing, and allow receiving results in separate, testable classes independent from your\n      activity. Use\n      {@link #registerForActivityResult(ActivityResultContract, ActivityResultCallback)} passing\n      in a {@link RequestMultiplePermissions} object for the {@link ActivityResultContract} and\n      handling the result in the {@link ActivityResultCallback#onActivityResult(Object) callback}."
     .end annotation
@@ -2037,17 +2037,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_0
 
     .line 818
     invoke-super {p0, p1, p2, p3}, Landroidx/core/app/ComponentActivity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 
-    :cond_27
+    :cond_0
     return-void
 .end method
 
 .method public onRetainCustomNonConfigurationInstance()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Use a {@link androidx.lifecycle.ViewModel} to store non config state."
     .end annotation
@@ -2058,7 +2058,7 @@
 .end method
 
 .method public final onRetainNonConfigurationInstance()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 356
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->onRetainCustomNonConfigurationInstance()Ljava/lang/Object;
@@ -2068,7 +2068,7 @@
     .line 357
     iget-object v1, p0, Landroidx/activity/ComponentActivity;->_viewModelStore:Landroidx/lifecycle/ViewModelStore;
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_0
 
     .line 361
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getLastNonConfigurationInstance()Ljava/lang/Object;
@@ -2077,24 +2077,24 @@
 
     check-cast v2, Landroidx/activity/ComponentActivity$NonConfigurationInstances;
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 363
     invoke-virtual {v2}, Landroidx/activity/ComponentActivity$NonConfigurationInstances;->getViewModelStore()Landroidx/lifecycle/ViewModelStore;
 
     move-result-object v1
 
-    :cond_14
-    if-nez v1, :cond_1a
+    :cond_0
+    if-nez v1, :cond_1
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 369
-    :cond_1a
+    :cond_1
     new-instance v2, Landroidx/activity/ComponentActivity$NonConfigurationInstances;
 
     invoke-direct {v2}, Landroidx/activity/ComponentActivity$NonConfigurationInstances;-><init>()V
@@ -2109,7 +2109,7 @@
 .end method
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "outState"
 
@@ -2122,7 +2122,7 @@
 
     instance-of v0, v0, Landroidx/lifecycle/LifecycleRegistry;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 342
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -2140,7 +2140,7 @@
     invoke-virtual {v0, v1}, Landroidx/lifecycle/LifecycleRegistry;->setCurrentState(Landroidx/lifecycle/Lifecycle$State;)V
 
     .line 344
-    :cond_1d
+    :cond_0
     invoke-super {p0, p1}, Landroidx/core/app/ComponentActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
     .line 345
@@ -2152,7 +2152,7 @@
 .end method
 
 .method public onTrimMemory(I)V
-    .registers 5
+    .locals 3
 
     .line 872
     invoke-super {p0, p1}, Landroidx/core/app/ComponentActivity;->onTrimMemory(I)V
@@ -2164,12 +2164,12 @@
 
     move-result-object v0
 
-    :goto_9
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2184,14 +2184,14 @@
 
     invoke-interface {v1, v2}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method protected onUserLeaveHint()V
-    .registers 3
+    .locals 2
 
     .line 1035
     invoke-super {p0}, Landroidx/core/app/ComponentActivity;->onUserLeaveHint()V
@@ -2203,12 +2203,12 @@
 
     move-result-object v0
 
-    :goto_9
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2219,14 +2219,14 @@
     .line 1037
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public peekAvailableContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 436
     iget-object v0, p0, Landroidx/activity/ComponentActivity;->contextAwareHelper:Landroidx/activity/contextaware/ContextAwareHelper;
@@ -2239,7 +2239,7 @@
 .end method
 
 .method public final registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<I:",
@@ -2275,7 +2275,7 @@
 .end method
 
 .method public final registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultRegistry;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<I:",
@@ -2339,7 +2339,7 @@
 .end method
 
 .method public removeMenuProvider(Landroidx/core/view/MenuProvider;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "provider"
 
@@ -2354,7 +2354,7 @@
 .end method
 
 .method public final removeOnConfigurationChangedListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2377,7 +2377,7 @@
 .end method
 
 .method public final removeOnContextAvailableListener(Landroidx/activity/contextaware/OnContextAvailableListener;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "listener"
 
@@ -2392,7 +2392,7 @@
 .end method
 
 .method public final removeOnMultiWindowModeChangedListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2415,7 +2415,7 @@
 .end method
 
 .method public final removeOnNewIntentListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2438,7 +2438,7 @@
 .end method
 
 .method public final removeOnPictureInPictureModeChangedListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2461,7 +2461,7 @@
 .end method
 
 .method public final removeOnTrimMemoryListener(Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2484,7 +2484,7 @@
 .end method
 
 .method public final removeOnUserLeaveHintListener(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "listener"
 
@@ -2499,7 +2499,7 @@
 .end method
 
 .method public reportFullyDrawn()V
-    .registers 2
+    .locals 1
 
     .line 1051
     :try_start_0
@@ -2507,7 +2507,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const-string v0, "reportFullyDrawn() for ComponentActivity"
 
@@ -2515,7 +2515,7 @@
     invoke-static {v0}, Landroidx/tracing/Trace;->beginSection(Ljava/lang/String;)V
 
     .line 1055
-    :cond_b
+    :cond_0
     invoke-super {p0}, Landroidx/core/app/ComponentActivity;->reportFullyDrawn()V
 
     .line 1068
@@ -2524,15 +2524,15 @@
     move-result-object v0
 
     invoke-virtual {v0}, Landroidx/activity/FullyDrawnReporter;->fullyDrawnReported()V
-    :try_end_15
-    .catchall {:try_start_0 .. :try_end_15} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1070
     invoke-static {}, Landroidx/tracing/Trace;->endSection()V
 
     return-void
 
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     invoke-static {}, Landroidx/tracing/Trace;->endSection()V
@@ -2541,7 +2541,7 @@
 .end method
 
 .method public setContentView(I)V
-    .registers 5
+    .locals 3
 
     .line 396
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->initializeViewTreeOwners()V
@@ -2570,7 +2570,7 @@
 .end method
 
 .method public setContentView(Landroid/view/View;)V
-    .registers 5
+    .locals 3
 
     .line 402
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->initializeViewTreeOwners()V
@@ -2599,7 +2599,7 @@
 .end method
 
 .method public setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 6
+    .locals 3
 
     .line 408
     invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->initializeViewTreeOwners()V
@@ -2628,7 +2628,7 @@
 .end method
 
 .method public startActivityForResult(Landroid/content/Intent;I)V
-    .registers 4
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "This method has been deprecated in favor of using the Activity Result API\n      which brings increased type safety via an {@link ActivityResultContract} and the prebuilt\n      contracts for common intents available in\n      {@link androidx.activity.result.contract.ActivityResultContracts}, provides hooks for\n      testing, and allow receiving results in separate, testable classes independent from your\n      activity. Use\n      {@link #registerForActivityResult(ActivityResultContract, ActivityResultCallback)}\n      passing in a {@link StartActivityForResult} object for the {@link ActivityResultContract}."
     .end annotation
@@ -2644,7 +2644,7 @@
 .end method
 
 .method public startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
-    .registers 5
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "This method has been deprecated in favor of using the Activity Result API\n      which brings increased type safety via an {@link ActivityResultContract} and the prebuilt\n      contracts for common intents available in\n      {@link androidx.activity.result.contract.ActivityResultContracts}, provides hooks for\n      testing, and allow receiving results in separate, testable classes independent from your\n      activity. Use\n      {@link #registerForActivityResult(ActivityResultContract, ActivityResultCallback)}\n      passing in a {@link StartActivityForResult} object for the {@link ActivityResultContract}."
     .end annotation
@@ -2660,7 +2660,7 @@
 .end method
 
 .method public startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/IntentSender$SendIntentException;
@@ -2682,7 +2682,7 @@
 .end method
 
 .method public startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
-    .registers 9
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/IntentSender$SendIntentException;

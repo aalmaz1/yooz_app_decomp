@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Map;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -77,12 +77,12 @@
 
     move-result-object p1
 
-    :goto_14
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -106,7 +106,7 @@
 
     check-cast v2, Ljava/util/List;
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_0
 
     .line 181
     new-instance v2, Ljava/util/ArrayList;
@@ -119,7 +119,7 @@
     invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 184
-    :cond_3a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -128,14 +128,14 @@
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_44
+    :cond_1
     return-void
 .end method
 
 .method private static invokeMethodsForEvent(Ljava/util/List;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,7 +149,7 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_16
+    if-eqz p0, :cond_0
 
     .line 198
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -158,8 +158,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_16
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 199
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -172,16 +172,16 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method invokeCallbacks(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
-    .registers 6
+    .locals 2
 
     .line 190
     iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mEventToHandlers:Ljava/util/Map;

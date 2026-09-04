@@ -42,7 +42,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/lang/Class;I)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -60,7 +60,7 @@
 .end method
 
 .method constructor <init>(ILjava/lang/Class;II)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -88,77 +88,77 @@
 .end method
 
 .method private frameworkAvailable()Z
-    .registers 3
+    .locals 2
 
     .line 4853
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     iget v1, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mFrameworkMinimumSdk:I
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method booleanNullToFalseEquals(Ljava/lang/Boolean;Ljava/lang/Boolean;)Z
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 4866
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     move p1, v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move p1, v1
 
-    :goto_d
-    if-eqz p2, :cond_17
+    :goto_0
+    if-eqz p2, :cond_1
 
     .line 4867
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p2
 
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_1
 
     move p2, v0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
+    :cond_1
     move p2, v1
 
-    :goto_18
-    if-ne p1, p2, :cond_1b
+    :goto_1
+    if-ne p1, p2, :cond_2
 
-    goto :goto_1c
+    goto :goto_2
 
-    :cond_1b
+    :cond_2
     move v0, v1
 
-    :goto_1c
+    :goto_2
     return v0
 .end method
 
@@ -183,7 +183,7 @@
 .end method
 
 .method get(Landroid/view/View;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -197,7 +197,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 4842
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->frameworkGet(Landroid/view/View;)Ljava/lang/Object;
@@ -207,7 +207,7 @@
     return-object p1
 
     .line 4844
-    :cond_b
+    :cond_0
     iget v0, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mTagKey:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -221,18 +221,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     return-object p1
 
-    :cond_1a
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method set(Landroid/view/View;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -246,15 +246,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 4828
     invoke-virtual {p0, p1, p2}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 4829
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->get(Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v0
@@ -263,7 +263,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 4830
     invoke-static {p1}, Landroidx/core/view/ViewCompat;->ensureAccessibilityDelegateCompat(Landroid/view/View;)V
@@ -278,13 +278,13 @@
 
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
 
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method shouldUpdate(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;TT;)Z"

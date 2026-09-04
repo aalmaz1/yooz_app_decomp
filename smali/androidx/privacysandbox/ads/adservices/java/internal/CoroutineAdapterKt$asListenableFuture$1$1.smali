@@ -70,7 +70,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Lkotlinx/coroutines/Deferred;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 31
     check-cast p1, Ljava/lang/Throwable;
@@ -108,32 +108,32 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     .line 33
     instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 34
     iget-object p1, p0, Landroidx/privacysandbox/ads/adservices/java/internal/CoroutineAdapterKt$asListenableFuture$1$1;->$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     invoke-virtual {p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setCancelled()Z
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 36
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/java/internal/CoroutineAdapterKt$asListenableFuture$1$1;->$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 40
-    :cond_12
+    :cond_1
     iget-object p1, p0, Landroidx/privacysandbox/ads/adservices/java/internal/CoroutineAdapterKt$asListenableFuture$1$1;->$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/java/internal/CoroutineAdapterKt$asListenableFuture$1$1;->$this_asListenableFuture:Lkotlinx/coroutines/Deferred;
@@ -144,6 +144,6 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    :goto_1d
+    :goto_0
     return-void
 .end method

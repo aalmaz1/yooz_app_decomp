@@ -27,7 +27,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Landroidx/media3/common/audio/AudioProcessor;)V
-    .registers 4
+    .locals 2
 
     .line 149
     new-instance v0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>([Landroidx/media3/common/audio/AudioProcessor;Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;Landroidx/media3/common/audio/SonicAudioProcessor;)V
-    .registers 7
+    .locals 3
 
     .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public applyPlaybackParameters(Landroidx/media3/common/PlaybackParameters;)Landroidx/media3/common/PlaybackParameters;
-    .registers 4
+    .locals 2
 
     .line 182
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
@@ -109,7 +109,7 @@
 .end method
 
 .method public applySkipSilenceEnabled(Z)Z
-    .registers 3
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;->silenceSkippingAudioProcessor:Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;
@@ -120,7 +120,7 @@
 .end method
 
 .method public getAudioProcessors()[Landroidx/media3/common/audio/AudioProcessor;
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;->audioProcessors:[Landroidx/media3/common/audio/AudioProcessor;
@@ -129,7 +129,7 @@
 .end method
 
 .method public getMediaDuration(J)J
-    .registers 4
+    .locals 1
 
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
@@ -138,7 +138,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 196
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
@@ -147,12 +147,12 @@
 
     move-result-wide p1
 
-    :cond_e
+    :cond_0
     return-wide p1
 .end method
 
 .method public getSkippedOutputFrameCount()J
-    .registers 3
+    .locals 2
 
     .line 202
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$DefaultAudioProcessorChain;->silenceSkippingAudioProcessor:Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;

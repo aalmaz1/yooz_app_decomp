@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2646
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getLargeIcon(Landroid/app/Notification;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 2655
     invoke-virtual {p0}, Landroid/app/Notification;->getLargeIcon()Landroid/graphics/drawable/Icon;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getSmallIcon(Landroid/app/Notification;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 2650
     invoke-virtual {p0}, Landroid/app/Notification;->getSmallIcon()Landroid/graphics/drawable/Icon;

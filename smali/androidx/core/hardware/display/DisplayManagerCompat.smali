@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Landroidx/core/hardware/display/DisplayManagerCompat;
-    .registers 2
+    .locals 1
 
     .line 57
     new-instance v0, Landroidx/core/hardware/display/DisplayManagerCompat;
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public getDisplay(I)Landroid/view/Display;
-    .registers 4
+    .locals 2
 
     .line 72
     iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
@@ -61,7 +61,7 @@
 .end method
 
 .method public getDisplays()[Landroid/view/Display;
-    .registers 3
+    .locals 2
 
     .line 85
     iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
@@ -82,7 +82,7 @@
 .end method
 
 .method public getDisplays(Ljava/lang/String;)[Landroid/view/Display;
-    .registers 3
+    .locals 1
 
     .line 107
     iget-object p1, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;

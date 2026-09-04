@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJJJZZZZ)V
-    .registers 22
+    .locals 8
 
     move-object v0, p0
 
@@ -44,57 +44,57 @@
 
     const/4 v6, 0x1
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_1
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v7, v5
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     move v7, v6
 
     .line 91
-    :goto_16
+    :goto_1
     invoke-static {v7}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_3
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_2
 
-    goto :goto_20
+    goto :goto_2
 
-    :cond_1e
+    :cond_2
     move v7, v5
 
-    goto :goto_21
+    goto :goto_3
 
-    :cond_20
-    :goto_20
+    :cond_3
+    :goto_2
     move v7, v6
 
     .line 92
-    :goto_21
+    :goto_3
     invoke-static {v7}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_4
 
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_5
 
-    if-nez v3, :cond_2d
+    if-nez v3, :cond_5
 
-    if-nez v4, :cond_2d
+    if-nez v4, :cond_5
 
-    :cond_2c
+    :cond_4
     move v5, v6
 
     .line 93
-    :cond_2d
+    :cond_5
     invoke-static {v5}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     move-object v5, p1
@@ -140,7 +140,7 @@
 
 # virtual methods
 .method public copyWithRequestedContentPositionUs(J)Landroidx/media3/exoplayer/MediaPeriodInfo;
-    .registers 20
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -149,14 +149,14 @@
 
     cmp-long v1, p1, v1
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     move-object v1, v0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 133
-    :cond_a
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/MediaPeriodInfo;
 
     iget-object v4, v0, Landroidx/media3/exoplayer/MediaPeriodInfo;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -183,12 +183,12 @@
 
     invoke-direct/range {v3 .. v16}, Landroidx/media3/exoplayer/MediaPeriodInfo;-><init>(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJJJZZZZ)V
 
-    :goto_24
+    :goto_0
     return-object v1
 .end method
 
 .method public copyWithStartPositionUs(J)Landroidx/media3/exoplayer/MediaPeriodInfo;
-    .registers 20
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -197,14 +197,14 @@
 
     cmp-long v1, p1, v1
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     move-object v1, v0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 114
-    :cond_a
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/MediaPeriodInfo;
 
     iget-object v4, v0, Landroidx/media3/exoplayer/MediaPeriodInfo;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -231,23 +231,23 @@
 
     invoke-direct/range {v3 .. v16}, Landroidx/media3/exoplayer/MediaPeriodInfo;-><init>(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJJJZZZZ)V
 
-    :goto_24
+    :goto_0
     return-object v1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_3
 
     .line 150
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -258,12 +258,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_59
+    goto :goto_1
 
     .line 153
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/MediaPeriodInfo;
 
     .line 154
@@ -273,7 +273,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_57
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->requestedContentPositionUs:J
 
@@ -281,7 +281,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_57
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->endPositionUs:J
 
@@ -289,7 +289,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_57
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->durationUs:J
 
@@ -297,31 +297,31 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_57
+    if-nez v2, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->isFollowedByTransitionToSameStream:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/MediaPeriodInfo;->isFollowedByTransitionToSameStream:Z
 
-    if-ne v2, v3, :cond_57
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->isLastInTimelinePeriod:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/MediaPeriodInfo;->isLastInTimelinePeriod:Z
 
-    if-ne v2, v3, :cond_57
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->isLastInTimelineWindow:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/MediaPeriodInfo;->isLastInTimelineWindow:Z
 
-    if-ne v2, v3, :cond_57
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->isFinal:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/MediaPeriodInfo;->isFinal:Z
 
-    if-ne v2, v3, :cond_57
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -332,23 +332,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_57
+    if-eqz p1, :cond_2
 
-    goto :goto_58
+    goto :goto_0
 
-    :cond_57
+    :cond_2
     move v0, v1
 
-    :goto_58
+    :goto_0
     return v0
 
-    :cond_59
-    :goto_59
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 168
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodInfo;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;

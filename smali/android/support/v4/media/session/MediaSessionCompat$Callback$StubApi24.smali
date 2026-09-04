@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaSessionCompat$Callback;)V
-    .registers 2
+    .locals 0
 
     .line 1520
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi24;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onPrepare()V
-    .registers 2
+    .locals 1
 
     .line 1525
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi24;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
@@ -47,7 +47,7 @@
 .end method
 
 .method public onPrepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 1530
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi24;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
@@ -58,7 +58,7 @@
 .end method
 
 .method public onPrepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 1535
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi24;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
@@ -69,7 +69,7 @@
 .end method
 
 .method public onPrepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 1540
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi24;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;

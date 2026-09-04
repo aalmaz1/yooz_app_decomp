@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -38,7 +38,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static getThemeUpIndicator(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
 
     .line 90
     sget-object v0, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb;->THEME_ATTRS:[I
@@ -70,9 +70,9 @@
 .end method
 
 .method public static setActionBarDescription(Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;Landroid/app/Activity;I)Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
-    .registers 6
+    .locals 3
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
     .line 71
     new-instance p0, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
@@ -80,13 +80,13 @@
     invoke-direct {p0, p1}, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;-><init>(Landroid/app/Activity;)V
 
     .line 73
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;->setHomeAsUpIndicator:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 75
-    :try_start_b
+    :try_start_0
     invoke-virtual {p1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object p1
@@ -107,12 +107,12 @@
     aput-object p2, v1, v2
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :catch_1f
+    :catch_0
     move-exception p1
 
     const-string p2, "ActionBarDrawerToggleHC"
@@ -122,13 +122,13 @@
     .line 83
     invoke-static {p2, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-object p0
 .end method
 
 .method public static setActionBarUpIndicator(Landroid/app/Activity;Landroid/graphics/drawable/Drawable;I)Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
-    .registers 9
+    .locals 6
 
     .line 51
     new-instance v0, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;
@@ -140,10 +140,10 @@
 
     const-string v2, "ActionBarDrawerToggleHC"
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 54
-    :try_start_b
+    :try_start_0
     invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object p0
@@ -173,12 +173,12 @@
     aput-object p2, v1, v5
 
     invoke-virtual {p1, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3e
+    goto :goto_0
 
-    :catch_28
+    :catch_0
     move-exception p0
 
     const-string p1, "Couldn\'t set home-as-up indicator via JB-MR2 API"
@@ -186,27 +186,27 @@
     .line 58
     invoke-static {v2, p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 60
-    :cond_2f
+    :cond_0
     iget-object p0, v0, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;->upIndicatorView:Landroid/widget/ImageView;
 
-    if-eqz p0, :cond_39
+    if-eqz p0, :cond_1
 
     .line 61
     iget-object p0, v0, Landroidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;->upIndicatorView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_39
+    :cond_1
     const-string p0, "Couldn\'t set home-as-up indicator"
 
     .line 63
     invoke-static {v2, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_3e
+    :goto_0
     return-object v0
 .end method

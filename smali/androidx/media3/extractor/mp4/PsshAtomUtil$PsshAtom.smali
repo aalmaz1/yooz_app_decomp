@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/UUID;I[B[Ljava/util/UUID;)V
-    .registers 5
+    .locals 0
 
     .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

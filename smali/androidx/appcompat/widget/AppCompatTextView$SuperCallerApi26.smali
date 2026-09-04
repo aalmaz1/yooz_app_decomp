@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatTextView;)V
-    .registers 2
+    .locals 0
 
     .line 823
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public getAutoSizeMaxTextSize()I
-    .registers 2
+    .locals 1
 
     .line 826
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -49,7 +49,7 @@
 .end method
 
 .method public getAutoSizeMinTextSize()I
-    .registers 2
+    .locals 1
 
     .line 831
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -62,7 +62,7 @@
 .end method
 
 .method public getAutoSizeStepGranularity()I
-    .registers 2
+    .locals 1
 
     .line 836
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -75,7 +75,7 @@
 .end method
 
 .method public getAutoSizeTextAvailableSizes()[I
-    .registers 2
+    .locals 1
 
     .line 841
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -88,7 +88,7 @@
 .end method
 
 .method public getAutoSizeTextType()I
-    .registers 2
+    .locals 1
 
     .line 846
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -101,7 +101,7 @@
 .end method
 
 .method public getTextClassifier()Landroid/view/textclassifier/TextClassifier;
-    .registers 2
+    .locals 1
 
     .line 851
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -114,7 +114,7 @@
 .end method
 
 .method public setAutoSizeTextTypeUniformWithConfiguration(IIII)V
-    .registers 6
+    .locals 1
 
     .line 857
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -125,7 +125,7 @@
 .end method
 
 .method public setAutoSizeTextTypeUniformWithPresetSizes([II)V
-    .registers 4
+    .locals 1
 
     .line 863
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -136,7 +136,7 @@
 .end method
 
 .method public setAutoSizeTextTypeWithDefaults(I)V
-    .registers 3
+    .locals 1
 
     .line 868
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;
@@ -147,19 +147,19 @@
 .end method
 
 .method public setFirstBaselineToTopHeight(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setLastBaselineToBottomHeight(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setTextClassifier(Landroid/view/textclassifier/TextClassifier;)V
-    .registers 3
+    .locals 1
 
     .line 873
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextView$SuperCallerApi26;->this$0:Landroidx/appcompat/widget/AppCompatTextView;

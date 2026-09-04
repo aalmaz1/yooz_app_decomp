@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 132
     new-instance v0, Ljava/lang/Object;
@@ -52,7 +52,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public static appendThrowableString(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -75,7 +75,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_0
 
     .line 354
     new-instance v0, Ljava/lang/StringBuilder;
@@ -112,12 +112,12 @@
 
     move-result-object p0
 
-    :cond_2d
+    :cond_0
     return-object p0
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -127,10 +127,10 @@
     monitor-enter v0
 
     .line 196
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     .line 197
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -140,23 +140,23 @@
     invoke-interface {v1, p0, p1, v2}, Landroidx/media3/common/util/Log$Logger;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 199
-    :cond_d
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 2
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -166,10 +166,10 @@
     monitor-enter v0
 
     .line 212
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     .line 213
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -177,23 +177,23 @@
     invoke-interface {v1, p0, p1, p2}, Landroidx/media3/common/util/Log$Logger;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 215
-    :cond_c
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -203,12 +203,12 @@
     monitor-enter v0
 
     .line 289
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     const/4 v2, 0x3
 
-    if-gt v1, v2, :cond_e
+    if-gt v1, v2, :cond_0
 
     .line 290
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -218,23 +218,23 @@
     invoke-interface {v1, p0, p1, v2}, Landroidx/media3/common/util/Log$Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 292
-    :cond_e
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -244,12 +244,12 @@
     monitor-enter v0
 
     .line 305
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     const/4 v2, 0x3
 
-    if-gt v1, v2, :cond_d
+    if-gt v1, v2, :cond_0
 
     .line 306
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -257,23 +257,23 @@
     invoke-interface {v1, p0, p1, p2}, Landroidx/media3/common/util/Log$Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 308
-    :cond_d
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static getLogLevel()I
-    .registers 2
+    .locals 2
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -283,48 +283,48 @@
     monitor-enter v0
 
     .line 149
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 150
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public static getThrowableString(Ljava/lang/Throwable;)Ljava/lang/String;
-    .registers 4
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 329
-    :cond_4
+    :cond_0
     sget-object v0, Landroidx/media3/common/util/Log;->lock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 330
-    :try_start_7
+    :try_start_0
     invoke-static {p0}, Landroidx/media3/common/util/Log;->isCausedByUnknownHostException(Ljava/lang/Throwable;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     const-string p0, "UnknownHostException (no network)"
 
@@ -334,10 +334,10 @@
     return-object p0
 
     .line 339
-    :cond_11
+    :cond_1
     sget-boolean v1, Landroidx/media3/common/util/Log;->logStackTraces:Z
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_2
 
     .line 340
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -349,7 +349,7 @@
     return-object p0
 
     .line 342
-    :cond_1b
+    :cond_2
     invoke-static {p0}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object p0
@@ -370,19 +370,19 @@
 
     return-object p0
 
-    :catchall_2d
+    :catchall_0
     move-exception p0
 
     .line 344
     monitor-exit v0
-    :try_end_2f
-    .catchall {:try_start_7 .. :try_end_2f} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -392,12 +392,12 @@
     monitor-enter v0
 
     .line 227
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     const/4 v2, 0x1
 
-    if-gt v1, v2, :cond_e
+    if-gt v1, v2, :cond_0
 
     .line 228
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -407,23 +407,23 @@
     invoke-interface {v1, p0, p1, v2}, Landroidx/media3/common/util/Log$Logger;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 230
-    :cond_e
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -433,12 +433,12 @@
     monitor-enter v0
 
     .line 243
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     const/4 v2, 0x1
 
-    if-gt v1, v2, :cond_d
+    if-gt v1, v2, :cond_0
 
     .line 244
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -446,54 +446,54 @@
     invoke-interface {v1, p0, p1, p2}, Landroidx/media3/common/util/Log$Logger;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 246
-    :cond_d
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method private static isCausedByUnknownHostException(Ljava/lang/Throwable;)Z
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
     :goto_0
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_1
 
     .line 362
     instance-of v0, p0, Ljava/net/UnknownHostException;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
     .line 365
-    :cond_8
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object p0
 
     goto :goto_0
 
-    :cond_d
+    :cond_1
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static setLogLevel(I)V
-    .registers 2
+    .locals 1
 
     .line 159
     sget-object v0, Landroidx/media3/common/util/Log;->lock:Ljava/lang/Object;
@@ -501,7 +501,7 @@
     monitor-enter v0
 
     .line 160
-    :try_start_3
+    :try_start_0
     sput p0, Landroidx/media3/common/util/Log;->logLevel:I
 
     .line 161
@@ -509,18 +509,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static setLogStackTraces(Z)V
-    .registers 2
+    .locals 1
 
     .line 171
     sget-object v0, Landroidx/media3/common/util/Log;->lock:Ljava/lang/Object;
@@ -528,7 +528,7 @@
     monitor-enter v0
 
     .line 172
-    :try_start_3
+    :try_start_0
     sput-boolean p0, Landroidx/media3/common/util/Log;->logStackTraces:Z
 
     .line 173
@@ -536,18 +536,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static setLogger(Landroidx/media3/common/util/Log$Logger;)V
-    .registers 2
+    .locals 1
 
     .line 182
     sget-object v0, Landroidx/media3/common/util/Log;->lock:Ljava/lang/Object;
@@ -555,7 +555,7 @@
     monitor-enter v0
 
     .line 183
-    :try_start_3
+    :try_start_0
     sput-object p0, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
 
     .line 184
@@ -563,18 +563,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -584,12 +584,12 @@
     monitor-enter v0
 
     .line 258
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     const/4 v2, 0x2
 
-    if-gt v1, v2, :cond_e
+    if-gt v1, v2, :cond_0
 
     .line 259
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -599,23 +599,23 @@
     invoke-interface {v1, p0, p1, v2}, Landroidx/media3/common/util/Log$Logger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 261
-    :cond_e
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -625,12 +625,12 @@
     monitor-enter v0
 
     .line 274
-    :try_start_3
+    :try_start_0
     sget v1, Landroidx/media3/common/util/Log;->logLevel:I
 
     const/4 v2, 0x2
 
-    if-gt v1, v2, :cond_d
+    if-gt v1, v2, :cond_0
 
     .line 275
     sget-object v1, Landroidx/media3/common/util/Log;->logger:Landroidx/media3/common/util/Log$Logger;
@@ -638,17 +638,17 @@
     invoke-interface {v1, p0, p1, p2}, Landroidx/media3/common/util/Log$Logger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 277
-    :cond_d
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method

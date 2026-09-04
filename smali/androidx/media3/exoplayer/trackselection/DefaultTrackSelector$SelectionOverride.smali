@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public varargs constructor <init>(I[I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(I[II)V
-    .registers 4
+    .locals 0
 
     .line 2243
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;
-    .registers 5
+    .locals 4
 
     .line 2297
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_GROUP_INDEX:Ljava/lang/String;
@@ -135,19 +135,19 @@
 
     move-result p0
 
-    if-ltz v0, :cond_19
+    if-ltz v0, :cond_0
 
-    if-ltz p0, :cond_19
+    if-ltz p0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v1, 0x0
 
     .line 2300
-    :goto_1a
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 2301
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public containsTrack(I)Z
-    .registers 7
+    .locals 5
 
     .line 2253
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
@@ -175,39 +175,39 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v3, v1, :cond_10
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     aget v4, v0, v3
 
-    if-ne v4, p1, :cond_d
+    if-ne v4, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_d
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     return v2
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_3
 
     .line 2272
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -218,12 +218,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 2275
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;
 
     .line 2276
@@ -231,7 +231,7 @@
 
     iget v3, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
 
-    if-ne v2, v3, :cond_2b
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
 
@@ -242,29 +242,29 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
     iget p1, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
-    if-ne v2, p1, :cond_2b
+    if-ne v2, p1, :cond_2
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     move v0, v1
 
-    :goto_2c
+    :goto_0
     return v0
 
-    :cond_2d
-    :goto_2d
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 2263
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
@@ -290,7 +290,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 2287
     new-instance v0, Landroid/os/Bundle;

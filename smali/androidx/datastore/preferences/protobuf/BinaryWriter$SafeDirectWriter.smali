@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/BufferAllocator;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method private bytesWrittenToCurrentBuffer()I
-    .registers 3
+    .locals 2
 
     .line 2032
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->limitMinusOne:I
@@ -51,7 +51,7 @@
 .end method
 
 .method private nextBuffer()V
-    .registers 2
+    .locals 1
 
     .line 1997
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->newDirectBuffer()Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
@@ -64,7 +64,7 @@
 .end method
 
 .method private nextBuffer(I)V
-    .registers 2
+    .locals 0
 
     .line 2001
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->newDirectBuffer(I)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
@@ -77,14 +77,14 @@
 .end method
 
 .method private nextBuffer(Landroidx/datastore/preferences/protobuf/AllocatedBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 2005
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/AllocatedBuffer;->hasNioBuffer()Z
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_1
 
     .line 2008
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/AllocatedBuffer;->nioBuffer()Ljava/nio/ByteBuffer;
@@ -96,7 +96,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_0
 
     .line 2013
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->finishCurrentBuffer()V
@@ -147,7 +147,7 @@
     return-void
 
     .line 2010
-    :cond_3b
+    :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "Allocator returned non-direct buffer"
@@ -157,7 +157,7 @@
     throw p1
 
     .line 2006
-    :cond_43
+    :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "Allocated buffer does not have NIO buffer"
@@ -168,7 +168,7 @@
 .end method
 
 .method private spaceLeft()I
-    .registers 2
+    .locals 1
 
     .line 2036
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -179,7 +179,7 @@
 .end method
 
 .method private writeVarint32FiveBytes(I)V
-    .registers 6
+    .locals 4
 
     .line 2252
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -248,7 +248,7 @@
 .end method
 
 .method private writeVarint32FourBytes(I)V
-    .registers 7
+    .locals 5
 
     .line 2241
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -300,7 +300,7 @@
 .end method
 
 .method private writeVarint32OneByte(I)V
-    .registers 5
+    .locals 3
 
     .line 2220
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -319,7 +319,7 @@
 .end method
 
 .method private writeVarint32ThreeBytes(I)V
-    .registers 6
+    .locals 4
 
     .line 2231
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -359,7 +359,7 @@
 .end method
 
 .method private writeVarint32TwoBytes(I)V
-    .registers 5
+    .locals 3
 
     .line 2225
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -391,7 +391,7 @@
 .end method
 
 .method private writeVarint64EightBytes(J)V
-    .registers 12
+    .locals 9
 
     .line 2355
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -513,7 +513,7 @@
 .end method
 
 .method private writeVarint64EightBytesWithSign(J)V
-    .registers 12
+    .locals 9
 
     .line 2370
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -639,7 +639,7 @@
 .end method
 
 .method private writeVarint64FiveBytes(J)V
-    .registers 11
+    .locals 8
 
     .line 2316
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -723,7 +723,7 @@
 .end method
 
 .method private writeVarint64FourBytes(J)V
-    .registers 3
+    .locals 0
 
     long-to-int p1, p1
 
@@ -734,7 +734,7 @@
 .end method
 
 .method private writeVarint64NineBytes(J)V
-    .registers 7
+    .locals 4
 
     .line 2384
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -766,7 +766,7 @@
 .end method
 
 .method private writeVarint64OneByte(J)V
-    .registers 3
+    .locals 0
 
     long-to-int p1, p1
 
@@ -777,7 +777,7 @@
 .end method
 
 .method private writeVarint64SevenBytes(J)V
-    .registers 11
+    .locals 8
 
     .line 2341
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -887,7 +887,7 @@
 .end method
 
 .method private writeVarint64SixBytes(J)V
-    .registers 11
+    .locals 8
 
     .line 2328
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -985,7 +985,7 @@
 .end method
 
 .method private writeVarint64TenBytes(J)V
-    .registers 9
+    .locals 6
 
     .line 2389
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -1044,7 +1044,7 @@
 .end method
 
 .method private writeVarint64ThreeBytes(J)V
-    .registers 3
+    .locals 0
 
     long-to-int p1, p1
 
@@ -1055,7 +1055,7 @@
 .end method
 
 .method private writeVarint64TwoBytes(J)V
-    .registers 3
+    .locals 0
 
     long-to-int p1, p1
 
@@ -1068,12 +1068,12 @@
 
 # virtual methods
 .method finishCurrentBuffer()V
-    .registers 3
+    .locals 2
 
     .line 2041
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 2042
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->totalDoneBytes:I
@@ -1108,12 +1108,12 @@
     .line 2047
     iput v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->limitMinusOne:I
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public getTotalBytesWritten()I
-    .registers 3
+    .locals 2
 
     .line 2028
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->totalDoneBytes:I
@@ -1128,24 +1128,24 @@
 .end method
 
 .method requireSpace(I)V
-    .registers 3
+    .locals 1
 
     .line 2527
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->spaceLeft()I
 
     move-result v0
 
-    if-ge v0, p1, :cond_9
+    if-ge v0, p1, :cond_0
 
     .line 2528
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->nextBuffer(I)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public write(B)V
-    .registers 5
+    .locals 3
 
     .line 2460
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -1162,7 +1162,7 @@
 .end method
 
 .method public write(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 2495
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -1174,13 +1174,13 @@
 
     move-result v1
 
-    if-ge v1, v0, :cond_d
+    if-ge v1, v0, :cond_0
 
     .line 2497
     invoke-direct {p0, v0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->nextBuffer(I)V
 
     .line 2500
-    :cond_d
+    :cond_0
     iget v1, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
     sub-int/2addr v1, v0
@@ -1203,20 +1203,20 @@
 .end method
 
 .method public write([BII)V
-    .registers 6
+    .locals 2
 
     .line 2465
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->spaceLeft()I
 
     move-result v0
 
-    if-ge v0, p3, :cond_9
+    if-ge v0, p3, :cond_0
 
     .line 2466
     invoke-direct {p0, p3}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->nextBuffer(I)V
 
     .line 2469
-    :cond_9
+    :cond_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
     sub-int/2addr v0, p3
@@ -1239,7 +1239,7 @@
 .end method
 
 .method public writeBool(IZ)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x6
 
@@ -1260,7 +1260,7 @@
 .end method
 
 .method writeBool(Z)V
-    .registers 2
+    .locals 0
 
     int-to-byte p1, p1
 
@@ -1271,13 +1271,13 @@
 .end method
 
 .method public writeBytes(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 4
+    .locals 1
 
     .line 2120
     :try_start_0
     invoke-virtual {p2, p0}, Landroidx/datastore/preferences/protobuf/ByteString;->writeToReverse(Landroidx/datastore/preferences/protobuf/ByteOutput;)V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_14
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/16 v0, 0xa
 
@@ -1298,7 +1298,7 @@
 
     return-void
 
-    :catch_14
+    :catch_0
     move-exception p1
 
     .line 2123
@@ -1310,7 +1310,7 @@
 .end method
 
 .method public writeEndGroup(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -1321,7 +1321,7 @@
 .end method
 
 .method writeFixed32(I)V
-    .registers 4
+    .locals 2
 
     .line 2396
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -1341,7 +1341,7 @@
 .end method
 
 .method public writeFixed32(II)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0x9
 
@@ -1360,7 +1360,7 @@
 .end method
 
 .method public writeFixed64(IJ)V
-    .registers 5
+    .locals 1
 
     const/16 v0, 0xd
 
@@ -1379,7 +1379,7 @@
 .end method
 
 .method writeFixed64(J)V
-    .registers 5
+    .locals 2
 
     .line 2402
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -1399,7 +1399,7 @@
 .end method
 
 .method public writeGroup(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1427,7 +1427,7 @@
 .end method
 
 .method public writeGroup(ILjava/lang/Object;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1451,27 +1451,27 @@
 .end method
 
 .method writeInt32(I)V
-    .registers 4
+    .locals 2
 
-    if-ltz p1, :cond_6
+    if-ltz p1, :cond_0
 
     .line 2178
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint32(I)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     int-to-long v0, p1
 
     .line 2180
     invoke-virtual {p0, v0, v1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64(J)V
 
-    :goto_a
+    :goto_0
     return-void
 .end method
 
 .method public writeInt32(II)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0xf
 
@@ -1490,7 +1490,7 @@
 .end method
 
 .method public writeLazy(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 2507
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -1502,7 +1502,7 @@
 
     move-result v1
 
-    if-ge v1, v0, :cond_1c
+    if-ge v1, v0, :cond_0
 
     .line 2511
     iget v1, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->totalDoneBytes:I
@@ -1526,7 +1526,7 @@
     return-void
 
     .line 2520
-    :cond_1c
+    :cond_0
     iget v1, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
     sub-int/2addr v1, v0
@@ -1549,14 +1549,14 @@
 .end method
 
 .method public writeLazy([BII)V
-    .registers 6
+    .locals 2
 
     .line 2476
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->spaceLeft()I
 
     move-result v0
 
-    if-ge v0, p3, :cond_18
+    if-ge v0, p3, :cond_0
 
     .line 2479
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->totalDoneBytes:I
@@ -1580,7 +1580,7 @@
     return-void
 
     .line 2488
-    :cond_18
+    :cond_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
     sub-int/2addr v0, p3
@@ -1603,7 +1603,7 @@
 .end method
 
 .method public writeMessage(ILjava/lang/Object;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1646,7 +1646,7 @@
 .end method
 
 .method public writeMessage(ILjava/lang/Object;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1685,7 +1685,7 @@
 .end method
 
 .method writeSInt32(I)V
-    .registers 2
+    .locals 0
 
     .line 2186
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->encodeZigZag32(I)I
@@ -1698,7 +1698,7 @@
 .end method
 
 .method public writeSInt32(II)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0xa
 
@@ -1717,7 +1717,7 @@
 .end method
 
 .method public writeSInt64(IJ)V
-    .registers 5
+    .locals 1
 
     const/16 v0, 0xf
 
@@ -1736,7 +1736,7 @@
 .end method
 
 .method writeSInt64(J)V
-    .registers 3
+    .locals 0
 
     .line 2191
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->encodeZigZag64(J)J
@@ -1749,7 +1749,7 @@
 .end method
 
 .method public writeStartGroup(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -1760,7 +1760,7 @@
 .end method
 
 .method public writeString(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 2109
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->getTotalBytesWritten()I
@@ -1794,7 +1794,7 @@
 .end method
 
 .method writeString(Ljava/lang/String;)V
-    .registers 10
+    .locals 8
 
     .line 2409
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -1819,17 +1819,17 @@
 
     iput v2, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
-    :goto_12
+    :goto_0
     const/16 v2, 0x80
 
-    if-ltz v0, :cond_28
+    if-ltz v0, :cond_0
 
     .line 2416
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
 
-    if-ge v3, v2, :cond_28
+    if-ge v3, v2, :cond_0
 
     .line 2417
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -1844,12 +1844,12 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     const/4 v3, -0x1
 
-    if-ne v0, v3, :cond_31
+    if-ne v0, v3, :cond_1
 
     .line 2421
     iget p1, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
@@ -1861,27 +1861,27 @@
     return-void
 
     .line 2424
-    :cond_31
+    :cond_1
     iget v4, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
     add-int/2addr v4, v0
 
     iput v4, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
-    :goto_36
-    if-ltz v0, :cond_11d
+    :goto_1
+    if-ltz v0, :cond_8
 
     .line 2426
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
-    if-ge v4, v2, :cond_4e
+    if-ge v4, v2, :cond_2
 
     .line 2427
     iget v5, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
-    if-ltz v5, :cond_4e
+    if-ltz v5, :cond_2
 
     .line 2428
     iget-object v6, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -1894,17 +1894,17 @@
 
     invoke-virtual {v6, v5, v4}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    goto/16 :goto_11a
+    goto/16 :goto_2
 
-    :cond_4e
+    :cond_2
     const/16 v5, 0x800
 
-    if-ge v4, v5, :cond_75
+    if-ge v4, v5, :cond_3
 
     .line 2429
     iget v5, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
-    if-lez v5, :cond_75
+    if-lez v5, :cond_3
 
     .line 2430
     iget-object v6, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -1938,22 +1938,22 @@
 
     invoke-virtual {v5, v6, v4}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    goto/16 :goto_11a
+    goto/16 :goto_2
 
-    :cond_75
+    :cond_3
     const v5, 0xd800
 
-    if-lt v4, v5, :cond_7f
+    if-lt v4, v5, :cond_4
 
     const v5, 0xdfff
 
-    if-ge v5, v4, :cond_b2
+    if-ge v5, v4, :cond_5
 
     .line 2432
-    :cond_7f
+    :cond_4
     iget v5, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
-    if-le v5, v1, :cond_b2
+    if-le v5, v1, :cond_5
 
     .line 2434
     iget-object v6, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->buffer:Ljava/nio/ByteBuffer;
@@ -2006,17 +2006,17 @@
 
     invoke-virtual {v5, v6, v4}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    goto :goto_11a
+    goto :goto_2
 
     .line 2437
-    :cond_b2
+    :cond_5
     iget v5, p0, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->pos:I
 
     const/4 v6, 0x2
 
-    if-le v5, v6, :cond_115
+    if-le v5, v6, :cond_7
 
-    if-eqz v0, :cond_10d
+    if-eqz v0, :cond_6
 
     add-int/lit8 v5, v0, -0x1
 
@@ -2029,7 +2029,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_10d
+    if-eqz v6, :cond_6
 
     add-int/lit8 v0, v0, -0x1
 
@@ -2110,10 +2110,10 @@
 
     invoke-virtual {v5, v6, v4}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    goto :goto_11a
+    goto :goto_2
 
     .line 2442
-    :cond_10d
+    :cond_6
     new-instance p1, Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException;
 
     add-int/lit8 v1, v0, -0x1
@@ -2123,22 +2123,22 @@
     throw p1
 
     .line 2452
-    :cond_115
+    :cond_7
     invoke-virtual {p0, v0}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->requireSpace(I)V
 
     add-int/lit8 v0, v0, 0x1
 
-    :goto_11a
+    :goto_2
     add-int/2addr v0, v3
 
-    goto/16 :goto_36
+    goto/16 :goto_1
 
-    :cond_11d
+    :cond_8
     return-void
 .end method
 
 .method writeTag(II)V
-    .registers 3
+    .locals 0
 
     .line 2201
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/WireFormat;->makeTag(II)I
@@ -2151,7 +2151,7 @@
 .end method
 
 .method public writeUInt32(II)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0xa
 
@@ -2170,7 +2170,7 @@
 .end method
 
 .method public writeUInt64(IJ)V
-    .registers 5
+    .locals 1
 
     const/16 v0, 0xf
 
@@ -2189,143 +2189,143 @@
 .end method
 
 .method writeVarint32(I)V
-    .registers 3
+    .locals 1
 
     and-int/lit8 v0, p1, -0x80
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 2207
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint32OneByte(I)V
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     and-int/lit16 v0, p1, -0x4000
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     .line 2209
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint32TwoBytes(I)V
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/high16 v0, -0x200000
 
     and-int/2addr v0, p1
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_2
 
     .line 2211
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint32ThreeBytes(I)V
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_19
+    :cond_2
     const/high16 v0, -0x10000000
 
     and-int/2addr v0, p1
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_3
 
     .line 2213
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint32FourBytes(I)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 2215
-    :cond_22
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint32FiveBytes(I)V
 
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method writeVarint64(J)V
-    .registers 4
+    .locals 1
 
     .line 2264
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter;->access$200(J)B
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_30
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2293
-    :pswitch_8
+    :pswitch_0
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64TenBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2290
-    :pswitch_c
+    :pswitch_1
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64NineBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2287
-    :pswitch_10
+    :pswitch_2
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64EightBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2284
-    :pswitch_14
+    :pswitch_3
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64SevenBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2281
-    :pswitch_18
+    :pswitch_4
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64SixBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2278
-    :pswitch_1c
+    :pswitch_5
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64FiveBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2275
-    :pswitch_20
+    :pswitch_6
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64FourBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2272
-    :pswitch_24
+    :pswitch_7
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64ThreeBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2269
-    :pswitch_28
+    :pswitch_8
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64TwoBytes(J)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 2266
-    :pswitch_2c
+    :pswitch_9
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/BinaryWriter$SafeDirectWriter;->writeVarint64OneByte(J)V
 
-    :goto_2f
+    :goto_0
     return-void
 
-    :pswitch_data_30
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2c
-        :pswitch_28
-        :pswitch_24
-        :pswitch_20
-        :pswitch_1c
-        :pswitch_18
-        :pswitch_14
-        :pswitch_10
-        :pswitch_c
+        :pswitch_9
         :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

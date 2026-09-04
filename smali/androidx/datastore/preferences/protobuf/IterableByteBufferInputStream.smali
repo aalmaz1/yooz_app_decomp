@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Iterable;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,12 +63,12 @@
 
     move-result-object p1
 
-    :goto_10
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -83,9 +83,9 @@
 
     iput v1, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->dataSize:I
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     const/4 p1, -0x1
 
     .line 76
@@ -96,7 +96,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_38
+    if-nez p1, :cond_1
 
     .line 79
     sget-object p1, Landroidx/datastore/preferences/protobuf/Internal;->EMPTY_BYTE_BUFFER:Ljava/nio/ByteBuffer;
@@ -114,12 +114,12 @@
     .line 82
     iput-wide v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentAddress:J
 
-    :cond_38
+    :cond_1
     return-void
 .end method
 
 .method private getNextByteBuffer()Z
-    .registers 5
+    .locals 4
 
     .line 87
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentIndex:I
@@ -139,12 +139,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     return v2
 
     .line 91
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -169,7 +169,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     .line 94
     iput-boolean v1, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->hasArray:Z
@@ -192,10 +192,10 @@
 
     iput v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentArrayOffset:I
 
-    goto :goto_48
+    goto :goto_0
 
     .line 98
-    :cond_3b
+    :cond_1
     iput-boolean v2, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->hasArray:Z
 
     .line 99
@@ -212,12 +212,12 @@
     .line 100
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentArray:[B
 
-    :goto_48
+    :goto_0
     return v1
 .end method
 
 .method private updateCurrentByteBufferPos(I)V
-    .registers 3
+    .locals 1
 
     .line 106
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentByteBufferPos:I
@@ -233,19 +233,19 @@
 
     move-result p1
 
-    if-ne v0, p1, :cond_10
+    if-ne v0, p1, :cond_0
 
     .line 108
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->getNextByteBuffer()Z
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public read()I
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -257,19 +257,19 @@
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->dataSize:I
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 117
-    :cond_8
+    :cond_0
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->hasArray:Z
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 118
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentArray:[B
@@ -290,7 +290,7 @@
     return v0
 
     .line 122
-    :cond_1c
+    :cond_1
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentByteBufferPos:I
 
     int-to-long v2, v0
@@ -312,7 +312,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -324,14 +324,14 @@
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->dataSize:I
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 133
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentByteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
@@ -342,15 +342,15 @@
 
     sub-int/2addr v0, v1
 
-    if-le p3, v0, :cond_14
+    if-le p3, v0, :cond_1
 
     move p3, v0
 
     .line 137
-    :cond_14
+    :cond_1
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->hasArray:Z
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     .line 138
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentArray:[B
@@ -364,10 +364,10 @@
     .line 140
     invoke-direct {p0, p3}, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->updateCurrentByteBufferPos(I)V
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 142
-    :cond_24
+    :cond_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->currentByteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->position()I
@@ -394,6 +394,6 @@
     .line 146
     invoke-direct {p0, p3}, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;->updateCurrentByteBufferPos(I)V
 
-    :goto_3e
+    :goto_0
     return p3
 .end method

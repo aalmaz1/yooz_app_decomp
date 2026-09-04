@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,13 +30,13 @@
 
 # virtual methods
 .method public format(Landroidx/media3/common/Format;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZI)I
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -63,26 +63,26 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_1a
+    if-ne p1, p2, :cond_1
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_0
 
     return p2
 
     .line 58
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
 
     throw p1
 
-    :cond_1a
+    :cond_1
     return p1
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
-    .registers 4
+    .locals 0
 
     .line 65
     invoke-virtual {p1, p2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
@@ -91,7 +91,7 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method

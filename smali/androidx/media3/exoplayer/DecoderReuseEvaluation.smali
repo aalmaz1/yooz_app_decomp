@@ -68,28 +68,28 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/common/Format;Landroidx/media3/common/Format;II)V
-    .registers 7
+    .locals 1
 
     .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
-    if-nez p5, :cond_8
+    if-nez p5, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 172
-    :goto_b
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 173
@@ -129,18 +129,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_3
 
     .line 185
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -151,12 +151,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_41
+    goto :goto_1
 
     .line 188
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
 
     .line 189
@@ -164,13 +164,13 @@
 
     iget v3, p1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->result:I
 
-    if-ne v2, v3, :cond_3f
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->discardReasons:I
 
     iget v3, p1, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->discardReasons:I
 
-    if-ne v2, v3, :cond_3f
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->decoderName:Ljava/lang/String;
 
@@ -181,7 +181,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->oldFormat:Landroidx/media3/common/Format;
 
@@ -192,7 +192,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;->newFormat:Landroidx/media3/common/Format;
 
@@ -203,23 +203,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_2
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3f
+    :cond_2
     move v0, v1
 
-    :goto_40
+    :goto_0
     return v0
 
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x20f
 

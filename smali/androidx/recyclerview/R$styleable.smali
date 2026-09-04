@@ -125,13 +125,13 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_32
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/recyclerview/R$styleable;->ColorStateListItem:[I
 
@@ -139,7 +139,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_40
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/recyclerview/R$styleable;->FontFamily:[I
 
@@ -147,7 +147,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_52
+    fill-array-data v0, :array_2
 
     sput-object v0, Landroidx/recyclerview/R$styleable;->FontFamilyFont:[I
 
@@ -155,7 +155,7 @@
 
     new-array v1, v0, [I
 
-    fill-array-data v1, :array_6a
+    fill-array-data v1, :array_3
 
     sput-object v1, Landroidx/recyclerview/R$styleable;->GradientColor:[I
 
@@ -163,19 +163,19 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_86
+    fill-array-data v1, :array_4
 
     sput-object v1, Landroidx/recyclerview/R$styleable;->GradientColorItem:[I
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8e
+    fill-array-data v0, :array_5
 
     sput-object v0, Landroidx/recyclerview/R$styleable;->RecyclerView:[I
 
     return-void
 
-    :array_32
+    :array_0
     .array-data 4
         0x10101a5
         0x101031f
@@ -184,7 +184,7 @@
         0x7f0401ce
     .end array-data
 
-    :array_40
+    :array_1
     .array-data 4
         0x7f040177
         0x7f040178
@@ -195,7 +195,7 @@
         0x7f04017d
     .end array-data
 
-    :array_52
+    :array_2
     .array-data 4
         0x1010532
         0x1010533
@@ -209,7 +209,7 @@
         0x7f04038c
     .end array-data
 
-    :array_6a
+    :array_3
     .array-data 4
         0x101019d
         0x101019e
@@ -225,13 +225,13 @@
         0x1010513
     .end array-data
 
-    :array_86
+    :array_4
     .array-data 4
         0x10101a5
         0x1010514
     .end array-data
 
-    :array_8e
+    :array_5
     .array-data 4
         0x10100c4
         0x10100eb
@@ -249,7 +249,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

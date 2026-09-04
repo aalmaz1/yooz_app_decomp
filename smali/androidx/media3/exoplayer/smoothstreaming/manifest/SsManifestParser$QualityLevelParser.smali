@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ElementParser;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "QualityLevel"
 
@@ -59,7 +59,7 @@
 .end method
 
 .method private static buildCodecSpecificData(Ljava/lang/String;)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1
 
     .line 761
     invoke-static {p0}, Landroidx/media3/common/util/Util;->getBytesFromHexString(Ljava/lang/String;)[B
@@ -92,24 +92,24 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
     .line 764
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 766
-    :cond_19
+    :cond_0
     invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
 .method private static fourCCToMimeType(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "H264"
 
@@ -118,7 +118,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ba
+    if-nez v0, :cond_e
 
     const-string v0, "X264"
 
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ba
+    if-nez v0, :cond_e
 
     const-string v0, "AVC1"
 
@@ -136,7 +136,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ba
+    if-nez v0, :cond_e
 
     const-string v0, "DAVC"
 
@@ -145,11 +145,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
-    goto/16 :goto_ba
+    goto/16 :goto_5
 
-    :cond_22
+    :cond_0
     const-string v0, "AAC"
 
     .line 779
@@ -157,7 +157,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b7
+    if-nez v0, :cond_d
 
     const-string v0, "AACL"
 
@@ -166,7 +166,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b7
+    if-nez v0, :cond_d
 
     const-string v0, "AACH"
 
@@ -175,7 +175,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b7
+    if-nez v0, :cond_d
 
     const-string v0, "AACP"
 
@@ -184,11 +184,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_1
 
-    goto/16 :goto_b7
+    goto/16 :goto_4
 
-    :cond_44
+    :cond_1
     const-string v0, "TTML"
 
     .line 784
@@ -196,7 +196,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b4
+    if-nez v0, :cond_c
 
     const-string v0, "DFXP"
 
@@ -204,11 +204,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_2
 
-    goto :goto_b4
+    goto :goto_3
 
-    :cond_55
+    :cond_2
     const-string v0, "ac-3"
 
     .line 786
@@ -216,7 +216,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b1
+    if-nez v0, :cond_b
 
     const-string v0, "dac3"
 
@@ -224,11 +224,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_3
 
-    goto :goto_b1
+    goto :goto_2
 
-    :cond_66
+    :cond_3
     const-string v0, "ec-3"
 
     .line 788
@@ -236,7 +236,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ae
+    if-nez v0, :cond_a
 
     const-string v0, "dec3"
 
@@ -244,11 +244,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_4
 
-    goto :goto_ae
+    goto :goto_1
 
-    :cond_77
+    :cond_4
     const-string v0, "dtsc"
 
     .line 790
@@ -256,13 +256,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_82
+    if-eqz v0, :cond_5
 
     const-string p0, "audio/vnd.dts"
 
     return-object p0
 
-    :cond_82
+    :cond_5
     const-string v0, "dtsh"
 
     .line 792
@@ -270,7 +270,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ab
+    if-nez v0, :cond_9
 
     const-string v0, "dtsl"
 
@@ -278,11 +278,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_6
 
-    goto :goto_ab
+    goto :goto_0
 
-    :cond_93
+    :cond_6
     const-string v0, "dtse"
 
     .line 794
@@ -290,13 +290,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_7
 
     const-string p0, "audio/vnd.dts.hd;profile=lbr"
 
     return-object p0
 
-    :cond_9e
+    :cond_7
     const-string v0, "opus"
 
     .line 796
@@ -304,49 +304,49 @@
 
     move-result p0
 
-    if-eqz p0, :cond_a9
+    if-eqz p0, :cond_8
 
     const-string p0, "audio/opus"
 
     return-object p0
 
-    :cond_a9
+    :cond_8
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_ab
-    :goto_ab
+    :cond_9
+    :goto_0
     const-string p0, "audio/vnd.dts.hd"
 
     return-object p0
 
-    :cond_ae
-    :goto_ae
+    :cond_a
+    :goto_1
     const-string p0, "audio/eac3"
 
     return-object p0
 
-    :cond_b1
-    :goto_b1
+    :cond_b
+    :goto_2
     const-string p0, "audio/ac3"
 
     return-object p0
 
-    :cond_b4
-    :goto_b4
+    :cond_c
+    :goto_3
     const-string p0, "application/ttml+xml"
 
     return-object p0
 
-    :cond_b7
-    :goto_b7
+    :cond_d
+    :goto_4
     const-string p0, "audio/mp4a-latm"
 
     return-object p0
 
-    :cond_ba
-    :goto_ba
+    :cond_e
+    :goto_5
     const-string/jumbo p0, "video/avc"
 
     return-object p0
@@ -355,7 +355,7 @@
 
 # virtual methods
 .method public build()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 755
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Landroidx/media3/common/Format;
@@ -364,7 +364,7 @@
 .end method
 
 .method public parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -406,7 +406,7 @@
 
     const/4 v5, 0x0
 
-    if-ne v2, v3, :cond_49
+    if-ne v2, v3, :cond_0
 
     .line 698
     invoke-interface {p1, v5, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -449,20 +449,20 @@
     .line 703
     invoke-virtual {v3, v2}, Landroidx/media3/common/Format$Builder;->setInitializationData(Ljava/util/List;)Landroidx/media3/common/Format$Builder;
 
-    goto/16 :goto_c0
+    goto/16 :goto_2
 
-    :cond_49
+    :cond_0
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_8b
+    if-ne v2, v3, :cond_3
 
     const-string v2, "audio/mp4a-latm"
 
-    if-nez v1, :cond_51
+    if-nez v1, :cond_1
 
     move-object v1, v2
 
-    :cond_51
+    :cond_1
     const-string v3, "Channels"
 
     .line 709
@@ -491,13 +491,13 @@
 
     move-result v7
 
-    if-eqz v7, :cond_79
+    if-eqz v7, :cond_2
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_79
+    if-eqz v2, :cond_2
 
     .line 716
     invoke-static {v6, v3}, Landroidx/media3/extractor/AacUtil;->buildAacLcAudioSpecificConfig(II)[B
@@ -509,7 +509,7 @@
 
     move-result-object v4
 
-    :cond_79
+    :cond_2
     const-string v2, "audio/mp4"
 
     .line 719
@@ -530,14 +530,14 @@
     .line 722
     invoke-virtual {v2, v4}, Landroidx/media3/common/Format$Builder;->setInitializationData(Ljava/util/List;)Landroidx/media3/common/Format$Builder;
 
-    goto :goto_c0
+    goto :goto_2
 
-    :cond_8b
+    :cond_3
     const/4 v3, 0x3
 
     const-string v4, "application/mp4"
 
-    if-ne v2, v3, :cond_bd
+    if-ne v2, v3, :cond_7
 
     const-string v2, "Subtype"
 
@@ -548,7 +548,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    if-eqz v2, :cond_b4
+    if-eqz v2, :cond_6
 
     .line 727
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
@@ -559,7 +559,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_b1
+    if-nez v3, :cond_5
 
     const-string v3, "DESC"
 
@@ -567,39 +567,39 @@
 
     move-result v2
 
-    if-nez v2, :cond_ae
+    if-nez v2, :cond_4
 
-    goto :goto_b4
+    goto :goto_0
 
-    :cond_ae
+    :cond_4
     const/16 v2, 0x400
 
-    goto :goto_b5
+    goto :goto_1
 
-    :cond_b1
+    :cond_5
     const/16 v2, 0x40
 
-    goto :goto_b5
+    goto :goto_1
 
-    :cond_b4
-    :goto_b4
+    :cond_6
+    :goto_0
     const/4 v2, 0x0
 
     .line 738
-    :goto_b5
+    :goto_1
     invoke-virtual {v0, v4}, Landroidx/media3/common/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
     move-result-object v3
 
     invoke-virtual {v3, v2}, Landroidx/media3/common/Format$Builder;->setRoleFlags(I)Landroidx/media3/common/Format$Builder;
 
-    goto :goto_c0
+    goto :goto_2
 
     .line 740
-    :cond_bd
+    :cond_7
     invoke-virtual {v0, v4}, Landroidx/media3/common/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
-    :goto_c0
+    :goto_2
     const-string v2, "Index"
 
     .line 745

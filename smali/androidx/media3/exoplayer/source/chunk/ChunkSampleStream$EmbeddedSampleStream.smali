@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;Landroidx/media3/exoplayer/source/SampleQueue;I)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,12 +67,12 @@
 .end method
 
 .method private maybeNotifyDownstreamFormat()V
-    .registers 9
+    .locals 8
 
     .line 879
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->notifiedDownstreamFormat:Z
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     .line 880
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -122,14 +122,14 @@
     .line 886
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->notifiedDownstreamFormat:Z
 
-    :cond_2c
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public isReady()Z
-    .registers 3
+    .locals 2
 
     .line 827
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -138,7 +138,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
@@ -150,27 +150,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public maybeThrowError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 7
+    .locals 3
 
     .line 859
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -181,19 +181,19 @@
 
     const/4 v1, -0x3
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 862
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->access$000(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
     move-result-object v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
 
@@ -217,12 +217,12 @@
 
     move-result v2
 
-    if-gt v0, v2, :cond_29
+    if-gt v0, v2, :cond_1
 
     return v1
 
     .line 869
-    :cond_29
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->maybeNotifyDownstreamFormat()V
 
     .line 870
@@ -240,7 +240,7 @@
 .end method
 
 .method public release()V
-    .registers 4
+    .locals 3
 
     .line 874
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -272,7 +272,7 @@
 .end method
 
 .method public skipData(J)I
-    .registers 5
+    .locals 2
 
     .line 832
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -281,14 +281,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 835
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -306,7 +306,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_1
 
     .line 839
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->this$0:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -339,16 +339,16 @@
     move-result p1
 
     .line 844
-    :cond_35
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     invoke-virtual {p2, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->skip(I)V
 
-    if-lez p1, :cond_3f
+    if-lez p1, :cond_2
 
     .line 846
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->maybeNotifyDownstreamFormat()V
 
-    :cond_3f
+    :cond_2
     return p1
 .end method

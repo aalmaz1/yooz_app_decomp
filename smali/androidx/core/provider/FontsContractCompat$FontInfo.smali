@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;IIZI)V
-    .registers 6
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -60,7 +60,7 @@
 .end method
 
 .method static create(Landroid/net/Uri;IIZI)Landroidx/core/provider/FontsContractCompat$FontInfo;
-    .registers 12
+    .locals 7
 
     .line 303
     new-instance v6, Landroidx/core/provider/FontsContractCompat$FontInfo;
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public getResultCode()I
-    .registers 2
+    .locals 1
 
     .line 340
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mResultCode:I
@@ -94,7 +94,7 @@
 .end method
 
 .method public getTtcIndex()I
-    .registers 2
+    .locals 1
 
     .line 317
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mTtcIndex:I
@@ -103,7 +103,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 310
     iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
@@ -112,7 +112,7 @@
 .end method
 
 .method public getWeight()I
-    .registers 2
+    .locals 1
 
     .line 324
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mWeight:I
@@ -121,7 +121,7 @@
 .end method
 
 .method public isItalic()Z
-    .registers 2
+    .locals 1
 
     .line 331
     iget-boolean v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mItalic:Z

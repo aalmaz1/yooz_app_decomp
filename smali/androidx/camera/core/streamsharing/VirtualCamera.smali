@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraInternal;Ljava/util/Set;Landroidx/camera/core/impl/UseCaseConfigFactory;Landroidx/camera/core/streamsharing/StreamSharing$Control;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,12 +117,12 @@
 
     move-result-object p1
 
-    :goto_2c
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -141,28 +141,28 @@
 
     invoke-interface {p3, p2, p4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_43
+    :cond_0
     return-void
 .end method
 
 .method private forceSetProvider(Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/impl/DeferrableSurface;Landroidx/camera/core/impl/SessionConfig;)V
-    .registers 5
+    .locals 1
 
     .line 370
     invoke-virtual {p1}, Landroidx/camera/core/processing/SurfaceEdge;->invalidate()V
 
     .line 372
-    :try_start_3
+    :try_start_0
     invoke-virtual {p1, p2}, Landroidx/camera/core/processing/SurfaceEdge;->setProvider(Landroidx/camera/core/impl/DeferrableSurface;)V
-    :try_end_6
-    .catch Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException; {:try_start_3 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_21
+    goto :goto_1
 
     .line 377
-    :catch_7
+    :catch_0
     invoke-virtual {p3}, Landroidx/camera/core/impl/SessionConfig;->getErrorListeners()Ljava/util/List;
 
     move-result-object p1
@@ -171,12 +171,12 @@
 
     move-result-object p1
 
-    :goto_f
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -189,39 +189,39 @@
 
     invoke-interface {p2, p3, v0}, Landroidx/camera/core/impl/SessionConfig$ErrorListener;->onError(Landroidx/camera/core/impl/SessionConfig;Landroidx/camera/core/impl/SessionConfig$SessionError;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_21
-    :goto_21
+    :cond_0
+    :goto_1
     return-void
 .end method
 
 .method private static getChildFormat(Landroidx/camera/core/UseCase;)I
-    .registers 1
+    .locals 0
 
     .line 334
     instance-of p0, p0, Landroidx/camera/core/ImageCapture;
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     const/16 p0, 0x100
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/16 p0, 0x22
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method private getChildRotationDegrees(Landroidx/camera/core/UseCase;)I
-    .registers 3
+    .locals 1
 
     .line 324
     instance-of v0, p1, Landroidx/camera/core/Preview;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 326
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mParentCamera:Landroidx/camera/core/impl/CameraInternal;
@@ -244,19 +244,19 @@
 
     return p1
 
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method static getChildSurface(Landroidx/camera/core/UseCase;)Landroidx/camera/core/impl/DeferrableSurface;
-    .registers 4
+    .locals 3
 
     .line 391
     instance-of v0, p0, Landroidx/camera/core/ImageCapture;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 392
     invoke-virtual {p0}, Landroidx/camera/core/UseCase;->getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
@@ -267,10 +267,10 @@
 
     move-result-object p0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 393
-    :cond_d
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/UseCase;->getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
 
     move-result-object p0
@@ -284,7 +284,7 @@
     move-result-object p0
 
     .line 394
-    :goto_19
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -293,16 +293,16 @@
 
     const/4 v2, 0x1
 
-    if-gt v0, v2, :cond_23
+    if-gt v0, v2, :cond_1
 
     move v0, v2
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     move v0, v1
 
-    :goto_24
+    :goto_1
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 395
@@ -310,7 +310,7 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_34
+    if-ne v0, v2, :cond_2
 
     .line 396
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -321,42 +321,42 @@
 
     return-object p0
 
-    :cond_34
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getChildTargetType(Landroidx/camera/core/UseCase;)I
-    .registers 2
+    .locals 1
 
     .line 340
     instance-of v0, p0, Landroidx/camera/core/Preview;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
     .line 342
-    :cond_6
+    :cond_0
     instance-of p0, p0, Landroidx/camera/core/ImageCapture;
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_1
 
     const/4 p0, 0x4
 
     return p0
 
-    :cond_c
+    :cond_1
     const/4 p0, 0x2
 
     return p0
 .end method
 
 .method private static getHighestSurfacePriority(Ljava/util/Set;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -373,12 +373,12 @@
 
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -396,14 +396,14 @@
 
     move-result v0
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return v0
 .end method
 
 .method private getUseCaseEdge(Landroidx/camera/core/UseCase;)Landroidx/camera/core/processing/SurfaceEdge;
-    .registers 3
+    .locals 1
 
     .line 360
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildrenEdges:Ljava/util/Map;
@@ -424,7 +424,7 @@
 .end method
 
 .method private isUseCaseActive(Landroidx/camera/core/UseCase;)Z
-    .registers 3
+    .locals 1
 
     .line 364
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildrenActiveState:Ljava/util/Map;
@@ -449,7 +449,7 @@
 .end method
 
 .method static sendCameraCaptureResultToChild(Landroidx/camera/core/impl/CameraCaptureResult;Landroidx/camera/core/impl/SessionConfig;)V
-    .registers 6
+    .locals 4
 
     .line 418
     invoke-virtual {p1}, Landroidx/camera/core/impl/SessionConfig;->getRepeatingCameraCaptureCallbacks()Ljava/util/List;
@@ -460,12 +460,12 @@
 
     move-result-object v0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -490,16 +490,16 @@
     .line 419
     invoke-virtual {v1, v2}, Landroidx/camera/core/impl/CameraCaptureCallback;->onCaptureCompleted(Landroidx/camera/core/impl/CameraCaptureResult;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public attachUseCases(Ljava/util/Collection;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -520,7 +520,7 @@
 .end method
 
 .method bindChildren()V
-    .registers 5
+    .locals 4
 
     .line 145
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildren:Ljava/util/Set;
@@ -529,12 +529,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -557,14 +557,14 @@
     .line 146
     invoke-virtual {v1, p0, v3, v2}, Landroidx/camera/core/UseCase;->bindToCamera(Landroidx/camera/core/impl/CameraInternal;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/UseCaseConfig;)V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
 
     .line 433
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -577,7 +577,7 @@
 .end method
 
 .method createCameraCaptureCallback()Landroidx/camera/core/impl/CameraCaptureCallback;
-    .registers 2
+    .locals 1
 
     .line 402
     new-instance v0, Landroidx/camera/core/streamsharing/VirtualCamera$1;
@@ -588,7 +588,7 @@
 .end method
 
 .method public detachUseCases(Ljava/util/Collection;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -609,7 +609,7 @@
 .end method
 
 .method public getCameraControlInternal()Landroidx/camera/core/impl/CameraControlInternal;
-    .registers 2
+    .locals 1
 
     .line 303
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mVirtualCameraControl:Landroidx/camera/core/streamsharing/VirtualCameraControl;
@@ -618,7 +618,7 @@
 .end method
 
 .method public getCameraInfoInternal()Landroidx/camera/core/impl/CameraInfoInternal;
-    .registers 2
+    .locals 1
 
     .line 311
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mParentCamera:Landroidx/camera/core/impl/CameraInternal;
@@ -631,7 +631,7 @@
 .end method
 
 .method public getCameraState()Landroidx/camera/core/impl/Observable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -652,7 +652,7 @@
 .end method
 
 .method getChildren()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -669,7 +669,7 @@
 .end method
 
 .method getChildrenOutConfigs(Landroidx/camera/core/processing/SurfaceEdge;)Ljava/util/Map;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -694,12 +694,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -748,14 +748,14 @@
 
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_3b
+    :cond_0
     return-object v0
 .end method
 
 .method public getHasTransform()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -763,7 +763,7 @@
 .end method
 
 .method getParentMetadataCallback()Landroidx/camera/core/impl/CameraCaptureCallback;
-    .registers 2
+    .locals 1
 
     .line 227
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mParentMetadataCallback:Landroidx/camera/core/impl/CameraCaptureCallback;
@@ -772,7 +772,7 @@
 .end method
 
 .method mergeChildrenConfigs(Landroidx/camera/core/impl/MutableConfig;)V
-    .registers 8
+    .locals 6
 
     .line 123
     new-instance v0, Ljava/util/HashSet;
@@ -786,12 +786,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -824,10 +824,10 @@
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
     .line 131
-    :cond_2d
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mParentCamera:Landroidx/camera/core/impl/CameraInternal;
@@ -890,7 +890,7 @@
 .end method
 
 .method notifyStateAttached()V
-    .registers 3
+    .locals 2
 
     .line 158
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildren:Ljava/util/Set;
@@ -899,12 +899,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -915,14 +915,14 @@
     .line 159
     invoke-virtual {v1}, Landroidx/camera/core/UseCase;->onStateAttached()V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method notifyStateDetached()V
-    .registers 3
+    .locals 2
 
     .line 164
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildren:Ljava/util/Set;
@@ -931,12 +931,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -947,14 +947,14 @@
     .line 165
     invoke-virtual {v1}, Landroidx/camera/core/UseCase;->onStateDetached()V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public onUseCaseActive(Landroidx/camera/core/UseCase;)V
-    .registers 4
+    .locals 2
 
     .line 234
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -964,12 +964,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 238
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildrenActiveState:Ljava/util/Map;
 
     const/4 v1, 0x1
@@ -985,7 +985,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 241
     invoke-direct {p0, p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->getUseCaseEdge(Landroidx/camera/core/UseCase;)Landroidx/camera/core/processing/SurfaceEdge;
@@ -998,12 +998,12 @@
 
     invoke-direct {p0, v1, v0, p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->forceSetProvider(Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/impl/DeferrableSurface;Landroidx/camera/core/impl/SessionConfig;)V
 
-    :cond_25
+    :cond_1
     return-void
 .end method
 
 .method public onUseCaseInactive(Landroidx/camera/core/UseCase;)V
-    .registers 4
+    .locals 2
 
     .line 248
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -1013,12 +1013,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return-void
 
     .line 252
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildrenActiveState:Ljava/util/Map;
 
     const/4 v1, 0x0
@@ -1040,7 +1040,7 @@
 .end method
 
 .method public onUseCaseReset(Landroidx/camera/core/UseCase;)V
-    .registers 4
+    .locals 2
 
     .line 280
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -1058,17 +1058,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     return-void
 
     .line 287
-    :cond_11
+    :cond_0
     invoke-static {p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->getChildSurface(Landroidx/camera/core/UseCase;)Landroidx/camera/core/impl/DeferrableSurface;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 289
     invoke-virtual {p1}, Landroidx/camera/core/UseCase;->getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
@@ -1077,12 +1077,12 @@
 
     invoke-direct {p0, v0, v1, p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->forceSetProvider(Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/impl/DeferrableSurface;Landroidx/camera/core/impl/SessionConfig;)V
 
-    :cond_1e
+    :cond_1
     return-void
 .end method
 
 .method public onUseCaseUpdated(Landroidx/camera/core/UseCase;)V
-    .registers 4
+    .locals 2
 
     .line 259
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -1092,12 +1092,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return-void
 
     .line 264
-    :cond_a
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->getUseCaseEdge(Landroidx/camera/core/UseCase;)Landroidx/camera/core/processing/SurfaceEdge;
 
     move-result-object v0
@@ -1107,7 +1107,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 269
     invoke-virtual {p1}, Landroidx/camera/core/UseCase;->getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
@@ -1116,18 +1116,18 @@
 
     invoke-direct {p0, v0, v1, p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->forceSetProvider(Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/impl/DeferrableSurface;Landroidx/camera/core/impl/SessionConfig;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 273
-    :cond_1c
+    :cond_1
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceEdge;->disconnect()V
 
-    :goto_1f
+    :goto_0
     return-void
 .end method
 
 .method public open()V
-    .registers 3
+    .locals 2
 
     .line 428
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -1140,7 +1140,7 @@
 .end method
 
 .method public release()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1161,7 +1161,7 @@
 .end method
 
 .method resetChildren()V
-    .registers 3
+    .locals 2
 
     .line 216
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -1173,12 +1173,12 @@
 
     move-result-object v0
 
-    :goto_9
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1189,14 +1189,14 @@
     .line 218
     invoke-virtual {p0, v1}, Landroidx/camera/core/streamsharing/VirtualCamera;->onUseCaseReset(Landroidx/camera/core/UseCase;)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method setChildrenEdges(Ljava/util/Map;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1228,12 +1228,12 @@
 
     move-result-object p1
 
-    :goto_14
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1279,14 +1279,14 @@
     .line 208
     invoke-virtual {v1}, Landroidx/camera/core/UseCase;->notifyState()V
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_45
+    :cond_0
     return-void
 .end method
 
 .method unbindChildren()V
-    .registers 3
+    .locals 2
 
     .line 152
     iget-object v0, p0, Landroidx/camera/core/streamsharing/VirtualCamera;->mChildren:Ljava/util/Set;
@@ -1295,12 +1295,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1311,8 +1311,8 @@
     .line 153
     invoke-virtual {v1, p0}, Landroidx/camera/core/UseCase;->unbindFromCamera(Landroidx/camera/core/impl/CameraInternal;)V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method

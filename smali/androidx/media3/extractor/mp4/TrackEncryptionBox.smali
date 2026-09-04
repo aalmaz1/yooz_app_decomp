@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(ZLjava/lang/String;I[BII[B)V
-    .registers 11
+    .locals 3
 
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,24 +30,24 @@
 
     const/4 v1, 0x0
 
-    if-nez p3, :cond_9
+    if-nez p3, :cond_0
 
     move v2, v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v2, v1
 
-    :goto_a
-    if-nez p7, :cond_d
+    :goto_0
+    if-nez p7, :cond_1
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
+    :cond_1
     move v0, v1
 
-    :goto_e
+    :goto_1
     xor-int/2addr v0, v2
 
     .line 72
@@ -81,16 +81,16 @@
 .end method
 
 .method private static schemeToCryptoMode(Ljava/lang/String;)I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 87
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -101,74 +101,74 @@
 
     const/4 v3, -0x1
 
-    sparse-switch v1, :sswitch_data_5c
+    sparse-switch v1, :sswitch_data_0
 
-    goto :goto_3c
+    goto :goto_0
 
-    :sswitch_11
+    :sswitch_0
     const-string v1, "cens"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 v3, 0x3
 
-    goto :goto_3c
+    goto :goto_0
 
-    :sswitch_1c
+    :sswitch_1
     const-string v1, "cenc"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v3, v2
 
-    goto :goto_3c
+    goto :goto_0
 
-    :sswitch_27
+    :sswitch_2
     const-string v1, "cbcs"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_3
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_30
+    :cond_3
     move v3, v0
 
-    goto :goto_3c
+    goto :goto_0
 
-    :sswitch_32
+    :sswitch_3
     const-string v1, "cbc1"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_4
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_3b
+    :cond_4
     const/4 v3, 0x0
 
-    :goto_3c
-    packed-switch v3, :pswitch_data_6e
+    :goto_0
+    packed-switch v3, :pswitch_data_0
 
     .line 95
     new-instance v1, Ljava/lang/StringBuilder;
@@ -195,27 +195,27 @@
 
     invoke-static {v1, p0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :pswitch_59
+    :pswitch_0
     return v0
 
-    :pswitch_5a
+    :pswitch_1
     return v2
 
     nop
 
-    :sswitch_data_5c
+    :sswitch_data_0
     .sparse-switch
-        0x2e7ccd -> :sswitch_32
-        0x2e7d0f -> :sswitch_27
-        0x2e8997 -> :sswitch_1c
-        0x2e89a7 -> :sswitch_11
+        0x2e7ccd -> :sswitch_3
+        0x2e7d0f -> :sswitch_2
+        0x2e8997 -> :sswitch_1
+        0x2e89a7 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_6e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_5a
-        :pswitch_5a
-        :pswitch_59
-        :pswitch_59
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

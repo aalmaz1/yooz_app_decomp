@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 122
     new-instance v0, Ljava/util/HashSet;
@@ -93,7 +93,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 .end method
 
 .method static of(ILjava/lang/Throwable;D)Landroidx/camera/video/AudioStats;
-    .registers 5
+    .locals 1
 
     .line 52
     new-instance v0, Landroidx/camera/video/AutoValue_AudioStats;
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public getAudioAmplitude()D
-    .registers 3
+    .locals 2
 
     .line 185
     invoke-virtual {p0}, Landroidx/camera/video/AudioStats;->getAudioState()I
@@ -124,14 +124,14 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const-wide/16 v0, 0x0
 
     return-wide v0
 
     .line 188
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/video/AudioStats;->getAudioAmplitudeInternal()D
 
     move-result-wide v0
@@ -149,28 +149,28 @@
 .end method
 
 .method public hasAudio()Z
-    .registers 2
+    .locals 1
 
     .line 130
     invoke-virtual {p0}, Landroidx/camera/video/AudioStats;->getAudioState()I
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public hasError()Z
-    .registers 3
+    .locals 2
 
     .line 140
     sget-object v0, Landroidx/camera/video/AudioStats;->ERROR_STATES:Ljava/util/Set;

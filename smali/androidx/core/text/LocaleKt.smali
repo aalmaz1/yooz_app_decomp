@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final getLayoutDirection(Ljava/util/Locale;)I
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-static {p0}, Landroid/text/TextUtils;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I

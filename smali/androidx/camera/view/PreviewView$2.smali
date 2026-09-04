@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 689
     invoke-static {}, Landroidx/camera/view/PreviewView$ImplementationMode;->values()[Landroidx/camera/view/PreviewView$ImplementationMode;
@@ -37,7 +37,7 @@
 
     const/4 v1, 0x1
 
-    :try_start_a
+    :try_start_0
     sget-object v2, Landroidx/camera/view/PreviewView$ImplementationMode;->COMPATIBLE:Landroidx/camera/view/PreviewView$ImplementationMode;
 
     invoke-virtual {v2}, Landroidx/camera/view/PreviewView$ImplementationMode;->ordinal()I
@@ -45,13 +45,13 @@
     move-result v2
 
     aput v1, v0, v2
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_12
+    :catch_0
     const/4 v0, 0x2
 
-    :try_start_13
+    :try_start_1
     sget-object v2, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ImplementationMode:[I
 
     sget-object v3, Landroidx/camera/view/PreviewView$ImplementationMode;->PERFORMANCE:Landroidx/camera/view/PreviewView$ImplementationMode;
@@ -61,11 +61,11 @@
     move-result v3
 
     aput v0, v2, v3
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 632
-    :catch_1d
+    :catch_1
     invoke-static {}, Landroidx/camera/view/PreviewView$ScaleType;->values()[Landroidx/camera/view/PreviewView$ScaleType;
 
     move-result-object v2
@@ -76,7 +76,7 @@
 
     sput-object v2, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ScaleType:[I
 
-    :try_start_26
+    :try_start_2
     sget-object v3, Landroidx/camera/view/PreviewView$ScaleType;->FILL_END:Landroidx/camera/view/PreviewView$ScaleType;
 
     invoke-virtual {v3}, Landroidx/camera/view/PreviewView$ScaleType;->ordinal()I
@@ -84,11 +84,11 @@
     move-result v3
 
     aput v1, v2, v3
-    :try_end_2e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_26 .. :try_end_2e} :catch_2e
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_2e
-    :try_start_2e
+    :catch_2
+    :try_start_3
     sget-object v1, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ScaleType:[I
 
     sget-object v2, Landroidx/camera/view/PreviewView$ScaleType;->FILL_CENTER:Landroidx/camera/view/PreviewView$ScaleType;
@@ -98,11 +98,11 @@
     move-result v2
 
     aput v0, v1, v2
-    :try_end_38
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2e .. :try_end_38} :catch_38
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    :catch_38
-    :try_start_38
+    :catch_3
+    :try_start_4
     sget-object v0, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ScaleType:[I
 
     sget-object v1, Landroidx/camera/view/PreviewView$ScaleType;->FILL_START:Landroidx/camera/view/PreviewView$ScaleType;
@@ -114,11 +114,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_43
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_38 .. :try_end_43} :catch_43
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :catch_43
-    :try_start_43
+    :catch_4
+    :try_start_5
     sget-object v0, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ScaleType:[I
 
     sget-object v1, Landroidx/camera/view/PreviewView$ScaleType;->FIT_END:Landroidx/camera/view/PreviewView$ScaleType;
@@ -130,11 +130,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_4e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_43 .. :try_end_4e} :catch_4e
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    :catch_4e
-    :try_start_4e
+    :catch_5
+    :try_start_6
     sget-object v0, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ScaleType:[I
 
     sget-object v1, Landroidx/camera/view/PreviewView$ScaleType;->FIT_CENTER:Landroidx/camera/view/PreviewView$ScaleType;
@@ -146,11 +146,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_59
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4e .. :try_end_59} :catch_59
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    :catch_59
-    :try_start_59
+    :catch_6
+    :try_start_7
     sget-object v0, Landroidx/camera/view/PreviewView$2;->$SwitchMap$androidx$camera$view$PreviewView$ScaleType:[I
 
     sget-object v1, Landroidx/camera/view/PreviewView$ScaleType;->FIT_START:Landroidx/camera/view/PreviewView$ScaleType;
@@ -162,9 +162,9 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
-    :try_end_64
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_59 .. :try_end_64} :catch_64
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
-    :catch_64
+    :catch_7
     return-void
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public static isEqual(Ljava/lang/Object;)Landroidx/core/util/Predicate;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -29,29 +29,29 @@
         }
     .end annotation
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     .line 110
     new-instance p0, Landroidx/core/util/Predicate$$ExternalSyntheticLambda1;
 
     invoke-direct {p0}, Landroidx/core/util/Predicate$$ExternalSyntheticLambda1;-><init>()V
 
-    goto :goto_e
+    goto :goto_0
 
     .line 111
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/core/util/Predicate$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Landroidx/core/util/Predicate$$ExternalSyntheticLambda2;-><init>(Ljava/lang/Object;)V
 
     move-object p0, v0
 
-    :goto_e
+    :goto_0
     return-object p0
 .end method
 
 .method public static synthetic lambda$and$0(Landroidx/core/util/Predicate;Landroidx/core/util/Predicate;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 1
     .param p0, "_this"    # Landroidx/core/util/Predicate;
 
     .line 60
@@ -59,27 +59,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     invoke-interface {p1, p2}, Landroidx/core/util/Predicate;->test(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method public static synthetic lambda$isEqual$3(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 110
     invoke-static {p0}, Ljava/util/Objects;->isNull(Ljava/lang/Object;)Z
@@ -90,7 +90,7 @@
 .end method
 
 .method public static synthetic lambda$isEqual$4(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 111
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -101,7 +101,7 @@
 .end method
 
 .method public static synthetic lambda$negate$1(Landroidx/core/util/Predicate;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .param p0, "_this"    # Landroidx/core/util/Predicate;
 
     .line 72
@@ -115,7 +115,7 @@
 .end method
 
 .method public static synthetic lambda$or$2(Landroidx/core/util/Predicate;Landroidx/core/util/Predicate;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 1
     .param p0, "_this"    # Landroidx/core/util/Predicate;
 
     .line 94
@@ -123,31 +123,31 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-interface {p1, p2}, Landroidx/core/util/Predicate;->test(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_10
+    :goto_1
     return p1
 .end method
 
 .method public static not(Landroidx/core/util/Predicate;)Landroidx/core/util/Predicate;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public and(Landroidx/core/util/Predicate;)Landroidx/core/util/Predicate;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -197,7 +197,7 @@
 .end method
 
 .method public negate()Landroidx/core/util/Predicate;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -215,7 +215,7 @@
 .end method
 
 .method public or(Landroidx/core/util/Predicate;)Landroidx/core/util/Predicate;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

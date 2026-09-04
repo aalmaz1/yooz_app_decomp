@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/video/VideoFrameRenderControl$FrameRenderer;Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;)V
-    .registers 3
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,7 +104,7 @@
 .end method
 
 .method private dropFrame()V
-    .registers 3
+    .locals 2
 
     .line 221
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->presentationTimestampsUs:Landroidx/media3/common/util/LongArrayQueue;
@@ -128,7 +128,7 @@
 .end method
 
 .method private static getLastAndClear(Landroidx/media3/common/util/TimedValueQueue;)Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -146,33 +146,33 @@
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 266
-    :goto_d
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/util/TimedValueQueue;->size()I
 
     move-result v0
 
-    if-le v0, v1, :cond_17
+    if-le v0, v1, :cond_1
 
     .line 267
     invoke-virtual {p0}, Landroidx/media3/common/util/TimedValueQueue;->pollFirst()Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_1
 
     .line 269
-    :cond_17
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/TimedValueQueue;->pollFirst()Ljava/lang/Object;
 
     move-result-object p0
@@ -185,7 +185,7 @@
 .end method
 
 .method private maybeUpdateOutputStreamOffset(J)Z
-    .registers 7
+    .locals 4
 
     .line 244
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->streamOffsets:Landroidx/media3/common/util/TimedValueQueue;
@@ -196,7 +196,7 @@
 
     check-cast p1, Ljava/lang/Long;
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     .line 245
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -207,7 +207,7 @@
 
     cmp-long p2, v0, v2
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_0
 
     .line 246
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -220,14 +220,14 @@
 
     return p1
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method private maybeUpdateVideoSize(J)Z
-    .registers 4
+    .locals 1
 
     .line 253
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoSizeChanges:Landroidx/media3/common/util/TimedValueQueue;
@@ -240,19 +240,19 @@
 
     const/4 p2, 0x0
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     return p2
 
     .line 257
-    :cond_c
+    :cond_0
     sget-object v0, Landroidx/media3/common/VideoSize;->UNKNOWN:Landroidx/media3/common/VideoSize;
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/VideoSize;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->reportedVideoSize:Landroidx/media3/common/VideoSize;
 
@@ -260,7 +260,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 258
     iput-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->reportedVideoSize:Landroidx/media3/common/VideoSize;
@@ -269,12 +269,12 @@
 
     return p1
 
-    :cond_20
+    :cond_1
     return p2
 .end method
 
 .method private renderFrame(Z)V
-    .registers 11
+    .locals 9
 
     .line 226
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->presentationTimestampsUs:Landroidx/media3/common/util/LongArrayQueue;
@@ -302,7 +302,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 230
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->frameRenderer:Landroidx/media3/exoplayer/video/VideoFrameRenderControl$FrameRenderer;
@@ -311,22 +311,22 @@
 
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/video/VideoFrameRenderControl$FrameRenderer;->onVideoSizeChanged(Landroidx/media3/common/VideoSize;)V
 
-    :cond_21
-    if-eqz p1, :cond_26
+    :cond_0
+    if-eqz p1, :cond_1
 
     const-wide/16 v0, -0x1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 235
-    :cond_26
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoFrameReleaseInfo:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->getReleaseTimeNs()J
 
     move-result-wide v0
 
-    :goto_2c
+    :goto_0
     move-wide v2, v0
 
     .line 236
@@ -350,7 +350,7 @@
 
 # virtual methods
 .method public flush()V
-    .registers 6
+    .locals 5
 
     .line 101
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->presentationTimestampsUs:Landroidx/media3/common/util/LongArrayQueue;
@@ -369,7 +369,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_2b
+    if-lez v0, :cond_0
 
     .line 108
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->streamOffsets:Landroidx/media3/common/util/TimedValueQueue;
@@ -396,10 +396,10 @@
     invoke-virtual {v2, v3, v4, v0}, Landroidx/media3/common/util/TimedValueQueue;->add(JLjava/lang/Object;)V
 
     .line 111
-    :cond_2b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->pendingOutputVideoSize:Landroidx/media3/common/VideoSize;
 
-    if-nez v0, :cond_42
+    if-nez v0, :cond_1
 
     .line 112
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoSizeChanges:Landroidx/media3/common/util/TimedValueQueue;
@@ -408,7 +408,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_47
+    if-lez v0, :cond_2
 
     .line 117
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoSizeChanges:Landroidx/media3/common/util/TimedValueQueue;
@@ -421,21 +421,21 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->pendingOutputVideoSize:Landroidx/media3/common/VideoSize;
 
-    goto :goto_47
+    goto :goto_0
 
     .line 121
-    :cond_42
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoSizeChanges:Landroidx/media3/common/util/TimedValueQueue;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/TimedValueQueue;->clear()V
 
-    :cond_47
-    :goto_47
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public hasReleasedFrame(J)Z
-    .registers 7
+    .locals 4
 
     .line 138
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->lastPresentationTimeUs:J
@@ -444,25 +444,25 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     cmp-long p1, v0, p1
 
-    if-ltz p1, :cond_11
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_12
+    :goto_0
     return p1
 .end method
 
 .method public isReady()Z
-    .registers 3
+    .locals 2
 
     .line 127
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoFrameReleaseControl:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
@@ -477,12 +477,12 @@
 .end method
 
 .method public onOutputFrameAvailableForRendering(J)V
-    .registers 5
+    .locals 2
 
     .line 208
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->pendingOutputVideoSize:Landroidx/media3/common/VideoSize;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 209
     iget-object v1, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoSizeChanges:Landroidx/media3/common/util/TimedValueQueue;
@@ -495,7 +495,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->pendingOutputVideoSize:Landroidx/media3/common/VideoSize;
 
     .line 212
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->presentationTimestampsUs:Landroidx/media3/common/util/LongArrayQueue;
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/common/util/LongArrayQueue;->add(J)V
@@ -504,7 +504,7 @@
 .end method
 
 .method public onOutputSizeChanged(II)V
-    .registers 4
+    .locals 1
 
     .line 196
     new-instance v0, Landroidx/media3/common/VideoSize;
@@ -518,17 +518,17 @@
 
     move-result p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     .line 198
     iput-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->pendingOutputVideoSize:Landroidx/media3/common/VideoSize;
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onStreamOffsetChange(JJ)V
-    .registers 6
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->streamOffsets:Landroidx/media3/common/util/TimedValueQueue;
@@ -543,7 +543,7 @@
 .end method
 
 .method public render(JJ)V
-    .registers 20
+    .locals 15
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -553,14 +553,14 @@
     move-object v0, p0
 
     .line 155
-    :goto_1
+    :goto_0
     iget-object v1, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->presentationTimestampsUs:Landroidx/media3/common/util/LongArrayQueue;
 
     invoke-virtual {v1}, Landroidx/media3/common/util/LongArrayQueue;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_56
+    if-nez v1, :cond_5
 
     .line 156
     iget-object v1, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->presentationTimestampsUs:Landroidx/media3/common/util/LongArrayQueue;
@@ -574,7 +574,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 159
     iget-object v1, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoFrameReleaseControl:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
@@ -582,7 +582,7 @@
     invoke-virtual {v1}, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->onProcessedStreamChange()V
 
     .line 162
-    :cond_1a
+    :cond_0
     iget-object v2, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->videoFrameReleaseControl:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
 
     iget-wide v9, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->outputStreamOffsetUs:J
@@ -604,30 +604,30 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_3
 
-    if-eq v1, v2, :cond_4c
+    if-eq v1, v2, :cond_3
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_46
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x3
 
-    if-eq v1, v2, :cond_46
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x4
 
-    if-eq v1, v2, :cond_46
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x5
 
-    if-ne v1, v2, :cond_3c
+    if-ne v1, v2, :cond_1
 
     return-void
 
     .line 189
-    :cond_3c
+    :cond_1
     new-instance v2, Ljava/lang/IllegalStateException;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -639,53 +639,53 @@
     throw v2
 
     .line 178
-    :cond_46
+    :cond_2
     iput-wide v13, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->lastPresentationTimeUs:J
 
     .line 179
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->dropFrame()V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 183
-    :cond_4c
+    :cond_3
     iput-wide v13, v0, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->lastPresentationTimeUs:J
 
-    if-nez v1, :cond_51
+    if-nez v1, :cond_4
 
-    goto :goto_52
+    goto :goto_1
 
-    :cond_51
+    :cond_4
     const/4 v2, 0x0
 
     .line 184
-    :goto_52
+    :goto_1
     invoke-direct {p0, v2}, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->renderFrame(Z)V
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_56
+    :cond_5
     return-void
 .end method
 
 .method public setPlaybackSpeed(F)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 143
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 144

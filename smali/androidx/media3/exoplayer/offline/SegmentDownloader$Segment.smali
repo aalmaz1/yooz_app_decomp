@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/media3/datasource/DataSpec;)V
-    .registers 4
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;)I
-    .registers 6
+    .locals 4
 
     .line 74
     iget-wide v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;->startTimeUs:J
@@ -66,7 +66,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 58
     check-cast p1, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;

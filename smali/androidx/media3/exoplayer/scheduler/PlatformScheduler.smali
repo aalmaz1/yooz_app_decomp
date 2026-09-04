@@ -36,23 +36,23 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 60
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     const/16 v0, 0x10
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     or-int/lit8 v0, v0, 0xf
 
     sput v0, Landroidx/media3/exoplayer/scheduler/PlatformScheduler;->SUPPORTED_REQUIREMENTS:I
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;I)V
-    .registers 4
+    .locals 1
 
     .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,7 +104,7 @@
 .end method
 
 .method private static buildJobInfo(ILandroid/content/ComponentName;Landroidx/media3/exoplayer/scheduler/Requirements;Ljava/lang/String;Ljava/lang/String;)Landroid/app/job/JobInfo;
-    .registers 8
+    .locals 3
 
     .line 109
     sget v0, Landroidx/media3/exoplayer/scheduler/PlatformScheduler;->SUPPORTED_REQUIREMENTS:I
@@ -118,7 +118,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_0
 
     .line 111
     new-instance v1, Ljava/lang/StringBuilder;
@@ -152,7 +152,7 @@
     invoke-static {v1, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 117
-    :cond_29
+    :cond_0
     new-instance v0, Landroid/app/job/JobInfo$Builder;
 
     invoke-direct {v0, p0, p1}, Landroid/app/job/JobInfo$Builder;-><init>(ILandroid/content/ComponentName;)V
@@ -164,29 +164,29 @@
 
     const/4 p1, 0x1
 
-    if-eqz p0, :cond_3a
+    if-eqz p0, :cond_1
 
     const/4 p0, 0x2
 
     .line 119
     invoke-virtual {v0, p0}, Landroid/app/job/JobInfo$Builder;->setRequiredNetworkType(I)Landroid/app/job/JobInfo$Builder;
 
-    goto :goto_43
+    goto :goto_0
 
     .line 120
-    :cond_3a
+    :cond_1
     invoke-virtual {p2}, Landroidx/media3/exoplayer/scheduler/Requirements;->isNetworkRequired()Z
 
     move-result p0
 
-    if-eqz p0, :cond_43
+    if-eqz p0, :cond_2
 
     .line 121
     invoke-virtual {v0, p1}, Landroid/app/job/JobInfo$Builder;->setRequiredNetworkType(I)Landroid/app/job/JobInfo$Builder;
 
     .line 123
-    :cond_43
-    :goto_43
+    :cond_2
+    :goto_0
     invoke-virtual {p2}, Landroidx/media3/exoplayer/scheduler/Requirements;->isIdleRequired()Z
 
     move-result p0
@@ -205,19 +205,19 @@
 
     const/16 v1, 0x1a
 
-    if-lt p0, v1, :cond_60
+    if-lt p0, v1, :cond_3
 
     invoke-virtual {p2}, Landroidx/media3/exoplayer/scheduler/Requirements;->isStorageNotLowRequired()Z
 
     move-result p0
 
-    if-eqz p0, :cond_60
+    if-eqz p0, :cond_3
 
     .line 126
     invoke-virtual {v0, p1}, Landroid/app/job/JobInfo$Builder;->setRequiresStorageNotLow(Z)Landroid/app/job/JobInfo$Builder;
 
     .line 128
-    :cond_60
+    :cond_3
     invoke-virtual {v0, p1}, Landroid/app/job/JobInfo$Builder;->setPersisted(Z)Landroid/app/job/JobInfo$Builder;
 
     .line 130
@@ -258,7 +258,7 @@
 
 # virtual methods
 .method public cancel()Z
-    .registers 3
+    .locals 2
 
     .line 92
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/PlatformScheduler;->jobScheduler:Landroid/app/job/JobScheduler;
@@ -273,7 +273,7 @@
 .end method
 
 .method public getSupportedRequirements(Landroidx/media3/exoplayer/scheduler/Requirements;)Landroidx/media3/exoplayer/scheduler/Requirements;
-    .registers 3
+    .locals 1
 
     .line 98
     sget v0, Landroidx/media3/exoplayer/scheduler/PlatformScheduler;->SUPPORTED_REQUIREMENTS:I
@@ -286,7 +286,7 @@
 .end method
 
 .method public schedule(Landroidx/media3/exoplayer/scheduler/Requirements;Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 6
+    .locals 2
 
     .line 84
     iget v0, p0, Landroidx/media3/exoplayer/scheduler/PlatformScheduler;->jobId:I
@@ -307,13 +307,13 @@
 
     const/4 p2, 0x1
 
-    if-ne p1, p2, :cond_12
+    if-ne p1, p2, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_13
+    :goto_0
     return p2
 .end method

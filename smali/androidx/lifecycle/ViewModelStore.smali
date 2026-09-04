@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 3
+    .locals 2
 
     .line 71
     iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
@@ -84,12 +84,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -100,10 +100,10 @@
     .line 72
     invoke-virtual {v1}, Landroidx/lifecycle/ViewModel;->clear()V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 74
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Landroidx/lifecycle/ViewModelStore;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
@@ -112,7 +112,7 @@
 .end method
 
 .method public final get(Ljava/lang/String;)Landroidx/lifecycle/ViewModel;
-    .registers 3
+    .locals 1
 
     const-string v0, "key"
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public final keys()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -160,7 +160,7 @@
 .end method
 
 .method public final put(Ljava/lang/String;Landroidx/lifecycle/ViewModel;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 
@@ -179,11 +179,11 @@
 
     check-cast p1, Landroidx/lifecycle/ViewModel;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 45
     invoke-virtual {p1}, Landroidx/lifecycle/ViewModel;->onCleared()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method

@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1846
     new-instance v0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
@@ -136,7 +136,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 1999
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -202,7 +202,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1843
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$ClippingConfiguration;-><init>(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)V
@@ -211,7 +211,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$ClippingProperties;
-    .registers 8
+    .locals 7
 
     .line 2081
     new-instance v0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
@@ -305,13 +305,13 @@
 
     cmp-long v1, v3, v5
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_0
 
     .line 2102
     invoke-virtual {v0, v3, v4}, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->setStartPositionUs(J)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
 
     .line 2104
-    :cond_54
+    :cond_0
     sget-object v1, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_END_POSITION_US:Ljava/lang/String;
 
     iget-wide v3, v2, Landroidx/media3/common/MediaItem$ClippingConfiguration;->endPositionUs:J
@@ -326,13 +326,13 @@
 
     cmp-long p0, v3, v1
 
-    if-eqz p0, :cond_65
+    if-eqz p0, :cond_1
 
     .line 2107
     invoke-virtual {v0, v3, v4}, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->setEndPositionUs(J)Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
 
     .line 2109
-    :cond_65
+    :cond_1
     invoke-virtual {v0}, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;->buildClippingProperties()Landroidx/media3/common/MediaItem$ClippingProperties;
 
     move-result-object p0
@@ -343,7 +343,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
-    .registers 3
+    .locals 2
 
     .line 2011
     new-instance v0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
@@ -356,26 +356,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 2019
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$ClippingConfiguration;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 2023
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$ClippingConfiguration;
 
     .line 2025
@@ -385,7 +385,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->endPositionUs:J
 
@@ -393,37 +393,37 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToLiveWindow:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToLiveWindow:Z
 
-    if-ne v1, v3, :cond_2f
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToDefaultPosition:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToDefaultPosition:Z
 
-    if-ne v1, v3, :cond_2f
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startsAtKeyFrame:Z
 
     iget-boolean p1, p1, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startsAtKeyFrame:Z
 
-    if-ne v1, p1, :cond_2f
+    if-ne v1, p1, :cond_2
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     move v0, v2
 
-    :goto_30
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 2034
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startPositionUs:J
@@ -474,7 +474,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 7
+    .locals 6
 
     .line 2052
     new-instance v0, Landroid/os/Bundle;
@@ -490,7 +490,7 @@
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_0
 
     .line 2054
     sget-object v4, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_START_POSITION_MS:Ljava/lang/String;
@@ -498,14 +498,14 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 2056
-    :cond_14
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->endPositionMs:J
 
     iget-wide v4, v3, Landroidx/media3/common/MediaItem$ClippingConfiguration;->endPositionMs:J
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_1
 
     .line 2057
     sget-object v4, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_END_POSITION_MS:Ljava/lang/String;
@@ -513,14 +513,14 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 2059
-    :cond_21
+    :cond_1
     iget-wide v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startPositionUs:J
 
     iget-wide v4, v3, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startPositionUs:J
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_2
 
     .line 2060
     sget-object v4, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_START_POSITION_US:Ljava/lang/String;
@@ -528,14 +528,14 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 2062
-    :cond_2e
+    :cond_2
     iget-wide v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->endPositionUs:J
 
     iget-wide v4, v3, Landroidx/media3/common/MediaItem$ClippingConfiguration;->endPositionUs:J
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_3b
+    if-eqz v4, :cond_3
 
     .line 2063
     sget-object v4, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_END_POSITION_US:Ljava/lang/String;
@@ -543,12 +543,12 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 2065
-    :cond_3b
+    :cond_3
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToLiveWindow:Z
 
     iget-boolean v2, v3, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToLiveWindow:Z
 
-    if-eq v1, v2, :cond_46
+    if-eq v1, v2, :cond_4
 
     .line 2066
     sget-object v2, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_RELATIVE_TO_LIVE_WINDOW:Ljava/lang/String;
@@ -556,12 +556,12 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 2068
-    :cond_46
+    :cond_4
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToDefaultPosition:Z
 
     iget-boolean v2, v3, Landroidx/media3/common/MediaItem$ClippingConfiguration;->relativeToDefaultPosition:Z
 
-    if-eq v1, v2, :cond_51
+    if-eq v1, v2, :cond_5
 
     .line 2069
     sget-object v2, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_RELATIVE_TO_DEFAULT_POSITION:Ljava/lang/String;
@@ -569,18 +569,18 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 2071
-    :cond_51
+    :cond_5
     iget-boolean v1, p0, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startsAtKeyFrame:Z
 
     iget-boolean v2, v3, Landroidx/media3/common/MediaItem$ClippingConfiguration;->startsAtKeyFrame:Z
 
-    if-eq v1, v2, :cond_5c
+    if-eq v1, v2, :cond_6
 
     .line 2072
     sget-object v2, Landroidx/media3/common/MediaItem$ClippingConfiguration;->FIELD_STARTS_AT_KEY_FRAME:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    :cond_5c
+    :cond_6
     return-object v0
 .end method

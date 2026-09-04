@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraControlImpl;Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;Ljava/util/concurrent/Executor;)V
-    .registers 5
+    .locals 1
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,14 +58,14 @@
 .end method
 
 .method private clearRunningTask()V
-    .registers 5
+    .locals 4
 
     .line 226
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mRunningCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 227
     new-instance v2, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -80,10 +80,10 @@
     iput-object v1, p0, Landroidx/camera/camera2/internal/ExposureControl;->mRunningCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     .line 233
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mRunningCaptureResultListener:Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CaptureResultListener;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 234
     iget-object v2, p0, Landroidx/camera/camera2/internal/ExposureControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -93,12 +93,12 @@
     .line 235
     iput-object v1, p0, Landroidx/camera/camera2/internal/ExposureControl;->mRunningCaptureResultListener:Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CaptureResultListener;
 
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 .method static getDefaultExposureState(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Landroidx/camera/core/ExposureState;
-    .registers 3
+    .locals 2
 
     .line 100
     new-instance v0, Landroidx/camera/camera2/internal/ExposureStateImpl;
@@ -111,7 +111,7 @@
 .end method
 
 .method static synthetic lambda$setExposureCompensationIndex$0(ILandroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 6
+    .locals 3
 
     .line 181
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
@@ -133,9 +133,9 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
-    if-eqz p2, :cond_31
+    if-eqz p2, :cond_1
 
     .line 186
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -144,25 +144,25 @@
 
     const/4 v2, 0x2
 
-    if-eq v0, v2, :cond_23
+    if-eq v0, v2, :cond_0
 
     const/4 v2, 0x3
 
-    if-eq v0, v2, :cond_23
+    if-eq v0, v2, :cond_0
 
     const/4 v2, 0x4
 
-    if-eq v0, v2, :cond_23
+    if-eq v0, v2, :cond_0
 
-    goto :goto_41
+    goto :goto_0
 
     .line 190
-    :cond_23
+    :cond_0
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
 
-    if-ne p2, p0, :cond_41
+    if-ne p2, p0, :cond_2
 
     .line 191
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -173,15 +173,15 @@
 
     return v1
 
-    :cond_31
-    if-eqz p2, :cond_41
+    :cond_1
+    if-eqz p2, :cond_2
 
     .line 202
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
 
-    if-ne p2, p0, :cond_41
+    if-ne p2, p0, :cond_2
 
     .line 205
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -192,8 +192,8 @@
 
     return v1
 
-    :cond_41
-    :goto_41
+    :cond_2
+    :goto_0
     const/4 p0, 0x0
 
     return p0
@@ -202,7 +202,7 @@
 
 # virtual methods
 .method getExposureState()Landroidx/camera/core/ExposureState;
-    .registers 2
+    .locals 1
 
     .line 138
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mExposureStateImpl:Landroidx/camera/camera2/internal/ExposureStateImpl;
@@ -211,14 +211,14 @@
 .end method
 
 .method synthetic lambda$setExposureCompensationIndex$1$androidx-camera-camera2-internal-ExposureControl(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;I)V
-    .registers 7
+    .locals 4
 
     .line 161
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mIsActive:Z
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 162
     iget-object p2, p0, Landroidx/camera/camera2/internal/ExposureControl;->mExposureStateImpl:Landroidx/camera/camera2/internal/ExposureStateImpl;
@@ -237,7 +237,7 @@
     return-void
 
     .line 169
-    :cond_15
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/camera2/internal/ExposureControl;->clearRunningTask()V
 
     .line 171
@@ -245,16 +245,16 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     move v0, v1
 
-    :goto_20
+    :goto_0
     const-string v3, "mRunningCompleter should be null when starting set a new exposure compensation value"
 
     invoke-static {v0, v3}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -262,11 +262,11 @@
     .line 174
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mRunningCaptureResultListener:Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CaptureResultListener;
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_2
 
     move v1, v2
 
-    :cond_2a
+    :cond_2
     const-string v0, "mRunningCaptureResultListener should be null when starting set a new exposure compensation value"
 
     invoke-static {v1, v0}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -295,7 +295,7 @@
 .end method
 
 .method synthetic lambda$setExposureCompensationIndex$2$androidx-camera-camera2-internal-ExposureControl(ILandroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -336,20 +336,20 @@
 .end method
 
 .method setActive(Z)V
-    .registers 3
+    .locals 1
 
     .line 112
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mIsActive:Z
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 116
-    :cond_5
+    :cond_0
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/ExposureControl;->mIsActive:Z
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_1
 
     .line 119
     iget-object p1, p0, Landroidx/camera/camera2/internal/ExposureControl;->mExposureStateImpl:Landroidx/camera/camera2/internal/ExposureStateImpl;
@@ -361,12 +361,12 @@
     .line 120
     invoke-direct {p0}, Landroidx/camera/camera2/internal/ExposureControl;->clearRunningTask()V
 
-    :cond_12
+    :cond_1
     return-void
 .end method
 
 .method setCaptureRequestOption(Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 132
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_EXPOSURE_COMPENSATION:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -389,7 +389,7 @@
 .end method
 
 .method setExposureCompensationIndex(I)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -406,7 +406,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 144
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -422,7 +422,7 @@
     return-object p1
 
     .line 148
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mExposureStateImpl:Landroidx/camera/camera2/internal/ExposureStateImpl;
 
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/ExposureStateImpl;->getExposureCompensationRange()Landroid/util/Range;
@@ -438,7 +438,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_5f
+    if-nez v1, :cond_1
 
     .line 150
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -502,7 +502,7 @@
     return-object p1
 
     .line 156
-    :cond_5f
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/ExposureControl;->mExposureStateImpl:Landroidx/camera/camera2/internal/ExposureStateImpl;
 
     invoke-virtual {v0, p1}, Landroidx/camera/camera2/internal/ExposureStateImpl;->setExposureCompensationIndex(I)V

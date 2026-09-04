@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/extractor/text/SubtitleParser;)V
-    .registers 3
+    .locals 0
 
     .line 51
     invoke-direct {p0, p1}, Landroidx/media3/extractor/text/SimpleSubtitleDecoder;-><init>(Ljava/lang/String;)V
@@ -23,9 +23,9 @@
 
 # virtual methods
 .method protected decode([BIZ)Landroidx/media3/extractor/text/Subtitle;
-    .registers 5
+    .locals 1
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_0
 
     .line 58
     iget-object p3, p0, Landroidx/media3/exoplayer/text/DelegatingSubtitleDecoder;->subtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
@@ -33,7 +33,7 @@
     invoke-interface {p3}, Landroidx/media3/extractor/text/SubtitleParser;->reset()V
 
     .line 60
-    :cond_7
+    :cond_0
     iget-object p3, p0, Landroidx/media3/exoplayer/text/DelegatingSubtitleDecoder;->subtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
     const/4 v0, 0x0

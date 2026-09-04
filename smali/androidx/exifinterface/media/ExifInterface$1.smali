@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/exifinterface/media/ExifInterface;Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;)V
-    .registers 3
+    .locals 0
 
     .line 5821
     iput-object p1, p0, Landroidx/exifinterface/media/ExifInterface$1;->this$0:Landroidx/exifinterface/media/ExifInterface;
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -50,7 +50,7 @@
 .end method
 
 .method public getSize()J
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -63,42 +63,42 @@
 .end method
 
 .method public readAt(J[BII)I
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-nez p5, :cond_4
+    if-nez p5, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
-    :cond_4
+    :cond_0
     const-wide/16 v0, 0x0
 
     cmp-long v2, p1, v0
 
     const/4 v3, -0x1
 
-    if-gez v2, :cond_c
+    if-gez v2, :cond_1
 
     return v3
 
     .line 5837
-    :cond_c
-    :try_start_c
+    :cond_1
+    :try_start_0
     iget-wide v4, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
 
     cmp-long v2, v4, p1
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_3
 
     cmp-long v0, v4, v0
 
-    if-ltz v0, :cond_23
+    if-ltz v0, :cond_2
 
     .line 5842
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$1;->val$in:Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;
@@ -113,12 +113,12 @@
 
     cmp-long v0, p1, v4
 
-    if-ltz v0, :cond_23
+    if-ltz v0, :cond_2
 
     return v3
 
     .line 5845
-    :cond_23
+    :cond_2
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$1;->val$in:Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;
 
     invoke-virtual {v0, p1, p2}, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->seek(J)V
@@ -127,14 +127,14 @@
     iput-wide p1, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
 
     .line 5852
-    :cond_2a
+    :cond_3
     iget-object p1, p0, Landroidx/exifinterface/media/ExifInterface$1;->val$in:Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;
 
     invoke-virtual {p1}, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->available()I
 
     move-result p1
 
-    if-le p5, p1, :cond_38
+    if-le p5, p1, :cond_4
 
     .line 5853
     iget-object p1, p0, Landroidx/exifinterface/media/ExifInterface$1;->val$in:Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;
@@ -144,14 +144,14 @@
     move-result p5
 
     .line 5856
-    :cond_38
+    :cond_4
     iget-object p1, p0, Landroidx/exifinterface/media/ExifInterface$1;->val$in:Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;
 
     invoke-virtual {p1, p3, p4, p5}, Landroidx/exifinterface/media/ExifInterface$SeekableByteOrderedDataInputStream;->read([BII)I
 
     move-result p1
 
-    if-ltz p1, :cond_47
+    if-ltz p1, :cond_5
 
     .line 5858
     iget-wide p2, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
@@ -161,13 +161,13 @@
     add-long/2addr p2, p4
 
     iput-wide p2, p0, Landroidx/exifinterface/media/ExifInterface$1;->mPosition:J
-    :try_end_46
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_46} :catch_47
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_47
-    :cond_47
+    :catch_0
+    :cond_5
     const-wide/16 p1, -0x1
 
     .line 5864

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,11 +21,11 @@
 .end method
 
 .method private static coerceToText(Landroid/content/Context;Landroid/content/ClipData$Item;I)Ljava/lang/CharSequence;
-    .registers 3
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_1
 
     .line 92
     invoke-virtual {p1, p0}, Landroid/content/ClipData$Item;->coerceToText(Landroid/content/Context;)Ljava/lang/CharSequence;
@@ -35,17 +35,17 @@
     .line 93
     instance-of p1, p0, Landroid/text/Spanned;
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    :cond_10
+    :cond_0
     return-object p0
 
     .line 95
-    :cond_11
+    :cond_1
     invoke-virtual {p1, p0}, Landroid/content/ClipData$Item;->coerceToStyledText(Landroid/content/Context;)Ljava/lang/CharSequence;
 
     move-result-object p0
@@ -54,7 +54,7 @@
 .end method
 
 .method private static replaceSelection(Landroid/text/Editable;Ljava/lang/CharSequence;)V
-    .registers 6
+    .locals 4
 
     .line 101
     invoke-static {p0}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public onReceiveContent(Landroid/view/View;Landroidx/core/view/ContentInfoCompat;)Landroidx/core/view/ContentInfoCompat;
-    .registers 10
+    .locals 7
 
     const/4 v0, 0x3
 
@@ -109,7 +109,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 54
     new-instance v0, Ljava/lang/StringBuilder;
@@ -129,19 +129,19 @@
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 56
-    :cond_1b
+    :cond_0
     invoke-virtual {p2}, Landroidx/core/view/ContentInfoCompat;->getSource()I
 
     move-result v0
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_23
+    if-ne v0, v1, :cond_1
 
     return-object p2
 
     .line 68
-    :cond_23
+    :cond_1
     invoke-virtual {p2}, Landroidx/core/view/ContentInfoCompat;->getClip()Landroid/content/ClipData;
 
     move-result-object v0
@@ -171,12 +171,12 @@
     move v3, v2
 
     .line 74
-    :goto_39
+    :goto_0
     invoke-virtual {v0}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v4
 
-    if-ge v2, v4, :cond_63
+    if-ge v2, v4, :cond_4
 
     .line 75
     invoke-virtual {v0, v2}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
@@ -187,19 +187,19 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_60
+    if-eqz v4, :cond_3
 
-    if-nez v3, :cond_50
+    if-nez v3, :cond_2
 
     .line 78
     invoke-static {v1, v4}, Landroidx/core/widget/TextViewOnReceiveContentListener;->replaceSelection(Landroid/text/Editable;Ljava/lang/CharSequence;)V
 
     const/4 v3, 0x1
 
-    goto :goto_60
+    goto :goto_1
 
     .line 81
-    :cond_50
+    :cond_2
     invoke-static {v1}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
 
     move-result v5
@@ -215,13 +215,13 @@
 
     invoke-interface {v1, v5, v4}, Landroid/text/Editable;->insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
 
-    :cond_60
-    :goto_60
+    :cond_3
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_63
+    :cond_4
     const/4 p1, 0x0
 
     return-object p1

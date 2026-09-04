@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/common/collect/ImmutableList;)V
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,8 +75,8 @@
 
     move v3, v2
 
-    :goto_10
-    if-ge v2, v0, :cond_24
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 1145
     invoke-virtual {p1, v2}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -99,10 +99,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1149
-    :cond_24
+    :cond_0
     new-array v2, v3, [I
 
     iput-object v2, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->windowIndexByPeriodIndex:[I
@@ -118,8 +118,8 @@
 
     move v3, v2
 
-    :goto_31
-    if-ge v2, v0, :cond_59
+    :goto_1
+    if-ge v2, v0, :cond_2
 
     .line 1153
     invoke-virtual {p1, v2}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -131,12 +131,12 @@
     move v5, v1
 
     .line 1154
-    :goto_3a
+    :goto_2
     invoke-static {v4}, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->getPeriodCountInMediaItem(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;)I
 
     move-result v6
 
-    if-ge v5, v6, :cond_56
+    if-ge v5, v6, :cond_1
 
     .line 1155
     iget-object v6, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->periodIndexByUid:Ljava/util/HashMap;
@@ -160,19 +160,19 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_3a
+    goto :goto_2
 
-    :cond_56
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_59
+    :cond_2
     return-void
 .end method
 
 .method private static getPeriodCountInMediaItem(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;)I
-    .registers 2
+    .locals 1
 
     .line 1230
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
@@ -181,27 +181,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result p0
 
-    :goto_10
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public getFirstWindowIndex(Z)I
-    .registers 2
+    .locals 0
 
     .line 1188
     invoke-super {p0, p1}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
@@ -212,7 +212,7 @@
 .end method
 
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 1218
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->periodIndexByUid:Ljava/util/HashMap;
@@ -223,24 +223,24 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     const/4 p1, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1219
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    :goto_10
+    :goto_0
     return p1
 .end method
 
 .method public getLastWindowIndex(Z)I
-    .registers 2
+    .locals 0
 
     .line 1182
     invoke-super {p0, p1}, Landroidx/media3/common/Timeline;->getLastWindowIndex(Z)I
@@ -251,7 +251,7 @@
 .end method
 
 .method public getNextWindowIndex(IIZ)I
-    .registers 4
+    .locals 0
 
     .line 1170
     invoke-super {p0, p1, p2, p3}, Landroidx/media3/common/Timeline;->getNextWindowIndex(IIZ)I
@@ -262,7 +262,7 @@
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 5
+    .locals 1
 
     .line 1211
     iget-object p3, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->windowIndexByPeriodIndex:[I
@@ -293,7 +293,7 @@
 .end method
 
 .method public getPeriodByUid(Ljava/lang/Object;Landroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 4
+    .locals 1
 
     .line 1205
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->periodIndexByUid:Ljava/util/HashMap;
@@ -325,7 +325,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 1200
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->windowIndexByPeriodIndex:[I
@@ -336,7 +336,7 @@
 .end method
 
 .method public getPreviousWindowIndex(IIZ)I
-    .registers 4
+    .locals 0
 
     .line 1176
     invoke-super {p0, p1, p2, p3}, Landroidx/media3/common/Timeline;->getPreviousWindowIndex(IIZ)I
@@ -347,7 +347,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 1224
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->windowIndexByPeriodIndex:[I
@@ -378,7 +378,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 5
+    .locals 0
 
     .line 1193
     iget-object p3, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->playlist:Lcom/google/common/collect/ImmutableList;
@@ -403,7 +403,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     .line 1164
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$PlaylistTimeline;->playlist:Lcom/google/common/collect/ImmutableList;

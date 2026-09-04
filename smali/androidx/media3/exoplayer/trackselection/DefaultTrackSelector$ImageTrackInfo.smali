@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/TrackGroup;ILandroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;I)V
-    .registers 6
+    .locals 0
 
     .line 4103
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;-><init>(ILandroidx/media3/common/TrackGroup;I)V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static compareSelections(Ljava/util/List;Ljava/util/List;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +100,7 @@
 .end method
 
 .method public static createForTrackGroup(ILandroidx/media3/common/TrackGroup;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;[I)Lcom/google/common/collect/ImmutableList;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -121,10 +121,10 @@
     const/4 v1, 0x0
 
     .line 4086
-    :goto_5
+    :goto_0
     iget v2, p1, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v1, v2, :cond_1b
+    if-ge v1, v2, :cond_0
 
     .line 4087
     new-instance v8, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;
@@ -147,10 +147,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 4091
-    :cond_1b
+    :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
@@ -161,7 +161,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;)I
-    .registers 3
+    .locals 1
 
     .line 4123
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;->pixelCount:I
@@ -176,7 +176,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 4077
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;
@@ -189,7 +189,7 @@
 .end method
 
 .method public getSelectionEligibility()I
-    .registers 2
+    .locals 1
 
     .line 4113
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;->selectionEligibility:I
@@ -198,7 +198,7 @@
 .end method
 
 .method public isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -206,7 +206,7 @@
 .end method
 
 .method public bridge synthetic isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;)Z
-    .registers 2
+    .locals 0
 
     .line 4077
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$ImageTrackInfo;

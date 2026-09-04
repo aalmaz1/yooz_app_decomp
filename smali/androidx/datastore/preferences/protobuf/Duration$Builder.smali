@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 300
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Duration;->access$000()Landroidx/datastore/preferences/protobuf/Duration;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Duration$1;)V
-    .registers 2
+    .locals 0
 
     .line 293
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Duration$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearNanos()Landroidx/datastore/preferences/protobuf/Duration$Builder;
-    .registers 2
+    .locals 1
 
     .line 400
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Duration$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearSeconds()Landroidx/datastore/preferences/protobuf/Duration$Builder;
-    .registers 2
+    .locals 1
 
     .line 345
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Duration$Builder;->copyOnWrite()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public getNanos()I
-    .registers 2
+    .locals 1
 
     .line 365
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Duration$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -100,7 +100,7 @@
 .end method
 
 .method public getSeconds()J
-    .registers 3
+    .locals 2
 
     .line 316
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Duration$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -115,7 +115,7 @@
 .end method
 
 .method public setNanos(I)Landroidx/datastore/preferences/protobuf/Duration$Builder;
-    .registers 3
+    .locals 1
 
     .line 382
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Duration$Builder;->copyOnWrite()V
@@ -131,7 +131,7 @@
 .end method
 
 .method public setSeconds(J)Landroidx/datastore/preferences/protobuf/Duration$Builder;
-    .registers 4
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Duration$Builder;->copyOnWrite()V

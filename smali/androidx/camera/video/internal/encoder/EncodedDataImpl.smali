@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCodec$CodecException;
@@ -122,7 +122,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Ljava/util/concurrent/atomic/AtomicReference;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -138,7 +138,7 @@
 .end method
 
 .method private throwIfClosed()V
-    .registers 3
+    .locals 2
 
     .line 118
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -147,12 +147,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 119
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "encoded data is closed."
@@ -165,7 +165,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 4
+    .locals 3
 
     .line 98
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -176,13 +176,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 102
-    :cond_a
-    :try_start_a
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mBufferIndex:I
@@ -190,8 +190,8 @@
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-    :try_end_12
-    .catch Ljava/lang/IllegalStateException; {:try_start_a .. :try_end_12} :catch_19
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 107
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mClosedCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -202,7 +202,7 @@
 
     return-void
 
-    :catch_19
+    :catch_0
     move-exception v0
 
     .line 104
@@ -214,7 +214,7 @@
 .end method
 
 .method public getBufferInfo()Landroid/media/MediaCodec$BufferInfo;
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -223,7 +223,7 @@
 .end method
 
 .method public getByteBuffer()Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 3
 
     .line 64
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->throwIfClosed()V
@@ -259,7 +259,7 @@
 .end method
 
 .method public getClosedFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -280,7 +280,7 @@
 .end method
 
 .method public getPresentationTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 80
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -291,7 +291,7 @@
 .end method
 
 .method public isKeyFrame()Z
-    .registers 3
+    .locals 2
 
     .line 92
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;
@@ -302,19 +302,19 @@
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_0
     return v1
 .end method
 
 .method public size()J
-    .registers 3
+    .locals 2
 
     .line 86
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->mBufferInfo:Landroid/media/MediaCodec$BufferInfo;

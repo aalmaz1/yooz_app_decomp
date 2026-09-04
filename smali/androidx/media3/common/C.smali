@@ -538,7 +538,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 1061
     new-instance v0, Ljava/util/UUID;
@@ -597,7 +597,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -606,7 +606,7 @@
 .end method
 
 .method public static generateAudioSessionIdV21(Landroid/content/Context;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -619,7 +619,7 @@
 .end method
 
 .method public static getErrorCodeForMediaDrmErrorCode(I)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -632,7 +632,7 @@
 .end method
 
 .method public static getFormatSupportString(I)Ljava/lang/String;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -645,7 +645,7 @@
 .end method
 
 .method public static msToUs(J)J
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -658,7 +658,7 @@
 .end method
 
 .method public static usToMs(J)J
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

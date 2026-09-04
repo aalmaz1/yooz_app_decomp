@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,31 +30,31 @@
 
 # virtual methods
 .method public onEncodeError(Landroidx/camera/video/internal/encoder/EncodeException;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onEncodeStart()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onEncodeStop()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onEncodedData(Landroidx/camera/video/internal/encoder/EncodedData;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onOutputConfigUpdate(Landroidx/camera/video/internal/encoder/OutputConfig;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

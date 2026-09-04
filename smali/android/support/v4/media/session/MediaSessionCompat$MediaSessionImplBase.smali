@@ -115,7 +115,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;)V
-    .registers 7
+    .locals 2
 
     .line 2039
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -155,7 +155,7 @@
 
     iput-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeCallback:Landroidx/media/VolumeProviderCompat$Callback;
 
-    if-eqz p3, :cond_59
+    if-eqz p3, :cond_0
 
     .line 2044
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mContext:Landroid/content/Context;
@@ -224,7 +224,7 @@
     return-void
 
     .line 2041
-    :cond_59
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "MediaButtonReceiver component may not be null."
@@ -235,7 +235,7 @@
 .end method
 
 .method private sendCaptioningEnabled(Z)V
-    .registers 4
+    .locals 2
 
     .line 2606
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -246,8 +246,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2608
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -259,18 +259,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2610
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onCaptioningEnabledChanged(Z)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2614
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -279,7 +279,7 @@
 .end method
 
 .method private sendEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 2
 
     .line 2546
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -290,8 +290,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2548
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -303,18 +303,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2550
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1, p2}, Landroid/support/v4/media/session/IMediaControllerCallback;->onEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2554
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -323,7 +323,7 @@
 .end method
 
 .method private sendExtras(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
 
     .line 2642
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -334,8 +334,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2644
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -347,18 +347,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2646
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onExtrasChanged(Landroid/os/Bundle;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2650
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -367,7 +367,7 @@
 .end method
 
 .method private sendMetadata(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .registers 4
+    .locals 2
 
     .line 2570
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -378,8 +378,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2572
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -391,18 +391,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2574
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2578
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -411,7 +411,7 @@
 .end method
 
 .method private sendQueue(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -430,8 +430,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2584
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -443,18 +443,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2586
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onQueueChanged(Ljava/util/List;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2590
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -463,7 +463,7 @@
 .end method
 
 .method private sendQueueTitle(Ljava/lang/CharSequence;)V
-    .registers 4
+    .locals 2
 
     .line 2594
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -474,8 +474,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2596
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -487,18 +487,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2598
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2602
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -507,7 +507,7 @@
 .end method
 
 .method private sendRepeatMode(I)V
-    .registers 4
+    .locals 2
 
     .line 2618
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -518,8 +518,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2620
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -531,18 +531,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2622
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onRepeatModeChanged(I)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2626
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -551,7 +551,7 @@
 .end method
 
 .method private sendSessionDestroyed()V
-    .registers 3
+    .locals 2
 
     .line 2533
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -562,8 +562,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2535
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -575,18 +575,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2537
-    :try_start_12
+    :try_start_0
     invoke-interface {v1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onSessionDestroyed()V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2541
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {v0}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -600,7 +600,7 @@
 .end method
 
 .method private sendShuffleMode(I)V
-    .registers 4
+    .locals 2
 
     .line 2630
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -611,8 +611,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2632
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -624,18 +624,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2634
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onShuffleModeChanged(I)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2638
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -644,7 +644,7 @@
 .end method
 
 .method private sendState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .registers 4
+    .locals 2
 
     .line 2558
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -655,8 +655,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2560
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -668,18 +668,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2562
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2566
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -690,40 +690,40 @@
 
 # virtual methods
 .method adjustVolume(II)V
-    .registers 5
+    .locals 2
 
     .line 2501
     iget v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeType:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 2502
     iget-object p2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeProvider:Landroidx/media/VolumeProviderCompat;
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_1
 
     .line 2503
     invoke-virtual {p2, p1}, Landroidx/media/VolumeProviderCompat;->onAdjustVolume(I)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 2506
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLocalStream:I
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method buildRccMetadata(Landroid/os/Bundle;)Landroid/media/RemoteControlClient$MetadataEditor;
-    .registers 8
+    .locals 6
 
     .line 2281
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRcc:Landroid/media/RemoteControlClient;
@@ -734,11 +734,11 @@
 
     move-result-object v0
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     return-object v0
 
-    :cond_a
+    :cond_0
     const-string v2, "android.media.metadata.ART"
 
     .line 2285
@@ -750,7 +750,7 @@
 
     const/4 v5, 0x0
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2
 
     .line 2286
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -759,7 +759,7 @@
 
     check-cast v2, Landroid/graphics/Bitmap;
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     .line 2289
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
@@ -771,12 +771,12 @@
     move-result-object v2
 
     .line 2291
-    :cond_25
+    :cond_1
     invoke-virtual {v0, v4, v2}, Landroid/media/RemoteControlClient$MetadataEditor;->putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     const-string v2, "android.media.metadata.ALBUM_ART"
 
     .line 2292
@@ -784,7 +784,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_4
 
     .line 2294
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -793,7 +793,7 @@
 
     check-cast v2, Landroid/graphics/Bitmap;
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_3
 
     .line 2297
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
@@ -805,11 +805,11 @@
     move-result-object v2
 
     .line 2299
-    :cond_41
+    :cond_3
     invoke-virtual {v0, v4, v2}, Landroid/media/RemoteControlClient$MetadataEditor;->putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_44
-    :goto_44
+    :cond_4
+    :goto_0
     const-string v2, "android.media.metadata.ALBUM"
 
     .line 2301
@@ -817,7 +817,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_5
 
     .line 2303
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -827,7 +827,7 @@
     .line 2302
     invoke-virtual {v0, v1, v2}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_53
+    :cond_5
     const-string v1, "android.media.metadata.ALBUM_ARTIST"
 
     .line 2305
@@ -835,7 +835,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_64
+    if-eqz v2, :cond_6
 
     const/16 v2, 0xd
 
@@ -847,7 +847,7 @@
     .line 2306
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_64
+    :cond_6
     const-string v1, "android.media.metadata.ARTIST"
 
     .line 2309
@@ -855,7 +855,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_74
+    if-eqz v2, :cond_7
 
     const/4 v2, 0x2
 
@@ -867,7 +867,7 @@
     .line 2310
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_74
+    :cond_7
     const-string v1, "android.media.metadata.AUTHOR"
 
     .line 2313
@@ -875,7 +875,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_84
+    if-eqz v2, :cond_8
 
     const/4 v2, 0x3
 
@@ -887,7 +887,7 @@
     .line 2314
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_84
+    :cond_8
     const-string v1, "android.media.metadata.COMPILATION"
 
     .line 2317
@@ -895,7 +895,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_95
+    if-eqz v2, :cond_9
 
     const/16 v2, 0xf
 
@@ -907,7 +907,7 @@
     .line 2318
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_95
+    :cond_9
     const-string v1, "android.media.metadata.COMPOSER"
 
     .line 2321
@@ -915,7 +915,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a5
+    if-eqz v2, :cond_a
 
     const/4 v2, 0x4
 
@@ -927,7 +927,7 @@
     .line 2322
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_a5
+    :cond_a
     const-string v1, "android.media.metadata.DATE"
 
     .line 2325
@@ -935,7 +935,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b5
+    if-eqz v2, :cond_b
 
     const/4 v2, 0x5
 
@@ -947,7 +947,7 @@
     .line 2326
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_b5
+    :cond_b
     const-string v1, "android.media.metadata.DISC_NUMBER"
 
     .line 2329
@@ -955,7 +955,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c6
+    if-eqz v2, :cond_c
 
     const/16 v2, 0xe
 
@@ -967,7 +967,7 @@
     .line 2330
     invoke-virtual {v0, v2, v3, v4}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_c6
+    :cond_c
     const-string v1, "android.media.metadata.DURATION"
 
     .line 2333
@@ -975,7 +975,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d7
+    if-eqz v2, :cond_d
 
     const/16 v2, 0x9
 
@@ -987,7 +987,7 @@
     .line 2334
     invoke-virtual {v0, v2, v3, v4}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_d7
+    :cond_d
     const-string v1, "android.media.metadata.GENRE"
 
     .line 2337
@@ -995,7 +995,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e7
+    if-eqz v2, :cond_e
 
     const/4 v2, 0x6
 
@@ -1007,7 +1007,7 @@
     .line 2338
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_e7
+    :cond_e
     const-string v1, "android.media.metadata.TITLE"
 
     .line 2341
@@ -1015,7 +1015,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_f7
+    if-eqz v2, :cond_f
 
     const/4 v2, 0x7
 
@@ -1027,7 +1027,7 @@
     .line 2342
     invoke-virtual {v0, v2, v1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_f7
+    :cond_f
     const-string v1, "android.media.metadata.TRACK_NUMBER"
 
     .line 2345
@@ -1035,7 +1035,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_106
+    if-eqz v2, :cond_10
 
     .line 2347
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -1045,7 +1045,7 @@
     .line 2346
     invoke-virtual {v0, v5, v1, v2}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_106
+    :cond_10
     const-string v1, "android.media.metadata.WRITER"
 
     .line 2349
@@ -1053,7 +1053,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_117
+    if-eqz v2, :cond_11
 
     const/16 v2, 0xb
 
@@ -1065,12 +1065,12 @@
     .line 2350
     invoke-virtual {v0, v2, p1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    :cond_117
+    :cond_11
     return-object v0
 .end method
 
 .method public getCallingPackage()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1078,7 +1078,7 @@
 .end method
 
 .method public getCurrentControllerInfo()Landroidx/media/MediaSessionManager$RemoteUserInfo;
-    .registers 3
+    .locals 2
 
     .line 2432
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1086,26 +1086,26 @@
     monitor-enter v0
 
     .line 2433
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRemoteUserInfo:Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 2434
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getMediaSession()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1113,7 +1113,7 @@
 .end method
 
 .method public getPlaybackState()Landroid/support/v4/media/session/PlaybackStateCompat;
-    .registers 3
+    .locals 2
 
     .line 2193
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1121,104 +1121,104 @@
     monitor-enter v0
 
     .line 2194
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mState:Landroid/support/v4/media/session/PlaybackStateCompat;
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 2195
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method getRccStateFromState(I)I
-    .registers 2
+    .locals 0
 
-    packed-switch p1, :pswitch_data_1c
+    packed-switch p1, :pswitch_data_0
 
     const/4 p1, -0x1
 
     return p1
 
-    :pswitch_5
+    :pswitch_0
     const/4 p1, 0x6
 
     return p1
 
-    :pswitch_7
+    :pswitch_1
     const/4 p1, 0x7
 
     return p1
 
-    :pswitch_9
+    :pswitch_2
     const/16 p1, 0x9
 
     return p1
 
-    :pswitch_c
+    :pswitch_3
     const/16 p1, 0x8
 
     return p1
 
-    :pswitch_f
+    :pswitch_4
     const/4 p1, 0x5
 
     return p1
 
-    :pswitch_11
+    :pswitch_5
     const/4 p1, 0x4
 
     return p1
 
-    :pswitch_13
+    :pswitch_6
     const/4 p1, 0x3
 
     return p1
 
-    :pswitch_15
+    :pswitch_7
     const/4 p1, 0x2
 
     return p1
 
-    :pswitch_17
+    :pswitch_8
     const/4 p1, 0x1
 
     return p1
 
-    :pswitch_19
+    :pswitch_9
     const/4 p1, 0x0
 
     return p1
 
     nop
 
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_17
-        :pswitch_15
-        :pswitch_13
-        :pswitch_11
-        :pswitch_f
-        :pswitch_c
         :pswitch_9
-        :pswitch_c
+        :pswitch_8
         :pswitch_7
+        :pswitch_6
         :pswitch_5
-        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_3
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method getRccTransportControlFlagsFromActions(J)I
-    .registers 9
+    .locals 6
 
     const-wide/16 v0, 0x1
 
@@ -1228,98 +1228,98 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/16 v0, 0x20
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     const-wide/16 v4, 0x2
 
     and-long/2addr v4, p1
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_1
 
     or-int/lit8 v0, v0, 0x10
 
-    :cond_16
+    :cond_1
     const-wide/16 v4, 0x4
 
     and-long/2addr v4, p1
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_2
 
     or-int/lit8 v0, v0, 0x4
 
-    :cond_1f
+    :cond_2
     const-wide/16 v4, 0x8
 
     and-long/2addr v4, p1
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_3
 
     or-int/lit8 v0, v0, 0x2
 
-    :cond_28
+    :cond_3
     const-wide/16 v4, 0x10
 
     and-long/2addr v4, p1
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_4
 
     or-int/lit8 v0, v0, 0x1
 
-    :cond_31
+    :cond_4
     const-wide/16 v4, 0x20
 
     and-long/2addr v4, p1
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_5
 
     or-int/lit16 v0, v0, 0x80
 
-    :cond_3a
+    :cond_5
     const-wide/16 v4, 0x40
 
     and-long/2addr v4, p1
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_6
 
     or-int/lit8 v0, v0, 0x40
 
-    :cond_43
+    :cond_6
     const-wide/16 v4, 0x200
 
     and-long/2addr p1, v4
 
     cmp-long p1, p1, v2
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_7
 
     or-int/lit8 v0, v0, 0x8
 
-    :cond_4c
+    :cond_7
     return v0
 .end method
 
 .method public getRemoteControlClient()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1327,7 +1327,7 @@
 .end method
 
 .method public getSessionToken()Landroid/support/v4/media/session/MediaSessionCompat$Token;
-    .registers 2
+    .locals 1
 
     .line 2165
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
@@ -1336,7 +1336,7 @@
 .end method
 
 .method public isActive()Z
-    .registers 2
+    .locals 1
 
     .line 2147
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsActive:Z
@@ -1345,7 +1345,7 @@
 .end method
 
 .method postToHandler(IIILjava/lang/Object;Landroid/os/Bundle;)V
-    .registers 8
+    .locals 2
 
     .line 2077
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1353,10 +1353,10 @@
     monitor-enter v0
 
     .line 2078
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mHandler:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     .line 2079
     invoke-virtual {v1, p1, p2, p3, p4}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -1393,7 +1393,7 @@
 
     invoke-virtual {p2, p3, p4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    if-eqz p5, :cond_30
+    if-eqz p5, :cond_0
 
     const-string p3, "data_extras"
 
@@ -1401,30 +1401,30 @@
     invoke-virtual {p2, p3, p5}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 2087
-    :cond_30
+    :cond_0
     invoke-virtual {p1, p2}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
 
     .line 2088
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     .line 2090
-    :cond_36
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_38
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_3a
-    .catchall {:try_start_3 .. :try_end_3a} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method registerMediaButtonEventReceiver(Landroid/app/PendingIntent;Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 0
 
     .line 2492
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
@@ -1435,7 +1435,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1457,7 +1457,7 @@
 .end method
 
 .method public sendSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 2152
     invoke-direct {p0, p1, p2}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendEvent(Ljava/lang/String;Landroid/os/Bundle;)V
@@ -1466,7 +1466,7 @@
 .end method
 
 .method sendVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
-    .registers 4
+    .locals 2
 
     .line 2521
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -1477,8 +1477,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_18
+    :goto_0
+    if-ltz v0, :cond_0
 
     .line 2523
     iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
@@ -1490,18 +1490,18 @@
     check-cast v1, Landroid/support/v4/media/session/IMediaControllerCallback;
 
     .line 2525
-    :try_start_12
+    :try_start_0
     invoke-interface {v1, p1}, Landroid/support/v4/media/session/IMediaControllerCallback;->onVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
-    :try_end_15
-    .catch Landroid/os/RemoteException; {:try_start_12 .. :try_end_15} :catch_15
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_15
+    :catch_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2529
-    :cond_18
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
     invoke-virtual {p1}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
@@ -1510,17 +1510,17 @@
 .end method
 
 .method public setActive(Z)V
-    .registers 3
+    .locals 1
 
     .line 2135
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsActive:Z
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 2138
-    :cond_5
+    :cond_0
     iput-boolean p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsActive:Z
 
     .line 2139
@@ -1528,7 +1528,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_1
 
     .line 2140
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMetadata:Landroid/support/v4/media/MediaMetadataCompat;
@@ -1540,19 +1540,19 @@
 
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setPlaybackState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
 
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method public setCallback(Landroid/support/v4/media/session/MediaSessionCompat$Callback;Landroid/os/Handler;)V
-    .registers 5
+    .locals 2
 
     .line 2061
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mCallback:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_2
 
-    if-nez p2, :cond_b
+    if-nez p2, :cond_0
 
     .line 2064
     new-instance p2, Landroid/os/Handler;
@@ -1560,16 +1560,16 @@
     invoke-direct {p2}, Landroid/os/Handler;-><init>()V
 
     .line 2066
-    :cond_b
+    :cond_0
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
 
     monitor-enter p1
 
     .line 2067
-    :try_start_e
+    :try_start_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mHandler:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
@@ -1577,7 +1577,7 @@
     invoke-virtual {v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     .line 2070
-    :cond_16
+    :cond_1
     new-instance v0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MessageHandler;
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -1596,29 +1596,29 @@
     .line 2072
     monitor-exit p1
 
-    goto :goto_2b
+    goto :goto_0
 
-    :catchall_28
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_2a
-    .catchall {:try_start_e .. :try_end_2a} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public setCaptioningEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 2402
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mCaptioningEnabled:Z
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     .line 2403
     iput-boolean p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mCaptioningEnabled:Z
@@ -1626,12 +1626,12 @@
     .line 2404
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendCaptioningEnabled(Z)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public setCurrentControllerInfo(Landroidx/media/MediaSessionManager$RemoteUserInfo;)V
-    .registers 3
+    .locals 1
 
     .line 2439
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1639,7 +1639,7 @@
     monitor-enter v0
 
     .line 2440
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRemoteUserInfo:Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
     .line 2441
@@ -1647,18 +1647,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setExtras(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     .line 2426
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mExtras:Landroid/os/Bundle;
@@ -1670,7 +1670,7 @@
 .end method
 
 .method public setFlags(I)V
-    .registers 3
+    .locals 1
 
     .line 2095
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1678,41 +1678,41 @@
     monitor-enter v0
 
     .line 2096
-    :try_start_3
+    :try_start_0
     iput p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mFlags:I
 
     .line 2097
     monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2098
     invoke-virtual {p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->update()Z
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     .line 2097
-    :try_start_b
+    :try_start_1
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public setMediaButtonReceiver(Landroid/app/PendingIntent;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setMetadata(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .registers 4
+    .locals 2
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 2264
     new-instance v0, Landroid/support/v4/media/MediaMetadataCompat$Builder;
@@ -1726,19 +1726,19 @@
     move-result-object p1
 
     .line 2267
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2268
-    :try_start_10
+    :try_start_0
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMetadata:Landroid/support/v4/media/MediaMetadataCompat;
 
     .line 2269
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_10 .. :try_end_13} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2270
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendMetadata(Landroid/support/v4/media/MediaMetadataCompat;)V
@@ -1746,25 +1746,25 @@
     .line 2271
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsActive:Z
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     return-void
 
-    :cond_1b
-    if-nez p1, :cond_1f
+    :cond_1
+    if-nez p1, :cond_2
 
     const/4 p1, 0x0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 2276
-    :cond_1f
+    :cond_2
     invoke-virtual {p1}, Landroid/support/v4/media/MediaMetadataCompat;->getBundle()Landroid/os/Bundle;
 
     move-result-object p1
 
     .line 2275
-    :goto_23
+    :goto_0
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->buildRccMetadata(Landroid/os/Bundle;)Landroid/media/RemoteControlClient$MetadataEditor;
 
     move-result-object p1
@@ -1774,20 +1774,20 @@
 
     return-void
 
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 2269
-    :try_start_2c
+    :try_start_1
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_2c .. :try_end_2d} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public setPlaybackState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .registers 5
+    .locals 3
 
     .line 2170
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1795,13 +1795,13 @@
     monitor-enter v0
 
     .line 2171
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mState:Landroid/support/v4/media/session/PlaybackStateCompat;
 
     .line 2172
     monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2173
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
@@ -1809,12 +1809,12 @@
     .line 2174
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsActive:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_e
-    if-nez p1, :cond_1c
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 2179
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRcc:Landroid/media/RemoteControlClient;
@@ -1828,10 +1828,10 @@
 
     invoke-virtual {p1, v0}, Landroid/media/RemoteControlClient;->setTransportControlFlags(I)V
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 2183
-    :cond_1c
+    :cond_1
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setRccState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
 
     .line 2186
@@ -1849,28 +1849,28 @@
     .line 2186
     invoke-virtual {v0, p1}, Landroid/media/RemoteControlClient;->setTransportControlFlags(I)V
 
-    :goto_2c
+    :goto_0
     return-void
 
-    :catchall_2d
+    :catchall_0
     move-exception p1
 
     .line 2172
-    :try_start_2e
+    :try_start_1
     monitor-exit v0
-    :try_end_2f
-    .catchall {:try_start_2e .. :try_end_2f} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public setPlaybackToLocal(I)V
-    .registers 8
+    .locals 6
 
     .line 2103
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeProvider:Landroidx/media/VolumeProviderCompat;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -1878,7 +1878,7 @@
     invoke-virtual {v0, v1}, Landroidx/media/VolumeProviderCompat;->setCallback(Landroidx/media/VolumeProviderCompat$Callback;)V
 
     .line 2106
-    :cond_8
+    :cond_0
     iput p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLocalStream:I
 
     const/4 p1, 0x1
@@ -1922,21 +1922,21 @@
 .end method
 
 .method public setPlaybackToRemote(Landroidx/media/VolumeProviderCompat;)V
-    .registers 9
+    .locals 7
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_1
 
     .line 2120
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeProvider:Landroidx/media/VolumeProviderCompat;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
     .line 2121
     invoke-virtual {v0, v1}, Landroidx/media/VolumeProviderCompat;->setCallback(Landroidx/media/VolumeProviderCompat$Callback;)V
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x2
 
     .line 2123
@@ -1987,7 +1987,7 @@
     return-void
 
     .line 2118
-    :cond_34
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v0, "volumeProvider may not be null"
@@ -1998,7 +1998,7 @@
 .end method
 
 .method public setQueue(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2018,7 +2018,7 @@
 .end method
 
 .method public setQueueTitle(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 2376
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mQueueTitle:Ljava/lang/CharSequence;
@@ -2030,7 +2030,7 @@
 .end method
 
 .method public setRatingType(I)V
-    .registers 2
+    .locals 0
 
     .line 2397
     iput p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRatingType:I
@@ -2039,7 +2039,7 @@
 .end method
 
 .method setRccState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .registers 3
+    .locals 1
 
     .line 2199
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRcc:Landroid/media/RemoteControlClient;
@@ -2058,12 +2058,12 @@
 .end method
 
 .method public setRepeatMode(I)V
-    .registers 3
+    .locals 1
 
     .line 2410
     iget v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRepeatMode:I
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     .line 2411
     iput p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRepeatMode:I
@@ -2071,12 +2071,12 @@
     .line 2412
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendRepeatMode(I)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public setSessionActivity(Landroid/app/PendingIntent;)V
-    .registers 3
+    .locals 1
 
     .line 2358
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -2084,7 +2084,7 @@
     monitor-enter v0
 
     .line 2359
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mSessionActivity:Landroid/app/PendingIntent;
 
     .line 2360
@@ -2092,23 +2092,23 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setShuffleMode(I)V
-    .registers 3
+    .locals 1
 
     .line 2418
     iget v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mShuffleMode:I
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     .line 2419
     iput p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mShuffleMode:I
@@ -2116,45 +2116,45 @@
     .line 2420
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendShuffleMode(I)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method setVolumeTo(II)V
-    .registers 5
+    .locals 2
 
     .line 2511
     iget v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeType:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 2512
     iget-object p2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeProvider:Landroidx/media/VolumeProviderCompat;
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_1
 
     .line 2513
     invoke-virtual {p2, p1}, Landroidx/media/VolumeProviderCompat;->onSetVolumeTo(I)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 2516
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
 
     iget v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLocalStream:I
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method unregisterMediaButtonEventReceiver(Landroid/app/PendingIntent;Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 0
 
     .line 2497
     iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
@@ -2165,27 +2165,27 @@
 .end method
 
 .method update()Z
-    .registers 5
+    .locals 4
 
     .line 2447
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsActive:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_3
 
     .line 2449
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsMbrRegistered:Z
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     iget v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mFlags:I
 
     and-int/2addr v3, v2
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_0
 
     .line 2450
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMediaButtonReceiverIntent:Landroid/app/PendingIntent;
@@ -2197,17 +2197,17 @@
     .line 2452
     iput-boolean v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsMbrRegistered:Z
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_19
-    if-eqz v0, :cond_29
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 2453
     iget v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mFlags:I
 
     and-int/2addr v0, v2
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     .line 2454
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMediaButtonReceiverIntent:Landroid/app/PendingIntent;
@@ -2220,17 +2220,17 @@
     iput-boolean v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsMbrRegistered:Z
 
     .line 2459
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsRccRegistered:Z
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_2
 
     iget v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mFlags:I
 
     and-int/lit8 v3, v3, 0x2
 
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_2
 
     .line 2460
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
@@ -2244,17 +2244,17 @@
 
     move v1, v2
 
-    goto :goto_74
+    goto :goto_1
 
-    :cond_3e
-    if-eqz v0, :cond_74
+    :cond_2
+    if-eqz v0, :cond_5
 
     .line 2463
     iget v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-nez v0, :cond_74
+    if-nez v0, :cond_5
 
     .line 2468
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRcc:Landroid/media/RemoteControlClient;
@@ -2271,13 +2271,13 @@
     .line 2470
     iput-boolean v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsRccRegistered:Z
 
-    goto :goto_74
+    goto :goto_1
 
     .line 2474
-    :cond_55
+    :cond_3
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsMbrRegistered:Z
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_4
 
     .line 2475
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMediaButtonReceiverIntent:Landroid/app/PendingIntent;
@@ -2290,10 +2290,10 @@
     iput-boolean v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsMbrRegistered:Z
 
     .line 2479
-    :cond_62
+    :cond_4
     iget-boolean v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsRccRegistered:Z
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_5
 
     .line 2483
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRcc:Landroid/media/RemoteControlClient;
@@ -2310,7 +2310,7 @@
     .line 2485
     iput-boolean v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mIsRccRegistered:Z
 
-    :cond_74
-    :goto_74
+    :cond_5
+    :goto_1
     return v1
 .end method

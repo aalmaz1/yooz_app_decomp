@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     .line 44
     new-instance v0, Ljava/util/HashMap;
@@ -283,7 +283,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -292,7 +292,7 @@
 .end method
 
 .method static load()Z
-    .registers 3
+    .locals 3
 
     .line 76
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/SmallDisplaySizeQuirk;->MODEL_TO_DISPLAY_SIZE_MAP:Ljava/util/Map;
@@ -315,7 +315,7 @@
 
 # virtual methods
 .method public getDisplaySize()Landroid/util/Size;
-    .registers 4
+    .locals 3
 
     .line 81
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/SmallDisplaySizeQuirk;->MODEL_TO_DISPLAY_SIZE_MAP:Ljava/util/Map;

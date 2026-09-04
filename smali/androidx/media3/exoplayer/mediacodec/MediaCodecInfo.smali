@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZZZZ)V
-    .registers 11
+    .locals 0
 
     .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,24 +87,24 @@
 .end method
 
 .method private static adjustMaxInputChannelCount(Ljava/lang/String;Ljava/lang/String;I)I
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-gt p2, v0, :cond_ac
+    if-gt p2, v0, :cond_4
 
     .line 626
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
-    if-lez p2, :cond_d
+    if-lez p2, :cond_0
 
-    goto/16 :goto_ac
+    goto/16 :goto_1
 
-    :cond_d
+    :cond_0
     const-string v0, "audio/mpeg"
 
     .line 630
@@ -112,7 +112,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/3gpp"
 
@@ -121,7 +121,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/amr-wb"
 
@@ -130,7 +130,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/mp4a-latm"
 
@@ -139,7 +139,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/vorbis"
 
@@ -148,7 +148,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/opus"
 
@@ -157,7 +157,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/raw"
 
@@ -166,7 +166,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/flac"
 
@@ -175,7 +175,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/g711-alaw"
 
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/g711-mlaw"
 
@@ -193,7 +193,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_4
 
     const-string v0, "audio/gsm"
 
@@ -202,11 +202,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_1
 
-    goto :goto_ac
+    goto :goto_1
 
-    :cond_66
+    :cond_1
     const-string v0, "audio/ac3"
 
     .line 646
@@ -214,13 +214,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_70
+    if-eqz v0, :cond_2
 
     const/4 p1, 0x6
 
-    goto :goto_7d
+    goto :goto_0
 
-    :cond_70
+    :cond_2
     const-string v0, "audio/eac3"
 
     .line 648
@@ -228,17 +228,17 @@
 
     move-result p1
 
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_3
 
     const/16 p1, 0x10
 
-    goto :goto_7d
+    goto :goto_0
 
-    :cond_7b
+    :cond_3
     const/16 p1, 0x1e
 
     .line 654
-    :goto_7d
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "AssumedMaxChannelAdjustment: "
@@ -285,13 +285,13 @@
 
     return p1
 
-    :cond_ac
-    :goto_ac
+    :cond_4
+    :goto_1
     return p2
 .end method
 
 .method private static alignVideoSizeV21(Landroid/media/MediaCodecInfo$VideoCapabilities;II)Landroid/graphics/Point;
-    .registers 5
+    .locals 2
 
     .line 711
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
@@ -326,7 +326,7 @@
 .end method
 
 .method private static areSizeAndRateSupportedV21(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)Z
-    .registers 7
+    .locals 2
 
     .line 692
     invoke-static {p0, p1, p2}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->alignVideoSizeV21(Landroid/media/MediaCodecInfo$VideoCapabilities;II)Landroid/graphics/Point;
@@ -343,18 +343,18 @@
 
     cmpl-double v0, p3, v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     cmpg-double v0, p3, v0
 
-    if-gez v0, :cond_15
+    if-gez v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 704
-    :cond_15
+    :cond_0
     invoke-static {p3, p4}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide p3
@@ -367,8 +367,8 @@
     return p0
 
     .line 699
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p2, p1}, Landroid/media/MediaCodecInfo$VideoCapabilities;->isSizeSupported(II)Z
 
     move-result p0
@@ -377,18 +377,18 @@
 .end method
 
 .method private static estimateLegacyVp9ProfileLevels(Landroid/media/MediaCodecInfo$CodecCapabilities;)[Landroid/media/MediaCodecInfo$CodecProfileLevel;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_0
 
     .line 737
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
 
     move-result-object p0
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_0
 
     .line 739
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getBitrateRange()Landroid/util/Range;
@@ -405,108 +405,108 @@
 
     move-result p0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     move p0, v0
 
-    :goto_19
+    :goto_0
     const v1, 0xaba9500
 
     const/4 v2, 0x1
 
-    if-lt p0, v1, :cond_22
+    if-lt p0, v1, :cond_1
 
     const/16 p0, 0x400
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_22
+    :cond_1
     const v1, 0x7270e00
 
-    if-lt p0, v1, :cond_2a
+    if-lt p0, v1, :cond_2
 
     const/16 p0, 0x200
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_2a
+    :cond_2
     const v1, 0x3938700
 
-    if-lt p0, v1, :cond_32
+    if-lt p0, v1, :cond_3
 
     const/16 p0, 0x100
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_32
+    :cond_3
     const v1, 0x1c9c380
 
-    if-lt p0, v1, :cond_3a
+    if-lt p0, v1, :cond_4
 
     const/16 p0, 0x80
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_3a
+    :cond_4
     const v1, 0x112a880
 
-    if-lt p0, v1, :cond_42
+    if-lt p0, v1, :cond_5
 
     const/16 p0, 0x40
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_42
+    :cond_5
     const v1, 0xb71b00
 
-    if-lt p0, v1, :cond_4a
+    if-lt p0, v1, :cond_6
 
     const/16 p0, 0x20
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_4a
+    :cond_6
     const v1, 0x6ddd00
 
-    if-lt p0, v1, :cond_52
+    if-lt p0, v1, :cond_7
 
     const/16 p0, 0x10
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_52
+    :cond_7
     const v1, 0x36ee80
 
-    if-lt p0, v1, :cond_5a
+    if-lt p0, v1, :cond_8
 
     const/16 p0, 0x8
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_5a
+    :cond_8
     const v1, 0x1b7740
 
-    if-lt p0, v1, :cond_61
+    if-lt p0, v1, :cond_9
 
     const/4 p0, 0x4
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_61
+    :cond_9
     const v1, 0xc3500
 
-    if-lt p0, v1, :cond_68
+    if-lt p0, v1, :cond_a
 
     const/4 p0, 0x2
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_68
+    :cond_a
     move p0, v2
 
     .line 769
-    :goto_69
+    :goto_1
     new-instance v1, Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
     invoke-direct {v1}, Landroid/media/MediaCodecInfo$CodecProfileLevel;-><init>()V
@@ -525,7 +525,7 @@
 .end method
 
 .method private static getMaxSupportedInstancesV23(Landroid/media/MediaCodecInfo$CodecCapabilities;)I
-    .registers 1
+    .locals 0
 
     .line 720
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getMaxSupportedInstances()I
@@ -536,7 +536,7 @@
 .end method
 
 .method private static isAdaptive(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "adaptive-playback"
 
@@ -549,7 +549,7 @@
 .end method
 
 .method private isCodecProfileAndLevelSupported(Landroidx/media3/common/Format;Z)Z
-    .registers 12
+    .locals 9
 
     .line 298
     invoke-static {p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil;->getCodecProfileAndLevel(Landroidx/media3/common/Format;)Landroid/util/Pair;
@@ -558,12 +558,12 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 303
-    :cond_8
+    :cond_0
     iget-object v2, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/Integer;
@@ -592,7 +592,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_2
 
     const-string/jumbo v3, "video/avc"
 
@@ -603,16 +603,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_1
 
     const/16 v2, 0x8
 
-    :goto_31
+    :goto_0
     move v0, v4
 
-    goto :goto_40
+    goto :goto_1
 
-    :cond_33
+    :cond_1
     const-string/jumbo v3, "video/hevc"
 
     .line 312
@@ -622,27 +622,27 @@
 
     move-result v3
 
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_2
 
     const/4 v2, 0x2
 
-    goto :goto_31
+    goto :goto_0
 
     .line 318
-    :cond_40
-    :goto_40
+    :cond_2
+    :goto_1
     iget-boolean v3, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isVideo:Z
 
-    if-nez v3, :cond_49
+    if-nez v3, :cond_3
 
     const/16 v3, 0x2a
 
-    if-eq v2, v3, :cond_49
+    if-eq v2, v3, :cond_3
 
     return v1
 
     .line 324
-    :cond_49
+    :cond_3
     invoke-virtual {p0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->getProfileLevels()[Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
     move-result-object v3
@@ -652,7 +652,7 @@
 
     const/16 v6, 0x17
 
-    if-gt v5, v6, :cond_67
+    if-gt v5, v6, :cond_4
 
     const-string/jumbo v5, "video/x-vnd.on2.vp9"
 
@@ -662,11 +662,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_67
+    if-eqz v5, :cond_4
 
     array-length v5, v3
 
-    if-nez v5, :cond_67
+    if-nez v5, :cond_4
 
     .line 328
     iget-object v3, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
@@ -676,28 +676,28 @@
     move-result-object v3
 
     .line 331
-    :cond_67
+    :cond_4
     array-length v5, v3
 
     move v6, v4
 
-    :goto_69
-    if-ge v6, v5, :cond_83
+    :goto_2
+    if-ge v6, v5, :cond_7
 
     aget-object v7, v3, v6
 
     .line 332
     iget v8, v7, Landroid/media/MediaCodecInfo$CodecProfileLevel;->profile:I
 
-    if-ne v8, v2, :cond_80
+    if-ne v8, v2, :cond_6
 
     iget v7, v7, Landroid/media/MediaCodecInfo$CodecProfileLevel;->level:I
 
-    if-ge v7, v0, :cond_77
+    if-ge v7, v0, :cond_5
 
-    if-nez p2, :cond_80
+    if-nez p2, :cond_6
 
-    :cond_77
+    :cond_5
     iget-object v7, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->mimeType:Ljava/lang/String;
 
     .line 334
@@ -705,17 +705,17 @@
 
     move-result v7
 
-    if-nez v7, :cond_80
+    if-nez v7, :cond_6
 
     return v1
 
-    :cond_80
+    :cond_6
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_69
+    goto :goto_2
 
     .line 338
-    :cond_83
+    :cond_7
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string v0, "codec.profileLevel, "
@@ -750,7 +750,7 @@
 .end method
 
 .method private isSampleMimeTypeSupported(Landroidx/media3/common/Format;)Z
-    .registers 4
+    .locals 2
 
     .line 292
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->mimeType:Ljava/lang/String;
@@ -761,7 +761,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->mimeType:Ljava/lang/String;
 
@@ -774,52 +774,52 @@
 
     move-result p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_1a
+    :goto_1
     return p1
 .end method
 
 .method private static isSecure(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 3
+    .locals 2
 
     .line 680
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     invoke-static {p0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isSecureV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 .method private static isSecureV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "secure-playback"
 
@@ -832,34 +832,34 @@
 .end method
 
 .method private static isTunneling(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 3
+    .locals 2
 
     .line 671
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     invoke-static {p0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isTunnelingV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 .method private static isTunnelingV21(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 2
+    .locals 1
 
     const-string/jumbo v0, "tunneled-playback"
 
@@ -872,7 +872,7 @@
 .end method
 
 .method private logAssumedSupport(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 612
     new-instance v0, Ljava/lang/StringBuilder;
@@ -937,7 +937,7 @@
 .end method
 
 .method private logNoSupport(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 598
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1002,7 +1002,7 @@
 .end method
 
 .method private static needsAdaptationFlushWorkaround(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "audio/opus"
 
@@ -1015,7 +1015,7 @@
 .end method
 
 .method private static needsAdaptationReconfigureWorkaround(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     .line 799
     sget-object v0, Landroidx/media3/common/util/Util;->MODEL:Ljava/lang/String;
@@ -1026,7 +1026,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     const-string v0, "OMX.MARVELL.VIDEO.HW.CODA7542DECODER"
 
@@ -1034,28 +1034,28 @@
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_15
+    :goto_0
     return p0
 .end method
 
 .method private static needsDisableAdaptationWorkaround(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     .line 785
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x16
 
-    if-gt v0, v1, :cond_2c
+    if-gt v0, v1, :cond_2
 
     const-string v0, "ODROID-XU3"
 
@@ -1066,7 +1066,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     const-string v0, "Nexus 10"
 
@@ -1076,9 +1076,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
-    :cond_1a
+    :cond_0
     const-string v0, "OMX.Exynos.AVC.Decoder"
 
     .line 787
@@ -1086,7 +1086,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     const-string v0, "OMX.Exynos.AVC.Decoder.secure"
 
@@ -1094,22 +1094,22 @@
 
     move-result p0
 
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_2
 
-    :cond_2a
+    :cond_1
     const/4 p0, 0x1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_2
     const/4 p0, 0x0
 
-    :goto_2d
+    :goto_0
     return p0
 .end method
 
 .method private static needsProfileExcludedWorkaround(Ljava/lang/String;I)Z
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "video/hevc"
 
@@ -1118,11 +1118,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
     const/4 p0, 0x2
 
-    if-ne p0, p1, :cond_22
+    if-ne p0, p1, :cond_1
 
     const-string p0, "sailfish"
 
@@ -1133,7 +1133,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_20
+    if-nez p0, :cond_0
 
     const-string p0, "marlin"
 
@@ -1143,22 +1143,22 @@
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
-    :cond_20
+    :cond_0
     const/4 p0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 p0, 0x0
 
-    :goto_23
+    :goto_0
     return p0
 .end method
 
 .method private static needsRotatedVerticalResolutionWorkaround(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "OMX.MTK.VIDEO.DECODER.HEVC"
 
@@ -1167,7 +1167,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const-string p0, "mcv5a"
 
@@ -1177,20 +1177,20 @@
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZZZ)Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;
-    .registers 21
+    .locals 12
 
     .line 169
     new-instance v11, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;
@@ -1199,72 +1199,72 @@
 
     const/4 v1, 0x0
 
-    if-nez p7, :cond_16
+    if-nez p7, :cond_0
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_0
 
     .line 179
     invoke-static {p3}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isAdaptive(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 180
     invoke-static {p0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->needsDisableAdaptationWorkaround(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_16
+    if-nez v2, :cond_0
 
     move v8, v0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v8, v1
 
-    :goto_17
-    if-eqz p3, :cond_21
+    :goto_0
+    if-eqz p3, :cond_1
 
     .line 181
     invoke-static {p3}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isTunneling(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     move v9, v0
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
+    :cond_1
     move v9, v1
 
-    :goto_22
-    if-nez p8, :cond_2f
+    :goto_1
+    if-nez p8, :cond_3
 
-    if-eqz p3, :cond_2d
+    if-eqz p3, :cond_2
 
     .line 182
     invoke-static {p3}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isSecure(Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_2d
+    :cond_2
     move v10, v1
 
-    goto :goto_30
+    goto :goto_3
 
-    :cond_2f
-    :goto_2f
+    :cond_3
+    :goto_2
     move v10, v0
 
-    :goto_30
+    :goto_3
     move-object v0, v11
 
     move-object v1, p0
@@ -1289,29 +1289,29 @@
 
 # virtual methods
 .method public alignVideoSizeV21(II)Landroid/graphics/Point;
-    .registers 5
+    .locals 2
 
     .line 533
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 536
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     return-object v1
 
     .line 540
-    :cond_d
+    :cond_1
     invoke-static {v0, p1, p2}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->alignVideoSizeV21(Landroid/media/MediaCodecInfo$VideoCapabilities;II)Landroid/graphics/Point;
 
     move-result-object p1
@@ -1320,7 +1320,7 @@
 .end method
 
 .method public canReuseCodec(Landroidx/media3/common/Format;Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/DecoderReuseEvaluation;
-    .registers 16
+    .locals 13
 
     .line 386
     iget-object v0, p1, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -1331,60 +1331,60 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/16 v0, 0x8
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 390
-    :goto_e
+    :goto_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isVideo:Z
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_9
 
     .line 391
     iget v1, p1, Landroidx/media3/common/Format;->rotationDegrees:I
 
     iget v2, p2, Landroidx/media3/common/Format;->rotationDegrees:I
 
-    if-eq v1, v2, :cond_1a
+    if-eq v1, v2, :cond_1
 
     or-int/lit16 v0, v0, 0x400
 
     .line 394
-    :cond_1a
+    :cond_1
     iget-boolean v1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->adaptive:Z
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_3
 
     iget v1, p1, Landroidx/media3/common/Format;->width:I
 
     iget v2, p2, Landroidx/media3/common/Format;->width:I
 
-    if-ne v1, v2, :cond_2a
+    if-ne v1, v2, :cond_2
 
     iget v1, p1, Landroidx/media3/common/Format;->height:I
 
     iget v2, p2, Landroidx/media3/common/Format;->height:I
 
-    if-eq v1, v2, :cond_2c
+    if-eq v1, v2, :cond_3
 
-    :cond_2a
+    :cond_2
     or-int/lit16 v0, v0, 0x200
 
     .line 398
-    :cond_2c
+    :cond_3
     iget-object v1, p1, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
 
     invoke-static {v1}, Landroidx/media3/common/ColorInfo;->isEquivalentToAssumedSdrDefault(Landroidx/media3/common/ColorInfo;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_4
 
     iget-object v1, p2, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
 
@@ -1393,9 +1393,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_48
+    if-nez v1, :cond_5
 
-    :cond_3c
+    :cond_4
     iget-object v1, p1, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
 
     iget-object v2, p2, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
@@ -1405,31 +1405,31 @@
 
     move-result v1
 
-    if-nez v1, :cond_48
+    if-nez v1, :cond_5
 
     or-int/lit16 v0, v0, 0x800
 
     .line 404
-    :cond_48
+    :cond_5
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
     invoke-static {v1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->needsAdaptationReconfigureWorkaround(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_6
 
     .line 405
     invoke-virtual {p1, p2}, Landroidx/media3/common/Format;->initializationDataEquals(Landroidx/media3/common/Format;)Z
 
     move-result v1
 
-    if-nez v1, :cond_58
+    if-nez v1, :cond_6
 
     or-int/lit8 v0, v0, 0x2
 
-    :cond_58
-    if-nez v0, :cond_70
+    :cond_6
+    if-nez v0, :cond_8
 
     .line 410
     new-instance v0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1441,16 +1441,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_7
 
     const/4 v1, 0x3
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_66
+    :cond_7
     const/4 v1, 0x2
 
-    :goto_67
+    :goto_1
     move v5, v1
 
     const/4 v6, 0x0
@@ -1466,43 +1466,43 @@
 
     return-object v0
 
-    :cond_70
+    :cond_8
     move v12, v0
 
-    goto/16 :goto_e7
+    goto/16 :goto_2
 
     .line 420
-    :cond_73
+    :cond_9
     iget v1, p1, Landroidx/media3/common/Format;->channelCount:I
 
     iget v2, p2, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq v1, v2, :cond_7b
+    if-eq v1, v2, :cond_a
 
     or-int/lit16 v0, v0, 0x1000
 
     .line 423
-    :cond_7b
+    :cond_a
     iget v1, p1, Landroidx/media3/common/Format;->sampleRate:I
 
     iget v2, p2, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-eq v1, v2, :cond_83
+    if-eq v1, v2, :cond_b
 
     or-int/lit16 v0, v0, 0x2000
 
     .line 426
-    :cond_83
+    :cond_b
     iget v1, p1, Landroidx/media3/common/Format;->pcmEncoding:I
 
     iget v2, p2, Landroidx/media3/common/Format;->pcmEncoding:I
 
-    if-eq v1, v2, :cond_8b
+    if-eq v1, v2, :cond_c
 
     or-int/lit16 v0, v0, 0x4000
 
-    :cond_8b
-    if-nez v0, :cond_c6
+    :cond_c
+    if-nez v0, :cond_d
 
     const-string v1, "audio/mp4a-latm"
 
@@ -1513,7 +1513,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_c6
+    if-eqz v1, :cond_d
 
     .line 435
     invoke-static {p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil;->getCodecProfileAndLevel(Landroidx/media3/common/Format;)Landroid/util/Pair;
@@ -1525,9 +1525,9 @@
 
     move-result-object v2
 
-    if-eqz v1, :cond_c6
+    if-eqz v1, :cond_d
 
-    if-eqz v2, :cond_c6
+    if-eqz v2, :cond_d
 
     .line 440
     iget-object v1, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -1549,9 +1549,9 @@
 
     const/16 v3, 0x2a
 
-    if-ne v1, v3, :cond_c6
+    if-ne v1, v3, :cond_d
 
-    if-ne v2, v3, :cond_c6
+    if-ne v2, v3, :cond_d
 
     .line 444
     new-instance v0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1573,29 +1573,29 @@
     return-object v0
 
     .line 454
-    :cond_c6
+    :cond_d
     invoke-virtual {p1, p2}, Landroidx/media3/common/Format;->initializationDataEquals(Landroidx/media3/common/Format;)Z
 
     move-result v1
 
-    if-nez v1, :cond_ce
+    if-nez v1, :cond_e
 
     or-int/lit8 v0, v0, 0x20
 
     .line 457
-    :cond_ce
+    :cond_e
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->mimeType:Ljava/lang/String;
 
     invoke-static {v1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->needsAdaptationFlushWorkaround(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_d8
+    if-eqz v1, :cond_f
 
     or-int/lit8 v0, v0, 0x2
 
-    :cond_d8
-    if-nez v0, :cond_70
+    :cond_f
+    if-nez v0, :cond_8
 
     .line 462
     new-instance v0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
@@ -1617,7 +1617,7 @@
     return-object v0
 
     .line 467
-    :goto_e7
+    :goto_2
     new-instance v0, Landroidx/media3/exoplayer/DecoderReuseEvaluation;
 
     iget-object v8, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
@@ -1636,77 +1636,77 @@
 .end method
 
 .method public getMaxSupportedInstances()I
-    .registers 3
+    .locals 2
 
     .line 234
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_10
+    if-lt v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 237
-    :cond_b
+    :cond_0
     invoke-static {v0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->getMaxSupportedInstancesV23(Landroid/media/MediaCodecInfo$CodecCapabilities;)I
 
     move-result v0
 
     return v0
 
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public getProfileLevels()[Landroid/media/MediaCodecInfo$CodecProfileLevel;
-    .registers 2
+    .locals 1
 
     .line 221
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     iget-object v0, v0, Landroid/media/MediaCodecInfo$CodecCapabilities;->profileLevels:[Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 223
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     iget-object v0, v0, Landroid/media/MediaCodecInfo$CodecCapabilities;->profileLevels:[Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     new-array v0, v0, [Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
-    :goto_11
+    :goto_1
     return-object v0
 .end method
 
 .method public isAudioChannelCountSupportedV21(I)Z
-    .registers 6
+    .locals 4
 
     .line 579
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const-string p1, "channelCount.caps"
 
@@ -1716,12 +1716,12 @@
     return v1
 
     .line 583
-    :cond_b
+    :cond_0
     invoke-virtual {v0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getAudioCapabilities()Landroid/media/MediaCodecInfo$AudioCapabilities;
 
     move-result-object v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     const-string p1, "channelCount.aCaps"
 
@@ -1731,7 +1731,7 @@
     return v1
 
     .line 588
-    :cond_17
+    :cond_1
     iget-object v2, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->mimeType:Ljava/lang/String;
@@ -1745,7 +1745,7 @@
 
     move-result v0
 
-    if-ge v0, p1, :cond_38
+    if-ge v0, p1, :cond_2
 
     .line 591
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1766,21 +1766,21 @@
 
     return v1
 
-    :cond_38
+    :cond_2
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public isAudioSampleRateSupportedV21(I)Z
-    .registers 5
+    .locals 3
 
     .line 553
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const-string p1, "sampleRate.caps"
 
@@ -1790,12 +1790,12 @@
     return v1
 
     .line 557
-    :cond_b
+    :cond_0
     invoke-virtual {v0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getAudioCapabilities()Landroid/media/MediaCodecInfo$AudioCapabilities;
 
     move-result-object v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     const-string p1, "sampleRate.aCaps"
 
@@ -1805,12 +1805,12 @@
     return v1
 
     .line 562
-    :cond_17
+    :cond_1
     invoke-virtual {v0, p1}, Landroid/media/MediaCodecInfo$AudioCapabilities;->isSampleRateSupported(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     .line 563
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1831,14 +1831,14 @@
 
     return v1
 
-    :cond_30
+    :cond_2
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public isFormatFunctionallySupported(Landroidx/media3/common/Format;)Z
-    .registers 4
+    .locals 2
 
     .line 287
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isSampleMimeTypeSupported(Landroidx/media3/common/Format;)Z
@@ -1847,23 +1847,23 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 288
     invoke-direct {p0, p1, v1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isCodecProfileAndLevelSupported(Landroidx/media3/common/Format;Z)Z
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_e
+    :cond_0
     return v1
 .end method
 
 .method public isFormatSupported(Landroidx/media3/common/Format;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$DecoderQueryException;
@@ -1877,11 +1877,11 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x1
 
     .line 253
@@ -1889,34 +1889,34 @@
 
     move-result v2
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_1
 
     return v1
 
     .line 257
-    :cond_10
+    :cond_1
     iget-boolean v2, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isVideo:Z
 
     const/16 v3, 0x15
 
-    if-eqz v2, :cond_60
+    if-eqz v2, :cond_7
 
     .line 258
     iget v2, p1, Landroidx/media3/common/Format;->width:I
 
-    if-lez v2, :cond_5f
+    if-lez v2, :cond_6
 
     iget v2, p1, Landroidx/media3/common/Format;->height:I
 
-    if-gtz v2, :cond_1f
+    if-gtz v2, :cond_2
 
-    goto :goto_5f
+    goto :goto_0
 
     .line 261
-    :cond_1f
+    :cond_2
     sget v2, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-lt v2, v3, :cond_2f
+    if-lt v2, v3, :cond_3
 
     .line 262
     iget v0, p1, Landroidx/media3/common/Format;->width:I
@@ -1934,7 +1934,7 @@
     return p1
 
     .line 264
-    :cond_2f
+    :cond_3
     iget v2, p1, Landroidx/media3/common/Format;->width:I
 
     iget v3, p1, Landroidx/media3/common/Format;->height:I
@@ -1946,12 +1946,12 @@
 
     move-result v3
 
-    if-gt v2, v3, :cond_3b
+    if-gt v2, v3, :cond_4
 
     move v1, v0
 
-    :cond_3b
-    if-nez v1, :cond_5e
+    :cond_4
+    if-nez v1, :cond_5
 
     .line 267
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1984,24 +1984,24 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->logNoSupport(Ljava/lang/String;)V
 
-    :cond_5e
+    :cond_5
     return v1
 
-    :cond_5f
-    :goto_5f
+    :cond_6
+    :goto_0
     return v0
 
     .line 272
-    :cond_60
+    :cond_7
     sget v2, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-lt v2, v3, :cond_7d
+    if-lt v2, v3, :cond_9
 
     iget v2, p1, Landroidx/media3/common/Format;->sampleRate:I
 
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_71
+    if-eq v2, v3, :cond_8
 
     iget v2, p1, Landroidx/media3/common/Format;->sampleRate:I
 
@@ -2010,12 +2010,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_a
 
-    :cond_71
+    :cond_8
     iget v2, p1, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq v2, v3, :cond_7d
+    if-eq v2, v3, :cond_9
 
     iget p1, p1, Landroidx/media3/common/Format;->channelCount:I
 
@@ -2024,17 +2024,17 @@
 
     move-result p1
 
-    if-eqz p1, :cond_7e
+    if-eqz p1, :cond_a
 
-    :cond_7d
+    :cond_9
     move v1, v0
 
-    :cond_7e
+    :cond_a
     return v1
 .end method
 
 .method public isHdr10PlusOutOfBandMetadataSupported()Z
-    .registers 7
+    .locals 6
 
     .line 344
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -2043,7 +2043,7 @@
 
     const/4 v2, 0x0
 
-    if-lt v0, v1, :cond_27
+    if-lt v0, v1, :cond_1
 
     const-string/jumbo v0, "video/x-vnd.on2.vp9"
 
@@ -2053,7 +2053,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 345
     invoke-virtual {p0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->getProfileLevels()[Landroid/media/MediaCodecInfo$CodecProfileLevel;
@@ -2064,8 +2064,8 @@
 
     move v3, v2
 
-    :goto_18
-    if-ge v3, v1, :cond_27
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     aget-object v4, v0, v3
 
@@ -2074,28 +2074,28 @@
 
     const/16 v5, 0x4000
 
-    if-ne v4, v5, :cond_24
+    if-ne v4, v5, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_24
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     return v2
 .end method
 
 .method public isSeamlessAdaptationSupported(Landroidx/media3/common/Format;)Z
-    .registers 3
+    .locals 1
 
     .line 365
     iget-boolean v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->isVideo:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 366
     iget-boolean p1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->adaptive:Z
@@ -2103,12 +2103,12 @@
     return p1
 
     .line 368
-    :cond_7
+    :cond_0
     invoke-static {p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil;->getCodecProfileAndLevel(Landroidx/media3/common/Format;)Landroid/util/Pair;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     .line 369
     iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -2121,28 +2121,28 @@
 
     const/16 v0, 0x2a
 
-    if-ne p1, v0, :cond_1b
+    if-ne p1, v0, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_1c
+    :goto_0
     return p1
 .end method
 
 .method public isVideoSizeAndRateSupportedV21(IID)Z
-    .registers 12
+    .locals 7
 
     .line 481
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->capabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const-string p1, "sizeAndRate.caps"
 
@@ -2152,12 +2152,12 @@
     return v1
 
     .line 485
-    :cond_b
+    :cond_0
     invoke-virtual {v0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
 
     move-result-object v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     const-string p1, "sizeAndRate.vCaps"
 
@@ -2167,7 +2167,7 @@
     return v1
 
     .line 491
-    :cond_17
+    :cond_1
     sget v2, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v3, 0x1d
@@ -2178,7 +2178,7 @@
 
     const/4 v6, 0x1
 
-    if-lt v2, v3, :cond_50
+    if-lt v2, v3, :cond_3
 
     .line 494
     invoke-static {v0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/mediacodec/MediaCodecPerformancePointCoverageProvider;->areResolutionAndFrameRateCovered(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)I
@@ -2187,12 +2187,12 @@
 
     const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_2b
+    if-ne v2, v3, :cond_2
 
     return v6
 
-    :cond_2b
-    if-ne v2, v6, :cond_50
+    :cond_2
+    if-ne v2, v6, :cond_3
 
     .line 499
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2230,14 +2230,14 @@
     return v1
 
     .line 506
-    :cond_50
+    :cond_3
     invoke-static {v0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->areSizeAndRateSupportedV21(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)Z
 
     move-result v2
 
-    if-nez v2, :cond_ad
+    if-nez v2, :cond_6
 
-    if-ge p1, p2, :cond_8a
+    if-ge p1, p2, :cond_5
 
     .line 507
     iget-object v2, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
@@ -2247,19 +2247,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8a
+    if-eqz v2, :cond_5
 
     .line 509
     invoke-static {v0, p2, p1, p3, p4}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->areSizeAndRateSupportedV21(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)Z
 
     move-result v0
 
-    if-nez v0, :cond_67
+    if-nez v0, :cond_4
 
-    goto :goto_8a
+    goto :goto_0
 
     .line 513
-    :cond_67
+    :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "sizeAndRate.rotated, "
@@ -2292,11 +2292,11 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->logAssumedSupport(Ljava/lang/String;)V
 
-    goto :goto_ad
+    goto :goto_1
 
     .line 510
-    :cond_8a
-    :goto_8a
+    :cond_5
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "sizeAndRate.support, "
@@ -2331,13 +2331,13 @@
 
     return v1
 
-    :cond_ad
-    :goto_ad
+    :cond_6
+    :goto_1
     return v6
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 212
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;

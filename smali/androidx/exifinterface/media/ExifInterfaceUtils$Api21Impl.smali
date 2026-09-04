@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static close(Ljava/io/FileDescriptor;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;
@@ -39,7 +39,7 @@
 .end method
 
 .method static dup(Ljava/io/FileDescriptor;)Ljava/io/FileDescriptor;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;
@@ -55,7 +55,7 @@
 .end method
 
 .method static lseek(Ljava/io/FileDescriptor;JI)J
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;

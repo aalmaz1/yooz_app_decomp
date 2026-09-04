@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/app/Person$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 .end method
 
 .method public static fromAndroidPerson(Landroid/app/Person;)Landroidx/core/app/Person;
-    .registers 1
+    .locals 0
 
     .line 83
     invoke-static {p0}, Landroidx/core/app/Person$Api28Impl;->fromAndroidPerson(Landroid/app/Person;)Landroidx/core/app/Person;
@@ -93,7 +93,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/core/app/Person;
-    .registers 4
+    .locals 3
 
     const-string v0, "icon"
 
@@ -118,19 +118,19 @@
 
     move-result-object v1
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 54
     invoke-static {v0}, Landroidx/core/graphics/drawable/IconCompat;->createFromBundle(Landroid/os/Bundle;)Landroidx/core/graphics/drawable/IconCompat;
 
     move-result-object v0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1d
+    :goto_0
     invoke-virtual {v1, v0}, Landroidx/core/app/Person$Builder;->setIcon(Landroidx/core/graphics/drawable/IconCompat;)Landroidx/core/app/Person$Builder;
 
     move-result-object v0
@@ -188,7 +188,7 @@
 .end method
 
 .method public static fromPersistableBundle(Landroid/os/PersistableBundle;)Landroidx/core/app/Person;
-    .registers 1
+    .locals 0
 
     .line 72
     invoke-static {p0}, Landroidx/core/app/Person$Api22Impl;->fromPersistableBundle(Landroid/os/PersistableBundle;)Landroidx/core/app/Person;
@@ -201,24 +201,24 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
     .line 234
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/core/app/Person;
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_1
 
     return v0
 
     .line 238
-    :cond_9
+    :cond_1
     check-cast p1, Landroidx/core/app/Person;
 
     .line 241
@@ -231,14 +231,14 @@
 
     move-result-object v2
 
-    if-nez v1, :cond_6a
+    if-nez v1, :cond_4
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_2
 
-    goto :goto_6a
+    goto :goto_0
 
     .line 248
-    :cond_18
+    :cond_2
     invoke-virtual {p0}, Landroidx/core/app/Person;->getName()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -261,7 +261,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_3
 
     .line 254
     invoke-virtual {p0}, Landroidx/core/app/Person;->getUri()Ljava/lang/String;
@@ -276,7 +276,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_3
 
     .line 255
     invoke-virtual {p0}, Landroidx/core/app/Person;->isBot()Z
@@ -299,7 +299,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_3
 
     .line 256
     invoke-virtual {p0}, Landroidx/core/app/Person;->isImportant()Z
@@ -322,16 +322,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_3
 
     const/4 v0, 0x1
 
-    :cond_69
+    :cond_3
     return v0
 
     .line 244
-    :cond_6a
-    :goto_6a
+    :cond_4
+    :goto_0
     invoke-static {v1, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -340,7 +340,7 @@
 .end method
 
 .method public getIcon()Landroidx/core/graphics/drawable/IconCompat;
-    .registers 2
+    .locals 1
 
     .line 167
     iget-object v0, p0, Landroidx/core/app/Person;->mIcon:Landroidx/core/graphics/drawable/IconCompat;
@@ -349,7 +349,7 @@
 .end method
 
 .method public getKey()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/core/app/Person;->mKey:Ljava/lang/String;
@@ -358,7 +358,7 @@
 .end method
 
 .method public getName()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 161
     iget-object v0, p0, Landroidx/core/app/Person;->mName:Ljava/lang/CharSequence;
@@ -367,7 +367,7 @@
 .end method
 
 .method public getUri()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 185
     iget-object v0, p0, Landroidx/core/app/Person;->mUri:Ljava/lang/String;
@@ -376,14 +376,14 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 262
     invoke-virtual {p0}, Landroidx/core/app/Person;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 264
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -392,7 +392,7 @@
 
     return v0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -446,7 +446,7 @@
 .end method
 
 .method public isBot()Z
-    .registers 2
+    .locals 1
 
     .line 202
     iget-boolean v0, p0, Landroidx/core/app/Person;->mIsBot:Z
@@ -455,7 +455,7 @@
 .end method
 
 .method public isImportant()Z
-    .registers 2
+    .locals 1
 
     .line 210
     iget-boolean v0, p0, Landroidx/core/app/Person;->mIsImportant:Z
@@ -464,20 +464,20 @@
 .end method
 
 .method public resolveToLegacyUri()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 219
     iget-object v0, p0, Landroidx/core/app/Person;->mUri:Ljava/lang/String;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 222
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/core/app/Person;->mName:Ljava/lang/CharSequence;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     .line 223
     new-instance v0, Ljava/lang/StringBuilder;
@@ -498,14 +498,14 @@
 
     return-object v0
 
-    :cond_1b
+    :cond_1
     const-string v0, ""
 
     return-object v0
 .end method
 
 .method public toAndroidPerson()Landroid/app/Person;
-    .registers 2
+    .locals 1
 
     .line 152
     invoke-static {p0}, Landroidx/core/app/Person$Api28Impl;->toAndroidPerson(Landroidx/core/app/Person;)Landroid/app/Person;
@@ -516,7 +516,7 @@
 .end method
 
 .method public toBuilder()Landroidx/core/app/Person$Builder;
-    .registers 2
+    .locals 1
 
     .line 141
     new-instance v0, Landroidx/core/app/Person$Builder;
@@ -527,7 +527,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 115
     new-instance v0, Landroid/os/Bundle;
@@ -544,18 +544,18 @@
     .line 117
     iget-object v1, p0, Landroidx/core/app/Person;->mIcon:Landroidx/core/graphics/drawable/IconCompat;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroidx/core/graphics/drawable/IconCompat;->toBundle()Landroid/os/Bundle;
 
     move-result-object v1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_16
+    :goto_0
     const-string v2, "icon"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
@@ -592,7 +592,7 @@
 .end method
 
 .method public toPersistableBundle()Landroid/os/PersistableBundle;
-    .registers 2
+    .locals 1
 
     .line 135
     invoke-static {p0}, Landroidx/core/app/Person$Api22Impl;->toPersistableBundle(Landroidx/core/app/Person;)Landroid/os/PersistableBundle;

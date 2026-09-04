@@ -14,7 +14,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method static createSubscriptionCallback(Landroid/support/v4/media/MediaBrowserCompatApi26$SubscriptionCallback;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 31
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompatApi26$SubscriptionCallbackProxy;
@@ -34,7 +34,7 @@
 .end method
 
 .method public static subscribe(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 36
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static unsubscribe(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 42
     check-cast p0, Landroid/media/browse/MediaBrowser;

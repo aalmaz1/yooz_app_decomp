@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(ILandroidx/media3/common/Player$PositionInfo;Landroidx/media3/common/Player$PositionInfo;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
 
     iget v0, p0, Landroidx/media3/common/SimpleBasePlayer$$ExternalSyntheticLambda17;->f$0:I
 

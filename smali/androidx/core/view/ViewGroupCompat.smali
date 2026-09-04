@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method public static getLayoutMode(Landroid/view/ViewGroup;)I
-    .registers 1
+    .locals 0
 
     .line 116
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getLayoutMode()I
@@ -39,7 +39,7 @@
 .end method
 
 .method public static getNestedScrollAxes(Landroid/view/ViewGroup;)I
-    .registers 1
+    .locals 0
 
     .line 181
     invoke-static {p0}, Landroidx/core/view/ViewGroupCompat$Api21Impl;->getNestedScrollAxes(Landroid/view/ViewGroup;)I
@@ -50,7 +50,7 @@
 .end method
 
 .method public static isTransitionGroup(Landroid/view/ViewGroup;)Z
-    .registers 1
+    .locals 0
 
     .line 157
     invoke-static {p0}, Landroidx/core/view/ViewGroupCompat$Api21Impl;->isTransitionGroup(Landroid/view/ViewGroup;)Z
@@ -61,7 +61,7 @@
 .end method
 
 .method public static onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -74,7 +74,7 @@
 .end method
 
 .method public static setLayoutMode(Landroid/view/ViewGroup;I)V
-    .registers 2
+    .locals 0
 
     .line 130
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setLayoutMode(I)V
@@ -83,7 +83,7 @@
 .end method
 
 .method public static setMotionEventSplittingEnabled(Landroid/view/ViewGroup;Z)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public static setTransitionGroup(Landroid/view/ViewGroup;Z)V
-    .registers 2
+    .locals 0
 
     .line 144
     invoke-static {p0, p1}, Landroidx/core/view/ViewGroupCompat$Api21Impl;->setTransitionGroup(Landroid/view/ViewGroup;Z)V

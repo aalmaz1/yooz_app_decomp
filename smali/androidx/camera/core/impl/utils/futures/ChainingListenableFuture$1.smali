@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -45,12 +45,12 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 221
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->this$0:Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;
 
     iget-object v2, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->val$outputFuture:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -60,29 +60,29 @@
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_c
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_c} :catch_1f
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_c} :catch_13
-    .catchall {:try_start_1 .. :try_end_c} :catchall_11
+    :try_end_0
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 233
-    :goto_c
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->this$0:Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;
 
     iput-object v0, v1, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;->mOutputFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    goto :goto_1e
+    goto :goto_1
 
-    :catchall_11
+    :catchall_0
     move-exception v1
 
-    goto :goto_2a
+    goto :goto_2
 
-    :catch_13
+    :catch_0
     move-exception v1
 
     .line 230
-    :try_start_14
+    :try_start_1
     iget-object v2, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->this$0:Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;
 
     invoke-virtual {v1}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
@@ -91,20 +91,20 @@
 
     invoke-virtual {v2, v1}, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    goto :goto_c
+    goto :goto_0
 
-    :goto_1e
+    :goto_1
     return-void
 
     .line 226
-    :catch_1f
+    :catch_1
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->this$0:Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;->cancel(Z)Z
-    :try_end_25
-    .catchall {:try_start_14 .. :try_end_25} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 233
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->this$0:Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;
@@ -113,7 +113,7 @@
 
     return-void
 
-    :goto_2a
+    :goto_2
     iget-object v2, p0, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture$1;->this$0:Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;
 
     iput-object v0, v2, Landroidx/camera/core/impl/utils/futures/ChainingListenableFuture;->mOutputFuture:Lcom/google/common/util/concurrent/ListenableFuture;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;Z)V
-    .registers 3
+    .locals 0
 
     .line 156
     invoke-direct {p0, p1}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;-><init>(Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method protected defaultIsRtl()Z
-    .registers 2
+    .locals 1
 
     .line 162
     iget-boolean v0, p0, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;->mDefaultIsRtl:Z

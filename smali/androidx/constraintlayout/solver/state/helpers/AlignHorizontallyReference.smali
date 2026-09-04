@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/State;)V
-    .registers 3
+    .locals 1
 
     .line 33
     sget-object v0, Landroidx/constraintlayout/solver/state/State$Helper;->ALIGN_VERTICALLY:Landroidx/constraintlayout/solver/state/State$Helper;
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public apply()V
-    .registers 5
+    .locals 4
 
     .line 37
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mReferences:Ljava/util/ArrayList;
@@ -44,13 +44,13 @@
 
     move-result-object v0
 
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_5
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -69,79 +69,79 @@
     .line 40
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mStartToStart:Ljava/lang/Object;
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 41
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->startToStart(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 42
-    :cond_21
+    :cond_1
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mStartToEnd:Ljava/lang/Object;
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     .line 43
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->startToEnd(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 45
-    :cond_29
+    :cond_2
     sget-object v2, Landroidx/constraintlayout/solver/state/State;->PARENT:Ljava/lang/Integer;
 
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->startToStart(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
     .line 47
-    :goto_2e
+    :goto_1
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mEndToStart:Ljava/lang/Object;
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_3
 
     .line 48
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->endToStart(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_43
+    goto :goto_2
 
     .line 49
-    :cond_36
+    :cond_3
     iget-object v2, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mEndToEnd:Ljava/lang/Object;
 
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_4
 
     .line 50
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->endToEnd(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_43
+    goto :goto_2
 
     .line 52
-    :cond_3e
+    :cond_4
     sget-object v2, Landroidx/constraintlayout/solver/state/State;->PARENT:Ljava/lang/Integer;
 
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->endToEnd(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
     .line 54
-    :goto_43
+    :goto_2
     iget v2, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mBias:F
 
     const/high16 v3, 0x3f000000    # 0.5f
 
     cmpl-float v3, v2, v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_0
 
     .line 55
     invoke-virtual {v1, v2}, Landroidx/constraintlayout/solver/state/ConstraintReference;->horizontalBias(F)Landroidx/constraintlayout/solver/state/ConstraintReference;
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_4f
+    :cond_5
     return-void
 .end method
 
 .method public bias(F)V
-    .registers 2
+    .locals 0
 
     .line 66
     iput p1, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mBias:F
@@ -150,7 +150,7 @@
 .end method
 
 .method public endToEnd(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 63
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mEndToEnd:Ljava/lang/Object;
@@ -159,7 +159,7 @@
 .end method
 
 .method public endToStart(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 62
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mEndToStart:Ljava/lang/Object;
@@ -168,7 +168,7 @@
 .end method
 
 .method public startToEnd(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 61
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mStartToEnd:Ljava/lang/Object;
@@ -177,7 +177,7 @@
 .end method
 
 .method public startToStart(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 60
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/AlignHorizontallyReference;->mStartToStart:Ljava/lang/Object;

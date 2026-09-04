@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method private getMotoE5PlayExtraSupportedResolutions()[Landroid/util/Size;
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x6
 
@@ -92,7 +92,7 @@
 .end method
 
 .method private static isMotoE5Play()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "motorola"
 
@@ -103,7 +103,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "moto e5 play"
 
@@ -113,21 +113,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 40
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->isMotoE5Play()Z
@@ -140,18 +140,18 @@
 
 # virtual methods
 .method public getExtraSupportedResolutions(I)[Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x22
 
-    if-ne p1, v0, :cond_f
+    if-ne p1, v0, :cond_0
 
     .line 54
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->isMotoE5Play()Z
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 55
     invoke-direct {p0}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->getMotoE5PlayExtraSupportedResolutions()[Landroid/util/Size;
@@ -160,7 +160,7 @@
 
     return-object p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     new-array p1, p1, [Landroid/util/Size;
@@ -169,7 +169,7 @@
 .end method
 
 .method public getExtraSupportedResolutions(Ljava/lang/Class;)[Landroid/util/Size;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -186,13 +186,13 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->isMotoE5Play()Z
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 67
     invoke-direct {p0}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->getMotoE5PlayExtraSupportedResolutions()[Landroid/util/Size;
@@ -201,7 +201,7 @@
 
     return-object p1
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     new-array p1, p1, [Landroid/util/Size;

@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/media/MediaParser$SeekMap;)V
-    .registers 2
+    .locals 0
 
     .line 619
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method private static asExoPlayerSeekPoint(Landroid/media/MediaParser$SeekPoint;)Landroidx/media3/extractor/SeekPoint;
-    .registers 6
+    .locals 5
 
     .line 651
     new-instance v0, Landroidx/media3/extractor/SeekPoint;
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 5
+    .locals 4
 
     .line 630
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30$SeekMapAdapter;->adaptedSeekMap:Landroid/media/MediaParser$SeekMap;
@@ -65,19 +65,19 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_13
+    :goto_0
     return-wide v0
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 4
+    .locals 1
 
     .line 637
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30$SeekMapAdapter;->adaptedSeekMap:Landroid/media/MediaParser$SeekMap;
@@ -92,7 +92,7 @@
 
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    if-ne p2, v0, :cond_1a
+    if-ne p2, v0, :cond_0
 
     .line 641
     new-instance p2, Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -107,10 +107,10 @@
 
     invoke-direct {p2, p1}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 643
-    :cond_1a
+    :cond_0
     new-instance p2, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -132,12 +132,12 @@
 
     invoke-direct {p2, v0, p1}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;Landroidx/media3/extractor/SeekPoint;)V
 
-    :goto_2f
+    :goto_0
     return-object p2
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     .line 625
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30$SeekMapAdapter;->adaptedSeekMap:Landroid/media/MediaParser$SeekMap;

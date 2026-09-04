@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 29
     new-instance v0, Landroidx/media3/common/util/Size;
@@ -41,35 +41,35 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 4
+    .locals 1
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_8
+    if-eq p1, v0, :cond_0
 
-    if-ltz p1, :cond_d
+    if-ltz p1, :cond_1
 
-    :cond_8
-    if-eq p2, v0, :cond_f
+    :cond_0
+    if-eq p2, v0, :cond_2
 
-    if-ltz p2, :cond_d
+    if-ltz p2, :cond_1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_2
+    :goto_0
     const/4 v0, 0x1
 
     .line 46
-    :goto_10
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 49
@@ -84,26 +84,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x1
 
-    if-ne p0, p1, :cond_8
+    if-ne p0, p1, :cond_1
 
     return v1
 
     .line 71
-    :cond_8
+    :cond_1
     instance-of v2, p1, Landroidx/media3/common/util/Size;
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_2
 
     .line 72
     check-cast p1, Landroidx/media3/common/util/Size;
@@ -113,22 +113,22 @@
 
     iget v3, p1, Landroidx/media3/common/util/Size;->width:I
 
-    if-ne v2, v3, :cond_1b
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/util/Size;->height:I
 
     iget p1, p1, Landroidx/media3/common/util/Size;->height:I
 
-    if-ne v2, p1, :cond_1b
+    if-ne v2, p1, :cond_2
 
     move v0, v1
 
-    :cond_1b
+    :cond_2
     return v0
 .end method
 
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 60
     iget v0, p0, Landroidx/media3/common/util/Size;->height:I
@@ -137,7 +137,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 55
     iget v0, p0, Landroidx/media3/common/util/Size;->width:I
@@ -146,7 +146,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 86
     iget v0, p0, Landroidx/media3/common/util/Size;->height:I
@@ -165,7 +165,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 80
     new-instance v0, Ljava/lang/StringBuilder;

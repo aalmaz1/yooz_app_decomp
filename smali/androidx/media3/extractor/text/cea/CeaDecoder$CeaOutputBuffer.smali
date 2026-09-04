@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/decoder/DecoderOutputBuffer$Owner;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public final release()V
-    .registers 2
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaOutputBuffer;->owner:Landroidx/media3/decoder/DecoderOutputBuffer$Owner;

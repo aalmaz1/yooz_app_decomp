@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/FileDescriptor;III)V
-    .registers 11
+    .locals 6
 
     const/4 v1, 0x0
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;III)V
-    .registers 11
+    .locals 6
 
     const/4 v2, 0x0
 
@@ -82,7 +82,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Ljava/io/FileDescriptor;III)V
-    .registers 8
+    .locals 2
 
     .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,9 +108,9 @@
     .line 151
     iput v0, p0, Landroidx/heifwriter/HeifWriter$Builder;->mRotation:I
 
-    if-lez p3, :cond_20
+    if-lez p3, :cond_0
 
-    if-lez p4, :cond_20
+    if-lez p4, :cond_0
 
     .line 187
     iput-object p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mPath:Ljava/lang/String;
@@ -130,7 +130,7 @@
     return-void
 
     .line 185
-    :cond_20
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -165,7 +165,7 @@
 
 # virtual methods
 .method public build()Landroidx/heifwriter/HeifWriter;
-    .registers 14
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -205,7 +205,7 @@
 .end method
 
 .method public setGridEnabled(Z)Landroidx/heifwriter/HeifWriter$Builder;
-    .registers 2
+    .locals 0
 
     .line 217
     iput-boolean p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mGridEnabled:Z
@@ -214,7 +214,7 @@
 .end method
 
 .method public setHandler(Landroid/os/Handler;)Landroidx/heifwriter/HeifWriter$Builder;
-    .registers 2
+    .locals 0
 
     .line 279
     iput-object p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mHandler:Landroid/os/Handler;
@@ -223,9 +223,9 @@
 .end method
 
 .method public setMaxImages(I)Landroidx/heifwriter/HeifWriter$Builder;
-    .registers 5
+    .locals 3
 
-    if-lez p1, :cond_5
+    if-lez p1, :cond_0
 
     .line 251
     iput p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mMaxImages:I
@@ -233,7 +233,7 @@
     return-object p0
 
     .line 249
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -256,9 +256,9 @@
 .end method
 
 .method public setPrimaryIndex(I)Landroidx/heifwriter/HeifWriter$Builder;
-    .registers 5
+    .locals 3
 
-    if-ltz p1, :cond_5
+    if-ltz p1, :cond_0
 
     .line 266
     iput p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mPrimaryIndex:I
@@ -266,7 +266,7 @@
     return-object p0
 
     .line 264
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -289,13 +289,13 @@
 .end method
 
 .method public setQuality(I)Landroidx/heifwriter/HeifWriter$Builder;
-    .registers 5
+    .locals 3
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
     const/16 v0, 0x64
 
-    if-gt p1, v0, :cond_9
+    if-gt p1, v0, :cond_0
 
     .line 232
     iput p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mQuality:I
@@ -303,7 +303,7 @@
     return-object p0
 
     .line 230
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -326,26 +326,26 @@
 .end method
 
 .method public setRotation(I)Landroidx/heifwriter/HeifWriter$Builder;
-    .registers 5
+    .locals 3
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
     const/16 v0, 0x5a
 
-    if-eq p1, v0, :cond_24
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0xb4
 
-    if-eq p1, v0, :cond_24
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x10e
 
-    if-ne p1, v0, :cond_f
+    if-ne p1, v0, :cond_0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 203
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -367,8 +367,8 @@
     throw v0
 
     .line 205
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     iput p1, p0, Landroidx/heifwriter/HeifWriter$Builder;->mRotation:I
 
     return-object p0

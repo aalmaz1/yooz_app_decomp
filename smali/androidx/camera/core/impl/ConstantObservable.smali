@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 35
     new-instance v0, Landroidx/camera/core/impl/ConstantObservable;
@@ -61,7 +61,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -82,7 +82,7 @@
 .end method
 
 .method public static withValue(Ljava/lang/Object;)Landroidx/camera/core/impl/Observable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<U:",
@@ -93,7 +93,7 @@
         }
     .end annotation
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 50
     sget-object p0, Landroidx/camera/core/impl/ConstantObservable;->NULL_OBSERVABLE:Landroidx/camera/core/impl/ConstantObservable;
@@ -101,7 +101,7 @@
     return-object p0
 
     .line 53
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/ConstantObservable;
 
     invoke-direct {v0, p0}, Landroidx/camera/core/impl/ConstantObservable;-><init>(Ljava/lang/Object;)V
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public addObserver(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,7 +135,7 @@
 .end method
 
 .method public fetchData()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -151,7 +151,7 @@
 .end method
 
 .method synthetic lambda$addObserver$0$androidx-camera-core-impl-ConstantObservable(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 3
+    .locals 1
 
     .line 74
     :try_start_0
@@ -162,30 +162,30 @@
     move-result-object v0
 
     invoke-interface {p1, v0}, Landroidx/camera/core/impl/Observable$Observer;->onNewData(Ljava/lang/Object;)V
-    :try_end_9
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_9} :catch_c
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_1
 
-    :catch_a
+    :catch_0
     move-exception v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :catch_c
+    :catch_1
     move-exception v0
 
     .line 78
-    :goto_d
+    :goto_0
     invoke-interface {p1, v0}, Landroidx/camera/core/impl/Observable$Observer;->onError(Ljava/lang/Throwable;)V
 
-    :goto_10
+    :goto_1
     return-void
 .end method
 
 .method public removeObserver(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

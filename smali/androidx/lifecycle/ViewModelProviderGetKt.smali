@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final defaultCreationExtras(Landroidx/lifecycle/ViewModelStoreOwner;)Landroidx/lifecycle/viewmodel/CreationExtras;
-    .registers 2
+    .locals 1
 
     const-string v0, "owner"
 
@@ -41,7 +41,7 @@
     .line 362
     instance-of v0, p0, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 363
     check-cast p0, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
@@ -50,20 +50,20 @@
 
     move-result-object p0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 364
-    :cond_10
+    :cond_0
     sget-object p0, Landroidx/lifecycle/viewmodel/CreationExtras$Empty;->INSTANCE:Landroidx/lifecycle/viewmodel/CreationExtras$Empty;
 
     check-cast p0, Landroidx/lifecycle/viewmodel/CreationExtras;
 
-    :goto_14
+    :goto_0
     return-object p0
 .end method
 
 .method public static final synthetic get(Landroidx/lifecycle/ViewModelProvider;)Landroidx/lifecycle/ViewModel;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<VM:",

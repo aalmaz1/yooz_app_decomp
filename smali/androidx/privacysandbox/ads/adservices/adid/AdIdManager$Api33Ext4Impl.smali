@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/adservices/adid/AdIdManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "mAdIdManager"
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public static final synthetic access$getAdIdAsyncInternal(Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl;->getAdIdAsyncInternal(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -108,7 +108,7 @@
 .end method
 
 .method public static final synthetic access$getMAdIdManager$p(Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl;)Landroid/adservices/adid/AdIdManager;
-    .registers 1
+    .locals 0
 
     .line 48
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl;->mAdIdManager:Landroid/adservices/adid/AdIdManager;
@@ -117,7 +117,7 @@
 .end method
 
 .method private final convertResponse(Landroid/adservices/adid/AdId;)Landroidx/privacysandbox/ads/adservices/adid/AdId;
-    .registers 5
+    .locals 3
 
     .line 76
     new-instance v0, Landroidx/privacysandbox/ads/adservices/adid/AdId;
@@ -140,7 +140,7 @@
 .end method
 
 .method private final getAdIdAsyncInternal(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -200,18 +200,18 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_2f
+    if-ne v0, v1, :cond_0
 
     invoke-static {p1}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_2f
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public getAdId(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -225,7 +225,7 @@
 
     instance-of v0, p1, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -237,7 +237,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p1, v0, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;->label:I
 
@@ -245,14 +245,14 @@
 
     iput p1, v0, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;-><init>(Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p1, v0, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -264,9 +264,9 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_2e
+    if-ne v2, v3, :cond_1
 
     iget-object v0, v0, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl$getAdId$1;->L$0:Ljava/lang/Object;
 
@@ -274,9 +274,9 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -285,7 +285,7 @@
 
     throw p1
 
-    :cond_36
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 62
@@ -297,14 +297,14 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_44
+    if-ne p1, v1, :cond_3
 
     return-object v1
 
-    :cond_44
+    :cond_3
     move-object v0, p0
 
-    :goto_45
+    :goto_1
     check-cast p1, Landroid/adservices/adid/AdId;
 
     invoke-direct {v0, p1}, Landroidx/privacysandbox/ads/adservices/adid/AdIdManager$Api33Ext4Impl;->convertResponse(Landroid/adservices/adid/AdId;)Landroidx/privacysandbox/ads/adservices/adid/AdId;

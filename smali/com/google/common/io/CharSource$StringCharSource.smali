@@ -16,7 +16,7 @@
 
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public copyTo(Lcom/google/common/io/CharSink;)J
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -60,7 +60,7 @@
     move-result-object v0
 
     .line 589
-    :try_start_7
+    :try_start_0
     invoke-virtual {p1}, Lcom/google/common/io/CharSink;->openStream()Ljava/io/Writer;
 
     move-result-object p1
@@ -84,8 +84,8 @@
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
-    :try_end_1e
-    .catchall {:try_start_7 .. :try_end_1e} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     int-to-long v1, p1
 
@@ -94,20 +94,20 @@
 
     return-wide v1
 
-    :catchall_23
+    :catchall_0
     move-exception p1
 
     .line 593
-    :try_start_24
+    :try_start_1
     invoke-virtual {v0, p1}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object p1
 
     throw p1
-    :try_end_29
-    .catchall {:try_start_24 .. :try_end_29} :catchall_29
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_29
+    :catchall_1
     move-exception p1
 
     .line 595
@@ -118,7 +118,7 @@
 .end method
 
 .method public copyTo(Ljava/lang/Appendable;)J
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -152,7 +152,7 @@
 .end method
 
 .method public openStream()Ljava/io/Reader;
-    .registers 3
+    .locals 2
 
     .line 575
     new-instance v0, Ljava/io/StringReader;

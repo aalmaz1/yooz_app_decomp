@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final get(Landroid/view/View;)Landroidx/activity/OnBackPressedDispatcherOwner;
-    .registers 2
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final set(Landroid/view/View;Landroidx/activity/OnBackPressedDispatcherOwner;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 

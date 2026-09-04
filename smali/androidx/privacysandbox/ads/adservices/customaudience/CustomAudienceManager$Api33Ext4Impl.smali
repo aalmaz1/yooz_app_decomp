@@ -77,7 +77,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/adservices/customaudience/CustomAudienceManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "customAudienceManager"
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public static final synthetic access$convertJoinRequest(Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudienceManager$Api33Ext4Impl;Landroidx/privacysandbox/ads/adservices/customaudience/JoinCustomAudienceRequest;)Landroid/adservices/customaudience/JoinCustomAudienceRequest;
-    .registers 2
+    .locals 0
 
     .line 97
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudienceManager$Api33Ext4Impl;->convertJoinRequest(Landroidx/privacysandbox/ads/adservices/customaudience/JoinCustomAudienceRequest;)Landroid/adservices/customaudience/JoinCustomAudienceRequest;
@@ -130,7 +130,7 @@
 .end method
 
 .method public static final synthetic access$convertLeaveRequest(Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudienceManager$Api33Ext4Impl;Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;)Landroid/adservices/customaudience/LeaveCustomAudienceRequest;
-    .registers 2
+    .locals 0
 
     .line 97
     invoke-direct {p0, p1}, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudienceManager$Api33Ext4Impl;->convertLeaveRequest(Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;)Landroid/adservices/customaudience/LeaveCustomAudienceRequest;
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final synthetic access$getCustomAudienceManager$p(Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudienceManager$Api33Ext4Impl;)Landroid/adservices/customaudience/CustomAudienceManager;
-    .registers 1
+    .locals 0
 
     .line 97
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudienceManager$Api33Ext4Impl;->customAudienceManager:Landroid/adservices/customaudience/CustomAudienceManager;
@@ -150,7 +150,7 @@
 .end method
 
 .method private final convertAdData(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -175,12 +175,12 @@
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -223,14 +223,14 @@
     .line 170
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     return-object v0
 .end method
 
 .method private final convertAdTechIdentifier(Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;)Landroid/adservices/common/AdTechIdentifier;
-    .registers 3
+    .locals 1
 
     .line 181
     invoke-virtual {p1}, Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;->getIdentifier()Ljava/lang/String;
@@ -249,16 +249,16 @@
 .end method
 
 .method private final convertBiddingSignals(Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;)Landroid/adservices/common/AdSelectionSignals;
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 198
-    :cond_4
+    :cond_0
     invoke-virtual {p1}, Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;->getSignals()Ljava/lang/String;
 
     move-result-object p1
@@ -271,7 +271,7 @@
 .end method
 
 .method private final convertCustomAudience(Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;)Landroid/adservices/customaudience/CustomAudience;
-    .registers 4
+    .locals 2
 
     .line 152
     new-instance v0, Landroid/adservices/customaudience/CustomAudience$Builder;
@@ -388,7 +388,7 @@
 .end method
 
 .method private final convertJoinRequest(Landroidx/privacysandbox/ads/adservices/customaudience/JoinCustomAudienceRequest;)Landroid/adservices/customaudience/JoinCustomAudienceRequest;
-    .registers 3
+    .locals 1
 
     .line 135
     new-instance v0, Landroid/adservices/customaudience/JoinCustomAudienceRequest$Builder;
@@ -421,7 +421,7 @@
 .end method
 
 .method private final convertLeaveRequest(Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;)Landroid/adservices/customaudience/LeaveCustomAudienceRequest;
-    .registers 4
+    .locals 2
 
     .line 143
     new-instance v0, Landroid/adservices/customaudience/LeaveCustomAudienceRequest$Builder;
@@ -463,16 +463,16 @@
 .end method
 
 .method private final convertTrustedSignals(Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;)Landroid/adservices/customaudience/TrustedBiddingData;
-    .registers 4
+    .locals 2
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 188
-    :cond_4
+    :cond_0
     new-instance v0, Landroid/adservices/customaudience/TrustedBiddingData$Builder;
 
     invoke-direct {v0}, Landroid/adservices/customaudience/TrustedBiddingData$Builder;-><init>()V
@@ -506,7 +506,7 @@
 
 # virtual methods
 .method public joinCustomAudience(Landroidx/privacysandbox/ads/adservices/customaudience/JoinCustomAudienceRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -572,28 +572,28 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_33
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_33
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 231
-    :cond_3a
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
 .method public leaveCustomAudience(Landroidx/privacysandbox/ads/adservices/customaudience/LeaveCustomAudienceRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -659,21 +659,21 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_33
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_33
+    :cond_0
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_3a
+    if-ne p1, p2, :cond_1
 
     return-object p1
 
     .line 242
-    :cond_3a
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,44 +31,44 @@
 
 # virtual methods
 .method public declared-synchronized isAvailable()Z
-    .registers 6
+    .locals 5
 
     monitor-enter p0
 
     .line 48
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/common/util/LibraryLoader;->loadAttempted:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 49
     iget-boolean v0, p0, Landroidx/media3/common/util/LibraryLoader;->isAvailable:Z
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x1
 
     .line 51
-    :try_start_a
+    :try_start_1
     iput-boolean v0, p0, Landroidx/media3/common/util/LibraryLoader;->loadAttempted:Z
-    :try_end_c
-    .catchall {:try_start_a .. :try_end_c} :catchall_3f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 53
-    :try_start_c
+    :try_start_2
     iget-object v1, p0, Landroidx/media3/common/util/LibraryLoader;->nativeLibraries:[Ljava/lang/String;
 
     array-length v2, v1
 
     const/4 v3, 0x0
 
-    :goto_10
-    if-ge v3, v2, :cond_1a
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     aget-object v4, v1, v3
 
@@ -77,19 +77,19 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 56
-    :cond_1a
+    :cond_1
     iput-boolean v0, p0, Landroidx/media3/common/util/LibraryLoader;->isAvailable:Z
-    :try_end_1c
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_c .. :try_end_1c} :catch_1d
-    .catchall {:try_start_c .. :try_end_1c} :catchall_3f
+    :try_end_2
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_3b
+    goto :goto_1
 
-    :catch_1d
-    :try_start_1d
+    :catch_0
+    :try_start_3
     const-string v0, "LibraryLoader"
 
     .line 60
@@ -120,16 +120,16 @@
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 62
-    :goto_3b
+    :goto_1
     iget-boolean v0, p0, Landroidx/media3/common/util/LibraryLoader;->isAvailable:Z
-    :try_end_3d
-    .catchall {:try_start_1d .. :try_end_3d} :catchall_3f
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_3f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -141,39 +141,39 @@
 .end method
 
 .method public varargs declared-synchronized setLibraries([Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
     .line 42
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/common/util/LibraryLoader;->loadAttempted:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     const-string v1, "Cannot set libraries after loading"
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
 
     .line 43
     iput-object p1, p0, Landroidx/media3/common/util/LibraryLoader;->nativeLibraries:[Ljava/lang/String;
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 44
     monitor-exit p0
 
     return-void
 
-    :catchall_11
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

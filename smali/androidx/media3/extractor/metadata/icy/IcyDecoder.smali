@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "(.+?)=\'(.*?)\';"
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 42
     invoke-direct {p0}, Landroidx/media3/extractor/metadata/SimpleMetadataDecoder;-><init>()V
@@ -63,7 +63,7 @@
 .end method
 
 .method private decodeToString(Ljava/nio/ByteBuffer;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 87
     :try_start_0
@@ -76,9 +76,9 @@
     invoke-virtual {v0}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
-    :try_end_a
-    .catch Ljava/nio/charset/CharacterCodingException; {:try_start_0 .. :try_end_a} :catch_1d
-    .catchall {:try_start_0 .. :try_end_a} :catchall_13
+    :try_end_0
+    .catch Ljava/nio/charset/CharacterCodingException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 91
     iget-object v1, p0, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->utf8Decoder:Ljava/nio/charset/CharsetDecoder;
@@ -90,7 +90,7 @@
 
     return-object v0
 
-    :catchall_13
+    :catchall_0
     move-exception v0
 
     .line 91
@@ -105,7 +105,7 @@
     throw v0
 
     .line 91
-    :catch_1d
+    :catch_0
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->utf8Decoder:Ljava/nio/charset/CharsetDecoder;
 
     invoke-virtual {v0}, Ljava/nio/charset/CharsetDecoder;->reset()Ljava/nio/charset/CharsetDecoder;
@@ -114,7 +114,7 @@
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     .line 95
-    :try_start_25
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->iso88591Decoder:Ljava/nio/charset/CharsetDecoder;
 
     invoke-virtual {v0, p1}, Ljava/nio/charset/CharsetDecoder;->decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;
@@ -124,9 +124,9 @@
     invoke-virtual {v0}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
-    :try_end_2f
-    .catch Ljava/nio/charset/CharacterCodingException; {:try_start_25 .. :try_end_2f} :catch_42
-    .catchall {:try_start_25 .. :try_end_2f} :catchall_38
+    :try_end_1
+    .catch Ljava/nio/charset/CharacterCodingException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 99
     iget-object v1, p0, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->iso88591Decoder:Ljava/nio/charset/CharsetDecoder;
@@ -138,7 +138,7 @@
 
     return-object v0
 
-    :catchall_38
+    :catchall_1
     move-exception v0
 
     .line 99
@@ -153,7 +153,7 @@
     throw v0
 
     .line 99
-    :catch_42
+    :catch_1
     iget-object v0, p0, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->iso88591Decoder:Ljava/nio/charset/CharsetDecoder;
 
     invoke-virtual {v0}, Ljava/nio/charset/CharsetDecoder;->reset()Ljava/nio/charset/CharsetDecoder;
@@ -169,7 +169,7 @@
 
 # virtual methods
 .method protected decode(Landroidx/media3/extractor/metadata/MetadataInputBuffer;Ljava/nio/ByteBuffer;)Landroidx/media3/common/Metadata;
-    .registers 10
+    .locals 7
 
     .line 49
     invoke-direct {p0, p2}, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->decodeToString(Ljava/nio/ByteBuffer;)Ljava/lang/String;
@@ -192,7 +192,7 @@
 
     const/4 v2, 0x0
 
-    if-nez p1, :cond_21
+    if-nez p1, :cond_0
 
     .line 54
     new-instance p1, Landroidx/media3/common/Metadata;
@@ -210,7 +210,7 @@
     return-object p1
 
     .line 60
-    :cond_21
+    :cond_0
     sget-object v3, Landroidx/media3/extractor/metadata/icy/IcyDecoder;->METADATA_ELEMENT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -222,12 +222,12 @@
     move-object v3, v2
 
     .line 61
-    :goto_29
+    :goto_0
     invoke-virtual {p1, v4}, Ljava/util/regex/Matcher;->find(I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5a
+    if-eqz v4, :cond_4
 
     .line 62
     invoke-virtual {p1, p2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -241,7 +241,7 @@
 
     move-result-object v5
 
-    if-eqz v4, :cond_55
+    if-eqz v4, :cond_3
 
     .line 65
     invoke-static {v4}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -256,7 +256,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_54
+    if-nez v6, :cond_2
 
     const-string v6, "streamtitle"
 
@@ -264,29 +264,29 @@
 
     move-result v4
 
-    if-nez v4, :cond_52
+    if-nez v4, :cond_1
 
-    goto :goto_55
+    goto :goto_1
 
-    :cond_52
+    :cond_1
     move-object v2, v5
 
-    goto :goto_55
+    goto :goto_1
 
-    :cond_54
+    :cond_2
     move-object v3, v5
 
     .line 76
-    :cond_55
-    :goto_55
+    :cond_3
+    :goto_1
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->end()I
 
     move-result v4
 
-    goto :goto_29
+    goto :goto_0
 
     .line 78
-    :cond_5a
+    :cond_4
     new-instance p1, Landroidx/media3/common/Metadata;
 
     new-array p2, p2, [Landroidx/media3/common/Metadata$Entry;

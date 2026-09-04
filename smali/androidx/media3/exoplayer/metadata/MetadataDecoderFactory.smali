@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 63
     new-instance v0, Landroidx/media3/exoplayer/metadata/MetadataDecoderFactory$1;

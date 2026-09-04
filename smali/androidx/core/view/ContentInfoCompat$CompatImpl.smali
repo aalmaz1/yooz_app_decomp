@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;)V
-    .registers 6
+    .locals 4
 
     .line 380
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public getClip()Landroid/content/ClipData;
-    .registers 2
+    .locals 1
 
     .line 398
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$CompatImpl;->mClip:Landroid/content/ClipData;
@@ -98,7 +98,7 @@
 .end method
 
 .method public getExtras()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 422
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$CompatImpl;->mExtras:Landroid/os/Bundle;
@@ -107,7 +107,7 @@
 .end method
 
 .method public getFlags()I
-    .registers 2
+    .locals 1
 
     .line 410
     iget v0, p0, Landroidx/core/view/ContentInfoCompat$CompatImpl;->mFlags:I
@@ -116,7 +116,7 @@
 .end method
 
 .method public getLinkUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 416
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat$CompatImpl;->mLinkUri:Landroid/net/Uri;
@@ -125,7 +125,7 @@
 .end method
 
 .method public getSource()I
-    .registers 2
+    .locals 1
 
     .line 404
     iget v0, p0, Landroidx/core/view/ContentInfoCompat$CompatImpl;->mSource:I
@@ -134,7 +134,7 @@
 .end method
 
 .method public getWrapped()Landroid/view/ContentInfo;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -142,7 +142,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 428
     new-instance v0, Ljava/lang/StringBuilder;
@@ -201,13 +201,13 @@
 
     const-string v2, ""
 
-    if-nez v1, :cond_39
+    if-nez v1, :cond_0
 
     move-object v1, v2
 
-    goto :goto_58
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v3, ", hasLinkUri("
@@ -238,7 +238,7 @@
 
     move-result-object v1
 
-    :goto_58
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -246,14 +246,14 @@
     .line 433
     iget-object v1, p0, Landroidx/core/view/ContentInfoCompat$CompatImpl;->mExtras:Landroid/os/Bundle;
 
-    if-nez v1, :cond_61
+    if-nez v1, :cond_1
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_61
+    :cond_1
     const-string v2, ", hasExtras"
 
-    :goto_63
+    :goto_1
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

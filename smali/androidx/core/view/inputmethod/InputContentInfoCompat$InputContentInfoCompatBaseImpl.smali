@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/net/Uri;Landroid/content/ClipDescription;Landroid/net/Uri;)V
-    .registers 4
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public getContentUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mContentUri:Landroid/net/Uri;
@@ -56,7 +56,7 @@
 .end method
 
 .method public getDescription()Landroid/content/ClipDescription;
-    .registers 2
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mDescription:Landroid/content/ClipDescription;
@@ -65,7 +65,7 @@
 .end method
 
 .method public getInputContentInfo()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -73,7 +73,7 @@
 .end method
 
 .method public getLinkUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatBaseImpl;->mLinkUri:Landroid/net/Uri;
@@ -82,13 +82,13 @@
 .end method
 
 .method public releasePermission()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public requestPermission()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

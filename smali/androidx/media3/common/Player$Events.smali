@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/FlagSet;)V
-    .registers 2
+    .locals 0
 
     .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public contains(I)Z
-    .registers 3
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/media3/common/Player$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -47,7 +47,7 @@
 .end method
 
 .method public varargs containsAny([I)Z
-    .registers 3
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/media3/common/Player$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -60,26 +60,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 236
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/media3/common/Player$Events;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 239
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/Player$Events;
 
     .line 240
@@ -95,7 +95,7 @@
 .end method
 
 .method public get(I)I
-    .registers 3
+    .locals 1
 
     .line 223
     iget-object v0, p0, Landroidx/media3/common/Player$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -108,7 +108,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 228
     iget-object v0, p0, Landroidx/media3/common/Player$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -121,7 +121,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/media3/common/Player$Events;->flags:Landroidx/media3/common/FlagSet;

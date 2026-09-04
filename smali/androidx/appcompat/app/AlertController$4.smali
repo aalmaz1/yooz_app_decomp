@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AlertController;Landroid/view/View;Landroid/view/View;)V
-    .registers 4
+    .locals 0
 
     .line 608
     iput-object p1, p0, Landroidx/appcompat/app/AlertController$4;->this$0:Landroidx/appcompat/app/AlertController;
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public onScroll(Landroid/widget/AbsListView;III)V
-    .registers 5
+    .locals 0
 
     .line 615
     iget-object p2, p0, Landroidx/appcompat/app/AlertController$4;->val$top:Landroid/view/View;
@@ -57,7 +57,7 @@
 .end method
 
 .method public onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

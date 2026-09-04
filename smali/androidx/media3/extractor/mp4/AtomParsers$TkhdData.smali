@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(IJI)V
-    .registers 5
+    .locals 0
 
     .line 2193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;)J
-    .registers 3
+    .locals 2
 
     .line 2187
     iget-wide v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;->duration:J
@@ -51,7 +51,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;)I
-    .registers 1
+    .locals 0
 
     .line 2187
     iget p0, p0, Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;->id:I
@@ -60,7 +60,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;)I
-    .registers 1
+    .locals 0
 
     .line 2187
     iget p0, p0, Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;->rotationDegrees:I

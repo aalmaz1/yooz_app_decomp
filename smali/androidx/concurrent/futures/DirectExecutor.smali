@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 31
     new-instance v0, Landroidx/concurrent/futures/DirectExecutor;
@@ -51,7 +51,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -65,7 +65,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/concurrent/futures/DirectExecutor;
-    .registers 2
+    .locals 1
 
     .line 29
     const-class v0, Landroidx/concurrent/futures/DirectExecutor;
@@ -80,7 +80,7 @@
 .end method
 
 .method public static values()[Landroidx/concurrent/futures/DirectExecutor;
-    .registers 1
+    .locals 1
 
     .line 29
     sget-object v0, Landroidx/concurrent/futures/DirectExecutor;->$VALUES:[Landroidx/concurrent/futures/DirectExecutor;
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -106,7 +106,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "DirectExecutor"
 

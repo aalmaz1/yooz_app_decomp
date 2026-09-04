@@ -42,7 +42,7 @@
 .end method
 
 .method public getCameraControl()Landroidx/camera/core/CameraControl;
-    .registers 2
+    .locals 1
 
     .line 196
     invoke-interface {p0}, Landroidx/camera/core/impl/CameraInternal;->getCameraControlInternal()Landroidx/camera/core/impl/CameraControlInternal;
@@ -56,7 +56,7 @@
 .end method
 
 .method public getCameraInfo()Landroidx/camera/core/CameraInfo;
-    .registers 2
+    .locals 1
 
     .line 202
     invoke-interface {p0}, Landroidx/camera/core/impl/CameraInternal;->getCameraInfoInternal()Landroidx/camera/core/impl/CameraInfoInternal;
@@ -70,7 +70,7 @@
 .end method
 
 .method public getCameraInternals()Ljava/util/LinkedHashSet;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -104,7 +104,7 @@
 .end method
 
 .method public getExtendedConfig()Landroidx/camera/core/impl/CameraConfig;
-    .registers 2
+    .locals 1
 
     .line 230
     invoke-static {}, Landroidx/camera/core/impl/CameraConfigs;->emptyConfig()Landroidx/camera/core/impl/CameraConfig;
@@ -115,7 +115,7 @@
 .end method
 
 .method public getHasTransform()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -123,7 +123,7 @@
 .end method
 
 .method public isFrontFacing()Z
-    .registers 2
+    .locals 1
 
     .line 152
     invoke-interface {p0}, Landroidx/camera/core/impl/CameraInternal;->getCameraInfo()Landroidx/camera/core/CameraInfo;
@@ -134,16 +134,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
@@ -162,13 +162,13 @@
 .end method
 
 .method public setActiveResumingMode(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setExtendedConfig(Landroidx/camera/core/impl/CameraConfig;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/Object;Z)V
-    .registers 3
+    .locals 0
 
     .line 32
     invoke-direct {p0, p1, p2}, Landroidx/camera/core/impl/StateObservable;-><init>(Ljava/lang/Object;Z)V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static withInitialError(Ljava/lang/Throwable;)Landroidx/camera/core/impl/MutableStateObservable;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -50,7 +50,7 @@
 .end method
 
 .method public static withInitialState(Ljava/lang/Object;)Landroidx/camera/core/impl/MutableStateObservable;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public setError(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 72
     invoke-virtual {p0, p1}, Landroidx/camera/core/impl/MutableStateObservable;->updateStateAsError(Ljava/lang/Throwable;)V
@@ -83,7 +83,7 @@
 .end method
 
 .method public setState(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"

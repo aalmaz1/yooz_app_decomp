@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 47
     new-instance v0, Landroid/graphics/RectF;
@@ -26,7 +26,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getExifTransform(III)Landroid/graphics/Matrix;
-    .registers 12
+    .locals 9
 
     .line 376
     new-instance v0, Landroid/graphics/Matrix;
@@ -70,63 +70,63 @@
 
     const/high16 v8, -0x40800000    # -1.0f
 
-    packed-switch p0, :pswitch_data_5a
+    packed-switch p0, :pswitch_data_0
 
-    goto :goto_44
+    goto :goto_0
 
     .line 417
-    :pswitch_21
+    :pswitch_0
     invoke-virtual {v0, v5}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    goto :goto_45
+    goto :goto_1
 
     .line 412
-    :pswitch_25
+    :pswitch_1
     invoke-virtual {v0, v8, v7}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     .line 413
     invoke-virtual {v0, v4}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    goto :goto_45
+    goto :goto_1
 
     .line 406
-    :pswitch_2c
+    :pswitch_2
     invoke-virtual {v0, v4}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    goto :goto_45
+    goto :goto_1
 
     .line 401
-    :pswitch_30
+    :pswitch_3
     invoke-virtual {v0, v8, v7}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     .line 402
     invoke-virtual {v0, v5}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    goto :goto_45
+    goto :goto_1
 
     .line 396
-    :pswitch_37
+    :pswitch_4
     invoke-virtual {v0, v7, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    goto :goto_44
+    goto :goto_0
 
-    :pswitch_3b
+    :pswitch_5
     const/high16 p0, 0x43340000    # 180.0f
 
     .line 393
     invoke-virtual {v0, p0}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    goto :goto_44
+    goto :goto_0
 
     .line 390
-    :pswitch_41
+    :pswitch_6
     invoke-virtual {v0, v8, v7}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    :goto_44
+    :goto_0
     const/4 v6, 0x0
 
-    :goto_45
-    if-eqz v6, :cond_4c
+    :goto_1
+    if-eqz v6, :cond_0
 
     .line 430
     new-instance v1, Landroid/graphics/RectF;
@@ -134,7 +134,7 @@
     invoke-direct {v1, v2, v2, p2, p1}, Landroid/graphics/RectF;-><init>(FFFF)V
 
     .line 431
-    :cond_4c
+    :cond_0
     new-instance p0, Landroid/graphics/Matrix;
 
     invoke-direct {p0}, Landroid/graphics/Matrix;-><init>()V
@@ -149,20 +149,20 @@
 
     return-object v0
 
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_41
-        :pswitch_3b
-        :pswitch_37
-        :pswitch_30
-        :pswitch_2c
-        :pswitch_25
-        :pswitch_21
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static getNormalizedToBuffer(Landroid/graphics/Rect;)Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 346
     new-instance v0, Landroid/graphics/RectF;
@@ -177,7 +177,7 @@
 .end method
 
 .method public static getNormalizedToBuffer(Landroid/graphics/RectF;)Landroid/graphics/Matrix;
-    .registers 4
+    .locals 3
 
     .line 366
     new-instance v0, Landroid/graphics/Matrix;
@@ -195,7 +195,7 @@
 .end method
 
 .method public static getRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;I)Landroid/graphics/Matrix;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -208,7 +208,7 @@
 .end method
 
 .method public static getRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;IZ)Landroid/graphics/Matrix;
-    .registers 7
+    .locals 3
 
     .line 329
     new-instance v0, Landroid/graphics/Matrix;
@@ -227,7 +227,7 @@
     .line 332
     invoke-virtual {v0, p0}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_0
 
     const/high16 p0, -0x40800000    # -1.0f
 
@@ -237,7 +237,7 @@
     invoke-virtual {v0, p0, p2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     .line 337
-    :cond_19
+    :cond_0
     invoke-static {p1}, Landroidx/camera/core/impl/utils/TransformUtils;->getNormalizedToBuffer(Landroid/graphics/RectF;)Landroid/graphics/Matrix;
 
     move-result-object p0
@@ -248,7 +248,7 @@
 .end method
 
 .method public static getRotatedSize(Landroid/graphics/Rect;I)Landroid/util/Size;
-    .registers 2
+    .locals 0
 
     .line 167
     invoke-static {p0}, Landroidx/camera/core/impl/utils/TransformUtils;->rectToSize(Landroid/graphics/Rect;)Landroid/util/Size;
@@ -263,16 +263,16 @@
 .end method
 
 .method public static hasCropping(Landroid/graphics/Rect;Landroid/util/Size;)Z
-    .registers 4
+    .locals 2
 
     .line 86
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     iget v0, p0, Landroid/graphics/Rect;->top:I
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
 
@@ -282,7 +282,7 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     .line 87
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
@@ -293,47 +293,47 @@
 
     move-result p1
 
-    if-eq p0, p1, :cond_1d
+    if-eq p0, p1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_20
+    :goto_1
     return p0
 .end method
 
 .method public static is90or270(I)Z
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x5a
 
-    if-eq p0, v0, :cond_27
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x10e
 
-    if-ne p0, v0, :cond_9
+    if-ne p0, v0, :cond_0
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_9
-    if-eqz p0, :cond_25
+    :cond_0
+    if-eqz p0, :cond_2
 
     const/16 v0, 0xb4
 
-    if-ne p0, v0, :cond_10
+    if-ne p0, v0, :cond_1
 
-    goto :goto_25
+    goto :goto_0
 
     .line 214
-    :cond_10
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -354,21 +354,21 @@
 
     throw v0
 
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_1
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static isAspectRatioMatchingWithRoundingError(Landroid/util/Size;Landroid/util/Size;)Z
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -381,11 +381,11 @@
 .end method
 
 .method public static isAspectRatioMatchingWithRoundingError(Landroid/util/Size;ZLandroid/util/Size;Z)Z
-    .registers 7
+    .locals 3
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 272
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
@@ -404,10 +404,10 @@
 
     move p0, p1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 275
-    :cond_11
+    :cond_0
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
 
     move-result p1
@@ -445,8 +445,8 @@
 
     div-float p0, v1, p0
 
-    :goto_2c
-    if-eqz p3, :cond_3b
+    :goto_0
+    if-eqz p3, :cond_1
 
     .line 281
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
@@ -465,10 +465,10 @@
 
     move p2, p3
 
-    goto :goto_59
+    goto :goto_1
 
     .line 284
-    :cond_3b
+    :cond_1
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
     move-result p3
@@ -512,28 +512,28 @@
 
     move p2, v2
 
-    :goto_59
+    :goto_1
     cmpl-float p1, p1, p3
 
-    if-ltz p1, :cond_63
+    if-ltz p1, :cond_2
 
     cmpl-float p0, p2, p0
 
-    if-ltz p0, :cond_63
+    if-ltz p0, :cond_2
 
     const/4 p0, 0x1
 
-    goto :goto_64
+    goto :goto_2
 
-    :cond_63
+    :cond_2
     const/4 p0, 0x0
 
-    :goto_64
+    :goto_2
     return p0
 .end method
 
 .method public static max(FFFF)F
-    .registers 4
+    .locals 0
 
     .line 194
     invoke-static {p0, p1}, Ljava/lang/Math;->max(FF)F
@@ -552,7 +552,7 @@
 .end method
 
 .method public static min(FFFF)F
-    .registers 4
+    .locals 0
 
     .line 201
     invoke-static {p0, p1}, Ljava/lang/Math;->min(FF)F
@@ -571,7 +571,7 @@
 .end method
 
 .method public static rectToSize(Landroid/graphics/Rect;)Landroid/util/Size;
-    .registers 3
+    .locals 2
 
     .line 57
     new-instance v0, Landroid/util/Size;
@@ -590,7 +590,7 @@
 .end method
 
 .method public static rectToString(Landroid/graphics/Rect;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 63
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -637,7 +637,7 @@
 .end method
 
 .method public static rectToVertices(Landroid/graphics/RectF;)[F
-    .registers 4
+    .locals 3
 
     const/16 v0, 0x8
 
@@ -696,7 +696,7 @@
 .end method
 
 .method public static reverseSize(Landroid/util/Size;)Landroid/util/Size;
-    .registers 3
+    .locals 2
 
     .line 114
     new-instance v0, Landroid/util/Size;
@@ -715,7 +715,7 @@
 .end method
 
 .method public static reverseSizeF(Landroid/util/SizeF;)Landroid/util/SizeF;
-    .registers 3
+    .locals 2
 
     .line 125
     new-instance v0, Landroid/util/SizeF;
@@ -734,21 +734,21 @@
 .end method
 
 .method public static rotateRect(Landroid/graphics/RectF;I)Landroid/graphics/RectF;
-    .registers 5
+    .locals 3
 
     .line 150
     rem-int/lit8 v0, p1, 0x5a
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Invalid rotation degrees: "
@@ -774,7 +774,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_1
 
     .line 153
     new-instance p1, Landroid/graphics/RectF;
@@ -793,26 +793,26 @@
 
     return-object p1
 
-    :cond_32
+    :cond_1
     return-object p0
 .end method
 
 .method public static rotateSize(Landroid/util/Size;I)Landroid/util/Size;
-    .registers 5
+    .locals 3
 
     .line 138
     rem-int/lit8 v0, p1, 0x5a
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Invalid rotation degrees: "
@@ -838,18 +838,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     invoke-static {p0}, Landroidx/camera/core/impl/utils/TransformUtils;->reverseSize(Landroid/util/Size;)Landroid/util/Size;
 
     move-result-object p0
 
-    :cond_27
+    :cond_1
     return-object p0
 .end method
 
 .method public static sizeToRect(Landroid/util/Size;)Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -862,7 +862,7 @@
 .end method
 
 .method public static sizeToRect(Landroid/util/Size;II)Landroid/graphics/Rect;
-    .registers 5
+    .locals 2
 
     .line 79
     new-instance v0, Landroid/graphics/Rect;
@@ -885,7 +885,7 @@
 .end method
 
 .method public static sizeToRectF(Landroid/util/Size;)Landroid/graphics/RectF;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -898,7 +898,7 @@
 .end method
 
 .method public static sizeToRectF(Landroid/util/Size;II)Landroid/graphics/RectF;
-    .registers 7
+    .locals 4
 
     .line 103
     new-instance v0, Landroid/graphics/RectF;
@@ -929,7 +929,7 @@
 .end method
 
 .method public static sizeToVertices(Landroid/util/Size;)[F
-    .registers 5
+    .locals 4
 
     const/16 v0, 0x8
 
@@ -999,7 +999,7 @@
 .end method
 
 .method public static updateSensorToBufferTransform(Landroid/graphics/Matrix;Landroid/graphics/Rect;)Landroid/graphics/Matrix;
-    .registers 3
+    .locals 1
 
     .line 356
     new-instance v0, Landroid/graphics/Matrix;
@@ -1025,7 +1025,7 @@
 .end method
 
 .method public static verticesToRect([F)Landroid/graphics/RectF;
-    .registers 15
+    .locals 14
 
     .line 182
     new-instance v0, Landroid/graphics/RectF;
@@ -1104,7 +1104,7 @@
 .end method
 
 .method public static within360(I)I
-    .registers 1
+    .locals 0
 
     .line 174
     rem-int/lit16 p0, p0, 0x168

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;Ljava/io/InputStream;)V
-    .registers 3
+    .locals 0
 
     .line 274
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -58,7 +58,7 @@
 .end method
 
 .method private handleInterleavedBinaryData()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -106,7 +106,7 @@
 
     check-cast v0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$InterleavedBinaryDataListener;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 311
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -115,17 +115,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_0
 
     .line 312
     invoke-interface {v0, v2}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$InterleavedBinaryDataListener;->onInterleavedBinaryDataReceived([B)V
 
-    :cond_31
+    :cond_0
     return-void
 .end method
 
 .method private handleRtspMessage(B)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -139,7 +139,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 299
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -158,14 +158,14 @@
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageListener;->onRtspMessageReceived(Ljava/util/List;)V
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public load()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -187,7 +187,7 @@
     :goto_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->loadCanceled:Z
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 287
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->dataInputStream:Ljava/io/DataInputStream;
@@ -198,7 +198,7 @@
 
     const/16 v1, 0x24
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     .line 289
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->handleInterleavedBinaryData()V
@@ -206,11 +206,11 @@
     goto :goto_0
 
     .line 291
-    :cond_12
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;->handleRtspMessage(B)V
 
     goto :goto_0
 
-    :cond_16
+    :cond_1
     return-void
 .end method

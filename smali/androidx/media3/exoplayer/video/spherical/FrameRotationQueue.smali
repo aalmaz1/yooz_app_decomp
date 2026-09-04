@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method public static computeRecenterMatrix([F[F)V
-    .registers 8
+    .locals 6
 
     .line 100
     invoke-static {p0}, Landroidx/media3/common/util/GlUtil;->setToIdentity([F)V
@@ -113,7 +113,7 @@
 .end method
 
 .method private static getRotationMatrixFromAngleAxis([F[F)V
-    .registers 13
+    .locals 11
 
     const/4 v0, 0x0
 
@@ -143,7 +143,7 @@
 
     cmpl-float v3, v2, v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_0
 
     float-to-double v3, v2
 
@@ -167,20 +167,20 @@
     .line 120
     invoke-static/range {v5 .. v10}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-    goto :goto_29
+    goto :goto_0
 
     .line 122
-    :cond_26
+    :cond_0
     invoke-static {p0}, Landroidx/media3/common/util/GlUtil;->setToIdentity([F)V
 
-    :goto_29
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public pollRotationMatrix([FJ)Z
-    .registers 11
+    .locals 7
 
     .line 70
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->rotations:Landroidx/media3/common/util/TimedValueQueue;
@@ -191,14 +191,14 @@
 
     check-cast p2, [F
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 75
-    :cond_c
+    :cond_0
     iget-object p3, p0, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->rotationMatrix:[F
 
     invoke-static {p3, p2}, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->getRotationMatrixFromAngleAxis([F[F)V
@@ -208,7 +208,7 @@
 
     const/4 p3, 0x1
 
-    if-nez p2, :cond_1f
+    if-nez p2, :cond_1
 
     .line 77
     iget-object p2, p0, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->recenterMatrix:[F
@@ -220,7 +220,7 @@
     .line 78
     iput-boolean p3, p0, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->recenterMatrixComputed:Z
 
-    :cond_1f
+    :cond_1
     const/4 v2, 0x0
 
     .line 80
@@ -240,7 +240,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->rotations:Landroidx/media3/common/util/TimedValueQueue;
@@ -256,7 +256,7 @@
 .end method
 
 .method public setRotation(J[F)V
-    .registers 5
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->rotations:Landroidx/media3/common/util/TimedValueQueue;

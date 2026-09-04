@@ -42,7 +42,7 @@
 
 # direct methods
 .method public static final synthetic getSystemService(Landroid/content/Context;)Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -74,7 +74,7 @@
 .end method
 
 .method public static final withStyledAttributes(Landroid/content/Context;I[ILkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -101,7 +101,7 @@
 .end method
 
 .method public static final withStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[IIILkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -129,32 +129,32 @@
 .end method
 
 .method public static synthetic withStyledAttributes$default(Landroid/content/Context;Landroid/util/AttributeSet;[IIILkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 9
+    .locals 1
 
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_5
+    if-eqz p7, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     and-int/lit8 p7, p6, 0x4
 
     const/4 v0, 0x0
 
-    if-eqz p7, :cond_b
+    if-eqz p7, :cond_1
 
     move p3, v0
 
-    :cond_b
+    :cond_1
     and-int/lit8 p6, p6, 0x8
 
-    if-eqz p6, :cond_10
+    if-eqz p6, :cond_2
 
     move p4, v0
 
     .line 59
-    :cond_10
+    :cond_2
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p0

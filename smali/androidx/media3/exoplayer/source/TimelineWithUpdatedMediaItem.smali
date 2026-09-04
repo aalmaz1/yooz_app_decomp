@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;Landroidx/media3/common/MediaItem;)V
-    .registers 3
+    .locals 0
 
     .line 35
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ForwardingTimeline;-><init>(Landroidx/media3/common/Timeline;)V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 5
+    .locals 0
 
     .line 42
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
@@ -38,7 +38,7 @@
 
     iget-object p1, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 46
     iget-object p1, p0, Landroidx/media3/exoplayer/source/TimelineWithUpdatedMediaItem;->updatedMediaItem:Landroidx/media3/common/MediaItem;
@@ -47,13 +47,13 @@
 
     iget-object p1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->tag:Ljava/lang/Object;
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
     .line 47
-    :goto_15
+    :goto_0
     iput-object p1, p2, Landroidx/media3/common/Timeline$Window;->tag:Ljava/lang/Object;
 
     return-object p2

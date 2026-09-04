@@ -31,7 +31,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static createRotationEffect(F)Landroidx/media3/common/Effect;
-    .registers 5
+    .locals 4
 
     .line 1033
     :try_start_0
@@ -86,12 +86,12 @@
     move-result-object p0
 
     check-cast p0, Landroidx/media3/common/Effect;
-    :try_end_28
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_29
+    :catch_0
     move-exception p0
 
     .line 1038
@@ -103,7 +103,7 @@
 .end method
 
 .method private static prepare()V
-    .registers 4
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchMethodException;,
@@ -122,17 +122,17 @@
     .line 1048
     sget-object v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ScaleAndRotateAccessor;->scaleAndRotateTransformationBuilderConstructor:Ljava/lang/reflect/Constructor;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ScaleAndRotateAccessor;->setRotationMethod:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ScaleAndRotateAccessor;->buildScaleAndRotateTransformationMethod:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_1
 
-    :cond_c
+    :cond_0
     const-string v0, "androidx.media3.effect.ScaleAndRotateTransformation$Builder"
 
     .line 1053
@@ -180,6 +180,6 @@
 
     sput-object v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ScaleAndRotateAccessor;->buildScaleAndRotateTransformationMethod:Ljava/lang/reflect/Method;
 
-    :cond_34
+    :cond_1
     return-void
 .end method

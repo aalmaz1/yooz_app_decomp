@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 35
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;
@@ -47,7 +47,7 @@
 .end method
 
 .method private constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method public static getOffsetStartTimeTiming(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     long-to-double p0, p0
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public static parseTiming(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -123,17 +123,17 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     move v4, v1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move v4, v3
 
     .line 54
-    :goto_18
+    :goto_0
     invoke-static {v4, p0}, Landroidx/media3/exoplayer/rtsp/RtspMessageUtil;->checkManifestExpression(ZLjava/lang/String;)V
 
     .line 55
@@ -151,14 +151,14 @@
 
     const/high16 v5, 0x447a0000    # 1000.0f
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_1
 
     const-wide/16 v6, 0x0
 
-    goto :goto_34
+    goto :goto_1
 
     .line 58
-    :cond_2e
+    :cond_1
     invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v2
@@ -167,7 +167,7 @@
 
     float-to-long v6, v2
 
-    :goto_34
+    :goto_1
     const/4 v2, 0x2
 
     .line 61
@@ -175,15 +175,15 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_3
 
     .line 64
-    :try_start_3b
+    :try_start_0
     invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v0
-    :try_end_3f
-    .catch Ljava/lang/NumberFormatException; {:try_start_3b .. :try_end_3f} :catch_4b
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     mul-float/2addr v0, v5
 
@@ -191,20 +191,20 @@
 
     cmp-long v0, v4, v6
 
-    if-ltz v0, :cond_46
+    if-ltz v0, :cond_2
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_46
+    :cond_2
     move v1, v3
 
     .line 68
-    :goto_47
+    :goto_2
     invoke-static {v1, p0}, Landroidx/media3/exoplayer/rtsp/RtspMessageUtil;->checkManifestExpression(ZLjava/lang/String;)V
 
-    goto :goto_56
+    goto :goto_3
 
-    :catch_4b
+    :catch_0
     move-exception p0
 
     .line 66
@@ -214,11 +214,11 @@
 
     throw p0
 
-    :cond_51
+    :cond_3
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 73
-    :goto_56
+    :goto_3
     new-instance p0, Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;
 
     invoke-direct {p0, v6, v7, v4, v5}, Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;-><init>(JJ)V
@@ -229,7 +229,7 @@
 
 # virtual methods
 .method public getDurationMs()J
-    .registers 5
+    .locals 4
 
     .line 106
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;->stopTimeMs:J
@@ -242,7 +242,7 @@
 .end method
 
 .method public isLive()Z
-    .registers 5
+    .locals 4
 
     .line 101
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;->stopTimeMs:J
@@ -251,15 +251,15 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return v0
 .end method

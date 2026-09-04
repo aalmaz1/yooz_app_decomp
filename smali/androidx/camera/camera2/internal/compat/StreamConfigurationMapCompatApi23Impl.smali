@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/params/StreamConfigurationMap;)V
-    .registers 2
+    .locals 0
 
     .line 30
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompatBaseImpl;-><init>(Landroid/hardware/camera2/params/StreamConfigurationMap;)V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public getOutputSizes(I)[Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompatApi23Impl;->mStreamConfigurationMap:Landroid/hardware/camera2/params/StreamConfigurationMap;

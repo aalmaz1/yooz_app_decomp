@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 978
     new-instance v0, Ljava/util/HashMap;
@@ -400,7 +400,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 977
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

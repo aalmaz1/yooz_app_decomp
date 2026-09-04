@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 84
     new-instance v0, Landroidx/media3/extractor/metadata/scte35/TimeSignalCommand$1;
@@ -36,7 +36,7 @@
 .end method
 
 .method private constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Landroidx/media3/extractor/metadata/scte35/SpliceCommand;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method synthetic constructor <init>(JJLandroidx/media3/extractor/metadata/scte35/TimeSignalCommand$1;)V
-    .registers 6
+    .locals 0
 
     .line 26
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/extractor/metadata/scte35/TimeSignalCommand;-><init>(JJ)V
@@ -60,7 +60,7 @@
 .end method
 
 .method static parseFromSection(Landroidx/media3/common/util/ParsableByteArray;JLandroidx/media3/common/util/TimestampAdjuster;)Landroidx/media3/extractor/metadata/scte35/TimeSignalCommand;
-    .registers 5
+    .locals 1
 
     .line 41
     invoke-static {p0, p1, p2}, Landroidx/media3/extractor/metadata/scte35/TimeSignalCommand;->parseSpliceTime(Landroidx/media3/common/util/ParsableByteArray;J)J
@@ -81,7 +81,7 @@
 .end method
 
 .method static parseSpliceTime(Landroidx/media3/common/util/ParsableByteArray;J)J
-    .registers 9
+    .locals 6
 
     .line 56
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -98,7 +98,7 @@
 
     cmp-long v2, v2, v4
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     const-wide/16 v2, 0x1
 
@@ -121,19 +121,19 @@
 
     and-long/2addr p0, v0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     const-wide p0, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_26
+    :goto_0
     return-wide p0
 .end method
 
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 69
     new-instance v0, Ljava/lang/StringBuilder;
@@ -174,7 +174,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 80
     iget-wide v0, p0, Landroidx/media3/extractor/metadata/scte35/TimeSignalCommand;->ptsTime:J

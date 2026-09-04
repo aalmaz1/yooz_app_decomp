@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method protected static addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -72,7 +72,7 @@
 .end method
 
 .method protected static addAll(Ljava/lang/Iterable;Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -92,7 +92,7 @@
 .end method
 
 .method protected static checkByteStringIsUtf8(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
@@ -104,12 +104,12 @@
 
     move-result p0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 135
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Byte string is not UTF-8."
@@ -120,7 +120,7 @@
 .end method
 
 .method private getSerializingExceptionMessage(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 125
     new-instance v0, Ljava/lang/StringBuilder;
@@ -168,7 +168,7 @@
 
 # virtual methods
 .method getMemoizedSerializedSize()I
-    .registers 2
+    .locals 1
 
     .line 102
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -179,7 +179,7 @@
 .end method
 
 .method getSerializedSize(Landroidx/datastore/preferences/protobuf/Schema;)I
-    .registers 4
+    .locals 2
 
     .line 111
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/AbstractMessageLite;->getMemoizedSerializedSize()I
@@ -188,7 +188,7 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 113
     invoke-interface {p1, p0}, Landroidx/datastore/preferences/protobuf/Schema;->getSerializedSize(Ljava/lang/Object;)I
@@ -198,12 +198,12 @@
     .line 114
     invoke-virtual {p0, v0}, Landroidx/datastore/preferences/protobuf/AbstractMessageLite;->setMemoizedSerializedSize(I)V
 
-    :cond_e
+    :cond_0
     return v0
 .end method
 
 .method newUninitializedMessageException()Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
-    .registers 2
+    .locals 1
 
     .line 121
     new-instance v0, Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
@@ -214,7 +214,7 @@
 .end method
 
 .method setMemoizedSerializedSize(I)V
-    .registers 2
+    .locals 0
 
     .line 106
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -225,7 +225,7 @@
 .end method
 
 .method public toByteArray()[B
-    .registers 4
+    .locals 3
 
     .line 69
     :try_start_0
@@ -245,12 +245,12 @@
 
     .line 72
     invoke-virtual {v1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->checkNoSpaceLeft()V
-    :try_end_10
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_11
+    :catch_0
     move-exception v0
 
     .line 75
@@ -268,7 +268,7 @@
 .end method
 
 .method public toByteString()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 4
+    .locals 3
 
     .line 58
     :try_start_0
@@ -291,12 +291,12 @@
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/ByteString$CodedBuilder;->build()Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object v0
-    :try_end_13
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_13} :catch_14
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_14
+    :catch_0
     move-exception v0
 
     .line 62
@@ -314,7 +314,7 @@
 .end method
 
 .method public writeDelimitedTo(Ljava/io/OutputStream;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -356,7 +356,7 @@
 .end method
 
 .method public writeTo(Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 542
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getBoundsInScreen(Landroid/view/accessibility/AccessibilityWindowInfo;Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 548
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityWindowInfo;->getBoundsInScreen(Landroid/graphics/Rect;)V
@@ -34,7 +34,7 @@
 .end method
 
 .method static getChild(Landroid/view/accessibility/AccessibilityWindowInfo;I)Landroid/view/accessibility/AccessibilityWindowInfo;
-    .registers 2
+    .locals 0
 
     .line 553
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityWindowInfo;->getChild(I)Landroid/view/accessibility/AccessibilityWindowInfo;
@@ -45,7 +45,7 @@
 .end method
 
 .method static getChildCount(Landroid/view/accessibility/AccessibilityWindowInfo;)I
-    .registers 1
+    .locals 0
 
     .line 558
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getChildCount()I
@@ -56,7 +56,7 @@
 .end method
 
 .method static getId(Landroid/view/accessibility/AccessibilityWindowInfo;)I
-    .registers 1
+    .locals 0
 
     .line 563
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getId()I
@@ -67,7 +67,7 @@
 .end method
 
 .method static getLayer(Landroid/view/accessibility/AccessibilityWindowInfo;)I
-    .registers 1
+    .locals 0
 
     .line 568
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getLayer()I
@@ -78,7 +78,7 @@
 .end method
 
 .method static getParent(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityWindowInfo;
-    .registers 1
+    .locals 0
 
     .line 573
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getParent()Landroid/view/accessibility/AccessibilityWindowInfo;
@@ -89,7 +89,7 @@
 .end method
 
 .method static getRoot(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityNodeInfo;
-    .registers 1
+    .locals 0
 
     .line 578
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getRoot()Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -100,7 +100,7 @@
 .end method
 
 .method static getType(Landroid/view/accessibility/AccessibilityWindowInfo;)I
-    .registers 1
+    .locals 0
 
     .line 583
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getType()I
@@ -111,7 +111,7 @@
 .end method
 
 .method static isAccessibilityFocused(Landroid/view/accessibility/AccessibilityWindowInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 588
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->isAccessibilityFocused()Z
@@ -122,7 +122,7 @@
 .end method
 
 .method static isActive(Landroid/view/accessibility/AccessibilityWindowInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 593
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->isActive()Z
@@ -133,7 +133,7 @@
 .end method
 
 .method static isFocused(Landroid/view/accessibility/AccessibilityWindowInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 598
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->isFocused()Z
@@ -144,7 +144,7 @@
 .end method
 
 .method static obtain()Landroid/view/accessibility/AccessibilityWindowInfo;
-    .registers 1
+    .locals 1
 
     .line 603
     invoke-static {}, Landroid/view/accessibility/AccessibilityWindowInfo;->obtain()Landroid/view/accessibility/AccessibilityWindowInfo;
@@ -155,7 +155,7 @@
 .end method
 
 .method static obtain(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityWindowInfo;
-    .registers 1
+    .locals 0
 
     .line 608
     invoke-static {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->obtain(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityWindowInfo;

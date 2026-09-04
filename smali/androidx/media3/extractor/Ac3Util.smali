@@ -41,14 +41,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/4 v0, 0x4
 
     new-array v0, v0, [I
 
     .line 142
-    fill-array-data v0, :array_32
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/Ac3Util;->BLOCKS_PER_SYNCFRAME_BY_NUMBLKSCOD:[I
 
@@ -57,14 +57,14 @@
     new-array v1, v0, [I
 
     .line 145
-    fill-array-data v1, :array_3e
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/extractor/Ac3Util;->SAMPLE_RATE_BY_FSCOD:[I
 
     new-array v0, v0, [I
 
     .line 148
-    fill-array-data v0, :array_48
+    fill-array-data v0, :array_2
 
     sput-object v0, Landroidx/media3/extractor/Ac3Util;->SAMPLE_RATE_BY_FSCOD2:[I
 
@@ -73,7 +73,7 @@
     new-array v0, v0, [I
 
     .line 151
-    fill-array-data v0, :array_52
+    fill-array-data v0, :array_3
 
     sput-object v0, Landroidx/media3/extractor/Ac3Util;->CHANNEL_COUNT_BY_ACMOD:[I
 
@@ -82,14 +82,14 @@
     new-array v1, v0, [I
 
     .line 154
-    fill-array-data v1, :array_66
+    fill-array-data v1, :array_4
 
     sput-object v1, Landroidx/media3/extractor/Ac3Util;->BITRATE_BY_HALF_FRMSIZECOD:[I
 
     new-array v0, v0, [I
 
     .line 160
-    fill-array-data v0, :array_90
+    fill-array-data v0, :array_5
 
     sput-object v0, Landroidx/media3/extractor/Ac3Util;->SYNCFRAME_SIZE_WORDS_BY_HALF_FRMSIZECOD_44_1:[I
 
@@ -97,7 +97,7 @@
 
     nop
 
-    :array_32
+    :array_0
     .array-data 4
         0x1
         0x2
@@ -105,21 +105,21 @@
         0x6
     .end array-data
 
-    :array_3e
+    :array_1
     .array-data 4
         0xbb80
         0xac44
         0x7d00
     .end array-data
 
-    :array_48
+    :array_2
     .array-data 4
         0x5dc0
         0x5622
         0x3e80
     .end array-data
 
-    :array_52
+    :array_3
     .array-data 4
         0x2
         0x1
@@ -131,7 +131,7 @@
         0x5
     .end array-data
 
-    :array_66
+    :array_4
     .array-data 4
         0x20
         0x28
@@ -154,7 +154,7 @@
         0x280
     .end array-data
 
-    :array_90
+    :array_5
     .array-data 4
         0x45
         0x57
@@ -179,7 +179,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 629
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -188,7 +188,7 @@
 .end method
 
 .method private static calculateEac3Bitrate(III)I
-    .registers 3
+    .locals 0
 
     mul-int/2addr p0, p1
 
@@ -201,7 +201,7 @@
 .end method
 
 .method public static findTrueHdSyncframeOffset(Ljava/nio/ByteBuffer;)I
-    .registers 6
+    .locals 5
 
     .line 551
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
@@ -217,8 +217,8 @@
 
     move v2, v0
 
-    :goto_b
-    if-gt v2, v1, :cond_1f
+    :goto_0
+    if-gt v2, v1, :cond_1
 
     add-int/lit8 v3, v2, 0x4
 
@@ -231,55 +231,55 @@
 
     const v4, -0x78d9046
 
-    if-ne v3, v4, :cond_1c
+    if-ne v3, v4, :cond_0
 
     sub-int/2addr v2, v0
 
     return v2
 
-    :cond_1c
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method private static getAc3SyncframeSize(II)I
-    .registers 6
+    .locals 4
 
     .line 599
     div-int/lit8 v0, p1, 0x2
 
-    if-ltz p0, :cond_2e
+    if-ltz p0, :cond_3
 
     .line 600
     sget-object v1, Landroidx/media3/extractor/Ac3Util;->SAMPLE_RATE_BY_FSCOD:[I
 
     array-length v2, v1
 
-    if-ge p0, v2, :cond_2e
+    if-ge p0, v2, :cond_3
 
-    if-ltz p1, :cond_2e
+    if-ltz p1, :cond_3
 
     sget-object v2, Landroidx/media3/extractor/Ac3Util;->SYNCFRAME_SIZE_WORDS_BY_HALF_FRMSIZECOD_44_1:[I
 
     array-length v3, v2
 
-    if-lt v0, v3, :cond_11
+    if-lt v0, v3, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 607
-    :cond_11
+    :cond_0
     aget p0, v1, p0
 
     const v1, 0xac44
 
-    if-ne p0, v1, :cond_20
+    if-ne p0, v1, :cond_1
 
     .line 609
     aget p0, v2, v0
@@ -293,33 +293,33 @@
     return p0
 
     .line 611
-    :cond_20
+    :cond_1
     sget-object p1, Landroidx/media3/extractor/Ac3Util;->BITRATE_BY_HALF_FRMSIZECOD:[I
 
     aget p1, p1, v0
 
     const/16 v0, 0x7d00
 
-    if-ne p0, v0, :cond_2b
+    if-ne p0, v0, :cond_2
 
     mul-int/lit8 p1, p1, 0x6
 
     return p1
 
-    :cond_2b
+    :cond_2
     mul-int/lit8 p1, p1, 0x4
 
     return p1
 
-    :cond_2e
-    :goto_2e
+    :cond_3
+    :goto_0
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method public static parseAc3AnnexFFormat(Landroidx/media3/common/util/ParsableByteArray;Ljava/lang/String;Ljava/lang/String;Landroidx/media3/common/DrmInitData;)Landroidx/media3/common/Format;
-    .registers 9
+    .locals 5
 
     .line 178
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
@@ -364,11 +364,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
-    :cond_28
+    :cond_0
     const/4 v3, 0x5
 
     .line 188
@@ -449,7 +449,7 @@
 .end method
 
 .method public static parseAc3SyncframeAudioSampleCount(Ljava/nio/ByteBuffer;)I
-    .registers 4
+    .locals 3
 
     .line 532
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
@@ -470,17 +470,17 @@
 
     const/16 v2, 0xa
 
-    if-le v0, v2, :cond_14
+    if-le v0, v2, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_15
-    if-eqz v0, :cond_3d
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 534
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
@@ -497,12 +497,12 @@
 
     shr-int/lit8 v0, v0, 0x6
 
-    if-ne v0, v1, :cond_28
+    if-ne v0, v1, :cond_1
 
-    goto :goto_36
+    goto :goto_1
 
     .line 535
-    :cond_28
+    :cond_1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
@@ -518,7 +518,7 @@
     shr-int/lit8 v1, p0, 0x4
 
     .line 536
-    :goto_36
+    :goto_1
     sget-object p0, Landroidx/media3/extractor/Ac3Util;->BLOCKS_PER_SYNCFRAME_BY_NUMBLKSCOD:[I
 
     aget p0, p0, v1
@@ -527,14 +527,14 @@
 
     return p0
 
-    :cond_3d
+    :cond_2
     const/16 p0, 0x600
 
     return p0
 .end method
 
 .method public static parseAc3SyncframeInfo(Landroidx/media3/common/util/ParsableBitArray;)Landroidx/media3/extractor/Ac3Util$SyncFrameInfo;
-    .registers 31
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -559,17 +559,17 @@
 
     const/16 v6, 0xa
 
-    if-le v3, v6, :cond_17
+    if-le v3, v6, :cond_0
 
     move v3, v5
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v3, 0x0
 
     .line 279
-    :goto_18
+    :goto_0
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableBitArray;->setPosition(I)V
 
     const/4 v1, -0x1
@@ -580,7 +580,7 @@
 
     const/4 v10, 0x2
 
-    if-eqz v3, :cond_224
+    if-eqz v3, :cond_2a
 
     const/16 v3, 0x10
 
@@ -592,29 +592,29 @@
 
     move-result v11
 
-    if-eqz v11, :cond_36
+    if-eqz v11, :cond_3
 
-    if-eq v11, v5, :cond_34
+    if-eq v11, v5, :cond_2
 
-    if-eq v11, v10, :cond_32
+    if-eq v11, v10, :cond_1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_32
+    :cond_1
     move v1, v10
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_34
+    :cond_2
     move v1, v5
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_3
     const/4 v1, 0x0
 
     .line 306
-    :goto_37
+    :goto_1
     invoke-virtual {v0, v9}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     const/16 v11, 0xb
@@ -633,7 +633,7 @@
 
     move-result v12
 
-    if-ne v12, v9, :cond_53
+    if-ne v12, v9, :cond_4
 
     .line 313
     sget-object v13, Landroidx/media3/extractor/Ac3Util;->SAMPLE_RATE_BY_FSCOD2:[I
@@ -648,10 +648,10 @@
 
     const/4 v15, 0x6
 
-    goto :goto_65
+    goto :goto_2
 
     .line 316
-    :cond_53
+    :cond_4
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v13
@@ -674,7 +674,7 @@
 
     move/from16 v15, v29
 
-    :goto_65
+    :goto_2
     mul-int/lit16 v4, v15, 0x100
 
     .line 321
@@ -707,13 +707,13 @@
 
     move-result v6
 
-    if-eqz v6, :cond_85
+    if-eqz v6, :cond_5
 
     .line 327
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_85
-    if-nez v8, :cond_93
+    :cond_5
+    if-nez v8, :cond_6
 
     .line 330
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -723,146 +723,146 @@
 
     move-result v6
 
-    if-eqz v6, :cond_93
+    if-eqz v6, :cond_6
 
     .line 332
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_93
-    if-ne v1, v5, :cond_9e
+    :cond_6
+    if-ne v1, v5, :cond_7
 
     .line 335
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v6
 
-    if-eqz v6, :cond_9e
+    if-eqz v6, :cond_7
 
     .line 336
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 338
-    :cond_9e
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
     const/4 v6, 0x4
 
-    if-eqz v3, :cond_1bb
+    if-eqz v3, :cond_20
 
-    if-le v8, v10, :cond_aa
+    if-le v8, v10, :cond_8
 
     .line 340
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_aa
+    :cond_8
     and-int/lit8 v3, v8, 0x1
 
-    if-eqz v3, :cond_b5
+    if-eqz v3, :cond_9
 
-    if-le v8, v10, :cond_b5
+    if-le v8, v10, :cond_9
 
     const/4 v3, 0x6
 
     .line 343
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_b6
+    goto :goto_3
 
-    :cond_b5
+    :cond_9
     const/4 v3, 0x6
 
-    :goto_b6
+    :goto_3
     and-int/lit8 v17, v8, 0x4
 
-    if-eqz v17, :cond_bd
+    if-eqz v17, :cond_a
 
     .line 346
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_bd
-    if-eqz v18, :cond_c8
+    :cond_a
+    if-eqz v18, :cond_b
 
     .line 348
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_c8
+    if-eqz v3, :cond_b
 
     .line 349
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_c8
-    if-nez v1, :cond_1bb
+    :cond_b
+    if-nez v1, :cond_20
 
     .line 352
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_d5
+    if-eqz v3, :cond_c
 
     const/4 v3, 0x6
 
     .line 353
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_d6
+    goto :goto_4
 
-    :cond_d5
+    :cond_c
     const/4 v3, 0x6
 
-    :goto_d6
-    if-nez v8, :cond_e1
+    :goto_4
+    if-nez v8, :cond_d
 
     .line 355
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v17
 
-    if-eqz v17, :cond_e1
+    if-eqz v17, :cond_d
 
     .line 356
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 358
-    :cond_e1
+    :cond_d
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v17
 
-    if-eqz v17, :cond_ea
+    if-eqz v17, :cond_e
 
     .line 359
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 361
-    :cond_ea
+    :cond_e
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    if-ne v3, v5, :cond_f5
+    if-ne v3, v5, :cond_f
 
     .line 363
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_188
+    goto/16 :goto_5
 
-    :cond_f5
-    if-ne v3, v10, :cond_fe
+    :cond_f
+    if-ne v3, v10, :cond_10
 
     const/16 v3, 0xc
 
     .line 365
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto/16 :goto_188
+    goto/16 :goto_5
 
-    :cond_fe
-    if-ne v3, v9, :cond_188
+    :cond_10
+    if-ne v3, v9, :cond_1b
 
     .line 367
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -874,7 +874,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_164
+    if-eqz v18, :cond_19
 
     .line 369
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -884,113 +884,113 @@
 
     move-result v18
 
-    if-eqz v18, :cond_116
+    if-eqz v18, :cond_11
 
     .line 371
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 373
-    :cond_116
+    :cond_11
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_11f
+    if-eqz v18, :cond_12
 
     .line 374
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 376
-    :cond_11f
+    :cond_12
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_128
+    if-eqz v18, :cond_13
 
     .line 377
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 379
-    :cond_128
+    :cond_13
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_131
+    if-eqz v18, :cond_14
 
     .line 380
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 382
-    :cond_131
+    :cond_14
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_13a
+    if-eqz v18, :cond_15
 
     .line 383
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 385
-    :cond_13a
+    :cond_15
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_143
+    if-eqz v18, :cond_16
 
     .line 386
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 388
-    :cond_143
+    :cond_16
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_14c
+    if-eqz v18, :cond_17
 
     .line 389
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 391
-    :cond_14c
+    :cond_17
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_164
+    if-eqz v18, :cond_19
 
     .line 392
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_15b
+    if-eqz v18, :cond_18
 
     .line 393
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 395
-    :cond_15b
+    :cond_18
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_164
+    if-eqz v18, :cond_19
 
     .line 396
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 400
-    :cond_164
+    :cond_19
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v18
 
-    if-eqz v18, :cond_180
+    if-eqz v18, :cond_1a
 
     .line 401
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -1000,7 +1000,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_180
+    if-eqz v18, :cond_1a
 
     const/4 v5, 0x7
 
@@ -1012,12 +1012,12 @@
 
     move-result v5
 
-    if-eqz v5, :cond_180
+    if-eqz v5, :cond_1a
 
     .line 405
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_180
+    :cond_1a
     add-int/2addr v3, v10
 
     mul-int/2addr v3, v7
@@ -1028,9 +1028,9 @@
     .line 410
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->byteAlign()V
 
-    :cond_188
-    :goto_188
-    if-ge v8, v10, :cond_1a0
+    :cond_1b
+    :goto_5
+    if-ge v8, v10, :cond_1d
 
     .line 413
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
@@ -1039,153 +1039,153 @@
 
     const/16 v5, 0xe
 
-    if-eqz v3, :cond_195
+    if-eqz v3, :cond_1c
 
     .line 414
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_195
-    if-nez v8, :cond_1a0
+    :cond_1c
+    if-nez v8, :cond_1d
 
     .line 417
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1a0
+    if-eqz v3, :cond_1d
 
     .line 418
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 422
-    :cond_1a0
+    :cond_1d
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1bb
+    if-eqz v3, :cond_20
 
-    if-nez v14, :cond_1ac
+    if-nez v14, :cond_1e
 
     .line 424
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_1bb
+    goto :goto_7
 
-    :cond_1ac
+    :cond_1e
     const/4 v3, 0x0
 
-    :goto_1ad
-    if-ge v3, v15, :cond_1bb
+    :goto_6
+    if-ge v3, v15, :cond_20
 
     .line 427
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1b8
+    if-eqz v5, :cond_1f
 
     .line 428
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_1b8
+    :cond_1f
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1ad
+    goto :goto_6
 
     .line 435
-    :cond_1bb
-    :goto_1bb
+    :cond_20
+    :goto_7
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1e8
+    if-eqz v3, :cond_25
 
     .line 436
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    if-ne v8, v10, :cond_1c9
+    if-ne v8, v10, :cond_21
 
     .line 438
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_1c9
+    :cond_21
     const/4 v2, 0x6
 
-    if-lt v8, v2, :cond_1cf
+    if-lt v8, v2, :cond_22
 
     .line 441
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 443
-    :cond_1cf
+    :cond_22
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1d8
+    if-eqz v2, :cond_23
 
     .line 444
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_1d8
-    if-nez v8, :cond_1e3
+    :cond_23
+    if-nez v8, :cond_24
 
     .line 446
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1e3
+    if-eqz v2, :cond_24
 
     .line 447
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_1e3
-    if-ge v12, v9, :cond_1e8
+    :cond_24
+    if-ge v12, v9, :cond_25
 
     .line 450
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->skipBit()V
 
-    :cond_1e8
-    if-nez v1, :cond_1ef
+    :cond_25
+    if-nez v1, :cond_26
 
-    if-eq v14, v9, :cond_1ef
+    if-eq v14, v9, :cond_26
 
     .line 454
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->skipBit()V
 
-    :cond_1ef
-    if-ne v1, v10, :cond_1fe
+    :cond_26
+    if-ne v1, v10, :cond_28
 
-    if-eq v14, v9, :cond_1f9
+    if-eq v14, v9, :cond_27
 
     .line 457
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1fe
+    if-eqz v2, :cond_28
 
-    :cond_1f9
+    :cond_27
     const/4 v2, 0x6
 
     .line 458
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    goto :goto_1ff
+    goto :goto_8
 
-    :cond_1fe
+    :cond_28
     const/4 v2, 0x6
 
     .line 461
-    :goto_1ff
+    :goto_8
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_215
+    if-eqz v3, :cond_29
 
     .line 462
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -1194,23 +1194,23 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_215
+    if-ne v2, v3, :cond_29
 
     .line 463
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v0
 
-    if-ne v0, v3, :cond_215
+    if-ne v0, v3, :cond_29
 
     const-string v0, "audio/eac3-joc"
 
-    goto :goto_217
+    goto :goto_9
 
-    :cond_215
+    :cond_29
     const-string v0, "audio/eac3"
 
-    :goto_217
+    :goto_9
     move-object/from16 v21, v0
 
     move/from16 v22, v1
@@ -1223,9 +1223,9 @@
 
     move/from16 v27, v16
 
-    goto :goto_283
+    goto :goto_c
 
-    :cond_224
+    :cond_2a
     const/16 v2, 0x20
 
     .line 469
@@ -1236,16 +1236,16 @@
 
     move-result v2
 
-    if-ne v2, v9, :cond_231
+    if-ne v2, v9, :cond_2b
 
     const/4 v3, 0x0
 
-    goto :goto_233
+    goto :goto_a
 
-    :cond_231
+    :cond_2b
     const-string v3, "audio/ac3"
 
-    :goto_233
+    :goto_a
     const/4 v4, 0x6
 
     .line 476
@@ -1277,48 +1277,48 @@
 
     and-int/lit8 v6, v4, 0x1
 
-    if-eqz v6, :cond_255
+    if-eqz v6, :cond_2c
 
     const/4 v6, 0x1
 
-    if-eq v4, v6, :cond_255
+    if-eq v4, v6, :cond_2c
 
     .line 482
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_255
+    :cond_2c
     and-int/lit8 v6, v4, 0x4
 
-    if-eqz v6, :cond_25c
+    if-eqz v6, :cond_2d
 
     .line 485
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_25c
-    if-ne v4, v10, :cond_261
+    :cond_2d
+    if-ne v4, v10, :cond_2e
 
     .line 488
     invoke-virtual {v0, v10}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 491
-    :cond_261
+    :cond_2e
     sget-object v6, Landroidx/media3/extractor/Ac3Util;->SAMPLE_RATE_BY_FSCOD:[I
 
     array-length v7, v6
 
-    if-ge v2, v7, :cond_26a
+    if-ge v2, v7, :cond_2f
 
     aget v2, v6, v2
 
     move v13, v2
 
-    goto :goto_26b
+    goto :goto_b
 
-    :cond_26a
+    :cond_2f
     move v13, v1
 
     .line 493
-    :goto_26b
+    :goto_b
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v0
@@ -1344,7 +1344,7 @@
 
     move/from16 v24, v13
 
-    :goto_283
+    :goto_c
     move/from16 v23, v19
 
     .line 496
@@ -1360,20 +1360,20 @@
 .end method
 
 .method public static parseAc3SyncframeSize([B)I
-    .registers 6
+    .locals 5
 
     .line 507
     array-length v0, p0
 
     const/4 v1, 0x6
 
-    if-ge v0, v1, :cond_6
+    if-ge v0, v1, :cond_0
 
     const/4 p0, -0x1
 
     return p0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x5
 
     .line 511
@@ -1389,17 +1389,17 @@
 
     const/4 v4, 0x1
 
-    if-le v0, v3, :cond_14
+    if-le v0, v3, :cond_1
 
     move v0, v4
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_15
-    if-eqz v0, :cond_26
+    :goto_0
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x2
 
@@ -1423,7 +1423,7 @@
 
     return p0
 
-    :cond_26
+    :cond_2
     const/4 v0, 0x4
 
     .line 517
@@ -1444,7 +1444,7 @@
 .end method
 
 .method public static parseEAc3AnnexFFormat(Landroidx/media3/common/util/ParsableByteArray;Ljava/lang/String;Ljava/lang/String;Landroidx/media3/common/DrmInitData;)Landroidx/media3/common/Format;
-    .registers 11
+    .locals 7
 
     .line 217
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
@@ -1501,12 +1501,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_33
+    if-eqz v6, :cond_0
 
     add-int/lit8 v4, v4, 0x1
 
     .line 233
-    :cond_33
+    :cond_0
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     const/4 v2, 0x4
@@ -1519,7 +1519,7 @@
     .line 235
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    if-lez v2, :cond_4f
+    if-lez v2, :cond_2
 
     const/4 v2, 0x6
 
@@ -1531,23 +1531,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4c
+    if-eqz v2, :cond_1
 
     add-int/lit8 v4, v4, 0x2
 
     .line 243
-    :cond_4c
+    :cond_1
     invoke-virtual {v0, v5}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 247
-    :cond_4f
+    :cond_2
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->bitsLeft()I
 
     move-result v2
 
     const/4 v6, 0x7
 
-    if-le v2, v6, :cond_62
+    if-le v2, v6, :cond_3
 
     .line 248
     invoke-virtual {v0, v6}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -1557,17 +1557,17 @@
 
     move-result v2
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_3
 
     const-string v2, "audio/eac3-joc"
 
-    goto :goto_64
+    goto :goto_0
 
-    :cond_62
+    :cond_3
     const-string v2, "audio/eac3"
 
     .line 254
-    :goto_64
+    :goto_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableBitArray;->byteAlign()V
 
     .line 255
@@ -1626,7 +1626,7 @@
 .end method
 
 .method public static parseTrueHdSyncframeAudioSampleCount(Ljava/nio/ByteBuffer;I)I
-    .registers 4
+    .locals 2
 
     .line 594
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
@@ -1645,33 +1645,33 @@
 
     const/16 v1, 0xbb
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
     .line 595
-    :goto_14
+    :goto_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
 
     add-int/2addr v1, p1
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     const/16 p1, 0x9
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     const/16 p1, 0x8
 
-    :goto_20
+    :goto_1
     add-int/2addr v1, p1
 
     invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->get(I)B
@@ -1690,7 +1690,7 @@
 .end method
 
 .method public static parseTrueHdSyncframeAudioSampleCount([B)I
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x4
 
@@ -1701,7 +1701,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_36
+    if-ne v1, v2, :cond_3
 
     const/4 v1, 0x5
 
@@ -1709,7 +1709,7 @@
 
     const/16 v2, 0x72
 
-    if-ne v1, v2, :cond_36
+    if-ne v1, v2, :cond_3
 
     const/4 v1, 0x6
 
@@ -1717,7 +1717,7 @@
 
     const/16 v2, 0x6f
 
-    if-ne v1, v2, :cond_36
+    if-ne v1, v2, :cond_3
 
     const/4 v1, 0x7
 
@@ -1727,31 +1727,31 @@
 
     const/16 v5, 0xba
 
-    if-eq v4, v5, :cond_1f
+    if-eq v4, v5, :cond_0
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_1f
+    :cond_0
     and-int/lit16 v2, v2, 0xff
 
     const/16 v4, 0xbb
 
-    if-ne v2, v4, :cond_26
+    if-ne v2, v4, :cond_1
 
     const/4 v3, 0x1
 
-    :cond_26
-    if-eqz v3, :cond_2b
+    :cond_1
+    if-eqz v3, :cond_2
 
     const/16 v2, 0x9
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const/16 v2, 0x8
 
     .line 581
-    :goto_2d
+    :goto_0
     aget-byte p0, p0, v2
 
     shr-int/2addr p0, v0
@@ -1764,7 +1764,7 @@
 
     return p0
 
-    :cond_36
-    :goto_36
+    :cond_3
+    :goto_1
     return v3
 .end method

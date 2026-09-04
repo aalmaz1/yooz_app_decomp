@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final trace(Ljava/lang/String;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -58,12 +58,12 @@
     const/4 p0, 0x1
 
     .line 35
-    :try_start_4
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_8
-    .catchall {:try_start_4 .. :try_end_8} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -74,7 +74,7 @@
 
     return-object p1
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     invoke-static {p0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

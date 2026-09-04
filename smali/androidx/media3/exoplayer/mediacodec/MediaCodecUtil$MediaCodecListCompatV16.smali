@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1079
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$1;)V
-    .registers 2
+    .locals 0
 
     .line 1079
     invoke-direct {p0}, Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$MediaCodecListCompatV16;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public getCodecCount()I
-    .registers 2
+    .locals 1
 
     .line 1083
     invoke-static {}, Landroid/media/MediaCodecList;->getCodecCount()I
@@ -50,7 +50,7 @@
 .end method
 
 .method public getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
-    .registers 2
+    .locals 0
 
     .line 1088
     invoke-static {p1}, Landroid/media/MediaCodecList;->getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
@@ -61,7 +61,7 @@
 .end method
 
 .method public isFeatureRequired(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 4
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public isFeatureSupported(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
-    .registers 4
+    .locals 0
 
     const-string p3, "secure-playback"
 
@@ -78,7 +78,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     const-string/jumbo p1, "video/avc"
 
@@ -87,21 +87,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_14
+    :goto_0
     return p1
 .end method
 
 .method public secureDecodersExplicit()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

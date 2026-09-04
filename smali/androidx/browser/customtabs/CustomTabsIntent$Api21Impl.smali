@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1790
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getLocaleForLanguageTag(Landroid/content/Intent;)Ljava/util/Locale;
-    .registers 2
+    .locals 1
 
     const-string v0, "androidx.browser.customtabs.extra.TRANSLATE_LANGUAGE_TAG"
 
@@ -34,24 +34,24 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
     .line 1800
     invoke-static {p0}, Ljava/util/Locale;->forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;
 
     move-result-object p0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_e
+    :goto_0
     return-object p0
 .end method
 
 .method static setLanguageTag(Landroid/content/Intent;Ljava/util/Locale;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "androidx.browser.customtabs.extra.TRANSLATE_LANGUAGE_TAG"
 

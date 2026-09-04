@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static emptyBooleanList()Landroidx/datastore/preferences/protobuf/Internal$BooleanList;
-    .registers 1
+    .locals 1
 
     .line 56
     invoke-static {}, Landroidx/datastore/preferences/protobuf/BooleanArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/BooleanArrayList;
@@ -25,7 +25,7 @@
 .end method
 
 .method public static emptyDoubleList()Landroidx/datastore/preferences/protobuf/Internal$DoubleList;
-    .registers 1
+    .locals 1
 
     .line 88
     invoke-static {}, Landroidx/datastore/preferences/protobuf/DoubleArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/DoubleArrayList;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static emptyFloatList()Landroidx/datastore/preferences/protobuf/Internal$FloatList;
-    .registers 1
+    .locals 1
 
     .line 80
     invoke-static {}, Landroidx/datastore/preferences/protobuf/FloatArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/FloatArrayList;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static emptyIntList()Landroidx/datastore/preferences/protobuf/Internal$IntList;
-    .registers 1
+    .locals 1
 
     .line 64
     invoke-static {}, Landroidx/datastore/preferences/protobuf/IntArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/IntArrayList;
@@ -58,7 +58,7 @@
 .end method
 
 .method public static emptyLongList()Landroidx/datastore/preferences/protobuf/Internal$LongList;
-    .registers 1
+    .locals 1
 
     .line 72
     invoke-static {}, Landroidx/datastore/preferences/protobuf/LongArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/LongArrayList;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -89,7 +89,7 @@
 .end method
 
 .method public static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -107,17 +107,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 51
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
     move-result-object p0
@@ -126,7 +126,7 @@
 .end method
 
 .method public static newBooleanList()Landroidx/datastore/preferences/protobuf/Internal$BooleanList;
-    .registers 1
+    .locals 1
 
     .line 60
     new-instance v0, Landroidx/datastore/preferences/protobuf/BooleanArrayList;
@@ -137,7 +137,7 @@
 .end method
 
 .method public static newDoubleList()Landroidx/datastore/preferences/protobuf/Internal$DoubleList;
-    .registers 1
+    .locals 1
 
     .line 92
     new-instance v0, Landroidx/datastore/preferences/protobuf/DoubleArrayList;
@@ -148,7 +148,7 @@
 .end method
 
 .method public static newFloatList()Landroidx/datastore/preferences/protobuf/Internal$FloatList;
-    .registers 1
+    .locals 1
 
     .line 84
     new-instance v0, Landroidx/datastore/preferences/protobuf/FloatArrayList;
@@ -159,7 +159,7 @@
 .end method
 
 .method public static newIntList()Landroidx/datastore/preferences/protobuf/Internal$IntList;
-    .registers 1
+    .locals 1
 
     .line 68
     new-instance v0, Landroidx/datastore/preferences/protobuf/IntArrayList;
@@ -170,7 +170,7 @@
 .end method
 
 .method public static newLongList()Landroidx/datastore/preferences/protobuf/Internal$LongList;
-    .registers 1
+    .locals 1
 
     .line 76
     new-instance v0, Landroidx/datastore/preferences/protobuf/LongArrayList;

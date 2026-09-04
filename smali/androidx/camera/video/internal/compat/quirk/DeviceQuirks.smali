@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 40
     new-instance v0, Landroidx/camera/core/impl/Quirks;
@@ -26,7 +26,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static get(Ljava/lang/Class;)Landroidx/camera/core/impl/Quirk;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -57,7 +57,7 @@
 .end method
 
 .method public static getAll()Landroidx/camera/core/impl/Quirks;
-    .registers 1
+    .locals 1
 
     .line 49
     sget-object v0, Landroidx/camera/video/internal/compat/quirk/DeviceQuirks;->QUIRKS:Landroidx/camera/core/impl/Quirks;
@@ -66,7 +66,7 @@
 .end method
 
 .method public static getAll(Ljava/lang/Class;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",

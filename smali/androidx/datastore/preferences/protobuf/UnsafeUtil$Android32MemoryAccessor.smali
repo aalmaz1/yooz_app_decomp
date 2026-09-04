@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lsun/misc/Unsafe;)V
-    .registers 2
+    .locals 0
 
     .line 831
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
@@ -29,7 +29,7 @@
 .end method
 
 .method private static smallAddress(J)I
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public copyMemory(J[BJJ)V
-    .registers 8
+    .locals 0
 
     .line 922
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -54,7 +54,7 @@
 .end method
 
 .method public copyMemory([BJJJ)V
-    .registers 8
+    .locals 0
 
     .line 927
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -65,12 +65,12 @@
 .end method
 
 .method public getBoolean(Ljava/lang/Object;J)Z
-    .registers 5
+    .locals 1
 
     .line 884
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 885
     invoke-static {p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$400(Ljava/lang/Object;J)Z
@@ -80,7 +80,7 @@
     return p1
 
     .line 887
-    :cond_9
+    :cond_0
     invoke-static {p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$500(Ljava/lang/Object;J)Z
 
     move-result p1
@@ -89,7 +89,7 @@
 .end method
 
 .method public getByte(J)B
-    .registers 3
+    .locals 0
 
     .line 836
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -100,12 +100,12 @@
 .end method
 
 .method public getByte(Ljava/lang/Object;J)B
-    .registers 5
+    .locals 1
 
     .line 866
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 867
     invoke-static {p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$000(Ljava/lang/Object;J)B
@@ -115,7 +115,7 @@
     return p1
 
     .line 869
-    :cond_9
+    :cond_0
     invoke-static {p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$100(Ljava/lang/Object;J)B
 
     move-result p1
@@ -124,7 +124,7 @@
 .end method
 
 .method public getDouble(Ljava/lang/Object;J)D
-    .registers 4
+    .locals 0
 
     .line 912
     invoke-virtual {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$Android32MemoryAccessor;->getLong(Ljava/lang/Object;J)J
@@ -139,7 +139,7 @@
 .end method
 
 .method public getFloat(Ljava/lang/Object;J)F
-    .registers 4
+    .locals 0
 
     .line 902
     invoke-virtual {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$Android32MemoryAccessor;->getInt(Ljava/lang/Object;J)I
@@ -154,7 +154,7 @@
 .end method
 
 .method public getInt(J)I
-    .registers 3
+    .locals 0
 
     .line 846
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -165,7 +165,7 @@
 .end method
 
 .method public getLong(J)J
-    .registers 3
+    .locals 0
 
     .line 856
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -176,47 +176,47 @@
 .end method
 
 .method public getStaticObject(Ljava/lang/reflect/Field;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     .line 933
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_5
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_6
+    :catch_0
     return-object v0
 .end method
 
 .method public putBoolean(Ljava/lang/Object;JZ)V
-    .registers 6
+    .locals 1
 
     .line 893
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 894
     invoke-static {p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$600(Ljava/lang/Object;JZ)V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 896
-    :cond_8
+    :cond_0
     invoke-static {p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$700(Ljava/lang/Object;JZ)V
 
-    :goto_b
+    :goto_0
     return-void
 .end method
 
 .method public putByte(JB)V
-    .registers 4
+    .locals 0
 
     .line 841
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -227,28 +227,28 @@
 .end method
 
 .method public putByte(Ljava/lang/Object;JB)V
-    .registers 6
+    .locals 1
 
     .line 875
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 876
     invoke-static {p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$200(Ljava/lang/Object;JB)V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 878
-    :cond_8
+    :cond_0
     invoke-static {p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->access$300(Ljava/lang/Object;JB)V
 
-    :goto_b
+    :goto_0
     return-void
 .end method
 
 .method public putDouble(Ljava/lang/Object;JD)V
-    .registers 12
+    .locals 6
 
     .line 917
     invoke-static {p4, p5}, Ljava/lang/Double;->doubleToLongBits(D)J
@@ -267,7 +267,7 @@
 .end method
 
 .method public putFloat(Ljava/lang/Object;JF)V
-    .registers 5
+    .locals 0
 
     .line 907
     invoke-static {p4}, Ljava/lang/Float;->floatToIntBits(F)I
@@ -280,7 +280,7 @@
 .end method
 
 .method public putInt(JI)V
-    .registers 4
+    .locals 0
 
     .line 851
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -291,7 +291,7 @@
 .end method
 
 .method public putLong(JJ)V
-    .registers 5
+    .locals 0
 
     .line 861
     new-instance p1, Ljava/lang/UnsupportedOperationException;

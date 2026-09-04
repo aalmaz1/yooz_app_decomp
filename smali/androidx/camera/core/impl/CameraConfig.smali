@@ -73,7 +73,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.camera.useCaseConfigFactory"
 
@@ -144,7 +144,7 @@
 .end method
 
 .method public getSessionProcessor()Landroidx/camera/core/impl/SessionProcessor;
-    .registers 2
+    .locals 1
 
     .line 121
     sget-object v0, Landroidx/camera/core/impl/CameraConfig;->OPTION_SESSION_PROCESSOR:Landroidx/camera/core/impl/Config$Option;
@@ -159,7 +159,7 @@
 .end method
 
 .method public getSessionProcessor(Landroidx/camera/core/impl/SessionProcessor;)Landroidx/camera/core/impl/SessionProcessor;
-    .registers 3
+    .locals 1
 
     .line 109
     sget-object v0, Landroidx/camera/core/impl/CameraConfig;->OPTION_SESSION_PROCESSOR:Landroidx/camera/core/impl/Config$Option;
@@ -174,7 +174,7 @@
 .end method
 
 .method public getUseCaseCombinationRequiredRule()I
-    .registers 3
+    .locals 2
 
     .line 96
     sget-object v0, Landroidx/camera/core/impl/CameraConfig;->OPTION_USE_CASE_COMBINATION_REQUIRED_RULE:Landroidx/camera/core/impl/Config$Option;
@@ -199,7 +199,7 @@
 .end method
 
 .method public getUseCaseConfigFactory()Landroidx/camera/core/impl/UseCaseConfigFactory;
-    .registers 3
+    .locals 2
 
     .line 78
     sget-object v0, Landroidx/camera/core/impl/CameraConfig;->OPTION_USECASE_CONFIG_FACTORY:Landroidx/camera/core/impl/Config$Option;

@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 76
     new-instance v0, Ljava/util/HashMap;
@@ -225,7 +225,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -234,7 +234,7 @@
 .end method
 
 .method private static getDynamicRangeDefaultMime(Landroidx/camera/core/DynamicRange;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 217
     invoke-virtual {p0}, Landroidx/camera/core/DynamicRange;->getEncoding()I
@@ -243,30 +243,30 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_36
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_32
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_32
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_32
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x6
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     const-string/jumbo p0, "video/dolby-vision"
 
     return-object p0
 
     .line 231
-    :cond_17
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -293,19 +293,19 @@
 
     throw v0
 
-    :cond_32
+    :cond_1
     const-string/jumbo p0, "video/hevc"
 
     return-object p0
 
-    :cond_36
+    :cond_2
     const-string/jumbo p0, "video/avc"
 
     return-object p0
 .end method
 
 .method public static mimeAndProfileToEncoderDataSpace(Ljava/lang/String;I)Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
-    .registers 4
+    .locals 2
 
     .line 318
     sget-object v0, Landroidx/camera/video/internal/config/VideoConfigUtil;->MIME_TO_DATA_SPACE_MAP:Ljava/util/Map;
@@ -317,7 +317,7 @@
 
     check-cast v0, Ljava/util/Map;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 321
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -330,11 +330,11 @@
 
     check-cast v0, Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -370,7 +370,7 @@
 .end method
 
 .method public static resolveVideoEncoderConfig(Landroidx/camera/video/internal/config/VideoMimeInfo;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/VideoSpec;Landroid/util/Size;Landroidx/camera/core/DynamicRange;Landroid/util/Range;)Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
-    .registers 22
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -391,7 +391,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_1b
+    if-eqz v5, :cond_0
 
     .line 255
     new-instance v8, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;
@@ -415,10 +415,10 @@
 
     invoke-direct/range {v0 .. v7}, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;-><init>(Ljava/lang/String;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/VideoSpec;Landroid/util/Size;Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;Landroidx/camera/core/DynamicRange;Landroid/util/Range;)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 259
-    :cond_1b
+    :cond_0
     new-instance v8, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;
 
     invoke-virtual/range {p0 .. p0}, Landroidx/camera/video/internal/config/VideoMimeInfo;->getMimeType()Ljava/lang/String;
@@ -440,7 +440,7 @@
     invoke-direct/range {v9 .. v15}, Landroidx/camera/video/internal/config/VideoEncoderConfigDefaultResolver;-><init>(Ljava/lang/String;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/VideoSpec;Landroid/util/Size;Landroidx/camera/core/DynamicRange;Landroid/util/Range;)V
 
     .line 263
-    :goto_2f
+    :goto_0
     invoke-interface {v8}, Landroidx/core/util/Supplier;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -451,7 +451,7 @@
 .end method
 
 .method public static resolveVideoMimeInfo(Landroidx/camera/video/MediaSpec;Landroidx/camera/core/DynamicRange;Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;)Landroidx/camera/video/internal/config/VideoMimeInfo;
-    .registers 14
+    .locals 11
 
     .line 141
     invoke-virtual {p1}, Landroidx/camera/core/DynamicRange;->isFullySpecified()Z
@@ -495,7 +495,7 @@
 
     const-string v4, "VideoConfigUtil"
 
-    if-eqz p2, :cond_ab
+    if-eqz p2, :cond_3
 
     .line 148
     invoke-static {p1}, Landroidx/camera/video/internal/utils/DynamicRangeUtil;->dynamicRangeToVideoProfileHdrFormats(Landroidx/camera/core/DynamicRange;)Ljava/util/Set;
@@ -516,13 +516,13 @@
 
     move-result-object v7
 
-    :cond_3b
-    :goto_3b
+    :cond_0
+    :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_ab
+    if-eqz v8, :cond_3
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -543,7 +543,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_3b
+    if-eqz v9, :cond_0
 
     .line 156
     invoke-virtual {v8}, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;->getBitDepth()I
@@ -558,12 +558,12 @@
 
     move-result v9
 
-    if-nez v9, :cond_64
+    if-nez v9, :cond_1
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 163
-    :cond_64
+    :cond_1
     invoke-virtual {v8}, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;->getMediaType()Ljava/lang/String;
 
     move-result-object v9
@@ -573,7 +573,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_85
+    if-eqz v10, :cond_2
 
     .line 165
     new-instance v5, Ljava/lang/StringBuilder;
@@ -596,15 +596,15 @@
 
     invoke-static {v4, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_a9
+    goto :goto_1
 
     .line 168
-    :cond_85
+    :cond_2
     invoke-virtual {p0}, Landroidx/camera/video/MediaSpec;->getOutputFormat()I
 
     move-result v10
 
-    if-ne v10, v1, :cond_3b
+    if-ne v10, v1, :cond_0
 
     .line 169
     new-instance v5, Ljava/lang/StringBuilder;
@@ -635,31 +635,31 @@
 
     invoke-static {v4, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_a9
+    :goto_1
     move-object v0, v9
 
-    goto :goto_ac
+    goto :goto_2
 
-    :cond_ab
+    :cond_3
     const/4 v8, 0x0
 
-    :goto_ac
-    if-nez v8, :cond_f7
+    :goto_2
+    if-nez v8, :cond_6
 
     .line 183
     invoke-virtual {p0}, Landroidx/camera/video/MediaSpec;->getOutputFormat()I
 
     move-result p0
 
-    if-ne p0, v1, :cond_b8
+    if-ne p0, v1, :cond_4
 
     .line 186
     invoke-static {p1}, Landroidx/camera/video/internal/config/VideoConfigUtil;->getDynamicRangeDefaultMime(Landroidx/camera/core/DynamicRange;)Ljava/lang/String;
 
     move-result-object v0
 
-    :cond_b8
-    if-nez p2, :cond_d9
+    :cond_4
+    if-nez p2, :cond_5
 
     .line 190
     new-instance p0, Ljava/lang/StringBuilder;
@@ -690,10 +690,10 @@
 
     invoke-static {v4, p0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_f7
+    goto :goto_3
 
     .line 194
-    :cond_d9
+    :cond_5
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string p2, "No video EncoderProfile is compatible with requested output format and dynamic range. May rely on fallback defaults to derive VIDEO settings [chosen mime type: "
@@ -723,19 +723,19 @@
     invoke-static {v4, p0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 201
-    :cond_f7
-    :goto_f7
+    :cond_6
+    :goto_3
     invoke-static {v0}, Landroidx/camera/video/internal/config/VideoMimeInfo;->builder(Ljava/lang/String;)Landroidx/camera/video/internal/config/VideoMimeInfo$Builder;
 
     move-result-object p0
 
-    if-eqz v8, :cond_100
+    if-eqz v8, :cond_7
 
     .line 203
     invoke-virtual {p0, v8}, Landroidx/camera/video/internal/config/VideoMimeInfo$Builder;->setCompatibleVideoProfile(Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;)Landroidx/camera/video/internal/config/VideoMimeInfo$Builder;
 
     .line 206
-    :cond_100
+    :cond_7
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/VideoMimeInfo$Builder;->build()Landroidx/camera/video/internal/config/VideoMimeInfo;
 
     move-result-object p0
@@ -744,7 +744,7 @@
 .end method
 
 .method static scaleAndClampBitrate(IIIIIIIIILandroid/util/Range;)I
-    .registers 28
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIIIIIIII",
@@ -837,7 +837,7 @@
 
     const/4 v15, 0x0
 
-    if-eqz v7, :cond_9d
+    if-eqz v7, :cond_0
 
     const/16 v7, 0xa
 
@@ -928,20 +928,20 @@
 
     move-result-object v2
 
-    goto :goto_9f
+    goto :goto_0
 
-    :cond_9d
+    :cond_0
     const-string v2, ""
 
     .line 297
-    :goto_9f
+    :goto_0
     sget-object v3, Landroidx/camera/video/VideoSpec;->BITRATE_RANGE_AUTO:Landroid/util/Range;
 
     invoke-virtual {v3, v0}, Landroid/util/Range;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_dc
+    if-nez v3, :cond_1
 
     .line 299
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -963,7 +963,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_dc
+    if-eqz v3, :cond_1
 
     .line 301
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1001,7 +1001,7 @@
     move-result-object v2
 
     .line 305
-    :cond_dc
+    :cond_1
     invoke-static {v4, v2}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return v1

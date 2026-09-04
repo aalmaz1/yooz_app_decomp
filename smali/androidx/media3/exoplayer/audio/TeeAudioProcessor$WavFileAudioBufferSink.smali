@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method private getNextOutputFileName()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -118,7 +118,7 @@
 .end method
 
 .method private maybePrepareFile()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -128,12 +128,12 @@
     .line 172
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->randomAccessFile:Ljava/io/RandomAccessFile;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 175
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/io/RandomAccessFile;
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->getNextOutputFileName()Ljava/lang/String;
@@ -159,7 +159,7 @@
 .end method
 
 .method private reset()V
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -169,13 +169,13 @@
     .line 216
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->randomAccessFile:Ljava/io/RandomAccessFile;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 222
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->scratchByteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
@@ -226,12 +226,12 @@
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->scratchBuffer:[B
 
     invoke-virtual {v0, v1, v3, v2}, Ljava/io/RandomAccessFile;->write([BII)V
-    :try_end_37
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_40
+    goto :goto_0
 
-    :catch_38
+    :catch_0
     move-exception v1
 
     const-string v2, "WaveFileAudioBufferSink"
@@ -241,21 +241,21 @@
     .line 233
     invoke-static {v2, v3, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_40
+    :goto_0
     const/4 v1, 0x0
 
     .line 237
-    :try_start_41
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_44
-    .catchall {:try_start_41 .. :try_end_44} :catchall_47
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 239
     iput-object v1, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->randomAccessFile:Ljava/io/RandomAccessFile;
 
     return-void
 
-    :catchall_47
+    :catchall_0
     move-exception v0
 
     iput-object v1, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->randomAccessFile:Ljava/io/RandomAccessFile;
@@ -265,7 +265,7 @@
 .end method
 
 .method private writeBuffer(Ljava/nio/ByteBuffer;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -282,12 +282,12 @@
     check-cast v0, Ljava/io/RandomAccessFile;
 
     .line 207
-    :goto_8
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     .line 208
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -321,14 +321,14 @@
 
     iput v2, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->bytesWritten:I
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     return-void
 .end method
 
 .method private writeFileHeader(Ljava/io/RandomAccessFile;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -461,17 +461,17 @@
 
 # virtual methods
 .method public flush(III)V
-    .registers 7
+    .locals 3
 
     .line 152
     :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->reset()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :catch_4
+    :catch_0
     move-exception v0
 
     const-string v1, "WaveFileAudioBufferSink"
@@ -482,7 +482,7 @@
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 156
-    :goto_c
+    :goto_0
     iput p1, p0, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->sampleRateHz:I
 
     .line 157
@@ -495,7 +495,7 @@
 .end method
 
 .method public handleBuffer(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 164
     :try_start_0
@@ -503,12 +503,12 @@
 
     .line 165
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/TeeAudioProcessor$WavFileAudioBufferSink;->writeBuffer(Ljava/nio/ByteBuffer;)V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     const-string v0, "WaveFileAudioBufferSink"
@@ -518,6 +518,6 @@
     .line 167
     invoke-static {v0, v1, p1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_f
+    :goto_0
     return-void
 .end method

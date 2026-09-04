@@ -22,12 +22,12 @@
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;)V
-    .registers 3
+    .locals 0
 
     .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 176
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -36,12 +36,12 @@
 
     check-cast p1, Landroid/os/Handler;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
     .line 177
@@ -53,12 +53,12 @@
 
 # virtual methods
 .method public audioCodecError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 264
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 265
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda3;
@@ -67,17 +67,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public audioSinkError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 257
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 258
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda10;
@@ -86,17 +86,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public audioTrackInitialized(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 4
+    .locals 2
 
     .line 271
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 272
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda4;
@@ -105,17 +105,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public audioTrackReleased(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 4
+    .locals 2
 
     .line 278
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 279
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda0;
@@ -124,17 +124,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public decoderInitialized(Ljava/lang/String;JJ)V
-    .registers 15
+    .locals 9
 
     .line 190
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 191
     new-instance v8, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda9;
@@ -153,17 +153,17 @@
 
     invoke-virtual {v0, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public decoderReleased(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 231
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 232
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda11;
@@ -172,12 +172,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public disabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 238
     invoke-virtual {p1}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
@@ -185,7 +185,7 @@
     .line 239
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 240
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;
@@ -194,17 +194,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public enabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 182
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 183
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda6;
@@ -213,17 +213,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public inputFormatChanged(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 5
+    .locals 2
 
     .line 205
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 206
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda1;
@@ -232,12 +232,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$audioCodecError$9$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 265
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -254,7 +254,7 @@
 .end method
 
 .method synthetic lambda$audioSinkError$8$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     .line 258
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -271,7 +271,7 @@
 .end method
 
 .method synthetic lambda$audioTrackInitialized$10$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 3
+    .locals 1
 
     .line 272
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -288,7 +288,7 @@
 .end method
 
 .method synthetic lambda$audioTrackReleased$11$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 3
+    .locals 1
 
     .line 279
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -305,7 +305,7 @@
 .end method
 
 .method synthetic lambda$decoderInitialized$1$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Ljava/lang/String;JJ)V
-    .registers 13
+    .locals 7
 
     .line 193
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -331,7 +331,7 @@
 .end method
 
 .method synthetic lambda$decoderReleased$5$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 232
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -348,7 +348,7 @@
 .end method
 
 .method synthetic lambda$disabled$6$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 242
     invoke-virtual {p1}, Landroidx/media3/exoplayer/DecoderCounters;->ensureUpdated()V
@@ -368,7 +368,7 @@
 .end method
 
 .method synthetic lambda$enabled$0$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 1
 
     .line 183
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -385,7 +385,7 @@
 .end method
 
 .method synthetic lambda$inputFormatChanged$2$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 4
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -402,7 +402,7 @@
 .end method
 
 .method synthetic lambda$positionAdvancing$3$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(J)V
-    .registers 4
+    .locals 1
 
     .line 215
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -419,7 +419,7 @@
 .end method
 
 .method synthetic lambda$skipSilenceEnabledChanged$7$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(Z)V
-    .registers 3
+    .locals 1
 
     .line 251
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -436,7 +436,7 @@
 .end method
 
 .method synthetic lambda$underrun$4$androidx-media3-exoplayer-audio-AudioRendererEventListener$EventDispatcher(IJJ)V
-    .registers 13
+    .locals 7
 
     .line 224
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->listener:Landroidx/media3/exoplayer/audio/AudioRendererEventListener;
@@ -462,12 +462,12 @@
 .end method
 
 .method public positionAdvancing(J)V
-    .registers 5
+    .locals 2
 
     .line 213
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 214
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda7;
@@ -476,17 +476,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public skipSilenceEnabledChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 250
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 251
     new-instance v1, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda8;
@@ -495,17 +495,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public underrun(IJJ)V
-    .registers 15
+    .locals 9
 
     .line 221
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 222
     new-instance v8, Landroidx/media3/exoplayer/audio/AudioRendererEventListener$EventDispatcher$$ExternalSyntheticLambda2;
@@ -524,6 +524,6 @@
 
     invoke-virtual {v0, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_11
+    :cond_0
     return-void
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/ImageView;Landroid/widget/TextView;)V
-    .registers 3
+    .locals 0
 
     .line 138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

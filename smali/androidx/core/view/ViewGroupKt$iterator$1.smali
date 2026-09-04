@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/ViewGroup;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/core/view/ViewGroupKt$iterator$1;->$this_iterator:Landroid/view/ViewGroup;
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 89
     iget v0, p0, Landroidx/core/view/ViewGroupKt$iterator$1;->index:I
@@ -86,21 +86,21 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public next()Landroid/view/View;
-    .registers 4
+    .locals 3
 
     .line 90
     iget-object v0, p0, Landroidx/core/view/ViewGroupKt$iterator$1;->$this_iterator:Landroid/view/ViewGroup;
@@ -115,11 +115,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -128,7 +128,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 87
     invoke-virtual {p0}, Landroidx/core/view/ViewGroupKt$iterator$1;->next()Landroid/view/View;
@@ -139,7 +139,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     .line 91
     iget-object v0, p0, Landroidx/core/view/ViewGroupKt$iterator$1;->$this_iterator:Landroid/view/ViewGroup;

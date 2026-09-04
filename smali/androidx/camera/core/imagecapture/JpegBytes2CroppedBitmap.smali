@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method private createCroppedBitmap([BLandroid/graphics/Rect;)Landroid/graphics/Bitmap;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -47,8 +47,8 @@
     invoke-static {p1, v1, v0, v1}, Landroid/graphics/BitmapRegionDecoder;->newInstance([BIIZ)Landroid/graphics/BitmapRegionDecoder;
 
     move-result-object p1
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_6} :catch_10
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 68
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
@@ -61,7 +61,7 @@
 
     return-object p1
 
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 66
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public apply(Landroidx/camera/core/processing/Packet;)Landroidx/camera/core/processing/Packet;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,7 +169,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;

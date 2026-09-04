@@ -5,19 +5,19 @@
 
 # virtual methods
 .method public onGreatestScrollPercentageIncreased(ILandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onSessionEnded(ZLandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onVerticalScrollEvent(ZLandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

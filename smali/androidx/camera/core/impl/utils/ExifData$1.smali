@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 630
     invoke-static {}, Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;->values()[Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;
@@ -37,7 +37,7 @@
 
     const/4 v1, 0x1
 
-    :try_start_a
+    :try_start_0
     sget-object v2, Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;->AUTO:Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;
 
     invoke-virtual {v2}, Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;->ordinal()I
@@ -45,13 +45,13 @@
     move-result v2
 
     aput v1, v0, v2
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_12
+    :catch_0
     const/4 v0, 0x2
 
-    :try_start_13
+    :try_start_1
     sget-object v2, Landroidx/camera/core/impl/utils/ExifData$1;->$SwitchMap$androidx$camera$core$impl$utils$ExifData$WhiteBalanceMode:[I
 
     sget-object v3, Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;->MANUAL:Landroidx/camera/core/impl/utils/ExifData$WhiteBalanceMode;
@@ -61,11 +61,11 @@
     move-result v3
 
     aput v0, v2, v3
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 550
-    :catch_1d
+    :catch_1
     invoke-static {}, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->values()[Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
 
     move-result-object v2
@@ -76,7 +76,7 @@
 
     sput-object v2, Landroidx/camera/core/impl/utils/ExifData$1;->$SwitchMap$androidx$camera$core$impl$CameraCaptureMetaData$FlashState:[I
 
-    :try_start_26
+    :try_start_2
     sget-object v3, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->READY:Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
 
     invoke-virtual {v3}, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->ordinal()I
@@ -84,11 +84,11 @@
     move-result v3
 
     aput v1, v2, v3
-    :try_end_2e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_26 .. :try_end_2e} :catch_2e
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_2e
-    :try_start_2e
+    :catch_2
+    :try_start_3
     sget-object v1, Landroidx/camera/core/impl/utils/ExifData$1;->$SwitchMap$androidx$camera$core$impl$CameraCaptureMetaData$FlashState:[I
 
     sget-object v2, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->NONE:Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
@@ -98,11 +98,11 @@
     move-result v2
 
     aput v0, v1, v2
-    :try_end_38
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2e .. :try_end_38} :catch_38
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    :catch_38
-    :try_start_38
+    :catch_3
+    :try_start_4
     sget-object v0, Landroidx/camera/core/impl/utils/ExifData$1;->$SwitchMap$androidx$camera$core$impl$CameraCaptureMetaData$FlashState:[I
 
     sget-object v1, Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;->FIRED:Landroidx/camera/core/impl/CameraCaptureMetaData$FlashState;
@@ -114,9 +114,9 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_43
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_38 .. :try_end_43} :catch_43
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :catch_43
+    :catch_4
     return-void
 .end method

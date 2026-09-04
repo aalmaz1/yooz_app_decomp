@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(IJ)V
-    .registers 4
+    .locals 0
 
     .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method synthetic constructor <init>(IJLandroidx/media3/extractor/mkv/DefaultEbmlReader$1;)V
-    .registers 5
+    .locals 0
 
     .line 249
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/extractor/mkv/DefaultEbmlReader$MasterElement;-><init>(IJ)V
@@ -46,7 +46,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/mkv/DefaultEbmlReader$MasterElement;)J
-    .registers 3
+    .locals 2
 
     .line 249
     iget-wide v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader$MasterElement;->elementEndPosition:J
@@ -55,7 +55,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/mkv/DefaultEbmlReader$MasterElement;)I
-    .registers 1
+    .locals 0
 
     .line 249
     iget p0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader$MasterElement;->elementId:I

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraInternal;Ljava/util/Set;Landroidx/camera/core/impl/UseCaseConfigFactory;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +75,7 @@
 .end method
 
 .method private addCameraErrorListener(Landroidx/camera/core/impl/SessionConfig$Builder;Ljava/lang/String;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/StreamSpec;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,14 +99,14 @@
 .end method
 
 .method private clearPipeline()V
-    .registers 3
+    .locals 2
 
     .line 338
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mCameraEdge:Landroidx/camera/core/processing/SurfaceEdge;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 339
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceEdge;->close()V
@@ -115,10 +115,10 @@
     iput-object v1, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mCameraEdge:Landroidx/camera/core/processing/SurfaceEdge;
 
     .line 342
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSharingInputEdge:Landroidx/camera/core/processing/SurfaceEdge;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 343
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceEdge;->close()V
@@ -127,10 +127,10 @@
     iput-object v1, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSharingInputEdge:Landroidx/camera/core/processing/SurfaceEdge;
 
     .line 346
-    :cond_13
+    :cond_1
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSharingNode:Landroidx/camera/core/processing/SurfaceProcessorNode;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     .line 347
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceProcessorNode;->release()V
@@ -139,10 +139,10 @@
     iput-object v1, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSharingNode:Landroidx/camera/core/processing/SurfaceProcessorNode;
 
     .line 350
-    :cond_1c
+    :cond_2
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mEffectNode:Landroidx/camera/core/processing/SurfaceProcessorNode;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_3
 
     .line 351
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceProcessorNode;->release()V
@@ -150,12 +150,12 @@
     .line 352
     iput-object v1, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mEffectNode:Landroidx/camera/core/processing/SurfaceProcessorNode;
 
-    :cond_25
+    :cond_3
     return-void
 .end method
 
 .method private createPipelineAndUpdateChildrenSpecs(Ljava/lang/String;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/StreamSpec;)Landroidx/camera/core/impl/SessionConfig;
-    .registers 16
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -307,12 +307,12 @@
 
     move-result-object v0
 
-    :goto_78
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_98
+    if-eqz v3, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -339,10 +339,10 @@
 
     invoke-interface {v2, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_78
+    goto :goto_0
 
     .line 272
-    :cond_98
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mVirtualCamera:Landroidx/camera/core/streamsharing/VirtualCamera;
 
     invoke-virtual {v0, v2}, Landroidx/camera/core/streamsharing/VirtualCamera;->setChildrenEdges(Ljava/util/Map;)V
@@ -380,7 +380,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_c4
+    if-eqz v1, :cond_1
 
     .line 280
     invoke-virtual {p3}, Landroidx/camera/core/impl/StreamSpec;->getImplementationOptions()Landroidx/camera/core/impl/Config;
@@ -390,7 +390,7 @@
     invoke-virtual {v0, v1}, Landroidx/camera/core/impl/SessionConfig$Builder;->addImplementationOptions(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/SessionConfig$Builder;
 
     .line 282
-    :cond_c4
+    :cond_1
     invoke-direct {p0, v0, p1, p2, p3}, Landroidx/camera/core/streamsharing/StreamSharing;->addCameraErrorListener(Landroidx/camera/core/impl/SessionConfig$Builder;Ljava/lang/String;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/StreamSpec;)V
 
     .line 283
@@ -405,14 +405,14 @@
 .end method
 
 .method private getCropRect(Landroid/util/Size;)Landroid/graphics/Rect;
-    .registers 5
+    .locals 3
 
     .line 358
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharing;->getViewPortCropRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 359
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharing;->getViewPortCropRect()Landroid/graphics/Rect;
@@ -422,7 +422,7 @@
     return-object p1
 
     .line 361
-    :cond_b
+    :cond_0
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
@@ -441,7 +441,7 @@
 .end method
 
 .method private static getDefaultConfig(Ljava/util/Set;)Landroidx/camera/core/streamsharing/StreamSharingConfig;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -491,12 +491,12 @@
 
     move-result-object p0
 
-    :goto_24
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -515,7 +515,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_0
 
     .line 109
     invoke-virtual {v2}, Landroidx/camera/core/UseCase;->getCurrentConfig()Landroidx/camera/core/impl/UseCaseConfig;
@@ -528,9 +528,9 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_48
+    :cond_0
     const-string v2, "StreamSharing"
 
     const-string v3, "A child does not have capture type."
@@ -538,10 +538,10 @@
     .line 111
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_24
+    goto :goto_0
 
     .line 114
-    :cond_50
+    :cond_1
     sget-object p0, Landroidx/camera/core/streamsharing/StreamSharingConfig;->OPTION_CAPTURE_TYPES:Landroidx/camera/core/impl/Config$Option;
 
     invoke-interface {v0, p0, v1}, Landroidx/camera/core/impl/MutableConfig;->insertOption(Landroidx/camera/core/impl/Config$Option;Ljava/lang/Object;)V
@@ -570,19 +570,19 @@
 .end method
 
 .method private getSharingInputEdge(Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/impl/CameraInternal;)Landroidx/camera/core/processing/SurfaceEdge;
-    .registers 11
+    .locals 8
 
     .line 293
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharing;->getEffect()Landroidx/camera/core/CameraEffect;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p1
 
     .line 298
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/camera/core/processing/SurfaceProcessorNode;
 
     .line 299
@@ -669,7 +669,7 @@
 
 # virtual methods
 .method getCameraEdge()Landroidx/camera/core/processing/SurfaceEdge;
-    .registers 2
+    .locals 1
 
     .line 381
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mCameraEdge:Landroidx/camera/core/processing/SurfaceEdge;
@@ -678,7 +678,7 @@
 .end method
 
 .method public getChildren()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -699,7 +699,7 @@
 .end method
 
 .method public getDefaultConfig(ZLandroidx/camera/core/impl/UseCaseConfigFactory;)Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -725,7 +725,7 @@
 
     move-result-object p2
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 153
     iget-object p1, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mDefaultConfig:Landroidx/camera/core/streamsharing/StreamSharingConfig;
@@ -738,15 +738,15 @@
 
     move-result-object p2
 
-    :cond_17
-    if-nez p2, :cond_1b
+    :cond_0
+    if-nez p2, :cond_1
 
     const/4 p1, 0x0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 156
-    :cond_1b
+    :cond_1
     invoke-virtual {p0, p2}, Landroidx/camera/core/streamsharing/StreamSharing;->getUseCaseConfigBuilder(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/UseCaseConfig$Builder;
 
     move-result-object p1
@@ -755,12 +755,12 @@
 
     move-result-object p1
 
-    :goto_23
+    :goto_0
     return-object p1
 .end method
 
 .method getSharingNode()Landroidx/camera/core/processing/SurfaceProcessorNode;
-    .registers 2
+    .locals 1
 
     .line 387
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSharingNode:Landroidx/camera/core/processing/SurfaceProcessorNode;
@@ -769,7 +769,7 @@
 .end method
 
 .method public getSupportedEffectTargets()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -797,7 +797,7 @@
 .end method
 
 .method public getUseCaseConfigBuilder(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/UseCaseConfig$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -821,7 +821,7 @@
 .end method
 
 .method getVirtualCamera()Landroidx/camera/core/streamsharing/VirtualCamera;
-    .registers 2
+    .locals 1
 
     .line 393
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mVirtualCamera:Landroidx/camera/core/streamsharing/VirtualCamera;
@@ -830,7 +830,7 @@
 .end method
 
 .method synthetic lambda$addCameraErrorListener$1$androidx-camera-core-streamsharing-StreamSharing(Ljava/lang/String;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/StreamSpec;Landroidx/camera/core/impl/SessionConfig;Landroidx/camera/core/impl/SessionConfig$SessionError;)V
-    .registers 6
+    .locals 0
 
     .line 322
     invoke-direct {p0}, Landroidx/camera/core/streamsharing/StreamSharing;->clearPipeline()V
@@ -840,7 +840,7 @@
 
     move-result p4
 
-    if-eqz p4, :cond_18
+    if-eqz p4, :cond_0
 
     .line 326
     invoke-direct {p0, p1, p2, p3}, Landroidx/camera/core/streamsharing/StreamSharing;->createPipelineAndUpdateChildrenSpecs(Ljava/lang/String;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/StreamSpec;)Landroidx/camera/core/impl/SessionConfig;
@@ -858,17 +858,17 @@
 
     invoke-virtual {p1}, Landroidx/camera/core/streamsharing/VirtualCamera;->resetChildren()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-core-streamsharing-StreamSharing(II)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 1
 
     .line 132
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSharingNode:Landroidx/camera/core/processing/SurfaceProcessorNode;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 134
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceProcessorNode;->getSurfaceProcessor()Landroidx/camera/core/processing/SurfaceProcessorInternal;
@@ -882,7 +882,7 @@
     return-object p1
 
     .line 137
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/Exception;
 
     const-string p2, "Failed to take picture: pipeline is not ready."
@@ -897,7 +897,7 @@
 .end method
 
 .method public onBind()V
-    .registers 2
+    .locals 1
 
     .line 196
     invoke-super {p0}, Landroidx/camera/core/UseCase;->onBind()V
@@ -911,7 +911,7 @@
 .end method
 
 .method protected onMergeConfig(Landroidx/camera/core/impl/CameraInfoInternal;Landroidx/camera/core/impl/UseCaseConfig$Builder;)Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -941,7 +941,7 @@
 .end method
 
 .method public onStateAttached()V
-    .registers 2
+    .locals 1
 
     .line 209
     invoke-super {p0}, Landroidx/camera/core/UseCase;->onStateAttached()V
@@ -955,7 +955,7 @@
 .end method
 
 .method public onStateDetached()V
-    .registers 2
+    .locals 1
 
     .line 215
     invoke-super {p0}, Landroidx/camera/core/UseCase;->onStateDetached()V
@@ -969,7 +969,7 @@
 .end method
 
 .method protected onSuggestedStreamSpecImplementationOptionsUpdated(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/StreamSpec;
-    .registers 3
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/camera/core/streamsharing/StreamSharing;->mSessionConfigBuilder:Landroidx/camera/core/impl/SessionConfig$Builder;
@@ -1006,7 +1006,7 @@
 .end method
 
 .method protected onSuggestedStreamSpecUpdated(Landroidx/camera/core/impl/StreamSpec;)Landroidx/camera/core/impl/StreamSpec;
-    .registers 4
+    .locals 2
 
     .line 177
     invoke-virtual {p0}, Landroidx/camera/core/streamsharing/StreamSharing;->getCameraId()Ljava/lang/String;
@@ -1031,7 +1031,7 @@
 .end method
 
 .method public onUnbind()V
-    .registers 2
+    .locals 1
 
     .line 202
     invoke-super {p0}, Landroidx/camera/core/UseCase;->onUnbind()V

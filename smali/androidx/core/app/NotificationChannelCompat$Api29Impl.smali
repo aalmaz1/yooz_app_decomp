@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 663
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static canBubble(Landroid/app/NotificationChannel;)Z
-    .registers 1
+    .locals 0
 
     .line 667
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->canBubble()Z

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/DialogFragment;)V
-    .registers 2
+    .locals 0
 
     .line 116
     iput-object p1, p0, Landroidx/fragment/app/DialogFragment$2;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 3
+    .locals 1
 
     .line 120
     iget-object p1, p0, Landroidx/fragment/app/DialogFragment$2;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -45,7 +45,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 121
     iget-object p1, p0, Landroidx/fragment/app/DialogFragment$2;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -56,6 +56,6 @@
 
     invoke-virtual {p1, v0}, Landroidx/fragment/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method

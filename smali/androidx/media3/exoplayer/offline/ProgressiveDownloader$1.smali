@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/offline/ProgressiveDownloader;)V
-    .registers 2
+    .locals 0
 
     .line 103
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/ProgressiveDownloader$1;->this$0:Landroidx/media3/exoplayer/offline/ProgressiveDownloader;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method protected cancelWork()V
-    .registers 2
+    .locals 1
 
     .line 112
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/ProgressiveDownloader$1;->this$0:Landroidx/media3/exoplayer/offline/ProgressiveDownloader;
@@ -57,7 +57,7 @@
 .end method
 
 .method protected bridge synthetic doWork()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -73,7 +73,7 @@
 .end method
 
 .method protected doWork()Ljava/lang/Void;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

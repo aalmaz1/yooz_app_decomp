@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/widget/NestedScrollView;)V
-    .registers 2
+    .locals 0
 
     .line 2575
     iput-object p1, p0, Landroidx/core/widget/NestedScrollView$DifferentialMotionFlingTargetImpl;->this$0:Landroidx/core/widget/NestedScrollView;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public getScaledScrollFactor()F
-    .registers 2
+    .locals 1
 
     .line 2593
     iget-object v0, p0, Landroidx/core/widget/NestedScrollView$DifferentialMotionFlingTargetImpl;->this$0:Landroidx/core/widget/NestedScrollView;
@@ -51,20 +51,20 @@
 .end method
 
 .method public startDifferentialMotionFling(F)Z
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 2581
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroidx/core/widget/NestedScrollView$DifferentialMotionFlingTargetImpl;->stopDifferentialMotionFling()V
 
     .line 2582
@@ -80,7 +80,7 @@
 .end method
 
 .method public stopDifferentialMotionFling()V
-    .registers 2
+    .locals 1
 
     .line 2588
     iget-object v0, p0, Landroidx/core/widget/NestedScrollView$DifferentialMotionFlingTargetImpl;->this$0:Landroidx/core/widget/NestedScrollView;

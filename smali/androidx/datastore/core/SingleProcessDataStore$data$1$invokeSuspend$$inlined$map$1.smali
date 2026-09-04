@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/flow/Flow;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
 
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     .line 113
     iget-object v0, p0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
@@ -93,12 +93,12 @@
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_14
+    if-ne p1, p2, :cond_0
 
     return-object p1
 
     .line 117
-    :cond_14
+    :cond_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

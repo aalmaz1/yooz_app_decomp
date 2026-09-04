@@ -32,7 +32,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public addOnImageCloseListener(Landroidx/camera/core/ForwardingImageProxy$OnImageCloseListener;)V
-    .registers 4
+    .locals 2
 
     .line 117
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mLock:Ljava/lang/Object;
@@ -68,7 +68,7 @@
     monitor-enter v0
 
     .line 118
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/ForwardingImageProxy;->mOnImageCloseListeners:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -78,18 +78,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getCropRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -116,7 +116,7 @@
 .end method
 
 .method public getFormat()I
-    .registers 2
+    .locals 1
 
     .line 79
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -129,7 +129,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -142,7 +142,7 @@
 .end method
 
 .method public getImage()Landroid/media/Image;
-    .registers 2
+    .locals 1
 
     .line 108
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -155,7 +155,7 @@
 .end method
 
 .method public getImageInfo()Landroidx/camera/core/ImageInfo;
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -168,7 +168,7 @@
 .end method
 
 .method public getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
-    .registers 2
+    .locals 1
 
     .line 95
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -181,7 +181,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;
@@ -194,7 +194,7 @@
 .end method
 
 .method protected notifyOnImageCloseListeners()V
-    .registers 4
+    .locals 3
 
     .line 125
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mLock:Ljava/lang/Object;
@@ -202,7 +202,7 @@
     monitor-enter v0
 
     .line 129
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/HashSet;
 
     iget-object v2, p0, Landroidx/camera/core/ForwardingImageProxy;->mOnImageCloseListeners:Ljava/util/Set;
@@ -211,20 +211,20 @@
 
     .line 130
     monitor-exit v0
-    :try_end_b
-    .catchall {:try_start_3 .. :try_end_b} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 131
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :goto_f
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -235,25 +235,25 @@
     .line 132
     invoke-interface {v1, p0}, Landroidx/camera/core/ForwardingImageProxy$OnImageCloseListener;->onImageClose(Landroidx/camera/core/ImageProxy;)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 
-    :catchall_20
+    :catchall_0
     move-exception v1
 
     .line 130
-    :try_start_21
+    :try_start_1
     monitor-exit v0
-    :try_end_22
-    .catchall {:try_start_21 .. :try_end_22} :catchall_20
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method public setCropRect(Landroid/graphics/Rect;)V
-    .registers 3
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/camera/core/ForwardingImageProxy;->mImage:Landroidx/camera/core/ImageProxy;

@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 151
     invoke-direct {p0, p1}, Landroidx/camera/core/impl/utils/futures/ImmediateFuture$ImmediateFailedFuture;-><init>(Ljava/lang/Throwable;)V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 147
     check-cast p1, Ljava/util/concurrent/Delayed;
@@ -55,7 +55,7 @@
 .end method
 
 .method public compareTo(Ljava/util/concurrent/Delayed;)I
-    .registers 2
+    .locals 0
 
     const/4 p1, -0x1
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public getDelay(Ljava/util/concurrent/TimeUnit;)J
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, 0x0
 

@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/VideoCapture;)V
-    .registers 2
+    .locals 0
 
     .line 828
     iput-object p1, p0, Landroidx/camera/video/VideoCapture$1;->this$0:Landroidx/camera/video/VideoCapture;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onError(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "VideoCapture"
 
@@ -58,9 +58,9 @@
 .end method
 
 .method public onNewData(Landroidx/camera/video/StreamInfo;)V
-    .registers 7
+    .locals 5
 
-    if-eqz p1, :cond_cb
+    if-eqz p1, :cond_7
 
     .line 835
     iget-object v0, p0, Landroidx/camera/video/VideoCapture$1;->this$0:Landroidx/camera/video/VideoCapture;
@@ -69,12 +69,12 @@
 
     sget-object v1, Landroidx/camera/video/VideoOutput$SourceState;->INACTIVE:Landroidx/camera/video/VideoOutput$SourceState;
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 839
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Stream info update: old: "
@@ -145,7 +145,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_ad
+    if-nez v2, :cond_5
 
     iget-object v2, p0, Landroidx/camera/video/VideoCapture$1;->this$0:Landroidx/camera/video/VideoCapture;
 
@@ -154,44 +154,44 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_1
 
-    goto :goto_ad
+    goto :goto_0
 
     .line 857
-    :cond_5a
+    :cond_1
     invoke-virtual {v0}, Landroidx/camera/video/StreamInfo;->getId()I
 
     move-result v2
 
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_67
+    if-eq v2, v3, :cond_2
 
     .line 858
     invoke-virtual {p1}, Landroidx/camera/video/StreamInfo;->getId()I
 
     move-result v2
 
-    if-eq v2, v3, :cond_73
+    if-eq v2, v3, :cond_3
 
     .line 859
-    :cond_67
+    :cond_2
     invoke-virtual {v0}, Landroidx/camera/video/StreamInfo;->getId()I
 
     move-result v2
 
-    if-ne v2, v3, :cond_8b
+    if-ne v2, v3, :cond_4
 
     .line 860
     invoke-virtual {p1}, Landroidx/camera/video/StreamInfo;->getId()I
 
     move-result v2
 
-    if-eq v2, v3, :cond_8b
+    if-eq v2, v3, :cond_4
 
     .line 863
-    :cond_73
+    :cond_3
     iget-object v0, p0, Landroidx/camera/video/VideoCapture$1;->this$0:Landroidx/camera/video/VideoCapture;
 
     iget-object v2, v0, Landroidx/camera/video/VideoCapture;->mSessionConfigBuilder:Landroidx/camera/core/impl/SessionConfig$Builder;
@@ -214,10 +214,10 @@
 
     invoke-static {p1}, Landroidx/camera/video/VideoCapture;->access$200(Landroidx/camera/video/VideoCapture;)V
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 868
-    :cond_8b
+    :cond_4
     invoke-virtual {v0}, Landroidx/camera/video/StreamInfo;->getStreamState()Landroidx/camera/video/StreamInfo$StreamState;
 
     move-result-object v0
@@ -226,7 +226,7 @@
 
     move-result-object v2
 
-    if-eq v0, v2, :cond_ca
+    if-eq v0, v2, :cond_6
 
     .line 869
     iget-object v0, p0, Landroidx/camera/video/VideoCapture$1;->this$0:Landroidx/camera/video/VideoCapture;
@@ -251,11 +251,11 @@
 
     invoke-static {p1}, Landroidx/camera/video/VideoCapture;->access$400(Landroidx/camera/video/VideoCapture;)V
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 855
-    :cond_ad
-    :goto_ad
+    :cond_5
+    :goto_0
     iget-object p1, p0, Landroidx/camera/video/VideoCapture$1;->this$0:Landroidx/camera/video/VideoCapture;
 
     invoke-static {p1}, Landroidx/camera/video/VideoCapture;->access$000(Landroidx/camera/video/VideoCapture;)Ljava/lang/String;
@@ -286,12 +286,12 @@
     .line 855
     invoke-virtual {p1, v0, v1, v2}, Landroidx/camera/video/VideoCapture;->resetPipeline(Ljava/lang/String;Landroidx/camera/video/impl/VideoCaptureConfig;Landroidx/camera/core/impl/StreamSpec;)V
 
-    :cond_ca
-    :goto_ca
+    :cond_6
+    :goto_1
     return-void
 
     .line 833
-    :cond_cb
+    :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "StreamInfo can\'t be null"
@@ -302,7 +302,7 @@
 .end method
 
 .method public bridge synthetic onNewData(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 828
     check-cast p1, Landroidx/camera/video/StreamInfo;

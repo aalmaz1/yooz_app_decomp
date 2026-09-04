@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/LiveData;)V
-    .registers 2
+    .locals 0
 
     .line 84
     iput-object p1, p0, Landroidx/lifecycle/LiveData$1;->this$0:Landroidx/lifecycle/LiveData;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     .line 89
     iget-object v0, p0, Landroidx/lifecycle/LiveData$1;->this$0:Landroidx/lifecycle/LiveData;
@@ -46,7 +46,7 @@
     monitor-enter v0
 
     .line 90
-    :try_start_5
+    :try_start_0
     iget-object v1, p0, Landroidx/lifecycle/LiveData$1;->this$0:Landroidx/lifecycle/LiveData;
 
     iget-object v1, v1, Landroidx/lifecycle/LiveData;->mPendingData:Ljava/lang/Object;
@@ -60,8 +60,8 @@
 
     .line 92
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_5 .. :try_end_10} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 93
     iget-object v0, p0, Landroidx/lifecycle/LiveData$1;->this$0:Landroidx/lifecycle/LiveData;
@@ -70,14 +70,14 @@
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception v1
 
     .line 92
-    :try_start_17
+    :try_start_1
     monitor-exit v0
-    :try_end_18
-    .catchall {:try_start_17 .. :try_end_18} :catchall_16
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method

@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 183
     invoke-direct {p0}, Landroidx/media3/extractor/text/SubtitleInputBuffer;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/text/cea/CeaDecoder$1;)V
-    .registers 2
+    .locals 0
 
     .line 183
     invoke-direct {p0}, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;J)J
-    .registers 3
+    .locals 0
 
     .line 183
     iput-wide p1, p0, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;->queuedInputBufferCount:J
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;)I
-    .registers 10
+    .locals 8
 
     .line 190
     invoke-virtual {p0}, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;->isEndOfStream()Z
@@ -76,25 +76,25 @@
 
     const/4 v3, -0x1
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_1
 
     .line 191
     invoke-virtual {p0}, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;->isEndOfStream()Z
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v2, v3
 
-    :goto_14
+    :goto_0
     return v2
 
     .line 193
-    :cond_15
+    :cond_1
     iget-wide v0, p0, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;->timeUs:J
 
     iget-wide v4, p1, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;->timeUs:J
@@ -105,7 +105,7 @@
 
     cmp-long v6, v0, v4
 
-    if-nez v6, :cond_2b
+    if-nez v6, :cond_2
 
     .line 195
     iget-wide v0, p0, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;->queuedInputBufferCount:J
@@ -116,28 +116,28 @@
 
     cmp-long p1, v0, v4
 
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_2
 
     const/4 p1, 0x0
 
     return p1
 
-    :cond_2b
+    :cond_2
     cmp-long p1, v0, v4
 
-    if-lez p1, :cond_30
+    if-lez p1, :cond_3
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_30
+    :cond_3
     move v2, v3
 
-    :goto_31
+    :goto_1
     return v2
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 183
     check-cast p1, Landroidx/media3/extractor/text/cea/CeaDecoder$CeaInputBuffer;

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(IJ)V
-    .registers 4
+    .locals 0
 
     .line 589
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public getPresentationTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 599
     iget-wide v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->presentationTimeUs:J
@@ -50,7 +50,7 @@
 .end method
 
 .method public getTileBitmap()Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 1
 
     .line 603
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->tileBitmap:Landroid/graphics/Bitmap;
@@ -59,7 +59,7 @@
 .end method
 
 .method public getTileIndex()I
-    .registers 2
+    .locals 1
 
     .line 595
     iget v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->tileIndex:I
@@ -68,26 +68,26 @@
 .end method
 
 .method public hasTileBitmap()Z
-    .registers 2
+    .locals 1
 
     .line 611
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->tileBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public setTileBitmap(Landroid/graphics/Bitmap;)V
-    .registers 2
+    .locals 0
 
     .line 607
     iput-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->tileBitmap:Landroid/graphics/Bitmap;

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/CameraEffect;)V
-    .registers 4
+    .locals 2
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,16 +33,16 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 56
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method synthetic lambda$safeProcess$0$androidx-camera-core-processing-InternalImageProcessor(Landroidx/camera/core/ImageProcessor$Request;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 4
+    .locals 1
 
     .line 73
     :try_start_0
@@ -87,15 +87,15 @@
     invoke-interface {v0, p1}, Landroidx/camera/core/ImageProcessor;->process(Landroidx/camera/core/ImageProcessor$Request;)Landroidx/camera/core/ImageProcessor$Response;
 
     move-result-object p1
-    :try_end_6
-    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_6} :catch_a
+    :try_end_0
+    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 81
     invoke-virtual {p2, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
     return-void
 
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 76
@@ -110,7 +110,7 @@
 .end method
 
 .method synthetic lambda$safeProcess$1$androidx-camera-core-processing-InternalImageProcessor(Landroidx/camera/core/ImageProcessor$Request;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -149,7 +149,7 @@
 .end method
 
 .method public safeProcess(Landroidx/camera/core/ImageProcessor$Request;)Landroidx/camera/core/ImageProcessor$Response;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -172,12 +172,12 @@
     move-result-object p1
 
     check-cast p1, Landroidx/camera/core/ImageProcessor$Response;
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_10
+    :catch_0
     move-exception p1
 
     .line 86
@@ -185,14 +185,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object p1
 
     .line 87
-    :cond_1b
+    :cond_0
     new-instance v0, Landroidx/camera/core/ImageCaptureException;
 
     const/4 v1, 0x0

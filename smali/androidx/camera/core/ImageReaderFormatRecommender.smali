@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method static chooseCombo()Landroidx/camera/core/ImageReaderFormatRecommender$FormatCombo;
-    .registers 2
+    .locals 2
 
     const/16 v0, 0x100
 

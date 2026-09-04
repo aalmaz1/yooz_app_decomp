@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
-    .registers 5
+    .locals 0
 
     .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 108
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->mediaType:Ljava/lang/String;
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 108
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->port:I
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 108
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->transportProtocol:Ljava/lang/String;
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 108
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->payloadType:I
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 108
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->mediaTitle:Ljava/lang/String;
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 108
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->connection:Ljava/lang/String;
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 108
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->bitrate:I
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 108
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->key:Ljava/lang/String;
@@ -162,7 +162,7 @@
 .end method
 
 .method private static constructAudioRtpMap(ILjava/lang/String;II)Ljava/lang/String;
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x4
 
@@ -208,7 +208,7 @@
 .end method
 
 .method private static getRtpMapStringByPayloadType(I)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     const/16 v0, 0x60
 
@@ -216,26 +216,26 @@
 
     const/4 v2, 0x1
 
-    if-ge p0, v0, :cond_8
+    if-ge p0, v0, :cond_0
 
     move v0, v2
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v0, v1
 
     .line 230
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const/16 v0, 0x1f40
 
-    if-eqz p0, :cond_48
+    if-eqz p0, :cond_4
 
     const/16 v1, 0x8
 
-    if-eq p0, v1, :cond_41
+    if-eq p0, v1, :cond_3
 
     const v0, 0xac44
 
@@ -243,11 +243,11 @@
 
     const/16 v3, 0xa
 
-    if-eq p0, v3, :cond_3b
+    if-eq p0, v3, :cond_2
 
     const/16 v3, 0xb
 
-    if-ne p0, v3, :cond_26
+    if-ne p0, v3, :cond_1
 
     .line 253
     invoke-static {v3, v1, v0, v2}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->constructAudioRtpMap(ILjava/lang/String;II)Ljava/lang/String;
@@ -257,7 +257,7 @@
     return-object p0
 
     .line 259
-    :cond_26
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -278,7 +278,7 @@
 
     throw v0
 
-    :cond_3b
+    :cond_2
     const/4 p0, 0x2
 
     .line 247
@@ -288,7 +288,7 @@
 
     return-object p0
 
-    :cond_41
+    :cond_3
     const-string p0, "PCMA"
 
     .line 241
@@ -298,7 +298,7 @@
 
     return-object p0
 
-    :cond_48
+    :cond_4
     const-string p0, "PCMU"
 
     .line 235
@@ -312,7 +312,7 @@
 
 # virtual methods
 .method public addAttribute(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
-    .registers 4
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->attributes:Ljava/util/HashMap;
@@ -323,19 +323,19 @@
 .end method
 
 .method public build()Landroidx/media3/exoplayer/rtsp/MediaDescription;
-    .registers 5
+    .locals 4
 
     const-string v0, "rtpmap"
 
     .line 220
-    :try_start_2
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->attributes:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 221
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->attributes:Ljava/util/HashMap;
@@ -356,10 +356,10 @@
 
     move-result-object v0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 222
-    :cond_1d
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->payloadType:I
 
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->getRtpMapStringByPayloadType(I)Ljava/lang/String;
@@ -371,7 +371,7 @@
     move-result-object v0
 
     .line 223
-    :goto_27
+    :goto_0
     new-instance v1, Landroidx/media3/exoplayer/rtsp/MediaDescription;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->attributes:Ljava/util/HashMap;
@@ -383,12 +383,12 @@
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v2, v0, v3}, Landroidx/media3/exoplayer/rtsp/MediaDescription;-><init>(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;Lcom/google/common/collect/ImmutableMap;Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;Landroidx/media3/exoplayer/rtsp/MediaDescription$1;)V
-    :try_end_33
-    .catch Landroidx/media3/common/ParserException; {:try_start_2 .. :try_end_33} :catch_34
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v1
 
-    :catch_34
+    :catch_0
     move-exception v0
 
     .line 225
@@ -400,7 +400,7 @@
 .end method
 
 .method public setBitrate(I)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 180
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->bitrate:I
@@ -409,7 +409,7 @@
 .end method
 
 .method public setConnection(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 168
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->connection:Ljava/lang/String;
@@ -418,7 +418,7 @@
 .end method
 
 .method public setKey(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 192
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->key:Ljava/lang/String;
@@ -427,7 +427,7 @@
 .end method
 
 .method public setMediaTitle(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 156
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->mediaTitle:Ljava/lang/String;

@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 0
 
     .line 54
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V

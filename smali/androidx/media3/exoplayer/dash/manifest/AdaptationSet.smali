@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(JILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JI",

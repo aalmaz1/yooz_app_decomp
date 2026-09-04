@@ -11,7 +11,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
 .end method
 
 .method public static areSplashScreensSupported(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 5
+    .locals 2
 
     .line 122
     new-instance v0, Landroid/content/Intent;
@@ -51,17 +51,17 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_27
+    if-eqz p0, :cond_1
 
     .line 127
     iget-object p1, p0, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
 
-    if-nez p1, :cond_20
+    if-nez p1, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 128
-    :cond_20
+    :cond_0
     iget-object p0, p0, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
 
     invoke-virtual {p0, p2}, Landroid/content/IntentFilter;->hasCategory(Ljava/lang/String;)Z
@@ -70,15 +70,15 @@
 
     return p0
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static launchAsTrustedWebActivity(Landroid/content/Context;Landroidx/browser/customtabs/CustomTabsIntent;Landroid/net/Uri;)V
-    .registers 6
+    .locals 3
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 180
     iget-object v0, p1, Landroidx/browser/customtabs/CustomTabsIntent;->intent:Landroid/content/Intent;
@@ -112,7 +112,7 @@
     return-void
 
     .line 177
-    :cond_1a
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Given CustomTabsIntent should be associated with a valid CustomTabsSession"
@@ -123,7 +123,7 @@
 .end method
 
 .method public static launchBrowserSiteSettings(Landroid/content/Context;Landroidx/browser/customtabs/CustomTabsSession;Landroid/net/Uri;)V
-    .registers 6
+    .locals 3
 
     .line 93
     new-instance v0, Landroid/content/Intent;
@@ -168,7 +168,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_0
 
     const-string p2, "android.support.customtabs.extra.SESSION_ID"
 
@@ -176,14 +176,14 @@
     invoke-virtual {v0, p2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 104
-    :cond_31
+    :cond_0
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method
 
 .method public static transferSplashImage(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Landroidx/browser/customtabs/CustomTabsSession;)Z
-    .registers 5
+    .locals 0
 
     .line 151
     invoke-static {p0, p2, p1}, Landroidx/core/content/FileProvider;->getUriForFile(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Landroid/net/Uri;

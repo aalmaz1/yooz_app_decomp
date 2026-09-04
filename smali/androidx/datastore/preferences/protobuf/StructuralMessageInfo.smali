@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/ProtoSyntax;Z[I[Landroidx/datastore/preferences/protobuf/FieldInfo;Ljava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;
-    .registers 1
+    .locals 1
 
     .line 102
     new-instance v0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static newBuilder(I)Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;
-    .registers 2
+    .locals 1
 
     .line 107
     new-instance v0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo$Builder;
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public getCheckInitialized()[I
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo;->checkInitialized:[I
@@ -93,7 +93,7 @@
 .end method
 
 .method public getDefaultInstance()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo;->defaultInstance:Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -102,7 +102,7 @@
 .end method
 
 .method public getFields()[Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 2
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo;->fields:[Landroidx/datastore/preferences/protobuf/FieldInfo;
@@ -111,7 +111,7 @@
 .end method
 
 .method public getSyntax()Landroidx/datastore/preferences/protobuf/ProtoSyntax;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo;->syntax:Landroidx/datastore/preferences/protobuf/ProtoSyntax;
@@ -120,7 +120,7 @@
 .end method
 
 .method public isMessageSetWireFormat()Z
-    .registers 2
+    .locals 1
 
     .line 79
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/StructuralMessageInfo;->messageSetWireFormat:Z

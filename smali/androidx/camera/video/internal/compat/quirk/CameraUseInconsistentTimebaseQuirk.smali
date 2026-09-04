@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 42
     new-instance v0, Ljava/util/HashSet;
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -114,7 +114,7 @@
 .end method
 
 .method private static isAffectedModel()Z
-    .registers 2
+    .locals 2
 
     .line 72
     sget-object v0, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->BUILD_MODEL_SET:Ljava/util/Set;
@@ -133,7 +133,7 @@
 .end method
 
 .method private static isAffectedSamsungDevice()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "SAMSUNG"
 
@@ -144,7 +144,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->BUILD_HARDWARE_SET:Ljava/util/Set;
 
@@ -159,65 +159,65 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1b
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 58
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->usesAffectedSoc()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->isAffectedSamsungDevice()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->isAffectedModel()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_16
+    :goto_1
     return v0
 .end method
 
 .method private static usesAffectedSoc()Z
-    .registers 2
+    .locals 2
 
     .line 62
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_0
 
     sget-object v0, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;->BUILD_SOC_MODEL_SET:Ljava/util/Set;
 
@@ -232,15 +232,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method

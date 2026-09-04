@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final createExtractors()[Landroidx/media3/extractor/Extractor;
-    .registers 2
+    .locals 1
 
     invoke-static {}, Landroidx/media3/extractor/ts/TsExtractor;->lambda$static$1()[Landroidx/media3/extractor/Extractor;
 

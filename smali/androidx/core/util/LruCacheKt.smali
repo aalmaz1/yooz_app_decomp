@@ -45,7 +45,7 @@
 
 # direct methods
 .method public static final lruCache(ILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)Landroid/util/LruCache;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -81,31 +81,31 @@
 .end method
 
 .method public static synthetic lruCache$default(ILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;ILjava/lang/Object;)Landroid/util/LruCache;
-    .registers 6
+    .locals 0
 
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 40
     sget-object p1, Landroidx/core/util/LruCacheKt$lruCache$1;->INSTANCE:Landroidx/core/util/LruCacheKt$lruCache$1;
 
     check-cast p1, Lkotlin/jvm/functions/Function2;
 
-    :cond_8
+    :cond_0
     and-int/lit8 p5, p4, 0x4
 
-    if-eqz p5, :cond_10
+    if-eqz p5, :cond_1
 
     .line 42
     sget-object p2, Landroidx/core/util/LruCacheKt$lruCache$2;->INSTANCE:Landroidx/core/util/LruCacheKt$lruCache$2;
 
     check-cast p2, Lkotlin/jvm/functions/Function1;
 
-    :cond_10
+    :cond_1
     and-int/lit8 p4, p4, 0x8
 
-    if-eqz p4, :cond_18
+    if-eqz p4, :cond_2
 
     .line 44
     sget-object p3, Landroidx/core/util/LruCacheKt$lruCache$3;->INSTANCE:Landroidx/core/util/LruCacheKt$lruCache$3;
@@ -113,7 +113,7 @@
     check-cast p3, Lkotlin/jvm/functions/Function4;
 
     .line 46
-    :cond_18
+    :cond_2
     new-instance p4, Landroidx/core/util/LruCacheKt$lruCache$4;
 
     invoke-direct {p4, p0, p1, p2, p3}, Landroidx/core/util/LruCacheKt$lruCache$4;-><init>(ILkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function4;)V

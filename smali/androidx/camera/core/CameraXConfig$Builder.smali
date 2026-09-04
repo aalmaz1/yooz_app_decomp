@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 214
     invoke-static {}, Landroidx/camera/core/impl/MutableOptionsBundle;->create()Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -46,7 +46,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/core/impl/MutableOptionsBundle;)V
-    .registers 5
+    .locals 3
 
     .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
     check-cast p1, Ljava/lang/Class;
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_1
 
     .line 222
     const-class v0, Landroidx/camera/core/CameraX;
@@ -75,12 +75,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 223
-    :cond_19
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -112,8 +112,8 @@
     throw v0
 
     .line 230
-    :cond_38
-    :goto_38
+    :cond_1
+    :goto_0
     const-class p1, Landroidx/camera/core/CameraX;
 
     invoke-virtual {p0, p1}, Landroidx/camera/core/CameraXConfig$Builder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/CameraXConfig$Builder;
@@ -122,7 +122,7 @@
 .end method
 
 .method public static fromConfig(Landroidx/camera/core/CameraXConfig;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 2
+    .locals 1
 
     .line 241
     new-instance v0, Landroidx/camera/core/CameraXConfig$Builder;
@@ -137,7 +137,7 @@
 .end method
 
 .method private getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
-    .registers 2
+    .locals 1
 
     .line 369
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig$Builder;->mMutableConfig:Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -148,7 +148,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/CameraXConfig;
-    .registers 3
+    .locals 2
 
     .line 379
     new-instance v0, Landroidx/camera/core/CameraXConfig;
@@ -165,7 +165,7 @@
 .end method
 
 .method public setAvailableCamerasLimiter(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 362
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -180,7 +180,7 @@
 .end method
 
 .method public setCameraExecutor(Ljava/util/concurrent/Executor;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 296
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -195,7 +195,7 @@
 .end method
 
 .method public setCameraFactoryProvider(Landroidx/camera/core/impl/CameraFactory$Provider;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 251
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -210,7 +210,7 @@
 .end method
 
 .method public setDeviceSurfaceManagerProvider(Landroidx/camera/core/impl/CameraDeviceSurfaceManager$Provider;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 263
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -225,7 +225,7 @@
 .end method
 
 .method public setMinimumLoggingLevel(I)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 338
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -244,7 +244,7 @@
 .end method
 
 .method public setSchedulerHandler(Landroid/os/Handler;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 315
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -259,7 +259,7 @@
 .end method
 
 .method public setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -292,7 +292,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     .line 392
     new-instance v0, Ljava/lang/StringBuilder;
@@ -328,12 +328,12 @@
     .line 393
     invoke-virtual {p0, p1}, Landroidx/camera/core/CameraXConfig$Builder;->setTargetName(Ljava/lang/String;)Landroidx/camera/core/CameraXConfig$Builder;
 
-    :cond_38
+    :cond_0
     return-object p0
 .end method
 
 .method public bridge synthetic setTargetClass(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 202
     invoke-virtual {p0, p1}, Landroidx/camera/core/CameraXConfig$Builder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/core/CameraXConfig$Builder;
@@ -344,7 +344,7 @@
 .end method
 
 .method public setTargetName(Ljava/lang/String;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 403
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
@@ -359,7 +359,7 @@
 .end method
 
 .method public bridge synthetic setTargetName(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 202
     invoke-virtual {p0, p1}, Landroidx/camera/core/CameraXConfig$Builder;->setTargetName(Ljava/lang/String;)Landroidx/camera/core/CameraXConfig$Builder;
@@ -370,7 +370,7 @@
 .end method
 
 .method public setUseCaseConfigFactoryProvider(Landroidx/camera/core/impl/UseCaseConfigFactory$Provider;)Landroidx/camera/core/CameraXConfig$Builder;
-    .registers 4
+    .locals 2
 
     .line 279
     invoke-direct {p0}, Landroidx/camera/core/CameraXConfig$Builder;->getMutableConfig()Landroidx/camera/core/impl/MutableConfig;

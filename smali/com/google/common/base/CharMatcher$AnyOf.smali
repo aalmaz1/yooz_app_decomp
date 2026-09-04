@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -77,7 +77,7 @@
 .end method
 
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -94,21 +94,21 @@
 
     move-result p1
 
-    if-ltz p1, :cond_a
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -125,8 +125,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-char v3, v0, v2
 
@@ -135,14 +135,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 1765
     new-instance v0, Ljava/lang/StringBuilder;
@@ -158,8 +158,8 @@
 
     const/4 v3, 0x0
 
-    :goto_b
-    if-ge v3, v2, :cond_19
+    :goto_0
+    if-ge v3, v2, :cond_0
 
     aget-char v4, v1, v3
 
@@ -172,9 +172,9 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const-string v1, "\")"
 
     .line 1769

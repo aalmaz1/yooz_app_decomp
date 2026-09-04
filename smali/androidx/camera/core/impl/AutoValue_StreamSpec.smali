@@ -31,7 +31,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/util/Size;Landroidx/camera/core/DynamicRange;Landroid/util/Range;Landroidx/camera/core/impl/Config;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,7 +64,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/util/Size;Landroidx/camera/core/DynamicRange;Landroid/util/Range;Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/AutoValue_StreamSpec$1;)V
-    .registers 6
+    .locals 0
 
     .line 12
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/camera/core/impl/AutoValue_StreamSpec;-><init>(Landroid/util/Size;Landroidx/camera/core/DynamicRange;Landroid/util/Range;Landroidx/camera/core/impl/Config;)V
@@ -75,21 +75,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 72
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/StreamSpec;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_3
 
     .line 73
     check-cast p1, Landroidx/camera/core/impl/StreamSpec;
@@ -105,7 +105,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->dynamicRange:Landroidx/camera/core/DynamicRange;
 
@@ -118,7 +118,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->expectedFrameRateRange:Landroid/util/Range;
 
@@ -131,22 +131,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->implementationOptions:Landroidx/camera/core/impl/Config;
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_1
 
     .line 77
     invoke-virtual {p1}, Landroidx/camera/core/impl/StreamSpec;->getImplementationOptions()Landroidx/camera/core/impl/Config;
 
     move-result-object p1
 
-    if-nez p1, :cond_45
+    if-nez p1, :cond_2
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_3a
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/impl/StreamSpec;->getImplementationOptions()Landroidx/camera/core/impl/Config;
 
     move-result-object p1
@@ -155,22 +155,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_2
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_45
+    :cond_2
     move v0, v2
 
-    :goto_46
+    :goto_0
     return v0
 
-    :cond_47
+    :cond_3
     return v2
 .end method
 
 .method public getDynamicRange()Landroidx/camera/core/DynamicRange;
-    .registers 2
+    .locals 1
 
     .line 42
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->dynamicRange:Landroidx/camera/core/DynamicRange;
@@ -179,7 +179,7 @@
 .end method
 
 .method public getExpectedFrameRateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -196,7 +196,7 @@
 .end method
 
 .method public getImplementationOptions()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->implementationOptions:Landroidx/camera/core/impl/Config;
@@ -205,7 +205,7 @@
 .end method
 
 .method public getResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->resolution:Landroid/util/Size;
@@ -214,7 +214,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 86
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->resolution:Landroid/util/Size;
@@ -254,25 +254,25 @@
     .line 92
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec;->implementationOptions:Landroidx/camera/core/impl/Config;
 
-    if-nez v1, :cond_21
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_25
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toBuilder()Landroidx/camera/core/impl/StreamSpec$Builder;
-    .registers 3
+    .locals 2
 
     .line 98
     new-instance v0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;
@@ -285,7 +285,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 59
     new-instance v0, Ljava/lang/StringBuilder;

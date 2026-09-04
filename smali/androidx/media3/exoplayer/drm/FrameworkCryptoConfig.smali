@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "Amazon"
 
@@ -35,7 +35,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     const-string v0, "AFTM"
 
@@ -46,7 +46,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     const-string v0, "AFTB"
 
@@ -57,24 +57,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_21
+    :goto_0
     sput-boolean v0, Landroidx/media3/exoplayer/drm/FrameworkCryptoConfig;->WORKAROUND_DEVICE_NEEDS_KEYS_TO_CONFIGURE_CODEC:Z
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/util/UUID;[BZ)V
-    .registers 4
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

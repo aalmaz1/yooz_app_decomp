@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final toDrawable(I)Landroid/graphics/drawable/ColorDrawable;
-    .registers 2
+    .locals 1
 
     .line 28
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
@@ -38,7 +38,7 @@
 .end method
 
 .method public static final toDrawable(Landroid/graphics/Color;)Landroid/graphics/drawable/ColorDrawable;
-    .registers 2
+    .locals 1
 
     .line 33
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;

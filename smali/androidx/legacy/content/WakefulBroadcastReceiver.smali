@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 76
     new-instance v0, Landroid/util/SparseArray;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static completeWakefulIntent(Landroid/content/Intent;)Z
-    .registers 6
+    .locals 5
 
     const-string v0, "No active wake lock id #"
 
@@ -66,18 +66,18 @@
 
     move-result p0
 
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     return v2
 
     .line 130
-    :cond_c
+    :cond_0
     sget-object v1, Landroidx/legacy/content/WakefulBroadcastReceiver;->sActiveWakeLocks:Landroid/util/SparseArray;
 
     monitor-enter v1
 
     .line 131
-    :try_start_f
+    :try_start_0
     invoke-virtual {v1, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -86,7 +86,7 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
     .line 133
     invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->release()V
@@ -99,7 +99,7 @@
 
     return v3
 
-    :cond_20
+    :cond_1
     const-string v2, "WakefulBroadcastReceiv."
 
     .line 143
@@ -122,19 +122,19 @@
 
     return v3
 
-    :catchall_34
+    :catchall_0
     move-exception p0
 
     .line 145
     monitor-exit v1
-    :try_end_36
-    .catchall {:try_start_f .. :try_end_36} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static startWakefulService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
-    .registers 7
+    .locals 5
 
     const-string v0, "androidx.core:wake:"
 
@@ -144,7 +144,7 @@
     monitor-enter v1
 
     .line 95
-    :try_start_5
+    :try_start_0
     sget v2, Landroidx/legacy/content/WakefulBroadcastReceiver;->mNextId:I
 
     add-int/lit8 v3, v2, 0x1
@@ -154,12 +154,12 @@
 
     const/4 v4, 0x1
 
-    if-gtz v3, :cond_10
+    if-gtz v3, :cond_0
 
     .line 98
     sput v4, Landroidx/legacy/content/WakefulBroadcastReceiver;->mNextId:I
 
-    :cond_10
+    :cond_0
     const-string v3, "androidx.contentpager.content.wakelockid"
 
     .line 101
@@ -170,7 +170,7 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1
 
     .line 104
     monitor-exit v1
@@ -179,7 +179,7 @@
 
     return-object p0
 
-    :cond_1e
+    :cond_1
     const-string v3, "power"
 
     .line 107
@@ -230,13 +230,13 @@
 
     return-object p1
 
-    :catchall_4a
+    :catchall_0
     move-exception p0
 
     .line 114
     monitor-exit v1
-    :try_end_4c
-    .catchall {:try_start_5 .. :try_end_4c} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method

@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/offline/SegmentDownloader;Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;)V
-    .registers 4
+    .locals 0
 
     .line 339
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$1;->this$0:Landroidx/media3/exoplayer/offline/SegmentDownloader;
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method protected doWork()Landroidx/media3/exoplayer/offline/FilterableManifest;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TM;"
@@ -86,7 +86,7 @@
 .end method
 
 .method protected bridge synthetic doWork()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;

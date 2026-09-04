@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 70
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
@@ -60,7 +60,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 73
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$1;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;

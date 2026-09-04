@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)V
-    .registers 3
+    .locals 0
 
     .line 330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,18 +39,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 338
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -61,12 +61,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 339
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;
 
     .line 340
@@ -78,7 +78,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mTheme:Landroid/content/res/Resources$Theme;
 
@@ -89,23 +89,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 

@@ -69,7 +69,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,19 +88,19 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->displayHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 136
     invoke-static {}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->getInstance()Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
 
     move-result-object p1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_18
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncSampler:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
@@ -130,7 +130,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;Landroid/view/Display;)V
-    .registers 2
+    .locals 0
 
     .line 51
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->updateDefaultDisplayRefreshRateParams(Landroid/view/Display;)V
@@ -139,7 +139,7 @@
 .end method
 
 .method private static adjustmentAllowed(JJ)Z
-    .registers 4
+    .locals 0
 
     sub-long/2addr p0, p2
 
@@ -152,38 +152,38 @@
 
     cmp-long p0, p0, p2
 
-    if-gtz p0, :cond_e
+    if-gtz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 .method private clearSurfaceFrameRate()V
-    .registers 4
+    .locals 3
 
     .line 378
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_1d
+    if-lt v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surface:Landroid/view/Surface;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     iget v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->changeFrameRateStrategy:I
 
     const/high16 v2, -0x80000000
 
-    if-eq v1, v2, :cond_1d
+    if-eq v1, v2, :cond_1
 
     iget v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfacePlaybackFrameRate:F
 
@@ -191,24 +191,24 @@
 
     cmpl-float v1, v1, v2
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 384
-    :cond_18
+    :cond_0
     iput v2, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfacePlaybackFrameRate:F
 
     .line 385
     invoke-static {v0, v2}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$Api30;->setSurfaceFrameRate(Landroid/view/Surface;F)V
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private static closestVsync(JJJ)J
-    .registers 10
+    .locals 4
 
     sub-long v0, p0, p2
 
@@ -221,13 +221,13 @@
 
     cmp-long v0, p0, p2
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     sub-long p4, p2, p4
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     add-long/2addr p4, p2
 
     move-wide v2, p2
@@ -236,34 +236,34 @@
 
     move-wide p4, v2
 
-    :goto_10
+    :goto_0
     sub-long v0, p2, p0
 
     sub-long/2addr p0, p4
 
     cmp-long p0, v0, p0
 
-    if-gez p0, :cond_18
+    if-gez p0, :cond_1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move-wide p2, p4
 
-    :goto_19
+    :goto_1
     return-wide p2
 .end method
 
 .method private maybeBuildDisplayHelper(Landroid/content/Context;)Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return-object v0
 
-    :cond_4
+    :cond_0
     const-string v1, "display"
 
     .line 425
@@ -273,19 +273,19 @@
 
     check-cast p1, Landroid/hardware/display/DisplayManager;
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 426
     new-instance v0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;
 
     invoke-direct {v0, p0, p1}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;-><init>(Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;Landroid/hardware/display/DisplayManager;)V
 
-    :cond_13
+    :cond_1
     return-object v0
 .end method
 
 .method private resetAdjustment()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -304,9 +304,9 @@
 .end method
 
 .method private updateDefaultDisplayRefreshRateParams(Landroid/view/Display;)V
-    .registers 6
+    .locals 4
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 392
     invoke-virtual {p1}, Landroid/view/Display;->getRefreshRate()F
@@ -335,9 +335,9 @@
 
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncOffsetNs:J
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const-string p1, "VideoFrameReleaseHelper"
 
     const-string v0, "Unable to query display refresh rate"
@@ -353,35 +353,35 @@
     .line 398
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncOffsetNs:J
 
-    :goto_29
+    :goto_0
     return-void
 .end method
 
 .method private updateSurfaceMediaFrameRate()V
-    .registers 8
+    .locals 7
 
     .line 304
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_73
+    if-lt v0, v1, :cond_8
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surface:Landroid/view/Surface;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
-    goto/16 :goto_73
+    goto/16 :goto_4
 
     .line 309
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;->isSynced()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
 
@@ -389,22 +389,22 @@
 
     move-result v0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->formatFrameRate:F
 
     .line 310
-    :goto_1d
+    :goto_0
     iget v2, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfaceMediaFrameRate:F
 
     cmpl-float v3, v0, v2
 
-    if-nez v3, :cond_24
+    if-nez v3, :cond_2
 
     return-void
 
-    :cond_24
+    :cond_2
     const/high16 v3, -0x40800000    # -1.0f
 
     cmpl-float v4, v0, v3
@@ -413,11 +413,11 @@
 
     const/4 v6, 0x1
 
-    if-eqz v4, :cond_61
+    if-eqz v4, :cond_6
 
     cmpl-float v2, v2, v3
 
-    if-eqz v2, :cond_61
+    if-eqz v2, :cond_6
 
     .line 318
     iget-object v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
@@ -427,7 +427,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
 
@@ -440,27 +440,27 @@
 
     cmp-long v1, v1, v3
 
-    if-ltz v1, :cond_49
+    if-ltz v1, :cond_3
 
     move v1, v6
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_49
+    :cond_3
     move v1, v5
 
-    :goto_4a
-    if-eqz v1, :cond_50
+    :goto_1
+    if-eqz v1, :cond_4
 
     const v1, 0x3ca3d70a    # 0.02f
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_50
+    :cond_4
     const/high16 v1, 0x3f800000    # 1.0f
 
     .line 326
-    :goto_52
+    :goto_2
     iget v2, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfaceMediaFrameRate:F
 
     sub-float v2, v0, v2
@@ -471,22 +471,22 @@
 
     cmpl-float v1, v2, v1
 
-    if-ltz v1, :cond_5f
+    if-ltz v1, :cond_5
 
-    goto :goto_6c
+    goto :goto_3
 
-    :cond_5f
+    :cond_5
     move v6, v5
 
-    goto :goto_6c
+    goto :goto_3
 
-    :cond_61
-    if-eqz v4, :cond_64
+    :cond_6
+    if-eqz v4, :cond_7
 
-    goto :goto_6c
+    goto :goto_3
 
     .line 330
-    :cond_64
+    :cond_7
     iget-object v2, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
 
     .line 331
@@ -494,10 +494,10 @@
 
     move-result v2
 
-    if-lt v2, v1, :cond_5f
+    if-lt v2, v1, :cond_5
 
-    :goto_6c
-    if-eqz v6, :cond_73
+    :goto_3
+    if-eqz v6, :cond_8
 
     .line 336
     iput v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfaceMediaFrameRate:F
@@ -505,38 +505,38 @@
     .line 337
     invoke-direct {p0, v5}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->updateSurfacePlaybackFrameRate(Z)V
 
-    :cond_73
-    :goto_73
+    :cond_8
+    :goto_4
     return-void
 .end method
 
 .method private updateSurfacePlaybackFrameRate(Z)V
-    .registers 5
+    .locals 3
 
     .line 352
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_30
+    if-lt v0, v1, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surface:Landroid/view/Surface;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     iget v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->changeFrameRateStrategy:I
 
     const/high16 v2, -0x80000000
 
-    if-ne v1, v2, :cond_11
+    if-ne v1, v2, :cond_0
 
-    goto :goto_30
+    goto :goto_1
 
     .line 359
-    :cond_11
+    :cond_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->started:Z
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfaceMediaFrameRate:F
 
@@ -544,46 +544,46 @@
 
     cmpl-float v2, v1, v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 360
     iget v2, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->playbackSpeed:F
 
     mul-float/2addr v1, v2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_22
-    if-nez p1, :cond_2b
+    :goto_0
+    if-nez p1, :cond_2
 
     .line 364
     iget p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfacePlaybackFrameRate:F
 
     cmpl-float p1, p1, v1
 
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_2
 
     return-void
 
     .line 367
-    :cond_2b
+    :cond_2
     iput v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surfacePlaybackFrameRate:F
 
     .line 368
     invoke-static {v0, v1}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$Api30;->setSurfaceFrameRate(Landroid/view/Surface;F)V
 
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public adjustReleaseTime(J)J
-    .registers 13
+    .locals 10
 
     .line 258
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->lastAdjustedFrameIndex:J
@@ -592,7 +592,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
 
@@ -600,7 +600,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 259
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameRateEstimator:Landroidx/media3/exoplayer/video/FixedFrameRateEstimator;
@@ -635,21 +635,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     move-wide v4, v2
 
-    goto :goto_30
+    goto :goto_0
 
     .line 266
-    :cond_2c
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->resetAdjustment()V
 
-    :cond_2f
+    :cond_1
     move-wide v4, p1
 
     .line 269
-    :goto_30
+    :goto_0
     iget-wide p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameIndex:J
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->pendingLastAdjustedFrameIndex:J
@@ -660,7 +660,7 @@
     .line 272
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncSampler:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
 
-    if-eqz p1, :cond_57
+    if-eqz p1, :cond_4
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncDurationNs:J
 
@@ -668,22 +668,22 @@
 
     cmp-long p2, v0, v2
 
-    if-nez p2, :cond_46
+    if-nez p2, :cond_2
 
-    goto :goto_57
+    goto :goto_1
 
     .line 275
-    :cond_46
+    :cond_2
     iget-wide v6, p1, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->sampledVsyncTimeNs:J
 
     cmp-long p1, v6, v2
 
-    if-nez p1, :cond_4d
+    if-nez p1, :cond_3
 
     return-wide v4
 
     .line 280
-    :cond_4d
+    :cond_3
     iget-wide v8, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncDurationNs:J
 
     invoke-static/range {v4 .. v9}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->closestVsync(JJJ)J
@@ -697,13 +697,13 @@
 
     return-wide p1
 
-    :cond_57
-    :goto_57
+    :cond_4
+    :goto_1
     return-wide v4
 .end method
 
 .method public onFormatChanged(F)V
-    .registers 2
+    .locals 0
 
     .line 208
     iput p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->formatFrameRate:F
@@ -720,7 +720,7 @@
 .end method
 
 .method public onNextFrame(J)V
-    .registers 7
+    .locals 4
 
     .line 219
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->pendingLastAdjustedFrameIndex:J
@@ -729,7 +729,7 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
     .line 220
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->lastAdjustedFrameIndex:J
@@ -740,7 +740,7 @@
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->lastAdjustedReleaseTimeNs:J
 
     .line 223
-    :cond_e
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->frameIndex:J
 
     const-wide/16 v2, 0x1
@@ -765,7 +765,7 @@
 .end method
 
 .method public onPlaybackSpeed(F)V
-    .registers 2
+    .locals 0
 
     .line 197
     iput p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->playbackSpeed:F
@@ -782,7 +782,7 @@
 .end method
 
 .method public onPositionReset()V
-    .registers 1
+    .locals 0
 
     .line 188
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->resetAdjustment()V
@@ -791,7 +791,7 @@
 .end method
 
 .method public onStarted()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -804,7 +804,7 @@
     .line 161
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->displayHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 162
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->vsyncSampler:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;
@@ -822,7 +822,7 @@
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->register()V
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
     .line 165
@@ -832,7 +832,7 @@
 .end method
 
 .method public onStopped()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -842,7 +842,7 @@
     .line 231
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->displayHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 232
     invoke-virtual {v0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$DisplayHelper;->unregister()V
@@ -859,32 +859,32 @@
     invoke-virtual {v0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper$VSyncSampler;->removeObserver()V
 
     .line 235
-    :cond_15
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->clearSurfaceFrameRate()V
 
     return-void
 .end method
 
 .method public onSurfaceChanged(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 174
     instance-of v0, p1, Landroidx/media3/exoplayer/video/PlaceholderSurface;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     .line 178
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->surface:Landroid/view/Surface;
 
-    if-ne v0, p1, :cond_a
+    if-ne v0, p1, :cond_1
 
     return-void
 
     .line 181
-    :cond_a
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->clearSurfaceFrameRate()V
 
     .line 182
@@ -899,17 +899,17 @@
 .end method
 
 .method public setChangeFrameRateStrategy(I)V
-    .registers 3
+    .locals 1
 
     .line 150
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->changeFrameRateStrategy:I
 
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 153
-    :cond_5
+    :cond_0
     iput p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;->changeFrameRateStrategy:I
 
     const/4 p1, 0x1

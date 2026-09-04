@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 34
     new-instance v0, Landroid/util/Size;
@@ -96,7 +96,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,7 +105,7 @@
 .end method
 
 .method public static getArea(Landroid/util/Size;)I
-    .registers 2
+    .locals 1
 
     .line 49
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
@@ -122,7 +122,7 @@
 .end method
 
 .method public static getMaxSize(Ljava/util/List;)Landroid/util/Size;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -138,14 +138,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 79
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/utils/CompareSizesByArea;
 
     invoke-direct {v0}, Landroidx/camera/core/impl/utils/CompareSizesByArea;-><init>()V
@@ -160,7 +160,7 @@
 .end method
 
 .method public static isLongerInAnyEdge(Landroid/util/Size;Landroid/util/Size;)Z
-    .registers 4
+    .locals 2
 
     .line 65
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
@@ -171,7 +171,7 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_17
+    if-gt v0, v1, :cond_1
 
     .line 66
     invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
@@ -182,25 +182,25 @@
 
     move-result p1
 
-    if-le p0, p1, :cond_15
+    if-le p0, p1, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_18
+    :goto_1
     return p0
 .end method
 
 .method public static isSmallerByArea(Landroid/util/Size;Landroid/util/Size;)Z
-    .registers 2
+    .locals 0
 
     .line 57
     invoke-static {p0}, Landroidx/camera/core/internal/utils/SizeUtil;->getArea(Landroid/util/Size;)I
@@ -211,15 +211,15 @@
 
     move-result p1
 
-    if-ge p0, p1, :cond_c
+    if-ge p0, p1, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_d
+    :goto_0
     return p0
 .end method

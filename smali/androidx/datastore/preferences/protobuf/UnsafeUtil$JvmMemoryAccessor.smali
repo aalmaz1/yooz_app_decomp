@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Lsun/misc/Unsafe;)V
-    .registers 2
+    .locals 0
 
     .line 619
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/UnsafeUtil$MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public copyMemory(J[BJJ)V
-    .registers 18
+    .locals 10
 
     move-object v0, p0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public copyMemory([BJJJ)V
-    .registers 18
+    .locals 10
 
     move-object v0, p0
 
@@ -77,7 +77,7 @@
 .end method
 
 .method public getBoolean(Ljava/lang/Object;J)Z
-    .registers 5
+    .locals 1
 
     .line 664
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -90,7 +90,7 @@
 .end method
 
 .method public getByte(J)B
-    .registers 4
+    .locals 1
 
     .line 624
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getByte(Ljava/lang/Object;J)B
-    .registers 5
+    .locals 1
 
     .line 654
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -116,7 +116,7 @@
 .end method
 
 .method public getDouble(Ljava/lang/Object;J)D
-    .registers 5
+    .locals 1
 
     .line 684
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -129,7 +129,7 @@
 .end method
 
 .method public getFloat(Ljava/lang/Object;J)F
-    .registers 5
+    .locals 1
 
     .line 674
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -142,7 +142,7 @@
 .end method
 
 .method public getInt(J)I
-    .registers 4
+    .locals 1
 
     .line 634
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -155,7 +155,7 @@
 .end method
 
 .method public getLong(J)J
-    .registers 4
+    .locals 1
 
     .line 644
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -168,7 +168,7 @@
 .end method
 
 .method public getStaticObject(Ljava/lang/reflect/Field;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 704
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -191,7 +191,7 @@
 .end method
 
 .method public putBoolean(Ljava/lang/Object;JZ)V
-    .registers 6
+    .locals 1
 
     .line 669
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -202,7 +202,7 @@
 .end method
 
 .method public putByte(JB)V
-    .registers 5
+    .locals 1
 
     .line 629
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -213,7 +213,7 @@
 .end method
 
 .method public putByte(Ljava/lang/Object;JB)V
-    .registers 6
+    .locals 1
 
     .line 659
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -224,7 +224,7 @@
 .end method
 
 .method public putDouble(Ljava/lang/Object;JD)V
-    .registers 12
+    .locals 6
 
     .line 689
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -241,7 +241,7 @@
 .end method
 
 .method public putFloat(Ljava/lang/Object;JF)V
-    .registers 6
+    .locals 1
 
     .line 679
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -252,7 +252,7 @@
 .end method
 
 .method public putInt(JI)V
-    .registers 5
+    .locals 1
 
     .line 639
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;
@@ -263,7 +263,7 @@
 .end method
 
 .method public putLong(JJ)V
-    .registers 6
+    .locals 1
 
     .line 649
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnsafeUtil$JvmMemoryAccessor;->unsafe:Lsun/misc/Unsafe;

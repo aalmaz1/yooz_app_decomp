@@ -76,7 +76,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 43
     new-instance v0, Landroidx/media3/extractor/ts/PsExtractor$$ExternalSyntheticLambda0;
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 79
     new-instance v0, Landroidx/media3/common/util/TimestampAdjuster;
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/util/TimestampAdjuster;)V
-    .registers 3
+    .locals 1
 
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -139,7 +139,7 @@
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -158,7 +158,7 @@
 .end method
 
 .method private maybeOutputSeekMap(J)V
-    .registers 10
+    .locals 7
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -168,7 +168,7 @@
     .line 296
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PsExtractor;->hasOutputSeekMap:Z
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -186,7 +186,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_0
 
     .line 299
     new-instance v0, Landroidx/media3/extractor/ts/PsBinarySearchSeeker;
@@ -222,10 +222,10 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/extractor/ExtractorOutput;->seekMap(Landroidx/media3/extractor/SeekMap;)V
 
-    goto :goto_45
+    goto :goto_0
 
     .line 306
-    :cond_35
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->output:Landroidx/media3/extractor/ExtractorOutput;
 
     new-instance p2, Landroidx/media3/extractor/SeekMap$Unseekable;
@@ -240,15 +240,15 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/extractor/ExtractorOutput;->seekMap(Landroidx/media3/extractor/SeekMap;)V
 
-    :cond_45
-    :goto_45
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 2
+    .locals 0
 
     .line 135
     iput-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->output:Landroidx/media3/extractor/ExtractorOutput;
@@ -257,7 +257,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 12
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -282,17 +282,17 @@
 
     const/4 v6, 0x0
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_0
 
     move v7, v5
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v7, v6
 
-    :goto_14
-    if-eqz v7, :cond_25
+    :goto_0
+    if-eqz v7, :cond_1
 
     .line 179
     iget-object v7, p0, Landroidx/media3/extractor/ts/PsExtractor;->durationReader:Landroidx/media3/extractor/ts/PsDurationReader;
@@ -301,7 +301,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_25
+    if-nez v7, :cond_1
 
     .line 180
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsExtractor;->durationReader:Landroidx/media3/extractor/ts/PsDurationReader;
@@ -313,19 +313,19 @@
     return p1
 
     .line 182
-    :cond_25
+    :cond_1
     invoke-direct {p0, v0, v1}, Landroidx/media3/extractor/ts/PsExtractor;->maybeOutputSeekMap(J)V
 
     .line 183
     iget-object v7, p0, Landroidx/media3/extractor/ts/PsExtractor;->psBinarySearchSeeker:Landroidx/media3/extractor/ts/PsBinarySearchSeeker;
 
-    if-eqz v7, :cond_39
+    if-eqz v7, :cond_2
 
     invoke-virtual {v7}, Landroidx/media3/extractor/ts/PsBinarySearchSeeker;->isSeeking()Z
 
     move-result v7
 
-    if-eqz v7, :cond_39
+    if-eqz v7, :cond_2
 
     .line 184
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsExtractor;->psBinarySearchSeeker:Landroidx/media3/extractor/ts/PsBinarySearchSeeker;
@@ -337,10 +337,10 @@
     return p1
 
     .line 187
-    :cond_39
+    :cond_2
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_3
 
     .line 189
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
@@ -349,28 +349,28 @@
 
     sub-long/2addr v0, v7
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_44
+    :cond_3
     move-wide v0, v2
 
-    :goto_45
+    :goto_1
     cmp-long p2, v0, v2
 
     const/4 v2, -0x1
 
-    if-eqz p2, :cond_51
+    if-eqz p2, :cond_4
 
     const-wide/16 v3, 0x4
 
     cmp-long p2, v0, v3
 
-    if-gez p2, :cond_51
+    if-gez p2, :cond_4
 
     return v2
 
     .line 194
-    :cond_51
+    :cond_4
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPacketBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -383,12 +383,12 @@
 
     move-result p2
 
-    if-nez p2, :cond_5f
+    if-nez p2, :cond_5
 
     return v2
 
     .line 198
-    :cond_5f
+    :cond_5
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPacketBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2, v6}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -402,14 +402,14 @@
 
     const/16 v0, 0x1b9
 
-    if-ne p2, v0, :cond_6f
+    if-ne p2, v0, :cond_6
 
     return v2
 
-    :cond_6f
+    :cond_6
     const/16 v0, 0x1ba
 
-    if-ne p2, v0, :cond_93
+    if-ne p2, v0, :cond_7
 
     .line 204
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPacketBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -445,14 +445,14 @@
 
     return v6
 
-    :cond_93
+    :cond_7
     const/16 v0, 0x1bb
 
     const/4 v1, 0x2
 
     const/4 v2, 0x6
 
-    if-ne p2, v0, :cond_b2
+    if-ne p2, v0, :cond_8
 
     .line 217
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPacketBuffer:Landroidx/media3/common/util/ParsableByteArray;
@@ -482,19 +482,19 @@
 
     return v6
 
-    :cond_b2
+    :cond_8
     and-int/lit16 v0, p2, -0x100
 
     shr-int/lit8 v0, v0, 0x8
 
-    if-eq v0, v5, :cond_bc
+    if-eq v0, v5, :cond_9
 
     .line 225
     invoke-interface {p1, v5}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
     return v6
 
-    :cond_bc
+    :cond_9
     and-int/lit16 p2, p2, 0xff
 
     .line 234
@@ -509,13 +509,13 @@
     .line 235
     iget-boolean v3, p0, Landroidx/media3/extractor/ts/PsExtractor;->foundAllTracks:Z
 
-    if-nez v3, :cond_141
+    if-nez v3, :cond_f
 
-    if-nez v0, :cond_121
+    if-nez v0, :cond_d
 
     const/16 v3, 0xbd
 
-    if-ne p2, v3, :cond_de
+    if-ne p2, v3, :cond_a
 
     .line 242
     new-instance v3, Landroidx/media3/extractor/ts/Ac3Reader;
@@ -532,14 +532,14 @@
 
     iput-wide v7, p0, Landroidx/media3/extractor/ts/PsExtractor;->lastTrackPosition:J
 
-    goto :goto_107
+    goto :goto_2
 
-    :cond_de
+    :cond_a
     and-int/lit16 v3, p2, 0xe0
 
     const/16 v4, 0xc0
 
-    if-ne v3, v4, :cond_f2
+    if-ne v3, v4, :cond_b
 
     .line 246
     new-instance v3, Landroidx/media3/extractor/ts/MpegAudioReader;
@@ -556,14 +556,14 @@
 
     iput-wide v7, p0, Landroidx/media3/extractor/ts/PsExtractor;->lastTrackPosition:J
 
-    goto :goto_107
+    goto :goto_2
 
-    :cond_f2
+    :cond_b
     and-int/lit16 v3, p2, 0xf0
 
     const/16 v4, 0xe0
 
-    if-ne v3, v4, :cond_106
+    if-ne v3, v4, :cond_c
 
     .line 250
     new-instance v3, Landroidx/media3/extractor/ts/H262Reader;
@@ -580,13 +580,13 @@
 
     iput-wide v7, p0, Landroidx/media3/extractor/ts/PsExtractor;->lastTrackPosition:J
 
-    goto :goto_107
+    goto :goto_2
 
-    :cond_106
+    :cond_c
     const/4 v3, 0x0
 
-    :goto_107
-    if-eqz v3, :cond_121
+    :goto_2
+    if-eqz v3, :cond_d
 
     .line 255
     new-instance v0, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;
@@ -613,14 +613,14 @@
     invoke-virtual {v3, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 262
-    :cond_121
+    :cond_d
     iget-boolean p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->foundAudioTrack:Z
 
-    if-eqz p2, :cond_12f
+    if-eqz p2, :cond_e
 
     iget-boolean p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->foundVideoTrack:Z
 
-    if-eqz p2, :cond_12f
+    if-eqz p2, :cond_e
 
     .line 263
     iget-wide v3, p0, Landroidx/media3/extractor/ts/PsExtractor;->lastTrackPosition:J
@@ -629,20 +629,20 @@
 
     add-long/2addr v3, v7
 
-    goto :goto_132
+    goto :goto_3
 
-    :cond_12f
+    :cond_e
     const-wide/32 v3, 0x100000
 
     .line 265
-    :goto_132
+    :goto_3
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v7
 
     cmp-long p2, v7, v3
 
-    if-lez p2, :cond_141
+    if-lez p2, :cond_f
 
     .line 266
     iput-boolean v5, p0, Landroidx/media3/extractor/ts/PsExtractor;->foundAllTracks:Z
@@ -653,7 +653,7 @@
     invoke-interface {p2}, Landroidx/media3/extractor/ExtractorOutput;->endTracks()V
 
     .line 272
-    :cond_141
+    :cond_f
     iget-object p2, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPacketBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -676,15 +676,15 @@
 
     add-int/2addr p2, v2
 
-    if-nez v0, :cond_15c
+    if-nez v0, :cond_10
 
     .line 279
     invoke-interface {p1, p2}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    goto :goto_17d
+    goto :goto_4
 
     .line 281
-    :cond_15c
+    :cond_10
     iget-object v1, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPacketBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v1, p2}, Landroidx/media3/common/util/ParsableByteArray;->reset(I)V
@@ -717,18 +717,18 @@
 
     invoke-virtual {p1, p2}, Landroidx/media3/common/util/ParsableByteArray;->setLimit(I)V
 
-    :goto_17d
+    :goto_4
     return v6
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 10
+    .locals 5
 
     .line 145
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -745,17 +745,17 @@
 
     const/4 v2, 0x0
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     move p1, p2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move p1, v2
 
-    :goto_14
-    if-nez p1, :cond_2d
+    :goto_0
+    if-nez p1, :cond_2
 
     .line 147
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -766,28 +766,28 @@
 
     cmp-long p1, v3, v0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     const-wide/16 v0, 0x0
 
     cmp-long p1, v3, v0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     cmp-long p1, v3, p3
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_1
     move p2, v2
 
-    :goto_2c
+    :goto_1
     move p1, p2
 
-    :cond_2d
-    if-eqz p1, :cond_34
+    :cond_2
+    if-eqz p1, :cond_3
 
     .line 157
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
@@ -795,24 +795,24 @@
     invoke-virtual {p1, p3, p4}, Landroidx/media3/common/util/TimestampAdjuster;->reset(J)V
 
     .line 160
-    :cond_34
+    :cond_3
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->psBinarySearchSeeker:Landroidx/media3/extractor/ts/PsBinarySearchSeeker;
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_4
 
     .line 161
     invoke-virtual {p1, p3, p4}, Landroidx/media3/extractor/ts/PsBinarySearchSeeker;->setSeekTargetUs(J)V
 
     .line 163
-    :cond_3b
-    :goto_3b
+    :cond_4
+    :goto_2
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPayloadReaders:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result p1
 
-    if-ge v2, p1, :cond_51
+    if-ge v2, p1, :cond_5
 
     .line 164
     iget-object p1, p0, Landroidx/media3/extractor/ts/PsExtractor;->psPayloadReaders:Landroid/util/SparseArray;
@@ -827,14 +827,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3b
+    goto :goto_2
 
-    :cond_51
+    :cond_5
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -888,11 +888,11 @@
 
     const/16 v7, 0x1ba
 
-    if-eq v7, v0, :cond_2a
+    if-eq v7, v0, :cond_0
 
     return v2
 
-    :cond_2a
+    :cond_0
     const/4 v0, 0x4
 
     aget-byte v7, v1, v0
@@ -901,53 +901,53 @@
 
     const/16 v8, 0x44
 
-    if-eq v7, v8, :cond_34
+    if-eq v7, v8, :cond_1
 
     return v2
 
-    :cond_34
+    :cond_1
     const/4 v7, 0x6
 
     aget-byte v7, v1, v7
 
     and-int/2addr v7, v0
 
-    if-eq v7, v0, :cond_3b
+    if-eq v7, v0, :cond_2
 
     return v2
 
-    :cond_3b
+    :cond_2
     aget-byte v7, v1, v6
 
     and-int/2addr v7, v0
 
-    if-eq v7, v0, :cond_41
+    if-eq v7, v0, :cond_3
 
     return v2
 
-    :cond_41
+    :cond_3
     const/16 v0, 0x9
 
     aget-byte v0, v1, v0
 
     and-int/2addr v0, v3
 
-    if-eq v0, v3, :cond_49
+    if-eq v0, v3, :cond_4
 
     return v2
 
-    :cond_49
+    :cond_4
     const/16 v0, 0xc
 
     aget-byte v0, v1, v0
 
     and-int/2addr v0, v5
 
-    if-eq v0, v5, :cond_51
+    if-eq v0, v5, :cond_5
 
     return v2
 
-    :cond_51
+    :cond_5
     const/16 v0, 0xd
 
     aget-byte v0, v1, v0
@@ -980,10 +980,10 @@
 
     or-int/2addr p1, v0
 
-    if-ne v3, p1, :cond_71
+    if-ne v3, p1, :cond_6
 
     move v2, v3
 
-    :cond_71
+    :cond_6
     return v2
 .end method

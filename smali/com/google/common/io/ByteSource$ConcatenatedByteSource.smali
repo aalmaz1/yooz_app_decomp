@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -81,12 +81,12 @@
 
     move-result-object v0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -99,20 +99,20 @@
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_1a
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public openStream()Ljava/io/InputStream;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -134,7 +134,7 @@
 .end method
 
 .method public size()J
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -152,12 +152,12 @@
 
     move-wide v3, v1
 
-    :cond_9
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -174,18 +174,18 @@
 
     cmp-long v5, v3, v1
 
-    if-gez v5, :cond_9
+    if-gez v5, :cond_0
 
     const-wide v0, 0x7fffffffffffffffL
 
     return-wide v0
 
-    :cond_24
+    :cond_1
     return-wide v3
 .end method
 
 .method public sizeIfKnown()Lcom/google/common/base/Optional;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
 
     instance-of v1, v0, Ljava/util/Collection;
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
     .line 717
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
@@ -210,7 +210,7 @@
     return-object v0
 
     .line 720
-    :cond_b
+    :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -219,12 +219,12 @@
 
     move-wide v3, v1
 
-    :cond_12
+    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_4a
+    if-eqz v5, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -242,7 +242,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_2d
+    if-nez v6, :cond_2
 
     .line 723
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
@@ -252,7 +252,7 @@
     return-object v0
 
     .line 725
-    :cond_2d
+    :cond_2
     invoke-virtual {v5}, Lcom/google/common/base/Optional;->get()Ljava/lang/Object;
 
     move-result-object v5
@@ -267,7 +267,7 @@
 
     cmp-long v5, v3, v1
 
-    if-gez v5, :cond_12
+    if-gez v5, :cond_1
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -283,7 +283,7 @@
     return-object v0
 
     .line 735
-    :cond_4a
+    :cond_3
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -296,7 +296,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 757
     new-instance v0, Ljava/lang/StringBuilder;

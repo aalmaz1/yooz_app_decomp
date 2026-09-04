@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BufferAllocator;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public allocateDirectBuffer(I)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -42,7 +42,7 @@
 .end method
 
 .method public allocateHeapBuffer(I)Landroidx/datastore/preferences/protobuf/AllocatedBuffer;
-    .registers 2
+    .locals 0
 
     .line 45
     new-array p1, p1, [B

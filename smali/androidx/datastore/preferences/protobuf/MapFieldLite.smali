@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 61
     new-instance v0, Landroidx/datastore/preferences/protobuf/MapFieldLite;
@@ -43,7 +43,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/Map;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,7 +78,7 @@
 .end method
 
 .method static calculateHashCodeForMap(Ljava/util/Map;)I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -102,12 +102,12 @@
 
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -136,19 +136,19 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     return v0
 .end method
 
 .method private static calculateHashCodeForObject(Ljava/lang/Object;)I
-    .registers 2
+    .locals 1
 
     .line 162
     instance-of v0, p0, [B
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 163
     check-cast p0, [B
@@ -162,10 +162,10 @@
     return p0
 
     .line 166
-    :cond_d
+    :cond_0
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/Internal$EnumLite;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 169
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
@@ -175,7 +175,7 @@
     return p0
 
     .line 167
-    :cond_16
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -184,7 +184,7 @@
 .end method
 
 .method private static checkForNullKeysAndValues(Ljava/util/Map;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -202,12 +202,12 @@
 
     move-result-object v0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -223,19 +223,19 @@
 
     invoke-static {v1}, Landroidx/datastore/preferences/protobuf/Internal;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method private static copy(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 191
     instance-of v0, p0, [B
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 192
     check-cast p0, [B
@@ -249,12 +249,12 @@
 
     move-result-object p0
 
-    :cond_d
+    :cond_0
     return-object p0
 .end method
 
 .method static copy(Ljava/util/Map;)Ljava/util/Map;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -283,12 +283,12 @@
 
     move-result-object p0
 
-    :goto_d
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -311,14 +311,14 @@
 
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     return-object v0
 .end method
 
 .method public static emptyMapField()Landroidx/datastore/preferences/protobuf/MapFieldLite;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -338,19 +338,19 @@
 .end method
 
 .method private ensureMutable()V
-    .registers 2
+    .locals 1
 
     .line 231
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/MapFieldLite;->isMutable()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 232
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -359,16 +359,16 @@
 .end method
 
 .method private static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 126
     instance-of v0, p0, [B
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     instance-of v0, p1, [B
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 127
     check-cast p0, [B
@@ -386,7 +386,7 @@
     return p0
 
     .line 129
-    :cond_15
+    :cond_0
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -395,7 +395,7 @@
 .end method
 
 .method static equals(Ljava/util/Map;Ljava/util/Map;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -412,12 +412,12 @@
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 140
-    :cond_4
+    :cond_0
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
     move-result v1
@@ -428,12 +428,12 @@
 
     const/4 v3, 0x0
 
-    if-eq v1, v2, :cond_10
+    if-eq v1, v2, :cond_1
 
     return v3
 
     .line 143
-    :cond_10
+    :cond_1
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -442,12 +442,12 @@
 
     move-result-object p0
 
-    :cond_18
+    :cond_2
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_4
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -464,12 +464,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_2f
+    if-nez v2, :cond_3
 
     return v3
 
     .line 147
-    :cond_2f
+    :cond_3
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -486,18 +486,18 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v3
 
-    :cond_42
+    :cond_4
     return v0
 .end method
 
 
 # virtual methods
 .method public clear()V
-    .registers 1
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/MapFieldLite;->ensureMutable()V
@@ -509,7 +509,7 @@
 .end method
 
 .method public entrySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -524,30 +524,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     invoke-super {p0}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    :goto_f
+    :goto_0
     return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 158
     instance-of v0, p1, Ljava/util/Map;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     check-cast p1, Ljava/util/Map;
 
@@ -555,21 +555,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 187
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/MapFieldLite;->calculateHashCodeForMap(Ljava/util/Map;)I
@@ -580,7 +580,7 @@
 .end method
 
 .method public isMutable()Z
-    .registers 2
+    .locals 1
 
     .line 227
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/MapFieldLite;->isMutable:Z
@@ -589,7 +589,7 @@
 .end method
 
 .method public makeImmutable()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -600,7 +600,7 @@
 .end method
 
 .method public mergeFrom(Landroidx/datastore/preferences/protobuf/MapFieldLite;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -617,17 +617,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 76
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/MapFieldLite;->putAll(Ljava/util/Map;)V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public mutableCopy()Landroidx/datastore/preferences/protobuf/MapFieldLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -641,25 +641,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroidx/datastore/preferences/protobuf/MapFieldLite;
 
     invoke-direct {v0}, Landroidx/datastore/preferences/protobuf/MapFieldLite;-><init>()V
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     new-instance v0, Landroidx/datastore/preferences/protobuf/MapFieldLite;
 
     invoke-direct {v0, p0}, Landroidx/datastore/preferences/protobuf/MapFieldLite;-><init>(Ljava/util/Map;)V
 
-    :goto_11
+    :goto_0
     return-object v0
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
@@ -684,7 +684,7 @@
 .end method
 
 .method public put(Ljava/util/Map$Entry;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -710,7 +710,7 @@
 .end method
 
 .method public putAll(Ljava/util/Map;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -732,7 +732,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 611
     new-instance v0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState$1;
@@ -48,7 +48,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 594
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 597
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 608
     iget p2, p0, Landroidx/appcompat/widget/ActionMenuPresenter$SavedState;->openSubMenuId:I

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/media/MediaCodec;)V
-    .registers 2
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,19 +26,19 @@
 
 # virtual methods
 .method public flush()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public maybeThrowException()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public queueInputBuffer(IIIJI)V
-    .registers 14
+    .locals 7
 
     .line 40
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecBufferEnqueuer;->codec:Landroid/media/MediaCodec;
@@ -59,7 +59,7 @@
 .end method
 
 .method public queueSecureInputBuffer(IILandroidx/media3/decoder/CryptoInfo;JI)V
-    .registers 14
+    .locals 7
 
     .line 46
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecBufferEnqueuer;->codec:Landroid/media/MediaCodec;
@@ -84,7 +84,7 @@
 .end method
 
 .method public setParameters(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecBufferEnqueuer;->codec:Landroid/media/MediaCodec;
@@ -95,19 +95,19 @@
 .end method
 
 .method public shutdown()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public start()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public waitUntilQueueingComplete()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraCaptureFailure$Reason;)V
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public getReason()Landroidx/camera/core/impl/CameraCaptureFailure$Reason;
-    .registers 2
+    .locals 1
 
     .line 43
     iget-object v0, p0, Landroidx/camera/core/impl/CameraCaptureFailure;->mReason:Landroidx/camera/core/impl/CameraCaptureFailure$Reason;

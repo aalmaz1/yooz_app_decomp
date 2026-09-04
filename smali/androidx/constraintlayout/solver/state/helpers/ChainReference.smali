@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/State;Landroidx/constraintlayout/solver/state/State$Helper;)V
-    .registers 3
+    .locals 0
 
     .line 28
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/solver/state/HelperReference;-><init>(Landroidx/constraintlayout/solver/state/State;Landroidx/constraintlayout/solver/state/State$Helper;)V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public bias(F)V
-    .registers 2
+    .locals 0
 
     .line 36
     iput p1, p0, Landroidx/constraintlayout/solver/state/helpers/ChainReference;->mBias:F
@@ -41,7 +41,7 @@
 .end method
 
 .method public getBias()F
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/constraintlayout/solver/state/helpers/ChainReference;->mBias:F
@@ -50,7 +50,7 @@
 .end method
 
 .method public getStyle()Landroidx/constraintlayout/solver/state/State$Chain;
-    .registers 2
+    .locals 1
 
     .line 31
     sget-object v0, Landroidx/constraintlayout/solver/state/State$Chain;->SPREAD:Landroidx/constraintlayout/solver/state/State$Chain;
@@ -59,7 +59,7 @@
 .end method
 
 .method public style(Landroidx/constraintlayout/solver/state/State$Chain;)V
-    .registers 2
+    .locals 0
 
     .line 33
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/ChainReference;->mStyle:Landroidx/constraintlayout/solver/state/State$Chain;

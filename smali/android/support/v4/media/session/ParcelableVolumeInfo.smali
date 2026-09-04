@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 65
     new-instance v0, Landroid/support/v4/media/session/ParcelableVolumeInfo$1;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(IIIII)V
-    .registers 6
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -123,7 +123,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 57
     iget p2, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->volumeType:I

@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;Landroidx/media3/exoplayer/upstream/Allocator;)V
-    .registers 3
+    .locals 0
 
     .line 269
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->this$0:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;
@@ -68,7 +68,7 @@
 .end method
 
 .method private dequeueSample()Landroidx/media3/extractor/metadata/MetadataInputBuffer;
-    .registers 5
+    .locals 4
 
     .line 364
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->buffer:Landroidx/media3/extractor/metadata/MetadataInputBuffer;
@@ -91,7 +91,7 @@
 
     const/4 v1, -0x4
 
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_0
 
     .line 368
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->buffer:Landroidx/media3/extractor/metadata/MetadataInputBuffer;
@@ -103,14 +103,14 @@
 
     return-object v0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method private onManifestExpiredMessageEncountered(JJ)V
-    .registers 6
+    .locals 1
 
     .line 384
     new-instance v0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$ManifestExpiryEventInfo;
@@ -142,7 +142,7 @@
 .end method
 
 .method private parseAndDiscardSamples()V
-    .registers 6
+    .locals 5
 
     .line 344
     :cond_0
@@ -155,19 +155,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_3
 
     .line 345
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->dequeueSample()Landroidx/media3/extractor/metadata/MetadataInputBuffer;
 
     move-result-object v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     goto :goto_0
 
     .line 349
-    :cond_10
+    :cond_1
     iget-wide v2, v0, Landroidx/media3/extractor/metadata/MetadataInputBuffer;->timeUs:J
 
     .line 350
@@ -181,12 +181,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_2
 
     goto :goto_0
 
     .line 354
-    :cond_1f
+    :cond_2
     invoke-virtual {v0, v1}, Landroidx/media3/common/Metadata;->get(I)Landroidx/media3/common/Metadata$Entry;
 
     move-result-object v0
@@ -210,7 +210,7 @@
     goto :goto_0
 
     .line 359
-    :cond_33
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/SampleQueue;->discardToRead()V
@@ -219,7 +219,7 @@
 .end method
 
 .method private parsePlayerEmsgEvent(JLandroidx/media3/extractor/metadata/emsg/EventMessage;)V
-    .registers 8
+    .locals 4
 
     .line 375
     invoke-static {p3}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->access$200(Landroidx/media3/extractor/metadata/emsg/EventMessage;)J
@@ -230,12 +230,12 @@
 
     cmp-long p3, v0, v2
 
-    if-nez p3, :cond_e
+    if-nez p3, :cond_0
 
     return-void
 
     .line 379
-    :cond_e
+    :cond_0
     invoke-direct {p0, p1, p2, v0, v1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->onManifestExpiredMessageEncountered(JJ)V
 
     return-void
@@ -244,7 +244,7 @@
 
 # virtual methods
 .method public format(Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 1
 
     .line 278
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -255,7 +255,7 @@
 .end method
 
 .method public maybeRefreshManifestBeforeLoadingNextChunk(J)Z
-    .registers 4
+    .locals 1
 
     .line 308
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->this$0:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;
@@ -268,7 +268,7 @@
 .end method
 
 .method public onChunkLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;)V
-    .registers 6
+    .locals 4
 
     .line 318
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->maxLoadedChunkEndTimeUs:J
@@ -277,7 +277,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget-wide v0, p1, Landroidx/media3/exoplayer/source/chunk/Chunk;->endTimeUs:J
 
@@ -285,16 +285,16 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_17
+    if-lez v0, :cond_1
 
     .line 319
-    :cond_13
+    :cond_0
     iget-wide v0, p1, Landroidx/media3/exoplayer/source/chunk/Chunk;->endTimeUs:J
 
     iput-wide v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->maxLoadedChunkEndTimeUs:J
 
     .line 321
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->this$0:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;
 
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->onChunkLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;)V
@@ -303,7 +303,7 @@
 .end method
 
 .method public onChunkLoadError(Landroidx/media3/exoplayer/source/chunk/Chunk;)Z
-    .registers 6
+    .locals 4
 
     .line 331
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->maxLoadedChunkEndTimeUs:J
@@ -312,23 +312,23 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     iget-wide v2, p1, Landroidx/media3/exoplayer/source/chunk/Chunk;->startTimeUs:J
 
     cmp-long p1, v0, v2
 
-    if-gez p1, :cond_13
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
     .line 333
-    :goto_14
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->this$0:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;
 
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;->onChunkLoadError(Z)Z
@@ -339,7 +339,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 338
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -350,7 +350,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZI)I
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -368,7 +368,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
-    .registers 4
+    .locals 0
 
     .line 290
     iget-object p3, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -379,7 +379,7 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 14
+    .locals 7
 
     .line 296
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 3205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic lambda$setAspectRatio$2(ILandroidx/camera/video/VideoSpec$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 3312
     invoke-virtual {p1, p0}, Landroidx/camera/video/VideoSpec$Builder;->setAspectRatio(I)Landroidx/camera/video/VideoSpec$Builder;
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic lambda$setAudioSource$3(ILandroidx/camera/video/AudioSpec$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 3329
     invoke-virtual {p1, p0}, Landroidx/camera/video/AudioSpec$Builder;->setSource(I)Landroidx/camera/video/AudioSpec$Builder;
@@ -75,7 +75,7 @@
 .end method
 
 .method static synthetic lambda$setQualitySelector$0(Landroidx/camera/video/QualitySelector;Landroidx/camera/video/VideoSpec$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 3249
     invoke-virtual {p1, p0}, Landroidx/camera/video/VideoSpec$Builder;->setQualitySelector(Landroidx/camera/video/QualitySelector;)Landroidx/camera/video/VideoSpec$Builder;
@@ -84,7 +84,7 @@
 .end method
 
 .method static synthetic lambda$setTargetVideoEncodingBitRate$1(ILandroidx/camera/video/VideoSpec$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 3283
     new-instance v0, Landroid/util/Range;
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/Recorder;
-    .registers 6
+    .locals 5
 
     .line 3356
     new-instance v0, Landroidx/camera/video/Recorder;
@@ -130,7 +130,7 @@
 .end method
 
 .method public setAspectRatio(I)Landroidx/camera/video/Recorder$Builder;
-    .registers 4
+    .locals 2
 
     .line 3312
     iget-object v0, p0, Landroidx/camera/video/Recorder$Builder;->mMediaSpecBuilder:Landroidx/camera/video/MediaSpec$Builder;
@@ -145,7 +145,7 @@
 .end method
 
 .method setAudioEncoderFactory(Landroidx/camera/video/internal/encoder/EncoderFactory;)Landroidx/camera/video/Recorder$Builder;
-    .registers 2
+    .locals 0
 
     .line 3343
     iput-object p1, p0, Landroidx/camera/video/Recorder$Builder;->mAudioEncoderFactory:Landroidx/camera/video/internal/encoder/EncoderFactory;
@@ -154,7 +154,7 @@
 .end method
 
 .method setAudioSource(I)Landroidx/camera/video/Recorder$Builder;
-    .registers 4
+    .locals 2
 
     .line 3329
     iget-object v0, p0, Landroidx/camera/video/Recorder$Builder;->mMediaSpecBuilder:Landroidx/camera/video/MediaSpec$Builder;
@@ -169,7 +169,7 @@
 .end method
 
 .method public setExecutor(Ljava/util/concurrent/Executor;)Landroidx/camera/video/Recorder$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "The specified executor can\'t be null."
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public setQualitySelector(Landroidx/camera/video/QualitySelector;)Landroidx/camera/video/Recorder$Builder;
-    .registers 4
+    .locals 2
 
     const-string v0, "The specified quality selector can\'t be null."
 
@@ -203,9 +203,9 @@
 .end method
 
 .method public setTargetVideoEncodingBitRate(I)Landroidx/camera/video/Recorder$Builder;
-    .registers 5
+    .locals 3
 
-    if-lez p1, :cond_d
+    if-lez p1, :cond_0
 
     .line 3282
     iget-object v0, p0, Landroidx/camera/video/Recorder$Builder;->mMediaSpecBuilder:Landroidx/camera/video/MediaSpec$Builder;
@@ -219,7 +219,7 @@
     return-object p0
 
     .line 3278
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -248,7 +248,7 @@
 .end method
 
 .method setVideoEncoderFactory(Landroidx/camera/video/internal/encoder/EncoderFactory;)Landroidx/camera/video/Recorder$Builder;
-    .registers 2
+    .locals 0
 
     .line 3336
     iput-object p1, p0, Landroidx/camera/video/Recorder$Builder;->mVideoEncoderFactory:Landroidx/camera/video/internal/encoder/EncoderFactory;

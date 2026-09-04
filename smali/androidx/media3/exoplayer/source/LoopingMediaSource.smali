@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     const v0, 0x7fffffff
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;I)V
-    .registers 5
+    .locals 2
 
     .line 67
     new-instance v0, Landroidx/media3/exoplayer/source/MaskingMediaSource;
@@ -65,12 +65,12 @@
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/WrappingMediaSource;-><init>(Landroidx/media3/exoplayer/source/MediaSource;)V
 
-    if-lez p2, :cond_c
+    if-lez p2, :cond_0
 
     const/4 v1, 0x1
 
     .line 68
-    :cond_c
+    :cond_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 69
@@ -96,14 +96,14 @@
 
 # virtual methods
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 7
+    .locals 2
 
     .line 90
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->loopCount:I
 
     const v1, 0x7fffffff
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 91
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -115,7 +115,7 @@
     return-object p1
 
     .line 93
-    :cond_e
+    :cond_0
     iget-object v0, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;->getChildPeriodUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
@@ -149,7 +149,7 @@
 .end method
 
 .method public getInitialTimeline()Landroidx/media3/common/Timeline;
-    .registers 4
+    .locals 3
 
     .line 77
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -161,7 +161,7 @@
 
     const v2, 0x7fffffff
 
-    if-eq v1, v2, :cond_17
+    if-eq v1, v2, :cond_0
 
     .line 79
     new-instance v1, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;
@@ -174,10 +174,10 @@
 
     invoke-direct {v1, v0, v2}, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;-><init>(Landroidx/media3/common/Timeline;I)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 80
-    :cond_17
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/MaskingMediaSource;->getTimeline()Landroidx/media3/common/Timeline;
@@ -186,19 +186,19 @@
 
     invoke-direct {v1, v0}, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;-><init>(Landroidx/media3/common/Timeline;)V
 
-    :goto_20
+    :goto_0
     return-object v1
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 4
+    .locals 2
 
     .line 124
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->loopCount:I
 
     const v1, 0x7fffffff
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     .line 125
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->childMediaPeriodIdToMediaPeriodId:Ljava/util/Map;
@@ -209,12 +209,12 @@
 
     check-cast p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    :cond_f
+    :cond_0
     return-object p1
 .end method
 
 .method public isSingleWindow()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -222,14 +222,14 @@
 .end method
 
 .method protected onChildSourceInfoRefreshed(Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 2
 
     .line 115
     iget v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->loopCount:I
 
     const v1, 0x7fffffff
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     .line 116
     new-instance v0, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;
@@ -238,23 +238,23 @@
 
     invoke-direct {v0, p1, v1}, Landroidx/media3/exoplayer/source/LoopingMediaSource$LoopingTimeline;-><init>(Landroidx/media3/common/Timeline;I)V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 117
-    :cond_f
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;
 
     invoke-direct {v0, p1}, Landroidx/media3/exoplayer/source/LoopingMediaSource$InfinitelyLoopingTimeline;-><init>(Landroidx/media3/common/Timeline;)V
 
     .line 118
-    :goto_14
+    :goto_0
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/source/LoopingMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 104
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -270,13 +270,13 @@
 
     check-cast p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 108
     iget-object v0, p0, Landroidx/media3/exoplayer/source/LoopingMediaSource;->childMediaPeriodIdToMediaPeriodId:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_14
+    :cond_0
     return-void
 .end method

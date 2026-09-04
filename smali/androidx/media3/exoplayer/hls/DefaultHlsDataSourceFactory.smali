@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public createDataSource(I)Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 0
 
     .line 37
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/DefaultHlsDataSourceFactory;->dataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;

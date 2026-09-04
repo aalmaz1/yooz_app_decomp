@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 275
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public static checkAndPeekStreamMarker(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -62,16 +62,16 @@
 
     cmp-long p0, v0, v4
 
-    if-nez p0, :cond_1a
+    if-nez p0, :cond_0
 
     const/4 v3, 0x1
 
-    :cond_1a
+    :cond_0
     return v3
 .end method
 
 .method public static getFrameStartMarker(Landroidx/media3/extractor/ExtractorInput;)I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -106,7 +106,7 @@
 
     const/16 v2, 0x3ffe
 
-    if-ne v1, v2, :cond_1f
+    if-ne v1, v2, :cond_0
 
     .line 246
     invoke-interface {p0}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -114,7 +114,7 @@
     return v0
 
     .line 241
-    :cond_1f
+    :cond_0
     invoke-interface {p0}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     const-string p0, "First frame does not start with sync code."
@@ -130,7 +130,7 @@
 .end method
 
 .method public static peekId3Metadata(Landroidx/media3/extractor/ExtractorInput;Z)Landroidx/media3/common/Metadata;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -139,18 +139,18 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     move-object p1, v0
 
-    goto :goto_7
+    goto :goto_0
 
     .line 68
-    :cond_5
+    :cond_0
     sget-object p1, Landroidx/media3/extractor/metadata/id3/Id3Decoder;->NO_FRAMES_PREDICATE:Landroidx/media3/extractor/metadata/id3/Id3Decoder$FramePredicate;
 
     .line 69
-    :goto_7
+    :goto_0
     new-instance v1, Landroidx/media3/extractor/Id3Peeker;
 
     invoke-direct {v1}, Landroidx/media3/extractor/Id3Peeker;-><init>()V
@@ -159,27 +159,27 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_1a
+    if-eqz p0, :cond_2
 
     .line 70
     invoke-virtual {p0}, Landroidx/media3/common/Metadata;->length()I
 
     move-result p1
 
-    if-nez p1, :cond_19
+    if-nez p1, :cond_1
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move-object v0, p0
 
-    :cond_1a
-    :goto_1a
+    :cond_2
+    :goto_1
     return-object v0
 .end method
 
 .method public static readId3Metadata(Landroidx/media3/extractor/ExtractorInput;Z)Landroidx/media3/common/Metadata;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -215,7 +215,7 @@
 .end method
 
 .method public static readMetadataBlock(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/FlacMetadataReader$FlacStreamMetadataHolder;)Z
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -262,7 +262,7 @@
 
     add-int/2addr v0, v1
 
-    if-nez v4, :cond_2a
+    if-nez v4, :cond_0
 
     .line 158
     invoke-static {p0}, Landroidx/media3/extractor/FlacMetadataReader;->readStreamInfoBlock(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/FlacStreamMetadata;
@@ -271,17 +271,17 @@
 
     iput-object p0, p1, Landroidx/media3/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 160
-    :cond_2a
+    :cond_0
     iget-object v5, p1, Landroidx/media3/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
 
-    if-eqz v5, :cond_6e
+    if-eqz v5, :cond_4
 
     const/4 v6, 0x3
 
-    if-ne v4, v6, :cond_3c
+    if-ne v4, v6, :cond_1
 
     .line 165
     invoke-static {p0, v0}, Landroidx/media3/extractor/FlacMetadataReader;->readSeekTableMetadataBlock(Landroidx/media3/extractor/ExtractorInput;I)Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;
@@ -295,10 +295,10 @@
 
     iput-object p0, p1, Landroidx/media3/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
 
-    goto :goto_6d
+    goto :goto_0
 
-    :cond_3c
-    if-ne v4, v1, :cond_49
+    :cond_1
+    if-ne v4, v1, :cond_2
 
     .line 168
     invoke-static {p0, v0}, Landroidx/media3/extractor/FlacMetadataReader;->readVorbisCommentMetadataBlock(Landroidx/media3/extractor/ExtractorInput;I)Ljava/util/List;
@@ -312,12 +312,12 @@
 
     iput-object p0, p1, Landroidx/media3/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
 
-    goto :goto_6d
+    goto :goto_0
 
-    :cond_49
+    :cond_2
     const/4 v6, 0x6
 
-    if-ne v4, v6, :cond_6a
+    if-ne v4, v6, :cond_3
 
     .line 172
     new-instance v4, Landroidx/media3/common/util/ParsableByteArray;
@@ -350,17 +350,17 @@
 
     iput-object p0, p1, Landroidx/media3/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 179
-    :cond_6a
+    :cond_3
     invoke-interface {p0, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    :goto_6d
+    :goto_0
     return v2
 
     .line 162
-    :cond_6e
+    :cond_4
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -369,7 +369,7 @@
 .end method
 
 .method public static readSeekTableMetadataBlock(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;
-    .registers 11
+    .locals 10
 
     const/4 v0, 0x1
 
@@ -403,8 +403,8 @@
 
     const/4 v5, 0x0
 
-    :goto_16
-    if-ge v5, v0, :cond_3a
+    :goto_0
+    if-ge v5, v0, :cond_1
 
     .line 207
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
@@ -415,7 +415,7 @@
 
     cmp-long v8, v6, v8
 
-    if-nez v8, :cond_2b
+    if-nez v8, :cond_0
 
     .line 209
     invoke-static {v3, v5}, Ljava/util/Arrays;->copyOf([JI)[J
@@ -427,10 +427,10 @@
 
     move-result-object v4
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 213
-    :cond_2b
+    :cond_0
     aput-wide v6, v3, v5
 
     .line 214
@@ -447,11 +447,11 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 218
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v0
@@ -473,7 +473,7 @@
 .end method
 
 .method private static readSeekTableMetadataBlock(Landroidx/media3/extractor/ExtractorInput;I)Landroidx/media3/extractor/FlacStreamMetadata$SeekTable;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -503,7 +503,7 @@
 .end method
 
 .method private static readStreamInfoBlock(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/FlacStreamMetadata;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -530,7 +530,7 @@
 .end method
 
 .method public static readStreamMarker(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -562,11 +562,11 @@
 
     cmp-long p0, v0, v2
 
-    if-nez p0, :cond_1a
+    if-nez p0, :cond_0
 
     return-void
 
-    :cond_1a
+    :cond_0
     const-string p0, "Failed to read FLAC stream marker."
 
     const/4 v0, 0x0
@@ -580,7 +580,7 @@
 .end method
 
 .method private static readVorbisCommentMetadataBlock(Landroidx/media3/extractor/ExtractorInput;I)Ljava/util/List;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

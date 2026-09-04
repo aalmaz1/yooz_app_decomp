@@ -73,7 +73,7 @@
 .end method
 
 .method public enableMayRenderStartOfStream()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -82,7 +82,7 @@
 .end method
 
 .method public getDurationToProgressUs(JJ)J
-    .registers 5
+    .locals 0
 
     const-wide/16 p1, 0x2710
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -167,7 +167,7 @@
 .end method
 
 .method public setPlaybackSpeed(FF)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;

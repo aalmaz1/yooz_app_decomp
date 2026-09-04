@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 2120
     new-instance v0, Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;
@@ -41,7 +41,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 2118
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$ClippingProperties;-><init>(Landroidx/media3/common/MediaItem$ClippingConfiguration$Builder;)V

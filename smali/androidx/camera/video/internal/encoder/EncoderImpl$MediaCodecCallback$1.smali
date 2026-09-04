@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;Landroidx/camera/video/internal/encoder/EncodedDataImpl;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 3
 
     .line 1227
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$1;->this$1:Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;
@@ -70,7 +70,7 @@
     .line 1228
     instance-of v0, p1, Landroid/media/MediaCodec$CodecException;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 1229
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$1;->this$1:Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;
@@ -81,10 +81,10 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->handleEncodeError(Landroid/media/MediaCodec$CodecException;)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 1232
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$1;->this$1:Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -99,12 +99,12 @@
     .line 1232
     invoke-virtual {v0, v1, v2, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->handleEncodeError(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1219
     check-cast p1, Ljava/lang/Void;
@@ -115,7 +115,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 3
+    .locals 1
 
     .line 1222
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$1;->this$1:Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;

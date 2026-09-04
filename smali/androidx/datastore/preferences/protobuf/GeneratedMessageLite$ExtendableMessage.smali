@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 493
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method private eagerlyMergeMessageSetExtension(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;I)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,7 +109,7 @@
 .end method
 
 .method private mergeMessageSetExtensionFromBytes(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,20 +137,20 @@
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/MessageLite;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 767
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/MessageLite;->toBuilder()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
     move-result-object v0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_12
-    if-nez v0, :cond_1c
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 770
     invoke-virtual {p3}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -162,7 +162,7 @@
     move-result-object v0
 
     .line 772
-    :cond_1c
+    :cond_1
     invoke-interface {v0, p1, p2}, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;->mergeFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
     .line 773
@@ -188,7 +188,7 @@
 .end method
 
 .method private mergeMessageSetExtensionFromCodedStream(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType::",
@@ -215,99 +215,99 @@
     move-object v3, v2
 
     .line 704
-    :cond_4
-    :goto_4
+    :cond_0
+    :goto_0
     invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readTag()I
 
     move-result v4
 
-    if-nez v4, :cond_b
+    if-nez v4, :cond_1
 
-    goto :goto_32
+    goto :goto_1
 
     .line 709
-    :cond_b
+    :cond_1
     sget v5, Landroidx/datastore/preferences/protobuf/WireFormat;->MESSAGE_SET_TYPE_ID_TAG:I
 
-    if-ne v4, v5, :cond_1a
+    if-ne v4, v5, :cond_2
 
     .line 710
     invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readUInt32()I
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_0
 
     .line 712
     invoke-virtual {p3, p1, v0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->findLiteExtensionByNumber(Landroidx/datastore/preferences/protobuf/MessageLite;I)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     move-result-object v3
 
-    goto :goto_4
+    goto :goto_0
 
     .line 715
-    :cond_1a
+    :cond_2
     sget v5, Landroidx/datastore/preferences/protobuf/WireFormat;->MESSAGE_SET_MESSAGE_TAG:I
 
-    if-ne v4, v5, :cond_2c
+    if-ne v4, v5, :cond_4
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_3
 
     .line 720
     invoke-direct {p0, p2, v3, p3, v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->eagerlyMergeMessageSetExtension(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;I)V
 
     move-object v2, v1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 726
-    :cond_27
+    :cond_3
     invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readBytes()Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object v2
 
-    goto :goto_4
+    goto :goto_0
 
     .line 729
-    :cond_2c
+    :cond_4
     invoke-virtual {p2, v4}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->skipField(I)Z
 
     move-result v4
 
-    if-nez v4, :cond_4
+    if-nez v4, :cond_0
 
     .line 734
-    :goto_32
+    :goto_1
     sget p1, Landroidx/datastore/preferences/protobuf/WireFormat;->MESSAGE_SET_ITEM_END_TAG:I
 
     invoke-virtual {p2, p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_6
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_6
 
-    if-eqz v3, :cond_41
+    if-eqz v3, :cond_5
 
     .line 739
     invoke-direct {p0, v2, p3, v3}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->mergeMessageSetExtensionFromBytes(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;)V
 
-    goto :goto_46
+    goto :goto_2
 
-    :cond_41
-    if-eqz v2, :cond_46
+    :cond_5
+    if-eqz v2, :cond_6
 
     .line 742
     invoke-virtual {p0, v0, v2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->mergeLengthDelimitedField(ILandroidx/datastore/preferences/protobuf/ByteString;)V
 
-    :cond_46
-    :goto_46
+    :cond_6
+    :goto_2
     return-void
 .end method
 
 .method private parseExtension(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;II)Z
-    .registers 10
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -333,17 +333,17 @@
 
     const/4 v2, 0x0
 
-    if-nez p3, :cond_b
+    if-nez p3, :cond_1
 
-    :cond_8
+    :cond_0
     move v0, v1
 
     move v3, v2
 
-    goto :goto_38
+    goto :goto_0
 
     .line 545
-    :cond_b
+    :cond_1
     iget-object v3, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     .line 547
@@ -356,21 +356,21 @@
 
     move-result v3
 
-    if-ne v0, v3, :cond_1a
+    if-ne v0, v3, :cond_2
 
     move v0, v2
 
     move v3, v0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 549
-    :cond_1a
+    :cond_2
     iget-object v3, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     iget-boolean v3, v3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated:Z
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_0
 
     iget-object v3, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -381,7 +381,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_0
 
     iget-object v3, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -395,14 +395,14 @@
 
     move-result v3
 
-    if-ne v0, v3, :cond_8
+    if-ne v0, v3, :cond_0
 
     move v3, v1
 
     move v0, v2
 
-    :goto_38
-    if-eqz v0, :cond_3f
+    :goto_0
+    if-eqz v0, :cond_3
 
     .line 560
     invoke-virtual {p0, p4, p1}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->parseUnknownField(ILandroidx/datastore/preferences/protobuf/CodedInputStream;)Z
@@ -412,10 +412,10 @@
     return p1
 
     .line 563
-    :cond_3f
+    :cond_3
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->ensureExtensionsAreMutable()Landroidx/datastore/preferences/protobuf/FieldSet;
 
-    if-eqz v3, :cond_96
+    if-eqz v3, :cond_7
 
     .line 566
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readRawVarint32()I
@@ -436,15 +436,15 @@
 
     sget-object p5, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->ENUM:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
-    if-ne p4, p5, :cond_79
+    if-ne p4, p5, :cond_5
 
     .line 569
-    :goto_56
+    :goto_1
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->getBytesUntilLimit()I
 
     move-result p4
 
-    if-lez p4, :cond_91
+    if-lez p4, :cond_6
 
     .line 570
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readEnum()I
@@ -462,12 +462,12 @@
 
     move-result-object p4
 
-    if-nez p4, :cond_6d
+    if-nez p4, :cond_4
 
     return v1
 
     .line 577
-    :cond_6d
+    :cond_4
     iget-object p5, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
     iget-object v0, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -480,16 +480,16 @@
     .line 577
     invoke-virtual {p5, v0, p4}, Landroidx/datastore/preferences/protobuf/FieldSet;->addRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto :goto_56
+    goto :goto_1
 
     .line 581
-    :cond_79
-    :goto_79
+    :cond_5
+    :goto_2
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->getBytesUntilLimit()I
 
     move-result p4
 
-    if-lez p4, :cond_91
+    if-lez p4, :cond_6
 
     .line 582
     iget-object p4, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -511,16 +511,16 @@
 
     invoke-virtual {p5, v0, p4}, Landroidx/datastore/preferences/protobuf/FieldSet;->addRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto :goto_79
+    goto :goto_2
 
     .line 588
-    :cond_91
+    :cond_6
     invoke-virtual {p1, p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->popLimit(I)V
 
-    goto/16 :goto_126
+    goto/16 :goto_6
 
     .line 591
-    :cond_96
+    :cond_7
     sget-object p4, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$1;->$SwitchMap$com$google$protobuf$WireFormat$JavaType:[I
 
     iget-object v0, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -535,11 +535,11 @@
 
     aget p4, p4, v0
 
-    if-eq p4, v1, :cond_ca
+    if-eq p4, v1, :cond_a
 
     const/4 p2, 0x2
 
-    if-eq p4, p2, :cond_b4
+    if-eq p4, p2, :cond_8
 
     .line 623
     iget-object p2, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -554,10 +554,10 @@
 
     move-result-object p1
 
-    goto :goto_107
+    goto :goto_5
 
     .line 613
-    :cond_b4
+    :cond_8
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readEnum()I
 
     move-result p1
@@ -573,27 +573,27 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_c8
+    if-nez p2, :cond_9
 
     .line 618
     invoke-virtual {p0, p5, p1}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->mergeVarintField(II)V
 
     return v1
 
-    :cond_c8
+    :cond_9
     move-object p1, p2
 
-    goto :goto_107
+    goto :goto_5
 
     .line 595
-    :cond_ca
+    :cond_a
     iget-object p4, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p4}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
 
     move-result p4
 
-    if-nez p4, :cond_e3
+    if-nez p4, :cond_b
 
     .line 596
     iget-object p4, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -606,20 +606,20 @@
 
     check-cast p4, Landroidx/datastore/preferences/protobuf/MessageLite;
 
-    if-eqz p4, :cond_e3
+    if-eqz p4, :cond_b
 
     .line 598
     invoke-interface {p4}, Landroidx/datastore/preferences/protobuf/MessageLite;->toBuilder()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
 
     move-result-object p4
 
-    goto :goto_e4
+    goto :goto_3
 
-    :cond_e3
+    :cond_b
     const/4 p4, 0x0
 
-    :goto_e4
-    if-nez p4, :cond_ee
+    :goto_3
+    if-nez p4, :cond_c
 
     .line 602
     invoke-virtual {p3}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -631,7 +631,7 @@
     move-result-object p4
 
     .line 604
-    :cond_ee
+    :cond_c
     iget-object p5, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -640,7 +640,7 @@
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->GROUP:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
-    if-ne p5, v0, :cond_100
+    if-ne p5, v0, :cond_d
 
     .line 605
     invoke-virtual {p3}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->getNumber()I
@@ -649,27 +649,27 @@
 
     invoke-virtual {p1, p5, p4, p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readGroup(ILandroidx/datastore/preferences/protobuf/MessageLite$Builder;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
 
-    goto :goto_103
+    goto :goto_4
 
     .line 607
-    :cond_100
+    :cond_d
     invoke-virtual {p1, p4, p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readMessage(Landroidx/datastore/preferences/protobuf/MessageLite$Builder;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
 
     .line 609
-    :goto_103
+    :goto_4
     invoke-interface {p4}, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;->build()Landroidx/datastore/preferences/protobuf/MessageLite;
 
     move-result-object p1
 
     .line 629
-    :goto_107
+    :goto_5
     iget-object p2, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {p2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
 
     move-result p2
 
-    if-eqz p2, :cond_11b
+    if-eqz p2, :cond_e
 
     .line 630
     iget-object p2, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -684,10 +684,10 @@
     .line 630
     invoke-virtual {p2, p4, p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->addRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto :goto_126
+    goto :goto_6
 
     .line 633
-    :cond_11b
+    :cond_e
     iget-object p2, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
     iget-object p4, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -698,12 +698,12 @@
 
     invoke-virtual {p2, p4, p1}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    :goto_126
+    :goto_6
     return v1
 .end method
 
 .method private verifyExtensionContainingType(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -721,12 +721,12 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 789
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "This extension is for a different message type.  Please make sure that you are not suppressing any generics type warnings."
@@ -739,7 +739,7 @@
 
 # virtual methods
 .method ensureExtensionsAreMutable()Landroidx/datastore/preferences/protobuf/FieldSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -756,7 +756,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 781
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -768,14 +768,14 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
     .line 783
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
     return-object v0
 .end method
 
 .method protected extensionsAreInitialized()Z
-    .registers 2
+    .locals 1
 
     .line 844
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -788,7 +788,7 @@
 .end method
 
 .method protected extensionsSerializedSize()I
-    .registers 2
+    .locals 1
 
     .line 896
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -801,7 +801,7 @@
 .end method
 
 .method protected extensionsSerializedSizeAsMessageSet()I
-    .registers 2
+    .locals 1
 
     .line 900
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -814,7 +814,7 @@
 .end method
 
 .method public bridge synthetic getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 493
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -825,7 +825,7 @@
 .end method
 
 .method public final getExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -853,7 +853,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 823
     iget-object p1, p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->defaultValue:Ljava/lang/Object;
@@ -861,7 +861,7 @@
     return-object p1
 
     .line 825
-    :cond_14
+    :cond_0
     invoke-virtual {p1, v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->fromFieldSetType(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -870,7 +870,7 @@
 .end method
 
 .method public final getExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;I)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -910,7 +910,7 @@
 .end method
 
 .method public final getExtensionCount(Landroidx/datastore/preferences/protobuf/ExtensionLite;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -944,7 +944,7 @@
 .end method
 
 .method public final hasExtension(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Type:",
@@ -976,7 +976,7 @@
 .end method
 
 .method protected final mergeExtensionFields(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)V"
@@ -990,7 +990,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 505
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -1002,7 +1002,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
     .line 507
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
 
     iget-object p1, p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Landroidx/datastore/preferences/protobuf/FieldSet;
@@ -1013,7 +1013,7 @@
 .end method
 
 .method public bridge synthetic newBuilderForType()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 493
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->newBuilderForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
@@ -1024,7 +1024,7 @@
 .end method
 
 .method protected newExtensionWriter()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1046,7 +1046,7 @@
 .end method
 
 .method protected newMessageSetExtensionWriter()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1068,7 +1068,7 @@
 .end method
 
 .method protected parseUnknownField(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;I)Z
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType::",
@@ -1113,7 +1113,7 @@
 .end method
 
 .method protected parseUnknownFieldAsMessageSet(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;I)Z
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType::",
@@ -1134,7 +1134,7 @@
     .line 653
     sget v0, Landroidx/datastore/preferences/protobuf/WireFormat;->MESSAGE_SET_ITEM_TAG:I
 
-    if-ne p4, v0, :cond_9
+    if-ne p4, v0, :cond_0
 
     .line 654
     invoke-direct {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->mergeMessageSetExtensionFromCodedStream(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
@@ -1144,14 +1144,14 @@
     return p1
 
     .line 660
-    :cond_9
+    :cond_0
     invoke-static {p4}, Landroidx/datastore/preferences/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_1
 
     .line 662
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->parseUnknownField(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;I)Z
@@ -1161,7 +1161,7 @@
     return p1
 
     .line 665
-    :cond_15
+    :cond_1
     invoke-virtual {p2, p4}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->skipField(I)Z
 
     move-result p1
@@ -1170,7 +1170,7 @@
 .end method
 
 .method public bridge synthetic toBuilder()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 493
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->toBuilder()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;

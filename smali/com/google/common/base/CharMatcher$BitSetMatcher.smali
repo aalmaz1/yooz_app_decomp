@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/BitSet;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -46,7 +46,7 @@
 
     move-result v0
 
-    if-ge p2, v0, :cond_15
+    if-ge p2, v0, :cond_0
 
     .line 995
     invoke-virtual {p1}, Ljava/util/BitSet;->clone()Ljava/lang/Object;
@@ -56,14 +56,14 @@
     check-cast p1, Ljava/util/BitSet;
 
     .line 998
-    :cond_15
+    :cond_0
     iput-object p1, p0, Lcom/google/common/base/CharMatcher$BitSetMatcher;->table:Ljava/util/BitSet;
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/BitSet;Ljava/lang/String;Lcom/google/common/base/CharMatcher$1;)V
-    .registers 4
+    .locals 0
 
     .line 988
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/CharMatcher$BitSetMatcher;-><init>(Ljava/util/BitSet;Ljava/lang/String;)V
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -95,7 +95,7 @@
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

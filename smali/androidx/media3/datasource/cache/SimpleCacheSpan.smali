@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "^(.+)\\.(\\d+)\\.(\\d+)\\.v1\\.exo$"
 
@@ -52,7 +52,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;JJJLjava/io/File;)V
-    .registers 9
+    .locals 0
 
     .line 191
     invoke-direct/range {p0 .. p8}, Landroidx/media3/datasource/cache/CacheSpan;-><init>(Ljava/lang/String;JJJLjava/io/File;)V
@@ -61,7 +61,7 @@
 .end method
 
 .method public static createCacheEntry(Ljava/io/File;JJLandroidx/media3/datasource/cache/CachedContentIndex;)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 19
+    .locals 13
 
     move-object/from16 v0, p5
 
@@ -79,7 +79,7 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_1
 
     move-object v2, p0
 
@@ -88,12 +88,12 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     return-object v3
 
     .line 115
-    :cond_17
+    :cond_0
     invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -102,15 +102,15 @@
 
     move-object v1, v2
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move-object v2, p0
 
     move-object v12, v2
 
     .line 118
-    :goto_20
+    :goto_0
     sget-object v2, Landroidx/media3/datasource/cache/SimpleCacheSpan;->CACHE_FILE_PATTERN_V3:Ljava/util/regex/Pattern;
 
     invoke-virtual {v2, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -122,11 +122,11 @@
 
     move-result v2
 
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_2
 
     return-object v3
 
-    :cond_2d
+    :cond_2
     const/4 v2, 0x1
 
     .line 123
@@ -149,16 +149,16 @@
 
     move-result-object v5
 
-    if-nez v5, :cond_43
+    if-nez v5, :cond_3
 
     return-object v3
 
-    :cond_43
+    :cond_3
     const-wide/16 v6, -0x1
 
     cmp-long v0, p1, v6
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_4
 
     .line 130
     invoke-virtual {v12}, Ljava/io/File;->length()J
@@ -167,21 +167,21 @@
 
     move-wide v8, v6
 
-    goto :goto_50
+    goto :goto_1
 
-    :cond_4f
+    :cond_4
     move-wide v8, p1
 
-    :goto_50
+    :goto_1
     const-wide/16 v6, 0x0
 
     cmp-long v0, v8, v6
 
-    if-nez v0, :cond_57
+    if-nez v0, :cond_5
 
     return-object v3
 
-    :cond_57
+    :cond_5
     const/4 v0, 0x2
 
     .line 136
@@ -203,7 +203,7 @@
 
     cmp-long v0, p3, v2
 
-    if-nez v0, :cond_80
+    if-nez v0, :cond_6
 
     const/4 v0, 0x3
 
@@ -224,13 +224,13 @@
 
     move-wide v10, v0
 
-    goto :goto_82
+    goto :goto_2
 
-    :cond_80
+    :cond_6
     move-wide/from16 v10, p3
 
     .line 140
-    :goto_82
+    :goto_2
     new-instance v0, Landroidx/media3/datasource/cache/SimpleCacheSpan;
 
     move-object v4, v0
@@ -241,7 +241,7 @@
 .end method
 
 .method public static createCacheEntry(Ljava/io/File;JLandroidx/media3/datasource/cache/CachedContentIndex;)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 10
+    .locals 6
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -260,7 +260,7 @@
 .end method
 
 .method public static createHole(Ljava/lang/String;JJ)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 15
+    .locals 10
 
     .line 73
     new-instance v9, Landroidx/media3/datasource/cache/SimpleCacheSpan;
@@ -283,7 +283,7 @@
 .end method
 
 .method public static createLookup(Ljava/lang/String;J)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 13
+    .locals 10
 
     .line 61
     new-instance v9, Landroidx/media3/datasource/cache/SimpleCacheSpan;
@@ -306,7 +306,7 @@
 .end method
 
 .method public static getCacheFile(Ljava/io/File;IJJ)Ljava/io/File;
-    .registers 8
+    .locals 2
 
     .line 50
     new-instance v0, Ljava/io/File;
@@ -353,7 +353,7 @@
 .end method
 
 .method private static upgradeFile(Ljava/io/File;Landroidx/media3/datasource/cache/CachedContentIndex;)Ljava/io/File;
-    .registers 13
+    .locals 11
 
     .line 154
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -376,7 +376,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     .line 157
     invoke-virtual {v1, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -393,10 +393,10 @@
 
     move-result-object v0
 
-    goto :goto_39
+    goto :goto_0
 
     .line 159
-    :cond_21
+    :cond_0
     sget-object v1, Landroidx/media3/datasource/cache/SimpleCacheSpan;->CACHE_FILE_PATTERN_V1:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -408,7 +408,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_1
 
     .line 161
     invoke-virtual {v1, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -421,18 +421,18 @@
 
     check-cast v0, Ljava/lang/String;
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_1
     move-object v0, v4
 
-    :goto_39
-    if-nez v0, :cond_3c
+    :goto_0
+    if-nez v0, :cond_2
 
     return-object v4
 
     .line 171
-    :cond_3c
+    :cond_2
     invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v2
@@ -494,18 +494,18 @@
 
     move-result p0
 
-    if-nez p0, :cond_74
+    if-nez p0, :cond_3
 
     return-object v4
 
-    :cond_74
+    :cond_3
     return-object p1
 .end method
 
 
 # virtual methods
 .method public copyWithFileAndLastTouchTimestamp(Ljava/io/File;J)Landroidx/media3/datasource/cache/SimpleCacheSpan;
-    .registers 14
+    .locals 10
 
     .line 203
     iget-boolean v0, p0, Landroidx/media3/datasource/cache/SimpleCacheSpan;->isCached:Z

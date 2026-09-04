@@ -100,7 +100,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/media3/exoplayer/upstream/Allocator;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 4
+    .locals 0
 
     .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -197,51 +197,51 @@
 .end method
 
 .method private declared-synchronized attemptSplice(J)Z
-    .registers 8
+    .locals 5
 
     monitor-enter p0
 
     .line 881
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 882
     iget-wide v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestDiscardedTimestampUs:J
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     cmp-long p1, p1, v3
 
-    if-lez p1, :cond_e
+    if-lez p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v1, v2
 
-    :goto_f
+    :goto_0
     monitor-exit p0
 
     return v1
 
     .line 884
-    :cond_11
-    :try_start_11
+    :cond_1
+    :try_start_1
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->getLargestReadTimestampUs()J
 
     move-result-wide v3
-    :try_end_15
-    .catchall {:try_start_11 .. :try_end_15} :catchall_27
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     cmp-long v0, v3, p1
 
-    if-ltz v0, :cond_1b
+    if-ltz v0, :cond_2
 
     .line 885
     monitor-exit p0
@@ -249,8 +249,8 @@
     return v2
 
     .line 887
-    :cond_1b
-    :try_start_1b
+    :cond_2
+    :try_start_2
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/source/SampleQueue;->countUnreadSamplesBefore(J)I
 
     move-result p1
@@ -261,15 +261,15 @@
     add-int/2addr p2, p1
 
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/source/SampleQueue;->discardUpstreamSampleMetadata(I)J
-    :try_end_25
-    .catchall {:try_start_1b .. :try_end_25} :catchall_27
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 889
     monitor-exit p0
 
     return v1
 
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -278,19 +278,19 @@
 .end method
 
 .method private declared-synchronized commitSample(JIJILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 15
+    .locals 7
 
     monitor-enter p0
 
     .line 808
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-lez v0, :cond_20
+    if-lez v0, :cond_1
 
     sub-int/2addr v0, v1
 
@@ -314,34 +314,34 @@
 
     cmp-long v0, v3, p4
 
-    if-gtz v0, :cond_1c
+    if-gtz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     move v0, v2
 
-    :goto_1d
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    :cond_20
+    :cond_1
     const/high16 v0, 0x20000000
 
     and-int/2addr v0, p3
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     move v0, v1
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
+    :cond_2
     move v0, v2
 
     .line 815
-    :goto_28
+    :goto_1
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
 
     .line 816
@@ -399,7 +399,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_6c
+    if-nez p1, :cond_3
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
@@ -418,10 +418,10 @@
 
     move-result p1
 
-    if-nez p1, :cond_90
+    if-nez p1, :cond_5
 
     .line 828
-    :cond_6c
+    :cond_3
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -433,7 +433,7 @@
     .line 830
     iget-object p2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
-    if-eqz p2, :cond_7f
+    if-eqz p2, :cond_4
 
     .line 831
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->drmEventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -442,14 +442,14 @@
 
     move-result-object p2
 
-    goto :goto_81
+    goto :goto_2
 
     .line 832
-    :cond_7f
+    :cond_4
     sget-object p2, Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference;->EMPTY:Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference;
 
     .line 834
-    :goto_81
+    :goto_2
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
     .line 835
@@ -467,7 +467,7 @@
     invoke-virtual {p3, p4, p5}, Landroidx/media3/exoplayer/source/SpannedData;->appendSpan(ILjava/lang/Object;)V
 
     .line 838
-    :cond_90
+    :cond_5
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     add-int/2addr p1, v1
@@ -477,7 +477,7 @@
     .line 839
     iget p2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
-    if-ne p1, p2, :cond_102
+    if-ne p1, p2, :cond_6
 
     add-int/lit16 p1, p2, 0x3e8
 
@@ -600,16 +600,16 @@
 
     .line 869
     iput p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
-    :try_end_102
-    .catchall {:try_start_1 .. :try_end_102} :catchall_104
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 871
-    :cond_102
+    :cond_6
     monitor-exit p0
 
     return-void
 
-    :catchall_104
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -618,7 +618,7 @@
 .end method
 
 .method private countUnreadSamplesBefore(J)I
-    .registers 7
+    .locals 4
 
     .line 1032
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
@@ -631,11 +631,11 @@
     move-result v1
 
     .line 1034
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     iget v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
-    if-le v0, v2, :cond_20
+    if-le v0, v2, :cond_1
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
 
@@ -643,7 +643,7 @@
 
     cmp-long v2, v2, p1
 
-    if-ltz v2, :cond_20
+    if-ltz v2, :cond_1
 
     add-int/lit8 v0, v0, -0x1
 
@@ -651,21 +651,21 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_8
+    if-ne v1, v2, :cond_0
 
     .line 1038
     iget v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     return v0
 .end method
 
 .method public static createWithDrm(Landroidx/media3/exoplayer/upstream/Allocator;Landroid/os/Looper;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)Landroidx/media3/exoplayer/source/SampleQueue;
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -697,7 +697,7 @@
 .end method
 
 .method public static createWithDrm(Landroidx/media3/exoplayer/upstream/Allocator;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)Landroidx/media3/exoplayer/source/SampleQueue;
-    .registers 4
+    .locals 1
 
     .line 138
     new-instance v0, Landroidx/media3/exoplayer/source/SampleQueue;
@@ -722,7 +722,7 @@
 .end method
 
 .method public static createWithoutDrm(Landroidx/media3/exoplayer/upstream/Allocator;)Landroidx/media3/exoplayer/source/SampleQueue;
-    .registers 3
+    .locals 2
 
     .line 118
     new-instance v0, Landroidx/media3/exoplayer/source/SampleQueue;
@@ -735,17 +735,17 @@
 .end method
 
 .method private declared-synchronized discardSampleMetadataTo(JZZ)J
-    .registers 15
+    .locals 10
 
     monitor-enter p0
 
     .line 767
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     const-wide/16 v1, -0x1
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3
 
     iget-object v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
 
@@ -755,21 +755,21 @@
 
     cmp-long v3, p1, v3
 
-    if-gez v3, :cond_12
+    if-gez v3, :cond_0
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_12
-    if-eqz p4, :cond_1a
+    :cond_0
+    if-eqz p4, :cond_1
 
     .line 770
     iget p4, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
-    if-eq p4, v0, :cond_1a
+    if-eq p4, v0, :cond_1
 
     add-int/lit8 v0, p4, 0x1
 
-    :cond_1a
+    :cond_1
     move v6, v0
 
     move-object v4, p0
@@ -782,12 +782,12 @@
     invoke-direct/range {v4 .. v9}, Landroidx/media3/exoplayer/source/SampleQueue;->findSampleBefore(IIJZ)I
 
     move-result p1
-    :try_end_22
-    .catchall {:try_start_1 .. :try_end_22} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_27
+    if-ne p1, p2, :cond_2
 
     .line 773
     monitor-exit p0
@@ -795,26 +795,26 @@
     return-wide v1
 
     .line 775
-    :cond_27
-    :try_start_27
+    :cond_2
+    :try_start_1
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->discardSamples(I)J
 
     move-result-wide p1
-    :try_end_2b
-    .catchall {:try_start_27 .. :try_end_2b} :catchall_2f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
     return-wide p1
 
     .line 768
-    :cond_2d
-    :goto_2d
+    :cond_3
+    :goto_0
     monitor-exit p0
 
     return-wide v1
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -823,17 +823,17 @@
 .end method
 
 .method private declared-synchronized discardSampleMetadataToEnd()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 786
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 787
     monitor-exit p0
@@ -843,19 +843,19 @@
     return-wide v0
 
     .line 789
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_1
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/SampleQueue;->discardSamples(I)J
 
     move-result-wide v0
-    :try_end_d
-    .catchall {:try_start_9 .. :try_end_d} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -864,7 +864,7 @@
 .end method
 
 .method private discardSamples(I)J
-    .registers 6
+    .locals 4
 
     .line 1052
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestDiscardedTimestampUs:J
@@ -904,7 +904,7 @@
     .line 1057
     iget v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
-    if-lt v1, v2, :cond_22
+    if-lt v1, v2, :cond_0
 
     sub-int/2addr v1, v2
 
@@ -912,14 +912,14 @@
     iput v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->relativeFirstIndex:I
 
     .line 1060
-    :cond_22
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     sub-int/2addr v1, p1
 
     iput v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
-    if-gez v1, :cond_2c
+    if-gez v1, :cond_1
 
     const/4 p1, 0x0
 
@@ -927,7 +927,7 @@
     iput p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     .line 1064
-    :cond_2c
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/source/SpannedData;->discardTo(I)V
@@ -935,16 +935,16 @@
     .line 1066
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
-    if-nez p1, :cond_48
+    if-nez p1, :cond_3
 
     .line 1067
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->relativeFirstIndex:I
 
-    if-nez p1, :cond_3b
+    if-nez p1, :cond_2
 
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
-    :cond_3b
+    :cond_2
     add-int/lit8 p1, p1, -0x1
 
     .line 1068
@@ -963,7 +963,7 @@
     return-wide v0
 
     .line 1070
-    :cond_48
+    :cond_3
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->offsets:[J
 
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->relativeFirstIndex:I
@@ -974,7 +974,7 @@
 .end method
 
 .method private discardUpstreamSampleMetadata(I)J
-    .registers 10
+    .locals 8
 
     .line 893
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->getWriteIndex()I
@@ -987,7 +987,7 @@
 
     const/4 v2, 0x1
 
-    if-ltz v0, :cond_12
+    if-ltz v0, :cond_0
 
     .line 894
     iget v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
@@ -996,16 +996,16 @@
 
     sub-int/2addr v3, v4
 
-    if-gt v0, v3, :cond_12
+    if-gt v0, v3, :cond_0
 
     move v3, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v3, v1
 
-    :goto_13
+    :goto_0
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 895
@@ -1028,16 +1028,16 @@
 
     iput-wide v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestQueuedTimestampUs:J
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_1
 
     .line 897
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     move v1, v2
 
-    :cond_2e
+    :cond_1
     iput-boolean v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
 
     .line 898
@@ -1048,7 +1048,7 @@
     .line 899
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_2
 
     sub-int/2addr p1, v2
 
@@ -1072,21 +1072,21 @@
 
     return-wide v0
 
-    :cond_49
+    :cond_2
     const-wide/16 v0, 0x0
 
     return-wide v0
 .end method
 
 .method private findSampleAfter(IIJZ)I
-    .registers 10
+    .locals 4
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    :goto_2
-    if-ge v1, p2, :cond_17
+    :goto_0
+    if-ge v1, p2, :cond_2
 
     .line 1013
     iget-object v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
@@ -1095,39 +1095,39 @@
 
     cmp-long v2, v2, p3
 
-    if-ltz v2, :cond_d
+    if-ltz v2, :cond_0
 
     return v1
 
-    :cond_d
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
     .line 1017
     iget v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
-    if-ne p1, v2, :cond_14
+    if-ne p1, v2, :cond_1
 
     move p1, v0
 
-    :cond_14
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_17
-    if-eqz p5, :cond_1a
+    :cond_2
+    if-eqz p5, :cond_3
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_3
     const/4 p2, -0x1
 
-    :goto_1b
+    :goto_1
     return p2
 .end method
 
 .method private findSampleBefore(IIJZ)I
-    .registers 12
+    .locals 6
 
     const/4 v0, -0x1
 
@@ -1135,8 +1135,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, p2, :cond_28
+    :goto_0
+    if-ge v2, p2, :cond_4
 
     .line 979
     iget-object v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
@@ -1145,9 +1145,9 @@
 
     cmp-long v5, v3, p3
 
-    if-gtz v5, :cond_28
+    if-gtz v5, :cond_4
 
-    if-eqz p5, :cond_17
+    if-eqz p5, :cond_0
 
     .line 980
     iget-object v5, p0, Landroidx/media3/exoplayer/source/SampleQueue;->flags:[I
@@ -1156,50 +1156,50 @@
 
     and-int/lit8 v5, v5, 0x1
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_2
 
-    :cond_17
+    :cond_0
     cmp-long v0, v3, p3
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_1d
+    :cond_1
     move v0, v2
 
-    :cond_1e
+    :cond_2
     add-int/lit8 p1, p1, 0x1
 
     .line 990
     iget v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
-    if-ne p1, v3, :cond_25
+    if-ne p1, v3, :cond_3
 
     move p1, v1
 
-    :cond_25
+    :cond_3
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_28
-    :goto_28
+    :cond_4
+    :goto_1
     return v0
 .end method
 
 .method private getLargestTimestamp(I)J
-    .registers 8
+    .locals 6
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     return-wide v0
 
-    :cond_5
+    :cond_0
     add-int/lit8 v2, p1, -0x1
 
     .line 1087
@@ -1209,8 +1209,8 @@
 
     const/4 v3, 0x0
 
-    :goto_c
-    if-ge v3, p1, :cond_2b
+    :goto_0
+    if-ge v3, p1, :cond_3
 
     .line 1089
     iget-object v4, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
@@ -1228,34 +1228,34 @@
 
     and-int/lit8 v4, v4, 0x1
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     add-int/lit8 v2, v2, -0x1
 
     const/4 v4, -0x1
 
-    if-ne v2, v4, :cond_28
+    if-ne v2, v4, :cond_2
 
     .line 1095
     iget v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
     add-int/lit8 v2, v2, -0x1
 
-    :cond_28
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return-wide v0
 .end method
 
 .method private getRelativeIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 1107
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->relativeFirstIndex:I
@@ -1265,40 +1265,40 @@
     .line 1108
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->capacity:I
 
-    if-ge v0, p1, :cond_8
+    if-ge v0, p1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     sub-int/2addr v0, p1
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method private hasNextSample()Z
-    .registers 3
+    .locals 2
 
     .line 907
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     iget v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method static synthetic lambda$new$0(Landroidx/media3/exoplayer/source/SampleQueue$SharedSampleMetadata;)V
-    .registers 1
+    .locals 0
 
     .line 178
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SampleQueue$SharedSampleMetadata;->drmSessionReference:Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference;
@@ -1309,12 +1309,12 @@
 .end method
 
 .method private mayReadSample(I)Z
-    .registers 4
+    .locals 2
 
     .line 955
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->currentDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 956
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/DrmSession;->getState()I
@@ -1323,7 +1323,7 @@
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_1f
+    if-eq v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->flags:[I
 
@@ -1333,7 +1333,7 @@
 
     and-int/2addr p1, v0
 
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->currentDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
@@ -1342,51 +1342,51 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_20
+    :goto_1
     return p1
 .end method
 
 .method private onFormatResult(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/FormatHolder;)V
-    .registers 7
+    .locals 4
 
     .line 918
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
-    if-nez v0, :cond_b
+    :goto_0
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
-    goto :goto_d
+    goto :goto_1
 
     .line 920
-    :cond_b
+    :cond_1
     iget-object v0, v0, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
     .line 921
-    :goto_d
+    :goto_1
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
 
     .line 922
@@ -1395,7 +1395,7 @@
     .line 925
     iget-object v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_2
 
     .line 926
     invoke-interface {v3, p1}, Landroidx/media3/exoplayer/drm/DrmSessionManager;->getCryptoType(Landroidx/media3/common/Format;)I
@@ -1406,13 +1406,13 @@
 
     move-result-object v3
 
-    goto :goto_1f
+    goto :goto_2
 
-    :cond_1e
+    :cond_2
     move-object v3, p1
 
     .line 927
-    :goto_1f
+    :goto_2
     iput-object v3, p2, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
 
     .line 928
@@ -1423,24 +1423,24 @@
     .line 929
     iget-object v3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_3
 
     return-void
 
-    :cond_2a
-    if-nez v1, :cond_33
+    :cond_3
+    if-nez v1, :cond_4
 
     .line 933
     invoke-static {v0, v2}, Landroidx/media3/common/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_4
 
     return-void
 
     .line 939
-    :cond_33
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->currentDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
     .line 940
@@ -1457,26 +1457,26 @@
     .line 941
     iput-object p1, p2, Landroidx/media3/exoplayer/FormatHolder;->drmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_5
 
     .line 944
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->drmEventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/drm/DrmSession;->release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
 
-    :cond_48
+    :cond_5
     return-void
 .end method
 
 .method private declared-synchronized peekSampleMetadata(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;ZZLandroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;)I
-    .registers 11
+    .locals 5
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 703
-    :try_start_2
+    :try_start_0
     iput-boolean v0, p2, Landroidx/media3/decoder/DecoderInputBuffer;->waitingForKeys:Z
 
     .line 704
@@ -1490,31 +1490,31 @@
 
     const/4 v3, -0x4
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_4
 
-    if-nez p4, :cond_2b
+    if-nez p4, :cond_3
 
     .line 705
     iget-boolean p4, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
 
-    if-eqz p4, :cond_14
+    if-eqz p4, :cond_0
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 709
-    :cond_14
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
 
-    if-eqz p2, :cond_29
+    if-eqz p2, :cond_2
 
-    if-nez p3, :cond_1e
+    if-nez p3, :cond_1
 
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
 
-    if-eq p2, p3, :cond_29
+    if-eq p2, p3, :cond_2
 
     .line 710
-    :cond_1e
+    :cond_1
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -1522,8 +1522,8 @@
     check-cast p2, Landroidx/media3/common/Format;
 
     invoke-direct {p0, p2, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->onFormatResult(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/FormatHolder;)V
-    :try_end_27
-    .catchall {:try_start_2 .. :try_end_27} :catchall_93
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 711
     monitor-exit p0
@@ -1531,25 +1531,25 @@
     return v1
 
     .line 713
-    :cond_29
+    :cond_2
     monitor-exit p0
 
     return v2
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_0
     const/4 p1, 0x4
 
     .line 706
-    :try_start_2c
+    :try_start_1
     invoke-virtual {p2, p1}, Landroidx/media3/decoder/DecoderInputBuffer;->setFlags(I)V
 
     const-wide/high16 p3, -0x8000000000000000L
 
     .line 707
     iput-wide p3, p2, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
-    :try_end_33
-    .catchall {:try_start_2c .. :try_end_33} :catchall_93
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 708
     monitor-exit p0
@@ -1557,8 +1557,8 @@
     return v3
 
     .line 717
-    :cond_35
-    :try_start_35
+    :cond_4
+    :try_start_2
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->getReadIndex()I
@@ -1573,17 +1573,17 @@
 
     iget-object v0, v0, Landroidx/media3/exoplayer/source/SampleQueue$SharedSampleMetadata;->format:Landroidx/media3/common/Format;
 
-    if-nez p3, :cond_8e
+    if-nez p3, :cond_9
 
     .line 718
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
 
-    if-eq v0, p3, :cond_4a
+    if-eq v0, p3, :cond_5
 
-    goto :goto_8e
+    goto :goto_1
 
     .line 723
-    :cond_4a
+    :cond_5
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->getRelativeIndex(I)I
@@ -1597,12 +1597,12 @@
 
     const/4 v0, 0x1
 
-    if-nez p3, :cond_5b
+    if-nez p3, :cond_6
 
     .line 725
     iput-boolean v0, p2, Landroidx/media3/decoder/DecoderInputBuffer;->waitingForKeys:Z
-    :try_end_59
-    .catchall {:try_start_35 .. :try_end_59} :catchall_93
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 726
     monitor-exit p0
@@ -1610,8 +1610,8 @@
     return v2
 
     .line 729
-    :cond_5b
-    :try_start_5b
+    :cond_6
+    :try_start_3
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->flags:[I
 
     aget p3, p3, p1
@@ -1625,22 +1625,22 @@
 
     sub-int/2addr v1, v0
 
-    if-ne p3, v1, :cond_74
+    if-ne p3, v1, :cond_8
 
-    if-nez p4, :cond_6f
+    if-nez p4, :cond_7
 
     iget-boolean p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
 
-    if-eqz p3, :cond_74
+    if-eqz p3, :cond_8
 
-    :cond_6f
+    :cond_7
     const/high16 p3, 0x20000000
 
     .line 731
     invoke-virtual {p2, p3}, Landroidx/media3/decoder/DecoderInputBuffer;->addFlag(I)V
 
     .line 733
-    :cond_74
+    :cond_8
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
 
     aget-wide p3, p3, p1
@@ -1667,8 +1667,8 @@
     aget-object p1, p2, p1
 
     iput-object p1, p5, Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;->cryptoData:Landroidx/media3/extractor/TrackOutput$CryptoData;
-    :try_end_8c
-    .catchall {:try_start_5b .. :try_end_8c} :catchall_93
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 738
     monitor-exit p0
@@ -1676,19 +1676,19 @@
     return v3
 
     .line 719
-    :cond_8e
-    :goto_8e
-    :try_start_8e
+    :cond_9
+    :goto_1
+    :try_start_4
     invoke-direct {p0, v0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->onFormatResult(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/FormatHolder;)V
-    :try_end_91
-    .catchall {:try_start_8e .. :try_end_91} :catchall_93
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 720
     monitor-exit p0
 
     return v1
 
-    :catchall_93
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1697,12 +1697,12 @@
 .end method
 
 .method private releaseDrmSessionReferences()V
-    .registers 3
+    .locals 2
 
     .line 793
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->currentDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 794
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->drmEventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -1717,34 +1717,34 @@
     .line 798
     iput-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private declared-synchronized rewind()V
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 692
-    :try_start_2
+    :try_start_0
     iput v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     .line 693
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/SampleDataQueue;->rewind()V
-    :try_end_9
-    .catchall {:try_start_2 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 694
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -1753,14 +1753,14 @@
 .end method
 
 .method private declared-synchronized setUpstreamFormat(Landroidx/media3/common/Format;)Z
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 742
-    :try_start_2
+    :try_start_0
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormatRequired:Z
 
     .line 743
@@ -1769,10 +1769,10 @@
     invoke-static {p1, v1}, Landroidx/media3/common/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
-    :try_end_a
-    .catchall {:try_start_2 .. :try_end_a} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 747
     monitor-exit p0
@@ -1780,15 +1780,15 @@
     return v0
 
     .line 750
-    :cond_e
-    :try_start_e
+    :cond_0
+    :try_start_1
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/source/SpannedData;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
@@ -1805,7 +1805,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_1
 
     .line 755
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
@@ -1820,14 +1820,14 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 757
-    :cond_33
+    :cond_1
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
 
     .line 759
-    :goto_35
+    :goto_0
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->allSamplesAreSyncSamples:Z
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
@@ -1849,8 +1849,8 @@
 
     .line 761
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->loggedUnexpectedNonSyncSample:Z
-    :try_end_48
-    .catchall {:try_start_e .. :try_end_48} :catchall_4b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 762
     monitor-exit p0
@@ -1859,7 +1859,7 @@
 
     return p1
 
-    :catchall_4b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -1870,17 +1870,17 @@
 
 # virtual methods
 .method public declared-synchronized discardSampleMetadataToRead()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 779
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 780
     monitor-exit p0
@@ -1890,19 +1890,19 @@
     return-wide v0
 
     .line 782
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_1
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/SampleQueue;->discardSamples(I)J
 
     move-result-wide v0
-    :try_end_d
-    .catchall {:try_start_9 .. :try_end_d} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -1911,7 +1911,7 @@
 .end method
 
 .method public final discardTo(JZZ)V
-    .registers 6
+    .locals 1
 
     .line 546
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -1928,7 +1928,7 @@
 .end method
 
 .method public final discardToEnd()V
-    .registers 4
+    .locals 3
 
     .line 557
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -1943,7 +1943,7 @@
 .end method
 
 .method public final discardToRead()V
-    .registers 4
+    .locals 3
 
     .line 552
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -1958,33 +1958,33 @@
 .end method
 
 .method public final discardUpstreamFrom(J)V
-    .registers 5
+    .locals 2
 
     .line 278
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 281
-    :cond_5
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->getLargestReadTimestampUs()J
 
     move-result-wide v0
 
     cmp-long v0, p1, v0
 
-    if-lez v0, :cond_f
+    if-lez v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 282
@@ -2003,7 +2003,7 @@
 .end method
 
 .method public final discardUpstreamSamples(I)V
-    .registers 5
+    .locals 3
 
     .line 267
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -2018,7 +2018,7 @@
 .end method
 
 .method public final format(Landroidx/media3/common/Format;)V
-    .registers 4
+    .locals 2
 
     .line 589
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->getAdjustedUpstreamFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
@@ -2041,19 +2041,19 @@
     .line 593
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormatChangeListener:Landroidx/media3/exoplayer/source/SampleQueue$UpstreamFormatChangedListener;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 594
     invoke-interface {v1, v0}, Landroidx/media3/exoplayer/source/SampleQueue$UpstreamFormatChangedListener;->onUpstreamFormatChanged(Landroidx/media3/common/Format;)V
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method protected getAdjustedUpstreamFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 7
+    .locals 5
 
     .line 678
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleOffsetUs:J
@@ -2062,7 +2062,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     iget-wide v0, p1, Landroidx/media3/common/Format;->subsampleOffsetUs:J
 
@@ -2070,7 +2070,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 681
     invoke-virtual {p1}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -2093,12 +2093,12 @@
 
     move-result-object p1
 
-    :cond_24
+    :cond_0
     return-object p1
 .end method
 
 .method public final getFirstIndex()I
-    .registers 2
+    .locals 1
 
     .line 310
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->absoluteFirstIndex:I
@@ -2107,35 +2107,35 @@
 .end method
 
 .method public final declared-synchronized getFirstTimestampUs()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 374
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
 
     iget v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->relativeFirstIndex:I
 
     aget-wide v0, v0, v1
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_e
+    :goto_0
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_10
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2144,21 +2144,21 @@
 .end method
 
 .method public final declared-synchronized getLargestQueuedTimestampUs()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 346
-    :try_start_1
+    :try_start_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestQueuedTimestampUs:J
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2167,12 +2167,12 @@
 .end method
 
 .method public final declared-synchronized getLargestReadTimestampUs()J
-    .registers 5
+    .locals 4
 
     monitor-enter p0
 
     .line 356
-    :try_start_1
+    :try_start_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestDiscardedTimestampUs:J
 
     iget v2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
@@ -2184,14 +2184,14 @@
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2200,7 +2200,7 @@
 .end method
 
 .method public final getReadIndex()I
-    .registers 3
+    .locals 2
 
     .line 315
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->absoluteFirstIndex:I
@@ -2213,12 +2213,12 @@
 .end method
 
 .method public final declared-synchronized getSkipCount(JZ)I
-    .registers 12
+    .locals 8
 
     monitor-enter p0
 
     .line 509
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/SampleQueue;->getRelativeIndex(I)I
@@ -2232,7 +2232,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
 
@@ -2240,26 +2240,26 @@
 
     cmp-long v0, p1, v0
 
-    if-gez v0, :cond_17
+    if-gez v0, :cond_0
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 513
-    :cond_17
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestQueuedTimestampUs:J
 
     cmp-long v0, p1, v0
 
-    if-lez v0, :cond_26
+    if-lez v0, :cond_1
 
-    if-eqz p3, :cond_26
+    if-eqz p3, :cond_1
 
     .line 514
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     iget p2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
-    :try_end_23
-    .catchall {:try_start_1 .. :try_end_23} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     sub-int/2addr p1, p2
 
@@ -2268,8 +2268,8 @@
     return p1
 
     .line 516
-    :cond_26
-    :try_start_26
+    :cond_1
+    :try_start_1
     iget p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
@@ -2286,12 +2286,12 @@
     invoke-direct/range {v1 .. v6}, Landroidx/media3/exoplayer/source/SampleQueue;->findSampleBefore(IIJZ)I
 
     move-result p1
-    :try_end_33
-    .catchall {:try_start_26 .. :try_end_33} :catchall_3c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_38
+    if-ne p1, p2, :cond_2
 
     .line 519
     monitor-exit p0
@@ -2299,19 +2299,19 @@
     return v7
 
     .line 521
-    :cond_38
+    :cond_2
     monitor-exit p0
 
     return p1
 
     .line 511
-    :cond_3a
-    :goto_3a
+    :cond_3
+    :goto_0
     monitor-exit p0
 
     return v7
 
-    :catchall_3c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2320,31 +2320,31 @@
 .end method
 
 .method public final declared-synchronized getUpstreamFormat()Landroidx/media3/common/Format;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 332
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormatRequired:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_9
+    :goto_0
     monitor-exit p0
 
     return-object v0
 
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2353,7 +2353,7 @@
 .end method
 
 .method public final getWriteIndex()I
-    .registers 3
+    .locals 2
 
     .line 257
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->absoluteFirstIndex:I
@@ -2366,7 +2366,7 @@
 .end method
 
 .method protected final invalidateUpstreamFormatAdjustment()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -2377,21 +2377,21 @@
 .end method
 
 .method public final declared-synchronized isLastSampleQueued()Z
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 369
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2400,51 +2400,51 @@
 .end method
 
 .method public declared-synchronized isReady(Z)Z
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
     .line 391
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->hasNextSample()Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_2
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
     .line 392
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->isLastSampleQueued:Z
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormat:Landroidx/media3/common/Format;
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
-    :try_end_14
-    .catchall {:try_start_1 .. :try_end_14} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     monitor-exit p0
 
     return v1
 
     .line 396
-    :cond_1a
-    :try_start_1a
+    :cond_2
+    :try_start_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sharedSampleMetadata:Landroidx/media3/exoplayer/source/SpannedData;
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->getReadIndex()I
@@ -2460,10 +2460,10 @@
     iget-object p1, p1, Landroidx/media3/exoplayer/source/SampleQueue$SharedSampleMetadata;->format:Landroidx/media3/common/Format;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->downstreamFormat:Landroidx/media3/common/Format;
-    :try_end_2a
-    .catchall {:try_start_1a .. :try_end_2a} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eq p1, v0, :cond_2e
+    if-eq p1, v0, :cond_3
 
     .line 398
     monitor-exit p0
@@ -2471,8 +2471,8 @@
     return v1
 
     .line 400
-    :cond_2e
-    :try_start_2e
+    :cond_3
+    :try_start_2
     iget p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->getRelativeIndex(I)I
@@ -2482,14 +2482,14 @@
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->mayReadSample(I)Z
 
     move-result p1
-    :try_end_38
-    .catchall {:try_start_2e .. :try_end_38} :catchall_3a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     monitor-exit p0
 
     return p1
 
-    :catchall_3a
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2498,7 +2498,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2508,7 +2508,7 @@
     .line 303
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->currentDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/DrmSession;->getState()I
 
@@ -2516,12 +2516,12 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 304
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->currentDrmSession:Landroidx/media3/exoplayer/drm/DrmSession;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/drm/DrmSession;->getError()Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -2536,18 +2536,18 @@
 
     throw v0
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final declared-synchronized peekSourceId()J
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 325
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/SampleQueue;->getRelativeIndex(I)I
@@ -2559,25 +2559,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sourceIds:[J
 
     aget-wide v0, v1, v0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamSourceId:J
-    :try_end_14
-    .catchall {:try_start_1 .. :try_end_14} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_14
+    :goto_0
     monitor-exit p0
 
     return-wide v0
 
-    :catchall_16
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2586,7 +2586,7 @@
 .end method
 
 .method public preRelease()V
-    .registers 1
+    .locals 0
 
     .line 291
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->discardToEnd()V
@@ -2598,7 +2598,7 @@
 .end method
 
 .method public read(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;IZ)I
-    .registers 14
+    .locals 9
 
     and-int/lit8 v0, p3, 0x2
 
@@ -2606,17 +2606,17 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     move v6, v2
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v6, v1
 
     .line 427
-    :goto_9
+    :goto_0
     iget-object v8, p0, Landroidx/media3/exoplayer/source/SampleQueue;->extrasHolder:Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;
 
     move-object v3, p0
@@ -2634,27 +2634,27 @@
 
     const/4 p4, -0x4
 
-    if-ne p1, p4, :cond_3d
+    if-ne p1, p4, :cond_4
 
     .line 434
     invoke-virtual {p2}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
 
     move-result p4
 
-    if-nez p4, :cond_3d
+    if-nez p4, :cond_4
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_21
+    if-eqz p4, :cond_1
 
     move v1, v2
 
-    :cond_21
+    :cond_1
     and-int/lit8 p3, p3, 0x4
 
-    if-nez p3, :cond_36
+    if-nez p3, :cond_3
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     .line 438
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -2663,19 +2663,19 @@
 
     invoke-virtual {p3, p2, p4}, Landroidx/media3/exoplayer/source/SampleDataQueue;->peekToBuffer(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;)V
 
-    goto :goto_36
+    goto :goto_1
 
     .line 440
-    :cond_2f
+    :cond_2
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
 
     iget-object p4, p0, Landroidx/media3/exoplayer/source/SampleQueue;->extrasHolder:Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;
 
     invoke-virtual {p3, p2, p4}, Landroidx/media3/exoplayer/source/SampleDataQueue;->readToBuffer(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;)V
 
-    :cond_36
-    :goto_36
-    if-nez v1, :cond_3d
+    :cond_3
+    :goto_1
+    if-nez v1, :cond_4
 
     .line 444
     iget p2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
@@ -2684,12 +2684,12 @@
 
     iput p2, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
-    :cond_3d
+    :cond_4
     return p1
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -2703,7 +2703,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -2714,7 +2714,7 @@
 .end method
 
 .method public reset(Z)V
-    .registers 6
+    .locals 4
 
     .line 211
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -2759,7 +2759,7 @@
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/SpannedData;->clear()V
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -2775,12 +2775,12 @@
     .line 226
     iput-boolean v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->allSamplesAreSyncSamples:Z
 
-    :cond_2b
+    :cond_0
     return-void
 .end method
 
 .method public final sampleData(Landroidx/media3/common/DataReader;IZI)I
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2798,7 +2798,7 @@
 .end method
 
 .method public final sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
-    .registers 4
+    .locals 0
 
     .line 608
     iget-object p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
@@ -2809,14 +2809,14 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 18
+    .locals 11
 
     move-object v8, p0
 
     .line 618
     iget-boolean v0, v8, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormatAdjustmentRequired:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 619
     iget-object v0, v8, Landroidx/media3/exoplayer/source/SampleQueue;->unadjustedUpstreamFormat:Landroidx/media3/common/Format;
@@ -2829,38 +2829,38 @@
 
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/source/SampleQueue;->format(Landroidx/media3/common/Format;)V
 
-    :cond_10
+    :cond_0
     and-int/lit8 v0, p3, 0x1
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     move v3, v2
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     move v3, v1
 
     .line 623
-    :goto_19
+    :goto_0
     iget-boolean v4, v8, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamKeyframeRequired:Z
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_3
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_2
 
     return-void
 
     .line 627
-    :cond_20
+    :cond_2
     iput-boolean v1, v8, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamKeyframeRequired:Z
 
     .line 630
-    :cond_22
+    :cond_3
     iget-wide v4, v8, Landroidx/media3/exoplayer/source/SampleQueue;->sampleOffsetUs:J
 
     add-long/2addr v4, p1
@@ -2868,24 +2868,24 @@
     .line 631
     iget-boolean v6, v8, Landroidx/media3/exoplayer/source/SampleQueue;->allSamplesAreSyncSamples:Z
 
-    if-eqz v6, :cond_52
+    if-eqz v6, :cond_6
 
     .line 632
     iget-wide v6, v8, Landroidx/media3/exoplayer/source/SampleQueue;->startTimeUs:J
 
     cmp-long v6, v4, v6
 
-    if-gez v6, :cond_30
+    if-gez v6, :cond_4
 
     return-void
 
-    :cond_30
-    if-nez v0, :cond_52
+    :cond_4
+    if-nez v0, :cond_6
 
     .line 640
     iget-boolean v0, v8, Landroidx/media3/exoplayer/source/SampleQueue;->loggedUnexpectedNonSyncSample:Z
 
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_5
 
     .line 641
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2911,46 +2911,46 @@
     .line 642
     iput-boolean v2, v8, Landroidx/media3/exoplayer/source/SampleQueue;->loggedUnexpectedNonSyncSample:Z
 
-    :cond_4e
+    :cond_5
     or-int/lit8 v0, p3, 0x1
 
     move v6, v0
 
-    goto :goto_53
+    goto :goto_1
 
-    :cond_52
+    :cond_6
     move v6, p3
 
     .line 647
-    :goto_53
+    :goto_1
     iget-boolean v0, v8, Landroidx/media3/exoplayer/source/SampleQueue;->pendingSplice:Z
 
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_9
 
-    if-eqz v3, :cond_63
+    if-eqz v3, :cond_8
 
     .line 648
     invoke-direct {p0, v4, v5}, Landroidx/media3/exoplayer/source/SampleQueue;->attemptSplice(J)Z
 
     move-result v0
 
-    if-nez v0, :cond_60
+    if-nez v0, :cond_7
 
-    goto :goto_63
+    goto :goto_2
 
     .line 651
-    :cond_60
+    :cond_7
     iput-boolean v1, v8, Landroidx/media3/exoplayer/source/SampleQueue;->pendingSplice:Z
 
-    goto :goto_64
+    goto :goto_3
 
-    :cond_63
-    :goto_63
+    :cond_8
+    :goto_2
     return-void
 
     .line 654
-    :cond_64
-    :goto_64
+    :cond_9
+    :goto_3
     iget-object v0, v8, Landroidx/media3/exoplayer/source/SampleQueue;->sampleDataQueue:Landroidx/media3/exoplayer/source/SampleDataQueue;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/SampleDataQueue;->getTotalBytesWritten()J
@@ -2988,28 +2988,28 @@
 .end method
 
 .method public final declared-synchronized seekTo(I)Z
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 457
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->rewind()V
 
     .line 458
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->absoluteFirstIndex:I
 
-    if-lt p1, v0, :cond_18
+    if-lt p1, v0, :cond_1
 
     iget v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     add-int/2addr v1, v0
 
-    if-le p1, v1, :cond_e
+    if-le p1, v1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const-wide/high16 v1, -0x8000000000000000L
 
     .line 461
@@ -3019,8 +3019,8 @@
 
     .line 462
     iput p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
-    :try_end_15
-    .catchall {:try_start_1 .. :try_end_15} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 463
     monitor-exit p0
@@ -3030,15 +3030,15 @@
     return p1
 
     .line 459
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     monitor-exit p0
 
     const/4 p1, 0x0
 
     return p1
 
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -3047,12 +3047,12 @@
 .end method
 
 .method public final declared-synchronized seekTo(JZ)Z
-    .registers 12
+    .locals 8
 
     monitor-enter p0
 
     .line 478
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->rewind()V
 
     .line 479
@@ -3069,7 +3069,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->timesUs:[J
 
@@ -3077,23 +3077,23 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_50
+    if-ltz v0, :cond_3
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->largestQueuedTimestampUs:J
 
     cmp-long v0, p1, v0
 
-    if-lez v0, :cond_22
+    if-lez v0, :cond_0
 
-    if-nez p3, :cond_22
+    if-nez p3, :cond_0
 
-    goto :goto_50
+    goto :goto_1
 
     .line 486
-    :cond_22
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->allSamplesAreSyncSamples:Z
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     .line 487
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
@@ -3112,10 +3112,10 @@
 
     move-result p3
 
-    goto :goto_41
+    goto :goto_0
 
     .line 489
-    :cond_34
+    :cond_1
     iget p3, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
@@ -3131,13 +3131,13 @@
     invoke-direct/range {v1 .. v6}, Landroidx/media3/exoplayer/source/SampleQueue;->findSampleBefore(IIJZ)I
 
     move-result p3
-    :try_end_41
-    .catchall {:try_start_1 .. :try_end_41} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_41
+    :goto_0
     const/4 v0, -0x1
 
-    if-ne p3, v0, :cond_46
+    if-ne p3, v0, :cond_2
 
     .line 492
     monitor-exit p0
@@ -3145,8 +3145,8 @@
     return v7
 
     .line 494
-    :cond_46
-    :try_start_46
+    :cond_2
+    :try_start_1
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->startTimeUs:J
 
     .line 495
@@ -3155,8 +3155,8 @@
     add-int/2addr p1, p3
 
     iput p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
-    :try_end_4d
-    .catchall {:try_start_46 .. :try_end_4d} :catchall_52
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 496
     monitor-exit p0
@@ -3166,13 +3166,13 @@
     return p1
 
     .line 483
-    :cond_50
-    :goto_50
+    :cond_3
+    :goto_1
     monitor-exit p0
 
     return v7
 
-    :catchall_52
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -3181,14 +3181,14 @@
 .end method
 
 .method public final setSampleOffsetUs(J)V
-    .registers 5
+    .locals 2
 
     .line 569
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleOffsetUs:J
 
     cmp-long v0, v0, p1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 570
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->sampleOffsetUs:J
@@ -3196,12 +3196,12 @@
     .line 571
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/SampleQueue;->invalidateUpstreamFormatAdjustment()V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public final setStartTimeUs(J)V
-    .registers 3
+    .locals 0
 
     .line 238
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->startTimeUs:J
@@ -3210,7 +3210,7 @@
 .end method
 
 .method public final setUpstreamFormatChangeListener(Landroidx/media3/exoplayer/source/SampleQueue$UpstreamFormatChangedListener;)V
-    .registers 2
+    .locals 0
 
     .line 582
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamFormatChangeListener:Landroidx/media3/exoplayer/source/SampleQueue$UpstreamFormatChangedListener;
@@ -3219,35 +3219,35 @@
 .end method
 
 .method public final declared-synchronized skip(I)V
-    .registers 4
+    .locals 2
 
     monitor-enter p0
 
-    if-ltz p1, :cond_e
+    if-ltz p1, :cond_0
 
     .line 531
-    :try_start_3
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
 
     add-int/2addr v0, p1
 
     iget v1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->length:I
 
-    if-gt v0, v1, :cond_e
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 532
@@ -3256,22 +3256,22 @@
     add-int/2addr v0, p1
 
     iput v0, p0, Landroidx/media3/exoplayer/source/SampleQueue;->readPosition:I
-    :try_end_17
-    .catchall {:try_start_3 .. :try_end_17} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 533
     monitor-exit p0
 
     return-void
 
-    :goto_19
+    :goto_1
     monitor-exit p0
 
     throw p1
 .end method
 
 .method public final sourceId(J)V
-    .registers 3
+    .locals 0
 
     .line 247
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/SampleQueue;->upstreamSourceId:J
@@ -3280,7 +3280,7 @@
 .end method
 
 .method public final splice()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/camera/video/Recorder;Landroidx/camera/video/Recorder$RecordingRecord;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final attachCompleter(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/camera/video/Recorder$$ExternalSyntheticLambda5;->f$0:Landroidx/camera/video/Recorder;
 

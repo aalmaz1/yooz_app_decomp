@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/List;IIIIIIIIFILjava/lang/String;)V
-    .registers 13
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,7 +96,7 @@
 .end method
 
 .method public static parse(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/HevcConfig;
-    .registers 34
+    .locals 33
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -108,7 +108,7 @@
     const/16 v1, 0x15
 
     .line 43
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 44
@@ -132,10 +132,10 @@
 
     const/4 v6, 0x0
 
-    :goto_17
+    :goto_0
     const/4 v7, 0x1
 
-    if-ge v5, v2, :cond_34
+    if-ge v5, v2, :cond_1
 
     .line 51
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
@@ -147,8 +147,8 @@
 
     const/4 v8, 0x0
 
-    :goto_22
-    if-ge v8, v7, :cond_31
+    :goto_1
+    if-ge v8, v7, :cond_0
 
     .line 54
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
@@ -164,15 +164,15 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_31
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 61
-    :cond_34
+    :cond_1
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 62
@@ -208,8 +208,8 @@
 
     const/4 v8, 0x0
 
-    :goto_50
-    if-ge v5, v2, :cond_f6
+    :goto_2
+    if-ge v5, v2, :cond_4
 
     .line 76
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -225,8 +225,8 @@
 
     const/4 v11, 0x0
 
-    :goto_5d
-    if-ge v11, v10, :cond_ef
+    :goto_3
+    if-ge v11, v10, :cond_3
 
     .line 79
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
@@ -267,9 +267,9 @@
 
     const/16 v4, 0x21
 
-    if-ne v9, v4, :cond_dc
+    if-ne v9, v4, :cond_2
 
-    if-nez v11, :cond_dc
+    if-nez v11, :cond_2
 
     add-int v4, v8, v12
 
@@ -371,14 +371,14 @@
 
     move/from16 v19, v32
 
-    goto :goto_e0
+    goto :goto_4
 
-    :cond_dc
+    :cond_2
     move/from16 v30, v9
 
     move/from16 v31, v10
 
-    :goto_e0
+    :goto_4
     add-int/2addr v8, v12
 
     .line 113
@@ -394,33 +394,33 @@
 
     const/4 v7, 0x1
 
-    goto/16 :goto_5d
+    goto/16 :goto_3
 
-    :cond_ef
+    :cond_3
     move/from16 v23, v2
 
     add-int/lit8 v5, v5, 0x1
 
     const/4 v7, 0x1
 
-    goto/16 :goto_50
+    goto/16 :goto_2
 
-    :cond_f6
-    if-nez v6, :cond_fd
+    :cond_4
+    if-nez v6, :cond_5
 
     .line 118
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    goto :goto_101
+    goto :goto_5
 
-    :cond_fd
+    :cond_5
     invoke-static {v3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    :goto_101
+    :goto_5
     move-object v11, v0
 
     .line 119
@@ -433,12 +433,12 @@
     move-object v10, v0
 
     invoke-direct/range {v10 .. v22}, Landroidx/media3/extractor/HevcConfig;-><init>(Ljava/util/List;IIIIIIIIFILjava/lang/String;)V
-    :try_end_10b
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_4 .. :try_end_10b} :catch_10c
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_10c
+    :catch_0
     move-exception v0
 
     const-string v1, "Error parsing HEVC config"

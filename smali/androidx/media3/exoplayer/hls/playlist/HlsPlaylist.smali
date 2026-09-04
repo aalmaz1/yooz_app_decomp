@@ -35,7 +35,7 @@
 
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;Ljava/util/List;Z)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

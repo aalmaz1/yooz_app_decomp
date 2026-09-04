@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 110
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/TextFormatEscaper$1;->val$input:Landroidx/datastore/preferences/protobuf/ByteString;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public byteAt(I)B
-    .registers 3
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/TextFormatEscaper$1;->val$input:Landroidx/datastore/preferences/protobuf/ByteString;
@@ -49,7 +49,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/TextFormatEscaper$1;->val$input:Landroidx/datastore/preferences/protobuf/ByteString;

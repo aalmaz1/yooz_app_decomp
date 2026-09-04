@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;)V
-    .registers 2
+    .locals 0
 
     .line 177
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$1;->this$0:Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public compare(Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$WavePoint;Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$WavePoint;)I
-    .registers 3
+    .locals 0
 
     .line 180
     iget p1, p1, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$WavePoint;->mPosition:I
@@ -60,7 +60,7 @@
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 177
     check-cast p1, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$WavePoint;

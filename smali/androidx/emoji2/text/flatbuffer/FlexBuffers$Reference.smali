@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 226
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;III)V
-    .registers 13
+    .locals 8
 
     and-int/lit8 v0, p4, 0x3
 
@@ -78,7 +78,7 @@
 .end method
 
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/ReadBuf;IIII)V
-    .registers 6
+    .locals 0
 
     .line 237
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 .end method
 
 .method static synthetic access$600()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;
-    .registers 1
+    .locals 1
 
     .line 224
     sget-object v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->NULL_REFERENCE:Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;
@@ -113,25 +113,25 @@
 
 # virtual methods
 .method public asBlob()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;
-    .registers 5
+    .locals 4
 
     .line 546
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isBlob()Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isString()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
     .line 549
-    :cond_d
+    :cond_0
     invoke-static {}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;->empty()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;
 
     move-result-object v0
@@ -139,8 +139,8 @@
     return-object v0
 
     .line 547
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;
 
     iget-object v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -161,7 +161,7 @@
 .end method
 
 .method public asBoolean()Z
-    .registers 8
+    .locals 7
 
     .line 559
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isBoolean()Z
@@ -172,7 +172,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 560
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -183,18 +183,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v1, v2
 
-    :goto_14
+    :goto_0
     return v1
 
     .line 562
-    :cond_15
+    :cond_1
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asUInt()J
 
     move-result-wide v3
@@ -203,26 +203,26 @@
 
     cmp-long v0, v3, v5
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_2
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_2
     move v1, v2
 
-    :goto_21
+    :goto_1
     return v1
 .end method
 
 .method public asFloat()D
-    .registers 4
+    .locals 3
 
     .line 457
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     .line 459
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -237,45 +237,45 @@
 
     return-wide v0
 
-    :cond_10
+    :cond_0
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_82
+    if-eq v0, v1, :cond_7
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_76
+    if-eq v0, v1, :cond_6
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_6d
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x6
 
-    if-eq v0, v1, :cond_5b
+    if-eq v0, v1, :cond_4
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_49
+    if-eq v0, v1, :cond_3
 
     const/16 v1, 0x8
 
-    if-eq v0, v1, :cond_38
+    if-eq v0, v1, :cond_2
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_1
 
     const/16 v1, 0x1a
 
-    if-eq v0, v1, :cond_76
+    if-eq v0, v1, :cond_6
 
     const-wide/16 v0, 0x0
 
     return-wide v0
 
     .line 471
-    :cond_2e
+    :cond_1
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -289,7 +289,7 @@
     return-wide v0
 
     .line 462
-    :cond_38
+    :cond_2
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -309,7 +309,7 @@
     return-wide v0
 
     .line 468
-    :cond_49
+    :cond_3
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -331,7 +331,7 @@
     return-wide v0
 
     .line 467
-    :cond_5b
+    :cond_4
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -353,7 +353,7 @@
     return-wide v0
 
     .line 470
-    :cond_6d
+    :cond_5
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asString()Ljava/lang/String;
 
     move-result-object v0
@@ -365,7 +365,7 @@
     return-wide v0
 
     .line 466
-    :cond_76
+    :cond_6
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -381,7 +381,7 @@
     return-wide v0
 
     .line 463
-    :cond_82
+    :cond_7
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -398,14 +398,14 @@
 .end method
 
 .method public asInt()I
-    .registers 4
+    .locals 3
 
     .line 366
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     .line 368
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -420,45 +420,45 @@
 
     return v0
 
-    :cond_10
+    :cond_0
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_8b
+    if-eq v0, v1, :cond_8
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_7f
+    if-eq v0, v1, :cond_7
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_76
+    if-eq v0, v1, :cond_6
 
     const/4 v1, 0x6
 
-    if-eq v0, v1, :cond_65
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_53
+    if-eq v0, v1, :cond_4
 
     const/16 v1, 0x8
 
-    if-eq v0, v1, :cond_41
+    if-eq v0, v1, :cond_3
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_38
+    if-eq v0, v1, :cond_2
 
     const/16 v1, 0x1a
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_1
 
     const/4 v0, 0x0
 
     return v0
 
     .line 379
-    :cond_2d
+    :cond_1
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -472,7 +472,7 @@
     return v0
 
     .line 378
-    :cond_38
+    :cond_2
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -484,7 +484,7 @@
     return v0
 
     .line 375
-    :cond_41
+    :cond_3
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -506,7 +506,7 @@
     return v0
 
     .line 373
-    :cond_53
+    :cond_4
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -528,7 +528,7 @@
     return v0
 
     .line 371
-    :cond_65
+    :cond_5
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -548,7 +548,7 @@
     return v0
 
     .line 377
-    :cond_76
+    :cond_6
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asString()Ljava/lang/String;
 
     move-result-object v0
@@ -560,7 +560,7 @@
     return v0
 
     .line 374
-    :cond_7f
+    :cond_7
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -576,7 +576,7 @@
     return v0
 
     .line 372
-    :cond_8b
+    :cond_8
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -593,14 +593,14 @@
 .end method
 
 .method public asKey()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;
-    .registers 5
+    .locals 4
 
     .line 483
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isKey()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 484
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;
@@ -622,7 +622,7 @@
     return-object v0
 
     .line 486
-    :cond_18
+    :cond_0
     invoke-static {}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;->empty()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;
 
     move-result-object v0
@@ -631,14 +631,14 @@
 .end method
 
 .method public asLong()J
-    .registers 5
+    .locals 4
 
     .line 424
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     .line 426
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -653,45 +653,45 @@
 
     return-wide v0
 
-    :cond_10
+    :cond_0
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_8e
+    if-eq v0, v1, :cond_8
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_82
+    if-eq v0, v1, :cond_7
 
     const/4 v1, 0x5
 
     const-wide/16 v2, 0x0
 
-    if-eq v0, v1, :cond_78
+    if-eq v0, v1, :cond_6
 
     const/4 v1, 0x6
 
-    if-eq v0, v1, :cond_67
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_56
+    if-eq v0, v1, :cond_4
 
     const/16 v1, 0x8
 
-    if-eq v0, v1, :cond_44
+    if-eq v0, v1, :cond_3
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_3a
+    if-eq v0, v1, :cond_2
 
     const/16 v1, 0x1a
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_1
 
     return-wide v2
 
     .line 443
-    :cond_2e
+    :cond_1
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -707,7 +707,7 @@
     return-wide v0
 
     .line 442
-    :cond_3a
+    :cond_2
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -721,7 +721,7 @@
     return-wide v0
 
     .line 433
-    :cond_44
+    :cond_3
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -743,7 +743,7 @@
     return-wide v0
 
     .line 431
-    :cond_56
+    :cond_4
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -763,7 +763,7 @@
     return-wide v0
 
     .line 429
-    :cond_67
+    :cond_5
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -783,8 +783,8 @@
     return-wide v0
 
     .line 437
-    :cond_78
-    :try_start_78
+    :cond_6
+    :try_start_0
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asString()Ljava/lang/String;
 
     move-result-object v0
@@ -792,16 +792,16 @@
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v0
-    :try_end_80
-    .catch Ljava/lang/NumberFormatException; {:try_start_78 .. :try_end_80} :catch_81
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-wide v0
 
-    :catch_81
+    :catch_0
     return-wide v2
 
     .line 432
-    :cond_82
+    :cond_7
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -817,7 +817,7 @@
     return-wide v0
 
     .line 430
-    :cond_8e
+    :cond_8
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -832,14 +832,14 @@
 .end method
 
 .method public asMap()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Map;
-    .registers 5
+    .locals 4
 
     .line 517
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isMap()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 518
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Map;
@@ -861,7 +861,7 @@
     return-object v0
 
     .line 520
-    :cond_18
+    :cond_0
     invoke-static {}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Map;->empty()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Map;
 
     move-result-object v0
@@ -870,14 +870,14 @@
 .end method
 
 .method public asString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 495
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isString()Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 496
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -913,12 +913,12 @@
     return-object v0
 
     .line 500
-    :cond_22
+    :cond_0
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isKey()Z
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     .line 501
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -934,14 +934,14 @@
     move v1, v0
 
     .line 503
-    :goto_33
+    :goto_0
     iget-object v2, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     invoke-interface {v2, v1}, Landroidx/emoji2/text/flatbuffer/ReadBuf;->get(I)B
 
     move-result v2
 
-    if-nez v2, :cond_43
+    if-nez v2, :cond_1
 
     .line 504
     iget-object v2, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -954,26 +954,26 @@
 
     return-object v0
 
-    :cond_43
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_46
+    :cond_2
     const-string v0, ""
 
     return-object v0
 .end method
 
 .method public asUInt()J
-    .registers 4
+    .locals 3
 
     .line 395
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     .line 397
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
@@ -988,45 +988,45 @@
 
     return-wide v0
 
-    :cond_10
+    :cond_0
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_8d
+    if-eq v0, v1, :cond_8
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_81
+    if-eq v0, v1, :cond_7
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_77
+    if-eq v0, v1, :cond_6
 
     const/16 v1, 0x1a
 
-    if-eq v0, v1, :cond_6b
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_62
+    if-eq v0, v1, :cond_4
 
     const/4 v1, 0x6
 
-    if-eq v0, v1, :cond_51
+    if-eq v0, v1, :cond_3
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_40
+    if-eq v0, v1, :cond_2
 
     const/16 v1, 0x8
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_1
 
     const-wide/16 v0, 0x0
 
     return-wide v0
 
     .line 404
-    :cond_2e
+    :cond_1
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -1048,7 +1048,7 @@
     return-wide v0
 
     .line 400
-    :cond_40
+    :cond_2
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -1068,7 +1068,7 @@
     return-wide v0
 
     .line 402
-    :cond_51
+    :cond_3
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -1088,7 +1088,7 @@
     return-wide v0
 
     .line 406
-    :cond_62
+    :cond_4
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asString()Ljava/lang/String;
 
     move-result-object v0
@@ -1100,7 +1100,7 @@
     return-wide v0
 
     .line 408
-    :cond_6b
+    :cond_5
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -1116,7 +1116,7 @@
     return-wide v0
 
     .line 407
-    :cond_77
+    :cond_6
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -1130,7 +1130,7 @@
     return-wide v0
 
     .line 403
-    :cond_81
+    :cond_7
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -1146,7 +1146,7 @@
     return-wide v0
 
     .line 401
-    :cond_8d
+    :cond_8
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->bb:Landroidx/emoji2/text/flatbuffer/ReadBuf;
 
     iget v1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->end:I
@@ -1161,14 +1161,14 @@
 .end method
 
 .method public asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
-    .registers 6
+    .locals 5
 
     .line 529
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isVector()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 530
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
@@ -1190,12 +1190,12 @@
     return-object v0
 
     .line 531
-    :cond_18
+    :cond_0
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/16 v1, 0xf
 
-    if-ne v0, v1, :cond_31
+    if-ne v0, v1, :cond_1
 
     .line 533
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;
@@ -1219,12 +1219,12 @@
     return-object v0
 
     .line 534
-    :cond_31
+    :cond_1
     invoke-static {v0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->isTypedVector(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_2
 
     .line 535
     new-instance v0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$TypedVector;
@@ -1252,7 +1252,7 @@
     return-object v0
 
     .line 537
-    :cond_4f
+    :cond_2
     invoke-static {}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;->empty()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -1261,7 +1261,7 @@
 .end method
 
 .method public getType()I
-    .registers 2
+    .locals 1
 
     .line 250
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
@@ -1270,246 +1270,246 @@
 .end method
 
 .method public isBlob()Z
-    .registers 3
+    .locals 2
 
     .line 354
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/16 v1, 0x19
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isBoolean()Z
-    .registers 3
+    .locals 2
 
     .line 266
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/16 v1, 0x1a
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isFloat()Z
-    .registers 3
+    .locals 2
 
     .line 290
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_1
 
     const/16 v1, 0x8
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_d
+    goto :goto_1
 
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_d
+    :goto_1
     return v0
 .end method
 
 .method public isInt()Z
-    .registers 4
+    .locals 3
 
     .line 298
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_1
 
     const/4 v2, 0x6
 
-    if-ne v0, v2, :cond_9
+    if-ne v0, v2, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method public isIntOrUInt()Z
-    .registers 2
+    .locals 1
 
     .line 282
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isInt()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isUInt()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method
 
 .method public isKey()Z
-    .registers 3
+    .locals 2
 
     .line 322
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public isMap()Z
-    .registers 3
+    .locals 2
 
     .line 346
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/16 v1, 0x9
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isNull()Z
-    .registers 2
+    .locals 1
 
     .line 258
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public isNumeric()Z
-    .registers 2
+    .locals 1
 
     .line 274
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isIntOrUInt()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->isFloat()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method
 
 .method public isString()Z
-    .registers 3
+    .locals 2
 
     .line 314
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public isTypedVector()Z
-    .registers 2
+    .locals 1
 
     .line 338
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
@@ -1522,65 +1522,65 @@
 .end method
 
 .method public isUInt()Z
-    .registers 3
+    .locals 2
 
     .line 306
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x7
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_c
+    :goto_1
     return v0
 .end method
 
 .method public isVector()Z
-    .registers 3
+    .locals 2
 
     .line 330
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_d
+    if-eq v0, v1, :cond_1
 
     const/16 v1, 0x9
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 571
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1601,23 +1601,23 @@
 .end method
 
 .method toString(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
-    .registers 4
+    .locals 2
 
     .line 580
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->type:I
 
     const/16 v1, 0x24
 
-    if-eq v0, v1, :cond_8b
+    if-eq v0, v1, :cond_0
 
     const/16 v1, 0x22
 
-    packed-switch v0, :pswitch_data_94
+    packed-switch v0, :pswitch_data_0
 
     return-object p1
 
     .line 603
-    :pswitch_c
+    :pswitch_0
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asBoolean()Z
 
     move-result v0
@@ -1629,7 +1629,7 @@
     return-object p1
 
     .line 601
-    :pswitch_15
+    :pswitch_1
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asBlob()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Blob;
 
     move-result-object v0
@@ -1641,7 +1641,7 @@
     return-object p1
 
     .line 621
-    :pswitch_1e
+    :pswitch_2
     new-instance p1, Landroidx/emoji2/text/flatbuffer/FlexBuffers$FlexBufferException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1665,7 +1665,7 @@
     throw p1
 
     .line 599
-    :pswitch_35
+    :pswitch_3
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -1677,7 +1677,7 @@
     return-object p1
 
     .line 597
-    :pswitch_3e
+    :pswitch_4
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asMap()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Map;
 
     move-result-object v0
@@ -1689,7 +1689,7 @@
     return-object p1
 
     .line 595
-    :pswitch_47
+    :pswitch_5
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -1709,7 +1709,7 @@
     return-object p1
 
     .line 593
-    :pswitch_58
+    :pswitch_6
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asKey()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Key;
 
     move-result-object v0
@@ -1729,7 +1729,7 @@
     return-object p1
 
     .line 591
-    :pswitch_69
+    :pswitch_7
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asFloat()D
 
     move-result-wide v0
@@ -1741,7 +1741,7 @@
     return-object p1
 
     .line 588
-    :pswitch_72
+    :pswitch_8
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asUInt()J
 
     move-result-wide v0
@@ -1753,7 +1753,7 @@
     return-object p1
 
     .line 585
-    :pswitch_7b
+    :pswitch_9
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asLong()J
 
     move-result-wide v0
@@ -1764,7 +1764,7 @@
 
     return-object p1
 
-    :pswitch_84
+    :pswitch_a
     const-string v0, "null"
 
     .line 582
@@ -1775,8 +1775,8 @@
     return-object p1
 
     .line 610
-    :cond_8b
-    :pswitch_8b
+    :cond_0
+    :pswitch_b
     invoke-virtual {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers$Reference;->asVector()Landroidx/emoji2/text/flatbuffer/FlexBuffers$Vector;
 
     move-result-object v0
@@ -1787,34 +1787,34 @@
 
     return-object p1
 
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_84
-        :pswitch_7b
-        :pswitch_72
-        :pswitch_69
-        :pswitch_58
-        :pswitch_47
-        :pswitch_7b
-        :pswitch_72
-        :pswitch_69
-        :pswitch_3e
-        :pswitch_35
-        :pswitch_8b
-        :pswitch_8b
-        :pswitch_8b
-        :pswitch_8b
-        :pswitch_8b
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_1e
-        :pswitch_15
-        :pswitch_c
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_4
+        :pswitch_3
+        :pswitch_b
+        :pswitch_b
+        :pswitch_b
+        :pswitch_b
+        :pswitch_b
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

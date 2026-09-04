@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ZLandroidx/media3/exoplayer/source/ShuffleOrder;)V
-    .registers 3
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Landroidx/media3/common/Timeline;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getChildPeriodUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 53
     check-cast p0, Landroid/util/Pair;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static getChildTimelineUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 42
     check-cast p0, Landroid/util/Pair;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static getConcatenatedUid(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 64
     invoke-static {p0, p1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
@@ -68,9 +68,9 @@
 .end method
 
 .method private getNextChildIndex(IZ)I
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 321
     iget-object p2, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -79,31 +79,31 @@
 
     move-result p1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 322
-    :cond_9
+    :cond_0
     iget p2, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->childCount:I
 
     add-int/lit8 p2, p2, -0x1
 
-    if-ge p1, p2, :cond_12
+    if-ge p1, p2, :cond_1
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     const/4 p1, -0x1
 
-    :goto_13
+    :goto_0
     return p1
 .end method
 
 .method private getPreviousChildIndex(IZ)I
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 327
     iget-object p2, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -112,19 +112,19 @@
 
     move-result p1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_9
-    if-lez p1, :cond_e
+    :cond_0
+    if-lez p1, :cond_1
 
     add-int/lit8 p1, p1, -0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_1
     const/4 p1, -0x1
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
@@ -146,29 +146,29 @@
 .end method
 
 .method public getFirstWindowIndex(Z)I
-    .registers 5
+    .locals 3
 
     .line 177
     iget v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->childCount:I
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 180
-    :cond_6
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->isAtomic:Z
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_1
 
     move p1, v2
 
-    :cond_c
-    if-eqz p1, :cond_14
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 184
     iget-object v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -178,7 +178,7 @@
     move-result v2
 
     .line 185
-    :cond_14
+    :cond_2
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
 
     move-result-object v0
@@ -187,19 +187,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_3
 
     .line 186
     invoke-direct {p0, v2, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getNextChildIndex(IZ)I
 
     move-result v2
 
-    if-ne v2, v1, :cond_14
+    if-ne v2, v1, :cond_2
 
     return v1
 
     .line 192
-    :cond_25
+    :cond_3
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getFirstWindowIndexByChildIndex(I)I
 
     move-result v0
@@ -222,19 +222,19 @@
 .end method
 
 .method public final getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 5
+    .locals 3
 
     .line 244
     instance-of v0, p1, Landroid/util/Pair;
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 247
-    :cond_6
+    :cond_0
     invoke-static {p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildTimelineUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -249,12 +249,12 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_1
 
     return v1
 
     .line 253
-    :cond_15
+    :cond_1
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
 
     move-result-object v2
@@ -263,44 +263,44 @@
 
     move-result p1
 
-    if-ne p1, v1, :cond_20
+    if-ne p1, v1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
     .line 256
-    :cond_20
+    :cond_2
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getFirstPeriodIndexByChildIndex(I)I
 
     move-result v0
 
     add-int v1, v0, p1
 
-    :goto_26
+    :goto_0
     return v1
 .end method
 
 .method public getLastWindowIndex(Z)I
-    .registers 5
+    .locals 3
 
     .line 156
     iget v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->childCount:I
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 159
-    :cond_6
+    :cond_0
     iget-boolean v2, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->isAtomic:Z
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_1
 
     const/4 p1, 0x0
 
-    :cond_b
-    if-eqz p1, :cond_14
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 163
     iget-object v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->shuffleOrder:Landroidx/media3/exoplayer/source/ShuffleOrder;
@@ -309,14 +309,14 @@
 
     move-result v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_2
     add-int/lit8 v0, v0, -0x1
 
     .line 164
-    :cond_16
-    :goto_16
+    :cond_3
+    :goto_0
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
 
     move-result-object v2
@@ -325,19 +325,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_4
 
     .line 165
     invoke-direct {p0, v0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getPreviousChildIndex(IZ)I
 
     move-result v0
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_3
 
     return v1
 
     .line 171
-    :cond_27
+    :cond_4
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getFirstWindowIndexByChildIndex(I)I
 
     move-result v1
@@ -357,7 +357,7 @@
 .end method
 
 .method public getNextWindowIndex(IIZ)I
-    .registers 9
+    .locals 5
 
     .line 84
     iget-boolean v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->isAtomic:Z
@@ -366,19 +366,19 @@
 
     const/4 v2, 0x2
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_1
 
     const/4 p3, 0x1
 
-    if-ne p2, p3, :cond_a
+    if-ne p2, p3, :cond_0
 
     move p2, v2
 
-    :cond_a
+    :cond_0
     move p3, v1
 
     .line 90
-    :cond_b
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildIndexByWindowIndex(I)I
 
     move-result v0
@@ -395,35 +395,35 @@
 
     sub-int/2addr p1, v3
 
-    if-ne p2, v2, :cond_1b
+    if-ne p2, v2, :cond_2
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     move v1, p2
 
     .line 94
-    :goto_1c
+    :goto_0
     invoke-virtual {v4, p1, v1, p3}, Landroidx/media3/common/Timeline;->getNextWindowIndex(IIZ)I
 
     move-result p1
 
     const/4 v1, -0x1
 
-    if-eq p1, v1, :cond_25
+    if-eq p1, v1, :cond_3
 
     add-int/2addr v3, p1
 
     return v3
 
     .line 102
-    :cond_25
+    :cond_3
     invoke-direct {p0, v0, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getNextChildIndex(IZ)I
 
     move-result p1
 
-    :goto_29
-    if-eq p1, v1, :cond_3a
+    :goto_1
+    if-eq p1, v1, :cond_4
 
     .line 103
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
@@ -434,17 +434,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_4
 
     .line 104
     invoke-direct {p0, p1, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getNextChildIndex(IZ)I
 
     move-result p1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_3a
-    if-eq p1, v1, :cond_4a
+    :cond_4
+    if-eq p1, v1, :cond_5
 
     .line 107
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getFirstWindowIndexByChildIndex(I)I
@@ -464,8 +464,8 @@
 
     return p2
 
-    :cond_4a
-    if-ne p2, v2, :cond_51
+    :cond_5
+    if-ne p2, v2, :cond_6
 
     .line 112
     invoke-virtual {p0, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getFirstWindowIndex(Z)I
@@ -474,12 +474,12 @@
 
     return p1
 
-    :cond_51
+    :cond_6
     return v1
 .end method
 
 .method public final getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 8
+    .locals 4
 
     .line 228
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildIndexByPeriodIndex(I)I
@@ -513,7 +513,7 @@
 
     iput p1, p2, Landroidx/media3/common/Timeline$Period;->windowIndex:I
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_0
 
     .line 237
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildUidByChildIndex(I)Ljava/lang/Object;
@@ -533,12 +533,12 @@
 
     iput-object p1, p2, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
 
-    :cond_2b
+    :cond_0
     return-object p2
 .end method
 
 .method public final getPeriodByUid(Ljava/lang/Object;Landroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 6
+    .locals 3
 
     .line 216
     invoke-static {p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildTimelineUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
@@ -581,7 +581,7 @@
 .end method
 
 .method public getPreviousWindowIndex(IIZ)I
-    .registers 9
+    .locals 5
 
     .line 120
     iget-boolean v0, p0, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->isAtomic:Z
@@ -590,19 +590,19 @@
 
     const/4 v2, 0x2
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_1
 
     const/4 p3, 0x1
 
-    if-ne p2, p3, :cond_a
+    if-ne p2, p3, :cond_0
 
     move p2, v2
 
-    :cond_a
+    :cond_0
     move p3, v1
 
     .line 126
-    :cond_b
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildIndexByWindowIndex(I)I
 
     move-result v0
@@ -619,35 +619,35 @@
 
     sub-int/2addr p1, v3
 
-    if-ne p2, v2, :cond_1b
+    if-ne p2, v2, :cond_2
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     move v1, p2
 
     .line 130
-    :goto_1c
+    :goto_0
     invoke-virtual {v4, p1, v1, p3}, Landroidx/media3/common/Timeline;->getPreviousWindowIndex(IIZ)I
 
     move-result p1
 
     const/4 v1, -0x1
 
-    if-eq p1, v1, :cond_25
+    if-eq p1, v1, :cond_3
 
     add-int/2addr v3, p1
 
     return v3
 
     .line 138
-    :cond_25
+    :cond_3
     invoke-direct {p0, v0, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getPreviousChildIndex(IZ)I
 
     move-result p1
 
-    :goto_29
-    if-eq p1, v1, :cond_3a
+    :goto_1
+    if-eq p1, v1, :cond_4
 
     .line 140
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
@@ -658,17 +658,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_4
 
     .line 141
     invoke-direct {p0, p1, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getPreviousChildIndex(IZ)I
 
     move-result p1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_3a
-    if-eq p1, v1, :cond_4a
+    :cond_4
+    if-eq p1, v1, :cond_5
 
     .line 144
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getFirstWindowIndexByChildIndex(I)I
@@ -688,8 +688,8 @@
 
     return p2
 
-    :cond_4a
-    if-ne p2, v2, :cond_51
+    :cond_5
+    if-ne p2, v2, :cond_6
 
     .line 149
     invoke-virtual {p0, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getLastWindowIndex(Z)I
@@ -698,7 +698,7 @@
 
     return p1
 
-    :cond_51
+    :cond_6
     return v1
 .end method
 
@@ -706,7 +706,7 @@
 .end method
 
 .method public final getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     .line 261
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildIndexByPeriodIndex(I)I
@@ -742,7 +742,7 @@
 .end method
 
 .method public final getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 9
+    .locals 4
 
     .line 198
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getChildIndexByWindowIndex(I)I
@@ -783,19 +783,19 @@
 
     move-result p3
 
-    if-eqz p3, :cond_23
+    if-eqz p3, :cond_0
 
-    goto :goto_29
+    goto :goto_0
 
     .line 208
-    :cond_23
+    :cond_0
     iget-object p3, p2, Landroidx/media3/common/Timeline$Window;->uid:Ljava/lang/Object;
 
     invoke-static {p1, p3}, Landroidx/media3/exoplayer/AbstractConcatenatedTimeline;->getConcatenatedUid(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    :goto_29
+    :goto_0
     iput-object p1, p2, Landroidx/media3/common/Timeline$Window;->uid:Ljava/lang/Object;
 
     .line 209

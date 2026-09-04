@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,12 +14,12 @@
 .end method
 
 .method public static getCaptureFailure(Landroidx/camera/core/impl/CameraCaptureFailure;)Landroid/hardware/camera2/CaptureFailure;
-    .registers 2
+    .locals 1
 
     .line 57
     instance-of v0, p0, Landroidx/camera/camera2/internal/Camera2CameraCaptureFailure;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 58
     check-cast p0, Landroidx/camera/camera2/internal/Camera2CameraCaptureFailure;
@@ -30,19 +30,19 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static getCaptureResult(Landroidx/camera/core/impl/CameraCaptureResult;)Landroid/hardware/camera2/CaptureResult;
-    .registers 2
+    .locals 1
 
     .line 42
     instance-of v0, p0, Landroidx/camera/camera2/internal/Camera2CameraCaptureResult;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 43
     check-cast p0, Landroidx/camera/camera2/internal/Camera2CameraCaptureResult;
@@ -53,7 +53,7 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0

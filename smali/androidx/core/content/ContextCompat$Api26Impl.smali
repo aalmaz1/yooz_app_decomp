@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,13 +25,13 @@
 .end method
 
 .method static registerReceiver(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
-    .registers 12
+    .locals 6
 
     and-int/lit8 v0, p5, 0x4
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    if-nez p3, :cond_f
+    if-nez p3, :cond_0
 
     .line 1117
     invoke-static {p0}, Landroidx/core/content/ContextCompat;->obtainAndCheckReceiverPermission(Landroid/content/Context;)Ljava/lang/String;
@@ -45,7 +45,7 @@
 
     return-object p0
 
-    :cond_f
+    :cond_0
     and-int/lit8 v5, p5, 0x1
 
     move-object v0, p0
@@ -67,7 +67,7 @@
 .end method
 
 .method static startForegroundService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
-    .registers 2
+    .locals 0
 
     .line 1128
     invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;

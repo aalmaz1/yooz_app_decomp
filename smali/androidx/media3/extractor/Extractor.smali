@@ -21,7 +21,7 @@
 
 # virtual methods
 .method public getSniffFailureDetails()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -40,7 +40,7 @@
 .end method
 
 .method public getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
-    .registers 1
+    .locals 0
     .annotation runtime Lorg/checkerframework/dataflow/qual/SideEffectFree;
     .end annotation
 

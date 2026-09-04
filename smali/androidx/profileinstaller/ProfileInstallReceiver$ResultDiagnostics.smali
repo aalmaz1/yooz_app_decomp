@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/profileinstaller/ProfileInstallReceiver;)V
-    .registers 2
+    .locals 0
 
     .line 157
     iput-object p1, p0, Landroidx/profileinstaller/ProfileInstallReceiver$ResultDiagnostics;->this$0:Landroidx/profileinstaller/ProfileInstallReceiver;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onDiagnosticReceived(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 160
     sget-object v0, Landroidx/profileinstaller/ProfileInstaller;->LOG_DIAGNOSTICS:Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;
@@ -47,7 +47,7 @@
 .end method
 
 .method public onResultReceived(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 165
     sget-object v0, Landroidx/profileinstaller/ProfileInstaller;->LOG_DIAGNOSTICS:Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;

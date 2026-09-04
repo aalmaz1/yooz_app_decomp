@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/customtabs/CustomTabsCallback;Landroid/app/PendingIntent;)V
-    .registers 3
+    .locals 0
 
     .line 541
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method getCallback()Landroidx/browser/customtabs/CustomTabsCallback;
-    .registers 2
+    .locals 1
 
     .line 553
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsSession$PendingSession;->mCallback:Landroidx/browser/customtabs/CustomTabsCallback;
@@ -48,7 +48,7 @@
 .end method
 
 .method getId()Landroid/app/PendingIntent;
-    .registers 2
+    .locals 1
 
     .line 548
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsSession$PendingSession;->mId:Landroid/app/PendingIntent;

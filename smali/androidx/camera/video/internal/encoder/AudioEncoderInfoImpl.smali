@@ -12,7 +12,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static from(Landroidx/camera/video/internal/encoder/AudioEncoderConfig;)Landroidx/camera/video/internal/encoder/AudioEncoderInfoImpl;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public getBitrateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

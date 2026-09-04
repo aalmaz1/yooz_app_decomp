@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/VideoFrameProcessor$Factory;)V
-    .registers 2
+    .locals 0
 
     .line 941
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public create(Landroid/content/Context;Landroidx/media3/common/ColorInfo;Landroidx/media3/common/DebugViewProvider;Landroidx/media3/common/VideoGraph$Listener;Ljava/util/concurrent/Executor;Ljava/util/List;J)Landroidx/media3/common/PreviewingVideoGraph;
-    .registers 21
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,12 +84,12 @@
     move-result-object v0
 
     new-array v1, v1, [Ljava/lang/Object;
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_14} :catch_32
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     move-object v2, p0
 
-    :try_start_15
+    :try_start_1
     iget-object v3, v2, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ReflectivePreviewingSingleInputVideoGraphFactory;->videoFrameProcessorFactory:Landroidx/media3/common/VideoFrameProcessor$Factory;
 
     aput-object v3, v1, v4
@@ -121,23 +121,23 @@
     invoke-interface/range {v3 .. v11}, Landroidx/media3/common/PreviewingVideoGraph$Factory;->create(Landroid/content/Context;Landroidx/media3/common/ColorInfo;Landroidx/media3/common/DebugViewProvider;Landroidx/media3/common/VideoGraph$Listener;Ljava/util/concurrent/Executor;Ljava/util/List;J)Landroidx/media3/common/PreviewingVideoGraph;
 
     move-result-object v0
-    :try_end_2f
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_2f} :catch_30
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     return-object v0
 
-    :catch_30
+    :catch_0
     move-exception v0
 
-    goto :goto_34
+    goto :goto_0
 
-    :catch_32
+    :catch_1
     move-exception v0
 
     move-object v2, p0
 
     .line 972
-    :goto_34
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/VideoFrameProcessingException;->from(Ljava/lang/Exception;)Landroidx/media3/common/VideoFrameProcessingException;
 
     move-result-object v0

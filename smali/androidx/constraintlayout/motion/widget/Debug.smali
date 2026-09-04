@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static dumpLayoutParams(Landroid/view/ViewGroup$LayoutParams;Ljava/lang/String;)V
-    .registers 9
+    .locals 7
 
     .line 292
     new-instance v0, Ljava/lang/Throwable;
@@ -125,16 +125,16 @@
     const/4 v1, 0x0
 
     .line 297
-    :goto_6a
+    :goto_0
     array-length v2, v0
 
-    if-ge v1, v2, :cond_b6
+    if-ge v1, v2, :cond_2
 
     .line 298
     aget-object v2, v0, v1
 
     .line 301
-    :try_start_6f
+    :try_start_0
     invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -151,12 +151,12 @@
 
     move-result v4
 
-    if-nez v4, :cond_80
+    if-nez v4, :cond_0
 
-    goto :goto_b3
+    goto :goto_1
 
     .line 306
-    :cond_80
+    :cond_0
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -167,12 +167,12 @@
 
     move-result v4
 
-    if-eqz v4, :cond_8d
+    if-eqz v4, :cond_1
 
-    goto :goto_b3
+    goto :goto_1
 
     .line 313
-    :cond_8d
+    :cond_1
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -208,17 +208,17 @@
     move-result-object v2
 
     invoke-virtual {v4, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-    :try_end_b3
-    .catch Ljava/lang/IllegalAccessException; {:try_start_6f .. :try_end_b3} :catch_b3
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_b3
-    :goto_b3
+    :catch_0
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6a
+    goto :goto_0
 
     .line 319
-    :cond_b6
+    :cond_2
     sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -241,7 +241,7 @@
 .end method
 
 .method public static dumpLayoutParams(Landroid/view/ViewGroup;Ljava/lang/String;)V
-    .registers 13
+    .locals 11
 
     .line 256
     new-instance v0, Ljava/lang/Throwable;
@@ -341,8 +341,8 @@
 
     move v2, p1
 
-    :goto_5f
-    if-ge v2, v1, :cond_e6
+    :goto_0
+    if-ge v2, v1, :cond_3
 
     .line 261
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -397,16 +397,16 @@
     move v5, p1
 
     .line 265
-    :goto_92
+    :goto_1
     array-length v6, v4
 
-    if-ge v5, v6, :cond_e2
+    if-ge v5, v6, :cond_2
 
     .line 266
     aget-object v6, v4, v5
 
     .line 269
-    :try_start_97
+    :try_start_0
     invoke-virtual {v6, v3}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
@@ -423,12 +423,12 @@
 
     move-result v8
 
-    if-nez v8, :cond_a8
+    if-nez v8, :cond_0
 
-    goto :goto_df
+    goto :goto_2
 
     .line 274
-    :cond_a8
+    :cond_0
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v8
@@ -439,12 +439,12 @@
 
     move-result v8
 
-    if-eqz v8, :cond_b5
+    if-eqz v8, :cond_1
 
-    goto :goto_df
+    goto :goto_2
 
     .line 278
-    :cond_b5
+    :cond_1
     sget-object v8, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -484,26 +484,26 @@
     move-result-object v6
 
     invoke-virtual {v8, v6}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-    :try_end_df
-    .catch Ljava/lang/IllegalAccessException; {:try_start_97 .. :try_end_df} :catch_df
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_df
-    :goto_df
+    :catch_0
+    :goto_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_92
+    goto :goto_1
 
-    :cond_e2
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_5f
+    goto/16 :goto_0
 
-    :cond_e6
+    :cond_3
     return-void
 .end method
 
 .method public static dumpPoc(Ljava/lang/Object;)V
-    .registers 12
+    .locals 11
 
     .line 93
     new-instance v0, Ljava/lang/Throwable;
@@ -607,16 +607,16 @@
     const/4 v3, 0x0
 
     .line 98
-    :goto_62
+    :goto_0
     array-length v6, v2
 
-    if-ge v3, v6, :cond_eb
+    if-ge v3, v6, :cond_5
 
     .line 99
     aget-object v6, v2, v3
 
     .line 102
-    :try_start_67
+    :try_start_0
     invoke-virtual {v6, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
@@ -632,15 +632,15 @@
 
     move-result v8
 
-    if-nez v8, :cond_79
+    if-nez v8, :cond_0
 
-    goto/16 :goto_e7
+    goto/16 :goto_1
 
     .line 106
-    :cond_79
+    :cond_0
     instance-of v8, v7, Ljava/lang/Integer;
 
-    if-eqz v8, :cond_8a
+    if-eqz v8, :cond_1
 
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -652,15 +652,15 @@
 
     move-result v8
 
-    if-eqz v8, :cond_8a
+    if-eqz v8, :cond_1
 
-    goto :goto_e7
+    goto :goto_1
 
     .line 109
-    :cond_8a
+    :cond_1
     instance-of v8, v7, Ljava/lang/Integer;
 
-    if-eqz v8, :cond_9b
+    if-eqz v8, :cond_2
 
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -672,15 +672,15 @@
 
     move-result v8
 
-    if-eqz v8, :cond_9b
+    if-eqz v8, :cond_2
 
-    goto :goto_e7
+    goto :goto_1
 
     .line 112
-    :cond_9b
+    :cond_2
     instance-of v8, v7, Ljava/lang/Float;
 
-    if-eqz v8, :cond_ac
+    if-eqz v8, :cond_3
 
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -692,15 +692,15 @@
 
     move-result v8
 
-    if-eqz v8, :cond_ac
+    if-eqz v8, :cond_3
 
-    goto :goto_e7
+    goto :goto_1
 
     .line 115
-    :cond_ac
+    :cond_3
     instance-of v8, v7, Ljava/lang/Float;
 
-    if-eqz v8, :cond_bd
+    if-eqz v8, :cond_4
 
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -712,12 +712,12 @@
 
     move-result v8
 
-    if-eqz v8, :cond_bd
+    if-eqz v8, :cond_4
 
-    goto :goto_e7
+    goto :goto_1
 
     .line 118
-    :cond_bd
+    :cond_4
     sget-object v8, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -757,17 +757,17 @@
     move-result-object v6
 
     invoke-virtual {v8, v6}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
-    :try_end_e7
-    .catch Ljava/lang/IllegalAccessException; {:try_start_67 .. :try_end_e7} :catch_e7
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_e7
-    :goto_e7
+    :catch_0
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto/16 :goto_62
+    goto/16 :goto_0
 
     .line 124
-    :cond_eb
+    :cond_5
     sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -804,7 +804,7 @@
 .end method
 
 .method public static getActionType(Landroid/view/MotionEvent;)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 200
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getAction()I
@@ -821,16 +821,16 @@
     const/4 v1, 0x0
 
     .line 202
-    :goto_b
+    :goto_0
     array-length v2, v0
 
-    if-ge v1, v2, :cond_35
+    if-ge v1, v2, :cond_1
 
     .line 203
     aget-object v2, v0, v1
 
     .line 205
-    :try_start_10
+    :try_start_0
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getModifiers()I
 
     move-result v3
@@ -839,7 +839,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     .line 206
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
@@ -852,7 +852,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     const/4 v3, 0x0
 
@@ -861,31 +861,31 @@
 
     move-result v3
 
-    if-ne v3, p0, :cond_32
+    if-ne v3, p0, :cond_0
 
     .line 208
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object p0
-    :try_end_31
-    .catch Ljava/lang/IllegalAccessException; {:try_start_10 .. :try_end_31} :catch_32
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_32
-    :cond_32
+    :catch_0
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     const-string p0, "---"
 
     return-object p0
 .end method
 
 .method public static getCallFrom(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 251
     new-instance v0, Ljava/lang/Throwable;
@@ -943,7 +943,7 @@
 .end method
 
 .method public static getLoc()Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 231
     new-instance v0, Ljava/lang/Throwable;
@@ -1015,7 +1015,7 @@
 .end method
 
 .method public static getLocation()Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 222
     new-instance v0, Ljava/lang/Throwable;
@@ -1073,7 +1073,7 @@
 .end method
 
 .method public static getLocation2()Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 241
     new-instance v0, Ljava/lang/Throwable;
@@ -1131,14 +1131,14 @@
 .end method
 
 .method public static getName(Landroid/content/Context;I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_c
+    if-eq p1, v0, :cond_0
 
     .line 138
-    :try_start_3
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -1149,15 +1149,15 @@
 
     return-object p0
 
-    :cond_c
+    :cond_0
     const-string p0, "UNKNOWN"
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
     .line 143
-    :catch_f
+    :catch_0
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v0, "?"
@@ -1176,7 +1176,7 @@
 .end method
 
 .method public static getName(Landroid/content/Context;[I)Ljava/lang/String;
-    .registers 7
+    .locals 5
 
     .line 157
     :try_start_0
@@ -1203,10 +1203,10 @@
     const/4 v1, 0x0
 
     .line 158
-    :goto_15
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_69
+    if-ge v1, v2, :cond_1
 
     .line 159
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1216,22 +1216,22 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
-    :try_end_21
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_21} :catch_7d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     const-string v2, " "
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_0
 
-    :try_start_25
+    :try_start_1
     const-string v3, ""
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
+    :cond_0
     move-object v3, v2
 
-    :goto_29
+    :goto_1
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1239,11 +1239,11 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
-    :try_end_31
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_31} :catch_7d
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 162
-    :try_start_31
+    :try_start_2
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -1253,15 +1253,15 @@
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
 
     move-result-object v2
-    :try_end_3b
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_31 .. :try_end_3b} :catch_3c
-    .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_3b} :catch_7d
+    :try_end_2
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_55
+    goto :goto_2
 
     .line 164
-    :catch_3c
-    :try_start_3c
+    :catch_0
+    :try_start_3
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1287,7 +1287,7 @@
     move-result-object v2
 
     .line 167
-    :goto_55
+    :goto_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1306,10 +1306,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 171
-    :cond_69
+    :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1327,12 +1327,12 @@
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
-    :try_end_7c
-    .catch Ljava/lang/Exception; {:try_start_3c .. :try_end_7c} :catch_7d
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     return-object p0
 
-    :catch_7d
+    :catch_1
     move-exception p0
 
     const-string p1, "DEBUG"
@@ -1350,7 +1350,7 @@
 .end method
 
 .method public static getName(Landroid/view/View;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 85
     :try_start_0
@@ -1370,30 +1370,30 @@
     invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
 
     move-result-object p0
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_11
+    :catch_0
     const-string p0, "UNKNOWN"
 
     return-object p0
 .end method
 
 .method public static getState(Landroidx/constraintlayout/motion/widget/MotionLayout;I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_0
 
     const-string p0, "UNDEFINED"
 
     return-object p0
 
     .line 189
-    :cond_6
+    :cond_0
     invoke-virtual {p0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->getContext()Landroid/content/Context;
 
     move-result-object p0
@@ -1411,7 +1411,7 @@
 .end method
 
 .method public static logStack(Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 9
+    .locals 6
 
     .line 46
     new-instance v0, Ljava/lang/Throwable;
@@ -1437,8 +1437,8 @@
 
     move-object v3, v1
 
-    :goto_13
-    if-gt v2, p2, :cond_7c
+    :goto_0
+    if-gt v2, p2, :cond_0
 
     .line 50
     aget-object v4, v0, v2
@@ -1542,14 +1542,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_7c
+    :cond_0
     return-void
 .end method
 
 .method public static printStack(Ljava/lang/String;I)V
-    .registers 9
+    .locals 7
 
     .line 65
     new-instance v0, Ljava/lang/Throwable;
@@ -1575,8 +1575,8 @@
 
     move-object v3, v1
 
-    :goto_13
-    if-gt v2, p1, :cond_74
+    :goto_0
+    if-gt v2, p1, :cond_0
 
     .line 69
     aget-object v4, v0, v2
@@ -1672,8 +1672,8 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_74
+    :cond_0
     return-void
 .end method

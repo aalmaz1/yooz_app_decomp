@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static create(IILjava/util/List;Ljava/util/List;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -58,7 +58,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_0
 
     .line 64
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -67,12 +67,12 @@
 
     check-cast v0, Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_21
+    :goto_0
     move-object v7, v0
 
     .line 67
@@ -108,7 +108,7 @@
 .end method
 
 .method public static from(Landroidx/camera/core/impl/EncoderProfilesProxy;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 4
+    .locals 3
 
     .line 44
     invoke-interface {p0}, Landroidx/camera/core/impl/EncoderProfilesProxy;->getDefaultDurationSeconds()I

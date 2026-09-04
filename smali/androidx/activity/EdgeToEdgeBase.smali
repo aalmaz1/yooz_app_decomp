@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public adjustLayoutInDisplayCutoutMode(Landroid/view/Window;)V
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "window"
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public setUp(Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;Landroid/view/Window;Landroid/view/View;ZZ)V
-    .registers 7
+    .locals 0
 
     const-string p5, "statusBarStyle"
 

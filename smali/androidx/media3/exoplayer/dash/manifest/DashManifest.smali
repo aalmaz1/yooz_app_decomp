@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(JJJZJJJJLandroidx/media3/exoplayer/dash/manifest/ProgramInformation;Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;Landroid/net/Uri;Ljava/util/List;)V
-    .registers 24
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJZJJJJ",
@@ -134,26 +134,26 @@
     .line 119
     iput-object v1, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-nez p20, :cond_34
+    if-nez p20, :cond_0
 
     .line 120
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v1
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     move-object/from16 v1, p20
 
-    :goto_36
+    :goto_0
     iput-object v1, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
     return-void
 .end method
 
 .method private static copyAdaptationSets(Ljava/util/List;Ljava/util/LinkedList;)Ljava/util/ArrayList;
-    .registers 16
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -185,7 +185,7 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 189
-    :cond_d
+    :cond_0
     iget v3, v0, Landroidx/media3/common/StreamKey;->groupIndex:I
 
     .line 190
@@ -204,7 +204,7 @@
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
     .line 195
-    :cond_1c
+    :cond_1
     iget v0, v0, Landroidx/media3/common/StreamKey;->streamIndex:I
 
     invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -226,14 +226,14 @@
     .line 198
     iget v6, v0, Landroidx/media3/common/StreamKey;->periodIndex:I
 
-    if-ne v6, v1, :cond_35
+    if-ne v6, v1, :cond_2
 
     iget v6, v0, Landroidx/media3/common/StreamKey;->groupIndex:I
 
-    if-eq v6, v3, :cond_1c
+    if-eq v6, v3, :cond_1
 
     .line 200
-    :cond_35
+    :cond_2
     new-instance v3, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;
 
     iget-wide v7, v4, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->id:J
@@ -255,7 +255,7 @@
     .line 208
     iget v3, v0, Landroidx/media3/common/StreamKey;->periodIndex:I
 
-    if-eq v3, v1, :cond_d
+    if-eq v3, v1, :cond_0
 
     .line 210
     invoke-virtual {p1, v0}, Ljava/util/LinkedList;->addFirst(Ljava/lang/Object;)V
@@ -266,7 +266,7 @@
 
 # virtual methods
 .method public final copy(Ljava/util/List;)Landroidx/media3/exoplayer/dash/manifest/DashManifest;
-    .registers 27
+    .locals 25
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -308,14 +308,14 @@
     const/4 v5, 0x0
 
     .line 149
-    :goto_1d
+    :goto_0
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodCount()I
 
     move-result v6
 
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ge v5, v6, :cond_59
+    if-ge v5, v6, :cond_2
 
     .line 150
     invoke-virtual {v1}, Ljava/util/LinkedList;->peek()Ljava/lang/Object;
@@ -326,7 +326,7 @@
 
     iget v6, v6, Landroidx/media3/common/StreamKey;->periodIndex:I
 
-    if-eq v6, v5, :cond_3c
+    if-eq v6, v5, :cond_0
 
     .line 152
     invoke-virtual {v0, v5}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodDurationMs(I)J
@@ -335,14 +335,14 @@
 
     cmp-long v6, v9, v7
 
-    if-eqz v6, :cond_56
+    if-eqz v6, :cond_1
 
     add-long/2addr v3, v9
 
-    goto :goto_56
+    goto :goto_1
 
     .line 157
-    :cond_3c
+    :cond_0
     invoke-virtual {v0, v5}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
 
     move-result-object v6
@@ -373,26 +373,26 @@
     .line 163
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_56
-    :goto_56
+    :cond_1
+    :goto_1
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 166
-    :cond_59
+    :cond_2
     iget-wide v5, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->durationMs:J
 
     cmp-long v1, v5, v7
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_3
 
     sub-long/2addr v5, v3
 
     move-wide v7, v5
 
     .line 167
-    :cond_61
+    :cond_3
     new-instance v1, Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     move-object v4, v1
@@ -443,7 +443,7 @@
 .end method
 
 .method public bridge synthetic copy(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 34
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->copy(Ljava/util/List;)Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -454,7 +454,7 @@
 .end method
 
 .method public final getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
-    .registers 3
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->periods:Ljava/util/List;
@@ -469,7 +469,7 @@
 .end method
 
 .method public final getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 124
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->periods:Ljava/util/List;
@@ -482,7 +482,7 @@
 .end method
 
 .method public final getPeriodDurationMs(I)J
-    .registers 7
+    .locals 5
 
     .line 132
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->periods:Ljava/util/List;
@@ -493,7 +493,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    if-ne p1, v0, :cond_21
+    if-ne p1, v0, :cond_1
 
     .line 133
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->durationMs:J
@@ -502,11 +502,11 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_0
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_16
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -517,10 +517,10 @@
 
     iget-wide v2, p1, Landroidx/media3/exoplayer/dash/manifest/Period;->startMs:J
 
-    goto :goto_37
+    goto :goto_0
 
     .line 134
-    :cond_21
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
     add-int/lit8 v1, p1, 0x1
@@ -543,15 +543,15 @@
 
     iget-wide v2, p1, Landroidx/media3/exoplayer/dash/manifest/Period;->startMs:J
 
-    :goto_37
+    :goto_0
     sub-long v2, v0, v2
 
-    :goto_39
+    :goto_1
     return-wide v2
 .end method
 
 .method public final getPeriodDurationUs(I)J
-    .registers 4
+    .locals 2
 
     .line 138
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodDurationMs(I)J

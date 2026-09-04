@@ -42,7 +42,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 15
+    .locals 15
 
     .line 208
     new-instance v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;
@@ -146,7 +146,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -160,7 +160,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;
-    .registers 2
+    .locals 1
 
     .line 206
     const-class v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;
@@ -175,7 +175,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;
-    .registers 1
+    .locals 1
 
     .line 206
     sget-object v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;->$VALUES:[Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -20,7 +20,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;J)V
-    .registers 4
+    .locals 0
 
     .line 70
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;J)V
-    .registers 5
+    .locals 0
 
     .line 92
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;J)V
-    .registers 4
+    .locals 0
 
     .line 112
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
@@ -78,7 +78,7 @@
 .end method
 
 .method public static from(Ljava/lang/Exception;)Landroidx/media3/common/VideoFrameProcessingException;
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -91,12 +91,12 @@
 .end method
 
 .method public static from(Ljava/lang/Exception;J)Landroidx/media3/common/VideoFrameProcessingException;
-    .registers 4
+    .locals 1
 
     .line 41
     instance-of v0, p0, Landroidx/media3/common/VideoFrameProcessingException;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 42
     check-cast p0, Landroidx/media3/common/VideoFrameProcessingException;
@@ -104,7 +104,7 @@
     return-object p0
 
     .line 44
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/media3/common/VideoFrameProcessingException;
 
     invoke-direct {v0, p0, p1, p2}, Landroidx/media3/common/VideoFrameProcessingException;-><init>(Ljava/lang/Throwable;J)V

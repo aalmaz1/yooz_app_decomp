@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public final getClazz$lifecycle_viewmodel_release()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -120,7 +120,7 @@
 .end method
 
 .method public final getInitializer$lifecycle_viewmodel_release()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

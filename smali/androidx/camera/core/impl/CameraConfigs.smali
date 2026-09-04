@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 27
     new-instance v0, Landroidx/camera/core/impl/CameraConfigs$EmptyCameraConfig;
@@ -30,7 +30,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public static emptyConfig()Landroidx/camera/core/impl/CameraConfig;
-    .registers 1
+    .locals 1
 
     .line 34
     sget-object v0, Landroidx/camera/core/impl/CameraConfigs;->EMPTY_CONFIG:Landroidx/camera/core/impl/CameraConfig;

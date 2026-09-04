@@ -34,7 +34,7 @@
 
 # direct methods
 .method private constructor <init>(J[B)V
-    .registers 4
+    .locals 0
 
     .line 290
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method synthetic constructor <init>(J[BLandroidx/media3/extractor/text/SubtitleExtractor$1;)V
-    .registers 5
+    .locals 0
 
     .line 286
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/extractor/text/SubtitleExtractor$Sample;-><init>(J[B)V
@@ -58,7 +58,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/text/SubtitleExtractor$Sample;)J
-    .registers 3
+    .locals 2
 
     .line 286
     iget-wide v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor$Sample;->timeUs:J
@@ -67,7 +67,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/text/SubtitleExtractor$Sample;)[B
-    .registers 1
+    .locals 0
 
     .line 286
     iget-object p0, p0, Landroidx/media3/extractor/text/SubtitleExtractor$Sample;->data:[B
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/extractor/text/SubtitleExtractor$Sample;)I
-    .registers 6
+    .locals 4
 
     .line 297
     iget-wide v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor$Sample;->timeUs:J
@@ -93,7 +93,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 286
     check-cast p1, Landroidx/media3/extractor/text/SubtitleExtractor$Sample;

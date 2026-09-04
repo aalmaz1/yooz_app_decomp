@@ -48,7 +48,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)V"
@@ -82,7 +82,7 @@
 .end method
 
 .method private mergeFromInstance(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;TMessageType;)V"
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final build()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TMessageType;"
@@ -123,12 +123,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     return-object v0
 
     .line 396
-    :cond_b
+    :cond_0
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->newUninitializedMessageException(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
 
     move-result-object v0
@@ -137,7 +137,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->build()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -148,7 +148,7 @@
 .end method
 
 .method public buildPartial()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TMessageType;"
@@ -158,7 +158,7 @@
     .line 382
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->isBuilt:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 383
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -166,7 +166,7 @@
     return-object v0
 
     .line 386
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->makeImmutable()V
@@ -183,7 +183,7 @@
 .end method
 
 .method public bridge synthetic buildPartial()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->buildPartial()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -194,7 +194,7 @@
 .end method
 
 .method public final clear()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TBuilderType;"
@@ -218,7 +218,7 @@
 .end method
 
 .method public bridge synthetic clear()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->clear()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
@@ -229,7 +229,7 @@
 .end method
 
 .method public bridge synthetic clone()Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->clone()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
@@ -240,7 +240,7 @@
 .end method
 
 .method public clone()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TBuilderType;"
@@ -267,7 +267,7 @@
 .end method
 
 .method public bridge synthetic clone()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->clone()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
@@ -278,7 +278,7 @@
 .end method
 
 .method public bridge synthetic clone()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/CloneNotSupportedException;
@@ -294,12 +294,12 @@
 .end method
 
 .method protected copyOnWrite()V
-    .registers 3
+    .locals 2
 
     .line 352
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->isBuilt:Z
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 353
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -326,12 +326,12 @@
     .line 357
     iput-boolean v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->isBuilt:Z
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TMessageType;"
@@ -345,7 +345,7 @@
 .end method
 
 .method public bridge synthetic getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 330
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -356,7 +356,7 @@
 .end method
 
 .method protected bridge synthetic internalMergeFrom(Landroidx/datastore/preferences/protobuf/AbstractMessageLite;)Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder;
-    .registers 2
+    .locals 0
 
     .line 330
     check-cast p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -369,7 +369,7 @@
 .end method
 
 .method protected internalMergeFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)TBuilderType;"
@@ -385,7 +385,7 @@
 .end method
 
 .method public final isInitialized()Z
-    .registers 3
+    .locals 2
 
     .line 363
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -400,7 +400,7 @@
 .end method
 
 .method public bridge synthetic mergeFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -416,7 +416,7 @@
 .end method
 
 .method public bridge synthetic mergeFrom([BII)Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -432,7 +432,7 @@
 .end method
 
 .method public bridge synthetic mergeFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -448,7 +448,7 @@
 .end method
 
 .method public mergeFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -468,7 +468,7 @@
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
     .line 457
-    :try_start_3
+    :try_start_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -488,12 +488,12 @@
 
     .line 457
     invoke-interface {v0, v1, p1, p2}, Landroidx/datastore/preferences/protobuf/Schema;->mergeFrom(Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/Reader;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
-    :try_end_16
-    .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 460
@@ -503,7 +503,7 @@
 
     instance-of p2, p2, Ljava/io/IOException;
 
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_0
 
     .line 461
     invoke-virtual {p1}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
@@ -515,12 +515,12 @@
     throw p1
 
     .line 463
-    :cond_27
+    :cond_0
     throw p1
 .end method
 
 .method public mergeFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)TBuilderType;"
@@ -539,7 +539,7 @@
 .end method
 
 .method public mergeFrom([BII)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII)TBuilderType;"
@@ -565,7 +565,7 @@
 .end method
 
 .method public mergeFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -584,7 +584,7 @@
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
     .line 428
-    :try_start_3
+    :try_start_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -608,14 +608,14 @@
     move v5, p2
 
     invoke-interface/range {v2 .. v7}, Landroidx/datastore/preferences/protobuf/Schema;->mergeFrom(Ljava/lang/Object;[BIILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)V
-    :try_end_1b
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_3 .. :try_end_1b} :catch_2a
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_3 .. :try_end_1b} :catch_25
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_1c
+    :catch_0
     move-exception p1
 
     .line 436
@@ -628,14 +628,14 @@
     throw p2
 
     .line 434
-    :catch_25
+    :catch_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
 
     throw p1
 
-    :catch_2a
+    :catch_2
     move-exception p1
 
     .line 432
@@ -643,7 +643,7 @@
 .end method
 
 .method public bridge synthetic mergeFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -659,7 +659,7 @@
 .end method
 
 .method public bridge synthetic mergeFrom([BII)Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -675,7 +675,7 @@
 .end method
 
 .method public bridge synthetic mergeFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;

@@ -41,7 +41,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/util/Range;IILandroid/util/Range;I)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -76,7 +76,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/util/Range;IILandroid/util/Range;ILandroidx/camera/video/AutoValue_AudioSpec$1;)V
-    .registers 7
+    .locals 0
 
     .line 9
     invoke-direct/range {p0 .. p5}, Landroidx/camera/video/AutoValue_AudioSpec;-><init>(Landroid/util/Range;IILandroid/util/Range;I)V
@@ -87,21 +87,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 80
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/AudioSpec;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_2
 
     .line 81
     check-cast p1, Landroidx/camera/video/AudioSpec;
@@ -117,7 +117,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/AutoValue_AudioSpec;->sourceFormat:I
 
@@ -126,7 +126,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_3c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/AutoValue_AudioSpec;->source:I
 
@@ -135,7 +135,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_3c
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_AudioSpec;->sampleRate:Landroid/util/Range;
 
@@ -148,7 +148,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/AutoValue_AudioSpec;->channelCount:I
 
@@ -157,22 +157,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_3c
+    if-ne v1, p1, :cond_1
 
-    goto :goto_3d
+    goto :goto_0
 
-    :cond_3c
+    :cond_1
     move v0, v2
 
-    :goto_3d
+    :goto_0
     return v0
 
-    :cond_3e
+    :cond_2
     return v2
 .end method
 
 .method public getBitrate()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -189,7 +189,7 @@
 .end method
 
 .method public getChannelCount()I
-    .registers 2
+    .locals 1
 
     .line 61
     iget v0, p0, Landroidx/camera/video/AutoValue_AudioSpec;->channelCount:I
@@ -198,7 +198,7 @@
 .end method
 
 .method public getSampleRate()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -215,7 +215,7 @@
 .end method
 
 .method public getSource()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/camera/video/AutoValue_AudioSpec;->source:I
@@ -224,7 +224,7 @@
 .end method
 
 .method public getSourceFormat()I
-    .registers 2
+    .locals 1
 
     .line 43
     iget v0, p0, Landroidx/camera/video/AutoValue_AudioSpec;->sourceFormat:I
@@ -233,7 +233,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 95
     iget-object v0, p0, Landroidx/camera/video/AutoValue_AudioSpec;->bitrate:Landroid/util/Range;
@@ -282,7 +282,7 @@
 .end method
 
 .method public toBuilder()Landroidx/camera/video/AudioSpec$Builder;
-    .registers 3
+    .locals 2
 
     .line 109
     new-instance v0, Landroidx/camera/video/AutoValue_AudioSpec$Builder;
@@ -295,7 +295,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 66
     new-instance v0, Ljava/lang/StringBuilder;

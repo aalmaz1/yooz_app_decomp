@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 125
     invoke-static {}, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->values()[Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -33,7 +33,7 @@
 
     sput-object v0, Landroidx/datastore/preferences/protobuf/MapEntryLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
-    :try_start_9
+    :try_start_0
     sget-object v1, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->MESSAGE:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
     invoke-virtual {v1}, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->ordinal()I
@@ -43,11 +43,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_12
-    :try_start_12
+    :catch_0
+    :try_start_1
     sget-object v0, Landroidx/datastore/preferences/protobuf/MapEntryLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     sget-object v1, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->ENUM:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -59,11 +59,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    :catch_1d
-    :try_start_1d
+    :catch_1
+    :try_start_2
     sget-object v0, Landroidx/datastore/preferences/protobuf/MapEntryLite$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     sget-object v1, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->GROUP:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -75,9 +75,9 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_28
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_28} :catch_28
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_28
+    :catch_2
     return-void
 .end method

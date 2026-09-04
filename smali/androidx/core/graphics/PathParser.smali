@@ -18,7 +18,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 859
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 .end method
 
 .method private static addNode(Ljava/util/ArrayList;C[F)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,34 +48,34 @@
 .end method
 
 .method public static canMorph([Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_34
+    if-eqz p0, :cond_5
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
-    goto :goto_34
+    goto :goto_2
 
     .line 146
-    :cond_6
+    :cond_0
     array-length v1, p0
 
     array-length v2, p1
 
-    if-eq v1, v2, :cond_b
+    if-eq v1, v2, :cond_1
 
     return v0
 
-    :cond_b
+    :cond_1
     move v1, v0
 
     .line 150
-    :goto_c
+    :goto_0
     array-length v2, p0
 
-    if-ge v1, v2, :cond_32
+    if-ge v1, v2, :cond_4
 
     .line 151
     aget-object v2, p0, v1
@@ -90,7 +90,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_3
 
     aget-object v2, p0, v1
 
@@ -109,40 +109,40 @@
 
     array-length v3, v3
 
-    if-eq v2, v3, :cond_2e
+    if-eq v2, v3, :cond_2
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_2e
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_1
     return v0
 
-    :cond_32
+    :cond_4
     const/4 p0, 0x1
 
     return p0
 
-    :cond_34
-    :goto_34
+    :cond_5
+    :goto_2
     return v0
 .end method
 
 .method static copyOfRange([FII)[F
-    .registers 5
+    .locals 2
 
-    if-gt p1, p2, :cond_1a
+    if-gt p1, p2, :cond_1
 
     .line 59
     array-length v0, p0
 
-    if-ltz p1, :cond_14
+    if-ltz p1, :cond_0
 
-    if-gt p1, v0, :cond_14
+    if-gt p1, v0, :cond_0
 
     sub-int/2addr p2, p1
 
@@ -164,7 +164,7 @@
     return-object p2
 
     .line 61
-    :cond_14
+    :cond_0
     new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {p0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
@@ -172,7 +172,7 @@
     throw p0
 
     .line 57
-    :cond_1a
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -181,7 +181,7 @@
 .end method
 
 .method public static createNodesFromPathData(Ljava/lang/String;)[Landroidx/core/graphics/PathParser$PathDataNode;
-    .registers 8
+    .locals 7
 
     .line 98
     new-instance v0, Ljava/util/ArrayList;
@@ -197,12 +197,12 @@
     move v3, v2
 
     .line 99
-    :goto_9
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-ge v3, v5, :cond_32
+    if-ge v3, v5, :cond_1
 
     .line 100
     invoke-static {p0, v3}, Landroidx/core/graphics/PathParser;->nextStart(Ljava/lang/String;I)I
@@ -223,7 +223,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_0
 
     .line 103
     invoke-static {v4}, Landroidx/core/graphics/PathParser;->getFloats(Ljava/lang/String;)[F
@@ -237,7 +237,7 @@
 
     invoke-static {v0, v4, v5}, Landroidx/core/graphics/PathParser;->addNode(Ljava/util/ArrayList;C[F)V
 
-    :cond_2c
+    :cond_0
     add-int/lit8 v4, v3, 0x1
 
     move v6, v4
@@ -246,19 +246,19 @@
 
     move v3, v6
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_32
+    :cond_1
     sub-int/2addr v3, v4
 
-    if-ne v3, v2, :cond_44
+    if-ne v3, v2, :cond_2
 
     .line 110
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-ge v4, v2, :cond_44
+    if-ge v4, v2, :cond_2
 
     .line 111
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
@@ -269,7 +269,7 @@
 
     invoke-static {v0, p0, v2}, Landroidx/core/graphics/PathParser;->addNode(Ljava/util/ArrayList;C[F)V
 
-    :cond_44
+    :cond_2
     new-array p0, v1, [Landroidx/core/graphics/PathParser$PathDataNode;
 
     .line 113
@@ -283,7 +283,7 @@
 .end method
 
 .method public static createPathFromPathData(Ljava/lang/String;)Landroid/graphics/Path;
-    .registers 5
+    .locals 4
 
     .line 78
     new-instance v0, Landroid/graphics/Path;
@@ -296,14 +296,14 @@
     move-result-object v1
 
     .line 81
-    :try_start_9
+    :try_start_0
     invoke-static {v1, v0}, Landroidx/core/graphics/PathParser$PathDataNode;->nodesToPath([Landroidx/core/graphics/PathParser$PathDataNode;Landroid/graphics/Path;)V
-    :try_end_c
-    .catch Ljava/lang/RuntimeException; {:try_start_9 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_d
+    :catch_0
     move-exception v0
 
     .line 83
@@ -329,7 +329,7 @@
 .end method
 
 .method public static deepCopyNodes([Landroidx/core/graphics/PathParser$PathDataNode;)[Landroidx/core/graphics/PathParser$PathDataNode;
-    .registers 5
+    .locals 4
 
     .line 125
     array-length v0, p0
@@ -339,10 +339,10 @@
     const/4 v1, 0x0
 
     .line 126
-    :goto_4
+    :goto_0
     array-length v2, p0
 
-    if-ge v1, v2, :cond_13
+    if-ge v1, v2, :cond_0
 
     .line 127
     new-instance v2, Landroidx/core/graphics/PathParser$PathDataNode;
@@ -355,14 +355,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     return-object v0
 .end method
 
 .method private static extract(Ljava/lang/String;ILandroidx/core/graphics/PathParser$ExtractFloatResult;)V
-    .registers 11
+    .locals 8
 
     const/4 v0, 0x0
 
@@ -378,12 +378,12 @@
     move v4, v3
 
     .line 270
-    :goto_7
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-ge v1, v5, :cond_3d
+    if-ge v1, v5, :cond_5
 
     .line 273
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -394,90 +394,90 @@
 
     const/4 v7, 0x1
 
-    if-eq v5, v6, :cond_35
+    if-eq v5, v6, :cond_3
 
     const/16 v6, 0x45
 
-    if-eq v5, v6, :cond_33
+    if-eq v5, v6, :cond_2
 
     const/16 v6, 0x65
 
-    if-eq v5, v6, :cond_33
+    if-eq v5, v6, :cond_2
 
-    packed-switch v5, :pswitch_data_40
+    packed-switch v5, :pswitch_data_0
 
-    goto :goto_31
+    goto :goto_1
 
-    :pswitch_22
-    if-nez v3, :cond_27
+    :pswitch_0
+    if-nez v3, :cond_0
 
     move v2, v0
 
     move v3, v7
 
-    goto :goto_37
+    goto :goto_3
 
     .line 292
-    :cond_27
+    :cond_0
     iput-boolean v7, p2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndWithNegOrDot:Z
 
-    goto :goto_35
+    goto :goto_2
 
-    :pswitch_2a
-    if-eq v1, p1, :cond_31
+    :pswitch_1
+    if-eq v1, p1, :cond_1
 
-    if-nez v2, :cond_31
+    if-nez v2, :cond_1
 
     .line 283
     iput-boolean v7, p2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndWithNegOrDot:Z
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_1
     move v2, v0
 
-    goto :goto_37
+    goto :goto_3
 
-    :cond_33
+    :cond_2
     move v2, v7
 
-    goto :goto_37
+    goto :goto_3
 
-    :cond_35
-    :goto_35
-    :pswitch_35
+    :cond_3
+    :goto_2
+    :pswitch_2
     move v2, v0
 
     move v4, v7
 
-    :goto_37
-    if-eqz v4, :cond_3a
+    :goto_3
+    if-eqz v4, :cond_4
 
-    goto :goto_3d
+    goto :goto_4
 
-    :cond_3a
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 306
-    :cond_3d
-    :goto_3d
+    :cond_5
+    :goto_4
     iput v1, p2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndPosition:I
 
     return-void
 
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x2c
-        :pswitch_35
-        :pswitch_2a
-        :pswitch_22
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static getFloats(Ljava/lang/String;)[F
-    .registers 9
+    .locals 8
 
     const/4 v0, 0x0
 
@@ -488,7 +488,7 @@
 
     const/16 v2, 0x7a
 
-    if-eq v1, v2, :cond_63
+    if-eq v1, v2, :cond_4
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
@@ -496,13 +496,13 @@
 
     const/16 v2, 0x5a
 
-    if-ne v1, v2, :cond_12
+    if-ne v1, v2, :cond_0
 
-    goto :goto_63
+    goto :goto_1
 
     .line 222
-    :cond_12
-    :try_start_12
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -523,8 +523,8 @@
 
     move v5, v0
 
-    :goto_23
-    if-ge v4, v3, :cond_42
+    :goto_0
+    if-ge v4, v3, :cond_3
 
     .line 234
     invoke-static {p0, v4, v2}, Landroidx/core/graphics/PathParser;->extract(Ljava/lang/String;ILandroidx/core/graphics/PathParser$ExtractFloatResult;)V
@@ -532,7 +532,7 @@
     .line 235
     iget v6, v2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndPosition:I
 
-    if-ge v4, v6, :cond_39
+    if-ge v4, v6, :cond_1
 
     add-int/lit8 v7, v5, 0x1
 
@@ -551,31 +551,31 @@
     move v5, v7
 
     .line 242
-    :cond_39
+    :cond_1
     iget-boolean v4, v2, Landroidx/core/graphics/PathParser$ExtractFloatResult;->mEndWithNegOrDot:Z
 
-    if-eqz v4, :cond_3f
+    if-eqz v4, :cond_2
 
     move v4, v6
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_3f
+    :cond_2
     add-int/lit8 v4, v6, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
     .line 249
-    :cond_42
+    :cond_3
     invoke-static {v1, v0, v5}, Landroidx/core/graphics/PathParser;->copyOfRange([FII)[F
 
     move-result-object p0
-    :try_end_46
-    .catch Ljava/lang/NumberFormatException; {:try_start_12 .. :try_end_46} :catch_47
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_47
+    :catch_0
     move-exception v0
 
     .line 251
@@ -605,27 +605,27 @@
 
     throw v1
 
-    :cond_63
-    :goto_63
+    :cond_4
+    :goto_1
     new-array p0, v0, [F
 
     return-object p0
 .end method
 
 .method public static interpolatePathDataNodes([Landroidx/core/graphics/PathParser$PathDataNode;F[Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;)V
-    .registers 4
+    .locals 0
 
     .line 326
     invoke-static {p0, p2, p3, p1}, Landroidx/core/graphics/PathParser;->interpolatePathDataNodes([Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;F)Z
 
     move-result p0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 327
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Can\'t interpolate between two incompatible pathData"
@@ -636,7 +636,7 @@
 .end method
 
 .method public static interpolatePathDataNodes([Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;F)Z
-    .registers 8
+    .locals 4
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -645,13 +645,13 @@
 
     array-length v1, p1
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_2
 
     array-length v0, p1
 
     array-length v1, p2
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_2
 
     .line 360
     invoke-static {p1, p2}, Landroidx/core/graphics/PathParser;->canMorph([Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;)Z
@@ -660,16 +660,16 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     return v1
 
     .line 364
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     array-length v0, p0
 
-    if-ge v1, v0, :cond_1f
+    if-ge v1, v0, :cond_1
 
     .line 365
     aget-object v0, p0, v1
@@ -682,15 +682,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 p0, 0x1
 
     return p0
 
     .line 356
-    :cond_21
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "The nodes to be interpolated and resulting nodes must have the same length"
@@ -701,7 +701,7 @@
 .end method
 
 .method private static nextStart(Ljava/lang/String;I)I
-    .registers 5
+    .locals 3
 
     .line 181
     :goto_0
@@ -709,7 +709,7 @@
 
     move-result v0
 
-    if-ge p1, v0, :cond_24
+    if-ge p1, v0, :cond_2
 
     .line 182
     invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
@@ -722,7 +722,7 @@
 
     mul-int/2addr v1, v2
 
-    if-lez v1, :cond_18
+    if-lez v1, :cond_0
 
     add-int/lit8 v1, v0, -0x61
 
@@ -730,30 +730,30 @@
 
     mul-int/2addr v1, v2
 
-    if-gtz v1, :cond_21
+    if-gtz v1, :cond_1
 
-    :cond_18
+    :cond_0
     const/16 v1, 0x65
 
-    if-eq v0, v1, :cond_21
+    if-eq v0, v1, :cond_1
 
     const/16 v1, 0x45
 
-    if-eq v0, v1, :cond_21
+    if-eq v0, v1, :cond_1
 
     return p1
 
-    :cond_21
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
-    :cond_24
+    :cond_2
     return p1
 .end method
 
 .method public static nodesToPath([Landroidx/core/graphics/PathParser$PathDataNode;Landroid/graphics/Path;)V
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x6
 
@@ -766,8 +766,8 @@
 
     const/4 v3, 0x0
 
-    :goto_7
-    if-ge v3, v1, :cond_1d
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     aget-object v4, p0, v3
 
@@ -791,24 +791,24 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public static updateNodes([Landroidx/core/graphics/PathParser$PathDataNode;[Landroidx/core/graphics/PathParser$PathDataNode;)V
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 170
-    :goto_2
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_30
+    if-ge v1, v2, :cond_1
 
     .line 171
     aget-object v2, p0, v1
@@ -824,7 +824,7 @@
     move v2, v0
 
     .line 172
-    :goto_11
+    :goto_1
     aget-object v3, p1, v1
 
     invoke-static {v3}, Landroidx/core/graphics/PathParser$PathDataNode;->access$100(Landroidx/core/graphics/PathParser$PathDataNode;)[F
@@ -833,7 +833,7 @@
 
     array-length v3, v3
 
-    if-ge v2, v3, :cond_2d
+    if-ge v2, v3, :cond_0
 
     .line 173
     aget-object v3, p0, v1
@@ -854,13 +854,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_2d
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     return-void
 .end method

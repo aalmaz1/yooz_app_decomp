@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static final component1(Landroid/graphics/PointF;)F
-    .registers 1
+    .locals 0
 
     .line 55
     iget p0, p0, Landroid/graphics/PointF;->x:F
@@ -48,7 +48,7 @@
 .end method
 
 .method public static final component1(Landroid/graphics/Point;)I
-    .registers 1
+    .locals 0
 
     .line 33
     iget p0, p0, Landroid/graphics/Point;->x:I
@@ -57,7 +57,7 @@
 .end method
 
 .method public static final component2(Landroid/graphics/PointF;)F
-    .registers 1
+    .locals 0
 
     .line 66
     iget p0, p0, Landroid/graphics/PointF;->y:F
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final component2(Landroid/graphics/Point;)I
-    .registers 1
+    .locals 0
 
     .line 44
     iget p0, p0, Landroid/graphics/Point;->y:I
@@ -75,7 +75,7 @@
 .end method
 
 .method public static final div(Landroid/graphics/Point;F)Landroid/graphics/Point;
-    .registers 4
+    .locals 2
 
     .line 174
     new-instance v0, Landroid/graphics/Point;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static final div(Landroid/graphics/PointF;F)Landroid/graphics/PointF;
-    .registers 4
+    .locals 2
 
     .line 181
     new-instance v0, Landroid/graphics/PointF;
@@ -125,7 +125,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Point;I)Landroid/graphics/Point;
-    .registers 4
+    .locals 2
 
     .line 131
     new-instance v0, Landroid/graphics/Point;
@@ -145,7 +145,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Point;Landroid/graphics/Point;)Landroid/graphics/Point;
-    .registers 4
+    .locals 2
 
     .line 111
     new-instance v0, Landroid/graphics/Point;
@@ -171,7 +171,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/PointF;F)Landroid/graphics/PointF;
-    .registers 4
+    .locals 2
 
     .line 141
     new-instance v0, Landroid/graphics/PointF;
@@ -191,7 +191,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/PointF;Landroid/graphics/PointF;)Landroid/graphics/PointF;
-    .registers 4
+    .locals 2
 
     .line 121
     new-instance v0, Landroid/graphics/PointF;
@@ -217,7 +217,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Point;I)Landroid/graphics/Point;
-    .registers 4
+    .locals 2
 
     .line 91
     new-instance v0, Landroid/graphics/Point;
@@ -235,7 +235,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Point;Landroid/graphics/Point;)Landroid/graphics/Point;
-    .registers 4
+    .locals 2
 
     .line 72
     new-instance v0, Landroid/graphics/Point;
@@ -257,7 +257,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/PointF;F)Landroid/graphics/PointF;
-    .registers 4
+    .locals 2
 
     .line 101
     new-instance v0, Landroid/graphics/PointF;
@@ -275,7 +275,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/PointF;Landroid/graphics/PointF;)Landroid/graphics/PointF;
-    .registers 4
+    .locals 2
 
     .line 81
     new-instance v0, Landroid/graphics/PointF;
@@ -297,7 +297,7 @@
 .end method
 
 .method public static final times(Landroid/graphics/Point;F)Landroid/graphics/Point;
-    .registers 4
+    .locals 2
 
     .line 160
     new-instance v0, Landroid/graphics/Point;
@@ -328,7 +328,7 @@
 .end method
 
 .method public static final times(Landroid/graphics/PointF;F)Landroid/graphics/PointF;
-    .registers 4
+    .locals 2
 
     .line 167
     new-instance v0, Landroid/graphics/PointF;
@@ -347,7 +347,7 @@
 .end method
 
 .method public static final toPoint(Landroid/graphics/PointF;)Landroid/graphics/Point;
-    .registers 3
+    .locals 2
 
     .line 192
     new-instance v0, Landroid/graphics/Point;
@@ -366,7 +366,7 @@
 .end method
 
 .method public static final toPointF(Landroid/graphics/Point;)Landroid/graphics/PointF;
-    .registers 2
+    .locals 1
 
     .line 187
     new-instance v0, Landroid/graphics/PointF;
@@ -377,7 +377,7 @@
 .end method
 
 .method public static final unaryMinus(Landroid/graphics/Point;)Landroid/graphics/Point;
-    .registers 3
+    .locals 2
 
     .line 149
     new-instance v0, Landroid/graphics/Point;
@@ -396,7 +396,7 @@
 .end method
 
 .method public static final unaryMinus(Landroid/graphics/PointF;)Landroid/graphics/PointF;
-    .registers 3
+    .locals 2
 
     .line 154
     new-instance v0, Landroid/graphics/PointF;

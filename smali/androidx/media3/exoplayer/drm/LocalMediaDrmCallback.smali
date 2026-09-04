@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public executeKeyRequest(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;)[B
-    .registers 3
+    .locals 0
 
     .line 49
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/LocalMediaDrmCallback;->keyResponse:[B
@@ -41,7 +41,7 @@
 .end method
 
 .method public executeProvisionRequest(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;)[B
-    .registers 3
+    .locals 0
 
     .line 44
     new-instance p1, Ljava/lang/UnsupportedOperationException;

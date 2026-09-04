@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,13 +52,13 @@
 
 # virtual methods
 .method public addExtraDataToAccessibilityNodeInfo(ILandroidx/core/view/accessibility/AccessibilityNodeInfoCompat;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method
 
 .method public createAccessibilityNodeInfo(I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 .end method
 
 .method public findFocus(I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -92,7 +92,7 @@
 .end method
 
 .method public getProvider()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;->mProvider:Ljava/lang/Object;
@@ -101,7 +101,7 @@
 .end method
 
 .method public performAction(IILandroid/os/Bundle;)Z
-    .registers 4
+    .locals 0
 
     const/4 p1, 0x0
 

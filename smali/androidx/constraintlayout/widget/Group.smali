@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 40
     invoke-direct {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;)V
@@ -14,7 +14,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 3
+    .locals 0
 
     .line 44
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .locals 0
 
     .line 48
     invoke-direct {p0, p1, p2, p3}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method protected init(Landroid/util/AttributeSet;)V
-    .registers 2
+    .locals 0
 
     .line 56
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->init(Landroid/util/AttributeSet;)V
@@ -48,7 +48,7 @@
 .end method
 
 .method public onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     .line 62
     invoke-super {p0}, Landroidx/constraintlayout/widget/ConstraintHelper;->onAttachedToWindow()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public setElevation(F)V
-    .registers 2
+    .locals 0
 
     .line 74
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->setElevation(F)V
@@ -72,7 +72,7 @@
 .end method
 
 .method public setVisibility(I)V
-    .registers 2
+    .locals 0
 
     .line 68
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->setVisibility(I)V
@@ -84,7 +84,7 @@
 .end method
 
 .method public updatePostLayout(Landroidx/constraintlayout/widget/ConstraintLayout;)V
-    .registers 4
+    .locals 2
 
     .line 84
     invoke-virtual {p0}, Landroidx/constraintlayout/widget/Group;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;

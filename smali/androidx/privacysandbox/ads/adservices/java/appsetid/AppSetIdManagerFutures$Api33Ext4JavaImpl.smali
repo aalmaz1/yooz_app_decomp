@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "mAppSetIdManager"
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public static final synthetic access$getMAppSetIdManager$p(Landroidx/privacysandbox/ads/adservices/java/appsetid/AppSetIdManagerFutures$Api33Ext4JavaImpl;)Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager;
-    .registers 1
+    .locals 0
 
     .line 44
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/java/appsetid/AppSetIdManagerFutures$Api33Ext4JavaImpl;->mAppSetIdManager:Landroidx/privacysandbox/ads/adservices/appsetid/AppSetIdManager;
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public getAppSetIdAsync()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,7 +18,7 @@
 .end method
 
 .method public static isFlashAvailable(Landroidx/camera/camera2/internal/compat/workaround/CameraCharacteristicsProvider;)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -31,14 +31,14 @@
 .end method
 
 .method public static isFlashAvailable(ZLandroidx/camera/camera2/internal/compat/workaround/CameraCharacteristicsProvider;)Z
-    .registers 8
+    .locals 6
 
     const-string v0, "FlashAvailability"
 
     const/4 v1, 0x0
 
     .line 69
-    :try_start_3
+    :try_start_0
     sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->FLASH_INFO_AVAILABLE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-interface {p1, v2}, Landroidx/camera/camera2/internal/compat/workaround/CameraCharacteristicsProvider;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -46,12 +46,12 @@
     move-result-object p1
 
     check-cast p1, Ljava/lang/Boolean;
-    :try_end_b
-    .catch Ljava/nio/BufferUnderflowException; {:try_start_3 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/nio/BufferUnderflowException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_55
+    goto :goto_1
 
-    :catch_c
+    :catch_0
     move-exception p1
 
     .line 71
@@ -67,7 +67,7 @@
 
     const/4 v5, 0x3
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_0
 
     new-array v2, v5, [Ljava/lang/Object;
 
@@ -98,9 +98,9 @@
 
     invoke-static {v0, v2}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_4f
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     new-array v2, v5, [Ljava/lang/Object;
 
     .line 77
@@ -130,34 +130,34 @@
 
     invoke-static {v0, v2, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_4f
-    if-nez p0, :cond_63
+    :goto_0
+    if-nez p0, :cond_3
 
     .line 90
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    :goto_55
-    if-nez p1, :cond_5c
+    :goto_1
+    if-nez p1, :cond_1
 
     const-string p0, "Characteristics did not contain key FLASH_INFO_AVAILABLE. Flash is not available."
 
     .line 94
     invoke-static {v0, p0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_5c
-    if-eqz p1, :cond_62
+    :cond_1
+    if-eqz p1, :cond_2
 
     .line 97
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    :cond_62
+    :cond_2
     return v1
 
     .line 88
-    :cond_63
+    :cond_3
     throw p1
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +38,17 @@
 .end method
 
 .method private createManager(Landroidx/media3/common/MediaItem$DrmConfiguration;)Landroidx/media3/exoplayer/drm/DrmSessionManager;
-    .registers 6
+    .locals 4
 
     .line 106
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->drmHttpDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 108
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/media3/datasource/DefaultHttpDataSource$Factory;
 
     invoke-direct {v0}, Landroidx/media3/datasource/DefaultHttpDataSource$Factory;-><init>()V
@@ -60,26 +60,26 @@
     move-result-object v0
 
     .line 109
-    :goto_10
+    :goto_0
     new-instance v1, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;
 
     .line 111
     iget-object v2, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseUri:Landroid/net/Uri;
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_1
 
     const/4 v2, 0x0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     iget-object v2, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;->licenseUri:Landroid/net/Uri;
 
     invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    :goto_1e
+    :goto_1
     iget-boolean v3, p1, Landroidx/media3/common/MediaItem$DrmConfiguration;->forceDefaultLicenseUri:Z
 
     invoke-direct {v1, v2, v3, v0}, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;-><init>(Ljava/lang/String;ZLandroidx/media3/datasource/DataSource$Factory;)V
@@ -95,12 +95,12 @@
 
     move-result-object v0
 
-    :goto_2d
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -123,10 +123,10 @@
 
     invoke-virtual {v1, v3, v2}, Landroidx/media3/exoplayer/drm/HttpMediaDrmCallback;->setKeyRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2d
+    goto :goto_2
 
     .line 117
-    :cond_49
+    :cond_2
     new-instance v0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
 
     invoke-direct {v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;-><init>()V
@@ -169,13 +169,13 @@
     .line 125
     iget-object v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->drmLoadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
 
-    if-eqz v2, :cond_73
+    if-eqz v2, :cond_3
 
     .line 126
     invoke-virtual {v0, v2}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;->setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
 
     .line 128
-    :cond_73
+    :cond_3
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;->build(Landroidx/media3/exoplayer/drm/MediaDrmCallback;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     move-result-object v0
@@ -195,7 +195,7 @@
 
 # virtual methods
 .method public get(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/drm/DrmSessionManager;
-    .registers 4
+    .locals 2
 
     .line 88
     iget-object v0, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -207,7 +207,7 @@
 
     iget-object p1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 92
     sget-object p1, Landroidx/media3/exoplayer/drm/DrmSessionManager;->DRM_UNSUPPORTED:Landroidx/media3/exoplayer/drm/DrmSessionManager;
@@ -215,20 +215,20 @@
     return-object p1
 
     .line 95
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->lock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 96
-    :try_start_11
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
     invoke-static {p1, v1}, Landroidx/media3/common/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_21
+    if-nez v1, :cond_1
 
     .line 97
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
@@ -241,7 +241,7 @@
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->manager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
     .line 100
-    :cond_21
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->manager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -254,19 +254,19 @@
 
     return-object p1
 
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 101
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_11 .. :try_end_2d} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setDrmHttpDataSourceFactory(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 2
+    .locals 0
 
     .line 61
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->drmHttpDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
@@ -275,7 +275,7 @@
 .end method
 
 .method public setDrmLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)V
-    .registers 2
+    .locals 0
 
     .line 83
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManagerProvider;->drmLoadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -284,7 +284,7 @@
 .end method
 
 .method public setDrmUserAgent(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

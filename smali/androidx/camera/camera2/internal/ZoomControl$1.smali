@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/ZoomControl;)V
-    .registers 2
+    .locals 0
 
     .line 182
     iput-object p1, p0, Landroidx/camera/camera2/internal/ZoomControl$1;->this$0:Landroidx/camera/camera2/internal/ZoomControl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCaptureResult(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 3
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/camera/camera2/internal/ZoomControl$1;->this$0:Landroidx/camera/camera2/internal/ZoomControl;

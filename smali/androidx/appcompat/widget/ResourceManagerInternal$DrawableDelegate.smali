@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 567
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public createFromXmlInner(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .registers 9
+    .locals 4
 
     .line 571
     invoke-interface {p3}, Landroid/util/AttributeSet;->getClassAttribute()Ljava/lang/String;
@@ -39,10 +39,10 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 574
-    :try_start_7
+    :try_start_0
     const-class v2, Landroidx/appcompat/widget/ResourceManagerInternal$DrawableDelegate;
 
     .line 575
@@ -84,12 +84,12 @@
     move-result-object p1
 
     invoke-static {v0, p1, p2, p3, p4}, Landroidx/appcompat/resources/Compatibility$Api21Impl;->inflate(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_2d} :catch_2e
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_2e
+    :catch_0
     move-exception p1
 
     const-string p2, "DrawableDelegate"
@@ -99,6 +99,6 @@
     .line 586
     invoke-static {p2, p3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_36
+    :cond_0
     return-object v1
 .end method

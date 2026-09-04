@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final distinctUntilChanged(Landroidx/lifecycle/LiveData;)Landroidx/lifecycle/LiveData;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -71,7 +71,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_0
 
     .line 182
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
@@ -86,7 +86,7 @@
     iput-boolean v2, v1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     .line 185
-    :cond_22
+    :cond_0
     new-instance v2, Landroidx/lifecycle/Transformations$distinctUntilChanged$1;
 
     invoke-direct {v2, v0, v1}, Landroidx/lifecycle/Transformations$distinctUntilChanged$1;-><init>(Landroidx/lifecycle/MediatorLiveData;Lkotlin/jvm/internal/Ref$BooleanRef;)V
@@ -108,7 +108,7 @@
 .end method
 
 .method public static final synthetic map(Landroidx/lifecycle/LiveData;Landroidx/arch/core/util/Function;)Landroidx/lifecycle/LiveData;
-    .registers 4
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
         message = "Use kotlin functions, instead of outdated arch core Functions"
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final map(Landroidx/lifecycle/LiveData;Lkotlin/jvm/functions/Function1;)Landroidx/lifecycle/LiveData;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",
@@ -201,7 +201,7 @@
 .end method
 
 .method public static final synthetic switchMap(Landroidx/lifecycle/LiveData;Landroidx/arch/core/util/Function;)Landroidx/lifecycle/LiveData;
-    .registers 4
+    .locals 2
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
         message = "Use kotlin functions, instead of outdated arch core Functions"
@@ -236,7 +236,7 @@
 .end method
 
 .method public static final switchMap(Landroidx/lifecycle/LiveData;Lkotlin/jvm/functions/Function1;)Landroidx/lifecycle/LiveData;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<X:",

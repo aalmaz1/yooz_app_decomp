@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static partition(Landroid/view/ContentInfo;Ljava/util/function/Predicate;)Landroid/util/Pair;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_22
+    if-ne v1, v2, :cond_2
 
     const/4 v1, 0x0
 
@@ -67,22 +67,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     move-object v0, p0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move-object v0, v3
 
-    :goto_1a
-    if-eqz p1, :cond_1d
+    :goto_0
+    if-eqz p1, :cond_1
 
     move-object p0, v3
 
     .line 339
-    :cond_1d
+    :cond_1
     invoke-static {v0, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object p0
@@ -90,7 +90,7 @@
     return-object p0
 
     .line 341
-    :cond_22
+    :cond_2
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Landroidx/core/view/ContentInfoCompat$Api31Impl$$ExternalSyntheticLambda0;
@@ -104,7 +104,7 @@
     .line 342
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_3
 
     .line 343
     invoke-static {v3, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
@@ -114,10 +114,10 @@
     return-object p0
 
     .line 344
-    :cond_37
+    :cond_3
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    if-nez v0, :cond_40
+    if-nez v0, :cond_4
 
     .line 345
     invoke-static {p0, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
@@ -127,7 +127,7 @@
     return-object p0
 
     .line 347
-    :cond_40
+    :cond_4
     new-instance v0, Landroid/view/ContentInfo$Builder;
 
     invoke-direct {v0, p0}, Landroid/view/ContentInfo$Builder;-><init>(Landroid/view/ContentInfo;)V

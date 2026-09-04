@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplApi21;Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 0
 
     .line 1815
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplApi21$4;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplApi21;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 1819
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplApi21$4;->val$callback:Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;

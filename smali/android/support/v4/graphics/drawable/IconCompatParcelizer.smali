@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 8
     invoke-direct {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static read(Landroidx/versionedparcelable/VersionedParcel;)Landroidx/core/graphics/drawable/IconCompat;
-    .registers 1
+    .locals 0
 
     .line 10
     invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->read(Landroidx/versionedparcelable/VersionedParcel;)Landroidx/core/graphics/drawable/IconCompat;
@@ -25,7 +25,7 @@
 .end method
 
 .method public static write(Landroidx/core/graphics/drawable/IconCompat;Landroidx/versionedparcelable/VersionedParcel;)V
-    .registers 2
+    .locals 0
 
     .line 14
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->write(Landroidx/core/graphics/drawable/IconCompat;Landroidx/versionedparcelable/VersionedParcel;)V

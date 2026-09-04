@@ -84,7 +84,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,7 +117,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,7 +144,7 @@
 .end method
 
 .method public final invoke(Landroidx/datastore/preferences/core/Preferences;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,7 +173,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Landroidx/datastore/preferences/core/Preferences;
 
@@ -187,7 +187,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -198,16 +198,16 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_29
+    goto :goto_0
 
     .line 91
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -217,7 +217,7 @@
     throw p1
 
     .line 84
-    :cond_17
+    :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/datastore/preferences/core/PreferenceDataStore$updateData$2;->L$0:Ljava/lang/Object;
@@ -233,13 +233,13 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_29
+    if-ne p1, v0, :cond_2
 
     return-object v0
 
     .line 84
-    :cond_29
-    :goto_29
+    :cond_2
+    :goto_0
     check-cast p1, Landroidx/datastore/preferences/core/Preferences;
 
     .line 90

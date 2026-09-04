@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,14 +44,14 @@
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 62
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 63
     new-instance v0, Ljava/util/ArrayList;
@@ -67,7 +67,7 @@
     return-void
 
     .line 65
-    :cond_17
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Cannot set an empty CaptureStage list."
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public getCaptureStages()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

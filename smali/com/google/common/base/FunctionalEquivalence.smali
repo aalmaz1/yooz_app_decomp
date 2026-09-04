@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Function;Lcom/google/common/base/Equivalence;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method protected doEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -140,7 +140,7 @@
 .end method
 
 .method protected doHash(Ljava/lang/Object;)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -173,7 +173,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -189,17 +189,17 @@
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 60
-    :cond_4
+    :cond_0
     instance-of v1, p1, Lcom/google/common/base/FunctionalEquivalence;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 61
     check-cast p1, Lcom/google/common/base/FunctionalEquivalence;
@@ -213,7 +213,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/google/common/base/FunctionalEquivalence;->resultEquivalence:Lcom/google/common/base/Equivalence;
 
@@ -223,22 +223,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move v0, v2
 
-    :goto_21
+    :goto_0
     return v0
 
-    :cond_22
+    :cond_2
     return v2
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -265,7 +265,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 74
     new-instance v0, Ljava/lang/StringBuilder;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/LazyStringList;)V
-    .registers 2
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;)Landroidx/datastore/preferences/protobuf/LazyStringList;
-    .registers 1
+    .locals 0
 
     .line 47
     iget-object p0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->list:Landroidx/datastore/preferences/protobuf/LazyStringList;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public add(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 78
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -59,7 +59,7 @@
 .end method
 
 .method public add([B)V
-    .registers 2
+    .locals 0
 
     .line 98
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -70,7 +70,7 @@
 .end method
 
 .method public addAllByteArray(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,7 +88,7 @@
 .end method
 
 .method public addAllByteString(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +108,7 @@
 .end method
 
 .method public asByteArrayList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -132,7 +132,7 @@
 .end method
 
 .method public asByteStringList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -157,7 +157,7 @@
 .end method
 
 .method public bridge synthetic get(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 47
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->get(I)Ljava/lang/String;
@@ -168,7 +168,7 @@
 .end method
 
 .method public get(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->list:Landroidx/datastore/preferences/protobuf/LazyStringList;
@@ -183,7 +183,7 @@
 .end method
 
 .method public getByteArray(I)[B
-    .registers 3
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->list:Landroidx/datastore/preferences/protobuf/LazyStringList;
@@ -196,7 +196,7 @@
 .end method
 
 .method public getByteString(I)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->list:Landroidx/datastore/preferences/protobuf/LazyStringList;
@@ -209,7 +209,7 @@
 .end method
 
 .method public getRaw(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->list:Landroidx/datastore/preferences/protobuf/LazyStringList;
@@ -222,7 +222,7 @@
 .end method
 
 .method public getUnderlyingElements()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -242,13 +242,13 @@
 .end method
 
 .method public getUnmodifiableView()Landroidx/datastore/preferences/protobuf/LazyStringList;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -267,7 +267,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -286,7 +286,7 @@
 .end method
 
 .method public mergeFrom(Landroidx/datastore/preferences/protobuf/LazyStringList;)V
-    .registers 2
+    .locals 0
 
     .line 193
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -297,7 +297,7 @@
 .end method
 
 .method public set(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 3
+    .locals 0
 
     .line 83
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -308,7 +308,7 @@
 .end method
 
 .method public set(I[B)V
-    .registers 3
+    .locals 0
 
     .line 103
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -319,7 +319,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;->list:Landroidx/datastore/preferences/protobuf/LazyStringList;

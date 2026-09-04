@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/mp4/TrackSampleTable;Landroidx/media3/extractor/mp4/DefaultSampleValues;)V
-    .registers 5
+    .locals 1
 
     .line 1788
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,7 +97,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;)Z
-    .registers 1
+    .locals 0
 
     .line 1765
     iget-boolean p0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
@@ -106,7 +106,7 @@
 .end method
 
 .method static synthetic access$002(Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;Z)Z
-    .registers 2
+    .locals 0
 
     .line 1765
     iput-boolean p1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
@@ -117,12 +117,12 @@
 
 # virtual methods
 .method public getCurrentSampleFlags()I
-    .registers 3
+    .locals 2
 
     .line 1869
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 1870
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -133,10 +133,10 @@
 
     aget v0, v0, v1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 1871
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleIsSyncFrameTable:[Z
@@ -145,38 +145,38 @@
 
     aget-boolean v0, v0, v1
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 v0, 0x0
 
     .line 1872
-    :goto_1a
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->getEncryptionBoxIfEncrypted()Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
     move-result-object v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     const/high16 v1, 0x40000000    # 2.0f
 
     or-int/2addr v0, v1
 
-    :cond_23
+    :cond_2
     return v0
 .end method
 
 .method public getCurrentSampleOffset()J
-    .registers 3
+    .locals 2
 
     .line 1854
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 1855
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -187,10 +187,10 @@
 
     aget-wide v0, v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1856
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackFragment;->trunDataPosition:[J
@@ -199,17 +199,17 @@
 
     aget-wide v0, v0, v1
 
-    :goto_15
+    :goto_0
     return-wide v0
 .end method
 
 .method public getCurrentSamplePresentationTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 1847
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 1848
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -220,10 +220,10 @@
 
     aget-wide v0, v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1849
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget v1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleIndex:I
@@ -232,17 +232,17 @@
 
     move-result-wide v0
 
-    :goto_15
+    :goto_0
     return-wide v0
 .end method
 
 .method public getCurrentSampleSize()I
-    .registers 3
+    .locals 2
 
     .line 1861
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 1862
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -253,10 +253,10 @@
 
     aget v0, v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1863
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleSizeTable:[I
@@ -265,24 +265,24 @@
 
     aget v0, v0, v1
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method public getEncryptionBoxIfEncrypted()Landroidx/media3/extractor/mp4/TrackEncryptionBox;
-    .registers 4
+    .locals 3
 
     .line 2022
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentlyInFragment:Z
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 2026
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackFragment;->header:Landroidx/media3/extractor/mp4/DefaultSampleValues;
@@ -300,17 +300,17 @@
 
     iget-object v2, v2, Landroidx/media3/extractor/mp4/TrackFragment;->trackEncryptionBox:Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1
 
     .line 2030
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackFragment;->trackEncryptionBox:Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
-    goto :goto_25
+    goto :goto_0
 
     .line 2031
-    :cond_1d
+    :cond_1
     iget-object v2, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
 
     iget-object v2, v2, Landroidx/media3/extractor/mp4/TrackSampleTable;->track:Landroidx/media3/extractor/mp4/Track;
@@ -319,22 +319,22 @@
 
     move-result-object v0
 
-    :goto_25
-    if-eqz v0, :cond_2c
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 2032
     iget-boolean v2, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->isEncrypted:Z
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     move-object v1, v0
 
-    :cond_2c
+    :cond_2
     return-object v1
 .end method
 
 .method public next()Z
-    .registers 6
+    .locals 5
 
     .line 1892
     iget v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleIndex:I
@@ -350,12 +350,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return v2
 
     .line 1896
-    :cond_c
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleInTrackRun:I
 
     add-int/2addr v0, v1
@@ -371,7 +371,7 @@
 
     aget v3, v3, v4
 
-    if-ne v0, v3, :cond_21
+    if-ne v0, v3, :cond_1
 
     add-int/2addr v4, v1
 
@@ -383,12 +383,12 @@
 
     return v2
 
-    :cond_21
+    :cond_1
     return v1
 .end method
 
 .method public outputSampleEncryptionData(II)I
-    .registers 12
+    .locals 9
 
     .line 1917
     invoke-virtual {p0}, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->getEncryptionBoxIfEncrypted()Landroidx/media3/extractor/mp4/TrackEncryptionBox;
@@ -397,15 +397,15 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 1924
-    :cond_8
+    :cond_0
     iget v2, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->perSampleIvSize:I
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_1
 
     .line 1925
     iget-object v2, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
@@ -415,10 +415,10 @@
     .line 1926
     iget v0, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->perSampleIvSize:I
 
-    goto :goto_24
+    goto :goto_0
 
     .line 1929
-    :cond_13
+    :cond_1
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->defaultInitializationVector:[B
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -441,7 +441,7 @@
     array-length v0, v0
 
     .line 1935
-    :goto_24
+    :goto_0
     iget-object v3, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget v4, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleIndex:I
@@ -453,39 +453,39 @@
 
     const/4 v4, 0x1
 
-    if-nez v3, :cond_34
+    if-nez v3, :cond_3
 
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_2
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     move v5, v1
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_34
-    :goto_34
+    :cond_3
+    :goto_1
     move v5, v4
 
     .line 1940
-    :goto_35
+    :goto_2
     iget-object v6, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->encryptionSignalByte:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v6}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v6
 
-    if-eqz v5, :cond_40
+    if-eqz v5, :cond_4
 
     const/16 v7, 0x80
 
-    goto :goto_41
+    goto :goto_3
 
-    :cond_40
+    :cond_4
     move v7, v1
 
-    :goto_41
+    :goto_3
     or-int/2addr v7, v0
 
     int-to-byte v7, v7
@@ -510,13 +510,13 @@
 
     invoke-interface {v6, v2, v0, v4}, Landroidx/media3/extractor/TrackOutput;->sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
 
-    if-nez v5, :cond_5a
+    if-nez v5, :cond_5
 
     add-int/2addr v0, v4
 
     return v0
 
-    :cond_5a
+    :cond_5
     const/4 v2, 0x6
 
     const/4 v5, 0x3
@@ -525,7 +525,7 @@
 
     const/16 v7, 0x8
 
-    if-nez v3, :cond_a3
+    if-nez v3, :cond_6
 
     .line 1956
     iget-object v3, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->scratch:Landroidx/media3/common/util/ParsableByteArray;
@@ -615,7 +615,7 @@
     return v0
 
     .line 1976
-    :cond_a3
+    :cond_6
     iget-object p1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object p1, p1, Landroidx/media3/extractor/mp4/TrackFragment;->sampleEncryptionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -634,7 +634,7 @@
 
     add-int/2addr v3, v6
 
-    if-eqz p2, :cond_da
+    if-eqz p2, :cond_7
 
     .line 1984
     iget-object v2, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->scratch:Landroidx/media3/common/util/ParsableByteArray;
@@ -686,7 +686,7 @@
     iget-object p1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 1995
-    :cond_da
+    :cond_7
     iget-object p2, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->output:Landroidx/media3/extractor/TrackOutput;
 
     invoke-interface {p2, p1, v3, v4}, Landroidx/media3/extractor/TrackOutput;->sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
@@ -699,7 +699,7 @@
 .end method
 
 .method public reset(Landroidx/media3/extractor/mp4/TrackSampleTable;Landroidx/media3/extractor/mp4/DefaultSampleValues;)V
-    .registers 3
+    .locals 0
 
     .line 1800
     iput-object p1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -723,7 +723,7 @@
 .end method
 
 .method public resetFragmentInfo()V
-    .registers 2
+    .locals 1
 
     .line 1820
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
@@ -751,18 +751,18 @@
 .end method
 
 .method public seek(J)V
-    .registers 6
+    .locals 3
 
     .line 1835
     iget v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleIndex:I
 
     .line 1836
-    :goto_2
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget v1, v1, Landroidx/media3/extractor/mp4/TrackFragment;->sampleCount:I
 
-    if-ge v0, v1, :cond_1f
+    if-ge v0, v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
@@ -773,7 +773,7 @@
 
     cmp-long v1, v1, p1
 
-    if-gtz v1, :cond_1f
+    if-gtz v1, :cond_1
 
     .line 1838
     iget-object v1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
@@ -782,34 +782,34 @@
 
     aget-boolean v1, v1, v0
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 1839
     iput v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->firstSampleToOutputIndex:I
 
-    :cond_1c
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     return-void
 .end method
 
 .method public skipSampleEncryptionData()V
-    .registers 4
+    .locals 3
 
     .line 2006
     invoke-virtual {p0}, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->getEncryptionBoxIfEncrypted()Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 2011
-    :cond_7
+    :cond_0
     iget-object v1, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget-object v1, v1, Landroidx/media3/extractor/mp4/TrackFragment;->sampleEncryptionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -817,7 +817,7 @@
     .line 2012
     iget v2, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->perSampleIvSize:I
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_1
 
     .line 2013
     iget v0, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->perSampleIvSize:I
@@ -825,7 +825,7 @@
     invoke-virtual {v1, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 2015
-    :cond_14
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->fragment:Landroidx/media3/extractor/mp4/TrackFragment;
 
     iget v2, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->currentSampleIndex:I
@@ -834,7 +834,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 2016
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
@@ -845,12 +845,12 @@
 
     invoke-virtual {v1, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    :cond_27
+    :cond_2
     return-void
 .end method
 
 .method public updateDrmInitData(Landroidx/media3/common/DrmInitData;)V
-    .registers 4
+    .locals 2
 
     .line 1808
     iget-object v0, p0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor$TrackBundle;->moovSampleTable:Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -875,18 +875,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 1811
     iget-object v0, v0, Landroidx/media3/extractor/mp4/TrackEncryptionBox;->schemeType:Ljava/lang/String;
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
     .line 1812
-    :goto_1a
+    :goto_0
     invoke-virtual {p1, v0}, Landroidx/media3/common/DrmInitData;->copyWithSchemeType(Ljava/lang/String;)Landroidx/media3/common/DrmInitData;
 
     move-result-object p1

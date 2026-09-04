@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final persistableBundleOf()Landroid/os/PersistableBundle;
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -50,7 +50,7 @@
 .end method
 
 .method public static final varargs persistableBundleOf([Lkotlin/Pair;)Landroid/os/PersistableBundle;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -75,8 +75,8 @@
 
     const/4 v2, 0x0
 
-    :goto_7
-    if-ge v2, v1, :cond_1b
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, p0, v2
 
@@ -96,14 +96,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return-object v0
 .end method
 
 .method public static final toPersistableBundle(Ljava/util/Map;)Landroid/os/PersistableBundle;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,12 +134,12 @@
 
     move-result-object p0
 
-    :goto_10
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -160,8 +160,8 @@
     .line 62
     invoke-static {v0, v2, v1}, Landroidx/core/os/PersistableBundleApi21ImplKt;->putValue(Landroid/os/PersistableBundle;Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     return-object v0
 .end method

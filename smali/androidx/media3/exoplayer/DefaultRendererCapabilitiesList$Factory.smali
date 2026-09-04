@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/RenderersFactory;)V
-    .registers 2
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,13 +51,13 @@
 .end method
 
 .method static synthetic lambda$createRendererCapabilitiesList$0(Landroidx/media3/common/text/CueGroup;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method static synthetic lambda$createRendererCapabilitiesList$1(Landroidx/media3/common/Metadata;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public createRendererCapabilitiesList()Landroidx/media3/exoplayer/DefaultRendererCapabilitiesList;
-    .registers 7
+    .locals 6
 
     .line 58
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultRendererCapabilitiesList$Factory;->renderersFactory:Landroidx/media3/exoplayer/RenderersFactory;
@@ -107,7 +107,7 @@
 .end method
 
 .method public bridge synthetic createRendererCapabilitiesList()Landroidx/media3/exoplayer/RendererCapabilitiesList;
-    .registers 2
+    .locals 1
 
     .line 32
     invoke-virtual {p0}, Landroidx/media3/exoplayer/DefaultRendererCapabilitiesList$Factory;->createRendererCapabilitiesList()Landroidx/media3/exoplayer/DefaultRendererCapabilitiesList;

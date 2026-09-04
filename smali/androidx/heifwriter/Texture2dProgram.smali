@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     const/16 v0, 0x10
 
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 5
+    .locals 3
 
     .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,11 +97,11 @@
 
     const-string/jumbo v0, "uniform mat4 uMVPMatrix;\nuniform mat4 uTexMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = uMVPMatrix * aPosition;\n    vTextureCoord = (uTexMatrix * aTextureCoord).xy;\n}\n"
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_1b
+    if-ne p1, v1, :cond_0
 
     const p1, 0x8d65
 
@@ -117,10 +117,10 @@
 
     iput p1, p0, Landroidx/heifwriter/Texture2dProgram;->mProgramHandle:I
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 132
-    :cond_1b
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -141,7 +141,7 @@
 
     throw v0
 
-    :cond_30
+    :cond_1
     const/16 p1, 0xde1
 
     .line 124
@@ -157,10 +157,10 @@
     iput p1, p0, Landroidx/heifwriter/Texture2dProgram;->mProgramHandle:I
 
     .line 134
-    :goto_3c
+    :goto_0
     iget p1, p0, Landroidx/heifwriter/Texture2dProgram;->mProgramHandle:I
 
-    if-eqz p1, :cond_75
+    if-eqz p1, :cond_2
 
     const-string v0, "aPosition"
 
@@ -219,7 +219,7 @@
     return-void
 
     .line 135
-    :cond_75
+    :cond_2
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "Unable to create program"
@@ -230,19 +230,19 @@
 .end method
 
 .method public static checkGlError(Ljava/lang/String;)V
-    .registers 3
+    .locals 2
 
     .line 348
     invoke-static {}, Landroid/opengl/GLES20;->glGetError()I
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 350
-    :cond_7
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -283,14 +283,14 @@
 .end method
 
 .method public static checkLocation(ILjava/lang/String;)V
-    .registers 4
+    .locals 2
 
-    if-ltz p0, :cond_3
+    if-ltz p0, :cond_0
 
     return-void
 
     .line 340
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -319,7 +319,7 @@
 .end method
 
 .method public static createProgram(Ljava/lang/String;Ljava/lang/String;)I
-    .registers 6
+    .locals 4
 
     const v0, 0x8b31
 
@@ -330,11 +330,11 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_b
+    :cond_0
     const v1, 0x8b30
 
     .line 285
@@ -342,12 +342,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_1
 
     return v0
 
     .line 290
-    :cond_15
+    :cond_1
     invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
     move-result v1
@@ -359,7 +359,7 @@
 
     const-string v2, "Texture2dProgram"
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_2
 
     const-string v3, "Could not create program"
 
@@ -367,7 +367,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 295
-    :cond_27
+    :cond_2
     invoke-static {v1, p0}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
     const-string p0, "glAttachShader"
@@ -395,7 +395,7 @@
 
     aget p1, p1, v0
 
-    if-eq p1, p0, :cond_55
+    if-eq p1, p0, :cond_3
 
     const-string p0, "Could not link program: "
 
@@ -412,17 +412,17 @@
     .line 305
     invoke-static {v1}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    goto :goto_56
+    goto :goto_0
 
-    :cond_55
+    :cond_3
     move v0, v1
 
-    :goto_56
+    :goto_0
     return v0
 .end method
 
 .method public static loadShader(ILjava/lang/String;)I
-    .registers 5
+    .locals 3
 
     .line 317
     invoke-static {p0}, Landroid/opengl/GLES20;->glCreateShader(I)I
@@ -465,7 +465,7 @@
 
     aget p1, p1, v2
 
-    if-nez p1, :cond_5e
+    if-nez p1, :cond_0
 
     .line 324
     new-instance p1, Ljava/lang/StringBuilder;
@@ -518,14 +518,14 @@
 
     move v0, v2
 
-    :cond_5e
+    :cond_0
     return v0
 .end method
 
 
 # virtual methods
 .method public createTextureObject()I
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -579,14 +579,14 @@
 
     const/16 v2, 0xde1
 
-    if-ne v1, v2, :cond_35
+    if-ne v1, v2, :cond_0
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_35
+    :cond_0
     const v3, 0x46180400    # 9729.0f
 
-    :goto_38
+    :goto_0
     const/16 v2, 0x2800
 
     invoke-static {v1, v2, v3}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
@@ -616,7 +616,7 @@
 .end method
 
 .method public draw([FLjava/nio/FloatBuffer;IIII[FLjava/nio/FloatBuffer;II)V
-    .registers 22
+    .locals 11
 
     move-object v0, p0
 
@@ -765,7 +765,7 @@
 .end method
 
 .method public getProgramType()I
-    .registers 2
+    .locals 1
 
     .line 169
     iget v0, p0, Landroidx/heifwriter/Texture2dProgram;->mProgramType:I
@@ -774,7 +774,7 @@
 .end method
 
 .method public loadTexture(ILandroid/graphics/Bitmap;)V
-    .registers 4
+    .locals 1
 
     .line 206
     iget v0, p0, Landroidx/heifwriter/Texture2dProgram;->mTextureTarget:I
@@ -792,7 +792,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 160
     new-instance v0, Ljava/lang/StringBuilder;

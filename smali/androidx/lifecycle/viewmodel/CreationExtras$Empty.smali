@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/lifecycle/viewmodel/CreationExtras$Empty;
 
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Landroidx/lifecycle/viewmodel/CreationExtras;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public get(Landroidx/lifecycle/viewmodel/CreationExtras$Key;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

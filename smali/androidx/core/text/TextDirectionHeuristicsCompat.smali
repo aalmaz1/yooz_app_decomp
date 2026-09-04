@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 33
     new-instance v0, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
@@ -96,7 +96,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 257
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,63 +105,63 @@
 .end method
 
 .method static isRtlText(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_1
 
-    if-eq p0, v0, :cond_9
+    if-eq p0, v0, :cond_0
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_9
+    if-eq p0, v0, :cond_0
 
     return v0
 
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_b
+    :cond_1
     return v0
 .end method
 
 .method static isRtlTextOrFormat(I)I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_1
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_0
 
     const/4 v1, 0x2
 
-    if-eq p0, v1, :cond_c
+    if-eq p0, v1, :cond_0
 
-    packed-switch p0, :pswitch_data_10
+    packed-switch p0, :pswitch_data_0
 
     return v1
 
-    :cond_c
-    :pswitch_c
+    :cond_0
+    :pswitch_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_e
-    :pswitch_e
+    :cond_1
+    :pswitch_1
     return v0
 
     nop
 
-    :pswitch_data_10
+    :pswitch_data_0
     .packed-switch 0xe
-        :pswitch_e
-        :pswitch_e
-        :pswitch_c
-        :pswitch_c
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

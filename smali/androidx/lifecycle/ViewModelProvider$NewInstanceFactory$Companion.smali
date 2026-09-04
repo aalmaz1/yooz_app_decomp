@@ -51,7 +51,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 212
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory$Companion;-><init>()V
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public static synthetic getInstance$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -78,14 +78,14 @@
 
 # virtual methods
 .method public final getInstance()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
-    .registers 2
+    .locals 1
 
     .line 225
     invoke-static {}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->access$getSInstance$cp()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
 
     move-result-object v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 226
     new-instance v0, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
@@ -95,7 +95,7 @@
     invoke-static {v0}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->access$setSInstance$cp(Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;)V
 
     .line 228
-    :cond_e
+    :cond_0
     invoke-static {}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->access$getSInstance$cp()Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
 
     move-result-object v0

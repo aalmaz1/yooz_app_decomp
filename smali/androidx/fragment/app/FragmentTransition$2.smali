@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/ArrayList;)V
-    .registers 2
+    .locals 0
 
     .line 328
     iput-object p1, p0, Landroidx/fragment/app/FragmentTransition$2;->val$exitingViews:Ljava/util/ArrayList;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 331
     iget-object v0, p0, Landroidx/fragment/app/FragmentTransition$2;->val$exitingViews:Ljava/util/ArrayList;

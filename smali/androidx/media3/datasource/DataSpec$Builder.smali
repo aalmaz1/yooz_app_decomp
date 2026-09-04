@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/datasource/DataSpec;)V
-    .registers 4
+    .locals 2
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/datasource/DataSpec;Landroidx/media3/datasource/DataSpec$1;)V
-    .registers 3
+    .locals 0
 
     .line 50
     invoke-direct {p0, p1}, Landroidx/media3/datasource/DataSpec$Builder;-><init>(Landroidx/media3/datasource/DataSpec;)V
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/datasource/DataSpec;
-    .registers 19
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -189,7 +189,7 @@
 .end method
 
 .method public setCustomData(Ljava/lang/Object;)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 220
     iput-object p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->customData:Ljava/lang/Object;
@@ -198,7 +198,7 @@
 .end method
 
 .method public setFlags(I)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 208
     iput p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->flags:I
@@ -207,7 +207,7 @@
 .end method
 
 .method public setHttpBody([B)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 144
     iput-object p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->httpBody:[B
@@ -216,7 +216,7 @@
 .end method
 
 .method public setHttpMethod(I)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 132
     iput p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->httpMethod:I
@@ -225,7 +225,7 @@
 .end method
 
 .method public setHttpRequestHeaders(Ljava/util/Map;)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -244,7 +244,7 @@
 .end method
 
 .method public setKey(Ljava/lang/String;)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 196
     iput-object p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->key:Ljava/lang/String;
@@ -253,7 +253,7 @@
 .end method
 
 .method public setLength(J)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 3
+    .locals 0
 
     .line 184
     iput-wide p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->length:J
@@ -262,7 +262,7 @@
 .end method
 
 .method public setPosition(J)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 3
+    .locals 0
 
     .line 172
     iput-wide p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->position:J
@@ -271,7 +271,7 @@
 .end method
 
 .method public setUri(Landroid/net/Uri;)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 108
     iput-object p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->uri:Landroid/net/Uri;
@@ -280,7 +280,7 @@
 .end method
 
 .method public setUri(Ljava/lang/String;)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 96
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -293,7 +293,7 @@
 .end method
 
 .method public setUriPositionOffset(J)Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 3
+    .locals 0
 
     .line 120
     iput-wide p1, p0, Landroidx/media3/datasource/DataSpec$Builder;->uriPositionOffset:J

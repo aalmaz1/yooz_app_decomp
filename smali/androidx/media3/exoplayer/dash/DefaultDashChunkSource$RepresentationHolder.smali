@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(JLandroidx/media3/exoplayer/dash/manifest/Representation;Landroidx/media3/exoplayer/dash/manifest/BaseUrl;Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;JLandroidx/media3/exoplayer/dash/DashSegmentIndex;)V
-    .registers 9
+    .locals 0
 
     .line 994
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;)J
-    .registers 3
+    .locals 2
 
     .line 977
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->periodDurationUs:J
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method copyWithNewRepresentation(JLandroidx/media3/exoplayer/dash/manifest/Representation;)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
-    .registers 25
+    .locals 21
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/source/BehindLiveWindowException;
@@ -91,7 +91,7 @@
 
     move-result-object v10
 
-    if-nez v9, :cond_21
+    if-nez v9, :cond_0
 
     .line 1012
     new-instance v10, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -113,12 +113,12 @@
     return-object v10
 
     .line 1021
-    :cond_21
+    :cond_0
     invoke-interface {v9}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->isExplicit()Z
 
     move-result v1
 
-    if-nez v1, :cond_39
+    if-nez v1, :cond_1
 
     .line 1023
     new-instance v11, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -142,7 +142,7 @@
     return-object v11
 
     .line 1032
-    :cond_39
+    :cond_1
     invoke-interface {v9, v2, v3}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getSegmentCount(J)J
 
     move-result-wide v4
@@ -151,7 +151,7 @@
 
     cmp-long v1, v4, v6
 
-    if-nez v1, :cond_55
+    if-nez v1, :cond_2
 
     .line 1035
     new-instance v11, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -175,7 +175,7 @@
     return-object v11
 
     .line 1044
-    :cond_55
+    :cond_2
     invoke-static {v10}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1046
@@ -225,28 +225,28 @@
 
     cmp-long v15, v15, v8
 
-    if-nez v15, :cond_87
+    if-nez v15, :cond_3
 
     const-wide/16 v16, 0x1
 
     add-long v4, v4, v16
 
-    :goto_83
+    :goto_0
     sub-long/2addr v4, v13
 
     add-long/2addr v6, v4
 
-    :goto_85
+    :goto_1
     move-wide v7, v6
 
-    goto :goto_9a
+    goto :goto_2
 
-    :cond_87
-    if-ltz v15, :cond_aa
+    :cond_3
+    if-ltz v15, :cond_5
 
     cmp-long v4, v8, v11
 
-    if-gez v4, :cond_95
+    if-gez v4, :cond_4
 
     .line 1066
     invoke-interface {v10, v11, v12, v2, v3}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getSegmentNum(JJ)J
@@ -257,18 +257,18 @@
 
     sub-long/2addr v6, v4
 
-    goto :goto_85
+    goto :goto_1
 
     .line 1071
-    :cond_95
+    :cond_4
     invoke-interface {v1, v8, v9, v2, v3}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getSegmentNum(JJ)J
 
     move-result-wide v4
 
-    goto :goto_83
+    goto :goto_0
 
     .line 1074
-    :goto_9a
+    :goto_2
     new-instance v11, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
     iget-object v5, v0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->selectedBaseUrl:Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
@@ -288,7 +288,7 @@
     return-object v11
 
     .line 1061
-    :cond_aa
+    :cond_5
     new-instance v1, Landroidx/media3/exoplayer/source/BehindLiveWindowException;
 
     invoke-direct {v1}, Landroidx/media3/exoplayer/source/BehindLiveWindowException;-><init>()V
@@ -297,7 +297,7 @@
 .end method
 
 .method copyWithNewSegmentIndex(Landroidx/media3/exoplayer/dash/DashSegmentIndex;)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
-    .registers 12
+    .locals 10
 
     .line 1085
     new-instance v9, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -322,7 +322,7 @@
 .end method
 
 .method copyWithNewSelectedBaseUrl(Landroidx/media3/exoplayer/dash/manifest/BaseUrl;)Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
-    .registers 12
+    .locals 10
 
     .line 1096
     new-instance v9, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
@@ -347,7 +347,7 @@
 .end method
 
 .method public getFirstAvailableSegmentNum(J)J
-    .registers 6
+    .locals 3
 
     .line 1110
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -373,7 +373,7 @@
 .end method
 
 .method public getFirstSegmentNum()J
-    .registers 5
+    .locals 4
 
     .line 1106
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -396,7 +396,7 @@
 .end method
 
 .method public getLastAvailableSegmentNum(J)J
-    .registers 8
+    .locals 5
 
     .line 1139
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getFirstAvailableSegmentNum(J)J
@@ -429,7 +429,7 @@
 .end method
 
 .method public getSegmentCount()J
-    .registers 4
+    .locals 3
 
     .line 1116
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -450,7 +450,7 @@
 .end method
 
 .method public getSegmentEndTimeUs(J)J
-    .registers 8
+    .locals 5
 
     .line 1124
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentStartTimeUs(J)J
@@ -483,7 +483,7 @@
 .end method
 
 .method public getSegmentNum(J)J
-    .registers 6
+    .locals 3
 
     .line 1130
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -508,7 +508,7 @@
 .end method
 
 .method public getSegmentStartTimeUs(J)J
-    .registers 6
+    .locals 3
 
     .line 1120
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -531,7 +531,7 @@
 .end method
 
 .method public getSegmentUrl(J)Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 6
+    .locals 3
 
     .line 1135
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -554,7 +554,7 @@
 .end method
 
 .method public isSegmentAvailableAtFullNetworkSpeed(JJ)Z
-    .registers 9
+    .locals 4
 
     .line 1146
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->segmentIndex:Landroidx/media3/exoplayer/dash/DashSegmentIndex;
@@ -571,16 +571,16 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     return v1
 
-    :cond_10
+    :cond_0
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p3, v2
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 1152
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->getSegmentEndTimeUs(J)J
@@ -589,14 +589,14 @@
 
     cmp-long p1, p1, p3
 
-    if-gtz p1, :cond_22
+    if-gtz p1, :cond_1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 v1, 0x0
 
-    :cond_23
-    :goto_23
+    :cond_2
+    :goto_0
     return v1
 .end method

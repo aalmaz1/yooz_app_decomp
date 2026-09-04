@@ -35,7 +35,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/nio/ByteBuffer;Ljava/util/concurrent/atomic/AtomicInteger;Landroidx/core/util/Pair;I)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_1
 
     .line 107
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -91,12 +91,12 @@
 
     const/4 p2, 0x1
 
-    if-lt p1, p2, :cond_25
+    if-lt p1, p2, :cond_0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 109
-    :cond_25
+    :cond_0
     new-instance p3, Ljava/lang/AssertionError;
 
     sget-object p4, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -129,23 +129,23 @@
 
     throw p3
 
-    :cond_42
-    :goto_42
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private checkNotClosed(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 184
     iget-boolean v0, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mClosed:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 185
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -174,7 +174,7 @@
 .end method
 
 .method private closeInternal()Z
-    .registers 9
+    .locals 8
 
     .line 218
     iget-object v0, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mCloseLock:Ljava/lang/Object;
@@ -182,19 +182,19 @@
     monitor-enter v0
 
     .line 219
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mClosed:Z
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 221
     monitor-exit v0
 
     return v2
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x1
 
     .line 223
@@ -209,8 +209,8 @@
 
     .line 226
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_95
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const-string v0, "SharedByteBuffer"
 
@@ -219,9 +219,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
-    if-ltz v3, :cond_3b
+    if-ltz v3, :cond_1
 
     const-string v0, "SharedByteBuffer"
 
@@ -254,10 +254,10 @@
 
     invoke-static {v0, v4}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 230
-    :cond_3b
+    :cond_1
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Invalid ref count. close() should never produce a ref count below 0"
@@ -266,9 +266,9 @@
 
     throw v0
 
-    :cond_43
-    :goto_43
-    if-nez v3, :cond_94
+    :cond_2
+    :goto_0
+    if-nez v3, :cond_4
 
     const-string v0, "SharedByteBuffer"
 
@@ -277,7 +277,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_3
 
     const-string v0, "SharedByteBuffer"
 
@@ -303,8 +303,8 @@
     invoke-static {v0, v3}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 248
-    :cond_62
-    :try_start_62
+    :cond_3
+    :try_start_1
     iget-object v0, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mFinalCloseAction:Landroidx/core/util/Pair;
 
     iget-object v0, v0, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
@@ -332,12 +332,12 @@
 
     .line 250
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_7d
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_62 .. :try_end_7d} :catch_7e
+    :try_end_1
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_94
+    goto :goto_1
 
-    :catch_7e
+    :catch_0
     move-exception v0
 
     const-string v3, "SharedByteBuffer"
@@ -363,24 +363,24 @@
 
     invoke-static {v3, v2, v0}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_94
-    :goto_94
+    :cond_4
+    :goto_1
     return v1
 
-    :catchall_95
+    :catchall_0
     move-exception v1
 
     .line 226
-    :try_start_96
+    :try_start_2
     monitor-exit v0
-    :try_end_97
-    .catchall {:try_start_96 .. :try_end_97} :catchall_95
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v1
 .end method
 
 .method static newSharedInstance(Ljava/nio/ByteBuffer;Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Landroidx/camera/video/internal/SharedByteBuffer;
-    .registers 7
+    .locals 4
 
     .line 85
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
@@ -434,7 +434,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 1
+    .locals 0
 
     .line 160
     invoke-direct {p0}, Landroidx/camera/video/internal/SharedByteBuffer;->closeInternal()Z
@@ -443,7 +443,7 @@
 .end method
 
 .method protected finalize()V
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
@@ -456,7 +456,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     const-string v0, "SharedByteBuffer"
 
@@ -484,16 +484,16 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1d
-    .catchall {:try_start_0 .. :try_end_1d} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 209
-    :cond_1d
+    :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception v0
 
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
@@ -503,14 +503,14 @@
 .end method
 
 .method public get()Ljava/nio/ByteBuffer;
-    .registers 3
+    .locals 2
 
     .line 176
     iget-object v0, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mCloseLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    :try_start_3
+    :try_start_0
     const-string v1, "get()"
 
     .line 177
@@ -523,26 +523,26 @@
 
     return-object v1
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 179
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method share()Landroidx/camera/video/internal/SharedByteBuffer;
-    .registers 9
+    .locals 8
 
     .line 128
     iget-object v0, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mCloseLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    :try_start_3
+    :try_start_0
     const-string v1, "share()"
 
     .line 129
@@ -560,8 +560,8 @@
 
     .line 132
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const-string v0, "SharedByteBuffer"
 
@@ -570,11 +570,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
-    if-le v1, v0, :cond_3a
+    if-le v1, v0, :cond_0
 
     const-string v3, "SharedByteBuffer"
 
@@ -609,10 +609,10 @@
 
     invoke-static {v3, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_42
+    goto :goto_0
 
     .line 136
-    :cond_3a
+    :cond_0
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Invalid ref count. share() should always produce a ref count of 2 or more."
@@ -622,8 +622,8 @@
     throw v0
 
     .line 143
-    :cond_42
-    :goto_42
+    :cond_1
+    :goto_0
     new-instance v0, Landroidx/camera/video/internal/SharedByteBuffer;
 
     iget-object v1, p0, Landroidx/camera/video/internal/SharedByteBuffer;->mSharedByteBuffer:Ljava/nio/ByteBuffer;
@@ -640,20 +640,20 @@
 
     return-object v0
 
-    :catchall_52
+    :catchall_0
     move-exception v1
 
     .line 132
-    :try_start_53
+    :try_start_1
     monitor-exit v0
-    :try_end_54
-    .catchall {:try_start_53 .. :try_end_54} :catchall_52
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 193
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;

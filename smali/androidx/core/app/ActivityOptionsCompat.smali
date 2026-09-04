@@ -23,7 +23,7 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 302
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static makeBasic()Landroidx/core/app/ActivityOptionsCompat;
-    .registers 2
+    .locals 2
 
     .line 241
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -47,7 +47,7 @@
 .end method
 
 .method public static makeClipRevealAnimation(Landroid/view/View;IIII)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 6
+    .locals 1
 
     .line 119
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -63,7 +63,7 @@
 .end method
 
 .method public static makeCustomAnimation(Landroid/content/Context;II)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 4
+    .locals 1
 
     .line 69
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -79,7 +79,7 @@
 .end method
 
 .method public static makeScaleUpAnimation(Landroid/view/View;IIII)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 6
+    .locals 1
 
     .line 96
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -95,7 +95,7 @@
 .end method
 
 .method public static makeSceneTransitionAnimation(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 4
+    .locals 1
 
     .line 173
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -111,7 +111,7 @@
 .end method
 
 .method public static varargs makeSceneTransitionAnimation(Landroid/app/Activity;[Landroidx/core/util/Pair;)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -125,7 +125,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 204
     array-length v0, p1
@@ -135,10 +135,10 @@
     const/4 v1, 0x0
 
     .line 205
-    :goto_6
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_1f
+    if-ge v1, v2, :cond_1
 
     .line 206
     aget-object v2, p1, v1
@@ -161,13 +161,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x0
 
     .line 210
-    :cond_1f
+    :cond_1
     new-instance p1, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
 
     .line 211
@@ -181,7 +181,7 @@
 .end method
 
 .method public static makeTaskLaunchBehind()Landroidx/core/app/ActivityOptionsCompat;
-    .registers 2
+    .locals 2
 
     .line 229
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -196,7 +196,7 @@
 .end method
 
 .method public static makeThumbnailScaleUpAnimation(Landroid/view/View;Landroid/graphics/Bitmap;II)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 5
+    .locals 1
 
     .line 147
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -214,7 +214,7 @@
 
 # virtual methods
 .method public getLaunchBounds()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -222,25 +222,25 @@
 .end method
 
 .method public requestUsageTimeReport(Landroid/app/PendingIntent;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setLaunchBounds(Landroid/graphics/Rect;)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method public setShareIdentityEnabled(Z)Landroidx/core/app/ActivityOptionsCompat;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -248,7 +248,7 @@
 .end method
 
 .method public update(Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

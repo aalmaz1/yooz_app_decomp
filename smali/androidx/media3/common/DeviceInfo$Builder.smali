@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/common/DeviceInfo$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 57
     iget p0, p0, Landroidx/media3/common/DeviceInfo$Builder;->playbackType:I
@@ -47,7 +47,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/common/DeviceInfo$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 57
     iget p0, p0, Landroidx/media3/common/DeviceInfo$Builder;->minVolume:I
@@ -56,7 +56,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/common/DeviceInfo$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 57
     iget p0, p0, Landroidx/media3/common/DeviceInfo$Builder;->maxVolume:I
@@ -65,7 +65,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/common/DeviceInfo$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 57
     iget-object p0, p0, Landroidx/media3/common/DeviceInfo$Builder;->routingControllerId:Ljava/lang/String;
@@ -76,23 +76,23 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/DeviceInfo;
-    .registers 3
+    .locals 2
 
     .line 124
     iget v0, p0, Landroidx/media3/common/DeviceInfo$Builder;->minVolume:I
 
     iget v1, p0, Landroidx/media3/common/DeviceInfo$Builder;->maxVolume:I
 
-    if-gt v0, v1, :cond_8
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 125
@@ -106,7 +106,7 @@
 .end method
 
 .method public setMaxVolume(I)Landroidx/media3/common/DeviceInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 96
     iput p1, p0, Landroidx/media3/common/DeviceInfo$Builder;->maxVolume:I
@@ -115,7 +115,7 @@
 .end method
 
 .method public setMinVolume(I)Landroidx/media3/common/DeviceInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 84
     iput p1, p0, Landroidx/media3/common/DeviceInfo$Builder;->minVolume:I
@@ -124,27 +124,27 @@
 .end method
 
 .method public setRoutingControllerId(Ljava/lang/String;)Landroidx/media3/common/DeviceInfo$Builder;
-    .registers 3
+    .locals 1
 
     .line 117
     iget v0, p0, Landroidx/media3/common/DeviceInfo$Builder;->playbackType:I
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_1
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_1
 
-    :cond_9
-    :goto_9
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_a
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 118

@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 25
     new-instance v0, Landroidx/media3/extractor/mp4/NoDeclaredBrandSniffFailure;
@@ -25,7 +25,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;Ljava/io/Reader;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010,
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -85,7 +85,7 @@
 .end method
 
 .method public read()I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -103,12 +103,12 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_3
 
     .line 797
     iget-boolean v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
@@ -120,12 +120,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
-    goto :goto_31
+    goto :goto_1
 
     .line 798
-    :cond_1a
+    :cond_1
     new-instance v0, Lcom/google/common/io/BaseEncoding$DecodingException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -148,12 +148,12 @@
 
     throw v0
 
-    :cond_31
-    :goto_31
+    :cond_2
+    :goto_1
     return v1
 
     .line 802
-    :cond_32
+    :cond_3
     iget v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->readChars:I
 
     const/4 v2, 0x1
@@ -169,7 +169,7 @@
 
     iget-object v1, v1, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_6
 
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
@@ -179,16 +179,16 @@
 
     move-result v1
 
-    if-ne v1, v0, :cond_79
+    if-ne v1, v0, :cond_6
 
     .line 805
     iget-boolean v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
-    if-nez v0, :cond_76
+    if-nez v0, :cond_5
 
     iget v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->readChars:I
 
-    if-eq v0, v2, :cond_5f
+    if-eq v0, v2, :cond_4
 
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
@@ -203,12 +203,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_4
 
-    goto :goto_76
+    goto :goto_2
 
     .line 807
-    :cond_5f
+    :cond_4
     new-instance v0, Lcom/google/common/io/BaseEncoding$DecodingException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -232,17 +232,17 @@
     throw v0
 
     .line 809
-    :cond_76
-    :goto_76
+    :cond_5
+    :goto_2
     iput-boolean v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
     goto :goto_0
 
     .line 810
-    :cond_79
+    :cond_6
     iget-boolean v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
-    if-nez v1, :cond_ac
+    if-nez v1, :cond_7
 
     .line 814
     iget v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
@@ -302,7 +302,7 @@
     return v0
 
     .line 811
-    :cond_ac
+    :cond_7
     new-instance v1, Lcom/google/common/io/BaseEncoding$DecodingException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -337,7 +337,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -366,8 +366,8 @@
 
     move v0, p2
 
-    :goto_6
-    if-ge v0, p3, :cond_1b
+    :goto_0
+    if-ge v0, p3, :cond_2
 
     .line 837
     invoke-virtual {p0}, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->read()I
@@ -376,21 +376,21 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_15
+    if-ne v1, v2, :cond_1
 
     sub-int/2addr v0, p2
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
+    :cond_0
     move v2, v0
 
-    :goto_14
+    :goto_1
     return v2
 
-    :cond_15
+    :cond_1
     int-to-byte v1, v1
 
     .line 842
@@ -398,9 +398,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1b
+    :cond_2
     sub-int/2addr v0, p2
 
     return v0

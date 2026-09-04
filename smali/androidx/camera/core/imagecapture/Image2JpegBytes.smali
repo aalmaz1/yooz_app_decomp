@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/Quirks;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method private static extractExif([B)Landroidx/camera/core/impl/utils/Exif;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -62,12 +62,12 @@
     invoke-static {v0}, Landroidx/camera/core/impl/utils/Exif;->createFromInputStream(Ljava/io/InputStream;)Landroidx/camera/core/impl/utils/Exif;
 
     move-result-object p0
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_a
+    :catch_0
     move-exception p0
 
     .line 125
@@ -83,7 +83,7 @@
 .end method
 
 .method private processJpegImage(Landroidx/camera/core/imagecapture/Image2JpegBytes$In;)Landroidx/camera/core/processing/Packet;
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -162,7 +162,7 @@
 .end method
 
 .method private processYuvImage(Landroidx/camera/core/imagecapture/Image2JpegBytes$In;)Landroidx/camera/core/processing/Packet;
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -197,7 +197,7 @@
     move-result-object v2
 
     .line 102
-    :try_start_e
+    :try_start_0
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/Image2JpegBytes$In;->getJpegQuality()I
 
     move-result p1
@@ -211,8 +211,8 @@
     invoke-static {v1, v2, p1, v3}, Landroidx/camera/core/internal/utils/ImageUtil;->yuvImageToJpegByteArray(Landroidx/camera/core/ImageProxy;Landroid/graphics/Rect;II)[B
 
     move-result-object v4
-    :try_end_1a
-    .catch Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException; {:try_start_e .. :try_end_1a} :catch_50
+    :try_end_0
+    .catch Landroidx/camera/core/internal/utils/ImageUtil$CodecFailedException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 112
     invoke-static {v4}, Landroidx/camera/core/imagecapture/Image2JpegBytes;->extractExif([B)Landroidx/camera/core/impl/utils/Exif;
@@ -275,7 +275,7 @@
 
     return-object p1
 
-    :catch_50
+    :catch_0
     move-exception p1
 
     .line 105
@@ -293,7 +293,7 @@
 
 # virtual methods
 .method public apply(Landroidx/camera/core/imagecapture/Image2JpegBytes$In;)Landroidx/camera/core/processing/Packet;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -313,7 +313,7 @@
     const-string v0, "Unexpected format: "
 
     .line 64
-    :try_start_2
+    :try_start_0
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/Image2JpegBytes$In;->getPacket()Landroidx/camera/core/processing/Packet;
 
     move-result-object v1
@@ -324,21 +324,21 @@
 
     const/16 v2, 0x23
 
-    if-eq v1, v2, :cond_37
+    if-eq v1, v2, :cond_1
 
     const/16 v2, 0x100
 
-    if-ne v1, v2, :cond_24
+    if-ne v1, v2, :cond_0
 
     .line 67
     invoke-direct {p0, p1}, Landroidx/camera/core/imagecapture/Image2JpegBytes;->processJpegImage(Landroidx/camera/core/imagecapture/Image2JpegBytes$In;)Landroidx/camera/core/processing/Packet;
 
     move-result-object v0
-    :try_end_16
-    .catchall {:try_start_2 .. :try_end_16} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
-    :goto_16
+    :goto_0
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/Image2JpegBytes$In;->getPacket()Landroidx/camera/core/processing/Packet;
 
     move-result-object p1
@@ -354,8 +354,8 @@
     return-object v0
 
     .line 71
-    :cond_24
-    :try_start_24
+    :cond_0
+    :try_start_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -375,16 +375,16 @@
     throw v2
 
     .line 69
-    :cond_37
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/camera/core/imagecapture/Image2JpegBytes;->processYuvImage(Landroidx/camera/core/imagecapture/Image2JpegBytes$In;)Landroidx/camera/core/processing/Packet;
 
     move-result-object v0
-    :try_end_3b
-    .catchall {:try_start_24 .. :try_end_3b} :catchall_3c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :catchall_3c
+    :catchall_0
     move-exception v0
 
     .line 74
@@ -405,7 +405,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;

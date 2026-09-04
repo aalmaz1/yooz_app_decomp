@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;)V
-    .registers 2
+    .locals 0
 
     .line 123
     iput-object p1, p0, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$1;->this$0:Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 126
     iget-object v0, p0, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$1;->this$0:Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;

@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -66,7 +66,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -150,7 +150,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;Landroidx/media3/exoplayer/rtsp/RtpPacket$1;)V
-    .registers 3
+    .locals 0
 
     .line 61
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtpPacket;-><init>(Landroidx/media3/exoplayer/rtsp/RtpPacket$Builder;)V
@@ -159,7 +159,7 @@
 .end method
 
 .method static synthetic access$000()[B
-    .registers 1
+    .locals 1
 
     .line 61
     sget-object v0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->EMPTY:[B
@@ -168,7 +168,7 @@
 .end method
 
 .method public static getNextSequenceNumber(I)I
-    .registers 2
+    .locals 1
 
     add-int/lit8 p0, p0, 0x1
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public static getPreviousSequenceNumber(I)I
-    .registers 2
+    .locals 1
 
     add-int/lit8 p0, p0, -0x1
 
@@ -198,7 +198,7 @@
 .end method
 
 .method public static parse(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/exoplayer/rtsp/RtpPacket;
-    .registers 14
+    .locals 13
 
     .line 199
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -209,12 +209,12 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_a
+    if-ge v0, v1, :cond_0
 
     return-object v2
 
     .line 204
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
@@ -231,28 +231,28 @@
 
     const/4 v5, 0x0
 
-    if-ne v3, v4, :cond_1a
+    if-ne v3, v4, :cond_1
 
     move v3, v4
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     move v3, v5
 
-    :goto_1b
+    :goto_0
     and-int/lit8 v0, v0, 0xf
 
     int-to-byte v0, v0
 
     const/4 v6, 0x2
 
-    if-eq v1, v6, :cond_22
+    if-eq v1, v6, :cond_2
 
     return-object v2
 
     .line 213
-    :cond_22
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
@@ -261,14 +261,14 @@
 
     and-int/2addr v2, v4
 
-    if-ne v2, v4, :cond_2c
+    if-ne v2, v4, :cond_3
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_2c
+    :cond_3
     move v4, v5
 
-    :goto_2d
+    :goto_1
     and-int/lit8 v1, v1, 0x7f
 
     int-to-byte v1, v1
@@ -288,7 +288,7 @@
 
     move-result v8
 
-    if-lez v0, :cond_4e
+    if-lez v0, :cond_4
 
     mul-int/lit8 v9, v0, 0x4
 
@@ -297,8 +297,8 @@
 
     move v10, v5
 
-    :goto_43
-    if-ge v10, v0, :cond_50
+    :goto_2
+    if-ge v10, v0, :cond_5
 
     mul-int/lit8 v11, v10, 0x4
 
@@ -309,14 +309,14 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_43
+    goto :goto_2
 
     .line 233
-    :cond_4e
+    :cond_4
     sget-object v9, Landroidx/media3/exoplayer/rtsp/RtpPacket;->EMPTY:[B
 
     .line 237
-    :cond_50
+    :cond_5
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
@@ -384,7 +384,7 @@
 .end method
 
 .method public static parse([BI)Landroidx/media3/exoplayer/rtsp/RtpPacket;
-    .registers 3
+    .locals 1
 
     .line 262
     new-instance v0, Landroidx/media3/common/util/ParsableByteArray;
@@ -401,18 +401,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_3
 
     .line 322
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -423,12 +423,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_37
+    goto :goto_1
 
     .line 325
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;
 
     .line 326
@@ -436,19 +436,19 @@
 
     iget-byte v3, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->payloadType:B
 
-    if-ne v2, v3, :cond_35
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->sequenceNumber:I
 
     iget v3, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->sequenceNumber:I
 
-    if-ne v2, v3, :cond_35
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->marker:Z
 
     iget-boolean v3, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->marker:Z
 
-    if-ne v2, v3, :cond_35
+    if-ne v2, v3, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->timestamp:J
 
@@ -456,29 +456,29 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_35
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->ssrc:I
 
     iget p1, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->ssrc:I
 
-    if-ne v2, p1, :cond_35
+    if-ne v2, p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_2
     move v0, v1
 
-    :goto_36
+    :goto_0
     return v0
 
-    :cond_37
-    :goto_37
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     const/16 v0, 0x20f
 
@@ -527,7 +527,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x5
 
@@ -596,7 +596,7 @@
 .end method
 
 .method public writeToBuffer([BII)I
-    .registers 6
+    .locals 2
 
     .line 293
     iget-byte v0, p0, Landroidx/media3/exoplayer/rtsp/RtpPacket;->csrcCount:B
@@ -611,19 +611,19 @@
 
     add-int/2addr v0, v1
 
-    if-lt p3, v0, :cond_58
+    if-lt p3, v0, :cond_1
 
     .line 294
     array-length v1, p1
 
     sub-int/2addr v1, p2
 
-    if-ge v1, v0, :cond_11
+    if-ge v1, v0, :cond_0
 
-    goto :goto_58
+    goto :goto_0
 
     .line 298
-    :cond_11
+    :cond_0
     invoke-static {p1, p2, p3}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -712,8 +712,8 @@
 
     return v0
 
-    :cond_58
-    :goto_58
+    :cond_1
+    :goto_0
     const/4 p1, -0x1
 
     return p1

@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 34
     new-instance v0, Landroidx/camera/camera2/internal/ImageCaptureOptionUnpacker;
@@ -30,7 +30,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/camera2/internal/compat/workaround/ImageCapturePixelHDRPlus;)V
-    .registers 2
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Landroidx/camera/camera2/internal/Camera2CaptureOptionUnpacker;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public unpack(Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/CaptureConfig$Builder;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,7 +61,7 @@
     .line 49
     instance-of v0, p1, Landroidx/camera/core/impl/ImageCaptureConfig;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 52
     check-cast p1, Landroidx/camera/core/impl/ImageCaptureConfig;
@@ -76,7 +76,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 57
     iget-object v1, p0, Landroidx/camera/camera2/internal/ImageCaptureOptionUnpacker;->mImageCapturePixelHDRPlus:Landroidx/camera/camera2/internal/compat/workaround/ImageCapturePixelHDRPlus;
@@ -88,7 +88,7 @@
     invoke-virtual {v1, p1, v0}, Landroidx/camera/camera2/internal/compat/workaround/ImageCapturePixelHDRPlus;->toggleHDRPlus(ILandroidx/camera/camera2/impl/Camera2ImplConfig$Builder;)V
 
     .line 61
-    :cond_1d
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->build()Landroidx/camera/camera2/impl/Camera2ImplConfig;
 
     move-result-object p1
@@ -98,7 +98,7 @@
     return-void
 
     .line 50
-    :cond_25
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "config is not ImageCaptureConfig"

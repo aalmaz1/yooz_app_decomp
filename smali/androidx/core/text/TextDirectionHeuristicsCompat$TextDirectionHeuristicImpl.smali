@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)V
-    .registers 2
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method private doCheck(Ljava/lang/CharSequence;II)Z
-    .registers 5
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->mAlgorithm:Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
@@ -46,9 +46,9 @@
 
     const/4 p2, 0x1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
-    if-eq p1, p2, :cond_10
+    if-eq p1, p2, :cond_0
 
     .line 146
     invoke-virtual {p0}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->defaultIsRtl()Z
@@ -57,12 +57,12 @@
 
     return p1
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 
-    :cond_12
+    :cond_1
     return p2
 .end method
 
@@ -72,13 +72,13 @@
 .end method
 
 .method public isRtl(Ljava/lang/CharSequence;II)Z
-    .registers 5
+    .locals 1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
-    if-ltz p2, :cond_1b
+    if-ltz p2, :cond_1
 
-    if-ltz p3, :cond_1b
+    if-ltz p3, :cond_1
 
     .line 130
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -87,12 +87,12 @@
 
     sub-int/2addr v0, p3
 
-    if-lt v0, p2, :cond_1b
+    if-lt v0, p2, :cond_1
 
     .line 133
     iget-object v0, p0, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->mAlgorithm:Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 134
     invoke-virtual {p0}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->defaultIsRtl()Z
@@ -102,7 +102,7 @@
     return p1
 
     .line 136
-    :cond_16
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->doCheck(Ljava/lang/CharSequence;II)Z
 
     move-result p1
@@ -110,7 +110,7 @@
     return p1
 
     .line 131
-    :cond_1b
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -119,7 +119,7 @@
 .end method
 
 .method public isRtl([CII)Z
-    .registers 4
+    .locals 0
 
     .line 125
     invoke-static {p1}, Ljava/nio/CharBuffer;->wrap([C)Ljava/nio/CharBuffer;

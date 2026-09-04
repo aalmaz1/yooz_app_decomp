@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3424
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,14 +25,14 @@
 .end method
 
 .method public static registerMediaMetricsListener(Landroid/content/Context;Landroidx/media3/exoplayer/ExoPlayerImpl;ZLjava/lang/String;)Landroidx/media3/exoplayer/analytics/PlayerId;
-    .registers 4
+    .locals 0
 
     .line 3429
     invoke-static {p0}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->create(Landroid/content/Context;)Landroidx/media3/exoplayer/analytics/MediaMetricsListener;
 
     move-result-object p0
 
-    if-nez p0, :cond_15
+    if-nez p0, :cond_0
 
     const-string p0, "ExoPlayerImpl"
 
@@ -50,14 +50,14 @@
 
     return-object p0
 
-    :cond_15
-    if-eqz p2, :cond_1a
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 3435
     invoke-virtual {p1, p0}, Landroidx/media3/exoplayer/ExoPlayerImpl;->addAnalyticsListener(Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
 
     .line 3437
-    :cond_1a
+    :cond_1
     new-instance p1, Landroidx/media3/exoplayer/analytics/PlayerId;
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/MediaMetricsListener;->getLogSessionId()Landroid/media/metrics/LogSessionId;

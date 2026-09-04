@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/Fragment;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;)V
-    .registers 4
+    .locals 0
 
     .line 3502
     iput-object p1, p0, Landroidx/fragment/app/Fragment$9;->this$0:Landroidx/fragment/app/Fragment;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public getContract()Landroidx/activity/result/contract/ActivityResultContract;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -64,7 +64,7 @@
 .end method
 
 .method public launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TI;",
@@ -82,7 +82,7 @@
 
     check-cast v0, Landroidx/activity/result/ActivityResultLauncher;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 3510
     invoke-virtual {v0, p1, p2}, Landroidx/activity/result/ActivityResultLauncher;->launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
@@ -90,7 +90,7 @@
     return-void
 
     .line 3507
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Operation cannot be started before fragment is in created state"
@@ -101,7 +101,7 @@
 .end method
 
 .method public unregister()V
-    .registers 3
+    .locals 2
 
     .line 3515
     iget-object v0, p0, Landroidx/fragment/app/Fragment$9;->val$ref:Ljava/util/concurrent/atomic/AtomicReference;
@@ -114,11 +114,11 @@
 
     check-cast v0, Landroidx/activity/result/ActivityResultLauncher;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 3517
     invoke-virtual {v0}, Landroidx/activity/result/ActivityResultLauncher;->unregister()V
 
-    :cond_e
+    :cond_0
     return-void
 .end method

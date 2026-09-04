@@ -34,7 +34,7 @@
 
 # direct methods
 .method protected constructor <init>(JJJJJJJ)V
-    .registers 15
+    .locals 0
 
     .line 321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;)J
-    .registers 3
+    .locals 2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->getSeekTimeUs()J
@@ -82,7 +82,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;)J
-    .registers 3
+    .locals 2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->getFloorBytePosition()J
@@ -93,7 +93,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;)J
-    .registers 3
+    .locals 2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->getCeilingBytePosition()J
@@ -104,7 +104,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;)J
-    .registers 3
+    .locals 2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->getNextSearchBytePosition()J
@@ -115,7 +115,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;)J
-    .registers 3
+    .locals 2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->getTargetTimePosition()J
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;JJ)V
-    .registers 5
+    .locals 0
 
     .line 272
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->updateSeekCeiling(JJ)V
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;JJ)V
-    .registers 5
+    .locals 0
 
     .line 272
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->updateSeekFloor(JJ)V
@@ -144,7 +144,7 @@
 .end method
 
 .method protected static calculateNextSearchBytePosition(JJJJJJ)J
-    .registers 19
+    .locals 7
 
     const-wide/16 v0, 0x1
 
@@ -152,17 +152,17 @@
 
     cmp-long v2, v2, p8
 
-    if-gez v2, :cond_2d
+    if-gez v2, :cond_1
 
     add-long v2, p2, v0
 
     cmp-long v2, v2, p4
 
-    if-ltz v2, :cond_f
+    if-ltz v2, :cond_0
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     sub-long v2, p0, p2
 
     sub-long v4, p8, p6
@@ -207,13 +207,13 @@
 
     return-wide v0
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_0
     return-wide p6
 .end method
 
 .method private getCeilingBytePosition()J
-    .registers 3
+    .locals 2
 
     .line 352
     iget-wide v0, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->ceilingBytePosition:J
@@ -222,7 +222,7 @@
 .end method
 
 .method private getFloorBytePosition()J
-    .registers 3
+    .locals 2
 
     .line 344
     iget-wide v0, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->floorBytePosition:J
@@ -231,7 +231,7 @@
 .end method
 
 .method private getNextSearchBytePosition()J
-    .registers 3
+    .locals 2
 
     .line 381
     iget-wide v0, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->nextSearchBytePosition:J
@@ -240,7 +240,7 @@
 .end method
 
 .method private getSeekTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 362
     iget-wide v0, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->seekTimeUs:J
@@ -249,7 +249,7 @@
 .end method
 
 .method private getTargetTimePosition()J
-    .registers 3
+    .locals 2
 
     .line 357
     iget-wide v0, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->targetTimePosition:J
@@ -258,7 +258,7 @@
 .end method
 
 .method private updateNextSearchBytePosition()V
-    .registers 13
+    .locals 12
 
     .line 385
     iget-wide v0, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->targetTimePosition:J
@@ -284,7 +284,7 @@
 .end method
 
 .method private updateSeekCeiling(JJ)V
-    .registers 5
+    .locals 0
 
     .line 374
     iput-wide p1, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->ceilingTimePosition:J
@@ -299,7 +299,7 @@
 .end method
 
 .method private updateSeekFloor(JJ)V
-    .registers 5
+    .locals 0
 
     .line 367
     iput-wide p1, p0, Landroidx/media3/extractor/BinarySearchSeeker$SeekOperationParams;->floorTimePosition:J

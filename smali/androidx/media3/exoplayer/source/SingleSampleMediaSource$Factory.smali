@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 2
+    .locals 0
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public createMediaSource(Landroidx/media3/common/MediaItem$SubtitleConfiguration;J)Landroidx/media3/exoplayer/source/SingleSampleMediaSource;
-    .registers 15
+    .locals 11
 
     .line 132
     new-instance v10, Landroidx/media3/exoplayer/source/SingleSampleMediaSource;
@@ -89,26 +89,26 @@
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 104
-    :cond_3
+    :cond_0
     new-instance p1, Landroidx/media3/exoplayer/upstream/DefaultLoadErrorHandlingPolicy;
 
     invoke-direct {p1}, Landroidx/media3/exoplayer/upstream/DefaultLoadErrorHandlingPolicy;-><init>()V
 
-    :goto_8
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
 
     return-object p0
 .end method
 
 .method public setTag(Ljava/lang/Object;)Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 74
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;->tag:Ljava/lang/Object;
@@ -117,7 +117,7 @@
 .end method
 
 .method public setTrackId(Ljava/lang/String;)Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public setTreatLoadErrorsAsEndOfStream(Z)Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 119
     iput-boolean p1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaSource$Factory;->treatLoadErrorsAsEndOfStream:Z

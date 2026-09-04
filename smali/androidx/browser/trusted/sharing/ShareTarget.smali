@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroidx/browser/trusted/sharing/ShareTarget$Params;)V
-    .registers 5
+    .locals 0
 
     .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/sharing/ShareTarget;
-    .registers 5
+    .locals 4
 
     const-string v0, "androidx.browser.trusted.sharing.KEY_ACTION"
 
@@ -99,22 +99,22 @@
 
     move-result-object p0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
-    if-nez p0, :cond_21
+    if-nez p0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 156
-    :cond_21
+    :cond_0
     new-instance v3, Landroidx/browser/trusted/sharing/ShareTarget;
 
     invoke-direct {v3, v0, v1, v2, p0}, Landroidx/browser/trusted/sharing/ShareTarget;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroidx/browser/trusted/sharing/ShareTarget$Params;)V
 
     return-object v3
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const/4 p0, 0x0
 
     return-object p0
@@ -123,7 +123,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 138
     new-instance v0, Landroid/os/Bundle;

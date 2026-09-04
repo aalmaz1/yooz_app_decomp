@@ -75,7 +75,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;IIZZLandroidx/media3/datasource/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;Z)V
-    .registers 10
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,14 +108,14 @@
     .line 285
     iput-boolean p5, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->crossProtocolRedirectsForceOriginal:Z
 
-    if-eqz p4, :cond_1b
+    if-eqz p4, :cond_1
 
-    if-nez p5, :cond_13
+    if-nez p5, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 287
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "crossProtocolRedirectsForceOriginal should not be set if allowCrossProtocolRedirects is true"
@@ -125,8 +125,8 @@
     throw p1
 
     .line 291
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     iput-object p6, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->defaultRequestProperties:Landroidx/media3/datasource/HttpDataSource$RequestProperties;
 
     .line 292
@@ -146,7 +146,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;IIZZLandroidx/media3/datasource/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;ZLandroidx/media3/datasource/DefaultHttpDataSource$1;)V
-    .registers 10
+    .locals 0
 
     .line 65
     invoke-direct/range {p0 .. p8}, Landroidx/media3/datasource/DefaultHttpDataSource;-><init>(Ljava/lang/String;IIZZLandroidx/media3/datasource/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;Z)V
@@ -155,22 +155,22 @@
 .end method
 
 .method private closeConnectionQuietly()V
-    .registers 4
+    .locals 3
 
     .line 835
     iget-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 837
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     move-exception v0
 
     const-string v1, "DefaultHttpDataSource"
@@ -180,18 +180,18 @@
     .line 839
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_10
+    :goto_0
     const/4 v0, 0x0
 
     .line 841
     iput-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method private handleRedirect(Ljava/net/URL;Ljava/lang/String;Landroidx/media3/datasource/DataSpec;)Ljava/net/URL;
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
@@ -202,15 +202,15 @@
 
     const/16 v1, 0x7d1
 
-    if-eqz p2, :cond_91
+    if-eqz p2, :cond_4
 
     .line 673
-    :try_start_5
+    :try_start_0
     new-instance v2, Ljava/net/URL;
 
     invoke-direct {v2, p1, p2}, Ljava/net/URL;-><init>(Ljava/net/URL;Ljava/lang/String;)V
-    :try_end_a
-    .catch Ljava/net/MalformedURLException; {:try_start_5 .. :try_end_a} :catch_8a
+    :try_end_0
+    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 683
     invoke-virtual {v2}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
@@ -224,7 +224,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_34
+    if-nez v3, :cond_1
 
     const-string v3, "http"
 
@@ -232,12 +232,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_0
 
-    goto :goto_34
+    goto :goto_0
 
     .line 685
-    :cond_1f
+    :cond_0
     new-instance p1, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -259,11 +259,11 @@
     throw p1
 
     .line 691
-    :cond_34
-    :goto_34
+    :cond_1
+    :goto_0
     iget-boolean v3, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
 
-    if-nez v3, :cond_89
+    if-nez v3, :cond_3
 
     invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
@@ -273,15 +273,15 @@
 
     move-result v3
 
-    if-nez v3, :cond_89
+    if-nez v3, :cond_3
 
     .line 692
     iget-boolean v3, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->crossProtocolRedirectsForceOriginal:Z
 
-    if-eqz v3, :cond_60
+    if-eqz v3, :cond_2
 
     .line 704
-    :try_start_46
+    :try_start_1
     new-instance v3, Ljava/net/URL;
 
     invoke-virtual {v2}, Ljava/net/URL;->toString()Ljava/lang/String;
@@ -297,14 +297,14 @@
     move-result-object p1
 
     invoke-direct {v3, p1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-    :try_end_57
-    .catch Ljava/net/MalformedURLException; {:try_start_46 .. :try_end_57} :catch_59
+    :try_end_1
+    .catch Ljava/net/MalformedURLException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-object v2, v3
 
-    goto :goto_89
+    goto :goto_1
 
-    :catch_59
+    :catch_0
     move-exception p1
 
     .line 706
@@ -315,7 +315,7 @@
     throw p2
 
     .line 693
-    :cond_60
+    :cond_2
     new-instance v2, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -357,11 +357,11 @@
 
     throw v2
 
-    :cond_89
-    :goto_89
+    :cond_3
+    :goto_1
     return-object v2
 
-    :catch_8a
+    :catch_1
     move-exception p1
 
     .line 675
@@ -372,7 +372,7 @@
     throw p2
 
     .line 664
-    :cond_91
+    :cond_4
     new-instance p1, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     const-string p2, "Null location redirect"
@@ -383,7 +383,7 @@
 .end method
 
 .method private static isCompressed(Ljava/net/HttpURLConnection;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "Content-Encoding"
 
@@ -403,7 +403,7 @@
 .end method
 
 .method private makeConnection(Landroidx/media3/datasource/DataSpec;)Ljava/net/HttpURLConnection;
-    .registers 28
+    .locals 26
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -447,15 +447,15 @@
     .line 517
     iget-boolean v0, v11, Landroidx/media3/datasource/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     iget-boolean v0, v11, Landroidx/media3/datasource/DefaultHttpDataSource;->crossProtocolRedirectsForceOriginal:Z
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     iget-boolean v0, v11, Landroidx/media3/datasource/DefaultHttpDataSource;->keepPostFor302Redirects:Z
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     const/4 v15, 0x1
 
@@ -480,7 +480,7 @@
 
     return-object v0
 
-    :cond_38
+    :cond_0
     const/16 v17, 0x0
 
     move-object v8, v1
@@ -491,12 +491,12 @@
 
     move/from16 v0, v17
 
-    :goto_40
+    :goto_0
     add-int/lit8 v7, v0, 0x1
 
     const/16 v1, 0x14
 
-    if-gt v0, v1, :cond_c8
+    if-gt v0, v1, :cond_8
 
     const/16 v19, 0x0
 
@@ -558,75 +558,75 @@
 
     const/16 v6, 0x12e
 
-    if-eq v13, v15, :cond_7d
+    if-eq v13, v15, :cond_1
 
     const/4 v7, 0x3
 
-    if-ne v13, v7, :cond_8e
+    if-ne v13, v7, :cond_2
 
-    :cond_7d
-    if-eq v1, v5, :cond_b6
+    :cond_1
+    if-eq v1, v5, :cond_7
 
-    if-eq v1, v4, :cond_b6
+    if-eq v1, v4, :cond_7
 
-    if-eq v1, v6, :cond_b6
+    if-eq v1, v6, :cond_7
 
-    if-eq v1, v3, :cond_b6
+    if-eq v1, v3, :cond_7
 
     const/16 v7, 0x133
 
-    if-eq v1, v7, :cond_b6
+    if-eq v1, v7, :cond_7
 
     const/16 v7, 0x134
 
-    if-ne v1, v7, :cond_8e
+    if-ne v1, v7, :cond_2
 
-    goto :goto_b6
+    goto :goto_3
 
-    :cond_8e
+    :cond_2
     const/4 v7, 0x2
 
-    if-ne v13, v7, :cond_b5
+    if-ne v13, v7, :cond_6
 
-    if-eq v1, v5, :cond_99
+    if-eq v1, v5, :cond_3
 
-    if-eq v1, v4, :cond_99
+    if-eq v1, v4, :cond_3
 
-    if-eq v1, v6, :cond_99
+    if-eq v1, v6, :cond_3
 
-    if-ne v1, v3, :cond_b5
+    if-ne v1, v3, :cond_6
 
     .line 563
-    :cond_99
+    :cond_3
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
 
     .line 564
     iget-boolean v0, v11, Landroidx/media3/datasource/DefaultHttpDataSource;->keepPostFor302Redirects:Z
 
-    if-eqz v0, :cond_a4
+    if-eqz v0, :cond_4
 
-    if-ne v1, v6, :cond_a4
+    if-ne v1, v6, :cond_4
 
     move v0, v15
 
-    goto :goto_a6
+    goto :goto_1
 
-    :cond_a4
+    :cond_4
     move/from16 v0, v17
 
-    :goto_a6
-    if-nez v0, :cond_ac
+    :goto_1
+    if-nez v0, :cond_5
 
     const/16 v18, 0x0
 
     move v6, v15
 
-    goto :goto_ad
+    goto :goto_2
 
-    :cond_ac
+    :cond_5
     move v6, v13
 
-    :goto_ad
+    :goto_2
     move-object/from16 v1, v23
 
     .line 571
@@ -636,13 +636,13 @@
 
     move-object v8, v0
 
-    goto :goto_c1
+    goto :goto_4
 
-    :cond_b5
+    :cond_6
     return-object v0
 
-    :cond_b6
-    :goto_b6
+    :cond_7
+    :goto_3
     move-object/from16 v1, v23
 
     .line 556
@@ -657,16 +657,16 @@
 
     move v6, v13
 
-    :goto_c1
+    :goto_4
     move v0, v14
 
     move-wide/from16 v13, v21
 
     move-wide/from16 v9, v24
 
-    goto/16 :goto_40
+    goto/16 :goto_0
 
-    :cond_c8
+    :cond_8
     move v14, v7
 
     .line 578
@@ -698,7 +698,7 @@
 .end method
 
 .method private makeConnection(Ljava/net/URL;I[BJJZZLjava/util/Map;)Ljava/net/HttpURLConnection;
-    .registers 13
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -741,7 +741,7 @@
     .line 612
     iget-object v1, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->defaultRequestProperties:Landroidx/media3/datasource/HttpDataSource$RequestProperties;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 613
     invoke-virtual {v1}, Landroidx/media3/datasource/HttpDataSource$RequestProperties;->getSnapshot()Ljava/util/Map;
@@ -751,7 +751,7 @@
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     .line 615
-    :cond_1e
+    :cond_0
     iget-object v1, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->requestProperties:Landroidx/media3/datasource/HttpDataSource$RequestProperties;
 
     invoke-virtual {v1}, Landroidx/media3/datasource/HttpDataSource$RequestProperties;->getSnapshot()Ljava/util/Map;
@@ -772,12 +772,12 @@
 
     move-result-object p10
 
-    :goto_32
+    :goto_0
     invoke-interface {p10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_1
 
     invoke-interface {p10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -800,15 +800,15 @@
 
     invoke-virtual {p1, v1, v0}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_32
+    goto :goto_0
 
     .line 622
-    :cond_4e
+    :cond_1
     invoke-static {p4, p5, p6, p7}, Landroidx/media3/datasource/HttpUtil;->buildRangeRequestHeader(JJ)Ljava/lang/String;
 
     move-result-object p4
 
-    if-eqz p4, :cond_59
+    if-eqz p4, :cond_2
 
     const-string p5, "Range"
 
@@ -816,27 +816,27 @@
     invoke-virtual {p1, p5, p4}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 626
-    :cond_59
+    :cond_2
     iget-object p4, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->userAgent:Ljava/lang/String;
 
-    if-eqz p4, :cond_62
+    if-eqz p4, :cond_3
 
     const-string p5, "User-Agent"
 
     .line 627
     invoke-virtual {p1, p5, p4}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_62
-    if-eqz p8, :cond_67
+    :cond_3
+    if-eqz p8, :cond_4
 
     const-string p4, "gzip"
 
-    goto :goto_69
+    goto :goto_1
 
-    :cond_67
+    :cond_4
     const-string p4, "identity"
 
-    :goto_69
+    :goto_1
     const-string p5, "Accept-Encoding"
 
     .line 629
@@ -845,17 +845,17 @@
     .line 630
     invoke-virtual {p1, p9}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
 
-    if-eqz p3, :cond_75
+    if-eqz p3, :cond_5
 
     const/4 p4, 0x1
 
-    goto :goto_76
+    goto :goto_2
 
-    :cond_75
+    :cond_5
     const/4 p4, 0x0
 
     .line 631
-    :goto_76
+    :goto_2
     invoke-virtual {p1, p4}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
     .line 632
@@ -865,7 +865,7 @@
 
     invoke-virtual {p1, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    if-eqz p3, :cond_94
+    if-eqz p3, :cond_6
 
     .line 635
     array-length p2, p3
@@ -886,33 +886,33 @@
     .line 639
     invoke-virtual {p2}, Ljava/io/OutputStream;->close()V
 
-    goto :goto_97
+    goto :goto_3
 
     .line 641
-    :cond_94
+    :cond_6
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->connect()V
 
-    :goto_97
+    :goto_3
     return-object p1
 .end method
 
 .method private static maybeTerminateInputStream(Ljava/net/HttpURLConnection;J)V
-    .registers 5
+    .locals 2
 
-    if-eqz p0, :cond_5b
+    if-eqz p0, :cond_4
 
     .line 800
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x14
 
-    if-le v0, v1, :cond_9
+    if-le v0, v1, :cond_0
 
-    goto :goto_5b
+    goto :goto_0
 
     .line 805
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object p0
@@ -921,7 +921,7 @@
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 808
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
@@ -930,21 +930,21 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_22
+    if-ne p1, p2, :cond_2
 
     return-void
 
-    :cond_1b
+    :cond_1
     const-wide/16 v0, 0x800
 
     cmp-long p1, p1, v0
 
-    if-gtz p1, :cond_22
+    if-gtz p1, :cond_2
 
     return-void
 
     .line 816
-    :cond_22
+    :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
@@ -960,7 +960,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_3a
+    if-nez p2, :cond_3
 
     const-string p2, "com.android.okhttp.internal.http.HttpTransport$FixedLengthInputStream"
 
@@ -969,10 +969,10 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_4
 
     .line 820
-    :cond_3a
+    :cond_3
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
@@ -1007,31 +1007,31 @@
 
     .line 824
     invoke-virtual {p1, p0, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5b
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_5b} :catch_5b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_5b
-    :cond_5b
-    :goto_5b
+    :catch_0
+    :cond_4
+    :goto_0
     return-void
 .end method
 
 .method private readInternal([BII)I
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 769
-    :cond_4
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesToRead:J
 
     const-wide/16 v2, -0x1
@@ -1040,7 +1040,7 @@
 
     const/4 v3, -0x1
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_2
 
     .line 770
     iget-wide v4, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesRead:J
@@ -1051,11 +1051,11 @@
 
     cmp-long v2, v0, v4
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     return v3
 
-    :cond_17
+    :cond_1
     int-to-long v4, p3
 
     .line 774
@@ -1066,7 +1066,7 @@
     long-to-int p3, v0
 
     .line 777
-    :cond_1d
+    :cond_2
     iget-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1079,12 +1079,12 @@
 
     move-result p1
 
-    if-ne p1, v3, :cond_2c
+    if-ne p1, v3, :cond_3
 
     return v3
 
     .line 782
-    :cond_2c
+    :cond_3
     iget-wide p2, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesRead:J
 
     int-to-long v0, p1
@@ -1100,7 +1100,7 @@
 .end method
 
 .method private skipFully(JLandroidx/media3/datasource/DataSpec;)V
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1111,19 +1111,19 @@
 
     cmp-long v2, p1, v0
 
-    if-nez v2, :cond_7
+    if-nez v2, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     const/16 v2, 0x1000
 
     new-array v3, v2, [B
 
-    :goto_b
+    :goto_0
     cmp-long v4, p1, v0
 
-    if-lez v4, :cond_4b
+    if-lez v4, :cond_3
 
     int-to-long v4, v2
 
@@ -1160,11 +1160,11 @@
 
     const/4 v6, 0x1
 
-    if-nez v5, :cond_3e
+    if-nez v5, :cond_2
 
     const/4 v5, -0x1
 
-    if-eq v4, v5, :cond_36
+    if-eq v4, v5, :cond_1
 
     int-to-long v5, v4
 
@@ -1173,10 +1173,10 @@
     .line 747
     invoke-virtual {p0, v4}, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesTransferred(I)V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 741
-    :cond_36
+    :cond_1
     new-instance p1, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     const/16 p2, 0x7d8
@@ -1186,7 +1186,7 @@
     throw p1
 
     .line 734
-    :cond_3e
+    :cond_2
     new-instance p1, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     new-instance p2, Ljava/io/InterruptedIOException;
@@ -1199,14 +1199,14 @@
 
     throw p1
 
-    :cond_4b
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public clearAllRequestProperties()V
-    .registers 2
+    .locals 1
 
     .line 345
     iget-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->requestProperties:Landroidx/media3/datasource/HttpDataSource$RequestProperties;
@@ -1217,7 +1217,7 @@
 .end method
 
 .method public clearRequestProperty(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 338
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1231,7 +1231,7 @@
 .end method
 
 .method public close()V
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
@@ -1243,10 +1243,10 @@
     const/4 v1, 0x0
 
     .line 483
-    :try_start_2
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     .line 486
     iget-wide v3, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesToRead:J
@@ -1255,37 +1255,37 @@
 
     cmp-long v7, v3, v5
 
-    if-nez v7, :cond_f
+    if-nez v7, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     iget-wide v5, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesRead:J
 
     sub-long v5, v3, v5
 
     .line 487
-    :goto_13
+    :goto_0
     iget-object v3, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
     invoke-static {v3, v5, v6}, Landroidx/media3/datasource/DefaultHttpDataSource;->maybeTerminateInputStream(Ljava/net/HttpURLConnection;J)V
-    :try_end_18
-    .catchall {:try_start_2 .. :try_end_18} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 489
-    :try_start_18
+    :try_start_1
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_1b
-    .catch Ljava/io/IOException; {:try_start_18 .. :try_end_1b} :catch_1c
-    .catchall {:try_start_18 .. :try_end_1b} :catchall_3d
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_2e
+    goto :goto_1
 
-    :catch_1c
+    :catch_0
     move-exception v2
 
     .line 491
-    :try_start_1d
+    :try_start_2
     new-instance v3, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     iget-object v4, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -1304,12 +1304,12 @@
     invoke-direct {v3, v2, v4, v5, v6}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;II)V
 
     throw v3
-    :try_end_2e
-    .catchall {:try_start_1d .. :try_end_2e} :catchall_3d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 499
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_1
     iput-object v1, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
     .line 500
@@ -1318,7 +1318,7 @@
     .line 501
     iget-boolean v1, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->opened:Z
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_2
 
     .line 502
     iput-boolean v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->opened:Z
@@ -1326,10 +1326,10 @@
     .line 503
     invoke-virtual {p0}, Landroidx/media3/datasource/DefaultHttpDataSource;->transferEnded()V
 
-    :cond_3c
+    :cond_2
     return-void
 
-    :catchall_3d
+    :catchall_0
     move-exception v2
 
     .line 499
@@ -1341,7 +1341,7 @@
     .line 501
     iget-boolean v1, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->opened:Z
 
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_3
 
     .line 502
     iput-boolean v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->opened:Z
@@ -1350,31 +1350,31 @@
     invoke-virtual {p0}, Landroidx/media3/datasource/DefaultHttpDataSource;->transferEnded()V
 
     .line 505
-    :cond_4c
+    :cond_3
     throw v2
 .end method
 
 .method public getResponseCode()I
-    .registers 2
+    .locals 1
 
     .line 307
     iget-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->responseCode:I
 
-    if-gtz v0, :cond_9
+    if-gtz v0, :cond_1
 
-    :cond_8
+    :cond_0
     const/4 v0, -0x1
 
-    :cond_9
+    :cond_1
     return v0
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1389,7 +1389,7 @@
     .line 313
     iget-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 314
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
@@ -1399,7 +1399,7 @@
     return-object v0
 
     .line 324
-    :cond_9
+    :cond_0
     new-instance v0, Landroidx/media3/datasource/DefaultHttpDataSource$NullFilteringHeadersMap;
 
     iget-object v1, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
@@ -1414,18 +1414,18 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 301
     iget-object v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getURL()Ljava/net/URL;
 
     move-result-object v0
@@ -1438,12 +1438,12 @@
 
     move-result-object v0
 
-    :goto_12
+    :goto_0
     return-object v0
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
@@ -1467,7 +1467,7 @@
     const/4 v2, 0x1
 
     .line 360
-    :try_start_c
+    :try_start_0
     invoke-direct {p0, p1}, Landroidx/media3/datasource/DefaultHttpDataSource;->makeConnection(Landroidx/media3/datasource/DataSpec;)Ljava/net/HttpURLConnection;
 
     move-result-object v3
@@ -1485,8 +1485,8 @@
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getResponseMessage()Ljava/lang/String;
 
     move-result-object v7
-    :try_end_1c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_1c} :catch_109
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 371
     iget v4, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->responseCode:I
@@ -1497,16 +1497,16 @@
 
     const-wide/16 v8, -0x1
 
-    if-lt v4, v6, :cond_b5
+    if-lt v4, v6, :cond_9
 
     const/16 v10, 0x12b
 
-    if-le v4, v10, :cond_2c
+    if-le v4, v10, :cond_0
 
-    goto/16 :goto_b5
+    goto/16 :goto_2
 
     .line 402
-    :cond_2c
+    :cond_0
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getContentType()Ljava/lang/String;
 
     move-result-object v4
@@ -1514,18 +1514,18 @@
     .line 403
     iget-object v7, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/common/base/Predicate;
 
-    if-eqz v7, :cond_44
+    if-eqz v7, :cond_2
 
     invoke-interface {v7, v4}, Lcom/google/common/base/Predicate;->apply(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_3b
+    if-eqz v7, :cond_1
 
-    goto :goto_44
+    goto :goto_0
 
     .line 404
-    :cond_3b
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultHttpDataSource;->closeConnectionQuietly()V
 
     .line 405
@@ -1536,43 +1536,43 @@
     throw v0
 
     .line 411
-    :cond_44
-    :goto_44
+    :cond_2
+    :goto_0
     iget v4, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->responseCode:I
 
-    if-ne v4, v6, :cond_50
+    if-ne v4, v6, :cond_3
 
     iget-wide v6, p1, Landroidx/media3/datasource/DataSpec;->position:J
 
     cmp-long v4, v6, v0
 
-    if-eqz v4, :cond_50
+    if-eqz v4, :cond_3
 
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->position:J
 
     .line 414
-    :cond_50
+    :cond_3
     invoke-static {v3}, Landroidx/media3/datasource/DefaultHttpDataSource;->isCompressed(Ljava/net/HttpURLConnection;)Z
 
     move-result v4
 
-    if-nez v4, :cond_78
+    if-nez v4, :cond_6
 
     .line 416
     iget-wide v6, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     cmp-long v6, v6, v8
 
-    if-eqz v6, :cond_61
+    if-eqz v6, :cond_4
 
     .line 417
     iget-wide v5, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     iput-wide v5, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesToRead:J
 
-    goto :goto_7c
+    goto :goto_1
 
-    :cond_61
+    :cond_4
     const-string v6, "Content-Length"
 
     .line 421
@@ -1592,34 +1592,34 @@
 
     cmp-long v7, v5, v8
 
-    if-eqz v7, :cond_75
+    if-eqz v7, :cond_5
 
     sub-long v8, v5, v0
 
     .line 424
-    :cond_75
+    :cond_5
     iput-wide v8, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesToRead:J
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 430
-    :cond_78
+    :cond_6
     iget-wide v5, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     iput-wide v5, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesToRead:J
 
-    :goto_7c
+    :goto_1
     const/16 v5, 0x7d0
 
     .line 434
-    :try_start_7e
+    :try_start_1
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v3
 
     iput-object v3, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    if-eqz v4, :cond_8f
+    if-eqz v4, :cond_7
 
     .line 436
     new-instance v3, Ljava/util/zip/GZIPInputStream;
@@ -1629,28 +1629,28 @@
     invoke-direct {v3, v4}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
 
     iput-object v3, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
-    :try_end_8f
-    .catch Ljava/io/IOException; {:try_start_7e .. :try_end_8f} :catch_ab
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 447
-    :cond_8f
+    :cond_7
     iput-boolean v2, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->opened:Z
 
     .line 448
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/DefaultHttpDataSource;->transferStarted(Landroidx/media3/datasource/DataSpec;)V
 
     .line 451
-    :try_start_94
+    :try_start_2
     invoke-direct {p0, v0, v1, p1}, Landroidx/media3/datasource/DefaultHttpDataSource;->skipFully(JLandroidx/media3/datasource/DataSpec;)V
-    :try_end_97
-    .catch Ljava/io/IOException; {:try_start_94 .. :try_end_97} :catch_9a
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 465
     iget-wide v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->bytesToRead:J
 
     return-wide v0
 
-    :catch_9a
+    :catch_0
     move-exception v0
 
     .line 453
@@ -1659,7 +1659,7 @@
     .line 455
     instance-of v1, v0, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
-    if-eqz v1, :cond_a5
+    if-eqz v1, :cond_8
 
     .line 456
     check-cast v0, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
@@ -1667,14 +1667,14 @@
     throw v0
 
     .line 458
-    :cond_a5
+    :cond_8
     new-instance v1, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     invoke-direct {v1, v0, p1, v5, v2}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;II)V
 
     throw v1
 
-    :catch_ab
+    :catch_1
     move-exception v0
 
     .line 439
@@ -1688,8 +1688,8 @@
     throw v1
 
     .line 372
-    :cond_b5
-    :goto_b5
+    :cond_9
+    :goto_2
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
     move-result-object v4
@@ -1699,7 +1699,7 @@
 
     const/16 v10, 0x1a0
 
-    if-ne v6, v10, :cond_db
+    if-ne v6, v10, :cond_b
 
     .line 375
     invoke-virtual {v3, v5}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
@@ -1715,7 +1715,7 @@
 
     cmp-long v5, v11, v5
 
-    if-nez v5, :cond_db
+    if-nez v5, :cond_b
 
     .line 377
     iput-boolean v2, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->opened:Z
@@ -1728,53 +1728,53 @@
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_a
 
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
-    :cond_da
+    :cond_a
     return-wide v0
 
     .line 383
-    :cond_db
+    :cond_b
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getErrorStream()Ljava/io/InputStream;
 
     move-result-object v0
 
-    if-eqz v0, :cond_e6
+    if-eqz v0, :cond_c
 
     .line 387
-    :try_start_e1
+    :try_start_3
     invoke-static {v0}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;)[B
 
     move-result-object v0
 
-    goto :goto_e8
+    goto :goto_3
 
-    :cond_e6
+    :cond_c
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
-    :try_end_e8
-    .catch Ljava/io/IOException; {:try_start_e1 .. :try_end_e8} :catch_ea
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    :goto_e8
+    :goto_3
     move-object v11, v0
 
-    goto :goto_ed
+    goto :goto_4
 
     .line 389
-    :catch_ea
+    :catch_2
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
-    goto :goto_e8
+    goto :goto_3
 
     .line 391
-    :goto_ed
+    :goto_4
     invoke-direct {p0}, Landroidx/media3/datasource/DefaultHttpDataSource;->closeConnectionQuietly()V
 
     .line 394
     iget v0, p0, Landroidx/media3/datasource/DefaultHttpDataSource;->responseCode:I
 
-    if-ne v0, v10, :cond_fc
+    if-ne v0, v10, :cond_d
 
     .line 395
     new-instance v0, Landroidx/media3/datasource/DataSourceException;
@@ -1783,12 +1783,12 @@
 
     invoke-direct {v0, v1}, Landroidx/media3/datasource/DataSourceException;-><init>(I)V
 
-    goto :goto_fd
+    goto :goto_5
 
-    :cond_fc
+    :cond_d
     const/4 v0, 0x0
 
-    :goto_fd
+    :goto_5
     move-object v8, v0
 
     .line 397
@@ -1806,7 +1806,7 @@
 
     throw v0
 
-    :catch_109
+    :catch_3
     move-exception v0
 
     .line 365
@@ -1821,7 +1821,7 @@
 .end method
 
 .method openConnection(Ljava/net/URL;)Ljava/net/HttpURLConnection;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1839,7 +1839,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
@@ -1851,12 +1851,12 @@
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/datasource/DefaultHttpDataSource;->readInternal([BII)I
 
     move-result p1
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_5
+    :catch_0
     move-exception p1
 
     .line 474
@@ -1880,7 +1880,7 @@
 .end method
 
 .method public setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 330
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;

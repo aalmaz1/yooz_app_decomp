@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/core/location/LocationRequestCompat;)V
-    .registers 4
+    .locals 2
 
     .line 345
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public build()Landroidx/core/location/LocationRequestCompat;
-    .registers 15
+    .locals 14
 
     .line 486
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat$Builder;->mIntervalMillis:J
@@ -129,7 +129,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat$Builder;->mMinUpdateIntervalMillis:J
 
@@ -137,20 +137,20 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_17
+    :goto_1
     const-string v1, "passive location requests must have an explicit minimum update interval"
 
     invoke-static {v0, v1}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -185,7 +185,7 @@
 .end method
 
 .method public clearMinUpdateIntervalMillis()Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -196,7 +196,7 @@
 .end method
 
 .method public setDurationMillis(J)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 10
+    .locals 7
 
     const-wide/16 v2, 0x1
 
@@ -217,7 +217,7 @@
 .end method
 
 .method public setIntervalMillis(J)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 10
+    .locals 7
 
     const-wide/16 v2, 0x0
 
@@ -238,7 +238,7 @@
 .end method
 
 .method public setMaxUpdateDelayMillis(J)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 10
+    .locals 7
 
     .line 471
     iput-wide p1, p0, Landroidx/core/location/LocationRequestCompat$Builder;->mMaxUpdateDelayMillis:J
@@ -262,7 +262,7 @@
 .end method
 
 .method public setMaxUpdates(I)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 5
+    .locals 3
 
     const v0, 0x7fffffff
 
@@ -281,7 +281,7 @@
 .end method
 
 .method public setMinUpdateDistanceMeters(F)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 5
+    .locals 3
 
     .line 457
     iput p1, p0, Landroidx/core/location/LocationRequestCompat$Builder;->mMinUpdateDistanceMeters:F
@@ -303,7 +303,7 @@
 .end method
 
 .method public setMinUpdateIntervalMillis(J)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 10
+    .locals 7
 
     const-wide/16 v2, 0x0
 
@@ -324,7 +324,7 @@
 .end method
 
 .method public setQuality(I)Landroidx/core/location/LocationRequestCompat$Builder;
-    .registers 6
+    .locals 4
 
     const/16 v0, 0x68
 
@@ -332,28 +332,28 @@
 
     const/4 v2, 0x1
 
-    if-eq p1, v0, :cond_11
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x66
 
-    if-eq p1, v0, :cond_11
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x64
 
-    if-ne p1, v0, :cond_f
+    if-ne p1, v0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v0, v1
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     move v0, v2
 
-    :goto_12
+    :goto_1
     new-array v2, v2, [Ljava/lang/Object;
 
     .line 388

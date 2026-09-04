@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,43 +14,43 @@
 .end method
 
 .method public static channelCountToChannelConfig(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-ne p0, v0, :cond_6
+    if-ne p0, v0, :cond_0
 
     const/16 p0, 0x10
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/16 p0, 0xc
 
-    :goto_8
+    :goto_0
     return p0
 .end method
 
 .method public static channelCountToChannelMask(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-ne p0, v0, :cond_6
+    if-ne p0, v0, :cond_0
 
     const/16 p0, 0x10
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/16 p0, 0xc
 
-    :goto_8
+    :goto_0
     return p0
 .end method
 
 .method public static frameCountToDurationNs(JI)J
-    .registers 7
+    .locals 4
 
     int-to-long v0, p2
 
@@ -58,16 +58,16 @@
 
     cmp-long p2, v0, v2
 
-    if-lez p2, :cond_9
+    if-lez p2, :cond_0
 
     const/4 p2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_a
+    :goto_0
     const-string v2, "sampleRate must be greater than 0."
 
     .line 142
@@ -90,7 +90,7 @@
 .end method
 
 .method public static frameCountToSize(JI)J
-    .registers 7
+    .locals 4
 
     int-to-long v0, p2
 
@@ -98,16 +98,16 @@
 
     cmp-long p2, v0, v2
 
-    if-lez p2, :cond_9
+    if-lez p2, :cond_0
 
     const/4 p2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_a
+    :goto_0
     const-string v2, "bytesPerFrame must be greater than 0."
 
     .line 127
@@ -119,19 +119,19 @@
 .end method
 
 .method public static getBytesPerFrame(II)I
-    .registers 5
+    .locals 3
 
-    if-lez p1, :cond_4
+    if-lez p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 83
-    :goto_5
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Invalid channel count: "
@@ -150,28 +150,28 @@
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_42
+    if-eq p0, v0, :cond_5
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_41
+    if-eq p0, v0, :cond_4
 
     const/4 v1, 0x4
 
-    if-eq p0, v1, :cond_40
+    if-eq p0, v1, :cond_3
 
     const/16 v2, 0x15
 
-    if-eq p0, v2, :cond_3e
+    if-eq p0, v2, :cond_2
 
     const/16 v0, 0x16
 
-    if-ne p0, v0, :cond_29
+    if-ne p0, v0, :cond_1
 
-    goto :goto_40
+    goto :goto_1
 
     .line 95
-    :cond_29
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -192,26 +192,26 @@
 
     throw p1
 
-    :cond_3e
+    :cond_2
     mul-int/2addr p1, v0
 
     return p1
 
-    :cond_40
-    :goto_40
+    :cond_3
+    :goto_1
     mul-int/2addr p1, v1
 
-    :cond_41
+    :cond_4
     return p1
 
-    :cond_42
+    :cond_5
     mul-int/2addr p1, v0
 
     return p1
 .end method
 
 .method public static sizeToFrameCount(JI)J
-    .registers 7
+    .locals 4
 
     int-to-long v0, p2
 
@@ -219,16 +219,16 @@
 
     cmp-long p2, v0, v2
 
-    if-lez p2, :cond_9
+    if-lez p2, :cond_0
 
     const/4 p2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_a
+    :goto_0
     const-string v2, "bytesPerFrame must be greater than 0."
 
     .line 112

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/upstream/Allocator;)V
-    .registers 5
+    .locals 3
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,17 +76,17 @@
 .end method
 
 .method private clearAllocationNodes(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;)V
-    .registers 3
+    .locals 1
 
     .line 212
     iget-object v0, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->allocation:Landroidx/media3/exoplayer/upstream/Allocation;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 218
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->allocator:Landroidx/media3/exoplayer/upstream/Allocator;
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/upstream/Allocator;->release(Landroidx/media3/exoplayer/upstream/Allocator$AllocationNode;)V
@@ -98,7 +98,7 @@
 .end method
 
 .method private static getNodeContainingPosition(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;J)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
-    .registers 5
+    .locals 2
 
     .line 455
     :goto_0
@@ -106,19 +106,19 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_9
+    if-ltz v0, :cond_0
 
     .line 456
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     goto :goto_0
 
-    :cond_9
+    :cond_0
     return-object p0
 .end method
 
 .method private postAppend(I)V
-    .registers 6
+    .locals 4
 
     .line 245
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->totalBytesWritten:J
@@ -136,7 +136,7 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_0
 
     .line 247
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -145,19 +145,19 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method private preAppend(I)I
-    .registers 8
+    .locals 6
 
     .line 231
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->allocation:Landroidx/media3/exoplayer/upstream/Allocation;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 232
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -183,7 +183,7 @@
     invoke-virtual {v0, v1, v2}, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->initialize(Landroidx/media3/exoplayer/upstream/Allocation;Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;)V
 
     .line 236
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     iget-wide v0, v0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->endPosition:J
@@ -202,16 +202,16 @@
 .end method
 
 .method private static readData(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;JLjava/nio/ByteBuffer;I)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
-    .registers 8
+    .locals 3
 
     .line 403
     invoke-static {p0, p1, p2}, Landroidx/media3/exoplayer/source/SampleDataQueue;->getNodeContainingPosition(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;J)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     move-result-object p0
 
-    :cond_4
-    :goto_4
-    if-lez p4, :cond_25
+    :cond_0
+    :goto_0
+    if-lez p4, :cond_1
 
     .line 406
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->endPosition:J
@@ -247,19 +247,19 @@
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_0
 
     .line 412
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     return-object p0
 .end method
 
 .method private static readData(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;J[BI)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
-    .registers 10
+    .locals 5
 
     .line 429
     invoke-static {p0, p1, p2}, Landroidx/media3/exoplayer/source/SampleDataQueue;->getNodeContainingPosition(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;J)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -268,9 +268,9 @@
 
     move v0, p4
 
-    :cond_5
-    :goto_5
-    if-lez v0, :cond_28
+    :cond_0
+    :goto_0
+    if-lez v0, :cond_1
 
     .line 432
     iget-wide v1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->endPosition:J
@@ -310,19 +310,19 @@
 
     cmp-long v1, p1, v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_0
 
     .line 443
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     return-object p0
 .end method
 
 .method private static readEncryptionData(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
-    .registers 22
+    .locals 18
 
     move-object/from16 v0, p2
 
@@ -362,16 +362,16 @@
 
     and-int/lit16 v8, v6, 0x80
 
-    if-eqz v8, :cond_24
+    if-eqz v8, :cond_0
 
     move v8, v4
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     move v8, v7
 
-    :goto_25
+    :goto_0
     and-int/lit8 v6, v6, 0x7f
 
     move-object/from16 v9, p1
@@ -382,7 +382,7 @@
     .line 329
     iget-object v10, v9, Landroidx/media3/decoder/CryptoInfo;->iv:[B
 
-    if-nez v10, :cond_36
+    if-nez v10, :cond_1
 
     const/16 v10, 0x10
 
@@ -391,16 +391,16 @@
     .line 330
     iput-object v10, v9, Landroidx/media3/decoder/CryptoInfo;->iv:[B
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 333
-    :cond_36
+    :cond_1
     iget-object v10, v9, Landroidx/media3/decoder/CryptoInfo;->iv:[B
 
     invoke-static {v10, v7}, Ljava/util/Arrays;->fill([BB)V
 
     .line 335
-    :goto_3b
+    :goto_1
     iget-object v10, v9, Landroidx/media3/decoder/CryptoInfo;->iv:[B
 
     invoke-static {v5, v2, v3, v10, v6}, Landroidx/media3/exoplayer/source/SampleDataQueue;->readData(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;J[BI)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -411,7 +411,7 @@
 
     add-long/2addr v2, v10
 
-    if-eqz v8, :cond_58
+    if-eqz v8, :cond_2
 
     const/4 v4, 0x2
 
@@ -436,44 +436,44 @@
 
     move-result v4
 
-    :cond_58
+    :cond_2
     move v10, v4
 
     .line 350
     iget-object v4, v9, Landroidx/media3/decoder/CryptoInfo;->numBytesOfClearData:[I
 
-    if-eqz v4, :cond_60
+    if-eqz v4, :cond_3
 
     .line 351
     array-length v6, v4
 
-    if-ge v6, v10, :cond_62
+    if-ge v6, v10, :cond_4
 
     .line 352
-    :cond_60
+    :cond_3
     new-array v4, v10, [I
 
-    :cond_62
+    :cond_4
     move-object v11, v4
 
     .line 354
     iget-object v4, v9, Landroidx/media3/decoder/CryptoInfo;->numBytesOfEncryptedData:[I
 
-    if-eqz v4, :cond_6a
+    if-eqz v4, :cond_5
 
     .line 355
     array-length v6, v4
 
-    if-ge v6, v10, :cond_6c
+    if-ge v6, v10, :cond_6
 
     .line 356
-    :cond_6a
+    :cond_5
     new-array v4, v10, [I
 
-    :cond_6c
+    :cond_6
     move-object v12, v4
 
-    if-eqz v8, :cond_92
+    if-eqz v8, :cond_7
 
     mul-int/lit8 v4, v10, 0x6
 
@@ -496,8 +496,8 @@
     .line 363
     invoke-virtual {v1, v7}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    :goto_81
-    if-ge v7, v10, :cond_9e
+    :goto_2
+    if-ge v7, v10, :cond_8
 
     .line 365
     invoke-virtual/range {p3 .. p3}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
@@ -515,10 +515,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_81
+    goto :goto_2
 
     .line 369
-    :cond_92
+    :cond_7
     aput v7, v11, v7
 
     .line 370
@@ -535,7 +535,7 @@
     aput v1, v12, v7
 
     .line 374
-    :cond_9e
+    :cond_8
     iget-object v1, v0, Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;->cryptoData:Landroidx/media3/extractor/TrackOutput$CryptoData;
 
     invoke-static {v1}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -588,14 +588,14 @@
 .end method
 
 .method private static readSampleData(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
-    .registers 9
+    .locals 5
 
     .line 268
     invoke-virtual {p1}, Landroidx/media3/decoder/DecoderInputBuffer;->isEncrypted()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 269
     invoke-static {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/SampleDataQueue;->readEncryptionData(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -603,12 +603,12 @@
     move-result-object p0
 
     .line 272
-    :cond_a
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/decoder/DecoderInputBuffer;->hasSupplementalData()Z
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x4
 
@@ -692,10 +692,10 @@
 
     move-result-object p0
 
-    goto :goto_63
+    goto :goto_0
 
     .line 292
-    :cond_54
+    :cond_1
     iget p3, p2, Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;->size:I
 
     invoke-virtual {p1, p3}, Landroidx/media3/decoder/DecoderInputBuffer;->ensureSpaceForWrite(I)V
@@ -712,33 +712,33 @@
 
     move-result-object p0
 
-    :goto_63
+    :goto_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public discardDownstreamTo(J)V
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, -0x1
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 156
-    :cond_7
-    :goto_7
+    :cond_0
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     iget-wide v0, v0, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->endPosition:J
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_21
+    if-ltz v0, :cond_1
 
     .line 159
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->allocator:Landroidx/media3/exoplayer/upstream/Allocator;
@@ -758,10 +758,10 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    goto :goto_7
+    goto :goto_0
 
     .line 162
-    :cond_21
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->readAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     iget-wide p1, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->startPosition:J
@@ -772,35 +772,35 @@
 
     cmp-long p1, p1, v0
 
-    if-gez p1, :cond_31
+    if-gez p1, :cond_2
 
     .line 165
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->readAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    :cond_31
+    :cond_2
     return-void
 .end method
 
 .method public discardUpstreamSampleBytes(J)V
-    .registers 7
+    .locals 4
 
     .line 83
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->totalBytesWritten:J
 
     cmp-long v0, p1, v0
 
-    if-gtz v0, :cond_8
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 84
@@ -810,7 +810,7 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_4
 
     .line 85
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -819,31 +819,31 @@
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_1
 
-    goto :goto_57
+    goto :goto_3
 
     .line 93
-    :cond_1d
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     .line 94
-    :goto_1f
+    :goto_1
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->totalBytesWritten:J
 
     iget-wide v2, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->endPosition:J
 
     cmp-long p2, v0, v2
 
-    if-lez p2, :cond_2a
+    if-lez p2, :cond_2
 
     .line 95
     iget-object p1, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 98
-    :cond_2a
+    :cond_2
     iget-object p2, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -873,35 +873,35 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_4b
+    if-nez v0, :cond_3
 
     .line 105
     iget-object v0, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    goto :goto_4c
+    goto :goto_2
 
-    :cond_4b
+    :cond_3
     move-object v0, p1
 
     .line 106
-    :goto_4c
+    :goto_2
     iput-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     .line 107
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->readAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    if-ne v0, p2, :cond_6b
+    if-ne v0, p2, :cond_5
 
     .line 108
     iget-object p1, p1, Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;->next:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->readAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    goto :goto_6b
+    goto :goto_4
 
     .line 87
-    :cond_57
-    :goto_57
+    :cond_4
+    :goto_3
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/SampleDataQueue;->clearAllocationNodes(Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;)V
@@ -923,13 +923,13 @@
     .line 90
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->writeAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
 
-    :cond_6b
-    :goto_6b
+    :cond_5
+    :goto_4
     return-void
 .end method
 
 .method public getTotalBytesWritten()J
-    .registers 3
+    .locals 2
 
     .line 172
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->totalBytesWritten:J
@@ -938,7 +938,7 @@
 .end method
 
 .method public peekToBuffer(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;)V
-    .registers 5
+    .locals 2
 
     .line 143
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->readAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -951,7 +951,7 @@
 .end method
 
 .method public readToBuffer(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/source/SampleQueue$SampleExtrasHolder;)V
-    .registers 5
+    .locals 2
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->readAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -968,7 +968,7 @@
 .end method
 
 .method public reset()V
-    .registers 5
+    .locals 4
 
     .line 68
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -1004,7 +1004,7 @@
 .end method
 
 .method public rewind()V
-    .registers 2
+    .locals 1
 
     .line 117
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SampleDataQueue;->firstAllocationNode:Landroidx/media3/exoplayer/source/SampleDataQueue$AllocationNode;
@@ -1015,7 +1015,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZ)I
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1050,14 +1050,14 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_22
+    if-ne p1, p2, :cond_1
 
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_0
 
     return p2
 
     .line 186
-    :cond_1c
+    :cond_0
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -1065,17 +1065,17 @@
     throw p1
 
     .line 188
-    :cond_22
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/SampleDataQueue;->postAppend(I)V
 
     return p1
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 8
+    .locals 5
 
     :goto_0
-    if-lez p2, :cond_1c
+    if-lez p2, :cond_0
 
     .line 194
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/source/SampleDataQueue;->preAppend(I)I
@@ -1108,6 +1108,6 @@
 
     goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method

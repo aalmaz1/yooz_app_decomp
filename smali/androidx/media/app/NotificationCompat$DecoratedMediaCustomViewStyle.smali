@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 379
     invoke-direct {p0}, Landroidx/media/app/NotificationCompat$MediaStyle;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method private setBackgroundColor(Landroid/widget/RemoteViews;)V
-    .registers 5
+    .locals 3
 
     .line 496
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$DecoratedMediaCustomViewStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -34,7 +34,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$DecoratedMediaCustomViewStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
@@ -43,9 +43,9 @@
 
     move-result v0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$DecoratedMediaCustomViewStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
     iget-object v0, v0, Landroidx/core/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
@@ -62,7 +62,7 @@
     move-result v0
 
     .line 500
-    :goto_1d
+    :goto_0
     sget v1, Landroidx/media/R$id;->status_bar_latest_event_content:I
 
     const-string v2, "setBackgroundColor"
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public apply(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)V
-    .registers 3
+    .locals 1
 
     .line 389
     invoke-interface {p1}, Landroidx/core/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
@@ -98,26 +98,26 @@
 .end method
 
 .method getBigContentViewLayoutResource(I)I
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x3
 
-    if-gt p1, v0, :cond_6
+    if-gt p1, v0, :cond_0
 
     .line 465
     sget p1, Landroidx/media/R$layout;->notification_template_big_media_narrow_custom:I
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     sget p1, Landroidx/media/R$layout;->notification_template_big_media_custom:I
 
-    :goto_8
+    :goto_0
     return p1
 .end method
 
 .method getContentViewLayoutResource()I
-    .registers 2
+    .locals 1
 
     .line 433
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$DecoratedMediaCustomViewStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -126,24 +126,24 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     sget v0, Landroidx/media/R$layout;->notification_template_media_custom:I
 
-    goto :goto_f
+    goto :goto_0
 
     .line 435
-    :cond_b
+    :cond_0
     invoke-super {p0}, Landroidx/media/app/NotificationCompat$MediaStyle;->getContentViewLayoutResource()I
 
     move-result v0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public makeBigContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -151,7 +151,7 @@
 .end method
 
 .method public makeContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -159,7 +159,7 @@
 .end method
 
 .method public makeHeadsUpContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

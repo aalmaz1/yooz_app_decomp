@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/widget/ConstraintAttribute;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;)V
-    .registers 3
+    .locals 0
 
     .line 206
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method private static clamp(I)I
-    .registers 2
+    .locals 1
 
     shr-int/lit8 v0, p0, 0x1f
 
@@ -108,7 +108,7 @@
 .end method
 
 .method public static extractAttributes(Ljava/util/HashMap;Landroid/view/View;)Ljava/util/HashMap;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,12 +144,12 @@
 
     move-result-object v2
 
-    :goto_11
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -164,7 +164,7 @@
 
     check-cast v4, Landroidx/constraintlayout/widget/ConstraintAttribute;
 
-    :try_start_23
+    :try_start_0
     const-string v5, "BackgroundColor"
 
     .line 256
@@ -172,7 +172,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_42
+    if-eqz v5, :cond_0
 
     .line 257
     invoke-virtual {p1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -197,10 +197,10 @@
 
     invoke-virtual {v0, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_11
+    goto :goto_0
 
     .line 261
-    :cond_42
+    :cond_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -240,43 +240,43 @@
     invoke-direct {v6, v4, v5}, Landroidx/constraintlayout/widget/ConstraintAttribute;-><init>(Landroidx/constraintlayout/widget/ConstraintAttribute;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_6a
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_23 .. :try_end_6a} :catch_75
-    .catch Ljava/lang/IllegalAccessException; {:try_start_23 .. :try_end_6a} :catch_70
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_23 .. :try_end_6a} :catch_6b
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_6b
+    :catch_0
     move-exception v3
 
     .line 271
     invoke-virtual {v3}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_70
+    :catch_1
     move-exception v3
 
     .line 269
     invoke-virtual {v3}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_75
+    :catch_2
     move-exception v3
 
     .line 267
     invoke-virtual {v3}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_7a
+    :cond_1
     return-object v0
 .end method
 
 .method public static parse(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Ljava/util/HashMap;)V
-    .registers 14
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -316,8 +316,8 @@
 
     move v5, v2
 
-    :goto_13
-    if-ge v5, v0, :cond_d5
+    :goto_0
+    if-ge v5, v0, :cond_9
 
     .line 406
     invoke-virtual {p1, v5}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -329,21 +329,21 @@
 
     const/4 v8, 0x1
 
-    if-ne v6, v7, :cond_49
+    if-ne v6, v7, :cond_0
 
     .line 408
     invoke-virtual {p1, v6}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_d1
+    if-eqz v1, :cond_8
 
     .line 409
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    if-lez v6, :cond_d1
+    if-lez v6, :cond_8
 
     .line 410
     new-instance v6, Ljava/lang/StringBuilder;
@@ -374,13 +374,13 @@
 
     move-result-object v1
 
-    goto/16 :goto_d1
+    goto/16 :goto_2
 
     .line 412
-    :cond_49
+    :cond_0
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customBoolean:I
 
-    if-ne v6, v7, :cond_59
+    if-ne v6, v7, :cond_1
 
     .line 413
     invoke-virtual {p1, v6, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -394,13 +394,13 @@
     .line 414
     sget-object v4, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->BOOLEAN_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
 
-    goto/16 :goto_d1
+    goto/16 :goto_2
 
     .line 415
-    :cond_59
+    :cond_1
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customColorValue:I
 
-    if-ne v6, v7, :cond_6b
+    if-ne v6, v7, :cond_2
 
     .line 416
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->COLOR_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -414,20 +414,20 @@
 
     move-result-object v4
 
-    :goto_67
+    :goto_1
     move-object v10, v4
 
     move-object v4, v3
 
     move-object v3, v10
 
-    goto :goto_d1
+    goto :goto_2
 
     .line 418
-    :cond_6b
+    :cond_2
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customColorDrawableValue:I
 
-    if-ne v6, v7, :cond_7a
+    if-ne v6, v7, :cond_3
 
     .line 419
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->COLOR_DRAWABLE_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -441,15 +441,15 @@
 
     move-result-object v4
 
-    goto :goto_67
+    goto :goto_1
 
     .line 421
-    :cond_7a
+    :cond_3
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customPixelDimension:I
 
     const/4 v9, 0x0
 
-    if-ne v6, v7, :cond_96
+    if-ne v6, v7, :cond_4
 
     .line 422
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->DIMENSION_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -477,13 +477,13 @@
 
     move-result-object v4
 
-    goto :goto_67
+    goto :goto_1
 
     .line 427
-    :cond_96
+    :cond_4
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customDimension:I
 
-    if-ne v6, v7, :cond_a5
+    if-ne v6, v7, :cond_5
 
     .line 428
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->DIMENSION_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -497,13 +497,13 @@
 
     move-result-object v4
 
-    goto :goto_67
+    goto :goto_1
 
     .line 430
-    :cond_a5
+    :cond_5
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customFloatValue:I
 
-    if-ne v6, v7, :cond_b6
+    if-ne v6, v7, :cond_6
 
     .line 431
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->FLOAT_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -519,13 +519,13 @@
 
     move-result-object v4
 
-    goto :goto_67
+    goto :goto_1
 
     .line 433
-    :cond_b6
+    :cond_6
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customIntegerValue:I
 
-    if-ne v6, v7, :cond_c6
+    if-ne v6, v7, :cond_7
 
     .line 434
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->INT_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -541,13 +541,13 @@
 
     move-result-object v4
 
-    goto :goto_67
+    goto :goto_1
 
     .line 436
-    :cond_c6
+    :cond_7
     sget v7, Landroidx/constraintlayout/widget/R$styleable;->CustomAttribute_customStringValue:I
 
-    if-ne v6, v7, :cond_d1
+    if-ne v6, v7, :cond_8
 
     .line 437
     sget-object v3, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->STRING_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -557,18 +557,18 @@
 
     move-result-object v4
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_d1
-    :goto_d1
+    :cond_8
+    :goto_2
     add-int/lit8 v5, v5, 0x1
 
-    goto/16 :goto_13
+    goto/16 :goto_0
 
-    :cond_d5
-    if-eqz v1, :cond_e1
+    :cond_9
+    if-eqz v1, :cond_a
 
-    if-eqz v3, :cond_e1
+    if-eqz v3, :cond_a
 
     .line 442
     new-instance p0, Landroidx/constraintlayout/widget/ConstraintAttribute;
@@ -578,14 +578,14 @@
     invoke-virtual {p2, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 444
-    :cond_e1
+    :cond_a
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
 
 .method public static setAttributes(Landroid/view/View;Ljava/util/HashMap;)V
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -617,12 +617,12 @@
 
     move-result-object v4
 
-    :goto_12
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_177
+    if-eqz v5, :cond_0
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -653,7 +653,7 @@
     move-result-object v7
 
     .line 284
-    :try_start_33
+    :try_start_0
     sget-object v8, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     iget-object v9, v6, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -668,11 +668,11 @@
 
     const/4 v10, 0x1
 
-    packed-switch v8, :pswitch_data_178
+    packed-switch v8, :pswitch_data_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :pswitch_43
+    :pswitch_0
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 312
@@ -697,9 +697,9 @@
 
     invoke-virtual {v8, p0, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_12
+    goto :goto_0
 
-    :pswitch_5b
+    :pswitch_1
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 308
@@ -724,9 +724,9 @@
 
     invoke-virtual {v8, p0, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_12
+    goto :goto_0
 
-    :pswitch_73
+    :pswitch_2
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 304
@@ -747,9 +747,9 @@
 
     invoke-virtual {v8, p0, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_12
+    goto :goto_0
 
-    :pswitch_87
+    :pswitch_3
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 290
@@ -774,9 +774,9 @@
 
     invoke-virtual {v8, p0, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :pswitch_a0
+    :pswitch_4
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 286
@@ -801,9 +801,9 @@
 
     invoke-virtual {v8, p0, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :pswitch_b9
+    :pswitch_5
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 294
@@ -832,9 +832,9 @@
     .line 297
     invoke-virtual {v8, p0, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :pswitch_d6
+    :pswitch_6
     new-array v8, v10, [Ljava/lang/Class;
 
     .line 300
@@ -858,14 +858,14 @@
     aput-object v6, v10, v9
 
     invoke-virtual {v8, p0, v10}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_ed
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_33 .. :try_end_ed} :catch_133
-    .catch Ljava/lang/IllegalAccessException; {:try_start_33 .. :try_end_ed} :catch_111
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_33 .. :try_end_ed} :catch_ef
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :catch_ef
+    :catch_0
     move-exception v6
 
     .line 324
@@ -898,9 +898,9 @@
     .line 325
     invoke-virtual {v6}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :catch_111
+    :catch_1
     move-exception v6
 
     .line 321
@@ -933,9 +933,9 @@
     .line 322
     invoke-virtual {v6}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :catch_133
+    :catch_2
     move-exception v6
 
     .line 317
@@ -1001,43 +1001,43 @@
 
     invoke-static {v2, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_12
+    goto/16 :goto_0
 
-    :cond_177
+    :cond_0
     return-void
 
-    :pswitch_data_178
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_d6
-        :pswitch_b9
-        :pswitch_a0
-        :pswitch_87
-        :pswitch_73
-        :pswitch_5b
-        :pswitch_43
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public diff(Landroidx/constraintlayout/widget/ConstraintAttribute;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_6
 
     .line 185
     iget-object v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
 
     iget-object v2, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
 
-    if-eq v1, v2, :cond_a
+    if-eq v1, v2, :cond_0
 
-    goto :goto_4c
+    goto :goto_0
 
     .line 188
-    :cond_a
+    :cond_0
     sget-object v1, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     iget-object v2, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -1050,109 +1050,109 @@
 
     const/4 v2, 0x1
 
-    packed-switch v1, :pswitch_data_4e
+    packed-switch v1, :pswitch_data_0
 
     return v0
 
     .line 201
-    :pswitch_19
+    :pswitch_0
     iget v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     iget p1, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     cmpl-float p1, v1, p1
 
-    if-nez p1, :cond_22
+    if-nez p1, :cond_1
 
     move v0, v2
 
-    :cond_22
+    :cond_1
     return v0
 
     .line 199
-    :pswitch_23
+    :pswitch_1
     iget-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mBooleanValue:Z
 
     iget-boolean p1, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mBooleanValue:Z
 
-    if-ne v1, p1, :cond_2a
+    if-ne v1, p1, :cond_2
 
     move v0, v2
 
-    :cond_2a
+    :cond_2
     return v0
 
     .line 197
-    :pswitch_2b
+    :pswitch_2
     iget v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
     iget p1, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
-    if-ne v1, p1, :cond_32
+    if-ne v1, p1, :cond_3
 
     move v0, v2
 
-    :cond_32
+    :cond_3
     return v0
 
     .line 192
-    :pswitch_33
+    :pswitch_3
     iget v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     iget p1, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     cmpl-float p1, v1, p1
 
-    if-nez p1, :cond_3c
+    if-nez p1, :cond_4
 
     move v0, v2
 
-    :cond_3c
+    :cond_4
     return v0
 
     .line 190
-    :pswitch_3d
+    :pswitch_4
     iget v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
     iget p1, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
-    if-ne v1, p1, :cond_44
+    if-ne v1, p1, :cond_5
 
     move v0, v2
 
-    :cond_44
+    :cond_5
     return v0
 
     .line 195
-    :pswitch_45
+    :pswitch_5
     iget v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mColorValue:I
 
     iget p1, p1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mColorValue:I
 
-    if-ne v1, p1, :cond_4c
+    if-ne v1, p1, :cond_6
 
     move v0, v2
 
-    :cond_4c
-    :goto_4c
+    :cond_6
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_45
-        :pswitch_45
-        :pswitch_3d
-        :pswitch_33
-        :pswitch_2b
-        :pswitch_23
-        :pswitch_19
+        :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getType()Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -1161,7 +1161,7 @@
 .end method
 
 .method public getValueToInterpolate()F
-    .registers 3
+    .locals 2
 
     .line 103
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
@@ -1174,36 +1174,36 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_34
+    packed-switch v0, :pswitch_data_0
 
     const/high16 v0, 0x7fc00000    # Float.NaN
 
     return v0
 
     .line 116
-    :pswitch_10
+    :pswitch_0
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     return v0
 
     .line 114
-    :pswitch_13
+    :pswitch_1
     iget-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mBooleanValue:Z
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
-    :goto_1b
+    :goto_0
     return v0
 
     .line 112
-    :pswitch_1c
+    :pswitch_2
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Cannot interpolate String"
@@ -1213,13 +1213,13 @@
     throw v0
 
     .line 107
-    :pswitch_24
+    :pswitch_3
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     return v0
 
     .line 105
-    :pswitch_27
+    :pswitch_4
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
     int-to-float v0, v0
@@ -1227,7 +1227,7 @@
     return v0
 
     .line 110
-    :pswitch_2b
+    :pswitch_5
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Color does not have a single color to interpolate"
@@ -1238,20 +1238,20 @@
 
     nop
 
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_27
-        :pswitch_24
-        :pswitch_1c
-        :pswitch_13
-        :pswitch_10
+        :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getValuesToInterpolate([F)V
-    .registers 12
+    .locals 10
 
     .line 122
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
@@ -1266,38 +1266,38 @@
 
     const/4 v1, 0x0
 
-    packed-switch v0, :pswitch_data_70
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 149
-    :pswitch_f
+    :pswitch_0
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     aput v0, p1, v1
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 146
-    :pswitch_14
+    :pswitch_1
     iget-boolean v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mBooleanValue:Z
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
-    :goto_1c
+    :goto_0
     aput v0, p1, v1
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 144
-    :pswitch_1f
+    :pswitch_2
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "Color does not have a single color to interpolate"
@@ -1307,25 +1307,25 @@
     throw p1
 
     .line 127
-    :pswitch_27
+    :pswitch_3
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
     aput v0, p1, v1
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 124
-    :pswitch_2c
+    :pswitch_4
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
     int-to-float v0, v0
 
     aput v0, p1, v1
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 131
-    :pswitch_32
+    :pswitch_5
     iget v0, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mColorValue:I
 
     shr-int/lit8 v2, v0, 0x18
@@ -1407,25 +1407,25 @@
     .line 141
     aput v0, p1, v1
 
-    :goto_6e
+    :goto_1
     return-void
 
     nop
 
-    :pswitch_data_70
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_32
-        :pswitch_32
-        :pswitch_2c
-        :pswitch_27
-        :pswitch_1f
-        :pswitch_14
-        :pswitch_f
+        :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public noOfInterpValues()I
-    .registers 4
+    .locals 3
 
     .line 88
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
@@ -1440,22 +1440,22 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_0
 
     const/4 v2, 0x2
 
-    if-eq v0, v2, :cond_11
+    if-eq v0, v2, :cond_0
 
     return v1
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x4
 
     return v0
 .end method
 
 .method public setColorValue(I)V
-    .registers 2
+    .locals 0
 
     .line 70
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mColorValue:I
@@ -1464,7 +1464,7 @@
 .end method
 
 .method public setFloatValue(F)V
-    .registers 2
+    .locals 0
 
     .line 66
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
@@ -1473,7 +1473,7 @@
 .end method
 
 .method public setIntValue(I)V
-    .registers 2
+    .locals 0
 
     .line 74
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
@@ -1482,7 +1482,7 @@
 .end method
 
 .method public setInterpolatedValue(Landroid/view/View;[F)V
-    .registers 19
+    .locals 16
 
     move-object/from16 v1, p0
 
@@ -1519,7 +1519,7 @@
     move-result-object v7
 
     .line 345
-    :try_start_22
+    :try_start_0
     sget-object v8, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
 
     iget-object v9, v1, Landroidx/constraintlayout/widget/ConstraintAttribute;->mType:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
@@ -1538,11 +1538,11 @@
 
     const/4 v15, 0x0
 
-    packed-switch v8, :pswitch_data_1c2
+    packed-switch v8, :pswitch_data_0
 
-    goto/16 :goto_1c0
+    goto/16 :goto_1
 
-    :pswitch_3a
+    :pswitch_0
     new-array v0, v14, [Ljava/lang/Class;
 
     .line 383
@@ -1567,9 +1567,9 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_1c0
+    goto/16 :goto_1
 
-    :pswitch_53
+    :pswitch_1
     new-array v0, v14, [Ljava/lang/Class;
 
     .line 379
@@ -1590,14 +1590,14 @@
 
     cmpl-float v8, v8, v9
 
-    if-lez v8, :cond_68
+    if-lez v8, :cond_0
 
-    goto :goto_69
+    goto :goto_0
 
-    :cond_68
+    :cond_0
     move v14, v15
 
-    :goto_69
+    :goto_0
     invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v8
@@ -1606,10 +1606,10 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_1c0
+    goto/16 :goto_1
 
     .line 376
-    :pswitch_74
+    :pswitch_2
     new-instance v6, Ljava/lang/RuntimeException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1630,7 +1630,7 @@
 
     throw v6
 
-    :pswitch_89
+    :pswitch_3
     new-array v0, v14, [Ljava/lang/Class;
 
     .line 351
@@ -1655,9 +1655,9 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_1c0
+    goto/16 :goto_1
 
-    :pswitch_a2
+    :pswitch_4
     new-array v0, v14, [Ljava/lang/Class;
 
     .line 347
@@ -1684,9 +1684,9 @@
 
     invoke-virtual {v0, v2, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_1c0
+    goto/16 :goto_1
 
-    :pswitch_bc
+    :pswitch_5
     new-array v0, v14, [Ljava/lang/Class;
 
     .line 355
@@ -1801,9 +1801,9 @@
     .line 363
     invoke-virtual {v0, v2, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_1c0
+    goto/16 :goto_1
 
-    :pswitch_116
+    :pswitch_6
     move v0, v14
 
     new-array v9, v0, [Ljava/lang/Class;
@@ -1919,22 +1919,22 @@
     aput-object v6, v8, v9
 
     invoke-virtual {v0, v2, v8}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_16d
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_22 .. :try_end_16d} :catch_19a
-    .catch Ljava/lang/IllegalAccessException; {:try_start_22 .. :try_end_16d} :catch_173
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_22 .. :try_end_16d} :catch_16e
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1c0
+    goto :goto_1
 
-    :catch_16e
+    :catch_0
     move-exception v0
 
     .line 394
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    goto :goto_1c0
+    goto :goto_1
 
-    :catch_173
+    :catch_1
     move-exception v0
 
     .line 391
@@ -1973,9 +1973,9 @@
     .line 392
     invoke-virtual {v0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    goto :goto_1c0
+    goto :goto_1
 
-    :catch_19a
+    :catch_2
     move-exception v0
 
     .line 388
@@ -2014,25 +2014,25 @@
     .line 389
     invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
 
-    :goto_1c0
+    :goto_1
     return-void
 
     nop
 
-    :pswitch_data_1c2
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_116
-        :pswitch_bc
-        :pswitch_a2
-        :pswitch_89
-        :pswitch_74
-        :pswitch_53
-        :pswitch_3a
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public setStringValue(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 78
     iput-object p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mStringValue:Ljava/lang/String;
@@ -2041,7 +2041,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 225
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
@@ -2054,12 +2054,12 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_40
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 243
-    :pswitch_e
+    :pswitch_0
     check-cast p1, Ljava/lang/Float;
 
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
@@ -2068,10 +2068,10 @@
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 240
-    :pswitch_17
+    :pswitch_1
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -2080,18 +2080,18 @@
 
     iput-boolean p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mBooleanValue:Z
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 237
-    :pswitch_20
+    :pswitch_2
     check-cast p1, Ljava/lang/String;
 
     iput-object p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mStringValue:Ljava/lang/String;
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 230
-    :pswitch_25
+    :pswitch_3
     check-cast p1, Ljava/lang/Float;
 
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
@@ -2100,10 +2100,10 @@
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 227
-    :pswitch_2e
+    :pswitch_4
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -2112,10 +2112,10 @@
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 234
-    :pswitch_37
+    :pswitch_5
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -2124,23 +2124,23 @@
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mColorValue:I
 
-    :goto_3f
+    :goto_0
     return-void
 
-    :pswitch_data_40
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_37
-        :pswitch_37
-        :pswitch_2e
-        :pswitch_25
-        :pswitch_20
-        :pswitch_17
-        :pswitch_e
+        :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public setValue([F)V
-    .registers 8
+    .locals 6
 
     .line 155
     sget-object v0, Landroidx/constraintlayout/widget/ConstraintAttribute$1;->$SwitchMap$androidx$constraintlayout$widget$ConstraintAttribute$AttributeType:[I
@@ -2155,20 +2155,20 @@
 
     const/4 v1, 0x0
 
-    packed-switch v0, :pswitch_data_50
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 173
-    :pswitch_f
+    :pswitch_0
     aget p1, p1, v1
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 170
-    :pswitch_14
+    :pswitch_1
     aget p1, p1, v1
 
     float-to-double v2, p1
@@ -2177,17 +2177,17 @@
 
     cmpl-double p1, v2, v4
 
-    if-lez p1, :cond_1e
+    if-lez p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1e
+    :cond_0
     iput-boolean v1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mBooleanValue:Z
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 168
-    :pswitch_21
+    :pswitch_2
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string v0, "Color does not have a single color to interpolate"
@@ -2197,25 +2197,25 @@
     throw p1
 
     .line 160
-    :pswitch_29
+    :pswitch_3
     aget p1, p1, v1
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mFloatValue:F
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 157
-    :pswitch_2e
+    :pswitch_4
     aget p1, p1, v1
 
     float-to-int p1, p1
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mIntegerValue:I
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 164
-    :pswitch_34
+    :pswitch_5
     invoke-static {p1}, Landroid/graphics/Color;->HSVToColor([F)I
 
     move-result v0
@@ -2247,19 +2247,19 @@
 
     iput p1, p0, Landroidx/constraintlayout/widget/ConstraintAttribute;->mColorValue:I
 
-    :goto_4e
+    :goto_0
     return-void
 
     nop
 
-    :pswitch_data_50
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_34
-        :pswitch_34
-        :pswitch_2e
-        :pswitch_29
-        :pswitch_21
-        :pswitch_14
-        :pswitch_f
+        :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

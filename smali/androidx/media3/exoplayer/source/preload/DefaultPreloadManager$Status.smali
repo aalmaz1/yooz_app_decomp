@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>(IJ)V
-    .registers 4
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public getStage()I
-    .registers 2
+    .locals 1
 
     .line 96
     iget v0, p0, Landroidx/media3/exoplayer/source/preload/DefaultPreloadManager$Status;->stage:I
@@ -76,7 +76,7 @@
 .end method
 
 .method public getValue()J
-    .registers 3
+    .locals 2
 
     .line 101
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/preload/DefaultPreloadManager$Status;->value:J

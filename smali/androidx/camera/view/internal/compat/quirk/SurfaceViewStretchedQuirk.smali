@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method private static isLenovoTablet()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "LENOVO"
 
@@ -44,7 +44,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "Q706F"
 
@@ -55,21 +55,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isOppoFoldable()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "OPPO"
 
@@ -80,7 +80,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "OP4E75L1"
 
@@ -91,21 +91,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isSamsungFold2OrFold3()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "SAMSUNG"
 
@@ -116,7 +116,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     const-string v0, "F2Q"
 
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     const-string v0, "Q2Q"
 
@@ -138,57 +138,57 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_21
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 2
+    .locals 2
 
     .line 48
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-ge v0, v1, :cond_1a
+    if-ge v0, v1, :cond_1
 
     .line 49
     invoke-static {}, Landroidx/camera/view/internal/compat/quirk/SurfaceViewStretchedQuirk;->isSamsungFold2OrFold3()Z
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroidx/camera/view/internal/compat/quirk/SurfaceViewStretchedQuirk;->isOppoFoldable()Z
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroidx/camera/view/internal/compat/quirk/SurfaceViewStretchedQuirk;->isLenovoTablet()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_1b
+    :goto_0
     return v0
 .end method

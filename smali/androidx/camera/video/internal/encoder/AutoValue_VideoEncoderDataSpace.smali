@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 17
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;-><init>()V
@@ -33,21 +33,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 52
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2
 
     .line 53
     check-cast p1, Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
@@ -59,7 +59,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_24
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;->transfer:I
 
@@ -68,7 +68,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_24
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;->range:I
 
@@ -77,22 +77,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_24
+    if-ne v1, p1, :cond_1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     move v0, v2
 
-    :goto_25
+    :goto_0
     return v0
 
-    :cond_26
+    :cond_2
     return v2
 .end method
 
 .method public getRange()I
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;->range:I
@@ -101,7 +101,7 @@
 .end method
 
 .method public getStandard()I
-    .registers 2
+    .locals 1
 
     .line 25
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;->standard:I
@@ -110,7 +110,7 @@
 .end method
 
 .method public getTransfer()I
-    .registers 2
+    .locals 1
 
     .line 30
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;->transfer:I
@@ -119,7 +119,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 65
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;->standard:I
@@ -146,7 +146,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 40
     new-instance v0, Ljava/lang/StringBuilder;

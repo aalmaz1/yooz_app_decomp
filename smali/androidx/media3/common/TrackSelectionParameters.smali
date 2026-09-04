@@ -194,7 +194,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1063
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$Builder;
@@ -493,7 +493,7 @@
 .end method
 
 .method protected constructor <init>(Landroidx/media3/common/TrackSelectionParameters$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 1256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -706,7 +706,7 @@
 .end method
 
 .method static synthetic access$000()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MAX_VIDEO_WIDTH:Ljava/lang/String;
@@ -715,7 +715,7 @@
 .end method
 
 .method static synthetic access$100()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MAX_VIDEO_HEIGHT:Ljava/lang/String;
@@ -724,7 +724,7 @@
 .end method
 
 .method static synthetic access$1000()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_VIEWPORT_ORIENTATION_MAY_CHANGE:Ljava/lang/String;
@@ -733,7 +733,7 @@
 .end method
 
 .method static synthetic access$1100()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_VIDEO_MIMETYPES:Ljava/lang/String;
@@ -742,7 +742,7 @@
 .end method
 
 .method static synthetic access$1200()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_VIDEO_ROLE_FLAGS:Ljava/lang/String;
@@ -751,7 +751,7 @@
 .end method
 
 .method static synthetic access$1300()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_AUDIO_LANGUAGES:Ljava/lang/String;
@@ -760,7 +760,7 @@
 .end method
 
 .method static synthetic access$1400()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_AUDIO_ROLE_FLAGS:Ljava/lang/String;
@@ -769,7 +769,7 @@
 .end method
 
 .method static synthetic access$1500()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MAX_AUDIO_CHANNEL_COUNT:Ljava/lang/String;
@@ -778,7 +778,7 @@
 .end method
 
 .method static synthetic access$1600()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MAX_AUDIO_BITRATE:Ljava/lang/String;
@@ -787,7 +787,7 @@
 .end method
 
 .method static synthetic access$1700()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_AUDIO_MIME_TYPES:Ljava/lang/String;
@@ -796,7 +796,7 @@
 .end method
 
 .method static synthetic access$1800()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_TEXT_LANGUAGES:Ljava/lang/String;
@@ -805,7 +805,7 @@
 .end method
 
 .method static synthetic access$1900()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_PREFERRED_TEXT_ROLE_FLAGS:Ljava/lang/String;
@@ -814,7 +814,7 @@
 .end method
 
 .method static synthetic access$200()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MAX_VIDEO_FRAMERATE:Ljava/lang/String;
@@ -823,7 +823,7 @@
 .end method
 
 .method static synthetic access$2000()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_IGNORED_TEXT_SELECTION_FLAGS:Ljava/lang/String;
@@ -832,7 +832,7 @@
 .end method
 
 .method static synthetic access$2100()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_SELECT_UNDETERMINED_TEXT_LANGUAGE:Ljava/lang/String;
@@ -841,7 +841,7 @@
 .end method
 
 .method static synthetic access$2200()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_IS_PREFER_IMAGE_OVER_VIDEO_ENABLED:Ljava/lang/String;
@@ -850,7 +850,7 @@
 .end method
 
 .method static synthetic access$2300()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_FORCE_LOWEST_BITRATE:Ljava/lang/String;
@@ -859,7 +859,7 @@
 .end method
 
 .method static synthetic access$2400()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_FORCE_HIGHEST_SUPPORTED_BITRATE:Ljava/lang/String;
@@ -868,7 +868,7 @@
 .end method
 
 .method static synthetic access$2500()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_SELECTION_OVERRIDES:Ljava/lang/String;
@@ -877,7 +877,7 @@
 .end method
 
 .method static synthetic access$2600()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_DISABLED_TRACK_TYPE:Ljava/lang/String;
@@ -886,7 +886,7 @@
 .end method
 
 .method static synthetic access$2700()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_AUDIO_OFFLOAD_PREFERENCES:Ljava/lang/String;
@@ -895,7 +895,7 @@
 .end method
 
 .method static synthetic access$2800()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_IS_SPEED_CHANGE_SUPPORT_REQUIRED:Ljava/lang/String;
@@ -904,7 +904,7 @@
 .end method
 
 .method static synthetic access$2900()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_IS_GAPLESS_SUPPORT_REQUIRED:Ljava/lang/String;
@@ -913,7 +913,7 @@
 .end method
 
 .method static synthetic access$300()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MAX_VIDEO_BITRATE:Ljava/lang/String;
@@ -922,7 +922,7 @@
 .end method
 
 .method static synthetic access$3000()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_AUDIO_OFFLOAD_MODE_PREFERENCE:Ljava/lang/String;
@@ -931,7 +931,7 @@
 .end method
 
 .method static synthetic access$400()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MIN_VIDEO_WIDTH:Ljava/lang/String;
@@ -940,7 +940,7 @@
 .end method
 
 .method static synthetic access$500()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MIN_VIDEO_HEIGHT:Ljava/lang/String;
@@ -949,7 +949,7 @@
 .end method
 
 .method static synthetic access$600()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MIN_VIDEO_FRAMERATE:Ljava/lang/String;
@@ -958,7 +958,7 @@
 .end method
 
 .method static synthetic access$700()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_MIN_VIDEO_BITRATE:Ljava/lang/String;
@@ -967,7 +967,7 @@
 .end method
 
 .method static synthetic access$800()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_VIEWPORT_WIDTH:Ljava/lang/String;
@@ -976,7 +976,7 @@
 .end method
 
 .method static synthetic access$900()Ljava/lang/String;
-    .registers 1
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/media3/common/TrackSelectionParameters;->FIELD_VIEWPORT_HEIGHT:Ljava/lang/String;
@@ -985,7 +985,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/TrackSelectionParameters;
-    .registers 2
+    .locals 1
 
     .line 1479
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$Builder;
@@ -1000,7 +1000,7 @@
 .end method
 
 .method public static getDefaults(Landroid/content/Context;)Landroidx/media3/common/TrackSelectionParameters;
-    .registers 2
+    .locals 1
 
     .line 1074
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$Builder;
@@ -1017,7 +1017,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/TrackSelectionParameters$Builder;
-    .registers 2
+    .locals 1
 
     .line 1294
     new-instance v0, Landroidx/media3/common/TrackSelectionParameters$Builder;
@@ -1028,18 +1028,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_dc
+    if-eqz p1, :cond_3
 
     .line 1303
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1050,12 +1050,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_1
 
-    goto/16 :goto_dc
+    goto/16 :goto_1
 
     .line 1306
-    :cond_13
+    :cond_1
     check-cast p1, Landroidx/media3/common/TrackSelectionParameters;
 
     .line 1308
@@ -1063,67 +1063,67 @@
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->maxVideoWidth:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->maxVideoHeight:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->maxVideoHeight:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->maxVideoFrameRate:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->maxVideoFrameRate:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->maxVideoBitrate:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->maxVideoBitrate:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->minVideoWidth:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->minVideoWidth:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->minVideoHeight:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->minVideoHeight:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->minVideoFrameRate:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->minVideoFrameRate:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->minVideoBitrate:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->minVideoBitrate:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters;->viewportOrientationMayChange:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/TrackSelectionParameters;->viewportOrientationMayChange:Z
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->viewportWidth:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->viewportWidth:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->viewportHeight:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->viewportHeight:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredVideoMimeTypes:Lcom/google/common/collect/ImmutableList;
 
@@ -1134,13 +1134,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredVideoRoleFlags:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->preferredVideoRoleFlags:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredAudioLanguages:Lcom/google/common/collect/ImmutableList;
 
@@ -1151,25 +1151,25 @@
 
     move-result v2
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredAudioRoleFlags:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->preferredAudioRoleFlags:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->maxAudioChannelCount:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->maxAudioChannelCount:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->maxAudioBitrate:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->maxAudioBitrate:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredAudioMimeTypes:Lcom/google/common/collect/ImmutableList;
 
@@ -1180,7 +1180,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->audioOffloadPreferences:Landroidx/media3/common/TrackSelectionParameters$AudioOffloadPreferences;
 
@@ -1191,7 +1191,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredTextLanguages:Lcom/google/common/collect/ImmutableList;
 
@@ -1202,43 +1202,43 @@
 
     move-result v2
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->preferredTextRoleFlags:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->preferredTextRoleFlags:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/TrackSelectionParameters;->ignoredTextSelectionFlags:I
 
     iget v3, p1, Landroidx/media3/common/TrackSelectionParameters;->ignoredTextSelectionFlags:I
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters;->selectUndeterminedTextLanguage:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/TrackSelectionParameters;->selectUndeterminedTextLanguage:Z
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters;->isPrioritizeImageOverVideoEnabled:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/TrackSelectionParameters;->isPrioritizeImageOverVideoEnabled:Z
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters;->forceLowestBitrate:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/TrackSelectionParameters;->forceLowestBitrate:Z
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, p0, Landroidx/media3/common/TrackSelectionParameters;->forceHighestSupportedBitrate:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/TrackSelectionParameters;->forceHighestSupportedBitrate:Z
 
-    if-ne v2, v3, :cond_da
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->overrides:Lcom/google/common/collect/ImmutableMap;
 
@@ -1249,7 +1249,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_da
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackSelectionParameters;->disabledTrackTypes:Lcom/google/common/collect/ImmutableSet;
 
@@ -1260,23 +1260,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_da
+    if-eqz p1, :cond_2
 
-    goto :goto_db
+    goto :goto_0
 
-    :cond_da
+    :cond_2
     move v0, v1
 
-    :goto_db
+    :goto_0
     return v0
 
-    :cond_dc
-    :goto_dc
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1346
     iget v0, p0, Landroidx/media3/common/TrackSelectionParameters;->maxVideoWidth:I
@@ -1506,7 +1506,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 6
+    .locals 5
 
     .line 1426
     new-instance v0, Landroid/os/Bundle;

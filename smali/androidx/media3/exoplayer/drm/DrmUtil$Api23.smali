@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static isMediaDrmResetException(Ljava/lang/Throwable;)Z
-    .registers 1
+    .locals 0
 
     .line 156
     instance-of p0, p0, Landroid/media/MediaDrmResetException;

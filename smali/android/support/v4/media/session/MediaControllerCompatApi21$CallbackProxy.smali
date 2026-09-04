@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v4/media/session/MediaControllerCompatApi21$Callback;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onAudioInfoChanged(Landroid/media/session/MediaController$PlaybackInfo;)V
-    .registers 8
+    .locals 6
 
     .line 326
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompatApi21$CallbackProxy;->mCallback:Landroid/support/v4/media/session/MediaControllerCompatApi21$Callback;
@@ -88,7 +88,7 @@
 .end method
 
 .method public onExtrasChanged(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 320
     invoke-static {p1}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V
@@ -102,7 +102,7 @@
 .end method
 
 .method public onMetadataChanged(Landroid/media/MediaMetadata;)V
-    .registers 3
+    .locals 1
 
     .line 305
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompatApi21$CallbackProxy;->mCallback:Landroid/support/v4/media/session/MediaControllerCompatApi21$Callback;
@@ -113,7 +113,7 @@
 .end method
 
 .method public onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V
-    .registers 3
+    .locals 1
 
     .line 300
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompatApi21$CallbackProxy;->mCallback:Landroid/support/v4/media/session/MediaControllerCompatApi21$Callback;
@@ -124,7 +124,7 @@
 .end method
 
 .method public onQueueChanged(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -143,7 +143,7 @@
 .end method
 
 .method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 315
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompatApi21$CallbackProxy;->mCallback:Landroid/support/v4/media/session/MediaControllerCompatApi21$Callback;
@@ -154,7 +154,7 @@
 .end method
 
 .method public onSessionDestroyed()V
-    .registers 2
+    .locals 1
 
     .line 289
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompatApi21$CallbackProxy;->mCallback:Landroid/support/v4/media/session/MediaControllerCompatApi21$Callback;
@@ -165,7 +165,7 @@
 .end method
 
 .method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 294
     invoke-static {p2}, Landroid/support/v4/media/session/MediaSessionCompat;->ensureClassLoader(Landroid/os/Bundle;)V

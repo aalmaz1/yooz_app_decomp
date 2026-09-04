@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1083
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getBreakStrategy(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 1089
     invoke-virtual {p0}, Landroid/widget/TextView;->getBreakStrategy()I
@@ -36,7 +36,7 @@
 .end method
 
 .method static getCompoundDrawableTintList(Landroid/widget/TextView;)Landroid/content/res/ColorStateList;
-    .registers 1
+    .locals 0
 
     .line 1114
     invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawableTintList()Landroid/content/res/ColorStateList;
@@ -47,7 +47,7 @@
 .end method
 
 .method static getCompoundDrawableTintMode(Landroid/widget/TextView;)Landroid/graphics/PorterDuff$Mode;
-    .registers 1
+    .locals 0
 
     .line 1109
     invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawableTintMode()Landroid/graphics/PorterDuff$Mode;
@@ -58,7 +58,7 @@
 .end method
 
 .method static getHyphenationFrequency(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 1099
     invoke-virtual {p0}, Landroid/widget/TextView;->getHyphenationFrequency()I
@@ -69,7 +69,7 @@
 .end method
 
 .method static setBreakStrategy(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 1094
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setBreakStrategy(I)V
@@ -78,7 +78,7 @@
 .end method
 
 .method static setCompoundDrawableTintList(Landroid/widget/TextView;Landroid/content/res/ColorStateList;)V
-    .registers 2
+    .locals 0
 
     .line 1119
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setCompoundDrawableTintList(Landroid/content/res/ColorStateList;)V
@@ -87,7 +87,7 @@
 .end method
 
 .method static setCompoundDrawableTintMode(Landroid/widget/TextView;Landroid/graphics/PorterDuff$Mode;)V
-    .registers 2
+    .locals 0
 
     .line 1124
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setCompoundDrawableTintMode(Landroid/graphics/PorterDuff$Mode;)V
@@ -96,7 +96,7 @@
 .end method
 
 .method static setHyphenationFrequency(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 1104
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setHyphenationFrequency(I)V

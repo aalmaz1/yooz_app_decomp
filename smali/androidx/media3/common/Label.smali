@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Label;
-    .registers 4
+    .locals 3
 
     .line 83
     new-instance v0, Landroidx/media3/common/Label;
@@ -92,18 +92,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 54
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -114,12 +114,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 57
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/Label;
 
     .line 58
@@ -131,7 +131,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/Label;->value:Ljava/lang/String;
 
@@ -141,23 +141,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 63
     iget-object v0, p0, Landroidx/media3/common/Label;->value:Ljava/lang/String;
@@ -171,25 +171,25 @@
     .line 64
     iget-object v1, p0, Landroidx/media3/common/Label;->language:Ljava/lang/String;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_12
+    :goto_0
     add-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 73
     new-instance v0, Landroid/os/Bundle;
@@ -199,7 +199,7 @@
     .line 74
     iget-object v1, p0, Landroidx/media3/common/Label;->language:Ljava/lang/String;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 75
     sget-object v2, Landroidx/media3/common/Label;->FIELD_LANGUAGE_INDEX:Ljava/lang/String;
@@ -207,7 +207,7 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 77
-    :cond_e
+    :cond_0
     sget-object v1, Landroidx/media3/common/Label;->FIELD_VALUE_INDEX:Ljava/lang/String;
 
     iget-object v2, p0, Landroidx/media3/common/Label;->value:Ljava/lang/String;

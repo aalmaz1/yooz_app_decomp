@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static isMediaDrmStateException(Ljava/lang/Throwable;)Z
-    .registers 1
+    .locals 0
 
     .line 138
     instance-of p0, p0, Landroid/media/MediaDrm$MediaDrmStateException;
@@ -34,7 +34,7 @@
 .end method
 
 .method public static mediaDrmStateExceptionToErrorCode(Ljava/lang/Throwable;)I
-    .registers 1
+    .locals 0
 
     .line 145
     check-cast p0, Landroid/media/MediaDrm$MediaDrmStateException;

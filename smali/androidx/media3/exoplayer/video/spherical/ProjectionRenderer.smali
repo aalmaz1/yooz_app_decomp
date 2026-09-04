@@ -51,48 +51,48 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const/16 v0, 0x9
 
     new-array v1, v0, [F
 
     .line 75
-    fill-array-data v1, :array_26
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_WHOLE:[F
 
     new-array v1, v0, [F
 
     .line 78
-    fill-array-data v1, :array_3c
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_TOP:[F
 
     new-array v1, v0, [F
 
     .line 81
-    fill-array-data v1, :array_52
+    fill-array-data v1, :array_2
 
     sput-object v1, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_BOTTOM:[F
 
     new-array v1, v0, [F
 
     .line 84
-    fill-array-data v1, :array_68
+    fill-array-data v1, :array_3
 
     sput-object v1, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_LEFT:[F
 
     new-array v0, v0, [F
 
     .line 87
-    fill-array-data v0, :array_7e
+    fill-array-data v0, :array_4
 
     sput-object v0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_RIGHT:[F
 
     return-void
 
-    :array_26
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x0
@@ -105,7 +105,7 @@
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_3c
+    :array_1
     .array-data 4
         0x3f800000    # 1.0f
         0x0
@@ -118,7 +118,7 @@
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_52
+    :array_2
     .array-data 4
         0x3f800000    # 1.0f
         0x0
@@ -131,7 +131,7 @@
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_68
+    :array_3
     .array-data 4
         0x3f000000    # 0.5f
         0x0
@@ -144,7 +144,7 @@
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_7e
+    :array_4
     .array-data 4
         0x3f000000    # 0.5f
         0x0
@@ -159,7 +159,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -168,7 +168,7 @@
 .end method
 
 .method public static isSupported(Landroidx/media3/exoplayer/video/spherical/Projection;)Z
-    .registers 5
+    .locals 4
 
     .line 41
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/Projection;->leftMesh:Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;
@@ -185,7 +185,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v1, v3, :cond_23
+    if-ne v1, v3, :cond_0
 
     .line 44
     invoke-virtual {v0, v2}, Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;->getSubMesh(I)Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;
@@ -194,14 +194,14 @@
 
     iget v0, v0, Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;->textureId:I
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_0
 
     .line 45
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;->getSubMeshCount()I
 
     move-result v0
 
-    if-ne v0, v3, :cond_23
+    if-ne v0, v3, :cond_0
 
     .line 46
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;->getSubMesh(I)Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;
@@ -210,79 +210,79 @@
 
     iget p0, p0, Landroidx/media3/exoplayer/video/spherical/Projection$SubMesh;->textureId:I
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_0
 
     move v2, v3
 
-    :cond_23
+    :cond_0
     return v2
 .end method
 
 
 # virtual methods
 .method public draw(I[FZ)V
-    .registers 15
+    .locals 11
 
     const-string v0, "ProjectionRenderer"
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_0
 
     .line 143
     iget-object v1, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->rightMeshData:Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->leftMeshData:Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;
 
-    :goto_9
-    if-nez v1, :cond_c
+    :goto_0
+    if-nez v1, :cond_1
 
     return-void
 
     .line 150
-    :cond_c
+    :cond_1
     iget v2, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->stereoMode:I
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_19
+    if-ne v2, v3, :cond_3
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_2
 
     .line 151
     sget-object p3, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_BOTTOM:[F
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_16
+    :cond_2
     sget-object p3, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_TOP:[F
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_19
+    :cond_3
     const/4 v4, 0x2
 
-    if-ne v2, v4, :cond_24
+    if-ne v2, v4, :cond_5
 
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_4
 
     .line 153
     sget-object p3, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_RIGHT:[F
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_21
+    :cond_4
     sget-object p3, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_LEFT:[F
 
-    goto :goto_26
+    goto :goto_1
 
     .line 155
-    :cond_24
+    :cond_5
     sget-object p3, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->TEX_MATRIX_WHOLE:[F
 
     .line 157
-    :goto_26
+    :goto_1
     iget v2, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->uTexMatrixHandle:I
 
     const/4 v4, 0x0
@@ -310,14 +310,14 @@
     invoke-static {p1, v4}, Landroid/opengl/GLES20;->glUniform1i(II)V
 
     .line 165
-    :try_start_42
+    :try_start_0
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_45
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_42 .. :try_end_45} :catch_46
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4c
+    goto :goto_2
 
-    :catch_46
+    :catch_0
     move-exception p1
 
     const-string p2, "Failed to bind uniforms"
@@ -326,7 +326,7 @@
     invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 171
-    :goto_4c
+    :goto_2
     iget v5, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->positionHandle:I
 
     const/4 v6, 0x3
@@ -346,14 +346,14 @@
     invoke-static/range {v5 .. v10}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
     .line 179
-    :try_start_5b
+    :try_start_1
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_5e
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_5b .. :try_end_5e} :catch_5f
+    :try_end_1
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_65
+    goto :goto_3
 
-    :catch_5f
+    :catch_1
     move-exception p1
 
     const-string p2, "Failed to load position data"
@@ -362,7 +362,7 @@
     invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 185
-    :goto_65
+    :goto_3
     iget v5, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->texCoordsHandle:I
 
     const/4 v6, 0x2
@@ -382,14 +382,14 @@
     invoke-static/range {v5 .. v10}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
     .line 193
-    :try_start_74
+    :try_start_2
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_77
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_74 .. :try_end_77} :catch_78
+    :try_end_2
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_7e
+    goto :goto_4
 
-    :catch_78
+    :catch_2
     move-exception p1
 
     const-string p2, "Failed to load texture data"
@@ -398,7 +398,7 @@
     invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 199
-    :goto_7e
+    :goto_4
     invoke-static {v1}, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;->access$200(Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;)I
 
     move-result p1
@@ -410,14 +410,14 @@
     invoke-static {p1, v4, p2}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
     .line 201
-    :try_start_89
+    :try_start_3
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_8c
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_89 .. :try_end_8c} :catch_8d
+    :try_end_3
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_3 .. :try_end_3} :catch_3
 
-    goto :goto_93
+    goto :goto_5
 
-    :catch_8d
+    :catch_3
     move-exception p1
 
     const-string p2, "Failed to render"
@@ -425,12 +425,12 @@
     .line 203
     invoke-static {v0, p2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_93
+    :goto_5
     return-void
 .end method
 
 .method public init()V
-    .registers 4
+    .locals 3
 
     .line 122
     :try_start_0
@@ -496,12 +496,12 @@
     move-result v0
 
     iput v0, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->textureHandle:I
-    :try_end_3f
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_3f} :catch_40
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_48
+    goto :goto_0
 
-    :catch_40
+    :catch_0
     move-exception v0
 
     const-string v1, "ProjectionRenderer"
@@ -511,24 +511,24 @@
     .line 129
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_48
+    :goto_0
     return-void
 .end method
 
 .method public setProjection(Landroidx/media3/exoplayer/video/spherical/Projection;)V
-    .registers 5
+    .locals 3
 
     .line 110
     invoke-static {p1}, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->isSupported(Landroidx/media3/exoplayer/video/spherical/Projection;)Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 113
-    :cond_7
+    :cond_0
     iget v0, p1, Landroidx/media3/exoplayer/video/spherical/Projection;->stereoMode:I
 
     iput v0, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->stereoMode:I
@@ -551,13 +551,13 @@
     .line 116
     iget-boolean v0, p1, Landroidx/media3/exoplayer/video/spherical/Projection;->singleMesh:Z
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->leftMeshData:Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     new-instance v0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/video/spherical/Projection;->rightMesh:Landroidx/media3/exoplayer/video/spherical/Projection$Mesh;
@@ -570,29 +570,29 @@
 
     move-object p1, v0
 
-    :goto_2c
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->rightMeshData:Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer$MeshData;
 
     return-void
 .end method
 
 .method public shutdown()V
-    .registers 4
+    .locals 3
 
     .line 209
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->program:Landroidx/media3/common/util/GlProgram;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 211
-    :try_start_4
+    :try_start_0
     invoke-virtual {v0}, Landroidx/media3/common/util/GlProgram;->delete()V
-    :try_end_7
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_4 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     move-exception v0
 
     const-string v1, "ProjectionRenderer"
@@ -602,7 +602,7 @@
     .line 213
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     return-void
 .end method

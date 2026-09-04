@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 34
     new-instance v0, Ljava/lang/StringBuilder;

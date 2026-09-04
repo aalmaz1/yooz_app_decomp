@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 6194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isContextual(Landroid/app/Notification$Action;)Z
-    .registers 1
+    .locals 0
 
     .line 6198
     invoke-virtual {p0}, Landroid/app/Notification$Action;->isContextual()Z

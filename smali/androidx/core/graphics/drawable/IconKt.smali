@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final toAdaptiveIcon(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithAdaptiveBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
@@ -40,7 +40,7 @@
 .end method
 
 .method public static final toIcon(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
@@ -51,7 +51,7 @@
 .end method
 
 .method public static final toIcon(Landroid/net/Uri;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithContentUri(Landroid/net/Uri;)Landroid/graphics/drawable/Icon;
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final toIcon([B)Landroid/graphics/drawable/Icon;
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 

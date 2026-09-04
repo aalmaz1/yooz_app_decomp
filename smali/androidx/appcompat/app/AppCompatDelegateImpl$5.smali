@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AppCompatDelegateImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1086
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$5;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
@@ -36,13 +36,13 @@
 
 # virtual methods
 .method public onAttachedFromWindow()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onDetachedFromWindow()V
-    .registers 2
+    .locals 1
 
     .line 1092
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$5;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;

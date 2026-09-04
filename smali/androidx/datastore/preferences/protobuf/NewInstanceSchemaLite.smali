@@ -8,7 +8,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public newInstance(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 36
     check-cast p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;

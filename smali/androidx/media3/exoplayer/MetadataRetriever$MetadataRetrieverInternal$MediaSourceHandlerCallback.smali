@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal;)V
-    .registers 2
+    .locals 0
 
     .line 138
     iput-object p1, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->this$0:Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal;
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 1
+    .locals 0
 
     .line 129
     iget-object p0, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic access$502(Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;Landroidx/media3/exoplayer/source/MediaPeriod;)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 2
+    .locals 0
 
     .line 129
     iput-object p1, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 7
+    .locals 5
 
     .line 144
     iget v0, p1, Landroid/os/Message;->what:I
@@ -88,27 +88,27 @@
 
     const/4 v3, 0x1
 
-    if-eq v0, v3, :cond_94
+    if-eq v0, v3, :cond_5
 
     const/4 p1, 0x4
 
-    if-eq v0, v2, :cond_5d
+    if-eq v0, v2, :cond_3
 
     const/4 v2, 0x3
 
-    if-eq v0, v2, :cond_42
+    if-eq v0, v2, :cond_2
 
-    if-eq v0, p1, :cond_11
+    if-eq v0, p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 171
-    :cond_11
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 172
     iget-object p1, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -124,7 +124,7 @@
     invoke-interface {p1, v0}, Landroidx/media3/exoplayer/source/MediaSource;->releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
 
     .line 174
-    :cond_22
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -158,7 +158,7 @@
     return v3
 
     .line 167
-    :cond_42
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -187,11 +187,11 @@
     return v3
 
     .line 154
-    :cond_5d
-    :try_start_5d
+    :cond_3
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-nez v0, :cond_6d
+    if-nez v0, :cond_4
 
     .line 155
     iget-object v0, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -204,14 +204,14 @@
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaSource;->maybeThrowSourceInfoRefreshError()V
 
-    goto :goto_70
+    goto :goto_0
 
     .line 157
-    :cond_6d
+    :cond_4
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaPeriod;->maybeThrowPrepareError()V
 
     .line 159
-    :goto_70
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal$MediaSourceHandlerCallback;->this$0:Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal;->access$100(Landroidx/media3/exoplayer/MetadataRetriever$MetadataRetrieverInternal;)Landroidx/media3/common/util/HandlerWrapper;
@@ -221,12 +221,12 @@
     const/16 v1, 0x64
 
     invoke-interface {v0, v2, v1}, Landroidx/media3/common/util/HandlerWrapper;->sendEmptyMessageDelayed(II)Z
-    :try_end_7b
-    .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_7b} :catch_7c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_93
+    goto :goto_1
 
-    :catch_7c
+    :catch_0
     move-exception v0
 
     .line 162
@@ -251,11 +251,11 @@
 
     invoke-interface {p1}, Landroidx/media3/common/util/HandlerWrapper$Message;->sendToTarget()V
 
-    :goto_93
+    :goto_1
     return v3
 
     .line 146
-    :cond_94
+    :cond_5
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Landroidx/media3/common/MediaItem;

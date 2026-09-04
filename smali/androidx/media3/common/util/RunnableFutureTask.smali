@@ -45,7 +45,7 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 .end method
 
 .method private getResult()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TR;"
@@ -91,12 +91,12 @@
     .line 168
     iget-boolean v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->canceled:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 170
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->exception:Ljava/lang/Exception;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 173
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->result:Ljava/lang/Object;
@@ -104,7 +104,7 @@
     return-object v0
 
     .line 171
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/concurrent/ExecutionException;
 
     iget-object v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->exception:Ljava/lang/Exception;
@@ -114,7 +114,7 @@
     throw v0
 
     .line 169
-    :cond_13
+    :cond_1
     new-instance v0, Ljava/util/concurrent/CancellationException;
 
     invoke-direct {v0}, Ljava/util/concurrent/CancellationException;-><init>()V
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public final blockUntilFinished()V
-    .registers 2
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->finished:Landroidx/media3/common/util/ConditionVariable;
@@ -136,7 +136,7 @@
 .end method
 
 .method public final blockUntilStarted()V
-    .registers 2
+    .locals 1
 
     .line 55
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->started:Landroidx/media3/common/util/ConditionVariable;
@@ -147,7 +147,7 @@
 .end method
 
 .method public final cancel(Z)Z
-    .registers 5
+    .locals 3
 
     .line 85
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->cancelLock:Ljava/lang/Object;
@@ -155,10 +155,10 @@
     monitor-enter v0
 
     .line 86
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->canceled:Z
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_3
 
     iget-object v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->finished:Landroidx/media3/common/util/ConditionVariable;
 
@@ -166,11 +166,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_10
+    :cond_0
     const/4 v1, 0x1
 
     .line 89
@@ -182,17 +182,17 @@
     .line 91
     iget-object v2, p0, Landroidx/media3/common/util/RunnableFutureTask;->workThread:Ljava/lang/Thread;
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 94
     invoke-virtual {v2}, Ljava/lang/Thread;->interrupt()V
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 97
-    :cond_20
+    :cond_1
     iget-object p1, p0, Landroidx/media3/common/util/RunnableFutureTask;->started:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ConditionVariable;->open()Z
@@ -203,34 +203,34 @@
     invoke-virtual {p1}, Landroidx/media3/common/util/ConditionVariable;->open()Z
 
     .line 100
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_0
     monitor-exit v0
 
     return v1
 
     .line 87
-    :cond_2c
-    :goto_2c
+    :cond_3
+    :goto_1
     monitor-exit v0
 
     const/4 p1, 0x0
 
     return p1
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     .line 101
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_3 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method protected cancelWork()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -250,7 +250,7 @@
 .end method
 
 .method public final get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TR;"
@@ -278,7 +278,7 @@
 .end method
 
 .method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -309,7 +309,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 80
     invoke-direct {p0}, Landroidx/media3/common/util/RunnableFutureTask;->getResult()Ljava/lang/Object;
@@ -319,7 +319,7 @@
     return-object p1
 
     .line 78
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/util/concurrent/TimeoutException;
 
     invoke-direct {p1}, Ljava/util/concurrent/TimeoutException;-><init>()V
@@ -328,7 +328,7 @@
 .end method
 
 .method public final isCancelled()Z
-    .registers 2
+    .locals 1
 
     .line 111
     iget-boolean v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->canceled:Z
@@ -337,7 +337,7 @@
 .end method
 
 .method public final isDone()Z
-    .registers 2
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->finished:Landroidx/media3/common/util/ConditionVariable;
@@ -350,7 +350,7 @@
 .end method
 
 .method public final run()V
-    .registers 5
+    .locals 4
 
     .line 118
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->cancelLock:Ljava/lang/Object;
@@ -358,10 +358,10 @@
     monitor-enter v0
 
     .line 119
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->canceled:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 120
     monitor-exit v0
@@ -369,7 +369,7 @@
     return-void
 
     .line 122
-    :cond_9
+    :cond_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
@@ -378,8 +378,8 @@
 
     .line 123
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_57
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
     .line 124
     iget-object v0, p0, Landroidx/media3/common/util/RunnableFutureTask;->started:Landroidx/media3/common/util/ConditionVariable;
@@ -389,15 +389,15 @@
     const/4 v0, 0x0
 
     .line 126
-    :try_start_16
+    :try_start_1
     invoke-virtual {p0}, Landroidx/media3/common/util/RunnableFutureTask;->doWork()Ljava/lang/Object;
 
     move-result-object v1
 
     iput-object v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->result:Ljava/lang/Object;
-    :try_end_1c
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_1c} :catch_30
-    .catchall {:try_start_16 .. :try_end_1c} :catchall_2e
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 131
     iget-object v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->cancelLock:Ljava/lang/Object;
@@ -405,7 +405,7 @@
     monitor-enter v1
 
     .line 132
-    :try_start_1f
+    :try_start_2
     iget-object v2, p0, Landroidx/media3/common/util/RunnableFutureTask;->finished:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {v2}, Landroidx/media3/common/util/ConditionVariable;->open()Z
@@ -419,30 +419,30 @@
     .line 137
     monitor-exit v1
 
-    goto :goto_41
+    goto :goto_0
 
-    :catchall_2b
+    :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_2d
-    .catchall {:try_start_1f .. :try_end_2d} :catchall_2b
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
-    :catchall_2e
+    :catchall_1
     move-exception v1
 
-    goto :goto_45
+    goto :goto_1
 
-    :catch_30
+    :catch_0
     move-exception v1
 
     .line 129
-    :try_start_31
+    :try_start_3
     iput-object v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->exception:Ljava/lang/Exception;
-    :try_end_33
-    .catchall {:try_start_31 .. :try_end_33} :catchall_2e
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 131
     iget-object v1, p0, Landroidx/media3/common/util/RunnableFutureTask;->cancelLock:Ljava/lang/Object;
@@ -450,7 +450,7 @@
     monitor-enter v1
 
     .line 132
-    :try_start_36
+    :try_start_4
     iget-object v2, p0, Landroidx/media3/common/util/RunnableFutureTask;->finished:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {v2}, Landroidx/media3/common/util/ConditionVariable;->open()Z
@@ -464,26 +464,26 @@
     .line 137
     monitor-exit v1
 
-    :goto_41
+    :goto_0
     return-void
 
-    :catchall_42
+    :catchall_2
     move-exception v0
 
     monitor-exit v1
-    :try_end_44
-    .catchall {:try_start_36 .. :try_end_44} :catchall_42
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     throw v0
 
     .line 131
-    :goto_45
+    :goto_1
     iget-object v2, p0, Landroidx/media3/common/util/RunnableFutureTask;->cancelLock:Ljava/lang/Object;
 
     monitor-enter v2
 
     .line 132
-    :try_start_48
+    :try_start_5
     iget-object v3, p0, Landroidx/media3/common/util/RunnableFutureTask;->finished:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {v3}, Landroidx/media3/common/util/ConditionVariable;->open()Z
@@ -496,31 +496,31 @@
 
     .line 137
     monitor-exit v2
-    :try_end_53
-    .catchall {:try_start_48 .. :try_end_53} :catchall_54
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
     .line 138
     throw v1
 
-    :catchall_54
+    :catchall_3
     move-exception v0
 
     .line 137
-    :try_start_55
+    :try_start_6
     monitor-exit v2
-    :try_end_56
-    .catchall {:try_start_55 .. :try_end_56} :catchall_54
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     throw v0
 
-    :catchall_57
+    :catchall_4
     move-exception v1
 
     .line 123
-    :try_start_58
+    :try_start_7
     monitor-exit v0
-    :try_end_59
-    .catchall {:try_start_58 .. :try_end_59} :catchall_57
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
     throw v1
 .end method

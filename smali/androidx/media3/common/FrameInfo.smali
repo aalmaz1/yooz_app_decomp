@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/ColorInfo;IIFJ)V
-    .registers 12
+    .locals 5
 
     .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,17 +34,17 @@
 
     const/4 v1, 0x0
 
-    if-lez p2, :cond_9
+    if-lez p2, :cond_0
 
     move v2, v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v2, v1
 
     .line 131
-    :goto_a
+    :goto_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string/jumbo v4, "width must be positive, but is: "
@@ -61,15 +61,15 @@
 
     invoke-static {v2, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-lez p3, :cond_20
+    if-lez p3, :cond_1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     move v0, v1
 
     .line 132
-    :goto_21
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "height must be positive, but is: "
@@ -105,7 +105,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/ColorInfo;IIFJLandroidx/media3/common/FrameInfo$1;)V
-    .registers 8
+    .locals 0
 
     .line 25
     invoke-direct/range {p0 .. p6}, Landroidx/media3/common/FrameInfo;-><init>(Landroidx/media3/common/ColorInfo;IIFJ)V

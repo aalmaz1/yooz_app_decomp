@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/collection/ArrayMap;)V
-    .registers 2
+    .locals 0
 
     .line 194
     iput-object p1, p0, Landroidx/collection/ArrayMap$EntrySet;->this$0:Landroidx/collection/ArrayMap;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -62,7 +62,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 202
     iget-object v0, p0, Landroidx/collection/ArrayMap$EntrySet;->this$0:Landroidx/collection/ArrayMap;

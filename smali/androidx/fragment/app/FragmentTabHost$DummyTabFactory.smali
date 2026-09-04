@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public createTabContent(Ljava/lang/String;)Landroid/view/View;
-    .registers 3
+    .locals 1
 
     .line 81
     new-instance p1, Landroid/view/View;

@@ -81,7 +81,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory$Companion;
 
@@ -102,7 +102,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public constructor <init>(Landroid/app/Application;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "application"
 
@@ -130,7 +130,7 @@
 .end method
 
 .method private constructor <init>(Landroid/app/Application;I)V
-    .registers 3
+    .locals 0
 
     .line 258
     invoke-direct {p0}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;-><init>()V
@@ -142,7 +142,7 @@
 .end method
 
 .method public static final synthetic access$getSInstance$cp()Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
-    .registers 1
+    .locals 1
 
     .line 252
     sget-object v0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->sInstance:Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
@@ -151,7 +151,7 @@
 .end method
 
 .method public static final synthetic access$setSInstance$cp(Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;)V
-    .registers 1
+    .locals 0
 
     .line 252
     sput-object p0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->sInstance:Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
@@ -160,7 +160,7 @@
 .end method
 
 .method private final create(Ljava/lang/Class;Landroid/app/Application;)Landroidx/lifecycle/ViewModel;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -182,11 +182,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    :try_start_b
+    :try_start_0
     new-array v2, v1, [Ljava/lang/Class;
 
     .line 314
@@ -209,20 +209,20 @@
     move-result-object p2
 
     check-cast p2, Landroidx/lifecycle/ViewModel;
-    :try_end_20
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_b .. :try_end_20} :catch_69
-    .catch Ljava/lang/IllegalAccessException; {:try_start_b .. :try_end_20} :catch_53
-    .catch Ljava/lang/InstantiationException; {:try_start_b .. :try_end_20} :catch_3d
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_b .. :try_end_20} :catch_27
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     const-string/jumbo p1, "{\n                try {\n\u2026          }\n            }"
 
     .line 312
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_83
+    goto :goto_0
 
-    :catch_27
+    :catch_0
     move-exception p2
 
     .line 322
@@ -246,7 +246,7 @@
 
     throw v1
 
-    :catch_3d
+    :catch_1
     move-exception p2
 
     .line 320
@@ -270,7 +270,7 @@
 
     throw v1
 
-    :catch_53
+    :catch_2
     move-exception p2
 
     .line 318
@@ -294,7 +294,7 @@
 
     throw v1
 
-    :catch_69
+    :catch_3
     move-exception p2
 
     .line 316
@@ -319,17 +319,17 @@
     throw v1
 
     .line 324
-    :cond_7f
+    :cond_0
     invoke-super {p0, p1}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p2
 
-    :goto_83
+    :goto_0
     return-object p2
 .end method
 
 .method public static final getInstance(Landroid/app/Application;)Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -345,7 +345,7 @@
 
 # virtual methods
 .method public create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -363,7 +363,7 @@
     .line 299
     iget-object v0, p0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->application:Landroid/app/Application;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 306
     invoke-direct {p0, p1, v0}, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->create(Ljava/lang/Class;Landroid/app/Application;)Landroidx/lifecycle/ViewModel;
@@ -373,7 +373,7 @@
     return-object p1
 
     .line 300
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras)."
@@ -384,7 +384,7 @@
 .end method
 
 .method public create(Ljava/lang/Class;Landroidx/lifecycle/viewmodel/CreationExtras;)Landroidx/lifecycle/ViewModel;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -408,17 +408,17 @@
     .line 279
     iget-object v0, p0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->application:Landroid/app/Application;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 280
     invoke-virtual {p0, p1}, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 282
-    :cond_13
+    :cond_0
     sget-object v0, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->APPLICATION_KEY:Landroidx/lifecycle/viewmodel/CreationExtras$Key;
 
     invoke-virtual {p2, v0}, Landroidx/lifecycle/viewmodel/CreationExtras;->get(Landroidx/lifecycle/viewmodel/CreationExtras$Key;)Ljava/lang/Object;
@@ -427,35 +427,35 @@
 
     check-cast p2, Landroid/app/Application;
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_1
 
     .line 284
     invoke-direct {p0, p1, p2}, Landroidx/lifecycle/ViewModelProvider$AndroidViewModelFactory;->create(Ljava/lang/Class;Landroid/app/Application;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 287
-    :cond_22
+    :cond_1
     const-class p2, Landroidx/lifecycle/AndroidViewModel;
 
     invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result p2
 
-    if-nez p2, :cond_2f
+    if-nez p2, :cond_2
 
     .line 292
     invoke-super {p0, p1}, Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;->create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
 
     move-result-object p1
 
-    :goto_2e
+    :goto_0
     return-object p1
 
     .line 288
-    :cond_2f
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "CreationExtras must have an application by `APPLICATION_KEY`"

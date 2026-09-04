@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 63
     new-instance v0, Ljava/util/HashMap;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public createProgressiveMediaExtractor(Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;
-    .registers 5
+    .locals 3
 
     .line 80
     new-instance v0, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;
@@ -71,7 +71,7 @@
 .end method
 
 .method public bridge synthetic createProgressiveMediaExtractor(Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter$Factory;->createProgressiveMediaExtractor(Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter;
@@ -82,7 +82,7 @@
 .end method
 
 .method public setConstantBitrateSeekingEnabled(Z)V
-    .registers 7
+    .locals 5
 
     const-string v0, "android.media.mediaparser.mp3.enableCbrSeeking"
 
@@ -90,7 +90,7 @@
 
     const-string v2, "android.media.mediaparser.adts.enableCbrSeeking"
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_0
 
     .line 68
     sget-object p1, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter$Factory;->parameters:Ljava/util/Map;
@@ -117,10 +117,10 @@
 
     invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 72
-    :cond_21
+    :cond_0
     sget-object p1, Landroidx/media3/exoplayer/source/MediaParserExtractorAdapter$Factory;->parameters:Ljava/util/Map;
 
     invoke-interface {p1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -131,6 +131,6 @@
     .line 74
     invoke-interface {p1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_2c
+    :goto_0
     return-void
 .end method

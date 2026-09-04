@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 28
     new-instance v0, Ljava/lang/Object;
@@ -84,7 +84,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,7 +127,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -168,7 +168,7 @@
 .end method
 
 .method public static Fixed(I)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 2
 
     .line 67
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -184,7 +184,7 @@
 .end method
 
 .method public static Fixed(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 2
 
     .line 73
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -200,7 +200,7 @@
 .end method
 
 .method public static Parent()Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 2
 
     .line 85
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -213,7 +213,7 @@
 .end method
 
 .method public static Percent(Ljava/lang/Object;F)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 4
+    .locals 2
 
     .line 79
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -229,7 +229,7 @@
 .end method
 
 .method public static Spread()Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 2
 
     .line 93
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -242,7 +242,7 @@
 .end method
 
 .method public static Suggested(I)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 1
 
     .line 55
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -256,7 +256,7 @@
 .end method
 
 .method public static Suggested(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 1
 
     .line 61
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -270,7 +270,7 @@
 .end method
 
 .method public static Wrap()Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 2
 
     .line 89
     new-instance v0, Landroidx/constraintlayout/solver/state/Dimension;
@@ -285,7 +285,7 @@
 
 # virtual methods
 .method public apply(Landroidx/constraintlayout/solver/state/State;Landroidx/constraintlayout/solver/widgets/ConstraintWidget;I)V
-    .registers 7
+    .locals 3
 
     const/4 p1, 0x2
 
@@ -295,12 +295,12 @@
 
     const/4 v2, 0x0
 
-    if-nez p3, :cond_5c
+    if-nez p3, :cond_7
 
     .line 181
     iget-boolean p3, p0, Landroidx/constraintlayout/solver/state/Dimension;->mIsSuggested:Z
 
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_2
 
     .line 182
     sget-object p3, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
@@ -312,25 +312,25 @@
 
     sget-object v1, Landroidx/constraintlayout/solver/state/Dimension;->WRAP_DIMENSION:Ljava/lang/Object;
 
-    if-ne p3, v1, :cond_19
+    if-ne p3, v1, :cond_0
 
     move p1, v0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 186
-    :cond_19
+    :cond_0
     sget-object v0, Landroidx/constraintlayout/solver/state/Dimension;->PERCENT_DIMENSION:Ljava/lang/Object;
 
-    if-ne p3, v0, :cond_1e
+    if-ne p3, v0, :cond_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move p1, v2
 
     .line 189
-    :goto_1f
+    :goto_0
     iget p3, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMin:I
 
     iget v0, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
@@ -339,56 +339,56 @@
 
     invoke-virtual {p2, p1, p3, v0, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setHorizontalMatchStyle(IIIF)V
 
-    goto/16 :goto_ad
+    goto/16 :goto_2
 
     .line 191
-    :cond_2a
+    :cond_2
     iget p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMin:I
 
-    if-lez p1, :cond_31
+    if-lez p1, :cond_3
 
     .line 192
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setMinWidth(I)V
 
     .line 194
-    :cond_31
+    :cond_3
     iget p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
 
-    if-ge p1, v1, :cond_38
+    if-ge p1, v1, :cond_4
 
     .line 195
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setMaxWidth(I)V
 
     .line 197
-    :cond_38
+    :cond_4
     iget-object p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mInitialValue:Ljava/lang/Object;
 
     sget-object p3, Landroidx/constraintlayout/solver/state/Dimension;->WRAP_DIMENSION:Ljava/lang/Object;
 
-    if-ne p1, p3, :cond_45
+    if-ne p1, p3, :cond_5
 
     .line 198
     sget-object p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
 
-    goto/16 :goto_ad
+    goto/16 :goto_2
 
     .line 199
-    :cond_45
+    :cond_5
     sget-object p3, Landroidx/constraintlayout/solver/state/Dimension;->PARENT_DIMENSION:Ljava/lang/Object;
 
-    if-ne p1, p3, :cond_4f
+    if-ne p1, p3, :cond_6
 
     .line 200
     sget-object p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_PARENT:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setHorizontalDimensionBehaviour(Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
 
-    goto :goto_ad
+    goto :goto_2
 
-    :cond_4f
-    if-nez p1, :cond_ad
+    :cond_6
+    if-nez p1, :cond_f
 
     .line 202
     sget-object p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
@@ -400,13 +400,13 @@
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setWidth(I)V
 
-    goto :goto_ad
+    goto :goto_2
 
     .line 207
-    :cond_5c
+    :cond_7
     iget-boolean p3, p0, Landroidx/constraintlayout/solver/state/Dimension;->mIsSuggested:Z
 
-    if-eqz p3, :cond_7d
+    if-eqz p3, :cond_a
 
     .line 208
     sget-object p3, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_CONSTRAINT:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
@@ -418,25 +418,25 @@
 
     sget-object v1, Landroidx/constraintlayout/solver/state/Dimension;->WRAP_DIMENSION:Ljava/lang/Object;
 
-    if-ne p3, v1, :cond_6d
+    if-ne p3, v1, :cond_8
 
     move p1, v0
 
-    goto :goto_73
+    goto :goto_1
 
     .line 212
-    :cond_6d
+    :cond_8
     sget-object v0, Landroidx/constraintlayout/solver/state/Dimension;->PERCENT_DIMENSION:Ljava/lang/Object;
 
-    if-ne p3, v0, :cond_72
+    if-ne p3, v0, :cond_9
 
-    goto :goto_73
+    goto :goto_1
 
-    :cond_72
+    :cond_9
     move p1, v2
 
     .line 215
-    :goto_73
+    :goto_1
     iget p3, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMin:I
 
     iget v0, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
@@ -445,56 +445,56 @@
 
     invoke-virtual {p2, p1, p3, v0, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVerticalMatchStyle(IIIF)V
 
-    goto :goto_ad
+    goto :goto_2
 
     .line 217
-    :cond_7d
+    :cond_a
     iget p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMin:I
 
-    if-lez p1, :cond_84
+    if-lez p1, :cond_b
 
     .line 218
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setMinHeight(I)V
 
     .line 220
-    :cond_84
+    :cond_b
     iget p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
 
-    if-ge p1, v1, :cond_8b
+    if-ge p1, v1, :cond_c
 
     .line 221
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setMaxHeight(I)V
 
     .line 223
-    :cond_8b
+    :cond_c
     iget-object p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mInitialValue:Ljava/lang/Object;
 
     sget-object p3, Landroidx/constraintlayout/solver/state/Dimension;->WRAP_DIMENSION:Ljava/lang/Object;
 
-    if-ne p1, p3, :cond_97
+    if-ne p1, p3, :cond_d
 
     .line 224
     sget-object p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->WRAP_CONTENT:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
 
-    goto :goto_ad
+    goto :goto_2
 
     .line 225
-    :cond_97
+    :cond_d
     sget-object p3, Landroidx/constraintlayout/solver/state/Dimension;->PARENT_DIMENSION:Ljava/lang/Object;
 
-    if-ne p1, p3, :cond_a1
+    if-ne p1, p3, :cond_e
 
     .line 226
     sget-object p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->MATCH_PARENT:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setVerticalDimensionBehaviour(Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;)V
 
-    goto :goto_ad
+    goto :goto_2
 
-    :cond_a1
-    if-nez p1, :cond_ad
+    :cond_e
+    if-nez p1, :cond_f
 
     .line 228
     sget-object p1, Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;->FIXED:Landroidx/constraintlayout/solver/widgets/ConstraintWidget$DimensionBehaviour;
@@ -506,13 +506,13 @@
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setHeight(I)V
 
-    :cond_ad
-    :goto_ad
+    :cond_f
+    :goto_2
     return-void
 .end method
 
 .method public fixed(I)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -526,7 +526,7 @@
 .end method
 
 .method public fixed(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 1
 
     .line 142
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mInitialValue:Ljava/lang/Object;
@@ -534,7 +534,7 @@
     .line 143
     instance-of v0, p1, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 144
     check-cast p1, Ljava/lang/Integer;
@@ -550,12 +550,12 @@
     .line 145
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mInitialValue:Ljava/lang/Object;
 
-    :cond_11
+    :cond_0
     return-object p0
 .end method
 
 .method getRatio()F
-    .registers 2
+    .locals 1
 
     .line 172
     iget v0, p0, Landroidx/constraintlayout/solver/state/Dimension;->mRatio:F
@@ -564,7 +564,7 @@
 .end method
 
 .method getValue()I
-    .registers 2
+    .locals 1
 
     .line 166
     iget v0, p0, Landroidx/constraintlayout/solver/state/Dimension;->mValue:I
@@ -573,31 +573,31 @@
 .end method
 
 .method public max(I)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 1
 
     .line 116
     iget v0, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
 
-    if-ltz v0, :cond_6
+    if-ltz v0, :cond_0
 
     .line 117
     iput p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
 
-    :cond_6
+    :cond_0
     return-object p0
 .end method
 
 .method public max(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 1
 
     .line 123
     sget-object v0, Landroidx/constraintlayout/solver/state/Dimension;->WRAP_DIMENSION:Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_f
+    if-ne p1, v0, :cond_0
 
     iget-boolean p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mIsSuggested:Z
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 124
     iput-object v0, p0, Landroidx/constraintlayout/solver/state/Dimension;->mInitialValue:Ljava/lang/Object;
@@ -607,41 +607,41 @@
     .line 125
     iput p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMax:I
 
-    :cond_f
+    :cond_0
     return-object p0
 .end method
 
 .method public min(I)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 0
 
-    if-ltz p1, :cond_4
+    if-ltz p1, :cond_0
 
     .line 103
     iput p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMin:I
 
-    :cond_4
+    :cond_0
     return-object p0
 .end method
 
 .method public min(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 1
 
     .line 109
     sget-object v0, Landroidx/constraintlayout/solver/state/Dimension;->WRAP_DIMENSION:Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_0
 
     const/4 p1, -0x2
 
     .line 110
     iput p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mMin:I
 
-    :cond_7
+    :cond_0
     return-object p0
 .end method
 
 .method public percent(Ljava/lang/Object;F)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 3
+    .locals 0
 
     .line 97
     iput p2, p0, Landroidx/constraintlayout/solver/state/Dimension;->mPercent:F
@@ -650,13 +650,13 @@
 .end method
 
 .method public ratio(F)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method setRatio(F)V
-    .registers 2
+    .locals 0
 
     .line 169
     iput p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mRatio:F
@@ -665,7 +665,7 @@
 .end method
 
 .method setValue(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -684,7 +684,7 @@
 .end method
 
 .method public suggested(I)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -695,7 +695,7 @@
 .end method
 
 .method public suggested(Ljava/lang/Object;)Landroidx/constraintlayout/solver/state/Dimension;
-    .registers 2
+    .locals 0
 
     .line 136
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/Dimension;->mInitialValue:Ljava/lang/Object;

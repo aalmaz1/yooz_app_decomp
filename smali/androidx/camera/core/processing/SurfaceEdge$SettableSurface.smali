@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/util/Size;I)V
-    .registers 3
+    .locals 0
 
     .line 600
     invoke-direct {p0, p1, p2}, Landroidx/camera/core/impl/DeferrableSurface;-><init>(Landroid/util/Size;I)V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method canSetProvider()Z
-    .registers 2
+    .locals 1
 
     .line 611
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -70,46 +70,46 @@
     .line 612
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceEdge$SettableSurface;->mProvider:Landroidx/camera/core/impl/DeferrableSurface;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/camera/core/processing/SurfaceEdge$SettableSurface;->isClosed()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method hasProvider()Z
-    .registers 2
+    .locals 1
 
     .line 617
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceEdge$SettableSurface;->mProvider:Landroidx/camera/core/impl/DeferrableSurface;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-core-processing-SurfaceEdge$SettableSurface(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -142,7 +142,7 @@
 .end method
 
 .method protected provideSurface()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -159,7 +159,7 @@
 .end method
 
 .method public setProvider(Landroidx/camera/core/impl/DeferrableSurface;Ljava/lang/Runnable;)Z
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
@@ -177,23 +177,23 @@
 
     const/4 v1, 0x0
 
-    if-ne v0, p1, :cond_c
+    if-ne v0, p1, :cond_0
 
     return v1
 
-    :cond_c
+    :cond_0
     const/4 v2, 0x1
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_1
     move v0, v1
 
-    :goto_12
+    :goto_0
     const-string v3, "A different provider has been set. To change the provider, call SurfaceEdge#invalidate before calling SurfaceEdge#setProvider"
 
     .line 645
@@ -225,11 +225,11 @@
 
     move-result v3
 
-    if-ne v0, v3, :cond_33
+    if-ne v0, v3, :cond_2
 
     move v1, v2
 
-    :cond_33
+    :cond_2
     const-string v0, "The provider\'s format must match the parent"
 
     invoke-static {v1, v0}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V

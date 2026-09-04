@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/View;Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +39,11 @@
 .end method
 
 .method public static add(Landroid/view/View;Ljava/lang/Runnable;)Landroidx/core/view/OneShotPreDrawListener;
-    .registers 3
+    .locals 1
 
-    if-eqz p0, :cond_1c
+    if-eqz p0, :cond_1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 62
     new-instance v0, Landroidx/core/view/OneShotPreDrawListener;
@@ -63,7 +63,7 @@
     return-object v0
 
     .line 60
-    :cond_14
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "runnable == null"
@@ -73,7 +73,7 @@
     throw p0
 
     .line 59
-    :cond_1c
+    :cond_1
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string/jumbo p1, "view == null"
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public onPreDraw()Z
-    .registers 2
+    .locals 1
 
     .line 70
     invoke-virtual {p0}, Landroidx/core/view/OneShotPreDrawListener;->removeListener()V
@@ -102,7 +102,7 @@
 .end method
 
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 90
     invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -115,7 +115,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 95
     invoke-virtual {p0}, Landroidx/core/view/OneShotPreDrawListener;->removeListener()V
@@ -124,7 +124,7 @@
 .end method
 
 .method public removeListener()V
-    .registers 2
+    .locals 1
 
     .line 80
     iget-object v0, p0, Landroidx/core/view/OneShotPreDrawListener;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
@@ -133,17 +133,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 81
     iget-object v0, p0, Landroidx/core/view/OneShotPreDrawListener;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 83
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/core/view/OneShotPreDrawListener;->mView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -153,7 +153,7 @@
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     .line 85
-    :goto_17
+    :goto_0
     iget-object v0, p0, Landroidx/core/view/OneShotPreDrawListener;->mView:Landroid/view/View;
 
     invoke-virtual {v0, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V

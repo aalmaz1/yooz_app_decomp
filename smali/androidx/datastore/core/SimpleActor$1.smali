@@ -83,7 +83,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Landroidx/datastore/core/SimpleActor;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 61
     check-cast p1, Ljava/lang/Throwable;
@@ -131,7 +131,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 62
     iget-object v0, p0, Landroidx/datastore/core/SimpleActor$1;->$onComplete:Lkotlin/jvm/functions/Function1;
@@ -148,7 +148,7 @@
     invoke-interface {v0, p1}, Lkotlinx/coroutines/channels/Channel;->close(Ljava/lang/Throwable;)Z
 
     .line 70
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/core/SimpleActor$1;->this$0:Landroidx/datastore/core/SimpleActor;
 
     invoke-static {v0}, Landroidx/datastore/core/SimpleActor;->access$getMessageQueue$p(Landroidx/datastore/core/SimpleActor;)Lkotlinx/coroutines/channels/Channel;
@@ -163,13 +163,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/datastore/core/SimpleActor$1;->$onUndeliveredElement:Lkotlin/jvm/functions/Function2;
 
     .line 71
@@ -178,8 +178,8 @@
     .line 70
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :goto_27
-    if-nez v0, :cond_e
+    :goto_0
+    if-nez v0, :cond_0
 
     return-void
 .end method

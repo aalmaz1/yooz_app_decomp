@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/dynamicanimation/animation/DynamicAnimation;Ljava/lang/String;Landroidx/dynamicanimation/animation/FloatValueHolder;)V
-    .registers 4
+    .locals 0
 
     .line 335
     iput-object p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation$15;->this$0:Landroidx/dynamicanimation/animation/DynamicAnimation;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public getValue(Ljava/lang/Object;)F
-    .registers 2
+    .locals 0
 
     .line 338
     iget-object p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation$15;->val$floatValueHolder:Landroidx/dynamicanimation/animation/FloatValueHolder;
@@ -50,7 +50,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;F)V
-    .registers 3
+    .locals 0
 
     .line 343
     iget-object p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation$15;->val$floatValueHolder:Landroidx/dynamicanimation/animation/FloatValueHolder;

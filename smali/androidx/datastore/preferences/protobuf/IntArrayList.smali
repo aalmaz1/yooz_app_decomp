@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 48
     new-instance v0, Landroidx/datastore/preferences/protobuf/IntArrayList;
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/16 v0, 0xa
 
@@ -68,7 +68,7 @@
 .end method
 
 .method private constructor <init>([II)V
-    .registers 3
+    .locals 0
 
     .line 74
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;-><init>()V
@@ -83,24 +83,24 @@
 .end method
 
 .method private addInt(II)V
-    .registers 7
+    .locals 4
 
     .line 190
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIsMutable()V
 
-    if-ltz p1, :cond_3e
+    if-ltz p1, :cond_1
 
     .line 191
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
-    if-gt p1, v0, :cond_3e
+    if-gt p1, v0, :cond_1
 
     .line 195
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_15
+    if-ge v0, v2, :cond_0
 
     add-int/lit8 v2, p1, 0x1
 
@@ -109,9 +109,9 @@
     .line 197
     invoke-static {v1, p1, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     mul-int/lit8 v0, v0, 0x3
 
     .line 200
@@ -142,7 +142,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     .line 211
-    :goto_2d
+    :goto_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     aput p2, v0, p1
@@ -164,7 +164,7 @@
     return-void
 
     .line 192
-    :cond_3e
+    :cond_1
     new-instance p2, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->makeOutOfBoundsExceptionMessage(I)Ljava/lang/String;
@@ -177,7 +177,7 @@
 .end method
 
 .method public static emptyList()Landroidx/datastore/preferences/protobuf/IntArrayList;
-    .registers 1
+    .locals 1
 
     .line 54
     sget-object v0, Landroidx/datastore/preferences/protobuf/IntArrayList;->EMPTY_LIST:Landroidx/datastore/preferences/protobuf/IntArrayList;
@@ -186,19 +186,19 @@
 .end method
 
 .method private ensureIndexInRange(I)V
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_7
+    if-ltz p1, :cond_0
 
     .line 283
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
-    if-ge p1, v0, :cond_7
+    if-ge p1, v0, :cond_0
 
     return-void
 
     .line 284
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->makeOutOfBoundsExceptionMessage(I)Ljava/lang/String;
@@ -211,7 +211,7 @@
 .end method
 
 .method private makeOutOfBoundsExceptionMessage(I)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 289
     new-instance v0, Ljava/lang/StringBuilder;
@@ -246,7 +246,7 @@
 
 # virtual methods
 .method public add(ILjava/lang/Integer;)V
-    .registers 3
+    .locals 0
 
     .line 169
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -259,7 +259,7 @@
 .end method
 
 .method public bridge synthetic add(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 45
     check-cast p2, Ljava/lang/Integer;
@@ -270,7 +270,7 @@
 .end method
 
 .method public add(Ljava/lang/Integer;)Z
-    .registers 2
+    .locals 0
 
     .line 163
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -285,7 +285,7 @@
 .end method
 
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 45
     check-cast p1, Ljava/lang/Integer;
@@ -298,7 +298,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -318,7 +318,7 @@
     .line 223
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 224
     invoke-super {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->addAll(Ljava/util/Collection;)Z
@@ -328,7 +328,7 @@
     return p1
 
     .line 227
-    :cond_f
+    :cond_0
     check-cast p1, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     .line 228
@@ -336,19 +336,19 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     return v1
 
     .line 232
-    :cond_17
+    :cond_1
     iget v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
     const v3, 0x7fffffff
 
     sub-int/2addr v3, v2
 
-    if-lt v3, v0, :cond_3f
+    if-lt v3, v0, :cond_3
 
     add-int/2addr v2, v0
 
@@ -357,7 +357,7 @@
 
     array-length v3, v0
 
-    if-le v2, v3, :cond_2b
+    if-le v2, v3, :cond_2
 
     .line 240
     invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([II)[I
@@ -367,7 +367,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     .line 243
-    :cond_2b
+    :cond_2
     iget-object v0, p1, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     iget-object v3, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
@@ -393,7 +393,7 @@
     return v0
 
     .line 235
-    :cond_3f
+    :cond_3
     new-instance p1, Ljava/lang/OutOfMemoryError;
 
     invoke-direct {p1}, Ljava/lang/OutOfMemoryError;-><init>()V
@@ -402,7 +402,7 @@
 .end method
 
 .method public addInt(I)V
-    .registers 6
+    .locals 4
 
     .line 175
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIsMutable()V
@@ -414,7 +414,7 @@
 
     array-length v2, v1
 
-    if-ne v0, v2, :cond_18
+    if-ne v0, v2, :cond_0
 
     mul-int/lit8 v2, v0, 0x3
 
@@ -435,7 +435,7 @@
     iput-object v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     .line 185
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
@@ -450,19 +450,19 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 96
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_1
 
     .line 97
     invoke-super {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->equals(Ljava/lang/Object;)Z
@@ -472,7 +472,7 @@
     return p1
 
     .line 99
-    :cond_d
+    :cond_1
     check-cast p1, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     .line 100
@@ -482,21 +482,21 @@
 
     const/4 v3, 0x0
 
-    if-eq v1, v2, :cond_17
+    if-eq v1, v2, :cond_2
 
     return v3
 
     .line 104
-    :cond_17
+    :cond_2
     iget-object p1, p1, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
 
     move v1, v3
 
     .line 105
-    :goto_1a
+    :goto_0
     iget v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
-    if-ge v1, v2, :cond_2a
+    if-ge v1, v2, :cond_4
 
     .line 106
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
@@ -505,21 +505,21 @@
 
     aget v4, p1, v1
 
-    if-eq v2, v4, :cond_27
+    if-eq v2, v4, :cond_3
 
     return v3
 
-    :cond_27
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_2a
+    :cond_4
     return v0
 .end method
 
 .method public get(I)Ljava/lang/Integer;
-    .registers 2
+    .locals 0
 
     .line 133
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->getInt(I)I
@@ -534,7 +534,7 @@
 .end method
 
 .method public bridge synthetic get(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->get(I)Ljava/lang/Integer;
@@ -545,7 +545,7 @@
 .end method
 
 .method public getInt(I)I
-    .registers 3
+    .locals 1
 
     .line 138
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIndexInRange(I)V
@@ -559,17 +559,17 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     .line 117
-    :goto_2
+    :goto_0
     iget v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
-    if-ge v1, v2, :cond_10
+    if-ge v1, v2, :cond_0
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -582,19 +582,19 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     return v0
 .end method
 
 .method public mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$IntList;
-    .registers 4
+    .locals 2
 
     .line 125
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
-    if-lt p1, v0, :cond_12
+    if-lt p1, v0, :cond_0
 
     .line 128
     new-instance v0, Landroidx/datastore/preferences/protobuf/IntArrayList;
@@ -612,7 +612,7 @@
     return-object v0
 
     .line 126
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -621,7 +621,7 @@
 .end method
 
 .method public bridge synthetic mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$IntList;
@@ -632,7 +632,7 @@
 .end method
 
 .method public remove(I)Ljava/lang/Integer;
-    .registers 6
+    .locals 4
 
     .line 265
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIsMutable()V
@@ -650,7 +650,7 @@
 
     add-int/lit8 v3, v2, -0x1
 
-    if-ge p1, v3, :cond_18
+    if-ge p1, v3, :cond_0
 
     add-int/lit8 v3, p1, 0x1
 
@@ -662,7 +662,7 @@
     invoke-static {v0, v3, v0, p1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 271
-    :cond_18
+    :cond_0
     iget p1, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
     add-int/lit8 p1, p1, -0x1
@@ -685,7 +685,7 @@
 .end method
 
 .method public bridge synthetic remove(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->remove(I)Ljava/lang/Integer;
@@ -696,7 +696,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 251
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIsMutable()V
@@ -706,10 +706,10 @@
     move v1, v0
 
     .line 252
-    :goto_5
+    :goto_0
     iget v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I
 
-    if-ge v1, v2, :cond_31
+    if-ge v1, v2, :cond_1
 
     .line 253
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
@@ -724,7 +724,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_0
 
     .line 254
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
@@ -757,22 +757,22 @@
 
     return v3
 
-    :cond_2e
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_31
+    :cond_1
     return v0
 .end method
 
 .method protected removeRange(II)V
-    .registers 5
+    .locals 2
 
     .line 81
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIsMutable()V
 
-    if-lt p2, p1, :cond_1a
+    if-lt p2, p1, :cond_0
 
     .line 86
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->array:[I
@@ -802,7 +802,7 @@
     return-void
 
     .line 83
-    :cond_1a
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     const-string p2, "toIndex < fromIndex"
@@ -813,7 +813,7 @@
 .end method
 
 .method public set(ILjava/lang/Integer;)Ljava/lang/Integer;
-    .registers 3
+    .locals 0
 
     .line 149
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -832,7 +832,7 @@
 .end method
 
 .method public bridge synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 45
     check-cast p2, Ljava/lang/Integer;
@@ -845,7 +845,7 @@
 .end method
 
 .method public setInt(II)I
-    .registers 5
+    .locals 2
 
     .line 154
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->ensureIsMutable()V
@@ -865,7 +865,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 144
     iget v0, p0, Landroidx/datastore/preferences/protobuf/IntArrayList;->size:I

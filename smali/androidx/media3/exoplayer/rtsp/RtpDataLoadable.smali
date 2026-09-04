@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/exoplayer/rtsp/RtspMediaTrack;Landroidx/media3/exoplayer/rtsp/RtpDataLoadable$EventListener;Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/exoplayer/rtsp/RtpDataChannel$Factory;)V
-    .registers 6
+    .locals 0
 
     .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -91,7 +91,7 @@
 .end method
 
 .method synthetic lambda$load$0$androidx-media3-exoplayer-rtsp-RtpDataLoadable(Ljava/lang/String;Landroidx/media3/exoplayer/rtsp/RtpDataChannel;)V
-    .registers 4
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->eventListener:Landroidx/media3/exoplayer/rtsp/RtpDataLoadable$EventListener;
@@ -102,7 +102,7 @@
 .end method
 
 .method public load()V
-    .registers 13
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -114,19 +114,19 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 147
     iput-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->loadCancelled:Z
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 151
-    :try_start_8
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->dataChannel:Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
 
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_1
 
     .line 152
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->rtpDataChannelFactory:Landroidx/media3/exoplayer/rtsp/RtpDataChannel$Factory;
@@ -199,10 +199,10 @@
     invoke-virtual {v2, v3}, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->init(Landroidx/media3/extractor/ExtractorOutput;)V
 
     .line 166
-    :cond_4d
+    :cond_1
     iget-boolean v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->loadCancelled:Z
 
-    if-nez v2, :cond_89
+    if-nez v2, :cond_3
 
     .line 167
     iget-wide v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->pendingSeekPositionUs:J
@@ -211,7 +211,7 @@
 
     cmp-long v2, v2, v4
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     .line 168
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
@@ -232,7 +232,7 @@
     iput-wide v4, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->pendingSeekPositionUs:J
 
     .line 173
-    :cond_6d
+    :cond_2
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
 
     .line 174
@@ -261,13 +261,13 @@
 
     const/4 v3, -0x1
 
-    if-ne v2, v3, :cond_4d
+    if-ne v2, v3, :cond_1
 
     .line 182
-    :cond_89
+    :cond_3
     iput-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->loadCancelled:Z
-    :try_end_8b
-    .catchall {:try_start_8 .. :try_end_8b} :catchall_a1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 184
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->dataChannel:Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
@@ -282,7 +282,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a0
+    if-eqz v1, :cond_4
 
     .line 185
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->dataChannel:Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
@@ -292,10 +292,10 @@
     .line 186
     iput-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->dataChannel:Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
 
-    :cond_a0
+    :cond_4
     return-void
 
-    :catchall_a1
+    :catchall_0
     move-exception v1
 
     .line 184
@@ -311,7 +311,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b7
+    if-eqz v2, :cond_5
 
     .line 185
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->dataChannel:Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
@@ -322,12 +322,12 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->dataChannel:Landroidx/media3/exoplayer/rtsp/RtpDataChannel;
 
     .line 188
-    :cond_b7
+    :cond_5
     throw v1
 .end method
 
 .method public resetForSeek()V
-    .registers 2
+    .locals 1
 
     .line 197
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
@@ -344,7 +344,7 @@
 .end method
 
 .method public seekToUs(JJ)V
-    .registers 5
+    .locals 0
 
     .line 208
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->pendingSeekPositionUs:J
@@ -356,7 +356,7 @@
 .end method
 
 .method public setSequenceNumber(I)V
-    .registers 3
+    .locals 1
 
     .line 133
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
@@ -371,25 +371,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 134
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
 
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->setFirstSequenceNumber(I)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public setTimestamp(J)V
-    .registers 5
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 120
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
@@ -404,13 +404,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 121
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->extractor:Landroidx/media3/exoplayer/rtsp/RtpExtractor;
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->setFirstTimestamp(J)V
 
-    :cond_1c
+    :cond_0
     return-void
 .end method

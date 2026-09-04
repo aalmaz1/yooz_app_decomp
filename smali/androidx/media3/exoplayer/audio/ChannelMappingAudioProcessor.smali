@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;-><init>()V
@@ -22,7 +22,7 @@
 
 # virtual methods
 .method public onConfigure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -32,7 +32,7 @@
     .line 51
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ChannelMappingAudioProcessor;->pendingOutputChannels:[I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 53
     sget-object p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -40,12 +40,12 @@
     return-object p1
 
     .line 56
-    :cond_7
+    :cond_0
     iget v1, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->encoding:I
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_3d
+    if-ne v1, v2, :cond_6
 
     .line 60
     iget v1, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->channelCount:I
@@ -56,23 +56,23 @@
 
     const/4 v5, 0x0
 
-    if-eq v1, v3, :cond_15
+    if-eq v1, v3, :cond_1
 
     move v1, v4
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     move v1, v5
 
-    :goto_16
+    :goto_0
     move v3, v5
 
     .line 61
-    :goto_17
+    :goto_1
     array-length v6, v0
 
-    if-ge v3, v6, :cond_2f
+    if-ge v3, v6, :cond_4
 
     .line 62
     aget v6, v0, v3
@@ -80,34 +80,34 @@
     .line 63
     iget v7, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->channelCount:I
 
-    if-ge v6, v7, :cond_29
+    if-ge v6, v7, :cond_3
 
-    if-eq v6, v3, :cond_24
+    if-eq v6, v3, :cond_2
 
     move v6, v4
 
-    goto :goto_25
+    goto :goto_2
 
-    :cond_24
+    :cond_2
     move v6, v5
 
-    :goto_25
+    :goto_2
     or-int/2addr v1, v6
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_17
+    goto :goto_1
 
     .line 64
-    :cond_29
+    :cond_3
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
 
     throw v0
 
-    :cond_2f
-    if-eqz v1, :cond_3a
+    :cond_4
+    if-eqz v1, :cond_5
 
     .line 69
     new-instance v1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -118,17 +118,17 @@
 
     invoke-direct {v1, p1, v0, v2}, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;-><init>(III)V
 
-    goto :goto_3c
+    goto :goto_3
 
     .line 70
-    :cond_3a
+    :cond_5
     sget-object v1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
-    :goto_3c
+    :goto_3
     return-object v1
 
     .line 57
-    :cond_3d
+    :cond_6
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
@@ -137,7 +137,7 @@
 .end method
 
 .method protected onFlush()V
-    .registers 2
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ChannelMappingAudioProcessor;->pendingOutputChannels:[I
@@ -148,7 +148,7 @@
 .end method
 
 .method protected onReset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -162,7 +162,7 @@
 .end method
 
 .method public queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 9
+    .locals 7
 
     .line 75
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ChannelMappingAudioProcessor;->outputChannels:[I
@@ -204,16 +204,16 @@
 
     move-result-object v3
 
-    :goto_20
-    if-ge v1, v2, :cond_3b
+    :goto_0
+    if-ge v1, v2, :cond_1
 
     .line 82
     array-length v4, v0
 
     const/4 v5, 0x0
 
-    :goto_24
-    if-ge v5, v4, :cond_35
+    :goto_1
+    if-ge v5, v4, :cond_0
 
     aget v6, v0, v5
 
@@ -230,20 +230,20 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_24
+    goto :goto_1
 
     .line 85
-    :cond_35
+    :cond_0
     iget-object v4, p0, Landroidx/media3/exoplayer/audio/ChannelMappingAudioProcessor;->inputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     iget v4, v4, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->bytesPerFrame:I
 
     add-int/2addr v1, v4
 
-    goto :goto_20
+    goto :goto_0
 
     .line 87
-    :cond_3b
+    :cond_1
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 88
@@ -253,7 +253,7 @@
 .end method
 
 .method public setChannelMap([I)V
-    .registers 2
+    .locals 0
 
     .line 45
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/ChannelMappingAudioProcessor;->pendingOutputChannels:[I

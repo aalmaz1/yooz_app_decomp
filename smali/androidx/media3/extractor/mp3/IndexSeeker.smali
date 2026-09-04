@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(JJJ)V
-    .registers 18
+    .locals 11
 
     move-object v0, p0
 
@@ -71,7 +71,7 @@
 
     const v8, -0x7fffffff
 
-    if-eqz v7, :cond_47
+    if-eqz v7, :cond_1
 
     sub-long/2addr v1, v3
 
@@ -89,34 +89,34 @@
 
     cmp-long v3, v1, v9
 
-    if-lez v3, :cond_44
+    if-lez v3, :cond_0
 
     const-wide/32 v3, 0x7fffffff
 
     cmp-long v3, v1, v3
 
-    if-gtz v3, :cond_44
+    if-gtz v3, :cond_0
 
     long-to-int v8, v1
 
     .line 50
-    :cond_44
+    :cond_0
     iput v8, v0, Landroidx/media3/extractor/mp3/IndexSeeker;->averageBitrate:I
 
-    goto :goto_49
+    goto :goto_0
 
     .line 52
-    :cond_47
+    :cond_1
     iput v8, v0, Landroidx/media3/extractor/mp3/IndexSeeker;->averageBitrate:I
 
-    :goto_49
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getAverageBitrate()I
-    .registers 2
+    .locals 1
 
     .line 95
     iget v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->averageBitrate:I
@@ -125,7 +125,7 @@
 .end method
 
 .method public getDataEndPosition()J
-    .registers 3
+    .locals 2
 
     .line 66
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->dataEndPosition:J
@@ -134,7 +134,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 76
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->durationUs:J
@@ -143,7 +143,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 10
+    .locals 7
 
     .line 81
     iget-object v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->timesUs:Landroidx/media3/common/util/LongArray;
@@ -177,7 +177,7 @@
 
     cmp-long p1, v3, p1
 
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->timesUs:Landroidx/media3/common/util/LongArray;
 
@@ -187,12 +187,12 @@
 
     sub-int/2addr p1, v1
 
-    if-ne v0, p1, :cond_28
+    if-ne v0, p1, :cond_0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 87
-    :cond_28
+    :cond_0
     new-instance p1, Landroidx/media3/extractor/SeekPoint;
 
     iget-object p2, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->timesUs:Landroidx/media3/common/util/LongArray;
@@ -220,8 +220,8 @@
     return-object p2
 
     .line 85
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_0
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v2}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -230,7 +230,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 5
+    .locals 2
 
     .line 58
     iget-object v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->positions:Landroidx/media3/common/util/LongArray;
@@ -253,7 +253,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -261,7 +261,7 @@
 .end method
 
 .method public isTimeUsInIndex(J)Z
-    .registers 6
+    .locals 3
 
     .line 121
     iget-object v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->timesUs:Landroidx/media3/common/util/LongArray;
@@ -284,31 +284,31 @@
 
     cmp-long p1, p1, v0
 
-    if-gez p1, :cond_15
+    if-gez p1, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_16
+    :goto_0
     return v2
 .end method
 
 .method public maybeAddSeekPoint(JJ)V
-    .registers 6
+    .locals 1
 
     .line 107
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/mp3/IndexSeeker;->isTimeUsInIndex(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 110
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->timesUs:Landroidx/media3/common/util/LongArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/common/util/LongArray;->add(J)V
@@ -322,7 +322,7 @@
 .end method
 
 .method setDurationUs(J)V
-    .registers 3
+    .locals 0
 
     .line 126
     iput-wide p1, p0, Landroidx/media3/extractor/mp3/IndexSeeker;->durationUs:J

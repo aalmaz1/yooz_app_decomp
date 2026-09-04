@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final calculateFlingVelocityThresholds(Landroid/content/Context;[ILandroid/view/MotionEvent;I)V
-    .registers 5
+    .locals 0
 
     invoke-static {p1, p2, p3, p4}, Landroidx/core/view/DifferentialMotionFlingController;->$r8$lambda$fyam27PSWwBPLoRnvh-8qovKLVc(Landroid/content/Context;[ILandroid/view/MotionEvent;I)V
 

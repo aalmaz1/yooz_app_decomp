@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 596
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,19 +25,19 @@
 .end method
 
 .method static removeBearingAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 624
     invoke-virtual {p0}, Landroid/location/Location;->hasBearingAccuracy()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 629
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroid/location/Location;->getElapsedRealtimeUncertaintyNanos()D
 
     move-result-wide v0
@@ -52,19 +52,19 @@
 .end method
 
 .method static removeSpeedAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 612
     invoke-virtual {p0}, Landroid/location/Location;->hasSpeedAccuracy()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 617
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroid/location/Location;->getElapsedRealtimeUncertaintyNanos()D
 
     move-result-wide v0
@@ -79,19 +79,19 @@
 .end method
 
 .method static removeVerticalAccuracy(Landroid/location/Location;)V
-    .registers 3
+    .locals 2
 
     .line 600
     invoke-virtual {p0}, Landroid/location/Location;->hasVerticalAccuracy()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 605
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroid/location/Location;->getElapsedRealtimeUncertaintyNanos()D
 
     move-result-wide v0

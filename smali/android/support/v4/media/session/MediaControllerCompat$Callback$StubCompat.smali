@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
-    .registers 3
+    .locals 1
 
     .line 938
     invoke-direct {p0}, Landroid/support/v4/media/session/IMediaControllerCallback$Stub;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public onCaptioningEnabledChanged(Z)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -62,7 +62,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 995
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -76,12 +76,12 @@
     .line 994
     invoke-virtual {v0, v2, p1, v1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public onEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -97,19 +97,19 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
     .line 946
     invoke-virtual {v0, v1, p1, p2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public onExtrasChanged(Landroid/os/Bundle;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -125,7 +125,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x7
 
@@ -134,12 +134,12 @@
     .line 1025
     invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -155,7 +155,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x3
 
@@ -164,12 +164,12 @@
     .line 970
     invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -185,7 +185,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x2
 
@@ -194,12 +194,12 @@
     .line 962
     invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onQueueChanged(Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -224,7 +224,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x5
 
@@ -233,12 +233,12 @@
     .line 978
     invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -254,7 +254,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x6
 
@@ -263,12 +263,12 @@
     .line 986
     invoke-virtual {v0, v1, p1, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onRepeatModeChanged(I)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -284,7 +284,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 1003
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -297,12 +297,12 @@
 
     invoke-virtual {v0, v2, p1, v1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public onSessionDestroyed()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -318,7 +318,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/16 v1, 0x8
 
@@ -327,12 +327,12 @@
     .line 954
     invoke-virtual {v0, v1, v2, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public onSessionReady()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -348,7 +348,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/16 v1, 0xd
 
@@ -357,12 +357,12 @@
     .line 1046
     invoke-virtual {v0, v1, v2, v2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public onShuffleModeChanged(I)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -378,7 +378,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 1017
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -392,12 +392,12 @@
     .line 1016
     invoke-virtual {v0, v2, p1, v1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public onShuffleModeChangedRemoved(Z)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -408,7 +408,7 @@
 .end method
 
 .method public onVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -424,11 +424,11 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 1035
     new-instance v8, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
@@ -447,17 +447,17 @@
 
     invoke-direct/range {v2 .. v7}, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;-><init>(IIIII)V
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     move-object v8, v1
 
-    :goto_1f
+    :goto_0
     const/4 p1, 0x4
 
     .line 1038
     invoke-virtual {v0, p1, v8, v1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_23
+    :cond_1
     return-void
 .end method

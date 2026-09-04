@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Format;I)V
-    .registers 5
+    .locals 2
 
     .line 4136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,14 +48,14 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v1
 
-    :goto_c
+    :goto_0
     iput-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$OtherTrackScore;->isDefault:Z
 
     .line 4139
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$OtherTrackScore;)I
-    .registers 5
+    .locals 3
 
     .line 4144
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->start()Lcom/google/common/collect/ComparisonChain;
@@ -105,7 +105,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 4131
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$OtherTrackScore;

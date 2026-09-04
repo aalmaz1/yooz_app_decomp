@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Landroid/app/AppComponentFactory;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method static checkCompatWrapper(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -34,7 +34,7 @@
     .line 79
     instance-of v0, p0, Landroidx/core/app/CoreComponentFactory$CompatWrapped;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 80
     move-object v0, p0
@@ -45,18 +45,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_e
+    :cond_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public instantiateActivity(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -80,7 +80,7 @@
 .end method
 
 .method public instantiateApplication(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -104,7 +104,7 @@
 .end method
 
 .method public instantiateProvider(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -128,7 +128,7 @@
 .end method
 
 .method public instantiateReceiver(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,
@@ -152,7 +152,7 @@
 .end method
 
 .method public instantiateService(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InstantiationException;,

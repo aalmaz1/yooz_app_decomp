@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public onAnimationPause(Landroid/animation/Animator;)V
-    .registers 3
+    .locals 1
 
     .line 117
     iget-object v0, p0, Landroidx/core/animation/AnimatorKt$addPauseListener$listener$1;->$onPause:Lkotlin/jvm/functions/Function1;
@@ -107,7 +107,7 @@
 .end method
 
 .method public onAnimationResume(Landroid/animation/Animator;)V
-    .registers 3
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/core/animation/AnimatorKt$addPauseListener$listener$1;->$onResume:Lkotlin/jvm/functions/Function1;

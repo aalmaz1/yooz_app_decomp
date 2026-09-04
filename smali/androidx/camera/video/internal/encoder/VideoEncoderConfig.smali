@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static builder()Landroidx/camera/video/internal/encoder/VideoEncoderConfig$Builder;
-    .registers 2
+    .locals 2
 
     .line 45
     new-instance v0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$Builder;
@@ -99,7 +99,7 @@
 .end method
 
 .method public toMediaFormat()Landroid/media/MediaFormat;
-    .registers 5
+    .locals 4
 
     .line 87
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/VideoEncoderConfig;->getResolution()Landroid/util/Size;
@@ -168,7 +168,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_48
+    if-eq v1, v2, :cond_0
 
     const-string v1, "profile"
 
@@ -180,7 +180,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 97
-    :cond_48
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/VideoEncoderConfig;->getDataSpace()Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
 
     move-result-object v1
@@ -190,7 +190,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_1
 
     const-string v2, "color-standard"
 
@@ -202,12 +202,12 @@
     invoke-virtual {v0, v2, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 101
-    :cond_5b
+    :cond_1
     invoke-virtual {v1}, Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;->getTransfer()I
 
     move-result v2
 
-    if-eqz v2, :cond_6a
+    if-eqz v2, :cond_2
 
     const-string v2, "color-transfer"
 
@@ -219,12 +219,12 @@
     invoke-virtual {v0, v2, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 104
-    :cond_6a
+    :cond_2
     invoke-virtual {v1}, Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;->getRange()I
 
     move-result v2
 
-    if-eqz v2, :cond_79
+    if-eqz v2, :cond_3
 
     const-string v2, "color-range"
 
@@ -235,6 +235,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_79
+    :cond_3
     return-object v0
 .end method

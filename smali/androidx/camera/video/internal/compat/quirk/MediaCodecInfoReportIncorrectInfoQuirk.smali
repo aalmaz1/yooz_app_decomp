@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     const-string v0, "lg-k430"
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method public static getExtraSupportedSizes()Ljava/util/Set;
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -85,7 +85,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 164
     new-instance v0, Landroid/util/Size;
@@ -103,7 +103,7 @@
     return-object v0
 
     .line 166
-    :cond_14
+    :cond_0
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
@@ -112,7 +112,7 @@
 .end method
 
 .method private static isFHDProblematicDevice()Z
-    .registers 3
+    .locals 3
 
     .line 170
     sget-object v0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->INCORRECT_FHD_PROFILE_MODEL_LIST:Ljava/util/List;
@@ -133,7 +133,7 @@
 .end method
 
 .method private static isHuaweiMate9()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "Huawei"
 
@@ -144,7 +144,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "mha-l29"
 
@@ -154,21 +154,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isMotoC()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "motorola"
 
@@ -179,7 +179,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "moto c"
 
@@ -189,21 +189,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isNokia1()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "Nokia"
 
@@ -214,7 +214,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "Nokia 1"
 
@@ -224,21 +224,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isPositivoTwist2Pro()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "positivo"
 
@@ -249,7 +249,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "twist 2 pro"
 
@@ -259,21 +259,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     return v0
 .end method
 
 .method private static isRedmiNote8Pro()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "Redmi"
 
@@ -284,7 +284,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "Redmi Note 8 Pro"
 
@@ -294,21 +294,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isX230()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "LGE"
 
@@ -319,7 +319,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "LG-X230"
 
@@ -329,21 +329,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isX650()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "infinix"
 
@@ -354,7 +354,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "infinix x650"
 
@@ -365,91 +365,91 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 98
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isNokia1()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isMotoC()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isX650()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isX230()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isHuaweiMate9()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     .line 99
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isRedmiNote8Pro()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isPositivoTwist2Pro()Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isFHDProblematicDevice()Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_34
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public isUnSupportMediaCodecInfo(Landroid/media/MediaFormat;)Z
-    .registers 6
+    .locals 4
 
     .line 146
     new-instance v0, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;
@@ -461,36 +461,36 @@
 
     move-result p1
 
-    if-nez p1, :cond_60
+    if-nez p1, :cond_6
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isMotoC()Z
 
     move-result p1
 
-    if-nez p1, :cond_60
+    if-nez p1, :cond_6
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isX650()Z
 
     move-result p1
 
-    if-nez p1, :cond_60
+    if-nez p1, :cond_6
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isX230()Z
 
     move-result p1
 
-    if-nez p1, :cond_60
+    if-nez p1, :cond_6
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isPositivoTwist2Pro()Z
 
     move-result p1
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
-    goto :goto_60
+    goto :goto_3
 
     .line 149
-    :cond_24
+    :cond_0
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isHuaweiMate9()Z
 
     move-result p1
@@ -499,30 +499,30 @@
 
     const/4 v2, 0x0
 
-    if-nez p1, :cond_4d
+    if-nez p1, :cond_4
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isRedmiNote8Pro()Z
 
     move-result p1
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_1
 
-    goto :goto_4d
+    goto :goto_1
 
     .line 151
-    :cond_33
+    :cond_1
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk;->isFHDProblematicDevice()Z
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_3
 
     .line 152
     invoke-virtual {v0}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;->isAvc()Z
 
     move-result p1
 
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_2
 
     const/16 p1, 0x780
 
@@ -532,27 +532,27 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_2
 
-    goto :goto_4b
+    goto :goto_0
 
-    :cond_4a
+    :cond_2
     move v1, v2
 
-    :goto_4b
+    :goto_0
     return v1
 
-    :cond_4c
+    :cond_3
     return v2
 
     .line 150
-    :cond_4d
-    :goto_4d
+    :cond_4
+    :goto_1
     invoke-virtual {v0}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;->isVideo()Z
 
     move-result p1
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_5
 
     const/16 p1, 0xf00
 
@@ -562,19 +562,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_5
 
-    goto :goto_5f
+    goto :goto_2
 
-    :cond_5e
+    :cond_5
     move v1, v2
 
-    :goto_5f
+    :goto_2
     return v1
 
     .line 148
-    :cond_60
-    :goto_60
+    :cond_6
+    :goto_3
     invoke-virtual {v0}, Landroidx/camera/video/internal/compat/quirk/MediaCodecInfoReportIncorrectInfoQuirk$MediaFormatResolver;->isMpeg4()Z
 
     move-result p1

@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;)V
-    .registers 2
+    .locals 0
 
     .line 2885
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$9;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onActivityResult(Landroidx/activity/result/ActivityResult;)V
-    .registers 6
+    .locals 4
 
     .line 2888
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$9;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -60,7 +60,7 @@
 
     const-string v1, "FragmentManager"
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     .line 2890
     new-instance p1, Ljava/lang/StringBuilder;
@@ -82,7 +82,7 @@
     return-void
 
     .line 2893
-    :cond_21
+    :cond_0
     iget-object v2, v0, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;
 
     .line 2894
@@ -99,7 +99,7 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_44
+    if-nez v3, :cond_1
 
     .line 2900
     new-instance p1, Ljava/lang/StringBuilder;
@@ -121,7 +121,7 @@
     return-void
 
     .line 2905
-    :cond_44
+    :cond_1
     invoke-virtual {p1}, Landroidx/activity/result/ActivityResult;->getResultCode()I
 
     move-result v1
@@ -138,7 +138,7 @@
 .end method
 
 .method public bridge synthetic onActivityResult(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 2885
     check-cast p1, Landroidx/activity/result/ActivityResult;

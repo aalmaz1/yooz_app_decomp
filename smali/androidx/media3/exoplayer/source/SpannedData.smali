@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 46
     new-instance v0, Landroidx/media3/exoplayer/source/SpannedData$$ExternalSyntheticLambda0;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/util/Consumer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public appendSpan(ILjava/lang/Object;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITV;)V"
@@ -106,7 +106,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_1
 
     .line 90
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
@@ -115,30 +115,30 @@
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     move v0, v3
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v0, v2
 
-    :goto_12
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 91
     iput v2, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
     .line 94
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_42
+    if-lez v0, :cond_3
 
     .line 95
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
@@ -153,15 +153,15 @@
 
     move-result v0
 
-    if-lt p1, v0, :cond_2d
+    if-lt p1, v0, :cond_2
 
     move v2, v3
 
     .line 96
-    :cond_2d
+    :cond_2
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-ne v0, p1, :cond_42
+    if-ne v0, p1, :cond_3
 
     .line 98
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->removeCallback:Landroidx/media3/common/util/Consumer;
@@ -181,7 +181,7 @@
     invoke-interface {v0, v1}, Landroidx/media3/common/util/Consumer;->accept(Ljava/lang/Object;)V
 
     .line 101
-    :cond_42
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
@@ -190,19 +190,19 @@
 .end method
 
 .method public clear()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 146
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 147
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->removeCallback:Landroidx/media3/common/util/Consumer;
@@ -217,9 +217,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, -0x1
 
     .line 149
@@ -234,7 +234,7 @@
 .end method
 
 .method public discardFrom(I)V
-    .registers 5
+    .locals 3
 
     .line 137
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
@@ -245,8 +245,8 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_8
-    if-ltz v0, :cond_25
+    :goto_0
+    if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
@@ -254,7 +254,7 @@
 
     move-result v1
 
-    if-ge p1, v1, :cond_25
+    if-ge p1, v1, :cond_0
 
     .line 138
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->removeCallback:Landroidx/media3/common/util/Consumer;
@@ -274,17 +274,17 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 141
-    :cond_25
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result p1
 
-    if-lez p1, :cond_3c
+    if-lez p1, :cond_1
 
     iget p1, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
@@ -300,24 +300,24 @@
 
     move-result p1
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_3c
+    :cond_1
     const/4 p1, -0x1
 
-    :goto_3d
+    :goto_1
     iput p1, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
     return-void
 .end method
 
 .method public discardTo(I)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 122
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
@@ -326,7 +326,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    if-ge v0, v1, :cond_2f
+    if-ge v0, v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
@@ -336,7 +336,7 @@
 
     move-result v1
 
-    if-lt p1, v1, :cond_2f
+    if-lt p1, v1, :cond_1
 
     .line 123
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->removeCallback:Landroidx/media3/common/util/Consumer;
@@ -357,24 +357,24 @@
     .line 125
     iget v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
-    if-lez v0, :cond_2d
+    if-lez v0, :cond_0
 
     add-int/lit8 v0, v0, -0x1
 
     .line 126
     iput v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
-    :cond_2d
+    :cond_0
     move v0, v2
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2f
+    :cond_1
     return-void
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TV;"
@@ -386,7 +386,7 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -394,11 +394,11 @@
     iput v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
     .line 72
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     iget v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
-    if-lez v0, :cond_1b
+    if-lez v0, :cond_1
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
@@ -406,7 +406,7 @@
 
     move-result v0
 
-    if-ge p1, v0, :cond_1b
+    if-ge p1, v0, :cond_1
 
     .line 73
     iget v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
@@ -415,11 +415,11 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
-    goto :goto_8
+    goto :goto_0
 
     .line 75
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_1
     iget v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
@@ -430,7 +430,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    if-ge v0, v1, :cond_3a
+    if-ge v0, v1, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
@@ -442,7 +442,7 @@
 
     move-result v0
 
-    if-lt p1, v0, :cond_3a
+    if-lt p1, v0, :cond_2
 
     .line 76
     iget v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
@@ -451,10 +451,10 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 78
-    :cond_3a
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
 
     iget v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->memoizedReadIndex:I
@@ -467,7 +467,7 @@
 .end method
 
 .method public getEndValue()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -491,7 +491,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 155
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SpannedData;->spans:Landroid/util/SparseArray;
@@ -500,15 +500,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method

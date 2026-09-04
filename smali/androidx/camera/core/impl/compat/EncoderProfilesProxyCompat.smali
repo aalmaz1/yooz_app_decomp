@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,14 +18,14 @@
 .end method
 
 .method public static from(Landroid/media/CamcorderProfile;)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 3
+    .locals 2
 
     .line 55
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_22
+    if-lt v0, v1, :cond_0
 
     .line 56
     new-instance v0, Ljava/lang/StringBuilder;
@@ -55,7 +55,7 @@
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 60
-    :cond_22
+    :cond_0
     invoke-static {p0}, Landroidx/camera/core/impl/compat/EncoderProfilesProxyCompatBaseImpl;->from(Landroid/media/CamcorderProfile;)Landroidx/camera/core/impl/EncoderProfilesProxy;
 
     move-result-object p0
@@ -64,14 +64,14 @@
 .end method
 
 .method public static from(Landroid/media/EncoderProfiles;)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 3
+    .locals 2
 
     .line 41
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 42
     invoke-static {p0}, Landroidx/camera/core/impl/compat/EncoderProfilesProxyCompatApi33Impl;->from(Landroid/media/EncoderProfiles;)Landroidx/camera/core/impl/EncoderProfilesProxy;
@@ -81,12 +81,12 @@
     return-object p0
 
     .line 43
-    :cond_b
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_1
 
     .line 44
     invoke-static {p0}, Landroidx/camera/core/impl/compat/EncoderProfilesProxyCompatApi31Impl;->from(Landroid/media/EncoderProfiles;)Landroidx/camera/core/impl/EncoderProfilesProxy;
@@ -96,7 +96,7 @@
     return-object p0
 
     .line 46
-    :cond_16
+    :cond_1
     new-instance p0, Ljava/lang/RuntimeException;
 
     new-instance v0, Ljava/lang/StringBuilder;

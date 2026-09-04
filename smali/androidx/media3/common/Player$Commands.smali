@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 676
     new-instance v0, Landroidx/media3/common/Player$Commands$Builder;
@@ -58,7 +58,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/FlagSet;)V
-    .registers 2
+    .locals 0
 
     .line 680
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/FlagSet;Landroidx/media3/common/Player$1;)V
-    .registers 3
+    .locals 0
 
     .line 503
     invoke-direct {p0, p1}, Landroidx/media3/common/Player$Commands;-><init>(Landroidx/media3/common/FlagSet;)V
@@ -79,7 +79,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/common/Player$Commands;)Landroidx/media3/common/FlagSet;
-    .registers 1
+    .locals 0
 
     .line 503
     iget-object p0, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -88,7 +88,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Player$Commands;
-    .registers 4
+    .locals 3
 
     .line 749
     sget-object v0, Landroidx/media3/common/Player$Commands;->FIELD_COMMANDS:Ljava/lang/String;
@@ -97,7 +97,7 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_0
 
     .line 751
     sget-object p0, Landroidx/media3/common/Player$Commands;->EMPTY:Landroidx/media3/common/Player$Commands;
@@ -105,7 +105,7 @@
     return-object p0
 
     .line 753
-    :cond_b
+    :cond_0
     new-instance v0, Landroidx/media3/common/Player$Commands$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Player$Commands$Builder;-><init>()V
@@ -113,12 +113,12 @@
     const/4 v1, 0x0
 
     .line 754
-    :goto_11
+    :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_27
+    if-ge v1, v2, :cond_1
 
     .line 755
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -135,10 +135,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 757
-    :cond_27
+    :cond_1
     invoke-virtual {v0}, Landroidx/media3/common/Player$Commands$Builder;->build()Landroidx/media3/common/Player$Commands;
 
     move-result-object p0
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/Player$Commands$Builder;
-    .registers 3
+    .locals 2
 
     .line 687
     new-instance v0, Landroidx/media3/common/Player$Commands$Builder;
@@ -162,7 +162,7 @@
 .end method
 
 .method public contains(I)Z
-    .registers 3
+    .locals 1
 
     .line 692
     iget-object v0, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -175,7 +175,7 @@
 .end method
 
 .method public varargs containsAny([I)Z
-    .registers 3
+    .locals 1
 
     .line 697
     iget-object v0, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -188,26 +188,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 721
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/media3/common/Player$Commands;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 724
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/Player$Commands;
 
     .line 725
@@ -223,7 +223,7 @@
 .end method
 
 .method public get(I)I
-    .registers 3
+    .locals 1
 
     .line 713
     iget-object v0, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -236,7 +236,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 730
     iget-object v0, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -249,7 +249,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 702
     iget-object v0, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -262,7 +262,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 737
     new-instance v0, Landroid/os/Bundle;
@@ -277,14 +277,14 @@
     const/4 v2, 0x0
 
     .line 739
-    :goto_b
+    :goto_0
     iget-object v3, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
 
     invoke-virtual {v3}, Landroidx/media3/common/FlagSet;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_23
+    if-ge v2, v3, :cond_0
 
     .line 740
     iget-object v3, p0, Landroidx/media3/common/Player$Commands;->flags:Landroidx/media3/common/FlagSet;
@@ -301,10 +301,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 742
-    :cond_23
+    :cond_0
     sget-object v2, Landroidx/media3/common/Player$Commands;->FIELD_COMMANDS:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V

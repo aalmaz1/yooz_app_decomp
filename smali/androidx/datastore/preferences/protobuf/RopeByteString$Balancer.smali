@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 607
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/RopeByteString$1;)V
-    .registers 2
+    .locals 0
 
     .line 607
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 0
 
     .line 607
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->balance(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/ByteString;
@@ -64,7 +64,7 @@
 .end method
 
 .method private balance(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 5
+    .locals 2
 
     .line 614
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->doBalance(Landroidx/datastore/preferences/protobuf/ByteString;)V
@@ -82,14 +82,14 @@
     check-cast p1, Landroidx/datastore/preferences/protobuf/ByteString;
 
     .line 619
-    :goto_e
+    :goto_0
     iget-object p2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
     invoke-virtual {p2}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result p2
 
-    if-nez p2, :cond_26
+    if-nez p2, :cond_0
 
     .line 620
     iget-object p2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
@@ -109,32 +109,32 @@
 
     move-object p1, v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     return-object p1
 .end method
 
 .method private doBalance(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 5
+    .locals 3
 
     .line 633
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/ByteString;->isBalanced()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 634
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->insert(Landroidx/datastore/preferences/protobuf/ByteString;)V
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 635
-    :cond_a
+    :cond_0
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/RopeByteString;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 636
     check-cast p1, Landroidx/datastore/preferences/protobuf/RopeByteString;
@@ -153,11 +153,11 @@
 
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->doBalance(Landroidx/datastore/preferences/protobuf/ByteString;)V
 
-    :goto_1e
+    :goto_0
     return-void
 
     .line 640
-    :cond_1f
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -185,7 +185,7 @@
 .end method
 
 .method private getDepthBinForLength(I)I
-    .registers 3
+    .locals 1
 
     .line 696
     sget-object v0, Landroidx/datastore/preferences/protobuf/RopeByteString;->minLengthByDepth:[I
@@ -194,7 +194,7 @@
 
     move-result p1
 
-    if-gez p1, :cond_d
+    if-gez p1, :cond_0
 
     add-int/lit8 p1, p1, 0x1
 
@@ -202,12 +202,12 @@
 
     add-int/lit8 p1, p1, -0x1
 
-    :cond_d
+    :cond_0
     return p1
 .end method
 
 .method private insert(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 7
+    .locals 5
 
     .line 658
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/ByteString;->size()I
@@ -232,7 +232,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_96
+    if-nez v2, :cond_3
 
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
@@ -246,12 +246,12 @@
 
     move-result v2
 
-    if-lt v2, v1, :cond_26
+    if-lt v2, v1, :cond_0
 
-    goto/16 :goto_96
+    goto/16 :goto_2
 
     .line 668
-    :cond_26
+    :cond_0
     sget-object v1, Landroidx/datastore/preferences/protobuf/RopeByteString;->minLengthByDepth:[I
 
     aget v0, v1, v0
@@ -266,7 +266,7 @@
     check-cast v1, Landroidx/datastore/preferences/protobuf/ByteString;
 
     .line 672
-    :goto_32
+    :goto_0
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
     invoke-virtual {v2}, Ljava/util/ArrayDeque;->isEmpty()Z
@@ -275,7 +275,7 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_58
+    if-nez v2, :cond_1
 
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
@@ -289,7 +289,7 @@
 
     move-result v2
 
-    if-ge v2, v0, :cond_58
+    if-ge v2, v0, :cond_1
 
     .line 673
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
@@ -307,23 +307,23 @@
 
     move-object v1, v4
 
-    goto :goto_32
+    goto :goto_0
 
     .line 678
-    :cond_58
+    :cond_1
     new-instance v0, Landroidx/datastore/preferences/protobuf/RopeByteString;
 
     invoke-direct {v0, v1, p1, v3}, Landroidx/datastore/preferences/protobuf/RopeByteString;-><init>(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/RopeByteString$1;)V
 
     .line 681
-    :goto_5d
+    :goto_1
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
     invoke-virtual {p1}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_90
+    if-nez p1, :cond_2
 
     .line 682
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/ByteString;->size()I
@@ -354,7 +354,7 @@
 
     move-result v1
 
-    if-ge v1, p1, :cond_90
+    if-ge v1, p1, :cond_2
 
     .line 685
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
@@ -372,23 +372,23 @@
 
     move-object v0, v1
 
-    goto :goto_5d
+    goto :goto_1
 
     .line 691
-    :cond_90
+    :cond_2
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
-    goto :goto_9b
+    goto :goto_3
 
     .line 666
-    :cond_96
-    :goto_96
+    :cond_3
+    :goto_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
-    :goto_9b
+    :goto_3
     return-void
 .end method

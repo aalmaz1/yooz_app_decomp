@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public filter(Ljava/util/List;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,13 +49,13 @@
 
     move-result-object p1
 
-    :cond_9
-    :goto_9
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -78,19 +78,19 @@
     .line 49
     iget v3, p0, Landroidx/camera/core/impl/LensFacingCameraFilter;->mLensFacing:I
 
-    if-ne v2, v3, :cond_9
+    if-ne v2, v3, :cond_0
 
     .line 50
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     return-object v0
 .end method
 
 .method public getLensFacing()I
-    .registers 2
+    .locals 1
 
     .line 60
     iget v0, p0, Landroidx/camera/core/impl/LensFacingCameraFilter;->mLensFacing:I

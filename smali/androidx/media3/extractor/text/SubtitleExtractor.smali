@@ -64,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/text/SubtitleParser;Landroidx/media3/common/Format;)V
-    .registers 5
+    .locals 2
 
     .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -152,7 +152,7 @@
 .end method
 
 .method private parseAndWriteToOutput()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -167,23 +167,23 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 236
     invoke-static {v0, v1}, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;->cuesAfterThenRemainingCuesBefore(J)Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
 
     move-result-object v0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 237
-    :cond_10
+    :cond_0
     invoke-static {}, Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;->allCues()Landroidx/media3/extractor/text/SubtitleParser$OutputOptions;
 
     move-result-object v0
 
     .line 238
-    :goto_14
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
     iget-object v2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleData:[B
@@ -213,14 +213,14 @@
     const/4 v0, 0x0
 
     .line 253
-    :goto_30
+    :goto_1
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->samples:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_4b
+    if-ge v0, v1, :cond_1
 
     .line 254
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->timestamps:[J
@@ -241,19 +241,19 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_30
+    goto :goto_1
 
     .line 256
-    :cond_4b
+    :cond_1
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleData:[B
-    :try_end_4f
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_4f} :catch_50
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_50
+    :catch_0
     move-exception v0
 
     const-string v1, "SubtitleParser failed."
@@ -267,7 +267,7 @@
 .end method
 
 .method private readFromInput(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -281,7 +281,7 @@
 
     iget v2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->bytesRead:I
 
-    if-ne v1, v2, :cond_10
+    if-ne v1, v2, :cond_0
 
     .line 212
     array-length v1, v0
@@ -296,7 +296,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleData:[B
 
     .line 215
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleData:[B
 
     iget v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->bytesRead:I
@@ -312,7 +312,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_1
 
     .line 219
     iget v2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->bytesRead:I
@@ -322,7 +322,7 @@
     iput v2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->bytesRead:I
 
     .line 221
-    :cond_22
+    :cond_1
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v2
@@ -331,7 +331,7 @@
 
     cmp-long p1, v2, v4
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_2
 
     .line 222
     iget p1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->bytesRead:I
@@ -340,25 +340,25 @@
 
     cmp-long p1, v4, v2
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
-    :cond_33
-    if-ne v0, v1, :cond_37
+    :cond_2
+    if-ne v0, v1, :cond_4
 
-    :cond_35
+    :cond_3
     const/4 p1, 0x1
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_37
+    :cond_4
     const/4 p1, 0x0
 
-    :goto_38
+    :goto_0
     return p1
 .end method
 
 .method private skipInput(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -374,7 +374,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 204
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -385,34 +385,34 @@
 
     move-result v0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/16 v0, 0x400
 
     .line 202
-    :goto_15
+    :goto_0
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skip(I)I
 
     move-result p1
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_1e
+    if-ne p1, v0, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_1f
+    :goto_1
     return p1
 .end method
 
 .method private writeToOutput()V
-    .registers 5
+    .locals 4
 
     .line 264
     iget-wide v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->seekTimeUs:J
@@ -421,14 +421,14 @@
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 266
-    :cond_d
+    :cond_0
     iget-object v2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->timestamps:[J
 
     const/4 v3, 0x1
@@ -438,14 +438,14 @@
     move-result v0
 
     .line 268
-    :goto_14
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->samples:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_2a
+    if-ge v0, v1, :cond_1
 
     .line 269
     iget-object v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->samples:Ljava/util/List;
@@ -460,14 +460,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     return-void
 .end method
 
 .method private writeToOutput(Landroidx/media3/extractor/text/SubtitleExtractor$Sample;)V
-    .registers 10
+    .locals 8
 
     .line 274
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -520,7 +520,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 9
+    .locals 7
 
     .line 132
     iget v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
@@ -529,16 +529,16 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v0, v2
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 v0, 0x3
@@ -584,7 +584,7 @@
 .end method
 
 .method synthetic lambda$parseAndWriteToOutput$0$androidx-media3-extractor-text-SubtitleExtractor(Landroidx/media3/extractor/text/CuesWithTiming;)V
-    .registers 9
+    .locals 7
 
     .line 242
     new-instance v0, Landroidx/media3/extractor/text/SubtitleExtractor$Sample;
@@ -618,7 +618,7 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     iget-wide v1, p1, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
 
@@ -626,18 +626,18 @@
 
     cmp-long p1, v1, v3
 
-    if-ltz p1, :cond_2d
+    if-ltz p1, :cond_1
 
     .line 248
-    :cond_2a
+    :cond_0
     invoke-direct {p0, v0}, Landroidx/media3/extractor/text/SubtitleExtractor;->writeToOutput(Landroidx/media3/extractor/text/SubtitleExtractor$Sample;)V
 
-    :cond_2d
+    :cond_1
     return-void
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -651,20 +651,20 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     const/4 v2, 0x5
 
-    if-eq p2, v2, :cond_b
+    if-eq p2, v2, :cond_0
 
     move p2, v0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move p2, v1
 
-    :goto_c
+    :goto_0
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 147
@@ -672,7 +672,7 @@
 
     const/4 v2, 0x2
 
-    if-ne p2, v0, :cond_36
+    if-ne p2, v0, :cond_3
 
     .line 149
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -683,7 +683,7 @@
 
     cmp-long p2, v3, v5
 
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_1
 
     .line 150
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -694,18 +694,18 @@
 
     move-result p2
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_27
+    :cond_1
     const/16 p2, 0x400
 
     .line 152
-    :goto_29
+    :goto_1
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleData:[B
 
     array-length v0, v0
 
-    if-le p2, v0, :cond_32
+    if-le p2, v0, :cond_2
 
     .line 153
     new-array p2, p2, [B
@@ -713,26 +713,26 @@
     iput-object p2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleData:[B
 
     .line 155
-    :cond_32
+    :cond_2
     iput v1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->bytesRead:I
 
     .line 156
     iput v2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     .line 158
-    :cond_36
+    :cond_3
     iget p2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     const/4 v0, 0x4
 
-    if-ne p2, v2, :cond_46
+    if-ne p2, v2, :cond_4
 
     .line 159
     invoke-direct {p0, p1}, Landroidx/media3/extractor/text/SubtitleExtractor;->readFromInput(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_4
 
     .line 161
     invoke-direct {p0}, Landroidx/media3/extractor/text/SubtitleExtractor;->parseAndWriteToOutput()V
@@ -741,19 +741,19 @@
     iput v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     .line 165
-    :cond_46
+    :cond_4
     iget p2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     const/4 v2, 0x3
 
-    if-ne p2, v2, :cond_56
+    if-ne p2, v2, :cond_5
 
     .line 166
     invoke-direct {p0, p1}, Landroidx/media3/extractor/text/SubtitleExtractor;->skipInput(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_56
+    if-eqz p1, :cond_5
 
     .line 168
     invoke-direct {p0}, Landroidx/media3/extractor/text/SubtitleExtractor;->writeToOutput()V
@@ -762,33 +762,33 @@
     iput v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     .line 172
-    :cond_56
+    :cond_5
     iget p1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
-    if-ne p1, v0, :cond_5c
+    if-ne p1, v0, :cond_6
 
     const/4 p1, -0x1
 
     return p1
 
-    :cond_5c
+    :cond_6
     return v1
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 193
     iget v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 196
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->subtitleParser:Landroidx/media3/extractor/text/SubtitleParser;
 
     invoke-interface {v0}, Landroidx/media3/extractor/text/SubtitleParser;->reset()V
@@ -800,27 +800,27 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 180
     iget p1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     const/4 p2, 0x1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x5
 
-    if-eq p1, v0, :cond_a
+    if-eq p1, v0, :cond_0
 
     move p1, p2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 181
@@ -831,30 +831,30 @@
 
     const/4 p3, 0x2
 
-    if-ne p1, p3, :cond_17
+    if-ne p1, p3, :cond_1
 
     .line 183
     iput p2, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     .line 185
-    :cond_17
+    :cond_1
     iget p1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
     const/4 p2, 0x4
 
-    if-ne p1, p2, :cond_1f
+    if-ne p1, p2, :cond_2
 
     const/4 p1, 0x3
 
     .line 186
     iput p1, p0, Landroidx/media3/extractor/text/SubtitleExtractor;->state:I
 
-    :cond_1f
+    :cond_2
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

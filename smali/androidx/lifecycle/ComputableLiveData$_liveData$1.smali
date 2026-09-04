@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/ComputableLiveData;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method protected onActive()V
-    .registers 3
+    .locals 2
 
     .line 51
     iget-object v0, p0, Landroidx/lifecycle/ComputableLiveData$_liveData$1;->this$0:Landroidx/lifecycle/ComputableLiveData;

@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/customtabs/CustomTabsSession;Ljava/util/concurrent/Executor;Landroidx/browser/customtabs/EngagementSignalsCallback;)V
-    .registers 4
+    .locals 0
 
     .line 451
     iput-object p1, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->this$0:Landroidx/browser/customtabs/CustomTabsSession;
@@ -44,7 +44,7 @@
 .end method
 
 .method static synthetic lambda$onGreatestScrollPercentageIncreased$1(Landroidx/browser/customtabs/EngagementSignalsCallback;ILandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 468
     invoke-interface {p0, p1, p2}, Landroidx/browser/customtabs/EngagementSignalsCallback;->onGreatestScrollPercentageIncreased(ILandroid/os/Bundle;)V
@@ -53,7 +53,7 @@
 .end method
 
 .method static synthetic lambda$onSessionEnded$2(Landroidx/browser/customtabs/EngagementSignalsCallback;ZLandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 479
     invoke-interface {p0, p1, p2}, Landroidx/browser/customtabs/EngagementSignalsCallback;->onSessionEnded(ZLandroid/os/Bundle;)V
@@ -62,7 +62,7 @@
 .end method
 
 .method static synthetic lambda$onVerticalScrollEvent$0(Landroidx/browser/customtabs/EngagementSignalsCallback;ZLandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 458
     invoke-interface {p0, p1, p2}, Landroidx/browser/customtabs/EngagementSignalsCallback;->onVerticalScrollEvent(ZLandroid/os/Bundle;)V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public onGreatestScrollPercentageIncreased(ILandroid/os/Bundle;)V
-    .registers 8
+    .locals 5
 
     .line 466
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
@@ -81,7 +81,7 @@
     move-result-wide v0
 
     .line 468
-    :try_start_4
+    :try_start_0
     iget-object v2, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->mExecutor:Ljava/util/concurrent/Executor;
 
     iget-object v3, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->val$callback:Landroidx/browser/customtabs/EngagementSignalsCallback;
@@ -91,15 +91,15 @@
     invoke-direct {v4, v3, p1, p2}, Landroidx/browser/customtabs/CustomTabsSession$2$$ExternalSyntheticLambda0;-><init>(Landroidx/browser/customtabs/EngagementSignalsCallback;ILandroid/os/Bundle;)V
 
     invoke-interface {v2, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_10
-    .catchall {:try_start_4 .. :try_end_10} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 471
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -109,7 +109,7 @@
 .end method
 
 .method public onSessionEnded(ZLandroid/os/Bundle;)V
-    .registers 8
+    .locals 5
 
     .line 477
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
@@ -117,7 +117,7 @@
     move-result-wide v0
 
     .line 479
-    :try_start_4
+    :try_start_0
     iget-object v2, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->mExecutor:Ljava/util/concurrent/Executor;
 
     iget-object v3, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->val$callback:Landroidx/browser/customtabs/EngagementSignalsCallback;
@@ -127,15 +127,15 @@
     invoke-direct {v4, v3, p1, p2}, Landroidx/browser/customtabs/CustomTabsSession$2$$ExternalSyntheticLambda2;-><init>(Landroidx/browser/customtabs/EngagementSignalsCallback;ZLandroid/os/Bundle;)V
 
     invoke-interface {v2, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_10
-    .catchall {:try_start_4 .. :try_end_10} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 481
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
@@ -145,7 +145,7 @@
 .end method
 
 .method public onVerticalScrollEvent(ZLandroid/os/Bundle;)V
-    .registers 8
+    .locals 5
 
     .line 456
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
@@ -153,7 +153,7 @@
     move-result-wide v0
 
     .line 458
-    :try_start_4
+    :try_start_0
     iget-object v2, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->mExecutor:Ljava/util/concurrent/Executor;
 
     iget-object v3, p0, Landroidx/browser/customtabs/CustomTabsSession$2;->val$callback:Landroidx/browser/customtabs/EngagementSignalsCallback;
@@ -163,15 +163,15 @@
     invoke-direct {v4, v3, p1, p2}, Landroidx/browser/customtabs/CustomTabsSession$2$$ExternalSyntheticLambda1;-><init>(Landroidx/browser/customtabs/EngagementSignalsCallback;ZLandroid/os/Bundle;)V
 
     invoke-interface {v2, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_10
-    .catchall {:try_start_4 .. :try_end_10} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 460
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V

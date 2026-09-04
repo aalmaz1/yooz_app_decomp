@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 178
     new-instance v0, Landroidx/camera/video/VideoCapabilities$1;
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public findHighestSupportedEncoderProfilesFor(Landroid/util/Size;Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public findHighestSupportedQualityFor(Landroid/util/Size;Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/Quality;
-    .registers 3
+    .locals 0
 
     .line 172
     sget-object p1, Landroidx/camera/video/Quality;->NONE:Landroidx/camera/video/Quality;
@@ -41,7 +41,7 @@
 .end method
 
 .method public getProfiles(Landroidx/camera/video/Quality;Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 

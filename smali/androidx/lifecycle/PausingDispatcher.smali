@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 215
     invoke-direct {p0}, Lkotlinx/coroutines/CoroutineDispatcher;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "context"
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public isDispatchNeeded(Lkotlin/coroutines/CoroutineContext;)Z
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 
@@ -99,12 +99,12 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     return v0
 
     .line 230
-    :cond_15
+    :cond_0
     iget-object p1, p0, Landroidx/lifecycle/PausingDispatcher;->dispatchQueue:Landroidx/lifecycle/DispatchQueue;
 
     invoke-virtual {p1}, Landroidx/lifecycle/DispatchQueue;->canRun()Z

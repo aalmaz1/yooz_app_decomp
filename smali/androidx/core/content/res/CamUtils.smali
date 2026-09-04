@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     const/4 v0, 0x3
 
@@ -24,7 +24,7 @@
     new-array v2, v0, [F
 
     .line 52
-    fill-array-data v2, :array_58
+    fill-array-data v2, :array_0
 
     const/4 v3, 0x0
 
@@ -32,7 +32,7 @@
 
     new-array v2, v0, [F
 
-    fill-array-data v2, :array_62
+    fill-array-data v2, :array_1
 
     const/4 v4, 0x1
 
@@ -40,7 +40,7 @@
 
     new-array v2, v0, [F
 
-    fill-array-data v2, :array_6c
+    fill-array-data v2, :array_2
 
     const/4 v5, 0x2
 
@@ -53,19 +53,19 @@
     new-array v2, v0, [F
 
     .line 59
-    fill-array-data v2, :array_76
+    fill-array-data v2, :array_3
 
     aput-object v2, v1, v3
 
     new-array v2, v0, [F
 
-    fill-array-data v2, :array_80
+    fill-array-data v2, :array_4
 
     aput-object v2, v1, v4
 
     new-array v2, v0, [F
 
-    fill-array-data v2, :array_8a
+    fill-array-data v2, :array_5
 
     aput-object v2, v1, v5
 
@@ -74,7 +74,7 @@
     new-array v1, v0, [F
 
     .line 67
-    fill-array-data v1, :array_94
+    fill-array-data v1, :array_6
 
     sput-object v1, Landroidx/core/content/res/CamUtils;->WHITE_POINT_D65:[F
 
@@ -83,19 +83,19 @@
     new-array v2, v0, [F
 
     .line 73
-    fill-array-data v2, :array_9e
+    fill-array-data v2, :array_7
 
     aput-object v2, v1, v3
 
     new-array v2, v0, [F
 
-    fill-array-data v2, :array_a8
+    fill-array-data v2, :array_8
 
     aput-object v2, v1, v4
 
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_b2
+    fill-array-data v0, :array_9
 
     aput-object v0, v1, v5
 
@@ -105,70 +105,70 @@
 
     nop
 
-    :array_58
+    :array_0
     .array-data 4
         0x3ecd759f
         0x3f2671bd
         -0x42ad373b    # -0.051461f
     .end array-data
 
-    :array_62
+    :array_1
     .array-data 4
         -0x417fdcdf
         0x3f9a2a3d
         0x3d3bd167
     .end array-data
 
-    :array_6c
+    :array_2
     .array-data 4
         -0x44f7c02b    # -0.002079f
         0x3d4881e4
         0x3f740022
     .end array-data
 
-    :array_76
+    :array_3
     .array-data 4
         0x3fee583d
         -0x407e8f35
         0x3e18c46b
     .end array-data
 
-    :array_80
+    :array_4
     .array-data 4
         0x3ec669e1
         0x3f1f172e
         -0x43ecf866
     .end array-data
 
-    :array_8a
+    :array_5
     .array-data 4
         -0x437e39f7
         -0x42f43b81
         0x3f86653c
     .end array-data
 
-    :array_94
+    :array_6
     .array-data 4
         0x42be1810
         0x42c80000    # 100.0f
         0x42d9c419
     .end array-data
 
-    :array_9e
+    :array_7
     .array-data 4
         0x3ed31e17
         0x3eb71a0d
         0x3e38d7b9
     .end array-data
 
-    :array_a8
+    :array_8
     .array-data 4
         0x3e59b3d0    # 0.2126f
         0x3f371759    # 0.7152f
         0x3d93dd98    # 0.0722f
     .end array-data
 
-    :array_b2
+    :array_9
     .array-data 4
         0x3c9e47ef
         0x3df40c29
@@ -177,7 +177,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -186,30 +186,30 @@
 .end method
 
 .method static intFromLStar(F)I
-    .registers 16
+    .locals 15
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpg-float v0, p0, v0
 
-    if-gez v0, :cond_9
+    if-gez v0, :cond_0
 
     const/high16 p0, -0x1000000
 
     return p0
 
-    :cond_9
+    :cond_0
     const/high16 v0, 0x42c60000    # 99.0f
 
     cmpl-float v0, p0, v0
 
-    if-lez v0, :cond_11
+    if-lez v0, :cond_1
 
     const/4 p0, -0x1
 
     return p0
 
-    :cond_11
+    :cond_1
     const/high16 v0, 0x41800000    # 16.0f
 
     add-float v1, p0, v0
@@ -226,30 +226,30 @@
 
     const/4 v5, 0x0
 
-    if-lez v3, :cond_22
+    if-lez v3, :cond_2
 
     move v3, v4
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_2
     move v3, v5
 
-    :goto_23
+    :goto_0
     const v6, 0x4461d2f7
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_3
 
     mul-float p0, v1, v1
 
     mul-float/2addr p0, v1
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_2c
+    :cond_3
     div-float/2addr p0, v6
 
-    :goto_2d
+    :goto_1
     mul-float v3, v1, v1
 
     mul-float/2addr v3, v1
@@ -258,35 +258,35 @@
 
     cmpl-float v7, v3, v7
 
-    if-lez v7, :cond_39
+    if-lez v7, :cond_4
 
     move v7, v4
 
-    goto :goto_3a
+    goto :goto_2
 
-    :cond_39
+    :cond_4
     move v7, v5
 
-    :goto_3a
-    if-eqz v7, :cond_3e
+    :goto_2
+    if-eqz v7, :cond_5
 
     move v8, v3
 
-    goto :goto_42
+    goto :goto_3
 
-    :cond_3e
+    :cond_5
     mul-float v8, v1, v2
 
     sub-float/2addr v8, v0
 
     div-float/2addr v8, v6
 
-    :goto_42
-    if-eqz v7, :cond_45
+    :goto_3
+    if-eqz v7, :cond_6
 
-    goto :goto_49
+    goto :goto_4
 
-    :cond_45
+    :cond_6
     mul-float/2addr v1, v2
 
     sub-float/2addr v1, v0
@@ -294,7 +294,7 @@
     div-float v3, v1, v6
 
     .line 101
-    :goto_49
+    :goto_4
     sget-object v0, Landroidx/core/content/res/CamUtils;->WHITE_POINT_D65:[F
 
     aget v1, v0, v5
@@ -325,7 +325,7 @@
 .end method
 
 .method static lStarFromInt(I)F
-    .registers 1
+    .locals 0
 
     .line 111
     invoke-static {p0}, Landroidx/core/content/res/CamUtils;->yFromInt(I)F
@@ -340,7 +340,7 @@
 .end method
 
 .method static lStarFromY(F)F
-    .registers 3
+    .locals 2
 
     const/high16 v0, 0x42c80000    # 100.0f
 
@@ -350,7 +350,7 @@
 
     cmpg-float v0, p0, v0
 
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_0
 
     const v0, 0x4461d2f7
 
@@ -358,7 +358,7 @@
 
     return p0
 
-    :cond_f
+    :cond_0
     float-to-double v0, p0
 
     .line 121
@@ -380,7 +380,7 @@
 .end method
 
 .method static lerp(FFF)F
-    .registers 3
+    .locals 0
 
     sub-float/2addr p1, p0
 
@@ -392,7 +392,7 @@
 .end method
 
 .method static linearized(I)F
-    .registers 7
+    .locals 6
 
     int-to-float p0, p0
 
@@ -406,18 +406,18 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    if-gtz v0, :cond_13
+    if-gtz v0, :cond_0
 
     const v0, 0x414eb852    # 12.92f
 
     div-float/2addr p0, v0
 
-    :goto_11
+    :goto_0
     mul-float/2addr p0, v1
 
     return p0
 
-    :cond_13
+    :cond_0
     const v0, 0x3d6147ae    # 0.055f
 
     add-float/2addr p0, v0
@@ -437,11 +437,11 @@
 
     double-to-float p0, v2
 
-    goto :goto_11
+    goto :goto_0
 .end method
 
 .method static xyzFromInt(I[F)V
-    .registers 11
+    .locals 9
 
     .line 136
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
@@ -546,7 +546,7 @@
 .end method
 
 .method static yFromInt(I)F
-    .registers 6
+    .locals 5
 
     .line 127
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
@@ -607,7 +607,7 @@
 .end method
 
 .method static yFromLStar(F)F
-    .registers 7
+    .locals 6
 
     const/high16 v0, 0x41000000    # 8.0f
 
@@ -615,7 +615,7 @@
 
     const/high16 v1, 0x42c80000    # 100.0f
 
-    if-lez v0, :cond_18
+    if-lez v0, :cond_0
 
     float-to-double v2, p0
 
@@ -636,15 +636,15 @@
 
     double-to-float p0, v2
 
-    :goto_16
+    :goto_0
     mul-float/2addr p0, v1
 
     return p0
 
-    :cond_18
+    :cond_0
     const v0, 0x4461d2f7
 
     div-float/2addr p0, v0
 
-    goto :goto_16
+    goto :goto_0
 .end method

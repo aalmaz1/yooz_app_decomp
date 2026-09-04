@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;ILandroidx/media3/common/Format;ILjava/lang/Object;[B)V
-    .registers 19
+    .locals 11
 
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -38,28 +38,28 @@
     .line 60
     invoke-direct/range {v0 .. v10}, Landroidx/media3/exoplayer/source/chunk/Chunk;-><init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;ILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
 
-    if-nez p7, :cond_1c
+    if-nez p7, :cond_0
 
     .line 69
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     move-object v1, p0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     move-object v1, p0
 
     move-object/from16 v0, p7
 
-    :goto_1f
+    :goto_0
     iput-object v0, v1, Landroidx/media3/exoplayer/source/chunk/DataChunk;->data:[B
 
     return-void
 .end method
 
 .method private maybeExpandData(I)V
-    .registers 4
+    .locals 2
 
     .line 122
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->data:[B
@@ -68,7 +68,7 @@
 
     add-int/lit16 p1, p1, 0x4000
 
-    if-ge v1, p1, :cond_10
+    if-ge v1, p1, :cond_0
 
     .line 125
     array-length p1, v0
@@ -81,14 +81,14 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->data:[B
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final cancelLoad()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public getDataHolder()[B
-    .registers 2
+    .locals 1
 
     .line 80
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->data:[B
@@ -116,7 +116,7 @@
 .end method
 
 .method public final load()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -135,16 +135,16 @@
 
     move v1, v0
 
-    :cond_9
-    :goto_9
+    :cond_0
+    :goto_0
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_21
+    if-eq v0, v2, :cond_1
 
     .line 96
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->loadCanceled:Z
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     .line 97
     invoke-direct {p0, v1}, Landroidx/media3/exoplayer/source/chunk/DataChunk;->maybeExpandData(I)V
@@ -160,34 +160,34 @@
 
     move-result v0
 
-    if-eq v0, v2, :cond_9
+    if-eq v0, v2, :cond_0
 
     add-int/2addr v1, v0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 103
-    :cond_21
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->loadCanceled:Z
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_2
 
     .line 104
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->data:[B
 
     invoke-virtual {p0, v0, v1}, Landroidx/media3/exoplayer/source/chunk/DataChunk;->consume([BI)V
-    :try_end_2a
-    .catchall {:try_start_0 .. :try_end_2a} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 107
-    :cond_2a
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     invoke-static {v0}, Landroidx/media3/datasource/DataSourceUtil;->closeQuietly(Landroidx/media3/datasource/DataSource;)V
 
     return-void
 
-    :catchall_30
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/DataChunk;->dataSource:Landroidx/media3/datasource/StatsDataSource;

@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(I[Landroidx/core/provider/FontsContractCompat$FontInfo;)V
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -47,7 +47,7 @@
 .end method
 
 .method static create(I[Landroidx/core/provider/FontsContractCompat$FontInfo;)Landroidx/core/provider/FontsContractCompat$FontFamilyResult;
-    .registers 3
+    .locals 1
 
     .line 400
     new-instance v0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public getFonts()[Landroidx/core/provider/FontsContractCompat$FontInfo;
-    .registers 2
+    .locals 1
 
     .line 393
     iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;->mFonts:[Landroidx/core/provider/FontsContractCompat$FontInfo;
@@ -69,7 +69,7 @@
 .end method
 
 .method public getStatusCode()I
-    .registers 2
+    .locals 1
 
     .line 389
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;->mStatusCode:I

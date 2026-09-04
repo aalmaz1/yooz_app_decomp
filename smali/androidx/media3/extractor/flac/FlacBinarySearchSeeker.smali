@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/FlacStreamMetadata;IJJ)V
-    .registers 23
+    .locals 16
 
     move-object/from16 v0, p1
 

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/Quirks;)V
-    .registers 2
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,11 +23,11 @@
 
 # virtual methods
 .method public getCorrectedPoint(Landroidx/camera/core/MeteringPoint;I)Landroid/graphics/PointF;
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_1e
+    if-ne p2, v0, :cond_0
 
     .line 45
     iget-object p2, p0, Landroidx/camera/camera2/internal/compat/workaround/MeteringRegionCorrection;->mCameraQuirks:Landroidx/camera/core/impl/Quirks;
@@ -39,7 +39,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_0
 
     .line 47
     new-instance p2, Landroid/graphics/PointF;
@@ -61,7 +61,7 @@
     return-object p2
 
     .line 50
-    :cond_1e
+    :cond_0
     new-instance p2, Landroid/graphics/PointF;
 
     invoke-virtual {p1}, Landroidx/camera/core/MeteringPoint;->getX()F

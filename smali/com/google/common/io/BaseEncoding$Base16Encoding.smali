@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/io/BaseEncoding$Alphabet;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -53,22 +53,22 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v0, v2
 
-    :goto_17
+    :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    :goto_1a
+    :goto_1
     const/16 v0, 0x100
 
-    if-ge v2, v0, :cond_37
+    if-ge v2, v0, :cond_1
 
     .line 965
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$Base16Encoding;->encoding:[C
@@ -96,14 +96,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_37
+    :cond_1
     return-void
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method decodeTo([BLjava/lang/CharSequence;)I
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -162,19 +162,19 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_37
+    if-eq v0, v1, :cond_1
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 988
-    :goto_e
+    :goto_0
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_36
+    if-ge v0, v2, :cond_0
 
     .line 989
     iget-object v2, p0, Lcom/google/common/io/BaseEncoding$Base16Encoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -214,13 +214,13 @@
 
     move v1, v3
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_36
+    :cond_0
     return v1
 
     .line 985
-    :cond_37
+    :cond_1
     new-instance p1, Lcom/google/common/io/BaseEncoding$DecodingException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -247,7 +247,7 @@
 .end method
 
 .method encodeTo(Ljava/lang/Appendable;[BII)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -281,8 +281,8 @@
 
     const/4 v0, 0x0
 
-    :goto_a
-    if-ge v0, p4, :cond_25
+    :goto_0
+    if-ge v0, p4, :cond_0
 
     add-int v1, p3, v0
 
@@ -309,14 +309,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 .method newInstance(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)Lcom/google/common/io/BaseEncoding;
-    .registers 3
+    .locals 0
     .param p2    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation

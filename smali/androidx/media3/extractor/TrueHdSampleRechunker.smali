@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +39,12 @@
 
 # virtual methods
 .method public outputPendingSampleMetadata(Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 11
+    .locals 8
 
     .line 89
     iget v0, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkSampleCount:I
 
-    if-lez v0, :cond_14
+    if-lez v0, :cond_0
 
     .line 90
     iget-wide v2, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkTimeUs:J
@@ -66,12 +66,12 @@
     .line 91
     iput p1, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkSampleCount:I
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -85,7 +85,7 @@
 .end method
 
 .method public sampleMetadata(Landroidx/media3/extractor/TrackOutput;JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 11
+    .locals 3
 
     .line 68
     iget v0, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkOffset:I
@@ -94,16 +94,16 @@
 
     const/4 v2, 0x0
 
-    if-gt v0, v1, :cond_9
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v2
 
-    :goto_a
+    :goto_0
     const-string v1, "TrueHD chunk samples must be contiguous in the sample queue."
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
@@ -111,19 +111,19 @@
     .line 71
     iget-boolean v0, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->foundSyncframe:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return-void
 
     .line 74
-    :cond_14
+    :cond_1
     iget v0, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkSampleCount:I
 
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkSampleCount:I
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     .line 76
     iput-wide p2, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkTimeUs:J
@@ -135,7 +135,7 @@
     iput v2, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkSize:I
 
     .line 80
-    :cond_22
+    :cond_2
     iget p2, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->chunkSize:I
 
     add-int/2addr p2, p5
@@ -147,17 +147,17 @@
 
     const/16 p2, 0x10
 
-    if-lt v1, p2, :cond_30
+    if-lt v1, p2, :cond_3
 
     .line 83
     invoke-virtual {p0, p1, p7}, Landroidx/media3/extractor/TrueHdSampleRechunker;->outputPendingSampleMetadata(Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/TrackOutput$CryptoData;)V
 
-    :cond_30
+    :cond_3
     return-void
 .end method
 
 .method public startSample(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -167,12 +167,12 @@
     .line 50
     iget-boolean v0, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->foundSyncframe:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 53
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/TrueHdSampleRechunker;->syncframePrefix:[B
 
     const/4 v1, 0x0
@@ -191,11 +191,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_19
+    if-nez p1, :cond_1
 
     return-void
 
-    :cond_19
+    :cond_1
     const/4 p1, 0x1
 
     .line 58

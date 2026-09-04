@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroidx/camera/camera2/internal/CamcorderProfileHelper;Ljava/lang/Object;Ljava/util/Set;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,28 +65,28 @@
     .line 92
     instance-of p2, p3, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 93
     check-cast p3, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 95
-    :cond_16
+    :cond_0
     invoke-static {p1}, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;->from(Landroid/content/Context;)Landroidx/camera/camera2/internal/compat/CameraManagerCompat;
 
     move-result-object p3
 
     .line 97
-    :goto_1a
+    :goto_0
     invoke-direct {p0, p1, p3, p4}, Landroidx/camera/camera2/internal/Camera2DeviceSurfaceManager;->init(Landroid/content/Context;Landroidx/camera/camera2/internal/compat/CameraManagerCompat;Ljava/util/Set;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/Object;Ljava/util/Set;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,7 +115,7 @@
 .end method
 
 .method private init(Landroid/content/Context;Landroidx/camera/camera2/internal/compat/CameraManagerCompat;Ljava/util/Set;)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,12 +141,12 @@
 
     move-result-object p3
 
-    :goto_7
+    :goto_0
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -165,16 +165,16 @@
 
     invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getSuggestedStreamSpecs(ILjava/lang/String;Ljava/util/List;Ljava/util/Map;)Landroid/util/Pair;
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -222,7 +222,7 @@
 
     check-cast v0, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 186
     invoke-virtual {v0, p1, p3, p4}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->getSuggestedStreamSpecifications(ILjava/util/List;Ljava/util/Map;)Landroid/util/Pair;
@@ -232,7 +232,7 @@
     return-object p1
 
     .line 182
-    :cond_1a
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -255,7 +255,7 @@
 .end method
 
 .method public transformSurfaceConfig(ILjava/lang/String;ILandroid/util/Size;)Landroidx/camera/core/impl/SurfaceConfig;
-    .registers 6
+    .locals 1
 
     .line 133
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2DeviceSurfaceManager;->mCameraSupportedSurfaceCombinationMap:Ljava/util/Map;
@@ -267,18 +267,18 @@
 
     check-cast p2, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;
 
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 139
     invoke-virtual {p2, p1, p3, p4}, Landroidx/camera/camera2/internal/SupportedSurfaceCombination;->transformSurfaceConfig(IILandroid/util/Size;)Landroidx/camera/core/impl/SurfaceConfig;
 
     move-result-object p1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_10
+    :goto_0
     return-object p1
 .end method

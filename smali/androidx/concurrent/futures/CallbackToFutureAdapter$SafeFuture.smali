@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 4
+    .locals 1
 
     .line 210
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->delegate:Landroidx/concurrent/futures/AbstractResolvableFuture;
@@ -94,7 +94,7 @@
 .end method
 
 .method public cancel(Z)Z
-    .registers 4
+    .locals 2
 
     .line 164
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->completerWeakReference:Ljava/lang/ref/WeakReference;
@@ -112,19 +112,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 168
     invoke-virtual {v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->fireCancellationListeners()V
 
-    :cond_15
+    :cond_0
     return p1
 .end method
 
 .method cancelWithoutNotifyingCompleter(Z)Z
-    .registers 3
+    .locals 1
 
     .line 174
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->delegate:Landroidx/concurrent/futures/AbstractResolvableFuture;
@@ -137,7 +137,7 @@
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -162,7 +162,7 @@
 .end method
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -190,7 +190,7 @@
 .end method
 
 .method public isCancelled()Z
-    .registers 2
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->delegate:Landroidx/concurrent/futures/AbstractResolvableFuture;
@@ -203,7 +203,7 @@
 .end method
 
 .method public isDone()Z
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->delegate:Landroidx/concurrent/futures/AbstractResolvableFuture;
@@ -216,7 +216,7 @@
 .end method
 
 .method set(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -234,7 +234,7 @@
 .end method
 
 .method setException(Ljava/lang/Throwable;)Z
-    .registers 3
+    .locals 1
 
     .line 184
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->delegate:Landroidx/concurrent/futures/AbstractResolvableFuture;
@@ -247,7 +247,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 215
     iget-object v0, p0, Landroidx/concurrent/futures/CallbackToFutureAdapter$SafeFuture;->delegate:Landroidx/concurrent/futures/AbstractResolvableFuture;

@@ -29,7 +29,7 @@
 .end method
 
 .method public loadBitmapFromMetadata(Landroidx/media3/common/MediaMetadata;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +44,7 @@
     .line 49
     iget-object v0, p1, Landroidx/media3/common/MediaMetadata;->artworkData:[B
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 50
     iget-object p1, p1, Landroidx/media3/common/MediaMetadata;->artworkData:[B
@@ -53,13 +53,13 @@
 
     move-result-object p1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 51
-    :cond_b
+    :cond_0
     iget-object v0, p1, Landroidx/media3/common/MediaMetadata;->artworkUri:Landroid/net/Uri;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 52
     iget-object p1, p1, Landroidx/media3/common/MediaMetadata;->artworkUri:Landroid/net/Uri;
@@ -68,12 +68,12 @@
 
     move-result-object p1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_17
+    :goto_0
     return-object p1
 .end method
 

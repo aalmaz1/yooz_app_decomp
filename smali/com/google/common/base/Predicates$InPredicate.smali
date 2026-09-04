@@ -47,7 +47,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/Collection;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -81,7 +81,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Collection;Lcom/google/common/base/Predicates$1;)V
-    .registers 3
+    .locals 0
 
     .line 570
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InPredicate;-><init>(Ljava/util/Collection;)V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -119,20 +119,20 @@
     invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result p1
-    :try_end_6
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_6} :catch_7
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -149,7 +149,7 @@
     .line 589
     instance-of v0, p1, Lcom/google/common/base/Predicates$InPredicate;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 590
     check-cast p1, Lcom/google/common/base/Predicates$InPredicate;
@@ -165,14 +165,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 598
     iget-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
@@ -185,7 +185,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 603
     new-instance v0, Ljava/lang/StringBuilder;

@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/flow/FlowCollector;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -73,11 +73,11 @@
 
 # virtual methods
 .method public emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -89,7 +89,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2$1;->label:I
 
@@ -97,14 +97,14 @@
 
     iput p2, v0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2$1;-><init>(Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p2, v0, Landroidx/datastore/core/SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1$2$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -115,16 +115,16 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_2a
+    if-ne v2, v3, :cond_1
 
     .line 137
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_57
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
@@ -134,7 +134,7 @@
     throw p1
 
     .line 0
-    :cond_32
+    :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 135
@@ -150,17 +150,17 @@
     .line 138
     instance-of v2, p1, Landroidx/datastore/core/ReadException;
 
-    if-nez v2, :cond_79
+    if-nez v2, :cond_7
 
     .line 139
     instance-of v2, p1, Landroidx/datastore/core/Final;
 
-    if-nez v2, :cond_72
+    if-nez v2, :cond_6
 
     .line 140
     instance-of v2, p1, Landroidx/datastore/core/Data;
 
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_4
 
     check-cast p1, Landroidx/datastore/core/Data;
 
@@ -175,21 +175,21 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_57
+    if-ne p1, v1, :cond_3
 
     return-object v1
 
-    :cond_57
-    :goto_57
+    :cond_3
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     .line 141
-    :cond_5a
+    :cond_4
     instance-of p1, p1, Landroidx/datastore/core/UnInitialized;
 
-    if-eqz p1, :cond_6c
+    if-eqz p1, :cond_5
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -205,7 +205,7 @@
 
     throw p1
 
-    :cond_6c
+    :cond_5
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -213,7 +213,7 @@
     throw p1
 
     .line 139
-    :cond_72
+    :cond_6
     check-cast p1, Landroidx/datastore/core/Final;
 
     invoke-virtual {p1}, Landroidx/datastore/core/Final;->getFinalException()Ljava/lang/Throwable;
@@ -223,7 +223,7 @@
     throw p1
 
     .line 138
-    :cond_79
+    :cond_7
     check-cast p1, Landroidx/datastore/core/ReadException;
 
     invoke-virtual {p1}, Landroidx/datastore/core/ReadException;->getReadException()Ljava/lang/Throwable;

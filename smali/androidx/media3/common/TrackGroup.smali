@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -49,7 +49,7 @@
 .end method
 
 .method public varargs constructor <init>(Ljava/lang/String;[Landroidx/media3/common/Format;)V
-    .registers 5
+    .locals 2
 
     .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,16 +59,16 @@
 
     const/4 v1, 0x0
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v1
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 88
@@ -93,7 +93,7 @@
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_27
+    if-ne p1, v0, :cond_1
 
     .line 93
     aget-object p1, p2, v1
@@ -105,7 +105,7 @@
     move-result p1
 
     .line 95
-    :cond_27
+    :cond_1
     iput p1, p0, Landroidx/media3/common/TrackGroup;->type:I
 
     .line 96
@@ -115,7 +115,7 @@
 .end method
 
 .method public varargs constructor <init>([Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 1
 
     const-string v0, ""
 
@@ -126,7 +126,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/TrackGroup;
-    .registers 4
+    .locals 3
 
     .line 182
     sget-object v0, Landroidx/media3/common/TrackGroup;->FIELD_FORMATS:Ljava/lang/String;
@@ -135,17 +135,17 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 185
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 186
-    :cond_d
+    :cond_0
     new-instance v1, Landroidx/media3/common/TrackGroup$$ExternalSyntheticLambda0;
 
     invoke-direct {v1}, Landroidx/media3/common/TrackGroup$$ExternalSyntheticLambda0;-><init>()V
@@ -155,7 +155,7 @@
     move-result-object v0
 
     .line 187
-    :goto_16
+    :goto_0
     sget-object v1, Landroidx/media3/common/TrackGroup;->FIELD_ID:Ljava/lang/String;
 
     const-string v2, ""
@@ -183,7 +183,7 @@
 .end method
 
 .method private static logErrorMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 7
+    .locals 3
 
     .line 233
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -250,9 +250,9 @@
 .end method
 
 .method private static normalizeLanguage(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
     const-string/jumbo v0, "und"
 
@@ -261,17 +261,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_1
 
-    :cond_b
+    :cond_0
     const-string p0, ""
 
-    :cond_d
+    :cond_1
     return-object p0
 .end method
 
 .method private static normalizeRoleFlags(I)I
-    .registers 1
+    .locals 0
 
     or-int/lit16 p0, p0, 0x4000
 
@@ -279,7 +279,7 @@
 .end method
 
 .method private verifyCorrectness()V
-    .registers 7
+    .locals 6
 
     .line 196
     iget-object v0, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
@@ -308,12 +308,12 @@
     const/4 v3, 0x1
 
     .line 198
-    :goto_16
+    :goto_0
     iget-object v4, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
 
     array-length v5, v4
 
-    if-ge v3, v5, :cond_64
+    if-ge v3, v5, :cond_2
 
     .line 199
     aget-object v4, v4, v3
@@ -328,7 +328,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_3b
+    if-nez v4, :cond_0
 
     .line 200
     iget-object v0, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
@@ -350,7 +350,7 @@
     return-void
 
     .line 207
-    :cond_3b
+    :cond_0
     iget-object v4, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
 
     aget-object v4, v4, v3
@@ -361,7 +361,7 @@
 
     move-result v4
 
-    if-eq v2, v4, :cond_61
+    if-eq v2, v4, :cond_1
 
     .line 208
     iget-object v0, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
@@ -393,19 +393,19 @@
 
     return-void
 
-    :cond_61
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_64
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public copyWithId(Ljava/lang/String;)Landroidx/media3/common/TrackGroup;
-    .registers 4
+    .locals 2
 
     .line 108
     new-instance v0, Landroidx/media3/common/TrackGroup;
@@ -418,18 +418,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 157
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -440,12 +440,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 160
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/TrackGroup;
 
     .line 161
@@ -457,7 +457,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
 
@@ -467,23 +467,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getFormat(I)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 1
 
     .line 119
     iget-object v0, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
@@ -494,12 +494,12 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 143
     iget v0, p0, Landroidx/media3/common/TrackGroup;->hashCode:I
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 145
     iget-object v0, p0, Landroidx/media3/common/TrackGroup;->id:Ljava/lang/String;
@@ -527,45 +527,45 @@
     iput v1, p0, Landroidx/media3/common/TrackGroup;->hashCode:I
 
     .line 149
-    :cond_18
+    :cond_0
     iget v0, p0, Landroidx/media3/common/TrackGroup;->hashCode:I
 
     return v0
 .end method
 
 .method public indexOf(Landroidx/media3/common/Format;)I
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 133
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/common/TrackGroup;->formats:[Landroidx/media3/common/Format;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_e
+    if-ge v0, v2, :cond_1
 
     .line 134
     aget-object v1, v1, v0
 
-    if-ne p1, v1, :cond_b
+    if-ne p1, v1, :cond_0
 
     return v0
 
-    :cond_b
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_e
+    :cond_1
     const/4 p1, -0x1
 
     return p1
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 8
+    .locals 7
 
     .line 169
     new-instance v0, Landroid/os/Bundle;
@@ -588,8 +588,8 @@
 
     const/4 v4, 0x0
 
-    :goto_11
-    if-ge v4, v3, :cond_20
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     aget-object v5, v2, v4
 
@@ -604,10 +604,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 174
-    :cond_20
+    :cond_0
     sget-object v2, Landroidx/media3/common/TrackGroup;->FIELD_FORMATS:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V

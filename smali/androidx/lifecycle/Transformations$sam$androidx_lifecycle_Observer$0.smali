@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "function"
 
@@ -50,17 +50,17 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/lifecycle/Observer;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     instance-of v0, p1, Lkotlin/jvm/internal/FunctionAdapter;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/lifecycle/Transformations$sam$androidx_lifecycle_Observer$0;->getFunctionDelegate()Lkotlin/Function;
 
@@ -76,12 +76,12 @@
 
     move-result v1
 
-    :cond_17
+    :cond_0
     return v1
 .end method
 
 .method public final getFunctionDelegate()Lkotlin/Function;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -98,7 +98,7 @@
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .locals 1
 
     invoke-virtual {p0}, Landroidx/lifecycle/Transformations$sam$androidx_lifecycle_Observer$0;->getFunctionDelegate()Lkotlin/Function;
 
@@ -112,7 +112,7 @@
 .end method
 
 .method public final synthetic onChanged(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/lifecycle/Transformations$sam$androidx_lifecycle_Observer$0;->function:Lkotlin/jvm/functions/Function1;
 

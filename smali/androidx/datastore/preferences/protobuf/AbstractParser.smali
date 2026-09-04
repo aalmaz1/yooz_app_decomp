@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 75
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method private checkMessageInitialized(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)TMessageType;"
@@ -60,19 +60,19 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 66
     invoke-interface {p1}, Landroidx/datastore/preferences/protobuf/MessageLite;->isInitialized()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 67
-    :cond_9
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/AbstractParser;->newUninitializedMessageException(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
 
     move-result-object v0
@@ -89,13 +89,13 @@
 
     throw p1
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     return-object p1
 .end method
 
 .method private newUninitializedMessageException(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)",
@@ -106,7 +106,7 @@
     .line 52
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/AbstractMessageLite;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 53
     check-cast p1, Landroidx/datastore/preferences/protobuf/AbstractMessageLite;
@@ -118,7 +118,7 @@
     return-object p1
 
     .line 55
-    :cond_b
+    :cond_0
     new-instance v0, Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
 
     invoke-direct {v0, p1}, Landroidx/datastore/preferences/protobuf/UninitializedMessageException;-><init>(Landroidx/datastore/preferences/protobuf/MessageLite;)V
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public parseDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -155,7 +155,7 @@
 .end method
 
 .method public parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -184,7 +184,7 @@
 .end method
 
 .method public bridge synthetic parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -200,7 +200,7 @@
 .end method
 
 .method public bridge synthetic parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -216,7 +216,7 @@
 .end method
 
 .method public parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -242,7 +242,7 @@
 .end method
 
 .method public parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -271,7 +271,7 @@
 .end method
 
 .method public parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -297,7 +297,7 @@
 .end method
 
 .method public parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -328,7 +328,7 @@
 .end method
 
 .method public parseFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -354,7 +354,7 @@
 .end method
 
 .method public parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -383,7 +383,7 @@
 .end method
 
 .method public parseFrom(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -409,7 +409,7 @@
 .end method
 
 .method public parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -440,10 +440,10 @@
     const/4 v0, 0x0
 
     .line 136
-    :try_start_b
+    :try_start_0
     invoke-virtual {p1, v0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
-    :try_end_e
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_b .. :try_end_e} :catch_13
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 144
     invoke-direct {p0, p2}, Landroidx/datastore/preferences/protobuf/AbstractParser;->checkMessageInitialized(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -452,7 +452,7 @@
 
     return-object p1
 
-    :catch_13
+    :catch_0
     move-exception p1
 
     .line 138
@@ -464,7 +464,7 @@
 .end method
 
 .method public parseFrom([B)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)TMessageType;"
@@ -488,7 +488,7 @@
 .end method
 
 .method public parseFrom([BII)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII)TMessageType;"
@@ -512,7 +512,7 @@
 .end method
 
 .method public parseFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -540,7 +540,7 @@
 .end method
 
 .method public parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -568,7 +568,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -584,7 +584,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -600,7 +600,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -616,7 +616,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -632,7 +632,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -648,7 +648,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -664,7 +664,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Ljava/nio/ByteBuffer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -680,7 +680,7 @@
 .end method
 
 .method public bridge synthetic parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -696,7 +696,7 @@
 .end method
 
 .method public bridge synthetic parseFrom([B)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -712,7 +712,7 @@
 .end method
 
 .method public bridge synthetic parseFrom([BII)Ljava/lang/Object;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -728,7 +728,7 @@
 .end method
 
 .method public bridge synthetic parseFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -744,7 +744,7 @@
 .end method
 
 .method public bridge synthetic parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -760,7 +760,7 @@
 .end method
 
 .method public parsePartialDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -786,7 +786,7 @@
 .end method
 
 .method public parsePartialDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -810,19 +810,19 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 250
-    :cond_9
+    :cond_0
     invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readRawVarint32(ILjava/io/InputStream;)I
 
     move-result v0
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_d} :catch_17
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 254
     new-instance v1, Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder$LimitedInputStream;
@@ -836,7 +836,7 @@
 
     return-object p1
 
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 252
@@ -848,7 +848,7 @@
 .end method
 
 .method public bridge synthetic parsePartialDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -864,7 +864,7 @@
 .end method
 
 .method public bridge synthetic parsePartialDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -880,7 +880,7 @@
 .end method
 
 .method public parsePartialFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -906,7 +906,7 @@
 .end method
 
 .method public parsePartialFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -937,14 +937,14 @@
     const/4 v0, 0x0
 
     .line 102
-    :try_start_b
+    :try_start_0
     invoke-virtual {p1, v0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
-    :try_end_e
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_b .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p2
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 104
@@ -956,7 +956,7 @@
 .end method
 
 .method public parsePartialFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -984,7 +984,7 @@
 .end method
 
 .method public parsePartialFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1010,7 +1010,7 @@
 .end method
 
 .method public parsePartialFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1041,14 +1041,14 @@
     const/4 v0, 0x0
 
     .line 217
-    :try_start_b
+    :try_start_0
     invoke-virtual {p1, v0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
-    :try_end_e
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_b .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p2
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 219
@@ -1060,7 +1060,7 @@
 .end method
 
 .method public parsePartialFrom([B)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)TMessageType;"
@@ -1088,7 +1088,7 @@
 .end method
 
 .method public parsePartialFrom([BII)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII)TMessageType;"
@@ -1112,7 +1112,7 @@
 .end method
 
 .method public parsePartialFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -1142,14 +1142,14 @@
     const/4 p3, 0x0
 
     .line 160
-    :try_start_b
+    :try_start_0
     invoke-virtual {p1, p3}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
-    :try_end_e
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_b .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p2
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 162
@@ -1161,7 +1161,7 @@
 .end method
 
 .method public parsePartialFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -1189,7 +1189,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1205,7 +1205,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1221,7 +1221,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1237,7 +1237,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom(Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1253,7 +1253,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1269,7 +1269,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom([B)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1285,7 +1285,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom([BII)Ljava/lang/Object;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1301,7 +1301,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom([BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -1317,7 +1317,7 @@
 .end method
 
 .method public bridge synthetic parsePartialFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1467
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static setEpicenterBounds(Landroid/widget/PopupWindow;Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 1473
     invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setEpicenterBounds(Landroid/graphics/Rect;)V
@@ -34,7 +34,7 @@
 .end method
 
 .method static setIsClippedToScreen(Landroid/widget/PopupWindow;Z)V
-    .registers 2
+    .locals 0
 
     .line 1478
     invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setIsClippedToScreen(Z)V

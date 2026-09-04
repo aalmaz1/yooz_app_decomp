@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(JJLandroid/location/Location;Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/content/ContentValues;)V
-    .registers 9
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method synthetic constructor <init>(JJLandroid/location/Location;Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/content/ContentValues;Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$1;)V
-    .registers 10
+    .locals 0
 
     .line 14
     invoke-direct/range {p0 .. p8}, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;-><init>(JJLandroid/location/Location;Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/content/ContentValues;)V
@@ -65,21 +65,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 96
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_3
 
     .line 97
     check-cast p1, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;
@@ -93,7 +93,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_59
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->durationLimitMillis:J
 
@@ -104,22 +104,22 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_59
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->location:Landroid/location/Location;
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_1
 
     .line 100
     invoke-virtual {p1}, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;->getLocation()Landroid/location/Location;
 
     move-result-object v1
 
-    if-nez v1, :cond_59
+    if-nez v1, :cond_2
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;->getLocation()Landroid/location/Location;
 
     move-result-object v3
@@ -128,9 +128,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_2
 
-    :goto_34
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->contentResolver:Landroid/content/ContentResolver;
 
     .line 101
@@ -142,7 +142,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->collectionUri:Landroid/net/Uri;
 
@@ -155,7 +155,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->contentValues:Landroid/content/ContentValues;
 
@@ -168,22 +168,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_2
 
-    goto :goto_5a
+    goto :goto_1
 
-    :cond_59
+    :cond_2
     move v0, v2
 
-    :goto_5a
+    :goto_1
     return v0
 
-    :cond_5b
+    :cond_3
     return v2
 .end method
 
 .method getCollectionUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 70
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->collectionUri:Landroid/net/Uri;
@@ -192,7 +192,7 @@
 .end method
 
 .method getContentResolver()Landroid/content/ContentResolver;
-    .registers 2
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->contentResolver:Landroid/content/ContentResolver;
@@ -201,7 +201,7 @@
 .end method
 
 .method getContentValues()Landroid/content/ContentValues;
-    .registers 2
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->contentValues:Landroid/content/ContentValues;
@@ -210,7 +210,7 @@
 .end method
 
 .method getDurationLimitMillis()J
-    .registers 3
+    .locals 2
 
     .line 52
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->durationLimitMillis:J
@@ -219,7 +219,7 @@
 .end method
 
 .method getFileSizeLimit()J
-    .registers 3
+    .locals 2
 
     .line 46
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->fileSizeLimit:J
@@ -228,7 +228,7 @@
 .end method
 
 .method getLocation()Landroid/location/Location;
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->location:Landroid/location/Location;
@@ -237,7 +237,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 8
+    .locals 7
 
     .line 112
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->fileSizeLimit:J
@@ -272,18 +272,18 @@
     .line 116
     iget-object v2, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;->location:Landroid/location/Location;
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_0
 
     const/4 v2, 0x0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     invoke-virtual {v2}, Landroid/location/Location;->hashCode()I
 
     move-result v2
 
-    :goto_20
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -323,7 +323,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 81
     new-instance v0, Ljava/lang/StringBuilder;

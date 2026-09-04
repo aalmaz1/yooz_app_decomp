@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;Landroidx/media3/exoplayer/audio/DefaultAudioSink;)V
-    .registers 3
+    .locals 0
 
     .line 1977
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onDataRequest(Landroid/media/AudioTrack;I)V
-    .registers 3
+    .locals 0
 
     .line 1980
     iget-object p2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
@@ -52,12 +52,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     return-void
 
     .line 1984
-    :cond_f
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -66,7 +66,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
 
@@ -76,7 +76,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     .line 1987
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
@@ -89,12 +89,12 @@
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/audio/AudioSink$Listener;->onOffloadBufferEmptying()V
 
-    :cond_2e
+    :cond_1
     return-void
 .end method
 
 .method public onPresentationEnded(Landroid/media/AudioTrack;)V
-    .registers 3
+    .locals 1
 
     .line 1993
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
@@ -109,12 +109,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     return-void
 
     .line 1997
-    :cond_f
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -127,7 +127,7 @@
 .end method
 
 .method public onTearDown(Landroid/media/AudioTrack;)V
-    .registers 3
+    .locals 1
 
     .line 2002
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
@@ -142,12 +142,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     return-void
 
     .line 2006
-    :cond_f
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -156,7 +156,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
 
@@ -166,7 +166,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     .line 2011
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29$1;->this$1:Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;
@@ -179,6 +179,6 @@
 
     invoke-interface {p1}, Landroidx/media3/exoplayer/audio/AudioSink$Listener;->onOffloadBufferEmptying()V
 
-    :cond_2e
+    :cond_1
     return-void
 .end method

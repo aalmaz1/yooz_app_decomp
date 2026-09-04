@@ -32,13 +32,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(DDDD)V
-    .registers 9
+    .locals 0
 
     .line 100
     invoke-direct {p0}, Landroidx/constraintlayout/motion/utils/Easing;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
 
     .line 86
     invoke-direct {p0}, Landroidx/constraintlayout/motion/utils/Easing;-><init>()V
@@ -161,7 +161,7 @@
 .end method
 
 .method private getDiffX(D)D
-    .registers 15
+    .locals 12
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
@@ -206,7 +206,7 @@
 .end method
 
 .method private getDiffY(D)D
-    .registers 15
+    .locals 12
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
@@ -251,7 +251,7 @@
 .end method
 
 .method private getX(D)D
-    .registers 9
+    .locals 6
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
@@ -290,7 +290,7 @@
 .end method
 
 .method private getY(D)D
-    .registers 9
+    .locals 6
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
@@ -331,26 +331,26 @@
 
 # virtual methods
 .method public get(D)D
-    .registers 11
+    .locals 8
 
     const-wide/16 v0, 0x0
 
     cmpg-double v2, p1, v0
 
-    if-gtz v2, :cond_7
+    if-gtz v2, :cond_0
 
     return-wide v0
 
-    :cond_7
+    :cond_0
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     cmpl-double v2, p1, v0
 
-    if-ltz v2, :cond_e
+    if-ltz v2, :cond_1
 
     return-wide v0
 
-    :cond_e
+    :cond_1
     const-wide/high16 v0, 0x3fe0000000000000L    # 0.5
 
     move-wide v2, v0
@@ -358,12 +358,12 @@
     move-wide v4, v2
 
     .line 177
-    :goto_12
+    :goto_0
     sget-wide v6, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;->error:D
 
     cmpl-double v6, v2, v6
 
-    if-lez v6, :cond_25
+    if-lez v6, :cond_3
 
     .line 178
     invoke-direct {p0, v4, v5}, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;->getX(D)D
@@ -374,18 +374,18 @@
 
     cmpg-double v6, v6, p1
 
-    if-gez v6, :cond_23
+    if-gez v6, :cond_2
 
     add-double/2addr v4, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     sub-double/2addr v4, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_25
+    :cond_3
     sub-double v0, v4, v2
 
     .line 187
@@ -426,7 +426,7 @@
 .end method
 
 .method public getDiff(D)D
-    .registers 11
+    .locals 8
 
     const-wide/high16 v0, 0x3fe0000000000000L    # 0.5
 
@@ -435,12 +435,12 @@
     move-wide v4, v2
 
     .line 146
-    :goto_4
+    :goto_0
     sget-wide v6, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;->d_error:D
 
     cmpl-double v6, v2, v6
 
-    if-lez v6, :cond_17
+    if-lez v6, :cond_1
 
     .line 147
     invoke-direct {p0, v4, v5}, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;->getX(D)D
@@ -451,18 +451,18 @@
 
     cmpg-double v6, v6, p1
 
-    if-gez v6, :cond_15
+    if-gez v6, :cond_0
 
     add-double/2addr v4, v2
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     sub-double/2addr v4, v2
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     sub-double p1, v4, v2
 
     .line 156
@@ -497,7 +497,7 @@
 .end method
 
 .method setup(DDDD)V
-    .registers 9
+    .locals 0
 
     .line 105
     iput-wide p1, p0, Landroidx/constraintlayout/motion/utils/Easing$CubicEasing;->x1:D

@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/nio/ByteBuffer;Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;II)V
-    .registers 7
+    .locals 2
 
     .line 288
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_22
+    if-ne v0, v1, :cond_0
 
     .line 300
     iput p3, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;->mBytesPerFrame:I
@@ -71,7 +71,7 @@
     return-void
 
     .line 295
-    :cond_22
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -111,7 +111,7 @@
 
 # virtual methods
 .method public getRemainingBufferSizeInBytes()I
-    .registers 2
+    .locals 1
 
     .line 307
     iget-object v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;->mByteBuffer:Ljava/nio/ByteBuffer;
@@ -124,7 +124,7 @@
 .end method
 
 .method public read(Ljava/nio/ByteBuffer;)Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;
-    .registers 11
+    .locals 9
 
     .line 311
     iget-wide v0, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;->mTimestampNs:J
@@ -152,7 +152,7 @@
 
     move-result v5
 
-    if-le v4, v5, :cond_4b
+    if-le v4, v5, :cond_0
 
     .line 318
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -214,10 +214,10 @@
     .line 332
     invoke-virtual {p1, v3}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
-    goto :goto_60
+    goto :goto_0
 
     .line 335
-    :cond_4b
+    :cond_0
     iget-object v4, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;->mByteBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->remaining()I
@@ -242,7 +242,7 @@
     invoke-virtual {p1, v3}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     .line 344
-    :goto_60
+    :goto_0
     iget-object p1, p0, Landroidx/camera/video/internal/audio/BufferedAudioStream$AudioData;->mByteBuffer:Ljava/nio/ByteBuffer;
 
     add-int/2addr v2, v4

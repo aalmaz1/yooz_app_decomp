@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentActivity;)V
-    .registers 2
+    .locals 0
 
     .line 126
     iput-object p1, p0, Landroidx/fragment/app/FragmentActivity$1;->this$0:Landroidx/fragment/app/FragmentActivity;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public saveState()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 130
     new-instance v0, Landroid/os/Bundle;
@@ -66,13 +66,13 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     const-string v2, "android:support:fragments"
 
     .line 135
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    :cond_22
+    :cond_0
     return-object v0
 .end method

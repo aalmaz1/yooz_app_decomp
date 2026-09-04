@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;Landroidx/media/MediaSessionManager$RemoteUserInfo;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 0
 
     .line 247
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase$3;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;
@@ -48,12 +48,12 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 250
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase$3;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;
 
     iget-object v1, v1, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -64,7 +64,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_30
+    if-ge v0, v1, :cond_1
 
     .line 251
     iget-object v1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase$3;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;
@@ -88,7 +88,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     .line 253
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase$3;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;
@@ -99,14 +99,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->notifyChildrenChangedOnHandler(Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    goto :goto_30
-
-    :cond_2d
-    add-int/lit8 v0, v0, 0x1
-
     goto :goto_1
 
-    :cond_30
-    :goto_30
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
     return-void
 .end method

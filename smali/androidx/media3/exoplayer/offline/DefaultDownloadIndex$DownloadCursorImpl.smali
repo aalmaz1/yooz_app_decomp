@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/database/Cursor;)V
-    .registers 2
+    .locals 0
 
     .line 551
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/database/Cursor;Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$1;)V
-    .registers 3
+    .locals 0
 
     .line 547
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;-><init>(Landroid/database/Cursor;)V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 577
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
@@ -57,7 +57,7 @@
 .end method
 
 .method public getCount()I
-    .registers 2
+    .locals 1
 
     .line 562
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
@@ -70,7 +70,7 @@
 .end method
 
 .method public getDownload()Landroidx/media3/exoplayer/offline/Download;
-    .registers 2
+    .locals 1
 
     .line 557
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
@@ -83,7 +83,7 @@
 .end method
 
 .method public getPosition()I
-    .registers 2
+    .locals 1
 
     .line 567
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
@@ -96,7 +96,7 @@
 .end method
 
 .method public isClosed()Z
-    .registers 2
+    .locals 1
 
     .line 582
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
@@ -109,7 +109,7 @@
 .end method
 
 .method public moveToPosition(I)Z
-    .registers 3
+    .locals 1
 
     .line 572
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;

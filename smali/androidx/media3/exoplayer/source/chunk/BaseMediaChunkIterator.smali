@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method protected final checkInBounds()V
-    .registers 5
+    .locals 4
 
     .line 68
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;->currentIndex:J
@@ -45,18 +45,18 @@
 
     cmp-long v2, v0, v2
 
-    if-ltz v2, :cond_f
+    if-ltz v2, :cond_0
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;->toIndex:J
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_0
 
     return-void
 
     .line 69
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method protected final getCurrentIndex()J
-    .registers 3
+    .locals 2
 
     .line 75
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;->currentIndex:J
@@ -74,7 +74,7 @@
 .end method
 
 .method public isEnded()Z
-    .registers 5
+    .locals 4
 
     .line 48
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;->currentIndex:J
@@ -83,21 +83,21 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public next()Z
-    .registers 5
+    .locals 4
 
     .line 53
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;->currentIndex:J
@@ -119,7 +119,7 @@
 .end method
 
 .method public reset()V
-    .registers 5
+    .locals 4
 
     .line 59
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;->fromIndex:J

@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>([BII)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public getBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 210
     iget-object v0, p0, Landroidx/camera/core/ImageProxyDownsampler$1;->mBuffer:Ljava/nio/ByteBuffer;
@@ -67,7 +67,7 @@
 .end method
 
 .method public getPixelStride()I
-    .registers 2
+    .locals 1
 
     .line 204
     iget v0, p0, Landroidx/camera/core/ImageProxyDownsampler$1;->val$pixelStride:I
@@ -76,7 +76,7 @@
 .end method
 
 .method public getRowStride()I
-    .registers 2
+    .locals 1
 
     .line 199
     iget v0, p0, Landroidx/camera/core/ImageProxyDownsampler$1;->val$rowStride:I

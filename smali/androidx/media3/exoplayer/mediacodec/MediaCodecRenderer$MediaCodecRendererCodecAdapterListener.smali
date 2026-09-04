@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;)V
-    .registers 2
+    .locals 0
 
     .line 2757
     iput-object p1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$MediaCodecRendererCodecAdapterListener;->this$0:Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$1;)V
-    .registers 3
+    .locals 0
 
     .line 2757
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$MediaCodecRendererCodecAdapterListener;-><init>(Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onInputBufferAvailable()V
-    .registers 2
+    .locals 1
 
     .line 2761
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$MediaCodecRendererCodecAdapterListener;->this$0:Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;
@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 2762
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$MediaCodecRendererCodecAdapterListener;->this$0:Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;
@@ -65,12 +65,12 @@
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/Renderer$WakeupListener;->onWakeup()V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public onOutputBufferAvailable()V
-    .registers 2
+    .locals 1
 
     .line 2768
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$MediaCodecRendererCodecAdapterListener;->this$0:Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 2769
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$MediaCodecRendererCodecAdapterListener;->this$0:Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer;
@@ -90,6 +90,6 @@
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/Renderer$WakeupListener;->onWakeup()V
 
-    :cond_11
+    :cond_0
     return-void
 .end method

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final configure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -87,21 +87,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->pendingOutputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     sget-object p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
-    :goto_13
+    :goto_0
     return-object p1
 .end method
 
 .method public final flush()V
-    .registers 2
+    .locals 1
 
     .line 89
     sget-object v0, Landroidx/media3/common/audio/BaseAudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
@@ -130,7 +130,7 @@
 .end method
 
 .method public getOutput()Ljava/nio/ByteBuffer;
-    .registers 3
+    .locals 2
 
     .line 75
     iget-object v0, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
@@ -144,7 +144,7 @@
 .end method
 
 .method protected final hasPendingOutput()Z
-    .registers 2
+    .locals 1
 
     .line 124
     iget-object v0, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
@@ -157,53 +157,53 @@
 .end method
 
 .method public isActive()Z
-    .registers 3
+    .locals 2
 
     .line 63
     iget-object v0, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->pendingOutputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     sget-object v1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isEnded()Z
-    .registers 3
+    .locals 2
 
     .line 84
     iget-boolean v0, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->inputEnded:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
 
     sget-object v1, Landroidx/media3/common/audio/BaseAudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method protected onConfigure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -217,25 +217,25 @@
 .end method
 
 .method protected onFlush()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onQueueEndOfStream()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected onReset()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public final queueEndOfStream()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -249,7 +249,7 @@
 .end method
 
 .method protected final replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
-    .registers 3
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
@@ -258,7 +258,7 @@
 
     move-result v0
 
-    if-ge v0, p1, :cond_17
+    if-ge v0, p1, :cond_0
 
     .line 114
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -275,16 +275,16 @@
 
     iput-object p1, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 116
-    :cond_17
+    :cond_0
     iget-object p1, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
     .line 118
-    :goto_1c
+    :goto_0
     iget-object p1, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
 
     iput-object p1, p0, Landroidx/media3/common/audio/BaseAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
@@ -293,7 +293,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 98
     invoke-virtual {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;->flush()V

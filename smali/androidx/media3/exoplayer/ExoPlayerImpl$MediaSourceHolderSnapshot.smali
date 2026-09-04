@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MaskingMediaSource;)V
-    .registers 3
+    .locals 0
 
     .line 3018
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/ExoPlayerImpl$MediaSourceHolderSnapshot;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 1
+    .locals 0
 
     .line 3011
     iget-object p0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$MediaSourceHolderSnapshot;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public getTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 3031
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$MediaSourceHolderSnapshot;->timeline:Landroidx/media3/common/Timeline;
@@ -69,7 +69,7 @@
 .end method
 
 .method public getUid()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 3026
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$MediaSourceHolderSnapshot;->uid:Ljava/lang/Object;
@@ -78,7 +78,7 @@
 .end method
 
 .method public updateTimeline(Landroidx/media3/common/Timeline;)V
-    .registers 2
+    .locals 0
 
     .line 3035
     iput-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$MediaSourceHolderSnapshot;->timeline:Landroidx/media3/common/Timeline;

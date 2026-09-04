@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;I)V
-    .registers 3
+    .locals 0
 
     .line 113
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->this$0:Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList;
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 113
     check-cast p1, Ljava/lang/String;
@@ -81,7 +81,7 @@
 .end method
 
 .method public add(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 158
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -92,7 +92,7 @@
 .end method
 
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -105,7 +105,7 @@
 .end method
 
 .method public hasPrevious()Z
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -118,7 +118,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 113
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->next()Ljava/lang/String;
@@ -129,7 +129,7 @@
 .end method
 
 .method public next()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -144,7 +144,7 @@
 .end method
 
 .method public nextIndex()I
-    .registers 2
+    .locals 1
 
     .line 138
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -157,7 +157,7 @@
 .end method
 
 .method public bridge synthetic previous()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 113
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->previous()Ljava/lang/String;
@@ -168,7 +168,7 @@
 .end method
 
 .method public previous()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 133
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -183,7 +183,7 @@
 .end method
 
 .method public previousIndex()I
-    .registers 2
+    .locals 1
 
     .line 143
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/UnmodifiableLazyStringList$1;->iter:Ljava/util/ListIterator;
@@ -196,7 +196,7 @@
 .end method
 
 .method public remove()V
-    .registers 2
+    .locals 1
 
     .line 148
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -207,7 +207,7 @@
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 113
     check-cast p1, Ljava/lang/String;
@@ -218,7 +218,7 @@
 .end method
 
 .method public set(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 153
     new-instance p1, Ljava/lang/UnsupportedOperationException;

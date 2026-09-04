@@ -26,14 +26,14 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     .line 2240
     invoke-direct {p0, v0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;-><init>(Landroidx/datastore/preferences/protobuf/CodedOutputStream$1;)V
 
-    if-ltz p1, :cond_14
+    if-ltz p1, :cond_0
 
     const/16 v0, 0x14
 
@@ -54,7 +54,7 @@
     return-void
 
     .line 2242
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "bufferSize must be >= 0"
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method final buffer(B)V
-    .registers 5
+    .locals 3
 
     .line 2269
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -91,7 +91,7 @@
 .end method
 
 .method final bufferFixed32NoTag(I)V
-    .registers 6
+    .locals 4
 
     .line 2365
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -152,7 +152,7 @@
 .end method
 
 .method final bufferFixed64NoTag(J)V
-    .registers 11
+    .locals 8
 
     .line 2377
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -289,27 +289,27 @@
 .end method
 
 .method final bufferInt32NoTag(I)V
-    .registers 4
+    .locals 2
 
-    if-ltz p1, :cond_6
+    if-ltz p1, :cond_0
 
     .line 2287
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt32NoTag(I)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     int-to-long v0, p1
 
     .line 2290
     invoke-virtual {p0, v0, v1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->bufferUInt64NoTag(J)V
 
-    :goto_a
+    :goto_0
     return-void
 .end method
 
 .method final bufferTag(II)V
-    .registers 3
+    .locals 0
 
     .line 2278
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/WireFormat;->makeTag(II)I
@@ -322,24 +322,24 @@
 .end method
 
 .method final bufferUInt32NoTag(I)V
-    .registers 8
+    .locals 6
 
     .line 2299
     invoke-static {}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->access$100()Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 2300
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     int-to-long v0, v0
 
-    :goto_9
+    :goto_0
     and-int/lit8 v2, p1, -0x80
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_0
 
     .line 2303
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -375,7 +375,7 @@
     return-void
 
     .line 2306
-    :cond_25
+    :cond_0
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     iget v3, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -396,13 +396,13 @@
 
     ushr-int/lit8 p1, p1, 0x7
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_39
-    :goto_39
+    :cond_1
+    :goto_1
     and-int/lit8 v0, p1, -0x80
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_2
 
     .line 2315
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -427,7 +427,7 @@
     return-void
 
     .line 2319
-    :cond_4f
+    :cond_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -453,11 +453,11 @@
 
     ushr-int/lit8 p1, p1, 0x7
 
-    goto :goto_39
+    goto :goto_1
 .end method
 
 .method final bufferUInt64NoTag(J)V
-    .registers 14
+    .locals 11
 
     .line 2332
     invoke-static {}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->access$100()Z
@@ -470,19 +470,19 @@
 
     const-wide/16 v4, -0x80
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 2333
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
     int-to-long v6, v0
 
-    :goto_e
+    :goto_0
     and-long v8, p1, v4
 
     cmp-long v0, v8, v2
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_0
 
     .line 2336
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -520,7 +520,7 @@
     return-void
 
     .line 2339
-    :cond_2d
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     iget v8, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -543,15 +543,15 @@
 
     ushr-long/2addr p1, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_41
-    :goto_41
+    :cond_1
+    :goto_1
     and-long v6, p1, v4
 
     cmp-long v0, v6, v2
 
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_2
 
     .line 2348
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
@@ -578,7 +578,7 @@
     return-void
 
     .line 2352
-    :cond_5a
+    :cond_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->buffer:[B
 
     iget v6, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
@@ -606,11 +606,11 @@
 
     ushr-long/2addr p1, v1
 
-    goto :goto_41
+    goto :goto_1
 .end method
 
 .method public final getTotalBytesWritten()I
-    .registers 2
+    .locals 1
 
     .line 2261
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;->totalBytesWritten:I
@@ -619,7 +619,7 @@
 .end method
 
 .method public final spaceLeft()I
-    .registers 3
+    .locals 2
 
     .line 2254
     new-instance v0, Ljava/lang/UnsupportedOperationException;

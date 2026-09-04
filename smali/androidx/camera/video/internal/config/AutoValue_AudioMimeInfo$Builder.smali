@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 83
     invoke-direct {p0}, Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;-><init>()V
@@ -35,25 +35,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/internal/config/AudioMimeInfo;
-    .registers 6
+    .locals 5
 
     .line 106
     iget-object v0, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->mimeType:Ljava/lang/String;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " mimeType"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 109
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->profile:Ljava/lang/Integer;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 110
     new-instance v1, Ljava/lang/StringBuilder;
@@ -75,12 +75,12 @@
     move-result-object v0
 
     .line 112
-    :cond_20
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .line 115
     new-instance v0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;
@@ -103,7 +103,7 @@
     return-object v0
 
     .line 113
-    :cond_37
+    :cond_2
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -126,7 +126,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/camera/video/internal/config/MimeInfo;
-    .registers 2
+    .locals 1
 
     .line 79
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->build()Landroidx/camera/video/internal/config/AudioMimeInfo;
@@ -137,7 +137,7 @@
 .end method
 
 .method public setCompatibleAudioProfile(Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;)Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 100
     iput-object p1, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->compatibleAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
@@ -146,9 +146,9 @@
 .end method
 
 .method protected setMimeType(Ljava/lang/String;)Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 90
     iput-object p1, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->mimeType:Ljava/lang/String;
@@ -156,7 +156,7 @@
     return-object p0
 
     .line 88
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null mimeType"
@@ -167,7 +167,7 @@
 .end method
 
 .method protected bridge synthetic setMimeType(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-virtual {p0, p1}, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->setMimeType(Ljava/lang/String;)Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;
@@ -178,7 +178,7 @@
 .end method
 
 .method public setProfile(I)Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 95
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -191,7 +191,7 @@
 .end method
 
 .method public bridge synthetic setProfile(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 79
     invoke-virtual {p0, p1}, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;->setProfile(I)Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;

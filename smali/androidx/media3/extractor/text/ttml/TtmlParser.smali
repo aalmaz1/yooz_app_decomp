@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const-string v0, "^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$"
 
@@ -141,13 +141,13 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 123
-    :try_start_3
+    :try_start_0
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
     move-result-object v0
@@ -158,12 +158,12 @@
 
     .line 124
     invoke-virtual {v0, v1}, Lorg/xmlpull/v1/XmlPullParserFactory;->setNamespaceAware(Z)V
-    :try_end_d
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_e
+    :catch_0
     move-exception v0
 
     .line 126
@@ -177,21 +177,21 @@
 .end method
 
 .method private static createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 1
+    .locals 0
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
     .line 638
     new-instance p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     invoke-direct {p0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;-><init>()V
 
-    :cond_7
+    :cond_0
     return-object p0
 .end method
 
 .method private static isSupportedTag(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     const-string/jumbo v0, "tt"
 
@@ -200,7 +200,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "head"
 
@@ -209,7 +209,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "body"
 
@@ -218,7 +218,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "div"
 
@@ -227,7 +227,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "p"
 
@@ -236,7 +236,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "span"
 
@@ -245,7 +245,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "br"
 
@@ -254,7 +254,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "style"
 
@@ -263,7 +263,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "styling"
 
@@ -272,7 +272,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "layout"
 
@@ -281,7 +281,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "region"
 
@@ -290,7 +290,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "metadata"
 
@@ -299,7 +299,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "image"
 
@@ -308,7 +308,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "data"
 
@@ -317,7 +317,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_1
 
     const-string v0, "information"
 
@@ -326,25 +326,25 @@
 
     move-result p0
 
-    if-eqz p0, :cond_7a
+    if-eqz p0, :cond_0
 
-    goto :goto_7c
+    goto :goto_0
 
-    :cond_7a
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_7d
+    goto :goto_1
 
-    :cond_7c
-    :goto_7c
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_7d
+    :goto_1
     return p0
 .end method
 
 .method private static parseAlignment(Ljava/lang/String;)Landroid/text/Layout$Alignment;
-    .registers 3
+    .locals 2
 
     .line 643
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -359,134 +359,134 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_54
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_10
+    :sswitch_0
     const-string v0, "start"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_19
+    if-nez p0, :cond_0
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v1, 0x4
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_1b
+    :sswitch_1
     const-string v0, "right"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_24
+    if-nez p0, :cond_1
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v1, 0x3
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_26
+    :sswitch_2
     const-string v0, "left"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_2f
+    if-nez p0, :cond_2
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     const/4 v1, 0x2
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_31
+    :sswitch_3
     const-string v0, "end"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_3a
+    if-nez p0, :cond_3
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_3a
+    :cond_3
     const/4 v1, 0x1
 
-    goto :goto_46
+    goto :goto_0
 
-    :sswitch_3c
+    :sswitch_4
     const-string v0, "center"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_45
+    if-nez p0, :cond_4
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_45
+    :cond_4
     const/4 v1, 0x0
 
-    :goto_46
-    packed-switch v1, :pswitch_data_6a
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 646
-    :pswitch_4b
+    :pswitch_0
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
     return-object p0
 
     .line 649
-    :pswitch_4e
+    :pswitch_1
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_OPPOSITE:Landroid/text/Layout$Alignment;
 
     return-object p0
 
     .line 651
-    :pswitch_51
+    :pswitch_2
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
     return-object p0
 
-    :sswitch_data_54
+    :sswitch_data_0
     .sparse-switch
-        -0x514d33ab -> :sswitch_3c
-        0x188db -> :sswitch_31
-        0x32a007 -> :sswitch_26
-        0x677c21c -> :sswitch_1b
-        0x68ac462 -> :sswitch_10
+        -0x514d33ab -> :sswitch_4
+        0x188db -> :sswitch_3
+        0x32a007 -> :sswitch_2
+        0x677c21c -> :sswitch_1
+        0x68ac462 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_51
-        :pswitch_4e
-        :pswitch_4b
-        :pswitch_4e
-        :pswitch_4b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseCellRows(Lorg/xmlpull/v1/XmlPullParser;I)I
-    .registers 9
+    .locals 7
 
     const-string v0, "Invalid cell resolution "
 
@@ -499,12 +499,12 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_d
+    if-nez p0, :cond_0
 
     return p1
 
     .line 256
-    :cond_d
+    :cond_0
     sget-object v1, Landroidx/media3/extractor/text/ttml/TtmlParser;->CELL_RESOLUTION:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -520,7 +520,7 @@
 
     const-string v4, "TtmlParser"
 
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_1
 
     .line 258
     new-instance v0, Ljava/lang/StringBuilder;
@@ -539,11 +539,11 @@
 
     return p1
 
-    :cond_2e
+    :cond_1
     const/4 v2, 0x1
 
     .line 262
-    :try_start_2f
+    :try_start_0
     invoke-virtual {v1, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v5
@@ -575,17 +575,17 @@
 
     move-result v1
 
-    if-eqz v5, :cond_51
+    if-eqz v5, :cond_2
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_51
+    :cond_2
     const/4 v2, 0x0
 
     .line 264
-    :goto_52
+    :goto_0
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -609,13 +609,13 @@
     move-result-object v0
 
     invoke-static {v2, v0}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
-    :try_end_6c
-    .catch Ljava/lang/NumberFormatException; {:try_start_2f .. :try_end_6c} :catch_6d
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return v1
 
     .line 267
-    :catch_6d
+    :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -634,7 +634,7 @@
 .end method
 
 .method private static parseFontSize(Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlStyle;)V
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -655,7 +655,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v1, v3, :cond_12
+    if-ne v1, v3, :cond_0
 
     .line 755
     sget-object v0, Landroidx/media3/extractor/text/ttml/TtmlParser;->FONT_SIZE:Ljava/util/regex/Pattern;
@@ -664,13 +664,13 @@
 
     move-result-object v0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 756
-    :cond_12
+    :cond_0
     array-length v1, v0
 
-    if-ne v1, v2, :cond_b5
+    if-ne v1, v2, :cond_5
 
     .line 757
     sget-object v1, Landroidx/media3/extractor/text/ttml/TtmlParser;->FONT_SIZE:Ljava/util/regex/Pattern;
@@ -689,14 +689,14 @@
     invoke-static {v1, v4}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 767
-    :goto_24
+    :goto_0
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v1
 
     const-string v4, "\'."
 
-    if-eqz v1, :cond_9c
+    if-eqz v1, :cond_4
 
     const/4 p0, 0x3
 
@@ -720,58 +720,58 @@
 
     const/4 v6, -0x1
 
-    sparse-switch v5, :sswitch_data_d2
+    sparse-switch v5, :sswitch_data_0
 
-    goto :goto_63
+    goto :goto_1
 
-    :sswitch_43
+    :sswitch_0
     const-string v5, "px"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_4c
+    if-nez v5, :cond_1
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_4c
+    :cond_1
     move v6, v2
 
-    goto :goto_63
+    goto :goto_1
 
-    :sswitch_4e
+    :sswitch_1
     const-string v5, "em"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_57
+    if-nez v5, :cond_2
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_57
+    :cond_2
     move v6, v3
 
-    goto :goto_63
+    goto :goto_1
 
-    :sswitch_59
+    :sswitch_2
     const-string v5, "%"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_62
+    if-nez v5, :cond_3
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_62
+    :cond_3
     const/4 v6, 0x0
 
-    :goto_63
-    packed-switch v6, :pswitch_data_e0
+    :goto_1
+    packed-switch v6, :pswitch_data_0
 
     .line 780
     new-instance p0, Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -799,23 +799,23 @@
     throw p0
 
     .line 771
-    :pswitch_7f
+    :pswitch_0
     invoke-virtual {p1, v3}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setFontSizeUnit(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
-    goto :goto_8a
+    goto :goto_2
 
     .line 774
-    :pswitch_83
+    :pswitch_1
     invoke-virtual {p1, v2}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setFontSizeUnit(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
-    goto :goto_8a
+    goto :goto_2
 
     .line 777
-    :pswitch_87
+    :pswitch_2
     invoke-virtual {p1, p0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setFontSizeUnit(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     .line 782
-    :goto_8a
+    :goto_2
     invoke-virtual {v0, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
@@ -835,7 +835,7 @@
     return-void
 
     .line 784
-    :cond_9c
+    :cond_4
     new-instance p1, Landroidx/media3/extractor/text/SubtitleDecoderException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -861,7 +861,7 @@
     throw p1
 
     .line 763
-    :cond_b5
+    :cond_5
     new-instance p0, Landroidx/media3/extractor/text/SubtitleDecoderException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -892,23 +892,23 @@
 
     nop
 
-    :sswitch_data_d2
+    :sswitch_data_0
     .sparse-switch
-        0x25 -> :sswitch_59
-        0xca8 -> :sswitch_4e
-        0xe08 -> :sswitch_43
+        0x25 -> :sswitch_2
+        0xca8 -> :sswitch_1
+        0xe08 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_e0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_87
-        :pswitch_83
-        :pswitch_7f
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseFrameAndTickRates(Lorg/xmlpull/v1/XmlPullParser;)Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;
-    .registers 8
+    .locals 7
 
     const-string v0, "frameRate"
 
@@ -919,19 +919,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 223
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/16 v0, 0x1e
 
-    :goto_11
+    :goto_0
     const-string v2, "frameRateMultiplier"
 
     .line 227
@@ -939,7 +939,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_2
 
     const-string v3, " "
 
@@ -957,16 +957,16 @@
 
     const/4 v6, 0x0
 
-    if-ne v3, v4, :cond_27
+    if-ne v3, v4, :cond_1
 
     move v3, v5
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
+    :cond_1
     move v3, v6
 
-    :goto_28
+    :goto_1
     const-string v4, "frameRateMultiplier doesn\'t have 2 parts"
 
     invoke-static {v3, v4}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -991,13 +991,13 @@
 
     div-float/2addr v3, v2
 
-    goto :goto_3f
+    goto :goto_2
 
-    :cond_3d
+    :cond_2
     const/high16 v3, 0x3f800000    # 1.0f
 
     .line 236
-    :goto_3f
+    :goto_2
     sget-object v2, Landroidx/media3/extractor/text/ttml/TtmlParser;->DEFAULT_FRAME_AND_TICK_RATE:Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;
 
     iget v4, v2, Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;->subFrameRate:I
@@ -1009,7 +1009,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_4f
+    if-eqz v5, :cond_3
 
     .line 239
     invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1017,7 +1017,7 @@
     move-result v4
 
     .line 242
-    :cond_4f
+    :cond_3
     iget v2, v2, Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;->tickRate:I
 
     const-string v5, "tickRate"
@@ -1027,7 +1027,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_5d
+    if-eqz p0, :cond_4
 
     .line 245
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1035,7 +1035,7 @@
     move-result v2
 
     .line 247
-    :cond_5d
+    :cond_4
     new-instance p0, Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;
 
     int-to-float v0, v0
@@ -1048,7 +1048,7 @@
 .end method
 
 .method private static parseHeader(Lorg/xmlpull/v1/XmlPullParser;Ljava/util/Map;ILandroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;Ljava/util/Map;Ljava/util/Map;)Ljava/util/Map;
-    .registers 11
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1091,7 +1091,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_2
 
     .line 306
     invoke-static {p0, v0}, Landroidx/media3/common/util/XmlPullParserUtil;->getAttributeValue(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
@@ -1107,7 +1107,7 @@
 
     move-result-object v1
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 309
     invoke-static {v0}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseStyleIds(Ljava/lang/String;)[Ljava/lang/String;
@@ -1118,8 +1118,8 @@
 
     const/4 v3, 0x0
 
-    :goto_20
-    if-ge v3, v2, :cond_30
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     aget-object v4, v0, v3
 
@@ -1134,22 +1134,22 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
     .line 313
-    :cond_30
+    :cond_1
     invoke-virtual {v1}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_4
 
     .line 315
     invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_59
+    goto :goto_1
 
-    :cond_3a
+    :cond_2
     const-string v0, "region"
 
     .line 317
@@ -1157,23 +1157,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_3
 
     .line 318
     invoke-static {p0, p2, p3}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseRegionAttributes(Lorg/xmlpull/v1/XmlPullParser;ILandroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;)Landroidx/media3/extractor/text/ttml/TtmlRegion;
 
     move-result-object v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_4
 
     .line 320
     iget-object v1, v0, Landroidx/media3/extractor/text/ttml/TtmlRegion;->id:Ljava/lang/String;
 
     invoke-interface {p4, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_59
+    goto :goto_1
 
-    :cond_4e
+    :cond_3
     const-string v0, "metadata"
 
     .line 322
@@ -1181,13 +1181,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_4
 
     .line 323
     invoke-static {p0, p5}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseMetadata(Lorg/xmlpull/v1/XmlPullParser;Ljava/util/Map;)V
 
-    :cond_59
-    :goto_59
+    :cond_4
+    :goto_1
     const-string v0, "head"
 
     .line 325
@@ -1201,7 +1201,7 @@
 .end method
 
 .method private static parseMetadata(Lorg/xmlpull/v1/XmlPullParser;Ljava/util/Map;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1231,7 +1231,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     const-string v0, "id"
 
@@ -1240,7 +1240,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 336
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
@@ -1250,7 +1250,7 @@
     .line 337
     invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1a
+    :cond_1
     const-string v0, "metadata"
 
     .line 340
@@ -1264,7 +1264,7 @@
 .end method
 
 .method private static parseNode(Lorg/xmlpull/v1/XmlPullParser;Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;)Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 24
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1320,8 +1320,8 @@
 
     const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_24
-    if-ge v3, v2, :cond_b4
+    :goto_0
+    if-ge v3, v2, :cond_8
 
     .line 672
     invoke-interface {v0, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
@@ -1342,113 +1342,113 @@
 
     const/4 v6, 0x1
 
-    sparse-switch v19, :sswitch_data_fe
+    sparse-switch v19, :sswitch_data_0
 
-    :goto_39
+    :goto_1
     const/4 v7, -0x1
 
-    goto :goto_7c
+    goto :goto_2
 
-    :sswitch_3b
+    :sswitch_0
     const-string v7, "backgroundImage"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_44
+    if-nez v4, :cond_0
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_44
+    :cond_0
     const/4 v7, 0x5
 
-    goto :goto_7c
+    goto :goto_2
 
-    :sswitch_46
+    :sswitch_1
     const-string v7, "style"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_4f
+    if-nez v4, :cond_1
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_4f
+    :cond_1
     const/4 v7, 0x4
 
-    goto :goto_7c
+    goto :goto_2
 
-    :sswitch_51
+    :sswitch_2
     const-string v7, "begin"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_5a
+    if-nez v4, :cond_2
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_5a
+    :cond_2
     const/4 v7, 0x3
 
-    goto :goto_7c
+    goto :goto_2
 
-    :sswitch_5c
+    :sswitch_3
     const-string v7, "end"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_65
+    if-nez v4, :cond_3
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_65
+    :cond_3
     const/4 v7, 0x2
 
-    goto :goto_7c
+    goto :goto_2
 
-    :sswitch_67
+    :sswitch_4
     const-string v7, "dur"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_70
+    if-nez v4, :cond_4
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_70
+    :cond_4
     move v7, v6
 
-    goto :goto_7c
+    goto :goto_2
 
-    :sswitch_72
+    :sswitch_5
     const-string v7, "region"
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_7b
+    if-nez v4, :cond_5
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_7b
+    :cond_5
     const/4 v7, 0x0
 
-    :goto_7c
-    packed-switch v7, :pswitch_data_118
+    :goto_2
+    packed-switch v7, :pswitch_data_0
 
-    goto :goto_9a
+    goto :goto_3
 
-    :pswitch_80
+    :pswitch_0
     const-string v4, "#"
 
     .line 701
@@ -1456,17 +1456,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_9a
+    if-eqz v4, :cond_6
 
     .line 702
     invoke-virtual {v8, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v12
 
-    goto :goto_9a
+    goto :goto_3
 
     .line 686
-    :pswitch_8d
+    :pswitch_1
     invoke-static {v8}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseStyleIds(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
@@ -1474,41 +1474,41 @@
     .line 687
     array-length v6, v4
 
-    if-lez v6, :cond_9a
+    if-lez v6, :cond_6
 
     move-object v10, v4
 
-    goto :goto_9a
+    goto :goto_3
 
     .line 676
-    :pswitch_96
+    :pswitch_2
     invoke-static {v8, v1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseTimeExpression(Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;)J
 
     move-result-wide v13
 
-    :cond_9a
-    :goto_9a
+    :cond_6
+    :goto_3
     move-object/from16 v4, p2
 
-    goto :goto_b0
+    goto :goto_4
 
     .line 679
-    :pswitch_9d
+    :pswitch_3
     invoke-static {v8, v1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseTimeExpression(Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;)J
 
     move-result-wide v15
 
-    goto :goto_9a
+    goto :goto_3
 
     .line 682
-    :pswitch_a2
+    :pswitch_4
     invoke-static {v8, v1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseTimeExpression(Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;)J
 
     move-result-wide v17
 
-    goto :goto_9a
+    goto :goto_3
 
-    :pswitch_a7
+    :pswitch_5
     move-object/from16 v4, p2
 
     .line 692
@@ -1516,18 +1516,18 @@
 
     move-result v6
 
-    if-eqz v6, :cond_b0
+    if-eqz v6, :cond_7
 
     move-object v11, v8
 
-    :cond_b0
-    :goto_b0
+    :cond_7
+    :goto_4
     add-int/lit8 v3, v3, 0x1
 
-    goto/16 :goto_24
+    goto/16 :goto_0
 
-    :cond_b4
-    if-eqz v9, :cond_d0
+    :cond_8
+    if-eqz v9, :cond_a
 
     .line 710
     iget-wide v1, v9, Landroidx/media3/extractor/text/ttml/TtmlNode;->startTimeUs:J
@@ -1536,70 +1536,70 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_d5
+    if-eqz v1, :cond_b
 
     cmp-long v1, v13, v3
 
-    if-eqz v1, :cond_c8
+    if-eqz v1, :cond_9
 
     .line 712
     iget-wide v1, v9, Landroidx/media3/extractor/text/ttml/TtmlNode;->startTimeUs:J
 
     add-long/2addr v13, v1
 
-    :cond_c8
+    :cond_9
     cmp-long v1, v15, v3
 
-    if-eqz v1, :cond_d5
+    if-eqz v1, :cond_b
 
     .line 715
     iget-wide v1, v9, Landroidx/media3/extractor/text/ttml/TtmlNode;->startTimeUs:J
 
     add-long/2addr v15, v1
 
-    goto :goto_d5
+    goto :goto_5
 
-    :cond_d0
+    :cond_a
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    :cond_d5
-    :goto_d5
+    :cond_b
+    :goto_5
     move-wide v1, v13
 
     cmp-long v6, v15, v3
 
-    if-nez v6, :cond_ee
+    if-nez v6, :cond_d
 
     cmp-long v6, v17, v3
 
-    if-eqz v6, :cond_e3
+    if-eqz v6, :cond_c
 
     add-long v17, v1, v17
 
     move-wide/from16 v3, v17
 
-    goto :goto_ef
+    goto :goto_6
 
-    :cond_e3
-    if-eqz v9, :cond_ee
+    :cond_c
+    if-eqz v9, :cond_d
 
     .line 722
     iget-wide v6, v9, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
     cmp-long v3, v6, v3
 
-    if-eqz v3, :cond_ee
+    if-eqz v3, :cond_d
 
     .line 724
     iget-wide v3, v9, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
-    goto :goto_ef
+    goto :goto_6
 
-    :cond_ee
+    :cond_d
     move-wide v3, v15
 
     .line 729
-    :goto_ef
+    :goto_6
     invoke-interface/range {p0 .. p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -1621,29 +1621,29 @@
 
     nop
 
-    :sswitch_data_fe
+    :sswitch_data_0
     .sparse-switch
-        -0x37b7d90c -> :sswitch_72
-        0x18601 -> :sswitch_67
-        0x188db -> :sswitch_5c
-        0x59478a9 -> :sswitch_51
-        0x68b1db1 -> :sswitch_46
-        0x4d0b70cd -> :sswitch_3b
+        -0x37b7d90c -> :sswitch_5
+        0x18601 -> :sswitch_4
+        0x188db -> :sswitch_3
+        0x59478a9 -> :sswitch_2
+        0x68b1db1 -> :sswitch_1
+        0x4d0b70cd -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_118
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a7
-        :pswitch_a2
-        :pswitch_9d
-        :pswitch_96
-        :pswitch_8d
-        :pswitch_80
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseRegionAttributes(Lorg/xmlpull/v1/XmlPullParser;ILandroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;)Landroidx/media3/extractor/text/ttml/TtmlRegion;
-    .registers 20
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -1658,11 +1658,11 @@
 
     const/4 v2, 0x0
 
-    if-nez v4, :cond_e
+    if-nez v4, :cond_0
 
     return-object v2
 
-    :cond_e
+    :cond_0
     const-string v3, "origin"
 
     .line 363
@@ -1672,7 +1672,7 @@
 
     const-string v5, "TtmlParser"
 
-    if-eqz v3, :cond_204
+    if-eqz v3, :cond_f
 
     .line 365
     sget-object v6, Landroidx/media3/extractor/text/ttml/TtmlParser;->PERCENTAGE_COORDINATES:Ljava/util/regex/Pattern;
@@ -1703,10 +1703,10 @@
 
     const/4 v15, 0x1
 
-    if-eqz v10, :cond_67
+    if-eqz v10, :cond_1
 
     .line 370
-    :try_start_32
+    :try_start_0
     invoke-virtual {v7, v15}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v9
@@ -1737,8 +1737,8 @@
     invoke-static {v7}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v7
-    :try_end_4f
-    .catch Ljava/lang/NumberFormatException; {:try_start_32 .. :try_end_4f} :catch_56
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     div-float/2addr v7, v13
 
@@ -1748,10 +1748,10 @@
 
     move/from16 v7, v16
 
-    goto :goto_a6
+    goto :goto_0
 
     .line 373
-    :catch_56
+    :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -1769,14 +1769,14 @@
     return-object v2
 
     .line 376
-    :cond_67
+    :cond_1
     invoke-virtual {v9}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v7
 
-    if-eqz v7, :cond_1f1
+    if-eqz v7, :cond_e
 
-    if-nez v1, :cond_80
+    if-nez v1, :cond_2
 
     .line 378
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1796,8 +1796,8 @@
     return-object v2
 
     .line 382
-    :cond_80
-    :try_start_80
+    :cond_2
+    :try_start_1
     invoke-virtual {v9, v15}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v7
@@ -1840,14 +1840,14 @@
 
     .line 386
     iget v10, v1, Landroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;->height:I
-    :try_end_a4
-    .catch Ljava/lang/NumberFormatException; {:try_start_80 .. :try_end_a4} :catch_1e0
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_3
 
     int-to-float v10, v10
 
     div-float/2addr v9, v10
 
-    :goto_a6
+    :goto_0
     const-string v10, "extent"
 
     .line 408
@@ -1855,7 +1855,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_1da
+    if-eqz v10, :cond_d
 
     .line 410
     invoke-virtual {v6, v10}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1874,10 +1874,10 @@
 
     const-string v11, "Ignoring region with malformed extent: "
 
-    if-eqz v10, :cond_ef
+    if-eqz v10, :cond_3
 
     .line 415
-    :try_start_be
+    :try_start_2
     invoke-virtual {v6, v15}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1908,17 +1908,17 @@
     invoke-static {v6}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v2
-    :try_end_db
-    .catch Ljava/lang/NumberFormatException; {:try_start_be .. :try_end_db} :catch_de
+    :try_end_2
+    .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_1
 
     div-float/2addr v2, v13
 
     move v10, v2
 
-    goto :goto_130
+    goto :goto_1
 
     .line 419
-    :catch_de
+    :catch_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -1936,14 +1936,14 @@
     return-object v2
 
     .line 422
-    :cond_ef
+    :cond_3
     invoke-virtual {v8}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v6
 
-    if-eqz v6, :cond_1c7
+    if-eqz v6, :cond_c
 
-    if-nez v1, :cond_108
+    if-nez v1, :cond_4
 
     .line 424
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1963,8 +1963,8 @@
     return-object v2
 
     .line 428
-    :cond_108
-    :try_start_108
+    :cond_4
+    :try_start_3
     invoke-virtual {v8, v15}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v6
@@ -2007,8 +2007,8 @@
 
     .line 432
     iget v1, v1, Landroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;->height:I
-    :try_end_12c
-    .catch Ljava/lang/NumberFormatException; {:try_start_108 .. :try_end_12c} :catch_1b6
+    :try_end_3
+    .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_2
 
     int-to-float v1, v1
 
@@ -2018,7 +2018,7 @@
 
     move v10, v8
 
-    :goto_130
+    :goto_1
     const-string v2, "displayAlign"
 
     .line 454
@@ -2028,7 +2028,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_15d
+    if-eqz v2, :cond_7
 
     .line 456
     invoke-static {v2}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -2043,7 +2043,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_155
+    if-nez v5, :cond_6
 
     const-string v5, "after"
 
@@ -2051,20 +2051,20 @@
 
     move-result v2
 
-    if-nez v2, :cond_151
+    if-nez v2, :cond_5
 
-    goto :goto_15d
+    goto :goto_2
 
-    :cond_151
+    :cond_5
     add-float/2addr v9, v10
 
     move v6, v9
 
     move v8, v14
 
-    goto :goto_15f
+    goto :goto_3
 
-    :cond_155
+    :cond_6
     const/high16 v2, 0x40000000    # 2.0f
 
     div-float v2, v10, v2
@@ -2075,15 +2075,15 @@
 
     move v8, v15
 
-    goto :goto_15f
+    goto :goto_3
 
-    :cond_15d
-    :goto_15d
+    :cond_7
+    :goto_2
     move v8, v3
 
     move v6, v9
 
-    :goto_15f
+    :goto_3
     const/high16 v2, 0x3f800000    # 1.0f
 
     move/from16 v5, p1
@@ -2099,7 +2099,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a7
+    if-eqz v0, :cond_b
 
     .line 478
     invoke-static {v0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -2114,80 +2114,80 @@
 
     const/4 v5, -0x1
 
-    sparse-switch v2, :sswitch_data_20a
+    sparse-switch v2, :sswitch_data_0
 
-    :goto_17e
+    :goto_4
     move v3, v5
 
-    goto :goto_19f
+    goto :goto_5
 
-    :sswitch_180
+    :sswitch_0
     const-string v2, "tbrl"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_189
+    if-nez v0, :cond_8
 
-    goto :goto_17e
+    goto :goto_4
 
-    :cond_189
+    :cond_8
     move v3, v14
 
-    goto :goto_19f
+    goto :goto_5
 
-    :sswitch_18b
+    :sswitch_1
     const-string v2, "tblr"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_194
+    if-nez v0, :cond_9
 
-    goto :goto_17e
+    goto :goto_4
 
-    :cond_194
+    :cond_9
     move v3, v15
 
-    goto :goto_19f
+    goto :goto_5
 
-    :sswitch_196
+    :sswitch_2
     const-string v2, "tb"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_19f
+    if-nez v0, :cond_a
 
-    goto :goto_17e
+    goto :goto_4
 
-    :cond_19f
-    :goto_19f
-    packed-switch v3, :pswitch_data_218
+    :cond_a
+    :goto_5
+    packed-switch v3, :pswitch_data_0
 
-    goto :goto_1a7
+    goto :goto_6
 
-    :pswitch_1a3
+    :pswitch_0
     move v13, v15
 
-    goto :goto_1aa
+    goto :goto_7
 
-    :pswitch_1a5
+    :pswitch_1
     move v13, v14
 
-    goto :goto_1aa
+    goto :goto_7
 
-    :cond_1a7
-    :goto_1a7
+    :cond_b
+    :goto_6
     const/high16 v0, -0x80000000
 
     move v13, v0
 
     .line 492
-    :goto_1aa
+    :goto_7
     new-instance v0, Landroidx/media3/extractor/text/ttml/TtmlRegion;
 
     const/4 v2, 0x0
@@ -2207,7 +2207,7 @@
     return-object v0
 
     .line 434
-    :catch_1b6
+    :catch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -2225,7 +2225,7 @@
     return-object v2
 
     .line 438
-    :cond_1c7
+    :cond_c
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Ignoring region with unsupported extent: "
@@ -2244,7 +2244,7 @@
 
     return-object v2
 
-    :cond_1da
+    :cond_d
     const-string v0, "Ignoring region without an extent"
 
     .line 442
@@ -2253,7 +2253,7 @@
     return-object v2
 
     .line 388
-    :catch_1e0
+    :catch_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -2271,7 +2271,7 @@
     return-object v2
 
     .line 392
-    :cond_1f1
+    :cond_e
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Ignoring region with unsupported origin: "
@@ -2290,7 +2290,7 @@
 
     return-object v2
 
-    :cond_204
+    :cond_f
     const-string v0, "Ignoring region without an origin"
 
     .line 396
@@ -2298,23 +2298,23 @@
 
     return-object v2
 
-    :sswitch_data_20a
+    :sswitch_data_0
     .sparse-switch
-        0xe6e -> :sswitch_196
-        0x363874 -> :sswitch_18b
-        0x363928 -> :sswitch_180
+        0xe6e -> :sswitch_2
+        0x363874 -> :sswitch_1
+        0x363928 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_218
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a5
-        :pswitch_1a5
-        :pswitch_1a3
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseShear(Ljava/lang/String;)F
-    .registers 6
+    .locals 5
 
     .line 793
     sget-object v0, Landroidx/media3/extractor/text/ttml/TtmlParser;->SIGNED_PERCENTAGE:Ljava/util/regex/Pattern;
@@ -2332,7 +2332,7 @@
 
     const-string v3, "TtmlParser"
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_0
 
     .line 795
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2353,11 +2353,11 @@
 
     return v2
 
-    :cond_24
+    :cond_0
     const/4 v1, 0x1
 
     .line 799
-    :try_start_25
+    :try_start_0
     invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -2386,12 +2386,12 @@
     invoke-static {v1, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result p0
-    :try_end_3f
-    .catch Ljava/lang/NumberFormatException; {:try_start_25 .. :try_end_3f} :catch_40
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_40
+    :catch_0
     move-exception v0
 
     .line 808
@@ -2415,7 +2415,7 @@
 .end method
 
 .method private static parseStyleAttributes(Lorg/xmlpull/v1/XmlPullParser;Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 14
+    .locals 12
 
     .line 512
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeCount()I
@@ -2426,8 +2426,8 @@
 
     move v2, v1
 
-    :goto_6
-    if-ge v2, v0, :cond_2f1
+    :goto_0
+    if-ge v2, v0, :cond_1e
 
     .line 514
     invoke-interface {p0, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
@@ -2457,260 +2457,260 @@
 
     const/4 v11, 0x1
 
-    sparse-switch v5, :sswitch_data_2f2
+    sparse-switch v5, :sswitch_data_0
 
-    :goto_20
+    :goto_1
     move v4, v8
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_23
+    :sswitch_0
     const-string v5, "multiRowAlign"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_2c
+    if-nez v4, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_2c
+    :cond_0
     const/16 v4, 0xe
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_30
+    :sswitch_1
     const-string v5, "backgroundColor"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_39
+    if-nez v4, :cond_1
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_39
+    :cond_1
     const/16 v4, 0xd
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_3d
+    :sswitch_2
     const-string v5, "rubyPosition"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_46
+    if-nez v4, :cond_2
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_46
+    :cond_2
     const/16 v4, 0xc
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_4a
+    :sswitch_3
     const-string v5, "textEmphasis"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_53
+    if-nez v4, :cond_3
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_53
+    :cond_3
     const/16 v4, 0xb
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_57
+    :sswitch_4
     const-string v5, "fontSize"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_60
+    if-nez v4, :cond_4
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_60
+    :cond_4
     const/16 v4, 0xa
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_64
+    :sswitch_5
     const-string v5, "textCombine"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_6d
+    if-nez v4, :cond_5
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_6d
+    :cond_5
     const/16 v4, 0x9
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_71
+    :sswitch_6
     const-string v5, "shear"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_7a
+    if-nez v4, :cond_6
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_7a
+    :cond_6
     const/16 v4, 0x8
 
-    goto/16 :goto_da
+    goto/16 :goto_2
 
-    :sswitch_7e
+    :sswitch_7
     const-string v5, "color"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_87
+    if-nez v4, :cond_7
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_87
+    :cond_7
     const/4 v4, 0x7
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_89
+    :sswitch_8
     const-string v5, "ruby"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_92
+    if-nez v4, :cond_8
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_92
+    :cond_8
     const/4 v4, 0x6
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_94
+    :sswitch_9
     const-string v5, "id"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_9d
+    if-nez v4, :cond_9
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_9d
+    :cond_9
     move v4, v6
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_9f
+    :sswitch_a
     const-string v5, "fontWeight"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_a9
+    if-nez v4, :cond_a
 
-    goto/16 :goto_20
+    goto/16 :goto_1
 
-    :cond_a9
+    :cond_a
     move v4, v7
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_ab
+    :sswitch_b
     const-string v5, "textDecoration"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_b5
+    if-nez v4, :cond_b
 
-    goto/16 :goto_20
+    goto/16 :goto_1
 
-    :cond_b5
+    :cond_b
     move v4, v9
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_b7
+    :sswitch_c
     const-string v5, "textAlign"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_c1
+    if-nez v4, :cond_c
 
-    goto/16 :goto_20
+    goto/16 :goto_1
 
-    :cond_c1
+    :cond_c
     move v4, v10
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_c3
+    :sswitch_d
     const-string v5, "fontFamily"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_cd
+    if-nez v4, :cond_d
 
-    goto/16 :goto_20
+    goto/16 :goto_1
 
-    :cond_cd
+    :cond_d
     move v4, v11
 
-    goto :goto_da
+    goto :goto_2
 
-    :sswitch_cf
+    :sswitch_e
     const-string v5, "fontStyle"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_d9
+    if-nez v4, :cond_e
 
-    goto/16 :goto_20
+    goto/16 :goto_1
 
-    :cond_d9
+    :cond_e
     move v4, v1
 
-    :goto_da
+    :goto_2
     const-string v5, "TtmlParser"
 
-    packed-switch v4, :pswitch_data_330
+    packed-switch v4, :pswitch_data_0
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 558
-    :pswitch_e1
+    :pswitch_0
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2723,28 +2723,28 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 522
-    :pswitch_ef
+    :pswitch_1
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
 
     .line 524
-    :try_start_f3
+    :try_start_0
     invoke-static {v3}, Landroidx/media3/common/util/ColorParser;->parseTtmlColor(Ljava/lang/String;)I
 
     move-result v4
 
     invoke-virtual {p1, v4}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setBackgroundColor(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    :try_end_fa
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_f3 .. :try_end_fa} :catch_fc
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 526
-    :catch_fc
+    :catch_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     const-string v6, "Failed parsing background value: "
@@ -2761,10 +2761,10 @@
 
     invoke-static {v5, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 595
-    :pswitch_110
+    :pswitch_2
     invoke-static {v3}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -2777,7 +2777,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_133
+    if-nez v4, :cond_10
 
     const-string v4, "after"
 
@@ -2785,12 +2785,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_129
+    if-nez v3, :cond_f
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 600
-    :cond_129
+    :cond_f
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2799,10 +2799,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 597
-    :cond_133
+    :cond_10
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2811,10 +2811,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 624
-    :pswitch_13d
+    :pswitch_3
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2827,24 +2827,24 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 542
-    :pswitch_14b
-    :try_start_14b
+    :pswitch_4
+    :try_start_1
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
 
     .line 543
     invoke-static {v3, p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseFontSize(Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlStyle;)V
-    :try_end_152
-    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_14b .. :try_end_152} :catch_154
+    :try_end_1
+    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 545
-    :catch_154
+    :catch_1
     new-instance v4, Ljava/lang/StringBuilder;
 
     const-string v6, "Failed parsing fontSize value: "
@@ -2861,10 +2861,10 @@
 
     invoke-static {v5, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 561
-    :pswitch_168
+    :pswitch_5
     invoke-static {v3}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -2877,7 +2877,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_18b
+    if-nez v4, :cond_12
 
     const-string v4, "none"
 
@@ -2885,12 +2885,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_181
+    if-nez v3, :cond_11
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 563
-    :cond_181
+    :cond_11
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2899,10 +2899,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 566
-    :cond_18b
+    :cond_12
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2911,10 +2911,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 627
-    :pswitch_195
+    :pswitch_6
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -2927,28 +2927,28 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 530
-    :pswitch_1a3
+    :pswitch_7
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
 
     .line 532
-    :try_start_1a7
+    :try_start_2
     invoke-static {v3}, Landroidx/media3/common/util/ColorParser;->parseTtmlColor(Ljava/lang/String;)I
 
     move-result v4
 
     invoke-virtual {p1, v4}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setFontColor(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    :try_end_1ae
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1a7 .. :try_end_1ae} :catch_1b0
+    :try_end_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 534
-    :catch_1b0
+    :catch_2
     new-instance v4, Ljava/lang/StringBuilder;
 
     const-string v6, "Failed parsing color value: "
@@ -2965,10 +2965,10 @@
 
     invoke-static {v5, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 574
-    :pswitch_1c4
+    :pswitch_8
     invoke-static {v3}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -2979,110 +2979,110 @@
 
     move-result v4
 
-    sparse-switch v4, :sswitch_data_352
+    sparse-switch v4, :sswitch_data_1
 
-    :goto_1d2
+    :goto_3
     move v6, v8
 
-    goto :goto_213
+    goto :goto_4
 
-    :sswitch_1d4
+    :sswitch_f
     const-string v4, "text"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_213
+    if-nez v3, :cond_18
 
-    goto :goto_1d2
+    goto :goto_3
 
-    :sswitch_1dd
+    :sswitch_10
     const-string v4, "base"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_1e6
+    if-nez v3, :cond_13
 
-    goto :goto_1d2
+    goto :goto_3
 
-    :cond_1e6
+    :cond_13
     move v6, v7
 
-    goto :goto_213
+    goto :goto_4
 
-    :sswitch_1e8
+    :sswitch_11
     const-string v4, "textContainer"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_1f1
+    if-nez v3, :cond_14
 
-    goto :goto_1d2
+    goto :goto_3
 
-    :cond_1f1
+    :cond_14
     move v6, v9
 
-    goto :goto_213
+    goto :goto_4
 
-    :sswitch_1f3
+    :sswitch_12
     const-string v4, "delimiter"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_1fc
+    if-nez v3, :cond_15
 
-    goto :goto_1d2
+    goto :goto_3
 
-    :cond_1fc
+    :cond_15
     move v6, v10
 
-    goto :goto_213
+    goto :goto_4
 
-    :sswitch_1fe
+    :sswitch_13
     const-string v4, "container"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_207
+    if-nez v3, :cond_16
 
-    goto :goto_1d2
+    goto :goto_3
 
-    :cond_207
+    :cond_16
     move v6, v11
 
-    goto :goto_213
+    goto :goto_4
 
-    :sswitch_209
+    :sswitch_14
     const-string v4, "baseContainer"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_212
+    if-nez v3, :cond_17
 
-    goto :goto_1d2
+    goto :goto_3
 
-    :cond_212
+    :cond_17
     move v6, v1
 
-    :cond_213
-    :goto_213
-    packed-switch v6, :pswitch_data_36c
+    :cond_18
+    :goto_4
+    packed-switch v6, :pswitch_data_1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 584
-    :pswitch_218
+    :pswitch_9
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3091,10 +3091,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 587
-    :pswitch_222
+    :pswitch_a
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3103,10 +3103,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 576
-    :pswitch_22c
+    :pswitch_b
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3115,10 +3115,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 580
-    :pswitch_236
+    :pswitch_c
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3127,9 +3127,9 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
-    :pswitch_240
+    :pswitch_d
     const-string v4, "style"
 
     .line 517
@@ -3141,7 +3141,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2ed
+    if-eqz v4, :cond_1d
 
     .line 518
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
@@ -3152,10 +3152,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 549
-    :pswitch_256
+    :pswitch_e
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3170,10 +3170,10 @@
 
     move-result-object p1
 
-    goto/16 :goto_2ed
+    goto/16 :goto_6
 
     .line 608
-    :pswitch_266
+    :pswitch_f
     invoke-static {v3}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -3184,79 +3184,79 @@
 
     move-result v4
 
-    sparse-switch v4, :sswitch_data_37c
+    sparse-switch v4, :sswitch_data_2
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :sswitch_275
+    :sswitch_15
     const-string v4, "linethrough"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_27e
+    if-nez v3, :cond_19
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :cond_27e
+    :cond_19
     move v8, v9
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :sswitch_280
+    :sswitch_16
     const-string v4, "nolinethrough"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_289
+    if-nez v3, :cond_1a
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :cond_289
+    :cond_1a
     move v8, v10
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :sswitch_28b
+    :sswitch_17
     const-string/jumbo v4, "underline"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_295
+    if-nez v3, :cond_1b
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :cond_295
+    :cond_1b
     move v8, v11
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :sswitch_297
+    :sswitch_18
     const-string v4, "nounderline"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_2a0
+    if-nez v3, :cond_1c
 
-    goto :goto_2a1
+    goto :goto_5
 
-    :cond_2a0
+    :cond_1c
     move v8, v1
 
-    :goto_2a1
-    packed-switch v8, :pswitch_data_38e
+    :goto_5
+    packed-switch v8, :pswitch_data_2
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 610
-    :pswitch_2a5
+    :pswitch_10
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3265,10 +3265,10 @@
 
     move-result-object p1
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 613
-    :pswitch_2ae
+    :pswitch_11
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3277,10 +3277,10 @@
 
     move-result-object p1
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 616
-    :pswitch_2b7
+    :pswitch_12
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3289,10 +3289,10 @@
 
     move-result-object p1
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 619
-    :pswitch_2c0
+    :pswitch_13
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3301,10 +3301,10 @@
 
     move-result-object p1
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 555
-    :pswitch_2c9
+    :pswitch_14
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3317,10 +3317,10 @@
 
     move-result-object p1
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 538
-    :pswitch_2d6
+    :pswitch_15
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3329,10 +3329,10 @@
 
     move-result-object p1
 
-    goto :goto_2ed
+    goto :goto_6
 
     .line 552
-    :pswitch_2df
+    :pswitch_16
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlParser;->createIfNull(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     move-result-object p1
@@ -3347,92 +3347,92 @@
 
     move-result-object p1
 
-    :cond_2ed
-    :goto_2ed
+    :cond_1d
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_6
+    goto/16 :goto_0
 
-    :cond_2f1
+    :cond_1e
     return-object p1
 
-    :sswitch_data_2f2
+    :sswitch_data_0
     .sparse-switch
-        -0x5c71855e -> :sswitch_cf
-        -0x48ff636d -> :sswitch_c3
-        -0x3f826a28 -> :sswitch_b7
-        -0x3468fa43 -> :sswitch_ab
-        -0x2bc67c59 -> :sswitch_9f
-        0xd1b -> :sswitch_94
-        0x3595da -> :sswitch_89
-        0x5a72f63 -> :sswitch_7e
-        0x6855ce1 -> :sswitch_71
-        0x6909352 -> :sswitch_64
-        0x15caa0f0 -> :sswitch_57
-        0x36e741c9 -> :sswitch_4a
-        0x42841923 -> :sswitch_3d
-        0x4cb7f6d5 -> :sswitch_30
-        0x6899f5a4 -> :sswitch_23
+        -0x5c71855e -> :sswitch_e
+        -0x48ff636d -> :sswitch_d
+        -0x3f826a28 -> :sswitch_c
+        -0x3468fa43 -> :sswitch_b
+        -0x2bc67c59 -> :sswitch_a
+        0xd1b -> :sswitch_9
+        0x3595da -> :sswitch_8
+        0x5a72f63 -> :sswitch_7
+        0x6855ce1 -> :sswitch_6
+        0x6909352 -> :sswitch_5
+        0x15caa0f0 -> :sswitch_4
+        0x36e741c9 -> :sswitch_3
+        0x42841923 -> :sswitch_2
+        0x4cb7f6d5 -> :sswitch_1
+        0x6899f5a4 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_330
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2df
-        :pswitch_2d6
-        :pswitch_2c9
-        :pswitch_266
-        :pswitch_256
-        :pswitch_240
-        :pswitch_1c4
-        :pswitch_1a3
-        :pswitch_195
-        :pswitch_168
-        :pswitch_14b
-        :pswitch_13d
-        :pswitch_110
-        :pswitch_ef
-        :pswitch_e1
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
-    :sswitch_data_352
+    :sswitch_data_1
     .sparse-switch
-        -0x24de7f50 -> :sswitch_209
-        -0x187eb37f -> :sswitch_1fe
-        -0xeee99f9 -> :sswitch_1f3
-        -0x81c562c -> :sswitch_1e8
-        0x2e06d1 -> :sswitch_1dd
-        0x36452d -> :sswitch_1d4
+        -0x24de7f50 -> :sswitch_14
+        -0x187eb37f -> :sswitch_13
+        -0xeee99f9 -> :sswitch_12
+        -0x81c562c -> :sswitch_11
+        0x2e06d1 -> :sswitch_10
+        0x36452d -> :sswitch_f
     .end sparse-switch
 
-    :pswitch_data_36c
+    :pswitch_data_1
     .packed-switch 0x0
-        :pswitch_236
-        :pswitch_22c
-        :pswitch_222
-        :pswitch_218
-        :pswitch_236
-        :pswitch_218
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_c
+        :pswitch_9
     .end packed-switch
 
-    :sswitch_data_37c
+    :sswitch_data_2
     .sparse-switch
-        -0x57195dd5 -> :sswitch_297
-        -0x3d363934 -> :sswitch_28b
-        0x36723ff0 -> :sswitch_280
-        0x641ec051 -> :sswitch_275
+        -0x57195dd5 -> :sswitch_18
+        -0x3d363934 -> :sswitch_17
+        0x36723ff0 -> :sswitch_16
+        0x641ec051 -> :sswitch_15
     .end sparse-switch
 
-    :pswitch_data_38e
+    :pswitch_data_2
     .packed-switch 0x0
-        :pswitch_2c0
-        :pswitch_2b7
-        :pswitch_2ae
-        :pswitch_2a5
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
     .end packed-switch
 .end method
 
 .method private static parseStyleIds(Ljava/lang/String;)[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 506
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -3444,27 +3444,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
     new-array p0, p0, [Ljava/lang/String;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const-string v0, "\\s+"
 
     invoke-static {p0, v0}, Landroidx/media3/common/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_14
+    :goto_0
     return-object p0
 .end method
 
 .method private static parseTimeExpression(Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;)J
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -3493,7 +3493,7 @@
 
     const/4 v7, 0x1
 
-    if-eqz v1, :cond_85
+    if-eqz v1, :cond_3
 
     .line 828
     invoke-virtual {v0, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -3568,19 +3568,19 @@
 
     const-wide/16 v4, 0x0
 
-    if-eqz p0, :cond_57
+    if-eqz p0, :cond_0
 
     .line 835
     invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v9
 
-    goto :goto_58
+    goto :goto_0
 
-    :cond_57
+    :cond_0
     move-wide v9, v4
 
-    :goto_58
+    :goto_0
     add-double/2addr v7, v9
 
     const/4 p0, 0x5
@@ -3590,7 +3590,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_6a
+    if-eqz p0, :cond_1
 
     .line 838
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -3605,12 +3605,12 @@
 
     float-to-double v9, p0
 
-    goto :goto_6b
+    goto :goto_1
 
-    :cond_6a
+    :cond_1
     move-wide v9, v4
 
-    :goto_6b
+    :goto_1
     add-double/2addr v7, v9
 
     const/4 p0, 0x6
@@ -3620,7 +3620,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_81
+    if-eqz p0, :cond_2
 
     .line 842
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -3641,7 +3641,7 @@
 
     div-double v4, v0, p0
 
-    :cond_81
+    :cond_2
     add-double/2addr v7, v4
 
     mul-double/2addr v7, v2
@@ -3651,7 +3651,7 @@
     return-wide p0
 
     .line 848
-    :cond_85
+    :cond_3
     sget-object v0, Landroidx/media3/extractor/text/ttml/TtmlParser;->OFFSET_TIME:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -3663,7 +3663,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_10a
+    if-eqz v1, :cond_9
 
     .line 850
     invoke-virtual {v0, v7}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -3701,130 +3701,130 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_120
+    sparse-switch v0, :sswitch_data_0
 
-    :goto_b4
+    :goto_2
     move v4, v1
 
-    goto :goto_ea
+    goto :goto_3
 
-    :sswitch_b6
+    :sswitch_0
     const-string v0, "ms"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_ea
+    if-nez p0, :cond_8
 
-    goto :goto_b4
+    goto :goto_2
 
-    :sswitch_bf
+    :sswitch_1
     const-string v0, "t"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_c8
+    if-nez p0, :cond_4
 
-    goto :goto_b4
+    goto :goto_2
 
-    :cond_c8
+    :cond_4
     move v4, v5
 
-    goto :goto_ea
+    goto :goto_3
 
-    :sswitch_ca
+    :sswitch_2
     const-string v0, "m"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_d3
+    if-nez p0, :cond_5
 
-    goto :goto_b4
+    goto :goto_2
 
-    :cond_d3
+    :cond_5
     move v4, v6
 
-    goto :goto_ea
+    goto :goto_3
 
-    :sswitch_d5
+    :sswitch_3
     const-string v0, "h"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_de
+    if-nez p0, :cond_6
 
-    goto :goto_b4
+    goto :goto_2
 
-    :cond_de
+    :cond_6
     move v4, v7
 
-    goto :goto_ea
+    goto :goto_3
 
-    :sswitch_e0
+    :sswitch_4
     const-string v0, "f"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_e9
+    if-nez p0, :cond_7
 
-    goto :goto_b4
+    goto :goto_2
 
-    :cond_e9
+    :cond_7
     const/4 v4, 0x0
 
-    :cond_ea
-    :goto_ea
-    packed-switch v4, :pswitch_data_136
+    :cond_8
+    :goto_3
+    packed-switch v4, :pswitch_data_0
 
-    goto :goto_107
+    goto :goto_6
 
-    :pswitch_ee
+    :pswitch_0
     const-wide p0, 0x408f400000000000L    # 1000.0
 
-    :goto_f3
+    :goto_4
     div-double/2addr v8, p0
 
-    goto :goto_107
+    goto :goto_6
 
     .line 870
-    :pswitch_f5
+    :pswitch_1
     iget p0, p1, Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;->tickRate:I
 
     int-to-double p0, p0
 
-    goto :goto_f3
+    goto :goto_4
 
-    :pswitch_f9
+    :pswitch_2
     const-wide/high16 p0, 0x404e000000000000L    # 60.0
 
-    goto :goto_101
+    goto :goto_5
 
-    :pswitch_fc
+    :pswitch_3
     const-wide p0, 0x40ac200000000000L    # 3600.0
 
-    :goto_101
+    :goto_5
     mul-double/2addr v8, p0
 
-    goto :goto_107
+    goto :goto_6
 
     .line 867
-    :pswitch_103
+    :pswitch_4
     iget p0, p1, Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;->effectiveFrameRate:F
 
     float-to-double p0, p0
 
-    goto :goto_f3
+    goto :goto_4
 
-    :goto_107
+    :goto_6
     mul-double/2addr v8, v2
 
     double-to-long p0, v8
@@ -3832,7 +3832,7 @@
     return-wide p0
 
     .line 875
-    :cond_10a
+    :cond_9
     new-instance p1, Landroidx/media3/extractor/text/SubtitleDecoderException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3855,27 +3855,27 @@
 
     nop
 
-    :sswitch_data_120
+    :sswitch_data_0
     .sparse-switch
-        0x66 -> :sswitch_e0
-        0x68 -> :sswitch_d5
-        0x6d -> :sswitch_ca
-        0x74 -> :sswitch_bf
-        0xda6 -> :sswitch_b6
+        0x66 -> :sswitch_4
+        0x68 -> :sswitch_3
+        0x6d -> :sswitch_2
+        0x74 -> :sswitch_1
+        0xda6 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_136
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_103
-        :pswitch_fc
-        :pswitch_f9
-        :pswitch_f5
-        :pswitch_ee
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseTtsExtent(Lorg/xmlpull/v1/XmlPullParser;)Landroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;
-    .registers 6
+    .locals 5
 
     const-string v0, "extent"
 
@@ -3886,12 +3886,12 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
     return-object v0
 
     .line 280
-    :cond_a
+    :cond_0
     sget-object v1, Landroidx/media3/extractor/text/ttml/TtmlParser;->PIXEL_COORDINATES:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -3905,7 +3905,7 @@
 
     const-string v3, "TtmlParser"
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_1
 
     .line 282
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3926,11 +3926,11 @@
 
     return-object v0
 
-    :cond_2b
+    :cond_1
     const/4 v2, 0x1
 
     .line 286
-    :try_start_2c
+    :try_start_0
     invoke-virtual {v1, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -3966,13 +3966,13 @@
     new-instance v4, Landroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;
 
     invoke-direct {v4, v2, v1}, Landroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;-><init>(II)V
-    :try_end_4e
-    .catch Ljava/lang/NumberFormatException; {:try_start_2c .. :try_end_4e} :catch_4f
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v4
 
     .line 290
-    :catch_4f
+    :catch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Ignoring malformed tts extent: "
@@ -3995,7 +3995,7 @@
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -4003,7 +4003,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -4026,14 +4026,14 @@
 .end method
 
 .method public parseToLegacySubtitle([BII)Landroidx/media3/extractor/text/Subtitle;
-    .registers 22
+    .locals 18
 
     const-string v0, ""
 
     move-object/from16 v1, p0
 
     .line 149
-    :try_start_4
+    :try_start_0
     iget-object v2, v1, Landroidx/media3/extractor/text/ttml/TtmlParser;->xmlParserFactory:Lorg/xmlpull/v1/XmlPullParserFactory;
 
     invoke-virtual {v2}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
@@ -4099,10 +4099,10 @@
 
     const/16 v5, 0xf
 
-    :goto_40
+    :goto_0
     const/4 v6, 0x1
 
-    if-eq v0, v6, :cond_11e
+    if-eq v0, v6, :cond_a
 
     .line 164
     invoke-virtual {v12}, Ljava/util/ArrayDeque;->peek()Ljava/lang/Object;
@@ -4113,27 +4113,27 @@
 
     const/4 v8, 0x2
 
-    if-nez v15, :cond_109
+    if-nez v15, :cond_7
 
     .line 166
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v7
-    :try_end_50
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_50} :catch_12e
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_50} :catch_125
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     const-string/jumbo v13, "tt"
 
-    if-ne v0, v8, :cond_d0
+    if-ne v0, v8, :cond_4
 
     .line 168
-    :try_start_55
+    :try_start_1
     invoke-virtual {v13, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_0
 
     .line 169
     invoke-static {v2}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseFrameAndTickRates(Lorg/xmlpull/v1/XmlPullParser;)Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;
@@ -4152,12 +4152,12 @@
 
     move-result-object v3
 
-    goto :goto_6c
+    goto :goto_1
 
-    :cond_6a
+    :cond_0
     const/16 v13, 0xf
 
-    :goto_6c
+    :goto_1
     move-object/from16 v16, v3
 
     move-object v8, v4
@@ -4168,16 +4168,16 @@
     invoke-static {v7}, Landroidx/media3/extractor/text/ttml/TtmlParser;->isSupportedTag(Ljava/lang/String;)Z
 
     move-result v0
-    :try_end_75
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_55 .. :try_end_75} :catch_12e
-    .catch Ljava/io/IOException; {:try_start_55 .. :try_end_75} :catch_125
+    :try_end_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     const-string v3, "TtmlParser"
 
-    if-nez v0, :cond_9d
+    if-nez v0, :cond_1
 
     .line 174
-    :try_start_79
+    :try_start_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4212,9 +4212,9 @@
 
     move/from16 v5, v17
 
-    goto/16 :goto_115
+    goto/16 :goto_3
 
-    :cond_9d
+    :cond_1
     const-string v0, "head"
 
     .line 176
@@ -4222,7 +4222,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b2
+    if-eqz v0, :cond_2
 
     move-object v3, v2
 
@@ -4240,17 +4240,17 @@
 
     .line 177
     invoke-static/range {v3 .. v8}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseHeader(Lorg/xmlpull/v1/XmlPullParser;Ljava/util/Map;ILandroidx/media3/extractor/text/ttml/TtmlParser$TtsExtent;Ljava/util/Map;Ljava/util/Map;)Ljava/util/Map;
-    :try_end_b1
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_79 .. :try_end_b1} :catch_12e
-    .catch Ljava/io/IOException; {:try_start_79 .. :try_end_b1} :catch_125
+    :try_end_2
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_bf
+    goto :goto_2
 
-    :cond_b2
+    :cond_2
     move-object v13, v8
 
     .line 180
-    :try_start_b3
+    :try_start_3
     invoke-static {v2, v6, v10, v13}, Landroidx/media3/extractor/text/ttml/TtmlParser;->parseNode(Lorg/xmlpull/v1/XmlPullParser;Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;Landroidx/media3/extractor/text/ttml/TtmlParser$FrameAndTickRate;)Landroidx/media3/extractor/text/ttml/TtmlNode;
 
     move-result-object v0
@@ -4258,17 +4258,17 @@
     .line 181
     invoke-virtual {v12, v0}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
-    if-eqz v6, :cond_bf
+    if-eqz v6, :cond_3
 
     .line 183
     invoke-virtual {v6, v0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->addChild(Landroidx/media3/extractor/text/ttml/TtmlNode;)V
-    :try_end_bf
-    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_b3 .. :try_end_bf} :catch_c7
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_b3 .. :try_end_bf} :catch_12e
-    .catch Ljava/io/IOException; {:try_start_b3 .. :try_end_bf} :catch_125
+    :try_end_3
+    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
-    :cond_bf
-    :goto_bf
+    :cond_3
+    :goto_2
     move-object v4, v13
 
     move-object/from16 v3, v16
@@ -4277,12 +4277,12 @@
 
     const/16 v7, 0xf
 
-    goto :goto_115
+    goto :goto_3
 
-    :catch_c7
+    :catch_0
     move-exception v0
 
-    :try_start_c8
+    :try_start_4
     const-string v4, "Suppressing parser error"
 
     .line 186
@@ -4290,14 +4290,14 @@
 
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_bf
+    goto :goto_2
 
-    :cond_d0
+    :cond_4
     const/16 v7, 0xf
 
     const/4 v8, 0x4
 
-    if-ne v0, v8, :cond_e7
+    if-ne v0, v8, :cond_5
 
     .line 192
     invoke-static {v6}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4316,12 +4316,12 @@
 
     invoke-virtual {v0, v6}, Landroidx/media3/extractor/text/ttml/TtmlNode;->addChild(Landroidx/media3/extractor/text/ttml/TtmlNode;)V
 
-    goto :goto_115
+    goto :goto_3
 
-    :cond_e7
+    :cond_5
     const/4 v6, 0x3
 
-    if-ne v0, v6, :cond_115
+    if-ne v0, v6, :cond_9
 
     .line 194
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -4332,7 +4332,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_105
+    if-eqz v0, :cond_6
 
     .line 195
     new-instance v14, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;
@@ -4353,30 +4353,30 @@
     invoke-direct {v14, v0, v9, v10, v11}, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;-><init>(Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
 
     .line 199
-    :cond_105
+    :cond_6
     invoke-virtual {v12}, Ljava/util/ArrayDeque;->pop()Ljava/lang/Object;
 
-    goto :goto_115
+    goto :goto_3
 
-    :cond_109
+    :cond_7
     const/16 v7, 0xf
 
-    if-ne v0, v8, :cond_110
+    if-ne v0, v8, :cond_8
 
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_115
+    goto :goto_3
 
-    :cond_110
+    :cond_8
     const/4 v6, 0x3
 
-    if-ne v0, v6, :cond_115
+    if-ne v0, v6, :cond_9
 
     add-int/lit8 v15, v15, -0x1
 
     .line 208
-    :cond_115
-    :goto_115
+    :cond_9
+    :goto_3
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 209
@@ -4384,22 +4384,22 @@
 
     move-result v0
 
-    goto/16 :goto_40
+    goto/16 :goto_0
 
     .line 211
-    :cond_11e
+    :cond_a
     invoke-static {v14}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroidx/media3/extractor/text/Subtitle;
-    :try_end_124
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_c8 .. :try_end_124} :catch_12e
-    .catch Ljava/io/IOException; {:try_start_c8 .. :try_end_124} :catch_125
+    :try_end_4
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
     return-object v0
 
-    :catch_125
+    :catch_1
     move-exception v0
 
     .line 215
@@ -4411,7 +4411,7 @@
 
     throw v2
 
-    :catch_12e
+    :catch_2
     move-exception v0
 
     .line 213

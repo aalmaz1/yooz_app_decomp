@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 40
     new-instance v0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;
@@ -65,7 +65,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/16 v0, 0xa
 
@@ -82,7 +82,7 @@
 .end method
 
 .method private constructor <init>([Ljava/lang/Object;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TE;I)V"
@@ -102,7 +102,7 @@
 .end method
 
 .method private static createArray(I)[Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -120,7 +120,7 @@
 .end method
 
 .method public static emptyList()Landroidx/datastore/preferences/protobuf/ProtobufArrayList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -138,19 +138,19 @@
 .end method
 
 .method private ensureIndexInRange(I)V
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_7
+    if-ltz p1, :cond_0
 
     .line 167
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->size:I
 
-    if-ge p1, v0, :cond_7
+    if-ge p1, v0, :cond_0
 
     return-void
 
     .line 168
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->makeOutOfBoundsExceptionMessage(I)Ljava/lang/String;
@@ -163,7 +163,7 @@
 .end method
 
 .method private makeOutOfBoundsExceptionMessage(I)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 173
     new-instance v0, Ljava/lang/StringBuilder;
@@ -198,7 +198,7 @@
 
 # virtual methods
 .method public add(ILjava/lang/Object;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)V"
@@ -208,19 +208,19 @@
     .line 96
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->ensureIsMutable()V
 
-    if-ltz p1, :cond_42
+    if-ltz p1, :cond_1
 
     .line 98
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->size:I
 
-    if-gt p1, v0, :cond_42
+    if-gt p1, v0, :cond_1
 
     .line 102
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->array:[Ljava/lang/Object;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_15
+    if-ge v0, v2, :cond_0
 
     add-int/lit8 v2, p1, 0x1
 
@@ -229,9 +229,9 @@
     .line 104
     invoke-static {v1, p1, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     mul-int/lit8 v0, v0, 0x3
 
     .line 107
@@ -266,7 +266,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->array:[Ljava/lang/Object;
 
     .line 118
-    :goto_31
+    :goto_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->array:[Ljava/lang/Object;
 
     aput-object p2, v0, p1
@@ -288,7 +288,7 @@
     return-void
 
     .line 99
-    :cond_42
+    :cond_1
     new-instance p2, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->makeOutOfBoundsExceptionMessage(I)Ljava/lang/String;
@@ -301,7 +301,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -320,7 +320,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v2, :cond_16
+    if-ne v0, v2, :cond_0
 
     mul-int/lit8 v0, v0, 0x3
 
@@ -338,7 +338,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->array:[Ljava/lang/Object;
 
     .line 88
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->array:[Ljava/lang/Object;
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->size:I
@@ -360,7 +360,7 @@
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
@@ -379,7 +379,7 @@
 .end method
 
 .method public bridge synthetic mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 2
+    .locals 0
 
     .line 38
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/ProtobufArrayList;
@@ -390,7 +390,7 @@
 .end method
 
 .method public mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/ProtobufArrayList;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -402,7 +402,7 @@
     .line 67
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->size:I
 
-    if-lt p1, v0, :cond_12
+    if-lt p1, v0, :cond_0
 
     .line 71
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->array:[Ljava/lang/Object;
@@ -421,7 +421,7 @@
     return-object v0
 
     .line 68
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -430,7 +430,7 @@
 .end method
 
 .method public remove(I)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
@@ -453,7 +453,7 @@
 
     add-int/lit8 v3, v2, -0x1
 
-    if-ge p1, v3, :cond_18
+    if-ge p1, v3, :cond_0
 
     add-int/lit8 v3, p1, 0x1
 
@@ -465,7 +465,7 @@
     invoke-static {v0, v3, v0, p1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 139
-    :cond_18
+    :cond_0
     iget p1, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->size:I
 
     add-int/lit8 p1, p1, -0x1
@@ -483,7 +483,7 @@
 .end method
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)TE;"
@@ -515,7 +515,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 158
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ProtobufArrayList;->size:I

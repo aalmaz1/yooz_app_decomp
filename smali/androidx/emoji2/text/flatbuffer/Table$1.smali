@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/Table;Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 0
 
     .line 232
     iput-object p1, p0, Landroidx/emoji2/text/flatbuffer/Table$1;->this$0:Landroidx/emoji2/text/flatbuffer/Table;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public compare(Ljava/lang/Integer;Ljava/lang/Integer;)I
-    .registers 5
+    .locals 2
 
     .line 234
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/Table$1;->this$0:Landroidx/emoji2/text/flatbuffer/Table;
@@ -64,7 +64,7 @@
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 232
     check-cast p1, Ljava/lang/Integer;

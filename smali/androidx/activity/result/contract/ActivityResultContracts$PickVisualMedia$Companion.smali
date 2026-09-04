@@ -61,7 +61,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 634
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;-><init>()V
 
@@ -78,13 +78,13 @@
 .end method
 
 .method public static synthetic getACTION_SYSTEM_FALLBACK_PICK_IMAGES$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getEXTRA_SYSTEM_FALLBACK_PICK_IMAGES_MAX$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final getGmsPicker$activity_release(Landroid/content/Context;)Landroid/content/pm/ResolveInfo;
-    .registers 4
+    .locals 2
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -123,7 +123,7 @@
 .end method
 
 .method public final getSystemFallbackPicker$activity_release(Landroid/content/Context;)Landroid/content/pm/ResolveInfo;
-    .registers 4
+    .locals 2
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -154,7 +154,7 @@
 .end method
 
 .method public final getVisualMimeType$activity_release(Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     const-string v0, "input"
 
@@ -163,27 +163,27 @@
     .line 752
     instance-of v0, p1, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$ImageOnly;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const-string p1, "image/*"
 
-    goto :goto_24
+    goto :goto_0
 
     .line 753
-    :cond_c
+    :cond_0
     instance-of v0, p1, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VideoOnly;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     const-string/jumbo p1, "video/*"
 
-    goto :goto_24
+    goto :goto_0
 
     .line 754
-    :cond_14
+    :cond_1
     instance-of v0, p1, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$SingleMimeType;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     check-cast p1, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$SingleMimeType;
 
@@ -191,20 +191,20 @@
 
     move-result-object p1
 
-    goto :goto_24
+    goto :goto_0
 
     .line 755
-    :cond_1f
+    :cond_2
     instance-of p1, p1, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$ImageAndVideo;
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_3
 
     const/4 p1, 0x0
 
-    :goto_24
+    :goto_0
     return-object p1
 
-    :cond_25
+    :cond_3
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -213,7 +213,7 @@
 .end method
 
 .method public final isGmsPickerAvailable$activity_release(Landroid/content/Context;)Z
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -226,21 +226,21 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_e
+    :goto_0
     return p1
 .end method
 
 .method public final isPhotoPickerAvailable()Z
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "This method is deprecated in favor of isPhotoPickerAvailable(context) to support the picker provided by updatable system apps"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -261,7 +261,7 @@
 .end method
 
 .method public final isPhotoPickerAvailable(Landroid/content/Context;)Z
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -274,38 +274,38 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     invoke-virtual {p0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->isSystemFallbackPickerAvailable$activity_release(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     .line 698
     invoke-virtual {p0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->isGmsPickerAvailable$activity_release(Landroid/content/Context;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_1b
+    :goto_1
     return p1
 .end method
 
 .method public final isSystemFallbackPickerAvailable$activity_release(Landroid/content/Context;)Z
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -318,21 +318,21 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_e
+    :goto_0
     return p1
 .end method
 
 .method public final isSystemPickerAvailable$activity_release()Z
-    .registers 5
+    .locals 4
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -343,19 +343,19 @@
 
     const/4 v2, 0x1
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
     .line 713
-    :cond_8
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
 
     const/16 v3, 0x1e
 
-    if-lt v0, v3, :cond_17
+    if-lt v0, v3, :cond_1
 
     .line 716
     invoke-static {v3}, Landroid/os/ext/SdkExtensions;->getExtensionVersion(I)I
@@ -364,13 +364,13 @@
 
     const/4 v3, 0x2
 
-    if-lt v0, v3, :cond_17
+    if-lt v0, v3, :cond_1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     move v2, v1
 
-    :goto_18
+    :goto_0
     return v2
 .end method

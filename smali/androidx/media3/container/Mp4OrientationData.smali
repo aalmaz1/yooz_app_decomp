@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 84
     new-instance v0, Landroidx/media3/container/Mp4OrientationData$1;
@@ -37,37 +37,37 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
     const/16 v0, 0x5a
 
-    if-eq p1, v0, :cond_14
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0xb4
 
-    if-eq p1, v0, :cond_14
+    if-eq p1, v0, :cond_1
 
     const/16 v0, 0x10e
 
-    if-ne p1, v0, :cond_12
+    if-ne p1, v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_15
+    :goto_1
     const-string v1, "Unsupported orientation"
 
     .line 38
@@ -80,7 +80,7 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .registers 2
+    .locals 0
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroidx/media3/container/Mp4OrientationData$1;)V
-    .registers 3
+    .locals 0
 
     .line 28
     invoke-direct {p0, p1}, Landroidx/media3/container/Mp4OrientationData;-><init>(Landroid/os/Parcel;)V
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -115,26 +115,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 53
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/container/Mp4OrientationData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 56
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/container/Mp4OrientationData;
 
     .line 57
@@ -142,19 +142,19 @@
 
     iget p1, p1, Landroidx/media3/container/Mp4OrientationData;->orientation:I
 
-    if-ne v1, p1, :cond_13
+    if-ne v1, p1, :cond_2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_2
     move v0, v2
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 63
     iget v0, p0, Landroidx/media3/container/Mp4OrientationData;->orientation:I
@@ -171,7 +171,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 69
     new-instance v0, Ljava/lang/StringBuilder;
@@ -194,7 +194,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 81
     iget p2, p0, Landroidx/media3/container/Mp4OrientationData;->orientation:I

@@ -24,7 +24,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/google/common/io/FileWriteMode;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -41,7 +41,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 31
     new-instance v0, Lcom/google/common/io/FileWriteMode;
@@ -65,7 +65,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -90,7 +90,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/io/FileWriteMode;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8000
@@ -113,7 +113,7 @@
 .end method
 
 .method public static values()[Lcom/google/common/io/FileWriteMode;
-    .registers 1
+    .locals 1
 
     .line 26
     sget-object v0, Lcom/google/common/io/FileWriteMode;->$VALUES:[Lcom/google/common/io/FileWriteMode;

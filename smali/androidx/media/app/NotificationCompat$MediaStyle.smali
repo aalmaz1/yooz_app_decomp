@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 135
     invoke-direct {p0}, Landroidx/core/app/NotificationCompat$Style;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/core/app/NotificationCompat$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 138
     invoke-direct {p0}, Landroidx/core/app/NotificationCompat$Style;-><init>()V
@@ -63,24 +63,24 @@
 .end method
 
 .method private generateMediaActionButton(Landroidx/core/app/NotificationCompat$Action;)Landroid/widget/RemoteViews;
-    .registers 6
+    .locals 4
 
     .line 280
     invoke-virtual {p1}, Landroidx/core/app/NotificationCompat$Action;->getActionIntent()Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 281
-    :goto_9
+    :goto_0
     new-instance v1, Landroid/widget/RemoteViews;
 
     iget-object v2, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_1
 
     .line 285
     sget v0, Landroidx/media/R$id;->action0:I
@@ -116,7 +116,7 @@
     invoke-virtual {v1, v0, v2}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
     .line 288
-    :cond_2c
+    :cond_1
     sget v0, Landroidx/media/R$id;->action0:I
 
     invoke-virtual {p1}, Landroidx/core/app/NotificationCompat$Action;->getTitle()Ljava/lang/CharSequence;
@@ -129,14 +129,14 @@
 .end method
 
 .method public static getMediaSession(Landroid/app/Notification;)Landroid/support/v4/media/session/MediaSessionCompat$Token;
-    .registers 2
+    .locals 1
 
     .line 102
     invoke-static {p0}, Landroidx/core/app/NotificationCompat;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
     move-result-object p0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     const-string v0, "android.mediaSession"
 
@@ -145,7 +145,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
     .line 108
     invoke-static {p0}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->fromToken(Ljava/lang/Object;)Landroid/support/v4/media/session/MediaSessionCompat$Token;
@@ -154,7 +154,7 @@
 
     return-object p0
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
@@ -163,7 +163,7 @@
 
 # virtual methods
 .method public apply(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)V
-    .registers 3
+    .locals 1
 
     .line 211
     invoke-interface {p1}, Landroidx/core/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
@@ -186,21 +186,21 @@
 .end method
 
 .method fillInMediaStyle(Landroid/app/Notification$MediaStyle;)Landroid/app/Notification$MediaStyle;
-    .registers 3
+    .locals 1
 
     .line 220
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mActionsToShowInCompact:[I
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 221
     invoke-virtual {p1, v0}, Landroid/app/Notification$MediaStyle;->setShowActionsInCompactView([I)Landroid/app/Notification$MediaStyle;
 
     .line 223
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 224
     invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getToken()Ljava/lang/Object;
@@ -211,12 +211,12 @@
 
     invoke-virtual {p1, v0}, Landroid/app/Notification$MediaStyle;->setMediaSession(Landroid/media/session/MediaSession$Token;)Landroid/app/Notification$MediaStyle;
 
-    :cond_14
+    :cond_1
     return-object p1
 .end method
 
 .method generateBigContentView()Landroid/widget/RemoteViews;
-    .registers 7
+    .locals 6
 
     .line 311
     iget-object v0, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -250,12 +250,12 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/RemoteViews;->removeAllViews(I)V
 
-    if-lez v0, :cond_36
+    if-lez v0, :cond_0
 
     move v3, v2
 
-    :goto_1e
-    if-ge v3, v0, :cond_36
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 318
     iget-object v4, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -279,13 +279,13 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 322
-    :cond_36
+    :cond_0
     iget-boolean v0, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mShowCancelButton:Z
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 323
     sget v0, Landroidx/media/R$id;->cancel_action:I
@@ -322,22 +322,22 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    goto :goto_63
+    goto :goto_1
 
     .line 328
-    :cond_5c
+    :cond_1
     sget v0, Landroidx/media/R$id;->cancel_action:I
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    :goto_63
+    :goto_1
     return-object v1
 .end method
 
 .method generateContentView()Landroid/widget/RemoteViews;
-    .registers 9
+    .locals 8
 
     .line 244
     invoke-virtual {p0}, Landroidx/media/app/NotificationCompat$MediaStyle;->getContentViewLayoutResource()I
@@ -365,13 +365,13 @@
     .line 247
     iget-object v4, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mActionsToShowInCompact:[I
 
-    if-nez v4, :cond_18
+    if-nez v4, :cond_0
 
     move v4, v1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     array-length v4, v4
 
     const/4 v5, 0x3
@@ -382,19 +382,19 @@
     move-result v4
 
     .line 250
-    :goto_1e
+    :goto_0
     sget v5, Landroidx/media/R$id;->media_actions:I
 
     invoke-virtual {v0, v5}, Landroid/widget/RemoteViews;->removeAllViews(I)V
 
-    if-lez v4, :cond_60
+    if-lez v4, :cond_2
 
     move v5, v1
 
-    :goto_26
-    if-ge v5, v4, :cond_60
+    :goto_1
+    if-ge v5, v4, :cond_2
 
-    if-ge v5, v3, :cond_44
+    if-ge v5, v3, :cond_1
 
     .line 259
     iget-object v6, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -424,10 +424,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_26
+    goto :goto_1
 
     .line 254
-    :cond_44
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const/4 v4, 0x2
@@ -461,12 +461,12 @@
     throw v0
 
     .line 265
-    :cond_60
+    :cond_2
     iget-boolean v2, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mShowCancelButton:Z
 
     const/16 v3, 0x8
 
-    if-eqz v2, :cond_8d
+    if-eqz v2, :cond_3
 
     .line 266
     sget v2, Landroidx/media/R$id;->end_padder:I
@@ -508,10 +508,10 @@
     .line 269
     invoke-virtual {v0, v1, v3, v2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    goto :goto_97
+    goto :goto_2
 
     .line 272
-    :cond_8d
+    :cond_3
     sget v2, Landroidx/media/R$id;->end_padder:I
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
@@ -521,31 +521,31 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    :goto_97
+    :goto_2
     return-object v0
 .end method
 
 .method getBigContentViewLayoutResource(I)I
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x3
 
-    if-gt p1, v0, :cond_6
+    if-gt p1, v0, :cond_0
 
     .line 334
     sget p1, Landroidx/media/R$layout;->notification_template_big_media_narrow:I
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     sget p1, Landroidx/media/R$layout;->notification_template_big_media:I
 
-    :goto_8
+    :goto_0
     return p1
 .end method
 
 .method getContentViewLayoutResource()I
-    .registers 2
+    .locals 1
 
     .line 294
     sget v0, Landroidx/media/R$layout;->notification_template_media:I
@@ -554,7 +554,7 @@
 .end method
 
 .method public makeBigContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -562,7 +562,7 @@
 .end method
 
 .method public makeContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -570,7 +570,7 @@
 .end method
 
 .method public setCancelButtonIntent(Landroid/app/PendingIntent;)Landroidx/media/app/NotificationCompat$MediaStyle;
-    .registers 2
+    .locals 0
 
     .line 200
     iput-object p1, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mCancelButtonIntent:Landroid/app/PendingIntent;
@@ -579,7 +579,7 @@
 .end method
 
 .method public setMediaSession(Landroid/support/v4/media/session/MediaSessionCompat$Token;)Landroidx/media/app/NotificationCompat$MediaStyle;
-    .registers 2
+    .locals 0
 
     .line 158
     iput-object p1, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
@@ -588,7 +588,7 @@
 .end method
 
 .method public varargs setShowActionsInCompactView([I)Landroidx/media/app/NotificationCompat$MediaStyle;
-    .registers 2
+    .locals 0
 
     .line 149
     iput-object p1, p0, Landroidx/media/app/NotificationCompat$MediaStyle;->mActionsToShowInCompact:[I
@@ -597,7 +597,7 @@
 .end method
 
 .method public setShowCancelButton(Z)Landroidx/media/app/NotificationCompat$MediaStyle;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method

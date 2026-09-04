@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ElementParser;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "Protection"
 
@@ -45,7 +45,7 @@
 .end method
 
 .method private static buildTrackEncryptionBoxes([B)[Landroidx/media3/extractor/mp4/TrackEncryptionBox;
-    .registers 11
+    .locals 10
 
     const/4 v0, 0x1
 
@@ -83,7 +83,7 @@
 .end method
 
 .method private static getProtectionElementKeyId([B)[B
-    .registers 5
+    .locals 4
 
     .line 475
     new-instance v0, Ljava/lang/StringBuilder;
@@ -95,10 +95,10 @@
     move v2, v1
 
     .line 476
-    :goto_7
+    :goto_0
     array-length v3, p0
 
-    if-ge v2, v3, :cond_13
+    if-ge v2, v3, :cond_0
 
     .line 477
     aget-byte v3, p0, v2
@@ -109,10 +109,10 @@
 
     add-int/lit8 v2, v2, 0x2
 
-    goto :goto_7
+    goto :goto_0
 
     .line 479
-    :cond_13
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -172,7 +172,7 @@
 .end method
 
 .method private static stripCurlyBraces(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -183,7 +183,7 @@
 
     const/16 v1, 0x7b
 
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -199,7 +199,7 @@
 
     const/16 v2, 0x7d
 
-    if-ne v0, v2, :cond_20
+    if-ne v0, v2, :cond_0
 
     .line 499
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -212,12 +212,12 @@
 
     move-result-object p0
 
-    :cond_20
+    :cond_0
     return-object p0
 .end method
 
 .method private static swap([BII)V
-    .registers 5
+    .locals 2
 
     .line 492
     aget-byte v0, p0, p1
@@ -236,7 +236,7 @@
 
 # virtual methods
 .method public build()Ljava/lang/Object;
-    .registers 5
+    .locals 4
 
     .line 457
     new-instance v0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;
@@ -262,7 +262,7 @@
 .end method
 
 .method public handleChildInline(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     const-string v0, "ProtectionHeader"
 
@@ -275,7 +275,7 @@
 .end method
 
 .method public parseEndTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "ProtectionHeader"
 
@@ -288,19 +288,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 451
     iput-boolean p1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->inProtectionHeader:Z
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "ProtectionHeader"
 
@@ -313,7 +313,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -341,17 +341,17 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->uuid:Ljava/util/UUID;
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method public parseText(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 3
+    .locals 1
 
     .line 443
     iget-boolean v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->inProtectionHeader:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 444
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getText()Ljava/lang/String;
@@ -366,6 +366,6 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->initData:[B
 
-    :cond_f
+    :cond_0
     return-void
 .end method

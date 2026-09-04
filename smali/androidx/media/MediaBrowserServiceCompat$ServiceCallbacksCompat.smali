@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/Messenger;)V
-    .registers 2
+    .locals 0
 
     .line 1102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method private sendRequest(ILandroid/os/Bundle;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 1108
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacksCompat;->mCallbacks:Landroid/os/Messenger;
@@ -82,21 +82,21 @@
 .end method
 
 .method public onConnect(Ljava/lang/String;Landroid/support/v4/media/session/MediaSessionCompat$Token;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    if-nez p3, :cond_7
+    if-nez p3, :cond_0
 
     .line 1115
     new-instance p3, Landroid/os/Bundle;
 
     invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
 
-    :cond_7
+    :cond_0
     const-string v0, "extra_service_version"
 
     const/4 v1, 0x2
@@ -133,7 +133,7 @@
 .end method
 
 .method public onConnectFailed()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -151,7 +151,7 @@
 .end method
 
 .method public onLoadChildren(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -191,30 +191,30 @@
     .line 1136
     invoke-virtual {v0, p1, p4}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_1
 
     .line 1138
     instance-of p1, p2, Ljava/util/ArrayList;
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     check-cast p2, Ljava/util/ArrayList;
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1, p2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     move-object p2, p1
 
-    :goto_23
+    :goto_0
     const-string p1, "data_media_item_list"
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    :cond_28
+    :cond_1
     const/4 p1, 0x3
 
     .line 1141

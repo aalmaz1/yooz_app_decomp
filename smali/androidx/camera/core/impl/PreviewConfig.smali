@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/OptionsBundle;)V
-    .registers 2
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/camera/core/impl/PreviewConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -50,7 +50,7 @@
 .end method
 
 .method public getInputFormat()I
-    .registers 2
+    .locals 1
 
     .line 54
     sget-object v0, Landroidx/camera/core/impl/PreviewConfig;->OPTION_INPUT_FORMAT:Landroidx/camera/core/impl/Config$Option;

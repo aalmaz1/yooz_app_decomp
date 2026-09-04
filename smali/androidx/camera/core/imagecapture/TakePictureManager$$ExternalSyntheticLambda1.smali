@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/camera/core/imagecapture/TakePictureManager;Landroidx/camera/core/imagecapture/RequestWithCallback;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager$$ExternalSyntheticLambda1;->f$0:Landroidx/camera/core/imagecapture/TakePictureManager;
 

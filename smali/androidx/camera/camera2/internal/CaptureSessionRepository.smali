@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method private forceFinishCloseStaleSessions(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 138
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/CaptureSessionRepository;->getSessionsInOrder()Ljava/util/List;
@@ -102,12 +102,12 @@
 
     move-result-object v0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -115,23 +115,23 @@
 
     check-cast v1, Landroidx/camera/camera2/internal/SynchronizedCaptureSession;
 
-    if-ne v1, p1, :cond_17
+    if-ne v1, p1, :cond_0
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 146
-    :cond_17
+    :cond_0
     invoke-interface {v1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSession;->finishClose()V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method static forceOnClosed(Ljava/util/Set;)V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -146,12 +146,12 @@
 
     move-result-object p0
 
-    :goto_4
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -166,16 +166,16 @@
 
     invoke-virtual {v1, v0}, Landroidx/camera/camera2/internal/SynchronizedCaptureSession$StateCallback;->onClosed(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method getCameraStateCallback()Landroid/hardware/camera2/CameraDevice$StateCallback;
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCameraStateCallback:Landroid/hardware/camera2/CameraDevice$StateCallback;
@@ -184,7 +184,7 @@
 .end method
 
 .method getCaptureSessions()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
     monitor-enter v0
 
     .line 153
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCaptureSessions:Ljava/util/Set;
@@ -211,19 +211,19 @@
 
     return-object v1
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 154
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method getClosingCaptureSession()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -239,7 +239,7 @@
     monitor-enter v0
 
     .line 160
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mClosingCaptureSession:Ljava/util/Set;
@@ -250,19 +250,19 @@
 
     return-object v1
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 161
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method getCreatingCaptureSessions()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -278,7 +278,7 @@
     monitor-enter v0
 
     .line 167
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCreatingCaptureSessions:Ljava/util/Set;
@@ -289,19 +289,19 @@
 
     return-object v1
 
-    :catchall_c
+    :catchall_0
     move-exception v1
 
     .line 168
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method getSessionsInOrder()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -317,7 +317,7 @@
     monitor-enter v0
 
     .line 182
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -341,19 +341,19 @@
 
     return-object v1
 
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     .line 186
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_3 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method onCaptureSessionClosed(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 213
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mLock:Ljava/lang/Object;
@@ -361,7 +361,7 @@
     monitor-enter v0
 
     .line 214
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCaptureSessions:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
@@ -376,18 +376,18 @@
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method onCaptureSessionClosing(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 220
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mLock:Ljava/lang/Object;
@@ -395,7 +395,7 @@
     monitor-enter v0
 
     .line 221
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mClosingCaptureSession:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -405,18 +405,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method onCaptureSessionConfigureFail(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 197
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/CaptureSessionRepository;->forceFinishCloseStaleSessions(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
@@ -427,7 +427,7 @@
     monitor-enter v0
 
     .line 199
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCreatingCaptureSessions:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
@@ -437,18 +437,18 @@
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_6 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method onCaptureSessionCreated(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 205
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mLock:Ljava/lang/Object;
@@ -456,7 +456,7 @@
     monitor-enter v0
 
     .line 206
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCaptureSessions:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -468,28 +468,28 @@
 
     .line 208
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 209
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/CaptureSessionRepository;->forceFinishCloseStaleSessions(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     .line 208
-    :try_start_13
+    :try_start_1
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method onCreateCaptureSession(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 190
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mLock:Ljava/lang/Object;
@@ -497,7 +497,7 @@
     monitor-enter v0
 
     .line 191
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CaptureSessionRepository;->mCreatingCaptureSessions:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -507,12 +507,12 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

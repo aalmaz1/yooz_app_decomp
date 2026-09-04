@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(IJJ)V
-    .registers 6
+    .locals 0
 
     .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(IJJLandroidx/media3/extractor/metadata/scte35/SpliceInsertCommand$1;)V
-    .registers 7
+    .locals 0
 
     .line 210
     invoke-direct/range {p0 .. p5}, Landroidx/media3/extractor/metadata/scte35/SpliceInsertCommand$ComponentSplice;-><init>(IJJ)V
@@ -51,7 +51,7 @@
 .end method
 
 .method public static createFromParcel(Landroid/os/Parcel;)Landroidx/media3/extractor/metadata/scte35/SpliceInsertCommand$ComponentSplice;
-    .registers 8
+    .locals 7
 
     .line 230
     new-instance v6, Landroidx/media3/extractor/metadata/scte35/SpliceInsertCommand$ComponentSplice;
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;)V
-    .registers 4
+    .locals 2
 
     .line 224
     iget v0, p0, Landroidx/media3/extractor/metadata/scte35/SpliceInsertCommand$ComponentSplice;->componentTag:I

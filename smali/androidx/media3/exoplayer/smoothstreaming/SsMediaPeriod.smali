@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;Landroidx/media3/datasource/TransferListener;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;Landroidx/media3/exoplayer/upstream/LoaderErrorThrower;Landroidx/media3/exoplayer/upstream/Allocator;)V
-    .registers 12
+    .locals 0
 
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -128,7 +128,7 @@
 .end method
 
 .method private buildSampleStream(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;J)Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
-    .registers 19
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -210,7 +210,7 @@
 .end method
 
 .method private static buildTrackGroups(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;)Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 11
+    .locals 8
 
     .line 274
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->streamElements:[Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
@@ -224,12 +224,12 @@
     move v2, v1
 
     .line 275
-    :goto_7
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->streamElements:[Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
 
     array-length v3, v3
 
-    if-ge v2, v3, :cond_42
+    if-ge v2, v3, :cond_1
 
     .line 276
     iget-object v3, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;->streamElements:[Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
@@ -246,10 +246,10 @@
     move v5, v1
 
     .line 278
-    :goto_16
+    :goto_1
     array-length v6, v3
 
-    if-ge v5, v6, :cond_34
+    if-ge v5, v6, :cond_0
 
     .line 279
     aget-object v6, v3, v5
@@ -282,10 +282,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_16
+    goto :goto_1
 
     .line 287
-    :cond_34
+    :cond_0
     new-instance v3, Landroidx/media3/common/TrackGroup;
 
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -298,10 +298,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 289
-    :cond_42
+    :cond_1
     new-instance p0, Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/source/TrackGroupArray;-><init>([Landroidx/media3/common/TrackGroup;)V
@@ -310,7 +310,7 @@
 .end method
 
 .method static synthetic lambda$selectTracks$0(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 164
     iget p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primaryTrackType:I
@@ -327,7 +327,7 @@
 .end method
 
 .method private static newSampleStreamArray(I)[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)[",
@@ -346,7 +346,7 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -359,7 +359,7 @@
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 8
+    .locals 4
 
     .line 183
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -368,8 +368,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -378,14 +378,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 10
+    .locals 6
 
     .line 228
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -394,8 +394,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_15
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -404,7 +404,7 @@
 
     const/4 v5, 0x2
 
-    if-ne v4, v5, :cond_12
+    if-ne v4, v5, :cond_0
 
     .line 230
     invoke-virtual {v3, p1, p2, p3}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
@@ -413,17 +413,17 @@
 
     return-wide p1
 
-    :cond_12
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     return-wide p1
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 215
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -436,7 +436,7 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 205
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -449,7 +449,7 @@
 .end method
 
 .method public getStreamKeys(Ljava/util/List;)Ljava/util/List;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -472,12 +472,12 @@
     move v2, v1
 
     .line 171
-    :goto_7
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_36
+    if-ge v2, v3, :cond_1
 
     .line 172
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -500,12 +500,12 @@
     move v5, v1
 
     .line 174
-    :goto_1e
+    :goto_1
     invoke-interface {v3}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
 
     move-result v6
 
-    if-ge v5, v6, :cond_33
+    if-ge v5, v6, :cond_0
 
     .line 175
     new-instance v6, Landroidx/media3/common/StreamKey;
@@ -520,19 +520,19 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_33
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_36
+    :cond_1
     return-object v0
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 129
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -541,7 +541,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 200
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -554,7 +554,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -570,7 +570,7 @@
 .end method
 
 .method public bridge synthetic onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
-    .registers 2
+    .locals 0
 
     .line 51
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -581,7 +581,7 @@
 .end method
 
 .method public onContinueLoadingRequested(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -606,7 +606,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 118
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -618,7 +618,7 @@
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -626,7 +626,7 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 4
+    .locals 1
 
     .line 190
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -637,7 +637,7 @@
 .end method
 
 .method public release()V
-    .registers 5
+    .locals 4
 
     .line 108
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -646,8 +646,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -656,9 +656,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 111
@@ -668,7 +668,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .registers 7
+    .locals 4
 
     .line 220
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -677,8 +677,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -687,14 +687,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-wide p1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 12
+    .locals 5
 
     .line 139
     new-instance v0, Ljava/util/ArrayList;
@@ -704,15 +704,15 @@
     const/4 v1, 0x0
 
     .line 140
-    :goto_6
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_4a
+    if-ge v1, v2, :cond_4
 
     .line 141
     aget-object v2, p3, v1
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_2
 
     .line 143
     check-cast v2, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -720,16 +720,16 @@
     .line 144
     aget-object v3, p1, v1
 
-    if-eqz v3, :cond_2d
+    if-eqz v3, :cond_1
 
     aget-boolean v3, p2, v1
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_0
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 148
-    :cond_18
+    :cond_0
     invoke-virtual {v2}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->getChunkSource()Landroidx/media3/exoplayer/source/chunk/ChunkSource;
 
     move-result-object v3
@@ -749,11 +749,11 @@
     .line 149
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_33
+    goto :goto_2
 
     .line 145
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     invoke-virtual {v2}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->release()V
 
     const/4 v2, 0x0
@@ -762,15 +762,15 @@
     aput-object v2, p3, v1
 
     .line 152
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_2
     aget-object v2, p3, v1
 
-    if-nez v2, :cond_47
+    if-nez v2, :cond_3
 
     aget-object v2, p1, v1
 
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_3
 
     .line 153
     invoke-direct {p0, v2, p5, p6}, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->buildSampleStream(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;J)Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -788,13 +788,13 @@
     .line 156
     aput-boolean v2, p4, v1
 
-    :cond_47
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 159
-    :cond_4a
+    :cond_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -831,7 +831,7 @@
 .end method
 
 .method public updateManifest(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;)V
-    .registers 6
+    .locals 4
 
     .line 100
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->manifest:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
@@ -843,8 +843,8 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v1, :cond_16
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -859,10 +859,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 104
-    :cond_16
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/SsMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;

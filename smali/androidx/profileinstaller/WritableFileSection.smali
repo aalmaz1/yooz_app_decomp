@@ -15,7 +15,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/profileinstaller/FileSectionType;I[BZ)V
-    .registers 5
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

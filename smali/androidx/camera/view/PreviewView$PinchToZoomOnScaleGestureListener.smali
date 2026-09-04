@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/PreviewView;)V
-    .registers 2
+    .locals 0
 
     .line 915
     iput-object p1, p0, Landroidx/camera/view/PreviewView$PinchToZoomOnScaleGestureListener;->this$0:Landroidx/camera/view/PreviewView;
@@ -33,14 +33,14 @@
 
 # virtual methods
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
-    .registers 3
+    .locals 1
 
     .line 919
     iget-object v0, p0, Landroidx/camera/view/PreviewView$PinchToZoomOnScaleGestureListener;->this$0:Landroidx/camera/view/PreviewView;
 
     iget-object v0, v0, Landroidx/camera/view/PreviewView;->mCameraController:Landroidx/camera/view/CameraController;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 920
     iget-object v0, p0, Landroidx/camera/view/PreviewView$PinchToZoomOnScaleGestureListener;->this$0:Landroidx/camera/view/PreviewView;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/view/CameraController;->onPinchToZoom(F)V
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x1
 
     return p1

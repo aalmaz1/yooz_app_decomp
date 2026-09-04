@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     check-cast p1, Landroid/hardware/camera2/TotalCaptureResult;
 

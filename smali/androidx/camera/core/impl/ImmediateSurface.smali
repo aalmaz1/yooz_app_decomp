@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/Surface;)V
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Landroidx/camera/core/impl/DeferrableSurface;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/Surface;Landroid/util/Size;I)V
-    .registers 4
+    .locals 0
 
     .line 37
     invoke-direct {p0, p2, p3}, Landroidx/camera/core/impl/DeferrableSurface;-><init>(Landroid/util/Size;I)V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public provideSurface()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

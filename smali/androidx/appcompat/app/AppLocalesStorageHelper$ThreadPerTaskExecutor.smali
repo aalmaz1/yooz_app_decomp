@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 208
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 1
 
     .line 211
     new-instance v0, Ljava/lang/Thread;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/extractor/MpegAudioUtil$Header;JJ[JII)V
-    .registers 10
+    .locals 1
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method public static parse(Landroidx/media3/extractor/MpegAudioUtil$Header;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/mp3/XingFrame;
-    .registers 16
+    .locals 14
 
     .line 83
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -61,41 +61,41 @@
 
     const/4 v2, -0x1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 84
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result v1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v1, v2
 
-    :goto_f
+    :goto_0
     and-int/lit8 v3, v0, 0x2
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_1
 
     .line 85
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v3
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     const-wide/16 v3, -0x1
 
-    :goto_1a
+    :goto_1
     move-wide v9, v3
 
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
-    if-ne v3, v4, :cond_33
+    if-ne v3, v4, :cond_3
 
     const/16 v3, 0x64
 
@@ -103,8 +103,8 @@
 
     const/4 v6, 0x0
 
-    :goto_25
-    if-ge v6, v3, :cond_31
+    :goto_2
+    if-ge v6, v3, :cond_2
 
     .line 91
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -117,35 +117,35 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_25
+    goto :goto_2
 
-    :cond_31
+    :cond_2
     move-object v11, v5
 
-    goto :goto_35
+    goto :goto_3
 
-    :cond_33
+    :cond_3
     const/4 v3, 0x0
 
     move-object v11, v3
 
-    :goto_35
+    :goto_3
     and-int/lit8 v0, v0, 0x8
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 98
     invoke-virtual {p1, v4}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 106
-    :cond_3c
+    :cond_4
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
     const/16 v3, 0x18
 
-    if-lt v0, v3, :cond_58
+    if-lt v0, v3, :cond_5
 
     const/16 v0, 0x15
 
@@ -169,15 +169,15 @@
 
     move v12, v2
 
-    goto :goto_5a
+    goto :goto_4
 
-    :cond_58
+    :cond_5
     move v12, v2
 
     move v13, v12
 
     .line 116
-    :goto_5a
+    :goto_4
     new-instance p1, Landroidx/media3/extractor/mp3/XingFrame;
 
     int-to-long v7, v1
@@ -194,7 +194,7 @@
 
 # virtual methods
 .method public computeDurationUs()J
-    .registers 5
+    .locals 4
 
     .line 126
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/XingFrame;->frameCount:J
@@ -203,18 +203,18 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_0
 
-    goto :goto_21
+    goto :goto_0
 
     .line 132
-    :cond_f
+    :cond_0
     iget-object v2, p0, Landroidx/media3/extractor/mp3/XingFrame;->header:Landroidx/media3/extractor/MpegAudioUtil$Header;
 
     iget v2, v2, Landroidx/media3/extractor/MpegAudioUtil$Header;->samplesPerFrame:I
@@ -237,8 +237,8 @@
 
     return-wide v0
 
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide v0

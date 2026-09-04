@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;Landroid/os/Handler;Landroid/content/ContentResolver;Landroid/net/Uri;)V
-    .registers 5
+    .locals 0
 
     .line 227
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .registers 5
+    .locals 3
 
     .line 243
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;->this$0:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -77,7 +77,7 @@
 .end method
 
 .method public register()V
-    .registers 4
+    .locals 3
 
     .line 234
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;->resolver:Landroid/content/ContentResolver;
@@ -92,7 +92,7 @@
 .end method
 
 .method public unregister()V
-    .registers 2
+    .locals 1
 
     .line 238
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver$ExternalSurroundSoundSettingObserver;->resolver:Landroid/content/ContentResolver;

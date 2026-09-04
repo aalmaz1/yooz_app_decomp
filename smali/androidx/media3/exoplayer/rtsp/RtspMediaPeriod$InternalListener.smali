@@ -38,7 +38,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 528
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -49,7 +49,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$1;)V
-    .registers 3
+    .locals 0
 
     .line 528
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;-><init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
@@ -58,7 +58,7 @@
 .end method
 
 .method static synthetic lambda$onUpstreamFormatChanged$0(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
-    .registers 1
+    .locals 0
 
     .line 597
     invoke-static {p0}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$500(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
@@ -69,13 +69,13 @@
 
 # virtual methods
 .method public onLoadCanceled(Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;JJZ)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 528
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;
@@ -86,7 +86,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 539
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -99,7 +99,7 @@
 
     cmp-long p2, p2, p4
 
-    if-nez p2, :cond_1a
+    if-nez p2, :cond_1
 
     .line 540
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -108,21 +108,21 @@
 
     move-result p1
 
-    if-nez p1, :cond_19
+    if-nez p1, :cond_0
 
     .line 544
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$700(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
 
-    :cond_19
+    :cond_0
     return-void
 
-    :cond_1a
+    :cond_1
     const/4 p2, 0x0
 
     .line 550
-    :goto_1b
+    :goto_0
     iget-object p3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p3}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$800(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Ljava/util/List;
@@ -133,7 +133,7 @@
 
     move-result p3
 
-    if-ge p2, p3, :cond_42
+    if-ge p2, p3, :cond_3
 
     .line 551
     iget-object p3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -155,21 +155,21 @@
 
     move-result-object p4
 
-    if-ne p4, p1, :cond_3f
+    if-ne p4, p1, :cond_2
 
     .line 553
     invoke-virtual {p3}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->cancelLoad()V
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_3f
+    :cond_2
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 558
-    :cond_42
-    :goto_42
+    :cond_3
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$900(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -182,7 +182,7 @@
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 528
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;
@@ -193,7 +193,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 572
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -202,24 +202,24 @@
 
     move-result p2
 
-    if-nez p2, :cond_e
+    if-nez p2, :cond_0
 
     .line 573
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1, p6}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1102(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Ljava/io/IOException;)Ljava/io/IOException;
 
-    goto :goto_34
+    goto :goto_0
 
     .line 575
-    :cond_e
+    :cond_0
     invoke-virtual {p6}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
 
     move-result-object p2
 
     instance-of p2, p2, Ljava/net/BindException;
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_1
 
     .line 581
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -230,7 +230,7 @@
 
     const/4 p2, 0x3
 
-    if-ge p1, p2, :cond_34
+    if-ge p1, p2, :cond_2
 
     .line 582
     sget-object p1, Landroidx/media3/exoplayer/upstream/Loader;->RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
@@ -238,7 +238,7 @@
     return-object p1
 
     .line 585
-    :cond_22
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     new-instance p3, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
@@ -258,15 +258,15 @@
     invoke-static {p2, p3}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1302(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;)Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
 
     .line 590
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     sget-object p1, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     return-object p1
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 528
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;
@@ -279,12 +279,12 @@
 .end method
 
 .method public onPlaybackError(Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;)V
-    .registers 3
+    .locals 1
 
     .line 672
     instance-of v0, p1, Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspUdpUnsupportedTransportException;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
@@ -292,27 +292,27 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 675
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$700(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 677
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {v0, p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1302(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;)Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 .method public onPlaybackStarted(JLcom/google/common/collect/ImmutableList;)V
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -336,12 +336,12 @@
     move v2, v1
 
     .line 620
-    :goto_b
+    :goto_0
     invoke-virtual {p3}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_29
+    if-ge v2, v3, :cond_0
 
     .line 621
     invoke-virtual {p3, v2}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -366,13 +366,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     move v2, v1
 
     .line 623
-    :goto_2a
+    :goto_1
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {v3}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1600(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Ljava/util/List;
@@ -385,7 +385,7 @@
 
     const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ge v2, v3, :cond_7e
+    if-ge v2, v3, :cond_2
 
     .line 624
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -413,7 +413,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_7b
+    if-nez v3, :cond_1
 
     .line 626
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -431,7 +431,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7b
+    if-eqz v3, :cond_1
 
     .line 628
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -455,19 +455,19 @@
 
     invoke-static {v3, v4, v5}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1502(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;J)J
 
-    :cond_7b
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 636
-    :cond_7e
-    :goto_7e
+    :cond_2
+    :goto_2
     invoke-virtual {p3}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_bf
+    if-ge v1, v0, :cond_5
 
     .line 637
     invoke-virtual {p3, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -485,12 +485,12 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_95
+    if-nez v2, :cond_3
 
-    goto :goto_bc
+    goto :goto_3
 
     .line 643
-    :cond_95
+    :cond_3
     iget-wide v6, v0, Landroidx/media3/exoplayer/rtsp/RtspTrackTiming;->rtpTimestamp:J
 
     invoke-virtual {v2, v6, v7}, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->setTimestamp(J)V
@@ -507,7 +507,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_bc
+    if-eqz v3, :cond_4
 
     iget-object v3, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
@@ -523,28 +523,28 @@
 
     cmp-long v3, v6, v8
 
-    if-nez v3, :cond_bc
+    if-nez v3, :cond_4
 
     .line 650
     iget-wide v6, v0, Landroidx/media3/exoplayer/rtsp/RtspTrackTiming;->rtpTimestamp:J
 
     invoke-virtual {v2, p1, p2, v6, v7}, Landroidx/media3/exoplayer/rtsp/RtpDataLoadable;->seekToUs(JJ)V
 
-    :cond_bc
-    :goto_bc
+    :cond_4
+    :goto_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7e
+    goto :goto_2
 
     .line 654
-    :cond_bf
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1800(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_f1
+    if-eqz p1, :cond_7
 
     .line 655
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -561,7 +561,7 @@
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_e2
+    if-nez p1, :cond_6
 
     .line 657
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -573,10 +573,10 @@
 
     invoke-static {p1, v4, v5}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$2002(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;J)J
 
-    goto :goto_111
+    goto :goto_4
 
     .line 661
-    :cond_e2
+    :cond_6
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1, v4, v5}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1402(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;J)J
@@ -590,10 +590,10 @@
 
     invoke-virtual {p1, p2, p3}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->seekToUs(J)J
 
-    goto :goto_111
+    goto :goto_4
 
     .line 664
-    :cond_f1
+    :cond_7
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1500(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)J
@@ -602,7 +602,7 @@
 
     cmp-long p1, p1, v4
 
-    if-eqz p1, :cond_111
+    if-eqz p1, :cond_8
 
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
@@ -610,7 +610,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_111
+    if-eqz p1, :cond_8
 
     .line 665
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -626,13 +626,13 @@
 
     invoke-static {p1, v4, v5}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1502(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;J)J
 
-    :cond_111
-    :goto_111
+    :cond_8
+    :goto_4
     return-void
 .end method
 
 .method public onRtspSetupCompleted()V
-    .registers 5
+    .locals 4
 
     .line 605
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -645,7 +645,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 606
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -658,10 +658,10 @@
 
     move-result-wide v0
 
-    goto :goto_31
+    goto :goto_0
 
     .line 607
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1500(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)J
@@ -670,7 +670,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 608
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -683,13 +683,13 @@
 
     move-result-wide v0
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_2f
+    :cond_1
     const-wide/16 v0, 0x0
 
     .line 610
-    :goto_31
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {v2}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$900(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Landroidx/media3/exoplayer/rtsp/RtspClient;
@@ -702,34 +702,34 @@
 .end method
 
 .method public onSessionTimelineRequestFailed(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 2
 
     .line 697
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     new-instance p2, Ljava/io/IOException;
 
     invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     new-instance v1, Ljava/io/IOException;
 
     invoke-direct {v1, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     move-object p2, v1
 
-    :goto_10
+    :goto_0
     invoke-static {v0, p2}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1102(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Ljava/io/IOException;)Ljava/io/IOException;
 
     return-void
 .end method
 
 .method public onSessionTimelineUpdated(Landroidx/media3/exoplayer/rtsp/RtspSessionTiming;Lcom/google/common/collect/ImmutableList;)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -743,12 +743,12 @@
     const/4 v0, 0x0
 
     .line 684
-    :goto_1
+    :goto_0
     invoke-virtual {p2}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_27
+    if-ge v0, v1, :cond_0
 
     .line 685
     invoke-virtual {p2, v0}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -783,10 +783,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 692
-    :cond_27
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {p2}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1700(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$Listener;
@@ -799,7 +799,7 @@
 .end method
 
 .method public onUpstreamFormatChanged(Landroidx/media3/common/Format;)V
-    .registers 4
+    .locals 2
 
     .line 597
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$InternalListener;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;

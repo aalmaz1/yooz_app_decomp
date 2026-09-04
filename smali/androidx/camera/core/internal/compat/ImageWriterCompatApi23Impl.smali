@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static close(Landroid/media/ImageWriter;)V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-virtual {p0}, Landroid/media/ImageWriter;->close()V
@@ -23,7 +23,7 @@
 .end method
 
 .method static dequeueInputImage(Landroid/media/ImageWriter;)Landroid/media/Image;
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-virtual {p0}, Landroid/media/ImageWriter;->dequeueInputImage()Landroid/media/Image;
@@ -34,7 +34,7 @@
 .end method
 
 .method static newInstance(Landroid/view/Surface;I)Landroid/media/ImageWriter;
-    .registers 2
+    .locals 0
 
     .line 32
     invoke-static {p0, p1}, Landroid/media/ImageWriter;->newInstance(Landroid/view/Surface;I)Landroid/media/ImageWriter;
@@ -45,7 +45,7 @@
 .end method
 
 .method static queueInputImage(Landroid/media/ImageWriter;Landroid/media/Image;)V
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-virtual {p0, p1}, Landroid/media/ImageWriter;->queueInputImage(Landroid/media/Image;)V

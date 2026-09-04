@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/CharSource;Ljava/nio/charset/Charset;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public asCharSource(Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -71,7 +71,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 449
     iget-object p1, p0, Lcom/google/common/io/CharSource$AsByteSource;->this$0:Lcom/google/common/io/CharSource;
@@ -79,7 +79,7 @@
     return-object p1
 
     .line 451
-    :cond_b
+    :cond_0
     invoke-super {p0, p1}, Lcom/google/common/io/ByteSource;->asCharSource(Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object p1
@@ -88,7 +88,7 @@
 .end method
 
 .method public openStream()Ljava/io/InputStream;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -114,7 +114,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 461
     new-instance v0, Ljava/lang/StringBuilder;

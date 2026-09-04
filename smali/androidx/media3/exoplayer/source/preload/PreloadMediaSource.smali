@@ -68,7 +68,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$PreloadControl;Landroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/upstream/BandwidthMeter;[Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/exoplayer/upstream/Allocator;Landroid/os/Looper;)V
-    .registers 8
+    .locals 0
 
     .line 230
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/WrappingMediaSource;-><init>(Landroidx/media3/exoplayer/source/MediaSource;)V
@@ -106,7 +106,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$PreloadControl;Landroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/upstream/BandwidthMeter;[Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/exoplayer/upstream/Allocator;Landroid/os/Looper;Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$1;)V
-    .registers 9
+    .locals 0
 
     .line 55
     invoke-direct/range {p0 .. p7}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;-><init>(Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$PreloadControl;Landroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/upstream/BandwidthMeter;[Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/exoplayer/upstream/Allocator;Landroid/os/Looper;)V
@@ -115,7 +115,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)Z
-    .registers 1
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->isUsedByPlayer()Z
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)Landroid/util/Pair;
-    .registers 1
+    .locals 0
 
     .line 55
     iget-object p0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
@@ -135,7 +135,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)[Landroidx/media3/exoplayer/RendererCapabilities;
-    .registers 1
+    .locals 0
 
     .line 55
     iget-object p0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;
@@ -144,7 +144,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)Landroidx/media3/common/Timeline;
-    .registers 1
+    .locals 0
 
     .line 55
     iget-object p0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->timeline:Landroidx/media3/common/Timeline;
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)Landroidx/media3/exoplayer/trackselection/TrackSelector;
-    .registers 1
+    .locals 0
 
     .line 55
     iget-object p0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->trackSelector:Landroidx/media3/exoplayer/trackselection/TrackSelector;
@@ -162,7 +162,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$PreloadControl;
-    .registers 1
+    .locals 0
 
     .line 55
     iget-object p0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadControl:Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$PreloadControl;
@@ -171,7 +171,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Z
-    .registers 2
+    .locals 0
 
     .line 55
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->mediaPeriodIdEqualsWithoutWindowSequenceNumber(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Z
@@ -182,7 +182,7 @@
 .end method
 
 .method private isUsedByPlayer()Z
-    .registers 2
+    .locals 1
 
     .line 450
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->prepareSourceCalled()Z
@@ -193,7 +193,7 @@
 .end method
 
 .method private static mediaPeriodIdEqualsWithoutWindowSequenceNumber(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Z
-    .registers 4
+    .locals 2
 
     .line 460
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -204,39 +204,39 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
     iget v1, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
     iget v1, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
     iget p0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
 
     iget p1, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
 
-    if-ne p0, p1, :cond_1e
+    if-ne p0, p1, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_1f
+    :goto_0
     return p0
 .end method
 
 .method private notifyOnUsedByPlayer()V
-    .registers 2
+    .locals 1
 
     .line 454
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadControl:Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$PreloadControl;
@@ -254,7 +254,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 3
+    .locals 2
 
     .line 270
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadHandler:Landroid/os/Handler;
@@ -269,7 +269,7 @@
 .end method
 
 .method public bridge synthetic createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 5
+    .locals 0
 
     .line 54
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;
@@ -280,7 +280,7 @@
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;
-    .registers 9
+    .locals 4
 
     .line 320
     new-instance v0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource$MediaPeriodKey;
@@ -292,7 +292,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -300,7 +300,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     .line 322
     iget-object p2, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
@@ -320,7 +320,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_2d
+    if-eqz p3, :cond_0
 
     .line 324
     iput-object v2, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
@@ -332,14 +332,14 @@
 
     iput-object p3, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->playingPreloadedMediaPeriodAndId:Landroid/util/Pair;
 
-    :cond_2d
+    :cond_0
     return-object p2
 
     .line 328
-    :cond_2e
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_2
 
     .line 329
     iget-object v1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -364,7 +364,7 @@
     iput-object v2, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
     .line 333
-    :cond_47
+    :cond_2
     new-instance v1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -381,7 +381,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_5f
+    if-nez p1, :cond_3
 
     .line 336
     new-instance p1, Landroid/util/Pair;
@@ -390,17 +390,17 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
-    :cond_5f
+    :cond_3
     return-object v1
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 1
 
     .line 343
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->playingPreloadedMediaPeriodAndId:Landroid/util/Pair;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 345
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -418,7 +418,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 346
     iget-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->playingPreloadedMediaPeriodAndId:Landroid/util/Pair;
@@ -433,17 +433,17 @@
 
     check-cast p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    :cond_20
+    :cond_0
     return-object p1
 .end method
 
 .method synthetic lambda$clear$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource()V
-    .registers 3
+    .locals 2
 
     .line 272
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 273
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -463,12 +463,12 @@
     .line 274
     iput-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$preload$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource(J)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -488,15 +488,15 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 256
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->notifyOnUsedByPlayer()V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 258
-    :cond_12
+    :cond_0
     sget-object p1, Landroidx/media3/exoplayer/analytics/PlayerId;->UNSET:Landroidx/media3/exoplayer/analytics/PlayerId;
 
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->setPlayerId(Landroidx/media3/exoplayer/analytics/PlayerId;)V
@@ -510,12 +510,12 @@
 
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$releasePreloadMediaSource$2$androidx-media3-exoplayer-source-preload-PreloadMediaSource()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -535,7 +535,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 388
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -554,7 +554,7 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
     .line 391
-    :cond_20
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->releaseSourceInternal()V
 
     .line 392
@@ -566,7 +566,7 @@
 .end method
 
 .method protected onChildSourceInfoRefreshed(Landroidx/media3/common/Timeline;)V
-    .registers 9
+    .locals 7
 
     .line 294
     iput-object p1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->timeline:Landroidx/media3/common/Timeline;
@@ -579,15 +579,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_5b
+    if-nez v0, :cond_2
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->onSourcePreparedNotified:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
-    goto :goto_5b
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x1
 
     .line 299
@@ -600,12 +600,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     return-void
 
     .line 303
-    :cond_1c
+    :cond_1
     new-instance v2, Landroidx/media3/common/Timeline$Window;
 
     invoke-direct {v2}, Landroidx/media3/common/Timeline$Window;-><init>()V
@@ -674,13 +674,13 @@
     .line 312
     invoke-virtual {v0, v1, v2, v3}, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->preload(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
 
-    :cond_5b
-    :goto_5b
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public preload(J)V
-    .registers 5
+    .locals 2
 
     .line 250
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadHandler:Landroid/os/Handler;
@@ -695,38 +695,38 @@
 .end method
 
 .method protected prepareSourceInternal()V
-    .registers 2
+    .locals 1
 
     .line 281
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->isUsedByPlayer()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->onUsedByPlayerNotified:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 282
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->notifyOnUsedByPlayer()V
 
     .line 284
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->timeline:Landroidx/media3/common/Timeline;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 285
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->onChildSourceInfoRefreshed(Landroidx/media3/common/Timeline;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 286
-    :cond_15
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->prepareChildSourceCalled:Z
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
@@ -736,13 +736,13 @@
     .line 288
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->prepareChildSource()V
 
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 4
+    .locals 2
 
     .line 353
     check-cast p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;
@@ -752,7 +752,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 355
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -763,18 +763,18 @@
 
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_14
+    if-ne p1, v0, :cond_0
 
     .line 356
     iput-object v1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadingMediaPeriodAndKey:Landroid/util/Pair;
 
-    goto :goto_24
+    goto :goto_0
 
     .line 357
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->playingPreloadedMediaPeriodAndId:Landroid/util/Pair;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 358
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -785,14 +785,14 @@
 
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_24
+    if-ne p1, v0, :cond_1
 
     .line 359
     iput-object v1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->playingPreloadedMediaPeriodAndId:Landroid/util/Pair;
 
     .line 361
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/source/preload/PreloadMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -803,7 +803,7 @@
 .end method
 
 .method public releasePreloadMediaSource()V
-    .registers 3
+    .locals 2
 
     .line 382
     iget-object v0, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadHandler:Landroid/os/Handler;
@@ -818,14 +818,14 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 3
+    .locals 2
 
     .line 366
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->isUsedByPlayer()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -835,7 +835,7 @@
     .line 368
     iget-boolean v1, p0, Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;->preloadCalled:Z
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
@@ -848,6 +848,6 @@
     .line 371
     invoke-super {p0}, Landroidx/media3/exoplayer/source/WrappingMediaSource;->releaseSourceInternal()V
 
-    :cond_15
+    :cond_0
     return-void
 .end method

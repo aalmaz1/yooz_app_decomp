@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;Ljava/lang/String;Landroid/os/IBinder;)V
-    .registers 5
+    .locals 0
 
     .line 969
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$4;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .locals 5
 
     .line 972
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$4;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -72,7 +72,7 @@
 
     const-string v1, "MBServiceCompat"
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 976
     new-instance v0, Ljava/lang/StringBuilder;
@@ -96,7 +96,7 @@
     return-void
 
     .line 980
-    :cond_2b
+    :cond_0
     iget-object v2, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$4;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
 
     iget-object v2, v2, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -109,7 +109,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_1
 
     .line 982
     new-instance v0, Ljava/lang/StringBuilder;
@@ -136,6 +136,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_53
+    :cond_1
     return-void
 .end method

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(ZI)V
-    .registers 3
+    .locals 0
 
     .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/TrustedWebActivityDisplayMode;
-    .registers 4
+    .locals 3
 
     .line 105
     new-instance v0, Landroidx/browser/trusted/TrustedWebActivityDisplayMode$ImmersiveMode;
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public isSticky()Z
-    .registers 2
+    .locals 1
 
     .line 121
     iget-boolean v0, p0, Landroidx/browser/trusted/TrustedWebActivityDisplayMode$ImmersiveMode;->mIsSticky:Z
@@ -83,7 +83,7 @@
 .end method
 
 .method public layoutInDisplayCutoutMode()I
-    .registers 2
+    .locals 1
 
     .line 126
     iget v0, p0, Landroidx/browser/trusted/TrustedWebActivityDisplayMode$ImmersiveMode;->mLayoutInDisplayCutoutMode:I
@@ -92,7 +92,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 112
     new-instance v0, Landroid/os/Bundle;

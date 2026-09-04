@@ -37,7 +37,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/customtabs/trusted/ITrustedWebActivityService;Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 0
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,19 +52,19 @@
 .end method
 
 .method static ensureBundleContains(Landroid/os/Bundle;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 309
     invoke-virtual {p0, p1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 310
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -87,16 +87,16 @@
 .end method
 
 .method private static wrapCallback(Landroidx/browser/trusted/TrustedWebActivityCallback;)Landroid/support/customtabs/trusted/ITrustedWebActivityCallback;
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 317
-    :cond_4
+    :cond_0
     new-instance v0, Landroidx/browser/trusted/TrustedWebActivityServiceConnection$1;
 
     invoke-direct {v0, p0}, Landroidx/browser/trusted/TrustedWebActivityServiceConnection$1;-><init>(Landroidx/browser/trusted/TrustedWebActivityCallback;)V
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public areNotificationsEnabled(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -140,7 +140,7 @@
 .end method
 
 .method public cancel(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -165,7 +165,7 @@
 .end method
 
 .method public getActiveNotifications()[Landroid/os/Parcelable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -190,7 +190,7 @@
 .end method
 
 .method public getComponentName()Landroid/content/ComponentName;
-    .registers 2
+    .locals 1
 
     .line 162
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnection;->mComponentName:Landroid/content/ComponentName;
@@ -199,7 +199,7 @@
 .end method
 
 .method public getSmallIconBitmap()Landroid/graphics/Bitmap;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -226,7 +226,7 @@
 .end method
 
 .method public getSmallIconId()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -244,7 +244,7 @@
 .end method
 
 .method public notify(Ljava/lang/String;ILandroid/app/Notification;Ljava/lang/String;)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -278,7 +278,7 @@
 .end method
 
 .method public sendExtraCommand(Ljava/lang/String;Landroid/os/Bundle;Landroidx/browser/trusted/TrustedWebActivityCallback;)Landroid/os/Bundle;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -290,20 +290,20 @@
 
     move-result-object p3
 
-    if-nez p3, :cond_8
+    if-nez p3, :cond_0
 
     const/4 p3, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 183
-    :cond_8
+    :cond_0
     invoke-interface {p3}, Landroid/support/customtabs/trusted/ITrustedWebActivityCallback;->asBinder()Landroid/os/IBinder;
 
     move-result-object p3
 
     .line 184
-    :goto_c
+    :goto_0
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnection;->mService:Landroid/support/customtabs/trusted/ITrustedWebActivityService;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/support/customtabs/trusted/ITrustedWebActivityService;->extraCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/IBinder;)Landroid/os/Bundle;

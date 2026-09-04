@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;IJ)V
-    .registers 5
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V

@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static getNetworkInfoFromBroadcast(Landroid/net/ConnectivityManager;Landroid/content/Intent;)Landroid/net/NetworkInfo;
-    .registers 3
+    .locals 1
 
     const-string v0, "networkInfo"
 
@@ -42,7 +42,7 @@
 
     check-cast p1, Landroid/net/NetworkInfo;
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 111
     invoke-virtual {p1}, Landroid/net/NetworkInfo;->getType()I
@@ -55,14 +55,14 @@
 
     return-object p0
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static getRestrictBackgroundStatus(Landroid/net/ConnectivityManager;)I
-    .registers 1
+    .locals 0
 
     .line 128
     invoke-static {p0}, Landroidx/core/net/ConnectivityManagerCompat$Api24Impl;->getRestrictBackgroundStatus(Landroid/net/ConnectivityManager;)I
@@ -73,7 +73,7 @@
 .end method
 
 .method public static isActiveNetworkMetered(Landroid/net/ConnectivityManager;)Z
-    .registers 1
+    .locals 0
 
     .line 93
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->isActiveNetworkMetered()Z

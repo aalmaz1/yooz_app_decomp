@@ -147,7 +147,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$aMir0GWwzPQviKVGE0DPm0kayew(Landroidx/lifecycle/SavedStateHandle;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/lifecycle/SavedStateHandle;->savedStateProvider$lambda$0(Landroidx/lifecycle/SavedStateHandle;)Landroid/os/Bundle;
 
@@ -157,7 +157,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     new-instance v0, Landroidx/lifecycle/SavedStateHandle$Companion;
 
@@ -355,7 +355,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -407,7 +407,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -476,7 +476,7 @@
 .end method
 
 .method public static final synthetic access$getACCEPTABLE_CLASSES$cp()[Ljava/lang/Class;
-    .registers 1
+    .locals 1
 
     .line 50
     sget-object v0, Landroidx/lifecycle/SavedStateHandle;->ACCEPTABLE_CLASSES:[Ljava/lang/Class;
@@ -485,7 +485,7 @@
 .end method
 
 .method public static final synthetic access$getFlows$p(Landroidx/lifecycle/SavedStateHandle;)Ljava/util/Map;
-    .registers 1
+    .locals 0
 
     .line 50
     iget-object p0, p0, Landroidx/lifecycle/SavedStateHandle;->flows:Ljava/util/Map;
@@ -494,7 +494,7 @@
 .end method
 
 .method public static final synthetic access$getRegular$p(Landroidx/lifecycle/SavedStateHandle;)Ljava/util/Map;
-    .registers 1
+    .locals 0
 
     .line 50
     iget-object p0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
@@ -503,7 +503,7 @@
 .end method
 
 .method public static final createHandle(Landroid/os/Bundle;Landroid/os/Bundle;)Landroidx/lifecycle/SavedStateHandle;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -517,7 +517,7 @@
 .end method
 
 .method private final getLiveDataInternal(Ljava/lang/String;ZLjava/lang/Object;)Landroidx/lifecycle/MutableLiveData;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -539,29 +539,29 @@
 
     instance-of v1, v0, Landroidx/lifecycle/MutableLiveData;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/lifecycle/MutableLiveData;
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
-    if-eqz v0, :cond_11
+    :goto_0
+    if-eqz v0, :cond_1
 
     return-object v0
 
     .line 163
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     .line 165
     new-instance p2, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;
@@ -574,10 +574,10 @@
 
     invoke-direct {p2, p0, p1, p3}, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;-><init>(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_25
-    if-eqz p2, :cond_32
+    :cond_2
+    if-eqz p2, :cond_3
 
     .line 167
     iget-object p2, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
@@ -589,16 +589,16 @@
 
     invoke-direct {p2, p0, p1, p3}, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;-><init>(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_37
+    goto :goto_1
 
     .line 170
-    :cond_32
+    :cond_3
     new-instance p2, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;
 
     invoke-direct {p2, p0, p1}, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;-><init>(Landroidx/lifecycle/SavedStateHandle;Ljava/lang/String;)V
 
     .line 172
-    :goto_37
+    :goto_1
     iget-object p3, p0, Landroidx/lifecycle/SavedStateHandle;->liveDatas:Ljava/util/Map;
 
     invoke-interface {p3, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -610,7 +610,7 @@
 .end method
 
 .method private static final savedStateProvider$lambda$0(Landroidx/lifecycle/SavedStateHandle;)Landroid/os/Bundle;
-    .registers 6
+    .locals 5
 
     const-string v0, "this$0"
 
@@ -632,12 +632,12 @@
 
     move-result-object v0
 
-    :goto_13
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -665,10 +665,10 @@
     .line 62
     invoke-virtual {p0, v2, v1}, Landroidx/lifecycle/SavedStateHandle;->set(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 65
-    :cond_33
+    :cond_0
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -698,12 +698,12 @@
 
     move-result-object v0
 
-    :goto_4f
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -723,9 +723,9 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_68
+    :cond_1
     const/4 p0, 0x2
 
     new-array p0, p0, [Lkotlin/Pair;
@@ -761,7 +761,7 @@
 
 # virtual methods
 .method public final clearSavedStateProvider(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "key"
 
@@ -776,7 +776,7 @@
 .end method
 
 .method public final contains(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     const-string v0, "key"
 
@@ -793,7 +793,7 @@
 .end method
 
 .method public final get(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -809,29 +809,29 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 226
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_b
-    .catch Ljava/lang/ClassCastException; {:try_start_5 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 230
-    :catch_c
+    :catch_0
     invoke-virtual {p0, p1}, Landroidx/lifecycle/SavedStateHandle;->remove(Ljava/lang/String;)Ljava/lang/Object;
 
     const/4 p1, 0x0
 
-    :goto_10
+    :goto_0
     return-object p1
 .end method
 
 .method public final getLiveData(Ljava/lang/String;)Landroidx/lifecycle/MutableLiveData;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -865,7 +865,7 @@
 .end method
 
 .method public final getLiveData(Ljava/lang/String;Ljava/lang/Object;)Landroidx/lifecycle/MutableLiveData;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -893,7 +893,7 @@
 .end method
 
 .method public final getStateFlow(Ljava/lang/String;Ljava/lang/Object;)Lkotlinx/coroutines/flow/StateFlow;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -918,7 +918,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     .line 201
     iget-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
@@ -927,7 +927,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     .line 202
     iget-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
@@ -935,7 +935,7 @@
     invoke-interface {v1, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 204
-    :cond_1a
+    :cond_0
     iget-object p2, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
     invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -954,7 +954,7 @@
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 452
-    :cond_2c
+    :cond_1
     check-cast v1, Lkotlinx/coroutines/flow/MutableStateFlow;
 
     .line 205
@@ -971,7 +971,7 @@
 .end method
 
 .method public final keys()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1016,7 +1016,7 @@
 .end method
 
 .method public final remove(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1047,13 +1047,13 @@
 
     check-cast v1, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 281
     invoke-virtual {v1}, Landroidx/lifecycle/SavedStateHandle$SavingStateLiveData;->detach()V
 
     .line 282
-    :cond_18
+    :cond_0
     iget-object v1, p0, Landroidx/lifecycle/SavedStateHandle;->flows:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1062,7 +1062,7 @@
 .end method
 
 .method public final savedStateProvider()Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->savedStateProvider:Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
@@ -1071,7 +1071,7 @@
 .end method
 
 .method public final set(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1093,7 +1093,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_3
 
     .line 254
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->liveDatas:Ljava/util/Map;
@@ -1104,31 +1104,31 @@
 
     instance-of v1, v0, Landroidx/lifecycle/MutableLiveData;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/lifecycle/MutableLiveData;
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1b
-    if-eqz v0, :cond_21
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 257
     invoke-virtual {v0, p2}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
-    goto :goto_26
+    goto :goto_1
 
     .line 259
-    :cond_21
+    :cond_1
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->regular:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 261
-    :goto_26
+    :goto_1
     iget-object v0, p0, Landroidx/lifecycle/SavedStateHandle;->flows:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1137,18 +1137,18 @@
 
     check-cast p1, Lkotlinx/coroutines/flow/MutableStateFlow;
 
-    if-nez p1, :cond_31
+    if-nez p1, :cond_2
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_31
+    :cond_2
     invoke-interface {p1, p2}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
-    :goto_34
+    :goto_2
     return-void
 
     .line 249
-    :cond_35
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     .line 250
@@ -1185,7 +1185,7 @@
 .end method
 
 .method public final setSavedStateProvider(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 

@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -98,7 +98,7 @@
     .line 307
     instance-of v0, p1, Lcom/google/common/base/Suppliers$SupplierOfInstance;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 308
     check-cast p1, Lcom/google/common/base/Suppliers$SupplierOfInstance;
@@ -114,14 +114,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation runtime Lcom/google/common/base/ParametricNullness;
     .end annotation
 
@@ -138,7 +138,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -159,7 +159,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 321
     new-instance v0, Ljava/lang/StringBuilder;

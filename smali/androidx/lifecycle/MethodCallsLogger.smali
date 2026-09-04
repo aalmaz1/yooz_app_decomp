@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public approveCall(Ljava/lang/String;I)Z
-    .registers 7
+    .locals 4
 
     const-string v0, "name"
 
@@ -84,29 +84,29 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 33
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v0, v1
 
-    :goto_16
+    :goto_0
     and-int v2, v0, p2
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1
 
     move v1, v3
 
     .line 35
-    :cond_1c
+    :cond_1
     iget-object v2, p0, Landroidx/lifecycle/MethodCallsLogger;->calledMethods:Ljava/util/Map;
 
     or-int/2addr p2, v0

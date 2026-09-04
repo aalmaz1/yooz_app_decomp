@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;JJJ)V
-    .registers 8
+    .locals 0
 
     .line 941
     invoke-direct {p0, p2, p3, p4, p5}, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkIterator;-><init>(JJ)V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public getChunkEndTimeUs()J
-    .registers 4
+    .locals 3
 
     .line 971
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationSegmentIterator;->checkInBounds()V
@@ -59,7 +59,7 @@
 .end method
 
 .method public getChunkStartTimeUs()J
-    .registers 4
+    .locals 3
 
     .line 965
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationSegmentIterator;->checkInBounds()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public getDataSpec()Landroidx/media3/datasource/DataSpec;
-    .registers 7
+    .locals 6
 
     .line 948
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationSegmentIterator;->checkInBounds()V
@@ -105,17 +105,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/16 v0, 0x8
 
     .line 955
-    :goto_1b
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationSegmentIterator;->representationHolder:Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;
 
     iget-object v1, v1, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$RepresentationHolder;->representation:Landroidx/media3/exoplayer/dash/manifest/Representation;

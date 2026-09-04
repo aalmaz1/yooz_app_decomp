@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
-    .registers 4
+    .locals 2
 
     .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,19 +43,19 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     .line 199
     instance-of v0, p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl$OutputConfigurationParamsApi26;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 203
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl$OutputConfigurationParamsApi26;
 
     .line 205
@@ -67,7 +67,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     iget-wide v2, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl$OutputConfigurationParamsApi26;->mDynamicRangeProfile:J
 
@@ -75,7 +75,7 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl$OutputConfigurationParamsApi26;->mPhysicalCameraId:Ljava/lang/String;
 
@@ -86,16 +86,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_25
+    :cond_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 216
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl$OutputConfigurationParamsApi26;->mOutputConfiguration:Landroid/hardware/camera2/params/OutputConfiguration;
@@ -115,18 +115,18 @@
     .line 219
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl$OutputConfigurationParamsApi26;->mPhysicalCameraId:Ljava/lang/String;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_16
+    :goto_0
     xor-int/2addr v0, v1
 
     shl-int/lit8 v1, v0, 0x5

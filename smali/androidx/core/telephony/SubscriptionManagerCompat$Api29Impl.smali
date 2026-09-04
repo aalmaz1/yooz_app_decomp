@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getSlotIndex(I)I
-    .registers 1
+    .locals 0
 
     .line 83
     invoke-static {p0}, Landroid/telephony/SubscriptionManager;->getSlotIndex(I)I

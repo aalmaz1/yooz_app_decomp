@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/MediatorLiveData;Lkotlin/jvm/internal/Ref$BooleanRef;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 185
     invoke-virtual {p0, p1}, Landroidx/lifecycle/Transformations$distinctUntilChanged$1;->invoke(Ljava/lang/Object;)V
@@ -100,7 +100,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TX;)V"
@@ -119,24 +119,24 @@
 
     iget-boolean v1, v1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
-    :cond_10
-    if-eqz v0, :cond_22
+    :cond_0
+    if-eqz v0, :cond_2
 
     .line 189
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     .line 191
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/lifecycle/Transformations$distinctUntilChanged$1;->$firstTime:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     const/4 v1, 0x0
@@ -148,6 +148,6 @@
 
     invoke-virtual {v0, p1}, Landroidx/lifecycle/MediatorLiveData;->setValue(Ljava/lang/Object;)V
 
-    :cond_22
+    :cond_2
     return-void
 .end method

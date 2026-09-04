@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public final toMutablePreferences()Landroidx/datastore/preferences/core/MutablePreferences;
-    .registers 4
+    .locals 3
 
     .line 108
     new-instance v0, Landroidx/datastore/preferences/core/MutablePreferences;
@@ -116,7 +116,7 @@
 .end method
 
 .method public final toPreferences()Landroidx/datastore/preferences/core/Preferences;
-    .registers 4
+    .locals 3
 
     .line 119
     new-instance v0, Landroidx/datastore/preferences/core/MutablePreferences;

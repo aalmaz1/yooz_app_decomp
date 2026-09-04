@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/UUID;)V
-    .registers 4
+    .locals 2
 
     .line 261
     new-instance v0, Ljava/lang/StringBuilder;
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$1;)V
-    .registers 3
+    .locals 0
 
     .line 258
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$MissingSchemeDataException;-><init>(Ljava/util/UUID;)V

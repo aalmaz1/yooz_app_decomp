@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)V"
@@ -81,37 +81,37 @@
 
 # virtual methods
 .method public final checkHashCode()V
-    .registers 4
+    .locals 3
 
     .line 57
     iget-object v0, p0, Landroidx/datastore/core/Data;->value:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v1
 
-    :goto_b
+    :goto_0
     iget v2, p0, Landroidx/datastore/core/Data;->hashCode:I
 
-    if-ne v0, v2, :cond_10
+    if-ne v0, v2, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_10
-    if-eqz v1, :cond_13
+    :cond_1
+    if-eqz v1, :cond_2
 
     return-void
 
-    :cond_13
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Data in DataStore was mutated but DataStore is only compatible with Immutable types."
@@ -128,7 +128,7 @@
 .end method
 
 .method public final getHashCode()I
-    .registers 2
+    .locals 1
 
     .line 55
     iget v0, p0, Landroidx/datastore/core/Data;->hashCode:I
@@ -137,7 +137,7 @@
 .end method
 
 .method public final getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"

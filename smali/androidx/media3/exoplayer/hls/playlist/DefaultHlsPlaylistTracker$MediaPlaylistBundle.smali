@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;Landroid/net/Uri;)V
-    .registers 4
+    .locals 1
 
     .line 557
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->this$0:Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;J)Z
-    .registers 3
+    .locals 0
 
     .line 538
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->excludePlaylist(J)Z
@@ -110,7 +110,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/source/LoadEventInfo;)V
-    .registers 3
+    .locals 0
 
     .line 538
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->processLoadedPlaylist(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/source/LoadEventInfo;)V
@@ -119,7 +119,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;)J
-    .registers 3
+    .locals 2
 
     .line 538
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->excludeUntilMs:J
@@ -128,7 +128,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 538
     iget-object p0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistUrl:Landroid/net/Uri;
@@ -137,7 +137,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;Landroid/net/Uri;)V
-    .registers 2
+    .locals 0
 
     .line 538
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->loadPlaylistInternal(Landroid/net/Uri;)V
@@ -146,7 +146,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    .registers 1
+    .locals 0
 
     .line 538
     iget-object p0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -155,7 +155,7 @@
 .end method
 
 .method private excludePlaylist(J)Z
-    .registers 5
+    .locals 2
 
     .line 844
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -179,7 +179,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->this$0:Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;
 
@@ -187,26 +187,26 @@
 
     move-result p1
 
-    if-nez p1, :cond_1f
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_20
+    :goto_0
     return p1
 .end method
 
 .method private getMediaPlaylistUriForReload()Landroid/net/Uri;
-    .registers 9
+    .locals 8
 
     .line 809
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
-    if-eqz v0, :cond_8c
+    if-eqz v0, :cond_5
 
     iget-object v0, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->serverControl:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
 
@@ -216,7 +216,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
@@ -224,12 +224,12 @@
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->canBlockReload:Z
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
-    goto :goto_8c
+    goto :goto_1
 
     .line 814
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistUrl:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -243,7 +243,7 @@
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->canBlockReload:Z
 
-    if-eqz v1, :cond_6a
+    if-eqz v1, :cond_2
 
     .line 816
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -279,7 +279,7 @@
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_6a
+    if-eqz v1, :cond_2
 
     .line 820
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -296,7 +296,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_61
+    if-nez v5, :cond_1
 
     invoke-static {v1}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
 
@@ -306,11 +306,11 @@
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;->isPreload:Z
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_1
 
     add-int/lit8 v4, v4, -0x1
 
-    :cond_61
+    :cond_1
     const-string v1, "_HLS_part"
 
     .line 826
@@ -321,7 +321,7 @@
     invoke-virtual {v0, v1, v4}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     .line 829
-    :cond_6a
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     iget-object v1, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->serverControl:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
@@ -330,7 +330,7 @@
 
     cmp-long v1, v4, v2
 
-    if-eqz v1, :cond_87
+    if-eqz v1, :cond_4
 
     .line 831
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -339,23 +339,23 @@
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->canSkipDateRanges:Z
 
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_3
 
     const-string/jumbo v1, "v2"
 
-    goto :goto_82
+    goto :goto_0
 
-    :cond_80
+    :cond_3
     const-string v1, "YES"
 
-    :goto_82
+    :goto_0
     const-string v2, "_HLS_skip"
 
     .line 830
     invoke-virtual {v0, v2, v1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     .line 833
-    :cond_87
+    :cond_4
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v0
@@ -363,15 +363,15 @@
     return-object v0
 
     .line 812
-    :cond_8c
-    :goto_8c
+    :cond_5
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistUrl:Landroid/net/Uri;
 
     return-object v0
 .end method
 
 .method private loadPlaylistImmediately(Landroid/net/Uri;)V
-    .registers 10
+    .locals 8
 
     .line 731
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->this$0:Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;
@@ -448,7 +448,7 @@
 .end method
 
 .method private loadPlaylistInternal(Landroid/net/Uri;)V
-    .registers 8
+    .locals 6
 
     const-wide/16 v0, 0x0
 
@@ -458,7 +458,7 @@
     .line 712
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->loadPending:Z
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->mediaPlaylistLoader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -466,7 +466,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->mediaPlaylistLoader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -474,12 +474,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 716
-    :cond_19
+    :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -489,7 +489,7 @@
 
     cmp-long v2, v0, v2
 
-    if-gez v2, :cond_38
+    if-gez v2, :cond_1
 
     const/4 v2, 0x1
 
@@ -513,19 +513,19 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 726
-    :cond_38
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->loadPlaylistImmediately(Landroid/net/Uri;)V
 
-    :cond_3b
-    :goto_3b
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method private processLoadedPlaylist(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/source/LoadEventInfo;)V
-    .registers 14
+    .locals 11
 
     .line 752
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -549,7 +549,7 @@
 
     const/4 v4, 0x0
 
-    if-eq v3, v0, :cond_1f
+    if-eq v3, v0, :cond_0
 
     .line 757
     iput-object v4, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistError:Ljava/io/IOException;
@@ -564,13 +564,13 @@
 
     invoke-static {p1, v4, v3}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;->access$1500(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;Landroid/net/Uri;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)V
 
-    goto :goto_76
+    goto :goto_1
 
     .line 760
-    :cond_1f
+    :cond_0
     iget-boolean v3, v3, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasEndTag:Z
 
-    if-nez v3, :cond_76
+    if-nez v3, :cond_3
 
     .line 763
     iget-wide v5, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->mediaSequence:J
@@ -593,7 +593,7 @@
 
     const/4 v3, 0x1
 
-    if-gez p1, :cond_3f
+    if-gez p1, :cond_1
 
     .line 769
     new-instance v4, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker$PlaylistResetException;
@@ -604,10 +604,10 @@
 
     move v5, v3
 
-    goto :goto_60
+    goto :goto_0
 
     .line 770
-    :cond_3f
+    :cond_1
     iget-wide v5, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->lastSnapshotChangeMs:J
 
     sub-long v5, v1, v5
@@ -638,7 +638,7 @@
 
     const/4 v5, 0x0
 
-    if-lez p1, :cond_60
+    if-lez p1, :cond_2
 
     .line 774
     new-instance v4, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker$PlaylistStuckException;
@@ -647,9 +647,9 @@
 
     invoke-direct {v4, p1}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker$PlaylistStuckException;-><init>(Landroid/net/Uri;)V
 
-    :cond_60
-    :goto_60
-    if-eqz v4, :cond_76
+    :cond_2
+    :goto_0
+    if-eqz v4, :cond_3
 
     .line 777
     iput-object v4, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistError:Ljava/io/IOException;
@@ -672,41 +672,41 @@
     invoke-static {p1, v6, v7, v5}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;->access$1000(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;Landroid/net/Uri;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Z)Z
 
     .line 789
-    :cond_76
-    :goto_76
+    :cond_3
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->serverControl:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->canBlockReload:Z
 
-    if-nez p1, :cond_8b
+    if-nez p1, :cond_5
 
     .line 793
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
-    if-eq p1, v0, :cond_85
+    if-eq p1, v0, :cond_4
 
     .line 794
     iget-wide v3, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->targetDurationUs:J
 
-    goto :goto_8d
+    goto :goto_2
 
     .line 795
-    :cond_85
+    :cond_4
     iget-wide v3, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->targetDurationUs:J
 
     const-wide/16 v5, 0x2
 
     div-long/2addr v3, v5
 
-    goto :goto_8d
+    goto :goto_2
 
-    :cond_8b
+    :cond_5
     const-wide/16 v3, 0x0
 
     .line 798
-    :goto_8d
+    :goto_2
     invoke-static {v3, v4}, Landroidx/media3/common/util/Util;->usToMs(J)J
 
     move-result-wide v3
@@ -724,7 +724,7 @@
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasEndTag:Z
 
-    if-nez p1, :cond_b6
+    if-nez p1, :cond_7
 
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistUrl:Landroid/net/Uri;
 
@@ -739,28 +739,28 @@
 
     move-result p1
 
-    if-nez p1, :cond_af
+    if-nez p1, :cond_6
 
     iget-boolean p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->activeForPlayback:Z
 
-    if-eqz p1, :cond_b6
+    if-eqz p1, :cond_7
 
     .line 804
-    :cond_af
+    :cond_6
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->getMediaPlaylistUriForReload()Landroid/net/Uri;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->loadPlaylistInternal(Landroid/net/Uri;)V
 
-    :cond_b6
+    :cond_7
     return-void
 .end method
 
 
 # virtual methods
 .method public getPlaylistSnapshot()Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    .registers 2
+    .locals 1
 
     .line 565
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -769,7 +769,7 @@
 .end method
 
 .method public isActiveForPlayback()Z
-    .registers 2
+    .locals 1
 
     .line 592
     iget-boolean v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->activeForPlayback:Z
@@ -778,19 +778,19 @@
 .end method
 
 .method public isSnapshotValid()Z
-    .registers 10
+    .locals 9
 
     .line 569
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 572
-    :cond_6
+    :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -817,7 +817,7 @@
 
     const/4 v6, 0x1
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
@@ -825,13 +825,13 @@
 
     const/4 v7, 0x2
 
-    if-eq v0, v7, :cond_33
+    if-eq v0, v7, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistSnapshot:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     iget v0, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->playlistType:I
 
-    if-eq v0, v6, :cond_33
+    if-eq v0, v6, :cond_1
 
     iget-wide v7, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->lastSnapshotLoadMs:J
 
@@ -839,17 +839,17 @@
 
     cmp-long v0, v7, v2
 
-    if-lez v0, :cond_34
+    if-lez v0, :cond_2
 
-    :cond_33
+    :cond_1
     move v1, v6
 
-    :cond_34
+    :cond_2
     return v1
 .end method
 
 .method synthetic lambda$loadPlaylistInternal$0$androidx-media3-exoplayer-hls-playlist-DefaultHlsPlaylistTracker$MediaPlaylistBundle(Landroid/net/Uri;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -863,28 +863,28 @@
 .end method
 
 .method public loadPlaylist(Z)V
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 581
     invoke-direct {p0}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->getMediaPlaylistUriForReload()Landroid/net/Uri;
 
     move-result-object p1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistUrl:Landroid/net/Uri;
 
-    :goto_9
+    :goto_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->loadPlaylistInternal(Landroid/net/Uri;)V
 
     return-void
 .end method
 
 .method public maybeThrowPlaylistRefreshError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -899,17 +899,17 @@
     .line 586
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->playlistError:Ljava/io/IOException;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return-void
 
     .line 587
-    :cond_a
+    :cond_0
     throw v0
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 538
     check-cast p1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
@@ -920,7 +920,7 @@
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJZ)V
-    .registers 22
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -990,7 +990,7 @@
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 538
     check-cast p1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
@@ -1001,7 +1001,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJ)V
-    .registers 22
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1057,7 +1057,7 @@
 
     const/4 v4, 0x4
 
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_0
 
     .line 619
     check-cast v2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -1073,9 +1073,9 @@
 
     invoke-virtual {v2, v15, v4}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadCompleted(Landroidx/media3/exoplayer/source/LoadEventInfo;I)V
 
-    goto :goto_4d
+    goto :goto_0
 
-    :cond_38
+    :cond_0
     const-string v2, "Loaded playlist has unexpected type."
 
     const/4 v3, 0x0
@@ -1101,7 +1101,7 @@
     invoke-virtual {v2, v15, v4, v3, v5}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;ILjava/io/IOException;Z)V
 
     .line 628
-    :goto_4d
+    :goto_0
     iget-object v2, v0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->this$0:Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;
 
     invoke-static {v2}, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;->access$900(Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;)Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -1116,7 +1116,7 @@
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 538
     check-cast p1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;
@@ -1129,7 +1129,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 24
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1193,28 +1193,28 @@
 
     const/4 v5, 0x0
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     move v3, v4
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     move v3, v5
 
     .line 667
-    :goto_31
+    :goto_0
     instance-of v6, v2, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$DeltaUpdateException;
 
-    if-nez v3, :cond_37
+    if-nez v3, :cond_1
 
-    if-eqz v6, :cond_4f
+    if-eqz v6, :cond_3
 
     .line 670
-    :cond_37
+    :cond_1
     instance-of v3, v2, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
 
-    if-eqz v3, :cond_41
+    if-eqz v3, :cond_2
 
     .line 671
     move-object v3, v2
@@ -1223,26 +1223,26 @@
 
     iget v3, v3, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_41
+    :cond_2
     const v3, 0x7fffffff
 
-    :goto_44
-    if-nez v6, :cond_a2
+    :goto_1
+    if-nez v6, :cond_7
 
     const/16 v6, 0x190
 
-    if-eq v3, v6, :cond_a2
+    if-eq v3, v6, :cond_7
 
     const/16 v6, 0x1f7
 
-    if-ne v3, v6, :cond_4f
+    if-ne v3, v6, :cond_3
 
-    goto :goto_a2
+    goto :goto_3
 
     .line 684
-    :cond_4f
+    :cond_3
     new-instance v3, Landroidx/media3/exoplayer/source/MediaLoadData;
 
     iget v6, v1, Landroidx/media3/exoplayer/upstream/ParsingLoadable;->type:I
@@ -1266,7 +1266,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_82
+    if-eqz v3, :cond_5
 
     .line 691
     iget-object v3, v0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->this$0:Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;
@@ -1283,27 +1283,27 @@
 
     cmp-long v3, v6, v8
 
-    if-eqz v3, :cond_7f
+    if-eqz v3, :cond_4
 
     .line 694
     invoke-static {v5, v6, v7}, Landroidx/media3/exoplayer/upstream/Loader;->createRetryAction(ZJ)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     move-result-object v3
 
-    goto :goto_84
+    goto :goto_2
 
     .line 695
-    :cond_7f
+    :cond_4
     sget-object v3, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    goto :goto_84
+    goto :goto_2
 
     .line 697
-    :cond_82
+    :cond_5
     sget-object v3, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     .line 700
-    :goto_84
+    :goto_2
     invoke-virtual {v3}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v5
@@ -1321,7 +1321,7 @@
 
     invoke-virtual {v5, v15, v6, v2, v4}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;ILjava/io/IOException;Z)V
 
-    if-eqz v4, :cond_a1
+    if-eqz v4, :cond_6
 
     .line 703
     iget-object v2, v0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->this$0:Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker;
@@ -1334,12 +1334,12 @@
 
     invoke-interface {v2, v4, v5}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->onLoadTaskConcluded(J)V
 
-    :cond_a1
+    :cond_6
     return-object v3
 
     .line 677
-    :cond_a2
-    :goto_a2
+    :cond_7
+    :goto_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v6
@@ -1374,7 +1374,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 600
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->mediaPlaylistLoader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -1385,7 +1385,7 @@
 .end method
 
 .method public setActiveForPlayback(Z)V
-    .registers 2
+    .locals 0
 
     .line 596
     iput-boolean p1, p0, Landroidx/media3/exoplayer/hls/playlist/DefaultHlsPlaylistTracker$MediaPlaylistBundle;->activeForPlayback:Z

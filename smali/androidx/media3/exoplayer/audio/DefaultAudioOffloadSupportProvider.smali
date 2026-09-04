@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,12 +50,12 @@
 .end method
 
 .method private isOffloadVariableRateSupported(Landroid/content/Context;)Z
-    .registers 4
+    .locals 2
 
     .line 115
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->isOffloadVariableRateSupported:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 116
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -64,10 +64,10 @@
 
     return p1
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
     const-string v1, "audio"
 
@@ -78,7 +78,7 @@
 
     check-cast p1, Landroid/media/AudioManager;
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_2
 
     const-string v1, "offloadVariableRateSupported"
 
@@ -87,7 +87,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     const-string v1, "offloadVariableRateSupported=1"
 
@@ -96,32 +96,32 @@
 
     move-result p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x1
 
     .line 125
-    :cond_27
+    :cond_1
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->isOffloadVariableRateSupported:Ljava/lang/Boolean;
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 129
-    :cond_2e
+    :cond_2
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->isOffloadVariableRateSupported:Ljava/lang/Boolean;
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 132
-    :cond_35
+    :cond_3
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -129,7 +129,7 @@
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->isOffloadVariableRateSupported:Ljava/lang/Boolean;
 
     .line 134
-    :goto_3b
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->isOffloadVariableRateSupported:Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public getAudioOffloadSupport(Landroidx/media3/common/Format;Landroidx/media3/common/AudioAttributes;)Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
-    .registers 7
+    .locals 4
 
     .line 71
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -155,18 +155,18 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_64
+    if-lt v0, v1, :cond_5
 
     iget v0, p1, Landroidx/media3/common/Format;->sampleRate:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
-    goto :goto_64
+    goto :goto_1
 
     .line 80
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->context:Landroid/content/Context;
 
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/audio/DefaultAudioOffloadSupportProvider;->isOffloadVariableRateSupported(Landroid/content/Context;)Z
@@ -188,7 +188,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_4
 
     .line 84
     sget v2, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -198,19 +198,19 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_31
+    if-ge v2, v3, :cond_1
 
-    goto :goto_61
+    goto :goto_0
 
     .line 90
-    :cond_31
+    :cond_1
     iget v2, p1, Landroidx/media3/common/Format;->channelCount:I
 
     invoke-static {v2}, Landroidx/media3/common/util/Util;->getAudioTrackChannelConfig(I)I
 
     move-result v2
 
-    if-nez v2, :cond_3c
+    if-nez v2, :cond_2
 
     .line 92
     sget-object p1, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;->DEFAULT_UNSUPPORTED:Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
@@ -218,22 +218,22 @@
     return-object p1
 
     .line 97
-    :cond_3c
-    :try_start_3c
+    :cond_2
+    :try_start_0
     iget p1, p1, Landroidx/media3/common/Format;->sampleRate:I
 
     invoke-static {p1, v2, v1}, Landroidx/media3/common/util/Util;->getAudioFormat(III)Landroid/media/AudioFormat;
 
     move-result-object p1
-    :try_end_42
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3c .. :try_end_42} :catch_5e
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 102
     sget v1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x1f
 
-    if-lt v1, v2, :cond_53
+    if-lt v1, v2, :cond_3
 
     .line 105
     invoke-virtual {p2}, Landroidx/media3/common/AudioAttributes;->getAudioAttributesV21()Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
@@ -250,7 +250,7 @@
     return-object p1
 
     .line 110
-    :cond_53
+    :cond_3
     invoke-virtual {p2}, Landroidx/media3/common/AudioAttributes;->getAudioAttributesV21()Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
 
     move-result-object p2
@@ -265,21 +265,21 @@
     return-object p1
 
     .line 99
-    :catch_5e
+    :catch_0
     sget-object p1, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;->DEFAULT_UNSUPPORTED:Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
 
     return-object p1
 
     .line 87
-    :cond_61
-    :goto_61
+    :cond_4
+    :goto_0
     sget-object p1, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;->DEFAULT_UNSUPPORTED:Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
 
     return-object p1
 
     .line 75
-    :cond_64
-    :goto_64
+    :cond_5
+    :goto_1
     sget-object p1, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;->DEFAULT_UNSUPPORTED:Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
 
     return-object p1

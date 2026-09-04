@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/audio/AudioStreamImpl;)V
-    .registers 2
+    .locals 0
 
     .line 311
     iput-object p1, p0, Landroidx/camera/video/internal/audio/AudioStreamImpl$AudioRecordingApi29Callback;->this$0:Landroidx/camera/video/internal/audio/AudioStreamImpl;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onRecordingConfigChanged(Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,12 +48,12 @@
 
     move-result-object p1
 
-    :cond_4
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -74,7 +74,7 @@
 
     move-result v2
 
-    if-ne v1, v2, :cond_4
+    if-ne v1, v2, :cond_0
 
     .line 316
     invoke-static {v0}, Landroidx/camera/video/internal/compat/Api29Impl;->isClientSilenced(Landroid/media/AudioRecordingConfiguration;)Z
@@ -86,6 +86,6 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/audio/AudioStreamImpl;->notifySilenced(Z)V
 
-    :cond_27
+    :cond_1
     return-void
 .end method

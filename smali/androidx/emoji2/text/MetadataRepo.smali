@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/graphics/Typeface;Landroidx/emoji2/text/flatbuffer/MetadataList;)V
-    .registers 4
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method private constructIndex(Landroidx/emoji2/text/flatbuffer/MetadataList;)V
-    .registers 7
+    .locals 5
 
     .line 160
     invoke-virtual {p1}, Landroidx/emoji2/text/flatbuffer/MetadataList;->listLength()I
@@ -76,8 +76,8 @@
 
     const/4 v0, 0x0
 
-    :goto_5
-    if-ge v0, p1, :cond_1d
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     .line 162
     new-instance v1, Landroidx/emoji2/text/EmojiMetadata;
@@ -100,14 +100,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public static create(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroidx/emoji2/text/MetadataRepo;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -134,15 +134,15 @@
     move-result-object p0
 
     invoke-direct {v1, v0, p0}, Landroidx/emoji2/text/MetadataRepo;-><init>(Landroid/graphics/Typeface;Landroidx/emoji2/text/flatbuffer/MetadataList;)V
-    :try_end_12
-    .catchall {:try_start_0 .. :try_end_12} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 152
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
 
     return-object v1
 
-    :catchall_16
+    :catchall_0
     move-exception p0
 
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
@@ -152,7 +152,7 @@
 .end method
 
 .method public static create(Landroid/graphics/Typeface;)Landroidx/emoji2/text/MetadataRepo;
-    .registers 3
+    .locals 2
 
     :try_start_0
     const-string v0, "EmojiCompat.MetadataRepo.create"
@@ -168,15 +168,15 @@
     invoke-direct {v1}, Landroidx/emoji2/text/flatbuffer/MetadataList;-><init>()V
 
     invoke-direct {v0, p0, v1}, Landroidx/emoji2/text/MetadataRepo;-><init>(Landroid/graphics/Typeface;Landroidx/emoji2/text/flatbuffer/MetadataList;)V
-    :try_end_f
-    .catchall {:try_start_0 .. :try_end_f} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 96
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
 
     return-object v0
 
-    :catchall_13
+    :catchall_0
     move-exception p0
 
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
@@ -186,7 +186,7 @@
 .end method
 
 .method public static create(Landroid/graphics/Typeface;Ljava/io/InputStream;)Landroidx/emoji2/text/MetadataRepo;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -207,15 +207,15 @@
     move-result-object p1
 
     invoke-direct {v0, p0, p1}, Landroidx/emoji2/text/MetadataRepo;-><init>(Landroid/graphics/Typeface;Landroidx/emoji2/text/flatbuffer/MetadataList;)V
-    :try_end_e
-    .catchall {:try_start_0 .. :try_end_e} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 114
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
 
     return-object v0
 
-    :catchall_12
+    :catchall_0
     move-exception p0
 
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
@@ -225,7 +225,7 @@
 .end method
 
 .method public static create(Landroid/graphics/Typeface;Ljava/nio/ByteBuffer;)Landroidx/emoji2/text/MetadataRepo;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -246,15 +246,15 @@
     move-result-object p1
 
     invoke-direct {v0, p0, p1}, Landroidx/emoji2/text/MetadataRepo;-><init>(Landroid/graphics/Typeface;Landroidx/emoji2/text/flatbuffer/MetadataList;)V
-    :try_end_e
-    .catchall {:try_start_0 .. :try_end_e} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 132
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
 
     return-object v0
 
-    :catchall_12
+    :catchall_0
     move-exception p0
 
     invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
@@ -266,7 +266,7 @@
 
 # virtual methods
 .method public getEmojiCharArray()[C
-    .registers 2
+    .locals 1
 
     .line 203
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo;->mEmojiCharArray:[C
@@ -275,7 +275,7 @@
 .end method
 
 .method public getMetadataList()Landroidx/emoji2/text/flatbuffer/MetadataList;
-    .registers 2
+    .locals 1
 
     .line 212
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo;->mMetadataList:Landroidx/emoji2/text/flatbuffer/MetadataList;
@@ -284,7 +284,7 @@
 .end method
 
 .method getMetadataVersion()I
-    .registers 2
+    .locals 1
 
     .line 185
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo;->mMetadataList:Landroidx/emoji2/text/flatbuffer/MetadataList;
@@ -297,7 +297,7 @@
 .end method
 
 .method getRootNode()Landroidx/emoji2/text/MetadataRepo$Node;
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo;->mRootNode:Landroidx/emoji2/text/MetadataRepo$Node;
@@ -306,7 +306,7 @@
 .end method
 
 .method getTypeface()Landroid/graphics/Typeface;
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/emoji2/text/MetadataRepo;->mTypeface:Landroid/graphics/Typeface;
@@ -315,7 +315,7 @@
 .end method
 
 .method put(Landroidx/emoji2/text/EmojiMetadata;)V
-    .registers 6
+    .locals 4
 
     const-string v0, "emoji metadata cannot be null"
 
@@ -331,16 +331,16 @@
 
     const/4 v2, 0x0
 
-    if-lez v0, :cond_f
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v0, v2
 
-    :goto_10
+    :goto_0
     const-string v3, "invalid metadata codepoint length"
 
     invoke-static {v0, v3}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V

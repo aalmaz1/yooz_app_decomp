@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method private setProjection([BIJ)V
-    .registers 7
+    .locals 2
 
     .line 190
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->lastProjectionData:[B
@@ -145,15 +145,15 @@
 
     const/4 p1, -0x1
 
-    if-ne p2, p1, :cond_b
+    if-ne p2, p1, :cond_0
 
     .line 193
     iget p2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->defaultStereoMode:I
 
-    :cond_b
+    :cond_0
     iput p2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->lastStereoMode:I
 
-    if-ne v1, p2, :cond_18
+    if-ne v1, p2, :cond_1
 
     .line 194
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->lastProjectionData:[B
@@ -162,15 +162,15 @@
 
     move-result p1
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     return-void
 
     .line 199
-    :cond_18
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->lastProjectionData:[B
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_2
 
     .line 200
     iget p2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->lastStereoMode:I
@@ -179,25 +179,25 @@
 
     move-result-object p1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     const/4 p1, 0x0
 
-    :goto_24
-    if-eqz p1, :cond_2d
+    :goto_0
+    if-eqz p1, :cond_3
 
     .line 203
     invoke-static {p1}, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->isSupported(Landroidx/media3/exoplayer/video/spherical/Projection;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_2d
+    if-eqz p2, :cond_3
 
-    goto :goto_33
+    goto :goto_1
 
     .line 205
-    :cond_2d
+    :cond_3
     iget p1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->lastStereoMode:I
 
     invoke-static {p1}, Landroidx/media3/exoplayer/video/spherical/Projection;->createEquirectangular(I)Landroidx/media3/exoplayer/video/spherical/Projection;
@@ -205,7 +205,7 @@
     move-result-object p1
 
     .line 206
-    :goto_33
+    :goto_1
     iget-object p2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->projectionQueue:Landroidx/media3/common/util/TimedValueQueue;
 
     invoke-virtual {p2, p3, p4, p1}, Landroidx/media3/common/util/TimedValueQueue;->add(JLjava/lang/Object;)V
@@ -216,7 +216,7 @@
 
 # virtual methods
 .method public drawFrame([FZ)V
-    .registers 11
+    .locals 8
 
     const-string v0, "Failed to draw a frame"
 
@@ -228,21 +228,21 @@
     invoke-static {v2}, Landroid/opengl/GLES20;->glClear(I)V
 
     .line 119
-    :try_start_9
+    :try_start_0
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_c
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_9 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_d
+    :catch_0
     move-exception v2
 
     .line 121
     invoke-static {v1, v0, v2}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 124
-    :goto_11
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->frameAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v3, 0x1
@@ -253,7 +253,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_65
+    if-eqz v2, :cond_2
 
     .line 125
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -267,28 +267,28 @@
     invoke-virtual {v2}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
     .line 127
-    :try_start_26
+    :try_start_1
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_29
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_26 .. :try_end_29} :catch_2a
+    :try_end_1
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_2e
+    goto :goto_1
 
-    :catch_2a
+    :catch_1
     move-exception v2
 
     .line 129
     invoke-static {v1, v0, v2}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 131
-    :goto_2e
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->resetRotationAtNextFrame:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, v3, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_0
 
     .line 132
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->rotationMatrix:[F
@@ -296,7 +296,7 @@
     invoke-static {v0}, Landroidx/media3/common/util/GlUtil;->setToIdentity([F)V
 
     .line 134
-    :cond_3b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
@@ -312,7 +312,7 @@
 
     check-cast v2, Ljava/lang/Long;
 
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_1
 
     .line 137
     iget-object v3, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->frameRotationQueue:Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;
@@ -326,7 +326,7 @@
     invoke-virtual {v3, v4, v5, v6}, Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;->pollRotationMatrix([FJ)Z
 
     .line 139
-    :cond_56
+    :cond_1
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->projectionQueue:Landroidx/media3/common/util/TimedValueQueue;
 
     invoke-virtual {v2, v0, v1}, Landroidx/media3/common/util/TimedValueQueue;->pollFloor(J)Ljava/lang/Object;
@@ -335,7 +335,7 @@
 
     check-cast v0, Landroidx/media3/exoplayer/video/spherical/Projection;
 
-    if-eqz v0, :cond_65
+    if-eqz v0, :cond_2
 
     .line 141
     iget-object v1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->projectionRenderer:Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;
@@ -343,7 +343,7 @@
     invoke-virtual {v1, v0}, Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;->setProjection(Landroidx/media3/exoplayer/video/spherical/Projection;)V
 
     .line 144
-    :cond_65
+    :cond_2
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->tempMatrix:[F
 
     const/4 v3, 0x0
@@ -371,14 +371,14 @@
 .end method
 
 .method public init()Landroid/graphics/SurfaceTexture;
-    .registers 4
+    .locals 3
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     const/high16 v1, 0x3f000000    # 0.5f
 
     .line 92
-    :try_start_4
+    :try_start_0
     invoke-static {v1, v1, v1, v0}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
     .line 93
@@ -398,12 +398,12 @@
     move-result v0
 
     iput v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->textureId:I
-    :try_end_18
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_4 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :catch_19
+    :catch_0
     move-exception v0
 
     const-string v1, "SceneRenderer"
@@ -414,7 +414,7 @@
     invoke-static {v1, v2, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 102
-    :goto_21
+    :goto_0
     new-instance v0, Landroid/graphics/SurfaceTexture;
 
     iget v1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->textureId:I
@@ -437,7 +437,7 @@
 .end method
 
 .method synthetic lambda$init$0$androidx-media3-exoplayer-video-spherical-SceneRenderer(Landroid/graphics/SurfaceTexture;)V
-    .registers 3
+    .locals 1
 
     .line 103
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->frameAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -450,7 +450,7 @@
 .end method
 
 .method public onCameraMotion(J[F)V
-    .registers 5
+    .locals 1
 
     .line 171
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->frameRotationQueue:Landroidx/media3/exoplayer/video/spherical/FrameRotationQueue;
@@ -461,7 +461,7 @@
 .end method
 
 .method public onCameraMotionReset()V
-    .registers 3
+    .locals 2
 
     .line 176
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->sampleTimestampQueue:Landroidx/media3/common/util/TimedValueQueue;
@@ -484,7 +484,7 @@
 .end method
 
 .method public onVideoFrameAboutToBeRendered(JJLandroidx/media3/common/Format;Landroid/media/MediaFormat;)V
-    .registers 7
+    .locals 0
 
     .line 163
     iget-object p6, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->sampleTimestampQueue:Landroidx/media3/common/util/TimedValueQueue;
@@ -506,7 +506,7 @@
 .end method
 
 .method public setDefaultStereoMode(I)V
-    .registers 2
+    .locals 0
 
     .line 82
     iput p1, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->defaultStereoMode:I
@@ -515,7 +515,7 @@
 .end method
 
 .method public shutdown()V
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SceneRenderer;->projectionRenderer:Landroidx/media3/exoplayer/video/spherical/ProjectionRenderer;

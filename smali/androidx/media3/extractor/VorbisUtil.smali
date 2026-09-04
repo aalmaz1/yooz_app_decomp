@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 684
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,73 +28,73 @@
 .end method
 
 .method public static getVorbisToAndroidChannelLayoutMapping(I)[I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x5
 
-    if-eq p0, v0, :cond_24
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x6
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x7
 
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_12
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_12
+    :cond_0
     new-array p0, v0, [I
 
     .line 164
-    fill-array-data p0, :array_30
+    fill-array-data p0, :array_0
 
     return-object p0
 
-    :cond_18
+    :cond_1
     new-array p0, v0, [I
 
     .line 162
-    fill-array-data p0, :array_44
+    fill-array-data p0, :array_1
 
     return-object p0
 
-    :cond_1e
+    :cond_2
     new-array p0, v0, [I
 
     .line 160
-    fill-array-data p0, :array_56
+    fill-array-data p0, :array_2
 
     return-object p0
 
-    :cond_24
+    :cond_3
     new-array p0, v0, [I
 
     .line 158
-    fill-array-data p0, :array_66
+    fill-array-data p0, :array_3
 
     return-object p0
 
-    :cond_2a
+    :cond_4
     new-array p0, v0, [I
 
     .line 156
-    fill-array-data p0, :array_74
+    fill-array-data p0, :array_4
 
     return-object p0
 
-    :array_30
+    :array_0
     .array-data 4
         0x0
         0x2
@@ -106,7 +106,7 @@
         0x4
     .end array-data
 
-    :array_44
+    :array_1
     .array-data 4
         0x0
         0x2
@@ -117,7 +117,7 @@
         0x4
     .end array-data
 
-    :array_56
+    :array_2
     .array-data 4
         0x0
         0x2
@@ -127,7 +127,7 @@
         0x4
     .end array-data
 
-    :array_66
+    :array_3
     .array-data 4
         0x0
         0x2
@@ -136,7 +136,7 @@
         0x4
     .end array-data
 
-    :array_74
+    :array_4
     .array-data 4
         0x0
         0x2
@@ -145,25 +145,25 @@
 .end method
 
 .method public static iLog(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
-    :goto_1
-    if-lez p0, :cond_8
+    :goto_0
+    if-lez p0, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
     ushr-int/lit8 p0, p0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     return v0
 .end method
 
 .method private static mapType1QuantValues(JJ)J
-    .registers 6
+    .locals 2
 
     long-to-double p0, p0
 
@@ -188,7 +188,7 @@
 .end method
 
 .method public static parseVorbisComments(Ljava/util/List;)Landroidx/media3/common/Metadata;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -209,12 +209,12 @@
     move v2, v1
 
     .line 363
-    :goto_7
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_66
+    if-ge v2, v3, :cond_2
 
     .line 364
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -237,7 +237,7 @@
 
     const-string v7, "VorbisUtil"
 
-    if-eq v5, v6, :cond_32
+    if-eq v5, v6, :cond_0
 
     .line 367
     new-instance v4, Ljava/lang/StringBuilder;
@@ -256,10 +256,10 @@
 
     invoke-static {v7, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_63
+    goto :goto_1
 
     .line 371
-    :cond_32
+    :cond_0
     aget-object v3, v4, v1
 
     const-string v5, "METADATA_BLOCK_PICTURE"
@@ -270,10 +270,10 @@
 
     const/4 v5, 0x1
 
-    if-eqz v3, :cond_57
+    if-eqz v3, :cond_1
 
     .line 376
-    :try_start_3d
+    :try_start_0
     aget-object v3, v4, v5
 
     invoke-static {v3, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
@@ -290,12 +290,12 @@
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_4f
-    .catch Ljava/lang/RuntimeException; {:try_start_3d .. :try_end_4f} :catch_50
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_63
+    goto :goto_1
 
-    :catch_50
+    :catch_0
     move-exception v3
 
     const-string v4, "Failed to parse vorbis picture"
@@ -303,10 +303,10 @@
     .line 379
     invoke-static {v7, v4, v3}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_63
+    goto :goto_1
 
     .line 382
-    :cond_57
+    :cond_1
     new-instance v3, Landroidx/media3/extractor/metadata/vorbis/VorbisComment;
 
     aget-object v6, v4, v1
@@ -318,34 +318,34 @@
     .line 383
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_63
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 387
-    :cond_66
+    :cond_2
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_6e
+    if-eqz p0, :cond_3
 
     const/4 p0, 0x0
 
-    goto :goto_73
+    goto :goto_2
 
-    :cond_6e
+    :cond_3
     new-instance p0, Landroidx/media3/common/Metadata;
 
     invoke-direct {p0, v0}, Landroidx/media3/common/Metadata;-><init>(Ljava/util/List;)V
 
-    :goto_73
+    :goto_2
     return-object p0
 .end method
 
 .method public static parseVorbisCsdFromEsdsInitializationData([B)Lcom/google/common/collect/ImmutableList;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -369,30 +369,30 @@
     move v3, v2
 
     .line 200
-    :goto_b
+    :goto_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v4
 
     const/16 v5, 0xff
 
-    if-lez v4, :cond_1f
+    if-lez v4, :cond_0
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->peekUnsignedByte()I
 
     move-result v4
 
-    if-ne v4, v5, :cond_1f
+    if-ne v4, v5, :cond_0
 
     add-int/lit16 v3, v3, 0xff
 
     .line 202
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 204
-    :cond_1f
+    :cond_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v4
@@ -402,28 +402,28 @@
     move v4, v2
 
     .line 207
-    :goto_25
+    :goto_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v6
 
-    if-lez v6, :cond_37
+    if-lez v6, :cond_1
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->peekUnsignedByte()I
 
     move-result v6
 
-    if-ne v6, v5, :cond_37
+    if-ne v6, v5, :cond_1
 
     add-int/lit16 v4, v4, 0xff
 
     .line 209
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_25
+    goto :goto_1
 
     .line 211
-    :cond_37
+    :cond_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
@@ -465,7 +465,7 @@
 .end method
 
 .method private static readFloors(Landroidx/media3/extractor/VorbisBitArray;)V
-    .registers 16
+    .locals 15
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -487,8 +487,8 @@
 
     move v4, v3
 
-    :goto_9
-    if-ge v4, v1, :cond_a8
+    :goto_0
+    if-ge v4, v1, :cond_9
 
     const/16 v5, 0x10
 
@@ -501,9 +501,9 @@
 
     const/16 v8, 0x8
 
-    if-eqz v6, :cond_87
+    if-eqz v6, :cond_7
 
-    if-ne v6, v2, :cond_72
+    if-ne v6, v2, :cond_6
 
     const/4 v5, 0x5
 
@@ -519,8 +519,8 @@
 
     move v10, v3
 
-    :goto_21
-    if-ge v10, v5, :cond_2f
+    :goto_1
+    if-ge v10, v5, :cond_1
 
     .line 590
     invoke-virtual {p0, v7}, Landroidx/media3/extractor/VorbisBitArray;->readBits(I)I
@@ -529,16 +529,16 @@
 
     aput v11, v6, v10
 
-    if-le v11, v9, :cond_2c
+    if-le v11, v9, :cond_0
 
     move v9, v11
 
-    :cond_2c
+    :cond_0
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     add-int/lit8 v9, v9, 0x1
 
     .line 595
@@ -546,10 +546,10 @@
 
     move v11, v3
 
-    :goto_34
+    :goto_2
     const/4 v12, 0x2
 
-    if-ge v11, v9, :cond_56
+    if-ge v11, v9, :cond_4
 
     const/4 v13, 0x3
 
@@ -567,33 +567,33 @@
 
     move-result v12
 
-    if-lez v12, :cond_48
+    if-lez v12, :cond_2
 
     .line 600
     invoke-virtual {p0, v8}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    :cond_48
+    :cond_2
     move v13, v3
 
-    :goto_49
+    :goto_3
     shl-int v14, v2, v12
 
-    if-ge v13, v14, :cond_53
+    if-ge v13, v14, :cond_3
 
     .line 603
     invoke-virtual {p0, v8}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_49
+    goto :goto_3
 
-    :cond_53
+    :cond_3
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_34
+    goto :goto_2
 
     .line 606
-    :cond_56
+    :cond_4
     invoke-virtual {p0, v12}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     .line 607
@@ -607,8 +607,8 @@
 
     move v11, v9
 
-    :goto_60
-    if-ge v8, v5, :cond_a4
+    :goto_4
+    if-ge v8, v5, :cond_8
 
     .line 610
     aget v12, v6, v8
@@ -618,23 +618,23 @@
 
     add-int/2addr v9, v12
 
-    :goto_67
-    if-ge v11, v9, :cond_6f
+    :goto_5
+    if-ge v11, v9, :cond_5
 
     .line 613
     invoke-virtual {p0, v7}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_67
+    goto :goto_5
 
-    :cond_6f
+    :cond_5
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_60
+    goto :goto_4
 
     .line 618
-    :cond_72
+    :cond_6
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v0, "floor type greater than 1 not decodable: "
@@ -658,7 +658,7 @@
     throw p0
 
     .line 575
-    :cond_87
+    :cond_7
     invoke-virtual {p0, v8}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     .line 576
@@ -682,27 +682,27 @@
 
     move v6, v3
 
-    :goto_9c
-    if-ge v6, v5, :cond_a4
+    :goto_6
+    if-ge v6, v5, :cond_8
 
     .line 582
     invoke-virtual {p0, v8}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_9c
+    goto :goto_6
 
-    :cond_a4
+    :cond_8
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_9
+    goto/16 :goto_0
 
-    :cond_a8
+    :cond_9
     return-void
 .end method
 
 .method private static readMappings(ILandroidx/media3/extractor/VorbisBitArray;)V
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -724,8 +724,8 @@
 
     move v3, v2
 
-    :goto_9
-    if-ge v3, v0, :cond_85
+    :goto_0
+    if-ge v3, v0, :cond_6
 
     const/16 v4, 0x10
 
@@ -734,7 +734,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_28
+    if-eqz v4, :cond_0
 
     .line 500
     new-instance v5, Ljava/lang/StringBuilder;
@@ -755,17 +755,17 @@
 
     invoke-static {v5, v4}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_7a
+    goto :goto_5
 
     .line 504
-    :cond_28
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/extractor/VorbisBitArray;->readBit()Z
 
     move-result v4
 
     const/4 v5, 0x4
 
-    if-eqz v4, :cond_35
+    if-eqz v4, :cond_1
 
     .line 505
     invoke-virtual {p1, v5}, Landroidx/media3/extractor/VorbisBitArray;->readBits(I)I
@@ -774,20 +774,20 @@
 
     add-int/2addr v4, v1
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_35
+    :cond_1
     move v4, v1
 
     .line 510
-    :goto_36
+    :goto_1
     invoke-virtual {p1}, Landroidx/media3/extractor/VorbisBitArray;->readBit()Z
 
     move-result v6
 
     const/16 v7, 0x8
 
-    if-eqz v6, :cond_59
+    if-eqz v6, :cond_2
 
     .line 511
     invoke-virtual {p1, v7}, Landroidx/media3/extractor/VorbisBitArray;->readBits(I)I
@@ -798,8 +798,8 @@
 
     move v8, v2
 
-    :goto_44
-    if-ge v8, v6, :cond_59
+    :goto_2
+    if-ge v8, v6, :cond_2
 
     add-int/lit8 v9, p0, -0x1
 
@@ -819,9 +819,9 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_44
+    goto :goto_2
 
-    :cond_59
+    :cond_2
     const/4 v6, 0x2
 
     .line 519
@@ -829,27 +829,27 @@
 
     move-result v6
 
-    if-nez v6, :cond_7d
+    if-nez v6, :cond_5
 
-    if-le v4, v1, :cond_6b
+    if-le v4, v1, :cond_3
 
     move v6, v2
 
-    :goto_63
-    if-ge v6, p0, :cond_6b
+    :goto_3
+    if-ge v6, p0, :cond_3
 
     .line 525
     invoke-virtual {p1, v5}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_63
+    goto :goto_3
 
-    :cond_6b
+    :cond_3
     move v5, v2
 
-    :goto_6c
-    if-ge v5, v4, :cond_7a
+    :goto_4
+    if-ge v5, v4, :cond_4
 
     .line 529
     invoke-virtual {p1, v7}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
@@ -862,15 +862,15 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_6c
+    goto :goto_4
 
-    :cond_7a
-    :goto_7a
+    :cond_4
+    :goto_5
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7d
+    :cond_5
     const-string p0, "to reserved bits must be zero after mapping coupling steps"
 
     const/4 p1, 0x0
@@ -882,12 +882,12 @@
 
     throw p0
 
-    :cond_85
+    :cond_6
     return-void
 .end method
 
 .method private static readModes(Landroidx/media3/extractor/VorbisBitArray;)[Landroidx/media3/extractor/VorbisUtil$Mode;
-    .registers 9
+    .locals 8
 
     const/4 v0, 0x6
 
@@ -903,8 +903,8 @@
 
     const/4 v2, 0x0
 
-    :goto_a
-    if-ge v2, v0, :cond_2a
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 486
     invoke-virtual {p0}, Landroidx/media3/extractor/VorbisBitArray;->readBit()Z
@@ -939,14 +939,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     return-object v1
 .end method
 
 .method private static readResidues(Landroidx/media3/extractor/VorbisBitArray;)V
-    .registers 13
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -968,8 +968,8 @@
 
     move v4, v3
 
-    :goto_9
-    if-ge v4, v1, :cond_68
+    :goto_0
+    if-ge v4, v1, :cond_6
 
     const/16 v5, 0x10
 
@@ -980,7 +980,7 @@
 
     const/4 v6, 0x2
 
-    if-gt v5, v6, :cond_60
+    if-gt v5, v6, :cond_5
 
     const/16 v5, 0x18
 
@@ -1010,8 +1010,8 @@
 
     move v8, v3
 
-    :goto_2c
-    if-ge v8, v5, :cond_47
+    :goto_1
+    if-ge v8, v5, :cond_1
 
     const/4 v9, 0x3
 
@@ -1025,7 +1025,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_3f
+    if-eqz v10, :cond_0
 
     const/4 v10, 0x5
 
@@ -1034,12 +1034,12 @@
 
     move-result v10
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_3f
+    :cond_0
     move v10, v3
 
-    :goto_40
+    :goto_2
     mul-int/2addr v10, v6
 
     add-int/2addr v10, v9
@@ -1049,18 +1049,18 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_47
+    :cond_1
     move v8, v3
 
-    :goto_48
-    if-ge v8, v5, :cond_5d
+    :goto_3
+    if-ge v8, v5, :cond_4
 
     move v9, v3
 
-    :goto_4b
-    if-ge v9, v6, :cond_5a
+    :goto_4
+    if-ge v9, v6, :cond_3
 
     .line 560
     aget v10, v7, v8
@@ -1069,27 +1069,27 @@
 
     and-int/2addr v10, v11
 
-    if-eqz v10, :cond_57
+    if-eqz v10, :cond_2
 
     .line 561
     invoke-virtual {p0, v6}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    :cond_57
+    :cond_2
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_4b
+    goto :goto_4
 
-    :cond_5a
+    :cond_3
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_48
+    goto :goto_3
 
-    :cond_5d
+    :cond_4
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_60
+    :cond_5
     const-string p0, "residueType greater than 2 is not decodable"
 
     const/4 v0, 0x0
@@ -1101,12 +1101,12 @@
 
     throw p0
 
-    :cond_68
+    :cond_6
     return-void
 .end method
 
 .method public static readVorbisCommentHeader(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/VorbisUtil$CommentHeader;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1124,7 +1124,7 @@
 .end method
 
 .method public static readVorbisCommentHeader(Landroidx/media3/common/util/ParsableByteArray;ZZ)Landroidx/media3/extractor/VorbisUtil$CommentHeader;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1133,7 +1133,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x3
 
@@ -1141,7 +1141,7 @@
     invoke-static {p1, p0, v0}, Landroidx/media3/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILandroidx/media3/common/util/ParsableByteArray;Z)Z
 
     .line 329
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
     move-result-wide v1
@@ -1174,12 +1174,12 @@
 
     add-int/lit8 v2, v2, 0x4
 
-    :goto_20
+    :goto_0
     int-to-long v5, v0
 
     cmp-long v5, v5, v3
 
-    if-gez v5, :cond_3a
+    if-gez v5, :cond_1
 
     .line 338
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
@@ -1206,10 +1206,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_3a
-    if-eqz p2, :cond_4d
+    :cond_1
+    if-eqz p2, :cond_3
 
     .line 343
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1218,11 +1218,11 @@
 
     and-int/lit8 p0, p0, 0x1
 
-    if-eqz p0, :cond_45
+    if-eqz p0, :cond_2
 
-    goto :goto_4d
+    goto :goto_1
 
-    :cond_45
+    :cond_2
     const-string p0, "framing bit expected to be set"
 
     const/4 p1, 0x0
@@ -1234,8 +1234,8 @@
 
     throw p0
 
-    :cond_4d
-    :goto_4d
+    :cond_3
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
     .line 348
@@ -1247,7 +1247,7 @@
 .end method
 
 .method public static readVorbisIdentificationHeader(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/VorbisUtil$VorbisIdHeader;
-    .registers 17
+    .locals 16
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1285,32 +1285,32 @@
 
     const/4 v7, -0x1
 
-    if-gtz v6, :cond_1b
+    if-gtz v6, :cond_0
 
     move v6, v7
 
     .line 260
-    :cond_1b
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
 
     move-result v8
 
-    if-gtz v8, :cond_22
+    if-gtz v8, :cond_1
 
     move v8, v7
 
     .line 264
-    :cond_22
+    :cond_1
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
 
     move-result v9
 
-    if-gtz v9, :cond_29
+    if-gtz v9, :cond_2
 
     move v9, v7
 
     .line 268
-    :cond_29
+    :cond_2
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v7
@@ -1348,15 +1348,15 @@
 
     and-int/2addr v7, v0
 
-    if-lez v7, :cond_49
+    if-lez v7, :cond_3
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_49
+    :cond_3
     move v0, v1
 
     .line 274
-    :goto_4a
+    :goto_0
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v1
@@ -1390,7 +1390,7 @@
 .end method
 
 .method public static readVorbisModes(Landroidx/media3/common/util/ParsableByteArray;I)[Landroidx/media3/extractor/VorbisUtil$Mode;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1431,17 +1431,17 @@
 
     move p0, v1
 
-    :goto_1e
-    if-ge p0, v0, :cond_26
+    :goto_0
+    if-ge p0, v0, :cond_0
 
     .line 460
     invoke-static {v2}, Landroidx/media3/extractor/VorbisUtil;->skipBook(Landroidx/media3/extractor/VorbisBitArray;)V
 
     add-int/lit8 p0, p0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 p0, 0x6
 
     .line 463
@@ -1451,10 +1451,10 @@
 
     add-int/lit8 p0, p0, 0x1
 
-    :goto_2d
+    :goto_1
     const/4 v0, 0x0
 
-    if-ge v1, p0, :cond_42
+    if-ge v1, p0, :cond_2
 
     const/16 v3, 0x10
 
@@ -1463,13 +1463,13 @@
 
     move-result v3
 
-    if-nez v3, :cond_3b
+    if-nez v3, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_3b
+    :cond_1
     const-string p0, "placeholder of time domain transforms not zeroed out"
 
     .line 466
@@ -1480,7 +1480,7 @@
     throw p0
 
     .line 470
-    :cond_42
+    :cond_2
     invoke-static {v2}, Landroidx/media3/extractor/VorbisUtil;->readFloors(Landroidx/media3/extractor/VorbisBitArray;)V
 
     .line 471
@@ -1499,11 +1499,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_56
+    if-eqz p1, :cond_3
 
     return-object p0
 
-    :cond_56
+    :cond_3
     const-string p0, "framing bit after modes not set as expected"
 
     .line 476
@@ -1515,7 +1515,7 @@
 .end method
 
 .method private static skipBook(Landroidx/media3/extractor/VorbisBitArray;)V
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1533,7 +1533,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_90
+    if-ne v1, v2, :cond_9
 
     const/16 v1, 0x10
 
@@ -1556,46 +1556,46 @@
 
     const/4 v5, 0x5
 
-    if-nez v2, :cond_36
+    if-nez v2, :cond_2
 
     .line 635
     invoke-virtual {p0}, Landroidx/media3/extractor/VorbisBitArray;->readBit()Z
 
     move-result v2
 
-    :goto_22
-    if-ge v4, v0, :cond_47
+    :goto_0
+    if-ge v4, v0, :cond_3
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_0
 
     .line 638
     invoke-virtual {p0}, Landroidx/media3/extractor/VorbisBitArray;->readBit()Z
 
     move-result v6
 
-    if-eqz v6, :cond_33
+    if-eqz v6, :cond_1
 
     .line 639
     invoke-virtual {p0, v5}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    goto :goto_33
+    goto :goto_1
 
     .line 642
-    :cond_30
+    :cond_0
     invoke-virtual {p0, v5}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 646
-    :cond_36
+    :cond_2
     invoke-virtual {p0, v5}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    :goto_39
-    if-ge v4, v0, :cond_47
+    :goto_2
+    if-ge v4, v0, :cond_3
 
     sub-int v2, v0, v4
 
@@ -1610,9 +1610,9 @@
 
     add-int/2addr v4, v2
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_47
+    :cond_3
     const/4 v2, 0x4
 
     .line 652
@@ -1622,15 +1622,15 @@
 
     const/4 v5, 0x2
 
-    if-gt v4, v5, :cond_7c
+    if-gt v4, v5, :cond_8
 
     const/4 v3, 0x1
 
-    if-eq v4, v3, :cond_54
+    if-eq v4, v3, :cond_4
 
-    if-ne v4, v5, :cond_7b
+    if-ne v4, v5, :cond_7
 
-    :cond_54
+    :cond_4
     const/16 v5, 0x20
 
     .line 657
@@ -1649,9 +1649,9 @@
     .line 660
     invoke-virtual {p0, v3}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    if-ne v4, v3, :cond_72
+    if-ne v4, v3, :cond_6
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_5
 
     int-to-long v3, v0
 
@@ -1662,21 +1662,21 @@
 
     move-result-wide v0
 
-    goto :goto_75
+    goto :goto_3
 
-    :cond_6f
+    :cond_5
     const-wide/16 v0, 0x0
 
-    goto :goto_75
+    goto :goto_3
 
-    :cond_72
+    :cond_6
     int-to-long v3, v0
 
     int-to-long v0, v1
 
     mul-long/2addr v0, v3
 
-    :goto_75
+    :goto_3
     int-to-long v2, v2
 
     mul-long/2addr v0, v2
@@ -1686,11 +1686,11 @@
     .line 672
     invoke-virtual {p0, v0}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
-    :cond_7b
+    :cond_7
     return-void
 
     .line 654
-    :cond_7c
+    :cond_8
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v0, "lookup type greater than 2 not decodable: "
@@ -1712,7 +1712,7 @@
     throw p0
 
     .line 626
-    :cond_90
+    :cond_9
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "expected code book to start with [0x56, 0x43, 0x42] at "
@@ -1741,7 +1741,7 @@
 .end method
 
 .method public static verifyVorbisHeaderCapturePattern(ILandroidx/media3/common/util/ParsableByteArray;Z)Z
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1759,14 +1759,14 @@
 
     const/4 v3, 0x0
 
-    if-ge v0, v1, :cond_25
+    if-ge v0, v1, :cond_1
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     return v2
 
     .line 406
-    :cond_c
+    :cond_0
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string/jumbo p2, "too short header: "
@@ -1794,19 +1794,19 @@
     throw p0
 
     .line 411
-    :cond_25
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    if-eq v0, p0, :cond_46
+    if-eq v0, p0, :cond_3
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_2
 
     return v2
 
     .line 415
-    :cond_2e
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "expected header type "
@@ -1834,14 +1834,14 @@
     throw p0
 
     .line 420
-    :cond_46
+    :cond_3
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
 
     const/16 v0, 0x76
 
-    if-ne p0, v0, :cond_79
+    if-ne p0, v0, :cond_5
 
     .line 421
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1850,7 +1850,7 @@
 
     const/16 v0, 0x6f
 
-    if-ne p0, v0, :cond_79
+    if-ne p0, v0, :cond_5
 
     .line 422
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1859,7 +1859,7 @@
 
     const/16 v0, 0x72
 
-    if-ne p0, v0, :cond_79
+    if-ne p0, v0, :cond_5
 
     .line 423
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1868,7 +1868,7 @@
 
     const/16 v0, 0x62
 
-    if-ne p0, v0, :cond_79
+    if-ne p0, v0, :cond_5
 
     .line 424
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1877,7 +1877,7 @@
 
     const/16 v0, 0x69
 
-    if-ne p0, v0, :cond_79
+    if-ne p0, v0, :cond_5
 
     .line 425
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1886,22 +1886,22 @@
 
     const/16 p1, 0x73
 
-    if-eq p0, p1, :cond_77
+    if-eq p0, p1, :cond_4
 
-    goto :goto_79
+    goto :goto_0
 
-    :cond_77
+    :cond_4
     const/4 p0, 0x1
 
     return p0
 
-    :cond_79
-    :goto_79
-    if-eqz p2, :cond_7c
+    :cond_5
+    :goto_0
+    if-eqz p2, :cond_6
 
     return v2
 
-    :cond_7c
+    :cond_6
     const-string p0, "expected characters \'vorbis\'"
 
     .line 429

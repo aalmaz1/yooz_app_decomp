@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/MediaExtractorCompat;Landroidx/media3/exoplayer/upstream/Allocator;I)V
-    .registers 4
+    .locals 0
 
     .line 681
     iput-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -53,14 +53,14 @@
 
 # virtual methods
 .method public getAdjustedUpstreamFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 1
 
     .line 702
     invoke-virtual {p0}, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->getUpstreamFormat()Landroidx/media3/common/Format;
 
     move-result-object v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 703
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -68,7 +68,7 @@
     invoke-static {v0, p0, p1}, Landroidx/media3/exoplayer/MediaExtractorCompat;->access$600(Landroidx/media3/exoplayer/MediaExtractorCompat;Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;Landroidx/media3/common/Format;)V
 
     .line 705
-    :cond_b
+    :cond_0
     invoke-super {p0, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->getAdjustedUpstreamFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object p1
@@ -77,7 +77,7 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 15
+    .locals 8
 
     const v0, -0x20000001
 
@@ -88,7 +88,7 @@
 
     const/4 v0, -0x1
 
-    if-eq p3, v0, :cond_19
+    if-eq p3, v0, :cond_0
 
     .line 715
     iget-object p3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -106,19 +106,19 @@
     invoke-virtual {p3, v1}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
     .line 717
-    :cond_19
+    :cond_0
     iget p3, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->mainTrackIndex:I
 
-    if-eq p3, v0, :cond_1f
+    if-eq p3, v0, :cond_1
 
     const/4 p3, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 p3, 0x0
 
-    :goto_20
+    :goto_0
     invoke-static {p3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 718
@@ -153,7 +153,7 @@
 .end method
 
 .method public setCompatibilityTrackIndex(I)V
-    .registers 2
+    .locals 0
 
     .line 695
     iput p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->compatibilityTrackIndex:I
@@ -162,7 +162,7 @@
 .end method
 
 .method public setMainTrackIndex(I)V
-    .registers 2
+    .locals 0
 
     .line 691
     iput p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;->mainTrackIndex:I
@@ -171,7 +171,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 

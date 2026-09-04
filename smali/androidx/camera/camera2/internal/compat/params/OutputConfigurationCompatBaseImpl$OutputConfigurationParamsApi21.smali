@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/Surface;)V
-    .registers 4
+    .locals 2
 
     .line 246
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -104,11 +104,11 @@
 .end method
 
 .method private static getSurfaceFormat(Landroid/view/Surface;)I
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x0
 
-    :try_start_1
+    :try_start_0
     const-string v1, "android.hardware.camera2.legacy.LegacyCameraDevice"
 
     .line 278
@@ -147,33 +147,33 @@
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
-    :try_end_23
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_23} :catch_2a
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_23} :catch_28
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_23} :catch_26
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_24
+    :catch_0
     move-exception p0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :catch_26
+    :catch_1
     move-exception p0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :catch_28
+    :catch_2
     move-exception p0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :catch_2a
+    :catch_3
     move-exception p0
 
-    :goto_2b
+    :goto_0
     const-string v1, "OutputConfigCompat"
 
     const-string v2, "Unable to retrieve surface format."
@@ -185,7 +185,7 @@
 .end method
 
 .method private static getSurfaceGenerationId(Landroid/view/Surface;)I
-    .registers 5
+    .locals 4
 
     .line 302
     :try_start_0
@@ -213,27 +213,27 @@
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
-    :try_end_17
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_17} :catch_1c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_17} :catch_1a
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_18
+    :catch_0
     move-exception p0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1a
+    :catch_1
     move-exception p0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_2
     move-exception p0
 
-    :goto_1d
+    :goto_0
     const-string v0, "OutputConfigCompat"
 
     const-string v1, "Unable to retrieve surface generation id."
@@ -247,11 +247,11 @@
 .end method
 
 .method private static getSurfaceSize(Landroid/view/Surface;)Landroid/util/Size;
-    .registers 8
+    .locals 7
 
     const/4 v0, 0x0
 
-    :try_start_1
+    :try_start_0
     const-string v1, "android.hardware.camera2.legacy.LegacyCameraDevice"
 
     .line 261
@@ -289,33 +289,33 @@
     move-result-object p0
 
     check-cast p0, Landroid/util/Size;
-    :try_end_22
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_22} :catch_29
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_22} :catch_27
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_22} :catch_25
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_22} :catch_23
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_23
+    :catch_0
     move-exception p0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :catch_25
+    :catch_1
     move-exception p0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :catch_27
+    :catch_2
     move-exception p0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :catch_29
+    :catch_3
     move-exception p0
 
-    :goto_2a
+    :goto_0
     const-string v1, "OutputConfigCompat"
 
     const-string v2, "Unable to retrieve surface size."
@@ -329,19 +329,19 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     .line 315
     instance-of v0, p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 319
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;
 
     .line 321
@@ -353,25 +353,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_4
 
     iget v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mConfiguredFormat:I
 
     iget v2, p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mConfiguredFormat:I
 
-    if-ne v0, v2, :cond_5e
+    if-ne v0, v2, :cond_4
 
     iget v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mConfiguredGenerationId:I
 
     iget v2, p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mConfiguredGenerationId:I
 
-    if-ne v0, v2, :cond_5e
+    if-ne v0, v2, :cond_4
 
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mIsShared:Z
 
     iget-boolean v2, p1, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mIsShared:Z
 
-    if-ne v0, v2, :cond_5e
+    if-ne v0, v2, :cond_4
 
     iget-wide v2, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mDynamicRangeProfile:J
 
@@ -379,7 +379,7 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mPhysicalCameraId:Ljava/lang/String;
 
@@ -390,12 +390,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_1
 
-    goto :goto_5e
+    goto :goto_1
 
     .line 330
-    :cond_37
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mSurfaces:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -414,8 +414,8 @@
 
     move v2, v1
 
-    :goto_48
-    if-ge v2, v0, :cond_5c
+    :goto_0
+    if-ge v2, v0, :cond_3
 
     .line 332
     iget-object v3, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mSurfaces:Ljava/util/List;
@@ -430,27 +430,27 @@
 
     move-result-object v4
 
-    if-eq v3, v4, :cond_59
+    if-eq v3, v4, :cond_2
 
     return v1
 
-    :cond_59
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_5c
+    :cond_3
     const/4 p1, 0x1
 
     return p1
 
-    :cond_5e
-    :goto_5e
+    :cond_4
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 344
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mSurfaces:Ljava/util/List;
@@ -511,18 +511,18 @@
     .line 352
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl$OutputConfigurationParamsApi21;->mPhysicalCameraId:Ljava/lang/String;
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_32
+    :goto_0
     xor-int/2addr v0, v1
 
     shl-int/lit8 v1, v0, 0x5

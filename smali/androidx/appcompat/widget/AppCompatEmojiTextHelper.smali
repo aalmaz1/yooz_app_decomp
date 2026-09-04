@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/TextView;)V
-    .registers 4
+    .locals 2
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method getFilters([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
-    .registers 3
+    .locals 1
 
     .line 99
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;->mEmojiTextViewHelper:Landroidx/emoji2/viewsintegration/EmojiTextViewHelper;
@@ -47,7 +47,7 @@
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;->mEmojiTextViewHelper:Landroidx/emoji2/viewsintegration/EmojiTextViewHelper;
@@ -60,7 +60,7 @@
 .end method
 
 .method loadFromAttributes(Landroid/util/AttributeSet;I)V
-    .registers 6
+    .locals 3
 
     .line 52
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;->mView:Landroid/widget/TextView;
@@ -79,7 +79,7 @@
     move-result-object p1
 
     .line 57
-    :try_start_d
+    :try_start_0
     sget p2, Landroidx/appcompat/R$styleable;->AppCompatTextView_emojiCompatEnabled:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
@@ -88,7 +88,7 @@
 
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_0
 
     .line 58
     sget p2, Landroidx/appcompat/R$styleable;->AppCompatTextView_emojiCompatEnabled:I
@@ -96,11 +96,11 @@
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v0
-    :try_end_1c
-    .catchall {:try_start_d .. :try_end_1c} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 61
-    :cond_1c
+    :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 63
@@ -108,7 +108,7 @@
 
     return-void
 
-    :catchall_23
+    :catchall_0
     move-exception p2
 
     .line 61
@@ -119,7 +119,7 @@
 .end method
 
 .method setAllCaps(Z)V
-    .registers 3
+    .locals 1
 
     .line 109
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;->mEmojiTextViewHelper:Landroidx/emoji2/viewsintegration/EmojiTextViewHelper;
@@ -130,7 +130,7 @@
 .end method
 
 .method setEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;->mEmojiTextViewHelper:Landroidx/emoji2/viewsintegration/EmojiTextViewHelper;
@@ -141,7 +141,7 @@
 .end method
 
 .method public wrapTransformationMethod(Landroid/text/method/TransformationMethod;)Landroid/text/method/TransformationMethod;
-    .registers 3
+    .locals 1
 
     .line 122
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEmojiTextHelper;->mEmojiTextViewHelper:Landroidx/emoji2/viewsintegration/EmojiTextViewHelper;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 266
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public setProperty(Landroid/view/View;F)V
-    .registers 3
+    .locals 0
 
     .line 269
     invoke-virtual {p0, p2}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$TranslationYset;->get(F)F

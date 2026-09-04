@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 655
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Method;->access$000()Landroidx/datastore/preferences/protobuf/Method;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Method$1;)V
-    .registers 2
+    .locals 0
 
     .line 648
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public addAllOptions(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,7 +79,7 @@
 .end method
 
 .method public addOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 4
+    .locals 1
 
     .line 1052
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public addOptions(ILandroidx/datastore/preferences/protobuf/Option;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 4
+    .locals 1
 
     .line 1026
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -111,7 +111,7 @@
 .end method
 
 .method public addOptions(Landroidx/datastore/preferences/protobuf/Option$Builder;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 1039
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -127,7 +127,7 @@
 .end method
 
 .method public addOptions(Landroidx/datastore/preferences/protobuf/Option;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 1013
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -143,7 +143,7 @@
 .end method
 
 .method public clearName()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 708
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -159,7 +159,7 @@
 .end method
 
 .method public clearOptions()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 1077
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -175,7 +175,7 @@
 .end method
 
 .method public clearRequestStreaming()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 832
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -191,7 +191,7 @@
 .end method
 
 .method public clearRequestTypeUrl()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 777
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -207,7 +207,7 @@
 .end method
 
 .method public clearResponseStreaming()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 941
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -223,7 +223,7 @@
 .end method
 
 .method public clearResponseTypeUrl()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 886
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -239,7 +239,7 @@
 .end method
 
 .method public clearSyntax()Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 2
+    .locals 1
 
     .line 1155
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -255,7 +255,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 669
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -270,7 +270,7 @@
 .end method
 
 .method public getNameBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 682
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -285,7 +285,7 @@
 .end method
 
 .method public getOptions(I)Landroidx/datastore/preferences/protobuf/Option;
-    .registers 3
+    .locals 1
 
     .line 977
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -300,7 +300,7 @@
 .end method
 
 .method public getOptionsCount()I
-    .registers 2
+    .locals 1
 
     .line 967
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -315,7 +315,7 @@
 .end method
 
 .method public getOptionsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -344,7 +344,7 @@
 .end method
 
 .method public getRequestStreaming()Z
-    .registers 2
+    .locals 1
 
     .line 807
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -359,7 +359,7 @@
 .end method
 
 .method public getRequestTypeUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 738
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -374,7 +374,7 @@
 .end method
 
 .method public getRequestTypeUrlBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 751
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -389,7 +389,7 @@
 .end method
 
 .method public getResponseStreaming()Z
-    .registers 2
+    .locals 1
 
     .line 916
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -404,7 +404,7 @@
 .end method
 
 .method public getResponseTypeUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 847
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -419,7 +419,7 @@
 .end method
 
 .method public getResponseTypeUrlBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 860
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -434,7 +434,7 @@
 .end method
 
 .method public getSyntax()Landroidx/datastore/preferences/protobuf/Syntax;
-    .registers 2
+    .locals 1
 
     .line 1130
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -449,7 +449,7 @@
 .end method
 
 .method public getSyntaxValue()I
-    .registers 2
+    .locals 1
 
     .line 1104
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Method$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -464,7 +464,7 @@
 .end method
 
 .method public removeOptions(I)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 1089
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -480,7 +480,7 @@
 .end method
 
 .method public setName(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 695
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -496,7 +496,7 @@
 .end method
 
 .method public setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 723
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -512,7 +512,7 @@
 .end method
 
 .method public setOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 4
+    .locals 1
 
     .line 1001
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -528,7 +528,7 @@
 .end method
 
 .method public setOptions(ILandroidx/datastore/preferences/protobuf/Option;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 4
+    .locals 1
 
     .line 988
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -544,7 +544,7 @@
 .end method
 
 .method public setRequestStreaming(Z)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 819
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -560,7 +560,7 @@
 .end method
 
 .method public setRequestTypeUrl(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 764
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -576,7 +576,7 @@
 .end method
 
 .method public setRequestTypeUrlBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 792
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -592,7 +592,7 @@
 .end method
 
 .method public setResponseStreaming(Z)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 928
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -608,7 +608,7 @@
 .end method
 
 .method public setResponseTypeUrl(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 873
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -624,7 +624,7 @@
 .end method
 
 .method public setResponseTypeUrlBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 901
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -640,7 +640,7 @@
 .end method
 
 .method public setSyntax(Landroidx/datastore/preferences/protobuf/Syntax;)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 1142
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V
@@ -656,7 +656,7 @@
 .end method
 
 .method public setSyntaxValue(I)Landroidx/datastore/preferences/protobuf/Method$Builder;
-    .registers 3
+    .locals 1
 
     .line 1116
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Method$Builder;->copyOnWrite()V

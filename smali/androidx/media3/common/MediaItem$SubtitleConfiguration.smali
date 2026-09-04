@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -123,7 +123,7 @@
 .end method
 
 .method private constructor <init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .locals 0
 
     .line 1680
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -157,7 +157,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Landroidx/media3/common/MediaItem$1;)V
-    .registers 9
+    .locals 0
 
     .line 1558
     invoke-direct/range {p0 .. p7}, Landroidx/media3/common/MediaItem$SubtitleConfiguration;-><init>(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)V
@@ -166,7 +166,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 1690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -224,7 +224,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1558
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$SubtitleConfiguration;-><init>(Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;)V
@@ -233,7 +233,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$SubtitleConfiguration;
-    .registers 8
+    .locals 7
 
     .line 1748
     sget-object v0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_URI:Ljava/lang/String;
@@ -340,7 +340,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
-    .registers 3
+    .locals 2
 
     .line 1702
     new-instance v0, Landroidx/media3/common/MediaItem$SubtitleConfiguration$Builder;
@@ -353,26 +353,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1710
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$SubtitleConfiguration;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1714
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$SubtitleConfiguration;
 
     .line 1716
@@ -384,7 +384,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->mimeType:Ljava/lang/String;
 
@@ -395,7 +395,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->language:Ljava/lang/String;
 
@@ -406,19 +406,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->selectionFlags:I
 
     iget v3, p1, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->selectionFlags:I
 
-    if-ne v1, v3, :cond_4b
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->roleFlags:I
 
     iget v3, p1, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->roleFlags:I
 
-    if-ne v1, v3, :cond_4b
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->label:Ljava/lang/String;
 
@@ -429,7 +429,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->id:Ljava/lang/String;
 
@@ -440,19 +440,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_2
 
-    goto :goto_4c
+    goto :goto_0
 
-    :cond_4b
+    :cond_2
     move v0, v2
 
-    :goto_4c
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1727
     iget-object v0, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->uri:Landroid/net/Uri;
@@ -468,18 +468,18 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_13
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -487,18 +487,18 @@
     .line 1729
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->language:Ljava/lang/String;
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1
 
     move v1, v2
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_20
+    :goto_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -520,18 +520,18 @@
     .line 1732
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->label:Ljava/lang/String;
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_2
 
     move v1, v2
 
-    goto :goto_37
+    goto :goto_2
 
-    :cond_33
+    :cond_2
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_37
+    :goto_2
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -539,23 +539,23 @@
     .line 1733
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->id:Ljava/lang/String;
 
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_3
 
-    goto :goto_43
+    goto :goto_3
 
-    :cond_3f
+    :cond_3
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :goto_43
+    :goto_3
     add-int/2addr v0, v2
 
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 1769
     new-instance v0, Landroid/os/Bundle;
@@ -572,7 +572,7 @@
     .line 1771
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->mimeType:Ljava/lang/String;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 1772
     sget-object v2, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_MIME_TYPE:Ljava/lang/String;
@@ -580,10 +580,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1774
-    :cond_15
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->language:Ljava/lang/String;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     .line 1775
     sget-object v2, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_LANGUAGE:Ljava/lang/String;
@@ -591,10 +591,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1777
-    :cond_1e
+    :cond_1
     iget v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->selectionFlags:I
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 1778
     sget-object v2, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_SELECTION_FLAGS:Ljava/lang/String;
@@ -602,10 +602,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 1780
-    :cond_27
+    :cond_2
     iget v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->roleFlags:I
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_3
 
     .line 1781
     sget-object v2, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_ROLE_FLAGS:Ljava/lang/String;
@@ -613,10 +613,10 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 1783
-    :cond_30
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->label:Ljava/lang/String;
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_4
 
     .line 1784
     sget-object v2, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_LABEL:Ljava/lang/String;
@@ -624,16 +624,16 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1786
-    :cond_39
+    :cond_4
     iget-object v1, p0, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->id:Ljava/lang/String;
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_5
 
     .line 1787
     sget-object v2, Landroidx/media3/common/MediaItem$SubtitleConfiguration;->FIELD_ID:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_42
+    :cond_5
     return-object v0
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)V
-    .registers 2
+    .locals 0
 
     .line 874
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$1;)V
-    .registers 3
+    .locals 0
 
     .line 874
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;-><init>(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)V
@@ -43,7 +43,7 @@
 .end method
 
 .method static synthetic lambda$onReferenceCountDecremented$0(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -56,13 +56,13 @@
 
 # virtual methods
 .method public onReferenceCountDecremented(Landroidx/media3/exoplayer/drm/DefaultDrmSession;I)V
-    .registers 8
+    .locals 5
 
     const/4 v0, 0x1
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ne p2, v0, :cond_43
+    if-ne p2, v0, :cond_0
 
     .line 887
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -71,7 +71,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_43
+    if-lez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
@@ -81,7 +81,7 @@
 
     cmp-long v0, v3, v1
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_0
 
     .line 891
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -125,10 +125,10 @@
     .line 893
     invoke-virtual {p2, v0, p1, v1, v2}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
 
-    goto :goto_94
+    goto :goto_0
 
-    :cond_43
-    if-nez p2, :cond_94
+    :cond_0
+    if-nez p2, :cond_3
 
     .line 899
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -148,7 +148,7 @@
 
     const/4 v0, 0x0
 
-    if-ne p2, p1, :cond_5c
+    if-ne p2, p1, :cond_1
 
     .line 901
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -156,14 +156,14 @@
     invoke-static {p2, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$902(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     .line 903
-    :cond_5c
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-static {p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$1000(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     move-result-object p2
 
-    if-ne p2, p1, :cond_69
+    if-ne p2, p1, :cond_2
 
     .line 904
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -171,7 +171,7 @@
     invoke-static {p2, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$1002(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     .line 906
-    :cond_69
+    :cond_2
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-static {p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$1100(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ProvisioningManagerImpl;
@@ -189,7 +189,7 @@
 
     cmp-long p2, v3, v1
 
-    if-eqz p2, :cond_94
+    if-eqz p2, :cond_3
 
     .line 908
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -216,8 +216,8 @@
     invoke-interface {p2, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 912
-    :cond_94
-    :goto_94
+    :cond_3
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->access$1200(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;)V
@@ -226,7 +226,7 @@
 .end method
 
 .method public onReferenceCountIncremented(Landroidx/media3/exoplayer/drm/DefaultDrmSession;I)V
-    .registers 7
+    .locals 4
 
     .line 878
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -239,7 +239,7 @@
 
     cmp-long p2, v0, v2
 
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_0
 
     .line 880
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$ReferenceCountListenerImpl;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -265,6 +265,6 @@
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    :cond_27
+    :cond_0
     return-void
 .end method

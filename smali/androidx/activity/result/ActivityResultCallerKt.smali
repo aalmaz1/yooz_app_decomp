@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$7lLdjm1L5OSJIz1pWP4kzityPws(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/activity/result/ActivityResultCallerKt;->registerForActivityResult$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$SjF4PZlnE9fmKbolD64Sz5ghy6c(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/activity/result/ActivityResultCallerKt;->registerForActivityResult$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final registerForActivityResult(Landroidx/activity/result/ActivityResultCaller;Landroidx/activity/result/contract/ActivityResultContract;Ljava/lang/Object;Landroidx/activity/result/ActivityResultRegistry;Lkotlin/jvm/functions/Function1;)Landroidx/activity/result/ActivityResultLauncher;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<I:",
@@ -113,7 +113,7 @@
 .end method
 
 .method public static final registerForActivityResult(Landroidx/activity/result/ActivityResultCaller;Landroidx/activity/result/contract/ActivityResultContract;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Landroidx/activity/result/ActivityResultLauncher;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<I:",
@@ -166,7 +166,7 @@
 .end method
 
 .method private static final registerForActivityResult$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "$callback"
 
@@ -179,7 +179,7 @@
 .end method
 
 .method private static final registerForActivityResult$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "$callback"
 

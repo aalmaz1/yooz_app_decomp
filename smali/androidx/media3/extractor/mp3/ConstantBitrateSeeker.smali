@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(JJIIZ)V
-    .registers 8
+    .locals 0
 
     .line 61
     invoke-direct/range {p0 .. p7}, Landroidx/media3/extractor/ConstantBitrateSeekMap;-><init>(JJIIZ)V
@@ -24,7 +24,7 @@
 .end method
 
 .method public constructor <init>(JJLandroidx/media3/extractor/MpegAudioUtil$Header;Z)V
-    .registers 15
+    .locals 8
 
     .line 46
     iget v5, p5, Landroidx/media3/extractor/MpegAudioUtil$Header;->bitrate:I
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public getAverageBitrate()I
-    .registers 2
+    .locals 1
 
     .line 77
     iget v0, p0, Landroidx/media3/extractor/mp3/ConstantBitrateSeeker;->bitrate:I
@@ -56,7 +56,7 @@
 .end method
 
 .method public getDataEndPosition()J
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 3
+    .locals 0
 
     .line 67
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/mp3/ConstantBitrateSeeker;->getTimeUsAtPosition(J)J

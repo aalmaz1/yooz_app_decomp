@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/EncoderProfilesProvider;Landroidx/camera/core/DynamicRange;)V
-    .registers 4
+    .locals 1
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,16 +47,16 @@
 .end method
 
 .method private static filterUnmatchedDynamicRange(Landroidx/camera/core/impl/EncoderProfilesProxy;Landroidx/camera/core/DynamicRange;)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
     .line 94
-    :cond_4
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -70,13 +70,13 @@
 
     move-result-object v2
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2d
+    if-eqz v3, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -89,31 +89,31 @@
 
     move-result v4
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_1
 
     invoke-static {v3, p1}, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->isHdrEncodingMatched(Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;Landroidx/camera/core/DynamicRange;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_1
 
     .line 98
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_11
+    goto :goto_0
 
     .line 102
-    :cond_2d
+    :cond_2
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_3
 
-    goto :goto_44
+    goto :goto_1
 
     .line 103
-    :cond_34
+    :cond_3
     invoke-interface {p0}, Landroidx/camera/core/impl/EncoderProfilesProxy;->getDefaultDurationSeconds()I
 
     move-result p1
@@ -133,12 +133,12 @@
 
     move-result-object v0
 
-    :goto_44
+    :goto_1
     return-object v0
 .end method
 
 .method private getProfilesInternal(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 4
+    .locals 2
 
     .line 73
     iget-object v0, p0, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->mEncoderProfilesCache:Ljava/util/Map;
@@ -151,7 +151,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 74
     iget-object v0, p0, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->mEncoderProfilesCache:Ljava/util/Map;
@@ -169,14 +169,14 @@
     return-object p1
 
     .line 78
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->mEncoderProfilesProvider:Landroidx/camera/core/impl/EncoderProfilesProvider;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/EncoderProfilesProvider;->hasProfile(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_1
 
     .line 79
     iget-object v0, p0, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->mEncoderProfilesProvider:Landroidx/camera/core/impl/EncoderProfilesProvider;
@@ -201,17 +201,17 @@
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_38
+    :goto_0
     return-object v0
 .end method
 
 .method private static isBitDepthMatched(Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;Landroidx/camera/core/DynamicRange;)Z
-    .registers 3
+    .locals 1
 
     .line 112
     sget-object v0, Landroidx/camera/video/internal/utils/DynamicRangeUtil;->DR_TO_VP_BIT_DEPTH_MAP:Ljava/util/Map;
@@ -230,7 +230,7 @@
 
     check-cast p1, Ljava/util/Set;
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_0
 
     .line 114
     invoke-virtual {p0}, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;->getBitDepth()I
@@ -245,21 +245,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_23
+    :goto_0
     return p0
 .end method
 
 .method private static isHdrEncodingMatched(Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;Landroidx/camera/core/DynamicRange;)Z
-    .registers 3
+    .locals 1
 
     .line 119
     sget-object v0, Landroidx/camera/video/internal/utils/DynamicRangeUtil;->DR_TO_VP_FORMAT_MAP:Ljava/util/Map;
@@ -278,7 +278,7 @@
 
     check-cast p1, Ljava/util/Set;
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_0
 
     .line 122
     invoke-virtual {p0}, Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;->getHdrFormat()I
@@ -293,23 +293,23 @@
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_23
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public getAll(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 2
+    .locals 0
 
     .line 68
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->getProfilesInternal(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
@@ -320,7 +320,7 @@
 .end method
 
 .method public hasProfile(I)Z
-    .registers 4
+    .locals 2
 
     .line 57
     iget-object v0, p0, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->mEncoderProfilesProvider:Landroidx/camera/core/impl/EncoderProfilesProvider;
@@ -331,20 +331,20 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return v1
 
     .line 61
-    :cond_a
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/DynamicRangeMatchedEncoderProfilesProvider;->getProfilesInternal(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
 
     move-result-object p1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_11
+    :cond_1
     return v1
 .end method

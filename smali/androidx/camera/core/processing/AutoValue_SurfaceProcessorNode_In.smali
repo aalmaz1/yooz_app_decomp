@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -33,12 +33,12 @@
     .line 17
     invoke-direct {p0}, Landroidx/camera/core/processing/SurfaceProcessorNode$In;-><init>()V
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
     .line 21
     iput-object p1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_In;->surfaceEdge:Landroidx/camera/core/processing/SurfaceEdge;
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 25
     iput-object p2, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_In;->outConfigs:Ljava/util/List;
@@ -46,7 +46,7 @@
     return-void
 
     .line 23
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null outConfigs"
@@ -56,7 +56,7 @@
     throw p1
 
     .line 19
-    :cond_14
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null surfaceEdge"
@@ -69,21 +69,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 54
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/processing/SurfaceProcessorNode$In;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2
 
     .line 55
     check-cast p1, Landroidx/camera/core/processing/SurfaceProcessorNode$In;
@@ -99,7 +99,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_In;->outConfigs:Ljava/util/List;
 
@@ -112,22 +112,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     move v0, v2
 
-    :goto_25
+    :goto_0
     return v0
 
-    :cond_26
+    :cond_2
     return v2
 .end method
 
 .method public getOutConfigs()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -144,7 +144,7 @@
 .end method
 
 .method public getSurfaceEdge()Landroidx/camera/core/processing/SurfaceEdge;
-    .registers 2
+    .locals 1
 
     .line 31
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_In;->surfaceEdge:Landroidx/camera/core/processing/SurfaceEdge;
@@ -153,7 +153,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 66
     iget-object v0, p0, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_In;->surfaceEdge:Landroidx/camera/core/processing/SurfaceEdge;
@@ -181,7 +181,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 43
     new-instance v0, Ljava/lang/StringBuilder;

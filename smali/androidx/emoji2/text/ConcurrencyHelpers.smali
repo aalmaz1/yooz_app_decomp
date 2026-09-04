@@ -17,7 +17,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$xMC8M6LLEeW997bBmO6BCC6GGAM(Landroid/os/Handler;Ljava/lang/Runnable;)Z
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -27,7 +27,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method static convertHandlerToExecutor(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -51,7 +51,7 @@
 .end method
 
 .method static createBackgroundPriorityExecutor(Ljava/lang/String;)Ljava/util/concurrent/ThreadPoolExecutor;
-    .registers 9
+    .locals 8
 
     .line 56
     new-instance v7, Landroidx/emoji2/text/ConcurrencyHelpers$$ExternalSyntheticLambda0;
@@ -86,7 +86,7 @@
 .end method
 
 .method static synthetic lambda$createBackgroundPriorityExecutor$0(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 3
+    .locals 1
 
     .line 57
     new-instance v0, Ljava/lang/Thread;
@@ -102,7 +102,7 @@
 .end method
 
 .method static mainHandlerAsync()Landroid/os/Handler;
-    .registers 1
+    .locals 1
 
     .line 78
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;

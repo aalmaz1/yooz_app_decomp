@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/annotation/Dimension$Companion;
 
@@ -61,7 +61,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

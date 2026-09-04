@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(D)V
-    .registers 5
+    .locals 2
 
     const-wide v0, 0x40c3880000000000L    # 10000.0
 
@@ -28,7 +28,7 @@
 .end method
 
 .method constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method getDenominator()J
-    .registers 3
+    .locals 2
 
     .line 58
     iget-wide v0, p0, Landroidx/camera/core/impl/utils/LongRational;->mDenominator:J
@@ -54,7 +54,7 @@
 .end method
 
 .method getNumerator()J
-    .registers 3
+    .locals 2
 
     .line 51
     iget-wide v0, p0, Landroidx/camera/core/impl/utils/LongRational;->mNumerator:J
@@ -63,7 +63,7 @@
 .end method
 
 .method toDouble()D
-    .registers 5
+    .locals 4
 
     .line 66
     iget-wide v0, p0, Landroidx/camera/core/impl/utils/LongRational;->mNumerator:J
@@ -80,7 +80,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 72
     new-instance v0, Ljava/lang/StringBuilder;

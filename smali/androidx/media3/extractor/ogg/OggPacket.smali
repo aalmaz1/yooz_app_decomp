@@ -17,7 +17,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private calculatePacketSize(I)I
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -59,7 +59,7 @@
     iput v0, p0, Landroidx/media3/extractor/ogg/OggPacket;->segmentCount:I
 
     .line 143
-    :cond_3
+    :cond_0
     iget v1, p0, Landroidx/media3/extractor/ogg/OggPacket;->segmentCount:I
 
     add-int/2addr v1, p1
@@ -68,7 +68,7 @@
 
     iget v2, v2, Landroidx/media3/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_1
 
     .line 144
     iget-object v1, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -89,16 +89,16 @@
 
     const/16 v2, 0xff
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v2, :cond_0
 
-    :cond_1e
+    :cond_1
     return v0
 .end method
 
 
 # virtual methods
 .method public getPageHeader()Landroidx/media3/extractor/ogg/OggPageHeader;
-    .registers 2
+    .locals 1
 
     .line 115
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -107,7 +107,7 @@
 .end method
 
 .method public getPayload()Landroidx/media3/common/util/ParsableByteArray;
-    .registers 2
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPacket;->packetArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -116,7 +116,7 @@
 .end method
 
 .method public populate(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -127,23 +127,23 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     move v2, v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v1
 
     .line 60
-    :goto_7
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 62
     iget-boolean v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->populated:Z
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_1
 
     .line 63
     iput-boolean v1, p0, Landroidx/media3/extractor/ogg/OggPacket;->populated:Z
@@ -154,16 +154,16 @@
     invoke-virtual {v2, v1}, Landroidx/media3/common/util/ParsableByteArray;->reset(I)V
 
     .line 67
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_1
     iget-boolean v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->populated:Z
 
-    if-nez v2, :cond_a6
+    if-nez v2, :cond_b
 
     .line 68
     iget v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->currentSegmentIndex:I
 
-    if-gez v2, :cond_56
+    if-gez v2, :cond_6
 
     .line 70
     iget-object v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -172,7 +172,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_5
 
     iget-object v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
@@ -180,12 +180,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_2
 
-    goto :goto_55
+    goto :goto_3
 
     .line 74
-    :cond_2e
+    :cond_2
     iget-object v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
     iget v2, v2, Landroidx/media3/extractor/ogg/OggPageHeader;->headerSize:I
@@ -197,7 +197,7 @@
 
     and-int/2addr v3, v0
 
-    if-ne v3, v0, :cond_4a
+    if-ne v3, v0, :cond_3
 
     iget-object v3, p0, Landroidx/media3/extractor/ogg/OggPacket;->packetArray:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -205,7 +205,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_4a
+    if-nez v3, :cond_3
 
     .line 78
     invoke-direct {p0, v1}, Landroidx/media3/extractor/ogg/OggPacket;->calculatePacketSize(I)I
@@ -219,34 +219,34 @@
 
     add-int/2addr v3, v1
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_4a
+    :cond_3
     move v3, v1
 
     .line 81
-    :goto_4b
+    :goto_2
     invoke-static {p1, v2}, Landroidx/media3/extractor/ExtractorUtil;->skipFullyQuietly(Landroidx/media3/extractor/ExtractorInput;I)Z
 
     move-result v2
 
-    if-nez v2, :cond_52
+    if-nez v2, :cond_4
 
     return v1
 
     .line 84
-    :cond_52
+    :cond_4
     iput v3, p0, Landroidx/media3/extractor/ogg/OggPacket;->currentSegmentIndex:I
 
-    goto :goto_56
+    goto :goto_4
 
-    :cond_55
-    :goto_55
+    :cond_5
+    :goto_3
     return v1
 
     .line 87
-    :cond_56
-    :goto_56
+    :cond_6
+    :goto_4
     iget v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->currentSegmentIndex:I
 
     invoke-direct {p0, v2}, Landroidx/media3/extractor/ogg/OggPacket;->calculatePacketSize(I)I
@@ -260,7 +260,7 @@
 
     add-int/2addr v3, v4
 
-    if-lez v2, :cond_9b
+    if-lez v2, :cond_9
 
     .line 90
     iget-object v4, p0, Landroidx/media3/extractor/ogg/OggPacket;->packetArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -290,12 +290,12 @@
 
     move-result v4
 
-    if-nez v4, :cond_80
+    if-nez v4, :cond_7
 
     return v1
 
     .line 94
-    :cond_80
+    :cond_7
     iget-object v4, p0, Landroidx/media3/extractor/ogg/OggPacket;->packetArray:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v4}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -317,39 +317,39 @@
 
     const/16 v4, 0xff
 
-    if-eq v2, v4, :cond_98
+    if-eq v2, v4, :cond_8
 
     move v2, v0
 
-    goto :goto_99
+    goto :goto_5
 
-    :cond_98
+    :cond_8
     move v2, v1
 
-    :goto_99
+    :goto_5
     iput-boolean v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->populated:Z
 
     .line 99
-    :cond_9b
+    :cond_9
     iget-object v2, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
 
     iget v2, v2, Landroidx/media3/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    if-ne v3, v2, :cond_a2
+    if-ne v3, v2, :cond_a
 
     const/4 v3, -0x1
 
-    :cond_a2
+    :cond_a
     iput v3, p0, Landroidx/media3/extractor/ogg/OggPacket;->currentSegmentIndex:I
 
-    goto/16 :goto_15
+    goto/16 :goto_1
 
-    :cond_a6
+    :cond_b
     return v0
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     .line 42
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPacket;->pageHeader:Landroidx/media3/extractor/ogg/OggPageHeader;
@@ -375,7 +375,7 @@
 .end method
 
 .method public trimPayload()V
-    .registers 5
+    .locals 4
 
     .line 125
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPacket;->packetArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -388,12 +388,12 @@
 
     const v1, 0xfe01
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 128
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggPacket;->packetArray:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 130

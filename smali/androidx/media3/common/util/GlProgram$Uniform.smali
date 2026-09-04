@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
 
     .line 369
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static create(II)Landroidx/media3/common/util/GlProgram$Uniform;
-    .registers 17
+    .locals 15
 
     move v11, p0
 
@@ -136,7 +136,7 @@
 
 # virtual methods
 .method public bind(Z)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -152,27 +152,27 @@
 
     const/4 v3, 0x0
 
-    if-eq v0, v1, :cond_db
+    if-eq v0, v1, :cond_5
 
     const/16 v1, 0x1406
 
-    if-eq v0, v1, :cond_d0
+    if-eq v0, v1, :cond_4
 
     const v1, 0x8b5e    # 4.9996E-41f
 
-    if-eq v0, v1, :cond_95
+    if-eq v0, v1, :cond_0
 
     const v4, 0x8be7
 
-    if-eq v0, v4, :cond_95
+    if-eq v0, v4, :cond_0
 
     const v4, 0x8d66
 
-    if-eq v0, v4, :cond_95
+    if-eq v0, v4, :cond_0
 
-    packed-switch v0, :pswitch_data_e6
+    packed-switch v0, :pswitch_data_0
 
-    packed-switch v0, :pswitch_data_f6
+    packed-switch v0, :pswitch_data_1
 
     .line 483
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -198,7 +198,7 @@
     throw p1
 
     .line 459
-    :pswitch_38
+    :pswitch_0
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -208,10 +208,10 @@
     .line 461
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto/16 :goto_e5
+    goto/16 :goto_2
 
     .line 454
-    :pswitch_44
+    :pswitch_1
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -221,10 +221,10 @@
     .line 456
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto/16 :goto_e5
+    goto/16 :goto_2
 
     .line 434
-    :pswitch_50
+    :pswitch_2
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->intValue:[I
@@ -234,10 +234,10 @@
     .line 435
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto/16 :goto_e5
+    goto/16 :goto_2
 
     .line 430
-    :pswitch_5c
+    :pswitch_3
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->intValue:[I
@@ -247,10 +247,10 @@
     .line 431
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto/16 :goto_e5
+    goto/16 :goto_2
 
     .line 426
-    :pswitch_68
+    :pswitch_4
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->intValue:[I
@@ -260,10 +260,10 @@
     .line 427
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto/16 :goto_e5
+    goto/16 :goto_2
 
     .line 450
-    :pswitch_74
+    :pswitch_5
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -273,10 +273,10 @@
     .line 451
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto :goto_e5
+    goto :goto_2
 
     .line 446
-    :pswitch_7f
+    :pswitch_6
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -286,10 +286,10 @@
     .line 447
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto :goto_e5
+    goto :goto_2
 
     .line 442
-    :pswitch_8a
+    :pswitch_7
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -299,13 +299,13 @@
     .line 443
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto :goto_e5
+    goto :goto_2
 
     .line 466
-    :cond_95
+    :cond_0
     iget v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->texIdValue:I
 
-    if-eqz v0, :cond_c8
+    if-eqz v0, :cond_3
 
     const v0, 0x84c0
 
@@ -322,32 +322,32 @@
     .line 472
     iget v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->type:I
 
-    if-ne v0, v1, :cond_ac
+    if-ne v0, v1, :cond_1
 
     const/16 v2, 0xde1
 
-    goto :goto_af
+    goto :goto_0
 
-    :cond_ac
+    :cond_1
     const v2, 0x8d65
 
     .line 474
-    :goto_af
+    :goto_0
     iget v3, p0, Landroidx/media3/common/util/GlProgram$Uniform;->texIdValue:I
 
-    if-ne v0, v1, :cond_b8
+    if-ne v0, v1, :cond_2
 
-    if-nez p1, :cond_b8
+    if-nez p1, :cond_2
 
     const/16 p1, 0x2601
 
-    goto :goto_ba
+    goto :goto_1
 
-    :cond_b8
+    :cond_2
     const/16 p1, 0x2600
 
     .line 471
-    :goto_ba
+    :goto_1
     invoke-static {v2, v3, p1}, Landroidx/media3/common/util/GlUtil;->bindTexture(III)V
 
     .line 479
@@ -360,10 +360,10 @@
     .line 480
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto :goto_e5
+    goto :goto_2
 
     .line 467
-    :cond_c8
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "No call to setSamplerTexId() before bind."
@@ -373,7 +373,7 @@
     throw p1
 
     .line 438
-    :cond_d0
+    :cond_4
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -383,10 +383,10 @@
     .line 439
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    goto :goto_e5
+    goto :goto_2
 
     .line 422
-    :cond_db
+    :cond_5
     iget p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->location:I
 
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->intValue:[I
@@ -396,28 +396,28 @@
     .line 423
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
 
-    :goto_e5
+    :goto_2
     return-void
 
-    :pswitch_data_e6
+    :pswitch_data_0
     .packed-switch 0x8b50
-        :pswitch_8a
-        :pswitch_7f
-        :pswitch_74
-        :pswitch_68
-        :pswitch_5c
-        :pswitch_50
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
     .end packed-switch
 
-    :pswitch_data_f6
+    :pswitch_data_1
     .packed-switch 0x8b5b
-        :pswitch_44
-        :pswitch_38
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public setFloat(F)V
-    .registers 4
+    .locals 2
 
     .line 401
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -430,7 +430,7 @@
 .end method
 
 .method public setFloats([F)V
-    .registers 5
+    .locals 3
 
     .line 406
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->floatValue:[F
@@ -445,7 +445,7 @@
 .end method
 
 .method public setInt(I)V
-    .registers 4
+    .locals 2
 
     .line 391
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->intValue:[I
@@ -458,7 +458,7 @@
 .end method
 
 .method public setInts([I)V
-    .registers 5
+    .locals 3
 
     .line 396
     iget-object v0, p0, Landroidx/media3/common/util/GlProgram$Uniform;->intValue:[I
@@ -473,7 +473,7 @@
 .end method
 
 .method public setSamplerTexId(II)V
-    .registers 3
+    .locals 0
 
     .line 385
     iput p1, p0, Landroidx/media3/common/util/GlProgram$Uniform;->texIdValue:I

@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 973
     new-instance v0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element$$ExternalSyntheticLambda0;
@@ -47,7 +47,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;I)V
-    .registers 3
+    .locals 0
 
     .line 984
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;ILandroidx/media3/extractor/text/webvtt/WebvttCueParser$1;)V
-    .registers 4
+    .locals 0
 
     .line 972
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;-><init>(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;I)V
@@ -71,7 +71,7 @@
 .end method
 
 .method static synthetic access$100()Ljava/util/Comparator;
-    .registers 1
+    .locals 1
 
     .line 972
     sget-object v0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;->BY_START_POSITION_ASC:Ljava/util/Comparator;
@@ -80,7 +80,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;)Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;
-    .registers 1
+    .locals 0
 
     .line 972
     iget-object p0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;->startTag:Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;
@@ -89,7 +89,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;)I
-    .registers 1
+    .locals 0
 
     .line 972
     iget p0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;->endPosition:I
@@ -98,7 +98,7 @@
 .end method
 
 .method static synthetic lambda$static$0(Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;)I
-    .registers 2
+    .locals 0
 
     .line 974
     iget-object p0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;->startTag:Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;

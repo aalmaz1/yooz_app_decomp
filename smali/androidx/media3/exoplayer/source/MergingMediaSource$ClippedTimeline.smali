@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;Ljava/util/Map;)V
-    .registers 14
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,8 +60,8 @@
 
     move v3, v2
 
-    :goto_16
-    if-ge v3, v0, :cond_25
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 339
     iget-object v4, p0, Landroidx/media3/exoplayer/source/MergingMediaSource$ClippedTimeline;->windowDurationsUs:[J
@@ -76,10 +76,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 341
-    :cond_25
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/Timeline;->getPeriodCount()I
 
     move-result v0
@@ -94,8 +94,8 @@
 
     invoke-direct {v1}, Landroidx/media3/common/Timeline$Period;-><init>()V
 
-    :goto_32
-    if-ge v2, v0, :cond_75
+    :goto_1
+    if-ge v2, v0, :cond_3
 
     const/4 v3, 0x1
 
@@ -128,15 +128,15 @@
 
     cmp-long v6, v3, v6
 
-    if-eqz v6, :cond_53
+    if-eqz v6, :cond_1
 
-    goto :goto_55
+    goto :goto_2
 
     .line 348
-    :cond_53
+    :cond_1
     iget-wide v3, v1, Landroidx/media3/common/Timeline$Period;->durationUs:J
 
-    :goto_55
+    :goto_2
     aput-wide v3, v5, v2
 
     .line 349
@@ -146,7 +146,7 @@
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_72
+    if-eqz v3, :cond_2
 
     .line 350
     iget-object v3, p0, Landroidx/media3/exoplayer/source/MergingMediaSource$ClippedTimeline;->windowDurationsUs:[J
@@ -167,19 +167,19 @@
 
     aput-wide v5, v3, v4
 
-    :cond_72
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_75
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 6
+    .locals 2
 
     .line 368
     invoke-super {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
@@ -195,7 +195,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 7
+    .locals 2
 
     .line 357
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
@@ -214,18 +214,18 @@
 
     cmp-long p1, p3, v0
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
     iget-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
     cmp-long p1, p3, v0
 
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 362
-    :cond_1b
+    :cond_0
     iget-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
     iget-wide v0, p2, Landroidx/media3/common/Timeline$Window;->durationUs:J
@@ -234,15 +234,15 @@
 
     move-result-wide p3
 
-    goto :goto_26
+    goto :goto_1
 
     .line 361
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     iget-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
     .line 362
-    :goto_26
+    :goto_1
     iput-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
     return-object p2

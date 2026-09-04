@@ -65,7 +65,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/PointerIcon;)V
-    .registers 2
+    .locals 0
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method public static create(Landroid/graphics/Bitmap;FF)Landroidx/core/view/PointerIconCompat;
-    .registers 4
+    .locals 1
 
     .line 155
     new-instance v0, Landroidx/core/view/PointerIconCompat;
@@ -92,7 +92,7 @@
 .end method
 
 .method public static getSystemIcon(Landroid/content/Context;I)Landroidx/core/view/PointerIconCompat;
-    .registers 3
+    .locals 1
 
     .line 133
     new-instance v0, Landroidx/core/view/PointerIconCompat;
@@ -107,7 +107,7 @@
 .end method
 
 .method public static load(Landroid/content/res/Resources;I)Landroidx/core/view/PointerIconCompat;
-    .registers 3
+    .locals 1
 
     .line 184
     new-instance v0, Landroidx/core/view/PointerIconCompat;
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public getPointerIcon()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 119
     iget-object v0, p0, Landroidx/core/view/PointerIconCompat;->mPointerIcon:Landroid/view/PointerIcon;

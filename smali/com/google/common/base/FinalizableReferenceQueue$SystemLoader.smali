@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public loadFinalizer()Ljava/lang/Class;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -51,39 +51,39 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     return-object v1
 
     .line 255
-    :cond_6
-    :try_start_6
+    :cond_0
+    :try_start_0
     invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v0
-    :try_end_a
-    .catch Ljava/lang/SecurityException; {:try_start_6 .. :try_end_a} :catch_14
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
-    :try_start_c
+    :try_start_1
     const-string v2, "com.google.common.base.internal.Finalizer"
 
     .line 262
     invoke-virtual {v0, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_12
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_c .. :try_end_12} :catch_13
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
     return-object v0
 
-    :catch_13
-    :cond_13
+    :catch_0
+    :cond_1
     return-object v1
 
     .line 257
-    :catch_14
+    :catch_1
     invoke-static {}, Lcom/google/common/base/FinalizableReferenceQueue;->access$000()Ljava/util/logging/Logger;
 
     move-result-object v0

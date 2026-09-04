@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;Landroidx/media3/exoplayer/video/spherical/SceneRenderer;)V
-    .registers 7
+    .locals 4
 
     .line 285
     iput-object p1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->this$0:Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;
@@ -110,23 +110,23 @@
 .end method
 
 .method private calculateFieldOfViewInYDirection(F)F
-    .registers 6
+    .locals 4
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p1, v0
 
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-eqz v0, :cond_27
+    :goto_0
+    if-eqz v0, :cond_1
 
     const-wide v0, 0x4046800000000000L    # 45.0
 
@@ -160,14 +160,14 @@
 
     return p1
 
-    :cond_27
+    :cond_1
     const/high16 p1, 0x42b40000    # 90.0f
 
     return p1
 .end method
 
 .method private updatePitchMatrix()V
-    .registers 7
+    .locals 6
 
     .line 338
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->touchPitchMatrix:[F
@@ -211,13 +211,13 @@
 
 # virtual methods
 .method public onDrawFrame(Ljavax/microedition/khronos/opengles/GL10;)V
-    .registers 14
+    .locals 12
 
     .line 311
     monitor-enter p0
 
     .line 312
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->tempMatrix:[F
 
     const/4 v1, 0x0
@@ -249,8 +249,8 @@
 
     .line 314
     monitor-exit p0
-    :try_end_1a
-    .catchall {:try_start_1 .. :try_end_1a} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 316
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->viewProjectionMatrix:[F
@@ -276,25 +276,25 @@
 
     return-void
 
-    :catchall_2e
+    :catchall_0
     move-exception p1
 
     .line 314
-    :try_start_2f
+    :try_start_1
     monitor-exit p0
-    :try_end_30
-    .catchall {:try_start_2f .. :try_end_30} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public declared-synchronized onOrientationChange([FF)V
-    .registers 6
+    .locals 3
 
     monitor-enter p0
 
     .line 324
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->deviceOrientationMatrix:[F
 
     array-length v1, v0
@@ -310,15 +310,15 @@
 
     .line 326
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->updatePitchMatrix()V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 327
     monitor-exit p0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -327,12 +327,12 @@
 .end method
 
 .method public declared-synchronized onScrollChange(Landroid/graphics/PointF;)V
-    .registers 9
+    .locals 7
 
     monitor-enter p0
 
     .line 350
-    :try_start_1
+    :try_start_0
     iget v0, p1, Landroid/graphics/PointF;->y:F
 
     iput v0, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->touchPitch:F
@@ -356,15 +356,15 @@
     const/4 v6, 0x0
 
     invoke-static/range {v1 .. v6}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
-    :try_end_15
-    .catchall {:try_start_1 .. :try_end_15} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 353
     monitor-exit p0
 
     return-void
 
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -373,7 +373,7 @@
 .end method
 
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .registers 2
+    .locals 0
 
     .line 358
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->this$0:Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;
@@ -386,7 +386,7 @@
 .end method
 
 .method public onSurfaceChanged(Ljavax/microedition/khronos/opengles/GL10;II)V
-    .registers 10
+    .locals 6
 
     const/4 p1, 0x0
 
@@ -419,12 +419,12 @@
 .end method
 
 .method public declared-synchronized onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
-    .registers 3
+    .locals 0
 
     monitor-enter p0
 
     .line 295
-    :try_start_1
+    :try_start_0
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->this$0:Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;
 
     iget-object p2, p0, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView$Renderer;->scene:Landroidx/media3/exoplayer/video/spherical/SceneRenderer;
@@ -434,15 +434,15 @@
     move-result-object p2
 
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->access$000(Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;Landroid/graphics/SurfaceTexture;)V
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 296
     monitor-exit p0
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

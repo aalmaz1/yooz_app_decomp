@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public add(I)Landroidx/media3/common/FlagSet$Builder;
-    .registers 4
+    .locals 2
 
     .line 59
     iget-boolean v0, p0, Landroidx/media3/common/FlagSet$Builder;->buildCalled:Z
@@ -60,17 +60,17 @@
 .end method
 
 .method public addAll(Landroidx/media3/common/FlagSet;)Landroidx/media3/common/FlagSet$Builder;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 104
-    :goto_1
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/FlagSet;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_11
+    if-ge v0, v1, :cond_0
 
     .line 105
     invoke-virtual {p1, v0}, Landroidx/media3/common/FlagSet;->get(I)I
@@ -81,22 +81,22 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return-object p0
 .end method
 
 .method public varargs addAll([I)Landroidx/media3/common/FlagSet$Builder;
-    .registers 5
+    .locals 3
 
     .line 89
     array-length v0, p1
 
     const/4 v1, 0x0
 
-    :goto_2
-    if-ge v1, v0, :cond_c
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget v2, p1, v1
 
@@ -105,16 +105,16 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     return-object p0
 .end method
 
 .method public addIf(IZ)Landroidx/media3/common/FlagSet$Builder;
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     .line 75
     invoke-virtual {p0, p1}, Landroidx/media3/common/FlagSet$Builder;->add(I)Landroidx/media3/common/FlagSet$Builder;
@@ -123,12 +123,12 @@
 
     return-object p1
 
-    :cond_7
+    :cond_0
     return-object p0
 .end method
 
 .method public build()Landroidx/media3/common/FlagSet;
-    .registers 4
+    .locals 3
 
     .line 161
     iget-boolean v0, p0, Landroidx/media3/common/FlagSet$Builder;->buildCalled:Z
@@ -155,7 +155,7 @@
 .end method
 
 .method public remove(I)Landroidx/media3/common/FlagSet$Builder;
-    .registers 3
+    .locals 1
 
     .line 119
     iget-boolean v0, p0, Landroidx/media3/common/FlagSet$Builder;->buildCalled:Z
@@ -173,15 +173,15 @@
 .end method
 
 .method public varargs removeAll([I)Landroidx/media3/common/FlagSet$Builder;
-    .registers 5
+    .locals 3
 
     .line 149
     array-length v0, p1
 
     const/4 v1, 0x0
 
-    :goto_2
-    if-ge v1, v0, :cond_c
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget v2, p1, v1
 
@@ -190,16 +190,16 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     return-object p0
 .end method
 
 .method public removeIf(IZ)Landroidx/media3/common/FlagSet$Builder;
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     .line 135
     invoke-virtual {p0, p1}, Landroidx/media3/common/FlagSet$Builder;->remove(I)Landroidx/media3/common/FlagSet$Builder;
@@ -208,6 +208,6 @@
 
     return-object p1
 
-    :cond_7
+    :cond_0
     return-object p0
 .end method

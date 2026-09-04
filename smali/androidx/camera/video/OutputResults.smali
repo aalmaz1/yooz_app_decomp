@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static of(Landroid/net/Uri;)Landroidx/camera/video/OutputResults;
-    .registers 2
+    .locals 1
 
     const-string v0, "OutputUri cannot be null."
 

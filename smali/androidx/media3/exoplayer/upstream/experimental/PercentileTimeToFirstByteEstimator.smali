@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/16 v0, 0xa
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(IF)V
-    .registers 4
+    .locals 1
 
     .line 69
     sget-object v0, Landroidx/media3/common/util/Clock;->DEFAULT:Landroidx/media3/common/util/Clock;
@@ -69,36 +69,36 @@
 .end method
 
 .method constructor <init>(IFLandroidx/media3/common/util/Clock;)V
-    .registers 6
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    if-lez p1, :cond_13
+    if-lez p1, :cond_0
 
     const/4 v1, 0x0
 
     cmpl-float v1, p2, v1
 
-    if-lez v1, :cond_13
+    if-lez v1, :cond_0
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpg-float v1, p2, v1
 
-    if-gtz v1, :cond_13
+    if-gtz v1, :cond_0
 
     move v1, v0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
     .line 82
-    :goto_14
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 83
@@ -132,12 +132,12 @@
 
 # virtual methods
 .method public getTimeToFirstByteEstimateUs()J
-    .registers 3
+    .locals 2
 
     .line 92
     iget-boolean v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->isEmpty:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->slidingPercentile:Landroidx/media3/exoplayer/upstream/SlidingPercentile;
 
@@ -149,17 +149,17 @@
 
     float-to-long v0, v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_13
+    :goto_0
     return-wide v0
 .end method
 
 .method public onTransferInitializing(Landroidx/media3/datasource/DataSpec;)V
-    .registers 5
+    .locals 3
 
     .line 104
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->initializedDataSpecs:Ljava/util/LinkedHashMap;
@@ -189,7 +189,7 @@
 .end method
 
 .method public onTransferStart(Landroidx/media3/datasource/DataSpec;)V
-    .registers 7
+    .locals 5
 
     .line 110
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->initializedDataSpecs:Ljava/util/LinkedHashMap;
@@ -200,12 +200,12 @@
 
     check-cast p1, Ljava/lang/Long;
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
     return-void
 
     .line 114
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->slidingPercentile:Landroidx/media3/exoplayer/upstream/SlidingPercentile;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->clock:Landroidx/media3/common/util/Clock;
@@ -241,7 +241,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator;->slidingPercentile:Landroidx/media3/exoplayer/upstream/SlidingPercentile;

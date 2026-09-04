@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/EmojiCompatInitializer;Landroidx/lifecycle/Lifecycle;)V
-    .registers 3
+    .locals 0
 
     .line 107
     iput-object p1, p0, Landroidx/emoji2/text/EmojiCompatInitializer$1;->this$0:Landroidx/emoji2/text/EmojiCompatInitializer;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public onResume(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 2
+    .locals 0
 
     .line 110
     iget-object p1, p0, Landroidx/emoji2/text/EmojiCompatInitializer$1;->this$0:Landroidx/emoji2/text/EmojiCompatInitializer;

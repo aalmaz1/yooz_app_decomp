@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/datastore/migrations/SharedPreferencesMigration$4;->$context:Landroid/content/Context;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final invoke()Landroid/content/SharedPreferences;
-    .registers 4
+    .locals 3
 
     .line 126
     iget-object v0, p0, Landroidx/datastore/migrations/SharedPreferencesMigration$4;->$context:Landroid/content/Context;
@@ -89,7 +89,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 126
     invoke-virtual {p0}, Landroidx/datastore/migrations/SharedPreferencesMigration$4;->invoke()Landroid/content/SharedPreferences;

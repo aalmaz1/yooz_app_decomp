@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/core/graphics/TypefaceCompatApi26Impl;-><init>()V
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method protected createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
-    .registers 6
+    .locals 4
 
     .line 50
     :try_start_0
@@ -81,22 +81,22 @@
     move-result-object p1
 
     check-cast p1, Landroid/graphics/Typeface;
-    :try_end_2c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_2c} :catch_2f
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_2d
+    :catch_0
     move-exception p1
 
-    goto :goto_30
+    goto :goto_0
 
-    :catch_2f
+    :catch_1
     move-exception p1
 
     .line 55
-    :goto_30
+    :goto_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -105,7 +105,7 @@
 .end method
 
 .method createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
-    .registers 5
+    .locals 0
 
     .line 73
     invoke-static {p2, p3, p4}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
@@ -116,7 +116,7 @@
 .end method
 
 .method protected obtainCreateFromFamiliesWithDefaultMethod(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

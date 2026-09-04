@@ -16,43 +16,43 @@
 
 # virtual methods
 .method public onCaptureBufferLost(Landroidx/camera/core/impl/RequestProcessor$Request;JI)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureCompleted(Landroidx/camera/core/impl/RequestProcessor$Request;Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureFailed(Landroidx/camera/core/impl/RequestProcessor$Request;Landroidx/camera/core/impl/CameraCaptureFailure;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureProgressed(Landroidx/camera/core/impl/RequestProcessor$Request;Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureSequenceAborted(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureSequenceCompleted(IJ)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptureStarted(Landroidx/camera/core/impl/RequestProcessor$Request;JJ)V
-    .registers 6
+    .locals 0
 
     return-void
 .end method

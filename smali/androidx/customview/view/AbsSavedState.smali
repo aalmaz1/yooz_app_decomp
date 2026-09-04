@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 30
     new-instance v0, Landroidx/customview/view/AbsSavedState$1;
@@ -46,7 +46,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method protected constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -71,7 +71,7 @@
 .end method
 
 .method protected constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .registers 3
+    .locals 0
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,45 +81,45 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 70
-    :cond_a
+    :cond_0
     sget-object p1, Landroidx/customview/view/AbsSavedState;->EMPTY_STATE:Landroidx/customview/view/AbsSavedState;
 
-    :goto_c
+    :goto_0
     iput-object p1, p0, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
     return-void
 .end method
 
 .method protected constructor <init>(Landroid/os/Parcelable;)V
-    .registers 3
+    .locals 1
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_1
 
     .line 50
     sget-object v0, Landroidx/customview/view/AbsSavedState;->EMPTY_STATE:Landroidx/customview/view/AbsSavedState;
 
-    if-eq p1, v0, :cond_a
+    if-eq p1, v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     iput-object p1, p0, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
     return-void
 
     .line 48
-    :cond_e
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "superState must not be null"
@@ -130,7 +130,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/customview/view/AbsSavedState$1;)V
-    .registers 2
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Landroidx/customview/view/AbsSavedState;-><init>()V
@@ -141,7 +141,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public final getSuperState()Landroid/os/Parcelable;
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
@@ -158,7 +158,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .locals 1
 
     .line 85
     iget-object v0, p0, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;

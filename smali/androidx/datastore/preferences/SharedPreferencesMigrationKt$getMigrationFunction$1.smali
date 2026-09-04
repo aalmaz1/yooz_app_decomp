@@ -76,7 +76,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/datastore/migrations/SharedPreferencesView;Landroidx/datastore/preferences/core/Preferences;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -129,7 +129,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 0
 
     check-cast p1, Landroidx/datastore/migrations/SharedPreferencesView;
 
@@ -145,14 +145,14 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     .line 102
     iget v0, p0, Landroidx/datastore/preferences/SharedPreferencesMigrationKt$getMigrationFunction$1;->label:I
 
-    if-nez v0, :cond_ff
+    if-nez v0, :cond_b
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -193,12 +193,12 @@
 
     move-result-object v1
 
-    :goto_2d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_41
+    if-eqz v3, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -214,10 +214,10 @@
 
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 158
-    :cond_41
+    :cond_0
     check-cast v2, Ljava/util/List;
 
     .line 108
@@ -241,13 +241,13 @@
 
     move-result-object p1
 
-    :cond_56
-    :goto_56
+    :cond_1
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_84
+    if-eqz v3, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -276,7 +276,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_56
+    if-eqz v4, :cond_1
 
     .line 162
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -289,10 +289,10 @@
 
     invoke-interface {v1, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_56
+    goto :goto_1
 
     .line 110
-    :cond_84
+    :cond_2
     invoke-virtual {v0}, Landroidx/datastore/preferences/core/Preferences;->toMutablePreferences()Landroidx/datastore/preferences/core/MutablePreferences;
 
     move-result-object p1
@@ -306,13 +306,13 @@
 
     move-result-object v0
 
-    :cond_90
-    :goto_90
+    :cond_3
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_fa
+    if-eqz v1, :cond_a
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -333,7 +333,7 @@
     .line 113
     instance-of v3, v1, Ljava/lang/Boolean;
 
-    if-eqz v3, :cond_b2
+    if-eqz v3, :cond_4
 
     .line 114
     invoke-static {v2}, Landroidx/datastore/preferences/core/PreferencesKeys;->booleanKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
@@ -343,13 +343,13 @@
     .line 113
     invoke-virtual {p1, v2, v1}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_90
+    goto :goto_2
 
     .line 116
-    :cond_b2
+    :cond_4
     instance-of v3, v1, Ljava/lang/Float;
 
-    if-eqz v3, :cond_be
+    if-eqz v3, :cond_5
 
     .line 117
     invoke-static {v2}, Landroidx/datastore/preferences/core/PreferencesKeys;->floatKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
@@ -359,13 +359,13 @@
     .line 116
     invoke-virtual {p1, v2, v1}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_90
+    goto :goto_2
 
     .line 119
-    :cond_be
+    :cond_5
     instance-of v3, v1, Ljava/lang/Integer;
 
-    if-eqz v3, :cond_ca
+    if-eqz v3, :cond_6
 
     .line 120
     invoke-static {v2}, Landroidx/datastore/preferences/core/PreferencesKeys;->intKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
@@ -375,13 +375,13 @@
     .line 119
     invoke-virtual {p1, v2, v1}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_90
+    goto :goto_2
 
     .line 122
-    :cond_ca
+    :cond_6
     instance-of v3, v1, Ljava/lang/Long;
 
-    if-eqz v3, :cond_d6
+    if-eqz v3, :cond_7
 
     .line 123
     invoke-static {v2}, Landroidx/datastore/preferences/core/PreferencesKeys;->longKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
@@ -391,13 +391,13 @@
     .line 122
     invoke-virtual {p1, v2, v1}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_90
+    goto :goto_2
 
     .line 125
-    :cond_d6
+    :cond_7
     instance-of v3, v1, Ljava/lang/String;
 
-    if-eqz v3, :cond_e2
+    if-eqz v3, :cond_8
 
     .line 126
     invoke-static {v2}, Landroidx/datastore/preferences/core/PreferencesKeys;->stringKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
@@ -407,20 +407,20 @@
     .line 125
     invoke-virtual {p1, v2, v1}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_90
+    goto :goto_2
 
     .line 128
-    :cond_e2
+    :cond_8
     instance-of v3, v1, Ljava/util/Set;
 
-    if-eqz v3, :cond_90
+    if-eqz v3, :cond_3
 
     .line 131
     invoke-static {v2}, Landroidx/datastore/preferences/core/PreferencesKeys;->stringSetKey(Ljava/lang/String;)Landroidx/datastore/preferences/core/Preferences$Key;
 
     move-result-object v2
 
-    if-eqz v1, :cond_f2
+    if-eqz v1, :cond_9
 
     .line 132
     check-cast v1, Ljava/util/Set;
@@ -428,10 +428,10 @@
     .line 130
     invoke-virtual {p1, v2, v1}, Landroidx/datastore/preferences/core/MutablePreferences;->set(Landroidx/datastore/preferences/core/Preferences$Key;Ljava/lang/Object;)V
 
-    goto :goto_90
+    goto :goto_2
 
     .line 132
-    :cond_f2
+    :cond_9
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>"
@@ -441,14 +441,14 @@
     throw p1
 
     .line 137
-    :cond_fa
+    :cond_a
     invoke-virtual {p1}, Landroidx/datastore/preferences/core/MutablePreferences;->toPreferences()Landroidx/datastore/preferences/core/Preferences;
 
     move-result-object p1
 
     return-object p1
 
-    :cond_ff
+    :cond_b
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"

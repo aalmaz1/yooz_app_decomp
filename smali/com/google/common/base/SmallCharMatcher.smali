@@ -28,7 +28,7 @@
 
 # direct methods
 .method private constructor <init>([CJZLjava/lang/String;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -60,7 +60,7 @@
 .end method
 
 .method private checkFilter(I)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -81,21 +81,21 @@
 
     cmp-long p1, v2, v0
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method
 
 .method static chooseTableSize(I)I
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -107,13 +107,13 @@
 
     const/4 v0, 0x1
 
-    if-ne p0, v0, :cond_5
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x2
 
     return p0
 
-    :cond_5
+    :cond_0
     add-int/lit8 v1, p0, -0x1
 
     .line 82
@@ -123,7 +123,7 @@
 
     shl-int/lit8 v0, v1, 0x1
 
-    :goto_d
+    :goto_0
     int-to-double v1, v0
 
     const-wide/high16 v3, 0x3fe0000000000000L    # 0.5
@@ -134,18 +134,18 @@
 
     cmpg-double v1, v1, v3
 
-    if-gez v1, :cond_19
+    if-gez v1, :cond_1
 
     shl-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     return v0
 .end method
 
 .method static from(Ljava/util/BitSet;Ljava/lang/String;)Lcom/google/common/base/CharMatcher;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -185,10 +185,10 @@
 
     const-wide/16 v4, 0x0
 
-    :goto_17
+    :goto_0
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_35
+    if-eq v1, v2, :cond_1
 
     const-wide/16 v7, 0x1
 
@@ -201,13 +201,13 @@
 
     move-result v2
 
-    :goto_22
+    :goto_1
     and-int/2addr v2, v0
 
     .line 103
     aget-char v4, v3, v2
 
-    if-nez v4, :cond_32
+    if-nez v4, :cond_0
 
     int-to-char v4, v1
 
@@ -223,15 +223,15 @@
 
     move-wide v4, v7
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_32
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_22
+    goto :goto_1
 
     .line 111
-    :cond_35
+    :cond_1
     new-instance p0, Lcom/google/common/base/SmallCharMatcher;
 
     move-object v2, p0
@@ -244,7 +244,7 @@
 .end method
 
 .method static smear(I)I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -275,7 +275,7 @@
 
 # virtual methods
 .method public matches(C)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -285,7 +285,7 @@
         }
     .end annotation
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     .line 117
     iget-boolean p1, p0, Lcom/google/common/base/SmallCharMatcher;->containsZero:Z
@@ -293,19 +293,19 @@
     return p1
 
     .line 119
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1}, Lcom/google/common/base/SmallCharMatcher;->checkFilter(I)Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     return v1
 
     .line 122
-    :cond_d
+    :cond_1
     iget-object v0, p0, Lcom/google/common/base/SmallCharMatcher;->table:[C
 
     array-length v0, v0
@@ -324,32 +324,32 @@
     move v4, v3
 
     .line 126
-    :cond_18
+    :cond_2
     iget-object v5, p0, Lcom/google/common/base/SmallCharMatcher;->table:[C
 
     aget-char v5, v5, v4
 
-    if-nez v5, :cond_1f
+    if-nez v5, :cond_3
 
     return v1
 
-    :cond_1f
-    if-ne v5, p1, :cond_22
+    :cond_3
+    if-ne v5, p1, :cond_4
 
     return v2
 
-    :cond_22
+    :cond_4
     add-int/lit8 v4, v4, 0x1
 
     and-int/2addr v4, v0
 
-    if-ne v4, v3, :cond_18
+    if-ne v4, v3, :cond_2
 
     return v1
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -364,32 +364,32 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 141
     invoke-virtual {p1, v1}, Ljava/util/BitSet;->set(I)V
 
     .line 143
-    :cond_8
+    :cond_0
     iget-object v0, p0, Lcom/google/common/base/SmallCharMatcher;->table:[C
 
     array-length v2, v0
 
-    :goto_b
-    if-ge v1, v2, :cond_17
+    :goto_0
+    if-ge v1, v2, :cond_2
 
     aget-char v3, v0, v1
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_1
 
     .line 145
     invoke-virtual {p1, v3}, Ljava/util/BitSet;->set(I)V
 
-    :cond_14
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_17
+    :cond_2
     return-void
 .end method

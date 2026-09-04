@@ -53,7 +53,7 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/annotation/RequiresOptIn$Level;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -75,7 +75,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 93
     new-instance v0, Landroidx/annotation/RequiresOptIn$Level;
@@ -109,7 +109,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -123,7 +123,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/annotation/RequiresOptIn$Level;
-    .registers 2
+    .locals 1
 
     const-class v0, Landroidx/annotation/RequiresOptIn$Level;
 
@@ -137,7 +137,7 @@
 .end method
 
 .method public static values()[Landroidx/annotation/RequiresOptIn$Level;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/annotation/RequiresOptIn$Level;->$VALUES:[Landroidx/annotation/RequiresOptIn$Level;
 

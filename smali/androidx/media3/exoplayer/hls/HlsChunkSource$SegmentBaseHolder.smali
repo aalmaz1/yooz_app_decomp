@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$SegmentBase;JI)V
-    .registers 5
+    .locals 0
 
     .line 976
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,22 +43,22 @@
     .line 980
     instance-of p2, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     check-cast p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;->isPreload:Z
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_16
+    :goto_0
     iput-boolean p1, p0, Landroidx/media3/exoplayer/hls/HlsChunkSource$SegmentBaseHolder;->isPreload:Z
 
     return-void

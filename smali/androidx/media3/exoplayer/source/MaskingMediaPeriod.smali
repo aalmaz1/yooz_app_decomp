@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)V
-    .registers 5
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method private getPreparePositionWithOverride(J)J
-    .registers 7
+    .locals 4
 
     .line 253
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionOverrideUs:J
@@ -69,43 +69,43 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_0
 
     move-wide p1, v0
 
-    :cond_c
+    :cond_0
     return-wide p1
 .end method
 
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 229
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/source/MediaPeriod;->continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 6
+    .locals 4
 
     .line 130
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionUs:J
@@ -134,17 +134,17 @@
     .line 132
     iget-object v2, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     .line 133
     invoke-interface {p1, p0, v0, v1}, Landroidx/media3/exoplayer/source/MediaPeriod;->prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 5
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -161,7 +161,7 @@
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 5
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -180,7 +180,7 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 204
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -199,7 +199,7 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 219
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -218,7 +218,7 @@
 .end method
 
 .method public getPreparePositionOverrideUs()J
-    .registers 3
+    .locals 2
 
     .line 113
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionOverrideUs:J
@@ -227,7 +227,7 @@
 .end method
 
 .method public getPreparePositionUs()J
-    .registers 3
+    .locals 2
 
     .line 98
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionUs:J
@@ -236,7 +236,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 174
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -255,32 +255,32 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 234
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaPeriod;->isLoading()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -291,38 +291,38 @@
     :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 157
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaPeriod;->maybeThrowPrepareError()V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 158
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 159
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaSource;->maybeThrowSourceInfoRefreshError()V
-    :try_end_f
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :catch_10
+    :catch_0
     move-exception v0
 
     .line 162
     iget-object v1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->listener:Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 165
     iget-boolean v2, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->notifiedPrepareError:Z
 
-    if-nez v2, :cond_21
+    if-nez v2, :cond_1
 
     const/4 v2, 0x1
 
@@ -334,17 +334,17 @@
 
     invoke-interface {v1, v2, v0}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;->onPrepareError(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Ljava/io/IOException;)V
 
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 
     .line 163
-    :cond_22
+    :cond_2
     throw v0
 .end method
 
 .method public onContinueLoadingRequested(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 239
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -361,7 +361,7 @@
 .end method
 
 .method public bridge synthetic onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
-    .registers 2
+    .locals 0
 
     .line 40
     check-cast p1, Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -372,7 +372,7 @@
 .end method
 
 .method public onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 246
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -388,19 +388,19 @@
     .line 247
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->listener:Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 248
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     invoke-interface {p1, v0}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;->onPrepareComplete(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public overridePreparePositionUs(J)V
-    .registers 3
+    .locals 0
 
     .line 108
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionOverrideUs:J
@@ -409,7 +409,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 146
     iput-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -417,7 +417,7 @@
     .line 147
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 148
     iget-wide p2, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionUs:J
@@ -430,12 +430,12 @@
     .line 148
     invoke-interface {p1, p0, p2, p3}, Landroidx/media3/exoplayer/source/MediaPeriod;->prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     .line 199
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -454,7 +454,7 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 4
+    .locals 1
 
     .line 224
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -471,12 +471,12 @@
 .end method
 
 .method public releasePeriod()V
-    .registers 3
+    .locals 2
 
     .line 139
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 140
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -491,12 +491,12 @@
 
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/source/MediaSource;->releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public seekToUs(J)J
-    .registers 4
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -515,7 +515,7 @@
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 20
+    .locals 13
 
     move-object v0, p0
 
@@ -526,23 +526,23 @@
 
     cmp-long v5, v1, v3
 
-    if-eqz v5, :cond_14
+    if-eqz v5, :cond_0
 
     iget-wide v5, v0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionUs:J
 
     cmp-long v5, p5, v5
 
-    if-nez v5, :cond_14
+    if-nez v5, :cond_0
 
     move-wide v11, v1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move-wide/from16 v11, p5
 
     .line 187
-    :goto_16
+    :goto_0
     iput-wide v3, v0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->preparePositionOverrideUs:J
 
     .line 188
@@ -573,21 +573,21 @@
 .end method
 
 .method public setMediaSource(Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 119
@@ -597,7 +597,7 @@
 .end method
 
 .method public setPrepareListener(Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;)V
-    .registers 2
+    .locals 0
 
     .line 93
     iput-object p1, p0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->listener:Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;

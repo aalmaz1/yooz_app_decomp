@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 176
     new-instance v0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$1;
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 .end method
 
 .method private static doSegmentsOverlap(Ljava/util/List;)Z
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,12 +99,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 195
-    :cond_8
+    :cond_0
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -118,12 +118,12 @@
     move v4, v0
 
     .line 196
-    :goto_12
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_30
+    if-ge v4, v5, :cond_2
 
     .line 197
     invoke-interface {p0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -136,12 +136,12 @@
 
     cmp-long v2, v5, v2
 
-    if-gez v2, :cond_25
+    if-gez v2, :cond_1
 
     return v0
 
     .line 200
-    :cond_25
+    :cond_1
     invoke-interface {p0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -152,16 +152,16 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     return v1
 .end method
 
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -169,16 +169,16 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_4
-    if-eqz p1, :cond_1c
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 154
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -189,12 +189,12 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 157
-    :cond_11
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/mp4/SlowMotionData;
 
     .line 158
@@ -208,15 +208,15 @@
 
     return p1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 163
     iget-object v0, p0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData;->segments:Ljava/util/List;
@@ -229,7 +229,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 146
     new-instance v0, Ljava/lang/StringBuilder;
@@ -252,7 +252,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 173
     iget-object p2, p0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData;->segments:Ljava/util/List;

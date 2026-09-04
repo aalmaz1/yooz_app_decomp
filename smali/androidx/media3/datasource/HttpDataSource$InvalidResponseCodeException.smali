@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;Ljava/io/IOException;Ljava/util/Map;Landroidx/media3/datasource/DataSpec;[B)V
-    .registers 14
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",

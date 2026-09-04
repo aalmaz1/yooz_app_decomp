@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createPathInterpolator(FF)Landroid/view/animation/Interpolator;
-    .registers 3
+    .locals 1
 
     .line 107
     new-instance v0, Landroid/view/animation/PathInterpolator;
@@ -36,7 +36,7 @@
 .end method
 
 .method static createPathInterpolator(FFFF)Landroid/view/animation/Interpolator;
-    .registers 5
+    .locals 1
 
     .line 113
     new-instance v0, Landroid/view/animation/PathInterpolator;
@@ -47,7 +47,7 @@
 .end method
 
 .method static createPathInterpolator(Landroid/graphics/Path;)Landroid/view/animation/Interpolator;
-    .registers 2
+    .locals 1
 
     .line 102
     new-instance v0, Landroid/view/animation/PathInterpolator;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 527
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getMslAltitudeAccuracyMeters(Landroid/location/Location;)F
-    .registers 1
+    .locals 0
 
     .line 552
     invoke-virtual {p0}, Landroid/location/Location;->getMslAltitudeAccuracyMeters()F
@@ -36,7 +36,7 @@
 .end method
 
 .method static getMslAltitudeMeters(Landroid/location/Location;)D
-    .registers 3
+    .locals 2
 
     .line 532
     invoke-virtual {p0}, Landroid/location/Location;->getMslAltitudeMeters()D
@@ -47,7 +47,7 @@
 .end method
 
 .method static hasMslAltitude(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 542
     invoke-virtual {p0}, Landroid/location/Location;->hasMslAltitude()Z
@@ -58,7 +58,7 @@
 .end method
 
 .method static hasMslAltitudeAccuracy(Landroid/location/Location;)Z
-    .registers 1
+    .locals 0
 
     .line 563
     invoke-virtual {p0}, Landroid/location/Location;->hasMslAltitudeAccuracy()Z
@@ -69,7 +69,7 @@
 .end method
 
 .method static removeMslAltitude(Landroid/location/Location;)V
-    .registers 1
+    .locals 0
 
     .line 547
     invoke-virtual {p0}, Landroid/location/Location;->removeMslAltitude()V
@@ -78,7 +78,7 @@
 .end method
 
 .method static removeMslAltitudeAccuracy(Landroid/location/Location;)V
-    .registers 1
+    .locals 0
 
     .line 568
     invoke-virtual {p0}, Landroid/location/Location;->removeMslAltitudeAccuracy()V
@@ -87,7 +87,7 @@
 .end method
 
 .method static setMslAltitudeAccuracyMeters(Landroid/location/Location;F)V
-    .registers 2
+    .locals 0
 
     .line 558
     invoke-virtual {p0, p1}, Landroid/location/Location;->setMslAltitudeAccuracyMeters(F)V
@@ -96,7 +96,7 @@
 .end method
 
 .method static setMslAltitudeMeters(Landroid/location/Location;D)V
-    .registers 3
+    .locals 0
 
     .line 537
     invoke-virtual {p0, p1, p2}, Landroid/location/Location;->setMslAltitudeMeters(D)V

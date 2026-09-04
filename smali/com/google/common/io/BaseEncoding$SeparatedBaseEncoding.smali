@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/BaseEncoding;Ljava/lang/String;I)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -62,16 +62,16 @@
     .line 1151
     iput p3, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->afterEveryChars:I
 
-    if-lez p3, :cond_19
+    if-lez p3, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_1a
+    :goto_0
     const-string p2, "Cannot add a separator after every %s chars"
 
     .line 1152
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public canDecode(Ljava/lang/CharSequence;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -101,12 +101,12 @@
     const/4 v1, 0x0
 
     .line 1188
-    :goto_6
+    :goto_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_1
 
     .line 1189
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
@@ -120,18 +120,18 @@
 
     move-result v3
 
-    if-gez v3, :cond_1b
+    if-gez v3, :cond_0
 
     .line 1191
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :cond_1b
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 1194
-    :cond_1e
+    :cond_1
     iget-object p1, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->delegate:Lcom/google/common/io/BaseEncoding;
 
     invoke-virtual {p1, v0}, Lcom/google/common/io/BaseEncoding;->canDecode(Ljava/lang/CharSequence;)Z
@@ -142,7 +142,7 @@
 .end method
 
 .method decodeTo([BLjava/lang/CharSequence;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -172,12 +172,12 @@
     const/4 v1, 0x0
 
     .line 1200
-    :goto_a
+    :goto_0
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_22
+    if-ge v1, v2, :cond_1
 
     .line 1201
     invoke-interface {p2, v1}, Ljava/lang/CharSequence;->charAt(I)C
@@ -191,18 +191,18 @@
 
     move-result v3
 
-    if-gez v3, :cond_1f
+    if-gez v3, :cond_0
 
     .line 1203
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :cond_1f
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 1206
-    :cond_22
+    :cond_1
     iget-object p2, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->delegate:Lcom/google/common/io/BaseEncoding;
 
     invoke-virtual {p2, p1, v0}, Lcom/google/common/io/BaseEncoding;->decodeTo([BLjava/lang/CharSequence;)I
@@ -213,7 +213,7 @@
 .end method
 
 .method public decodingStream(Ljava/io/Reader;)Ljava/io/InputStream;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -240,7 +240,7 @@
 .end method
 
 .method encodeTo(Ljava/lang/Appendable;[BII)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -279,7 +279,7 @@
 .end method
 
 .method public encodingStream(Ljava/io/Writer;)Ljava/io/OutputStream;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -308,7 +308,7 @@
 .end method
 
 .method public ignoreCase()Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 3
 
     .line 1243
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->delegate:Lcom/google/common/io/BaseEncoding;
@@ -329,7 +329,7 @@
 .end method
 
 .method public lowerCase()Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 3
 
     .line 1238
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->delegate:Lcom/google/common/io/BaseEncoding;
@@ -350,7 +350,7 @@
 .end method
 
 .method maxDecodedSize(I)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -371,7 +371,7 @@
 .end method
 
 .method maxEncodedSize(I)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -420,7 +420,7 @@
 .end method
 
 .method public omitPadding()Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 3
 
     .line 1218
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->delegate:Lcom/google/common/io/BaseEncoding;
@@ -441,7 +441,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1248
     new-instance v0, Ljava/lang/StringBuilder;
@@ -492,7 +492,7 @@
 .end method
 
 .method trimTrailingPadding(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -513,7 +513,7 @@
 .end method
 
 .method public upperCase()Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 3
 
     .line 1233
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;->delegate:Lcom/google/common/io/BaseEncoding;
@@ -534,7 +534,7 @@
 .end method
 
 .method public withPadChar(C)Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -563,7 +563,7 @@
 .end method
 
 .method public withSeparator(Ljava/lang/String;I)Lcom/google/common/io/BaseEncoding;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

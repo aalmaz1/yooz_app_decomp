@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public final configure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -48,7 +48,7 @@
     monitor-enter v0
 
     .line 79
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1}, Landroidx/media3/common/audio/SonicAudioProcessor;->configure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -59,19 +59,19 @@
 
     return-object p1
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     .line 80
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final flush()V
-    .registers 3
+    .locals 2
 
     .line 120
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -79,7 +79,7 @@
     monitor-enter v0
 
     .line 121
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->flush()V
@@ -89,18 +89,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getDurationAfterProcessorApplied(J)J
-    .registers 3
+    .locals 0
 
     .line 72
     invoke-virtual {p0, p1, p2}, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->getPlayoutDuration(J)J
@@ -111,7 +111,7 @@
 .end method
 
 .method public final getMediaDuration(J)J
-    .registers 5
+    .locals 2
 
     .line 53
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -119,7 +119,7 @@
     monitor-enter v0
 
     .line 54
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1, p2}, Landroidx/media3/common/audio/SonicAudioProcessor;->getMediaDuration(J)J
@@ -130,19 +130,19 @@
 
     return-wide p1
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     .line 55
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final getOutput()Ljava/nio/ByteBuffer;
-    .registers 3
+    .locals 2
 
     .line 106
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -150,7 +150,7 @@
     monitor-enter v0
 
     .line 107
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->getOutput()Ljava/nio/ByteBuffer;
@@ -161,19 +161,19 @@
 
     return-object v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 108
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final getPlayoutDuration(J)J
-    .registers 5
+    .locals 2
 
     .line 59
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -181,7 +181,7 @@
     monitor-enter v0
 
     .line 60
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1, p2}, Landroidx/media3/common/audio/SonicAudioProcessor;->getPlayoutDuration(J)J
@@ -192,19 +192,19 @@
 
     return-wide p1
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     .line 61
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final getProcessedInputBytes()J
-    .registers 4
+    .locals 3
 
     .line 65
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -212,7 +212,7 @@
     monitor-enter v0
 
     .line 66
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->getProcessedInputBytes()J
@@ -223,19 +223,19 @@
 
     return-wide v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 67
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final isActive()Z
-    .registers 3
+    .locals 2
 
     .line 85
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -243,7 +243,7 @@
     monitor-enter v0
 
     .line 86
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->isActive()Z
@@ -254,19 +254,19 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 87
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final isEnded()Z
-    .registers 3
+    .locals 2
 
     .line 113
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -274,7 +274,7 @@
     monitor-enter v0
 
     .line 114
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->isEnded()Z
@@ -285,19 +285,19 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 115
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final queueEndOfStream()V
-    .registers 3
+    .locals 2
 
     .line 99
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -305,7 +305,7 @@
     monitor-enter v0
 
     .line 100
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->queueEndOfStream()V
@@ -315,18 +315,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 92
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -334,7 +334,7 @@
     monitor-enter v0
 
     .line 93
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1}, Landroidx/media3/common/audio/SonicAudioProcessor;->queueInput(Ljava/nio/ByteBuffer;)V
@@ -344,18 +344,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 127
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -363,7 +363,7 @@
     monitor-enter v0
 
     .line 128
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1}, Landroidx/media3/common/audio/SonicAudioProcessor;->reset()V
@@ -373,18 +373,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final setOutputSampleRateHz(I)V
-    .registers 4
+    .locals 2
 
     .line 47
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -392,7 +392,7 @@
     monitor-enter v0
 
     .line 48
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1}, Landroidx/media3/common/audio/SonicAudioProcessor;->setOutputSampleRateHz(I)V
@@ -402,18 +402,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final setPitch(F)V
-    .registers 4
+    .locals 2
 
     .line 41
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -421,7 +421,7 @@
     monitor-enter v0
 
     .line 42
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1}, Landroidx/media3/common/audio/SonicAudioProcessor;->setPitch(F)V
@@ -431,18 +431,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public final setSpeed(F)V
-    .registers 4
+    .locals 2
 
     .line 35
     iget-object v0, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->lock:Ljava/lang/Object;
@@ -450,7 +450,7 @@
     monitor-enter v0
 
     .line 36
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/audio/SynchronizedSonicAudioProcessor;->sonicAudioProcessor:Landroidx/media3/common/audio/SonicAudioProcessor;
 
     invoke-virtual {v1, p1}, Landroidx/media3/common/audio/SonicAudioProcessor;->setSpeed(F)V
@@ -460,12 +460,12 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

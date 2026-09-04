@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraControlImpl;)V
-    .registers 3
+    .locals 1
 
     .line 490
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public isCaptureResultNeeded()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -52,12 +52,12 @@
 .end method
 
 .method public postCapture()V
-    .registers 4
+    .locals 3
 
     .line 539
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$AfTask;->mIsExecuted:Z
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "Camera2CapturePipeline"
 
@@ -79,12 +79,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/camera/camera2/internal/FocusMeteringControl;->cancelAfAeTrigger(ZZ)V
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public preCapture(Landroid/hardware/camera2/TotalCaptureResult;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -107,12 +107,12 @@
 
     move-result-object v1
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     return-object v1
 
     .line 506
-    :cond_c
+    :cond_0
     sget-object v2, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p1, v2}, Landroid/hardware/camera2/TotalCaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -121,25 +121,25 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     return-object v1
 
     .line 510
-    :cond_17
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    if-eq v2, v0, :cond_21
+    if-eq v2, v0, :cond_2
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_21
+    if-eq v2, v3, :cond_2
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     const-string v2, "TriggerAf? AF mode auto"
 
     const-string v3, "Camera2CapturePipeline"
@@ -156,14 +156,14 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_3
 
     .line 515
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-nez p1, :cond_4a
+    if-nez p1, :cond_3
 
     const-string p1, "Trigger AF"
 
@@ -186,7 +186,7 @@
 
     invoke-virtual {p1, v0, v2}, Landroidx/camera/camera2/internal/FocusMeteringControl;->triggerAf(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Z)V
 
-    :cond_4a
-    :goto_4a
+    :cond_3
+    :goto_0
     return-object v1
 .end method

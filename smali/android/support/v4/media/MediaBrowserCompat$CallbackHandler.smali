@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl;)V
-    .registers 3
+    .locals 1
 
     .line 2080
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 15
+    .locals 13
 
     const-string v0, "MediaBrowserCompat"
 
@@ -67,13 +67,13 @@
     .line 2086
     iget-object v3, p0, Landroid/support/v4/media/MediaBrowserCompat$CallbackHandler;->mCallbacksMessengerRef:Ljava/lang/ref/WeakReference;
 
-    if-eqz v3, :cond_a5
+    if-eqz v3, :cond_4
 
     invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    if-eqz v3, :cond_a5
+    if-eqz v3, :cond_4
 
     iget-object v3, p0, Landroid/support/v4/media/MediaBrowserCompat$CallbackHandler;->mCallbackImplRef:Ljava/lang/ref/WeakReference;
 
@@ -82,12 +82,12 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_0
 
-    goto/16 :goto_a5
+    goto/16 :goto_0
 
     .line 2090
-    :cond_1a
+    :cond_0
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v3
@@ -118,25 +118,25 @@
     const/4 v12, 0x1
 
     .line 2095
-    :try_start_33
+    :try_start_0
     iget v5, p1, Landroid/os/Message;->what:I
-    :try_end_35
-    .catch Landroid/os/BadParcelableException; {:try_start_33 .. :try_end_35} :catch_99
+    :try_end_0
+    .catch Landroid/os/BadParcelableException; {:try_start_0 .. :try_end_0} :catch_0
 
     const-string v6, "data_media_item_id"
 
-    if-eq v5, v12, :cond_80
+    if-eq v5, v12, :cond_3
 
     const/4 v7, 0x2
 
-    if-eq v5, v7, :cond_7c
+    if-eq v5, v7, :cond_2
 
     const/4 v7, 0x3
 
-    if-eq v5, v7, :cond_5a
+    if-eq v5, v7, :cond_1
 
     .line 2126
-    :try_start_3f
+    :try_start_1
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -161,9 +161,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_a5
+    goto :goto_0
 
-    :cond_5a
+    :cond_1
     const-string v1, "data_options"
 
     .line 2111
@@ -203,15 +203,15 @@
     .line 2118
     invoke-interface/range {v5 .. v10}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl;->onLoadChildren(Landroid/os/Messenger;Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;Landroid/os/Bundle;)V
 
-    goto :goto_a5
+    goto :goto_0
 
     .line 2108
-    :cond_7c
+    :cond_2
     invoke-interface {v4, v11}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl;->onConnectionFailed(Landroid/os/Messenger;)V
 
-    goto :goto_a5
+    goto :goto_0
 
-    :cond_80
+    :cond_3
     const-string v1, "data_root_hints"
 
     .line 2097
@@ -238,12 +238,12 @@
 
     .line 2100
     invoke-interface {v4, v11, v2, v3, v1}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl;->onServiceConnected(Landroid/os/Messenger;Ljava/lang/String;Landroid/support/v4/media/session/MediaSessionCompat$Token;Landroid/os/Bundle;)V
-    :try_end_98
-    .catch Landroid/os/BadParcelableException; {:try_start_3f .. :try_end_98} :catch_99
+    :try_end_1
+    .catch Landroid/os/BadParcelableException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_a5
+    goto :goto_0
 
-    :catch_99
+    :catch_0
     const-string v1, "Could not unparcel the data."
 
     .line 2132
@@ -252,18 +252,18 @@
     .line 2134
     iget p1, p1, Landroid/os/Message;->what:I
 
-    if-ne p1, v12, :cond_a5
+    if-ne p1, v12, :cond_4
 
     .line 2135
     invoke-interface {v4, v11}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl;->onConnectionFailed(Landroid/os/Messenger;)V
 
-    :cond_a5
-    :goto_a5
+    :cond_4
+    :goto_0
     return-void
 .end method
 
 .method setCallbacksMessenger(Landroid/os/Messenger;)V
-    .registers 3
+    .locals 1
 
     .line 2141
     new-instance v0, Ljava/lang/ref/WeakReference;

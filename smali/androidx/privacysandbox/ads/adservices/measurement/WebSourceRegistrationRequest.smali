@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Landroid/net/Uri;Landroid/view/InputEvent;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,58 +130,58 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/List;Landroid/net/Uri;Landroid/view/InputEvent;Landroid/net/Uri;Landroid/net/Uri;Landroid/net/Uri;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 18
+    .locals 9
 
     and-int/lit8 v0, p7, 0x4
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     move-object v5, v1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move-object v5, p3
 
-    :goto_8
+    :goto_0
     and-int/lit8 v0, p7, 0x8
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     move-object v6, v1
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_e
+    :cond_1
     move-object v6, p4
 
-    :goto_f
+    :goto_1
     and-int/lit8 v0, p7, 0x10
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_2
 
     move-object v7, v1
 
-    goto :goto_16
+    goto :goto_2
 
-    :cond_15
+    :cond_2
     move-object v7, p5
 
-    :goto_16
+    :goto_2
     and-int/lit8 v0, p7, 0x20
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_3
 
     move-object v8, v1
 
-    goto :goto_1d
+    goto :goto_3
 
-    :cond_1c
+    :cond_3
     move-object v8, p6
 
-    :goto_1d
+    :goto_3
     move-object v2, p0
 
     move-object v3, p1
@@ -197,26 +197,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 52
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 53
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->webSourceParams:Ljava/util/List;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;
@@ -227,7 +227,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     .line 54
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->webDestination:Landroid/net/Uri;
@@ -238,7 +238,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     .line 55
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->appDestination:Landroid/net/Uri;
@@ -249,7 +249,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     .line 56
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->topOriginUri:Landroid/net/Uri;
@@ -260,7 +260,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     .line 57
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->inputEvent:Landroid/view/InputEvent;
@@ -271,7 +271,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     .line 58
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->verifiedDestination:Landroid/net/Uri;
@@ -282,19 +282,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_2
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_49
+    :cond_2
     move v0, v2
 
-    :goto_4a
+    :goto_0
     return v0
 .end method
 
 .method public final getAppDestination()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 45
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->appDestination:Landroid/net/Uri;
@@ -303,7 +303,7 @@
 .end method
 
 .method public final getInputEvent()Landroid/view/InputEvent;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->inputEvent:Landroid/view/InputEvent;
@@ -312,7 +312,7 @@
 .end method
 
 .method public final getTopOriginUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 43
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->topOriginUri:Landroid/net/Uri;
@@ -321,7 +321,7 @@
 .end method
 
 .method public final getVerifiedDestination()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->verifiedDestination:Landroid/net/Uri;
@@ -330,7 +330,7 @@
 .end method
 
 .method public final getWebDestination()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->webDestination:Landroid/net/Uri;
@@ -339,7 +339,7 @@
 .end method
 
 .method public final getWebSourceParams()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -356,7 +356,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 62
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->webSourceParams:Ljava/util/List;
@@ -379,7 +379,7 @@
     .line 64
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->inputEvent:Landroid/view/InputEvent;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -391,10 +391,10 @@
     add-int/2addr v0, v1
 
     .line 67
-    :cond_1a
+    :cond_0
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->appDestination:Landroid/net/Uri;
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -406,10 +406,10 @@
     add-int/2addr v0, v1
 
     .line 70
-    :cond_25
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->webDestination:Landroid/net/Uri;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -420,7 +420,7 @@
 
     add-int/2addr v0, v1
 
-    :cond_30
+    :cond_2
     mul-int/lit8 v0, v0, 0x1f
 
     .line 74
@@ -435,7 +435,7 @@
     .line 75
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->inputEvent:Landroid/view/InputEvent;
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_3
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -447,10 +447,10 @@
     add-int/2addr v0, v1
 
     .line 78
-    :cond_44
+    :cond_3
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;->verifiedDestination:Landroid/net/Uri;
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_4
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -461,12 +461,12 @@
 
     add-int/2addr v0, v1
 
-    :cond_4f
+    :cond_4
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 85
     new-instance v0, Ljava/lang/StringBuilder;

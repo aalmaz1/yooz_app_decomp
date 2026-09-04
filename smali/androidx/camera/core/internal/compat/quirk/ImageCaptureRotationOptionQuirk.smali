@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method private static isEmulator()Z
-    .registers 4
+    .locals 4
 
     .line 64
     sget-object v0, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
@@ -28,7 +28,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
@@ -39,7 +39,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -50,7 +50,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -61,7 +61,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -72,7 +72,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -83,7 +83,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
@@ -94,7 +94,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
 
@@ -103,7 +103,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
@@ -111,9 +111,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
-    :cond_57
+    :cond_0
     sget-object v0, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
     .line 72
@@ -121,7 +121,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6c
+    if-nez v0, :cond_2
 
     sget-object v0, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
 
@@ -132,25 +132,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_1
 
-    goto :goto_6c
+    goto :goto_0
 
-    :cond_6a
+    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_6d
+    goto :goto_1
 
-    :cond_6c
-    :goto_6c
+    :cond_2
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_6d
+    :goto_1
     return v0
 .end method
 
 .method private static isEmulatorAndApi21()Z
-    .registers 1
+    .locals 1
 
     .line 60
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/ImageCaptureRotationOptionQuirk;->isEmulator()Z
@@ -161,7 +161,7 @@
 .end method
 
 .method private static isHonor9X()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "HONOR"
 
@@ -172,7 +172,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "STK-LX1"
 
@@ -182,21 +182,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isHuaweiMate20Lite()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "HUAWEI"
 
@@ -207,7 +207,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "SNE-LX1"
 
@@ -217,60 +217,60 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 47
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/ImageCaptureRotationOptionQuirk;->isHuaweiMate20Lite()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/ImageCaptureRotationOptionQuirk;->isHonor9X()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/ImageCaptureRotationOptionQuirk;->isEmulatorAndApi21()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_16
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public isSupported(Landroidx/camera/core/impl/Config$Option;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -282,15 +282,15 @@
     .line 80
     sget-object v0, Landroidx/camera/core/impl/CaptureConfig;->OPTION_ROTATION:Landroidx/camera/core/impl/Config$Option;
 
-    if-eq p1, v0, :cond_6
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     return p1
 .end method

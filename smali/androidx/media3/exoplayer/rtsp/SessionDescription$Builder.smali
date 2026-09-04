@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/util/HashMap;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->attributes:Ljava/util/HashMap;
@@ -96,7 +96,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->emailAddress:Ljava/lang/String;
@@ -105,7 +105,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->phoneNumber:Ljava/lang/String;
@@ -114,7 +114,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->sessionInfo:Ljava/lang/String;
@@ -123,7 +123,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Lcom/google/common/collect/ImmutableList$Builder;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->mediaDescriptionListBuilder:Lcom/google/common/collect/ImmutableList$Builder;
@@ -132,7 +132,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->sessionName:Ljava/lang/String;
@@ -141,7 +141,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->origin:Ljava/lang/String;
@@ -150,7 +150,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->timing:Ljava/lang/String;
@@ -159,7 +159,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->uri:Landroid/net/Uri;
@@ -168,7 +168,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->connection:Ljava/lang/String;
@@ -177,7 +177,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)I
-    .registers 1
+    .locals 0
 
     .line 39
     iget p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->bitrate:I
@@ -186,7 +186,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->key:Ljava/lang/String;
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public addAttribute(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 4
+    .locals 1
 
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->attributes:Ljava/util/HashMap;
@@ -208,7 +208,7 @@
 .end method
 
 .method public addMediaDescription(Landroidx/media3/exoplayer/rtsp/MediaDescription;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 3
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->mediaDescriptionListBuilder:Lcom/google/common/collect/ImmutableList$Builder;
@@ -219,7 +219,7 @@
 .end method
 
 .method public build()Landroidx/media3/exoplayer/rtsp/SessionDescription;
-    .registers 3
+    .locals 2
 
     .line 217
     new-instance v0, Landroidx/media3/exoplayer/rtsp/SessionDescription;
@@ -232,7 +232,7 @@
 .end method
 
 .method public setBitrate(I)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 132
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->bitrate:I
@@ -241,7 +241,7 @@
 .end method
 
 .method public setConnection(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 120
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->connection:Ljava/lang/String;
@@ -250,7 +250,7 @@
 .end method
 
 .method public setEmailAddress(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 170
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->emailAddress:Ljava/lang/String;
@@ -259,7 +259,7 @@
 .end method
 
 .method public setKey(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 158
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->key:Ljava/lang/String;
@@ -268,7 +268,7 @@
 .end method
 
 .method public setOrigin(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 108
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->origin:Ljava/lang/String;
@@ -277,7 +277,7 @@
 .end method
 
 .method public setPhoneNumber(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 182
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->phoneNumber:Ljava/lang/String;
@@ -286,7 +286,7 @@
 .end method
 
 .method public setSessionInfo(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 82
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->sessionInfo:Ljava/lang/String;
@@ -295,7 +295,7 @@
 .end method
 
 .method public setSessionName(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 70
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->sessionName:Ljava/lang/String;
@@ -304,7 +304,7 @@
 .end method
 
 .method public setTiming(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 146
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->timing:Ljava/lang/String;
@@ -313,7 +313,7 @@
 .end method
 
 .method public setUri(Landroid/net/Uri;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    .registers 2
+    .locals 0
 
     .line 94
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->uri:Landroid/net/Uri;

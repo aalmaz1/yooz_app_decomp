@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/upstream/SlidingPercentile$1;)V
-    .registers 2
+    .locals 0
 
     .line 152
     invoke-direct {p0}, Landroidx/media3/exoplayer/upstream/SlidingPercentile$Sample;-><init>()V

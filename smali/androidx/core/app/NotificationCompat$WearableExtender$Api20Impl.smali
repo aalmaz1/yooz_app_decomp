@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 7508
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static addExtras(Landroid/app/Notification$Action$Builder;Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
-    .registers 2
+    .locals 0
 
     .line 7519
     invoke-virtual {p0, p1}, Landroid/app/Notification$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
@@ -36,7 +36,7 @@
 .end method
 
 .method static addRemoteInput(Landroid/app/Notification$Action$Builder;Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
-    .registers 2
+    .locals 0
 
     .line 7525
     invoke-virtual {p0, p1}, Landroid/app/Notification$Action$Builder;->addRemoteInput(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
@@ -47,7 +47,7 @@
 .end method
 
 .method static build(Landroid/app/Notification$Action$Builder;)Landroid/app/Notification$Action;
-    .registers 1
+    .locals 0
 
     .line 7530
     invoke-virtual {p0}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
@@ -58,7 +58,7 @@
 .end method
 
 .method static createBuilder(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Action$Builder;
-    .registers 4
+    .locals 1
 
     .line 7513
     new-instance v0, Landroid/app/Notification$Action$Builder;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static getActionCompatFromAction(Ljava/util/ArrayList;I)Landroidx/core/app/NotificationCompat$Action;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

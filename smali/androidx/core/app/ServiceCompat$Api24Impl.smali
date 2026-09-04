@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static stopForeground(Landroid/app/Service;I)V
-    .registers 2
+    .locals 0
 
     .line 205
     invoke-virtual {p0, p1}, Landroid/app/Service;->stopForeground(I)V

@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -100,7 +100,7 @@
 .end method
 
 .method public static final synthetic access$getANDROID_VIEWMODEL_SIGNATURE$p()Ljava/util/List;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/lifecycle/SavedStateViewModelFactoryKt;->ANDROID_VIEWMODEL_SIGNATURE:Ljava/util/List;
@@ -109,7 +109,7 @@
 .end method
 
 .method public static final synthetic access$getVIEWMODEL_SIGNATURE$p()Ljava/util/List;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/lifecycle/SavedStateViewModelFactoryKt;->VIEWMODEL_SIGNATURE:Ljava/util/List;
@@ -118,7 +118,7 @@
 .end method
 
 .method public static final findMatchingConstructor(Ljava/lang/Class;Ljava/util/List;)Ljava/lang/reflect/Constructor;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -156,8 +156,8 @@
 
     const/4 v2, 0x0
 
-    :goto_15
-    if-ge v2, v1, :cond_6e
+    :goto_0
+    if-ge v2, v1, :cond_3
 
     aget-object v3, v0, v2
 
@@ -181,7 +181,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_0
 
     const-string p0, "null cannot be cast to non-null type java.lang.reflect.Constructor<T of androidx.lifecycle.SavedStateViewModelFactoryKt.findMatchingConstructor>"
 
@@ -191,7 +191,7 @@
     return-object v3
 
     .line 256
-    :cond_34
+    :cond_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v3
@@ -200,7 +200,7 @@
 
     move-result v5
 
-    if-ne v3, v5, :cond_6b
+    if-ne v3, v5, :cond_2
 
     move-object v3, p1
 
@@ -210,12 +210,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_48
+    if-nez v3, :cond_1
 
-    goto :goto_6b
+    goto :goto_1
 
     .line 257
-    :cond_48
+    :cond_1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 258
@@ -252,20 +252,20 @@
 
     throw v0
 
-    :cond_6b
-    :goto_6b
+    :cond_2
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_6e
+    :cond_3
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static final varargs newInstance(Ljava/lang/Class;Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Landroidx/lifecycle/ViewModel;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -293,7 +293,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 226
-    :try_start_f
+    :try_start_0
     array-length v0, p2
 
     invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -305,14 +305,14 @@
     move-result-object p1
 
     check-cast p1, Landroidx/lifecycle/ViewModel;
-    :try_end_1a
-    .catch Ljava/lang/IllegalAccessException; {:try_start_f .. :try_end_1a} :catch_53
-    .catch Ljava/lang/InstantiationException; {:try_start_f .. :try_end_1a} :catch_35
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_f .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1b
+    :catch_0
     move-exception p1
 
     .line 232
@@ -342,7 +342,7 @@
 
     throw p2
 
-    :catch_35
+    :catch_1
     move-exception p1
 
     .line 230
@@ -374,7 +374,7 @@
 
     throw p2
 
-    :catch_53
+    :catch_2
     move-exception p1
 
     .line 228

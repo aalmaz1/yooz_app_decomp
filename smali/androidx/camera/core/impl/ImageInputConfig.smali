@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.imageInput.inputFormat"
 
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public getDynamicRange()Landroidx/camera/core/DynamicRange;
-    .registers 3
+    .locals 2
 
     .line 63
     sget-object v0, Landroidx/camera/core/impl/ImageInputConfig;->OPTION_INPUT_DYNAMIC_RANGE:Landroidx/camera/core/impl/Config$Option;
@@ -93,7 +93,7 @@
 .end method
 
 .method public getInputFormat()I
-    .registers 2
+    .locals 1
 
     .line 49
     sget-object v0, Landroidx/camera/core/impl/ImageInputConfig;->OPTION_INPUT_FORMAT:Landroidx/camera/core/impl/Config$Option;
@@ -112,7 +112,7 @@
 .end method
 
 .method public hasDynamicRange()Z
-    .registers 2
+    .locals 1
 
     .line 74
     sget-object v0, Landroidx/camera/core/impl/ImageInputConfig;->OPTION_INPUT_DYNAMIC_RANGE:Landroidx/camera/core/impl/Config$Option;

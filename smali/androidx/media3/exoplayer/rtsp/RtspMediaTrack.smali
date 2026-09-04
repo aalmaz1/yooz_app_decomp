@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspHeaders;Landroidx/media3/exoplayer/rtsp/MediaDescription;Landroid/net/Uri;)V
-    .registers 7
+    .locals 3
 
     .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method private static extractTrackUri(Landroidx/media3/exoplayer/rtsp/RtspHeaders;Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-    .registers 5
+    .locals 2
 
     .line 504
     invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -125,11 +125,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     return-object v0
 
-    :cond_b
+    :cond_0
     const-string v0, "Content-Base"
 
     .line 509
@@ -141,7 +141,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 510
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/rtsp/RtspHeaders;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -152,9 +152,9 @@
 
     move-result-object p1
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const-string v0, "Content-Location"
 
     .line 511
@@ -166,7 +166,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_2
 
     .line 512
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/rtsp/RtspHeaders;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -177,8 +177,8 @@
 
     move-result-object p1
 
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     const-string p0, "*"
 
     .line 515
@@ -186,12 +186,12 @@
 
     move-result p0
 
-    if-eqz p0, :cond_3d
+    if-eqz p0, :cond_3
 
     return-object p1
 
     .line 518
-    :cond_3d
+    :cond_3
     invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object p0
@@ -208,7 +208,7 @@
 .end method
 
 .method static generatePayloadFormat(Landroidx/media3/exoplayer/rtsp/MediaDescription;)Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;
-    .registers 14
+    .locals 13
 
     .line 202
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -218,7 +218,7 @@
     .line 204
     iget v1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->bitrate:I
 
-    if-lez v1, :cond_e
+    if-lez v1, :cond_0
 
     .line 205
     iget v1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->bitrate:I
@@ -226,7 +226,7 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setAverageBitrate(I)Landroidx/media3/common/Format$Builder;
 
     .line 208
-    :cond_e
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->rtpMapAttribute:Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;
 
     iget v4, v1, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->payloadType:I
@@ -260,7 +260,7 @@
 
     const/4 v3, -0x1
 
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_1
 
     .line 217
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->rtpMapAttribute:Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;
@@ -279,13 +279,13 @@
 
     invoke-virtual {v6, v2}, Landroidx/media3/common/Format$Builder;->setChannelCount(I)Landroidx/media3/common/Format$Builder;
 
-    goto :goto_3d
+    goto :goto_0
 
-    :cond_3c
+    :cond_1
     move v2, v3
 
     .line 222
-    :goto_3d
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/rtsp/MediaDescription;->getFmtpParametersAsMap()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v6
@@ -301,239 +301,239 @@
 
     const/4 v10, 0x1
 
-    sparse-switch p0, :sswitch_data_212
+    sparse-switch p0, :sswitch_data_0
 
-    goto/16 :goto_ea
+    goto/16 :goto_1
 
-    :sswitch_4d
+    :sswitch_0
     const-string p0, "audio/g711-mlaw"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/16 p0, 0xd
 
-    goto/16 :goto_eb
+    goto/16 :goto_2
 
-    :sswitch_59
+    :sswitch_1
     const-string p0, "audio/g711-alaw"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/16 p0, 0xc
 
-    goto/16 :goto_eb
+    goto/16 :goto_2
 
-    :sswitch_65
+    :sswitch_2
     const-string/jumbo p0, "video/x-vnd.on2.vp9"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/16 p0, 0x9
 
-    goto/16 :goto_eb
+    goto/16 :goto_2
 
-    :sswitch_72
+    :sswitch_3
     const-string/jumbo p0, "video/x-vnd.on2.vp8"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/16 p0, 0x8
 
-    goto/16 :goto_eb
+    goto/16 :goto_2
 
-    :sswitch_7f
+    :sswitch_4
     const-string p0, "audio/opus"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x3
 
-    goto/16 :goto_eb
+    goto/16 :goto_2
 
-    :sswitch_8a
+    :sswitch_5
     const-string p0, "audio/3gpp"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     move p0, v10
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_94
+    :sswitch_6
     const-string/jumbo p0, "video/avc"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x6
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_9f
+    :sswitch_7
     const-string/jumbo p0, "video/mp4v-es"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x4
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_aa
+    :sswitch_8
     const-string p0, "audio/raw"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/16 p0, 0xa
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_b5
+    :sswitch_9
     const-string p0, "audio/ac3"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/16 p0, 0xb
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_c0
+    :sswitch_a
     const-string p0, "audio/mp4a-latm"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     move p0, v9
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_ca
+    :sswitch_b
     const-string p0, "audio/amr-wb"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     move p0, v8
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_d4
+    :sswitch_c
     const-string/jumbo p0, "video/hevc"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x7
 
-    goto :goto_eb
+    goto :goto_2
 
-    :sswitch_df
+    :sswitch_d
     const-string/jumbo p0, "video/3gpp"
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_ea
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x5
 
-    goto :goto_eb
+    goto :goto_2
 
-    :cond_ea
-    :goto_ea
+    :cond_2
+    :goto_1
     move p0, v3
 
-    :goto_eb
+    :goto_2
     const/16 v1, 0xf0
 
     const/16 v11, 0x140
 
     const-string v12, "missing attribute fmtp"
 
-    packed-switch p0, :pswitch_data_24c
+    packed-switch p0, :pswitch_data_0
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
     .line 293
-    :pswitch_f6
+    :pswitch_0
     invoke-static {v7}, Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;->getRawPcmEncodingType(Ljava/lang/String;)I
 
     move-result p0
 
     invoke-virtual {v0, p0}, Landroidx/media3/common/Format$Builder;->setPcmEncoding(I)Landroidx/media3/common/Format$Builder;
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
     .line 290
-    :pswitch_ff
+    :pswitch_1
     invoke-virtual {v0, v11}, Landroidx/media3/common/Format$Builder;->setWidth(I)Landroidx/media3/common/Format$Builder;
 
     move-result-object p0
 
     invoke-virtual {p0, v1}, Landroidx/media3/common/Format$Builder;->setHeight(I)Landroidx/media3/common/Format$Builder;
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
     .line 286
-    :pswitch_108
+    :pswitch_2
     invoke-virtual {v0, v11}, Landroidx/media3/common/Format$Builder;->setWidth(I)Landroidx/media3/common/Format$Builder;
 
     move-result-object p0
 
     invoke-virtual {p0, v1}, Landroidx/media3/common/Format$Builder;->setHeight(I)Landroidx/media3/common/Format$Builder;
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
     .line 280
-    :pswitch_111
+    :pswitch_3
     invoke-virtual {v6}, Lcom/google/common/collect/ImmutableMap;->isEmpty()Z
 
     move-result p0
@@ -545,10 +545,10 @@
     .line 281
     invoke-static {v0, v6}, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;->processH265FmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;)V
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
     .line 276
-    :pswitch_11e
+    :pswitch_4
     invoke-virtual {v6}, Lcom/google/common/collect/ImmutableMap;->isEmpty()Z
 
     move-result p0
@@ -560,9 +560,9 @@
     .line 277
     invoke-static {v0, v6}, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;->processH264FmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;)V
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
-    :pswitch_12b
+    :pswitch_5
     const/16 p0, 0x160
 
     .line 273
@@ -574,10 +574,10 @@
 
     invoke-virtual {p0, v1}, Landroidx/media3/common/Format$Builder;->setHeight(I)Landroidx/media3/common/Format$Builder;
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
     .line 267
-    :pswitch_138
+    :pswitch_6
     invoke-virtual {v6}, Lcom/google/common/collect/ImmutableMap;->isEmpty()Z
 
     move-result p0
@@ -589,52 +589,52 @@
     .line 268
     invoke-static {v0, v6}, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;->processMPEG4FmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;)V
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
-    :pswitch_145
-    if-eq v2, v3, :cond_149
+    :pswitch_7
+    if-eq v2, v3, :cond_3
 
     move p0, v10
 
-    goto :goto_14a
+    goto :goto_3
 
-    :cond_149
+    :cond_3
     move p0, v9
 
     .line 261
-    :goto_14a
+    :goto_3
     invoke-static {p0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const p0, 0xbb80
 
-    if-ne v5, p0, :cond_154
+    if-ne v5, p0, :cond_4
 
     move p0, v10
 
-    goto :goto_155
+    goto :goto_4
 
-    :cond_154
+    :cond_4
     move p0, v9
 
-    :goto_155
+    :goto_4
     const-string v1, "Invalid OPUS clock rate."
 
     .line 264
     invoke-static {p0, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
-    :pswitch_15c
-    if-ne v2, v10, :cond_160
+    :pswitch_8
+    if-ne v2, v10, :cond_5
 
     move p0, v10
 
-    goto :goto_161
+    goto :goto_5
 
-    :cond_160
+    :cond_5
     move p0, v9
 
-    :goto_161
+    :goto_5
     const-string v1, "Multi channel AMR is not currently supported."
 
     .line 249
@@ -678,20 +678,20 @@
     .line 256
     invoke-static {p0, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    goto/16 :goto_200
+    goto/16 :goto_9
 
-    :pswitch_189
-    if-eq v2, v3, :cond_18d
+    :pswitch_9
+    if-eq v2, v3, :cond_6
 
     move p0, v10
 
-    goto :goto_18e
+    goto :goto_6
 
-    :cond_18d
+    :cond_6
     move p0, v9
 
     .line 225
-    :goto_18e
+    :goto_6
     invoke-static {p0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 226
@@ -710,7 +710,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1fd
+    if-eqz p0, :cond_9
 
     const-string p0, "cpresent"
 
@@ -719,7 +719,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b9
+    if-eqz v1, :cond_7
 
     .line 232
     invoke-virtual {v6, p0}, Lcom/google/common/collect/ImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -734,16 +734,16 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1b9
+    if-eqz p0, :cond_7
 
     move p0, v10
 
-    goto :goto_1ba
+    goto :goto_7
 
-    :cond_1b9
+    :cond_7
     move p0, v9
 
-    :goto_1ba
+    :goto_7
     const-string v1, "Only supports cpresent=0 in AAC audio."
 
     .line 230
@@ -770,16 +770,16 @@
 
     rem-int/2addr v1, v8
 
-    if-nez v1, :cond_1d5
+    if-nez v1, :cond_8
 
     move v1, v10
 
-    goto :goto_1d6
+    goto :goto_8
 
-    :cond_1d5
+    :cond_8
     move v1, v9
 
-    :goto_1d6
+    :goto_8
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v8, "Malformat MPEG4 config: "
@@ -822,16 +822,16 @@
     invoke-virtual {v1, p0}, Landroidx/media3/common/Format$Builder;->setCodecs(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
     .line 244
-    :cond_1fd
+    :cond_9
     invoke-static {v0, v6, v7, v2, v5}, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;->processAacFmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;Ljava/lang/String;II)V
 
-    :goto_200
-    if-lez v5, :cond_203
+    :goto_9
+    if-lez v5, :cond_a
 
     move v9, v10
 
     .line 303
-    :cond_203
+    :cond_a
     invoke-static {v9}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 304
@@ -850,42 +850,42 @@
 
     nop
 
-    :sswitch_data_212
+    :sswitch_data_0
     .sparse-switch
-        -0x63306f58 -> :sswitch_df
-        -0x63185e82 -> :sswitch_d4
-        -0x5fc6f775 -> :sswitch_ca
-        -0x3313c2e -> :sswitch_c0
-        0xb269698 -> :sswitch_b5
-        0xb26d66f -> :sswitch_aa
-        0x46cdc642 -> :sswitch_9f
-        0x4f62373a -> :sswitch_94
-        0x59976a2d -> :sswitch_8a
-        0x59b2d2d8 -> :sswitch_7f
-        0x5f50bed8 -> :sswitch_72
-        0x5f50bed9 -> :sswitch_65
-        0x71710385 -> :sswitch_59
-        0x717677f9 -> :sswitch_4d
+        -0x63306f58 -> :sswitch_d
+        -0x63185e82 -> :sswitch_c
+        -0x5fc6f775 -> :sswitch_b
+        -0x3313c2e -> :sswitch_a
+        0xb269698 -> :sswitch_9
+        0xb26d66f -> :sswitch_8
+        0x46cdc642 -> :sswitch_7
+        0x4f62373a -> :sswitch_6
+        0x59976a2d -> :sswitch_5
+        0x59b2d2d8 -> :sswitch_4
+        0x5f50bed8 -> :sswitch_3
+        0x5f50bed9 -> :sswitch_2
+        0x71710385 -> :sswitch_1
+        0x717677f9 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_24c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_189
-        :pswitch_15c
-        :pswitch_15c
-        :pswitch_145
-        :pswitch_138
-        :pswitch_12b
-        :pswitch_11e
-        :pswitch_111
-        :pswitch_108
-        :pswitch_ff
-        :pswitch_f6
+        :pswitch_9
+        :pswitch_8
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static getInitializationDataFromParameterSet(Ljava/lang/String;)[B
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -927,15 +927,15 @@
 .end method
 
 .method private static inferChannelCount(ILjava/lang/String;)I
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_4
+    if-eq p0, v0, :cond_0
 
     return p0
 
-    :cond_4
+    :cond_0
     const-string p0, "audio/ac3"
 
     .line 316
@@ -943,20 +943,20 @@
 
     move-result p0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_1
 
     const/4 p0, 0x6
 
     return p0
 
-    :cond_e
+    :cond_1
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static parseAacStreamMuxConfig(Ljava/lang/String;)Landroidx/media3/extractor/AacUtil$Config;
-    .registers 5
+    .locals 4
 
     .line 352
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
@@ -976,16 +976,16 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     move v1, p0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v1, v2
 
-    :goto_14
+    :goto_0
     const-string v3, "Only supports audio mux version 0."
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -995,16 +995,16 @@
 
     move-result v1
 
-    if-ne v1, p0, :cond_21
+    if-ne v1, p0, :cond_1
 
     move v1, p0
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
+    :cond_1
     move v1, v2
 
-    :goto_22
+    :goto_1
     const-string v3, "Only supports allStreamsSameTimeFraming."
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -1021,16 +1021,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_2
 
     move v1, p0
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_34
+    :cond_2
     move v1, v2
 
-    :goto_35
+    :goto_2
     const-string v3, "Only supports one program."
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -1042,29 +1042,29 @@
 
     move-result v1
 
-    if-nez v1, :cond_42
+    if-nez v1, :cond_3
 
-    goto :goto_43
+    goto :goto_3
 
-    :cond_42
+    :cond_3
     move p0, v2
 
-    :goto_43
+    :goto_3
     const-string v1, "Only supports one numLayer."
 
     invoke-static {p0, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 359
-    :try_start_48
+    :try_start_0
     invoke-static {v0, v2}, Landroidx/media3/extractor/AacUtil;->parseAudioSpecificConfig(Landroidx/media3/common/util/ParsableBitArray;Z)Landroidx/media3/extractor/AacUtil$Config;
 
     move-result-object p0
-    :try_end_4c
-    .catch Landroidx/media3/common/ParserException; {:try_start_48 .. :try_end_4c} :catch_4d
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_4d
+    :catch_0
     move-exception p0
 
     .line 361
@@ -1076,7 +1076,7 @@
 .end method
 
 .method private static processAacFmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;Ljava/lang/String;II)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1099,7 +1099,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_0
 
     const-string v0, "MP4A-LATM"
 
@@ -1108,28 +1108,28 @@
 
     move-result p2
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_0
 
     const-string p1, "30"
 
-    :cond_14
-    if-eqz p1, :cond_1e
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 337
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result p2
 
-    if-nez p2, :cond_1e
+    if-nez p2, :cond_1
 
     const/4 p2, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     const/4 p2, 0x0
 
-    :goto_1f
+    :goto_0
     const-string v0, "missing profile-level-id param"
 
     .line 336
@@ -1169,7 +1169,7 @@
 .end method
 
 .method private static processH264FmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1221,16 +1221,16 @@
 
     const/4 v4, 0x0
 
-    if-ne v1, v2, :cond_25
+    if-ne v1, v2, :cond_0
 
     move v1, v3
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     move v1, v4
 
-    :goto_26
+    :goto_0
     const-string v2, "empty sprop value"
 
     invoke-static {v1, v2}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -1353,7 +1353,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    if-eqz p1, :cond_a6
+    if-eqz p1, :cond_1
 
     .line 433
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1372,10 +1372,10 @@
 
     invoke-virtual {p0, p1}, Landroidx/media3/common/Format$Builder;->setCodecs(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
-    goto :goto_b3
+    goto :goto_1
 
     .line 435
-    :cond_a6
+    :cond_1
     iget p1, v0, Landroidx/media3/container/NalUnitUtil$SpsData;->profileIdc:I
 
     iget v1, v0, Landroidx/media3/container/NalUnitUtil$SpsData;->constraintsFlagsAndReservedZero2Bits:I
@@ -1390,12 +1390,12 @@
     .line 435
     invoke-virtual {p0, p1}, Landroidx/media3/common/Format$Builder;->setCodecs(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
-    :goto_b3
+    :goto_1
     return-void
 .end method
 
 .method private static processH265FmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;)V
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1416,7 +1416,7 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     .line 445
     invoke-virtual {p1, v0}, Lcom/google/common/collect/ImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1435,17 +1435,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     move v1, v2
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v1, 0x0
 
     .line 446
-    :goto_1e
+    :goto_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "non-zero sprop-max-don-diff "
@@ -1468,7 +1468,7 @@
 
     invoke-static {v1, v0}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    :cond_36
+    :cond_1
     const-string v0, "sprop-vps"
 
     .line 451
@@ -1679,7 +1679,7 @@
 .end method
 
 .method private static processMPEG4FmtpAttribute(Landroidx/media3/common/Format$Builder;Lcom/google/common/collect/ImmutableMap;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1700,7 +1700,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 369
     invoke-static {v0}, Landroidx/media3/common/util/Util;->getBytesFromHexString(Ljava/lang/String;)[B
@@ -1742,9 +1742,9 @@
 
     invoke-virtual {v1, v0}, Landroidx/media3/common/Format$Builder;->setHeight(I)Landroidx/media3/common/Format$Builder;
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/16 v0, 0x160
 
     .line 376
@@ -1756,7 +1756,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setHeight(I)Landroidx/media3/common/Format$Builder;
 
-    :goto_3c
+    :goto_0
     const-string v0, "profile-level-id"
 
     .line 378
@@ -1773,11 +1773,11 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-nez p1, :cond_4f
+    if-nez p1, :cond_1
 
     const-string p1, "1"
 
-    :cond_4f
+    :cond_1
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -1794,18 +1794,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 185
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1816,12 +1816,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 188
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;
 
     .line 189
@@ -1833,7 +1833,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;->uri:Landroid/net/Uri;
 
@@ -1843,23 +1843,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;->payloadFormat:Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;

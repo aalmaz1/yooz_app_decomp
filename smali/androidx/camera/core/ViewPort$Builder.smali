@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/util/Rational;I)V
-    .registers 4
+    .locals 1
 
     .line 245
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/ViewPort;
-    .registers 6
+    .locals 5
 
     .line 282
     iget-object v0, p0, Landroidx/camera/core/ViewPort$Builder;->mAspectRatio:Landroid/util/Rational;
@@ -85,7 +85,7 @@
 .end method
 
 .method public setLayoutDirection(I)Landroidx/camera/core/ViewPort$Builder;
-    .registers 2
+    .locals 0
 
     .line 273
     iput p1, p0, Landroidx/camera/core/ViewPort$Builder;->mLayoutDirection:I
@@ -94,7 +94,7 @@
 .end method
 
 .method public setScaleType(I)Landroidx/camera/core/ViewPort$Builder;
-    .registers 2
+    .locals 0
 
     .line 259
     iput p1, p0, Landroidx/camera/core/ViewPort$Builder;->mScaleType:I

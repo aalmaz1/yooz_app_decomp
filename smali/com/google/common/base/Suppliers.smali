@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static compose(Lcom/google/common/base/Function;Lcom/google/common/base/Supplier;)Lcom/google/common/base/Supplier;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -69,7 +69,7 @@
 .end method
 
 .method public static memoize(Lcom/google/common/base/Supplier;)Lcom/google/common/base/Supplier;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -94,43 +94,43 @@
     .line 108
     instance-of v0, p0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_2
 
     instance-of v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_1
 
     .line 112
-    :cond_9
+    :cond_0
     instance-of v0, p0, Ljava/io/Serializable;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 113
     new-instance v0, Lcom/google/common/base/Suppliers$MemoizingSupplier;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Suppliers$MemoizingSupplier;-><init>(Lcom/google/common/base/Supplier;)V
 
-    goto :goto_18
+    goto :goto_0
 
     .line 114
-    :cond_13
+    :cond_1
     new-instance v0, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Suppliers$NonSerializableMemoizingSupplier;-><init>(Lcom/google/common/base/Supplier;)V
 
-    :goto_18
+    :goto_0
     return-object v0
 
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_1
     return-object p0
 .end method
 
 .method public static memoizeWithExpiration(Lcom/google/common/base/Supplier;JLjava/util/concurrent/TimeUnit;)Lcom/google/common/base/Supplier;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -167,7 +167,7 @@
 .end method
 
 .method public static ofInstance(Ljava/lang/Object;)Lcom/google/common/base/Supplier;
-    .registers 2
+    .locals 1
     .param p0    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -200,7 +200,7 @@
 .end method
 
 .method public static supplierFunction()Lcom/google/common/base/Function;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -219,7 +219,7 @@
 .end method
 
 .method public static synchronizedSupplier(Lcom/google/common/base/Supplier;)Lcom/google/common/base/Supplier;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

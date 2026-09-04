@@ -38,7 +38,7 @@
 
 # direct methods
 .method public static final preferencesDataStore(Ljava/lang/String;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;)Lkotlin/properties/ReadOnlyProperty;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,30 +88,30 @@
 .end method
 
 .method public static synthetic preferencesDataStore$default(Ljava/lang/String;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;ILjava/lang/Object;)Lkotlin/properties/ReadOnlyProperty;
-    .registers 7
+    .locals 1
 
     and-int/lit8 p5, p4, 0x2
 
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     move-object p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p5, p4, 0x4
 
-    if-eqz p5, :cond_e
+    if-eqz p5, :cond_1
 
     .line 69
     sget-object p2, Landroidx/datastore/preferences/PreferenceDataStoreDelegateKt$preferencesDataStore$1;->INSTANCE:Landroidx/datastore/preferences/PreferenceDataStoreDelegateKt$preferencesDataStore$1;
 
     check-cast p2, Lkotlin/jvm/functions/Function1;
 
-    :cond_e
+    :cond_1
     and-int/lit8 p4, p4, 0x8
 
-    if-eqz p4, :cond_27
+    if-eqz p4, :cond_2
 
     .line 70
     sget-object p3, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
@@ -137,7 +137,7 @@
     move-result-object p3
 
     .line 66
-    :cond_27
+    :cond_2
     invoke-static {p0, p1, p2, p3}, Landroidx/datastore/preferences/PreferenceDataStoreDelegateKt;->preferencesDataStore(Ljava/lang/String;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;)Lkotlin/properties/ReadOnlyProperty;
 
     move-result-object p0

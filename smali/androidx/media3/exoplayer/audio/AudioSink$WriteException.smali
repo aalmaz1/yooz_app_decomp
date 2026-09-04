@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/Format;Z)V
-    .registers 6
+    .locals 2
 
     .line 298
     new-instance v0, Ljava/lang/StringBuilder;

@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/imagecapture/TakePictureManager;Landroidx/camera/core/imagecapture/CameraRequest;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 4
 
     .line 258
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager$1;->val$cameraRequest:Landroidx/camera/core/imagecapture/CameraRequest;
@@ -63,15 +63,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 265
-    :cond_9
+    :cond_0
     instance-of v0, p1, Landroidx/camera/core/ImageCaptureException;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 266
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager$1;->this$0:Landroidx/camera/core/imagecapture/TakePictureManager;
@@ -82,10 +82,10 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/core/imagecapture/ImagePipeline;->notifyCaptureError(Landroidx/camera/core/ImageCaptureException;)V
 
-    goto :goto_26
+    goto :goto_0
 
     .line 268
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/camera/core/imagecapture/TakePictureManager$1;->this$0:Landroidx/camera/core/imagecapture/TakePictureManager;
 
     iget-object v0, v0, Landroidx/camera/core/imagecapture/TakePictureManager;->mImagePipeline:Landroidx/camera/core/imagecapture/ImagePipeline;
@@ -101,7 +101,7 @@
     invoke-virtual {v0, v1}, Landroidx/camera/core/imagecapture/ImagePipeline;->notifyCaptureError(Landroidx/camera/core/ImageCaptureException;)V
 
     .line 274
-    :goto_26
+    :goto_0
     iget-object p1, p0, Landroidx/camera/core/imagecapture/TakePictureManager$1;->this$0:Landroidx/camera/core/imagecapture/TakePictureManager;
 
     iget-object p1, p1, Landroidx/camera/core/imagecapture/TakePictureManager;->mImageCaptureControl:Landroidx/camera/core/imagecapture/ImageCaptureControl;
@@ -112,7 +112,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 250
     check-cast p1, Ljava/lang/Void;
@@ -123,7 +123,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 2
+    .locals 0
 
     .line 253
     iget-object p1, p0, Landroidx/camera/core/imagecapture/TakePictureManager$1;->this$0:Landroidx/camera/core/imagecapture/TakePictureManager;

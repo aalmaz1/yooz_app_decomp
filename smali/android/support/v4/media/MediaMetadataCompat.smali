@@ -129,7 +129,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .locals 16
 
     .line 308
     new-instance v0, Landroidx/collection/ArrayMap;
@@ -363,7 +363,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 368
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -382,7 +382,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 373
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -404,9 +404,9 @@
 .end method
 
 .method public static fromMediaMetadata(Ljava/lang/Object;)Landroid/support/v4/media/MediaMetadataCompat;
-    .registers 3
+    .locals 2
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_0
 
     .line 608
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -438,7 +438,7 @@
 
     return-object v1
 
-    :cond_1b
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
@@ -447,7 +447,7 @@
 
 # virtual methods
 .method public containsKey(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 384
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;
@@ -460,7 +460,7 @@
 .end method
 
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -468,7 +468,7 @@
 .end method
 
 .method public getBitmap(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .registers 4
+    .locals 2
 
     .line 460
     :try_start_0
@@ -479,12 +479,12 @@
     move-result-object p1
 
     check-cast p1, Landroid/graphics/Bitmap;
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     move-exception p1
 
     const-string v0, "MediaMetadata"
@@ -496,12 +496,12 @@
 
     const/4 p1, 0x0
 
-    :goto_12
+    :goto_0
     return-object p1
 .end method
 
 .method public getBundle()Landroid/os/Bundle;
-    .registers 3
+    .locals 2
 
     .line 590
     new-instance v0, Landroid/os/Bundle;
@@ -514,16 +514,16 @@
 .end method
 
 .method public getDescription()Landroid/support/v4/media/MediaDescriptionCompat;
-    .registers 11
+    .locals 10
 
     .line 474
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     const-string v0, "android.media.metadata.MEDIA_ID"
 
     .line 478
@@ -553,7 +553,7 @@
 
     const/4 v7, 0x0
 
-    if-nez v4, :cond_30
+    if-nez v4, :cond_1
 
     aput-object v3, v2, v7
 
@@ -575,22 +575,22 @@
 
     aput-object v1, v2, v5
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_30
+    :cond_1
     move v3, v7
 
     move v4, v3
 
-    :goto_32
-    if-ge v3, v1, :cond_4e
+    :goto_0
+    if-ge v3, v1, :cond_3
 
     .line 496
     sget-object v8, Landroid/support/v4/media/MediaMetadataCompat;->PREFERRED_DESCRIPTION_ORDER:[Ljava/lang/String;
 
     array-length v9, v8
 
-    if-ge v4, v9, :cond_4e
+    if-ge v4, v9, :cond_3
 
     add-int/lit8 v9, v4, 0x1
 
@@ -606,7 +606,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_4c
+    if-nez v8, :cond_2
 
     add-int/lit8 v8, v3, 0x1
 
@@ -615,24 +615,24 @@
 
     move v3, v8
 
-    :cond_4c
+    :cond_2
     move v4, v9
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_4e
-    :goto_4e
+    :cond_3
+    :goto_1
     move v1, v7
 
     .line 506
-    :goto_4f
+    :goto_2
     sget-object v3, Landroid/support/v4/media/MediaMetadataCompat;->PREFERRED_BITMAP_ORDER:[Ljava/lang/String;
 
     array-length v4, v3
 
     const/4 v8, 0x0
 
-    if-ge v1, v4, :cond_61
+    if-ge v1, v4, :cond_5
 
     .line 507
     aget-object v3, v3, v1
@@ -641,28 +641,28 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_4
 
-    goto :goto_62
+    goto :goto_3
 
-    :cond_5e
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4f
+    goto :goto_2
 
-    :cond_61
+    :cond_5
     move-object v3, v8
 
-    :goto_62
+    :goto_3
     move v1, v7
 
     .line 515
-    :goto_63
+    :goto_4
     sget-object v4, Landroid/support/v4/media/MediaMetadataCompat;->PREFERRED_URI_ORDER:[Ljava/lang/String;
 
     array-length v9, v4
 
-    if-ge v1, v9, :cond_7c
+    if-ge v1, v9, :cond_7
 
     .line 516
     aget-object v4, v4, v1
@@ -676,24 +676,24 @@
 
     move-result v9
 
-    if-nez v9, :cond_79
+    if-nez v9, :cond_6
 
     .line 518
     invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    goto :goto_7d
+    goto :goto_5
 
-    :cond_79
+    :cond_6
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_63
+    goto :goto_4
 
-    :cond_7c
+    :cond_7
     move-object v1, v8
 
-    :goto_7d
+    :goto_5
     const-string v4, "android.media.metadata.MEDIA_URI"
 
     .line 524
@@ -706,7 +706,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_8d
+    if-nez v9, :cond_8
 
     .line 526
     invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -714,7 +714,7 @@
     move-result-object v8
 
     .line 529
-    :cond_8d
+    :cond_8
     new-instance v4, Landroid/support/v4/media/MediaDescriptionCompat$Builder;
 
     invoke-direct {v4}, Landroid/support/v4/media/MediaDescriptionCompat$Builder;-><init>()V
@@ -760,7 +760,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_c5
+    if-eqz v1, :cond_9
 
     const-string v1, "android.media.extra.BT_FOLDER_TYPE"
 
@@ -773,7 +773,7 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 543
-    :cond_c5
+    :cond_9
     iget-object v1, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;
 
     const-string v2, "android.media.metadata.DOWNLOAD_STATUS"
@@ -782,7 +782,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d8
+    if-eqz v1, :cond_a
 
     const-string v1, "android.media.extra.DOWNLOAD_STATUS"
 
@@ -795,18 +795,18 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 547
-    :cond_d8
+    :cond_a
     invoke-virtual {v0}, Landroid/os/Bundle;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_e1
+    if-nez v1, :cond_b
 
     .line 548
     invoke-virtual {v4, v0}, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->setExtras(Landroid/os/Bundle;)Landroid/support/v4/media/MediaDescriptionCompat$Builder;
 
     .line 550
-    :cond_e1
+    :cond_b
     invoke-virtual {v4}, Landroid/support/v4/media/MediaDescriptionCompat$Builder;->build()Landroid/support/v4/media/MediaDescriptionCompat;
 
     move-result-object v0
@@ -817,7 +817,7 @@
 .end method
 
 .method public getLong(Ljava/lang/String;)J
-    .registers 5
+    .locals 3
 
     .line 423
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;
@@ -832,12 +832,12 @@
 .end method
 
 .method public getMediaMetadata()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 631
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mMetadataObj:Ljava/lang/Object;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 632
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -863,14 +863,14 @@
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     .line 638
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mMetadataObj:Ljava/lang/Object;
 
     return-object v0
 .end method
 
 .method public getRating(Ljava/lang/String;)Landroid/support/v4/media/RatingCompat;
-    .registers 4
+    .locals 2
 
     .line 439
     :try_start_0
@@ -883,12 +883,12 @@
     invoke-static {p1}, Landroid/support/v4/media/RatingCompat;->fromRating(Ljava/lang/Object;)Landroid/support/v4/media/RatingCompat;
 
     move-result-object p1
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :catch_b
+    :catch_0
     move-exception p1
 
     const-string v0, "MediaMetadata"
@@ -900,12 +900,12 @@
 
     const/4 p1, 0x0
 
-    :goto_14
+    :goto_0
     return-object p1
 .end method
 
 .method public getString(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 408
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;
@@ -914,7 +914,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 410
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -923,14 +923,14 @@
 
     return-object p1
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public getText(Ljava/lang/String;)Ljava/lang/CharSequence;
-    .registers 3
+    .locals 1
 
     .line 396
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;
@@ -943,7 +943,7 @@
 .end method
 
 .method public keySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -964,7 +964,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 571
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;
@@ -977,7 +977,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 562
     iget-object p2, p0, Landroid/support/v4/media/MediaMetadataCompat;->mBundle:Landroid/os/Bundle;

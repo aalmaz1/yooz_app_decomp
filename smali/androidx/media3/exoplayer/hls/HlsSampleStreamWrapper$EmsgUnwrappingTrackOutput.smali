@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 1797
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/extractor/TrackOutput;I)V
-    .registers 5
+    .locals 2
 
     .line 1811
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,21 +98,21 @@
 
     const/4 p1, 0x1
 
-    if-eq p2, p1, :cond_2c
+    if-eq p2, p1, :cond_1
 
     const/4 p1, 0x3
 
-    if-ne p2, p1, :cond_17
+    if-ne p2, p1, :cond_0
 
     .line 1819
     sget-object p1, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->EMSG_FORMAT:Landroidx/media3/common/Format;
 
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->delegateFormat:Landroidx/media3/common/Format;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 1822
-    :cond_17
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -134,12 +134,12 @@
     throw p1
 
     .line 1816
-    :cond_2c
+    :cond_1
     sget-object p1, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->ID3_FORMAT:Landroidx/media3/common/Format;
 
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->delegateFormat:Landroidx/media3/common/Format;
 
-    :goto_30
+    :goto_0
     const/4 p1, 0x0
 
     new-array p2, p1, [B
@@ -154,14 +154,14 @@
 .end method
 
 .method private emsgContainsExpectedWrappedFormat(Landroidx/media3/extractor/metadata/emsg/EventMessage;)Z
-    .registers 3
+    .locals 1
 
     .line 1897
     invoke-virtual {p1}, Landroidx/media3/extractor/metadata/emsg/EventMessage;->getWrappedMetadataFormat()Landroidx/media3/common/Format;
 
     move-result-object p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 1898
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->delegateFormat:Landroidx/media3/common/Format;
@@ -175,28 +175,28 @@
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_15
+    :goto_0
     return p1
 .end method
 
 .method private ensureBufferCapacity(I)V
-    .registers 4
+    .locals 2
 
     .line 1903
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->buffer:[B
 
     array-length v1, v0
 
-    if-ge v1, p1, :cond_e
+    if-ge v1, p1, :cond_0
 
     .line 1904
     div-int/lit8 v1, p1, 0x2
@@ -209,12 +209,12 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->buffer:[B
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private getSampleAndTrimBuffer(II)Landroidx/media3/common/util/ParsableByteArray;
-    .registers 6
+    .locals 3
 
     .line 1917
     iget v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->bufferPosition:I
@@ -251,7 +251,7 @@
 
 # virtual methods
 .method public format(Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 1
 
     .line 1831
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->format:Landroidx/media3/common/Format;
@@ -267,7 +267,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/DataReader;IZI)I
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -292,14 +292,14 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_1a
+    if-ne p1, p2, :cond_1
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_0
 
     return p2
 
     .line 1845
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/io/EOFException;
 
     invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
@@ -307,7 +307,7 @@
     throw p1
 
     .line 1848
-    :cond_1a
+    :cond_1
     iget p2, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->bufferPosition:I
 
     add-int/2addr p2, p1
@@ -318,7 +318,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/common/util/ParsableByteArray;II)V
-    .registers 5
+    .locals 1
 
     .line 1854
     iget p3, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->bufferPosition:I
@@ -345,7 +345,7 @@
 .end method
 
 .method public sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    .registers 14
+    .locals 7
 
     .line 1866
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->format:Landroidx/media3/common/Format;
@@ -370,12 +370,12 @@
 
     move-result p5
 
-    if-eqz p5, :cond_18
+    if-eqz p5, :cond_0
 
-    goto :goto_5d
+    goto :goto_0
 
     .line 1872
-    :cond_18
+    :cond_0
     iget-object p5, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->format:Landroidx/media3/common/Format;
 
     iget-object p5, p5, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
@@ -388,7 +388,7 @@
 
     const-string v0, "HlsSampleStreamWrapper"
 
-    if-eqz p5, :cond_70
+    if-eqz p5, :cond_2
 
     .line 1874
     iget-object p5, p0, Landroidx/media3/exoplayer/hls/HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput;->emsgDecoder:Landroidx/media3/extractor/metadata/emsg/EventMessageDecoder;
@@ -402,7 +402,7 @@
 
     move-result p5
 
-    if-nez p5, :cond_4d
+    if-nez p5, :cond_1
 
     const/4 p1, 0x2
 
@@ -439,7 +439,7 @@
     return-void
 
     .line 1883
-    :cond_4d
+    :cond_1
     new-instance p5, Landroidx/media3/common/util/ParsableByteArray;
 
     .line 1884
@@ -458,7 +458,7 @@
     move-object p4, p5
 
     .line 1890
-    :goto_5d
+    :goto_0
     invoke-virtual {p4}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v4
@@ -484,7 +484,7 @@
     return-void
 
     .line 1886
-    :cond_70
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Ignoring sample for unsupported format: "

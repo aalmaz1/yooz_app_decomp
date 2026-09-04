@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;)I
-    .registers 6
+    .locals 4
 
     .line 203
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;->startOffset:J
@@ -68,7 +68,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 181
     check-cast p1, Landroidx/media3/exoplayer/upstream/CachedRegionTracker$Region;

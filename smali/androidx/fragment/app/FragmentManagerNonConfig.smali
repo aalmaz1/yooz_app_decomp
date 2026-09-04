@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Collection;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method getChildNonConfigs()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -98,7 +98,7 @@
 .end method
 
 .method getFragments()Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -115,7 +115,7 @@
 .end method
 
 .method getViewModelStores()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -133,19 +133,19 @@
 .end method
 
 .method isRetaining(Landroidx/fragment/app/Fragment;)Z
-    .registers 3
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/fragment/app/FragmentManagerNonConfig;->mFragments:Ljava/util/Collection;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 60
-    :cond_6
+    :cond_0
     invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result p1

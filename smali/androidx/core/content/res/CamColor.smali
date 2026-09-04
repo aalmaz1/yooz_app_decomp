@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(FFFFFFFFF)V
-    .registers 10
+    .locals 0
 
     .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method private static findCamByJ(FFF)Landroidx/core/content/res/CamColor;
-    .registers 15
+    .locals 12
 
     const/4 v0, 0x0
 
@@ -87,7 +87,7 @@
 
     move v3, v2
 
-    :goto_9
+    :goto_0
     sub-float v6, v5, v1
 
     .line 535
@@ -99,7 +99,7 @@
 
     cmpl-float v6, v6, v7
 
-    if-lez v6, :cond_63
+    if-lez v6, :cond_3
 
     sub-float v6, v1, v5
 
@@ -135,7 +135,7 @@
 
     cmpg-float v10, v9, v10
 
-    if-gez v10, :cond_52
+    if-gez v10, :cond_0
 
     .line 552
     invoke-static {v7}, Landroidx/core/content/res/CamColor;->fromColor(I)Landroidx/core/content/res/CamColor;
@@ -164,7 +164,7 @@
 
     cmpg-float v11, v10, v11
 
-    if-gtz v11, :cond_52
+    if-gtz v11, :cond_0
 
     move-object v4, v7
 
@@ -172,38 +172,38 @@
 
     move v3, v10
 
-    :cond_52
+    :cond_0
     cmpl-float v7, v2, v0
 
-    if-nez v7, :cond_5b
+    if-nez v7, :cond_1
 
     cmpl-float v7, v3, v0
 
-    if-nez v7, :cond_5b
+    if-nez v7, :cond_1
 
-    goto :goto_63
+    goto :goto_1
 
-    :cond_5b
+    :cond_1
     cmpg-float v7, v8, p2
 
-    if-gez v7, :cond_61
+    if-gez v7, :cond_2
 
     move v5, v6
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_61
+    :cond_2
     move v1, v6
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_63
-    :goto_63
+    :cond_3
+    :goto_1
     return-object v4
 .end method
 
 .method static fromColor(I)Landroidx/core/content/res/CamColor;
-    .registers 15
+    .locals 14
 
     const/4 v0, 0x7
 
@@ -259,7 +259,7 @@
 .end method
 
 .method static fromColorInViewingConditions(ILandroidx/core/content/res/ViewingConditions;[F[F)V
-    .registers 23
+    .locals 19
 
     move/from16 v0, p0
 
@@ -568,21 +568,21 @@
 
     const/high16 v11, 0x43b40000    # 360.0f
 
-    if-gez v10, :cond_e4
+    if-gez v10, :cond_0
 
     add-float/2addr v3, v11
 
-    goto :goto_e9
+    goto :goto_0
 
-    :cond_e4
+    :cond_0
     cmpl-float v10, v3, v11
 
-    if-ltz v10, :cond_e9
+    if-ltz v10, :cond_1
 
     sub-float/2addr v3, v11
 
-    :cond_e9
-    :goto_e9
+    :cond_1
+    :goto_0
     mul-float/2addr v6, v3
 
     div-float/2addr v6, v4
@@ -675,16 +675,16 @@
 
     cmpg-double v4, v13, v17
 
-    if-gez v4, :cond_132
+    if-gez v4, :cond_2
 
     add-float/2addr v11, v3
 
-    goto :goto_133
+    goto :goto_1
 
-    :cond_132
+    :cond_2
     move v11, v3
 
-    :goto_133
+    :goto_1
     float-to-double v13, v11
 
     const-wide v17, 0x400921fb54442d18L    # Math.PI
@@ -904,7 +904,7 @@
     .line 277
     aput v4, v1, v3
 
-    if-eqz p2, :cond_201
+    if-eqz p2, :cond_3
 
     .line 280
     aput v0, p2, v2
@@ -937,12 +937,12 @@
     .line 286
     aput v10, p2, v0
 
-    :cond_201
+    :cond_3
     return-void
 .end method
 
 .method private static fromJch(FFF)Landroidx/core/content/res/CamColor;
-    .registers 4
+    .locals 1
 
     .line 298
     sget-object v0, Landroidx/core/content/res/ViewingConditions;->DEFAULT:Landroidx/core/content/res/ViewingConditions;
@@ -955,7 +955,7 @@
 .end method
 
 .method private static fromJchInFrame(FFFLandroidx/core/content/res/ViewingConditions;)Landroidx/core/content/res/CamColor;
-    .registers 17
+    .locals 13
 
     move v3, p0
 
@@ -1134,7 +1134,7 @@
 .end method
 
 .method public static getM3HCTfromColor(I[F)V
-    .registers 4
+    .locals 2
 
     .line 191
     sget-object v0, Landroidx/core/content/res/ViewingConditions;->DEFAULT:Landroidx/core/content/res/ViewingConditions;
@@ -1156,7 +1156,7 @@
 .end method
 
 .method public static toColor(FFF)I
-    .registers 4
+    .locals 1
 
     .line 152
     sget-object v0, Landroidx/core/content/res/ViewingConditions;->DEFAULT:Landroidx/core/content/res/ViewingConditions;
@@ -1169,7 +1169,7 @@
 .end method
 
 .method static toColor(FFFLandroidx/core/content/res/ViewingConditions;)I
-    .registers 10
+    .locals 6
 
     float-to-double v0, p1
 
@@ -1177,7 +1177,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-ltz v0, :cond_6a
+    if-ltz v0, :cond_7
 
     .line 459
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
@@ -1190,7 +1190,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-lez v0, :cond_6a
+    if-lez v0, :cond_7
 
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
@@ -1202,22 +1202,22 @@
 
     cmpl-double v0, v0, v2
 
-    if-ltz v0, :cond_1e
+    if-ltz v0, :cond_0
 
-    goto :goto_6a
+    goto :goto_3
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x0
 
     cmpg-float v1, p0, v0
 
-    if-gez v1, :cond_25
+    if-gez v1, :cond_1
 
     move p0, v0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     const/high16 v1, 0x43b40000    # 360.0f
 
     .line 463
@@ -1225,7 +1225,7 @@
 
     move-result p0
 
-    :goto_2b
+    :goto_0
     const/4 v1, 0x1
 
     const/4 v2, 0x0
@@ -1238,7 +1238,7 @@
 
     move v0, p1
 
-    :goto_31
+    :goto_1
     sub-float v4, v1, p1
 
     .line 476
@@ -1250,7 +1250,7 @@
 
     cmpl-float v4, v4, v5
 
-    if-ltz v4, :cond_5e
+    if-ltz v4, :cond_5
 
     .line 479
     invoke-static {p0, v0, p2}, Landroidx/core/content/res/CamColor;->findCamByJ(FFF)Landroidx/core/content/res/CamColor;
@@ -1259,9 +1259,9 @@
 
     const/high16 v5, 0x40000000    # 2.0f
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_3
 
-    if-eqz v4, :cond_4d
+    if-eqz v4, :cond_2
 
     .line 483
     invoke-virtual {v4, p3}, Landroidx/core/content/res/CamColor;->viewed(Landroidx/core/content/res/ViewingConditions;)I
@@ -1270,7 +1270,7 @@
 
     return p0
 
-    :cond_4d
+    :cond_2
     sub-float v0, p1, v1
 
     div-float/2addr v0, v5
@@ -1279,31 +1279,31 @@
 
     const/4 v2, 0x0
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_53
-    if-nez v4, :cond_57
+    :cond_3
+    if-nez v4, :cond_4
 
     move p1, v0
 
-    goto :goto_59
+    goto :goto_2
 
-    :cond_57
+    :cond_4
     move v1, v0
 
     move-object v3, v4
 
-    :goto_59
+    :goto_2
     sub-float v0, p1, v1
 
     div-float/2addr v0, v5
 
     add-float/2addr v0, v1
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_5e
-    if-nez v3, :cond_65
+    :cond_5
+    if-nez v3, :cond_6
 
     .line 513
     invoke-static {p2}, Landroidx/core/content/res/CamUtils;->intFromLStar(F)I
@@ -1313,7 +1313,7 @@
     return p0
 
     .line 516
-    :cond_65
+    :cond_6
     invoke-virtual {v3, p3}, Landroidx/core/content/res/CamColor;->viewed(Landroidx/core/content/res/ViewingConditions;)I
 
     move-result p0
@@ -1321,8 +1321,8 @@
     return p0
 
     .line 460
-    :cond_6a
-    :goto_6a
+    :cond_7
+    :goto_3
     invoke-static {p2}, Landroidx/core/content/res/CamUtils;->intFromLStar(F)I
 
     move-result p0
@@ -1333,7 +1333,7 @@
 
 # virtual methods
 .method distance(Landroidx/core/content/res/CamColor;)F
-    .registers 6
+    .locals 4
 
     .line 335
     invoke-virtual {p0}, Landroidx/core/content/res/CamColor;->getJStar()F
@@ -1402,7 +1402,7 @@
 .end method
 
 .method getAStar()F
-    .registers 2
+    .locals 1
 
     .line 119
     iget v0, p0, Landroidx/core/content/res/CamColor;->mAstar:F
@@ -1411,7 +1411,7 @@
 .end method
 
 .method getBStar()F
-    .registers 2
+    .locals 1
 
     .line 126
     iget v0, p0, Landroidx/core/content/res/CamColor;->mBstar:F
@@ -1420,7 +1420,7 @@
 .end method
 
 .method getChroma()F
-    .registers 2
+    .locals 1
 
     .line 66
     iget v0, p0, Landroidx/core/content/res/CamColor;->mChroma:F
@@ -1429,7 +1429,7 @@
 .end method
 
 .method getHue()F
-    .registers 2
+    .locals 1
 
     .line 60
     iget v0, p0, Landroidx/core/content/res/CamColor;->mHue:F
@@ -1438,7 +1438,7 @@
 .end method
 
 .method getJ()F
-    .registers 2
+    .locals 1
 
     .line 72
     iget v0, p0, Landroidx/core/content/res/CamColor;->mJ:F
@@ -1447,7 +1447,7 @@
 .end method
 
 .method getJStar()F
-    .registers 2
+    .locals 1
 
     .line 112
     iget v0, p0, Landroidx/core/content/res/CamColor;->mJstar:F
@@ -1456,7 +1456,7 @@
 .end method
 
 .method getM()F
-    .registers 2
+    .locals 1
 
     .line 95
     iget v0, p0, Landroidx/core/content/res/CamColor;->mM:F
@@ -1465,7 +1465,7 @@
 .end method
 
 .method getQ()F
-    .registers 2
+    .locals 1
 
     .line 84
     iget v0, p0, Landroidx/core/content/res/CamColor;->mQ:F
@@ -1474,7 +1474,7 @@
 .end method
 
 .method getS()F
-    .registers 2
+    .locals 1
 
     .line 106
     iget v0, p0, Landroidx/core/content/res/CamColor;->mS:F
@@ -1483,7 +1483,7 @@
 .end method
 
 .method viewed(Landroidx/core/content/res/ViewingConditions;)I
-    .registers 17
+    .locals 15
 
     .line 353
     invoke-virtual {p0}, Landroidx/core/content/res/CamColor;->getChroma()F
@@ -1498,7 +1498,7 @@
 
     const-wide/high16 v4, 0x4059000000000000L    # 100.0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/core/content/res/CamColor;->getJ()F
 
@@ -1508,12 +1508,12 @@
 
     cmpl-double v0, v0, v2
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
-    goto :goto_28
+    goto :goto_0
 
     .line 355
-    :cond_17
+    :cond_0
     invoke-virtual {p0}, Landroidx/core/content/res/CamColor;->getChroma()F
 
     move-result v0
@@ -1534,13 +1534,13 @@
 
     div-float/2addr v0, v1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
-    :goto_29
+    :goto_1
     float-to-double v0, v0
 
     .line 358
@@ -2038,7 +2038,7 @@
 .end method
 
 .method viewedInSrgb()I
-    .registers 2
+    .locals 1
 
     .line 346
     sget-object v0, Landroidx/core/content/res/ViewingConditions;->DEFAULT:Landroidx/core/content/res/ViewingConditions;

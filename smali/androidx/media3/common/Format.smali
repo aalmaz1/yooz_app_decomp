@@ -185,7 +185,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 797
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -499,7 +499,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/Format$Builder;)V
-    .registers 7
+    .locals 5
 
     .line 1031
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -531,13 +531,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_0
 
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$200(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_0
 
     .line 1035
     new-instance v1, Landroidx/media3/common/Label;
@@ -561,10 +561,10 @@
 
     iput-object v0, p0, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 1037
-    :cond_39
+    :cond_0
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$100(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
 
     move-result-object v1
@@ -573,13 +573,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_5a
+    if-nez v1, :cond_1
 
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$200(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_5a
+    if-nez v1, :cond_1
 
     .line 1038
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$100(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
@@ -599,10 +599,10 @@
 
     iput-object v0, p0, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 1041
-    :cond_5a
+    :cond_1
     invoke-static {p1}, Landroidx/media3/common/Format;->isLabelPartOfLabels(Landroidx/media3/common/Format$Builder;)Z
 
     move-result v0
@@ -624,7 +624,7 @@
     iput-object v0, p0, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
     .line 1045
-    :goto_6d
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$500(Landroidx/media3/common/Format$Builder;)I
 
     move-result v0
@@ -654,12 +654,12 @@
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_89
+    if-eq v1, v2, :cond_2
 
     move v0, v1
 
     .line 1049
-    :cond_89
+    :cond_2
     iput v0, p0, Landroidx/media3/common/Format;->bitrate:I
 
     .line 1050
@@ -716,20 +716,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_c0
+    if-nez v0, :cond_3
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    goto :goto_c4
+    goto :goto_1
 
-    :cond_c0
+    :cond_3
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$1600(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
 
     move-result-object v0
 
-    :goto_c4
+    :goto_1
     iput-object v0, p0, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
 
     .line 1061
@@ -774,18 +774,18 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_ed
+    if-ne v1, v2, :cond_4
 
     move v1, v3
 
-    goto :goto_f1
+    goto :goto_2
 
-    :cond_ed
+    :cond_4
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$2200(Landroidx/media3/common/Format$Builder;)I
 
     move-result v1
 
-    :goto_f1
+    :goto_2
     iput v1, p0, Landroidx/media3/common/Format;->rotationDegrees:I
 
     .line 1069
@@ -797,18 +797,18 @@
 
     cmpl-float v1, v1, v4
 
-    if-nez v1, :cond_100
+    if-nez v1, :cond_5
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    goto :goto_104
+    goto :goto_3
 
-    :cond_100
+    :cond_5
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$2300(Landroidx/media3/common/Format$Builder;)F
 
     move-result v1
 
-    :goto_104
+    :goto_3
     iput v1, p0, Landroidx/media3/common/Format;->pixelWidthHeightRatio:F
 
     .line 1070
@@ -858,18 +858,18 @@
 
     move-result v1
 
-    if-ne v1, v2, :cond_132
+    if-ne v1, v2, :cond_6
 
     move v1, v3
 
-    goto :goto_136
+    goto :goto_4
 
-    :cond_132
+    :cond_6
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$3000(Landroidx/media3/common/Format$Builder;)I
 
     move-result v1
 
-    :goto_136
+    :goto_4
     iput v1, p0, Landroidx/media3/common/Format;->encoderDelay:I
 
     .line 1078
@@ -877,16 +877,16 @@
 
     move-result v1
 
-    if-ne v1, v2, :cond_13f
+    if-ne v1, v2, :cond_7
 
-    goto :goto_143
+    goto :goto_5
 
-    :cond_13f
+    :cond_7
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$3100(Landroidx/media3/common/Format$Builder;)I
 
     move-result v3
 
-    :goto_143
+    :goto_5
     iput v3, p0, Landroidx/media3/common/Format;->encoderPadding:I
 
     .line 1080
@@ -922,31 +922,31 @@
 
     move-result v1
 
-    if-nez v1, :cond_169
+    if-nez v1, :cond_8
 
-    if-eqz v0, :cond_169
+    if-eqz v0, :cond_8
 
     const/4 p1, 0x1
 
     .line 1088
     iput p1, p0, Landroidx/media3/common/Format;->cryptoType:I
 
-    goto :goto_16f
+    goto :goto_6
 
     .line 1090
-    :cond_169
+    :cond_8
     invoke-static {p1}, Landroidx/media3/common/Format$Builder;->access$3600(Landroidx/media3/common/Format$Builder;)I
 
     move-result p1
 
     iput p1, p0, Landroidx/media3/common/Format;->cryptoType:I
 
-    :goto_16f
+    :goto_6
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/Format$Builder;Landroidx/media3/common/Format$1;)V
-    .registers 3
+    .locals 0
 
     .line 129
     invoke-direct {p0, p1}, Landroidx/media3/common/Format;-><init>(Landroidx/media3/common/Format$Builder;)V
@@ -955,7 +955,7 @@
 .end method
 
 .method private static defaultIfNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -964,19 +964,19 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_3
+    :cond_0
     move-object p0, p1
 
-    :goto_4
+    :goto_0
     return-object p0
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Format;
-    .registers 7
+    .locals 6
 
     .line 1528
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -1032,17 +1032,17 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_0
 
     .line 1536
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v1
 
-    goto :goto_43
+    goto :goto_0
 
     .line 1537
-    :cond_3a
+    :cond_0
     new-instance v3, Landroidx/media3/common/Format$$ExternalSyntheticLambda1;
 
     invoke-direct {v3}, Landroidx/media3/common/Format$$ExternalSyntheticLambda1;-><init>()V
@@ -1052,7 +1052,7 @@
     move-result-object v1
 
     .line 1539
-    :goto_43
+    :goto_0
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setLabels(Ljava/util/List;)Landroidx/media3/common/Format$Builder;
 
     move-result-object v1
@@ -1227,7 +1227,7 @@
     const/4 v2, 0x0
 
     .line 1557
-    :goto_e4
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/Format;->keyForInitializationData(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1236,7 +1236,7 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_1dc
+    if-nez v3, :cond_2
 
     .line 1564
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setInitializationData(Ljava/util/List;)Landroidx/media3/common/Format$Builder;
@@ -1366,7 +1366,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_16c
+    if-eqz v1, :cond_1
 
     .line 1578
     invoke-static {v1}, Landroidx/media3/common/ColorInfo;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/ColorInfo;
@@ -1376,7 +1376,7 @@
     invoke-virtual {v0, v1}, Landroidx/media3/common/Format$Builder;->setColorInfo(Landroidx/media3/common/ColorInfo;)Landroidx/media3/common/Format$Builder;
 
     .line 1581
-    :cond_16c
+    :cond_1
     sget-object v1, Landroidx/media3/common/Format;->FIELD_CHANNEL_COUNT:Ljava/lang/String;
 
     iget v2, v3, Landroidx/media3/common/Format;->channelCount:I
@@ -1502,16 +1502,16 @@
     return-object p0
 
     .line 1561
-    :cond_1dc
+    :cond_2
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_e4
+    goto/16 :goto_1
 .end method
 
 .method private static getDefaultLabel(Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1529,12 +1529,12 @@
 
     move-result-object v0
 
-    :cond_4
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1549,14 +1549,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_0
 
     .line 1622
     iget-object p0, v1, Landroidx/media3/common/Label;->value:Ljava/lang/String;
 
     return-object p0
 
-    :cond_1b
+    :cond_1
     const/4 p1, 0x0
 
     .line 1625
@@ -1572,7 +1572,7 @@
 .end method
 
 .method private static isLabelPartOfLabels(Landroidx/media3/common/Format$Builder;)Z
-    .registers 6
+    .locals 5
 
     .line 1020
     invoke-static {p0}, Landroidx/media3/common/Format$Builder;->access$100(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
@@ -1585,23 +1585,23 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     invoke-static {p0}, Landroidx/media3/common/Format$Builder;->access$200(Landroidx/media3/common/Format$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     move v2, v0
 
     .line 1023
-    :goto_14
+    :goto_0
     invoke-static {p0}, Landroidx/media3/common/Format$Builder;->access$100(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
 
     move-result-object v3
@@ -1610,7 +1610,7 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_38
+    if-ge v2, v3, :cond_2
 
     .line 1024
     invoke-static {p0}, Landroidx/media3/common/Format$Builder;->access$100(Landroidx/media3/common/Format$Builder;)Ljava/util/List;
@@ -1633,21 +1633,21 @@
 
     move-result v3
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_1
 
     return v1
 
-    :cond_35
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_38
+    :cond_2
     return v0
 .end method
 
 .method private static keyForInitializationData(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1601
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1685,16 +1685,16 @@
 .end method
 
 .method public static toLogString(Landroidx/media3/common/Format;)Ljava/lang/String;
-    .registers 9
+    .locals 8
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     const-string p0, "null"
 
     return-object p0
 
     .line 1350
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1725,7 +1725,7 @@
     .line 1352
     iget-object v1, p0, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_1
 
     const-string v1, ", container="
 
@@ -1739,12 +1739,12 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1355
-    :cond_30
+    :cond_1
     iget v1, p0, Landroidx/media3/common/Format;->bitrate:I
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_40
+    if-eq v1, v2, :cond_2
 
     const-string v1, ", bitrate="
 
@@ -1758,10 +1758,10 @@
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 1358
-    :cond_40
+    :cond_2
     iget-object v1, p0, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_3
 
     const-string v1, ", codecs="
 
@@ -1775,12 +1775,12 @@
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1361
-    :cond_4f
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
     const/16 v3, 0x2c
 
-    if-eqz v1, :cond_de
+    if-eqz v1, :cond_a
 
     .line 1362
     new-instance v1, Ljava/util/LinkedHashSet;
@@ -1790,12 +1790,12 @@
     const/4 v4, 0x0
 
     .line 1363
-    :goto_5b
+    :goto_0
     iget-object v5, p0, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
     iget v5, v5, Landroidx/media3/common/DrmInitData;->schemeDataCount:I
 
-    if-ge v4, v5, :cond_cd
+    if-ge v4, v5, :cond_9
 
     .line 1364
     iget-object v5, p0, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -1813,85 +1813,85 @@
 
     move-result v6
 
-    if-eqz v6, :cond_77
+    if-eqz v6, :cond_4
 
     const-string v5, "cenc"
 
     .line 1366
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 1367
-    :cond_77
+    :cond_4
     sget-object v6, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v5, v6}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_85
+    if-eqz v6, :cond_5
 
     const-string v5, "clearkey"
 
     .line 1368
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 1369
-    :cond_85
+    :cond_5
     sget-object v6, Landroidx/media3/common/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v5, v6}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_93
+    if-eqz v6, :cond_6
 
     const-string v5, "playready"
 
     .line 1370
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 1371
-    :cond_93
+    :cond_6
     sget-object v6, Landroidx/media3/common/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
     invoke-virtual {v5, v6}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_a2
+    if-eqz v6, :cond_7
 
     const-string/jumbo v5, "widevine"
 
     .line 1372
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 1373
-    :cond_a2
+    :cond_7
     sget-object v6, Landroidx/media3/common/C;->UUID_NIL:Ljava/util/UUID;
 
     invoke-virtual {v5, v6}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_b1
+    if-eqz v6, :cond_8
 
     const-string/jumbo v5, "universal"
 
     .line 1374
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ca
+    goto :goto_1
 
     .line 1376
-    :cond_b1
+    :cond_8
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string/jumbo v7, "unknown ("
@@ -1914,12 +1914,12 @@
 
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :goto_ca
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_5b
+    goto :goto_0
 
-    :cond_cd
+    :cond_9
     const-string v4, ", drm=["
 
     .line 1379
@@ -1938,14 +1938,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 1383
-    :cond_de
+    :cond_a
     iget v1, p0, Landroidx/media3/common/Format;->width:I
 
-    if-eq v1, v2, :cond_fe
+    if-eq v1, v2, :cond_b
 
     iget v1, p0, Landroidx/media3/common/Format;->height:I
 
-    if-eq v1, v2, :cond_fe
+    if-eq v1, v2, :cond_b
 
     const-string v1, ", res="
 
@@ -1971,16 +1971,16 @@
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 1386
-    :cond_fe
+    :cond_b
     iget-object v1, p0, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
 
-    if-eqz v1, :cond_117
+    if-eqz v1, :cond_c
 
     invoke-virtual {v1}, Landroidx/media3/common/ColorInfo;->isValid()Z
 
     move-result v1
 
-    if-eqz v1, :cond_117
+    if-eqz v1, :cond_c
 
     const-string v1, ", color="
 
@@ -1998,14 +1998,14 @@
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1389
-    :cond_117
+    :cond_c
     iget v1, p0, Landroidx/media3/common/Format;->frameRate:F
 
     const/high16 v4, -0x40800000    # -1.0f
 
     cmpl-float v1, v1, v4
 
-    if-eqz v1, :cond_12a
+    if-eqz v1, :cond_d
 
     const-string v1, ", fps="
 
@@ -2019,10 +2019,10 @@
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     .line 1392
-    :cond_12a
+    :cond_d
     iget v1, p0, Landroidx/media3/common/Format;->channelCount:I
 
-    if-eq v1, v2, :cond_139
+    if-eq v1, v2, :cond_e
 
     const-string v1, ", channels="
 
@@ -2036,10 +2036,10 @@
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 1395
-    :cond_139
+    :cond_e
     iget v1, p0, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-eq v1, v2, :cond_148
+    if-eq v1, v2, :cond_f
 
     const-string v1, ", sample_rate="
 
@@ -2053,10 +2053,10 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 1398
-    :cond_148
+    :cond_f
     iget-object v1, p0, Landroidx/media3/common/Format;->language:Ljava/lang/String;
 
-    if-eqz v1, :cond_157
+    if-eqz v1, :cond_10
 
     const-string v1, ", language="
 
@@ -2070,7 +2070,7 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1401
-    :cond_157
+    :cond_10
     iget-object v1, p0, Landroidx/media3/common/Format;->labels:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
@@ -2079,7 +2079,7 @@
 
     const-string v2, "]"
 
-    if-nez v1, :cond_172
+    if-nez v1, :cond_11
 
     const-string v1, ", labels=["
 
@@ -2099,10 +2099,10 @@
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1406
-    :cond_172
+    :cond_11
     iget v1, p0, Landroidx/media3/common/Format;->selectionFlags:I
 
-    if-eqz v1, :cond_18b
+    if-eqz v1, :cond_12
 
     const-string v1, ", selectionFlags=["
 
@@ -2126,10 +2126,10 @@
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1411
-    :cond_18b
+    :cond_12
     iget v1, p0, Landroidx/media3/common/Format;->roleFlags:I
 
-    if-eqz v1, :cond_1a4
+    if-eqz v1, :cond_13
 
     const-string v1, ", roleFlags=["
 
@@ -2153,10 +2153,10 @@
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 1416
-    :cond_1a4
+    :cond_13
     iget-object v1, p0, Landroidx/media3/common/Format;->customData:Ljava/lang/Object;
 
-    if-eqz v1, :cond_1b3
+    if-eqz v1, :cond_14
 
     const-string v1, ", customData="
 
@@ -2170,7 +2170,7 @@
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 1419
-    :cond_1b3
+    :cond_14
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -2181,7 +2181,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/Format$Builder;
-    .registers 3
+    .locals 2
 
     .line 1097
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -2194,7 +2194,7 @@
 .end method
 
 .method public copyWithCryptoType(I)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 1
 
     .line 1177
     invoke-virtual {p0}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -2213,18 +2213,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_129
+    if-eqz p1, :cond_4
 
     .line 1277
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -2235,58 +2235,58 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_1
 
-    goto/16 :goto_129
+    goto/16 :goto_1
 
     .line 1280
-    :cond_13
+    :cond_1
     check-cast p1, Landroidx/media3/common/Format;
 
     .line 1281
     iget v2, p0, Landroidx/media3/common/Format;->hashCode:I
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_2
 
     iget v3, p1, Landroidx/media3/common/Format;->hashCode:I
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_2
 
-    if-eq v2, v3, :cond_20
+    if-eq v2, v3, :cond_2
 
     return v1
 
     .line 1285
-    :cond_20
+    :cond_2
     iget v2, p0, Landroidx/media3/common/Format;->selectionFlags:I
 
     iget v3, p1, Landroidx/media3/common/Format;->selectionFlags:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->roleFlags:I
 
     iget v3, p1, Landroidx/media3/common/Format;->roleFlags:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->averageBitrate:I
 
     iget v3, p1, Landroidx/media3/common/Format;->averageBitrate:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->peakBitrate:I
 
     iget v3, p1, Landroidx/media3/common/Format;->peakBitrate:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->maxInputSize:I
 
     iget v3, p1, Landroidx/media3/common/Format;->maxInputSize:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget-wide v2, p0, Landroidx/media3/common/Format;->subsampleOffsetUs:J
 
@@ -2294,85 +2294,85 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_127
+    if-nez v2, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->width:I
 
     iget v3, p1, Landroidx/media3/common/Format;->width:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->height:I
 
     iget v3, p1, Landroidx/media3/common/Format;->height:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->rotationDegrees:I
 
     iget v3, p1, Landroidx/media3/common/Format;->rotationDegrees:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->stereoMode:I
 
     iget v3, p1, Landroidx/media3/common/Format;->stereoMode:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->channelCount:I
 
     iget v3, p1, Landroidx/media3/common/Format;->channelCount:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->sampleRate:I
 
     iget v3, p1, Landroidx/media3/common/Format;->sampleRate:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->pcmEncoding:I
 
     iget v3, p1, Landroidx/media3/common/Format;->pcmEncoding:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->encoderDelay:I
 
     iget v3, p1, Landroidx/media3/common/Format;->encoderDelay:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->encoderPadding:I
 
     iget v3, p1, Landroidx/media3/common/Format;->encoderPadding:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->accessibilityChannel:I
 
     iget v3, p1, Landroidx/media3/common/Format;->accessibilityChannel:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->tileCountHorizontal:I
 
     iget v3, p1, Landroidx/media3/common/Format;->tileCountHorizontal:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->tileCountVertical:I
 
     iget v3, p1, Landroidx/media3/common/Format;->tileCountVertical:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->cryptoType:I
 
     iget v3, p1, Landroidx/media3/common/Format;->cryptoType:I
 
-    if-ne v2, v3, :cond_127
+    if-ne v2, v3, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->frameRate:F
 
@@ -2383,7 +2383,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_127
+    if-nez v2, :cond_3
 
     iget v2, p0, Landroidx/media3/common/Format;->pixelWidthHeightRatio:F
 
@@ -2394,7 +2394,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_127
+    if-nez v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->id:Ljava/lang/String;
 
@@ -2405,7 +2405,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
@@ -2416,7 +2416,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->labels:Ljava/util/List;
 
@@ -2427,7 +2427,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
@@ -2438,7 +2438,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
 
@@ -2449,7 +2449,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
@@ -2460,7 +2460,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->language:Ljava/lang/String;
 
@@ -2471,7 +2471,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->projectionData:[B
 
@@ -2482,7 +2482,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
@@ -2493,7 +2493,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
 
@@ -2504,7 +2504,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
@@ -2515,14 +2515,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     .line 1317
     invoke-virtual {p0, p1}, Landroidx/media3/common/Format;->initializationDataEquals(Landroidx/media3/common/Format;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_127
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Landroidx/media3/common/Format;->customData:Ljava/lang/Object;
 
@@ -2533,70 +2533,70 @@
 
     move-result p1
 
-    if-eqz p1, :cond_127
+    if-eqz p1, :cond_3
 
-    goto :goto_128
+    goto :goto_0
 
-    :cond_127
+    :cond_3
     move v0, v1
 
-    :goto_128
+    :goto_0
     return v0
 
-    :cond_129
-    :goto_129
+    :cond_4
+    :goto_1
     return v1
 .end method
 
 .method public getPixelCount()I
-    .registers 4
+    .locals 3
 
     .line 1186
     iget v0, p0, Landroidx/media3/common/Format;->width:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_1
 
     iget v2, p0, Landroidx/media3/common/Format;->height:I
 
-    if-ne v2, v1, :cond_a
+    if-ne v2, v1, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     mul-int v1, v0, v2
 
-    :cond_c
-    :goto_c
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 1223
     iget v0, p0, Landroidx/media3/common/Format;->hashCode:I
 
-    if-nez v0, :cond_e9
+    if-nez v0, :cond_8
 
     .line 1226
     iget-object v0, p0, Landroidx/media3/common/Format;->id:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_f
+    :goto_0
     const/16 v2, 0x20f
 
     add-int/2addr v2, v0
@@ -2606,18 +2606,18 @@
     .line 1227
     iget-object v0, p0, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     move v0, v1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_1e
+    :goto_1
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2636,18 +2636,18 @@
     .line 1229
     iget-object v0, p0, Landroidx/media3/common/Format;->language:Ljava/lang/String;
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     move v0, v1
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_30
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_34
+    :goto_2
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2683,18 +2683,18 @@
     .line 1234
     iget-object v0, p0, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-nez v0, :cond_51
+    if-nez v0, :cond_3
 
     move v0, v1
 
-    goto :goto_55
+    goto :goto_3
 
-    :cond_51
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_55
+    :goto_3
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2702,18 +2702,18 @@
     .line 1235
     iget-object v0, p0, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-nez v0, :cond_5e
+    if-nez v0, :cond_4
 
     move v0, v1
 
-    goto :goto_62
+    goto :goto_4
 
-    :cond_5e
+    :cond_4
     invoke-virtual {v0}, Landroidx/media3/common/Metadata;->hashCode()I
 
     move-result v0
 
-    :goto_62
+    :goto_4
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2721,18 +2721,18 @@
     .line 1236
     iget-object v0, p0, Landroidx/media3/common/Format;->customData:Ljava/lang/Object;
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_5
 
     move v0, v1
 
-    goto :goto_6f
+    goto :goto_5
 
-    :cond_6b
+    :cond_5
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_6f
+    :goto_5
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2740,18 +2740,18 @@
     .line 1238
     iget-object v0, p0, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
 
-    if-nez v0, :cond_78
+    if-nez v0, :cond_6
 
     move v0, v1
 
-    goto :goto_7c
+    goto :goto_6
 
-    :cond_78
+    :cond_6
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_7c
+    :goto_6
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2759,16 +2759,16 @@
     .line 1240
     iget-object v0, p0, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-nez v0, :cond_84
+    if-nez v0, :cond_7
 
-    goto :goto_88
+    goto :goto_7
 
-    :cond_84
+    :cond_7
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_88
+    :goto_7
     add-int/2addr v2, v1
 
     mul-int/lit8 v2, v2, 0x1f
@@ -2904,14 +2904,14 @@
     iput v2, p0, Landroidx/media3/common/Format;->hashCode:I
 
     .line 1269
-    :cond_e9
+    :cond_8
     iget v0, p0, Landroidx/media3/common/Format;->hashCode:I
 
     return v0
 .end method
 
 .method public initializationDataEquals(Landroidx/media3/common/Format;)Z
-    .registers 6
+    .locals 4
 
     .line 1331
     iget-object v0, p0, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
@@ -2928,22 +2928,22 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     return v2
 
-    :cond_10
+    :cond_0
     move v0, v2
 
     .line 1334
-    :goto_11
+    :goto_0
     iget-object v1, p0, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_33
+    if-ge v0, v1, :cond_2
 
     .line 1335
     iget-object v1, p0, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
@@ -2966,23 +2966,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_30
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_33
+    :cond_2
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -2997,7 +2997,7 @@
 .end method
 
 .method public toBundle(Z)Landroid/os/Bundle;
-    .registers 6
+    .locals 4
 
     .line 1471
     new-instance v0, Landroid/os/Bundle;
@@ -3077,7 +3077,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez p1, :cond_56
+    if-nez p1, :cond_0
 
     .line 1484
     sget-object p1, Landroidx/media3/common/Format;->FIELD_METADATA:Ljava/lang/String;
@@ -3087,7 +3087,7 @@
     invoke-virtual {v0, p1, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 1487
-    :cond_56
+    :cond_0
     sget-object p1, Landroidx/media3/common/Format;->FIELD_CONTAINER_MIME_TYPE:Ljava/lang/String;
 
     iget-object v1, p0, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
@@ -3111,14 +3111,14 @@
     const/4 p1, 0x0
 
     .line 1491
-    :goto_6c
+    :goto_0
     iget-object v1, p0, Landroidx/media3/common/Format;->initializationData:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge p1, v1, :cond_86
+    if-ge p1, v1, :cond_1
 
     .line 1492
     invoke-static {p1}, Landroidx/media3/common/Format;->keyForInitializationData(I)Ljava/lang/String;
@@ -3137,10 +3137,10 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_6c
+    goto :goto_0
 
     .line 1496
-    :cond_86
+    :cond_1
     sget-object p1, Landroidx/media3/common/Format;->FIELD_DRM_INIT_DATA:Ljava/lang/String;
 
     iget-object v1, p0, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
@@ -3206,7 +3206,7 @@
     .line 1506
     iget-object p1, p0, Landroidx/media3/common/Format;->colorInfo:Landroidx/media3/common/ColorInfo;
 
-    if-eqz p1, :cond_d2
+    if-eqz p1, :cond_2
 
     .line 1507
     sget-object v1, Landroidx/media3/common/Format;->FIELD_COLOR_INFO:Ljava/lang/String;
@@ -3218,7 +3218,7 @@
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 1510
-    :cond_d2
+    :cond_2
     sget-object p1, Landroidx/media3/common/Format;->FIELD_CHANNEL_COUNT:Ljava/lang/String;
 
     iget v1, p0, Landroidx/media3/common/Format;->channelCount:I
@@ -3285,7 +3285,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1191
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3440,14 +3440,14 @@
 .end method
 
 .method public withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 16
+    .locals 14
 
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     return-object p0
 
     .line 1108
-    :cond_3
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
     invoke-static {v0}, Landroidx/media3/common/MimeTypes;->getTrackType(Ljava/lang/String;)I
@@ -3466,73 +3466,73 @@
     .line 1116
     iget-object v4, p1, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     iget-object v4, p0, Landroidx/media3/common/Format;->label:Ljava/lang/String;
 
     .line 1117
-    :goto_16
+    :goto_0
     iget-object v5, p1, Landroidx/media3/common/Format;->labels:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_21
+    if-nez v5, :cond_2
 
     iget-object v5, p1, Landroidx/media3/common/Format;->labels:Ljava/util/List;
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_21
+    :cond_2
     iget-object v5, p0, Landroidx/media3/common/Format;->labels:Ljava/util/List;
 
     .line 1118
-    :goto_23
+    :goto_1
     iget-object v6, p0, Landroidx/media3/common/Format;->language:Ljava/lang/String;
 
     const/4 v7, 0x3
 
     const/4 v8, 0x1
 
-    if-eq v0, v7, :cond_2b
+    if-eq v0, v7, :cond_3
 
-    if-ne v0, v8, :cond_30
+    if-ne v0, v8, :cond_4
 
     .line 1119
-    :cond_2b
+    :cond_3
     iget-object v7, p1, Landroidx/media3/common/Format;->language:Ljava/lang/String;
 
-    if-eqz v7, :cond_30
+    if-eqz v7, :cond_4
 
     move-object v6, v7
 
     .line 1126
-    :cond_30
+    :cond_4
     iget v7, p0, Landroidx/media3/common/Format;->averageBitrate:I
 
     const/4 v9, -0x1
 
-    if-ne v7, v9, :cond_37
+    if-ne v7, v9, :cond_5
 
     iget v7, p1, Landroidx/media3/common/Format;->averageBitrate:I
 
     .line 1127
-    :cond_37
+    :cond_5
     iget v10, p0, Landroidx/media3/common/Format;->peakBitrate:I
 
-    if-ne v10, v9, :cond_3d
+    if-ne v10, v9, :cond_6
 
     iget v10, p1, Landroidx/media3/common/Format;->peakBitrate:I
 
     .line 1128
-    :cond_3d
+    :cond_6
     iget-object v9, p0, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-nez v9, :cond_4f
+    if-nez v9, :cond_7
 
     .line 1132
     iget-object v11, p1, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
@@ -3548,23 +3548,23 @@
 
     array-length v12, v12
 
-    if-ne v12, v8, :cond_4f
+    if-ne v12, v8, :cond_7
 
     move-object v9, v11
 
     .line 1140
-    :cond_4f
+    :cond_7
     iget-object v8, p0, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-nez v8, :cond_56
+    if-nez v8, :cond_8
 
     .line 1141
     iget-object v8, p1, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    goto :goto_5c
+    goto :goto_2
 
     .line 1142
-    :cond_56
+    :cond_8
     iget-object v11, p1, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
     invoke-virtual {v8, v11}, Landroidx/media3/common/Metadata;->copyWithAppendedEntriesFrom(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Metadata;
@@ -3572,24 +3572,24 @@
     move-result-object v8
 
     .line 1144
-    :goto_5c
+    :goto_2
     iget v11, p0, Landroidx/media3/common/Format;->frameRate:F
 
     const/high16 v12, -0x40800000    # -1.0f
 
     cmpl-float v12, v11, v12
 
-    if-nez v12, :cond_69
+    if-nez v12, :cond_9
 
     const/4 v12, 0x2
 
-    if-ne v0, v12, :cond_69
+    if-ne v0, v12, :cond_9
 
     .line 1146
     iget v11, p1, Landroidx/media3/common/Format;->frameRate:F
 
     .line 1150
-    :cond_69
+    :cond_9
     iget v0, p0, Landroidx/media3/common/Format;->selectionFlags:I
 
     iget v12, p1, Landroidx/media3/common/Format;->selectionFlags:I

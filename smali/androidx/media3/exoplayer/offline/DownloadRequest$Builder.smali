@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/net/Uri;)V
-    .registers 3
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/offline/DownloadRequest;
-    .registers 11
+    .locals 10
 
     .line 98
     new-instance v9, Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -71,16 +71,16 @@
     .line 102
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->streamKeys:Ljava/util/List;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    :goto_11
+    :goto_0
     move-object v4, v0
 
     iget-object v5, p0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->keySetId:[B
@@ -99,7 +99,7 @@
 .end method
 
 .method public setCustomCacheKey(Ljava/lang/String;)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
-    .registers 2
+    .locals 0
 
     .line 86
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->customCacheKey:Ljava/lang/String;
@@ -108,7 +108,7 @@
 .end method
 
 .method public setData([B)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
-    .registers 2
+    .locals 0
 
     .line 93
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->data:[B
@@ -117,7 +117,7 @@
 .end method
 
 .method public setKeySetId([B)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
-    .registers 2
+    .locals 0
 
     .line 79
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->keySetId:[B
@@ -126,7 +126,7 @@
 .end method
 
 .method public setMimeType(Ljava/lang/String;)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
-    .registers 2
+    .locals 0
 
     .line 65
     invoke-static {p1}, Landroidx/media3/common/MimeTypes;->normalizeMimeType(Ljava/lang/String;)Ljava/lang/String;
@@ -139,7 +139,7 @@
 .end method
 
 .method public setStreamKeys(Ljava/util/List;)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

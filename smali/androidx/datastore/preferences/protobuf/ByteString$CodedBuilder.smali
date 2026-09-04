@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 1167
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method synthetic constructor <init>(ILandroidx/datastore/preferences/protobuf/ByteString$1;)V
-    .registers 3
+    .locals 0
 
     .line 1163
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/ByteString$CodedBuilder;-><init>(I)V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public build()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 2
 
     .line 1173
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$CodedBuilder;->output:Landroidx/datastore/preferences/protobuf/CodedOutputStream;
@@ -72,7 +72,7 @@
 .end method
 
 .method public getCodedOutput()Landroidx/datastore/preferences/protobuf/CodedOutputStream;
-    .registers 2
+    .locals 1
 
     .line 1182
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$CodedBuilder;->output:Landroidx/datastore/preferences/protobuf/CodedOutputStream;

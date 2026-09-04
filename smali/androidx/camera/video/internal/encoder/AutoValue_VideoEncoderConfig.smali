@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;Landroid/util/Size;ILandroidx/camera/video/internal/encoder/VideoEncoderDataSpace;III)V
-    .registers 10
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/VideoEncoderConfig;-><init>()V
@@ -69,7 +69,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;Landroid/util/Size;ILandroidx/camera/video/internal/encoder/VideoEncoderDataSpace;IIILandroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig$1;)V
-    .registers 11
+    .locals 0
 
     .line 10
     invoke-direct/range {p0 .. p9}, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;-><init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;Landroid/util/Size;ILandroidx/camera/video/internal/encoder/VideoEncoderDataSpace;III)V
@@ -80,21 +80,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 120
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_2
 
     .line 121
     check-cast p1, Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
@@ -110,7 +110,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->profile:I
 
@@ -119,7 +119,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_64
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->inputTimebase:Landroidx/camera/core/impl/Timebase;
 
@@ -132,7 +132,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->resolution:Landroid/util/Size;
 
@@ -145,7 +145,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->colorFormat:I
 
@@ -154,7 +154,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_64
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->dataSpace:Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
 
@@ -167,7 +167,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->frameRate:I
 
@@ -176,7 +176,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_64
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->IFrameInterval:I
 
@@ -185,7 +185,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_64
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->bitrate:I
 
@@ -194,22 +194,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_64
+    if-ne v1, p1, :cond_1
 
-    goto :goto_65
+    goto :goto_0
 
-    :cond_64
+    :cond_1
     move v0, v2
 
-    :goto_65
+    :goto_0
     return v0
 
-    :cond_66
+    :cond_2
     return v2
 .end method
 
 .method public getBitrate()I
-    .registers 2
+    .locals 1
 
     .line 97
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->bitrate:I
@@ -218,7 +218,7 @@
 .end method
 
 .method public getColorFormat()I
-    .registers 2
+    .locals 1
 
     .line 76
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->colorFormat:I
@@ -227,7 +227,7 @@
 .end method
 
 .method public getDataSpace()Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
-    .registers 2
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->dataSpace:Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
@@ -236,7 +236,7 @@
 .end method
 
 .method public getFrameRate()I
-    .registers 2
+    .locals 1
 
     .line 87
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->frameRate:I
@@ -245,7 +245,7 @@
 .end method
 
 .method public getIFrameInterval()I
-    .registers 2
+    .locals 1
 
     .line 92
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->IFrameInterval:I
@@ -254,7 +254,7 @@
 .end method
 
 .method public getInputTimebase()Landroidx/camera/core/impl/Timebase;
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->inputTimebase:Landroidx/camera/core/impl/Timebase;
@@ -263,7 +263,7 @@
 .end method
 
 .method public getMimeType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->mimeType:Ljava/lang/String;
@@ -272,7 +272,7 @@
 .end method
 
 .method public getProfile()I
-    .registers 2
+    .locals 1
 
     .line 59
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->profile:I
@@ -281,7 +281,7 @@
 .end method
 
 .method public getResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->resolution:Landroid/util/Size;
@@ -290,7 +290,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 139
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderConfig;->mimeType:Ljava/lang/String;
@@ -375,7 +375,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 102
     new-instance v0, Ljava/lang/StringBuilder;

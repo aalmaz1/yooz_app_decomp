@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/audio/AudioOffloadSupport;)V
-    .registers 3
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 31
     iget-boolean p0, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isFormatSupported:Z
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 31
     iget-boolean p0, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isGaplessSupported:Z
@@ -75,7 +75,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;)Z
-    .registers 1
+    .locals 0
 
     .line 31
     iget-boolean p0, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isSpeedChangeSupported:Z
@@ -86,25 +86,25 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
-    .registers 3
+    .locals 2
 
     .line 89
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isFormatSupported:Z
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isGaplessSupported:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isSpeedChangeSupported:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 90
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Secondary offload attribute fields are true but primary isFormatSupported is false"
@@ -114,8 +114,8 @@
     throw v0
 
     .line 93
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     new-instance v0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
 
     const/4 v1, 0x0
@@ -126,7 +126,7 @@
 .end method
 
 .method public setIsFormatSupported(Z)Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;
-    .registers 2
+    .locals 0
 
     .line 56
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isFormatSupported:Z
@@ -135,7 +135,7 @@
 .end method
 
 .method public setIsGaplessSupported(Z)Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;
-    .registers 2
+    .locals 0
 
     .line 67
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isGaplessSupported:Z
@@ -144,7 +144,7 @@
 .end method
 
 .method public setIsSpeedChangeSupported(Z)Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;
-    .registers 2
+    .locals 0
 
     .line 78
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/AudioOffloadSupport$Builder;->isSpeedChangeSupported:Z

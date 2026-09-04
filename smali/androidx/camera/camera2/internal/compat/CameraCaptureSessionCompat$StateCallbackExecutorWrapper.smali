@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
-    .registers 3
+    .locals 0
 
     .line 377
     invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method synthetic lambda$onActive$3$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 399
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -50,7 +50,7 @@
 .end method
 
 .method synthetic lambda$onCaptureQueueEmpty$4$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 406
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -61,7 +61,7 @@
 .end method
 
 .method synthetic lambda$onClosed$5$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 412
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -72,7 +72,7 @@
 .end method
 
 .method synthetic lambda$onConfigureFailed$1$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 389
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -83,7 +83,7 @@
 .end method
 
 .method synthetic lambda$onConfigured$0$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 384
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -94,7 +94,7 @@
 .end method
 
 .method synthetic lambda$onReady$2$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 394
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -105,7 +105,7 @@
 .end method
 
 .method synthetic lambda$onSurfacePrepared$6$androidx-camera-camera2-internal-compat-CameraCaptureSessionCompat$StateCallbackExecutorWrapper(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
-    .registers 4
+    .locals 1
 
     .line 419
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mWrappedCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -116,7 +116,7 @@
 .end method
 
 .method public onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 399
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -131,7 +131,7 @@
 .end method
 
 .method public onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 405
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -146,7 +146,7 @@
 .end method
 
 .method public onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 412
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -161,7 +161,7 @@
 .end method
 
 .method public onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 389
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -176,7 +176,7 @@
 .end method
 
 .method public onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 384
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -191,7 +191,7 @@
 .end method
 
 .method public onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 4
+    .locals 2
 
     .line 394
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;
@@ -206,7 +206,7 @@
 .end method
 
 .method public onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
-    .registers 5
+    .locals 2
 
     .line 419
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCaptureSessionCompat$StateCallbackExecutorWrapper;->mExecutor:Ljava/util/concurrent/Executor;

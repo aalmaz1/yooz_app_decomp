@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/common/PriorityTaskManager;I)V
-    .registers 4
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public bridge synthetic createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 45
     invoke-virtual {p0}, Landroidx/media3/datasource/PriorityDataSource$Factory;->createDataSource()Landroidx/media3/datasource/PriorityDataSource;
@@ -58,7 +58,7 @@
 .end method
 
 .method public createDataSource()Landroidx/media3/datasource/PriorityDataSource;
-    .registers 5
+    .locals 4
 
     .line 72
     new-instance v0, Landroidx/media3/datasource/PriorityDataSource;

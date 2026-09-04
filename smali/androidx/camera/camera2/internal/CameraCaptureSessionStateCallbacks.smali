@@ -14,7 +14,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method public static createComboCallback(Ljava/util/List;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,7 +39,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 54
     invoke-static {}, Landroidx/camera/camera2/internal/CameraCaptureSessionStateCallbacks;->createNoOpCallback()Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -49,14 +49,14 @@
     return-object p0
 
     .line 55
-    :cond_b
+    :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_1
 
     const/4 v0, 0x0
 
@@ -70,7 +70,7 @@
     return-object p0
 
     .line 58
-    :cond_1a
+    :cond_1
     new-instance v0, Landroidx/camera/camera2/internal/CameraCaptureSessionStateCallbacks$ComboSessionStateCallback;
 
     invoke-direct {v0, p0}, Landroidx/camera/camera2/internal/CameraCaptureSessionStateCallbacks$ComboSessionStateCallback;-><init>(Ljava/util/List;)V
@@ -79,7 +79,7 @@
 .end method
 
 .method public static varargs createComboCallback([Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-    .registers 1
+    .locals 0
 
     .line 67
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -94,7 +94,7 @@
 .end method
 
 .method public static createNoOpCallback()Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-    .registers 1
+    .locals 1
 
     .line 44
     new-instance v0, Landroidx/camera/camera2/internal/CameraCaptureSessionStateCallbacks$NoOpSessionStateCallback;

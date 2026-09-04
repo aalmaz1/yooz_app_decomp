@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1018
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$1;)V
-    .registers 2
+    .locals 0
 
     .line 1018
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$FakeMediaSource;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 5
+    .locals 0
 
     .line 1042
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -47,7 +47,7 @@
 .end method
 
 .method public getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     .line 1027
     invoke-static {}, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource;->access$100()Landroidx/media3/common/MediaItem;
@@ -58,25 +58,25 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

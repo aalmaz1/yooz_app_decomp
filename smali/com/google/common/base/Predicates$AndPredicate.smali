@@ -49,7 +49,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -79,7 +79,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/util/List;Lcom/google/common/base/Predicates$1;)V
-    .registers 3
+    .locals 0
 
     .line 353
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$AndPredicate;-><init>(Ljava/util/List;)V
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -115,14 +115,14 @@
     move v1, v0
 
     .line 364
-    :goto_2
+    :goto_0
     iget-object v2, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_1
 
     .line 365
     iget-object v2, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
@@ -137,23 +137,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_19
+    if-nez v2, :cond_0
 
     return v0
 
-    :cond_19
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -170,7 +170,7 @@
     .line 380
     instance-of v0, p1, Lcom/google/common/base/Predicates$AndPredicate;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 381
     check-cast p1, Lcom/google/common/base/Predicates$AndPredicate;
@@ -186,14 +186,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 375
     iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
@@ -210,7 +210,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const-string v0, "and"
 

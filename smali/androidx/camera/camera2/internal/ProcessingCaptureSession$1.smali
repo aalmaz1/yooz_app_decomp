@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/ProcessingCaptureSession;)V
-    .registers 2
+    .locals 0
 
     .line 254
     iput-object p1, p0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$1;->this$0:Landroidx/camera/camera2/internal/ProcessingCaptureSession;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "ProcessingCaptureSession"
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 254
     check-cast p1, Ljava/lang/Void;
@@ -81,7 +81,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

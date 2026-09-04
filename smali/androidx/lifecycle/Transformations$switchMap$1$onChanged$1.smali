@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/MediatorLiveData;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 133
     invoke-virtual {p0, p1}, Landroidx/lifecycle/Transformations$switchMap$1$onChanged$1;->invoke(Ljava/lang/Object;)V
@@ -95,7 +95,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TY;)V"

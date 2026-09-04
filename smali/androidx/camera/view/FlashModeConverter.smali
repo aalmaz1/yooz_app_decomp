@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,24 +14,24 @@
 .end method
 
 .method public static nameOf(I)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
-    if-eqz p0, :cond_23
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-ne p0, v0, :cond_b
+    if-ne p0, v0, :cond_0
 
     const-string p0, "OFF"
 
     return-object p0
 
     .line 77
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -52,21 +52,21 @@
 
     throw v0
 
-    :cond_20
+    :cond_1
     const-string p0, "ON"
 
     return-object p0
 
-    :cond_23
+    :cond_2
     const-string p0, "AUTO"
 
     return-object p0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)I
-    .registers 6
+    .locals 5
 
-    if-eqz p0, :cond_4c
+    if-eqz p0, :cond_3
 
     .line 49
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -83,58 +83,58 @@
 
     const/4 v4, -0x1
 
-    sparse-switch v0, :sswitch_data_54
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :sswitch_11
+    :sswitch_0
     const-string v0, "AUTO"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move v4, v1
 
-    goto :goto_31
+    goto :goto_0
 
-    :sswitch_1c
+    :sswitch_1
     const-string v0, "OFF"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     move v4, v2
 
-    goto :goto_31
+    goto :goto_0
 
-    :sswitch_27
+    :sswitch_2
     const-string v0, "ON"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     move v4, v3
 
-    :goto_31
-    packed-switch v4, :pswitch_data_62
+    :goto_0
+    packed-switch v4, :pswitch_data_0
 
     .line 57
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -157,17 +157,17 @@
 
     throw v0
 
-    :pswitch_49
+    :pswitch_0
     return v3
 
-    :pswitch_4a
+    :pswitch_1
     return v1
 
-    :pswitch_4b
+    :pswitch_2
     return v2
 
     .line 46
-    :cond_4c
+    :cond_3
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string v0, "name cannot be null"
@@ -176,17 +176,17 @@
 
     throw p0
 
-    :sswitch_data_54
+    :sswitch_data_0
     .sparse-switch
-        0x9df -> :sswitch_27
-        0x1314f -> :sswitch_1c
-        0x1ed5af -> :sswitch_11
+        0x9df -> :sswitch_2
+        0x1314f -> :sswitch_1
+        0x1ed5af -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_62
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4b
-        :pswitch_4a
-        :pswitch_49
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

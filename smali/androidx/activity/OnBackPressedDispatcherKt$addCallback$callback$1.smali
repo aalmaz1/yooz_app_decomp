@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(ZLkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public handleOnBackPressed()V
-    .registers 2
+    .locals 1
 
     .line 423
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcherKt$addCallback$callback$1;->$onBackPressed:Lkotlin/jvm/functions/Function1;

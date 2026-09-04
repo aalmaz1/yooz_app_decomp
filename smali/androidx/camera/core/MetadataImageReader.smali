@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 127
     invoke-static {p1, p2, p3, p4}, Landroidx/camera/core/MetadataImageReader;->createImageReaderProxy(IIII)Landroidx/camera/core/impl/ImageReaderProxy;
@@ -86,7 +86,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 4
+    .locals 2
 
     .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -162,7 +162,7 @@
 .end method
 
 .method private static createImageReaderProxy(IIII)Landroidx/camera/core/impl/ImageReaderProxy;
-    .registers 5
+    .locals 1
 
     .line 137
     new-instance v0, Landroidx/camera/core/AndroidImageReaderProxy;
@@ -178,7 +178,7 @@
 .end method
 
 .method private dequeImageProxy(Landroidx/camera/core/ImageProxy;)V
-    .registers 5
+    .locals 3
 
     .line 311
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -186,14 +186,14 @@
     monitor-enter v0
 
     .line 312
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result v1
 
-    if-ltz v1, :cond_18
+    if-ltz v1, :cond_0
 
     .line 314
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
@@ -203,7 +203,7 @@
     .line 315
     iget v2, p0, Landroidx/camera/core/MetadataImageReader;->mImageProxiesIndex:I
 
-    if-gt v1, v2, :cond_18
+    if-gt v1, v2, :cond_0
 
     add-int/lit8 v2, v2, -0x1
 
@@ -211,7 +211,7 @@
     iput v2, p0, Landroidx/camera/core/MetadataImageReader;->mImageProxiesIndex:I
 
     .line 319
-    :cond_18
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mAcquiredImageProxies:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -219,7 +219,7 @@
     .line 323
     iget p1, p0, Landroidx/camera/core/MetadataImageReader;->mUnAcquiredAvailableImageCount:I
 
-    if-lez p1, :cond_26
+    if-lez p1, :cond_1
 
     .line 324
     iget-object p1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -227,23 +227,23 @@
     invoke-virtual {p0, p1}, Landroidx/camera/core/MetadataImageReader;->imageIncoming(Landroidx/camera/core/impl/ImageReaderProxy;)V
 
     .line 326
-    :cond_26
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_2a
-    .catchall {:try_start_3 .. :try_end_2a} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private enqueueImageProxy(Landroidx/camera/core/SettableImageProxy;)V
-    .registers 5
+    .locals 3
 
     .line 288
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -251,7 +251,7 @@
     monitor-enter v0
 
     .line 289
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -262,7 +262,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_0
 
     .line 290
     invoke-virtual {p1, p0}, Landroidx/camera/core/SettableImageProxy;->addOnImageCloseListener(Landroidx/camera/core/ForwardingImageProxy$OnImageCloseListener;)V
@@ -278,9 +278,9 @@
     .line 293
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mExecutor:Ljava/util/concurrent/Executor;
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const-string v1, "TAG"
 
     const-string v2, "Maximum image number reached."
@@ -296,14 +296,14 @@
     move-object v1, p1
 
     .line 300
-    :goto_28
+    :goto_0
     monitor-exit v0
-    :try_end_29
-    .catchall {:try_start_3 .. :try_end_29} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     .line 303
     new-instance v0, Landroidx/camera/core/MetadataImageReader$$ExternalSyntheticLambda0;
@@ -312,30 +312,30 @@
 
     invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_39
+    goto :goto_1
 
     .line 305
-    :cond_36
+    :cond_1
     invoke-interface {p1, p0}, Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;->onImageAvailable(Landroidx/camera/core/impl/ImageReaderProxy;)V
 
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_1
     return-void
 
-    :catchall_3a
+    :catchall_0
     move-exception p1
 
     .line 300
-    :try_start_3b
+    :try_start_1
     monitor-exit v0
-    :try_end_3c
-    .catchall {:try_start_3b .. :try_end_3c} :catchall_3a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method private matchImages()V
-    .registers 8
+    .locals 7
 
     .line 439
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -343,7 +343,7 @@
     monitor-enter v0
 
     .line 441
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
 
     invoke-virtual {v1}, Landroid/util/LongSparseArray;->size()I
@@ -352,8 +352,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_b
-    if-ltz v1, :cond_38
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 442
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
@@ -378,7 +378,7 @@
 
     check-cast v5, Landroidx/camera/core/ImageProxy;
 
-    if-eqz v5, :cond_35
+    if-eqz v5, :cond_0
 
     .line 448
     iget-object v6, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
@@ -397,13 +397,13 @@
 
     invoke-direct {p0, v3}, Landroidx/camera/core/MetadataImageReader;->enqueueImageProxy(Landroidx/camera/core/SettableImageProxy;)V
 
-    :cond_35
+    :cond_0
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 456
-    :cond_38
+    :cond_1
     invoke-direct {p0}, Landroidx/camera/core/MetadataImageReader;->removeStaleData()V
 
     .line 457
@@ -411,18 +411,18 @@
 
     return-void
 
-    :catchall_3d
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_3f
-    .catchall {:try_start_3 .. :try_end_3f} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private removeStaleData()V
-    .registers 11
+    .locals 10
 
     .line 405
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -430,14 +430,14 @@
     monitor-enter v0
 
     .line 407
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
 
     invoke-virtual {v1}, Landroid/util/LongSparseArray;->size()I
 
     move-result v1
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_6
 
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
 
@@ -445,12 +445,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
-    goto/16 :goto_8c
+    goto/16 :goto_2
 
     .line 411
-    :cond_15
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
 
     const/4 v2, 0x0
@@ -481,11 +481,11 @@
 
     const/4 v5, 0x1
 
-    if-nez v4, :cond_32
+    if-nez v4, :cond_1
 
     move v2, v5
 
-    :cond_32
+    :cond_1
     invoke-static {v2}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 418
@@ -499,7 +499,7 @@
 
     cmp-long v2, v6, v8
 
-    if-lez v2, :cond_6b
+    if-lez v2, :cond_3
 
     .line 419
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
@@ -510,8 +510,8 @@
 
     sub-int/2addr v1, v5
 
-    :goto_48
-    if-ltz v1, :cond_8a
+    :goto_0
+    if-ltz v1, :cond_5
 
     .line 420
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
@@ -526,7 +526,7 @@
 
     cmp-long v2, v4, v6
 
-    if-gez v2, :cond_68
+    if-gez v2, :cond_2
 
     .line 421
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
@@ -545,13 +545,13 @@
 
     invoke-virtual {v2, v1}, Landroid/util/LongSparseArray;->removeAt(I)V
 
-    :cond_68
+    :cond_2
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_48
+    goto :goto_0
 
     .line 427
-    :cond_6b
+    :cond_3
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
 
     invoke-virtual {v2}, Landroid/util/LongSparseArray;->size()I
@@ -560,8 +560,8 @@
 
     sub-int/2addr v2, v5
 
-    :goto_72
-    if-ltz v2, :cond_8a
+    :goto_1
+    if-ltz v2, :cond_5
 
     .line 428
     iget-object v3, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
@@ -576,38 +576,38 @@
 
     cmp-long v3, v3, v5
 
-    if-gez v3, :cond_87
+    if-gez v3, :cond_4
 
     .line 429
     iget-object v3, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
 
     invoke-virtual {v3, v2}, Landroid/util/LongSparseArray;->removeAt(I)V
 
-    :cond_87
+    :cond_4
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_72
+    goto :goto_1
 
     .line 434
-    :cond_8a
+    :cond_5
     monitor-exit v0
 
     return-void
 
     .line 408
-    :cond_8c
-    :goto_8c
+    :cond_6
+    :goto_2
     monitor-exit v0
 
     return-void
 
-    :catchall_8e
+    :catchall_0
     move-exception v1
 
     .line 434
     monitor-exit v0
-    :try_end_90
-    .catchall {:try_start_3 .. :try_end_90} :catchall_8e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
@@ -615,7 +615,7 @@
 
 # virtual methods
 .method public acquireLatestImage()Landroidx/camera/core/ImageProxy;
-    .registers 6
+    .locals 5
 
     .line 156
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -623,14 +623,14 @@
     monitor-enter v0
 
     .line 157
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 158
     monitor-exit v0
@@ -640,7 +640,7 @@
     return-object v0
 
     .line 160
-    :cond_e
+    :cond_0
     iget v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageProxiesIndex:I
 
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
@@ -649,7 +649,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_73
+    if-ge v1, v2, :cond_4
 
     .line 165
     new-instance v1, Ljava/util/ArrayList;
@@ -659,7 +659,7 @@
     const/4 v2, 0x0
 
     .line 166
-    :goto_1e
+    :goto_0
     iget-object v3, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -668,7 +668,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    if-ge v2, v3, :cond_44
+    if-ge v2, v3, :cond_2
 
     .line 167
     iget-object v3, p0, Landroidx/camera/core/MetadataImageReader;->mAcquiredImageProxies:Ljava/util/List;
@@ -683,7 +683,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_1
 
     .line 168
     iget-object v3, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
@@ -696,23 +696,23 @@
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_41
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 171
-    :cond_44
+    :cond_2
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_48
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_58
+    if-eqz v2, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -723,10 +723,10 @@
     .line 172
     invoke-interface {v2}, Landroidx/camera/core/ImageProxy;->close()V
 
-    goto :goto_48
+    goto :goto_1
 
     .line 176
-    :cond_58
+    :cond_3
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -759,7 +759,7 @@
     return-object v1
 
     .line 161
-    :cond_73
+    :cond_4
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Maximum image number reached."
@@ -768,19 +768,19 @@
 
     throw v1
 
-    :catchall_7b
+    :catchall_0
     move-exception v1
 
     .line 181
     monitor-exit v0
-    :try_end_7d
-    .catchall {:try_start_3 .. :try_end_7d} :catchall_7b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public acquireNextImage()Landroidx/camera/core/ImageProxy;
-    .registers 5
+    .locals 4
 
     .line 187
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -788,14 +788,14 @@
     monitor-enter v0
 
     .line 188
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 189
     monitor-exit v0
@@ -805,7 +805,7 @@
     return-object v0
 
     .line 192
-    :cond_e
+    :cond_0
     iget v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageProxiesIndex:I
 
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
@@ -814,7 +814,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_2d
+    if-ge v1, v2, :cond_1
 
     .line 197
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
@@ -842,7 +842,7 @@
     return-object v1
 
     .line 193
-    :cond_2d
+    :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Maximum image number reached."
@@ -851,19 +851,19 @@
 
     throw v1
 
-    :catchall_35
+    :catchall_0
     move-exception v1
 
     .line 201
     monitor-exit v0
-    :try_end_37
-    .catchall {:try_start_3 .. :try_end_37} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public clearOnImageAvailableListener()V
-    .registers 3
+    .locals 2
 
     .line 270
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -871,7 +871,7 @@
     monitor-enter v0
 
     .line 271
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->clearOnImageAvailableListener()V
@@ -894,18 +894,18 @@
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public close()V
-    .registers 4
+    .locals 3
 
     .line 206
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -913,10 +913,10 @@
     monitor-enter v0
 
     .line 207
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/MetadataImageReader;->mClosed:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 208
     monitor-exit v0
@@ -924,7 +924,7 @@
     return-void
 
     .line 211
-    :cond_9
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
@@ -936,12 +936,12 @@
 
     move-result-object v1
 
-    :goto_14
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -952,10 +952,10 @@
     .line 213
     invoke-interface {v2}, Landroidx/camera/core/ImageProxy;->close()V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 215
-    :cond_24
+    :cond_1
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mMatchedImageProxies:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
@@ -975,18 +975,18 @@
 
     return-void
 
-    :catchall_33
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_35
-    .catchall {:try_start_3 .. :try_end_35} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getCameraCaptureCallback()Landroidx/camera/core/impl/CameraCaptureCallback;
-    .registers 2
+    .locals 1
 
     .line 332
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mCameraCaptureCallback:Landroidx/camera/core/impl/CameraCaptureCallback;
@@ -995,7 +995,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 3
+    .locals 2
 
     .line 224
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1003,7 +1003,7 @@
     monitor-enter v0
 
     .line 225
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->getHeight()I
@@ -1014,19 +1014,19 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 226
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getImageFormat()I
-    .registers 3
+    .locals 2
 
     .line 238
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1034,7 +1034,7 @@
     monitor-enter v0
 
     .line 239
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->getImageFormat()I
@@ -1045,19 +1045,19 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 240
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getMaxImages()I
-    .registers 3
+    .locals 2
 
     .line 245
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1065,7 +1065,7 @@
     monitor-enter v0
 
     .line 246
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->getMaxImages()I
@@ -1076,19 +1076,19 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 247
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getSurface()Landroid/view/Surface;
-    .registers 3
+    .locals 2
 
     .line 253
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1096,7 +1096,7 @@
     monitor-enter v0
 
     .line 254
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->getSurface()Landroid/view/Surface;
@@ -1107,19 +1107,19 @@
 
     return-object v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 255
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getWidth()I
-    .registers 3
+    .locals 2
 
     .line 231
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1127,7 +1127,7 @@
     monitor-enter v0
 
     .line 232
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mImageReaderProxy:Landroidx/camera/core/impl/ImageReaderProxy;
 
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->getWidth()I
@@ -1138,19 +1138,19 @@
 
     return v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 233
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method imageIncoming(Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 8
+    .locals 6
 
     .line 337
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1158,10 +1158,10 @@
     monitor-enter v0
 
     .line 338
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/MetadataImageReader;->mClosed:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 339
     monitor-exit v0
@@ -1169,7 +1169,7 @@
     return-void
 
     .line 342
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImages:Landroid/util/LongSparseArray;
 
     invoke-virtual {v1}, Landroid/util/LongSparseArray;->size()I
@@ -1189,7 +1189,7 @@
 
     move-result v2
 
-    if-lt v1, v2, :cond_25
+    if-lt v1, v2, :cond_1
 
     const-string p1, "MetadataImageReader"
 
@@ -1200,25 +1200,25 @@
 
     .line 348
     monitor-exit v0
-    :try_end_24
-    .catchall {:try_start_3 .. :try_end_24} :catchall_5e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     return-void
 
     .line 358
-    :cond_25
-    :try_start_25
+    :cond_1
+    :try_start_1
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->acquireNextImage()Landroidx/camera/core/ImageProxy;
 
     move-result-object v2
-    :try_end_29
-    .catch Ljava/lang/IllegalStateException; {:try_start_25 .. :try_end_29} :catch_46
-    .catchall {:try_start_25 .. :try_end_29} :catchall_44
+    :try_end_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v2, :cond_4f
+    if-eqz v2, :cond_2
 
     .line 365
-    :try_start_2b
+    :try_start_2
     iget v3, p0, Landroidx/camera/core/MetadataImageReader;->mUnAcquiredAvailableImageCount:I
 
     add-int/lit8 v3, v3, -0x1
@@ -1242,71 +1242,71 @@
 
     .line 369
     invoke-direct {p0}, Landroidx/camera/core/MetadataImageReader;->matchImages()V
-    :try_end_43
-    .catchall {:try_start_2b .. :try_end_43} :catchall_5e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    goto :goto_4f
+    goto :goto_0
 
-    :catchall_44
+    :catchall_0
     move-exception p1
 
-    goto :goto_5d
+    goto :goto_1
 
-    :catch_46
+    :catch_0
     move-exception v2
 
-    :try_start_47
+    :try_start_3
     const-string v3, "MetadataImageReader"
 
     const-string v4, "Failed to acquire next image."
 
     .line 360
     invoke-static {v3, v4, v2}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_4e
-    .catchall {:try_start_47 .. :try_end_4e} :catchall_44
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     const/4 v2, 0x0
 
-    :cond_4f
-    :goto_4f
-    if-eqz v2, :cond_5b
+    :cond_2
+    :goto_0
+    if-eqz v2, :cond_3
 
     .line 375
-    :try_start_51
+    :try_start_4
     iget v2, p0, Landroidx/camera/core/MetadataImageReader;->mUnAcquiredAvailableImageCount:I
 
-    if-lez v2, :cond_5b
+    if-lez v2, :cond_3
 
     .line 376
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->getMaxImages()I
 
     move-result v2
 
-    if-lt v1, v2, :cond_25
+    if-lt v1, v2, :cond_1
 
     .line 377
-    :cond_5b
+    :cond_3
     monitor-exit v0
 
     return-void
 
     .line 371
-    :goto_5d
+    :goto_1
     throw p1
 
-    :catchall_5e
+    :catchall_1
     move-exception p1
 
     .line 377
     monitor-exit v0
-    :try_end_60
-    .catchall {:try_start_51 .. :try_end_60} :catchall_5e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     throw p1
 .end method
 
 .method synthetic lambda$enqueueImageProxy$1$androidx-camera-core-MetadataImageReader(Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;)V
-    .registers 2
+    .locals 0
 
     .line 303
     invoke-interface {p1, p0}, Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;->onImageAvailable(Landroidx/camera/core/impl/ImageReaderProxy;)V
@@ -1315,7 +1315,7 @@
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-core-MetadataImageReader(Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 4
+    .locals 2
 
     .line 77
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1323,7 +1323,7 @@
     monitor-enter v0
 
     .line 80
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/camera/core/MetadataImageReader;->mUnAcquiredAvailableImageCount:I
 
     add-int/lit8 v1, v1, 0x1
@@ -1332,28 +1332,28 @@
 
     .line 81
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 82
     invoke-virtual {p0, p1}, Landroidx/camera/core/MetadataImageReader;->imageIncoming(Landroidx/camera/core/impl/ImageReaderProxy;)V
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     .line 81
-    :try_start_f
+    :try_start_1
     monitor-exit v0
-    :try_end_10
-    .catchall {:try_start_f .. :try_end_10} :catchall_e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public onImageClose(Landroidx/camera/core/ImageProxy;)V
-    .registers 3
+    .locals 1
 
     .line 280
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1361,7 +1361,7 @@
     monitor-enter v0
 
     .line 281
-    :try_start_3
+    :try_start_0
     invoke-direct {p0, p1}, Landroidx/camera/core/MetadataImageReader;->dequeImageProxy(Landroidx/camera/core/ImageProxy;)V
 
     .line 282
@@ -1369,18 +1369,18 @@
 
     return-void
 
-    :catchall_8
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_3 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method resultIncoming(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 7
+    .locals 5
 
     .line 383
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1388,10 +1388,10 @@
     monitor-enter v0
 
     .line 384
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/MetadataImageReader;->mClosed:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 385
     monitor-exit v0
@@ -1399,7 +1399,7 @@
     return-void
 
     .line 389
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/MetadataImageReader;->mPendingImageInfos:Landroid/util/LongSparseArray;
 
     invoke-interface {p1}, Landroidx/camera/core/impl/CameraCaptureResult;->getTimestamp()J
@@ -1420,18 +1420,18 @@
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_3 .. :try_end_1e} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setOnImageAvailableListener(Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;Ljava/util/concurrent/Executor;)V
-    .registers 5
+    .locals 2
 
     .line 261
     iget-object v0, p0, Landroidx/camera/core/MetadataImageReader;->mLock:Ljava/lang/Object;
@@ -1439,7 +1439,7 @@
     monitor-enter v0
 
     .line 262
-    :try_start_3
+    :try_start_0
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -1469,12 +1469,12 @@
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_3 .. :try_end_1e} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

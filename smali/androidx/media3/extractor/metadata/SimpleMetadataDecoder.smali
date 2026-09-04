@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 
 # virtual methods
 .method public final decode(Landroidx/media3/extractor/metadata/MetadataInputBuffer;)Landroidx/media3/common/Metadata;
-    .registers 4
+    .locals 2
 
     .line 31
     iget-object v0, p1, Landroidx/media3/extractor/metadata/MetadataInputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -35,29 +35,29 @@
 
     move-result v1
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->arrayOffset()I
 
     move-result v1
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v1, 0x0
 
     .line 32
-    :goto_1d
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 34

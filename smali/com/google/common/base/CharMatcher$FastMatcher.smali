@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 944
     invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -51,7 +51,7 @@
 .end method
 
 .method public negate()Lcom/google/common/base/CharMatcher;
-    .registers 2
+    .locals 1
 
     .line 953
     new-instance v0, Lcom/google/common/base/CharMatcher$NegatedFastMatcher;
@@ -62,7 +62,7 @@
 .end method
 
 .method public final precomputed()Lcom/google/common/base/CharMatcher;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method

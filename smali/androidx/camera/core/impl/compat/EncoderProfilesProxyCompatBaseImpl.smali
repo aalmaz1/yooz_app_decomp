@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static from(Landroid/media/CamcorderProfile;)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 4
+    .locals 3
 
     .line 43
     iget v0, p0, Landroid/media/CamcorderProfile;->duration:I
@@ -40,7 +40,7 @@
 .end method
 
 .method private static toAudioProfiles(Landroid/media/CamcorderProfile;)Ljava/util/List;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 .end method
 
 .method private static toVideoProfiles(Landroid/media/CamcorderProfile;)Ljava/util/List;
-    .registers 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

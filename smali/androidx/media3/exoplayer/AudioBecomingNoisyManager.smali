@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroidx/media3/exoplayer/AudioBecomingNoisyManager$EventListener;)V
-    .registers 4
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/AudioBecomingNoisyManager;)Z
-    .registers 1
+    .locals 0
 
     .line 25
     iget-boolean p0, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->receiverRegistered:Z
@@ -56,14 +56,14 @@
 
 # virtual methods
 .method public setEnabled(Z)V
-    .registers 5
+    .locals 3
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 48
     iget-boolean v0, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->receiverRegistered:Z
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 49
     iget-object p1, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->context:Landroid/content/Context;
@@ -83,15 +83,15 @@
     .line 51
     iput-boolean p1, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->receiverRegistered:Z
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_18
-    if-nez p1, :cond_28
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 52
     iget-boolean p1, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->receiverRegistered:Z
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_1
 
     .line 53
     iget-object p1, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->context:Landroid/content/Context;
@@ -105,7 +105,7 @@
     .line 54
     iput-boolean p1, p0, Landroidx/media3/exoplayer/AudioBecomingNoisyManager;->receiverRegistered:Z
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     return-void
 .end method

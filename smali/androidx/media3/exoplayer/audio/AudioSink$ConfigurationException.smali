@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 0
 
     .line 222
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 0
 
     .line 216
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V

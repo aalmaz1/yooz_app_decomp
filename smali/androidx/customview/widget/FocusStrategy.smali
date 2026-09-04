@@ -15,7 +15,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 454
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method private static beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
-    .registers 7
+    .locals 3
 
     .line 243
     invoke-static {p0, p1, p2}, Landroidx/customview/widget/FocusStrategy;->beamsOverlap(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
@@ -38,37 +38,37 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_5
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 257
-    :cond_e
+    :cond_0
     invoke-static {p0, p1, p3}, Landroidx/customview/widget/FocusStrategy;->isToDirectionOf(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_16
+    :cond_1
     const/16 v0, 0x11
 
-    if-eq p0, v0, :cond_2b
+    if-eq p0, v0, :cond_4
 
     const/16 v0, 0x42
 
-    if-ne p0, v0, :cond_1f
+    if-ne p0, v0, :cond_2
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 271
-    :cond_1f
+    :cond_2
     invoke-static {p0, p1, p2}, Landroidx/customview/widget/FocusStrategy;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result p2
@@ -78,24 +78,24 @@
 
     move-result p0
 
-    if-ge p2, p0, :cond_2a
+    if-ge p2, p0, :cond_3
 
     move v2, v1
 
-    :cond_2a
+    :cond_3
     return v2
 
-    :cond_2b
-    :goto_2b
+    :cond_4
+    :goto_0
     return v1
 
-    :cond_2c
-    :goto_2c
+    :cond_5
+    :goto_1
     return v2
 .end method
 
 .method private static beamsOverlap(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
-    .registers 6
+    .locals 3
 
     const/16 v0, 0x11
 
@@ -103,24 +103,24 @@
 
     const/4 v2, 0x0
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x21
 
-    if-eq p0, v0, :cond_1b
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x42
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x82
 
-    if-ne p0, v0, :cond_13
+    if-ne p0, v0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 334
-    :cond_13
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -130,53 +130,53 @@
     throw p0
 
     .line 332
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     iget p0, p2, Landroid/graphics/Rect;->right:I
 
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
-    if-lt p0, v0, :cond_28
+    if-lt p0, v0, :cond_2
 
     iget p0, p2, Landroid/graphics/Rect;->left:I
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    if-gt p0, p1, :cond_28
+    if-gt p0, p1, :cond_2
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
+    :cond_2
     move v1, v2
 
-    :goto_29
+    :goto_1
     return v1
 
     .line 329
-    :cond_2a
+    :cond_3
     iget p0, p2, Landroid/graphics/Rect;->bottom:I
 
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
-    if-lt p0, v0, :cond_37
+    if-lt p0, v0, :cond_4
 
     iget p0, p2, Landroid/graphics/Rect;->top:I
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
-    if-gt p0, p1, :cond_37
+    if-gt p0, p1, :cond_4
 
-    goto :goto_38
+    goto :goto_2
 
-    :cond_37
+    :cond_4
     move v1, v2
 
-    :goto_38
+    :goto_2
     return v1
 .end method
 
 .method public static findNextFocusInAbsoluteDirection(Ljava/lang/Object;Landroidx/customview/widget/FocusStrategy$CollectionAdapter;Landroidx/customview/widget/FocusStrategy$BoundsAdapter;Ljava/lang/Object;Landroid/graphics/Rect;I)Ljava/lang/Object;
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",
@@ -205,19 +205,19 @@
 
     const/4 v2, 0x0
 
-    if-eq p5, v1, :cond_3e
+    if-eq p5, v1, :cond_3
 
     const/16 v1, 0x21
 
-    if-eq p5, v1, :cond_34
+    if-eq p5, v1, :cond_2
 
     const/16 v1, 0x42
 
-    if-eq p5, v1, :cond_29
+    if-eq p5, v1, :cond_1
 
     const/16 v1, 0x82
 
-    if-ne p5, v1, :cond_21
+    if-ne p5, v1, :cond_0
 
     .line 158
     invoke-virtual {p4}, Landroid/graphics/Rect;->height()I
@@ -230,10 +230,10 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    goto :goto_47
+    goto :goto_0
 
     .line 161
-    :cond_21
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -243,7 +243,7 @@
     throw p0
 
     .line 152
-    :cond_29
+    :cond_1
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -254,10 +254,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    goto :goto_47
+    goto :goto_0
 
     .line 155
-    :cond_34
+    :cond_2
     invoke-virtual {p4}, Landroid/graphics/Rect;->height()I
 
     move-result v1
@@ -266,10 +266,10 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    goto :goto_47
+    goto :goto_0
 
     .line 149
-    :cond_3e
+    :cond_3
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -279,7 +279,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
     .line 167
-    :goto_47
+    :goto_0
     invoke-interface {p1, p0}, Landroidx/customview/widget/FocusStrategy$CollectionAdapter;->size(Ljava/lang/Object;)I
 
     move-result v1
@@ -291,20 +291,20 @@
 
     const/4 v4, 0x0
 
-    :goto_51
-    if-ge v2, v1, :cond_6a
+    :goto_1
+    if-ge v2, v1, :cond_6
 
     .line 170
     invoke-interface {p1, p0, v2}, Landroidx/customview/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v5
 
-    if-ne v5, p3, :cond_5a
+    if-ne v5, p3, :cond_4
 
-    goto :goto_67
+    goto :goto_2
 
     .line 176
-    :cond_5a
+    :cond_4
     invoke-interface {p2, v5, v3}, Landroidx/customview/widget/FocusStrategy$BoundsAdapter;->obtainBounds(Ljava/lang/Object;Landroid/graphics/Rect;)V
 
     .line 177
@@ -312,25 +312,25 @@
 
     move-result v6
 
-    if-eqz v6, :cond_67
+    if-eqz v6, :cond_5
 
     .line 178
     invoke-virtual {v0, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     move-object v4, v5
 
-    :cond_67
-    :goto_67
+    :cond_5
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_51
+    goto :goto_1
 
-    :cond_6a
+    :cond_6
     return-object v4
 .end method
 
 .method public static findNextFocusInRelativeDirection(Ljava/lang/Object;Landroidx/customview/widget/FocusStrategy$CollectionAdapter;Landroidx/customview/widget/FocusStrategy$BoundsAdapter;Ljava/lang/Object;IZZ)Ljava/lang/Object;
-    .registers 11
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<",
@@ -360,8 +360,8 @@
 
     const/4 v2, 0x0
 
-    :goto_a
-    if-ge v2, v0, :cond_16
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 43
     invoke-interface {p1, p0, v2}, Landroidx/customview/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
@@ -372,10 +372,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 46
-    :cond_16
+    :cond_0
     new-instance p0, Landroidx/customview/widget/FocusStrategy$SequentialComparator;
 
     invoke-direct {p0, p5, p2}, Landroidx/customview/widget/FocusStrategy$SequentialComparator;-><init>(ZLandroidx/customview/widget/FocusStrategy$BoundsAdapter;)V
@@ -385,11 +385,11 @@
 
     const/4 p0, 0x1
 
-    if-eq p4, p0, :cond_31
+    if-eq p4, p0, :cond_2
 
     const/4 p0, 0x2
 
-    if-ne p4, p0, :cond_29
+    if-ne p4, p0, :cond_1
 
     .line 51
     invoke-static {p3, v1, p6}, Landroidx/customview/widget/FocusStrategy;->getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
@@ -399,7 +399,7 @@
     return-object p0
 
     .line 55
-    :cond_29
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_FORWARD, FOCUS_BACKWARD}."
@@ -409,7 +409,7 @@
     throw p0
 
     .line 53
-    :cond_31
+    :cond_2
     invoke-static {p3, v1, p6}, Landroidx/customview/widget/FocusStrategy;->getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
 
     move-result-object p0
@@ -418,7 +418,7 @@
 .end method
 
 .method private static getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -434,22 +434,22 @@
 
     move-result v0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const/4 p0, -0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 65
-    :cond_8
+    :cond_0
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->lastIndexOf(Ljava/lang/Object;)I
 
     move-result p0
 
-    :goto_c
+    :goto_0
     add-int/lit8 p0, p0, 0x1
 
-    if-ge p0, v0, :cond_15
+    if-ge p0, v0, :cond_1
 
     .line 67
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -458,10 +458,10 @@
 
     return-object p0
 
-    :cond_15
-    if-eqz p2, :cond_1f
+    :cond_1
+    if-eqz p2, :cond_2
 
-    if-lez v0, :cond_1f
+    if-lez v0, :cond_2
 
     const/4 p0, 0x0
 
@@ -472,14 +472,14 @@
 
     return-object p0
 
-    :cond_1f
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -495,22 +495,22 @@
 
     move-result v0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     move p0, v0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 80
-    :cond_8
+    :cond_0
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p0
 
-    :goto_c
+    :goto_0
     add-int/lit8 p0, p0, -0x1
 
-    if-ltz p0, :cond_15
+    if-ltz p0, :cond_1
 
     .line 82
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -519,10 +519,10 @@
 
     return-object p0
 
-    :cond_15
-    if-eqz p2, :cond_20
+    :cond_1
+    if-eqz p2, :cond_2
 
-    if-lez v0, :cond_20
+    if-lez v0, :cond_2
 
     add-int/lit8 v0, v0, -0x1
 
@@ -533,14 +533,14 @@
 
     return-object p0
 
-    :cond_20
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getWeightedDistanceFor(II)I
-    .registers 3
+    .locals 1
 
     mul-int/lit8 v0, p0, 0xd
 
@@ -554,7 +554,7 @@
 .end method
 
 .method private static isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
-    .registers 7
+    .locals 3
 
     .line 203
     invoke-static {p1, p2, p0}, Landroidx/customview/widget/FocusStrategy;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
@@ -563,44 +563,44 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 209
-    :cond_8
+    :cond_0
     invoke-static {p1, p3, p0}, Landroidx/customview/widget/FocusStrategy;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
 
     move-result v0
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     return v2
 
     .line 214
-    :cond_10
+    :cond_1
     invoke-static {p0, p1, p2, p3}, Landroidx/customview/widget/FocusStrategy;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_2
 
     return v2
 
     .line 219
-    :cond_17
+    :cond_2
     invoke-static {p0, p1, p3, p2}, Landroidx/customview/widget/FocusStrategy;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_3
 
     return v1
 
     .line 226
-    :cond_1e
+    :cond_3
     invoke-static {p0, p1, p2}, Landroidx/customview/widget/FocusStrategy;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
     move-result v0
@@ -630,16 +630,16 @@
 
     move-result p0
 
-    if-ge p2, p0, :cond_39
+    if-ge p2, p0, :cond_4
 
     move v1, v2
 
-    :cond_39
+    :cond_4
     return v1
 .end method
 
 .method private static isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
-    .registers 6
+    .locals 3
 
     const/16 v0, 0x11
 
@@ -647,50 +647,50 @@
 
     const/4 v2, 0x0
 
-    if-eq p2, v0, :cond_59
+    if-eq p2, v0, :cond_9
 
     const/16 v0, 0x21
 
-    if-eq p2, v0, :cond_44
+    if-eq p2, v0, :cond_6
 
     const/16 v0, 0x42
 
-    if-eq p2, v0, :cond_2f
+    if-eq p2, v0, :cond_3
 
     const/16 v0, 0x82
 
-    if-ne p2, v0, :cond_27
+    if-ne p2, v0, :cond_2
 
     .line 308
     iget p2, p0, Landroid/graphics/Rect;->top:I
 
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
-    if-lt p2, v0, :cond_1e
+    if-lt p2, v0, :cond_0
 
     iget p2, p0, Landroid/graphics/Rect;->bottom:I
 
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
-    if-gt p2, v0, :cond_25
+    if-gt p2, v0, :cond_1
 
-    :cond_1e
+    :cond_0
     iget p0, p0, Landroid/graphics/Rect;->bottom:I
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
-    if-ge p0, p1, :cond_25
+    if-ge p0, p1, :cond_1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     move v1, v2
 
-    :goto_26
+    :goto_0
     return v1
 
     .line 311
-    :cond_27
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -700,95 +700,95 @@
     throw p0
 
     .line 302
-    :cond_2f
+    :cond_3
     iget p2, p0, Landroid/graphics/Rect;->left:I
 
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
-    if-lt p2, v0, :cond_3b
+    if-lt p2, v0, :cond_4
 
     iget p2, p0, Landroid/graphics/Rect;->right:I
 
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
-    if-gt p2, v0, :cond_42
+    if-gt p2, v0, :cond_5
 
-    :cond_3b
+    :cond_4
     iget p0, p0, Landroid/graphics/Rect;->right:I
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    if-ge p0, p1, :cond_42
+    if-ge p0, p1, :cond_5
 
-    goto :goto_43
+    goto :goto_1
 
-    :cond_42
+    :cond_5
     move v1, v2
 
-    :goto_43
+    :goto_1
     return v1
 
     .line 305
-    :cond_44
+    :cond_6
     iget p2, p0, Landroid/graphics/Rect;->bottom:I
 
     iget v0, p1, Landroid/graphics/Rect;->bottom:I
 
-    if-gt p2, v0, :cond_50
+    if-gt p2, v0, :cond_7
 
     iget p2, p0, Landroid/graphics/Rect;->top:I
 
     iget v0, p1, Landroid/graphics/Rect;->bottom:I
 
-    if-lt p2, v0, :cond_57
+    if-lt p2, v0, :cond_8
 
-    :cond_50
+    :cond_7
     iget p0, p0, Landroid/graphics/Rect;->top:I
 
     iget p1, p1, Landroid/graphics/Rect;->top:I
 
-    if-le p0, p1, :cond_57
+    if-le p0, p1, :cond_8
 
-    goto :goto_58
+    goto :goto_2
 
-    :cond_57
+    :cond_8
     move v1, v2
 
-    :goto_58
+    :goto_2
     return v1
 
     .line 299
-    :cond_59
+    :cond_9
     iget p2, p0, Landroid/graphics/Rect;->right:I
 
     iget v0, p1, Landroid/graphics/Rect;->right:I
 
-    if-gt p2, v0, :cond_65
+    if-gt p2, v0, :cond_a
 
     iget p2, p0, Landroid/graphics/Rect;->left:I
 
     iget v0, p1, Landroid/graphics/Rect;->right:I
 
-    if-lt p2, v0, :cond_6c
+    if-lt p2, v0, :cond_b
 
-    :cond_65
+    :cond_a
     iget p0, p0, Landroid/graphics/Rect;->left:I
 
     iget p1, p1, Landroid/graphics/Rect;->left:I
 
-    if-le p0, p1, :cond_6c
+    if-le p0, p1, :cond_b
 
-    goto :goto_6d
+    goto :goto_3
 
-    :cond_6c
+    :cond_b
     move v1, v2
 
-    :goto_6d
+    :goto_3
     return v1
 .end method
 
 .method private static isToDirectionOf(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
-    .registers 6
+    .locals 3
 
     const/16 v0, 0x11
 
@@ -796,37 +796,37 @@
 
     const/4 v2, 0x0
 
-    if-eq p0, v0, :cond_35
+    if-eq p0, v0, :cond_6
 
     const/16 v0, 0x21
 
-    if-eq p0, v0, :cond_2c
+    if-eq p0, v0, :cond_4
 
     const/16 v0, 0x42
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x82
 
-    if-ne p0, v0, :cond_1b
+    if-ne p0, v0, :cond_1
 
     .line 351
     iget p0, p1, Landroid/graphics/Rect;->bottom:I
 
     iget p1, p2, Landroid/graphics/Rect;->top:I
 
-    if-gt p0, p1, :cond_19
+    if-gt p0, p1, :cond_0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move v1, v2
 
-    :goto_1a
+    :goto_0
     return v1
 
     .line 353
-    :cond_1b
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -836,56 +836,56 @@
     throw p0
 
     .line 347
-    :cond_23
+    :cond_2
     iget p0, p1, Landroid/graphics/Rect;->right:I
 
     iget p1, p2, Landroid/graphics/Rect;->left:I
 
-    if-gt p0, p1, :cond_2a
+    if-gt p0, p1, :cond_3
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_3
     move v1, v2
 
-    :goto_2b
+    :goto_1
     return v1
 
     .line 349
-    :cond_2c
+    :cond_4
     iget p0, p1, Landroid/graphics/Rect;->top:I
 
     iget p1, p2, Landroid/graphics/Rect;->bottom:I
 
-    if-lt p0, p1, :cond_33
+    if-lt p0, p1, :cond_5
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_33
+    :cond_5
     move v1, v2
 
-    :goto_34
+    :goto_2
     return v1
 
     .line 345
-    :cond_35
+    :cond_6
     iget p0, p1, Landroid/graphics/Rect;->left:I
 
     iget p1, p2, Landroid/graphics/Rect;->right:I
 
-    if-lt p0, p1, :cond_3c
+    if-lt p0, p1, :cond_7
 
-    goto :goto_3d
+    goto :goto_3
 
-    :cond_3c
+    :cond_7
     move v1, v2
 
-    :goto_3d
+    :goto_3
     return v1
 .end method
 
 .method private static majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -902,36 +902,36 @@
 .end method
 
 .method private static majorAxisDistanceRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .registers 4
+    .locals 1
 
     const/16 v0, 0x11
 
-    if-eq p0, v0, :cond_28
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x21
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x42
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x82
 
-    if-ne p0, v0, :cond_16
+    if-ne p0, v0, :cond_0
 
     .line 378
     iget p0, p2, Landroid/graphics/Rect;->top:I
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
-    :goto_14
+    :goto_0
     sub-int/2addr p0, p1
 
     return p0
 
     .line 380
-    :cond_16
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -941,32 +941,32 @@
     throw p0
 
     .line 374
-    :cond_1e
+    :cond_1
     iget p0, p2, Landroid/graphics/Rect;->left:I
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    goto :goto_14
+    goto :goto_0
 
     .line 376
-    :cond_23
+    :cond_2
     iget p0, p1, Landroid/graphics/Rect;->top:I
 
     iget p1, p2, Landroid/graphics/Rect;->bottom:I
 
-    goto :goto_14
+    goto :goto_0
 
     .line 372
-    :cond_28
+    :cond_3
     iget p0, p1, Landroid/graphics/Rect;->left:I
 
     iget p1, p2, Landroid/graphics/Rect;->right:I
 
-    goto :goto_14
+    goto :goto_0
 .end method
 
 .method private static majorAxisDistanceToFarEdge(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -983,36 +983,36 @@
 .end method
 
 .method private static majorAxisDistanceToFarEdgeRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .registers 4
+    .locals 1
 
     const/16 v0, 0x11
 
-    if-eq p0, v0, :cond_28
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x21
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x42
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x82
 
-    if-ne p0, v0, :cond_16
+    if-ne p0, v0, :cond_0
 
     .line 406
     iget p0, p2, Landroid/graphics/Rect;->bottom:I
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
-    :goto_14
+    :goto_0
     sub-int/2addr p0, p1
 
     return p0
 
     .line 408
-    :cond_16
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -1022,53 +1022,53 @@
     throw p0
 
     .line 402
-    :cond_1e
+    :cond_1
     iget p0, p2, Landroid/graphics/Rect;->right:I
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    goto :goto_14
+    goto :goto_0
 
     .line 404
-    :cond_23
+    :cond_2
     iget p0, p1, Landroid/graphics/Rect;->top:I
 
     iget p1, p2, Landroid/graphics/Rect;->top:I
 
-    goto :goto_14
+    goto :goto_0
 
     .line 400
-    :cond_28
+    :cond_3
     iget p0, p1, Landroid/graphics/Rect;->left:I
 
     iget p1, p2, Landroid/graphics/Rect;->left:I
 
-    goto :goto_14
+    goto :goto_0
 .end method
 
 .method private static minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
-    .registers 4
+    .locals 1
 
     const/16 v0, 0x11
 
-    if-eq p0, v0, :cond_31
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x21
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x42
 
-    if-eq p0, v0, :cond_31
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x82
 
-    if-ne p0, v0, :cond_11
+    if-ne p0, v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 435
-    :cond_11
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
@@ -1078,8 +1078,8 @@
     throw p0
 
     .line 432
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     iget p0, p1, Landroid/graphics/Rect;->left:I
 
     .line 433
@@ -1111,7 +1111,7 @@
     return p0
 
     .line 427
-    :cond_31
+    :cond_2
     iget p0, p1, Landroid/graphics/Rect;->top:I
 
     .line 428

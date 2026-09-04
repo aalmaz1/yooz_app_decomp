@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 864
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ByteString;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method protected final getTreeDepth()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method protected final isBalanced()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public bridge synthetic iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
 
     .line 864
     invoke-super {p0}, Landroidx/datastore/preferences/protobuf/ByteString;->iterator()Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
@@ -57,7 +57,7 @@
 .end method
 
 .method writeToReverse(Landroidx/datastore/preferences/protobuf/ByteOutput;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 47
     new-instance v0, Landroidx/camera/core/CameraExecutor$1;
@@ -37,7 +37,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method private static createExecutor()Ljava/util/concurrent/ThreadPoolExecutor;
-    .registers 9
+    .locals 9
 
     .line 117
     new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor;
@@ -94,7 +94,7 @@
 .end method
 
 .method static synthetic lambda$createExecutor$0(Ljava/lang/Runnable;Ljava/util/concurrent/ThreadPoolExecutor;)V
-    .registers 2
+    .locals 0
 
     const-string p0, "CameraExecutor"
 
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method deinit()V
-    .registers 3
+    .locals 2
 
     .line 95
     iget-object v0, p0, Landroidx/camera/core/CameraExecutor;->mExecutorLock:Ljava/lang/Object;
@@ -117,14 +117,14 @@
     monitor-enter v0
 
     .line 96
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/CameraExecutor;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     invoke-virtual {v1}, Ljava/util/concurrent/ThreadPoolExecutor;->isShutdown()Z
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 97
     iget-object v1, p0, Landroidx/camera/core/CameraExecutor;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
@@ -132,23 +132,23 @@
     invoke-virtual {v1}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
 
     .line 99
-    :cond_10
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public execute(Ljava/lang/Runnable;)V
-    .registers 4
+    .locals 2
 
     .line 109
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -159,7 +159,7 @@
     monitor-enter v0
 
     .line 112
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/CameraExecutor;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
@@ -169,18 +169,18 @@
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_f
-    .catchall {:try_start_6 .. :try_end_f} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method init(Landroidx/camera/core/impl/CameraFactory;)V
-    .registers 4
+    .locals 2
 
     .line 70
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -191,14 +191,14 @@
     monitor-enter v0
 
     .line 74
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/core/CameraExecutor;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     invoke-virtual {v1}, Ljava/util/concurrent/ThreadPoolExecutor;->isShutdown()Z
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 75
     invoke-static {}, Landroidx/camera/core/CameraExecutor;->createExecutor()Ljava/util/concurrent/ThreadPoolExecutor;
@@ -208,13 +208,13 @@
     iput-object v1, p0, Landroidx/camera/core/CameraExecutor;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 77
-    :cond_14
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/CameraExecutor;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 78
     monitor-exit v0
-    :try_end_17
-    .catchall {:try_start_6 .. :try_end_17} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 80
     invoke-interface {p1}, Landroidx/camera/core/impl/CameraFactory;->getAvailableCameraIds()Ljava/util/Set;
@@ -240,14 +240,14 @@
 
     return-void
 
-    :catchall_2b
+    :catchall_0
     move-exception p1
 
     .line 78
-    :try_start_2c
+    :try_start_1
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_2c .. :try_end_2d} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

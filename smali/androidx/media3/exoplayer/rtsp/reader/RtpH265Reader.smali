@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,33 +82,33 @@
 .end method
 
 .method private static getBufferFlagsFromNalType(I)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x13
 
-    if-eq p0, v0, :cond_b
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x14
 
-    if-ne p0, v0, :cond_9
+    if-ne p0, v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_c
+    :goto_1
     return p0
 .end method
 
 .method private processFragmentationUnitPacket(Landroidx/media3/common/util/ParsableByteArray;I)V
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -130,7 +130,7 @@
 
     const/4 v1, 0x3
 
-    if-lt v0, v1, :cond_a1
+    if-lt v0, v1, :cond_5
 
     .line 212
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -158,29 +158,29 @@
 
     const/4 v7, 0x0
 
-    if-lez v6, :cond_21
+    if-lez v6, :cond_0
 
     move v6, v2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     move v6, v7
 
-    :goto_22
+    :goto_0
     and-int/lit8 v3, v3, 0x40
 
-    if-lez v3, :cond_28
+    if-lez v3, :cond_1
 
     move v3, v2
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
+    :cond_1
     move v3, v7
 
-    :goto_29
-    if-eqz v6, :cond_55
+    :goto_1
+    if-eqz v6, :cond_2
 
     .line 220
     iget p2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->fragmentedSampleSizeBytes:I
@@ -229,10 +229,10 @@
 
     invoke-virtual {p1, v2}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_86
+    goto :goto_2
 
     .line 233
-    :cond_55
+    :cond_2
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->previousSequenceNumber:I
 
     add-int/2addr v0, v2
@@ -241,7 +241,7 @@
 
     rem-int/2addr v0, v6
 
-    if-eq p2, v0, :cond_78
+    if-eq p2, v0, :cond_3
 
     new-array p1, v4, [Ljava/lang/Object;
 
@@ -273,7 +273,7 @@
     return-void
 
     .line 245
-    :cond_78
+    :cond_3
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->fuScratchBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -288,7 +288,7 @@
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 249
-    :goto_86
+    :goto_2
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->fuScratchBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -309,7 +309,7 @@
 
     iput p2, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->fragmentedSampleSizeBytes:I
 
-    if-eqz v3, :cond_a0
+    if-eqz v3, :cond_4
 
     .line 254
     invoke-static {v5}, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->getBufferFlagsFromNalType(I)I
@@ -318,10 +318,10 @@
 
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->bufferFlags:I
 
-    :cond_a0
+    :cond_4
     return-void
 
-    :cond_a1
+    :cond_5
     const-string p1, "Malformed FU header."
 
     const/4 p2, 0x0
@@ -335,7 +335,7 @@
 .end method
 
 .method private processSingleNalUnitPacket(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "trackOutput"
@@ -394,7 +394,7 @@
 .end method
 
 .method private writeStartCode()I
-    .registers 4
+    .locals 3
 
     .line 259
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->nalStartCodeArray:Landroidx/media3/common/util/ParsableByteArray;
@@ -429,7 +429,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 25
+    .locals 19
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -449,7 +449,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_81
+    if-eqz v2, :cond_5
 
     .line 99
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -473,29 +473,29 @@
 
     const/16 v6, 0x30
 
-    if-ltz v2, :cond_26
+    if-ltz v2, :cond_0
 
-    if-ge v2, v6, :cond_26
+    if-ge v2, v6, :cond_0
 
     .line 103
     invoke-direct/range {p0 .. p1}, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->processSingleNalUnitPacket(Landroidx/media3/common/util/ParsableByteArray;)V
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_26
-    if-eq v2, v6, :cond_79
+    :cond_0
+    if-eq v2, v6, :cond_4
 
     const/16 v6, 0x31
 
-    if-ne v2, v6, :cond_66
+    if-ne v2, v6, :cond_3
 
     move-object/from16 v6, p1
 
     .line 108
     invoke-direct {v0, v6, v1}, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->processFragmentationUnitPacket(Landroidx/media3/common/util/ParsableByteArray;I)V
 
-    :goto_31
-    if-eqz p5, :cond_63
+    :goto_0
+    if-eqz p5, :cond_2
 
     .line 116
     iget-wide v2, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->firstReceivedTimestamp:J
@@ -504,20 +504,20 @@
 
     cmp-long v2, v2, v5
 
-    if-nez v2, :cond_43
+    if-nez v2, :cond_1
 
     move-wide/from16 v2, p2
 
     .line 117
     iput-wide v2, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->firstReceivedTimestamp:J
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_43
+    :cond_1
     move-wide/from16 v2, p2
 
     .line 120
-    :goto_45
+    :goto_1
     iget-wide v5, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->startTimeOffsetUs:J
 
     iget-wide v9, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->firstReceivedTimestamp:J
@@ -550,12 +550,12 @@
     iput v4, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->fragmentedSampleSizeBytes:I
 
     .line 128
-    :cond_63
+    :cond_2
     iput v1, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->previousSequenceNumber:I
 
     return-void
 
-    :cond_66
+    :cond_3
     new-array v1, v5, [Ljava/lang/Object;
 
     .line 111
@@ -579,7 +579,7 @@
     throw v1
 
     .line 106
-    :cond_79
+    :cond_4
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     const-string v2, "need to implement processAggregationPacket"
@@ -588,7 +588,7 @@
 
     throw v1
 
-    :cond_81
+    :cond_5
     const-string v1, "Empty RTP data packet."
 
     .line 96
@@ -600,7 +600,7 @@
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -622,13 +622,13 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 133
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpH265Reader;->firstReceivedTimestamp:J

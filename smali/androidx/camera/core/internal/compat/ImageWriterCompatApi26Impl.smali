@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 40
     :try_start_0
@@ -46,12 +46,12 @@
     move-result-object v0
 
     sput-object v0, Landroidx/camera/core/internal/compat/ImageWriterCompatApi26Impl;->sNewInstanceMethod:Ljava/lang/reflect/Method;
-    :try_end_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :catch_1d
+    :catch_0
     move-exception v0
 
     const-string v1, "ImageWriterCompatApi26"
@@ -61,12 +61,12 @@
     .line 43
     invoke-static {v1, v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 .end method
 
 .method static newInstance(Landroid/view/Surface;II)Landroid/media/ImageWriter;
-    .registers 6
+    .locals 3
 
     .line 53
     :try_start_0
@@ -118,22 +118,22 @@
     move-result-object p0
 
     check-cast p0, Landroid/media/ImageWriter;
-    :try_end_21
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_21} :catch_24
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_21} :catch_22
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_22
+    :catch_0
     move-exception p0
 
-    goto :goto_25
+    goto :goto_0
 
-    :catch_24
+    :catch_1
     move-exception p0
 
     .line 60
-    :goto_25
+    :goto_0
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string p2, "Unable to invoke newInstance(Surface, int, int) via reflection."

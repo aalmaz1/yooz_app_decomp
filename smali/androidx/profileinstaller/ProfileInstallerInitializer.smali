@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method static synthetic lambda$installAfterDelay$1(Landroid/content/Context;)V
-    .registers 1
+    .locals 0
 
     .line 117
     invoke-static {p0}, Landroidx/profileinstaller/ProfileInstallerInitializer;->writeInBackground(Landroid/content/Context;)V
@@ -49,7 +49,7 @@
 .end method
 
 .method static synthetic lambda$writeInBackground$2(Landroid/content/Context;)V
-    .registers 1
+    .locals 0
 
     .line 145
     invoke-static {p0}, Landroidx/profileinstaller/ProfileInstaller;->writeProfile(Landroid/content/Context;)V
@@ -58,7 +58,7 @@
 .end method
 
 .method private static writeInBackground(Landroid/content/Context;)V
-    .registers 9
+    .locals 8
 
     .line 138
     new-instance v7, Ljava/util/concurrent/ThreadPoolExecutor;
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public create(Landroid/content/Context;)Landroidx/profileinstaller/ProfileInstallerInitializer$Result;
-    .registers 2
+    .locals 0
 
     .line 82
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -110,7 +110,7 @@
 .end method
 
 .method public bridge synthetic create(Landroid/content/Context;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 64
     invoke-virtual {p0, p1}, Landroidx/profileinstaller/ProfileInstallerInitializer;->create(Landroid/content/Context;)Landroidx/profileinstaller/ProfileInstallerInitializer$Result;
@@ -121,7 +121,7 @@
 .end method
 
 .method delayAfterFirstFrame(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 94
     new-instance v0, Landroidx/profileinstaller/ProfileInstallerInitializer$$ExternalSyntheticLambda1;
@@ -134,7 +134,7 @@
 .end method
 
 .method public dependencies()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -155,7 +155,7 @@
 .end method
 
 .method installAfterDelay(Landroid/content/Context;)V
-    .registers 7
+    .locals 5
 
     .line 110
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -199,7 +199,7 @@
 .end method
 
 .method synthetic lambda$delayAfterFirstFrame$0$androidx-profileinstaller-ProfileInstallerInitializer(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 94
     invoke-virtual {p0, p1}, Landroidx/profileinstaller/ProfileInstallerInitializer;->installAfterDelay(Landroid/content/Context;)V

@@ -87,7 +87,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,18 +127,18 @@
 .end method
 
 .method private inherit(Landroidx/media3/extractor/text/ttml/TtmlStyle;Z)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 6
+    .locals 3
 
-    if-eqz p1, :cond_9a
+    if-eqz p1, :cond_e
 
     .line 240
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasFontColor:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     iget-boolean v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasFontColor:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 241
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontColor:I
@@ -146,12 +146,12 @@
     invoke-virtual {p0, v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setFontColor(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
     .line 243
-    :cond_f
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->bold:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     .line 244
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->bold:I
@@ -159,10 +159,10 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->bold:I
 
     .line 246
-    :cond_18
+    :cond_1
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->italic:I
 
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_2
 
     .line 247
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->italic:I
@@ -170,23 +170,23 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->italic:I
 
     .line 249
-    :cond_20
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontFamily:Ljava/lang/String;
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_3
 
     iget-object v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontFamily:Ljava/lang/String;
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_3
 
     .line 250
     iput-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontFamily:Ljava/lang/String;
 
     .line 252
-    :cond_2a
+    :cond_3
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->linethrough:I
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_4
 
     .line 253
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->linethrough:I
@@ -194,10 +194,10 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->linethrough:I
 
     .line 255
-    :cond_32
+    :cond_4
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->underline:I
 
-    if-ne v0, v1, :cond_3a
+    if-ne v0, v1, :cond_5
 
     .line 256
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->underline:I
@@ -205,10 +205,10 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->underline:I
 
     .line 258
-    :cond_3a
+    :cond_5
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyPosition:I
 
-    if-ne v0, v1, :cond_42
+    if-ne v0, v1, :cond_6
 
     .line 259
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyPosition:I
@@ -216,36 +216,36 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyPosition:I
 
     .line 261
-    :cond_42
+    :cond_6
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textAlign:Landroid/text/Layout$Alignment;
 
-    if-nez v0, :cond_4c
+    if-nez v0, :cond_7
 
     iget-object v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textAlign:Landroid/text/Layout$Alignment;
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_7
 
     .line 262
     iput-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textAlign:Landroid/text/Layout$Alignment;
 
     .line 264
-    :cond_4c
+    :cond_7
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->multiRowAlign:Landroid/text/Layout$Alignment;
 
-    if-nez v0, :cond_56
+    if-nez v0, :cond_8
 
     iget-object v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->multiRowAlign:Landroid/text/Layout$Alignment;
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_8
 
     .line 265
     iput-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->multiRowAlign:Landroid/text/Layout$Alignment;
 
     .line 267
-    :cond_56
+    :cond_8
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textCombine:I
 
-    if-ne v0, v1, :cond_5e
+    if-ne v0, v1, :cond_9
 
     .line 268
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textCombine:I
@@ -253,10 +253,10 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textCombine:I
 
     .line 270
-    :cond_5e
+    :cond_9
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSizeUnit:I
 
-    if-ne v0, v1, :cond_6a
+    if-ne v0, v1, :cond_a
 
     .line 271
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSizeUnit:I
@@ -269,10 +269,10 @@
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSize:F
 
     .line 274
-    :cond_6a
+    :cond_a
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textEmphasis:Landroidx/media3/extractor/text/ttml/TextEmphasis;
 
-    if-nez v0, :cond_72
+    if-nez v0, :cond_b
 
     .line 275
     iget-object v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textEmphasis:Landroidx/media3/extractor/text/ttml/TextEmphasis;
@@ -280,60 +280,60 @@
     iput-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textEmphasis:Landroidx/media3/extractor/text/ttml/TextEmphasis;
 
     .line 277
-    :cond_72
+    :cond_b
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->shearPercentage:F
 
     const v2, 0x7f7fffff    # Float.MAX_VALUE
 
     cmpl-float v0, v0, v2
 
-    if-nez v0, :cond_7f
+    if-nez v0, :cond_c
 
     .line 278
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->shearPercentage:F
 
     iput v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->shearPercentage:F
 
-    :cond_7f
-    if-eqz p2, :cond_8e
+    :cond_c
+    if-eqz p2, :cond_d
 
     .line 281
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasBackgroundColor:Z
 
-    if-nez v0, :cond_8e
+    if-nez v0, :cond_d
 
     iget-boolean v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasBackgroundColor:Z
 
-    if-eqz v0, :cond_8e
+    if-eqz v0, :cond_d
 
     .line 282
     iget v0, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->backgroundColor:I
 
     invoke-virtual {p0, v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->setBackgroundColor(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
 
-    :cond_8e
-    if-eqz p2, :cond_9a
+    :cond_d
+    if-eqz p2, :cond_e
 
     .line 284
     iget p2, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyType:I
 
-    if-ne p2, v1, :cond_9a
+    if-ne p2, v1, :cond_e
 
     iget p1, p1, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyType:I
 
-    if-eq p1, v1, :cond_9a
+    if-eq p1, v1, :cond_e
 
     .line 285
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyType:I
 
-    :cond_9a
+    :cond_e
     return-object p0
 .end method
 
 
 # virtual methods
 .method public chain(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -346,12 +346,12 @@
 .end method
 
 .method public getBackgroundColor()I
-    .registers 3
+    .locals 2
 
     .line 187
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasBackgroundColor:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 190
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->backgroundColor:I
@@ -359,7 +359,7 @@
     return v0
 
     .line 188
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Background color has not been defined."
@@ -370,12 +370,12 @@
 .end method
 
 .method public getFontColor()I
-    .registers 3
+    .locals 2
 
     .line 169
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasFontColor:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 172
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontColor:I
@@ -383,7 +383,7 @@
     return v0
 
     .line 170
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Font color has not been defined."
@@ -394,7 +394,7 @@
 .end method
 
 .method public getFontFamily()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 159
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontFamily:Ljava/lang/String;
@@ -403,7 +403,7 @@
 .end method
 
 .method public getFontSize()F
-    .registers 2
+    .locals 1
 
     .line 383
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSize:F
@@ -412,7 +412,7 @@
 .end method
 
 .method public getFontSizeUnit()I
-    .registers 2
+    .locals 1
 
     .line 379
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSizeUnit:I
@@ -421,7 +421,7 @@
 .end method
 
 .method public getId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 299
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->id:Ljava/lang/String;
@@ -430,7 +430,7 @@
 .end method
 
 .method public getMultiRowAlign()Landroid/text/Layout$Alignment;
-    .registers 2
+    .locals 1
 
     .line 335
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->multiRowAlign:Landroid/text/Layout$Alignment;
@@ -439,7 +439,7 @@
 .end method
 
 .method public getRubyPosition()I
-    .registers 2
+    .locals 1
 
     .line 319
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyPosition:I
@@ -448,7 +448,7 @@
 .end method
 
 .method public getRubyType()I
-    .registers 2
+    .locals 1
 
     .line 309
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyType:I
@@ -457,7 +457,7 @@
 .end method
 
 .method public getShearPercentage()F
-    .registers 2
+    .locals 1
 
     .line 211
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->shearPercentage:F
@@ -466,51 +466,51 @@
 .end method
 
 .method public getStyle()I
-    .registers 5
+    .locals 4
 
     .line 119
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->bold:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     iget v2, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->italic:I
 
-    if-ne v2, v1, :cond_a
+    if-ne v2, v1, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_10
+    if-ne v0, v2, :cond_1
 
     move v0, v2
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     move v0, v1
 
     .line 122
-    :goto_11
+    :goto_0
     iget v3, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->italic:I
 
-    if-ne v3, v2, :cond_16
+    if-ne v3, v2, :cond_2
 
     const/4 v1, 0x2
 
-    :cond_16
+    :cond_2
     or-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public getTextAlign()Landroid/text/Layout$Alignment;
-    .registers 2
+    .locals 1
 
     .line 324
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textAlign:Landroid/text/Layout$Alignment;
@@ -519,26 +519,26 @@
 .end method
 
 .method public getTextCombine()Z
-    .registers 3
+    .locals 2
 
     .line 346
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textCombine:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 .method public getTextEmphasis()Landroidx/media3/extractor/text/ttml/TextEmphasis;
-    .registers 2
+    .locals 1
 
     .line 357
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textEmphasis:Landroidx/media3/extractor/text/ttml/TextEmphasis;
@@ -547,7 +547,7 @@
 .end method
 
 .method public hasBackgroundColor()Z
-    .registers 2
+    .locals 1
 
     .line 201
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasBackgroundColor:Z
@@ -556,7 +556,7 @@
 .end method
 
 .method public hasFontColor()Z
-    .registers 2
+    .locals 1
 
     .line 183
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->hasFontColor:Z
@@ -565,7 +565,7 @@
 .end method
 
 .method public inherit(Landroidx/media3/extractor/text/ttml/TtmlStyle;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -578,45 +578,45 @@
 .end method
 
 .method public isLinethrough()Z
-    .registers 3
+    .locals 2
 
     .line 126
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->linethrough:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 .method public isUnderline()Z
-    .registers 3
+    .locals 2
 
     .line 136
     iget v0, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->underline:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 .method public setBackgroundColor(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 195
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->backgroundColor:I
@@ -630,7 +630,7 @@
 .end method
 
 .method public setBold(Z)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 147
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->bold:I
@@ -639,7 +639,7 @@
 .end method
 
 .method public setFontColor(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 177
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontColor:I
@@ -653,7 +653,7 @@
 .end method
 
 .method public setFontFamily(Ljava/lang/String;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 164
     iput-object p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontFamily:Ljava/lang/String;
@@ -662,7 +662,7 @@
 .end method
 
 .method public setFontSize(F)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 368
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSize:F
@@ -671,7 +671,7 @@
 .end method
 
 .method public setFontSizeUnit(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 374
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->fontSizeUnit:I
@@ -680,7 +680,7 @@
 .end method
 
 .method public setId(Ljava/lang/String;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 293
     iput-object p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->id:Ljava/lang/String;
@@ -689,7 +689,7 @@
 .end method
 
 .method public setItalic(Z)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 153
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->italic:I
@@ -698,7 +698,7 @@
 .end method
 
 .method public setLinethrough(Z)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 131
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->linethrough:I
@@ -707,7 +707,7 @@
 .end method
 
 .method public setMultiRowAlign(Landroid/text/Layout$Alignment;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 340
     iput-object p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->multiRowAlign:Landroid/text/Layout$Alignment;
@@ -716,7 +716,7 @@
 .end method
 
 .method public setRubyPosition(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 314
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyPosition:I
@@ -725,7 +725,7 @@
 .end method
 
 .method public setRubyType(I)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 304
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->rubyType:I
@@ -734,7 +734,7 @@
 .end method
 
 .method public setShearPercentage(F)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 206
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->shearPercentage:F
@@ -743,7 +743,7 @@
 .end method
 
 .method public setTextAlign(Landroid/text/Layout$Alignment;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 329
     iput-object p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textAlign:Landroid/text/Layout$Alignment;
@@ -752,7 +752,7 @@
 .end method
 
 .method public setTextCombine(Z)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 351
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textCombine:I
@@ -761,7 +761,7 @@
 .end method
 
 .method public setTextEmphasis(Landroidx/media3/extractor/text/ttml/TextEmphasis;)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 362
     iput-object p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->textEmphasis:Landroidx/media3/extractor/text/ttml/TextEmphasis;
@@ -770,7 +770,7 @@
 .end method
 
 .method public setUnderline(Z)Landroidx/media3/extractor/text/ttml/TtmlStyle;
-    .registers 2
+    .locals 0
 
     .line 141
     iput p1, p0, Landroidx/media3/extractor/text/ttml/TtmlStyle;->underline:I

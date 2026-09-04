@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 155
     invoke-static {}, Landroidx/datastore/preferences/protobuf/BoolValue;->access$000()Landroidx/datastore/preferences/protobuf/BoolValue;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/BoolValue$1;)V
-    .registers 2
+    .locals 0
 
     .line 148
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BoolValue$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearValue()Landroidx/datastore/preferences/protobuf/BoolValue$Builder;
-    .registers 2
+    .locals 1
 
     .line 194
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BoolValue$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public getValue()Z
-    .registers 2
+    .locals 1
 
     .line 169
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BoolValue$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -84,7 +84,7 @@
 .end method
 
 .method public setValue(Z)Landroidx/datastore/preferences/protobuf/BoolValue$Builder;
-    .registers 3
+    .locals 1
 
     .line 181
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BoolValue$Builder;->copyOnWrite()V

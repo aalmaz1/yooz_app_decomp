@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3920
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,17 +25,17 @@
 .end method
 
 .method public static startForeground(Landroid/app/Service;ILandroid/app/Notification;ILjava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 3910
     :try_start_0
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
-    :try_end_3
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_4
+    :catch_0
     move-exception p0
 
     .line 3912

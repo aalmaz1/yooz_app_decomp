@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(ILandroid/view/Surface;)V
-    .registers 5
+    .locals 2
 
     .line 44
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl$OutputConfigurationParamsApi24;
@@ -30,7 +30,7 @@
 .end method
 
 .method constructor <init>(Landroid/view/Surface;)V
-    .registers 4
+    .locals 2
 
     .line 40
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl$OutputConfigurationParamsApi24;
@@ -47,7 +47,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatBaseImpl;-><init>(Ljava/lang/Object;)V
@@ -56,7 +56,7 @@
 .end method
 
 .method static wrap(Landroid/hardware/camera2/params/OutputConfiguration;)Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;
-    .registers 3
+    .locals 2
 
     .line 54
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public enableSurfaceSharing()V
-    .registers 3
+    .locals 2
 
     .line 63
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;
@@ -88,7 +88,7 @@
 .end method
 
 .method public getDynamicRangeProfile()J
-    .registers 3
+    .locals 2
 
     .line 87
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;
@@ -101,7 +101,7 @@
 .end method
 
 .method public getOutputConfiguration()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 115
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;
@@ -121,7 +121,7 @@
 .end method
 
 .method public getPhysicalCameraId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;
@@ -134,7 +134,7 @@
 .end method
 
 .method public getSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 98
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->getOutputConfiguration()Ljava/lang/Object;
@@ -151,7 +151,7 @@
 .end method
 
 .method public getSurfaceGroupId()I
-    .registers 2
+    .locals 1
 
     .line 109
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->getOutputConfiguration()Ljava/lang/Object;
@@ -168,7 +168,7 @@
 .end method
 
 .method public getSurfaces()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -191,7 +191,7 @@
 .end method
 
 .method isSurfaceSharingEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;
@@ -204,7 +204,7 @@
 .end method
 
 .method public setDynamicRangeProfile(J)V
-    .registers 4
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;
@@ -217,7 +217,7 @@
 .end method
 
 .method public setPhysicalCameraId(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi24Impl;->mObject:Ljava/lang/Object;

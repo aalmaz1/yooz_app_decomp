@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .locals 16
 
     .line 523
     new-instance v0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
@@ -167,7 +167,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -184,79 +184,79 @@
 .end method
 
 .method public static forNumber(I)Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
-    .registers 1
+    .locals 0
 
-    packed-switch p0, :pswitch_data_1e
+    packed-switch p0, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 551
-    :pswitch_5
+    :pswitch_0
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->DOUBLE:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 550
-    :pswitch_8
+    :pswitch_1
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->STRING_SET:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 549
-    :pswitch_b
+    :pswitch_2
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->STRING:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 548
-    :pswitch_e
+    :pswitch_3
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->LONG:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 547
-    :pswitch_11
+    :pswitch_4
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->INTEGER:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 546
-    :pswitch_14
+    :pswitch_5
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->FLOAT:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 545
-    :pswitch_17
+    :pswitch_6
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->BOOLEAN:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     .line 552
-    :pswitch_1a
+    :pswitch_7
     sget-object p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->VALUE_NOT_SET:Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
 
     return-object p0
 
     nop
 
-    :pswitch_data_1e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
-        :pswitch_e
-        :pswitch_b
-        :pswitch_8
+        :pswitch_7
+        :pswitch_6
         :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static valueOf(I)Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -269,7 +269,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
-    .registers 2
+    .locals 1
 
     .line 522
     const-class v0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
@@ -284,7 +284,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
-    .registers 1
+    .locals 1
 
     .line 522
     sget-object v0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->$VALUES:[Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
@@ -301,7 +301,7 @@
 
 # virtual methods
 .method public getNumber()I
-    .registers 2
+    .locals 1
 
     .line 557
     iget v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;->value:I

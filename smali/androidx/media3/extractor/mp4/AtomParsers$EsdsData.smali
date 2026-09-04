@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[BJJ)V
-    .registers 7
+    .locals 0
 
     .line 2228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 2218
     iget-object p0, p0, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;->mimeType:Ljava/lang/String;
@@ -56,7 +56,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;)[B
-    .registers 1
+    .locals 0
 
     .line 2218
     iget-object p0, p0, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;->initializationData:[B
@@ -65,7 +65,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;)J
-    .registers 3
+    .locals 2
 
     .line 2218
     iget-wide v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;->peakBitrate:J
@@ -74,7 +74,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;)J
-    .registers 3
+    .locals 2
 
     .line 2218
     iget-wide v0, p0, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;->bitrate:J

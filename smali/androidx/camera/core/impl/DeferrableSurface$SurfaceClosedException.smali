@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/camera/core/impl/DeferrableSurface;)V
-    .registers 3
+    .locals 0
 
     .line 73
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public getDeferrableSurface()Landroidx/camera/core/impl/DeferrableSurface;
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;->mDeferrableSurface:Landroidx/camera/core/impl/DeferrableSurface;

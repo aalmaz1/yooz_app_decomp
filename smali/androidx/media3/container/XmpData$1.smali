@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/media3/container/XmpData;
-    .registers 4
+    .locals 2
 
     .line 79
     new-instance v0, Landroidx/media3/container/XmpData;
@@ -52,7 +52,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-virtual {p0, p1}, Landroidx/media3/container/XmpData$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/media3/container/XmpData;
@@ -63,7 +63,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/media3/container/XmpData;
-    .registers 2
+    .locals 0
 
     .line 84
     new-array p1, p1, [Landroidx/media3/container/XmpData;
@@ -72,7 +72,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-virtual {p0, p1}, Landroidx/media3/container/XmpData$1;->newArray(I)[Landroidx/media3/container/XmpData;

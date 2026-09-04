@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method private static isHuaweiMate20()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "Huawei"
 
@@ -28,7 +28,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "HMA-L29"
 
@@ -38,21 +38,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isHuaweiMate20Pro()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "Huawei"
 
@@ -63,7 +63,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "LYA-AL00"
 
@@ -73,21 +73,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isHuaweiP40Lite()Z
-    .registers 8
+    .locals 8
 
     const-string v0, "Huawei"
 
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     const-string v1, "JNY-L21A"
 
@@ -136,21 +136,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_31
+    :goto_0
     return v0
 .end method
 
 .method private static isVivoY91i()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "Vivo"
 
@@ -161,7 +161,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "vivo 1820"
 
@@ -171,66 +171,66 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 67
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiMate20()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiMate20Pro()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isVivoY91i()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiP40Lite()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1c
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public isProblematicVideoQuality(Landroidx/camera/core/impl/CameraInfoInternal;Landroidx/camera/video/Quality;)Z
-    .registers 6
+    .locals 3
 
     .line 92
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiMate20()Z
@@ -241,126 +241,126 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_7
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiMate20Pro()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_38
+    goto :goto_2
 
     .line 94
-    :cond_f
+    :cond_0
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isVivoY91i()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_3
 
     .line 97
     sget-object p1, Landroidx/camera/video/Quality;->HD:Landroidx/camera/video/Quality;
 
-    if-eq p2, p1, :cond_1f
+    if-eq p2, p1, :cond_2
 
     sget-object p1, Landroidx/camera/video/Quality;->FHD:Landroidx/camera/video/Quality;
 
-    if-ne p2, p1, :cond_1e
+    if-ne p2, p1, :cond_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move v1, v2
 
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_0
     return v1
 
     .line 98
-    :cond_20
+    :cond_3
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiP40Lite()Z
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_6
 
     .line 99
     invoke-interface {p1}, Landroidx/camera/core/impl/CameraInfoInternal;->getLensFacing()I
 
     move-result p1
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_4
 
     sget-object p1, Landroidx/camera/video/Quality;->FHD:Landroidx/camera/video/Quality;
 
-    if-eq p2, p1, :cond_36
+    if-eq p2, p1, :cond_5
 
     sget-object p1, Landroidx/camera/video/Quality;->HD:Landroidx/camera/video/Quality;
 
-    if-ne p2, p1, :cond_35
+    if-ne p2, p1, :cond_4
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_35
+    :cond_4
     move v1, v2
 
-    :cond_36
-    :goto_36
+    :cond_5
+    :goto_1
     return v1
 
-    :cond_37
+    :cond_6
     return v2
 
     .line 93
-    :cond_38
-    :goto_38
+    :cond_7
+    :goto_2
     sget-object p1, Landroidx/camera/video/Quality;->UHD:Landroidx/camera/video/Quality;
 
-    if-ne p2, p1, :cond_3d
+    if-ne p2, p1, :cond_8
 
-    goto :goto_3e
+    goto :goto_3
 
-    :cond_3d
+    :cond_8
     move v1, v2
 
-    :goto_3e
+    :goto_3
     return v1
 .end method
 
 .method public workaroundBySurfaceProcessing()Z
-    .registers 2
+    .locals 1
 
     .line 108
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiMate20()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiMate20Pro()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->isHuaweiP40Lite()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_16
+    :goto_1
     return v0
 .end method

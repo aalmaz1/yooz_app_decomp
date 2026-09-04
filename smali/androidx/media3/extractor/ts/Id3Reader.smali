@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 9
+    .locals 7
 
     .line 88
     iget-object v0, p0, Landroidx/media3/extractor/ts/Id3Reader;->output:Landroidx/media3/extractor/TrackOutput;
@@ -61,12 +61,12 @@
     .line 89
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/Id3Reader;->writingSample:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return-void
 
     .line 92
-    :cond_a
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
@@ -76,7 +76,7 @@
 
     const/16 v2, 0xa
 
-    if-ge v1, v2, :cond_71
+    if-ge v1, v2, :cond_3
 
     rsub-int/lit8 v1, v1, 0xa
 
@@ -112,7 +112,7 @@
 
     add-int/2addr v3, v1
 
-    if-ne v3, v2, :cond_71
+    if-ne v3, v2, :cond_3
 
     .line 104
     iget-object v1, p0, Landroidx/media3/extractor/ts/Id3Reader;->id3Header:Landroidx/media3/common/util/ParsableByteArray;
@@ -130,7 +130,7 @@
 
     const/16 v4, 0x49
 
-    if-ne v4, v1, :cond_67
+    if-ne v4, v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/extractor/ts/Id3Reader;->id3Header:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -141,7 +141,7 @@
 
     const/16 v4, 0x44
 
-    if-ne v4, v1, :cond_67
+    if-ne v4, v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/extractor/ts/Id3Reader;->id3Header:Landroidx/media3/common/util/ParsableByteArray;
 
@@ -152,12 +152,12 @@
 
     const/16 v4, 0x33
 
-    if-eq v4, v1, :cond_57
+    if-eq v4, v1, :cond_1
 
-    goto :goto_67
+    goto :goto_0
 
     .line 112
-    :cond_57
+    :cond_1
     iget-object v1, p0, Landroidx/media3/extractor/ts/Id3Reader;->id3Header:Landroidx/media3/common/util/ParsableByteArray;
 
     const/4 v3, 0x3
@@ -175,10 +175,10 @@
 
     iput v1, p0, Landroidx/media3/extractor/ts/Id3Reader;->sampleSize:I
 
-    goto :goto_71
+    goto :goto_1
 
-    :cond_67
-    :goto_67
+    :cond_2
+    :goto_0
     const-string p1, "Id3Reader"
 
     const-string v0, "Discarding invalid ID3 tag"
@@ -192,8 +192,8 @@
     return-void
 
     .line 117
-    :cond_71
-    :goto_71
+    :cond_3
+    :goto_1
     iget v1, p0, Landroidx/media3/extractor/ts/Id3Reader;->sampleSize:I
 
     iget v2, p0, Landroidx/media3/extractor/ts/Id3Reader;->sampleBytesRead:I
@@ -220,7 +220,7 @@
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 5
+    .locals 2
 
     .line 66
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -271,7 +271,7 @@
 .end method
 
 .method public packetFinished(Z)V
-    .registers 10
+    .locals 8
 
     .line 124
     iget-object p1, p0, Landroidx/media3/extractor/ts/Id3Reader;->output:Landroidx/media3/extractor/TrackOutput;
@@ -281,20 +281,20 @@
     .line 125
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/Id3Reader;->writingSample:Z
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_2
 
     iget p1, p0, Landroidx/media3/extractor/ts/Id3Reader;->sampleSize:I
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_2
 
     iget v0, p0, Landroidx/media3/extractor/ts/Id3Reader;->sampleBytesRead:I
 
-    if-eq v0, p1, :cond_12
+    if-eq v0, p1, :cond_0
 
-    goto :goto_32
+    goto :goto_1
 
     .line 129
-    :cond_12
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/extractor/ts/Id3Reader;->sampleTimeUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
@@ -303,16 +303,16 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move p1, v0
 
-    :goto_21
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 130
@@ -333,21 +333,21 @@
     .line 131
     iput-boolean v0, p0, Landroidx/media3/extractor/ts/Id3Reader;->writingSample:Z
 
-    :cond_32
-    :goto_32
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p3, p3, 0x4
 
-    if-nez p3, :cond_5
+    if-nez p3, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 p3, 0x1
 
     .line 80
@@ -368,7 +368,7 @@
 .end method
 
 .method public seek()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 

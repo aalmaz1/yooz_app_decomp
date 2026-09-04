@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;)V
-    .registers 2
+    .locals 0
 
     .line 317
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$LoaderCallbackImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -43,7 +43,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$1;)V
-    .registers 3
+    .locals 0
 
     .line 317
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$LoaderCallbackImpl;-><init>(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;)V
@@ -54,13 +54,13 @@
 
 # virtual methods
 .method public onLoadCanceled(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;JJZ)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 317
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;
@@ -71,13 +71,13 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;JJ)V
-    .registers 6
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 317
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;
@@ -88,7 +88,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 332
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$LoaderCallbackImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -97,7 +97,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 333
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$LoaderCallbackImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;
@@ -109,14 +109,14 @@
     invoke-interface {p1, p6}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageListener;->onReceivingFailed(Ljava/lang/Exception;)V
 
     .line 335
-    :cond_11
+    :cond_0
     sget-object p1, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     return-object p1
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 317
     check-cast p1, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Receiver;

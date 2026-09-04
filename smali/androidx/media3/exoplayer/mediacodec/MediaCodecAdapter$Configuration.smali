@@ -30,7 +30,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;Landroid/media/MediaFormat;Landroidx/media3/common/Format;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
-    .registers 7
+    .locals 0
 
     .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public static createForAudioDecoding(Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;Landroid/media/MediaFormat;Landroidx/media3/common/Format;Landroid/media/MediaCrypto;)Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;
-    .registers 12
+    .locals 8
 
     .line 60
     new-instance v7, Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;
@@ -82,7 +82,7 @@
 .end method
 
 .method public static createForVideoDecoding(Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;Landroid/media/MediaFormat;Landroidx/media3/common/Format;Landroid/view/Surface;Landroid/media/MediaCrypto;)Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;
-    .registers 13
+    .locals 8
 
     .line 80
     new-instance v7, Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;

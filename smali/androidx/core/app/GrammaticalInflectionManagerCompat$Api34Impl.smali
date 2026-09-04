@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getApplicationGrammaticalGender(Landroid/content/Context;)I
-    .registers 1
+    .locals 0
 
     .line 122
     invoke-static {p0}, Landroidx/core/app/GrammaticalInflectionManagerCompat$Api34Impl;->getGrammaticalInflectionManager(Landroid/content/Context;)Landroid/app/GrammaticalInflectionManager;
@@ -40,7 +40,7 @@
 .end method
 
 .method private static getGrammaticalInflectionManager(Landroid/content/Context;)Landroid/app/GrammaticalInflectionManager;
-    .registers 2
+    .locals 1
 
     .line 134
     const-class v0, Landroid/app/GrammaticalInflectionManager;
@@ -55,7 +55,7 @@
 .end method
 
 .method static setRequestedApplicationGrammaticalGender(Landroid/content/Context;I)V
-    .registers 2
+    .locals 0
 
     .line 128
     invoke-static {p0}, Landroidx/core/app/GrammaticalInflectionManagerCompat$Api34Impl;->getGrammaticalInflectionManager(Landroid/content/Context;)Landroid/app/GrammaticalInflectionManager;

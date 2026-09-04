@@ -37,24 +37,24 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 138
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     iput-object v0, p0, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->context:Landroid/content/Context;
 
     .line 139
@@ -87,7 +87,7 @@
 .end method
 
 .method private static getInitialBitrateEstimatesForCountry(Ljava/lang/String;)Ljava/util/Map;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -282,7 +282,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter;
-    .registers 9
+    .locals 8
 
     .line 233
     new-instance v7, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter;
@@ -307,7 +307,7 @@
 .end method
 
 .method public setClock(Landroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
-    .registers 2
+    .locals 0
 
     .line 211
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->clock:Landroidx/media3/common/util/Clock;
@@ -316,7 +316,7 @@
 .end method
 
 .method public setInitialBitrateEstimate(IJ)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
-    .registers 5
+    .locals 1
 
     .line 183
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->initialBitrateEstimates:Ljava/util/Map;
@@ -335,7 +335,7 @@
 .end method
 
 .method public setInitialBitrateEstimate(J)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
-    .registers 5
+    .locals 2
 
     .line 166
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->initialBitrateEstimates:Ljava/util/Map;
@@ -348,12 +348,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -368,14 +368,14 @@
 
     invoke-virtual {p0, v1, p1, p2}, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->setInitialBitrateEstimate(IJ)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-object p0
 .end method
 
 .method public setInitialBitrateEstimate(Ljava/lang/String;)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
-    .registers 2
+    .locals 0
 
     .line 198
     invoke-static {p1}, Lcom/google/common/base/Ascii;->toUpperCase(Ljava/lang/String;)Ljava/lang/String;
@@ -392,7 +392,7 @@
 .end method
 
 .method public setResetOnNetworkTypeChange(Z)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
-    .registers 2
+    .locals 0
 
     .line 223
     iput-boolean p1, p0, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->resetOnNetworkTypeChange:Z
@@ -401,7 +401,7 @@
 .end method
 
 .method public setSlidingWindowMaxWeight(I)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;
-    .registers 2
+    .locals 0
 
     .line 153
     iput p1, p0, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter$Builder;->slidingWindowMaxWeight:I

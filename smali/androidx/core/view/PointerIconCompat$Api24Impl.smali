@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
-    .registers 3
+    .locals 0
 
     .line 203
     invoke-static {p0, p1, p2}, Landroid/view/PointerIcon;->create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
-    .registers 2
+    .locals 0
 
     .line 198
     invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
@@ -47,7 +47,7 @@
 .end method
 
 .method static load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
-    .registers 2
+    .locals 0
 
     .line 208
     invoke-static {p0, p1}, Landroid/view/PointerIcon;->load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;

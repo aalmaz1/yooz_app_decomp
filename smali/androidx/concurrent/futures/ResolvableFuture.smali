@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Landroidx/concurrent/futures/AbstractResolvableFuture;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static create()Landroidx/concurrent/futures/ResolvableFuture;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public set(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)Z"
@@ -64,7 +64,7 @@
 .end method
 
 .method public setException(Ljava/lang/Throwable;)Z
-    .registers 2
+    .locals 0
 
     .line 55
     invoke-super {p0, p1}, Landroidx/concurrent/futures/AbstractResolvableFuture;->setException(Ljava/lang/Throwable;)Z
@@ -75,7 +75,7 @@
 .end method
 
 .method public setFuture(Lcom/google/common/util/concurrent/ListenableFuture;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

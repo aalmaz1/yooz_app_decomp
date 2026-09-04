@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Supplier;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation runtime Lcom/google/common/base/ParametricNullness;
     .end annotation
 
@@ -109,16 +109,16 @@
     .line 133
     iget-boolean v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->initialized:Z
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 134
     monitor-enter p0
 
     .line 135
-    :try_start_5
+    :try_start_0
     iget-boolean v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->initialized:Z
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 136
     iget-object v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
@@ -141,23 +141,23 @@
     return-object v0
 
     .line 141
-    :cond_16
+    :cond_0
     monitor-exit p0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :catchall_18
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_1a
-    .catchall {:try_start_5 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
     .line 144
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     iget-object v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->value:Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/google/common/base/NullnessCasts;->uncheckedCastNullableTToT(Ljava/lang/Object;)Ljava/lang/Object;
@@ -168,7 +168,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 149
     new-instance v0, Ljava/lang/StringBuilder;
@@ -180,7 +180,7 @@
     .line 150
     iget-boolean v1, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->initialized:Z
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -204,12 +204,12 @@
 
     move-result-object v1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     iget-object v1, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
 
-    :goto_25
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0

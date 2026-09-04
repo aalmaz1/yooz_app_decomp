@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;Ljava/lang/String;Landroid/support/v4/os/ResultReceiver;)V
-    .registers 5
+    .locals 0
 
     .line 995
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$5;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     .line 998
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$5;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -70,7 +70,7 @@
 
     check-cast v0, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_0
 
     .line 1002
     new-instance v0, Ljava/lang/StringBuilder;
@@ -96,7 +96,7 @@
     return-void
 
     .line 1005
-    :cond_2b
+    :cond_0
     iget-object v1, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$5;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
 
     iget-object v1, v1, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;->this$0:Landroidx/media/MediaBrowserServiceCompat;

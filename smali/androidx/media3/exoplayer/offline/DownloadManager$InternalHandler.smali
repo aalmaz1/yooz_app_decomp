@@ -65,7 +65,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$Q3DB9u8Xelz3Rx9X4s71Ymag7Ik(Landroidx/media3/exoplayer/offline/Download;Landroidx/media3/exoplayer/offline/Download;)I
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->compareStartTimes(Landroidx/media3/exoplayer/offline/Download;Landroidx/media3/exoplayer/offline/Download;)I
 
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/HandlerThread;Landroidx/media3/exoplayer/offline/WritableDownloadIndex;Landroidx/media3/exoplayer/offline/DownloaderFactory;Landroid/os/Handler;IIZ)V
-    .registers 9
+    .locals 1
 
     .line 708
     invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -123,7 +123,7 @@
 .end method
 
 .method private addDownload(Landroidx/media3/exoplayer/offline/DownloadRequest;I)V
-    .registers 16
+    .locals 13
 
     .line 878
     iget-object v0, p1, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -139,7 +139,7 @@
 
     move-result-wide v7
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 881
     invoke-static {v0, p1, p2, v7, v8}, Landroidx/media3/exoplayer/offline/DownloadManager;->mergeRequest(Landroidx/media3/exoplayer/offline/Download;Landroidx/media3/exoplayer/offline/DownloadRequest;IJ)Landroidx/media3/exoplayer/offline/Download;
@@ -148,20 +148,20 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->putDownload(Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/Download;
 
-    goto :goto_29
+    goto :goto_1
 
     .line 883
-    :cond_15
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/offline/Download;
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_1b
+    :goto_0
     move v4, v1
 
     const-wide/16 v9, -0x1
@@ -183,37 +183,37 @@
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->putDownload(Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/Download;
 
     .line 893
-    :goto_29
+    :goto_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncTasks()V
 
     return-void
 .end method
 
 .method private canDownloadsRun()Z
-    .registers 2
+    .locals 1
 
     .line 1202
     iget-boolean v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadsPaused:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->notMetRequirements:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method private static compareStartTimes(Landroidx/media3/exoplayer/offline/Download;Landroidx/media3/exoplayer/offline/Download;)I
-    .registers 4
+    .locals 2
 
     .line 1281
     iget-wide v0, p0, Landroidx/media3/exoplayer/offline/Download;->startTimeMs:J
@@ -228,7 +228,7 @@
 .end method
 
 .method private static copyDownloadWithState(Landroidx/media3/exoplayer/offline/Download;II)Landroidx/media3/exoplayer/offline/Download;
-    .registers 16
+    .locals 13
 
     .line 1269
     new-instance v12, Landroidx/media3/exoplayer/offline/Download;
@@ -260,7 +260,7 @@
 .end method
 
 .method private getDownload(Ljava/lang/String;Z)Landroidx/media3/exoplayer/offline/Download;
-    .registers 5
+    .locals 2
 
     .line 1243
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->getDownloadIndex(Ljava/lang/String;)I
@@ -269,7 +269,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     .line 1245
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -282,22 +282,22 @@
 
     return-object p1
 
-    :cond_10
-    if-eqz p2, :cond_2e
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 1249
-    :try_start_12
+    :try_start_0
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {p2, p1}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->getDownload(Ljava/lang/String;)Landroidx/media3/exoplayer/offline/Download;
 
     move-result-object p1
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_19
+    :catch_0
     move-exception p2
 
     .line 1251
@@ -319,26 +319,26 @@
 
     invoke-static {v0, p1, p2}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_2e
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method private getDownloadIndex(Ljava/lang/String;)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 1258
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1f
+    if-ge v0, v1, :cond_1
 
     .line 1259
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -358,23 +358,23 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     return v0
 
-    :cond_1c
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 p1, -0x1
 
     return p1
 .end method
 
 .method private initialize(I)V
-    .registers 7
+    .locals 5
 
     .line 785
     iput p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->notMetRequirements:I
@@ -384,7 +384,7 @@
     const/4 v0, 0x0
 
     .line 788
-    :try_start_4
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v1}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->setDownloadingStatesToQueued()V
@@ -422,12 +422,12 @@
     move-result-object v0
 
     .line 792
-    :goto_21
+    :goto_0
     invoke-interface {v0}, Landroidx/media3/exoplayer/offline/DownloadCursor;->moveToNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_0
 
     .line 793
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -437,21 +437,21 @@
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_30
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_30} :catch_33
-    .catchall {:try_start_4 .. :try_end_30} :catchall_31
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :catchall_31
+    :catchall_0
     move-exception p1
 
-    goto :goto_57
+    goto :goto_1
 
-    :catch_33
+    :catch_0
     move-exception v1
 
-    :try_start_34
+    :try_start_1
     const-string v2, "DownloadManager"
 
     const-string v3, "Failed to load index."
@@ -463,11 +463,11 @@
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
-    :try_end_40
-    .catchall {:try_start_34 .. :try_end_40} :catchall_31
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 799
-    :cond_40
+    :cond_0
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 803
@@ -492,7 +492,7 @@
     return-void
 
     .line 799
-    :goto_57
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 800
@@ -500,7 +500,7 @@
 .end method
 
 .method private onContentLengthChanged(Landroidx/media3/exoplayer/offline/DownloadManager$Task;J)V
-    .registers 18
+    .locals 14
 
     move-object v0, p0
 
@@ -529,18 +529,18 @@
 
     cmp-long v2, p2, v2
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     const-wide/16 v2, -0x1
 
     cmp-long v2, p2, v2
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_0
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 1078
-    :cond_1f
+    :cond_0
     new-instance v13, Landroidx/media3/exoplayer/offline/Download;
 
     iget-object v2, v1, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -569,13 +569,13 @@
     .line 1078
     invoke-direct {p0, v13}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->putDownload(Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/Download;
 
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private onDownloadTaskStopped(Landroidx/media3/exoplayer/offline/Download;Ljava/lang/Exception;)V
-    .registers 20
+    .locals 17
 
     move-object/from16 v1, p0
 
@@ -590,19 +590,19 @@
 
     const/4 v14, 0x3
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_0
 
     move v5, v14
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v3, 0x4
 
     move v5, v3
 
     .line 1138
-    :goto_11
+    :goto_0
     iget-wide v6, v0, Landroidx/media3/exoplayer/offline/Download;->startTimeMs:J
 
     .line 1140
@@ -616,19 +616,19 @@
 
     const/4 v13, 0x0
 
-    if-nez v2, :cond_21
+    if-nez v2, :cond_1
 
     move/from16 v16, v13
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_21
+    :cond_1
     const/4 v3, 0x1
 
     move/from16 v16, v3
 
     .line 1143
-    :goto_24
+    :goto_1
     iget-object v0, v0, Landroidx/media3/exoplayer/offline/Download;->progress:Landroidx/media3/exoplayer/offline/DownloadProgress;
 
     move-object v3, v15
@@ -653,16 +653,16 @@
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 1149
-    :try_start_3a
+    :try_start_0
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v0, v15}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->putDownload(Landroidx/media3/exoplayer/offline/Download;)V
-    :try_end_3f
-    .catch Ljava/io/IOException; {:try_start_3a .. :try_end_3f} :catch_40
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_48
+    goto :goto_2
 
-    :catch_40
+    :catch_0
     move-exception v0
 
     const-string v3, "DownloadManager"
@@ -673,7 +673,7 @@
     invoke-static {v3, v4, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 1153
-    :goto_48
+    :goto_2
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadManager$DownloadUpdate;
 
     new-instance v3, Ljava/util/ArrayList;
@@ -701,7 +701,7 @@
 .end method
 
 .method private onRemoveTaskStopped(Landroidx/media3/exoplayer/offline/Download;)V
-    .registers 6
+    .locals 4
 
     .line 1160
     iget v0, p1, Landroidx/media3/exoplayer/offline/Download;->state:I
@@ -710,17 +710,17 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_1
 
     .line 1162
     iget v0, p1, Landroidx/media3/exoplayer/offline/Download;->stopReason:I
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const/4 v2, 0x0
 
     .line 1163
-    :cond_b
+    :cond_0
     iget v0, p1, Landroidx/media3/exoplayer/offline/Download;->stopReason:I
 
     invoke-direct {p0, p1, v2, v0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->putDownloadWithState(Landroidx/media3/exoplayer/offline/Download;II)Landroidx/media3/exoplayer/offline/Download;
@@ -728,10 +728,10 @@
     .line 1164
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncTasks()V
 
-    goto :goto_49
+    goto :goto_1
 
     .line 1166
-    :cond_14
+    :cond_1
     iget-object v0, p1, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -746,7 +746,7 @@
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 1169
-    :try_start_21
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     iget-object v1, p1, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -754,12 +754,12 @@
     iget-object v1, v1, Landroidx/media3/exoplayer/offline/DownloadRequest;->id:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->removeDownload(Ljava/lang/String;)V
-    :try_end_2a
-    .catch Ljava/io/IOException; {:try_start_21 .. :try_end_2a} :catch_2b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_32
+    goto :goto_0
 
-    :catch_2b
+    :catch_0
     const-string v0, "DownloadManager"
 
     const-string v1, "Failed to remove from database"
@@ -768,7 +768,7 @@
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1173
-    :goto_32
+    :goto_0
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadManager$DownloadUpdate;
 
     new-instance v1, Ljava/util/ArrayList;
@@ -792,12 +792,12 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    :goto_49
+    :goto_1
     return-void
 .end method
 
 .method private onTaskStopped(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)V
-    .registers 8
+    .locals 6
 
     .line 1091
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$200(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -818,22 +818,22 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 1096
     iput-boolean v2, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->hasActiveRemoveTask:Z
 
-    goto :goto_22
+    goto :goto_0
 
     .line 1097
-    :cond_15
+    :cond_0
     iget v3, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->activeDownloadTaskCount:I
 
     add-int/lit8 v3, v3, -0x1
 
     iput v3, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->activeDownloadTaskCount:I
 
-    if-nez v3, :cond_22
+    if-nez v3, :cond_1
 
     const/16 v3, 0xc
 
@@ -841,13 +841,13 @@
     invoke-virtual {p0, v3}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->removeMessages(I)V
 
     .line 1101
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$300(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_2
 
     .line 1102
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncTasks()V
@@ -855,12 +855,12 @@
     return-void
 
     .line 1106
-    :cond_2c
+    :cond_2
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$400(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Ljava/lang/Exception;
 
     move-result-object v3
 
-    if-eqz v3, :cond_54
+    if-eqz v3, :cond_3
 
     .line 1108
     new-instance v4, Ljava/lang/StringBuilder;
@@ -896,7 +896,7 @@
     invoke-static {v4, p1, v3}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 1112
-    :cond_54
+    :cond_3
     invoke-direct {p0, v0, v2}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->getDownload(Ljava/lang/String;Z)Landroidx/media3/exoplayer/offline/Download;
 
     move-result-object p1
@@ -912,20 +912,20 @@
 
     const/4 v2, 0x2
 
-    if-eq v0, v2, :cond_77
+    if-eq v0, v2, :cond_6
 
     const/4 v2, 0x5
 
-    if-eq v0, v2, :cond_70
+    if-eq v0, v2, :cond_5
 
     const/4 v2, 0x7
 
-    if-ne v0, v2, :cond_6a
+    if-ne v0, v2, :cond_4
 
-    goto :goto_70
+    goto :goto_1
 
     .line 1128
-    :cond_6a
+    :cond_4
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -933,16 +933,16 @@
     throw p1
 
     .line 1120
-    :cond_70
-    :goto_70
+    :cond_5
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 1121
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->onRemoveTaskStopped(Landroidx/media3/exoplayer/offline/Download;)V
 
-    goto :goto_7f
+    goto :goto_2
 
-    :cond_77
+    :cond_6
     xor-int/lit8 v0, v1, 0x1
 
     .line 1115
@@ -952,14 +952,14 @@
     invoke-direct {p0, p1, v3}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->onDownloadTaskStopped(Landroidx/media3/exoplayer/offline/Download;Ljava/lang/Exception;)V
 
     .line 1131
-    :goto_7f
+    :goto_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncTasks()V
 
     return-void
 .end method
 
 .method private putDownload(Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/Download;
-    .registers 10
+    .locals 8
 
     .line 1214
     iget v0, p1, Landroidx/media3/exoplayer/offline/Download;->state:I
@@ -970,22 +970,22 @@
 
     const/4 v3, 0x3
 
-    if-eq v0, v3, :cond_e
+    if-eq v0, v3, :cond_0
 
     iget v0, p1, Landroidx/media3/exoplayer/offline/Download;->state:I
 
     const/4 v4, 0x4
 
-    if-eq v0, v4, :cond_e
+    if-eq v0, v4, :cond_0
 
     move v0, v1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v0, v2
 
-    :goto_f
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 1215
@@ -999,7 +999,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v0, v4, :cond_2d
+    if-ne v0, v4, :cond_1
 
     .line 1217
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1015,10 +1015,10 @@
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    goto :goto_50
+    goto :goto_2
 
     .line 1220
-    :cond_2d
+    :cond_1
     iget-wide v4, p1, Landroidx/media3/exoplayer/offline/Download;->startTimeMs:J
 
     iget-object v6, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1033,20 +1033,20 @@
 
     cmp-long v4, v4, v6
 
-    if-eqz v4, :cond_3e
+    if-eqz v4, :cond_2
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_3e
+    :cond_2
     move v1, v2
 
     .line 1221
-    :goto_3f
+    :goto_1
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0, p1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_3
 
     .line 1223
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1058,18 +1058,18 @@
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 1227
-    :cond_50
-    :goto_50
-    :try_start_50
+    :cond_3
+    :goto_2
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v0, p1}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->putDownload(Landroidx/media3/exoplayer/offline/Download;)V
-    :try_end_55
-    .catch Ljava/io/IOException; {:try_start_50 .. :try_end_55} :catch_56
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_5e
+    goto :goto_3
 
-    :catch_56
+    :catch_0
     move-exception v0
 
     const-string v1, "DownloadManager"
@@ -1080,7 +1080,7 @@
     invoke-static {v1, v4, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 1231
-    :goto_5e
+    :goto_3
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadManager$DownloadUpdate;
 
     new-instance v1, Ljava/util/ArrayList;
@@ -1106,25 +1106,25 @@
 .end method
 
 .method private putDownloadWithState(Landroidx/media3/exoplayer/offline/Download;II)Landroidx/media3/exoplayer/offline/Download;
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x3
 
-    if-eq p2, v0, :cond_8
+    if-eq p2, v0, :cond_0
 
     const/4 v0, 0x4
 
-    if-eq p2, v0, :cond_8
+    if-eq p2, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 1208
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 1209
@@ -1140,7 +1140,7 @@
 .end method
 
 .method private release()V
-    .registers 5
+    .locals 4
 
     .line 939
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->activeTasks:Ljava/util/HashMap;
@@ -1153,14 +1153,14 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1171,20 +1171,20 @@
     .line 940
     invoke-virtual {v1, v2}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->cancel(Z)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 943
-    :cond_1b
-    :try_start_1b
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->setDownloadingStatesToQueued()V
-    :try_end_20
-    .catch Ljava/io/IOException; {:try_start_1b .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_29
+    goto :goto_1
 
-    :catch_21
+    :catch_0
     move-exception v0
 
     const-string v1, "DownloadManager"
@@ -1195,7 +1195,7 @@
     invoke-static {v1, v3, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 947
-    :goto_29
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -1209,7 +1209,7 @@
     monitor-enter p0
 
     .line 950
-    :try_start_34
+    :try_start_1
     iput-boolean v2, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->released:Z
 
     .line 951
@@ -1220,18 +1220,18 @@
 
     return-void
 
-    :catchall_3b
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_3d
-    .catchall {:try_start_34 .. :try_end_3d} :catchall_3b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method private removeAllDownloads()V
-    .registers 9
+    .locals 8
 
     const-string v0, "DownloadManager"
 
@@ -1245,7 +1245,7 @@
     const/4 v3, 0x0
 
     .line 908
-    :try_start_9
+    :try_start_0
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     const/4 v5, 0x2
@@ -1263,17 +1263,17 @@
     invoke-interface {v4, v5}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->getDownloads([I)Landroidx/media3/exoplayer/offline/DownloadCursor;
 
     move-result-object v4
-    :try_end_18
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_18} :catch_38
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 909
-    :goto_18
-    :try_start_18
+    :goto_0
+    :try_start_1
     invoke-interface {v4}, Landroidx/media3/exoplayer/offline/DownloadCursor;->moveToNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_0
 
     .line 910
     invoke-interface {v4}, Landroidx/media3/exoplayer/offline/DownloadCursor;->getDownload()Landroidx/media3/exoplayer/offline/Download;
@@ -1281,59 +1281,59 @@
     move-result-object v5
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_25
-    .catchall {:try_start_18 .. :try_end_25} :catchall_2c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_26
-    if-eqz v4, :cond_3d
+    :cond_0
+    if-eqz v4, :cond_2
 
     .line 912
-    :try_start_28
+    :try_start_2
     invoke-interface {v4}, Landroidx/media3/exoplayer/offline/DownloadCursor;->close()V
-    :try_end_2b
-    .catch Ljava/io/IOException; {:try_start_28 .. :try_end_2b} :catch_38
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto :goto_3d
+    goto :goto_2
 
-    :catchall_2c
+    :catchall_0
     move-exception v5
 
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_1
 
     .line 908
-    :try_start_2f
+    :try_start_3
     invoke-interface {v4}, Landroidx/media3/exoplayer/offline/DownloadCursor;->close()V
-    :try_end_32
-    .catchall {:try_start_2f .. :try_end_32} :catchall_33
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_37
+    goto :goto_1
 
-    :catchall_33
+    :catchall_1
     move-exception v4
 
-    :try_start_34
+    :try_start_4
     invoke-virtual {v5, v4}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_37
-    :goto_37
+    :cond_1
+    :goto_1
     throw v5
-    :try_end_38
-    .catch Ljava/io/IOException; {:try_start_34 .. :try_end_38} :catch_38
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    :catch_38
+    :catch_0
     const-string v4, "Failed to load downloads."
 
     .line 913
     invoke-static {v0, v4}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_3d
-    :goto_3d
+    :cond_2
+    :goto_2
     move v4, v3
 
     .line 915
-    :goto_3e
+    :goto_3
     iget-object v5, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -1342,7 +1342,7 @@
 
     const/4 v6, 0x5
 
-    if-ge v4, v5, :cond_59
+    if-ge v4, v5, :cond_3
 
     .line 916
     iget-object v5, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1361,18 +1361,18 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_3e
+    goto :goto_3
 
-    :cond_59
+    :cond_3
     move v4, v3
 
     .line 918
-    :goto_5a
+    :goto_4
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_72
+    if-ge v4, v5, :cond_4
 
     .line 919
     iget-object v5, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1393,10 +1393,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_5a
+    goto :goto_4
 
     .line 922
-    :cond_72
+    :cond_4
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     new-instance v4, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler$$ExternalSyntheticLambda0;
@@ -1406,16 +1406,16 @@
     invoke-static {v1, v4}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 924
-    :try_start_7c
+    :try_start_5
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v1}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->setStatesToRemoving()V
-    :try_end_81
-    .catch Ljava/io/IOException; {:try_start_7c .. :try_end_81} :catch_82
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
-    goto :goto_88
+    goto :goto_5
 
-    :catch_82
+    :catch_1
     move-exception v1
 
     const-string v4, "Failed to update index."
@@ -1424,7 +1424,7 @@
     invoke-static {v0, v4, v1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 928
-    :goto_88
+    :goto_5
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1434,14 +1434,14 @@
     move v1, v3
 
     .line 929
-    :goto_90
+    :goto_6
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v1, v4, :cond_b2
+    if-ge v1, v4, :cond_5
 
     .line 930
     new-instance v4, Landroidx/media3/exoplayer/offline/DownloadManager$DownloadUpdate;
@@ -1470,17 +1470,17 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_90
+    goto :goto_6
 
     .line 935
-    :cond_b2
+    :cond_5
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncTasks()V
 
     return-void
 .end method
 
 .method private removeDownload(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -1489,7 +1489,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 899
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1512,7 +1512,7 @@
 
     return-void
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x5
 
     const/4 v1, 0x0
@@ -1527,7 +1527,7 @@
 .end method
 
 .method private setDownloadsPaused(Z)V
-    .registers 2
+    .locals 0
 
     .line 809
     iput-boolean p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadsPaused:Z
@@ -1539,7 +1539,7 @@
 .end method
 
 .method private setMaxParallelDownloads(I)V
-    .registers 2
+    .locals 0
 
     .line 869
     iput p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->maxParallelDownloads:I
@@ -1551,7 +1551,7 @@
 .end method
 
 .method private setMinRetryCount(I)V
-    .registers 2
+    .locals 0
 
     .line 874
     iput p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->minRetryCount:I
@@ -1560,7 +1560,7 @@
 .end method
 
 .method private setNotMetRequirements(I)V
-    .registers 2
+    .locals 0
 
     .line 814
     iput p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->notMetRequirements:I
@@ -1572,7 +1572,7 @@
 .end method
 
 .method private setStopReason(Landroidx/media3/exoplayer/offline/Download;I)V
-    .registers 17
+    .locals 14
 
     move-object v0, p0
 
@@ -1582,40 +1582,40 @@
 
     const/4 v2, 0x1
 
-    if-nez v10, :cond_10
+    if-nez v10, :cond_0
 
     .line 847
     iget v3, v1, Landroidx/media3/exoplayer/offline/Download;->state:I
 
-    if-ne v3, v2, :cond_34
+    if-ne v3, v2, :cond_3
 
     const/4 v2, 0x0
 
     .line 848
     invoke-direct {p0, p1, v2, v2}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->putDownloadWithState(Landroidx/media3/exoplayer/offline/Download;II)Landroidx/media3/exoplayer/offline/Download;
 
-    goto :goto_34
+    goto :goto_0
 
     .line 850
-    :cond_10
+    :cond_0
     iget v3, v1, Landroidx/media3/exoplayer/offline/Download;->stopReason:I
 
-    if-eq v10, v3, :cond_34
+    if-eq v10, v3, :cond_3
 
     .line 851
     iget v3, v1, Landroidx/media3/exoplayer/offline/Download;->state:I
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_1
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_1c
+    if-ne v3, v4, :cond_2
 
-    :cond_1b
+    :cond_1
     move v3, v2
 
     .line 855
-    :cond_1c
+    :cond_2
     new-instance v13, Landroidx/media3/exoplayer/offline/Download;
 
     iget-object v2, v1, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -1642,29 +1642,29 @@
     .line 855
     invoke-direct {p0, v13}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->putDownload(Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/Download;
 
-    :cond_34
-    :goto_34
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private setStopReason(Ljava/lang/String;I)V
-    .registers 6
+    .locals 3
 
     const-string v0, "DownloadManager"
 
     const/4 v1, 0x0
 
-    if-nez p1, :cond_28
+    if-nez p1, :cond_1
 
     .line 820
-    :goto_5
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
-    if-ge v1, p1, :cond_1b
+    if-ge v1, p1, :cond_0
 
     .line 821
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -1679,20 +1679,20 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 825
-    :cond_1b
-    :try_start_1b
+    :cond_0
+    :try_start_0
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->setStopReason(I)V
-    :try_end_20
-    .catch Ljava/io/IOException; {:try_start_1b .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4b
+    goto :goto_1
 
-    :catch_21
+    :catch_0
     move-exception p1
 
     const-string p2, "Failed to set manual stop reason"
@@ -1700,33 +1700,33 @@
     .line 827
     invoke-static {v0, p2, p1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 830
-    :cond_28
+    :cond_1
     invoke-direct {p0, p1, v1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->getDownload(Ljava/lang/String;Z)Landroidx/media3/exoplayer/offline/Download;
 
     move-result-object v1
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_2
 
     .line 832
     invoke-direct {p0, v1, p2}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->setStopReason(Landroidx/media3/exoplayer/offline/Download;I)V
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 836
-    :cond_32
-    :try_start_32
+    :cond_2
+    :try_start_1
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v1, p1, p2}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->setStopReason(Ljava/lang/String;I)V
-    :try_end_37
-    .catch Ljava/io/IOException; {:try_start_32 .. :try_end_37} :catch_38
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_4b
+    goto :goto_1
 
-    :catch_38
+    :catch_1
     move-exception p2
 
     .line 838
@@ -1747,14 +1747,14 @@
     invoke-static {v0, p1, p2}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 842
-    :goto_4b
+    :goto_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncTasks()V
 
     return-void
 .end method
 
 .method private syncDownloadingDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;Landroidx/media3/exoplayer/offline/Download;I)V
-    .registers 5
+    .locals 1
 
     .line 1032
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$000(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Z
@@ -1770,13 +1770,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->maxParallelDownloads:I
 
-    if-lt p3, v0, :cond_1a
+    if-lt p3, v0, :cond_1
 
-    :cond_13
+    :cond_0
     const/4 p3, 0x0
 
     .line 1034
@@ -1785,16 +1785,16 @@
     .line 1035
     invoke-virtual {p1, p3}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->cancel(Z)V
 
-    :cond_1a
+    :cond_1
     return-void
 .end method
 
 .method private syncQueuedDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/DownloadManager$Task;
-    .registers 12
+    .locals 9
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 1002
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$000(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Z
@@ -1811,22 +1811,22 @@
     return-object p1
 
     .line 1007
-    :cond_10
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->canDownloadsRun()Z
 
     move-result p1
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_3
 
     iget p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->activeDownloadTaskCount:I
 
     iget v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->maxParallelDownloads:I
 
-    if-lt p1, v1, :cond_1d
+    if-lt p1, v1, :cond_1
 
-    goto :goto_55
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     const/4 p1, 0x2
 
     .line 1012
@@ -1878,7 +1878,7 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->activeDownloadTaskCount:I
 
-    if-nez p1, :cond_51
+    if-nez p1, :cond_2
 
     const/16 p1, 0xc
 
@@ -1888,48 +1888,48 @@
     invoke-virtual {p0, p1, v0, v1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->sendEmptyMessageDelayed(IJ)Z
 
     .line 1026
-    :cond_51
+    :cond_2
     invoke-virtual {p2}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->start()V
 
     return-object p2
 
-    :cond_55
-    :goto_55
+    :cond_3
+    :goto_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method private syncRemovingDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;Landroidx/media3/exoplayer/offline/Download;)V
-    .registers 12
+    .locals 9
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_1
 
     .line 1041
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$000(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Z
 
     move-result p2
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_0
 
     const/4 p2, 0x0
 
     .line 1043
     invoke-virtual {p1, p2}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->cancel(Z)V
 
-    :cond_c
+    :cond_0
     return-void
 
     .line 1050
-    :cond_d
+    :cond_1
     iget-boolean p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->hasActiveRemoveTask:Z
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_2
 
     return-void
 
     .line 1055
-    :cond_12
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloaderFactory:Landroidx/media3/exoplayer/offline/DownloaderFactory;
 
     iget-object v0, p2, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -1978,9 +1978,9 @@
 .end method
 
 .method private syncStoppedDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 991
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$000(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Z
@@ -1996,26 +1996,26 @@
     .line 992
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->cancel(Z)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private syncTasks()V
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 959
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_55
+    if-ge v0, v2, :cond_6
 
     .line 960
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -2042,28 +2042,28 @@
     .line 962
     iget v4, v2, Landroidx/media3/exoplayer/offline/Download;->state:I
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_4
 
     const/4 v5, 0x1
 
-    if-eq v4, v5, :cond_40
+    if-eq v4, v5, :cond_3
 
     const/4 v5, 0x2
 
-    if-eq v4, v5, :cond_39
+    if-eq v4, v5, :cond_2
 
     const/4 v5, 0x5
 
-    if-eq v4, v5, :cond_35
+    if-eq v4, v5, :cond_1
 
     const/4 v5, 0x7
 
-    if-ne v4, v5, :cond_2f
+    if-ne v4, v5, :cond_0
 
-    goto :goto_35
+    goto :goto_1
 
     .line 980
-    :cond_2f
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -2071,68 +2071,68 @@
     throw v0
 
     .line 975
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_1
     invoke-direct {p0, v3, v2}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncRemovingDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;Landroidx/media3/exoplayer/offline/Download;)V
 
-    goto :goto_48
+    goto :goto_2
 
     .line 970
-    :cond_39
+    :cond_2
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 971
     invoke-direct {p0, v3, v2, v1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncDownloadingDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;Landroidx/media3/exoplayer/offline/Download;I)V
 
-    goto :goto_48
+    goto :goto_2
 
     .line 964
-    :cond_40
+    :cond_3
     invoke-direct {p0, v3}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncStoppedDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)V
 
-    goto :goto_48
+    goto :goto_2
 
     .line 967
-    :cond_44
+    :cond_4
     invoke-direct {p0, v3, v2}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->syncQueuedDownload(Landroidx/media3/exoplayer/offline/DownloadManager$Task;Landroidx/media3/exoplayer/offline/Download;)Landroidx/media3/exoplayer/offline/DownloadManager$Task;
 
     move-result-object v3
 
-    :goto_48
-    if-eqz v3, :cond_52
+    :goto_2
+    if-eqz v3, :cond_5
 
     .line 982
     invoke-static {v3}, Landroidx/media3/exoplayer/offline/DownloadManager$Task;->access$000(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)Z
 
     move-result v2
 
-    if-nez v2, :cond_52
+    if-nez v2, :cond_5
 
     add-int/lit8 v1, v1, 0x1
 
-    :cond_52
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_55
+    :cond_6
     return-void
 .end method
 
 .method private updateProgress()V
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 1186
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_27
+    if-ge v0, v1, :cond_1
 
     .line 1187
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloads:Ljava/util/ArrayList;
@@ -2148,19 +2148,19 @@
 
     const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_24
+    if-ne v2, v3, :cond_0
 
     .line 1190
-    :try_start_16
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->downloadIndex:Landroidx/media3/exoplayer/offline/WritableDownloadIndex;
 
     invoke-interface {v2, v1}, Landroidx/media3/exoplayer/offline/WritableDownloadIndex;->putDownload(Landroidx/media3/exoplayer/offline/Download;)V
-    :try_end_1b
-    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_1b} :catch_1c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_24
+    goto :goto_1
 
-    :catch_1c
+    :catch_0
     move-exception v1
 
     const-string v2, "DownloadManager"
@@ -2170,13 +2170,13 @@
     .line 1192
     invoke-static {v2, v3, v1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_24
-    :goto_24
+    :cond_0
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     const/16 v0, 0xc
 
     const-wide/16 v1, 0x1388
@@ -2190,7 +2190,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 5
+    .locals 3
 
     .line 723
     iget v0, p1, Landroid/os/Message;->what:I
@@ -2199,7 +2199,7 @@
 
     const/4 v2, 0x1
 
-    packed-switch v0, :pswitch_data_80
+    packed-switch v0, :pswitch_data_0
 
     .line 777
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -2209,19 +2209,19 @@
     throw p1
 
     .line 774
-    :pswitch_d
+    :pswitch_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->release()V
 
     return-void
 
     .line 771
-    :pswitch_11
+    :pswitch_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->updateProgress()V
 
     return-void
 
     .line 767
-    :pswitch_15
+    :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroidx/media3/exoplayer/offline/DownloadManager$Task;
@@ -2240,7 +2240,7 @@
     return-void
 
     .line 762
-    :pswitch_25
+    :pswitch_3
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Landroidx/media3/exoplayer/offline/DownloadManager$Task;
@@ -2248,16 +2248,16 @@
     .line 763
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->onTaskStopped(Landroidx/media3/exoplayer/offline/DownloadManager$Task;)V
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 759
-    :pswitch_2d
+    :pswitch_4
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->removeAllDownloads()V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 755
-    :pswitch_31
+    :pswitch_5
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/String;
@@ -2265,10 +2265,10 @@
     .line 756
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->removeDownload(Ljava/lang/String;)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 750
-    :pswitch_39
+    :pswitch_6
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -2279,28 +2279,28 @@
     .line 752
     invoke-direct {p0, v0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->addDownload(Landroidx/media3/exoplayer/offline/DownloadRequest;I)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 746
-    :pswitch_43
+    :pswitch_7
     iget p1, p1, Landroid/os/Message;->arg1:I
 
     .line 747
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->setMinRetryCount(I)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 742
-    :pswitch_49
+    :pswitch_8
     iget p1, p1, Landroid/os/Message;->arg1:I
 
     .line 743
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->setMaxParallelDownloads(I)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 737
-    :pswitch_4f
+    :pswitch_9
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
@@ -2311,43 +2311,43 @@
     .line 739
     invoke-direct {p0, v0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->setStopReason(Ljava/lang/String;I)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 733
-    :pswitch_59
+    :pswitch_a
     iget p1, p1, Landroid/os/Message;->arg1:I
 
     .line 734
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->setNotMetRequirements(I)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 729
-    :pswitch_5f
+    :pswitch_b
     iget p1, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz p1, :cond_64
+    if-eqz p1, :cond_0
 
     move v1, v2
 
     .line 730
-    :cond_64
+    :cond_0
     invoke-direct {p0, v1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->setDownloadsPaused(Z)V
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 725
-    :pswitch_68
+    :pswitch_c
     iget p1, p1, Landroid/os/Message;->arg1:I
 
     .line 726
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->initialize(I)V
 
-    :goto_6d
+    :goto_0
     move v1, v2
 
     .line 779
-    :goto_6e
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadManager$InternalHandler;->mainHandler:Landroid/os/Handler;
 
     .line 780
@@ -2370,20 +2370,20 @@
 
     nop
 
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_68
-        :pswitch_5f
-        :pswitch_59
-        :pswitch_4f
-        :pswitch_49
-        :pswitch_43
-        :pswitch_39
-        :pswitch_31
-        :pswitch_2d
-        :pswitch_25
-        :pswitch_15
-        :pswitch_11
-        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

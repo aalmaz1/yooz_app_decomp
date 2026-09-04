@@ -60,7 +60,7 @@
 
 # direct methods
 .method public static final component1(J)F
-    .registers 2
+    .locals 0
 
     .line 239
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
@@ -71,7 +71,7 @@
 .end method
 
 .method public static final component1(Landroid/graphics/Color;)F
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public static final component1(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x18
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public static final component2(J)F
-    .registers 2
+    .locals 0
 
     .line 254
     invoke-static {p0, p1}, Landroid/graphics/Color;->green(J)F
@@ -105,7 +105,7 @@
 .end method
 
 .method public static final component2(Landroid/graphics/Color;)F
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -118,7 +118,7 @@
 .end method
 
 .method public static final component2(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x10
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final component3(J)F
-    .registers 2
+    .locals 0
 
     .line 269
     invoke-static {p0, p1}, Landroid/graphics/Color;->blue(J)F
@@ -139,7 +139,7 @@
 .end method
 
 .method public static final component3(Landroid/graphics/Color;)F
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -152,7 +152,7 @@
 .end method
 
 .method public static final component3(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x8
 
@@ -162,7 +162,7 @@
 .end method
 
 .method public static final component4(J)F
-    .registers 2
+    .locals 0
 
     .line 284
     invoke-static {p0, p1}, Landroid/graphics/Color;->alpha(J)F
@@ -173,7 +173,7 @@
 .end method
 
 .method public static final component4(Landroid/graphics/Color;)F
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final component4(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit16 p0, p0, 0xff
 
@@ -194,7 +194,7 @@
 .end method
 
 .method public static final convertTo(ILandroid/graphics/ColorSpace$Named;)J
-    .registers 2
+    .locals 0
 
     .line 389
     invoke-static {p1}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -209,7 +209,7 @@
 .end method
 
 .method public static final convertTo(ILandroid/graphics/ColorSpace;)J
-    .registers 2
+    .locals 0
 
     .line 402
     invoke-static {p0, p1}, Landroid/graphics/Color;->convert(ILandroid/graphics/ColorSpace;)J
@@ -220,7 +220,7 @@
 .end method
 
 .method public static final convertTo(JLandroid/graphics/ColorSpace$Named;)J
-    .registers 3
+    .locals 0
 
     .line 415
     invoke-static {p2}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -235,7 +235,7 @@
 .end method
 
 .method public static final convertTo(JLandroid/graphics/ColorSpace;)J
-    .registers 3
+    .locals 0
 
     .line 428
     invoke-static {p0, p1, p2}, Landroid/graphics/Color;->convert(JLandroid/graphics/ColorSpace;)J
@@ -246,7 +246,7 @@
 .end method
 
 .method public static final convertTo(Landroid/graphics/Color;Landroid/graphics/ColorSpace$Named;)Landroid/graphics/Color;
-    .registers 2
+    .locals 0
 
     .line 440
     invoke-static {p1}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -261,7 +261,7 @@
 .end method
 
 .method public static final convertTo(Landroid/graphics/Color;Landroid/graphics/ColorSpace;)Landroid/graphics/Color;
-    .registers 2
+    .locals 0
 
     .line 451
     invoke-virtual {p0, p1}, Landroid/graphics/Color;->convert(Landroid/graphics/ColorSpace;)Landroid/graphics/Color;
@@ -272,7 +272,7 @@
 .end method
 
 .method public static final getAlpha(J)F
-    .registers 2
+    .locals 0
 
     .line 295
     invoke-static {p0, p1}, Landroid/graphics/Color;->alpha(J)F
@@ -283,7 +283,7 @@
 .end method
 
 .method public static final getAlpha(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x18
 
@@ -293,7 +293,7 @@
 .end method
 
 .method public static final getBlue(J)F
-    .registers 2
+    .locals 0
 
     .line 328
     invoke-static {p0, p1}, Landroid/graphics/Color;->blue(J)F
@@ -304,7 +304,7 @@
 .end method
 
 .method public static final getBlue(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit16 p0, p0, 0xff
 
@@ -312,7 +312,7 @@
 .end method
 
 .method public static final getColorSpace(J)Landroid/graphics/ColorSpace;
-    .registers 2
+    .locals 0
 
     .line 376
     invoke-static {p0, p1}, Landroid/graphics/Color;->colorSpace(J)Landroid/graphics/ColorSpace;
@@ -323,7 +323,7 @@
 .end method
 
 .method public static final getGreen(J)F
-    .registers 2
+    .locals 0
 
     .line 317
     invoke-static {p0, p1}, Landroid/graphics/Color;->green(J)F
@@ -334,7 +334,7 @@
 .end method
 
 .method public static final getGreen(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x8
 
@@ -344,7 +344,7 @@
 .end method
 
 .method public static final getLuminance(I)F
-    .registers 1
+    .locals 0
 
     .line 207
     invoke-static {p0}, Landroid/graphics/Color;->luminance(I)F
@@ -355,7 +355,7 @@
 .end method
 
 .method public static final getLuminance(J)F
-    .registers 2
+    .locals 0
 
     .line 337
     invoke-static {p0, p1}, Landroid/graphics/Color;->luminance(J)F
@@ -366,7 +366,7 @@
 .end method
 
 .method public static final getRed(J)F
-    .registers 2
+    .locals 0
 
     .line 306
     invoke-static {p0, p1}, Landroid/graphics/Color;->red(J)F
@@ -377,7 +377,7 @@
 .end method
 
 .method public static final getRed(I)I
-    .registers 1
+    .locals 0
 
     shr-int/lit8 p0, p0, 0x10
 
@@ -387,7 +387,7 @@
 .end method
 
 .method public static final isSrgb(J)Z
-    .registers 2
+    .locals 0
 
     .line 361
     invoke-static {p0, p1}, Landroid/graphics/Color;->isSrgb(J)Z
@@ -398,7 +398,7 @@
 .end method
 
 .method public static final isWideGamut(J)Z
-    .registers 2
+    .locals 0
 
     .line 369
     invoke-static {p0, p1}, Landroid/graphics/Color;->isWideGamut(J)Z
@@ -409,7 +409,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Color;Landroid/graphics/Color;)Landroid/graphics/Color;
-    .registers 2
+    .locals 0
 
     .line 109
     invoke-static {p1, p0}, Landroidx/core/graphics/ColorUtils;->compositeColors(Landroid/graphics/Color;Landroid/graphics/Color;)Landroid/graphics/Color;
@@ -420,7 +420,7 @@
 .end method
 
 .method public static final toColor(I)Landroid/graphics/Color;
-    .registers 1
+    .locals 0
 
     .line 215
     invoke-static {p0}, Landroid/graphics/Color;->valueOf(I)Landroid/graphics/Color;
@@ -431,7 +431,7 @@
 .end method
 
 .method public static final toColor(J)Landroid/graphics/Color;
-    .registers 2
+    .locals 0
 
     .line 344
     invoke-static {p0, p1}, Landroid/graphics/Color;->valueOf(J)Landroid/graphics/Color;
@@ -442,7 +442,7 @@
 .end method
 
 .method public static final toColorInt(J)I
-    .registers 2
+    .locals 0
 
     .line 352
     invoke-static {p0, p1}, Landroid/graphics/Color;->toArgb(J)I
@@ -453,7 +453,7 @@
 .end method
 
 .method public static final toColorInt(Ljava/lang/String;)I
-    .registers 1
+    .locals 0
 
     .line 470
     invoke-static {p0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -464,7 +464,7 @@
 .end method
 
 .method public static final toColorLong(I)J
-    .registers 3
+    .locals 2
 
     .line 224
     invoke-static {p0}, Landroid/graphics/Color;->pack(I)J

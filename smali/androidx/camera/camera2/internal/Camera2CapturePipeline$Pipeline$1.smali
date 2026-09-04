@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;)V
-    .registers 2
+    .locals 0
 
     .line 219
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline$1;->this$0:Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;
@@ -34,7 +34,7 @@
 .end method
 
 .method static synthetic lambda$preCapture$0(Ljava/util/List;)Ljava/lang/Boolean;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public isCaptureResultNeeded()Z
-    .registers 3
+    .locals 2
 
     .line 235
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline$1;->this$0:Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;
@@ -68,12 +68,12 @@
 
     move-result-object v0
 
-    :cond_8
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -86,20 +86,20 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_1c
+    :cond_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public postCapture()V
-    .registers 3
+    .locals 2
 
     .line 245
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline$1;->this$0:Landroidx/camera/camera2/internal/Camera2CapturePipeline$Pipeline;
@@ -110,12 +110,12 @@
 
     move-result-object v0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -126,14 +126,14 @@
     .line 246
     invoke-interface {v1}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$PipelineTask;->postCapture()V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public preCapture(Landroid/hardware/camera2/TotalCaptureResult;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -159,12 +159,12 @@
 
     move-result-object v1
 
-    :goto_d
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -179,10 +179,10 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_d
+    goto :goto_0
 
     .line 229
-    :cond_21
+    :cond_0
     invoke-static {v0}, Landroidx/camera/core/impl/utils/futures/Futures;->allAsList(Ljava/util/Collection;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object p1

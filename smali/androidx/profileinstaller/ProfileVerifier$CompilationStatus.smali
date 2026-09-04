@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(IZZ)V
-    .registers 4
+    .locals 0
 
     .line 486
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public getProfileInstallResultCode()I
-    .registers 2
+    .locals 1
 
     .line 521
     iget v0, p0, Landroidx/profileinstaller/ProfileVerifier$CompilationStatus;->mResultCode:I
@@ -79,7 +79,7 @@
 .end method
 
 .method public hasProfileEnqueuedForCompilation()Z
-    .registers 2
+    .locals 1
 
     .line 545
     iget-boolean v0, p0, Landroidx/profileinstaller/ProfileVerifier$CompilationStatus;->mHasCurrentProfile:Z
@@ -88,7 +88,7 @@
 .end method
 
 .method public isCompiledWithProfile()Z
-    .registers 2
+    .locals 1
 
     .line 534
     iget-boolean v0, p0, Landroidx/profileinstaller/ProfileVerifier$CompilationStatus;->mHasReferenceProfile:Z

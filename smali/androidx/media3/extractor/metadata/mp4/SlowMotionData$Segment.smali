@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 39
     new-instance v0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment$$ExternalSyntheticLambda0;
@@ -69,24 +69,24 @@
 .end method
 
 .method public constructor <init>(JJI)V
-    .registers 7
+    .locals 1
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     cmp-long v0, p1, p3
 
-    if-gez v0, :cond_9
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 69
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 70
@@ -102,7 +102,7 @@
 .end method
 
 .method static synthetic lambda$static$0(Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;)I
-    .registers 7
+    .locals 5
 
     .line 41
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->start()Lcom/google/common/collect/ComparisonChain;
@@ -147,7 +147,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -155,18 +155,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_3
 
     .line 87
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -177,12 +177,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 90
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;
 
     .line 91
@@ -192,7 +192,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;->endTimeMs:J
 
@@ -200,29 +200,29 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;->speedDivisor:I
 
     iget p1, p1, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;->speedDivisor:I
 
-    if-ne v2, p1, :cond_2b
+    if-ne v2, p1, :cond_2
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     move v0, v1
 
-    :goto_2c
+    :goto_0
     return v0
 
-    :cond_2d
-    :goto_2d
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -267,7 +267,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -316,7 +316,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 108
     iget-wide v0, p0, Landroidx/media3/extractor/metadata/mp4/SlowMotionData$Segment;->startTimeMs:J

@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 127
     new-instance v0, Landroidx/camera/video/AutoValue_FallbackStrategy_RuleStrategy;
@@ -44,7 +44,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/FallbackStrategy$1;)V
-    .registers 2
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Landroidx/camera/video/FallbackStrategy;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method public static higherQualityOrLowerThan(Landroidx/camera/video/Quality;)Landroidx/camera/video/FallbackStrategy;
-    .registers 3
+    .locals 2
 
     .line 48
     new-instance v0, Landroidx/camera/video/AutoValue_FallbackStrategy_RuleStrategy;
@@ -75,7 +75,7 @@
 .end method
 
 .method public static higherQualityThan(Landroidx/camera/video/Quality;)Landroidx/camera/video/FallbackStrategy;
-    .registers 3
+    .locals 2
 
     .line 58
     new-instance v0, Landroidx/camera/video/AutoValue_FallbackStrategy_RuleStrategy;
@@ -88,7 +88,7 @@
 .end method
 
 .method public static lowerQualityOrHigherThan(Landroidx/camera/video/Quality;)Landroidx/camera/video/FallbackStrategy;
-    .registers 3
+    .locals 2
 
     .line 71
     new-instance v0, Landroidx/camera/video/AutoValue_FallbackStrategy_RuleStrategy;
@@ -101,7 +101,7 @@
 .end method
 
 .method public static lowerQualityThan(Landroidx/camera/video/Quality;)Landroidx/camera/video/FallbackStrategy;
-    .registers 3
+    .locals 2
 
     .line 81
     new-instance v0, Landroidx/camera/video/AutoValue_FallbackStrategy_RuleStrategy;

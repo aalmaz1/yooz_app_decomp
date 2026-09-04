@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 1211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public send(Landroid/support/v4/app/INotificationSideChannel;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -91,17 +91,17 @@
     .line 1220
     iget-boolean v0, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->all:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 1221
     iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->packageName:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Landroid/support/v4/app/INotificationSideChannel;->cancelAll(Ljava/lang/String;)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 1223
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->packageName:Ljava/lang/String;
 
     iget v1, p0, Landroidx/core/app/NotificationManagerCompat$CancelTask;->id:I
@@ -110,12 +110,12 @@
 
     invoke-interface {p1, v0, v1, v2}, Landroid/support/v4/app/INotificationSideChannel;->cancel(Ljava/lang/String;ILjava/lang/String;)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 1230
     new-instance v0, Ljava/lang/StringBuilder;

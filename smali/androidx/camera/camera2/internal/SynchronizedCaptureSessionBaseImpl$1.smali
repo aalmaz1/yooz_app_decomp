@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;)V
-    .registers 2
+    .locals 0
 
     .line 164
     iput-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$1;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 172
     iget-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$1;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -65,7 +65,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 164
     check-cast p1, Ljava/lang/Void;
@@ -76,7 +76,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

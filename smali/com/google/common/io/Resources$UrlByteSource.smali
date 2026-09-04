@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/net/URL;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -46,7 +46,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/net/URL;Lcom/google/common/io/Resources$1;)V
-    .registers 3
+    .locals 0
 
     .line 60
     invoke-direct {p0, p1}, Lcom/google/common/io/Resources$UrlByteSource;-><init>(Ljava/net/URL;)V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public openStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -75,7 +75,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 75
     new-instance v0, Ljava/lang/StringBuilder;

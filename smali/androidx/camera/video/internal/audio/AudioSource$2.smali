@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/audio/AudioSource;Landroidx/camera/video/internal/BufferProvider;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 481
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -63,11 +63,11 @@
 
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->val$bufferProvider:Landroidx/camera/video/internal/BufferProvider;
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     return-void
 
-    :cond_9
+    :cond_0
     const-string v0, "AudioSource"
 
     const-string v1, "Unable to get input buffer, the BufferProvider could be transitioning to INACTIVE state."
@@ -78,26 +78,26 @@
     .line 489
     instance-of v0, p1, Ljava/lang/IllegalStateException;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     .line 490
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/audio/AudioSource;->notifyError(Ljava/lang/Throwable;)V
 
-    :cond_19
+    :cond_1
     return-void
 .end method
 
 .method public onSuccess(Landroidx/camera/video/internal/encoder/InputBuffer;)V
-    .registers 8
+    .locals 6
 
     .line 442
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/audio/AudioSource;->mIsSendingAudio:Z
 
-    if-eqz v0, :cond_95
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
@@ -105,17 +105,17 @@
 
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->val$bufferProvider:Landroidx/camera/video/internal/BufferProvider;
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
-    goto/16 :goto_95
+    goto/16 :goto_1
 
     .line 446
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/audio/AudioSource;->mInSilentStartState:Z
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
@@ -123,7 +123,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 447
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -131,7 +131,7 @@
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioSource;->retryStartAudioStream()V
 
     .line 453
-    :cond_23
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioSource;->getCurrentAudioStream()Landroidx/camera/video/internal/audio/AudioStream;
@@ -153,14 +153,14 @@
 
     move-result v2
 
-    if-lez v2, :cond_85
+    if-lez v2, :cond_4
 
     .line 457
     iget-object v2, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     iget-boolean v2, v2, Landroidx/camera/video/internal/audio/AudioSource;->mMuted:Z
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_2
 
     .line 458
     iget-object v2, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -172,12 +172,12 @@
     invoke-virtual {v2, v1, v3}, Landroidx/camera/video/internal/audio/AudioSource;->overrideBySilence(Ljava/nio/ByteBuffer;I)V
 
     .line 462
-    :cond_46
+    :cond_2
     iget-object v2, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     iget-object v2, v2, Landroidx/camera/video/internal/audio/AudioSource;->mCallbackExecutor:Ljava/util/concurrent/Executor;
 
-    if-eqz v2, :cond_68
+    if-eqz v2, :cond_3
 
     .line 463
     invoke-virtual {v0}, Landroidx/camera/video/internal/audio/AudioStream$PacketInfo;->getTimestampNs()J
@@ -194,7 +194,7 @@
 
     cmp-long v2, v2, v4
 
-    if-ltz v2, :cond_68
+    if-ltz v2, :cond_3
 
     .line 464
     iget-object v2, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -211,7 +211,7 @@
     invoke-virtual {v2, v1}, Landroidx/camera/video/internal/audio/AudioSource;->postMaxAmplitude(Ljava/nio/ByteBuffer;)V
 
     .line 467
-    :cond_68
+    :cond_3
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
@@ -242,9 +242,9 @@
     .line 470
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/InputBuffer;->submit()Z
 
-    goto :goto_8f
+    goto :goto_0
 
-    :cond_85
+    :cond_4
     const-string v0, "AudioSource"
 
     const-string v1, "Unable to read data from AudioStream."
@@ -256,7 +256,7 @@
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/InputBuffer;->cancel()Z
 
     .line 475
-    :goto_8f
+    :goto_0
     iget-object p1, p0, Landroidx/camera/video/internal/audio/AudioSource$2;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     invoke-virtual {p1}, Landroidx/camera/video/internal/audio/AudioSource;->sendNextAudio()V
@@ -264,15 +264,15 @@
     return-void
 
     .line 443
-    :cond_95
-    :goto_95
+    :cond_5
+    :goto_1
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/InputBuffer;->cancel()Z
 
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 438
     check-cast p1, Landroidx/camera/video/internal/encoder/InputBuffer;

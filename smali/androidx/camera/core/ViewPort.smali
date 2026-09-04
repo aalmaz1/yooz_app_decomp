@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(ILandroid/util/Rational;II)V
-    .registers 5
+    .locals 0
 
     .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public getAspectRatio()Landroid/util/Rational;
-    .registers 2
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/camera/core/ViewPort;->mAspectRatio:Landroid/util/Rational;
@@ -67,7 +67,7 @@
 .end method
 
 .method public getLayoutDirection()I
-    .registers 2
+    .locals 1
 
     .line 196
     iget v0, p0, Landroidx/camera/core/ViewPort;->mLayoutDirection:I
@@ -76,7 +76,7 @@
 .end method
 
 .method public getRotation()I
-    .registers 2
+    .locals 1
 
     .line 180
     iget v0, p0, Landroidx/camera/core/ViewPort;->mRotation:I
@@ -85,7 +85,7 @@
 .end method
 
 .method public getScaleType()I
-    .registers 2
+    .locals 1
 
     .line 188
     iget v0, p0, Landroidx/camera/core/ViewPort;->mScaleType:I

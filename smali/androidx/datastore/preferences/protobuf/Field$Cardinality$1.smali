@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 536
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public findValueByNumber(I)Landroidx/datastore/preferences/protobuf/Field$Cardinality;
-    .registers 2
+    .locals 0
 
     .line 539
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/Field$Cardinality;->forNumber(I)Landroidx/datastore/preferences/protobuf/Field$Cardinality;
@@ -50,7 +50,7 @@
 .end method
 
 .method public bridge synthetic findValueByNumber(I)Landroidx/datastore/preferences/protobuf/Internal$EnumLite;
-    .registers 2
+    .locals 0
 
     .line 536
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/Field$Cardinality$1;->findValueByNumber(I)Landroidx/datastore/preferences/protobuf/Field$Cardinality;

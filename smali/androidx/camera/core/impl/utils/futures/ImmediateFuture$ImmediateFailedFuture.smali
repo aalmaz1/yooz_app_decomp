@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 129
     invoke-direct {p0}, Landroidx/camera/core/impl/utils/futures/ImmediateFuture;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -68,7 +68,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 143
     new-instance v0, Ljava/lang/StringBuilder;

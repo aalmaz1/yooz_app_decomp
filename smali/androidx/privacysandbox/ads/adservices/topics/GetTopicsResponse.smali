@@ -50,7 +50,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,26 +75,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 25
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     return v1
 
     .line 26
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;->topics:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -109,12 +109,12 @@
 
     move-result v2
 
-    if-eq v0, v2, :cond_1b
+    if-eq v0, v2, :cond_2
 
     return v1
 
     .line 27
-    :cond_1b
+    :cond_2
     new-instance v0, Ljava/util/HashSet;
 
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;->topics:Ljava/util/List;
@@ -139,7 +139,7 @@
 .end method
 
 .method public final getTopics()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -156,7 +156,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -177,7 +177,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 35
     new-instance v0, Ljava/lang/StringBuilder;

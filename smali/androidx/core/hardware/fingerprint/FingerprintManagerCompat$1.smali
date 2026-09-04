@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;)V
-    .registers 2
+    .locals 0
 
     .line 168
     iput-object p1, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$1;->val$callback:Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onAuthenticationError(ILjava/lang/CharSequence;)V
-    .registers 4
+    .locals 1
 
     .line 171
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$1;->val$callback:Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;
@@ -44,7 +44,7 @@
 .end method
 
 .method public onAuthenticationFailed()V
-    .registers 2
+    .locals 1
 
     .line 187
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$1;->val$callback:Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;
@@ -55,7 +55,7 @@
 .end method
 
 .method public onAuthenticationHelp(ILjava/lang/CharSequence;)V
-    .registers 4
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$1;->val$callback:Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;
@@ -66,7 +66,7 @@
 .end method
 
 .method public onAuthenticationSucceeded(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V
-    .registers 4
+    .locals 2
 
     .line 181
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$1;->val$callback:Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;

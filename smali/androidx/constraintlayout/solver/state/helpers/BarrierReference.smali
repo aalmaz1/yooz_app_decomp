@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/State;)V
-    .registers 3
+    .locals 1
 
     .line 31
     sget-object v0, Landroidx/constraintlayout/solver/state/State$Helper;->BARRIER:Landroidx/constraintlayout/solver/state/State$Helper;
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public apply()V
-    .registers 3
+    .locals 2
 
     .line 55
     invoke-virtual {p0}, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->getHelperWidget()Landroidx/constraintlayout/solver/widgets/HelperWidget;
@@ -44,26 +44,26 @@
 
     const/4 v1, 0x0
 
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_12
+    :pswitch_0
     const/4 v1, 0x3
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_14
+    :pswitch_1
     const/4 v1, 0x2
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_16
+    :pswitch_2
     const/4 v1, 0x1
 
     .line 75
-    :goto_17
-    :pswitch_17
+    :goto_0
+    :pswitch_3
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mBarrierWidget:Landroidx/constraintlayout/solver/widgets/Barrier;
 
     invoke-virtual {v0, v1}, Landroidx/constraintlayout/solver/widgets/Barrier;->setBarrierType(I)V
@@ -77,24 +77,24 @@
 
     return-void
 
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_17
-        :pswitch_17
-        :pswitch_16
-        :pswitch_16
-        :pswitch_14
-        :pswitch_12
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getHelperWidget()Landroidx/constraintlayout/solver/widgets/HelperWidget;
-    .registers 2
+    .locals 1
 
     .line 48
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mBarrierWidget:Landroidx/constraintlayout/solver/widgets/Barrier;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 49
     new-instance v0, Landroidx/constraintlayout/solver/widgets/Barrier;
@@ -104,14 +104,14 @@
     iput-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mBarrierWidget:Landroidx/constraintlayout/solver/widgets/Barrier;
 
     .line 51
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mBarrierWidget:Landroidx/constraintlayout/solver/widgets/Barrier;
 
     return-object v0
 .end method
 
 .method public margin(I)V
-    .registers 2
+    .locals 0
 
     .line 43
     iput p1, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mMargin:I
@@ -120,7 +120,7 @@
 .end method
 
 .method public margin(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mState:Landroidx/constraintlayout/solver/state/State;
@@ -135,7 +135,7 @@
 .end method
 
 .method public setBarrierDirection(Landroidx/constraintlayout/solver/state/State$Direction;)V
-    .registers 2
+    .locals 0
 
     .line 35
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/BarrierReference;->mDirection:Landroidx/constraintlayout/solver/state/State$Direction;

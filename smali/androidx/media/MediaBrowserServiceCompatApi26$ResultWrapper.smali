@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/service/media/MediaBrowserService$Result;)V
-    .registers 2
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public detach()V
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompatApi26$ResultWrapper;->mResultObj:Landroid/service/media/MediaBrowserService$Result;
@@ -45,7 +45,7 @@
 .end method
 
 .method parcelListToItemList(Ljava/util/List;)Ljava/util/List;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,14 +58,14 @@
         }
     .end annotation
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 88
-    :cond_4
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -75,12 +75,12 @@
 
     move-result-object p1
 
-    :goto_d
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -105,14 +105,14 @@
     .line 92
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     return-object v0
 .end method
 
 .method public sendResult(Ljava/util/List;I)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -129,12 +129,12 @@
     iget-object v1, p0, Landroidx/media/MediaBrowserServiceCompatApi26$ResultWrapper;->mResultObj:Landroid/service/media/MediaBrowserService$Result;
 
     invoke-virtual {v0, v1, p2}, Ljava/lang/reflect/Field;->setInt(Ljava/lang/Object;I)V
-    :try_end_7
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     move-exception p2
 
     const-string v0, "MBSCompatApi26"
@@ -143,7 +143,7 @@
     invoke-static {v0, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 77
-    :goto_e
+    :goto_0
     iget-object p2, p0, Landroidx/media/MediaBrowserServiceCompatApi26$ResultWrapper;->mResultObj:Landroid/service/media/MediaBrowserService$Result;
 
     invoke-virtual {p0, p1}, Landroidx/media/MediaBrowserServiceCompatApi26$ResultWrapper;->parcelListToItemList(Ljava/util/List;)Ljava/util/List;

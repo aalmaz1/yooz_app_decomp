@@ -82,7 +82,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$C_TRhHvhSQse4alG8Hf8VLsoiJE(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->flushInternal()V
 
@@ -90,7 +90,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 214
     new-instance v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$$ExternalSyntheticLambda2;
@@ -103,7 +103,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;)V
-    .registers 7
+    .locals 5
 
     .line 239
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -184,7 +184,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$1;)V
-    .registers 3
+    .locals 0
 
     .line 74
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;-><init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Builder;)V
@@ -193,7 +193,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)V
-    .registers 1
+    .locals 0
 
     .line 74
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->flush()V
@@ -202,7 +202,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Z
-    .registers 1
+    .locals 0
 
     .line 74
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->isReady()Z
@@ -213,7 +213,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;J)Z
-    .registers 3
+    .locals 0
 
     .line 74
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->hasReleasedFrame(J)Z
@@ -224,7 +224,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;)V
-    .registers 2
+    .locals 0
 
     .line 74
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->setVideoFrameMetadataListener(Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;)V
@@ -233,7 +233,7 @@
 .end method
 
 .method static synthetic access$1400(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;F)V
-    .registers 2
+    .locals 0
 
     .line 74
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->setPlaybackSpeed(F)V
@@ -242,7 +242,7 @@
 .end method
 
 .method static synthetic access$1500(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;JJJ)V
-    .registers 7
+    .locals 0
 
     .line 74
     invoke-direct/range {p0 .. p6}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->onStreamOffsetChange(JJJ)V
@@ -251,7 +251,7 @@
 .end method
 
 .method static synthetic access$1600(Landroidx/media3/common/ColorInfo;)Landroidx/media3/common/ColorInfo;
-    .registers 1
+    .locals 0
 
     .line 74
     invoke-static {p0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->getAdjustedInputColorInfo(Landroidx/media3/common/ColorInfo;)Landroidx/media3/common/ColorInfo;
@@ -262,7 +262,7 @@
 .end method
 
 .method static synthetic access$1700(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/common/Format;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->outputFormat:Landroidx/media3/common/Format;
@@ -271,7 +271,7 @@
 .end method
 
 .method static synthetic access$1702(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 2
+    .locals 0
 
     .line 74
     iput-object p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->outputFormat:Landroidx/media3/common/Format;
@@ -280,7 +280,7 @@
 .end method
 
 .method static synthetic access$1800(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Ljava/util/concurrent/CopyOnWriteArraySet;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -289,7 +289,7 @@
 .end method
 
 .method static synthetic access$1900(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroid/util/Pair;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->currentSurfaceAndSize:Landroid/util/Pair;
@@ -298,7 +298,7 @@
 .end method
 
 .method static synthetic access$2000(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
@@ -307,7 +307,7 @@
 .end method
 
 .method static synthetic access$2100(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/common/util/Clock;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->clock:Landroidx/media3/common/util/Clock;
@@ -316,7 +316,7 @@
 .end method
 
 .method static synthetic access$2200(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/common/PreviewingVideoGraph;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoGraph:Landroidx/media3/common/PreviewingVideoGraph;
@@ -325,7 +325,7 @@
 .end method
 
 .method static synthetic access$700()Ljava/util/concurrent/Executor;
-    .registers 1
+    .locals 1
 
     .line 74
     sget-object v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->NO_OP_EXECUTOR:Ljava/util/concurrent/Executor;
@@ -334,7 +334,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;)Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
-    .registers 1
+    .locals 0
 
     .line 74
     iget-object p0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameReleaseControl:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
@@ -343,7 +343,7 @@
 .end method
 
 .method static synthetic access$900(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;Landroidx/media3/common/Format;)Landroidx/media3/common/VideoFrameProcessor;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/video/VideoSink$VideoSinkException;
@@ -359,19 +359,19 @@
 .end method
 
 .method private flush()V
-    .registers 3
+    .locals 2
 
     .line 438
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->isInitialized()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 441
-    :cond_7
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -402,7 +402,7 @@
 .end method
 
 .method private flushInternal()V
-    .registers 3
+    .locals 2
 
     .line 451
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
@@ -411,12 +411,12 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     return-void
 
-    :cond_9
-    if-ltz v0, :cond_11
+    :cond_0
+    if-ltz v0, :cond_1
 
     .line 459
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
@@ -426,7 +426,7 @@
     return-void
 
     .line 456
-    :cond_11
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     iget v1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
@@ -441,37 +441,37 @@
 .end method
 
 .method private static getAdjustedInputColorInfo(Landroidx/media3/common/ColorInfo;)Landroidx/media3/common/ColorInfo;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_1
 
     .line 478
     invoke-virtual {p0}, Landroidx/media3/common/ColorInfo;->isDataSpaceValid()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     return-object p0
 
     .line 479
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     sget-object p0, Landroidx/media3/common/ColorInfo;->SDR_BT709_LIMITED:Landroidx/media3/common/ColorInfo;
 
     return-object p0
 .end method
 
 .method private hasReleasedFrame(J)Z
-    .registers 4
+    .locals 1
 
     .line 434
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
 
@@ -479,21 +479,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method private initialize(Landroidx/media3/common/Format;)Landroidx/media3/common/VideoFrameProcessor;
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/video/VideoSink$VideoSinkException;
@@ -507,16 +507,16 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v0, v2
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 383
@@ -531,13 +531,13 @@
 
     const/4 v4, 0x7
 
-    if-ne v3, v4, :cond_2a
+    if-ne v3, v4, :cond_1
 
     sget v3, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v4, 0x22
 
-    if-ge v3, v4, :cond_2a
+    if-ge v3, v4, :cond_1
 
     .line 390
     invoke-virtual {v0}, Landroidx/media3/common/ColorInfo;->buildUpon()Landroidx/media3/common/ColorInfo$Builder;
@@ -554,7 +554,7 @@
 
     move-result-object v0
 
-    :cond_2a
+    :cond_1
     move-object v5, v0
 
     .line 392
@@ -579,7 +579,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->handler:Landroidx/media3/common/util/HandlerWrapper;
 
     .line 394
-    :try_start_3e
+    :try_start_0
     iget-object v3, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->previewingVideoGraphFactory:Landroidx/media3/common/PreviewingVideoGraph$Factory;
 
     iget-object v4, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->context:Landroid/content/Context;
@@ -614,7 +614,7 @@
     .line 403
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->currentSurfaceAndSize:Landroid/util/Pair;
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_2
 
     .line 404
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -640,12 +640,12 @@
     invoke-direct {p0, v0, v4, v3}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->maybeSetOutputSurfaceInfo(Landroid/view/Surface;II)V
 
     .line 408
-    :cond_74
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoGraph:Landroidx/media3/common/PreviewingVideoGraph;
 
     invoke-interface {v0, v2}, Landroidx/media3/common/PreviewingVideoGraph;->registerInput(I)V
-    :try_end_79
-    .catch Landroidx/media3/common/VideoFrameProcessingException; {:try_start_3e .. :try_end_79} :catch_82
+    :try_end_0
+    .catch Landroidx/media3/common/VideoFrameProcessingException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 412
     iput v1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->state:I
@@ -659,7 +659,7 @@
 
     return-object p1
 
-    :catch_82
+    :catch_0
     move-exception v0
 
     .line 410
@@ -671,31 +671,31 @@
 .end method
 
 .method private isInitialized()Z
-    .registers 3
+    .locals 2
 
     .line 417
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->state:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 .method private isReady()Z
-    .registers 2
+    .locals 1
 
     .line 430
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
 
@@ -703,47 +703,47 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method static synthetic lambda$static$0(Ljava/lang/Runnable;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method private maybeSetOutputSurfaceInfo(Landroid/view/Surface;II)V
-    .registers 5
+    .locals 1
 
     .line 421
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoGraph:Landroidx/media3/common/PreviewingVideoGraph;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 423
     new-instance v0, Landroidx/media3/common/SurfaceInfo;
 
     invoke-direct {v0, p1, p2, p3}, Landroidx/media3/common/SurfaceInfo;-><init>(Landroid/view/Surface;II)V
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 424
-    :goto_d
+    :goto_0
     iget-object p2, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoGraph:Landroidx/media3/common/PreviewingVideoGraph;
 
     invoke-interface {p2, v0}, Landroidx/media3/common/PreviewingVideoGraph;->setOutputSurfaceInfo(Landroidx/media3/common/SurfaceInfo;)V
@@ -753,12 +753,12 @@
 
     invoke-virtual {p2, p1}, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->setOutputSurface(Landroid/view/Surface;)V
 
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method private onStreamOffsetChange(JJJ)V
-    .registers 7
+    .locals 0
 
     .line 473
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->bufferTimestampAdjustmentUs:J
@@ -772,7 +772,7 @@
 .end method
 
 .method private setPlaybackSpeed(F)V
-    .registers 3
+    .locals 1
 
     .line 468
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
@@ -783,7 +783,7 @@
 .end method
 
 .method private setVideoFrameMetadataListener(Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;)V
-    .registers 2
+    .locals 0
 
     .line 464
     iput-object p1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
@@ -794,7 +794,7 @@
 
 # virtual methods
 .method public addListener(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 259
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -805,7 +805,7 @@
 .end method
 
 .method public clearOutputSurfaceInfo()V
-    .registers 4
+    .locals 3
 
     .line 297
     sget-object v0, Landroidx/media3/common/util/Size;->UNKNOWN:Landroidx/media3/common/util/Size;
@@ -834,28 +834,28 @@
 .end method
 
 .method public getOutputSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 375
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->currentSurfaceAndSize:Landroid/util/Pair;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/Surface;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public getSink()Landroidx/media3/exoplayer/video/VideoSink;
-    .registers 2
+    .locals 1
 
     .line 280
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoSinkImpl:Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$VideoSinkImpl;
@@ -864,7 +864,7 @@
 .end method
 
 .method public getVideoFrameReleaseControl()Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
-    .registers 2
+    .locals 1
 
     .line 275
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameReleaseControl:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;
@@ -873,7 +873,7 @@
 .end method
 
 .method public onEnded(J)V
-    .registers 3
+    .locals 0
 
     .line 343
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -884,7 +884,7 @@
 .end method
 
 .method public onError(Landroidx/media3/common/VideoFrameProcessingException;)V
-    .registers 4
+    .locals 2
 
     .line 348
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -893,12 +893,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -909,24 +909,24 @@
     .line 349
     invoke-interface {v1, p0, p1}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Listener;->onError(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;Landroidx/media3/common/VideoFrameProcessingException;)V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method public onOutputFrameAvailableForRendering(J)V
-    .registers 6
+    .locals 3
 
     .line 331
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
 
-    if-lez v0, :cond_5
+    if-lez v0, :cond_0
 
     return-void
 
     .line 337
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
 
     iget-wide v1, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->bufferTimestampAdjustmentUs:J
@@ -939,7 +939,7 @@
 .end method
 
 .method public onOutputSizeChanged(II)V
-    .registers 4
+    .locals 1
 
     .line 326
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
@@ -950,39 +950,39 @@
 .end method
 
 .method public release()V
-    .registers 4
+    .locals 3
 
     .line 306
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->state:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 310
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->handler:Landroidx/media3/common/util/HandlerWrapper;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 311
     invoke-interface {v0, v2}, Landroidx/media3/common/util/HandlerWrapper;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     .line 314
-    :cond_e
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoGraph:Landroidx/media3/common/PreviewingVideoGraph;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_2
 
     .line 315
     invoke-interface {v0}, Landroidx/media3/common/PreviewingVideoGraph;->release()V
 
     .line 317
-    :cond_15
+    :cond_2
     iput-object v2, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->currentSurfaceAndSize:Landroid/util/Pair;
 
     .line 318
@@ -992,7 +992,7 @@
 .end method
 
 .method public removeListener(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 268
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -1003,7 +1003,7 @@
 .end method
 
 .method public render(JJ)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1013,24 +1013,24 @@
     .line 363
     iget v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->pendingFlushCount:I
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 364
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->videoFrameRenderControl:Landroidx/media3/exoplayer/video/VideoFrameRenderControl;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/video/VideoFrameRenderControl;->render(JJ)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public setOutputSurfaceInfo(Landroid/view/Surface;Landroidx/media3/common/util/Size;)V
-    .registers 4
+    .locals 1
 
     .line 285
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->currentSurfaceAndSize:Landroid/util/Pair;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -1041,7 +1041,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider;->currentSurfaceAndSize:Landroid/util/Pair;
 
@@ -1054,12 +1054,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 290
-    :cond_1b
+    :cond_0
     invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v0

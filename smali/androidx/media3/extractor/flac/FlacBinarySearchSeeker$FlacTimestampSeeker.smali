@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/extractor/FlacStreamMetadata;I)V
-    .registers 3
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/FlacStreamMetadata;ILandroidx/media3/extractor/flac/FlacBinarySearchSeeker$1;)V
-    .registers 4
+    .locals 0
 
     .line 63
     invoke-direct {p0, p1, p2}, Landroidx/media3/extractor/flac/FlacBinarySearchSeeker$FlacTimestampSeeker;-><init>(Landroidx/media3/extractor/FlacStreamMetadata;I)V
@@ -58,7 +58,7 @@
 .end method
 
 .method private findNextFrame(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -81,7 +81,7 @@
 
     cmp-long v0, v0, v2
 
-    if-gez v0, :cond_20
+    if-gez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/flac/FlacBinarySearchSeeker$FlacTimestampSeeker;->flacStreamMetadata:Landroidx/media3/extractor/FlacStreamMetadata;
 
@@ -94,7 +94,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -104,7 +104,7 @@
     goto :goto_0
 
     .line 122
-    :cond_20
+    :cond_0
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
 
     move-result-wide v0
@@ -117,7 +117,7 @@
 
     cmp-long v0, v0, v2
 
-    if-ltz v0, :cond_3f
+    if-ltz v0, :cond_1
 
     .line 123
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -142,7 +142,7 @@
     return-wide v0
 
     .line 127
-    :cond_3f
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/flac/FlacBinarySearchSeeker$FlacTimestampSeeker;->sampleNumberHolder:Landroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;
 
     iget-wide v0, p1, Landroidx/media3/extractor/FlacFrameReader$SampleNumberHolder;->sampleNumber:J
@@ -153,7 +153,7 @@
 
 # virtual methods
 .method public searchForTimestamp(Landroidx/media3/extractor/ExtractorInput;J)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -202,11 +202,11 @@
 
     cmp-long p1, v2, p2
 
-    if-gtz p1, :cond_2d
+    if-gtz p1, :cond_0
 
     cmp-long p1, v6, p2
 
-    if-lez p1, :cond_2d
+    if-lez p1, :cond_0
 
     .line 93
     invoke-static {v4, v5}, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->targetFoundResult(J)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
@@ -215,10 +215,10 @@
 
     return-object p1
 
-    :cond_2d
+    :cond_0
     cmp-long p1, v6, p2
 
-    if-gtz p1, :cond_36
+    if-gtz p1, :cond_1
 
     .line 95
     invoke-static {v6, v7, v8, v9}, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->underestimatedResult(JJ)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
@@ -228,7 +228,7 @@
     return-object p1
 
     .line 98
-    :cond_36
+    :cond_1
     invoke-static {v2, v3, v0, v1}, Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;->overestimatedResult(JJ)Landroidx/media3/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     move-result-object p1

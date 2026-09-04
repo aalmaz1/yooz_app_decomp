@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 158
     new-instance v0, Landroidx/media3/common/ColorInfo$Builder;
@@ -161,7 +161,7 @@
 .end method
 
 .method private constructor <init>(III[BII)V
-    .registers 7
+    .locals 0
 
     .line 294
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -188,7 +188,7 @@
 .end method
 
 .method synthetic constructor <init>(III[BIILandroidx/media3/common/ColorInfo$1;)V
-    .registers 8
+    .locals 0
 
     .line 34
     invoke-direct/range {p0 .. p6}, Landroidx/media3/common/ColorInfo;-><init>(III[BII)V
@@ -197,11 +197,11 @@
 .end method
 
 .method private static chromaBitdepthToString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_0
 
     .line 409
     new-instance v0, Ljava/lang/StringBuilder;
@@ -222,29 +222,29 @@
 
     move-result-object p0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const-string p0, "NA"
 
-    :goto_19
+    :goto_0
     return-object p0
 .end method
 
 .method private static colorRangeToString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_1f
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1c
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_0
 
     .line 460
     new-instance v0, Ljava/lang/StringBuilder;
@@ -263,40 +263,40 @@
 
     return-object p0
 
-    :cond_19
+    :cond_0
     const-string p0, "Limited range"
 
     return-object p0
 
-    :cond_1c
+    :cond_1
     const-string p0, "Full range"
 
     return-object p0
 
-    :cond_1f
+    :cond_2
     const-string p0, "Unset color range"
 
     return-object p0
 .end method
 
 .method private static colorSpaceToString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_25
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x6
 
-    if-eq p0, v0, :cond_22
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1f
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_1c
+    if-eq p0, v0, :cond_0
 
     .line 424
     new-instance v0, Ljava/lang/StringBuilder;
@@ -315,57 +315,57 @@
 
     return-object p0
 
-    :cond_1c
+    :cond_0
     const-string p0, "BT601"
 
     return-object p0
 
-    :cond_1f
+    :cond_1
     const-string p0, "BT709"
 
     return-object p0
 
-    :cond_22
+    :cond_2
     const-string p0, "BT2020"
 
     return-object p0
 
-    :cond_25
+    :cond_3
     const-string p0, "Unset color space"
 
     return-object p0
 .end method
 
 .method private static colorTransferToString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_38
+    if-eq p0, v0, :cond_6
 
     const/16 v0, 0xa
 
-    if-eq p0, v0, :cond_35
+    if-eq p0, v0, :cond_5
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_32
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_2f
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_2c
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x6
 
-    if-eq p0, v0, :cond_29
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x7
 
-    if-eq p0, v0, :cond_26
+    if-eq p0, v0, :cond_0
 
     .line 446
     new-instance v0, Ljava/lang/StringBuilder;
@@ -384,44 +384,44 @@
 
     return-object p0
 
-    :cond_26
+    :cond_0
     const-string p0, "HLG"
 
     return-object p0
 
-    :cond_29
+    :cond_1
     const-string p0, "ST2084 PQ"
 
     return-object p0
 
-    :cond_2c
+    :cond_2
     const-string p0, "SDR SMPTE 170M"
 
     return-object p0
 
-    :cond_2f
+    :cond_3
     const-string p0, "sRGB"
 
     return-object p0
 
-    :cond_32
+    :cond_4
     const-string p0, "Linear"
 
     return-object p0
 
-    :cond_35
+    :cond_5
     const-string p0, "Gamma 2.2"
 
     return-object p0
 
-    :cond_38
+    :cond_6
     const-string p0, "Unset color transfer"
 
     return-object p0
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/ColorInfo;
-    .registers 9
+    .locals 8
 
     .line 484
     new-instance v7, Landroidx/media3/common/ColorInfo;
@@ -490,7 +490,7 @@
 .end method
 
 .method public static isEquivalentToAssumedSdrDefault(Landroidx/media3/common/ColorInfo;)Z
-    .registers 5
+    .locals 4
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "#1"
@@ -500,208 +500,208 @@
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 192
-    :cond_4
+    :cond_0
     iget v1, p0, Landroidx/media3/common/ColorInfo;->colorSpace:I
 
     const/4 v2, 0x2
 
     const/4 v3, -0x1
 
-    if-eq v1, v3, :cond_e
+    if-eq v1, v3, :cond_1
 
-    if-eq v1, v0, :cond_e
+    if-eq v1, v0, :cond_1
 
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_5
 
-    :cond_e
+    :cond_1
     iget v1, p0, Landroidx/media3/common/ColorInfo;->colorRange:I
 
-    if-eq v1, v3, :cond_14
+    if-eq v1, v3, :cond_2
 
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_5
 
-    :cond_14
+    :cond_2
     iget v1, p0, Landroidx/media3/common/ColorInfo;->colorTransfer:I
 
-    if-eq v1, v3, :cond_1b
+    if-eq v1, v3, :cond_3
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_5
 
-    :cond_1b
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/ColorInfo;->hdrStaticInfo:[B
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_5
 
     iget v1, p0, Landroidx/media3/common/ColorInfo;->chromaBitdepth:I
 
     const/16 v2, 0x8
 
-    if-eq v1, v3, :cond_27
+    if-eq v1, v3, :cond_4
 
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_5
 
-    :cond_27
+    :cond_4
     iget p0, p0, Landroidx/media3/common/ColorInfo;->lumaBitdepth:I
 
-    if-eq p0, v3, :cond_2f
+    if-eq p0, v3, :cond_6
 
-    if-ne p0, v2, :cond_2e
+    if-ne p0, v2, :cond_5
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2e
+    :cond_5
     const/4 v0, 0x0
 
-    :cond_2f
-    :goto_2f
+    :cond_6
+    :goto_0
     return v0
 .end method
 
 .method public static isTransferHdr(Landroidx/media3/common/ColorInfo;)Z
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_1
 
     .line 259
     iget p0, p0, Landroidx/media3/common/ColorInfo;->colorTransfer:I
 
     const/4 v0, 0x7
 
-    if-eq p0, v0, :cond_a
+    if-eq p0, v0, :cond_0
 
     const/4 v0, 0x6
 
-    if-ne p0, v0, :cond_c
+    if-ne p0, v0, :cond_1
 
-    :cond_a
+    :cond_0
     const/4 p0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_1
     const/4 p0, 0x0
 
-    :goto_d
+    :goto_0
     return p0
 .end method
 
 .method public static isoColorPrimariesToColorSpace(I)I
-    .registers 3
+    .locals 2
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x9
 
     const/4 v1, 0x6
 
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_0
 
     const/4 v0, 0x5
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_0
 
-    if-eq p0, v1, :cond_15
+    if-eq p0, v1, :cond_0
 
     const/4 v0, 0x7
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_0
 
     const/4 p0, -0x1
 
     return p0
 
-    :cond_15
+    :cond_0
     const/4 p0, 0x2
 
     return p0
 
-    :cond_17
+    :cond_1
     return v1
 
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public static isoTransferCharacteristicsToColorTransfer(I)I
-    .registers 4
+    .locals 3
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_21
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0xd
 
-    if-eq p0, v0, :cond_1c
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x10
 
     const/4 v1, 0x6
 
-    if-eq p0, v0, :cond_1b
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x12
 
     const/4 v2, 0x7
 
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_0
 
-    if-eq p0, v1, :cond_21
+    if-eq p0, v1, :cond_4
 
-    if-eq p0, v2, :cond_21
+    if-eq p0, v2, :cond_4
 
     const/4 p0, -0x1
 
     return p0
 
-    :cond_1a
+    :cond_0
     return v2
 
-    :cond_1b
+    :cond_1
     return v1
 
-    :cond_1c
+    :cond_2
     const/4 p0, 0x2
 
     return p0
 
-    :cond_1e
+    :cond_3
     const/16 p0, 0xa
 
     return p0
 
-    :cond_21
+    :cond_4
     const/4 p0, 0x3
 
     return p0
 .end method
 
 .method private static lumaBitdepthToString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_0
 
     .line 405
     new-instance v0, Ljava/lang/StringBuilder;
@@ -722,19 +722,19 @@
 
     move-result-object p0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const-string p0, "NA"
 
-    :goto_19
+    :goto_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/ColorInfo$Builder;
-    .registers 3
+    .locals 2
 
     .line 305
     new-instance v0, Landroidx/media3/common/ColorInfo$Builder;
@@ -747,18 +747,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_3
 
     .line 360
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -769,12 +769,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 363
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/ColorInfo;
 
     .line 364
@@ -782,19 +782,19 @@
 
     iget v3, p1, Landroidx/media3/common/ColorInfo;->colorSpace:I
 
-    if-ne v2, v3, :cond_3d
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/ColorInfo;->colorRange:I
 
     iget v3, p1, Landroidx/media3/common/ColorInfo;->colorRange:I
 
-    if-ne v2, v3, :cond_3d
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/ColorInfo;->colorTransfer:I
 
     iget v3, p1, Landroidx/media3/common/ColorInfo;->colorTransfer:I
 
-    if-ne v2, v3, :cond_3d
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/ColorInfo;->hdrStaticInfo:[B
 
@@ -805,40 +805,40 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/common/ColorInfo;->lumaBitdepth:I
 
     iget v3, p1, Landroidx/media3/common/ColorInfo;->lumaBitdepth:I
 
-    if-ne v2, v3, :cond_3d
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/common/ColorInfo;->chromaBitdepth:I
 
     iget p1, p1, Landroidx/media3/common/ColorInfo;->chromaBitdepth:I
 
-    if-ne v2, p1, :cond_3d
+    if-ne v2, p1, :cond_2
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_3d
+    :cond_2
     move v0, v1
 
-    :goto_3e
+    :goto_0
     return v0
 
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 374
     iget v0, p0, Landroidx/media3/common/ColorInfo;->hashCode:I
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     const/16 v0, 0x20f
 
@@ -890,99 +890,99 @@
     iput v0, p0, Landroidx/media3/common/ColorInfo;->hashCode:I
 
     .line 384
-    :cond_28
+    :cond_0
     iget v0, p0, Landroidx/media3/common/ColorInfo;->hashCode:I
 
     return v0
 .end method
 
 .method public isBitdepthValid()Z
-    .registers 3
+    .locals 2
 
     .line 323
     iget v0, p0, Landroidx/media3/common/ColorInfo;->lumaBitdepth:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/common/ColorInfo;->chromaBitdepth:I
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public isDataSpaceValid()Z
-    .registers 3
+    .locals 2
 
     .line 332
     iget v0, p0, Landroidx/media3/common/ColorInfo;->colorSpace:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/common/ColorInfo;->colorRange:I
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/common/ColorInfo;->colorTransfer:I
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method public isValid()Z
-    .registers 2
+    .locals 1
 
     .line 314
     invoke-virtual {p0}, Landroidx/media3/common/ColorInfo;->isBitdepthValid()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/media3/common/ColorInfo;->isDataSpaceValid()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 472
     new-instance v0, Landroid/os/Bundle;
@@ -1035,14 +1035,14 @@
 .end method
 
 .method public toLogString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 344
     invoke-virtual {p0}, Landroidx/media3/common/ColorInfo;->isDataSpaceValid()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x3
 
@@ -1089,20 +1089,20 @@
 
     move-result-object v0
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     const-string v0, "NA/NA/NA"
 
     .line 351
-    :goto_2d
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/ColorInfo;->isBitdepthValid()Z
 
     move-result v1
 
     const-string v2, "/"
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_1
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1128,13 +1128,13 @@
 
     move-result-object v1
 
-    goto :goto_51
+    goto :goto_1
 
-    :cond_4f
+    :cond_1
     const-string v1, "NA/NA"
 
     .line 352
-    :goto_51
+    :goto_1
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1159,7 +1159,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 389
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1217,16 +1217,16 @@
 
     iget-object v2, p0, Landroidx/media3/common/ColorInfo;->hdrStaticInfo:[B
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_3a
+    :goto_0
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0

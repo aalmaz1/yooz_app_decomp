@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(IIII)V
-    .registers 5
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/avi/AviMainHeaderChunk;
-    .registers 6
+    .locals 5
 
     .line 26
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public getType()I
-    .registers 2
+    .locals 1
 
     const v0, 0x68697661
 
@@ -99,7 +99,7 @@
 .end method
 
 .method public hasIndex()Z
-    .registers 3
+    .locals 2
 
     .line 54
     iget v0, p0, Landroidx/media3/extractor/avi/AviMainHeaderChunk;->flags:I
@@ -108,15 +108,15 @@
 
     and-int/2addr v0, v1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method

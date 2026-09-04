@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final onSurfaceRequested(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p1}, Landroidx/camera/video/VideoCapture$Defaults;->$r8$lambda$bJwwcVR95dEuqyeYuLarFZPWMjo(Landroidx/camera/core/SurfaceRequest;)Z
 

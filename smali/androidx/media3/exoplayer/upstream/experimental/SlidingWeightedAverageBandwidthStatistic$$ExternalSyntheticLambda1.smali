@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(JLandroidx/media3/common/util/Clock;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final shouldEvictSample(Ljava/util/Deque;)Z
-    .registers 5
+    .locals 3
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingWeightedAverageBandwidthStatistic$$ExternalSyntheticLambda1;->f$0:J
 

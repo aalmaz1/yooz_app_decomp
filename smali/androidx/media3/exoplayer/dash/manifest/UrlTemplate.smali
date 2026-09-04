@@ -59,7 +59,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 .end method
 
 .method public static compile(Ljava/lang/String;)Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;
-    .registers 4
+    .locals 3
 
     .line 55
     new-instance v0, Ljava/util/ArrayList;
@@ -120,7 +120,7 @@
 .end method
 
 .method private static parseTemplate(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,12 +147,12 @@
     move v2, v1
 
     .line 122
-    :goto_7
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_162
+    if-ge v2, v3, :cond_9
 
     const-string v3, "$"
 
@@ -163,7 +163,7 @@
 
     const/4 v5, -0x1
 
-    if-ne v4, v5, :cond_41
+    if-ne v4, v5, :cond_0
 
     .line 126
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -209,10 +209,10 @@
 
     move-result v2
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_41
-    if-eq v4, v2, :cond_6b
+    :cond_0
+    if-eq v4, v2, :cond_1
 
     .line 131
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -255,9 +255,9 @@
 
     move v2, v4
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6b
+    :cond_1
     const-string v4, "$$"
 
     .line 134
@@ -265,7 +265,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_99
+    if-eqz v4, :cond_2
 
     .line 135
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -302,10 +302,10 @@
 
     add-int/lit8 v2, v2, 0x2
 
-    goto/16 :goto_7
+    goto/16 :goto_0
 
     .line 138
-    :cond_99
+    :cond_2
     invoke-interface {p3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
@@ -329,7 +329,7 @@
 
     const/4 v6, 0x1
 
-    if-eqz v4, :cond_b8
+    if-eqz v4, :cond_3
 
     .line 142
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -338,9 +338,9 @@
 
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_15a
+    goto/16 :goto_4
 
-    :cond_b8
+    :cond_3
     const-string v4, "%0"
 
     .line 144
@@ -348,7 +348,7 @@
 
     move-result v4
 
-    if-eq v4, v5, :cond_f3
+    if-eq v4, v5, :cond_5
 
     .line 147
     invoke-virtual {v2, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -362,7 +362,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_ee
+    if-nez v9, :cond_4
 
     const-string/jumbo v9, "x"
 
@@ -370,7 +370,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_ee
+    if-nez v9, :cond_4
 
     const-string v9, "X"
 
@@ -378,7 +378,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_ee
+    if-nez v9, :cond_4
 
     .line 152
     new-instance v9, Ljava/lang/StringBuilder;
@@ -398,18 +398,18 @@
     move-result-object v7
 
     .line 154
-    :cond_ee
+    :cond_4
     invoke-virtual {v2, v1, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    goto :goto_f5
+    goto :goto_1
 
-    :cond_f3
+    :cond_5
     const-string v7, "%01d"
 
     .line 156
-    :goto_f5
+    :goto_1
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
@@ -418,58 +418,58 @@
 
     const/4 v8, 0x2
 
-    sparse-switch v4, :sswitch_data_164
+    sparse-switch v4, :sswitch_data_0
 
-    goto :goto_121
+    goto :goto_2
 
-    :sswitch_101
+    :sswitch_0
     const-string v4, "Bandwidth"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_10a
+    if-nez v2, :cond_6
 
-    goto :goto_121
+    goto :goto_2
 
-    :cond_10a
+    :cond_6
     move v5, v8
 
-    goto :goto_121
+    goto :goto_2
 
-    :sswitch_10c
+    :sswitch_1
     const-string v4, "Time"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_115
+    if-nez v2, :cond_7
 
-    goto :goto_121
+    goto :goto_2
 
-    :cond_115
+    :cond_7
     move v5, v6
 
-    goto :goto_121
+    goto :goto_2
 
-    :sswitch_117
+    :sswitch_2
     const-string v4, "Number"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_120
+    if-nez v2, :cond_8
 
-    goto :goto_121
+    goto :goto_2
 
-    :cond_120
+    :cond_8
     move v5, v1
 
-    :goto_121
-    packed-switch v5, :pswitch_data_172
+    :goto_2
+    packed-switch v5, :pswitch_data_0
 
     .line 167
     new-instance p1, Ljava/lang/IllegalArgumentException;
@@ -492,7 +492,7 @@
 
     throw p1
 
-    :pswitch_139
+    :pswitch_0
     const/4 v2, 0x3
 
     .line 161
@@ -502,9 +502,9 @@
 
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_152
+    goto :goto_3
 
-    :pswitch_142
+    :pswitch_1
     const/4 v2, 0x4
 
     .line 164
@@ -514,10 +514,10 @@
 
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_152
+    goto :goto_3
 
     .line 158
-    :pswitch_14b
+    :pswitch_2
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -525,7 +525,7 @@
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 169
-    :goto_152
+    :goto_3
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v2
@@ -535,39 +535,39 @@
     invoke-interface {p3, v2, v7}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 171
-    :goto_15a
+    :goto_4
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     move v2, v3
 
-    goto/16 :goto_7
+    goto/16 :goto_0
 
-    :cond_162
+    :cond_9
     return-void
 
     nop
 
-    :sswitch_data_164
+    :sswitch_data_0
     .sparse-switch
-        -0x74423897 -> :sswitch_117
-        0x27c6ed -> :sswitch_10c
-        0x246e091 -> :sswitch_101
+        -0x74423897 -> :sswitch_2
+        0x27c6ed -> :sswitch_1
+        0x246e091 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_172
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14b
-        :pswitch_142
-        :pswitch_139
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public buildUri(Ljava/lang/String;JIJ)Ljava/lang/String;
-    .registers 14
+    .locals 7
 
     .line 83
     new-instance v0, Ljava/lang/StringBuilder;
@@ -579,14 +579,14 @@
     move v2, v1
 
     .line 84
-    :goto_7
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->identifiers:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_ac
+    if-ge v2, v3, :cond_4
 
     .line 85
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->urlPieces:Ljava/util/List;
@@ -614,15 +614,15 @@
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_2e
+    if-ne v3, v4, :cond_0
 
     .line 87
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a8
+    goto/16 :goto_1
 
     .line 88
-    :cond_2e
+    :cond_0
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->identifiers:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -637,7 +637,7 @@
 
     const/4 v5, 0x2
 
-    if-ne v3, v5, :cond_57
+    if-ne v3, v5, :cond_1
 
     .line 89
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -664,10 +664,10 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a8
+    goto :goto_1
 
     .line 90
-    :cond_57
+    :cond_1
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->identifiers:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -682,7 +682,7 @@
 
     const/4 v5, 0x3
 
-    if-ne v3, v5, :cond_80
+    if-ne v3, v5, :cond_2
 
     .line 91
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -709,10 +709,10 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a8
+    goto :goto_1
 
     .line 92
-    :cond_80
+    :cond_2
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->identifiers:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -727,7 +727,7 @@
 
     const/4 v5, 0x4
 
-    if-ne v3, v5, :cond_a8
+    if-ne v3, v5, :cond_3
 
     .line 93
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -754,14 +754,14 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_a8
-    :goto_a8
+    :cond_3
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_7
+    goto/16 :goto_0
 
     .line 96
-    :cond_ac
+    :cond_4
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->urlPieces:Ljava/util/List;
 
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/manifest/UrlTemplate;->identifiers:Ljava/util/List;

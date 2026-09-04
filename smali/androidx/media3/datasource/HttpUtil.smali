@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "bytes (\\d+)-(\\d+)/(?:\\d+|\\*)"
 
@@ -37,7 +37,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method public static buildRangeRequestHeader(JJ)Ljava/lang/String;
-    .registers 8
+    .locals 4
 
     const-wide/16 v0, 0x0
 
@@ -54,18 +54,18 @@
 
     const-wide/16 v1, -0x1
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     cmp-long v0, p2, v1
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 56
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v3, "bytes="
@@ -82,7 +82,7 @@
 
     cmp-long v1, p2, v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     add-long/2addr p0, p2
 
@@ -94,7 +94,7 @@
     invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 63
-    :cond_28
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -103,7 +103,7 @@
 .end method
 
 .method public static getContentLength(Ljava/lang/String;Ljava/lang/String;)J
-    .registers 12
+    .locals 10
 
     const-string v0, "Inconsistent headers ["
 
@@ -116,20 +116,20 @@
 
     const-string v3, "HttpUtil"
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_0
 
     .line 97
-    :try_start_c
+    :try_start_0
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v4
-    :try_end_10
-    .catch Ljava/lang/NumberFormatException; {:try_start_c .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_29
+    goto :goto_0
 
     .line 99
-    :catch_11
+    :catch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v4, "Unexpected Content-Length ["
@@ -150,16 +150,16 @@
 
     invoke-static {v3, v1}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_27
+    :cond_0
     const-wide/16 v4, -0x1
 
     .line 102
-    :goto_29
+    :goto_0
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_a3
+    if-nez v1, :cond_2
 
     .line 103
     sget-object v1, Landroidx/media3/datasource/HttpUtil;->CONTENT_RANGE_WITH_START_AND_END:Ljava/util/regex/Pattern;
@@ -173,12 +173,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a3
+    if-eqz v6, :cond_2
 
     const/4 v6, 0x2
 
     .line 107
-    :try_start_3c
+    :try_start_1
     invoke-virtual {v1, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v6
@@ -220,16 +220,16 @@
 
     cmp-long v1, v4, v8
 
-    if-gez v1, :cond_65
+    if-gez v1, :cond_1
 
     move-wide v4, v6
 
-    goto :goto_a3
+    goto :goto_1
 
-    :cond_65
+    :cond_1
     cmp-long v1, v4, v6
 
-    if-eqz v1, :cond_a3
+    if-eqz v1, :cond_2
 
     .line 119
     new-instance v1, Ljava/lang/StringBuilder;
@@ -264,15 +264,15 @@
     invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide p0
-    :try_end_8b
-    .catch Ljava/lang/NumberFormatException; {:try_start_3c .. :try_end_8b} :catch_8d
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
 
     move-wide v4, p0
 
-    goto :goto_a3
+    goto :goto_1
 
     .line 125
-    :catch_8d
+    :catch_1
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v0, "Unexpected Content-Range ["
@@ -293,13 +293,13 @@
 
     invoke-static {v3, p0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_a3
-    :goto_a3
+    :cond_2
+    :goto_1
     return-wide v4
 .end method
 
 .method public static getDocumentSize(Ljava/lang/String;)J
-    .registers 4
+    .locals 3
 
     .line 75
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -308,12 +308,12 @@
 
     const-wide/16 v1, -0x1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-wide v1
 
     .line 78
-    :cond_9
+    :cond_0
     sget-object v0, Landroidx/media3/datasource/HttpUtil;->CONTENT_RANGE_WITH_SIZE:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -325,7 +325,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -343,6 +343,6 @@
 
     move-result-wide v1
 
-    :cond_24
+    :cond_1
     return-wide v1
 .end method

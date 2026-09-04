@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/core/app/PendingIntentCompat$GatedCallback;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final onSendFinished(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V
-    .registers 12
+    .locals 6
 
     iget-object v0, p0, Landroidx/core/app/PendingIntentCompat$GatedCallback$$ExternalSyntheticLambda0;->f$0:Landroidx/core/app/PendingIntentCompat$GatedCallback;
 

@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(IF)V
-    .registers 3
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,18 +32,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_3
 
     .line 73
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -54,12 +54,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_27
+    goto :goto_1
 
     .line 76
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/AuxEffectInfo;
 
     .line 77
@@ -67,7 +67,7 @@
 
     iget v3, p1, Landroidx/media3/common/AuxEffectInfo;->effectId:I
 
-    if-ne v2, v3, :cond_25
+    if-ne v2, v3, :cond_2
 
     iget p1, p1, Landroidx/media3/common/AuxEffectInfo;->sendLevel:F
 
@@ -78,23 +78,23 @@
 
     move-result p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v1
 
-    :goto_26
+    :goto_0
     return v0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x20f
 

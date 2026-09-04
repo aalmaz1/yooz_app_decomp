@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public add(I)V
-    .registers 5
+    .locals 3
 
     .line 69
     iget-object v0, p0, Landroidx/media3/common/PriorityTaskManager;->lock:Ljava/lang/Object;
@@ -73,7 +73,7 @@
     monitor-enter v0
 
     .line 70
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/PriorityTaskManager;->queue:Ljava/util/PriorityQueue;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -96,18 +96,18 @@
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_18
-    .catchall {:try_start_3 .. :try_end_18} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public proceed(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;
@@ -120,37 +120,37 @@
     monitor-enter v0
 
     .line 83
-    :goto_3
-    :try_start_3
+    :goto_0
+    :try_start_0
     iget v1, p0, Landroidx/media3/common/PriorityTaskManager;->highestPriority:I
 
-    if-eq v1, p1, :cond_d
+    if-eq v1, p1, :cond_0
 
     .line 84
     iget-object v1, p0, Landroidx/media3/common/PriorityTaskManager;->lock:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 86
-    :cond_d
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public proceedNonBlocking(I)Z
-    .registers 4
+    .locals 2
 
     .line 96
     iget-object v0, p0, Landroidx/media3/common/PriorityTaskManager;->lock:Ljava/lang/Object;
@@ -158,36 +158,36 @@
     monitor-enter v0
 
     .line 97
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/media3/common/PriorityTaskManager;->highestPriority:I
 
-    if-ne v1, p1, :cond_9
+    if-ne v1, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_a
+    :goto_0
     monitor-exit v0
 
     return p1
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     .line 98
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public proceedOrThrow(I)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/PriorityTaskManager$PriorityTooLowException;
@@ -200,10 +200,10 @@
     monitor-enter v0
 
     .line 109
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/media3/common/PriorityTaskManager;->highestPriority:I
 
-    if-ne v1, p1, :cond_9
+    if-ne v1, p1, :cond_0
 
     .line 112
     monitor-exit v0
@@ -211,7 +211,7 @@
     return-void
 
     .line 110
-    :cond_9
+    :cond_0
     new-instance v1, Landroidx/media3/common/PriorityTaskManager$PriorityTooLowException;
 
     iget v2, p0, Landroidx/media3/common/PriorityTaskManager;->highestPriority:I
@@ -220,19 +220,19 @@
 
     throw v1
 
-    :catchall_11
+    :catchall_0
     move-exception p1
 
     .line 112
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public remove(I)V
-    .registers 4
+    .locals 2
 
     .line 121
     iget-object v0, p0, Landroidx/media3/common/PriorityTaskManager;->lock:Ljava/lang/Object;
@@ -240,7 +240,7 @@
     monitor-enter v0
 
     .line 122
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/PriorityTaskManager;->queue:Ljava/util/PriorityQueue;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -256,13 +256,13 @@
 
     move-result p1
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     const/high16 p1, -0x80000000
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     iget-object p1, p0, Landroidx/media3/common/PriorityTaskManager;->queue:Ljava/util/PriorityQueue;
 
     invoke-virtual {p1}, Ljava/util/PriorityQueue;->peek()Ljava/lang/Object;
@@ -281,7 +281,7 @@
 
     move-result p1
 
-    :goto_29
+    :goto_0
     iput p1, p0, Landroidx/media3/common/PriorityTaskManager;->highestPriority:I
 
     .line 124
@@ -294,12 +294,12 @@
 
     return-void
 
-    :catchall_32
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_34
-    .catchall {:try_start_3 .. :try_end_34} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

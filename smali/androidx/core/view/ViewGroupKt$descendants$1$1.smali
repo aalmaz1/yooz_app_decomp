@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/core/view/ViewGroupKt$descendants$1$1;
 
@@ -67,7 +67,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 127
     check-cast p1, Landroid/view/View;
@@ -92,7 +92,7 @@
 .end method
 
 .method public final invoke(Landroid/view/View;)Ljava/util/Iterator;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,28 +109,28 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move-object p1, v1
 
-    :goto_9
-    if-eqz p1, :cond_15
+    :goto_0
+    if-eqz p1, :cond_1
 
     invoke-static {p1}, Landroidx/core/view/ViewGroupKt;->getChildren(Landroid/view/ViewGroup;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_1
 
     invoke-interface {p1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_15
+    :cond_1
     return-object v1
 .end method

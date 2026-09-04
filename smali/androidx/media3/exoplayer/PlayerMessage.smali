@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/PlayerMessage$Sender;Landroidx/media3/exoplayer/PlayerMessage$Target;Landroidx/media3/common/Timeline;ILandroidx/media3/common/util/Clock;Landroid/os/Looper;)V
-    .registers 7
+    .locals 0
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public declared-synchronized blockUntilDelivered()Z
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;
@@ -93,7 +93,7 @@
     monitor-enter p0
 
     .line 322
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
@@ -109,40 +109,40 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_15
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 324
-    :goto_18
+    :goto_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isProcessed:Z
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 325
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
 
-    goto :goto_18
+    goto :goto_1
 
     .line 327
-    :cond_20
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isDelivered:Z
-    :try_end_22
-    .catchall {:try_start_1 .. :try_end_22} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_24
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -151,7 +151,7 @@
 .end method
 
 .method public declared-synchronized blockUntilDelivered(J)Z
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;,
@@ -162,7 +162,7 @@
     monitor-enter p0
 
     .line 349
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
@@ -178,16 +178,16 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_15
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 352
@@ -200,16 +200,16 @@
     add-long/2addr v0, p1
 
     .line 354
-    :goto_1f
+    :goto_1
     iget-boolean v2, p0, Landroidx/media3/exoplayer/PlayerMessage;->isProcessed:Z
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_1
 
     const-wide/16 v3, 0x0
 
     cmp-long v3, p1, v3
 
-    if-lez v3, :cond_3a
+    if-lez v3, :cond_1
 
     .line 355
     iget-object v2, p0, Landroidx/media3/exoplayer/PlayerMessage;->clock:Landroidx/media3/common/util/Clock;
@@ -228,23 +228,23 @@
 
     sub-long p1, v0, p1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_3a
-    if-eqz v2, :cond_40
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 362
     iget-boolean p1, p0, Landroidx/media3/exoplayer/PlayerMessage;->isDelivered:Z
-    :try_end_3e
-    .catchall {:try_start_1 .. :try_end_3e} :catchall_48
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return p1
 
     .line 360
-    :cond_40
-    :try_start_40
+    :cond_2
+    :try_start_1
     new-instance p1, Ljava/util/concurrent/TimeoutException;
 
     const-string p2, "Message delivery timed out."
@@ -252,10 +252,10 @@
     invoke-direct {p1, p2}, Ljava/util/concurrent/TimeoutException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_48
-    .catchall {:try_start_40 .. :try_end_48} :catchall_48
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_48
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -264,12 +264,12 @@
 .end method
 
 .method public declared-synchronized cancel()Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 282
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
@@ -283,15 +283,15 @@
 
     .line 284
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/PlayerMessage;->markAsProcessed(Z)V
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 285
     monitor-exit p0
 
     return-object p0
 
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -300,7 +300,7 @@
 .end method
 
 .method public getDeleteAfterDelivery()Z
-    .registers 2
+    .locals 1
 
     .line 253
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->deleteAfterDelivery:Z
@@ -309,7 +309,7 @@
 .end method
 
 .method public getLooper()Landroid/os/Looper;
-    .registers 2
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->looper:Landroid/os/Looper;
@@ -318,7 +318,7 @@
 .end method
 
 .method public getMediaItemIndex()I
-    .registers 2
+    .locals 1
 
     .line 232
     iget v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->mediaItemIndex:I
@@ -327,7 +327,7 @@
 .end method
 
 .method public getPayload()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->payload:Ljava/lang/Object;
@@ -336,7 +336,7 @@
 .end method
 
 .method public getPositionMs()J
-    .registers 3
+    .locals 2
 
     .line 186
     iget-wide v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->positionMs:J
@@ -345,7 +345,7 @@
 .end method
 
 .method public getTarget()Landroidx/media3/exoplayer/PlayerMessage$Target;
-    .registers 2
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->target:Landroidx/media3/exoplayer/PlayerMessage$Target;
@@ -354,7 +354,7 @@
 .end method
 
 .method public getTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->timeline:Landroidx/media3/common/Timeline;
@@ -363,7 +363,7 @@
 .end method
 
 .method public getType()I
-    .registers 2
+    .locals 1
 
     .line 137
     iget v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->type:I
@@ -372,21 +372,21 @@
 .end method
 
 .method public declared-synchronized isCanceled()Z
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 290
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isCanceled:Z
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -395,12 +395,12 @@
 .end method
 
 .method public declared-synchronized markAsProcessed(Z)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 302
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isDelivered:Z
 
     or-int/2addr p1, v0
@@ -414,15 +414,15 @@
 
     .line 304
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 305
     monitor-exit p0
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -431,7 +431,7 @@
 .end method
 
 .method public send()Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 7
+    .locals 6
 
     .line 265
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
@@ -449,7 +449,7 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 267
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->deleteAfterDelivery:Z
@@ -457,7 +457,7 @@
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 269
-    :cond_17
+    :cond_0
     iput-boolean v1, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
 
     .line 270
@@ -469,7 +469,7 @@
 .end method
 
 .method public setDeleteAfterDelivery(Z)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 3
+    .locals 1
 
     .line 246
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
@@ -485,7 +485,7 @@
 .end method
 
 .method public setLooper(Landroid/os/Looper;)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 3
+    .locals 1
 
     .line 169
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
@@ -501,7 +501,7 @@
 .end method
 
 .method public setPayload(Ljava/lang/Object;)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 3
+    .locals 1
 
     .line 149
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
@@ -517,7 +517,7 @@
 .end method
 
 .method public setPosition(IJ)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 8
+    .locals 4
 
     .line 219
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
@@ -532,18 +532,18 @@
 
     cmp-long v0, p2, v2
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
     .line 220
-    :goto_12
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-ltz p1, :cond_2c
+    if-ltz p1, :cond_2
 
     .line 221
     iget-object v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->timeline:Landroidx/media3/common/Timeline;
@@ -553,7 +553,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->timeline:Landroidx/media3/common/Timeline;
 
@@ -561,10 +561,10 @@
 
     move-result v0
 
-    if-ge p1, v0, :cond_2c
+    if-ge p1, v0, :cond_2
 
     .line 225
-    :cond_27
+    :cond_1
     iput p1, p0, Landroidx/media3/exoplayer/PlayerMessage;->mediaItemIndex:I
 
     .line 226
@@ -573,7 +573,7 @@
     return-object p0
 
     .line 223
-    :cond_2c
+    :cond_2
     new-instance v0, Landroidx/media3/common/IllegalSeekPositionException;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/PlayerMessage;->timeline:Landroidx/media3/common/Timeline;
@@ -584,7 +584,7 @@
 .end method
 
 .method public setPosition(J)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 4
+    .locals 1
 
     .line 200
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z
@@ -600,7 +600,7 @@
 .end method
 
 .method public setType(I)Landroidx/media3/exoplayer/PlayerMessage;
-    .registers 3
+    .locals 1
 
     .line 130
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlayerMessage;->isSent:Z

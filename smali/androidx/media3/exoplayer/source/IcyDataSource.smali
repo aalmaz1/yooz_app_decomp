@@ -28,24 +28,24 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/source/IcyDataSource$Listener;)V
-    .registers 6
+    .locals 2
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    if-lez p2, :cond_8
+    if-lez p2, :cond_0
 
     move v1, v0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x0
 
     .line 62
-    :goto_9
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 63
@@ -69,7 +69,7 @@
 .end method
 
 .method private readMetadata()Z
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -91,12 +91,12 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     return v2
 
     .line 125
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->metadataLengthByteHolder:[B
 
     aget-byte v0, v0, v2
@@ -105,20 +105,20 @@
 
     shl-int/lit8 v0, v0, 0x4
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     return v3
 
     .line 132
-    :cond_19
+    :cond_1
     new-array v4, v0, [B
 
     move v5, v0
 
     move v6, v2
 
-    :goto_1d
-    if-lez v5, :cond_2b
+    :goto_0
+    if-lez v5, :cond_3
 
     .line 134
     iget-object v7, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->upstream:Landroidx/media3/datasource/DataSource;
@@ -127,34 +127,34 @@
 
     move-result v7
 
-    if-ne v7, v1, :cond_28
+    if-ne v7, v1, :cond_2
 
     return v2
 
-    :cond_28
+    :cond_2
     add-int/2addr v6, v7
 
     sub-int/2addr v5, v7
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_2b
-    :goto_2b
-    if-lez v0, :cond_36
+    :cond_3
+    :goto_1
+    if-lez v0, :cond_4
 
     add-int/lit8 v1, v0, -0x1
 
     .line 143
     aget-byte v1, v4, v1
 
-    if-nez v1, :cond_36
+    if-nez v1, :cond_4
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_36
-    if-lez v0, :cond_42
+    :cond_4
+    if-lez v0, :cond_5
 
     .line 148
     iget-object v1, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->listener:Landroidx/media3/exoplayer/source/IcyDataSource$Listener;
@@ -165,14 +165,14 @@
 
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/source/IcyDataSource$Listener;->onIcyMetadata(Landroidx/media3/common/util/ParsableByteArray;)V
 
-    :cond_42
+    :cond_5
     return v3
 .end method
 
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 72
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -186,7 +186,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 110
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -197,7 +197,7 @@
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -220,7 +220,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 100
     iget-object v0, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->upstream:Landroidx/media3/datasource/DataSource;
@@ -233,7 +233,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 2
+    .locals 0
 
     .line 78
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -244,7 +244,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -256,28 +256,28 @@
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 84
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/IcyDataSource;->readMetadata()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 85
     iget v0, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->metadataIntervalBytes:I
 
     iput v0, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->bytesUntilMetadata:I
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     return v1
 
     .line 90
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->upstream:Landroidx/media3/datasource/DataSource;
 
     iget v2, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->bytesUntilMetadata:I
@@ -290,7 +290,7 @@
 
     move-result p1
 
-    if-eq p1, v1, :cond_24
+    if-eq p1, v1, :cond_2
 
     .line 92
     iget p2, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->bytesUntilMetadata:I
@@ -299,6 +299,6 @@
 
     iput p2, p0, Landroidx/media3/exoplayer/source/IcyDataSource;->bytesUntilMetadata:I
 
-    :cond_24
+    :cond_2
     return p1
 .end method

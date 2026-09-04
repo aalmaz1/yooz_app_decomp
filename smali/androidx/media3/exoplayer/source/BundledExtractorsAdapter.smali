@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorsFactory;)V
-    .registers 2
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method static synthetic lambda$init$0(Landroidx/media3/extractor/Extractor;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 105
     invoke-interface {p0}, Landroidx/media3/extractor/Extractor;->getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
@@ -49,17 +49,17 @@
 
 # virtual methods
 .method public disableSeekingOnMp3Streams()V
-    .registers 3
+    .locals 2
 
     .line 125
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 128
-    :cond_5
+    :cond_0
     invoke-interface {v0}, Landroidx/media3/extractor/Extractor;->getUnderlyingImplementation()Landroidx/media3/extractor/Extractor;
 
     move-result-object v0
@@ -67,40 +67,40 @@
     .line 129
     instance-of v1, v0, Landroidx/media3/extractor/mp3/Mp3Extractor;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_1
 
     .line 130
     check-cast v0, Landroidx/media3/extractor/mp3/Mp3Extractor;
 
     invoke-virtual {v0}, Landroidx/media3/extractor/mp3/Mp3Extractor;->disableSeeking()V
 
-    :cond_12
+    :cond_1
     return-void
 .end method
 
 .method public getCurrentInputPosition()J
-    .registers 3
+    .locals 2
 
     .line 136
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractorInput:Landroidx/media3/extractor/ExtractorInput;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const-wide/16 v0, -0x1
 
-    :goto_b
+    :goto_0
     return-wide v0
 .end method
 
 .method public init(Landroidx/media3/common/DataReader;Landroid/net/Uri;Ljava/util/Map;JJLandroidx/media3/extractor/ExtractorOutput;)V
-    .registers 16
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,12 +141,12 @@
     .line 72
     iget-object p1, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     return-void
 
     .line 75
-    :cond_10
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractorsFactory:Landroidx/media3/extractor/ExtractorsFactory;
 
     invoke-interface {p1, p2, p3}, Landroidx/media3/extractor/ExtractorsFactory;->createExtractors(Landroid/net/Uri;Ljava/util/Map;)[Landroidx/media3/extractor/Extractor;
@@ -168,41 +168,41 @@
 
     const/4 v0, 0x1
 
-    if-ne p6, v0, :cond_26
+    if-ne p6, v0, :cond_1
 
     .line 79
     aget-object p1, p1, p7
 
     iput-object p1, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    goto/16 :goto_8c
+    goto/16 :goto_4
 
     .line 81
-    :cond_26
+    :cond_1
     array-length p6, p1
 
     move v1, p7
 
-    :goto_28
-    if-ge v1, p6, :cond_88
+    :goto_0
+    if-ge v1, p6, :cond_9
 
     aget-object v2, p1, v1
 
     .line 83
-    :try_start_2c
+    :try_start_0
     invoke-interface {v2, v6}, Landroidx/media3/extractor/Extractor;->sniff(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_4
 
     .line 84
     iput-object v2, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
-    :try_end_34
-    .catch Ljava/io/EOFException; {:try_start_2c .. :try_end_34} :catch_6f
-    .catchall {:try_start_2c .. :try_end_34} :catchall_5a
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v2, :cond_3e
+    if-nez v2, :cond_2
 
     .line 93
     invoke-interface {v6}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -211,36 +211,36 @@
 
     cmp-long p4, v1, p4
 
-    if-nez p4, :cond_3f
+    if-nez p4, :cond_3
 
-    :cond_3e
+    :cond_2
     move p7, v0
 
-    :cond_3f
+    :cond_3
     invoke-static {p7}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 94
     invoke-interface {v6}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
-    goto :goto_88
+    goto :goto_3
 
     .line 87
-    :cond_46
-    :try_start_46
+    :cond_4
+    :try_start_1
     invoke-interface {v2}, Landroidx/media3/extractor/Extractor;->getSniffFailureDetails()Ljava/util/List;
 
     move-result-object v2
 
     .line 88
     invoke-virtual {p3, v2}, Lcom/google/common/collect/ImmutableList$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableList$Builder;
-    :try_end_4d
-    .catch Ljava/io/EOFException; {:try_start_46 .. :try_end_4d} :catch_6f
-    .catchall {:try_start_46 .. :try_end_4d} :catchall_5a
+    :try_end_1
+    .catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 93
     iget-object v2, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-nez v2, :cond_7e
+    if-nez v2, :cond_8
 
     invoke-interface {v6}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
@@ -248,16 +248,16 @@
 
     cmp-long v2, v2, p4
 
-    if-nez v2, :cond_7c
+    if-nez v2, :cond_7
 
-    goto :goto_7e
+    goto :goto_1
 
-    :catchall_5a
+    :catchall_0
     move-exception p1
 
     iget-object p2, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-nez p2, :cond_67
+    if-nez p2, :cond_5
 
     invoke-interface {v6}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
@@ -265,12 +265,12 @@
 
     cmp-long p2, p2, p4
 
-    if-nez p2, :cond_68
+    if-nez p2, :cond_6
 
-    :cond_67
+    :cond_5
     move p7, v0
 
-    :cond_68
+    :cond_6
     invoke-static {p7}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 94
@@ -280,10 +280,10 @@
     throw p1
 
     .line 93
-    :catch_6f
+    :catch_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-nez v2, :cond_7e
+    if-nez v2, :cond_8
 
     invoke-interface {v6}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
@@ -291,20 +291,20 @@
 
     cmp-long v2, v2, p4
 
-    if-nez v2, :cond_7c
+    if-nez v2, :cond_7
 
-    goto :goto_7e
+    goto :goto_1
 
-    :cond_7c
+    :cond_7
     move v2, p7
 
-    goto :goto_7f
+    goto :goto_2
 
-    :cond_7e
-    :goto_7e
+    :cond_8
+    :goto_1
     move v2, v0
 
-    :goto_7f
+    :goto_2
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 94
@@ -312,17 +312,17 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_28
+    goto :goto_0
 
     .line 97
-    :cond_88
-    :goto_88
+    :cond_9
+    :goto_3
     iget-object p4, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
-    if-eqz p4, :cond_92
+    if-eqz p4, :cond_a
 
     .line 111
-    :goto_8c
+    :goto_4
     iget-object p1, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
     invoke-interface {p1, p8}, Landroidx/media3/extractor/Extractor;->init(Landroidx/media3/extractor/ExtractorOutput;)V
@@ -330,7 +330,7 @@
     return-void
 
     .line 98
-    :cond_92
+    :cond_a
     new-instance p4, Landroidx/media3/exoplayer/source/UnrecognizedInputFormatException;
 
     new-instance p5, Ljava/lang/StringBuilder;
@@ -397,7 +397,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/PositionHolder;)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -430,14 +430,14 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 116
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 117
     invoke-interface {v0}, Landroidx/media3/extractor/Extractor;->release()V
@@ -446,14 +446,14 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;
 
     .line 120
-    :cond_a
+    :cond_0
     iput-object v1, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractorInput:Landroidx/media3/extractor/ExtractorInput;
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/media3/exoplayer/source/BundledExtractorsAdapter;->extractor:Landroidx/media3/extractor/Extractor;

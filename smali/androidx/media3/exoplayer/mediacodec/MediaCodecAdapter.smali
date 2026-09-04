@@ -46,7 +46,7 @@
 .end method
 
 .method public registerOnBufferAvailableListener(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/RopeByteString;)V
-    .registers 2
+    .locals 0
 
     .line 810
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->this$0:Landroidx/datastore/preferences/protobuf/RopeByteString;
@@ -46,18 +46,18 @@
 .end method
 
 .method private advanceIfCurrentPieceFullyRead()V
-    .registers 3
+    .locals 2
 
     .line 917
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPiece:Landroidx/datastore/preferences/protobuf/ByteString$LeafByteString;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceIndex:I
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceSize:I
 
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_1
 
     .line 920
     iget v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceOffsetInRope:I
@@ -78,7 +78,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     .line 923
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->pieceIterator:Landroidx/datastore/preferences/protobuf/RopeByteString$PieceIterator;
@@ -96,9 +96,9 @@
 
     iput v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceSize:I
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     const/4 v1, 0x0
 
     .line 926
@@ -107,13 +107,13 @@
     .line 927
     iput v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceSize:I
 
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private initialize()V
-    .registers 4
+    .locals 3
 
     .line 905
     new-instance v0, Landroidx/datastore/preferences/protobuf/RopeByteString$PieceIterator;
@@ -152,12 +152,12 @@
 .end method
 
 .method private readSkipInternal([BII)I
-    .registers 8
+    .locals 4
 
     move v0, p3
 
-    :goto_1
-    if-lez v0, :cond_28
+    :goto_0
+    if-lez v0, :cond_2
 
     .line 846
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->advanceIfCurrentPieceFullyRead()V
@@ -165,16 +165,16 @@
     .line 847
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPiece:Landroidx/datastore/preferences/protobuf/ByteString$LeafByteString;
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
-    if-ne v0, p3, :cond_28
+    if-ne v0, p3, :cond_2
 
     const/4 p1, -0x1
 
     return p1
 
     .line 855
-    :cond_e
+    :cond_0
     iget v1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceSize:I
 
     iget v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceIndex:I
@@ -186,7 +186,7 @@
 
     move-result v1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_1
 
     .line 858
     iget-object v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPiece:Landroidx/datastore/preferences/protobuf/ByteString$LeafByteString;
@@ -198,7 +198,7 @@
     add-int/2addr p2, v1
 
     .line 861
-    :cond_21
+    :cond_1
     iget v2, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceIndex:I
 
     add-int/2addr v2, v1
@@ -207,9 +207,9 @@
 
     sub-int/2addr v0, v1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     sub-int/2addr p3, v0
 
     return p3
@@ -218,7 +218,7 @@
 
 # virtual methods
 .method public available()I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -245,7 +245,7 @@
 .end method
 
 .method public mark(I)V
-    .registers 3
+    .locals 1
 
     .line 893
     iget p1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceOffsetInRope:I
@@ -260,7 +260,7 @@
 .end method
 
 .method public markSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -268,7 +268,7 @@
 .end method
 
 .method public read()I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -281,14 +281,14 @@
     .line 872
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPiece:Landroidx/datastore/preferences/protobuf/ByteString$LeafByteString;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 875
-    :cond_9
+    :cond_0
     iget v1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->currentPieceIndex:I
 
     add-int/lit8 v2, v1, 0x1
@@ -305,21 +305,21 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
 
     .line 817
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-ltz p2, :cond_10
+    if-ltz p2, :cond_0
 
-    if-ltz p3, :cond_10
+    if-ltz p3, :cond_0
 
     .line 818
     array-length v0, p1
 
     sub-int/2addr v0, p2
 
-    if-gt p3, v0, :cond_10
+    if-gt p3, v0, :cond_0
 
     .line 821
     invoke-direct {p0, p1, p2, p3}, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->readSkipInternal([BII)I
@@ -329,7 +329,7 @@
     return p1
 
     .line 819
-    :cond_10
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -338,12 +338,12 @@
 .end method
 
 .method public declared-synchronized reset()V
-    .registers 4
+    .locals 3
 
     monitor-enter p0
 
     .line 899
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->initialize()V
 
     .line 900
@@ -354,15 +354,15 @@
     const/4 v2, 0x0
 
     invoke-direct {p0, v1, v2, v0}, Landroidx/datastore/preferences/protobuf/RopeByteString$RopeInputStream;->readSkipInternal([BII)I
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 901
     monitor-exit p0
 
     return-void
 
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -371,23 +371,23 @@
 .end method
 
 .method public skip(J)J
-    .registers 6
+    .locals 3
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_17
+    if-ltz v0, :cond_1
 
     const-wide/32 v0, 0x7fffffff
 
     cmp-long v2, p1, v0
 
-    if-lez v2, :cond_e
+    if-lez v2, :cond_0
 
     move-wide p1, v0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     long-to-int p1, p1
@@ -404,7 +404,7 @@
     return-wide p1
 
     .line 827
-    :cond_17
+    :cond_1
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V

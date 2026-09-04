@@ -27,7 +27,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/appcompat/widget/AbsActionBarView;)V
-    .registers 2
+    .locals 0
 
     .line 275
     iput-object p1, p0, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->this$0:Landroidx/appcompat/widget/AbsActionBarView;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onAnimationCancel(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -56,17 +56,17 @@
 .end method
 
 .method public onAnimationEnd(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 294
     iget-boolean p1, p0, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->mCanceled:Z
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     return-void
 
     .line 296
-    :cond_5
+    :cond_0
     iget-object p1, p0, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->this$0:Landroidx/appcompat/widget/AbsActionBarView;
 
     const/4 v0, 0x0
@@ -84,7 +84,7 @@
 .end method
 
 .method public onAnimationStart(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 288
     iget-object p1, p0, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->this$0:Landroidx/appcompat/widget/AbsActionBarView;
@@ -100,7 +100,7 @@
 .end method
 
 .method public withFinalVisibility(Landroidx/core/view/ViewPropertyAnimatorCompat;I)Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;
-    .registers 4
+    .locals 1
 
     .line 281
     iget-object v0, p0, Landroidx/appcompat/widget/AbsActionBarView$VisibilityAnimListener;->this$0:Landroidx/appcompat/widget/AbsActionBarView;

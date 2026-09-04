@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getSystemService(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -46,7 +46,7 @@
 .end method
 
 .method static noteProxyOp(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
-    .registers 3
+    .locals 0
 
     .line 268
     invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOp(Ljava/lang/String;Ljava/lang/String;)I
@@ -57,7 +57,7 @@
 .end method
 
 .method static noteProxyOpNoThrow(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
-    .registers 3
+    .locals 0
 
     .line 274
     invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOpNoThrow(Ljava/lang/String;Ljava/lang/String;)I
@@ -68,7 +68,7 @@
 .end method
 
 .method static permissionToOp(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 258
     invoke-static {p0}, Landroid/app/AppOpsManager;->permissionToOp(Ljava/lang/String;)Ljava/lang/String;

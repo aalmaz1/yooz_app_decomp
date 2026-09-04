@@ -59,7 +59,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/hardware/camera2/params/StreamConfigurationMap;Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;)V
-    .registers 4
+    .locals 1
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -99,7 +99,7 @@
 .end method
 
 .method static toStreamConfigurationMapCompat(Landroid/hardware/camera2/params/StreamConfigurationMap;Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;)Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
-    .registers 3
+    .locals 1
 
     .line 71
     new-instance v0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public getHighResolutionOutputSizes(I)[Landroid/util/Size;
-    .registers 5
+    .locals 3
 
     .line 144
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatHighResolutionOutputSizes:Ljava/util/Map;
@@ -127,7 +127,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     .line 145
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatHighResolutionOutputSizes:Ljava/util/Map;
@@ -142,12 +142,12 @@
 
     check-cast v0, [Landroid/util/Size;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 147
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatHighResolutionOutputSizes:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -170,23 +170,23 @@
 
     check-cast v1, [Landroid/util/Size;
 
-    :goto_2f
+    :goto_0
     return-object v1
 
     .line 150
-    :cond_30
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mImpl:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;
 
     invoke-interface {v0, p1}, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;->getHighResolutionOutputSizes(I)[Landroid/util/Size;
 
     move-result-object v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_2
 
     .line 153
     array-length v2, v0
 
-    if-lez v2, :cond_41
+    if-lez v2, :cond_2
 
     .line 154
     iget-object v2, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mOutputSizesCorrector:Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;
@@ -196,7 +196,7 @@
     move-result-object v0
 
     .line 157
-    :cond_41
+    :cond_2
     iget-object v2, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatHighResolutionOutputSizes:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -205,7 +205,7 @@
 
     invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_3
 
     .line 158
     invoke-virtual {v0}, [Landroid/util/Size;->clone()Ljava/lang/Object;
@@ -216,12 +216,12 @@
 
     check-cast v1, [Landroid/util/Size;
 
-    :cond_53
+    :cond_3
     return-object v1
 .end method
 
 .method public getOutputSizes(I)[Landroid/util/Size;
-    .registers 5
+    .locals 3
 
     .line 87
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatOutputSizes:Ljava/util/Map;
@@ -234,7 +234,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 88
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatOutputSizes:Ljava/util/Map;
@@ -249,14 +249,14 @@
 
     check-cast v0, [Landroid/util/Size;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 89
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedFormatOutputSizes:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -275,28 +275,28 @@
 
     check-cast p1, [Landroid/util/Size;
 
-    :goto_2e
+    :goto_0
     return-object p1
 
     .line 92
-    :cond_2f
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mImpl:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;
 
     invoke-interface {v0, p1}, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;->getOutputSizes(I)[Landroid/util/Size;
 
     move-result-object v0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_3
 
     .line 94
     array-length v1, v0
 
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_2
 
-    goto :goto_51
+    goto :goto_1
 
     .line 99
-    :cond_3b
+    :cond_2
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mOutputSizesCorrector:Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;
 
     invoke-virtual {v1, v0, p1}, Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;->applyQuirks([Landroid/util/Size;I)[Landroid/util/Size;
@@ -322,8 +322,8 @@
     return-object p1
 
     .line 95
-    :cond_51
-    :goto_51
+    :cond_3
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Retrieved output sizes array is null or empty for format "
@@ -346,7 +346,7 @@
 .end method
 
 .method public getOutputSizes(Ljava/lang/Class;)[Landroid/util/Size;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -365,7 +365,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 117
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedClassOutputSizes:Ljava/util/Map;
@@ -376,14 +376,14 @@
 
     check-cast v0, [Landroid/util/Size;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_22
+    goto :goto_0
 
     .line 118
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mCachedClassOutputSizes:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -398,28 +398,28 @@
 
     check-cast p1, [Landroid/util/Size;
 
-    :goto_22
+    :goto_0
     return-object p1
 
     .line 121
-    :cond_23
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mImpl:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;
 
     invoke-interface {v0, p1}, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;->getOutputSizes(Ljava/lang/Class;)[Landroid/util/Size;
 
     move-result-object v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_3
 
     .line 123
     array-length v1, v0
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_2
 
-    goto :goto_41
+    goto :goto_1
 
     .line 128
-    :cond_2f
+    :cond_2
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mOutputSizesCorrector:Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;
 
     invoke-virtual {v1, v0, p1}, Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;->applyQuirks([Landroid/util/Size;Ljava/lang/Class;)[Landroid/util/Size;
@@ -441,8 +441,8 @@
     return-object p1
 
     .line 124
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Retrieved output sizes array is null or empty for class "
@@ -465,7 +465,7 @@
 .end method
 
 .method public toStreamConfigurationMap()Landroid/hardware/camera2/params/StreamConfigurationMap;
-    .registers 2
+    .locals 1
 
     .line 166
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;->mImpl:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat$StreamConfigurationMapCompatImpl;

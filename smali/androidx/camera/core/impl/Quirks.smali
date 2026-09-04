@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public contains(Ljava/lang/Class;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,12 +61,12 @@
 
     move-result-object v0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -83,20 +83,20 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1e
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public get(Ljava/lang/Class;)Landroidx/camera/core/impl/Quirk;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -114,12 +114,12 @@
 
     move-result-object v0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -132,18 +132,18 @@
 
     move-result-object v2
 
-    if-ne v2, p1, :cond_6
+    if-ne v2, p1, :cond_0
 
     return-object v1
 
-    :cond_19
+    :cond_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public getAll(Ljava/lang/Class;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -168,13 +168,13 @@
 
     move-result-object v1
 
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -191,13 +191,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_0
 
     .line 78
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     return-object v0
 .end method

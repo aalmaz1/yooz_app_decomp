@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/high16 v0, 0x7fc00000    # Float.NaN
 
@@ -26,7 +26,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method private static writePcm32BitFloat(ILjava/nio/ByteBuffer;)V
-    .registers 6
+    .locals 4
 
     const-wide v0, 0x3e00000000200000L    # 4.656612875245797E-10
 
@@ -53,7 +53,7 @@
     .line 129
     sget v0, Landroidx/media3/exoplayer/audio/ToFloatPcmAudioProcessor;->FLOAT_NAN_AS_INT:I
 
-    if-ne p0, v0, :cond_15
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x0
 
@@ -63,7 +63,7 @@
     move-result p0
 
     .line 132
-    :cond_15
+    :cond_0
     invoke-virtual {p1, p0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     return-void
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public onConfigure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -87,11 +87,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_0
 
     .line 50
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -102,17 +102,17 @@
 
     invoke-direct {v0, v2, p1, v1}, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;-><init>(III)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 52
-    :cond_15
+    :cond_0
     sget-object v0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
-    :goto_17
+    :goto_0
     return-object v0
 
     .line 47
-    :cond_18
+    :cond_1
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
@@ -121,7 +121,7 @@
 .end method
 
 .method public queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 7
+    .locals 5
 
     .line 57
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
@@ -142,27 +142,27 @@
 
     const/16 v4, 0x15
 
-    if-eq v3, v4, :cond_b8
+    if-eq v3, v4, :cond_3
 
     const/16 v4, 0x16
 
-    if-eq v3, v4, :cond_85
+    if-eq v3, v4, :cond_2
 
     const/high16 v4, 0x50000000
 
-    if-eq v3, v4, :cond_57
+    if-eq v3, v4, :cond_1
 
     const/high16 v4, 0x60000000
 
-    if-ne v3, v4, :cond_51
+    if-ne v3, v4, :cond_0
 
     .line 95
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/audio/ToFloatPcmAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    :goto_22
-    if-ge v0, v1, :cond_e6
+    :goto_0
+    if-ge v0, v1, :cond_4
 
     add-int/lit8 v3, v0, 0x3
 
@@ -215,10 +215,10 @@
 
     add-int/lit8 v0, v0, 0x4
 
-    goto :goto_22
+    goto :goto_0
 
     .line 113
-    :cond_51
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -226,7 +226,7 @@
     throw p1
 
     .line 74
-    :cond_57
+    :cond_1
     div-int/lit8 v2, v2, 0x3
 
     mul-int/lit8 v2, v2, 0x4
@@ -235,8 +235,8 @@
 
     move-result-object v2
 
-    :goto_5f
-    if-ge v0, v1, :cond_e6
+    :goto_1
+    if-ge v0, v1, :cond_4
 
     add-int/lit8 v3, v0, 0x2
 
@@ -278,16 +278,16 @@
 
     add-int/lit8 v0, v0, 0x3
 
-    goto :goto_5f
+    goto :goto_1
 
     .line 84
-    :cond_85
+    :cond_2
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/audio/ToFloatPcmAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    :goto_89
-    if-ge v0, v1, :cond_e6
+    :goto_2
+    if-ge v0, v1, :cond_4
 
     .line 87
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get(I)B
@@ -340,10 +340,10 @@
 
     add-int/lit8 v0, v0, 0x4
 
-    goto :goto_89
+    goto :goto_2
 
     .line 64
-    :cond_b8
+    :cond_3
     div-int/lit8 v2, v2, 0x3
 
     mul-int/lit8 v2, v2, 0x4
@@ -352,8 +352,8 @@
 
     move-result-object v2
 
-    :goto_c0
-    if-ge v0, v1, :cond_e6
+    :goto_3
+    if-ge v0, v1, :cond_4
 
     .line 67
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get(I)B
@@ -395,10 +395,10 @@
 
     add-int/lit8 v0, v0, 0x3
 
-    goto :goto_c0
+    goto :goto_3
 
     .line 116
-    :cond_e6
+    :cond_4
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0

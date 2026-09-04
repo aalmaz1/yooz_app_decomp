@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static of(Landroid/graphics/Bitmap;Landroidx/camera/core/impl/utils/Exif;Landroid/graphics/Rect;ILandroid/graphics/Matrix;Landroidx/camera/core/impl/CameraCaptureResult;)Landroidx/camera/core/processing/Packet;
-    .registers 16
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 .end method
 
 .method public static of(Landroidx/camera/core/ImageProxy;Landroidx/camera/core/impl/utils/Exif;Landroid/graphics/Rect;ILandroid/graphics/Matrix;Landroidx/camera/core/impl/CameraCaptureResult;)Landroidx/camera/core/processing/Packet;
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,7 +130,7 @@
 .end method
 
 .method public static of(Landroidx/camera/core/ImageProxy;Landroidx/camera/core/impl/utils/Exif;Landroid/util/Size;Landroid/graphics/Rect;ILandroid/graphics/Matrix;Landroidx/camera/core/impl/CameraCaptureResult;)Landroidx/camera/core/processing/Packet;
-    .registers 17
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -155,7 +155,7 @@
 
     const/16 v1, 0x100
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     const-string v0, "JPEG image must have Exif."
 
@@ -164,13 +164,13 @@
     .line 178
     invoke-static {p1, v0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object v3, p1
 
     .line 180
-    :goto_10
+    :goto_0
     new-instance v0, Landroidx/camera/core/processing/AutoValue_Packet;
 
     invoke-interface {p0}, Landroidx/camera/core/ImageProxy;->getFormat()I
@@ -199,7 +199,7 @@
 .end method
 
 .method public static of([BLandroidx/camera/core/impl/utils/Exif;ILandroid/util/Size;Landroid/graphics/Rect;ILandroid/graphics/Matrix;Landroidx/camera/core/impl/CameraCaptureResult;)Landroidx/camera/core/processing/Packet;
-    .registers 18
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -274,7 +274,7 @@
 .end method
 
 .method public hasCropping()Z
-    .registers 3
+    .locals 2
 
     .line 139
     invoke-virtual {p0}, Landroidx/camera/core/processing/Packet;->getCropRect()Landroid/graphics/Rect;

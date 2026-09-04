@@ -13,7 +13,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static getActions(Ljava/lang/Object;)J
-    .registers 3
+    .locals 2
 
     .line 45
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getActiveQueueItemId(Ljava/lang/Object;)J
-    .registers 3
+    .locals 2
 
     .line 61
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -48,7 +48,7 @@
 .end method
 
 .method public static getBufferedPosition(Ljava/lang/Object;)J
-    .registers 3
+    .locals 2
 
     .line 37
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static getCustomActions(Ljava/lang/Object;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 .end method
 
 .method public static getErrorMessage(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 49
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -97,7 +97,7 @@
 .end method
 
 .method public static getLastPositionUpdateTime(Ljava/lang/Object;)J
-    .registers 3
+    .locals 2
 
     .line 53
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -110,7 +110,7 @@
 .end method
 
 .method public static getPlaybackSpeed(Ljava/lang/Object;)F
-    .registers 1
+    .locals 0
 
     .line 41
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -123,7 +123,7 @@
 .end method
 
 .method public static getPosition(Ljava/lang/Object;)J
-    .registers 3
+    .locals 2
 
     .line 33
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static getState(Ljava/lang/Object;)I
-    .registers 1
+    .locals 0
 
     .line 29
     check-cast p0, Landroid/media/session/PlaybackState;
@@ -149,7 +149,7 @@
 .end method
 
 .method public static newInstance(IJJFJLjava/lang/CharSequence;JLjava/util/List;J)Ljava/lang/Object;
-    .registers 22
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IJJFJ",
@@ -200,12 +200,12 @@
 
     move-result-object v0
 
-    :goto_1f
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -216,9 +216,9 @@
 
     invoke-virtual {v7, v1}, Landroid/media/session/PlaybackState$Builder;->addCustomAction(Landroid/media/session/PlaybackState$CustomAction;)Landroid/media/session/PlaybackState$Builder;
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_2f
+    :cond_0
     move-wide/from16 v1, p12
 
     .line 76

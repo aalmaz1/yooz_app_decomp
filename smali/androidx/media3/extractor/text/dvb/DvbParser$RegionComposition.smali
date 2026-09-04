@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>(IZIIIIIIIILandroid/util/SparseArray;)V
-    .registers 12
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IZIIIIIIII",
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public mergeFrom(Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;)V
-    .registers 6
+    .locals 4
 
     .line 1084
     iget-object p1, p1, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
@@ -108,12 +108,12 @@
     const/4 v0, 0x0
 
     .line 1085
-    :goto_3
+    :goto_0
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_0
 
     .line 1086
     iget-object v1, p0, Landroidx/media3/extractor/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
@@ -132,8 +132,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return-void
 .end method

@@ -111,7 +111,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -178,7 +178,7 @@
 .end method
 
 .method public static final synthetic access$getFileName$p(Landroidx/datastore/DataStoreSingletonDelegate;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 78
     iget-object p0, p0, Landroidx/datastore/DataStoreSingletonDelegate;->fileName:Ljava/lang/String;
@@ -189,7 +189,7 @@
 
 # virtual methods
 .method public getValue(Landroid/content/Context;Lkotlin/reflect/KProperty;)Landroidx/datastore/core/DataStore;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -212,17 +212,17 @@
     .line 99
     iget-object p2, p0, Landroidx/datastore/DataStoreSingletonDelegate;->INSTANCE:Landroidx/datastore/core/DataStore;
 
-    if-nez p2, :cond_47
+    if-nez p2, :cond_1
 
     iget-object p2, p0, Landroidx/datastore/DataStoreSingletonDelegate;->lock:Ljava/lang/Object;
 
     monitor-enter p2
 
     .line 100
-    :try_start_11
+    :try_start_0
     iget-object v0, p0, Landroidx/datastore/DataStoreSingletonDelegate;->INSTANCE:Landroidx/datastore/core/DataStore;
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_0
 
     .line 101
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -271,34 +271,34 @@
     iput-object p1, p0, Landroidx/datastore/DataStoreSingletonDelegate;->INSTANCE:Landroidx/datastore/core/DataStore;
 
     .line 110
-    :cond_3c
+    :cond_0
     iget-object p1, p0, Landroidx/datastore/DataStoreSingletonDelegate;->INSTANCE:Landroidx/datastore/core/DataStore;
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-    :try_end_41
-    .catchall {:try_start_11 .. :try_end_41} :catchall_44
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 99
     monitor-exit p2
 
     move-object p2, p1
 
-    goto :goto_47
+    goto :goto_0
 
-    :catchall_44
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
 
     throw p1
 
-    :cond_47
-    :goto_47
+    :cond_1
+    :goto_0
     return-object p2
 .end method
 
 .method public bridge synthetic getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 78
     check-cast p1, Landroid/content/Context;

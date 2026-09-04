@@ -80,7 +80,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -143,48 +143,48 @@
 .end method
 
 .method private static updateScoreForMatch(ILjava/lang/String;Ljava/lang/String;I)I
-    .registers 5
+    .locals 1
 
     .line 319
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_2
 
     const/4 v0, -0x1
 
-    if-ne p0, v0, :cond_a
+    if-ne p0, v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 322
-    :cond_a
+    :cond_0
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     add-int v0, p0, p3
 
-    :cond_12
+    :cond_1
     return v0
 
-    :cond_13
-    :goto_13
+    :cond_2
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public getBackgroundColor()I
-    .registers 3
+    .locals 2
 
     .line 260
     iget-boolean v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->hasBackgroundColor:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 263
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->backgroundColor:I
@@ -192,7 +192,7 @@
     return v0
 
     .line 261
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Background color not defined."
@@ -203,7 +203,7 @@
 .end method
 
 .method public getCombineUpright()Z
-    .registers 2
+    .locals 1
 
     .line 314
     iget-boolean v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->combineUpright:Z
@@ -212,12 +212,12 @@
 .end method
 
 .method public getFontColor()I
-    .registers 3
+    .locals 2
 
     .line 242
     iget-boolean v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->hasFontColor:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 245
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontColor:I
@@ -225,7 +225,7 @@
     return v0
 
     .line 243
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Font color not defined"
@@ -236,7 +236,7 @@
 .end method
 
 .method public getFontFamily()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 232
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontFamily:Ljava/lang/String;
@@ -245,7 +245,7 @@
 .end method
 
 .method public getFontSize()F
-    .registers 2
+    .locals 1
 
     .line 294
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontSize:F
@@ -254,7 +254,7 @@
 .end method
 
 .method public getFontSizeUnit()I
-    .registers 2
+    .locals 1
 
     .line 290
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontSizeUnit:I
@@ -263,7 +263,7 @@
 .end method
 
 .method public getRubyPosition()I
-    .registers 2
+    .locals 1
 
     .line 304
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->rubyPosition:I
@@ -272,7 +272,7 @@
 .end method
 
 .method public getSpecificityScore(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ljava/lang/String;)I
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -293,7 +293,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetTag:Ljava/lang/String;
 
@@ -302,7 +302,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetClasses:Ljava/util/Set;
 
@@ -311,7 +311,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetVoice:Ljava/lang/String;
 
@@ -320,7 +320,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 171
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -330,7 +330,7 @@
     return p1
 
     .line 174
-    :cond_25
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetId:Ljava/lang/String;
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -361,7 +361,7 @@
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_51
+    if-eq p1, p2, :cond_2
 
     .line 177
     iget-object p2, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetClasses:Ljava/util/Set;
@@ -370,12 +370,12 @@
 
     move-result p2
 
-    if-nez p2, :cond_48
+    if-nez p2, :cond_1
 
-    goto :goto_51
+    goto :goto_0
 
     .line 180
-    :cond_48
+    :cond_1
     iget-object p2, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetClasses:Ljava/util/Set;
 
     invoke-interface {p2}, Ljava/util/Set;->size()I
@@ -388,57 +388,57 @@
 
     return p1
 
-    :cond_51
-    :goto_51
+    :cond_2
+    :goto_0
     return v2
 .end method
 
 .method public getStyle()I
-    .registers 5
+    .locals 4
 
     .line 192
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->bold:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     iget v2, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->italic:I
 
-    if-ne v2, v1, :cond_a
+    if-ne v2, v1, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_10
+    if-ne v0, v2, :cond_1
 
     move v0, v2
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     move v0, v1
 
     .line 195
-    :goto_11
+    :goto_0
     iget v3, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->italic:I
 
-    if-ne v3, v2, :cond_16
+    if-ne v3, v2, :cond_2
 
     const/4 v1, 0x2
 
-    :cond_16
+    :cond_2
     or-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public hasBackgroundColor()Z
-    .registers 2
+    .locals 1
 
     .line 274
     iget-boolean v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->hasBackgroundColor:Z
@@ -447,7 +447,7 @@
 .end method
 
 .method public hasFontColor()Z
-    .registers 2
+    .locals 1
 
     .line 256
     iget-boolean v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->hasFontColor:Z
@@ -456,45 +456,45 @@
 .end method
 
 .method public isLinethrough()Z
-    .registers 3
+    .locals 2
 
     .line 199
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->linethrough:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 .method public isUnderline()Z
-    .registers 3
+    .locals 2
 
     .line 209
     iget v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->underline:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method
 
 .method public setBackgroundColor(I)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 268
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->backgroundColor:I
@@ -508,7 +508,7 @@
 .end method
 
 .method public setBold(Z)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 220
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->bold:I
@@ -517,7 +517,7 @@
 .end method
 
 .method public setCombineUpright(Z)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 309
     iput-boolean p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->combineUpright:Z
@@ -526,7 +526,7 @@
 .end method
 
 .method public setFontColor(I)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 250
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontColor:I
@@ -540,28 +540,28 @@
 .end method
 
 .method public setFontFamily(Ljava/lang/String;)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 237
-    :cond_4
+    :cond_0
     invoke-static {p1}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     iput-object p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontFamily:Ljava/lang/String;
 
     return-object p0
 .end method
 
 .method public setFontSize(F)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 279
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontSize:F
@@ -570,7 +570,7 @@
 .end method
 
 .method public setFontSizeUnit(I)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 285
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->fontSizeUnit:I
@@ -579,7 +579,7 @@
 .end method
 
 .method public setItalic(Z)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 226
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->italic:I
@@ -588,7 +588,7 @@
 .end method
 
 .method public setLinethrough(Z)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 204
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->linethrough:I
@@ -597,7 +597,7 @@
 .end method
 
 .method public setRubyPosition(I)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 299
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->rubyPosition:I
@@ -606,7 +606,7 @@
 .end method
 
 .method public setTargetClasses([Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 136
     new-instance v0, Ljava/util/HashSet;
@@ -623,7 +623,7 @@
 .end method
 
 .method public setTargetId(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 128
     iput-object p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetId:Ljava/lang/String;
@@ -632,7 +632,7 @@
 .end method
 
 .method public setTargetTagName(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 132
     iput-object p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetTag:Ljava/lang/String;
@@ -641,7 +641,7 @@
 .end method
 
 .method public setTargetVoice(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 140
     iput-object p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->targetVoice:Ljava/lang/String;
@@ -650,7 +650,7 @@
 .end method
 
 .method public setUnderline(Z)Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;
-    .registers 2
+    .locals 0
 
     .line 214
     iput p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->underline:I

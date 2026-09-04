@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createDisplayCutout(Landroid/graphics/Rect;Ljava/util/List;)Landroid/view/DisplayCutout;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,7 +46,7 @@
 .end method
 
 .method static getBoundingRects(Landroid/view/DisplayCutout;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,7 +67,7 @@
 .end method
 
 .method static getSafeInsetBottom(Landroid/view/DisplayCutout;)I
-    .registers 1
+    .locals 0
 
     .line 238
     invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetBottom()I
@@ -78,7 +78,7 @@
 .end method
 
 .method static getSafeInsetLeft(Landroid/view/DisplayCutout;)I
-    .registers 1
+    .locals 0
 
     .line 243
     invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetLeft()I
@@ -89,7 +89,7 @@
 .end method
 
 .method static getSafeInsetRight(Landroid/view/DisplayCutout;)I
-    .registers 1
+    .locals 0
 
     .line 248
     invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetRight()I
@@ -100,7 +100,7 @@
 .end method
 
 .method static getSafeInsetTop(Landroid/view/DisplayCutout;)I
-    .registers 1
+    .locals 0
 
     .line 233
     invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetTop()I

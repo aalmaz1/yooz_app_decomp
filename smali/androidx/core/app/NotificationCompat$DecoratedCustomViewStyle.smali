@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5407
     invoke-direct {p0}, Landroidx/core/app/NotificationCompat$Style;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method private createRemoteViews(Landroid/widget/RemoteViews;Z)Landroid/widget/RemoteViews;
-    .registers 10
+    .locals 7
 
     .line 5494
     sget v0, Landroidx/core/R$layout;->notification_template_custom_big:I
@@ -65,9 +65,9 @@
 
     move-result-object v3
 
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_0
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_0
 
     .line 5505
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -80,12 +80,12 @@
 
     move-result p2
 
-    if-lez p2, :cond_39
+    if-lez p2, :cond_0
 
     move v4, v2
 
-    :goto_25
-    if-ge v4, p2, :cond_3a
+    :goto_0
+    if-ge v4, p2, :cond_1
 
     .line 5510
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -105,21 +105,21 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     move v1, v2
 
-    :cond_3a
-    if-eqz v1, :cond_3d
+    :cond_1
+    if-eqz v1, :cond_2
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_3d
+    :cond_2
     const/16 v2, 0x8
 
     .line 5516
-    :goto_3f
+    :goto_1
     sget p2, Landroidx/core/R$id;->actions:I
 
     invoke-virtual {v0, p2, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
@@ -136,22 +136,22 @@
 .end method
 
 .method private generateActionButton(Landroidx/core/app/NotificationCompat$Action;)Landroid/widget/RemoteViews;
-    .registers 7
+    .locals 5
 
     .line 5535
     iget-object v0, p1, Landroidx/core/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .line 5536
-    :goto_7
+    :goto_0
     new-instance v1, Landroid/widget/RemoteViews;
 
     iget-object v2, p0, Landroidx/core/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -162,18 +162,18 @@
 
     move-result-object v2
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 5537
     sget v3, Landroidx/core/R$layout;->notification_action_tombstone:I
 
-    goto :goto_18
+    goto :goto_1
 
     .line 5538
-    :cond_16
+    :cond_1
     sget v3, Landroidx/core/R$layout;->notification_action:I
 
-    :goto_18
+    :goto_1
     invoke-direct {v1, v2, v3}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
     .line 5539
@@ -181,7 +181,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 5541
     sget v3, Landroidx/core/R$id;->action_image:I
@@ -197,14 +197,14 @@
     invoke-virtual {v1, v3, v2}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
     .line 5544
-    :cond_2c
+    :cond_2
     sget v2, Landroidx/core/R$id;->action_text:I
 
     iget-object v3, p1, Landroidx/core/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_3
 
     .line 5546
     sget v0, Landroidx/core/R$id;->action_container:I
@@ -214,7 +214,7 @@
     invoke-virtual {v1, v0, v2}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
     .line 5548
-    :cond_3c
+    :cond_3
     sget v0, Landroidx/core/R$id;->action_container:I
 
     iget-object p1, p1, Landroidx/core/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
@@ -225,7 +225,7 @@
 .end method
 
 .method private static getNonContextualActions(Ljava/util/List;)Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,14 +238,14 @@
         }
     .end annotation
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 5525
-    :cond_4
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -255,13 +255,13 @@
 
     move-result-object p0
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -274,21 +274,21 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_1
 
     .line 5528
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     return-object v0
 .end method
 
 
 # virtual methods
 .method public apply(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)V
-    .registers 3
+    .locals 1
 
     .line 5433
     invoke-interface {p1}, Landroidx/core/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
@@ -306,7 +306,7 @@
 .end method
 
 .method public displayCustomViewInline()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -314,7 +314,7 @@
 .end method
 
 .method protected getClassName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "androidx.core.app.NotificationCompat$DecoratedCustomViewStyle"
 
@@ -322,7 +322,7 @@
 .end method
 
 .method public makeBigContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -330,7 +330,7 @@
 .end method
 
 .method public makeContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -338,7 +338,7 @@
 .end method
 
 .method public makeHeadsUpContentView(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
-    .registers 2
+    .locals 0
 
     .line 119
     invoke-direct {p0, p1}, Landroidx/media3/datasource/cache/Cache$CacheException;-><init>(Ljava/lang/Throwable;)V

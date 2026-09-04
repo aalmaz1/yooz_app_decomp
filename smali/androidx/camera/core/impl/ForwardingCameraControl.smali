@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraControlInternal;)V
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public addInteropConfig(Landroidx/camera/core/impl/Config;)V
-    .registers 3
+    .locals 1
 
     .line 136
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -37,7 +37,7 @@
 .end method
 
 .method public addZslConfig(Landroidx/camera/core/impl/SessionConfig$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -48,7 +48,7 @@
 .end method
 
 .method public cancelFocusAndMetering()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearInteropConfig()V
-    .registers 2
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -80,7 +80,7 @@
 .end method
 
 .method public enableTorch(Z)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -101,7 +101,7 @@
 .end method
 
 .method public getFlashMode()I
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -114,7 +114,7 @@
 .end method
 
 .method public getImplementation()Landroidx/camera/core/impl/CameraControlInternal;
-    .registers 2
+    .locals 1
 
     .line 153
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -127,7 +127,7 @@
 .end method
 
 .method public getInteropConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 147
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -140,7 +140,7 @@
 .end method
 
 .method public getSensorRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 131
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -153,7 +153,7 @@
 .end method
 
 .method public getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 2
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -166,7 +166,7 @@
 .end method
 
 .method public isZslDisabledByByUserCaseConfig()Z
-    .registers 2
+    .locals 1
 
     .line 107
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -179,7 +179,7 @@
 .end method
 
 .method public setExposureCompensationIndex(I)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -200,7 +200,7 @@
 .end method
 
 .method public setFlashMode(I)V
-    .registers 3
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -211,7 +211,7 @@
 .end method
 
 .method public setLinearZoom(F)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)",
@@ -232,7 +232,7 @@
 .end method
 
 .method public setZoomRatio(F)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F)",
@@ -253,7 +253,7 @@
 .end method
 
 .method public setZslDisabledByUserCaseConfig(Z)V
-    .registers 3
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/camera/core/impl/ForwardingCameraControl;->mCameraControlInternal:Landroidx/camera/core/impl/CameraControlInternal;
@@ -264,7 +264,7 @@
 .end method
 
 .method public startFocusAndMetering(Landroidx/camera/core/FocusMeteringAction;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -287,7 +287,7 @@
 .end method
 
 .method public submitStillCaptureRequests(Ljava/util/List;II)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorInput;J)V
-    .registers 6
+    .locals 2
 
     .line 45
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ForwardingExtractorInput;-><init>(Landroidx/media3/extractor/ExtractorInput;)V
@@ -21,16 +21,16 @@
 
     cmp-long p1, v0, p2
 
-    if-ltz p1, :cond_d
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_e
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 47
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getLength()J
-    .registers 5
+    .locals 4
 
     .line 62
     invoke-super {p0}, Landroidx/media3/extractor/ForwardingExtractorInput;->getLength()J
@@ -57,7 +57,7 @@
 .end method
 
 .method public getPeekPosition()J
-    .registers 5
+    .locals 4
 
     .line 57
     invoke-super {p0}, Landroidx/media3/extractor/ForwardingExtractorInput;->getPeekPosition()J
@@ -72,7 +72,7 @@
 .end method
 
 .method public getPosition()J
-    .registers 5
+    .locals 4
 
     .line 52
     invoke-super {p0}, Landroidx/media3/extractor/ForwardingExtractorInput;->getPosition()J
@@ -87,7 +87,7 @@
 .end method
 
 .method public setRetryPosition(JLjava/lang/Throwable;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",

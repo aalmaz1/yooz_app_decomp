@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraInfoInternal;Landroidx/camera/core/impl/RestrictedCameraControl;)V
-    .registers 3
+    .locals 0
 
     .line 43
     invoke-direct {p0, p1}, Landroidx/camera/core/impl/ForwardingCameraInfo;-><init>(Landroidx/camera/core/impl/CameraInfoInternal;)V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public getExposureState()Landroidx/camera/core/ExposureState;
-    .registers 5
+    .locals 4
 
     .line 87
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mRestrictedCameraControl:Landroidx/camera/core/impl/RestrictedCameraControl;
@@ -47,7 +47,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 89
     new-instance v0, Landroidx/camera/core/impl/RestrictedCameraInfo$1;
@@ -57,7 +57,7 @@
     return-object v0
 
     .line 113
-    :cond_15
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
 
     invoke-interface {v0}, Landroidx/camera/core/impl/CameraInfoInternal;->getExposureState()Landroidx/camera/core/ExposureState;
@@ -68,7 +68,7 @@
 .end method
 
 .method public getImplementation()Landroidx/camera/core/impl/CameraInfoInternal;
-    .registers 2
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -77,7 +77,7 @@
 .end method
 
 .method public getTorchState()Landroidx/lifecycle/LiveData;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -104,7 +104,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 67
     new-instance v0, Landroidx/lifecycle/MutableLiveData;
@@ -118,7 +118,7 @@
     return-object v0
 
     .line 70
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
 
     invoke-interface {v0}, Landroidx/camera/core/impl/CameraInfoInternal;->getTorchState()Landroidx/lifecycle/LiveData;
@@ -129,7 +129,7 @@
 .end method
 
 .method public getZoomState()Landroidx/lifecycle/LiveData;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -154,7 +154,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 77
     new-instance v0, Landroidx/lifecycle/MutableLiveData;
@@ -172,7 +172,7 @@
     return-object v0
 
     .line 81
-    :cond_1b
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
 
     invoke-interface {v0}, Landroidx/camera/core/impl/CameraInfoInternal;->getZoomState()Landroidx/lifecycle/LiveData;
@@ -183,7 +183,7 @@
 .end method
 
 .method public hasFlashUnit()Z
-    .registers 5
+    .locals 4
 
     .line 56
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mRestrictedCameraControl:Landroidx/camera/core/impl/RestrictedCameraControl;
@@ -202,12 +202,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     return v3
 
     .line 60
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
 
     invoke-interface {v0}, Landroidx/camera/core/impl/CameraInfoInternal;->hasFlashUnit()Z
@@ -218,7 +218,7 @@
 .end method
 
 .method public isFocusMeteringSupported(Landroidx/camera/core/FocusMeteringAction;)Z
-    .registers 3
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mRestrictedCameraControl:Landroidx/camera/core/impl/RestrictedCameraControl;
@@ -227,14 +227,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 121
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/RestrictedCameraInfo;->mCameraInfo:Landroidx/camera/core/impl/CameraInfoInternal;
 
     invoke-interface {v0, p1}, Landroidx/camera/core/impl/CameraInfoInternal;->isFocusMeteringSupported(Landroidx/camera/core/FocusMeteringAction;)Z

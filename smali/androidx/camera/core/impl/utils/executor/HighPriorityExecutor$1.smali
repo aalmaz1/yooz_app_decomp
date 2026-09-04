@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/utils/executor/HighPriorityExecutor;)V
-    .registers 2
+    .locals 0
 
     .line 37
     iput-object p1, p0, Landroidx/camera/core/impl/utils/executor/HighPriorityExecutor$1;->this$0:Landroidx/camera/core/impl/utils/executor/HighPriorityExecutor;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 3
+    .locals 1
 
     .line 44
     new-instance v0, Ljava/lang/Thread;

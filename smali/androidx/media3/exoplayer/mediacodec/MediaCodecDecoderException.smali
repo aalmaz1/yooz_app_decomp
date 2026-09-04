@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;)V
-    .registers 6
+    .locals 3
 
     .line 39
     new-instance v0, Ljava/lang/StringBuilder;
@@ -24,16 +24,16 @@
 
     const/4 v1, 0x0
 
-    if-nez p2, :cond_c
+    if-nez p2, :cond_0
 
     move-object v2, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     iget-object v2, p2, Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
-    :goto_e
+    :goto_0
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -52,13 +52,13 @@
 
     const/16 v0, 0x15
 
-    if-lt p2, v0, :cond_25
+    if-lt p2, v0, :cond_1
 
     invoke-static {p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;->getDiagnosticInfoV21(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object v1
 
-    :cond_25
+    :cond_1
     iput-object v1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;->diagnosticInfo:Ljava/lang/String;
 
     .line 43
@@ -66,34 +66,34 @@
 
     const/16 v0, 0x17
 
-    if-lt p2, v0, :cond_32
+    if-lt p2, v0, :cond_2
 
     .line 44
     invoke-static {p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;->getErrorCodeV23(Ljava/lang/Throwable;)I
 
     move-result p1
 
-    goto :goto_36
+    goto :goto_1
 
     .line 45
-    :cond_32
+    :cond_2
     invoke-static {v1}, Landroidx/media3/common/util/Util;->getErrorCodeFromPlatformDiagnosticsInfo(Ljava/lang/String;)I
 
     move-result p1
 
-    :goto_36
+    :goto_1
     iput p1, p0, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;->errorCode:I
 
     return-void
 .end method
 
 .method private static getDiagnosticInfoV21(Ljava/lang/Throwable;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 51
     instance-of v0, p0, Landroid/media/MediaCodec$CodecException;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 52
     check-cast p0, Landroid/media/MediaCodec$CodecException;
@@ -104,19 +104,19 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getErrorCodeV23(Ljava/lang/Throwable;)I
-    .registers 2
+    .locals 1
 
     .line 59
     instance-of v0, p0, Landroid/media/MediaCodec$CodecException;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 60
     check-cast p0, Landroid/media/MediaCodec$CodecException;
@@ -127,7 +127,7 @@
 
     return p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     return p0

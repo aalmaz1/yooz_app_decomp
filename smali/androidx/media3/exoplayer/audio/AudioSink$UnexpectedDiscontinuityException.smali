@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 7
+    .locals 2
 
     .line 322
     new-instance v0, Ljava/lang/StringBuilder;

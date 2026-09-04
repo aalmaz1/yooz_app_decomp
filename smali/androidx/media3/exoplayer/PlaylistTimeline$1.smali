@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/PlaylistTimeline;Landroidx/media3/common/Timeline;)V
-    .registers 3
+    .locals 0
 
     .line 140
     iput-object p1, p0, Landroidx/media3/exoplayer/PlaylistTimeline$1;->this$0:Landroidx/media3/exoplayer/PlaylistTimeline;
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 14
+    .locals 10
 
     .line 145
     invoke-super {p0, p1, p2, p3}, Landroidx/media3/exoplayer/source/ForwardingTimeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
@@ -62,7 +62,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_0
 
     .line 148
     iget-object v1, p2, Landroidx/media3/common/Timeline$Period;->id:Ljava/lang/Object;
@@ -83,14 +83,14 @@
 
     invoke-virtual/range {v0 .. v9}, Landroidx/media3/common/Timeline$Period;->set(Ljava/lang/Object;Ljava/lang/Object;IJJLandroidx/media3/common/AdPlaybackState;Z)Landroidx/media3/common/Timeline$Period;
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     const/4 p2, 0x1
 
     .line 157
     iput-boolean p2, p1, Landroidx/media3/common/Timeline$Period;->isPlaceholder:Z
 
-    :goto_27
+    :goto_0
     return-object p1
 .end method

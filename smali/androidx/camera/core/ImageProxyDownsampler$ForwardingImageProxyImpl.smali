@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/ImageProxy;[Landroidx/camera/core/ImageProxy$PlaneProxy;II)V
-    .registers 5
+    .locals 0
 
     .line 232
     invoke-direct {p0, p1}, Landroidx/camera/core/ForwardingImageProxy;-><init>(Landroidx/camera/core/ImageProxy;)V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 245
     iget v0, p0, Landroidx/camera/core/ImageProxyDownsampler$ForwardingImageProxyImpl;->mDownsampledHeight:I
@@ -53,7 +53,7 @@
 .end method
 
 .method public getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
-    .registers 2
+    .locals 1
 
     .line 251
     iget-object v0, p0, Landroidx/camera/core/ImageProxyDownsampler$ForwardingImageProxyImpl;->mDownsampledPlanes:[Landroidx/camera/core/ImageProxy$PlaneProxy;
@@ -62,7 +62,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 240
     iget v0, p0, Landroidx/camera/core/ImageProxyDownsampler$ForwardingImageProxyImpl;->mDownsampledWidth:I

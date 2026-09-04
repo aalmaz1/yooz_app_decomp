@@ -27,14 +27,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x2f
 
     new-array v0, v0, [B
 
     .line 42
-    fill-array-data v0, :array_14
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->OGG_DEFAULT_ID_HEADER_PAGE:[B
 
@@ -43,7 +43,7 @@
     new-array v0, v0, [B
 
     .line 47
-    fill-array-data v0, :array_30
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->OGG_DEFAULT_COMMENT_HEADER_PAGE:[B
 
@@ -51,7 +51,7 @@
 
     nop
 
-    :array_14
+    :array_0
     .array-data 1
         0x4ft
         0x67t
@@ -102,7 +102,7 @@
         0x0t
     .end array-data
 
-    :array_30
+    :array_1
     .array-data 1
         0x4ft
         0x67t
@@ -152,7 +152,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -176,7 +176,7 @@
 .end method
 
 .method private packetizeInternal(Ljava/nio/ByteBuffer;[B)Ljava/nio/ByteBuffer;
-    .registers 21
+    .locals 18
 
     move-object/from16 v7, p0
 
@@ -212,25 +212,25 @@
 
     const/4 v15, 0x2
 
-    if-ne v2, v15, :cond_2f
+    if-ne v2, v15, :cond_1
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 131
     array-length v2, v0
 
     add-int/lit8 v2, v2, 0x1c
 
-    goto :goto_27
+    goto :goto_0
 
     .line 132
-    :cond_24
+    :cond_0
     sget-object v2, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->OGG_DEFAULT_ID_HEADER_PAGE:[B
 
     array-length v2, v2
 
     .line 133
-    :goto_27
+    :goto_0
     sget-object v3, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->OGG_DEFAULT_COMMENT_HEADER_PAGE:[B
 
     array-length v3, v3
@@ -241,13 +241,13 @@
 
     move/from16 v16, v2
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     const/16 v16, 0x0
 
     .line 137
-    :goto_31
+    :goto_1
     invoke-direct {v7, v1}, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v6
@@ -255,29 +255,29 @@
     .line 140
     iget v1, v7, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->pageSequenceNumber:I
 
-    if-ne v1, v15, :cond_49
+    if-ne v1, v15, :cond_3
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_2
 
     .line 142
     invoke-direct {v7, v6, v0}, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->writeOggIdHeaderPage(Ljava/nio/ByteBuffer;[B)V
 
-    goto :goto_44
+    goto :goto_2
 
     .line 145
-    :cond_3f
+    :cond_2
     sget-object v0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->OGG_DEFAULT_ID_HEADER_PAGE:[B
 
     invoke-virtual {v6, v0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     .line 147
-    :goto_44
+    :goto_2
     sget-object v0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->OGG_DEFAULT_COMMENT_HEADER_PAGE:[B
 
     invoke-virtual {v6, v0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     .line 151
-    :cond_49
+    :cond_3
     invoke-static/range {p1 .. p1}, Landroidx/media3/extractor/OpusUtil;->parsePacketAudioSampleCount(Ljava/nio/ByteBuffer;)I
 
     move-result v0
@@ -310,10 +310,10 @@
 
     const/4 v0, 0x0
 
-    :goto_62
-    if-ge v0, v13, :cond_75
+    :goto_3
+    if-ge v0, v13, :cond_5
 
-    if-lt v11, v12, :cond_6d
+    if-lt v11, v12, :cond_4
 
     const/4 v1, -0x1
 
@@ -322,9 +322,9 @@
 
     add-int/lit16 v11, v11, -0xff
 
-    goto :goto_72
+    goto :goto_4
 
-    :cond_6d
+    :cond_4
     int-to-byte v1, v11
 
     .line 164
@@ -332,14 +332,14 @@
 
     const/4 v11, 0x0
 
-    :goto_72
+    :goto_4
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_62
+    goto :goto_3
 
-    :cond_75
-    :goto_75
-    if-ge v9, v10, :cond_81
+    :cond_5
+    :goto_5
+    if-ge v9, v10, :cond_6
 
     .line 171
     invoke-virtual {v8, v9}, Ljava/nio/ByteBuffer;->get(I)B
@@ -350,10 +350,10 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_75
+    goto :goto_5
 
     .line 174
-    :cond_81
+    :cond_6
     invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
@@ -368,7 +368,7 @@
 
     const/16 v1, 0x16
 
-    if-ne v0, v15, :cond_b6
+    if-ne v0, v15, :cond_7
 
     .line 181
     invoke-virtual {v14}, Ljava/nio/ByteBuffer;->array()[B
@@ -415,9 +415,9 @@
 
     invoke-virtual {v14, v1, v0}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
-    goto :goto_cf
+    goto :goto_6
 
-    :cond_b6
+    :cond_7
     const/4 v5, 0x0
 
     .line 192
@@ -450,7 +450,7 @@
     invoke-virtual {v14, v1, v0}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     .line 200
-    :goto_cf
+    :goto_6
     iget v0, v7, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->pageSequenceNumber:I
 
     add-int/lit8 v0, v0, 0x1
@@ -461,7 +461,7 @@
 .end method
 
 .method private replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
-    .registers 3
+    .locals 1
 
     .line 282
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->outputBuffer:Ljava/nio/ByteBuffer;
@@ -470,7 +470,7 @@
 
     move-result v0
 
-    if-ge v0, p1, :cond_15
+    if-ge v0, p1, :cond_0
 
     .line 283
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
@@ -485,23 +485,23 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->outputBuffer:Ljava/nio/ByteBuffer;
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 285
-    :cond_15
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->outputBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
     .line 287
-    :goto_1a
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->outputBuffer:Ljava/nio/ByteBuffer;
 
     return-object p1
 .end method
 
 .method private writeOggIdHeaderPage(Ljava/nio/ByteBuffer;[B)V
-    .registers 10
+    .locals 7
 
     const-wide/16 v2, 0x0
 
@@ -569,7 +569,7 @@
 .end method
 
 .method private writeOggPacketHeader(Ljava/nio/ByteBuffer;JIIZ)V
-    .registers 8
+    .locals 1
 
     const/16 v0, 0x4f
 
@@ -594,17 +594,17 @@
     .line 254
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    if-eqz p6, :cond_1a
+    if-eqz p6, :cond_0
 
     const/4 p6, 0x2
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move p6, v0
 
     .line 257
-    :goto_1b
+    :goto_0
     invoke-virtual {p1, p6}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 260
@@ -634,7 +634,7 @@
 
 # virtual methods
 .method public packetize(Landroidx/media3/decoder/DecoderInputBuffer;Ljava/util/List;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -664,17 +664,17 @@
 
     sub-int/2addr v0, v1
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     return-void
 
     .line 83
-    :cond_15
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->pageSequenceNumber:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_30
+    if-ne v0, v1, :cond_2
 
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -682,7 +682,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_28
+    if-eq v0, v1, :cond_1
 
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -690,9 +690,9 @@
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_30
+    if-ne v0, v1, :cond_2
 
-    :cond_28
+    :cond_1
     const/4 v0, 0x0
 
     .line 84
@@ -702,13 +702,13 @@
 
     check-cast p2, [B
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     const/4 p2, 0x0
 
     .line 86
-    :goto_31
+    :goto_0
     iget-object v0, p1, Landroidx/media3/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
     invoke-direct {p0, v0, p2}, Landroidx/media3/exoplayer/audio/OggOpusAudioPacketizer;->packetizeInternal(Ljava/nio/ByteBuffer;[B)Ljava/nio/ByteBuffer;
@@ -743,7 +743,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 95
     sget-object v0, Landroidx/media3/common/audio/AudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;

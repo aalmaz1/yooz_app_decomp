@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 955
     new-instance v0, Landroidx/media3/common/Timeline$1;
@@ -65,7 +65,7 @@
 .end method
 
 .method protected constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 990
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +74,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Timeline;
-    .registers 4
+    .locals 3
 
     .line 1443
     new-instance v0, Landroidx/media3/common/Timeline$$ExternalSyntheticLambda0;
@@ -118,7 +118,7 @@
     .line 1448
     new-instance v2, Landroidx/media3/common/Timeline$RemotableTimeline;
 
-    if-nez p0, :cond_30
+    if-nez p0, :cond_0
 
     .line 1452
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->size()I
@@ -130,14 +130,14 @@
     move-result-object p0
 
     .line 1453
-    :cond_30
+    :cond_0
     invoke-direct {v2, v0, v1, p0}, Landroidx/media3/common/Timeline$RemotableTimeline;-><init>(Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/ImmutableList;[I)V
 
     return-object v2
 .end method
 
 .method private static fromBundleListRetriever(Lcom/google/common/base/Function;Landroid/os/IBinder;)Lcom/google/common/collect/ImmutableList;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -153,7 +153,7 @@
         }
     .end annotation
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 1459
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
@@ -163,7 +163,7 @@
     return-object p0
 
     .line 1461
-    :cond_7
+    :cond_0
     invoke-static {p1}, Landroidx/media3/common/BundleListRetriever;->getList(Landroid/os/IBinder;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
@@ -176,31 +176,31 @@
 .end method
 
 .method private static generateUnshuffledIndices(I)[I
-    .registers 3
+    .locals 2
 
     .line 1465
     new-array v0, p0, [I
 
     const/4 v1, 0x0
 
-    :goto_3
-    if-ge v1, p0, :cond_a
+    :goto_0
+    if-ge v1, p0, :cond_0
 
     .line 1467
     aput v1, v0, v1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final copyWithSingleWindow(I)Landroidx/media3/common/Timeline;
-    .registers 7
+    .locals 5
 
     .line 1424
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getWindowCount()I
@@ -209,12 +209,12 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     return-object p0
 
     .line 1427
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/media3/common/Timeline$Window;
 
     invoke-direct {v0}, Landroidx/media3/common/Timeline$Window;-><init>()V
@@ -233,12 +233,12 @@
     .line 1429
     iget v2, p1, Landroidx/media3/common/Timeline$Window;->firstPeriodIndex:I
 
-    :goto_19
+    :goto_0
     iget v3, p1, Landroidx/media3/common/Timeline$Window;->lastPeriodIndex:I
 
     const/4 v4, 0x0
 
-    if-gt v2, v3, :cond_2f
+    if-gt v2, v3, :cond_1
 
     .line 1430
     new-instance v3, Landroidx/media3/common/Timeline$Period;
@@ -257,10 +257,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 1434
-    :cond_2f
+    :cond_1
     iget v2, p1, Landroidx/media3/common/Timeline$Window;->lastPeriodIndex:I
 
     iget v3, p1, Landroidx/media3/common/Timeline$Window;->firstPeriodIndex:I
@@ -294,26 +294,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 11
+    .locals 9
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1301
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/Timeline;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1304
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/Timeline;
 
     .line 1305
@@ -325,7 +325,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_8e
+    if-ne v1, v3, :cond_b
 
     invoke-virtual {p1}, Landroidx/media3/common/Timeline;->getPeriodCount()I
 
@@ -335,12 +335,12 @@
 
     move-result v3
 
-    if-eq v1, v3, :cond_22
+    if-eq v1, v3, :cond_2
 
-    goto/16 :goto_8e
+    goto/16 :goto_3
 
     .line 1308
-    :cond_22
+    :cond_2
     new-instance v1, Landroidx/media3/common/Timeline$Window;
 
     invoke-direct {v1}, Landroidx/media3/common/Timeline$Window;-><init>()V
@@ -363,12 +363,12 @@
     move v6, v2
 
     .line 1312
-    :goto_37
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getWindowCount()I
 
     move-result v7
 
-    if-ge v6, v7, :cond_4f
+    if-ge v6, v7, :cond_4
 
     .line 1313
     invoke-virtual {p0, v6, v1}, Landroidx/media3/common/Timeline;->getWindow(ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
@@ -383,25 +383,25 @@
 
     move-result v7
 
-    if-nez v7, :cond_4c
+    if-nez v7, :cond_3
 
     return v2
 
-    :cond_4c
+    :cond_3
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_4f
+    :cond_4
     move v1, v2
 
     .line 1317
-    :goto_50
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getPeriodCount()I
 
     move-result v4
 
-    if-ge v1, v4, :cond_68
+    if-ge v1, v4, :cond_6
 
     .line 1318
     invoke-virtual {p0, v1, v3, v0}, Landroidx/media3/common/Timeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
@@ -417,17 +417,17 @@
 
     move-result v4
 
-    if-nez v4, :cond_65
+    if-nez v4, :cond_5
 
     return v2
 
-    :cond_65
+    :cond_5
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_50
+    goto :goto_1
 
     .line 1325
-    :cond_68
+    :cond_6
     invoke-virtual {p0, v0}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
 
     move-result v1
@@ -437,12 +437,12 @@
 
     move-result v3
 
-    if-eq v1, v3, :cond_73
+    if-eq v1, v3, :cond_7
 
     return v2
 
     .line 1329
-    :cond_73
+    :cond_7
     invoke-virtual {p0, v0}, Landroidx/media3/common/Timeline;->getLastWindowIndex(Z)I
 
     move-result v3
@@ -452,13 +452,13 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_7e
+    if-eq v3, v4, :cond_8
 
     return v2
 
-    :cond_7e
-    :goto_7e
-    if-eq v1, v3, :cond_8d
+    :cond_8
+    :goto_2
+    if-eq v1, v3, :cond_a
 
     .line 1335
     invoke-virtual {p0, v1, v2, v0}, Landroidx/media3/common/Timeline;->getNextWindowIndex(IIZ)I
@@ -470,41 +470,41 @@
 
     move-result v1
 
-    if-eq v4, v1, :cond_8b
+    if-eq v4, v1, :cond_9
 
     return v2
 
-    :cond_8b
+    :cond_9
     move v1, v4
 
-    goto :goto_7e
+    goto :goto_2
 
-    :cond_8d
+    :cond_a
     return v0
 
-    :cond_8e
-    :goto_8e
+    :cond_b
+    :goto_3
     return v2
 .end method
 
 .method public getFirstWindowIndex(Z)I
-    .registers 2
+    .locals 0
 
     .line 1075
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, -0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     return p1
 .end method
 
@@ -512,32 +512,32 @@
 .end method
 
 .method public getLastWindowIndex(Z)I
-    .registers 2
+    .locals 0
 
     .line 1063
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, -0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getWindowCount()I
 
     move-result p1
 
     add-int/lit8 p1, p1, -0x1
 
-    :goto_e
+    :goto_0
     return p1
 .end method
 
 .method public final getNextPeriodIndex(ILandroidx/media3/common/Timeline$Period;Landroidx/media3/common/Timeline$Window;IZ)I
-    .registers 7
+    .locals 1
 
     .line 1121
     invoke-virtual {p0, p1, p2}, Landroidx/media3/common/Timeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
@@ -553,7 +553,7 @@
 
     iget v0, v0, Landroidx/media3/common/Timeline$Window;->lastPeriodIndex:I
 
-    if-ne v0, p1, :cond_1d
+    if-ne v0, p1, :cond_1
 
     .line 1123
     invoke-virtual {p0, p2, p4, p5}, Landroidx/media3/common/Timeline;->getNextWindowIndex(IIZ)I
@@ -562,12 +562,12 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_16
+    if-ne p1, p2, :cond_0
 
     return p2
 
     .line 1127
-    :cond_16
+    :cond_0
     invoke-virtual {p0, p1, p3}, Landroidx/media3/common/Timeline;->getWindow(ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
 
     move-result-object p1
@@ -576,77 +576,77 @@
 
     return p1
 
-    :cond_1d
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
     return p1
 .end method
 
 .method public getNextWindowIndex(IIZ)I
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_3
 
-    if-eq p2, v0, :cond_1b
+    if-eq p2, v0, :cond_2
 
     const/4 v1, 0x2
 
-    if-ne p2, v1, :cond_15
+    if-ne p2, v1, :cond_1
 
     .line 1019
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline;->getLastWindowIndex(Z)I
 
     move-result p2
 
-    if-ne p1, p2, :cond_13
+    if-ne p1, p2, :cond_0
 
     .line 1020
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
 
     move-result p1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     add-int/2addr p1, v0
 
-    :goto_14
+    :goto_0
     return p1
 
     .line 1023
-    :cond_15
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_1b
+    :cond_2
     return p1
 
     .line 1013
-    :cond_1c
+    :cond_3
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline;->getLastWindowIndex(Z)I
 
     move-result p2
 
-    if-ne p1, p2, :cond_24
+    if-ne p1, p2, :cond_4
 
     const/4 p1, -0x1
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_4
     add-int/2addr p1, v0
 
-    :goto_25
+    :goto_1
     return p1
 .end method
 
 .method public final getPeriod(ILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -662,7 +662,7 @@
 .end method
 
 .method public getPeriodByUid(Ljava/lang/Object;Landroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 4
+    .locals 1
 
     .line 1252
     invoke-virtual {p0, p1}, Landroidx/media3/common/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
@@ -682,7 +682,7 @@
 .end method
 
 .method public final getPeriodPosition(Landroidx/media3/common/Timeline$Window;Landroidx/media3/common/Timeline$Period;IJ)Landroid/util/Pair;
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -708,7 +708,7 @@
 .end method
 
 .method public final getPeriodPosition(Landroidx/media3/common/Timeline$Window;Landroidx/media3/common/Timeline$Period;IJJ)Landroid/util/Pair;
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -734,7 +734,7 @@
 .end method
 
 .method public final getPeriodPositionUs(Landroidx/media3/common/Timeline$Window;Landroidx/media3/common/Timeline$Period;IJ)Landroid/util/Pair;
-    .registers 14
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -776,7 +776,7 @@
 .end method
 
 .method public final getPeriodPositionUs(Landroidx/media3/common/Timeline$Window;Landroidx/media3/common/Timeline$Period;IJJ)Landroid/util/Pair;
-    .registers 11
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -806,7 +806,7 @@
 
     cmp-long p3, p4, p6
 
-    if-nez p3, :cond_1e
+    if-nez p3, :cond_0
 
     .line 1221
     invoke-virtual {p1}, Landroidx/media3/common/Timeline$Window;->getDefaultPositionUs()J
@@ -815,30 +815,30 @@
 
     cmp-long p3, p4, p6
 
-    if-nez p3, :cond_1e
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 1226
-    :cond_1e
+    :cond_0
     iget p3, p1, Landroidx/media3/common/Timeline$Window;->firstPeriodIndex:I
 
     .line 1227
     invoke-virtual {p0, p3, p2}, Landroidx/media3/common/Timeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
 
     .line 1228
-    :goto_23
+    :goto_0
     iget v0, p1, Landroidx/media3/common/Timeline$Window;->lastPeriodIndex:I
 
-    if-ge p3, v0, :cond_3b
+    if-ge p3, v0, :cond_1
 
     iget-wide v0, p2, Landroidx/media3/common/Timeline$Period;->positionInWindowUs:J
 
     cmp-long v0, v0, p4
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     add-int/lit8 v0, p3, 0x1
 
@@ -851,13 +851,13 @@
 
     cmp-long v1, v1, p4
 
-    if-gtz v1, :cond_3b
+    if-gtz v1, :cond_1
 
     move p3, v0
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_3b
+    :cond_1
     const/4 p1, 0x1
 
     .line 1233
@@ -873,7 +873,7 @@
 
     cmp-long p1, v0, p6
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_2
 
     .line 1237
     iget-wide p6, p2, Landroidx/media3/common/Timeline$Period;->durationUs:J
@@ -886,7 +886,7 @@
 
     move-result-wide p4
 
-    :cond_51
+    :cond_2
     const-wide/16 p6, 0x0
 
     .line 1240
@@ -913,65 +913,65 @@
 .end method
 
 .method public getPreviousWindowIndex(IIZ)I
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_3
 
-    if-eq p2, v0, :cond_1b
+    if-eq p2, v0, :cond_2
 
     const/4 v1, 0x2
 
-    if-ne p2, v1, :cond_15
+    if-ne p2, v1, :cond_1
 
     .line 1046
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
 
     move-result p2
 
-    if-ne p1, p2, :cond_13
+    if-ne p1, p2, :cond_0
 
     .line 1047
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline;->getLastWindowIndex(Z)I
 
     move-result p1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     sub-int/2addr p1, v0
 
-    :goto_14
+    :goto_0
     return p1
 
     .line 1050
-    :cond_15
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_1b
+    :cond_2
     return p1
 
     .line 1040
-    :cond_1c
+    :cond_3
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
 
     move-result p2
 
-    if-ne p1, p2, :cond_24
+    if-ne p1, p2, :cond_4
 
     const/4 p1, -0x1
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_4
     sub-int/2addr p1, v0
 
-    :goto_25
+    :goto_1
     return p1
 .end method
 
@@ -979,7 +979,7 @@
 .end method
 
 .method public final getWindow(ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -998,7 +998,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 1349
     new-instance v0, Landroidx/media3/common/Timeline$Window;
@@ -1024,12 +1024,12 @@
     move v4, v3
 
     .line 1353
-    :goto_13
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getWindowCount()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_27
+    if-ge v4, v5, :cond_0
 
     mul-int/lit8 v2, v2, 0x1f
 
@@ -1046,9 +1046,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     mul-int/lit8 v2, v2, 0x1f
 
     .line 1356
@@ -1061,14 +1061,14 @@
     move v0, v3
 
     .line 1357
-    :goto_2f
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getPeriodCount()I
 
     move-result v4
 
     const/4 v5, 0x1
 
-    if-ge v0, v4, :cond_44
+    if-ge v0, v4, :cond_1
 
     mul-int/lit8 v2, v2, 0x1f
 
@@ -1085,18 +1085,18 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 1361
-    :cond_44
+    :cond_1
     invoke-virtual {p0, v5}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
 
     move-result v0
 
-    :goto_48
+    :goto_2
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_53
+    if-eq v0, v1, :cond_2
 
     mul-int/lit8 v2, v2, 0x1f
 
@@ -1107,35 +1107,35 @@
 
     move-result v0
 
-    goto :goto_48
+    goto :goto_2
 
-    :cond_53
+    :cond_2
     return v2
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 994
     invoke-virtual {p0}, Landroidx/media3/common/Timeline;->getWindowCount()I
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final isLastPeriod(ILandroidx/media3/common/Timeline$Period;Landroidx/media3/common/Timeline$Window;IZ)Z
-    .registers 6
+    .locals 0
 
     .line 1149
     invoke-virtual/range {p0 .. p5}, Landroidx/media3/common/Timeline;->getNextPeriodIndex(ILandroidx/media3/common/Timeline$Period;Landroidx/media3/common/Timeline$Window;IZ)I
@@ -1144,21 +1144,21 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_9
+    if-ne p1, p2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_a
+    :goto_0
     return p1
 .end method
 
 .method public final toBundle()Landroid/os/Bundle;
-    .registers 9
+    .locals 8
 
     .line 1383
     new-instance v0, Ljava/util/ArrayList;
@@ -1179,8 +1179,8 @@
 
     move v4, v3
 
-    :goto_10
-    if-ge v4, v1, :cond_22
+    :goto_0
+    if-ge v4, v1, :cond_0
 
     const-wide/16 v5, 0x0
 
@@ -1197,10 +1197,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1390
-    :cond_22
+    :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -1217,8 +1217,8 @@
 
     move v6, v3
 
-    :goto_31
-    if-ge v6, v4, :cond_41
+    :goto_1
+    if-ge v6, v4, :cond_1
 
     .line 1394
     invoke-virtual {p0, v6, v5, v3}, Landroidx/media3/common/Timeline;->getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
@@ -1233,15 +1233,15 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_31
+    goto :goto_1
 
     .line 1397
-    :cond_41
+    :cond_1
     new-array v4, v1, [I
 
     const/4 v5, 0x1
 
-    if-lez v1, :cond_4c
+    if-lez v1, :cond_2
 
     .line 1399
     invoke-virtual {p0, v5}, Landroidx/media3/common/Timeline;->getFirstWindowIndex(Z)I
@@ -1250,11 +1250,11 @@
 
     aput v6, v4, v3
 
-    :cond_4c
+    :cond_2
     move v6, v5
 
-    :goto_4d
-    if-ge v6, v1, :cond_5c
+    :goto_2
+    if-ge v6, v1, :cond_3
 
     add-int/lit8 v7, v6, -0x1
 
@@ -1270,10 +1270,10 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_4d
+    goto :goto_2
 
     .line 1407
-    :cond_5c
+    :cond_3
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V

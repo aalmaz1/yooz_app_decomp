@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1114
     new-instance v0, Lcom/google/common/base/CharMatcher$None;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "CharMatcher.none()"
 
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public and(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -63,7 +63,7 @@
 .end method
 
 .method public collapseFrom(Ljava/lang/CharSequence;C)Ljava/lang/String;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -84,7 +84,7 @@
 .end method
 
 .method public countIn(Ljava/lang/CharSequence;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -103,7 +103,7 @@
 .end method
 
 .method public indexIn(Ljava/lang/CharSequence;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -122,7 +122,7 @@
 .end method
 
 .method public indexIn(Ljava/lang/CharSequence;I)I
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -148,7 +148,7 @@
 .end method
 
 .method public lastIndexIn(Ljava/lang/CharSequence;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -167,7 +167,7 @@
 .end method
 
 .method public matches(C)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -183,7 +183,7 @@
 .end method
 
 .method public matchesAllOf(Ljava/lang/CharSequence;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -198,21 +198,21 @@
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     return p1
 .end method
 
 .method public matchesNoneOf(Ljava/lang/CharSequence;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -231,7 +231,7 @@
 .end method
 
 .method public negate()Lcom/google/common/base/CharMatcher;
-    .registers 2
+    .locals 1
 
     .line 1210
     invoke-static {}, Lcom/google/common/base/CharMatcher$None;->any()Lcom/google/common/base/CharMatcher;
@@ -242,7 +242,7 @@
 .end method
 
 .method public or(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -263,7 +263,7 @@
 .end method
 
 .method public removeFrom(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -282,7 +282,7 @@
 .end method
 
 .method public replaceFrom(Ljava/lang/CharSequence;C)Ljava/lang/String;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -303,7 +303,7 @@
 .end method
 
 .method public replaceFrom(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -327,7 +327,7 @@
 .end method
 
 .method public trimFrom(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -346,7 +346,7 @@
 .end method
 
 .method public trimLeadingFrom(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -365,7 +365,7 @@
 .end method
 
 .method public trimTrailingFrom(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

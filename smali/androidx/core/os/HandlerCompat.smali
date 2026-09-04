@@ -18,7 +18,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 244
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 .end method
 
 .method public static createAsync(Landroid/os/Looper;)Landroid/os/Handler;
-    .registers 1
+    .locals 0
 
     .line 65
     invoke-static {p0}, Landroidx/core/os/HandlerCompat$Api28Impl;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
@@ -38,7 +38,7 @@
 .end method
 
 .method public static createAsync(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;
-    .registers 2
+    .locals 0
 
     .line 124
     invoke-static {p0, p1}, Landroidx/core/os/HandlerCompat$Api28Impl;->createAsync(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;
@@ -49,14 +49,14 @@
 .end method
 
 .method public static hasCallbacks(Landroid/os/Handler;Ljava/lang/Runnable;)Z
-    .registers 8
+    .locals 6
 
     .line 212
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 213
     invoke-static {p0, p1}, Landroidx/core/os/HandlerCompat$Api29Impl;->hasCallbacks(Landroid/os/Handler;Ljava/lang/Runnable;)Z
@@ -66,8 +66,8 @@
     return p0
 
     .line 219
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_0
     const-class v0, Landroid/os/Handler;
 
     const-string v1, "hasCallbacks"
@@ -100,29 +100,29 @@
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
-    :try_end_29
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_b .. :try_end_29} :catch_37
-    .catch Ljava/lang/IllegalAccessException; {:try_start_b .. :try_end_29} :catch_2e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_b .. :try_end_29} :catch_2c
-    .catch Ljava/lang/NullPointerException; {:try_start_b .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :catch_2a
+    :catch_0
     move-exception p0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :catch_2c
+    :catch_1
     move-exception p0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :catch_2e
+    :catch_2
     move-exception p0
 
     .line 240
-    :goto_2f
+    :goto_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Failed to call Handler.hasCallbacks(), but there is no safe failure mode for this method. Raising exception."
@@ -131,7 +131,7 @@
 
     throw p1
 
-    :catch_37
+    :catch_3
     move-exception p0
 
     .line 223
@@ -142,12 +142,12 @@
     .line 224
     instance-of p1, p0, Ljava/lang/RuntimeException;
 
-    if-nez p1, :cond_4d
+    if-nez p1, :cond_2
 
     .line 227
     instance-of p1, p0, Ljava/lang/Error;
 
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_1
 
     .line 228
     check-cast p0, Ljava/lang/Error;
@@ -155,7 +155,7 @@
     throw p0
 
     .line 230
-    :cond_47
+    :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
     invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -163,14 +163,14 @@
     throw p1
 
     .line 225
-    :cond_4d
+    :cond_2
     check-cast p0, Ljava/lang/RuntimeException;
 
     throw p0
 .end method
 
 .method public static postDelayed(Landroid/os/Handler;Ljava/lang/Runnable;Ljava/lang/Object;J)Z
-    .registers 5
+    .locals 0
 
     .line 183
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/os/HandlerCompat$Api28Impl;->postDelayed(Landroid/os/Handler;Ljava/lang/Runnable;Ljava/lang/Object;J)Z

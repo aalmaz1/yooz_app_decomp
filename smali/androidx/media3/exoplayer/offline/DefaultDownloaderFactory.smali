@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 38
     invoke-static {}, Landroidx/media3/exoplayer/offline/DefaultDownloaderFactory;->createDownloaderConstructors()Landroid/util/SparseArray;
@@ -41,7 +41,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/cache/CacheDataSource$Factory;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 .end method
 
 .method private createDownloader(Landroidx/media3/exoplayer/offline/DownloadRequest;I)Landroidx/media3/exoplayer/offline/Downloader;
-    .registers 6
+    .locals 3
 
     .line 94
     sget-object v0, Landroidx/media3/exoplayer/offline/DefaultDownloaderFactory;->CONSTRUCTORS:Landroid/util/SparseArray;
@@ -94,7 +94,7 @@
 
     check-cast v0, Ljava/lang/reflect/Constructor;
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_0
 
     .line 98
     new-instance v1, Landroidx/media3/common/MediaItem$Builder;
@@ -129,7 +129,7 @@
 
     const/4 v1, 0x3
 
-    :try_start_26
+    :try_start_0
     new-array v1, v1, [Ljava/lang/Object;
 
     const/4 v2, 0x0
@@ -154,12 +154,12 @@
     move-result-object p1
 
     check-cast p1, Landroidx/media3/exoplayer/offline/Downloader;
-    :try_end_3b
-    .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_3b} :catch_3c
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_3c
+    :catch_0
     move-exception p1
 
     .line 107
@@ -184,7 +184,7 @@
     throw v0
 
     .line 96
-    :cond_52
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -207,7 +207,7 @@
 .end method
 
 .method private static createDownloaderConstructors()Landroid/util/SparseArray;
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -224,7 +224,7 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    :try_start_5
+    :try_start_0
     const-string v1, "androidx.media3.exoplayer.dash.offline.DashDownloader"
 
     .line 118
@@ -241,11 +241,11 @@
 
     .line 115
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-    :try_end_13
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_5 .. :try_end_13} :catch_13
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_13
-    :try_start_13
+    :catch_0
+    :try_start_1
     const-string v1, "androidx.media3.exoplayer.hls.offline.HlsDownloader"
 
     .line 127
@@ -262,11 +262,11 @@
 
     .line 124
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-    :try_end_21
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_13 .. :try_end_21} :catch_21
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    :catch_21
-    :try_start_21
+    :catch_1
+    :try_start_2
     const-string v1, "androidx.media3.exoplayer.smoothstreaming.offline.SsDownloader"
 
     .line 135
@@ -283,15 +283,15 @@
 
     .line 132
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-    :try_end_2f
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_21 .. :try_end_2f} :catch_2f
+    :try_end_2
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_2f
+    :catch_2
     return-object v0
 .end method
 
 .method private static getDownloaderConstructor(Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -339,12 +339,12 @@
     invoke-virtual {p0, v0}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object p0
-    :try_end_1c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_1c} :catch_1d
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_1d
+    :catch_0
     move-exception p0
 
     .line 149
@@ -360,7 +360,7 @@
 
 # virtual methods
 .method public createDownloader(Landroidx/media3/exoplayer/offline/DownloadRequest;)Landroidx/media3/exoplayer/offline/Downloader;
-    .registers 5
+    .locals 3
 
     .line 74
     iget-object v0, p1, Landroidx/media3/exoplayer/offline/DownloadRequest;->uri:Landroid/net/Uri;
@@ -371,19 +371,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_47
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_47
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_0
 
     .line 81
     new-instance v0, Landroidx/media3/exoplayer/offline/ProgressiveDownloader;
@@ -420,7 +420,7 @@
     return-object v0
 
     .line 89
-    :cond_32
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -442,7 +442,7 @@
     throw p1
 
     .line 79
-    :cond_47
+    :cond_1
     invoke-direct {p0, p1, v0}, Landroidx/media3/exoplayer/offline/DefaultDownloaderFactory;->createDownloader(Landroidx/media3/exoplayer/offline/DownloadRequest;I)Landroidx/media3/exoplayer/offline/Downloader;
 
     move-result-object p1

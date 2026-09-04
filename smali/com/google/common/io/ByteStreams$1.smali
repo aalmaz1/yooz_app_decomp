@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 656
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "ByteStreams.nullOutputStream()"
 
@@ -35,7 +35,7 @@
 .end method
 
 .method public write(I)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -49,7 +49,7 @@
 .end method
 
 .method public write([B)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -66,7 +66,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

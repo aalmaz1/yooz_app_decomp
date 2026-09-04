@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;)V
-    .registers 2
+    .locals 0
 
     .line 1841
     iput-object p1, p0, Landroidx/camera/video/Recorder$7;->this$0:Landroidx/camera/video/Recorder;
@@ -46,23 +46,23 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 1850
     iget-object v0, p0, Landroidx/camera/video/Recorder$7;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mInProgressRecording:Landroidx/camera/video/Recorder$RecordingRecord;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const-string v1, "In-progress recording shouldn\'t be null"
 
     invoke-static {v0, v1}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -76,7 +76,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_2
 
     .line 1856
     new-instance v0, Ljava/lang/StringBuilder;
@@ -102,24 +102,24 @@
 
     iget-object v1, v0, Landroidx/camera/video/Recorder;->mMediaMuxer:Landroid/media/MediaMuxer;
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_1
 
     const/16 v1, 0x8
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_35
+    :cond_1
     const/4 v1, 0x6
 
-    :goto_36
+    :goto_1
     invoke-virtual {v0, v1, p1}, Landroidx/camera/video/Recorder;->finalizeInProgressRecording(ILjava/lang/Throwable;)V
 
-    :cond_39
+    :cond_2
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1841
     check-cast p1, Ljava/util/List;
@@ -130,7 +130,7 @@
 .end method
 
 .method public onSuccess(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

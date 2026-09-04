@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)V
-    .registers 4
+    .locals 1
     .param p2    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -77,7 +77,7 @@
 
     iput-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
     .line 629
     invoke-virtual {p2}, Ljava/lang/Character;->charValue()C
@@ -88,20 +88,20 @@
 
     move-result p1
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
-    :goto_1a
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_1b
+    :goto_1
     const-string v0, "Padding character %s was already in alphabet"
 
     .line 628
@@ -114,7 +114,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
-    .registers 5
+    .locals 1
     .param p3    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public canDecode(Ljava/lang/CharSequence;)Z
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -180,20 +180,20 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_15
+    :cond_0
     move v0, v1
 
     .line 748
-    :goto_16
+    :goto_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_2c
+    if-ge v0, v2, :cond_2
 
     .line 749
     iget-object v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -206,23 +206,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_1
 
     return v1
 
-    :cond_29
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_2c
+    :cond_2
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method decodeTo([BLjava/lang/CharSequence;)I
-    .registers 15
+    .locals 12
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -259,7 +259,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_4
 
     const/4 v0, 0x0
 
@@ -268,12 +268,12 @@
     move v2, v1
 
     .line 764
-    :goto_16
+    :goto_0
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_71
+    if-ge v1, v3, :cond_3
 
     const-wide/16 v3, 0x0
 
@@ -282,12 +282,12 @@
     move v6, v5
 
     .line 767
-    :goto_20
+    :goto_1
     iget-object v7, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
     iget v7, v7, Lcom/google/common/io/BaseEncoding$Alphabet;->charsPerChunk:I
 
-    if-ge v5, v7, :cond_46
+    if-ge v5, v7, :cond_1
 
     .line 768
     iget-object v7, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -303,7 +303,7 @@
 
     move-result v8
 
-    if-ge v7, v8, :cond_43
+    if-ge v7, v8, :cond_0
 
     .line 770
     iget-object v7, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -326,13 +326,13 @@
 
     move v6, v8
 
-    :cond_43
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_20
+    goto :goto_1
 
     .line 773
-    :cond_46
+    :cond_1
     iget-object v5, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
     iget v5, v5, Lcom/google/common/io/BaseEncoding$Alphabet;->bytesPerChunk:I
@@ -356,8 +356,8 @@
 
     mul-int/lit8 v6, v6, 0x8
 
-    :goto_5a
-    if-lt v6, v5, :cond_6b
+    :goto_2
+    if-lt v6, v5, :cond_2
 
     add-int/lit8 v7, v2, 0x1
 
@@ -378,23 +378,23 @@
 
     move v2, v7
 
-    goto :goto_5a
+    goto :goto_2
 
     .line 764
-    :cond_6b
+    :cond_2
     iget-object v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
     iget v3, v3, Lcom/google/common/io/BaseEncoding$Alphabet;->charsPerChunk:I
 
     add-int/2addr v1, v3
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_71
+    :cond_3
     return v2
 
     .line 761
-    :cond_72
+    :cond_4
     new-instance p1, Lcom/google/common/io/BaseEncoding$DecodingException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -421,7 +421,7 @@
 .end method
 
 .method public decodingStream(Ljava/io/Reader;)Ljava/io/InputStream;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -443,7 +443,7 @@
 .end method
 
 .method encodeChunkTo(Ljava/lang/Appendable;[BII)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -482,26 +482,26 @@
 
     const/4 v1, 0x0
 
-    if-gt p4, v0, :cond_12
+    if-gt p4, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v0, v1
 
-    :goto_13
+    :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     const-wide/16 v2, 0x0
 
     move v0, v1
 
-    :goto_19
+    :goto_1
     const/16 v4, 0x8
 
-    if-ge v0, p4, :cond_29
+    if-ge v0, p4, :cond_1
 
     add-int v5, p3, v0
 
@@ -518,9 +518,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     add-int/lit8 p2, p4, 0x1
 
     mul-int/2addr p2, v4
@@ -532,10 +532,10 @@
 
     sub-int/2addr p2, p3
 
-    :goto_31
+    :goto_2
     mul-int/lit8 p3, p4, 0x8
 
-    if-ge v1, p3, :cond_4e
+    if-ge v1, p3, :cond_2
 
     sub-int p3, p2, v1
 
@@ -566,23 +566,23 @@
 
     add-int/2addr v1, p3
 
-    goto :goto_31
+    goto :goto_2
 
     .line 712
-    :cond_4e
+    :cond_2
     iget-object p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-eqz p2, :cond_68
+    if-eqz p2, :cond_3
 
     .line 713
-    :goto_52
+    :goto_3
     iget-object p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
     iget p2, p2, Lcom/google/common/io/BaseEncoding$Alphabet;->bytesPerChunk:I
 
     mul-int/2addr p2, v4
 
-    if-ge v1, p2, :cond_68
+    if-ge v1, p2, :cond_3
 
     .line 714
     iget-object p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
@@ -600,14 +600,14 @@
 
     add-int/2addr v1, p2
 
-    goto :goto_52
+    goto :goto_3
 
-    :cond_68
+    :cond_3
     return-void
 .end method
 
 .method encodeTo(Ljava/lang/Appendable;[BII)V
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -641,8 +641,8 @@
 
     const/4 v0, 0x0
 
-    :goto_a
-    if-ge v0, p4, :cond_21
+    :goto_0
+    if-ge v0, p4, :cond_0
 
     add-int v1, p3, v0
 
@@ -666,14 +666,14 @@
 
     add-int/2addr v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method public encodingStream(Ljava/io/Writer;)Ljava/io/OutputStream;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -695,7 +695,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -714,7 +714,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 941
     check-cast p1, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
@@ -728,7 +728,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
@@ -739,16 +739,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 950
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -769,12 +769,12 @@
 .end method
 
 .method public ignoreCase()Lcom/google/common/io/BaseEncoding;
-    .registers 3
+    .locals 2
 
     .line 912
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->ignoreCase:Lcom/google/common/io/BaseEncoding;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 914
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -786,33 +786,33 @@
     .line 915
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     move-object v0, p0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->newInstance(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)Lcom/google/common/io/BaseEncoding;
 
     move-result-object v0
 
-    :goto_16
+    :goto_0
     iput-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->ignoreCase:Lcom/google/common/io/BaseEncoding;
 
-    :cond_18
+    :cond_1
     return-object v0
 .end method
 
 .method public lowerCase()Lcom/google/common/io/BaseEncoding;
-    .registers 3
+    .locals 2
 
     .line 902
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->lowerCase:Lcom/google/common/io/BaseEncoding;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 904
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -824,28 +824,28 @@
     .line 905
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     move-object v0, p0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->newInstance(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)Lcom/google/common/io/BaseEncoding;
 
     move-result-object v0
 
-    :goto_16
+    :goto_0
     iput-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->lowerCase:Lcom/google/common/io/BaseEncoding;
 
-    :cond_18
+    :cond_1
     return-object v0
 .end method
 
 .method maxDecodedSize(I)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -880,7 +880,7 @@
 .end method
 
 .method maxEncodedSize(I)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -911,7 +911,7 @@
 .end method
 
 .method newInstance(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 1
     .param p2    # Ljava/lang/Character;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -936,18 +936,18 @@
 .end method
 
 .method public omitPadding()Lcom/google/common/io/BaseEncoding;
-    .registers 3
+    .locals 2
 
     .line 856
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     move-object v0, p0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
     const/4 v1, 0x0
@@ -956,12 +956,12 @@
 
     move-result-object v0
 
-    :goto_d
+    :goto_0
     return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 926
     new-instance v0, Ljava/lang/StringBuilder;
@@ -984,21 +984,21 @@
 
     rem-int/2addr v2, v1
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     .line 929
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
     const-string v1, ".omitPadding()"
 
     .line 930
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const-string v1, ".withPadChar(\'"
 
     .line 932
@@ -1017,8 +1017,8 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 935
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1027,7 +1027,7 @@
 .end method
 
 .method trimTrailingPadding(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -1043,12 +1043,12 @@
     .line 728
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return-object p1
 
     .line 731
-    :cond_8
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Character;->charValue()C
 
     move-result v0
@@ -1060,25 +1060,25 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_12
-    if-ltz v1, :cond_1e
+    :goto_0
+    if-ltz v1, :cond_2
 
     .line 734
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
 
-    if-eq v2, v0, :cond_1b
+    if-eq v2, v0, :cond_1
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1b
+    :cond_1
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     const/4 v0, 0x0
 
     add-int/lit8 v1, v1, 0x1
@@ -1092,12 +1092,12 @@
 .end method
 
 .method public upperCase()Lcom/google/common/io/BaseEncoding;
-    .registers 3
+    .locals 2
 
     .line 892
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->upperCase:Lcom/google/common/io/BaseEncoding;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 894
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -1109,28 +1109,28 @@
     .line 895
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     move-object v0, p0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->newInstance(Lcom/google/common/io/BaseEncoding$Alphabet;Ljava/lang/Character;)Lcom/google/common/io/BaseEncoding;
 
     move-result-object v0
 
-    :goto_16
+    :goto_0
     iput-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->upperCase:Lcom/google/common/io/BaseEncoding;
 
-    :cond_18
+    :cond_1
     return-object v0
 .end method
 
 .method public withPadChar(C)Lcom/google/common/io/BaseEncoding;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -1149,23 +1149,23 @@
 
     rem-int/2addr v1, v0
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 862
     invoke-virtual {v0}, Ljava/lang/Character;->charValue()C
 
     move-result v0
 
-    if-ne v0, p1, :cond_14
+    if-ne v0, p1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 865
-    :cond_14
+    :cond_0
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
 
     invoke-static {p1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
@@ -1178,13 +1178,13 @@
 
     return-object p1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return-object p0
 .end method
 
 .method public withSeparator(Ljava/lang/String;I)Lcom/google/common/io/BaseEncoding;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1201,14 +1201,14 @@
     move v1, v0
 
     .line 871
-    :goto_2
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     const/4 v3, 0x1
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_0
 
     .line 872
     iget-object v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->alphabet:Lcom/google/common/io/BaseEncoding$Alphabet;
@@ -1231,13 +1231,13 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 877
-    :cond_1c
+    :cond_0
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     .line 879
     invoke-virtual {v1}, Ljava/lang/Character;->charValue()C
@@ -1248,18 +1248,18 @@
 
     move-result v1
 
-    if-gez v1, :cond_2b
+    if-gez v1, :cond_1
 
     move v0, v3
 
-    :cond_2b
+    :cond_1
     const-string v1, "Separator (%s) cannot contain padding character"
 
     .line 878
     invoke-static {v0, v1, p1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V
 
     .line 883
-    :cond_30
+    :cond_2
     new-instance v0, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/common/io/BaseEncoding$SeparatedBaseEncoding;-><init>(Lcom/google/common/io/BaseEncoding;Ljava/lang/String;I)V

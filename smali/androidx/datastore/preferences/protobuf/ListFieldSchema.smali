@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 45
     new-instance v0, Landroidx/datastore/preferences/protobuf/ListFieldSchema$ListFieldSchemaFull;
@@ -42,7 +42,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/ListFieldSchema$1;)V
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ListFieldSchema;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method static full()Landroidx/datastore/preferences/protobuf/ListFieldSchema;
-    .registers 1
+    .locals 1
 
     .line 55
     sget-object v0, Landroidx/datastore/preferences/protobuf/ListFieldSchema;->FULL_INSTANCE:Landroidx/datastore/preferences/protobuf/ListFieldSchema;
@@ -69,7 +69,7 @@
 .end method
 
 .method static lite()Landroidx/datastore/preferences/protobuf/ListFieldSchema;
-    .registers 1
+    .locals 1
 
     .line 59
     sget-object v0, Landroidx/datastore/preferences/protobuf/ListFieldSchema;->LITE_INSTANCE:Landroidx/datastore/preferences/protobuf/ListFieldSchema;

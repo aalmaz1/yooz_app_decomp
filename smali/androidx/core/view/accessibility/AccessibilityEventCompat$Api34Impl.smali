@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 561
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isAccessibilityDataSensitive(Landroid/view/accessibility/AccessibilityEvent;)Z
-    .registers 1
+    .locals 0
 
     .line 567
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->isAccessibilityDataSensitive()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static setAccessibilityDataSensitive(Landroid/view/accessibility/AccessibilityEvent;Z)V
-    .registers 2
+    .locals 0
 
     .line 573
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setAccessibilityDataSensitive(Z)V

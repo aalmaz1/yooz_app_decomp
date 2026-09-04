@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 148
+    .locals 148
 
     .line 54
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->createFullYuvPrivYuvConfiguration()Landroidx/camera/core/impl/SurfaceCombination;
@@ -399,7 +399,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -408,7 +408,7 @@
 .end method
 
 .method private static createFullYuvPrivYuvConfiguration()Landroidx/camera/core/impl/SurfaceCombination;
-    .registers 3
+    .locals 3
 
     .line 301
     new-instance v0, Landroidx/camera/core/impl/SurfaceCombination;
@@ -452,7 +452,7 @@
 .end method
 
 .method private static createFullYuvYuvYuvConfiguration()Landroidx/camera/core/impl/SurfaceCombination;
-    .registers 3
+    .locals 3
 
     .line 315
     new-instance v0, Landroidx/camera/core/impl/SurfaceCombination;
@@ -496,7 +496,7 @@
 .end method
 
 .method private static createLevel3PrivPrivYuvRawConfiguration()Landroidx/camera/core/impl/SurfaceCombination;
-    .registers 3
+    .locals 3
 
     .line 328
     new-instance v0, Landroidx/camera/core/impl/SurfaceCombination;
@@ -551,7 +551,7 @@
 .end method
 
 .method private getLimitedDeviceExtraSupportedFullConfigurations(I)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -566,7 +566,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 290
     sget-object p1, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->FULL_LEVEL_YUV_PRIV_YUV_CONFIGURATION:Landroidx/camera/core/impl/SurfaceCombination;
@@ -578,12 +578,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_11
+    :cond_0
     return-object v0
 .end method
 
 .method private getSamsungS7ExtraCombinations(Ljava/lang/String;)Ljava/util/List;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -607,19 +607,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 277
     sget-object p1, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->FULL_LEVEL_YUV_PRIV_YUV_CONFIGURATION:Landroidx/camera/core/impl/SurfaceCombination;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_12
+    :cond_0
     return-object v0
 .end method
 
 .method private static isSamsungS7()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "heroqltevzw"
 
@@ -630,7 +630,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     const-string v0, "heroqltetmo"
 
@@ -640,63 +640,63 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_18
+    :goto_1
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 221
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->isSamsungS7()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->supportExtraFullConfigurationsSamsungDevice()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     .line 222
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->supportExtraLevel3ConfigurationsGoogleDevice()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_16
+    :goto_1
     return v0
 .end method
 
 .method private static supportExtraFullConfigurationsSamsungDevice()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "samsung"
 
@@ -707,14 +707,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 235
-    :cond_c
+    :cond_0
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -734,7 +734,7 @@
 .end method
 
 .method private static supportExtraLevel3ConfigurationsGoogleDevice()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "google"
 
@@ -745,14 +745,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 245
-    :cond_c
+    :cond_0
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -774,7 +774,7 @@
 
 # virtual methods
 .method public getExtraSupportedSurfaceCombinations(Ljava/lang/String;I)Ljava/util/List;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -791,7 +791,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 257
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->getSamsungS7ExtraCombinations(Ljava/lang/String;)Ljava/util/List;
@@ -801,12 +801,12 @@
     return-object p1
 
     .line 260
-    :cond_b
+    :cond_0
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->supportExtraFullConfigurationsSamsungDevice()Z
 
     move-result p1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 261
     invoke-direct {p0, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->getLimitedDeviceExtraSupportedFullConfigurations(I)Ljava/util/List;
@@ -816,12 +816,12 @@
     return-object p1
 
     .line 264
-    :cond_16
+    :cond_1
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->supportExtraLevel3ConfigurationsGoogleDevice()Z
 
     move-result p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_2
 
     .line 265
     sget-object p1, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->LEVEL_3_LEVEL_PRIV_PRIV_YUV_RAW_CONFIGURATION:Landroidx/camera/core/impl/SurfaceCombination;
@@ -833,7 +833,7 @@
     return-object p1
 
     .line 268
-    :cond_23
+    :cond_2
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1

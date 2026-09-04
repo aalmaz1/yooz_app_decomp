@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method detachObserver()V
-    .registers 2
+    .locals 1
 
     .line 452
     iget-object v0, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -73,26 +73,26 @@
 .end method
 
 .method isAttachedTo(Landroidx/lifecycle/LifecycleOwner;)Z
-    .registers 3
+    .locals 1
 
     .line 447
     iget-object v0, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroidx/lifecycle/LifecycleOwner;
 
-    if-ne v0, p1, :cond_6
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_7
+    :goto_0
     return p1
 .end method
 
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
 
     .line 432
     iget-object p1, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -108,7 +108,7 @@
     .line 433
     sget-object p2, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne p1, p2, :cond_16
+    if-ne p1, p2, :cond_0
 
     .line 434
     iget-object p1, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->this$0:Landroidx/lifecycle/LiveData;
@@ -119,11 +119,11 @@
 
     return-void
 
-    :cond_16
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_17
-    if-eq p2, p1, :cond_2e
+    :goto_0
+    if-eq p2, p1, :cond_1
 
     .line 440
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->shouldBeActive()Z
@@ -149,14 +149,14 @@
 
     move-object p1, v0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return-void
 .end method
 
 .method shouldBeActive()Z
-    .registers 3
+    .locals 2
 
     .line 426
     iget-object v0, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroidx/lifecycle/LifecycleOwner;

@@ -5,7 +5,7 @@
 
 # virtual methods
 .method public getAdOverlayInfos()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

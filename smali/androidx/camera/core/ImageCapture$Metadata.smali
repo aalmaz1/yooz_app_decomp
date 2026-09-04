@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1570
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getLocation()Landroid/location/Location;
-    .registers 2
+    .locals 1
 
     .line 1653
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$Metadata;->mLocation:Landroid/location/Location;
@@ -51,7 +51,7 @@
 .end method
 
 .method public isReversedHorizontal()Z
-    .registers 2
+    .locals 1
 
     .line 1604
     iget-boolean v0, p0, Landroidx/camera/core/ImageCapture$Metadata;->mIsReversedHorizontal:Z
@@ -60,7 +60,7 @@
 .end method
 
 .method public isReversedHorizontalSet()Z
-    .registers 2
+    .locals 1
 
     .line 1615
     iget-boolean v0, p0, Landroidx/camera/core/ImageCapture$Metadata;->mIsReversedHorizontalSet:Z
@@ -69,7 +69,7 @@
 .end method
 
 .method public isReversedVertical()Z
-    .registers 2
+    .locals 1
 
     .line 1634
     iget-boolean v0, p0, Landroidx/camera/core/ImageCapture$Metadata;->mIsReversedVertical:Z
@@ -78,7 +78,7 @@
 .end method
 
 .method public setLocation(Landroid/location/Location;)V
-    .registers 2
+    .locals 0
 
     .line 1662
     iput-object p1, p0, Landroidx/camera/core/ImageCapture$Metadata;->mLocation:Landroid/location/Location;
@@ -87,7 +87,7 @@
 .end method
 
 .method public setReversedHorizontal(Z)V
-    .registers 2
+    .locals 0
 
     .line 1624
     iput-boolean p1, p0, Landroidx/camera/core/ImageCapture$Metadata;->mIsReversedHorizontal:Z
@@ -101,7 +101,7 @@
 .end method
 
 .method public setReversedVertical(Z)V
-    .registers 2
+    .locals 0
 
     .line 1643
     iput-boolean p1, p0, Landroidx/camera/core/ImageCapture$Metadata;->mIsReversedVertical:Z
@@ -110,7 +110,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1668
     new-instance v0, Ljava/lang/StringBuilder;

@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/customtabs/CustomTabsClient;Landroidx/browser/customtabs/CustomTabsCallback;)V
-    .registers 3
+    .locals 0
 
     .line 325
     iput-object p1, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->this$0:Landroidx/browser/customtabs/CustomTabsClient;
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public extraCallback(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -60,12 +60,12 @@
     .line 342
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 343
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$2;
@@ -78,7 +78,7 @@
 .end method
 
 .method public extraCallbackWithResult(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -88,14 +88,14 @@
     .line 356
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 357
-    :cond_6
+    :cond_0
     invoke-virtual {v0, p1, p2}, Landroidx/browser/customtabs/CustomTabsCallback;->extraCallbackWithResult(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object p1
@@ -104,7 +104,7 @@
 .end method
 
 .method public onActivityLayout(IIIIILandroid/os/Bundle;)V
-    .registers 18
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -116,12 +116,12 @@
     .line 428
     iget-object v0, v8, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-void
 
     .line 429
-    :cond_6
+    :cond_0
     iget-object v9, v8, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v10, Landroidx/browser/customtabs/CustomTabsClient$2$8;
@@ -150,7 +150,7 @@
 .end method
 
 .method public onActivityResized(IILandroid/os/Bundle;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -160,12 +160,12 @@
     .line 402
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 403
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$6;
@@ -178,7 +178,7 @@
 .end method
 
 .method public onMessageChannelReady(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -188,12 +188,12 @@
     .line 363
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 364
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$3;
@@ -206,7 +206,7 @@
 .end method
 
 .method public onMinimized(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -216,12 +216,12 @@
     .line 439
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 440
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$9;
@@ -234,17 +234,17 @@
 .end method
 
 .method public onNavigationEvent(ILandroid/os/Bundle;)V
-    .registers 5
+    .locals 2
 
     .line 330
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 331
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$1;
@@ -257,7 +257,7 @@
 .end method
 
 .method public onPostMessage(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -267,12 +267,12 @@
     .line 375
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 376
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$4;
@@ -285,7 +285,7 @@
 .end method
 
 .method public onRelationshipValidationResult(ILandroid/net/Uri;ZLandroid/os/Bundle;)V
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -295,12 +295,12 @@
     .line 388
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 389
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v7, Landroidx/browser/customtabs/CustomTabsClient$2$5;
@@ -325,7 +325,7 @@
 .end method
 
 .method public onUnminimized(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -335,12 +335,12 @@
     .line 451
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 452
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$10;
@@ -353,7 +353,7 @@
 .end method
 
 .method public onWarmupCompleted(Landroid/os/Bundle;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -363,12 +363,12 @@
     .line 414
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->val$callback:Landroidx/browser/customtabs/CustomTabsCallback;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 415
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsClient$2;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/browser/customtabs/CustomTabsClient$2$7;

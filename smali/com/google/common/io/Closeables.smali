@@ -14,7 +14,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 38
     const-class v0, Lcom/google/common/io/Closeables;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public static close(Ljava/io/Closeable;Z)V
-    .registers 4
+    .locals 2
     .param p0    # Ljava/io/Closeable;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -64,23 +64,23 @@
         }
     .end annotation
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_0
 
     return-void
 
     .line 79
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :catch_7
+    :catch_0
     move-exception p0
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
     .line 82
     sget-object p1, Lcom/google/common/io/Closeables;->logger:Ljava/util/logging/Logger;
@@ -91,16 +91,16 @@
 
     invoke-virtual {p1, v0, v1, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_13
+    :goto_0
     return-void
 
     .line 84
-    :cond_14
+    :cond_1
     throw p0
 .end method
 
 .method public static closeQuietly(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 1
     .param p0    # Ljava/io/InputStream;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -117,14 +117,14 @@
     const/4 v0, 0x1
 
     .line 105
-    :try_start_1
+    :try_start_0
     invoke-static {p0, v0}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_5
+    :catch_0
     move-exception p0
 
     .line 107
@@ -136,7 +136,7 @@
 .end method
 
 .method public static closeQuietly(Ljava/io/Reader;)V
-    .registers 2
+    .locals 1
     .param p0    # Ljava/io/Reader;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -153,14 +153,14 @@
     const/4 v0, 0x1
 
     .line 126
-    :try_start_1
+    :try_start_0
     invoke-static {p0, v0}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_5
+    :catch_0
     move-exception p0
 
     .line 128

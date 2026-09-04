@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Collection;Landroidx/media3/exoplayer/source/ShuffleOrder;Z)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,12 +99,12 @@
 
     move v0, p3
 
-    :goto_25
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -179,10 +179,10 @@
 
     move v0, v3
 
-    goto :goto_25
+    goto :goto_0
 
     .line 966
-    :cond_6c
+    :cond_0
     iput p2, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->windowCount:I
 
     .line 967
@@ -194,7 +194,7 @@
 
 # virtual methods
 .method protected getChildIndexByChildUid(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 982
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->childIndexByUid:Ljava/util/HashMap;
@@ -205,24 +205,24 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     const/4 p1, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 983
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    :goto_10
+    :goto_0
     return p1
 .end method
 
 .method protected getChildIndexByPeriodIndex(I)I
-    .registers 4
+    .locals 2
 
     .line 972
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstPeriodInChildIndices:[I
@@ -239,7 +239,7 @@
 .end method
 
 .method protected getChildIndexByWindowIndex(I)I
-    .registers 4
+    .locals 2
 
     .line 977
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstWindowInChildIndices:[I
@@ -256,7 +256,7 @@
 .end method
 
 .method protected getChildUidByChildIndex(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1003
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->uids:[Ljava/lang/Object;
@@ -267,7 +267,7 @@
 .end method
 
 .method protected getFirstPeriodIndexByChildIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 993
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstPeriodInChildIndices:[I
@@ -278,7 +278,7 @@
 .end method
 
 .method protected getFirstWindowIndexByChildIndex(I)I
-    .registers 3
+    .locals 1
 
     .line 998
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstWindowInChildIndices:[I
@@ -289,7 +289,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 1013
     iget v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->periodCount:I
@@ -298,7 +298,7 @@
 .end method
 
 .method protected getTimelineByChildIndex(I)Landroidx/media3/common/Timeline;
-    .registers 3
+    .locals 1
 
     .line 988
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->timelines:[Landroidx/media3/common/Timeline;
@@ -309,7 +309,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     .line 1008
     iget v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource$ConcatenatedTimeline;->windowCount:I

@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/animation/Animation;Landroid/view/ViewGroup;Landroid/view/View;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public getTransformation(JLandroid/view/animation/Transformation;)Z
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -71,7 +71,7 @@
     .line 281
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mEnded:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 282
     iget-boolean p1, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mTransitionEnded:Z
@@ -81,12 +81,12 @@
     return p1
 
     .line 284
-    :cond_b
+    :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/view/animation/AnimationSet;->getTransformation(JLandroid/view/animation/Transformation;)Z
 
     move-result p1
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
     .line 286
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mEnded:Z
@@ -96,12 +96,12 @@
 
     invoke-static {p1, p0}, Landroidx/core/view/OneShotPreDrawListener;->add(Landroid/view/View;Ljava/lang/Runnable;)Landroidx/core/view/OneShotPreDrawListener;
 
-    :cond_18
+    :cond_1
     return v0
 .end method
 
 .method public getTransformation(JLandroid/view/animation/Transformation;F)Z
-    .registers 7
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -111,7 +111,7 @@
     .line 296
     iget-boolean v1, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mEnded:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 297
     iget-boolean p1, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mTransitionEnded:Z
@@ -121,12 +121,12 @@
     return p1
 
     .line 299
-    :cond_b
+    :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/animation/AnimationSet;->getTransformation(JLandroid/view/animation/Transformation;F)Z
 
     move-result p1
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
     .line 301
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mEnded:Z
@@ -136,21 +136,21 @@
 
     invoke-static {p1, p0}, Landroidx/core/view/OneShotPreDrawListener;->add(Landroid/view/View;Ljava/lang/Runnable;)Landroidx/core/view/OneShotPreDrawListener;
 
-    :cond_18
+    :cond_1
     return v0
 .end method
 
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 309
     iget-boolean v0, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mEnded:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mAnimating:Z
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -162,10 +162,10 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 314
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mParent:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mChild:Landroid/view/View;
@@ -177,6 +177,6 @@
     .line 315
     iput-boolean v0, p0, Landroidx/fragment/app/FragmentAnim$EndViewTransitionAnimation;->mTransitionEnded:Z
 
-    :goto_1b
+    :goto_0
     return-void
 .end method

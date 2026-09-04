@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 984
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$Value;->access$300()Landroidx/datastore/preferences/PreferencesProto$Value;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/PreferencesProto$1;)V
-    .registers 2
+    .locals 0
 
     .line 977
     invoke-direct {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearBoolean()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1031
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearDouble()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1280
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public clearFloat()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1067
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -101,7 +101,7 @@
 .end method
 
 .method public clearInteger()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1103
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -117,7 +117,7 @@
 .end method
 
 .method public clearLong()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1139
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -133,7 +133,7 @@
 .end method
 
 .method public clearString()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1185
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -149,7 +149,7 @@
 .end method
 
 .method public clearStringSet()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 1244
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -165,7 +165,7 @@
 .end method
 
 .method public clearValue()Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 994
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -181,7 +181,7 @@
 .end method
 
 .method public getBoolean()Z
-    .registers 2
+    .locals 1
 
     .line 1014
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -196,7 +196,7 @@
 .end method
 
 .method public getDouble()D
-    .registers 3
+    .locals 2
 
     .line 1263
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -211,7 +211,7 @@
 .end method
 
 .method public getFloat()F
-    .registers 2
+    .locals 1
 
     .line 1050
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -226,7 +226,7 @@
 .end method
 
 .method public getInteger()I
-    .registers 2
+    .locals 1
 
     .line 1086
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -241,7 +241,7 @@
 .end method
 
 .method public getLong()J
-    .registers 3
+    .locals 2
 
     .line 1122
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -256,7 +256,7 @@
 .end method
 
 .method public getString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1158
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -271,7 +271,7 @@
 .end method
 
 .method public getStringBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 1167
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -286,7 +286,7 @@
 .end method
 
 .method public getStringSet()Landroidx/datastore/preferences/PreferencesProto$StringSet;
-    .registers 2
+    .locals 1
 
     .line 1213
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -301,7 +301,7 @@
 .end method
 
 .method public getValueCase()Landroidx/datastore/preferences/PreferencesProto$Value$ValueCase;
-    .registers 2
+    .locals 1
 
     .line 990
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -316,7 +316,7 @@
 .end method
 
 .method public hasBoolean()Z
-    .registers 2
+    .locals 1
 
     .line 1006
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -331,7 +331,7 @@
 .end method
 
 .method public hasDouble()Z
-    .registers 2
+    .locals 1
 
     .line 1255
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -346,7 +346,7 @@
 .end method
 
 .method public hasFloat()Z
-    .registers 2
+    .locals 1
 
     .line 1042
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -361,7 +361,7 @@
 .end method
 
 .method public hasInteger()Z
-    .registers 2
+    .locals 1
 
     .line 1078
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -376,7 +376,7 @@
 .end method
 
 .method public hasLong()Z
-    .registers 2
+    .locals 1
 
     .line 1114
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -391,7 +391,7 @@
 .end method
 
 .method public hasString()Z
-    .registers 2
+    .locals 1
 
     .line 1150
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -406,7 +406,7 @@
 .end method
 
 .method public hasStringSet()Z
-    .registers 2
+    .locals 1
 
     .line 1206
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -421,7 +421,7 @@
 .end method
 
 .method public mergeStringSet(Landroidx/datastore/preferences/PreferencesProto$StringSet;)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1236
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -437,7 +437,7 @@
 .end method
 
 .method public setBoolean(Z)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1022
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -453,7 +453,7 @@
 .end method
 
 .method public setDouble(D)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 4
+    .locals 1
 
     .line 1271
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -469,7 +469,7 @@
 .end method
 
 .method public setFloat(F)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1058
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -485,7 +485,7 @@
 .end method
 
 .method public setInteger(I)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1094
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -501,7 +501,7 @@
 .end method
 
 .method public setLong(J)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 4
+    .locals 1
 
     .line 1130
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -517,7 +517,7 @@
 .end method
 
 .method public setString(Ljava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1176
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -533,7 +533,7 @@
 .end method
 
 .method public setStringBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1196
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -549,7 +549,7 @@
 .end method
 
 .method public setStringSet(Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1228
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V
@@ -565,7 +565,7 @@
 .end method
 
 .method public setStringSet(Landroidx/datastore/preferences/PreferencesProto$StringSet;)Landroidx/datastore/preferences/PreferencesProto$Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 1219
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$Value$Builder;->copyOnWrite()V

@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameTimingEvaluator;J)V
-    .registers 5
+    .locals 0
 
     .line 195
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -105,7 +105,7 @@
 .end method
 
 .method private calculateEarlyTimeUs(JJJ)J
-    .registers 7
+    .locals 0
 
     sub-long/2addr p5, p1
 
@@ -123,7 +123,7 @@
     .line 431
     iget-boolean p5, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->started:Z
 
-    if-eqz p5, :cond_17
+    if-eqz p5, :cond_0
 
     .line 433
     iget-object p5, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->clock:Landroidx/media3/common/util/Clock;
@@ -140,12 +140,12 @@
 
     sub-long/2addr p1, p5
 
-    :cond_17
+    :cond_0
     return-wide p1
 .end method
 
 .method private lowerFirstFrameState(I)V
-    .registers 3
+    .locals 1
 
     .line 410
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
@@ -160,7 +160,7 @@
 .end method
 
 .method private shouldForceRelease(JJJ)Z
-    .registers 11
+    .locals 4
 
     .line 442
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningDeadlineMs:J
@@ -171,31 +171,31 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningRenderNextFrameImmediately:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     return v1
 
     .line 446
-    :cond_11
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_6
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_45
+    if-eq v0, v2, :cond_5
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_3f
+    if-eq v0, v3, :cond_3
 
     const/4 p1, 0x3
 
-    if-ne v0, p1, :cond_39
+    if-ne v0, p1, :cond_2
 
     .line 454
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->clock:Landroidx/media3/common/util/Clock;
@@ -216,7 +216,7 @@
     .line 456
     iget-boolean p5, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->started:Z
 
-    if-eqz p5, :cond_38
+    if-eqz p5, :cond_1
 
     iget-object p5, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameTimingEvaluator:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameTimingEvaluator;
 
@@ -225,36 +225,36 @@
 
     move-result p1
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_1
 
     move v1, v2
 
-    :cond_38
+    :cond_1
     return v1
 
     .line 459
-    :cond_39
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p1
 
-    :cond_3f
+    :cond_3
     cmp-long p1, p1, p5
 
-    if-ltz p1, :cond_44
+    if-ltz p1, :cond_4
 
     move v1, v2
 
-    :cond_44
+    :cond_4
     return v1
 
-    :cond_45
+    :cond_5
     return v2
 
     .line 448
-    :cond_46
+    :cond_6
     iget-boolean p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->started:Z
 
     return p1
@@ -263,24 +263,24 @@
 
 # virtual methods
 .method public allowReleaseFirstFrameBeforeStarted()V
-    .registers 2
+    .locals 1
 
     .line 272
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     .line 273
     iput v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public getFrameReleaseAction(JJJJZLandroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;)I
-    .registers 28
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -305,18 +305,18 @@
 
     cmp-long v0, v0, v8
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 344
     iput-wide v11, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->initialPositionUs:J
 
     .line 346
-    :cond_18
+    :cond_0
     iget-wide v0, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->lastPresentationTimeUs:J
 
     cmp-long v0, v0, v5
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 347
     iget-object v0, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameReleaseHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -326,7 +326,7 @@
     .line 348
     iput-wide v5, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->lastPresentationTimeUs:J
 
-    :cond_25
+    :cond_1
     move-object/from16 v0, p0
 
     move-wide/from16 v1, p3
@@ -360,28 +360,28 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_2
 
     return v1
 
     .line 357
-    :cond_46
+    :cond_2
     iget-boolean v0, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->started:Z
 
     const/4 v2, 0x5
 
-    if-eqz v0, :cond_b7
+    if-eqz v0, :cond_9
 
     iget-wide v3, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->initialPositionUs:J
 
     cmp-long v0, v11, v3
 
-    if-nez v0, :cond_52
+    if-nez v0, :cond_3
 
-    goto :goto_b7
+    goto :goto_1
 
     .line 362
-    :cond_52
+    :cond_3
     iget-object v0, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->clock:Landroidx/media3/common/util/Clock;
 
     invoke-interface {v0}, Landroidx/media3/common/util/Clock;->nanoTime()J
@@ -427,16 +427,16 @@
 
     const/4 v3, 0x1
 
-    if-eqz v0, :cond_7e
+    if-eqz v0, :cond_4
 
     iget-boolean v0, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningRenderNextFrameImmediately:Z
 
-    if-nez v0, :cond_7e
+    if-nez v0, :cond_4
 
     move v1, v3
 
     .line 369
-    :cond_7e
+    :cond_4
     iget-object v8, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameTimingEvaluator:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameTimingEvaluator;
 
     .line 370
@@ -457,14 +457,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_94
+    if-eqz v0, :cond_5
 
     const/4 v0, 0x4
 
     return v0
 
     .line 372
-    :cond_94
+    :cond_5
     iget-object v8, v7, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameTimingEvaluator:Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameTimingEvaluator;
 
     .line 373
@@ -481,22 +481,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_aa
+    if-eqz v0, :cond_7
 
-    if-eqz v1, :cond_a8
+    if-eqz v1, :cond_6
 
     const/4 v0, 0x3
 
-    goto :goto_a9
+    goto :goto_0
 
-    :cond_a8
+    :cond_6
     const/4 v0, 0x2
 
-    :goto_a9
+    :goto_0
     return v0
 
     .line 376
-    :cond_aa
+    :cond_7
     invoke-static/range {p10 .. p10}, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->access$100(Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;)J
 
     move-result-wide v0
@@ -505,33 +505,33 @@
 
     cmp-long v0, v0, v4
 
-    if-lez v0, :cond_b6
+    if-lez v0, :cond_8
 
     return v2
 
-    :cond_b6
+    :cond_8
     return v3
 
-    :cond_b7
-    :goto_b7
+    :cond_9
+    :goto_1
     return v2
 .end method
 
 .method public isReady(Z)Z
-    .registers 10
+    .locals 8
 
     const/4 v0, 0x1
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 285
     iget p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
 
     const/4 v3, 0x3
 
-    if-ne p1, v3, :cond_10
+    if-ne p1, v3, :cond_0
 
     .line 287
     iput-wide v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningDeadlineMs:J
@@ -539,19 +539,19 @@
     return v0
 
     .line 289
-    :cond_10
+    :cond_0
     iget-wide v3, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningDeadlineMs:J
 
     cmp-long p1, v3, v1
 
     const/4 v3, 0x0
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_1
 
     return v3
 
     .line 292
-    :cond_18
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->clock:Landroidx/media3/common/util/Clock;
 
     invoke-interface {p1}, Landroidx/media3/common/util/Clock;->elapsedRealtime()J
@@ -562,19 +562,19 @@
 
     cmp-long p1, v4, v6
 
-    if-gez p1, :cond_25
+    if-gez p1, :cond_2
 
     return v0
 
     .line 297
-    :cond_25
+    :cond_2
     iput-wide v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningDeadlineMs:J
 
     return v3
 .end method
 
 .method public join(Z)V
-    .registers 6
+    .locals 4
 
     .line 312
     iput-boolean p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningRenderNextFrameImmediately:Z
@@ -586,7 +586,7 @@
 
     cmp-long p1, v0, v2
 
-    if-lez p1, :cond_14
+    if-lez p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->clock:Landroidx/media3/common/util/Clock;
 
@@ -598,19 +598,19 @@
 
     add-long/2addr v0, v2
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_19
+    :goto_0
     iput-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->joiningDeadlineMs:J
 
     return-void
 .end method
 
 .method public onDisabled()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -621,7 +621,7 @@
 .end method
 
 .method public onEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 212
     iput p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
@@ -630,24 +630,24 @@
 .end method
 
 .method public onFrameReleasedIsFirstFrame()Z
-    .registers 4
+    .locals 3
 
     .line 256
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 257
-    :goto_8
+    :goto_0
     iput v1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->firstFrameState:I
 
     .line 258
@@ -667,7 +667,7 @@
 .end method
 
 .method public onProcessedStreamChange()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -678,7 +678,7 @@
 .end method
 
 .method public onStarted()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -707,7 +707,7 @@
 .end method
 
 .method public onStopped()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -728,7 +728,7 @@
 .end method
 
 .method public reset()V
-    .registers 4
+    .locals 3
 
     .line 384
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameReleaseHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -755,7 +755,7 @@
 .end method
 
 .method public setChangeFrameRateStrategy(I)V
-    .registers 3
+    .locals 1
 
     .line 397
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameReleaseHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -766,7 +766,7 @@
 .end method
 
 .method public setClock(Landroidx/media3/common/util/Clock;)V
-    .registers 2
+    .locals 0
 
     .line 264
     iput-object p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->clock:Landroidx/media3/common/util/Clock;
@@ -775,7 +775,7 @@
 .end method
 
 .method public setFrameRate(F)V
-    .registers 3
+    .locals 1
 
     .line 247
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameReleaseHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -786,7 +786,7 @@
 .end method
 
 .method public setOutputSurface(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 241
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->frameReleaseHelper:Landroidx/media3/exoplayer/video/VideoFrameReleaseHelper;
@@ -802,19 +802,19 @@
 .end method
 
 .method public setPlaybackSpeed(F)V
-    .registers 3
+    .locals 1
 
     .line 402
     iget v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->playbackSpeed:F
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 405
-    :cond_7
+    :cond_0
     iput p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl;->playbackSpeed:F
 
     .line 406

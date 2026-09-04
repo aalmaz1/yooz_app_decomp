@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 2344
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public throwExceptionIfDeadlineIsReached(Ljava/lang/Exception;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V^TT;"
@@ -85,7 +85,7 @@
     .line 2350
     iget-object v2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PendingExceptionHolder;->pendingException:Ljava/lang/Exception;
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_0
 
     .line 2351
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PendingExceptionHolder;->pendingException:Ljava/lang/Exception;
@@ -98,23 +98,23 @@
     iput-wide v2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PendingExceptionHolder;->throwDeadlineMs:J
 
     .line 2354
-    :cond_f
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PendingExceptionHolder;->throwDeadlineMs:J
 
     cmp-long v0, v0, v2
 
-    if-ltz v0, :cond_22
+    if-ltz v0, :cond_2
 
     .line 2355
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PendingExceptionHolder;->pendingException:Ljava/lang/Exception;
 
-    if-eq v0, p1, :cond_1c
+    if-eq v0, p1, :cond_1
 
     .line 2357
     invoke-virtual {v0, p1}, Ljava/lang/Exception;->addSuppressed(Ljava/lang/Throwable;)V
 
     .line 2359
-    :cond_1c
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PendingExceptionHolder;->pendingException:Ljava/lang/Exception;
 
     .line 2360
@@ -123,6 +123,6 @@
     .line 2361
     throw p1
 
-    :cond_22
+    :cond_2
     return-void
 .end method

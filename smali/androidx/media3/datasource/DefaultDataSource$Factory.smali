@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 75
     new-instance v0, Landroidx/media3/datasource/DefaultHttpDataSource$Factory;
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public bridge synthetic createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 63
     invoke-virtual {p0}, Landroidx/media3/datasource/DefaultDataSource$Factory;->createDataSource()Landroidx/media3/datasource/DefaultDataSource;
@@ -72,7 +72,7 @@
 .end method
 
 .method public createDataSource()Landroidx/media3/datasource/DefaultDataSource;
-    .registers 4
+    .locals 3
 
     .line 113
     new-instance v0, Landroidx/media3/datasource/DefaultDataSource;
@@ -91,17 +91,17 @@
     .line 115
     iget-object v1, p0, Landroidx/media3/datasource/DefaultDataSource$Factory;->transferListener:Landroidx/media3/datasource/TransferListener;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 116
     invoke-virtual {v0, v1}, Landroidx/media3/datasource/DefaultDataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
-    :cond_14
+    :cond_0
     return-object v0
 .end method
 
 .method public setTransferListener(Landroidx/media3/datasource/TransferListener;)Landroidx/media3/datasource/DefaultDataSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 106
     iput-object p1, p0, Landroidx/media3/datasource/DefaultDataSource$Factory;->transferListener:Landroidx/media3/datasource/TransferListener;

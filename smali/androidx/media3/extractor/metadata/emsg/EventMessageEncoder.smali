@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method private static writeNullTerminatedString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public encode(Landroidx/media3/extractor/metadata/emsg/EventMessage;)[B
-    .registers 5
+    .locals 3
 
     .line 45
     iget-object v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessageEncoder;->byteArrayOutputStream:Ljava/io/ByteArrayOutputStream;
@@ -65,7 +65,7 @@
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->reset()V
 
     .line 47
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/extractor/metadata/emsg/EventMessageEncoder;->dataOutputStream:Ljava/io/DataOutputStream;
 
     iget-object v1, p1, Landroidx/media3/extractor/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
@@ -75,17 +75,17 @@
     .line 48
     iget-object v0, p1, Landroidx/media3/extractor/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget-object v0, p1, Landroidx/media3/extractor/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const-string v0, ""
 
     .line 49
-    :goto_15
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/metadata/emsg/EventMessageEncoder;->dataOutputStream:Ljava/io/DataOutputStream;
 
     invoke-static {v1, v0}, Landroidx/media3/extractor/metadata/emsg/EventMessageEncoder;->writeNullTerminatedString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
@@ -122,12 +122,12 @@
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p1
-    :try_end_3a
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_3a} :catch_3b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_3b
+    :catch_0
     move-exception p1
 
     .line 57

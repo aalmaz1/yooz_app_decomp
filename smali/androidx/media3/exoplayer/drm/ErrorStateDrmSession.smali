@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;)V
-    .registers 2
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,13 +32,13 @@
 
 # virtual methods
 .method public acquire(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public getCryptoConfig()Landroidx/media3/decoder/CryptoConfig;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public getError()Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
-    .registers 2
+    .locals 1
 
     .line 49
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/ErrorStateDrmSession;->error:Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -55,7 +55,7 @@
 .end method
 
 .method public getOfflineLicenseKeySetId()[B
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public final getSchemeUuid()Ljava/util/UUID;
-    .registers 2
+    .locals 1
 
     .line 54
     sget-object v0, Landroidx/media3/common/C;->UUID_NIL:Ljava/util/UUID;
@@ -72,7 +72,7 @@
 .end method
 
 .method public getState()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public playClearSamplesWithoutKeys()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public queryKeyStatus()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -105,13 +105,13 @@
 .end method
 
 .method public release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public requiresSecureDecoder(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

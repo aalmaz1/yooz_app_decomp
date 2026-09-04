@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/utils/executor/AudioExecutor;)V
-    .registers 3
+    .locals 1
 
     .line 42
     iput-object p1, p0, Landroidx/camera/core/impl/utils/executor/AudioExecutor$1;->this$0:Landroidx/camera/core/impl/utils/executor/AudioExecutor;
@@ -49,7 +49,7 @@
 .end method
 
 .method static synthetic lambda$newThread$0(Ljava/lang/Runnable;)V
-    .registers 2
+    .locals 1
 
     const/16 v0, -0x10
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 6
+    .locals 4
 
     .line 50
     new-instance v0, Landroidx/camera/core/impl/utils/executor/AudioExecutor$1$$ExternalSyntheticLambda0;

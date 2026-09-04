@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 43
     invoke-direct {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;)V
@@ -111,7 +111,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 3
+    .locals 0
 
     .line 47
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -175,7 +175,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .locals 0
 
     .line 51
     invoke-direct {p0, p1, p2, p3}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -239,51 +239,51 @@
 .end method
 
 .method private reCacheViews()V
-    .registers 5
+    .locals 4
 
     .line 240
     iget-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 243
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     return-void
 
     .line 247
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mViews:[Landroid/view/View;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_2
 
     array-length v0, v0
 
     iget v1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_3
 
     .line 248
-    :cond_13
+    :cond_2
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
     new-array v0, v0, [Landroid/view/View;
 
     iput-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mViews:[Landroid/view/View;
 
-    :cond_19
+    :cond_3
     const/4 v0, 0x0
 
     .line 250
-    :goto_1a
+    :goto_0
     iget v1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
-    if-ge v0, v1, :cond_2f
+    if-ge v0, v1, :cond_4
 
     .line 251
     iget-object v1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mIds:[I
@@ -303,33 +303,33 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_2f
+    :cond_4
     return-void
 .end method
 
 .method private transform()V
-    .registers 11
+    .locals 10
 
     .line 306
     iget-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 309
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mViews:[Landroid/view/View;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_1
 
     .line 310
     invoke-direct {p0}, Landroidx/constraintlayout/helper/widget/Layer;->reCacheViews()V
 
     .line 312
-    :cond_c
+    :cond_1
     invoke-virtual {p0}, Landroidx/constraintlayout/helper/widget/Layer;->calcCenters()V
 
     .line 314
@@ -374,10 +374,10 @@
     const/4 v0, 0x0
 
     .line 322
-    :goto_2b
+    :goto_0
     iget v2, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
-    if-ge v0, v2, :cond_7a
+    if-ge v0, v2, :cond_2
 
     .line 323
     iget-object v2, p0, Landroidx/constraintlayout/helper/widget/Layer;->mViews:[Landroid/view/View;
@@ -473,29 +473,29 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_7a
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method protected calcCenters()V
-    .registers 9
+    .locals 8
 
     .line 257
     iget-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 260
-    :cond_5
+    :cond_0
     iget-boolean v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mNeedBounds:Z
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     .line 261
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterX:F
@@ -504,7 +504,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterY:F
 
@@ -512,19 +512,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     return-void
 
     .line 265
-    :cond_1a
+    :cond_1
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterX:F
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_3
 
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterY:F
 
@@ -532,12 +532,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2
 
-    goto :goto_35
+    goto :goto_0
 
     .line 299
-    :cond_2b
+    :cond_2
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterY:F
 
     iput v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterY:F
@@ -547,11 +547,11 @@
 
     iput v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterX:F
 
-    goto/16 :goto_af
+    goto/16 :goto_3
 
     .line 266
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_0
     iget-object v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p0, v0}, Landroidx/constraintlayout/helper/widget/Layer;->getViews(Landroidx/constraintlayout/widget/ConstraintLayout;)[Landroid/view/View;
@@ -589,10 +589,10 @@
     move-result v5
 
     .line 273
-    :goto_54
+    :goto_1
     iget v6, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
-    if-ge v1, v6, :cond_7d
+    if-ge v1, v6, :cond_4
 
     .line 274
     aget-object v6, v0, v1
@@ -635,9 +635,9 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_54
+    goto :goto_1
 
-    :cond_7d
+    :cond_4
     int-to-float v0, v4
 
     .line 281
@@ -665,7 +665,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_5
 
     add-int/2addr v2, v4
 
@@ -676,23 +676,23 @@
 
     iput v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterX:F
 
-    goto :goto_9c
+    goto :goto_2
 
     .line 289
-    :cond_98
+    :cond_5
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterX:F
 
     iput v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterX:F
 
     .line 291
-    :goto_9c
+    :goto_2
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterY:F
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-eqz v0, :cond_ab
+    if-eqz v0, :cond_6
 
     add-int/2addr v3, v5
 
@@ -703,20 +703,20 @@
 
     iput v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterY:F
 
-    goto :goto_af
+    goto :goto_3
 
     .line 295
-    :cond_ab
+    :cond_6
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterY:F
 
     iput v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mComputedCenterY:F
 
-    :goto_af
+    :goto_3
     return-void
 .end method
 
 .method protected init(Landroid/util/AttributeSet;)V
-    .registers 7
+    .locals 5
 
     .line 59
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->init(Landroid/util/AttributeSet;)V
@@ -726,7 +726,7 @@
     .line 60
     iput-boolean v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mUseViewMeasure:Z
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2
 
     .line 62
     invoke-virtual {p0}, Landroidx/constraintlayout/helper/widget/Layer;->getContext()Landroid/content/Context;
@@ -744,8 +744,8 @@
 
     move-result v1
 
-    :goto_16
-    if-ge v0, v1, :cond_2d
+    :goto_0
+    if-ge v0, v1, :cond_2
 
     .line 65
     invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -757,34 +757,34 @@
 
     const/4 v4, 0x1
 
-    if-ne v2, v3, :cond_24
+    if-ne v2, v3, :cond_0
 
     .line 67
     iput-boolean v4, p0, Landroidx/constraintlayout/helper/widget/Layer;->mApplyVisibilityOnAttach:Z
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 68
-    :cond_24
+    :cond_0
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_android_elevation:I
 
-    if-ne v2, v3, :cond_2a
+    if-ne v2, v3, :cond_1
 
     .line 69
     iput-boolean v4, p0, Landroidx/constraintlayout/helper/widget/Layer;->mApplyElevationOnAttach:Z
 
-    :cond_2a
-    :goto_2a
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_2d
+    :cond_2
     return-void
 .end method
 
 .method protected onAttachedToWindow()V
-    .registers 6
+    .locals 5
 
     .line 77
     invoke-super {p0}, Landroidx/constraintlayout/widget/ConstraintHelper;->onAttachedToWindow()V
@@ -801,14 +801,14 @@
     .line 79
     iget-boolean v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mApplyVisibilityOnAttach:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mApplyElevationOnAttach:Z
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_3
 
     .line 80
-    :cond_13
+    :cond_0
     invoke-virtual {p0}, Landroidx/constraintlayout/helper/widget/Layer;->getVisibility()I
 
     move-result v0
@@ -821,10 +821,10 @@
     const/4 v2, 0x0
 
     .line 85
-    :goto_1c
+    :goto_0
     iget v3, p0, Landroidx/constraintlayout/helper/widget/Layer;->mCount:I
 
-    if-ge v2, v3, :cond_47
+    if-ge v2, v3, :cond_3
 
     .line 86
     iget-object v3, p0, Landroidx/constraintlayout/helper/widget/Layer;->mIds:[I
@@ -838,27 +838,27 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_2
 
     .line 89
     iget-boolean v4, p0, Landroidx/constraintlayout/helper/widget/Layer;->mApplyVisibilityOnAttach:Z
 
-    if-eqz v4, :cond_33
+    if-eqz v4, :cond_1
 
     .line 90
     invoke-virtual {v3, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 92
-    :cond_33
+    :cond_1
     iget-boolean v4, p0, Landroidx/constraintlayout/helper/widget/Layer;->mApplyElevationOnAttach:Z
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_2
 
     const/4 v4, 0x0
 
     cmpl-float v4, v1, v4
 
-    if-lez v4, :cond_44
+    if-lez v4, :cond_2
 
     .line 94
     invoke-virtual {v3}, Landroid/view/View;->getTranslationZ()F
@@ -869,17 +869,17 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationZ(F)V
 
-    :cond_44
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_47
+    :cond_3
     return-void
 .end method
 
 .method public setElevation(F)V
-    .registers 2
+    .locals 0
 
     .line 208
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->setElevation(F)V
@@ -891,7 +891,7 @@
 .end method
 
 .method public setPivotX(F)V
-    .registers 2
+    .locals 0
 
     .line 159
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterX:F
@@ -903,7 +903,7 @@
 .end method
 
 .method public setPivotY(F)V
-    .registers 2
+    .locals 0
 
     .line 170
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mRotationCenterY:F
@@ -915,7 +915,7 @@
 .end method
 
 .method public setRotation(F)V
-    .registers 2
+    .locals 0
 
     .line 127
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mGroupRotateAngle:F
@@ -927,7 +927,7 @@
 .end method
 
 .method public setScaleX(F)V
-    .registers 2
+    .locals 0
 
     .line 137
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mScaleX:F
@@ -939,7 +939,7 @@
 .end method
 
 .method public setScaleY(F)V
-    .registers 2
+    .locals 0
 
     .line 148
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mScaleY:F
@@ -951,7 +951,7 @@
 .end method
 
 .method public setTranslationX(F)V
-    .registers 2
+    .locals 0
 
     .line 180
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mShiftX:F
@@ -963,7 +963,7 @@
 .end method
 
 .method public setTranslationY(F)V
-    .registers 2
+    .locals 0
 
     .line 190
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mShiftY:F
@@ -975,7 +975,7 @@
 .end method
 
 .method public setVisibility(I)V
-    .registers 2
+    .locals 0
 
     .line 199
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->setVisibility(I)V
@@ -987,7 +987,7 @@
 .end method
 
 .method public updatePostLayout(Landroidx/constraintlayout/widget/ConstraintLayout;)V
-    .registers 6
+    .locals 4
 
     .line 218
     invoke-direct {p0}, Landroidx/constraintlayout/helper/widget/Layer;->reCacheViews()V
@@ -1077,17 +1077,17 @@
 
     move-result p1
 
-    if-nez p1, :cond_4b
+    if-nez p1, :cond_0
 
     .line 234
     invoke-direct {p0}, Landroidx/constraintlayout/helper/widget/Layer;->transform()V
 
-    :cond_4b
+    :cond_0
     return-void
 .end method
 
 .method public updatePreDraw(Landroidx/constraintlayout/widget/ConstraintLayout;)V
-    .registers 3
+    .locals 1
 
     .line 109
     iput-object p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -1101,7 +1101,7 @@
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 112
     iget v0, p0, Landroidx/constraintlayout/helper/widget/Layer;->mGroupRotateAngle:F
@@ -1110,18 +1110,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 113
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mGroupRotateAngle:F
 
-    goto :goto_18
+    goto :goto_0
 
     .line 116
-    :cond_16
+    :cond_0
     iput p1, p0, Landroidx/constraintlayout/helper/widget/Layer;->mGroupRotateAngle:F
 
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     return-void
 .end method

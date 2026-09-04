@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "([a-z])=\\s?(.+)"
 
@@ -87,7 +87,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 244
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 .end method
 
 .method private static addMediaDescriptionToSession(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -110,21 +110,21 @@
     move-result-object p1
 
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->addMediaDescription(Landroidx/media3/exoplayer/rtsp/MediaDescription;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
-    :try_end_7
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_7} :catch_a
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_8
+    :catch_0
     move-exception p0
 
-    goto :goto_b
+    goto :goto_0
 
-    :catch_a
+    :catch_1
     move-exception p0
 
-    :goto_b
+    :goto_0
     const/4 p1, 0x0
 
     .line 215
@@ -136,7 +136,7 @@
 .end method
 
 .method public static parse(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription;
-    .registers 14
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -163,8 +163,8 @@
 
     move v4, v3
 
-    :goto_e
-    if-ge v4, v1, :cond_1e3
+    :goto_0
+    if-ge v4, v1, :cond_d
 
     aget-object v6, p0, v4
 
@@ -175,12 +175,12 @@
 
     move-result v7
 
-    if-eqz v7, :cond_1c
+    if-eqz v7, :cond_0
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 83
-    :cond_1c
+    :cond_0
     sget-object v7, Landroidx/media3/exoplayer/rtsp/SessionDescriptionParser;->SDP_LINE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v7, v6}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -196,7 +196,7 @@
 
     const/4 v10, 0x1
 
-    if-nez v8, :cond_57
+    if-nez v8, :cond_2
 
     .line 85
     sget-object v7, Landroidx/media3/exoplayer/rtsp/SessionDescriptionParser;->SDP_LINE_WITH_EMPTY_VALUE_PATTERN:Ljava/util/regex/Pattern;
@@ -210,7 +210,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_43
+    if-eqz v8, :cond_1
 
     invoke-virtual {v7, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -220,12 +220,12 @@
 
     move-result v7
 
-    if-eqz v7, :cond_43
+    if-eqz v7, :cond_1
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 90
-    :cond_43
+    :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v0, "Malformed SDP line: "
@@ -247,7 +247,7 @@
     throw p0
 
     .line 94
-    :cond_57
+    :cond_2
     invoke-virtual {v7, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v8
@@ -276,229 +276,229 @@
 
     move-result v12
 
-    packed-switch v12, :pswitch_data_1f6
+    packed-switch v12, :pswitch_data_0
 
-    :pswitch_73
-    goto/16 :goto_118
+    :pswitch_0
+    goto/16 :goto_1
 
-    :pswitch_75
+    :pswitch_1
     const-string/jumbo v9, "z"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0xe
 
-    goto/16 :goto_119
+    goto/16 :goto_2
 
-    :pswitch_82
+    :pswitch_2
     const-string/jumbo v9, "v"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     move v8, v3
 
-    goto/16 :goto_119
+    goto/16 :goto_2
 
-    :pswitch_8e
+    :pswitch_3
     const-string/jumbo v9, "u"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x4
 
-    goto/16 :goto_119
+    goto/16 :goto_2
 
-    :pswitch_9a
+    :pswitch_4
     const-string v9, "t"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0x9
 
-    goto/16 :goto_119
+    goto/16 :goto_2
 
-    :pswitch_a6
+    :pswitch_5
     const-string v9, "s"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     move v8, v11
 
-    goto/16 :goto_119
+    goto/16 :goto_2
 
-    :pswitch_b1
+    :pswitch_6
     const-string v9, "r"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0xd
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_bc
+    :pswitch_7
     const-string v9, "p"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x6
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_c6
+    :pswitch_8
     const-string v9, "o"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     move v8, v10
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_d0
+    :pswitch_9
     const-string v9, "m"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0xc
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_db
+    :pswitch_a
     const-string v9, "k"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0xa
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_e6
+    :pswitch_b
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x3
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_ee
+    :pswitch_c
     const-string v9, "e"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x5
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_f8
+    :pswitch_d
     const-string v9, "c"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x7
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_102
+    :pswitch_e
     const-string v9, "b"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0x8
 
-    goto :goto_119
+    goto :goto_2
 
-    :pswitch_10d
+    :pswitch_f
     const-string v9, "a"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_118
+    if-eqz v8, :cond_3
 
     const/16 v8, 0xb
 
-    goto :goto_119
+    goto :goto_2
 
-    :cond_118
-    :goto_118
+    :cond_3
+    :goto_1
     const/4 v8, -0x1
 
-    :goto_119
-    packed-switch v8, :pswitch_data_22e
+    :goto_2
+    packed-switch v8, :pswitch_data_1
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
-    :pswitch_11e
-    if-eqz v5, :cond_123
+    :pswitch_10
+    if-eqz v5, :cond_4
 
     .line 186
     invoke-static {v0, v5}, Landroidx/media3/exoplayer/rtsp/SessionDescriptionParser;->addMediaDescriptionToSession(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)V
 
     .line 188
-    :cond_123
+    :cond_4
     invoke-static {v7}, Landroidx/media3/exoplayer/rtsp/SessionDescriptionParser;->parseMediaDescriptionLine(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
     move-result-object v5
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 167
-    :pswitch_129
+    :pswitch_11
     sget-object v8, Landroidx/media3/exoplayer/rtsp/SessionDescriptionParser;->ATTRIBUTE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v8, v7}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -510,7 +510,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_153
+    if-eqz v8, :cond_6
 
     .line 173
     invoke-virtual {v7, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -532,21 +532,21 @@
 
     move-result-object v7
 
-    if-nez v5, :cond_14e
+    if-nez v5, :cond_5
 
     .line 178
     invoke-virtual {v0, v6, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->addAttribute(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 180
-    :cond_14e
+    :cond_5
     invoke-virtual {v5, v6, v7}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->addAttribute(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 169
-    :cond_153
+    :cond_6
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v0, "Malformed Attribute line: "
@@ -567,27 +567,27 @@
 
     throw p0
 
-    :pswitch_167
-    if-nez v5, :cond_16e
+    :pswitch_12
+    if-nez v5, :cond_7
 
     .line 160
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setKey(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 162
-    :cond_16e
+    :cond_7
     invoke-virtual {v5, v7}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->setKey(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
     .line 155
-    :pswitch_173
+    :pswitch_13
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setTiming(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto/16 :goto_1df
+    goto/16 :goto_4
 
-    :pswitch_178
+    :pswitch_14
     const-string v6, ":\\s?"
 
     .line 142
@@ -598,16 +598,16 @@
     .line 143
     array-length v7, v6
 
-    if-ne v7, v11, :cond_183
+    if-ne v7, v11, :cond_8
 
     move v7, v10
 
-    goto :goto_184
+    goto :goto_3
 
-    :cond_183
+    :cond_8
     move v7, v3
 
-    :goto_184
+    :goto_3
     invoke-static {v7}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 144
@@ -617,86 +617,86 @@
 
     move-result v6
 
-    if-nez v5, :cond_195
+    if-nez v5, :cond_9
 
     mul-int/lit16 v6, v6, 0x3e8
 
     .line 148
     invoke-virtual {v0, v6}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setBitrate(I)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
-    :cond_195
+    :cond_9
     mul-int/lit16 v6, v6, 0x3e8
 
     .line 150
     invoke-virtual {v5, v6}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->setBitrate(I)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
-    :pswitch_19b
-    if-nez v5, :cond_1a1
+    :pswitch_15
+    if-nez v5, :cond_a
 
     .line 135
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setConnection(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 137
-    :cond_1a1
+    :cond_a
     invoke-virtual {v5, v7}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->setConnection(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 130
-    :pswitch_1a5
+    :pswitch_16
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setPhoneNumber(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 126
-    :pswitch_1a9
+    :pswitch_17
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setEmailAddress(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 122
-    :pswitch_1ad
+    :pswitch_18
     invoke-static {v7}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v6
 
     invoke-virtual {v0, v6}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setUri(Landroid/net/Uri;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
-    :pswitch_1b5
-    if-nez v5, :cond_1bb
+    :pswitch_19
+    if-nez v5, :cond_b
 
     .line 115
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setSessionInfo(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 117
-    :cond_1bb
+    :cond_b
     invoke-virtual {v5, v7}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;->setMediaTitle(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 110
-    :pswitch_1bf
+    :pswitch_1a
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setSessionName(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
     .line 106
-    :pswitch_1c3
+    :pswitch_1b
     invoke-virtual {v0, v7}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->setOrigin(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;
 
-    goto :goto_1df
+    goto :goto_4
 
-    :pswitch_1c7
+    :pswitch_1c
     const-string v6, "0"
 
     .line 99
@@ -704,11 +704,11 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1d0
+    if-eqz v6, :cond_c
 
-    goto :goto_1df
+    goto :goto_4
 
-    :cond_1d0
+    :cond_c
     new-array p0, v10, [Ljava/lang/Object;
 
     aput-object v7, p0, v3
@@ -727,39 +727,39 @@
 
     throw p0
 
-    :goto_1df
+    :goto_4
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_e
+    goto/16 :goto_0
 
-    :cond_1e3
-    if-eqz v5, :cond_1e8
+    :cond_d
+    if-eqz v5, :cond_e
 
     .line 198
     invoke-static {v0, v5}, Landroidx/media3/exoplayer/rtsp/SessionDescriptionParser;->addMediaDescriptionToSession(Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;)V
 
     .line 202
-    :cond_1e8
-    :try_start_1e8
+    :cond_e
+    :try_start_0
     invoke-virtual {v0}, Landroidx/media3/exoplayer/rtsp/SessionDescription$Builder;->build()Landroidx/media3/exoplayer/rtsp/SessionDescription;
 
     move-result-object p0
-    :try_end_1ec
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1e8 .. :try_end_1ec} :catch_1ef
-    .catch Ljava/lang/IllegalStateException; {:try_start_1e8 .. :try_end_1ec} :catch_1ed
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_1ed
+    :catch_0
     move-exception p0
 
-    goto :goto_1f0
+    goto :goto_5
 
-    :catch_1ef
+    :catch_1
     move-exception p0
 
     .line 204
-    :goto_1f0
+    :goto_5
     invoke-static {v2, p0}, Landroidx/media3/common/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
@@ -768,56 +768,56 @@
 
     nop
 
-    :pswitch_data_1f6
+    :pswitch_data_0
     .packed-switch 0x61
-        :pswitch_10d
-        :pswitch_102
-        :pswitch_f8
-        :pswitch_73
-        :pswitch_ee
-        :pswitch_73
-        :pswitch_73
-        :pswitch_73
-        :pswitch_e6
-        :pswitch_73
-        :pswitch_db
-        :pswitch_73
-        :pswitch_d0
-        :pswitch_73
-        :pswitch_c6
-        :pswitch_bc
-        :pswitch_73
-        :pswitch_b1
-        :pswitch_a6
-        :pswitch_9a
-        :pswitch_8e
-        :pswitch_82
-        :pswitch_73
-        :pswitch_73
-        :pswitch_73
-        :pswitch_75
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_0
+        :pswitch_c
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_b
+        :pswitch_0
+        :pswitch_a
+        :pswitch_0
+        :pswitch_9
+        :pswitch_0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 
-    :pswitch_data_22e
+    :pswitch_data_1
     .packed-switch 0x0
-        :pswitch_1c7
-        :pswitch_1c3
-        :pswitch_1bf
-        :pswitch_1b5
-        :pswitch_1ad
-        :pswitch_1a9
-        :pswitch_1a5
-        :pswitch_19b
-        :pswitch_178
-        :pswitch_173
-        :pswitch_167
-        :pswitch_129
-        :pswitch_11e
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
     .end packed-switch
 .end method
 
 .method private static parseMediaDescriptionLine(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -838,7 +838,7 @@
 
     const-string v2, "Malformed SDP media description line: "
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -893,7 +893,7 @@
     check-cast v0, Ljava/lang/String;
 
     .line 232
-    :try_start_3a
+    :try_start_0
     new-instance v5, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;
 
     .line 234
@@ -907,12 +907,12 @@
     move-result v0
 
     invoke-direct {v5, v1, v3, v4, v0}, Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;-><init>(Ljava/lang/String;ILjava/lang/String;I)V
-    :try_end_47
-    .catch Ljava/lang/NumberFormatException; {:try_start_3a .. :try_end_47} :catch_48
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v5
 
-    :catch_48
+    :catch_0
     move-exception v0
 
     .line 238
@@ -935,7 +935,7 @@
     throw p0
 
     .line 223
-    :cond_5b
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V

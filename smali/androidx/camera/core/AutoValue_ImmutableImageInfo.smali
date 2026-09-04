@@ -15,12 +15,12 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/TagBundle;JILandroid/graphics/Matrix;)V
-    .registers 6
+    .locals 0
 
     .line 24
     invoke-direct {p0}, Landroidx/camera/core/ImmutableImageInfo;-><init>()V
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 28
     iput-object p1, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->tagBundle:Landroidx/camera/core/impl/TagBundle;
@@ -31,7 +31,7 @@
     .line 30
     iput p4, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->rotationDegrees:I
 
-    if-eqz p5, :cond_10
+    if-eqz p5, :cond_0
 
     .line 34
     iput-object p5, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->sensorToBufferTransformMatrix:Landroid/graphics/Matrix;
@@ -39,7 +39,7 @@
     return-void
 
     .line 32
-    :cond_10
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null sensorToBufferTransformMatrix"
@@ -49,7 +49,7 @@
     throw p1
 
     .line 26
-    :cond_18
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null tagBundle"
@@ -62,21 +62,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 74
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/ImmutableImageInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 75
     check-cast p1, Landroidx/camera/core/ImmutableImageInfo;
@@ -92,7 +92,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     iget-wide v3, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->timestamp:J
 
@@ -103,7 +103,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_36
+    if-nez v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->rotationDegrees:I
 
@@ -112,7 +112,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_36
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->sensorToBufferTransformMatrix:Landroid/graphics/Matrix;
 
@@ -125,22 +125,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_36
+    :cond_1
     move v0, v2
 
-    :goto_37
+    :goto_0
     return v0
 
-    :cond_38
+    :cond_2
     return v2
 .end method
 
 .method public getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 50
     iget v0, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->rotationDegrees:I
@@ -149,7 +149,7 @@
 .end method
 
 .method public getSensorToBufferTransformMatrix()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->sensorToBufferTransformMatrix:Landroid/graphics/Matrix;
@@ -158,7 +158,7 @@
 .end method
 
 .method public getTagBundle()Landroidx/camera/core/impl/TagBundle;
-    .registers 2
+    .locals 1
 
     .line 40
     iget-object v0, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->tagBundle:Landroidx/camera/core/impl/TagBundle;
@@ -167,7 +167,7 @@
 .end method
 
 .method public getTimestamp()J
-    .registers 3
+    .locals 2
 
     .line 45
     iget-wide v0, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->timestamp:J
@@ -176,7 +176,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 88
     iget-object v0, p0, Landroidx/camera/core/AutoValue_ImmutableImageInfo;->tagBundle:Landroidx/camera/core/impl/TagBundle;
@@ -226,7 +226,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 61
     new-instance v0, Ljava/lang/StringBuilder;

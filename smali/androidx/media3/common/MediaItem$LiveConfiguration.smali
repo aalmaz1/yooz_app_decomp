@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1419
     new-instance v0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
@@ -110,7 +110,7 @@
 .end method
 
 .method public constructor <init>(JJJFF)V
-    .registers 9
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -136,7 +136,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)V
-    .registers 11
+    .locals 9
 
     .line 1454
     invoke-static {p1}, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->access$2000(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)J
@@ -172,7 +172,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 1321
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$LiveConfiguration;-><init>(Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;)V
@@ -181,7 +181,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$LiveConfiguration;
-    .registers 6
+    .locals 5
 
     .line 1541
     new-instance v0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
@@ -271,7 +271,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
-    .registers 3
+    .locals 2
 
     .line 1481
     new-instance v0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
@@ -284,26 +284,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1489
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1492
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     .line 1494
@@ -313,7 +313,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->minOffsetMs:J
 
@@ -321,7 +321,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxOffsetMs:J
 
@@ -329,7 +329,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
@@ -337,7 +337,7 @@
 
     cmpl-float v1, v1, v3
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     iget v1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
@@ -345,19 +345,19 @@
 
     cmpl-float p1, v1, p1
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_2
     move v0, v2
 
-    :goto_36
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 8
+    .locals 7
 
     .line 1503
     iget-wide v0, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->targetOffsetMs:J
@@ -407,18 +407,18 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_0
 
     invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v1
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     move v1, v4
 
-    :goto_2a
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -428,20 +428,20 @@
 
     cmpl-float v2, v1, v2
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_1
 
     invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v4
 
-    :cond_37
+    :cond_1
     add-int/2addr v0, v4
 
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 7
+    .locals 6
 
     .line 1519
     new-instance v0, Landroid/os/Bundle;
@@ -457,7 +457,7 @@
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_0
 
     .line 1521
     sget-object v4, Landroidx/media3/common/MediaItem$LiveConfiguration;->FIELD_TARGET_OFFSET_MS:Ljava/lang/String;
@@ -465,14 +465,14 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 1523
-    :cond_14
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->minOffsetMs:J
 
     iget-wide v4, v3, Landroidx/media3/common/MediaItem$LiveConfiguration;->minOffsetMs:J
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_1
 
     .line 1524
     sget-object v4, Landroidx/media3/common/MediaItem$LiveConfiguration;->FIELD_MIN_OFFSET_MS:Ljava/lang/String;
@@ -480,14 +480,14 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 1526
-    :cond_21
+    :cond_1
     iget-wide v1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxOffsetMs:J
 
     iget-wide v4, v3, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxOffsetMs:J
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_2
 
     .line 1527
     sget-object v4, Landroidx/media3/common/MediaItem$LiveConfiguration;->FIELD_MAX_OFFSET_MS:Ljava/lang/String;
@@ -495,14 +495,14 @@
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 1529
-    :cond_2e
+    :cond_2
     iget v1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
     iget v2, v3, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
     cmpl-float v2, v1, v2
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_3
 
     .line 1530
     sget-object v2, Landroidx/media3/common/MediaItem$LiveConfiguration;->FIELD_MIN_PLAYBACK_SPEED:Ljava/lang/String;
@@ -510,20 +510,20 @@
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
     .line 1532
-    :cond_3b
+    :cond_3
     iget v1, p0, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
     iget v2, v3, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
     cmpl-float v2, v1, v2
 
-    if-eqz v2, :cond_48
+    if-eqz v2, :cond_4
 
     .line 1533
     sget-object v2, Landroidx/media3/common/MediaItem$LiveConfiguration;->FIELD_MAX_PLAYBACK_SPEED:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    :cond_48
+    :cond_4
     return-object v0
 .end method

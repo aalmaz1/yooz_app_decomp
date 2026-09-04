@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "OpusHead"
 
@@ -62,7 +62,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method private static allocateHdrStaticInfo()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 2
 
     const/16 v0, 0x19
 
@@ -90,7 +90,7 @@
 .end method
 
 .method private static canApplyEditWithGaplessInfo([JJJJ)Z
-    .registers 14
+    .locals 7
 
     .line 2123
     array-length v0, p0
@@ -123,51 +123,51 @@
 
     cmp-long v2, v5, p3
 
-    if-gtz v2, :cond_26
+    if-gtz v2, :cond_0
 
     aget-wide v4, p0, v4
 
     cmp-long p3, p3, v4
 
-    if-gez p3, :cond_26
+    if-gez p3, :cond_0
 
     aget-wide p3, p0, v0
 
     cmp-long p0, p3, p5
 
-    if-gez p0, :cond_26
+    if-gez p0, :cond_0
 
     cmp-long p0, p5, p1
 
-    if-gtz p0, :cond_26
+    if-gtz p0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     move v1, v3
 
-    :goto_27
+    :goto_0
     return v1
 .end method
 
 .method private static canTrimSamplesWithTimestampChange(I)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_4
+    if-eq p0, v0, :cond_0
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method private static findBoxPosition(Landroidx/media3/common/util/ParsableByteArray;III)I
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -183,25 +183,25 @@
 
     const/4 v2, 0x0
 
-    if-lt v0, p2, :cond_a
+    if-lt v0, p2, :cond_0
 
     move v3, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v3, v2
 
-    :goto_b
+    :goto_0
     const/4 v4, 0x0
 
     .line 1910
     invoke-static {v3, v4}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
 
-    :goto_f
+    :goto_1
     sub-int v3, v0, p2
 
-    if-ge v3, p3, :cond_2d
+    if-ge v3, p3, :cond_3
 
     .line 1912
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -211,16 +211,16 @@
 
     move-result v3
 
-    if-lez v3, :cond_1e
+    if-lez v3, :cond_1
 
     move v4, v1
 
-    goto :goto_1f
+    goto :goto_2
 
-    :cond_1e
+    :cond_1
     move v4, v2
 
-    :goto_1f
+    :goto_2
     const-string v5, "childAtomSize must be positive"
 
     .line 1914
@@ -231,83 +231,83 @@
 
     move-result v4
 
-    if-ne v4, p1, :cond_2b
+    if-ne v4, p1, :cond_2
 
     return v0
 
-    :cond_2b
+    :cond_2
     add-int/2addr v0, v3
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_2d
+    :cond_3
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method private static getTrackTypeForHdlr(I)I
-    .registers 2
+    .locals 1
 
     const v0, 0x736f756e
 
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_7
+    :cond_0
     const v0, 0x76696465
 
-    if-ne p0, v0, :cond_e
+    if-ne p0, v0, :cond_1
 
     const/4 p0, 0x2
 
     return p0
 
-    :cond_e
+    :cond_1
     const v0, 0x74657874
 
-    if-eq p0, v0, :cond_2c
+    if-eq p0, v0, :cond_4
 
     const v0, 0x7362746c
 
-    if-eq p0, v0, :cond_2c
+    if-eq p0, v0, :cond_4
 
     const v0, 0x73756274
 
-    if-eq p0, v0, :cond_2c
+    if-eq p0, v0, :cond_4
 
     const v0, 0x636c6370
 
-    if-ne p0, v0, :cond_23
+    if-ne p0, v0, :cond_2
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     const v0, 0x6d657461
 
-    if-ne p0, v0, :cond_2a
+    if-ne p0, v0, :cond_3
 
     const/4 p0, 0x5
 
     return p0
 
-    :cond_2a
+    :cond_3
     const/4 p0, -0x1
 
     return p0
 
-    :cond_2c
-    :goto_2c
+    :cond_4
+    :goto_0
     const/4 p0, 0x3
 
     return p0
 .end method
 
 .method public static maybeSkipRemainingMetaAtomHeaderBytes(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 4
+    .locals 3
 
     .line 282
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -326,19 +326,19 @@
 
     const v2, 0x68646c72    # 4.3148E24f
 
-    if-eq v1, v2, :cond_13
+    if-eq v1, v2, :cond_0
 
     add-int/lit8 v0, v0, 0x4
 
     .line 291
-    :cond_13
+    :cond_0
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-void
 .end method
 
 .method private static parseAudioSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIIILjava/lang/String;ZLandroidx/media3/common/DrmInitData;Landroidx/media3/extractor/mp4/AtomParsers$StsdData;I)V
-    .registers 34
+    .locals 24
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -370,7 +370,7 @@
 
     const/4 v7, 0x6
 
-    if-eqz p6, :cond_21
+    if-eqz p6, :cond_0
 
     .line 1604
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
@@ -380,15 +380,15 @@
     .line 1605
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 1607
-    :cond_21
+    :cond_0
     invoke-virtual {v0, v8}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     const/4 v10, 0x0
 
-    :goto_25
+    :goto_0
     const/16 v13, 0x10
 
     const/4 v14, -0x1
@@ -399,14 +399,14 @@
 
     const/4 v12, 0x1
 
-    if-eqz v10, :cond_92
+    if-eqz v10, :cond_d
 
-    if-ne v10, v12, :cond_31
+    if-ne v10, v12, :cond_1
 
-    goto/16 :goto_92
+    goto/16 :goto_4
 
-    :cond_31
-    if-ne v10, v11, :cond_91
+    :cond_1
+    if-ne v10, v11, :cond_c
 
     .line 1630
     invoke-virtual {v0, v13}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
@@ -442,106 +442,106 @@
 
     and-int/lit8 v18, v17, 0x1
 
-    if-eqz v18, :cond_55
+    if-eqz v18, :cond_2
 
     move/from16 v18, v12
 
-    goto :goto_57
+    goto :goto_1
 
-    :cond_55
+    :cond_2
     const/16 v18, 0x0
 
-    :goto_57
+    :goto_1
     and-int/lit8 v17, v17, 0x2
 
-    if-eqz v17, :cond_5e
+    if-eqz v17, :cond_3
 
     move/from16 v17, v12
 
-    goto :goto_60
+    goto :goto_2
 
-    :cond_5e
+    :cond_3
     const/16 v17, 0x0
 
-    :goto_60
+    :goto_2
     const/16 v11, 0x20
 
-    if-nez v18, :cond_87
+    if-nez v18, :cond_a
 
-    if-ne v10, v8, :cond_68
+    if-ne v10, v8, :cond_4
 
     const/4 v10, 0x3
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_68
-    if-ne v10, v13, :cond_71
+    :cond_4
+    if-ne v10, v13, :cond_6
 
-    if-eqz v17, :cond_6f
+    if-eqz v17, :cond_5
 
     const/high16 v10, 0x10000000
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_6f
+    :cond_5
     const/4 v10, 0x2
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_71
+    :cond_6
     const/16 v13, 0x18
 
-    if-ne v10, v13, :cond_7d
+    if-ne v10, v13, :cond_8
 
-    if-eqz v17, :cond_7a
+    if-eqz v17, :cond_7
 
     const/high16 v10, 0x50000000
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_7a
+    :cond_7
     const/16 v10, 0x15
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_7d
-    if-ne v10, v11, :cond_8b
+    :cond_8
+    if-ne v10, v11, :cond_b
 
-    if-eqz v17, :cond_84
+    if-eqz v17, :cond_9
 
     const/high16 v10, 0x60000000
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_84
+    :cond_9
     const/16 v10, 0x16
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_87
-    if-ne v10, v11, :cond_8b
+    :cond_a
+    if-ne v10, v11, :cond_b
 
     move v10, v15
 
-    goto :goto_8c
+    goto :goto_3
 
-    :cond_8b
+    :cond_b
     move v10, v14
 
     .line 1653
-    :goto_8c
+    :goto_3
     invoke-virtual {v0, v8}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     const/4 v8, 0x0
 
-    goto :goto_af
+    goto :goto_5
 
-    :cond_91
+    :cond_c
     return-void
 
     .line 1618
-    :cond_92
-    :goto_92
+    :cond_d
+    :goto_4
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v9
@@ -568,16 +568,16 @@
 
     move-result v8
 
-    if-ne v10, v12, :cond_ae
+    if-ne v10, v12, :cond_e
 
     .line 1627
     invoke-virtual {v0, v13}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    :cond_ae
+    :cond_e
     move v10, v14
 
     .line 1659
-    :goto_af
+    :goto_5
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v11
@@ -586,14 +586,14 @@
 
     move/from16 v15, p1
 
-    if-ne v15, v13, :cond_e1
+    if-ne v15, v13, :cond_11
 
     .line 1663
     invoke-static {v0, v1, v2}, Landroidx/media3/extractor/mp4/AtomParsers;->parseSampleEntryEncryptionData(Landroidx/media3/common/util/ParsableByteArray;II)Landroid/util/Pair;
 
     move-result-object v13
 
-    if-eqz v13, :cond_de
+    if-eqz v13, :cond_10
 
     .line 1665
     iget-object v15, v13, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -604,14 +604,14 @@
 
     move-result v15
 
-    if-nez v5, :cond_cc
+    if-nez v5, :cond_f
 
     const/4 v5, 0x0
 
-    goto :goto_d6
+    goto :goto_6
 
     .line 1669
-    :cond_cc
+    :cond_f
     iget-object v12, v13, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v12, Landroidx/media3/extractor/mp4/TrackEncryptionBox;
@@ -623,7 +623,7 @@
     move-result-object v5
 
     .line 1670
-    :goto_d6
+    :goto_6
     iget-object v12, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->trackEncryptionBoxes:[Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
     iget-object v13, v13, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -633,232 +633,232 @@
     aput-object v13, v12, p9
 
     .line 1672
-    :cond_de
+    :cond_10
     invoke-virtual {v0, v11}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    :cond_e1
+    :cond_11
     const v12, 0x61632d33
 
     const-string v13, "audio/mhm1"
 
-    if-ne v15, v12, :cond_ec
+    if-ne v15, v12, :cond_12
 
     const-string v12, "audio/ac3"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_ec
+    :cond_12
     const v12, 0x65632d33
 
-    if-ne v15, v12, :cond_f5
+    if-ne v15, v12, :cond_13
 
     const-string v12, "audio/eac3"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_f5
+    :cond_13
     const v12, 0x61632d34
 
-    if-ne v15, v12, :cond_fe
+    if-ne v15, v12, :cond_14
 
     const-string v12, "audio/ac4"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_fe
+    :cond_14
     const v12, 0x64747363
 
-    if-ne v15, v12, :cond_107
+    if-ne v15, v12, :cond_15
 
     const-string v12, "audio/vnd.dts"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_107
+    :cond_15
     const v12, 0x64747368
 
-    if-eq v15, v12, :cond_1a8
+    if-eq v15, v12, :cond_29
 
     const v12, 0x6474736c
 
-    if-ne v15, v12, :cond_113
+    if-ne v15, v12, :cond_16
 
-    goto/16 :goto_1a8
+    goto/16 :goto_9
 
-    :cond_113
+    :cond_16
     const v12, 0x64747365
 
-    if-ne v15, v12, :cond_11c
+    if-ne v15, v12, :cond_17
 
     const-string v12, "audio/vnd.dts.hd;profile=lbr"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_11c
+    :cond_17
     const v12, 0x64747378
 
-    if-ne v15, v12, :cond_125
+    if-ne v15, v12, :cond_18
 
     const-string v12, "audio/vnd.dts.uhd;profile=p2"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_125
+    :cond_18
     const v12, 0x73616d72
 
-    if-ne v15, v12, :cond_12e
+    if-ne v15, v12, :cond_19
 
     const-string v12, "audio/3gpp"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_12e
+    :cond_19
     const v12, 0x73617762
 
-    if-ne v15, v12, :cond_137
+    if-ne v15, v12, :cond_1a
 
     const-string v12, "audio/amr-wb"
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_137
+    :cond_1a
     const v12, 0x736f7774
 
     const-string v22, "audio/raw"
 
-    if-ne v15, v12, :cond_143
+    if-ne v15, v12, :cond_1b
 
-    :goto_13e
+    :goto_7
     move-object/from16 v12, v22
 
     const/4 v10, 0x2
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_143
+    :cond_1b
     const v12, 0x74776f73
 
-    if-ne v15, v12, :cond_14e
+    if-ne v15, v12, :cond_1c
 
     move-object/from16 v12, v22
 
     const/high16 v10, 0x10000000
 
-    goto/16 :goto_1aa
+    goto/16 :goto_a
 
-    :cond_14e
+    :cond_1c
     const v12, 0x6c70636d
 
-    if-ne v15, v12, :cond_159
+    if-ne v15, v12, :cond_1e
 
-    if-ne v10, v14, :cond_156
+    if-ne v10, v14, :cond_1d
 
-    goto :goto_13e
+    goto :goto_7
 
-    :cond_156
+    :cond_1d
     move-object/from16 v12, v22
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_159
+    :cond_1e
     const v12, 0x2e6d7032
 
-    if-eq v15, v12, :cond_1a5
+    if-eq v15, v12, :cond_28
 
     const v12, 0x2e6d7033
 
-    if-ne v15, v12, :cond_164
+    if-ne v15, v12, :cond_1f
 
-    goto :goto_1a5
+    goto :goto_8
 
-    :cond_164
+    :cond_1f
     const v12, 0x6d686131
 
-    if-ne v15, v12, :cond_16c
+    if-ne v15, v12, :cond_20
 
     const-string v12, "audio/mha1"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_16c
+    :cond_20
     const v12, 0x6d686d31
 
-    if-ne v15, v12, :cond_173
+    if-ne v15, v12, :cond_21
 
     move-object v12, v13
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_173
+    :cond_21
     const v12, 0x616c6163
 
-    if-ne v15, v12, :cond_17b
+    if-ne v15, v12, :cond_22
 
     const-string v12, "audio/alac"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_17b
+    :cond_22
     const v12, 0x616c6177
 
-    if-ne v15, v12, :cond_183
+    if-ne v15, v12, :cond_23
 
     const-string v12, "audio/g711-alaw"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_183
+    :cond_23
     const v12, 0x756c6177
 
-    if-ne v15, v12, :cond_18b
+    if-ne v15, v12, :cond_24
 
     const-string v12, "audio/g711-mlaw"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_18b
+    :cond_24
     const v12, 0x4f707573
 
-    if-ne v15, v12, :cond_193
+    if-ne v15, v12, :cond_25
 
     const-string v12, "audio/opus"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_193
+    :cond_25
     const v12, 0x664c6143
 
-    if-ne v15, v12, :cond_19b
+    if-ne v15, v12, :cond_26
 
     const-string v12, "audio/flac"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_19b
+    :cond_26
     const v12, 0x6d6c7061
 
-    if-ne v15, v12, :cond_1a3
+    if-ne v15, v12, :cond_27
 
     const-string v12, "audio/true-hd"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_1a3
+    :cond_27
     const/4 v12, 0x0
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_1a5
-    :goto_1a5
+    :cond_28
+    :goto_8
     const-string v12, "audio/mpeg"
 
-    goto :goto_1aa
+    goto :goto_a
 
-    :cond_1a8
-    :goto_1a8
+    :cond_29
+    :goto_9
     const-string v12, "audio/vnd.dts.hd"
 
-    :goto_1aa
+    :goto_a
     move/from16 p7, v10
 
     const/4 v14, 0x0
@@ -867,10 +867,10 @@
 
     const/16 v22, 0x0
 
-    :goto_1b0
+    :goto_b
     sub-int v10, v11, v1
 
-    if-ge v10, v2, :cond_402
+    if-ge v10, v2, :cond_41
 
     .line 1732
     invoke-virtual {v0, v11}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -880,16 +880,16 @@
 
     move-result v10
 
-    if-lez v10, :cond_1bf
+    if-lez v10, :cond_2a
 
     const/4 v1, 0x1
 
-    goto :goto_1c0
+    goto :goto_c
 
-    :cond_1bf
+    :cond_2a
     const/4 v1, 0x0
 
-    :goto_1c0
+    :goto_c
     const-string v2, "childAtomSize must be positive"
 
     .line 1734
@@ -902,7 +902,7 @@
 
     const v2, 0x6d686143
 
-    if-ne v1, v2, :cond_227
+    if-ne v1, v2, :cond_2d
 
     add-int/lit8 v1, v11, 0x8
 
@@ -927,7 +927,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_1f7
+    if-eqz v15, :cond_2b
 
     new-array v15, v1, [Ljava/lang/Object;
 
@@ -950,9 +950,9 @@
 
     move-object/from16 p9, v13
 
-    goto :goto_20a
+    goto :goto_d
 
-    :cond_1f7
+    :cond_2b
     move v15, v1
 
     move-object/from16 p9, v13
@@ -977,7 +977,7 @@
     move-object v15, v2
 
     .line 1748
-    :goto_20a
+    :goto_d
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v2
@@ -988,7 +988,7 @@
     .line 1750
     invoke-virtual {v0, v13, v1, v2}, Landroidx/media3/common/util/ParsableByteArray;->readBytes([BII)V
 
-    if-nez v14, :cond_21b
+    if-nez v14, :cond_2c
 
     .line 1753
     invoke-static {v13}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
@@ -997,10 +997,10 @@
 
     move-object v14, v2
 
-    goto :goto_250
+    goto :goto_e
 
     .line 1757
-    :cond_21b
+    :cond_2c
     invoke-interface {v14, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1013,14 +1013,14 @@
 
     move-object v14, v1
 
-    goto :goto_250
+    goto :goto_e
 
-    :cond_227
+    :cond_2d
     move-object/from16 p9, v13
 
     const v2, 0x6d686150
 
-    if-ne v1, v2, :cond_25f
+    if-ne v1, v2, :cond_30
 
     add-int/lit8 v1, v11, 0x8
 
@@ -1032,7 +1032,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_250
+    if-lez v1, :cond_2f
 
     .line 1765
     new-array v2, v1, [B
@@ -1042,17 +1042,17 @@
     .line 1766
     invoke-virtual {v0, v2, v13, v1}, Landroidx/media3/common/util/ParsableByteArray;->readBytes([BII)V
 
-    if-nez v14, :cond_246
+    if-nez v14, :cond_2e
 
     .line 1768
     invoke-static {v2}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v14
 
-    goto :goto_250
+    goto :goto_e
 
     .line 1773
-    :cond_246
+    :cond_2e
     invoke-interface {v14, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1063,11 +1063,11 @@
 
     move-result-object v14
 
-    :cond_250
-    :goto_250
+    :cond_2f
+    :goto_e
     const/4 v2, -0x1
 
-    :goto_251
+    :goto_f
     const/4 v13, 0x4
 
     const/16 v16, 0x3
@@ -1080,25 +1080,25 @@
 
     const/16 v21, 0x1
 
-    goto/16 :goto_3f9
+    goto/16 :goto_15
 
-    :cond_25f
+    :cond_30
     const v2, 0x65736473
 
-    if-eq v1, v2, :cond_3af
+    if-eq v1, v2, :cond_3c
 
-    if-eqz p6, :cond_26d
+    if-eqz p6, :cond_31
 
     const v13, 0x77617665
 
-    if-ne v1, v13, :cond_26d
+    if-ne v1, v13, :cond_31
 
-    goto/16 :goto_3af
+    goto/16 :goto_13
 
-    :cond_26d
+    :cond_31
     const v2, 0x64616333
 
-    if-ne v1, v2, :cond_28f
+    if-ne v1, v2, :cond_32
 
     add-int/lit8 v1, v11, 0x8
 
@@ -1116,7 +1116,7 @@
 
     iput-object v1, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    :goto_281
+    :goto_10
     const v2, 0x616c6163
 
     const/4 v13, 0x4
@@ -1129,12 +1129,12 @@
 
     const/16 v21, 0x1
 
-    goto/16 :goto_3ab
+    goto/16 :goto_12
 
-    :cond_28f
+    :cond_32
     const v2, 0x64656333
 
-    if-ne v1, v2, :cond_2a4
+    if-ne v1, v2, :cond_33
 
     add-int/lit8 v1, v11, 0x8
 
@@ -1152,12 +1152,12 @@
 
     iput-object v1, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    goto :goto_281
+    goto :goto_10
 
-    :cond_2a4
+    :cond_33
     const v2, 0x64616334
 
-    if-ne v1, v2, :cond_2b9
+    if-ne v1, v2, :cond_34
 
     add-int/lit8 v1, v11, 0x8
 
@@ -1175,14 +1175,14 @@
 
     iput-object v1, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    goto :goto_281
+    goto :goto_10
 
-    :cond_2b9
+    :cond_34
     const v2, 0x646d6c70
 
-    if-ne v1, v2, :cond_2d9
+    if-ne v1, v2, :cond_36
 
-    if-lez v8, :cond_2c4
+    if-lez v8, :cond_35
 
     move v7, v8
 
@@ -1190,10 +1190,10 @@
 
     const/4 v9, 0x2
 
-    goto :goto_251
+    goto :goto_f
 
     .line 1818
-    :cond_2c4
+    :cond_35
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Invalid sample rate for Dolby TrueHD MLP stream: "
@@ -1216,23 +1216,23 @@
 
     throw v0
 
-    :cond_2d9
+    :cond_36
     const/4 v13, 0x0
 
     const v2, 0x64647473
 
-    if-eq v1, v2, :cond_37c
+    if-eq v1, v2, :cond_3b
 
     const v2, 0x75647473
 
-    if-ne v1, v2, :cond_2e6
+    if-ne v1, v2, :cond_37
 
-    goto/16 :goto_37c
+    goto/16 :goto_11
 
-    :cond_2e6
+    :cond_37
     const v2, 0x644f7073
 
-    if-ne v1, v2, :cond_304
+    if-ne v1, v2, :cond_38
 
     add-int/lit8 v1, v10, -0x8
 
@@ -1262,12 +1262,12 @@
 
     move-result-object v14
 
-    goto/16 :goto_250
+    goto/16 :goto_e
 
-    :cond_304
+    :cond_38
     const v2, 0x64664c61
 
-    if-ne v1, v2, :cond_33b
+    if-ne v1, v2, :cond_39
 
     add-int/lit8 v1, v10, -0xc
 
@@ -1325,9 +1325,9 @@
 
     const v19, 0x616c6163
 
-    goto/16 :goto_3f9
+    goto/16 :goto_15
 
-    :cond_33b
+    :cond_39
     const v2, 0x616c6163
 
     const/4 v13, 0x4
@@ -1338,7 +1338,7 @@
 
     const/16 v21, 0x1
 
-    if-ne v1, v2, :cond_379
+    if-ne v1, v2, :cond_3a
 
     add-int/lit8 v1, v10, -0xc
 
@@ -1397,15 +1397,15 @@
 
     move/from16 v7, v23
 
-    goto/16 :goto_3f9
+    goto/16 :goto_15
 
-    :cond_379
+    :cond_3a
     const/16 v17, 0x0
 
-    goto :goto_3ab
+    goto :goto_12
 
-    :cond_37c
-    :goto_37c
+    :cond_3b
+    :goto_11
     const v2, 0x616c6163
 
     const/4 v13, 0x4
@@ -1460,15 +1460,15 @@
 
     iput-object v1, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    :goto_3ab
+    :goto_12
     move/from16 v19, v2
 
     const/4 v2, -0x1
 
-    goto :goto_3f9
+    goto :goto_15
 
-    :cond_3af
-    :goto_3af
+    :cond_3c
+    :goto_13
     const/4 v13, 0x4
 
     const/16 v16, 0x3
@@ -1481,22 +1481,22 @@
 
     const/16 v21, 0x1
 
-    if-ne v1, v2, :cond_3bf
+    if-ne v1, v2, :cond_3d
 
     move v1, v11
 
-    goto :goto_3c3
+    goto :goto_14
 
     .line 1781
-    :cond_3bf
+    :cond_3d
     invoke-static {v0, v2, v11, v10}, Landroidx/media3/extractor/mp4/AtomParsers;->findBoxPosition(Landroidx/media3/common/util/ParsableByteArray;III)I
 
     move-result v1
 
-    :goto_3c3
+    :goto_14
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_3f9
+    if-eq v1, v2, :cond_40
 
     .line 1783
     invoke-static {v0, v1}, Landroidx/media3/extractor/mp4/AtomParsers;->parseEsdsFromParent(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;
@@ -1513,7 +1513,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_3f9
+    if-eqz v1, :cond_40
 
     const-string v14, "audio/vorbis"
 
@@ -1522,16 +1522,16 @@
 
     move-result v14
 
-    if-eqz v14, :cond_3e1
+    if-eqz v14, :cond_3e
 
     .line 1789
     invoke-static {v1}, Landroidx/media3/extractor/VorbisUtil;->parseVorbisCsdFromEsdsInitializationData([B)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v14
 
-    goto :goto_3f9
+    goto :goto_15
 
-    :cond_3e1
+    :cond_3e
     const-string v14, "audio/mp4a-latm"
 
     .line 1791
@@ -1539,7 +1539,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_3f5
+    if-eqz v14, :cond_3f
 
     .line 1795
     invoke-static {v1}, Landroidx/media3/extractor/AacUtil;->parseAudioSpecificConfig([B)Landroidx/media3/extractor/AacUtil$Config;
@@ -1560,13 +1560,13 @@
     move v9, v14
 
     .line 1800
-    :cond_3f5
+    :cond_3f
     invoke-static {v1}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v14
 
-    :cond_3f9
-    :goto_3f9
+    :cond_40
+    :goto_15
     add-int/2addr v11, v10
 
     move/from16 v1, p2
@@ -1575,15 +1575,15 @@
 
     move-object/from16 v13, p9
 
-    goto/16 :goto_1b0
+    goto/16 :goto_b
 
     .line 1871
-    :cond_402
+    :cond_41
     iget-object v0, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_452
+    if-nez v0, :cond_43
 
-    if-eqz v12, :cond_452
+    if-eqz v12, :cond_43
 
     .line 1872
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -1637,7 +1637,7 @@
 
     move-result-object v0
 
-    if-eqz v22, :cond_44c
+    if-eqz v22, :cond_42
 
     .line 1886
     invoke-static/range {v22 .. v22}, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;->access$600(Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;)J
@@ -1664,19 +1664,19 @@
     invoke-virtual {v1, v2}, Landroidx/media3/common/Format$Builder;->setPeakBitrate(I)Landroidx/media3/common/Format$Builder;
 
     .line 1890
-    :cond_44c
+    :cond_42
     invoke-virtual {v0}, Landroidx/media3/common/Format$Builder;->build()Landroidx/media3/common/Format;
 
     move-result-object v0
 
     iput-object v0, v6, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    :cond_452
+    :cond_43
     return-void
 .end method
 
 .method private static parseAv1c(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/ColorInfo;
-    .registers 16
+    .locals 15
 
     .line 1412
     new-instance v0, Landroidx/media3/common/ColorInfo$Builder;
@@ -1736,62 +1736,62 @@
 
     const/4 v9, 0x2
 
-    if-ne v4, v9, :cond_45
+    if-ne v4, v9, :cond_2
 
-    if-eqz v5, :cond_45
+    if-eqz v5, :cond_2
 
-    if-eqz v6, :cond_3a
+    if-eqz v6, :cond_0
 
     move v4, v7
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_3a
+    :cond_0
     move v4, v8
 
     .line 1424
-    :goto_3b
+    :goto_0
     invoke-virtual {v0, v4}, Landroidx/media3/common/ColorInfo$Builder;->setLumaBitdepth(I)Landroidx/media3/common/ColorInfo$Builder;
 
-    if-eqz v6, :cond_41
+    if-eqz v6, :cond_1
 
     move v8, v7
 
     .line 1425
-    :cond_41
+    :cond_1
     invoke-virtual {v0, v8}, Landroidx/media3/common/ColorInfo$Builder;->setChromaBitdepth(I)Landroidx/media3/common/ColorInfo$Builder;
 
-    goto :goto_56
+    goto :goto_3
 
-    :cond_45
-    if-gt v4, v9, :cond_56
+    :cond_2
+    if-gt v4, v9, :cond_5
 
-    if-eqz v5, :cond_4b
+    if-eqz v5, :cond_3
 
     move v4, v8
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_4b
+    :cond_3
     move v4, v2
 
     .line 1427
-    :goto_4c
+    :goto_1
     invoke-virtual {v0, v4}, Landroidx/media3/common/ColorInfo$Builder;->setLumaBitdepth(I)Landroidx/media3/common/ColorInfo$Builder;
 
-    if-eqz v5, :cond_52
+    if-eqz v5, :cond_4
 
-    goto :goto_53
+    goto :goto_2
 
-    :cond_52
+    :cond_4
     move v8, v2
 
     .line 1428
-    :goto_53
+    :goto_2
     invoke-virtual {v0, v8}, Landroidx/media3/common/ColorInfo$Builder;->setChromaBitdepth(I)Landroidx/media3/common/ColorInfo$Builder;
 
-    :cond_56
-    :goto_56
+    :cond_5
+    :goto_3
     const/16 v4, 0xd
 
     .line 1432
@@ -1809,7 +1809,7 @@
 
     const-string v8, "AtomParsers"
 
-    if-eq v6, p0, :cond_7e
+    if-eq v6, p0, :cond_6
 
     .line 1438
     new-instance p0, Ljava/lang/StringBuilder;
@@ -1836,12 +1836,12 @@
     return-object p0
 
     .line 1441
-    :cond_7e
+    :cond_6
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v6
 
-    if-eqz v6, :cond_8e
+    if-eqz v6, :cond_7
 
     const-string p0, "Unsupported obu_extension_flag"
 
@@ -1856,7 +1856,7 @@
     return-object p0
 
     .line 1445
-    :cond_8e
+    :cond_7
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v6
@@ -1864,7 +1864,7 @@
     .line 1446
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBit()V
 
-    if-eqz v6, :cond_a9
+    if-eqz v6, :cond_8
 
     .line 1448
     invoke-virtual {v1, v2}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -1873,7 +1873,7 @@
 
     const/16 v10, 0x7f
 
-    if-le v6, v10, :cond_a9
+    if-le v6, v10, :cond_8
 
     const-string p0, "Excessive obu_size"
 
@@ -1888,7 +1888,7 @@
     return-object p0
 
     .line 1453
-    :cond_a9
+    :cond_8
     invoke-virtual {v1, v3}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v6
@@ -1901,7 +1901,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_c0
+    if-eqz v10, :cond_9
 
     const-string p0, "Unsupported reduced_still_picture_header"
 
@@ -1916,12 +1916,12 @@
     return-object p0
 
     .line 1459
-    :cond_c0
+    :cond_9
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v10
 
-    if-eqz v10, :cond_d0
+    if-eqz v10, :cond_a
 
     const-string p0, "Unsupported timing_info_present_flag"
 
@@ -1936,12 +1936,12 @@
     return-object p0
 
     .line 1463
-    :cond_d0
+    :cond_a
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v10
 
-    if-eqz v10, :cond_e0
+    if-eqz v10, :cond_b
 
     const-string p0, "Unsupported initial_display_delay_present_flag"
 
@@ -1955,7 +1955,7 @@
 
     return-object p0
 
-    :cond_e0
+    :cond_b
     const/4 v8, 0x5
 
     .line 1467
@@ -1967,10 +1967,10 @@
 
     move v12, v11
 
-    :goto_e7
+    :goto_4
     const/4 v13, 0x7
 
-    if-gt v12, v10, :cond_f9
+    if-gt v12, v10, :cond_d
 
     .line 1469
     invoke-virtual {v1, v7}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -1980,18 +1980,18 @@
 
     move-result v14
 
-    if-le v14, v13, :cond_f6
+    if-le v14, v13, :cond_c
 
     .line 1472
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBit()V
 
-    :cond_f6
+    :cond_c
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_e7
+    goto :goto_4
 
     .line 1475
-    :cond_f9
+    :cond_d
     invoke-virtual {v1, v5}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v7
@@ -2016,13 +2016,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_112
+    if-eqz v5, :cond_e
 
     .line 1480
     invoke-virtual {v1, v13}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 1482
-    :cond_112
+    :cond_e
     invoke-virtual {v1, v13}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 1483
@@ -2030,50 +2030,50 @@
 
     move-result v5
 
-    if-eqz v5, :cond_11e
+    if-eqz v5, :cond_f
 
     .line 1485
     invoke-virtual {v1, v9}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 1488
-    :cond_11e
+    :cond_f
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v7
 
-    if-eqz v7, :cond_126
+    if-eqz v7, :cond_10
 
     move v7, v9
 
-    goto :goto_12a
+    goto :goto_5
 
     .line 1490
-    :cond_126
+    :cond_10
     invoke-virtual {v1, p0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v7
 
-    :goto_12a
-    if-lez v7, :cond_135
+    :goto_5
+    if-lez v7, :cond_11
 
     .line 1492
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v7
 
-    if-nez v7, :cond_135
+    if-nez v7, :cond_11
 
     .line 1493
     invoke-virtual {v1, p0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_135
-    if-eqz v5, :cond_13a
+    :cond_11
+    if-eqz v5, :cond_12
 
     .line 1497
     invoke-virtual {v1, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 1499
-    :cond_13a
+    :cond_12
     invoke-virtual {v1, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 1501
@@ -2081,32 +2081,32 @@
 
     move-result v3
 
-    if-ne v6, v9, :cond_148
+    if-ne v6, v9, :cond_13
 
-    if-eqz v3, :cond_148
+    if-eqz v3, :cond_13
 
     .line 1503
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBit()V
 
-    :cond_148
-    if-eq v6, p0, :cond_151
+    :cond_13
+    if-eq v6, p0, :cond_14
 
     .line 1506
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_151
+    if-eqz v3, :cond_14
 
     move v11, p0
 
     .line 1508
-    :cond_151
+    :cond_14
     invoke-virtual {v1}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_188
+    if-eqz v3, :cond_17
 
     .line 1509
     invoke-virtual {v1, v2}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
@@ -2123,26 +2123,26 @@
 
     move-result v2
 
-    if-nez v11, :cond_16d
+    if-nez v11, :cond_15
 
-    if-ne v3, p0, :cond_16d
+    if-ne v3, p0, :cond_15
 
-    if-ne v5, v4, :cond_16d
+    if-ne v5, v4, :cond_15
 
-    if-nez v2, :cond_16d
+    if-nez v2, :cond_15
 
     move v1, p0
 
-    goto :goto_171
+    goto :goto_6
 
     .line 1518
-    :cond_16d
+    :cond_15
     invoke-virtual {v1, p0}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v1
 
     .line 1520
-    :goto_171
+    :goto_6
     invoke-static {v3}, Landroidx/media3/common/ColorInfo;->isoColorPrimariesToColorSpace(I)I
 
     move-result v2
@@ -2151,15 +2151,15 @@
 
     move-result-object v2
 
-    if-ne v1, p0, :cond_17c
+    if-ne v1, p0, :cond_16
 
-    goto :goto_17d
+    goto :goto_7
 
-    :cond_17c
+    :cond_16
     move p0, v9
 
     .line 1521
-    :goto_17d
+    :goto_7
     invoke-virtual {v2, p0}, Landroidx/media3/common/ColorInfo$Builder;->setColorRange(I)Landroidx/media3/common/ColorInfo$Builder;
 
     move-result-object p0
@@ -2173,7 +2173,7 @@
     invoke-virtual {p0, v1}, Landroidx/media3/common/ColorInfo$Builder;->setColorTransfer(I)Landroidx/media3/common/ColorInfo$Builder;
 
     .line 1525
-    :cond_188
+    :cond_17
     invoke-virtual {v0}, Landroidx/media3/common/ColorInfo$Builder;->build()Landroidx/media3/common/ColorInfo;
 
     move-result-object p0
@@ -2182,7 +2182,7 @@
 .end method
 
 .method static parseCommonEncryptionSinfFromParent(Landroidx/media3/common/util/ParsableByteArray;II)Landroid/util/Pair;
-    .registers 14
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2217,10 +2217,10 @@
 
     move-object v6, v4
 
-    :goto_9
+    :goto_0
     sub-int v8, v0, p1
 
-    if-ge v8, p2, :cond_3d
+    if-ge v8, p2, :cond_3
 
     .line 2014
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -2237,7 +2237,7 @@
 
     const v10, 0x66726d61
 
-    if-ne v9, v10, :cond_26
+    if-ne v9, v10, :cond_0
 
     .line 2018
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -2248,12 +2248,12 @@
 
     move-result-object v6
 
-    goto :goto_3b
+    goto :goto_1
 
-    :cond_26
+    :cond_0
     const v10, 0x7363686d
 
-    if-ne v9, v10, :cond_34
+    if-ne v9, v10, :cond_1
 
     const/4 v4, 0x4
 
@@ -2265,24 +2265,24 @@
 
     move-result-object v4
 
-    goto :goto_3b
+    goto :goto_1
 
-    :cond_34
+    :cond_1
     const v10, 0x73636869
 
-    if-ne v9, v10, :cond_3b
+    if-ne v9, v10, :cond_2
 
     move v5, v0
 
     move v7, v8
 
-    :cond_3b
-    :goto_3b
+    :cond_2
+    :goto_1
     add-int/2addr v0, v8
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_3d
+    :cond_3
     const-string p1, "cenc"
 
     .line 2030
@@ -2290,7 +2290,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_5f
+    if-nez p1, :cond_5
 
     const-string p1, "cbc1"
 
@@ -2299,7 +2299,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_5f
+    if-nez p1, :cond_5
 
     const-string p1, "cens"
 
@@ -2308,7 +2308,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_5f
+    if-nez p1, :cond_5
 
     const-string p1, "cbcs"
 
@@ -2317,42 +2317,42 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_4
 
-    goto :goto_5f
+    goto :goto_2
 
-    :cond_5e
+    :cond_4
     return-object v3
 
-    :cond_5f
-    :goto_5f
+    :cond_5
+    :goto_2
     const/4 p1, 0x1
 
-    if-eqz v6, :cond_64
+    if-eqz v6, :cond_6
 
     move p2, p1
 
-    goto :goto_65
+    goto :goto_3
 
-    :cond_64
+    :cond_6
     move p2, v2
 
-    :goto_65
+    :goto_3
     const-string v0, "frma atom is mandatory"
 
     .line 2034
     invoke-static {p2, v0}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
 
-    if-eq v5, v1, :cond_6e
+    if-eq v5, v1, :cond_7
 
     move p2, p1
 
-    goto :goto_6f
+    goto :goto_4
 
-    :cond_6e
+    :cond_7
     move p2, v2
 
-    :goto_6f
+    :goto_4
     const-string v0, "schi atom is mandatory"
 
     .line 2035
@@ -2363,11 +2363,11 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_7b
+    if-eqz p0, :cond_8
 
     move v2, p1
 
-    :cond_7b
+    :cond_8
     const-string p1, "tenc atom is mandatory"
 
     .line 2041
@@ -2388,7 +2388,7 @@
 .end method
 
 .method private static parseEdts(Landroidx/media3/extractor/mp4/Atom$ContainerAtom;)Landroid/util/Pair;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2406,14 +2406,14 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 1560
-    :cond_b
+    :cond_0
     iget-object p0, p0, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
     const/16 v0, 0x8
@@ -2444,45 +2444,45 @@
 
     const/4 v4, 0x0
 
-    :goto_23
-    if-ge v4, v1, :cond_56
+    :goto_0
+    if-ge v4, v1, :cond_4
 
     const/4 v5, 0x1
 
-    if-ne v0, v5, :cond_2d
+    if-ne v0, v5, :cond_1
 
     .line 1569
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedLongToLong()J
 
     move-result-wide v6
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_2d
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v6
 
-    :goto_31
+    :goto_1
     aput-wide v6, v2, v4
 
-    if-ne v0, v5, :cond_3a
+    if-ne v0, v5, :cond_2
 
     .line 1570
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
 
     move-result-wide v6
 
-    goto :goto_3f
+    goto :goto_2
 
-    :cond_3a
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result v6
 
     int-to-long v6, v6
 
-    :goto_3f
+    :goto_2
     aput-wide v6, v3, v4
 
     .line 1571
@@ -2490,7 +2490,7 @@
 
     move-result v6
 
-    if-ne v6, v5, :cond_4e
+    if-ne v6, v5, :cond_3
 
     const/4 v5, 0x2
 
@@ -2499,10 +2499,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
     .line 1574
-    :cond_4e
+    :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Unsupported media rate."
@@ -2512,7 +2512,7 @@
     throw p0
 
     .line 1578
-    :cond_56
+    :cond_4
     invoke-static {v2, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object p0
@@ -2521,7 +2521,7 @@
 .end method
 
 .method private static parseEsdsFromParent(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;
-    .registers 15
+    .locals 13
 
     add-int/lit8 p1, p1, 0x8
 
@@ -2552,15 +2552,15 @@
 
     and-int/lit16 v3, v2, 0x80
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_0
 
     .line 1934
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    :cond_1d
+    :cond_0
     and-int/lit8 v3, v2, 0x40
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_1
 
     .line 1937
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -2569,16 +2569,16 @@
 
     invoke-virtual {p0, v3}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    :cond_28
+    :cond_1
     and-int/lit8 v2, v2, 0x20
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_2
 
     .line 1940
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 1944
-    :cond_2f
+    :cond_2
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 1945
@@ -2601,7 +2601,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_89
+    if-nez v1, :cond_6
 
     const-string v1, "audio/vnd.dts"
 
@@ -2610,7 +2610,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_89
+    if-nez v1, :cond_6
 
     const-string v1, "audio/vnd.dts.hd"
 
@@ -2619,12 +2619,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_3
 
-    goto :goto_89
+    goto :goto_2
 
     .line 1960
-    :cond_56
+    :cond_3
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 1961
@@ -2662,28 +2662,28 @@
 
     const-wide/16 v9, -0x1
 
-    if-lez p1, :cond_7a
+    if-lez p1, :cond_4
 
     move-wide v11, v4
 
-    goto :goto_7b
+    goto :goto_0
 
-    :cond_7a
+    :cond_4
     move-wide v11, v9
 
-    :goto_7b
+    :goto_0
     cmp-long p1, v0, v7
 
-    if-lez p1, :cond_81
+    if-lez p1, :cond_5
 
     move-wide v7, v0
 
-    goto :goto_82
+    goto :goto_1
 
-    :cond_81
+    :cond_5
     move-wide v7, v9
 
-    :goto_82
+    :goto_1
     move-object v2, p0
 
     move-object v4, v6
@@ -2696,8 +2696,8 @@
     return-object p0
 
     .line 1953
-    :cond_89
-    :goto_89
+    :cond_6
+    :goto_2
     new-instance p0, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;
 
     const/4 v4, 0x0
@@ -2714,7 +2714,7 @@
 .end method
 
 .method private static parseExpandableClassSize(Landroidx/media3/common/util/ParsableByteArray;)I
-    .registers 4
+    .locals 3
 
     .line 2111
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -2723,12 +2723,12 @@
 
     and-int/lit8 v1, v0, 0x7f
 
-    :goto_6
+    :goto_0
     const/16 v2, 0x80
 
     and-int/2addr v0, v2
 
-    if-ne v0, v2, :cond_15
+    if-ne v0, v2, :cond_0
 
     .line 2114
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -2741,14 +2741,14 @@
 
     or-int/2addr v1, v2
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     return v1
 .end method
 
 .method private static parseHdlr(Landroidx/media3/common/util/ParsableByteArray;)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x10
 
@@ -2764,7 +2764,7 @@
 .end method
 
 .method private static parseIlst(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/common/Metadata;
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x8
 
@@ -2777,49 +2777,49 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 803
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v1
 
-    if-ge v1, p1, :cond_1a
+    if-ge v1, p1, :cond_1
 
     .line 804
     invoke-static {p0}, Landroidx/media3/extractor/mp4/MetadataUtil;->parseIlstElement(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/Metadata$Entry;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 806
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_a
+    goto :goto_0
 
     .line 809
-    :cond_1a
+    :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x0
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_22
+    :cond_2
     new-instance p0, Landroidx/media3/common/Metadata;
 
     invoke-direct {p0, v0}, Landroidx/media3/common/Metadata;-><init>(Ljava/util/List;)V
 
-    :goto_27
+    :goto_1
     return-object p0
 .end method
 
 .method private static parseMdhd(Landroidx/media3/common/util/ParsableByteArray;)Landroid/util/Pair;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2847,17 +2847,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     move v2, v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/16 v2, 0x10
 
     .line 930
-    :goto_13
+    :goto_0
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 931
@@ -2865,12 +2865,12 @@
 
     move-result-wide v2
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1
 
     const/4 v0, 0x4
 
     .line 932
-    :cond_1d
+    :cond_1
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 933
@@ -2936,7 +2936,7 @@
 .end method
 
 .method public static parseMdtaFromMeta(Landroidx/media3/extractor/mp4/Atom$ContainerAtom;)Landroidx/media3/common/Metadata;
-    .registers 11
+    .locals 10
 
     const v0, 0x68646c72    # 4.3148E24f
 
@@ -2961,11 +2961,11 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_6
 
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_6
 
-    if-eqz p0, :cond_a2
+    if-eqz p0, :cond_6
 
     .line 226
     iget-object v0, v0, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
@@ -2977,12 +2977,12 @@
 
     const v3, 0x6d647461
 
-    if-eq v0, v3, :cond_29
+    if-eq v0, v3, :cond_0
 
-    goto/16 :goto_a2
+    goto/16 :goto_3
 
     .line 235
-    :cond_29
+    :cond_0
     iget-object v0, v1, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
     const/16 v1, 0xc
@@ -3000,10 +3000,10 @@
 
     const/4 v4, 0x0
 
-    :goto_37
+    :goto_0
     const/16 v5, 0x8
 
-    if-ge v4, v1, :cond_4d
+    if-ge v4, v1, :cond_1
 
     .line 240
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -3026,10 +3026,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_37
+    goto :goto_0
 
     .line 247
-    :cond_4d
+    :cond_1
     iget-object p0, p0, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
     .line 248
@@ -3041,12 +3041,12 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 250
-    :goto_57
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v4
 
-    if-le v4, v5, :cond_96
+    if-le v4, v5, :cond_4
 
     .line 251
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -3065,9 +3065,9 @@
 
     add-int/lit8 v7, v7, -0x1
 
-    if-ltz v7, :cond_7d
+    if-ltz v7, :cond_2
 
-    if-ge v7, v1, :cond_7d
+    if-ge v7, v1, :cond_2
 
     .line 255
     aget-object v7, v3, v7
@@ -3079,15 +3079,15 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_91
+    if-eqz v7, :cond_3
 
     .line 260
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_91
+    goto :goto_2
 
     .line 263
-    :cond_7d
+    :cond_2
     new-instance v8, Ljava/lang/StringBuilder;
 
     const-string v9, "Skipped metadata with unknown key index: "
@@ -3106,37 +3106,37 @@
 
     invoke-static {v8, v7}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_91
-    :goto_91
+    :cond_3
+    :goto_2
     add-int/2addr v4, v6
 
     .line 265
     invoke-virtual {p0, v4}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_57
+    goto :goto_1
 
     .line 267
-    :cond_96
+    :cond_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_9d
+    if-eqz p0, :cond_5
 
-    goto :goto_a2
+    goto :goto_3
 
-    :cond_9d
+    :cond_5
     new-instance v2, Landroidx/media3/common/Metadata;
 
     invoke-direct {v2, v0}, Landroidx/media3/common/Metadata;-><init>(Ljava/util/List;)V
 
-    :cond_a2
-    :goto_a2
+    :cond_6
+    :goto_3
     return-object v2
 .end method
 
 .method private static parseMetaDataSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIILandroidx/media3/extractor/mp4/AtomParsers$StsdData;)V
-    .registers 5
+    .locals 0
 
     add-int/lit8 p2, p2, 0x8
 
@@ -3147,7 +3147,7 @@
 
     const p2, 0x6d657474
 
-    if-ne p1, p2, :cond_28
+    if-ne p1, p2, :cond_0
 
     .line 1539
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readNullTerminatedString()Ljava/lang/String;
@@ -3157,7 +3157,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_28
+    if-eqz p0, :cond_0
 
     .line 1542
     new-instance p1, Landroidx/media3/common/Format$Builder;
@@ -3178,12 +3178,12 @@
 
     iput-object p0, p4, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    :cond_28
+    :cond_0
     return-void
 .end method
 
 .method public static parseMvhd(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/container/Mp4TimestampData;
-    .registers 12
+    .locals 11
 
     const/16 v0, 0x8
 
@@ -3200,7 +3200,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 204
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
@@ -3212,10 +3212,10 @@
 
     move-result-wide v2
 
-    goto :goto_20
+    goto :goto_0
 
     .line 207
-    :cond_18
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
 
     move-result-wide v0
@@ -3225,7 +3225,7 @@
 
     move-result-wide v2
 
-    :goto_20
+    :goto_0
     move-wide v5, v0
 
     move-wide v7, v2
@@ -3246,7 +3246,7 @@
 .end method
 
 .method private static parsePaspFromParent(Landroidx/media3/common/util/ParsableByteArray;I)F
-    .registers 2
+    .locals 0
 
     add-int/lit8 p1, p1, 0x8
 
@@ -3273,14 +3273,14 @@
 .end method
 
 .method private static parseProjFromParent(Landroidx/media3/common/util/ParsableByteArray;II)[B
-    .registers 7
+    .locals 4
 
     add-int/lit8 v0, p1, 0x8
 
-    :goto_2
+    :goto_0
     sub-int v1, v0, p1
 
-    if-ge v1, p2, :cond_22
+    if-ge v1, p2, :cond_1
 
     .line 2098
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -3297,7 +3297,7 @@
 
     const v3, 0x70726f6a
 
-    if-ne v2, v3, :cond_20
+    if-ne v2, v3, :cond_0
 
     .line 2102
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -3312,19 +3312,19 @@
 
     return-object p0
 
-    :cond_20
+    :cond_0
     add-int/2addr v0, v1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static parseSampleEntryEncryptionData(Landroidx/media3/common/util/ParsableByteArray;II)Landroid/util/Pair;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3348,10 +3348,10 @@
 
     move-result v0
 
-    :goto_4
+    :goto_0
     sub-int v1, v0, p1
 
-    if-ge v1, p2, :cond_2b
+    if-ge v1, p2, :cond_2
 
     .line 1988
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -3361,16 +3361,16 @@
 
     move-result v1
 
-    if-lez v1, :cond_13
+    if-lez v1, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_14
+    :goto_1
     const-string v3, "childAtomSize must be positive"
 
     .line 1990
@@ -3383,39 +3383,39 @@
 
     const v3, 0x73696e66
 
-    if-ne v2, v3, :cond_29
+    if-ne v2, v3, :cond_1
 
     .line 1995
     invoke-static {p0, v0, v1}, Landroidx/media3/extractor/mp4/AtomParsers;->parseCommonEncryptionSinfFromParent(Landroidx/media3/common/util/ParsableByteArray;II)Landroid/util/Pair;
 
     move-result-object v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_1
 
     return-object v2
 
-    :cond_29
+    :cond_1
     add-int/2addr v0, v1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static parseSchiFromParent(Landroidx/media3/common/util/ParsableByteArray;IILjava/lang/String;)Landroidx/media3/extractor/mp4/TrackEncryptionBox;
-    .registers 15
+    .locals 11
 
     add-int/lit8 v0, p1, 0x8
 
-    :goto_2
+    :goto_0
     sub-int v1, v0, p1
 
     const/4 v2, 0x0
 
-    if-ge v1, p2, :cond_64
+    if-ge v1, p2, :cond_4
 
     .line 2053
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -3432,7 +3432,7 @@
 
     const v4, 0x74656e63
 
-    if-ne v3, v4, :cond_62
+    if-ne v3, v4, :cond_3
 
     .line 2057
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -3451,7 +3451,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_0
 
     .line 2063
     invoke-virtual {p0, p2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
@@ -3460,10 +3460,10 @@
 
     move v9, v8
 
-    goto :goto_38
+    goto :goto_1
 
     .line 2065
-    :cond_2c
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p1
@@ -3479,22 +3479,22 @@
     move v8, v1
 
     .line 2069
-    :goto_38
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p1
 
-    if-ne p1, p2, :cond_40
+    if-ne p1, p2, :cond_1
 
     move v4, p2
 
-    goto :goto_41
+    goto :goto_2
 
-    :cond_40
+    :cond_1
     move v4, v0
 
     .line 2070
-    :goto_41
+    :goto_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v6
@@ -3506,9 +3506,9 @@
     .line 2072
     invoke-virtual {p0, v7, v0, p1}, Landroidx/media3/common/util/ParsableByteArray;->readBytes([BII)V
 
-    if-eqz v4, :cond_59
+    if-eqz v4, :cond_2
 
-    if-nez v6, :cond_59
+    if-nez v6, :cond_2
 
     .line 2075
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -3521,7 +3521,7 @@
     .line 2077
     invoke-virtual {p0, v2, v0, p1}, Landroidx/media3/common/util/ParsableByteArray;->readBytes([BII)V
 
-    :cond_59
+    :cond_2
     move-object v10, v2
 
     .line 2079
@@ -3535,17 +3535,17 @@
 
     return-object p0
 
-    :cond_62
+    :cond_3
     add-int/2addr v0, v1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_64
+    :cond_4
     return-object v2
 .end method
 
 .method private static parseStbl(Landroidx/media3/extractor/mp4/Track;Landroidx/media3/extractor/mp4/Atom$ContainerAtom;Landroidx/media3/extractor/GaplessInfoHolder;)Landroidx/media3/extractor/mp4/TrackSampleTable;
-    .registers 40
+    .locals 37
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -3565,7 +3565,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_0
 
     .line 398
     new-instance v5, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;
@@ -3574,9 +3574,9 @@
 
     invoke-direct {v5, v3, v6}, Landroidx/media3/extractor/mp4/AtomParsers$StszSampleSizeBox;-><init>(Landroidx/media3/extractor/mp4/Atom$LeafAtom;Landroidx/media3/common/Format;)V
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const v3, 0x73747a32
 
     .line 400
@@ -3584,7 +3584,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_53d
+    if-eqz v3, :cond_32
 
     .line 405
     new-instance v5, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;
@@ -3592,14 +3592,14 @@
     invoke-direct {v5, v3}, Landroidx/media3/extractor/mp4/AtomParsers$Stz2SampleSizeBox;-><init>(Landroidx/media3/extractor/mp4/Atom$LeafAtom;)V
 
     .line 408
-    :goto_25
+    :goto_0
     invoke-interface {v5}, Landroidx/media3/extractor/mp4/AtomParsers$SampleSizeBox;->getSampleCount()I
 
     move-result v3
 
     const/4 v6, 0x0
 
-    if-nez v3, :cond_40
+    if-nez v3, :cond_1
 
     .line 410
     new-instance v9, Landroidx/media3/extractor/mp4/TrackSampleTable;
@@ -3624,7 +3624,7 @@
 
     return-object v9
 
-    :cond_40
+    :cond_1
     const v7, 0x7374636f
 
     .line 422
@@ -3634,7 +3634,7 @@
 
     const/4 v8, 0x1
 
-    if-nez v7, :cond_59
+    if-nez v7, :cond_2
 
     const v7, 0x636f3634
 
@@ -3651,13 +3651,13 @@
 
     move v9, v8
 
-    goto :goto_5a
+    goto :goto_1
 
-    :cond_59
+    :cond_2
     move v9, v6
 
     .line 427
-    :goto_5a
+    :goto_1
     iget-object v7, v7, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
     const v10, 0x73747363
@@ -3697,17 +3697,17 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_86
+    if-eqz v12, :cond_3
 
     .line 434
     iget-object v12, v12, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_86
+    :cond_3
     const/4 v12, 0x0
 
-    :goto_87
+    :goto_2
     const v13, 0x63747473
 
     .line 436
@@ -3715,18 +3715,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_4
 
     .line 437
     iget-object v0, v0, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
-    goto :goto_94
+    goto :goto_3
 
-    :cond_93
+    :cond_4
     const/4 v0, 0x0
 
     .line 440
-    :goto_94
+    :goto_3
     new-instance v13, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;
 
     invoke-direct {v13, v10, v7, v9}, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;-><init>(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/common/util/ParsableByteArray;Z)V
@@ -3753,7 +3753,7 @@
 
     move-result v14
 
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_5
 
     .line 453
     invoke-virtual {v0, v7}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -3763,15 +3763,15 @@
 
     move-result v15
 
-    goto :goto_b6
+    goto :goto_4
 
-    :cond_b5
+    :cond_5
     move v15, v6
 
-    :goto_b6
+    :goto_4
     const/4 v4, -0x1
 
-    if-eqz v12, :cond_cd
+    if-eqz v12, :cond_7
 
     .line 460
     invoke-virtual {v12, v7}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -3781,7 +3781,7 @@
 
     move-result v7
 
-    if-lez v7, :cond_c9
+    if-lez v7, :cond_6
 
     .line 463
     invoke-virtual {v12}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
@@ -3790,22 +3790,22 @@
 
     add-int/lit8 v16, v16, -0x1
 
-    goto :goto_d0
+    goto :goto_5
 
-    :cond_c9
+    :cond_6
     move/from16 v16, v4
 
     const/4 v12, 0x0
 
-    goto :goto_d0
+    goto :goto_5
 
-    :cond_cd
+    :cond_7
     move/from16 v16, v4
 
     move v7, v6
 
     .line 471
-    :goto_d0
+    :goto_5
     invoke-interface {v5}, Landroidx/media3/extractor/mp4/AtomParsers$SampleSizeBox;->getFixedSampleSize()I
 
     move-result v6
@@ -3815,7 +3815,7 @@
 
     iget-object v8, v8, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eq v6, v4, :cond_fc
+    if-eq v6, v4, :cond_9
 
     const-string v4, "audio/raw"
 
@@ -3824,7 +3824,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_f2
+    if-nez v4, :cond_8
 
     const-string v4, "audio/g711-mlaw"
 
@@ -3833,7 +3833,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_f2
+    if-nez v4, :cond_8
 
     const-string v4, "audio/g711-alaw"
 
@@ -3842,28 +3842,28 @@
 
     move-result v4
 
-    if-eqz v4, :cond_fc
+    if-eqz v4, :cond_9
 
-    :cond_f2
-    if-nez v9, :cond_fc
+    :cond_8
+    if-nez v9, :cond_9
 
-    if-nez v15, :cond_fc
+    if-nez v15, :cond_9
 
-    if-nez v7, :cond_fc
+    if-nez v7, :cond_9
 
     move/from16 p1, v7
 
     const/4 v4, 0x1
 
-    goto :goto_ff
+    goto :goto_6
 
-    :cond_fc
+    :cond_9
     move/from16 p1, v7
 
     const/4 v4, 0x0
 
-    :goto_ff
-    if-eqz v4, :cond_137
+    :goto_6
+    if-eqz v4, :cond_b
 
     .line 491
     iget v0, v13, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->length:I
@@ -3876,12 +3876,12 @@
     new-array v4, v4, [I
 
     .line 493
-    :goto_109
+    :goto_7
     invoke-virtual {v13}, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->moveNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_11c
+    if-eqz v5, :cond_a
 
     .line 494
     iget v5, v13, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->index:I
@@ -3897,9 +3897,9 @@
 
     aput v9, v4, v5
 
-    goto :goto_109
+    goto :goto_7
 
-    :cond_11c
+    :cond_a
     int-to-long v9, v14
 
     .line 498
@@ -3941,10 +3941,10 @@
 
     move-object v12, v9
 
-    goto/16 :goto_2ab
+    goto/16 :goto_13
 
     .line 507
-    :cond_137
+    :cond_b
     new-array v4, v3, [J
 
     .line 508
@@ -3984,12 +3984,12 @@
 
     move/from16 v9, p1
 
-    :goto_157
+    :goto_8
     move/from16 p1, v36
 
     const-string v10, "AtomParsers"
 
-    if-ge v1, v3, :cond_21b
+    if-ge v1, v3, :cond_14
 
     move-wide/from16 v28, v27
 
@@ -3997,15 +3997,15 @@
 
     const/16 v22, 0x1
 
-    :goto_163
-    if-nez v27, :cond_180
+    :goto_9
+    if-nez v27, :cond_c
 
     .line 517
     invoke-virtual {v13}, Landroidx/media3/extractor/mp4/AtomParsers$ChunkIterator;->moveNext()Z
 
     move-result v22
 
-    if-eqz v22, :cond_180
+    if-eqz v22, :cond_c
 
     move/from16 v30, v14
 
@@ -4029,16 +4029,16 @@
 
     move/from16 v3, v32
 
-    goto :goto_163
+    goto :goto_9
 
-    :cond_180
+    :cond_c
     move/from16 v32, v3
 
     move/from16 v30, v14
 
     move/from16 v31, v15
 
-    if-nez v22, :cond_1a4
+    if-nez v22, :cond_d
 
     const-string v2, "Unexpected end of chunk data"
 
@@ -4071,15 +4071,15 @@
 
     move/from16 v1, v27
 
-    goto/16 :goto_223
+    goto/16 :goto_d
 
-    :cond_1a4
-    if-eqz v0, :cond_1b7
+    :cond_d
+    if-eqz v0, :cond_f
 
-    :goto_1a6
-    if-nez v23, :cond_1b5
+    :goto_a
+    if-nez v23, :cond_e
 
-    if-lez v16, :cond_1b5
+    if-lez v16, :cond_e
 
     .line 534
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
@@ -4093,12 +4093,12 @@
 
     add-int/lit8 v16, v16, -0x1
 
-    goto :goto_1a6
+    goto :goto_a
 
-    :cond_1b5
+    :cond_e
     add-int/lit8 v23, v23, -0x1
 
-    :cond_1b7
+    :cond_f
     move/from16 v3, v21
 
     .line 546
@@ -4111,11 +4111,11 @@
 
     aput v10, v6, v1
 
-    if-le v10, v11, :cond_1c4
+    if-le v10, v11, :cond_10
 
     move v11, v10
 
-    :cond_1c4
+    :cond_10
     int-to-long v14, v3
 
     add-long v14, v25, v14
@@ -4123,20 +4123,20 @@
     .line 551
     aput-wide v14, v7, v1
 
-    if-nez v12, :cond_1cd
+    if-nez v12, :cond_11
 
     const/4 v10, 0x1
 
-    goto :goto_1ce
+    goto :goto_b
 
-    :cond_1cd
+    :cond_11
     const/4 v10, 0x0
 
     .line 554
-    :goto_1ce
+    :goto_b
     aput v10, v8, v1
 
-    if-ne v1, v2, :cond_1e4
+    if-ne v1, v2, :cond_12
 
     const/4 v10, 0x1
 
@@ -4145,7 +4145,7 @@
 
     add-int/lit8 v9, v9, -0x1
 
-    if-lez v9, :cond_1e4
+    if-lez v9, :cond_12
 
     .line 559
     invoke-static {v12}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4160,7 +4160,7 @@
 
     sub-int/2addr v2, v10
 
-    :cond_1e4
+    :cond_12
     move v15, v2
 
     move v10, v3
@@ -4173,9 +4173,9 @@
 
     add-int/lit8 v2, v30, -0x1
 
-    if-nez v2, :cond_1fc
+    if-nez v2, :cond_13
 
-    if-lez p1, :cond_1fc
+    if-lez p1, :cond_13
 
     .line 567
     invoke-virtual/range {v24 .. v24}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
@@ -4189,14 +4189,14 @@
 
     add-int/lit8 v14, p1, -0x1
 
-    goto :goto_1ff
+    goto :goto_c
 
-    :cond_1fc
+    :cond_13
     move v3, v14
 
     move/from16 v14, p1
 
-    :goto_1ff
+    :goto_c
     move/from16 p1, v2
 
     .line 578
@@ -4226,9 +4226,9 @@
 
     move/from16 v14, p1
 
-    goto/16 :goto_157
+    goto/16 :goto_8
 
-    :cond_21b
+    :cond_14
     move/from16 v32, v3
 
     move/from16 v30, v14
@@ -4237,66 +4237,66 @@
 
     move/from16 v1, v22
 
-    :goto_223
+    :goto_d
     int-to-long v12, v2
 
     add-long v12, v25, v12
 
-    if-eqz v0, :cond_238
+    if-eqz v0, :cond_16
 
-    :goto_228
-    if-lez v16, :cond_238
+    :goto_e
+    if-lez v16, :cond_16
 
     .line 588
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result v2
 
-    if-eqz v2, :cond_232
+    if-eqz v2, :cond_15
 
     const/4 v0, 0x0
 
-    goto :goto_239
+    goto :goto_f
 
     .line 592
-    :cond_232
+    :cond_15
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     add-int/lit8 v16, v16, -0x1
 
-    goto :goto_228
+    goto :goto_e
 
-    :cond_238
+    :cond_16
     const/4 v0, 0x1
 
-    :goto_239
-    if-nez v9, :cond_24b
+    :goto_f
+    if-nez v9, :cond_18
 
-    if-nez v30, :cond_24b
+    if-nez v30, :cond_18
 
-    if-nez v1, :cond_24b
+    if-nez v1, :cond_18
 
-    if-nez p1, :cond_24b
+    if-nez p1, :cond_18
 
     move/from16 v2, v23
 
-    if-nez v2, :cond_24d
+    if-nez v2, :cond_19
 
-    if-nez v0, :cond_248
+    if-nez v0, :cond_17
 
-    goto :goto_24d
+    goto :goto_10
 
-    :cond_248
+    :cond_17
     move-object/from16 v14, p0
 
-    goto :goto_2a4
+    goto :goto_12
 
-    :cond_24b
+    :cond_18
     move/from16 v2, v23
 
     .line 602
-    :cond_24d
-    :goto_24d
+    :cond_19
+    :goto_10
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v14, "Inconsistent stbl box for track "
@@ -4365,17 +4365,17 @@
 
     move-result-object v1
 
-    if-nez v0, :cond_297
+    if-nez v0, :cond_1a
 
     const-string v0, ", ctts invalid"
 
-    goto :goto_299
+    goto :goto_11
 
-    :cond_297
+    :cond_1a
     const-string v0, ""
 
     .line 616
-    :goto_299
+    :goto_11
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -4387,7 +4387,7 @@
     .line 602
     invoke-static {v10, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_2a4
+    :goto_12
     move v0, v3
 
     move-object v2, v4
@@ -4402,7 +4402,7 @@
 
     move-object v13, v8
 
-    :goto_2ab
+    :goto_13
     const-wide/32 v7, 0xf4240
 
     .line 619
@@ -4419,7 +4419,7 @@
 
     const-wide/32 v10, 0xf4240
 
-    if-nez v1, :cond_2cc
+    if-nez v1, :cond_1b
 
     .line 622
     iget-wide v0, v14, Landroidx/media3/extractor/mp4/Track;->timescale:J
@@ -4442,24 +4442,24 @@
     return-object v9
 
     .line 634
-    :cond_2cc
+    :cond_1b
     iget-object v1, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
 
     array-length v1, v1
 
     const/4 v5, 0x1
 
-    if-ne v1, v5, :cond_36b
+    if-ne v1, v5, :cond_1d
 
     iget v1, v14, Landroidx/media3/extractor/mp4/Track;->type:I
 
-    if-ne v1, v5, :cond_36b
+    if-ne v1, v5, :cond_1d
 
     array-length v1, v12
 
     const/4 v5, 0x2
 
-    if-lt v1, v5, :cond_36b
+    if-lt v1, v5, :cond_1d
 
     .line 637
     iget-object v1, v14, Landroidx/media3/extractor/mp4/Track;->editListMediaTimes:[J
@@ -4511,7 +4511,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_36d
+    if-eqz v5, :cond_1e
 
     sub-long v6, v15, v23
 
@@ -4563,22 +4563,22 @@
 
     cmp-long v8, v4, v6
 
-    if-nez v8, :cond_335
+    if-nez v8, :cond_1c
 
     cmp-long v8, v0, v6
 
-    if-eqz v8, :cond_36f
+    if-eqz v8, :cond_1f
 
-    :cond_335
+    :cond_1c
     const-wide/32 v6, 0x7fffffff
 
     cmp-long v8, v4, v6
 
-    if-gtz v8, :cond_36f
+    if-gtz v8, :cond_1f
 
     cmp-long v6, v0, v6
 
-    if-gtz v6, :cond_36f
+    if-gtz v6, :cond_1f
 
     long-to-int v4, v4
 
@@ -4632,21 +4632,21 @@
 
     return-object v9
 
-    :cond_36b
+    :cond_1d
     move/from16 v25, v0
 
-    :cond_36d
+    :cond_1e
     move/from16 p1, v4
 
     .line 664
-    :cond_36f
+    :cond_1f
     iget-object v0, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
 
     array-length v0, v0
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_3bc
+    if-ne v0, v1, :cond_21
 
     iget-object v0, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
 
@@ -4658,7 +4658,7 @@
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_3bc
+    if-nez v0, :cond_21
 
     .line 668
     iget-object v0, v14, Landroidx/media3/extractor/mp4/Track;->editListMediaTimes:[J
@@ -4674,10 +4674,10 @@
     const/4 v6, 0x0
 
     .line 669
-    :goto_38b
+    :goto_14
     array-length v0, v12
 
-    if-ge v6, v0, :cond_3a2
+    if-ge v6, v0, :cond_20
 
     .line 670
     aget-wide v0, v12, v6
@@ -4699,9 +4699,9 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_38b
+    goto :goto_14
 
-    :cond_3a2
+    :cond_20
     sub-long v17, v15, v4
 
     const-wide/32 v19, 0xf4240
@@ -4734,22 +4734,22 @@
     return-object v9
 
     .line 684
-    :cond_3bc
+    :cond_21
     iget v0, v14, Landroidx/media3/extractor/mp4/Track;->type:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_3c3
+    if-ne v0, v1, :cond_22
 
     const/4 v10, 0x1
 
-    goto :goto_3c4
+    goto :goto_15
 
-    :cond_3c3
+    :cond_22
     const/4 v10, 0x0
 
     .line 690
-    :goto_3c4
+    :goto_15
     iget-object v0, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
 
     array-length v0, v0
@@ -4781,12 +4781,12 @@
     const/4 v8, 0x0
 
     .line 693
-    :goto_3da
+    :goto_16
     iget-object v9, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
 
     array-length v9, v9
 
-    if-ge v5, v9, :cond_440
+    if-ge v5, v9, :cond_26
 
     move-object v9, v2
 
@@ -4799,7 +4799,7 @@
 
     cmp-long v15, v2, v15
 
-    if-eqz v15, :cond_42c
+    if-eqz v15, :cond_25
 
     .line 696
     iget-object v15, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
@@ -4848,48 +4848,48 @@
     aput v2, v1, v5
 
     .line 715
-    :goto_40f
+    :goto_17
     aget v2, v0, v5
 
     aget v3, v1, v5
 
-    if-ge v2, v3, :cond_41f
+    if-ge v2, v3, :cond_23
 
     aget v7, v13, v2
 
     and-int/2addr v7, v8
 
-    if-nez v7, :cond_41f
+    if-nez v7, :cond_23
 
     add-int/lit8 v2, v2, 0x1
 
     .line 721
     aput v2, v0, v5
 
-    goto :goto_40f
+    goto :goto_17
 
-    :cond_41f
+    :cond_23
     sub-int v7, v3, v2
 
     add-int v7, v21, v7
 
     move v9, v15
 
-    if-eq v9, v2, :cond_428
+    if-eq v9, v2, :cond_24
 
     move v2, v8
 
-    goto :goto_429
+    goto :goto_18
 
-    :cond_428
+    :cond_24
     move v2, v6
 
-    :goto_429
+    :goto_18
     or-int v2, p2, v2
 
-    goto :goto_438
+    goto :goto_19
 
-    :cond_42c
+    :cond_25
     move/from16 p2, v6
 
     move/from16 v21, v7
@@ -4906,7 +4906,7 @@
 
     move v3, v9
 
-    :goto_438
+    :goto_19
     add-int/lit8 v5, v5, 0x1
 
     move v6, v2
@@ -4917,9 +4917,9 @@
 
     move-object/from16 v2, v16
 
-    goto :goto_3da
+    goto :goto_16
 
-    :cond_440
+    :cond_26
     move-object/from16 v16, v2
 
     move-object v11, v3
@@ -4932,60 +4932,60 @@
 
     const/4 v8, 0x1
 
-    if-eq v7, v3, :cond_44c
+    if-eq v7, v3, :cond_27
 
-    goto :goto_44d
+    goto :goto_1a
 
-    :cond_44c
+    :cond_27
     move v8, v6
 
-    :goto_44d
+    :goto_1a
     or-int v2, p2, v8
 
-    if-eqz v2, :cond_454
+    if-eqz v2, :cond_28
 
     .line 731
     new-array v3, v7, [J
 
-    goto :goto_456
+    goto :goto_1b
 
-    :cond_454
+    :cond_28
     move-object/from16 v3, v16
 
-    :goto_456
-    if-eqz v2, :cond_45b
+    :goto_1b
+    if-eqz v2, :cond_29
 
     .line 732
     new-array v4, v7, [I
 
-    goto :goto_45c
+    goto :goto_1c
 
-    :cond_45b
+    :cond_29
     move-object v4, v11
 
-    :goto_45c
-    if-eqz v2, :cond_460
+    :goto_1c
+    if-eqz v2, :cond_2a
 
     move v5, v6
 
-    goto :goto_462
+    goto :goto_1d
 
-    :cond_460
+    :cond_2a
     move/from16 v5, p1
 
-    :goto_462
-    if-eqz v2, :cond_467
+    :goto_1d
+    if-eqz v2, :cond_2b
 
     .line 734
     new-array v8, v7, [I
 
-    goto :goto_468
+    goto :goto_1e
 
-    :cond_467
+    :cond_2b
     move-object v8, v13
 
     .line 735
-    :goto_468
+    :goto_1e
     new-array v7, v7, [J
 
     move/from16 p1, v5
@@ -4995,12 +4995,12 @@
     const-wide/16 v9, 0x0
 
     .line 738
-    :goto_46f
+    :goto_1f
     iget-object v5, v14, Landroidx/media3/extractor/mp4/Track;->editListDurations:[J
 
     array-length v5, v5
 
-    if-ge v6, v5, :cond_51c
+    if-ge v6, v5, :cond_31
 
     .line 739
     iget-object v5, v14, Landroidx/media3/extractor/mp4/Track;->editListMediaTimes:[J
@@ -5017,7 +5017,7 @@
 
     move-object/from16 v28, v1
 
-    if-eqz v2, :cond_492
+    if-eqz v2, :cond_2c
 
     sub-int v1, v0, v5
 
@@ -5034,18 +5034,18 @@
     .line 746
     invoke-static {v13, v5, v8, v15, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_496
+    goto :goto_20
 
-    :cond_492
+    :cond_2c
     move/from16 v29, v6
 
     move-object/from16 v6, v16
 
-    :goto_496
+    :goto_20
     move/from16 v1, p1
 
-    :goto_498
-    if-ge v5, v0, :cond_4f8
+    :goto_21
+    if-ge v5, v0, :cond_30
 
     const-wide/32 v23, 0xf4240
 
@@ -5093,7 +5093,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4d2
+    if-eqz v6, :cond_2d
 
     move-object v6, v8
 
@@ -5106,42 +5106,42 @@
 
     move-result-wide v12
 
-    goto :goto_4d7
+    goto :goto_22
 
-    :cond_4d2
+    :cond_2d
     move-object v6, v8
 
     move-wide/from16 v24, v9
 
     const-wide/16 v8, 0x0
 
-    :goto_4d7
+    :goto_22
     add-long/2addr v0, v12
 
     .line 756
     aput-wide v0, v7, v15
 
-    if-eqz v2, :cond_4e6
+    if-eqz v2, :cond_2e
 
     .line 757
     aget v0, v4, v15
 
     move/from16 v1, v16
 
-    if-le v0, v1, :cond_4e8
+    if-le v0, v1, :cond_2f
 
     .line 758
     aget v0, v11, v5
 
     move v1, v0
 
-    goto :goto_4e8
+    goto :goto_23
 
-    :cond_4e6
+    :cond_2e
     move/from16 v1, v16
 
-    :cond_4e8
-    :goto_4e8
+    :cond_2f
+    :goto_23
     add-int/lit8 v15, v15, 0x1
 
     add-int/lit8 v5, v5, 0x1
@@ -5158,9 +5158,9 @@
 
     move-wide/from16 v9, v24
 
-    goto :goto_498
+    goto :goto_21
 
-    :cond_4f8
+    :cond_30
     move-object/from16 v23, v6
 
     move-object v6, v8
@@ -5200,9 +5200,9 @@
 
     move-object/from16 v0, v27
 
-    goto/16 :goto_46f
+    goto/16 :goto_1f
 
-    :cond_51c
+    :cond_31
     move-object v6, v8
 
     move-wide/from16 v24, v9
@@ -5244,7 +5244,7 @@
 
     return-object v10
 
-    :cond_53d
+    :cond_32
     const-string v0, "Track has no sample table size information"
 
     const/4 v1, 0x0
@@ -5258,7 +5258,7 @@
 .end method
 
 .method private static parseStsd(Landroidx/media3/common/util/ParsableByteArray;IILjava/lang/String;Landroidx/media3/common/DrmInitData;Z)Landroidx/media3/extractor/mp4/AtomParsers$StsdData;
-    .registers 24
+    .locals 18
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -5288,8 +5288,8 @@
 
     move v15, v14
 
-    :goto_14
-    if-ge v15, v12, :cond_17b
+    :goto_0
+    if-ge v15, v12, :cond_9
 
     .line 965
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -5301,16 +5301,16 @@
 
     move-result v16
 
-    if-lez v16, :cond_22
+    if-lez v16, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
+    :cond_0
     move v0, v14
 
-    :goto_23
+    :goto_1
     const-string v1, "childAtomSize must be positive"
 
     .line 967
@@ -5323,210 +5323,210 @@
 
     const v0, 0x61766331
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x61766333
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x656e6376
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x6d317620
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x6d703476
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x68766331
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x68657631
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x73323633
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x48323633
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x76703038
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x76703039
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x61763031
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x64766176
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x64766131
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x64766865
 
-    if-eq v1, v0, :cond_15f
+    if-eq v1, v0, :cond_8
 
     const v0, 0x64766831
 
-    if-ne v1, v0, :cond_7e
+    if-ne v1, v0, :cond_1
 
-    goto/16 :goto_15f
+    goto/16 :goto_5
 
-    :cond_7e
+    :cond_1
     const v0, 0x6d703461
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x656e6361
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x61632d33
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x65632d33
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x61632d34
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x6d6c7061
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x64747363
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x64747365
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x64747368
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x6474736c
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x64747378
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x73616d72
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x73617762
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x6c70636d
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x736f7774
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x74776f73
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x2e6d7032
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x2e6d7033
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x6d686131
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x6d686d31
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x616c6163
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x616c6177
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x756c6177
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x4f707573
 
-    if-eq v1, v0, :cond_14a
+    if-eq v1, v0, :cond_7
 
     const v0, 0x664c6143
 
-    if-ne v1, v0, :cond_fc
+    if-ne v1, v0, :cond_2
 
-    goto :goto_14a
+    goto :goto_4
 
-    :cond_fc
+    :cond_2
     const v0, 0x54544d4c
 
-    if-eq v1, v0, :cond_13a
+    if-eq v1, v0, :cond_5
 
     const v0, 0x74783367
 
-    if-eq v1, v0, :cond_13a
+    if-eq v1, v0, :cond_5
 
     const v0, 0x77767474
 
-    if-eq v1, v0, :cond_13a
+    if-eq v1, v0, :cond_5
 
     const v0, 0x73747070
 
-    if-eq v1, v0, :cond_13a
+    if-eq v1, v0, :cond_5
 
     const v0, 0x63363038
 
-    if-ne v1, v0, :cond_116
+    if-ne v1, v0, :cond_3
 
-    goto :goto_13a
+    goto :goto_2
 
-    :cond_116
+    :cond_3
     const v0, 0x6d657474
 
-    if-ne v1, v0, :cond_11f
+    if-ne v1, v0, :cond_4
 
     .line 1039
     invoke-static {v10, v1, v9, v11, v13}, Landroidx/media3/extractor/mp4/AtomParsers;->parseMetaDataSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIILandroidx/media3/extractor/mp4/AtomParsers$StsdData;)V
 
-    goto :goto_147
+    goto :goto_3
 
-    :cond_11f
+    :cond_4
     const v0, 0x63616d6d
 
-    if-ne v1, v0, :cond_147
+    if-ne v1, v0, :cond_6
 
     .line 1041
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -5552,10 +5552,10 @@
 
     iput-object v0, v13, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    goto :goto_147
+    goto :goto_3
 
-    :cond_13a
-    :goto_13a
+    :cond_5
+    :goto_2
     move-object/from16 v0, p0
 
     move v2, v9
@@ -5571,14 +5571,14 @@
     .line 1036
     invoke-static/range {v0 .. v6}, Landroidx/media3/extractor/mp4/AtomParsers;->parseTextSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIIILjava/lang/String;Landroidx/media3/extractor/mp4/AtomParsers$StsdData;)V
 
-    :cond_147
-    :goto_147
+    :cond_6
+    :goto_3
     move/from16 v17, v9
 
-    goto :goto_172
+    goto :goto_6
 
-    :cond_14a
-    :goto_14a
+    :cond_7
+    :goto_4
     move-object/from16 v0, p0
 
     move v2, v9
@@ -5602,10 +5602,10 @@
     .line 1020
     invoke-static/range {v0 .. v9}, Landroidx/media3/extractor/mp4/AtomParsers;->parseAudioSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIIILjava/lang/String;ZLandroidx/media3/common/DrmInitData;Landroidx/media3/extractor/mp4/AtomParsers$StsdData;I)V
 
-    goto :goto_172
+    goto :goto_6
 
-    :cond_15f
-    :goto_15f
+    :cond_8
+    :goto_5
     move/from16 v17, v9
 
     move-object/from16 v0, p0
@@ -5627,7 +5627,7 @@
     .line 985
     invoke-static/range {v0 .. v8}, Landroidx/media3/extractor/mp4/AtomParsers;->parseVideoSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIIIILandroidx/media3/common/DrmInitData;Landroidx/media3/extractor/mp4/AtomParsers$StsdData;I)V
 
-    :goto_172
+    :goto_6
     add-int v9, v17, v16
 
     .line 1047
@@ -5635,14 +5635,14 @@
 
     add-int/lit8 v15, v15, 0x1
 
-    goto/16 :goto_14
+    goto/16 :goto_0
 
-    :cond_17b
+    :cond_9
     return-object v13
 .end method
 
 .method private static parseTextSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIIILjava/lang/String;Landroidx/media3/extractor/mp4/AtomParsers$StsdData;)V
-    .registers 11
+    .locals 4
 
     add-int/lit8 p2, p2, 0x8
 
@@ -5659,14 +5659,14 @@
 
     const-wide v2, 0x7fffffffffffffffL
 
-    if-ne p1, p2, :cond_15
+    if-ne p1, p2, :cond_0
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const p2, 0x74783367
 
-    if-ne p1, p2, :cond_2b
+    if-ne p1, p2, :cond_1
 
     add-int/lit8 p3, p3, -0x8
 
@@ -5687,30 +5687,30 @@
 
     const-string v0, "application/x-quicktime-tx3g"
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     const p0, 0x77767474
 
-    if-ne p1, p0, :cond_33
+    if-ne p1, p0, :cond_2
 
     const-string v0, "application/x-mp4-vtt"
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_33
+    :cond_2
     const p0, 0x73747070
 
-    if-ne p1, p0, :cond_3b
+    if-ne p1, p0, :cond_3
 
     const-wide/16 v2, 0x0
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_3b
+    :cond_3
     const p0, 0x63363038
 
-    if-ne p1, p0, :cond_65
+    if-ne p1, p0, :cond_4
 
     const/4 p0, 0x1
 
@@ -5720,7 +5720,7 @@
     const-string v0, "application/x-mp4-cea-608"
 
     .line 1089
-    :goto_45
+    :goto_0
     new-instance p0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {p0}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -5760,7 +5760,7 @@
     return-void
 
     .line 1086
-    :cond_65
+    :cond_4
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -5769,7 +5769,7 @@
 .end method
 
 .method private static parseTkhd(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;
-    .registers 12
+    .locals 11
 
     const/16 v0, 0x8
 
@@ -5788,17 +5788,17 @@
 
     const/16 v2, 0x10
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     move v3, v0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v3, v2
 
     .line 844
-    :goto_14
+    :goto_0
     invoke-virtual {p0, v3}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 845
@@ -5816,17 +5816,17 @@
 
     move-result v5
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     move v0, v4
 
-    :cond_26
+    :cond_1
     const/4 v6, 0x0
 
     move v7, v6
 
-    :goto_28
-    if-ge v7, v0, :cond_3a
+    :goto_1
+    if-ge v7, v0, :cond_3
 
     .line 852
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -5839,59 +5839,59 @@
 
     const/4 v9, -0x1
 
-    if-eq v8, v9, :cond_37
+    if-eq v8, v9, :cond_2
 
     move v5, v6
 
-    goto :goto_3b
+    goto :goto_2
 
-    :cond_37
+    :cond_2
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_3a
+    :cond_3
     const/4 v5, 0x1
 
-    :goto_3b
+    :goto_2
     const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v5, :cond_46
+    if-eqz v5, :cond_4
 
     .line 859
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    goto :goto_59
+    goto :goto_4
 
-    :cond_46
-    if-nez v1, :cond_4d
+    :cond_4
+    if-nez v1, :cond_5
 
     .line 862
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v0
 
-    goto :goto_51
+    goto :goto_3
 
-    :cond_4d
+    :cond_5
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedLongToLong()J
 
     move-result-wide v0
 
-    :goto_51
+    :goto_3
     const-wide/16 v9, 0x0
 
     cmp-long v5, v0, v9
 
-    if-nez v5, :cond_58
+    if-nez v5, :cond_6
 
-    goto :goto_59
+    goto :goto_4
 
-    :cond_58
+    :cond_6
     move-wide v7, v0
 
     .line 870
-    :goto_59
+    :goto_4
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
     .line 871
@@ -5921,45 +5921,45 @@
 
     const/high16 v5, 0x10000
 
-    if-nez v0, :cond_7e
+    if-nez v0, :cond_7
 
-    if-ne v1, v5, :cond_7e
+    if-ne v1, v5, :cond_7
 
-    if-ne v2, v4, :cond_7e
+    if-ne v2, v4, :cond_7
 
-    if-nez p0, :cond_7e
+    if-nez p0, :cond_7
 
     const/16 v6, 0x5a
 
-    goto :goto_93
+    goto :goto_5
 
-    :cond_7e
-    if-nez v0, :cond_89
+    :cond_7
+    if-nez v0, :cond_8
 
-    if-ne v1, v4, :cond_89
+    if-ne v1, v4, :cond_8
 
-    if-ne v2, v5, :cond_89
+    if-ne v2, v5, :cond_8
 
-    if-nez p0, :cond_89
+    if-nez p0, :cond_8
 
     const/16 v6, 0x10e
 
-    goto :goto_93
+    goto :goto_5
 
-    :cond_89
-    if-ne v0, v4, :cond_93
+    :cond_8
+    if-ne v0, v4, :cond_9
 
-    if-nez v1, :cond_93
+    if-nez v1, :cond_9
 
-    if-nez v2, :cond_93
+    if-nez v2, :cond_9
 
-    if-ne p0, v4, :cond_93
+    if-ne p0, v4, :cond_9
 
     const/16 v6, 0xb4
 
     .line 890
-    :cond_93
-    :goto_93
+    :cond_9
+    :goto_5
     new-instance p0, Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;
 
     invoke-direct {p0, v3, v7, v8, v6}, Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;-><init>(IJI)V
@@ -5968,7 +5968,7 @@
 .end method
 
 .method private static parseTrak(Landroidx/media3/extractor/mp4/Atom$ContainerAtom;Landroidx/media3/extractor/mp4/Atom$LeafAtom;JLandroidx/media3/common/DrmInitData;ZZ)Landroidx/media3/extractor/mp4/Track;
-    .registers 25
+    .locals 18
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -6017,11 +6017,11 @@
 
     const/4 v3, 0x0
 
-    if-ne v5, v2, :cond_2b
+    if-ne v5, v2, :cond_0
 
     return-object v3
 
-    :cond_2b
+    :cond_0
     const v2, 0x746b6864
 
     .line 324
@@ -6045,7 +6045,7 @@
 
     cmp-long v4, p2, v6
 
-    if-nez v4, :cond_4f
+    if-nez v4, :cond_1
 
     .line 326
     invoke-static {v2}, Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;->access$000(Landroidx/media3/extractor/mp4/AtomParsers$TkhdData;)J
@@ -6056,15 +6056,15 @@
 
     move-wide v10, v8
 
-    goto :goto_53
+    goto :goto_0
 
-    :cond_4f
+    :cond_1
     move-object/from16 v4, p1
 
     move-wide/from16 v10, p2
 
     .line 328
-    :goto_53
+    :goto_0
     iget-object v4, v4, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-static {v4}, Landroidx/media3/extractor/mp4/AtomParsers;->parseMvhd(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/container/Mp4TimestampData;
@@ -6075,11 +6075,11 @@
 
     cmp-long v4, v10, v6
 
-    if-nez v4, :cond_60
+    if-nez v4, :cond_2
 
-    goto :goto_68
+    goto :goto_1
 
-    :cond_60
+    :cond_2
     const-wide/32 v12, 0xf4240
 
     move-wide v14, v8
@@ -6089,7 +6089,7 @@
 
     move-result-wide v6
 
-    :goto_68
+    :goto_1
     move-wide v10, v6
 
     const v4, 0x6d696e66
@@ -6145,7 +6145,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_f9
+    if-eqz v4, :cond_5
 
     .line 347
     iget-object v12, v4, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
@@ -6175,7 +6175,7 @@
 
     move-result-object v4
 
-    if-nez p5, :cond_d4
+    if-nez p5, :cond_3
 
     const v6, 0x65647473
 
@@ -6184,14 +6184,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d4
+    if-eqz v0, :cond_3
 
     .line 360
     invoke-static {v0}, Landroidx/media3/extractor/mp4/AtomParsers;->parseEdts(Landroidx/media3/extractor/mp4/Atom$ContainerAtom;)Landroid/util/Pair;
 
     move-result-object v0
 
-    if-eqz v0, :cond_d4
+    if-eqz v0, :cond_3
 
     .line 362
     iget-object v6, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -6207,23 +6207,23 @@
 
     move-object/from16 v16, v6
 
-    goto :goto_d8
+    goto :goto_2
 
-    :cond_d4
+    :cond_3
     move-object/from16 v16, v3
 
     move-object/from16 v17, v16
 
     .line 367
-    :goto_d8
+    :goto_2
     iget-object v0, v4, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->format:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_dd
+    if-nez v0, :cond_4
 
-    goto :goto_f8
+    goto :goto_3
 
     .line 369
-    :cond_dd
+    :cond_4
     new-instance v0, Landroidx/media3/extractor/mp4/Track;
 
     .line 370
@@ -6254,10 +6254,10 @@
 
     invoke-direct/range {v3 .. v17}, Landroidx/media3/extractor/mp4/Track;-><init>(IIJJJLandroidx/media3/common/Format;I[Landroidx/media3/extractor/mp4/TrackEncryptionBox;I[J[J)V
 
-    :goto_f8
+    :goto_3
     return-object v3
 
-    :cond_f9
+    :cond_5
     const-string v0, "Malformed sample table (stbl) missing sample description (stsd)"
 
     .line 344
@@ -6269,7 +6269,7 @@
 .end method
 
 .method public static parseTraks(Landroidx/media3/extractor/mp4/Atom$ContainerAtom;Landroidx/media3/extractor/GaplessInfoHolder;JLandroidx/media3/common/DrmInitData;ZZLcom/google/common/base/Function;)Ljava/util/List;
-    .registers 19
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -6304,14 +6304,14 @@
     const/4 v2, 0x0
 
     .line 130
-    :goto_7
+    :goto_0
     iget-object v3, v0, Landroidx/media3/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_79
+    if-ge v2, v3, :cond_2
 
     .line 131
     iget-object v3, v0, Landroidx/media3/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
@@ -6327,15 +6327,15 @@
 
     const v5, 0x7472616b
 
-    if-eq v4, v5, :cond_22
+    if-eq v4, v5, :cond_0
 
     move-object v6, p1
 
     move-object/from16 v5, p7
 
-    goto :goto_76
+    goto :goto_1
 
-    :cond_22
+    :cond_0
     const v4, 0x6d766864
 
     .line 140
@@ -6375,13 +6375,13 @@
 
     check-cast v4, Landroidx/media3/extractor/mp4/Track;
 
-    if-nez v4, :cond_47
+    if-nez v4, :cond_1
 
     move-object v6, p1
 
-    goto :goto_76
+    goto :goto_1
 
-    :cond_47
+    :cond_1
     const v6, 0x6d646961
 
     .line 151
@@ -6433,17 +6433,17 @@
     .line 155
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_76
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_79
+    :cond_2
     return-object v1
 .end method
 
 .method public static parseUdta(Landroidx/media3/extractor/mp4/Atom$LeafAtom;)Landroidx/media3/common/Metadata;
-    .registers 7
+    .locals 6
 
     .line 167
     iget-object p0, p0, Landroidx/media3/extractor/mp4/Atom$LeafAtom;->data:Landroidx/media3/common/util/ParsableByteArray;
@@ -6463,12 +6463,12 @@
     invoke-direct {v1, v2}, Landroidx/media3/common/Metadata;-><init>([Landroidx/media3/common/Metadata$Entry;)V
 
     .line 170
-    :goto_f
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v2
 
-    if-lt v2, v0, :cond_59
+    if-lt v2, v0, :cond_3
 
     .line 171
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -6487,7 +6487,7 @@
 
     const v5, 0x6d657461
 
-    if-ne v4, v5, :cond_34
+    if-ne v4, v5, :cond_0
 
     .line 175
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -6503,12 +6503,12 @@
 
     move-result-object v1
 
-    goto :goto_54
+    goto :goto_1
 
-    :cond_34
+    :cond_0
     const v5, 0x736d7461
 
-    if-ne v4, v5, :cond_47
+    if-ne v4, v5, :cond_1
 
     .line 179
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -6525,12 +6525,12 @@
 
     move-result-object v1
 
-    goto :goto_54
+    goto :goto_1
 
-    :cond_47
+    :cond_1
     const v5, -0x56878686
 
-    if-ne v4, v5, :cond_54
+    if-ne v4, v5, :cond_2
 
     .line 184
     invoke-static {p0}, Landroidx/media3/extractor/mp4/AtomParsers;->parseXyz(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/Metadata;
@@ -6541,21 +6541,21 @@
 
     move-result-object v1
 
-    :cond_54
-    :goto_54
+    :cond_2
+    :goto_1
     add-int/2addr v2, v3
 
     .line 186
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_59
+    :cond_3
     return-object v1
 .end method
 
 .method private static parseUdtaMeta(Landroidx/media3/common/util/ParsableByteArray;I)Landroidx/media3/common/Metadata;
-    .registers 6
+    .locals 4
 
     const/16 v0, 0x8
 
@@ -6566,12 +6566,12 @@
     invoke-static {p0}, Landroidx/media3/extractor/mp4/AtomParsers;->maybeSkipRemainingMetaAtomHeaderBytes(Landroidx/media3/common/util/ParsableByteArray;)V
 
     .line 786
-    :goto_8
+    :goto_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v0
 
-    if-ge v0, p1, :cond_2d
+    if-ge v0, p1, :cond_1
 
     .line 787
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -6590,7 +6590,7 @@
 
     const v3, 0x696c7374
 
-    if-ne v2, v3, :cond_28
+    if-ne v2, v3, :cond_0
 
     .line 791
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -6604,22 +6604,22 @@
 
     return-object p0
 
-    :cond_28
+    :cond_0
     add-int/2addr v0, v1
 
     .line 794
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_2d
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static parseVideoSampleEntry(Landroidx/media3/common/util/ParsableByteArray;IIIIILandroidx/media3/common/DrmInitData;Landroidx/media3/extractor/mp4/AtomParsers$StsdData;I)V
-    .registers 46
+    .locals 37
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -6674,14 +6674,14 @@
 
     move/from16 v11, p1
 
-    if-ne v11, v9, :cond_56
+    if-ne v11, v9, :cond_2
 
     .line 1128
     invoke-static {v0, v1, v2}, Landroidx/media3/extractor/mp4/AtomParsers;->parseSampleEntryEncryptionData(Landroidx/media3/common/util/ParsableByteArray;II)Landroid/util/Pair;
 
     move-result-object v9
 
-    if-eqz v9, :cond_53
+    if-eqz v9, :cond_1
 
     .line 1130
     iget-object v11, v9, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -6692,14 +6692,14 @@
 
     move-result v11
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_0
 
     const/4 v3, 0x0
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 1134
-    :cond_41
+    :cond_0
     iget-object v12, v9, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v12, Landroidx/media3/extractor/mp4/TrackEncryptionBox;
@@ -6711,7 +6711,7 @@
     move-result-object v3
 
     .line 1135
-    :goto_4b
+    :goto_0
     iget-object v12, v4, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->trackEncryptionBoxes:[Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
     iget-object v9, v9, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -6721,33 +6721,33 @@
     aput-object v9, v12, p8
 
     .line 1137
-    :cond_53
+    :cond_1
     invoke-virtual {v0, v8}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    :cond_56
+    :cond_2
     const v9, 0x6d317620
 
     const-string/jumbo v12, "video/3gpp"
 
-    if-ne v11, v9, :cond_62
+    if-ne v11, v9, :cond_3
 
     const-string/jumbo v9, "video/mpeg"
 
-    goto :goto_6a
+    goto :goto_1
 
-    :cond_62
+    :cond_3
     const v9, 0x48323633
 
-    if-ne v11, v9, :cond_69
+    if-ne v11, v9, :cond_4
 
     move-object v9, v12
 
-    goto :goto_6a
+    goto :goto_1
 
-    :cond_69
+    :cond_4
     const/4 v9, 0x0
 
-    :goto_6a
+    :goto_1
     const/high16 v15, 0x3f800000    # 1.0f
 
     move/from16 v16, v15
@@ -6780,10 +6780,10 @@
 
     move v8, v6
 
-    :goto_87
+    :goto_2
     sub-int v13, v9, v1
 
-    if-ge v13, v2, :cond_39b
+    if-ge v13, v2, :cond_2c
 
     .line 1166
     invoke-virtual {v0, v9}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -6798,7 +6798,7 @@
 
     move-result v14
 
-    if-nez v14, :cond_a2
+    if-nez v14, :cond_5
 
     .line 1169
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -6807,21 +6807,21 @@
 
     sub-int v10, v28, v1
 
-    if-ne v10, v2, :cond_a2
+    if-ne v10, v2, :cond_5
 
-    goto/16 :goto_39b
+    goto/16 :goto_17
 
-    :cond_a2
-    if-lez v14, :cond_a6
+    :cond_5
+    if-lez v14, :cond_6
 
     const/4 v10, 0x1
 
-    goto :goto_a7
+    goto :goto_3
 
-    :cond_a6
+    :cond_6
     const/4 v10, 0x0
 
-    :goto_a7
+    :goto_3
     const-string v1, "childAtomSize must be positive"
 
     .line 1173
@@ -6834,21 +6834,21 @@
 
     const v10, 0x61766343
 
-    if-ne v1, v10, :cond_100
+    if-ne v1, v10, :cond_9
 
     const/4 v1, 0x0
 
-    if-nez v15, :cond_ba
+    if-nez v15, :cond_7
 
     const/4 v10, 0x1
 
-    goto :goto_bb
+    goto :goto_4
 
-    :cond_ba
+    :cond_7
     const/4 v10, 0x0
 
     .line 1176
-    :goto_bb
+    :goto_4
     invoke-static {v10, v1}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
 
     add-int/lit8 v13, v13, 0x8
@@ -6869,7 +6869,7 @@
 
     iput v8, v4, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->nalUnitLengthFieldLength:I
 
-    if-nez v27, :cond_d3
+    if-nez v27, :cond_8
 
     .line 1183
     iget v8, v1, Landroidx/media3/extractor/AvcConfig;->pixelWidthHeightRatio:F
@@ -6877,7 +6877,7 @@
     move/from16 v16, v8
 
     .line 1185
-    :cond_d3
+    :cond_8
     iget-object v8, v1, Landroidx/media3/extractor/AvcConfig;->codecs:Ljava/lang/String;
 
     .line 1186
@@ -6926,31 +6926,31 @@
 
     move v6, v2
 
-    :goto_fc
+    :goto_5
     const/4 v1, -0x1
 
     const/4 v2, 0x0
 
-    goto/16 :goto_38c
+    goto/16 :goto_16
 
-    :cond_100
+    :cond_9
     const v2, 0x68766343
 
-    if-ne v1, v2, :cond_14e
+    if-ne v1, v2, :cond_c
 
     const/4 v1, 0x0
 
-    if-nez v15, :cond_10a
+    if-nez v15, :cond_a
 
     const/4 v10, 0x1
 
-    goto :goto_10b
+    goto :goto_6
 
-    :cond_10a
+    :cond_a
     const/4 v10, 0x0
 
     .line 1193
-    :goto_10b
+    :goto_6
     invoke-static {v10, v1}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
 
     add-int/lit8 v13, v13, 0x8
@@ -6971,7 +6971,7 @@
 
     iput v6, v4, Landroidx/media3/extractor/mp4/AtomParsers$StsdData;->nalUnitLengthFieldLength:I
 
-    if-nez v27, :cond_123
+    if-nez v27, :cond_b
 
     .line 1200
     iget v6, v1, Landroidx/media3/extractor/HevcConfig;->pixelWidthHeightRatio:F
@@ -6979,7 +6979,7 @@
     move/from16 v16, v6
 
     .line 1202
-    :cond_123
+    :cond_b
     iget v6, v1, Landroidx/media3/extractor/HevcConfig;->maxNumReorderPics:I
 
     .line 1203
@@ -7028,39 +7028,39 @@
 
     move v8, v1
 
-    :goto_14b
+    :goto_7
     const/4 v1, -0x1
 
-    goto/16 :goto_38c
+    goto/16 :goto_16
 
-    :cond_14e
+    :cond_c
     const v2, 0x64766343
 
-    if-eq v1, v2, :cond_367
+    if-eq v1, v2, :cond_2a
 
     const v2, 0x64767643
 
-    if-ne v1, v2, :cond_15a
+    if-ne v1, v2, :cond_d
 
-    goto/16 :goto_367
+    goto/16 :goto_13
 
-    :cond_15a
+    :cond_d
     const v2, 0x76706343
 
     const/4 v10, 0x2
 
-    if-ne v1, v2, :cond_1a6
+    if-ne v1, v2, :cond_12
 
-    if-nez v15, :cond_164
+    if-nez v15, :cond_e
 
     const/4 v1, 0x1
 
-    goto :goto_165
+    goto :goto_8
 
-    :cond_164
+    :cond_e
     const/4 v1, 0x0
 
-    :goto_165
+    :goto_8
     const/4 v2, 0x0
 
     .line 1216
@@ -7068,16 +7068,16 @@
 
     const v1, 0x76703038
 
-    if-ne v11, v1, :cond_172
+    if-ne v11, v1, :cond_f
 
     const-string/jumbo v1, "video/x-vnd.on2.vp8"
 
-    goto :goto_175
+    goto :goto_9
 
-    :cond_172
+    :cond_f
     const-string/jumbo v1, "video/x-vnd.on2.vp9"
 
-    :goto_175
+    :goto_9
     add-int/lit8 v13, v13, 0xc
 
     .line 1218
@@ -7097,17 +7097,17 @@
 
     and-int/2addr v2, v8
 
-    if-eqz v2, :cond_189
+    if-eqz v2, :cond_10
 
     const/4 v2, 0x1
 
-    goto :goto_18a
+    goto :goto_a
 
-    :cond_189
+    :cond_10
     const/4 v2, 0x0
 
     .line 1225
-    :goto_18a
+    :goto_a
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v8
@@ -7122,17 +7122,17 @@
 
     move-result v22
 
-    if-eqz v2, :cond_19b
+    if-eqz v2, :cond_11
 
     const/16 v23, 0x1
 
-    goto :goto_19d
+    goto :goto_b
 
-    :cond_19b
+    :cond_11
     move/from16 v23, v10
 
     .line 1230
-    :goto_19d
+    :goto_b
     invoke-static {v13}, Landroidx/media3/common/ColorInfo;->isoTransferCharacteristicsToColorTransfer(I)I
 
     move-result v24
@@ -7143,12 +7143,12 @@
 
     move v8, v6
 
-    goto :goto_200
+    goto :goto_c
 
-    :cond_1a6
+    :cond_12
     const v2, 0x61763143
 
-    if-ne v1, v2, :cond_1dc
+    if-ne v1, v2, :cond_13
 
     add-int/lit8 v1, v14, -0x8
 
@@ -7206,21 +7206,21 @@
 
     move/from16 v23, v13
 
-    goto/16 :goto_fc
+    goto/16 :goto_5
 
-    :cond_1dc
+    :cond_13
     const v2, 0x636c6c69
 
-    if-ne v1, v2, :cond_206
+    if-ne v1, v2, :cond_15
 
-    if-nez v25, :cond_1e7
+    if-nez v25, :cond_14
 
     .line 1249
     invoke-static {}, Landroidx/media3/extractor/mp4/AtomParsers;->allocateHdrStaticInfo()Ljava/nio/ByteBuffer;
 
     move-result-object v25
 
-    :cond_1e7
+    :cond_14
     move-object/from16 v1, v25
 
     const/16 v2, 0x15
@@ -7246,26 +7246,26 @@
 
     move-object/from16 v36, v3
 
-    :goto_200
+    :goto_c
     move/from16 v28, v11
 
     move-object/from16 v29, v12
 
-    goto/16 :goto_fc
+    goto/16 :goto_5
 
-    :cond_206
+    :cond_15
     const v2, 0x6d646376
 
-    if-ne v1, v2, :cond_279
+    if-ne v1, v2, :cond_17
 
-    if-nez v25, :cond_211
+    if-nez v25, :cond_16
 
     .line 1258
     invoke-static {}, Landroidx/media3/extractor/mp4/AtomParsers;->allocateHdrStaticInfo()Ljava/nio/ByteBuffer;
 
     move-result-object v25
 
-    :cond_211
+    :cond_16
     move-object/from16 v1, v25
 
     .line 1262
@@ -7383,9 +7383,9 @@
 
     move/from16 v6, v31
 
-    goto/16 :goto_fc
+    goto/16 :goto_5
 
-    :cond_279
+    :cond_17
     move-object/from16 v36, v3
 
     move/from16 v31, v6
@@ -7398,51 +7398,51 @@
 
     const v2, 0x64323633
 
-    if-ne v1, v2, :cond_299
+    if-ne v1, v2, :cond_1a
 
     const/4 v2, 0x0
 
-    if-nez v15, :cond_28d
+    if-nez v15, :cond_18
 
     const/4 v10, 0x1
 
-    goto :goto_28e
+    goto :goto_d
 
-    :cond_28d
+    :cond_18
     const/4 v10, 0x0
 
     .line 1285
-    :goto_28e
+    :goto_d
     invoke-static {v10, v2}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
 
     move-object/from16 v15, v29
 
-    :cond_293
-    :goto_293
+    :cond_19
+    :goto_e
     move/from16 v8, v30
 
     move/from16 v6, v31
 
-    goto/16 :goto_14b
+    goto/16 :goto_7
 
-    :cond_299
+    :cond_1a
     const/4 v2, 0x0
 
     const v3, 0x65736473
 
-    if-ne v1, v3, :cond_2bb
+    if-ne v1, v3, :cond_1d
 
-    if-nez v15, :cond_2a3
+    if-nez v15, :cond_1b
 
     const/4 v10, 0x1
 
-    goto :goto_2a4
+    goto :goto_f
 
-    :cond_2a3
+    :cond_1b
     const/4 v10, 0x0
 
     .line 1288
-    :goto_2a4
+    :goto_f
     invoke-static {v10, v2}, Landroidx/media3/extractor/ExtractorUtil;->checkContainerInput(ZLjava/lang/String;)V
 
     .line 1289
@@ -7460,22 +7460,22 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_2b9
+    if-eqz v3, :cond_1c
 
     .line 1293
     invoke-static {v3}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v17
 
-    :cond_2b9
+    :cond_1c
     move-object v15, v1
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_2bb
+    :cond_1d
     const v3, 0x70617370
 
-    if-ne v1, v3, :cond_2cf
+    if-ne v1, v3, :cond_1e
 
     .line 1296
     invoke-static {v0, v13}, Landroidx/media3/extractor/mp4/AtomParsers;->parsePaspFromParent(Landroidx/media3/common/util/ParsableByteArray;I)F
@@ -7492,24 +7492,24 @@
 
     const/16 v27, 0x1
 
-    goto/16 :goto_38c
+    goto/16 :goto_16
 
-    :cond_2cf
+    :cond_1e
     const v3, 0x73763364
 
-    if-ne v1, v3, :cond_2d9
+    if-ne v1, v3, :cond_1f
 
     .line 1299
     invoke-static {v0, v13, v14}, Landroidx/media3/extractor/mp4/AtomParsers;->parseProjFromParent(Landroidx/media3/common/util/ParsableByteArray;II)[B
 
     move-result-object v19
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_2d9
+    :cond_1f
     const v3, 0x73743364
 
-    if-ne v1, v3, :cond_302
+    if-ne v1, v3, :cond_24
 
     .line 1301
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -7521,61 +7521,61 @@
     .line 1302
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    if-nez v1, :cond_293
+    if-nez v1, :cond_19
 
     .line 1304
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
 
-    if-eqz v1, :cond_2ff
+    if-eqz v1, :cond_23
 
     const/4 v8, 0x1
 
-    if-eq v1, v8, :cond_2fc
+    if-eq v1, v8, :cond_22
 
-    if-eq v1, v10, :cond_2f9
+    if-eq v1, v10, :cond_21
 
-    if-eq v1, v3, :cond_2f6
+    if-eq v1, v3, :cond_20
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_2f6
+    :cond_20
     move/from16 v20, v3
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_2f9
+    :cond_21
     move/from16 v20, v10
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_2fc
+    :cond_22
     move/from16 v20, v8
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_2ff
+    :cond_23
     const/16 v20, 0x0
 
-    goto :goto_293
+    goto :goto_e
 
-    :cond_302
+    :cond_24
     const/4 v8, 0x1
 
     const v3, 0x636f6c72
 
     move/from16 v13, v22
 
-    if-ne v1, v3, :cond_363
+    if-ne v1, v3, :cond_29
 
     const/4 v1, -0x1
 
     move/from16 v3, v24
 
-    if-ne v13, v1, :cond_384
+    if-ne v13, v1, :cond_2b
 
-    if-ne v3, v1, :cond_384
+    if-ne v3, v1, :cond_2b
 
     .line 1330
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -7584,16 +7584,16 @@
 
     const v6, 0x6e636c78
 
-    if-eq v4, v6, :cond_339
+    if-eq v4, v6, :cond_26
 
     const v6, 0x6e636c63
 
-    if-ne v4, v6, :cond_320
+    if-ne v4, v6, :cond_25
 
-    goto :goto_339
+    goto :goto_10
 
     .line 1349
-    :cond_320
+    :cond_25
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v8, "Unsupported color type: "
@@ -7616,11 +7616,11 @@
 
     invoke-static {v6, v4}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_384
+    goto :goto_14
 
     .line 1334
-    :cond_339
-    :goto_339
+    :cond_26
+    :goto_10
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v3
@@ -7635,7 +7635,7 @@
 
     const/16 v6, 0x13
 
-    if-ne v14, v6, :cond_352
+    if-ne v14, v6, :cond_27
 
     .line 1343
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -7644,47 +7644,47 @@
 
     and-int/lit16 v6, v6, 0x80
 
-    if-eqz v6, :cond_352
+    if-eqz v6, :cond_27
 
     move v6, v8
 
-    goto :goto_353
+    goto :goto_11
 
-    :cond_352
+    :cond_27
     const/4 v6, 0x0
 
     .line 1344
-    :goto_353
+    :goto_11
     invoke-static {v3}, Landroidx/media3/common/ColorInfo;->isoColorPrimariesToColorSpace(I)I
 
     move-result v22
 
-    if-eqz v6, :cond_35c
+    if-eqz v6, :cond_28
 
     move/from16 v23, v8
 
-    goto :goto_35e
+    goto :goto_12
 
-    :cond_35c
+    :cond_28
     move/from16 v23, v10
 
     .line 1347
-    :goto_35e
+    :goto_12
     invoke-static {v4}, Landroidx/media3/common/ColorInfo;->isoTransferCharacteristicsToColorTransfer(I)I
 
     move-result v24
 
-    goto :goto_388
+    goto :goto_15
 
-    :cond_363
+    :cond_29
     move/from16 v3, v24
 
     const/4 v1, -0x1
 
-    goto :goto_384
+    goto :goto_14
 
-    :cond_367
-    :goto_367
+    :cond_2a
+    :goto_13
     move-object/from16 v36, v3
 
     move/from16 v31, v6
@@ -7708,7 +7708,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_384
+    if-eqz v4, :cond_2b
 
     .line 1212
     iget-object v4, v4, Landroidx/media3/extractor/DolbyVisionConfig;->codecs:Ljava/lang/String;
@@ -7717,18 +7717,18 @@
 
     move-object/from16 v18, v4
 
-    :cond_384
-    :goto_384
+    :cond_2b
+    :goto_14
     move/from16 v24, v3
 
     move/from16 v22, v13
 
-    :goto_388
+    :goto_15
     move/from16 v8, v30
 
     move/from16 v6, v31
 
-    :goto_38c
+    :goto_16
     add-int/2addr v9, v14
 
     move/from16 v1, p2
@@ -7743,10 +7743,10 @@
 
     move-object/from16 v3, v36
 
-    goto/16 :goto_87
+    goto/16 :goto_2
 
-    :cond_39b
-    :goto_39b
+    :cond_2c
+    :goto_17
     move-object/from16 v36, v3
 
     move/from16 v31, v6
@@ -7759,12 +7759,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v15, :cond_3a9
+    if-nez v15, :cond_2d
 
     return-void
 
     .line 1361
-    :cond_3a9
+    :cond_2d
     new-instance v0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -7868,19 +7868,19 @@
 
     move-result-object v1
 
-    if-eqz v25, :cond_40a
+    if-eqz v25, :cond_2e
 
     .line 1382
     invoke-virtual/range {v25 .. v25}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v10
 
-    goto :goto_40b
+    goto :goto_18
 
-    :cond_40a
+    :cond_2e
     move-object v10, v2
 
-    :goto_40b
+    :goto_18
     invoke-virtual {v1, v10}, Landroidx/media3/common/ColorInfo$Builder;->setHdrStaticInfo([B)Landroidx/media3/common/ColorInfo$Builder;
 
     move-result-object v1
@@ -7909,7 +7909,7 @@
 
     move-result-object v0
 
-    if-eqz v26, :cond_43c
+    if-eqz v26, :cond_2f
 
     .line 1389
     invoke-static/range {v26 .. v26}, Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;->access$600(Landroidx/media3/extractor/mp4/AtomParsers$EsdsData;)J
@@ -7936,7 +7936,7 @@
     invoke-virtual {v1, v2}, Landroidx/media3/common/Format$Builder;->setPeakBitrate(I)Landroidx/media3/common/Format$Builder;
 
     .line 1393
-    :cond_43c
+    :cond_2f
     invoke-virtual {v0}, Landroidx/media3/common/Format$Builder;->build()Landroidx/media3/common/Format;
 
     move-result-object v0
@@ -7949,7 +7949,7 @@
 .end method
 
 .method private static parseXyz(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/Metadata;
-    .registers 6
+    .locals 5
 
     .line 815
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readShort()S
@@ -7988,7 +7988,7 @@
     const/4 v1, 0x0
 
     .line 823
-    :try_start_1d
+    :try_start_0
     invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
@@ -8026,13 +8026,13 @@
     aput-object v4, v3, v1
 
     invoke-direct {v0, v3}, Landroidx/media3/common/Metadata;-><init>([Landroidx/media3/common/Metadata$Entry;)V
-    :try_end_41
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1d .. :try_end_41} :catch_42
-    .catch Ljava/lang/NumberFormatException; {:try_start_1d .. :try_end_41} :catch_42
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_42
+    :catch_0
     const/4 p0, 0x0
 
     return-object p0

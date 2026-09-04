@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 357
     invoke-direct {p0, p1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
-    .registers 1
+    .locals 0
 
     monitor-enter p0
 

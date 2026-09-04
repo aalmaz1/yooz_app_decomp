@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/decoder/DecoderOutputBuffer$Owner;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 76
     invoke-super {p0}, Landroidx/media3/decoder/DecoderOutputBuffer;->clear()V
@@ -49,17 +49,17 @@
     .line 77
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 78
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public grow(I)Ljava/nio/ByteBuffer;
-    .registers 6
+    .locals 4
 
     .line 62
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
@@ -77,16 +77,16 @@
 
     const/4 v2, 0x0
 
-    if-lt p1, v1, :cond_11
+    if-lt p1, v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v1, v2
 
-    :goto_12
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 64
@@ -126,7 +126,7 @@
 .end method
 
 .method public init(JI)Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 0
 
     .line 44
     iput-wide p1, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->timeUs:J
@@ -134,16 +134,16 @@
     .line 45
     iget-object p1, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result p1
 
-    if-ge p1, p3, :cond_1a
+    if-ge p1, p3, :cond_1
 
     .line 46
-    :cond_c
+    :cond_0
     invoke-static {p3}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -159,7 +159,7 @@
     iput-object p1, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
     .line 48
-    :cond_1a
+    :cond_1
     iget-object p1, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
     const/4 p2, 0x0
@@ -178,7 +178,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/media3/decoder/SimpleDecoderOutputBuffer;->owner:Landroidx/media3/decoder/DecoderOutputBuffer$Owner;

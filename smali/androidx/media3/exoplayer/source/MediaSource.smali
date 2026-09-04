@@ -21,7 +21,7 @@
 .end method
 
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public getInitialTimeline()Landroidx/media3/common/Timeline;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -49,7 +49,7 @@
 .end method
 
 .method public isSingleWindow()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public prepareSource(Landroidx/media3/exoplayer/source/MediaSource$MediaSourceCaller;Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>([Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public get(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -74,11 +74,11 @@
     .annotation runtime Ljavax/annotation/CheckForNull;
     .end annotation
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_c
+    if-eq p1, v0, :cond_0
 
     .line 513
     iget-object v0, p0, Lcom/google/common/base/Joiner$3;->val$rest:[Ljava/lang/Object;
@@ -90,20 +90,20 @@
     return-object p1
 
     .line 511
-    :cond_c
+    :cond_0
     iget-object p1, p0, Lcom/google/common/base/Joiner$3;->val$second:Ljava/lang/Object;
 
     return-object p1
 
     .line 509
-    :cond_f
+    :cond_1
     iget-object p1, p0, Lcom/google/common/base/Joiner$3;->val$first:Ljava/lang/Object;
 
     return-object p1
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 501
     iget-object v0, p0, Lcom/google/common/base/Joiner$3;->val$rest:[Ljava/lang/Object;

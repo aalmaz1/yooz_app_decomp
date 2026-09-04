@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 551
     invoke-static {}, Landroidx/datastore/preferences/protobuf/FieldMask;->access$000()Landroidx/datastore/preferences/protobuf/FieldMask;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/FieldMask$1;)V
-    .registers 2
+    .locals 0
 
     .line 544
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public addAllPaths(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/FieldMask$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,7 +78,7 @@
 .end method
 
 .method public addPaths(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/FieldMask$Builder;
-    .registers 3
+    .locals 1
 
     .line 635
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->copyOnWrite()V
@@ -94,7 +94,7 @@
 .end method
 
 .method public addPathsBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/FieldMask$Builder;
-    .registers 3
+    .locals 1
 
     .line 678
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->copyOnWrite()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public clearPaths()Landroidx/datastore/preferences/protobuf/FieldMask$Builder;
-    .registers 2
+    .locals 1
 
     .line 663
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->copyOnWrite()V
@@ -126,7 +126,7 @@
 .end method
 
 .method public getPaths(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 592
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -141,7 +141,7 @@
 .end method
 
 .method public getPathsBytes(I)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 1
 
     .line 606
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -156,7 +156,7 @@
 .end method
 
 .method public getPathsCount()I
-    .registers 2
+    .locals 1
 
     .line 579
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -171,7 +171,7 @@
 .end method
 
 .method public getPathsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
 .end method
 
 .method public setPaths(ILjava/lang/String;)Landroidx/datastore/preferences/protobuf/FieldMask$Builder;
-    .registers 4
+    .locals 1
 
     .line 620
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/FieldMask$Builder;->copyOnWrite()V

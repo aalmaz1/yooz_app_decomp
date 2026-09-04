@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 18
+    .locals 18
 
     .line 53
     new-instance v0, Landroidx/constraintlayout/solver/state/State$Constraint;
@@ -296,7 +296,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -310,7 +310,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/constraintlayout/solver/state/State$Constraint;
-    .registers 2
+    .locals 1
 
     .line 52
     const-class v0, Landroidx/constraintlayout/solver/state/State$Constraint;
@@ -325,7 +325,7 @@
 .end method
 
 .method public static values()[Landroidx/constraintlayout/solver/state/State$Constraint;
-    .registers 1
+    .locals 1
 
     .line 52
     sget-object v0, Landroidx/constraintlayout/solver/state/State$Constraint;->$VALUES:[Landroidx/constraintlayout/solver/state/State$Constraint;

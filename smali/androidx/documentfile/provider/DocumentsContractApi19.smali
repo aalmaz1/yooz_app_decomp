@@ -11,7 +11,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
 .end method
 
 .method public static canRead(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -31,12 +31,12 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     return v2
 
     .line 100
-    :cond_9
+    :cond_0
     invoke-static {p0, p1}, Landroidx/documentfile/provider/DocumentsContractApi19;->getRawType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object p0
@@ -45,16 +45,16 @@
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_1
 
     return v2
 
-    :cond_14
+    :cond_1
     return v0
 .end method
 
 .method public static canWrite(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x2
 
@@ -65,12 +65,12 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     return v2
 
     .line 114
-    :cond_9
+    :cond_0
     invoke-static {p0, p1}, Landroidx/documentfile/provider/DocumentsContractApi19;->getRawType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v1
@@ -87,20 +87,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     return v2
 
-    :cond_1a
+    :cond_1
     and-int/lit8 p1, p0, 0x4
 
     const/4 v3, 0x1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_2
 
     return v3
 
-    :cond_20
+    :cond_2
     const-string/jumbo p1, "vnd.android.document/directory"
 
     .line 127
@@ -108,60 +108,60 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_3
 
     and-int/lit8 p1, p0, 0x8
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_3
 
     return v3
 
     .line 131
-    :cond_2e
+    :cond_3
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-nez p1, :cond_38
+    if-nez p1, :cond_4
 
     and-int/2addr p0, v0
 
-    if-eqz p0, :cond_38
+    if-eqz p0, :cond_4
 
     return v3
 
-    :cond_38
+    :cond_4
     return v2
 .end method
 
 .method private static closeQuietly(Ljava/lang/AutoCloseable;)V
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     .line 205
-    :try_start_2
+    :try_start_0
     invoke-interface {p0}, Ljava/lang/AutoCloseable;->close()V
-    :try_end_5
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_5} :catch_6
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_5} :catch_8
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    goto :goto_8
+    goto :goto_0
 
-    :catch_6
+    :catch_0
     move-exception p0
 
     .line 207
     throw p0
 
-    :catch_8
-    :cond_8
-    :goto_8
+    :catch_1
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public static exists(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 10
+    .locals 8
 
     const-string v0, "Failed query: "
 
@@ -174,7 +174,7 @@
 
     const/4 v7, 0x0
 
-    :try_start_8
+    :try_start_0
     const-string v2, "document_id"
 
     .line 145
@@ -198,29 +198,29 @@
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
 
     move-result p1
-    :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1a} :catch_23
-    .catchall {:try_start_8 .. :try_end_1a} :catchall_21
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-lez p1, :cond_1d
+    if-lez p1, :cond_0
 
     const/4 p0, 0x1
 
     .line 152
-    :cond_1d
+    :cond_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return p0
 
-    :catchall_21
+    :catchall_0
     move-exception p0
 
-    goto :goto_3a
+    goto :goto_0
 
-    :catch_23
+    :catch_0
     move-exception p1
 
-    :try_start_24
+    :try_start_1
     const-string v1, "DocumentFile"
 
     .line 149
@@ -237,22 +237,22 @@
     move-result-object p1
 
     invoke-static {v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_36
-    .catchall {:try_start_24 .. :try_end_36} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 152
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return p0
 
-    :goto_3a
+    :goto_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     throw p0
 .end method
 
 .method public static getFlags(Landroid/content/Context;Landroid/net/Uri;)J
-    .registers 5
+    .locals 3
 
     const-string v0, "flags"
 
@@ -267,7 +267,7 @@
 .end method
 
 .method public static getName(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     const-string v0, "_display_name"
 
@@ -282,7 +282,7 @@
 .end method
 
 .method private static getRawType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     const-string v0, "mime_type"
 
@@ -297,7 +297,7 @@
 .end method
 
 .method public static getType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 59
     invoke-static {p0, p1}, Landroidx/documentfile/provider/DocumentsContractApi19;->getRawType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
@@ -311,16 +311,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     const/4 p0, 0x0
 
-    :cond_e
+    :cond_0
     return-object p0
 .end method
 
 .method public static isDirectory(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "vnd.android.document/directory"
 
@@ -337,7 +337,7 @@
 .end method
 
 .method public static isFile(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-static {p0, p1}, Landroidx/documentfile/provider/DocumentsContractApi19;->getRawType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
@@ -351,30 +351,30 @@
 
     move-result p1
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x1
 
     return p0
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static isVirtual(Landroid/content/Context;Landroid/net/Uri;)Z
-    .registers 6
+    .locals 4
 
     .line 40
     invoke-static {p0, p1}, Landroid/provider/DocumentsContract;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
@@ -383,12 +383,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 44
-    :cond_8
+    :cond_0
     invoke-static {p0, p1}, Landroidx/documentfile/provider/DocumentsContractApi19;->getFlags(Landroid/content/Context;Landroid/net/Uri;)J
 
     move-result-wide p0
@@ -401,16 +401,16 @@
 
     cmp-long p0, p0, v2
 
-    if-eqz p0, :cond_16
+    if-eqz p0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_16
+    :cond_1
     return v1
 .end method
 
 .method public static lastModified(Landroid/content/Context;Landroid/net/Uri;)J
-    .registers 5
+    .locals 3
 
     const-string v0, "last_modified"
 
@@ -425,7 +425,7 @@
 .end method
 
 .method public static length(Landroid/content/Context;Landroid/net/Uri;)J
-    .registers 5
+    .locals 3
 
     const-string v0, "_size"
 
@@ -440,7 +440,7 @@
 .end method
 
 .method private static queryForInt(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;I)I
-    .registers 6
+    .locals 2
 
     int-to-long v0, p3
 
@@ -455,7 +455,7 @@
 .end method
 
 .method private static queryForLong(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;J)J
-    .registers 13
+    .locals 8
 
     const-string v0, "Failed query: "
 
@@ -468,7 +468,7 @@
 
     const/4 v7, 0x0
 
-    :try_start_8
+    :try_start_0
     new-array v3, p0, [Ljava/lang/String;
 
     const/4 p0, 0x0
@@ -493,41 +493,41 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     invoke-interface {v7, p0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result p1
 
-    if-nez p1, :cond_29
+    if-nez p1, :cond_0
 
     .line 190
     invoke-interface {v7, p0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide p0
-    :try_end_25
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_25} :catch_2f
-    .catchall {:try_start_8 .. :try_end_25} :catchall_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 198
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return-wide p0
 
-    :cond_29
+    :cond_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return-wide p3
 
-    :catchall_2d
+    :catchall_0
     move-exception p0
 
-    goto :goto_46
+    goto :goto_0
 
-    :catch_2f
+    :catch_0
     move-exception p0
 
-    :try_start_30
+    :try_start_1
     const-string p1, "DocumentFile"
 
     .line 195
@@ -544,22 +544,22 @@
     move-result-object p0
 
     invoke-static {p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_42
-    .catchall {:try_start_30 .. :try_end_42} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 198
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return-wide p3
 
-    :goto_46
+    :goto_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     throw p0
 .end method
 
 .method private static queryForString(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 12
+    .locals 8
 
     const-string v0, "Failed query: "
 
@@ -572,7 +572,7 @@
 
     const/4 v7, 0x0
 
-    :try_start_8
+    :try_start_0
     new-array v3, p0, [Ljava/lang/String;
 
     const/4 p0, 0x0
@@ -597,41 +597,41 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     invoke-interface {v7, p0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result p1
 
-    if-nez p1, :cond_29
+    if-nez p1, :cond_0
 
     .line 165
     invoke-interface {v7, p0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object p0
-    :try_end_25
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_25} :catch_2f
-    .catchall {:try_start_8 .. :try_end_25} :catchall_2d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 173
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return-object p0
 
-    :cond_29
+    :cond_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return-object p3
 
-    :catchall_2d
+    :catchall_0
     move-exception p0
 
-    goto :goto_46
+    goto :goto_0
 
-    :catch_2f
+    :catch_0
     move-exception p0
 
-    :try_start_30
+    :try_start_1
     const-string p1, "DocumentFile"
 
     .line 170
@@ -648,15 +648,15 @@
     move-result-object p0
 
     invoke-static {p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_42
-    .catchall {:try_start_30 .. :try_end_42} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 173
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     return-object p3
 
-    :goto_46
+    :goto_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     throw p0

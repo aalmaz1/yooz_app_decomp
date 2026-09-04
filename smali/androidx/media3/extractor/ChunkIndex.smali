@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>([I[J[J[J)V
-    .registers 7
+    .locals 2
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
     iput p1, p0, Landroidx/media3/extractor/ChunkIndex;->length:I
 
-    if-lez p1, :cond_1c
+    if-lez p1, :cond_0
 
     add-int/lit8 p2, p1, -0x1
 
@@ -59,22 +59,22 @@
 
     iput-wide p2, p0, Landroidx/media3/extractor/ChunkIndex;->durationUs:J
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const-wide/16 p1, 0x0
 
     .line 58
     iput-wide p1, p0, Landroidx/media3/extractor/ChunkIndex;->durationUs:J
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getChunkIndex(J)I
-    .registers 5
+    .locals 2
 
     .line 69
     iget-object v0, p0, Landroidx/media3/extractor/ChunkIndex;->timesUs:[J
@@ -89,7 +89,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 81
     iget-wide v0, p0, Landroidx/media3/extractor/ChunkIndex;->durationUs:J
@@ -98,7 +98,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 9
+    .locals 6
 
     .line 86
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/ChunkIndex;->getChunkIndex(J)I
@@ -123,18 +123,18 @@
 
     cmp-long p1, v2, p1
 
-    if-gez p1, :cond_33
+    if-gez p1, :cond_1
 
     iget p1, p0, Landroidx/media3/extractor/ChunkIndex;->length:I
 
     add-int/lit8 p1, p1, -0x1
 
-    if-ne v0, p1, :cond_1e
+    if-ne v0, p1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 91
-    :cond_1e
+    :cond_0
     new-instance p1, Landroidx/media3/extractor/SeekPoint;
 
     iget-object p2, p0, Landroidx/media3/extractor/ChunkIndex;->timesUs:[J
@@ -157,8 +157,8 @@
     return-object p2
 
     .line 89
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v1}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -167,7 +167,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -175,7 +175,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 98
     new-instance v0, Ljava/lang/StringBuilder;

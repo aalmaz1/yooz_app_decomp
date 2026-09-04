@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.exoplayer.hls"
 
@@ -66,7 +66,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/hls/HlsDataSourceFactory;Landroidx/media3/exoplayer/hls/HlsExtractorFactory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker;JZIZJ)V
-    .registers 16
+    .locals 0
 
     .line 454
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -119,7 +119,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/hls/HlsDataSourceFactory;Landroidx/media3/exoplayer/hls/HlsExtractorFactory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker;JZIZJLandroidx/media3/exoplayer/hls/HlsMediaSource$1;)V
-    .registers 17
+    .locals 0
 
     .line 71
     invoke-direct/range {p0 .. p15}, Landroidx/media3/exoplayer/hls/HlsMediaSource;-><init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/hls/HlsDataSourceFactory;Landroidx/media3/exoplayer/hls/HlsExtractorFactory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker;JZIZJ)V
@@ -128,7 +128,7 @@
 .end method
 
 .method private createTimelineForLive(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;JJLandroidx/media3/exoplayer/hls/HlsManifest;)Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
-    .registers 34
+    .locals 27
 
     move-object/from16 v0, p0
 
@@ -151,7 +151,7 @@
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     iget-wide v5, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
@@ -159,13 +159,13 @@
 
     move-wide v13, v5
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     move-wide v13, v3
 
     .line 579
-    :goto_1e
+    :goto_0
     invoke-direct/range {p0 .. p1}, Landroidx/media3/exoplayer/hls/HlsMediaSource;->getLiveEdgeOffsetUs(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)J
 
     move-result-wide v11
@@ -177,7 +177,7 @@
 
     cmp-long v2, v5, v3
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     .line 583
     iget-object v2, v0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
@@ -188,15 +188,15 @@
 
     move-result-wide v2
 
-    goto :goto_37
+    goto :goto_1
 
     .line 586
-    :cond_33
+    :cond_1
     invoke-static {v1, v11, v12}, Landroidx/media3/exoplayer/hls/HlsMediaSource;->getTargetLiveOffsetUs(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;J)J
 
     move-result-wide v2
 
-    :goto_37
+    :goto_1
     move-wide v5, v2
 
     .line 589
@@ -226,23 +226,23 @@
 
     const/4 v4, 0x1
 
-    if-ne v2, v3, :cond_55
+    if-ne v2, v3, :cond_2
 
     iget-boolean v2, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasPositiveStartOffset:Z
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_2
 
     move/from16 v23, v4
 
-    goto :goto_58
+    goto :goto_2
 
-    :cond_55
+    :cond_2
     const/4 v2, 0x0
 
     move/from16 v23, v2
 
     .line 598
-    :goto_58
+    :goto_2
     new-instance v2, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
 
     const-wide v11, -0x7fffffffffffffffL    # -4.9E-324
@@ -282,7 +282,7 @@
 .end method
 
 .method private createTimelineForOnDemand(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;JJLandroidx/media3/exoplayer/hls/HlsManifest;)Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
-    .registers 31
+    .locals 24
 
     move-object/from16 v0, p1
 
@@ -293,7 +293,7 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_3
 
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
@@ -301,15 +301,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
-    goto :goto_31
+    goto :goto_1
 
     .line 623
-    :cond_16
+    :cond_0
     iget-boolean v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->preciseStart:Z
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_2
 
     iget-wide v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
 
@@ -317,12 +317,12 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 626
-    :cond_23
+    :cond_1
     iget-object v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
     iget-wide v2, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
@@ -334,20 +334,20 @@
 
     iget-wide v1, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->relativeStartTimeUs:J
 
-    goto :goto_33
+    goto :goto_2
 
     .line 624
-    :cond_2e
-    :goto_2e
+    :cond_2
+    :goto_0
     iget-wide v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
 
-    goto :goto_33
+    goto :goto_2
 
-    :cond_31
-    :goto_31
+    :cond_3
+    :goto_1
     const-wide/16 v1, 0x0
 
-    :goto_33
+    :goto_2
     move-wide/from16 v16, v1
 
     .line 631
@@ -388,7 +388,7 @@
 .end method
 
 .method private static findClosestPrecedingIndependentPart(Ljava/util/List;J)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -404,12 +404,12 @@
     const/4 v1, 0x0
 
     .line 735
-    :goto_2
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_24
+    if-ge v1, v2, :cond_2
 
     .line 736
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -423,39 +423,39 @@
 
     cmp-long v3, v3, p1
 
-    if-gtz v3, :cond_1a
+    if-gtz v3, :cond_0
 
     iget-boolean v3, v2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;->isIndependent:Z
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_0
 
     move-object v0, v2
 
-    goto :goto_21
+    goto :goto_1
 
     .line 739
-    :cond_1a
+    :cond_0
     iget-wide v2, v2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;->relativeStartTimeUs:J
 
     cmp-long v2, v2, p1
 
-    if-lez v2, :cond_21
-
-    goto :goto_24
-
-    :cond_21
-    :goto_21
-    add-int/lit8 v1, v1, 0x1
+    if-lez v2, :cond_1
 
     goto :goto_2
 
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    :goto_2
     return-object v0
 .end method
 
 .method private static findClosestPrecedingSegment(Ljava/util/List;J)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -489,12 +489,12 @@
 .end method
 
 .method private getLiveEdgeOffsetUs(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)J
-    .registers 6
+    .locals 4
 
     .line 648
     iget-boolean v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasProgramDateTime:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 649
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->elapsedRealTimeOffsetMs:J
@@ -513,17 +513,17 @@
 
     sub-long/2addr v0, v2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const-wide/16 v0, 0x0
 
-    :goto_16
+    :goto_0
     return-wide v0
 .end method
 
 .method private getLiveWindowDefaultStartPositionUs(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;J)J
-    .registers 8
+    .locals 4
 
     .line 656
     iget-wide v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
@@ -532,15 +532,15 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 657
     iget-wide p2, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 660
-    :cond_e
+    :cond_0
     iget-wide v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
     add-long/2addr v0, p2
@@ -556,15 +556,15 @@
     sub-long p2, v0, p2
 
     .line 661
-    :goto_1b
+    :goto_0
     iget-boolean v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->preciseStart:Z
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     return-wide p2
 
     .line 665
-    :cond_20
+    :cond_1
     iget-object v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->trailingParts:Ljava/util/List;
 
     .line 666
@@ -572,7 +572,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2
 
     .line 668
     iget-wide p1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;->relativeStartTimeUs:J
@@ -580,21 +580,21 @@
     return-wide p1
 
     .line 670
-    :cond_2b
+    :cond_2
     iget-object v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     const-wide/16 p1, 0x0
 
     return-wide p1
 
     .line 673
-    :cond_36
+    :cond_3
     iget-object p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
     .line 674
@@ -609,7 +609,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_47
+    if-eqz p2, :cond_4
 
     .line 677
     iget-wide p1, p2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;->relativeStartTimeUs:J
@@ -617,14 +617,14 @@
     return-wide p1
 
     .line 679
-    :cond_47
+    :cond_4
     iget-wide p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->relativeStartTimeUs:J
 
     return-wide p1
 .end method
 
 .method private static getTargetLiveOffsetUs(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;J)J
-    .registers 8
+    .locals 5
 
     .line 714
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->serverControl:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
@@ -636,7 +636,7 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 717
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
@@ -645,41 +645,41 @@
 
     sub-long/2addr v0, v2
 
-    goto :goto_30
+    goto :goto_0
 
     .line 718
-    :cond_13
+    :cond_0
     iget-wide v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->partHoldBackUs:J
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     iget-wide v1, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->partTargetDurationUs:J
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 721
     iget-wide v0, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->partHoldBackUs:J
 
-    goto :goto_30
+    goto :goto_0
 
     .line 722
-    :cond_22
+    :cond_1
     iget-wide v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->holdBackUs:J
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_2
 
     .line 723
     iget-wide v0, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;->holdBackUs:J
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const-wide/16 v0, 0x3
 
     .line 726
@@ -687,14 +687,14 @@
 
     mul-long/2addr v0, v2
 
-    :goto_30
+    :goto_0
     add-long/2addr v0, p1
 
     return-wide v0
 .end method
 
 .method private updateLiveConfiguration(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;J)V
-    .registers 8
+    .locals 4
 
     .line 683
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/HlsMediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -710,13 +710,13 @@
 
     cmpl-float v1, v1, v2
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_0
 
     iget v0, v0, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
     cmpl-float v0, v0, v2
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     iget-object v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->serverControl:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
 
@@ -726,7 +726,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_0
 
     iget-object p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->serverControl:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
 
@@ -734,17 +734,17 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_0
     const/4 p1, 0x0
 
     .line 689
-    :goto_2d
+    :goto_0
     new-instance v0, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;-><init>()V
@@ -760,34 +760,34 @@
 
     const/high16 p3, 0x3f800000    # 1.0f
 
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_1
 
     move v0, p3
 
-    goto :goto_44
+    goto :goto_1
 
     .line 692
-    :cond_40
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     iget v0, v0, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
-    :goto_44
+    :goto_1
     invoke-virtual {p2, v0}, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->setMinPlaybackSpeed(F)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
 
     move-result-object p2
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_2
 
-    goto :goto_4f
+    goto :goto_2
 
     .line 693
-    :cond_4b
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     iget p3, p1, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
-    :goto_4f
+    :goto_2
     invoke-virtual {p2, p3}, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;->setMaxPlaybackSpeed(F)Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
 
     move-result-object p1
@@ -805,7 +805,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 7
+    .locals 5
 
     .line 478
     invoke-virtual {p0}, Landroidx/media3/exoplayer/hls/HlsMediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -825,7 +825,7 @@
     .line 481
     iget-object v2, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_0
 
     .line 482
     iget-object v3, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -837,7 +837,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_0
 
     iget-object v3, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
 
@@ -848,7 +848,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_0
 
     iget-object v2, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
@@ -859,7 +859,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_0
 
     iget-object v0, v0, Landroidx/media3/common/MediaItem;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
@@ -870,21 +870,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_3a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_3b
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 25
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -950,21 +950,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 473
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -973,7 +973,7 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -989,14 +989,14 @@
 .end method
 
 .method public onPrimaryPlaylistRefreshed(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)V
-    .registers 14
+    .locals 12
 
     .line 550
     iget-boolean v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasProgramDateTime:Z
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     iget-wide v3, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startTimeUs:J
 
@@ -1006,38 +1006,38 @@
 
     move-wide v9, v3
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move-wide v9, v1
 
     .line 555
-    :goto_12
+    :goto_0
     iget v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->playlistType:I
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_1f
+    if-eq v0, v3, :cond_2
 
     iget v0, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->playlistType:I
 
     const/4 v3, 0x1
 
-    if-ne v0, v3, :cond_1d
+    if-ne v0, v3, :cond_1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1d
+    :cond_1
     move-wide v7, v1
 
-    goto :goto_20
+    goto :goto_2
 
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_1
     move-wide v7, v9
 
     .line 559
-    :goto_20
+    :goto_2
     new-instance v11, Landroidx/media3/exoplayer/hls/HlsManifest;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->playlistTracker:Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker;
@@ -1062,7 +1062,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_3
 
     move-object v5, p0
 
@@ -1073,9 +1073,9 @@
 
     move-result-object p1
 
-    goto :goto_46
+    goto :goto_3
 
-    :cond_40
+    :cond_3
     move-object v5, p0
 
     move-object v6, p1
@@ -1086,14 +1086,14 @@
     move-result-object p1
 
     .line 567
-    :goto_46
+    :goto_3
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/hls/HlsMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
     return-void
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 2
 
     .line 496
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->mediaTransferListener:Landroidx/media3/datasource/TransferListener;
@@ -1156,7 +1156,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 538
     check-cast p1, Landroidx/media3/exoplayer/hls/HlsMediaPeriod;
@@ -1167,7 +1167,7 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 2
+    .locals 1
 
     .line 543
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->playlistTracker:Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker;
@@ -1183,22 +1183,22 @@
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 491
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/HlsMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 492
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

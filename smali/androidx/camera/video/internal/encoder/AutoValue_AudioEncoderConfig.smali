@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;III)V
-    .registers 7
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/AudioEncoderConfig;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;IIILandroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig$1;)V
-    .registers 8
+    .locals 0
 
     .line 9
     invoke-direct/range {p0 .. p6}, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;-><init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;III)V
@@ -65,21 +65,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 87
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/encoder/AudioEncoderConfig;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_2
 
     .line 88
     check-cast p1, Landroidx/camera/video/internal/encoder/AudioEncoderConfig;
@@ -95,7 +95,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->profile:I
 
@@ -104,7 +104,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_44
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->inputTimebase:Landroidx/camera/core/impl/Timebase;
 
@@ -117,7 +117,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->bitrate:I
 
@@ -126,7 +126,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_44
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->sampleRate:I
 
@@ -135,7 +135,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_44
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->channelCount:I
 
@@ -144,22 +144,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_44
+    if-ne v1, p1, :cond_1
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_44
+    :cond_1
     move v0, v2
 
-    :goto_45
+    :goto_0
     return v0
 
-    :cond_46
+    :cond_2
     return v2
 .end method
 
 .method public getBitrate()I
-    .registers 2
+    .locals 1
 
     .line 57
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->bitrate:I
@@ -168,7 +168,7 @@
 .end method
 
 .method public getChannelCount()I
-    .registers 2
+    .locals 1
 
     .line 67
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->channelCount:I
@@ -177,7 +177,7 @@
 .end method
 
 .method public getInputTimebase()Landroidx/camera/core/impl/Timebase;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->inputTimebase:Landroidx/camera/core/impl/Timebase;
@@ -186,7 +186,7 @@
 .end method
 
 .method public getMimeType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->mimeType:Ljava/lang/String;
@@ -195,7 +195,7 @@
 .end method
 
 .method public getProfile()I
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->profile:I
@@ -204,7 +204,7 @@
 .end method
 
 .method public getSampleRate()I
-    .registers 2
+    .locals 1
 
     .line 62
     iget v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->sampleRate:I
@@ -213,7 +213,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 103
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/AutoValue_AudioEncoderConfig;->mimeType:Ljava/lang/String;
@@ -269,7 +269,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 72
     new-instance v0, Ljava/lang/StringBuilder;

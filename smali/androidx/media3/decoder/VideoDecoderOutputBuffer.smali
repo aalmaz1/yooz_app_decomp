@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/decoder/DecoderOutputBuffer$Owner;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,37 +67,37 @@
 .end method
 
 .method private static isSafeToMultiply(II)Z
-    .registers 3
+    .locals 1
 
-    if-ltz p0, :cond_e
+    if-ltz p0, :cond_1
 
-    if-ltz p1, :cond_e
+    if-ltz p1, :cond_1
 
-    if-lez p1, :cond_c
+    if-lez p1, :cond_0
 
     const v0, 0x7fffffff
 
     .line 172
     div-int/2addr v0, p1
 
-    if-ge p0, v0, :cond_e
+    if-ge p0, v0, :cond_1
 
-    :cond_c
+    :cond_0
     const/4 p0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_1
     const/4 p0, 0x0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public init(JILjava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 0
 
     .line 87
     iput-wide p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->timeUs:J
@@ -105,14 +105,14 @@
     .line 88
     iput p3, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->mode:I
 
-    if-eqz p4, :cond_3b
+    if-eqz p4, :cond_2
 
     .line 89
     invoke-virtual {p4}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
     move-result p1
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_2
 
     const/high16 p1, 0x10000000
 
@@ -127,27 +127,27 @@
     .line 92
     iget-object p2, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_1
 
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result p2
 
-    if-ge p2, p1, :cond_20
+    if-ge p2, p1, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 95
-    :cond_20
+    :cond_0
     iget-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 93
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_0
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -155,7 +155,7 @@
     iput-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
     .line 97
-    :goto_2c
+    :goto_1
     iget-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, p4}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
@@ -170,20 +170,20 @@
     .line 99
     invoke-virtual {p4, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    goto :goto_3e
+    goto :goto_2
 
-    :cond_3b
+    :cond_2
     const/4 p1, 0x0
 
     .line 101
     iput-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
 
-    :goto_3e
+    :goto_2
     return-void
 .end method
 
 .method public initForPrivateFrame(II)V
-    .registers 3
+    .locals 0
 
     .line 163
     iput p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->width:I
@@ -195,7 +195,7 @@
 .end method
 
 .method public initForYuvFrame(IIIII)Z
-    .registers 12
+    .locals 6
 
     .line 111
     iput p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->width:I
@@ -226,17 +226,17 @@
 
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_88
+    if-eqz p5, :cond_6
 
     invoke-static {p4, p1}, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->isSafeToMultiply(II)Z
 
     move-result p5
 
-    if-nez p5, :cond_1c
+    if-nez p5, :cond_0
 
-    goto :goto_88
+    goto :goto_2
 
-    :cond_1c
+    :cond_0
     mul-int/2addr p2, p3
 
     mul-int/2addr p1, p4
@@ -252,28 +252,28 @@
 
     move-result v2
 
-    if-eqz v2, :cond_88
+    if-eqz v2, :cond_6
 
-    if-ge p5, p2, :cond_2b
+    if-ge p5, p2, :cond_1
 
-    goto :goto_88
+    goto :goto_2
 
     .line 126
-    :cond_2b
+    :cond_1
     iget-object v2, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_3
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v2
 
-    if-ge v2, p5, :cond_36
+    if-ge v2, p5, :cond_2
 
-    goto :goto_41
+    goto :goto_0
 
     .line 129
-    :cond_36
+    :cond_2
     iget-object v2, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
@@ -283,11 +283,11 @@
 
     invoke-virtual {v2, p5}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    goto :goto_47
+    goto :goto_1
 
     .line 127
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_0
     invoke-static {p5}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object p5
@@ -295,12 +295,12 @@
     iput-object p5, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
     .line 133
-    :goto_47
+    :goto_1
     iget-object p5, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->yuvPlanes:[Ljava/nio/ByteBuffer;
 
     const/4 v2, 0x3
 
-    if-nez p5, :cond_50
+    if-nez p5, :cond_4
 
     new-array p5, v2, [Ljava/nio/ByteBuffer;
 
@@ -308,7 +308,7 @@
     iput-object p5, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->yuvPlanes:[Ljava/nio/ByteBuffer;
 
     .line 137
-    :cond_50
+    :cond_4
     iget-object p5, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
     .line 138
@@ -357,7 +357,7 @@
     .line 149
     iget-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->yuvStrides:[I
 
-    if-nez p1, :cond_7f
+    if-nez p1, :cond_5
 
     new-array p1, v2, [I
 
@@ -365,7 +365,7 @@
     iput-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->yuvStrides:[I
 
     .line 152
-    :cond_7f
+    :cond_5
     iget-object p1, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->yuvStrides:[I
 
     aput p3, p1, v0
@@ -378,13 +378,13 @@
 
     return v5
 
-    :cond_88
-    :goto_88
+    :cond_6
+    :goto_2
     return v0
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->owner:Landroidx/media3/decoder/DecoderOutputBuffer$Owner;

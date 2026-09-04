@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>([BLjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 346
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public getData()[B
-    .registers 2
+    .locals 1
 
     .line 353
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;->data:[B
@@ -48,7 +48,7 @@
 .end method
 
 .method public getDefaultUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 361
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;->defaultUrl:Ljava/lang/String;

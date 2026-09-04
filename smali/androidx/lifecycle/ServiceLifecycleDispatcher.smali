@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "provider"
 
@@ -88,17 +88,17 @@
 .end method
 
 .method private final postDispatchRunnable(Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 2
 
     .line 40
     iget-object v0, p0, Landroidx/lifecycle/ServiceLifecycleDispatcher;->lastDispatchRunnable:Landroidx/lifecycle/ServiceLifecycleDispatcher$DispatchRunnable;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/lifecycle/ServiceLifecycleDispatcher$DispatchRunnable;->run()V
 
     .line 41
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/lifecycle/ServiceLifecycleDispatcher$DispatchRunnable;
 
     iget-object v1, p0, Landroidx/lifecycle/ServiceLifecycleDispatcher;->registry:Landroidx/lifecycle/LifecycleRegistry;
@@ -122,7 +122,7 @@
 
 # virtual methods
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
-    .registers 2
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/lifecycle/ServiceLifecycleDispatcher;->registry:Landroidx/lifecycle/LifecycleRegistry;
@@ -133,7 +133,7 @@
 .end method
 
 .method public onServicePreSuperOnBind()V
-    .registers 2
+    .locals 1
 
     .line 57
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
@@ -144,7 +144,7 @@
 .end method
 
 .method public onServicePreSuperOnCreate()V
-    .registers 2
+    .locals 1
 
     .line 49
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
@@ -155,7 +155,7 @@
 .end method
 
 .method public onServicePreSuperOnDestroy()V
-    .registers 2
+    .locals 1
 
     .line 74
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
@@ -171,7 +171,7 @@
 .end method
 
 .method public onServicePreSuperOnStart()V
-    .registers 2
+    .locals 1
 
     .line 66
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;

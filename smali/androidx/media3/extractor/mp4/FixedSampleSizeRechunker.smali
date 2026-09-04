@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static rechunk(I[J[IJ)Landroidx/media3/extractor/mp4/FixedSampleSizeRechunker$Results;
-    .registers 21
+    .locals 16
 
     move-object/from16 v0, p2
 
@@ -44,8 +44,8 @@
 
     move v5, v4
 
-    :goto_a
-    if-ge v4, v2, :cond_16
+    :goto_0
+    if-ge v4, v2, :cond_0
 
     aget v6, v0, v4
 
@@ -58,10 +58,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 79
-    :cond_16
+    :cond_0
     new-array v7, v5, [J
 
     .line 80
@@ -80,10 +80,10 @@
     move v9, v4
 
     .line 87
-    :goto_21
+    :goto_1
     array-length v5, v0
 
-    if-ge v3, v5, :cond_4c
+    if-ge v3, v5, :cond_2
 
     .line 88
     aget v5, v0, v3
@@ -91,8 +91,8 @@
     .line 89
     aget-wide v12, p1, v3
 
-    :goto_28
-    if-lez v5, :cond_49
+    :goto_2
+    if-lez v5, :cond_1
 
     .line 92
     invoke-static {v1, v5}, Ljava/lang/Math;->min(II)I
@@ -137,14 +137,14 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_28
+    goto :goto_2
 
-    :cond_49
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_4c
+    :cond_2
     int-to-long v0, v2
 
     mul-long v12, p3, v0

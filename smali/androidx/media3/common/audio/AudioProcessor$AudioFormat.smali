@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 46
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,27 +64,27 @@
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 78
     invoke-static {p3, p2}, Landroidx/media3/common/util/Util;->getPcmFrameSize(II)I
 
     move-result p1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, -0x1
 
     .line 79
-    :goto_15
+    :goto_0
     iput p1, p0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->bytesPerFrame:I
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/Format;)V
-    .registers 4
+    .locals 2
 
     .line 69
     iget v0, p1, Landroidx/media3/common/Format;->sampleRate:I
@@ -101,26 +101,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 99
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 102
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     .line 103
@@ -128,31 +128,31 @@
 
     iget v3, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
-    if-ne v1, v3, :cond_1f
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->channelCount:I
 
     iget v3, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->channelCount:I
 
-    if-ne v1, v3, :cond_1f
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->encoding:I
 
     iget p1, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->encoding:I
 
-    if-ne v1, p1, :cond_1f
+    if-ne v1, p1, :cond_2
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_2
     move v0, v2
 
-    :goto_20
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -197,7 +197,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 84
     new-instance v0, Ljava/lang/StringBuilder;

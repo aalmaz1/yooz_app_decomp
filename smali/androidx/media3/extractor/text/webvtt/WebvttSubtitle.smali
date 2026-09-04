@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,12 +62,12 @@
     const/4 v0, 0x0
 
     .line 39
-    :goto_19
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_38
+    if-ge v0, v1, :cond_0
 
     .line 40
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -96,10 +96,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 45
-    :cond_38
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;->cueTimesUs:[J
 
     array-length v0, p1
@@ -117,7 +117,7 @@
 .end method
 
 .method static synthetic lambda$getCues$0(Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;)I
-    .registers 4
+    .locals 2
 
     .line 83
     iget-wide v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;->startTimeUs:J
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public getCues(J)Ljava/util/List;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -159,14 +159,14 @@
     move v3, v2
 
     .line 71
-    :goto_c
+    :goto_0
     iget-object v4, p0, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;->cueInfos:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_45
+    if-ge v3, v4, :cond_2
 
     .line 72
     iget-object v4, p0, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;->cueTimesUs:[J
@@ -177,7 +177,7 @@
 
     cmp-long v6, v6, p1
 
-    if-gtz v6, :cond_42
+    if-gtz v6, :cond_1
 
     add-int/lit8 v5, v5, 0x1
 
@@ -185,7 +185,7 @@
 
     cmp-long v4, p1, v4
 
-    if-gez v4, :cond_42
+    if-gez v4, :cond_1
 
     .line 73
     iget-object v4, p0, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;->cueInfos:Ljava/util/List;
@@ -205,27 +205,27 @@
 
     cmpl-float v5, v5, v6
 
-    if-nez v5, :cond_3d
+    if-nez v5, :cond_0
 
     .line 75
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_42
+    goto :goto_1
 
     .line 77
-    :cond_3d
+    :cond_0
     iget-object v4, v4, Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;->cue:Landroidx/media3/common/text/Cue;
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_42
-    :goto_42
+    :cond_1
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 83
-    :cond_45
+    :cond_2
     new-instance p1, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle$$ExternalSyntheticLambda0;
 
     invoke-direct {p1}, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle$$ExternalSyntheticLambda0;-><init>()V
@@ -233,12 +233,12 @@
     invoke-static {v1, p1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 84
-    :goto_4d
+    :goto_2
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-ge v2, p1, :cond_71
+    if-ge v2, p1, :cond_3
 
     .line 85
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -272,30 +272,30 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4d
+    goto :goto_2
 
-    :cond_71
+    :cond_3
     return-object v0
 .end method
 
 .method public getEventTime(I)J
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-ltz p1, :cond_6
+    if-ltz p1, :cond_0
 
     move v2, v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v1
 
     .line 62
-    :goto_7
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 63
@@ -303,14 +303,14 @@
 
     array-length v2, v2
 
-    if-ge p1, v2, :cond_10
+    if-ge p1, v2, :cond_1
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_10
+    :cond_1
     move v0, v1
 
-    :goto_11
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 64
@@ -322,7 +322,7 @@
 .end method
 
 .method public getEventTimeCount()I
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;->sortedCueTimesUs:[J
@@ -333,7 +333,7 @@
 .end method
 
 .method public getNextEventTimeIndex(J)I
-    .registers 5
+    .locals 2
 
     .line 51
     iget-object v0, p0, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;->sortedCueTimesUs:[J
@@ -349,13 +349,13 @@
 
     array-length p2, p2
 
-    if-ge p1, p2, :cond_d
+    if-ge p1, p2, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_e
+    :goto_0
     return p1
 .end method

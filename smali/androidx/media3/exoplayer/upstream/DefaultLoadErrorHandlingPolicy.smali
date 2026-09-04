@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public getFallbackSelectionFor(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackOptions;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;)Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;
-    .registers 5
+    .locals 2
 
     .line 98
     iget-object p2, p2, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;->exception:Ljava/io/IOException;
@@ -65,11 +65,11 @@
 
     const/4 v0, 0x0
 
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     return-object v0
 
-    :cond_a
+    :cond_0
     const/4 p2, 0x1
 
     .line 102
@@ -77,7 +77,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     .line 103
     new-instance p1, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;
@@ -88,7 +88,7 @@
 
     return-object p1
 
-    :cond_1a
+    :cond_1
     const/4 p2, 0x2
 
     .line 104
@@ -96,7 +96,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2
 
     .line 105
     new-instance p1, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$FallbackSelection;
@@ -107,40 +107,40 @@
 
     return-object p1
 
-    :cond_2a
+    :cond_2
     return-object v0
 .end method
 
 .method public getMinimumLoadableRetryCount(I)I
-    .registers 4
+    .locals 2
 
     .line 135
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultLoadErrorHandlingPolicy;->minimumLoadableRetryCount:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_1
 
     const/4 v0, 0x7
 
-    if-ne p1, v0, :cond_a
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x6
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x3
 
-    :goto_b
+    :goto_0
     return p1
 
-    :cond_c
+    :cond_1
     return v0
 .end method
 
 .method public getRetryDelayMsFor(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;)J
-    .registers 4
+    .locals 2
 
     .line 119
     iget-object v0, p1, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;->exception:Ljava/io/IOException;
@@ -148,30 +148,30 @@
     .line 124
     instance-of v1, v0, Landroidx/media3/common/ParserException;
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     instance-of v1, v0, Ljava/io/FileNotFoundException;
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     instance-of v1, v0, Landroidx/media3/datasource/HttpDataSource$CleartextNotPermittedException;
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     instance-of v1, v0, Landroidx/media3/exoplayer/upstream/Loader$UnexpectedLoaderException;
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     invoke-static {v0}, Landroidx/media3/datasource/DataSourceException;->isCausedByPositionOutOfRange(Ljava/io/IOException;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 126
-    :cond_19
+    :cond_0
     iget p1, p1, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;->errorCount:I
 
     add-int/lit8 p1, p1, -0x1
@@ -186,30 +186,30 @@
 
     int-to-long v0, p1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_2c
+    :goto_1
     return-wide v0
 .end method
 
 .method protected isEligibleForFallback(Ljava/io/IOException;)Z
-    .registers 5
+    .locals 3
 
     .line 146
     instance-of v0, p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 149
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
 
     .line 151
@@ -217,41 +217,41 @@
 
     const/16 v2, 0x193
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     iget v0, p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
     const/16 v2, 0x194
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     iget v0, p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
     const/16 v2, 0x19a
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     iget v0, p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
     const/16 v2, 0x1a0
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     iget v0, p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
     const/16 v2, 0x1f4
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     iget p1, p1, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->responseCode:I
 
     const/16 v0, 0x1f7
 
-    if-ne p1, v0, :cond_2d
+    if-ne p1, v0, :cond_2
 
-    :cond_2c
+    :cond_1
     const/4 v1, 0x1
 
-    :cond_2d
+    :cond_2
     return v1
 .end method

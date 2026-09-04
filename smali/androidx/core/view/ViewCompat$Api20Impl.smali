@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5717
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static dispatchApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 2
+    .locals 0
 
     .line 5733
     invoke-virtual {p0, p1}, Landroid/view/View;->dispatchApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
@@ -36,7 +36,7 @@
 .end method
 
 .method static onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 2
+    .locals 0
 
     .line 5728
     invoke-virtual {p0, p1}, Landroid/view/View;->onApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
@@ -47,7 +47,7 @@
 .end method
 
 .method static requestApplyInsets(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     .line 5723
     invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V

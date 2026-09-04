@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 751
     :try_start_0
@@ -119,23 +119,23 @@
 
     .line 761
     sput-boolean v5, Landroidx/appcompat/widget/DropDownListView$Api30Impl;->sHasMethods:Z
-    :try_end_51
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_51} :catch_52
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_56
+    goto :goto_0
 
-    :catch_52
+    :catch_0
     move-exception v0
 
     .line 763
     invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
 
-    :goto_56
+    :goto_0
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 767
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -144,7 +144,7 @@
 .end method
 
 .method static canPositionSelectorForHoveredItem()Z
-    .registers 1
+    .locals 1
 
     .line 776
     sget-boolean v0, Landroidx/appcompat/widget/DropDownListView$Api30Impl;->sHasMethods:Z
@@ -153,7 +153,7 @@
 .end method
 
 .method static positionSelectorForHoveredItem(Landroidx/appcompat/widget/DropDownListView;ILandroid/view/View;)V
-    .registers 9
+    .locals 6
 
     .line 791
     :try_start_0
@@ -228,26 +228,26 @@
     aput-object p1, v0, v3
 
     invoke-virtual {p2, p0, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_42
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_42} :catch_48
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_42} :catch_43
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4c
+    goto :goto_0
 
-    :catch_43
+    :catch_0
     move-exception p0
 
     .line 797
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->printStackTrace()V
 
-    goto :goto_4c
+    goto :goto_0
 
-    :catch_48
+    :catch_1
     move-exception p0
 
     .line 795
     invoke-virtual {p0}, Ljava/lang/IllegalAccessException;->printStackTrace()V
 
-    :goto_4c
+    :goto_0
     return-void
 .end method

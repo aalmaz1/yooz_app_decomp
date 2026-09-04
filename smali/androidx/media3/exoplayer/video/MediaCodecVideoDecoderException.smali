@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;Landroid/view/Surface;)V
-    .registers 4
+    .locals 0
 
     .line 37
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/mediacodec/MediaCodecDecoderException;-><init>(Ljava/lang/Throwable;Landroidx/media3/exoplayer/mediacodec/MediaCodecInfo;)V
@@ -23,27 +23,27 @@
 
     iput p1, p0, Landroidx/media3/exoplayer/video/MediaCodecVideoDecoderException;->surfaceIdentityHashCode:I
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_1
 
     .line 39
     invoke-virtual {p3}, Landroid/view/Surface;->isValid()Z
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_15
+    :goto_1
     iput-boolean p1, p0, Landroidx/media3/exoplayer/video/MediaCodecVideoDecoderException;->isSurfaceValid:Z
 
     return-void

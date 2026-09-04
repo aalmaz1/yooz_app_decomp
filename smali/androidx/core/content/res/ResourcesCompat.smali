@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 75
     new-instance v0, Ljava/lang/ThreadLocal;
@@ -78,7 +78,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 714
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method private static addColorStateListToCache(Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;ILandroid/content/res/ColorStateList;Landroid/content/res/Resources$Theme;)V
-    .registers 7
+    .locals 3
 
     .line 298
     sget-object v0, Landroidx/core/content/res/ResourcesCompat;->sColorStateCacheLock:Ljava/lang/Object;
@@ -95,7 +95,7 @@
     monitor-enter v0
 
     .line 299
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/core/content/res/ResourcesCompat;->sColorStateCaches:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -104,7 +104,7 @@
 
     check-cast v2, Landroid/util/SparseArray;
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_0
 
     .line 301
     new-instance v2, Landroid/util/SparseArray;
@@ -115,7 +115,7 @@
     invoke-virtual {v1, p0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 304
-    :cond_15
+    :cond_0
     new-instance v1, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;
 
     iget-object p0, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mResources:Landroid/content/res/Resources;
@@ -135,18 +135,18 @@
 
     return-void
 
-    :catchall_25
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_27
-    .catchall {:try_start_3 .. :try_end_27} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static clearCachesForTheme(Landroid/content/res/Resources$Theme;)V
-    .registers 4
+    .locals 3
 
     .line 103
     sget-object v0, Landroidx/core/content/res/ResourcesCompat;->sColorStateCacheLock:Ljava/lang/Object;
@@ -154,7 +154,7 @@
     monitor-enter v0
 
     .line 104
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/core/content/res/ResourcesCompat;->sColorStateCaches:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1}, Ljava/util/WeakHashMap;->keySet()Ljava/util/Set;
@@ -166,13 +166,13 @@
     move-result-object v1
 
     .line 105
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
     .line 106
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -181,7 +181,7 @@
 
     check-cast v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 107
     iget-object v2, v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mTheme:Landroid/content/res/Resources$Theme;
@@ -190,31 +190,31 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 108
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_d
+    goto :goto_0
 
     .line 111
-    :cond_27
+    :cond_1
     monitor-exit v0
 
     return-void
 
-    :catchall_29
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_2b
-    .catchall {:try_start_3 .. :try_end_2b} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method private static getCachedColorStateList(Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;I)Landroid/content/res/ColorStateList;
-    .registers 7
+    .locals 5
 
     .line 274
     sget-object v0, Landroidx/core/content/res/ResourcesCompat;->sColorStateCacheLock:Ljava/lang/Object;
@@ -222,7 +222,7 @@
     monitor-enter v0
 
     .line 275
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/core/content/res/ResourcesCompat;->sColorStateCaches:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -231,14 +231,14 @@
 
     check-cast v1, Landroid/util/SparseArray;
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_3
 
     .line 276
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
-    if-lez v2, :cond_46
+    if-lez v2, :cond_3
 
     .line 277
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -247,7 +247,7 @@
 
     check-cast v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_3
 
     .line 279
     iget-object v3, v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;->mConfiguration:Landroid/content/res/Configuration;
@@ -262,20 +262,20 @@
 
     move-result v3
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_2
 
     iget-object v3, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mTheme:Landroid/content/res/Resources$Theme;
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_0
 
     iget v3, v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;->mThemeHash:I
 
-    if-eqz v3, :cond_3f
+    if-eqz v3, :cond_1
 
-    :cond_31
+    :cond_0
     iget-object v3, p0, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;->mTheme:Landroid/content/res/Resources$Theme;
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_2
 
     iget v3, v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;->mThemeHash:I
 
@@ -286,10 +286,10 @@
 
     move-result p0
 
-    if-ne v3, p0, :cond_43
+    if-ne v3, p0, :cond_2
 
     .line 283
-    :cond_3f
+    :cond_1
     iget-object p0, v2, Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;->mValue:Landroid/content/res/ColorStateList;
 
     monitor-exit v0
@@ -297,29 +297,29 @@
     return-object p0
 
     .line 286
-    :cond_43
+    :cond_2
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
 
     .line 290
-    :cond_46
+    :cond_3
     monitor-exit v0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :catchall_49
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_4b
-    .catchall {:try_start_3 .. :try_end_4b} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static getCachedFont(Landroid/content/Context;I)Landroid/graphics/Typeface;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -331,14 +331,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 442
-    :cond_8
+    :cond_0
     new-instance v2, Landroid/util/TypedValue;
 
     invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
@@ -365,7 +365,7 @@
 .end method
 
 .method public static getColor(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)I
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -381,7 +381,7 @@
 .end method
 
 .method public static getColorStateList(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -398,17 +398,17 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     return-object v1
 
     .line 238
-    :cond_c
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ResourcesCompat;->inflateColorStateList(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_1
 
     .line 241
     invoke-static {v0, p1, v1, p2}, Landroidx/core/content/res/ResourcesCompat;->addColorStateListToCache(Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;ILandroid/content/res/ColorStateList;Landroid/content/res/Resources$Theme;)V
@@ -416,7 +416,7 @@
     return-object v1
 
     .line 246
-    :cond_16
+    :cond_1
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ResourcesCompat$Api23Impl;->getColorStateList(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object p0
@@ -425,7 +425,7 @@
 .end method
 
 .method public static getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -441,7 +441,7 @@
 .end method
 
 .method public static getDrawableForDensity(Landroid/content/res/Resources;IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -457,14 +457,14 @@
 .end method
 
 .method public static getFloat(Landroid/content/res/Resources;I)F
-    .registers 5
+    .locals 3
 
     .line 376
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 377
     invoke-static {p0, p1}, Landroidx/core/content/res/ResourcesCompat$Api29Impl;->getFloat(Landroid/content/res/Resources;I)F
@@ -474,7 +474,7 @@
     return p0
 
     .line 380
-    :cond_b
+    :cond_0
     invoke-static {}, Landroidx/core/content/res/ResourcesCompat;->getTypedValue()Landroid/util/TypedValue;
 
     move-result-object v0
@@ -489,7 +489,7 @@
 
     const/4 v1, 0x4
 
-    if-ne p0, v1, :cond_1d
+    if-ne p0, v1, :cond_1
 
     .line 383
     invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
@@ -499,7 +499,7 @@
     return p0
 
     .line 385
-    :cond_1d
+    :cond_1
     new-instance p0, Landroid/content/res/Resources$NotFoundException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -549,7 +549,7 @@
 .end method
 
 .method public static getFont(Landroid/content/Context;I)Landroid/graphics/Typeface;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -561,14 +561,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 414
-    :cond_8
+    :cond_0
     new-instance v2, Landroid/util/TypedValue;
 
     invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
@@ -595,7 +595,7 @@
 .end method
 
 .method public static getFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;)Landroid/graphics/Typeface;
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -607,13 +607,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_8
+    :cond_0
     const/4 v5, 0x0
 
     const/4 v6, 0x1
@@ -639,7 +639,7 @@
 .end method
 
 .method public static getFont(Landroid/content/Context;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;)V
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/res/Resources$NotFoundException;
@@ -654,7 +654,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 p0, -0x4
 
@@ -664,7 +664,7 @@
     return-void
 
     .line 529
-    :cond_e
+    :cond_0
     new-instance v2, Landroid/util/TypedValue;
 
     invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
@@ -689,7 +689,7 @@
 .end method
 
 .method private static getTypedValue()Landroid/util/TypedValue;
-    .registers 2
+    .locals 2
 
     .line 318
     sget-object v0, Landroidx/core/content/res/ResourcesCompat;->sTempTypedValue:Ljava/lang/ThreadLocal;
@@ -700,7 +700,7 @@
 
     check-cast v1, Landroid/util/TypedValue;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 320
     new-instance v1, Landroid/util/TypedValue;
@@ -710,12 +710,12 @@
     .line 321
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    :cond_12
+    :cond_0
     return-object v1
 .end method
 
 .method private static inflateColorStateList(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-    .registers 5
+    .locals 2
 
     .line 258
     invoke-static {p0, p1}, Landroidx/core/content/res/ResourcesCompat;->isColorInt(Landroid/content/res/Resources;I)Z
@@ -724,27 +724,27 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return-object v1
 
     .line 262
-    :cond_8
+    :cond_0
     invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
     move-result-object p1
 
     .line 264
-    :try_start_c
+    :try_start_0
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ColorStateListInflaterCompat;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object p0
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_11
+    :catch_0
     move-exception p0
 
     const-string p1, "ResourcesCompat"
@@ -758,7 +758,7 @@
 .end method
 
 .method private static isColorInt(Landroid/content/res/Resources;I)Z
-    .registers 4
+    .locals 2
 
     .line 310
     invoke-static {}, Landroidx/core/content/res/ResourcesCompat;->getTypedValue()Landroid/util/TypedValue;
@@ -775,25 +775,25 @@
 
     const/16 p1, 0x1c
 
-    if-lt p0, p1, :cond_15
+    if-lt p0, p1, :cond_0
 
     iget p0, v0, Landroid/util/TypedValue;->type:I
 
     const/16 p1, 0x1f
 
-    if-gt p0, p1, :cond_15
+    if-gt p0, p1, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_16
+    :goto_0
     return v1
 .end method
 
 .method private static loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;ZZ)Landroid/graphics/Typeface;
-    .registers 18
+    .locals 10
 
     .line 567
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -828,16 +828,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_1
 
-    if-nez p4, :cond_3d
+    if-nez p4, :cond_1
 
-    if-eqz p7, :cond_1e
+    if-eqz p7, :cond_0
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 572
-    :cond_1e
+    :cond_0
     new-instance v0, Landroid/content/res/Resources$NotFoundException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -869,13 +869,13 @@
 
     throw v0
 
-    :cond_3d
-    :goto_3d
+    :cond_1
+    :goto_0
     return-object v0
 .end method
 
 .method private static loadFont(Landroid/content/Context;Landroid/content/res/Resources;Landroid/util/TypedValue;IILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;ZZ)Landroid/graphics/Typeface;
-    .registers 26
+    .locals 17
 
     move-object/from16 v0, p1
 
@@ -892,7 +892,7 @@
     .line 599
     iget-object v2, v1, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
-    if-eqz v2, :cond_b9
+    if-eqz v2, :cond_b
 
     .line 604
     iget-object v2, v1, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
@@ -912,18 +912,18 @@
 
     const/16 v16, 0x0
 
-    if-nez v2, :cond_27
+    if-nez v2, :cond_1
 
-    if-eqz v11, :cond_26
+    if-eqz v11, :cond_0
 
     .line 608
     invoke-virtual {v11, v15, v12}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    :cond_26
+    :cond_0
     return-object v16
 
     .line 613
-    :cond_27
+    :cond_1
     iget v2, v1, Landroid/util/TypedValue;->assetCookie:I
 
     move/from16 v7, p4
@@ -932,24 +932,24 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_3
 
-    if-eqz v11, :cond_36
+    if-eqz v11, :cond_2
 
     .line 618
     invoke-virtual {v11, v2, v12}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackSuccessAsync(Landroid/graphics/Typeface;Landroid/os/Handler;)V
 
-    :cond_36
+    :cond_2
     return-object v2
 
-    :cond_37
-    if-eqz p8, :cond_3a
+    :cond_3
+    if-eqz p8, :cond_4
 
     return-object v16
 
     .line 626
-    :cond_3a
-    :try_start_3a
+    :cond_4
+    :try_start_0
     invoke-virtual {v14}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
@@ -960,7 +960,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_71
+    if-eqz v2, :cond_7
 
     .line 627
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
@@ -972,23 +972,23 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_5b
+    if-nez v2, :cond_6
 
     const-string v0, "Failed to find font-family tag"
 
     .line 631
     invoke-static {v13, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-eqz v11, :cond_5a
+    if-eqz v11, :cond_5
 
     .line 633
     invoke-virtual {v11, v15, v12}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    :cond_5a
+    :cond_5
     return-object v16
 
     .line 638
-    :cond_5b
+    :cond_6
     iget v6, v1, Landroid/util/TypedValue;->assetCookie:I
 
     move-object/from16 v1, p0
@@ -1014,7 +1014,7 @@
     return-object v0
 
     .line 642
-    :cond_71
+    :cond_7
     iget v5, v1, Landroid/util/TypedValue;->assetCookie:I
 
     move-object/from16 v1, p0
@@ -1031,27 +1031,27 @@
 
     move-result-object v0
 
-    if-eqz v11, :cond_8b
+    if-eqz v11, :cond_9
 
-    if-eqz v0, :cond_88
+    if-eqz v0, :cond_8
 
     .line 646
     invoke-virtual {v11, v0, v12}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackSuccessAsync(Landroid/graphics/Typeface;Landroid/os/Handler;)V
 
-    goto :goto_8b
+    goto :goto_0
 
     .line 648
-    :cond_88
+    :cond_8
     invoke-virtual {v11, v15, v12}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
-    :try_end_8b
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_3a .. :try_end_8b} :catch_a0
-    .catch Ljava/io/IOException; {:try_start_3a .. :try_end_8b} :catch_8c
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_8b
-    :goto_8b
+    :cond_9
+    :goto_0
     return-object v0
 
-    :catch_8c
+    :catch_0
     move-exception v0
 
     .line 656
@@ -1071,9 +1071,9 @@
 
     invoke-static {v13, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_b3
+    goto :goto_1
 
-    :catch_a0
+    :catch_1
     move-exception v0
 
     .line 654
@@ -1093,17 +1093,17 @@
 
     invoke-static {v13, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_b3
-    if-eqz v11, :cond_b8
+    :goto_1
+    if-eqz v11, :cond_a
 
     .line 659
     invoke-virtual {v11, v15, v12}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    :cond_b8
+    :cond_a
     return-object v16
 
     .line 600
-    :cond_b9
+    :cond_b
     new-instance v2, Landroid/content/res/Resources$NotFoundException;
 
     new-instance v3, Ljava/lang/StringBuilder;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/processing/Packet;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -32,7 +32,7 @@
     .line 17
     invoke-direct {p0}, Landroidx/camera/core/imagecapture/Image2JpegBytes$In;-><init>()V
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 21
     iput-object p1, p0, Landroidx/camera/core/imagecapture/AutoValue_Image2JpegBytes_In;->packet:Landroidx/camera/core/processing/Packet;
@@ -43,7 +43,7 @@
     return-void
 
     .line 19
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null packet"
@@ -56,21 +56,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 48
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/imagecapture/Image2JpegBytes$In;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 49
     check-cast p1, Landroidx/camera/core/imagecapture/Image2JpegBytes$In;
@@ -86,7 +86,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/imagecapture/AutoValue_Image2JpegBytes_In;->jpegQuality:I
 
@@ -95,22 +95,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_20
+    if-ne v1, p1, :cond_1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move v0, v2
 
-    :goto_21
+    :goto_0
     return v0
 
-    :cond_22
+    :cond_2
     return v2
 .end method
 
 .method getJpegQuality()I
-    .registers 2
+    .locals 1
 
     .line 32
     iget v0, p0, Landroidx/camera/core/imagecapture/AutoValue_Image2JpegBytes_In;->jpegQuality:I
@@ -119,7 +119,7 @@
 .end method
 
 .method getPacket()Landroidx/camera/core/processing/Packet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -136,7 +136,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 60
     iget-object v0, p0, Landroidx/camera/core/imagecapture/AutoValue_Image2JpegBytes_In;->packet:Landroidx/camera/core/processing/Packet;
@@ -160,7 +160,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 37
     new-instance v0, Ljava/lang/StringBuilder;

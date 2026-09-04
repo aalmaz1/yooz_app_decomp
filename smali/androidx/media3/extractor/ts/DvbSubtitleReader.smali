@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,7 +64,7 @@
 .end method
 
 .method private checkNextByte(Landroidx/media3/common/util/ParsableByteArray;I)Z
-    .registers 5
+    .locals 2
 
     .line 122
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -73,23 +73,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 125
-    :cond_8
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p1
 
-    if-eq p1, p2, :cond_10
+    if-eq p1, p2, :cond_1
 
     .line 126
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->writingSample:Z
 
     .line 128
-    :cond_10
+    :cond_1
     iget p1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->bytesToCheck:I
 
     add-int/lit8 p1, p1, -0x1
@@ -105,19 +105,19 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 8
+    .locals 6
 
     .line 102
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->writingSample:Z
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3
 
     .line 103
     iget v0, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->bytesToCheck:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_0
 
     const/16 v0, 0x20
 
@@ -125,30 +125,30 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     return-void
 
     .line 107
-    :cond_12
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->bytesToCheck:I
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_1f
+    if-ne v0, v2, :cond_1
 
     invoke-direct {p0, p1, v1}, Landroidx/media3/extractor/ts/DvbSubtitleReader;->checkNextByte(Landroidx/media3/common/util/ParsableByteArray;I)Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     return-void
 
     .line 111
-    :cond_1f
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
 
     move-result v0
@@ -163,8 +163,8 @@
 
     array-length v4, v3
 
-    :goto_2a
-    if-ge v1, v4, :cond_37
+    :goto_0
+    if-ge v1, v4, :cond_2
 
     aget-object v5, v3, v1
 
@@ -176,32 +176,32 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 117
-    :cond_37
+    :cond_2
     iget p1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->sampleBytesWritten:I
 
     add-int/2addr p1, v2
 
     iput p1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->sampleBytesWritten:I
 
-    :cond_3c
+    :cond_3
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 8
+    .locals 5
 
     const/4 v0, 0x0
 
     .line 62
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->outputs:[Landroidx/media3/extractor/TrackOutput;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_4b
+    if-ge v0, v1, :cond_0
 
     .line 63
     iget-object v1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->subtitleInfos:Ljava/util/List;
@@ -280,19 +280,19 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_4b
+    :cond_0
     return-void
 .end method
 
 .method public packetFinished(Z)V
-    .registers 12
+    .locals 10
 
     .line 90
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->writingSample:Z
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2
 
     .line 92
     iget-wide v0, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->sampleTimeUs:J
@@ -303,16 +303,16 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move p1, v0
 
-    :goto_13
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 93
@@ -322,8 +322,8 @@
 
     move v2, v0
 
-    :goto_1a
-    if-ge v2, v1, :cond_2b
+    :goto_1
+    if-ge v2, v1, :cond_1
 
     aget-object v3, p1, v2
 
@@ -342,26 +342,26 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 96
-    :cond_2b
+    :cond_1
     iput-boolean v0, p0, Landroidx/media3/extractor/ts/DvbSubtitleReader;->writingSample:Z
 
-    :cond_2d
+    :cond_2
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p3, p3, 0x4
 
-    if-nez p3, :cond_5
+    if-nez p3, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 p3, 0x1
 
     .line 82
@@ -384,7 +384,7 @@
 .end method
 
 .method public seek()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 

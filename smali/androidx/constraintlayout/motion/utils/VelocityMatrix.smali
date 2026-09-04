@@ -23,13 +23,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public applyTransform(FFII[F)V
-    .registers 24
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -190,7 +190,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -209,9 +209,9 @@
 .end method
 
 .method public setRotationVelocity(Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;F)V
-    .registers 3
+    .locals 0
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 63
     invoke-virtual {p1, p2}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->getSlope(F)F
@@ -220,14 +220,14 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDRotate:F
 
-    :cond_8
+    :cond_0
     return-void
 .end method
 
 .method public setRotationVelocity(Landroidx/constraintlayout/motion/widget/SplineSet;F)V
-    .registers 4
+    .locals 1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 36
     invoke-virtual {p1, p2}, Landroidx/constraintlayout/motion/widget/SplineSet;->getSlope(F)F
@@ -243,21 +243,21 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mRotate:F
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public setScaleVelocity(Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;F)V
-    .registers 4
+    .locals 0
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
     return-void
 
-    :cond_5
-    if-nez p1, :cond_d
+    :cond_0
+    if-nez p1, :cond_1
 
     .line 84
     invoke-virtual {p1, p3}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->getSlope(F)F
@@ -266,8 +266,8 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDScaleX:F
 
-    :cond_d
-    if-nez p2, :cond_15
+    :cond_1
+    if-nez p2, :cond_2
 
     .line 87
     invoke-virtual {p2, p3}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->getSlope(F)F
@@ -276,14 +276,14 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDScaleY:F
 
-    :cond_15
+    :cond_2
     return-void
 .end method
 
 .method public setScaleVelocity(Landroidx/constraintlayout/motion/widget/SplineSet;Landroidx/constraintlayout/motion/widget/SplineSet;F)V
-    .registers 4
+    .locals 0
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 54
     invoke-virtual {p1, p3}, Landroidx/constraintlayout/motion/widget/SplineSet;->getSlope(F)F
@@ -292,8 +292,8 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDScaleX:F
 
-    :cond_8
-    if-eqz p2, :cond_10
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 57
     invoke-virtual {p2, p3}, Landroidx/constraintlayout/motion/widget/SplineSet;->getSlope(F)F
@@ -302,14 +302,14 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDScaleY:F
 
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public setTranslationVelocity(Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;F)V
-    .registers 4
+    .locals 0
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 70
     invoke-virtual {p1, p3}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->getSlope(F)F
@@ -318,8 +318,8 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDTranslateX:F
 
-    :cond_8
-    if-eqz p2, :cond_10
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 74
     invoke-virtual {p2, p3}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator;->getSlope(F)F
@@ -328,14 +328,14 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDTranslateY:F
 
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public setTranslationVelocity(Landroidx/constraintlayout/motion/widget/SplineSet;Landroidx/constraintlayout/motion/widget/SplineSet;F)V
-    .registers 4
+    .locals 0
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 44
     invoke-virtual {p1, p3}, Landroidx/constraintlayout/motion/widget/SplineSet;->getSlope(F)F
@@ -344,8 +344,8 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDTranslateX:F
 
-    :cond_8
-    if-eqz p2, :cond_10
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 47
     invoke-virtual {p2, p3}, Landroidx/constraintlayout/motion/widget/SplineSet;->getSlope(F)F
@@ -354,6 +354,6 @@
 
     iput p1, p0, Landroidx/constraintlayout/motion/utils/VelocityMatrix;->mDTranslateY:F
 
-    :cond_10
+    :cond_1
     return-void
 .end method

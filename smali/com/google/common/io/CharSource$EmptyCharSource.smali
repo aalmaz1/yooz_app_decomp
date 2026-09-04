@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 602
     new-instance v0, Lcom/google/common/io/CharSource$EmptyCharSource;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, ""
 
@@ -44,7 +44,7 @@
 .end method
 
 .method static synthetic access$000()Lcom/google/common/io/CharSource$EmptyCharSource;
-    .registers 1
+    .locals 1
 
     .line 600
     sget-object v0, Lcom/google/common/io/CharSource$EmptyCharSource;->INSTANCE:Lcom/google/common/io/CharSource$EmptyCharSource;
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "CharSource.empty()"
 

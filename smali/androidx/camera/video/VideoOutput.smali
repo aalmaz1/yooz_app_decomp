@@ -13,7 +13,7 @@
 
 # virtual methods
 .method public getMediaCapabilities(Landroidx/camera/core/CameraInfo;)Landroidx/camera/video/VideoCapabilities;
-    .registers 2
+    .locals 0
 
     .line 150
     sget-object p1, Landroidx/camera/video/VideoCapabilities;->EMPTY:Landroidx/camera/video/VideoCapabilities;
@@ -22,7 +22,7 @@
 .end method
 
 .method public getMediaSpec()Landroidx/camera/core/impl/Observable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -43,7 +43,7 @@
 .end method
 
 .method public getStreamInfo()Landroidx/camera/core/impl/Observable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -60,7 +60,7 @@
 .end method
 
 .method public onSourceStateChanged(Landroidx/camera/video/VideoOutput$SourceState;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
@@ -69,7 +69,7 @@
 .end method
 
 .method public onSurfaceRequested(Landroidx/camera/core/SurfaceRequest;Landroidx/camera/core/impl/Timebase;)V
-    .registers 3
+    .locals 0
 
     .line 100
     invoke-interface {p0, p1}, Landroidx/camera/video/VideoOutput;->onSurfaceRequested(Landroidx/camera/core/SurfaceRequest;)V

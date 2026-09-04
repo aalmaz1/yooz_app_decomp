@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 696
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method static fromKilometersPerHour(D)Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
-    .registers 5
+    .locals 3
 
     .line 698
     new-instance v0, Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
@@ -46,7 +46,7 @@
 .end method
 
 .method static fromKnots(D)Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
-    .registers 5
+    .locals 3
 
     .line 705
     new-instance v0, Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
@@ -61,7 +61,7 @@
 .end method
 
 .method static fromMilesPerHour(D)Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
-    .registers 3
+    .locals 1
 
     .line 701
     new-instance v0, Landroidx/camera/core/impl/utils/Exif$Speed$Converter;

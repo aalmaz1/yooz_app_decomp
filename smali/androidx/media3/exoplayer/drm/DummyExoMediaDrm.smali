@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static getInstance()Landroidx/media3/exoplayer/drm/DummyExoMediaDrm;
-    .registers 1
+    .locals 1
 
     .line 36
     new-instance v0, Landroidx/media3/exoplayer/drm/DummyExoMediaDrm;
@@ -30,19 +30,19 @@
 
 # virtual methods
 .method public acquire()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public closeSession([B)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public createCryptoConfig([B)Landroidx/media3/decoder/CryptoConfig;
-    .registers 2
+    .locals 0
 
     .line 150
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -53,7 +53,7 @@
 .end method
 
 .method public getCryptoType()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public getKeyRequest([BLjava/util/List;ILjava/util/HashMap;)Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -85,7 +85,7 @@
 .end method
 
 .method public getMetrics()Landroid/os/PersistableBundle;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public getPropertyByteArray(Ljava/lang/String;)[B
-    .registers 2
+    .locals 0
 
     .line 134
     sget-object p1, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
@@ -102,7 +102,7 @@
 .end method
 
 .method public getPropertyString(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     const-string p1, ""
 
@@ -110,7 +110,7 @@
 .end method
 
 .method public getProvisionRequest()Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;
-    .registers 2
+    .locals 1
 
     .line 84
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -121,7 +121,7 @@
 .end method
 
 .method public openSession()[B
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaDrmException;
@@ -139,7 +139,7 @@
 .end method
 
 .method public provideKeyResponse([B[B)[B
-    .registers 3
+    .locals 0
 
     .line 78
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -150,7 +150,7 @@
 .end method
 
 .method public provideProvisionResponse([B)V
-    .registers 2
+    .locals 0
 
     .line 90
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -161,7 +161,7 @@
 .end method
 
 .method public queryKeyStatus([B)Ljava/util/Map;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -181,13 +181,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public requiresSecureDecoder([BLjava/lang/String;)Z
-    .registers 3
+    .locals 0
 
     .line 102
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -198,7 +198,7 @@
 .end method
 
 .method public restoreKeys([B[B)V
-    .registers 3
+    .locals 0
 
     .line 118
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -209,31 +209,31 @@
 .end method
 
 .method public setOnEventListener(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnEventListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setOnExpirationUpdateListener(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setOnKeyStatusChangeListener(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setPropertyByteArray(Ljava/lang/String;[B)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public setPropertyString(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

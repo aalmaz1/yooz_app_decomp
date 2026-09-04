@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$B47h3Av77XywWDkZdcofRi31dyk(Landroidx/camera/view/ForwardingLiveData;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V
 
@@ -36,7 +36,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Landroidx/lifecycle/MediatorLiveData;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -57,23 +57,23 @@
     .line 51
     iget-object v0, p0, Landroidx/camera/view/ForwardingLiveData;->mLiveDataSource:Landroidx/lifecycle/LiveData;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method setSource(Landroidx/lifecycle/LiveData;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,13 +85,13 @@
     .line 38
     iget-object v0, p0, Landroidx/camera/view/ForwardingLiveData;->mLiveDataSource:Landroidx/lifecycle/LiveData;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 39
     invoke-super {p0, v0}, Landroidx/lifecycle/MediatorLiveData;->removeSource(Landroidx/lifecycle/LiveData;)V
 
     .line 41
-    :cond_7
+    :cond_0
     iput-object p1, p0, Landroidx/camera/view/ForwardingLiveData;->mLiveDataSource:Landroidx/lifecycle/LiveData;
 
     .line 42

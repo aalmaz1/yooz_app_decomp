@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/DefaultSpecialEffectsController;Landroid/animation/Animator;)V
-    .registers 3
+    .locals 0
 
     .line 197
     iput-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$3;->this$0:Landroidx/fragment/app/DefaultSpecialEffectsController;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public onCancel()V
-    .registers 2
+    .locals 1
 
     .line 200
     iget-object v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$3;->val$animator:Landroid/animation/Animator;

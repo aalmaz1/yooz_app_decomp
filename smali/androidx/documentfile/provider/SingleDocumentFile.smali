@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/documentfile/provider/DocumentFile;Landroid/content/Context;Landroid/net/Uri;)V
-    .registers 4
+    .locals 0
 
     .line 32
     invoke-direct {p0, p1}, Landroidx/documentfile/provider/DocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;)V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public canRead()Z
-    .registers 3
+    .locals 2
 
     .line 91
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -43,7 +43,7 @@
 .end method
 
 .method public canWrite()Z
-    .registers 3
+    .locals 2
 
     .line 96
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -58,7 +58,7 @@
 .end method
 
 .method public createDirectory(Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 2
+    .locals 0
 
     .line 44
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -69,7 +69,7 @@
 .end method
 
 .method public createFile(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;
-    .registers 3
+    .locals 0
 
     .line 39
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -80,7 +80,7 @@
 .end method
 
 .method public delete()Z
-    .registers 3
+    .locals 2
 
     .line 102
     :try_start_0
@@ -95,19 +95,19 @@
     invoke-static {v0, v1}, Landroid/provider/DocumentsContract;->deleteDocument(Landroid/content/ContentResolver;Landroid/net/Uri;)Z
 
     move-result v0
-    :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return v0
 
-    :catch_d
+    :catch_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public exists()Z
-    .registers 3
+    .locals 2
 
     .line 110
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -122,7 +122,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 55
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -137,7 +137,7 @@
 .end method
 
 .method public getType()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 61
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -152,7 +152,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 49
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mUri:Landroid/net/Uri;
@@ -161,7 +161,7 @@
 .end method
 
 .method public isDirectory()Z
-    .registers 3
+    .locals 2
 
     .line 66
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -176,7 +176,7 @@
 .end method
 
 .method public isFile()Z
-    .registers 3
+    .locals 2
 
     .line 71
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -191,7 +191,7 @@
 .end method
 
 .method public isVirtual()Z
-    .registers 3
+    .locals 2
 
     .line 76
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -206,7 +206,7 @@
 .end method
 
 .method public lastModified()J
-    .registers 3
+    .locals 2
 
     .line 81
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -221,7 +221,7 @@
 .end method
 
 .method public length()J
-    .registers 3
+    .locals 2
 
     .line 86
     iget-object v0, p0, Landroidx/documentfile/provider/SingleDocumentFile;->mContext:Landroid/content/Context;
@@ -236,7 +236,7 @@
 .end method
 
 .method public listFiles()[Landroidx/documentfile/provider/DocumentFile;
-    .registers 2
+    .locals 1
 
     .line 115
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -247,7 +247,7 @@
 .end method
 
 .method public renameTo(Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 120
     new-instance p1, Ljava/lang/UnsupportedOperationException;

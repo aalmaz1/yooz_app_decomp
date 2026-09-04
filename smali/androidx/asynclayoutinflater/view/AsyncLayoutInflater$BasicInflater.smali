@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const-string v0, "android.webkit."
 
@@ -39,7 +39,7 @@
 .end method
 
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 134
     invoke-direct {p0, p1}, Landroid/view/LayoutInflater;-><init>(Landroid/content/Context;)V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
-    .registers 3
+    .locals 1
 
     .line 139
     new-instance v0, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$BasicInflater;
@@ -61,7 +61,7 @@
 .end method
 
 .method protected onCreateView(Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/ClassNotFoundException;
@@ -75,31 +75,31 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
     .line 146
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0, p1, v3, p2}, Landroidx/asynclayoutinflater/view/AsyncLayoutInflater$BasicInflater;->createView(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object v3
-    :try_end_c
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_8 .. :try_end_c} :catch_f
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     return-object v3
 
-    :catch_f
-    :cond_f
+    :catch_0
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 156
-    :cond_12
+    :cond_1
     invoke-super {p0, p1, p2}, Landroid/view/LayoutInflater;->onCreateView(Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object p1

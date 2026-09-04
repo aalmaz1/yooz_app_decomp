@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method protected onConfigure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -47,7 +47,7 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_2
 
     .line 59
     iget-object v0, p0, Landroidx/media3/common/audio/ChannelMixingAudioProcessor;->matrixByInputChannelCount:Landroid/util/SparseArray;
@@ -61,14 +61,14 @@
 
     check-cast v0, Landroidx/media3/common/audio/ChannelMixingMatrix;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 65
     invoke-virtual {v0}, Landroidx/media3/common/audio/ChannelMixingMatrix;->isIdentity()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 66
     sget-object p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -76,7 +76,7 @@
     return-object p1
 
     .line 68
-    :cond_1a
+    :cond_0
     new-instance v2, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     iget p1, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
@@ -91,7 +91,7 @@
     return-object v2
 
     .line 62
-    :cond_26
+    :cond_1
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     const-string v1, "No mixing matrix for input channel count"
@@ -101,7 +101,7 @@
     throw v0
 
     .line 56
-    :cond_2e
+    :cond_2
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
@@ -110,7 +110,7 @@
 .end method
 
 .method public putChannelMixingMatrix(Landroidx/media3/common/audio/ChannelMixingMatrix;)V
-    .registers 4
+    .locals 2
 
     .line 47
     invoke-virtual {p1}, Landroidx/media3/common/audio/ChannelMixingMatrix;->getInputChannelCount()I
@@ -126,7 +126,7 @@
 .end method
 
 .method public queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 11
+    .locals 9
 
     .line 76
     iget-object v0, p0, Landroidx/media3/common/audio/ChannelMixingAudioProcessor;->matrixByInputChannelCount:Landroid/util/SparseArray;

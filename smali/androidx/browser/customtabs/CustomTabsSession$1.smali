@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/customtabs/CustomTabsSession;Landroidx/browser/customtabs/EngagementSignalsCallback;)V
-    .registers 3
+    .locals 0
 
     .line 398
     iput-object p1, p0, Landroidx/browser/customtabs/CustomTabsSession$1;->this$0:Landroidx/browser/customtabs/CustomTabsSession;
@@ -48,7 +48,7 @@
 .end method
 
 .method static synthetic lambda$onGreatestScrollPercentageIncreased$1(Landroidx/browser/customtabs/EngagementSignalsCallback;ILandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 408
     invoke-interface {p0, p1, p2}, Landroidx/browser/customtabs/EngagementSignalsCallback;->onGreatestScrollPercentageIncreased(ILandroid/os/Bundle;)V
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic lambda$onSessionEnded$2(Landroidx/browser/customtabs/EngagementSignalsCallback;ZLandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 414
     invoke-interface {p0, p1, p2}, Landroidx/browser/customtabs/EngagementSignalsCallback;->onSessionEnded(ZLandroid/os/Bundle;)V
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic lambda$onVerticalScrollEvent$0(Landroidx/browser/customtabs/EngagementSignalsCallback;ZLandroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 403
     invoke-interface {p0, p1, p2}, Landroidx/browser/customtabs/EngagementSignalsCallback;->onVerticalScrollEvent(ZLandroid/os/Bundle;)V
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public onGreatestScrollPercentageIncreased(ILandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
 
     .line 408
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsSession$1;->mHandler:Landroid/os/Handler;
@@ -94,7 +94,7 @@
 .end method
 
 .method public onSessionEnded(ZLandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
 
     .line 414
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsSession$1;->mHandler:Landroid/os/Handler;
@@ -111,7 +111,7 @@
 .end method
 
 .method public onVerticalScrollEvent(ZLandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
 
     .line 403
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsSession$1;->mHandler:Landroid/os/Handler;

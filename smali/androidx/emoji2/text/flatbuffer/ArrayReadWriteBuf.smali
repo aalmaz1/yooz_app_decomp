@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0xa
 
@@ -25,7 +25,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 24
     new-array p1, p1, [B
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>([BI)V
-    .registers 3
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public data()[B
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -79,7 +79,7 @@
 .end method
 
 .method public get(I)B
-    .registers 3
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -90,28 +90,28 @@
 .end method
 
 .method public getBoolean(I)Z
-    .registers 3
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
 
     aget-byte p1, v0, p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     return p1
 .end method
 
 .method public getDouble(I)D
-    .registers 4
+    .locals 2
 
     .line 79
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->getLong(I)J
@@ -126,7 +126,7 @@
 .end method
 
 .method public getFloat(I)F
-    .registers 2
+    .locals 0
 
     .line 74
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->getInt(I)I
@@ -141,7 +141,7 @@
 .end method
 
 .method public getInt(I)I
-    .registers 5
+    .locals 3
 
     .line 54
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -182,7 +182,7 @@
 .end method
 
 .method public getLong(I)J
-    .registers 10
+    .locals 8
 
     .line 62
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -295,7 +295,7 @@
 .end method
 
 .method public getShort(I)S
-    .registers 4
+    .locals 2
 
     .line 49
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -318,7 +318,7 @@
 .end method
 
 .method public getString(II)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -331,7 +331,7 @@
 .end method
 
 .method public limit()I
-    .registers 2
+    .locals 1
 
     .line 222
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -340,7 +340,7 @@
 .end method
 
 .method public put(B)V
-    .registers 3
+    .locals 1
 
     .line 107
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -358,7 +358,7 @@
 .end method
 
 .method public put([BII)V
-    .registers 5
+    .locals 1
 
     .line 101
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -376,7 +376,7 @@
 .end method
 
 .method public putBoolean(Z)V
-    .registers 3
+    .locals 1
 
     .line 95
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -394,7 +394,7 @@
 .end method
 
 .method public putDouble(D)V
-    .registers 4
+    .locals 1
 
     .line 137
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -412,7 +412,7 @@
 .end method
 
 .method public putFloat(F)V
-    .registers 3
+    .locals 1
 
     .line 131
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -430,7 +430,7 @@
 .end method
 
 .method public putInt(I)V
-    .registers 3
+    .locals 1
 
     .line 119
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -448,7 +448,7 @@
 .end method
 
 .method public putLong(J)V
-    .registers 4
+    .locals 1
 
     .line 125
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -466,7 +466,7 @@
 .end method
 
 .method public putShort(S)V
-    .registers 3
+    .locals 1
 
     .line 113
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I
@@ -484,7 +484,7 @@
 .end method
 
 .method public requestCapacity(I)Z
-    .registers 5
+    .locals 3
 
     .line 232
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->buffer:[B
@@ -493,12 +493,12 @@
 
     const/4 v2, 0x1
 
-    if-le v1, p1, :cond_7
+    if-le v1, p1, :cond_0
 
     return v2
 
     .line 236
-    :cond_7
+    :cond_0
     array-length p1, v0
 
     shr-int/lit8 v1, p1, 0x1
@@ -516,7 +516,7 @@
 .end method
 
 .method public set(IB)V
-    .registers 4
+    .locals 1
 
     add-int/lit8 v0, p1, 0x1
 
@@ -532,7 +532,7 @@
 .end method
 
 .method public set(I[BII)V
-    .registers 6
+    .locals 1
 
     sub-int v0, p4, p3
 
@@ -550,7 +550,7 @@
 .end method
 
 .method public setBoolean(IZ)V
-    .registers 3
+    .locals 0
 
     .line 143
     invoke-virtual {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->set(IB)V
@@ -559,7 +559,7 @@
 .end method
 
 .method public setDouble(ID)V
-    .registers 8
+    .locals 4
 
     add-int/lit8 v0, p1, 0x8
 
@@ -667,7 +667,7 @@
 .end method
 
 .method public setFloat(IF)V
-    .registers 6
+    .locals 3
 
     add-int/lit8 v0, p1, 0x4
 
@@ -725,7 +725,7 @@
 .end method
 
 .method public setInt(II)V
-    .registers 6
+    .locals 3
 
     add-int/lit8 v0, p1, 0x4
 
@@ -778,7 +778,7 @@
 .end method
 
 .method public setLong(IJ)V
-    .registers 8
+    .locals 4
 
     add-int/lit8 v0, p1, 0x8
 
@@ -881,7 +881,7 @@
 .end method
 
 .method public setShort(IS)V
-    .registers 6
+    .locals 3
 
     add-int/lit8 v0, p1, 0x2
 
@@ -912,7 +912,7 @@
 .end method
 
 .method public writePosition()I
-    .registers 2
+    .locals 1
 
     .line 227
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/ArrayReadWriteBuf;->writePos:I

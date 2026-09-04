@@ -15,7 +15,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;III)V
-    .registers 5
+    .locals 0
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method isFormatCompatible(I)Z
-    .registers 6
+    .locals 4
 
     .line 63
     iget v0, p0, Landroidx/camera/core/impl/utils/ExifTag;->primaryFormat:I
@@ -70,68 +70,68 @@
 
     const/4 v2, 0x7
 
-    if-eq v0, v2, :cond_30
+    if-eq v0, v2, :cond_8
 
-    if-ne p1, v2, :cond_9
+    if-ne p1, v2, :cond_0
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_9
-    if-eq v0, p1, :cond_30
+    :cond_0
+    if-eq v0, p1, :cond_8
 
     .line 65
     iget v2, p0, Landroidx/camera/core/impl/utils/ExifTag;->secondaryFormat:I
 
-    if-ne v2, p1, :cond_10
+    if-ne v2, p1, :cond_1
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v3, 0x4
 
-    if-eq v0, v3, :cond_15
+    if-eq v0, v3, :cond_2
 
-    if-ne v2, v3, :cond_19
+    if-ne v2, v3, :cond_3
 
-    :cond_15
+    :cond_2
     const/4 v3, 0x3
 
-    if-ne p1, v3, :cond_19
+    if-ne p1, v3, :cond_3
 
     return v1
 
-    :cond_19
+    :cond_3
     const/16 v3, 0x9
 
-    if-eq v0, v3, :cond_1f
+    if-eq v0, v3, :cond_4
 
-    if-ne v2, v3, :cond_24
+    if-ne v2, v3, :cond_5
 
-    :cond_1f
+    :cond_4
     const/16 v3, 0x8
 
-    if-ne p1, v3, :cond_24
+    if-ne p1, v3, :cond_5
 
     return v1
 
-    :cond_24
+    :cond_5
     const/16 v3, 0xc
 
-    if-eq v0, v3, :cond_2a
+    if-eq v0, v3, :cond_6
 
-    if-ne v2, v3, :cond_2f
+    if-ne v2, v3, :cond_7
 
-    :cond_2a
+    :cond_6
     const/16 v0, 0xb
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_7
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2f
+    :cond_7
     const/4 v1, 0x0
 
-    :cond_30
-    :goto_30
+    :cond_8
+    :goto_0
     return v1
 .end method

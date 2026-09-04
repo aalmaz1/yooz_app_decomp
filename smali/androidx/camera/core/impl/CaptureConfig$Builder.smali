@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/core/impl/CaptureConfig;)V
-    .registers 4
+    .locals 2
 
     .line 218
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -213,7 +213,7 @@
 .end method
 
 .method public static createFrom(Landroidx/camera/core/impl/UseCaseConfig;)Landroidx/camera/core/impl/CaptureConfig$Builder;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -230,7 +230,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 242
     new-instance v1, Landroidx/camera/core/impl/CaptureConfig$Builder;
@@ -243,7 +243,7 @@
     return-object v1
 
     .line 237
-    :cond_10
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -275,7 +275,7 @@
 .end method
 
 .method public static from(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/impl/CaptureConfig$Builder;
-    .registers 2
+    .locals 1
 
     .line 252
     new-instance v0, Landroidx/camera/core/impl/CaptureConfig$Builder;
@@ -288,7 +288,7 @@
 
 # virtual methods
 .method public addAllCameraCaptureCallbacks(Ljava/util/Collection;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -303,12 +303,12 @@
 
     move-result-object p1
 
-    :goto_4
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -319,14 +319,14 @@
     .line 308
     invoke-virtual {p0, v0}, Landroidx/camera/core/impl/CaptureConfig$Builder;->addCameraCaptureCallback(Landroidx/camera/core/impl/CameraCaptureCallback;)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public addAllTags(Landroidx/camera/core/impl/TagBundle;)V
-    .registers 3
+    .locals 1
 
     .line 405
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mMutableTagBundle:Landroidx/camera/core/impl/MutableTagBundle;
@@ -337,7 +337,7 @@
 .end method
 
 .method public addCameraCaptureCallback(Landroidx/camera/core/impl/CameraCaptureCallback;)V
-    .registers 3
+    .locals 1
 
     .line 296
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mCameraCaptureCallbacks:Ljava/util/List;
@@ -346,12 +346,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 299
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mCameraCaptureCallbacks:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -360,7 +360,7 @@
 .end method
 
 .method public addImplementationOption(Landroidx/camera/core/impl/Config$Option;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -380,7 +380,7 @@
 .end method
 
 .method public addImplementationOptions(Landroidx/camera/core/impl/Config;)V
-    .registers 7
+    .locals 5
 
     .line 351
     invoke-interface {p1}, Landroidx/camera/core/impl/Config;->listOptions()Ljava/util/Set;
@@ -391,12 +391,12 @@
 
     move-result-object v0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -421,7 +421,7 @@
     .line 357
     instance-of v4, v2, Landroidx/camera/core/impl/MultiValueSet;
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_0
 
     .line 358
     check-cast v2, Landroidx/camera/core/impl/MultiValueSet;
@@ -434,13 +434,13 @@
 
     invoke-virtual {v2, v1}, Landroidx/camera/core/impl/MultiValueSet;->addAll(Ljava/util/List;)V
 
-    goto :goto_8
+    goto :goto_0
 
     .line 360
-    :cond_2f
+    :cond_0
     instance-of v2, v3, Landroidx/camera/core/impl/MultiValueSet;
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_1
 
     .line 361
     check-cast v3, Landroidx/camera/core/impl/MultiValueSet;
@@ -450,7 +450,7 @@
     move-result-object v3
 
     .line 363
-    :cond_39
+    :cond_1
     iget-object v2, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mImplementationOptions:Landroidx/camera/core/impl/MutableConfig;
 
     .line 364
@@ -461,14 +461,14 @@
     .line 363
     invoke-interface {v2, v1, v4, v3}, Landroidx/camera/core/impl/MutableConfig;->insertOption(Landroidx/camera/core/impl/Config$Option;Landroidx/camera/core/impl/Config$OptionPriority;Ljava/lang/Object;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_43
+    :cond_2
     return-void
 .end method
 
 .method public addSurface(Landroidx/camera/core/impl/DeferrableSurface;)V
-    .registers 3
+    .locals 1
 
     .line 325
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mSurfaces:Ljava/util/Set;
@@ -479,7 +479,7 @@
 .end method
 
 .method public addTag(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 398
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mMutableTagBundle:Landroidx/camera/core/impl/MutableTagBundle;
@@ -490,7 +490,7 @@
 .end method
 
 .method public build()Landroidx/camera/core/impl/CaptureConfig;
-    .registers 11
+    .locals 10
 
     .line 414
     new-instance v9, Landroidx/camera/core/impl/CaptureConfig;
@@ -537,7 +537,7 @@
 .end method
 
 .method public clearSurfaces()V
-    .registers 2
+    .locals 1
 
     .line 335
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mSurfaces:Ljava/util/Set;
@@ -548,7 +548,7 @@
 .end method
 
 .method public getExpectedFrameRateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -565,7 +565,7 @@
 .end method
 
 .method public getImplementationOptions()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 377
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mImplementationOptions:Landroidx/camera/core/impl/MutableConfig;
@@ -574,7 +574,7 @@
 .end method
 
 .method public getSurfaces()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -591,7 +591,7 @@
 .end method
 
 .method public getTag(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 391
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mMutableTagBundle:Landroidx/camera/core/impl/MutableTagBundle;
@@ -604,7 +604,7 @@
 .end method
 
 .method public getTemplateType()I
-    .registers 2
+    .locals 1
 
     .line 265
     iget v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mTemplateType:I
@@ -613,7 +613,7 @@
 .end method
 
 .method public isUseRepeatingSurface()Z
-    .registers 2
+    .locals 1
 
     .line 381
     iget-boolean v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mUseRepeatingSurface:Z
@@ -622,7 +622,7 @@
 .end method
 
 .method public removeCameraCaptureCallback(Landroidx/camera/core/impl/CameraCaptureCallback;)Z
-    .registers 3
+    .locals 1
 
     .line 320
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mCameraCaptureCallbacks:Ljava/util/List;
@@ -635,7 +635,7 @@
 .end method
 
 .method public removeSurface(Landroidx/camera/core/impl/DeferrableSurface;)V
-    .registers 3
+    .locals 1
 
     .line 330
     iget-object v0, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mSurfaces:Ljava/util/Set;
@@ -646,7 +646,7 @@
 .end method
 
 .method public setCameraCaptureResult(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 2
+    .locals 0
 
     .line 261
     iput-object p1, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mCameraCaptureResult:Landroidx/camera/core/impl/CameraCaptureResult;
@@ -655,7 +655,7 @@
 .end method
 
 .method public setExpectedFrameRateRange(Landroid/util/Range;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -672,7 +672,7 @@
 .end method
 
 .method public setImplementationOptions(Landroidx/camera/core/impl/Config;)V
-    .registers 2
+    .locals 0
 
     .line 345
     invoke-static {p1}, Landroidx/camera/core/impl/MutableOptionsBundle;->from(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -685,7 +685,7 @@
 .end method
 
 .method public setTemplateType(I)V
-    .registers 2
+    .locals 0
 
     .line 280
     iput p1, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mTemplateType:I
@@ -694,7 +694,7 @@
 .end method
 
 .method public setUseRepeatingSurface(Z)V
-    .registers 2
+    .locals 0
 
     .line 385
     iput-boolean p1, p0, Landroidx/camera/core/impl/CaptureConfig$Builder;->mUseRepeatingSurface:Z

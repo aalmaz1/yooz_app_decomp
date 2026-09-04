@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static chars(Ljava/lang/CharSequence;)Ljava/util/stream/IntStream;
-    .registers 1
+    .locals 0
 
     .line 156
     invoke-interface {p0}, Ljava/lang/CharSequence;->chars()Ljava/util/stream/IntStream;
@@ -36,7 +36,7 @@
 .end method
 
 .method static codePoints(Ljava/lang/CharSequence;)Ljava/util/stream/IntStream;
-    .registers 1
+    .locals 0
 
     .line 152
     invoke-interface {p0}, Ljava/lang/CharSequence;->codePoints()Ljava/util/stream/IntStream;

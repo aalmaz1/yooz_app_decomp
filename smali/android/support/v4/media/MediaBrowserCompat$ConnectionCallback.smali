@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 622
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,25 +52,25 @@
 
 # virtual methods
 .method public onConnected()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onConnectionFailed()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onConnectionSuspended()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method setInternalConnectionCallback(Landroid/support/v4/media/MediaBrowserCompat$ConnectionCallback$ConnectionCallbackInternal;)V
-    .registers 2
+    .locals 0
 
     .line 651
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ConnectionCallback;->mConnectionCallbackInternal:Landroid/support/v4/media/MediaBrowserCompat$ConnectionCallback$ConnectionCallbackInternal;

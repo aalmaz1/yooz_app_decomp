@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Format;Ljava/lang/Throwable;ZI)V
-    .registers 14
+    .locals 9
 
     .line 152
     new-instance v0, Ljava/lang/StringBuilder;
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/Format;Ljava/lang/Throwable;ZLandroidx/media3/exoplayer/mediacodec/MediaCodecInfo;)V
-    .registers 14
+    .locals 9
 
     .line 167
     new-instance v0, Ljava/lang/StringBuilder;
@@ -123,18 +123,18 @@
 
     const/16 v0, 0x15
 
-    if-lt p1, v0, :cond_28
+    if-lt p1, v0, :cond_0
 
     invoke-static {p2}, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;->getDiagnosticInfoV21(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_29
+    :goto_0
     move-object v7, p1
 
     const/4 v8, 0x0
@@ -154,7 +154,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLandroidx/media3/exoplayer/mediacodec/MediaCodecInfo;Ljava/lang/String;Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;)V
-    .registers 8
+    .locals 0
 
     .line 185
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -178,7 +178,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;)Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;
-    .registers 2
+    .locals 0
 
     .line 122
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;->copyWithFallbackException(Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;)Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;
@@ -189,19 +189,19 @@
 .end method
 
 .method private static buildCustomDiagnosticInfo(I)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
-    if-gez p0, :cond_5
+    if-gez p0, :cond_0
 
     const-string v0, "neg_"
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const-string v0, ""
 
     .line 218
-    :goto_7
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "androidx.media3.exoplayer.mediacodec.MediaCodecRenderer_"
@@ -228,7 +228,7 @@
 .end method
 
 .method private copyWithFallbackException(Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;)Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;
-    .registers 11
+    .locals 9
 
     .line 196
     new-instance v8, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$DecoderInitializationException;
@@ -261,12 +261,12 @@
 .end method
 
 .method private static getDiagnosticInfoV21(Ljava/lang/Throwable;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 209
     instance-of v0, p0, Landroid/media/MediaCodec$CodecException;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 210
     check-cast p0, Landroid/media/MediaCodec$CodecException;
@@ -277,7 +277,7 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0

@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 26
     new-instance v0, Landroidx/media3/extractor/SeekPoint;
@@ -30,7 +30,7 @@
 .end method
 
 .method public constructor <init>(JJ)V
-    .registers 5
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,18 +47,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_3
 
     .line 53
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -69,12 +69,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_27
+    goto :goto_1
 
     .line 56
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/SeekPoint;
 
     .line 57
@@ -84,7 +84,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/extractor/SeekPoint;->position:J
 
@@ -92,23 +92,23 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v1
 
-    :goto_26
+    :goto_0
     return v0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 62
     iget-wide v0, p0, Landroidx/media3/extractor/SeekPoint;->timeUs:J
@@ -128,7 +128,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 45
     new-instance v0, Ljava/lang/StringBuilder;

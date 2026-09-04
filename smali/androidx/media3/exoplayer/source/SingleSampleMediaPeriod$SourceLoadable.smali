@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSpec;Landroidx/media3/datasource/DataSource;)V
-    .registers 5
+    .locals 2
 
     .line 421
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;)Landroidx/media3/datasource/StatsDataSource;
-    .registers 1
+    .locals 0
 
     .line 412
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -64,7 +64,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;)[B
-    .registers 1
+    .locals 0
 
     .line 412
     iget-object p0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
@@ -75,13 +75,13 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public load()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -94,7 +94,7 @@
     invoke-virtual {v0}, Landroidx/media3/datasource/StatsDataSource;->resetBytesRead()V
 
     .line 438
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSpec:Landroidx/media3/datasource/DataSpec;
@@ -103,10 +103,10 @@
 
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_39
+    if-eq v0, v1, :cond_2
 
     .line 442
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -120,7 +120,7 @@
     .line 443
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     const/16 v1, 0x400
 
@@ -129,13 +129,13 @@
     .line 444
     iput-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 445
-    :cond_22
+    :cond_0
     array-length v2, v1
 
-    if-ne v0, v2, :cond_2e
+    if-ne v0, v2, :cond_1
 
     .line 446
     array-length v2, v1
@@ -149,8 +149,8 @@
     iput-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
 
     .line 448
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_1
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->sampleData:[B
@@ -162,20 +162,20 @@
     invoke-virtual {v1, v2, v0, v3}, Landroidx/media3/datasource/StatsDataSource;->read([BII)I
 
     move-result v0
-    :try_end_38
-    .catchall {:try_start_5 .. :try_end_38} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_d
+    goto :goto_0
 
     .line 451
-    :cond_39
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;
 
     invoke-static {v0}, Landroidx/media3/datasource/DataSourceUtil;->closeQuietly(Landroidx/media3/datasource/DataSource;)V
 
     return-void
 
-    :catchall_3f
+    :catchall_0
     move-exception v0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SingleSampleMediaPeriod$SourceLoadable;->dataSource:Landroidx/media3/datasource/StatsDataSource;

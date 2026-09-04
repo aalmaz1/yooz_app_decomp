@@ -12,7 +12,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/CameraCharacteristics;)V
-    .registers 2
+    .locals 0
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -48,7 +48,7 @@
 .end method
 
 .method public getPhysicalCameraIds()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -67,7 +67,7 @@
 .end method
 
 .method public unwrap()Landroid/hardware/camera2/CameraCharacteristics;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsBaseImpl;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;

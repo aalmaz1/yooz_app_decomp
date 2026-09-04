@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method private addVideoFrameProcessingOffsets(JI)V
-    .registers 6
+    .locals 2
 
     .line 169
     iget-wide v0, p0, Landroidx/media3/exoplayer/DecoderCounters;->totalVideoFrameProcessingOffsetUs:J
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public addVideoFrameProcessingOffset(J)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -73,7 +73,7 @@
 .end method
 
 .method public declared-synchronized ensureUpdated()V
-    .registers 1
+    .locals 0
 
     monitor-enter p0
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public merge(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 141
     iget v0, p0, Landroidx/media3/exoplayer/DecoderCounters;->decoderInitCount:I
@@ -190,7 +190,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/16 v0, 0xc
 

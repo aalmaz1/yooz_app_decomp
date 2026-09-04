@@ -50,7 +50,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/media3/common/TrackGroup;ILandroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;ILjava/lang/String;)V
-    .registers 11
+    .locals 4
 
     .line 3987
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;-><init>(ILandroidx/media3/common/TrackGroup;I)V
@@ -79,32 +79,32 @@
 
     const/4 v0, 0x1
 
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_0
 
     move p3, v0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move p3, p1
 
     .line 3991
-    :goto_1a
+    :goto_0
     iput-boolean p3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->isDefault:Z
 
     and-int/lit8 p2, p2, 0x2
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_1
 
     move p2, v0
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
+    :cond_1
     move p2, p1
 
     .line 3992
-    :goto_23
+    :goto_1
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->isForced:Z
 
     .line 3998
@@ -114,7 +114,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_34
+    if-eqz p2, :cond_2
 
     const-string p2, ""
 
@@ -123,22 +123,22 @@
 
     move-result-object p2
 
-    goto :goto_36
+    goto :goto_2
 
     .line 4000
-    :cond_34
+    :cond_2
     iget-object p2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->preferredTextLanguages:Lcom/google/common/collect/ImmutableList;
 
-    :goto_36
+    :goto_2
     move p3, p1
 
     .line 4001
-    :goto_37
+    :goto_3
     invoke-virtual {p2}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v1
 
-    if-ge p3, v1, :cond_51
+    if-ge p3, v1, :cond_4
 
     .line 4002
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->format:Landroidx/media3/common/Format;
@@ -157,22 +157,22 @@
 
     move-result v1
 
-    if-lez v1, :cond_4e
+    if-lez v1, :cond_3
 
-    goto :goto_55
+    goto :goto_4
 
-    :cond_4e
+    :cond_3
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_37
+    goto :goto_3
 
-    :cond_51
+    :cond_4
     const p3, 0x7fffffff
 
     move v1, p1
 
     .line 4011
-    :goto_55
+    :goto_4
     iput p3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->preferredLanguageIndex:I
 
     .line 4012
@@ -199,16 +199,16 @@
 
     and-int/lit16 p3, p3, 0x440
 
-    if-eqz p3, :cond_6f
+    if-eqz p3, :cond_5
 
     move p3, v0
 
-    goto :goto_70
+    goto :goto_5
 
-    :cond_6f
+    :cond_5
     move p3, p1
 
-    :goto_70
+    :goto_5
     iput-boolean p3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->hasCaptionRoleFlags:Z
 
     .line 4018
@@ -216,17 +216,17 @@
 
     move-result-object p3
 
-    if-nez p3, :cond_7a
+    if-nez p3, :cond_6
 
     move p3, v0
 
-    goto :goto_7b
+    goto :goto_6
 
-    :cond_7a
+    :cond_6
     move p3, p1
 
     .line 4019
-    :goto_7b
+    :goto_6
     iget-object v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->format:Landroidx/media3/common/Format;
 
     .line 4020
@@ -236,7 +236,7 @@
 
     iput p3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->selectedAudioLanguageScore:I
 
-    if-gtz v1, :cond_9c
+    if-gtz v1, :cond_9
 
     .line 4021
     iget-object p6, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->preferredTextLanguages:Lcom/google/common/collect/ImmutableList;
@@ -246,34 +246,34 @@
 
     move-result p6
 
-    if-eqz p6, :cond_8f
+    if-eqz p6, :cond_7
 
-    if-gtz p2, :cond_9c
+    if-gtz p2, :cond_9
 
-    :cond_8f
+    :cond_7
     iget-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->isDefault:Z
 
-    if-nez p2, :cond_9c
+    if-nez p2, :cond_9
 
     iget-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->isForced:Z
 
-    if-eqz p2, :cond_9a
+    if-eqz p2, :cond_8
 
-    if-lez p3, :cond_9a
+    if-lez p3, :cond_8
 
-    goto :goto_9c
+    goto :goto_7
 
-    :cond_9a
+    :cond_8
     move p2, p1
 
-    goto :goto_9d
+    goto :goto_8
 
-    :cond_9c
-    :goto_9c
+    :cond_9
+    :goto_7
     move p2, v0
 
     .line 4028
-    :goto_9d
+    :goto_8
     iget-boolean p3, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedRendererCapabilitiesIfNecessary:Z
 
     .line 4027
@@ -281,21 +281,21 @@
 
     move-result p3
 
-    if-eqz p3, :cond_a8
+    if-eqz p3, :cond_a
 
-    if-eqz p2, :cond_a8
+    if-eqz p2, :cond_a
 
     move p1, v0
 
     .line 4030
-    :cond_a8
+    :cond_a
     iput p1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->selectionEligibility:I
 
     return-void
 .end method
 
 .method public static compareSelections(Ljava/util/List;Ljava/util/List;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -331,7 +331,7 @@
 .end method
 
 .method public static createForTrackGroup(ILandroidx/media3/common/TrackGroup;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;[ILjava/lang/String;)Lcom/google/common/collect/ImmutableList;
-    .registers 15
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -354,10 +354,10 @@
     const/4 v1, 0x0
 
     .line 3957
-    :goto_5
+    :goto_0
     iget v2, p1, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_0
 
     .line 3958
     new-instance v9, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;
@@ -382,10 +382,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 3967
-    :cond_1c
+    :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
@@ -396,7 +396,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;)I
-    .registers 6
+    .locals 4
 
     .line 4046
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->start()Lcom/google/common/collect/ComparisonChain;
@@ -484,15 +484,15 @@
     .line 4064
     iget v3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->preferredLanguageScore:I
 
-    if-nez v3, :cond_51
+    if-nez v3, :cond_0
 
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v3
 
-    goto :goto_59
+    goto :goto_0
 
-    :cond_51
+    :cond_0
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v3
@@ -502,7 +502,7 @@
     move-result-object v3
 
     .line 4058
-    :goto_59
+    :goto_0
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/common/collect/ComparisonChain;->compare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Lcom/google/common/collect/ComparisonChain;
 
     move-result-object v0
@@ -519,7 +519,7 @@
     .line 4066
     iget v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->preferredRoleFlagsScore:I
 
-    if-nez v1, :cond_71
+    if-nez v1, :cond_1
 
     .line 4067
     iget-boolean v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->hasCaptionRoleFlags:Z
@@ -531,7 +531,7 @@
     move-result-object v0
 
     .line 4069
-    :cond_71
+    :cond_1
     invoke-virtual {v0}, Lcom/google/common/collect/ComparisonChain;->result()I
 
     move-result p1
@@ -540,7 +540,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 3947
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;
@@ -553,7 +553,7 @@
 .end method
 
 .method public getSelectionEligibility()I
-    .registers 2
+    .locals 1
 
     .line 4035
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;->selectionEligibility:I
@@ -562,7 +562,7 @@
 .end method
 
 .method public isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -570,7 +570,7 @@
 .end method
 
 .method public bridge synthetic isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;)Z
-    .registers 2
+    .locals 0
 
     .line 3947
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TextTrackInfo;

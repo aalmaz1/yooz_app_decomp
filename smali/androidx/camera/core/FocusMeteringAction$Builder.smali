@@ -50,7 +50,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/FocusMeteringAction;)V
-    .registers 7
+    .locals 5
 
     .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/MeteringPoint;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x7
 
@@ -124,7 +124,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/MeteringPoint;I)V
-    .registers 5
+    .locals 2
 
     .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public addPoint(Landroidx/camera/core/MeteringPoint;)Landroidx/camera/core/FocusMeteringAction$Builder;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x7
 
@@ -177,37 +177,37 @@
 .end method
 
 .method public addPoint(Landroidx/camera/core/MeteringPoint;I)Landroidx/camera/core/FocusMeteringAction$Builder;
-    .registers 7
+    .locals 4
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     move v2, v1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v0
 
-    :goto_7
+    :goto_0
     const-string v3, "Point cannot be null."
 
     .line 244
     invoke-static {v2, v3}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-lt p2, v1, :cond_12
+    if-lt p2, v1, :cond_1
 
     const/4 v2, 0x7
 
-    if-gt p2, v2, :cond_12
+    if-gt p2, v2, :cond_1
 
     move v0, v1
 
     .line 245
-    :cond_12
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Invalid metering mode "
@@ -226,39 +226,39 @@
 
     and-int/lit8 v0, p2, 0x1
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 250
     iget-object v0, p0, Landroidx/camera/core/FocusMeteringAction$Builder;->mMeteringPointsAf:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_2d
+    :cond_2
     and-int/lit8 v0, p2, 0x2
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 253
     iget-object v0, p0, Landroidx/camera/core/FocusMeteringAction$Builder;->mMeteringPointsAe:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_36
+    :cond_3
     and-int/lit8 p2, p2, 0x4
 
-    if-eqz p2, :cond_3f
+    if-eqz p2, :cond_4
 
     .line 256
     iget-object p2, p0, Landroidx/camera/core/FocusMeteringAction$Builder;->mMeteringPointsAwb:Ljava/util/List;
 
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_3f
+    :cond_4
     return-object p0
 .end method
 
 .method public build()Landroidx/camera/core/FocusMeteringAction;
-    .registers 2
+    .locals 1
 
     .line 310
     new-instance v0, Landroidx/camera/core/FocusMeteringAction;
@@ -269,7 +269,7 @@
 .end method
 
 .method public disableAutoCancel()Landroidx/camera/core/FocusMeteringAction$Builder;
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -280,58 +280,58 @@
 .end method
 
 .method public removePoints(I)Landroidx/camera/core/FocusMeteringAction$Builder;
-    .registers 3
+    .locals 1
 
     and-int/lit8 v0, p1, 0x1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 292
     iget-object v0, p0, Landroidx/camera/core/FocusMeteringAction$Builder;->mMeteringPointsAf:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    :cond_9
+    :cond_0
     and-int/lit8 v0, p1, 0x2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     .line 296
     iget-object v0, p0, Landroidx/camera/core/FocusMeteringAction$Builder;->mMeteringPointsAe:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    :cond_12
+    :cond_1
     and-int/lit8 p1, p1, 0x4
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_2
 
     .line 300
     iget-object p1, p0, Landroidx/camera/core/FocusMeteringAction$Builder;->mMeteringPointsAwb:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
-    :cond_1b
+    :cond_2
     return-object p0
 .end method
 
 .method public setAutoCancelDuration(JLjava/util/concurrent/TimeUnit;)Landroidx/camera/core/FocusMeteringAction$Builder;
-    .registers 6
+    .locals 2
 
     const-wide/16 v0, 0x1
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const-string v1, "autoCancelDuration must be at least 1"
 
     .line 270

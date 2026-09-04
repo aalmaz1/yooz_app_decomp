@@ -85,7 +85,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/google/common/base/StandardSystemProperty;
-    .registers 3
+    .locals 3
 
     const/16 v0, 0x1c
 
@@ -264,7 +264,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 33
     new-instance v0, Lcom/google/common/base/StandardSystemProperty;
@@ -641,7 +641,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -673,7 +673,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/StandardSystemProperty;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8000
@@ -696,7 +696,7 @@
 .end method
 
 .method public static values()[Lcom/google/common/base/StandardSystemProperty;
-    .registers 1
+    .locals 1
 
     .line 27
     sget-object v0, Lcom/google/common/base/StandardSystemProperty;->$VALUES:[Lcom/google/common/base/StandardSystemProperty;
@@ -713,7 +713,7 @@
 
 # virtual methods
 .method public key()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 132
     iget-object v0, p0, Lcom/google/common/base/StandardSystemProperty;->key:Ljava/lang/String;
@@ -722,7 +722,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 166
     new-instance v0, Ljava/lang/StringBuilder;
@@ -759,7 +759,7 @@
 .end method
 
 .method public value()Ljava/lang/String;
-    .registers 2
+    .locals 1
     .annotation runtime Ljavax/annotation/CheckForNull;
     .end annotation
 

@@ -126,7 +126,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 85
     sget-object v0, Landroid/media/MediaParser$SeekPoint;->START:Landroid/media/MediaParser$SeekPoint;
@@ -153,7 +153,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/4 v0, -0x2
 
@@ -168,7 +168,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/Format;IZ)V
-    .registers 4
+    .locals 0
 
     .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -242,7 +242,7 @@
 .end method
 
 .method private ensureSpaceForTrackIndex(I)V
-    .registers 5
+    .locals 3
 
     .line 373
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackOutputs:Ljava/util/ArrayList;
@@ -251,8 +251,8 @@
 
     move-result v0
 
-    :goto_6
-    if-gt v0, p1, :cond_20
+    :goto_0
+    if-gt v0, p1, :cond_0
 
     .line 374
     iget-object v1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackOutputs:Ljava/util/ArrayList;
@@ -278,14 +278,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method private static getFlag(Landroid/media/MediaFormat;Ljava/lang/String;I)I
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -294,19 +294,19 @@
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move p2, v0
 
-    :goto_9
+    :goto_0
     return p2
 .end method
 
 .method private static getInitializationData(Landroid/media/MediaFormat;)Ljava/util/List;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -325,7 +325,7 @@
     const/4 v1, 0x0
 
     .line 572
-    :goto_6
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "csd-"
@@ -346,12 +346,12 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_0
 
     return-object v0
 
     .line 576
-    :cond_1e
+    :cond_0
     invoke-static {v1}, Landroidx/media3/common/util/MediaFormatUtil;->getArray(Ljava/nio/ByteBuffer;)[B
 
     move-result-object v1
@@ -360,11 +360,11 @@
 
     move v1, v3
 
-    goto :goto_6
+    goto :goto_0
 .end method
 
 .method private static getMimeType(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 582
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -375,234 +375,234 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_fc
+    sparse-switch v0, :sswitch_data_0
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_d
+    :sswitch_0
     const-string v0, "android.media.mediaparser.FlvParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :cond_17
+    :cond_0
     const/16 v1, 0xd
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_1b
+    :sswitch_1
     const-string v0, "android.media.mediaparser.Mp3Parser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :cond_25
+    :cond_1
     const/16 v1, 0xc
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_29
+    :sswitch_2
     const-string v0, "android.media.mediaparser.Ac4Parser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_2
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :cond_33
+    :cond_2
     const/16 v1, 0xb
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_37
+    :sswitch_3
     const-string v0, "android.media.mediaparser.MatroskaParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_41
+    if-nez v0, :cond_3
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :cond_41
+    :cond_3
     const/16 v1, 0xa
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_45
+    :sswitch_4
     const-string v0, "android.media.mediaparser.FlacParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_4
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :cond_4f
+    :cond_4
     const/16 v1, 0x9
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_53
+    :sswitch_5
     const-string v0, "android.media.mediaparser.AmrParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5d
+    if-nez v0, :cond_5
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :cond_5d
+    :cond_5
     const/16 v1, 0x8
 
-    goto/16 :goto_b8
+    goto/16 :goto_0
 
-    :sswitch_61
+    :sswitch_6
     const-string v0, "android.media.mediaparser.Ac3Parser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6a
+    if-nez v0, :cond_6
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_6a
+    :cond_6
     const/4 v1, 0x7
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_6c
+    :sswitch_7
     const-string v0, "android.media.mediaparser.FragmentedMp4Parser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_75
+    if-nez v0, :cond_7
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_75
+    :cond_7
     const/4 v1, 0x6
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_77
+    :sswitch_8
     const-string v0, "android.media.mediaparser.PsParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_80
+    if-nez v0, :cond_8
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_80
+    :cond_8
     const/4 v1, 0x5
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_82
+    :sswitch_9
     const-string v0, "android.media.mediaparser.WavParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_8b
+    if-nez v0, :cond_9
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_8b
+    :cond_9
     const/4 v1, 0x4
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_8d
+    :sswitch_a
     const-string v0, "android.media.mediaparser.AdtsParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_96
+    if-nez v0, :cond_a
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_96
+    :cond_a
     const/4 v1, 0x3
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_98
+    :sswitch_b
     const-string v0, "android.media.mediaparser.TsParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_a1
+    if-nez v0, :cond_b
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_a1
+    :cond_b
     const/4 v1, 0x2
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_a3
+    :sswitch_c
     const-string v0, "android.media.mediaparser.OggParser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_ac
+    if-nez v0, :cond_c
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_ac
+    :cond_c
     const/4 v1, 0x1
 
-    goto :goto_b8
+    goto :goto_0
 
-    :sswitch_ae
+    :sswitch_d
     const-string v0, "android.media.mediaparser.Mp4Parser"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_b7
+    if-nez v0, :cond_d
 
-    goto :goto_b8
+    goto :goto_0
 
-    :cond_b7
+    :cond_d
     const/4 v1, 0x0
 
-    :goto_b8
-    packed-switch v1, :pswitch_data_136
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     .line 611
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -625,110 +625,110 @@
 
     throw v0
 
-    :pswitch_d0
+    :pswitch_0
     const-string/jumbo p0, "video/x-flv"
 
     return-object p0
 
-    :pswitch_d4
+    :pswitch_1
     const-string p0, "audio/mpeg"
 
     return-object p0
 
-    :pswitch_d7
+    :pswitch_2
     const-string p0, "audio/ac4"
 
     return-object p0
 
-    :pswitch_da
+    :pswitch_3
     const-string/jumbo p0, "video/webm"
 
     return-object p0
 
-    :pswitch_de
+    :pswitch_4
     const-string p0, "audio/flac"
 
     return-object p0
 
-    :pswitch_e1
+    :pswitch_5
     const-string p0, "audio/amr"
 
     return-object p0
 
-    :pswitch_e4
+    :pswitch_6
     const-string p0, "audio/ac3"
 
     return-object p0
 
-    :pswitch_e7
+    :pswitch_7
     const-string/jumbo p0, "video/mp2p"
 
     return-object p0
 
-    :pswitch_eb
+    :pswitch_8
     const-string p0, "audio/raw"
 
     return-object p0
 
-    :pswitch_ee
+    :pswitch_9
     const-string p0, "audio/mp4a-latm"
 
     return-object p0
 
-    :pswitch_f1
+    :pswitch_a
     const-string/jumbo p0, "video/mp2t"
 
     return-object p0
 
-    :pswitch_f5
+    :pswitch_b
     const-string p0, "audio/ogg"
 
     return-object p0
 
-    :pswitch_f8
+    :pswitch_c
     const-string/jumbo p0, "video/mp4"
 
     return-object p0
 
-    :sswitch_data_fc
+    :sswitch_data_0
     .sparse-switch
-        -0x7afe9a64 -> :sswitch_ae
-        -0x6f828246 -> :sswitch_a3
-        -0x5d5dc92e -> :sswitch_98
-        -0x35a8150b -> :sswitch_8d
-        -0x23289ea9 -> :sswitch_82
-        0x31d8356 -> :sswitch_77
-        0x6f5c06d -> :sswitch_6c
-        0x1676aefc -> :sswitch_61
-        0x29eb04b1 -> :sswitch_53
-        0x2dd08ffb -> :sswitch_45
-        0x39936bdf -> :sswitch_37
-        0x4b5cea3d -> :sswitch_29
-        0x501b2a5b -> :sswitch_1b
-        0x7af8efdb -> :sswitch_d
+        -0x7afe9a64 -> :sswitch_d
+        -0x6f828246 -> :sswitch_c
+        -0x5d5dc92e -> :sswitch_b
+        -0x35a8150b -> :sswitch_a
+        -0x23289ea9 -> :sswitch_9
+        0x31d8356 -> :sswitch_8
+        0x6f5c06d -> :sswitch_7
+        0x1676aefc -> :sswitch_6
+        0x29eb04b1 -> :sswitch_5
+        0x2dd08ffb -> :sswitch_4
+        0x39936bdf -> :sswitch_3
+        0x4b5cea3d -> :sswitch_2
+        0x501b2a5b -> :sswitch_1
+        0x7af8efdb -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_136
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_f8
-        :pswitch_f5
-        :pswitch_f1
-        :pswitch_ee
-        :pswitch_eb
-        :pswitch_e7
-        :pswitch_f8
-        :pswitch_e4
-        :pswitch_e1
-        :pswitch_de
-        :pswitch_da
-        :pswitch_d7
-        :pswitch_d4
-        :pswitch_d0
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_c
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static getSelectionFlags(Landroid/media/MediaFormat;)I
-    .registers 4
+    .locals 3
 
     const-string v0, "is-autoselect"
 
@@ -767,21 +767,21 @@
 .end method
 
 .method private maybeEndTracks()V
-    .registers 4
+    .locals 3
 
     .line 421
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->tracksFoundCalled:Z
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_3
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->tracksEnded:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_26
+    goto :goto_1
 
     .line 424
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackOutputs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -790,8 +790,8 @@
 
     const/4 v1, 0x0
 
-    :goto_10
-    if-ge v1, v0, :cond_1e
+    :goto_0
+    if-ge v1, v0, :cond_2
 
     .line 426
     iget-object v2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackOutputs:Ljava/util/ArrayList;
@@ -800,17 +800,17 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_1
 
     return-void
 
-    :cond_1b
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 430
-    :cond_1e
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
 
     invoke-interface {v0}, Landroidx/media3/extractor/ExtractorOutput;->endTracks()V
@@ -820,13 +820,13 @@
     .line 431
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->tracksEnded:Z
 
-    :cond_26
-    :goto_26
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method private maybeObtainChunkIndex(Landroid/media/MediaFormat;)Z
-    .registers 9
+    .locals 7
 
     const-string v0, "chunk-index-int-sizes"
 
@@ -835,14 +835,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 349
-    :cond_a
+    :cond_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asIntBuffer()Ljava/nio/IntBuffer;
 
     move-result-object v0
@@ -959,16 +959,16 @@
 .end method
 
 .method private toExoPlayerCryptoData(ILandroid/media/MediaCodec$CryptoInfo;)Landroidx/media3/extractor/TrackOutput$CryptoData;
-    .registers 8
+    .locals 5
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 387
-    :cond_4
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->lastReceivedCryptoInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -977,7 +977,7 @@
 
     check-cast v0, Landroid/media/MediaCodec$CryptoInfo;
 
-    if-ne v0, p2, :cond_1d
+    if-ne v0, p2, :cond_1
 
     .line 392
     iget-object p2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->lastOutputCryptoDatas:Ljava/util/ArrayList;
@@ -994,11 +994,11 @@
 
     check-cast p1, Landroidx/media3/extractor/TrackOutput$CryptoData;
 
-    goto :goto_74
+    goto :goto_1
 
     .line 401
-    :cond_1d
-    :try_start_1d
+    :cond_1
+    :try_start_0
     sget-object v0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->REGEX_CRYPTO_INFO_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {p2}, Landroid/media/MediaCodec$CryptoInfo;->toString()Ljava/lang/String;
@@ -1045,12 +1045,12 @@
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
-    :try_end_48
-    .catch Ljava/lang/RuntimeException; {:try_start_1d .. :try_end_48} :catch_49
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_60
+    goto :goto_0
 
-    :catch_49
+    :catch_0
     move-exception v0
 
     .line 407
@@ -1077,7 +1077,7 @@
     move v0, v1
 
     .line 412
-    :goto_60
+    :goto_0
     new-instance v2, Landroidx/media3/extractor/TrackOutput$CryptoData;
 
     iget v3, p2, Landroid/media/MediaCodec$CryptoInfo;->mode:I
@@ -1098,21 +1098,21 @@
 
     move-object p1, v2
 
-    :goto_74
+    :goto_1
     return-object p1
 .end method
 
 .method private static toExoPlayerDrmInitData(Ljava/lang/String;Landroid/media/DrmInitData;)Landroidx/media3/common/DrmInitData;
-    .registers 9
+    .locals 7
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 535
-    :cond_4
+    :cond_0
     invoke-virtual {p1}, Landroid/media/DrmInitData;->getSchemeInitDataCount()I
 
     move-result v0
@@ -1121,8 +1121,8 @@
 
     const/4 v2, 0x0
 
-    :goto_b
-    if-ge v2, v0, :cond_21
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 537
     invoke-virtual {p1, v2}, Landroid/media/DrmInitData;->getSchemeInitDataAt(I)Landroid/media/DrmInitData$SchemeInitData;
@@ -1144,10 +1144,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 541
-    :cond_21
+    :cond_1
     new-instance p1, Landroidx/media3/common/DrmInitData;
 
     invoke-direct {p1, p0, v1}, Landroidx/media3/common/DrmInitData;-><init>(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)V
@@ -1156,7 +1156,7 @@
 .end method
 
 .method private toExoPlayerFormat(Landroid/media/MediaParser$TrackData;)Landroidx/media3/common/Format;
-    .registers 10
+    .locals 8
 
     .line 460
     iget-object v0, p1, Landroid/media/MediaParser$TrackData;->mediaFormat:Landroid/media/MediaFormat;
@@ -1432,14 +1432,14 @@
     move-result-object p1
 
     .line 510
-    :goto_eb
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->muxedCaptionFormats:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v5, v0, :cond_12e
+    if-ge v5, v0, :cond_1
 
     .line 511
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->muxedCaptionFormats:Ljava/util/List;
@@ -1457,11 +1457,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_12b
+    if-eqz v3, :cond_0
 
     iget v3, v0, Landroidx/media3/common/Format;->accessibilityChannel:I
 
-    if-ne v3, v2, :cond_12b
+    if-ne v3, v2, :cond_0
 
     .line 516
     iget-object v1, v0, Landroidx/media3/common/Format;->language:Ljava/lang/String;
@@ -1504,16 +1504,16 @@
     .line 522
     invoke-virtual {v1, v0}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
 
-    goto :goto_12e
+    goto :goto_1
 
-    :cond_12b
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_eb
+    goto :goto_0
 
     .line 526
-    :cond_12e
-    :goto_12e
+    :cond_1
+    :goto_1
     invoke-virtual {p1}, Landroidx/media3/common/Format$Builder;->build()Landroidx/media3/common/Format;
 
     move-result-object p1
@@ -1522,16 +1522,16 @@
 .end method
 
 .method private static toTrackTypeConstant(Ljava/lang/String;)I
-    .registers 6
+    .locals 5
 
     const/4 v0, -0x1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 438
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -1544,93 +1544,93 @@
 
     const/4 v4, 0x1
 
-    sparse-switch v1, :sswitch_data_5a
+    sparse-switch v1, :sswitch_data_0
 
-    :goto_11
+    :goto_0
     move v1, v0
 
-    goto :goto_4b
+    goto :goto_1
 
-    :sswitch_13
+    :sswitch_0
     const-string/jumbo v1, "video"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     const/4 v1, 0x4
 
-    goto :goto_4b
+    goto :goto_1
 
-    :sswitch_1f
+    :sswitch_1
     const-string v1, "audio"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_2
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     move v1, v2
 
-    goto :goto_4b
+    goto :goto_1
 
-    :sswitch_2a
+    :sswitch_2
     const-string v1, "text"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_3
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_33
+    :cond_3
     move v1, v3
 
-    goto :goto_4b
+    goto :goto_1
 
-    :sswitch_35
+    :sswitch_3
     const-string/jumbo v1, "unknown"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_4
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_3f
+    :cond_4
     move v1, v4
 
-    goto :goto_4b
+    goto :goto_1
 
-    :sswitch_41
+    :sswitch_4
     const-string v1, "metadata"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_4a
+    if-nez v1, :cond_5
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_4a
+    :cond_5
     const/4 v1, 0x0
 
-    :goto_4b
-    packed-switch v1, :pswitch_data_70
+    :goto_1
+    packed-switch v1, :pswitch_data_0
 
     .line 451
     invoke-static {p0}, Landroidx/media3/common/MimeTypes;->getTrackType(Ljava/lang/String;)I
@@ -1639,48 +1639,48 @@
 
     return p0
 
-    :pswitch_53
+    :pswitch_0
     return v3
 
-    :pswitch_54
+    :pswitch_1
     return v4
 
-    :pswitch_55
+    :pswitch_2
     return v2
 
-    :pswitch_56
+    :pswitch_3
     return v0
 
-    :pswitch_57
+    :pswitch_4
     const/4 p0, 0x5
 
     return p0
 
     nop
 
-    :sswitch_data_5a
+    :sswitch_data_0
     .sparse-switch
-        -0x1ad284d1 -> :sswitch_41
-        -0x10fa53b6 -> :sswitch_35
-        0x36452d -> :sswitch_2a
-        0x58d9bd6 -> :sswitch_1f
-        0x6b0147b -> :sswitch_13
+        -0x1ad284d1 -> :sswitch_4
+        -0x10fa53b6 -> :sswitch_3
+        0x36452d -> :sswitch_2
+        0x58d9bd6 -> :sswitch_1
+        0x6b0147b -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_70
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_57
-        :pswitch_56
-        :pswitch_55
-        :pswitch_54
-        :pswitch_53
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public disableSeeking()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1691,7 +1691,7 @@
 .end method
 
 .method public getChunkIndex()Landroidx/media3/extractor/ChunkIndex;
-    .registers 2
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->lastChunkIndex:Landroidx/media3/extractor/ChunkIndex;
@@ -1700,7 +1700,7 @@
 .end method
 
 .method public getDummySeekMap()Landroid/media/MediaParser$SeekMap;
-    .registers 2
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->dummySeekMap:Landroid/media/MediaParser$SeekMap;
@@ -1709,19 +1709,19 @@
 .end method
 
 .method public getSampleFormats()[Landroidx/media3/common/Format;
-    .registers 4
+    .locals 3
 
     .line 236
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->tracksFoundCalled:Z
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 239
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackFormats:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1733,14 +1733,14 @@
     const/4 v1, 0x0
 
     .line 240
-    :goto_f
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackFormats:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_2a
+    if-ge v1, v2, :cond_1
 
     .line 241
     iget-object v2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->trackFormats:Ljava/util/ArrayList;
@@ -1761,14 +1761,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     return-object v0
 .end method
 
 .method public getSeekPoints(J)Landroid/util/Pair;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -1782,23 +1782,23 @@
     .line 218
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->lastSeekMap:Landroid/media/MediaParser$SeekMap;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaParser$SeekMap;->getSeekPoints(J)Landroid/util/Pair;
 
     move-result-object p1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     sget-object p1, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->SEEK_POINT_PAIR_START:Landroid/util/Pair;
 
-    :goto_b
+    :goto_0
     return-object p1
 .end method
 
 .method public onSampleCompleted(IJIIILandroid/media/MediaCodec$CryptoInfo;)V
-    .registers 15
+    .locals 7
 
     .line 329
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->sampleTimestampUpperLimitFilterUs:J
@@ -1807,26 +1807,26 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     cmp-long v0, p2, v0
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_0
 
     return-void
 
     .line 333
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 334
     invoke-virtual {v0, p2, p3}, Landroidx/media3/common/util/TimestampAdjuster;->adjustSampleTimestamp(J)J
 
     move-result-wide p2
 
-    :cond_18
+    :cond_1
     move-wide v1, p2
 
     .line 336
@@ -1863,7 +1863,7 @@
 .end method
 
 .method public onSampleDataFound(ILandroid/media/MediaParser$InputReader;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1887,7 +1887,7 @@
 
     check-cast v0, Landroidx/media3/extractor/TrackOutput;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 314
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -1904,7 +1904,7 @@
     invoke-virtual {v1, p1, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 317
-    :cond_1d
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->scratchDataReaderAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30$DataReaderAdapter;
 
     .line 318
@@ -1923,24 +1923,24 @@
 .end method
 
 .method public onSeekMapFound(Landroid/media/MediaParser$SeekMap;)V
-    .registers 7
+    .locals 5
 
     .line 256
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->expectDummySeekMap:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->dummySeekMap:Landroid/media/MediaParser$SeekMap;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 258
     iput-object p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->dummySeekMap:Landroid/media/MediaParser$SeekMap;
 
-    goto :goto_33
+    goto :goto_2
 
     .line 260
-    :cond_b
+    :cond_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->lastSeekMap:Landroid/media/MediaParser$SeekMap;
 
     .line 261
@@ -1954,7 +1954,7 @@
     .line 263
     iget-boolean v3, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->seekingDisabled:Z
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_2
 
     .line 264
     new-instance p1, Landroidx/media3/extractor/SeekMap$Unseekable;
@@ -1963,21 +1963,21 @@
 
     cmp-long v3, v0, v3
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 265
-    :goto_26
+    :goto_0
     invoke-direct {p1, v0, v1}, Landroidx/media3/extractor/SeekMap$Unseekable;-><init>(J)V
 
-    goto :goto_30
+    goto :goto_1
 
     .line 266
-    :cond_2a
+    :cond_2
     new-instance v0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30$SeekMapAdapter;
 
     invoke-direct {v0, p1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30$SeekMapAdapter;-><init>(Landroid/media/MediaParser$SeekMap;)V
@@ -1985,15 +1985,15 @@
     move-object p1, v0
 
     .line 262
-    :goto_30
+    :goto_1
     invoke-interface {v2, p1}, Landroidx/media3/extractor/ExtractorOutput;->seekMap(Landroidx/media3/extractor/SeekMap;)V
 
-    :goto_33
+    :goto_2
     return-void
 .end method
 
 .method public onTrackCountFound(I)V
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -2007,7 +2007,7 @@
 .end method
 
 .method public onTrackDataFound(ILandroid/media/MediaParser$TrackData;)V
-    .registers 6
+    .locals 3
 
     .line 272
     iget-object v0, p2, Landroid/media/MediaParser$TrackData;->mediaFormat:Landroid/media/MediaFormat;
@@ -2016,12 +2016,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 277
-    :cond_9
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->ensureSpaceForTrackIndex(I)V
 
     .line 278
@@ -2033,7 +2033,7 @@
 
     check-cast v0, Landroidx/media3/extractor/TrackOutput;
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_4
 
     .line 281
     iget-object v0, p2, Landroid/media/MediaParser$TrackData;->mediaFormat:Landroid/media/MediaFormat;
@@ -2044,14 +2044,14 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     move-object v1, v0
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 286
-    :cond_23
+    :cond_1
     iget-object v1, p2, Landroid/media/MediaParser$TrackData;->mediaFormat:Landroid/media/MediaFormat;
 
     const-string v2, "mime"
@@ -2061,7 +2061,7 @@
     move-result-object v1
 
     .line 283
-    :goto_2b
+    :goto_0
     invoke-static {v1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->toTrackTypeConstant(Ljava/lang/String;)I
 
     move-result v1
@@ -2069,13 +2069,13 @@
     .line 287
     iget v2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->primaryTrackType:I
 
-    if-ne v1, v2, :cond_35
+    if-ne v1, v2, :cond_2
 
     .line 288
     iput p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->primaryTrackIndex:I
 
     .line 290
-    :cond_35
+    :cond_2
     iget-object v2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
 
     invoke-interface {v2, p1, v1}, Landroidx/media3/extractor/ExtractorOutput;->track(II)Landroidx/media3/extractor/TrackOutput;
@@ -2087,15 +2087,15 @@
 
     invoke-virtual {v2, p1, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_3
 
     return-void
 
-    :cond_43
+    :cond_3
     move-object v0, v1
 
     .line 298
-    :cond_44
+    :cond_4
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->toExoPlayerFormat(Landroid/media/MediaParser$TrackData;)Landroidx/media3/common/Format;
 
     move-result-object p2
@@ -2103,24 +2103,24 @@
     .line 300
     iget-object v1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->primaryTrackManifestFormat:Landroidx/media3/common/Format;
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_5
 
     iget v2, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->primaryTrackIndex:I
 
-    if-ne p1, v2, :cond_55
+    if-ne p1, v2, :cond_5
 
     .line 301
     invoke-virtual {p2, v1}, Landroidx/media3/common/Format;->withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object v1
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_55
+    :cond_5
     move-object v1, p2
 
     .line 299
-    :goto_56
+    :goto_1
     invoke-interface {v0, v1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
     .line 303
@@ -2135,7 +2135,7 @@
 .end method
 
 .method public setExtractorOutput(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 2
+    .locals 0
 
     .line 179
     iput-object p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -2144,7 +2144,7 @@
 .end method
 
 .method public setMuxedCaptionFormats(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2161,7 +2161,7 @@
 .end method
 
 .method public setSampleTimestampUpperLimitFilterUs(J)V
-    .registers 3
+    .locals 0
 
     .line 167
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->sampleTimestampUpperLimitFilterUs:J
@@ -2170,7 +2170,7 @@
 .end method
 
 .method public setSelectedParserName(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 227
     invoke-static {p1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->getMimeType(Ljava/lang/String;)Ljava/lang/String;
@@ -2183,7 +2183,7 @@
 .end method
 
 .method public setTimestampAdjuster(Landroidx/media3/common/util/TimestampAdjuster;)V
-    .registers 2
+    .locals 0
 
     .line 172
     iput-object p1, p0, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;

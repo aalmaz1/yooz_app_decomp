@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 86
     new-instance v0, Landroidx/media3/extractor/metadata/id3/InternalFrame$1;
@@ -40,7 +40,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "----"
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "----"
 
@@ -112,18 +112,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_3
 
     .line 54
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -134,12 +134,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_35
+    goto :goto_1
 
     .line 57
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/id3/InternalFrame;
 
     .line 58
@@ -151,7 +151,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/InternalFrame;->domain:Ljava/lang/String;
 
@@ -162,7 +162,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/InternalFrame;->text:Ljava/lang/String;
 
@@ -173,41 +173,41 @@
 
     move-result p1
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_2
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_33
+    :cond_2
     move v0, v1
 
-    :goto_34
+    :goto_0
     return v0
 
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 66
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/InternalFrame;->domain:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v1
 
-    :goto_b
+    :goto_0
     const/16 v2, 0x20f
 
     add-int/2addr v2, v0
@@ -217,18 +217,18 @@
     .line 67
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/InternalFrame;->description:Ljava/lang/String;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move v0, v1
 
-    :goto_1a
+    :goto_1
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -236,20 +236,20 @@
     .line 68
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/InternalFrame;->text:Ljava/lang/String;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :cond_25
+    :cond_2
     add-int/2addr v2, v1
 
     return v2
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 74
     new-instance v0, Ljava/lang/StringBuilder;
@@ -294,7 +294,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 81
     iget-object p2, p0, Landroidx/media3/extractor/metadata/id3/InternalFrame;->id:Ljava/lang/String;

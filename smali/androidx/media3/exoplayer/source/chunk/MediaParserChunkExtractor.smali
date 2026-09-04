@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 59
     new-instance v0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor$$ExternalSyntheticLambda0;
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(ILandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -105,17 +105,17 @@
 
     move-result p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
     const-string p1, "android.media.mediaparser.MatroskaParser"
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     const-string p1, "android.media.mediaparser.FragmentedMp4Parser"
 
     .line 110
-    :goto_29
+    :goto_0
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->setSelectedParserName(Ljava/lang/String;)V
 
     .line 111
@@ -168,12 +168,12 @@
     const/4 p2, 0x0
 
     .line 120
-    :goto_5b
+    :goto_1
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge p2, v0, :cond_71
+    if-ge p2, v0, :cond_1
 
     .line 122
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -191,10 +191,10 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_5b
+    goto :goto_1
 
     .line 124
-    :cond_71
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->mediaParser:Landroid/media/MediaParser;
 
     const-string v0, "android.media.mediaParser.exposeCaptionFormats"
@@ -206,7 +206,7 @@
 
     const/16 p2, 0x1f
 
-    if-lt p1, p2, :cond_83
+    if-lt p1, p2, :cond_2
 
     .line 126
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->mediaParser:Landroid/media/MediaParser;
@@ -214,7 +214,7 @@
     invoke-static {p1, p4}, Landroidx/media3/exoplayer/source/mediaparser/MediaParserUtil;->setLogSessionIdOnMediaParser(Landroid/media/MediaParser;Landroidx/media3/exoplayer/analytics/PlayerId;)V
 
     .line 128
-    :cond_83
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->outputConsumerAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
 
     invoke-virtual {p1, p3}, Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;->setMuxedCaptionFormats(Ljava/util/List;)V
@@ -244,7 +244,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;
-    .registers 1
+    .locals 0
 
     .line 54
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->trackOutputProvider:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;
@@ -253,7 +253,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;)Landroidx/media3/extractor/DiscardingTrackOutput;
-    .registers 1
+    .locals 0
 
     .line 54
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->discardingTrackOutput:Landroidx/media3/extractor/DiscardingTrackOutput;
@@ -262,7 +262,7 @@
 .end method
 
 .method static synthetic access$302(Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;[Landroidx/media3/common/Format;)[Landroidx/media3/common/Format;
-    .registers 2
+    .locals 0
 
     .line 54
     iput-object p1, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->sampleFormats:[Landroidx/media3/common/Format;
@@ -271,7 +271,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;)Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
-    .registers 1
+    .locals 0
 
     .line 54
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->outputConsumerAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
@@ -280,7 +280,7 @@
 .end method
 
 .method static synthetic lambda$static$0(ILandroidx/media3/common/Format;ZLjava/util/List;Landroidx/media3/extractor/TrackOutput;Landroidx/media3/exoplayer/analytics/PlayerId;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
-    .registers 6
+    .locals 0
 
     .line 66
     iget-object p2, p1, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
@@ -289,7 +289,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_e
+    if-nez p2, :cond_0
 
     .line 68
     new-instance p2, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;
@@ -298,14 +298,14 @@
 
     return-object p2
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private maybeExecutePendingSeek()V
-    .registers 7
+    .locals 6
 
     .line 172
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->outputConsumerAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
@@ -321,9 +321,9 @@
 
     cmp-long v5, v1, v3
 
-    if-eqz v5, :cond_22
+    if-eqz v5, :cond_0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 174
     iget-object v5, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->mediaParser:Landroid/media/MediaParser;
@@ -341,14 +341,14 @@
     .line 175
     iput-wide v3, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->pendingSeekUs:J
 
-    :cond_22
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getChunkIndex()Landroidx/media3/extractor/ChunkIndex;
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->outputConsumerAdapter:Landroidx/media3/exoplayer/source/mediaparser/OutputConsumerAdapterV30;
@@ -361,7 +361,7 @@
 .end method
 
 .method public getSampleFormats()[Landroidx/media3/common/Format;
-    .registers 2
+    .locals 1
 
     .line 166
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->sampleFormats:[Landroidx/media3/common/Format;
@@ -370,7 +370,7 @@
 .end method
 
 .method public init(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;JJ)V
-    .registers 6
+    .locals 0
 
     .line 139
     iput-object p1, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->trackOutputProvider:Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;
@@ -394,7 +394,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -426,7 +426,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 147
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/MediaParserChunkExtractor;->mediaParser:Landroid/media/MediaParser;

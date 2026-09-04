@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/AudioFocusManager;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
 
     .line 463
     iput-object p1, p0, Landroidx/media3/exoplayer/AudioFocusManager$AudioFocusListener;->this$0:Landroidx/media3/exoplayer/AudioFocusManager;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method synthetic lambda$onAudioFocusChange$0$androidx-media3-exoplayer-AudioFocusManager$AudioFocusListener(I)V
-    .registers 3
+    .locals 1
 
     .line 469
     iget-object v0, p0, Landroidx/media3/exoplayer/AudioFocusManager$AudioFocusListener;->this$0:Landroidx/media3/exoplayer/AudioFocusManager;
@@ -52,7 +52,7 @@
 .end method
 
 .method public onAudioFocusChange(I)V
-    .registers 4
+    .locals 2
 
     .line 469
     iget-object v0, p0, Landroidx/media3/exoplayer/AudioFocusManager$AudioFocusListener;->eventHandler:Landroid/os/Handler;

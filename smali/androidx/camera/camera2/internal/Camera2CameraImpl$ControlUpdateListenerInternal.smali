@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraImpl;)V
-    .registers 2
+    .locals 0
 
     .line 2094
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$ControlUpdateListenerInternal;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCameraControlCaptureRequests(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,7 +61,7 @@
 .end method
 
 .method public onCameraControlUpdateSessionConfig()V
-    .registers 2
+    .locals 1
 
     .line 2100
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$ControlUpdateListenerInternal;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;

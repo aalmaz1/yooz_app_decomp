@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static localeManagerGetApplicationLocales(Ljava/lang/Object;)Landroid/os/LocaleList;
-    .registers 1
+    .locals 0
 
     .line 147
     check-cast p0, Landroid/app/LocaleManager;
@@ -39,7 +39,7 @@
 .end method
 
 .method static localeManagerGetSystemLocales(Ljava/lang/Object;)Landroid/os/LocaleList;
-    .registers 1
+    .locals 0
 
     .line 141
     check-cast p0, Landroid/app/LocaleManager;

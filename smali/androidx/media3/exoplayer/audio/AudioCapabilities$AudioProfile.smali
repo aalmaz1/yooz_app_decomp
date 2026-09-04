@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 450
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -47,7 +47,7 @@
 
     const/4 v3, 0x2
 
-    if-lt v0, v1, :cond_13
+    if-lt v0, v1, :cond_0
 
     .line 451
     new-instance v0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;
@@ -59,22 +59,22 @@
 
     invoke-direct {v0, v3, v1}, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;-><init>(ILjava/util/Set;)V
 
-    goto :goto_18
+    goto :goto_0
 
     .line 454
-    :cond_13
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;
 
     invoke-direct {v0, v3, v2}, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;-><init>(II)V
 
-    :goto_18
+    :goto_0
     sput-object v0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->DEFAULT_AUDIO_PROFILE:Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;
 
     return-void
 .end method
 
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 471
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +94,7 @@
 .end method
 
 .method public constructor <init>(ILjava/util/Set;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -124,12 +124,12 @@
 
     const/4 p2, 0x0
 
-    :goto_10
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -150,17 +150,17 @@
 
     move-result p2
 
-    goto :goto_10
+    goto :goto_0
 
     .line 468
-    :cond_29
+    :cond_0
     iput p2, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->maxChannelCount:I
 
     return-void
 .end method
 
 .method private static getAllChannelMasksForMaxChannelCount(I)Lcom/google/common/collect/ImmutableSet;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -177,8 +177,8 @@
 
     const/4 v1, 0x1
 
-    :goto_6
-    if-gt v1, p0, :cond_16
+    :goto_0
+    if-gt v1, p0, :cond_0
 
     .line 504
     invoke-static {v1}, Landroidx/media3/common/util/Util;->getAudioTrackChannelConfig(I)I
@@ -193,10 +193,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 506
-    :cond_16
+    :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet$Builder;->build()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object p0
@@ -207,26 +207,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 514
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 517
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;
 
     .line 518
@@ -234,13 +234,13 @@
 
     iget v3, p1, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->encoding:I
 
-    if-ne v1, v3, :cond_23
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->maxChannelCount:I
 
     iget v3, p1, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->maxChannelCount:I
 
-    if-ne v1, v3, :cond_23
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->channelMasks:Lcom/google/common/collect/ImmutableSet;
 
@@ -251,24 +251,24 @@
 
     move-result p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_2
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     move v0, v2
 
-    :goto_24
+    :goto_0
     return v0
 .end method
 
 .method public getMaxSupportedChannelCountForPassthrough(ILandroidx/media3/common/AudioAttributes;)I
-    .registers 5
+    .locals 2
 
     .line 491
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->channelMasks:Lcom/google/common/collect/ImmutableSet;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 493
     iget p1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->maxChannelCount:I
@@ -276,12 +276,12 @@
     return p1
 
     .line 494
-    :cond_7
+    :cond_0
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_1
 
     .line 495
     iget v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->encoding:I
@@ -293,7 +293,7 @@
     return p1
 
     .line 498
-    :cond_14
+    :cond_1
     sget-object p1, Landroidx/media3/exoplayer/audio/AudioCapabilities;->ALL_SURROUND_ENCODINGS_AND_MAX_CHANNELS:Lcom/google/common/collect/ImmutableMap;
 
     iget p2, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->encoding:I
@@ -328,7 +328,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 525
     iget v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->encoding:I
@@ -345,55 +345,55 @@
     .line 527
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->channelMasks:Lcom/google/common/collect/ImmutableSet;
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableSet;->hashCode()I
 
     move-result v1
 
-    :goto_13
+    :goto_0
     add-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public supportsChannelCount(I)Z
-    .registers 4
+    .locals 2
 
     .line 478
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->channelMasks:Lcom/google/common/collect/ImmutableSet;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_1
 
     .line 479
     iget v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->maxChannelCount:I
 
-    if-gt p1, v0, :cond_a
+    if-gt p1, v0, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_a
+    :cond_0
     return v1
 
     .line 482
-    :cond_b
+    :cond_1
     invoke-static {p1}, Landroidx/media3/common/util/Util;->getAudioTrackChannelConfig(I)I
 
     move-result p1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_2
 
     return v1
 
     .line 486
-    :cond_12
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioCapabilities$AudioProfile;->channelMasks:Lcom/google/common/collect/ImmutableSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -408,7 +408,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 533
     new-instance v0, Ljava/lang/StringBuilder;

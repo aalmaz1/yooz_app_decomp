@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;
-    .registers 14
+    .locals 13
 
     .line 246
     new-instance v12, Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl;
@@ -115,23 +115,23 @@
 .end method
 
 .method public setFallbackMaxPlaybackSpeed(F)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 3
+    .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 147
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 148
@@ -141,29 +141,29 @@
 .end method
 
 .method public setFallbackMinPlaybackSpeed(F)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpg-float v0, v0, p1
 
-    if-gez v0, :cond_d
+    if-gez v0, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpg-float v0, p1, v0
 
-    if-gtz v0, :cond_d
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 131
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 132
@@ -173,23 +173,23 @@
 .end method
 
 .method public setMaxLiveOffsetErrorMsForUnitSpeed(J)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 199
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 200
@@ -203,29 +203,29 @@
 .end method
 
 .method public setMinPossibleLiveOffsetSmoothingFactor(F)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
-    if-ltz v0, :cond_d
+    if-ltz v0, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpg-float v0, p1, v0
 
-    if-gez v0, :cond_d
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     .line 238
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 240
@@ -235,23 +235,23 @@
 .end method
 
 .method public setMinUpdateIntervalMs(J)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 163
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 164
@@ -261,23 +261,23 @@
 .end method
 
 .method public setProportionalControlFactor(F)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 182
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const v0, 0x49742400    # 1000000.0f
@@ -291,23 +291,23 @@
 .end method
 
 .method public setTargetLiveOffsetIncrementOnRebufferMs(J)Landroidx/media3/exoplayer/DefaultLivePlaybackSpeedControl$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 215
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 217

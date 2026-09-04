@@ -17,7 +17,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/EmojiMetadata;)V
-    .registers 3
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final getHeight()I
-    .registers 2
+    .locals 1
 
     .line 130
     iget-short v0, p0, Landroidx/emoji2/text/EmojiSpan;->mHeight:S
@@ -65,7 +65,7 @@
 .end method
 
 .method public final getId()I
-    .registers 2
+    .locals 1
 
     .line 148
     invoke-virtual {p0}, Landroidx/emoji2/text/EmojiSpan;->getMetadata()Landroidx/emoji2/text/EmojiMetadata;
@@ -80,7 +80,7 @@
 .end method
 
 .method public final getMetadata()Landroidx/emoji2/text/EmojiMetadata;
-    .registers 2
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/emoji2/text/EmojiSpan;->mMetadata:Landroidx/emoji2/text/EmojiMetadata;
@@ -89,7 +89,7 @@
 .end method
 
 .method final getRatio()F
-    .registers 2
+    .locals 1
 
     .line 138
     iget v0, p0, Landroidx/emoji2/text/EmojiSpan;->mRatio:F
@@ -98,7 +98,7 @@
 .end method
 
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
-    .registers 6
+    .locals 0
 
     .line 87
     iget-object p2, p0, Landroidx/emoji2/text/EmojiSpan;->mTmpFontMetrics:Landroid/graphics/Paint$FontMetricsInt;
@@ -177,7 +177,7 @@
 
     iput-short p1, p0, Landroidx/emoji2/text/EmojiSpan;->mWidth:S
 
-    if-eqz p5, :cond_56
+    if-eqz p5, :cond_0
 
     .line 95
     iget-object p1, p0, Landroidx/emoji2/text/EmojiSpan;->mTmpFontMetrics:Landroid/graphics/Paint$FontMetricsInt;
@@ -208,14 +208,14 @@
     iput p1, p5, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     .line 101
-    :cond_56
+    :cond_0
     iget-short p1, p0, Landroidx/emoji2/text/EmojiSpan;->mWidth:S
 
     return p1
 .end method
 
 .method final getWidth()I
-    .registers 2
+    .locals 1
 
     .line 120
     iget-short v0, p0, Landroidx/emoji2/text/EmojiSpan;->mWidth:S

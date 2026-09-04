@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;I)V
-    .registers 7
+    .locals 0
 
     .line 251
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/BaseMediaSource;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;ILandroidx/media3/exoplayer/source/ProgressiveMediaSource$1;)V
-    .registers 8
+    .locals 0
 
     .line 54
     invoke-direct/range {p0 .. p6}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;-><init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;I)V
@@ -90,7 +90,7 @@
 .end method
 
 .method private getLocalConfiguration()Landroidx/media3/common/MediaItem$LocalConfiguration;
-    .registers 2
+    .locals 1
 
     .line 351
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -109,7 +109,7 @@
 .end method
 
 .method private notifySourceInfoRefreshed()V
-    .registers 10
+    .locals 9
 
     .line 357
     new-instance v8, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;
@@ -136,7 +136,7 @@
     .line 365
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineIsPlaceholder:Z
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 368
     new-instance v0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$1;
@@ -146,7 +146,7 @@
     move-object v8, v0
 
     .line 386
-    :cond_1c
+    :cond_0
     invoke-virtual {p0, v8}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
     return-void
@@ -155,7 +155,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 7
+    .locals 5
 
     .line 269
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->getLocalConfiguration()Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -165,7 +165,7 @@
     .line 270
     iget-object p1, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     .line 271
     iget-object v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -177,7 +177,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_0
 
     iget-wide v1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->imageDurationMs:J
 
@@ -185,7 +185,7 @@
 
     cmp-long v1, v1, v3
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_0
 
     iget-object p1, p1, Landroidx/media3/common/MediaItem$LocalConfiguration;->customCacheKey:Ljava/lang/String;
 
@@ -196,21 +196,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_27
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 21
+    .locals 16
 
     move-object/from16 v14, p0
 
@@ -224,13 +224,13 @@
     .line 299
     iget-object v0, v14, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->transferListener:Landroidx/media3/datasource/TransferListener;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 300
     invoke-interface {v2, v0}, Landroidx/media3/datasource/DataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
     .line 302
-    :cond_f
+    :cond_0
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->getLocalConfiguration()Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     move-result-object v0
@@ -288,21 +288,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 264
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -311,47 +311,47 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onSourceInfoRefreshed(JZZ)V
-    .registers 7
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 333
     iget-wide p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineDurationUs:J
 
     .line 334
-    :cond_b
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineIsPlaceholder:Z
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineDurationUs:J
 
     cmp-long v0, v0, p1
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineIsSeekable:Z
 
-    if-ne v0, p3, :cond_1e
+    if-ne v0, p3, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineIsLive:Z
 
-    if-ne v0, p4, :cond_1e
+    if-ne v0, p4, :cond_1
 
     return-void
 
     .line 341
-    :cond_1e
+    :cond_1
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->timelineDurationUs:J
 
     .line 342
@@ -372,7 +372,7 @@
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 2
 
     .line 284
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->transferListener:Landroidx/media3/datasource/TransferListener;
@@ -410,7 +410,7 @@
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 320
     check-cast p1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;
@@ -421,7 +421,7 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 2
+    .locals 1
 
     .line 325
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
@@ -432,22 +432,22 @@
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 279
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 280
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

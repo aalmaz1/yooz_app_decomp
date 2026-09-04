@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method private buildEndStateNotification(Landroid/content/Context;ILandroid/app/PendingIntent;Ljava/lang/String;I)Landroid/app/Notification;
-    .registers 17
+    .locals 11
 
     const/4 v6, 0x0
 
@@ -75,7 +75,7 @@
 .end method
 
 .method private buildNotification(Landroid/content/Context;ILandroid/app/PendingIntent;Ljava/lang/String;IIIZZZ)Landroid/app/Notification;
-    .registers 12
+    .locals 1
 
     .line 222
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadNotificationHelper;->notificationBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -87,14 +87,14 @@
 
     const/4 v0, 0x0
 
-    if-nez p5, :cond_c
+    if-nez p5, :cond_0
 
     move-object p1, v0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 224
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -104,7 +104,7 @@
     move-result-object p1
 
     .line 223
-    :goto_14
+    :goto_0
     invoke-virtual {p2, p1}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 225
@@ -115,12 +115,12 @@
     .line 226
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadNotificationHelper;->notificationBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
-    if-nez p4, :cond_21
+    if-nez p4, :cond_1
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 227
-    :cond_21
+    :cond_1
     new-instance p2, Landroidx/core/app/NotificationCompat$BigTextStyle;
 
     invoke-direct {p2}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
@@ -130,7 +130,7 @@
     move-result-object v0
 
     .line 226
-    :goto_2a
+    :goto_1
     invoke-virtual {p1, v0}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 228
@@ -153,7 +153,7 @@
 
     const/16 p2, 0x1f
 
-    if-lt p1, p2, :cond_47
+    if-lt p1, p2, :cond_2
 
     .line 232
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadNotificationHelper;->notificationBuilder:Landroidx/core/app/NotificationCompat$Builder;
@@ -161,7 +161,7 @@
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DownloadNotificationHelper$Api31;->setForegroundServiceBehavior(Landroidx/core/app/NotificationCompat$Builder;)V
 
     .line 234
-    :cond_47
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadNotificationHelper;->notificationBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {p1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public buildDownloadCompletedNotification(Landroid/content/Context;ILandroid/app/PendingIntent;Ljava/lang/String;)Landroid/app/Notification;
-    .registers 11
+    .locals 6
 
     .line 170
     sget v5, Landroidx/media3/exoplayer/R$string;->exo_download_completed:I
@@ -198,7 +198,7 @@
 .end method
 
 .method public buildDownloadFailedNotification(Landroid/content/Context;ILandroid/app/PendingIntent;Ljava/lang/String;)Landroid/app/Notification;
-    .registers 11
+    .locals 6
 
     .line 188
     sget v5, Landroidx/media3/exoplayer/R$string;->exo_download_failed:I
@@ -222,7 +222,7 @@
 .end method
 
 .method public buildProgressNotification(Landroid/content/Context;ILandroid/app/PendingIntent;Ljava/lang/String;Ljava/util/List;I)Landroid/app/Notification;
-    .registers 28
+    .locals 21
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -258,12 +258,12 @@
     move v9, v2
 
     .line 79
-    :goto_a
+    :goto_0
     invoke-interface/range {p5 .. p5}, Ljava/util/List;->size()I
 
     move-result v10
 
-    if-ge v3, v10, :cond_4a
+    if-ge v3, v10, :cond_5
 
     move-object/from16 v10, p5
 
@@ -277,29 +277,29 @@
     .line 81
     iget v12, v11, Landroidx/media3/exoplayer/offline/Download;->state:I
 
-    if-eqz v12, :cond_46
+    if-eqz v12, :cond_4
 
     const/4 v13, 0x2
 
-    if-eq v12, v13, :cond_28
+    if-eq v12, v13, :cond_1
 
     const/4 v13, 0x5
 
-    if-eq v12, v13, :cond_26
+    if-eq v12, v13, :cond_0
 
     const/4 v13, 0x7
 
-    if-eq v12, v13, :cond_28
+    if-eq v12, v13, :cond_1
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_26
+    :cond_0
     move v7, v2
 
-    goto :goto_47
+    goto :goto_2
 
     .line 91
-    :cond_28
+    :cond_1
     invoke-virtual {v11}, Landroidx/media3/exoplayer/offline/Download;->getPercentDownloaded()F
 
     move-result v4
@@ -308,14 +308,14 @@
 
     cmpl-float v12, v4, v12
 
-    if-eqz v12, :cond_34
+    if-eqz v12, :cond_2
 
     add-float/2addr v0, v4
 
     move v9, v1
 
     .line 96
-    :cond_34
+    :cond_2
     invoke-virtual {v11}, Landroidx/media3/exoplayer/offline/Download;->getBytesDownloaded()J
 
     move-result-wide v11
@@ -324,100 +324,100 @@
 
     cmp-long v4, v11, v13
 
-    if-lez v4, :cond_40
+    if-lez v4, :cond_3
 
     move v4, v2
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_40
+    :cond_3
     move v4, v1
 
-    :goto_41
+    :goto_1
     or-int/2addr v6, v4
 
     add-int/lit8 v8, v8, 0x1
 
     move v4, v2
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_46
+    :cond_4
     move v5, v2
 
-    :goto_47
+    :goto_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_4a
-    if-eqz v4, :cond_51
+    :cond_5
+    if-eqz v4, :cond_6
 
     .line 111
     sget v3, Landroidx/media3/exoplayer/R$string;->exo_download_downloading:I
 
-    :goto_4e
+    :goto_3
     move v15, v3
 
-    :goto_4f
+    :goto_4
     move v3, v2
 
-    goto :goto_6f
+    goto :goto_6
 
-    :cond_51
-    if-eqz v5, :cond_68
+    :cond_6
+    if-eqz v5, :cond_9
 
-    if-eqz p6, :cond_68
+    if-eqz p6, :cond_9
 
     and-int/lit8 v3, p6, 0x2
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_7
 
     .line 117
     sget v3, Landroidx/media3/exoplayer/R$string;->exo_download_paused_for_wifi:I
 
-    :goto_5b
+    :goto_5
     move v15, v3
 
     move v3, v1
 
-    goto :goto_6f
+    goto :goto_6
 
-    :cond_5e
+    :cond_7
     and-int/lit8 v3, p6, 0x1
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_8
 
     .line 119
     sget v3, Landroidx/media3/exoplayer/R$string;->exo_download_paused_for_network:I
 
-    goto :goto_5b
+    goto :goto_5
 
     .line 121
-    :cond_65
+    :cond_8
     sget v3, Landroidx/media3/exoplayer/R$string;->exo_download_paused:I
 
-    goto :goto_5b
+    goto :goto_5
 
-    :cond_68
-    if-eqz v7, :cond_6d
+    :cond_9
+    if-eqz v7, :cond_a
 
     .line 124
     sget v3, Landroidx/media3/exoplayer/R$string;->exo_download_removing:I
 
-    goto :goto_4e
+    goto :goto_3
 
-    :cond_6d
+    :cond_a
     move v15, v1
 
-    goto :goto_4f
+    goto :goto_4
 
-    :goto_6f
-    if-eqz v3, :cond_89
+    :goto_6
+    if-eqz v3, :cond_d
 
     const/16 v3, 0x64
 
-    if-eqz v4, :cond_82
+    if-eqz v4, :cond_c
 
     int-to-float v4, v8
 
@@ -425,37 +425,37 @@
 
     float-to-int v0, v0
 
-    if-eqz v9, :cond_7d
+    if-eqz v9, :cond_b
 
-    if-eqz v6, :cond_7d
+    if-eqz v6, :cond_b
 
     move v1, v2
 
-    :cond_7d
+    :cond_b
     move/from16 v17, v0
 
     move/from16 v18, v1
 
-    goto :goto_86
+    goto :goto_7
 
-    :cond_82
+    :cond_c
     move/from16 v17, v1
 
     move/from16 v18, v2
 
-    :goto_86
+    :goto_7
     move/from16 v16, v3
 
-    goto :goto_8f
+    goto :goto_8
 
-    :cond_89
+    :cond_d
     move/from16 v16, v1
 
     move/from16 v17, v16
 
     move/from16 v18, v17
 
-    :goto_8f
+    :goto_8
     const/16 v19, 0x1
 
     const/16 v20, 0x0

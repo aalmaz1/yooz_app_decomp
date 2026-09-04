@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method static of(Landroid/util/Size;IIZLandroidx/camera/core/ImageReaderProxyProvider;)Landroidx/camera/core/imagecapture/CaptureNode$In;
-    .registers 14
+    .locals 9
 
     .line 365
     new-instance v8, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_In;
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method getCameraCaptureCallback()Landroidx/camera/core/impl/CameraCaptureCallback;
-    .registers 2
+    .locals 1
 
     .line 355
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode$In;->mCameraCaptureCallback:Landroidx/camera/core/impl/CameraCaptureCallback;
@@ -114,7 +114,7 @@
 .end method
 
 .method getSurface()Landroidx/camera/core/impl/DeferrableSurface;
-    .registers 2
+    .locals 1
 
     .line 340
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode$In;->mSurface:Landroidx/camera/core/impl/DeferrableSurface;
@@ -132,7 +132,7 @@
 .end method
 
 .method setCameraCaptureCallback(Landroidx/camera/core/impl/CameraCaptureCallback;)V
-    .registers 2
+    .locals 0
 
     .line 359
     iput-object p1, p0, Landroidx/camera/core/imagecapture/CaptureNode$In;->mCameraCaptureCallback:Landroidx/camera/core/impl/CameraCaptureCallback;
@@ -141,21 +141,21 @@
 .end method
 
 .method setSurface(Landroid/view/Surface;)V
-    .registers 5
+    .locals 3
 
     .line 344
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode$In;->mSurface:Landroidx/camera/core/impl/DeferrableSurface;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     const-string v1, "The surface is already set."
 
     invoke-static {v0, v1}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;)V
-    .registers 2
+    .locals 0
 
     .line 145
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper$1;->this$0:Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onDrmKeysLoaded(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     .line 148
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper$1;->this$0:Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
@@ -51,7 +51,7 @@
 .end method
 
 .method public onDrmKeysRemoved(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     .line 164
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper$1;->this$0:Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
@@ -66,7 +66,7 @@
 .end method
 
 .method public onDrmKeysRestored(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     .line 159
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper$1;->this$0:Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
@@ -81,7 +81,7 @@
 .end method
 
 .method public onDrmSessionManagerError(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 0
 
     .line 154
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper$1;->this$0:Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;

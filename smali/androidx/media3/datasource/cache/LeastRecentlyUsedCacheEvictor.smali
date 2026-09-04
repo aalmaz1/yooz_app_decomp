@@ -24,7 +24,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$IrJohXX_Igd4qS3HsDKy6poxjfs(Landroidx/media3/datasource/cache/CacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)I
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->compare(Landroidx/media3/datasource/cache/CacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)I
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method private static compare(Landroidx/media3/datasource/cache/CacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)I
-    .registers 6
+    .locals 4
 
     .line 79
     iget-wide v0, p0, Landroidx/media3/datasource/cache/CacheSpan;->lastTouchTimestamp:J
@@ -70,7 +70,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 82
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/cache/CacheSpan;->compareTo(Landroidx/media3/datasource/cache/CacheSpan;)I
@@ -80,28 +80,28 @@
     return p0
 
     .line 84
-    :cond_10
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/datasource/cache/CacheSpan;->lastTouchTimestamp:J
 
     iget-wide p0, p1, Landroidx/media3/datasource/cache/CacheSpan;->lastTouchTimestamp:J
 
     cmp-long p0, v0, p0
 
-    if-gez p0, :cond_1a
+    if-gez p0, :cond_1
 
     const/4 p0, -0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 p0, 0x1
 
-    :goto_1b
+    :goto_0
     return p0
 .end method
 
 .method private evictCache(Landroidx/media3/datasource/cache/Cache;J)V
-    .registers 8
+    .locals 4
 
     .line 73
     :goto_0
@@ -113,7 +113,7 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_1d
+    if-lez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
 
@@ -121,7 +121,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 74
     iget-object v0, p0, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
@@ -136,20 +136,20 @@
 
     goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public onCacheInitialized()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onSpanAdded(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 7
+    .locals 4
 
     .line 55
     iget-object v0, p0, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
@@ -174,7 +174,7 @@
 .end method
 
 .method public onSpanRemoved(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 5
+    .locals 2
 
     .line 62
     iget-object p1, p0, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
@@ -194,7 +194,7 @@
 .end method
 
 .method public onSpanTouched(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;Landroidx/media3/datasource/cache/CacheSpan;)V
-    .registers 4
+    .locals 0
 
     .line 68
     invoke-virtual {p0, p1, p2}, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->onSpanRemoved(Landroidx/media3/datasource/cache/Cache;Landroidx/media3/datasource/cache/CacheSpan;)V
@@ -206,23 +206,23 @@
 .end method
 
 .method public onStartFile(Landroidx/media3/datasource/cache/Cache;Ljava/lang/String;JJ)V
-    .registers 7
+    .locals 0
 
     const-wide/16 p2, -0x1
 
     cmp-long p2, p5, p2
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 49
     invoke-direct {p0, p1, p5, p6}, Landroidx/media3/datasource/cache/LeastRecentlyUsedCacheEvictor;->evictCache(Landroidx/media3/datasource/cache/Cache;J)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public requiresCacheSpanTouches()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem$RequestMetadata;)V
-    .registers 3
+    .locals 1
 
     .line 2151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem$RequestMetadata;Landroidx/media3/common/MediaItem$1;)V
-    .registers 3
+    .locals 0
 
     .line 2142
     invoke-direct {p0, p1}, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;-><init>(Landroidx/media3/common/MediaItem$RequestMetadata;)V
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic access$4600(Landroidx/media3/common/MediaItem$RequestMetadata$Builder;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 2142
     iget-object p0, p0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;->mediaUri:Landroid/net/Uri;
@@ -75,7 +75,7 @@
 .end method
 
 .method static synthetic access$4700(Landroidx/media3/common/MediaItem$RequestMetadata$Builder;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 2142
     iget-object p0, p0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;->searchQuery:Ljava/lang/String;
@@ -84,7 +84,7 @@
 .end method
 
 .method static synthetic access$4800(Landroidx/media3/common/MediaItem$RequestMetadata$Builder;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 2142
     iget-object p0, p0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;->extras:Landroid/os/Bundle;
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/MediaItem$RequestMetadata;
-    .registers 3
+    .locals 2
 
     .line 2180
     new-instance v0, Landroidx/media3/common/MediaItem$RequestMetadata;
@@ -108,7 +108,7 @@
 .end method
 
 .method public setExtras(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
-    .registers 2
+    .locals 0
 
     .line 2174
     iput-object p1, p0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;->extras:Landroid/os/Bundle;
@@ -117,7 +117,7 @@
 .end method
 
 .method public setMediaUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
-    .registers 2
+    .locals 0
 
     .line 2160
     iput-object p1, p0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;->mediaUri:Landroid/net/Uri;
@@ -126,7 +126,7 @@
 .end method
 
 .method public setSearchQuery(Ljava/lang/String;)Landroidx/media3/common/MediaItem$RequestMetadata$Builder;
-    .registers 2
+    .locals 0
 
     .line 2167
     iput-object p1, p0, Landroidx/media3/common/MediaItem$RequestMetadata$Builder;->searchQuery:Ljava/lang/String;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1681
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createPersistentInputSurface()Landroid/view/Surface;
-    .registers 1
+    .locals 1
 
     .line 1687
     invoke-static {}, Landroid/media/MediaCodec;->createPersistentInputSurface()Landroid/view/Surface;
@@ -36,7 +36,7 @@
 .end method
 
 .method static setInputSurface(Landroid/media/MediaCodec;Landroid/view/Surface;)V
-    .registers 2
+    .locals 0
 
     .line 1692
     invoke-virtual {p0, p1}, Landroid/media/MediaCodec;->setInputSurface(Landroid/view/Surface;)V

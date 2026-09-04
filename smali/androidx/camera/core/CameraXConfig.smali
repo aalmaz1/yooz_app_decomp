@@ -102,7 +102,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.appConfig.cameraFactoryProvider"
 
@@ -192,7 +192,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/core/impl/OptionsBundle;)V
-    .registers 2
+    .locals 0
 
     .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -206,7 +206,7 @@
 
 # virtual methods
 .method public getAvailableCamerasLimiter(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/CameraSelector;
-    .registers 4
+    .locals 2
 
     .line 191
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -223,7 +223,7 @@
 .end method
 
 .method public getCameraExecutor(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
-    .registers 4
+    .locals 2
 
     .line 162
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -240,7 +240,7 @@
 .end method
 
 .method public getCameraFactoryProvider(Landroidx/camera/core/impl/CameraFactory$Provider;)Landroidx/camera/core/impl/CameraFactory$Provider;
-    .registers 4
+    .locals 2
 
     .line 128
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -257,7 +257,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 198
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -266,7 +266,7 @@
 .end method
 
 .method public getDeviceSurfaceManagerProvider(Landroidx/camera/core/impl/CameraDeviceSurfaceManager$Provider;)Landroidx/camera/core/impl/CameraDeviceSurfaceManager$Provider;
-    .registers 4
+    .locals 2
 
     .line 139
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -283,7 +283,7 @@
 .end method
 
 .method public getMinimumLoggingLevel()I
-    .registers 4
+    .locals 3
 
     .line 181
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -310,7 +310,7 @@
 .end method
 
 .method public getSchedulerHandler(Landroid/os/Handler;)Landroid/os/Handler;
-    .registers 4
+    .locals 2
 
     .line 172
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -327,7 +327,7 @@
 .end method
 
 .method public getUseCaseConfigFactoryProvider(Landroidx/camera/core/impl/UseCaseConfigFactory$Provider;)Landroidx/camera/core/impl/UseCaseConfigFactory$Provider;
-    .registers 4
+    .locals 2
 
     .line 152
     iget-object v0, p0, Landroidx/camera/core/CameraXConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;

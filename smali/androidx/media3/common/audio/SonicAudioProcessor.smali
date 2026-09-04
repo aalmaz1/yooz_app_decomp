@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public final configure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -121,20 +121,20 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_1
 
     .line 186
     iget v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingOutputSampleRate:I
 
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_c
+    if-ne v0, v2, :cond_0
 
     .line 187
     iget v0, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
     .line 189
-    :cond_c
+    :cond_0
     iput-object p1, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingInputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     .line 190
@@ -154,7 +154,7 @@
     return-object v2
 
     .line 183
-    :cond_1b
+    :cond_1
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
@@ -163,14 +163,14 @@
 .end method
 
 .method public final flush()V
-    .registers 8
+    .locals 7
 
     .line 257
     invoke-virtual {p0}, Landroidx/media3/common/audio/SonicAudioProcessor;->isActive()Z
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 258
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingInputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -185,7 +185,7 @@
     .line 260
     iget-boolean v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     .line 261
     new-instance v0, Landroidx/media3/common/audio/Sonic;
@@ -212,20 +212,20 @@
 
     iput-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->sonic:Landroidx/media3/common/audio/Sonic;
 
-    goto :goto_32
+    goto :goto_0
 
     .line 268
-    :cond_2b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->sonic:Landroidx/media3/common/audio/Sonic;
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 269
     invoke-virtual {v0}, Landroidx/media3/common/audio/Sonic;->flush()V
 
     .line 272
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     sget-object v0, Landroidx/media3/common/audio/SonicAudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
 
     iput-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
@@ -247,7 +247,7 @@
 .end method
 
 .method public getDurationAfterProcessorApplied(J)J
-    .registers 3
+    .locals 0
 
     .line 176
     invoke-virtual {p0, p1, p2}, Landroidx/media3/common/audio/SonicAudioProcessor;->getPlayoutDuration(J)J
@@ -258,7 +258,7 @@
 .end method
 
 .method public final getMediaDuration(J)J
-    .registers 18
+    .locals 15
 
     move-object v0, p0
 
@@ -269,7 +269,7 @@
 
     cmp-long v1, v1, v3
 
-    if-ltz v1, :cond_44
+    if-ltz v1, :cond_1
 
     .line 132
     iget-wide v1, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->inputBytes:J
@@ -299,7 +299,7 @@
 
     iget v2, v2, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
-    if-ne v1, v2, :cond_2d
+    if-ne v1, v2, :cond_0
 
     .line 134
     iget-wide v9, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputBytes:J
@@ -310,10 +310,10 @@
 
     move-result-wide v1
 
-    goto :goto_43
+    goto :goto_0
 
     .line 135
-    :cond_2d
+    :cond_0
     iget-object v1, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
     iget v1, v1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
@@ -338,11 +338,11 @@
 
     move-result-wide v1
 
-    :goto_43
+    :goto_0
     return-wide v1
 
     .line 140
-    :cond_44
+    :cond_1
     iget v1, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->speed:F
 
     float-to-double v1, v1
@@ -359,19 +359,19 @@
 .end method
 
 .method public final getOutput()Ljava/nio/ByteBuffer;
-    .registers 7
+    .locals 6
 
     .line 228
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->sonic:Landroidx/media3/common/audio/Sonic;
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     .line 230
     invoke-virtual {v0}, Landroidx/media3/common/audio/Sonic;->getOutputSize()I
 
     move-result v1
 
-    if-lez v1, :cond_45
+    if-lez v1, :cond_1
 
     .line 232
     iget-object v2, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
@@ -380,7 +380,7 @@
 
     move-result v2
 
-    if-ge v2, v1, :cond_27
+    if-ge v2, v1, :cond_0
 
     .line 233
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
@@ -404,10 +404,10 @@
 
     iput-object v2, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
 
-    goto :goto_31
+    goto :goto_0
 
     .line 236
-    :cond_27
+    :cond_0
     iget-object v2, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
@@ -418,7 +418,7 @@
     invoke-virtual {v2}, Ljava/nio/ShortBuffer;->clear()Ljava/nio/Buffer;
 
     .line 239
-    :goto_31
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
 
     invoke-virtual {v0, v2}, Landroidx/media3/common/audio/Sonic;->getOutput(Ljava/nio/ShortBuffer;)V
@@ -443,7 +443,7 @@
     iput-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
 
     .line 245
-    :cond_45
+    :cond_1
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
 
     .line 246
@@ -455,7 +455,7 @@
 .end method
 
 .method public final getPlayoutDuration(J)J
-    .registers 20
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -466,7 +466,7 @@
 
     cmp-long v1, v1, v3
 
-    if-ltz v1, :cond_45
+    if-ltz v1, :cond_1
 
     .line 157
     iget-wide v1, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->inputBytes:J
@@ -496,7 +496,7 @@
 
     iget v2, v2, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
-    if-ne v1, v2, :cond_2e
+    if-ne v1, v2, :cond_0
 
     .line 159
     iget-wide v7, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputBytes:J
@@ -507,10 +507,10 @@
 
     move-result-wide v1
 
-    goto :goto_44
+    goto :goto_0
 
     .line 160
-    :cond_2e
+    :cond_0
     iget-wide v1, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->outputBytes:J
 
     iget-object v3, v0, Landroidx/media3/common/audio/SonicAudioProcessor;->inputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -535,10 +535,10 @@
 
     move-result-wide v1
 
-    :goto_44
+    :goto_0
     return-wide v1
 
-    :cond_45
+    :cond_1
     move-wide/from16 v1, p1
 
     long-to-double v1, v1
@@ -556,7 +556,7 @@
 .end method
 
 .method public final getProcessedInputBytes()J
-    .registers 5
+    .locals 4
 
     .line 171
     iget-wide v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->inputBytes:J
@@ -581,7 +581,7 @@
 .end method
 
 .method public final isActive()Z
-    .registers 4
+    .locals 3
 
     .line 198
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingOutputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -590,7 +590,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_1
 
     iget v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->speed:F
 
@@ -607,7 +607,7 @@
 
     cmpl-float v0, v0, v2
 
-    if-gez v0, :cond_2c
+    if-gez v0, :cond_0
 
     iget v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pitch:F
 
@@ -620,7 +620,7 @@
 
     cmpl-float v0, v0, v2
 
-    if-gez v0, :cond_2c
+    if-gez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingOutputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
@@ -630,62 +630,62 @@
 
     iget v1, v1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_1
 
-    :cond_2c
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_2f
+    :goto_0
     return v0
 .end method
 
 .method public final isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 252
     iget-boolean v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->inputEnded:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->sonic:Landroidx/media3/common/audio/Sonic;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/media3/common/audio/Sonic;->getOutputSize()I
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public final queueEndOfStream()V
-    .registers 2
+    .locals 1
 
     .line 220
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->sonic:Landroidx/media3/common/audio/Sonic;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 221
     invoke-virtual {v0}, Landroidx/media3/common/audio/Sonic;->queueEndOfStream()V
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     .line 223
@@ -695,19 +695,19 @@
 .end method
 
 .method public final queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 9
+    .locals 7
 
     .line 206
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 209
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->sonic:Landroidx/media3/common/audio/Sonic;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -751,7 +751,7 @@
 .end method
 
 .method public final reset()V
-    .registers 4
+    .locals 3
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -828,7 +828,7 @@
 .end method
 
 .method public final setOutputSampleRateHz(I)V
-    .registers 2
+    .locals 0
 
     .line 116
     iput p1, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingOutputSampleRate:I
@@ -837,14 +837,14 @@
 .end method
 
 .method public final setPitch(F)V
-    .registers 3
+    .locals 1
 
     .line 101
     iget v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pitch:F
 
     cmpl-float v0, v0, p1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 102
     iput p1, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pitch:F
@@ -854,19 +854,19 @@
     .line 103
     iput-boolean p1, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public final setSpeed(F)V
-    .registers 3
+    .locals 1
 
     .line 87
     iget v0, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->speed:F
 
     cmpl-float v0, v0, p1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 88
     iput p1, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->speed:F
@@ -876,6 +876,6 @@
     .line 89
     iput-boolean p1, p0, Landroidx/media3/common/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
-    :cond_b
+    :cond_0
     return-void
 .end method

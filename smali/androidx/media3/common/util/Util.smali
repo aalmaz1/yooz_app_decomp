@@ -65,7 +65,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 89
+    .locals 89
 
     .line 153
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -409,7 +409,7 @@
     new-array v1, v0, [I
 
     .line 3815
-    fill-array-data v1, :array_170
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/common/util/Util;->CRC32_BYTES_MSBF:[I
 
@@ -418,14 +418,14 @@
     new-array v1, v1, [I
 
     .line 3859
-    fill-array-data v1, :array_374
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/common/util/Util;->CRC16_BYTES_MSBF:[I
 
     new-array v0, v0, [I
 
     .line 3869
-    fill-array-data v0, :array_398
+    fill-array-data v0, :array_2
 
     sput-object v0, Landroidx/media3/common/util/Util;->CRC8_BYTES_MSBF:[I
 
@@ -433,7 +433,7 @@
 
     nop
 
-    :array_170
+    :array_0
     .array-data 4
         0x0
         0x4c11db7
@@ -693,7 +693,7 @@
         -0x4e08bf4c
     .end array-data
 
-    :array_374
+    :array_1
     .array-data 4
         0x0
         0x1021
@@ -713,7 +713,7 @@
         0xf1ef
     .end array-data
 
-    :array_398
+    :array_2
     .array-data 4
         0x0
         0x7
@@ -975,7 +975,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -984,7 +984,7 @@
 .end method
 
 .method public static addWithOverflowDefault(JJJ)J
-    .registers 8
+    .locals 2
 
     add-long v0, p0, p2
 
@@ -998,42 +998,42 @@
 
     cmp-long p0, p0, p2
 
-    if-gez p0, :cond_c
+    if-gez p0, :cond_0
 
     return-wide p4
 
-    :cond_c
+    :cond_0
     return-wide v0
 .end method
 
 .method public static areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_1
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 487
-    :cond_8
+    :cond_1
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    :goto_c
+    :goto_0
     return p0
 .end method
 
 .method public static binarySearchCeil(Ljava/util/List;Ljava/lang/Comparable;ZZ)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -1051,22 +1051,22 @@
 
     move-result v0
 
-    if-gez v0, :cond_8
+    if-gez v0, :cond_0
 
     not-int p1, v0
 
-    goto :goto_23
+    goto :goto_1
 
     .line 1503
-    :cond_8
+    :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    :goto_c
+    :goto_0
     add-int/lit8 v0, v0, 0x1
 
-    if-ge v0, v1, :cond_1d
+    if-ge v0, v1, :cond_1
 
     .line 1504
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1079,22 +1079,22 @@
 
     move-result v2
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1d
-    if-eqz p2, :cond_22
+    :cond_1
+    if-eqz p2, :cond_2
 
     add-int/lit8 p1, v0, -0x1
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
+    :cond_2
     move p1, v0
 
-    :goto_23
-    if-eqz p3, :cond_2f
+    :goto_1
+    if-eqz p3, :cond_3
 
     .line 1509
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -1107,51 +1107,51 @@
 
     move-result p1
 
-    :cond_2f
+    :cond_3
     return p1
 .end method
 
 .method public static binarySearchCeil([IIZZ)I
-    .registers 6
+    .locals 2
 
     .line 1427
     invoke-static {p0, p1}, Ljava/util/Arrays;->binarySearch([II)I
 
     move-result v0
 
-    if-gez v0, :cond_8
+    if-gez v0, :cond_0
 
     not-int p1, v0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     add-int/lit8 v0, v0, 0x1
 
     .line 1431
     array-length v1, p0
 
-    if-ge v0, v1, :cond_12
+    if-ge v0, v1, :cond_1
 
     aget v1, p0, v0
 
-    if-ne v1, p1, :cond_12
+    if-ne v1, p1, :cond_1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_12
-    if-eqz p2, :cond_17
+    :cond_1
+    if-eqz p2, :cond_2
 
     add-int/lit8 p1, v0, -0x1
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
+    :cond_2
     move p1, v0
 
-    :goto_18
-    if-eqz p3, :cond_21
+    :goto_1
+    if-eqz p3, :cond_3
 
     .line 1436
     array-length p0, p0
@@ -1162,53 +1162,53 @@
 
     move-result p1
 
-    :cond_21
+    :cond_3
     return p1
 .end method
 
 .method public static binarySearchCeil([JJZZ)I
-    .registers 8
+    .locals 3
 
     .line 1461
     invoke-static {p0, p1, p2}, Ljava/util/Arrays;->binarySearch([JJ)I
 
     move-result v0
 
-    if-gez v0, :cond_8
+    if-gez v0, :cond_0
 
     not-int p1, v0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_8
-    :goto_8
+    :cond_0
+    :goto_0
     add-int/lit8 v0, v0, 0x1
 
     .line 1465
     array-length v1, p0
 
-    if-ge v0, v1, :cond_14
+    if-ge v0, v1, :cond_1
 
     aget-wide v1, p0, v0
 
     cmp-long v1, v1, p1
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_14
-    if-eqz p3, :cond_19
+    :cond_1
+    if-eqz p3, :cond_2
 
     add-int/lit8 p1, v0, -0x1
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_2
     move p1, v0
 
-    :goto_1a
-    if-eqz p4, :cond_23
+    :goto_1
+    if-eqz p4, :cond_3
 
     .line 1470
     array-length p0, p0
@@ -1219,12 +1219,12 @@
 
     move-result p1
 
-    :cond_23
+    :cond_3
     return p1
 .end method
 
 .method public static binarySearchFloor(Landroidx/media3/common/util/LongArray;JZZ)I
-    .registers 11
+    .locals 6
 
     .line 1385
     invoke-virtual {p0}, Landroidx/media3/common/util/LongArray;->size()I
@@ -1237,8 +1237,8 @@
 
     move v2, v1
 
-    :goto_8
-    if-gt v2, v0, :cond_1d
+    :goto_0
+    if-gt v2, v0, :cond_1
 
     add-int v3, v2, v0
 
@@ -1251,21 +1251,21 @@
 
     cmp-long v4, v4, p1
 
-    if-gez v4, :cond_19
+    if-gez v4, :cond_0
 
     add-int/lit8 v2, v3, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     add-int/lit8 v3, v3, -0x1
 
     move v0, v3
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1d
-    if-eqz p3, :cond_31
+    :cond_1
+    if-eqz p3, :cond_2
 
     add-int/lit8 p3, v0, 0x1
 
@@ -1274,7 +1274,7 @@
 
     move-result v2
 
-    if-ge p3, v2, :cond_31
+    if-ge p3, v2, :cond_2
 
     invoke-virtual {p0, p3}, Landroidx/media3/common/util/LongArray;->get(I)J
 
@@ -1282,30 +1282,30 @@
 
     cmp-long p0, v2, p1
 
-    if-nez p0, :cond_31
+    if-nez p0, :cond_2
 
     move v1, p3
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_31
-    if-eqz p4, :cond_37
+    :cond_2
+    if-eqz p4, :cond_3
 
     const/4 p0, -0x1
 
-    if-ne v0, p0, :cond_37
+    if-ne v0, p0, :cond_3
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_37
+    :cond_3
     move v1, v0
 
-    :goto_38
+    :goto_1
     return v1
 .end method
 
 .method public static binarySearchFloor(Ljava/util/List;Ljava/lang/Comparable;ZZ)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -1323,19 +1323,19 @@
 
     move-result v0
 
-    if-gez v0, :cond_a
+    if-gez v0, :cond_0
 
     add-int/lit8 v0, v0, 0x2
 
     neg-int p0, v0
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     add-int/lit8 v0, v0, -0x1
 
-    if-ltz v0, :cond_1b
+    if-ltz v0, :cond_1
 
     .line 1355
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1348,22 +1348,22 @@
 
     move-result v1
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1b
-    if-eqz p2, :cond_20
+    :cond_1
+    if-eqz p2, :cond_2
 
     add-int/lit8 p0, v0, 0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_2
     move p0, v0
 
-    :goto_21
-    if-eqz p3, :cond_28
+    :goto_1
+    if-eqz p3, :cond_3
 
     const/4 p1, 0x0
 
@@ -1372,51 +1372,51 @@
 
     move-result p0
 
-    :cond_28
+    :cond_3
     return p0
 .end method
 
 .method public static binarySearchFloor([IIZZ)I
-    .registers 6
+    .locals 2
 
     .line 1281
     invoke-static {p0, p1}, Ljava/util/Arrays;->binarySearch([II)I
 
     move-result v0
 
-    if-gez v0, :cond_a
+    if-gez v0, :cond_0
 
     add-int/lit8 v0, v0, 0x2
 
     neg-int p0, v0
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     add-int/lit8 v0, v0, -0x1
 
-    if-ltz v0, :cond_13
+    if-ltz v0, :cond_1
 
     .line 1285
     aget v1, p0, v0
 
-    if-ne v1, p1, :cond_13
+    if-ne v1, p1, :cond_1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_13
-    if-eqz p2, :cond_18
+    :cond_1
+    if-eqz p2, :cond_2
 
     add-int/lit8 p0, v0, 0x1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_2
     move p0, v0
 
-    :goto_19
-    if-eqz p3, :cond_20
+    :goto_1
+    if-eqz p3, :cond_3
 
     const/4 p1, 0x0
 
@@ -1425,53 +1425,53 @@
 
     move-result p0
 
-    :cond_20
+    :cond_3
     return p0
 .end method
 
 .method public static binarySearchFloor([JJZZ)I
-    .registers 8
+    .locals 3
 
     .line 1314
     invoke-static {p0, p1, p2}, Ljava/util/Arrays;->binarySearch([JJ)I
 
     move-result v0
 
-    if-gez v0, :cond_a
+    if-gez v0, :cond_0
 
     add-int/lit8 v0, v0, 0x2
 
     neg-int p0, v0
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     add-int/lit8 v0, v0, -0x1
 
-    if-ltz v0, :cond_15
+    if-ltz v0, :cond_1
 
     .line 1318
     aget-wide v1, p0, v0
 
     cmp-long v1, v1, p1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_15
-    if-eqz p3, :cond_1a
+    :cond_1
+    if-eqz p3, :cond_2
 
     add-int/lit8 p0, v0, 0x1
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_2
     move p0, v0
 
-    :goto_1b
-    if-eqz p4, :cond_22
+    :goto_1
+    if-eqz p4, :cond_3
 
     const/4 p1, 0x0
 
@@ -1480,12 +1480,12 @@
 
     move-result p0
 
-    :cond_22
+    :cond_3
     return p0
 .end method
 
 .method public static castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1504,7 +1504,7 @@
 .end method
 
 .method public static castNonNullTypeArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1523,7 +1523,7 @@
 .end method
 
 .method public static ceilDivide(II)I
-    .registers 2
+    .locals 0
 
     add-int/2addr p0, p1
 
@@ -1536,7 +1536,7 @@
 .end method
 
 .method public static ceilDivide(JJ)J
-    .registers 6
+    .locals 2
 
     add-long/2addr p0, p2
 
@@ -1551,7 +1551,7 @@
 .end method
 
 .method public static varargs checkCleartextTrafficPermitted([Landroidx/media3/common/MediaItem;)Z
-    .registers 8
+    .locals 7
 
     .line 436
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -1560,32 +1560,32 @@
 
     const/4 v2, 0x1
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     return v2
 
     .line 440
-    :cond_8
+    :cond_0
     array-length v0, p0
 
     const/4 v1, 0x0
 
     move v3, v1
 
-    :goto_b
-    if-ge v3, v0, :cond_43
+    :goto_0
+    if-ge v3, v0, :cond_5
 
     aget-object v4, p0, v3
 
     .line 441
     iget-object v5, v4, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-nez v5, :cond_14
+    if-nez v5, :cond_1
 
-    goto :goto_40
+    goto :goto_2
 
     .line 444
-    :cond_14
+    :cond_1
     iget-object v5, v4, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v5, v5, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -1594,15 +1594,15 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_2
 
     return v1
 
-    :cond_1f
+    :cond_2
     move v5, v1
 
     .line 447
-    :goto_20
+    :goto_1
     iget-object v6, v4, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v6, v6, Landroidx/media3/common/MediaItem$LocalConfiguration;->subtitleConfigurations:Lcom/google/common/collect/ImmutableList;
@@ -1611,7 +1611,7 @@
 
     move-result v6
 
-    if-ge v5, v6, :cond_40
+    if-ge v5, v6, :cond_4
 
     .line 448
     iget-object v6, v4, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -1630,68 +1630,68 @@
 
     move-result v6
 
-    if-eqz v6, :cond_3d
+    if-eqz v6, :cond_3
 
     return v1
 
-    :cond_3d
+    :cond_3
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_40
-    :goto_40
+    :cond_4
+    :goto_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_43
+    :cond_5
     return v2
 .end method
 
 .method public static closeQuietly(Ljava/io/Closeable;)V
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 931
-    :try_start_2
+    :try_start_0
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_5
-    :cond_5
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method public static compareLong(JJ)I
-    .registers 4
+    .locals 0
 
     cmp-long p0, p0, p2
 
-    if-gez p0, :cond_6
+    if-gez p0, :cond_0
 
     const/4 p0, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_6
-    if-nez p0, :cond_a
+    :cond_0
+    if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_1
     const/4 p0, 0x1
 
-    :goto_b
+    :goto_0
     return p0
 .end method
 
 .method public static constrainValue(FFF)F
-    .registers 3
+    .locals 0
 
     .line 1183
     invoke-static {p0, p2}, Ljava/lang/Math;->min(FF)F
@@ -1706,7 +1706,7 @@
 .end method
 
 .method public static constrainValue(III)I
-    .registers 3
+    .locals 0
 
     .line 1157
     invoke-static {p0, p2}, Ljava/lang/Math;->min(II)I
@@ -1721,7 +1721,7 @@
 .end method
 
 .method public static constrainValue(JJJ)J
-    .registers 6
+    .locals 0
 
     .line 1170
     invoke-static {p0, p1, p4, p5}, Ljava/lang/Math;->min(JJ)J
@@ -1736,7 +1736,7 @@
 .end method
 
 .method public static contains(Landroid/util/SparseArray;I)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1752,21 +1752,21 @@
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static contains([Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 560
     array-length v0, p0
@@ -1775,8 +1775,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, v0, :cond_12
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     aget-object v3, p0, v2
 
@@ -1785,23 +1785,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     return v1
 .end method
 
 .method public static contentEquals(Landroid/util/SparseArray;Landroid/util/SparseArray;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1818,30 +1818,30 @@
 
     const/4 v1, 0x0
 
-    if-nez p0, :cond_9
+    if-nez p0, :cond_1
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move v0, v1
 
-    :goto_8
+    :goto_0
     return v0
 
-    :cond_9
-    if-nez p1, :cond_c
+    :cond_1
+    if-nez p1, :cond_2
 
     return v1
 
     .line 508
-    :cond_c
+    :cond_2
     sget v2, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v3, 0x1f
 
-    if-lt v2, v3, :cond_17
+    if-lt v2, v3, :cond_3
 
     .line 509
     invoke-virtual {p0, p1}, Landroid/util/SparseArray;->contentEquals(Landroid/util/SparseArray;)Z
@@ -1851,7 +1851,7 @@
     return p0
 
     .line 512
-    :cond_17
+    :cond_3
     invoke-virtual {p0}, Landroid/util/SparseArray;->size()I
 
     move-result v2
@@ -1861,15 +1861,15 @@
 
     move-result v3
 
-    if-eq v2, v3, :cond_22
+    if-eq v2, v3, :cond_4
 
     return v1
 
-    :cond_22
+    :cond_4
     move v3, v1
 
-    :goto_23
-    if-ge v3, v2, :cond_3b
+    :goto_1
+    if-ge v3, v2, :cond_6
 
     .line 518
     invoke-virtual {p0, v3}, Landroid/util/SparseArray;->keyAt(I)I
@@ -1889,21 +1889,21 @@
 
     move-result v4
 
-    if-nez v4, :cond_38
+    if-nez v4, :cond_5
 
     return v1
 
-    :cond_38
+    :cond_5
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_3b
+    :cond_6
     return v0
 .end method
 
 .method public static contentHashCode(Landroid/util/SparseArray;)I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1919,7 +1919,7 @@
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 538
     invoke-virtual {p0}, Landroid/util/SparseArray;->contentHashCode()I
@@ -1928,18 +1928,18 @@
 
     return p0
 
-    :cond_b
+    :cond_0
     const/16 v0, 0x11
 
     const/4 v2, 0x0
 
     .line 541
-    :goto_e
+    :goto_0
     invoke-virtual {p0}, Landroid/util/SparseArray;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_28
+    if-ge v2, v3, :cond_1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -1965,17 +1965,17 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     return v0
 .end method
 
 .method public static crc16([BIII)I
-    .registers 6
+    .locals 2
 
     :goto_0
-    if-ge p1, p2, :cond_17
+    if-ge p1, p2, :cond_0
 
     .line 2853
     aget-byte v0, p0, p1
@@ -2002,12 +2002,12 @@
 
     goto :goto_0
 
-    :cond_17
+    :cond_0
     return p3
 .end method
 
 .method private static crc16UpdateFourBits(II)I
-    .registers 4
+    .locals 2
 
     shr-int/lit8 v0, p1, 0xc
 
@@ -2036,10 +2036,10 @@
 .end method
 
 .method public static crc32([BIII)I
-    .registers 7
+    .locals 3
 
     :goto_0
-    if-ge p1, p2, :cond_15
+    if-ge p1, p2, :cond_0
 
     shl-int/lit8 v0, p3, 0x8
 
@@ -2064,15 +2064,15 @@
 
     goto :goto_0
 
-    :cond_15
+    :cond_0
     return p3
 .end method
 
 .method public static crc8([BIII)I
-    .registers 6
+    .locals 2
 
     :goto_0
-    if-ge p1, p2, :cond_e
+    if-ge p1, p2, :cond_0
 
     .line 2896
     sget-object v0, Landroidx/media3/common/util/Util;->CRC8_BYTES_MSBF:[I
@@ -2089,12 +2089,12 @@
 
     goto :goto_0
 
-    :cond_e
+    :cond_0
     return p3
 .end method
 
 .method public static createHandler(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;
-    .registers 3
+    .locals 1
 
     .line 775
     new-instance v0, Landroid/os/Handler;
@@ -2105,7 +2105,7 @@
 .end method
 
 .method public static createHandlerForCurrentLooper()Landroid/os/Handler;
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -2118,7 +2118,7 @@
 .end method
 
 .method public static createHandlerForCurrentLooper(Landroid/os/Handler$Callback;)Landroid/os/Handler;
-    .registers 2
+    .locals 1
 
     .line 725
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -2139,7 +2139,7 @@
 .end method
 
 .method public static createHandlerForCurrentOrMainLooper()Landroid/os/Handler;
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -2152,7 +2152,7 @@
 .end method
 
 .method public static createHandlerForCurrentOrMainLooper(Landroid/os/Handler$Callback;)Landroid/os/Handler;
-    .registers 2
+    .locals 1
 
     .line 756
     invoke-static {}, Landroidx/media3/common/util/Util;->getCurrentOrMainLooper()Landroid/os/Looper;
@@ -2167,7 +2167,7 @@
 .end method
 
 .method private static createIsoLanguageReplacementMap()Ljava/util/HashMap;
-    .registers 8
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2203,13 +2203,13 @@
 
     move v4, v3
 
-    :goto_11
-    if-ge v4, v2, :cond_2a
+    :goto_0
+    if-ge v4, v2, :cond_1
 
     aget-object v5, v0, v4
 
     .line 3679
-    :try_start_15
+    :try_start_0
     new-instance v6, Ljava/util/Locale;
 
     invoke-direct {v6, v5}, Ljava/util/Locale;-><init>(Ljava/lang/String;)V
@@ -2223,27 +2223,27 @@
 
     move-result v7
 
-    if-nez v7, :cond_27
+    if-nez v7, :cond_0
 
     .line 3681
     invoke-virtual {v1, v6, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_27
-    .catch Ljava/util/MissingResourceException; {:try_start_15 .. :try_end_27} :catch_27
+    :try_end_0
+    .catch Ljava/util/MissingResourceException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_27
-    :cond_27
+    :catch_0
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 3688
-    :cond_2a
-    :goto_2a
+    :cond_1
+    :goto_1
     sget-object v0, Landroidx/media3/common/util/Util;->additionalIsoLanguageReplacements:[Ljava/lang/String;
 
     array-length v2, v0
 
-    if-ge v3, v2, :cond_3b
+    if-ge v3, v2, :cond_2
 
     .line 3689
     aget-object v2, v0, v3
@@ -2256,14 +2256,14 @@
 
     add-int/lit8 v3, v3, 0x2
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_3b
+    :cond_2
     return-object v1
 .end method
 
 .method public static createReadOnlyByteBuffer(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 2939
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;
@@ -2282,7 +2282,7 @@
 .end method
 
 .method public static createTempDirectory(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2304,7 +2304,7 @@
 .end method
 
 .method public static createTempFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2332,7 +2332,7 @@
 .end method
 
 .method public static durationUsToSampleCount(JI)J
-    .registers 10
+    .locals 7
 
     int-to-long v2, p2
 
@@ -2351,7 +2351,7 @@
 .end method
 
 .method public static escapeFileName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 2683
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -2364,8 +2364,8 @@
 
     move v3, v2
 
-    :goto_7
-    if-ge v2, v0, :cond_18
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 2686
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -2376,22 +2376,22 @@
 
     move-result v4
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     add-int/lit8 v3, v3, 0x1
 
-    :cond_15
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_18
-    if-nez v3, :cond_1b
+    :cond_1
+    if-nez v3, :cond_2
 
     return-object p0
 
     .line 2695
-    :cond_1b
+    :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
 
     mul-int/lit8 v4, v3, 0x2
@@ -2400,8 +2400,8 @@
 
     invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :goto_23
-    if-lez v3, :cond_46
+    :goto_1
+    if-lez v3, :cond_4
 
     add-int/lit8 v4, v1, 0x1
 
@@ -2415,7 +2415,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_41
+    if-eqz v5, :cond_3
 
     const/16 v5, 0x25
 
@@ -2432,25 +2432,25 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_44
+    goto :goto_2
 
     .line 2702
-    :cond_41
+    :cond_3
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :goto_44
+    :goto_2
     move v1, v4
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_46
-    if-ge v1, v0, :cond_4b
+    :cond_4
+    if-ge v1, v0, :cond_5
 
     .line 2706
     invoke-virtual {v2, p0, v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
     .line 2708
-    :cond_4b
+    :cond_5
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -2459,19 +2459,19 @@
 .end method
 
 .method public static fixSmoothStreamingIsmManifestUri(Landroid/net/Uri;)Landroid/net/Uri;
-    .registers 3
+    .locals 2
 
     .line 2632
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-object p0
 
     .line 2636
-    :cond_7
+    :cond_0
     sget-object v1, Landroidx/media3/common/util/Util;->ISM_PATH_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -2483,7 +2483,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
@@ -2491,7 +2491,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     const-string v0, "Manifest"
 
@@ -2500,12 +2500,12 @@
 
     move-result-object p0
 
-    :cond_20
+    :cond_1
     return-object p0
 .end method
 
 .method public static varargs formatInvariant(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1120
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -2518,7 +2518,7 @@
 .end method
 
 .method public static fromUtf8Bytes([B)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1046
     new-instance v0, Ljava/lang/String;
@@ -2531,7 +2531,7 @@
 .end method
 
 .method public static fromUtf8Bytes([BII)Ljava/lang/String;
-    .registers 5
+    .locals 2
 
     .line 1059
     new-instance v0, Ljava/lang/String;
@@ -2544,7 +2544,7 @@
 .end method
 
 .method public static generateAudioSessionIdV21(Landroid/content/Context;)I
-    .registers 2
+    .locals 1
 
     const-string v0, "audio"
 
@@ -2555,181 +2555,181 @@
 
     check-cast p0, Landroid/media/AudioManager;
 
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     const/4 p0, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 2424
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroid/media/AudioManager;->generateAudioSessionId()I
 
     move-result p0
 
-    :goto_10
+    :goto_0
     return p0
 .end method
 
 .method public static getAdaptiveMimeTypeForContentType(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_d
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_a
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_a
+    :cond_0
     const-string p0, "application/x-mpegURL"
 
     return-object p0
 
-    :cond_d
+    :cond_1
     const-string p0, "application/vnd.ms-sstr+xml"
 
     return-object p0
 
-    :cond_10
+    :cond_2
     const-string p0, "application/dash+xml"
 
     return-object p0
 .end method
 
 .method public static getApiLevelThatAudioFormatIntroducedAudioEncoding(I)I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x14
 
     const/16 v1, 0x1e
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x16
 
-    if-eq p0, v0, :cond_27
+    if-eq p0, v0, :cond_1
 
-    if-eq p0, v1, :cond_24
+    if-eq p0, v1, :cond_0
 
-    packed-switch p0, :pswitch_data_2c
+    packed-switch p0, :pswitch_data_0
 
-    packed-switch p0, :pswitch_data_46
+    packed-switch p0, :pswitch_data_1
 
     const p0, 0x7fffffff
 
     return p0
 
-    :pswitch_16
+    :pswitch_0
     const/16 p0, 0x19
 
     return p0
 
-    :pswitch_19
+    :pswitch_1
     const/16 p0, 0x1c
 
     return p0
 
-    :pswitch_1c
+    :pswitch_2
     const/16 p0, 0x17
 
     return p0
 
-    :pswitch_1f
+    :pswitch_3
     const/16 p0, 0x15
 
     return p0
 
-    :pswitch_22
+    :pswitch_4
     const/4 p0, 0x3
 
     return p0
 
-    :cond_24
+    :cond_0
     const/16 p0, 0x22
 
     return p0
 
-    :cond_27
+    :cond_1
     const/16 p0, 0x1f
 
     return p0
 
-    :cond_2a
+    :cond_2
     return v1
 
     nop
 
-    :pswitch_data_2c
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_22
-        :pswitch_22
-        :pswitch_1f
-        :pswitch_1f
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 
-    :pswitch_data_46
+    :pswitch_data_1
     .packed-switch 0xe
-        :pswitch_16
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public static getAudioContentTypeForStreamType(I)I
-    .registers 4
+    .locals 3
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const/4 v0, 0x1
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_1
 
     const/4 v1, 0x4
 
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_0
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_0
 
-    if-eq p0, v1, :cond_13
+    if-eq p0, v1, :cond_0
 
     const/4 v2, 0x5
 
-    if-eq p0, v2, :cond_13
+    if-eq p0, v2, :cond_0
 
     const/16 v2, 0x8
 
-    if-eq p0, v2, :cond_13
+    if-eq p0, v2, :cond_0
 
     return v0
 
-    :cond_13
+    :cond_0
     return v1
 
-    :cond_14
+    :cond_1
     return v0
 .end method
 
 .method public static getAudioFormat(III)Landroid/media/AudioFormat;
-    .registers 4
+    .locals 1
 
     .line 2258
     new-instance v0, Landroid/media/AudioFormat$Builder;
@@ -2760,141 +2760,141 @@
 .end method
 
 .method public static getAudioTrackChannelConfig(I)I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x18fc
 
-    packed-switch p0, :pswitch_data_2a
+    packed-switch p0, :pswitch_data_0
 
-    :pswitch_5
+    :pswitch_0
     const/4 p0, 0x0
 
     return p0
 
-    :pswitch_7
+    :pswitch_1
     const p0, 0xb58fc
 
     return p0
 
     .line 2240
-    :pswitch_b
+    :pswitch_2
     sget p0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x20
 
-    if-lt p0, v1, :cond_15
+    if-lt p0, v1, :cond_0
 
     const p0, 0xb40fc
 
     return p0
 
-    :cond_15
-    :pswitch_15
+    :cond_0
+    :pswitch_3
     return v0
 
-    :pswitch_16
+    :pswitch_4
     const/16 p0, 0x4fc
 
     return p0
 
-    :pswitch_19
+    :pswitch_5
     const/16 p0, 0xfc
 
     return p0
 
-    :pswitch_1c
+    :pswitch_6
     const/16 p0, 0xdc
 
     return p0
 
-    :pswitch_1f
+    :pswitch_7
     const/16 p0, 0xcc
 
     return p0
 
-    :pswitch_22
+    :pswitch_8
     const/16 p0, 0x1c
 
     return p0
 
-    :pswitch_25
+    :pswitch_9
     const/16 p0, 0xc
 
     return p0
 
-    :pswitch_28
+    :pswitch_a
     const/4 p0, 0x4
 
     return p0
 
-    :pswitch_data_2a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_28
-        :pswitch_25
-        :pswitch_22
-        :pswitch_1f
-        :pswitch_1c
-        :pswitch_19
-        :pswitch_16
-        :pswitch_15
-        :pswitch_5
-        :pswitch_b
-        :pswitch_5
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
         :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public static getAudioUsageForStreamType(I)I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_4
 
     const/4 v1, 0x1
 
-    if-eq p0, v1, :cond_18
+    if-eq p0, v1, :cond_3
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x5
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_0
 
     return v1
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x3
 
     return p0
 
-    :cond_15
+    :cond_1
     return v0
 
-    :cond_16
+    :cond_2
     const/4 p0, 0x6
 
     return p0
 
-    :cond_18
+    :cond_3
     const/16 p0, 0xd
 
     return p0
 
-    :cond_1b
+    :cond_4
     return v0
 .end method
 
 .method public static getAvailableCommands(Landroidx/media3/common/Player;Landroidx/media3/common/Player$Commands;)Landroidx/media3/common/Player$Commands;
-    .registers 12
+    .locals 10
 
     .line 3446
     invoke-interface {p0}, Landroidx/media3/common/Player;->isPlayingAd()Z
@@ -2958,18 +2958,18 @@
 
     const/4 v7, 0x1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     move v8, v7
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_0
     move v8, v6
 
-    :goto_39
+    :goto_0
     const/4 v9, 0x5
 
     .line 3456
@@ -2977,18 +2977,18 @@
 
     move-result-object p1
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_1
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_1
 
     move v8, v7
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_44
+    :cond_1
     move v8, v6
 
-    :goto_45
+    :goto_1
     const/4 v9, 0x6
 
     .line 3457
@@ -2996,25 +2996,25 @@
 
     move-result-object p1
 
-    if-nez p0, :cond_56
+    if-nez p0, :cond_3
 
-    if-nez v2, :cond_52
+    if-nez v2, :cond_2
 
-    if-eqz v4, :cond_52
+    if-eqz v4, :cond_2
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_3
 
-    :cond_52
-    if-nez v0, :cond_56
+    :cond_2
+    if-nez v0, :cond_3
 
     move v2, v7
 
-    goto :goto_57
+    goto :goto_2
 
-    :cond_56
+    :cond_3
     move v2, v6
 
-    :goto_57
+    :goto_2
     const/4 v8, 0x7
 
     .line 3458
@@ -3022,18 +3022,18 @@
 
     move-result-object p1
 
-    if-eqz v3, :cond_62
+    if-eqz v3, :cond_4
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_4
 
     move v2, v7
 
-    goto :goto_63
+    goto :goto_3
 
-    :cond_62
+    :cond_4
     move v2, v6
 
-    :goto_63
+    :goto_3
     const/16 v8, 0x8
 
     .line 3463
@@ -3041,25 +3041,25 @@
 
     move-result-object p1
 
-    if-nez p0, :cond_75
+    if-nez p0, :cond_6
 
-    if-nez v3, :cond_71
+    if-nez v3, :cond_5
 
-    if-eqz v4, :cond_75
+    if-eqz v4, :cond_6
 
-    if-eqz v5, :cond_75
+    if-eqz v5, :cond_6
 
-    :cond_71
-    if-nez v0, :cond_75
+    :cond_5
+    if-nez v0, :cond_6
 
     move p0, v7
 
-    goto :goto_76
+    goto :goto_4
 
-    :cond_75
+    :cond_6
     move p0, v6
 
-    :goto_76
+    :goto_4
     const/16 v2, 0x9
 
     .line 3464
@@ -3076,18 +3076,18 @@
 
     move-result-object p0
 
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_7
 
-    if-nez v0, :cond_8a
+    if-nez v0, :cond_7
 
     move p1, v7
 
-    goto :goto_8b
+    goto :goto_5
 
-    :cond_8a
+    :cond_7
     move p1, v6
 
-    :goto_8b
+    :goto_5
     const/16 v2, 0xb
 
     .line 3470
@@ -3095,13 +3095,13 @@
 
     move-result-object p0
 
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_8
 
-    if-nez v0, :cond_96
+    if-nez v0, :cond_8
 
     move v6, v7
 
-    :cond_96
+    :cond_8
     const/16 p1, 0xc
 
     .line 3471
@@ -3118,7 +3118,7 @@
 .end method
 
 .method public static getBigEndianInt(Ljava/nio/ByteBuffer;I)I
-    .registers 3
+    .locals 1
 
     .line 2927
     invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->getInt(I)I
@@ -3132,21 +3132,21 @@
 
     sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne p0, v0, :cond_d
+    if-ne p0, v0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     invoke-static {p1}, Ljava/lang/Integer;->reverseBytes(I)I
 
     move-result p1
 
-    :goto_11
+    :goto_0
     return p1
 .end method
 
 .method public static getBytesFromHexString(Ljava/lang/String;)[B
-    .registers 7
+    .locals 6
 
     .line 2021
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -3159,8 +3159,8 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v0, :cond_2a
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     mul-int/lit8 v3, v2, 0x2
 
@@ -3196,14 +3196,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     return-object v1
 .end method
 
 .method public static getCodecCountOfType(Ljava/lang/String;I)I
-    .registers 6
+    .locals 4
 
     .line 2078
     invoke-static {p0}, Landroidx/media3/common/util/Util;->splitCodecs(Ljava/lang/String;)[Ljava/lang/String;
@@ -3217,8 +3217,8 @@
 
     move v2, v1
 
-    :goto_7
-    if-ge v1, v0, :cond_16
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     aget-object v3, p0, v1
 
@@ -3227,21 +3227,21 @@
 
     move-result v3
 
-    if-ne p1, v3, :cond_13
+    if-ne p1, v3, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
-    :cond_13
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     return v2
 .end method
 
 .method public static getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 2100
     invoke-static {p0}, Landroidx/media3/common/util/Util;->splitCodecs(Ljava/lang/String;)[Ljava/lang/String;
@@ -3253,12 +3253,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 2104
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3268,8 +3268,8 @@
 
     const/4 v3, 0x0
 
-    :goto_10
-    if-ge v3, v2, :cond_2b
+    :goto_0
+    if-ge v3, v2, :cond_3
 
     aget-object v4, p0, v3
 
@@ -3278,14 +3278,14 @@
 
     move-result v5
 
-    if-ne p1, v5, :cond_28
+    if-ne p1, v5, :cond_2
 
     .line 2107
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v5
 
-    if-lez v5, :cond_25
+    if-lez v5, :cond_1
 
     const-string v5, ","
 
@@ -3293,34 +3293,34 @@
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 2110
-    :cond_25
+    :cond_1
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_28
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 2113
-    :cond_2b
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result p0
 
-    if-lez p0, :cond_35
+    if-lez p0, :cond_4
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    :cond_35
+    :cond_4
     return-object v1
 .end method
 
 .method public static getCountryCode(Landroid/content/Context;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_0
 
     const-string v0, "phone"
 
@@ -3331,7 +3331,7 @@
 
     check-cast p0, Landroid/telephony/TelephonyManager;
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_0
 
     .line 2956
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getNetworkCountryIso()Ljava/lang/String;
@@ -3343,7 +3343,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 2958
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toUpperCase(Ljava/lang/String;)Ljava/lang/String;
@@ -3353,7 +3353,7 @@
     return-object p0
 
     .line 2962
-    :cond_1b
+    :cond_0
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object p0
@@ -3370,7 +3370,7 @@
 .end method
 
 .method public static getCurrentDisplayModeSize(Landroid/content/Context;)Landroid/graphics/Point;
-    .registers 3
+    .locals 2
 
     const-string v0, "display"
 
@@ -3381,7 +3381,7 @@
 
     check-cast v0, Landroid/hardware/display/DisplayManager;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -3390,13 +3390,13 @@
 
     move-result-object v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
-    if-nez v0, :cond_26
+    :goto_0
+    if-nez v0, :cond_1
 
     const-string/jumbo v0, "window"
 
@@ -3419,7 +3419,7 @@
     move-result-object v0
 
     .line 3099
-    :cond_26
+    :cond_1
     invoke-static {p0, v0}, Landroidx/media3/common/util/Util;->getCurrentDisplayModeSize(Landroid/content/Context;Landroid/view/Display;)Landroid/graphics/Point;
 
     move-result-object p0
@@ -3428,27 +3428,27 @@
 .end method
 
 .method public static getCurrentDisplayModeSize(Landroid/content/Context;Landroid/view/Display;)Landroid/graphics/Point;
-    .registers 6
+    .locals 4
 
     .line 3117
     invoke-virtual {p1}, Landroid/view/Display;->getDisplayId()I
 
     move-result v0
 
-    if-nez v0, :cond_8b
+    if-nez v0, :cond_3
 
     invoke-static {p0}, Landroidx/media3/common/util/Util;->isTv(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_8b
+    if-eqz v0, :cond_3
 
     .line 3133
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1c
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_0
 
     const-string v0, "sys.display-size"
 
@@ -3457,9 +3457,9 @@
 
     move-result-object v0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const-string/jumbo v0, "vendor.display-size"
 
     .line 3135
@@ -3468,15 +3468,15 @@
     move-result-object v0
 
     .line 3137
-    :goto_20
+    :goto_0
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_61
+    if-nez v1, :cond_2
 
     .line 3139
-    :try_start_26
+    :try_start_0
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -3492,7 +3492,7 @@
 
     const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_4d
+    if-ne v2, v3, :cond_1
 
     const/4 v2, 0x0
 
@@ -3512,22 +3512,22 @@
 
     move-result v1
 
-    if-lez v2, :cond_4d
+    if-lez v2, :cond_1
 
-    if-lez v1, :cond_4d
+    if-lez v1, :cond_1
 
     .line 3144
     new-instance v3, Landroid/graphics/Point;
 
     invoke-direct {v3, v2, v1}, Landroid/graphics/Point;-><init>(II)V
-    :try_end_4c
-    .catch Ljava/lang/NumberFormatException; {:try_start_26 .. :try_end_4c} :catch_4d
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v3
 
     .line 3150
-    :catch_4d
-    :cond_4d
+    :catch_0
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Invalid display size: "
@@ -3546,7 +3546,7 @@
 
     invoke-static {v1, v0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_61
+    :cond_2
     const-string v0, "Sony"
 
     .line 3154
@@ -3556,7 +3556,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8b
+    if-eqz v0, :cond_3
 
     sget-object v0, Landroidx/media3/common/util/Util;->MODEL:Ljava/lang/String;
 
@@ -3567,7 +3567,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8b
+    if-eqz v0, :cond_3
 
     .line 3156
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -3580,7 +3580,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_8b
+    if-eqz p0, :cond_3
 
     .line 3157
     new-instance p0, Landroid/graphics/Point;
@@ -3594,7 +3594,7 @@
     return-object p0
 
     .line 3161
-    :cond_8b
+    :cond_3
     new-instance p0, Landroid/graphics/Point;
 
     invoke-direct {p0}, Landroid/graphics/Point;-><init>()V
@@ -3604,45 +3604,45 @@
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_9a
+    if-lt v0, v1, :cond_4
 
     .line 3163
     invoke-static {p1, p0}, Landroidx/media3/common/util/Util;->getDisplaySizeV23(Landroid/view/Display;Landroid/graphics/Point;)V
 
-    goto :goto_9d
+    goto :goto_1
 
     .line 3165
-    :cond_9a
+    :cond_4
     invoke-virtual {p1, p0}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    :goto_9d
+    :goto_1
     return-object p0
 .end method
 
 .method public static getCurrentOrMainLooper()Landroid/os/Looper;
-    .registers 1
+    .locals 1
 
     .line 895
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 896
-    :cond_7
+    :cond_0
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     return-object v0
 .end method
 
 .method public static getDataUriForString(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-    .registers 4
+    .locals 2
 
     .line 2774
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3689,14 +3689,14 @@
 .end method
 
 .method public static getDefaultDisplayLocale()Ljava/util/Locale;
-    .registers 2
+    .locals 2
 
     .line 2981
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     sget-object v0, Ljava/util/Locale$Category;->DISPLAY:Ljava/util/Locale$Category;
 
@@ -3704,19 +3704,19 @@
 
     move-result-object v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    :goto_11
+    :goto_0
     return-object v0
 .end method
 
 .method private static getDisplaySizeV23(Landroid/view/Display;Landroid/graphics/Point;)V
-    .registers 3
+    .locals 1
 
     .line 3649
     invoke-virtual {p0}, Landroid/view/Display;->getMode()Landroid/view/Display$Mode;
@@ -3741,34 +3741,34 @@
 .end method
 
 .method public static getDrawable(Landroid/content/Context;Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
-    .registers 5
+    .locals 2
 
     .line 3502
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 3503
     invoke-static {p0, p1, p2}, Landroidx/media3/common/util/Util$Api21;->getDrawable(Landroid/content/Context;Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    goto :goto_f
+    goto :goto_0
 
     .line 3504
-    :cond_b
+    :cond_0
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    :goto_f
+    :goto_0
     return-object p0
 .end method
 
 .method public static getDrmUuid(Ljava/lang/String;)Ljava/util/UUID;
-    .registers 4
+    .locals 3
 
     .line 2436
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -3783,193 +3783,193 @@
 
     const/4 v2, -0x1
 
-    sparse-switch v1, :sswitch_data_44
+    sparse-switch v1, :sswitch_data_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :sswitch_10
+    :sswitch_0
     const-string v1, "clearkey"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v2, 0x2
 
-    goto :goto_31
+    goto :goto_0
 
-    :sswitch_1b
+    :sswitch_1
     const-string/jumbo v1, "widevine"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     const/4 v2, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
-    :sswitch_27
+    :sswitch_2
     const-string v1, "playready"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     const/4 v2, 0x0
 
-    :goto_31
-    packed-switch v2, :pswitch_data_52
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
     .line 2445
-    :try_start_34
+    :try_start_0
     invoke-static {p0}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
 
     move-result-object p0
-    :try_end_38
-    .catch Ljava/lang/RuntimeException; {:try_start_34 .. :try_end_38} :catch_39
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_39
+    :catch_0
     const/4 p0, 0x0
 
     return-object p0
 
     .line 2442
-    :pswitch_3b
+    :pswitch_0
     sget-object p0, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
     return-object p0
 
     .line 2438
-    :pswitch_3e
+    :pswitch_1
     sget-object p0, Landroidx/media3/common/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
     return-object p0
 
     .line 2440
-    :pswitch_41
+    :pswitch_2
     sget-object p0, Landroidx/media3/common/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     return-object p0
 
-    :sswitch_data_44
+    :sswitch_data_0
     .sparse-switch
-        -0x6ee3d111 -> :sswitch_27
-        -0x537ab703 -> :sswitch_1b
-        0x2f1b28f2 -> :sswitch_10
+        -0x6ee3d111 -> :sswitch_2
+        -0x537ab703 -> :sswitch_1
+        0x2f1b28f2 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_41
-        :pswitch_3e
-        :pswitch_3b
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static getErrorCodeForMediaDrmErrorCode(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0xa
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x7
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_0
 
-    packed-switch p0, :pswitch_data_26
+    packed-switch p0, :pswitch_data_0
 
-    packed-switch p0, :pswitch_data_3a
+    packed-switch p0, :pswitch_data_1
 
     const/16 p0, 0x1776
 
     return p0
 
-    :pswitch_1a
+    :pswitch_0
     const/16 p0, 0x1772
 
     return p0
 
-    :cond_1d
-    :pswitch_1d
+    :cond_0
+    :pswitch_1
     const/16 p0, 0x1773
 
     return p0
 
-    :cond_20
-    :pswitch_20
+    :cond_1
+    :pswitch_2
     const/16 p0, 0x1774
 
     return p0
 
-    :cond_23
-    :pswitch_23
+    :cond_2
+    :pswitch_3
     const/16 p0, 0x1775
 
     return p0
 
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0xf
-        :pswitch_1d
-        :pswitch_23
-        :pswitch_20
-        :pswitch_23
-        :pswitch_20
-        :pswitch_20
-        :pswitch_20
-        :pswitch_20
+        :pswitch_1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
     .end packed-switch
 
-    :pswitch_data_3a
+    :pswitch_data_1
     .packed-switch 0x18
-        :pswitch_1a
-        :pswitch_1a
-        :pswitch_1a
-        :pswitch_1a
-        :pswitch_1a
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static getErrorCodeFromPlatformDiagnosticsInfo(Ljava/lang/String;)I
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const-string v1, "_"
 
     .line 3355
@@ -3982,11 +3982,11 @@
 
     const/4 v2, 0x2
 
-    if-ge v1, v2, :cond_f
+    if-ge v1, v2, :cond_1
 
     return v0
 
-    :cond_f
+    :cond_1
     add-int/lit8 v3, v1, -0x1
 
     .line 3360
@@ -3994,7 +3994,7 @@
 
     const/4 v4, 0x3
 
-    if-lt v1, v4, :cond_23
+    if-lt v1, v4, :cond_2
 
     sub-int/2addr v1, v2
 
@@ -4007,18 +4007,18 @@
 
     move-result p0
 
-    if-eqz p0, :cond_23
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     move p0, v0
 
     .line 3363
-    :goto_24
-    :try_start_24
+    :goto_0
+    :try_start_0
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -4028,74 +4028,74 @@
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
-    :try_end_2e
-    .catch Ljava/lang/NumberFormatException; {:try_start_24 .. :try_end_2e} :catch_31
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz p0, :cond_31
+    if-eqz p0, :cond_3
 
     neg-int v0, v0
 
-    :catch_31
-    :cond_31
+    :catch_0
+    :cond_3
     return v0
 .end method
 
 .method public static getFormatSupportString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_4
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-ne p0, v0, :cond_11
+    if-ne p0, v0, :cond_0
 
     const-string p0, "YES"
 
     return-object p0
 
     .line 3433
-    :cond_11
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p0
 
-    :cond_17
+    :cond_1
     const-string p0, "NO_EXCEEDS_CAPABILITIES"
 
     return-object p0
 
-    :cond_1a
+    :cond_2
     const-string p0, "NO_UNSUPPORTED_DRM"
 
     return-object p0
 
-    :cond_1d
+    :cond_3
     const-string p0, "NO_UNSUPPORTED_TYPE"
 
     return-object p0
 
-    :cond_20
+    :cond_4
     const-string p0, "NO"
 
     return-object p0
 .end method
 
 .method public static getIntegerCodeForString(Ljava/lang/String;)I
-    .registers 5
+    .locals 4
 
     .line 1978
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -4106,23 +4106,23 @@
 
     const/4 v2, 0x0
 
-    if-gt v0, v1, :cond_a
+    if-gt v0, v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v1, v2
 
     .line 1979
-    :goto_b
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     move v1, v2
 
-    :goto_f
-    if-ge v2, v0, :cond_1b
+    :goto_1
+    if-ge v2, v0, :cond_1
 
     shl-int/lit8 v1, v1, 0x8
 
@@ -4135,39 +4135,39 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_1b
+    :cond_1
     return v1
 .end method
 
 .method public static getLocaleLanguageTag(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 974
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     invoke-static {p0}, Landroidx/media3/common/util/Util;->getLocaleLanguageTagV21(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_f
+    :goto_0
     return-object p0
 .end method
 
 .method private static getLocaleLanguageTagV21(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 3668
     invoke-virtual {p0}, Ljava/util/Locale;->toLanguageTag()Ljava/lang/String;
@@ -4178,37 +4178,37 @@
 .end method
 
 .method public static getMaxPendingFramesCountForMediaCodecDecoders(Landroid/content/Context;)I
-    .registers 1
+    .locals 0
 
     .line 3391
     invoke-static {p0}, Landroidx/media3/common/util/Util;->isFrameDropAllowedOnSurfaceInput(Landroid/content/Context;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x5
 
     return p0
 .end method
 
 .method public static getMediaDurationForPlayoutDuration(JF)J
-    .registers 5
+    .locals 2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p2, v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-wide p0
 
-    :cond_7
+    :cond_0
     long-to-double p0, p0
 
     float-to-double v0, p2
@@ -4224,79 +4224,79 @@
 .end method
 
 .method public static getNowUnixTimeMs(J)J
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 3310
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 3311
-    :cond_e
+    :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     add-long/2addr p0, v0
 
-    :goto_13
+    :goto_0
     return-wide p0
 .end method
 
 .method public static getPcmEncoding(I)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x10
 
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x18
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x20
 
-    if-eq p0, v0, :cond_12
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_12
+    :cond_0
     const/16 p0, 0x16
 
     return p0
 
-    :cond_15
+    :cond_1
     const/16 p0, 0x15
 
     return p0
 
-    :cond_18
+    :cond_2
     const/4 p0, 0x2
 
     return p0
 
-    :cond_1a
+    :cond_3
     const/4 p0, 0x3
 
     return p0
 .end method
 
 .method public static getPcmFormat(III)Landroidx/media3/common/Format;
-    .registers 5
+    .locals 2
 
     .line 2140
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -4334,7 +4334,7 @@
 .end method
 
 .method public static getPcmFormat(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 2
 
     .line 2151
     iget v0, p0, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->encoding:I
@@ -4351,80 +4351,80 @@
 .end method
 
 .method public static getPcmFrameSize(II)I
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_28
+    if-eq p0, v0, :cond_4
 
     const/4 v1, 0x3
 
-    if-eq p0, v1, :cond_27
+    if-eq p0, v1, :cond_3
 
     const/4 v2, 0x4
 
-    if-eq p0, v2, :cond_26
+    if-eq p0, v2, :cond_2
 
     const/16 v3, 0x15
 
-    if-eq p0, v3, :cond_24
+    if-eq p0, v3, :cond_1
 
     const/16 v3, 0x16
 
-    if-eq p0, v3, :cond_26
+    if-eq p0, v3, :cond_2
 
     const/high16 v3, 0x10000000
 
-    if-eq p0, v3, :cond_28
+    if-eq p0, v3, :cond_4
 
     const/high16 v0, 0x50000000
 
-    if-eq p0, v0, :cond_24
+    if-eq p0, v0, :cond_1
 
     const/high16 v0, 0x60000000
 
-    if-ne p0, v0, :cond_1e
+    if-ne p0, v0, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 2332
-    :cond_1e
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p0
 
-    :cond_24
+    :cond_1
     mul-int/2addr p1, v1
 
     return p1
 
-    :cond_26
-    :goto_26
+    :cond_2
+    :goto_0
     mul-int/2addr p1, v2
 
-    :cond_27
+    :cond_3
     return p1
 
-    :cond_28
+    :cond_4
     mul-int/2addr p1, v0
 
     return p1
 .end method
 
 .method public static getPlayoutDurationForMediaDuration(JF)J
-    .registers 5
+    .locals 2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p2, v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-wide p0
 
-    :cond_7
+    :cond_0
     long-to-double p0, p0
 
     float-to-double v0, p2
@@ -4440,7 +4440,7 @@
 .end method
 
 .method public static getRoleFlagStrings(I)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -4457,159 +4457,159 @@
 
     and-int/lit8 v1, p0, 0x1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     const-string v1, "main"
 
     .line 3253
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_e
+    :cond_0
     and-int/lit8 v1, p0, 0x2
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     const-string v1, "alt"
 
     .line 3256
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_17
+    :cond_1
     and-int/lit8 v1, p0, 0x4
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     const-string v1, "supplementary"
 
     .line 3259
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_20
+    :cond_2
     and-int/lit8 v1, p0, 0x8
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_3
 
     const-string v1, "commentary"
 
     .line 3262
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_29
+    :cond_3
     and-int/lit8 v1, p0, 0x10
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_4
 
     const-string v1, "dub"
 
     .line 3265
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_32
+    :cond_4
     and-int/lit8 v1, p0, 0x20
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_5
 
     const-string v1, "emergency"
 
     .line 3268
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_3b
+    :cond_5
     and-int/lit8 v1, p0, 0x40
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_6
 
     const-string v1, "caption"
 
     .line 3271
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_44
+    :cond_6
     and-int/lit16 v1, p0, 0x80
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_7
 
     const-string v1, "subtitle"
 
     .line 3274
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_4d
+    :cond_7
     and-int/lit16 v1, p0, 0x100
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_8
 
     const-string v1, "sign"
 
     .line 3277
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_56
+    :cond_8
     and-int/lit16 v1, p0, 0x200
 
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_9
 
     const-string v1, "describes-video"
 
     .line 3280
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_5f
+    :cond_9
     and-int/lit16 v1, p0, 0x400
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_a
 
     const-string v1, "describes-music"
 
     .line 3283
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_68
+    :cond_a
     and-int/lit16 v1, p0, 0x800
 
-    if-eqz v1, :cond_71
+    if-eqz v1, :cond_b
 
     const-string v1, "enhanced-intelligibility"
 
     .line 3286
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_71
+    :cond_b
     and-int/lit16 v1, p0, 0x1000
 
-    if-eqz v1, :cond_7b
+    if-eqz v1, :cond_c
 
     const-string/jumbo v1, "transcribes-dialog"
 
     .line 3289
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_7b
+    :cond_c
     and-int/lit16 v1, p0, 0x2000
 
-    if-eqz v1, :cond_84
+    if-eqz v1, :cond_d
 
     const-string v1, "easy-read"
 
     .line 3292
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_84
+    :cond_d
     and-int/lit16 p0, p0, 0x4000
 
-    if-eqz p0, :cond_8e
+    if-eqz p0, :cond_e
 
     const-string/jumbo p0, "trick-play"
 
     .line 3295
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_8e
+    :cond_e
     return-object v0
 .end method
 
 .method public static getSelectionFlagStrings(I)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -4626,96 +4626,96 @@
 
     and-int/lit8 v1, p0, 0x4
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     const-string v1, "auto"
 
     .line 3233
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_e
+    :cond_0
     and-int/lit8 v1, p0, 0x1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     const-string v1, "default"
 
     .line 3236
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_17
+    :cond_1
     and-int/lit8 p0, p0, 0x2
 
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_2
 
     const-string p0, "forced"
 
     .line 3239
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_20
+    :cond_2
     return-object v0
 .end method
 
 .method public static getStreamTypeForAudioUsage(I)I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0xd
 
-    if-eq p0, v0, :cond_14
+    if-eq p0, v0, :cond_0
 
-    packed-switch p0, :pswitch_data_16
+    packed-switch p0, :pswitch_data_0
 
     const/4 p0, 0x3
 
     return p0
 
-    :pswitch_9
+    :pswitch_0
     const/4 p0, 0x2
 
     return p0
 
-    :pswitch_b
+    :pswitch_1
     const/4 p0, 0x5
 
     return p0
 
-    :pswitch_d
+    :pswitch_2
     const/4 p0, 0x4
 
     return p0
 
-    :pswitch_f
+    :pswitch_3
     const/16 p0, 0x8
 
     return p0
 
-    :pswitch_12
+    :pswitch_4
     const/4 p0, 0x0
 
     return p0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x1
 
     return p0
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_12
-        :pswitch_f
-        :pswitch_d
-        :pswitch_b
-        :pswitch_9
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public static getStringForTime(Ljava/lang/StringBuilder;Ljava/util/Formatter;J)Ljava/lang/String;
-    .registers 13
+    .locals 9
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -4723,24 +4723,24 @@
 
     const-wide/16 v1, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     move-wide p2, v1
 
-    :cond_c
+    :cond_0
     cmp-long v0, p2, v1
 
-    if-gez v0, :cond_13
+    if-gez v0, :cond_1
 
     const-string v0, "-"
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_1
     const-string v0, ""
 
     .line 2658
-    :goto_15
+    :goto_0
     invoke-static {p2, p3}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide p2
@@ -4782,7 +4782,7 @@
 
     const/4 v4, 0x3
 
-    if-lez p0, :cond_56
+    if-lez p0, :cond_2
 
     const/4 p0, 0x4
 
@@ -4819,9 +4819,9 @@
 
     move-result-object p0
 
-    goto :goto_70
+    goto :goto_1
 
-    :cond_56
+    :cond_2
     new-array p0, v4, [Ljava/lang/Object;
 
     aput-object v0, p0, v3
@@ -4849,12 +4849,12 @@
 
     move-result-object p0
 
-    :goto_70
+    :goto_1
     return-object p0
 .end method
 
 .method public static getSystemLanguageCodes()[Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 2971
     invoke-static {}, Landroidx/media3/common/util/Util;->getSystemLocales()[Ljava/lang/String;
@@ -4864,10 +4864,10 @@
     const/4 v1, 0x0
 
     .line 2972
-    :goto_5
+    :goto_0
     array-length v2, v0
 
-    if-ge v1, v2, :cond_13
+    if-ge v1, v2, :cond_0
 
     .line 2973
     aget-object v2, v0, v1
@@ -4880,14 +4880,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     return-object v0
 .end method
 
 .method private static getSystemLocales()[Ljava/lang/String;
-    .registers 3
+    .locals 3
 
     .line 3655
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -4903,16 +4903,16 @@
 
     const/16 v2, 0x18
 
-    if-lt v1, v2, :cond_13
+    if-lt v1, v2, :cond_0
 
     .line 3657
     invoke-static {v0}, Landroidx/media3/common/util/Util;->getSystemLocalesV24(Landroid/content/res/Configuration;)[Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/String;
@@ -4930,12 +4930,12 @@
 
     move-object v0, v1
 
-    :goto_20
+    :goto_0
     return-object v0
 .end method
 
 .method private static getSystemLocalesV24(Landroid/content/res/Configuration;)[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 3663
     invoke-virtual {p0}, Landroid/content/res/Configuration;->getLocales()Landroid/os/LocaleList;
@@ -4956,7 +4956,7 @@
 .end method
 
 .method private static getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     :try_start_0
     const-string v0, "android.os.SystemProperties"
@@ -4993,12 +4993,12 @@
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_1f
+    :catch_0
     move-exception v0
 
     .line 3642
@@ -5026,13 +5026,13 @@
 .end method
 
 .method public static getTrackTypeString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    packed-switch p0, :pswitch_data_3e
+    packed-switch p0, :pswitch_data_0
 
     const/16 v0, 0x2710
 
-    if-lt p0, v0, :cond_3a
+    if-lt p0, v0, :cond_0
 
     .line 3198
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5055,77 +5055,77 @@
 
     move-result-object p0
 
-    goto :goto_3c
+    goto :goto_0
 
-    :pswitch_1d
+    :pswitch_0
     const-string p0, "camera motion"
 
     return-object p0
 
-    :pswitch_20
+    :pswitch_1
     const-string p0, "metadata"
 
     return-object p0
 
-    :pswitch_23
+    :pswitch_2
     const-string p0, "image"
 
     return-object p0
 
-    :pswitch_26
+    :pswitch_3
     const-string p0, "text"
 
     return-object p0
 
-    :pswitch_29
+    :pswitch_4
     const-string/jumbo p0, "video"
 
     return-object p0
 
-    :pswitch_2d
+    :pswitch_5
     const-string p0, "audio"
 
     return-object p0
 
-    :pswitch_30
+    :pswitch_6
     const-string p0, "default"
 
     return-object p0
 
-    :pswitch_33
+    :pswitch_7
     const-string/jumbo p0, "unknown"
 
     return-object p0
 
-    :pswitch_37
+    :pswitch_8
     const-string p0, "none"
 
     return-object p0
 
-    :cond_3a
+    :cond_0
     const-string p0, "?"
 
-    :goto_3c
+    :goto_0
     return-object p0
 
     nop
 
-    :pswitch_data_3e
+    :pswitch_data_0
     .packed-switch -0x2
-        :pswitch_37
-        :pswitch_33
-        :pswitch_30
-        :pswitch_2d
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
-        :pswitch_20
-        :pswitch_1d
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static getUserAgent(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 2060
     :try_start_0
@@ -5146,16 +5146,16 @@
 
     .line 2062
     iget-object p0, p0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-    :try_end_f
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_10
+    :catch_0
     const-string p0, "?"
 
     .line 2066
-    :goto_12
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5200,7 +5200,7 @@
 .end method
 
 .method public static getUtf8Bytes(Ljava/lang/String;)[B
-    .registers 2
+    .locals 1
 
     .line 1070
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -5213,7 +5213,7 @@
 .end method
 
 .method public static gzip([B)[B
-    .registers 3
+    .locals 2
 
     .line 2904
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -5221,24 +5221,24 @@
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     .line 2905
-    :try_start_5
+    :try_start_0
     new-instance v1, Ljava/util/zip/GZIPOutputStream;
 
     invoke-direct {v1, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_a} :catch_1f
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2906
-    :try_start_a
+    :try_start_1
     invoke-virtual {v1, p0}, Ljava/util/zip/GZIPOutputStream;->write([B)V
-    :try_end_d
-    .catchall {:try_start_a .. :try_end_d} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 2907
-    :try_start_d
+    :try_start_2
     invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
-    :try_end_10
-    .catch Ljava/io/IOException; {:try_start_d .. :try_end_10} :catch_1f
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 2912
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -5247,29 +5247,29 @@
 
     return-object p0
 
-    :catchall_15
+    :catchall_0
     move-exception p0
 
     .line 2905
-    :try_start_16
+    :try_start_3
     invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
-    :try_end_19
-    .catchall {:try_start_16 .. :try_end_19} :catchall_1a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :catchall_1a
+    :catchall_1
     move-exception v0
 
-    :try_start_1b
+    :try_start_4
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_1e
+    :goto_0
     throw p0
-    :try_end_1f
-    .catch Ljava/io/IOException; {:try_start_1b .. :try_end_1f} :catch_1f
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    :catch_1f
+    :catch_0
     move-exception p0
 
     .line 2910
@@ -5281,9 +5281,9 @@
 .end method
 
 .method public static handlePauseButtonAction(Landroidx/media3/common/Player;)Z
-    .registers 3
+    .locals 2
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
     const/4 v0, 0x1
 
@@ -5292,37 +5292,37 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 3594
     invoke-interface {p0}, Landroidx/media3/common/Player;->pause()V
 
     return v0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static handlePlayButtonAction(Landroidx/media3/common/Player;)Z
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 3566
-    :cond_4
+    :cond_0
     invoke-interface {p0}, Landroidx/media3/common/Player;->getPlaybackState()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_17
+    if-ne v1, v2, :cond_1
 
     const/4 v3, 0x2
 
@@ -5331,56 +5331,56 @@
 
     move-result v3
 
-    if-eqz v3, :cond_17
+    if-eqz v3, :cond_1
 
     .line 3569
     invoke-interface {p0}, Landroidx/media3/common/Player;->prepare()V
 
-    :goto_15
+    :goto_0
     move v0, v2
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_17
+    :cond_1
     const/4 v3, 0x4
 
-    if-ne v1, v3, :cond_24
+    if-ne v1, v3, :cond_2
 
     .line 3572
     invoke-interface {p0, v3}, Landroidx/media3/common/Player;->isCommandAvailable(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_2
 
     .line 3573
     invoke-interface {p0}, Landroidx/media3/common/Player;->seekToDefaultPosition()V
 
-    goto :goto_15
+    goto :goto_0
 
     .line 3576
-    :cond_24
-    :goto_24
+    :cond_2
+    :goto_1
     invoke-interface {p0, v2}, Landroidx/media3/common/Player;->isCommandAvailable(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_3
 
     .line 3577
     invoke-interface {p0}, Landroidx/media3/common/Player;->play()V
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_2e
+    :cond_3
     move v2, v0
 
-    :goto_2f
+    :goto_2
     return v2
 .end method
 
 .method public static handlePlayPauseButtonAction(Landroidx/media3/common/Player;)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -5393,14 +5393,14 @@
 .end method
 
 .method public static handlePlayPauseButtonAction(Landroidx/media3/common/Player;Z)Z
-    .registers 2
+    .locals 0
 
     .line 3627
     invoke-static {p0, p1}, Landroidx/media3/common/util/Util;->shouldShowPlayButton(Landroidx/media3/common/Player;Z)Z
 
     move-result p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 3628
     invoke-static {p0}, Landroidx/media3/common/util/Util;->handlePlayButtonAction(Landroidx/media3/common/Player;)Z
@@ -5410,7 +5410,7 @@
     return p0
 
     .line 3630
-    :cond_b
+    :cond_0
     invoke-static {p0}, Landroidx/media3/common/util/Util;->handlePauseButtonAction(Landroidx/media3/common/Player;)Z
 
     move-result p0
@@ -5419,14 +5419,14 @@
 .end method
 
 .method public static inferContentType(Landroid/net/Uri;)I
-    .registers 5
+    .locals 4
 
     .line 2507
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const-string v1, "rtsp"
 
@@ -5435,25 +5435,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x3
 
     return p0
 
     .line 2512
-    :cond_10
+    :cond_0
     invoke-virtual {p0}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x4
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_18
+    :cond_1
     const/16 v2, 0x2e
 
     .line 2516
@@ -5463,7 +5463,7 @@
 
     const/4 v3, 0x1
 
-    if-ltz v2, :cond_2d
+    if-ltz v2, :cond_2
 
     add-int/2addr v2, v3
 
@@ -5476,12 +5476,12 @@
 
     move-result v0
 
-    if-eq v0, v1, :cond_2d
+    if-eq v0, v1, :cond_2
 
     return v0
 
     .line 2529
-    :cond_2d
+    :cond_2
     sget-object v0, Landroidx/media3/common/util/Util;->ISM_PATH_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
@@ -5503,7 +5503,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_5
 
     const/4 v0, 0x2
 
@@ -5512,7 +5512,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_5d
+    if-eqz p0, :cond_4
 
     const-string v1, "format=mpd-time-csf"
 
@@ -5521,13 +5521,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_3
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_54
+    :cond_3
     const-string v1, "format=m3u8-aapl"
 
     .line 2535
@@ -5535,19 +5535,19 @@
 
     move-result p0
 
-    if-eqz p0, :cond_5d
+    if-eqz p0, :cond_4
 
     return v0
 
-    :cond_5d
+    :cond_4
     return v3
 
-    :cond_5e
+    :cond_5
     return v1
 .end method
 
 .method public static inferContentType(Landroid/net/Uri;Ljava/lang/String;)I
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -5556,27 +5556,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 2496
     invoke-static {p0}, Landroidx/media3/common/util/Util;->inferContentType(Landroid/net/Uri;)I
 
     move-result p0
 
-    goto :goto_f
+    goto :goto_0
 
     .line 2497
-    :cond_b
+    :cond_0
     invoke-static {p1}, Landroidx/media3/common/util/Util;->inferContentTypeForExtension(Ljava/lang/String;)I
 
     move-result p0
 
-    :goto_f
+    :goto_0
     return p0
 .end method
 
 .method public static inferContentType(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -5607,7 +5607,7 @@
 .end method
 
 .method public static inferContentTypeForExtension(Ljava/lang/String;)I
-    .registers 6
+    .locals 5
 
     .line 2562
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -5629,109 +5629,109 @@
 
     const/4 v4, -0x1
 
-    sparse-switch v0, :sswitch_data_46
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_3e
+    goto :goto_0
 
-    :sswitch_13
+    :sswitch_0
     const-string v0, "m3u8"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_1c
+    if-nez p0, :cond_0
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v4, 0x3
 
-    goto :goto_3e
+    goto :goto_0
 
-    :sswitch_1e
+    :sswitch_1
     const-string v0, "isml"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_27
+    if-nez p0, :cond_1
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_27
+    :cond_1
     move v4, v1
 
-    goto :goto_3e
+    goto :goto_0
 
-    :sswitch_29
+    :sswitch_2
     const-string v0, "mpd"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_32
+    if-nez p0, :cond_2
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_32
+    :cond_2
     move v4, v2
 
-    goto :goto_3e
+    goto :goto_0
 
-    :sswitch_34
+    :sswitch_3
     const-string v0, "ism"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_3d
+    if-nez p0, :cond_3
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_3d
+    :cond_3
     move v4, v3
 
-    :goto_3e
-    packed-switch v4, :pswitch_data_58
+    :goto_0
+    packed-switch v4, :pswitch_data_0
 
     const/4 p0, 0x4
 
     return p0
 
-    :pswitch_43
+    :pswitch_0
     return v1
 
-    :pswitch_44
+    :pswitch_1
     return v3
 
-    :pswitch_45
+    :pswitch_2
     return v2
 
-    :sswitch_data_46
+    :sswitch_data_0
     .sparse-switch
-        0x19883 -> :sswitch_34
-        0x1a721 -> :sswitch_29
-        0x317849 -> :sswitch_1e
-        0x325a49 -> :sswitch_13
+        0x19883 -> :sswitch_3
+        0x1a721 -> :sswitch_2
+        0x317849 -> :sswitch_1
+        0x325a49 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_58
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_45
-        :pswitch_44
-        :pswitch_45
-        :pswitch_43
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static inferContentTypeForUriAndMimeType(Landroid/net/Uri;Ljava/lang/String;)I
-    .registers 7
+    .locals 5
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     .line 2586
     invoke-static {p0}, Landroidx/media3/common/util/Util;->inferContentType(Landroid/net/Uri;)I
@@ -5741,7 +5741,7 @@
     return p0
 
     .line 2588
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -5758,112 +5758,112 @@
 
     const/4 v4, -0x1
 
-    sparse-switch p0, :sswitch_data_4c
+    sparse-switch p0, :sswitch_data_0
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_17
+    :sswitch_0
     const-string p0, "application/x-rtsp"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_20
+    if-nez p0, :cond_1
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move v4, v0
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_22
+    :sswitch_1
     const-string p0, "application/dash+xml"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_2b
+    if-nez p0, :cond_2
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     move v4, v1
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_2d
+    :sswitch_2
     const-string p0, "application/vnd.ms-sstr+xml"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_36
+    if-nez p0, :cond_3
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_36
+    :cond_3
     move v4, v2
 
-    goto :goto_42
+    goto :goto_0
 
-    :sswitch_38
+    :sswitch_3
     const-string p0, "application/x-mpegURL"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_41
+    if-nez p0, :cond_4
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_41
+    :cond_4
     move v4, v3
 
-    :goto_42
-    packed-switch v4, :pswitch_data_5e
+    :goto_0
+    packed-switch v4, :pswitch_data_0
 
     const/4 p0, 0x4
 
     return p0
 
-    :pswitch_47
+    :pswitch_0
     return v0
 
-    :pswitch_48
+    :pswitch_1
     return v3
 
-    :pswitch_49
+    :pswitch_2
     return v2
 
-    :pswitch_4a
+    :pswitch_3
     return v1
 
     nop
 
-    :sswitch_data_4c
+    :sswitch_data_0
     .sparse-switch
-        -0x3a5c4caa -> :sswitch_38
-        -0x957ced0 -> :sswitch_2d
-        0x3d3887d -> :sswitch_22
-        0x44d481f3 -> :sswitch_17
+        -0x3a5c4caa -> :sswitch_3
+        -0x957ced0 -> :sswitch_2
+        0x3d3887d -> :sswitch_1
+        0x44d481f3 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_5e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4a
-        :pswitch_49
-        :pswitch_48
-        :pswitch_47
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static inflate(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/common/util/ParsableByteArray;Ljava/util/zip/Inflater;)Z
-    .registers 6
+    .locals 3
 
     .line 2999
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -5872,12 +5872,12 @@
 
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_8
+    if-gtz v0, :cond_0
 
     return v1
 
     .line 3002
-    :cond_8
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->capacity()I
 
     move-result v0
@@ -5886,7 +5886,7 @@
 
     move-result v2
 
-    if-ge v0, v2, :cond_1b
+    if-ge v0, v2, :cond_1
 
     .line 3003
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -5897,8 +5897,8 @@
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->ensureCapacity(I)V
 
-    :cond_1b
-    if-nez p2, :cond_22
+    :cond_1
+    if-nez p2, :cond_2
 
     .line 3006
     new-instance p2, Ljava/util/zip/Inflater;
@@ -5906,7 +5906,7 @@
     invoke-direct {p2}, Ljava/util/zip/Inflater;-><init>()V
 
     .line 3008
-    :cond_22
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v0
@@ -5924,9 +5924,9 @@
     move p0, v1
 
     .line 3013
-    :cond_32
-    :goto_32
-    :try_start_32
+    :cond_3
+    :goto_0
+    :try_start_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v0
@@ -5948,13 +5948,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_4
 
     .line 3015
     invoke-virtual {p1, p0}, Landroidx/media3/common/util/ParsableByteArray;->setLimit(I)V
-    :try_end_49
-    .catch Ljava/util/zip/DataFormatException; {:try_start_32 .. :try_end_49} :catch_74
-    .catchall {:try_start_32 .. :try_end_49} :catchall_6f
+    :try_end_0
+    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 3028
     invoke-virtual {p2}, Ljava/util/zip/Inflater;->reset()V
@@ -5964,29 +5964,29 @@
     return p0
 
     .line 3018
-    :cond_4e
-    :try_start_4e
+    :cond_4
+    :try_start_1
     invoke-virtual {p2}, Ljava/util/zip/Inflater;->needsDictionary()Z
 
     move-result v0
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_6
 
     invoke-virtual {p2}, Ljava/util/zip/Inflater;->needsInput()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_5
 
-    goto :goto_6b
+    goto :goto_1
 
     .line 3021
-    :cond_5b
+    :cond_5
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->capacity()I
 
     move-result v0
 
-    if-ne p0, v0, :cond_32
+    if-ne p0, v0, :cond_3
 
     .line 3022
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->capacity()I
@@ -5996,20 +5996,20 @@
     mul-int/lit8 v0, v0, 0x2
 
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->ensureCapacity(I)V
-    :try_end_6a
-    .catch Ljava/util/zip/DataFormatException; {:try_start_4e .. :try_end_6a} :catch_74
-    .catchall {:try_start_4e .. :try_end_6a} :catchall_6f
+    :try_end_1
+    .catch Ljava/util/zip/DataFormatException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 3028
-    :cond_6b
-    :goto_6b
+    :cond_6
+    :goto_1
     invoke-virtual {p2}, Ljava/util/zip/Inflater;->reset()V
 
     return v1
 
-    :catchall_6f
+    :catchall_0
     move-exception p0
 
     invoke-virtual {p2}, Ljava/util/zip/Inflater;->reset()V
@@ -6018,14 +6018,14 @@
     throw p0
 
     .line 3028
-    :catch_74
+    :catch_0
     invoke-virtual {p2}, Ljava/util/zip/Inflater;->reset()V
 
     return v1
 .end method
 
 .method public static intToStringMaxRadix(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x24
 
@@ -6038,22 +6038,22 @@
 .end method
 
 .method private static isAppSpecificStorageFileUri(Landroid/app/Activity;Landroid/net/Uri;)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 397
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     return v0
 
     .line 401
-    :cond_8
+    :cond_0
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -6078,52 +6078,52 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_21
+    if-nez p0, :cond_1
 
-    goto :goto_25
+    goto :goto_0
 
     .line 406
-    :cond_21
+    :cond_1
     invoke-virtual {p0}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
 
     move-result-object v2
 
     .line 407
-    :goto_25
+    :goto_0
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-nez p0, :cond_33
+    if-nez p0, :cond_2
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_3
 
     .line 408
     invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
-    :try_end_31
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_31} :catch_34
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz p0, :cond_34
+    if-eqz p0, :cond_3
 
-    :cond_33
+    :cond_2
     const/4 v0, 0x1
 
-    :catch_34
-    :cond_34
+    :catch_0
+    :cond_3
     return v0
 .end method
 
 .method public static isAutomotive(Landroid/content/Context;)Z
-    .registers 3
+    .locals 2
 
     .line 3056
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_0
 
     .line 3057
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -6136,21 +6136,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_15
+    :goto_0
     return p0
 .end method
 
 .method public static isBitmapFactorySupportedMimeType(Ljava/lang/String;)Z
-    .registers 5
+    .locals 4
 
     .line 3208
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -6165,282 +6165,282 @@
 
     const/4 v3, -0x1
 
-    sparse-switch v0, :sswitch_data_72
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_e
+    :sswitch_0
     const-string v0, "image/png"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_17
+    if-nez p0, :cond_0
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v3, 0x6
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_19
+    :sswitch_1
     const-string v0, "image/bmp"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_22
+    if-nez p0, :cond_1
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     const/4 v3, 0x5
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_24
+    :sswitch_2
     const-string v0, "image/webp"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_2d
+    if-nez p0, :cond_2
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_2d
+    :cond_2
     const/4 v3, 0x4
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_2f
+    :sswitch_3
     const-string v0, "image/jpeg"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_38
+    if-nez p0, :cond_3
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_38
+    :cond_3
     const/4 v3, 0x3
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_3a
+    :sswitch_4
     const-string v0, "image/heif"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_43
+    if-nez p0, :cond_4
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_43
+    :cond_4
     const/4 v3, 0x2
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_45
+    :sswitch_5
     const-string v0, "image/heic"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_4e
+    if-nez p0, :cond_5
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_4e
+    :cond_5
     move v3, v1
 
-    goto :goto_5a
+    goto :goto_0
 
-    :sswitch_50
+    :sswitch_6
     const-string v0, "image/avif"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_59
+    if-nez p0, :cond_6
 
-    goto :goto_5a
+    goto :goto_0
 
-    :cond_59
+    :cond_6
     move v3, v2
 
-    :goto_5a
-    packed-switch v3, :pswitch_data_90
+    :goto_0
+    packed-switch v3, :pswitch_data_0
 
     return v2
 
-    :pswitch_5e
+    :pswitch_0
     return v1
 
     .line 3216
-    :pswitch_5f
+    :pswitch_1
     sget p0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v0, 0x1a
 
-    if-lt p0, v0, :cond_66
+    if-lt p0, v0, :cond_7
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_66
+    :cond_7
     move v1, v2
 
-    :goto_67
+    :goto_1
     return v1
 
     .line 3218
-    :pswitch_68
+    :pswitch_2
     sget p0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v0, 0x22
 
-    if-lt p0, v0, :cond_6f
+    if-lt p0, v0, :cond_8
 
-    goto :goto_70
+    goto :goto_2
 
-    :cond_6f
+    :cond_8
     move v1, v2
 
-    :goto_70
+    :goto_2
     return v1
 
     nop
 
-    :sswitch_data_72
+    :sswitch_data_0
     .sparse-switch
-        -0x58abd7ba -> :sswitch_50
-        -0x58a8e8f5 -> :sswitch_45
-        -0x58a8e8f2 -> :sswitch_3a
-        -0x58a7d764 -> :sswitch_2f
-        -0x58a21830 -> :sswitch_24
-        -0x3468a12f -> :sswitch_19
-        -0x34686c8b -> :sswitch_e
+        -0x58abd7ba -> :sswitch_6
+        -0x58a8e8f5 -> :sswitch_5
+        -0x58a8e8f2 -> :sswitch_4
+        -0x58a7d764 -> :sswitch_3
+        -0x58a21830 -> :sswitch_2
+        -0x3468a12f -> :sswitch_1
+        -0x34686c8b -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_90
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_68
-        :pswitch_5f
-        :pswitch_5f
-        :pswitch_5e
-        :pswitch_5e
-        :pswitch_5e
-        :pswitch_5e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static isEncodingHighResolutionPcm(I)Z
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x15
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_1
 
     const/high16 v0, 0x50000000
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x16
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_1
 
     const/high16 v0, 0x60000000
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-ne p0, v0, :cond_14
+    if-ne p0, v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_17
+    :goto_1
     return p0
 .end method
 
 .method public static isEncodingLinearPcm(I)Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/high16 v0, 0x10000000
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x15
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/high16 v0, 0x50000000
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x16
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/high16 v0, 0x60000000
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-ne p0, v0, :cond_1e
+    if-ne p0, v0, :cond_0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_21
+    :goto_1
     return p0
 .end method
 
 .method public static isFrameDropAllowedOnSurfaceInput(Landroid/content/Context;)Z
-    .registers 3
+    .locals 2
 
     .line 3378
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_27
+    if-lt v0, v1, :cond_1
 
     .line 3379
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -6449,11 +6449,11 @@
 
     iget p0, p0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    if-lt p0, v1, :cond_27
+    if-lt p0, v1, :cond_1
 
     const/16 p0, 0x1e
 
-    if-ne v0, p0, :cond_25
+    if-ne v0, p0, :cond_0
 
     sget-object p0, Landroidx/media3/common/util/Util;->MODEL:Ljava/lang/String;
 
@@ -6464,7 +6464,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     const-string v0, "rmx3231"
 
@@ -6473,51 +6473,51 @@
 
     move-result p0
 
-    if-eqz p0, :cond_25
+    if-eqz p0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_28
+    :goto_1
     return p0
 .end method
 
 .method public static isLinebreak(I)Z
-    .registers 2
+    .locals 1
 
     const/16 v0, 0xa
 
-    if-eq p0, v0, :cond_b
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0xd
 
-    if-ne p0, v0, :cond_9
+    if-ne p0, v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_c
+    :goto_1
     return p0
 .end method
 
 .method public static isLocalFileUri(Landroid/net/Uri;)Z
-    .registers 2
+    .locals 1
 
     .line 463
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -6529,7 +6529,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     const-string v0, "file"
 
@@ -6537,25 +6537,25 @@
 
     move-result p0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_16
+    :goto_1
     return p0
 .end method
 
 .method private static isMediaStoreExternalContentUri(Landroid/net/Uri;)Z
-    .registers 4
+    .locals 3
 
     const-string v0, "content"
 
@@ -6570,7 +6570,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3
 
     const-string v0, "media"
 
@@ -6582,12 +6582,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 419
-    :cond_1a
+    :cond_0
     invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object p0
@@ -6597,12 +6597,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     return v1
 
     .line 423
-    :cond_25
+    :cond_1
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -6616,7 +6616,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     const-string v0, "external_primary"
 
@@ -6625,18 +6625,18 @@
 
     move-result p0
 
-    if-eqz p0, :cond_3c
+    if-eqz p0, :cond_3
 
-    :cond_3b
+    :cond_2
     const/4 v1, 0x1
 
-    :cond_3c
-    :goto_3c
+    :cond_3
+    :goto_0
     return v1
 .end method
 
 .method private static isReadStoragePermissionRequestNeeded(Landroid/app/Activity;Landroid/net/Uri;)Z
-    .registers 5
+    .locals 3
 
     .line 382
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -6645,19 +6645,19 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     return v2
 
     .line 386
-    :cond_8
+    :cond_0
     invoke-static {p1}, Landroidx/media3/common/util/Util;->isLocalFileUri(Landroid/net/Uri;)Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 387
     invoke-static {p0, p1}, Landroidx/media3/common/util/Util;->isAppSpecificStorageFileUri(Landroid/app/Activity;Landroid/net/Uri;)Z
@@ -6669,21 +6669,21 @@
     return p0
 
     .line 389
-    :cond_15
+    :cond_1
     invoke-static {p1}, Landroidx/media3/common/util/Util;->isMediaStoreExternalContentUri(Landroid/net/Uri;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_1c
+    if-eqz p0, :cond_2
 
     return v1
 
-    :cond_1c
+    :cond_2
     return v2
 .end method
 
 .method public static isRunningOnEmulator()Z
-    .registers 2
+    .locals 2
 
     .line 470
     sget-object v0, Landroidx/media3/common/util/Util;->DEVICE:Ljava/lang/String;
@@ -6699,7 +6699,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     const-string v1, "emu64a"
 
@@ -6708,7 +6708,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     const-string v1, "emu64x"
 
@@ -6717,7 +6717,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     const-string v1, "generic"
 
@@ -6726,25 +6726,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_2a
+    :goto_1
     return v0
 .end method
 
 .method private static isTrafficRestricted(Landroid/net/Uri;)Z
-    .registers 3
+    .locals 2
 
     const-string v0, "http"
 
@@ -6757,7 +6757,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 3727
     invoke-static {}, Landroid/security/NetworkSecurityPolicy;->getInstance()Landroid/security/NetworkSecurityPolicy;
@@ -6779,21 +6779,21 @@
 
     move-result p0
 
-    if-nez p0, :cond_22
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_23
+    :goto_0
     return p0
 .end method
 
 .method public static isTv(Landroid/content/Context;)Z
-    .registers 2
+    .locals 1
 
     .line 3043
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -6808,7 +6808,7 @@
 
     check-cast p0, Landroid/app/UiModeManager;
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_0
 
     .line 3045
     invoke-virtual {p0}, Landroid/app/UiModeManager;->getCurrentModeType()I
@@ -6817,28 +6817,28 @@
 
     const/4 v0, 0x4
 
-    if-ne p0, v0, :cond_18
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_19
+    :goto_0
     return p0
 .end method
 
 .method public static isWear(Landroid/content/Context;)Z
-    .registers 3
+    .locals 2
 
     .line 3068
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x14
 
-    if-lt v0, v1, :cond_14
+    if-lt v0, v1, :cond_0
 
     .line 3069
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -6851,21 +6851,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_15
+    :goto_0
     return p0
 .end method
 
 .method static synthetic lambda$newSingleThreadExecutor$3(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 3
+    .locals 1
 
     .line 907
     new-instance v0, Ljava/lang/Thread;
@@ -6876,7 +6876,7 @@
 .end method
 
 .method static synthetic lambda$newSingleThreadScheduledExecutor$4(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 3
+    .locals 1
 
     .line 918
     new-instance v0, Ljava/lang/Thread;
@@ -6887,7 +6887,7 @@
 .end method
 
 .method static synthetic lambda$postOrRunWithCompletion$0(Lcom/google/common/util/concurrent/SettableFuture;Ljava/lang/Runnable;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     .line 821
     :try_start_0
@@ -6895,100 +6895,100 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 824
-    :cond_7
+    :cond_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     .line 825
     invoke-virtual {p0, p2}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_d
-    .catchall {:try_start_0 .. :try_end_d} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catchall_e
+    :catchall_0
     move-exception p1
 
     .line 827
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_12
+    :goto_0
     return-void
 .end method
 
 .method static synthetic lambda$transformFutureAsync$1(Lcom/google/common/util/concurrent/SettableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 2
+    .locals 0
 
     .line 858
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/SettableFuture;->isCancelled()Z
 
     move-result p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x0
 
     .line 859
     invoke-interface {p1, p0}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method static synthetic lambda$transformFutureAsync$2(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/util/concurrent/SettableFuture;Lcom/google/common/util/concurrent/AsyncFunction;)V
-    .registers 3
+    .locals 0
 
     .line 867
     :try_start_0
     invoke-static {p0}, Lcom/google/common/util/concurrent/Futures;->getDone(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_4
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_4} :catch_25
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_4} :catch_18
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_4} :catch_13
-    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_4} :catch_11
+    :try_end_0
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 880
-    :try_start_4
+    :try_start_1
     invoke-interface {p2, p0}, Lcom/google/common/util/concurrent/AsyncFunction;->apply(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object p0
 
     invoke-virtual {p1, p0}, Lcom/google/common/util/concurrent/SettableFuture;->setFuture(Lcom/google/common/util/concurrent/ListenableFuture;)Z
-    :try_end_b
-    .catchall {:try_start_4 .. :try_end_b} :catchall_c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :catchall_c
+    :catchall_0
     move-exception p0
 
     .line 882
     invoke-virtual {p1, p0}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_10
+    :goto_0
     return-void
 
-    :catch_11
+    :catch_0
     move-exception p0
 
-    goto :goto_14
+    goto :goto_1
 
-    :catch_13
+    :catch_1
     move-exception p0
 
     .line 876
-    :goto_14
+    :goto_1
     invoke-virtual {p1, p0}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
     return-void
 
-    :catch_18
+    :catch_2
     move-exception p0
 
     .line 872
@@ -6996,20 +6996,20 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_20
+    if-nez p2, :cond_0
 
-    goto :goto_21
+    goto :goto_2
 
-    :cond_20
+    :cond_0
     move-object p0, p2
 
     .line 873
-    :goto_21
+    :goto_2
     invoke-virtual {p1, p0}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
     return-void
 
-    :catch_25
+    :catch_3
     const/4 p0, 0x0
 
     .line 869
@@ -7019,67 +7019,67 @@
 .end method
 
 .method public static linearSearch([II)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 1233
-    :goto_1
+    :goto_0
     array-length v1, p0
 
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_1
 
     .line 1234
     aget v1, p0, v0
 
-    if-ne v1, p1, :cond_9
+    if-ne v1, p1, :cond_0
 
     return v0
 
-    :cond_9
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_c
+    :cond_1
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method public static linearSearch([JJ)I
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 1252
-    :goto_1
+    :goto_0
     array-length v1, p0
 
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_1
 
     .line 1253
     aget-wide v1, p0, v0
 
     cmp-long v1, v1, p1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
     return v0
 
-    :cond_b
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_e
+    :cond_1
     const/4 p0, -0x1
 
     return p0
 .end method
 
 .method public static loadAsset(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -7089,7 +7089,7 @@
     const/4 v0, 0x0
 
     .line 1031
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object p0
@@ -7106,15 +7106,15 @@
     invoke-static {p0}, Landroidx/media3/common/util/Util;->fromUtf8Bytes([B)Ljava/lang/String;
 
     move-result-object p0
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1034
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-object p0
 
-    :catchall_15
+    :catchall_0
     move-exception p0
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
@@ -7124,26 +7124,26 @@
 .end method
 
 .method public static maxValue(Landroid/util/SparseLongArray;)J
-    .registers 6
+    .locals 5
 
     .line 1553
     invoke-virtual {p0}, Landroid/util/SparseLongArray;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, -0x8000000000000000L
 
     const/4 v2, 0x0
 
     .line 1557
-    :goto_9
+    :goto_0
     invoke-virtual {p0}, Landroid/util/SparseLongArray;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_1a
+    if-ge v2, v3, :cond_0
 
     .line 1558
     invoke-virtual {p0, v2}, Landroid/util/SparseLongArray;->valueAt(I)J
@@ -7156,13 +7156,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return-wide v0
 
     .line 1554
-    :cond_1b
+    :cond_1
     new-instance p0, Ljava/util/NoSuchElementException;
 
     invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -7171,17 +7171,17 @@
 .end method
 
 .method private static maybeReplaceLegacyLanguageTags(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 3732
-    :goto_1
+    :goto_0
     sget-object v1, Landroidx/media3/common/util/Util;->isoLegacyTagReplacements:[Ljava/lang/String;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_31
+    if-ge v0, v2, :cond_1
 
     .line 3733
     aget-object v2, v1, v0
@@ -7190,7 +7190,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_0
 
     .line 3734
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7226,17 +7226,17 @@
 
     return-object p0
 
-    :cond_2e
+    :cond_0
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_31
+    :cond_1
     return-object p0
 .end method
 
 .method public static varargs maybeRequestReadExternalStoragePermission(Landroid/app/Activity;[Landroid/net/Uri;)Z
-    .registers 6
+    .locals 4
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -7247,8 +7247,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, v0, :cond_12
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     aget-object v3, p1, v2
 
@@ -7257,23 +7257,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     return v1
 .end method
 
 .method public static varargs maybeRequestReadExternalStoragePermission(Landroid/app/Activity;[Landroidx/media3/common/MediaItem;)Z
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -7286,26 +7286,26 @@
 .end method
 
 .method private static maybeRequestReadStoragePermission(Landroid/app/Activity;Landroid/net/Uri;)Z
-    .registers 3
+    .locals 1
 
     .line 370
     invoke-static {p0, p1}, Landroidx/media3/common/util/Util;->isReadStoragePermissionRequestNeeded(Landroid/app/Activity;Landroid/net/Uri;)Z
 
     move-result p1
 
-    if-nez p1, :cond_8
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 373
-    :cond_8
+    :cond_0
     sget p1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v0, 0x21
 
-    if-ge p1, v0, :cond_13
+    if-ge p1, v0, :cond_1
 
     .line 374
     invoke-static {p0}, Landroidx/media3/common/util/Util;->requestExternalStoragePermission(Landroid/app/Activity;)Z
@@ -7315,7 +7315,7 @@
     return p0
 
     .line 376
-    :cond_13
+    :cond_1
     invoke-static {p0}, Landroidx/media3/common/util/Util;->requestReadMediaPermissions(Landroid/app/Activity;)Z
 
     move-result p0
@@ -7324,7 +7324,7 @@
 .end method
 
 .method public static varargs maybeRequestReadStoragePermission(Landroid/app/Activity;[Landroidx/media3/common/MediaItem;)Z
-    .registers 9
+    .locals 7
 
     .line 348
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -7333,30 +7333,30 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     return v2
 
     .line 351
-    :cond_8
+    :cond_0
     array-length v0, p1
 
     move v1, v2
 
-    :goto_a
-    if-ge v1, v0, :cond_3f
+    :goto_0
+    if-ge v1, v0, :cond_5
 
     aget-object v3, p1, v1
 
     .line 352
     iget-object v4, v3, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-nez v4, :cond_13
+    if-nez v4, :cond_1
 
-    goto :goto_3c
+    goto :goto_2
 
     .line 355
-    :cond_13
+    :cond_1
     iget-object v4, v3, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v4, v4, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -7367,12 +7367,12 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_2
 
     return v5
 
     .line 358
-    :cond_1f
+    :cond_2
     iget-object v3, v3, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v3, v3, Landroidx/media3/common/MediaItem$LocalConfiguration;->subtitleConfigurations:Lcom/google/common/collect/ImmutableList;
@@ -7380,12 +7380,12 @@
     move v4, v2
 
     .line 360
-    :goto_24
+    :goto_1
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v6
 
-    if-ge v4, v6, :cond_3c
+    if-ge v4, v6, :cond_4
 
     .line 361
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -7400,46 +7400,46 @@
 
     move-result v6
 
-    if-eqz v6, :cond_39
+    if-eqz v6, :cond_3
 
     return v5
 
-    :cond_39
+    :cond_3
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_3c
-    :goto_3c
+    :cond_4
+    :goto_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_3f
+    :cond_5
     return v2
 .end method
 
 .method public static minValue(Landroid/util/SparseLongArray;)J
-    .registers 6
+    .locals 5
 
     .line 1534
     invoke-virtual {p0}, Landroid/util/SparseLongArray;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     const-wide v0, 0x7fffffffffffffffL
 
     const/4 v2, 0x0
 
     .line 1538
-    :goto_c
+    :goto_0
     invoke-virtual {p0}, Landroid/util/SparseLongArray;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_1d
+    if-ge v2, v3, :cond_0
 
     .line 1539
     invoke-virtual {p0, v2}, Landroid/util/SparseLongArray;->valueAt(I)J
@@ -7452,13 +7452,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-wide v0
 
     .line 1535
-    :cond_1e
+    :cond_1
     new-instance p0, Ljava/util/NoSuchElementException;
 
     invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -7467,7 +7467,7 @@
 .end method
 
 .method public static moveItems(Ljava/util/List;III)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -7487,8 +7487,8 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    :goto_8
-    if-ltz p2, :cond_16
+    :goto_0
+    if-ltz p2, :cond_0
 
     add-int v1, p1, p2
 
@@ -7501,10 +7501,10 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 3330
-    :cond_16
+    :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p1
@@ -7519,34 +7519,34 @@
 .end method
 
 .method public static msToUs(J)J
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, -0x8000000000000000L
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const-wide/16 v0, 0x3e8
 
     mul-long/2addr p0, v0
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     return-wide p0
 .end method
 
 .method public static newSingleThreadExecutor(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-    .registers 2
+    .locals 1
 
     .line 907
     new-instance v0, Landroidx/media3/common/util/Util$$ExternalSyntheticLambda3;
@@ -7561,7 +7561,7 @@
 .end method
 
 .method public static newSingleThreadScheduledExecutor(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
-    .registers 2
+    .locals 1
 
     .line 918
     new-instance v0, Landroidx/media3/common/util/Util$$ExternalSyntheticLambda4;
@@ -7576,15 +7576,15 @@
 .end method
 
 .method public static normalizeLanguageCode(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_4
+    :cond_0
     const/16 v0, 0x5f
 
     const/16 v1, 0x2d
@@ -7599,7 +7599,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_2
 
     const-string/jumbo v1, "und"
 
@@ -7607,16 +7607,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     move-object p0, v0
 
     .line 997
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_0
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -7635,7 +7635,7 @@
     .line 999
     sget-object v1, Landroidx/media3/common/util/Util;->languageTagReplacementMap:Ljava/util/HashMap;
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_3
 
     .line 1000
     invoke-static {}, Landroidx/media3/common/util/Util;->createIsoLanguageReplacementMap()Ljava/util/HashMap;
@@ -7645,7 +7645,7 @@
     sput-object v1, Landroidx/media3/common/util/Util;->languageTagReplacementMap:Ljava/util/HashMap;
 
     .line 1002
-    :cond_34
+    :cond_3
     sget-object v1, Landroidx/media3/common/util/Util;->languageTagReplacementMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7654,7 +7654,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_4
 
     .line 1004
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7684,7 +7684,7 @@
 
     move-object v0, v1
 
-    :cond_58
+    :cond_4
     const-string v1, "no"
 
     .line 1008
@@ -7692,7 +7692,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_71
+    if-nez v1, :cond_5
 
     const-string v1, "i"
 
@@ -7700,7 +7700,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_71
+    if-nez v1, :cond_5
 
     const-string/jumbo v1, "zh"
 
@@ -7708,20 +7708,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_6
 
     .line 1009
-    :cond_71
+    :cond_5
     invoke-static {p0}, Landroidx/media3/common/util/Util;->maybeReplaceLegacyLanguageTags(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    :cond_75
+    :cond_6
     return-object p0
 .end method
 
 .method public static nullSafeArrayAppend([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -7753,7 +7753,7 @@
 .end method
 
 .method public static nullSafeArrayConcatenation([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -7786,7 +7786,7 @@
 .end method
 
 .method public static nullSafeArrayCopy([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -7798,16 +7798,16 @@
     .line 630
     array-length v0, p0
 
-    if-gt p1, v0, :cond_5
+    if-gt p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_6
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 631
@@ -7819,7 +7819,7 @@
 .end method
 
 .method public static nullSafeArrayCopyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -7832,30 +7832,30 @@
 
     const/4 v1, 0x0
 
-    if-ltz p1, :cond_6
+    if-ltz p1, :cond_0
 
     move v2, v0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v2, v1
 
     .line 645
-    :goto_7
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 646
     array-length v2, p0
 
-    if-gt p2, v2, :cond_e
+    if-gt p2, v2, :cond_1
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_e
+    :cond_1
     move v0, v1
 
-    :goto_f
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 647
@@ -7867,7 +7867,7 @@
 .end method
 
 .method public static nullSafeListToArray(Ljava/util/List;[Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -7885,16 +7885,16 @@
 
     array-length v1, p1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 697
@@ -7904,7 +7904,7 @@
 .end method
 
 .method public static parseXsDateTime(Ljava/lang/String;)J
-    .registers 11
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -7923,7 +7923,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d3
+    if-eqz v1, :cond_5
 
     const/16 p0, 0x9
 
@@ -7934,12 +7934,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 1676
-    :cond_16
+    :cond_0
     invoke-virtual {v0, p0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
@@ -7950,11 +7950,11 @@
 
     move-result p0
 
-    if-eqz p0, :cond_23
+    if-eqz p0, :cond_1
 
-    goto :goto_4b
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     const/16 p0, 0xc
 
     .line 1680
@@ -7993,13 +7993,13 @@
 
     move-result p0
 
-    if-eqz p0, :cond_4b
+    if-eqz p0, :cond_2
 
     mul-int/lit8 v2, v2, -0x1
 
     .line 1686
-    :cond_4b
-    :goto_4b
+    :cond_2
+    :goto_0
     new-instance p0, Ljava/util/GregorianCalendar;
 
     const-string v1, "GMT"
@@ -8097,7 +8097,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_c6
+    if-nez v4, :cond_3
 
     .line 1698
     new-instance v4, Ljava/math/BigDecimal;
@@ -8136,12 +8136,12 @@
     invoke-virtual {p0, v1, v0}, Ljava/util/Calendar;->set(II)V
 
     .line 1703
-    :cond_c6
+    :cond_3
     invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v0
 
-    if-eqz v2, :cond_d2
+    if-eqz v2, :cond_4
 
     int-to-long v2, v2
 
@@ -8151,11 +8151,11 @@
 
     sub-long/2addr v0, v2
 
-    :cond_d2
+    :cond_4
     return-wide v0
 
     .line 1668
-    :cond_d3
+    :cond_5
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Invalid date/time format: "
@@ -8180,7 +8180,7 @@
 .end method
 
 .method public static parseXsDuration(Ljava/lang/String;)J
-    .registers 15
+    .locals 14
 
     .line 1629
     sget-object v0, Landroidx/media3/common/util/Util;->XS_DURATION_PATTERN:Ljava/util/regex/Pattern;
@@ -8198,7 +8198,7 @@
 
     const-wide v4, 0x40ac200000000000L    # 3600.0
 
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_7
 
     const/4 p0, 0x1
 
@@ -8222,7 +8222,7 @@
 
     const-wide/16 v6, 0x0
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_0
 
     .line 1635
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -8233,12 +8233,12 @@
 
     mul-double/2addr v8, v10
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     move-wide v8, v6
 
-    :goto_35
+    :goto_0
     const/4 v1, 0x5
 
     .line 1636
@@ -8246,7 +8246,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_1
 
     .line 1637
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -8257,12 +8257,12 @@
 
     mul-double/2addr v10, v12
 
-    goto :goto_48
+    goto :goto_1
 
-    :cond_47
+    :cond_1
     move-wide v10, v6
 
-    :goto_48
+    :goto_1
     add-double/2addr v8, v10
 
     const/4 v1, 0x7
@@ -8272,7 +8272,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_2
 
     .line 1639
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -8283,12 +8283,12 @@
 
     mul-double/2addr v10, v12
 
-    goto :goto_5c
+    goto :goto_2
 
-    :cond_5b
+    :cond_2
     move-wide v10, v6
 
-    :goto_5c
+    :goto_2
     add-double/2addr v8, v10
 
     const/16 v1, 0xa
@@ -8298,7 +8298,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_3
 
     .line 1641
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -8307,12 +8307,12 @@
 
     mul-double/2addr v10, v4
 
-    goto :goto_6c
+    goto :goto_3
 
-    :cond_6b
+    :cond_3
     move-wide v10, v6
 
-    :goto_6c
+    :goto_3
     add-double/2addr v8, v10
 
     const/16 v1, 0xc
@@ -8322,7 +8322,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_7d
+    if-eqz v1, :cond_4
 
     .line 1643
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -8333,12 +8333,12 @@
 
     mul-double/2addr v4, v10
 
-    goto :goto_7e
+    goto :goto_4
 
-    :cond_7d
+    :cond_4
     move-wide v4, v6
 
-    :goto_7e
+    :goto_4
     add-double/2addr v8, v4
 
     const/16 v1, 0xe
@@ -8348,29 +8348,29 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8b
+    if-eqz v0, :cond_5
 
     .line 1645
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v6
 
-    :cond_8b
+    :cond_5
     add-double/2addr v8, v6
 
     mul-double/2addr v8, v2
 
     double-to-long v0, v8
 
-    if-eqz p0, :cond_91
+    if-eqz p0, :cond_6
 
     neg-long v0, v0
 
-    :cond_91
+    :cond_6
     return-wide v0
 
     .line 1649
-    :cond_92
+    :cond_7
     invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v0
@@ -8385,7 +8385,7 @@
 .end method
 
 .method public static postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
-    .registers 4
+    .locals 2
 
     .line 789
     invoke-virtual {p0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -8401,14 +8401,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
     .line 793
-    :cond_10
+    :cond_0
     invoke-virtual {p0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -8417,7 +8417,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     .line 794
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -8427,7 +8427,7 @@
     return p0
 
     .line 797
-    :cond_1f
+    :cond_1
     invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     move-result p0
@@ -8436,7 +8436,7 @@
 .end method
 
 .method public static postOrRunWithCompletion(Landroid/os/Handler;Ljava/lang/Runnable;Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -8466,43 +8466,43 @@
 .end method
 
 .method public static readBoolean(Landroid/os/Parcel;)Z
-    .registers 1
+    .locals 0
 
     .line 947
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static recursiveDelete(Ljava/io/File;)V
-    .registers 5
+    .locals 4
 
     .line 2795
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 2797
     array-length v1, v0
 
     const/4 v2, 0x0
 
-    :goto_8
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -8511,24 +8511,24 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 2801
-    :cond_12
+    :cond_0
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
     return-void
 .end method
 
 .method public static registerReceiverNotExported(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-    .registers 5
+    .locals 2
 
     .line 260
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-ge v0, v1, :cond_b
+    if-ge v0, v1, :cond_0
 
     .line 261
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
@@ -8537,7 +8537,7 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x4
 
     .line 263
@@ -8549,7 +8549,7 @@
 .end method
 
 .method public static removeRange(Ljava/util/List;II)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -8560,18 +8560,18 @@
         }
     .end annotation
 
-    if-ltz p1, :cond_14
+    if-ltz p1, :cond_1
 
     .line 591
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-gt p2, v0, :cond_14
+    if-gt p2, v0, :cond_1
 
-    if-gt p1, p2, :cond_14
+    if-gt p1, p2, :cond_1
 
-    if-eq p1, p2, :cond_13
+    if-eq p1, p2, :cond_0
 
     .line 595
     invoke-interface {p0, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
@@ -8580,11 +8580,11 @@
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    :cond_13
+    :cond_0
     return-void
 
     .line 592
-    :cond_14
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -8593,7 +8593,7 @@
 .end method
 
 .method private static requestExternalStoragePermission(Landroid/app/Activity;)Z
-    .registers 4
+    .locals 3
 
     const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
 
@@ -8604,7 +8604,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 3699
     filled-new-array {v0}, [Ljava/lang/String;
@@ -8617,12 +8617,12 @@
 
     return p0
 
-    :cond_12
+    :cond_0
     return v2
 .end method
 
 .method private static requestReadMediaPermissions(Landroid/app/Activity;)Z
-    .registers 6
+    .locals 5
 
     const-string v0, "android.permission.READ_MEDIA_AUDIO"
 
@@ -8637,30 +8637,30 @@
 
     const-string v4, "android.permission.READ_MEDIA_IMAGES"
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1
 
     .line 3710
     invoke-virtual {p0, v3}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1
 
     .line 3712
     invoke-virtual {p0, v4}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return v2
 
     .line 3714
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     filled-new-array {v0, v4, v3}, [Ljava/lang/String;
 
     move-result-object v0
@@ -8673,7 +8673,7 @@
 .end method
 
 .method public static sampleCountToDurationUs(JI)J
-    .registers 10
+    .locals 7
 
     const-wide/32 v2, 0xf4240
 
@@ -8692,7 +8692,7 @@
 .end method
 
 .method public static scaleLargeTimestamp(JJJ)J
-    .registers 13
+    .locals 7
 
     .line 1912
     sget-object v6, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
@@ -8711,7 +8711,7 @@
 .end method
 
 .method public static scaleLargeTimestamps(Ljava/util/List;JJ)[J
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -8738,7 +8738,7 @@
 .end method
 
 .method public static scaleLargeTimestampsInPlace([JJJ)V
-    .registers 11
+    .locals 6
 
     .line 1937
     sget-object v5, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
@@ -8755,31 +8755,31 @@
 .end method
 
 .method public static scaleLargeValue(JJJLjava/math/RoundingMode;)J
-    .registers 12
+    .locals 5
 
     const-wide/16 v0, 0x0
 
     cmp-long v2, p0, v0
 
-    if-eqz v2, :cond_60
+    if-eqz v2, :cond_5
 
     cmp-long v2, p2, v0
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
-    goto :goto_60
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     cmp-long v2, p4, p2
 
-    if-ltz v2, :cond_20
+    if-ltz v2, :cond_1
 
     .line 1734
     rem-long v3, p4, p2
 
     cmp-long v3, v3, v0
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_1
 
     .line 1735
     sget-object v0, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -8795,15 +8795,15 @@
 
     return-wide p0
 
-    :cond_20
-    if-gez v2, :cond_33
+    :cond_1
+    if-gez v2, :cond_2
 
     .line 1737
     rem-long v2, p2, p4
 
     cmp-long v2, v2, v0
 
-    if-nez v2, :cond_33
+    if-nez v2, :cond_2
 
     .line 1738
     sget-object p6, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -8819,17 +8819,17 @@
 
     return-wide p0
 
-    :cond_33
+    :cond_2
     cmp-long v2, p4, p0
 
-    if-ltz v2, :cond_48
+    if-ltz v2, :cond_3
 
     .line 1740
     rem-long v3, p4, p0
 
     cmp-long v3, v3, v0
 
-    if-nez v3, :cond_48
+    if-nez v3, :cond_3
 
     .line 1741
     sget-object v0, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -8845,15 +8845,15 @@
 
     return-wide p0
 
-    :cond_48
-    if-gez v2, :cond_5b
+    :cond_3
+    if-gez v2, :cond_4
 
     .line 1743
     rem-long v2, p0, p4
 
     cmp-long v0, v2, v0
 
-    if-nez v0, :cond_5b
+    if-nez v0, :cond_4
 
     .line 1744
     sget-object p6, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -8870,20 +8870,20 @@
     return-wide p0
 
     .line 1747
-    :cond_5b
+    :cond_4
     invoke-static/range {p0 .. p6}, Landroidx/media3/common/util/Util;->scaleLargeValueFallback(JJJLjava/math/RoundingMode;)J
 
     move-result-wide p0
 
     return-wide p0
 
-    :cond_60
-    :goto_60
+    :cond_5
+    :goto_0
     return-wide v0
 .end method
 
 .method private static scaleLargeValueFallback(JJJLjava/math/RoundingMode;)J
-    .registers 16
+    .locals 9
 
     .line 1861
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/math/LongMath;->saturatedMultiply(JJ)J
@@ -8896,11 +8896,11 @@
 
     const-wide/high16 v5, -0x8000000000000000L
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_0
 
     cmp-long v4, v0, v5
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_0
 
     .line 1863
     invoke-static {v0, v1, p4, p5, p6}, Lcom/google/common/math/LongMath;->divide(JJLjava/math/RoundingMode;)J
@@ -8910,7 +8910,7 @@
     return-wide p0
 
     .line 1868
-    :cond_18
+    :cond_0
     invoke-static {p2, p3}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide v0
@@ -8975,11 +8975,11 @@
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_59
+    if-eqz v4, :cond_1
 
     cmp-long v4, v0, v5
 
-    if-eqz v4, :cond_59
+    if-eqz v4, :cond_1
 
     .line 1882
     invoke-static {v0, v1, p4, p5, p6}, Lcom/google/common/math/LongMath;->divide(JJLjava/math/RoundingMode;)J
@@ -8988,7 +8988,7 @@
 
     return-wide p0
 
-    :cond_59
+    :cond_1
     long-to-double p2, p2
 
     long-to-double p4, p4
@@ -9003,21 +9003,21 @@
 
     cmpl-double p2, p0, p2
 
-    if-lez p2, :cond_65
+    if-lez p2, :cond_2
 
     return-wide v2
 
-    :cond_65
+    :cond_2
     const-wide/high16 p2, -0x3c20000000000000L    # -9.223372036854776E18
 
     cmpg-double p2, p0, p2
 
-    if-gez p2, :cond_6c
+    if-gez p2, :cond_3
 
     return-wide v5
 
     .line 1893
-    :cond_6c
+    :cond_3
     invoke-static {p0, p1, p6}, Lcom/google/common/math/DoubleMath;->roundToLong(DLjava/math/RoundingMode;)J
 
     move-result-wide p0
@@ -9026,7 +9026,7 @@
 .end method
 
 .method public static scaleLargeValues(Ljava/util/List;JJLjava/math/RoundingMode;)[J
-    .registers 24
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -9057,23 +9057,23 @@
 
     cmp-long v1, v8, v15
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     return-object v14
 
-    :cond_15
+    :cond_0
     cmp-long v1, v10, v8
 
     const/4 v2, 0x0
 
-    if-ltz v1, :cond_3c
+    if-ltz v1, :cond_2
 
     .line 1768
     rem-long v3, v10, v8
 
     cmp-long v3, v3, v15
 
-    if-nez v3, :cond_3c
+    if-nez v3, :cond_2
 
     .line 1769
     sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9082,8 +9082,8 @@
 
     move-result-wide v3
 
-    :goto_26
-    if-ge v2, v13, :cond_3b
+    :goto_0
+    if-ge v2, v13, :cond_1
 
     .line 1771
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -9104,20 +9104,20 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_3b
+    :cond_1
     return-object v14
 
-    :cond_3c
-    if-gez v1, :cond_60
+    :cond_2
+    if-gez v1, :cond_4
 
     .line 1774
     rem-long v3, v8, v10
 
     cmp-long v1, v3, v15
 
-    if-nez v1, :cond_60
+    if-nez v1, :cond_4
 
     .line 1775
     sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9126,8 +9126,8 @@
 
     move-result-wide v3
 
-    :goto_4a
-    if-ge v2, v13, :cond_5f
+    :goto_1
+    if-ge v2, v13, :cond_3
 
     .line 1777
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -9148,16 +9148,16 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_5f
+    :cond_3
     return-object v14
 
-    :cond_60
+    :cond_4
     move v7, v2
 
-    :goto_61
-    if-ge v7, v13, :cond_b1
+    :goto_2
+    if-ge v7, v13, :cond_8
 
     .line 1782
     invoke-interface {v0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -9172,24 +9172,24 @@
 
     cmp-long v3, v1, v15
 
-    if-nez v3, :cond_74
+    if-nez v3, :cond_5
 
-    :goto_71
+    :goto_3
     move/from16 v17, v7
 
-    goto :goto_ae
+    goto :goto_4
 
-    :cond_74
+    :cond_5
     cmp-long v3, v10, v1
 
-    if-ltz v3, :cond_8b
+    if-ltz v3, :cond_6
 
     .line 1787
     rem-long v4, v10, v1
 
     cmp-long v4, v4, v15
 
-    if-nez v4, :cond_8b
+    if-nez v4, :cond_6
 
     .line 1788
     sget-object v3, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9205,17 +9205,17 @@
 
     aput-wide v1, v14, v7
 
-    goto :goto_71
+    goto :goto_3
 
-    :cond_8b
-    if-gez v3, :cond_a0
+    :cond_6
+    if-gez v3, :cond_7
 
     .line 1790
     rem-long v3, v1, v10
 
     cmp-long v3, v3, v15
 
-    if-nez v3, :cond_a0
+    if-nez v3, :cond_7
 
     .line 1791
     sget-object v3, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9231,9 +9231,9 @@
 
     aput-wide v1, v14, v7
 
-    goto :goto_71
+    goto :goto_3
 
-    :cond_a0
+    :cond_7
     move-wide/from16 v3, p1
 
     move-wide/from16 v5, p3
@@ -9249,17 +9249,17 @@
 
     aput-wide v1, v14, v17
 
-    :goto_ae
+    :goto_4
     add-int/lit8 v7, v17, 0x1
 
-    goto :goto_61
+    goto :goto_2
 
-    :cond_b1
+    :cond_8
     return-object v14
 .end method
 
 .method public static scaleLargeValuesInPlace([JJJLjava/math/RoundingMode;)V
-    .registers 22
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -9273,26 +9273,26 @@
 
     cmp-long v1, v8, v13
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 1814
     invoke-static {v0, v13, v14}, Ljava/util/Arrays;->fill([JJ)V
 
     return-void
 
-    :cond_12
+    :cond_0
     cmp-long v1, v10, v8
 
     const/4 v2, 0x0
 
-    if-ltz v1, :cond_31
+    if-ltz v1, :cond_1
 
     .line 1817
     rem-long v3, v10, v8
 
     cmp-long v3, v3, v13
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_1
 
     .line 1818
     sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9302,10 +9302,10 @@
     move-result-wide v3
 
     .line 1819
-    :goto_23
+    :goto_0
     array-length v1, v0
 
-    if-ge v2, v1, :cond_95
+    if-ge v2, v1, :cond_6
 
     .line 1820
     aget-wide v5, v0, v2
@@ -9318,17 +9318,17 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_31
-    if-gez v1, :cond_4d
+    :cond_1
+    if-gez v1, :cond_2
 
     .line 1822
     rem-long v3, v8, v10
 
     cmp-long v1, v3, v13
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_2
 
     .line 1823
     sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9338,10 +9338,10 @@
     move-result-wide v3
 
     .line 1824
-    :goto_3f
+    :goto_1
     array-length v1, v0
 
-    if-ge v2, v1, :cond_95
+    if-ge v2, v1, :cond_6
 
     .line 1825
     aget-wide v5, v0, v2
@@ -9354,37 +9354,37 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_4d
+    :cond_2
     move v15, v2
 
     .line 1828
-    :goto_4e
+    :goto_2
     array-length v1, v0
 
-    if-ge v15, v1, :cond_95
+    if-ge v15, v1, :cond_6
 
     .line 1829
     aget-wide v1, v0, v15
 
     cmp-long v3, v1, v13
 
-    if-nez v3, :cond_58
+    if-nez v3, :cond_3
 
-    goto :goto_92
+    goto :goto_3
 
-    :cond_58
+    :cond_3
     cmp-long v3, v10, v1
 
-    if-ltz v3, :cond_6f
+    if-ltz v3, :cond_4
 
     .line 1832
     rem-long v3, v10, v1
 
     cmp-long v3, v3, v13
 
-    if-nez v3, :cond_6f
+    if-nez v3, :cond_4
 
     .line 1833
     sget-object v3, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9400,19 +9400,19 @@
 
     aput-wide v1, v0, v15
 
-    goto :goto_92
+    goto :goto_3
 
-    :cond_6f
+    :cond_4
     cmp-long v3, v10, v1
 
-    if-gez v3, :cond_86
+    if-gez v3, :cond_5
 
     .line 1835
     rem-long v3, v1, v10
 
     cmp-long v3, v3, v13
 
-    if-nez v3, :cond_86
+    if-nez v3, :cond_5
 
     .line 1836
     sget-object v3, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
@@ -9428,9 +9428,9 @@
 
     aput-wide v1, v0, v15
 
-    goto :goto_92
+    goto :goto_3
 
-    :cond_86
+    :cond_5
     move-wide/from16 v3, p1
 
     move-wide/from16 v5, p3
@@ -9444,93 +9444,93 @@
 
     aput-wide v1, v0, v15
 
-    :goto_92
+    :goto_3
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_4e
+    goto :goto_2
 
-    :cond_95
+    :cond_6
     return-void
 .end method
 
 .method public static setForegroundServiceNotification(Landroid/app/Service;ILandroid/app/Notification;ILjava/lang/String;)V
-    .registers 7
+    .locals 2
 
     .line 303
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 304
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/media3/common/util/Util$Api29;->startForeground(Landroid/app/Service;ILandroid/app/Notification;ILjava/lang/String;)V
 
-    goto :goto_d
+    goto :goto_0
 
     .line 311
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 
-    :goto_d
+    :goto_0
     return-void
 .end method
 
 .method private static shouldEscapeCharacter(C)Z
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x22
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x25
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x2a
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x2f
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x3a
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x3c
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x5c
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x7c
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x3e
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/16 v0, 0x3f
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_2a
+    :cond_0
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static shouldShowPlayButton(Landroidx/media3/common/Player;)Z
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "#1"
@@ -9549,7 +9549,7 @@
 .end method
 
 .method public static shouldShowPlayButton(Landroidx/media3/common/Player;Z)Z
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
         expression = {
             "#1"
@@ -9559,21 +9559,21 @@
 
     const/4 v0, 0x1
 
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_1
 
     .line 3546
     invoke-interface {p0}, Landroidx/media3/common/Player;->getPlayWhenReady()Z
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 3547
     invoke-interface {p0}, Landroidx/media3/common/Player;->getPlaybackState()I
 
     move-result v1
 
-    if-eq v1, v0, :cond_20
+    if-eq v1, v0, :cond_1
 
     .line 3548
     invoke-interface {p0}, Landroidx/media3/common/Player;->getPlaybackState()I
@@ -9582,29 +9582,29 @@
 
     const/4 v2, 0x4
 
-    if-eq v1, v2, :cond_20
+    if-eq v1, v2, :cond_1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 3550
     invoke-interface {p0}, Landroidx/media3/common/Player;->getPlaybackSuppressionReason()I
 
     move-result p0
 
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 v0, 0x0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     return v0
 .end method
 
 .method public static sneakyThrow(Ljava/lang/Throwable;)V
-    .registers 1
+    .locals 0
 
     .line 2784
     invoke-static {p0}, Landroidx/media3/common/util/Util;->sneakyThrowInternal(Ljava/lang/Throwable;)V
@@ -9613,7 +9613,7 @@
 .end method
 
 .method private static sneakyThrowInternal(Ljava/lang/Throwable;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -9635,7 +9635,7 @@
 .end method
 
 .method public static split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -9648,7 +9648,7 @@
 .end method
 
 .method public static splitAtFirst(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -9661,14 +9661,14 @@
 .end method
 
 .method public static splitCodecs(Ljava/lang/String;)[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 2124
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x0
 
@@ -9677,7 +9677,7 @@
     return-object p0
 
     .line 2127
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p0
@@ -9692,14 +9692,14 @@
 .end method
 
 .method public static startForegroundService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
-    .registers 4
+    .locals 2
 
     .line 278
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 279
     invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
@@ -9709,7 +9709,7 @@
     return-object p0
 
     .line 281
-    :cond_b
+    :cond_0
     invoke-virtual {p0, p1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
     move-result-object p0
@@ -9718,7 +9718,7 @@
 .end method
 
 .method public static subtractWithOverflowDefault(JJJ)J
-    .registers 8
+    .locals 2
 
     sub-long v0, p0, p2
 
@@ -9732,16 +9732,16 @@
 
     cmp-long p0, p0, p2
 
-    if-gez p0, :cond_c
+    if-gez p0, :cond_0
 
     return-wide p4
 
-    :cond_c
+    :cond_0
     return-wide v0
 .end method
 
 .method public static varargs sum([J)J
-    .registers 7
+    .locals 6
 
     .line 3484
     array-length v0, p0
@@ -9750,8 +9750,8 @@
 
     const/4 v3, 0x0
 
-    :goto_4
-    if-ge v3, v0, :cond_c
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     aget-wide v4, p0, v3
 
@@ -9759,14 +9759,14 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     return-wide v1
 .end method
 
 .method public static tableExists(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -9789,19 +9789,19 @@
 
     cmp-long p0, p0, v3
 
-    if-lez p0, :cond_15
+    if-lez p0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v0, v2
 
-    :goto_16
+    :goto_0
     return v0
 .end method
 
 .method public static toByteArray(F)[B
-    .registers 1
+    .locals 0
 
     .line 239
     invoke-static {p0}, Ljava/lang/Float;->floatToIntBits(F)I
@@ -9816,7 +9816,7 @@
 .end method
 
 .method public static toByteArray(Ljava/io/InputStream;)[B
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -9835,7 +9835,7 @@
 .end method
 
 .method public static varargs toByteArray([I)[B
-    .registers 8
+    .locals 7
 
     .line 225
     array-length v0, p0
@@ -9851,8 +9851,8 @@
 
     move v3, v2
 
-    :goto_8
-    if-ge v2, v1, :cond_29
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget v4, p0, v2
 
@@ -9892,14 +9892,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     return-object v0
 .end method
 
 .method public static toHexString([B)Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 2040
     new-instance v0, Ljava/lang/StringBuilder;
@@ -9913,10 +9913,10 @@
     const/4 v1, 0x0
 
     .line 2041
-    :goto_9
+    :goto_0
     array-length v2, p0
 
-    if-ge v1, v2, :cond_2a
+    if-ge v1, v2, :cond_0
 
     .line 2042
     aget-byte v2, p0, v1
@@ -9949,10 +9949,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 2046
-    :cond_2a
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -9961,7 +9961,7 @@
 .end method
 
 .method public static toLong(II)J
-    .registers 4
+    .locals 2
 
     .line 2010
     invoke-static {p0}, Landroidx/media3/common/util/Util;->toUnsignedLong(I)J
@@ -9982,7 +9982,7 @@
 .end method
 
 .method public static toUnsignedLong(I)J
-    .registers 5
+    .locals 4
 
     int-to-long v0, p0
 
@@ -9994,7 +9994,7 @@
 .end method
 
 .method public static transformFutureAsync(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/util/concurrent/AsyncFunction;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -10046,7 +10046,7 @@
 .end method
 
 .method public static unescapeFileName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 2741
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -10059,8 +10059,8 @@
 
     move v3, v2
 
-    :goto_7
-    if-ge v2, v0, :cond_16
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 2744
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -10069,21 +10069,21 @@
 
     const/16 v5, 0x25
 
-    if-ne v4, v5, :cond_13
+    if-ne v4, v5, :cond_0
 
     add-int/lit8 v3, v3, 0x1
 
-    :cond_13
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_16
-    if-nez v3, :cond_19
+    :cond_1
+    if-nez v3, :cond_2
 
     return-object p0
 
-    :cond_19
+    :cond_2
     mul-int/lit8 v2, v3, 0x2
 
     sub-int v2, v0, v2
@@ -10100,15 +10100,15 @@
 
     move-result-object v5
 
-    :goto_28
-    if-lez v3, :cond_54
+    :goto_1
+    if-lez v3, :cond_3
 
     .line 2756
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v6
 
-    if-eqz v6, :cond_54
+    if-eqz v6, :cond_3
 
     const/4 v6, 0x1
 
@@ -10149,28 +10149,28 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_54
-    if-ge v1, v0, :cond_59
+    :cond_3
+    if-ge v1, v0, :cond_4
 
     .line 2763
     invoke-virtual {v4, p0, v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
     .line 2765
-    :cond_59
+    :cond_4
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
 
     move-result p0
 
-    if-eq p0, v2, :cond_61
+    if-eq p0, v2, :cond_5
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 2768
-    :cond_61
+    :cond_5
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -10179,35 +10179,35 @@
 .end method
 
 .method public static usToMs(J)J
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, -0x8000000000000000L
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const-wide/16 v0, 0x3e8
 
     .line 1572
     div-long/2addr p0, v0
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     return-wide p0
 .end method
 
 .method public static writeBoolean(Landroid/os/Parcel;Z)V
-    .registers 2
+    .locals 0
 
     .line 959
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V

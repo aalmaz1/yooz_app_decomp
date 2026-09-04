@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 98
     new-instance v0, Ljava/util/HashSet;
@@ -162,7 +162,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 155
     invoke-static {p1}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->getDefaultMessage(I)Ljava/lang/String;
@@ -185,26 +185,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 158
     new-instance v0, Landroid/hardware/camera2/CameraAccessException;
 
     invoke-direct {v0, p1}, Landroid/hardware/camera2/CameraAccessException;-><init>(I)V
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     iput-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->mCameraAccessException:Landroid/hardware/camera2/CameraAccessException;
 
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 5
+    .locals 2
 
     .line 162
     invoke-static {p1, p2}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->getCombinedMessage(ILjava/lang/String;)Ljava/lang/String;
@@ -227,26 +227,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 165
     new-instance v0, Landroid/hardware/camera2/CameraAccessException;
 
     invoke-direct {v0, p1, p2}, Landroid/hardware/camera2/CameraAccessException;-><init>(ILjava/lang/String;)V
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     iput-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->mCameraAccessException:Landroid/hardware/camera2/CameraAccessException;
 
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 2
 
     .line 170
     invoke-static {p1, p2}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->getCombinedMessage(ILjava/lang/String;)Ljava/lang/String;
@@ -269,26 +269,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 173
     new-instance v0, Landroid/hardware/camera2/CameraAccessException;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/hardware/camera2/CameraAccessException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     iput-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->mCameraAccessException:Landroid/hardware/camera2/CameraAccessException;
 
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/Throwable;)V
-    .registers 5
+    .locals 2
 
     .line 177
     invoke-static {p1}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->getDefaultMessage(I)Ljava/lang/String;
@@ -313,7 +313,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 180
     new-instance v0, Landroid/hardware/camera2/CameraAccessException;
@@ -322,14 +322,14 @@
 
     move-object v1, v0
 
-    :cond_1c
+    :cond_0
     iput-object v1, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->mCameraAccessException:Landroid/hardware/camera2/CameraAccessException;
 
     return-void
 .end method
 
 .method private constructor <init>(Landroid/hardware/camera2/CameraAccessException;)V
-    .registers 4
+    .locals 2
 
     .line 184
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraAccessException;->getMessage()Ljava/lang/String;
@@ -356,7 +356,7 @@
 .end method
 
 .method private static getCombinedMessage(ILjava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 254
     invoke-static {p0}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->getProblemString(I)Ljava/lang/String;
@@ -394,161 +394,161 @@
 .end method
 
 .method private static getDefaultMessage(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_2b
+    if-eq p0, v0, :cond_6
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_28
+    if-eq p0, v0, :cond_5
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_25
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_22
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x5
 
-    if-eq p0, v0, :cond_1f
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x2711
 
-    if-eq p0, v0, :cond_1c
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x2712
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_19
+    :cond_0
     const-string p0, "Failed to create CameraCharacteristics."
 
     return-object p0
 
-    :cond_1c
+    :cond_1
     const-string p0, "Some API 28 devices cannot access the camera when the device is in \"Do Not Disturb\" mode. The camera will not be accessible until \"Do Not Disturb\" mode is disabled."
 
     return-object p0
 
-    :cond_1f
+    :cond_2
     const-string p0, "The system-wide limit for number of open cameras has been reached, and more camera devices cannot be opened until previous instances are closed."
 
     return-object p0
 
-    :cond_22
+    :cond_3
     const-string p0, "The camera device is in use already"
 
     return-object p0
 
-    :cond_25
+    :cond_4
     const-string p0, "The camera device is currently in the error state; no further calls to it will succeed."
 
     return-object p0
 
-    :cond_28
+    :cond_5
     const-string p0, "The camera device is removable and has been disconnected from the Android device, or the camera service has shut down the connection due to a higher-priority access request for the camera device."
 
     return-object p0
 
-    :cond_2b
+    :cond_6
     const-string p0, "The camera is disabled due to a device policy, and cannot be opened."
 
     return-object p0
 .end method
 
 .method private static getProblemString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_33
+    if-eq p0, v0, :cond_7
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_30
+    if-eq p0, v0, :cond_6
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_2d
+    if-eq p0, v0, :cond_5
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_2a
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x5
 
-    if-eq p0, v0, :cond_27
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x3e8
 
-    if-eq p0, v0, :cond_24
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x2711
 
-    if-eq p0, v0, :cond_21
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x2712
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_0
 
     const-string p0, "<UNKNOWN ERROR>"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const-string p0, "CAMERA_CHARACTERISTICS_CREATION_ERROR"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     const-string p0, "CAMERA_UNAVAILABLE_DO_NOT_DISTURB"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_24
+    :cond_2
     const-string p0, "CAMERA_DEPRECATED_HAL"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_27
+    :cond_3
     const-string p0, "MAX_CAMERAS_IN_USE"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_2a
+    :cond_4
     const-string p0, "CAMERA_IN_USE"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_2d
+    :cond_5
     const-string p0, "CAMERA_ERROR"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_30
+    :cond_6
     const-string p0, "CAMERA_DISCONNECTED"
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_33
+    :cond_7
     const-string p0, "CAMERA_DISABLED"
 
-    :goto_35
+    :goto_0
     return-object p0
 .end method
 
 .method public static toCameraAccessExceptionCompat(Landroid/hardware/camera2/CameraAccessException;)Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     .line 219
     new-instance v0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
@@ -558,7 +558,7 @@
     return-object v0
 
     .line 217
-    :cond_8
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string v0, "cameraAccessException should not be null"
@@ -571,7 +571,7 @@
 
 # virtual methods
 .method public final getReason()I
-    .registers 2
+    .locals 1
 
     .line 194
     iget v0, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->mReason:I
@@ -580,7 +580,7 @@
 .end method
 
 .method public toCameraAccessException()Landroid/hardware/camera2/CameraAccessException;
-    .registers 2
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->mCameraAccessException:Landroid/hardware/camera2/CameraAccessException;

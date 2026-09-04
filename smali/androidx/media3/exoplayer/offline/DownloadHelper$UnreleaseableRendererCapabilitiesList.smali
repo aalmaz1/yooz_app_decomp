@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>([Landroidx/media3/exoplayer/RendererCapabilities;)V
-    .registers 2
+    .locals 0
 
     .line 1099
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method synthetic constructor <init>([Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/exoplayer/offline/DownloadHelper$1;)V
-    .registers 3
+    .locals 0
 
     .line 1094
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadHelper$UnreleaseableRendererCapabilitiesList;-><init>([Landroidx/media3/exoplayer/RendererCapabilities;)V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public getRendererCapabilities()[Landroidx/media3/exoplayer/RendererCapabilities;
-    .registers 2
+    .locals 1
 
     .line 1105
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper$UnreleaseableRendererCapabilitiesList;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;
@@ -55,13 +55,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 1110
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper$UnreleaseableRendererCapabilitiesList;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;

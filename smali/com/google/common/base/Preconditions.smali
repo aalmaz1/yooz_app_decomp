@@ -10,7 +10,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 .end method
 
 .method private static badElementIndex(IILjava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -39,7 +39,7 @@
 
     const/4 v2, 0x2
 
-    if-gez p0, :cond_16
+    if-gez p0, :cond_0
 
     new-array p1, v2, [Ljava/lang/Object;
 
@@ -60,8 +60,8 @@
 
     return-object p0
 
-    :cond_16
-    if-ltz p1, :cond_30
+    :cond_0
+    if-ltz p1, :cond_1
 
     const/4 v3, 0x3
 
@@ -91,7 +91,7 @@
     return-object p0
 
     .line 1380
-    :cond_30
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -114,7 +114,7 @@
 .end method
 
 .method private static badPositionIndex(IILjava/lang/String;)Ljava/lang/String;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -134,7 +134,7 @@
 
     const/4 v2, 0x2
 
-    if-gez p0, :cond_16
+    if-gez p0, :cond_0
 
     new-array p1, v2, [Ljava/lang/Object;
 
@@ -155,8 +155,8 @@
 
     return-object p0
 
-    :cond_16
-    if-ltz p1, :cond_30
+    :cond_0
+    if-ltz p1, :cond_1
 
     const/4 v3, 0x3
 
@@ -186,7 +186,7 @@
     return-object p0
 
     .line 1425
-    :cond_30
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -209,7 +209,7 @@
 .end method
 
 .method private static badPositionIndexes(III)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -223,20 +223,20 @@
         }
     .end annotation
 
-    if-ltz p0, :cond_29
+    if-ltz p0, :cond_3
 
-    if-le p0, p2, :cond_5
+    if-le p0, p2, :cond_0
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_5
-    if-ltz p1, :cond_22
+    :cond_0
+    if-ltz p1, :cond_2
 
-    if-le p1, p2, :cond_a
+    if-le p1, p2, :cond_1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_a
+    :cond_1
     const/4 p2, 0x2
 
     new-array p2, p2, [Ljava/lang/Object;
@@ -266,8 +266,8 @@
 
     return-object p0
 
-    :cond_22
-    :goto_22
+    :cond_2
+    :goto_0
     const-string p0, "end index"
 
     .line 1455
@@ -277,8 +277,8 @@
 
     return-object p0
 
-    :cond_29
-    :goto_29
+    :cond_3
+    :goto_1
     const-string p1, "start index"
 
     .line 1452
@@ -290,7 +290,7 @@
 .end method
 
 .method public static checkArgument(Z)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -300,12 +300,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 129
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -314,7 +314,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -330,12 +330,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 143
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -348,7 +348,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;C)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -362,12 +362,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 178
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x1
@@ -392,7 +392,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;CC)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -408,12 +408,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 232
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -446,7 +446,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;CI)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -462,12 +462,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 246
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -500,7 +500,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;CJ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -516,12 +516,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 260
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -554,7 +554,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;CLjava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -574,12 +574,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 274
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -608,7 +608,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;I)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -622,12 +622,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 191
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x1
@@ -652,7 +652,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;IC)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -668,12 +668,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 288
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -706,7 +706,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;II)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -722,12 +722,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 302
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -760,7 +760,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;IJ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -776,12 +776,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 316
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -814,7 +814,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;ILjava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -834,12 +834,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 330
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -868,7 +868,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;J)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -882,12 +882,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 204
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x1
@@ -912,7 +912,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;JC)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -928,12 +928,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 344
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -966,7 +966,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;JI)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -982,12 +982,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 358
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1020,7 +1020,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;JJ)V
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1036,12 +1036,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 372
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1074,7 +1074,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;JLjava/lang/Object;)V
-    .registers 7
+    .locals 2
     .param p4    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1094,12 +1094,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 386
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1128,7 +1128,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1146,12 +1146,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 218
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x1
@@ -1172,7 +1172,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;C)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1192,12 +1192,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 400
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1226,7 +1226,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;I)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1246,12 +1246,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 414
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1280,7 +1280,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;J)V
-    .registers 7
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1300,12 +1300,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 428
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1334,7 +1334,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1358,12 +1358,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 445
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
@@ -1388,7 +1388,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1418,12 +1418,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 463
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x3
@@ -1452,7 +1452,7 @@
 .end method
 
 .method public static checkArgument(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 8
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1488,12 +1488,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 482
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x4
@@ -1526,7 +1526,7 @@
 .end method
 
 .method public static varargs checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p2    # [Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1544,12 +1544,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 165
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Strings;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -1562,7 +1562,7 @@
 .end method
 
 .method public static checkElementIndex(II)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1585,7 +1585,7 @@
 .end method
 
 .method public static checkElementIndex(IILjava/lang/String;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1599,14 +1599,14 @@
         }
     .end annotation
 
-    if-ltz p0, :cond_5
+    if-ltz p0, :cond_0
 
-    if-ge p0, p1, :cond_5
+    if-ge p0, p1, :cond_0
 
     return p0
 
     .line 1371
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-static {p0, p1, p2}, Lcom/google/common/base/Preconditions;->badElementIndex(IILjava/lang/String;)Ljava/lang/String;
@@ -1619,7 +1619,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1648,7 +1648,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1678,12 +1678,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 921
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1696,7 +1696,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;C)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1724,12 +1724,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 963
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x1
@@ -1754,7 +1754,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;CC)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1784,12 +1784,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1026
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -1822,7 +1822,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;CI)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1852,12 +1852,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1042
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -1890,7 +1890,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;CJ)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1920,12 +1920,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1058
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -1958,7 +1958,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;CLjava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -1994,12 +1994,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1074
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2028,7 +2028,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;I)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2056,12 +2056,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 978
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x1
@@ -2086,7 +2086,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;IC)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2116,12 +2116,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1090
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2154,7 +2154,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;II)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2184,12 +2184,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1106
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2222,7 +2222,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;IJ)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2252,12 +2252,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1122
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2290,7 +2290,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2326,12 +2326,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1138
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2360,7 +2360,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;J)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2388,12 +2388,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 994
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x1
@@ -2418,7 +2418,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;JC)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2448,12 +2448,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1154
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2486,7 +2486,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;JI)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2516,12 +2516,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1170
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2554,7 +2554,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;JJ)Ljava/lang/Object;
-    .registers 8
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2584,12 +2584,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1186
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2622,7 +2622,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;JLjava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2658,12 +2658,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1202
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2692,7 +2692,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2725,12 +2725,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1010
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x1
@@ -2751,7 +2751,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;C)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2786,12 +2786,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1218
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2820,7 +2820,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;I)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2855,12 +2855,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1234
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2889,7 +2889,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;J)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2924,12 +2924,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1250
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -2958,7 +2958,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -2998,12 +2998,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1269
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x2
@@ -3028,7 +3028,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -3075,12 +3075,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1289
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x3
@@ -3109,7 +3109,7 @@
 .end method
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 2
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -3163,12 +3163,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 1310
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     const/4 v0, 0x4
@@ -3201,7 +3201,7 @@
 .end method
 
 .method public static varargs checkNotNull(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -3235,12 +3235,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 947
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Strings;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -3253,7 +3253,7 @@
 .end method
 
 .method public static checkPositionIndex(II)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3276,7 +3276,7 @@
 .end method
 
 .method public static checkPositionIndex(IILjava/lang/String;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3290,14 +3290,14 @@
         }
     .end annotation
 
-    if-ltz p0, :cond_5
+    if-ltz p0, :cond_0
 
-    if-gt p0, p1, :cond_5
+    if-gt p0, p1, :cond_0
 
     return p0
 
     .line 1416
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-static {p0, p1, p2}, Lcom/google/common/base/Preconditions;->badPositionIndex(IILjava/lang/String;)Ljava/lang/String;
@@ -3310,7 +3310,7 @@
 .end method
 
 .method public static checkPositionIndexes(III)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3324,16 +3324,16 @@
         }
     .end annotation
 
-    if-ltz p0, :cond_7
+    if-ltz p0, :cond_0
 
-    if-lt p1, p0, :cond_7
+    if-lt p1, p0, :cond_0
 
-    if-gt p1, p2, :cond_7
+    if-gt p1, p2, :cond_0
 
     return-void
 
     .line 1446
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-static {p0, p1, p2}, Lcom/google/common/base/Preconditions;->badPositionIndexes(III)Ljava/lang/String;
@@ -3346,7 +3346,7 @@
 .end method
 
 .method public static checkState(Z)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -3356,12 +3356,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 496
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -3370,7 +3370,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -3386,12 +3386,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 512
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -3404,7 +3404,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;C)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3418,12 +3418,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 558
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x1
@@ -3448,7 +3448,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;CC)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3464,12 +3464,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 615
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3502,7 +3502,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;CI)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3518,12 +3518,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 629
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3556,7 +3556,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;CJ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3572,12 +3572,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 643
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3610,7 +3610,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;CLjava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -3630,12 +3630,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 658
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3664,7 +3664,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;I)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3678,12 +3678,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 572
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x1
@@ -3708,7 +3708,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;IC)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3724,12 +3724,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 672
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3762,7 +3762,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;II)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3778,12 +3778,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 686
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3816,7 +3816,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;IJ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3832,12 +3832,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 700
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3870,7 +3870,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;ILjava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -3890,12 +3890,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 715
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -3924,7 +3924,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;J)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3938,12 +3938,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 586
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x1
@@ -3968,7 +3968,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;JC)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -3984,12 +3984,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 729
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4022,7 +4022,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;JI)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -4038,12 +4038,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 743
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4076,7 +4076,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;JJ)V
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -4092,12 +4092,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 757
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4130,7 +4130,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;JLjava/lang/Object;)V
-    .registers 7
+    .locals 2
     .param p4    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4150,12 +4150,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 772
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4184,7 +4184,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4202,12 +4202,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 601
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x1
@@ -4228,7 +4228,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;C)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4248,12 +4248,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 787
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4282,7 +4282,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;I)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4302,12 +4302,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 802
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4336,7 +4336,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;J)V
-    .registers 7
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4356,12 +4356,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 817
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4390,7 +4390,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4414,12 +4414,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 835
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x2
@@ -4444,7 +4444,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4474,12 +4474,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 854
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x3
@@ -4508,7 +4508,7 @@
 .end method
 
 .method public static checkState(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 8
+    .locals 2
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4544,12 +4544,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 874
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const/4 v0, 0x4
@@ -4582,7 +4582,7 @@
 .end method
 
 .method public static varargs checkState(ZLjava/lang/String;[Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p1    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -4604,12 +4604,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 544
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Strings;->lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -27,7 +27,7 @@
 .end method
 
 .method static of(ILjava/lang/String;)Landroidx/camera/video/Quality$ConstantQuality;
-    .registers 3
+    .locals 1
 
     .line 110
     new-instance v0, Landroidx/camera/video/AutoValue_Quality_ConstantQuality;

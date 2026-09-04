@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 133
     invoke-direct {p0}, Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;-><init>()V
@@ -41,25 +41,25 @@
 
 # virtual methods
 .method build()Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;
-    .registers 13
+    .locals 12
 
     .line 177
     iget-object v0, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->fileSizeLimit:Ljava/lang/Long;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " fileSizeLimit"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 180
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->durationLimitMillis:Ljava/lang/Long;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 181
     new-instance v1, Ljava/lang/StringBuilder;
@@ -81,10 +81,10 @@
     move-result-object v0
 
     .line 183
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->contentResolver:Landroid/content/ContentResolver;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 184
     new-instance v1, Ljava/lang/StringBuilder;
@@ -106,10 +106,10 @@
     move-result-object v0
 
     .line 186
-    :cond_37
+    :cond_2
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->collectionUri:Landroid/net/Uri;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_3
 
     .line 187
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,10 +131,10 @@
     move-result-object v0
 
     .line 189
-    :cond_4e
+    :cond_3
     iget-object v1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->contentValues:Landroid/content/ContentValues;
 
-    if-nez v1, :cond_65
+    if-nez v1, :cond_4
 
     .line 190
     new-instance v1, Ljava/lang/StringBuilder;
@@ -156,12 +156,12 @@
     move-result-object v0
 
     .line 192
-    :cond_65
+    :cond_4
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_87
+    if-eqz v1, :cond_5
 
     .line 195
     new-instance v0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal;
@@ -197,7 +197,7 @@
     return-object v0
 
     .line 193
-    :cond_87
+    :cond_5
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -220,7 +220,7 @@
 .end method
 
 .method bridge synthetic build()Landroidx/camera/video/OutputOptions$OutputOptionsInternal;
-    .registers 2
+    .locals 1
 
     .line 126
     invoke-virtual {p0}, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->build()Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal;
@@ -231,9 +231,9 @@
 .end method
 
 .method setCollectionUri(Landroid/net/Uri;)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 163
     iput-object p1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->collectionUri:Landroid/net/Uri;
@@ -241,7 +241,7 @@
     return-object p0
 
     .line 161
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null collectionUri"
@@ -252,9 +252,9 @@
 .end method
 
 .method setContentResolver(Landroid/content/ContentResolver;)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 155
     iput-object p1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->contentResolver:Landroid/content/ContentResolver;
@@ -262,7 +262,7 @@
     return-object p0
 
     .line 153
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null contentResolver"
@@ -273,9 +273,9 @@
 .end method
 
 .method setContentValues(Landroid/content/ContentValues;)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 171
     iput-object p1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->contentValues:Landroid/content/ContentValues;
@@ -283,7 +283,7 @@
     return-object p0
 
     .line 169
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null contentValues"
@@ -294,7 +294,7 @@
 .end method
 
 .method setDurationLimitMillis(J)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
-    .registers 3
+    .locals 0
 
     .line 142
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -307,7 +307,7 @@
 .end method
 
 .method bridge synthetic setDurationLimitMillis(J)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 126
     invoke-virtual {p0, p1, p2}, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->setDurationLimitMillis(J)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
@@ -318,7 +318,7 @@
 .end method
 
 .method setFileSizeLimit(J)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
-    .registers 3
+    .locals 0
 
     .line 137
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -331,7 +331,7 @@
 .end method
 
 .method bridge synthetic setFileSizeLimit(J)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 126
     invoke-virtual {p0, p1, p2}, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->setFileSizeLimit(J)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
@@ -342,7 +342,7 @@
 .end method
 
 .method setLocation(Landroid/location/Location;)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;
-    .registers 2
+    .locals 0
 
     .line 147
     iput-object p1, p0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->location:Landroid/location/Location;
@@ -351,7 +351,7 @@
 .end method
 
 .method bridge synthetic setLocation(Landroid/location/Location;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 126
     invoke-virtual {p0, p1}, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;->setLocation(Landroid/location/Location;)Landroidx/camera/video/MediaStoreOutputOptions$MediaStoreOutputOptionsInternal$Builder;

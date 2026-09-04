@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 923
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getShortcutInfoWithLowestRank(Ljava/util/List;)Ljava/lang/String;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,13 +45,13 @@
 
     const/4 v1, 0x0
 
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -64,7 +64,7 @@
 
     move-result v3
 
-    if-le v3, v0, :cond_6
+    if-le v3, v0, :cond_0
 
     .line 929
     invoke-virtual {v2}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
@@ -82,8 +82,8 @@
 
     move v0, v4
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     return-object v1
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 41
     new-instance v0, Landroidx/media3/extractor/text/SubtitleParser$Factory$1;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 374
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static of(II)Landroidx/camera/core/imagecapture/CaptureNode$Out;
-    .registers 5
+    .locals 3
 
     .line 402
     new-instance v0, Landroidx/camera/core/imagecapture/AutoValue_CaptureNode_Out;

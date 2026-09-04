@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static buildCollectionItemInfoCompat(ZIIIIZLjava/lang/String;Ljava/lang/String;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-    .registers 10
+    .locals 2
 
     .line 5229
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
@@ -84,7 +84,7 @@
 .end method
 
 .method public static getChild(Landroid/view/accessibility/AccessibilityNodeInfo;II)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-    .registers 3
+    .locals 0
 
     .line 5244
     invoke-virtual {p0, p1, p2}, Landroid/view/accessibility/AccessibilityNodeInfo;->getChild(II)Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -99,7 +99,7 @@
 .end method
 
 .method public static getCollectionItemColumnTitle(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 5273
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -112,7 +112,7 @@
 .end method
 
 .method public static getCollectionItemRowTitle(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 5267
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -125,7 +125,7 @@
 .end method
 
 .method public static getExtraRenderingInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroid/view/accessibility/AccessibilityNodeInfo$ExtraRenderingInfo;
-    .registers 1
+    .locals 0
 
     .line 5212
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getExtraRenderingInfo()Landroid/view/accessibility/AccessibilityNodeInfo$ExtraRenderingInfo;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static getParent(Landroid/view/accessibility/AccessibilityNodeInfo;I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-    .registers 2
+    .locals 0
 
     .line 5251
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getParent(I)Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -151,7 +151,7 @@
 .end method
 
 .method public static getUniqueId(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 5257
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getUniqueId()Ljava/lang/String;
@@ -162,7 +162,7 @@
 .end method
 
 .method public static isTextSelectable(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 5217
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isTextSelectable()Z
@@ -173,7 +173,7 @@
 .end method
 
 .method public static setTextSelectable(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    .locals 0
 
     .line 5222
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setTextSelectable(Z)V
@@ -182,7 +182,7 @@
 .end method
 
 .method public static setUniqueId(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 5262
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setUniqueId(Ljava/lang/String;)V

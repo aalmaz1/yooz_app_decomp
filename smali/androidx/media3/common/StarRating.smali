@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -45,21 +45,21 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 4
+    .locals 2
 
     .line 42
     invoke-direct {p0}, Landroidx/media3/common/Rating;-><init>()V
 
-    if-lez p1, :cond_7
+    if-lez p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     const-string v1, "maxStars must be a positive integer"
 
     .line 43
@@ -77,7 +77,7 @@
 .end method
 
 .method public constructor <init>(IF)V
-    .registers 7
+    .locals 4
 
     .line 58
     invoke-direct {p0}, Landroidx/media3/common/Rating;-><init>()V
@@ -86,16 +86,16 @@
 
     const/4 v1, 0x0
 
-    if-lez p1, :cond_9
+    if-lez p1, :cond_0
 
     move v2, v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v2, v1
 
-    :goto_a
+    :goto_0
     const-string v3, "maxStars must be a positive integer"
 
     .line 59
@@ -105,20 +105,20 @@
 
     cmpl-float v2, p2, v2
 
-    if-ltz v2, :cond_1a
+    if-ltz v2, :cond_1
 
     int-to-float v2, p1
 
     cmpg-float v2, p2, v2
 
-    if-gtz v2, :cond_1a
+    if-gtz v2, :cond_1
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move v0, v1
 
-    :goto_1b
+    :goto_1
     const-string v1, "starRating is out of range [0, maxStars]"
 
     .line 60
@@ -134,7 +134,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/StarRating;
-    .registers 4
+    .locals 3
 
     .line 118
     sget-object v0, Landroidx/media3/common/StarRating;->FIELD_RATING_TYPE:Ljava/lang/String;
@@ -147,16 +147,16 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 119
@@ -179,43 +179,43 @@
 
     cmpl-float v1, p0, v2
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     .line 122
     new-instance p0, Landroidx/media3/common/StarRating;
 
     invoke-direct {p0, v0}, Landroidx/media3/common/StarRating;-><init>(I)V
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 123
-    :cond_29
+    :cond_1
     new-instance v1, Landroidx/media3/common/StarRating;
 
     invoke-direct {v1, v0, p0}, Landroidx/media3/common/StarRating;-><init>(IF)V
 
     move-object p0, v1
 
-    :goto_2f
+    :goto_1
     return-object p0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 92
     instance-of v0, p1, Landroidx/media3/common/StarRating;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 95
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/media3/common/StarRating;
 
     .line 96
@@ -223,7 +223,7 @@
 
     iget v2, p1, Landroidx/media3/common/StarRating;->maxStars:I
 
-    if-ne v0, v2, :cond_17
+    if-ne v0, v2, :cond_1
 
     iget v0, p0, Landroidx/media3/common/StarRating;->starRating:F
 
@@ -231,16 +231,16 @@
 
     cmpl-float p1, v0, p1
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_17
+    :cond_1
     return v1
 .end method
 
 .method public getMaxStars()I
-    .registers 2
+    .locals 1
 
     .line 74
     iget v0, p0, Landroidx/media3/common/StarRating;->maxStars:I
@@ -249,7 +249,7 @@
 .end method
 
 .method public getStarRating()F
-    .registers 2
+    .locals 1
 
     .line 82
     iget v0, p0, Landroidx/media3/common/StarRating;->starRating:F
@@ -258,7 +258,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -293,7 +293,7 @@
 .end method
 
 .method public isRated()Z
-    .registers 3
+    .locals 2
 
     .line 68
     iget v0, p0, Landroidx/media3/common/StarRating;->starRating:F
@@ -302,21 +302,21 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 108
     new-instance v0, Landroid/os/Bundle;

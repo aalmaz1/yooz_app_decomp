@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 783
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isLaunchedFromBubble(Landroid/app/Activity;)Z
-    .registers 1
+    .locals 0
 
     .line 789
     invoke-virtual {p0}, Landroid/app/Activity;->isLaunchedFromBubble()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
-    .registers 9
+    .locals 7
 
     .line 816
     :try_start_0
@@ -81,15 +81,15 @@
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
-    :try_end_26
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_26} :catch_27
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_26} :catch_27
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_26} :catch_27
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
     .line 820
-    :catch_27
+    :catch_0
     invoke-virtual {p0, p1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
 
     move-result p0

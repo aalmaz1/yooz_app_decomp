@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 35
     new-instance v0, Ljava/util/ArrayList;
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Landroid/os/Handler;)V
-    .registers 2
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;)V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-static {p0}, Landroidx/media3/common/util/SystemHandlerWrapper;->recycleMessage(Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;)V
@@ -70,7 +70,7 @@
 .end method
 
 .method private static obtainSystemMessage()Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
-    .registers 3
+    .locals 3
 
     .line 125
     sget-object v0, Landroidx/media3/common/util/SystemHandlerWrapper;->messagePool:Ljava/util/List;
@@ -78,12 +78,12 @@
     monitor-enter v0
 
     .line 126
-    :try_start_3
+    :try_start_0
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 127
     new-instance v1, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
@@ -92,10 +92,10 @@
 
     invoke-direct {v1, v2}, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;-><init>(Landroidx/media3/common/util/SystemHandlerWrapper$1;)V
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 128
-    :cond_10
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -108,24 +108,24 @@
 
     check-cast v1, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
 
-    :goto_1c
+    :goto_0
     monitor-exit v0
 
     return-object v1
 
-    :catchall_1e
+    :catchall_0
     move-exception v1
 
     .line 129
     monitor-exit v0
-    :try_end_20
-    .catchall {:try_start_3 .. :try_end_20} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private static recycleMessage(Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;)V
-    .registers 4
+    .locals 3
 
     .line 133
     sget-object v0, Landroidx/media3/common/util/SystemHandlerWrapper;->messagePool:Ljava/util/List;
@@ -133,30 +133,30 @@
     monitor-enter v0
 
     .line 134
-    :try_start_3
+    :try_start_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
     const/16 v2, 0x32
 
-    if-ge v1, v2, :cond_e
+    if-ge v1, v2, :cond_0
 
     .line 135
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 137
-    :cond_e
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public getLooper()Landroid/os/Looper;
-    .registers 2
+    .locals 1
 
     .line 45
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -177,19 +177,19 @@
 .end method
 
 .method public hasMessages(I)Z
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 51
-    :goto_5
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 52
@@ -203,7 +203,7 @@
 .end method
 
 .method public obtainMessage(I)Landroidx/media3/common/util/HandlerWrapper$Message;
-    .registers 4
+    .locals 2
 
     .line 57
     invoke-static {}, Landroidx/media3/common/util/SystemHandlerWrapper;->obtainSystemMessage()Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
@@ -224,7 +224,7 @@
 .end method
 
 .method public obtainMessage(III)Landroidx/media3/common/util/HandlerWrapper$Message;
-    .registers 6
+    .locals 2
 
     .line 67
     invoke-static {}, Landroidx/media3/common/util/SystemHandlerWrapper;->obtainSystemMessage()Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
@@ -246,7 +246,7 @@
 .end method
 
 .method public obtainMessage(IIILjava/lang/Object;)Landroidx/media3/common/util/HandlerWrapper$Message;
-    .registers 7
+    .locals 2
 
     .line 73
     invoke-static {}, Landroidx/media3/common/util/SystemHandlerWrapper;->obtainSystemMessage()Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
@@ -268,7 +268,7 @@
 .end method
 
 .method public obtainMessage(ILjava/lang/Object;)Landroidx/media3/common/util/HandlerWrapper$Message;
-    .registers 5
+    .locals 2
 
     .line 62
     invoke-static {}, Landroidx/media3/common/util/SystemHandlerWrapper;->obtainSystemMessage()Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
@@ -289,7 +289,7 @@
 .end method
 
 .method public post(Ljava/lang/Runnable;)Z
-    .registers 3
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -302,7 +302,7 @@
 .end method
 
 .method public postAtFrontOfQueue(Ljava/lang/Runnable;)Z
-    .registers 3
+    .locals 1
 
     .line 121
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -315,7 +315,7 @@
 .end method
 
 .method public postDelayed(Ljava/lang/Runnable;J)Z
-    .registers 5
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -328,7 +328,7 @@
 .end method
 
 .method public removeCallbacksAndMessages(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -339,19 +339,19 @@
 .end method
 
 .method public removeMessages(I)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 100
-    :goto_5
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 101
@@ -363,7 +363,7 @@
 .end method
 
 .method public sendEmptyMessage(I)Z
-    .registers 3
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -376,7 +376,7 @@
 .end method
 
 .method public sendEmptyMessageAtTime(IJ)Z
-    .registers 5
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -389,7 +389,7 @@
 .end method
 
 .method public sendEmptyMessageDelayed(II)Z
-    .registers 6
+    .locals 3
 
     .line 89
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper;->handler:Landroid/os/Handler;
@@ -404,7 +404,7 @@
 .end method
 
 .method public sendMessageAtFrontOfQueue(Landroidx/media3/common/util/HandlerWrapper$Message;)Z
-    .registers 3
+    .locals 1
 
     .line 79
     check-cast p1, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;

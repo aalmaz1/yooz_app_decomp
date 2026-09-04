@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method private getHuaweiP20LiteExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,20 +49,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_1
 
     const/16 p1, 0x22
 
-    if-eq p2, p1, :cond_17
+    if-eq p2, p1, :cond_0
 
     const/16 p1, 0x23
 
-    if-eq p2, p1, :cond_17
+    if-eq p2, p1, :cond_0
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_1
 
     .line 165
-    :cond_17
+    :cond_0
     new-instance p1, Landroid/util/Size;
 
     const/16 p2, 0x2d0
@@ -80,12 +80,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_2b
+    :cond_1
     return-object v0
 .end method
 
 .method private getOnePlus6ExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,11 +109,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     const/16 p1, 0x100
 
-    if-ne p2, p1, :cond_29
+    if-ne p2, p1, :cond_0
 
     .line 141
     new-instance p1, Landroid/util/Size;
@@ -137,12 +137,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_29
+    :cond_0
     return-object v0
 .end method
 
 .method private getOnePlus6TExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -166,11 +166,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     const/16 p1, 0x100
 
-    if-ne p2, p1, :cond_29
+    if-ne p2, p1, :cond_0
 
     .line 151
     new-instance p1, Landroid/util/Size;
@@ -194,12 +194,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_29
+    :cond_0
     return-object v0
 .end method
 
 .method private getRedmiNote9ProExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -223,11 +223,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     const/16 p1, 0x100
 
-    if-ne p2, p1, :cond_1d
+    if-ne p2, p1, :cond_0
 
     .line 254
     new-instance p1, Landroid/util/Size;
@@ -240,12 +240,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_1d
+    :cond_0
     return-object v0
 .end method
 
 .method private getSamsungJ7Api27AboveExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -285,16 +285,16 @@
 
     const/16 v8, 0x800
 
-    if-eqz v1, :cond_8b
+    if-eqz v1, :cond_2
 
-    if-eq p2, v3, :cond_3c
+    if-eq p2, v3, :cond_1
 
-    if-eqz p3, :cond_20
+    if-eqz p3, :cond_0
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_20
-    if-ne p2, v2, :cond_d1
+    :cond_0
+    if-ne p2, v2, :cond_4
 
     .line 231
     new-instance p1, Landroid/util/Size;
@@ -317,11 +317,11 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_d1
+    goto/16 :goto_1
 
     .line 222
-    :cond_3c
-    :goto_3c
+    :cond_1
+    :goto_0
     new-instance p1, Landroid/util/Size;
 
     const/16 p2, 0xc18
@@ -391,9 +391,9 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_d1
+    goto :goto_1
 
-    :cond_8b
+    :cond_2
     const-string v1, "1"
 
     .line 235
@@ -401,16 +401,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_d1
+    if-eqz p1, :cond_4
 
-    if-eq p2, v3, :cond_99
+    if-eq p2, v3, :cond_3
 
-    if-eq p2, v2, :cond_99
+    if-eq p2, v2, :cond_3
 
-    if-eqz p3, :cond_d1
+    if-eqz p3, :cond_4
 
     .line 238
-    :cond_99
+    :cond_3
     new-instance p1, Landroid/util/Size;
 
     const/16 p2, 0xa10
@@ -460,13 +460,13 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_d1
-    :goto_d1
+    :cond_4
+    :goto_1
     return-object v0
 .end method
 
 .method private getSamsungJ7PrimeApi27AboveExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
-    .registers 19
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -516,7 +516,7 @@
 
     const/16 v13, 0xcc0
 
-    if-eqz v3, :cond_af
+    if-eqz v3, :cond_2
 
     const/16 v0, 0x912
 
@@ -524,14 +524,14 @@
 
     const/16 v14, 0xc10
 
-    if-eq v1, v5, :cond_6c
+    if-eq v1, v5, :cond_1
 
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_0
 
-    goto :goto_6c
+    goto :goto_0
 
-    :cond_30
-    if-ne v1, v4, :cond_f5
+    :cond_0
+    if-ne v1, v4, :cond_4
 
     .line 189
     new-instance v1, Landroid/util/Size;
@@ -582,11 +582,11 @@
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_f5
+    goto/16 :goto_1
 
     .line 180
-    :cond_6c
-    :goto_6c
+    :cond_1
+    :goto_0
     new-instance v1, Landroid/util/Size;
 
     const/16 v4, 0xc18
@@ -644,9 +644,9 @@
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_f5
+    goto :goto_1
 
-    :cond_af
+    :cond_2
     const-string v3, "1"
 
     .line 197
@@ -654,16 +654,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f5
+    if-eqz v0, :cond_4
 
-    if-eq v1, v5, :cond_bd
+    if-eq v1, v5, :cond_3
 
-    if-eq v1, v4, :cond_bd
+    if-eq v1, v4, :cond_3
 
-    if-eqz p3, :cond_f5
+    if-eqz p3, :cond_4
 
     .line 200
-    :cond_bd
+    :cond_3
     new-instance v0, Landroid/util/Size;
 
     invoke-direct {v0, v13, v11}, Landroid/util/Size;-><init>(II)V
@@ -712,13 +712,13 @@
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_f5
-    :goto_f5
+    :cond_4
+    :goto_1
     return-object v2
 .end method
 
 .method private static isHuaweiP20Lite()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "HUAWEI"
 
@@ -729,7 +729,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "HWANE"
 
@@ -739,21 +739,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isOnePlus6()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "OnePlus"
 
@@ -764,7 +764,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "OnePlus6"
 
@@ -774,21 +774,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isOnePlus6T()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "OnePlus"
 
@@ -799,7 +799,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "OnePlus6T"
 
@@ -809,21 +809,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isRedmiNote9Pro()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "REDMI"
 
@@ -834,7 +834,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "joyeuse"
 
@@ -845,21 +845,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isSamsungJ7Api27Above()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "SAMSUNG"
 
@@ -870,7 +870,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "J7XELTE"
 
@@ -881,21 +881,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method private static isSamsungJ7PrimeApi27Above()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "SAMSUNG"
 
@@ -906,7 +906,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const-string v0, "ON7XELTE"
 
@@ -917,79 +917,79 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 56
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isOnePlus6()Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isOnePlus6T()Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isHuaweiP20Lite()Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isSamsungJ7PrimeApi27Above()Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 57
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isSamsungJ7Api27Above()Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isRedmiNote9Pro()Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_28
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public getExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1006,7 +1006,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 97
     invoke-direct {p0, p1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getOnePlus6ExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
@@ -1016,12 +1016,12 @@
     return-object p1
 
     .line 99
-    :cond_b
+    :cond_0
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isOnePlus6T()Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 100
     invoke-direct {p0, p1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getOnePlus6TExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
@@ -1031,14 +1031,14 @@
     return-object p1
 
     .line 102
-    :cond_16
+    :cond_1
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isHuaweiP20Lite()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
     .line 103
     invoke-direct {p0, p1, p2, v1}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getHuaweiP20LiteExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
@@ -1048,12 +1048,12 @@
     return-object p1
 
     .line 105
-    :cond_22
+    :cond_2
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isSamsungJ7PrimeApi27Above()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_3
 
     .line 106
     invoke-direct {p0, p1, p2, v1}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getSamsungJ7PrimeApi27AboveExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
@@ -1063,12 +1063,12 @@
     return-object p1
 
     .line 108
-    :cond_2d
+    :cond_3
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isSamsungJ7Api27Above()Z
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_4
 
     .line 109
     invoke-direct {p0, p1, p2, v1}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getSamsungJ7Api27AboveExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
@@ -1078,12 +1078,12 @@
     return-object p1
 
     .line 111
-    :cond_38
+    :cond_4
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isRedmiNote9Pro()Z
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_5
 
     .line 112
     invoke-direct {p0, p1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getRedmiNote9ProExcludedSizes(Ljava/lang/String;I)Ljava/util/List;
@@ -1092,7 +1092,7 @@
 
     return-object p1
 
-    :cond_43
+    :cond_5
     const-string p1, "ExcludedSupportedSizesQuirk"
 
     const-string p2, "Cannot retrieve list of supported sizes to exclude on this device."
@@ -1109,7 +1109,7 @@
 .end method
 
 .method public getExcludedSizes(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1129,7 +1129,7 @@
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 125
     invoke-direct {p0, p1, v1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getHuaweiP20LiteExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
@@ -1139,12 +1139,12 @@
     return-object p1
 
     .line 127
-    :cond_c
+    :cond_0
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isSamsungJ7PrimeApi27Above()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 128
     invoke-direct {p0, p1, v1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getSamsungJ7PrimeApi27AboveExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
@@ -1154,12 +1154,12 @@
     return-object p1
 
     .line 130
-    :cond_17
+    :cond_1
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->isSamsungJ7Api27Above()Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
     .line 131
     invoke-direct {p0, p1, v1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExcludedSupportedSizesQuirk;->getSamsungJ7Api27AboveExcludedSizes(Ljava/lang/String;ILjava/lang/Class;)Ljava/util/List;
@@ -1168,7 +1168,7 @@
 
     return-object p1
 
-    :cond_22
+    :cond_2
     const-string p1, "ExcludedSupportedSizesQuirk"
 
     const-string p2, "Cannot retrieve list of supported sizes to exclude on this device."

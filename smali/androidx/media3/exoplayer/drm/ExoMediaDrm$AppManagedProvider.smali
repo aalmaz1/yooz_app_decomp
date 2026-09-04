@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/ExoMediaDrm;)V
-    .registers 2
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public acquireExoMediaDrm(Ljava/util/UUID;)Landroidx/media3/exoplayer/drm/ExoMediaDrm;
-    .registers 2
+    .locals 0
 
     .line 91
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$AppManagedProvider;->exoMediaDrm:Landroidx/media3/exoplayer/drm/ExoMediaDrm;

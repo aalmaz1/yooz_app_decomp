@@ -37,7 +37,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -59,7 +59,7 @@
 .end method
 
 .method static fromError(Ljava/lang/Throwable;)Landroidx/camera/core/impl/LiveDataObservable$Result;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -89,7 +89,7 @@
 .end method
 
 .method static fromValue(Ljava/lang/Object;)Landroidx/camera/core/impl/LiveDataObservable$Result;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -113,26 +113,26 @@
 
 # virtual methods
 .method public completedSuccessfully()Z
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable$Result;->mError:Ljava/lang/Throwable;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public getError()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 201
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable$Result;->mError:Ljava/lang/Throwable;
@@ -141,7 +141,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -153,7 +153,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 192
     iget-object v0, p0, Landroidx/camera/core/impl/LiveDataObservable$Result;->mValue:Ljava/lang/Object;
@@ -161,7 +161,7 @@
     return-object v0
 
     .line 188
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Result contains an error. Does not contain a value."
@@ -172,7 +172,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 207
     new-instance v0, Ljava/lang/StringBuilder;
@@ -185,7 +185,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -203,10 +203,10 @@
 
     move-result-object v1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 208
-    :cond_1f
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Error: "
@@ -223,7 +223,7 @@
 
     move-result-object v1
 
-    :goto_30
+    :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

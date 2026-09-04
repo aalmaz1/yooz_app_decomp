@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableList;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public name()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "acl:acl"
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public value()Lcom/google/common/collect/ImmutableList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -79,7 +79,7 @@
 .end method
 
 .method public bridge synthetic value()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 182
     invoke-virtual {p0}, Lcom/google/common/io/TempFileCreator$JavaNioCreator$1;->value()Lcom/google/common/collect/ImmutableList;

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/net/Uri;)V
-    .registers 3
+    .locals 0
 
     .line 281
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,33 +45,33 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 302
     iget-object v0, p0, Landroidx/core/provider/FontProvider$ContentQueryWrapperApi24Impl;->mClient:Landroid/content/ContentProviderClient;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 303
     invoke-virtual {v0}, Landroid/content/ContentProviderClient;->close()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .registers 15
+    .locals 8
 
     .line 288
     iget-object v0, p0, Landroidx/core/provider/FontProvider$ContentQueryWrapperApi24Impl;->mClient:Landroid/content/ContentProviderClient;
 
     const/4 v7, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-object v7
 
-    :cond_6
+    :cond_0
     move-object v1, p1
 
     move-object v2, p2
@@ -85,16 +85,16 @@
     move-object v6, p6
 
     .line 292
-    :try_start_c
+    :try_start_0
     invoke-virtual/range {v0 .. v6}, Landroid/content/ContentProviderClient;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
 
     move-result-object p1
-    :try_end_10
-    .catch Landroid/os/RemoteException; {:try_start_c .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_11
+    :catch_0
     move-exception p1
 
     const-string p2, "FontsProvider"

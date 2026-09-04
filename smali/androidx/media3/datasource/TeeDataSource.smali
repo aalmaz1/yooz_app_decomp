@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSink;)V
-    .registers 3
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 48
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -61,7 +61,7 @@
 .end method
 
 .method public close()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -71,17 +71,17 @@
     const/4 v0, 0x0
 
     .line 97
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/datasource/TeeDataSource;->upstream:Landroidx/media3/datasource/DataSource;
 
     invoke-interface {v1}, Landroidx/media3/datasource/DataSource;->close()V
-    :try_end_6
-    .catchall {:try_start_1 .. :try_end_6} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 99
     iget-boolean v1, p0, Landroidx/media3/datasource/TeeDataSource;->dataSinkNeedsClosing:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 100
     iput-boolean v0, p0, Landroidx/media3/datasource/TeeDataSource;->dataSinkNeedsClosing:Z
@@ -91,16 +91,16 @@
 
     invoke-interface {v0}, Landroidx/media3/datasource/DataSink;->close()V
 
-    :cond_11
+    :cond_0
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception v1
 
     .line 99
     iget-boolean v2, p0, Landroidx/media3/datasource/TeeDataSource;->dataSinkNeedsClosing:Z
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1
 
     .line 100
     iput-boolean v0, p0, Landroidx/media3/datasource/TeeDataSource;->dataSinkNeedsClosing:Z
@@ -111,12 +111,12 @@
     invoke-interface {v0}, Landroidx/media3/datasource/DataSink;->close()V
 
     .line 103
-    :cond_1e
+    :cond_1
     throw v1
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -139,7 +139,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 86
     iget-object v0, p0, Landroidx/media3/datasource/TeeDataSource;->upstream:Landroidx/media3/datasource/DataSource;
@@ -152,7 +152,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -172,32 +172,32 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     return-wide v2
 
     .line 58
-    :cond_f
+    :cond_0
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     const-wide/16 v4, -0x1
 
     cmp-long v0, v0, v4
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     iget-wide v0, p0, Landroidx/media3/datasource/TeeDataSource;->bytesRemaining:J
 
     cmp-long v4, v0, v4
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_1
 
     .line 60
     invoke-virtual {p1, v2, v3, v0, v1}, Landroidx/media3/datasource/DataSpec;->subrange(JJ)Landroidx/media3/datasource/DataSpec;
 
     move-result-object p1
 
-    :cond_21
+    :cond_1
     const/4 v0, 0x1
 
     .line 62
@@ -215,7 +215,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -229,21 +229,21 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 72
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/TeeDataSource;->upstream:Landroidx/media3/datasource/DataSource;
 
     invoke-interface {v0, p1, p2, p3}, Landroidx/media3/datasource/DataSource;->read([BII)I
 
     move-result p3
 
-    if-lez p3, :cond_23
+    if-lez p3, :cond_1
 
     .line 75
     iget-object v0, p0, Landroidx/media3/datasource/TeeDataSource;->dataSink:Landroidx/media3/datasource/DataSink;
@@ -257,7 +257,7 @@
 
     cmp-long v0, p1, v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     int-to-long v0, p3
 
@@ -266,6 +266,6 @@
     .line 77
     iput-wide p1, p0, Landroidx/media3/datasource/TeeDataSource;->bytesRemaining:J
 
-    :cond_23
+    :cond_1
     return p3
 .end method

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/app/NotificationCompatSideChannelService;)V
-    .registers 2
+    .locals 0
 
     .line 78
     iput-object p1, p0, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->this$0:Landroidx/core/app/NotificationCompatSideChannelService;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public cancel(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -55,19 +55,19 @@
     move-result-wide v0
 
     .line 98
-    :try_start_d
+    :try_start_0
     iget-object v2, p0, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->this$0:Landroidx/core/app/NotificationCompatSideChannelService;
 
     invoke-virtual {v2, p1, p2, p3}, Landroidx/core/app/NotificationCompatSideChannelService;->cancel(Ljava/lang/String;ILjava/lang/String;)V
-    :try_end_12
-    .catchall {:try_start_d .. :try_end_12} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 100
     invoke-static {v0, v1}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->restoreCallingIdentity(J)V
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception p1
 
     invoke-static {v0, v1}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->restoreCallingIdentity(J)V
@@ -77,7 +77,7 @@
 .end method
 
 .method public cancelAll(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 106
     iget-object v0, p0, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->this$0:Landroidx/core/app/NotificationCompatSideChannelService;
@@ -94,19 +94,19 @@
     move-result-wide v0
 
     .line 109
-    :try_start_d
+    :try_start_0
     iget-object v2, p0, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->this$0:Landroidx/core/app/NotificationCompatSideChannelService;
 
     invoke-virtual {v2, p1}, Landroidx/core/app/NotificationCompatSideChannelService;->cancelAll(Ljava/lang/String;)V
-    :try_end_12
-    .catchall {:try_start_d .. :try_end_12} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 111
     invoke-static {v0, v1}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->restoreCallingIdentity(J)V
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception p1
 
     invoke-static {v0, v1}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->restoreCallingIdentity(J)V
@@ -116,7 +116,7 @@
 .end method
 
 .method public notify(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -138,19 +138,19 @@
     move-result-wide v0
 
     .line 87
-    :try_start_d
+    :try_start_0
     iget-object v2, p0, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->this$0:Landroidx/core/app/NotificationCompatSideChannelService;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroidx/core/app/NotificationCompatSideChannelService;->notify(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
-    :try_end_12
-    .catchall {:try_start_d .. :try_end_12} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 89
     invoke-static {v0, v1}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->restoreCallingIdentity(J)V
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception p1
 
     invoke-static {v0, v1}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;->restoreCallingIdentity(J)V

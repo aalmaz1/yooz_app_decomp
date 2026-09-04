@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;)V
-    .registers 4
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method private checkOpened()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -59,7 +59,7 @@
     .line 100
     iget-boolean v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->opened:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 101
     iget-object v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->dataSource:Landroidx/media3/datasource/DataSource;
@@ -73,14 +73,14 @@
     .line 102
     iput-boolean v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->opened:Z
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public bytesRead()J
-    .registers 3
+    .locals 2
 
     .line 51
     iget-wide v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->totalBytesRead:J
@@ -89,7 +89,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -99,7 +99,7 @@
     .line 93
     iget-boolean v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->closed:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 94
     iget-object v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->dataSource:Landroidx/media3/datasource/DataSource;
@@ -111,12 +111,12 @@
     .line 95
     iput-boolean v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->closed:Z
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public open()V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -130,7 +130,7 @@
 .end method
 
 .method public read()I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -146,12 +146,12 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 70
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/DataSourceInputStream;->singleByteArray:[B
 
     const/4 v1, 0x0
@@ -160,12 +160,12 @@
 
     and-int/lit16 v1, v0, 0xff
 
-    :goto_11
+    :goto_0
     return v1
 .end method
 
 .method public read([B)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -185,7 +185,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -211,12 +211,12 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_14
+    if-ne p1, p2, :cond_0
 
     return p2
 
     .line 86
-    :cond_14
+    :cond_0
     iget-wide p2, p0, Landroidx/media3/datasource/DataSourceInputStream;->totalBytesRead:J
 
     int-to-long v0, p1

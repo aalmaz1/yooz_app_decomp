@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method protected buildAudioRenderers(Landroid/content/Context;ILandroidx/media3/exoplayer/mediacodec/MediaCodecSelector;ZLandroidx/media3/exoplayer/audio/AudioSink;Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;Ljava/util/ArrayList;)V
-    .registers 21
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,28 +134,28 @@
     .line 470
     invoke-virtual {v9, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     return-void
 
     .line 475
-    :cond_1f
+    :cond_0
     invoke-virtual/range {p8 .. p8}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_28
+    if-ne v0, v2, :cond_1
 
     add-int/lit8 v1, v1, -0x1
 
-    :cond_28
+    :cond_1
     const/4 v0, 0x0
 
     const/4 v3, 0x1
 
-    :try_start_2a
+    :try_start_0
     const-string v4, "androidx.media3.decoder.midi.MidiRenderer"
 
     .line 482
@@ -184,32 +184,32 @@
     move-result-object v4
 
     check-cast v4, Landroidx/media3/exoplayer/Renderer;
-    :try_end_44
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_2a .. :try_end_44} :catch_5a
-    .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_44} :catch_51
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     add-int/lit8 v5, v1, 0x1
 
     .line 485
-    :try_start_46
+    :try_start_1
     invoke-virtual {v9, v1, v4}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v1, "Loaded MidiRenderer."
 
     .line 486
     invoke-static {v10, v1}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_4e
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_46 .. :try_end_4e} :catch_4f
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_4e} :catch_51
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_5b
+    goto :goto_1
 
-    :catch_4f
+    :catch_0
     move v1, v5
 
-    goto :goto_5a
+    goto :goto_0
 
-    :catch_51
+    :catch_1
     move-exception v0
 
     .line 491
@@ -221,14 +221,14 @@
 
     throw v1
 
-    :catch_5a
-    :goto_5a
+    :catch_2
+    :goto_0
     move v5, v1
 
-    :goto_5b
+    :goto_1
     const/4 v1, 0x3
 
-    :try_start_5c
+    :try_start_2
     const-string v4, "androidx.media3.decoder.opus.LibopusAudioRenderer"
 
     .line 496
@@ -270,32 +270,32 @@
     move-result-object v4
 
     check-cast v4, Landroidx/media3/exoplayer/Renderer;
-    :try_end_82
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_5c .. :try_end_82} :catch_98
-    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_82} :catch_8f
+    :try_end_2
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
 
     add-int/lit8 v6, v5, 0x1
 
     .line 504
-    :try_start_84
+    :try_start_3
     invoke-virtual {v9, v5, v4}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v4, "Loaded LibopusAudioRenderer."
 
     .line 505
     invoke-static {v10, v4}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_8c
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_84 .. :try_end_8c} :catch_8d
-    .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_8c} :catch_8f
+    :try_end_3
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
 
-    goto :goto_99
+    goto :goto_3
 
-    :catch_8d
+    :catch_3
     move v5, v6
 
-    goto :goto_98
+    goto :goto_2
 
-    :catch_8f
+    :catch_4
     move-exception v0
 
     .line 510
@@ -307,12 +307,12 @@
 
     throw v1
 
-    :catch_98
-    :goto_98
+    :catch_5
+    :goto_2
     move v6, v5
 
-    :goto_99
-    :try_start_99
+    :goto_3
+    :try_start_4
     const-string v4, "androidx.media3.decoder.flac.LibflacAudioRenderer"
 
     .line 515
@@ -354,32 +354,32 @@
     move-result-object v4
 
     check-cast v4, Landroidx/media3/exoplayer/Renderer;
-    :try_end_bf
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_99 .. :try_end_bf} :catch_d5
-    .catch Ljava/lang/Exception; {:try_start_99 .. :try_end_bf} :catch_cc
+    :try_end_4
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_8
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_7
 
     add-int/lit8 v5, v6, 0x1
 
     .line 523
-    :try_start_c1
+    :try_start_5
     invoke-virtual {v9, v6, v4}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v4, "Loaded LibflacAudioRenderer."
 
     .line 524
     invoke-static {v10, v4}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_c9
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_c1 .. :try_end_c9} :catch_ca
-    .catch Ljava/lang/Exception; {:try_start_c1 .. :try_end_c9} :catch_cc
+    :try_end_5
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_5 .. :try_end_5} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_7
 
-    goto :goto_d6
+    goto :goto_5
 
-    :catch_ca
+    :catch_6
     move v6, v5
 
-    goto :goto_d5
+    goto :goto_4
 
-    :catch_cc
+    :catch_7
     move-exception v0
 
     .line 529
@@ -391,12 +391,12 @@
 
     throw v1
 
-    :catch_d5
-    :goto_d5
+    :catch_8
+    :goto_4
     move v5, v6
 
-    :goto_d6
-    :try_start_d6
+    :goto_5
+    :try_start_6
     const-string v4, "androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer"
 
     .line 534
@@ -446,13 +446,13 @@
 
     .line 543
     invoke-static {v10, v0}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_104
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_d6 .. :try_end_104} :catch_10e
-    .catch Ljava/lang/Exception; {:try_start_d6 .. :try_end_104} :catch_105
+    :try_end_6
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_6 .. :try_end_6} :catch_a
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_9
 
-    goto :goto_10e
+    goto :goto_6
 
-    :catch_105
+    :catch_9
     move-exception v0
 
     .line 548
@@ -464,13 +464,13 @@
 
     throw v1
 
-    :catch_10e
-    :goto_10e
+    :catch_a
+    :goto_6
     return-void
 .end method
 
 .method protected buildAudioSink(Landroid/content/Context;ZZ)Landroidx/media3/exoplayer/audio/AudioSink;
-    .registers 5
+    .locals 1
 
     .line 642
     new-instance v0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Builder;
@@ -496,7 +496,7 @@
 .end method
 
 .method protected buildCameraMotionRenderers(Landroid/content/Context;ILjava/util/ArrayList;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -519,7 +519,7 @@
 .end method
 
 .method protected buildImageRenderers(Ljava/util/ArrayList;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -544,7 +544,7 @@
 .end method
 
 .method protected buildMetadataRenderers(Landroid/content/Context;Landroidx/media3/exoplayer/metadata/MetadataOutput;Landroid/os/Looper;ILjava/util/ArrayList;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -569,7 +569,7 @@
 .end method
 
 .method protected buildMiscellaneousRenderers(Landroid/content/Context;Landroid/os/Handler;ILjava/util/ArrayList;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -586,7 +586,7 @@
 .end method
 
 .method protected buildTextRenderers(Landroid/content/Context;Landroidx/media3/exoplayer/text/TextOutput;Landroid/os/Looper;ILjava/util/ArrayList;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -611,7 +611,7 @@
 .end method
 
 .method protected buildVideoRenderers(Landroid/content/Context;ILandroidx/media3/exoplayer/mediacodec/MediaCodecSelector;ZLandroid/os/Handler;Landroidx/media3/exoplayer/video/VideoRendererEventListener;JLjava/util/ArrayList;)V
-    .registers 24
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -663,23 +663,23 @@
     .line 351
     invoke-virtual {v11, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_0
 
     return-void
 
     .line 356
-    :cond_23
+    :cond_0
     invoke-virtual/range {p9 .. p9}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_2c
+    if-ne v0, v2, :cond_1
 
     add-int/lit8 v1, v1, -0x1
 
-    :cond_2c
+    :cond_1
     const/16 v0, 0x32
 
     const/4 v3, 0x3
@@ -690,7 +690,7 @@
 
     const/4 v6, 0x1
 
-    :try_start_32
+    :try_start_0
     const-string v7, "androidx.media3.decoder.vp9.LibvpxVideoRenderer"
 
     .line 363
@@ -748,32 +748,32 @@
     move-result-object v7
 
     check-cast v7, Landroidx/media3/exoplayer/Renderer;
-    :try_end_66
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_32 .. :try_end_66} :catch_7c
-    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_66} :catch_73
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     add-int/lit8 v8, v1, 0x1
 
     .line 377
-    :try_start_68
+    :try_start_1
     invoke-virtual {v11, v1, v7}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v1, "Loaded LibvpxVideoRenderer."
 
     .line 378
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_70
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_68 .. :try_end_70} :catch_71
-    .catch Ljava/lang/Exception; {:try_start_68 .. :try_end_70} :catch_73
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_7d
+    goto :goto_1
 
-    :catch_71
+    :catch_0
     move v1, v8
 
-    goto :goto_7c
+    goto :goto_0
 
-    :catch_73
+    :catch_1
     move-exception v0
 
     .line 383
@@ -785,12 +785,12 @@
 
     throw v1
 
-    :catch_7c
-    :goto_7c
+    :catch_2
+    :goto_0
     move v8, v1
 
-    :goto_7d
-    :try_start_7d
+    :goto_1
+    :try_start_2
     const-string v1, "androidx.media3.decoder.av1.Libgav1VideoRenderer"
 
     .line 388
@@ -848,32 +848,32 @@
     move-result-object v1
 
     check-cast v1, Landroidx/media3/exoplayer/Renderer;
-    :try_end_b1
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_7d .. :try_end_b1} :catch_c7
-    .catch Ljava/lang/Exception; {:try_start_7d .. :try_end_b1} :catch_be
+    :try_end_2
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
 
     add-int/lit8 v7, v8, 0x1
 
     .line 402
-    :try_start_b3
+    :try_start_3
     invoke-virtual {v11, v8, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v1, "Loaded Libgav1VideoRenderer."
 
     .line 403
     invoke-static {v12, v1}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_bb
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_b3 .. :try_end_bb} :catch_bc
-    .catch Ljava/lang/Exception; {:try_start_b3 .. :try_end_bb} :catch_be
+    :try_end_3
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
 
-    goto :goto_c8
+    goto :goto_3
 
-    :catch_bc
+    :catch_3
     move v8, v7
 
-    goto :goto_c7
+    goto :goto_2
 
-    :catch_be
+    :catch_4
     move-exception v0
 
     .line 408
@@ -885,12 +885,12 @@
 
     throw v1
 
-    :catch_c7
-    :goto_c7
+    :catch_5
+    :goto_2
     move v7, v8
 
-    :goto_c8
-    :try_start_c8
+    :goto_3
+    :try_start_4
     const-string v1, "androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer"
 
     .line 414
@@ -956,13 +956,13 @@
 
     .line 429
     invoke-static {v12, v0}, Landroidx/media3/common/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_104
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_c8 .. :try_end_104} :catch_10e
-    .catch Ljava/lang/Exception; {:try_start_c8 .. :try_end_104} :catch_105
+    :try_end_4
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_7
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_6
 
-    goto :goto_10e
+    goto :goto_4
 
-    :catch_105
+    :catch_6
     move-exception v0
 
     .line 434
@@ -974,13 +974,13 @@
 
     throw v1
 
-    :catch_10e
-    :goto_10e
+    :catch_7
+    :goto_4
     return-void
 .end method
 
 .method public createRenderers(Landroid/os/Handler;Landroidx/media3/exoplayer/video/VideoRendererEventListener;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;Landroidx/media3/exoplayer/text/TextOutput;Landroidx/media3/exoplayer/metadata/MetadataOutput;)[Landroidx/media3/exoplayer/Renderer;
-    .registers 18
+    .locals 12
 
     move-object v10, p0
 
@@ -1022,7 +1022,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_32
+    if-eqz v5, :cond_0
 
     .line 289
     iget-object v1, v10, Landroidx/media3/exoplayer/DefaultRenderersFactory;->context:Landroid/content/Context;
@@ -1044,7 +1044,7 @@
     invoke-virtual/range {v0 .. v8}, Landroidx/media3/exoplayer/DefaultRenderersFactory;->buildAudioRenderers(Landroid/content/Context;ILandroidx/media3/exoplayer/mediacodec/MediaCodecSelector;ZLandroidx/media3/exoplayer/audio/AudioSink;Landroid/os/Handler;Landroidx/media3/exoplayer/audio/AudioRendererEventListener;Ljava/util/ArrayList;)V
 
     .line 299
-    :cond_32
+    :cond_0
     iget-object v1, v10, Landroidx/media3/exoplayer/DefaultRenderersFactory;->context:Landroid/content/Context;
 
     .line 302
@@ -1112,7 +1112,7 @@
 .end method
 
 .method public final experimentalSetMediaCodecAsyncCryptoFlagEnabled(Z)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 3
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->codecAdapterFactory:Landroidx/media3/exoplayer/mediacodec/DefaultMediaCodecAdapterFactory;
@@ -1123,7 +1123,7 @@
 .end method
 
 .method public final forceDisableMediaCodecAsynchronousQueueing()Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 1
 
     .line 162
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->codecAdapterFactory:Landroidx/media3/exoplayer/mediacodec/DefaultMediaCodecAdapterFactory;
@@ -1134,7 +1134,7 @@
 .end method
 
 .method public final forceEnableMediaCodecAsynchronousQueueing()Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 1
 
     .line 149
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->codecAdapterFactory:Landroidx/media3/exoplayer/mediacodec/DefaultMediaCodecAdapterFactory;
@@ -1145,7 +1145,7 @@
 .end method
 
 .method protected getCodecAdapterFactory()Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Factory;
-    .registers 2
+    .locals 1
 
     .line 653
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->codecAdapterFactory:Landroidx/media3/exoplayer/mediacodec/DefaultMediaCodecAdapterFactory;
@@ -1154,7 +1154,7 @@
 .end method
 
 .method public final setAllowedVideoJoiningTimeMs(J)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 3
+    .locals 0
 
     .line 264
     iput-wide p1, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->allowedVideoJoiningTimeMs:J
@@ -1163,7 +1163,7 @@
 .end method
 
 .method public final setEnableAudioFloatOutput(Z)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 0
 
     .line 222
     iput-boolean p1, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->enableFloatOutput:Z
@@ -1172,7 +1172,7 @@
 .end method
 
 .method public final setEnableAudioTrackPlaybackParams(Z)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 0
 
     .line 247
     iput-boolean p1, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->enableAudioTrackPlaybackParams:Z
@@ -1181,7 +1181,7 @@
 .end method
 
 .method public final setEnableDecoderFallback(Z)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 0
 
     .line 190
     iput-boolean p1, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->enableDecoderFallback:Z
@@ -1190,7 +1190,7 @@
 .end method
 
 .method public final setExtensionRendererMode(I)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 0
 
     .line 134
     iput p1, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->extensionRendererMode:I
@@ -1199,7 +1199,7 @@
 .end method
 
 .method public final setMediaCodecSelector(Landroidx/media3/exoplayer/mediacodec/MediaCodecSelector;)Landroidx/media3/exoplayer/DefaultRenderersFactory;
-    .registers 2
+    .locals 0
 
     .line 205
     iput-object p1, p0, Landroidx/media3/exoplayer/DefaultRenderersFactory;->mediaCodecSelector:Landroidx/media3/exoplayer/mediacodec/MediaCodecSelector;

@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/util/SystemHandlerWrapper$1;)V
-    .registers 2
+    .locals 0
 
     .line 140
     invoke-direct {p0}, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method private recycle()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public getTarget()Landroidx/media3/common/util/HandlerWrapper;
-    .registers 2
+    .locals 1
 
     .line 166
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;->handler:Landroidx/media3/common/util/SystemHandlerWrapper;
@@ -77,7 +77,7 @@
 .end method
 
 .method public sendAtFrontOfQueue(Landroid/os/Handler;)Z
-    .registers 3
+    .locals 1
 
     .line 153
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;->message:Landroid/os/Message;
@@ -99,7 +99,7 @@
 .end method
 
 .method public sendToTarget()V
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;->message:Landroid/os/Message;
@@ -119,7 +119,7 @@
 .end method
 
 .method public setMessage(Landroid/os/Message;Landroidx/media3/common/util/SystemHandlerWrapper;)Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;
-    .registers 3
+    .locals 0
 
     .line 147
     iput-object p1, p0, Landroidx/media3/common/util/SystemHandlerWrapper$SystemMessage;->message:Landroid/os/Message;

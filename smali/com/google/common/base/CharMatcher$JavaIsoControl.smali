@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1452
     new-instance v0, Lcom/google/common/base/CharMatcher$JavaIsoControl;
@@ -33,7 +33,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "CharMatcher.javaIsoControl()"
 
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -58,27 +58,27 @@
 
     const/16 v0, 0x1f
 
-    if-le p1, v0, :cond_f
+    if-le p1, v0, :cond_1
 
     const/16 v0, 0x7f
 
-    if-lt p1, v0, :cond_d
+    if-lt p1, v0, :cond_0
 
     const/16 v0, 0x9f
 
-    if-gt p1, v0, :cond_d
+    if-gt p1, v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_10
+    :goto_1
     return p1
 .end method

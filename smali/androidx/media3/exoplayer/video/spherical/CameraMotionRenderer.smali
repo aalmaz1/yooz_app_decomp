@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x6
 
@@ -50,7 +50,7 @@
 .end method
 
 .method private parseMetadata(Ljava/nio/ByteBuffer;)[F
-    .registers 5
+    .locals 3
 
     .line 137
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -59,14 +59,14 @@
 
     const/16 v1, 0x10
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 140
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
@@ -96,8 +96,8 @@
 
     const/4 v1, 0x0
 
-    :goto_26
-    if-ge v1, p1, :cond_37
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     .line 144
     iget-object v2, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->scratch:Landroidx/media3/common/util/ParsableByteArray;
@@ -114,31 +114,31 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     return-object v0
 .end method
 
 .method private resetListener()V
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->listener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 151
     invoke-interface {v0}, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;->onCameraMotionReset()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "CameraMotionRenderer"
 
@@ -146,7 +146,7 @@
 .end method
 
 .method public handleMessage(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -155,25 +155,25 @@
 
     const/16 v0, 0x8
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     .line 72
     check-cast p2, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
     iput-object p2, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->listener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    goto :goto_c
+    goto :goto_0
 
     .line 74
-    :cond_9
+    :cond_0
     invoke-super {p0, p1, p2}, Landroidx/media3/exoplayer/BaseRenderer;->handleMessage(ILjava/lang/Object;)V
 
-    :goto_c
+    :goto_0
     return-void
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 127
     invoke-virtual {p0}, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->hasReadStreamToEnd()Z
@@ -184,7 +184,7 @@
 .end method
 
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -192,7 +192,7 @@
 .end method
 
 .method protected onDisabled()V
-    .registers 1
+    .locals 0
 
     .line 95
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->resetListener()V
@@ -201,7 +201,7 @@
 .end method
 
 .method protected onPositionReset(JZ)V
-    .registers 4
+    .locals 0
 
     const-wide/high16 p1, -0x8000000000000000L
 
@@ -215,7 +215,7 @@
 .end method
 
 .method protected onStreamChanged([Landroidx/media3/common/Format;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 7
+    .locals 0
 
     .line 84
     iput-wide p4, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->offsetUs:J
@@ -224,7 +224,7 @@
 .end method
 
 .method public render(JJ)V
-    .registers 9
+    .locals 4
 
     .line 101
     :cond_0
@@ -233,7 +233,7 @@
 
     move-result p3
 
-    if-nez p3, :cond_69
+    if-nez p3, :cond_5
 
     iget-wide p3, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->lastTimestampUs:J
 
@@ -243,7 +243,7 @@
 
     cmp-long p3, p3, v0
 
-    if-gez p3, :cond_69
+    if-gez p3, :cond_5
 
     .line 102
     iget-object p3, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->buffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -266,7 +266,7 @@
 
     const/4 p4, -0x4
 
-    if-ne p3, p4, :cond_69
+    if-ne p3, p4, :cond_5
 
     .line 105
     iget-object p3, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->buffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -275,12 +275,12 @@
 
     move-result p3
 
-    if-eqz p3, :cond_2c
+    if-eqz p3, :cond_1
 
-    goto :goto_69
+    goto :goto_1
 
     .line 109
-    :cond_2c
+    :cond_1
     iget-object p3, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->buffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     iget-wide p3, p3, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
@@ -294,22 +294,22 @@
 
     cmp-long p3, p3, v1
 
-    if-gez p3, :cond_3b
+    if-gez p3, :cond_2
 
     const/4 v0, 0x1
 
     .line 111
-    :cond_3b
+    :cond_2
     iget-object p3, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->listener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
     if-eqz p3, :cond_0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_3
 
     goto :goto_0
 
     .line 115
-    :cond_42
+    :cond_3
     iget-object p3, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->buffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {p3}, Landroidx/media3/decoder/DecoderInputBuffer;->flip()V
@@ -329,12 +329,12 @@
 
     move-result-object p3
 
-    if-nez p3, :cond_58
+    if-nez p3, :cond_4
 
     goto :goto_0
 
     .line 121
-    :cond_58
+    :cond_4
     iget-object p4, p0, Landroidx/media3/exoplayer/video/spherical/CameraMotionRenderer;->listener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
     invoke-static {p4}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -353,13 +353,13 @@
 
     goto :goto_0
 
-    :cond_69
-    :goto_69
+    :cond_5
+    :goto_1
     return-void
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)I
-    .registers 3
+    .locals 1
 
     const-string v0, "application/x-camera-motion"
 
@@ -370,7 +370,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x4
 
@@ -379,9 +379,9 @@
 
     move-result p1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, 0x0
 
     .line 65
@@ -389,6 +389,6 @@
 
     move-result p1
 
-    :goto_15
+    :goto_0
     return p1
 .end method

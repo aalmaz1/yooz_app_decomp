@@ -121,13 +121,13 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_3a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/legacy/v4/R$styleable;->ColorStateListItem:[I
 
@@ -135,7 +135,7 @@
 
     new-array v1, v0, [I
 
-    fill-array-data v1, :array_48
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/legacy/v4/R$styleable;->CoordinatorLayout:[I
 
@@ -143,13 +143,13 @@
 
     new-array v2, v1, [I
 
-    fill-array-data v2, :array_50
+    fill-array-data v2, :array_2
 
     sput-object v2, Landroidx/legacy/v4/R$styleable;->CoordinatorLayout_Layout:[I
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_62
+    fill-array-data v1, :array_3
 
     sput-object v1, Landroidx/legacy/v4/R$styleable;->FontFamily:[I
 
@@ -157,7 +157,7 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_74
+    fill-array-data v1, :array_4
 
     sput-object v1, Landroidx/legacy/v4/R$styleable;->FontFamilyFont:[I
 
@@ -165,13 +165,13 @@
 
     new-array v1, v1, [I
 
-    fill-array-data v1, :array_8c
+    fill-array-data v1, :array_5
 
     sput-object v1, Landroidx/legacy/v4/R$styleable;->GradientColor:[I
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a8
+    fill-array-data v0, :array_6
 
     sput-object v0, Landroidx/legacy/v4/R$styleable;->GradientColorItem:[I
 
@@ -179,7 +179,7 @@
 
     nop
 
-    :array_3a
+    :array_0
     .array-data 4
         0x10101a5
         0x101031f
@@ -188,13 +188,13 @@
         0x7f0401ce
     .end array-data
 
-    :array_48
+    :array_1
     .array-data 4
         0x7f0401cd
         0x7f0402ff
     .end array-data
 
-    :array_50
+    :array_2
     .array-data 4
         0x10100b3
         0x7f0401d7
@@ -205,7 +205,7 @@
         0x7f040210
     .end array-data
 
-    :array_62
+    :array_3
     .array-data 4
         0x7f040177
         0x7f040178
@@ -216,7 +216,7 @@
         0x7f04017d
     .end array-data
 
-    :array_74
+    :array_4
     .array-data 4
         0x1010532
         0x1010533
@@ -230,7 +230,7 @@
         0x7f04038c
     .end array-data
 
-    :array_8c
+    :array_5
     .array-data 4
         0x101019d
         0x101019e
@@ -246,7 +246,7 @@
         0x1010513
     .end array-data
 
-    :array_a8
+    :array_6
     .array-data 4
         0x10101a5
         0x1010514
@@ -254,7 +254,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19;)V
-    .registers 2
+    .locals 0
 
     .line 3310
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19$1;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19;
@@ -36,16 +36,16 @@
 
 # virtual methods
 .method public onMetadataUpdate(ILjava/lang/Object;)V
-    .registers 9
+    .locals 6
 
     const v0, 0x10000001
 
-    if-ne p1, v0, :cond_17
+    if-ne p1, v0, :cond_0
 
     .line 3313
     instance-of p1, p2, Landroid/media/Rating;
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     .line 3315
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19$1;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19;
@@ -66,6 +66,6 @@
     .line 3315
     invoke-virtual/range {v0 .. v5}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19;->postToHandler(IIILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :cond_17
+    :cond_0
     return-void
 .end method

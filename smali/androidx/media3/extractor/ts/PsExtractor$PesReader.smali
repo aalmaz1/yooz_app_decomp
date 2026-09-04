@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ts/ElementaryStreamReader;Landroidx/media3/common/util/TimestampAdjuster;)V
-    .registers 3
+    .locals 0
 
     .line 326
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method private parseHeader()V
-    .registers 4
+    .locals 3
 
     .line 368
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -111,7 +111,7 @@
 .end method
 
 .method private parseHeaderExtension()V
-    .registers 11
+    .locals 10
 
     const-wide/16 v0, 0x0
 
@@ -121,7 +121,7 @@
     .line 379
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->ptsFlag:Z
 
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_1
 
     .line 380
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -191,11 +191,11 @@
     .line 387
     iget-boolean v5, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->seenFirstDts:Z
 
-    if-nez v5, :cond_79
+    if-nez v5, :cond_0
 
     iget-boolean v5, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->dtsFlag:Z
 
-    if-eqz v5, :cond_79
+    if-eqz v5, :cond_0
 
     .line 388
     iget-object v5, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->pesScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -261,7 +261,7 @@
     iput-boolean v6, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->seenFirstDts:Z
 
     .line 403
-    :cond_79
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->timestampAdjuster:Landroidx/media3/common/util/TimestampAdjuster;
 
     invoke-virtual {v0, v3, v4}, Landroidx/media3/common/util/TimestampAdjuster;->adjustTsTimestamp(J)J
@@ -270,14 +270,14 @@
 
     iput-wide v0, p0, Landroidx/media3/extractor/ts/PsExtractor$PesReader;->timeUs:J
 
-    :cond_81
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -343,7 +343,7 @@
 .end method
 
 .method public seek()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

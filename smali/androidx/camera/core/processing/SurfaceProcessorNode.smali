@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraInternal;Landroidx/camera/core/processing/SurfaceProcessorInternal;)V
-    .registers 3
+    .locals 0
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method private createAndSendSurfaceOutput(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/Map$Entry;)V
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,16 +136,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mCameraInternal:Landroidx/camera/core/impl/CameraInternal;
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_40
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_41
+    :goto_0
     move-object v7, p1
 
     .line 200
@@ -170,7 +170,7 @@
 .end method
 
 .method static synthetic lambda$setUpRotationUpdates$1(Ljava/util/Map;Landroidx/camera/core/SurfaceRequest$TransformationInfo;)V
-    .registers 5
+    .locals 3
 
     .line 243
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -181,12 +181,12 @@
 
     move-result-object p0
 
-    :goto_8
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -222,12 +222,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_0
 
     neg-int v1, v1
 
     .line 253
-    :cond_30
+    :cond_0
     invoke-static {v1}, Landroidx/camera/core/impl/utils/TransformUtils;->within360(I)I
 
     move-result v1
@@ -243,14 +243,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/camera/core/processing/SurfaceEdge;->updateTransformation(II)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_3f
+    :cond_1
     return-void
 .end method
 
 .method private sendSurfaceOutputs(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/Map;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -271,12 +271,12 @@
 
     move-result-object p2
 
-    :goto_8
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -300,14 +300,14 @@
 
     invoke-virtual {v1, v2}, Landroidx/camera/core/processing/SurfaceEdge;->addOnInvalidatedListener(Ljava/lang/Runnable;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 .method private sendSurfaceRequest(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/Map;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -330,16 +330,16 @@
     invoke-virtual {p0, p1, p2}, Landroidx/camera/core/processing/SurfaceProcessorNode;->setUpRotationUpdates(Landroidx/camera/core/SurfaceRequest;Ljava/util/Map;)V
 
     .line 176
-    :try_start_9
+    :try_start_0
     iget-object p2, p0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mSurfaceProcessor:Landroidx/camera/core/processing/SurfaceProcessorInternal;
 
     invoke-interface {p2, p1}, Landroidx/camera/core/processing/SurfaceProcessorInternal;->onInputSurface(Landroidx/camera/core/SurfaceRequest;)V
-    :try_end_e
-    .catch Landroidx/camera/core/ProcessingException; {:try_start_9 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Landroidx/camera/core/ProcessingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     const-string p2, "SurfaceProcessorNode"
@@ -349,12 +349,12 @@
     .line 178
     invoke-static {p2, v0, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method
 
 .method private transformSingleOutput(Landroidx/camera/core/processing/SurfaceEdge;Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;)Landroidx/camera/core/processing/SurfaceEdge;
-    .registers 16
+    .locals 13
 
     .line 130
     invoke-virtual {p2}, Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;->getCropRect()Landroid/graphics/Rect;
@@ -481,16 +481,16 @@
 
     move-result p1
 
-    if-eq p1, v2, :cond_6e
+    if-eq p1, v2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_6f
+    goto :goto_0
 
-    :cond_6e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_6f
+    :goto_0
     move v12, p1
 
     move-object v3, v0
@@ -503,7 +503,7 @@
 
 # virtual methods
 .method public getSurfaceProcessor()Landroidx/camera/core/processing/SurfaceProcessorInternal;
-    .registers 2
+    .locals 1
 
     .line 281
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mSurfaceProcessor:Landroidx/camera/core/processing/SurfaceProcessorInternal;
@@ -512,12 +512,12 @@
 .end method
 
 .method synthetic lambda$release$2$androidx-camera-core-processing-SurfaceProcessorNode()V
-    .registers 3
+    .locals 2
 
     .line 267
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mOutput:Landroidx/camera/core/processing/SurfaceProcessorNode$Out;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 268
     invoke-virtual {v0}, Landroidx/camera/core/processing/SurfaceProcessorNode$Out;->values()Ljava/util/Collection;
@@ -528,12 +528,12 @@
 
     move-result-object v0
 
-    :goto_c
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -544,14 +544,14 @@
     .line 270
     invoke-virtual {v1}, Landroidx/camera/core/processing/SurfaceEdge;->close()V
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$sendSurfaceOutputs$0$androidx-camera-core-processing-SurfaceProcessorNode(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/Map$Entry;)V
-    .registers 3
+    .locals 0
 
     .line 191
     invoke-direct {p0, p1, p2}, Landroidx/camera/core/processing/SurfaceProcessorNode;->createAndSendSurfaceOutput(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/Map$Entry;)V
@@ -560,7 +560,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 265
     iget-object v0, p0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mSurfaceProcessor:Landroidx/camera/core/processing/SurfaceProcessorInternal;
@@ -582,7 +582,7 @@
 .end method
 
 .method setUpRotationUpdates(Landroidx/camera/core/SurfaceRequest;Ljava/util/Map;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -609,7 +609,7 @@
 .end method
 
 .method public transform(Landroidx/camera/core/processing/SurfaceProcessorNode$In;)Landroidx/camera/core/processing/SurfaceProcessorNode$Out;
-    .registers 6
+    .locals 4
 
     .line 113
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -638,12 +638,12 @@
 
     move-result-object p1
 
-    :goto_18
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -660,10 +660,10 @@
 
     invoke-virtual {v2, v1, v3}, Landroidx/camera/core/processing/SurfaceProcessorNode$Out;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_18
+    goto :goto_0
 
     .line 121
-    :cond_2e
+    :cond_0
     iget-object p1, p0, Landroidx/camera/core/processing/SurfaceProcessorNode;->mOutput:Landroidx/camera/core/processing/SurfaceProcessorNode$Out;
 
     invoke-direct {p0, v0, p1}, Landroidx/camera/core/processing/SurfaceProcessorNode;->sendSurfaceRequest(Landroidx/camera/core/processing/SurfaceEdge;Ljava/util/Map;)V
@@ -680,7 +680,7 @@
 .end method
 
 .method public bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     check-cast p1, Landroidx/camera/core/processing/SurfaceProcessorNode$In;

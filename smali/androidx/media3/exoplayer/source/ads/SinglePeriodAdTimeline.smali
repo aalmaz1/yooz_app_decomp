@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;Landroidx/media3/common/AdPlaybackState;)V
-    .registers 6
+    .locals 3
 
     .line 41
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ForwardingTimeline;-><init>(Landroidx/media3/common/Timeline;)V
@@ -23,16 +23,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_d
+    if-ne v0, v2, :cond_0
 
     move v0, v2
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v1
 
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 43
@@ -40,11 +40,11 @@
 
     move-result p1
 
-    if-ne p1, v2, :cond_18
+    if-ne p1, v2, :cond_1
 
     move v1, v2
 
-    :cond_18
+    :cond_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 44
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 16
+    .locals 12
 
     .line 49
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/SinglePeriodAdTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -70,18 +70,18 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ads/SinglePeriodAdTimeline;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
 
     iget-wide v0, p1, Landroidx/media3/common/AdPlaybackState;->contentDurationUs:J
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     iget-wide v0, p2, Landroidx/media3/common/Timeline$Period;->durationUs:J
 
-    :goto_17
+    :goto_0
     move-wide v6, v0
 
     .line 52

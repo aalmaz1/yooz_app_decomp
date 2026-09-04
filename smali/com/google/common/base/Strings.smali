@@ -10,7 +10,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 .end method
 
 .method public static commonPrefix(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -54,8 +54,8 @@
 
     move v2, v1
 
-    :goto_14
-    if-ge v2, v0, :cond_23
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 185
     invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -66,13 +66,13 @@
 
     move-result v4
 
-    if-ne v3, v4, :cond_23
+    if-ne v3, v4, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     add-int/lit8 v0, v2, -0x1
 
     .line 188
@@ -80,19 +80,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_1
 
     invoke-static {p1, v0}, Lcom/google/common/base/Strings;->validSurrogatePairAt(Ljava/lang/CharSequence;I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_2
 
-    :cond_31
+    :cond_1
     add-int/lit8 v2, v2, -0x1
 
     .line 191
-    :cond_33
+    :cond_2
     invoke-interface {p0, v1, v2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object p0
@@ -105,7 +105,7 @@
 .end method
 
 .method public static commonSuffix(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -138,8 +138,8 @@
 
     const/4 v1, 0x0
 
-    :goto_13
-    if-ge v1, v0, :cond_30
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 207
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -166,14 +166,14 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_30
+    if-ne v2, v3, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 210
-    :cond_30
+    :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -186,7 +186,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_1
 
     .line 211
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -201,13 +201,13 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_2
 
-    :cond_4a
+    :cond_1
     add-int/lit8 v1, v1, -0x1
 
     .line 214
-    :cond_4c
+    :cond_2
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -230,7 +230,7 @@
 .end method
 
 .method public static emptyToNull(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
     .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -256,7 +256,7 @@
 .end method
 
 .method public static isNullOrEmpty(Ljava/lang/String;)Z
-    .registers 1
+    .locals 0
     .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -279,7 +279,7 @@
 .end method
 
 .method public static varargs lenientFormat(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-    .registers 8
+    .locals 6
     .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -306,7 +306,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -316,16 +316,16 @@
 
     aput-object v1, p1, v0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_f
+    :cond_0
     move v1, v0
 
     .line 269
-    :goto_10
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_1
 
     .line 270
     aget-object v2, p1, v1
@@ -338,11 +338,11 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 275
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -360,10 +360,10 @@
     move v2, v0
 
     .line 278
-    :goto_2c
+    :goto_2
     array-length v3, p1
 
-    if-ge v0, v3, :cond_49
+    if-ge v0, v3, :cond_3
 
     const-string v3, "%s"
 
@@ -374,12 +374,12 @@
 
     const/4 v4, -0x1
 
-    if-ne v3, v4, :cond_39
+    if-ne v3, v4, :cond_2
 
-    goto :goto_49
+    goto :goto_3
 
     .line 283
-    :cond_39
+    :cond_2
     invoke-virtual {v1, p0, v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
     add-int/lit8 v2, v0, 0x1
@@ -397,11 +397,11 @@
 
     move v0, v5
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 287
-    :cond_49
-    :goto_49
+    :cond_3
+    :goto_3
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -411,7 +411,7 @@
     .line 290
     array-length p0, p1
 
-    if-ge v0, p0, :cond_75
+    if-ge v0, p0, :cond_5
 
     const-string p0, " ["
 
@@ -426,10 +426,10 @@
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 293
-    :goto_5f
+    :goto_4
     array-length v0, p1
 
-    if-ge p0, v0, :cond_70
+    if-ge p0, v0, :cond_4
 
     const-string v0, ", "
 
@@ -445,16 +445,16 @@
 
     move p0, v0
 
-    goto :goto_5f
+    goto :goto_4
 
-    :cond_70
+    :cond_4
     const/16 p0, 0x5d
 
     .line 297
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 300
-    :cond_75
+    :cond_5
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -463,7 +463,7 @@
 .end method
 
 .method private static lenientToString(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 6
+    .locals 5
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -477,24 +477,24 @@
         }
     .end annotation
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     const-string p0, "null"
 
     return-object p0
 
     .line 308
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_a
+    :catch_0
     move-exception v0
 
     .line 311
@@ -606,7 +606,7 @@
 .end method
 
 .method public static nullToEmpty(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
     .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -629,7 +629,7 @@
 .end method
 
 .method public static padEnd(Ljava/lang/String;IC)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -651,12 +651,12 @@
 
     move-result v0
 
-    if-lt v0, p1, :cond_a
+    if-lt v0, p1, :cond_0
 
     return-object p0
 
     .line 128
-    :cond_a
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(I)V
@@ -669,18 +669,18 @@
 
     move-result p0
 
-    :goto_16
-    if-ge p0, p1, :cond_1e
+    :goto_0
+    if-ge p0, p1, :cond_1
 
     .line 131
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     add-int/lit8 p0, p0, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 133
-    :cond_1e
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -689,7 +689,7 @@
 .end method
 
 .method public static padStart(Ljava/lang/String;IC)Ljava/lang/String;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -711,12 +711,12 @@
 
     move-result v0
 
-    if-lt v0, p1, :cond_a
+    if-lt v0, p1, :cond_0
 
     return-object p0
 
     .line 97
-    :cond_a
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(I)V
@@ -726,18 +726,18 @@
 
     move-result v1
 
-    :goto_13
-    if-ge v1, p1, :cond_1b
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     .line 99
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 101
-    :cond_1b
+    :cond_1
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 102
@@ -749,7 +749,7 @@
 .end method
 
 .method public static repeat(Ljava/lang/String;I)Ljava/lang/String;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -768,27 +768,27 @@
 
     const/4 v1, 0x1
 
-    if-gt p1, v1, :cond_14
+    if-gt p1, v1, :cond_2
 
-    if-ltz p1, :cond_a
+    if-ltz p1, :cond_0
 
     move v0, v1
 
-    :cond_a
+    :cond_0
     const-string v1, "invalid count: %s"
 
     .line 150
     invoke-static {v0, v1, p1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;I)V
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_1
 
     const-string p0, ""
 
-    :cond_13
+    :cond_1
     return-object p0
 
     .line 155
-    :cond_14
+    :cond_2
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -805,7 +805,7 @@
 
     cmp-long v4, v4, v2
 
-    if-nez v4, :cond_39
+    if-nez v4, :cond_4
 
     .line 162
     new-array v2, p1, [C
@@ -813,20 +813,20 @@
     .line 163
     invoke-virtual {p0, v0, v1, v2, v0}, Ljava/lang/String;->getChars(II[CI)V
 
-    :goto_26
+    :goto_0
     sub-int p0, p1, v1
 
-    if-ge v1, p0, :cond_30
+    if-ge v1, p0, :cond_3
 
     .line 166
     invoke-static {v2, v0, v2, v1, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     shl-int/lit8 v1, v1, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 168
-    :cond_30
+    :cond_3
     invoke-static {v2, v0, v2, v1, p0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 169
@@ -837,7 +837,7 @@
     return-object p0
 
     .line 159
-    :cond_39
+    :cond_4
     new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -860,7 +860,7 @@
 .end method
 
 .method static validSurrogatePairAt(Ljava/lang/CharSequence;I)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -872,7 +872,7 @@
         }
     .end annotation
 
-    if-ltz p1, :cond_21
+    if-ltz p1, :cond_0
 
     .line 224
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -881,7 +881,7 @@
 
     add-int/lit8 v0, v0, -0x2
 
-    if-gt p1, v0, :cond_21
+    if-gt p1, v0, :cond_0
 
     .line 225
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
@@ -892,7 +892,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -907,13 +907,13 @@
 
     move-result p0
 
-    if-eqz p0, :cond_21
+    if-eqz p0, :cond_0
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_22
+    :goto_0
     return v0
 .end method

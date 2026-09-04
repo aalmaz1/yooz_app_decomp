@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/DefaultLoadControl;
-    .registers 14
+    .locals 13
 
     .line 243
     iget-boolean v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->buildCalled:Z
@@ -100,7 +100,7 @@
     .line 245
     iget-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 246
     new-instance v0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;
@@ -112,7 +112,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
 
     .line 248
-    :cond_16
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/DefaultLoadControl;
 
     iget-object v4, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->allocator:Landroidx/media3/exoplayer/upstream/DefaultAllocator;
@@ -141,7 +141,7 @@
 .end method
 
 .method public setAllocator(Landroidx/media3/exoplayer/upstream/DefaultAllocator;)Landroidx/media3/exoplayer/DefaultLoadControl$Builder;
-    .registers 3
+    .locals 1
 
     .line 145
     iget-boolean v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->buildCalled:Z
@@ -157,7 +157,7 @@
 .end method
 
 .method public setBackBuffer(IZ)Landroidx/media3/exoplayer/DefaultLoadControl$Builder;
-    .registers 6
+    .locals 3
 
     .line 234
     iget-boolean v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->buildCalled:Z
@@ -185,7 +185,7 @@
 .end method
 
 .method public setBufferDurationsMs(IIII)Landroidx/media3/exoplayer/DefaultLoadControl$Builder;
-    .registers 9
+    .locals 4
 
     .line 171
     iget-boolean v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->buildCalled:Z
@@ -237,7 +237,7 @@
 .end method
 
 .method public setPrioritizeTimeOverSizeThresholds(Z)Landroidx/media3/exoplayer/DefaultLoadControl$Builder;
-    .registers 3
+    .locals 1
 
     .line 217
     iget-boolean v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->buildCalled:Z
@@ -253,7 +253,7 @@
 .end method
 
 .method public setTargetBufferBytes(I)Landroidx/media3/exoplayer/DefaultLoadControl$Builder;
-    .registers 3
+    .locals 1
 
     .line 201
     iget-boolean v0, p0, Landroidx/media3/exoplayer/DefaultLoadControl$Builder;->buildCalled:Z

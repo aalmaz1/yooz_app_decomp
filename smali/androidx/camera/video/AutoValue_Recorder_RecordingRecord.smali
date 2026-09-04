@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/OutputOptions;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;ZZJ)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +42,7 @@
     .line 31
     invoke-direct {p0}, Landroidx/camera/video/Recorder$RecordingRecord;-><init>()V
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     .line 35
     iput-object p1, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getOutputOptions:Landroidx/camera/video/OutputOptions;
@@ -65,7 +65,7 @@
     return-void
 
     .line 33
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null getOutputOptions"
@@ -78,21 +78,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 93
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/Recorder$RecordingRecord;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_4
 
     .line 94
     check-cast p1, Landroidx/camera/video/Recorder$RecordingRecord;
@@ -108,22 +108,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5c
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getCallbackExecutor:Ljava/util/concurrent/Executor;
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_1
 
     .line 96
     invoke-virtual {p1}, Landroidx/camera/video/Recorder$RecordingRecord;->getCallbackExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v1
 
-    if-nez v1, :cond_5c
+    if-nez v1, :cond_3
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/Recorder$RecordingRecord;->getCallbackExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v3
@@ -132,23 +132,23 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5c
+    if-eqz v1, :cond_3
 
-    :goto_2c
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getEventListener:Landroidx/core/util/Consumer;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 97
     invoke-virtual {p1}, Landroidx/camera/video/Recorder$RecordingRecord;->getEventListener()Landroidx/core/util/Consumer;
 
     move-result-object v1
 
-    if-nez v1, :cond_5c
+    if-nez v1, :cond_3
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_37
+    :cond_2
     invoke-virtual {p1}, Landroidx/camera/video/Recorder$RecordingRecord;->getEventListener()Landroidx/core/util/Consumer;
 
     move-result-object v3
@@ -157,9 +157,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5c
+    if-eqz v1, :cond_3
 
-    :goto_41
+    :goto_1
     iget-boolean v1, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->hasAudioEnabled:Z
 
     .line 98
@@ -167,7 +167,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_5c
+    if-ne v1, v3, :cond_3
 
     iget-boolean v1, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->isPersistent:Z
 
@@ -176,7 +176,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_5c
+    if-ne v1, v3, :cond_3
 
     iget-wide v3, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getRecordingId:J
 
@@ -187,22 +187,22 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_5c
+    if-nez p1, :cond_3
 
-    goto :goto_5d
+    goto :goto_2
 
-    :cond_5c
+    :cond_3
     move v0, v2
 
-    :goto_5d
+    :goto_2
     return v0
 
-    :cond_5e
+    :cond_4
     return v2
 .end method
 
 .method getCallbackExecutor()Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getCallbackExecutor:Ljava/util/concurrent/Executor;
@@ -211,7 +211,7 @@
 .end method
 
 .method getEventListener()Landroidx/core/util/Consumer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -228,7 +228,7 @@
 .end method
 
 .method getOutputOptions()Landroidx/camera/video/OutputOptions;
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getOutputOptions:Landroidx/camera/video/OutputOptions;
@@ -237,7 +237,7 @@
 .end method
 
 .method getRecordingId()J
-    .registers 3
+    .locals 2
 
     .line 73
     iget-wide v0, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getRecordingId:J
@@ -246,7 +246,7 @@
 .end method
 
 .method hasAudioEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 63
     iget-boolean v0, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->hasAudioEnabled:Z
@@ -255,7 +255,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 109
     iget-object v0, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getOutputOptions:Landroidx/camera/video/OutputOptions;
@@ -275,18 +275,18 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_0
 
     move v2, v3
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    :goto_16
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -294,16 +294,16 @@
     .line 113
     iget-object v2, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->getEventListener:Landroidx/core/util/Consumer;
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_1d
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    :goto_21
+    :goto_1
     xor-int/2addr v0, v3
 
     mul-int/2addr v0, v1
@@ -315,16 +315,16 @@
 
     const/16 v4, 0x4d5
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2
 
     move v2, v3
 
-    goto :goto_2e
+    goto :goto_2
 
-    :cond_2d
+    :cond_2
     move v2, v4
 
-    :goto_2e
+    :goto_2
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -332,14 +332,14 @@
     .line 117
     iget-boolean v2, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->isPersistent:Z
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_3
 
-    goto :goto_36
+    goto :goto_3
 
-    :cond_35
+    :cond_3
     move v3, v4
 
-    :goto_36
+    :goto_3
     xor-int/2addr v0, v3
 
     mul-int/2addr v0, v1
@@ -361,7 +361,7 @@
 .end method
 
 .method isPersistent()Z
-    .registers 2
+    .locals 1
 
     .line 68
     iget-boolean v0, p0, Landroidx/camera/video/AutoValue_Recorder_RecordingRecord;->isPersistent:Z
@@ -370,7 +370,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 78
     new-instance v0, Ljava/lang/StringBuilder;

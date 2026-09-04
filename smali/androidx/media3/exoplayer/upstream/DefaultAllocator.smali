@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(ZI)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(ZII)V
-    .registers 8
+    .locals 4
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,28 +48,28 @@
 
     const/4 v1, 0x0
 
-    if-lez p2, :cond_9
+    if-lez p2, :cond_0
 
     move v2, v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v2, v1
 
     .line 67
-    :goto_a
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-ltz p3, :cond_10
+    if-ltz p3, :cond_1
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_10
+    :cond_1
     move v0, v1
 
     .line 68
-    :goto_11
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 69
@@ -88,7 +88,7 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
 
-    if-lez p3, :cond_3a
+    if-lez p3, :cond_2
 
     mul-int p1, p3, p2
 
@@ -97,8 +97,8 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->initialAllocationBlock:[B
 
-    :goto_28
-    if-ge v1, p3, :cond_3d
+    :goto_2
+    if-ge v1, p3, :cond_3
 
     mul-int p1, v1, p2
 
@@ -115,27 +115,27 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_28
+    goto :goto_2
 
-    :cond_3a
+    :cond_2
     const/4 p1, 0x0
 
     .line 80
     iput-object p1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->initialAllocationBlock:[B
 
-    :cond_3d
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public declared-synchronized allocate()Landroidx/media3/exoplayer/upstream/Allocation;
-    .registers 5
+    .locals 4
 
     monitor-enter p0
 
     .line 100
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->allocatedCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -145,7 +145,7 @@
     .line 102
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
 
-    if-lez v0, :cond_21
+    if-lez v0, :cond_0
 
     .line 103
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
@@ -171,10 +171,10 @@
 
     aput-object v3, v1, v2
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 106
-    :cond_21
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/upstream/Allocation;
 
     iget v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->individualAllocationSize:I
@@ -192,7 +192,7 @@
 
     array-length v3, v2
 
-    if-le v1, v3, :cond_3d
+    if-le v1, v3, :cond_1
 
     .line 111
     array-length v1, v2
@@ -206,17 +206,17 @@
     check-cast v1, [Landroidx/media3/exoplayer/upstream/Allocation;
 
     iput-object v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
-    :try_end_3d
-    .catchall {:try_start_1 .. :try_end_3d} :catchall_3f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 114
-    :cond_3d
-    :goto_3d
+    :cond_1
+    :goto_0
     monitor-exit p0
 
     return-object v0
 
-    :catchall_3f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -225,7 +225,7 @@
 .end method
 
 .method public getIndividualAllocationLength()I
-    .registers 2
+    .locals 1
 
     .line 185
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->individualAllocationSize:I
@@ -234,17 +234,17 @@
 .end method
 
 .method public declared-synchronized getTotalBytesAllocated()I
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 180
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->allocatedCount:I
 
     iget v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->individualAllocationSize:I
-    :try_end_5
-    .catchall {:try_start_1 .. :try_end_5} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     mul-int/2addr v0, v1
 
@@ -252,7 +252,7 @@
 
     return v0
 
-    :catchall_8
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -261,12 +261,12 @@
 .end method
 
 .method public declared-synchronized release(Landroidx/media3/exoplayer/upstream/Allocation;)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
     .line 119
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
 
     iget v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
@@ -286,15 +286,15 @@
 
     .line 122
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_14
-    .catchall {:try_start_1 .. :try_end_14} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 123
     monitor-exit p0
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -303,15 +303,15 @@
 .end method
 
 .method public declared-synchronized release(Landroidx/media3/exoplayer/upstream/Allocator$AllocationNode;)V
-    .registers 5
+    .locals 3
 
     monitor-enter p0
 
-    :goto_1
-    if-eqz p1, :cond_1c
+    :goto_0
+    if-eqz p1, :cond_0
 
     .line 128
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
 
     iget v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
@@ -338,20 +338,20 @@
 
     move-result-object p1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 133
-    :cond_1c
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_1f
-    .catchall {:try_start_3 .. :try_end_1f} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 134
     monitor-exit p0
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -360,30 +360,30 @@
 .end method
 
 .method public declared-synchronized reset()V
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 85
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->trimOnReset:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
     .line 86
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->setTargetBufferSize(I)V
-    :try_end_9
-    .catchall {:try_start_1 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 88
-    :cond_9
+    :cond_0
     monitor-exit p0
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -392,41 +392,41 @@
 .end method
 
 .method public declared-synchronized setTargetBufferSize(I)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 91
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->targetBufferSize:I
 
-    if-ge p1, v0, :cond_7
+    if-ge p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 92
-    :goto_8
+    :goto_0
     iput p1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->targetBufferSize:I
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     .line 94
     invoke-virtual {p0}, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->trim()V
-    :try_end_f
-    .catchall {:try_start_1 .. :try_end_f} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 96
-    :cond_f
+    :cond_1
     monitor-exit p0
 
     return-void
 
-    :catchall_11
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -435,12 +435,12 @@
 .end method
 
 .method public declared-synchronized trim()V
-    .registers 8
+    .locals 7
 
     monitor-enter p0
 
     .line 138
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->targetBufferSize:I
 
     iget v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->individualAllocationSize:I
@@ -462,10 +462,10 @@
 
     .line 140
     iget v2, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
-    :try_end_13
-    .catchall {:try_start_1 .. :try_end_13} :catchall_68
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-lt v0, v2, :cond_17
+    if-lt v0, v2, :cond_0
 
     .line 142
     monitor-exit p0
@@ -473,16 +473,16 @@
     return-void
 
     .line 145
-    :cond_17
-    :try_start_17
+    :cond_0
+    :try_start_1
     iget-object v3, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->initialAllocationBlock:[B
 
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_4
 
     add-int/lit8 v2, v2, -0x1
 
-    :goto_1d
-    if-gt v1, v2, :cond_52
+    :goto_0
+    if-gt v1, v2, :cond_3
 
     .line 152
     iget-object v3, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
@@ -500,14 +500,14 @@
 
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->initialAllocationBlock:[B
 
-    if-ne v4, v5, :cond_32
+    if-ne v4, v5, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 156
-    :cond_32
+    :cond_1
     iget-object v4, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
 
     aget-object v4, v4, v2
@@ -523,14 +523,14 @@
 
     iget-object v6, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->initialAllocationBlock:[B
 
-    if-eq v5, v6, :cond_45
+    if-eq v5, v6, :cond_2
 
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 160
-    :cond_45
+    :cond_2
     iget-object v5, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
 
     add-int/lit8 v6, v1, 0x1
@@ -546,20 +546,20 @@
 
     move v1, v6
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 166
-    :cond_52
+    :cond_3
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
     .line 167
     iget v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
-    :try_end_58
-    .catchall {:try_start_17 .. :try_end_58} :catchall_68
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-lt v0, v1, :cond_5c
+    if-lt v0, v1, :cond_4
 
     .line 169
     monitor-exit p0
@@ -567,8 +567,8 @@
     return-void
 
     .line 174
-    :cond_5c
-    :try_start_5c
+    :cond_4
+    :try_start_2
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableAllocations:[Landroidx/media3/exoplayer/upstream/Allocation;
 
     iget v2, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
@@ -579,15 +579,15 @@
 
     .line 175
     iput v0, p0, Landroidx/media3/exoplayer/upstream/DefaultAllocator;->availableCount:I
-    :try_end_66
-    .catchall {:try_start_5c .. :try_end_66} :catchall_68
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 176
     monitor-exit p0
 
     return-void
 
-    :catchall_68
+    :catchall_0
     move-exception v0
 
     monitor-exit p0

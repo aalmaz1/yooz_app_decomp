@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;II)V
-    .registers 8
+    .locals 4
 
     int-to-long v0, p3
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public getChunkEndTimeUs()J
-    .registers 6
+    .locals 5
 
     .line 511
     invoke-virtual {p0}, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->getChunkStartTimeUs()J
@@ -73,7 +73,7 @@
 .end method
 
 .method public getChunkStartTimeUs()J
-    .registers 4
+    .locals 3
 
     .line 505
     invoke-virtual {p0}, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->checkInBounds()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public getDataSpec()Landroidx/media3/datasource/DataSpec;
-    .registers 5
+    .locals 4
 
     .line 498
     invoke-virtual {p0}, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->checkInBounds()V

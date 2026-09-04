@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final build()Landroidx/activity/result/PickVisualMediaRequest;
-    .registers 3
+    .locals 2
 
     .line 71
     new-instance v0, Landroidx/activity/result/PickVisualMediaRequest;
@@ -78,7 +78,7 @@
 .end method
 
 .method public final setMediaType(Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;)Landroidx/activity/result/PickVisualMediaRequest$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "mediaType"
 

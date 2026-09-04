@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/EncoderProfilesProvider;)V
-    .registers 8
+    .locals 6
 
     .line 315
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,14 +76,14 @@
 
     move-result-object v0
 
-    :goto_1e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     const-string v2, "RecorderVideoCapabilities"
 
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -96,12 +96,12 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_33
+    if-nez v3, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 324
-    :cond_33
+    :cond_0
     new-instance v4, Ljava/lang/StringBuilder;
 
     const-string v5, "profiles = "
@@ -123,7 +123,7 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_1
 
     .line 328
     new-instance v3, Ljava/lang/StringBuilder;
@@ -148,10 +148,10 @@
 
     invoke-static {v2, v1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 334
-    :cond_64
+    :cond_1
     invoke-virtual {v3}, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;->getDefaultVideoProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
 
     move-result-object v2
@@ -179,17 +179,17 @@
 
     invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 341
-    :cond_80
+    :cond_2
     iget-object p1, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mSupportedProfilesMap:Ljava/util/Map;
 
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_93
+    if-eqz p1, :cond_3
 
     const-string p1, "No supported EncoderProfiles"
 
@@ -204,10 +204,10 @@
     .line 344
     iput-object p1, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mHighestProfiles:Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
-    goto :goto_ae
+    goto :goto_1
 
     .line 346
-    :cond_93
+    :cond_3
     new-instance p1, Ljava/util/ArrayDeque;
 
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mSupportedProfilesMap:Ljava/util/Map;
@@ -237,12 +237,12 @@
 
     iput-object p1, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mLowestProfiles:Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
-    :goto_ae
+    :goto_1
     return-void
 .end method
 
 .method private static checkQualityConstantsOrThrow(Landroidx/camera/video/Quality;)V
-    .registers 4
+    .locals 3
 
     .line 436
     invoke-static {p0}, Landroidx/camera/video/Quality;->containsQuality(Landroidx/camera/video/Quality;)Z
@@ -269,7 +269,7 @@
 .end method
 
 .method private getEncoderProfiles(Landroidx/camera/video/Quality;Landroidx/camera/core/impl/EncoderProfilesProvider;)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 5
+    .locals 2
 
     .line 415
     instance-of v0, p1, Landroidx/camera/video/Quality$ConstantQuality;
@@ -294,7 +294,7 @@
 .end method
 
 .method private toValidatedProfiles(Landroidx/camera/core/impl/EncoderProfilesProxy;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 3
+    .locals 1
 
     .line 427
     invoke-interface {p1}, Landroidx/camera/core/impl/EncoderProfilesProxy;->getVideoProfiles()Ljava/util/List;
@@ -306,14 +306,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 432
-    :cond_c
+    :cond_0
     invoke-static {p1}, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;->from(Landroidx/camera/core/impl/EncoderProfilesProxy;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
     move-result-object p1
@@ -324,7 +324,7 @@
 
 # virtual methods
 .method public findHighestSupportedEncoderProfilesFor(Landroid/util/Size;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 5
+    .locals 3
 
     .line 378
     invoke-virtual {p0, p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->findHighestSupportedQualityFor(Landroid/util/Size;)Landroidx/camera/video/Quality;
@@ -363,19 +363,19 @@
     .line 381
     sget-object p1, Landroidx/camera/video/Quality;->NONE:Landroidx/camera/video/Quality;
 
-    if-eq v0, p1, :cond_35
+    if-eq v0, p1, :cond_1
 
     .line 382
     invoke-virtual {p0, v0}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->getProfiles(Landroidx/camera/video/Quality;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
     move-result-object p1
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_0
 
-    goto :goto_36
+    goto :goto_0
 
     .line 384
-    :cond_2d
+    :cond_0
     new-instance p1, Ljava/lang/AssertionError;
 
     const-string v0, "Camera advertised available quality but did not produce EncoderProfiles for advertised quality."
@@ -384,15 +384,15 @@
 
     throw p1
 
-    :cond_35
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_36
+    :goto_0
     return-object p1
 .end method
 
 .method public findHighestSupportedQualityFor(Landroid/util/Size;)Landroidx/camera/video/Quality;
-    .registers 3
+    .locals 1
 
     .line 393
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mAreaSortedSizeToQualityMap:Ljava/util/TreeMap;
@@ -401,7 +401,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 398
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -413,14 +413,14 @@
     return-object p1
 
     .line 402
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mAreaSortedSizeToQualityMap:Ljava/util/TreeMap;
 
     invoke-virtual {v0, p1}, Ljava/util/TreeMap;->floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     .line 404
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -432,14 +432,14 @@
     return-object p1
 
     .line 409
-    :cond_1e
+    :cond_1
     sget-object p1, Landroidx/camera/video/Quality;->NONE:Landroidx/camera/video/Quality;
 
     return-object p1
 .end method
 
 .method public getProfiles(Landroidx/camera/video/Quality;)Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
-    .registers 3
+    .locals 1
 
     .line 365
     invoke-static {p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->checkQualityConstantsOrThrow(Landroidx/camera/video/Quality;)V
@@ -447,7 +447,7 @@
     .line 366
     sget-object v0, Landroidx/camera/video/Quality;->HIGHEST:Landroidx/camera/video/Quality;
 
-    if-ne p1, v0, :cond_a
+    if-ne p1, v0, :cond_0
 
     .line 367
     iget-object p1, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mHighestProfiles:Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
@@ -455,10 +455,10 @@
     return-object p1
 
     .line 368
-    :cond_a
+    :cond_0
     sget-object v0, Landroidx/camera/video/Quality;->LOWEST:Landroidx/camera/video/Quality;
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_1
 
     .line 369
     iget-object p1, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mLowestProfiles:Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
@@ -466,7 +466,7 @@
     return-object p1
 
     .line 371
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->mSupportedProfilesMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -479,7 +479,7 @@
 .end method
 
 .method public getSupportedQualities()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -504,7 +504,7 @@
 .end method
 
 .method public isQualitySupported(Landroidx/camera/video/Quality;)Z
-    .registers 2
+    .locals 0
 
     .line 359
     invoke-static {p1}, Landroidx/camera/video/RecorderVideoCapabilities$CapabilitiesByQuality;->checkQualityConstantsOrThrow(Landroidx/camera/video/Quality;)V
@@ -514,15 +514,15 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_c
+    :goto_0
     return p1
 .end method

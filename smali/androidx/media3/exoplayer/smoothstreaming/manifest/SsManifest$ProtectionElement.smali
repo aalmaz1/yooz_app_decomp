@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/UUID;[B[Landroidx/media3/extractor/mp4/TrackEncryptionBox;)V
-    .registers 4
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

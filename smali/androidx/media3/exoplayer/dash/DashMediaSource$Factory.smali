@@ -48,7 +48,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 1
 
     .line 136
     new-instance v0, Landroidx/media3/exoplayer/dash/DefaultDashChunkSource$Factory;
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/dash/DashMediaSource;
-    .registers 19
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -134,7 +134,7 @@
     .line 350
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->manifestParser:Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 352
     new-instance v1, Landroidx/media3/exoplayer/dash/manifest/DashManifestParser;
@@ -142,7 +142,7 @@
     invoke-direct {v1}, Landroidx/media3/exoplayer/dash/manifest/DashManifestParser;-><init>()V
 
     .line 354
-    :cond_12
+    :cond_0
     iget-object v3, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     iget-object v3, v3, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
@@ -152,7 +152,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_23
+    if-nez v4, :cond_1
 
     .line 356
     new-instance v4, Landroidx/media3/exoplayer/offline/FilteringManifestParser;
@@ -161,28 +161,28 @@
 
     move-object v5, v4
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     move-object v5, v1
 
     .line 360
-    :goto_24
+    :goto_0
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->cmcdConfigurationFactory:Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_2
 
     const/4 v1, 0x0
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 362
-    :cond_2a
+    :cond_2
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;->createCmcdConfiguration(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     move-result-object v1
 
-    :goto_2e
+    :goto_1
     move-object v8, v1
 
     .line 364
@@ -221,7 +221,7 @@
 .end method
 
 .method public createMediaSource(Landroidx/media3/exoplayer/dash/manifest/DashManifest;)Landroidx/media3/exoplayer/dash/DashMediaSource;
-    .registers 4
+    .locals 2
 
     .line 295
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -263,7 +263,7 @@
 .end method
 
 .method public createMediaSource(Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/dash/DashMediaSource;
-    .registers 20
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -292,7 +292,7 @@
     .line 317
     iget-object v2, v2, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_0
 
     .line 318
     sget-object v2, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
@@ -300,7 +300,7 @@
     invoke-virtual {v1, v2}, Landroidx/media3/common/MediaItem$Builder;->setUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem$Builder;
 
     .line 320
-    :cond_20
+    :cond_0
     invoke-virtual {v1}, Landroidx/media3/common/MediaItem$Builder;->build()Landroidx/media3/common/MediaItem;
 
     move-result-object v2
@@ -308,19 +308,19 @@
     .line 323
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->cmcdConfigurationFactory:Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_1
 
     const/4 v1, 0x0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 325
-    :cond_2a
+    :cond_1
     invoke-interface {v1, v2}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;->createCmcdConfiguration(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
 
     move-result-object v1
 
-    :goto_2e
+    :goto_0
     move-object v8, v1
 
     .line 326
@@ -359,7 +359,7 @@
 .end method
 
 .method public bridge synthetic createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 2
+    .locals 0
 
     .line 106
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/dash/DashMediaSource;
@@ -370,7 +370,7 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -383,7 +383,7 @@
 .end method
 
 .method public bridge synthetic experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -396,7 +396,7 @@
 .end method
 
 .method public getSupportedTypes()[I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -410,7 +410,7 @@
 .end method
 
 .method public setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 172
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -425,7 +425,7 @@
 .end method
 
 .method public bridge synthetic setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 106
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
@@ -436,7 +436,7 @@
 .end method
 
 .method public setCompositeSequenceableLoaderFactory(Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "DashMediaSource.Factory#setCompositeSequenceableLoaderFactory no longer handles null by instantiating a new DefaultCompositeSequenceableLoaderFactory. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -453,7 +453,7 @@
 .end method
 
 .method public setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -470,7 +470,7 @@
 .end method
 
 .method public bridge synthetic setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 106
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
@@ -481,7 +481,7 @@
 .end method
 
 .method public setFallbackTargetLiveOffsetMs(J)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 0
 
     .line 228
     iput-wide p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->fallbackTargetLiveOffsetMs:J
@@ -490,7 +490,7 @@
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     const-string v0, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior."
 
@@ -507,7 +507,7 @@
 .end method
 
 .method public bridge synthetic setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 106
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
@@ -518,7 +518,7 @@
 .end method
 
 .method public setManifestParser(Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -537,7 +537,7 @@
 .end method
 
 .method public setMinLiveStartPositionUs(J)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 0
 
     .line 247
     iput-wide p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->minLiveStartPositionUs:J
@@ -546,7 +546,7 @@
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;
-    .registers 3
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->chunkSourceFactory:Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;
@@ -563,7 +563,7 @@
 .end method
 
 .method public bridge synthetic setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 106
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/dash/DashMediaSource$Factory;

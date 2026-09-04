@@ -35,7 +35,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -79,7 +79,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Lcom/google/common/base/MoreObjects$1;)V
-    .registers 3
+    .locals 0
 
     .line 147
     invoke-direct {p0, p1}, Lcom/google/common/base/MoreObjects$ToStringHelper;-><init>(Ljava/lang/String;)V
@@ -88,7 +88,7 @@
 .end method
 
 .method private addHolder()Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;
-    .registers 3
+    .locals 2
 
     .line 389
     new-instance v0, Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;
@@ -106,7 +106,7 @@
 .end method
 
 .method private addHolder(Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -132,7 +132,7 @@
 .end method
 
 .method private addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 4
+    .locals 1
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -169,7 +169,7 @@
 .end method
 
 .method private addUnconditionalHolder()Lcom/google/common/base/MoreObjects$ToStringHelper$UnconditionalValueHolder;
-    .registers 3
+    .locals 2
 
     .line 410
     new-instance v0, Lcom/google/common/base/MoreObjects$ToStringHelper$UnconditionalValueHolder;
@@ -189,7 +189,7 @@
 .end method
 
 .method private addUnconditionalHolder(Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -211,7 +211,7 @@
 .end method
 
 .method private addUnconditionalHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -244,7 +244,7 @@
 .end method
 
 .method private static isEmpty(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -261,7 +261,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 334
     check-cast p0, Ljava/lang/CharSequence;
@@ -270,21 +270,21 @@
 
     move-result p0
 
-    if-nez p0, :cond_f
+    if-nez p0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v1, v2
 
-    :goto_10
+    :goto_0
     return v1
 
     .line 335
-    :cond_11
+    :cond_1
     instance-of v0, p0, Ljava/util/Collection;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     .line 336
     check-cast p0, Ljava/util/Collection;
@@ -296,10 +296,10 @@
     return p0
 
     .line 337
-    :cond_1c
+    :cond_2
     instance-of v0, p0, Ljava/util/Map;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3
 
     .line 338
     check-cast p0, Ljava/util/Map;
@@ -311,10 +311,10 @@
     return p0
 
     .line 339
-    :cond_27
+    :cond_3
     instance-of v0, p0, Lcom/google/common/base/Optional;
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_4
 
     .line 340
     check-cast p0, Lcom/google/common/base/Optional;
@@ -328,7 +328,7 @@
     return p0
 
     .line 341
-    :cond_33
+    :cond_4
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -337,31 +337,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_6
 
     .line 342
     invoke-static {p0}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result p0
 
-    if-nez p0, :cond_44
+    if-nez p0, :cond_5
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_44
+    :cond_5
     move v1, v2
 
-    :goto_45
+    :goto_1
     return v1
 
-    :cond_46
+    :cond_6
     return v2
 .end method
 
 
 # virtual methods
 .method public add(Ljava/lang/String;C)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -386,7 +386,7 @@
 .end method
 
 .method public add(Ljava/lang/String;D)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -411,7 +411,7 @@
 .end method
 
 .method public add(Ljava/lang/String;F)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -436,7 +436,7 @@
 .end method
 
 .method public add(Ljava/lang/String;I)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -461,7 +461,7 @@
 .end method
 
 .method public add(Ljava/lang/String;J)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -486,7 +486,7 @@
 .end method
 
 .method public add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -511,7 +511,7 @@
 .end method
 
 .method public add(Ljava/lang/String;Z)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -536,7 +536,7 @@
 .end method
 
 .method public addValue(C)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -559,7 +559,7 @@
 .end method
 
 .method public addValue(D)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -582,7 +582,7 @@
 .end method
 
 .method public addValue(F)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -605,7 +605,7 @@
 .end method
 
 .method public addValue(I)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -628,7 +628,7 @@
 .end method
 
 .method public addValue(J)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -651,7 +651,7 @@
 .end method
 
 .method public addValue(Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -674,7 +674,7 @@
 .end method
 
 .method public addValue(Z)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -697,7 +697,7 @@
 .end method
 
 .method public omitNullValues()Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -708,7 +708,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 9
+    .locals 8
 
     .line 358
     iget-boolean v0, p0, Lcom/google/common/base/MoreObjects$ToStringHelper;->omitNullValues:Z
@@ -742,8 +742,8 @@
 
     const-string v4, ""
 
-    :goto_1d
-    if-eqz v3, :cond_6b
+    :goto_0
+    if-eqz v3, :cond_5
 
     .line 365
     iget-object v5, v3, Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;->value:Ljava/lang/Object;
@@ -751,33 +751,33 @@
     .line 366
     instance-of v6, v3, Lcom/google/common/base/MoreObjects$ToStringHelper$UnconditionalValueHolder;
 
-    if-nez v6, :cond_32
+    if-nez v6, :cond_1
 
-    if-nez v5, :cond_2a
+    if-nez v5, :cond_0
 
-    if-nez v0, :cond_68
+    if-nez v0, :cond_4
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_2a
-    if-eqz v1, :cond_32
+    :cond_0
+    if-eqz v1, :cond_1
 
     .line 369
     invoke-static {v5}, Lcom/google/common/base/MoreObjects$ToStringHelper;->isEmpty(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_68
+    if-nez v6, :cond_4
 
     .line 370
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_1
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 373
     iget-object v4, v3, Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;->name:Ljava/lang/String;
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_2
 
     .line 374
     iget-object v4, v3, Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;->name:Ljava/lang/String;
@@ -790,8 +790,8 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :cond_44
-    if-eqz v5, :cond_63
+    :cond_2
+    if-eqz v5, :cond_3
 
     .line 376
     invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -802,7 +802,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_63
+    if-eqz v4, :cond_3
 
     const/4 v4, 0x1
 
@@ -826,22 +826,22 @@
 
     invoke-virtual {v2, v5, v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
-    goto :goto_66
+    goto :goto_2
 
     .line 381
-    :cond_63
+    :cond_3
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :goto_66
+    :goto_2
     const-string v4, ", "
 
     .line 364
-    :cond_68
+    :cond_4
     iget-object v3, v3, Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;->next:Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_6b
+    :cond_5
     const/16 v0, 0x7d
 
     .line 385

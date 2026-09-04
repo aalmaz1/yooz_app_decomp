@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 50
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -55,28 +55,28 @@
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Landroid/support/customtabs/trusted/ITrustedWebActivityService;
-    .registers 3
+    .locals 2
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 62
-    :cond_4
+    :cond_0
     sget-object v0, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 63
     instance-of v1, v0, Landroid/support/customtabs/trusted/ITrustedWebActivityService;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 64
     check-cast v0, Landroid/support/customtabs/trusted/ITrustedWebActivityService;
@@ -84,7 +84,7 @@
     return-object v0
 
     .line 66
-    :cond_13
+    :cond_1
     new-instance v0, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;
 
     invoke-direct {v0, p0}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub$Proxy;-><init>(Landroid/os/IBinder;)V
@@ -95,13 +95,13 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -113,30 +113,30 @@
 
     const/4 v1, 0x1
 
-    if-lt p1, v1, :cond_d
+    if-lt p1, v1, :cond_0
 
     const v2, 0xffffff
 
-    if-gt p1, v2, :cond_d
+    if-gt p1, v2, :cond_0
 
     .line 76
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    :cond_d
+    :cond_0
     const v2, 0x5f4e5446
 
-    if-ne p1, v2, :cond_16
+    if-ne p1, v2, :cond_1
 
     .line 79
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     return v1
 
-    :cond_16
-    packed-switch p1, :pswitch_data_90
+    :cond_1
+    packed-switch p1, :pswitch_data_0
 
     .line 146
-    :pswitch_19
+    :pswitch_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result p1
@@ -144,7 +144,7 @@
     return p1
 
     .line 134
-    :pswitch_1e
+    :pswitch_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
@@ -174,10 +174,10 @@
     .line 141
     invoke-static {p3, p1, v1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
-    goto :goto_8e
+    goto :goto_0
 
     .line 126
-    :pswitch_39
+    :pswitch_2
     invoke-virtual {p0}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub;->getSmallIconBitmap()Landroid/os/Bundle;
 
     move-result-object p1
@@ -188,10 +188,10 @@
     .line 128
     invoke-static {p3, p1, v1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
-    goto :goto_8e
+    goto :goto_0
 
     .line 87
-    :pswitch_44
+    :pswitch_3
     sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-static {p2, p1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$000(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -211,10 +211,10 @@
     .line 90
     invoke-static {p3, p1, v1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
-    goto :goto_8e
+    goto :goto_0
 
     .line 112
-    :pswitch_57
+    :pswitch_4
     invoke-virtual {p0}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub;->getActiveNotifications()Landroid/os/Bundle;
 
     move-result-object p1
@@ -225,10 +225,10 @@
     .line 114
     invoke-static {p3, p1, v1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
-    goto :goto_8e
+    goto :goto_0
 
     .line 119
-    :pswitch_62
+    :pswitch_5
     invoke-virtual {p0}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub;->getSmallIconId()I
 
     move-result p1
@@ -239,10 +239,10 @@
     .line 121
     invoke-virtual {p3, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_8e
+    goto :goto_0
 
     .line 105
-    :pswitch_6d
+    :pswitch_6
     sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-static {p2, p1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$000(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -257,10 +257,10 @@
     .line 107
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    goto :goto_8e
+    goto :goto_0
 
     .line 96
-    :pswitch_7c
+    :pswitch_7
     sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-static {p2, p1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$000(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -280,20 +280,20 @@
     .line 99
     invoke-static {p3, p1, v1}, Landroid/support/customtabs/trusted/ITrustedWebActivityService$_Parcel;->access$100(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
-    :goto_8e
+    :goto_0
     return v1
 
     nop
 
-    :pswitch_data_90
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_7c
-        :pswitch_6d
-        :pswitch_62
-        :pswitch_57
-        :pswitch_44
-        :pswitch_39
-        :pswitch_19
-        :pswitch_1e
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

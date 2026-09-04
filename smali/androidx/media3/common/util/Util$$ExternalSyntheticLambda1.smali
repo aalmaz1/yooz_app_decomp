@@ -14,7 +14,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Lcom/google/common/util/concurrent/SettableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Landroidx/media3/common/util/Util$$ExternalSyntheticLambda1;->f$0:Lcom/google/common/util/concurrent/SettableFuture;
 

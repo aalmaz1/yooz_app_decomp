@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
 
 # virtual methods
 .method public getOutputTransform(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroidx/camera/view/transform/OutputTransform;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -33,46 +33,46 @@
     move-result-object p1
 
     .line 87
-    :try_start_4
+    :try_start_0
     invoke-virtual {p0, p1}, Landroidx/camera/view/transform/FileTransformFactory;->getOutputTransform(Ljava/io/InputStream;)Landroidx/camera/view/transform/OutputTransform;
 
     move-result-object p2
-    :try_end_8
-    .catchall {:try_start_4 .. :try_end_8} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 88
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
 
-    :cond_d
+    :cond_0
     return-object p2
 
-    :catchall_e
+    :catchall_0
     move-exception p2
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     .line 86
-    :try_start_11
+    :try_start_1
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
-    :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_15
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_19
+    goto :goto_0
 
-    :catchall_15
+    :catchall_1
     move-exception p1
 
     invoke-virtual {p2, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     throw p2
 .end method
 
 .method public getOutputTransform(Ljava/io/File;)Landroidx/camera/view/transform/OutputTransform;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -85,40 +85,40 @@
     invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
     .line 97
-    :try_start_5
+    :try_start_0
     invoke-virtual {p0, v0}, Landroidx/camera/view/transform/FileTransformFactory;->getOutputTransform(Ljava/io/InputStream;)Landroidx/camera/view/transform/OutputTransform;
 
     move-result-object p1
-    :try_end_9
-    .catchall {:try_start_5 .. :try_end_9} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 98
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
     return-object p1
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     .line 96
-    :try_start_e
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_11
-    .catchall {:try_start_e .. :try_end_11} :catchall_12
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_16
+    goto :goto_0
 
-    :catchall_12
+    :catchall_1
     move-exception v0
 
     invoke-virtual {p1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_16
+    :goto_0
     throw p1
 .end method
 
 .method public getOutputTransform(Ljava/io/InputStream;)Landroidx/camera/view/transform/OutputTransform;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -153,7 +153,7 @@
     .line 112
     iget-boolean v2, p0, Landroidx/camera/view/transform/FileTransformFactory;->mUsingExifOrientation:Z
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     .line 115
     invoke-virtual {p1}, Landroidx/camera/core/impl/utils/Exif;->getOrientation()I
@@ -176,7 +176,7 @@
     invoke-virtual {v1, p1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
 
     .line 118
-    :cond_2d
+    :cond_0
     new-instance p1, Landroidx/camera/view/transform/OutputTransform;
 
     invoke-static {v0}, Landroidx/camera/core/impl/utils/TransformUtils;->rectToSize(Landroid/graphics/Rect;)Landroid/util/Size;
@@ -189,7 +189,7 @@
 .end method
 
 .method public isUsingExifOrientation()Z
-    .registers 2
+    .locals 1
 
     .line 76
     iget-boolean v0, p0, Landroidx/camera/view/transform/FileTransformFactory;->mUsingExifOrientation:Z
@@ -198,7 +198,7 @@
 .end method
 
 .method public setUsingExifOrientation(Z)V
-    .registers 2
+    .locals 0
 
     .line 69
     iput-boolean p1, p0, Landroidx/camera/view/transform/FileTransformFactory;->mUsingExifOrientation:Z

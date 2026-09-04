@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 179
     new-instance v0, Landroidx/media3/extractor/metadata/flac/PictureFrame$1;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;IIII[B)V
-    .registers 9
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -167,7 +167,7 @@
 .end method
 
 .method public static fromPictureBlock(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/metadata/flac/PictureFrame;
-    .registers 11
+    .locals 10
 
     .line 161
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -247,7 +247,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -255,18 +255,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_3
 
     .line 104
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -277,12 +277,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_53
+    goto :goto_1
 
     .line 107
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/flac/PictureFrame;
 
     .line 108
@@ -290,7 +290,7 @@
 
     iget v3, p1, Landroidx/media3/extractor/metadata/flac/PictureFrame;->pictureType:I
 
-    if-ne v2, v3, :cond_51
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->mimeType:Ljava/lang/String;
 
@@ -301,7 +301,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->description:Ljava/lang/String;
 
@@ -312,31 +312,31 @@
 
     move-result v2
 
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->width:I
 
     iget v3, p1, Landroidx/media3/extractor/metadata/flac/PictureFrame;->width:I
 
-    if-ne v2, v3, :cond_51
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->height:I
 
     iget v3, p1, Landroidx/media3/extractor/metadata/flac/PictureFrame;->height:I
 
-    if-ne v2, v3, :cond_51
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->depth:I
 
     iget v3, p1, Landroidx/media3/extractor/metadata/flac/PictureFrame;->depth:I
 
-    if-ne v2, v3, :cond_51
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->colors:I
 
     iget v3, p1, Landroidx/media3/extractor/metadata/flac/PictureFrame;->colors:I
 
-    if-ne v2, v3, :cond_51
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->pictureData:[B
 
@@ -347,23 +347,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_2
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_51
+    :cond_2
     move v0, v1
 
-    :goto_52
+    :goto_0
     return v0
 
-    :cond_53
-    :goto_53
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x20f
 
@@ -437,7 +437,7 @@
 .end method
 
 .method public populateMediaMetadata(Landroidx/media3/common/MediaMetadata$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 91
     iget-object v0, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->pictureData:[B
@@ -450,7 +450,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 96
     new-instance v0, Ljava/lang/StringBuilder;
@@ -485,7 +485,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 134
     iget p2, p0, Landroidx/media3/extractor/metadata/flac/PictureFrame;->pictureType:I

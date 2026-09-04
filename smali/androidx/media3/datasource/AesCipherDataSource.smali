@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>([BLandroidx/media3/datasource/DataSource;)V
-    .registers 3
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 46
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -47,7 +47,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -68,7 +68,7 @@
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -91,7 +91,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/media3/datasource/AesCipherDataSource;->upstream:Landroidx/media3/datasource/DataSource;
@@ -104,7 +104,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -143,21 +143,21 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 67
-    :cond_4
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/AesCipherDataSource;->upstream:Landroidx/media3/datasource/DataSource;
 
     invoke-interface {v0, p1, p2, p3}, Landroidx/media3/datasource/DataSource;->read([BII)I
@@ -166,12 +166,12 @@
 
     const/4 v0, -0x1
 
-    if-ne p3, v0, :cond_e
+    if-ne p3, v0, :cond_1
 
     return v0
 
     .line 71
-    :cond_e
+    :cond_1
     iget-object v0, p0, Landroidx/media3/datasource/AesCipherDataSource;->cipher:Landroidx/media3/datasource/AesFlushingCipher;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 172
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     .line 178
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
@@ -68,7 +68,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -88,12 +88,12 @@
 
     check-cast v0, Ljava/lang/Throwable;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     return-void
 
     .line 186
-    :cond_f
+    :cond_0
     new-instance v1, Ljava/io/IOException;
 
     invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
@@ -102,7 +102,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 12
+    .locals 8
 
     .line 194
     iget v0, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->streamState:I
@@ -111,7 +111,7 @@
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_b
+    if-ne v0, v2, :cond_0
 
     const/4 p1, 0x4
 
@@ -120,21 +120,21 @@
 
     return v1
 
-    :cond_b
+    :cond_0
     and-int/lit8 v3, p3, 0x2
 
     const/4 v4, 0x1
 
     const/4 v5, 0x0
 
-    if-nez v3, :cond_49
+    if-nez v3, :cond_5
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
-    goto :goto_49
+    goto :goto_0
 
     .line 205
-    :cond_14
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->access$000(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -145,14 +145,14 @@
 
     move-result p1
 
-    if-nez p1, :cond_22
+    if-nez p1, :cond_2
 
     const/4 p1, -0x3
 
     return p1
 
     .line 209
-    :cond_22
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
 
     invoke-static {p1}, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->access$300(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)[B
@@ -171,7 +171,7 @@
 
     and-int/lit8 v0, p3, 0x4
 
-    if-nez v0, :cond_42
+    if-nez v0, :cond_3
 
     .line 213
     invoke-virtual {p2, p1}, Landroidx/media3/decoder/DecoderInputBuffer;->ensureSpaceForWrite(I)V
@@ -187,20 +187,20 @@
 
     invoke-virtual {p2, v0, v5, p1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
-    :cond_42
+    :cond_3
     and-int/lit8 p1, p3, 0x1
 
-    if-nez p1, :cond_48
+    if-nez p1, :cond_4
 
     .line 217
     iput v2, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->streamState:I
 
-    :cond_48
+    :cond_4
     return v1
 
     .line 200
-    :cond_49
-    :goto_49
+    :cond_5
+    :goto_0
     iget-object p2, p0, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;
 
     invoke-static {p2}, Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;->access$200(Landroidx/media3/exoplayer/source/ExternallyLoadedMediaPeriod;)Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -226,7 +226,7 @@
 .end method
 
 .method public skipData(J)I
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x0
 

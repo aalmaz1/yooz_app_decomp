@@ -36,7 +36,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 198
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/CodedInputStream$1;)V
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;-><init>()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public static decodeZigZag32(I)I
-    .registers 2
+    .locals 1
 
     ushr-int/lit8 v0, p0, 0x1
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public static decodeZigZag64(J)J
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public static newInstance(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x1000
 
@@ -114,11 +114,11 @@
 .end method
 
 .method public static newInstance(Ljava/io/InputStream;I)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 4
+    .locals 2
 
-    if-lez p1, :cond_12
+    if-lez p1, :cond_1
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_0
 
     .line 90
     sget-object p0, Landroidx/datastore/preferences/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
@@ -130,7 +130,7 @@
     return-object p0
 
     .line 92
-    :cond_b
+    :cond_0
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;
 
     const/4 v1, 0x0
@@ -140,7 +140,7 @@
     return-object v0
 
     .line 86
-    :cond_12
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "bufferSize must be > 0"
@@ -151,7 +151,7 @@
 .end method
 
 .method public static newInstance(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -167,7 +167,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 98
     new-instance v0, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;
@@ -180,7 +180,7 @@
 
     return-object p0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     .line 100
@@ -192,7 +192,7 @@
 .end method
 
 .method static newInstance(Ljava/lang/Iterable;Z)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -212,12 +212,12 @@
 
     move v2, v1
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -237,33 +237,33 @@
 
     move-result v4
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_0
 
     or-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 118
-    :cond_20
+    :cond_0
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v3
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_1
 
     or-int/lit8 v1, v1, 0x2
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_29
+    :cond_1
     or-int/lit8 v1, v1, 0x4
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_2c
+    :cond_2
     const/4 v0, 0x2
 
-    if-ne v1, v0, :cond_36
+    if-ne v1, v0, :cond_3
 
     .line 125
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedInputStream$IterableDirectByteBufferDecoder;
@@ -275,7 +275,7 @@
     return-object v0
 
     .line 128
-    :cond_36
+    :cond_3
     new-instance p1, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;
 
     invoke-direct {p1, p0}, Landroidx/datastore/preferences/protobuf/IterableByteBufferInputStream;-><init>(Ljava/lang/Iterable;)V
@@ -288,7 +288,7 @@
 .end method
 
 .method public static newInstance(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -301,14 +301,14 @@
 .end method
 
 .method static newInstance(Ljava/nio/ByteBuffer;Z)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 5
+    .locals 3
 
     .line 180
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 182
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->array()[B
@@ -337,18 +337,18 @@
     return-object p0
 
     .line 185
-    :cond_1c
+    :cond_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/datastore/preferences/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->isSupported()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 186
     new-instance v0, Landroidx/datastore/preferences/protobuf/CodedInputStream$UnsafeDirectNioDecoder;
@@ -360,7 +360,7 @@
     return-object v0
 
     .line 192
-    :cond_2f
+    :cond_1
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result p1
@@ -387,7 +387,7 @@
 .end method
 
 .method public static newInstance([B)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -402,7 +402,7 @@
 .end method
 
 .method public static newInstance([BII)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -415,7 +415,7 @@
 .end method
 
 .method static newInstance([BIIZ)Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 11
+    .locals 7
 
     .line 145
     new-instance v6, Landroidx/datastore/preferences/protobuf/CodedInputStream$ArrayDecoder;
@@ -435,14 +435,14 @@
     invoke-direct/range {v0 .. v5}, Landroidx/datastore/preferences/protobuf/CodedInputStream$ArrayDecoder;-><init>([BIIZLandroidx/datastore/preferences/protobuf/CodedInputStream$1;)V
 
     .line 152
-    :try_start_b
+    :try_start_0
     invoke-virtual {v6, p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream$ArrayDecoder;->pushLimit(I)I
-    :try_end_e
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_b .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v6
 
-    :catch_f
+    :catch_0
     move-exception p0
 
     .line 161
@@ -454,7 +454,7 @@
 .end method
 
 .method public static readRawVarint32(ILjava/io/InputStream;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -463,28 +463,28 @@
 
     and-int/lit16 v0, p0, 0x80
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return p0
 
-    :cond_5
+    :cond_0
     and-int/lit8 p0, p0, 0x7f
 
     const/4 v0, 0x7
 
-    :goto_8
+    :goto_0
     const/16 v1, 0x20
 
     const/4 v2, -0x1
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_3
 
     .line 558
     invoke-virtual {p1}, Ljava/io/InputStream;->read()I
 
     move-result v1
 
-    if-eq v1, v2, :cond_1f
+    if-eq v1, v2, :cond_2
 
     and-int/lit8 v2, v1, 0x7f
 
@@ -494,49 +494,49 @@
 
     and-int/lit16 v1, v1, 0x80
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_1
 
     return p0
 
-    :cond_1c
+    :cond_1
     add-int/lit8 v0, v0, 0x7
 
-    goto :goto_8
+    goto :goto_0
 
     .line 560
-    :cond_1f
+    :cond_2
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_24
-    :goto_24
+    :cond_3
+    :goto_1
     const/16 v1, 0x40
 
-    if-ge v0, v1, :cond_3b
+    if-ge v0, v1, :cond_6
 
     .line 569
     invoke-virtual {p1}, Ljava/io/InputStream;->read()I
 
     move-result v1
 
-    if-eq v1, v2, :cond_36
+    if-eq v1, v2, :cond_5
 
     and-int/lit16 v1, v1, 0x80
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_4
 
     return p0
 
-    :cond_33
+    :cond_4
     add-int/lit8 v0, v0, 0x7
 
-    goto :goto_24
+    goto :goto_1
 
     .line 571
-    :cond_36
+    :cond_5
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -544,7 +544,7 @@
     throw p0
 
     .line 577
-    :cond_3b
+    :cond_6
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->malformedVarint()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -553,7 +553,7 @@
 .end method
 
 .method static readRawVarint32(Ljava/io/InputStream;)I
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -567,7 +567,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     .line 591
     invoke-static {v0, p0}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readRawVarint32(ILjava/io/InputStream;)I
@@ -577,7 +577,7 @@
     return p0
 
     .line 589
-    :cond_c
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -596,7 +596,7 @@
 .end method
 
 .method final discardUnknownFields()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -924,9 +924,9 @@
 .end method
 
 .method public final setRecursionLimit(I)I
-    .registers 5
+    .locals 3
 
-    if-ltz p1, :cond_7
+    if-ltz p1, :cond_0
 
     .line 391
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream;->recursionLimit:I
@@ -937,7 +937,7 @@
     return v0
 
     .line 389
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -960,9 +960,9 @@
 .end method
 
 .method public final setSizeLimit(I)I
-    .registers 5
+    .locals 3
 
-    if-ltz p1, :cond_7
+    if-ltz p1, :cond_0
 
     .line 414
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream;->sizeLimit:I
@@ -973,7 +973,7 @@
     return v0
 
     .line 412
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -996,7 +996,7 @@
 .end method
 
 .method final shouldDiscardUnknownFields()Z
-    .registers 2
+    .locals 1
 
     .line 446
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream;->shouldDiscardUnknownFields:Z
@@ -1048,7 +1048,7 @@
 .end method
 
 .method final unsetDiscardUnknownFields()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

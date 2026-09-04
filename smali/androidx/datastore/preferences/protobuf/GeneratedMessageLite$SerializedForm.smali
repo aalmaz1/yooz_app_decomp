@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 3
+    .locals 1
 
     .line 1326
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method public static of(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$SerializedForm;
-    .registers 2
+    .locals 1
 
     .line 1310
     new-instance v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$SerializedForm;
@@ -79,7 +79,7 @@
 .end method
 
 .method private readResolveFallback()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/ObjectStreamException;
@@ -132,16 +132,16 @@
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;->buildPartial()Landroidx/datastore/preferences/protobuf/MessageLite;
 
     move-result-object v0
-    :try_end_23
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_23} :catch_66
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_23} :catch_4e
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_23} :catch_36
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_23} :catch_2d
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_24
+    :catch_0
     move-exception v0
 
     .line 1383
@@ -153,7 +153,7 @@
 
     throw v1
 
-    :catch_2d
+    :catch_1
     move-exception v0
 
     .line 1381
@@ -165,7 +165,7 @@
 
     throw v1
 
-    :catch_36
+    :catch_2
     move-exception v0
 
     .line 1379
@@ -191,7 +191,7 @@
 
     throw v1
 
-    :catch_4e
+    :catch_3
     move-exception v0
 
     .line 1377
@@ -217,7 +217,7 @@
 
     throw v1
 
-    :catch_66
+    :catch_4
     move-exception v0
 
     .line 1375
@@ -245,7 +245,7 @@
 .end method
 
 .method private resolveMessageClass()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -263,25 +263,25 @@
     .line 1388
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$SerializedForm;->messageClass:Ljava/lang/Class;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$SerializedForm;->messageClassName:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method protected readResolve()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/ObjectStreamException;
@@ -329,16 +329,16 @@
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/MessageLite$Builder;->buildPartial()Landroidx/datastore/preferences/protobuf/MessageLite;
 
     move-result-object v0
-    :try_end_23
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_23} :catch_53
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_23} :catch_4e
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_23} :catch_36
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_23} :catch_2d
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_23} :catch_24
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_24
+    :catch_0
     move-exception v0
 
     .line 1356
@@ -350,7 +350,7 @@
 
     throw v1
 
-    :catch_2d
+    :catch_1
     move-exception v0
 
     .line 1354
@@ -362,7 +362,7 @@
 
     throw v1
 
-    :catch_36
+    :catch_2
     move-exception v0
 
     .line 1352
@@ -389,14 +389,14 @@
     throw v1
 
     .line 1350
-    :catch_4e
+    :catch_3
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$SerializedForm;->readResolveFallback()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 
-    :catch_53
+    :catch_4
     move-exception v0
 
     .line 1348

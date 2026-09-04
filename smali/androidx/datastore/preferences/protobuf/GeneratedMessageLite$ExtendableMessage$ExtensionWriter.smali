@@ -45,7 +45,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;Z)V
-    .registers 4
+    .locals 1
 
     .line 860
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->this$0:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 862
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -78,14 +78,14 @@
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
 
     .line 864
-    :cond_1b
+    :cond_0
     iput-boolean p2, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->messageSetWireFormat:Z
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;ZLandroidx/datastore/preferences/protobuf/GeneratedMessageLite$1;)V
-    .registers 4
+    .locals 0
 
     .line 852
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;-><init>(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;Z)V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public writeUntil(ILandroidx/datastore/preferences/protobuf/CodedOutputStream;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -107,7 +107,7 @@
     :goto_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -119,7 +119,7 @@
 
     move-result v0
 
-    if-ge v0, p1, :cond_5a
+    if-ge v0, p1, :cond_2
 
     .line 869
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
@@ -133,7 +133,7 @@
     .line 870
     iget-boolean v1, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->messageSetWireFormat:Z
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_0
 
     .line 871
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteJavaType()Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
@@ -142,14 +142,14 @@
 
     sget-object v2, Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;->MESSAGE:Landroidx/datastore/preferences/protobuf/WireFormat$JavaType;
 
-    if-ne v1, v2, :cond_3a
+    if-ne v1, v2, :cond_0
 
     .line 872
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated()Z
 
     move-result v1
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_0
 
     .line 873
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
@@ -166,10 +166,10 @@
 
     invoke-virtual {p2, v0, v1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream;->writeMessageSetExtension(ILandroidx/datastore/preferences/protobuf/MessageLite;)V
 
-    goto :goto_43
+    goto :goto_1
 
     .line 875
-    :cond_3a
+    :cond_0
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -179,14 +179,14 @@
     invoke-static {v0, v1, p2}, Landroidx/datastore/preferences/protobuf/FieldSet;->writeField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/CodedOutputStream;)V
 
     .line 877
-    :goto_43
+    :goto_1
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_1
 
     .line 878
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
@@ -201,7 +201,7 @@
 
     goto :goto_0
 
-    :cond_56
+    :cond_1
     const/4 v0, 0x0
 
     .line 880
@@ -209,6 +209,6 @@
 
     goto :goto_0
 
-    :cond_5a
+    :cond_2
     return-void
 .end method

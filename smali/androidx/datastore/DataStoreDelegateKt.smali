@@ -40,7 +40,7 @@
 
 # direct methods
 .method public static final dataStore(Ljava/lang/String;Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;)Lkotlin/properties/ReadOnlyProperty;
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -107,30 +107,30 @@
 .end method
 
 .method public static synthetic dataStore$default(Ljava/lang/String;Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;ILjava/lang/Object;)Lkotlin/properties/ReadOnlyProperty;
-    .registers 8
+    .locals 1
 
     and-int/lit8 p6, p5, 0x4
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     move-object p2, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x8
 
-    if-eqz p6, :cond_e
+    if-eqz p6, :cond_1
 
     .line 67
     sget-object p3, Landroidx/datastore/DataStoreDelegateKt$dataStore$1;->INSTANCE:Landroidx/datastore/DataStoreDelegateKt$dataStore$1;
 
     check-cast p3, Lkotlin/jvm/functions/Function1;
 
-    :cond_e
+    :cond_1
     and-int/lit8 p5, p5, 0x10
 
-    if-eqz p5, :cond_27
+    if-eqz p5, :cond_2
 
     .line 68
     sget-object p4, Lkotlinx/coroutines/Dispatchers;->INSTANCE:Lkotlinx/coroutines/Dispatchers;
@@ -156,7 +156,7 @@
     move-result-object p4
 
     .line 63
-    :cond_27
+    :cond_2
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/datastore/DataStoreDelegateKt;->dataStore(Ljava/lang/String;Landroidx/datastore/core/Serializer;Landroidx/datastore/core/handlers/ReplaceFileCorruptionHandler;Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineScope;)Lkotlin/properties/ReadOnlyProperty;
 
     move-result-object p0

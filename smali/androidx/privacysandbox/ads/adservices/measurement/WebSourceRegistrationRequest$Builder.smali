@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Landroid/net/Uri;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final build()Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;
-    .registers 9
+    .locals 8
 
     .line 152
     new-instance v7, Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest;
@@ -140,7 +140,7 @@
 .end method
 
 .method public final setAppDestination(Landroid/net/Uri;)Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest$Builder;
-    .registers 3
+    .locals 1
 
     .line 125
     move-object v0, p0
@@ -154,7 +154,7 @@
 .end method
 
 .method public final setInputEvent(Landroid/view/InputEvent;)Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "inputEvent"
 
@@ -172,7 +172,7 @@
 .end method
 
 .method public final setVerifiedDestination(Landroid/net/Uri;)Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest$Builder;
-    .registers 3
+    .locals 1
 
     .line 146
     move-object v0, p0
@@ -186,7 +186,7 @@
 .end method
 
 .method public final setWebDestination(Landroid/net/Uri;)Landroidx/privacysandbox/ads/adservices/measurement/WebSourceRegistrationRequest$Builder;
-    .registers 3
+    .locals 1
 
     .line 136
     move-object v0, p0

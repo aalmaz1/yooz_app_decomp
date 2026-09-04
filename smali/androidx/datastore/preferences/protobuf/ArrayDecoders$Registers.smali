@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
-    .registers 2
+    .locals 0
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

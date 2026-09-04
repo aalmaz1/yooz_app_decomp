@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Appendable;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -42,7 +42,7 @@
 .end method
 
 .method private checkNotClosed()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -52,12 +52,12 @@
     .line 126
     iget-boolean v0, p0, Lcom/google/common/io/AppendableWriter;->closed:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 127
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Cannot write to a closed writer."
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public append(C)Ljava/io/Writer;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -98,7 +98,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;)Ljava/io/Writer;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/CharSequence;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -130,7 +130,7 @@
 .end method
 
 .method public append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
-    .registers 5
+    .locals 1
     .param p1    # Ljava/lang/CharSequence;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -166,7 +166,7 @@
 .end method
 
 .method public bridge synthetic append(C)Ljava/lang/Appendable;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -191,7 +191,7 @@
 .end method
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/CharSequence;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -220,7 +220,7 @@
 .end method
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
-    .registers 4
+    .locals 0
     .param p1    # Ljava/lang/CharSequence;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -253,7 +253,7 @@
 .end method
 
 .method public close()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -270,19 +270,19 @@
 
     instance-of v1, v0, Ljava/io/Closeable;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 100
     check-cast v0, Ljava/io/Closeable;
 
     invoke-interface {v0}, Ljava/io/Closeable;->close()V
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public flush()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -297,19 +297,19 @@
 
     instance-of v1, v0, Ljava/io/Flushable;
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 92
     check-cast v0, Ljava/io/Flushable;
 
     invoke-interface {v0}, Ljava/io/Flushable;->flush()V
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public write(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -339,7 +339,7 @@
 .end method
 
 .method public write(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -370,7 +370,7 @@
 .end method
 
 .method public write(Ljava/lang/String;II)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -407,7 +407,7 @@
 .end method
 
 .method public write([CII)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,

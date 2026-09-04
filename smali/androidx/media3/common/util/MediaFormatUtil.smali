@@ -15,7 +15,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 487
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method public static createFormatFromMediaFormat(Landroid/media/MediaFormat;)Landroidx/media3/common/Format;
-    .registers 6
+    .locals 5
 
     .line 73
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -216,7 +216,7 @@
     invoke-direct {v1}, Lcom/google/common/collect/ImmutableList$Builder;-><init>()V
 
     .line 117
-    :goto_a2
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "csd-"
@@ -235,7 +235,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_c3
+    if-nez v2, :cond_0
 
     .line 129
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
@@ -252,7 +252,7 @@
     return-object p0
 
     .line 121
-    :cond_c3
+    :cond_0
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v4
@@ -270,11 +270,11 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_a2
+    goto :goto_0
 .end method
 
 .method public static createMediaFormatFromFormat(Landroidx/media3/common/Format;)Landroid/media/MediaFormat;
-    .registers 5
+    .locals 4
 
     .line 146
     new-instance v0, Landroid/media/MediaFormat;
@@ -434,7 +434,7 @@
 .end method
 
 .method public static getArray(Ljava/nio/ByteBuffer;)[B
-    .registers 2
+    .locals 1
 
     .line 367
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
@@ -450,7 +450,7 @@
 .end method
 
 .method public static getColorInfo(Landroid/media/MediaFormat;)Landroidx/media3/common/ColorInfo;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -463,7 +463,7 @@
 .end method
 
 .method private static getColorInfo(Landroid/media/MediaFormat;Z)Landroidx/media3/common/ColorInfo;
-    .registers 8
+    .locals 6
 
     .line 279
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -472,11 +472,11 @@
 
     const/4 v2, 0x0
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     return-object v2
 
-    :cond_8
+    :cond_0
     const-string v0, "color-standard"
 
     const/4 v1, -0x1
@@ -507,67 +507,67 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_28
+    if-eqz p0, :cond_1
 
     .line 295
     invoke-static {p0}, Landroidx/media3/common/util/MediaFormatUtil;->getArray(Ljava/nio/ByteBuffer;)[B
 
     move-result-object p0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     move-object p0, v2
 
-    :goto_29
-    if-nez p1, :cond_40
+    :goto_0
+    if-nez p1, :cond_4
 
     .line 300
     invoke-static {v0}, Landroidx/media3/common/util/MediaFormatUtil;->isValidColorSpace(I)Z
 
     move-result p1
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_2
 
     move v0, v1
 
     .line 303
-    :cond_32
+    :cond_2
     invoke-static {v3}, Landroidx/media3/common/util/MediaFormatUtil;->isValidColorRange(I)Z
 
     move-result p1
 
-    if-nez p1, :cond_39
+    if-nez p1, :cond_3
 
     move v3, v1
 
     .line 306
-    :cond_39
+    :cond_3
     invoke-static {v4}, Landroidx/media3/common/util/MediaFormatUtil;->isValidColorTransfer(I)Z
 
     move-result p1
 
-    if-nez p1, :cond_40
+    if-nez p1, :cond_4
 
     move v4, v1
 
-    :cond_40
-    if-ne v0, v1, :cond_4a
+    :cond_4
+    if-ne v0, v1, :cond_6
 
-    if-ne v3, v1, :cond_4a
+    if-ne v3, v1, :cond_6
 
-    if-ne v4, v1, :cond_4a
+    if-ne v4, v1, :cond_6
 
-    if-eqz p0, :cond_49
+    if-eqz p0, :cond_5
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_49
+    :cond_5
     return-object v2
 
     .line 315
-    :cond_4a
-    :goto_4a
+    :cond_6
+    :goto_1
     new-instance p1, Landroidx/media3/common/ColorInfo$Builder;
 
     invoke-direct {p1}, Landroidx/media3/common/ColorInfo$Builder;-><init>()V
@@ -601,25 +601,25 @@
 .end method
 
 .method public static getFloat(Landroid/media/MediaFormat;Ljava/lang/String;F)F
-    .registers 4
+    .locals 1
 
     .line 332
     invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->getFloat(Ljava/lang/String;)F
 
     move-result p2
 
-    :cond_a
+    :cond_0
     return p2
 .end method
 
 .method private static getFrameRate(Landroid/media/MediaFormat;F)F
-    .registers 4
+    .locals 2
 
     const-string v0, "frame-rate"
 
@@ -628,51 +628,51 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 345
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0, v0}, Landroid/media/MediaFormat;->getFloat(Ljava/lang/String;)F
 
     move-result p1
-    :try_end_c
-    .catch Ljava/lang/ClassCastException; {:try_start_8 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
     .line 347
-    :catch_d
+    :catch_0
     invoke-virtual {p0, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result p0
 
     int-to-float p1, p0
 
-    :cond_12
-    :goto_12
+    :cond_0
+    :goto_0
     return p1
 .end method
 
 .method public static getInteger(Landroid/media/MediaFormat;Ljava/lang/String;I)I
-    .registers 4
+    .locals 1
 
     .line 327
     invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result p2
 
-    :cond_a
+    :cond_0
     return p2
 .end method
 
 .method private static getPixelWidthHeightRatio(Landroid/media/MediaFormat;F)F
-    .registers 5
+    .locals 3
 
     const-string v0, "sar-width"
 
@@ -681,7 +681,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     const-string v1, "sar-height"
 
@@ -690,7 +690,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 359
     invoke-virtual {p0, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
@@ -708,12 +708,12 @@
 
     div-float/2addr p1, p0
 
-    :cond_1b
+    :cond_0
     return p1
 .end method
 
 .method public static getTimeLapseFrameRate(Landroid/media/MediaFormat;)Ljava/lang/Integer;
-    .registers 3
+    .locals 2
 
     const-string v0, "time-lapse-enable"
 
@@ -722,14 +722,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 386
     invoke-virtual {p0, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v0
 
-    if-lez v0, :cond_1f
+    if-lez v0, :cond_0
 
     const-string v0, "time-lapse-fps"
 
@@ -738,7 +738,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 388
     invoke-virtual {p0, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
@@ -751,14 +751,14 @@
 
     return-object p0
 
-    :cond_1f
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static isAudioFormat(Landroid/media/MediaFormat;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "mime"
 
@@ -775,94 +775,94 @@
 .end method
 
 .method private static isValidColorRange(I)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
-    if-eq p0, v0, :cond_b
+    if-eq p0, v0, :cond_1
 
-    if-eq p0, v1, :cond_b
+    if-eq p0, v1, :cond_1
 
     const/4 v0, -0x1
 
-    if-ne p0, v0, :cond_a
+    if-ne p0, v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method private static isValidColorSpace(I)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
-    if-eq p0, v0, :cond_e
+    if-eq p0, v0, :cond_1
 
-    if-eq p0, v1, :cond_e
+    if-eq p0, v1, :cond_1
 
     const/4 v0, 0x6
 
-    if-eq p0, v0, :cond_e
+    if-eq p0, v0, :cond_1
 
     const/4 v0, -0x1
 
-    if-ne p0, v0, :cond_d
+    if-ne p0, v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method private static isValidColorTransfer(I)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_11
+    if-eq p0, v0, :cond_1
 
     const/4 v1, 0x3
 
-    if-eq p0, v1, :cond_11
+    if-eq p0, v1, :cond_1
 
     const/4 v1, 0x6
 
-    if-eq p0, v1, :cond_11
+    if-eq p0, v1, :cond_1
 
     const/4 v1, 0x7
 
-    if-eq p0, v1, :cond_11
+    if-eq p0, v1, :cond_1
 
     const/4 v1, -0x1
 
-    if-ne p0, v1, :cond_10
+    if-ne p0, v1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     return v0
 .end method
 
 .method public static isVideoFormat(Landroid/media/MediaFormat;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "mime"
 
@@ -879,9 +879,9 @@
 .end method
 
 .method public static maybeSetByteBuffer(Landroid/media/MediaFormat;Ljava/lang/String;[B)V
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 243
     invoke-static {p2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -890,14 +890,14 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static maybeSetColorInfo(Landroid/media/MediaFormat;Landroidx/media3/common/ColorInfo;)V
-    .registers 4
+    .locals 2
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     const-string v0, "color-transfer"
 
@@ -927,83 +927,83 @@
 
     invoke-static {p0, v0, p1}, Landroidx/media3/common/util/MediaFormatUtil;->maybeSetByteBuffer(Landroid/media/MediaFormat;Ljava/lang/String;[B)V
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public static maybeSetFloat(Landroid/media/MediaFormat;Ljava/lang/String;F)V
-    .registers 4
+    .locals 1
 
     const/high16 v0, -0x40800000    # -1.0f
 
     cmpl-float v0, p2, v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 230
     invoke-virtual {p0, p1, p2}, Landroid/media/MediaFormat;->setFloat(Ljava/lang/String;F)V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static maybeSetInteger(Landroid/media/MediaFormat;Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p2, v0, :cond_6
+    if-eq p2, v0, :cond_0
 
     .line 216
     invoke-virtual {p0, p1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_6
+    :cond_0
     return-void
 .end method
 
 .method private static maybeSetPcmEncoding(Landroid/media/MediaFormat;I)V
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_4
+    if-ne p1, v0, :cond_0
 
     return-void
 
-    :cond_4
+    :cond_0
     const-string v0, "exo-pcm-encoding-int"
 
     .line 427
     invoke-static {p0, v0, p1}, Landroidx/media3/common/util/MediaFormatUtil;->maybeSetInteger(Landroid/media/MediaFormat;Ljava/lang/String;I)V
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0x15
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0x16
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     return-void
 
-    :cond_1d
+    :cond_1
     const/4 v0, 0x0
 
-    :cond_1e
+    :cond_2
     const-string p1, "pcm-encoding"
 
     .line 455
@@ -1013,7 +1013,7 @@
 .end method
 
 .method private static maybeSetPixelAspectRatio(Landroid/media/MediaFormat;F)V
-    .registers 6
+    .locals 4
 
     const-string v0, "exo-pixel-width-height-ratio-float"
 
@@ -1026,7 +1026,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    if-gez v1, :cond_14
+    if-gez v1, :cond_0
 
     int-to-float v0, v2
 
@@ -1040,12 +1040,12 @@
 
     move p1, v3
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     cmpl-float v0, p1, v0
 
-    if-lez v0, :cond_1c
+    if-lez v0, :cond_1
 
     int-to-float v0, v2
 
@@ -1053,14 +1053,14 @@
 
     float-to-int p1, v0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     const/4 v2, 0x1
 
     move p1, v2
 
-    :goto_1e
+    :goto_0
     const-string v0, "sar-width"
 
     .line 416
@@ -1075,38 +1075,38 @@
 .end method
 
 .method public static maybeSetString(Landroid/media/MediaFormat;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 190
     invoke-virtual {p0, p1, p2}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method private static setBooleanAsInt(Landroid/media/MediaFormat;Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_0
 
     const/4 p2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 p2, 0x0
 
     .line 397
-    :goto_5
+    :goto_0
     invoke-virtual {p0, p1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public static setCsdBuffers(Landroid/media/MediaFormat;Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1119,12 +1119,12 @@
     const/4 v0, 0x0
 
     .line 201
-    :goto_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_26
+    if-ge v0, v1, :cond_0
 
     .line 202
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1155,8 +1155,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     return-void
 .end method

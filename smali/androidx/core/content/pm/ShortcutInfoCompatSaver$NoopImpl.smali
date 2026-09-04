@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Landroidx/core/content/pm/ShortcutInfoCompatSaver;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public bridge synthetic addShortcuts(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 54
     invoke-virtual {p0, p1}, Landroidx/core/content/pm/ShortcutInfoCompatSaver$NoopImpl;->addShortcuts(Ljava/util/List;)Ljava/lang/Void;
@@ -46,7 +46,7 @@
 .end method
 
 .method public addShortcuts(Ljava/util/List;)Ljava/lang/Void;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,7 +63,7 @@
 .end method
 
 .method public bridge synthetic removeAllShortcuts()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-virtual {p0}, Landroidx/core/content/pm/ShortcutInfoCompatSaver$NoopImpl;->removeAllShortcuts()Ljava/lang/Void;
@@ -74,7 +74,7 @@
 .end method
 
 .method public removeAllShortcuts()Ljava/lang/Void;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -82,7 +82,7 @@
 .end method
 
 .method public bridge synthetic removeShortcuts(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 54
     invoke-virtual {p0, p1}, Landroidx/core/content/pm/ShortcutInfoCompatSaver$NoopImpl;->removeShortcuts(Ljava/util/List;)Ljava/lang/Void;
@@ -93,7 +93,7 @@
 .end method
 
 .method public removeShortcuts(Ljava/util/List;)Ljava/lang/Void;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

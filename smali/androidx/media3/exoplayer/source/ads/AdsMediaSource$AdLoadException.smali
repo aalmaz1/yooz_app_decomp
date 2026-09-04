@@ -36,7 +36,7 @@
 
 # direct methods
 .method private constructor <init>(ILjava/lang/Exception;)V
-    .registers 3
+    .locals 0
 
     .line 120
     invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
@@ -48,7 +48,7 @@
 .end method
 
 .method public static createForAd(Ljava/lang/Exception;)Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
-    .registers 3
+    .locals 2
 
     .line 97
     new-instance v0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
@@ -61,7 +61,7 @@
 .end method
 
 .method public static createForAdGroup(Ljava/lang/Exception;I)Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
-    .registers 6
+    .locals 4
 
     .line 102
     new-instance v0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
@@ -92,7 +92,7 @@
 .end method
 
 .method public static createForAllAds(Ljava/lang/Exception;)Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
-    .registers 3
+    .locals 2
 
     .line 108
     new-instance v0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
@@ -105,7 +105,7 @@
 .end method
 
 .method public static createForUnexpected(Ljava/lang/RuntimeException;)Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
-    .registers 3
+    .locals 2
 
     .line 113
     new-instance v0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;
@@ -120,23 +120,23 @@
 
 # virtual methods
 .method public getRuntimeExceptionForUnexpected()Ljava/lang/RuntimeException;
-    .registers 3
+    .locals 2
 
     .line 129
     iget v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;->type:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 130

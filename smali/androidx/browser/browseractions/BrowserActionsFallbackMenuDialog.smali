@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
@@ -32,7 +32,7 @@
 .end method
 
 .method static synthetic access$001(Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;)V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
@@ -41,38 +41,38 @@
 .end method
 
 .method private startAnimation(Z)V
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x0
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     move v2, v0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move v2, v1
 
-    :goto_8
-    if-eqz p1, :cond_b
+    :goto_0
+    if-eqz p1, :cond_1
 
     move v0, v1
 
-    :cond_b
-    if-eqz p1, :cond_10
+    :cond_1
+    if-eqz p1, :cond_2
 
     const-wide/16 v3, 0xfa
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_10
+    :cond_2
     const-wide/16 v3, 0x96
 
     .line 75
-    :goto_12
+    :goto_1
     iget-object v1, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;->mContentView:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setScaleX(F)V
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public dismiss()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -142,14 +142,14 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 2
+    .locals 0
 
     .line 59
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
     .line 60
     invoke-virtual {p0}, Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;->dismiss()V
@@ -158,14 +158,14 @@
 
     return p1
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public show()V
-    .registers 4
+    .locals 3
 
     .line 51
     invoke-virtual {p0}, Landroidx/browser/browseractions/BrowserActionsFallbackMenuDialog;->getWindow()Landroid/view/Window;

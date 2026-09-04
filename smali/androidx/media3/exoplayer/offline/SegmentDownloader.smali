@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -116,7 +116,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;J)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -213,7 +213,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/offline/SegmentDownloader;)Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;
-    .registers 1
+    .locals 0
 
     .line 55
     iget-object p0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->manifestParser:Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;
@@ -222,7 +222,7 @@
 .end method
 
 .method private addActiveRunnable(Landroidx/media3/common/util/RunnableFutureTask;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -245,10 +245,10 @@
     monitor-enter v0
 
     .line 426
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->isCanceled:Z
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     .line 429
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -261,26 +261,26 @@
     return-void
 
     .line 427
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/InterruptedException;
 
     invoke-direct {p1}, Ljava/lang/InterruptedException;-><init>()V
 
     throw p1
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     .line 430
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private static canMergeSegments(Landroidx/media3/datasource/DataSpec;Landroidx/media3/datasource/DataSpec;)Z
-    .registers 6
+    .locals 4
 
     .line 475
     iget-object v0, p0, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
@@ -291,7 +291,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_0
 
     iget-wide v0, p0, Landroidx/media3/datasource/DataSpec;->length:J
 
@@ -299,7 +299,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_0
 
     iget-wide v0, p0, Landroidx/media3/datasource/DataSpec;->position:J
 
@@ -311,7 +311,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/datasource/DataSpec;->key:Ljava/lang/String;
 
@@ -322,19 +322,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/media3/datasource/DataSpec;->flags:I
 
     iget v1, p1, Landroidx/media3/datasource/DataSpec;->flags:I
 
-    if-ne v0, v1, :cond_3f
+    if-ne v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/datasource/DataSpec;->httpMethod:I
 
     iget v1, p1, Landroidx/media3/datasource/DataSpec;->httpMethod:I
 
-    if-ne v0, v1, :cond_3f
+    if-ne v0, v1, :cond_0
 
     iget-object p0, p0, Landroidx/media3/datasource/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
@@ -345,21 +345,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_3f
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3f
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_40
+    :goto_0
     return p0
 .end method
 
 .method protected static getCompressibleDataSpec(Landroid/net/Uri;)Landroidx/media3/datasource/DataSpec;
-    .registers 2
+    .locals 1
 
     .line 420
     new-instance v0, Landroidx/media3/datasource/DataSpec$Builder;
@@ -384,7 +384,7 @@
 .end method
 
 .method private static mergeSegments(Ljava/util/List;Landroidx/media3/datasource/cache/CacheKeyFactory;J)V
-    .registers 15
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -406,12 +406,12 @@
     move v2, v1
 
     .line 449
-    :goto_7
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_84
+    if-ge v1, v3, :cond_4
 
     .line 450
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -434,14 +434,14 @@
 
     check-cast v5, Ljava/lang/Integer;
 
-    if-nez v5, :cond_23
+    if-nez v5, :cond_0
 
     const/4 v6, 0x0
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 453
-    :cond_23
+    :cond_0
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
@@ -452,8 +452,8 @@
 
     check-cast v6, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;
 
-    :goto_2d
-    if-eqz v6, :cond_75
+    :goto_1
+    if-eqz v6, :cond_3
 
     .line 454
     iget-wide v7, v3, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;->startTimeUs:J
@@ -464,7 +464,7 @@
 
     cmp-long v7, v7, v9
 
-    if-gtz v7, :cond_75
+    if-gtz v7, :cond_3
 
     iget-object v7, v6, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
@@ -475,12 +475,12 @@
 
     move-result v7
 
-    if-nez v7, :cond_43
+    if-nez v7, :cond_1
 
-    goto :goto_75
+    goto :goto_3
 
     .line 462
-    :cond_43
+    :cond_1
     iget-object v4, v3, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     iget-wide v7, v4, Landroidx/media3/datasource/DataSpec;->length:J
@@ -489,12 +489,12 @@
 
     cmp-long v4, v7, v9
 
-    if-nez v4, :cond_4e
+    if-nez v4, :cond_2
 
-    goto :goto_58
+    goto :goto_2
 
     .line 464
-    :cond_4e
+    :cond_2
     iget-object v4, v6, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     iget-wide v7, v4, Landroidx/media3/datasource/DataSpec;->length:J
@@ -506,7 +506,7 @@
     add-long v9, v7, v3
 
     .line 465
-    :goto_58
+    :goto_2
     iget-object v3, v6, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     const-wide/16 v7, 0x0
@@ -535,11 +535,11 @@
     .line 466
     invoke-interface {p0, v4, v5}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_81
+    goto :goto_4
 
     .line 457
-    :cond_75
-    :goto_75
+    :cond_3
+    :goto_3
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -551,13 +551,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    :goto_81
+    :goto_4
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 471
-    :cond_84
+    :cond_4
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p1
@@ -568,7 +568,7 @@
 .end method
 
 .method private removeActiveRunnable(I)V
-    .registers 4
+    .locals 2
 
     .line 440
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -576,7 +576,7 @@
     monitor-enter v0
 
     .line 441
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -586,18 +586,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private removeActiveRunnable(Landroidx/media3/common/util/RunnableFutureTask;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -612,7 +612,7 @@
     monitor-enter v0
 
     .line 435
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -622,12 +622,12 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
@@ -635,7 +635,7 @@
 
 # virtual methods
 .method public cancel()V
-    .registers 5
+    .locals 4
 
     .line 297
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -645,20 +645,20 @@
     const/4 v1, 0x1
 
     .line 298
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->isCanceled:Z
 
     const/4 v2, 0x0
 
     .line 299
-    :goto_7
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_1d
+    if-ge v2, v3, :cond_0
 
     .line 300
     iget-object v3, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -673,26 +673,26 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 302
-    :cond_1d
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_1f
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_21
-    .catchall {:try_start_4 .. :try_end_21} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public final download(Landroidx/media3/exoplayer/offline/Downloader$ProgressListener;)V
-    .registers 29
+    .locals 27
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -717,18 +717,18 @@
 
     const/16 v4, -0xfa0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 159
     invoke-virtual {v0, v4}, Landroidx/media3/common/PriorityTaskManager;->add(I)V
 
-    :cond_15
+    :cond_0
     const/4 v5, 0x0
 
     const/4 v6, 0x1
 
     .line 162
-    :try_start_17
+    :try_start_0
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cacheDataSourceFactory:Landroidx/media3/datasource/cache/CacheDataSource$Factory;
 
     invoke-virtual {v0}, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->createDataSourceForDownloading()Landroidx/media3/datasource/cache/CacheDataSource;
@@ -749,7 +749,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_33
+    if-nez v8, :cond_1
 
     .line 166
     iget-object v8, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->streamKeys:Ljava/util/ArrayList;
@@ -761,7 +761,7 @@
     check-cast v7, Landroidx/media3/exoplayer/offline/FilterableManifest;
 
     .line 168
-    :cond_33
+    :cond_1
     invoke-virtual {v1, v0, v7, v5}, Landroidx/media3/exoplayer/offline/SegmentDownloader;->getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/offline/FilterableManifest;Z)Ljava/util/List;
 
     move-result-object v0
@@ -796,8 +796,8 @@
 
     move-wide v15, v12
 
-    :goto_50
-    if-ltz v7, :cond_ae
+    :goto_0
+    if-ltz v7, :cond_6
 
     .line 181
     invoke-interface {v0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -822,7 +822,7 @@
 
     cmp-long v18, v10, v24
 
-    if-nez v18, :cond_7a
+    if-nez v18, :cond_2
 
     .line 185
     iget-object v5, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cache:Landroidx/media3/datasource/cache/Cache;
@@ -838,7 +838,7 @@
 
     cmp-long v5, v18, v24
 
-    if-eqz v5, :cond_7a
+    if-eqz v5, :cond_2
 
     .line 188
     iget-wide v10, v8, Landroidx/media3/datasource/DataSpec;->position:J
@@ -846,7 +846,7 @@
     sub-long v10, v18, v10
 
     .line 191
-    :cond_7a
+    :cond_2
     iget-object v5, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cache:Landroidx/media3/datasource/cache/Cache;
 
     move/from16 v26, v7
@@ -870,11 +870,11 @@
 
     cmp-long v7, v10, v24
 
-    if-eqz v7, :cond_a5
+    if-eqz v7, :cond_4
 
     cmp-long v5, v10, v5
 
-    if-nez v5, :cond_9d
+    if-nez v5, :cond_3
 
     add-int/lit8 v17, v17, 0x1
 
@@ -883,37 +883,37 @@
     .line 198
     invoke-interface {v0, v7}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    goto :goto_9f
+    goto :goto_1
 
-    :cond_9d
+    :cond_3
     move/from16 v7, v26
 
-    :goto_9f
+    :goto_1
     cmp-long v5, v12, v24
 
-    if-eqz v5, :cond_a9
+    if-eqz v5, :cond_5
 
     add-long/2addr v12, v10
 
-    goto :goto_a9
+    goto :goto_2
 
-    :cond_a5
+    :cond_4
     move/from16 v7, v26
 
     move-wide/from16 v12, v24
 
-    :cond_a9
-    :goto_a9
+    :cond_5
+    :goto_2
     add-int/lit8 v7, v7, -0x1
 
     const/4 v5, 0x0
 
     const/4 v6, 0x1
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_ae
-    if-eqz p1, :cond_b9
+    :cond_6
+    if-eqz p1, :cond_7
 
     .line 212
     new-instance v5, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;
@@ -924,42 +924,42 @@
 
     invoke-direct/range {v10 .. v17}, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;-><init>(Landroidx/media3/exoplayer/offline/Downloader$ProgressListener;JIJI)V
 
-    goto :goto_ba
+    goto :goto_3
 
-    :cond_b9
+    :cond_7
     const/4 v5, 0x0
 
     .line 219
-    :goto_ba
+    :goto_3
     invoke-virtual {v2, v0}, Ljava/util/ArrayDeque;->addAll(Ljava/util/Collection;)Z
 
     .line 220
-    :goto_bd
+    :goto_4
     iget-boolean v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->isCanceled:Z
 
-    if-nez v0, :cond_153
+    if-nez v0, :cond_f
 
     invoke-virtual {v2}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_153
+    if-nez v0, :cond_f
 
     .line 222
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->priorityTaskManager:Landroidx/media3/common/PriorityTaskManager;
 
-    if-eqz v0, :cond_ce
+    if-eqz v0, :cond_8
 
     .line 223
     invoke-virtual {v0, v4}, Landroidx/media3/common/PriorityTaskManager;->proceed(I)V
 
     .line 229
-    :cond_ce
+    :cond_8
     invoke-virtual {v3}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_df
+    if-nez v0, :cond_9
 
     .line 230
     invoke-virtual {v3}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
@@ -974,10 +974,10 @@
     .line 232
     iget-object v0, v0, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->temporaryBuffer:[B
 
-    goto :goto_e9
+    goto :goto_5
 
     .line 234
-    :cond_df
+    :cond_9
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cacheDataSourceFactory:Landroidx/media3/datasource/cache/CacheDataSource$Factory;
 
     invoke-virtual {v0}, Landroidx/media3/datasource/cache/CacheDataSource$Factory;->createDataSourceForDownloading()Landroidx/media3/datasource/cache/CacheDataSource;
@@ -989,7 +989,7 @@
     new-array v0, v0, [B
 
     .line 237
-    :goto_e9
+    :goto_5
     invoke-virtual {v2}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
 
     move-result-object v7
@@ -1022,8 +1022,8 @@
 
     move v6, v0
 
-    :goto_105
-    if-ltz v6, :cond_14e
+    :goto_6
+    if-ltz v6, :cond_e
 
     .line 246
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -1041,19 +1041,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_11c
+    if-nez v0, :cond_a
 
     invoke-virtual {v7}, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->isDone()Z
 
     move-result v0
-    :try_end_11a
-    .catchall {:try_start_17 .. :try_end_11a} :catchall_18e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v0, :cond_148
+    if-eqz v0, :cond_c
 
     .line 252
-    :cond_11c
-    :try_start_11c
+    :cond_a
+    :try_start_1
     invoke-virtual {v7}, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->get()Ljava/lang/Object;
 
     .line 253
@@ -1061,17 +1061,17 @@
 
     .line 254
     invoke-virtual {v3, v7}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
-    :try_end_125
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_11c .. :try_end_125} :catch_126
-    .catchall {:try_start_11c .. :try_end_125} :catchall_18e
+    :try_end_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_148
+    goto :goto_7
 
-    :catch_126
+    :catch_0
     move-exception v0
 
     .line 256
-    :try_start_127
+    :try_start_2
     invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -1085,7 +1085,7 @@
     .line 257
     instance-of v9, v0, Landroidx/media3/common/PriorityTaskManager$PriorityTooLowException;
 
-    if-eqz v9, :cond_141
+    if-eqz v9, :cond_b
 
     .line 259
     iget-object v0, v7, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->segment:Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;
@@ -1098,49 +1098,49 @@
     .line 261
     invoke-virtual {v3, v7}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
-    goto :goto_148
+    goto :goto_7
 
     .line 262
-    :cond_141
+    :cond_b
     instance-of v7, v0, Ljava/io/IOException;
 
-    if-nez v7, :cond_14b
+    if-nez v7, :cond_d
 
     .line 266
     invoke-static {v0}, Landroidx/media3/common/util/Util;->sneakyThrow(Ljava/lang/Throwable;)V
 
-    :cond_148
-    :goto_148
+    :cond_c
+    :goto_7
     add-int/lit8 v6, v6, -0x1
 
-    goto :goto_105
+    goto :goto_6
 
     .line 263
-    :cond_14b
+    :cond_d
     check-cast v0, Ljava/io/IOException;
 
     throw v0
 
     .line 274
-    :cond_14e
+    :cond_e
     invoke-virtual {v8}, Landroidx/media3/exoplayer/offline/SegmentDownloader$SegmentDownloadRunnable;->blockUntilStarted()V
-    :try_end_151
-    .catchall {:try_start_127 .. :try_end_151} :catchall_18e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto/16 :goto_bd
+    goto/16 :goto_4
 
-    :cond_153
+    :cond_f
     const/4 v5, 0x0
 
     .line 280
-    :goto_154
+    :goto_8
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v5, v0, :cond_16b
+    if-ge v5, v0, :cond_10
 
     .line 281
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -1157,9 +1157,9 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_154
+    goto :goto_8
 
-    :cond_16b
+    :cond_10
     const/4 v2, 0x1
 
     .line 285
@@ -1171,8 +1171,8 @@
 
     sub-int/2addr v0, v2
 
-    :goto_173
-    if-ltz v0, :cond_186
+    :goto_9
+    if-ltz v0, :cond_11
 
     .line 286
     iget-object v2, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -1190,34 +1190,34 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_173
+    goto :goto_9
 
     .line 289
-    :cond_186
+    :cond_11
     iget-object v0, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->priorityTaskManager:Landroidx/media3/common/PriorityTaskManager;
 
-    if-eqz v0, :cond_18d
+    if-eqz v0, :cond_12
 
     .line 290
     invoke-virtual {v0, v4}, Landroidx/media3/common/PriorityTaskManager;->remove(I)V
 
-    :cond_18d
+    :cond_12
     return-void
 
-    :catchall_18e
+    :catchall_0
     move-exception v0
 
     const/4 v5, 0x0
 
     .line 280
-    :goto_190
+    :goto_a
     iget-object v2, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v5, v2, :cond_1a7
+    if-ge v5, v2, :cond_13
 
     .line 281
     iget-object v2, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -1234,9 +1234,9 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_190
+    goto :goto_a
 
-    :cond_1a7
+    :cond_13
     const/4 v3, 0x1
 
     .line 285
@@ -1248,8 +1248,8 @@
 
     sub-int/2addr v2, v3
 
-    :goto_1af
-    if-ltz v2, :cond_1c2
+    :goto_b
+    if-ltz v2, :cond_14
 
     .line 286
     iget-object v3, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->activeRunnables:Ljava/util/ArrayList;
@@ -1267,24 +1267,24 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_1af
+    goto :goto_b
 
     .line 289
-    :cond_1c2
+    :cond_14
     iget-object v2, v1, Landroidx/media3/exoplayer/offline/SegmentDownloader;->priorityTaskManager:Landroidx/media3/common/PriorityTaskManager;
 
-    if-eqz v2, :cond_1c9
+    if-eqz v2, :cond_15
 
     .line 290
     invoke-virtual {v2, v4}, Landroidx/media3/common/PriorityTaskManager;->remove(I)V
 
     .line 292
-    :cond_1c9
+    :cond_15
     throw v0
 .end method
 
 .method protected final execute(Landroidx/media3/common/util/RunnableFutureTask;Z)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1302,22 +1302,22 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_1
 
     .line 360
     invoke-virtual {p1}, Landroidx/media3/common/util/RunnableFutureTask;->run()V
 
     .line 362
-    :try_start_5
+    :try_start_0
     invoke-virtual {p1}, Landroidx/media3/common/util/RunnableFutureTask;->get()Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_9
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_5 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_a
+    :catch_0
     move-exception p2
 
     .line 364
@@ -1334,30 +1334,30 @@
     .line 365
     instance-of v1, v0, Ljava/io/IOException;
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_0
 
     .line 369
     invoke-static {p2}, Landroidx/media3/common/util/Util;->sneakyThrow(Ljava/lang/Throwable;)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 366
-    :cond_1d
+    :cond_0
     check-cast v0, Ljava/io/IOException;
 
     throw v0
 
     .line 374
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     iget-boolean p2, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->isCanceled:Z
 
-    if-nez p2, :cond_6a
+    if-nez p2, :cond_5
 
     .line 378
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->priorityTaskManager:Landroidx/media3/common/PriorityTaskManager;
 
-    if-eqz p2, :cond_2d
+    if-eqz p2, :cond_2
 
     const/16 v0, -0xfa0
 
@@ -1365,7 +1365,7 @@
     invoke-virtual {p2, v0}, Landroidx/media3/common/PriorityTaskManager;->proceed(I)V
 
     .line 381
-    :cond_2d
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/SegmentDownloader;->addActiveRunnable(Landroidx/media3/common/util/RunnableFutureTask;)V
 
     .line 382
@@ -1374,13 +1374,13 @@
     invoke-interface {p2, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 384
-    :try_start_35
+    :try_start_1
     invoke-virtual {p1}, Landroidx/media3/common/util/RunnableFutureTask;->get()Ljava/lang/Object;
 
     move-result-object p2
-    :try_end_39
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_35 .. :try_end_39} :catch_42
-    .catchall {:try_start_35 .. :try_end_39} :catchall_40
+    :try_end_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 397
     invoke-virtual {p1}, Landroidx/media3/common/util/RunnableFutureTask;->blockUntilFinished()V
@@ -1390,16 +1390,16 @@
 
     return-object p2
 
-    :catchall_40
+    :catchall_0
     move-exception p2
 
-    goto :goto_63
+    goto :goto_2
 
-    :catch_42
+    :catch_1
     move-exception p2
 
     .line 386
-    :try_start_43
+    :try_start_2
     invoke-virtual {p2}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -1413,41 +1413,41 @@
     .line 387
     instance-of v1, v0, Landroidx/media3/common/PriorityTaskManager$PriorityTooLowException;
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_3
 
-    goto :goto_59
+    goto :goto_1
 
     .line 389
-    :cond_52
+    :cond_3
     instance-of v1, v0, Ljava/io/IOException;
 
-    if-nez v1, :cond_60
+    if-nez v1, :cond_4
 
     .line 393
     invoke-static {p2}, Landroidx/media3/common/util/Util;->sneakyThrow(Ljava/lang/Throwable;)V
-    :try_end_59
-    .catchall {:try_start_43 .. :try_end_59} :catchall_40
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 397
-    :goto_59
+    :goto_1
     invoke-virtual {p1}, Landroidx/media3/common/util/RunnableFutureTask;->blockUntilFinished()V
 
     .line 398
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/SegmentDownloader;->removeActiveRunnable(Landroidx/media3/common/util/RunnableFutureTask;)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 390
-    :cond_60
-    :try_start_60
+    :cond_4
+    :try_start_3
     check-cast v0, Ljava/io/IOException;
 
     throw v0
-    :try_end_63
-    .catchall {:try_start_60 .. :try_end_63} :catchall_40
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 397
-    :goto_63
+    :goto_2
     invoke-virtual {p1}, Landroidx/media3/common/util/RunnableFutureTask;->blockUntilFinished()V
 
     .line 398
@@ -1457,7 +1457,7 @@
     throw p2
 
     .line 375
-    :cond_6a
+    :cond_5
     new-instance p1, Ljava/lang/InterruptedException;
 
     invoke-direct {p1}, Ljava/lang/InterruptedException;-><init>()V
@@ -1466,7 +1466,7 @@
 .end method
 
 .method protected final getManifest(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Z)Landroidx/media3/exoplayer/offline/FilterableManifest;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1518,7 +1518,7 @@
 .end method
 
 .method public final remove()V
-    .registers 6
+    .locals 5
 
     .line 307
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cacheDataSourceFactory:Landroidx/media3/datasource/cache/CacheDataSource$Factory;
@@ -1528,7 +1528,7 @@
     move-result-object v0
 
     .line 309
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->manifestDataSpec:Landroidx/media3/datasource/DataSpec;
 
     const/4 v2, 0x1
@@ -1545,12 +1545,12 @@
     const/4 v1, 0x0
 
     .line 311
-    :goto_12
+    :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_30
+    if-ge v1, v2, :cond_0
 
     .line 312
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cache:Landroidx/media3/datasource/cache/Cache;
@@ -1570,24 +1570,24 @@
     move-result-object v3
 
     invoke-interface {v2, v3}, Landroidx/media3/datasource/cache/Cache;->removeResource(Ljava/lang/String;)V
-    :try_end_2b
-    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_2b} :catch_3e
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_2b} :catch_30
-    .catchall {:try_start_6 .. :try_end_2b} :catchall_2e
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :catchall_2e
+    :catchall_0
     move-exception v0
 
-    goto :goto_47
+    goto :goto_3
 
     .line 320
-    :catch_30
-    :cond_30
-    :goto_30
+    :catch_0
+    :cond_0
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cache:Landroidx/media3/datasource/cache/Cache;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cacheKeyFactory:Landroidx/media3/datasource/cache/CacheKeyFactory;
@@ -1600,26 +1600,26 @@
 
     invoke-interface {v0, v1}, Landroidx/media3/datasource/cache/Cache;->removeResource(Ljava/lang/String;)V
 
-    goto :goto_46
+    goto :goto_2
 
     .line 315
-    :catch_3e
-    :try_start_3e
+    :catch_1
+    :try_start_1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
-    :try_end_45
-    .catchall {:try_start_3e .. :try_end_45} :catchall_2e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_30
+    goto :goto_1
 
-    :goto_46
+    :goto_2
     return-void
 
     .line 320
-    :goto_47
+    :goto_3
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cache:Landroidx/media3/datasource/cache/Cache;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader;->cacheKeyFactory:Landroidx/media3/datasource/cache/CacheKeyFactory;

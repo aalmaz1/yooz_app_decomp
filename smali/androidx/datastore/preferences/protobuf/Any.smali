@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 744
     new-instance v0, Landroidx/datastore/preferences/protobuf/Any;
@@ -69,7 +69,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 80
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/datastore/preferences/protobuf/Any;
-    .registers 1
+    .locals 1
 
     .line 75
     sget-object v0, Landroidx/datastore/preferences/protobuf/Any;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Any;
@@ -97,7 +97,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/datastore/preferences/protobuf/Any;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Any;->setTypeUrl(Ljava/lang/String;)V
@@ -106,7 +106,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/datastore/preferences/protobuf/Any;)V
-    .registers 1
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Any;->clearTypeUrl()V
@@ -115,7 +115,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/datastore/preferences/protobuf/Any;Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Any;->setTypeUrlBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
@@ -124,7 +124,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/datastore/preferences/protobuf/Any;Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/Any;->setValue(Landroidx/datastore/preferences/protobuf/ByteString;)V
@@ -133,7 +133,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/datastore/preferences/protobuf/Any;)V
-    .registers 1
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Any;->clearValue()V
@@ -142,7 +142,7 @@
 .end method
 
 .method private clearTypeUrl()V
-    .registers 2
+    .locals 1
 
     .line 224
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Any;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/Any;
@@ -159,7 +159,7 @@
 .end method
 
 .method private clearValue()V
-    .registers 2
+    .locals 1
 
     .line 304
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Any;->getDefaultInstance()Landroidx/datastore/preferences/protobuf/Any;
@@ -176,7 +176,7 @@
 .end method
 
 .method public static getDefaultInstance()Landroidx/datastore/preferences/protobuf/Any;
-    .registers 1
+    .locals 1
 
     .line 753
     sget-object v0, Landroidx/datastore/preferences/protobuf/Any;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Any;
@@ -185,7 +185,7 @@
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 1
+    .locals 1
 
     .line 382
     sget-object v0, Landroidx/datastore/preferences/protobuf/Any;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Any;
@@ -200,7 +200,7 @@
 .end method
 
 .method public static newBuilder(Landroidx/datastore/preferences/protobuf/Any;)Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 2
+    .locals 1
 
     .line 385
     sget-object v0, Landroidx/datastore/preferences/protobuf/Any;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Any;
@@ -215,7 +215,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -235,7 +235,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -255,7 +255,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -275,7 +275,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -295,7 +295,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -315,7 +315,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -335,7 +335,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -355,7 +355,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -375,7 +375,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -395,7 +395,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -415,7 +415,7 @@
 .end method
 
 .method public static parseFrom([B)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -435,7 +435,7 @@
 .end method
 
 .method public static parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/Any;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -455,7 +455,7 @@
 .end method
 
 .method public static parser()Landroidx/datastore/preferences/protobuf/Parser;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -476,7 +476,7 @@
 .end method
 
 .method private setTypeUrl(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 188
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -488,7 +488,7 @@
 .end method
 
 .method private setTypeUrlBytes(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 259
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -507,7 +507,7 @@
 .end method
 
 .method private setValue(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 2
+    .locals 0
 
     .line 290
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -521,7 +521,7 @@
 
 # virtual methods
 .method protected final dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 694
     sget-object p2, Landroidx/datastore/preferences/protobuf/Any$1;->$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke:[I
@@ -536,7 +536,7 @@
 
     const/4 p3, 0x0
 
-    packed-switch p1, :pswitch_data_5a
+    packed-switch p1, :pswitch_data_0
 
     .line 737
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -545,11 +545,11 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     return-object p3
 
     .line 731
-    :pswitch_14
+    :pswitch_1
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
@@ -557,10 +557,10 @@
     return-object p1
 
     .line 716
-    :pswitch_19
+    :pswitch_2
     sget-object p1, Landroidx/datastore/preferences/protobuf/Any;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_1
 
     .line 718
     const-class p2, Landroidx/datastore/preferences/protobuf/Any;
@@ -568,10 +568,10 @@
     monitor-enter p2
 
     .line 719
-    :try_start_20
+    :try_start_0
     sget-object p1, Landroidx/datastore/preferences/protobuf/Any;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_0
 
     .line 721
     new-instance p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
@@ -584,31 +584,31 @@
     sput-object p1, Landroidx/datastore/preferences/protobuf/Any;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
     .line 726
-    :cond_2d
+    :cond_0
     monitor-exit p2
 
-    goto :goto_32
+    goto :goto_0
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
-    :try_end_31
-    .catchall {:try_start_20 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-object p1
 
     .line 713
-    :pswitch_33
+    :pswitch_3
     sget-object p1, Landroidx/datastore/preferences/protobuf/Any;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/protobuf/Any;
 
     return-object p1
 
-    :pswitch_36
+    :pswitch_4
     const/4 p1, 0x2
 
     new-array p1, p1, [Ljava/lang/Object;
@@ -635,7 +635,7 @@
     return-object p1
 
     .line 699
-    :pswitch_4d
+    :pswitch_5
     new-instance p1, Landroidx/datastore/preferences/protobuf/Any$Builder;
 
     invoke-direct {p1, p3}, Landroidx/datastore/preferences/protobuf/Any$Builder;-><init>(Landroidx/datastore/preferences/protobuf/Any$1;)V
@@ -643,7 +643,7 @@
     return-object p1
 
     .line 696
-    :pswitch_53
+    :pswitch_6
     new-instance p1, Landroidx/datastore/preferences/protobuf/Any;
 
     invoke-direct {p1}, Landroidx/datastore/preferences/protobuf/Any;-><init>()V
@@ -652,20 +652,20 @@
 
     nop
 
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_53
-        :pswitch_4d
-        :pswitch_36
-        :pswitch_33
-        :pswitch_19
-        :pswitch_14
-        :pswitch_13
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getTypeUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Any;->typeUrl_:Ljava/lang/String;
@@ -674,7 +674,7 @@
 .end method
 
 .method public getTypeUrlBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 153
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Any;->typeUrl_:Ljava/lang/String;
@@ -687,7 +687,7 @@
 .end method
 
 .method public getValue()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 278
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Any;->value_:Landroidx/datastore/preferences/protobuf/ByteString;

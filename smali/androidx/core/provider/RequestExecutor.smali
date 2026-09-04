@@ -15,7 +15,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method static createDefaultExecutor(Ljava/lang/String;II)Ljava/util/concurrent/ThreadPoolExecutor;
-    .registers 11
+    .locals 8
 
     .line 82
     new-instance v7, Landroidx/core/provider/RequestExecutor$DefaultThreadFactory;
@@ -59,7 +59,7 @@
 .end method
 
 .method static createHandlerExecutor(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 98
     new-instance v0, Landroidx/core/provider/RequestExecutor$HandlerExecutor;
@@ -70,7 +70,7 @@
 .end method
 
 .method static execute(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Callable;Landroidx/core/util/Consumer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -100,7 +100,7 @@
 .end method
 
 .method static submit(Ljava/util/concurrent/ExecutorService;Ljava/util/concurrent/Callable;I)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -126,21 +126,21 @@
     int-to-long p1, p2
 
     .line 67
-    :try_start_5
+    :try_start_0
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-interface {p0, p1, p2, v0}, Ljava/util/concurrent/Future;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_b
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_5 .. :try_end_b} :catch_16
-    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_b} :catch_14
-    .catch Ljava/util/concurrent/TimeoutException; {:try_start_5 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
     .line 73
-    :catch_c
+    :catch_0
     new-instance p0, Ljava/lang/InterruptedException;
 
     const-string p1, "timeout"
@@ -149,13 +149,13 @@
 
     throw p0
 
-    :catch_14
+    :catch_1
     move-exception p0
 
     .line 71
     throw p0
 
-    :catch_16
+    :catch_2
     move-exception p0
 
     .line 69

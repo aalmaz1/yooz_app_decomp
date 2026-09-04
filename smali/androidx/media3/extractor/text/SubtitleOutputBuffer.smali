@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Landroidx/media3/decoder/DecoderOutputBuffer;-><init>()V
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 71
     invoke-super {p0}, Landroidx/media3/decoder/DecoderOutputBuffer;->clear()V
@@ -39,7 +39,7 @@
 .end method
 
 .method public getCues(J)Ljava/util/List;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -70,7 +70,7 @@
 .end method
 
 .method public getEventTime(I)J
-    .registers 6
+    .locals 4
 
     .line 56
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->subtitle:Landroidx/media3/extractor/text/Subtitle;
@@ -93,7 +93,7 @@
 .end method
 
 .method public getEventTimeCount()I
-    .registers 2
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->subtitle:Landroidx/media3/extractor/text/Subtitle;
@@ -112,7 +112,7 @@
 .end method
 
 .method public getNextEventTimeIndex(J)I
-    .registers 6
+    .locals 3
 
     .line 61
     iget-object v0, p0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->subtitle:Landroidx/media3/extractor/text/Subtitle;
@@ -135,7 +135,7 @@
 .end method
 
 .method public setContent(JLandroidx/media3/extractor/text/Subtitle;J)V
-    .registers 6
+    .locals 0
 
     .line 43
     iput-wide p1, p0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->timeUs:J
@@ -147,12 +147,12 @@
 
     cmp-long p1, p4, p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     .line 46
     iget-wide p4, p0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->timeUs:J
 
-    :cond_f
+    :cond_0
     iput-wide p4, p0, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->subsampleOffsetUs:J
 
     return-void

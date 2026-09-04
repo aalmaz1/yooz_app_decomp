@@ -82,7 +82,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Set;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,7 +135,7 @@
 .end method
 
 .method public final invoke(Landroidx/datastore/preferences/core/Preferences;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -164,7 +164,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Landroidx/datastore/preferences/core/Preferences;
 
@@ -178,14 +178,14 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     .line 141
     iget v0, p0, Landroidx/datastore/preferences/SharedPreferencesMigrationKt$getShouldRunMigration$1;->label:I
 
-    if-nez v0, :cond_81
+    if-nez v0, :cond_5
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -222,12 +222,12 @@
 
     move-result-object p1
 
-    :goto_29
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -243,10 +243,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_29
+    goto :goto_0
 
     .line 158
-    :cond_3d
+    :cond_0
     check-cast v0, Ljava/util/List;
 
     .line 146
@@ -258,12 +258,12 @@
 
     const/4 v2, 0x1
 
-    if-ne p1, v1, :cond_49
+    if-ne p1, v1, :cond_1
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 149
-    :cond_49
+    :cond_1
     iget-object p1, p0, Landroidx/datastore/preferences/SharedPreferencesMigrationKt$getShouldRunMigration$1;->$keysToMigrate:Ljava/util/Set;
 
     check-cast p1, Ljava/lang/Iterable;
@@ -273,7 +273,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_3
 
     move-object v1, p1
 
@@ -283,25 +283,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_3
 
-    :cond_5b
+    :cond_2
     move v2, v3
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 160
-    :cond_5d
+    :cond_3
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_61
+    :cond_4
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -324,10 +324,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_4
 
     .line 161
-    :goto_7c
+    :goto_1
     invoke-static {v2}, Lkotlin/coroutines/jvm/internal/Boxing;->boxBoolean(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -335,7 +335,7 @@
     return-object p1
 
     .line 146
-    :cond_81
+    :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"

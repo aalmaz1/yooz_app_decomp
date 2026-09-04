@@ -88,7 +88,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public onBackCancelled()V
-    .registers 2
+    .locals 1
 
     .line 399
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1;->$onBackCancelled:Lkotlin/jvm/functions/Function0;
@@ -139,7 +139,7 @@
 .end method
 
 .method public onBackInvoked()V
-    .registers 2
+    .locals 1
 
     .line 395
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1;->$onBackInvoked:Lkotlin/jvm/functions/Function0;
@@ -150,7 +150,7 @@
 .end method
 
 .method public onBackProgressed(Landroid/window/BackEvent;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "backEvent"
 
@@ -169,7 +169,7 @@
 .end method
 
 .method public onBackStarted(Landroid/window/BackEvent;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "backEvent"
 

@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x5b
 
@@ -75,7 +75,7 @@
 .end method
 
 .method constructor <init>(IDDDDDD)V
-    .registers 34
+    .locals 20
 
     move-object/from16 v9, p0
 
@@ -103,12 +103,12 @@
 
     const/4 v15, 0x1
 
-    if-ne v0, v15, :cond_1a
+    if-ne v0, v15, :cond_0
 
     move v14, v15
 
     .line 213
-    :cond_1a
+    :cond_0
     iput-boolean v14, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mVertical:Z
 
     .line 214
@@ -128,12 +128,12 @@
 
     const/4 v1, 0x3
 
-    if-ne v1, v0, :cond_2d
+    if-ne v1, v0, :cond_1
 
     .line 218
     iput-boolean v15, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->linear:Z
 
-    :cond_2d
+    :cond_1
     sub-double v0, v10, v5
 
     sub-double v2, v12, v7
@@ -141,7 +141,7 @@
     .line 222
     iget-boolean v4, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->linear:Z
 
-    if-nez v4, :cond_88
+    if-nez v4, :cond_7
 
     invoke-static {v0, v1}, Ljava/lang/Math;->abs(D)D
 
@@ -151,7 +151,7 @@
 
     cmpg-double v4, v16, v18
 
-    if-ltz v4, :cond_88
+    if-ltz v4, :cond_7
 
     invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
 
@@ -159,11 +159,11 @@
 
     cmpg-double v4, v16, v18
 
-    if-gez v4, :cond_4b
+    if-gez v4, :cond_2
 
-    goto :goto_88
+    goto :goto_4
 
-    :cond_4b
+    :cond_2
     const/16 v4, 0x65
 
     new-array v4, v4, [D
@@ -174,30 +174,30 @@
     .line 235
     iget-boolean v4, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mVertical:Z
 
-    if-eqz v4, :cond_57
+    if-eqz v4, :cond_3
 
     const/4 v14, -0x1
 
-    goto :goto_58
+    goto :goto_0
 
-    :cond_57
+    :cond_3
     move v14, v15
 
-    :goto_58
+    :goto_0
     int-to-double v12, v14
 
     mul-double/2addr v0, v12
 
     iput-wide v0, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseA:D
 
-    if-eqz v4, :cond_5f
+    if-eqz v4, :cond_4
 
-    goto :goto_60
+    goto :goto_1
 
-    :cond_5f
+    :cond_4
     const/4 v15, -0x1
 
-    :goto_60
+    :goto_1
     int-to-double v0, v15
 
     mul-double/2addr v2, v0
@@ -205,30 +205,30 @@
     .line 236
     iput-wide v2, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseB:D
 
-    if-eqz v4, :cond_68
+    if-eqz v4, :cond_5
 
     move-wide v0, v10
 
-    goto :goto_69
+    goto :goto_2
 
-    :cond_68
+    :cond_5
     move-wide v0, v5
 
     .line 237
-    :goto_69
+    :goto_2
     iput-wide v0, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseCenterX:D
 
-    if-eqz v4, :cond_6f
+    if-eqz v4, :cond_6
 
     move-wide v0, v7
 
-    goto :goto_71
+    goto :goto_3
 
-    :cond_6f
+    :cond_6
     move-wide/from16 v0, p12
 
     .line 238
-    :goto_71
+    :goto_3
     iput-wide v0, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseCenterY:D
 
     move-object/from16 v0, p0
@@ -256,8 +256,8 @@
     return-void
 
     .line 223
-    :cond_88
-    :goto_88
+    :cond_7
+    :goto_4
     iput-boolean v15, v9, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->linear:Z
 
     .line 224
@@ -310,7 +310,7 @@
 .end method
 
 .method private buildTable(DDDD)V
-    .registers 29
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -327,12 +327,12 @@
     const-wide/16 v13, 0x0
 
     .line 311
-    :goto_d
+    :goto_0
     sget-object v15, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->ourPercent:[D
 
     array-length v7, v15
 
-    if-ge v8, v7, :cond_4d
+    if-ge v8, v7, :cond_1
 
     const-wide v16, 0x4056800000000000L    # 90.0
 
@@ -369,7 +369,7 @@
 
     mul-double/2addr v5, v3
 
-    if-lez v8, :cond_41
+    if-lez v8, :cond_0
 
     sub-double v11, v9, v11
 
@@ -389,14 +389,14 @@
 
     aput-wide v11, v7, v8
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_41
+    :cond_0
     move-wide/from16 v13, p4
 
     move-wide v11, v13
 
-    :goto_44
+    :goto_1
     add-int/lit8 v8, v8, 0x1
 
     move-wide v13, v5
@@ -407,9 +407,9 @@
 
     move-wide/from16 v11, v18
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_4d
+    :cond_1
     move-wide v13, v9
 
     .line 325
@@ -418,12 +418,12 @@
     const/4 v1, 0x0
 
     .line 327
-    :goto_51
+    :goto_2
     sget-object v2, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->ourPercent:[D
 
     array-length v3, v2
 
-    if-ge v1, v3, :cond_5e
+    if-ge v1, v3, :cond_2
 
     .line 328
     aget-wide v3, v2, v1
@@ -434,18 +434,18 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_51
+    goto :goto_2
 
-    :cond_5e
+    :cond_2
     const/4 v7, 0x0
 
     .line 330
-    :goto_5f
+    :goto_3
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mLut:[D
 
     array-length v2, v1
 
-    if-ge v7, v2, :cond_a8
+    if-ge v7, v2, :cond_5
 
     int-to-double v2, v7
 
@@ -465,7 +465,7 @@
 
     move-result v1
 
-    if-ltz v1, :cond_80
+    if-ltz v1, :cond_3
 
     .line 334
     iget-object v2, v0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mLut:[D
@@ -484,12 +484,12 @@
 
     const-wide/16 v4, 0x0
 
-    goto :goto_a5
+    goto :goto_4
 
-    :cond_80
+    :cond_3
     const/4 v4, -0x1
 
-    if-ne v1, v4, :cond_8a
+    if-ne v1, v4, :cond_4
 
     .line 336
     iget-object v1, v0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mLut:[D
@@ -498,9 +498,9 @@
 
     aput-wide v4, v1, v7
 
-    goto :goto_a5
+    goto :goto_4
 
-    :cond_8a
+    :cond_4
     const-wide/16 v4, 0x0
 
     neg-int v1, v1
@@ -539,19 +539,19 @@
 
     aput-wide v8, v1, v7
 
-    :goto_a5
+    :goto_4
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_5f
+    goto :goto_3
 
-    :cond_a8
+    :cond_5
     return-void
 .end method
 
 
 # virtual methods
 .method getDX()D
-    .registers 7
+    .locals 6
 
     .line 260
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseA:D
@@ -581,18 +581,18 @@
     .line 263
     iget-boolean v2, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mVertical:Z
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     neg-double v0, v0
 
-    :cond_17
+    :cond_0
     mul-double/2addr v0, v4
 
     return-wide v0
 .end method
 
 .method getDY()D
-    .registers 7
+    .locals 6
 
     .line 267
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseA:D
@@ -622,23 +622,23 @@
     .line 270
     iget-boolean v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mVertical:Z
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     neg-double v0, v2
 
     mul-double/2addr v0, v4
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     mul-double v0, v2, v4
 
-    :goto_1b
+    :goto_0
     return-wide v0
 .end method
 
 .method public getLinearDX(D)D
-    .registers 3
+    .locals 0
 
     .line 284
     iget-wide p1, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseCenterX:D
@@ -647,7 +647,7 @@
 .end method
 
 .method public getLinearDY(D)D
-    .registers 3
+    .locals 0
 
     .line 288
     iget-wide p1, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseCenterY:D
@@ -656,7 +656,7 @@
 .end method
 
 .method public getLinearX(D)D
-    .registers 7
+    .locals 4
 
     .line 274
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mTime1:D
@@ -682,7 +682,7 @@
 .end method
 
 .method public getLinearY(D)D
-    .registers 7
+    .locals 4
 
     .line 279
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mTime1:D
@@ -708,7 +708,7 @@
 .end method
 
 .method getX()D
-    .registers 7
+    .locals 6
 
     .line 252
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseCenterX:D
@@ -725,7 +725,7 @@
 .end method
 
 .method getY()D
-    .registers 7
+    .locals 6
 
     .line 256
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mEllipseCenterY:D
@@ -742,27 +742,27 @@
 .end method
 
 .method lookup(D)D
-    .registers 7
+    .locals 4
 
     const-wide/16 v0, 0x0
 
     cmpg-double v2, p1, v0
 
-    if-gtz v2, :cond_7
+    if-gtz v2, :cond_0
 
     return-wide v0
 
-    :cond_7
+    :cond_0
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     cmpl-double v2, p1, v0
 
-    if-ltz v2, :cond_e
+    if-ltz v2, :cond_1
 
     return-wide v0
 
     .line 298
-    :cond_e
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mLut:[D
 
     array-length v1, v0
@@ -796,25 +796,25 @@
 .end method
 
 .method setPoint(D)V
-    .registers 5
+    .locals 2
 
     .line 244
     iget-boolean v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mVertical:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mTime2:D
 
     sub-double/2addr v0, p1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     iget-wide v0, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mTime1:D
 
     sub-double v0, p1, v0
 
-    :goto_c
+    :goto_0
     iget-wide p1, p0, Landroidx/constraintlayout/motion/utils/ArcCurveFit$Arc;->mOneOverDeltaTime:D
 
     mul-double/2addr v0, p1

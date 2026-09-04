@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static loadQuirks()Ljava/util/List;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -34,7 +34,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 44
     new-instance v1, Landroidx/camera/core/internal/compat/quirk/ImageCaptureRotationOptionQuirk;
@@ -44,12 +44,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 46
-    :cond_13
+    :cond_0
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/SurfaceOrderQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 47
     new-instance v1, Landroidx/camera/core/internal/compat/quirk/SurfaceOrderQuirk;
@@ -59,12 +59,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 49
-    :cond_21
+    :cond_1
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/CaptureFailedRetryQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     .line 50
     new-instance v1, Landroidx/camera/core/internal/compat/quirk/CaptureFailedRetryQuirk;
@@ -74,12 +74,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 52
-    :cond_2f
+    :cond_2
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/LowMemoryQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_3
 
     .line 53
     new-instance v1, Landroidx/camera/core/internal/compat/quirk/LowMemoryQuirk;
@@ -89,12 +89,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 55
-    :cond_3d
+    :cond_3
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/LargeJpegImageQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_4
 
     .line 56
     new-instance v1, Landroidx/camera/core/internal/compat/quirk/LargeJpegImageQuirk;
@@ -104,12 +104,12 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 58
-    :cond_4b
+    :cond_4
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;->load()Z
 
     move-result v1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_5
 
     .line 59
     new-instance v1, Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;
@@ -118,6 +118,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_59
+    :cond_5
     return-object v0
 .end method

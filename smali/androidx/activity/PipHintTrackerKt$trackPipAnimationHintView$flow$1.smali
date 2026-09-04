@@ -75,7 +75,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$3HoOD4FOOs4BK4W3sogOQmeeOUI(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;IIIIIIII)V
-    .registers 10
+    .locals 0
 
     invoke-static/range {p0 .. p9}, Landroidx/activity/PipHintTrackerKt$trackPipAnimationHintView$flow$1;->invokeSuspend$lambda$0(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;IIIIIIII)V
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$tX1ZAZ_6mxGyPSL59qbNSbD0n4g(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/activity/PipHintTrackerKt$trackPipAnimationHintView$flow$1;->invokeSuspend$lambda$1(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;)V
 
@@ -91,7 +91,7 @@
 .end method
 
 .method constructor <init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -113,17 +113,17 @@
 .end method
 
 .method private static final invokeSuspend$lambda$0(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;IIIIIIII)V
-    .registers 10
+    .locals 0
 
-    if-ne p2, p6, :cond_8
+    if-ne p2, p6, :cond_0
 
-    if-ne p4, p8, :cond_8
+    if-ne p4, p8, :cond_0
 
-    if-ne p3, p7, :cond_8
+    if-ne p3, p7, :cond_0
 
-    if-eq p5, p9, :cond_15
+    if-eq p5, p9, :cond_1
 
-    :cond_8
+    :cond_0
     const-string/jumbo p2, "v"
 
     .line 56
@@ -135,12 +135,12 @@
 
     invoke-interface {p0, p1}, Lkotlinx/coroutines/channels/ProducerScope;->trySend-JP2dKIU(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_15
+    :cond_1
     return-void
 .end method
 
 .method private static final invokeSuspend$lambda$1(Lkotlinx/coroutines/channels/ProducerScope;Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     .line 60
     invoke-static {p1}, Landroidx/activity/PipHintTrackerKt;->access$trackPipAnimationHintView$positionInWindow(Landroid/view/View;)Landroid/graphics/Rect;
@@ -155,7 +155,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -182,7 +182,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
@@ -196,7 +196,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/channels/ProducerScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -228,7 +228,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -239,15 +239,15 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_6d
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -256,7 +256,7 @@
 
     throw p1
 
-    :cond_17
+    :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/activity/PipHintTrackerKt$trackPipAnimationHintView$flow$1;->L$0:Ljava/lang/Object;
@@ -289,7 +289,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_50
+    if-eqz v5, :cond_2
 
     .line 79
     iget-object v5, p0, Landroidx/activity/PipHintTrackerKt$trackPipAnimationHintView$flow$1;->$view:Landroid/view/View;
@@ -315,7 +315,7 @@
     invoke-virtual {v5, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
     .line 83
-    :cond_50
+    :cond_2
     iget-object v5, p0, Landroidx/activity/PipHintTrackerKt$trackPipAnimationHintView$flow$1;->$view:Landroid/view/View;
 
     move-object v6, v3
@@ -343,13 +343,13 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_6d
+    if-ne p1, v0, :cond_3
 
     return-object v0
 
     .line 90
-    :cond_6d
-    :goto_6d
+    :cond_3
+    :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

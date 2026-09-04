@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/drawable/AnimationDrawable;ZZ)V
-    .registers 9
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -36,29 +36,29 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     add-int/lit8 v2, v0, -0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v2, v1
 
-    :goto_f
+    :goto_0
     const/4 v3, 0x1
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_1
 
     move v0, v1
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
+    :cond_1
     sub-int/2addr v0, v3
 
     .line 395
-    :goto_15
+    :goto_1
     new-instance v4, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$FrameInterpolator;
 
     invoke-direct {v4, p1, p2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$FrameInterpolator;-><init>(Landroid/graphics/drawable/AnimationDrawable;Z)V
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public canReverse()Z
-    .registers 2
+    .locals 1
 
     .line 410
     iget-boolean v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;->mHasReversibleFlag:Z
@@ -114,7 +114,7 @@
 .end method
 
 .method public reverse()V
-    .registers 2
+    .locals 1
 
     .line 420
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;->mAnim:Landroid/animation/ObjectAnimator;
@@ -125,7 +125,7 @@
 .end method
 
 .method public start()V
-    .registers 2
+    .locals 1
 
     .line 415
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;->mAnim:Landroid/animation/ObjectAnimator;
@@ -136,7 +136,7 @@
 .end method
 
 .method public stop()V
-    .registers 2
+    .locals 1
 
     .line 425
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimationDrawableTransition;->mAnim:Landroid/animation/ObjectAnimator;

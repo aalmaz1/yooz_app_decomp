@@ -13,13 +13,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 146
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -42,17 +42,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 148
     invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
 
     .line 158
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -66,17 +66,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 160
     invoke-static {p0, p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 215
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -90,17 +90,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 217
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
 
     .line 227
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -114,17 +114,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 229
     invoke-static {p0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method static getMinLogLevel()I
-    .registers 1
+    .locals 1
 
     .line 90
     sget v0, Landroidx/camera/core/Logger;->sMinLogLevel:I
@@ -133,7 +133,7 @@
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 169
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -147,17 +147,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 171
     invoke-static {p0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
 
     .line 181
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -171,17 +171,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 183
     invoke-static {p0, p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public static isDebugEnabled(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     .line 108
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -198,7 +198,7 @@
 .end method
 
 .method public static isErrorEnabled(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     .line 138
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -215,7 +215,7 @@
 .end method
 
 .method public static isInfoEnabled(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     .line 118
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -232,36 +232,36 @@
 .end method
 
 .method private static isLogLevelEnabled(Ljava/lang/String;I)Z
-    .registers 3
+    .locals 1
 
     .line 75
     sget v0, Landroidx/camera/core/Logger;->sMinLogLevel:I
 
-    if-le v0, p1, :cond_d
+    if-le v0, p1, :cond_1
 
     invoke-static {p0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result p0
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_e
+    :goto_1
     return p0
 .end method
 
 .method public static isWarnEnabled(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     .line 128
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -278,7 +278,7 @@
 .end method
 
 .method static resetMinLogLevel()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -289,7 +289,7 @@
 .end method
 
 .method static setMinLogLevel(I)V
-    .registers 1
+    .locals 0
 
     .line 83
     sput p0, Landroidx/camera/core/Logger;->sMinLogLevel:I
@@ -298,13 +298,13 @@
 .end method
 
 .method private static truncateTag(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 192
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -318,17 +318,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 194
     invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
 
     .line 204
     invoke-static {p0}, Landroidx/camera/core/Logger;->truncateTag(Ljava/lang/String;)Ljava/lang/String;
@@ -342,11 +342,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 206
     invoke-static {p0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_e
+    :cond_0
     return-void
 .end method

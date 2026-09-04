@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "message"
 
@@ -43,16 +43,16 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p2, 0x0
 
     .line 58
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2}, Landroidx/datastore/core/CorruptionException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void

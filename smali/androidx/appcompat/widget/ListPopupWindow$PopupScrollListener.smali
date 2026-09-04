@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/ListPopupWindow;)V
-    .registers 2
+    .locals 0
 
     .line 1410
     iput-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
@@ -36,17 +36,17 @@
 
 # virtual methods
 .method public onScroll(Landroid/widget/AbsListView;III)V
-    .registers 5
+    .locals 0
 
     return-void
 .end method
 
 .method public onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .registers 3
+    .locals 0
 
     const/4 p1, 0x1
 
-    if-ne p2, p1, :cond_27
+    if-ne p2, p1, :cond_0
 
     .line 1421
     iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
@@ -56,7 +56,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_0
 
     iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
 
@@ -66,7 +66,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
     .line 1423
     iget-object p1, p0, Landroidx/appcompat/widget/ListPopupWindow$PopupScrollListener;->this$0:Landroidx/appcompat/widget/ListPopupWindow;
@@ -86,6 +86,6 @@
 
     invoke-virtual {p1}, Landroidx/appcompat/widget/ListPopupWindow$ResizePopupRunnable;->run()V
 
-    :cond_27
+    :cond_0
     return-void
 .end method

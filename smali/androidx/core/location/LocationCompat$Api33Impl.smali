@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 575
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static removeBearingAccuracy(Landroid/location/Location;)V
-    .registers 1
+    .locals 0
 
     .line 589
     invoke-virtual {p0}, Landroid/location/Location;->removeBearingAccuracy()V
@@ -34,7 +34,7 @@
 .end method
 
 .method static removeSpeedAccuracy(Landroid/location/Location;)V
-    .registers 1
+    .locals 0
 
     .line 584
     invoke-virtual {p0}, Landroid/location/Location;->removeSpeedAccuracy()V
@@ -43,7 +43,7 @@
 .end method
 
 .method static removeVerticalAccuracy(Landroid/location/Location;)V
-    .registers 1
+    .locals 0
 
     .line 579
     invoke-virtual {p0}, Landroid/location/Location;->removeVerticalAccuracy()V

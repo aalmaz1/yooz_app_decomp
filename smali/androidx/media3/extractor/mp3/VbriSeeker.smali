@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>([J[JJJI)V
-    .registers 8
+    .locals 0
 
     .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public static create(JJLandroidx/media3/extractor/MpegAudioUtil$Header;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/mp3/VbriSeeker;
-    .registers 31
+    .locals 25
 
     move-wide/from16 v0, p0
 
@@ -68,28 +68,28 @@
 
     const/4 v5, 0x0
 
-    if-gtz v4, :cond_13
+    if-gtz v4, :cond_0
 
     return-object v5
 
     .line 57
-    :cond_13
+    :cond_0
     iget v6, v2, Landroidx/media3/extractor/MpegAudioUtil$Header;->sampleRate:I
 
     int-to-long v7, v4
 
     const/16 v4, 0x7d00
 
-    if-lt v6, v4, :cond_1d
+    if-lt v6, v4, :cond_1
 
     const/16 v4, 0x480
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     const/16 v4, 0x240
 
-    :goto_1f
+    :goto_0
     int-to-long v9, v4
 
     const-wide/32 v11, 0xf4240
@@ -140,8 +140,8 @@
 
     move-wide/from16 v12, p2
 
-    :goto_45
-    if-ge v11, v4, :cond_96
+    :goto_1
+    if-ge v11, v4, :cond_6
 
     move/from16 v19, v6
 
@@ -169,25 +169,25 @@
 
     const/4 v8, 0x1
 
-    if-eq v7, v8, :cond_7a
+    if-eq v7, v8, :cond_5
 
     const/4 v8, 0x2
 
-    if-eq v7, v8, :cond_74
+    if-eq v7, v8, :cond_4
 
     const/4 v9, 0x3
 
-    if-eq v7, v9, :cond_6e
+    if-eq v7, v9, :cond_3
 
     const/4 v9, 0x4
 
-    if-eq v7, v9, :cond_68
+    if-eq v7, v9, :cond_2
 
     const/4 v9, 0x0
 
     return-object v9
 
-    :cond_68
+    :cond_2
     const/4 v9, 0x0
 
     .line 87
@@ -195,9 +195,9 @@
 
     move-result v10
 
-    goto :goto_80
+    goto :goto_2
 
-    :cond_6e
+    :cond_3
     const/4 v9, 0x0
 
     .line 84
@@ -205,9 +205,9 @@
 
     move-result v10
 
-    goto :goto_80
+    goto :goto_2
 
-    :cond_74
+    :cond_4
     const/4 v9, 0x0
 
     .line 81
@@ -215,9 +215,9 @@
 
     move-result v10
 
-    goto :goto_80
+    goto :goto_2
 
-    :cond_7a
+    :cond_5
     const/4 v8, 0x2
 
     const/4 v9, 0x0
@@ -227,7 +227,7 @@
 
     move-result v10
 
-    :goto_80
+    :goto_2
     int-to-long v8, v10
 
     move/from16 v10, v19
@@ -256,18 +256,18 @@
 
     const/4 v5, 0x0
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_96
+    :cond_6
     const-wide/16 v3, -0x1
 
     cmp-long v3, v0, v3
 
-    if-eqz v3, :cond_be
+    if-eqz v3, :cond_7
 
     cmp-long v3, v0, v12
 
-    if-eqz v3, :cond_be
+    if-eqz v3, :cond_7
 
     .line 95
     new-instance v3, Ljava/lang/StringBuilder;
@@ -299,7 +299,7 @@
     invoke-static {v1, v0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 97
-    :cond_be
+    :cond_7
     new-instance v0, Landroidx/media3/extractor/mp3/VbriSeeker;
 
     iget v1, v2, Landroidx/media3/extractor/MpegAudioUtil$Header;->bitrate:I
@@ -320,7 +320,7 @@
 
 # virtual methods
 .method public getAverageBitrate()I
-    .registers 2
+    .locals 1
 
     .line 150
     iget v0, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->bitrate:I
@@ -329,7 +329,7 @@
 .end method
 
 .method public getDataEndPosition()J
-    .registers 3
+    .locals 2
 
     .line 145
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->dataEndPosition:J
@@ -338,7 +338,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 140
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->durationUs:J
@@ -347,7 +347,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 10
+    .locals 7
 
     .line 123
     iget-object v0, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->timesUs:[J
@@ -376,7 +376,7 @@
 
     cmp-long p1, v3, p1
 
-    if-gez p1, :cond_35
+    if-gez p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->timesUs:[J
 
@@ -384,12 +384,12 @@
 
     sub-int/2addr p1, v1
 
-    if-ne v0, p1, :cond_21
+    if-ne v0, p1, :cond_0
 
-    goto :goto_35
+    goto :goto_0
 
     .line 128
-    :cond_21
+    :cond_0
     new-instance p1, Landroidx/media3/extractor/SeekPoint;
 
     iget-object p2, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->timesUs:[J
@@ -412,8 +412,8 @@
     return-object p2
 
     .line 126
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_0
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v2}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -422,7 +422,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 6
+    .locals 3
 
     .line 135
     iget-object v0, p0, Landroidx/media3/extractor/mp3/VbriSeeker;->timesUs:[J
@@ -441,7 +441,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

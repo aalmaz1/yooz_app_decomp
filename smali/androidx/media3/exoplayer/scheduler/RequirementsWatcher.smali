@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$Listener;Landroidx/media3/exoplayer/scheduler/Requirements;)V
-    .registers 4
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->checkRequirements()V
@@ -69,7 +69,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)Landroid/os/Handler;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->handler:Landroid/os/Handler;
@@ -78,7 +78,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;
-    .registers 1
+    .locals 0
 
     .line 39
     iget-object p0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->networkCallback:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;
@@ -87,7 +87,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->recheckNotMetNetworkRequirements()V
@@ -96,7 +96,7 @@
 .end method
 
 .method private checkRequirements()V
-    .registers 3
+    .locals 2
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->requirements:Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -110,7 +110,7 @@
     .line 151
     iget v1, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->notMetRequirements:I
 
-    if-eq v1, v0, :cond_13
+    if-eq v1, v0, :cond_0
 
     .line 152
     iput v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->notMetRequirements:I
@@ -120,31 +120,31 @@
 
     invoke-interface {v1, p0, v0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$Listener;->onRequirementsStateChanged(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;I)V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method private recheckNotMetNetworkRequirements()V
-    .registers 2
+    .locals 1
 
     .line 167
     iget v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->notMetRequirements:I
 
     and-int/lit8 v0, v0, 0x3
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 171
-    :cond_7
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->checkRequirements()V
 
     return-void
 .end method
 
 .method private registerNetworkCallbackV24()V
-    .registers 4
+    .locals 3
 
     .line 134
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
@@ -180,7 +180,7 @@
 .end method
 
 .method private unregisterNetworkCallbackV24()V
-    .registers 3
+    .locals 2
 
     .line 142
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
@@ -222,7 +222,7 @@
 
 # virtual methods
 .method public getRequirements()Landroidx/media3/exoplayer/scheduler/Requirements;
-    .registers 2
+    .locals 1
 
     .line 129
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->requirements:Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -231,7 +231,7 @@
 .end method
 
 .method public start()I
-    .registers 6
+    .locals 5
 
     .line 87
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->requirements:Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -256,36 +256,36 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 91
     sget v1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x18
 
-    if-lt v1, v2, :cond_21
+    if-lt v1, v2, :cond_0
 
     .line 92
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->registerNetworkCallbackV24()V
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
 
     .line 94
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 97
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->requirements:Landroidx/media3/exoplayer/scheduler/Requirements;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/scheduler/Requirements;->isChargingRequired()Z
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     const-string v1, "android.intent.action.ACTION_POWER_CONNECTED"
 
@@ -298,30 +298,30 @@
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 101
-    :cond_38
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->requirements:Landroidx/media3/exoplayer/scheduler/Requirements;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/scheduler/Requirements;->isIdleRequired()Z
 
     move-result v1
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_4
 
     .line 102
     sget v1, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x17
 
-    if-lt v1, v2, :cond_4c
+    if-lt v1, v2, :cond_3
 
     const-string v1, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
 
     .line 103
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_4c
+    :cond_3
     const-string v1, "android.intent.action.SCREEN_ON"
 
     .line 105
@@ -333,15 +333,15 @@
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 109
-    :cond_56
-    :goto_56
+    :cond_4
+    :goto_1
     iget-object v1, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->requirements:Landroidx/media3/exoplayer/scheduler/Requirements;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/scheduler/Requirements;->isStorageNotLowRequired()Z
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_5
 
     const-string v1, "android.intent.action.DEVICE_STORAGE_LOW"
 
@@ -354,7 +354,7 @@
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 113
-    :cond_68
+    :cond_5
     new-instance v1, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
 
     const/4 v2, 0x0
@@ -377,7 +377,7 @@
 .end method
 
 .method public stop()V
-    .registers 3
+    .locals 2
 
     .line 120
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
@@ -402,15 +402,15 @@
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_1d
+    if-lt v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->networkCallback:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 123
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->unregisterNetworkCallbackV24()V
 
-    :cond_1d
+    :cond_0
     return-void
 .end method

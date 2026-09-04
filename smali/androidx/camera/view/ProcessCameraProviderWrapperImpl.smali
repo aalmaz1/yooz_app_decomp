@@ -12,7 +12,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/lifecycle/ProcessCameraProvider;)V
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public bindToLifecycle(Landroidx/lifecycle/LifecycleOwner;Landroidx/camera/core/CameraSelector;Landroidx/camera/core/UseCaseGroup;)Landroidx/camera/core/Camera;
-    .registers 5
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/camera/view/ProcessCameraProviderWrapperImpl;->mProcessCameraProvider:Landroidx/camera/lifecycle/ProcessCameraProvider;
@@ -39,7 +39,7 @@
 .end method
 
 .method public hasCamera(Landroidx/camera/core/CameraSelector;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/CameraInfoUnavailableException;
@@ -57,7 +57,7 @@
 .end method
 
 .method public shutdown()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -78,7 +78,7 @@
 .end method
 
 .method public varargs unbind([Landroidx/camera/core/UseCase;)V
-    .registers 3
+    .locals 1
 
     .line 55
     iget-object v0, p0, Landroidx/camera/view/ProcessCameraProviderWrapperImpl;->mProcessCameraProvider:Landroidx/camera/lifecycle/ProcessCameraProvider;
@@ -89,7 +89,7 @@
 .end method
 
 .method public unbindAll()V
-    .registers 2
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/camera/view/ProcessCameraProviderWrapperImpl;->mProcessCameraProvider:Landroidx/camera/lifecycle/ProcessCameraProvider;

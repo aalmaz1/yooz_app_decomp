@@ -41,7 +41,7 @@
 
 # direct methods
 .method constructor <init>(ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -91,21 +91,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 385
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_4
 
     .line 386
     check-cast p1, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;
@@ -119,13 +119,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_4
 
     iget v1, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mSessionType:I
 
     iget v3, p1, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mSessionType:I
 
-    if-ne v1, v3, :cond_4c
+    if-ne v1, v3, :cond_4
 
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mOutputConfigurations:Ljava/util/List;
 
@@ -140,22 +140,22 @@
 
     move-result v3
 
-    if-eq v1, v3, :cond_2a
+    if-eq v1, v3, :cond_1
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     move v1, v2
 
     .line 393
-    :goto_2b
+    :goto_0
     iget-object v3, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mOutputConfigurations:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_4b
+    if-ge v1, v3, :cond_3
 
     .line 394
     iget-object v3, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mOutputConfigurations:Ljava/util/List;
@@ -176,25 +176,25 @@
 
     move-result v3
 
-    if-nez v3, :cond_48
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_48
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_4b
+    :cond_3
     return v0
 
-    :cond_4c
-    :goto_4c
+    :cond_4
+    :goto_1
     return v2
 .end method
 
 .method public getExecutor()Ljava/util/concurrent/Executor;
-    .registers 2
+    .locals 1
 
     .line 346
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mExecutor:Ljava/util/concurrent/Executor;
@@ -203,7 +203,7 @@
 .end method
 
 .method public getInputConfiguration()Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;
-    .registers 2
+    .locals 1
 
     .line 352
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mInputConfig:Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;
@@ -212,7 +212,7 @@
 .end method
 
 .method public getOutputConfigurations()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -229,7 +229,7 @@
 .end method
 
 .method public getSessionConfiguration()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -237,7 +237,7 @@
 .end method
 
 .method public getSessionParameters()Landroid/hardware/camera2/CaptureRequest;
-    .registers 2
+    .locals 1
 
     .line 367
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mSessionParameters:Landroid/hardware/camera2/CaptureRequest;
@@ -246,7 +246,7 @@
 .end method
 
 .method public getSessionType()I
-    .registers 2
+    .locals 1
 
     .line 328
     iget v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mSessionType:I
@@ -255,7 +255,7 @@
 .end method
 
 .method public getStateCallback()Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-    .registers 2
+    .locals 1
 
     .line 340
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mStateCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
@@ -264,7 +264,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 409
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mOutputConfigurations:Ljava/util/List;
@@ -285,19 +285,19 @@
     .line 412
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mInputConfig:Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 413
-    :cond_12
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;->hashCode()I
 
     move-result v0
 
-    :goto_16
+    :goto_0
     xor-int/2addr v0, v1
 
     shl-int/lit8 v1, v0, 0x5
@@ -313,14 +313,14 @@
 .end method
 
 .method public setInputConfiguration(Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;)V
-    .registers 4
+    .locals 2
 
     .line 357
     iget v0, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mSessionType:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     .line 358
     iput-object p1, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mInputConfig:Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;
@@ -328,7 +328,7 @@
     return-void
 
     .line 360
-    :cond_8
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Method not supported for high speed session types"
@@ -339,7 +339,7 @@
 .end method
 
 .method public setSessionParameters(Landroid/hardware/camera2/CaptureRequest;)V
-    .registers 2
+    .locals 0
 
     .line 372
     iput-object p1, p0, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat$SessionConfigurationCompatBaseImpl;->mSessionParameters:Landroid/hardware/camera2/CaptureRequest;

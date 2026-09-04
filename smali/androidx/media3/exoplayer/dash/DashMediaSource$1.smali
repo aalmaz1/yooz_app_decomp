@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/dash/DashMediaSource;)V
-    .registers 2
+    .locals 0
 
     .line 849
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$1;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onInitializationFailed(Ljava/io/IOException;)V
-    .registers 3
+    .locals 1
 
     .line 857
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$1;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;
@@ -47,7 +47,7 @@
 .end method
 
 .method public onInitialized()V
-    .registers 4
+    .locals 3
 
     .line 852
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$1;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;

@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public compare(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ByteString;)I
-    .registers 7
+    .locals 4
 
     .line 257
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/ByteString;->iterator()Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
@@ -52,18 +52,18 @@
     move-result-object v1
 
     .line 260
-    :cond_8
+    :cond_0
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_1
 
     .line 264
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;->nextByte()B
@@ -86,12 +86,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_0
 
     return v2
 
     .line 270
-    :cond_2b
+    :cond_1
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/ByteString;->size()I
 
     move-result p1
@@ -108,7 +108,7 @@
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 254
     check-cast p1, Landroidx/datastore/preferences/protobuf/ByteString;

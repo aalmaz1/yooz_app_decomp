@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Readable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -88,23 +88,23 @@
     .line 59
     instance-of v0, p1, Ljava/io/Reader;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     check-cast p1, Ljava/io/Reader;
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_2d
+    :goto_0
     iput-object p1, p0, Lcom/google/common/io/LineReader;->reader:Ljava/io/Reader;
 
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/google/common/io/LineReader;)Ljava/util/Queue;
-    .registers 1
+    .locals 0
 
     .line 41
     iget-object p0, p0, Lcom/google/common/io/LineReader;->lines:Ljava/util/Queue;
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public readLine()Ljava/lang/String;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -133,7 +133,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_2
 
     .line 75
     iget-object v0, p0, Lcom/google/common/io/LineReader;->cbuf:Ljava/nio/CharBuffer;
@@ -145,7 +145,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     iget-object v2, p0, Lcom/google/common/io/LineReader;->buf:[C
 
@@ -155,9 +155,9 @@
 
     move-result v0
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Lcom/google/common/io/LineReader;->readable:Ljava/lang/Readable;
 
     iget-object v2, p0, Lcom/google/common/io/LineReader;->cbuf:Ljava/nio/CharBuffer;
@@ -166,20 +166,20 @@
 
     move-result v0
 
-    :goto_22
+    :goto_1
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_2b
+    if-ne v0, v2, :cond_1
 
     .line 80
     iget-object v0, p0, Lcom/google/common/io/LineReader;->lineBuf:Lcom/google/common/io/LineBuffer;
 
     invoke-virtual {v0}, Lcom/google/common/io/LineBuffer;->finish()V
 
-    goto :goto_33
+    goto :goto_2
 
     .line 83
-    :cond_2b
+    :cond_1
     iget-object v2, p0, Lcom/google/common/io/LineReader;->lineBuf:Lcom/google/common/io/LineBuffer;
 
     iget-object v3, p0, Lcom/google/common/io/LineReader;->buf:[C
@@ -189,8 +189,8 @@
     goto :goto_0
 
     .line 85
-    :cond_33
-    :goto_33
+    :cond_2
+    :goto_2
     iget-object v0, p0, Lcom/google/common/io/LineReader;->lines:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;

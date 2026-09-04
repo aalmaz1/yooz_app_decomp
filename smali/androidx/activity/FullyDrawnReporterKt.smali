@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final reportWhenComplete(Landroidx/activity/FullyDrawnReporter;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -54,7 +54,7 @@
 
     instance-of v0, p2, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -66,7 +66,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;->label:I
 
@@ -74,14 +74,14 @@
 
     iput p2, v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;
 
     invoke-direct {v0, p2}, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p2, v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -93,22 +93,22 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_2e
+    if-ne v2, v3, :cond_1
 
     iget-object p0, v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;->L$0:Ljava/lang/Object;
 
     check-cast p0, Landroidx/activity/FullyDrawnReporter;
 
-    :try_start_2a
+    :try_start_0
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2d
-    .catchall {:try_start_2a .. :try_end_2d} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_50
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
@@ -117,7 +117,7 @@
 
     throw p0
 
-    :cond_36
+    :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 180
@@ -128,7 +128,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_45
+    if-eqz p2, :cond_3
 
     .line 182
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -136,8 +136,8 @@
     return-object p0
 
     .line 185
-    :cond_45
-    :try_start_45
+    :cond_3
+    :try_start_1
     iput-object p0, v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Landroidx/activity/FullyDrawnReporterKt$reportWhenComplete$1;->label:I
@@ -145,15 +145,15 @@
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_4d
-    .catchall {:try_start_45 .. :try_end_4d} :catchall_5c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-ne p1, v1, :cond_50
+    if-ne p1, v1, :cond_4
 
     return-object v1
 
-    :cond_50
-    :goto_50
+    :cond_4
+    :goto_1
     invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     .line 187
@@ -166,7 +166,7 @@
 
     return-object p0
 
-    :catchall_5c
+    :catchall_0
     move-exception p1
 
     .line 187
@@ -180,7 +180,7 @@
 .end method
 
 .method private static final reportWhenComplete$$forInline(Landroidx/activity/FullyDrawnReporter;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -209,21 +209,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 182
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x1
 
     .line 185
-    :try_start_d
+    :try_start_0
     invoke-interface {p1, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_10
-    .catchall {:try_start_d .. :try_end_10} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -237,7 +237,7 @@
 
     return-object p0
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 187

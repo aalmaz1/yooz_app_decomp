@@ -40,7 +40,7 @@
 
 # direct methods
 .method public static final varargs create([Landroidx/datastore/preferences/core/Preferences$Pair;)Landroidx/datastore/preferences/core/Preferences;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -73,7 +73,7 @@
 .end method
 
 .method public static final createEmpty()Landroidx/datastore/preferences/core/Preferences;
-    .registers 3
+    .locals 3
 
     .line 27
     new-instance v0, Landroidx/datastore/preferences/core/MutablePreferences;
@@ -90,7 +90,7 @@
 .end method
 
 .method public static final varargs createMutable([Landroidx/datastore/preferences/core/Preferences$Pair;)Landroidx/datastore/preferences/core/MutablePreferences;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",

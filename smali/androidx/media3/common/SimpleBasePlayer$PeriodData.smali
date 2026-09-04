@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/SimpleBasePlayer$PeriodData$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 1935
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/SimpleBasePlayer$PeriodData$Builder;Landroidx/media3/common/SimpleBasePlayer$1;)V
-    .registers 3
+    .locals 0
 
     .line 1824
     invoke-direct {p0, p1}, Landroidx/media3/common/SimpleBasePlayer$PeriodData;-><init>(Landroidx/media3/common/SimpleBasePlayer$PeriodData$Builder;)V
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/SimpleBasePlayer$PeriodData$Builder;
-    .registers 3
+    .locals 2
 
     .line 1944
     new-instance v0, Landroidx/media3/common/SimpleBasePlayer$PeriodData$Builder;
@@ -93,26 +93,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1952
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/SimpleBasePlayer$PeriodData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1955
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/SimpleBasePlayer$PeriodData;
 
     .line 1956
@@ -124,7 +124,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$PeriodData;->durationUs:J
 
@@ -132,7 +132,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$PeriodData;->adPlaybackState:Landroidx/media3/common/AdPlaybackState;
 
@@ -143,25 +143,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$PeriodData;->isPlaceholder:Z
 
     iget-boolean p1, p1, Landroidx/media3/common/SimpleBasePlayer$PeriodData;->isPlaceholder:Z
 
-    if-ne v1, p1, :cond_2f
+    if-ne v1, p1, :cond_2
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2f
+    :cond_2
     move v0, v2
 
-    :goto_30
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 1965
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$PeriodData;->uid:Ljava/lang/Object;

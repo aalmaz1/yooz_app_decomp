@@ -14,7 +14,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 2
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,30 +26,30 @@
 .end method
 
 .method private createImageProxyWithEmptyMetadata(Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/ImageProxy;
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return-object v0
 
     .line 133
-    :cond_4
+    :cond_0
     iget-object v1, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mPendingRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_1
     move v1, v2
 
-    :goto_c
+    :goto_0
     const-string v3, "Pending request should not be null"
 
     invoke-static {v1, v3}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -125,21 +125,21 @@
 
 # virtual methods
 .method acceptProcessingRequest(Landroidx/camera/core/imagecapture/ProcessingRequest;)V
-    .registers 4
+    .locals 2
 
     .line 69
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mPendingRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     const-string v1, "Pending request should be null"
 
     invoke-static {v0, v1}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -151,7 +151,7 @@
 .end method
 
 .method public acquireLatestImage()Landroidx/camera/core/ImageProxy;
-    .registers 2
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -168,7 +168,7 @@
 .end method
 
 .method public acquireNextImage()Landroidx/camera/core/ImageProxy;
-    .registers 2
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -185,7 +185,7 @@
 .end method
 
 .method public clearOnImageAvailableListener()V
-    .registers 2
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -196,7 +196,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -207,7 +207,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -220,7 +220,7 @@
 .end method
 
 .method public getImageFormat()I
-    .registers 2
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -233,7 +233,7 @@
 .end method
 
 .method public getMaxImages()I
-    .registers 2
+    .locals 1
 
     .line 107
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -246,7 +246,7 @@
 .end method
 
 .method public getSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -259,7 +259,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;
@@ -272,7 +272,7 @@
 .end method
 
 .method synthetic lambda$setOnImageAvailableListener$0$androidx-camera-core-imagecapture-NoMetadataImageReader(Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 3
+    .locals 0
 
     .line 120
     invoke-interface {p1, p0}, Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;->onImageAvailable(Landroidx/camera/core/impl/ImageReaderProxy;)V
@@ -281,7 +281,7 @@
 .end method
 
 .method public setOnImageAvailableListener(Landroidx/camera/core/impl/ImageReaderProxy$OnImageAvailableListener;Ljava/util/concurrent/Executor;)V
-    .registers 5
+    .locals 2
 
     .line 119
     iget-object v0, p0, Landroidx/camera/core/imagecapture/NoMetadataImageReader;->mWrappedImageReader:Landroidx/camera/core/impl/ImageReaderProxy;

@@ -10,7 +10,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -23,7 +23,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -48,19 +48,19 @@
 
     move-result p1
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     const/4 p1, 0x4
 
     .line 44
     invoke-virtual {p0, p1}, Landroidx/legacy/widget/Space;->setVisibility(I)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method private static getDefaultSize2(II)I
-    .registers 4
+    .locals 2
 
     .line 84
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
@@ -74,33 +74,33 @@
 
     const/high16 v1, -0x80000000
 
-    if-eq v0, v1, :cond_13
+    if-eq v0, v1, :cond_1
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move p0, p1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 92
-    :cond_13
+    :cond_1
     invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
 
     move-result p0
 
-    :goto_17
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -108,7 +108,7 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

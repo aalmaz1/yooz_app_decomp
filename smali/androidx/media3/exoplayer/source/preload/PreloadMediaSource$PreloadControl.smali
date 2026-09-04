@@ -19,7 +19,7 @@
 .end method
 
 .method public onLoadedToTheEndOfSource(Landroidx/media3/exoplayer/source/preload/PreloadMediaSource;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

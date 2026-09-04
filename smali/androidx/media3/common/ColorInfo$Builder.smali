@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/ColorInfo;)V
-    .registers 3
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/ColorInfo;Landroidx/media3/common/ColorInfo$1;)V
-    .registers 3
+    .locals 0
 
     .line 42
     invoke-direct {p0, p1}, Landroidx/media3/common/ColorInfo$Builder;-><init>(Landroidx/media3/common/ColorInfo;)V
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/ColorInfo;
-    .registers 10
+    .locals 9
 
     .line 152
     new-instance v8, Landroidx/media3/common/ColorInfo;
@@ -133,7 +133,7 @@
 .end method
 
 .method public setChromaBitdepth(I)Landroidx/media3/common/ColorInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 146
     iput p1, p0, Landroidx/media3/common/ColorInfo$Builder;->chromaBitdepth:I
@@ -142,7 +142,7 @@
 .end method
 
 .method public setColorRange(I)Landroidx/media3/common/ColorInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 95
     iput p1, p0, Landroidx/media3/common/ColorInfo$Builder;->colorRange:I
@@ -151,7 +151,7 @@
 .end method
 
 .method public setColorSpace(I)Landroidx/media3/common/ColorInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 80
     iput p1, p0, Landroidx/media3/common/ColorInfo$Builder;->colorSpace:I
@@ -160,7 +160,7 @@
 .end method
 
 .method public setColorTransfer(I)Landroidx/media3/common/ColorInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 110
     iput p1, p0, Landroidx/media3/common/ColorInfo$Builder;->colorTransfer:I
@@ -169,7 +169,7 @@
 .end method
 
 .method public setHdrStaticInfo([B)Landroidx/media3/common/ColorInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 122
     iput-object p1, p0, Landroidx/media3/common/ColorInfo$Builder;->hdrStaticInfo:[B
@@ -178,7 +178,7 @@
 .end method
 
 .method public setLumaBitdepth(I)Landroidx/media3/common/ColorInfo$Builder;
-    .registers 2
+    .locals 0
 
     .line 134
     iput p1, p0, Landroidx/media3/common/ColorInfo$Builder;->lumaBitdepth:I

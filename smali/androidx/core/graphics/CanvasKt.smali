@@ -53,7 +53,7 @@
 
 # direct methods
 .method public static final withClip(Landroid/graphics/Canvas;FFFFLkotlin/jvm/functions/Function1;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,10 +78,10 @@
     const/4 p1, 0x1
 
     .line 198
-    :try_start_8
+    :try_start_0
     invoke-interface {p5, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -92,7 +92,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -105,7 +105,7 @@
 .end method
 
 .method public static final withClip(Landroid/graphics/Canvas;IIIILkotlin/jvm/functions/Function1;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,10 +130,10 @@
     const/4 p1, 0x1
 
     .line 178
-    :try_start_8
+    :try_start_0
     invoke-interface {p5, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -144,7 +144,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -157,7 +157,7 @@
 .end method
 
 .method public static final withClip(Landroid/graphics/Canvas;Landroid/graphics/Path;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -182,10 +182,10 @@
     const/4 p1, 0x1
 
     .line 215
-    :try_start_8
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -196,7 +196,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -209,7 +209,7 @@
 .end method
 
 .method public static final withClip(Landroid/graphics/Canvas;Landroid/graphics/Rect;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -234,10 +234,10 @@
     const/4 p1, 0x1
 
     .line 141
-    :try_start_8
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -248,7 +248,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -261,7 +261,7 @@
 .end method
 
 .method public static final withClip(Landroid/graphics/Canvas;Landroid/graphics/RectF;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -286,10 +286,10 @@
     const/4 p1, 0x1
 
     .line 158
-    :try_start_8
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -300,7 +300,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -313,7 +313,7 @@
 .end method
 
 .method public static final withMatrix(Landroid/graphics/Canvas;Landroid/graphics/Matrix;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -338,10 +338,10 @@
     const/4 p1, 0x1
 
     .line 124
-    :try_start_8
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -352,7 +352,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -365,13 +365,13 @@
 .end method
 
 .method public static synthetic withMatrix$default(Landroid/graphics/Canvas;Landroid/graphics/Matrix;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     const/4 p4, 0x1
 
     and-int/2addr p3, p4
 
-    if-eqz p3, :cond_9
+    if-eqz p3, :cond_0
 
     .line 118
     new-instance p1, Landroid/graphics/Matrix;
@@ -379,7 +379,7 @@
     invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
 
     .line 121
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
 
     move-result p3
@@ -388,10 +388,10 @@
     invoke-virtual {p0, p1}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
 
     .line 124
-    :try_start_10
+    :try_start_0
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_13
-    .catchall {:try_start_10 .. :try_end_13} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -402,7 +402,7 @@
 
     return-void
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -415,7 +415,7 @@
 .end method
 
 .method public static final withRotation(Landroid/graphics/Canvas;FFFLkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -440,10 +440,10 @@
     const/4 p1, 0x1
 
     .line 69
-    :try_start_8
+    :try_start_0
     invoke-interface {p4, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -454,7 +454,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -467,32 +467,32 @@
 .end method
 
 .method public static synthetic withRotation$default(Landroid/graphics/Canvas;FFFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 8
+    .locals 1
 
     and-int/lit8 p6, p5, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     move p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     move p2, v0
 
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_10
+    if-eqz p5, :cond_2
 
     move p3, v0
 
     .line 66
-    :cond_10
+    :cond_2
     invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
 
     move-result p5
@@ -503,10 +503,10 @@
     const/4 p1, 0x1
 
     .line 69
-    :try_start_18
+    :try_start_0
     invoke-interface {p4, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1b
-    .catchall {:try_start_18 .. :try_end_1b} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -517,7 +517,7 @@
 
     return-void
 
-    :catchall_25
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -530,7 +530,7 @@
 .end method
 
 .method public static final withSave(Landroid/graphics/Canvas;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -551,10 +551,10 @@
     const/4 v1, 0x1
 
     .line 32
-    :try_start_5
+    :try_start_0
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -565,7 +565,7 @@
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -578,7 +578,7 @@
 .end method
 
 .method public static final withScale(Landroid/graphics/Canvas;FFFFLkotlin/jvm/functions/Function1;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -603,10 +603,10 @@
     const/4 p1, 0x1
 
     .line 89
-    :try_start_8
+    :try_start_0
     invoke-interface {p5, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -617,7 +617,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -630,41 +630,41 @@
 .end method
 
 .method public static synthetic withScale$default(Landroid/graphics/Canvas;FFFFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 9
+    .locals 1
 
     and-int/lit8 p7, p6, 0x1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    if-eqz p7, :cond_7
+    if-eqz p7, :cond_0
 
     move p1, v0
 
-    :cond_7
+    :cond_0
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_1
 
     move p2, v0
 
-    :cond_c
+    :cond_1
     and-int/lit8 p7, p6, 0x4
 
     const/4 v0, 0x0
 
-    if-eqz p7, :cond_12
+    if-eqz p7, :cond_2
 
     move p3, v0
 
-    :cond_12
+    :cond_2
     and-int/lit8 p6, p6, 0x8
 
-    if-eqz p6, :cond_17
+    if-eqz p6, :cond_3
 
     move p4, v0
 
     .line 86
-    :cond_17
+    :cond_3
     invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
 
     move-result p6
@@ -675,10 +675,10 @@
     const/4 p1, 0x1
 
     .line 89
-    :try_start_1f
+    :try_start_0
     invoke-interface {p5, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -689,7 +689,7 @@
 
     return-void
 
-    :catchall_2c
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -702,7 +702,7 @@
 .end method
 
 .method public static final withSkew(Landroid/graphics/Canvas;FFLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -727,10 +727,10 @@
     const/4 p1, 0x1
 
     .line 107
-    :try_start_8
+    :try_start_0
     invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -741,7 +741,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -754,25 +754,25 @@
 .end method
 
 .method public static synthetic withSkew$default(Landroid/graphics/Canvas;FFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 7
+    .locals 1
 
     and-int/lit8 p5, p4, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     move p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_1
 
     move p2, v0
 
     .line 104
-    :cond_b
+    :cond_1
     invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
 
     move-result p4
@@ -783,10 +783,10 @@
     const/4 p1, 0x1
 
     .line 107
-    :try_start_13
+    :try_start_0
     invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_16
-    .catchall {:try_start_13 .. :try_end_16} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -797,7 +797,7 @@
 
     return-void
 
-    :catchall_20
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -810,7 +810,7 @@
 .end method
 
 .method public static final withTranslation(Landroid/graphics/Canvas;FFLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -835,10 +835,10 @@
     const/4 p1, 0x1
 
     .line 50
-    :try_start_8
+    :try_start_0
     invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b
-    .catchall {:try_start_8 .. :try_end_b} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -849,7 +849,7 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -862,25 +862,25 @@
 .end method
 
 .method public static synthetic withTranslation$default(Landroid/graphics/Canvas;FFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 7
+    .locals 1
 
     and-int/lit8 p5, p4, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     move p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_1
 
     move p2, v0
 
     .line 47
-    :cond_b
+    :cond_1
     invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
 
     move-result p4
@@ -891,10 +891,10 @@
     const/4 p1, 0x1
 
     .line 50
-    :try_start_13
+    :try_start_0
     invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_16
-    .catchall {:try_start_13 .. :try_end_16} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -905,7 +905,7 @@
 
     return-void
 
-    :catchall_20
+    :catchall_0
     move-exception p2
 
     invoke-static {p1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

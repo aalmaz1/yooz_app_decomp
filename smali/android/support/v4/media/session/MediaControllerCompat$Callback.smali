@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 693
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public binderDied()V
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x8
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public getIControllerCallback()Landroid/support/v4/media/session/IMediaControllerCallback;
-    .registers 2
+    .locals 1
 
     .line 818
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->mIControllerCallback:Landroid/support/v4/media/session/IMediaControllerCallback;
@@ -79,37 +79,37 @@
 .end method
 
 .method public onAudioInfoChanged(Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onCaptioningEnabledChanged(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onExtrasChanged(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onQueueChanged(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -123,48 +123,48 @@
 .end method
 
 .method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onRepeatModeChanged(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onSessionDestroyed()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onSessionReady()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onShuffleModeChanged(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 1
 
     .line 843
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->mHandler:Landroid/support/v4/media/session/MediaControllerCompat$Callback$MessageHandler;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 844
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback$MessageHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -177,19 +177,19 @@
     .line 846
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method setHandler(Landroid/os/Handler;)V
-    .registers 3
+    .locals 1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
     .line 831
     iget-object p1, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->mHandler:Landroid/support/v4/media/session/MediaControllerCompat$Callback$MessageHandler;
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x0
 
@@ -206,10 +206,10 @@
     .line 834
     iput-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->mHandler:Landroid/support/v4/media/session/MediaControllerCompat$Callback$MessageHandler;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 837
-    :cond_12
+    :cond_0
     new-instance v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$MessageHandler;
 
     invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -225,7 +225,7 @@
     .line 838
     iput-boolean p1, v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$MessageHandler;->mRegistered:Z
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     return-void
 .end method

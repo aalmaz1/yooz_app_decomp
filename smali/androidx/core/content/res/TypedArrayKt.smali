@@ -57,19 +57,19 @@
 
 # direct methods
 .method private static final checkAttribute(Landroid/content/res/TypedArray;I)V
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result p0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     return-void
 
     .line 32
-    :cond_7
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Attribute not defined in set."
@@ -80,7 +80,7 @@
 .end method
 
 .method public static final getBooleanOrThrow(Landroid/content/res/TypedArray;I)Z
-    .registers 3
+    .locals 1
 
     .line 44
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -96,7 +96,7 @@
 .end method
 
 .method public static final getColorOrThrow(Landroid/content/res/TypedArray;I)I
-    .registers 3
+    .locals 1
 
     .line 57
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -112,7 +112,7 @@
 .end method
 
 .method public static final getColorStateListOrThrow(Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 0
 
     .line 69
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -122,11 +122,11 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_0
 
     return-object p0
 
-    :cond_a
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "Attribute value was not a color or color state list."
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final getDimensionOrThrow(Landroid/content/res/TypedArray;I)F
-    .registers 3
+    .locals 1
 
     .line 83
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -157,7 +157,7 @@
 .end method
 
 .method public static final getDimensionPixelOffsetOrThrow(Landroid/content/res/TypedArray;I)I
-    .registers 3
+    .locals 1
 
     .line 96
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -173,7 +173,7 @@
 .end method
 
 .method public static final getDimensionPixelSizeOrThrow(Landroid/content/res/TypedArray;I)I
-    .registers 3
+    .locals 1
 
     .line 109
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -189,7 +189,7 @@
 .end method
 
 .method public static final getDrawableOrThrow(Landroid/content/res/TypedArray;I)Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 0
 
     .line 121
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -205,7 +205,7 @@
 .end method
 
 .method public static final getFloatOrThrow(Landroid/content/res/TypedArray;I)F
-    .registers 3
+    .locals 1
 
     .line 133
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -221,7 +221,7 @@
 .end method
 
 .method public static final getFontOrThrow(Landroid/content/res/TypedArray;I)Landroid/graphics/Typeface;
-    .registers 2
+    .locals 0
 
     .line 146
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -235,7 +235,7 @@
 .end method
 
 .method public static final getIntOrThrow(Landroid/content/res/TypedArray;I)I
-    .registers 3
+    .locals 1
 
     .line 158
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -251,7 +251,7 @@
 .end method
 
 .method public static final getIntegerOrThrow(Landroid/content/res/TypedArray;I)I
-    .registers 3
+    .locals 1
 
     .line 170
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -267,7 +267,7 @@
 .end method
 
 .method public static final getResourceIdOrThrow(Landroid/content/res/TypedArray;I)I
-    .registers 3
+    .locals 1
 
     .line 183
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -283,7 +283,7 @@
 .end method
 
 .method public static final getStringOrThrow(Landroid/content/res/TypedArray;I)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 195
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -293,11 +293,11 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_0
 
     return-object p0
 
-    :cond_a
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "Attribute value could not be coerced to String."
@@ -312,7 +312,7 @@
 .end method
 
 .method public static final getTextArrayOrThrow(Landroid/content/res/TypedArray;I)[Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
 
     .line 223
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -326,7 +326,7 @@
 .end method
 
 .method public static final getTextOrThrow(Landroid/content/res/TypedArray;I)Ljava/lang/CharSequence;
-    .registers 2
+    .locals 0
 
     .line 209
     invoke-static {p0, p1}, Landroidx/core/content/res/TypedArrayKt;->checkAttribute(Landroid/content/res/TypedArray;I)V
@@ -336,11 +336,11 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_0
 
     return-object p0
 
-    :cond_a
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "Attribute value could not be coerced to CharSequence."
@@ -355,7 +355,7 @@
 .end method
 
 .method public static final use(Landroid/content/res/TypedArray;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",

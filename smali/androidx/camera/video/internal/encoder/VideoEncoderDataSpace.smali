@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -67,7 +67,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method public static create(III)Landroidx/camera/video/internal/encoder/VideoEncoderDataSpace;
-    .registers 4
+    .locals 1
 
     .line 88
     new-instance v0, Landroidx/camera/video/internal/encoder/AutoValue_VideoEncoderDataSpace;

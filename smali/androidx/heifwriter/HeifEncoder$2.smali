@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/heifwriter/HeifEncoder;)V
-    .registers 2
+    .locals 0
 
     .line 920
     iput-object p1, p0, Landroidx/heifwriter/HeifEncoder$2;->this$0:Landroidx/heifwriter/HeifEncoder;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 923
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$2;->this$0:Landroidx/heifwriter/HeifEncoder;

@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 74
     new-instance v0, Ljava/lang/Object;
@@ -50,7 +50,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Landroidx/core/content/FileProvider;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method private static generateUri(Landroid/content/Context;Ljava/lang/String;)Landroid/net/Uri;
-    .registers 4
+    .locals 2
 
     .line 237
     new-instance v0, Ljava/lang/StringBuilder;
@@ -135,7 +135,7 @@
 .end method
 
 .method public static grantReadPermission(Landroid/content/Intent;Ljava/util/List;Landroid/content/Context;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,19 +148,19 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_2
 
     .line 254
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
-    goto :goto_38
+    goto :goto_1
 
     .line 255
-    :cond_9
+    :cond_0
     invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p2
@@ -186,12 +186,12 @@
     move-result-object p2
 
     .line 258
-    :goto_1e
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_35
+    if-ge v0, v1, :cond_1
 
     .line 259
     new-instance v1, Landroid/content/ClipData$Item;
@@ -208,19 +208,19 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 261
-    :cond_35
+    :cond_1
     invoke-virtual {p0, p2}, Landroid/content/Intent;->setClipData(Landroid/content/ClipData;)V
 
-    :cond_38
-    :goto_38
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public static loadBitmap(Landroid/content/ContentResolver;Landroid/net/Uri;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -251,7 +251,7 @@
 .end method
 
 .method public static saveBitmap(Landroid/content/Context;Landroid/graphics/Bitmap;Ljava/lang/String;I)Landroidx/concurrent/futures/ResolvableFuture;
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

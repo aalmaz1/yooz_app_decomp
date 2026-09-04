@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/CameraCaptureResult;)V
-    .registers 2
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public getCameraCaptureResult()Landroidx/camera/core/impl/CameraCaptureResult;
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/camera/core/internal/CameraCaptureResultImageInfo;->mCameraCaptureResult:Landroidx/camera/core/impl/CameraCaptureResult;
@@ -35,7 +35,7 @@
 .end method
 
 .method public getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public getSensorToBufferTransformMatrix()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 57
     new-instance v0, Landroid/graphics/Matrix;
@@ -54,7 +54,7 @@
 .end method
 
 .method public getTagBundle()Landroidx/camera/core/impl/TagBundle;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/camera/core/internal/CameraCaptureResultImageInfo;->mCameraCaptureResult:Landroidx/camera/core/impl/CameraCaptureResult;
@@ -67,7 +67,7 @@
 .end method
 
 .method public getTimestamp()J
-    .registers 3
+    .locals 2
 
     .line 46
     iget-object v0, p0, Landroidx/camera/core/internal/CameraCaptureResultImageInfo;->mCameraCaptureResult:Landroidx/camera/core/impl/CameraCaptureResult;
@@ -80,7 +80,7 @@
 .end method
 
 .method public populateExifData(Landroidx/camera/core/impl/utils/ExifData$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/camera/core/internal/CameraCaptureResultImageInfo;->mCameraCaptureResult:Landroidx/camera/core/impl/CameraCaptureResult;

@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;IZLjava/lang/String;II)V
-    .registers 7
+    .locals 0
 
     .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public getFileName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 138
     iget-object v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mFileName:Ljava/lang/String;
@@ -68,7 +68,7 @@
 .end method
 
 .method public getResourceId()I
-    .registers 2
+    .locals 1
 
     .line 158
     iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
@@ -77,7 +77,7 @@
 .end method
 
 .method public getTtcIndex()I
-    .registers 2
+    .locals 1
 
     .line 154
     iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mTtcIndex:I
@@ -86,7 +86,7 @@
 .end method
 
 .method public getVariationSettings()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mVariationSettings:Ljava/lang/String;
@@ -95,7 +95,7 @@
 .end method
 
 .method public getWeight()I
-    .registers 2
+    .locals 1
 
     .line 142
     iget v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mWeight:I
@@ -104,7 +104,7 @@
 .end method
 
 .method public isItalic()Z
-    .registers 2
+    .locals 1
 
     .line 146
     iget-boolean v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mItalic:Z

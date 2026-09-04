@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 23
     invoke-direct {p0}, Landroidx/media3/decoder/Buffer;-><init>()V
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 3
+    .locals 2
 
     .line 56
     invoke-super {p0}, Landroidx/media3/decoder/Buffer;->clear()V

@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/content/Intent;Landroidx/browser/trusted/ConnectionHolder;)V
-    .registers 4
+    .locals 0
 
     .line 137
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Exception;
-    .registers 5
+    .locals 3
 
     .line 149
     :try_start_0
@@ -74,14 +74,14 @@
 
     move-result p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 154
-    :cond_10
+    :cond_0
     iget-object p1, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool$BindToServiceAsyncTask;->mAppContext:Landroid/content/Context;
 
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool$BindToServiceAsyncTask;->mConnection:Landroidx/browser/trusted/ConnectionHolder;
@@ -94,12 +94,12 @@
     const-string v0, "Could not bind to the service"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-    :try_end_1e
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_1e} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_1f
+    :catch_0
     move-exception p1
 
     const-string v0, "TWAConnectionPool"
@@ -113,7 +113,7 @@
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 131
     check-cast p1, [Ljava/lang/Void;
@@ -126,21 +126,21 @@
 .end method
 
 .method protected onPostExecute(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 164
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnectionPool$BindToServiceAsyncTask;->mConnection:Landroidx/browser/trusted/ConnectionHolder;
 
     invoke-virtual {v0, p1}, Landroidx/browser/trusted/ConnectionHolder;->cancel(Ljava/lang/Exception;)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 131
     check-cast p1, Ljava/lang/Exception;

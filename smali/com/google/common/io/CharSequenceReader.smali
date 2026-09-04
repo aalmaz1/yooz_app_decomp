@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -47,7 +47,7 @@
 .end method
 
 .method private checkOpen()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -57,12 +57,12 @@
     .line 51
     iget-object v0, p0, Lcom/google/common/io/CharSequenceReader;->seq:Ljava/lang/CharSequence;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 52
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "reader closed"
@@ -73,28 +73,28 @@
 .end method
 
 .method private hasRemaining()Z
-    .registers 2
+    .locals 1
 
     .line 57
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->remaining()I
 
     move-result v0
 
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method private remaining()I
-    .registers 3
+    .locals 2
 
     .line 61
     iget-object v0, p0, Lcom/google/common/io/CharSequenceReader;->seq:Ljava/lang/CharSequence;
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public declared-synchronized close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -130,17 +130,17 @@
     const/4 v0, 0x0
 
     .line 149
-    :try_start_2
+    :try_start_0
     iput-object v0, p0, Lcom/google/common/io/CharSequenceReader;->seq:Ljava/lang/CharSequence;
-    :try_end_4
-    .catchall {:try_start_2 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 150
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -149,7 +149,7 @@
 .end method
 
 .method public declared-synchronized mark(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -167,17 +167,17 @@
 
     monitor-enter p0
 
-    if-ltz p1, :cond_5
+    if-ltz p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_6
-    :try_start_6
+    :goto_0
+    :try_start_0
     const-string v1, "readAheadLimit (%s) may not be negative"
 
     .line 136
@@ -190,15 +190,15 @@
     iget p1, p0, Lcom/google/common/io/CharSequenceReader;->pos:I
 
     iput p1, p0, Lcom/google/common/io/CharSequenceReader;->mark:I
-    :try_end_12
-    .catchall {:try_start_6 .. :try_end_12} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 139
     monitor-exit p0
 
     return-void
 
-    :catchall_14
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -207,7 +207,7 @@
 .end method
 
 .method public markSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -215,7 +215,7 @@
 .end method
 
 .method public declared-synchronized read()I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -225,7 +225,7 @@
     monitor-enter p0
 
     .line 94
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->checkOpen()V
 
     .line 95
@@ -238,7 +238,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/io/CharSequenceReader;->seq:Ljava/lang/CharSequence;
 
@@ -251,20 +251,20 @@
     invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
-    :try_end_1b
-    .catchall {:try_start_1 .. :try_end_1b} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_1d
+    :goto_0
     monitor-exit p0
 
     return v0
 
-    :catchall_1f
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -273,7 +273,7 @@
 .end method
 
 .method public declared-synchronized read(Ljava/nio/CharBuffer;)I
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -292,7 +292,7 @@
     monitor-enter p0
 
     .line 79
-    :try_start_1
+    :try_start_0
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 80
@@ -307,10 +307,10 @@
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->hasRemaining()Z
 
     move-result v0
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 83
     monitor-exit p0
@@ -320,8 +320,8 @@
     return p1
 
     .line 85
-    :cond_15
-    :try_start_15
+    :cond_0
+    :try_start_1
     invoke-virtual {p1}, Ljava/nio/CharBuffer;->remaining()I
 
     move-result v0
@@ -336,8 +336,8 @@
 
     const/4 v1, 0x0
 
-    :goto_22
-    if-ge v1, v0, :cond_36
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 87
     iget-object v2, p0, Lcom/google/common/io/CharSequenceReader;->seq:Ljava/lang/CharSequence;
@@ -353,20 +353,20 @@
     move-result v2
 
     invoke-virtual {p1, v2}, Ljava/nio/CharBuffer;->put(C)Ljava/nio/CharBuffer;
-    :try_end_33
-    .catchall {:try_start_15 .. :try_end_33} :catchall_38
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 89
-    :cond_36
+    :cond_1
     monitor-exit p0
 
     return v0
 
-    :catchall_38
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -375,7 +375,7 @@
 .end method
 
 .method public declared-synchronized read([CII)I
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -400,7 +400,7 @@
     add-int v0, p2, p3
 
     .line 101
-    :try_start_3
+    :try_start_0
     array-length v1, p1
 
     invoke-static {p2, v0, v1}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
@@ -417,10 +417,10 @@
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->hasRemaining()Z
 
     move-result v0
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 105
     monitor-exit p0
@@ -430,8 +430,8 @@
     return p1
 
     .line 107
-    :cond_18
-    :try_start_18
+    :cond_0
+    :try_start_1
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->remaining()I
 
     move-result v0
@@ -442,8 +442,8 @@
 
     const/4 v0, 0x0
 
-    :goto_21
-    if-ge v0, p3, :cond_36
+    :goto_0
+    if-ge v0, p3, :cond_1
 
     add-int v1, p2, v0
 
@@ -461,20 +461,20 @@
     move-result v2
 
     aput-char v2, p1, v1
-    :try_end_33
-    .catchall {:try_start_18 .. :try_end_33} :catchall_38
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 111
-    :cond_36
+    :cond_1
     monitor-exit p0
 
     return p3
 
-    :catchall_38
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -483,7 +483,7 @@
 .end method
 
 .method public declared-synchronized ready()Z
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -493,10 +493,10 @@
     monitor-enter p0
 
     .line 125
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->checkOpen()V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 126
     monitor-exit p0
@@ -505,7 +505,7 @@
 
     return v0
 
-    :catchall_7
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -514,7 +514,7 @@
 .end method
 
 .method public declared-synchronized reset()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -524,22 +524,22 @@
     monitor-enter p0
 
     .line 143
-    :try_start_1
+    :try_start_0
     invoke-direct {p0}, Lcom/google/common/io/CharSequenceReader;->checkOpen()V
 
     .line 144
     iget v0, p0, Lcom/google/common/io/CharSequenceReader;->mark:I
 
     iput v0, p0, Lcom/google/common/io/CharSequenceReader;->pos:I
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 145
     monitor-exit p0
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -548,7 +548,7 @@
 .end method
 
 .method public declared-synchronized skip(J)J
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -570,17 +570,17 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_9
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    :try_start_a
+    :goto_0
+    :try_start_0
     const-string v1, "n (%s) may not be negative"
 
     .line 116
@@ -608,8 +608,8 @@
     add-int/2addr p2, p1
 
     iput p2, p0, Lcom/google/common/io/CharSequenceReader;->pos:I
-    :try_end_21
-    .catchall {:try_start_a .. :try_end_21} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     int-to-long p1, p1
 
@@ -618,7 +618,7 @@
 
     return-wide p1
 
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

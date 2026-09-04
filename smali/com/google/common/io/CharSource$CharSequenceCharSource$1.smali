@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/CharSource$CharSequenceCharSource;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method protected bridge synthetic computeNext()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation runtime Ljavax/annotation/CheckForNull;
     .end annotation
 
@@ -89,7 +89,7 @@
 .end method
 
 .method protected computeNext()Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation runtime Ljavax/annotation/CheckForNull;
     .end annotation
 
@@ -100,7 +100,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 512
     iget-object v0, p0, Lcom/google/common/io/CharSource$CharSequenceCharSource$1;->lines:Ljava/util/Iterator;
@@ -118,19 +118,19 @@
 
     move-result v1
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_1
 
-    :cond_1e
+    :cond_0
     return-object v0
 
     .line 518
-    :cond_1f
+    :cond_1
     invoke-virtual {p0}, Lcom/google/common/io/CharSource$CharSequenceCharSource$1;->endOfData()Ljava/lang/Object;
 
     move-result-object v0

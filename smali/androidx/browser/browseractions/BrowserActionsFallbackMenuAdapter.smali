@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;Landroid/content/Context;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public getCount()I
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter;->mMenuItems:Ljava/util/List;
@@ -70,7 +70,7 @@
 .end method
 
 .method public getItem(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter;->mMenuItems:Ljava/util/List;
@@ -83,7 +83,7 @@
 .end method
 
 .method public getItemId(I)J
-    .registers 4
+    .locals 2
 
     int-to-long v0, p1
 
@@ -91,7 +91,7 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 7
+    .locals 3
 
     .line 72
     iget-object p3, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter;->mMenuItems:Ljava/util/List;
@@ -104,7 +104,7 @@
 
     const/4 p3, 0x0
 
-    if-nez p2, :cond_3c
+    if-nez p2, :cond_1
 
     .line 75
     iget-object p2, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter;->mContext:Landroid/content/Context;
@@ -137,9 +137,9 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_0
 
     .line 83
     new-instance v2, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter$ViewHolderItem;
@@ -149,10 +149,10 @@
     .line 84
     invoke-virtual {p2, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    goto :goto_43
+    goto :goto_0
 
     .line 80
-    :cond_34
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Browser Actions fallback UI does not contain necessary Views."
@@ -162,7 +162,7 @@
     throw p1
 
     .line 86
-    :cond_3c
+    :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -172,7 +172,7 @@
     check-cast v2, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter$ViewHolderItem;
 
     .line 89
-    :goto_43
+    :goto_0
     invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getTitle()Ljava/lang/String;
 
     move-result-object v0
@@ -187,7 +187,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_2
 
     .line 92
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter;->mContext:Landroid/content/Context;
@@ -211,15 +211,15 @@
 
     invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_93
+    goto :goto_1
 
     .line 95
-    :cond_66
+    :cond_2
     invoke-virtual {p1}, Landroidx/browser/browseractions/BrowserActionItem;->getIconUri()Landroid/net/Uri;
 
     move-result-object v1
 
-    if-eqz v1, :cond_88
+    if-eqz v1, :cond_3
 
     .line 96
     iget-object p3, p0, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter;->mContext:Landroid/content/Context;
@@ -248,10 +248,10 @@
 
     invoke-interface {p1, p3, v0}, Lcom/google/common/util/concurrent/ListenableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    goto :goto_93
+    goto :goto_1
 
     .line 128
-    :cond_88
+    :cond_3
     iget-object p1, v2, Landroidx/browser/browseractions/BrowserActionsFallbackMenuAdapter$ViewHolderItem;->mIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
@@ -263,6 +263,6 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    :goto_93
+    :goto_1
     return-object p2
 .end method

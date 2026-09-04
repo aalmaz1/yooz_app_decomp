@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 388
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,19 +27,19 @@
 
 # virtual methods
 .method addOnControllableInsetsChangedListener(Landroidx/core/view/WindowInsetsControllerCompat$OnControllableInsetsChangedListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method controlWindowInsetsAnimation(IJLandroid/view/animation/Interpolator;Landroid/os/CancellationSignal;Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method
 
 .method getSystemBarsBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -47,13 +47,13 @@
 .end method
 
 .method hide(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public isAppearanceLightNavigationBars()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public isAppearanceLightStatusBars()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -69,31 +69,31 @@
 .end method
 
 .method removeOnControllableInsetsChangedListener(Landroidx/core/view/WindowInsetsControllerCompat$OnControllableInsetsChangedListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setAppearanceLightNavigationBars(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public setAppearanceLightStatusBars(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method setSystemBarsBehavior(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method show(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

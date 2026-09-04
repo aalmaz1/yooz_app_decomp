@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/LazyStringArrayList;)V
-    .registers 2
+    .locals 0
 
     .line 370
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public add(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 4
+    .locals 1
 
     .line 393
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->list:Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -64,7 +64,7 @@
 .end method
 
 .method public bridge synthetic add(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 367
     check-cast p2, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -75,7 +75,7 @@
 .end method
 
 .method public get(I)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 1
 
     .line 376
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->list:Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -88,7 +88,7 @@
 .end method
 
 .method public bridge synthetic get(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 367
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->get(I)Landroidx/datastore/preferences/protobuf/ByteString;
@@ -99,7 +99,7 @@
 .end method
 
 .method public remove(I)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 1
 
     .line 399
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->list:Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -124,7 +124,7 @@
 .end method
 
 .method public bridge synthetic remove(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 367
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->remove(I)Landroidx/datastore/preferences/protobuf/ByteString;
@@ -135,7 +135,7 @@
 .end method
 
 .method public set(ILandroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 4
+    .locals 1
 
     .line 386
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->list:Landroidx/datastore/preferences/protobuf/LazyStringArrayList;
@@ -160,7 +160,7 @@
 .end method
 
 .method public bridge synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 367
     check-cast p2, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -173,7 +173,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 381
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/LazyStringArrayList$ByteStringListView;->list:Landroidx/datastore/preferences/protobuf/LazyStringArrayList;

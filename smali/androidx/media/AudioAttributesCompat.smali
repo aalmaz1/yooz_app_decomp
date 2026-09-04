@@ -117,7 +117,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 175
     new-instance v0, Landroid/util/SparseIntArray;
@@ -165,13 +165,13 @@
     new-array v0, v0, [I
 
     .line 186
-    fill-array-data v0, :array_2e
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media/AudioAttributesCompat;->SDK_USAGES:[I
 
     return-void
 
-    :array_2e
+    :array_0
     .array-data 4
         0x0
         0x1
@@ -193,7 +193,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -202,7 +202,7 @@
 .end method
 
 .method constructor <init>(Landroidx/media/AudioAttributesImpl;)V
-    .registers 2
+    .locals 0
 
     .line 255
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -214,33 +214,33 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media/AudioAttributesCompat;
-    .registers 2
+    .locals 1
 
     .line 361
     invoke-static {p0}, Landroidx/media/AudioAttributesImplApi21;->fromBundle(Landroid/os/Bundle;)Landroidx/media/AudioAttributesImpl;
 
     move-result-object p0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 365
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/media/AudioAttributesCompat;
 
     invoke-direct {v0, p0}, Landroidx/media/AudioAttributesCompat;-><init>(Landroidx/media/AudioAttributesImpl;)V
 
     move-object p0, v0
 
-    :goto_e
+    :goto_0
     return-object p0
 .end method
 
 .method public static setForceLegacyBehavior(Z)V
-    .registers 1
+    .locals 0
 
     .line 698
     sput-boolean p0, Landroidx/media/AudioAttributesCompat;->sForceLegacyBehavior:Z
@@ -249,99 +249,99 @@
 .end method
 
 .method static toVolumeStreamType(ZII)I
-    .registers 6
+    .locals 3
 
     and-int/lit8 v0, p1, 0x1
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_1
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x7
 
-    :goto_9
+    :goto_0
     return v1
 
-    :cond_a
+    :cond_1
     const/4 v0, 0x4
 
     and-int/2addr p1, v0
 
     const/4 v2, 0x0
 
-    if-ne p1, v0, :cond_14
+    if-ne p1, v0, :cond_3
 
-    if-eqz p0, :cond_12
+    if-eqz p0, :cond_2
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
+    :cond_2
     const/4 v2, 0x6
 
-    :goto_13
+    :goto_1
     return v2
 
-    :cond_14
+    :cond_3
     const/4 p1, 0x3
 
-    packed-switch p2, :pswitch_data_4c
+    packed-switch p2, :pswitch_data_0
 
-    :pswitch_18
-    if-nez p0, :cond_30
+    :pswitch_0
+    if-nez p0, :cond_6
 
     return p1
 
-    :pswitch_1b
+    :pswitch_1
     return v1
 
-    :pswitch_1c
+    :pswitch_2
     const/16 p0, 0xa
 
     return p0
 
-    :pswitch_1f
+    :pswitch_3
     const/4 p0, 0x2
 
     return p0
 
-    :pswitch_21
+    :pswitch_4
     const/4 p0, 0x5
 
     return p0
 
-    :pswitch_23
+    :pswitch_5
     return v0
 
-    :pswitch_24
-    if-eqz p0, :cond_27
+    :pswitch_6
+    if-eqz p0, :cond_4
 
-    goto :goto_29
+    goto :goto_2
 
-    :cond_27
+    :cond_4
     const/16 v2, 0x8
 
-    :goto_29
-    :pswitch_29
+    :goto_2
+    :pswitch_7
     return v2
 
-    :pswitch_2a
+    :pswitch_8
     return p1
 
-    :pswitch_2b
-    if-eqz p0, :cond_2f
+    :pswitch_9
+    if-eqz p0, :cond_5
 
     const/high16 p1, -0x80000000
 
-    :cond_2f
+    :cond_5
     return p1
 
     .line 756
-    :cond_30
+    :cond_6
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -370,30 +370,30 @@
 
     nop
 
-    :pswitch_data_4c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2b
-        :pswitch_2a
-        :pswitch_29
-        :pswitch_24
-        :pswitch_23
-        :pswitch_21
-        :pswitch_1f
-        :pswitch_21
-        :pswitch_21
-        :pswitch_21
-        :pswitch_21
-        :pswitch_1c
-        :pswitch_2a
-        :pswitch_1b
-        :pswitch_2a
-        :pswitch_18
-        :pswitch_2a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_2
+        :pswitch_8
+        :pswitch_1
+        :pswitch_8
+        :pswitch_0
+        :pswitch_8
     .end packed-switch
 .end method
 
 .method static toVolumeStreamType(ZLandroidx/media/AudioAttributesCompat;)I
-    .registers 3
+    .locals 1
 
     .line 702
     invoke-virtual {p1}, Landroidx/media/AudioAttributesCompat;->getFlags()I
@@ -412,81 +412,81 @@
 .end method
 
 .method static usageForStreamType(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
-    packed-switch p0, :pswitch_data_18
+    packed-switch p0, :pswitch_data_0
 
-    :pswitch_4
+    :pswitch_0
     const/4 p0, 0x0
 
     return p0
 
-    :pswitch_6
+    :pswitch_1
     const/16 p0, 0xb
 
     return p0
 
-    :pswitch_9
+    :pswitch_2
     const/4 p0, 0x3
 
     return p0
 
-    :pswitch_b
+    :pswitch_3
     return v0
 
-    :pswitch_c
+    :pswitch_4
     const/4 p0, 0x5
 
     return p0
 
-    :pswitch_e
+    :pswitch_5
     const/4 p0, 0x4
 
     return p0
 
-    :pswitch_10
+    :pswitch_6
     const/4 p0, 0x1
 
     return p0
 
-    :pswitch_12
+    :pswitch_7
     const/4 p0, 0x6
 
     return p0
 
-    :pswitch_14
+    :pswitch_8
     const/16 p0, 0xd
 
     return p0
 
-    :pswitch_17
+    :pswitch_9
     return v0
 
-    :pswitch_data_18
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_14
-        :pswitch_12
-        :pswitch_10
-        :pswitch_e
-        :pswitch_c
-        :pswitch_b
-        :pswitch_14
         :pswitch_9
-        :pswitch_4
+        :pswitch_8
+        :pswitch_7
         :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_8
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method static usageToString(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    packed-switch p0, :pswitch_data_44
+    packed-switch p0, :pswitch_data_0
 
     .line 649
-    :pswitch_3
+    :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "unknown usage "
@@ -503,115 +503,115 @@
 
     return-object p0
 
-    :pswitch_14
+    :pswitch_1
     const-string p0, "USAGE_ASSISTANT"
 
     return-object p0
 
-    :pswitch_17
+    :pswitch_2
     const-string p0, "USAGE_GAME"
 
     return-object p0
 
-    :pswitch_1a
+    :pswitch_3
     const-string p0, "USAGE_ASSISTANCE_SONIFICATION"
 
     return-object p0
 
-    :pswitch_1d
+    :pswitch_4
     const-string p0, "USAGE_ASSISTANCE_NAVIGATION_GUIDANCE"
 
     return-object p0
 
-    :pswitch_20
+    :pswitch_5
     const-string p0, "USAGE_ASSISTANCE_ACCESSIBILITY"
 
     return-object p0
 
-    :pswitch_23
+    :pswitch_6
     const-string p0, "USAGE_NOTIFICATION_EVENT"
 
     return-object p0
 
-    :pswitch_26
+    :pswitch_7
     const-string p0, "USAGE_NOTIFICATION_COMMUNICATION_DELAYED"
 
     return-object p0
 
-    :pswitch_29
+    :pswitch_8
     const-string p0, "USAGE_NOTIFICATION_COMMUNICATION_INSTANT"
 
     return-object p0
 
-    :pswitch_2c
+    :pswitch_9
     const-string p0, "USAGE_NOTIFICATION_COMMUNICATION_REQUEST"
 
     return-object p0
 
-    :pswitch_2f
+    :pswitch_a
     const-string p0, "USAGE_NOTIFICATION_RINGTONE"
 
     return-object p0
 
-    :pswitch_32
+    :pswitch_b
     const-string p0, "USAGE_NOTIFICATION"
 
     return-object p0
 
-    :pswitch_35
+    :pswitch_c
     const-string p0, "USAGE_ALARM"
 
     return-object p0
 
-    :pswitch_38
+    :pswitch_d
     const-string p0, "USAGE_VOICE_COMMUNICATION_SIGNALLING"
 
     return-object p0
 
-    :pswitch_3b
+    :pswitch_e
     const-string p0, "USAGE_VOICE_COMMUNICATION"
 
     return-object p0
 
-    :pswitch_3e
+    :pswitch_f
     const-string p0, "USAGE_MEDIA"
 
     return-object p0
 
-    :pswitch_41
+    :pswitch_10
     const-string p0, "USAGE_UNKNOWN"
 
     return-object p0
 
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_41
-        :pswitch_3e
-        :pswitch_3b
-        :pswitch_38
-        :pswitch_35
-        :pswitch_32
-        :pswitch_2f
-        :pswitch_2c
-        :pswitch_29
-        :pswitch_26
-        :pswitch_23
-        :pswitch_20
-        :pswitch_1d
-        :pswitch_1a
-        :pswitch_17
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
         :pswitch_3
-        :pswitch_14
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public static wrap(Ljava/lang/Object;)Landroidx/media/AudioAttributesCompat;
-    .registers 2
+    .locals 1
 
     .line 307
     sget-boolean v0, Landroidx/media/AudioAttributesCompat;->sForceLegacyBehavior:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 308
     new-instance v0, Landroidx/media/AudioAttributesImplApi21;
@@ -630,7 +630,7 @@
 
     return-object p0
 
-    :cond_13
+    :cond_0
     const/4 p0, 0x0
 
     return-object p0
@@ -639,38 +639,38 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     .line 766
     instance-of v0, p1, Landroidx/media/AudioAttributesCompat;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 769
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/media/AudioAttributesCompat;
 
     .line 770
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_2
 
     .line 771
     iget-object p1, p1, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_11
+    :cond_1
     return v1
 
     .line 773
-    :cond_12
+    :cond_2
     iget-object p1, p1, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -681,7 +681,7 @@
 .end method
 
 .method public getContentType()I
-    .registers 2
+    .locals 1
 
     .line 325
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -694,7 +694,7 @@
 .end method
 
 .method public getFlags()I
-    .registers 2
+    .locals 1
 
     .line 343
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -707,7 +707,7 @@
 .end method
 
 .method public getLegacyStreamType()I
-    .registers 2
+    .locals 1
 
     .line 296
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -720,7 +720,7 @@
 .end method
 
 .method getRawLegacyStreamType()I
-    .registers 2
+    .locals 1
 
     .line 706
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -733,7 +733,7 @@
 .end method
 
 .method public getUsage()I
-    .registers 2
+    .locals 1
 
     .line 334
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -746,7 +746,7 @@
 .end method
 
 .method public getVolumeControlStream()I
-    .registers 2
+    .locals 1
 
     .line 273
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -759,7 +759,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 606
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -772,7 +772,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 351
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -785,7 +785,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 611
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;
@@ -798,7 +798,7 @@
 .end method
 
 .method public unwrap()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 286
     iget-object v0, p0, Landroidx/media/AudioAttributesCompat;->mImpl:Landroidx/media/AudioAttributesImpl;

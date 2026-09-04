@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/SpecialEffectsController$Operation;Landroidx/core/os/CancellationSignal;)V
-    .registers 3
+    .locals 0
 
     .line 752
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method completeSpecialEffect()V
-    .registers 3
+    .locals 2
 
     .line 776
     iget-object v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$SpecialEffectsInfo;->mOperation:Landroidx/fragment/app/SpecialEffectsController$Operation;
@@ -52,7 +52,7 @@
 .end method
 
 .method getOperation()Landroidx/fragment/app/SpecialEffectsController$Operation;
-    .registers 2
+    .locals 1
 
     .line 759
     iget-object v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$SpecialEffectsInfo;->mOperation:Landroidx/fragment/app/SpecialEffectsController$Operation;
@@ -61,7 +61,7 @@
 .end method
 
 .method getSignal()Landroidx/core/os/CancellationSignal;
-    .registers 2
+    .locals 1
 
     .line 764
     iget-object v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$SpecialEffectsInfo;->mSignal:Landroidx/core/os/CancellationSignal;
@@ -70,7 +70,7 @@
 .end method
 
 .method isVisibilityUnchanged()Z
-    .registers 4
+    .locals 3
 
     .line 768
     iget-object v0, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$SpecialEffectsInfo;->mOperation:Landroidx/fragment/app/SpecialEffectsController$Operation;
@@ -94,28 +94,28 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_1f
+    if-eq v0, v1, :cond_1
 
     .line 771
     sget-object v2, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->VISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
 
-    if-eq v0, v2, :cond_1d
+    if-eq v0, v2, :cond_0
 
     sget-object v0, Landroidx/fragment/app/SpecialEffectsController$Operation$State;->VISIBLE:Landroidx/fragment/app/SpecialEffectsController$Operation$State;
 
-    if-eq v1, v0, :cond_1d
+    if-eq v1, v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_20
+    :goto_1
     return v0
 .end method

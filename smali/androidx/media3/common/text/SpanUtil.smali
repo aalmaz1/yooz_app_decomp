@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
-    .registers 10
+    .locals 5
 
     .line 45
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -30,8 +30,8 @@
 
     const/4 v2, 0x0
 
-    :goto_a
-    if-ge v2, v1, :cond_26
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -40,32 +40,32 @@
 
     move-result v4
 
-    if-ne v4, p2, :cond_23
+    if-ne v4, p2, :cond_0
 
     .line 48
     invoke-interface {p0, v3}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v4
 
-    if-ne v4, p3, :cond_23
+    if-ne v4, p3, :cond_0
 
     .line 49
     invoke-interface {p0, v3}, Landroid/text/Spannable;->getSpanFlags(Ljava/lang/Object;)I
 
     move-result v4
 
-    if-ne v4, p4, :cond_23
+    if-ne v4, p4, :cond_0
 
     .line 50
     invoke-interface {p0, v3}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    :cond_23
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 53
-    :cond_26
+    :cond_1
     invoke-interface {p0, p1, p2, p3, p4}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     return-void

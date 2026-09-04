@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;Landroid/support/v4/media/session/MediaSessionCompat$Token;)V
-    .registers 3
+    .locals 0
 
     .line 213
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase$1;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .locals 6
 
     .line 216
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase$1;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;
@@ -58,12 +58,12 @@
     move-result-object v0
 
     .line 217
-    :goto_e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_0
 
     .line 218
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -73,7 +73,7 @@
     check-cast v1, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
     .line 220
-    :try_start_1a
+    :try_start_0
     iget-object v2, v1, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
 
     iget-object v3, v1, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->root:Landroidx/media/MediaBrowserServiceCompat$BrowserRoot;
@@ -93,13 +93,13 @@
 
     .line 220
     invoke-interface {v2, v3, v4, v5}, Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;->onConnect(Ljava/lang/String;Landroid/support/v4/media/session/MediaSessionCompat$Token;Landroid/os/Bundle;)V
-    :try_end_2d
-    .catch Landroid/os/RemoteException; {:try_start_1a .. :try_end_2d} :catch_2e
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 223
-    :catch_2e
+    :catch_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "Connection for "
@@ -129,8 +129,8 @@
     .line 224
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_4e
+    :cond_0
     return-void
 .end method

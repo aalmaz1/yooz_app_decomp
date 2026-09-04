@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/text/TextPaint;)V
-    .registers 2
+    .locals 0
 
     .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public build()Landroidx/core/text/PrecomputedTextCompat$Params;
-    .registers 6
+    .locals 5
 
     .line 187
     new-instance v0, Landroidx/core/text/PrecomputedTextCompat$Params;
@@ -72,7 +72,7 @@
 .end method
 
 .method public setBreakStrategy(I)Landroidx/core/text/PrecomputedTextCompat$Params$Builder;
-    .registers 2
+    .locals 0
 
     .line 142
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mBreakStrategy:I
@@ -81,7 +81,7 @@
 .end method
 
 .method public setHyphenationFrequency(I)Landroidx/core/text/PrecomputedTextCompat$Params$Builder;
-    .registers 2
+    .locals 0
 
     .line 160
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mHyphenationFrequency:I
@@ -90,7 +90,7 @@
 .end method
 
 .method public setTextDirection(Landroid/text/TextDirectionHeuristic;)Landroidx/core/text/PrecomputedTextCompat$Params$Builder;
-    .registers 2
+    .locals 0
 
     .line 177
     iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;

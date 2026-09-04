@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/dash/offline/DashDownloader;Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;)V
-    .registers 5
+    .locals 0
 
     .line 251
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/offline/DashDownloader$1;->this$0:Landroidx/media3/exoplayer/dash/offline/DashDownloader;
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method protected doWork()Landroidx/media3/extractor/ChunkIndex;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -76,7 +76,7 @@
 .end method
 
 .method protected bridge synthetic doWork()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;

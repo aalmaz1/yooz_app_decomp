@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraStateRegistry;)V
-    .registers 3
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private onCameraPendingOpen()Landroidx/camera/core/CameraState;
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/camera/camera2/internal/CameraStateMachine;->mCameraStateRegistry:Landroidx/camera/core/impl/CameraStateRegistry;
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/camera/core/CameraState$Type;->OPENING:Landroidx/camera/core/CameraState$Type;
 
@@ -68,24 +68,24 @@
 
     move-result-object v0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 104
-    :cond_f
+    :cond_0
     sget-object v0, Landroidx/camera/core/CameraState$Type;->PENDING_OPEN:Landroidx/camera/core/CameraState$Type;
 
     invoke-static {v0}, Landroidx/camera/core/CameraState;->create(Landroidx/camera/core/CameraState$Type;)Landroidx/camera/core/CameraState;
 
     move-result-object v0
 
-    :goto_15
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public getStateLiveData()Landroidx/lifecycle/LiveData;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -102,7 +102,7 @@
 .end method
 
 .method public updateState(Landroidx/camera/core/impl/CameraInternal$State;Landroidx/camera/core/CameraState$StateError;)V
-    .registers 6
+    .locals 3
 
     .line 57
     sget-object v0, Landroidx/camera/camera2/internal/CameraStateMachine$1;->$SwitchMap$androidx$camera$core$impl$CameraInternal$State:[I
@@ -113,7 +113,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_8e
+    packed-switch v0, :pswitch_data_0
 
     .line 77
     new-instance p2, Ljava/lang/IllegalStateException;
@@ -137,53 +137,53 @@
     throw p2
 
     .line 74
-    :pswitch_20
+    :pswitch_0
     sget-object v0, Landroidx/camera/core/CameraState$Type;->CLOSED:Landroidx/camera/core/CameraState$Type;
 
     invoke-static {v0, p2}, Landroidx/camera/core/CameraState;->create(Landroidx/camera/core/CameraState$Type;Landroidx/camera/core/CameraState$StateError;)Landroidx/camera/core/CameraState;
 
     move-result-object v0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 70
-    :pswitch_27
+    :pswitch_1
     sget-object v0, Landroidx/camera/core/CameraState$Type;->CLOSING:Landroidx/camera/core/CameraState$Type;
 
     invoke-static {v0, p2}, Landroidx/camera/core/CameraState;->create(Landroidx/camera/core/CameraState$Type;Landroidx/camera/core/CameraState$StateError;)Landroidx/camera/core/CameraState;
 
     move-result-object v0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 66
-    :pswitch_2e
+    :pswitch_2
     sget-object v0, Landroidx/camera/core/CameraState$Type;->OPEN:Landroidx/camera/core/CameraState$Type;
 
     invoke-static {v0, p2}, Landroidx/camera/core/CameraState;->create(Landroidx/camera/core/CameraState$Type;Landroidx/camera/core/CameraState$StateError;)Landroidx/camera/core/CameraState;
 
     move-result-object v0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 62
-    :pswitch_35
+    :pswitch_3
     sget-object v0, Landroidx/camera/core/CameraState$Type;->OPENING:Landroidx/camera/core/CameraState$Type;
 
     invoke-static {v0, p2}, Landroidx/camera/core/CameraState;->create(Landroidx/camera/core/CameraState$Type;Landroidx/camera/core/CameraState$StateError;)Landroidx/camera/core/CameraState;
 
     move-result-object v0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 59
-    :pswitch_3c
+    :pswitch_4
     invoke-direct {p0}, Landroidx/camera/camera2/internal/CameraStateMachine;->onCameraPendingOpen()Landroidx/camera/core/CameraState;
 
     move-result-object v0
 
     .line 81
-    :goto_40
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "New public camera state "
@@ -236,7 +236,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_8d
+    if-nez p1, :cond_0
 
     .line 87
     new-instance p1, Ljava/lang/StringBuilder;
@@ -260,18 +260,18 @@
 
     invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    :cond_8d
+    :cond_0
     return-void
 
-    :pswitch_data_8e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_3c
-        :pswitch_35
-        :pswitch_2e
-        :pswitch_2e
-        :pswitch_27
-        :pswitch_27
-        :pswitch_20
-        :pswitch_20
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

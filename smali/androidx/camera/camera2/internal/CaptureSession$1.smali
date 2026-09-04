@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/CaptureSession;)V
-    .registers 2
+    .locals 0
 
     .line 86
     iput-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$1;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method

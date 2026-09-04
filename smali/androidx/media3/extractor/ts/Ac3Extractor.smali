@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 40
     new-instance v0, Landroidx/media3/extractor/ts/Ac3Extractor$$ExternalSyntheticLambda0;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 6
+    .locals 4
 
     .line 111
     iget-object v0, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->reader:Landroidx/media3/extractor/ts/Ac3Reader;
@@ -116,7 +116,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -140,12 +140,12 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_11
+    if-ne p1, p2, :cond_0
 
     return p2
 
     .line 135
-    :cond_11
+    :cond_0
     iget-object p2, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->sampleData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -158,7 +158,7 @@
     .line 138
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->startedPacket:Z
 
-    if-nez p1, :cond_2a
+    if-nez p1, :cond_1
 
     .line 140
     iget-object p1, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->reader:Landroidx/media3/extractor/ts/Ac3Reader;
@@ -175,7 +175,7 @@
     iput-boolean p1, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->startedPacket:Z
 
     .line 145
-    :cond_2a
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->reader:Landroidx/media3/extractor/ts/Ac3Reader;
 
     iget-object p2, p0, Landroidx/media3/extractor/ts/Ac3Extractor;->sampleData:Landroidx/media3/common/util/ParsableByteArray;
@@ -186,13 +186,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -208,7 +208,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -227,7 +227,7 @@
     move v3, v2
 
     .line 70
-    :goto_9
+    :goto_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v4
@@ -244,7 +244,7 @@
 
     const v5, 0x494433
 
-    if-eq v4, v5, :cond_60
+    if-eq v4, v5, :cond_4
 
     .line 80
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -257,7 +257,7 @@
     move v4, v3
 
     .line 86
-    :goto_24
+    :goto_1
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v5
@@ -276,7 +276,7 @@
 
     const/16 v6, 0xb77
 
-    if-eq v5, v6, :cond_48
+    if-eq v5, v6, :cond_1
 
     .line 91
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -287,31 +287,31 @@
 
     const/16 v5, 0x2000
 
-    if-lt v1, v5, :cond_43
+    if-lt v1, v5, :cond_0
 
     return v2
 
     .line 95
-    :cond_43
+    :cond_0
     invoke-interface {p1, v4}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
     move v1, v2
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_48
+    :cond_1
     const/4 v5, 0x1
 
     add-int/2addr v1, v5
 
     const/4 v6, 0x4
 
-    if-lt v1, v6, :cond_4e
+    if-lt v1, v6, :cond_2
 
     return v5
 
     .line 100
-    :cond_4e
+    :cond_2
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v5
@@ -322,19 +322,19 @@
 
     const/4 v6, -0x1
 
-    if-ne v5, v6, :cond_5a
+    if-ne v5, v6, :cond_3
 
     return v2
 
-    :cond_5a
+    :cond_3
     add-int/lit8 v5, v5, -0x6
 
     .line 104
     invoke-interface {p1, v5}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_60
+    :cond_4
     const/4 v4, 0x3
 
     .line 75
@@ -352,5 +352,5 @@
     .line 78
     invoke-interface {p1, v4}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    goto :goto_9
+    goto :goto_0
 .end method

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;I)V
-    .registers 3
+    .locals 0
 
     .line 755
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public isReady()Z
-    .registers 3
+    .locals 2
 
     .line 761
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -56,7 +56,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
@@ -70,12 +70,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 767
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$1300(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)Landroidx/media3/exoplayer/rtsp/RtspMediaSource$RtspPlaybackException;
@@ -86,7 +86,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 6
+    .locals 2
 
     .line 774
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -101,7 +101,7 @@
 .end method
 
 .method public skipData(J)I
-    .registers 5
+    .locals 2
 
     .line 779
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$SampleStreamImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;

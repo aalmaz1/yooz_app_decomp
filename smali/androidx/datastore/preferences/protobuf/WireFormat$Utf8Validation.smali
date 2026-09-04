@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 190
     new-instance v0, Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation$1;
@@ -86,7 +86,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -100,7 +100,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILandroidx/datastore/preferences/protobuf/WireFormat$1;)V
-    .registers 4
+    .locals 0
 
     .line 188
     invoke-direct {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;-><init>(Ljava/lang/String;I)V
@@ -109,7 +109,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;
-    .registers 2
+    .locals 1
 
     .line 188
     const-class v0, Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;
@@ -124,7 +124,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;
-    .registers 1
+    .locals 1
 
     .line 188
     sget-object v0, Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;->$VALUES:[Landroidx/datastore/preferences/protobuf/WireFormat$Utf8Validation;

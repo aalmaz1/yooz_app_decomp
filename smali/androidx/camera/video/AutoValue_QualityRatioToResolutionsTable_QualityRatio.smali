@@ -11,12 +11,12 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Quality;I)V
-    .registers 3
+    .locals 0
 
     .line 17
     invoke-direct {p0}, Landroidx/camera/video/QualityRatioToResolutionsTable$QualityRatio;-><init>()V
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     .line 21
     iput-object p1, p0, Landroidx/camera/video/AutoValue_QualityRatioToResolutionsTable_QualityRatio;->quality:Landroidx/camera/video/Quality;
@@ -27,7 +27,7 @@
     return-void
 
     .line 19
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null quality"
@@ -40,21 +40,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 51
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/QualityRatioToResolutionsTable$QualityRatio;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 52
     check-cast p1, Landroidx/camera/video/QualityRatioToResolutionsTable$QualityRatio;
@@ -70,7 +70,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/video/AutoValue_QualityRatioToResolutionsTable_QualityRatio;->aspectRatio:I
 
@@ -79,22 +79,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_20
+    if-ne v1, p1, :cond_1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move v0, v2
 
-    :goto_21
+    :goto_0
     return v0
 
-    :cond_22
+    :cond_2
     return v2
 .end method
 
 .method getAspectRatio()I
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/camera/video/AutoValue_QualityRatioToResolutionsTable_QualityRatio;->aspectRatio:I
@@ -103,7 +103,7 @@
 .end method
 
 .method getQuality()Landroidx/camera/video/Quality;
-    .registers 2
+    .locals 1
 
     .line 28
     iget-object v0, p0, Landroidx/camera/video/AutoValue_QualityRatioToResolutionsTable_QualityRatio;->quality:Landroidx/camera/video/Quality;
@@ -112,7 +112,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 63
     iget-object v0, p0, Landroidx/camera/video/AutoValue_QualityRatioToResolutionsTable_QualityRatio;->quality:Landroidx/camera/video/Quality;
@@ -136,7 +136,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 40
     new-instance v0, Ljava/lang/StringBuilder;

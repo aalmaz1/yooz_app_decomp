@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 145
     new-instance v0, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory$$ExternalSyntheticLambda0;
@@ -33,7 +33,7 @@
 .end method
 
 .method public static synthetic lambda$static$0(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
-    .registers 4
+    .locals 3
 
     .line 147
     new-instance v0, Landroidx/media3/exoplayer/upstream/CmcdConfiguration;
@@ -50,18 +50,18 @@
     .line 149
     iget-object v2, p0, Landroidx/media3/common/MediaItem;->mediaId:Ljava/lang/String;
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     .line 150
     iget-object p0, p0, Landroidx/media3/common/MediaItem;->mediaId:Ljava/lang/String;
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const-string p0, ""
 
     .line 151
-    :goto_13
+    :goto_0
     new-instance v2, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory$1;
 
     invoke-direct {v2}, Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory$1;-><init>()V

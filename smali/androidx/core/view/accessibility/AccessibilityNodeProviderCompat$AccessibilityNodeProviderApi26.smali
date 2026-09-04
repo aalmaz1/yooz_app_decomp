@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;)V
-    .registers 2
+    .locals 0
 
     .line 96
     invoke-direct {p0, p1}, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi19;-><init>(Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public addExtraDataToAccessibilityNodeInfo(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi26;->mCompat:Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;

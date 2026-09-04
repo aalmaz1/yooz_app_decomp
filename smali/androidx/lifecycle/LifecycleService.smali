@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 26
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/lifecycle/LifecycleService;->dispatcher:Landroidx/lifecycle/ServiceLifecycleDispatcher;
@@ -87,7 +87,7 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 3
+    .locals 1
 
     const-string v0, "intent"
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public onCreate()V
-    .registers 2
+    .locals 1
 
     .line 32
     iget-object v0, p0, Landroidx/lifecycle/LifecycleService;->dispatcher:Landroidx/lifecycle/ServiceLifecycleDispatcher;
@@ -118,7 +118,7 @@
 .end method
 
 .method public onDestroy()V
-    .registers 2
+    .locals 1
 
     .line 61
     iget-object v0, p0, Landroidx/lifecycle/LifecycleService;->dispatcher:Landroidx/lifecycle/ServiceLifecycleDispatcher;
@@ -132,7 +132,7 @@
 .end method
 
 .method public onStart(Landroid/content/Intent;I)V
-    .registers 4
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Deprecated in Java"
     .end annotation
@@ -149,7 +149,7 @@
 .end method
 
 .method public onStartCommand(Landroid/content/Intent;II)I
-    .registers 4
+    .locals 0
 
     .line 56
     invoke-super {p0, p1, p2, p3}, Landroid/app/Service;->onStartCommand(Landroid/content/Intent;II)I

@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 191
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static checkFileType(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -52,18 +52,18 @@
 
     const/4 v4, 0x0
 
-    if-eq v2, v3, :cond_1b
+    if-eq v2, v3, :cond_0
 
     iget v1, v1, Landroidx/media3/extractor/wav/WavHeaderReader$ChunkHeader;->id:I
 
     const v2, 0x52463634
 
-    if-eq v1, v2, :cond_1b
+    if-eq v1, v2, :cond_0
 
     return v4
 
     .line 51
-    :cond_1b
+    :cond_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v1
@@ -82,7 +82,7 @@
 
     const v0, 0x57415645
 
-    if-eq p0, v0, :cond_44
+    if-eq p0, v0, :cond_1
 
     .line 55
     new-instance v0, Ljava/lang/StringBuilder;
@@ -105,14 +105,14 @@
 
     return v4
 
-    :cond_44
+    :cond_1
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public static readFormat(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/wav/WavFormat;
-    .registers 14
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -142,16 +142,16 @@
 
     const/4 v4, 0x0
 
-    if-ltz v3, :cond_19
+    if-ltz v3, :cond_0
 
     const/4 v3, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move v3, v4
 
-    :goto_1a
+    :goto_0
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 101
@@ -201,7 +201,7 @@
 
     sub-int/2addr v0, v1
 
-    if-lez v0, :cond_4c
+    if-lez v0, :cond_1
 
     .line 113
     new-array v1, v0, [B
@@ -211,16 +211,16 @@
 
     move-object v12, v1
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 116
-    :cond_4c
+    :cond_1
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     move-object v12, v0
 
     .line 119
-    :goto_4f
+    :goto_1
     invoke-interface {p0}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
 
     move-result-wide v0
@@ -246,7 +246,7 @@
 .end method
 
 .method public static readRf64SampleDataSize(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -270,7 +270,7 @@
 
     const v4, 0x64733634
 
-    if-eq v3, v4, :cond_18
+    if-eq v3, v4, :cond_0
 
     .line 76
     invoke-interface {p0}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
@@ -280,7 +280,7 @@
     return-wide v0
 
     .line 79
-    :cond_18
+    :cond_0
     invoke-interface {p0, v1}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
     const/4 v3, 0x0
@@ -313,7 +313,7 @@
 .end method
 
 .method private static skipToChunk(ILandroidx/media3/extractor/ExtractorInput;Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/wav/WavHeaderReader$ChunkHeader;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -326,10 +326,10 @@
     move-result-object v0
 
     .line 172
-    :goto_4
+    :goto_0
     iget v1, v0, Landroidx/media3/extractor/wav/WavHeaderReader$ChunkHeader;->id:I
 
-    if-eq v1, p0, :cond_57
+    if-eq v1, p0, :cond_2
 
     .line 173
     new-instance v1, Ljava/lang/StringBuilder;
@@ -370,18 +370,18 @@
 
     cmp-long v1, v1, v5
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     const-wide/16 v1, 0x1
 
     add-long/2addr v3, v1
 
-    :cond_31
+    :cond_0
     const-wide/32 v1, 0x7fffffff
 
     cmp-long v1, v3, v1
 
-    if-gtz v1, :cond_41
+    if-gtz v1, :cond_1
 
     long-to-int v0, v3
 
@@ -393,10 +393,10 @@
 
     move-result-object v0
 
-    goto :goto_4
+    goto :goto_0
 
     .line 182
-    :cond_41
+    :cond_1
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string p1, "Chunk is too large (~2GB+) to skip; id: "
@@ -419,12 +419,12 @@
 
     throw p0
 
-    :cond_57
+    :cond_2
     return-object v0
 .end method
 
 .method public static skipToSampleData(Landroidx/media3/extractor/ExtractorInput;)Landroid/util/Pair;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

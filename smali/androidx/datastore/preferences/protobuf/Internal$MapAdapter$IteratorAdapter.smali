@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/Internal$MapAdapter;Ljava/util/Iterator;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 504
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$IteratorAdapter;->realIterator:Ljava/util/Iterator;
@@ -79,7 +79,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 495
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$IteratorAdapter;->next()Ljava/util/Map$Entry;
@@ -90,7 +90,7 @@
 .end method
 
 .method public next()Ljava/util/Map$Entry;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -118,7 +118,7 @@
 .end method
 
 .method public remove()V
-    .registers 2
+    .locals 1
 
     .line 514
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$IteratorAdapter;->realIterator:Ljava/util/Iterator;

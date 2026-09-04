@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 46
     new-instance v0, Ljava/lang/ThreadLocal;
@@ -39,7 +39,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method private static getStringBuilder()Ljava/lang/StringBuilder;
-    .registers 2
+    .locals 2
 
     .line 84
     sget-object v0, Landroidx/emoji2/text/DefaultGlyphChecker;->sStringBuilder:Ljava/lang/ThreadLocal;
@@ -69,7 +69,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 85
     new-instance v1, Ljava/lang/StringBuilder;
@@ -79,7 +79,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     .line 87
-    :cond_10
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public hasGlyph(Ljava/lang/CharSequence;III)Z
-    .registers 6
+    .locals 1
 
     .line 72
     invoke-static {}, Landroidx/emoji2/text/DefaultGlyphChecker;->getStringBuilder()Ljava/lang/StringBuilder;
@@ -104,8 +104,8 @@
     .line 73
     invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    :goto_8
-    if-ge p2, p3, :cond_14
+    :goto_0
+    if-ge p2, p3, :cond_0
 
     .line 76
     invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
@@ -116,10 +116,10 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 80
-    :cond_14
+    :cond_0
     iget-object p1, p0, Landroidx/emoji2/text/DefaultGlyphChecker;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

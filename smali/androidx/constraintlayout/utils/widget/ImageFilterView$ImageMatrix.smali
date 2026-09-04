@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,7 +76,7 @@
 .end method
 
 .method private brightness(F)V
-    .registers 5
+    .locals 3
 
     .line 225
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->m:[F
@@ -188,7 +188,7 @@
 .end method
 
 .method private saturation(F)V
-    .registers 10
+    .locals 8
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -320,17 +320,17 @@
 .end method
 
 .method private warmth(F)V
-    .registers 13
+    .locals 11
 
     const/4 v0, 0x0
 
     cmpg-float v1, p1, v0
 
-    if-gtz v1, :cond_8
+    if-gtz v1, :cond_0
 
     const p1, 0x3c23d70a    # 0.01f
 
-    :cond_8
+    :cond_0
     const v1, 0x459c4000    # 5000.0f
 
     div-float/2addr v1, p1
@@ -349,7 +349,7 @@
 
     const/high16 v5, 0x437f0000    # 255.0f
 
-    if-lez v2, :cond_3f
+    if-lez v2, :cond_1
 
     const/high16 v2, 0x42700000    # 60.0f
 
@@ -383,9 +383,9 @@
 
     mul-float/2addr v6, v7
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_3f
+    :cond_1
     float-to-double v6, v1
 
     .line 148
@@ -401,20 +401,20 @@
 
     move v2, v5
 
-    :goto_49
+    :goto_0
     cmpg-float p1, v1, p1
 
     const v7, 0x439885bc
 
     const v8, 0x430a848a
 
-    if-gez p1, :cond_67
+    if-gez p1, :cond_3
 
     const/high16 p1, 0x41980000    # 19.0f
 
     cmpl-float p1, v1, p1
 
-    if-lez p1, :cond_65
+    if-lez p1, :cond_2
 
     const/high16 p1, 0x41200000    # 10.0f
 
@@ -433,18 +433,18 @@
 
     sub-float/2addr p1, v7
 
-    goto :goto_68
+    goto :goto_1
 
-    :cond_65
+    :cond_2
     move p1, v0
 
-    goto :goto_68
+    goto :goto_1
 
-    :cond_67
+    :cond_3
     move p1, v5
 
     .line 160
-    :goto_68
+    :goto_1
     invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
@@ -644,7 +644,7 @@
 
 # virtual methods
 .method updateMatrix(Landroid/widget/ImageView;)V
-    .registers 7
+    .locals 5
 
     .line 251
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mColorMatrix:Landroid/graphics/ColorMatrix;
@@ -660,7 +660,7 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 254
     invoke-direct {p0, v0}, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->saturation(F)V
@@ -674,18 +674,18 @@
 
     move v0, v3
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
     .line 258
-    :goto_1b
+    :goto_0
     iget v2, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mContrast:F
 
     cmpl-float v4, v2, v1
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_1
 
     .line 259
     iget-object v0, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mTmpColorMatrix:Landroid/graphics/ColorMatrix;
@@ -702,12 +702,12 @@
     move v0, v3
 
     .line 263
-    :cond_2e
+    :cond_1
     iget v2, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mWarmth:F
 
     cmpl-float v4, v2, v1
 
-    if-eqz v4, :cond_46
+    if-eqz v4, :cond_2
 
     .line 264
     invoke-direct {p0, v2}, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->warmth(F)V
@@ -729,12 +729,12 @@
     move v0, v3
 
     .line 269
-    :cond_46
+    :cond_2
     iget v2, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->mBrightness:F
 
     cmpl-float v1, v2, v1
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_3
 
     .line 270
     invoke-direct {p0, v2}, Landroidx/constraintlayout/utils/widget/ImageFilterView$ImageMatrix;->brightness(F)V
@@ -753,13 +753,13 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/ColorMatrix;->postConcat(Landroid/graphics/ColorMatrix;)V
 
-    goto :goto_5f
+    goto :goto_1
 
-    :cond_5e
+    :cond_3
     move v3, v0
 
-    :goto_5f
-    if-eqz v3, :cond_6c
+    :goto_1
+    if-eqz v3, :cond_4
 
     .line 277
     new-instance v0, Landroid/graphics/ColorMatrixColorFilter;
@@ -770,12 +770,12 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    goto :goto_6f
+    goto :goto_2
 
     .line 279
-    :cond_6c
+    :cond_4
     invoke-virtual {p1}, Landroid/widget/ImageView;->clearColorFilter()V
 
-    :goto_6f
+    :goto_2
     return-void
 .end method

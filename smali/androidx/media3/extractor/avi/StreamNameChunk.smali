@@ -12,7 +12,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/extractor/avi/StreamNameChunk;
-    .registers 3
+    .locals 2
 
     .line 24
     new-instance v0, Landroidx/media3/extractor/avi/StreamNameChunk;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public getType()I
-    .registers 2
+    .locals 1
 
     const v0, 0x6e727473
 

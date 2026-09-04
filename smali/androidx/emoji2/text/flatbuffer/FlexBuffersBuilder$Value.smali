@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 636
     const-class v0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder;
@@ -41,7 +41,7 @@
 .end method
 
 .method constructor <init>(IIID)V
-    .registers 6
+    .locals 0
 
     .line 657
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method constructor <init>(IIIJ)V
-    .registers 6
+    .locals 0
 
     .line 649
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
 .end method
 
 .method static synthetic access$100(II)I
-    .registers 2
+    .locals 0
 
     .line 636
     invoke-static {p0, p1}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->paddingBytes(II)I
@@ -104,7 +104,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;II)I
-    .registers 3
+    .locals 0
 
     .line 636
     invoke-direct {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->elemWidth(II)I
@@ -115,7 +115,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;)B
-    .registers 1
+    .locals 0
 
     .line 636
     invoke-direct {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->storedPackedType()B
@@ -126,7 +126,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;I)B
-    .registers 2
+    .locals 0
 
     .line 636
     invoke-direct {p0, p1}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->storedPackedType(I)B
@@ -137,7 +137,7 @@
 .end method
 
 .method static synthetic access$500(IIJII)I
-    .registers 6
+    .locals 0
 
     .line 636
     invoke-static/range {p0 .. p5}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->elemWidth(IIJII)I
@@ -148,7 +148,7 @@
 .end method
 
 .method static blob(IIII)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 11
+    .locals 7
 
     .line 670
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -169,7 +169,7 @@
 .end method
 
 .method static bool(IZ)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 666
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -178,16 +178,16 @@
 
     const/4 v3, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const-wide/16 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const-wide/16 v0, 0x0
 
-    :goto_c
+    :goto_0
     move-wide v4, v0
 
     move-object v0, v6
@@ -200,7 +200,7 @@
 .end method
 
 .method private elemWidth(II)I
-    .registers 9
+    .locals 6
 
     .line 734
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->type:I
@@ -221,24 +221,24 @@
 .end method
 
 .method private static elemWidth(IIJII)I
-    .registers 10
+    .locals 4
 
     .line 738
     invoke-static {p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffers;->isTypeInline(I)Z
 
     move-result p0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     return p1
 
-    :cond_7
+    :cond_0
     const/4 p0, 0x1
 
-    :goto_8
+    :goto_0
     const/16 p1, 0x20
 
-    if-gt p0, p1, :cond_28
+    if-gt p0, p1, :cond_2
 
     .line 751
     invoke-static {p4, p0}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->paddingBytes(II)I
@@ -272,23 +272,23 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     return p1
 
-    :cond_25
+    :cond_1
     mul-int/lit8 p0, p0, 0x2
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     const/4 p0, 0x3
 
     return p0
 .end method
 
 .method static float32(IF)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 706
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -309,7 +309,7 @@
 .end method
 
 .method static float64(ID)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 10
+    .locals 7
 
     .line 710
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -330,7 +330,7 @@
 .end method
 
 .method static int16(II)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 678
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -351,7 +351,7 @@
 .end method
 
 .method static int32(II)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 682
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -372,7 +372,7 @@
 .end method
 
 .method static int64(IJ)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 10
+    .locals 7
 
     .line 686
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -393,7 +393,7 @@
 .end method
 
 .method static int8(II)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 674
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -414,7 +414,7 @@
 .end method
 
 .method private static packedType(II)B
-    .registers 2
+    .locals 0
 
     shl-int/lit8 p1, p1, 0x2
 
@@ -426,7 +426,7 @@
 .end method
 
 .method private static paddingBytes(II)I
-    .registers 2
+    .locals 0
 
     not-int p0, p0
 
@@ -440,7 +440,7 @@
 .end method
 
 .method private storedPackedType()B
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -453,7 +453,7 @@
 .end method
 
 .method private storedPackedType(I)B
-    .registers 3
+    .locals 1
 
     .line 718
     invoke-direct {p0, p1}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->storedWidth(I)I
@@ -470,7 +470,7 @@
 .end method
 
 .method private storedWidth(I)I
-    .registers 3
+    .locals 1
 
     .line 726
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->type:I
@@ -479,7 +479,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 727
     iget v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->minBitWidth:I
@@ -491,14 +491,14 @@
     return p1
 
     .line 729
-    :cond_f
+    :cond_0
     iget p1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->minBitWidth:I
 
     return p1
 .end method
 
 .method static uInt16(II)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 694
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -519,7 +519,7 @@
 .end method
 
 .method static uInt32(II)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 698
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -540,7 +540,7 @@
 .end method
 
 .method static uInt64(IJ)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 10
+    .locals 7
 
     .line 702
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
@@ -561,7 +561,7 @@
 .end method
 
 .method static uInt8(II)Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;
-    .registers 9
+    .locals 7
 
     .line 690
     new-instance v6, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;

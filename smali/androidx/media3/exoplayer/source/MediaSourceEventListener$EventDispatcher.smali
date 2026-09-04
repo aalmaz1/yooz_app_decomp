@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 159
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -55,7 +55,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/concurrent/CopyOnWriteArrayList;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public addEventListener(Landroid/os/Handler;Landroidx/media3/exoplayer/source/MediaSourceEventListener;)V
-    .registers 5
+    .locals 2
 
     .line 207
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -106,7 +106,7 @@
 .end method
 
 .method public downstreamFormatChanged(ILandroidx/media3/common/Format;ILjava/lang/Object;J)V
-    .registers 18
+    .locals 11
 
     .line 463
     new-instance v10, Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -141,7 +141,7 @@
 .end method
 
 .method public downstreamFormatChanged(Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 6
+    .locals 4
 
     .line 476
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -150,12 +150,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -175,14 +175,14 @@
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Util;->postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$downstreamFormatChanged$5$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher(Landroidx/media3/exoplayer/source/MediaSourceEventListener;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 5
+    .locals 2
 
     .line 480
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->windowIndex:I
@@ -195,7 +195,7 @@
 .end method
 
 .method synthetic lambda$loadCanceled$2$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher(Landroidx/media3/exoplayer/source/MediaSourceEventListener;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 6
+    .locals 2
 
     .line 358
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->windowIndex:I
@@ -208,7 +208,7 @@
 .end method
 
 .method synthetic lambda$loadCompleted$1$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher(Landroidx/media3/exoplayer/source/MediaSourceEventListener;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 6
+    .locals 2
 
     .line 312
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->windowIndex:I
@@ -221,7 +221,7 @@
 .end method
 
 .method synthetic lambda$loadError$3$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher(Landroidx/media3/exoplayer/source/MediaSourceEventListener;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;Z)V
-    .registers 13
+    .locals 7
 
     .line 427
     iget v1, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->windowIndex:I
@@ -244,7 +244,7 @@
 .end method
 
 .method synthetic lambda$loadStarted$0$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher(Landroidx/media3/exoplayer/source/MediaSourceEventListener;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 6
+    .locals 2
 
     .line 266
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->windowIndex:I
@@ -257,7 +257,7 @@
 .end method
 
 .method synthetic lambda$upstreamDiscarded$4$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher(Landroidx/media3/exoplayer/source/MediaSourceEventListener;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 5
+    .locals 1
 
     .line 452
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->windowIndex:I
@@ -268,7 +268,7 @@
 .end method
 
 .method public loadCanceled(Landroidx/media3/exoplayer/source/LoadEventInfo;I)V
-    .registers 14
+    .locals 11
 
     const/4 v3, -0x1
 
@@ -295,7 +295,7 @@
 .end method
 
 .method public loadCanceled(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
-    .registers 22
+    .locals 11
 
     .line 339
     new-instance v10, Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -335,7 +335,7 @@
 .end method
 
 .method public loadCanceled(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 7
+    .locals 4
 
     .line 353
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -344,12 +344,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -369,14 +369,14 @@
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Util;->postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method public loadCompleted(Landroidx/media3/exoplayer/source/LoadEventInfo;I)V
-    .registers 14
+    .locals 11
 
     const/4 v3, -0x1
 
@@ -403,7 +403,7 @@
 .end method
 
 .method public loadCompleted(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
-    .registers 22
+    .locals 11
 
     .line 293
     new-instance v10, Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -443,7 +443,7 @@
 .end method
 
 .method public loadCompleted(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 7
+    .locals 4
 
     .line 307
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -452,12 +452,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -477,14 +477,14 @@
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Util;->postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method public loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJLjava/io/IOException;Z)V
-    .registers 24
+    .locals 11
 
     .line 399
     new-instance v10, Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -528,7 +528,7 @@
 .end method
 
 .method public loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;ILjava/io/IOException;Z)V
-    .registers 18
+    .locals 13
 
     const/4 v3, -0x1
 
@@ -559,7 +559,7 @@
 .end method
 
 .method public loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;Z)V
-    .registers 15
+    .locals 10
 
     .line 422
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -568,12 +568,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -605,14 +605,14 @@
 
     invoke-static {v1, v9}, Landroidx/media3/common/util/Util;->postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 .method public loadStarted(Landroidx/media3/exoplayer/source/LoadEventInfo;I)V
-    .registers 14
+    .locals 11
 
     const/4 v3, -0x1
 
@@ -639,7 +639,7 @@
 .end method
 
 .method public loadStarted(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
-    .registers 22
+    .locals 11
 
     .line 248
     new-instance v10, Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -679,7 +679,7 @@
 .end method
 
 .method public loadStarted(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 7
+    .locals 4
 
     .line 262
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -688,12 +688,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -713,14 +713,14 @@
 
     invoke-static {v1, v3}, Landroidx/media3/common/util/Util;->postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method public removeEventListener(Landroidx/media3/exoplayer/source/MediaSourceEventListener;)V
-    .registers 5
+    .locals 3
 
     .line 218
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -729,13 +729,13 @@
 
     move-result-object v0
 
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -746,21 +746,21 @@
     .line 219
     iget-object v2, v1, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher$ListenerAndHandler;->listener:Landroidx/media3/exoplayer/source/MediaSourceEventListener;
 
-    if-ne v2, p1, :cond_6
+    if-ne v2, p1, :cond_0
 
     .line 220
     iget-object v2, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->listenerAndHandlers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 .method public upstreamDiscarded(IJJ)V
-    .registers 17
+    .locals 11
 
     .line 434
     new-instance v10, Landroidx/media3/exoplayer/source/MediaLoadData;
@@ -798,7 +798,7 @@
 .end method
 
 .method public upstreamDiscarded(Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 7
+    .locals 5
 
     .line 447
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -816,12 +816,12 @@
 
     move-result-object v1
 
-    :goto_e
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -841,14 +841,14 @@
 
     invoke-static {v2, v4}, Landroidx/media3/common/util/Util;->postOrRun(Landroid/os/Handler;Ljava/lang/Runnable;)Z
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     return-void
 .end method
 
 .method public withParameters(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 5
+    .locals 2
 
     .line 184
     new-instance v0, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -861,7 +861,7 @@
 .end method
 
 .method public withParameters(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;J)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 5
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

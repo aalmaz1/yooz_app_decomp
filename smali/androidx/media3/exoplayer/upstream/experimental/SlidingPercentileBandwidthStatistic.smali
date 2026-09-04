@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/16 v0, 0xa
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(ID)V
-    .registers 6
+    .locals 2
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,23 +74,23 @@
 
     cmpl-double v0, p2, v0
 
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     cmpg-double v0, p2, v0
 
-    if-gtz v0, :cond_11
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 62
-    :goto_12
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 63
@@ -122,7 +122,7 @@
 .end method
 
 .method private calculateBitrateEstimate()J
-    .registers 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -133,14 +133,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const-wide/high16 v1, -0x8000000000000000L
 
     return-wide v1
 
     .line 104
-    :cond_d
+    :cond_0
     iget-wide v1, v0, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic;->weightSum:D
 
     iget-wide v3, v0, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic;->percentile:D
@@ -162,12 +162,12 @@
 
     move-wide v8, v6
 
-    :goto_1e
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-eqz v12, :cond_5c
+    if-eqz v12, :cond_3
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -188,11 +188,11 @@
 
     cmpl-double v13, v6, v1
 
-    if-ltz v13, :cond_4c
+    if-ltz v13, :cond_2
 
     cmp-long v3, v10, v4
 
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_1
 
     .line 114
     invoke-static {v12}, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic$Sample;->access$100(Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic$Sample;)J
@@ -202,7 +202,7 @@
     return-wide v1
 
     .line 118
-    :cond_3f
+    :cond_1
     invoke-static {v12}, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic$Sample;->access$100(Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic$Sample;)J
 
     move-result-wide v3
@@ -226,7 +226,7 @@
     return-wide v10
 
     .line 123
-    :cond_4c
+    :cond_2
     invoke-static {v12}, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic$Sample;->access$100(Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic$Sample;)J
 
     move-result-wide v10
@@ -246,16 +246,16 @@
 
     move-wide/from16 v8, v17
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_5c
+    :cond_3
     return-wide v10
 .end method
 
 
 # virtual methods
 .method public addSample(JJ)V
-    .registers 10
+    .locals 5
 
     .line 72
     :goto_0
@@ -267,7 +267,7 @@
 
     iget v1, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic;->maxSampleCount:I
 
-    if-lt v0, v1, :cond_21
+    if-lt v0, v1, :cond_0
 
     .line 73
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic;->samples:Ljava/util/ArrayDeque;
@@ -296,7 +296,7 @@
 
     goto :goto_0
 
-    :cond_21
+    :cond_0
     long-to-double v0, p1
 
     .line 78
@@ -344,7 +344,7 @@
 .end method
 
 .method public getBandwidthEstimate()J
-    .registers 3
+    .locals 2
 
     .line 89
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic;->bitrateEstimate:J
@@ -353,7 +353,7 @@
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     .line 94
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SlidingPercentileBandwidthStatistic;->samples:Ljava/util/ArrayDeque;

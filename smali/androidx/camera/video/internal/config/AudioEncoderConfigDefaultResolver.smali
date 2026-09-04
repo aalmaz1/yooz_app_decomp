@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/Timebase;Landroidx/camera/video/AudioSpec;Landroidx/camera/video/internal/audio/AudioSettings;)V
-    .registers 6
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public get()Landroidx/camera/video/internal/encoder/AudioEncoderConfig;
-    .registers 8
+    .locals 7
 
     .line 74
     iget-object v0, p0, Landroidx/camera/video/internal/config/AudioEncoderConfigDefaultResolver;->mAudioSpec:Landroidx/camera/video/AudioSpec;
@@ -171,7 +171,7 @@
 .end method
 
 .method public bridge synthetic get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 34
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/AudioEncoderConfigDefaultResolver;->get()Landroidx/camera/video/internal/encoder/AudioEncoderConfig;

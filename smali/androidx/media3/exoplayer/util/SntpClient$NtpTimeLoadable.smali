@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 286
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/util/SntpClient$1;)V
-    .registers 2
+    .locals 0
 
     .line 286
     invoke-direct {p0}, Landroidx/media3/exoplayer/util/SntpClient$NtpTimeLoadable;-><init>()V
@@ -39,13 +39,13 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public load()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -60,44 +60,44 @@
     monitor-enter v0
 
     .line 295
-    :try_start_5
+    :try_start_0
     invoke-static {}, Landroidx/media3/exoplayer/util/SntpClient;->access$200()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
-    :try_end_a
-    .catchall {:try_start_5 .. :try_end_a} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 296
-    :try_start_a
+    :try_start_1
     invoke-static {}, Landroidx/media3/exoplayer/util/SntpClient;->access$300()Z
 
     move-result v2
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 297
     monitor-exit v1
-    :try_end_11
-    .catchall {:try_start_a .. :try_end_11} :catchall_2a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :try_start_11
+    :try_start_2
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_11 .. :try_end_12} :catchall_2d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     return-void
 
     .line 299
-    :cond_13
-    :try_start_13
+    :cond_0
+    :try_start_3
     monitor-exit v1
-    :try_end_14
-    .catchall {:try_start_13 .. :try_end_14} :catchall_2a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 300
-    :try_start_14
+    :try_start_4
     invoke-static {}, Landroidx/media3/exoplayer/util/SntpClient;->access$400()J
 
     move-result-wide v1
@@ -108,11 +108,11 @@
     move-result-object v3
 
     monitor-enter v3
-    :try_end_1d
-    .catchall {:try_start_14 .. :try_end_1d} :catchall_2d
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 302
-    :try_start_1d
+    :try_start_5
     invoke-static {v1, v2}, Landroidx/media3/exoplayer/util/SntpClient;->access$502(J)J
 
     const/4 v1, 0x1
@@ -122,50 +122,50 @@
 
     .line 304
     monitor-exit v3
-    :try_end_25
-    .catchall {:try_start_1d .. :try_end_25} :catchall_27
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 305
-    :try_start_25
+    :try_start_6
     monitor-exit v0
-    :try_end_26
-    .catchall {:try_start_25 .. :try_end_26} :catchall_2d
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     return-void
 
-    :catchall_27
+    :catchall_0
     move-exception v1
 
     .line 304
-    :try_start_28
+    :try_start_7
     monitor-exit v3
-    :try_end_29
-    .catchall {:try_start_28 .. :try_end_29} :catchall_27
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    :try_start_29
+    :try_start_8
     throw v1
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_2d
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    :catchall_2a
+    :catchall_1
     move-exception v2
 
     .line 299
-    :try_start_2b
+    :try_start_9
     monitor-exit v1
-    :try_end_2c
-    .catchall {:try_start_2b .. :try_end_2c} :catchall_2a
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    :try_start_2c
+    :try_start_a
     throw v2
 
-    :catchall_2d
+    :catchall_2
     move-exception v1
 
     .line 305
     monitor-exit v0
-    :try_end_2f
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_2d
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_2
 
     throw v1
 .end method

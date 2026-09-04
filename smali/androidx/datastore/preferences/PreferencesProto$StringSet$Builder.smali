@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1592
     invoke-static {}, Landroidx/datastore/preferences/PreferencesProto$StringSet;->access$2300()Landroidx/datastore/preferences/PreferencesProto$StringSet;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/PreferencesProto$1;)V
-    .registers 2
+    .locals 0
 
     .line 1585
     invoke-direct {p0}, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public addAllStrings(Ljava/lang/Iterable;)Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,7 +78,7 @@
 .end method
 
 .method public addStrings(Ljava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;
-    .registers 3
+    .locals 1
 
     .line 1652
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->copyOnWrite()V
@@ -94,7 +94,7 @@
 .end method
 
 .method public addStringsBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;
-    .registers 3
+    .locals 1
 
     .line 1683
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->copyOnWrite()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public clearStrings()Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;
-    .registers 2
+    .locals 1
 
     .line 1672
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->copyOnWrite()V
@@ -126,7 +126,7 @@
 .end method
 
 .method public getStrings(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 1621
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -141,7 +141,7 @@
 .end method
 
 .method public getStringsBytes(I)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 1
 
     .line 1631
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -156,7 +156,7 @@
 .end method
 
 .method public getStringsCount()I
-    .registers 2
+    .locals 1
 
     .line 1612
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -171,7 +171,7 @@
 .end method
 
 .method public getStringsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
 .end method
 
 .method public setStrings(ILjava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;
-    .registers 4
+    .locals 1
 
     .line 1641
     invoke-virtual {p0}, Landroidx/datastore/preferences/PreferencesProto$StringSet$Builder;->copyOnWrite()V

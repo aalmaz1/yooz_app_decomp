@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Iterable;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -81,12 +81,12 @@
 
     move-result-object v0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -99,20 +99,20 @@
 
     move-result v1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_1a
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public length()J
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -128,12 +128,12 @@
 
     const-wide/16 v1, 0x0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -148,14 +148,14 @@
 
     add-long/2addr v1, v3
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return-wide v1
 .end method
 
 .method public lengthIfKnown()Lcom/google/common/base/Optional;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -174,12 +174,12 @@
 
     const-wide/16 v1, 0x0
 
-    :goto_8
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -197,7 +197,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_23
+    if-nez v4, :cond_0
 
     .line 643
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
@@ -207,7 +207,7 @@
     return-object v0
 
     .line 645
-    :cond_23
+    :cond_0
     invoke-virtual {v3}, Lcom/google/common/base/Optional;->get()Ljava/lang/Object;
 
     move-result-object v3
@@ -220,10 +220,10 @@
 
     add-long/2addr v1, v3
 
-    goto :goto_8
+    goto :goto_0
 
     .line 647
-    :cond_2f
+    :cond_1
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -236,7 +236,7 @@
 .end method
 
 .method public openStream()Ljava/io/Reader;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -258,7 +258,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 661
     new-instance v0, Ljava/lang/StringBuilder;

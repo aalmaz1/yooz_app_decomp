@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatSpinner;)V
-    .registers 2
+    .locals 0
 
     .line 864
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
@@ -43,12 +43,12 @@
 
 # virtual methods
 .method public dismiss()V
-    .registers 2
+    .locals 1
 
     .line 872
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPopup:Landroidx/appcompat/app/AlertDialog;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 873
     invoke-virtual {v0}, Landroidx/appcompat/app/AlertDialog;->dismiss()V
@@ -58,12 +58,12 @@
     .line 874
     iput-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPopup:Landroidx/appcompat/app/AlertDialog;
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public getBackground()Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public getHintText()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 895
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPrompt:Ljava/lang/CharSequence;
@@ -80,7 +80,7 @@
 .end method
 
 .method public getHorizontalOffset()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public getHorizontalOriginalOffset()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -96,7 +96,7 @@
 .end method
 
 .method public getVerticalOffset()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -104,28 +104,28 @@
 .end method
 
 .method public isShowing()Z
-    .registers 2
+    .locals 1
 
     .line 880
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPopup:Landroidx/appcompat/app/AlertDialog;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/appcompat/app/AlertDialog;->isShowing()Z
 
     move-result v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 6
+    .locals 3
 
     .line 919
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
@@ -139,7 +139,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 921
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
@@ -155,14 +155,14 @@
     invoke-virtual {p1, v2, p2, v0, v1}, Landroidx/appcompat/widget/AppCompatSpinner;->performItemClick(Landroid/view/View;IJ)Z
 
     .line 923
-    :cond_19
+    :cond_0
     invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->dismiss()V
 
     return-void
 .end method
 
 .method public setAdapter(Landroid/widget/ListAdapter;)V
-    .registers 2
+    .locals 0
 
     .line 885
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mListAdapter:Landroid/widget/ListAdapter;
@@ -171,7 +171,7 @@
 .end method
 
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
     const-string p1, "AppCompatSpinner"
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public setHorizontalOffset(I)V
-    .registers 3
+    .locals 1
 
     const-string p1, "AppCompatSpinner"
 
@@ -197,7 +197,7 @@
 .end method
 
 .method public setHorizontalOriginalOffset(I)V
-    .registers 3
+    .locals 1
 
     const-string p1, "AppCompatSpinner"
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public setPromptText(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 890
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPrompt:Ljava/lang/CharSequence;
@@ -219,7 +219,7 @@
 .end method
 
 .method public setVerticalOffset(I)V
-    .registers 3
+    .locals 1
 
     const-string p1, "AppCompatSpinner"
 
@@ -232,17 +232,17 @@
 .end method
 
 .method public show(II)V
-    .registers 6
+    .locals 3
 
     .line 900
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mListAdapter:Landroid/widget/ListAdapter;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 903
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/appcompat/app/AlertDialog$Builder;
 
     iget-object v1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
@@ -256,13 +256,13 @@
     .line 904
     iget-object v1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mPrompt:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 905
     invoke-virtual {v0, v1}, Landroidx/appcompat/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroidx/appcompat/app/AlertDialog$Builder;
 
     .line 907
-    :cond_17
+    :cond_1
     iget-object v1, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->mListAdapter:Landroid/widget/ListAdapter;
 
     iget-object v2, p0, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;

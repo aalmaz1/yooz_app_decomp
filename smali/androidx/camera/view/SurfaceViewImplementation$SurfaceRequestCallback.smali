@@ -37,7 +37,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/SurfaceViewImplementation;)V
-    .registers 2
+    .locals 0
 
     .line 184
     iput-object p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->this$0:Landroidx/camera/view/SurfaceViewImplementation;
@@ -56,16 +56,16 @@
 .end method
 
 .method private canProvideSurface()Z
-    .registers 3
+    .locals 2
 
     .line 278
     iget-boolean v0, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mWasSurfaceProvided:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mTargetSize:Landroid/util/Size;
 
@@ -75,26 +75,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_15
+    :goto_0
     return v0
 .end method
 
 .method private cancelPreviousRequest()V
-    .registers 3
+    .locals 2
 
     .line 285
     iget-object v0, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 286
     new-instance v0, Ljava/lang/StringBuilder;
@@ -122,17 +122,17 @@
 
     invoke-virtual {v0}, Landroidx/camera/core/SurfaceRequest;->willNotProvideSurface()Z
 
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method private closeSurface()V
-    .registers 3
+    .locals 2
 
     .line 294
     iget-object v0, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 295
     new-instance v0, Ljava/lang/StringBuilder;
@@ -164,12 +164,12 @@
 
     invoke-virtual {v0}, Landroidx/camera/core/impl/DeferrableSurface;->close()V
 
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method static synthetic lambda$tryToComplete$0(Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;Landroidx/camera/core/SurfaceRequest$Result;)V
-    .registers 3
+    .locals 1
 
     const-string p1, "SurfaceViewImpl"
 
@@ -178,17 +178,17 @@
     .line 264
     invoke-static {p1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_0
 
     .line 266
     invoke-interface {p0}, Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;->onSurfaceNotInUse()V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method private tryToComplete()Z
-    .registers 6
+    .locals 5
 
     .line 256
     iget-object v0, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->this$0:Landroidx/camera/view/SurfaceViewImplementation;
@@ -208,7 +208,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_0
 
     const-string v1, "SurfaceViewImpl"
 
@@ -261,7 +261,7 @@
 
     return v0
 
-    :cond_40
+    :cond_0
     const/4 v0, 0x0
 
     return v0
@@ -270,7 +270,7 @@
 
 # virtual methods
 .method setSurfaceRequest(Landroidx/camera/core/SurfaceRequest;Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;)V
-    .registers 5
+    .locals 2
 
     .line 221
     invoke-direct {p0}, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->cancelPreviousRequest()V
@@ -280,7 +280,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 231
     iput-boolean v1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mNeedToInvalidate:Z
@@ -288,10 +288,10 @@
     .line 232
     invoke-virtual {p1}, Landroidx/camera/core/SurfaceRequest;->invalidate()Z
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 234
-    :cond_e
+    :cond_0
     iput-object p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
     .line 235
@@ -313,7 +313,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_3a
+    if-nez p2, :cond_1
 
     const-string p2, "SurfaceViewImpl"
 
@@ -343,13 +343,13 @@
     .line 243
     invoke-interface {p2, v0, p1}, Landroid/view/SurfaceHolder;->setFixedSize(II)V
 
-    :cond_3a
-    :goto_3a
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .registers 5
+    .locals 0
 
     .line 316
     new-instance p1, Ljava/lang/StringBuilder;
@@ -394,7 +394,7 @@
 .end method
 
 .method public surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .registers 3
+    .locals 1
 
     const-string p1, "SurfaceViewImpl"
 
@@ -406,11 +406,11 @@
     .line 306
     iget-boolean p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mNeedToInvalidate:Z
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequestToBeInvalidated:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 307
     invoke-virtual {p1}, Landroidx/camera/core/SurfaceRequest;->invalidate()Z
@@ -425,12 +425,12 @@
     .line 309
     iput-boolean p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mNeedToInvalidate:Z
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .registers 3
+    .locals 1
 
     const-string p1, "SurfaceViewImpl"
 
@@ -442,18 +442,18 @@
     .line 327
     iget-boolean p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mWasSurfaceProvided:Z
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     .line 328
     invoke-direct {p0}, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->closeSurface()V
 
-    goto :goto_12
+    goto :goto_0
 
     .line 330
-    :cond_f
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->cancelPreviousRequest()V
 
-    :goto_12
+    :goto_0
     const/4 p1, 0x1
 
     .line 335
@@ -462,12 +462,12 @@
     .line 336
     iget-object p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1
 
     .line 337
     iput-object p1, p0, Landroidx/camera/view/SurfaceViewImplementation$SurfaceRequestCallback;->mSurfaceRequestToBeInvalidated:Landroidx/camera/core/SurfaceRequest;
 
-    :cond_1b
+    :cond_1
     const/4 p1, 0x0
 
     .line 341

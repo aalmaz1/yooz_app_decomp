@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/util/TimestampAdjuster;JJ)V
-    .registers 22
+    .locals 16
 
     .line 44
     new-instance v1, Landroidx/media3/extractor/BinarySearchSeeker$DefaultSeekTimestampConverter;
@@ -60,7 +60,7 @@
 .end method
 
 .method static synthetic access$100([BI)I
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-static {p0, p1}, Landroidx/media3/extractor/ts/PsBinarySearchSeeker;->peekIntAtPosition([BI)I
@@ -71,7 +71,7 @@
 .end method
 
 .method private static peekIntAtPosition([BI)I
-    .registers 4
+    .locals 2
 
     .line 206
     aget-byte v0, p0, p1

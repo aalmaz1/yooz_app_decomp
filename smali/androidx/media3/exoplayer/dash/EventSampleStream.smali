@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/dash/manifest/EventStream;Landroidx/media3/common/Format;Z)V
-    .registers 6
+    .locals 2
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public eventStreamId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventStream:Landroidx/media3/exoplayer/dash/manifest/EventStream;
@@ -76,7 +76,7 @@
 .end method
 
 .method public isReady()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public maybeThrowError()V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -95,7 +95,7 @@
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 10
+    .locals 6
 
     .line 103
     iget v0, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->currentIndex:I
@@ -106,65 +106,65 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     move v1, v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     const/4 v3, -0x4
 
     const/4 v4, 0x4
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 104
     iget-boolean v5, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventStreamAppendable:Z
 
-    if-nez v5, :cond_17
+    if-nez v5, :cond_1
 
     .line 105
     invoke-virtual {p2, v4}, Landroidx/media3/decoder/DecoderInputBuffer;->setFlags(I)V
 
     return v3
 
-    :cond_17
+    :cond_1
     and-int/lit8 v5, p3, 0x2
 
-    if-nez v5, :cond_4f
+    if-nez v5, :cond_6
 
     .line 108
     iget-boolean v5, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->isFormatSentDownstream:Z
 
-    if-nez v5, :cond_20
+    if-nez v5, :cond_2
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_20
-    if-eqz v1, :cond_24
+    :cond_2
+    if-eqz v1, :cond_3
 
     const/4 p1, -0x3
 
     return p1
 
-    :cond_24
+    :cond_3
     and-int/lit8 p1, p3, 0x1
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_4
 
     add-int/lit8 p1, v0, 0x1
 
     .line 119
     iput p1, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->currentIndex:I
 
-    :cond_2c
+    :cond_4
     and-int/lit8 p1, p3, 0x4
 
-    if-nez p1, :cond_45
+    if-nez p1, :cond_5
 
     .line 122
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventMessageEncoder:Landroidx/media3/extractor/metadata/emsg/EventMessageEncoder;
@@ -190,7 +190,7 @@
     invoke-virtual {p3, p1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     .line 126
-    :cond_45
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventTimesUs:[J
 
     aget-wide v0, p1, v0
@@ -203,8 +203,8 @@
     return v3
 
     .line 109
-    :cond_4f
-    :goto_4f
+    :cond_6
+    :goto_1
     iget-object p2, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->upstreamFormat:Landroidx/media3/common/Format;
 
     iput-object p2, p1, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
@@ -218,7 +218,7 @@
 .end method
 
 .method public seekToUs(J)V
-    .registers 7
+    .locals 4
 
     .line 83
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventTimesUs:[J
@@ -237,36 +237,36 @@
     .line 86
     iget-boolean v3, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventStreamAppendable:Z
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_0
 
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventTimesUs:[J
 
     array-length v3, v3
 
-    if-ne v0, v3, :cond_14
+    if-ne v0, v3, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v1, v2
 
-    :goto_15
-    if-eqz v1, :cond_18
+    :goto_0
+    if-eqz v1, :cond_1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 87
-    :goto_1d
+    :goto_1
     iput-wide p1, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->pendingSeekPositionUs:J
 
     return-void
 .end method
 
 .method public skipData(J)I
-    .registers 7
+    .locals 4
 
     .line 133
     iget v0, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->currentIndex:I
@@ -297,20 +297,20 @@
 .end method
 
 .method public updateEventStream(Landroidx/media3/exoplayer/dash/manifest/EventStream;Z)V
-    .registers 10
+    .locals 7
 
     .line 63
     iget v0, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->currentIndex:I
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     move-wide v3, v1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventTimesUs:[J
 
     add-int/lit8 v0, v0, -0x1
@@ -318,7 +318,7 @@
     aget-wide v3, v3, v0
 
     .line 65
-    :goto_11
+    :goto_0
     iput-boolean p2, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->eventStreamAppendable:Z
 
     .line 66
@@ -334,17 +334,17 @@
 
     cmp-long p2, v5, v1
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_1
 
     .line 69
     invoke-virtual {p0, v5, v6}, Landroidx/media3/exoplayer/dash/EventSampleStream;->seekToUs(J)V
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     cmp-long p2, v3, v1
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_2
 
     const/4 p2, 0x0
 
@@ -355,7 +355,7 @@
 
     iput p1, p0, Landroidx/media3/exoplayer/dash/EventSampleStream;->currentIndex:I
 
-    :cond_2e
-    :goto_2e
+    :cond_2
+    :goto_1
     return-void
 .end method

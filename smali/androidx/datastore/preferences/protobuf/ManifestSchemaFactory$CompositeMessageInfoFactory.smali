@@ -23,7 +23,7 @@
 
 # direct methods
 .method varargs constructor <init>([Landroidx/datastore/preferences/protobuf/MessageInfoFactory;)V
-    .registers 2
+    .locals 0
 
     .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public isSupported(Ljava/lang/Class;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,8 +55,8 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v3, v1, :cond_14
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     aget-object v4, v0, v3
 
@@ -65,23 +65,23 @@
 
     move-result v4
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_11
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_14
+    :cond_1
     return v2
 .end method
 
 .method public messageInfoFor(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/MessageInfo;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,8 +98,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_16
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -108,7 +108,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_0
 
     .line 143
     invoke-interface {v3, p1}, Landroidx/datastore/preferences/protobuf/MessageInfoFactory;->messageInfoFor(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/MessageInfo;
@@ -117,13 +117,13 @@
 
     return-object p1
 
-    :cond_13
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 146
-    :cond_16
+    :cond_1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;

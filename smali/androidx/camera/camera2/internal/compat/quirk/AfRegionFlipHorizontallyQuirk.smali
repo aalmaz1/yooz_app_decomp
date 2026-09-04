@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method static load(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)Z
-    .registers 3
+    .locals 2
 
     .line 40
     sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
@@ -28,13 +28,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x21
 
-    if-ge v0, v1, :cond_20
+    if-ge v0, v1, :cond_0
 
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -49,15 +49,15 @@
 
     move-result p0
 
-    if-nez p0, :cond_20
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_21
+    :goto_0
     return p0
 .end method

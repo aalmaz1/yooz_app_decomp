@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/hardware/camera2/CameraCharacteristics;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method private isKeyNonCacheable(Landroid/hardware/camera2/CameraCharacteristics$Key;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,20 +80,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public static toCameraCharacteristicsCompat(Landroid/hardware/camera2/CameraCharacteristics;Ljava/lang/String;)Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
-    .registers 3
+    .locals 1
 
     .line 69
     new-instance v0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 98
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mCameraCharacteristicsImpl:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat$CameraCharacteristicsCompatImpl;
@@ -134,18 +134,18 @@
     return-object p1
 
     .line 101
-    :cond_d
+    :cond_0
     monitor-enter p0
 
     .line 103
-    :try_start_e
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mValuesCache:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 105
     monitor-exit p0
@@ -153,14 +153,14 @@
     return-object v0
 
     .line 108
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mCameraCharacteristicsImpl:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat$CameraCharacteristicsCompatImpl;
 
     invoke-interface {v0, p1}, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat$CameraCharacteristicsCompatImpl;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     .line 110
     iget-object v1, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mValuesCache:Ljava/util/Map;
@@ -168,24 +168,24 @@
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 112
-    :cond_25
+    :cond_2
     monitor-exit p0
 
     return-object v0
 
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     .line 113
     monitor-exit p0
-    :try_end_29
-    .catchall {:try_start_e .. :try_end_29} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public getPhysicalCameraIds()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -206,15 +206,15 @@
 .end method
 
 .method public getStreamConfigurationMapCompat()Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
-    .registers 4
+    .locals 3
 
     .line 131
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mStreamConfigurationMapCompat:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     .line 134
-    :try_start_4
+    :try_start_0
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p0, v0}, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -222,10 +222,10 @@
     move-result-object v0
 
     check-cast v0, Landroid/hardware/camera2/params/StreamConfigurationMap;
-    :try_end_c
-    .catch Ljava/lang/AssertionError; {:try_start_4 .. :try_end_c} :catch_24
+    :try_end_0
+    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 145
     new-instance v1, Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;
@@ -241,10 +241,10 @@
 
     iput-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mStreamConfigurationMapCompat:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 143
-    :cond_1c
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "StreamConfigurationMap is null!"
@@ -253,7 +253,7 @@
 
     throw v0
 
-    :catch_24
+    :catch_0
     move-exception v0
 
     .line 140
@@ -268,15 +268,15 @@
     throw v1
 
     .line 151
-    :cond_2f
-    :goto_2f
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mStreamConfigurationMapCompat:Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompat;
 
     return-object v0
 .end method
 
 .method public toCameraCharacteristics()Landroid/hardware/camera2/CameraCharacteristics;
-    .registers 2
+    .locals 1
 
     .line 159
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;->mCameraCharacteristicsImpl:Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat$CameraCharacteristicsCompatImpl;

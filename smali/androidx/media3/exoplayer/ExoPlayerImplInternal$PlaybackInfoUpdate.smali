@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/PlaybackInfo;)V
-    .registers 2
+    .locals 0
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;)Z
-    .registers 1
+    .locals 0
 
     .line 96
     iget-boolean p0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->hasPendingChange:Z
@@ -51,21 +51,21 @@
 
 # virtual methods
 .method public incrementPendingOperationAcks(I)V
-    .registers 4
+    .locals 2
 
     .line 110
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->hasPendingChange:Z
 
-    if-lez p1, :cond_6
+    if-lez p1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     or-int/2addr v0, v1
 
     iput-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->hasPendingChange:Z
@@ -81,23 +81,23 @@
 .end method
 
 .method public setPlaybackInfo(Landroidx/media3/exoplayer/PlaybackInfo;)V
-    .registers 4
+    .locals 2
 
     .line 115
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->hasPendingChange:Z
 
     iget-object v1, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->playbackInfo:Landroidx/media3/exoplayer/PlaybackInfo;
 
-    if-eq v1, p1, :cond_8
+    if-eq v1, p1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_9
+    :goto_0
     or-int/2addr v0, v1
 
     iput-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->hasPendingChange:Z
@@ -109,36 +109,36 @@
 .end method
 
 .method public setPositionDiscontinuity(I)V
-    .registers 5
+    .locals 3
 
     .line 120
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->positionDiscontinuity:Z
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     iget v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->discontinuityReason:I
 
     const/4 v2, 0x5
 
-    if-eq v0, v2, :cond_12
+    if-eq v0, v2, :cond_1
 
-    if-ne p1, v2, :cond_d
+    if-ne p1, v2, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
     .line 124
-    :goto_e
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     return-void
 
     .line 127
-    :cond_12
+    :cond_1
     iput-boolean v1, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$PlaybackInfoUpdate;->hasPendingChange:Z
 
     .line 128

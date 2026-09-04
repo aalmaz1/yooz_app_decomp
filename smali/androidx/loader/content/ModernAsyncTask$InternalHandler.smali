@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 497
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 4
+    .locals 2
 
     .line 503
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -43,26 +43,26 @@
 
     const/4 v1, 0x1
 
-    if-eq p1, v1, :cond_15
+    if-eq p1, v1, :cond_1
 
     const/4 v1, 0x2
 
-    if-eq p1, v1, :cond_d
+    if-eq p1, v1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 510
-    :cond_d
+    :cond_0
     iget-object p1, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroidx/loader/content/ModernAsyncTask;
 
     iget-object v0, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
 
     invoke-virtual {p1, v0}, Landroidx/loader/content/ModernAsyncTask;->onProgressUpdate([Ljava/lang/Object;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 507
-    :cond_15
+    :cond_1
     iget-object p1, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mTask:Landroidx/loader/content/ModernAsyncTask;
 
     iget-object v0, v0, Landroidx/loader/content/ModernAsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
@@ -73,6 +73,6 @@
 
     invoke-virtual {p1, v0}, Landroidx/loader/content/ModernAsyncTask;->finish(Ljava/lang/Object;)V
 
-    :goto_1f
+    :goto_0
     return-void
 .end method

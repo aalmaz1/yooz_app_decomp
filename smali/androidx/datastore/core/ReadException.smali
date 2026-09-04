@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "readException"
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final getReadException()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/datastore/core/ReadException;->readException:Ljava/lang/Throwable;

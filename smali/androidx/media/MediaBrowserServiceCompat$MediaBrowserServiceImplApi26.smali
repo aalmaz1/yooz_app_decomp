@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat;)V
-    .registers 2
+    .locals 0
 
     .line 514
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public getBrowserRootHints()Landroid/os/Bundle;
-    .registers 3
+    .locals 2
 
     .line 553
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->this$0:Landroidx/media/MediaBrowserServiceCompat;
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat;->mCurConnection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 554
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -52,13 +52,13 @@
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->rootHints:Landroid/os/Bundle;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     iget-object v1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -69,11 +69,11 @@
 
     invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    :goto_1b
+    :goto_0
     return-object v0
 
     .line 557
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->mServiceObj:Ljava/lang/Object;
 
     invoke-static {v0}, Landroidx/media/MediaBrowserServiceCompatApi26;->getBrowserRootHints(Ljava/lang/Object;)Landroid/os/Bundle;
@@ -84,27 +84,27 @@
 .end method
 
 .method notifyChildrenChangedForFramework(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_0
 
     .line 563
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->mServiceObj:Ljava/lang/Object;
 
     invoke-static {v0, p1, p2}, Landroidx/media/MediaBrowserServiceCompatApi26;->notifyChildrenChanged(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 566
-    :cond_8
+    :cond_0
     invoke-super {p0, p1, p2}, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23;->notifyChildrenChangedForFramework(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :goto_b
+    :goto_0
     return-void
 .end method
 
 .method public onCreate()V
-    .registers 2
+    .locals 1
 
     .line 518
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -124,7 +124,7 @@
 .end method
 
 .method public onLoadChildren(Ljava/lang/String;Landroidx/media/MediaBrowserServiceCompatApi26$ResultWrapper;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 1
 
     .line 526
     new-instance v0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi26$1;

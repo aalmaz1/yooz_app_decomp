@@ -90,14 +90,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x3
 
     new-array v0, v0, [B
 
     .line 67
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/ts/AdtsReader;->ID3_IDENTIFIER:[B
 
@@ -105,7 +105,7 @@
 
     nop
 
-    :array_a
+    :array_0
     .array-data 1
         0x49t
         0x44t
@@ -114,7 +114,7 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -127,7 +127,7 @@
 .end method
 
 .method public constructor <init>(ZLjava/lang/String;I)V
-    .registers 7
+    .locals 3
 
     .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -190,7 +190,7 @@
 .end method
 
 .method private assertTracksCreated()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "output",
@@ -218,19 +218,19 @@
 .end method
 
 .method private checkAdtsHeader(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 4
+    .locals 2
 
     .line 337
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 342
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     iget-object v0, v0, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -270,9 +270,9 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_30
+    if-eq v0, v1, :cond_1
 
-    if-eq p1, v0, :cond_30
+    if-eq p1, v0, :cond_1
 
     .line 349
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->resetSync()V
@@ -280,10 +280,10 @@
     return-void
 
     .line 353
-    :cond_30
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->foundFirstFrame:Z
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
@@ -299,14 +299,14 @@
     iput p1, p0, Landroidx/media3/extractor/ts/AdtsReader;->firstFrameSampleRateIndex:I
 
     .line 358
-    :cond_3d
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->setReadingAdtsHeaderState()V
 
     return-void
 .end method
 
 .method private checkSyncPositionValid(Landroidx/media3/common/util/ParsableByteArray;I)Z
-    .registers 11
+    .locals 8
 
     add-int/lit8 v0, p2, 0x1
 
@@ -326,12 +326,12 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     return v2
 
     .line 390
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     const/4 v3, 0x4
@@ -350,19 +350,19 @@
 
     const/4 v5, -0x1
 
-    if-eq v4, v5, :cond_26
+    if-eq v4, v5, :cond_1
 
-    if-eq v0, v4, :cond_26
+    if-eq v0, v4, :cond_1
 
     return v2
 
     .line 397
-    :cond_26
+    :cond_1
     iget v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->firstFrameSampleRateIndex:I
 
     const/4 v6, 0x2
 
-    if-eq v4, v5, :cond_4b
+    if-eq v4, v5, :cond_4
 
     .line 398
     iget-object v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -373,12 +373,12 @@
 
     move-result v4
 
-    if-nez v4, :cond_36
+    if-nez v4, :cond_2
 
     return v1
 
     .line 402
-    :cond_36
+    :cond_2
     iget-object v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v4, v6}, Landroidx/media3/common/util/ParsableBitArray;->setPosition(I)V
@@ -393,18 +393,18 @@
     .line 404
     iget v7, p0, Landroidx/media3/extractor/ts/AdtsReader;->firstFrameSampleRateIndex:I
 
-    if-eq v4, v7, :cond_46
+    if-eq v4, v7, :cond_3
 
     return v2
 
-    :cond_46
+    :cond_3
     add-int/lit8 v4, p2, 0x2
 
     .line 407
     invoke-virtual {p1, v4}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 411
-    :cond_4b
+    :cond_4
     iget-object v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     iget-object v4, v4, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -413,12 +413,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_56
+    if-nez v3, :cond_5
 
     return v1
 
     .line 415
-    :cond_56
+    :cond_5
     iget-object v3, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     const/16 v4, 0xe
@@ -436,12 +436,12 @@
 
     const/4 v4, 0x7
 
-    if-ge v3, v4, :cond_69
+    if-ge v3, v4, :cond_6
 
     return v2
 
     .line 423
-    :cond_69
+    :cond_6
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
 
     move-result-object v4
@@ -453,31 +453,31 @@
 
     add-int/2addr p2, v3
 
-    if-lt p2, p1, :cond_75
+    if-lt p2, p1, :cond_7
 
     return v1
 
     .line 430
-    :cond_75
+    :cond_7
     aget-byte v3, v4, p2
 
-    if-ne v3, v5, :cond_90
+    if-ne v3, v5, :cond_a
 
     add-int/2addr p2, v1
 
-    if-ne p2, p1, :cond_7d
+    if-ne p2, p1, :cond_8
 
     return v1
 
     .line 435
-    :cond_7d
+    :cond_8
     aget-byte p1, v4, p2
 
     invoke-direct {p0, v5, p1}, Landroidx/media3/extractor/ts/AdtsReader;->isAdtsSyncBytes(BB)Z
 
     move-result p1
 
-    if-eqz p1, :cond_8e
+    if-eqz p1, :cond_9
 
     aget-byte p1, v4, p2
 
@@ -485,66 +485,66 @@
 
     shr-int/lit8 p1, p1, 0x3
 
-    if-ne p1, v0, :cond_8e
+    if-ne p1, v0, :cond_9
 
-    goto :goto_8f
+    goto :goto_0
 
-    :cond_8e
+    :cond_9
     move v1, v2
 
-    :goto_8f
+    :goto_0
     return v1
 
-    :cond_90
+    :cond_a
     const/16 v0, 0x49
 
-    if-eq v3, v0, :cond_95
+    if-eq v3, v0, :cond_b
 
     return v2
 
-    :cond_95
+    :cond_b
     add-int/lit8 v0, p2, 0x1
 
-    if-ne v0, p1, :cond_9a
+    if-ne v0, p1, :cond_c
 
     return v1
 
     .line 445
-    :cond_9a
+    :cond_c
     aget-byte v0, v4, v0
 
     const/16 v3, 0x44
 
-    if-eq v0, v3, :cond_a1
+    if-eq v0, v3, :cond_d
 
     return v2
 
-    :cond_a1
+    :cond_d
     add-int/2addr p2, v6
 
-    if-ne p2, p1, :cond_a5
+    if-ne p2, p1, :cond_e
 
     return v1
 
     .line 452
-    :cond_a5
+    :cond_e
     aget-byte p1, v4, p2
 
     const/16 p2, 0x33
 
-    if-ne p1, p2, :cond_ac
+    if-ne p1, p2, :cond_f
 
-    goto :goto_ad
+    goto :goto_1
 
-    :cond_ac
+    :cond_f
     move v1, v2
 
-    :goto_ad
+    :goto_1
     return v1
 .end method
 
 .method private continueRead(Landroidx/media3/common/util/ParsableByteArray;[BI)Z
-    .registers 6
+    .locals 2
 
     .line 224
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -571,21 +571,21 @@
 
     iput p1, p0, Landroidx/media3/extractor/ts/AdtsReader;->bytesRead:I
 
-    if-ne p1, p3, :cond_1a
+    if-ne p1, p3, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_1b
+    :goto_0
     return p1
 .end method
 
 .method private findNextSample(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 9
+    .locals 7
 
     .line 284
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -602,8 +602,8 @@
 
     move-result v2
 
-    :goto_c
-    if-ge v1, v2, :cond_7c
+    :goto_0
+    if-ge v1, v2, :cond_9
 
     add-int/lit8 v3, v1, 0x1
 
@@ -617,7 +617,7 @@
 
     const/16 v5, 0x200
 
-    if-ne v4, v5, :cond_4b
+    if-ne v4, v5, :cond_3
 
     int-to-byte v4, v1
 
@@ -627,12 +627,12 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4b
+    if-eqz v4, :cond_3
 
     .line 290
     iget-boolean v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->foundFirstFrame:Z
 
-    if-nez v4, :cond_2e
+    if-nez v4, :cond_0
 
     add-int/lit8 v4, v3, -0x2
 
@@ -641,9 +641,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4b
+    if-eqz v4, :cond_3
 
-    :cond_2e
+    :cond_0
     and-int/lit8 v0, v1, 0x8
 
     shr-int/lit8 v0, v0, 0x3
@@ -655,72 +655,72 @@
 
     and-int/2addr v1, v0
 
-    if-nez v1, :cond_39
+    if-nez v1, :cond_1
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_39
+    :cond_1
     const/4 v0, 0x0
 
     .line 293
-    :goto_3a
+    :goto_1
     iput-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->hasCrc:Z
 
     .line 294
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->foundFirstFrame:Z
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_2
 
     .line 295
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->setCheckingAdtsHeaderState()V
 
-    goto :goto_47
+    goto :goto_2
 
     .line 297
-    :cond_44
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->setReadingAdtsHeaderState()V
 
     .line 299
-    :goto_47
+    :goto_2
     invoke-virtual {p1, v3}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-void
 
     .line 304
-    :cond_4b
+    :cond_3
     iget v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->matchState:I
 
     or-int/2addr v1, v4
 
     const/16 v6, 0x149
 
-    if-eq v1, v6, :cond_76
+    if-eq v1, v6, :cond_7
 
     const/16 v6, 0x1ff
 
-    if-eq v1, v6, :cond_73
+    if-eq v1, v6, :cond_6
 
     const/16 v5, 0x344
 
-    if-eq v1, v5, :cond_6e
+    if-eq v1, v5, :cond_5
 
     const/16 v5, 0x433
 
-    if-eq v1, v5, :cond_67
+    if-eq v1, v5, :cond_4
 
     const/16 v1, 0x100
 
-    if-eq v4, v1, :cond_7a
+    if-eq v4, v1, :cond_8
 
     .line 322
     iput v1, p0, Landroidx/media3/extractor/ts/AdtsReader;->matchState:I
 
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_7a
+    goto :goto_3
 
     .line 315
-    :cond_67
+    :cond_4
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->setReadingId3HeaderState()V
 
     .line 316
@@ -728,41 +728,41 @@
 
     return-void
 
-    :cond_6e
+    :cond_5
     const/16 v1, 0x400
 
     .line 312
     iput v1, p0, Landroidx/media3/extractor/ts/AdtsReader;->matchState:I
 
-    goto :goto_7a
+    goto :goto_3
 
     .line 306
-    :cond_73
+    :cond_6
     iput v5, p0, Landroidx/media3/extractor/ts/AdtsReader;->matchState:I
 
-    goto :goto_7a
+    goto :goto_3
 
-    :cond_76
+    :cond_7
     const/16 v1, 0x300
 
     .line 309
     iput v1, p0, Landroidx/media3/extractor/ts/AdtsReader;->matchState:I
 
-    :cond_7a
-    :goto_7a
+    :cond_8
+    :goto_3
     move v1, v3
 
-    goto :goto_c
+    goto :goto_0
 
     .line 328
-    :cond_7c
+    :cond_9
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return-void
 .end method
 
 .method private isAdtsSyncBytes(BB)Z
-    .registers 3
+    .locals 0
 
     and-int/lit16 p1, p1, 0xff
 
@@ -781,7 +781,7 @@
 .end method
 
 .method public static isAdtsSyncWord(I)Z
-    .registers 2
+    .locals 1
 
     const v0, 0xfff6
 
@@ -789,21 +789,21 @@
 
     const v0, 0xfff0
 
-    if-ne p0, v0, :cond_b
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_c
+    :goto_0
     return p0
 .end method
 
 .method private parseAdtsHeader()V
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -830,7 +830,7 @@
 
     const/4 v2, 0x2
 
-    if-nez v0, :cond_93
+    if-nez v0, :cond_1
 
     .line 485
     iget-object v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
@@ -843,7 +843,7 @@
 
     add-int/2addr v0, v3
 
-    if-eq v0, v2, :cond_31
+    if-eq v0, v2, :cond_0
 
     .line 496
     new-instance v4, Ljava/lang/StringBuilder;
@@ -873,7 +873,7 @@
     move v0, v2
 
     .line 500
-    :cond_31
+    :cond_0
     iget-object v4, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     invoke-virtual {v4, v1}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
@@ -987,10 +987,10 @@
     .line 522
     iput-boolean v3, p0, Landroidx/media3/extractor/ts/AdtsReader;->hasOutputFormat:Z
 
-    goto :goto_9a
+    goto :goto_0
 
     .line 524
-    :cond_93
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     const/16 v3, 0xa
@@ -998,7 +998,7 @@
     invoke-virtual {v0, v3}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 527
-    :goto_9a
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     const/4 v3, 0x4
@@ -1021,11 +1021,11 @@
     .line 529
     iget-boolean v1, p0, Landroidx/media3/extractor/ts/AdtsReader;->hasCrc:Z
 
-    if-eqz v1, :cond_b0
+    if-eqz v1, :cond_2
 
     add-int/lit8 v0, v0, -0x2
 
-    :cond_b0
+    :cond_2
     move v6, v0
 
     .line 533
@@ -1043,7 +1043,7 @@
 .end method
 
 .method private parseId3Header()V
-    .registers 10
+    .locals 9
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "id3Output"
@@ -1091,7 +1091,7 @@
 .end method
 
 .method private readSample(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 9
+    .locals 7
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "currentOutput"
@@ -1128,7 +1128,7 @@
     .line 542
     iget v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->sampleSize:I
 
-    if-ne p1, v0, :cond_42
+    if-ne p1, v0, :cond_1
 
     .line 544
     iget-wide v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->timeUs:J
@@ -1137,16 +1137,16 @@
 
     cmp-long p1, v0, v2
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_29
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 545
@@ -1176,12 +1176,12 @@
     .line 547
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->setFindingSampleState()V
 
-    :cond_42
+    :cond_1
     return-void
 .end method
 
 .method private resetSync()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1195,7 +1195,7 @@
 .end method
 
 .method private setCheckingAdtsHeaderState()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1211,7 +1211,7 @@
 .end method
 
 .method private setFindingSampleState()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1230,7 +1230,7 @@
 .end method
 
 .method private setReadingAdtsHeaderState()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -1246,7 +1246,7 @@
 .end method
 
 .method private setReadingId3HeaderState()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -1274,7 +1274,7 @@
 .end method
 
 .method private setReadingSampleState(Landroidx/media3/extractor/TrackOutput;JII)V
-    .registers 7
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -1297,7 +1297,7 @@
 .end method
 
 .method private tryRead(Landroidx/media3/common/util/ParsableByteArray;[BI)Z
-    .registers 6
+    .locals 2
 
     .line 463
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -1306,12 +1306,12 @@
 
     const/4 v1, 0x0
 
-    if-ge v0, p3, :cond_8
+    if-ge v0, p3, :cond_0
 
     return v1
 
     .line 466
-    :cond_8
+    :cond_0
     invoke-virtual {p1, p2, v1, p3}, Landroidx/media3/common/util/ParsableByteArray;->readBytes([BII)V
 
     const/4 p1, 0x1
@@ -1322,7 +1322,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1333,42 +1333,42 @@
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->assertTracksCreated()V
 
     .line 168
-    :cond_3
-    :goto_3
+    :cond_0
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_52
+    if-lez v0, :cond_7
 
     .line 169
     iget v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->state:I
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_6
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_4a
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_38
+    if-eq v0, v1, :cond_4
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_23
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_1
 
     .line 188
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/AdtsReader;->readSample(Landroidx/media3/common/util/ParsableByteArray;)V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 191
-    :cond_1d
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -1376,20 +1376,20 @@
     throw p1
 
     .line 182
-    :cond_23
+    :cond_2
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->hasCrc:Z
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_3
 
     const/4 v0, 0x7
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_3
     const/4 v0, 0x5
 
     .line 183
-    :goto_2a
+    :goto_1
     iget-object v1, p0, Landroidx/media3/extractor/ts/AdtsReader;->adtsScratch:Landroidx/media3/common/util/ParsableBitArray;
 
     iget-object v1, v1, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -1398,15 +1398,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
     .line 184
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->parseAdtsHeader()V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 174
-    :cond_38
+    :cond_4
     iget-object v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->id3HeaderBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -1419,31 +1419,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
     .line 175
     invoke-direct {p0}, Landroidx/media3/extractor/ts/AdtsReader;->parseId3Header()V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 179
-    :cond_4a
+    :cond_5
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/AdtsReader;->checkAdtsHeader(Landroidx/media3/common/util/ParsableByteArray;)V
 
-    goto :goto_3
+    goto :goto_0
 
     .line 171
-    :cond_4e
+    :cond_6
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/AdtsReader;->findNextSample(Landroidx/media3/common/util/ParsableByteArray;)V
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_52
+    :cond_7
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 5
+    .locals 2
 
     .line 143
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -1474,7 +1474,7 @@
     .line 147
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->exposeId3:Z
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_0
 
     .line 148
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -1521,22 +1521,22 @@
     .line 150
     invoke-interface {p1, p2}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 156
-    :cond_43
+    :cond_0
     new-instance p1, Landroidx/media3/extractor/DiscardingTrackOutput;
 
     invoke-direct {p1}, Landroidx/media3/extractor/DiscardingTrackOutput;-><init>()V
 
     iput-object p1, p0, Landroidx/media3/extractor/ts/AdtsReader;->id3Output:Landroidx/media3/extractor/TrackOutput;
 
-    :goto_4a
+    :goto_0
     return-void
 .end method
 
 .method public getSampleDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 206
     iget-wide v0, p0, Landroidx/media3/extractor/ts/AdtsReader;->sampleDurationUs:J
@@ -1545,13 +1545,13 @@
 .end method
 
 .method public packetFinished(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 4
+    .locals 0
 
     .line 162
     iput-wide p1, p0, Landroidx/media3/extractor/ts/AdtsReader;->timeUs:J
@@ -1560,7 +1560,7 @@
 .end method
 
 .method public seek()V
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 

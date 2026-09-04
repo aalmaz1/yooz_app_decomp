@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 632
     new-instance v0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EmptySet$1;
@@ -58,7 +58,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 630
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method static synthetic access$1000()Ljava/util/Iterator;
-    .registers 1
+    .locals 1
 
     .line 630
     sget-object v0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$EmptySet;->ITERATOR:Ljava/util/Iterator;
@@ -76,7 +76,7 @@
 .end method
 
 .method static iterable()Ljava/lang/Iterable;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getActiveNotifications(Landroid/app/NotificationManager;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +42,7 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     .line 1254
     new-instance p0, Ljava/util/ArrayList;
@@ -52,7 +52,7 @@
     return-object p0
 
     .line 1256
-    :cond_c
+    :cond_0
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
@@ -61,7 +61,7 @@
 .end method
 
 .method static getCurrentInterruptionFilter(Landroid/app/NotificationManager;)I
-    .registers 1
+    .locals 0
 
     .line 1262
     invoke-virtual {p0}, Landroid/app/NotificationManager;->getCurrentInterruptionFilter()I

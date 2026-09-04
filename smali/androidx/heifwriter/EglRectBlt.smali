@@ -25,14 +25,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
     new-array v0, v0, [F
 
     .line 39
-    fill-array-data v0, :array_10
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/heifwriter/EglRectBlt;->FULL_RECTANGLE_COORDS:[F
 
@@ -45,7 +45,7 @@
 
     return-void
 
-    :array_10
+    :array_0
     .array-data 4
         -0x40800000    # -1.0f
         -0x40800000    # -1.0f
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/heifwriter/Texture2dProgram;II)V
-    .registers 5
+    .locals 1
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,7 +91,7 @@
 .end method
 
 .method public static createFloatBuffer([F)Ljava/nio/FloatBuffer;
-    .registers 3
+    .locals 2
 
     .line 61
     array-length v0, p0
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public copyRect(I[FLandroid/graphics/Rect;)V
-    .registers 15
+    .locals 11
 
     .line 117
     invoke-virtual {p0, p3}, Landroidx/heifwriter/EglRectBlt;->setTexRect(Landroid/graphics/Rect;)V
@@ -162,7 +162,7 @@
 .end method
 
 .method public createTextureObject()I
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/heifwriter/EglRectBlt;->mProgram:Landroidx/heifwriter/Texture2dProgram;
@@ -175,7 +175,7 @@
 .end method
 
 .method public loadTexture(ILandroid/graphics/Bitmap;)V
-    .registers 4
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/heifwriter/EglRectBlt;->mProgram:Landroidx/heifwriter/Texture2dProgram;
@@ -186,30 +186,30 @@
 .end method
 
 .method public release(Z)V
-    .registers 3
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/heifwriter/EglRectBlt;->mProgram:Landroidx/heifwriter/Texture2dProgram;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     .line 93
     invoke-virtual {v0}, Landroidx/heifwriter/Texture2dProgram;->release()V
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     .line 95
     iput-object p1, p0, Landroidx/heifwriter/EglRectBlt;->mProgram:Landroidx/heifwriter/Texture2dProgram;
 
-    :cond_c
+    :cond_1
     return-void
 .end method
 
 .method setTexRect(Landroid/graphics/Rect;)V
-    .registers 7
+    .locals 5
 
     .line 126
     iget-object v0, p0, Landroidx/heifwriter/EglRectBlt;->mTexCoords:[F

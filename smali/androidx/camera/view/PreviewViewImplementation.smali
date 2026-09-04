@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/FrameLayout;Landroidx/camera/view/PreviewTransformation;)V
-    .registers 4
+    .locals 1
 
     .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,21 +45,21 @@
 
 # virtual methods
 .method getBitmap()Landroid/graphics/Bitmap;
-    .registers 6
+    .locals 5
 
     .line 117
     invoke-virtual {p0}, Landroidx/camera/view/PreviewViewImplementation;->getPreviewBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 121
-    :cond_8
+    :cond_0
     iget-object v1, p0, Landroidx/camera/view/PreviewViewImplementation;->mPreviewTransform:Landroidx/camera/view/PreviewTransformation;
 
     new-instance v2, Landroid/util/Size;
@@ -110,7 +110,7 @@
 .end method
 
 .method onSurfaceProvided()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -127,24 +127,24 @@
 .end method
 
 .method redrawPreview()V
-    .registers 6
+    .locals 5
 
     .line 83
     invoke-virtual {p0}, Landroidx/camera/view/PreviewViewImplementation;->getPreview()Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 87
     iget-boolean v1, p0, Landroidx/camera/view/PreviewViewImplementation;->mWasSurfaceProvided:Z
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 90
-    :cond_b
+    :cond_0
     iget-object v1, p0, Landroidx/camera/view/PreviewViewImplementation;->mPreviewTransform:Landroidx/camera/view/PreviewTransformation;
 
     new-instance v2, Landroid/util/Size;
@@ -173,13 +173,13 @@
     .line 90
     invoke-virtual {v1, v2, v3, v0}, Landroidx/camera/view/PreviewTransformation;->transformView(Landroid/util/Size;ILandroid/view/View;)V
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method setFrameUpdateListener(Ljava/util/concurrent/Executor;Landroidx/camera/view/PreviewView$OnFrameUpdateListener;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

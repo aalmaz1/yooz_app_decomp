@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public onRendererCapabilitiesChanged(Landroidx/media3/exoplayer/Renderer;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

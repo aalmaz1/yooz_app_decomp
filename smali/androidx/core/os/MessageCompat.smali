@@ -19,13 +19,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static isAsynchronous(Landroid/os/Message;)Z
-    .registers 1
+    .locals 0
 
     .line 100
     invoke-static {p0}, Landroidx/core/os/MessageCompat$Api22Impl;->isAsynchronous(Landroid/os/Message;)Z
@@ -45,7 +45,7 @@
 .end method
 
 .method public static setAsynchronous(Landroid/os/Message;Z)V
-    .registers 2
+    .locals 0
 
     .line 74
     invoke-static {p0, p1}, Landroidx/core/os/MessageCompat$Api22Impl;->setAsynchronous(Landroid/os/Message;Z)V

@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(JILandroid/graphics/Matrix;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 259
     iget v0, p0, Landroidx/camera/core/imagecapture/RgbaImageProxy$2;->val$rotationDegrees:I
@@ -58,7 +58,7 @@
 .end method
 
 .method public getSensorToBufferTransformMatrix()Landroid/graphics/Matrix;
-    .registers 3
+    .locals 2
 
     .line 265
     new-instance v0, Landroid/graphics/Matrix;
@@ -71,7 +71,7 @@
 .end method
 
 .method public getTagBundle()Landroidx/camera/core/impl/TagBundle;
-    .registers 3
+    .locals 2
 
     .line 248
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -84,7 +84,7 @@
 .end method
 
 .method public getTimestamp()J
-    .registers 3
+    .locals 2
 
     .line 254
     iget-wide v0, p0, Landroidx/camera/core/imagecapture/RgbaImageProxy$2;->val$timestamp:J
@@ -93,7 +93,7 @@
 .end method
 
 .method public populateExifData(Landroidx/camera/core/impl/utils/ExifData$Builder;)V
-    .registers 3
+    .locals 1
 
     .line 270
     new-instance p1, Ljava/lang/UnsupportedOperationException;

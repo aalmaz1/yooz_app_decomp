@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;I)V
-    .registers 4
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 .end method
 
 .method private static getCutoffTimeMs(J)J
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, 0x1e
 
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public hasReadFirstRtpPacket()Z
-    .registers 2
+    .locals 1
 
     .line 87
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstPacketRead:Z
@@ -133,7 +133,7 @@
 .end method
 
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 5
+    .locals 3
 
     .line 115
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->payloadReader:Landroidx/media3/exoplayer/rtsp/reader/RtpPayloadReader;
@@ -161,7 +161,7 @@
 .end method
 
 .method public preSeek()V
-    .registers 3
+    .locals 2
 
     .line 102
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->lock:Ljava/lang/Object;
@@ -171,7 +171,7 @@
     const/4 v1, 0x1
 
     .line 103
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->isSeekPending:Z
 
     .line 104
@@ -179,18 +179,18 @@
 
     return-void
 
-    :catchall_8
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_4 .. :try_end_a} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 15
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -219,17 +219,17 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_17
+    if-ne p1, p2, :cond_0
 
     return p2
 
-    :cond_17
-    if-nez p1, :cond_1a
+    :cond_0
+    if-nez p1, :cond_1
 
     return v1
 
     .line 134
-    :cond_1a
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->rtpPacketScratchBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -246,12 +246,12 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_2
 
     return v1
 
     .line 141
-    :cond_2d
+    :cond_2
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -273,24 +273,24 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_43
+    if-nez p1, :cond_3
 
     return v1
 
     .line 151
-    :cond_43
+    :cond_3
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstPacketRead:Z
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v0, :cond_6a
+    if-nez v0, :cond_6
 
     .line 154
     iget-wide v6, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstTimestamp:J
 
     cmp-long v0, v6, v2
 
-    if-nez v0, :cond_56
+    if-nez v0, :cond_4
 
     .line 155
     iget-wide v6, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->timestamp:J
@@ -298,10 +298,10 @@
     iput-wide v6, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstTimestamp:J
 
     .line 157
-    :cond_56
+    :cond_4
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstSequenceNumber:I
 
-    if-ne v0, p2, :cond_5e
+    if-ne v0, p2, :cond_5
 
     .line 158
     iget p2, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->sequenceNumber:I
@@ -309,7 +309,7 @@
     iput p2, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstSequenceNumber:I
 
     .line 160
-    :cond_5e
+    :cond_5
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->payloadReader:Landroidx/media3/exoplayer/rtsp/reader/RtpPayloadReader;
 
     iget-wide v6, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstTimestamp:J
@@ -324,29 +324,29 @@
     iput-boolean p2, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstPacketRead:Z
 
     .line 164
-    :cond_6a
+    :cond_6
     iget-object p2, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->lock:Ljava/lang/Object;
 
     monitor-enter p2
 
     .line 166
-    :try_start_6d
+    :try_start_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->isSeekPending:Z
 
-    if-eqz v0, :cond_92
+    if-eqz v0, :cond_7
 
     .line 167
     iget-wide v4, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->nextRtpTimestamp:J
 
     cmp-long p1, v4, v2
 
-    if-eqz p1, :cond_ae
+    if-eqz p1, :cond_8
 
     iget-wide v4, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->playbackStartTimeUs:J
 
     cmp-long p1, v4, v2
 
-    if-eqz p1, :cond_ae
+    if-eqz p1, :cond_8
 
     .line 168
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->reorderingQueue:Landroidx/media3/exoplayer/rtsp/RtpPacketReorderingQueue;
@@ -371,10 +371,10 @@
     .line 172
     iput-wide v2, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->playbackStartTimeUs:J
 
-    goto :goto_ae
+    goto :goto_0
 
     .line 177
-    :cond_92
+    :cond_7
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->rtpPacketDataBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     iget-object v2, p1, Landroidx/media3/exoplayer/rtsp/RtpPacket;->payloadData:[B
@@ -401,33 +401,33 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_92
+    if-nez p1, :cond_7
 
     .line 183
-    :cond_ae
-    :goto_ae
+    :cond_8
+    :goto_0
     monitor-exit p2
 
     return v1
 
-    :catchall_b0
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
-    :try_end_b2
-    .catchall {:try_start_6d .. :try_end_b2} :catchall_b0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 7
+    .locals 2
 
     .line 189
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->lock:Ljava/lang/Object;
@@ -435,10 +435,10 @@
     monitor-enter v0
 
     .line 190
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->isSeekPending:Z
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
@@ -446,7 +446,7 @@
     iput-boolean v1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->isSeekPending:Z
 
     .line 195
-    :cond_a
+    :cond_0
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->nextRtpTimestamp:J
 
     .line 196
@@ -457,18 +457,18 @@
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public setFirstSequenceNumber(I)V
-    .registers 2
+    .locals 0
 
     .line 82
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstSequenceNumber:I
@@ -477,7 +477,7 @@
 .end method
 
 .method public setFirstTimestamp(J)V
-    .registers 3
+    .locals 0
 
     .line 77
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/RtpExtractor;->firstTimestamp:J
@@ -486,7 +486,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 3
+    .locals 1
 
     .line 109
     new-instance p1, Ljava/lang/UnsupportedOperationException;

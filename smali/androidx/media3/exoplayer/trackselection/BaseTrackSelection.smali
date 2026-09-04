@@ -24,7 +24,7 @@
 
 # direct methods
 .method public varargs constructor <init>(Landroidx/media3/common/TrackGroup;[I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;[II)V
-    .registers 7
+    .locals 3
 
     .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,16 +45,16 @@
 
     const/4 v1, 0x0
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v1
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 74
@@ -82,10 +82,10 @@
     move p3, v1
 
     .line 79
-    :goto_1f
+    :goto_1
     array-length v0, p2
 
-    if-ge p3, v0, :cond_2f
+    if-ge p3, v0, :cond_1
 
     .line 80
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->formats:[Landroidx/media3/common/Format;
@@ -100,10 +100,10 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 83
-    :cond_2f
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->formats:[Landroidx/media3/common/Format;
 
     new-instance p3, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection$$ExternalSyntheticLambda0;
@@ -120,10 +120,10 @@
     iput-object p2, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
 
     .line 86
-    :goto_3f
+    :goto_2
     iget p2, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->length:I
 
-    if-ge v1, p2, :cond_52
+    if-ge v1, p2, :cond_2
 
     .line 87
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
@@ -140,10 +140,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3f
+    goto :goto_2
 
     .line 89
-    :cond_52
+    :cond_2
     new-array p1, p2, [J
 
     iput-object p1, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->excludeUntilTimes:[J
@@ -152,7 +152,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Landroidx/media3/common/Format;Landroidx/media3/common/Format;)I
-    .registers 2
+    .locals 0
 
     .line 83
     iget p1, p1, Landroidx/media3/common/Format;->bitrate:I
@@ -167,30 +167,30 @@
 
 # virtual methods
 .method public disable()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public enable()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_3
 
     .line 209
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -201,12 +201,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 212
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;
 
     .line 213
@@ -218,7 +218,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
 
@@ -228,23 +228,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_2
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_2
     move v0, v1
 
-    :goto_2a
+    :goto_0
     return v0
 
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public evaluateQueueSize(JLjava/util/List;)I
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -264,7 +264,7 @@
 .end method
 
 .method public excludeTrack(IJ)Z
-    .registers 14
+    .locals 10
 
     .line 174
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -281,43 +281,43 @@
     move v4, v3
 
     .line 176
-    :goto_a
+    :goto_0
     iget v5, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->length:I
 
     const/4 v6, 0x1
 
-    if-ge v4, v5, :cond_1f
+    if-ge v4, v5, :cond_1
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_1
 
-    if-eq v4, p1, :cond_1b
+    if-eq v4, p1, :cond_0
 
     .line 177
     invoke-virtual {p0, v4, v0, v1}, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->isTrackExcluded(IJ)Z
 
     move-result v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_0
 
     move v2, v6
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
+    :cond_0
     move v2, v3
 
-    :goto_1c
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1f
-    if-nez v2, :cond_22
+    :cond_1
+    if-nez v2, :cond_2
 
     return v3
 
     .line 182
-    :cond_22
+    :cond_2
     iget-object v7, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->excludeUntilTimes:[J
 
     aget-wide v8, v7, p1
@@ -342,7 +342,7 @@
 .end method
 
 .method public final getFormat(I)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->formats:[Landroidx/media3/common/Format;
@@ -353,7 +353,7 @@
 .end method
 
 .method public final getIndexInTrackGroup(I)I
-    .registers 3
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
@@ -364,7 +364,7 @@
 .end method
 
 .method public final getSelectedFormat()Landroidx/media3/common/Format;
-    .registers 3
+    .locals 2
 
     .line 144
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->formats:[Landroidx/media3/common/Format;
@@ -379,7 +379,7 @@
 .end method
 
 .method public final getSelectedIndexInTrackGroup()I
-    .registers 3
+    .locals 2
 
     .line 149
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
@@ -394,7 +394,7 @@
 .end method
 
 .method public final getTrackGroup()Landroidx/media3/common/TrackGroup;
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->group:Landroidx/media3/common/TrackGroup;
@@ -403,7 +403,7 @@
 .end method
 
 .method public final getType()I
-    .registers 2
+    .locals 1
 
     .line 96
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->type:I
@@ -412,12 +412,12 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 198
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->hashCode:I
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 199
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->group:Landroidx/media3/common/TrackGroup;
@@ -439,76 +439,76 @@
     iput v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->hashCode:I
 
     .line 201
-    :cond_15
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->hashCode:I
 
     return v0
 .end method
 
 .method public final indexOf(I)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 132
-    :goto_1
+    :goto_0
     iget v1, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->length:I
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_1
 
     .line 133
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
 
     aget v1, v1, v0
 
-    if-ne v1, p1, :cond_c
+    if-ne v1, p1, :cond_0
 
     return v0
 
-    :cond_c
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 p1, -0x1
 
     return p1
 .end method
 
 .method public final indexOf(Landroidx/media3/common/Format;)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 122
-    :goto_1
+    :goto_0
     iget v1, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->length:I
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_1
 
     .line 123
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->formats:[Landroidx/media3/common/Format;
 
     aget-object v1, v1, v0
 
-    if-ne v1, p1, :cond_c
+    if-ne v1, p1, :cond_0
 
     return v0
 
-    :cond_c
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 p1, -0x1
 
     return p1
 .end method
 
 .method public isTrackExcluded(IJ)Z
-    .registers 6
+    .locals 2
 
     .line 191
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->excludeUntilTimes:[J
@@ -517,21 +517,21 @@
 
     cmp-long p1, v0, p2
 
-    if-lez p1, :cond_a
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method public final length()I
-    .registers 2
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;->tracks:[I
@@ -542,7 +542,7 @@
 .end method
 
 .method public onPlaybackSpeed(F)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 541
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;Landroidx/media3/exoplayer/upstream/CmcdData$1;)V
-    .registers 3
+    .locals 0
 
     .line 429
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;-><init>(Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject$Builder;)V
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public populateCmcdDataMap(Lcom/google/common/collect/ArrayListMultimap;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -118,7 +118,7 @@
 
     const v2, -0x7fffffff
 
-    if-eq v1, v2, :cond_20
+    if-eq v1, v2, :cond_0
 
     .line 558
     new-instance v1, Ljava/lang/StringBuilder;
@@ -140,10 +140,10 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 560
-    :cond_20
+    :cond_0
     iget v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;->topBitrateKbps:I
 
-    if-eq v1, v2, :cond_38
+    if-eq v1, v2, :cond_1
 
     .line 561
     new-instance v1, Ljava/lang/StringBuilder;
@@ -165,14 +165,14 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 563
-    :cond_38
+    :cond_1
     iget-wide v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;->objectDurationMs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_2
 
     .line 564
     new-instance v1, Ljava/lang/StringBuilder;
@@ -194,14 +194,14 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 566
-    :cond_57
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;->objectType:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_73
+    if-nez v1, :cond_3
 
     .line 567
     new-instance v1, Ljava/lang/StringBuilder;
@@ -223,7 +223,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 569
-    :cond_73
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/upstream/CmcdData$CmcdObject;->customDataList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -233,13 +233,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_83
+    if-nez v1, :cond_4
 
     const-string v1, "CMCD-Object"
 
     .line 572
     invoke-virtual {p1, v1, v0}, Lcom/google/common/collect/ArrayListMultimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
 
-    :cond_83
+    :cond_4
     return-void
 .end method

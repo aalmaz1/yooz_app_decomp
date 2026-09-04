@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static getActiveRecordingConfiguration(Landroid/media/AudioRecord;)Landroid/media/AudioRecordingConfiguration;
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-virtual {p0}, Landroid/media/AudioRecord;->getActiveRecordingConfiguration()Landroid/media/AudioRecordingConfiguration;
@@ -25,7 +25,7 @@
 .end method
 
 .method public static isClientSilenced(Landroid/media/AudioRecordingConfiguration;)Z
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-virtual {p0}, Landroid/media/AudioRecordingConfiguration;->isClientSilenced()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method public static registerAudioRecordingCallback(Landroid/media/AudioRecord;Ljava/util/concurrent/Executor;Landroid/media/AudioManager$AudioRecordingCallback;)V
-    .registers 3
+    .locals 0
 
     .line 60
     invoke-virtual {p0, p1, p2}, Landroid/media/AudioRecord;->registerAudioRecordingCallback(Ljava/util/concurrent/Executor;Landroid/media/AudioManager$AudioRecordingCallback;)V
@@ -45,7 +45,7 @@
 .end method
 
 .method public static unregisterAudioRecordingCallback(Landroid/media/AudioRecord;Landroid/media/AudioManager$AudioRecordingCallback;)V
-    .registers 2
+    .locals 0
 
     .line 70
     invoke-virtual {p0, p1}, Landroid/media/AudioRecord;->unregisterAudioRecordingCallback(Landroid/media/AudioManager$AudioRecordingCallback;)V

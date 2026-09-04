@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 2
+    .locals 0
 
     .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$1;)V
-    .registers 3
+    .locals 0
 
     .line 279
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$PeekingInputReader;-><init>(Landroidx/media3/extractor/ExtractorInput;)V
@@ -46,7 +46,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$PeekingInputReader;)I
-    .registers 1
+    .locals 0
 
     .line 279
     iget p0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$PeekingInputReader;->totalPeekedBytes:I
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public getLength()J
-    .registers 3
+    .locals 2
 
     .line 302
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$PeekingInputReader;->extractorInput:Landroidx/media3/extractor/ExtractorInput;
@@ -70,7 +70,7 @@
 .end method
 
 .method public getPosition()J
-    .registers 3
+    .locals 2
 
     .line 297
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/MediaParserHlsMediaChunkExtractor$PeekingInputReader;->extractorInput:Landroidx/media3/extractor/ExtractorInput;
@@ -83,7 +83,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -108,7 +108,7 @@
 .end method
 
 .method public seekToPosition(J)V
-    .registers 3
+    .locals 0
 
     .line 308
     new-instance p1, Ljava/lang/UnsupportedOperationException;

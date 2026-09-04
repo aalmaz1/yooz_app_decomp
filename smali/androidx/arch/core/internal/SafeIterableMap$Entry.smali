@@ -68,7 +68,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)V"
@@ -90,26 +90,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 413
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 416
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     .line 417
@@ -121,7 +121,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
@@ -131,19 +131,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     move v0, v2
 
-    :goto_22
+    :goto_0
     return v0
 .end method
 
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -157,7 +157,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -171,7 +171,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 422
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
@@ -192,7 +192,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)TV;"
@@ -210,7 +210,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 404
     new-instance v0, Ljava/lang/StringBuilder;

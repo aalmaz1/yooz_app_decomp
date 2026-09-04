@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/extractor/TrackOutput;)V
-    .registers 3
+    .locals 0
 
     .line 508
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/extractor/TrackOutput;Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$1;)V
-    .registers 4
+    .locals 0
 
     .line 504
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$ExtractorOutputImpl;-><init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/extractor/TrackOutput;)V
@@ -48,7 +48,7 @@
 .end method
 
 .method static synthetic lambda$endTracks$0(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
-    .registers 1
+    .locals 0
 
     .line 519
     invoke-static {p0}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$500(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public endTracks()V
-    .registers 4
+    .locals 3
 
     .line 519
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -80,13 +80,13 @@
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 3
+    .locals 0
 
     .line 514
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$ExtractorOutputImpl;->trackOutput:Landroidx/media3/extractor/TrackOutput;

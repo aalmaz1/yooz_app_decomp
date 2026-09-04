@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/TextureViewImplementation$1;Landroid/graphics/SurfaceTexture;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 181
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -67,7 +67,7 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/core/SurfaceRequest$Result;)V
-    .registers 3
+    .locals 1
 
     .line 166
     invoke-virtual {p1}, Landroidx/camera/core/SurfaceRequest$Result;->getResultCode()I
@@ -76,16 +76,16 @@
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_9
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_a
+    :goto_0
     const-string v0, "Unexpected result from SurfaceRequest. Surface was provided twice."
 
     invoke-static {p1, v0}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -109,7 +109,7 @@
 
     iget-object p1, p1, Landroidx/camera/view/TextureViewImplementation;->mDetachedSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_1
 
     .line 175
     iget-object p1, p0, Landroidx/camera/view/TextureViewImplementation$1$1;->this$1:Landroidx/camera/view/TextureViewImplementation$1;
@@ -120,12 +120,12 @@
 
     iput-object v0, p1, Landroidx/camera/view/TextureViewImplementation;->mDetachedSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    :cond_2a
+    :cond_1
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 163
     check-cast p1, Landroidx/camera/core/SurfaceRequest$Result;

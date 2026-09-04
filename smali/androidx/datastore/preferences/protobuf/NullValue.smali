@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 24
     new-instance v0, Landroidx/datastore/preferences/protobuf/NullValue;
@@ -97,7 +97,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -114,23 +114,23 @@
 .end method
 
 .method public static forNumber(I)Landroidx/datastore/preferences/protobuf/NullValue;
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 59
-    :cond_4
+    :cond_0
     sget-object p0, Landroidx/datastore/preferences/protobuf/NullValue;->NULL_VALUE:Landroidx/datastore/preferences/protobuf/NullValue;
 
     return-object p0
 .end method
 
 .method public static internalGetValueMap()Landroidx/datastore/preferences/protobuf/Internal$EnumLiteMap;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -147,7 +147,7 @@
 .end method
 
 .method public static internalGetVerifier()Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;
-    .registers 1
+    .locals 1
 
     .line 79
     sget-object v0, Landroidx/datastore/preferences/protobuf/NullValue$NullValueVerifier;->INSTANCE:Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;
@@ -156,7 +156,7 @@
 .end method
 
 .method public static valueOf(I)Landroidx/datastore/preferences/protobuf/NullValue;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -169,7 +169,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/NullValue;
-    .registers 2
+    .locals 1
 
     .line 15
     const-class v0, Landroidx/datastore/preferences/protobuf/NullValue;
@@ -184,7 +184,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/NullValue;
-    .registers 1
+    .locals 1
 
     .line 15
     sget-object v0, Landroidx/datastore/preferences/protobuf/NullValue;->$VALUES:[Landroidx/datastore/preferences/protobuf/NullValue;
@@ -201,12 +201,12 @@
 
 # virtual methods
 .method public final getNumber()I
-    .registers 3
+    .locals 2
 
     .line 40
     sget-object v0, Landroidx/datastore/preferences/protobuf/NullValue;->UNRECOGNIZED:Landroidx/datastore/preferences/protobuf/NullValue;
 
-    if-eq p0, v0, :cond_7
+    if-eq p0, v0, :cond_0
 
     .line 44
     iget v0, p0, Landroidx/datastore/preferences/protobuf/NullValue;->value:I
@@ -214,7 +214,7 @@
     return v0
 
     .line 41
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Can\'t get the number of an unknown enum value."

@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,7 +21,7 @@
 .end method
 
 .method public static get(Landroid/content/Context;)Landroidx/appcompat/view/ActionBarPolicy;
-    .registers 2
+    .locals 1
 
     .line 43
     new-instance v0, Landroidx/appcompat/view/ActionBarPolicy;
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public enableHomeButtonByDefault()Z
-    .registers 3
+    .locals 2
 
     .line 110
     iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -47,21 +47,21 @@
 
     const/16 v1, 0xe
 
-    if-ge v0, v1, :cond_e
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public getEmbeddedMenuWidthLimit()I
-    .registers 2
+    .locals 1
 
     .line 86
     iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -82,7 +82,7 @@
 .end method
 
 .method public getMaxActionButtons()I
-    .registers 5
+    .locals 4
 
     .line 56
     iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -106,74 +106,74 @@
 
     const/16 v3, 0x258
 
-    if-gt v0, v3, :cond_3e
+    if-gt v0, v3, :cond_6
 
-    if-gt v1, v3, :cond_3e
+    if-gt v1, v3, :cond_6
 
     const/16 v0, 0x2d0
 
     const/16 v3, 0x3c0
 
-    if-le v1, v3, :cond_1e
+    if-le v1, v3, :cond_0
 
-    if-gt v2, v0, :cond_3e
+    if-gt v2, v0, :cond_6
 
-    :cond_1e
-    if-le v1, v0, :cond_23
+    :cond_0
+    if-le v1, v0, :cond_1
 
-    if-le v2, v3, :cond_23
+    if-le v2, v3, :cond_1
 
-    goto :goto_3e
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     const/16 v0, 0x1f4
 
-    if-ge v1, v0, :cond_3c
+    if-ge v1, v0, :cond_5
 
     const/16 v0, 0x1e0
 
     const/16 v3, 0x280
 
-    if-le v1, v3, :cond_2f
+    if-le v1, v3, :cond_2
 
-    if-gt v2, v0, :cond_3c
+    if-gt v2, v0, :cond_5
 
-    :cond_2f
-    if-le v1, v0, :cond_34
+    :cond_2
+    if-le v1, v0, :cond_3
 
-    if-le v2, v3, :cond_34
+    if-le v2, v3, :cond_3
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_34
+    :cond_3
     const/16 v0, 0x168
 
-    if-lt v1, v0, :cond_3a
+    if-lt v1, v0, :cond_4
 
     const/4 v0, 0x3
 
     return v0
 
-    :cond_3a
+    :cond_4
     const/4 v0, 0x2
 
     return v0
 
-    :cond_3c
-    :goto_3c
+    :cond_5
+    :goto_0
     const/4 v0, 0x4
 
     return v0
 
-    :cond_3e
-    :goto_3e
+    :cond_6
+    :goto_1
     const/4 v0, 0x5
 
     return v0
 .end method
 
 .method public getStackedTabMaxWidth()I
-    .registers 3
+    .locals 2
 
     .line 115
     iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -192,7 +192,7 @@
 .end method
 
 .method public getTabContainerHeight()I
-    .registers 6
+    .locals 5
 
     .line 94
     iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -228,7 +228,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_28
+    if-nez v3, :cond_0
 
     .line 100
     sget v3, Landroidx/appcompat/R$dimen;->abc_action_bar_stacked_max_height:I
@@ -244,14 +244,14 @@
     move-result v1
 
     .line 103
-    :cond_28
+    :cond_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     return v1
 .end method
 
 .method public hasEmbeddedTabs()Z
-    .registers 3
+    .locals 2
 
     .line 90
     iget-object v0, p0, Landroidx/appcompat/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -270,7 +270,7 @@
 .end method
 
 .method public showsOverflowMenuButton()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

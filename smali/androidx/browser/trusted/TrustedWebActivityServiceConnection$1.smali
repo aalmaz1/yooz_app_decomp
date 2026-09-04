@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/trusted/TrustedWebActivityCallback;)V
-    .registers 2
+    .locals 0
 
     .line 317
     iput-object p1, p0, Landroidx/browser/trusted/TrustedWebActivityServiceConnection$1;->val$callback:Landroidx/browser/trusted/TrustedWebActivityCallback;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onExtraCallback(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

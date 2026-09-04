@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "CodedOutputStream was writing to a flat byte array and ran out of space."
 
@@ -33,7 +33,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 958
     new-instance v0, Ljava/lang/StringBuilder;
@@ -56,7 +56,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 2
 
     .line 966
     new-instance v0, Ljava/lang/StringBuilder;
@@ -79,7 +79,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "CodedOutputStream was writing to a flat byte array and ran out of space."
 

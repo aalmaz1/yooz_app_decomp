@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/media/MediaCodec$CryptoInfo;)V
-    .registers 3
+    .locals 1
 
     .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/media/MediaCodec$CryptoInfo;Landroidx/media3/decoder/CryptoInfo$1;)V
-    .registers 3
+    .locals 0
 
     .line 166
     invoke-direct {p0, p1}, Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;-><init>(Landroid/media/MediaCodec$CryptoInfo;)V
@@ -52,7 +52,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;II)V
-    .registers 3
+    .locals 0
 
     .line 166
     invoke-direct {p0, p1, p2}, Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;->set(II)V
@@ -61,7 +61,7 @@
 .end method
 
 .method private set(II)V
-    .registers 4
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/media3/decoder/CryptoInfo$PatternHolderV24;->pattern:Landroid/media/MediaCodec$CryptoInfo$Pattern;

@@ -47,7 +47,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/activity/SystemBarStyle$Companion;-><init>()V
 
@@ -64,11 +64,11 @@
 .end method
 
 .method public static synthetic auto$default(Landroidx/activity/SystemBarStyle$Companion;IILkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/activity/SystemBarStyle;
-    .registers 6
+    .locals 0
 
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_0
 
     .line 135
     sget-object p3, Landroidx/activity/SystemBarStyle$Companion$auto$1;->INSTANCE:Landroidx/activity/SystemBarStyle$Companion$auto$1;
@@ -76,7 +76,7 @@
     check-cast p3, Lkotlin/jvm/functions/Function1;
 
     .line 132
-    :cond_8
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/activity/SystemBarStyle$Companion;->auto(IILkotlin/jvm/functions/Function1;)Landroidx/activity/SystemBarStyle;
 
     move-result-object p0
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final auto(II)Landroidx/activity/SystemBarStyle;
-    .registers 9
+    .locals 6
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -111,7 +111,7 @@
 .end method
 
 .method public final auto(IILkotlin/jvm/functions/Function1;)Landroidx/activity/SystemBarStyle;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -152,7 +152,7 @@
 .end method
 
 .method public final dark(I)Landroidx/activity/SystemBarStyle;
-    .registers 9
+    .locals 7
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public final light(II)Landroidx/activity/SystemBarStyle;
-    .registers 10
+    .locals 7
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 

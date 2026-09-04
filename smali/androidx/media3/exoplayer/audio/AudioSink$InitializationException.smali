@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(IIIILandroidx/media3/common/Format;ZLjava/lang/Exception;)V
-    .registers 10
+    .locals 2
 
     .line 258
     new-instance v0, Ljava/lang/StringBuilder;
@@ -75,17 +75,17 @@
 
     move-result-object p2
 
-    if-eqz p6, :cond_36
+    if-eqz p6, :cond_0
 
     const-string p3, " (recoverable)"
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_36
+    :cond_0
     const-string p3, ""
 
     .line 265
-    :goto_38
+    :goto_0
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2

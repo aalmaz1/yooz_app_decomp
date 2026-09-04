@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/core/util/Consumer;Landroidx/camera/video/Recorder$RecordingRecord;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -53,32 +53,32 @@
 
 # virtual methods
 .method public onEncodeError(Landroidx/camera/video/internal/encoder/EncodeException;)V
-    .registers 3
+    .locals 1
 
     .line 1782
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mAudioErrorCause:Ljava/lang/Throwable;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 1783
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->val$audioErrorConsumer:Landroidx/core/util/Consumer;
 
     invoke-interface {v0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onEncodeStart()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onEncodeStop()V
-    .registers 3
+    .locals 2
 
     .line 1776
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -91,7 +91,7 @@
 .end method
 
 .method public onEncodedData(Landroidx/camera/video/internal/encoder/EncodedData;)V
-    .registers 5
+    .locals 3
 
     .line 1790
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;
@@ -100,14 +100,14 @@
 
     sget-object v1, Landroidx/camera/video/Recorder$AudioState;->DISABLED:Landroidx/camera/video/Recorder$AudioState;
 
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_5
 
     .line 1798
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mMediaMuxer:Landroid/media/MediaMuxer;
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_2
 
     .line 1799
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;
@@ -116,7 +116,7 @@
 
     const-string v1, "Recorder"
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_1
 
     .line 1806
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;
@@ -134,7 +134,7 @@
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mPendingFirstVideoData:Landroidx/camera/video/internal/encoder/EncodedData;
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_0
 
     const-string v0, "Received audio data. Starting muxer..."
 
@@ -148,72 +148,72 @@
 
     invoke-virtual {v0, v1}, Landroidx/camera/video/Recorder;->setupAndStartMediaMuxer(Landroidx/camera/video/Recorder$RecordingRecord;)V
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_35
+    :cond_0
     const-string v0, "Cached audio data while we wait for video keyframe before starting muxer."
 
     .line 1814
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3b
+    :cond_1
     const-string v0, "Drop audio data since recording is stopping."
 
     .line 1819
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1822
-    :goto_40
+    :goto_0
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
 
-    goto :goto_50
+    goto :goto_1
 
     .line 1825
-    :cond_44
-    :try_start_44
+    :cond_2
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v1, p0, Landroidx/camera/video/Recorder$6;->val$recordingToStart:Landroidx/camera/video/Recorder$RecordingRecord;
 
     invoke-virtual {v0, p1, v1}, Landroidx/camera/video/Recorder;->writeAudioData(Landroidx/camera/video/internal/encoder/EncodedData;Landroidx/camera/video/Recorder$RecordingRecord;)V
-    :try_end_4b
-    .catchall {:try_start_44 .. :try_end_4b} :catchall_51
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p1, :cond_50
+    if-eqz p1, :cond_3
 
     .line 1826
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
 
-    :cond_50
-    :goto_50
+    :cond_3
+    :goto_1
     return-void
 
-    :catchall_51
+    :catchall_0
     move-exception v0
 
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_4
 
     .line 1824
-    :try_start_54
+    :try_start_1
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
-    :try_end_57
-    .catchall {:try_start_54 .. :try_end_57} :catchall_58
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_5c
+    goto :goto_2
 
-    :catchall_58
+    :catchall_1
     move-exception p1
 
     invoke-virtual {v0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_5c
-    :goto_5c
+    :cond_4
+    :goto_2
     throw v0
 
     .line 1791
-    :cond_5d
+    :cond_5
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
 
     .line 1792
@@ -227,7 +227,7 @@
 .end method
 
 .method public onOutputConfigUpdate(Landroidx/camera/video/internal/encoder/OutputConfig;)V
-    .registers 3
+    .locals 1
 
     .line 1833
     iget-object v0, p0, Landroidx/camera/video/Recorder$6;->this$0:Landroidx/camera/video/Recorder;

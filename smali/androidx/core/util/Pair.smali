@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TF;TS;)V"
@@ -56,7 +56,7 @@
 .end method
 
 .method public static create(Ljava/lang/Object;Ljava/lang/Object;)Landroidx/core/util/Pair;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<A:",
@@ -80,19 +80,19 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
     .line 52
     instance-of v0, p1, Landroidx/core/util/Pair;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 55
-    :cond_6
+    :cond_0
     check-cast p1, Landroidx/core/util/Pair;
 
     .line 56
@@ -104,7 +104,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     iget-object p1, p1, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
 
@@ -114,53 +114,53 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_1d
+    :cond_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 66
     iget-object v0, p0, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_b
+    :goto_0
     iget-object v2, p0, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_1
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_10
+    :cond_1
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_14
+    :goto_1
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 72
     new-instance v0, Ljava/lang/StringBuilder;

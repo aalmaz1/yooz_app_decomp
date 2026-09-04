@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/core/resolutionselector/ResolutionSelector;)V
-    .registers 3
+    .locals 1
 
     .line 202
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method public static fromResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
-    .registers 2
+    .locals 1
 
     .line 216
     new-instance v0, Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
@@ -121,7 +121,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/resolutionselector/ResolutionSelector;
-    .registers 6
+    .locals 5
 
     .line 273
     new-instance v0, Landroidx/camera/core/resolutionselector/ResolutionSelector;
@@ -140,7 +140,7 @@
 .end method
 
 .method public setAllowedResolutionMode(I)Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
-    .registers 2
+    .locals 0
 
     .line 263
     iput p1, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;->mAllowedResolutionMode:I
@@ -149,7 +149,7 @@
 .end method
 
 .method public setAspectRatioStrategy(Landroidx/camera/core/resolutionselector/AspectRatioStrategy;)Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
-    .registers 2
+    .locals 0
 
     .line 229
     iput-object p1, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;->mAspectRatioStrategy:Landroidx/camera/core/resolutionselector/AspectRatioStrategy;
@@ -158,7 +158,7 @@
 .end method
 
 .method public setResolutionFilter(Landroidx/camera/core/resolutionselector/ResolutionFilter;)Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
-    .registers 2
+    .locals 0
 
     .line 251
     iput-object p1, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;->mResolutionFilter:Landroidx/camera/core/resolutionselector/ResolutionFilter;
@@ -167,7 +167,7 @@
 .end method
 
 .method public setResolutionStrategy(Landroidx/camera/core/resolutionselector/ResolutionStrategy;)Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;
-    .registers 2
+    .locals 0
 
     .line 240
     iput-object p1, p0, Landroidx/camera/core/resolutionselector/ResolutionSelector$Builder;->mResolutionStrategy:Landroidx/camera/core/resolutionselector/ResolutionStrategy;

@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Landroid/util/FloatProperty;)V
-    .registers 3
+    .locals 0
 
     .line 58
     iput-object p2, p0, Landroidx/dynamicanimation/animation/FloatPropertyCompat$1;->val$property:Landroid/util/FloatProperty;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public getValue(Ljava/lang/Object;)F
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)F"
@@ -64,7 +64,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;F)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;F)V"

@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public getCaptureType()Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
-    .registers 2
+    .locals 1
 
     .line 186
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;->METERING_REPEATING:Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
@@ -69,7 +69,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 180
     iget-object v0, p0, Landroidx/camera/camera2/internal/MeteringRepeatingSession$MeteringRepeatingConfig;->mConfig:Landroidx/camera/core/impl/Config;

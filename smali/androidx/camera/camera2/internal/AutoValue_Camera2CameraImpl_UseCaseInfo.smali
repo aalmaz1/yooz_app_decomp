@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Class;Landroidx/camera/core/impl/SessionConfig;Landroidx/camera/core/impl/UseCaseConfig;Landroid/util/Size;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,22 +49,22 @@
     .line 29
     invoke-direct {p0}, Landroidx/camera/camera2/internal/Camera2CameraImpl$UseCaseInfo;-><init>()V
 
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_3
 
     .line 33
     iput-object p1, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseId:Ljava/lang/String;
 
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_2
 
     .line 37
     iput-object p2, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseType:Ljava/lang/Class;
 
-    if-eqz p3, :cond_1e
+    if-eqz p3, :cond_1
 
     .line 41
     iput-object p3, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->sessionConfig:Landroidx/camera/core/impl/SessionConfig;
 
-    if-eqz p4, :cond_16
+    if-eqz p4, :cond_0
 
     .line 45
     iput-object p4, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseConfig:Landroidx/camera/core/impl/UseCaseConfig;
@@ -75,7 +75,7 @@
     return-void
 
     .line 43
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null useCaseConfig"
@@ -85,7 +85,7 @@
     throw p1
 
     .line 39
-    :cond_1e
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null sessionConfig"
@@ -95,7 +95,7 @@
     throw p1
 
     .line 35
-    :cond_26
+    :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null useCaseType"
@@ -105,7 +105,7 @@
     throw p1
 
     .line 31
-    :cond_2e
+    :cond_3
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null useCaseId"
@@ -118,21 +118,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 95
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/camera2/internal/Camera2CameraImpl$UseCaseInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_3
 
     .line 96
     check-cast p1, Landroidx/camera/camera2/internal/Camera2CameraImpl$UseCaseInfo;
@@ -148,7 +148,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseType:Ljava/lang/Class;
 
@@ -161,7 +161,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->sessionConfig:Landroidx/camera/core/impl/SessionConfig;
 
@@ -174,7 +174,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseConfig:Landroidx/camera/core/impl/UseCaseConfig;
 
@@ -187,22 +187,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->surfaceResolution:Landroid/util/Size;
 
-    if-nez v1, :cond_46
+    if-nez v1, :cond_1
 
     .line 101
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$UseCaseInfo;->getSurfaceResolution()Landroid/util/Size;
 
     move-result-object p1
 
-    if-nez p1, :cond_51
+    if-nez p1, :cond_2
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_46
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl$UseCaseInfo;->getSurfaceResolution()Landroid/util/Size;
 
     move-result-object p1
@@ -211,22 +211,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_2
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_51
+    :cond_2
     move v0, v2
 
-    :goto_52
+    :goto_0
     return v0
 
-    :cond_53
+    :cond_3
     return v2
 .end method
 
 .method getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 2
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->sessionConfig:Landroidx/camera/core/impl/SessionConfig;
@@ -235,7 +235,7 @@
 .end method
 
 .method getSurfaceResolution()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->surfaceResolution:Landroid/util/Size;
@@ -244,7 +244,7 @@
 .end method
 
 .method getUseCaseConfig()Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -260,7 +260,7 @@
 .end method
 
 .method getUseCaseId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseId:Ljava/lang/String;
@@ -269,7 +269,7 @@
 .end method
 
 .method getUseCaseType()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -285,7 +285,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 110
     iget-object v0, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->useCaseId:Ljava/lang/String;
@@ -336,25 +336,25 @@
     .line 118
     iget-object v1, p0, Landroidx/camera/camera2/internal/AutoValue_Camera2CameraImpl_UseCaseInfo;->surfaceResolution:Landroid/util/Size;
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     invoke-virtual {v1}, Landroid/util/Size;->hashCode()I
 
     move-result v1
 
-    :goto_2d
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 81
     new-instance v0, Ljava/lang/StringBuilder;

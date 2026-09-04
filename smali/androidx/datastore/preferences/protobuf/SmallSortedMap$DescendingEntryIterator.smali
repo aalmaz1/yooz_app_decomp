@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
-    .registers 2
+    .locals 0
 
     .line 589
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -66,7 +66,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;Landroidx/datastore/preferences/protobuf/SmallSortedMap$1;)V
-    .registers 3
+    .locals 0
 
     .line 589
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;-><init>(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)V
@@ -75,7 +75,7 @@
 .end method
 
 .method private getOverflowIterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -88,7 +88,7 @@
     .line 618
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->lazyOverflowIterator:Ljava/util/Iterator;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 619
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
@@ -108,7 +108,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->lazyOverflowIterator:Ljava/util/Iterator;
 
     .line 621
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->lazyOverflowIterator:Ljava/util/Iterator;
 
     return-object v0
@@ -117,12 +117,12 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 596
     iget v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->pos:I
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
@@ -134,9 +134,9 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_1a
+    if-le v0, v1, :cond_1
 
-    :cond_10
+    :cond_0
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->getOverflowIterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -145,22 +145,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
-    :cond_1a
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 589
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->next()Ljava/util/Map$Entry;
@@ -171,7 +171,7 @@
 .end method
 
 .method public next()Ljava/util/Map$Entry;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -189,7 +189,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 602
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->getOverflowIterator()Ljava/util/Iterator;
@@ -205,7 +205,7 @@
     return-object v0
 
     .line 604
-    :cond_15
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/SmallSortedMap$DescendingEntryIterator;->this$0:Landroidx/datastore/preferences/protobuf/SmallSortedMap;
 
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/SmallSortedMap;->access$600(Landroidx/datastore/preferences/protobuf/SmallSortedMap;)Ljava/util/List;
@@ -228,7 +228,7 @@
 .end method
 
 .method public remove()V
-    .registers 2
+    .locals 1
 
     .line 609
     new-instance v0, Ljava/lang/UnsupportedOperationException;

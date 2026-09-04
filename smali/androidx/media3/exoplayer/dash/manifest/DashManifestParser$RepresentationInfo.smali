@@ -76,7 +76,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/List;Ljava/util/List;J)V
-    .registers 11
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

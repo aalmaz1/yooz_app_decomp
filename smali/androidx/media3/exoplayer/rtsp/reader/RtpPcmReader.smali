@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 24
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -69,14 +69,14 @@
 
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_30
+    if-eq v2, v3, :cond_0
 
     .line 71
     invoke-static {v2}, Landroidx/media3/exoplayer/rtsp/RtpPacket;->getNextSequenceNumber(I)I
 
     move-result v2
 
-    if-eq v1, v2, :cond_30
+    if-eq v1, v2, :cond_0
 
     const/4 v3, 0x2
 
@@ -112,7 +112,7 @@
     invoke-static {v3, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 81
-    :cond_30
+    :cond_0
     iget-wide v4, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpPcmReader;->startTimeOffsetUs:J
 
     iget-wide v8, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpPcmReader;->firstReceivedTimestamp:J
@@ -158,7 +158,7 @@
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -180,7 +180,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 4
+    .locals 0
 
     .line 63
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpPcmReader;->firstReceivedTimestamp:J
@@ -189,7 +189,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 95
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpPcmReader;->firstReceivedTimestamp:J

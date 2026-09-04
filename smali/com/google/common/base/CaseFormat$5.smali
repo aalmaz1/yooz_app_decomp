@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;)V
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method convert(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -68,7 +68,7 @@
     .line 102
     sget-object v0, Lcom/google/common/base/CaseFormat$5;->LOWER_HYPHEN:Lcom/google/common/base/CaseFormat;
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     const/16 p1, 0x5f
 
@@ -86,10 +86,10 @@
     return-object p1
 
     .line 105
-    :cond_11
+    :cond_0
     sget-object v0, Lcom/google/common/base/CaseFormat$5;->LOWER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
 
-    if-ne p1, v0, :cond_1a
+    if-ne p1, v0, :cond_1
 
     .line 106
     invoke-static {p2}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -99,7 +99,7 @@
     return-object p1
 
     .line 108
-    :cond_1a
+    :cond_1
     invoke-super {p0, p1, p2}, Lcom/google/common/base/CaseFormat;->convert(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -108,7 +108,7 @@
 .end method
 
 .method normalizeWord(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

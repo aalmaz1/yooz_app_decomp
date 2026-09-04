@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroid/support/customtabs/IPostMessageService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 105
     sget-object v0, Landroid/support/customtabs/IPostMessageService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
@@ -55,7 +55,7 @@
 .end method
 
 .method public onMessageChannelReady(Landroid/support/customtabs/ICustomTabsCallback;Landroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -73,7 +73,7 @@
     move-result-object v1
 
     .line 112
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/IPostMessageService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -95,8 +95,8 @@
 
     .line 116
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_1d
-    .catchall {:try_start_8 .. :try_end_1d} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 119
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -106,7 +106,7 @@
 
     return-void
 
-    :catchall_24
+    :catchall_0
     move-exception p1
 
     .line 119
@@ -120,7 +120,7 @@
 .end method
 
 .method public onPostMessage(Landroid/support/customtabs/ICustomTabsCallback;Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -138,7 +138,7 @@
     move-result-object v1
 
     .line 128
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroid/support/customtabs/IPostMessageService$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -163,8 +163,8 @@
 
     .line 133
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_20
-    .catchall {:try_start_8 .. :try_end_20} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 136
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -174,7 +174,7 @@
 
     return-void
 
-    :catchall_27
+    :catchall_0
     move-exception p1
 
     .line 136

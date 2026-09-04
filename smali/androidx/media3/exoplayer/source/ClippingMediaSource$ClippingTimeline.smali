@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Timeline;JJ)V
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/source/ClippingMediaSource$IllegalClippingException;
@@ -45,7 +45,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_7d
+    if-ne v0, v2, :cond_9
 
     .line 315
     new-instance v0, Landroidx/media3/common/Timeline$Window;
@@ -66,73 +66,73 @@
     .line 317
     iget-boolean v0, p1, Landroidx/media3/common/Timeline$Window;->isPlaceholder:Z
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_1
 
     cmp-long v0, p2, v3
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p1, Landroidx/media3/common/Timeline$Window;->isSeekable:Z
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 318
-    :cond_27
+    :cond_0
     new-instance p1, Landroidx/media3/exoplayer/source/ClippingMediaSource$IllegalClippingException;
 
     invoke-direct {p1, v2}, Landroidx/media3/exoplayer/source/ClippingMediaSource$IllegalClippingException;-><init>(I)V
 
     throw p1
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_0
     const-wide/high16 v5, -0x8000000000000000L
 
     cmp-long v0, p4, v5
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_2
 
     .line 320
     iget-wide p4, p1, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_36
+    :cond_2
     invoke-static {v3, v4, p4, p5}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide p4
 
     .line 321
-    :goto_3a
+    :goto_1
     iget-wide v3, p1, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, v3, v5
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_5
 
     .line 322
     iget-wide v3, p1, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
     cmp-long v0, p4, v3
 
-    if-lez v0, :cond_4d
+    if-lez v0, :cond_3
 
     .line 323
     iget-wide p4, p1, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
-    :cond_4d
+    :cond_3
     cmp-long v0, p2, p4
 
-    if-gtz v0, :cond_52
+    if-gtz v0, :cond_4
 
-    goto :goto_59
+    goto :goto_2
 
     .line 326
-    :cond_52
+    :cond_4
     new-instance p1, Landroidx/media3/exoplayer/source/ClippingMediaSource$IllegalClippingException;
 
     const/4 p2, 0x2
@@ -142,8 +142,8 @@
     throw p1
 
     .line 329
-    :cond_59
-    :goto_59
+    :cond_5
+    :goto_2
     iput-wide p2, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->startUs:J
 
     .line 330
@@ -151,48 +151,48 @@
 
     cmp-long v0, p4, v5
 
-    if-nez v0, :cond_63
+    if-nez v0, :cond_6
 
     move-wide p2, v5
 
-    goto :goto_65
+    goto :goto_3
 
-    :cond_63
+    :cond_6
     sub-long p2, p4, p2
 
     .line 331
-    :goto_65
+    :goto_3
     iput-wide p2, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->durationUs:J
 
     .line 332
     iget-boolean p2, p1, Landroidx/media3/common/Timeline$Window;->isDynamic:Z
 
-    if-eqz p2, :cond_7a
+    if-eqz p2, :cond_8
 
-    if-eqz v0, :cond_79
+    if-eqz v0, :cond_7
 
     iget-wide p2, p1, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
     cmp-long p2, p2, v5
 
-    if-eqz p2, :cond_7a
+    if-eqz p2, :cond_8
 
     iget-wide p1, p1, Landroidx/media3/common/Timeline$Window;->durationUs:J
 
     cmp-long p1, p4, p1
 
-    if-nez p1, :cond_7a
+    if-nez p1, :cond_8
 
-    :cond_79
+    :cond_7
     move v1, v2
 
-    :cond_7a
+    :cond_8
     iput-boolean v1, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->isDynamic:Z
 
     return-void
 
     .line 313
-    :cond_7d
+    :cond_9
     new-instance p1, Landroidx/media3/exoplayer/source/ClippingMediaSource$IllegalClippingException;
 
     invoke-direct {p1, v1}, Landroidx/media3/exoplayer/source/ClippingMediaSource$IllegalClippingException;-><init>(I)V
@@ -203,7 +203,7 @@
 
 # virtual methods
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 16
+    .locals 12
 
     .line 362
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -228,19 +228,19 @@
 
     cmp-long p1, v0, v2
 
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_0
 
     move-wide v8, v2
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     sub-long/2addr v0, v10
 
     move-wide v8, v0
 
     .line 366
-    :goto_1d
+    :goto_0
     iget-object v5, p2, Landroidx/media3/common/Timeline$Period;->id:Ljava/lang/Object;
 
     iget-object v6, p2, Landroidx/media3/common/Timeline$Period;->uid:Ljava/lang/Object;
@@ -257,7 +257,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 9
+    .locals 4
 
     .line 340
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->timeline:Landroidx/media3/common/Timeline;
@@ -294,7 +294,7 @@
 
     cmp-long p1, p3, v0
 
-    if-eqz p1, :cond_44
+    if-eqz p1, :cond_1
 
     .line 345
     iget-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
@@ -314,18 +314,18 @@
 
     iget-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_0
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_35
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->endUs:J
 
     invoke-static {p3, p4, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p3
 
-    :goto_3b
+    :goto_0
     iput-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
     .line 348
@@ -338,7 +338,7 @@
     iput-wide p3, p2, Landroidx/media3/common/Timeline$Window;->defaultPositionUs:J
 
     .line 350
-    :cond_44
+    :cond_1
     iget-wide p3, p0, Landroidx/media3/exoplayer/source/ClippingMediaSource$ClippingTimeline;->startUs:J
 
     invoke-static {p3, p4}, Landroidx/media3/common/util/Util;->usToMs(J)J
@@ -350,7 +350,7 @@
 
     cmp-long p1, v2, v0
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_2
 
     .line 352
     iget-wide v2, p2, Landroidx/media3/common/Timeline$Window;->presentationStartTimeMs:J
@@ -360,12 +360,12 @@
     iput-wide v2, p2, Landroidx/media3/common/Timeline$Window;->presentationStartTimeMs:J
 
     .line 354
-    :cond_55
+    :cond_2
     iget-wide v2, p2, Landroidx/media3/common/Timeline$Window;->windowStartTimeMs:J
 
     cmp-long p1, v2, v0
 
-    if-eqz p1, :cond_60
+    if-eqz p1, :cond_3
 
     .line 355
     iget-wide v0, p2, Landroidx/media3/common/Timeline$Window;->windowStartTimeMs:J
@@ -374,6 +374,6 @@
 
     iput-wide v0, p2, Landroidx/media3/common/Timeline$Window;->windowStartTimeMs:J
 
-    :cond_60
+    :cond_3
     return-object p2
 .end method

@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 47
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method checkPermission(ILjava/lang/String;)V
-    .registers 7
+    .locals 4
 
     .line 117
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompatSideChannelService;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -45,8 +45,8 @@
 
     const/4 v2, 0x0
 
-    :goto_a
-    if-ge v2, v1, :cond_18
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -55,17 +55,17 @@
 
     move-result v3
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     return-void
 
-    :cond_15
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 122
-    :cond_18
+    :cond_1
     new-instance v0, Ljava/lang/SecurityException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -101,7 +101,7 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 3
+    .locals 1
 
     .line 51
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;

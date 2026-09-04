@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 860
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Utf8$Processor;-><init>()V
@@ -25,55 +25,55 @@
 .end method
 
 .method private static partialIsValidUtf8([BII)I
-    .registers 4
+    .locals 1
 
     :goto_0
-    if-ge p1, p2, :cond_9
+    if-ge p1, p2, :cond_0
 
     .line 1098
     aget-byte v0, p0, p1
 
-    if-ltz v0, :cond_9
+    if-ltz v0, :cond_0
 
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
-    :cond_9
-    if-lt p1, p2, :cond_d
+    :cond_0
+    if-lt p1, p2, :cond_1
 
     const/4 p0, 0x0
 
-    goto :goto_11
+    goto :goto_1
 
     .line 1102
-    :cond_d
+    :cond_1
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Utf8$SafeProcessor;->partialIsValidUtf8NonAscii([BII)I
 
     move-result p0
 
-    :goto_11
+    :goto_1
     return p0
 .end method
 
 .method private static partialIsValidUtf8NonAscii([BII)I
-    .registers 9
+    .locals 6
 
     :cond_0
     :goto_0
-    if-lt p1, p2, :cond_4
+    if-lt p1, p2, :cond_1
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_4
+    :cond_1
     add-int/lit8 v0, p1, 0x1
 
     .line 1115
     aget-byte p1, p0, p1
 
-    if-gez p1, :cond_6a
+    if-gez p1, :cond_c
 
     const/16 v1, -0x20
 
@@ -81,16 +81,16 @@
 
     const/16 v3, -0x41
 
-    if-ge p1, v1, :cond_1f
+    if-ge p1, v1, :cond_4
 
-    if-lt v0, p2, :cond_14
+    if-lt v0, p2, :cond_2
 
     return p1
 
-    :cond_14
+    :cond_2
     const/16 v1, -0x3e
 
-    if-lt p1, v1, :cond_1e
+    if-lt p1, v1, :cond_3
 
     add-int/lit8 p1, v0, 0x1
 
@@ -99,17 +99,17 @@
 
     if-le v0, v3, :cond_0
 
-    :cond_1e
+    :cond_3
     return v2
 
-    :cond_1f
+    :cond_4
     const/16 v4, -0x10
 
-    if-ge p1, v4, :cond_45
+    if-ge p1, v4, :cond_9
 
     add-int/lit8 v4, p2, -0x1
 
-    if-lt v0, v4, :cond_2c
+    if-lt v0, v4, :cond_5
 
     .line 1134
     invoke-static {p0, v0, p2}, Landroidx/datastore/preferences/protobuf/Utf8;->access$1100([BII)I
@@ -118,41 +118,41 @@
 
     return p0
 
-    :cond_2c
+    :cond_5
     add-int/lit8 v4, v0, 0x1
 
     .line 1136
     aget-byte v0, p0, v0
 
-    if-gt v0, v3, :cond_44
+    if-gt v0, v3, :cond_8
 
     const/16 v5, -0x60
 
-    if-ne p1, v1, :cond_38
+    if-ne p1, v1, :cond_6
 
-    if-lt v0, v5, :cond_44
+    if-lt v0, v5, :cond_8
 
-    :cond_38
+    :cond_6
     const/16 v1, -0x13
 
-    if-ne p1, v1, :cond_3e
+    if-ne p1, v1, :cond_7
 
-    if-ge v0, v5, :cond_44
+    if-ge v0, v5, :cond_8
 
-    :cond_3e
+    :cond_7
     add-int/lit8 p1, v4, 0x1
 
     aget-byte v0, p0, v4
 
     if-le v0, v3, :cond_0
 
-    :cond_44
+    :cond_8
     return v2
 
-    :cond_45
+    :cond_9
     add-int/lit8 v1, p2, -0x2
 
-    if-lt v0, v1, :cond_4e
+    if-lt v0, v1, :cond_a
 
     .line 1149
     invoke-static {p0, v0, p2}, Landroidx/datastore/preferences/protobuf/Utf8;->access$1100([BII)I
@@ -161,13 +161,13 @@
 
     return p0
 
-    :cond_4e
+    :cond_a
     add-int/lit8 v1, v0, 0x1
 
     .line 1151
     aget-byte v0, p0, v0
 
-    if-gt v0, v3, :cond_69
+    if-gt v0, v3, :cond_b
 
     shl-int/lit8 p1, p1, 0x1c
 
@@ -177,24 +177,24 @@
 
     shr-int/lit8 p1, p1, 0x1e
 
-    if-nez p1, :cond_69
+    if-nez p1, :cond_b
 
     add-int/lit8 p1, v1, 0x1
 
     aget-byte v0, p0, v1
 
-    if-gt v0, v3, :cond_69
+    if-gt v0, v3, :cond_b
 
     add-int/lit8 v0, p1, 0x1
 
     aget-byte p1, p0, p1
 
-    if-le p1, v3, :cond_6a
+    if-le p1, v3, :cond_c
 
-    :cond_69
+    :cond_b
     return v2
 
-    :cond_6a
+    :cond_c
     move p1, v0
 
     goto :goto_0
@@ -203,7 +203,7 @@
 
 # virtual methods
 .method decodeUtf8([BII)Ljava/lang/String;
-    .registers 15
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -225,7 +225,7 @@
 
     const/4 v2, 0x1
 
-    if-ltz v0, :cond_ad
+    if-ltz v0, :cond_b
 
     add-int v0, p2, p3
 
@@ -234,8 +234,8 @@
 
     move v3, v1
 
-    :goto_f
-    if-ge p2, v0, :cond_23
+    :goto_0
+    if-ge p2, v0, :cond_1
 
     .line 974
     aget-byte v4, p1, p2
@@ -245,11 +245,11 @@
 
     move-result v5
 
-    if-nez v5, :cond_1a
+    if-nez v5, :cond_0
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_1a
+    :cond_0
     add-int/lit8 p2, p2, 0x1
 
     add-int/lit8 v5, v3, 0x1
@@ -259,14 +259,14 @@
 
     move v3, v5
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_1
     move v8, v3
 
-    :goto_24
-    if-ge p2, v0, :cond_a7
+    :goto_2
+    if-ge p2, v0, :cond_a
 
     add-int/lit8 v3, p2, 0x1
 
@@ -278,15 +278,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_4
 
     add-int/lit8 v4, v8, 0x1
 
     .line 985
     invoke-static {p2, p3, v8}, Landroidx/datastore/preferences/protobuf/Utf8$DecodeUtil;->access$500(B[CI)V
 
-    :goto_35
-    if-ge v3, v0, :cond_49
+    :goto_3
+    if-ge v3, v0, :cond_3
 
     .line 989
     aget-byte p2, p1, v3
@@ -296,11 +296,11 @@
 
     move-result v5
 
-    if-nez v5, :cond_40
+    if-nez v5, :cond_2
 
-    goto :goto_49
+    goto :goto_4
 
-    :cond_40
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
     add-int/lit8 v5, v4, 0x1
@@ -310,25 +310,25 @@
 
     move v4, v5
 
-    goto :goto_35
+    goto :goto_3
 
-    :cond_49
-    :goto_49
+    :cond_3
+    :goto_4
     move p2, v3
 
     move v8, v4
 
-    goto :goto_24
+    goto :goto_2
 
     .line 996
-    :cond_4c
+    :cond_4
     invoke-static {p2}, Landroidx/datastore/preferences/protobuf/Utf8$DecodeUtil;->access$600(B)Z
 
     move-result v4
 
-    if-eqz v4, :cond_65
+    if-eqz v4, :cond_6
 
-    if-ge v3, v0, :cond_60
+    if-ge v3, v0, :cond_5
 
     add-int/lit8 v4, v3, 0x1
 
@@ -343,10 +343,10 @@
 
     move v8, v5
 
-    goto :goto_24
+    goto :goto_2
 
     .line 998
-    :cond_60
+    :cond_5
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidUtf8()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
@@ -354,16 +354,16 @@
     throw p1
 
     .line 1001
-    :cond_65
+    :cond_6
     invoke-static {p2}, Landroidx/datastore/preferences/protobuf/Utf8$DecodeUtil;->access$800(B)Z
 
     move-result v4
 
-    if-eqz v4, :cond_84
+    if-eqz v4, :cond_8
 
     add-int/lit8 v4, v0, -0x1
 
-    if-ge v3, v4, :cond_7f
+    if-ge v3, v4, :cond_7
 
     add-int/lit8 v4, v3, 0x1
 
@@ -382,20 +382,20 @@
 
     move v8, v6
 
-    goto :goto_24
+    goto :goto_2
 
     .line 1003
-    :cond_7f
+    :cond_7
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidUtf8()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
 
     throw p1
 
-    :cond_84
+    :cond_8
     add-int/lit8 v4, v0, -0x2
 
-    if-ge v3, v4, :cond_a2
+    if-ge v3, v4, :cond_9
 
     add-int/lit8 v4, v3, 0x1
 
@@ -430,10 +430,10 @@
 
     move v8, v10
 
-    goto :goto_24
+    goto :goto_2
 
     .line 1013
-    :cond_a2
+    :cond_9
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidUtf8()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
@@ -441,7 +441,7 @@
     throw p1
 
     .line 1027
-    :cond_a7
+    :cond_a
     new-instance p1, Ljava/lang/String;
 
     invoke-direct {p1, p3, v1, v8}, Ljava/lang/String;-><init>([CII)V
@@ -449,7 +449,7 @@
     return-object p1
 
     .line 959
-    :cond_ad
+    :cond_b
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     const/4 v3, 0x3
@@ -491,7 +491,7 @@
 .end method
 
 .method decodeUtf8Direct(Ljava/nio/ByteBuffer;II)Ljava/lang/String;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -507,7 +507,7 @@
 .end method
 
 .method encodeUtf8(Ljava/lang/CharSequence;[BII)I
-    .registers 12
+    .locals 7
 
     .line 1039
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -518,21 +518,21 @@
 
     const/4 v1, 0x0
 
-    :goto_6
+    :goto_0
     const/16 v2, 0x80
 
-    if-ge v1, v0, :cond_1a
+    if-ge v1, v0, :cond_0
 
     add-int v3, v1, p3
 
-    if-ge v3, p4, :cond_1a
+    if-ge v3, p4, :cond_0
 
     .line 1045
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
 
-    if-ge v4, v2, :cond_1a
+    if-ge v4, v2, :cond_0
 
     int-to-byte v2, v4
 
@@ -541,29 +541,29 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1a
-    if-ne v1, v0, :cond_1e
+    :cond_0
+    if-ne v1, v0, :cond_1
 
     add-int/2addr p3, v0
 
     return p3
 
-    :cond_1e
+    :cond_1
     add-int/2addr p3, v1
 
-    :goto_1f
-    if-ge v1, v0, :cond_fd
+    :goto_1
+    if-ge v1, v0, :cond_b
 
     .line 1053
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
-    if-ge v3, v2, :cond_31
+    if-ge v3, v2, :cond_2
 
-    if-ge p3, p4, :cond_31
+    if-ge p3, p4, :cond_2
 
     add-int/lit8 v4, p3, 0x1
 
@@ -572,19 +572,19 @@
     .line 1055
     aput-byte v3, p2, p3
 
-    :goto_2e
+    :goto_2
     move p3, v4
 
-    goto/16 :goto_b5
+    goto/16 :goto_3
 
-    :cond_31
+    :cond_2
     const/16 v4, 0x800
 
-    if-ge v3, v4, :cond_4b
+    if-ge v3, v4, :cond_3
 
     add-int/lit8 v4, p4, -0x2
 
-    if-gt p3, v4, :cond_4b
+    if-gt p3, v4, :cond_3
 
     add-int/lit8 v4, p3, 0x1
 
@@ -608,21 +608,21 @@
     .line 1058
     aput-byte v3, p2, v4
 
-    goto :goto_b5
+    goto :goto_3
 
-    :cond_4b
+    :cond_3
     const v4, 0xdfff
 
     const v5, 0xd800
 
-    if-lt v3, v5, :cond_55
+    if-lt v3, v5, :cond_4
 
-    if-ge v4, v3, :cond_75
+    if-ge v4, v3, :cond_5
 
-    :cond_55
+    :cond_4
     add-int/lit8 v6, p4, -0x3
 
-    if-gt p3, v6, :cond_75
+    if-gt p3, v6, :cond_5
 
     add-int/lit8 v4, p3, 0x1
 
@@ -659,12 +659,12 @@
     .line 1063
     aput-byte v3, p2, p3
 
-    goto :goto_2e
+    goto :goto_2
 
-    :cond_75
+    :cond_5
     add-int/lit8 v6, p4, -0x4
 
-    if-gt p3, v6, :cond_c2
+    if-gt p3, v6, :cond_8
 
     add-int/lit8 v4, v1, 0x1
 
@@ -673,7 +673,7 @@
 
     move-result v5
 
-    if-eq v4, v5, :cond_ba
+    if-eq v4, v5, :cond_7
 
     invoke-interface {p1, v4}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -683,7 +683,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_b9
+    if-eqz v5, :cond_6
 
     .line 1071
     invoke-static {v3, v1}, Ljava/lang/Character;->toCodePoint(CC)I
@@ -740,16 +740,16 @@
 
     move v1, v4
 
-    :goto_b5
+    :goto_3
     add-int/lit8 v1, v1, 0x1
 
-    goto/16 :goto_1f
+    goto/16 :goto_1
 
-    :cond_b9
+    :cond_6
     move v1, v4
 
     .line 1069
-    :cond_ba
+    :cond_7
     new-instance p1, Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException;
 
     add-int/lit8 v1, v1, -0x1
@@ -758,10 +758,10 @@
 
     throw p1
 
-    :cond_c2
-    if-gt v5, v3, :cond_de
+    :cond_8
+    if-gt v5, v3, :cond_a
 
-    if-gt v3, v4, :cond_de
+    if-gt v3, v4, :cond_a
 
     add-int/lit8 p2, v1, 0x1
 
@@ -770,7 +770,7 @@
 
     move-result p4
 
-    if-eq p2, p4, :cond_d8
+    if-eq p2, p4, :cond_9
 
     invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
@@ -780,10 +780,10 @@
 
     move-result p1
 
-    if-nez p1, :cond_de
+    if-nez p1, :cond_a
 
     .line 1081
-    :cond_d8
+    :cond_9
     new-instance p1, Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException;
 
     invoke-direct {p1, v1, v0}, Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException;-><init>(II)V
@@ -791,7 +791,7 @@
     throw p1
 
     .line 1083
-    :cond_de
+    :cond_a
     new-instance p1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -822,12 +822,12 @@
 
     throw p1
 
-    :cond_fd
+    :cond_b
     return p3
 .end method
 
 .method encodeUtf8Direct(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 0
 
     .line 1092
     invoke-virtual {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/Utf8$SafeProcessor;->encodeUtf8Default(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)V
@@ -836,15 +836,15 @@
 .end method
 
 .method partialIsValidUtf8(I[BII)I
-    .registers 11
+    .locals 6
 
-    if-eqz p1, :cond_86
+    if-eqz p1, :cond_f
 
-    if-lt p3, p4, :cond_5
+    if-lt p3, p4, :cond_0
 
     return p1
 
-    :cond_5
+    :cond_0
     int-to-byte v0, p1
 
     const/16 v1, -0x20
@@ -853,34 +853,34 @@
 
     const/16 v3, -0x41
 
-    if-ge v0, v1, :cond_1c
+    if-ge v0, v1, :cond_3
 
     const/16 p1, -0x3e
 
-    if-lt v0, p1, :cond_1b
+    if-lt v0, p1, :cond_2
 
     add-int/lit8 p1, p3, 0x1
 
     .line 881
     aget-byte p3, p2, p3
 
-    if-le p3, v3, :cond_18
+    if-le p3, v3, :cond_1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     move p3, p1
 
-    goto/16 :goto_86
+    goto/16 :goto_2
 
-    :cond_1b
-    :goto_1b
+    :cond_2
+    :goto_0
     return v2
 
-    :cond_1c
+    :cond_3
     const/16 v4, -0x10
 
-    if-ge v0, v4, :cond_49
+    if-ge v0, v4, :cond_9
 
     shr-int/lit8 p1, p1, 0x8
 
@@ -888,14 +888,14 @@
 
     int-to-byte p1, p1
 
-    if-nez p1, :cond_34
+    if-nez p1, :cond_5
 
     add-int/lit8 p1, p3, 0x1
 
     .line 892
     aget-byte p3, p2, p3
 
-    if-lt p1, p4, :cond_31
+    if-lt p1, p4, :cond_4
 
     .line 894
     invoke-static {v0, p3}, Landroidx/datastore/preferences/protobuf/Utf8;->access$000(II)I
@@ -904,55 +904,55 @@
 
     return p1
 
-    :cond_31
+    :cond_4
     move v5, p3
 
     move p3, p1
 
     move p1, v5
 
-    :cond_34
-    if-gt p1, v3, :cond_48
+    :cond_5
+    if-gt p1, v3, :cond_8
 
     const/16 v4, -0x60
 
-    if-ne v0, v1, :cond_3c
+    if-ne v0, v1, :cond_6
 
-    if-lt p1, v4, :cond_48
+    if-lt p1, v4, :cond_8
 
-    :cond_3c
+    :cond_6
     const/16 v1, -0x13
 
-    if-ne v0, v1, :cond_42
+    if-ne v0, v1, :cond_7
 
-    if-ge p1, v4, :cond_48
+    if-ge p1, v4, :cond_8
 
-    :cond_42
+    :cond_7
     add-int/lit8 p1, p3, 0x1
 
     .line 897
     aget-byte p3, p2, p3
 
-    if-le p3, v3, :cond_18
+    if-le p3, v3, :cond_1
 
-    :cond_48
+    :cond_8
     return v2
 
-    :cond_49
+    :cond_9
     shr-int/lit8 v1, p1, 0x8
 
     not-int v1, v1
 
     int-to-byte v1, v1
 
-    if-nez v1, :cond_5c
+    if-nez v1, :cond_b
 
     add-int/lit8 p1, p3, 0x1
 
     .line 913
     aget-byte v1, p2, p3
 
-    if-lt p1, p4, :cond_5a
+    if-lt p1, p4, :cond_a
 
     .line 915
     invoke-static {v0, v1}, Landroidx/datastore/preferences/protobuf/Utf8;->access$000(II)I
@@ -961,12 +961,12 @@
 
     return p1
 
-    :cond_5a
+    :cond_a
     const/4 p3, 0x0
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_5c
+    :cond_b
     shr-int/lit8 p1, p1, 0x10
 
     int-to-byte p1, p1
@@ -977,15 +977,15 @@
 
     move p1, v5
 
-    :goto_62
-    if-nez p3, :cond_72
+    :goto_1
+    if-nez p3, :cond_d
 
     add-int/lit8 p3, p1, 0x1
 
     .line 921
     aget-byte p1, p2, p1
 
-    if-lt p3, p4, :cond_6f
+    if-lt p3, p4, :cond_c
 
     .line 923
     invoke-static {v0, v1, p1}, Landroidx/datastore/preferences/protobuf/Utf8;->access$100(III)I
@@ -994,15 +994,15 @@
 
     return p1
 
-    :cond_6f
+    :cond_c
     move v5, p3
 
     move p3, p1
 
     move p1, v5
 
-    :cond_72
-    if-gt v1, v3, :cond_85
+    :cond_d
+    if-gt v1, v3, :cond_e
 
     shl-int/lit8 v0, v0, 0x1c
 
@@ -1012,23 +1012,23 @@
 
     shr-int/lit8 v0, v0, 0x1e
 
-    if-nez v0, :cond_85
+    if-nez v0, :cond_e
 
-    if-gt p3, v3, :cond_85
+    if-gt p3, v3, :cond_e
 
     add-int/lit8 p3, p1, 0x1
 
     .line 931
     aget-byte p1, p2, p1
 
-    if-le p1, v3, :cond_86
+    if-le p1, v3, :cond_f
 
-    :cond_85
+    :cond_e
     return v2
 
     .line 946
-    :cond_86
-    :goto_86
+    :cond_f
+    :goto_2
     invoke-static {p2, p3, p4}, Landroidx/datastore/preferences/protobuf/Utf8$SafeProcessor;->partialIsValidUtf8([BII)I
 
     move-result p1
@@ -1037,7 +1037,7 @@
 .end method
 
 .method partialIsValidUtf8Direct(ILjava/nio/ByteBuffer;II)I
-    .registers 5
+    .locals 0
 
     .line 952
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/Utf8$SafeProcessor;->partialIsValidUtf8Default(ILjava/nio/ByteBuffer;II)I

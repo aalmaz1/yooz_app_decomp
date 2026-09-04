@@ -67,7 +67,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/activity/contextaware/ContextAware;Landroidx/activity/contextaware/ContextAwareKt$withContextAvailable$2$listener$1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 88
     check-cast p1, Ljava/lang/Throwable;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 89
     iget-object p1, p0, Landroidx/activity/contextaware/ContextAwareKt$withContextAvailable$2$1;->$this_withContextAvailable:Landroidx/activity/contextaware/ContextAware;

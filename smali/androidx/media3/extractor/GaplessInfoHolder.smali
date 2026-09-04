@@ -19,7 +19,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})"
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private setFromComment(Ljava/lang/String;)Z
-    .registers 6
+    .locals 4
 
     .line 90
     sget-object v0, Landroidx/media3/extractor/GaplessInfoHolder;->GAPLESS_COMMENT_PATTERN:Ljava/util/regex/Pattern;
@@ -65,12 +65,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
     .line 93
-    :try_start_d
+    :try_start_0
     invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v1
@@ -104,23 +104,23 @@
 
     move-result p1
 
-    if-gtz v1, :cond_30
+    if-gtz v1, :cond_0
 
-    if-lez p1, :cond_35
+    if-lez p1, :cond_1
 
     .line 96
-    :cond_30
+    :cond_0
     iput v1, p0, Landroidx/media3/extractor/GaplessInfoHolder;->encoderDelay:I
 
     .line 97
     iput p1, p0, Landroidx/media3/extractor/GaplessInfoHolder;->encoderPadding:I
-    :try_end_34
-    .catch Ljava/lang/NumberFormatException; {:try_start_d .. :try_end_34} :catch_35
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return v0
 
-    :catch_35
-    :cond_35
+    :catch_0
+    :cond_1
     const/4 p1, 0x0
 
     return p1
@@ -129,44 +129,44 @@
 
 # virtual methods
 .method public hasGaplessInfo()Z
-    .registers 3
+    .locals 2
 
     .line 109
     iget v0, p0, Landroidx/media3/extractor/GaplessInfoHolder;->encoderDelay:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     iget v0, p0, Landroidx/media3/extractor/GaplessInfoHolder;->encoderPadding:I
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public setFromMetadata(Landroidx/media3/common/Metadata;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 62
-    :goto_2
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/Metadata;->length()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_4a
+    if-ge v1, v2, :cond_2
 
     .line 63
     invoke-virtual {p1, v1}, Landroidx/media3/common/Metadata;->get(I)Landroidx/media3/common/Metadata$Entry;
@@ -180,7 +180,7 @@
 
     const/4 v5, 0x1
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_0
 
     .line 65
     check-cast v2, Landroidx/media3/extractor/metadata/id3/CommentFrame;
@@ -192,7 +192,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_1
 
     iget-object v2, v2, Landroidx/media3/extractor/metadata/id3/CommentFrame;->text:Ljava/lang/String;
 
@@ -201,15 +201,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_1
 
     return v5
 
     .line 70
-    :cond_26
+    :cond_0
     instance-of v3, v2, Landroidx/media3/extractor/metadata/id3/InternalFrame;
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_1
 
     .line 71
     check-cast v2, Landroidx/media3/extractor/metadata/id3/InternalFrame;
@@ -223,7 +223,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_1
 
     iget-object v3, v2, Landroidx/media3/extractor/metadata/id3/InternalFrame;->description:Ljava/lang/String;
 
@@ -232,7 +232,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_1
 
     iget-object v2, v2, Landroidx/media3/extractor/metadata/id3/InternalFrame;->text:Ljava/lang/String;
 
@@ -241,15 +241,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_1
 
     return v5
 
-    :cond_47
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_4a
+    :cond_2
     return v0
 .end method

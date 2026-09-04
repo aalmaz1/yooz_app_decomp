@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 53
     sget-object v0, Landroidx/core/content/res/CamUtils;->WHITE_POINT_D65:[F
@@ -70,7 +70,7 @@
 .end method
 
 .method private constructor <init>(FFFFFF[FFFF)V
-    .registers 11
+    .locals 0
 
     .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 .end method
 
 .method static make([FFFFZ)Landroidx/core/content/res/ViewingConditions;
-    .registers 27
+    .locals 22
 
     move/from16 v0, p1
 
@@ -201,7 +201,7 @@
 
     const v11, 0x3f170a3d    # 0.59f
 
-    if-ltz v9, :cond_57
+    if-ltz v9, :cond_0
 
     const v7, 0x3f666666    # 0.9f
 
@@ -216,9 +216,9 @@
 
     move-result v1
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_57
+    :cond_0
     sub-float v7, v4, v7
 
     mul-float/2addr v7, v1
@@ -229,18 +229,18 @@
 
     move-result v1
 
-    :goto_61
+    :goto_0
     move/from16 v16, v1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-eqz p4, :cond_69
+    if-eqz p4, :cond_1
 
     move v7, v1
 
-    goto :goto_7d
+    goto :goto_1
 
-    :cond_69
+    :cond_1
     neg-float v7, v0
 
     const/high16 v9, 0x42280000    # 42.0f
@@ -268,30 +268,30 @@
 
     mul-float/2addr v7, v4
 
-    :goto_7d
+    :goto_1
     float-to-double v11, v7
 
     const-wide/high16 v13, 0x3ff0000000000000L    # 1.0
 
     cmpl-double v9, v11, v13
 
-    if-lez v9, :cond_86
+    if-lez v9, :cond_2
 
     move v7, v1
 
-    goto :goto_8d
+    goto :goto_2
 
-    :cond_86
+    :cond_2
     const-wide/16 v13, 0x0
 
     cmpg-double v9, v11, v13
 
-    if-gez v9, :cond_8d
+    if-gez v9, :cond_3
 
     const/4 v7, 0x0
 
-    :cond_8d
-    :goto_8d
+    :cond_3
+    :goto_2
     const/4 v9, 0x3
 
     new-array v15, v9, [F
@@ -549,7 +549,7 @@
 
 # virtual methods
 .method getAw()F
-    .registers 2
+    .locals 1
 
     .line 71
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mAw:F
@@ -558,7 +558,7 @@
 .end method
 
 .method getC()F
-    .registers 2
+    .locals 1
 
     .line 87
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mC:F
@@ -567,7 +567,7 @@
 .end method
 
 .method getFl()F
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mFl:F
@@ -576,7 +576,7 @@
 .end method
 
 .method getFlRoot()F
-    .registers 2
+    .locals 1
 
     .line 104
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mFlRoot:F
@@ -585,7 +585,7 @@
 .end method
 
 .method getN()F
-    .registers 2
+    .locals 1
 
     .line 75
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mN:F
@@ -594,7 +594,7 @@
 .end method
 
 .method getNbb()F
-    .registers 2
+    .locals 1
 
     .line 79
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mNbb:F
@@ -603,7 +603,7 @@
 .end method
 
 .method getNc()F
-    .registers 2
+    .locals 1
 
     .line 91
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mNc:F
@@ -612,7 +612,7 @@
 .end method
 
 .method getNcb()F
-    .registers 2
+    .locals 1
 
     .line 83
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mNcb:F
@@ -621,7 +621,7 @@
 .end method
 
 .method getRgbD()[F
-    .registers 2
+    .locals 1
 
     .line 96
     iget-object v0, p0, Landroidx/core/content/res/ViewingConditions;->mRgbD:[F
@@ -630,7 +630,7 @@
 .end method
 
 .method getZ()F
-    .registers 2
+    .locals 1
 
     .line 108
     iget v0, p0, Landroidx/core/content/res/ViewingConditions;->mZ:F

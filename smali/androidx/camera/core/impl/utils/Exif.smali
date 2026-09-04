@@ -81,7 +81,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 11
+    .locals 11
 
     .line 56
     new-instance v0, Landroidx/camera/core/impl/utils/Exif$1;
@@ -146,7 +146,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/exifinterface/media/ExifInterface;)V
-    .registers 3
+    .locals 1
 
     .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -163,7 +163,7 @@
 .end method
 
 .method private attachLastModifiedTimestamp()V
-    .registers 6
+    .locals 5
 
     .line 323
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -183,7 +183,7 @@
     invoke-virtual {v3, v4, v2}, Landroidx/exifinterface/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 329
-    :try_start_f
+    :try_start_0
     invoke-static {v2}, Landroidx/camera/core/impl/utils/Exif;->convertFromExifDateTime(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v2
@@ -204,15 +204,15 @@
     const-string v2, "SubSecTime"
 
     invoke-virtual {v1, v2, v0}, Landroidx/exifinterface/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_23
-    .catch Ljava/text/ParseException; {:try_start_f .. :try_end_23} :catch_23
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_23
+    :catch_0
     return-void
 .end method
 
 .method private static convertFromExifDate(Ljava/lang/String;)Ljava/util/Date;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/text/ParseException;
@@ -236,7 +236,7 @@
 .end method
 
 .method private static convertFromExifDateTime(Ljava/lang/String;)Ljava/util/Date;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/text/ParseException;
@@ -260,7 +260,7 @@
 .end method
 
 .method private static convertFromExifTime(Ljava/lang/String;)Ljava/util/Date;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/text/ParseException;
@@ -284,7 +284,7 @@
 .end method
 
 .method private static convertToExifDateTime(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 156
     sget-object v0, Landroidx/camera/core/impl/utils/Exif;->DATETIME_FORMAT:Ljava/lang/ThreadLocal;
@@ -307,7 +307,7 @@
 .end method
 
 .method public static createFromFile(Ljava/io/File;)Landroidx/camera/core/impl/utils/Exif;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -327,7 +327,7 @@
 .end method
 
 .method public static createFromFileString(Ljava/lang/String;)Landroidx/camera/core/impl/utils/Exif;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -347,7 +347,7 @@
 .end method
 
 .method public static createFromImageProxy(Landroidx/camera/core/ImageProxy;)Landroidx/camera/core/impl/utils/Exif;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -394,7 +394,7 @@
 .end method
 
 .method public static createFromInputStream(Ljava/io/InputStream;)Landroidx/camera/core/impl/utils/Exif;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -414,7 +414,7 @@
 .end method
 
 .method public static getAllExifTags()Ljava/util/List;
-    .registers 153
+    .locals 153
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -743,17 +743,17 @@
 .end method
 
 .method private parseTimestamp(Ljava/lang/String;)J
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, -0x1
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     return-wide v0
 
     .line 690
-    :cond_5
-    :try_start_5
+    :cond_0
+    :try_start_0
     invoke-static {p1}, Landroidx/camera/core/impl/utils/Exif;->convertFromExifDateTime(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object p1
@@ -761,29 +761,29 @@
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
-    :try_end_d
-    .catch Ljava/text/ParseException; {:try_start_5 .. :try_end_d} :catch_d
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_d
+    :catch_0
     return-wide v0
 .end method
 
 .method private parseTimestamp(Ljava/lang/String;Ljava/lang/String;)J
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, -0x1
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
-    if-nez p2, :cond_7
+    if-nez p2, :cond_0
 
     return-wide v0
 
-    :cond_7
-    if-nez p2, :cond_13
+    :cond_0
+    if-nez p2, :cond_1
 
     .line 669
-    :try_start_9
+    :try_start_0
     invoke-static {p1}, Landroidx/camera/core/impl/utils/Exif;->convertFromExifDate(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object p1
@@ -791,19 +791,19 @@
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     move-result-wide p1
-    :try_end_11
-    .catch Ljava/text/ParseException; {:try_start_9 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-wide p1
 
-    :catch_12
+    :catch_0
     return-wide v0
 
-    :cond_13
-    if-nez p1, :cond_1f
+    :cond_1
+    if-nez p1, :cond_2
 
     .line 676
-    :try_start_15
+    :try_start_1
     invoke-static {p2}, Landroidx/camera/core/impl/utils/Exif;->convertFromExifTime(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object p1
@@ -811,16 +811,16 @@
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     move-result-wide p1
-    :try_end_1d
-    .catch Ljava/text/ParseException; {:try_start_15 .. :try_end_1d} :catch_1e
+    :try_end_1
+    .catch Ljava/text/ParseException; {:try_start_1 .. :try_end_1} :catch_1
 
     return-wide p1
 
-    :catch_1e
+    :catch_1
     return-wide v0
 
     .line 681
-    :cond_1f
+    :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -853,7 +853,7 @@
 
 # virtual methods
 .method public attachLocation(Landroid/location/Location;)V
-    .registers 3
+    .locals 1
 
     .line 644
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -864,7 +864,7 @@
 .end method
 
 .method public attachTimestamp()V
-    .registers 6
+    .locals 5
 
     .line 615
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -891,7 +891,7 @@
     invoke-virtual {v3, v4, v2}, Landroidx/exifinterface/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 622
-    :try_start_16
+    :try_start_0
     invoke-static {v2}, Landroidx/camera/core/impl/utils/Exif;->convertFromExifDateTime(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v2
@@ -919,10 +919,10 @@
     const-string v2, "SubSecTimeDigitized"
 
     invoke-virtual {v1, v2, v0}, Landroidx/exifinterface/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_31
-    .catch Ljava/text/ParseException; {:try_start_16 .. :try_end_31} :catch_31
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_31
+    :catch_0
     const/4 v0, 0x0
 
     .line 628
@@ -932,7 +932,7 @@
 .end method
 
 .method public copyToCroppedImage(Landroidx/camera/core/impl/utils/Exif;)V
-    .registers 6
+    .locals 4
 
     .line 186
     new-instance v0, Ljava/util/ArrayList;
@@ -951,13 +951,13 @@
 
     move-result-object v0
 
-    :cond_10
-    :goto_10
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -979,75 +979,75 @@
 
     move-result-object v3
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 191
     invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_10
+    if-nez v3, :cond_0
 
     .line 192
     iget-object v3, p1, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     invoke-virtual {v3, v1, v2}, Landroidx/exifinterface/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_36
+    :cond_1
     return-void
 .end method
 
 .method public flipHorizontally()V
-    .registers 4
+    .locals 3
 
     .line 574
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->getOrientation()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     const/4 v0, 0x2
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_9
+    :pswitch_0
     const/4 v0, 0x7
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_b
+    :pswitch_1
     const/16 v0, 0x8
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_e
+    :pswitch_2
     const/4 v0, 0x5
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_10
+    :pswitch_3
     const/4 v0, 0x6
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_12
+    :pswitch_4
     const/4 v0, 0x3
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_14
+    :pswitch_5
     const/4 v0, 0x4
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_16
+    :pswitch_6
     const/4 v0, 0x1
 
     .line 604
-    :goto_17
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     const-string v2, "Orientation"
@@ -1062,67 +1062,67 @@
 
     nop
 
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_16
-        :pswitch_14
-        :pswitch_12
-        :pswitch_10
-        :pswitch_e
-        :pswitch_b
-        :pswitch_9
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public flipVertically()V
-    .registers 4
+    .locals 3
 
     .line 535
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->getOrientation()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_24
+    packed-switch v0, :pswitch_data_0
 
     const/4 v0, 0x4
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_9
+    :pswitch_0
     const/4 v0, 0x5
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_b
+    :pswitch_1
     const/4 v0, 0x6
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_d
+    :pswitch_2
     const/4 v0, 0x7
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_f
+    :pswitch_3
     const/16 v0, 0x8
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_12
+    :pswitch_4
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_14
+    :pswitch_5
     const/4 v0, 0x2
 
-    goto :goto_17
+    goto :goto_0
 
-    :pswitch_16
+    :pswitch_6
     const/4 v0, 0x3
 
     .line 565
-    :goto_17
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     const-string v2, "Orientation"
@@ -1137,20 +1137,20 @@
 
     nop
 
-    :pswitch_data_24
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_16
-        :pswitch_14
-        :pswitch_12
-        :pswitch_f
-        :pswitch_d
-        :pswitch_b
-        :pswitch_9
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getDescription()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 236
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1165,7 +1165,7 @@
 .end method
 
 .method public getExifInterface()Landroidx/exifinterface/media/ExifInterface;
-    .registers 2
+    .locals 1
 
     .line 610
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1174,7 +1174,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 4
+    .locals 3
 
     .line 231
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1191,7 +1191,7 @@
 .end method
 
 .method public getLastModifiedTimestamp()J
-    .registers 7
+    .locals 6
 
     .line 340
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1210,12 +1210,12 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_13
+    if-nez v4, :cond_0
 
     return-wide v2
 
     .line 345
-    :cond_13
+    :cond_0
     iget-object v2, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     const-string v3, "SubSecTime"
@@ -1224,40 +1224,40 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 348
-    :try_start_1d
+    :try_start_0
     invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v2
 
-    :goto_21
+    :goto_0
     const-wide/16 v4, 0x3e8
 
     cmp-long v4, v2, v4
 
-    if-lez v4, :cond_2b
+    if-lez v4, :cond_1
 
     const-wide/16 v4, 0xa
 
     .line 350
     div-long/2addr v2, v4
-    :try_end_2a
-    .catch Ljava/lang/NumberFormatException; {:try_start_1d .. :try_end_2a} :catch_2c
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     add-long/2addr v0, v2
 
-    :catch_2c
-    :cond_2c
+    :catch_0
+    :cond_2
     return-wide v0
 .end method
 
 .method public getLocation()Landroid/location/Location;
-    .registers 17
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -1306,12 +1306,12 @@
 
     const-string v10, "K"
 
-    if-nez v3, :cond_2d
+    if-nez v3, :cond_0
 
     move-object v3, v10
 
     .line 397
-    :cond_2d
+    :cond_0
     iget-object v11, v0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     const-string v12, "GPSDateStamp"
@@ -1335,20 +1335,20 @@
 
     move-result-wide v11
 
-    if-nez v2, :cond_45
+    if-nez v2, :cond_1
 
     const/4 v1, 0x0
 
     return-object v1
 
-    :cond_45
-    if-nez v1, :cond_49
+    :cond_1
+    if-nez v1, :cond_2
 
     .line 405
     sget-object v1, Landroidx/camera/core/impl/utils/Exif;->TAG:Ljava/lang/String;
 
     .line 408
-    :cond_49
+    :cond_2
     new-instance v13, Landroid/location/Location;
 
     invoke-direct {v13, v1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
@@ -1369,15 +1369,15 @@
 
     cmpl-double v1, v6, v4
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_3
 
     .line 412
     invoke-virtual {v13, v6, v7}, Landroid/location/Location;->setAltitude(D)V
 
-    :cond_61
+    :cond_3
     cmpl-double v1, v8, v4
 
-    if-eqz v1, :cond_b5
+    if-eqz v1, :cond_a
 
     .line 415
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
@@ -1386,63 +1386,63 @@
 
     const/16 v2, 0x4b
 
-    if-eq v1, v2, :cond_8a
+    if-eq v1, v2, :cond_6
 
     const/16 v2, 0x4d
 
-    if-eq v1, v2, :cond_80
+    if-eq v1, v2, :cond_5
 
     const/16 v2, 0x4e
 
-    if-eq v1, v2, :cond_76
+    if-eq v1, v2, :cond_4
 
-    goto :goto_92
+    goto :goto_0
 
-    :cond_76
+    :cond_4
     const-string v1, "N"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_7
 
     move v1, v14
 
-    goto :goto_93
+    goto :goto_1
 
-    :cond_80
+    :cond_5
     const-string v1, "M"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_7
 
     const/4 v1, 0x0
 
-    goto :goto_93
+    goto :goto_1
 
-    :cond_8a
+    :cond_6
     invoke-virtual {v3, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_7
 
     const/4 v1, 0x2
 
-    goto :goto_93
+    goto :goto_1
 
-    :cond_92
-    :goto_92
+    :cond_7
+    :goto_0
     const/4 v1, -0x1
 
-    :goto_93
-    if-eqz v1, :cond_a9
+    :goto_1
+    if-eqz v1, :cond_9
 
-    if-eq v1, v14, :cond_a0
+    if-eq v1, v14, :cond_8
 
     .line 425
     invoke-static {v8, v9}, Landroidx/camera/core/impl/utils/Exif$Speed;->fromKilometersPerHour(D)Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
@@ -1453,10 +1453,10 @@
 
     move-result-wide v1
 
-    goto :goto_b1
+    goto :goto_2
 
     .line 420
-    :cond_a0
+    :cond_8
     invoke-static {v8, v9}, Landroidx/camera/core/impl/utils/Exif$Speed;->fromKnots(D)Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
 
     move-result-object v1
@@ -1465,10 +1465,10 @@
 
     move-result-wide v1
 
-    goto :goto_b1
+    goto :goto_2
 
     .line 417
-    :cond_a9
+    :cond_9
     invoke-static {v8, v9}, Landroidx/camera/core/impl/utils/Exif$Speed;->fromMilesPerHour(D)Landroidx/camera/core/impl/utils/Exif$Speed$Converter;
 
     move-result-object v1
@@ -1477,28 +1477,28 @@
 
     move-result-wide v1
 
-    :goto_b1
+    :goto_2
     double-to-float v1, v1
 
     .line 429
     invoke-virtual {v13, v1}, Landroid/location/Location;->setSpeed(F)V
 
-    :cond_b5
+    :cond_a
     const-wide/16 v1, -0x1
 
     cmp-long v1, v11, v1
 
-    if-eqz v1, :cond_be
+    if-eqz v1, :cond_b
 
     .line 432
     invoke-virtual {v13, v11, v12}, Landroid/location/Location;->setTime(J)V
 
-    :cond_be
+    :cond_b
     return-object v13
 .end method
 
 .method public getOrientation()I
-    .registers 4
+    .locals 3
 
     .line 215
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1515,7 +1515,7 @@
 .end method
 
 .method public getRotation()I
-    .registers 5
+    .locals 4
 
     .line 246
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->getOrientation()I
@@ -1528,39 +1528,39 @@
 
     const/16 v3, 0xb4
 
-    packed-switch v0, :pswitch_data_14
+    packed-switch v0, :pswitch_data_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :pswitch_f
+    :pswitch_0
     return v2
 
-    :pswitch_10
+    :pswitch_1
     return v1
 
-    :pswitch_11
+    :pswitch_2
     return v2
 
-    :pswitch_12
+    :pswitch_3
     return v3
 
     nop
 
-    :pswitch_data_14
+    :pswitch_data_0
     .packed-switch 0x3
-        :pswitch_12
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_10
-        :pswitch_f
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getTimestamp()J
-    .registers 7
+    .locals 6
 
     .line 366
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1580,12 +1580,12 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_13
+    if-nez v4, :cond_0
 
     return-wide v2
 
     .line 372
-    :cond_13
+    :cond_0
     iget-object v2, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     const-string v3, "SubSecTimeOriginal"
@@ -1594,40 +1594,40 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2
 
     .line 375
-    :try_start_1d
+    :try_start_0
     invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v2
 
-    :goto_21
+    :goto_0
     const-wide/16 v4, 0x3e8
 
     cmp-long v4, v2, v4
 
-    if-lez v4, :cond_2b
+    if-lez v4, :cond_1
 
     const-wide/16 v4, 0xa
 
     .line 377
     div-long/2addr v2, v4
-    :try_end_2a
-    .catch Ljava/lang/NumberFormatException; {:try_start_1d .. :try_end_2a} :catch_2c
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     add-long/2addr v0, v2
 
-    :catch_2c
-    :cond_2c
+    :catch_0
+    :cond_2
     return-wide v0
 .end method
 
 .method public getWidth()I
-    .registers 4
+    .locals 3
 
     .line 226
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1644,7 +1644,7 @@
 .end method
 
 .method public isFlippedHorizontally()Z
-    .registers 3
+    .locals 2
 
     .line 298
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->getOrientation()I
@@ -1653,20 +1653,20 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public isFlippedVertically()Z
-    .registers 4
+    .locals 3
 
     .line 272
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->getOrientation()I
@@ -1677,26 +1677,26 @@
 
     const/4 v2, 0x1
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_10
+    :cond_0
     return v2
 .end method
 
 .method public removeLocation()V
-    .registers 4
+    .locals 3
 
     .line 649
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1781,7 +1781,7 @@
 .end method
 
 .method public removeTimestamp()V
-    .registers 4
+    .locals 3
 
     .line 633
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -1836,7 +1836,7 @@
 .end method
 
 .method public rotate(I)V
-    .registers 11
+    .locals 9
 
     .line 442
     rem-int/lit8 v0, p1, 0x5a
@@ -1845,7 +1845,7 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 443
     sget-object v0, Landroidx/camera/core/impl/utils/Exif;->TAG:Ljava/lang/String;
@@ -1887,7 +1887,7 @@
     return-void
 
     .line 455
-    :cond_27
+    :cond_0
     rem-int/lit16 p1, p1, 0x168
 
     .line 457
@@ -1895,7 +1895,7 @@
 
     move-result v0
 
-    :goto_2d
+    :goto_0
     const/4 v3, 0x2
 
     const/4 v4, 0x4
@@ -1908,95 +1908,95 @@
 
     const/4 v8, 0x6
 
-    if-gez p1, :cond_49
+    if-gez p1, :cond_1
 
     add-int/lit8 p1, p1, 0x5a
 
-    packed-switch v0, :pswitch_data_6a
+    packed-switch v0, :pswitch_data_0
 
     move v0, v7
 
-    goto :goto_2d
+    goto :goto_0
 
-    :pswitch_3d
+    :pswitch_0
     move v0, v3
 
-    goto :goto_2d
+    goto :goto_0
 
-    :pswitch_3f
+    :pswitch_1
     move v0, v2
 
-    goto :goto_2d
+    goto :goto_0
 
-    :pswitch_41
+    :pswitch_2
     move v0, v4
 
-    goto :goto_2d
+    goto :goto_0
 
-    :pswitch_43
+    :pswitch_3
     move v0, v5
 
-    goto :goto_2d
+    goto :goto_0
 
-    :pswitch_45
+    :pswitch_4
     move v0, v8
 
-    goto :goto_2d
+    goto :goto_0
 
-    :pswitch_47
+    :pswitch_5
     move v0, v6
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_49
-    :goto_49
-    if-lez p1, :cond_60
+    :cond_1
+    :goto_1
+    if-lez p1, :cond_2
 
     add-int/lit8 p1, p1, -0x5a
 
-    packed-switch v0, :pswitch_data_7c
+    packed-switch v0, :pswitch_data_1
 
     move v0, v8
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_52
+    :pswitch_6
     move v0, v2
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_54
+    :pswitch_7
     move v0, v4
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_56
+    :pswitch_8
     const/4 v0, 0x3
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_58
+    :pswitch_9
     move v0, v3
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_5a
+    :pswitch_a
     move v0, v6
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_5c
+    :pswitch_b
     move v0, v7
 
-    goto :goto_49
+    goto :goto_1
 
-    :pswitch_5e
+    :pswitch_c
     move v0, v5
 
-    goto :goto_49
+    goto :goto_1
 
     .line 526
-    :cond_60
+    :cond_2
     iget-object p1, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -2007,31 +2007,31 @@
 
     return-void
 
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_47
-        :pswitch_45
-        :pswitch_43
-        :pswitch_41
-        :pswitch_3f
-        :pswitch_3d
-        :pswitch_45
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_4
     .end packed-switch
 
-    :pswitch_data_7c
+    :pswitch_data_1
     .packed-switch 0x2
-        :pswitch_5e
-        :pswitch_5c
-        :pswitch_5a
-        :pswitch_58
-        :pswitch_56
-        :pswitch_54
-        :pswitch_52
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
     .end packed-switch
 .end method
 
 .method public save()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2041,13 +2041,13 @@
     .line 173
     iget-boolean v0, p0, Landroidx/camera/core/impl/utils/Exif;->mRemoveTimestamp:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 174
     invoke-direct {p0}, Landroidx/camera/core/impl/utils/Exif;->attachLastModifiedTimestamp()V
 
     .line 176
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
 
     invoke-virtual {v0}, Landroidx/exifinterface/media/ExifInterface;->saveAttributes()V
@@ -2056,7 +2056,7 @@
 .end method
 
 .method public setDescription(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 241
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -2069,7 +2069,7 @@
 .end method
 
 .method public setOrientation(I)V
-    .registers 4
+    .locals 2
 
     .line 221
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Exif;->mExifInterface:Landroidx/exifinterface/media/ExifInterface;
@@ -2086,7 +2086,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 199
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;

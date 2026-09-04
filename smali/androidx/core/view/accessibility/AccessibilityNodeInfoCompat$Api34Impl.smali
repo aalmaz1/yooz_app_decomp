@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 5279
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static getActionScrollInDirection()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
+    .locals 1
 
     .line 5345
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_IN_DIRECTION:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
@@ -34,7 +34,7 @@
 .end method
 
 .method public static getBoundsInWindow(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 5307
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInWindow(Landroid/graphics/Rect;)V
@@ -43,7 +43,7 @@
 .end method
 
 .method public static getContainerTitle(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 5296
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getContainerTitle()Ljava/lang/CharSequence;
@@ -54,7 +54,7 @@
 .end method
 
 .method public static getMinDurationBetweenContentChangeMillis(Landroid/view/accessibility/AccessibilityNodeInfo;)J
-    .registers 3
+    .locals 2
 
     .line 5328
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getMinDurationBetweenContentChanges()Ljava/time/Duration;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static hasRequestInitialAccessibilityFocus(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 5317
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->hasRequestInitialAccessibilityFocus()Z
@@ -80,7 +80,7 @@
 .end method
 
 .method public static isAccessibilityDataSensitive(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 5285
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isAccessibilityDataSensitive()Z
@@ -91,7 +91,7 @@
 .end method
 
 .method public static setAccessibilityDataSensitive(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    .locals 0
 
     .line 5291
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setAccessibilityDataSensitive(Z)V
@@ -100,7 +100,7 @@
 .end method
 
 .method public static setBoundsInWindow(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/graphics/Rect;)V
-    .registers 2
+    .locals 0
 
     .line 5312
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInWindow(Landroid/graphics/Rect;)V
@@ -109,7 +109,7 @@
 .end method
 
 .method public static setContainerTitle(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 5302
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContainerTitle(Ljava/lang/CharSequence;)V
@@ -118,7 +118,7 @@
 .end method
 
 .method public static setMinDurationBetweenContentChangeMillis(Landroid/view/accessibility/AccessibilityNodeInfo;J)V
-    .registers 3
+    .locals 0
 
     .line 5334
     invoke-static {p1, p2}, Ljava/time/Duration;->ofMillis(J)Ljava/time/Duration;
@@ -131,7 +131,7 @@
 .end method
 
 .method public static setQueryFromAppProcessEnabled(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/view/View;Z)V
-    .registers 3
+    .locals 0
 
     .line 5340
     invoke-virtual {p0, p1, p2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setQueryFromAppProcessEnabled(Landroid/view/View;Z)V
@@ -140,7 +140,7 @@
 .end method
 
 .method public static setRequestInitialAccessibilityFocus(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    .locals 0
 
     .line 5323
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setRequestInitialAccessibilityFocus(Z)V

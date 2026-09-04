@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/dash/DashMediaSource;)V
-    .registers 2
+    .locals 0
 
     .line 1498
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;
@@ -34,7 +34,7 @@
 .end method
 
 .method private maybeThrowManifestError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -48,12 +48,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 1514
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Landroidx/media3/exoplayer/dash/DashMediaSource;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->access$800(Landroidx/media3/exoplayer/dash/DashMediaSource;)Ljava/io/IOException;
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -89,7 +89,7 @@
 .end method
 
 .method public maybeThrowError(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

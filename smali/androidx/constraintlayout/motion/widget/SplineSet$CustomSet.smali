@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/util/SparseArray;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public setPoint(IF)V
-    .registers 3
+    .locals 0
 
     .line 287
     new-instance p1, Ljava/lang/RuntimeException;
@@ -81,7 +81,7 @@
 .end method
 
 .method public setPoint(ILandroidx/constraintlayout/widget/ConstraintAttribute;)V
-    .registers 4
+    .locals 1
 
     .line 291
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/SplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
@@ -92,7 +92,7 @@
 .end method
 
 .method public setProperty(Landroid/view/View;F)V
-    .registers 6
+    .locals 3
 
     .line 296
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/SplineSet$CustomSet;->mCurveFit:Landroidx/constraintlayout/motion/utils/CurveFit;
@@ -122,7 +122,7 @@
 .end method
 
 .method public setup(I)V
-    .registers 13
+    .locals 11
 
     .line 265
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/SplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
@@ -175,8 +175,8 @@
 
     move v4, v2
 
-    :goto_2a
-    if-ge v4, v0, :cond_5b
+    :goto_0
+    if-ge v4, v0, :cond_1
 
     .line 272
     iget-object v5, p0, Landroidx/constraintlayout/motion/widget/SplineSet$CustomSet;->mConstraintAttributeList:Landroid/util/SparseArray;
@@ -211,12 +211,12 @@
     move v5, v2
 
     .line 277
-    :goto_49
+    :goto_1
     iget-object v6, p0, Landroidx/constraintlayout/motion/widget/SplineSet$CustomSet;->mTempValues:[F
 
     array-length v7, v6
 
-    if-ge v5, v7, :cond_58
+    if-ge v5, v7, :cond_0
 
     .line 278
     aget-object v7, v1, v4
@@ -229,15 +229,15 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_49
+    goto :goto_1
 
-    :cond_58
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 282
-    :cond_5b
+    :cond_1
     invoke-static {p1, v3, v1}, Landroidx/constraintlayout/motion/utils/CurveFit;->get(I[D[[D)Landroidx/constraintlayout/motion/utils/CurveFit;
 
     move-result-object p1

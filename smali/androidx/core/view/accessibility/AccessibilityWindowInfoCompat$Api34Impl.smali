@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 678
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getLocales(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/os/LocaleList;
-    .registers 1
+    .locals 0
 
     .line 689
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getLocales()Landroid/os/LocaleList;
@@ -36,7 +36,7 @@
 .end method
 
 .method public static getTransitionTimeMillis(Landroid/view/accessibility/AccessibilityWindowInfo;)J
-    .registers 3
+    .locals 2
 
     .line 684
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getTransitionTimeMillis()J

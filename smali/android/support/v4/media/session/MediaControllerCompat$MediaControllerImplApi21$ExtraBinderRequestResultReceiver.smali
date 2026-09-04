@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
 
     .line 2231
     iget-object p1, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver;->mMediaControllerImpl:Ljava/lang/ref/WeakReference;
@@ -59,20 +59,20 @@
 
     check-cast p1, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_1
 
-    if-nez p2, :cond_d
+    if-nez p2, :cond_0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 2235
-    :cond_d
+    :cond_0
     iget-object v0, p1, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 2236
-    :try_start_10
+    :try_start_0
     iget-object v1, p1, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi21;->mSessionToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
     const-string v2, "android.support.v4.media.session.EXTRA_BINDER"
@@ -111,16 +111,16 @@
 
     return-void
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_10 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-void
 .end method

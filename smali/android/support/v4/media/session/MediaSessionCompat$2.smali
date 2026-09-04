@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaSessionCompat;)V
-    .registers 2
+    .locals 0
 
     .line 500
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$2;->this$0:Landroid/support/v4/media/session/MediaSessionCompat;

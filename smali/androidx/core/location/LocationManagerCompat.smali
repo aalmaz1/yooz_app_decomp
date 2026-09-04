@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 254
     new-instance v0, Ljava/util/WeakHashMap;
@@ -74,7 +74,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 695
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 .end method
 
 .method public static getCurrentLocation(Landroid/location/LocationManager;Ljava/lang/String;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,26 +102,26 @@
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 221
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/location/LocationManagerCompat$Api30Impl;->getCurrentLocation(Landroid/location/LocationManager;Ljava/lang/String;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
 
     return-void
 
-    :cond_a
-    if-eqz p2, :cond_f
+    :cond_0
+    if-eqz p2, :cond_1
 
     .line 227
     invoke-virtual {p2}, Landroid/os/CancellationSignal;->throwIfCanceled()V
 
     .line 230
-    :cond_f
+    :cond_1
     invoke-virtual {p0, p1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 233
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -138,7 +138,7 @@
 
     cmp-long v1, v1, v3
 
-    if-gez v1, :cond_2d
+    if-gez v1, :cond_2
 
     .line 235
     new-instance p0, Landroidx/core/location/LocationManagerCompat$$ExternalSyntheticLambda1;
@@ -150,7 +150,7 @@
     return-void
 
     .line 240
-    :cond_2d
+    :cond_2
     new-instance v0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;
 
     invoke-direct {v0, p0, p3, p4}, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;-><init>(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
@@ -173,7 +173,7 @@
     .line 242
     invoke-virtual/range {v1 .. v7}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    if-eqz p2, :cond_4c
+    if-eqz p2, :cond_3
 
     .line 246
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -184,7 +184,7 @@
 
     invoke-virtual {p2, p0}, Landroid/os/CancellationSignal;->setOnCancelListener(Landroid/os/CancellationSignal$OnCancelListener;)V
 
-    :cond_4c
+    :cond_3
     const-wide/16 p0, 0x7530
 
     .line 249
@@ -194,7 +194,7 @@
 .end method
 
 .method public static getCurrentLocation(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -211,7 +211,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 193
     invoke-virtual {p2}, Landroidx/core/os/CancellationSignal;->getCancellationSignalObject()Ljava/lang/Object;
@@ -220,20 +220,20 @@
 
     check-cast p2, Landroid/os/CancellationSignal;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p2, 0x0
 
     .line 192
-    :goto_a
+    :goto_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/location/LocationManagerCompat;->getCurrentLocation(Landroid/location/LocationManager;Ljava/lang/String;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
 
     return-void
 .end method
 
 .method public static getGnssHardwareModelName(Landroid/location/LocationManager;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 387
     invoke-static {p0}, Landroidx/core/location/LocationManagerCompat$Api28Impl;->getGnssHardwareModelName(Landroid/location/LocationManager;)Ljava/lang/String;
@@ -244,7 +244,7 @@
 .end method
 
 .method public static getGnssYearOfHardware(Landroid/location/LocationManager;)I
-    .registers 1
+    .locals 0
 
     .line 399
     invoke-static {p0}, Landroidx/core/location/LocationManagerCompat$Api28Impl;->getGnssYearOfHardware(Landroid/location/LocationManager;)I
@@ -255,14 +255,14 @@
 .end method
 
 .method public static hasProvider(Landroid/location/LocationManager;Ljava/lang/String;)Z
-    .registers 4
+    .locals 2
 
     .line 147
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 148
     invoke-static {p0, p1}, Landroidx/core/location/LocationManagerCompat$Api31Impl;->hasProvider(Landroid/location/LocationManager;Ljava/lang/String;)Z
@@ -272,7 +272,7 @@
     return p0
 
     .line 152
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Landroid/location/LocationManager;->getAllProviders()Ljava/util/List;
 
     move-result-object v0
@@ -283,37 +283,37 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_17
+    :cond_1
     const/4 v0, 0x0
 
     .line 158
-    :try_start_18
+    :try_start_0
     invoke-virtual {p0, p1}, Landroid/location/LocationManager;->getProvider(Ljava/lang/String;)Landroid/location/LocationProvider;
 
     move-result-object p0
-    :try_end_1c
-    .catch Ljava/lang/SecurityException; {:try_start_18 .. :try_end_1c} :catch_21
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz p0, :cond_1f
+    if-eqz p0, :cond_2
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_2
     move v1, v0
 
-    :goto_20
+    :goto_0
     return v1
 
-    :catch_21
+    :catch_0
     return v0
 .end method
 
 .method public static isLocationEnabled(Landroid/location/LocationManager;)Z
-    .registers 1
+    .locals 0
 
     .line 103
     invoke-static {p0}, Landroidx/core/location/LocationManagerCompat$Api28Impl;->isLocationEnabled(Landroid/location/LocationManager;)Z
@@ -324,7 +324,7 @@
 .end method
 
 .method static synthetic lambda$getCurrentLocation$0(Landroidx/core/util/Consumer;Landroid/location/Location;)V
-    .registers 2
+    .locals 0
 
     .line 235
     invoke-interface {p0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -333,7 +333,7 @@
 .end method
 
 .method static synthetic lambda$registerGnssStatusCallback$1(Landroid/location/LocationManager;Landroidx/core/location/LocationManagerCompat$GpsStatusTransport;)Ljava/lang/Boolean;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -353,14 +353,14 @@
 .end method
 
 .method public static registerGnssMeasurementsCallback(Landroid/location/LocationManager;Landroid/location/GnssMeasurementsEvent$Callback;Landroid/os/Handler;)Z
-    .registers 5
+    .locals 2
 
     .line 428
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-le v0, v1, :cond_b
+    if-le v0, v1, :cond_0
 
     .line 429
     invoke-static {p0, p1, p2}, Landroidx/core/location/LocationManagerCompat$Api24Impl;->registerGnssMeasurementsCallback(Landroid/location/LocationManager;Landroid/location/GnssMeasurementsEvent$Callback;Landroid/os/Handler;)Z
@@ -370,10 +370,10 @@
     return p0
 
     .line 430
-    :cond_b
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     .line 432
     invoke-static {p2}, Landroidx/core/os/ExecutorCompat;->create(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
@@ -388,13 +388,13 @@
     return p0
 
     .line 435
-    :cond_18
+    :cond_1
     sget-object v0, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssMeasurementListeners:Landroidx/collection/SimpleArrayMap;
 
     monitor-enter v0
 
     .line 436
-    :try_start_1b
+    :try_start_0
     invoke-static {p0, p1}, Landroidx/core/location/LocationManagerCompat;->unregisterGnssMeasurementsCallback(Landroid/location/LocationManager;Landroid/location/GnssMeasurementsEvent$Callback;)V
 
     .line 437
@@ -402,7 +402,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_2
 
     .line 439
     sget-object p0, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssMeasurementListeners:Landroidx/collection/SimpleArrayMap;
@@ -417,33 +417,33 @@
     return p0
 
     .line 442
-    :cond_2c
+    :cond_2
     monitor-exit v0
 
     const/4 p0, 0x0
 
     return p0
 
-    :catchall_2f
+    :catchall_0
     move-exception p0
 
     .line 444
     monitor-exit v0
-    :try_end_31
-    .catchall {:try_start_1b .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static registerGnssMeasurementsCallback(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent$Callback;)Z
-    .registers 5
+    .locals 2
 
     .line 462
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-le v0, v1, :cond_b
+    if-le v0, v1, :cond_0
 
     .line 463
     invoke-static {p0, p1, p2}, Landroidx/core/location/LocationManagerCompat$Api31Impl;->registerGnssMeasurementsCallback(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent$Callback;)Z
@@ -453,10 +453,10 @@
     return p0
 
     .line 464
-    :cond_b
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_1
 
     .line 465
     invoke-static {p0, p1, p2}, Landroidx/core/location/LocationManagerCompat;->registerGnssMeasurementsCallbackOnR(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent$Callback;)Z
@@ -466,13 +466,13 @@
     return p0
 
     .line 469
-    :cond_14
+    :cond_1
     sget-object v0, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssMeasurementListeners:Landroidx/collection/SimpleArrayMap;
 
     monitor-enter v0
 
     .line 470
-    :try_start_17
+    :try_start_0
     new-instance v1, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;
 
     invoke-direct {v1, p2, p1}, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;-><init>(Landroid/location/GnssMeasurementsEvent$Callback;Ljava/util/concurrent/Executor;)V
@@ -485,7 +485,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_2d
+    if-eqz p0, :cond_2
 
     .line 474
     sget-object p0, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssMeasurementListeners:Landroidx/collection/SimpleArrayMap;
@@ -500,41 +500,41 @@
     return p0
 
     .line 477
-    :cond_2d
+    :cond_2
     monitor-exit v0
 
     const/4 p0, 0x0
 
     return p0
 
-    :catchall_30
+    :catchall_0
     move-exception p0
 
     .line 479
     monitor-exit v0
-    :try_end_32
-    .catchall {:try_start_17 .. :try_end_32} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method private static registerGnssMeasurementsCallbackOnR(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent$Callback;)Z
-    .registers 11
+    .locals 8
 
     .line 512
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-ne v0, v1, :cond_7c
+    if-ne v0, v1, :cond_4
 
     const/4 v0, 0x0
 
     .line 514
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/core/location/LocationManagerCompat;->sGnssRequestBuilderClass:Ljava/lang/Class;
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_0
 
     const-string v1, "android.location.GnssRequest$Builder"
 
@@ -546,12 +546,12 @@
     sput-object v1, Landroidx/core/location/LocationManagerCompat;->sGnssRequestBuilderClass:Ljava/lang/Class;
 
     .line 518
-    :cond_13
+    :cond_0
     sget-object v1, Landroidx/core/location/LocationManagerCompat;->sGnssRequestBuilderBuildMethod:Ljava/lang/reflect/Method;
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_1
 
     .line 519
     sget-object v1, Landroidx/core/location/LocationManagerCompat;->sGnssRequestBuilderClass:Ljava/lang/Class;
@@ -570,14 +570,14 @@
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 523
-    :cond_27
+    :cond_1
     sget-object v1, Landroidx/core/location/LocationManagerCompat;->sRegisterGnssMeasurementsCallbackMethod:Ljava/lang/reflect/Method;
 
     const/4 v3, 0x2
 
     const/4 v4, 0x3
 
-    if-nez v1, :cond_4c
+    if-nez v1, :cond_2
 
     .line 524
     const-class v1, Landroid/location/LocationManager;
@@ -614,7 +614,7 @@
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 532
-    :cond_4c
+    :cond_2
     sget-object v1, Landroidx/core/location/LocationManagerCompat;->sRegisterGnssMeasurementsCallbackMethod:Ljava/lang/reflect/Method;
 
     new-array v4, v4, [Ljava/lang/Object;
@@ -654,7 +654,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_7b
+    if-eqz p0, :cond_3
 
     .line 536
     check-cast p0, Ljava/lang/Boolean;
@@ -662,23 +662,23 @@
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
-    :try_end_78
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_7 .. :try_end_78} :catch_7b
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_7 .. :try_end_78} :catch_7b
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_7 .. :try_end_78} :catch_7b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_7 .. :try_end_78} :catch_7b
-    .catch Ljava/lang/InstantiationException; {:try_start_7 .. :try_end_78} :catch_7b
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz p0, :cond_7b
+    if-eqz p0, :cond_3
 
     move v0, v2
 
-    :catch_7b
-    :cond_7b
+    :catch_0
+    :cond_3
     return v0
 
     .line 542
-    :cond_7c
+    :cond_4
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -687,14 +687,14 @@
 .end method
 
 .method private static registerGnssStatusCallback(Landroid/location/LocationManager;Landroid/os/Handler;Ljava/util/concurrent/Executor;Landroidx/core/location/GnssStatusCompat$Callback;)Z
-    .registers 6
+    .locals 2
 
     .line 601
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 602
     invoke-static {p0, p1, p2, p3}, Landroidx/core/location/LocationManagerCompat$Api30Impl;->registerGnssStatusCallback(Landroid/location/LocationManager;Landroid/os/Handler;Ljava/util/concurrent/Executor;Landroidx/core/location/GnssStatusCompat$Callback;)Z
@@ -704,7 +704,7 @@
     return p0
 
     .line 605
-    :cond_b
+    :cond_0
     invoke-static {p0, p1, p2, p3}, Landroidx/core/location/LocationManagerCompat$Api24Impl;->registerGnssStatusCallback(Landroid/location/LocationManager;Landroid/os/Handler;Ljava/util/concurrent/Executor;Landroidx/core/location/GnssStatusCompat$Callback;)Z
 
     move-result p0
@@ -713,14 +713,14 @@
 .end method
 
 .method public static registerGnssStatusCallback(Landroid/location/LocationManager;Landroidx/core/location/GnssStatusCompat$Callback;Landroid/os/Handler;)Z
-    .registers 5
+    .locals 2
 
     .line 556
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 557
     invoke-static {p2}, Landroidx/core/os/ExecutorCompat;->create(Landroid/os/Handler;)Ljava/util/concurrent/Executor;
@@ -734,7 +734,7 @@
     return p0
 
     .line 560
-    :cond_f
+    :cond_0
     new-instance v0, Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;
 
     invoke-direct {v0, p2}, Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;-><init>(Landroid/os/Handler;)V
@@ -747,14 +747,14 @@
 .end method
 
 .method public static registerGnssStatusCallback(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroidx/core/location/GnssStatusCompat$Callback;)Z
-    .registers 5
+    .locals 2
 
     .line 586
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -766,12 +766,12 @@
     return p0
 
     .line 589
-    :cond_c
+    :cond_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 591
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -779,7 +779,7 @@
     move-result-object v0
 
     .line 593
-    :cond_16
+    :cond_1
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -792,7 +792,7 @@
 .end method
 
 .method static registerLocationListenerTransport(Landroid/location/LocationManager;Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;)V
-    .registers 5
+    .locals 3
 
     .line 301
     sget-object v0, Landroidx/core/location/LocationManagerCompat;->sLocationListeners:Ljava/util/WeakHashMap;
@@ -812,7 +812,7 @@
 
     check-cast p1, Ljava/lang/ref/WeakReference;
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 303
     invoke-virtual {p1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -821,13 +821,13 @@
 
     check-cast p1, Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_1b
-    if-eqz p1, :cond_23
+    :goto_0
+    if-eqz p1, :cond_1
 
     .line 305
     invoke-virtual {p1}, Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;->unregister()V
@@ -835,12 +835,12 @@
     .line 306
     invoke-virtual {p0, p1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    :cond_23
+    :cond_1
     return-void
 .end method
 
 .method public static removeUpdates(Landroid/location/LocationManager;Landroidx/core/location/LocationListenerCompat;)V
-    .registers 8
+    .locals 6
 
     .line 348
     sget-object v0, Landroidx/core/location/LocationManagerCompat;->sLocationListeners:Ljava/util/WeakHashMap;
@@ -848,7 +848,7 @@
     monitor-enter v0
 
     .line 351
-    :try_start_3
+    :try_start_0
     invoke-virtual {v0}, Ljava/util/WeakHashMap;->values()Ljava/util/Collection;
 
     move-result-object v1
@@ -859,13 +859,13 @@
 
     const/4 v2, 0x0
 
-    :cond_c
-    :goto_c
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -880,12 +880,12 @@
 
     check-cast v3, Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;
 
-    if-nez v3, :cond_21
+    if-nez v3, :cond_1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 356
-    :cond_21
+    :cond_1
     invoke-virtual {v3}, Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;->getKey()Landroidx/core/location/LocationManagerCompat$LocationListenerKey;
 
     move-result-object v4
@@ -893,9 +893,9 @@
     .line 357
     iget-object v5, v4, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mListener:Landroidx/core/location/LocationListenerCompat;
 
-    if-ne v5, p1, :cond_c
+    if-ne v5, p1, :cond_0
 
-    if-nez v2, :cond_30
+    if-nez v2, :cond_2
 
     .line 359
     new-instance v2, Ljava/util/ArrayList;
@@ -903,7 +903,7 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 361
-    :cond_30
+    :cond_2
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 362
@@ -912,22 +912,22 @@
     .line 363
     invoke-virtual {p0, v3}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_3a
-    if-eqz v2, :cond_52
+    :cond_3
+    if-eqz v2, :cond_4
 
     .line 367
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_40
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_52
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -940,40 +940,40 @@
 
     invoke-virtual {v3, v2}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_40
+    goto :goto_1
 
     .line 371
-    :cond_52
+    :cond_4
     monitor-exit v0
-    :try_end_53
-    .catchall {:try_start_3 .. :try_end_53} :catchall_57
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 375
     invoke-virtual {p0, p1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
     return-void
 
-    :catchall_57
+    :catchall_0
     move-exception p0
 
     .line 371
-    :try_start_58
+    :try_start_1
     monitor-exit v0
-    :try_end_59
-    .catchall {:try_start_58 .. :try_end_59} :catchall_57
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p0
 .end method
 
 .method public static requestLocationUpdates(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/location/LocationRequestCompat;Landroidx/core/location/LocationListenerCompat;Landroid/os/Looper;)V
-    .registers 13
+    .locals 8
 
     .line 324
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_17
+    if-lt v0, v1, :cond_0
 
     .line 326
     invoke-virtual {p2}, Landroidx/core/location/LocationRequestCompat;->toLocationRequest()Landroid/location/LocationRequest;
@@ -995,17 +995,17 @@
     return-void
 
     .line 331
-    :cond_17
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/location/LocationManagerCompat$Api19Impl;->tryRequestLocationUpdates(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/location/LocationRequestCompat;Landroidx/core/location/LocationListenerCompat;Landroid/os/Looper;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 336
-    :cond_1e
+    :cond_1
     invoke-virtual {p2}, Landroidx/core/location/LocationRequestCompat;->getIntervalMillis()J
 
     move-result-wide v3
@@ -1030,14 +1030,14 @@
 .end method
 
 .method public static requestLocationUpdates(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/location/LocationRequestCompat;Ljava/util/concurrent/Executor;Landroidx/core/location/LocationListenerCompat;)V
-    .registers 13
+    .locals 8
 
     .line 270
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     .line 272
     invoke-virtual {p2}, Landroidx/core/location/LocationRequestCompat;->toLocationRequest()Landroid/location/LocationRequest;
@@ -1050,23 +1050,23 @@
     return-void
 
     .line 276
-    :cond_e
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_1b
+    if-lt v0, v1, :cond_1
 
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/location/LocationManagerCompat$Api30Impl;->tryRequestLocationUpdates(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/location/LocationRequestCompat;Ljava/util/concurrent/Executor;Landroidx/core/location/LocationListenerCompat;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 281
-    :cond_1b
+    :cond_1
     new-instance v0, Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;
 
     new-instance v1, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;
@@ -1080,18 +1080,18 @@
 
     move-result p3
 
-    if-eqz p3, :cond_2c
+    if-eqz p3, :cond_2
 
     return-void
 
     .line 289
-    :cond_2c
+    :cond_2
     sget-object p3, Landroidx/core/location/LocationManagerCompat;->sLocationListeners:Ljava/util/WeakHashMap;
 
     monitor-enter p3
 
     .line 290
-    :try_start_2f
+    :try_start_0
     invoke-virtual {p2}, Landroidx/core/location/LocationRequestCompat;->getIntervalMillis()J
 
     move-result-wide v3
@@ -1123,39 +1123,39 @@
 
     return-void
 
-    :catchall_46
+    :catchall_0
     move-exception p0
 
     monitor-exit p3
-    :try_end_48
-    .catchall {:try_start_2f .. :try_end_48} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static unregisterGnssMeasurementsCallback(Landroid/location/LocationManager;Landroid/location/GnssMeasurementsEvent$Callback;)V
-    .registers 4
+    .locals 2
 
     .line 490
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 491
     invoke-static {p0, p1}, Landroidx/core/location/LocationManagerCompat$Api24Impl;->unregisterGnssMeasurementsCallback(Landroid/location/LocationManager;Landroid/location/GnssMeasurementsEvent$Callback;)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 493
-    :cond_a
+    :cond_0
     sget-object v0, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssMeasurementListeners:Landroidx/collection/SimpleArrayMap;
 
     monitor-enter v0
 
     .line 494
-    :try_start_d
+    :try_start_0
     sget-object v1, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssMeasurementListeners:Landroidx/collection/SimpleArrayMap;
 
     .line 495
@@ -1165,12 +1165,12 @@
 
     check-cast p1, Landroid/location/GnssMeasurementsEvent$Callback;
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_2
 
     .line 497
     instance-of v1, p1, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 498
     move-object v1, p1
@@ -1180,28 +1180,28 @@
     invoke-virtual {v1}, Landroidx/core/location/LocationManagerCompat$GnssMeasurementsTransport;->unregister()V
 
     .line 500
-    :cond_21
+    :cond_1
     invoke-static {p0, p1}, Landroidx/core/location/LocationManagerCompat$Api24Impl;->unregisterGnssMeasurementsCallback(Landroid/location/LocationManager;Landroid/location/GnssMeasurementsEvent$Callback;)V
 
     .line 502
-    :cond_24
+    :cond_2
     monitor-exit v0
 
-    :goto_25
+    :goto_0
     return-void
 
-    :catchall_26
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_d .. :try_end_28} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static unregisterGnssStatusCallback(Landroid/location/LocationManager;Landroidx/core/location/GnssStatusCompat$Callback;)V
-    .registers 4
+    .locals 2
 
     .line 676
     sget-object v0, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssStatusListeners:Landroidx/collection/SimpleArrayMap;
@@ -1209,30 +1209,30 @@
     monitor-enter v0
 
     .line 677
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/core/location/LocationManagerCompat$GnssListenersHolder;->sGnssStatusListeners:Landroidx/collection/SimpleArrayMap;
 
     invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 679
     invoke-static {p0, p1}, Landroidx/core/location/LocationManagerCompat$Api24Impl;->unregisterGnssStatusCallback(Landroid/location/LocationManager;Ljava/lang/Object;)V
 
     .line 681
-    :cond_e
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method

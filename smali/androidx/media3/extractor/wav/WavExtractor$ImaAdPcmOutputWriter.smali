@@ -51,14 +51,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x10
 
     new-array v0, v0, [I
 
     .line 385
-    fill-array-data v0, :array_14
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->INDEX_TABLE:[I
 
@@ -67,7 +67,7 @@
     new-array v0, v0, [I
 
     .line 389
-    fill-array-data v0, :array_38
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->STEP_TABLE:[I
 
@@ -75,7 +75,7 @@
 
     nop
 
-    :array_14
+    :array_0
     .array-data 4
         -0x1
         -0x1
@@ -95,7 +95,7 @@
         0x8
     .end array-data
 
-    :array_38
+    :array_1
     .array-data 4
         0x7
         0x8
@@ -190,7 +190,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/TrackOutput;Landroidx/media3/extractor/wav/WavFormat;)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -259,7 +259,7 @@
 
     add-int/2addr v2, p2
 
-    if-ne v0, v2, :cond_86
+    if-ne v0, v2, :cond_0
 
     .line 465
     invoke-static {p1, v0}, Landroidx/media3/common/util/Util;->ceilDivide(II)I
@@ -362,7 +362,7 @@
     return-void
 
     .line 458
-    :cond_86
+    :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Expected frames per block: "
@@ -397,24 +397,24 @@
 .end method
 
 .method private decode([BILandroidx/media3/common/util/ParsableByteArray;)V
-    .registers 8
+    .locals 4
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    :goto_2
-    if-ge v1, p2, :cond_18
+    :goto_0
+    if-ge v1, p2, :cond_1
 
     move v2, v0
 
     .line 574
-    :goto_5
+    :goto_1
     iget-object v3, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
 
     iget v3, v3, Landroidx/media3/extractor/wav/WavFormat;->numChannels:I
 
-    if-ge v2, v3, :cond_15
+    if-ge v2, v3, :cond_0
 
     .line 575
     invoke-virtual {p3}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -425,15 +425,15 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_1
 
-    :cond_15
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 578
-    :cond_18
+    :cond_1
     iget p1, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->framesPerBlock:I
 
     mul-int/2addr p1, p2
@@ -452,7 +452,7 @@
 .end method
 
 .method private decodeBlockForChannel([BII[B)V
-    .registers 14
+    .locals 9
 
     .line 585
     iget-object v0, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
@@ -545,10 +545,10 @@
 
     move v6, p3
 
-    :goto_46
+    :goto_0
     mul-int/lit8 v7, v0, 0x2
 
-    if-ge v6, v7, :cond_9b
+    if-ge v6, v7, :cond_2
 
     .line 614
     div-int/lit8 v7, v6, 0x8
@@ -574,16 +574,16 @@
     .line 619
     rem-int/lit8 v8, v6, 0x2
 
-    if-nez v8, :cond_60
+    if-nez v8, :cond_0
 
     and-int/lit8 v7, v7, 0xf
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_60
+    :cond_0
     shr-int/lit8 v7, v7, 0x4
 
-    :goto_62
+    :goto_1
     and-int/lit8 v8, v7, 0x7
 
     mul-int/lit8 v8, v8, 0x2
@@ -596,11 +596,11 @@
 
     and-int/lit8 v8, v7, 0x8
 
-    if-eqz v8, :cond_70
+    if-eqz v8, :cond_1
 
     neg-int v5, v5
 
-    :cond_70
+    :cond_1
     add-int/2addr v4, v5
 
     const/16 v5, -0x8000
@@ -655,14 +655,14 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_9b
+    :cond_2
     return-void
 .end method
 
 .method private numOutputBytesToFrames(I)I
-    .registers 3
+    .locals 1
 
     .line 647
     iget-object v0, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
@@ -677,7 +677,7 @@
 .end method
 
 .method private numOutputFramesToBytes(I)I
-    .registers 3
+    .locals 1
 
     .line 651
     iget-object v0, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
@@ -692,7 +692,7 @@
 .end method
 
 .method private static numOutputFramesToBytes(II)I
-    .registers 2
+    .locals 0
 
     mul-int/lit8 p0, p0, 0x2
 
@@ -702,7 +702,7 @@
 .end method
 
 .method private writeSampleMetadata(I)V
-    .registers 13
+    .locals 11
 
     .line 553
     iget-wide v0, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->startTimeUs:J
@@ -767,7 +767,7 @@
 
 # virtual methods
 .method public init(IJ)V
-    .registers 13
+    .locals 9
 
     .line 496
     iget-object v0, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -799,7 +799,7 @@
 .end method
 
 .method public reset(J)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -821,7 +821,7 @@
 .end method
 
 .method public sampleData(Landroidx/media3/extractor/ExtractorInput;J)Z
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -860,23 +860,23 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_0
 
-    :goto_1b
+    :goto_0
     move v1, v2
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_1e
-    if-nez v1, :cond_3e
+    :goto_1
+    if-nez v1, :cond_2
 
     .line 513
     iget v3, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->pendingInputBytes:I
 
-    if-ge v3, v0, :cond_3e
+    if-ge v3, v0, :cond_2
 
     sub-int v3, v0, v3
 
@@ -900,22 +900,22 @@
 
     const/4 v4, -0x1
 
-    if-ne v3, v4, :cond_38
+    if-ne v3, v4, :cond_1
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 519
-    :cond_38
+    :cond_1
     iget v4, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->pendingInputBytes:I
 
     add-int/2addr v4, v3
 
     iput v4, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->pendingInputBytes:I
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 523
-    :cond_3e
+    :cond_2
     iget p1, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->pendingInputBytes:I
 
     iget-object p2, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
@@ -924,7 +924,7 @@
 
     div-int/2addr p1, p2
 
-    if-lez p1, :cond_75
+    if-lez p1, :cond_3
 
     .line 526
     iget-object p2, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->inputData:[B
@@ -975,13 +975,13 @@
     .line 536
     iget p2, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->targetSampleSizeFrames:I
 
-    if-lt p1, p2, :cond_75
+    if-lt p1, p2, :cond_3
 
     .line 537
     invoke-direct {p0, p2}, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->writeSampleMetadata(I)V
 
-    :cond_75
-    if-eqz v1, :cond_82
+    :cond_3
+    if-eqz v1, :cond_4
 
     .line 543
     iget p1, p0, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->pendingOutputBytes:I
@@ -990,11 +990,11 @@
 
     move-result p1
 
-    if-lez p1, :cond_82
+    if-lez p1, :cond_4
 
     .line 545
     invoke-direct {p0, p1}, Landroidx/media3/extractor/wav/WavExtractor$ImaAdPcmOutputWriter;->writeSampleMetadata(I)V
 
-    :cond_82
+    :cond_4
     return v1
 .end method

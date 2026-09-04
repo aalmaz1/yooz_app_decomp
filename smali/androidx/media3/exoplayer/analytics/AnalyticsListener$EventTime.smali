@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/media3/common/Timeline;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JLandroidx/media3/common/Timeline;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJ)V
-    .registers 15
+    .locals 0
 
     .line 543
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,18 +79,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_6b
+    if-eqz p1, :cond_3
 
     .line 561
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -101,12 +101,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_6b
+    goto :goto_1
 
     .line 564
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
 
     .line 565
@@ -116,13 +116,13 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_69
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->windowIndex:I
 
     iget v3, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->windowIndex:I
 
-    if-ne v2, v3, :cond_69
+    if-ne v2, v3, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->eventPlaybackPositionMs:J
 
@@ -130,13 +130,13 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_69
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->currentWindowIndex:I
 
     iget v3, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->currentWindowIndex:I
 
-    if-ne v2, v3, :cond_69
+    if-ne v2, v3, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->currentPlaybackPositionMs:J
 
@@ -144,7 +144,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_69
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->totalBufferedDurationMs:J
 
@@ -152,7 +152,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_69
+    if-nez v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->timeline:Landroidx/media3/common/Timeline;
 
@@ -163,7 +163,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -174,7 +174,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->currentTimeline:Landroidx/media3/common/Timeline;
 
@@ -185,7 +185,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->currentMediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
@@ -196,23 +196,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_69
+    if-eqz p1, :cond_2
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_69
+    :cond_2
     move v0, v1
 
-    :goto_6a
+    :goto_0
     return v0
 
-    :cond_6b
-    :goto_6b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/16 v0, 0xa
 

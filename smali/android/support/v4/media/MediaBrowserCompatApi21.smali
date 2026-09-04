@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public static connect(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 45
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static createBrowser(Landroid/content/Context;Landroid/content/ComponentName;Ljava/lang/Object;Landroid/os/Bundle;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 40
     new-instance v0, Landroid/media/browse/MediaBrowser;
@@ -54,7 +54,7 @@
 .end method
 
 .method public static createConnectionCallback(Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallback;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 35
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompatApi21$ConnectionCallbackProxy;
@@ -65,7 +65,7 @@
 .end method
 
 .method public static createSubscriptionCallback(Landroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallback;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 74
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallbackProxy;
@@ -76,7 +76,7 @@
 .end method
 
 .method public static disconnect(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 49
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -87,7 +87,7 @@
 .end method
 
 .method public static getExtras(Ljava/lang/Object;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 66
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -100,7 +100,7 @@
 .end method
 
 .method public static getRoot(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 62
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -113,7 +113,7 @@
 .end method
 
 .method public static getServiceComponent(Ljava/lang/Object;)Landroid/content/ComponentName;
-    .registers 1
+    .locals 0
 
     .line 58
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -126,7 +126,7 @@
 .end method
 
 .method public static getSessionToken(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 70
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -139,7 +139,7 @@
 .end method
 
 .method public static isConnected(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
 
     .line 54
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -152,7 +152,7 @@
 .end method
 
 .method public static subscribe(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 79
     check-cast p0, Landroid/media/browse/MediaBrowser;
@@ -165,7 +165,7 @@
 .end method
 
 .method public static unsubscribe(Ljava/lang/Object;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 84
     check-cast p0, Landroid/media/browse/MediaBrowser;

@@ -9,12 +9,12 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraCaptureCallback;)V
-    .registers 3
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;-><init>()V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 44
     iput-object p1, p0, Landroidx/camera/camera2/internal/CaptureCallbackAdapter;->mCameraCaptureCallback:Landroidx/camera/core/impl/CameraCaptureCallback;
@@ -22,7 +22,7 @@
     return-void
 
     .line 42
-    :cond_8
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "cameraCaptureCallback is null"
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .registers 5
+    .locals 1
 
     .line 52
     invoke-super {p0, p1, p2, p3}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;->onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
@@ -45,7 +45,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 60
     instance-of p2, p1, Landroidx/camera/core/impl/TagBundle;
@@ -57,16 +57,16 @@
     .line 63
     check-cast p1, Landroidx/camera/core/impl/TagBundle;
 
-    goto :goto_17
+    goto :goto_0
 
     .line 65
-    :cond_13
+    :cond_0
     invoke-static {}, Landroidx/camera/core/impl/TagBundle;->emptyBundle()Landroidx/camera/core/impl/TagBundle;
 
     move-result-object p1
 
     .line 67
-    :goto_17
+    :goto_0
     iget-object p2, p0, Landroidx/camera/camera2/internal/CaptureCallbackAdapter;->mCameraCaptureCallback:Landroidx/camera/core/impl/CameraCaptureCallback;
 
     new-instance v0, Landroidx/camera/camera2/internal/Camera2CameraCaptureResult;
@@ -79,7 +79,7 @@
 .end method
 
 .method public onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
-    .registers 4
+    .locals 0
 
     .line 76
     invoke-super {p0, p1, p2, p3}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;->onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V

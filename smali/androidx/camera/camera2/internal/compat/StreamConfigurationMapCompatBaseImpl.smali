@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/params/StreamConfigurationMap;)V
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public getHighResolutionOutputSizes(I)[Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompatBaseImpl;->mStreamConfigurationMap:Landroid/hardware/camera2/params/StreamConfigurationMap;
@@ -47,11 +47,11 @@
 .end method
 
 .method public getOutputSizes(I)[Landroid/util/Size;
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x22
 
-    if-ne p1, v0, :cond_d
+    if-ne p1, v0, :cond_0
 
     .line 50
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompatBaseImpl;->mStreamConfigurationMap:Landroid/hardware/camera2/params/StreamConfigurationMap;
@@ -62,22 +62,22 @@
 
     move-result-object p1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 52
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompatBaseImpl;->mStreamConfigurationMap:Landroid/hardware/camera2/params/StreamConfigurationMap;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/params/StreamConfigurationMap;->getOutputSizes(I)[Landroid/util/Size;
 
     move-result-object p1
 
-    :goto_13
+    :goto_0
     return-object p1
 .end method
 
 .method public getOutputSizes(Ljava/lang/Class;)[Landroid/util/Size;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -100,7 +100,7 @@
 .end method
 
 .method public unwrap()Landroid/hardware/camera2/params/StreamConfigurationMap;
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/StreamConfigurationMapCompatBaseImpl;->mStreamConfigurationMap:Landroid/hardware/camera2/params/StreamConfigurationMap;

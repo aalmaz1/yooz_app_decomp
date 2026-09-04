@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSpec;II)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;II)V
-    .registers 6
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/datasource/DataSpec;II)V
-    .registers 6
+    .locals 1
 
     const/4 v0, 0x1
 

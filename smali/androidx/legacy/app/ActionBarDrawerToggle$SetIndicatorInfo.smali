@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
-    .registers 8
+    .locals 6
 
     .line 506
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
     const/4 v1, 0x1
 
     .line 508
-    :try_start_5
+    :try_start_0
     const-class v2, Landroid/app/ActionBar;
 
     const-string v3, "setHomeAsUpIndicator"
@@ -67,12 +67,12 @@
     move-result-object v2
 
     iput-object v2, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SetIndicatorInfo;->mSetHomeActionContentDescription:Ljava/lang/reflect/Method;
-    :try_end_25
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_5 .. :try_end_25} :catch_26
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_26
+    :catch_0
     const v2, 0x102002c
 
     .line 519
@@ -80,12 +80,12 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_30
+    if-nez p1, :cond_0
 
     return-void
 
     .line 525
-    :cond_30
+    :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -99,12 +99,12 @@
 
     const/4 v4, 0x2
 
-    if-eq v3, v4, :cond_3e
+    if-eq v3, v4, :cond_1
 
     return-void
 
     .line 532
-    :cond_3e
+    :cond_1
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -119,23 +119,23 @@
 
     move-result v1
 
-    if-ne v1, v2, :cond_4d
+    if-ne v1, v2, :cond_2
 
     move-object v0, p1
 
     .line 536
-    :cond_4d
+    :cond_2
     nop
 
     instance-of p1, v0, Landroid/widget/ImageView;
 
-    if-eqz p1, :cond_56
+    if-eqz p1, :cond_3
 
     .line 538
     check-cast v0, Landroid/widget/ImageView;
 
     iput-object v0, p0, Landroidx/legacy/app/ActionBarDrawerToggle$SetIndicatorInfo;->mUpIndicatorView:Landroid/widget/ImageView;
 
-    :cond_56
+    :cond_3
     return-void
 .end method

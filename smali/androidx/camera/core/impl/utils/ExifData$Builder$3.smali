@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/utils/ExifData$Builder;)V
-    .registers 2
+    .locals 0
 
     .line 861
     iput-object p1, p0, Landroidx/camera/core/impl/utils/ExifData$Builder$3;->this$0:Landroidx/camera/core/impl/utils/ExifData$Builder;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public hasMoreElements()Z
-    .registers 2
+    .locals 1
 
     .line 867
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifData$Builder$3;->mMapEnumeration:Ljava/util/Enumeration;
@@ -82,7 +82,7 @@
 .end method
 
 .method public bridge synthetic nextElement()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 861
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/ExifData$Builder$3;->nextElement()Ljava/util/Map;
@@ -93,7 +93,7 @@
 .end method
 
 .method public nextElement()Ljava/util/Map;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

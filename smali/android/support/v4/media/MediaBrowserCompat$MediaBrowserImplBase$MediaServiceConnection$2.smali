@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;Landroid/content/ComponentName;)V
-    .registers 3
+    .locals 0
 
     .line 1552
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection$2;->this$1:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;
@@ -40,12 +40,12 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 1555
     sget-boolean v0, Landroid/support/v4/media/MediaBrowserCompat;->DEBUG:Z
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_0
 
     .line 1556
     new-instance v0, Ljava/lang/StringBuilder;
@@ -102,7 +102,7 @@
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->dump()V
 
     .line 1564
-    :cond_3b
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection$2;->this$1:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;
 
     const-string v1, "onServiceDisconnected"
@@ -111,12 +111,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_1
 
     return-void
 
     .line 1569
-    :cond_46
+    :cond_1
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection$2;->this$1:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;

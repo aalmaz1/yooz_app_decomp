@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(IIIII)V
-    .registers 6
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static fromFormatLine(Ljava/lang/String;)Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;
-    .registers 10
+    .locals 9
 
     const-string v0, "Format:"
 
@@ -80,10 +80,10 @@
     move v2, v1
 
     .line 63
-    :goto_1b
+    :goto_0
     array-length v3, p0
 
-    if-ge v2, v3, :cond_6d
+    if-ge v2, v3, :cond_4
 
     .line 64
     aget-object v3, p0, v2
@@ -102,109 +102,109 @@
 
     move-result v8
 
-    sparse-switch v8, :sswitch_data_7e
+    sparse-switch v8, :sswitch_data_0
 
-    :goto_32
+    :goto_1
     move v3, v0
 
-    goto :goto_5f
+    goto :goto_2
 
-    :sswitch_34
+    :sswitch_0
     const-string v8, "style"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_3d
+    if-nez v3, :cond_0
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_3d
+    :cond_0
     const/4 v3, 0x3
 
-    goto :goto_5f
+    goto :goto_2
 
-    :sswitch_3f
+    :sswitch_1
     const-string v8, "start"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_48
+    if-nez v3, :cond_1
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_48
+    :cond_1
     const/4 v3, 0x2
 
-    goto :goto_5f
+    goto :goto_2
 
-    :sswitch_4a
+    :sswitch_2
     const-string v8, "text"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_53
+    if-nez v3, :cond_2
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_53
+    :cond_2
     const/4 v3, 0x1
 
-    goto :goto_5f
+    goto :goto_2
 
-    :sswitch_55
+    :sswitch_3
     const-string v8, "end"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_5e
+    if-nez v3, :cond_3
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_5e
+    :cond_3
     move v3, v1
 
-    :goto_5f
-    packed-switch v3, :pswitch_data_90
+    :goto_2
+    packed-switch v3, :pswitch_data_0
 
-    goto :goto_6a
+    goto :goto_3
 
-    :pswitch_63
+    :pswitch_0
     move v6, v2
 
-    goto :goto_6a
+    goto :goto_3
 
-    :pswitch_65
+    :pswitch_1
     move v4, v2
 
-    goto :goto_6a
+    goto :goto_3
 
-    :pswitch_67
+    :pswitch_2
     move v7, v2
 
-    goto :goto_6a
+    goto :goto_3
 
-    :pswitch_69
+    :pswitch_3
     move v5, v2
 
-    :goto_6a
+    :goto_3
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_6d
-    if-eq v4, v0, :cond_7b
+    :cond_4
+    if-eq v4, v0, :cond_5
 
-    if-eq v5, v0, :cond_7b
+    if-eq v5, v0, :cond_5
 
-    if-eq v7, v0, :cond_7b
+    if-eq v7, v0, :cond_5
 
     .line 82
     new-instance v0, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;
@@ -215,29 +215,29 @@
 
     invoke-direct/range {v3 .. v8}, Landroidx/media3/extractor/text/ssa/SsaDialogueFormat;-><init>(IIIII)V
 
-    goto :goto_7c
+    goto :goto_4
 
-    :cond_7b
+    :cond_5
     const/4 v0, 0x0
 
-    :goto_7c
+    :goto_4
     return-object v0
 
     nop
 
-    :sswitch_data_7e
+    :sswitch_data_0
     .sparse-switch
-        0x188db -> :sswitch_55
-        0x36452d -> :sswitch_4a
-        0x68ac462 -> :sswitch_3f
-        0x68b1db1 -> :sswitch_34
+        0x188db -> :sswitch_3
+        0x36452d -> :sswitch_2
+        0x68ac462 -> :sswitch_1
+        0x68b1db1 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_90
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_69
-        :pswitch_67
-        :pswitch_65
-        :pswitch_63
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

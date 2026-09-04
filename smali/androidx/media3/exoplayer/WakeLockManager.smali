@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,49 +37,49 @@
 .end method
 
 .method private updateWakeLock()V
-    .registers 3
+    .locals 2
 
     .line 92
     iget-object v0, p0, Landroidx/media3/exoplayer/WakeLockManager;->wakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 96
-    :cond_5
+    :cond_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/WakeLockManager;->enabled:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     iget-boolean v1, p0, Landroidx/media3/exoplayer/WakeLockManager;->stayAwake:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     .line 97
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 99
-    :cond_11
+    :cond_1
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    :goto_14
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public setEnabled(Z)V
-    .registers 5
+    .locals 3
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     .line 57
     iget-object v0, p0, Landroidx/media3/exoplayer/WakeLockManager;->wakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 58
     iget-object v0, p0, Landroidx/media3/exoplayer/WakeLockManager;->applicationContext:Landroid/content/Context;
@@ -93,7 +93,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     const-string p1, "WakeLockManager"
 
@@ -104,7 +104,7 @@
 
     return-void
 
-    :cond_1a
+    :cond_0
     const/4 v1, 0x1
 
     const-string v2, "ExoPlayer:WakeLockManager"
@@ -122,7 +122,7 @@
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
     .line 69
-    :cond_27
+    :cond_1
     iput-boolean p1, p0, Landroidx/media3/exoplayer/WakeLockManager;->enabled:Z
 
     .line 70
@@ -132,7 +132,7 @@
 .end method
 
 .method public setStayAwake(Z)V
-    .registers 2
+    .locals 0
 
     .line 83
     iput-boolean p1, p0, Landroidx/media3/exoplayer/WakeLockManager;->stayAwake:Z

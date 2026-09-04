@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 36
     invoke-direct {p0}, Landroidx/arch/core/internal/SafeIterableMap;-><init>()V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public ceil(Ljava/lang/Object;)Ljava/util/Map$Entry;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)",
@@ -64,7 +64,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 80
     iget-object v0, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
@@ -79,14 +79,14 @@
 
     return-object p1
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)Z"
@@ -104,7 +104,7 @@
 .end method
 
 .method protected get(Ljava/lang/Object;)Landroidx/arch/core/internal/SafeIterableMap$Entry;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)",
@@ -126,7 +126,7 @@
 .end method
 
 .method public putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
@@ -138,7 +138,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 51
     iget-object p1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
@@ -146,7 +146,7 @@
     return-object p1
 
     .line 53
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
 
     invoke-virtual {p0, p1, p2}, Landroidx/arch/core/internal/FastSafeIterableMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Landroidx/arch/core/internal/SafeIterableMap$Entry;
@@ -161,7 +161,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"

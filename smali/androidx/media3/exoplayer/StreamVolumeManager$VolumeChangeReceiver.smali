@@ -20,7 +20,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/StreamVolumeManager;)V
-    .registers 2
+    .locals 0
 
     .line 220
     iput-object p1, p0, Landroidx/media3/exoplayer/StreamVolumeManager$VolumeChangeReceiver;->this$0:Landroidx/media3/exoplayer/StreamVolumeManager;
@@ -31,7 +31,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/StreamVolumeManager;Landroidx/media3/exoplayer/StreamVolumeManager$1;)V
-    .registers 3
+    .locals 0
 
     .line 220
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/StreamVolumeManager$VolumeChangeReceiver;-><init>(Landroidx/media3/exoplayer/StreamVolumeManager;)V
@@ -40,7 +40,7 @@
 .end method
 
 .method static synthetic lambda$onReceive$0(Landroidx/media3/exoplayer/StreamVolumeManager;)V
-    .registers 1
+    .locals 0
 
     .line 224
     invoke-static {p0}, Landroidx/media3/exoplayer/StreamVolumeManager;->access$200(Landroidx/media3/exoplayer/StreamVolumeManager;)V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 4
+    .locals 1
 
     .line 224
     iget-object p1, p0, Landroidx/media3/exoplayer/StreamVolumeManager$VolumeChangeReceiver;->this$0:Landroidx/media3/exoplayer/StreamVolumeManager;

@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -16,7 +16,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "The operation has been canceled."
 

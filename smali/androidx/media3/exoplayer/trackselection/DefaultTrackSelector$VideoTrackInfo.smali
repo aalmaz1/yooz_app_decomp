@@ -60,7 +60,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$PHcY5cRhUX-iKudpaWJEa198duE(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)I
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->compareQualityPreferences(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)I
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$zYuHKkFu1szcwTLsD7W8Cd7A9OE(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)I
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->compareNonQualityPreferences(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)I
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(ILandroidx/media3/common/TrackGroup;ILandroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;IIZ)V
-    .registers 11
+    .locals 3
 
     .line 3547
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;-><init>(ILandroidx/media3/common/TrackGroup;I)V
@@ -91,51 +91,51 @@
     .line 3551
     iget-boolean p1, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoNonSeamlessAdaptiveness:Z
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/16 p1, 0x18
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/16 p1, 0x10
 
     .line 3555
-    :goto_e
+    :goto_0
     iget-boolean p2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedMimeTypeAdaptiveness:Z
 
     const/4 p3, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
     and-int p2, p6, p1
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_1
 
     move p2, p3
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move p2, v0
 
-    :goto_1b
+    :goto_1
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->allowMixedMimeTypes:Z
 
     const/high16 p2, -0x40800000    # -1.0f
 
     const/4 p6, -0x1
 
-    if-eqz p7, :cond_61
+    if-eqz p7, :cond_6
 
     .line 3558
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget v1, v1, Landroidx/media3/common/Format;->width:I
 
-    if-eq v1, p6, :cond_30
+    if-eq v1, p6, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -143,14 +143,14 @@
 
     iget v2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->maxVideoWidth:I
 
-    if-gt v1, v2, :cond_61
+    if-gt v1, v2, :cond_6
 
-    :cond_30
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget v1, v1, Landroidx/media3/common/Format;->height:I
 
-    if-eq v1, p6, :cond_3e
+    if-eq v1, p6, :cond_3
 
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -158,16 +158,16 @@
 
     iget v2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->maxVideoHeight:I
 
-    if-gt v1, v2, :cond_61
+    if-gt v1, v2, :cond_6
 
-    :cond_3e
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget v1, v1, Landroidx/media3/common/Format;->frameRate:F
 
     cmpl-float v1, v1, p2
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -179,14 +179,14 @@
 
     cmpg-float v1, v1, v2
 
-    if-gtz v1, :cond_61
+    if-gtz v1, :cond_6
 
-    :cond_51
+    :cond_4
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget v1, v1, Landroidx/media3/common/Format;->bitrate:I
 
-    if-eq v1, p6, :cond_5f
+    if-eq v1, p6, :cond_5
 
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -194,27 +194,27 @@
 
     iget v2, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->maxVideoBitrate:I
 
-    if-gt v1, v2, :cond_61
+    if-gt v1, v2, :cond_6
 
-    :cond_5f
+    :cond_5
     move v1, p3
 
-    goto :goto_62
+    goto :goto_2
 
-    :cond_61
+    :cond_6
     move v1, v0
 
-    :goto_62
+    :goto_2
     iput-boolean v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMaxConstraints:Z
 
-    if-eqz p7, :cond_a5
+    if-eqz p7, :cond_b
 
     .line 3566
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget p7, p7, Landroidx/media3/common/Format;->width:I
 
-    if-eq p7, p6, :cond_74
+    if-eq p7, p6, :cond_7
 
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -222,14 +222,14 @@
 
     iget v1, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->minVideoWidth:I
 
-    if-lt p7, v1, :cond_a5
+    if-lt p7, v1, :cond_b
 
-    :cond_74
+    :cond_7
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget p7, p7, Landroidx/media3/common/Format;->height:I
 
-    if-eq p7, p6, :cond_82
+    if-eq p7, p6, :cond_8
 
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -237,16 +237,16 @@
 
     iget v1, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->minVideoHeight:I
 
-    if-lt p7, v1, :cond_a5
+    if-lt p7, v1, :cond_b
 
-    :cond_82
+    :cond_8
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget p7, p7, Landroidx/media3/common/Format;->frameRate:F
 
     cmpl-float p7, p7, p2
 
-    if-eqz p7, :cond_95
+    if-eqz p7, :cond_9
 
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -258,14 +258,14 @@
 
     cmpl-float p7, p7, v1
 
-    if-ltz p7, :cond_a5
+    if-ltz p7, :cond_b
 
-    :cond_95
+    :cond_9
     iget-object p7, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget p7, p7, Landroidx/media3/common/Format;->bitrate:I
 
-    if-eq p7, p6, :cond_a3
+    if-eq p7, p6, :cond_a
 
     iget-object p6, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -273,17 +273,17 @@
 
     iget p7, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->minVideoBitrate:I
 
-    if-lt p6, p7, :cond_a5
+    if-lt p6, p7, :cond_b
 
-    :cond_a3
+    :cond_a
     move p6, p3
 
-    goto :goto_a6
+    goto :goto_3
 
-    :cond_a5
+    :cond_b
     move p6, v0
 
-    :goto_a6
+    :goto_3
     iput-boolean p6, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMinConstraints:Z
 
     .line 3575
@@ -300,7 +300,7 @@
 
     cmpl-float p2, p6, p2
 
-    if-eqz p2, :cond_c2
+    if-eqz p2, :cond_c
 
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -310,16 +310,16 @@
 
     cmpl-float p2, p2, p6
 
-    if-ltz p2, :cond_c2
+    if-ltz p2, :cond_c
 
     move p2, p3
 
-    goto :goto_c3
+    goto :goto_4
 
-    :cond_c2
+    :cond_c
     move p2, v0
 
-    :goto_c3
+    :goto_4
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->hasReasonableFrameRate:Z
 
     .line 3578
@@ -357,7 +357,7 @@
 
     iget p2, p2, Landroidx/media3/common/Format;->roleFlags:I
 
-    if-eqz p2, :cond_ef
+    if-eqz p2, :cond_e
 
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -365,40 +365,40 @@
 
     and-int/2addr p2, p3
 
-    if-eqz p2, :cond_ed
+    if-eqz p2, :cond_d
 
-    goto :goto_ef
+    goto :goto_5
 
-    :cond_ed
+    :cond_d
     move p2, v0
 
-    goto :goto_f0
+    goto :goto_6
 
-    :cond_ef
-    :goto_ef
+    :cond_e
+    :goto_5
     move p2, p3
 
-    :goto_f0
+    :goto_6
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->hasMainOrNoRoleFlag:Z
 
     move p2, v0
 
     .line 3584
-    :goto_f3
+    :goto_7
     iget-object p6, p4, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->preferredVideoMimeTypes:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {p6}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result p6
 
-    if-ge p2, p6, :cond_115
+    if-ge p2, p6, :cond_10
 
     .line 3585
     iget-object p6, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
     iget-object p6, p6, Landroidx/media3/common/Format;->sampleMimeType:Ljava/lang/String;
 
-    if-eqz p6, :cond_112
+    if-eqz p6, :cond_f
 
     iget-object p6, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -415,20 +415,20 @@
 
     move-result p6
 
-    if-eqz p6, :cond_112
+    if-eqz p6, :cond_f
 
-    goto :goto_118
+    goto :goto_8
 
-    :cond_112
+    :cond_f
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_f3
+    goto :goto_7
 
-    :cond_115
+    :cond_10
     const p2, 0x7fffffff
 
     .line 3591
-    :goto_118
+    :goto_8
     iput p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->preferredMimeTypeMatchIndex:I
 
     .line 3593
@@ -438,16 +438,16 @@
 
     const/16 p4, 0x80
 
-    if-ne p2, p4, :cond_124
+    if-ne p2, p4, :cond_11
 
     move p2, p3
 
-    goto :goto_125
+    goto :goto_9
 
-    :cond_124
+    :cond_11
     move p2, v0
 
-    :goto_125
+    :goto_9
     iput-boolean p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesPrimaryDecoder:Z
 
     .line 3596
@@ -457,14 +457,14 @@
 
     const/16 p4, 0x40
 
-    if-ne p2, p4, :cond_130
+    if-ne p2, p4, :cond_12
 
-    goto :goto_131
+    goto :goto_a
 
-    :cond_130
+    :cond_12
     move p3, v0
 
-    :goto_131
+    :goto_a
     iput-boolean p3, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesHardwareAcceleration:Z
 
     .line 3598
@@ -489,7 +489,7 @@
 .end method
 
 .method private static compareNonQualityPreferences(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)I
-    .registers 6
+    .locals 4
 
     .line 3641
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->start()Lcom/google/common/collect/ComparisonChain;
@@ -599,11 +599,11 @@
     .line 3661
     iget-boolean v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesPrimaryDecoder:Z
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_0
 
     iget-boolean v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesHardwareAcceleration:Z
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_0
 
     .line 3662
     iget p0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->codecPreferenceScore:I
@@ -615,7 +615,7 @@
     move-result-object v0
 
     .line 3664
-    :cond_6c
+    :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ComparisonChain;->result()I
 
     move-result p0
@@ -624,26 +624,26 @@
 .end method
 
 .method private static compareQualityPreferences(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)I
-    .registers 7
+    .locals 5
 
     .line 3677
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMaxConstraints:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinRendererCapabilities:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 3678
     invoke-static {}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;->access$4400()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 3679
-    :cond_d
+    :cond_0
     invoke-static {}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;->access$4400()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -653,7 +653,7 @@
     move-result-object v0
 
     .line 3680
-    :goto_15
+    :goto_0
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->start()Lcom/google/common/collect/ComparisonChain;
 
     move-result-object v1
@@ -663,7 +663,7 @@
 
     iget-boolean v2, v2, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->forceLowestBitrate:Z
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_1
 
     .line 3682
     iget v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->bitrate:I
@@ -692,7 +692,7 @@
     move-result-object v1
 
     .line 3685
-    :cond_37
+    :cond_1
     iget v2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->pixelCount:I
 
     .line 3686
@@ -736,7 +736,7 @@
 .end method
 
 .method public static compareSelections(Ljava/util/List;Ljava/util/List;)I
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -838,7 +838,7 @@
 .end method
 
 .method public static createForTrackGroup(ILandroidx/media3/common/TrackGroup;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;[II)Lcom/google/common/collect/ImmutableList;
-    .registers 20
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -877,10 +877,10 @@
     move v13, v12
 
     .line 3500
-    :goto_14
+    :goto_0
     iget v0, v8, Landroidx/media3/common/TrackGroup;->length:I
 
-    if-ge v13, v0, :cond_45
+    if-ge v13, v0, :cond_2
 
     .line 3501
     invoke-virtual {v8, v13}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -893,29 +893,29 @@
 
     const v1, 0x7fffffff
 
-    if-eq v10, v1, :cond_2d
+    if-eq v10, v1, :cond_1
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_2b
+    if-eq v0, v1, :cond_0
 
-    if-gt v0, v10, :cond_2b
+    if-gt v0, v10, :cond_0
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_2b
+    :cond_0
     move v7, v12
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     const/4 v0, 0x1
 
     move v7, v0
 
     .line 3505
-    :goto_2f
+    :goto_2
     new-instance v14, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;
 
     aget v5, p3, v13
@@ -938,10 +938,10 @@
 
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 3515
-    :cond_45
+    :cond_2
     invoke-virtual {v11}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -950,7 +950,7 @@
 .end method
 
 .method private evaluateSelectionEligibility(II)I
-    .registers 5
+    .locals 2
 
     .line 3618
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
@@ -961,12 +961,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 3622
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedRendererCapabilitiesIfNecessary:Z
@@ -975,39 +975,39 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     return v1
 
     .line 3625
-    :cond_15
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMaxConstraints:Z
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->exceedVideoConstraintsIfNecessary:Z
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     return v1
 
     .line 3628
-    :cond_20
+    :cond_2
     invoke-static {p1, v1}, Landroidx/media3/exoplayer/RendererCapabilities;->isFormatSupported(IZ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMinConstraints:Z
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->isWithinMaxConstraints:Z
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -1015,39 +1015,39 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_46
+    if-eq v0, v1, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->forceHighestSupportedBitrate:Z
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->forceLowestBitrate:Z
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_3
 
     and-int/2addr p1, p2
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_3
 
     const/4 p1, 0x2
 
-    goto :goto_47
+    goto :goto_0
 
-    :cond_46
+    :cond_3
     const/4 p1, 0x1
 
-    :goto_47
+    :goto_0
     return p1
 .end method
 
 
 # virtual methods
 .method public getSelectionEligibility()I
-    .registers 2
+    .locals 1
 
     .line 3604
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->selectionEligibility:I
@@ -1056,7 +1056,7 @@
 .end method
 
 .method public bridge synthetic isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$TrackInfo;)Z
-    .registers 2
+    .locals 0
 
     .line 3479
     check-cast p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;
@@ -1069,12 +1069,12 @@
 .end method
 
 .method public isCompatibleForAdaptationWith(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;)Z
-    .registers 4
+    .locals 2
 
     .line 3609
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->allowMixedMimeTypes:Z
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->format:Landroidx/media3/common/Format;
 
@@ -1089,38 +1089,38 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->parameters:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->allowVideoMixedDecoderSupportAdaptiveness:Z
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_2
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesPrimaryDecoder:Z
 
     iget-boolean v1, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesPrimaryDecoder:Z
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesHardwareAcceleration:Z
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$VideoTrackInfo;->usesHardwareAcceleration:Z
 
-    if-ne v0, p1, :cond_25
+    if-ne v0, p1, :cond_1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     const/4 p1, 0x0
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_28
+    :goto_1
     return p1
 .end method

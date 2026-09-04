@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraInfoInternal;Landroidx/lifecycle/MutableLiveData;Landroidx/camera/view/PreviewViewImplementation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
     monitor-enter p0
 
     .line 79
-    :try_start_d
+    :try_start_0
     invoke-virtual {p2}, Landroidx/lifecycle/MutableLiveData;->getValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -101,23 +101,23 @@
 
     return-void
 
-    :catchall_17
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_19
-    .catchall {:try_start_d .. :try_end_19} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private cancelFlow()V
-    .registers 3
+    .locals 2
 
     .line 117
     iget-object v0, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mFlowFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -129,12 +129,12 @@
     .line 119
     iput-object v0, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mFlowFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method private startPreviewStreamStateFlow(Landroidx/camera/core/CameraInfo;)V
-    .registers 6
+    .locals 4
 
     .line 125
     sget-object v0, Landroidx/camera/view/PreviewView$StreamState;->IDLE:Landroidx/camera/view/PreviewView$StreamState;
@@ -202,7 +202,7 @@
 .end method
 
 .method private waitForCaptureResult(Landroidx/camera/core/CameraInfo;Ljava/util/List;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -231,7 +231,7 @@
 
 # virtual methods
 .method clear()V
-    .registers 1
+    .locals 0
 
     .line 113
     invoke-direct {p0}, Landroidx/camera/view/PreviewStreamStateObserver;->cancelFlow()V
@@ -240,7 +240,7 @@
 .end method
 
 .method synthetic lambda$startPreviewStreamStateFlow$0$androidx-camera-view-PreviewStreamStateObserver(Ljava/lang/Void;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -258,7 +258,7 @@
 .end method
 
 .method synthetic lambda$startPreviewStreamStateFlow$1$androidx-camera-view-PreviewStreamStateObserver(Ljava/lang/Void;)Ljava/lang/Void;
-    .registers 2
+    .locals 0
 
     .line 133
     sget-object p1, Landroidx/camera/view/PreviewView$StreamState;->STREAMING:Landroidx/camera/view/PreviewView$StreamState;
@@ -271,7 +271,7 @@
 .end method
 
 .method synthetic lambda$waitForCaptureResult$2$androidx-camera-view-PreviewStreamStateObserver(Landroidx/camera/core/CameraInfo;Ljava/util/List;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -303,7 +303,7 @@
 .end method
 
 .method public onError(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     .line 108
     invoke-virtual {p0}, Landroidx/camera/view/PreviewStreamStateObserver;->clear()V
@@ -317,46 +317,46 @@
 .end method
 
 .method public onNewData(Landroidx/camera/core/impl/CameraInternal$State;)V
-    .registers 3
+    .locals 1
 
     .line 86
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->CLOSING:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-eq p1, v0, :cond_2a
+    if-eq p1, v0, :cond_2
 
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->CLOSED:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-eq p1, v0, :cond_2a
+    if-eq p1, v0, :cond_2
 
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->RELEASING:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-eq p1, v0, :cond_2a
+    if-eq p1, v0, :cond_2
 
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->RELEASED:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 95
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->OPENING:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-eq p1, v0, :cond_1d
+    if-eq p1, v0, :cond_1
 
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->OPEN:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-eq p1, v0, :cond_1d
+    if-eq p1, v0, :cond_1
 
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->PENDING_OPEN:Landroidx/camera/core/impl/CameraInternal$State;
 
-    if-ne p1, v0, :cond_39
+    if-ne p1, v0, :cond_3
 
     .line 98
-    :cond_1d
+    :cond_1
     iget-boolean p1, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mHasStartedPreviewStreamFlow:Z
 
-    if-nez p1, :cond_39
+    if-nez p1, :cond_3
 
     .line 99
     iget-object p1, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mCameraInfoInternal:Landroidx/camera/core/impl/CameraInfoInternal;
@@ -368,11 +368,11 @@
     .line 100
     iput-boolean p1, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mHasStartedPreviewStreamFlow:Z
 
-    goto :goto_39
+    goto :goto_1
 
     .line 90
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_0
     sget-object p1, Landroidx/camera/view/PreviewView$StreamState;->IDLE:Landroidx/camera/view/PreviewView$StreamState;
 
     invoke-virtual {p0, p1}, Landroidx/camera/view/PreviewStreamStateObserver;->updatePreviewStreamState(Landroidx/camera/view/PreviewView$StreamState;)V
@@ -380,7 +380,7 @@
     .line 91
     iget-boolean p1, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mHasStartedPreviewStreamFlow:Z
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_3
 
     const/4 p1, 0x0
 
@@ -390,13 +390,13 @@
     .line 93
     invoke-direct {p0}, Landroidx/camera/view/PreviewStreamStateObserver;->cancelFlow()V
 
-    :cond_39
-    :goto_39
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method public bridge synthetic onNewData(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 57
     check-cast p1, Landroidx/camera/core/impl/CameraInternal$State;
@@ -407,20 +407,20 @@
 .end method
 
 .method updatePreviewStreamState(Landroidx/camera/view/PreviewView$StreamState;)V
-    .registers 5
+    .locals 3
 
     .line 160
     monitor-enter p0
 
     .line 161
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mPreviewStreamState:Landroidx/camera/view/PreviewView$StreamState;
 
     invoke-virtual {v0, p1}, Landroidx/camera/view/PreviewView$StreamState;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 162
     monitor-exit p0
@@ -428,13 +428,13 @@
     return-void
 
     .line 164
-    :cond_b
+    :cond_0
     iput-object p1, p0, Landroidx/camera/view/PreviewStreamStateObserver;->mPreviewStreamState:Landroidx/camera/view/PreviewView$StreamState;
 
     .line 165
     monitor-exit p0
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const-string v0, "StreamStateObserver"
 
@@ -462,14 +462,14 @@
 
     return-void
 
-    :catchall_28
+    :catchall_0
     move-exception p1
 
     .line 165
-    :try_start_29
+    :try_start_1
     monitor-exit p0
-    :try_end_2a
-    .catchall {:try_start_29 .. :try_end_2a} :catchall_28
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method

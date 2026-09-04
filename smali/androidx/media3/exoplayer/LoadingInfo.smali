@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/LoadingInfo$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/LoadingInfo$Builder;Landroidx/media3/exoplayer/LoadingInfo$1;)V
-    .registers 3
+    .locals 0
 
     .line 29
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/LoadingInfo;-><init>(Landroidx/media3/exoplayer/LoadingInfo$Builder;)V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/exoplayer/LoadingInfo$Builder;
-    .registers 3
+    .locals 2
 
     .line 123
     new-instance v0, Landroidx/media3/exoplayer/LoadingInfo$Builder;
@@ -75,26 +75,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 144
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/exoplayer/LoadingInfo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 147
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/LoadingInfo;
 
     .line 148
@@ -104,7 +104,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/LoadingInfo;->playbackSpeed:F
 
@@ -112,7 +112,7 @@
 
     cmpl-float v1, v1, v3
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/exoplayer/LoadingInfo;->lastRebufferRealtimeMs:J
 
@@ -120,19 +120,19 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v2
 
-    :goto_26
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -177,7 +177,7 @@
 .end method
 
 .method public rebufferedSince(J)Z
-    .registers 8
+    .locals 5
 
     .line 134
     iget-wide v0, p0, Landroidx/media3/exoplayer/LoadingInfo;->lastRebufferRealtimeMs:J
@@ -186,23 +186,23 @@
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     cmp-long v2, p1, v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     cmp-long p1, v0, p1
 
-    if-ltz p1, :cond_15
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_16
+    :goto_0
     return p1
 .end method

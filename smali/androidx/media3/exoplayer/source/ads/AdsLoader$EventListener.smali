@@ -16,25 +16,25 @@
 
 # virtual methods
 .method public onAdClicked()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onAdLoadError(Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdLoadException;Landroidx/media3/datasource/DataSpec;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public onAdPlaybackState(Landroidx/media3/common/AdPlaybackState;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAdTapped()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

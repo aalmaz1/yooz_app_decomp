@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0xa
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 .end method
 
 .method private addUnchecked(JLjava/lang/Object;)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JTV;)V"
@@ -105,12 +105,12 @@
 .end method
 
 .method private clearBufferOnTimeDiscontinuity(J)V
-    .registers 5
+    .locals 2
 
     .line 134
     iget v0, p0, Landroidx/media3/common/util/TimedValueQueue;->size:I
 
-    if-lez v0, :cond_18
+    if-lez v0, :cond_0
 
     .line 135
     iget v1, p0, Landroidx/media3/common/util/TimedValueQueue;->first:I
@@ -132,17 +132,17 @@
 
     cmp-long p1, p1, v0
 
-    if-gtz p1, :cond_18
+    if-gtz p1, :cond_0
 
     .line 137
     invoke-virtual {p0}, Landroidx/media3/common/util/TimedValueQueue;->clear()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method private doubleCapacityIfFull()V
-    .registers 7
+    .locals 6
 
     .line 143
     iget-object v0, p0, Landroidx/media3/common/util/TimedValueQueue;->values:[Ljava/lang/Object;
@@ -152,11 +152,11 @@
     .line 144
     iget v1, p0, Landroidx/media3/common/util/TimedValueQueue;->size:I
 
-    if-ge v1, v0, :cond_8
+    if-ge v1, v0, :cond_0
 
     return-void
 
-    :cond_8
+    :cond_0
     mul-int/lit8 v1, v0, 0x2
 
     .line 148
@@ -189,7 +189,7 @@
     .line 156
     iget v3, p0, Landroidx/media3/common/util/TimedValueQueue;->first:I
 
-    if-lez v3, :cond_30
+    if-lez v3, :cond_1
 
     .line 157
     iget-object v4, p0, Landroidx/media3/common/util/TimedValueQueue;->timestamps:[J
@@ -204,7 +204,7 @@
     invoke-static {v3, v5, v1, v0, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 160
-    :cond_30
+    :cond_1
     iput-object v2, p0, Landroidx/media3/common/util/TimedValueQueue;->timestamps:[J
 
     .line 161
@@ -217,7 +217,7 @@
 .end method
 
 .method private static newArray(I)[Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -233,7 +233,7 @@
 .end method
 
 .method private poll(JZ)Ljava/lang/Object;
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JZ)TV;"
@@ -245,10 +245,10 @@
     const-wide v1, 0x7fffffffffffffffL
 
     .line 112
-    :goto_6
+    :goto_0
     iget v3, p0, Landroidx/media3/common/util/TimedValueQueue;->size:I
 
-    if-lez v3, :cond_26
+    if-lez v3, :cond_1
 
     .line 113
     iget-object v3, p0, Landroidx/media3/common/util/TimedValueQueue;->timestamps:[J
@@ -263,35 +263,35 @@
 
     cmp-long v5, v3, v5
 
-    if-gez v5, :cond_20
+    if-gez v5, :cond_0
 
-    if-nez p3, :cond_26
+    if-nez p3, :cond_1
 
     neg-long v5, v3
 
     cmp-long v1, v5, v1
 
-    if-ltz v1, :cond_20
+    if-ltz v1, :cond_0
 
-    goto :goto_26
+    goto :goto_1
 
     .line 118
-    :cond_20
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/common/util/TimedValueQueue;->popFirst()Ljava/lang/Object;
 
     move-result-object v0
 
     move-wide v1, v3
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_1
     return-object v0
 .end method
 
 .method private popFirst()Ljava/lang/Object;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -303,16 +303,16 @@
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 126
@@ -349,7 +349,7 @@
 
 # virtual methods
 .method public declared-synchronized add(JLjava/lang/Object;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JTV;)V"
@@ -359,7 +359,7 @@
     monitor-enter p0
 
     .line 48
-    :try_start_1
+    :try_start_0
     invoke-direct {p0, p1, p2}, Landroidx/media3/common/util/TimedValueQueue;->clearBufferOnTimeDiscontinuity(J)V
 
     .line 49
@@ -367,15 +367,15 @@
 
     .line 50
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/common/util/TimedValueQueue;->addUnchecked(JLjava/lang/Object;)V
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 51
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -384,14 +384,14 @@
 .end method
 
 .method public declared-synchronized clear()V
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 55
-    :try_start_2
+    :try_start_0
     iput v0, p0, Landroidx/media3/common/util/TimedValueQueue;->first:I
 
     .line 56
@@ -403,15 +403,15 @@
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_c
-    .catchall {:try_start_2 .. :try_end_c} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 58
     monitor-exit p0
 
     return-void
 
-    :catchall_e
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -420,7 +420,7 @@
 .end method
 
 .method public declared-synchronized poll(J)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)TV;"
@@ -432,18 +432,18 @@
     const/4 v0, 0x0
 
     .line 95
-    :try_start_2
+    :try_start_0
     invoke-direct {p0, p1, p2, v0}, Landroidx/media3/common/util/TimedValueQueue;->poll(JZ)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_6
-    .catchall {:try_start_2 .. :try_end_6} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_8
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -452,7 +452,7 @@
 .end method
 
 .method public declared-synchronized pollFirst()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -462,28 +462,28 @@
     monitor-enter p0
 
     .line 68
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/common/util/TimedValueQueue;->size:I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/common/util/TimedValueQueue;->popFirst()Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_b
+    :goto_0
     monitor-exit p0
 
     return-object v0
 
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -492,7 +492,7 @@
 .end method
 
 .method public declared-synchronized pollFloor(J)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)TV;"
@@ -504,18 +504,18 @@
     const/4 v0, 0x1
 
     .line 82
-    :try_start_2
+    :try_start_0
     invoke-direct {p0, p1, p2, v0}, Landroidx/media3/common/util/TimedValueQueue;->poll(JZ)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_6
-    .catchall {:try_start_2 .. :try_end_6} :catchall_8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_8
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -524,21 +524,21 @@
 .end method
 
 .method public declared-synchronized size()I
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 62
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/common/util/TimedValueQueue;->size:I
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0

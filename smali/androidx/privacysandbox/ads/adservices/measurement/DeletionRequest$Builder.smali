@@ -83,7 +83,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
 
     .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method public final build()Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;
-    .registers 9
+    .locals 8
 
     .line 203
     new-instance v7, Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest;
@@ -164,7 +164,7 @@
 .end method
 
 .method public final setDomainUris(Ljava/util/List;)Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -192,7 +192,7 @@
 .end method
 
 .method public final setEnd(Ljava/time/Instant;)Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "end"
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public final setOriginUris(Ljava/util/List;)Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,7 +238,7 @@
 .end method
 
 .method public final setStart(Ljava/time/Instant;)Landroidx/privacysandbox/ads/adservices/measurement/DeletionRequest$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "start"
 

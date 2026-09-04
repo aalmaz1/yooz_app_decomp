@@ -49,7 +49,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Supplier;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -83,7 +83,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Supplier;Lcom/google/common/base/Functions$1;)V
-    .registers 3
+    .locals 0
 
     .line 397
     invoke-direct {p0, p1}, Lcom/google/common/base/Functions$SupplierFunction;-><init>(Lcom/google/common/base/Supplier;)V
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -128,7 +128,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -145,7 +145,7 @@
     .line 414
     instance-of v0, p1, Lcom/google/common/base/Functions$SupplierFunction;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 415
     check-cast p1, Lcom/google/common/base/Functions$SupplierFunction;
@@ -161,14 +161,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 423
     iget-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
@@ -181,7 +181,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 428
     new-instance v0, Ljava/lang/StringBuilder;

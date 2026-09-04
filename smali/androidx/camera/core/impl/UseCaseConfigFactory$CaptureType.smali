@@ -40,7 +40,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x6
 
@@ -87,7 +87,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 38
     new-instance v0, Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
@@ -166,7 +166,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -180,7 +180,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
-    .registers 2
+    .locals 1
 
     .line 33
     const-class v0, Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
@@ -195,7 +195,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
-    .registers 1
+    .locals 1
 
     .line 33
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;->$VALUES:[Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;

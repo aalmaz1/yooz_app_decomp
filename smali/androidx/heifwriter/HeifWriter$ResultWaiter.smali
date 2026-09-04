@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 651
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,15 +33,15 @@
 
 # virtual methods
 .method declared-synchronized signalResult(Ljava/lang/Exception;)V
-    .registers 3
+    .locals 1
 
     monitor-enter p0
 
     .line 686
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/heifwriter/HeifWriter$ResultWaiter;->mDone:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -53,16 +53,16 @@
 
     .line 689
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 691
-    :cond_d
+    :cond_0
     monitor-exit p0
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -71,7 +71,7 @@
 .end method
 
 .method declared-synchronized waitForResult(J)V
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -84,58 +84,58 @@
 
     cmp-long v2, p1, v0
 
-    if-ltz v2, :cond_3e
+    if-ltz v2, :cond_4
 
-    if-nez v2, :cond_11
+    if-nez v2, :cond_0
 
     .line 660
-    :catch_9
-    :goto_9
-    :try_start_9
+    :catch_0
+    :goto_0
+    :try_start_0
     iget-boolean p1, p0, Landroidx/heifwriter/HeifWriter$ResultWaiter;->mDone:Z
-    :try_end_b
-    .catchall {:try_start_9 .. :try_end_b} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_1
 
     .line 662
-    :try_start_d
+    :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_10
-    .catch Ljava/lang/InterruptedException; {:try_start_d .. :try_end_10} :catch_9
-    .catchall {:try_start_d .. :try_end_10} :catchall_46
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 666
-    :cond_11
-    :try_start_11
+    :cond_0
+    :try_start_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     .line 669
-    :goto_15
+    :goto_1
     iget-boolean v4, p0, Landroidx/heifwriter/HeifWriter$ResultWaiter;->mDone:Z
-    :try_end_17
-    .catchall {:try_start_11 .. :try_end_17} :catchall_46
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-nez v4, :cond_27
+    if-nez v4, :cond_1
 
     cmp-long v4, p1, v0
 
-    if-lez v4, :cond_27
+    if-lez v4, :cond_1
 
     .line 671
-    :try_start_1d
+    :try_start_3
     invoke-virtual {p0, p1, p2}, Ljava/lang/Object;->wait(J)V
-    :try_end_20
-    .catch Ljava/lang/InterruptedException; {:try_start_1d .. :try_end_20} :catch_20
-    .catchall {:try_start_1d .. :try_end_20} :catchall_46
+    :try_end_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 673
-    :catch_20
-    :try_start_20
+    :catch_1
+    :try_start_4
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -144,13 +144,13 @@
 
     sub-long/2addr p1, v4
 
-    goto :goto_15
+    goto :goto_1
 
     .line 676
-    :cond_27
+    :cond_1
     iget-boolean p1, p0, Landroidx/heifwriter/HeifWriter$ResultWaiter;->mDone:Z
 
-    if-nez p1, :cond_37
+    if-nez p1, :cond_2
 
     const/4 p1, 0x1
 
@@ -167,12 +167,12 @@
     iput-object p1, p0, Landroidx/heifwriter/HeifWriter$ResultWaiter;->mException:Ljava/lang/Exception;
 
     .line 680
-    :cond_37
+    :cond_2
     iget-object p1, p0, Landroidx/heifwriter/HeifWriter$ResultWaiter;->mException:Ljava/lang/Exception;
-    :try_end_39
-    .catchall {:try_start_20 .. :try_end_39} :catchall_46
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    if-nez p1, :cond_3d
+    if-nez p1, :cond_3
 
     .line 683
     monitor-exit p0
@@ -180,12 +180,12 @@
     return-void
 
     .line 681
-    :cond_3d
-    :try_start_3d
+    :cond_3
+    :try_start_5
     throw p1
 
     .line 657
-    :cond_3e
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "timeoutMs is negative"
@@ -193,10 +193,10 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_46
-    .catchall {:try_start_3d .. :try_end_46} :catchall_46
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    :catchall_46
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

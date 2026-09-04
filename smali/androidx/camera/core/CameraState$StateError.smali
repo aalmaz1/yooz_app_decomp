@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 444
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static create(I)Landroidx/camera/core/CameraState$StateError;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public static create(ILjava/lang/Throwable;)Landroidx/camera/core/CameraState$StateError;
-    .registers 3
+    .locals 1
 
     .line 463
     new-instance v0, Landroidx/camera/core/AutoValue_CameraState_StateError;
@@ -57,7 +57,7 @@
 .end method
 
 .method public getType()Landroidx/camera/core/CameraState$ErrorType;
-    .registers 3
+    .locals 2
 
     .line 497
     invoke-virtual {p0}, Landroidx/camera/core/CameraState$StateError;->getCode()I
@@ -66,27 +66,27 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 502
-    :cond_e
+    :cond_0
     sget-object v0, Landroidx/camera/core/CameraState$ErrorType;->CRITICAL:Landroidx/camera/core/CameraState$ErrorType;
 
     return-object v0
 
     .line 500
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     sget-object v0, Landroidx/camera/core/CameraState$ErrorType;->RECOVERABLE:Landroidx/camera/core/CameraState$ErrorType;
 
     return-object v0

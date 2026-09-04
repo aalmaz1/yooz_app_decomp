@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 3
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/media3/extractor/png/PngExtractor;->imageExtractor:Landroidx/media3/extractor/SingleSampleExtractor;
@@ -53,7 +53,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -71,13 +71,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/media3/extractor/png/PngExtractor;->imageExtractor:Landroidx/media3/extractor/SingleSampleExtractor;
@@ -88,7 +88,7 @@
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

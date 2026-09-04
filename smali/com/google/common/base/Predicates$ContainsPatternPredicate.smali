@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/CommonPattern;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/CharSequence;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -91,7 +91,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -112,7 +112,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -131,7 +131,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 676
     check-cast p1, Lcom/google/common/base/Predicates$ContainsPatternPredicate;
@@ -153,7 +153,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;->pattern:Lcom/google/common/base/CommonPattern;
 
@@ -168,16 +168,16 @@
 
     move-result p1
 
-    if-ne v0, p1, :cond_28
+    if-ne v0, p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_28
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -216,7 +216,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 688
     iget-object v0, p0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;->pattern:Lcom/google/common/base/CommonPattern;

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Rect;Ljava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -41,7 +41,7 @@
 .end method
 
 .method private constructor <init>(Landroid/view/DisplayCutout;)V
-    .registers 2
+    .locals 0
 
     .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/core/graphics/Insets;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroidx/core/graphics/Insets;)V
-    .registers 7
+    .locals 0
 
     .line 76
     invoke-static/range {p1 .. p6}, Landroidx/core/view/DisplayCutoutCompat;->constructDisplayCutout(Landroidx/core/graphics/Insets;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroidx/core/graphics/Insets;)Landroid/view/DisplayCutout;
@@ -66,14 +66,14 @@
 .end method
 
 .method private static constructDisplayCutout(Landroidx/core/graphics/Insets;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroidx/core/graphics/Insets;)Landroid/view/DisplayCutout;
-    .registers 14
+    .locals 8
 
     .line 83
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_17
+    if-lt v0, v1, :cond_0
 
     .line 84
     invoke-virtual {p0}, Landroidx/core/graphics/Insets;->toPlatformInsets()Landroid/graphics/Insets;
@@ -101,12 +101,12 @@
     return-object p0
 
     .line 86
-    :cond_17
+    :cond_0
     sget p5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1d
 
-    if-lt p5, v0, :cond_26
+    if-lt p5, v0, :cond_1
 
     .line 87
     invoke-virtual {p0}, Landroidx/core/graphics/Insets;->toPlatformInsets()Landroid/graphics/Insets;
@@ -120,7 +120,7 @@
     return-object p0
 
     .line 90
-    :cond_26
+    :cond_1
     new-instance p5, Landroid/graphics/Rect;
 
     iget v0, p0, Landroidx/core/graphics/Insets;->left:I
@@ -138,31 +138,31 @@
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
     .line 94
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_3d
-    if-eqz p2, :cond_42
+    :cond_2
+    if-eqz p2, :cond_3
 
     .line 97
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_42
-    if-eqz p3, :cond_47
+    :cond_3
+    if-eqz p3, :cond_4
 
     .line 100
     invoke-virtual {p0, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_47
-    if-eqz p4, :cond_4c
+    :cond_4
+    if-eqz p4, :cond_5
 
     .line 103
     invoke-virtual {p0, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 105
-    :cond_4c
+    :cond_5
     invoke-static {p5, p0}, Landroidx/core/view/DisplayCutoutCompat$Api28Impl;->createDisplayCutout(Landroid/graphics/Rect;Ljava/util/List;)Landroid/view/DisplayCutout;
 
     move-result-object p0
@@ -171,39 +171,39 @@
 .end method
 
 .method static wrap(Landroid/view/DisplayCutout;)Landroidx/core/view/DisplayCutoutCompat;
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
     .line 212
-    :cond_4
+    :cond_0
     new-instance v0, Landroidx/core/view/DisplayCutoutCompat;
 
     invoke-direct {v0, p0}, Landroidx/core/view/DisplayCutoutCompat;-><init>(Landroid/view/DisplayCutout;)V
 
     move-object p0, v0
 
-    :goto_a
+    :goto_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_4
-    if-eqz p1, :cond_1c
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 193
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -214,12 +214,12 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 196
-    :cond_11
+    :cond_1
     check-cast p1, Landroidx/core/view/DisplayCutoutCompat;
 
     .line 197
@@ -233,15 +233,15 @@
 
     return p1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public getBoundingRects()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -262,7 +262,7 @@
 .end method
 
 .method public getSafeInsetBottom()I
-    .registers 2
+    .locals 1
 
     .line 127
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
@@ -275,7 +275,7 @@
 .end method
 
 .method public getSafeInsetLeft()I
-    .registers 2
+    .locals 1
 
     .line 136
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
@@ -288,7 +288,7 @@
 .end method
 
 .method public getSafeInsetRight()I
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
@@ -301,7 +301,7 @@
 .end method
 
 .method public getSafeInsetTop()I
-    .registers 2
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
@@ -314,14 +314,14 @@
 .end method
 
 .method public getWaterfallInsets()Landroidx/core/graphics/Insets;
-    .registers 3
+    .locals 2
 
     .line 181
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 182
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
@@ -337,35 +337,35 @@
     return-object v0
 
     .line 184
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/core/graphics/Insets;->NONE:Landroidx/core/graphics/Insets;
 
     return-object v0
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 202
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Landroid/view/DisplayCutout;->hashCode()I
 
     move-result v0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 208
     new-instance v0, Ljava/lang/StringBuilder;
@@ -394,7 +394,7 @@
 .end method
 
 .method unwrap()Landroid/view/DisplayCutout;
-    .registers 2
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 2
+    .locals 0
 
     const-string p1, "Message was missing required fields.  (Lite runtime could not determine which fields were missing)."
 
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,7 +61,7 @@
 .end method
 
 .method private static buildDescription(Ljava/util/List;)Ljava/lang/String;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,12 +86,12 @@
 
     const/4 v1, 0x1
 
-    :goto_c
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -99,26 +99,26 @@
 
     check-cast v2, Ljava/lang/String;
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_1c
+    :cond_0
     const-string v3, ", "
 
     .line 90
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 92
-    :goto_21
+    :goto_1
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_c
+    goto :goto_0
 
     .line 94
-    :cond_25
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public asInvalidProtocolBufferException()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 3
+    .locals 2
 
     .line 79
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -144,7 +144,7 @@
 .end method
 
 .method public getMissingFields()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

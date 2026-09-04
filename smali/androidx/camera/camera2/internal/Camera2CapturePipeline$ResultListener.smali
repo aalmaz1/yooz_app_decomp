@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(JLandroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener$Checker;)V
-    .registers 5
+    .locals 1
 
     .line 705
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public getFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -108,7 +108,7 @@
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-camera2-internal-Camera2CapturePipeline$ResultListener(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -124,7 +124,7 @@
 .end method
 
 .method public onCaptureResult(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 10
+    .locals 8
 
     .line 717
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
@@ -135,18 +135,18 @@
 
     check-cast v0, Ljava/lang/Long;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 718
     iget-object v1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener;->mTimestampOfFirstUpdateNs:Ljava/lang/Long;
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 719
     iput-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener;->mTimestampOfFirstUpdateNs:Ljava/lang/Long;
 
     .line 722
-    :cond_10
+    :cond_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener;->mTimestampOfFirstUpdateNs:Ljava/lang/Long;
 
     const-wide/16 v2, 0x0
@@ -158,11 +158,11 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_1
 
-    if-eqz v1, :cond_53
+    if-eqz v1, :cond_1
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_1
 
     .line 725
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
@@ -179,7 +179,7 @@
 
     cmp-long v2, v4, v6
 
-    if-lez v2, :cond_53
+    if-lez v2, :cond_1
 
     .line 726
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener;->mCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -220,23 +220,23 @@
     return v3
 
     .line 732
-    :cond_53
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener;->mChecker:Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener$Checker;
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_2
 
     invoke-interface {v0, p1}, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener$Checker;->check(Landroid/hardware/camera2/TotalCaptureResult;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5f
+    if-nez v0, :cond_2
 
     const/4 p1, 0x0
 
     return p1
 
     .line 736
-    :cond_5f
+    :cond_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$ResultListener;->mCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     invoke-virtual {v0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z

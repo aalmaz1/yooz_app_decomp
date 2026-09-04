@@ -150,7 +150,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 62
+    .locals 62
 
     .line 42
     new-instance v6, Landroidx/datastore/preferences/protobuf/FieldType;
@@ -1356,8 +1356,8 @@
     .line 221
     array-length v1, v0
 
-    :goto_48d
-    if-ge v14, v1, :cond_49a
+    :goto_0
+    if-ge v14, v1, :cond_0
 
     aget-object v2, v0, v14
 
@@ -1370,14 +1370,14 @@
 
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_48d
+    goto :goto_0
 
-    :cond_49a
+    :cond_0
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IILandroidx/datastore/preferences/protobuf/FieldType$Collection;Landroidx/datastore/preferences/protobuf/JavaType;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1412,29 +1412,29 @@
 
     const/4 p3, 0x1
 
-    if-eq p1, p3, :cond_22
+    if-eq p1, p3, :cond_1
 
-    if-eq p1, p2, :cond_1b
+    if-eq p1, p2, :cond_0
 
     const/4 p1, 0x0
 
     .line 114
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldType;->elementType:Ljava/lang/Class;
 
-    goto :goto_28
+    goto :goto_0
 
     .line 110
-    :cond_1b
+    :cond_0
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/JavaType;->getBoxedType()Ljava/lang/Class;
 
     move-result-object p1
 
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldType;->elementType:Ljava/lang/Class;
 
-    goto :goto_28
+    goto :goto_0
 
     .line 107
-    :cond_22
+    :cond_1
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/JavaType;->getBoxedType()Ljava/lang/Class;
 
     move-result-object p1
@@ -1442,10 +1442,10 @@
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/FieldType;->elementType:Ljava/lang/Class;
 
     .line 119
-    :goto_28
+    :goto_0
     sget-object p1, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->SCALAR:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
 
-    if-ne p4, p1, :cond_3c
+    if-ne p4, p1, :cond_2
 
     .line 120
     sget-object p1, Landroidx/datastore/preferences/protobuf/FieldType$1;->$SwitchMap$com$google$protobuf$JavaType:[I
@@ -1456,55 +1456,55 @@
 
     aget p1, p1, p4
 
-    if-eq p1, p3, :cond_3c
+    if-eq p1, p3, :cond_2
 
-    if-eq p1, p2, :cond_3c
+    if-eq p1, p2, :cond_2
 
     const/4 p2, 0x3
 
-    if-eq p1, p2, :cond_3c
+    if-eq p1, p2, :cond_2
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_3c
+    :cond_2
     const/4 p3, 0x0
 
     .line 130
-    :goto_3d
+    :goto_1
     iput-boolean p3, p0, Landroidx/datastore/preferences/protobuf/FieldType;->primitiveScalar:Z
 
     return-void
 .end method
 
 .method public static forId(I)Landroidx/datastore/preferences/protobuf/FieldType;
-    .registers 3
+    .locals 2
 
-    if-ltz p0, :cond_b
+    if-ltz p0, :cond_1
 
     .line 209
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType;->VALUES:[Landroidx/datastore/preferences/protobuf/FieldType;
 
     array-length v1, v0
 
-    if-lt p0, v1, :cond_8
+    if-lt p0, v1, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 212
-    :cond_8
+    :cond_0
     aget-object p0, v0, p0
 
     return-object p0
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getGenericSuperList(Ljava/lang/Class;)Ljava/lang/reflect/Type;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1524,15 +1524,15 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v1, :cond_23
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
     .line 236
     instance-of v4, v3, Ljava/lang/reflect/ParameterizedType;
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_0
 
     .line 237
     move-object v4, v3
@@ -1553,17 +1553,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_0
 
     return-object v3
 
-    :cond_20
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 246
-    :cond_23
+    :cond_1
     invoke-virtual {p0}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -1571,7 +1571,7 @@
     .line 247
     instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     .line 248
     move-object v0, p0
@@ -1592,18 +1592,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     return-object p0
 
-    :cond_3d
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getListParameter(Ljava/lang/Class;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1623,7 +1623,7 @@
 
     const/4 v2, 0x1
 
-    if-eq p0, v0, :cond_80
+    if-eq p0, v0, :cond_9
 
     .line 273
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/FieldType;->getGenericSuperList(Ljava/lang/Class;)Ljava/lang/reflect/Type;
@@ -1633,7 +1633,7 @@
     .line 274
     instance-of v3, v0, Ljava/lang/reflect/ParameterizedType;
 
-    if-eqz v3, :cond_63
+    if-eqz v3, :cond_6
 
     .line 276
     check-cast v0, Ljava/lang/reflect/ParameterizedType;
@@ -1646,10 +1646,10 @@
     move v4, v1
 
     .line 278
-    :goto_15
+    :goto_1
     array-length v5, v3
 
-    if-ge v4, v5, :cond_5b
+    if-ge v4, v5, :cond_5
 
     .line 279
     aget-object v5, v3, v4
@@ -1657,7 +1657,7 @@
     .line 280
     instance-of v6, v5, Ljava/lang/reflect/TypeVariable;
 
-    if-eqz v6, :cond_58
+    if-eqz v6, :cond_4
 
     .line 283
     invoke-virtual {p0}, Ljava/lang/Class;->getTypeParameters()[Ljava/lang/reflect/TypeVariable;
@@ -1669,20 +1669,20 @@
 
     array-length v8, v6
 
-    if-ne v7, v8, :cond_50
+    if-ne v7, v8, :cond_3
 
     move v7, v1
 
     .line 290
-    :goto_27
+    :goto_2
     array-length v8, v6
 
-    if-ge v7, v8, :cond_37
+    if-ge v7, v8, :cond_1
 
     .line 291
     aget-object v8, v6, v7
 
-    if-ne v5, v8, :cond_34
+    if-ne v5, v8, :cond_0
 
     .line 292
     aget-object v6, p1, v7
@@ -1692,23 +1692,23 @@
 
     move v6, v2
 
-    goto :goto_38
+    goto :goto_3
 
-    :cond_34
+    :cond_0
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_27
+    goto :goto_2
 
-    :cond_37
+    :cond_1
     move v6, v1
 
-    :goto_38
-    if-eqz v6, :cond_3b
+    :goto_3
+    if-eqz v6, :cond_2
 
-    goto :goto_58
+    goto :goto_4
 
     .line 299
-    :cond_3b
+    :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1730,7 +1730,7 @@
     throw p0
 
     .line 285
-    :cond_50
+    :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "Type array mismatch"
@@ -1739,14 +1739,14 @@
 
     throw p0
 
-    :cond_58
-    :goto_58
+    :cond_4
+    :goto_4
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_15
+    goto :goto_1
 
     .line 304
-    :cond_5b
+    :cond_5
     invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -1758,7 +1758,7 @@
     goto :goto_0
 
     .line 313
-    :cond_63
+    :cond_6
     sget-object p1, Landroidx/datastore/preferences/protobuf/FieldType;->EMPTY_TYPES:[Ljava/lang/reflect/Type;
 
     .line 314
@@ -1768,8 +1768,8 @@
 
     array-length v2, v0
 
-    :goto_6a
-    if-ge v1, v2, :cond_7b
+    :goto_5
+    if-ge v1, v2, :cond_8
 
     aget-object v3, v0, v1
 
@@ -1780,19 +1780,19 @@
 
     move-result v4
 
-    if-eqz v4, :cond_78
+    if-eqz v4, :cond_7
 
     move-object p0, v3
 
     goto :goto_0
 
-    :cond_78
+    :cond_7
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6a
+    goto :goto_5
 
     .line 320
-    :cond_7b
+    :cond_8
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object p0
@@ -1800,10 +1800,10 @@
     goto :goto_0
 
     .line 323
-    :cond_80
+    :cond_9
     array-length p0, p1
 
-    if-ne p0, v2, :cond_86
+    if-ne p0, v2, :cond_a
 
     .line 326
     aget-object p0, p1, v1
@@ -1811,7 +1811,7 @@
     return-object p0
 
     .line 324
-    :cond_86
+    :cond_a
     new-instance p0, Ljava/lang/RuntimeException;
 
     const-string p1, "Unable to identify parameter type for List<T>"
@@ -1822,7 +1822,7 @@
 .end method
 
 .method private isValidForList(Ljava/lang/reflect/Field;)Z
-    .registers 5
+    .locals 3
 
     .line 184
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
@@ -1840,14 +1840,14 @@
 
     move-result v1
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 189
-    :cond_12
+    :cond_0
     sget-object v1, Landroidx/datastore/preferences/protobuf/FieldType;->EMPTY_TYPES:[Ljava/lang/reflect/Type;
 
     .line 190
@@ -1858,7 +1858,7 @@
     .line 191
     instance-of v2, v2, Ljava/lang/reflect/ParameterizedType;
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_1
 
     .line 192
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getGenericType()Ljava/lang/reflect/Type;
@@ -1872,7 +1872,7 @@
     move-result-object v1
 
     .line 194
-    :cond_26
+    :cond_1
     invoke-static {v0, v1}, Landroidx/datastore/preferences/protobuf/FieldType;->getListParameter(Ljava/lang/Class;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object p1
@@ -1880,14 +1880,14 @@
     .line 195
     instance-of v0, p1, Ljava/lang/Class;
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     const/4 p1, 0x1
 
     return p1
 
     .line 199
-    :cond_30
+    :cond_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->elementType:Ljava/lang/Class;
 
     check-cast p1, Ljava/lang/Class;
@@ -1900,7 +1900,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/FieldType;
-    .registers 2
+    .locals 1
 
     .line 40
     const-class v0, Landroidx/datastore/preferences/protobuf/FieldType;
@@ -1915,7 +1915,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/FieldType;
-    .registers 1
+    .locals 1
 
     .line 40
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType;->$VALUES:[Landroidx/datastore/preferences/protobuf/FieldType;
@@ -1932,7 +1932,7 @@
 
 # virtual methods
 .method public getJavaType()Landroidx/datastore/preferences/protobuf/JavaType;
-    .registers 2
+    .locals 1
 
     .line 143
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->javaType:Landroidx/datastore/preferences/protobuf/JavaType;
@@ -1941,7 +1941,7 @@
 .end method
 
 .method public id()I
-    .registers 2
+    .locals 1
 
     .line 135
     iget v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->id:I
@@ -1950,7 +1950,7 @@
 .end method
 
 .method public isList()Z
-    .registers 2
+    .locals 1
 
     .line 166
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->collection:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
@@ -1963,28 +1963,28 @@
 .end method
 
 .method public isMap()Z
-    .registers 3
+    .locals 2
 
     .line 171
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->collection:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
 
     sget-object v1, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->MAP:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isPacked()Z
-    .registers 3
+    .locals 2
 
     .line 148
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->PACKED_VECTOR:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
@@ -1999,7 +1999,7 @@
 .end method
 
 .method public isPrimitiveScalar()Z
-    .registers 2
+    .locals 1
 
     .line 156
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->primitiveScalar:Z
@@ -2008,28 +2008,28 @@
 .end method
 
 .method public isScalar()Z
-    .registers 3
+    .locals 2
 
     .line 161
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->collection:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
 
     sget-object v1, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->SCALAR:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isValidForField(Ljava/lang/reflect/Field;)Z
-    .registers 4
+    .locals 2
 
     .line 176
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->VECTOR:Landroidx/datastore/preferences/protobuf/FieldType$Collection;
@@ -2040,7 +2040,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 177
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/FieldType;->isValidForList(Ljava/lang/reflect/Field;)Z
@@ -2050,7 +2050,7 @@
     return p1
 
     .line 179
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldType;->javaType:Landroidx/datastore/preferences/protobuf/JavaType;
 
     invoke-virtual {v0}, Landroidx/datastore/preferences/protobuf/JavaType;->getType()Ljava/lang/Class;

@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 97
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->resolveExtensionClass()Ljava/lang/Class;
@@ -69,7 +69,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -85,7 +85,7 @@
 .end method
 
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)V
-    .registers 3
+    .locals 1
 
     .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
     .line 200
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->EMPTY_REGISTRY_LITE:Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
-    if-ne p1, v0, :cond_e
+    if-ne p1, v0, :cond_0
 
     .line 201
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
@@ -102,10 +102,10 @@
 
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->extensionsByNumber:Ljava/util/Map;
 
-    goto :goto_16
+    goto :goto_0
 
     .line 203
-    :cond_e
+    :cond_0
     iget-object p1, p1, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->extensionsByNumber:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
@@ -114,12 +114,12 @@
 
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->extensionsByNumber:Ljava/util/Map;
 
-    :goto_16
+    :goto_0
     return-void
 .end method
 
 .method constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -135,12 +135,12 @@
 .end method
 
 .method public static getEmptyRegistry()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
-    .registers 2
+    .locals 2
 
     .line 126
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->emptyRegistry:Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_2
 
     .line 128
     const-class v1, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
@@ -148,51 +148,51 @@
     monitor-enter v1
 
     .line 129
-    :try_start_7
+    :try_start_0
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->emptyRegistry:Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 131
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->doFullRuntimeInheritanceCheck:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 134
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->createEmpty()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->EMPTY_REGISTRY_LITE:Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
-    :goto_16
+    :goto_0
     sput-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->emptyRegistry:Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     .line 137
-    :cond_18
+    :cond_1
     monitor-exit v1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :catchall_1a
+    :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_1c
-    .catchall {:try_start_7 .. :try_end_1c} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_1
     return-object v0
 .end method
 
 .method public static isEagerlyParseMessageSets()Z
-    .registers 1
+    .locals 1
 
     .line 100
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->eagerlyParseMessageSets:Z
@@ -201,31 +201,31 @@
 .end method
 
 .method public static newInstance()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
-    .registers 1
+    .locals 1
 
     .line 114
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->doFullRuntimeInheritanceCheck:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 115
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->create()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     new-instance v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     invoke-direct {v0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;-><init>()V
 
-    :goto_e
+    :goto_0
     return-object v0
 .end method
 
 .method static resolveExtensionClass()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -241,19 +241,19 @@
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_6
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_7
+    :catch_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static setEagerlyParseMessageSets(Z)V
-    .registers 1
+    .locals 0
 
     .line 104
     sput-boolean p0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->eagerlyParseMessageSets:Z
@@ -264,7 +264,7 @@
 
 # virtual methods
 .method public final add(Landroidx/datastore/preferences/protobuf/ExtensionLite;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -284,7 +284,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 174
     move-object v0, p1
@@ -294,23 +294,23 @@
     invoke-virtual {p0, v0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->add(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;)V
 
     .line 176
-    :cond_12
+    :cond_0
     sget-boolean v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->doFullRuntimeInheritanceCheck:Z
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->isFullRegistry(Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     .line 178
-    :try_start_1e
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -332,12 +332,12 @@
     aput-object p1, v3, v0
 
     invoke-virtual {v2, p0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_35
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_35} :catch_36
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_47
+    goto :goto_0
 
-    :catch_36
+    :catch_0
     move-exception v2
 
     .line 180
@@ -358,13 +358,13 @@
 
     throw v3
 
-    :cond_47
-    :goto_47
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final add(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -396,7 +396,7 @@
 .end method
 
 .method public findLiteExtensionByNumber(Landroidx/datastore/preferences/protobuf/MessageLite;I)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ContainingType::",
@@ -425,7 +425,7 @@
 .end method
 
 .method public getUnmodifiable()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
-    .registers 2
+    .locals 1
 
     .line 145
     new-instance v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;

@@ -67,7 +67,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.datasource"
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;)V
-    .registers 8
+    .locals 6
 
     const-wide/16 v2, 0x0
 
@@ -95,7 +95,7 @@
 .end method
 
 .method private constructor <init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
-    .registers 29
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,52 +135,52 @@
 
     const/4 v14, 0x0
 
-    if-ltz v12, :cond_18
+    if-ltz v12, :cond_0
 
     move v12, v13
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     move v12, v14
 
     .line 474
-    :goto_19
+    :goto_0
     invoke-static {v12}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     cmp-long v12, v4, v10
 
-    if-ltz v12, :cond_22
+    if-ltz v12, :cond_1
 
     move v12, v13
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
+    :cond_1
     move v12, v14
 
     .line 475
-    :goto_23
+    :goto_1
     invoke-static {v12}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     cmp-long v10, v6, v10
 
-    if-gtz v10, :cond_32
+    if-gtz v10, :cond_3
 
     const-wide/16 v10, -0x1
 
     cmp-long v10, v6, v10
 
-    if-nez v10, :cond_31
+    if-nez v10, :cond_2
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_31
+    :cond_2
     move v13, v14
 
     .line 476
-    :cond_32
-    :goto_32
+    :cond_3
+    :goto_2
     invoke-static {v13}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 477
@@ -200,21 +200,21 @@
     .line 479
     iput v1, v0, Landroidx/media3/datasource/DataSpec;->httpMethod:I
 
-    if-eqz v3, :cond_49
+    if-eqz v3, :cond_4
 
     .line 480
     array-length v1, v3
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_4
 
-    goto :goto_4b
+    goto :goto_3
 
-    :cond_49
+    :cond_4
     const/4 v1, 0x0
 
     move-object v3, v1
 
-    :goto_4b
+    :goto_3
     iput-object v3, v0, Landroidx/media3/datasource/DataSpec;->httpBody:[B
 
     .line 481
@@ -258,7 +258,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;Landroidx/media3/datasource/DataSpec$1;)V
-    .registers 15
+    .locals 0
 
     .line 39
     invoke-direct/range {p0 .. p13}, Landroidx/media3/datasource/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
@@ -267,7 +267,7 @@
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;JJ)V
-    .registers 13
+    .locals 7
 
     const/4 v6, 0x0
 
@@ -286,7 +286,7 @@
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;JJLjava/lang/String;)V
-    .registers 21
+    .locals 14
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -322,38 +322,38 @@
 .end method
 
 .method public static getStringForHttpMethod(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_12
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-ne p0, v0, :cond_c
+    if-ne p0, v0, :cond_0
 
     const-string p0, "HEAD"
 
     return-object p0
 
     .line 327
-    :cond_c
+    :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p0
 
-    :cond_12
+    :cond_1
     const-string p0, "POST"
 
     return-object p0
 
-    :cond_15
+    :cond_2
     const-string p0, "GET"
 
     return-object p0
@@ -362,7 +362,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/datasource/DataSpec$Builder;
-    .registers 3
+    .locals 2
 
     .line 509
     new-instance v0, Landroidx/media3/datasource/DataSpec$Builder;
@@ -375,7 +375,7 @@
 .end method
 
 .method public final getHttpMethodString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 504
     iget v0, p0, Landroidx/media3/datasource/DataSpec;->httpMethod:I
@@ -388,28 +388,28 @@
 .end method
 
 .method public isFlagSet(I)Z
-    .registers 3
+    .locals 1
 
     .line 496
     iget v0, p0, Landroidx/media3/datasource/DataSpec;->flags:I
 
     and-int/2addr v0, p1
 
-    if-ne v0, p1, :cond_7
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_8
+    :goto_0
     return p1
 .end method
 
 .method public subrange(J)Landroidx/media3/datasource/DataSpec;
-    .registers 8
+    .locals 5
 
     .line 520
     iget-wide v0, p0, Landroidx/media3/datasource/DataSpec;->length:J
@@ -418,14 +418,14 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_9
+    if-nez v4, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     sub-long v2, v0, p1
 
-    :goto_b
+    :goto_0
     invoke-virtual {p0, p1, p2, v2, v3}, Landroidx/media3/datasource/DataSpec;->subrange(JJ)Landroidx/media3/datasource/DataSpec;
 
     move-result-object p1
@@ -434,7 +434,7 @@
 .end method
 
 .method public subrange(JJ)Landroidx/media3/datasource/DataSpec;
-    .registers 22
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -442,19 +442,19 @@
 
     cmp-long v1, p1, v1
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 531
     iget-wide v1, v0, Landroidx/media3/datasource/DataSpec;->length:J
 
     cmp-long v1, v1, p3
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     return-object v0
 
     .line 534
-    :cond_f
+    :cond_0
     new-instance v1, Landroidx/media3/datasource/DataSpec;
 
     iget-object v4, v0, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
@@ -489,7 +489,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 615
     new-instance v0, Ljava/lang/StringBuilder;
@@ -575,7 +575,7 @@
 .end method
 
 .method public withAdditionalHeaders(Ljava/util/Map;)Landroidx/media3/datasource/DataSpec;
-    .registers 16
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -626,7 +626,7 @@
 .end method
 
 .method public withRequestHeaders(Ljava/util/Map;)Landroidx/media3/datasource/DataSpec;
-    .registers 18
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -671,7 +671,7 @@
 .end method
 
 .method public withUri(Landroid/net/Uri;)Landroidx/media3/datasource/DataSpec;
-    .registers 18
+    .locals 16
 
     move-object/from16 v0, p0
 

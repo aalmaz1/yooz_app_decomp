@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 1198
     new-instance v0, Landroid/util/SparseIntArray;
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 1179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -153,7 +153,7 @@
 
 # virtual methods
 .method public copyFrom(Landroidx/constraintlayout/widget/ConstraintSet$Motion;)V
-    .registers 3
+    .locals 1
 
     .line 1189
     iget-boolean v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mApply:Z
@@ -194,7 +194,7 @@
 .end method
 
 .method fillFromAttributeList(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 8
+    .locals 5
 
     .line 1216
     sget-object v0, Landroidx/constraintlayout/widget/R$styleable;->Motion:[I
@@ -217,8 +217,8 @@
 
     move v1, v0
 
-    :goto_f
-    if-ge v1, p2, :cond_67
+    :goto_0
+    if-ge v1, p2, :cond_1
 
     .line 1220
     invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -232,12 +232,12 @@
 
     move-result v3
 
-    packed-switch v3, :pswitch_data_6c
+    packed-switch v3, :pswitch_data_0
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1244
-    :pswitch_1f
+    :pswitch_0
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mMotionStagger:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -246,10 +246,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mMotionStagger:F
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1241
-    :pswitch_28
+    :pswitch_1
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mAnimateRelativeTo:I
 
     invoke-static {p1, v2, v3}, Landroidx/constraintlayout/widget/ConstraintSet;->access$100(Landroid/content/res/TypedArray;II)I
@@ -258,20 +258,20 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mAnimateRelativeTo:I
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1238
-    :pswitch_31
+    :pswitch_2
     invoke-virtual {p1, v2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v2
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mDrawPath:I
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1230
-    :pswitch_38
+    :pswitch_3
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v3
@@ -281,7 +281,7 @@
 
     const/4 v4, 0x3
 
-    if-ne v3, v4, :cond_48
+    if-ne v3, v4, :cond_0
 
     .line 1232
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -290,10 +290,10 @@
 
     iput-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mTransitionEasing:Ljava/lang/String;
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1234
-    :cond_48
+    :cond_0
     sget-object v3, Landroidx/constraintlayout/motion/utils/Easing;->NAMED_EASING:[Ljava/lang/String;
 
     invoke-virtual {p1, v2, v0}, Landroid/content/res/TypedArray;->getInteger(II)I
@@ -304,10 +304,10 @@
 
     iput-object v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mTransitionEasing:Ljava/lang/String;
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1227
-    :pswitch_53
+    :pswitch_4
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathMotionArc:I
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -316,10 +316,10 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathMotionArc:I
 
-    goto :goto_64
+    goto :goto_1
 
     .line 1224
-    :pswitch_5c
+    :pswitch_5
     iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathRotate:F
 
     invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
@@ -328,26 +328,26 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$Motion;->mPathRotate:F
 
-    :goto_64
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 1248
-    :cond_67
+    :cond_1
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 
     nop
 
-    :pswitch_data_6c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_5c
-        :pswitch_53
-        :pswitch_38
-        :pswitch_31
-        :pswitch_28
-        :pswitch_1f
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

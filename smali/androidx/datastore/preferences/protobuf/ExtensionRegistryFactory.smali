@@ -18,7 +18,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 47
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->reflectExtensionRegistry()Ljava/lang/Class;
@@ -31,7 +31,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,28 +40,28 @@
 .end method
 
 .method public static create()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
-    .registers 1
+    .locals 1
 
     .line 62
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->EXTENSION_REGISTRY_CLASS:Ljava/lang/Class;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    :try_start_4
+    :try_start_0
     const-string v0, "newInstance"
 
     .line 64
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->invokeSubclassFactory(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
     .line 69
-    :catch_b
-    :cond_b
+    :catch_0
+    :cond_0
     new-instance v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     invoke-direct {v0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;-><init>()V
@@ -70,35 +70,35 @@
 .end method
 
 .method public static createEmpty()Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
-    .registers 1
+    .locals 1
 
     .line 74
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->EXTENSION_REGISTRY_CLASS:Ljava/lang/Class;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    :try_start_4
+    :try_start_0
     const-string v0, "getEmptyRegistry"
 
     .line 76
     invoke-static {v0}, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->invokeSubclassFactory(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
     .line 81
-    :catch_b
-    :cond_b
+    :catch_0
+    :cond_0
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;->EMPTY_REGISTRY_LITE:Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
 
     return-object v0
 .end method
 
 .method private static final invokeSubclassFactory(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -131,12 +131,12 @@
 .end method
 
 .method static isFullRegistry(Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Z
-    .registers 2
+    .locals 1
 
     .line 86
     sget-object v0, Landroidx/datastore/preferences/protobuf/ExtensionRegistryFactory;->EXTENSION_REGISTRY_CLASS:Ljava/lang/Class;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 87
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -147,21 +147,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_11
+    :goto_0
     return p0
 .end method
 
 .method static reflectExtensionRegistry()Ljava/lang/Class;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -177,12 +177,12 @@
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
-    :try_end_6
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_7
+    :catch_0
     const/4 v0, 0x0
 
     return-object v0

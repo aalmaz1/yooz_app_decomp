@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public getAll(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public hasProfile(I)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

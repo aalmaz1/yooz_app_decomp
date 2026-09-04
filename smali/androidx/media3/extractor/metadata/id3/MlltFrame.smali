@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 102
     new-instance v0, Landroidx/media3/extractor/metadata/id3/MlltFrame$1;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>(III[I[I)V
-    .registers 7
+    .locals 1
 
     const-string v0, "MLLT"
 
@@ -70,7 +70,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "MLLT"
 
@@ -130,7 +130,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -138,18 +138,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_3
 
     .line 64
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -160,12 +160,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 67
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/id3/MlltFrame;
 
     .line 68
@@ -173,19 +173,19 @@
 
     iget v3, p1, Landroidx/media3/extractor/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I
 
-    if-ne v2, v3, :cond_3b
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/id3/MlltFrame;->bytesBetweenReference:I
 
     iget v3, p1, Landroidx/media3/extractor/metadata/id3/MlltFrame;->bytesBetweenReference:I
 
-    if-ne v2, v3, :cond_3b
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/id3/MlltFrame;->millisecondsBetweenReference:I
 
     iget v3, p1, Landroidx/media3/extractor/metadata/id3/MlltFrame;->millisecondsBetweenReference:I
 
-    if-ne v2, v3, :cond_3b
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/MlltFrame;->bytesDeviations:[I
 
@@ -196,7 +196,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/MlltFrame;->millisecondsDeviations:[I
 
@@ -207,23 +207,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_2
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_3b
+    :cond_2
     move v0, v1
 
-    :goto_3c
+    :goto_0
     return v0
 
-    :cond_3d
-    :goto_3d
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x20f
 
@@ -272,7 +272,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 90
     iget p2, p0, Landroidx/media3/extractor/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I

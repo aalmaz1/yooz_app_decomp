@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/ExtractorsFactory;Landroidx/media3/extractor/text/SubtitleParser$Factory;)V
-    .registers 3
+    .locals 0
 
     .line 620
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 .end method
 
 .method private ensureAllSuppliersAreLoaded()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -120,7 +120,7 @@
 .end method
 
 .method static synthetic lambda$loadSupplier$0(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 747
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;->access$100(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
@@ -131,7 +131,7 @@
 .end method
 
 .method static synthetic lambda$loadSupplier$1(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 753
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;->access$100(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
@@ -142,7 +142,7 @@
 .end method
 
 .method static synthetic lambda$loadSupplier$2(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 759
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;->access$100(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
@@ -153,7 +153,7 @@
 .end method
 
 .method static synthetic lambda$loadSupplier$3(Ljava/lang/Class;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 1
+    .locals 0
 
     .line 765
     invoke-static {p0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;->access$000(Ljava/lang/Class;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
@@ -164,7 +164,7 @@
 .end method
 
 .method private loadSupplier(I)Lcom/google/common/base/Supplier;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -194,12 +194,12 @@
 
     check-cast v0, Lcom/google/common/base/Supplier;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 740
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->dataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -208,33 +208,33 @@
 
     check-cast v0, Landroidx/media3/datasource/DataSource$Factory;
 
-    if-eqz p1, :cond_76
+    if-eqz p1, :cond_5
 
     const/4 v1, 0x1
 
-    if-eq p1, v1, :cond_64
+    if-eq p1, v1, :cond_4
 
     const/4 v1, 0x2
 
-    if-eq p1, v1, :cond_52
+    if-eq p1, v1, :cond_3
 
     const/4 v1, 0x3
 
-    if-eq p1, v1, :cond_40
+    if-eq p1, v1, :cond_2
 
     const/4 v1, 0x4
 
-    if-ne p1, v1, :cond_2b
+    if-ne p1, v1, :cond_1
 
     .line 768
     new-instance v1, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, p0, v0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4;-><init>(Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;Landroidx/media3/datasource/DataSource$Factory;)V
 
-    goto :goto_88
+    goto :goto_1
 
     .line 772
-    :cond_2b
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -255,7 +255,7 @@
 
     throw v0
 
-    :cond_40
+    :cond_2
     const-string v0, "androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory"
 
     .line 763
@@ -275,9 +275,9 @@
 
     invoke-direct {v1, v0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda3;-><init>(Ljava/lang/Class;)V
 
-    goto :goto_88
+    goto :goto_1
 
-    :cond_52
+    :cond_3
     const-string v1, "androidx.media3.exoplayer.hls.HlsMediaSource$Factory"
 
     .line 757
@@ -297,9 +297,9 @@
 
     invoke-direct {v2, v1, v0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda2;-><init>(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)V
 
-    goto :goto_87
+    goto :goto_0
 
-    :cond_64
+    :cond_4
     const-string v1, "androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory"
 
     .line 751
@@ -319,9 +319,9 @@
 
     invoke-direct {v2, v1, v0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda1;-><init>(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)V
 
-    goto :goto_87
+    goto :goto_0
 
-    :cond_76
+    :cond_5
     const-string v1, "androidx.media3.exoplayer.dash.DashMediaSource$Factory"
 
     .line 745
@@ -341,11 +341,11 @@
 
     invoke-direct {v2, v1, v0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Class;Landroidx/media3/datasource/DataSource$Factory;)V
 
-    :goto_87
+    :goto_0
     move-object v1, v2
 
     .line 774
-    :goto_88
+    :goto_1
     iget-object v0, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->mediaSourceFactorySuppliers:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -358,7 +358,7 @@
 .end method
 
 .method private maybeLoadSupplier(I)Lcom/google/common/base/Supplier;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -373,12 +373,12 @@
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->loadSupplier(I)Lcom/google/common/base/Supplier;
 
     move-result-object p1
-    :try_end_4
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_5
+    :catch_0
     const/4 p1, 0x0
 
     return-object p1
@@ -387,7 +387,7 @@
 
 # virtual methods
 .method public getMediaSourceFactory(I)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/ClassNotFoundException;
@@ -407,12 +407,12 @@
 
     check-cast v0, Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 640
-    :cond_f
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->loadSupplier(I)Lcom/google/common/base/Supplier;
 
     move-result-object v0
@@ -427,31 +427,31 @@
     .line 643
     iget-object v1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->cmcdConfigurationFactory:Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 644
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
     .line 646
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->drmSessionManagerProvider:Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_2
 
     .line 647
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
     .line 649
-    :cond_27
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_3
 
     .line 650
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
     .line 652
-    :cond_2e
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
     invoke-interface {v0, v1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
@@ -474,7 +474,7 @@
 .end method
 
 .method public getSupportedTypes()[I
-    .registers 2
+    .locals 1
 
     .line 629
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->ensureAllSuppliersAreLoaded()V
@@ -494,7 +494,7 @@
 .end method
 
 .method synthetic lambda$loadSupplier$4$androidx-media3-exoplayer-source-DefaultMediaSourceFactory$DelegateFactoryLoader(Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 4
+    .locals 2
 
     .line 769
     new-instance v0, Landroidx/media3/exoplayer/source/ProgressiveMediaSource$Factory;
@@ -507,7 +507,7 @@
 .end method
 
 .method public setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)V
-    .registers 4
+    .locals 2
 
     .line 686
     iput-object p1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->cmcdConfigurationFactory:Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;
@@ -523,12 +523,12 @@
 
     move-result-object v0
 
-    :goto_c
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -539,19 +539,19 @@
     .line 688
     invoke-interface {v1, p1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setCmcdConfigurationFactory(Landroidx/media3/exoplayer/upstream/CmcdConfiguration$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public setDataSourceFactory(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 3
+    .locals 1
 
     .line 659
     iget-object v0, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->dataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_0
 
     .line 660
     iput-object p1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->dataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
@@ -566,12 +566,12 @@
 
     invoke-interface {p1}, Ljava/util/Map;->clear()V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)V
-    .registers 4
+    .locals 2
 
     .line 693
     iput-object p1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->drmSessionManagerProvider:Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;
@@ -587,12 +587,12 @@
 
     move-result-object v0
 
-    :goto_c
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -603,33 +603,33 @@
     .line 695
     invoke-interface {v1, p1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public setJpegExtractorFlags(I)V
-    .registers 4
+    .locals 2
 
     .line 707
     iget-object v0, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->extractorsFactory:Landroidx/media3/extractor/ExtractorsFactory;
 
     instance-of v1, v0, Landroidx/media3/extractor/DefaultExtractorsFactory;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 708
     check-cast v0, Landroidx/media3/extractor/DefaultExtractorsFactory;
 
     invoke-virtual {v0, p1}, Landroidx/media3/extractor/DefaultExtractorsFactory;->setJpegExtractorFlags(I)Landroidx/media3/extractor/DefaultExtractorsFactory;
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)V
-    .registers 4
+    .locals 2
 
     .line 700
     iput-object p1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -645,12 +645,12 @@
 
     move-result-object v0
 
-    :goto_c
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -661,14 +661,14 @@
     .line 702
     invoke-interface {v1, p1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public setParseSubtitlesDuringExtraction(Z)V
-    .registers 4
+    .locals 2
 
     .line 669
     iput-boolean p1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->parseSubtitlesDuringExtraction:Z
@@ -689,12 +689,12 @@
 
     move-result-object v0
 
-    :goto_11
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -705,14 +705,14 @@
     .line 672
     invoke-interface {v1, p1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)V
-    .registers 4
+    .locals 2
 
     .line 678
     iput-object p1, p0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory$DelegateFactoryLoader;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -733,12 +733,12 @@
 
     move-result-object v0
 
-    :goto_11
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -749,8 +749,8 @@
     .line 681
     invoke-interface {v1, p1}, Landroidx/media3/exoplayer/source/MediaSource$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     return-void
 .end method

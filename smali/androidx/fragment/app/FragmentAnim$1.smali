@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/Fragment;)V
-    .registers 2
+    .locals 0
 
     .line 150
     iput-object p1, p0, Landroidx/fragment/app/FragmentAnim$1;->val$fragment:Landroidx/fragment/app/Fragment;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onCancel()V
-    .registers 4
+    .locals 3
 
     .line 153
     iget-object v0, p0, Landroidx/fragment/app/FragmentAnim$1;->val$fragment:Landroidx/fragment/app/Fragment;
@@ -47,7 +47,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 154
     iget-object v0, p0, Landroidx/fragment/app/FragmentAnim$1;->val$fragment:Landroidx/fragment/app/Fragment;
@@ -65,7 +65,7 @@
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
     .line 158
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/fragment/app/FragmentAnim$1;->val$fragment:Landroidx/fragment/app/Fragment;
 
     invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->setAnimator(Landroid/animation/Animator;)V

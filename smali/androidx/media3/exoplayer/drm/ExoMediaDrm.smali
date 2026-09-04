@@ -76,7 +76,7 @@
 .end method
 
 .method public getOfflineLicenseKeySetIds()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -143,7 +143,7 @@
 .end method
 
 .method public removeOfflineLicense([B)V
-    .registers 2
+    .locals 0
 
     .line 542
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -169,7 +169,7 @@
 .end method
 
 .method public setPlayerIdForSession([BLandroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

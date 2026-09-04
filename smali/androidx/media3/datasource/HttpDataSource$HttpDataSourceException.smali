@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSpec;I)V
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/datasource/DataSpec;II)V
-    .registers 4
+    .locals 0
 
     .line 267
     invoke-static {p2, p3}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;->assignErrorCode(II)I
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;I)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;II)V
-    .registers 5
+    .locals 0
 
     .line 329
     invoke-static {p3, p4}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;->assignErrorCode(II)I
@@ -100,7 +100,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/datasource/DataSpec;I)V
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/datasource/DataSpec;II)V
-    .registers 5
+    .locals 0
 
     .line 298
     invoke-static {p3, p4}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;->assignErrorCode(II)I
@@ -132,7 +132,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;I)V
-    .registers 11
+    .locals 6
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -155,7 +155,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;II)V
-    .registers 6
+    .locals 0
 
     .line 363
     invoke-static {p4, p5}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;->assignErrorCode(II)I
@@ -174,24 +174,24 @@
 .end method
 
 .method private static assignErrorCode(II)I
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x7d0
 
-    if-ne p0, v0, :cond_9
+    if-ne p0, v0, :cond_0
 
     const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     const/16 p0, 0x7d1
 
-    :cond_9
+    :cond_0
     return p0
 .end method
 
 .method public static createForIOException(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;I)Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
-    .registers 6
+    .locals 3
 
     .line 222
     invoke-virtual {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
@@ -203,24 +203,24 @@
 
     const/16 v2, 0x7d7
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const/16 v0, 0x7d2
 
-    goto :goto_26
+    goto :goto_0
 
     .line 225
-    :cond_d
+    :cond_0
     instance-of v1, p0, Ljava/io/InterruptedIOException;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     const/16 v0, 0x3ec
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_14
-    if-eqz v0, :cond_24
+    :cond_1
+    if-eqz v0, :cond_2
 
     .line 231
     invoke-static {v0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
@@ -233,33 +233,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     move v0, v2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_24
+    :cond_2
     const/16 v0, 0x7d1
 
-    :goto_26
-    if-ne v0, v2, :cond_2e
+    :goto_0
+    if-ne v0, v2, :cond_3
 
     .line 237
     new-instance p2, Landroidx/media3/datasource/HttpDataSource$CleartextNotPermittedException;
 
     invoke-direct {p2, p0, p1}, Landroidx/media3/datasource/HttpDataSource$CleartextNotPermittedException;-><init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;)V
 
-    goto :goto_34
+    goto :goto_1
 
     .line 238
-    :cond_2e
+    :cond_3
     new-instance v1, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;
 
     invoke-direct {v1, p0, p1, v0, p2}, Landroidx/media3/datasource/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Landroidx/media3/datasource/DataSpec;II)V
 
     move-object p2, v1
 
-    :goto_34
+    :goto_1
     return-object p2
 .end method

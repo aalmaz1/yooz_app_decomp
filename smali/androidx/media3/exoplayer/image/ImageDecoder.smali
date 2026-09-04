@@ -35,7 +35,7 @@
 .end method
 
 .method public bridge synthetic dequeueOutputBuffer()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;
@@ -59,7 +59,7 @@
 .end method
 
 .method public bridge synthetic queueInputBuffer(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/decoder/DecoderException;

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static final record(Landroid/graphics/Picture;IILkotlin/jvm/functions/Function1;)Landroid/graphics/Picture;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -56,10 +56,10 @@
     const/4 p2, 0x1
 
     .line 38
-    :try_start_5
+    :try_start_0
     invoke-interface {p3, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_8
-    .catchall {:try_start_5 .. :try_end_8} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {p2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -70,7 +70,7 @@
 
     return-object p0
 
-    :catchall_12
+    :catchall_0
     move-exception p1
 
     invoke-static {p2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

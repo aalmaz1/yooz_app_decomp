@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method private static copyFileToFile(Ljava/io/File;Ljava/io/File;)Landroid/net/Uri;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -59,18 +59,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 216
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
     .line 218
-    :cond_9
+    :cond_0
     invoke-virtual {p0, p1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_1
 
     .line 224
     invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
@@ -80,7 +80,7 @@
     return-object p0
 
     .line 219
-    :cond_14
+    :cond_1
     new-instance p0, Landroidx/camera/core/ImageCaptureException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -112,7 +112,7 @@
 .end method
 
 .method private static copyFileToMediaStore(Ljava/io/File;Landroidx/camera/core/ImageCapture$OutputFileOptions;)Landroid/net/Uri;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -137,7 +137,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_0
 
     .line 188
     new-instance v2, Landroid/content/ContentValues;
@@ -148,15 +148,15 @@
 
     invoke-direct {v2, v3}, Landroid/content/ContentValues;-><init>(Landroid/content/ContentValues;)V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 189
-    :cond_1c
+    :cond_0
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    :goto_21
+    :goto_0
     const/4 v3, 0x1
 
     .line 190
@@ -167,7 +167,7 @@
     const/4 v5, 0x0
 
     .line 193
-    :try_start_27
+    :try_start_0
     invoke-virtual {p1}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getSaveCollection()Landroid/net/Uri;
 
     move-result-object p1
@@ -175,52 +175,52 @@
     invoke-virtual {v1, p1, v2}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object p1
-    :try_end_2f
-    .catch Ljava/io/IOException; {:try_start_27 .. :try_end_2f} :catch_4e
-    .catch Ljava/lang/SecurityException; {:try_start_27 .. :try_end_2f} :catch_4c
-    .catchall {:try_start_27 .. :try_end_2f} :catchall_4a
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_2
 
     .line 198
-    :try_start_31
+    :try_start_1
     invoke-static {p0, p1, v1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->copyTempFileToUri(Ljava/io/File;Landroid/net/Uri;Landroid/content/ContentResolver;)V
-    :try_end_34
-    .catch Ljava/io/IOException; {:try_start_31 .. :try_end_34} :catch_3f
-    .catch Ljava/lang/SecurityException; {:try_start_31 .. :try_end_34} :catch_3d
-    .catchall {:try_start_31 .. :try_end_34} :catchall_3a
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_1
 
     .line 204
     invoke-static {p1, v1, v4}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->updateUriPendingStatus(Landroid/net/Uri;Landroid/content/ContentResolver;I)V
 
-    :cond_39
+    :cond_1
     return-object p1
 
-    :catchall_3a
+    :catchall_0
     move-exception p0
 
     move-object v5, p1
 
-    goto :goto_62
+    goto :goto_3
 
-    :catch_3d
+    :catch_0
     move-exception p0
 
-    goto :goto_40
+    goto :goto_1
 
-    :catch_3f
+    :catch_1
     move-exception p0
 
-    :goto_40
+    :goto_1
     move-object v5, p1
 
-    goto :goto_4f
+    goto :goto_2
 
     .line 195
-    :cond_42
-    :try_start_42
+    :cond_2
+    :try_start_2
     new-instance p0, Landroidx/camera/core/ImageCaptureException;
 
     const-string v2, "Failed to insert a MediaStore URI."
@@ -228,27 +228,27 @@
     invoke-direct {p0, v3, v2, v5}, Landroidx/camera/core/ImageCaptureException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     throw p0
-    :try_end_4a
-    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_4a} :catch_3f
-    .catch Ljava/lang/SecurityException; {:try_start_42 .. :try_end_4a} :catch_3d
-    .catchall {:try_start_42 .. :try_end_4a} :catchall_3a
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :catchall_4a
+    :catchall_1
     move-exception p0
 
-    goto :goto_62
+    goto :goto_3
 
-    :catch_4c
+    :catch_2
     move-exception p0
 
-    goto :goto_4f
+    goto :goto_2
 
-    :catch_4e
+    :catch_3
     move-exception p0
 
     .line 200
-    :goto_4f
-    :try_start_4f
+    :goto_2
+    :try_start_3
     new-instance p1, Landroidx/camera/core/ImageCaptureException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -266,22 +266,22 @@
     invoke-direct {p1, v3, v0, p0}, Landroidx/camera/core/ImageCaptureException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
-    :try_end_62
-    .catchall {:try_start_4f .. :try_end_62} :catchall_4a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :goto_62
-    if-eqz v5, :cond_67
+    :goto_3
+    if-eqz v5, :cond_3
 
     .line 204
     invoke-static {v5, v1, v4}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->updateUriPendingStatus(Landroid/net/Uri;Landroid/content/ContentResolver;I)V
 
     .line 206
-    :cond_67
+    :cond_3
     throw p0
 .end method
 
 .method private static copyFileToOutputStream(Ljava/io/File;Ljava/io/OutputStream;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -295,54 +295,54 @@
 
     const/16 p0, 0x400
 
-    :try_start_7
+    :try_start_0
     new-array p0, p0, [B
 
     .line 249
-    :goto_9
+    :goto_0
     invoke-virtual {v0, p0}, Ljava/io/InputStream;->read([B)I
 
     move-result v1
 
-    if-lez v1, :cond_14
+    if-lez v1, :cond_0
 
     const/4 v2, 0x0
 
     .line 250
     invoke-virtual {p1, p0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
-    :try_end_13
-    .catchall {:try_start_7 .. :try_end_13} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 252
-    :cond_14
+    :cond_0
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception p0
 
     .line 246
-    :try_start_19
+    :try_start_1
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_1c
-    .catchall {:try_start_19 .. :try_end_1c} :catchall_1d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_21
+    goto :goto_1
 
-    :catchall_1d
+    :catchall_1
     move-exception p1
 
     invoke-virtual {p0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_21
+    :goto_1
     throw p0
 .end method
 
 .method private static copyTempFileToUri(Ljava/io/File;Landroid/net/Uri;Landroid/content/ContentResolver;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -354,30 +354,30 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_1
 
     .line 238
-    :try_start_6
+    :try_start_0
     invoke-static {p0, p2}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->copyFileToOutputStream(Ljava/io/File;Ljava/io/OutputStream;)V
-    :try_end_9
-    .catchall {:try_start_6 .. :try_end_9} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 239
     invoke-virtual {p2}, Ljava/io/OutputStream;->close()V
 
-    :cond_e
+    :cond_0
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception p0
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 236
-    :cond_11
-    :try_start_11
+    :cond_1
+    :try_start_1
     new-instance p0, Ljava/io/FileNotFoundException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -401,32 +401,32 @@
     invoke-direct {p0, p1}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw p0
-    :try_end_2a
-    .catchall {:try_start_11 .. :try_end_2a} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_2a
-    if-eqz p2, :cond_34
+    :goto_0
+    if-eqz p2, :cond_2
 
     .line 234
-    :try_start_2c
+    :try_start_2
     invoke-virtual {p2}, Ljava/io/OutputStream;->close()V
-    :try_end_2f
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_30
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    goto :goto_34
+    goto :goto_1
 
-    :catchall_30
+    :catchall_1
     move-exception p1
 
     invoke-virtual {p0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_1
     throw p0
 .end method
 
 .method private static createTempFile(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Ljava/io/File;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -438,15 +438,15 @@
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getFile()Ljava/io/File;
 
     move-result-object p0
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_4} :catch_36
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const-string v0, "CameraX"
 
-    if-eqz p0, :cond_2f
+    if-eqz p0, :cond_0
 
     .line 86
-    :try_start_8
+    :try_start_1
     new-instance v1, Ljava/io/File;
 
     invoke-virtual {p0}, Ljava/io/File;->getParent()Ljava/lang/String;
@@ -487,19 +487,19 @@
 
     return-object v1
 
-    :cond_2f
+    :cond_0
     const-string p0, ".tmp"
 
     .line 90
     invoke-static {v0, p0}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p0
-    :try_end_35
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_35} :catch_36
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     return-object p0
 
-    :catch_36
+    :catch_0
     move-exception p0
 
     .line 93
@@ -515,7 +515,7 @@
 .end method
 
 .method private static getFileExtensionWithDot(Ljava/io/File;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 98
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -529,7 +529,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
     .line 101
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -538,91 +538,91 @@
 
     return-object p0
 
-    :cond_11
+    :cond_0
     const-string p0, ""
 
     return-object p0
 .end method
 
 .method private static isSaveToFile(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Z
-    .registers 1
+    .locals 0
 
     .line 281
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getFile()Ljava/io/File;
 
     move-result-object p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method private static isSaveToMediaStore(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Z
-    .registers 2
+    .locals 1
 
     .line 275
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getSaveCollection()Landroid/net/Uri;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 276
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 277
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getContentValues()Landroid/content/ContentValues;
 
     move-result-object p0
 
-    if-eqz p0, :cond_14
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_15
+    :goto_0
     return p0
 .end method
 
 .method private static isSaveToOutputStream(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Z
-    .registers 1
+    .locals 0
 
     .line 285
     invoke-virtual {p0}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method static moveFileToTarget(Ljava/io/File;Landroidx/camera/core/ImageCapture$OutputFileOptions;)Landroid/net/Uri;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -632,27 +632,27 @@
     const/4 v0, 0x0
 
     .line 166
-    :try_start_1
+    :try_start_0
     invoke-static {p1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->isSaveToMediaStore(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 167
     invoke-static {p0, p1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->copyFileToMediaStore(Ljava/io/File;Landroidx/camera/core/ImageCapture$OutputFileOptions;)Landroid/net/Uri;
 
     move-result-object v0
 
-    goto :goto_34
+    goto :goto_0
 
     .line 168
-    :cond_c
+    :cond_0
     invoke-static {p1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->isSaveToOutputStream(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1
 
     .line 169
     invoke-virtual {p1}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getOutputStream()Ljava/io/OutputStream;
@@ -667,15 +667,15 @@
 
     invoke-static {p0, p1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->copyFileToOutputStream(Ljava/io/File;Ljava/io/OutputStream;)V
 
-    goto :goto_34
+    goto :goto_0
 
     .line 170
-    :cond_20
+    :cond_1
     invoke-static {p1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->isSaveToFile(Landroidx/camera/core/ImageCapture$OutputFileOptions;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_2
 
     .line 171
     invoke-virtual {p1}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getFile()Ljava/io/File;
@@ -691,25 +691,25 @@
     invoke-static {p0, p1}, Landroidx/camera/core/imagecapture/JpegBytes2Disk;->copyFileToFile(Ljava/io/File;Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object v0
-    :try_end_34
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_34} :catch_3a
-    .catchall {:try_start_1 .. :try_end_34} :catchall_38
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 177
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_0
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
     return-object v0
 
-    :catchall_38
+    :catchall_0
     move-exception p1
 
-    goto :goto_43
+    goto :goto_1
 
     .line 174
-    :catch_3a
-    :try_start_3a
+    :catch_0
+    :try_start_1
     new-instance p1, Landroidx/camera/core/ImageCaptureException;
 
     const-string v1, "Failed to write to OutputStream."
@@ -719,11 +719,11 @@
     invoke-direct {p1, v2, v1, v0}, Landroidx/camera/core/ImageCaptureException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
-    :try_end_43
-    .catchall {:try_start_3a .. :try_end_43} :catchall_38
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 177
-    :goto_43
+    :goto_1
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
     .line 178
@@ -731,14 +731,14 @@
 .end method
 
 .method private static setContentValuePendingFlag(Landroid/content/ContentValues;I)V
-    .registers 4
+    .locals 2
 
     .line 269
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     const-string v0, "is_pending"
 
@@ -749,12 +749,12 @@
 
     invoke-virtual {p0, v0, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private static updateFileExif(Ljava/io/File;Landroidx/camera/core/impl/utils/Exif;Landroidx/camera/core/ImageCapture$OutputFileOptions;I)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -775,15 +775,15 @@
 
     move-result p1
 
-    if-nez p1, :cond_12
+    if-nez p1, :cond_0
 
-    if-eqz p3, :cond_12
+    if-eqz p3, :cond_0
 
     .line 135
     invoke-virtual {p0, p3}, Landroidx/camera/core/impl/utils/Exif;->rotate(I)V
 
     .line 139
-    :cond_12
+    :cond_0
     invoke-virtual {p2}, Landroidx/camera/core/ImageCapture$OutputFileOptions;->getMetadata()Landroidx/camera/core/ImageCapture$Metadata;
 
     move-result-object p1
@@ -793,29 +793,29 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1f
+    if-eqz p2, :cond_1
 
     .line 141
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->flipHorizontally()V
 
     .line 143
-    :cond_1f
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/ImageCapture$Metadata;->isReversedVertical()Z
 
     move-result p2
 
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_2
 
     .line 144
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->flipVertically()V
 
     .line 146
-    :cond_28
+    :cond_2
     invoke-virtual {p1}, Landroidx/camera/core/ImageCapture$Metadata;->getLocation()Landroid/location/Location;
 
     move-result-object p2
 
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_3
 
     .line 147
     invoke-virtual {p1}, Landroidx/camera/core/ImageCapture$Metadata;->getLocation()Landroid/location/Location;
@@ -825,14 +825,14 @@
     invoke-virtual {p0, p1}, Landroidx/camera/core/impl/utils/Exif;->attachLocation(Landroid/location/Location;)V
 
     .line 149
-    :cond_35
+    :cond_3
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/Exif;->save()V
-    :try_end_38
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_38} :catch_39
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_39
+    :catch_0
     move-exception p0
 
     .line 151
@@ -848,14 +848,14 @@
 .end method
 
 .method private static updateUriPendingStatus(Landroid/net/Uri;Landroid/content/ContentResolver;I)V
-    .registers 5
+    .locals 2
 
     .line 260
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_12
+    if-lt v0, v1, :cond_0
 
     .line 261
     new-instance v0, Landroid/content/ContentValues;
@@ -870,12 +870,12 @@
     .line 263
     invoke-virtual {p1, p0, v0, p2, p2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method private static writeBytesToFile(Ljava/io/File;[B)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -887,11 +887,11 @@
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5} :catch_20
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 113
-    :try_start_5
+    :try_start_1
     new-instance p0, Landroidx/camera/core/internal/compat/workaround/InvalidJpegDataParser;
 
     invoke-direct {p0}, Landroidx/camera/core/internal/compat/workaround/InvalidJpegDataParser;-><init>()V
@@ -904,40 +904,40 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1, p0}, Ljava/io/FileOutputStream;->write([BII)V
-    :try_end_12
-    .catchall {:try_start_5 .. :try_end_12} :catchall_16
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 115
-    :try_start_12
+    :try_start_2
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-    :try_end_15
-    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_15} :catch_20
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     return-void
 
-    :catchall_16
+    :catchall_0
     move-exception p0
 
     .line 112
-    :try_start_17
+    :try_start_3
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-    :try_end_1a
-    .catchall {:try_start_17 .. :try_end_1a} :catchall_1b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :catchall_1b
+    :catchall_1
     move-exception p1
 
-    :try_start_1c
+    :try_start_4
     invoke-virtual {p0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_1f
+    :goto_0
     throw p0
-    :try_end_20
-    .catch Ljava/io/IOException; {:try_start_1c .. :try_end_20} :catch_20
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
-    :catch_20
+    :catch_0
     move-exception p0
 
     .line 116
@@ -955,7 +955,7 @@
 
 # virtual methods
 .method public apply(Landroidx/camera/core/imagecapture/JpegBytes2Disk$In;)Landroidx/camera/core/ImageCapture$OutputFileResults;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;
@@ -1019,7 +1019,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/ImageCaptureException;

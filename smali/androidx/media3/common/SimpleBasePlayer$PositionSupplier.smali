@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getConstant(J)Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
-    .registers 3
+    .locals 1
 
     .line 1985
     new-instance v0, Landroidx/media3/common/SimpleBasePlayer$PositionSupplier$$ExternalSyntheticLambda1;
@@ -46,7 +46,7 @@
 .end method
 
 .method public static getExtrapolating(JF)Landroidx/media3/common/SimpleBasePlayer$PositionSupplier;
-    .registers 10
+    .locals 7
 
     .line 1995
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -68,13 +68,13 @@
 .end method
 
 .method public static synthetic lambda$getConstant$0(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static synthetic lambda$getExtrapolating$1(JJF)J
-    .registers 7
+    .locals 2
 
     .line 1997
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J

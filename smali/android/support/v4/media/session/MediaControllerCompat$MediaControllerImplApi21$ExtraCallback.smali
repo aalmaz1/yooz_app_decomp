@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
-    .registers 2
+    .locals 0
 
     .line 2249
     invoke-direct {p0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubCompat;-><init>(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public onExtrasChanged(Landroid/os/Bundle;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -43,7 +43,7 @@
 .end method
 
 .method public onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -59,7 +59,7 @@
 .end method
 
 .method public onQueueChanged(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 .end method
 
 .method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -100,7 +100,7 @@
 .end method
 
 .method public onSessionDestroyed()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -116,7 +116,7 @@
 .end method
 
 .method public onVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

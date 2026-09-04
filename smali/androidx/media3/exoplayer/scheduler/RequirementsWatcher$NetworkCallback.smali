@@ -24,7 +24,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)V
-    .registers 2
+    .locals 0
 
     .line 184
     iput-object p1, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
@@ -35,7 +35,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$1;)V
-    .registers 3
+    .locals 0
 
     .line 184
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;-><init>(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)V
@@ -44,7 +44,7 @@
 .end method
 
 .method private postCheckRequirements()V
-    .registers 3
+    .locals 2
 
     .line 220
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
@@ -63,7 +63,7 @@
 .end method
 
 .method private postRecheckNotMetNetworkRequirements()V
-    .registers 3
+    .locals 2
 
     .line 229
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method synthetic lambda$postCheckRequirements$0$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback()V
-    .registers 2
+    .locals 1
 
     .line 222
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
@@ -93,19 +93,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 223
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->access$200(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$postRecheckNotMetNetworkRequirements$1$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback()V
-    .registers 2
+    .locals 1
 
     .line 231
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
@@ -114,19 +114,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 232
     iget-object v0, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->this$0:Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;->access$500(Landroidx/media3/exoplayer/scheduler/RequirementsWatcher;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onAvailable(Landroid/net/Network;)V
-    .registers 2
+    .locals 0
 
     .line 191
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->postCheckRequirements()V
@@ -135,19 +135,19 @@
 .end method
 
 .method public onBlockedStatusChanged(Landroid/net/Network;Z)V
-    .registers 3
+    .locals 0
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
     .line 202
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->postRecheckNotMetNetworkRequirements()V
 
-    :cond_5
+    :cond_0
     return-void
 .end method
 
 .method public onCapabilitiesChanged(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V
-    .registers 3
+    .locals 0
 
     const/16 p1, 0x10
 
@@ -159,24 +159,24 @@
     .line 210
     iget-boolean p2, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->receivedCapabilitiesChange:Z
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     iget-boolean p2, p0, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->networkValidated:Z
 
-    if-eq p2, p1, :cond_f
+    if-eq p2, p1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_f
-    if-eqz p1, :cond_1d
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 215
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->postRecheckNotMetNetworkRequirements()V
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p2, 0x1
 
     .line 211
@@ -188,13 +188,13 @@
     .line 213
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->postCheckRequirements()V
 
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
-    .registers 2
+    .locals 0
 
     .line 196
     invoke-direct {p0}, Landroidx/media3/exoplayer/scheduler/RequirementsWatcher$NetworkCallback;->postCheckRequirements()V

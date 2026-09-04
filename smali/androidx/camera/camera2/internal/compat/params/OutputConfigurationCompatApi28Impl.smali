@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>(ILandroid/view/Surface;)V
-    .registers 5
+    .locals 2
 
     .line 41
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl$OutputConfigurationParamsApi28;
@@ -30,7 +30,7 @@
 .end method
 
 .method constructor <init>(Landroid/view/Surface;)V
-    .registers 4
+    .locals 2
 
     .line 37
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl$OutputConfigurationParamsApi28;
@@ -47,7 +47,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi26Impl;-><init>(Ljava/lang/Object;)V
@@ -56,7 +56,7 @@
 .end method
 
 .method static wrap(Landroid/hardware/camera2/params/OutputConfiguration;)Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;
-    .registers 3
+    .locals 2
 
     .line 51
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public getDynamicRangeProfile()J
-    .registers 3
+    .locals 2
 
     .line 88
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;->mObject:Ljava/lang/Object;
@@ -86,7 +86,7 @@
 .end method
 
 .method public getMaxSharedSurfaceCount()I
-    .registers 2
+    .locals 1
 
     .line 68
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;->getOutputConfiguration()Ljava/lang/Object;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getOutputConfiguration()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 99
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;->mObject:Ljava/lang/Object;
@@ -123,7 +123,7 @@
 .end method
 
 .method public getPhysicalCameraId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public removeSurface(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;->getOutputConfiguration()Ljava/lang/Object;
@@ -146,7 +146,7 @@
 .end method
 
 .method public setDynamicRangeProfile(J)V
-    .registers 4
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;->mObject:Ljava/lang/Object;
@@ -159,7 +159,7 @@
 .end method
 
 .method public setPhysicalCameraId(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 76
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/params/OutputConfigurationCompatApi28Impl;->getOutputConfiguration()Ljava/lang/Object;

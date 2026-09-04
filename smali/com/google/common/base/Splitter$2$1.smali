@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Splitter$2;Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010,
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public separatorEnd(I)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -70,7 +70,7 @@
 .end method
 
 .method public separatorStart(I)I
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -98,13 +98,13 @@
 
     sub-int/2addr v1, v0
 
-    :goto_f
-    if-gt p1, v1, :cond_2d
+    :goto_0
+    if-gt p1, v1, :cond_2
 
     const/4 v2, 0x0
 
-    :goto_12
-    if-ge v2, v0, :cond_2c
+    :goto_1
+    if-ge v2, v0, :cond_1
 
     .line 187
     iget-object v3, p0, Lcom/google/common/base/Splitter$2$1;->toSplit:Ljava/lang/CharSequence;
@@ -123,21 +123,21 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_29
+    if-eq v3, v4, :cond_0
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_2c
+    :cond_1
     return p1
 
-    :cond_2d
+    :cond_2
     const/4 p1, -0x1
 
     return p1

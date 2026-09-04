@@ -41,7 +41,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroidx/core/util/Consumer;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 .end method
 
 .method private cleanup()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -95,7 +95,7 @@
     .line 1156
     iget-object v1, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mTimeoutRunnable:Ljava/lang/Runnable;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 1157
     iget-object v2, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mTimeoutHandler:Landroid/os/Handler;
@@ -105,12 +105,12 @@
     .line 1158
     iput-object v0, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mTimeoutRunnable:Ljava/lang/Runnable;
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method static synthetic lambda$onLocationChanged$1(Landroidx/core/util/Consumer;Landroid/location/Location;)V
-    .registers 2
+    .locals 0
 
     .line 1147
     invoke-interface {p0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -121,23 +121,23 @@
 
 # virtual methods
 .method public cancel()V
-    .registers 2
+    .locals 1
 
     .line 1096
     monitor-enter p0
 
     .line 1097
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mTriggered:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 1098
     monitor-exit p0
 
     return-void
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     .line 1100
@@ -145,28 +145,28 @@
 
     .line 1101
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1103
     invoke-direct {p0}, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->cleanup()V
 
     return-void
 
-    :catchall_f
+    :catchall_0
     move-exception v0
 
     .line 1101
-    :try_start_10
+    :try_start_1
     monitor-exit p0
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method synthetic lambda$startTimeout$0$androidx-core-location-LocationManagerCompat$CancellableLocationListener()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -184,23 +184,23 @@
 .end method
 
 .method public onLocationChanged(Landroid/location/Location;)V
-    .registers 5
+    .locals 3
 
     .line 1139
     monitor-enter p0
 
     .line 1140
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mTriggered:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 1141
     monitor-exit p0
 
     return-void
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     .line 1143
@@ -208,8 +208,8 @@
 
     .line 1144
     monitor-exit p0
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1146
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mConsumer:Landroidx/core/util/Consumer;
@@ -228,20 +228,20 @@
 
     return-void
 
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     .line 1144
-    :try_start_1c
+    :try_start_1
     monitor-exit p0
-    :try_end_1d
-    .catchall {:try_start_1c .. :try_end_1d} :catchall_1b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method public onProviderDisabled(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     const/4 p1, 0x0
 
@@ -256,28 +256,28 @@
 .end method
 
 .method public onProviderEnabled(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public startTimeout(J)V
-    .registers 5
+    .locals 2
 
     .line 1108
     monitor-enter p0
 
     .line 1109
-    :try_start_1
+    :try_start_0
     iget-boolean v0, p0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;->mTriggered:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 1110
     monitor-exit p0
@@ -285,7 +285,7 @@
     return-void
 
     .line 1116
-    :cond_7
+    :cond_0
     new-instance v0, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Landroidx/core/location/LocationManagerCompat$CancellableLocationListener$$ExternalSyntheticLambda0;-><init>(Landroidx/core/location/LocationManagerCompat$CancellableLocationListener;)V
@@ -302,12 +302,12 @@
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

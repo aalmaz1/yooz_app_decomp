@@ -8,7 +8,7 @@
 .end method
 
 .method public onCues(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

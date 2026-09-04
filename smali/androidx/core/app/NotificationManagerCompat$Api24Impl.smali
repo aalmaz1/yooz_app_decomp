@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1273
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static areNotificationsEnabled(Landroid/app/NotificationManager;)Z
-    .registers 1
+    .locals 0
 
     .line 1277
     invoke-virtual {p0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static getImportance(Landroid/app/NotificationManager;)I
-    .registers 1
+    .locals 0
 
     .line 1282
     invoke-virtual {p0}, Landroid/app/NotificationManager;->getImportance()I

@@ -15,7 +15,7 @@
 
 # direct methods
 .method constructor <init>(FFFLandroid/util/Rational;)V
-    .registers 5
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public getSize()F
-    .registers 2
+    .locals 1
 
     .line 115
     iget v0, p0, Landroidx/camera/core/MeteringPoint;->mSize:F
@@ -47,7 +47,7 @@
 .end method
 
 .method public getSurfaceAspectRatio()Landroid/util/Rational;
-    .registers 2
+    .locals 1
 
     .line 139
     iget-object v0, p0, Landroidx/camera/core/MeteringPoint;->mSurfaceAspectRatio:Landroid/util/Rational;
@@ -56,7 +56,7 @@
 .end method
 
 .method public getX()F
-    .registers 2
+    .locals 1
 
     .line 89
     iget v0, p0, Landroidx/camera/core/MeteringPoint;->mNormalizedX:F
@@ -65,7 +65,7 @@
 .end method
 
 .method public getY()F
-    .registers 2
+    .locals 1
 
     .line 99
     iget v0, p0, Landroidx/camera/core/MeteringPoint;->mNormalizedY:F

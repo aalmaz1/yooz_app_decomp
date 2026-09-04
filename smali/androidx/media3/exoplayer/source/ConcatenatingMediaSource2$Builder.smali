@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public add(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public add(Landroidx/media3/common/MediaItem;J)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 8
+    .locals 4
 
     .line 157
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -74,7 +74,7 @@
 
     cmp-long v0, p2, v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_0
 
     .line 158
     iget-object v0, p1, Landroidx/media3/common/MediaItem;->clippingConfiguration:Landroidx/media3/common/MediaItem$ClippingConfiguration;
@@ -85,7 +85,7 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     .line 161
     iget-object p2, p1, Landroidx/media3/common/MediaItem;->clippingConfiguration:Landroidx/media3/common/MediaItem$ClippingConfiguration;
@@ -104,7 +104,7 @@
     move-result-wide p2
 
     .line 166
-    :cond_23
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;->mediaSourceFactory:Landroidx/media3/exoplayer/source/MediaSource$Factory;
 
     const-string v1, "Must use useDefaultMediaSourceFactory or setMediaSourceFactory first."
@@ -126,7 +126,7 @@
 .end method
 
 .method public add(Landroidx/media3/exoplayer/source/MediaSource;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -139,7 +139,7 @@
 .end method
 
 .method public add(Landroidx/media3/exoplayer/source/MediaSource;J)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 8
+    .locals 4
 
     .line 204
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -147,26 +147,26 @@
     .line 205
     instance-of v0, p1, Landroidx/media3/exoplayer/source/ProgressiveMediaSource;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p2, v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     const-string v1, "Progressive media source must define an initial placeholder duration."
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
@@ -196,21 +196,21 @@
 .end method
 
 .method public build()Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2;
-    .registers 5
+    .locals 4
 
     .line 216
     iget v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;->index:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     const-string v1, "Must add at least one source to the concatenation."
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -218,7 +218,7 @@
     .line 217
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;->mediaItem:Landroidx/media3/common/MediaItem;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 218
     sget-object v0, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
@@ -230,7 +230,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;->mediaItem:Landroidx/media3/common/MediaItem;
 
     .line 220
-    :cond_18
+    :cond_1
     new-instance v0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -249,7 +249,7 @@
 .end method
 
 .method public setMediaItem(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 2
+    .locals 0
 
     .line 115
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -258,7 +258,7 @@
 .end method
 
 .method public setMediaSourceFactory(Landroidx/media3/exoplayer/source/MediaSource$Factory;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 2
+    .locals 0
 
     .line 98
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -273,7 +273,7 @@
 .end method
 
 .method public useDefaultMediaSourceFactory(Landroid/content/Context;)Landroidx/media3/exoplayer/source/ConcatenatingMediaSource2$Builder;
-    .registers 3
+    .locals 1
 
     .line 85
     new-instance v0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;

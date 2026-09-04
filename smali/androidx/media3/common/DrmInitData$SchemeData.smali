@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 389
     new-instance v0, Landroidx/media3/common/DrmInitData$SchemeData$1;
@@ -56,7 +56,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 7
+    .locals 5
 
     .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,7 +107,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;[B)V
-    .registers 5
+    .locals 0
 
     .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -144,7 +144,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/UUID;Ljava/lang/String;[B)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -157,20 +157,20 @@
 
 # virtual methods
 .method public canReplace(Landroidx/media3/common/DrmInitData$SchemeData;)Z
-    .registers 3
+    .locals 1
 
     .line 327
     invoke-virtual {p0}, Landroidx/media3/common/DrmInitData$SchemeData;->hasData()Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Landroidx/media3/common/DrmInitData$SchemeData;->hasData()Z
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     iget-object p1, p1, Landroidx/media3/common/DrmInitData$SchemeData;->uuid:Ljava/util/UUID;
 
@@ -178,21 +178,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_17
+    :goto_0
     return p1
 .end method
 
 .method public copyWithData([B)Landroidx/media3/common/DrmInitData$SchemeData;
-    .registers 6
+    .locals 4
 
     .line 343
     new-instance v0, Landroidx/media3/common/DrmInitData$SchemeData;
@@ -209,7 +209,7 @@
 .end method
 
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -217,26 +217,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     .line 348
     instance-of v0, p1, Landroidx/media3/common/DrmInitData$SchemeData;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_a
+    if-ne p1, p0, :cond_1
 
     return v0
 
     .line 354
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/DrmInitData$SchemeData;
 
     .line 355
@@ -248,7 +248,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/DrmInitData$SchemeData;->mimeType:Ljava/lang/String;
 
@@ -259,7 +259,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/DrmInitData$SchemeData;->uuid:Ljava/util/UUID;
 
@@ -270,7 +270,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/DrmInitData$SchemeData;->data:[B
 
@@ -281,40 +281,40 @@
 
     move-result p1
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
     move v1, v0
 
-    :cond_35
+    :cond_2
     return v1
 .end method
 
 .method public hasData()Z
-    .registers 2
+    .locals 1
 
     .line 332
     iget-object v0, p0, Landroidx/media3/common/DrmInitData$SchemeData;->data:[B
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 363
     iget v0, p0, Landroidx/media3/common/DrmInitData$SchemeData;->hashCode:I
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     .line 364
     iget-object v0, p0, Landroidx/media3/common/DrmInitData$SchemeData;->uuid:Ljava/util/UUID;
@@ -328,18 +328,18 @@
     .line 365
     iget-object v1, p0, Landroidx/media3/common/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :goto_16
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -368,14 +368,14 @@
     iput v0, p0, Landroidx/media3/common/DrmInitData$SchemeData;->hashCode:I
 
     .line 370
-    :cond_2b
+    :cond_1
     iget v0, p0, Landroidx/media3/common/DrmInitData$SchemeData;->hashCode:I
 
     return v0
 .end method
 
 .method public matches(Ljava/util/UUID;)Z
-    .registers 4
+    .locals 2
 
     .line 317
     sget-object v0, Landroidx/media3/common/C;->UUID_NIL:Ljava/util/UUID;
@@ -386,7 +386,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/common/DrmInitData$SchemeData;->uuid:Ljava/util/UUID;
 
@@ -394,25 +394,25 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_16
+    :goto_1
     return p1
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
 
     .line 382
     iget-object p2, p0, Landroidx/media3/common/DrmInitData$SchemeData;->uuid:Ljava/util/UUID;

@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 102
     new-instance v0, Landroidx/camera/lifecycle/ProcessCameraProvider;
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 886
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 .end method
 
 .method public static configureInstance(Landroidx/camera/core/CameraXConfig;)V
-    .registers 2
+    .locals 1
 
     .line 257
     sget-object v0, Landroidx/camera/lifecycle/ProcessCameraProvider;->sAppInstance:Landroidx/camera/lifecycle/ProcessCameraProvider;
@@ -103,7 +103,7 @@
 .end method
 
 .method private configureInstanceInternal(Landroidx/camera/core/CameraXConfig;)V
-    .registers 5
+    .locals 3
 
     .line 261
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mLock:Ljava/lang/Object;
@@ -111,22 +111,22 @@
     monitor-enter v0
 
     .line 262
-    :try_start_3
+    :try_start_0
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 263
     iget-object v1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraXConfigProvider:Landroidx/camera/core/CameraXConfig$Provider;
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     const-string v2, "CameraX has already been configured. To use a different configuration, shutdown() must be called."
 
     invoke-static {v1, v2}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -143,18 +143,18 @@
 
     return-void
 
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method private getActiveConcurrentCameraInfos()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -167,7 +167,7 @@
     .line 863
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 864
     new-instance v0, Ljava/util/ArrayList;
@@ -177,7 +177,7 @@
     return-object v0
 
     .line 866
-    :cond_a
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/core/CameraX;->getCameraFactory()Landroidx/camera/core/impl/CameraFactory;
 
     move-result-object v0
@@ -195,7 +195,7 @@
 .end method
 
 .method private getCameraInfoFromCameraSelector(Landroidx/camera/core/CameraSelector;Ljava/util/List;)Landroidx/camera/core/CameraInfo;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -217,13 +217,13 @@
 
     move-result p2
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p2, 0x0
 
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -232,24 +232,24 @@
 
     check-cast p1, Landroidx/camera/core/CameraInfo;
 
-    :goto_13
+    :goto_0
     return-object p1
 .end method
 
 .method private getCameraOperatingMode()I
-    .registers 2
+    .locals 1
 
     .line 847
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 850
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/core/CameraX;->getCameraFactory()Landroidx/camera/core/impl/CameraFactory;
 
     move-result-object v0
@@ -266,7 +266,7 @@
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -306,7 +306,7 @@
 .end method
 
 .method private getOrCreateCameraXInstance(Landroid/content/Context;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -324,10 +324,10 @@
     monitor-enter v0
 
     .line 192
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraXInitializeFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 193
     monitor-exit v0
@@ -335,7 +335,7 @@
     return-object v1
 
     .line 196
-    :cond_9
+    :cond_0
     new-instance v1, Landroidx/camera/core/CameraX;
 
     iget-object v2, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraXConfigProvider:Landroidx/camera/core/CameraXConfig$Provider;
@@ -358,25 +358,25 @@
 
     return-object p1
 
-    :catchall_1d
+    :catchall_0
     move-exception p1
 
     .line 222
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_3 .. :try_end_1f} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method static synthetic lambda$configureInstanceInternal$3(Landroidx/camera/core/CameraXConfig;)Landroidx/camera/core/CameraXConfig;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$getInstance$0(Landroid/content/Context;Landroidx/camera/core/CameraX;)Landroidx/camera/lifecycle/ProcessCameraProvider;
-    .registers 3
+    .locals 1
 
     .line 184
     sget-object v0, Landroidx/camera/lifecycle/ProcessCameraProvider;->sAppInstance:Landroidx/camera/lifecycle/ProcessCameraProvider;
@@ -394,7 +394,7 @@
 .end method
 
 .method static synthetic lambda$getOrCreateCameraXInstance$1(Landroidx/camera/core/CameraX;Ljava/lang/Void;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -410,7 +410,7 @@
 .end method
 
 .method private setActiveConcurrentCameraInfos(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -423,12 +423,12 @@
     .line 871
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 874
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/core/CameraX;->getCameraFactory()Landroidx/camera/core/impl/CameraFactory;
 
     move-result-object v0
@@ -444,17 +444,17 @@
 .end method
 
 .method private setCameraOperatingMode(I)V
-    .registers 3
+    .locals 1
 
     .line 854
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 857
-    :cond_5
+    :cond_0
     invoke-virtual {v0}, Landroidx/camera/core/CameraX;->getCameraFactory()Landroidx/camera/core/impl/CameraFactory;
 
     move-result-object v0
@@ -470,7 +470,7 @@
 .end method
 
 .method private setCameraX(Landroidx/camera/core/CameraX;)V
-    .registers 2
+    .locals 0
 
     .line 312
     iput-object p1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
@@ -479,7 +479,7 @@
 .end method
 
 .method private setContext(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 316
     iput-object p1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mContext:Landroid/content/Context;
@@ -490,7 +490,7 @@
 
 # virtual methods
 .method public bindToLifecycle(Landroidx/lifecycle/LifecycleOwner;Landroidx/camera/core/CameraSelector;Landroidx/camera/core/UseCaseGroup;)Landroidx/camera/core/Camera;
-    .registers 11
+    .locals 7
 
     .line 410
     invoke-direct {p0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->getCameraOperatingMode()I
@@ -499,7 +499,7 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_29
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -546,7 +546,7 @@
     return-object p1
 
     .line 411
-    :cond_29
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "bindToLifecycle for single camera is not supported in concurrent camera mode, call unbindAll() first"
@@ -557,7 +557,7 @@
 .end method
 
 .method varargs bindToLifecycle(Landroidx/lifecycle/LifecycleOwner;Landroidx/camera/core/CameraSelector;Landroidx/camera/core/ViewPort;Ljava/util/List;[Landroidx/camera/core/UseCase;)Landroidx/camera/core/Camera;
-    .registers 20
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -594,10 +594,10 @@
 
     move v6, v5
 
-    :goto_e
+    :goto_0
     const/4 v7, 0x0
 
-    if-ge v6, v4, :cond_38
+    if-ge v6, v4, :cond_1
 
     aget-object v8, v2, v6
 
@@ -610,7 +610,7 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_35
+    if-eqz v7, :cond_0
 
     .line 578
     invoke-virtual {v7}, Landroidx/camera/core/CameraSelector;->getCameraFilterSet()Ljava/util/LinkedHashSet;
@@ -621,12 +621,12 @@
 
     move-result-object v7
 
-    :goto_25
+    :goto_1
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_35
+    if-eqz v8, :cond_0
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -637,15 +637,15 @@
     .line 579
     invoke-virtual {v3, v8}, Landroidx/camera/core/CameraSelector$Builder;->addCameraFilter(Landroidx/camera/core/CameraFilter;)Landroidx/camera/core/CameraSelector$Builder;
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_35
+    :cond_0
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 584
-    :cond_38
+    :cond_1
     invoke-virtual {v3}, Landroidx/camera/core/CameraSelector$Builder;->build()Landroidx/camera/core/CameraSelector;
 
     move-result-object v3
@@ -671,7 +671,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_113
+    if-nez v4, :cond_c
 
     .line 593
     invoke-static {v3}, Landroidx/camera/core/internal/CameraUseCaseAdapter;->generateCameraId(Ljava/util/LinkedHashSet;)Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;
@@ -699,8 +699,8 @@
 
     move v9, v5
 
-    :goto_62
-    if-ge v9, v8, :cond_93
+    :goto_2
+    if-ge v9, v8, :cond_5
 
     aget-object v10, v2, v9
 
@@ -709,13 +709,13 @@
 
     move-result-object v11
 
-    :cond_6a
-    :goto_6a
+    :cond_2
+    :goto_3
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-eqz v12, :cond_90
+    if-eqz v12, :cond_4
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -728,14 +728,14 @@
 
     move-result v13
 
-    if-eqz v13, :cond_6a
+    if-eqz v13, :cond_2
 
-    if-ne v12, v4, :cond_7f
+    if-ne v12, v4, :cond_3
 
-    goto :goto_6a
+    goto :goto_3
 
     .line 604
-    :cond_7f
+    :cond_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const/4 v2, 0x1
@@ -755,13 +755,13 @@
 
     throw v1
 
-    :cond_90
+    :cond_4
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_62
+    goto :goto_2
 
-    :cond_93
-    if-nez v4, :cond_b6
+    :cond_5
+    if-nez v4, :cond_6
 
     .line 615
     iget-object v4, v0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mLifecycleCameraRepository:Landroidx/camera/lifecycle/LifecycleCameraRepository;
@@ -801,7 +801,7 @@
     move-result-object v4
 
     .line 626
-    :cond_b6
+    :cond_6
     invoke-virtual/range {p2 .. p2}, Landroidx/camera/core/CameraSelector;->getCameraFilterSet()Ljava/util/LinkedHashSet;
 
     move-result-object v1
@@ -810,13 +810,13 @@
 
     move-result-object v1
 
-    :cond_be
-    :goto_be
+    :cond_7
+    :goto_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_f3
+    if-eqz v3, :cond_a
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -831,7 +831,7 @@
 
     sget-object v6, Landroidx/camera/core/CameraFilter;->DEFAULT_ID:Landroidx/camera/core/impl/Identifier;
 
-    if-eq v5, v6, :cond_be
+    if-eq v5, v6, :cond_7
 
     .line 630
     invoke-interface {v3}, Landroidx/camera/core/CameraFilter;->getIdentifier()Landroidx/camera/core/impl/Identifier;
@@ -855,19 +855,19 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_e7
+    if-nez v3, :cond_8
 
-    goto :goto_be
+    goto :goto_4
 
-    :cond_e7
-    if-nez v7, :cond_eb
+    :cond_8
+    if-nez v7, :cond_9
 
     move-object v7, v3
 
-    goto :goto_be
+    goto :goto_4
 
     .line 638
-    :cond_eb
+    :cond_9
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Cannot apply multiple extended camera configs at the same time."
@@ -877,18 +877,18 @@
     throw v1
 
     .line 646
-    :cond_f3
+    :cond_a
     invoke-virtual {v4, v7}, Landroidx/camera/lifecycle/LifecycleCamera;->setExtendedConfig(Landroidx/camera/core/impl/CameraConfig;)V
 
     .line 648
     array-length v1, v2
 
-    if-nez v1, :cond_fa
+    if-nez v1, :cond_b
 
     return-object v4
 
     .line 652
-    :cond_fa
+    :cond_b
     iget-object v8, v0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mLifecycleCameraRepository:Landroidx/camera/lifecycle/LifecycleCameraRepository;
 
     .line 656
@@ -919,7 +919,7 @@
     return-object v4
 
     .line 589
-    :cond_113
+    :cond_c
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Provided camera selector unable to resolve a camera for the given use case"
@@ -930,7 +930,7 @@
 .end method
 
 .method public varargs bindToLifecycle(Landroidx/lifecycle/LifecycleOwner;Landroidx/camera/core/CameraSelector;[Landroidx/camera/core/UseCase;)Landroidx/camera/core/Camera;
-    .registers 11
+    .locals 7
 
     .line 382
     invoke-direct {p0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->getCameraOperatingMode()I
@@ -939,7 +939,7 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -968,7 +968,7 @@
     return-object p1
 
     .line 383
-    :cond_19
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string p2, "bindToLifecycle for single camera is not supported in concurrent camera mode, call unbindAll() first"
@@ -979,7 +979,7 @@
 .end method
 
 .method public bindToLifecycle(Ljava/util/List;)Landroidx/camera/core/ConcurrentCamera;
-    .registers 13
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1003,7 +1003,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e2
+    if-eqz v0, :cond_7
 
     .line 454
     invoke-direct {p0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->getCameraOperatingMode()I
@@ -1012,7 +1012,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_da
+    if-eq v0, v1, :cond_6
 
     .line 459
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -1021,14 +1021,14 @@
 
     const/4 v2, 0x2
 
-    if-lt v0, v2, :cond_d2
+    if-lt v0, v2, :cond_5
 
     .line 463
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-gt v0, v2, :cond_ca
+    if-gt v0, v2, :cond_4
 
     .line 468
     new-instance v0, Ljava/util/ArrayList;
@@ -1074,9 +1074,9 @@
 
     move-result-object v1
 
-    if-eqz v5, :cond_c2
+    if-eqz v5, :cond_3
 
-    if-eqz v1, :cond_c2
+    if-eqz v1, :cond_3
 
     .line 479
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1093,7 +1093,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_6f
+    if-nez v1, :cond_1
 
     .line 482
     invoke-direct {p0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->getActiveConcurrentCameraInfos()Ljava/util/List;
@@ -1104,12 +1104,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_0
 
-    goto :goto_6f
+    goto :goto_0
 
     .line 483
-    :cond_67
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Cameras are already running, call unbindAll() before binding more cameras"
@@ -1119,8 +1119,8 @@
     throw p1
 
     .line 487
-    :cond_6f
-    :goto_6f
+    :cond_1
+    :goto_0
     invoke-direct {p0, v2}, Landroidx/camera/lifecycle/ProcessCameraProvider;->setCameraOperatingMode(I)V
 
     .line 488
@@ -1133,12 +1133,12 @@
 
     move-result-object p1
 
-    :goto_7b
+    :goto_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_b9
+    if-eqz v2, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1203,10 +1203,10 @@
     .line 496
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_7b
+    goto :goto_1
 
     .line 498
-    :cond_b9
+    :cond_2
     invoke-direct {p0, v0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->setActiveConcurrentCameraInfos(Ljava/util/List;)V
 
     .line 499
@@ -1217,7 +1217,7 @@
     return-object p1
 
     .line 477
-    :cond_c2
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Invalid camera selectors in camera configs"
@@ -1227,7 +1227,7 @@
     throw p1
 
     .line 464
-    :cond_ca
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Concurrent camera is only supporting two  cameras at maximum."
@@ -1237,7 +1237,7 @@
     throw p1
 
     .line 460
-    :cond_d2
+    :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Concurrent camera needs two camera configs"
@@ -1247,7 +1247,7 @@
     throw p1
 
     .line 455
-    :cond_da
+    :cond_6
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Camera is already running, call unbindAll() before binding more cameras"
@@ -1257,7 +1257,7 @@
     throw p1
 
     .line 450
-    :cond_e2
+    :cond_7
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "Concurrent camera is not supported on the device"
@@ -1268,7 +1268,7 @@
 .end method
 
 .method public getAvailableCameraInfos()Ljava/util/List;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1299,12 +1299,12 @@
 
     move-result-object v1
 
-    :goto_13
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1319,14 +1319,14 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     return-object v0
 .end method
 
 .method public getAvailableConcurrentCameraInfos()Ljava/util/List;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1386,12 +1386,12 @@
 
     move-result-object v0
 
-    :goto_2d
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1409,13 +1409,13 @@
 
     move-result-object v3
 
-    :cond_42
-    :goto_42
+    :cond_0
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_58
+    if-eqz v5, :cond_1
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1428,25 +1428,25 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_42
+    if-eqz v5, :cond_0
 
     .line 826
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_42
+    goto :goto_1
 
     .line 829
-    :cond_58
+    :cond_1
     invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_5c
+    :cond_2
     return-object v2
 .end method
 
 .method public hasCamera(Landroidx/camera/core/CameraSelector;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/CameraInfoUnavailableException;
@@ -1466,21 +1466,21 @@
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroidx/camera/core/CameraSelector;->select(Ljava/util/LinkedHashSet;)Landroidx/camera/core/impl/CameraInternal;
-    :try_end_d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_d} :catch_f
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :catch_f
+    :catch_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public isBound(Landroidx/camera/core/UseCase;)Z
-    .registers 4
+    .locals 2
 
     .line 672
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mLifecycleCameraRepository:Landroidx/camera/lifecycle/LifecycleCameraRepository;
@@ -1493,12 +1493,12 @@
 
     move-result-object v0
 
-    :cond_a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1511,20 +1511,20 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1e
+    :cond_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public isConcurrentCameraModeOn()Z
-    .registers 3
+    .locals 2
 
     .line 842
     invoke-direct {p0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->getCameraOperatingMode()I
@@ -1533,21 +1533,21 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method synthetic lambda$getOrCreateCameraXInstance$2$androidx-camera-lifecycle-ProcessCameraProvider(Landroidx/camera/core/CameraX;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -1560,7 +1560,7 @@
     monitor-enter v0
 
     .line 200
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraXShutdownFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
     .line 201
@@ -1597,26 +1597,26 @@
 
     .line 216
     monitor-exit v0
-    :try_end_23
-    .catchall {:try_start_3 .. :try_end_23} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const-string p1, "ProcessCameraProvider-initializeCameraX"
 
     return-object p1
 
-    :catchall_26
+    :catchall_0
     move-exception p1
 
-    :try_start_27
+    :try_start_1
     monitor-exit v0
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method synthetic lambda$shutdown$4$androidx-camera-lifecycle-ProcessCameraProvider()V
-    .registers 2
+    .locals 1
 
     .line 290
     invoke-virtual {p0}, Landroidx/camera/lifecycle/ProcessCameraProvider;->unbindAll()V
@@ -1630,7 +1630,7 @@
 .end method
 
 .method public shutdown()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1650,7 +1650,7 @@
     .line 294
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 295
     invoke-virtual {v0}, Landroidx/camera/core/CameraX;->getCameraFactory()Landroidx/camera/core/impl/CameraFactory;
@@ -1664,33 +1664,33 @@
     invoke-interface {v0}, Landroidx/camera/core/concurrent/CameraCoordinator;->shutdown()V
 
     .line 298
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroidx/camera/core/CameraX;->shutdown()Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 299
-    :cond_21
+    :cond_1
     invoke-static {v1}, Landroidx/camera/core/impl/utils/futures/Futures;->immediateFuture(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
 
     .line 301
-    :goto_25
+    :goto_0
     iget-object v2, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
     .line 302
-    :try_start_28
+    :try_start_0
     iput-object v1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraXConfigProvider:Landroidx/camera/core/CameraXConfig$Provider;
 
     .line 303
@@ -1701,8 +1701,8 @@
 
     .line 305
     monitor-exit v2
-    :try_end_2f
-    .catchall {:try_start_28 .. :try_end_2f} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 306
     iput-object v1, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mCameraX:Landroidx/camera/core/CameraX;
@@ -1712,20 +1712,20 @@
 
     return-object v0
 
-    :catchall_34
+    :catchall_0
     move-exception v0
 
     .line 305
-    :try_start_35
+    :try_start_1
     monitor-exit v2
-    :try_end_36
-    .catchall {:try_start_35 .. :try_end_36} :catchall_34
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method public varargs unbind([Landroidx/camera/core/UseCase;)V
-    .registers 4
+    .locals 2
 
     .line 699
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -1737,7 +1737,7 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_0
 
     .line 706
     iget-object v0, p0, Landroidx/camera/lifecycle/ProcessCameraProvider;->mLifecycleCameraRepository:Landroidx/camera/lifecycle/LifecycleCameraRepository;
@@ -1751,7 +1751,7 @@
     return-void
 
     .line 702
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v0, "unbind usecase is not supported in concurrent camera mode, call unbindAll() first"
@@ -1762,7 +1762,7 @@
 .end method
 
 .method public unbindAll()V
-    .registers 2
+    .locals 1
 
     .line 719
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V

@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public build(Landroidx/media3/exoplayer/drm/MediaDrmCallback;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
-    .registers 15
+    .locals 13
 
     .line 241
     new-instance v12, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
@@ -128,7 +128,7 @@
 .end method
 
 .method public setKeyRequestParameters(Ljava/util/Map;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -145,19 +145,19 @@
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;->keyRequestParameters:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    :cond_c
+    :cond_0
     return-object p0
 .end method
 
 .method public setLoadErrorHandlingPolicy(Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 2
+    .locals 0
 
     .line 213
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -172,7 +172,7 @@
 .end method
 
 .method public setMultiSession(Z)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 2
+    .locals 0
 
     .line 162
     iput-boolean p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;->multiSession:Z
@@ -181,7 +181,7 @@
 .end method
 
 .method public setPlayClearSamplesWithoutKeys(Z)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 2
+    .locals 0
 
     .line 201
     iput-boolean p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;->playClearSamplesWithoutKeys:Z
@@ -190,33 +190,33 @@
 .end method
 
 .method public setSessionKeepaliveMs(J)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gtz v0, :cond_12
+    if-gtz v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 234
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 235
@@ -226,7 +226,7 @@
 .end method
 
 .method public varargs setUseDrmSessionsForClearContent([I)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 8
+    .locals 6
 
     .line 183
     array-length v0, p1
@@ -235,8 +235,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, v0, :cond_15
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     aget v3, p1, v2
 
@@ -244,26 +244,26 @@
 
     const/4 v5, 0x1
 
-    if-eq v3, v4, :cond_f
+    if-eq v3, v4, :cond_1
 
-    if-ne v3, v5, :cond_e
+    if-ne v3, v5, :cond_0
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_e
+    :cond_0
     move v5, v1
 
     .line 184
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_1
     invoke-static {v5}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
     .line 187
-    :cond_15
+    :cond_2
     invoke-virtual {p1}, [I->clone()Ljava/lang/Object;
 
     move-result-object p1
@@ -276,7 +276,7 @@
 .end method
 
 .method public setUuidAndExoMediaDrmProvider(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm$Provider;)Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager$Builder;
-    .registers 3
+    .locals 0
 
     .line 145
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getDescription(Landroid/app/NotificationChannelGroup;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 273
     invoke-virtual {p0}, Landroid/app/NotificationChannelGroup;->getDescription()Ljava/lang/String;
@@ -36,7 +36,7 @@
 .end method
 
 .method static isBlocked(Landroid/app/NotificationChannelGroup;)Z
-    .registers 1
+    .locals 0
 
     .line 268
     invoke-virtual {p0}, Landroid/app/NotificationChannelGroup;->isBlocked()Z
@@ -47,7 +47,7 @@
 .end method
 
 .method static setDescription(Landroid/app/NotificationChannelGroup;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 279
     invoke-virtual {p0, p1}, Landroid/app/NotificationChannelGroup;->setDescription(Ljava/lang/String;)V

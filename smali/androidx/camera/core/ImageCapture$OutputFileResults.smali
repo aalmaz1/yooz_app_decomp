@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;)V
-    .registers 2
+    .locals 0
 
     .line 1552
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public getSavedUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 1565
     iget-object v0, p0, Landroidx/camera/core/ImageCapture$OutputFileResults;->mSavedUri:Landroid/net/Uri;

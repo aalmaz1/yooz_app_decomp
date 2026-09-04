@@ -60,7 +60,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 153
     new-instance v0, Ljava/util/LinkedHashSet;
@@ -75,7 +75,7 @@
 .end method
 
 .method public static final SharedPreferencesMigration(Landroid/content/Context;Ljava/lang/String;)Landroidx/datastore/migrations/SharedPreferencesMigration;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +108,7 @@
 .end method
 
 .method public static final SharedPreferencesMigration(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;)Landroidx/datastore/migrations/SharedPreferencesMigration;
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -138,7 +138,7 @@
     .line 84
     sget-object v0, Landroidx/datastore/preferences/SharedPreferencesMigrationKt;->MIGRATE_ALL_KEYS:Ljava/util/Set;
 
-    if-ne p2, v0, :cond_2c
+    if-ne p2, v0, :cond_0
 
     .line 85
     new-instance v0, Landroidx/datastore/migrations/SharedPreferencesMigration;
@@ -178,10 +178,10 @@
     .line 85
     invoke-direct/range {v1 .. v8}, Landroidx/datastore/migrations/SharedPreferencesMigration;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 92
-    :cond_2c
+    :cond_0
     new-instance v6, Landroidx/datastore/migrations/SharedPreferencesMigration;
 
     .line 96
@@ -209,12 +209,12 @@
     .line 92
     invoke-direct/range {v0 .. v5}, Landroidx/datastore/migrations/SharedPreferencesMigration;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    :goto_3f
+    :goto_0
     return-object v0
 .end method
 
 .method public static final SharedPreferencesMigration(Lkotlin/jvm/functions/Function0;)Landroidx/datastore/migrations/SharedPreferencesMigration;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -244,7 +244,7 @@
 .end method
 
 .method public static final SharedPreferencesMigration(Lkotlin/jvm/functions/Function0;Ljava/util/Set;)Landroidx/datastore/migrations/SharedPreferencesMigration;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -272,7 +272,7 @@
     .line 49
     sget-object v0, Landroidx/datastore/preferences/SharedPreferencesMigrationKt;->MIGRATE_ALL_KEYS:Ljava/util/Set;
 
-    if-ne p1, v0, :cond_21
+    if-ne p1, v0, :cond_0
 
     .line 50
     new-instance v0, Landroidx/datastore/migrations/SharedPreferencesMigration;
@@ -300,10 +300,10 @@
     .line 50
     invoke-direct/range {v1 .. v7}, Landroidx/datastore/migrations/SharedPreferencesMigration;-><init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 56
-    :cond_21
+    :cond_0
     new-instance v0, Landroidx/datastore/migrations/SharedPreferencesMigration;
 
     .line 59
@@ -319,22 +319,22 @@
     .line 56
     invoke-direct {v0, p0, p1, v1, v2}, Landroidx/datastore/migrations/SharedPreferencesMigration;-><init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    :goto_2e
+    :goto_0
     return-object v0
 .end method
 
 .method public static synthetic SharedPreferencesMigration$default(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;ILjava/lang/Object;)Landroidx/datastore/migrations/SharedPreferencesMigration;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p3, p3, 0x4
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_0
 
     .line 82
     sget-object p2, Landroidx/datastore/preferences/SharedPreferencesMigrationKt;->MIGRATE_ALL_KEYS:Ljava/util/Set;
 
     .line 79
-    :cond_6
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/datastore/preferences/SharedPreferencesMigrationKt;->SharedPreferencesMigration(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;)Landroidx/datastore/migrations/SharedPreferencesMigration;
 
     move-result-object p0
@@ -343,17 +343,17 @@
 .end method
 
 .method public static synthetic SharedPreferencesMigration$default(Lkotlin/jvm/functions/Function0;Ljava/util/Set;ILjava/lang/Object;)Landroidx/datastore/migrations/SharedPreferencesMigration;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x2
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     .line 47
     sget-object p1, Landroidx/datastore/preferences/SharedPreferencesMigrationKt;->MIGRATE_ALL_KEYS:Ljava/util/Set;
 
     .line 45
-    :cond_6
+    :cond_0
     invoke-static {p0, p1}, Landroidx/datastore/preferences/SharedPreferencesMigrationKt;->SharedPreferencesMigration(Lkotlin/jvm/functions/Function0;Ljava/util/Set;)Landroidx/datastore/migrations/SharedPreferencesMigration;
 
     move-result-object p0
@@ -362,7 +362,7 @@
 .end method
 
 .method public static final getMIGRATE_ALL_KEYS()Ljava/util/Set;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -379,7 +379,7 @@
 .end method
 
 .method private static final getMigrationFunction()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -408,7 +408,7 @@
 .end method
 
 .method private static final getShouldRunMigration(Ljava/util/Set;)Lkotlin/jvm/functions/Function2;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

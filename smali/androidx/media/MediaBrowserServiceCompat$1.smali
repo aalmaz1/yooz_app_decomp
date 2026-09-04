@@ -37,7 +37,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat;Ljava/lang/Object;Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .registers 7
+    .locals 0
 
     .line 1573
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$1;->this$0:Landroidx/media/MediaBrowserServiceCompat;
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method bridge synthetic onResultSent(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1573
     check-cast p1, Ljava/util/List;
@@ -69,7 +69,7 @@
 .end method
 
 .method onResultSent(Ljava/util/List;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,12 +100,12 @@
 
     const-string v2, "MBServiceCompat"
 
-    if-eq v0, v1, :cond_3d
+    if-eq v0, v1, :cond_1
 
     .line 1577
     sget-boolean p1, Landroidx/media/MediaBrowserServiceCompat;->DEBUG:Z
 
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_0
 
     .line 1578
     new-instance p1, Ljava/lang/StringBuilder;
@@ -140,18 +140,18 @@
 
     invoke-static {v2, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3c
+    :cond_0
     return-void
 
     .line 1585
-    :cond_3d
+    :cond_1
     invoke-virtual {p0}, Landroidx/media/MediaBrowserServiceCompat$1;->getFlags()I
 
     move-result v0
 
     and-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$1;->this$0:Landroidx/media/MediaBrowserServiceCompat;
 
@@ -163,8 +163,8 @@
     move-result-object p1
 
     .line 1588
-    :cond_4d
-    :try_start_4d
+    :cond_2
+    :try_start_0
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$1;->val$connection:Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;
 
     iget-object v0, v0, Landroidx/media/MediaBrowserServiceCompat$ConnectionRecord;->callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -176,13 +176,13 @@
     iget-object v4, p0, Landroidx/media/MediaBrowserServiceCompat$1;->val$notifyChildrenChangedOptions:Landroid/os/Bundle;
 
     invoke-interface {v0, v1, p1, v3, v4}, Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;->onLoadChildren(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    :try_end_5a
-    .catch Landroid/os/RemoteException; {:try_start_4d .. :try_end_5a} :catch_5b
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_7d
+    goto :goto_0
 
     .line 1592
-    :catch_5b
+    :catch_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Calling onLoadChildren() failed for id="
@@ -215,6 +215,6 @@
 
     invoke-static {v2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_7d
+    :goto_0
     return-void
 .end method

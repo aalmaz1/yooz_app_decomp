@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;)V
-    .registers 2
+    .locals 0
 
     .line 196
     iput-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 207
     iget-object v0, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -49,7 +49,7 @@
 .end method
 
 .method public onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 215
     iget-object v0, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -65,7 +65,7 @@
 .end method
 
 .method public onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 270
     iget-object v0, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -81,12 +81,12 @@
 .end method
 
 .method public onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 252
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     invoke-virtual {v1, p1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->createCaptureSessionCompat(Landroid/hardware/camera2/CameraCaptureSession;)V
@@ -95,8 +95,8 @@
     iget-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     invoke-virtual {p1, p1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->onConfigureFailed(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 258
     iget-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -106,7 +106,7 @@
     monitor-enter p1
 
     .line 259
-    :try_start_10
+    :try_start_1
     iget-object v1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     iget-object v1, v1, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->mOpenCaptureSessionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -127,8 +127,8 @@
 
     .line 263
     monitor-exit p1
-    :try_end_22
-    .catchall {:try_start_10 .. :try_end_22} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 264
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -141,18 +141,18 @@
 
     return-void
 
-    :catchall_2d
+    :catchall_0
     move-exception v0
 
     .line 263
-    :try_start_2e
+    :try_start_2
     monitor-exit p1
-    :try_end_2f
-    .catchall {:try_start_2e .. :try_end_2f} :catchall_2d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
-    :catchall_30
+    :catchall_1
     move-exception p1
 
     .line 258
@@ -163,7 +163,7 @@
     monitor-enter v1
 
     .line 259
-    :try_start_36
+    :try_start_3
     iget-object v2, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     iget-object v2, v2, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->mOpenCaptureSessionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -184,8 +184,8 @@
 
     .line 263
     monitor-exit v1
-    :try_end_48
-    .catchall {:try_start_36 .. :try_end_48} :catchall_53
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 264
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -199,25 +199,25 @@
     .line 265
     throw p1
 
-    :catchall_53
+    :catchall_2
     move-exception p1
 
     .line 263
-    :try_start_54
+    :try_start_4
     monitor-exit v1
-    :try_end_55
-    .catchall {:try_start_54 .. :try_end_55} :catchall_53
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     throw p1
 .end method
 
 .method public onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 233
-    :try_start_1
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     invoke-virtual {v1, p1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->createCaptureSessionCompat(Landroid/hardware/camera2/CameraCaptureSession;)V
@@ -226,8 +226,8 @@
     iget-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     invoke-virtual {p1, p1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->onConfigured(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 239
     iget-object p1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -237,7 +237,7 @@
     monitor-enter p1
 
     .line 240
-    :try_start_10
+    :try_start_1
     iget-object v1, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     iget-object v1, v1, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->mOpenCaptureSessionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -258,26 +258,26 @@
 
     .line 244
     monitor-exit p1
-    :try_end_22
-    .catchall {:try_start_10 .. :try_end_22} :catchall_26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 245
     invoke-virtual {v1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
     return-void
 
-    :catchall_26
+    :catchall_0
     move-exception v0
 
     .line 244
-    :try_start_27
+    :try_start_2
     monitor-exit p1
-    :try_end_28
-    .catchall {:try_start_27 .. :try_end_28} :catchall_26
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
-    :catchall_29
+    :catchall_1
     move-exception p1
 
     .line 239
@@ -288,7 +288,7 @@
     monitor-enter v1
 
     .line 240
-    :try_start_2f
+    :try_start_3
     iget-object v2, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
 
     iget-object v2, v2, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;->mOpenCaptureSessionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -309,8 +309,8 @@
 
     .line 244
     monitor-exit v1
-    :try_end_41
-    .catchall {:try_start_2f .. :try_end_41} :catchall_45
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 245
     invoke-virtual {v2, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
@@ -318,20 +318,20 @@
     .line 246
     throw p1
 
-    :catchall_45
+    :catchall_2
     move-exception p1
 
     .line 244
-    :try_start_46
+    :try_start_4
     monitor-exit v1
-    :try_end_47
-    .catchall {:try_start_46 .. :try_end_47} :catchall_45
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     throw p1
 .end method
 
 .method public onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .registers 3
+    .locals 1
 
     .line 200
     iget-object v0, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;
@@ -347,7 +347,7 @@
 .end method
 
 .method public onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
-    .registers 4
+    .locals 1
 
     .line 225
     iget-object v0, p0, Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl$2;->this$0:Landroidx/camera/camera2/internal/SynchronizedCaptureSessionBaseImpl;

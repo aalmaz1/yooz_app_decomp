@@ -32,7 +32,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$BitmapDecoder;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -50,7 +50,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$BitmapDecoder;Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$1;)V
-    .registers 3
+    .locals 0
 
     .line 48
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;-><init>(Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$BitmapDecoder;)V
@@ -59,7 +59,7 @@
 .end method
 
 .method static synthetic access$100([BI)Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -75,7 +75,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;Landroidx/media3/decoder/DecoderOutputBuffer;)V
-    .registers 2
+    .locals 0
 
     .line 48
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;->releaseOutputBuffer(Landroidx/media3/decoder/DecoderOutputBuffer;)V
@@ -84,7 +84,7 @@
 .end method
 
 .method private static decode([BI)Landroid/graphics/Bitmap;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -94,17 +94,17 @@
     const/4 v0, 0x0
 
     .line 162
-    :try_start_1
+    :try_start_0
     invoke-static {p0, p1, v0}, Landroidx/media3/datasource/BitmapUtil;->decode([BILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p0
-    :try_end_5
-    .catch Landroidx/media3/common/ParserException; {:try_start_1 .. :try_end_5} :catch_d
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_6
+    :catch_0
     move-exception p0
 
     .line 172
@@ -114,7 +114,7 @@
 
     throw p1
 
-    :catch_d
+    :catch_1
     move-exception v0
 
     .line 164
@@ -160,7 +160,7 @@
 
 # virtual methods
 .method protected createInputBuffer()Landroidx/media3/decoder/DecoderInputBuffer;
-    .registers 3
+    .locals 2
 
     .line 118
     new-instance v0, Landroidx/media3/decoder/DecoderInputBuffer;
@@ -173,7 +173,7 @@
 .end method
 
 .method protected bridge synthetic createOutputBuffer()Landroidx/media3/decoder/DecoderOutputBuffer;
-    .registers 2
+    .locals 1
 
     .line 47
     invoke-virtual {p0}, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;->createOutputBuffer()Landroidx/media3/exoplayer/image/ImageOutputBuffer;
@@ -184,7 +184,7 @@
 .end method
 
 .method protected createOutputBuffer()Landroidx/media3/exoplayer/image/ImageOutputBuffer;
-    .registers 2
+    .locals 1
 
     .line 123
     new-instance v0, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder$1;
@@ -195,7 +195,7 @@
 .end method
 
 .method protected bridge synthetic createUnexpectedDecodeException(Ljava/lang/Throwable;)Landroidx/media3/decoder/DecoderException;
-    .registers 2
+    .locals 0
 
     .line 47
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/image/BitmapFactoryImageDecoder;->createUnexpectedDecodeException(Ljava/lang/Throwable;)Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -206,7 +206,7 @@
 .end method
 
 .method protected createUnexpectedDecodeException(Ljava/lang/Throwable;)Landroidx/media3/exoplayer/image/ImageDecoderException;
-    .registers 4
+    .locals 2
 
     .line 133
     new-instance v0, Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -219,7 +219,7 @@
 .end method
 
 .method protected bridge synthetic decode(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/decoder/DecoderOutputBuffer;Z)Landroidx/media3/decoder/DecoderException;
-    .registers 4
+    .locals 0
 
     .line 47
     check-cast p2, Landroidx/media3/exoplayer/image/ImageOutputBuffer;
@@ -232,7 +232,7 @@
 .end method
 
 .method protected decode(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/exoplayer/image/ImageOutputBuffer;Z)Landroidx/media3/exoplayer/image/ImageDecoderException;
-    .registers 6
+    .locals 2
 
     .line 141
     :try_start_0
@@ -256,16 +256,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 144
@@ -289,21 +289,21 @@
     iget-wide v0, p1, Landroidx/media3/decoder/DecoderInputBuffer;->timeUs:J
 
     iput-wide v0, p2, Landroidx/media3/exoplayer/image/ImageOutputBuffer;->timeUs:J
-    :try_end_2f
-    .catch Landroidx/media3/exoplayer/image/ImageDecoderException; {:try_start_0 .. :try_end_2f} :catch_31
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/image/ImageDecoderException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :catch_31
+    :catch_0
     move-exception p1
 
     return-object p1
 .end method
 
 .method public bridge synthetic dequeueOutputBuffer()Landroidx/media3/exoplayer/image/ImageOutputBuffer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -321,7 +321,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "BitmapFactoryImageDecoder"
 

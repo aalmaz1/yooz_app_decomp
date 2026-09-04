@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public createMediaSource()Landroidx/media3/exoplayer/source/SilenceMediaSource;
-    .registers 6
+    .locals 5
 
     .line 85
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource$Factory;->durationUs:J
@@ -42,16 +42,16 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 86
@@ -85,7 +85,7 @@
 .end method
 
 .method public setDurationUs(J)Landroidx/media3/exoplayer/source/SilenceMediaSource$Factory;
-    .registers 3
+    .locals 0
 
     .line 62
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource$Factory;->durationUs:J
@@ -94,7 +94,7 @@
 .end method
 
 .method public setTag(Ljava/lang/Object;)Landroidx/media3/exoplayer/source/SilenceMediaSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 75
     iput-object p1, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource$Factory;->tag:Ljava/lang/Object;

@@ -9,20 +9,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0xc9
 
     new-array v0, v0, [F
 
     .line 34
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/interpolator/view/animation/FastOutLinearInInterpolator;->VALUES:[F
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 4
         0x0
         0x38d1b717    # 1.0E-4f
@@ -229,7 +229,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 67
     sget-object v0, Landroidx/interpolator/view/animation/FastOutLinearInInterpolator;->VALUES:[F
@@ -242,7 +242,7 @@
 
 # virtual methods
 .method public bridge synthetic getInterpolation(F)F
-    .registers 2
+    .locals 0
 
     .line 28
     invoke-super {p0, p1}, Landroidx/interpolator/view/animation/LookupTableInterpolator;->getInterpolation(F)F

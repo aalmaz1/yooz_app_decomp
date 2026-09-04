@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 30
     new-instance v0, Landroidx/media3/common/PlaybackParameters;
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(F)V
-    .registers 3
+    .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(FF)V
-    .registers 7
+    .locals 4
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,30 +78,30 @@
 
     const/4 v3, 0x0
 
-    if-lez v1, :cond_c
+    if-lez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move v1, v3
 
     .line 61
-    :goto_d
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     cmpl-float v0, p2, v0
 
-    if-lez v0, :cond_15
+    if-lez v0, :cond_1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
+    :cond_1
     move v2, v3
 
     .line 62
-    :goto_16
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 63
@@ -125,7 +125,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/PlaybackParameters;
-    .registers 4
+    .locals 3
 
     .line 130
     sget-object v0, Landroidx/media3/common/PlaybackParameters;->FIELD_SPEED:Ljava/lang/String;
@@ -154,18 +154,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_3
 
     .line 96
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -176,12 +176,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_27
+    goto :goto_1
 
     .line 99
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/PlaybackParameters;
 
     .line 100
@@ -191,7 +191,7 @@
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/media3/common/PlaybackParameters;->pitch:F
 
@@ -199,23 +199,23 @@
 
     cmpl-float p1, v2, p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v1
 
-    :goto_26
+    :goto_0
     return v0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getMediaTimeUsForPlayoutTimeMs(J)J
-    .registers 5
+    .locals 2
 
     .line 77
     iget v0, p0, Landroidx/media3/common/PlaybackParameters;->scaledUsPerMs:I
@@ -228,7 +228,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 106
     iget v0, p0, Landroidx/media3/common/PlaybackParameters;->speed:F
@@ -256,7 +256,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 121
     new-instance v0, Landroid/os/Bundle;
@@ -281,7 +281,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -318,7 +318,7 @@
 .end method
 
 .method public withSpeed(F)Landroidx/media3/common/PlaybackParameters;
-    .registers 4
+    .locals 2
 
     .line 88
     new-instance v0, Landroidx/media3/common/PlaybackParameters;

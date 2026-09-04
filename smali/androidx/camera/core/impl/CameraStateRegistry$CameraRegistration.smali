@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraInternal$State;Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/CameraStateRegistry$OnConfigureAvailableListener;Landroidx/camera/core/impl/CameraStateRegistry$OnOpenAvailableListener;)V
-    .registers 5
+    .locals 0
 
     .line 455
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method getState()Landroidx/camera/core/impl/CameraInternal$State;
-    .registers 2
+    .locals 1
 
     .line 469
     iget-object v0, p0, Landroidx/camera/core/impl/CameraStateRegistry$CameraRegistration;->mState:Landroidx/camera/core/impl/CameraInternal$State;
@@ -58,7 +58,7 @@
 .end method
 
 .method notifyOnConfigureAvailableListener()V
-    .registers 4
+    .locals 3
 
     .line 474
     :try_start_0
@@ -73,12 +73,12 @@
     invoke-direct {v2, v1}, Landroidx/camera/core/impl/CameraStateRegistry$CameraRegistration$$ExternalSyntheticLambda1;-><init>(Landroidx/camera/core/impl/CameraStateRegistry$OnConfigureAvailableListener;)V
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_f
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :catch_10
+    :catch_0
     move-exception v0
 
     const-string v1, "CameraStateRegistry"
@@ -88,12 +88,12 @@
     .line 476
     invoke-static {v1, v2, v0}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_18
+    :goto_0
     return-void
 .end method
 
 .method notifyOnOpenAvailableListener()V
-    .registers 4
+    .locals 3
 
     .line 482
     :try_start_0
@@ -108,12 +108,12 @@
     invoke-direct {v2, v1}, Landroidx/camera/core/impl/CameraStateRegistry$CameraRegistration$$ExternalSyntheticLambda0;-><init>(Landroidx/camera/core/impl/CameraStateRegistry$OnOpenAvailableListener;)V
 
     invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_f
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :catch_10
+    :catch_0
     move-exception v0
 
     const-string v1, "CameraStateRegistry"
@@ -123,12 +123,12 @@
     .line 484
     invoke-static {v1, v2, v0}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_18
+    :goto_0
     return-void
 .end method
 
 .method setState(Landroidx/camera/core/impl/CameraInternal$State;)Landroidx/camera/core/impl/CameraInternal$State;
-    .registers 3
+    .locals 1
 
     .line 463
     iget-object v0, p0, Landroidx/camera/core/impl/CameraStateRegistry$CameraRegistration;->mState:Landroidx/camera/core/impl/CameraInternal$State;

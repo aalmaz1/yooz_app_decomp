@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "NEXUS 4"
 
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method static load()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "GOOGLE"
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public getCorrectedAspectRatio()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 

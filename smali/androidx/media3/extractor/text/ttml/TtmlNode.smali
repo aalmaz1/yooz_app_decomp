@@ -195,7 +195,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;JJLandroidx/media3/extractor/text/ttml/TtmlStyle;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlNode;)V
-    .registers 12
+    .locals 0
 
     .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -215,17 +215,17 @@
     .line 177
     iput-object p8, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->styleIds:[Ljava/lang/String;
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p1, 0x0
 
     .line 178
-    :goto_12
+    :goto_0
     iput-boolean p1, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->isTextNode:Z
 
     .line 179
@@ -264,7 +264,7 @@
 .end method
 
 .method private applyStyleToOutput(Ljava/util/Map;Landroidx/media3/common/text/Cue$Builder;III)V
-    .registers 15
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -293,7 +293,7 @@
 
     check-cast v1, Landroid/text/SpannableStringBuilder;
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_0
 
     .line 404
     new-instance v1, Landroid/text/SpannableStringBuilder;
@@ -303,10 +303,10 @@
     .line 405
     invoke-virtual {p2, v1}, Landroidx/media3/common/text/Cue$Builder;->setText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue$Builder;
 
-    :cond_18
+    :cond_0
     move-object v2, v1
 
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_3
 
     .line 408
     iget-object v6, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->parent:Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -332,7 +332,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_3
 
     .line 411
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getShearPercentage()F
@@ -343,7 +343,7 @@
 
     cmpl-float p1, p1, p3
 
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_1
 
     .line 419
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getShearPercentage()F
@@ -361,12 +361,12 @@
     invoke-virtual {p2, p1}, Landroidx/media3/common/text/Cue$Builder;->setShearDegrees(F)Landroidx/media3/common/text/Cue$Builder;
 
     .line 421
-    :cond_47
+    :cond_1
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getTextAlign()Landroid/text/Layout$Alignment;
 
     move-result-object p1
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_2
 
     .line 422
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getTextAlign()Landroid/text/Layout$Alignment;
@@ -376,12 +376,12 @@
     invoke-virtual {p2, p1}, Landroidx/media3/common/text/Cue$Builder;->setTextAlignment(Landroid/text/Layout$Alignment;)Landroidx/media3/common/text/Cue$Builder;
 
     .line 424
-    :cond_54
+    :cond_2
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getMultiRowAlign()Landroid/text/Layout$Alignment;
 
     move-result-object p1
 
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_3
 
     .line 425
     invoke-virtual {v0}, Landroidx/media3/extractor/text/ttml/TtmlStyle;->getMultiRowAlign()Landroid/text/Layout$Alignment;
@@ -390,12 +390,12 @@
 
     invoke-virtual {p2, p1}, Landroidx/media3/common/text/Cue$Builder;->setMultiRowAlignment(Landroid/text/Layout$Alignment;)Landroidx/media3/common/text/Cue$Builder;
 
-    :cond_61
+    :cond_3
     return-void
 .end method
 
 .method public static buildNode(Ljava/lang/String;JJLandroidx/media3/extractor/text/ttml/TtmlStyle;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroidx/media3/extractor/text/ttml/TtmlNode;)Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 23
+    .locals 13
 
     .line 159
     new-instance v12, Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -426,7 +426,7 @@
 .end method
 
 .method public static buildTextNode(Ljava/lang/String;)Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 14
+    .locals 13
 
     .line 138
     new-instance v12, Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -460,7 +460,7 @@
 .end method
 
 .method private static cleanUpText(Landroid/text/SpannableStringBuilder;)V
-    .registers 8
+    .locals 7
 
     .line 434
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
@@ -482,8 +482,8 @@
 
     move v3, v2
 
-    :goto_f
-    if-ge v3, v1, :cond_23
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     aget-object v4, v0, v3
 
@@ -502,89 +502,89 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     move v0, v2
 
     .line 439
-    :goto_24
+    :goto_1
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v1
 
     const/16 v3, 0x20
 
-    if-ge v0, v1, :cond_4e
+    if-ge v0, v1, :cond_3
 
     .line 440
     invoke-virtual {p0, v0}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v1
 
-    if-ne v1, v3, :cond_4b
+    if-ne v1, v3, :cond_2
 
     add-int/lit8 v1, v0, 0x1
 
     move v4, v1
 
     .line 442
-    :goto_35
+    :goto_2
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_44
+    if-ge v4, v5, :cond_1
 
     invoke-virtual {p0, v4}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v5
 
-    if-ne v5, v3, :cond_44
+    if-ne v5, v3, :cond_1
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_44
+    :cond_1
     sub-int/2addr v4, v1
 
-    if-lez v4, :cond_4b
+    if-lez v4, :cond_2
 
     add-int/2addr v4, v0
 
     .line 447
     invoke-virtual {p0, v0, v4}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    :cond_4b
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_24
+    goto :goto_1
 
     .line 452
-    :cond_4e
+    :cond_3
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_5e
+    if-lez v0, :cond_4
 
     invoke-virtual {p0, v2}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v0
 
-    if-ne v0, v3, :cond_5e
+    if-ne v0, v3, :cond_4
 
     .line 453
     invoke-virtual {p0, v2, v1}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    :cond_5e
+    :cond_4
     move v0, v2
 
     .line 455
-    :goto_5f
+    :goto_3
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v4
@@ -593,14 +593,14 @@
 
     const/16 v5, 0xa
 
-    if-ge v0, v4, :cond_7e
+    if-ge v0, v4, :cond_6
 
     .line 456
     invoke-virtual {p0, v0}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v4
 
-    if-ne v4, v5, :cond_7b
+    if-ne v4, v5, :cond_5
 
     add-int/lit8 v4, v0, 0x1
 
@@ -608,25 +608,25 @@
 
     move-result v5
 
-    if-ne v5, v3, :cond_7b
+    if-ne v5, v3, :cond_5
 
     add-int/lit8 v5, v0, 0x2
 
     .line 457
     invoke-virtual {p0, v4, v5}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    :cond_7b
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5f
+    goto :goto_3
 
     .line 461
-    :cond_7e
+    :cond_6
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v0
 
-    if-lez v0, :cond_9b
+    if-lez v0, :cond_7
 
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
@@ -638,7 +638,7 @@
 
     move-result v0
 
-    if-ne v0, v3, :cond_9b
+    if-ne v0, v3, :cond_7
 
     .line 462
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
@@ -654,22 +654,22 @@
     invoke-virtual {p0, v0, v4}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
     .line 464
-    :cond_9b
-    :goto_9b
+    :cond_7
+    :goto_4
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v0
 
     sub-int/2addr v0, v1
 
-    if-ge v2, v0, :cond_b6
+    if-ge v2, v0, :cond_9
 
     .line 465
     invoke-virtual {p0, v2}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v0
 
-    if-ne v0, v3, :cond_b3
+    if-ne v0, v3, :cond_8
 
     add-int/lit8 v0, v2, 0x1
 
@@ -677,23 +677,23 @@
 
     move-result v4
 
-    if-ne v4, v5, :cond_b3
+    if-ne v4, v5, :cond_8
 
     .line 466
     invoke-virtual {p0, v2, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    :cond_b3
+    :cond_8
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9b
+    goto :goto_4
 
     .line 470
-    :cond_b6
+    :cond_9
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v0
 
-    if-lez v0, :cond_d3
+    if-lez v0, :cond_a
 
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
 
@@ -705,7 +705,7 @@
 
     move-result v0
 
-    if-ne v0, v5, :cond_d3
+    if-ne v0, v5, :cond_a
 
     .line 471
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->length()I
@@ -720,12 +720,12 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    :cond_d3
+    :cond_a
     return-void
 .end method
 
 .method private getEventTimes(Ljava/util/TreeSet;Z)V
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -753,26 +753,26 @@
 
     move-result v1
 
-    if-nez p2, :cond_1a
+    if-nez p2, :cond_0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     .line 226
     iget-object v1, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->imageId:Ljava/lang/String;
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     .line 227
-    :cond_1a
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->startTimeUs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v5, v1, v3
 
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_1
 
     .line 228
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -782,12 +782,12 @@
     invoke-virtual {p1, v1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     .line 230
-    :cond_2c
+    :cond_1
     iget-wide v1, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_2
 
     .line 231
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -797,27 +797,27 @@
     invoke-virtual {p1, v1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
     .line 234
-    :cond_39
+    :cond_2
     iget-object v1, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_3
 
     return-void
 
-    :cond_3e
+    :cond_3
     const/4 v1, 0x0
 
     move v2, v1
 
     .line 237
-    :goto_40
+    :goto_0
     iget-object v3, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_5e
+    if-ge v2, v3, :cond_6
 
     .line 238
     iget-object v3, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
@@ -828,34 +828,34 @@
 
     check-cast v3, Landroidx/media3/extractor/text/ttml/TtmlNode;
 
-    if-nez p2, :cond_57
+    if-nez p2, :cond_5
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_4
 
-    goto :goto_57
+    goto :goto_1
 
-    :cond_55
+    :cond_4
     move v4, v1
 
-    goto :goto_58
+    goto :goto_2
 
-    :cond_57
-    :goto_57
+    :cond_5
+    :goto_1
     const/4 v4, 0x1
 
-    :goto_58
+    :goto_2
     invoke-direct {v3, p1, v4}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getEventTimes(Ljava/util/TreeSet;Z)V
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_5e
+    :cond_6
     return-void
 .end method
 
 .method private static getRegionOutputText(Ljava/lang/String;Ljava/util/Map;)Landroid/text/SpannableStringBuilder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -873,7 +873,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 360
     new-instance v0, Landroidx/media3/common/text/Cue$Builder;
@@ -891,7 +891,7 @@
     invoke-interface {p1, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 365
-    :cond_16
+    :cond_0
     invoke-interface {p1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -912,7 +912,7 @@
 .end method
 
 .method private traverseForImage(JLjava/lang/String;Ljava/util/List;)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -934,20 +934,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     iget-object p3, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->regionId:Ljava/lang/String;
 
     .line 307
-    :goto_d
+    :goto_0
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/text/ttml/TtmlNode;->isActive(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     const-string v0, "div"
 
@@ -957,11 +957,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->imageId:Ljava/lang/String;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 308
     new-instance p1, Landroid/util/Pair;
@@ -974,16 +974,16 @@
 
     return-void
 
-    :cond_2c
+    :cond_1
     const/4 v0, 0x0
 
     .line 311
-    :goto_2d
+    :goto_1
     invoke-virtual {p0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChildCount()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_3d
+    if-ge v0, v1, :cond_2
 
     .line 312
     invoke-virtual {p0, v0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChild(I)Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -994,14 +994,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_3d
+    :cond_2
     return-void
 .end method
 
 .method private traverseForStyle(JLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;)V
-    .registers 23
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -1028,11 +1028,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_9
+    :cond_0
     const-string v0, ""
 
     .line 377
@@ -1042,19 +1042,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     move-object/from16 v14, p5
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     iget-object v0, v6, Landroidx/media3/extractor/text/ttml/TtmlNode;->regionId:Ljava/lang/String;
 
     move-object v14, v0
 
     .line 378
-    :goto_19
+    :goto_0
     iget-object v0, v6, Landroidx/media3/extractor/text/ttml/TtmlNode;->nodeEndsByRegion:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -1065,14 +1065,14 @@
 
     move-result-object v7
 
-    :goto_23
+    :goto_1
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_4
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1094,7 +1094,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_2
 
     iget-object v1, v6, Landroidx/media3/extractor/text/ttml/TtmlNode;->nodeStartsByRegion:Ljava/util/HashMap;
 
@@ -1108,7 +1108,7 @@
 
     move-result v1
 
-    :cond_4a
+    :cond_2
     move v3, v1
 
     .line 381
@@ -1122,7 +1122,7 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_7e
+    if-eq v3, v4, :cond_3
 
     move-object/from16 v15, p6
 
@@ -1165,27 +1165,27 @@
     .line 386
     invoke-direct/range {v0 .. v5}, Landroidx/media3/extractor/text/ttml/TtmlNode;->applyStyleToOutput(Ljava/util/Map;Landroidx/media3/common/text/Cue$Builder;III)V
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_7e
+    :cond_3
     move-object/from16 v13, p4
 
     move-object/from16 v15, p6
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_83
+    :cond_4
     move-object/from16 v13, p4
 
     move-object/from16 v15, p6
 
     .line 389
-    :goto_87
+    :goto_2
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChildCount()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_a2
+    if-ge v1, v0, :cond_5
 
     .line 390
     invoke-virtual {v6, v1}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChild(I)Landroidx/media3/extractor/text/ttml/TtmlNode;
@@ -1209,14 +1209,14 @@
 
     move-object/from16 v13, p4
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_a2
+    :cond_5
     return-void
 .end method
 
 .method private traverseForText(JZLjava/lang/String;Ljava/util/Map;)V
-    .registers 15
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JZ",
@@ -1247,11 +1247,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_15
+    :cond_0
     const-string v0, ""
 
     .line 328
@@ -1261,20 +1261,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     iget-object p4, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->regionId:Ljava/lang/String;
 
     .line 330
-    :goto_22
+    :goto_0
     iget-boolean v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->isTextNode:Z
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
-    if-eqz p3, :cond_39
+    if-eqz p3, :cond_2
 
     .line 331
     invoke-static {p4, p5}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getRegionOutputText(Ljava/lang/String;Ljava/util/Map;)Landroid/text/SpannableStringBuilder;
@@ -1291,9 +1291,9 @@
 
     invoke-virtual {p1, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    goto/16 :goto_f5
+    goto/16 :goto_6
 
-    :cond_39
+    :cond_2
     const-string v0, "br"
 
     .line 332
@@ -1303,9 +1303,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_3
 
-    if-eqz p3, :cond_50
+    if-eqz p3, :cond_3
 
     .line 333
     invoke-static {p4, p5}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getRegionOutputText(Ljava/lang/String;Ljava/util/Map;)Landroid/text/SpannableStringBuilder;
@@ -1316,15 +1316,15 @@
 
     invoke-virtual {p1, p2}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    goto/16 :goto_f5
+    goto/16 :goto_6
 
     .line 334
-    :cond_50
+    :cond_3
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/text/ttml/TtmlNode;->isActive(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f5
+    if-eqz v0, :cond_9
 
     .line 336
     invoke-interface {p5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -1335,12 +1335,12 @@
 
     move-result-object v0
 
-    :goto_5e
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8e
+    if-eqz v1, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1385,9 +1385,9 @@
     .line 337
     invoke-virtual {v2, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_5e
+    goto :goto_1
 
-    :cond_8e
+    :cond_4
     const-string v0, "p"
 
     .line 341
@@ -1402,36 +1402,36 @@
     move v8, v7
 
     .line 342
-    :goto_98
+    :goto_2
     invoke-virtual {p0}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChildCount()I
 
     move-result v0
 
-    if-ge v8, v0, :cond_b4
+    if-ge v8, v0, :cond_7
 
     .line 343
     invoke-virtual {p0, v8}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getChild(I)Landroidx/media3/extractor/text/ttml/TtmlNode;
 
     move-result-object v0
 
-    if-nez p3, :cond_a9
+    if-nez p3, :cond_6
 
-    if-eqz v6, :cond_a7
+    if-eqz v6, :cond_5
 
-    goto :goto_a9
+    goto :goto_3
 
-    :cond_a7
+    :cond_5
     move v3, v7
 
-    goto :goto_ab
+    goto :goto_4
 
-    :cond_a9
-    :goto_a9
+    :cond_6
+    :goto_3
     const/4 v1, 0x1
 
     move v3, v1
 
-    :goto_ab
+    :goto_4
     move-wide v1, p1
 
     move-object v4, p4
@@ -1443,10 +1443,10 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_98
+    goto :goto_2
 
-    :cond_b4
-    if-eqz v6, :cond_bd
+    :cond_7
+    if-eqz v6, :cond_8
 
     .line 347
     invoke-static {p4, p5}, Landroidx/media3/extractor/text/ttml/TtmlNode;->getRegionOutputText(Ljava/lang/String;Ljava/util/Map;)Landroid/text/SpannableStringBuilder;
@@ -1456,7 +1456,7 @@
     invoke-static {p1}, Landroidx/media3/extractor/text/ttml/TtmlRenderUtil;->endParagraph(Landroid/text/SpannableStringBuilder;)V
 
     .line 350
-    :cond_bd
+    :cond_8
     invoke-interface {p5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -1465,12 +1465,12 @@
 
     move-result-object p1
 
-    :goto_c5
+    :goto_5
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_f5
+    if-eqz p2, :cond_9
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1515,22 +1515,22 @@
     .line 351
     invoke-virtual {p3, p4, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_c5
+    goto :goto_5
 
-    :cond_f5
-    :goto_f5
+    :cond_9
+    :goto_6
     return-void
 .end method
 
 
 # virtual methods
 .method public addChild(Landroidx/media3/extractor/text/ttml/TtmlNode;)V
-    .registers 3
+    .locals 1
 
     .line 195
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 196
     new-instance v0, Ljava/util/ArrayList;
@@ -1540,7 +1540,7 @@
     iput-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
     .line 198
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1549,12 +1549,12 @@
 .end method
 
 .method public getChild(I)Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 3
+    .locals 1
 
     .line 202
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 205
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1566,7 +1566,7 @@
     return-object p1
 
     .line 203
-    :cond_b
+    :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -1575,28 +1575,28 @@
 .end method
 
 .method public getChildCount()I
-    .registers 2
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->children:Ljava/util/List;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public getCues(JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
-    .registers 15
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -1667,12 +1667,12 @@
 
     move-result-object p2
 
-    :goto_29
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
-    if-eqz p3, :cond_91
+    if-eqz p3, :cond_1
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1689,11 +1689,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-nez v0, :cond_40
+    if-nez v0, :cond_0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_40
+    :cond_0
     const/4 v2, 0x0
 
     .line 270
@@ -1788,10 +1788,10 @@
     .line 274
     invoke-interface {p1, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_29
+    goto :goto_0
 
     .line 288
-    :cond_91
+    :cond_1
     invoke-virtual {v1}, Ljava/util/TreeMap;->entrySet()Ljava/util/Set;
 
     move-result-object p2
@@ -1800,12 +1800,12 @@
 
     move-result-object p2
 
-    :goto_99
+    :goto_1
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
-    if-eqz p3, :cond_f2
+    if-eqz p3, :cond_2
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1891,14 +1891,14 @@
 
     invoke-interface {p1, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_99
+    goto :goto_1
 
-    :cond_f2
+    :cond_2
     return-object p1
 .end method
 
 .method public getEventTimesUs()[J
-    .registers 7
+    .locals 6
 
     .line 213
     new-instance v0, Ljava/util/TreeSet;
@@ -1922,12 +1922,12 @@
 
     move-result-object v0
 
-    :goto_13
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1946,14 +1946,14 @@
 
     move v1, v5
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     return-object v2
 .end method
 
 .method public getStyleIds()[Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 244
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->styleIds:[Ljava/lang/String;
@@ -1962,7 +1962,7 @@
 .end method
 
 .method public isActive(J)Z
-    .registers 9
+    .locals 6
 
     .line 188
     iget-wide v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->startTimeUs:J
@@ -1971,55 +1971,55 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_11
+    if-nez v4, :cond_0
 
     iget-wide v4, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
     cmp-long v4, v4, v2
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_3
 
-    :cond_11
+    :cond_0
     cmp-long v4, v0, p1
 
-    if-gtz v4, :cond_1b
+    if-gtz v4, :cond_1
 
     iget-wide v4, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
     cmp-long v4, v4, v2
 
-    if-eqz v4, :cond_2f
+    if-eqz v4, :cond_3
 
-    :cond_1b
+    :cond_1
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
     cmp-long v2, p1, v2
 
-    if-ltz v2, :cond_2f
+    if-ltz v2, :cond_3
 
-    :cond_25
+    :cond_2
     cmp-long v0, v0, p1
 
-    if-gtz v0, :cond_31
+    if-gtz v0, :cond_4
 
     iget-wide v0, p0, Landroidx/media3/extractor/text/ttml/TtmlNode;->endTimeUs:J
 
     cmp-long p1, p1, v0
 
-    if-gez p1, :cond_31
+    if-gez p1, :cond_4
 
-    :cond_2f
+    :cond_3
     const/4 p1, 0x1
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_4
     const/4 p1, 0x0
 
-    :goto_32
+    :goto_0
     return p1
 .end method

@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 .end method
 
 .method public static get(I[D[[D)Landroidx/constraintlayout/motion/utils/CurveFit;
-    .registers 6
+    .locals 3
 
     .line 30
     array-length v0, p1
@@ -39,14 +39,14 @@
 
     const/4 v2, 0x2
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
     move p0, v2
 
-    :cond_6
-    if-eqz p0, :cond_1b
+    :cond_0
+    if-eqz p0, :cond_2
 
-    if-eq p0, v2, :cond_10
+    if-eq p0, v2, :cond_1
 
     .line 39
     new-instance p0, Landroidx/constraintlayout/motion/utils/LinearCurveFit;
@@ -56,7 +56,7 @@
     return-object p0
 
     .line 37
-    :cond_10
+    :cond_1
     new-instance p0, Landroidx/constraintlayout/motion/utils/CurveFit$Constant;
 
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
     return-object p0
 
     .line 35
-    :cond_1b
+    :cond_2
     new-instance p0, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;
 
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/motion/utils/MonotonicCurveFit;-><init>([D[[D)V
@@ -79,7 +79,7 @@
 .end method
 
 .method public static getArc([I[D[[D)Landroidx/constraintlayout/motion/utils/CurveFit;
-    .registers 4
+    .locals 1
 
     .line 44
     new-instance v0, Landroidx/constraintlayout/motion/utils/ArcCurveFit;

@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 32
     new-instance v0, Ljava/lang/Object;
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(JJJJJJJZZLjava/lang/Object;Landroidx/media3/common/MediaItem;Landroidx/media3/common/MediaItem$LiveConfiguration;)V
-    .registers 41
+    .locals 21
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public constructor <init>(JJJJJJJZZZLjava/lang/Object;Landroidx/media3/common/MediaItem;Landroidx/media3/common/MediaItem$LiveConfiguration;)V
-    .registers 24
+    .locals 3
 
     move-object v0, p0
 
@@ -195,7 +195,7 @@
 .end method
 
 .method public constructor <init>(JJJJJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
-    .registers 41
+    .locals 21
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -219,17 +219,17 @@
 
     move-result-object v19
 
-    if-eqz p17, :cond_17
+    if-eqz p17, :cond_0
 
     .line 212
     iget-object v0, v0, Landroidx/media3/common/MediaItem;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     move-object/from16 v20, v0
 
     move-object/from16 v0, p0
@@ -261,7 +261,7 @@
 .end method
 
 .method public constructor <init>(JJJJZZZLjava/lang/Object;Landroidx/media3/common/MediaItem;)V
-    .registers 35
+    .locals 21
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -273,17 +273,17 @@
 
     move-object/from16 v15, p13
 
-    if-eqz p11, :cond_18
+    if-eqz p11, :cond_0
 
     .line 178
     iget-object v0, v15, Landroidx/media3/common/MediaItem;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_19
+    :goto_0
     move-object/from16 v20, v0
 
     move-object/from16 v0, p0
@@ -311,7 +311,7 @@
 .end method
 
 .method public constructor <init>(JJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
-    .registers 34
+    .locals 20
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -348,7 +348,7 @@
 .end method
 
 .method public constructor <init>(JZZZLjava/lang/Object;Landroidx/media3/common/MediaItem;)V
-    .registers 22
+    .locals 14
 
     const-wide/16 v5, 0x0
 
@@ -377,7 +377,7 @@
 .end method
 
 .method public constructor <init>(JZZZLjava/lang/Object;Ljava/lang/Object;)V
-    .registers 22
+    .locals 14
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -410,7 +410,7 @@
 
 # virtual methods
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 358
     sget-object v0, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;->UID:Ljava/lang/Object;
@@ -419,21 +419,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 12
+    .locals 8
 
     const/4 v0, 0x0
 
@@ -442,17 +442,17 @@
     .line 351
     invoke-static {p1, v0, v1}, Landroidx/media3/common/util/Assertions;->checkIndex(III)I
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     .line 352
     sget-object p1, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;->UID:Ljava/lang/Object;
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     move-object v2, p1
 
     const/4 v1, 0x0
@@ -476,7 +476,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -484,7 +484,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -500,7 +500,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 33
+    .locals 28
 
     move-object/from16 v0, p0
 
@@ -519,17 +519,17 @@
     .line 315
     iget-boolean v3, v0, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;->isDynamic:Z
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_1
 
     iget-boolean v3, v0, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;->suppressPositionProjection:Z
 
-    if-nez v3, :cond_2e
+    if-nez v3, :cond_1
 
     const-wide/16 v3, 0x0
 
     cmp-long v3, p3, v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_1
 
     .line 316
     iget-wide v3, v0, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;->windowDurationUs:J
@@ -538,27 +538,27 @@
 
     cmp-long v7, v3, v5
 
-    if-nez v7, :cond_27
+    if-nez v7, :cond_0
 
-    :goto_24
+    :goto_0
     move-wide/from16 v20, v5
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_27
+    :cond_0
     add-long v1, v1, p3
 
     cmp-long v3, v1, v3
 
-    if-lez v3, :cond_2e
+    if-lez v3, :cond_1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     move-wide/from16 v20, v1
 
     .line 327
-    :goto_30
+    :goto_1
     sget-object v8, Landroidx/media3/common/Timeline$Window;->SINGLE_WINDOW_UID:Ljava/lang/Object;
 
     iget-object v9, v0, Landroidx/media3/exoplayer/source/SinglePeriodTimeline;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -607,7 +607,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/Internal$EnumLiteMap;Landroidx/datastore/preferences/protobuf/Internal$EnumLite;)V
-    .registers 3
+    .locals 0
 
     .line 431
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$1;->val$enumMap:Landroidx/datastore/preferences/protobuf/Internal$EnumLiteMap;
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public doBackward(Landroidx/datastore/preferences/protobuf/Internal$EnumLite;)Ljava/lang/Integer;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -70,7 +70,7 @@
 .end method
 
 .method public bridge synthetic doBackward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 431
     check-cast p1, Landroidx/datastore/preferences/protobuf/Internal$EnumLite;
@@ -83,7 +83,7 @@
 .end method
 
 .method public doForward(Ljava/lang/Integer;)Landroidx/datastore/preferences/protobuf/Internal$EnumLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,17 +103,17 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_0
 
     .line 435
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/Internal$MapAdapter$1;->val$unrecognizedValue:Landroidx/datastore/preferences/protobuf/Internal$EnumLite;
 
-    :cond_e
+    :cond_0
     return-object p1
 .end method
 
 .method public bridge synthetic doForward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 431
     check-cast p1, Ljava/lang/Integer;

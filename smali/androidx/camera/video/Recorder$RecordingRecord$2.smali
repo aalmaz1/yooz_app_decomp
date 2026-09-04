@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder$RecordingRecord;)V
-    .registers 2
+    .locals 0
 
     .line 2937
     iput-object p1, p0, Landroidx/camera/video/Recorder$RecordingRecord$2;->this$0:Landroidx/camera/video/Recorder$RecordingRecord;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public get(Landroidx/camera/video/internal/audio/AudioSettings;Ljava/util/concurrent/Executor;)Landroidx/camera/video/internal/audio/AudioSource;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/audio/AudioSourceAccessException;

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/SearchView;)V
-    .registers 2
+    .locals 0
 
     .line 1015
     iput-object p1, p0, Landroidx/appcompat/widget/SearchView$6;->this$0:Landroidx/appcompat/widget/SearchView;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .registers 7
+    .locals 3
 
     .line 1019
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$6;->this$0:Landroidx/appcompat/widget/SearchView;
@@ -45,12 +45,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return v1
 
     .line 1030
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$6;->this$0:Landroidx/appcompat/widget/SearchView;
 
     iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
@@ -59,7 +59,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$6;->this$0:Landroidx/appcompat/widget/SearchView;
 
@@ -72,7 +72,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_24
+    if-eq v0, v2, :cond_1
 
     .line 1032
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$6;->this$0:Landroidx/appcompat/widget/SearchView;
@@ -84,7 +84,7 @@
     return p1
 
     .line 1037
-    :cond_24
+    :cond_1
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$6;->this$0:Landroidx/appcompat/widget/SearchView;
 
     iget-object v0, v0, Landroidx/appcompat/widget/SearchView;->mSearchSrcTextView:Landroidx/appcompat/widget/SearchView$SearchAutoComplete;
@@ -93,13 +93,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_2
 
     invoke-virtual {p3}, Landroid/view/KeyEvent;->hasNoModifiers()Z
 
     move-result v0
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_2
 
     .line 1038
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
@@ -108,11 +108,11 @@
 
     const/4 v0, 0x1
 
-    if-ne p3, v0, :cond_53
+    if-ne p3, v0, :cond_2
 
     const/16 p3, 0x42
 
-    if-ne p2, p3, :cond_53
+    if-ne p2, p3, :cond_2
 
     .line 1040
     invoke-virtual {p1}, Landroid/view/View;->cancelLongPress()V
@@ -138,6 +138,6 @@
 
     return v0
 
-    :cond_53
+    :cond_2
     return v1
 .end method

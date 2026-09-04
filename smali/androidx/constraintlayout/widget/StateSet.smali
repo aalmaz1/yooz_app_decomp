@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 4
+    .locals 1
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +94,7 @@
 .end method
 
 .method private load(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 11
+    .locals 8
 
     .line 70
     invoke-static {p2}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
@@ -117,8 +117,8 @@
 
     move v3, v2
 
-    :goto_10
-    if-ge v3, v1, :cond_25
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     .line 75
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -128,7 +128,7 @@
     .line 76
     sget v5, Landroidx/constraintlayout/widget/R$styleable;->StateSet_defaultState:I
 
-    if-ne v4, v5, :cond_22
+    if-ne v4, v5, :cond_0
 
     .line 77
     iget v5, p0, Landroidx/constraintlayout/widget/StateSet;->mDefaultState:I
@@ -139,29 +139,29 @@
 
     iput v4, p0, Landroidx/constraintlayout/widget/StateSet;->mDefaultState:I
 
-    :cond_22
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 86
-    :cond_25
-    :try_start_25
+    :cond_1
+    :try_start_0
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
-    :try_end_29
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_25 .. :try_end_29} :catch_bf
-    .catch Ljava/io/IOException; {:try_start_25 .. :try_end_29} :catch_ba
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v1, 0x0
 
-    :goto_2a
+    :goto_1
     const/4 v3, 0x1
 
-    if-eq v0, v3, :cond_c3
+    if-eq v0, v3, :cond_9
 
-    if-eqz v0, :cond_b1
+    if-eqz v0, :cond_7
 
     const-string v4, "StateSet"
 
@@ -169,15 +169,15 @@
 
     const/4 v6, 0x2
 
-    if-eq v0, v6, :cond_44
+    if-eq v0, v6, :cond_3
 
-    if-eq v0, v5, :cond_39
+    if-eq v0, v5, :cond_2
 
-    goto/16 :goto_b4
+    goto/16 :goto_4
 
     .line 118
-    :cond_39
-    :try_start_39
+    :cond_2
+    :try_start_1
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -186,12 +186,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b4
+    if-eqz v0, :cond_8
 
     return-void
 
     .line 95
-    :cond_44
+    :cond_3
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -201,72 +201,72 @@
 
     move-result v7
 
-    sparse-switch v7, :sswitch_data_c4
+    sparse-switch v7, :sswitch_data_0
 
-    goto :goto_76
+    goto :goto_2
 
-    :sswitch_50
+    :sswitch_0
     const-string v4, "Variant"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_76
+    if-eqz v4, :cond_4
 
     move v4, v5
 
-    goto :goto_77
+    goto :goto_3
 
-    :sswitch_5a
+    :sswitch_1
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_76
+    if-eqz v4, :cond_4
 
     move v4, v3
 
-    goto :goto_77
+    goto :goto_3
 
-    :sswitch_62
+    :sswitch_2
     const-string v4, "LayoutDescription"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_76
+    if-eqz v4, :cond_4
 
     move v4, v2
 
-    goto :goto_77
+    goto :goto_3
 
-    :sswitch_6c
+    :sswitch_3
     const-string v4, "State"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_76
+    if-eqz v4, :cond_4
 
     move v4, v6
 
-    goto :goto_77
+    goto :goto_3
 
-    :cond_76
-    :goto_76
+    :cond_4
+    :goto_2
     const/4 v4, -0x1
 
-    :goto_77
-    if-eqz v4, :cond_b4
+    :goto_3
+    if-eqz v4, :cond_8
 
-    if-eq v4, v3, :cond_b4
+    if-eq v4, v3, :cond_8
 
-    if-eq v4, v6, :cond_a4
+    if-eq v4, v6, :cond_6
 
-    if-eq v4, v5, :cond_99
+    if-eq v4, v5, :cond_5
 
     const-string v3, "ConstraintLayoutStates"
 
@@ -291,23 +291,23 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_b4
+    goto :goto_4
 
     .line 106
-    :cond_99
+    :cond_5
     new-instance v0, Landroidx/constraintlayout/widget/StateSet$Variant;
 
     invoke-direct {v0, p1, p2}, Landroidx/constraintlayout/widget/StateSet$Variant;-><init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
 
-    if-eqz v1, :cond_b4
+    if-eqz v1, :cond_8
 
     .line 108
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/widget/StateSet$State;->add(Landroidx/constraintlayout/widget/StateSet$Variant;)V
 
-    goto :goto_b4
+    goto :goto_4
 
     .line 102
-    :cond_a4
+    :cond_6
     new-instance v1, Landroidx/constraintlayout/widget/StateSet$State;
 
     invoke-direct {v1, p1, p2}, Landroidx/constraintlayout/widget/StateSet$State;-><init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
@@ -319,55 +319,55 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    goto :goto_b4
+    goto :goto_4
 
     .line 92
-    :cond_b1
+    :cond_7
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     .line 88
-    :cond_b4
-    :goto_b4
+    :cond_8
+    :goto_4
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
-    :try_end_b8
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_39 .. :try_end_b8} :catch_bf
-    .catch Ljava/io/IOException; {:try_start_39 .. :try_end_b8} :catch_ba
+    :try_end_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto/16 :goto_2a
+    goto/16 :goto_1
 
-    :catch_ba
+    :catch_0
     move-exception p1
 
     .line 135
     invoke-virtual {p1}, Ljava/io/IOException;->printStackTrace()V
 
-    goto :goto_c3
+    goto :goto_5
 
-    :catch_bf
+    :catch_1
     move-exception p1
 
     .line 133
     invoke-virtual {p1}, Lorg/xmlpull/v1/XmlPullParserException;->printStackTrace()V
 
-    :cond_c3
-    :goto_c3
+    :cond_9
+    :goto_5
     return-void
 
-    :sswitch_data_c4
+    :sswitch_data_0
     .sparse-switch
-        0x4c7d471 -> :sswitch_6c
-        0x4d92b252 -> :sswitch_62
-        0x526c4e31 -> :sswitch_5a
-        0x7155a865 -> :sswitch_50
+        0x4c7d471 -> :sswitch_3
+        0x4d92b252 -> :sswitch_2
+        0x526c4e31 -> :sswitch_1
+        0x7155a865 -> :sswitch_0
     .end sparse-switch
 .end method
 
 
 # virtual methods
 .method public convertToConstraintSet(IIFF)I
-    .registers 9
+    .locals 4
 
     .line 176
     iget-object v0, p0, Landroidx/constraintlayout/widget/StateSet;->mStateList:Landroid/util/SparseArray;
@@ -378,25 +378,25 @@
 
     check-cast v0, Landroidx/constraintlayout/widget/StateSet$State;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     return p2
 
-    :cond_b
+    :cond_0
     const/high16 p2, -0x40800000    # -1.0f
 
     cmpl-float v1, p3, p2
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_6
 
     cmpl-float p2, p4, p2
 
-    if-nez p2, :cond_16
+    if-nez p2, :cond_1
 
-    goto :goto_3e
+    goto :goto_1
 
     .line 192
-    :cond_16
+    :cond_1
     iget-object p2, v0, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -405,13 +405,13 @@
 
     const/4 v1, 0x0
 
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_4
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -424,22 +424,22 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_2
 
     .line 194
     iget v1, v2, Landroidx/constraintlayout/widget/StateSet$Variant;->mConstraintID:I
 
-    if-ne p1, v1, :cond_34
+    if-ne p1, v1, :cond_3
 
     return p1
 
-    :cond_34
+    :cond_3
     move-object v1, v2
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_36
-    if-eqz v1, :cond_3b
+    :cond_4
+    if-eqz v1, :cond_5
 
     .line 201
     iget p1, v1, Landroidx/constraintlayout/widget/StateSet$Variant;->mConstraintID:I
@@ -447,34 +447,34 @@
     return p1
 
     .line 204
-    :cond_3b
+    :cond_5
     iget p1, v0, Landroidx/constraintlayout/widget/StateSet$State;->mConstraintID:I
 
     return p1
 
     .line 181
-    :cond_3e
-    :goto_3e
+    :cond_6
+    :goto_1
     iget p2, v0, Landroidx/constraintlayout/widget/StateSet$State;->mConstraintID:I
 
-    if-ne p2, p1, :cond_43
+    if-ne p2, p1, :cond_7
 
     return p1
 
     .line 184
-    :cond_43
+    :cond_7
     iget-object p2, v0, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
 
-    :cond_49
+    :cond_8
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p3
 
-    if-eqz p3, :cond_5a
+    if-eqz p3, :cond_9
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -485,35 +485,35 @@
     .line 185
     iget p3, p3, Landroidx/constraintlayout/widget/StateSet$Variant;->mConstraintID:I
 
-    if-ne p1, p3, :cond_49
+    if-ne p1, p3, :cond_8
 
     return p1
 
     .line 189
-    :cond_5a
+    :cond_9
     iget p1, v0, Landroidx/constraintlayout/widget/StateSet$State;->mConstraintID:I
 
     return p1
 .end method
 
 .method public needsToChange(IFF)Z
-    .registers 8
+    .locals 4
 
     .line 140
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet;->mCurrentStateId:I
 
     const/4 v1, 0x1
 
-    if-eq v0, p1, :cond_6
+    if-eq v0, p1, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     const/4 v2, -0x1
 
     const/4 v3, 0x0
 
-    if-ne p1, v2, :cond_11
+    if-ne p1, v2, :cond_1
 
     .line 144
     iget-object p1, p0, Landroidx/constraintlayout/widget/StateSet;->mStateList:Landroid/util/SparseArray;
@@ -522,22 +522,22 @@
 
     move-result-object p1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_11
+    :cond_1
     iget-object p1, p0, Landroidx/constraintlayout/widget/StateSet;->mStateList:Landroid/util/SparseArray;
 
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    :goto_17
+    :goto_0
     check-cast p1, Landroidx/constraintlayout/widget/StateSet$State;
 
     .line 146
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet;->mCurrentConstraintNumber:I
 
-    if-eq v0, v2, :cond_2e
+    if-eq v0, v2, :cond_2
 
     .line 147
     iget-object v0, p1, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
@@ -554,28 +554,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     return v3
 
     .line 152
-    :cond_2e
+    :cond_2
     iget v0, p0, Landroidx/constraintlayout/widget/StateSet;->mCurrentConstraintNumber:I
 
     invoke-virtual {p1, p2, p3}, Landroidx/constraintlayout/widget/StateSet$State;->findMatch(FF)I
 
     move-result p1
 
-    if-ne v0, p1, :cond_37
+    if-ne v0, p1, :cond_3
 
     return v3
 
-    :cond_37
+    :cond_3
     return v1
 .end method
 
 .method public setOnConstraintsChanged(Landroidx/constraintlayout/widget/ConstraintsChangedListener;)V
-    .registers 2
+    .locals 0
 
     .line 159
     iput-object p1, p0, Landroidx/constraintlayout/widget/StateSet;->mConstraintsChangedListener:Landroidx/constraintlayout/widget/ConstraintsChangedListener;
@@ -584,7 +584,7 @@
 .end method
 
 .method public stateGetConstraintID(III)I
-    .registers 5
+    .locals 1
 
     int-to-float p2, p2
 
@@ -601,13 +601,13 @@
 .end method
 
 .method public updateConstraints(IIFF)I
-    .registers 7
+    .locals 2
 
     const/4 v0, -0x1
 
-    if-ne p1, p2, :cond_46
+    if-ne p1, p2, :cond_5
 
-    if-ne p2, v0, :cond_f
+    if-ne p2, v0, :cond_0
 
     .line 212
     iget-object p2, p0, Landroidx/constraintlayout/widget/StateSet;->mStateList:Landroid/util/SparseArray;
@@ -620,10 +620,10 @@
 
     check-cast p2, Landroidx/constraintlayout/widget/StateSet$State;
 
-    goto :goto_19
+    goto :goto_0
 
     .line 214
-    :cond_f
+    :cond_0
     iget-object p2, p0, Landroidx/constraintlayout/widget/StateSet;->mStateList:Landroid/util/SparseArray;
 
     iget v1, p0, Landroidx/constraintlayout/widget/StateSet;->mCurrentStateId:I
@@ -634,16 +634,16 @@
 
     check-cast p2, Landroidx/constraintlayout/widget/StateSet$State;
 
-    :goto_19
-    if-nez p2, :cond_1c
+    :goto_0
+    if-nez p2, :cond_1
 
     return v0
 
     .line 220
-    :cond_1c
+    :cond_1
     iget v1, p0, Landroidx/constraintlayout/widget/StateSet;->mCurrentConstraintNumber:I
 
-    if-eq v1, v0, :cond_2f
+    if-eq v1, v0, :cond_2
 
     .line 221
     iget-object v1, p2, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
@@ -658,29 +658,29 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2
 
     return p1
 
     .line 225
-    :cond_2f
+    :cond_2
     invoke-virtual {p2, p3, p4}, Landroidx/constraintlayout/widget/StateSet$State;->findMatch(FF)I
 
     move-result p3
 
-    if-ne p1, p3, :cond_36
+    if-ne p1, p3, :cond_3
 
     return p1
 
-    :cond_36
-    if-ne p3, v0, :cond_3b
+    :cond_3
+    if-ne p3, v0, :cond_4
 
     .line 230
     iget p1, p2, Landroidx/constraintlayout/widget/StateSet$State;->mConstraintID:I
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_3b
+    :cond_4
     iget-object p1, p2, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -691,11 +691,11 @@
 
     iget p1, p1, Landroidx/constraintlayout/widget/StateSet$Variant;->mConstraintID:I
 
-    :goto_45
+    :goto_1
     return p1
 
     .line 233
-    :cond_46
+    :cond_5
     iget-object p1, p0, Landroidx/constraintlayout/widget/StateSet;->mStateList:Landroid/util/SparseArray;
 
     invoke-virtual {p1, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -704,24 +704,24 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/StateSet$State;
 
-    if-nez p1, :cond_51
+    if-nez p1, :cond_6
 
     return v0
 
     .line 237
-    :cond_51
+    :cond_6
     invoke-virtual {p1, p3, p4}, Landroidx/constraintlayout/widget/StateSet$State;->findMatch(FF)I
 
     move-result p2
 
-    if-ne p2, v0, :cond_5a
+    if-ne p2, v0, :cond_7
 
     .line 238
     iget p1, p1, Landroidx/constraintlayout/widget/StateSet$State;->mConstraintID:I
 
-    goto :goto_64
+    goto :goto_2
 
-    :cond_5a
+    :cond_7
     iget-object p1, p1, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -732,6 +732,6 @@
 
     iget p1, p1, Landroidx/constraintlayout/widget/StateSet$Variant;->mConstraintID:I
 
-    :goto_64
+    :goto_2
     return p1
 .end method

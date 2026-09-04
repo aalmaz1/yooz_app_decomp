@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/DialogFragment;)V
-    .registers 2
+    .locals 0
 
     .line 143
     iput-object p1, p0, Landroidx/fragment/app/DialogFragment$4;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -45,9 +45,9 @@
 
 # virtual methods
 .method public onChanged(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 4
+    .locals 2
 
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_2
 
     .line 147
     iget-object p1, p0, Landroidx/fragment/app/DialogFragment$4;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -56,7 +56,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_2
 
     .line 148
     iget-object p1, p0, Landroidx/fragment/app/DialogFragment$4;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_1
 
     .line 153
     iget-object v0, p0, Landroidx/fragment/app/DialogFragment$4;->this$0:Landroidx/fragment/app/DialogFragment;
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x3
 
@@ -88,7 +88,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_0
 
     .line 155
     new-instance v0, Ljava/lang/StringBuilder;
@@ -128,7 +128,7 @@
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 158
-    :cond_49
+    :cond_0
     iget-object v0, p0, Landroidx/fragment/app/DialogFragment$4;->this$0:Landroidx/fragment/app/DialogFragment;
 
     invoke-static {v0}, Landroidx/fragment/app/DialogFragment;->access$000(Landroidx/fragment/app/DialogFragment;)Landroid/app/Dialog;
@@ -137,10 +137,10 @@
 
     invoke-virtual {v0, p1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
-    goto :goto_5b
+    goto :goto_0
 
     .line 150
-    :cond_53
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "DialogFragment can not be attached to a container view"
@@ -149,13 +149,13 @@
 
     throw p1
 
-    :cond_5b
-    :goto_5b
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public bridge synthetic onChanged(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 143
     check-cast p1, Landroidx/lifecycle/LifecycleOwner;

@@ -19,12 +19,12 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/Rect;IIZLandroid/graphics/Matrix;Z)V
-    .registers 7
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Landroidx/camera/core/SurfaceRequest$TransformationInfo;-><init>()V
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
     .line 36
     iput-object p1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getCropRect:Landroid/graphics/Rect;
@@ -38,7 +38,7 @@
     .line 39
     iput-boolean p4, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->hasCameraTransform:Z
 
-    if-eqz p5, :cond_14
+    if-eqz p5, :cond_0
 
     .line 43
     iput-object p5, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getSensorToBufferTransform:Landroid/graphics/Matrix;
@@ -49,7 +49,7 @@
     return-void
 
     .line 41
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null getSensorToBufferTransform"
@@ -59,7 +59,7 @@
     throw p1
 
     .line 34
-    :cond_1c
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null getCropRect"
@@ -72,21 +72,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 102
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/SurfaceRequest$TransformationInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_2
 
     .line 103
     check-cast p1, Landroidx/camera/core/SurfaceRequest$TransformationInfo;
@@ -102,7 +102,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getRotationDegrees:I
 
@@ -111,7 +111,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_44
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getTargetRotation:I
 
@@ -120,7 +120,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_44
+    if-ne v1, v3, :cond_1
 
     iget-boolean v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->hasCameraTransform:Z
 
@@ -129,7 +129,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_44
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getSensorToBufferTransform:Landroid/graphics/Matrix;
 
@@ -142,7 +142,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_1
 
     iget-boolean v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getMirroring:Z
 
@@ -151,22 +151,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_44
+    if-ne v1, p1, :cond_1
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_44
+    :cond_1
     move v0, v2
 
-    :goto_45
+    :goto_0
     return v0
 
-    :cond_46
+    :cond_2
     return v2
 .end method
 
 .method public getCropRect()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 50
     iget-object v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getCropRect:Landroid/graphics/Rect;
@@ -175,7 +175,7 @@
 .end method
 
 .method public getMirroring()Z
-    .registers 2
+    .locals 1
 
     .line 82
     iget-boolean v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getMirroring:Z
@@ -184,7 +184,7 @@
 .end method
 
 .method public getRotationDegrees()I
-    .registers 2
+    .locals 1
 
     .line 56
     iget v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getRotationDegrees:I
@@ -193,7 +193,7 @@
 .end method
 
 .method public getSensorToBufferTransform()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getSensorToBufferTransform:Landroid/graphics/Matrix;
@@ -202,7 +202,7 @@
 .end method
 
 .method public getTargetRotation()I
-    .registers 2
+    .locals 1
 
     .line 63
     iget v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getTargetRotation:I
@@ -211,7 +211,7 @@
 .end method
 
 .method public hasCameraTransform()Z
-    .registers 2
+    .locals 1
 
     .line 69
     iget-boolean v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->hasCameraTransform:Z
@@ -220,7 +220,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 118
     iget-object v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getCropRect:Landroid/graphics/Rect;
@@ -256,16 +256,16 @@
 
     const/16 v4, 0x4d5
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     move v2, v4
 
-    :goto_1e
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -284,21 +284,21 @@
     .line 128
     iget-boolean v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_TransformationInfo;->getMirroring:Z
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_1
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
+    :cond_1
     move v3, v4
 
-    :goto_2e
+    :goto_1
     xor-int/2addr v0, v3
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 87
     new-instance v0, Ljava/lang/StringBuilder;

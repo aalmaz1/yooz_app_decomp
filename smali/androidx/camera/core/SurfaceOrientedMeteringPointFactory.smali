@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(FF)V
-    .registers 3
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Landroidx/camera/core/MeteringPointFactory;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method public constructor <init>(FFLandroidx/camera/core/UseCase;)V
-    .registers 4
+    .locals 0
 
     .line 93
     invoke-static {p3}, Landroidx/camera/core/SurfaceOrientedMeteringPointFactory;->getUseCaseAspectRatio(Landroidx/camera/core/UseCase;)Landroid/util/Rational;
@@ -45,21 +45,21 @@
 .end method
 
 .method private static getUseCaseAspectRatio(Landroidx/camera/core/UseCase;)Landroid/util/Rational;
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 104
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/UseCase;->getAttachedSurfaceResolution()Landroid/util/Size;
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 110
     new-instance p0, Landroid/util/Rational;
@@ -77,7 +77,7 @@
     return-object p0
 
     .line 106
-    :cond_18
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method protected convertPoint(FF)Landroid/graphics/PointF;
-    .registers 5
+    .locals 2
 
     .line 121
     new-instance v0, Landroid/graphics/PointF;

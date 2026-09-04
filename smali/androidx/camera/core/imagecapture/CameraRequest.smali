@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Landroidx/camera/core/imagecapture/TakePictureCallback;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method getCaptureConfigs()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -63,7 +63,7 @@
 .end method
 
 .method isAborted()Z
-    .registers 2
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CameraRequest;->mCallback:Landroidx/camera/core/imagecapture/TakePictureCallback;

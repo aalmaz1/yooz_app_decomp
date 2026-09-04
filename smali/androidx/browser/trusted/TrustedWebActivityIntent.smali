@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Intent;Ljava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,7 +43,7 @@
 .end method
 
 .method private grantUriPermissionToProvider(Landroid/content/Context;)V
-    .registers 6
+    .locals 4
 
     .line 52
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityIntent;->mSharedFileUris:Ljava/util/List;
@@ -52,12 +52,12 @@
 
     move-result-object v0
 
-    :goto_6
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -76,16 +76,16 @@
 
     invoke-virtual {p1, v2, v1, v3}, Landroid/content/Context;->grantUriPermission(Ljava/lang/String;Landroid/net/Uri;I)V
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getIntent()Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityIntent;->mIntent:Landroid/content/Intent;
@@ -94,7 +94,7 @@
 .end method
 
 .method public launchTrustedWebActivity(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 47
     invoke-direct {p0, p1}, Landroidx/browser/trusted/TrustedWebActivityIntent;->grantUriPermissionToProvider(Landroid/content/Context;)V

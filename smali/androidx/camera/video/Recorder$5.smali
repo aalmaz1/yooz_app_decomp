@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;Landroidx/core/util/Consumer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onAmplitudeValue(D)V
-    .registers 4
+    .locals 1
 
     .line 1762
     iget-object v0, p0, Landroidx/camera/video/Recorder$5;->this$0:Landroidx/camera/video/Recorder;
@@ -56,7 +56,7 @@
 .end method
 
 .method public onError(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "Recorder"
 
@@ -68,26 +68,26 @@
     .line 1755
     instance-of v0, p1, Landroidx/camera/video/internal/audio/AudioSourceAccessException;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 1756
     iget-object v0, p0, Landroidx/camera/video/Recorder$5;->val$audioErrorConsumer:Landroidx/core/util/Consumer;
 
     invoke-interface {v0, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public onSilenceStateChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 1742
     iget-object v0, p0, Landroidx/camera/video/Recorder$5;->this$0:Landroidx/camera/video/Recorder;
 
     iget-boolean v0, v0, Landroidx/camera/video/Recorder;->mIsAudioSourceSilenced:Z
 
-    if-eq v0, p1, :cond_10
+    if-eq v0, p1, :cond_0
 
     .line 1743
     iget-object v0, p0, Landroidx/camera/video/Recorder$5;->this$0:Landroidx/camera/video/Recorder;
@@ -99,10 +99,10 @@
 
     invoke-virtual {p1}, Landroidx/camera/video/Recorder;->updateInProgressStatusEvent()V
 
-    goto :goto_24
+    goto :goto_0
 
     .line 1746
-    :cond_10
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Audio source silenced transitions to the same state "
@@ -121,6 +121,6 @@
 
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_24
+    :goto_0
     return-void
 .end method

@@ -11,7 +11,7 @@
 .end method
 
 .method public snapshot(II)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",

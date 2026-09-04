@@ -54,7 +54,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;Lcom/google/common/collect/ImmutableMap;Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,7 +137,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;Lcom/google/common/collect/ImmutableMap;Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;Landroidx/media3/exoplayer/rtsp/MediaDescription$1;)V
-    .registers 5
+    .locals 0
 
     .line 39
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/rtsp/MediaDescription;-><init>(Landroidx/media3/exoplayer/rtsp/MediaDescription$Builder;Lcom/google/common/collect/ImmutableMap;Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;)V
@@ -148,18 +148,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_3
 
     .line 336
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -170,12 +170,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_6f
+    goto :goto_1
 
     .line 340
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/rtsp/MediaDescription;
 
     .line 341
@@ -187,13 +187,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->port:I
 
     iget v3, p1, Landroidx/media3/exoplayer/rtsp/MediaDescription;->port:I
 
-    if-ne v2, v3, :cond_6d
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->transportProtocol:Ljava/lang/String;
 
@@ -204,19 +204,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->payloadType:I
 
     iget v3, p1, Landroidx/media3/exoplayer/rtsp/MediaDescription;->payloadType:I
 
-    if-ne v2, v3, :cond_6d
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->bitrate:I
 
     iget v3, p1, Landroidx/media3/exoplayer/rtsp/MediaDescription;->bitrate:I
 
-    if-ne v2, v3, :cond_6d
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->attributes:Lcom/google/common/collect/ImmutableMap;
 
@@ -227,7 +227,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->rtpMapAttribute:Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;
 
@@ -238,7 +238,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->mediaTitle:Ljava/lang/String;
 
@@ -249,7 +249,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->connection:Ljava/lang/String;
 
@@ -260,7 +260,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->key:Ljava/lang/String;
 
@@ -271,23 +271,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_6d
+    if-eqz p1, :cond_2
 
-    goto :goto_6e
+    goto :goto_0
 
-    :cond_6d
+    :cond_2
     move v0, v1
 
-    :goto_6e
+    :goto_0
     return v0
 
-    :cond_6f
-    :goto_6f
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getFmtpParametersAsMap()Lcom/google/common/collect/ImmutableMap;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -309,7 +309,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 379
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
@@ -318,7 +318,7 @@
 
     return-object v0
 
-    :cond_11
+    :cond_0
     const-string v1, " "
 
     .line 383
@@ -335,16 +335,16 @@
 
     const/4 v5, 0x0
 
-    if-ne v2, v3, :cond_1f
+    if-ne v2, v3, :cond_1
 
     move v2, v4
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     move v2, v5
 
-    :goto_20
+    :goto_0
     invoke-static {v2, v0}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 389
@@ -366,8 +366,8 @@
 
     move v3, v5
 
-    :goto_32
-    if-ge v3, v2, :cond_46
+    :goto_1
+    if-ge v3, v2, :cond_2
 
     aget-object v6, v0, v3
 
@@ -387,10 +387,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_32
+    goto :goto_1
 
     .line 396
-    :cond_46
+    :cond_2
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableMap$Builder;->buildOrThrow()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -399,7 +399,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 356
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->mediaType:Ljava/lang/String;
@@ -473,18 +473,18 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3c
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_40
+    :goto_0
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
@@ -492,18 +492,18 @@
     .line 364
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->connection:Ljava/lang/String;
 
-    if-nez v0, :cond_49
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_4d
+    goto :goto_1
 
-    :cond_49
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_4d
+    :goto_1
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
@@ -511,16 +511,16 @@
     .line 365
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription;->key:Ljava/lang/String;
 
-    if-nez v0, :cond_55
+    if-nez v0, :cond_2
 
-    goto :goto_59
+    goto :goto_2
 
-    :cond_55
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :goto_59
+    :goto_2
     add-int/2addr v1, v2
 
     return v1

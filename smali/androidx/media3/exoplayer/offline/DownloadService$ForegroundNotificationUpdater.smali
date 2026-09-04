@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$Sl5BlwvtwjtOCuLD_XIoho1kiNo(Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->update()V
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/offline/DownloadService;IJ)V
-    .registers 5
+    .locals 0
 
     .line 887
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Landroidx/media3/exoplayer/offline/DownloadService;
@@ -66,7 +66,7 @@
 .end method
 
 .method private update()V
-    .registers 6
+    .locals 5
 
     .line 917
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Landroidx/media3/exoplayer/offline/DownloadService;
@@ -106,7 +106,7 @@
     .line 922
     iget-boolean v1, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_0
 
     .line 923
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Landroidx/media3/exoplayer/offline/DownloadService;
@@ -122,10 +122,10 @@
     .line 929
     iput-boolean v4, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 933
-    :cond_2f
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Landroidx/media3/exoplayer/offline/DownloadService;
 
     const-string v2, "notification"
@@ -142,10 +142,10 @@
     invoke-virtual {v1, v2, v0}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     .line 936
-    :goto_3e
+    :goto_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->periodicUpdatesStarted:Z
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     .line 937
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->handler:Landroid/os/Handler;
@@ -165,44 +165,44 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_54
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public invalidate()V
-    .registers 2
+    .locals 1
 
     .line 910
     iget-boolean v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 911
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->update()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public showNotificationIfNotAlready()V
-    .registers 2
+    .locals 1
 
     .line 904
     iget-boolean v0, p0, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     .line 905
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadService$ForegroundNotificationUpdater;->update()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public startPeriodicUpdates()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -216,7 +216,7 @@
 .end method
 
 .method public stopPeriodicUpdates()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 

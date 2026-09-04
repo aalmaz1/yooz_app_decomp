@@ -74,7 +74,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/image/ImageDecoder$Factory;Landroidx/media3/exoplayer/image/ImageOutput;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -132,7 +132,7 @@
 .end method
 
 .method private canCreateDecoderForFormat(Landroidx/media3/common/Format;)Z
-    .registers 3
+    .locals 1
 
     .line 510
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoderFactory:Landroidx/media3/exoplayer/image/ImageDecoder$Factory;
@@ -148,7 +148,7 @@
 
     move-result v0
 
-    if-eq p1, v0, :cond_17
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x3
 
@@ -157,25 +157,25 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_15
+    if-ne p1, v0, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_18
+    :goto_1
     return p1
 .end method
 
 .method private cropTileFromImageGrid(I)Landroid/graphics/Bitmap;
-    .registers 6
+    .locals 4
 
     .line 571
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputBitmap:Landroid/graphics/Bitmap;
@@ -249,7 +249,7 @@
 .end method
 
 .method private drainOutput(JJ)Z
-    .registers 18
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/image/ImageDecoderException;,
@@ -264,19 +264,19 @@
 
     const/4 v9, 0x0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     return v9
 
     .line 303
-    :cond_b
+    :cond_0
     iget v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->firstFrameState:I
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 304
     invoke-virtual {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->getState()I
@@ -285,19 +285,19 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_1
 
     return v9
 
     .line 307
-    :cond_17
+    :cond_1
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->outputBitmap:Landroid/graphics/Bitmap;
 
     const/4 v10, 0x3
 
     const/4 v11, 0x1
 
-    if-nez v0, :cond_6f
+    if-nez v0, :cond_6
 
     .line 308
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
@@ -311,12 +311,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
     return v9
 
     .line 313
-    :cond_2b
+    :cond_2
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -327,12 +327,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_5
 
     .line 314
     iget v1, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->decoderReinitializationState:I
 
-    if-ne v1, v10, :cond_47
+    if-ne v1, v10, :cond_3
 
     .line 316
     invoke-direct {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->releaseDecoderResources()V
@@ -345,10 +345,10 @@
     .line 318
     invoke-direct {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->initDecoder()V
 
-    goto :goto_5a
+    goto :goto_0
 
     .line 320
-    :cond_47
+    :cond_3
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -364,17 +364,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_4
 
     .line 322
     iput-boolean v11, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamEnded:Z
 
-    :cond_5a
-    :goto_5a
+    :cond_4
+    :goto_0
     return v9
 
     .line 327
-    :cond_5b
+    :cond_5
     iget-object v1, v0, Landroidx/media3/exoplayer/image/ImageOutputBuffer;->bitmap:Landroid/graphics/Bitmap;
 
     const-string v2, "Non-EOS buffer came back from the decoder without bitmap."
@@ -396,18 +396,18 @@
     invoke-virtual {v0}, Landroidx/media3/exoplayer/image/ImageOutputBuffer;->release()V
 
     .line 333
-    :cond_6f
+    :cond_6
     iget-boolean v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->readyToOutputTiles:Z
 
-    if-eqz v0, :cond_11b
+    if-eqz v0, :cond_e
 
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->outputBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v0, :cond_11b
+    if-eqz v0, :cond_e
 
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
-    if-eqz v0, :cond_11b
+    if-eqz v0, :cond_e
 
     .line 334
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
@@ -419,50 +419,50 @@
 
     iget v0, v0, Landroidx/media3/common/Format;->tileCountHorizontal:I
 
-    if-ne v0, v11, :cond_8c
+    if-ne v0, v11, :cond_7
 
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
 
     iget v0, v0, Landroidx/media3/common/Format;->tileCountVertical:I
 
-    if-eq v0, v11, :cond_9b
+    if-eq v0, v11, :cond_8
 
-    :cond_8c
+    :cond_7
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
 
     iget v0, v0, Landroidx/media3/common/Format;->tileCountHorizontal:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_9b
+    if-eq v0, v1, :cond_8
 
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
 
     iget v0, v0, Landroidx/media3/common/Format;->tileCountVertical:I
 
-    if-eq v0, v1, :cond_9b
+    if-eq v0, v1, :cond_8
 
     move v12, v11
 
-    goto :goto_9c
+    goto :goto_1
 
-    :cond_9b
+    :cond_8
     move v12, v9
 
     .line 341
-    :goto_9c
+    :goto_1
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->hasTileBitmap()Z
 
     move-result v0
 
-    if-nez v0, :cond_bc
+    if-nez v0, :cond_a
 
     .line 342
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
-    if-eqz v12, :cond_b1
+    if-eqz v12, :cond_9
 
     .line 344
     invoke-virtual {v0}, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->getTileIndex()I
@@ -473,10 +473,10 @@
 
     move-result-object v1
 
-    goto :goto_b9
+    goto :goto_2
 
     .line 345
-    :cond_b1
+    :cond_9
     iget-object v1, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->outputBitmap:Landroid/graphics/Bitmap;
 
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -486,11 +486,11 @@
     check-cast v1, Landroid/graphics/Bitmap;
 
     .line 342
-    :goto_b9
+    :goto_2
     invoke-virtual {v0, v1}, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->setTileBitmap(Landroid/graphics/Bitmap;)V
 
     .line 347
-    :cond_bc
+    :cond_a
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     .line 350
@@ -524,12 +524,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_da
+    if-nez v0, :cond_b
 
     return v9
 
     .line 354
-    :cond_da
+    :cond_b
     iget-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -549,7 +549,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz v12, :cond_112
+    if-eqz v12, :cond_c
 
     .line 356
     iget-object v1, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
@@ -591,14 +591,14 @@
 
     sub-int/2addr v2, v11
 
-    if-ne v1, v2, :cond_114
+    if-ne v1, v2, :cond_d
 
     .line 361
-    :cond_112
+    :cond_c
     iput-object v0, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->outputBitmap:Landroid/graphics/Bitmap;
 
     .line 363
-    :cond_114
+    :cond_d
     iget-object v1, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->nextTileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     iput-object v1, v8, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
@@ -608,12 +608,12 @@
 
     return v11
 
-    :cond_11b
+    :cond_e
     return v9
 .end method
 
 .method private feedInputBuffer(J)Z
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/image/ImageDecoderException;
@@ -625,16 +625,16 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 432
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
 
     move-result-object v0
@@ -642,25 +642,25 @@
     .line 433
     iget-object v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
 
-    if-eqz v2, :cond_f5
+    if-eqz v2, :cond_c
 
     iget v3, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoderReinitializationState:I
 
     const/4 v4, 0x3
 
-    if-eq v3, v4, :cond_f5
+    if-eq v3, v4, :cond_c
 
     iget-boolean v3, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputStreamEnded:Z
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_1
 
-    goto/16 :goto_f5
+    goto/16 :goto_3
 
     .line 439
-    :cond_1d
+    :cond_1
     iget-object v3, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_2
 
     .line 440
     invoke-interface {v2}, Landroidx/media3/exoplayer/image/ImageDecoder;->dequeueInputBuffer()Ljava/lang/Object;
@@ -671,19 +671,19 @@
 
     iput-object v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    if-nez v2, :cond_2c
+    if-nez v2, :cond_2
 
     return v1
 
     .line 445
-    :cond_2c
+    :cond_2
     iget v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoderReinitializationState:I
 
     const/4 v3, 0x2
 
     const/4 v5, 0x0
 
-    if-ne v2, v3, :cond_4f
+    if-ne v2, v3, :cond_3
 
     .line 446
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -719,7 +719,7 @@
     return v1
 
     .line 453
-    :cond_4f
+    :cond_3
     iget-object v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {p0, v0, v2, v1}, Landroidx/media3/exoplayer/image/ImageRenderer;->readSource(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
@@ -730,20 +730,20 @@
 
     const/4 v6, 0x1
 
-    if-eq v2, v4, :cond_e8
+    if-eq v2, v4, :cond_b
 
     const/4 v0, -0x4
 
-    if-eq v2, v0, :cond_66
+    if-eq v2, v0, :cond_5
 
     const/4 p1, -0x3
 
-    if-ne v2, p1, :cond_60
+    if-ne v2, p1, :cond_4
 
     return v1
 
     .line 489
-    :cond_60
+    :cond_4
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -751,7 +751,7 @@
     throw p1
 
     .line 457
-    :cond_66
+    :cond_5
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-virtual {v0}, Landroidx/media3/decoder/DecoderInputBuffer;->flip()V
@@ -772,7 +772,7 @@
 
     move-result v0
 
-    if-gtz v0, :cond_8c
+    if-gtz v0, :cond_7
 
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
@@ -787,21 +787,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_6
 
-    goto :goto_8c
+    goto :goto_0
 
-    :cond_8a
+    :cond_6
     move v0, v1
 
-    goto :goto_8d
+    goto :goto_1
 
-    :cond_8c
-    :goto_8c
+    :cond_7
+    :goto_0
     move v0, v6
 
-    :goto_8d
-    if-eqz v0, :cond_a4
+    :goto_1
+    if-eqz v0, :cond_8
 
     .line 464
     iget-object v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
@@ -826,7 +826,7 @@
     iput v1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->currentTileIndex:I
 
     .line 467
-    :cond_a4
+    :cond_8
     iget-object v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -850,7 +850,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_c2
+    if-eqz p1, :cond_9
 
     .line 469
     iput-boolean v6, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputStreamEnded:Z
@@ -861,7 +861,7 @@
     return v1
 
     .line 473
-    :cond_c2
+    :cond_9
     iget-wide p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->largestQueuedPresentationTimeUs:J
 
     iget-object v1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -881,15 +881,15 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->largestQueuedPresentationTimeUs:J
 
-    if-eqz v0, :cond_d9
+    if-eqz v0, :cond_a
 
     .line 479
     iput-object v5, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
-    goto :goto_e4
+    goto :goto_2
 
     .line 481
-    :cond_d9
+    :cond_a
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -901,7 +901,7 @@
     invoke-virtual {p1}, Landroidx/media3/decoder/DecoderInputBuffer;->clear()V
 
     .line 483
-    :goto_e4
+    :goto_2
     iget-boolean p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->readyToOutputTiles:Z
 
     xor-int/2addr p1, v6
@@ -909,7 +909,7 @@
     return p1
 
     .line 485
-    :cond_e8
+    :cond_b
     iget-object p1, v0, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -925,25 +925,25 @@
 
     return v6
 
-    :cond_f5
-    :goto_f5
+    :cond_c
+    :goto_3
     return v1
 .end method
 
 .method private static getImageOutput(Landroidx/media3/exoplayer/image/ImageOutput;)Landroidx/media3/exoplayer/image/ImageOutput;
-    .registers 1
+    .locals 0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 581
     sget-object p0, Landroidx/media3/exoplayer/image/ImageOutput;->NO_OP:Landroidx/media3/exoplayer/image/ImageOutput;
 
-    :cond_4
+    :cond_0
     return-object p0
 .end method
 
 .method private initDecoder()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -969,18 +969,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 497
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 498
     invoke-interface {v0}, Landroidx/media3/exoplayer/image/ImageDecoder;->release()V
 
     .line 500
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoderFactory:Landroidx/media3/exoplayer/image/ImageDecoder$Factory;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/image/ImageDecoder$Factory;->createImageDecoder()Landroidx/media3/exoplayer/image/ImageDecoder;
@@ -992,7 +992,7 @@
     return-void
 
     .line 502
-    :cond_18
+    :cond_1
     new-instance v0, Landroidx/media3/exoplayer/image/ImageDecoderException;
 
     const-string v1, "Provided decoder factory can\'t create decoder for format."
@@ -1011,7 +1011,7 @@
 .end method
 
 .method private isTileLastInGrid(Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;)Z
-    .registers 5
+    .locals 3
 
     .line 563
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
@@ -1028,13 +1028,13 @@
 
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
 
     iget v0, v0, Landroidx/media3/common/Format;->tileCountVertical:I
 
-    if-eq v0, v2, :cond_2c
+    if-eq v0, v2, :cond_1
 
     .line 565
     invoke-virtual {p1}, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->getTileIndex()I
@@ -1060,20 +1060,20 @@
 
     sub-int/2addr v0, v1
 
-    if-ne p1, v0, :cond_2b
+    if-ne p1, v0, :cond_0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method private lowerFirstFrameState(I)V
-    .registers 3
+    .locals 1
 
     .line 516
     iget v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->firstFrameState:I
@@ -1088,7 +1088,7 @@
 .end method
 
 .method private maybeAdvanceTileInfo(JLandroidx/media3/decoder/DecoderInputBuffer;)V
-    .registers 12
+    .locals 8
 
     .line 534
     invoke-virtual {p3}, Landroidx/media3/decoder/DecoderInputBuffer;->isEndOfStream()Z
@@ -1097,7 +1097,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 535
     iput-boolean v1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->readyToOutputTiles:Z
@@ -1105,7 +1105,7 @@
     return-void
 
     .line 538
-    :cond_a
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     iget v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->currentTileIndex:I
@@ -1126,7 +1126,7 @@
     .line 542
     iget-boolean p3, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->readyToOutputTiles:Z
 
-    if-nez p3, :cond_61
+    if-nez p3, :cond_5
 
     .line 543
     invoke-virtual {v0}, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->getPresentationTimeUs()J
@@ -1141,26 +1141,26 @@
 
     const/4 v0, 0x0
 
-    if-gtz p3, :cond_32
+    if-gtz p3, :cond_1
 
     add-long/2addr v4, v2
 
     cmp-long p3, p1, v4
 
-    if-gtz p3, :cond_32
+    if-gtz p3, :cond_1
 
     move p3, v1
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_32
+    :cond_1
     move p3, v0
 
     .line 547
-    :goto_33
+    :goto_0
     iget-object v4, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
-    if-eqz v4, :cond_45
+    if-eqz v4, :cond_2
 
     .line 549
     invoke-virtual {v4}, Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;->getPresentationTimeUs()J
@@ -1169,21 +1169,21 @@
 
     cmp-long v4, v4, p1
 
-    if-gtz v4, :cond_45
+    if-gtz v4, :cond_2
 
     cmp-long p1, p1, v2
 
-    if-gez p1, :cond_45
+    if-gez p1, :cond_2
 
     move p1, v1
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_45
+    :cond_2
     move p1, v0
 
     .line 551
-    :goto_46
+    :goto_1
     iget-object p2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->nextTileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1196,30 +1196,30 @@
 
     move-result p2
 
-    if-nez p3, :cond_5a
+    if-nez p3, :cond_4
 
-    if-nez p1, :cond_5a
+    if-nez p1, :cond_4
 
-    if-eqz p2, :cond_59
+    if-eqz p2, :cond_3
 
-    goto :goto_5a
+    goto :goto_2
 
-    :cond_59
+    :cond_3
     move v1, v0
 
     .line 552
-    :cond_5a
-    :goto_5a
+    :cond_4
+    :goto_2
     iput-boolean v1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->readyToOutputTiles:Z
 
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_5
 
-    if-nez p3, :cond_61
+    if-nez p3, :cond_5
 
     return-void
 
     .line 558
-    :cond_61
+    :cond_5
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->nextTileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
 
     iput-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->tileInfo:Landroidx/media3/exoplayer/image/ImageRenderer$TileInfo;
@@ -1233,20 +1233,20 @@
 .end method
 
 .method private onProcessedOutputBuffer(J)V
-    .registers 5
+    .locals 2
 
     .line 416
     iput-wide p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->lastProcessedOutputBufferTimeUs:J
 
     .line 417
-    :goto_2
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->pendingOutputStreamChanges:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->pendingOutputStreamChanges:Ljava/util/ArrayDeque;
 
@@ -1261,7 +1261,7 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_23
+    if-ltz v0, :cond_0
 
     .line 419
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->pendingOutputStreamChanges:Ljava/util/ArrayDeque;
@@ -1274,14 +1274,14 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamInfo:Landroidx/media3/exoplayer/image/ImageRenderer$OutputStreamInfo;
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method private releaseDecoderResources()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -1301,7 +1301,7 @@
     .line 523
     iget-object v1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     .line 524
     invoke-interface {v1}, Landroidx/media3/exoplayer/image/ImageDecoder;->release()V
@@ -1309,12 +1309,12 @@
     .line 525
     iput-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method private setImageOutput(Landroidx/media3/exoplayer/image/ImageOutput;)V
-    .registers 2
+    .locals 0
 
     .line 530
     invoke-static {p1}, Landroidx/media3/exoplayer/image/ImageRenderer;->getImageOutput(Landroidx/media3/exoplayer/image/ImageOutput;)Landroidx/media3/exoplayer/image/ImageOutput;
@@ -1327,7 +1327,7 @@
 .end method
 
 .method private shouldForceRender()Z
-    .registers 5
+    .locals 4
 
     .line 371
     invoke-virtual {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->getState()I
@@ -1340,48 +1340,48 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     move v0, v3
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v2
 
     .line 372
-    :goto_c
+    :goto_0
     iget v1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->firstFrameState:I
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_3
 
-    if-eq v1, v3, :cond_1c
+    if-eq v1, v3, :cond_2
 
     const/4 v0, 0x3
 
-    if-ne v1, v0, :cond_16
+    if-ne v1, v0, :cond_1
 
     return v2
 
     .line 380
-    :cond_16
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    :cond_1c
+    :cond_2
     return v3
 
-    :cond_1d
+    :cond_3
     return v0
 .end method
 
 
 # virtual methods
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "ImageRenderer"
 
@@ -1389,7 +1389,7 @@
 .end method
 
 .method public handleMessage(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1398,36 +1398,36 @@
 
     const/16 v0, 0xf
 
-    if-eq p1, v0, :cond_8
+    if-eq p1, v0, :cond_0
 
     .line 282
     invoke-super {p0, p1, p2}, Landroidx/media3/exoplayer/BaseRenderer;->handleMessage(ILjava/lang/Object;)V
 
-    goto :goto_13
+    goto :goto_1
 
     .line 278
-    :cond_8
+    :cond_0
     instance-of p1, p2, Landroidx/media3/exoplayer/image/ImageOutput;
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_1
 
     check-cast p2, Landroidx/media3/exoplayer/image/ImageOutput;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 p2, 0x0
 
     .line 279
-    :goto_10
+    :goto_0
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/image/ImageRenderer;->setImageOutput(Landroidx/media3/exoplayer/image/ImageOutput;)V
 
-    :goto_13
+    :goto_1
     return-void
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 199
     iget-boolean v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamEnded:Z
@@ -1436,38 +1436,38 @@
 .end method
 
 .method public isReady()Z
-    .registers 3
+    .locals 2
 
     .line 192
     iget v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->firstFrameState:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_e
+    if-eq v0, v1, :cond_1
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->readyToOutputTiles:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_f
+    goto :goto_1
 
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_f
+    :goto_1
     return v0
 .end method
 
 .method protected onDisabled()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1496,7 +1496,7 @@
 .end method
 
 .method protected onEnabled(ZZ)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1510,7 +1510,7 @@
 .end method
 
 .method protected onPositionReset(JZ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1550,13 +1550,13 @@
     .line 246
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoder:Landroidx/media3/exoplayer/image/ImageDecoder;
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 247
     invoke-interface {p1}, Landroidx/media3/exoplayer/image/ImageDecoder;->flush()V
 
     .line 249
-    :cond_1b
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->pendingOutputStreamChanges:Ljava/util/ArrayDeque;
 
     invoke-virtual {p1}, Ljava/util/ArrayDeque;->clear()V
@@ -1565,7 +1565,7 @@
 .end method
 
 .method protected onRelease()V
-    .registers 1
+    .locals 0
 
     .line 269
     invoke-direct {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->releaseDecoderResources()V
@@ -1574,7 +1574,7 @@
 .end method
 
 .method protected onReset()V
-    .registers 2
+    .locals 1
 
     .line 263
     invoke-direct {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->releaseDecoderResources()V
@@ -1588,7 +1588,7 @@
 .end method
 
 .method protected onStreamChanged([Landroidx/media3/common/Format;JJLandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 11
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1607,7 +1607,7 @@
 
     cmp-long p1, p1, v0
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->pendingOutputStreamChanges:Ljava/util/ArrayDeque;
 
@@ -1616,28 +1616,28 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     iget-wide p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->largestQueuedPresentationTimeUs:J
 
     cmp-long p3, p1, v0
 
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_1
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->lastProcessedOutputBufferTimeUs:J
 
     cmp-long p3, v2, v0
 
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_0
 
     cmp-long p1, v2, p1
 
-    if-ltz p1, :cond_29
+    if-ltz p1, :cond_0
 
-    goto :goto_36
+    goto :goto_0
 
     .line 230
-    :cond_29
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->pendingOutputStreamChanges:Ljava/util/ArrayDeque;
 
     new-instance p2, Landroidx/media3/exoplayer/image/ImageRenderer$OutputStreamInfo;
@@ -1648,23 +1648,23 @@
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 227
-    :cond_36
-    :goto_36
+    :cond_1
+    :goto_0
     new-instance p1, Landroidx/media3/exoplayer/image/ImageRenderer$OutputStreamInfo;
 
     invoke-direct {p1, v0, v1, p4, p5}, Landroidx/media3/exoplayer/image/ImageRenderer$OutputStreamInfo;-><init>(JJ)V
 
     iput-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamInfo:Landroidx/media3/exoplayer/image/ImageRenderer$OutputStreamInfo;
 
-    :goto_3d
+    :goto_1
     return-void
 .end method
 
 .method protected processOutputBuffer(JJLandroid/graphics/Bitmap;J)Z
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1678,24 +1678,24 @@
 
     move-result p3
 
-    if-nez p3, :cond_11
+    if-nez p3, :cond_1
 
     const-wide/16 p3, 0x7530
 
     cmp-long p1, p1, p3
 
-    if-gez p1, :cond_f
+    if-gez p1, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 
     .line 403
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->imageOutput:Landroidx/media3/exoplayer/image/ImageOutput;
 
     iget-object p2, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamInfo:Landroidx/media3/exoplayer/image/ImageRenderer$OutputStreamInfo;
@@ -1712,7 +1712,7 @@
 .end method
 
 .method public render(JJ)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1722,15 +1722,15 @@
     .line 154
     iget-boolean v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamEnded:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 158
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->inputFormat:Landroidx/media3/common/Format;
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_3
 
     .line 160
     invoke-virtual {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->getFormatHolder()Landroidx/media3/exoplayer/FormatHolder;
@@ -1753,7 +1753,7 @@
 
     const/4 v2, -0x5
 
-    if-ne v1, v2, :cond_2a
+    if-ne v1, v2, :cond_1
 
     .line 166
     iget-object v0, v0, Landroidx/media3/exoplayer/FormatHolder;->format:Landroidx/media3/common/Format;
@@ -1769,12 +1769,12 @@
     .line 167
     invoke-direct {p0}, Landroidx/media3/exoplayer/image/ImageRenderer;->initDecoder()V
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     const/4 p1, -0x4
 
-    if-ne v1, p1, :cond_3b
+    if-ne v1, p1, :cond_2
 
     .line 170
     iget-object p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->flagsOnlyBuffer:Landroidx/media3/decoder/DecoderInputBuffer;
@@ -1793,47 +1793,47 @@
     .line 172
     iput-boolean p1, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->outputStreamEnded:Z
 
-    :cond_3b
+    :cond_2
     return-void
 
-    :cond_3c
-    :goto_3c
-    :try_start_3c
+    :cond_3
+    :goto_0
+    :try_start_0
     const-string v0, "drainAndFeedDecoder"
 
     .line 181
     invoke-static {v0}, Landroidx/media3/common/util/TraceUtil;->beginSection(Ljava/lang/String;)V
 
     .line 182
-    :goto_41
+    :goto_1
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/image/ImageRenderer;->drainOutput(JJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_4
 
-    goto :goto_41
+    goto :goto_1
 
     .line 183
-    :cond_48
-    :goto_48
+    :cond_4
+    :goto_2
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/image/ImageRenderer;->feedInputBuffer(J)Z
 
     move-result p3
 
-    if-eqz p3, :cond_4f
+    if-eqz p3, :cond_5
 
-    goto :goto_48
+    goto :goto_2
 
     .line 184
-    :cond_4f
+    :cond_5
     invoke-static {}, Landroidx/media3/common/util/TraceUtil;->endSection()V
-    :try_end_52
-    .catch Landroidx/media3/exoplayer/image/ImageDecoderException; {:try_start_3c .. :try_end_52} :catch_53
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/image/ImageDecoderException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_53
+    :catch_0
     move-exception p1
 
     const/4 p2, 0x0
@@ -1849,7 +1849,7 @@
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)I
-    .registers 3
+    .locals 1
 
     .line 149
     iget-object v0, p0, Landroidx/media3/exoplayer/image/ImageRenderer;->decoderFactory:Landroidx/media3/exoplayer/image/ImageDecoder$Factory;

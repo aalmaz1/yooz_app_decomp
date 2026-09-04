@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(CC)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -62,29 +62,29 @@
     .line 1722
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$IsEither;->match1:C
 
-    if-eq p1, v0, :cond_b
+    if-eq p1, v0, :cond_1
 
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$IsEither;->match2:C
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_c
+    :goto_1
     return p1
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -108,7 +108,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1735
     new-instance v0, Ljava/lang/StringBuilder;

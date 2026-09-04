@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",

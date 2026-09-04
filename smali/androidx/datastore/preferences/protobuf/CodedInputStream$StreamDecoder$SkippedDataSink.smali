@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;)V
-    .registers 2
+    .locals 0
 
     .line 2184
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->this$0:Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;
@@ -47,12 +47,12 @@
 
 # virtual methods
 .method getSkippedData()Ljava/nio/ByteBuffer;
-    .registers 5
+    .locals 4
 
     .line 2199
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->byteArrayStream:Ljava/io/ByteArrayOutputStream;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 2200
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->this$0:Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;
@@ -80,7 +80,7 @@
     return-object v0
 
     .line 2202
-    :cond_1a
+    :cond_0
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->this$0:Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;
 
     invoke-static {v1}, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;->access$600(Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;)[B
@@ -112,12 +112,12 @@
 .end method
 
 .method public onRefill()V
-    .registers 6
+    .locals 5
 
     .line 2190
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->byteArrayStream:Ljava/io/ByteArrayOutputStream;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 2191
     new-instance v0, Ljava/io/ByteArrayOutputStream;
@@ -127,7 +127,7 @@
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->byteArrayStream:Ljava/io/ByteArrayOutputStream;
 
     .line 2193
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->byteArrayStream:Ljava/io/ByteArrayOutputStream;
 
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder$SkippedDataSink;->this$0:Landroidx/datastore/preferences/protobuf/CodedInputStream$StreamDecoder;

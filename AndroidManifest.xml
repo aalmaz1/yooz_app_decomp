@@ -4,7 +4,7 @@
     android:versionCode="999999"
     android:versionName="1.2.0"
     package="cn.yoozworld.watch"
-    
+
     >
 
     <uses-sdk
@@ -190,8 +190,10 @@
         android:label="@ref/0x7f10001c"
         android:icon="@ref/0x7f080091"
         android:name="cn.yoozworld.watch.APP"
-        android:allowBackup="true"
-        android:extractNativeLibs="true"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/dx"
+        android:extractNativeLibs="false"
         android:usesCleartextTraffic="false"
         android:networkSecurityConfig="@ref/0x7f130005"
         android:roundIcon="@ref/0x7f080091"
@@ -438,38 +440,15 @@
             android:name="android.adservices.AD_SERVICES_CONFIG"
             android:resource="@ref/0x7f130003" />
 
-        <service
-            android:name="com.google.firebase.components.ComponentDiscoveryService"
-            android:exported="false"
-            android:directBootAware="true">
 
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
 
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
 
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
 
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-        </service>
-
-        <provider
-            android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:exported="false"
-            android:authorities="cn.yoozworld.watch.firebaseinitprovider"
-            android:initOrder="100"
-            android:directBootAware="true" />
+        <meta-data android:name="firebase_analytics_collection_enabled" android:value="false"/>
+        <meta-data android:name="firebase_data_collection_default_enabled" android:value="false"/>
+        <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false"/>
+        <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="false"/>
+        <meta-data android:name="google_analytics_default_allow_ad_personalization_signals" android:value="false"/>
 
         <service
             android:name="androidx.camera.core.impl.MetadataHolderService"

@@ -13,7 +13,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method static decodeBoolList(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -52,20 +52,20 @@
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v0, v4
 
-    :goto_13
+    :goto_0
     invoke-virtual {p4, v0}, Landroidx/datastore/preferences/protobuf/BooleanArrayList;->addBoolean(Z)V
 
-    :goto_16
-    if-ge p2, p3, :cond_32
+    :goto_1
+    if-ge p2, p3, :cond_3
 
     .line 378
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -75,12 +75,12 @@
     .line 379
     iget v5, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v5, :cond_21
+    if-eq p0, v5, :cond_1
 
-    goto :goto_32
+    goto :goto_3
 
     .line 382
-    :cond_21
+    :cond_1
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -90,27 +90,27 @@
 
     cmp-long v0, v5, v2
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     move v0, v1
 
-    goto :goto_2e
+    goto :goto_2
 
-    :cond_2d
+    :cond_2
     move v0, v4
 
-    :goto_2e
+    :goto_2
     invoke-virtual {p4, v0}, Landroidx/datastore/preferences/protobuf/BooleanArrayList;->addBoolean(Z)V
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_32
-    :goto_32
+    :cond_3
+    :goto_3
     return p2
 .end method
 
 .method static decodeBytes([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -125,16 +125,16 @@
     .line 219
     iget v0, p2, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_20
+    if-ltz v0, :cond_2
 
     .line 222
     array-length v1, p0
 
     sub-int/2addr v1, p1
 
-    if-gt v0, v1, :cond_1b
+    if-gt v0, v1, :cond_1
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 225
     sget-object p0, Landroidx/datastore/preferences/protobuf/ByteString;->EMPTY:Landroidx/datastore/preferences/protobuf/ByteString;
@@ -144,7 +144,7 @@
     return p1
 
     .line 228
-    :cond_13
+    :cond_0
     invoke-static {p0, p1, v0}, Landroidx/datastore/preferences/protobuf/ByteString;->copyFrom([BII)Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object p0
@@ -156,7 +156,7 @@
     return p1
 
     .line 223
-    :cond_1b
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -164,7 +164,7 @@
     throw p0
 
     .line 221
-    :cond_20
+    :cond_2
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -173,7 +173,7 @@
 .end method
 
 .method static decodeBytesList(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -198,37 +198,37 @@
     .line 656
     iget v0, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_53
+    if-ltz v0, :cond_7
 
     .line 659
     array-length v1, p1
 
     sub-int/2addr v1, p2
 
-    if-gt v0, v1, :cond_4e
+    if-gt v0, v1, :cond_6
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 662
     sget-object v0, Landroidx/datastore/preferences/protobuf/ByteString;->EMPTY:Landroidx/datastore/preferences/protobuf/ByteString;
 
     invoke-interface {p4, v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 664
-    :cond_14
+    :cond_0
     invoke-static {p1, p2, v0}, Landroidx/datastore/preferences/protobuf/ByteString;->copyFrom([BII)Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object v1
 
     invoke-interface {p4, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    :goto_1b
+    :goto_0
     add-int/2addr p2, v0
 
-    :goto_1c
-    if-ge p2, p3, :cond_4d
+    :goto_1
+    if-ge p2, p3, :cond_5
 
     .line 668
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -238,12 +238,12 @@
     .line 669
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_27
+    if-eq p0, v1, :cond_1
 
-    goto :goto_4d
+    goto :goto_2
 
     .line 672
-    :cond_27
+    :cond_1
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -251,36 +251,36 @@
     .line 673
     iget v0, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_48
+    if-ltz v0, :cond_4
 
     .line 676
     array-length v1, p1
 
     sub-int/2addr v1, p2
 
-    if-gt v0, v1, :cond_43
+    if-gt v0, v1, :cond_3
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     .line 679
     sget-object v0, Landroidx/datastore/preferences/protobuf/ByteString;->EMPTY:Landroidx/datastore/preferences/protobuf/ByteString;
 
     invoke-interface {p4, v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 681
-    :cond_3b
+    :cond_2
     invoke-static {p1, p2, v0}, Landroidx/datastore/preferences/protobuf/ByteString;->copyFrom([BII)Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object v1
 
     invoke-interface {p4, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 677
-    :cond_43
+    :cond_3
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -288,19 +288,19 @@
     throw p0
 
     .line 675
-    :cond_48
+    :cond_4
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_4d
-    :goto_4d
+    :cond_5
+    :goto_2
     return p2
 
     .line 660
-    :cond_4e
+    :cond_6
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -308,7 +308,7 @@
     throw p0
 
     .line 658
-    :cond_53
+    :cond_7
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -317,7 +317,7 @@
 .end method
 
 .method static decodeDouble([BI)D
-    .registers 2
+    .locals 0
 
     .line 175
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed64([BI)J
@@ -332,7 +332,7 @@
 .end method
 
 .method static decodeDoubleList(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 9
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -355,8 +355,8 @@
 
     add-int/lit8 p2, p2, 0x8
 
-    :goto_b
-    if-ge p2, p3, :cond_20
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 361
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -366,12 +366,12 @@
     .line 362
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 365
-    :cond_16
+    :cond_0
     invoke-static {p1, v0}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeDouble([BI)D
 
     move-result-wide v1
@@ -380,15 +380,15 @@
 
     add-int/lit8 p2, v0, 0x8
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeExtension(I[BIILandroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 15
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -425,7 +425,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_f9
+    if-eqz v1, :cond_2
 
     iget-object v1, p5, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -433,7 +433,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f9
+    if-eqz v1, :cond_2
 
     .line 781
     sget-object p3, Landroidx/datastore/preferences/protobuf/ArrayDecoders$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
@@ -448,7 +448,7 @@
 
     aget p3, p3, v1
 
-    packed-switch p3, :pswitch_data_234
+    packed-switch p3, :pswitch_data_0
 
     .line 871
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -479,7 +479,7 @@
     throw p0
 
     .line 851
-    :pswitch_3f
+    :pswitch_0
     new-instance p3, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     invoke-direct {p3}, Landroidx/datastore/preferences/protobuf/IntArrayList;-><init>()V
@@ -497,15 +497,15 @@
 
     move-result-object p7
 
-    if-ne p2, p7, :cond_51
+    if-ne p2, p7, :cond_0
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_51
+    :cond_0
     move-object v2, p2
 
     .line 857
-    :goto_52
+    :goto_0
     iget-object p2, p5, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     .line 861
@@ -520,21 +520,21 @@
 
     check-cast p0, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
-    if-eqz p0, :cond_62
+    if-eqz p0, :cond_1
 
     .line 865
     iput-object p0, p4, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
     .line 867
-    :cond_62
+    :cond_1
     iget-object p0, p5, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p0, p3}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 844
-    :pswitch_69
+    :pswitch_1
     new-instance p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/LongArrayList;-><init>()V
@@ -549,10 +549,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 837
-    :pswitch_79
+    :pswitch_2
     new-instance p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;-><init>()V
@@ -567,10 +567,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 830
-    :pswitch_89
+    :pswitch_3
     new-instance p0, Landroidx/datastore/preferences/protobuf/BooleanArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BooleanArrayList;-><init>()V
@@ -585,10 +585,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 823
-    :pswitch_99
+    :pswitch_4
     new-instance p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;-><init>()V
@@ -603,10 +603,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 815
-    :pswitch_a9
+    :pswitch_5
     new-instance p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/LongArrayList;-><init>()V
@@ -621,10 +621,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 807
-    :pswitch_b9
+    :pswitch_6
     new-instance p0, Landroidx/datastore/preferences/protobuf/IntArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/IntArrayList;-><init>()V
@@ -639,10 +639,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 799
-    :pswitch_c9
+    :pswitch_7
     new-instance p0, Landroidx/datastore/preferences/protobuf/LongArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/LongArrayList;-><init>()V
@@ -657,10 +657,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 791
-    :pswitch_d9
+    :pswitch_8
     new-instance p0, Landroidx/datastore/preferences/protobuf/FloatArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/FloatArrayList;-><init>()V
@@ -675,10 +675,10 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 784
-    :pswitch_e9
+    :pswitch_9
     new-instance p0, Landroidx/datastore/preferences/protobuf/DoubleArrayList;
 
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/DoubleArrayList;-><init>()V
@@ -693,17 +693,17 @@
 
     invoke-virtual {v0, p2, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto/16 :goto_232
+    goto/16 :goto_7
 
     .line 877
-    :cond_f9
+    :cond_2
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
     move-result-object v1
 
     sget-object v3, Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;->ENUM:Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
 
-    if-ne v1, v3, :cond_12f
+    if-ne v1, v3, :cond_5
 
     .line 878
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -723,7 +723,7 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_127
+    if-nez p1, :cond_4
 
     .line 881
     iget-object p1, p4, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
@@ -733,7 +733,7 @@
 
     move-result-object p3
 
-    if-ne p1, p3, :cond_121
+    if-ne p1, p3, :cond_3
 
     .line 883
     invoke-static {}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->newInstance()Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
@@ -744,7 +744,7 @@
     iput-object p1, p4, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
     .line 886
-    :cond_121
+    :cond_3
     iget p3, p7, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {p0, p3, p1, p6}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
@@ -752,17 +752,17 @@
     return p2
 
     .line 892
-    :cond_127
+    :cond_4
     iget p0, p7, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    goto/16 :goto_1ff
+    goto/16 :goto_4
 
     .line 894
-    :cond_12f
+    :cond_5
     sget-object p4, Landroidx/datastore/preferences/protobuf/ArrayDecoders$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -775,12 +775,12 @@
 
     aget p4, p4, p6
 
-    packed-switch p4, :pswitch_data_254
+    packed-switch p4, :pswitch_data_1
 
-    goto/16 :goto_1ff
+    goto/16 :goto_4
 
     .line 953
-    :pswitch_140
+    :pswitch_a
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object p0
@@ -805,9 +805,9 @@
     .line 955
     iget-object v2, p7, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
-    goto/16 :goto_1ff
+    goto/16 :goto_4
 
-    :pswitch_158
+    :pswitch_b
     shl-int/lit8 p0, p0, 0x3
 
     or-int/lit8 v5, p0, 0x4
@@ -845,10 +845,10 @@
     .line 948
     iget-object v2, p7, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
-    goto/16 :goto_1ff
+    goto/16 :goto_4
 
     .line 940
-    :pswitch_178
+    :pswitch_c
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeString([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -856,10 +856,10 @@
     .line 941
     iget-object v2, p7, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
-    goto/16 :goto_1ff
+    goto/16 :goto_4
 
     .line 928
-    :pswitch_180
+    :pswitch_d
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeBytes([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -867,10 +867,10 @@
     .line 929
     iget-object v2, p7, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
-    goto/16 :goto_1ff
+    goto/16 :goto_4
 
     .line 959
-    :pswitch_188
+    :pswitch_e
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "Shouldn\'t reach here."
@@ -880,7 +880,7 @@
     throw p0
 
     .line 936
-    :pswitch_190
+    :pswitch_f
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -896,10 +896,10 @@
 
     move-result-object v2
 
-    goto :goto_1ff
+    goto :goto_4
 
     .line 932
-    :pswitch_19f
+    :pswitch_10
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -915,10 +915,10 @@
 
     move-result-object v2
 
-    goto :goto_1ff
+    goto :goto_4
 
     .line 924
-    :pswitch_1ae
+    :pswitch_11
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -930,24 +930,24 @@
 
     cmp-long p0, p0, p3
 
-    if-eqz p0, :cond_1bc
+    if-eqz p0, :cond_6
 
     const/4 p0, 0x1
 
-    goto :goto_1bd
+    goto :goto_1
 
-    :cond_1bc
+    :cond_6
     const/4 p0, 0x0
 
-    :goto_1bd
+    :goto_1
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
-    goto :goto_1ff
+    goto :goto_4
 
     .line 920
-    :pswitch_1c2
+    :pswitch_12
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result p0
@@ -956,10 +956,10 @@
 
     move-result-object v2
 
-    goto :goto_1f2
+    goto :goto_2
 
     .line 915
-    :pswitch_1cb
+    :pswitch_13
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide p0
@@ -968,10 +968,10 @@
 
     move-result-object v2
 
-    goto :goto_1fd
+    goto :goto_3
 
     .line 910
-    :pswitch_1d4
+    :pswitch_14
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -983,10 +983,10 @@
 
     move-result-object v2
 
-    goto :goto_1ff
+    goto :goto_4
 
     .line 905
-    :pswitch_1df
+    :pswitch_15
     invoke-static {p1, p2, p7}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -998,10 +998,10 @@
 
     move-result-object v2
 
-    goto :goto_1ff
+    goto :goto_4
 
     .line 900
-    :pswitch_1ea
+    :pswitch_16
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFloat([BI)F
 
     move-result p0
@@ -1010,13 +1010,13 @@
 
     move-result-object v2
 
-    :goto_1f2
+    :goto_2
     add-int/lit8 p2, p2, 0x4
 
-    goto :goto_1ff
+    goto :goto_4
 
     .line 896
-    :pswitch_1f5
+    :pswitch_17
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeDouble([BI)D
 
     move-result-wide p0
@@ -1025,26 +1025,26 @@
 
     move-result-object v2
 
-    :goto_1fd
+    :goto_3
     add-int/lit8 p2, p2, 0x8
 
     .line 962
-    :goto_1ff
+    :goto_4
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->isRepeated()Z
 
     move-result p0
 
-    if-eqz p0, :cond_20b
+    if-eqz p0, :cond_7
 
     .line 963
     iget-object p0, p5, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p0, v2}, Landroidx/datastore/preferences/protobuf/FieldSet;->addRepeatedField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    goto :goto_231
+    goto :goto_6
 
     .line 965
-    :cond_20b
+    :cond_7
     sget-object p0, Landroidx/datastore/preferences/protobuf/ArrayDecoders$1;->$SwitchMap$com$google$protobuf$WireFormat$FieldType:[I
 
     invoke-virtual {p5}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->getLiteType()Landroidx/datastore/preferences/protobuf/WireFormat$FieldType;
@@ -1059,23 +1059,23 @@
 
     const/16 p1, 0x11
 
-    if-eq p0, p1, :cond_220
+    if-eq p0, p1, :cond_8
 
     const/16 p1, 0x12
 
-    if-eq p0, p1, :cond_220
+    if-eq p0, p1, :cond_8
 
-    goto :goto_22c
+    goto :goto_5
 
     .line 968
-    :cond_220
+    :cond_8
     iget-object p0, p5, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p0}, Landroidx/datastore/preferences/protobuf/FieldSet;->getField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-eqz p0, :cond_22c
+    if-eqz p0, :cond_9
 
     .line 970
     invoke-static {p0, v2}, Landroidx/datastore/preferences/protobuf/Internal;->mergeMessage(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1083,63 +1083,63 @@
     move-result-object v2
 
     .line 976
-    :cond_22c
-    :goto_22c
+    :cond_9
+    :goto_5
     iget-object p0, p5, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v0, p0, v2}, Landroidx/datastore/preferences/protobuf/FieldSet;->setField(Landroidx/datastore/preferences/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    :goto_231
+    :goto_6
     move p1, p2
 
-    :goto_232
+    :goto_7
     return p1
 
     nop
 
-    :pswitch_data_234
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_e9
-        :pswitch_d9
-        :pswitch_c9
-        :pswitch_c9
-        :pswitch_b9
-        :pswitch_b9
-        :pswitch_a9
-        :pswitch_a9
-        :pswitch_99
-        :pswitch_99
-        :pswitch_89
-        :pswitch_79
-        :pswitch_69
-        :pswitch_3f
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_7
+        :pswitch_6
+        :pswitch_6
+        :pswitch_5
+        :pswitch_5
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
-    :pswitch_data_254
+    :pswitch_data_1
     .packed-switch 0x1
-        :pswitch_1f5
-        :pswitch_1ea
-        :pswitch_1df
-        :pswitch_1df
-        :pswitch_1d4
-        :pswitch_1d4
-        :pswitch_1cb
-        :pswitch_1cb
-        :pswitch_1c2
-        :pswitch_1c2
-        :pswitch_1ae
-        :pswitch_19f
-        :pswitch_190
-        :pswitch_188
-        :pswitch_180
-        :pswitch_178
-        :pswitch_158
-        :pswitch_140
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_15
+        :pswitch_14
+        :pswitch_14
+        :pswitch_13
+        :pswitch_13
+        :pswitch_12
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
     .end packed-switch
 .end method
 
 .method static decodeExtensionOrUnknownField(I[BIILjava/lang/Object;Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 16
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -1170,7 +1170,7 @@
 
     move-result-object v5
 
-    if-nez v5, :cond_18
+    if-nez v5, :cond_0
 
     .line 759
     invoke-static {p4}, Landroidx/datastore/preferences/protobuf/MessageSchema;->getMutableUnknownFields(Ljava/lang/Object;)Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
@@ -1195,7 +1195,7 @@
     return v0
 
     .line 761
-    :cond_18
+    :cond_0
     move-object v4, p4
 
     check-cast v4, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
@@ -1223,7 +1223,7 @@
 .end method
 
 .method static decodeFixed32([BI)I
-    .registers 4
+    .locals 2
 
     .line 155
     aget-byte v0, p0, p1
@@ -1264,7 +1264,7 @@
 .end method
 
 .method static decodeFixed32List(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -1287,8 +1287,8 @@
 
     add-int/lit8 p2, p2, 0x4
 
-    :goto_b
-    if-ge p2, p3, :cond_20
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 310
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1298,12 +1298,12 @@
     .line 311
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 314
-    :cond_16
+    :cond_0
     invoke-static {p1, v0}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result p2
@@ -1312,15 +1312,15 @@
 
     add-int/lit8 p2, v0, 0x4
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeFixed64([BI)J
-    .registers 9
+    .locals 7
 
     .line 163
     aget-byte v0, p0, p1
@@ -1433,7 +1433,7 @@
 .end method
 
 .method static decodeFixed64List(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 9
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -1456,8 +1456,8 @@
 
     add-int/lit8 p2, p2, 0x8
 
-    :goto_b
-    if-ge p2, p3, :cond_20
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 327
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1467,12 +1467,12 @@
     .line 328
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 331
-    :cond_16
+    :cond_0
     invoke-static {p1, v0}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v1
@@ -1481,15 +1481,15 @@
 
     add-int/lit8 p2, v0, 0x8
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeFloat([BI)F
-    .registers 2
+    .locals 0
 
     .line 180
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed32([BI)I
@@ -1504,7 +1504,7 @@
 .end method
 
 .method static decodeFloatList(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -1527,8 +1527,8 @@
 
     add-int/lit8 p2, p2, 0x4
 
-    :goto_b
-    if-ge p2, p3, :cond_20
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 344
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1538,12 +1538,12 @@
     .line 345
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 348
-    :cond_16
+    :cond_0
     invoke-static {p1, v0}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFloat([BI)F
 
     move-result p2
@@ -1552,15 +1552,15 @@
 
     add-int/lit8 p2, v0, 0x4
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeGroupField(Landroidx/datastore/preferences/protobuf/Schema;[BIIILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 14
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1604,7 +1604,7 @@
 .end method
 
 .method static decodeGroupList(Landroidx/datastore/preferences/protobuf/Schema;I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 14
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1649,8 +1649,8 @@
 
     invoke-interface {p5, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    :goto_13
-    if-ge p3, p4, :cond_2d
+    :goto_0
+    if-ge p3, p4, :cond_1
 
     .line 737
     invoke-static {p2, p3, p6}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1660,11 +1660,11 @@
     .line 738
     iget v1, p6, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p1, v1, :cond_1e
+    if-eq p1, v1, :cond_0
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     move-object v1, p0
 
     move-object v2, p2
@@ -1685,15 +1685,15 @@
 
     invoke-interface {p5, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     return p3
 .end method
 
 .method static decodeMessageField(Landroidx/datastore/preferences/protobuf/Schema;[BIILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1705,7 +1705,7 @@
     .line 237
     aget-byte p2, p1, p2
 
-    if-gez p2, :cond_c
+    if-gez p2, :cond_0
 
     .line 239
     invoke-static {p2, p1, v0, p4}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32(I[BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1715,14 +1715,14 @@
     .line 240
     iget p2, p4, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    :cond_c
+    :cond_0
     move v3, v0
 
-    if-ltz p2, :cond_25
+    if-ltz p2, :cond_1
 
     sub-int/2addr p3, v3
 
-    if-gt p2, p3, :cond_25
+    if-gt p2, p3, :cond_1
 
     .line 245
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Schema;->newInstance()Ljava/lang/Object;
@@ -1753,7 +1753,7 @@
     return p2
 
     .line 243
-    :cond_25
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -1762,7 +1762,7 @@
 .end method
 
 .method static decodeMessageList(Landroidx/datastore/preferences/protobuf/Schema;I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 9
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1791,8 +1791,8 @@
 
     invoke-interface {p5, v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    :goto_9
-    if-ge p3, p4, :cond_1e
+    :goto_0
+    if-ge p3, p4, :cond_1
 
     .line 707
     invoke-static {p2, p3, p6}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1802,12 +1802,12 @@
     .line 708
     iget v1, p6, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p1, v1, :cond_14
+    if-eq p1, v1, :cond_0
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 711
-    :cond_14
+    :cond_0
     invoke-static {p0, p2, v0, p4, p6}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeMessageField(Landroidx/datastore/preferences/protobuf/Schema;[BIILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
@@ -1817,15 +1817,15 @@
 
     invoke-interface {p5, v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_1
     return p3
 .end method
 
 .method static decodePackedBoolList([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -1855,8 +1855,8 @@
 
     add-int/2addr v0, p1
 
-    :goto_9
-    if-ge p1, v0, :cond_1e
+    :goto_0
+    if-ge p1, v0, :cond_1
 
     .line 525
     invoke-static {p0, p1, p3}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -1870,27 +1870,27 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_1a
+    :goto_1
     invoke-virtual {p2, v1}, Landroidx/datastore/preferences/protobuf/BooleanArrayList;->addBoolean(Z)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_1e
-    if-ne p1, v0, :cond_21
+    :cond_1
+    if-ne p1, v0, :cond_2
 
     return p1
 
     .line 529
-    :cond_21
+    :cond_2
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -1899,7 +1899,7 @@
 .end method
 
 .method static decodePackedDoubleList([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -1929,8 +1929,8 @@
 
     add-int/2addr p3, p1
 
-    :goto_9
-    if-ge p1, p3, :cond_15
+    :goto_0
+    if-ge p1, p3, :cond_0
 
     .line 509
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeDouble([BI)D
@@ -1941,15 +1941,15 @@
 
     add-int/lit8 p1, p1, 0x8
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_15
-    if-ne p1, p3, :cond_18
+    :cond_0
+    if-ne p1, p3, :cond_1
 
     return p1
 
     .line 513
-    :cond_18
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -1958,7 +1958,7 @@
 .end method
 
 .method static decodePackedFixed32List([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -1988,8 +1988,8 @@
 
     add-int/2addr p3, p1
 
-    :goto_9
-    if-ge p1, p3, :cond_15
+    :goto_0
+    if-ge p1, p3, :cond_0
 
     .line 461
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed32([BI)I
@@ -2000,15 +2000,15 @@
 
     add-int/lit8 p1, p1, 0x4
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_15
-    if-ne p1, p3, :cond_18
+    :cond_0
+    if-ne p1, p3, :cond_1
 
     return p1
 
     .line 465
-    :cond_18
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2017,7 +2017,7 @@
 .end method
 
 .method static decodePackedFixed64List([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -2047,8 +2047,8 @@
 
     add-int/2addr p3, p1
 
-    :goto_9
-    if-ge p1, p3, :cond_15
+    :goto_0
+    if-ge p1, p3, :cond_0
 
     .line 477
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed64([BI)J
@@ -2059,15 +2059,15 @@
 
     add-int/lit8 p1, p1, 0x8
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_15
-    if-ne p1, p3, :cond_18
+    :cond_0
+    if-ne p1, p3, :cond_1
 
     return p1
 
     .line 481
-    :cond_18
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2076,7 +2076,7 @@
 .end method
 
 .method static decodePackedFloatList([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -2106,8 +2106,8 @@
 
     add-int/2addr p3, p1
 
-    :goto_9
-    if-ge p1, p3, :cond_15
+    :goto_0
+    if-ge p1, p3, :cond_0
 
     .line 493
     invoke-static {p0, p1}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFloat([BI)F
@@ -2118,15 +2118,15 @@
 
     add-int/lit8 p1, p1, 0x4
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_15
-    if-ne p1, p3, :cond_18
+    :cond_0
+    if-ne p1, p3, :cond_1
 
     return p1
 
     .line 497
-    :cond_18
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2135,7 +2135,7 @@
 .end method
 
 .method static decodePackedSInt32List([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -2165,8 +2165,8 @@
 
     add-int/2addr v0, p1
 
-    :goto_9
-    if-ge p1, v0, :cond_19
+    :goto_0
+    if-ge p1, v0, :cond_0
 
     .line 541
     invoke-static {p0, p1, p3}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2182,15 +2182,15 @@
 
     invoke-virtual {p2, v1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->addInt(I)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_19
-    if-ne p1, v0, :cond_1c
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     return p1
 
     .line 545
-    :cond_1c
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2199,7 +2199,7 @@
 .end method
 
 .method static decodePackedSInt64List([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -2229,8 +2229,8 @@
 
     add-int/2addr v0, p1
 
-    :goto_9
-    if-ge p1, v0, :cond_19
+    :goto_0
+    if-ge p1, v0, :cond_0
 
     .line 558
     invoke-static {p0, p1, p3}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2246,15 +2246,15 @@
 
     invoke-virtual {p2, v1, v2}, Landroidx/datastore/preferences/protobuf/LongArrayList;->addLong(J)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_19
-    if-ne p1, v0, :cond_1c
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     return p1
 
     .line 562
-    :cond_1c
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2263,7 +2263,7 @@
 .end method
 
 .method static decodePackedVarint32List([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -2293,8 +2293,8 @@
 
     add-int/2addr v0, p1
 
-    :goto_9
-    if-ge p1, v0, :cond_15
+    :goto_0
+    if-ge p1, v0, :cond_0
 
     .line 429
     invoke-static {p0, p1, p3}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2306,15 +2306,15 @@
 
     invoke-virtual {p2, v1}, Landroidx/datastore/preferences/protobuf/IntArrayList;->addInt(I)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_15
-    if-ne p1, v0, :cond_18
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     return p1
 
     .line 433
-    :cond_18
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2323,7 +2323,7 @@
 .end method
 
 .method static decodePackedVarint64List([BILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BI",
@@ -2353,8 +2353,8 @@
 
     add-int/2addr v0, p1
 
-    :goto_9
-    if-ge p1, v0, :cond_15
+    :goto_0
+    if-ge p1, v0, :cond_0
 
     .line 445
     invoke-static {p0, p1, p3}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2366,15 +2366,15 @@
 
     invoke-virtual {p2, v1, v2}, Landroidx/datastore/preferences/protobuf/LongArrayList;->addLong(J)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_15
-    if-ne p1, v0, :cond_18
+    :cond_0
+    if-ne p1, v0, :cond_1
 
     return p1
 
     .line 449
-    :cond_18
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2383,7 +2383,7 @@
 .end method
 
 .method static decodeSInt32List(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -2411,8 +2411,8 @@
 
     invoke-virtual {p4, v0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->addInt(I)V
 
-    :goto_f
-    if-ge p2, p3, :cond_28
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 395
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2422,12 +2422,12 @@
     .line 396
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_1a
+    if-eq p0, v1, :cond_0
 
-    goto :goto_28
+    goto :goto_1
 
     .line 399
-    :cond_1a
+    :cond_0
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -2441,15 +2441,15 @@
 
     invoke-virtual {p4, v0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->addInt(I)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeSInt64List(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -2477,8 +2477,8 @@
 
     invoke-virtual {p4, v0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->addLong(J)V
 
-    :goto_f
-    if-ge p2, p3, :cond_28
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 412
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2488,12 +2488,12 @@
     .line 413
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_1a
+    if-eq p0, v1, :cond_0
 
-    goto :goto_28
+    goto :goto_1
 
     .line 416
-    :cond_1a
+    :cond_0
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -2507,15 +2507,15 @@
 
     invoke-virtual {p4, v0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->addLong(J)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeString([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -2530,9 +2530,9 @@
     .line 187
     iget v0, p2, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_1
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const-string p0, ""
 
@@ -2542,7 +2542,7 @@
     return p1
 
     .line 194
-    :cond_f
+    :cond_0
     new-instance v1, Ljava/lang/String;
 
     sget-object v2, Landroidx/datastore/preferences/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
@@ -2556,7 +2556,7 @@
     return p1
 
     .line 189
-    :cond_1a
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2565,7 +2565,7 @@
 .end method
 
 .method static decodeStringList(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 10
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -2590,19 +2590,19 @@
     .line 574
     iget v0, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_45
+    if-ltz v0, :cond_5
 
     const-string v1, ""
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 578
     invoke-interface {p4, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 580
-    :cond_10
+    :cond_0
     new-instance v2, Ljava/lang/String;
 
     sget-object v3, Landroidx/datastore/preferences/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
@@ -2612,11 +2612,11 @@
     .line 581
     invoke-interface {p4, v2}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    :goto_1a
+    :goto_0
     add-int/2addr p2, v0
 
-    :goto_1b
-    if-ge p2, p3, :cond_44
+    :goto_1
+    if-ge p2, p3, :cond_4
 
     .line 585
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2626,12 +2626,12 @@
     .line 586
     iget v2, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v2, :cond_26
+    if-eq p0, v2, :cond_1
 
-    goto :goto_44
+    goto :goto_2
 
     .line 589
-    :cond_26
+    :cond_1
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -2639,17 +2639,17 @@
     .line 590
     iget v0, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_3f
+    if-ltz v0, :cond_3
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_2
 
     .line 594
     invoke-interface {p4, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 596
-    :cond_34
+    :cond_2
     new-instance v2, Ljava/lang/String;
 
     sget-object v3, Landroidx/datastore/preferences/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
@@ -2659,22 +2659,22 @@
     .line 597
     invoke-interface {p4, v2}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 592
-    :cond_3f
+    :cond_3
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_44
-    :goto_44
+    :cond_4
+    :goto_2
     return p2
 
     .line 576
-    :cond_45
+    :cond_5
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2683,7 +2683,7 @@
 .end method
 
 .method static decodeStringListRequireUtf8(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 11
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -2708,18 +2708,18 @@
     .line 613
     iget v0, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_5f
+    if-ltz v0, :cond_7
 
     const-string v1, ""
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 617
     invoke-interface {p4, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_10
+    :cond_0
     add-int v2, p2, v0
 
     .line 619
@@ -2727,7 +2727,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5a
+    if-eqz v3, :cond_6
 
     .line 622
     new-instance v3, Ljava/lang/String;
@@ -2739,11 +2739,11 @@
     .line 623
     invoke-interface {p4, v3}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    :goto_22
+    :goto_0
     move p2, v2
 
-    :goto_23
-    if-ge p2, p3, :cond_59
+    :goto_1
+    if-ge p2, p3, :cond_5
 
     .line 627
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2753,12 +2753,12 @@
     .line 628
     iget v2, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v2, :cond_2e
+    if-eq p0, v2, :cond_1
 
-    goto :goto_59
+    goto :goto_2
 
     .line 631
-    :cond_2e
+    :cond_1
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -2766,16 +2766,16 @@
     .line 632
     iget v0, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_54
+    if-ltz v0, :cond_4
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_2
 
     .line 636
     invoke-interface {p4, v1}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_3c
+    :cond_2
     add-int v2, p2, v0
 
     .line 638
@@ -2783,7 +2783,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4f
+    if-eqz v3, :cond_3
 
     .line 641
     new-instance v3, Ljava/lang/String;
@@ -2795,10 +2795,10 @@
     .line 642
     invoke-interface {p4, v3}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_22
+    goto :goto_0
 
     .line 639
-    :cond_4f
+    :cond_3
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidUtf8()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2806,19 +2806,19 @@
     throw p0
 
     .line 634
-    :cond_54
+    :cond_4
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_59
-    :goto_59
+    :cond_5
+    :goto_2
     return p2
 
     .line 620
-    :cond_5a
+    :cond_6
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidUtf8()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2826,7 +2826,7 @@
     throw p0
 
     .line 615
-    :cond_5f
+    :cond_7
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2835,7 +2835,7 @@
 .end method
 
 .method static decodeStringRequireUtf8([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -2850,9 +2850,9 @@
     .line 203
     iget v0, p2, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz v0, :cond_17
+    if-ltz v0, :cond_1
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const-string p0, ""
 
@@ -2862,7 +2862,7 @@
     return p1
 
     .line 210
-    :cond_f
+    :cond_0
     invoke-static {p0, p1, v0}, Landroidx/datastore/preferences/protobuf/Utf8;->decodeUtf8([BII)Ljava/lang/String;
 
     move-result-object p0
@@ -2874,7 +2874,7 @@
     return p1
 
     .line 205
-    :cond_17
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2883,7 +2883,7 @@
 .end method
 
 .method static decodeUnknownField(I[BIILandroidx/datastore/preferences/protobuf/UnknownFieldSetLite;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 15
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -2895,30 +2895,30 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_b
 
     .line 994
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
 
-    if-eqz v0, :cond_90
+    if-eqz v0, :cond_a
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_82
+    if-eq v0, v1, :cond_9
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_5b
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_2b
+    if-eq v0, v1, :cond_1
 
     const/4 p3, 0x5
 
-    if-ne v0, p3, :cond_26
+    if-ne v0, p3, :cond_0
 
     .line 1000
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed32([BI)I
@@ -2936,7 +2936,7 @@
     return p2
 
     .line 1036
-    :cond_26
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidTag()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -2944,7 +2944,7 @@
     throw p0
 
     .line 1019
-    :cond_2b
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->newInstance()Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
     move-result-object v6
@@ -2955,8 +2955,8 @@
 
     const/4 v0, 0x0
 
-    :goto_34
-    if-ge p2, p3, :cond_4e
+    :goto_0
+    if-ge p2, p3, :cond_3
 
     .line 1023
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -2966,15 +2966,15 @@
     .line 1024
     iget p2, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ne p2, v7, :cond_41
+    if-ne p2, v7, :cond_2
 
     move v0, p2
 
     move p2, v2
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_41
+    :cond_2
     move v0, p2
 
     move-object v1, p1
@@ -2996,13 +2996,13 @@
 
     move p2, v8
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_4e
-    :goto_4e
-    if-gt p2, p3, :cond_56
+    :cond_3
+    :goto_1
+    if-gt p2, p3, :cond_4
 
-    if-ne v0, v7, :cond_56
+    if-ne v0, v7, :cond_4
 
     .line 1033
     invoke-virtual {p4, p0, v6}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
@@ -3010,7 +3010,7 @@
     return p2
 
     .line 1031
-    :cond_56
+    :cond_4
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->parseFailure()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -3018,7 +3018,7 @@
     throw p0
 
     .line 1006
-    :cond_5b
+    :cond_5
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -3026,39 +3026,39 @@
     .line 1007
     iget p3, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ltz p3, :cond_7d
+    if-ltz p3, :cond_8
 
     .line 1010
     array-length p5, p1
 
     sub-int/2addr p5, p2
 
-    if-gt p3, p5, :cond_78
+    if-gt p3, p5, :cond_7
 
-    if-nez p3, :cond_6f
+    if-nez p3, :cond_6
 
     .line 1013
     sget-object p1, Landroidx/datastore/preferences/protobuf/ByteString;->EMPTY:Landroidx/datastore/preferences/protobuf/ByteString;
 
     invoke-virtual {p4, p0, p1}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
 
-    goto :goto_76
+    goto :goto_2
 
     .line 1015
-    :cond_6f
+    :cond_6
     invoke-static {p1, p2, p3}, Landroidx/datastore/preferences/protobuf/ByteString;->copyFrom([BII)Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object p1
 
     invoke-virtual {p4, p0, p1}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
 
-    :goto_76
+    :goto_2
     add-int/2addr p2, p3
 
     return p2
 
     .line 1011
-    :cond_78
+    :cond_7
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -3066,7 +3066,7 @@
     throw p0
 
     .line 1009
-    :cond_7d
+    :cond_8
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -3074,7 +3074,7 @@
     throw p0
 
     .line 1003
-    :cond_82
+    :cond_9
     invoke-static {p1, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v0
@@ -3090,7 +3090,7 @@
     return p2
 
     .line 996
-    :cond_90
+    :cond_a
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
@@ -3107,7 +3107,7 @@
     return p1
 
     .line 992
-    :cond_9e
+    :cond_b
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidTag()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -3116,7 +3116,7 @@
 .end method
 
 .method static decodeVarint32(I[BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 5
+    .locals 1
 
     and-int/lit8 p0, p0, 0x7f
 
@@ -3125,7 +3125,7 @@
     .line 90
     aget-byte p2, p1, p2
 
-    if-ltz p2, :cond_e
+    if-ltz p2, :cond_0
 
     shl-int/lit8 p1, p2, 0x7
 
@@ -3136,7 +3136,7 @@
 
     return v0
 
-    :cond_e
+    :cond_0
     and-int/lit8 p2, p2, 0x7f
 
     shl-int/lit8 p2, p2, 0x7
@@ -3148,7 +3148,7 @@
     .line 97
     aget-byte v0, p1, v0
 
-    if-ltz v0, :cond_1f
+    if-ltz v0, :cond_1
 
     shl-int/lit8 p1, v0, 0xe
 
@@ -3159,7 +3159,7 @@
 
     return p2
 
-    :cond_1f
+    :cond_1
     and-int/lit8 v0, v0, 0x7f
 
     shl-int/lit8 v0, v0, 0xe
@@ -3171,7 +3171,7 @@
     .line 104
     aget-byte p2, p1, p2
 
-    if-ltz p2, :cond_30
+    if-ltz p2, :cond_2
 
     shl-int/lit8 p1, p2, 0x15
 
@@ -3182,7 +3182,7 @@
 
     return v0
 
-    :cond_30
+    :cond_2
     and-int/lit8 p2, p2, 0x7f
 
     shl-int/lit8 p2, p2, 0x15
@@ -3194,7 +3194,7 @@
     .line 111
     aget-byte v0, p1, v0
 
-    if-ltz v0, :cond_41
+    if-ltz v0, :cond_3
 
     shl-int/lit8 p1, v0, 0x1c
 
@@ -3205,41 +3205,41 @@
 
     return p2
 
-    :cond_41
+    :cond_3
     and-int/lit8 v0, v0, 0x7f
 
     shl-int/lit8 v0, v0, 0x1c
 
     or-int/2addr p0, v0
 
-    :goto_46
+    :goto_0
     add-int/lit8 v0, p2, 0x1
 
     .line 118
     aget-byte p2, p1, p2
 
-    if-gez p2, :cond_4e
+    if-gez p2, :cond_4
 
     move p2, v0
 
-    goto :goto_46
+    goto :goto_0
 
     .line 120
-    :cond_4e
+    :cond_4
     iput p0, p3, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
     return v0
 .end method
 
 .method static decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 4
+    .locals 1
 
     add-int/lit8 v0, p1, 0x1
 
     .line 79
     aget-byte p1, p0, p1
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
     .line 81
     iput p1, p2, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
@@ -3247,7 +3247,7 @@
     return v0
 
     .line 84
-    :cond_9
+    :cond_0
     invoke-static {p1, p0, v0, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32(I[BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p0
@@ -3256,7 +3256,7 @@
 .end method
 
 .method static decodeVarint32List(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -3280,8 +3280,8 @@
 
     invoke-virtual {p4, v0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->addInt(I)V
 
-    :goto_b
-    if-ge p2, p3, :cond_20
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 276
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -3291,12 +3291,12 @@
     .line 277
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 280
-    :cond_16
+    :cond_0
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -3306,15 +3306,15 @@
 
     invoke-virtual {p4, v0}, Landroidx/datastore/preferences/protobuf/IntArrayList;->addInt(I)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static decodeVarint64(J[BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 12
+    .locals 7
 
     const-wide/16 v0, 0x7f
 
@@ -3337,8 +3337,8 @@
 
     move v1, v3
 
-    :goto_e
-    if-gez p3, :cond_1e
+    :goto_0
+    if-gez p3, :cond_0
 
     add-int/lit8 p3, v0, 0x1
 
@@ -3361,17 +3361,17 @@
 
     move p3, v6
 
-    goto :goto_e
+    goto :goto_0
 
     .line 149
-    :cond_1e
+    :cond_0
     iput-wide p0, p4, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->long1:J
 
     return v0
 .end method
 
 .method static decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 5
 
     add-int/lit8 v0, p1, 0x1
 
@@ -3384,7 +3384,7 @@
 
     cmp-long p1, v1, v3
 
-    if-ltz p1, :cond_e
+    if-ltz p1, :cond_0
 
     .line 131
     iput-wide v1, p2, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->long1:J
@@ -3392,7 +3392,7 @@
     return v0
 
     .line 134
-    :cond_e
+    :cond_0
     invoke-static {v1, v2, p0, v0, p2}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64(J[BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p0
@@ -3401,7 +3401,7 @@
 .end method
 
 .method static decodeVarint64List(I[BIILandroidx/datastore/preferences/protobuf/Internal$ProtobufList;Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 8
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[BII",
@@ -3425,8 +3425,8 @@
 
     invoke-virtual {p4, v0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->addLong(J)V
 
-    :goto_b
-    if-ge p2, p3, :cond_20
+    :goto_0
+    if-ge p2, p3, :cond_1
 
     .line 293
     invoke-static {p1, p2, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -3436,12 +3436,12 @@
     .line 294
     iget v1, p5, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-eq p0, v1, :cond_16
+    if-eq p0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 297
-    :cond_16
+    :cond_0
     invoke-static {p1, v0, p5}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
@@ -3451,15 +3451,15 @@
 
     invoke-virtual {p4, v0, v1}, Landroidx/datastore/preferences/protobuf/LongArrayList;->addLong(J)V
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return p2
 .end method
 
 .method static skipField(I[BIILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -3471,52 +3471,52 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_8
 
     .line 1046
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/WireFormat;->getTagWireType(I)I
 
     move-result v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_7
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_47
+    if-eq v0, v1, :cond_6
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_3f
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_20
+    if-eq v0, v1, :cond_1
 
     const/4 p0, 0x5
 
-    if-ne v0, p0, :cond_1b
+    if-ne v0, p0, :cond_0
 
     add-int/lit8 p2, p2, 0x4
 
     return p2
 
     .line 1073
-    :cond_1b
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidTag()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_20
+    :cond_1
     and-int/lit8 p0, p0, -0x8
 
     or-int/lit8 p0, p0, 0x4
 
     const/4 v0, 0x0
 
-    :goto_25
-    if-ge p2, p3, :cond_35
+    :goto_0
+    if-ge p2, p3, :cond_3
 
     .line 1061
     invoke-static {p1, p2, p4}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
@@ -3526,28 +3526,28 @@
     .line 1062
     iget v0, p4, Landroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;->int1:I
 
-    if-ne v0, p0, :cond_30
+    if-ne v0, p0, :cond_2
 
-    goto :goto_35
+    goto :goto_1
 
     .line 1066
-    :cond_30
+    :cond_2
     invoke-static {v0, p1, p2, p3, p4}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->skipField(I[BIILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p2
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_35
-    :goto_35
-    if-gt p2, p3, :cond_3a
+    :cond_3
+    :goto_1
+    if-gt p2, p3, :cond_4
 
-    if-ne v0, p0, :cond_3a
+    if-ne v0, p0, :cond_4
 
     return p2
 
     .line 1069
-    :cond_3a
+    :cond_4
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->parseFailure()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0
@@ -3555,7 +3555,7 @@
     throw p0
 
     .line 1055
-    :cond_3f
+    :cond_5
     invoke-static {p1, p2, p4}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint32([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p0
@@ -3567,13 +3567,13 @@
 
     return p0
 
-    :cond_47
+    :cond_6
     add-int/lit8 p2, p2, 0x8
 
     return p2
 
     .line 1048
-    :cond_4a
+    :cond_7
     invoke-static {p1, p2, p4}, Landroidx/datastore/preferences/protobuf/ArrayDecoders;->decodeVarint64([BILandroidx/datastore/preferences/protobuf/ArrayDecoders$Registers;)I
 
     move-result p0
@@ -3581,7 +3581,7 @@
     return p0
 
     .line 1044
-    :cond_4f
+    :cond_8
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->invalidTag()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p0

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method private getBasicAuthorizationHeaderValue(Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -108,7 +108,7 @@
 .end method
 
 .method private getDigestAuthorizationHeaderValue(Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;Landroid/net/Uri;I)Ljava/lang/String;
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -117,7 +117,7 @@
 
     const-string v0, ":"
 
-    :try_start_2
+    :try_start_0
     const-string v1, "MD5"
 
     .line 130
@@ -278,7 +278,7 @@
 
     const/4 v6, 0x5
 
-    if-eqz v0, :cond_ae
+    if-eqz v0, :cond_0
 
     const-string v0, "Digest username=\"%s\", realm=\"%s\", nonce=\"%s\", uri=\"%s\", response=\"%s\""
 
@@ -307,7 +307,7 @@
 
     return-object p1
 
-    :cond_ae
+    :cond_0
     const-string v0, "Digest username=\"%s\", realm=\"%s\", nonce=\"%s\", uri=\"%s\", response=\"%s\", opaque=\"%s\""
 
     const/4 v7, 0x6
@@ -338,12 +338,12 @@
     invoke-static {v0, v7}, Landroidx/media3/common/util/Util;->formatInvariant(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
-    :try_end_cb
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_2 .. :try_end_cb} :catch_cc
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_cc
+    :catch_0
     move-exception p1
 
     const/4 p2, 0x0
@@ -359,7 +359,7 @@
 
 # virtual methods
 .method public getAuthorizationHeaderValue(Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;Landroid/net/Uri;I)Ljava/lang/String;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -371,11 +371,11 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_18
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 111
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;->getDigestAuthorizationHeaderValue(Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;Landroid/net/Uri;I)Ljava/lang/String;
@@ -385,7 +385,7 @@
     return-object p1
 
     .line 113
-    :cond_d
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -399,7 +399,7 @@
     throw p1
 
     .line 109
-    :cond_18
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspAuthenticationInfo;->getBasicAuthorizationHeaderValue(Landroidx/media3/exoplayer/rtsp/RtspMessageUtil$RtspAuthUserInfo;)Ljava/lang/String;
 
     move-result-object p1

@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 261
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public setPathRotate(Landroid/view/View;Landroidx/constraintlayout/motion/widget/KeyCache;FJDD)Z
-    .registers 16
+    .locals 6
 
     move-object v0, p0
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public setProperty(Landroid/view/View;FJLandroidx/constraintlayout/motion/widget/KeyCache;)Z
-    .registers 6
+    .locals 0
 
     .line 264
     iget-boolean p1, p0, Landroidx/constraintlayout/motion/widget/TimeCycleSplineSet$PathRotate;->mContinue:Z

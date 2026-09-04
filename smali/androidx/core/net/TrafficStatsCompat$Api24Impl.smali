@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static tagDatagramSocket(Ljava/net/DatagramSocket;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/net/SocketException;
@@ -39,7 +39,7 @@
 .end method
 
 .method static untagDatagramSocket(Ljava/net/DatagramSocket;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/net/SocketException;

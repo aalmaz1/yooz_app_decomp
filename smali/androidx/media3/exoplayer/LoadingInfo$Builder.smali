@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/exoplayer/LoadingInfo;)V
-    .registers 4
+    .locals 2
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/LoadingInfo;Landroidx/media3/exoplayer/LoadingInfo$1;)V
-    .registers 3
+    .locals 0
 
     .line 32
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/LoadingInfo$Builder;-><init>(Landroidx/media3/exoplayer/LoadingInfo;)V
@@ -79,7 +79,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/LoadingInfo$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 32
     iget-wide v0, p0, Landroidx/media3/exoplayer/LoadingInfo$Builder;->playbackPositionUs:J
@@ -88,7 +88,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/LoadingInfo$Builder;)F
-    .registers 1
+    .locals 0
 
     .line 32
     iget p0, p0, Landroidx/media3/exoplayer/LoadingInfo$Builder;->playbackSpeed:F
@@ -97,7 +97,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/LoadingInfo$Builder;)J
-    .registers 3
+    .locals 2
 
     .line 32
     iget-wide v0, p0, Landroidx/media3/exoplayer/LoadingInfo$Builder;->lastRebufferRealtimeMs:J
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/LoadingInfo;
-    .registers 3
+    .locals 2
 
     .line 85
     new-instance v0, Landroidx/media3/exoplayer/LoadingInfo;
@@ -121,33 +121,33 @@
 .end method
 
 .method public setLastRebufferRealtimeMs(J)Landroidx/media3/exoplayer/LoadingInfo$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
-    if-gez v0, :cond_12
+    if-gez v0, :cond_1
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p1, v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 78
-    :goto_13
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 79
@@ -157,7 +157,7 @@
 .end method
 
 .method public setPlaybackPositionUs(J)Landroidx/media3/exoplayer/LoadingInfo$Builder;
-    .registers 3
+    .locals 0
 
     .line 53
     iput-wide p1, p0, Landroidx/media3/exoplayer/LoadingInfo$Builder;->playbackPositionUs:J
@@ -166,33 +166,33 @@
 .end method
 
 .method public setPlaybackSpeed(F)Landroidx/media3/exoplayer/LoadingInfo$Builder;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_1
 
     const v0, -0x800001
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 65
-    :goto_10
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 66

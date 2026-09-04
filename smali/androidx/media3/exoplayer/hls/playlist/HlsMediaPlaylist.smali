@@ -91,7 +91,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;Ljava/util/List;JZJZIJIJJZZZLandroidx/media3/common/DrmInitData;Ljava/util/List;Ljava/util/List;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;Ljava/util/Map;)V
-    .registers 36
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -215,7 +215,7 @@
 
     const-wide/16 v4, 0x0
 
-    if-nez v3, :cond_60
+    if-nez v3, :cond_0
 
     .line 562
     invoke-static/range {p23 .. p23}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -233,15 +233,15 @@
 
     iput-wide v6, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
-    goto :goto_76
+    goto :goto_0
 
     .line 564
-    :cond_60
+    :cond_0
     invoke-interface/range {p22 .. p22}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_74
+    if-nez v3, :cond_1
 
     .line 565
     invoke-static/range {p22 .. p22}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -259,25 +259,25 @@
 
     iput-wide v6, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
-    goto :goto_76
+    goto :goto_0
 
     .line 568
-    :cond_74
+    :cond_1
     iput-wide v4, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
-    :goto_76
+    :goto_0
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v3, v1, v6
 
-    if-nez v3, :cond_80
+    if-nez v3, :cond_2
 
-    goto :goto_92
+    goto :goto_1
 
-    :cond_80
+    :cond_2
     cmp-long v3, v1, v4
 
-    if-ltz v3, :cond_8b
+    if-ltz v3, :cond_3
 
     .line 577
     iget-wide v6, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
@@ -286,10 +286,10 @@
 
     move-result-wide v6
 
-    goto :goto_92
+    goto :goto_1
 
     .line 578
-    :cond_8b
+    :cond_3
     iget-wide v6, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->durationUs:J
 
     add-long/2addr v6, v1
@@ -298,22 +298,22 @@
 
     move-result-wide v6
 
-    :goto_92
+    :goto_1
     iput-wide v6, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startOffsetUs:J
 
     cmp-long v1, v1, v4
 
-    if-ltz v1, :cond_9a
+    if-ltz v1, :cond_4
 
     const/4 v1, 0x1
 
-    goto :goto_9b
+    goto :goto_2
 
-    :cond_9a
+    :cond_4
     const/4 v1, 0x0
 
     .line 579
-    :goto_9b
+    :goto_2
     iput-boolean v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasPositiveStartOffset:Z
 
     move-object/from16 v1, p24
@@ -327,7 +327,7 @@
 
 # virtual methods
 .method public copy(Ljava/util/List;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -342,7 +342,7 @@
 .end method
 
 .method public bridge synthetic copy(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 41
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->copy(Ljava/util/List;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
@@ -353,7 +353,7 @@
 .end method
 
 .method public copyWith(JI)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    .registers 32
+    .locals 28
 
     move-object/from16 v0, p0
 
@@ -434,19 +434,19 @@
 .end method
 
 .method public copyWithEndTag()Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    .registers 31
+    .locals 30
 
     move-object/from16 v0, p0
 
     .line 655
     iget-boolean v1, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasEndTag:Z
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_0
 
     return-object v0
 
     .line 658
-    :cond_7
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     move-object v2, v1
@@ -521,7 +521,7 @@
 .end method
 
 .method public getEndTimeUs()J
-    .registers 5
+    .locals 4
 
     .line 614
     iget-wide v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->startTimeUs:J
@@ -534,11 +534,11 @@
 .end method
 
 .method public isNewerThan(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_5
 
     .line 595
     iget-wide v1, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->mediaSequence:J
@@ -547,21 +547,21 @@
 
     cmp-long v5, v1, v3
 
-    if-lez v5, :cond_c
+    if-lez v5, :cond_0
 
-    goto :goto_40
+    goto :goto_1
 
-    :cond_c
+    :cond_0
     cmp-long v1, v1, v3
 
     const/4 v2, 0x0
 
-    if-gez v1, :cond_12
+    if-gez v1, :cond_1
 
     return v2
 
     .line 602
-    :cond_12
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -576,20 +576,20 @@
 
     sub-int/2addr v1, v3
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_3
 
-    if-lez v1, :cond_24
+    if-lez v1, :cond_2
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_2
     move v0, v2
 
-    :goto_25
+    :goto_0
     return v0
 
     .line 606
-    :cond_26
+    :cond_3
     iget-object v1, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->trailingParts:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -603,25 +603,25 @@
 
     move-result v3
 
-    if-gt v1, v3, :cond_40
+    if-gt v1, v3, :cond_5
 
-    if-ne v1, v3, :cond_3f
+    if-ne v1, v3, :cond_4
 
     .line 608
     iget-boolean v1, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasEndTag:Z
 
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_4
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->hasEndTag:Z
 
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_4
 
-    goto :goto_40
+    goto :goto_1
 
-    :cond_3f
+    :cond_4
     move v0, v2
 
-    :cond_40
-    :goto_40
+    :cond_5
+    :goto_1
     return v0
 .end method

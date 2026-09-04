@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;)V
-    .registers 2
+    .locals 0
 
     .line 869
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemCallback$StubApi23;->this$0:Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onError(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 887
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemCallback$StubApi23;->this$0:Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;
@@ -47,9 +47,9 @@
 .end method
 
 .method public onItemLoaded(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 875
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$ItemCallback$StubApi23;->this$0:Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;
@@ -58,9 +58,9 @@
 
     invoke-virtual {p1, v0}, Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;->onItemLoaded(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 877
@@ -84,6 +84,6 @@
 
     invoke-virtual {p1, v0}, Landroid/support/v4/media/MediaBrowserCompat$ItemCallback;->onItemLoaded(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
 
-    :goto_1d
+    :goto_0
     return-void
 .end method

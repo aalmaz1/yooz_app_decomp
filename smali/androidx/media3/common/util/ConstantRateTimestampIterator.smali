@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(JF)V
-    .registers 10
+    .locals 6
 
     const-wide/16 v1, 0x0
 
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(JJF)V
-    .registers 11
+    .locals 5
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,51 +52,51 @@
 
     const/4 v4, 0x0
 
-    if-lez v2, :cond_d
+    if-lez v2, :cond_0
 
     move v2, v3
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v2, v4
 
     .line 66
-    :goto_e
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const/4 v2, 0x0
 
     cmpl-float v2, p5, v2
 
-    if-lez v2, :cond_18
+    if-lez v2, :cond_1
 
     move v2, v3
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v2, v4
 
     .line 67
-    :goto_19
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     cmp-long v0, v0, p1
 
-    if-gtz v0, :cond_25
+    if-gtz v0, :cond_2
 
     cmp-long v0, p1, p3
 
-    if-gez v0, :cond_25
+    if-gez v0, :cond_2
 
-    goto :goto_26
+    goto :goto_2
 
-    :cond_25
+    :cond_2
     move v3, v4
 
     .line 68
-    :goto_26
+    :goto_2
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 69
@@ -136,7 +136,7 @@
 .end method
 
 .method private getTimestampUsAfter(I)J
-    .registers 8
+    .locals 6
 
     .line 103
     iget-wide v0, p0, Landroidx/media3/common/util/ConstantRateTimestampIterator;->startPositionUs:J
@@ -157,17 +157,17 @@
 
     cmp-long p1, v0, v2
 
-    if-ltz p1, :cond_13
+    if-ltz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
     .line 105
-    :goto_14
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     return-wide v0
@@ -176,7 +176,7 @@
 
 # virtual methods
 .method public copyOf()Landroidx/media3/common/util/ConstantRateTimestampIterator;
-    .registers 8
+    .locals 7
 
     .line 90
     new-instance v6, Landroidx/media3/common/util/ConstantRateTimestampIterator;
@@ -195,7 +195,7 @@
 .end method
 
 .method public bridge synthetic copyOf()Landroidx/media3/common/util/TimestampIterator;
-    .registers 2
+    .locals 1
 
     .line 30
     invoke-virtual {p0}, Landroidx/media3/common/util/ConstantRateTimestampIterator;->copyOf()Landroidx/media3/common/util/ConstantRateTimestampIterator;
@@ -206,18 +206,18 @@
 .end method
 
 .method public getLastTimestampUs()J
-    .registers 3
+    .locals 2
 
     .line 95
     iget v0, p0, Landroidx/media3/common/util/ConstantRateTimestampIterator;->totalNumberOfFramesToAdd:I
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide v0
 
-    :cond_a
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
     .line 98
@@ -229,28 +229,28 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 79
     iget v0, p0, Landroidx/media3/common/util/ConstantRateTimestampIterator;->framesAdded:I
 
     iget v1, p0, Landroidx/media3/common/util/ConstantRateTimestampIterator;->totalNumberOfFramesToAdd:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public next()J
-    .registers 3
+    .locals 2
 
     .line 84
     invoke-virtual {p0}, Landroidx/media3/common/util/ConstantRateTimestampIterator;->hasNext()Z

@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 41
     new-instance v0, Landroidx/datastore/preferences/protobuf/BufferAllocator$1;
@@ -22,7 +22,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static unpooled()Landroidx/datastore/preferences/protobuf/BufferAllocator;
-    .registers 1
+    .locals 1
 
     .line 56
     sget-object v0, Landroidx/datastore/preferences/protobuf/BufferAllocator;->UNPOOLED:Landroidx/datastore/preferences/protobuf/BufferAllocator;

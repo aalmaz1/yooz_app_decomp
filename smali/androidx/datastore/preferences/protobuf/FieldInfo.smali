@@ -67,7 +67,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Ljava/lang/Class;Ljava/lang/reflect/Field;IZZLandroidx/datastore/preferences/protobuf/OneofInfo;Ljava/lang/Class;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;Ljava/lang/reflect/Field;)V
-    .registers 14
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,14 +134,14 @@
 .end method
 
 .method private static checkFieldNumber(I)V
-    .registers 4
+    .locals 3
 
-    if-lez p0, :cond_3
+    if-lez p0, :cond_0
 
     return-void
 
     .line 261
-    :cond_3
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -164,7 +164,7 @@
 .end method
 
 .method public static forField(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Z)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 19
+    .locals 15
 
     move-object/from16 v3, p2
 
@@ -186,11 +186,11 @@
     .line 69
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType;->MESSAGE_LIST:Landroidx/datastore/preferences/protobuf/FieldType;
 
-    if-eq v3, v0, :cond_2f
+    if-eq v3, v0, :cond_0
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType;->GROUP_LIST:Landroidx/datastore/preferences/protobuf/FieldType;
 
-    if-eq v3, v0, :cond_2f
+    if-eq v3, v0, :cond_0
 
     .line 72
     new-instance v14, Landroidx/datastore/preferences/protobuf/FieldInfo;
@@ -228,7 +228,7 @@
     return-object v14
 
     .line 70
-    :cond_2f
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Shouldn\'t be called for repeated message fields."
@@ -239,7 +239,7 @@
 .end method
 
 .method public static forFieldWithEnumVerifier(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 19
+    .locals 15
 
     .line 138
     invoke-static/range {p1 .. p1}, Landroidx/datastore/preferences/protobuf/FieldInfo;->checkFieldNumber(I)V
@@ -286,7 +286,7 @@
 .end method
 
 .method public static forMapField(Ljava/lang/reflect/Field;ILjava/lang/Object;Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 19
+    .locals 15
 
     const-string v0, "mapDefaultEntry"
 
@@ -338,7 +338,7 @@
 .end method
 
 .method public static forOneofMemberField(ILandroidx/datastore/preferences/protobuf/FieldType;Landroidx/datastore/preferences/protobuf/OneofInfo;Ljava/lang/Class;ZLandroidx/datastore/preferences/protobuf/Internal$EnumVerifier;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 21
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -381,7 +381,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_0
 
     .line 243
     new-instance v14, Landroidx/datastore/preferences/protobuf/FieldInfo;
@@ -419,7 +419,7 @@
     return-object v14
 
     .line 237
-    :cond_37
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -454,7 +454,7 @@
 .end method
 
 .method public static forPackedField(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Ljava/lang/reflect/Field;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 19
+    .locals 15
 
     move-object/from16 v3, p2
 
@@ -476,11 +476,11 @@
     .line 94
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType;->MESSAGE_LIST:Landroidx/datastore/preferences/protobuf/FieldType;
 
-    if-eq v3, v0, :cond_2f
+    if-eq v3, v0, :cond_0
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType;->GROUP_LIST:Landroidx/datastore/preferences/protobuf/FieldType;
 
-    if-eq v3, v0, :cond_2f
+    if-eq v3, v0, :cond_0
 
     .line 97
     new-instance v14, Landroidx/datastore/preferences/protobuf/FieldInfo;
@@ -518,7 +518,7 @@
     return-object v14
 
     .line 95
-    :cond_2f
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Shouldn\'t be called for repeated message fields."
@@ -529,7 +529,7 @@
 .end method
 
 .method public static forPackedFieldWithEnumVerifier(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;Ljava/lang/reflect/Field;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 20
+    .locals 15
 
     .line 162
     invoke-static/range {p1 .. p1}, Landroidx/datastore/preferences/protobuf/FieldInfo;->checkFieldNumber(I)V
@@ -576,7 +576,7 @@
 .end method
 
 .method public static forProto2OptionalField(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Ljava/lang/reflect/Field;IZLandroidx/datastore/preferences/protobuf/Internal$EnumVerifier;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 22
+    .locals 15
 
     move-object/from16 v5, p3
 
@@ -602,19 +602,19 @@
     .line 192
     invoke-static {v5, v0}, Landroidx/datastore/preferences/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    if-eqz v5, :cond_37
+    if-eqz v5, :cond_1
 
     .line 193
     invoke-static/range {p4 .. p4}, Landroidx/datastore/preferences/protobuf/FieldInfo;->isExactlyOneBitSet(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
-    goto :goto_37
+    goto :goto_0
 
     .line 194
-    :cond_20
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -637,8 +637,8 @@
 
     throw v0
 
-    :cond_37
-    :goto_37
+    :cond_1
+    :goto_0
     move/from16 v6, p4
 
     .line 197
@@ -678,7 +678,7 @@
 .end method
 
 .method public static forProto2RequiredField(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Ljava/lang/reflect/Field;IZLandroidx/datastore/preferences/protobuf/Internal$EnumVerifier;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 22
+    .locals 15
 
     move-object/from16 v5, p3
 
@@ -704,19 +704,19 @@
     .line 277
     invoke-static {v5, v0}, Landroidx/datastore/preferences/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    if-eqz v5, :cond_37
+    if-eqz v5, :cond_1
 
     .line 278
     invoke-static/range {p4 .. p4}, Landroidx/datastore/preferences/protobuf/FieldInfo;->isExactlyOneBitSet(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
-    goto :goto_37
+    goto :goto_0
 
     .line 279
-    :cond_20
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -739,8 +739,8 @@
 
     throw v0
 
-    :cond_37
-    :goto_37
+    :cond_1
+    :goto_0
     move/from16 v6, p4
 
     .line 282
@@ -780,7 +780,7 @@
 .end method
 
 .method public static forRepeatedMessageField(Ljava/lang/reflect/Field;ILandroidx/datastore/preferences/protobuf/FieldType;Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/FieldInfo;
-    .registers 19
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -848,29 +848,29 @@
 .end method
 
 .method private static isExactlyOneBitSet(I)Z
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_9
+    if-eqz p0, :cond_0
 
     add-int/lit8 v0, p0, -0x1
 
     and-int/2addr p0, v0
 
-    if-nez p0, :cond_9
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_a
+    :goto_0
     return p0
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
-    .registers 2
+    .locals 2
 
     .line 446
     new-instance v0, Landroidx/datastore/preferences/protobuf/FieldInfo$Builder;
@@ -885,7 +885,7 @@
 
 # virtual methods
 .method public compareTo(Landroidx/datastore/preferences/protobuf/FieldInfo;)I
-    .registers 3
+    .locals 1
 
     .line 384
     iget v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->fieldNumber:I
@@ -898,7 +898,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 39
     check-cast p1, Landroidx/datastore/preferences/protobuf/FieldInfo;
@@ -911,7 +911,7 @@
 .end method
 
 .method public getCachedSizeField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 1
 
     .line 425
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->cachedSizeField:Ljava/lang/reflect/Field;
@@ -920,7 +920,7 @@
 .end method
 
 .method public getEnumVerifier()Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;
-    .registers 2
+    .locals 1
 
     .line 379
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->enumVerifier:Landroidx/datastore/preferences/protobuf/Internal$EnumVerifier;
@@ -929,7 +929,7 @@
 .end method
 
 .method public getField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 1
 
     .line 355
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->field:Ljava/lang/reflect/Field;
@@ -938,7 +938,7 @@
 .end method
 
 .method public getFieldNumber()I
-    .registers 2
+    .locals 1
 
     .line 350
     iget v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->fieldNumber:I
@@ -947,7 +947,7 @@
 .end method
 
 .method public getListElementType()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -963,7 +963,7 @@
 .end method
 
 .method public getMapDefaultEntry()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 401
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->mapDefaultEntry:Ljava/lang/Object;
@@ -972,7 +972,7 @@
 .end method
 
 .method public getMessageFieldClass()Ljava/lang/Class;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -994,51 +994,51 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1b
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_1b
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_18
+    if-eq v0, v1, :cond_0
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_18
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 439
-    :cond_18
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->messageClass:Ljava/lang/Class;
 
     return-object v0
 
     .line 436
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->field:Ljava/lang/reflect/Field;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_24
+    :cond_2
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->oneofStoredType:Ljava/lang/Class;
 
-    :goto_26
+    :goto_0
     return-object v0
 .end method
 
 .method public getOneof()Landroidx/datastore/preferences/protobuf/OneofInfo;
-    .registers 2
+    .locals 1
 
     .line 365
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->oneof:Landroidx/datastore/preferences/protobuf/OneofInfo;
@@ -1047,7 +1047,7 @@
 .end method
 
 .method public getOneofStoredType()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1063,7 +1063,7 @@
 .end method
 
 .method public getPresenceField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 1
 
     .line 397
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->presenceField:Ljava/lang/reflect/Field;
@@ -1072,7 +1072,7 @@
 .end method
 
 .method public getPresenceMask()I
-    .registers 2
+    .locals 1
 
     .line 409
     iget v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->presenceMask:I
@@ -1081,7 +1081,7 @@
 .end method
 
 .method public getType()Landroidx/datastore/preferences/protobuf/FieldType;
-    .registers 2
+    .locals 1
 
     .line 360
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->type:Landroidx/datastore/preferences/protobuf/FieldType;
@@ -1090,7 +1090,7 @@
 .end method
 
 .method public isEnforceUtf8()Z
-    .registers 2
+    .locals 1
 
     .line 421
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->enforceUtf8:Z
@@ -1099,7 +1099,7 @@
 .end method
 
 .method public isRequired()Z
-    .registers 2
+    .locals 1
 
     .line 414
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldInfo;->required:Z

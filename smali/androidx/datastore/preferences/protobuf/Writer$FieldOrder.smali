@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 44
     new-instance v0, Landroidx/datastore/preferences/protobuf/Writer$FieldOrder;
@@ -71,7 +71,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -85,7 +85,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Writer$FieldOrder;
-    .registers 2
+    .locals 1
 
     .line 42
     const-class v0, Landroidx/datastore/preferences/protobuf/Writer$FieldOrder;
@@ -100,7 +100,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/Writer$FieldOrder;
-    .registers 1
+    .locals 1
 
     .line 42
     sget-object v0, Landroidx/datastore/preferences/protobuf/Writer$FieldOrder;->$VALUES:[Landroidx/datastore/preferences/protobuf/Writer$FieldOrder;

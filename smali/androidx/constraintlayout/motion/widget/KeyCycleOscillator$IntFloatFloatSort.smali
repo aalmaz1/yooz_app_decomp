@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 364
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,40 +25,40 @@
 .end method
 
 .method private static partition([I[F[FII)I
-    .registers 8
+    .locals 3
 
     .line 384
     aget v0, p0, p4
 
     move v1, p3
 
-    :goto_3
-    if-ge p3, p4, :cond_11
+    :goto_0
+    if-ge p3, p4, :cond_1
 
     .line 387
     aget v2, p0, p3
 
-    if-gt v2, v0, :cond_e
+    if-gt v2, v0, :cond_0
 
     .line 388
     invoke-static {p0, p1, p2, v1, p3}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$IntFloatFloatSort;->swap([I[F[FII)V
 
     add-int/lit8 v1, v1, 0x1
 
-    :cond_e
+    :cond_0
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
     .line 392
-    :cond_11
+    :cond_1
     invoke-static {p0, p1, p2, v1, p4}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$IntFloatFloatSort;->swap([I[F[FII)V
 
     return v1
 .end method
 
 .method static sort([I[F[FII)V
-    .registers 11
+    .locals 6
 
     .line 366
     array-length v0, p0
@@ -79,9 +79,9 @@
 
     const/4 p3, 0x2
 
-    :cond_c
-    :goto_c
-    if-lez p3, :cond_30
+    :cond_0
+    :goto_0
+    if-lez p3, :cond_1
 
     add-int/lit8 p3, p3, -0x1
 
@@ -93,7 +93,7 @@
     .line 372
     aget v2, v0, p3
 
-    if-ge v1, v2, :cond_c
+    if-ge v1, v2, :cond_0
 
     .line 374
     invoke-static {p0, p1, p2, v1, v2}, Landroidx/constraintlayout/motion/widget/KeyCycleOscillator$IntFloatFloatSort;->partition([I[F[FII)I
@@ -124,14 +124,14 @@
     .line 378
     aput v3, v0, v1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     return-void
 .end method
 
 .method private static swap([I[F[FII)V
-    .registers 7
+    .locals 2
 
     .line 397
     aget v0, p0, p3

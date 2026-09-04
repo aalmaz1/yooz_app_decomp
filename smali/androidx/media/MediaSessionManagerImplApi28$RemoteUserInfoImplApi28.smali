@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/session/MediaSessionManager$RemoteUserInfo;)V
-    .registers 2
+    .locals 0
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/String;II)V
-    .registers 5
+    .locals 1
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,26 +53,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 80
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/media/MediaSessionManagerImplApi28$RemoteUserInfoImplApi28;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 83
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media/MediaSessionManagerImplApi28$RemoteUserInfoImplApi28;
 
     .line 84
@@ -88,7 +88,7 @@
 .end method
 
 .method public getPackageName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/media/MediaSessionManagerImplApi28$RemoteUserInfoImplApi28;->mObject:Landroid/media/session/MediaSessionManager$RemoteUserInfo;
@@ -101,7 +101,7 @@
 .end method
 
 .method public getPid()I
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/media/MediaSessionManagerImplApi28$RemoteUserInfoImplApi28;->mObject:Landroid/media/session/MediaSessionManager$RemoteUserInfo;
@@ -114,7 +114,7 @@
 .end method
 
 .method public getUid()I
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/media/MediaSessionManagerImplApi28$RemoteUserInfoImplApi28;->mObject:Landroid/media/session/MediaSessionManager$RemoteUserInfo;
@@ -127,7 +127,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 

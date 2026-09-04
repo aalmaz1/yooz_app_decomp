@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi21;Ljava/lang/Object;Landroidx/media/MediaBrowserServiceCompatApi21$ResultWrapper;)V
-    .registers 4
+    .locals 0
 
     .line 388
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi21$2;->this$1:Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi21;
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public detach()V
-    .registers 2
+    .locals 1
 
     .line 405
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi21$2;->val$resultWrapper:Landroidx/media/MediaBrowserServiceCompatApi21$ResultWrapper;
@@ -57,7 +57,7 @@
 .end method
 
 .method bridge synthetic onResultSent(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 388
     check-cast p1, Ljava/util/List;
@@ -68,7 +68,7 @@
 .end method
 
 .method onResultSent(Ljava/util/List;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
     .line 393
     new-instance v0, Ljava/util/ArrayList;
@@ -90,12 +90,12 @@
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -116,13 +116,13 @@
     .line 397
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     const/4 v0, 0x0
 
     .line 400
-    :cond_24
+    :cond_1
     iget-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi21$2;->val$resultWrapper:Landroidx/media/MediaBrowserServiceCompatApi21$ResultWrapper;
 
     invoke-virtual {p1, v0}, Landroidx/media/MediaBrowserServiceCompatApi21$ResultWrapper;->sendResult(Ljava/lang/Object;)V

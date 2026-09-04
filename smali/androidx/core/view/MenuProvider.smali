@@ -8,7 +8,7 @@
 .end method
 
 .method public onMenuClosed(Landroid/view/Menu;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
@@ -17,7 +17,7 @@
 .end method
 
 .method public onPrepareMenu(Landroid/view/Menu;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 456
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,18 +44,18 @@
 .end method
 
 .method private resolveMethod(Landroid/content/Context;)V
-    .registers 7
+    .locals 5
 
     :goto_0
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_2
 
     .line 481
-    :try_start_2
+    :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->isRestricted()Z
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     .line 482
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -78,24 +78,24 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     .line 484
     iput-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
     .line 485
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedContext:Landroid/content/Context;
-    :try_end_20
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     .line 493
-    :catch_21
-    :cond_21
+    :catch_0
+    :cond_0
     instance-of v0, p1, Landroid/content/ContextWrapper;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 494
     check-cast p1, Landroid/content/ContextWrapper;
@@ -106,13 +106,13 @@
 
     goto :goto_0
 
-    :cond_2c
+    :cond_1
     const/4 p1, 0x0
 
     goto :goto_0
 
     .line 501
-    :cond_2e
+    :cond_2
     iget-object p1, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mHostView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
@@ -121,14 +121,14 @@
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_3a
+    if-ne p1, v0, :cond_3
 
     const-string p1, ""
 
-    goto :goto_5d
+    goto :goto_1
 
     .line 503
-    :cond_3a
+    :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, " with id \'"
@@ -164,7 +164,7 @@
     move-result-object p1
 
     .line 504
-    :goto_5d
+    :goto_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -212,12 +212,12 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 6
+    .locals 4
 
     .line 463
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 464
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mHostView:Landroid/view/View;
@@ -229,8 +229,8 @@
     invoke-direct {p0, v0}, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->resolveMethod(Landroid/content/Context;)V
 
     .line 468
-    :cond_d
-    :try_start_d
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedMethod:Ljava/lang/reflect/Method;
 
     iget-object v1, p0, Landroidx/appcompat/app/AppCompatViewInflater$DeclaredOnClickListener;->mResolvedContext:Landroid/content/Context;
@@ -244,13 +244,13 @@
     aput-object p1, v2, v3
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1a
-    .catch Ljava/lang/IllegalAccessException; {:try_start_d .. :try_end_1a} :catch_24
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_d .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_1b
+    :catch_0
     move-exception p1
 
     .line 473
@@ -262,7 +262,7 @@
 
     throw v0
 
-    :catch_24
+    :catch_1
     move-exception p1
 
     .line 470

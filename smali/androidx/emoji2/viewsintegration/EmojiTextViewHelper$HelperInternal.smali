@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,13 +27,13 @@
 
 # virtual methods
 .method getFilters([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -41,25 +41,25 @@
 .end method
 
 .method setAllCaps(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method setEnabled(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method updateTransformationMethod()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method wrapTransformationMethod(Landroid/text/method/TransformationMethod;)Landroid/text/method/TransformationMethod;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method

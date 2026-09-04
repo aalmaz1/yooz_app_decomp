@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public create(Landroid/content/Context;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
 
     .line 88
     new-instance v0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultConfig;
@@ -67,7 +67,7 @@
 .end method
 
 .method public bridge synthetic create(Landroid/content/Context;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 73
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/EmojiCompatInitializer;->create(Landroid/content/Context;)Ljava/lang/Boolean;
@@ -78,7 +78,7 @@
 .end method
 
 .method delayUntilFirstResume(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 103
     invoke-static {p1}, Landroidx/startup/AppInitializer;->getInstance(Landroid/content/Context;)Landroidx/startup/AppInitializer;
@@ -111,7 +111,7 @@
 .end method
 
 .method public dependencies()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -134,7 +134,7 @@
 .end method
 
 .method loadEmojiCompatAfterDelay()V
-    .registers 5
+    .locals 4
 
     .line 118
     invoke-static {}, Landroidx/emoji2/text/ConcurrencyHelpers;->mainHandlerAsync()Landroid/os/Handler;

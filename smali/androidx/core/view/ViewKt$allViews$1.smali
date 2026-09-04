@@ -82,7 +82,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -133,7 +133,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Lkotlin/sequences/SequenceScope;
 
@@ -147,7 +147,7 @@
 .end method
 
 .method public final invoke(Lkotlin/sequences/SequenceScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,7 +179,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -192,17 +192,17 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
-    if-eq v1, v3, :cond_1a
+    if-eq v1, v3, :cond_1
 
-    if-ne v1, v2, :cond_12
+    if-ne v1, v2, :cond_0
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_55
+    goto :goto_1
 
-    :cond_12
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -211,16 +211,16 @@
 
     throw p1
 
-    :cond_1a
+    :cond_1
     iget-object v1, p0, Landroidx/core/view/ViewKt$allViews$1;->L$0:Ljava/lang/Object;
 
     check-cast v1, Lkotlin/sequences/SequenceScope;
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_22
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/core/view/ViewKt$allViews$1;->L$0:Ljava/lang/Object;
@@ -244,18 +244,18 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_3a
+    if-ne p1, v0, :cond_3
 
     return-object v0
 
     .line 410
-    :cond_3a
-    :goto_3a
+    :cond_3
+    :goto_0
     iget-object p1, p0, Landroidx/core/view/ViewKt$allViews$1;->$this_allViews:Landroid/view/View;
 
     instance-of v3, p1, Landroid/view/ViewGroup;
 
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_4
 
     .line 411
     check-cast p1, Landroid/view/ViewGroup;
@@ -278,13 +278,13 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_55
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
     .line 413
-    :cond_55
-    :goto_55
+    :cond_4
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

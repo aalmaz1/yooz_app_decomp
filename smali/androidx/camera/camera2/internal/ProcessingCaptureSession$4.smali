@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 373
     invoke-static {}, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->values()[Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;
@@ -33,7 +33,7 @@
 
     sput-object v0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$ProcessingCaptureSession$ProcessorState:[I
 
-    :try_start_9
+    :try_start_0
     sget-object v1, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->UNINITIALIZED:Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;
 
     invoke-virtual {v1}, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->ordinal()I
@@ -43,11 +43,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_12
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_12
-    :try_start_12
+    :catch_0
+    :try_start_1
     sget-object v0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$ProcessingCaptureSession$ProcessorState:[I
 
     sget-object v1, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->SESSION_INITIALIZED:Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;
@@ -59,11 +59,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1d} :catch_1d
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    :catch_1d
-    :try_start_1d
+    :catch_1
+    :try_start_2
     sget-object v0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$ProcessingCaptureSession$ProcessorState:[I
 
     sget-object v1, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->ON_CAPTURE_SESSION_STARTED:Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;
@@ -75,11 +75,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_28
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_28} :catch_28
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_28
-    :try_start_28
+    :catch_2
+    :try_start_3
     sget-object v0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$ProcessingCaptureSession$ProcessorState:[I
 
     sget-object v1, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->ON_CAPTURE_SESSION_ENDED:Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;
@@ -91,11 +91,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_33
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_28 .. :try_end_33} :catch_33
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    :catch_33
-    :try_start_33
+    :catch_3
+    :try_start_4
     sget-object v0, Landroidx/camera/camera2/internal/ProcessingCaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$ProcessingCaptureSession$ProcessorState:[I
 
     sget-object v1, Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;->DE_INITIALIZED:Landroidx/camera/camera2/internal/ProcessingCaptureSession$ProcessorState;
@@ -107,9 +107,9 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_3e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_33 .. :try_end_3e} :catch_3e
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :catch_3e
+    :catch_4
     return-void
 .end method

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 515
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static install(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,19 +85,19 @@
 
     move-result p1
 
-    if-lez p1, :cond_81
+    if-lez p1, :cond_2
 
     .line 535
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :goto_27
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_3b
+    if-eqz p2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -112,9 +112,9 @@
     .line 536
     invoke-static {v1, v2, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_3b
+    :cond_0
     const-string p1, "dexElementsSuppressedExceptions"
 
     .line 539
@@ -133,7 +133,7 @@
 
     const/4 v1, 0x0
 
-    if-nez p2, :cond_59
+    if-nez p2, :cond_1
 
     .line 546
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -149,10 +149,10 @@
 
     check-cast p2, [Ljava/io/IOException;
 
-    goto :goto_6d
+    goto :goto_1
 
     .line 549
-    :cond_59
+    :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -179,7 +179,7 @@
     move-object p2, v2
 
     .line 557
-    :goto_6d
+    :goto_1
     invoke-virtual {p1, p0, p2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 559
@@ -201,12 +201,12 @@
     .line 561
     throw p0
 
-    :cond_81
+    :cond_2
     return-void
 .end method
 
 .method private static makeDexElements(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/io/File;Ljava/util/ArrayList;)[Ljava/lang/Object;
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

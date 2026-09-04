@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public fillEncryptionData(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 5
+    .locals 3
 
     .line 177
     iget-object v0, p0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleEncryptionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -124,7 +124,7 @@
 .end method
 
 .method public fillEncryptionData(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -160,7 +160,7 @@
 .end method
 
 .method public getSamplePresentationTimeUs(I)J
-    .registers 4
+    .locals 2
 
     .line 189
     iget-object v0, p0, Landroidx/media3/extractor/mp4/TrackFragment;->samplePresentationTimesUs:[J
@@ -171,7 +171,7 @@
 .end method
 
 .method public initEncryptionData(I)V
-    .registers 3
+    .locals 1
 
     .line 155
     iget-object v0, p0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleEncryptionData:Landroidx/media3/common/util/ParsableByteArray;
@@ -190,7 +190,7 @@
 .end method
 
 .method public initTables(II)V
-    .registers 4
+    .locals 1
 
     .line 129
     iput p1, p0, Landroidx/media3/extractor/mp4/TrackFragment;->trunCount:I
@@ -203,7 +203,7 @@
 
     array-length v0, v0
 
-    if-ge v0, p1, :cond_11
+    if-ge v0, p1, :cond_0
 
     .line 132
     new-array v0, p1, [J
@@ -216,12 +216,12 @@
     iput-object p1, p0, Landroidx/media3/extractor/mp4/TrackFragment;->trunLength:[I
 
     .line 135
-    :cond_11
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleSizeTable:[I
 
     array-length p1, p1
 
-    if-ge p1, p2, :cond_2a
+    if-ge p1, p2, :cond_1
 
     mul-int/lit8 p2, p2, 0x7d
 
@@ -248,12 +248,12 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleHasSubsampleEncryptionTable:[Z
 
-    :cond_2a
+    :cond_1
     return-void
 .end method
 
 .method public reset()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -283,26 +283,26 @@
 .end method
 
 .method public sampleHasSubsampleEncryptionTable(I)Z
-    .registers 3
+    .locals 1
 
     .line 194
     iget-boolean v0, p0, Landroidx/media3/extractor/mp4/TrackFragment;->definesEncryptionData:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/mp4/TrackFragment;->sampleHasSubsampleEncryptionTable:[Z
 
     aget-boolean p1, v0, p1
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method

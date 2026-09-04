@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(IILjava/lang/String;)V
-    .registers 4
+    .locals 0
 
     .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method private outputImageTrackAndSeekMap(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "this.extractorOutput"
@@ -112,7 +112,7 @@
 .end method
 
 .method private readSegment(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -139,7 +139,7 @@
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_25
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x2
 
@@ -166,24 +166,24 @@
     .line 132
     iput p1, p0, Landroidx/media3/extractor/SingleSampleExtractor;->size:I
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 134
-    :cond_25
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/SingleSampleExtractor;->size:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Landroidx/media3/extractor/SingleSampleExtractor;->size:I
 
-    :goto_2a
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 2
+    .locals 0
 
     .line 93
     iput-object p1, p0, Landroidx/media3/extractor/SingleSampleExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -197,7 +197,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -209,18 +209,18 @@
 
     const/4 v0, 0x1
 
-    if-eq p2, v0, :cond_10
+    if-eq p2, v0, :cond_1
 
     const/4 p1, 0x2
 
-    if-ne p2, p1, :cond_a
+    if-ne p2, p1, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 107
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -228,7 +228,7 @@
     throw p1
 
     .line 102
-    :cond_10
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/extractor/SingleSampleExtractor;->readSegment(Landroidx/media3/extractor/ExtractorInput;)V
 
     const/4 p1, 0x0
@@ -237,13 +237,13 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     const-wide/16 p3, 0x0
 
@@ -251,15 +251,15 @@
 
     const/4 p2, 0x1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 113
     iget p1, p0, Landroidx/media3/extractor/SingleSampleExtractor;->state:I
 
-    if-ne p1, p2, :cond_10
+    if-ne p1, p2, :cond_1
 
     .line 114
-    :cond_b
+    :cond_0
     iput p2, p0, Landroidx/media3/extractor/SingleSampleExtractor;->state:I
 
     const/4 p1, 0x0
@@ -267,12 +267,12 @@
     .line 115
     iput p1, p0, Landroidx/media3/extractor/SingleSampleExtractor;->size:I
 
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -288,20 +288,20 @@
 
     const/4 v3, -0x1
 
-    if-eq v0, v3, :cond_d
+    if-eq v0, v3, :cond_0
 
     iget v0, p0, Landroidx/media3/extractor/SingleSampleExtractor;->fileSignatureLength:I
 
-    if-eq v0, v3, :cond_d
+    if-eq v0, v3, :cond_0
 
     move v0, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v2
 
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 86
@@ -327,13 +327,13 @@
 
     iget v0, p0, Landroidx/media3/extractor/SingleSampleExtractor;->fileSignature:I
 
-    if-ne p1, v0, :cond_2a
+    if-ne p1, v0, :cond_1
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     move v1, v2
 
-    :goto_2b
+    :goto_1
     return v1
 .end method

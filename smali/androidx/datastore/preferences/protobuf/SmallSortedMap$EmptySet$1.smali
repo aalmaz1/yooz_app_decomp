@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 633
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -47,7 +47,7 @@
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 641
     new-instance v0, Ljava/util/NoSuchElementException;
@@ -58,7 +58,7 @@
 .end method
 
 .method public remove()V
-    .registers 2
+    .locals 1
 
     .line 646
     new-instance v0, Ljava/lang/UnsupportedOperationException;

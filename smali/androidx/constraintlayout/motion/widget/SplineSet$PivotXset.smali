@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 195
     invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/SplineSet;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public setProperty(Landroid/view/View;F)V
-    .registers 3
+    .locals 0
 
     .line 198
     invoke-virtual {p0, p2}, Landroidx/constraintlayout/motion/widget/SplineSet$PivotXset;->get(F)F

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/mp4/Track;Landroidx/media3/extractor/mp4/TrackSampleTable;Landroidx/media3/extractor/TrackOutput;)V
-    .registers 4
+    .locals 0
 
     .line 1035
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,20 +53,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
     .line 1041
     new-instance p1, Landroidx/media3/extractor/TrueHdSampleRechunker;
 
     invoke-direct {p1}, Landroidx/media3/extractor/TrueHdSampleRechunker;-><init>()V
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 p1, 0x0
 
     .line 1042
-    :goto_1c
+    :goto_0
     iput-object p1, p0, Landroidx/media3/extractor/mp4/Mp4Extractor$Mp4Track;->trueHdSampleRechunker:Landroidx/media3/extractor/TrueHdSampleRechunker;
 
     return-void

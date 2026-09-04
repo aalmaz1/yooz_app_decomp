@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final edit(Landroid/content/SharedPreferences;ZLkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -54,32 +54,32 @@
     .line 44
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 46
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    goto :goto_10
+    goto :goto_0
 
     .line 48
-    :cond_d
+    :cond_0
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :goto_10
+    :goto_0
     return-void
 .end method
 
 .method public static synthetic edit$default(Landroid/content/SharedPreferences;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x0
 
     .line 43
-    :cond_5
+    :cond_0
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
@@ -87,17 +87,17 @@
     .line 44
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_1
 
     .line 46
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    goto :goto_15
+    goto :goto_0
 
     .line 48
-    :cond_12
+    :cond_1
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :goto_15
+    :goto_0
     return-void
 .end method

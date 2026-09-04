@@ -28,7 +28,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 202
     new-instance v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
@@ -43,7 +43,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
 
     .line 210
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

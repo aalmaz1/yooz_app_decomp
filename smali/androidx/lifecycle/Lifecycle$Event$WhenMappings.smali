@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     invoke-static {}, Landroidx/lifecycle/Lifecycle$Event;->values()[Landroidx/lifecycle/Lifecycle$Event;
 
@@ -40,7 +40,7 @@
 
     new-array v0, v0, [I
 
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -50,11 +50,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_10} :catch_10
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_10
-    :try_start_10
+    :catch_0
+    :try_start_1
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -64,11 +64,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_19
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_19} :catch_19
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    :catch_19
-    :try_start_19
+    :catch_1
+    :try_start_2
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -78,11 +78,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_22
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_19 .. :try_end_22} :catch_22
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_22
-    :try_start_22
+    :catch_2
+    :try_start_3
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -92,11 +92,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_2b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_22 .. :try_end_2b} :catch_2b
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    :catch_2b
-    :try_start_2b
+    :catch_3
+    :try_start_4
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -106,11 +106,11 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
-    :try_end_34
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2b .. :try_end_34} :catch_34
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :catch_34
-    :try_start_34
+    :catch_4
+    :try_start_5
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -120,11 +120,11 @@
     const/4 v2, 0x6
 
     aput v2, v0, v1
-    :try_end_3d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_34 .. :try_end_3d} :catch_3d
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    :catch_3d
-    :try_start_3d
+    :catch_5
+    :try_start_6
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_ANY:Landroidx/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v1}, Landroidx/lifecycle/Lifecycle$Event;->ordinal()I
@@ -134,10 +134,10 @@
     const/4 v2, 0x7
 
     aput v2, v0, v1
-    :try_end_46
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3d .. :try_end_46} :catch_46
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    :catch_46
+    :catch_6
     sput-object v0, Landroidx/lifecycle/Lifecycle$Event$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

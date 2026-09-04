@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method private checkEglError(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 225
     invoke-static {}, Landroid/opengl/EGL14;->eglGetError()I
@@ -74,12 +74,12 @@
 
     const/16 v1, 0x3000
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 226
-    :cond_9
+    :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -114,7 +114,7 @@
 .end method
 
 .method private createEGLSurface()V
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -149,12 +149,12 @@
     .line 129
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLSurface:Landroid/opengl/EGLSurface;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 130
-    :cond_20
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "surface was null"
@@ -165,7 +165,7 @@
 .end method
 
 .method private eglSetup()V
-    .registers 13
+    .locals 12
 
     const/4 v0, 0x0
 
@@ -183,7 +183,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_7c
+    if-nez v1, :cond_3
 
     const/4 v1, 0x2
 
@@ -198,14 +198,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_2
 
     const/16 v1, 0xb
 
     new-array v5, v1, [I
 
     .line 79
-    fill-array-data v5, :array_86
+    fill-array-data v5, :array_0
 
     new-array v10, v3, [I
 
@@ -226,14 +226,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x3
 
     new-array v1, v1, [I
 
     .line 94
-    fill-array-data v1, :array_a0
+    fill-array-data v1, :array_1
 
     .line 98
     iget-object v2, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -258,7 +258,7 @@
     .line 101
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLContext:Landroid/opengl/EGLContext;
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_0
 
     .line 106
     invoke-direct {p0}, Landroidx/heifwriter/EglWindowSurface;->createEGLSurface()V
@@ -280,7 +280,7 @@
     return-void
 
     .line 102
-    :cond_5f
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "null context"
@@ -290,7 +290,7 @@
     throw v0
 
     .line 90
-    :cond_67
+    :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "unable to find RGB888+recordable ES2 EGL config"
@@ -299,7 +299,7 @@
 
     throw v0
 
-    :cond_70
+    :cond_2
     const/4 v0, 0x0
 
     .line 73
@@ -315,7 +315,7 @@
     throw v0
 
     .line 69
-    :cond_7c
+    :cond_3
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "unable to get EGL14 display"
@@ -326,7 +326,7 @@
 
     nop
 
-    :array_86
+    :array_0
     .array-data 4
         0x3024
         0x8
@@ -341,7 +341,7 @@
         0x3038
     .end array-data
 
-    :array_a0
+    :array_1
     .array-data 4
         0x3098
         0x2
@@ -350,7 +350,7 @@
 .end method
 
 .method private releaseEGLSurface()V
-    .registers 3
+    .locals 2
 
     .line 135
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -361,7 +361,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 136
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -375,14 +375,14 @@
 
     iput-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLSurface:Landroid/opengl/EGLSurface;
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getHeight()I
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -405,7 +405,7 @@
 .end method
 
 .method public getSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 192
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mSurface:Landroid/view/Surface;
@@ -414,7 +414,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -437,7 +437,7 @@
 .end method
 
 .method public makeCurrent()V
-    .registers 4
+    .locals 3
 
     .line 166
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -450,12 +450,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 167
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "eglMakeCurrent failed"
@@ -466,7 +466,7 @@
 .end method
 
 .method public makeUnCurrent()V
-    .registers 5
+    .locals 4
 
     .line 175
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -481,12 +481,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 177
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "eglMakeCurrent failed"
@@ -497,7 +497,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 146
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -508,7 +508,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 147
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -533,7 +533,7 @@
     invoke-static {v0}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
 
     .line 153
-    :cond_20
+    :cond_0
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v0}, Landroid/view/Surface;->release()V
@@ -562,7 +562,7 @@
 .end method
 
 .method public setPresentationTime(J)V
-    .registers 5
+    .locals 2
 
     .line 217
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -575,7 +575,7 @@
 .end method
 
 .method public swapBuffers()Z
-    .registers 3
+    .locals 2
 
     .line 185
     iget-object v0, p0, Landroidx/heifwriter/EglWindowSurface;->mEGLDisplay:Landroid/opengl/EGLDisplay;
@@ -590,18 +590,18 @@
 .end method
 
 .method public updateSize(II)V
-    .registers 4
+    .locals 1
 
     .line 113
     iget v0, p0, Landroidx/heifwriter/EglWindowSurface;->mWidth:I
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_0
 
     iget p1, p0, Landroidx/heifwriter/EglWindowSurface;->mHeight:I
 
-    if-eq p2, p1, :cond_21
+    if-eq p2, p1, :cond_1
 
-    :cond_8
+    :cond_0
     const-string p1, "EglWindowSurface"
 
     const-string p2, "re-create EGLSurface"
@@ -629,6 +629,6 @@
 
     iput p1, p0, Landroidx/heifwriter/EglWindowSurface;->mHeight:I
 
-    :cond_21
+    :cond_1
     return-void
 .end method

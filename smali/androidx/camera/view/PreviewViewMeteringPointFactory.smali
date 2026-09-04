@@ -15,7 +15,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 41
     new-instance v0, Landroid/graphics/PointF;
@@ -30,7 +30,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/view/PreviewTransformation;)V
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Landroidx/camera/core/MeteringPointFactory;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method protected convertPoint(FF)Landroid/graphics/PointF;
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -62,10 +62,10 @@
     monitor-enter p0
 
     .line 60
-    :try_start_a
+    :try_start_0
     iget-object p2, p0, Landroidx/camera/view/PreviewViewMeteringPointFactory;->mMatrix:Landroid/graphics/Matrix;
 
-    if-nez p2, :cond_12
+    if-nez p2, :cond_0
 
     .line 61
     sget-object p1, Landroidx/camera/view/PreviewViewMeteringPointFactory;->INVALID_POINT:Landroid/graphics/PointF;
@@ -75,13 +75,13 @@
     return-object p1
 
     .line 63
-    :cond_12
+    :cond_0
     invoke-virtual {p2, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
 
     .line 64
     monitor-exit p0
-    :try_end_16
-    .catchall {:try_start_a .. :try_end_16} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 65
     new-instance p2, Landroid/graphics/PointF;
@@ -94,20 +94,20 @@
 
     return-object p2
 
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 64
-    :try_start_21
+    :try_start_1
     monitor-exit p0
-    :try_end_22
-    .catchall {:try_start_21 .. :try_end_22} :catchall_20
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method recalculate(Landroid/util/Size;I)V
-    .registers 4
+    .locals 1
 
     .line 70
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -116,23 +116,23 @@
     monitor-enter p0
 
     .line 72
-    :try_start_4
+    :try_start_0
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1
 
     invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 76
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/camera/view/PreviewViewMeteringPointFactory;->mPreviewTransformation:Landroidx/camera/view/PreviewTransformation;
 
     invoke-virtual {v0, p1, p2}, Landroidx/camera/view/PreviewTransformation;->getPreviewViewToNormalizedSurfaceMatrix(Landroid/util/Size;I)Landroid/graphics/Matrix;
@@ -146,8 +146,8 @@
 
     return-void
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     const/4 p1, 0x0
 
     .line 73
@@ -158,13 +158,13 @@
 
     return-void
 
-    :catchall_20
+    :catchall_0
     move-exception p1
 
     .line 79
     monitor-exit p0
-    :try_end_22
-    .catchall {:try_start_4 .. :try_end_22} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

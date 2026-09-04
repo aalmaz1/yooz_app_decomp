@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 350
     new-instance v0, Lcom/google/common/base/Equivalence$Equals;
@@ -47,7 +47,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 348
     invoke-direct {p0}, Lcom/google/common/base/Equivalence;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method private readResolve()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 363
     sget-object v0, Lcom/google/common/base/Equivalence$Equals;->INSTANCE:Lcom/google/common/base/Equivalence$Equals;
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method protected doEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -88,7 +88,7 @@
 .end method
 
 .method protected doHash(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

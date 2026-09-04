@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     .line 2714
     new-instance v7, Landroidx/media3/exoplayer/mediacodec/MediaCodecRenderer$OutputStreamInfo;
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(JJJ)V
-    .registers 7
+    .locals 0
 
     .line 2726
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

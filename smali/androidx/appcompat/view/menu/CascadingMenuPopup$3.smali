@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/view/menu/CascadingMenuPopup;)V
-    .registers 2
+    .locals 0
 
     .line 137
     iput-object p1, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onItemHoverEnter(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/MenuItem;)V
-    .registers 8
+    .locals 5
 
     .line 150
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -58,10 +58,10 @@
 
     const/4 v2, 0x0
 
-    :goto_11
+    :goto_0
     const/4 v3, -0x1
 
-    if-ge v2, v0, :cond_26
+    if-ge v2, v0, :cond_1
 
     .line 155
     iget-object v4, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -76,24 +76,24 @@
 
     iget-object v4, v4, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    if-ne p1, v4, :cond_23
+    if-ne p1, v4, :cond_0
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_23
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     move v2, v3
 
-    :goto_27
-    if-ne v2, v3, :cond_2a
+    :goto_1
+    if-ne v2, v3, :cond_2
 
     return-void
 
-    :cond_2a
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
     .line 167
@@ -105,7 +105,7 @@
 
     move-result v0
 
-    if-ge v2, v0, :cond_41
+    if-ge v2, v0, :cond_3
 
     .line 168
     iget-object v0, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;
@@ -121,7 +121,7 @@
     check-cast v1, Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;
 
     .line 173
-    :cond_41
+    :cond_3
     new-instance v0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;
 
     invoke-direct {v0, p0, v1, p2, p1}, Landroidx/appcompat/view/menu/CascadingMenuPopup$3$1;-><init>(Landroidx/appcompat/view/menu/CascadingMenuPopup$3;Landroidx/appcompat/view/menu/CascadingMenuPopup$CascadingMenuInfo;Landroid/view/MenuItem;Landroidx/appcompat/view/menu/MenuBuilder;)V
@@ -146,7 +146,7 @@
 .end method
 
 .method public onItemHoverExit(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/MenuItem;)V
-    .registers 3
+    .locals 0
 
     .line 143
     iget-object p2, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup$3;->this$0:Landroidx/appcompat/view/menu/CascadingMenuPopup;

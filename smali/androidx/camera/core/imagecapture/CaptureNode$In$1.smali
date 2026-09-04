@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/imagecapture/CaptureNode$In;)V
-    .registers 2
+    .locals 0
 
     .line 286
     iput-object p1, p0, Landroidx/camera/core/imagecapture/CaptureNode$In$1;->this$0:Landroidx/camera/core/imagecapture/CaptureNode$In;

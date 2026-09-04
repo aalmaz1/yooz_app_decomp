@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static isQuickScaleEnabled(Landroid/view/ScaleGestureDetector;)Z
-    .registers 1
+    .locals 0
 
     .line 79
     invoke-virtual {p0}, Landroid/view/ScaleGestureDetector;->isQuickScaleEnabled()Z
@@ -25,7 +25,7 @@
 .end method
 
 .method public static isQuickScaleEnabled(Ljava/lang/Object;)Z
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -40,7 +40,7 @@
 .end method
 
 .method public static setQuickScaleEnabled(Landroid/view/ScaleGestureDetector;Z)V
-    .registers 2
+    .locals 0
 
     .line 56
     invoke-virtual {p0, p1}, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
@@ -49,7 +49,7 @@
 .end method
 
 .method public static setQuickScaleEnabled(Ljava/lang/Object;Z)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

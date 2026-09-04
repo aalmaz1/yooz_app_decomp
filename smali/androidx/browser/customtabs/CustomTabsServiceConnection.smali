@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method getApplicationContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsServiceConnection;->mApplicationContext:Landroid/content/Context;
@@ -35,12 +35,12 @@
 .end method
 
 .method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .registers 5
+    .locals 2
 
     .line 51
     iget-object v0, p0, Landroidx/browser/customtabs/CustomTabsServiceConnection;->mApplicationContext:Landroid/content/Context;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 55
     new-instance v0, Landroidx/browser/customtabs/CustomTabsServiceConnection$1;
@@ -60,7 +60,7 @@
     return-void
 
     .line 52
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Custom Tabs Service connected before an applicationcontext has been provided."
@@ -71,7 +71,7 @@
 .end method
 
 .method setApplicationContext(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 40
     iput-object p1, p0, Landroidx/browser/customtabs/CustomTabsServiceConnection;->mApplicationContext:Landroid/content/Context;

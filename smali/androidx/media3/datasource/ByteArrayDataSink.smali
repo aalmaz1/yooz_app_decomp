@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -45,28 +45,28 @@
 .end method
 
 .method public getData()[B
-    .registers 2
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/media3/datasource/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)V
-    .registers 6
+    .locals 4
 
     .line 36
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
@@ -75,7 +75,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 37
     new-instance p1, Ljava/io/ByteArrayOutputStream;
@@ -84,26 +84,26 @@
 
     iput-object p1, p0, Landroidx/media3/datasource/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;
 
-    goto :goto_29
+    goto :goto_1
 
     .line 39
-    :cond_10
+    :cond_0
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     const-wide/32 v2, 0x7fffffff
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_1b
+    if-gtz v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 40
@@ -117,12 +117,12 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;
 
-    :goto_29
+    :goto_1
     return-void
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/media3/datasource/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;

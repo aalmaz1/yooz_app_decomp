@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Queue;Ljava/io/BufferedReader;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -78,19 +78,19 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 1304
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->extraLines:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 1305
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->extraLines:Ljava/util/Queue;
@@ -112,7 +112,7 @@
     return v1
 
     .line 1308
-    :cond_1f
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->reader:Ljava/io/BufferedReader;
 
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
@@ -121,7 +121,7 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->next:Ljava/lang/String;
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     .line 1309
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -135,18 +135,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_36
+    :cond_2
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public next()Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -158,7 +158,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 1320
     iget-object v0, p0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->next:Ljava/lang/String;
@@ -171,7 +171,7 @@
     return-object v0
 
     .line 1324
-    :cond_c
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

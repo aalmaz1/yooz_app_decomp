@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/SearchView;)V
-    .registers 2
+    .locals 0
 
     .line 1178
     iput-object p1, p0, Landroidx/appcompat/widget/SearchView$7;->this$0:Landroidx/appcompat/widget/SearchView;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 0
 
     .line 1185
     iget-object p1, p0, Landroidx/appcompat/widget/SearchView$7;->this$0:Landroidx/appcompat/widget/SearchView;

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method private constructor <init>(Lcom/google/common/collect/ImmutableListMultimap$Builder;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +66,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/collect/ImmutableListMultimap$Builder;Landroidx/media3/exoplayer/rtsp/RtspHeaders$1;)V
-    .registers 3
+    .locals 0
 
     .line 75
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;-><init>(Lcom/google/common/collect/ImmutableListMultimap$Builder;)V
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 5
+    .locals 1
 
     .line 91
     invoke-direct {p0}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;-><init>()V
@@ -94,19 +94,19 @@
 
     invoke-virtual {p0, p1, p3}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->add(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
 
-    if-eqz p2, :cond_18
+    if-eqz p2, :cond_0
 
     const-string p1, "Session"
 
     .line 96
     invoke-virtual {p0, p1, p2}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->add(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
-    .registers 1
+    .locals 0
 
     .line 75
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->namesAndValuesBuilder:Lcom/google/common/collect/ImmutableListMultimap$Builder;
@@ -117,7 +117,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
-    .registers 4
+    .locals 1
 
     .line 119
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->namesAndValuesBuilder:Lcom/google/common/collect/ImmutableListMultimap$Builder;
@@ -140,7 +140,7 @@
 .end method
 
 .method public addAll(Ljava/util/List;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,12 +156,12 @@
     move v1, v0
 
     .line 132
-    :goto_2
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_1
 
     .line 133
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -181,7 +181,7 @@
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_20
+    if-ne v3, v4, :cond_0
 
     .line 135
     aget-object v3, v2, v0
@@ -192,17 +192,17 @@
 
     invoke-virtual {p0, v3, v2}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->add(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
 
-    :cond_20
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     return-object p0
 .end method
 
 .method public addAll(Ljava/util/Map;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -223,12 +223,12 @@
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -251,14 +251,14 @@
 
     invoke-virtual {p0, v1, v0}, Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;->add(Ljava/lang/String;Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/RtspHeaders$Builder;
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     return-object p0
 .end method
 
 .method public build()Landroidx/media3/exoplayer/rtsp/RtspHeaders;
-    .registers 3
+    .locals 2
 
     .line 162
     new-instance v0, Landroidx/media3/exoplayer/rtsp/RtspHeaders;

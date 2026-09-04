@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final PickVisualMediaRequest(Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;)Landroidx/activity/result/PickVisualMediaRequest;
-    .registers 2
+    .locals 1
 
     const-string v0, "mediaType"
 
@@ -50,11 +50,11 @@
 .end method
 
 .method public static synthetic PickVisualMediaRequest$default(Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;ILjava/lang/Object;)Landroidx/activity/result/PickVisualMediaRequest;
-    .registers 3
+    .locals 0
 
     and-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 32
     sget-object p0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$ImageAndVideo;->INSTANCE:Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$ImageAndVideo;
@@ -62,7 +62,7 @@
     check-cast p0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;
 
     .line 31
-    :cond_8
+    :cond_0
     invoke-static {p0}, Landroidx/activity/result/PickVisualMediaRequestKt;->PickVisualMediaRequest(Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$VisualMediaType;)Landroidx/activity/result/PickVisualMediaRequest;
 
     move-result-object p0

@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,15 +64,15 @@
 .end method
 
 .method static fromBundle(Landroid/os/Bundle;)Landroidx/browser/trusted/sharing/ShareTarget$FileFormField;
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return-object v0
 
-    :cond_4
+    :cond_0
     const-string v1, "androidx.browser.trusted.sharing.KEY_FILE_NAME"
 
     .line 285
@@ -87,27 +87,27 @@
 
     move-result-object p0
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_2
 
-    if-nez p0, :cond_15
+    if-nez p0, :cond_1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 290
-    :cond_15
+    :cond_1
     new-instance v0, Landroidx/browser/trusted/sharing/ShareTarget$FileFormField;
 
     invoke-direct {v0, v1, p0}, Landroidx/browser/trusted/sharing/ShareTarget$FileFormField;-><init>(Ljava/lang/String;Ljava/util/List;)V
 
-    :cond_1a
-    :goto_1a
+    :cond_2
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 273
     new-instance v0, Landroid/os/Bundle;

@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 290
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .end method
 
 .method public static create(II)Landroidx/media3/common/util/GlProgram$Attribute;
-    .registers 15
+    .locals 13
 
     const/4 v0, 0x1
 
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public bind()V
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -159,7 +159,7 @@
 .end method
 
 .method public setBuffer([FI)V
-    .registers 3
+    .locals 0
 
     .line 303
     invoke-static {p1}, Landroidx/media3/common/util/GlUtil;->createBuffer([F)Ljava/nio/FloatBuffer;

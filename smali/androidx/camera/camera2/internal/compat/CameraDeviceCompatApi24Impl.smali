@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/CameraDevice;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 40
     invoke-direct {p0, p1, p2}, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatApi23Impl;-><init>(Landroid/hardware/camera2/CameraDevice;Ljava/lang/Object;)V
@@ -14,7 +14,7 @@
 .end method
 
 .method static create(Landroid/hardware/camera2/CameraDevice;Landroid/os/Handler;)Landroidx/camera/camera2/internal/compat/CameraDeviceCompatApi24Impl;
-    .registers 4
+    .locals 2
 
     .line 45
     new-instance v0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatApi24Impl;
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public createCaptureSession(Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
@@ -81,10 +81,10 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_3b
+    if-eqz v3, :cond_0
 
     .line 69
-    :try_start_28
+    :try_start_0
     invoke-virtual {v3}, Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat;->unwrap()Ljava/lang/Object;
 
     move-result-object p1
@@ -105,17 +105,17 @@
     .line 73
     invoke-virtual {v3, p1, v1, v0, v2}, Landroid/hardware/camera2/CameraDevice;->createReprocessableCaptureSessionByConfigurations(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
 
-    goto :goto_55
+    goto :goto_0
 
     .line 75
-    :cond_3b
+    :cond_0
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat;->getSessionType()I
 
     move-result p1
 
     const/4 v3, 0x1
 
-    if-ne p1, v3, :cond_4c
+    if-ne p1, v3, :cond_1
 
     .line 77
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatApi24Impl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
@@ -126,10 +126,10 @@
 
     invoke-virtual {p1, v1, v0, v2}, Landroid/hardware/camera2/CameraDevice;->createConstrainedHighSpeedCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
 
-    goto :goto_55
+    goto :goto_0
 
     .line 81
-    :cond_4c
+    :cond_1
     iget-object p1, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatApi24Impl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     .line 82
@@ -139,13 +139,13 @@
 
     .line 81
     invoke-virtual {p1, v1, v0, v2}, Landroid/hardware/camera2/CameraDevice;->createCaptureSessionByOutputConfigurations(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
-    :try_end_55
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_28 .. :try_end_55} :catch_56
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_55
+    :goto_0
     return-void
 
-    :catch_56
+    :catch_0
     move-exception p1
 
     .line 85

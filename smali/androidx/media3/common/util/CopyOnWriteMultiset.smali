@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)V"
@@ -106,7 +106,7 @@
     monitor-enter v0
 
     .line 74
-    :try_start_3
+    :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elements:Ljava/util/List;
@@ -132,7 +132,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_0
 
     .line 80
     new-instance v2, Ljava/util/HashSet;
@@ -152,12 +152,12 @@
     iput-object v2, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementSet:Ljava/util/Set;
 
     .line 84
-    :cond_2d
+    :cond_0
     iget-object v2, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementCounts:Ljava/util/Map;
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -165,7 +165,7 @@
 
     add-int/2addr v3, v1
 
-    :cond_37
+    :cond_1
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -177,18 +177,18 @@
 
     return-void
 
-    :catchall_40
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_42
-    .catchall {:try_start_3 .. :try_end_42} :catchall_40
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public count(Ljava/lang/Object;)I
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)I"
@@ -201,14 +201,14 @@
     monitor-enter v0
 
     .line 146
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementCounts:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     iget-object v1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementCounts:Ljava/util/Map;
 
@@ -222,29 +222,29 @@
 
     move-result p1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_19
+    :goto_0
     monitor-exit v0
 
     return p1
 
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     .line 147
     monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public elementSet()Ljava/util/Set;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -259,26 +259,26 @@
     monitor-enter v0
 
     .line 124
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementSet:Ljava/util/Set;
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 125
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -293,7 +293,7 @@
     monitor-enter v0
 
     .line 139
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elements:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -304,19 +304,19 @@
 
     return-object v1
 
-    :catchall_b
+    :catchall_0
     move-exception v1
 
     .line 140
     monitor-exit v0
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public remove(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)V"
@@ -329,7 +329,7 @@
     monitor-enter v0
 
     .line 95
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementCounts:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -338,7 +338,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 97
     monitor-exit v0
@@ -346,7 +346,7 @@
     return-void
 
     .line 100
-    :cond_f
+    :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elements:Ljava/util/List;
@@ -370,7 +370,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_3c
+    if-ne v2, v3, :cond_1
 
     .line 105
     iget-object v1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementCounts:Ljava/util/Map;
@@ -394,10 +394,10 @@
 
     iput-object p1, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementSet:Ljava/util/Set;
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 110
-    :cond_3c
+    :cond_1
     iget-object v2, p0, Landroidx/media3/common/util/CopyOnWriteMultiset;->elementCounts:Ljava/util/Map;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -413,17 +413,17 @@
     invoke-interface {v2, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 112
-    :goto_4a
+    :goto_0
     monitor-exit v0
 
     return-void
 
-    :catchall_4c
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_4e
-    .catchall {:try_start_3 .. :try_end_4e} :catchall_4c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$xMC8M6LLEeW997bBmO6BCC6GGAM(Landroid/os/Handler;Ljava/lang/Runnable;)Z
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -36,7 +36,7 @@
 .end method
 
 .method private constructor <init>(Landroid/media/Spatializer;)V
-    .registers 2
+    .locals 0
 
     .line 4171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,23 +49,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_e
+    :goto_0
     iput-boolean p1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->spatializationSupported:Z
 
     return-void
 .end method
 
 .method public static tryCreateInstance(Landroid/content/Context;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;
-    .registers 2
+    .locals 1
 
     const-string v0, "audio"
 
@@ -76,14 +76,14 @@
 
     check-cast p0, Landroid/media/AudioManager;
 
-    if-nez p0, :cond_c
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 4168
-    :cond_c
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;
 
     invoke-virtual {p0}, Landroid/media/AudioManager;->getSpatializer()Landroid/media/Spatializer;
@@ -94,14 +94,14 @@
 
     move-object p0, v0
 
-    :goto_16
+    :goto_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public canBeSpatialized(Landroidx/media3/common/AudioAttributes;Landroidx/media3/common/Format;)Z
-    .registers 6
+    .locals 3
 
     const-string v0, "audio/eac3-joc"
 
@@ -112,36 +112,36 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget v0, p2, Landroidx/media3/common/Format;->channelCount:I
 
     const/16 v1, 0x10
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     const/16 v0, 0xc
 
-    goto :goto_15
+    goto :goto_0
 
     .line 4216
-    :cond_13
+    :cond_0
     iget v0, p2, Landroidx/media3/common/Format;->channelCount:I
 
     .line 4217
-    :goto_15
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Util;->getAudioTrackChannelConfig(I)I
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 4221
-    :cond_1d
+    :cond_1
     new-instance v1, Landroid/media/AudioFormat$Builder;
 
     invoke-direct {v1}, Landroid/media/AudioFormat$Builder;-><init>()V
@@ -163,7 +163,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_35
+    if-eq v1, v2, :cond_2
 
     .line 4226
     iget p2, p2, Landroidx/media3/common/Format;->sampleRate:I
@@ -171,7 +171,7 @@
     invoke-virtual {v0, p2}, Landroid/media/AudioFormat$Builder;->setSampleRate(I)Landroid/media/AudioFormat$Builder;
 
     .line 4228
-    :cond_35
+    :cond_2
     iget-object p2, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->spatializer:Landroid/media/Spatializer;
 
     .line 4229
@@ -194,21 +194,21 @@
 .end method
 
 .method public ensureInitialized(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;Landroid/os/Looper;)V
-    .registers 4
+    .locals 1
 
     .line 4178
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->listener:Landroid/media/Spatializer$OnSpatializerStateChangedListener;
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->handler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 4181
-    :cond_9
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32$1;-><init>(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;)V
@@ -235,13 +235,13 @@
 
     invoke-virtual {p2, v0, p1}, Landroid/media/Spatializer;->addOnSpatializerStateChangedListener(Ljava/util/concurrent/Executor;Landroid/media/Spatializer$OnSpatializerStateChangedListener;)V
 
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public isAvailable()Z
-    .registers 2
+    .locals 1
 
     .line 4202
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->spatializer:Landroid/media/Spatializer;
@@ -254,7 +254,7 @@
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 4206
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->spatializer:Landroid/media/Spatializer;
@@ -267,7 +267,7 @@
 .end method
 
 .method public isSpatializationSupported()Z
-    .registers 2
+    .locals 1
 
     .line 4198
     iget-boolean v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->spatializationSupported:Z
@@ -276,21 +276,21 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 4233
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->listener:Landroid/media/Spatializer$OnSpatializerStateChangedListener;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->handler:Landroid/os/Handler;
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 4236
-    :cond_9
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->spatializer:Landroid/media/Spatializer;
 
     invoke-virtual {v1, v0}, Landroid/media/Spatializer;->removeOnSpatializerStateChangedListener(Landroid/media/Spatializer$OnSpatializerStateChangedListener;)V
@@ -314,7 +314,7 @@
     .line 4239
     iput-object v1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;->listener:Landroid/media/Spatializer$OnSpatializerStateChangedListener;
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     return-void
 .end method

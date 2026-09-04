@@ -65,7 +65,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 401
     new-instance v0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -84,7 +84,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 57
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;-><init>()V
@@ -100,7 +100,7 @@
 .end method
 
 .method static synthetic access$000()Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 1
+    .locals 1
 
     .line 52
     sget-object v0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -109,7 +109,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;)Ljava/util/Map;
-    .registers 1
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->getMutablePreferencesMap()Ljava/util/Map;
@@ -120,7 +120,7 @@
 .end method
 
 .method public static getDefaultInstance()Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 1
+    .locals 1
 
     .line 410
     sget-object v0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -129,7 +129,7 @@
 .end method
 
 .method private getMutablePreferencesMap()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -149,7 +149,7 @@
 .end method
 
 .method private internalGetMutablePreferences()Landroidx/datastore/preferences/protobuf/MapFieldLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -167,7 +167,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 80
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->preferences_:Landroidx/datastore/preferences/protobuf/MapFieldLite;
@@ -179,14 +179,14 @@
     iput-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->preferences_:Landroidx/datastore/preferences/protobuf/MapFieldLite;
 
     .line 82
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->preferences_:Landroidx/datastore/preferences/protobuf/MapFieldLite;
 
     return-object v0
 .end method
 
 .method private internalGetPreferences()Landroidx/datastore/preferences/protobuf/MapFieldLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -204,7 +204,7 @@
 .end method
 
 .method public static newBuilder()Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
-    .registers 1
+    .locals 1
 
     .line 227
     sget-object v0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -219,7 +219,7 @@
 .end method
 
 .method public static newBuilder(Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
-    .registers 2
+    .locals 1
 
     .line 230
     sget-object v0, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -234,7 +234,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -254,7 +254,7 @@
 .end method
 
 .method public static parseDelimitedFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -274,7 +274,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -294,7 +294,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -314,7 +314,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -334,7 +334,7 @@
 .end method
 
 .method public static parseFrom(Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -354,7 +354,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -374,7 +374,7 @@
 .end method
 
 .method public static parseFrom(Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -394,7 +394,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -414,7 +414,7 @@
 .end method
 
 .method public static parseFrom(Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -434,7 +434,7 @@
 .end method
 
 .method public static parseFrom([B)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -454,7 +454,7 @@
 .end method
 
 .method public static parseFrom([BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -474,7 +474,7 @@
 .end method
 
 .method public static parser()Landroidx/datastore/preferences/protobuf/Parser;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -497,7 +497,7 @@
 
 # virtual methods
 .method public containsPreferences(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 96
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -515,7 +515,7 @@
 .end method
 
 .method protected final dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     .line 352
     sget-object p2, Landroidx/datastore/preferences/PreferencesProto$1;->$SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke:[I
@@ -530,7 +530,7 @@
 
     const/4 p3, 0x0
 
-    packed-switch p1, :pswitch_data_58
+    packed-switch p1, :pswitch_data_0
 
     .line 394
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -539,11 +539,11 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     return-object p3
 
     .line 388
-    :pswitch_14
+    :pswitch_1
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
@@ -551,10 +551,10 @@
     return-object p1
 
     .line 373
-    :pswitch_19
+    :pswitch_2
     sget-object p1, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_1
 
     .line 375
     const-class p2, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
@@ -562,10 +562,10 @@
     monitor-enter p2
 
     .line 376
-    :try_start_20
+    :try_start_0
     sget-object p1, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_0
 
     .line 378
     new-instance p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
@@ -578,31 +578,31 @@
     sput-object p1, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->PARSER:Landroidx/datastore/preferences/protobuf/Parser;
 
     .line 383
-    :cond_2d
+    :cond_0
     monitor-exit p2
 
-    goto :goto_32
+    goto :goto_0
 
-    :catchall_2f
+    :catchall_0
     move-exception p1
 
     monitor-exit p2
-    :try_end_31
-    .catchall {:try_start_20 .. :try_end_31} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     return-object p1
 
     .line 370
-    :pswitch_33
+    :pswitch_3
     sget-object p1, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->DEFAULT_INSTANCE:Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
 
     return-object p1
 
-    :pswitch_36
+    :pswitch_4
     const/4 p1, 0x2
 
     new-array p1, p1, [Ljava/lang/Object;
@@ -630,7 +630,7 @@
     return-object p1
 
     .line 357
-    :pswitch_4b
+    :pswitch_5
     new-instance p1, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;
 
     invoke-direct {p1, p3}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap$Builder;-><init>(Landroidx/datastore/preferences/PreferencesProto$1;)V
@@ -638,7 +638,7 @@
     return-object p1
 
     .line 354
-    :pswitch_51
+    :pswitch_6
     new-instance p1, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;
 
     invoke-direct {p1}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;-><init>()V
@@ -647,20 +647,20 @@
 
     nop
 
-    :pswitch_data_58
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_51
-        :pswitch_4b
-        :pswitch_36
-        :pswitch_33
-        :pswitch_19
-        :pswitch_14
-        :pswitch_13
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public getPreferences()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -683,7 +683,7 @@
 .end method
 
 .method public getPreferencesCount()I
-    .registers 2
+    .locals 1
 
     .line 87
     invoke-direct {p0}, Landroidx/datastore/preferences/PreferencesProto$PreferenceMap;->internalGetPreferences()Landroidx/datastore/preferences/protobuf/MapFieldLite;
@@ -698,7 +698,7 @@
 .end method
 
 .method public getPreferencesMap()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -723,7 +723,7 @@
 .end method
 
 .method public getPreferencesOrDefault(Ljava/lang/String;Landroidx/datastore/preferences/PreferencesProto$Value;)Landroidx/datastore/preferences/PreferencesProto$Value;
-    .registers 5
+    .locals 2
 
     .line 124
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -738,7 +738,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -748,12 +748,12 @@
 
     check-cast p2, Landroidx/datastore/preferences/PreferencesProto$Value;
 
-    :cond_14
+    :cond_0
     return-object p2
 .end method
 
 .method public getPreferencesOrThrow(Ljava/lang/String;)Landroidx/datastore/preferences/PreferencesProto$Value;
-    .registers 4
+    .locals 2
 
     .line 136
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -768,7 +768,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 142
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -780,7 +780,7 @@
     return-object p1
 
     .line 140
-    :cond_14
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V

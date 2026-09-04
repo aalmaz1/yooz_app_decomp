@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;Ljava/lang/String;IILandroid/os/Bundle;)V
-    .registers 7
+    .locals 0
 
     .line 1013
     iput-object p1, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$6;->this$1:Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl;
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .locals 9
 
     .line 1016
     iget-object v0, p0, Landroidx/media/MediaBrowserServiceCompat$ServiceBinderImpl$6;->val$callbacks:Landroidx/media/MediaBrowserServiceCompat$ServiceCallbacks;
@@ -107,14 +107,14 @@
     const/4 v2, 0x0
 
     .line 1024
-    :try_start_2d
+    :try_start_0
     invoke-interface {v0, v1, v2}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_30
-    .catch Landroid/os/RemoteException; {:try_start_2d .. :try_end_30} :catch_31
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_38
+    goto :goto_0
 
-    :catch_31
+    :catch_0
     const-string v0, "MBServiceCompat"
 
     const-string v1, "IBinder is already dead."
@@ -122,6 +122,6 @@
     .line 1026
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_38
+    :goto_0
     return-void
 .end method

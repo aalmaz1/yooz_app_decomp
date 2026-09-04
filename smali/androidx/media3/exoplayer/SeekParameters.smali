@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 42
     new-instance v0, Landroidx/media3/exoplayer/SeekParameters;
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>(JJ)V
-    .registers 10
+    .locals 5
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,30 +77,30 @@
 
     const/4 v4, 0x0
 
-    if-ltz v2, :cond_d
+    if-ltz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v2, v4
 
     .line 76
-    :goto_e
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     cmp-long v0, p3, v0
 
-    if-ltz v0, :cond_16
+    if-ltz v0, :cond_1
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
+    :cond_1
     move v3, v4
 
     .line 77
-    :goto_17
+    :goto_1
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 78
@@ -115,18 +115,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_3
 
     .line 122
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -137,12 +137,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_27
+    goto :goto_1
 
     .line 125
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/SeekParameters;
 
     .line 126
@@ -152,7 +152,7 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_2
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/SeekParameters;->toleranceAfterUs:J
 
@@ -160,23 +160,23 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v1
 
-    :goto_26
+    :goto_0
     return v0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 132
     iget-wide v0, p0, Landroidx/media3/exoplayer/SeekParameters;->toleranceBeforeUs:J
@@ -195,7 +195,7 @@
 .end method
 
 .method public resolveSeekPositionUs(JJJ)J
-    .registers 15
+    .locals 8
 
     .line 93
     iget-wide v2, p0, Landroidx/media3/exoplayer/SeekParameters;->toleranceBeforeUs:J
@@ -204,17 +204,17 @@
 
     cmp-long v4, v2, v0
 
-    if-nez v4, :cond_f
+    if-nez v4, :cond_0
 
     iget-wide v4, p0, Landroidx/media3/exoplayer/SeekParameters;->toleranceAfterUs:J
 
     cmp-long v0, v4, v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     return-wide p1
 
-    :cond_f
+    :cond_0
     const-wide/high16 v4, -0x8000000000000000L
 
     move-wide v0, p1
@@ -241,37 +241,37 @@
 
     const/4 v6, 0x0
 
-    if-gtz v4, :cond_2e
+    if-gtz v4, :cond_1
 
     cmp-long v4, p3, v2
 
-    if-gtz v4, :cond_2e
+    if-gtz v4, :cond_1
 
     move v4, v5
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     move v4, v6
 
-    :goto_2f
+    :goto_0
     cmp-long v7, v0, p5
 
-    if-gtz v7, :cond_38
+    if-gtz v7, :cond_2
 
     cmp-long v2, p5, v2
 
-    if-gtz v2, :cond_38
+    if-gtz v2, :cond_2
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_38
+    :cond_2
     move v5, v6
 
-    :goto_39
-    if-eqz v4, :cond_4f
+    :goto_1
+    if-eqz v4, :cond_4
 
-    if-eqz v5, :cond_4f
+    if-eqz v5, :cond_4
 
     sub-long v0, p3, p1
 
@@ -288,23 +288,23 @@
 
     cmp-long p1, v0, p1
 
-    if-gtz p1, :cond_4e
+    if-gtz p1, :cond_3
 
     return-wide p3
 
-    :cond_4e
+    :cond_3
     return-wide p5
 
-    :cond_4f
-    if-eqz v4, :cond_52
+    :cond_4
+    if-eqz v4, :cond_5
 
     return-wide p3
 
-    :cond_52
-    if-eqz v5, :cond_55
+    :cond_5
+    if-eqz v5, :cond_6
 
     return-wide p5
 
-    :cond_55
+    :cond_6
     return-wide v0
 .end method

@@ -53,7 +53,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$jRFItnn-9Y9NxJi1W74inKTGTe0(Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->onFlushCompleted()V
 
@@ -61,7 +61,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/HandlerThread;)V
-    .registers 3
+    .locals 1
 
     .line 90
     invoke-direct {p0}, Landroid/media/MediaCodec$Callback;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method private addOutputFormat(Landroid/media/MediaFormat;)V
-    .registers 4
+    .locals 2
 
     .line 317
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableOutputBuffers:Landroidx/collection/CircularIntArray;
@@ -126,7 +126,7 @@
 .end method
 
 .method private flushInternal()V
-    .registers 2
+    .locals 1
 
     .line 296
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->formats:Ljava/util/ArrayDeque;
@@ -135,7 +135,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 297
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->formats:Ljava/util/ArrayDeque;
@@ -149,7 +149,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->pendingOutputFormat:Landroid/media/MediaFormat;
 
     .line 304
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableInputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v0}, Landroidx/collection/CircularIntArray;->clear()V
@@ -173,7 +173,7 @@
 .end method
 
 .method private isFlushingOrShutdown()Z
-    .registers 5
+    .locals 4
 
     .line 312
     iget-wide v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->pendingFlushCount:J
@@ -182,29 +182,29 @@
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_f
+    if-gtz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->shutDown:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method
 
 .method private maybeThrowException()V
-    .registers 1
+    .locals 0
 
     .line 323
     invoke-direct {p0}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->maybeThrowInternalException()V
@@ -219,16 +219,16 @@
 .end method
 
 .method private maybeThrowInternalException()V
-    .registers 3
+    .locals 2
 
     .line 330
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->internalException:Ljava/lang/IllegalStateException;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 332
@@ -239,16 +239,16 @@
 .end method
 
 .method private maybeThrowMediaCodecCryptoException()V
-    .registers 3
+    .locals 2
 
     .line 348
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->mediaCodecCryptoException:Landroid/media/MediaCodec$CryptoException;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 350
@@ -259,16 +259,16 @@
 .end method
 
 .method private maybeThrowMediaCodecException()V
-    .registers 3
+    .locals 2
 
     .line 339
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->mediaCodecException:Landroid/media/MediaCodec$CodecException;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 341
@@ -279,7 +279,7 @@
 .end method
 
 .method private onFlushCompleted()V
-    .registers 7
+    .locals 6
 
     .line 275
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -287,10 +287,10 @@
     monitor-enter v0
 
     .line 276
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->shutDown:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 277
     monitor-exit v0
@@ -298,7 +298,7 @@
     return-void
 
     .line 280
-    :cond_9
+    :cond_0
     iget-wide v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->pendingFlushCount:J
 
     const-wide/16 v3, 0x1
@@ -311,17 +311,17 @@
 
     cmp-long v5, v1, v3
 
-    if-lez v5, :cond_18
+    if-lez v5, :cond_1
 
     .line 283
     monitor-exit v0
 
     return-void
 
-    :cond_18
+    :cond_1
     cmp-long v1, v1, v3
 
-    if-gez v1, :cond_26
+    if-gez v1, :cond_2
 
     .line 286
     new-instance v1, Ljava/lang/IllegalStateException;
@@ -336,7 +336,7 @@
     return-void
 
     .line 289
-    :cond_26
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->flushInternal()V
 
     .line 290
@@ -344,18 +344,18 @@
 
     return-void
 
-    :catchall_2b
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_2d
-    .catchall {:try_start_3 .. :try_end_2d} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private setInternalException(Ljava/lang/IllegalStateException;)V
-    .registers 3
+    .locals 1
 
     .line 356
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -363,7 +363,7 @@
     monitor-enter v0
 
     .line 357
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->internalException:Ljava/lang/IllegalStateException;
 
     .line 358
@@ -371,12 +371,12 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
@@ -384,7 +384,7 @@
 
 # virtual methods
 .method public dequeueInputBufferIndex()I
-    .registers 4
+    .locals 3
 
     .line 137
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -392,7 +392,7 @@
     monitor-enter v0
 
     .line 138
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->maybeThrowException()V
 
     .line 139
@@ -402,7 +402,7 @@
 
     const/4 v2, -0x1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 140
     monitor-exit v0
@@ -410,43 +410,43 @@
     return v2
 
     .line 142
-    :cond_f
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableInputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v1}, Landroidx/collection/CircularIntArray;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 144
-    :cond_18
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableInputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v1}, Landroidx/collection/CircularIntArray;->popFirst()I
 
     move-result v2
 
-    :goto_1e
+    :goto_0
     monitor-exit v0
 
     return v2
 
-    :catchall_20
+    :catchall_0
     move-exception v1
 
     .line 146
     monitor-exit v0
-    :try_end_22
-    .catchall {:try_start_3 .. :try_end_22} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public dequeueOutputBufferIndex(Landroid/media/MediaCodec$BufferInfo;)I
-    .registers 11
+    .locals 9
 
     .line 156
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -454,7 +454,7 @@
     monitor-enter v0
 
     .line 157
-    :try_start_3
+    :try_start_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->maybeThrowException()V
 
     .line 158
@@ -464,7 +464,7 @@
 
     const/4 v2, -0x1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 159
     monitor-exit v0
@@ -472,14 +472,14 @@
     return v2
 
     .line 161
-    :cond_f
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableOutputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v1}, Landroidx/collection/CircularIntArray;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 162
     monitor-exit v0
@@ -487,14 +487,14 @@
     return v2
 
     .line 164
-    :cond_19
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableOutputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v1}, Landroidx/collection/CircularIntArray;->popFirst()I
 
     move-result v1
 
-    if-ltz v1, :cond_3b
+    if-ltz v1, :cond_2
 
     .line 166
     iget-object v2, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->currentFormat:Landroid/media/MediaFormat;
@@ -523,12 +523,12 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/media/MediaCodec$BufferInfo;->set(IIJI)V
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_3b
+    :cond_2
     const/4 p1, -0x2
 
-    if-ne v1, p1, :cond_48
+    if-ne v1, p1, :cond_3
 
     .line 174
     iget-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->formats:Ljava/util/ArrayDeque;
@@ -542,25 +542,25 @@
     iput-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->currentFormat:Landroid/media/MediaFormat;
 
     .line 176
-    :cond_48
-    :goto_48
+    :cond_3
+    :goto_0
     monitor-exit v0
 
     return v1
 
-    :catchall_4a
+    :catchall_0
     move-exception p1
 
     .line 179
     monitor-exit v0
-    :try_end_4c
-    .catchall {:try_start_3 .. :try_end_4c} :catchall_4a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public flush()V
-    .registers 6
+    .locals 5
 
     .line 205
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -568,7 +568,7 @@
     monitor-enter v0
 
     .line 206
-    :try_start_3
+    :try_start_0
     iget-wide v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->pendingFlushCount:J
 
     const-wide/16 v3, 0x1
@@ -597,18 +597,18 @@
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_3 .. :try_end_1e} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getOutputFormat()Landroid/media/MediaFormat;
-    .registers 3
+    .locals 2
 
     .line 192
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -616,10 +616,10 @@
     monitor-enter v0
 
     .line 193
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->currentFormat:Landroid/media/MediaFormat;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 196
     monitor-exit v0
@@ -627,40 +627,40 @@
     return-object v1
 
     .line 194
-    :cond_9
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v1
 
-    :catchall_f
+    :catchall_0
     move-exception v1
 
     .line 197
     monitor-exit v0
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public initialize(Landroid/media/MediaCodec;)V
-    .registers 4
+    .locals 2
 
     .line 108
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->handler:Landroid/os/Handler;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 110
@@ -689,7 +689,7 @@
 .end method
 
 .method public onCryptoError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CryptoException;)V
-    .registers 3
+    .locals 0
 
     .line 247
     iget-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -697,7 +697,7 @@
     monitor-enter p1
 
     .line 248
-    :try_start_3
+    :try_start_0
     iput-object p2, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->mediaCodecCryptoException:Landroid/media/MediaCodec$CryptoException;
 
     .line 249
@@ -705,18 +705,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method public onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
-    .registers 3
+    .locals 0
 
     .line 240
     iget-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -724,7 +724,7 @@
     monitor-enter p1
 
     .line 241
-    :try_start_3
+    :try_start_0
     iput-object p2, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->mediaCodecException:Landroid/media/MediaCodec$CodecException;
 
     .line 242
@@ -732,18 +732,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method public onInputBufferAvailable(Landroid/media/MediaCodec;I)V
-    .registers 4
+    .locals 1
 
     .line 215
     iget-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -751,7 +751,7 @@
     monitor-enter p1
 
     .line 216
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableInputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v0, p2}, Landroidx/collection/CircularIntArray;->addLast(I)V
@@ -759,29 +759,29 @@
     .line 217
     iget-object p2, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->onBufferAvailableListener:Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;
 
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 218
     invoke-interface {p2}, Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;->onInputBufferAvailable()V
 
     .line 220
-    :cond_f
+    :cond_0
     monitor-exit p1
 
     return-void
 
-    :catchall_11
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method public onOutputBufferAvailable(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
-    .registers 5
+    .locals 1
 
     .line 225
     iget-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -789,10 +789,10 @@
     monitor-enter p1
 
     .line 226
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->pendingOutputFormat:Landroid/media/MediaFormat;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 227
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->addOutputFormat(Landroid/media/MediaFormat;)V
@@ -803,7 +803,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->pendingOutputFormat:Landroid/media/MediaFormat;
 
     .line 230
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->availableOutputBuffers:Landroidx/collection/CircularIntArray;
 
     invoke-virtual {v0, p2}, Landroidx/collection/CircularIntArray;->addLast(I)V
@@ -816,29 +816,29 @@
     .line 232
     iget-object p2, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->onBufferAvailableListener:Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_1
 
     .line 233
     invoke-interface {p2}, Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;->onOutputBufferAvailable()V
 
     .line 235
-    :cond_1e
+    :cond_1
     monitor-exit p1
 
     return-void
 
-    :catchall_20
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_22
-    .catchall {:try_start_3 .. :try_end_22} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method public onOutputFormatChanged(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V
-    .registers 3
+    .locals 0
 
     .line 254
     iget-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -846,7 +846,7 @@
     monitor-enter p1
 
     .line 255
-    :try_start_3
+    :try_start_0
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->addOutputFormat(Landroid/media/MediaFormat;)V
 
     const/4 p2, 0x0
@@ -859,18 +859,18 @@
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p2
 
     monitor-exit p1
-    :try_end_d
-    .catchall {:try_start_3 .. :try_end_d} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p2
 .end method
 
 .method public setOnBufferAvailableListener(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;)V
-    .registers 3
+    .locals 1
 
     .line 269
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -878,7 +878,7 @@
     monitor-enter v0
 
     .line 270
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->onBufferAvailableListener:Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$OnBufferAvailableListener;
 
     .line 271
@@ -886,18 +886,18 @@
 
     return-void
 
-    :catchall_7
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public shutdown()V
-    .registers 3
+    .locals 2
 
     .line 125
     iget-object v0, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->lock:Ljava/lang/Object;
@@ -907,7 +907,7 @@
     const/4 v1, 0x1
 
     .line 126
-    :try_start_4
+    :try_start_0
     iput-boolean v1, p0, Landroidx/media3/exoplayer/mediacodec/AsynchronousMediaCodecCallback;->shutDown:Z
 
     .line 127
@@ -923,12 +923,12 @@
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_4 .. :try_end_12} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

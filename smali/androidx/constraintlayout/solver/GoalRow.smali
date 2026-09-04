@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/Cache;)V
-    .registers 2
+    .locals 0
 
     .line 22
     invoke-direct {p0, p1}, Landroidx/constraintlayout/solver/ArrayRow;-><init>(Landroidx/constraintlayout/solver/Cache;)V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public addError(Landroidx/constraintlayout/solver/SolverVariable;)V
-    .registers 3
+    .locals 1
 
     .line 27
     invoke-super {p0, p1}, Landroidx/constraintlayout/solver/ArrayRow;->addError(Landroidx/constraintlayout/solver/SolverVariable;)V

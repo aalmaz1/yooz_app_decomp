@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 330
     new-instance v0, Landroidx/datastore/preferences/protobuf/FieldType$Collection;
@@ -105,7 +105,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
@@ -122,7 +122,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/FieldType$Collection;
-    .registers 2
+    .locals 1
 
     .line 329
     const-class v0, Landroidx/datastore/preferences/protobuf/FieldType$Collection;
@@ -137,7 +137,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/FieldType$Collection;
-    .registers 1
+    .locals 1
 
     .line 329
     sget-object v0, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->$VALUES:[Landroidx/datastore/preferences/protobuf/FieldType$Collection;
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public isList()Z
-    .registers 2
+    .locals 1
 
     .line 343
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/FieldType$Collection;->isList:Z

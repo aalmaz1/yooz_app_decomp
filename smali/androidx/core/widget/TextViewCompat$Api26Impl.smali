@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1004
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getAutoSizeMaxTextSize(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 1044
     invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeMaxTextSize()I
@@ -36,7 +36,7 @@
 .end method
 
 .method static getAutoSizeMinTextSize(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 1039
     invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeMinTextSize()I
@@ -47,7 +47,7 @@
 .end method
 
 .method static getAutoSizeStepGranularity(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 1034
     invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeStepGranularity()I
@@ -58,7 +58,7 @@
 .end method
 
 .method static getAutoSizeTextAvailableSizes(Landroid/widget/TextView;)[I
-    .registers 1
+    .locals 0
 
     .line 1049
     invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeTextAvailableSizes()[I
@@ -69,7 +69,7 @@
 .end method
 
 .method static getAutoSizeTextType(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 1029
     invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeTextType()I
@@ -80,7 +80,7 @@
 .end method
 
 .method static setAutoSizeTextTypeUniformWithConfiguration(Landroid/widget/TextView;IIII)V
-    .registers 5
+    .locals 0
 
     .line 1017
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
@@ -89,7 +89,7 @@
 .end method
 
 .method static setAutoSizeTextTypeUniformWithPresetSizes(Landroid/widget/TextView;[II)V
-    .registers 3
+    .locals 0
 
     .line 1024
     invoke-virtual {p0, p1, p2}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithPresetSizes([II)V
@@ -98,7 +98,7 @@
 .end method
 
 .method static setAutoSizeTextTypeWithDefaults(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 1010
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V

@@ -66,7 +66,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$bJwwcVR95dEuqyeYuLarFZPWMjo(Landroidx/camera/core/SurfaceRequest;)Z
-    .registers 1
+    .locals 0
 
     invoke-virtual {p0}, Landroidx/camera/core/SurfaceRequest;->willNotProvideSurface()Z
 
@@ -76,7 +76,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 774
     new-instance v0, Landroidx/camera/video/VideoCapture$Defaults$$ExternalSyntheticLambda1;
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 771
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -159,7 +159,7 @@
 .end method
 
 .method private static createFinder()Landroidx/arch/core/util/Function;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -179,19 +179,19 @@
 .end method
 
 .method static synthetic lambda$createFinder$0(Landroidx/camera/video/internal/encoder/VideoEncoderConfig;)Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
-    .registers 3
+    .locals 2
 
     .line 803
     :try_start_0
     invoke-static {p0}, Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;->from(Landroidx/camera/video/internal/encoder/VideoEncoderConfig;)Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;
 
     move-result-object p0
-    :try_end_4
-    .catch Landroidx/camera/video/internal/encoder/InvalidConfigException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Landroidx/camera/video/internal/encoder/InvalidConfigException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_5
+    :catch_0
     move-exception p0
 
     const-string v0, "VideoCapture"
@@ -209,7 +209,7 @@
 
 # virtual methods
 .method public bridge synthetic getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 770
     invoke-virtual {p0}, Landroidx/camera/video/VideoCapture$Defaults;->getConfig()Landroidx/camera/video/impl/VideoCaptureConfig;
@@ -220,7 +220,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/video/impl/VideoCaptureConfig;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

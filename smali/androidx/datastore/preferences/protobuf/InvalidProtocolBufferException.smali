@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
-    .registers 3
+    .locals 1
 
     .line 50
     invoke-virtual {p1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 46
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/io/IOException;)V
-    .registers 3
+    .locals 0
 
     .line 54
     invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -67,7 +67,7 @@
 .end method
 
 .method static invalidEndTag()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 106
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -80,7 +80,7 @@
 .end method
 
 .method static invalidTag()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 102
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -93,7 +93,7 @@
 .end method
 
 .method static invalidUtf8()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 141
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -106,7 +106,7 @@
 .end method
 
 .method static invalidWireType()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException$InvalidWireTypeException;
-    .registers 2
+    .locals 2
 
     .line 111
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException$InvalidWireTypeException;
@@ -119,7 +119,7 @@
 .end method
 
 .method static malformedVarint()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 98
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -132,7 +132,7 @@
 .end method
 
 .method static negativeSize()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 92
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -145,7 +145,7 @@
 .end method
 
 .method static parseFailure()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 137
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -158,7 +158,7 @@
 .end method
 
 .method static recursionLimitExceeded()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 125
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -171,7 +171,7 @@
 .end method
 
 .method static sizeLimitExceeded()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 131
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -184,7 +184,7 @@
 .end method
 
 .method static truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 2
 
     .line 84
     new-instance v0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
@@ -199,7 +199,7 @@
 
 # virtual methods
 .method public getUnfinishedMessage()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->unfinishedMessage:Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -208,7 +208,7 @@
 .end method
 
 .method public setUnfinishedMessage(Landroidx/datastore/preferences/protobuf/MessageLite;)Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
-    .registers 2
+    .locals 0
 
     .line 64
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->unfinishedMessage:Landroidx/datastore/preferences/protobuf/MessageLite;
@@ -217,7 +217,7 @@
 .end method
 
 .method public unwrapIOException()Ljava/io/IOException;
-    .registers 2
+    .locals 1
 
     .line 80
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->getCause()Ljava/lang/Throwable;
@@ -226,7 +226,7 @@
 
     instance-of v0, v0, Ljava/io/IOException;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->getCause()Ljava/lang/Throwable;
 
@@ -234,11 +234,11 @@
 
     check-cast v0, Ljava/io/IOException;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object v0, p0
 
-    :goto_10
+    :goto_0
     return-object v0
 .end method

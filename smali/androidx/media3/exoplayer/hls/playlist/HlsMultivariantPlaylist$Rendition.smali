@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Landroidx/media3/common/Format;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

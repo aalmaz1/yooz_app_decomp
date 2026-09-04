@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final component1(Landroid/location/Location;)D
-    .registers 3
+    .locals 2
 
     .line 32
     invoke-virtual {p0}, Landroid/location/Location;->getLatitude()D
@@ -38,7 +38,7 @@
 .end method
 
 .method public static final component2(Landroid/location/Location;)D
-    .registers 3
+    .locals 2
 
     .line 43
     invoke-virtual {p0}, Landroid/location/Location;->getLongitude()D

@@ -16,7 +16,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 150
     new-instance v0, Landroidx/emoji2/text/EmojiCompatInitializer$BackgroundDefaultLoader;

@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "Exif\u0000\u0000"
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/OutputStream;Landroidx/camera/core/impl/utils/ExifData;)V
-    .registers 5
+    .locals 2
 
     .line 107
     new-instance v0, Ljava/io/BufferedOutputStream;
@@ -107,7 +107,7 @@
 .end method
 
 .method private requestByteToBuffer(I[BII)I
-    .registers 6
+    .locals 1
 
     .line 112
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
@@ -132,7 +132,7 @@
 .end method
 
 .method private writeExifSegment(Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;)V
-    .registers 16
+    .locals 14
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -162,20 +162,20 @@
 
     move v5, v4
 
-    :goto_f
-    if-ge v5, v3, :cond_2a
+    :goto_0
+    if-ge v5, v3, :cond_1
 
     aget-object v6, v2, v5
 
     move v7, v4
 
     .line 226
-    :goto_14
+    :goto_1
     sget-object v8, Landroidx/camera/core/impl/utils/ExifData;->EXIF_TAGS:[[Landroidx/camera/core/impl/utils/ExifTag;
 
     array-length v8, v8
 
-    if-ge v7, v8, :cond_27
+    if-ge v7, v8, :cond_0
 
     .line 227
     iget-object v8, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -190,15 +190,15 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_27
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 233
-    :cond_2a
+    :cond_1
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
 
     const/4 v3, 0x1
@@ -213,7 +213,7 @@
 
     const-wide/16 v5, 0x0
 
-    if-nez v2, :cond_52
+    if-nez v2, :cond_2
 
     .line 234
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -243,7 +243,7 @@
     invoke-interface {v2, v7, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 237
-    :cond_52
+    :cond_2
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
 
     const/4 v7, 0x2
@@ -256,7 +256,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_78
+    if-nez v2, :cond_3
 
     .line 238
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -286,7 +286,7 @@
     invoke-interface {v2, v8, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 241
-    :cond_78
+    :cond_3
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
 
     const/4 v8, 0x3
@@ -299,7 +299,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_9e
+    if-nez v2, :cond_4
 
     .line 242
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -328,18 +328,18 @@
     .line 242
     invoke-interface {v2, v9, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_9e
+    :cond_4
     move v2, v4
 
     .line 248
-    :goto_9f
+    :goto_2
     sget-object v9, Landroidx/camera/core/impl/utils/ExifData;->EXIF_TAGS:[[Landroidx/camera/core/impl/utils/ExifTag;
 
     array-length v9, v9
 
     const/4 v10, 0x4
 
-    if-ge v2, v9, :cond_d6
+    if-ge v2, v9, :cond_7
 
     .line 250
     iget-object v9, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -358,13 +358,13 @@
 
     move v11, v4
 
-    :cond_b4
-    :goto_b4
+    :cond_5
+    :goto_3
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-eqz v12, :cond_ce
+    if-eqz v12, :cond_6
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -384,14 +384,14 @@
 
     move-result v12
 
-    if-le v12, v10, :cond_b4
+    if-le v12, v10, :cond_5
 
     add-int/2addr v11, v12
 
-    goto :goto_b4
+    goto :goto_3
 
     .line 257
-    :cond_ce
+    :cond_6
     aget v9, v1, v2
 
     add-int/2addr v9, v11
@@ -400,9 +400,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_d6
+    :cond_7
     const/16 v2, 0x8
 
     move v11, v2
@@ -410,12 +410,12 @@
     move v9, v4
 
     .line 264
-    :goto_da
+    :goto_4
     sget-object v12, Landroidx/camera/core/impl/utils/ExifData;->EXIF_TAGS:[[Landroidx/camera/core/impl/utils/ExifTag;
 
     array-length v12, v12
 
-    if-ge v9, v12, :cond_102
+    if-ge v9, v12, :cond_9
 
     .line 265
     iget-object v12, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -428,7 +428,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_ff
+    if-nez v12, :cond_8
 
     .line 266
     aput v11, v0, v9
@@ -456,12 +456,12 @@
 
     add-int/2addr v11, v12
 
-    :cond_ff
+    :cond_8
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_da
+    goto :goto_4
 
-    :cond_102
+    :cond_9
     add-int/2addr v11, v2
 
     .line 285
@@ -475,7 +475,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_12b
+    if-nez v1, :cond_a
 
     .line 286
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -509,7 +509,7 @@
     invoke-interface {v1, v2, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 289
-    :cond_12b
+    :cond_a
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
 
     invoke-virtual {v1, v7}, Landroidx/camera/core/impl/utils/ExifData;->getAttributes(I)Ljava/util/Map;
@@ -520,7 +520,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_153
+    if-nez v1, :cond_b
 
     .line 290
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -554,7 +554,7 @@
     invoke-interface {v1, v2, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 293
-    :cond_153
+    :cond_b
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
 
     invoke-virtual {v1, v8}, Landroidx/camera/core/impl/utils/ExifData;->getAttributes(I)Ljava/util/Map;
@@ -565,7 +565,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_17b
+    if-nez v1, :cond_c
 
     .line 294
     iget-object v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -600,7 +600,7 @@
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 300
-    :cond_17b
+    :cond_c
     invoke-virtual {p1, v11}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->writeUnsignedShort(I)V
 
     .line 301
@@ -617,16 +617,16 @@
 
     sget-object v2, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v1, v2, :cond_190
+    if-ne v1, v2, :cond_d
 
     const/16 v1, 0x4d4d
 
-    goto :goto_192
+    goto :goto_5
 
-    :cond_190
+    :cond_d
     const/16 v1, 0x4949
 
-    :goto_192
+    :goto_5
     invoke-virtual {p1, v1}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->writeShort(S)V
 
     .line 306
@@ -651,12 +651,12 @@
     move v1, v4
 
     .line 311
-    :goto_1a9
+    :goto_6
     sget-object v2, Landroidx/camera/core/impl/utils/ExifData;->EXIF_TAGS:[[Landroidx/camera/core/impl/utils/ExifTag;
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_28a
+    if-ge v1, v2, :cond_13
 
     .line 312
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -669,7 +669,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_286
+    if-nez v2, :cond_12
 
     .line 315
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mExifData:Landroidx/camera/core/impl/utils/ExifData;
@@ -722,13 +722,13 @@
 
     move-result-object v3
 
-    :cond_1e6
-    :goto_1e6
+    :cond_e
+    :goto_7
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_255
+    if-eqz v8, :cond_10
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -817,7 +817,7 @@
 
     invoke-virtual {p1, v9}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->writeInt(I)V
 
-    if-le v11, v10, :cond_246
+    if-le v11, v10, :cond_f
 
     int-to-long v8, v2
 
@@ -826,28 +826,28 @@
 
     add-int/2addr v2, v11
 
-    goto :goto_1e6
+    goto :goto_7
 
     .line 338
-    :cond_246
+    :cond_f
     iget-object v8, v8, Landroidx/camera/core/impl/utils/ExifAttribute;->bytes:[B
 
     invoke-virtual {p1, v8}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->write([B)V
 
-    if-ge v11, v10, :cond_1e6
+    if-ge v11, v10, :cond_e
 
-    :goto_24d
-    if-ge v11, v10, :cond_1e6
+    :goto_8
+    if-ge v11, v10, :cond_e
 
     .line 342
     invoke-virtual {p1, v4}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->writeByte(I)V
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_24d
+    goto :goto_8
 
     .line 349
-    :cond_255
+    :cond_10
     invoke-virtual {p1, v5, v6}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->writeUnsignedInt(J)V
 
     .line 352
@@ -867,13 +867,13 @@
 
     move-result-object v2
 
-    :cond_266
-    :goto_266
+    :cond_11
+    :goto_9
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_286
+    if-eqz v3, :cond_12
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -893,7 +893,7 @@
 
     array-length v8, v8
 
-    if-le v8, v10, :cond_266
+    if-le v8, v10, :cond_11
 
     .line 357
     iget-object v8, v3, Landroidx/camera/core/impl/utils/ExifAttribute;->bytes:[B
@@ -904,15 +904,15 @@
 
     invoke-virtual {p1, v8, v4, v3}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->write([BII)V
 
-    goto :goto_266
+    goto :goto_9
 
-    :cond_286
+    :cond_12
     add-int/lit8 v1, v1, 0x1
 
-    goto/16 :goto_1a9
+    goto/16 :goto_6
 
     .line 364
-    :cond_28a
+    :cond_13
     sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {p1, v0}, Landroidx/camera/core/impl/utils/ByteOrderedDataOutputStream;->setByteOrder(Ljava/nio/ByteOrder;)V
@@ -923,7 +923,7 @@
 
 # virtual methods
 .method public write(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -948,7 +948,7 @@
 .end method
 
 .method public write([B)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -966,7 +966,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -979,20 +979,20 @@
 
     const/4 v1, 0x2
 
-    if-gtz v0, :cond_d
+    if-gtz v0, :cond_0
 
     iget v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mByteToCopy:I
 
-    if-gtz v2, :cond_d
+    if-gtz v2, :cond_0
 
     iget v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mState:I
 
-    if-eq v2, v1, :cond_106
+    if-eq v2, v1, :cond_c
 
-    :cond_d
-    if-lez p3, :cond_106
+    :cond_0
+    if-lez p3, :cond_c
 
-    if-lez v0, :cond_1c
+    if-lez v0, :cond_1
 
     .line 127
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
@@ -1011,10 +1011,10 @@
     add-int/2addr p2, v0
 
     .line 132
-    :cond_1c
+    :cond_1
     iget v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mByteToCopy:I
 
-    if-lez v0, :cond_30
+    if-lez v0, :cond_2
 
     .line 133
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
@@ -1037,13 +1037,13 @@
 
     add-int/2addr p2, v0
 
-    :cond_30
-    if-nez p3, :cond_33
+    :cond_2
+    if-nez p3, :cond_3
 
     return-void
 
     .line 142
-    :cond_33
+    :cond_3
     iget v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mState:I
 
     const/16 v2, -0x1f
@@ -1052,13 +1052,13 @@
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_bd
+    if-eqz v0, :cond_9
 
-    if-eq v0, v3, :cond_3e
+    if-eq v0, v3, :cond_4
 
     goto :goto_0
 
-    :cond_3e
+    :cond_4
     const/4 v0, 0x4
 
     .line 165
@@ -1077,7 +1077,7 @@
 
     move-result v3
 
-    if-ne v3, v1, :cond_67
+    if-ne v3, v1, :cond_5
 
     .line 170
     iget-object v3, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
@@ -1088,7 +1088,7 @@
 
     const/16 v5, -0x27
 
-    if-ne v3, v5, :cond_67
+    if-ne v3, v5, :cond_5
 
     .line 172
     iget-object v3, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->out:Ljava/io/OutputStream;
@@ -1107,19 +1107,19 @@
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     .line 176
-    :cond_67
+    :cond_5
     iget-object v3, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v3
 
-    if-ge v3, v0, :cond_70
+    if-ge v3, v0, :cond_6
 
     return-void
 
     .line 179
-    :cond_70
+    :cond_6
     iget-object v3, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
@@ -1133,7 +1133,7 @@
 
     const v5, 0xffff
 
-    if-ne v3, v2, :cond_8d
+    if-ne v3, v2, :cond_7
 
     .line 182
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
@@ -1151,15 +1151,15 @@
     .line 183
     iput v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mState:I
 
-    goto :goto_b6
+    goto :goto_1
 
     .line 184
-    :cond_8d
+    :cond_7
     invoke-static {v3}, Landroidx/camera/core/impl/utils/ExifOutputStream$JpegHeader;->isSofMarker(S)Z
 
     move-result v2
 
-    if-nez v2, :cond_a9
+    if-nez v2, :cond_8
 
     .line 185
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->out:Ljava/io/OutputStream;
@@ -1185,10 +1185,10 @@
 
     iput v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mByteToCopy:I
 
-    goto :goto_b6
+    goto :goto_1
 
     .line 188
-    :cond_a9
+    :cond_8
     iget-object v2, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->out:Ljava/io/OutputStream;
 
     iget-object v3, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
@@ -1203,7 +1203,7 @@
     iput v1, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mState:I
 
     .line 191
-    :goto_b6
+    :goto_1
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
@@ -1211,7 +1211,7 @@
     goto/16 :goto_0
 
     .line 144
-    :cond_bd
+    :cond_9
     invoke-direct {p0, v1, p1, p2, p3}, Landroidx/camera/core/impl/utils/ExifOutputStream;->requestByteToBuffer(I[BII)I
 
     move-result v0
@@ -1227,12 +1227,12 @@
 
     move-result v0
 
-    if-ge v0, v1, :cond_cc
+    if-ge v0, v1, :cond_a
 
     return-void
 
     .line 150
-    :cond_cc
+    :cond_a
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->mBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
@@ -1246,7 +1246,7 @@
 
     const/16 v5, -0x28
 
-    if-ne v0, v5, :cond_fe
+    if-ne v0, v5, :cond_b
 
     .line 154
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->out:Ljava/io/OutputStream;
@@ -1285,7 +1285,7 @@
     goto/16 :goto_0
 
     .line 152
-    :cond_fe
+    :cond_b
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "Not a valid jpeg image, cannot write exif"
@@ -1294,14 +1294,14 @@
 
     throw p1
 
-    :cond_106
-    if-lez p3, :cond_10d
+    :cond_c
+    if-lez p3, :cond_d
 
     .line 195
     iget-object v0, p0, Landroidx/camera/core/impl/utils/ExifOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
-    :cond_10d
+    :cond_d
     return-void
 .end method

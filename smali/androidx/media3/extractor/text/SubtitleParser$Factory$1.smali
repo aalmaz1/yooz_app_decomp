@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public create(Landroidx/media3/common/Format;)Landroidx/media3/extractor/text/SubtitleParser;
-    .registers 3
+    .locals 1
 
     .line 55
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -43,7 +43,7 @@
 .end method
 
 .method public getCueReplacementBehavior(Landroidx/media3/common/Format;)I
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x1
 
@@ -51,7 +51,7 @@
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

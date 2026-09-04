@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 32
     new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(JLandroidx/media3/datasource/DataSpec;J)V
-    .registers 18
+    .locals 12
 
     move-object v3, p3
 
@@ -77,7 +77,7 @@
 .end method
 
 .method public constructor <init>(JLandroidx/media3/datasource/DataSpec;Landroid/net/Uri;Ljava/util/Map;JJJ)V
-    .registers 12
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -119,7 +119,7 @@
 .end method
 
 .method public static getNewId()J
-    .registers 2
+    .locals 2
 
     .line 36
     sget-object v0, Landroidx/media3/exoplayer/source/LoadEventInfo;->idSource:Ljava/util/concurrent/atomic/AtomicLong;

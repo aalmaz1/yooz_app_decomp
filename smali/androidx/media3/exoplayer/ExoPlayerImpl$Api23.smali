@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3443
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static isSuitableAudioOutputPresentInAudioDeviceInfoList(Landroid/content/Context;[Landroid/media/AudioDeviceInfo;)Z
-    .registers 9
+    .locals 7
 
     .line 3448
     invoke-static {p0}, Landroidx/media3/common/util/Util;->isWear(Landroid/content/Context;)Z
@@ -34,20 +34,20 @@
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     return v0
 
     .line 3451
-    :cond_8
+    :cond_0
     array-length p0, p1
 
     const/4 v1, 0x0
 
     move v2, v1
 
-    :goto_b
-    if-ge v2, p0, :cond_82
+    :goto_0
+    if-ge v2, p0, :cond_8
 
     aget-object v3, p1, v2
 
@@ -58,7 +58,7 @@
 
     const/16 v5, 0x8
 
-    if-eq v4, v5, :cond_81
+    if-eq v4, v5, :cond_7
 
     .line 3453
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
@@ -67,7 +67,7 @@
 
     const/4 v5, 0x5
 
-    if-eq v4, v5, :cond_81
+    if-eq v4, v5, :cond_7
 
     .line 3454
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
@@ -76,7 +76,7 @@
 
     const/4 v5, 0x6
 
-    if-eq v4, v5, :cond_81
+    if-eq v4, v5, :cond_7
 
     .line 3455
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
@@ -85,7 +85,7 @@
 
     const/16 v5, 0xb
 
-    if-eq v4, v5, :cond_81
+    if-eq v4, v5, :cond_7
 
     .line 3456
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
@@ -94,7 +94,7 @@
 
     const/4 v5, 0x4
 
-    if-eq v4, v5, :cond_81
+    if-eq v4, v5, :cond_7
 
     .line 3457
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
@@ -103,17 +103,17 @@
 
     const/4 v5, 0x3
 
-    if-ne v4, v5, :cond_3c
+    if-ne v4, v5, :cond_1
 
-    goto :goto_81
+    goto :goto_1
 
     .line 3460
-    :cond_3c
+    :cond_1
     sget v4, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v5, 0x1a
 
-    if-lt v4, v5, :cond_4b
+    if-lt v4, v5, :cond_2
 
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
@@ -121,17 +121,17 @@
 
     const/16 v6, 0x16
 
-    if-ne v4, v6, :cond_4b
+    if-ne v4, v6, :cond_2
 
     return v0
 
     .line 3463
-    :cond_4b
+    :cond_2
     sget v4, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v6, 0x1c
 
-    if-lt v4, v6, :cond_5a
+    if-lt v4, v6, :cond_3
 
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
@@ -139,24 +139,24 @@
 
     const/16 v6, 0x17
 
-    if-ne v4, v6, :cond_5a
+    if-ne v4, v6, :cond_3
 
     return v0
 
     .line 3466
-    :cond_5a
+    :cond_3
     sget v4, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v6, 0x1f
 
-    if-lt v4, v6, :cond_6f
+    if-lt v4, v6, :cond_5
 
     .line 3467
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
     move-result v4
 
-    if-eq v4, v5, :cond_6e
+    if-eq v4, v5, :cond_4
 
     .line 3468
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
@@ -165,18 +165,18 @@
 
     const/16 v5, 0x1b
 
-    if-ne v4, v5, :cond_6f
+    if-ne v4, v5, :cond_5
 
-    :cond_6e
+    :cond_4
     return v0
 
     .line 3471
-    :cond_6f
+    :cond_5
     sget v4, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v5, 0x21
 
-    if-lt v4, v5, :cond_7e
+    if-lt v4, v5, :cond_6
 
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
@@ -184,25 +184,25 @@
 
     const/16 v4, 0x1e
 
-    if-ne v3, v4, :cond_7e
+    if-ne v3, v4, :cond_6
 
     return v0
 
-    :cond_7e
+    :cond_6
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_81
-    :goto_81
+    :cond_7
+    :goto_1
     return v0
 
-    :cond_82
+    :cond_8
     return v1
 .end method
 
 .method public static registerAudioDeviceCallback(Landroid/media/AudioManager;Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
 
     .line 3481
     invoke-virtual {p0, p1, p2}, Landroid/media/AudioManager;->registerAudioDeviceCallback(Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V

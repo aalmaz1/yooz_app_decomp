@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 36
     new-instance v0, Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference$$ExternalSyntheticLambda0;
@@ -33,7 +33,7 @@
 .end method
 
 .method public static synthetic lambda$static$0()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method

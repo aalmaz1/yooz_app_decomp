@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const-wide v0, 0x3feb333333333333L    # 0.85
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>(D)V
-    .registers 4
+    .locals 1
 
     .line 56
     sget-object v0, Landroidx/media3/common/util/Clock;->DEFAULT:Landroidx/media3/common/util/Clock;
@@ -65,7 +65,7 @@
 .end method
 
 .method constructor <init>(DLandroidx/media3/common/util/Clock;)V
-    .registers 4
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public getTimeToFirstByteEstimateUs()J
-    .registers 3
+    .locals 2
 
     .line 76
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->estimateUs:J
@@ -105,7 +105,7 @@
 .end method
 
 .method public onTransferInitializing(Landroidx/media3/datasource/DataSpec;)V
-    .registers 5
+    .locals 3
 
     .line 87
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->initializedDataSpecs:Ljava/util/LinkedHashMap;
@@ -135,7 +135,7 @@
 .end method
 
 .method public onTransferStart(Landroidx/media3/datasource/DataSpec;)V
-    .registers 10
+    .locals 8
 
     .line 93
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->initializedDataSpecs:Ljava/util/LinkedHashMap;
@@ -146,12 +146,12 @@
 
     check-cast p1, Ljava/lang/Long;
 
-    if-nez p1, :cond_b
+    if-nez p1, :cond_0
 
     return-void
 
     .line 98
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->clock:Landroidx/media3/common/util/Clock;
 
     invoke-interface {v0}, Landroidx/media3/common/util/Clock;->elapsedRealtime()J
@@ -175,15 +175,15 @@
 
     cmp-long p1, v2, v4
 
-    if-nez p1, :cond_28
+    if-nez p1, :cond_1
 
     .line 100
     iput-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->estimateUs:J
 
-    goto :goto_35
+    goto :goto_0
 
     .line 102
-    :cond_28
+    :cond_1
     iget-wide v4, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->smoothingFactor:D
 
     long-to-double v2, v2
@@ -204,12 +204,12 @@
 
     iput-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/ExponentialWeightedAverageTimeToFirstByteEstimator;->estimateUs:J
 
-    :goto_35
+    :goto_0
     return-void
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 

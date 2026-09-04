@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 9427
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getAllowFreeFormInput(Landroid/app/RemoteInput;)Z
-    .registers 1
+    .locals 0
 
     .line 9431
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getAllowFreeFormInput()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static getChoices(Landroid/app/RemoteInput;)[Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 9436
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getChoices()[Ljava/lang/CharSequence;
@@ -47,7 +47,7 @@
 .end method
 
 .method static getExtras(Landroid/app/Notification$Action;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 9466
     invoke-virtual {p0}, Landroid/app/Notification$Action;->getExtras()Landroid/os/Bundle;
@@ -58,7 +58,7 @@
 .end method
 
 .method static getExtras(Landroid/app/RemoteInput;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 9471
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getExtras()Landroid/os/Bundle;
@@ -69,7 +69,7 @@
 .end method
 
 .method static getGroup(Landroid/app/Notification;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 9461
     invoke-virtual {p0}, Landroid/app/Notification;->getGroup()Ljava/lang/String;
@@ -80,7 +80,7 @@
 .end method
 
 .method static getLabel(Landroid/app/RemoteInput;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 9441
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getLabel()Ljava/lang/CharSequence;
@@ -91,7 +91,7 @@
 .end method
 
 .method static getRemoteInputs(Landroid/app/Notification$Action;)[Landroid/app/RemoteInput;
-    .registers 1
+    .locals 0
 
     .line 9451
     invoke-virtual {p0}, Landroid/app/Notification$Action;->getRemoteInputs()[Landroid/app/RemoteInput;
@@ -102,7 +102,7 @@
 .end method
 
 .method static getResultKey(Landroid/app/RemoteInput;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 9446
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getResultKey()Ljava/lang/String;
@@ -113,7 +113,7 @@
 .end method
 
 .method static getSortKey(Landroid/app/Notification;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 9456
     invoke-virtual {p0}, Landroid/app/Notification;->getSortKey()Ljava/lang/String;

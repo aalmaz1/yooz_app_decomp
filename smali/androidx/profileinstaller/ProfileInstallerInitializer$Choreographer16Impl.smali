@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static synthetic lambda$postFrameCallback$0(Ljava/lang/Runnable;J)V
-    .registers 3
+    .locals 0
 
     .line 161
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static postFrameCallback(Ljava/lang/Runnable;)V
-    .registers 3
+    .locals 2
 
     .line 161
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;

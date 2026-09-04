@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 4413
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,13 +25,13 @@
 .end method
 
 .method static castToParcelable(Landroid/app/Person;)Landroid/os/Parcelable;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static createMessage(Ljava/lang/CharSequence;JLandroid/app/Person;)Landroid/app/Notification$MessagingStyle$Message;
-    .registers 5
+    .locals 1
 
     .line 4420
     new-instance v0, Landroid/app/Notification$MessagingStyle$Message;

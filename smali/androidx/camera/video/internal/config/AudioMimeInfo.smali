@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/camera/video/internal/config/MimeInfo;-><init>()V
@@ -22,7 +22,7 @@
 .end method
 
 .method public static builder(Ljava/lang/String;)Landroidx/camera/video/internal/config/AudioMimeInfo$Builder;
-    .registers 2
+    .locals 1
 
     .line 51
     new-instance v0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$Builder;

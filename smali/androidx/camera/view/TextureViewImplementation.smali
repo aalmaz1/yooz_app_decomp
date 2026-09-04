@@ -48,7 +48,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$r_2wOnd0uIAUlyMr5ccXcbNZJnU(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
@@ -58,7 +58,7 @@
 .end method
 
 .method constructor <init>(Landroid/widget/FrameLayout;Landroidx/camera/view/PreviewTransformation;)V
-    .registers 3
+    .locals 0
 
     .line 70
     invoke-direct {p0, p1, p2}, Landroidx/camera/view/PreviewViewImplementation;-><init>(Landroid/widget/FrameLayout;Landroidx/camera/view/PreviewTransformation;)V
@@ -79,12 +79,12 @@
 .end method
 
 .method private notifySurfaceNotInUse()V
-    .registers 2
+    .locals 1
 
     .line 114
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mOnSurfaceNotInUseListener:Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 115
     invoke-interface {v0}, Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;->onSurfaceNotInUse()V
@@ -94,21 +94,21 @@
     .line 116
     iput-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mOnSurfaceNotInUseListener:Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method private reattachSurfaceTexture()V
-    .registers 3
+    .locals 2
 
     .line 257
     iget-boolean v0, p0, Landroidx/camera/view/TextureViewImplementation;->mIsSurfaceTextureDetachedFromView:Z
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mDetachedSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mTextureView:Landroid/view/TextureView;
 
@@ -119,7 +119,7 @@
 
     iget-object v1, p0, Landroidx/camera/view/TextureViewImplementation;->mDetachedSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    if-eq v0, v1, :cond_1d
+    if-eq v0, v1, :cond_0
 
     .line 260
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mTextureView:Landroid/view/TextureView;
@@ -136,14 +136,14 @@
     .line 262
     iput-boolean v0, p0, Landroidx/camera/view/TextureViewImplementation;->mIsSurfaceTextureDetachedFromView:Z
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method getPreview()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     .line 76
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mTextureView:Landroid/view/TextureView;
@@ -152,23 +152,23 @@
 .end method
 
 .method getPreviewBitmap()Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 1
 
     .line 281
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mTextureView:Landroid/view/TextureView;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/TextureView;->isAvailable()Z
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
     .line 286
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mTextureView:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
@@ -177,15 +177,15 @@
 
     return-object v0
 
-    :cond_12
-    :goto_12
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public initializePreview()V
-    .registers 5
+    .locals 4
 
     .line 123
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mParent:Landroid/widget/FrameLayout;
@@ -256,14 +256,14 @@
 .end method
 
 .method synthetic lambda$onSurfaceRequested$0$androidx-camera-view-TextureViewImplementation(Landroidx/camera/core/SurfaceRequest;)V
-    .registers 3
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    if-ne v0, p1, :cond_b
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -274,14 +274,14 @@
     iput-object p1, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceReleaseFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
     .line 107
-    :cond_b
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/view/TextureViewImplementation;->notifySurfaceNotInUse()V
 
     return-void
 .end method
 
 .method synthetic lambda$tryToProvidePreviewSurface$1$androidx-camera-view-TextureViewImplementation(Landroid/view/Surface;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -349,7 +349,7 @@
 .end method
 
 .method synthetic lambda$tryToProvidePreviewSurface$2$androidx-camera-view-TextureViewImplementation(Landroid/view/Surface;Lcom/google/common/util/concurrent/ListenableFuture;Landroidx/camera/core/SurfaceRequest;)V
-    .registers 6
+    .locals 2
 
     const-string v0, "TextureViewImpl"
 
@@ -369,26 +369,26 @@
 
     const/4 v0, 0x0
 
-    if-ne p1, p2, :cond_14
+    if-ne p1, p2, :cond_0
 
     .line 246
     iput-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceReleaseFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
     .line 248
-    :cond_14
+    :cond_0
     iget-object p1, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-ne p1, p3, :cond_1a
+    if-ne p1, p3, :cond_1
 
     .line 249
     iput-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    :cond_1a
+    :cond_1
     return-void
 .end method
 
 .method synthetic lambda$waitForNextFrame$3$androidx-camera-view-TextureViewImplementation(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -406,7 +406,7 @@
 .end method
 
 .method onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     .line 81
     invoke-direct {p0}, Landroidx/camera/view/TextureViewImplementation;->reattachSurfaceTexture()V
@@ -415,7 +415,7 @@
 .end method
 
 .method onDetachedFromWindow()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -426,7 +426,7 @@
 .end method
 
 .method onSurfaceRequested(Landroidx/camera/core/SurfaceRequest;Landroidx/camera/view/PreviewViewImplementation$OnSurfaceNotInUseListener;)V
-    .registers 4
+    .locals 1
 
     .line 92
     invoke-virtual {p1}, Landroidx/camera/core/SurfaceRequest;->getResolution()Landroid/util/Size;
@@ -444,13 +444,13 @@
     .line 95
     iget-object p2, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 96
     invoke-virtual {p2}, Landroidx/camera/core/SurfaceRequest;->willNotProvideSurface()Z
 
     .line 99
-    :cond_12
+    :cond_0
     iput-object p1, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
     .line 100
@@ -479,7 +479,7 @@
 .end method
 
 .method setFrameUpdateListener(Ljava/util/concurrent/Executor;Landroidx/camera/view/PreviewView$OnFrameUpdateListener;)V
-    .registers 3
+    .locals 0
 
     .line 292
     iput-object p2, p0, Landroidx/camera/view/TextureViewImplementation;->mOnFrameUpdateListener:Landroidx/camera/view/PreviewView$OnFrameUpdateListener;
@@ -491,25 +491,25 @@
 .end method
 
 .method tryToProvidePreviewSurface()V
-    .registers 5
+    .locals 4
 
     .line 223
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mResolution:Landroid/util/Size;
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_1
 
     iget-object v1, p0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
-    goto :goto_45
+    goto :goto_0
 
     .line 227
-    :cond_d
+    :cond_0
     iget-object v1, p0, Landroidx/camera/view/TextureViewImplementation;->mResolution:Landroid/util/Size;
 
     invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
@@ -568,13 +568,13 @@
     .line 253
     invoke-virtual {p0}, Landroidx/camera/view/TextureViewImplementation;->onSurfaceProvided()V
 
-    :cond_45
-    :goto_45
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method waitForNextFrame()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -88,7 +88,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,7 +121,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,7 +148,7 @@
 .end method
 
 .method public final invoke(Landroidx/datastore/preferences/core/Preferences;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -177,7 +177,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Landroidx/datastore/preferences/core/Preferences;
 
@@ -191,7 +191,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -202,9 +202,9 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
-    if-ne v1, v2, :cond_13
+    if-ne v1, v2, :cond_0
 
     iget-object v0, p0, Landroidx/datastore/preferences/core/PreferencesKt$edit$2;->L$0:Ljava/lang/Object;
 
@@ -212,10 +212,10 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_34
+    goto :goto_0
 
     .line 329
-    :cond_13
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -225,7 +225,7 @@
     throw p1
 
     .line 326
-    :cond_1b
+    :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/datastore/preferences/core/PreferencesKt$edit$2;->L$0:Ljava/lang/Object;
@@ -247,13 +247,13 @@
 
     move-result-object v1
 
-    if-ne v1, v0, :cond_33
+    if-ne v1, v0, :cond_2
 
     return-object v0
 
-    :cond_33
+    :cond_2
     move-object v0, p1
 
-    :goto_34
+    :goto_0
     return-object v0
 .end method

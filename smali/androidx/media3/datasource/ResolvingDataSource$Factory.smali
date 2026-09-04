@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/datasource/ResolvingDataSource$Resolver;)V
-    .registers 3
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public bridge synthetic createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 65
     invoke-virtual {p0}, Landroidx/media3/datasource/ResolvingDataSource$Factory;->createDataSource()Landroidx/media3/datasource/ResolvingDataSource;
@@ -53,7 +53,7 @@
 .end method
 
 .method public createDataSource()Landroidx/media3/datasource/ResolvingDataSource;
-    .registers 4
+    .locals 3
 
     .line 82
     new-instance v0, Landroidx/media3/datasource/ResolvingDataSource;

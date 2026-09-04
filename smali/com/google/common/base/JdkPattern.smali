@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/regex/Pattern;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public flags()I
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Lcom/google/common/base/JdkPattern;->pattern:Ljava/util/regex/Pattern;
@@ -68,7 +68,7 @@
 .end method
 
 .method public matcher(Ljava/lang/CharSequence;)Lcom/google/common/base/CommonMatcher;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -93,7 +93,7 @@
 .end method
 
 .method public pattern()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Lcom/google/common/base/JdkPattern;->pattern:Ljava/util/regex/Pattern;
@@ -106,7 +106,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 51
     iget-object v0, p0, Lcom/google/common/base/JdkPattern;->pattern:Ljava/util/regex/Pattern;

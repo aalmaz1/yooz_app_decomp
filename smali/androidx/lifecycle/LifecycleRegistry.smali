@@ -131,7 +131,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/lifecycle/LifecycleRegistry$Companion;
 
@@ -145,7 +145,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "provider"
 
@@ -160,7 +160,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/lifecycle/LifecycleOwner;Z)V
-    .registers 3
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Landroidx/lifecycle/Lifecycle;-><init>()V
@@ -198,7 +198,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/lifecycle/LifecycleOwner;ZLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/lifecycle/LifecycleRegistry;-><init>(Landroidx/lifecycle/LifecycleOwner;Z)V
 
@@ -206,7 +206,7 @@
 .end method
 
 .method private final backwardPass(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 7
+    .locals 5
 
     .line 258
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
@@ -220,16 +220,16 @@
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 259
-    :cond_b
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
-    if-nez v1, :cond_79
+    if-nez v1, :cond_2
 
     .line 260
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -255,7 +255,7 @@
     check-cast v1, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;
 
     .line 261
-    :goto_2c
+    :goto_0
     invoke-virtual {v1}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->getState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v3
@@ -268,11 +268,11 @@
 
     move-result v3
 
-    if-lez v3, :cond_b
+    if-lez v3, :cond_0
 
     iget-boolean v3, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
-    if-nez v3, :cond_b
+    if-nez v3, :cond_0
 
     iget-object v3, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
@@ -280,7 +280,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_0
 
     .line 263
     sget-object v3, Landroidx/lifecycle/Lifecycle$Event;->Companion:Landroidx/lifecycle/Lifecycle$Event$Companion;
@@ -293,7 +293,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_60
+    if-eqz v3, :cond_1
 
     .line 265
     invoke-virtual {v3}, Landroidx/lifecycle/Lifecycle$Event;->getTargetState()Landroidx/lifecycle/Lifecycle$State;
@@ -308,10 +308,10 @@
     .line 267
     invoke-direct {p0}, Landroidx/lifecycle/LifecycleRegistry;->popParentState()V
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 264
-    :cond_60
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -336,12 +336,12 @@
 
     throw p1
 
-    :cond_79
+    :cond_2
     return-void
 .end method
 
 .method private final calculateTargetState(Landroidx/lifecycle/LifecycleObserver;)Landroidx/lifecycle/Lifecycle$State;
-    .registers 5
+    .locals 3
 
     .line 154
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
@@ -352,7 +352,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     .line 155
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -361,19 +361,19 @@
 
     check-cast p1, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->getState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object p1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move-object p1, v0
 
     .line 157
-    :goto_17
+    :goto_0
     iget-object v1, p0, Landroidx/lifecycle/LifecycleRegistry;->parentStates:Ljava/util/ArrayList;
 
     check-cast v1, Ljava/util/Collection;
@@ -384,7 +384,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_1
 
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->parentStates:Ljava/util/ArrayList;
 
@@ -401,7 +401,7 @@
     check-cast v0, Landroidx/lifecycle/Lifecycle$State;
 
     .line 158
-    :cond_31
+    :cond_1
     sget-object v1, Landroidx/lifecycle/LifecycleRegistry;->Companion:Landroidx/lifecycle/LifecycleRegistry$Companion;
 
     iget-object v2, p0, Landroidx/lifecycle/LifecycleRegistry;->state:Landroidx/lifecycle/Lifecycle$State;
@@ -418,7 +418,7 @@
 .end method
 
 .method public static final createUnsafe(Landroidx/lifecycle/LifecycleOwner;)Landroidx/lifecycle/LifecycleRegistry;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -432,12 +432,12 @@
 .end method
 
 .method private final enforceMainThreadIfNeeded(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 295
     iget-boolean v0, p0, Landroidx/lifecycle/LifecycleRegistry;->enforceMainThread:Z
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     .line 296
     invoke-static {}, Landroidx/arch/core/executor/ArchTaskExecutor;->getInstance()Landroidx/arch/core/executor/ArchTaskExecutor;
@@ -448,12 +448,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 297
-    :cond_f
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Method "
@@ -485,13 +485,13 @@
 
     throw v0
 
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private final forwardPass(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 7
+    .locals 5
 
     .line 243
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
@@ -507,16 +507,16 @@
     check-cast v0, Ljava/util/Iterator;
 
     .line 244
-    :cond_d
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_76
+    if-eqz v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
-    if-nez v1, :cond_76
+    if-nez v1, :cond_2
 
     .line 245
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -538,7 +538,7 @@
     check-cast v1, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;
 
     .line 246
-    :goto_29
+    :goto_0
     invoke-virtual {v1}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->getState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v3
@@ -551,11 +551,11 @@
 
     move-result v3
 
-    if-gez v3, :cond_d
+    if-gez v3, :cond_0
 
     iget-boolean v3, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_0
 
     iget-object v3, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
@@ -563,7 +563,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_0
 
     .line 248
     invoke-virtual {v1}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->getState()Landroidx/lifecycle/Lifecycle$State;
@@ -583,7 +583,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_5d
+    if-eqz v3, :cond_1
 
     .line 251
     invoke-virtual {v1, p1, v3}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->dispatchEvent(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
@@ -591,10 +591,10 @@
     .line 252
     invoke-direct {p0}, Landroidx/lifecycle/LifecycleRegistry;->popParentState()V
 
-    goto :goto_29
+    goto :goto_0
 
     .line 250
-    :cond_5d
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -619,12 +619,12 @@
 
     throw p1
 
-    :cond_76
+    :cond_2
     return-void
 .end method
 
 .method private final isSynced()Z
-    .registers 4
+    .locals 3
 
     .line 145
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
@@ -635,12 +635,12 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return v1
 
     .line 148
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
     invoke-virtual {v0}, Landroidx/arch/core/internal/FastSafeIterableMap;->eldest()Ljava/util/Map$Entry;
@@ -678,24 +678,24 @@
 
     move-result-object v2
 
-    if-ne v0, v2, :cond_37
+    if-ne v0, v2, :cond_1
 
     .line 150
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->state:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne v0, v2, :cond_37
+    if-ne v0, v2, :cond_1
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_38
+    :goto_0
     return v1
 .end method
 
 .method public static final min$lifecycle_runtime_release(Landroidx/lifecycle/Lifecycle$State;Landroidx/lifecycle/Lifecycle$State;)Landroidx/lifecycle/Lifecycle$State;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -709,42 +709,42 @@
 .end method
 
 .method private final moveToState(Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 6
+    .locals 4
 
     .line 123
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->state:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 126
-    :cond_5
+    :cond_0
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->INITIALIZED:Landroidx/lifecycle/Lifecycle$State;
 
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_2
 
     sget-object v0, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     move v0, v2
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
-    :goto_12
+    :cond_2
+    :goto_0
     move v0, v3
 
-    :goto_13
-    if-eqz v0, :cond_38
+    :goto_1
+    if-eqz v0, :cond_6
 
     .line 129
     iput-object p1, p0, Landroidx/lifecycle/LifecycleRegistry;->state:Landroidx/lifecycle/Lifecycle$State;
@@ -752,16 +752,16 @@
     .line 130
     iget-boolean p1, p0, Landroidx/lifecycle/LifecycleRegistry;->handlingEvent:Z
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_5
 
     iget p1, p0, Landroidx/lifecycle/LifecycleRegistry;->addingObserverCounter:I
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_3
 
-    goto :goto_35
+    goto :goto_2
 
     .line 135
-    :cond_20
+    :cond_3
     iput-boolean v3, p0, Landroidx/lifecycle/LifecycleRegistry;->handlingEvent:Z
 
     .line 136
@@ -775,7 +775,7 @@
 
     sget-object v0, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne p1, v0, :cond_34
+    if-ne p1, v0, :cond_4
 
     .line 139
     new-instance p1, Landroidx/arch/core/internal/FastSafeIterableMap;
@@ -784,18 +784,18 @@
 
     iput-object p1, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
-    :cond_34
+    :cond_4
     return-void
 
     .line 131
-    :cond_35
-    :goto_35
+    :cond_5
+    :goto_2
     iput-boolean v3, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
     return-void
 
     .line 127
-    :cond_38
+    :cond_6
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "no event down from "
@@ -841,7 +841,7 @@
 .end method
 
 .method private final popParentState()V
-    .registers 3
+    .locals 2
 
     .line 205
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->parentStates:Ljava/util/ArrayList;
@@ -858,7 +858,7 @@
 .end method
 
 .method private final pushParentState(Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 3
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->parentStates:Ljava/util/ArrayList;
@@ -869,7 +869,7 @@
 .end method
 
 .method private final sync()V
-    .registers 4
+    .locals 3
 
     .line 275
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->lifecycleOwner:Ljava/lang/ref/WeakReference;
@@ -880,18 +880,18 @@
 
     check-cast v0, Landroidx/lifecycle/LifecycleOwner;
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_3
 
     .line 280
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-direct {p0}, Landroidx/lifecycle/LifecycleRegistry;->isSynced()Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_57
+    if-nez v1, :cond_2
 
     .line 281
     iput-boolean v2, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
@@ -923,13 +923,13 @@
 
     move-result v1
 
-    if-gez v1, :cond_33
+    if-gez v1, :cond_1
 
     .line 283
     invoke-direct {p0, v0}, Landroidx/lifecycle/LifecycleRegistry;->backwardPass(Landroidx/lifecycle/LifecycleOwner;)V
 
     .line 285
-    :cond_33
+    :cond_1
     iget-object v1, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
     invoke-virtual {v1}, Landroidx/arch/core/internal/FastSafeIterableMap;->newest()Ljava/util/Map$Entry;
@@ -939,9 +939,9 @@
     .line 286
     iget-boolean v2, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
-    if-nez v2, :cond_a
+    if-nez v2, :cond_0
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     iget-object v2, p0, Landroidx/lifecycle/LifecycleRegistry;->state:Landroidx/lifecycle/Lifecycle$State;
 
@@ -961,21 +961,21 @@
 
     move-result v1
 
-    if-lez v1, :cond_a
+    if-lez v1, :cond_0
 
     .line 287
     invoke-direct {p0, v0}, Landroidx/lifecycle/LifecycleRegistry;->forwardPass(Landroidx/lifecycle/LifecycleOwner;)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 290
-    :cond_57
+    :cond_2
     iput-boolean v2, p0, Landroidx/lifecycle/LifecycleRegistry;->newEventOccurred:Z
 
     return-void
 
     .line 276
-    :cond_5a
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "LifecycleOwner of this LifecycleRegistry is already garbage collected. It is too late to change lifecycle state."
@@ -988,7 +988,7 @@
 
 # virtual methods
 .method public addObserver(Landroidx/lifecycle/LifecycleObserver;)V
-    .registers 8
+    .locals 6
 
     const-string v0, "observer"
 
@@ -1004,17 +1004,17 @@
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     sget-object v0, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     sget-object v0, Landroidx/lifecycle/Lifecycle$State;->INITIALIZED:Landroidx/lifecycle/Lifecycle$State;
 
     .line 176
-    :goto_15
+    :goto_0
     new-instance v1, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;
 
     invoke-direct {v1, p1, v0}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;-><init>(Landroidx/lifecycle/LifecycleObserver;Landroidx/lifecycle/Lifecycle$State;)V
@@ -1028,12 +1028,12 @@
 
     check-cast v0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 181
-    :cond_25
+    :cond_1
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->lifecycleOwner:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -1042,35 +1042,35 @@
 
     check-cast v0, Landroidx/lifecycle/LifecycleOwner;
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
     return-void
 
     .line 184
-    :cond_30
+    :cond_2
     iget v2, p0, Landroidx/lifecycle/LifecycleRegistry;->addingObserverCounter:I
 
     const/4 v3, 0x1
 
-    if-nez v2, :cond_3c
+    if-nez v2, :cond_4
 
     iget-boolean v2, p0, Landroidx/lifecycle/LifecycleRegistry;->handlingEvent:Z
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_3
 
-    goto :goto_3c
+    goto :goto_1
 
-    :cond_3a
+    :cond_3
     const/4 v2, 0x0
 
-    goto :goto_3d
+    goto :goto_2
 
-    :cond_3c
-    :goto_3c
+    :cond_4
+    :goto_1
     move v2, v3
 
     .line 185
-    :goto_3d
+    :goto_2
     invoke-direct {p0, p1}, Landroidx/lifecycle/LifecycleRegistry;->calculateTargetState(Landroidx/lifecycle/LifecycleObserver;)Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v4
@@ -1083,7 +1083,7 @@
     iput v5, p0, Landroidx/lifecycle/LifecycleRegistry;->addingObserverCounter:I
 
     .line 187
-    :goto_46
+    :goto_3
     invoke-virtual {v1}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->getState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v3
@@ -1094,7 +1094,7 @@
 
     move-result v3
 
-    if-gez v3, :cond_91
+    if-gez v3, :cond_6
 
     iget-object v3, p0, Landroidx/lifecycle/LifecycleRegistry;->observerMap:Landroidx/arch/core/internal/FastSafeIterableMap;
 
@@ -1102,7 +1102,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_91
+    if-eqz v3, :cond_6
 
     .line 189
     invoke-virtual {v1}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->getState()Landroidx/lifecycle/Lifecycle$State;
@@ -1122,7 +1122,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_78
+    if-eqz v3, :cond_5
 
     .line 192
     invoke-virtual {v1, v0, v3}, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->dispatchEvent(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
@@ -1135,10 +1135,10 @@
 
     move-result-object v4
 
-    goto :goto_46
+    goto :goto_3
 
     .line 191
-    :cond_78
+    :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1163,14 +1163,14 @@
 
     throw p1
 
-    :cond_91
-    if-nez v2, :cond_96
+    :cond_6
+    if-nez v2, :cond_7
 
     .line 199
     invoke-direct {p0}, Landroidx/lifecycle/LifecycleRegistry;->sync()V
 
     .line 201
-    :cond_96
+    :cond_7
     iget p1, p0, Landroidx/lifecycle/LifecycleRegistry;->addingObserverCounter:I
 
     add-int/lit8 p1, p1, -0x1
@@ -1181,7 +1181,7 @@
 .end method
 
 .method public getCurrentState()Landroidx/lifecycle/Lifecycle$State;
-    .registers 2
+    .locals 1
 
     .line 98
     iget-object v0, p0, Landroidx/lifecycle/LifecycleRegistry;->state:Landroidx/lifecycle/Lifecycle$State;
@@ -1190,7 +1190,7 @@
 .end method
 
 .method public getObserverCount()I
-    .registers 2
+    .locals 1
 
     const-string v0, "getObserverCount"
 
@@ -1208,7 +1208,7 @@
 .end method
 
 .method public handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "event"
 
@@ -1230,7 +1230,7 @@
 .end method
 
 .method public markState(Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "Override [currentState]."
     .end annotation
@@ -1251,7 +1251,7 @@
 .end method
 
 .method public removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "observer"
 
@@ -1271,7 +1271,7 @@
 .end method
 
 .method public setCurrentState(Landroidx/lifecycle/Lifecycle$State;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "state"
 

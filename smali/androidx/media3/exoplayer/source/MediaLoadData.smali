@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 12
+    .locals 10
 
     const/4 v2, -0x1
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
-    .registers 10
+    .locals 0
 
     .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

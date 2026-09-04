@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 56
     invoke-static {}, Lcom/google/common/io/TempFileCreator;->pickSecureCreator()Lcom/google/common/io/TempFileCreator;
@@ -35,7 +35,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/io/TempFileCreator$1;)V
-    .registers 2
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Lcom/google/common/io/TempFileCreator;-><init>()V
@@ -53,11 +53,11 @@
 .end method
 
 .method private static pickSecureCreator()Lcom/google/common/io/TempFileCreator;
-    .registers 4
+    .locals 4
 
     const/4 v0, 0x0
 
-    :try_start_1
+    :try_start_0
     const-string v1, "java.nio.file.Path"
 
     .line 69
@@ -67,13 +67,13 @@
     new-instance v1, Lcom/google/common/io/TempFileCreator$JavaNioCreator;
 
     invoke-direct {v1, v0}, Lcom/google/common/io/TempFileCreator$JavaNioCreator;-><init>(Lcom/google/common/io/TempFileCreator$1;)V
-    :try_end_b
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v1
 
-    :catch_c
-    :try_start_c
+    :catch_0
+    :try_start_1
     const-string v1, "android.os.Build$VERSION"
 
     .line 76
@@ -120,21 +120,21 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_40
+    if-ge v1, v2, :cond_0
 
     .line 84
     new-instance v1, Lcom/google/common/io/TempFileCreator$ThrowingCreator;
 
     invoke-direct {v1, v0}, Lcom/google/common/io/TempFileCreator$ThrowingCreator;-><init>(Lcom/google/common/io/TempFileCreator$1;)V
-    :try_end_3f
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_c .. :try_end_3f} :catch_52
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_c .. :try_end_3f} :catch_4c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_c .. :try_end_3f} :catch_46
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
 
     return-object v1
 
     .line 103
-    :cond_40
+    :cond_0
     new-instance v1, Lcom/google/common/io/TempFileCreator$JavaIoCreator;
 
     invoke-direct {v1, v0}, Lcom/google/common/io/TempFileCreator$JavaIoCreator;-><init>(Lcom/google/common/io/TempFileCreator$1;)V
@@ -142,7 +142,7 @@
     return-object v1
 
     .line 97
-    :catch_46
+    :catch_1
     new-instance v1, Lcom/google/common/io/TempFileCreator$ThrowingCreator;
 
     invoke-direct {v1, v0}, Lcom/google/common/io/TempFileCreator$ThrowingCreator;-><init>(Lcom/google/common/io/TempFileCreator$1;)V
@@ -150,7 +150,7 @@
     return-object v1
 
     .line 94
-    :catch_4c
+    :catch_2
     new-instance v1, Lcom/google/common/io/TempFileCreator$ThrowingCreator;
 
     invoke-direct {v1, v0}, Lcom/google/common/io/TempFileCreator$ThrowingCreator;-><init>(Lcom/google/common/io/TempFileCreator$1;)V
@@ -158,7 +158,7 @@
     return-object v1
 
     .line 91
-    :catch_52
+    :catch_3
     new-instance v1, Lcom/google/common/io/TempFileCreator$ThrowingCreator;
 
     invoke-direct {v1, v0}, Lcom/google/common/io/TempFileCreator$ThrowingCreator;-><init>(Lcom/google/common/io/TempFileCreator$1;)V
@@ -167,7 +167,7 @@
 .end method
 
 .method static testMakingUserPermissionsFromScratch()V
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

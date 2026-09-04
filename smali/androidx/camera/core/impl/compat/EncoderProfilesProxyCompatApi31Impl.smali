@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static from(Landroid/media/EncoderProfiles;)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 4
+    .locals 3
 
     .line 41
     invoke-virtual {p0}, Landroid/media/EncoderProfiles;->getDefaultDurationSeconds()I
@@ -53,7 +53,7 @@
 .end method
 
 .method private static fromAudioProfiles(Ljava/util/List;)Ljava/util/List;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -76,12 +76,12 @@
 
     move-result-object p0
 
-    :goto_9
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -126,14 +126,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_35
+    :cond_0
     return-object v0
 .end method
 
 .method private static fromVideoProfiles(Ljava/util/List;)Ljava/util/List;
-    .registers 13
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,12 +156,12 @@
 
     move-result-object p0
 
-    :goto_9
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -217,8 +217,8 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_3d
+    :cond_0
     return-object v0
 .end method

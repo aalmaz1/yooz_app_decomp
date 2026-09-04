@@ -14,7 +14,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$vtmV5Njo8kR2KAgmyl6w_Qrh-mI()Landroidx/media3/datasource/PlaceholderDataSource;
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/media3/datasource/PlaceholderDataSource;
 
@@ -24,7 +24,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 27
     new-instance v0, Landroidx/media3/datasource/PlaceholderDataSource;
@@ -44,7 +44,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,19 +55,19 @@
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public close()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -75,7 +75,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -93,7 +93,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 4
+    .locals 0
 
     .line 46
     new-instance p1, Ljava/lang/UnsupportedOperationException;

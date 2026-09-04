@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;Landroidx/media3/exoplayer/rtsp/RtspMediaTrack;ILandroidx/media3/exoplayer/rtsp/RtpDataChannel$Factory;)V
-    .registers 13
+    .locals 8
 
     .line 799
     iput-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->this$0:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;
@@ -99,7 +99,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;)Z
-    .registers 1
+    .locals 0
 
     .line 784
     iget-boolean p0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->canceled:Z
@@ -108,7 +108,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;)Landroidx/media3/exoplayer/source/SampleQueue;
-    .registers 1
+    .locals 0
 
     .line 784
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -119,12 +119,12 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 2
+    .locals 1
 
     .line 837
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->canceled:Z
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 838
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->loadInfo:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;
@@ -145,12 +145,12 @@
 
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;->access$2500(Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod;)V
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 811
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -163,7 +163,7 @@
 .end method
 
 .method public isSampleQueueReady()Z
-    .registers 3
+    .locals 2
 
     .line 821
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -178,7 +178,7 @@
 .end method
 
 .method public read(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 6
+    .locals 2
 
     .line 826
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -193,17 +193,17 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 865
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->released:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 868
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->release()V
@@ -222,7 +222,7 @@
 .end method
 
 .method public resumeLoad()V
-    .registers 2
+    .locals 1
 
     .line 848
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->canceled:Z
@@ -246,12 +246,12 @@
 .end method
 
 .method public seekTo(J)V
-    .registers 4
+    .locals 1
 
     .line 856
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->canceled:Z
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 857
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->loadInfo:Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtpLoadInfo;
@@ -272,12 +272,12 @@
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/exoplayer/source/SampleQueue;->setStartTimeUs(J)V
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method public skipData(J)I
-    .registers 5
+    .locals 2
 
     .line 830
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->sampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -297,7 +297,7 @@
 .end method
 
 .method public startLoading()V
-    .registers 5
+    .locals 4
 
     .line 816
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMediaPeriod$RtspLoaderWrapper;->loader:Landroidx/media3/exoplayer/upstream/Loader;

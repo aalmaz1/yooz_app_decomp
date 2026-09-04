@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 649
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static getCapabilitiesInternalForDirectPlayback(Landroid/media/AudioManager;Landroidx/media3/common/AudioAttributes;)Landroidx/media3/exoplayer/audio/AudioCapabilities;
-    .registers 3
+    .locals 1
 
     .line 656
     invoke-virtual {p1}, Landroidx/media3/common/AudioAttributes;->getAudioAttributesV21()Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
@@ -54,12 +54,12 @@
 .end method
 
 .method public static getDefaultRoutedDeviceForAttributes(Landroid/media/AudioManager;Landroidx/media3/common/AudioAttributes;)Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
     .line 667
-    :try_start_1
+    :try_start_0
     invoke-static {p0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -77,20 +77,20 @@
     invoke-virtual {p0, p1}, Landroid/media/AudioManager;->getAudioDevicesForAttributes(Landroid/media/AudioAttributes;)Ljava/util/List;
 
     move-result-object p0
-    :try_end_11
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_11} :catch_25
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 676
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     return-object v0
 
     .line 682
-    :cond_18
+    :cond_0
     new-instance p1, Landroidx/media3/exoplayer/audio/AudioDeviceInfoApi23;
 
     const/4 v0, 0x0
@@ -105,6 +105,6 @@
 
     return-object p1
 
-    :catch_25
+    :catch_0
     return-object v0
 .end method

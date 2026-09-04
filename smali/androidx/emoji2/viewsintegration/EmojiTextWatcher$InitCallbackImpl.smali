@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/EditText;)V
-    .registers 3
+    .locals 1
 
     .line 138
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat$InitCallback;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public onInitialized()V
-    .registers 3
+    .locals 2
 
     .line 144
     invoke-super {p0}, Landroidx/emoji2/text/EmojiCompat$InitCallback;->onInitialized()V

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/PreviewView;)V
-    .registers 2
+    .locals 0
 
     .line 1095
     iput-object p1, p0, Landroidx/camera/view/PreviewView$DisplayRotationListener;->this$0:Landroidx/camera/view/PreviewView;
@@ -36,13 +36,13 @@
 
 # virtual methods
 .method public onDisplayAdded(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onDisplayChanged(I)V
-    .registers 3
+    .locals 1
 
     .line 1106
     iget-object v0, p0, Landroidx/camera/view/PreviewView$DisplayRotationListener;->this$0:Landroidx/camera/view/PreviewView;
@@ -51,26 +51,26 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 1107
     invoke-virtual {v0}, Landroid/view/Display;->getDisplayId()I
 
     move-result v0
 
-    if-ne v0, p1, :cond_13
+    if-ne v0, p1, :cond_0
 
     .line 1108
     iget-object p1, p0, Landroidx/camera/view/PreviewView$DisplayRotationListener;->this$0:Landroidx/camera/view/PreviewView;
 
     invoke-virtual {p1}, Landroidx/camera/view/PreviewView;->redrawPreview()V
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public onDisplayRemoved(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

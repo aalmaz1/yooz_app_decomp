@@ -52,7 +52,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$DN4l2kv51WFx7GoN5Fyqar44Kyg(Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->releaseInternal()V
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/util/Clock;)V
-    .registers 5
+    .locals 3
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -121,7 +121,7 @@
 .end method
 
 .method private generateEventTime(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 5
+    .locals 3
 
     .line 956
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
@@ -130,29 +130,29 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
     move-object v1, v0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 961
-    :cond_a
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
 
     invoke-virtual {v1, p1}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;->getMediaPeriodIdTimeline(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/common/Timeline;
 
     move-result-object v1
 
-    :goto_10
-    if-eqz p1, :cond_24
+    :goto_0
+    if-eqz p1, :cond_2
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
-    goto :goto_24
+    goto :goto_1
 
     .line 969
-    :cond_15
+    :cond_1
     iget-object v0, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->period:Landroidx/media3/common/Timeline$Period;
@@ -171,8 +171,8 @@
     return-object p1
 
     .line 963
-    :cond_24
-    :goto_24
+    :cond_2
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
 
     invoke-interface {p1}, Landroidx/media3/common/Player;->getCurrentMediaItemIndex()I
@@ -191,26 +191,26 @@
 
     move-result v2
 
-    if-ge p1, v2, :cond_38
+    if-ge p1, v2, :cond_3
 
     const/4 v2, 0x1
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_38
+    :cond_3
     const/4 v2, 0x0
 
-    :goto_39
-    if-eqz v2, :cond_3c
+    :goto_2
+    if-eqz v2, :cond_4
 
-    goto :goto_3e
+    goto :goto_3
 
     .line 967
-    :cond_3c
+    :cond_4
     sget-object v1, Landroidx/media3/common/Timeline;->EMPTY:Landroidx/media3/common/Timeline;
 
     .line 966
-    :goto_3e
+    :goto_3
     invoke-virtual {p0, v1, p1, v0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateEventTime(Landroidx/media3/common/Timeline;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
 
     move-result-object p1
@@ -219,7 +219,7 @@
 .end method
 
 .method private generateLoadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 2
+    .locals 1
 
     .line 982
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
@@ -236,7 +236,7 @@
 .end method
 
 .method private generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 6
+    .locals 3
 
     .line 987
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
@@ -247,7 +247,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_2
 
     .line 989
     iget-object v2, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
@@ -257,36 +257,36 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v0, v1
 
-    :goto_13
-    if-eqz v0, :cond_1a
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 992
     invoke-direct {p0, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateEventTime(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
 
     move-result-object p1
 
-    goto :goto_20
+    goto :goto_1
 
     .line 993
-    :cond_1a
+    :cond_1
     sget-object v0, Landroidx/media3/common/Timeline;->EMPTY:Landroidx/media3/common/Timeline;
 
     invoke-virtual {p0, v0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateEventTime(Landroidx/media3/common/Timeline;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
 
     move-result-object p1
 
-    :goto_20
+    :goto_1
     return-object p1
 
     .line 995
-    :cond_21
+    :cond_2
     iget-object p2, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
 
     invoke-interface {p2}, Landroidx/media3/common/Player;->getCurrentTimeline()Landroidx/media3/common/Timeline;
@@ -298,23 +298,23 @@
 
     move-result v2
 
-    if-ge p1, v2, :cond_2e
+    if-ge p1, v2, :cond_3
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_2e
+    :cond_3
     move v0, v1
 
-    :goto_2f
-    if-eqz v0, :cond_32
+    :goto_2
+    if-eqz v0, :cond_4
 
-    goto :goto_34
+    goto :goto_3
 
     .line 998
-    :cond_32
+    :cond_4
     sget-object p2, Landroidx/media3/common/Timeline;->EMPTY:Landroidx/media3/common/Timeline;
 
-    :goto_34
+    :goto_3
     const/4 v0, 0x0
 
     .line 997
@@ -326,7 +326,7 @@
 .end method
 
 .method private generatePlayingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 2
+    .locals 1
 
     .line 974
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
@@ -343,7 +343,7 @@
 .end method
 
 .method private generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 2
+    .locals 1
 
     .line 978
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
@@ -360,12 +360,12 @@
 .end method
 
 .method private getEventTimeForErrorEvent(Landroidx/media3/common/PlaybackException;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 3
+    .locals 1
 
     .line 1002
     instance-of v0, p1, Landroidx/media3/exoplayer/ExoPlaybackException;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 1003
     check-cast p1, Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -373,7 +373,7 @@
     .line 1004
     iget-object v0, p1, Landroidx/media3/exoplayer/ExoPlaybackException;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 1005
     iget-object p1, p1, Landroidx/media3/exoplayer/ExoPlaybackException;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -385,7 +385,7 @@
     return-object p1
 
     .line 1008
-    :cond_11
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
 
     move-result-object p1
@@ -394,13 +394,13 @@
 .end method
 
 .method static synthetic lambda$new$0(Landroidx/media3/exoplayer/analytics/AnalyticsListener;Landroidx/media3/common/FlagSet;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method static synthetic lambda$notifySeekStarted$2(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 2
+    .locals 0
 
     .line 163
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onSeekStarted(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -409,7 +409,7 @@
 .end method
 
 .method static synthetic lambda$onAudioAttributesChanged$57(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/AudioAttributes;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 749
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioAttributesChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/AudioAttributes;)V
@@ -418,7 +418,7 @@
 .end method
 
 .method static synthetic lambda$onAudioCodecError$11(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 260
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioCodecError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;)V
@@ -427,7 +427,7 @@
 .end method
 
 .method static synthetic lambda$onAudioDecoderInitialized$4(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;JJLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 14
+    .locals 7
 
     .line 189
     invoke-interface {p6, p0, p1, p2, p3}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioDecoderInitialized(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;J)V
@@ -449,7 +449,7 @@
 .end method
 
 .method static synthetic lambda$onAudioDecoderReleased$8(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 231
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioDecoderReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
@@ -458,7 +458,7 @@
 .end method
 
 .method static synthetic lambda$onAudioDisabled$9(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 241
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioDisabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
@@ -467,7 +467,7 @@
 .end method
 
 .method static synthetic lambda$onAudioEnabled$3(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 176
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioEnabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
@@ -476,7 +476,7 @@
 .end method
 
 .method static synthetic lambda$onAudioInputFormatChanged$5(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 202
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioInputFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
@@ -485,7 +485,7 @@
 .end method
 
 .method static synthetic lambda$onAudioPositionAdvancing$6(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;JLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 211
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioPositionAdvancing(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;J)V
@@ -494,7 +494,7 @@
 .end method
 
 .method static synthetic lambda$onAudioSessionIdChanged$56(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 740
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioSessionIdChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
@@ -503,7 +503,7 @@
 .end method
 
 .method static synthetic lambda$onAudioSinkError$10(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 251
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioSinkError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;)V
@@ -512,7 +512,7 @@
 .end method
 
 .method static synthetic lambda$onAudioTrackInitialized$12(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 269
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioTrackInitialized(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
@@ -521,7 +521,7 @@
 .end method
 
 .method static synthetic lambda$onAudioTrackReleased$13(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 278
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAudioTrackReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
@@ -530,7 +530,7 @@
 .end method
 
 .method static synthetic lambda$onAudioUnderrun$7(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJJLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 14
+    .locals 7
 
     move-object v0, p6
 
@@ -549,7 +549,7 @@
 .end method
 
 .method static synthetic lambda$onAvailableCommandsChanged$35(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Player$Commands;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 531
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onAvailableCommandsChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Player$Commands;)V
@@ -558,7 +558,7 @@
 .end method
 
 .method static synthetic lambda$onBandwidthSample$62(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJJLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 14
+    .locals 7
 
     move-object v0, p6
 
@@ -577,7 +577,7 @@
 .end method
 
 .method static synthetic lambda$onCues$53(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/util/List;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 715
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onCues(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/util/List;)V
@@ -586,7 +586,7 @@
 .end method
 
 .method static synthetic lambda$onCues$54(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/text/CueGroup;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 722
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onCues(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/text/CueGroup;)V
@@ -595,7 +595,7 @@
 .end method
 
 .method static synthetic lambda$onDeviceInfoChanged$60(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/DeviceInfo;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 785
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDeviceInfoChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/DeviceInfo;)V
@@ -604,7 +604,7 @@
 .end method
 
 .method static synthetic lambda$onDeviceVolumeChanged$61(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IZLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 794
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDeviceVolumeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IZ)V
@@ -613,7 +613,7 @@
 .end method
 
 .method static synthetic lambda$onDownstreamFormatChanged$30(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 468
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDownstreamFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;)V
@@ -622,7 +622,7 @@
 .end method
 
 .method static synthetic lambda$onDrmKeysLoaded$64(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 2
+    .locals 0
 
     .line 842
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDrmKeysLoaded(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -631,7 +631,7 @@
 .end method
 
 .method static synthetic lambda$onDrmKeysRemoved$67(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 2
+    .locals 0
 
     .line 870
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDrmKeysRemoved(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -640,7 +640,7 @@
 .end method
 
 .method static synthetic lambda$onDrmKeysRestored$66(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 2
+    .locals 0
 
     .line 861
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDrmKeysRestored(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -649,7 +649,7 @@
 .end method
 
 .method static synthetic lambda$onDrmSessionAcquired$63(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 831
     invoke-interface {p2, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDrmSessionAcquired(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -661,7 +661,7 @@
 .end method
 
 .method static synthetic lambda$onDrmSessionManagerError$65(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 852
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDrmSessionManagerError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;)V
@@ -670,7 +670,7 @@
 .end method
 
 .method static synthetic lambda$onDrmSessionReleased$68(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 2
+    .locals 0
 
     .line 879
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDrmSessionReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -679,7 +679,7 @@
 .end method
 
 .method static synthetic lambda$onDroppedFrames$18(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 5
+    .locals 0
 
     .line 334
     invoke-interface {p4, p0, p1, p2, p3}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onDroppedVideoFrames(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJ)V
@@ -688,7 +688,7 @@
 .end method
 
 .method static synthetic lambda$onIsLoadingChanged$34(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 520
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onLoadingChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
@@ -700,7 +700,7 @@
 .end method
 
 .method static synthetic lambda$onIsPlayingChanged$40(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 580
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onIsPlayingChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
@@ -709,7 +709,7 @@
 .end method
 
 .method static synthetic lambda$onLoadCanceled$27(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 432
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onLoadCanceled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
@@ -718,7 +718,7 @@
 .end method
 
 .method static synthetic lambda$onLoadCompleted$26(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 419
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onLoadCompleted(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
@@ -727,7 +727,7 @@
 .end method
 
 .method static synthetic lambda$onLoadError$28(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;ZLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 12
+    .locals 6
 
     move-object v0, p5
 
@@ -748,7 +748,7 @@
 .end method
 
 .method static synthetic lambda$onLoadStarted$25(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 406
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onLoadStarted(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
@@ -757,7 +757,7 @@
 .end method
 
 .method static synthetic lambda$onMaxSeekToPreviousPositionChanged$49(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;JLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 680
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onMaxSeekToPreviousPositionChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;J)V
@@ -766,7 +766,7 @@
 .end method
 
 .method static synthetic lambda$onMediaItemTransition$32(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaItem;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 494
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onMediaItemTransition(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaItem;I)V
@@ -775,7 +775,7 @@
 .end method
 
 .method static synthetic lambda$onMediaMetadataChanged$50(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaMetadata;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 689
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onMediaMetadataChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaMetadata;)V
@@ -784,7 +784,7 @@
 .end method
 
 .method static synthetic lambda$onMetadata$52(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Metadata;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 707
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onMetadata(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Metadata;)V
@@ -793,7 +793,7 @@
 .end method
 
 .method static synthetic lambda$onPlayWhenReadyChanged$38(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 560
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlayWhenReadyChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZI)V
@@ -802,7 +802,7 @@
 .end method
 
 .method static synthetic lambda$onPlaybackParametersChanged$46(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackParameters;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 652
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlaybackParametersChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackParameters;)V
@@ -811,7 +811,7 @@
 .end method
 
 .method static synthetic lambda$onPlaybackStateChanged$37(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 550
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlaybackStateChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
@@ -820,7 +820,7 @@
 .end method
 
 .method static synthetic lambda$onPlaybackSuppressionReasonChanged$39(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 571
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlaybackSuppressionReasonChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
@@ -829,7 +829,7 @@
 .end method
 
 .method static synthetic lambda$onPlayerError$43(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackException;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 607
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlayerError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackException;)V
@@ -838,7 +838,7 @@
 .end method
 
 .method static synthetic lambda$onPlayerErrorChanged$44(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackException;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 616
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlayerErrorChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackException;)V
@@ -847,7 +847,7 @@
 .end method
 
 .method static synthetic lambda$onPlayerStateChanged$36(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 541
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlayerStateChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZI)V
@@ -856,7 +856,7 @@
 .end method
 
 .method static synthetic lambda$onPlaylistMetadataChanged$51(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaMetadata;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 698
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlaylistMetadataChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaMetadata;)V
@@ -865,7 +865,7 @@
 .end method
 
 .method static synthetic lambda$onPositionDiscontinuity$45(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/common/Player$PositionInfo;Landroidx/media3/common/Player$PositionInfo;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 5
+    .locals 0
 
     .line 641
     invoke-interface {p4, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPositionDiscontinuity(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
@@ -877,7 +877,7 @@
 .end method
 
 .method static synthetic lambda$onRenderedFirstFrame$21(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Object;JLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 5
+    .locals 0
 
     .line 363
     invoke-interface {p4, p0, p1, p2, p3}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onRenderedFirstFrame(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Object;J)V
@@ -886,7 +886,7 @@
 .end method
 
 .method static synthetic lambda$onRepeatModeChanged$41(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 589
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onRepeatModeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
@@ -895,7 +895,7 @@
 .end method
 
 .method static synthetic lambda$onSeekBackIncrementChanged$47(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;JLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 661
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onSeekBackIncrementChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;J)V
@@ -904,7 +904,7 @@
 .end method
 
 .method static synthetic lambda$onSeekForwardIncrementChanged$48(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;JLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 670
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onSeekForwardIncrementChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;J)V
@@ -913,7 +913,7 @@
 .end method
 
 .method static synthetic lambda$onShuffleModeEnabledChanged$42(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 598
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onShuffleModeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
@@ -922,7 +922,7 @@
 .end method
 
 .method static synthetic lambda$onSkipSilenceEnabledChanged$55(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 731
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onSkipSilenceEnabledChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
@@ -931,7 +931,7 @@
 .end method
 
 .method static synthetic lambda$onSurfaceSizeChanged$24(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 391
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onSurfaceSizeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;II)V
@@ -940,7 +940,7 @@
 .end method
 
 .method static synthetic lambda$onTimelineChanged$31(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 484
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onTimelineChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
@@ -949,7 +949,7 @@
 .end method
 
 .method static synthetic lambda$onTrackSelectionParametersChanged$59(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/TrackSelectionParameters;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 776
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onTrackSelectionParametersChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/TrackSelectionParameters;)V
@@ -958,7 +958,7 @@
 .end method
 
 .method static synthetic lambda$onTracksChanged$33(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Tracks;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 503
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onTracksChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Tracks;)V
@@ -967,7 +967,7 @@
 .end method
 
 .method static synthetic lambda$onUpstreamDiscarded$29(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 458
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onUpstreamDiscarded(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;)V
@@ -976,7 +976,7 @@
 .end method
 
 .method static synthetic lambda$onVideoCodecError$23(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 382
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoCodecError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;)V
@@ -985,7 +985,7 @@
 .end method
 
 .method static synthetic lambda$onVideoDecoderInitialized$16(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;JJLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 14
+    .locals 7
 
     .line 312
     invoke-interface {p6, p0, p1, p2, p3}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoDecoderInitialized(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;J)V
@@ -1007,7 +1007,7 @@
 .end method
 
 .method static synthetic lambda$onVideoDecoderReleased$19(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 343
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoDecoderReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
@@ -1016,7 +1016,7 @@
 .end method
 
 .method static synthetic lambda$onVideoDisabled$20(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 353
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoDisabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
@@ -1025,7 +1025,7 @@
 .end method
 
 .method static synthetic lambda$onVideoEnabled$15(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 299
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoEnabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
@@ -1034,7 +1034,7 @@
 .end method
 
 .method static synthetic lambda$onVideoFrameProcessingOffset$22(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;JILandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 5
+    .locals 0
 
     .line 373
     invoke-interface {p4, p0, p1, p2, p3}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoFrameProcessingOffset(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;JI)V
@@ -1043,7 +1043,7 @@
 .end method
 
 .method static synthetic lambda$onVideoInputFormatChanged$17(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 4
+    .locals 0
 
     .line 325
     invoke-interface {p3, p0, p1, p2}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoInputFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
@@ -1052,7 +1052,7 @@
 .end method
 
 .method static synthetic lambda$onVideoSizeChanged$58(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/VideoSize;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 9
+    .locals 6
 
     .line 760
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVideoSizeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/VideoSize;)V
@@ -1076,7 +1076,7 @@
 .end method
 
 .method static synthetic lambda$onVolumeChanged$14(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;FLandroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 0
 
     .line 287
     invoke-interface {p2, p0, p1}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onVolumeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;F)V
@@ -1085,7 +1085,7 @@
 .end method
 
 .method static synthetic lambda$releaseInternal$69(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 2
+    .locals 0
 
     .line 951
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/analytics/AnalyticsListener;->onPlayerReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
@@ -1094,7 +1094,7 @@
 .end method
 
 .method private releaseInternal()V
-    .registers 4
+    .locals 3
 
     .line 947
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1121,7 +1121,7 @@
 
 # virtual methods
 .method public addListener(Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 1
 
     .line 117
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1135,7 +1135,7 @@
 .end method
 
 .method protected final generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 2
+    .locals 1
 
     .line 900
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
@@ -1152,7 +1152,7 @@
 .end method
 
 .method protected final generateEventTime(Landroidx/media3/common/Timeline;ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 21
+    .locals 17
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "player"
@@ -1170,19 +1170,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
     move-object v6, v1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object/from16 v6, p3
 
     .line 911
-    :goto_11
+    :goto_0
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->clock:Landroidx/media3/common/util/Clock;
 
     invoke-interface {v1}, Landroidx/media3/common/util/Clock;->elapsedRealtime()J
@@ -1205,7 +1205,7 @@
 
     const/4 v8, 0x0
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
 
@@ -1214,28 +1214,28 @@
 
     move-result v1
 
-    if-ne v5, v1, :cond_2f
+    if-ne v5, v1, :cond_1
 
     move v1, v7
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     move v1, v8
 
-    :goto_30
+    :goto_1
     const-wide/16 v9, 0x0
 
-    if-eqz v6, :cond_5b
+    if-eqz v6, :cond_3
 
     .line 916
     invoke-virtual {v6}, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->isAd()Z
 
     move-result v11
 
-    if-eqz v11, :cond_5b
+    if-eqz v11, :cond_3
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_2
 
     .line 917
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
@@ -1247,7 +1247,7 @@
 
     iget v11, v6, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-ne v1, v11, :cond_51
+    if-ne v1, v11, :cond_2
 
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
 
@@ -1258,15 +1258,15 @@
 
     iget v11, v6, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
-    if-ne v1, v11, :cond_51
+    if-ne v1, v11, :cond_2
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_51
+    :cond_2
     move v7, v8
 
-    :goto_52
-    if-eqz v7, :cond_75
+    :goto_2
+    if-eqz v7, :cond_6
 
     .line 922
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
@@ -1275,10 +1275,10 @@
 
     move-result-wide v9
 
-    goto :goto_75
+    goto :goto_3
 
-    :cond_5b
-    if-eqz v1, :cond_64
+    :cond_3
+    if-eqz v1, :cond_4
 
     .line 924
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
@@ -1287,19 +1287,19 @@
 
     move-result-wide v7
 
-    goto :goto_76
+    goto :goto_4
 
     .line 929
-    :cond_64
+    :cond_4
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/Timeline;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_5
 
-    goto :goto_75
+    goto :goto_3
 
-    :cond_6b
+    :cond_5
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->window:Landroidx/media3/common/Timeline$Window;
 
     invoke-virtual {v4, v5, v1}, Landroidx/media3/common/Timeline;->getWindow(ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
@@ -1310,12 +1310,12 @@
 
     move-result-wide v9
 
-    :cond_75
-    :goto_75
+    :cond_6
+    :goto_3
     move-wide v7, v9
 
     .line 932
-    :goto_76
+    :goto_4
     iget-object v1, v0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;->getCurrentPlayerMediaPeriod()Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -1365,7 +1365,7 @@
 .end method
 
 .method synthetic lambda$setPlayer$1$androidx-media3-exoplayer-analytics-DefaultAnalyticsCollector(Landroidx/media3/common/Player;Landroidx/media3/exoplayer/analytics/AnalyticsListener;Landroidx/media3/common/FlagSet;)V
-    .registers 6
+    .locals 2
 
     .line 137
     new-instance v0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;
@@ -1380,12 +1380,12 @@
 .end method
 
 .method public final notifySeekStarted()V
-    .registers 4
+    .locals 3
 
     .line 159
     iget-boolean v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->isSeeking:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     .line 160
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1406,12 +1406,12 @@
 
     invoke-virtual {p0, v0, v2, v1}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->sendEvent(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/common/util/ListenerSet$Event;)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public final onAudioAttributesChanged(Landroidx/media3/common/AudioAttributes;)V
-    .registers 4
+    .locals 2
 
     .line 745
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1431,7 +1431,7 @@
 .end method
 
 .method public final onAudioCodecError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 256
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1451,7 +1451,7 @@
 .end method
 
 .method public final onAudioDecoderInitialized(Ljava/lang/String;JJ)V
-    .registers 15
+    .locals 9
 
     .line 184
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1481,7 +1481,7 @@
 .end method
 
 .method public final onAudioDecoderReleased(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 227
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1501,7 +1501,7 @@
 .end method
 
 .method public final onAudioDisabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 236
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generatePlayingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1521,7 +1521,7 @@
 .end method
 
 .method public final onAudioEnabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 171
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1541,7 +1541,7 @@
 .end method
 
 .method public final onAudioInputFormatChanged(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 5
+    .locals 2
 
     .line 198
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1561,7 +1561,7 @@
 .end method
 
 .method public final onAudioPositionAdvancing(J)V
-    .registers 5
+    .locals 2
 
     .line 207
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1581,7 +1581,7 @@
 .end method
 
 .method public final onAudioSessionIdChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 736
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1601,7 +1601,7 @@
 .end method
 
 .method public final onAudioSinkError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 247
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1621,7 +1621,7 @@
 .end method
 
 .method public onAudioTrackInitialized(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 4
+    .locals 2
 
     .line 265
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1641,7 +1641,7 @@
 .end method
 
 .method public onAudioTrackReleased(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 4
+    .locals 2
 
     .line 274
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1661,7 +1661,7 @@
 .end method
 
 .method public final onAudioUnderrun(IJJ)V
-    .registers 15
+    .locals 9
 
     .line 217
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1691,7 +1691,7 @@
 .end method
 
 .method public onAvailableCommandsChanged(Landroidx/media3/common/Player$Commands;)V
-    .registers 4
+    .locals 2
 
     .line 527
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1711,7 +1711,7 @@
 .end method
 
 .method public final onBandwidthSample(IJJ)V
-    .registers 15
+    .locals 9
 
     .line 812
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateLoadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1741,7 +1741,7 @@
 .end method
 
 .method public onCues(Landroidx/media3/common/text/CueGroup;)V
-    .registers 4
+    .locals 2
 
     .line 720
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1761,7 +1761,7 @@
 .end method
 
 .method public onCues(Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1789,7 +1789,7 @@
 .end method
 
 .method public onDeviceInfoChanged(Landroidx/media3/common/DeviceInfo;)V
-    .registers 4
+    .locals 2
 
     .line 781
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1809,7 +1809,7 @@
 .end method
 
 .method public onDeviceVolumeChanged(IZ)V
-    .registers 5
+    .locals 2
 
     .line 790
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1829,7 +1829,7 @@
 .end method
 
 .method public final onDownstreamFormatChanged(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 0
 
     .line 464
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1849,7 +1849,7 @@
 .end method
 
 .method public final onDrmKeysLoaded(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 1
 
     .line 838
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1869,7 +1869,7 @@
 .end method
 
 .method public final onDrmKeysRemoved(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 1
 
     .line 866
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1889,7 +1889,7 @@
 .end method
 
 .method public final onDrmKeysRestored(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 1
 
     .line 857
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1909,7 +1909,7 @@
 .end method
 
 .method public final onDrmSessionAcquired(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;I)V
-    .registers 4
+    .locals 0
 
     .line 826
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1929,7 +1929,7 @@
 .end method
 
 .method public final onDrmSessionManagerError(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 0
 
     .line 848
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1949,7 +1949,7 @@
 .end method
 
 .method public final onDrmSessionReleased(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 1
 
     .line 875
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1969,7 +1969,7 @@
 .end method
 
 .method public final onDroppedFrames(IJ)V
-    .registers 6
+    .locals 2
 
     .line 330
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generatePlayingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -1989,13 +1989,13 @@
 .end method
 
 .method public onEvents(Landroidx/media3/common/Player;Landroidx/media3/common/Player$Events;)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public final onIsLoadingChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 515
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2015,7 +2015,7 @@
 .end method
 
 .method public onIsPlayingChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 576
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2035,7 +2035,7 @@
 .end method
 
 .method public final onLoadCanceled(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 5
+    .locals 0
 
     .line 428
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2055,7 +2055,7 @@
 .end method
 
 .method public final onLoadCompleted(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 5
+    .locals 0
 
     .line 415
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2075,7 +2075,7 @@
 .end method
 
 .method public final onLoadError(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;Z)V
-    .registers 13
+    .locals 6
 
     .line 443
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2107,7 +2107,7 @@
 .end method
 
 .method public final onLoadStarted(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 5
+    .locals 0
 
     .line 402
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2127,13 +2127,13 @@
 .end method
 
 .method public onLoadingChanged(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onMaxSeekToPreviousPositionChanged(J)V
-    .registers 5
+    .locals 2
 
     .line 675
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2153,7 +2153,7 @@
 .end method
 
 .method public final onMediaItemTransition(Landroidx/media3/common/MediaItem;I)V
-    .registers 5
+    .locals 2
 
     .line 490
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2173,7 +2173,7 @@
 .end method
 
 .method public onMediaMetadataChanged(Landroidx/media3/common/MediaMetadata;)V
-    .registers 4
+    .locals 2
 
     .line 685
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2193,7 +2193,7 @@
 .end method
 
 .method public final onMetadata(Landroidx/media3/common/Metadata;)V
-    .registers 4
+    .locals 2
 
     .line 703
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2213,7 +2213,7 @@
 .end method
 
 .method public final onPlayWhenReadyChanged(ZI)V
-    .registers 5
+    .locals 2
 
     .line 556
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2233,7 +2233,7 @@
 .end method
 
 .method public final onPlaybackParametersChanged(Landroidx/media3/common/PlaybackParameters;)V
-    .registers 4
+    .locals 2
 
     .line 648
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2253,7 +2253,7 @@
 .end method
 
 .method public final onPlaybackStateChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 546
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2273,7 +2273,7 @@
 .end method
 
 .method public final onPlaybackSuppressionReasonChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 566
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2293,7 +2293,7 @@
 .end method
 
 .method public final onPlayerError(Landroidx/media3/common/PlaybackException;)V
-    .registers 4
+    .locals 2
 
     .line 603
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->getEventTimeForErrorEvent(Landroidx/media3/common/PlaybackException;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2313,7 +2313,7 @@
 .end method
 
 .method public onPlayerErrorChanged(Landroidx/media3/common/PlaybackException;)V
-    .registers 4
+    .locals 2
 
     .line 612
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->getEventTimeForErrorEvent(Landroidx/media3/common/PlaybackException;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2333,7 +2333,7 @@
 .end method
 
 .method public final onPlayerStateChanged(ZI)V
-    .registers 5
+    .locals 2
 
     .line 537
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2353,7 +2353,7 @@
 .end method
 
 .method public onPlaylistMetadataChanged(Landroidx/media3/common/MediaMetadata;)V
-    .registers 4
+    .locals 2
 
     .line 694
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2373,17 +2373,17 @@
 .end method
 
 .method public onPositionDiscontinuity(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public final onPositionDiscontinuity(Landroidx/media3/common/Player$PositionInfo;Landroidx/media3/common/Player$PositionInfo;I)V
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-ne p3, v0, :cond_6
+    if-ne p3, v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -2391,7 +2391,7 @@
     iput-boolean v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->isSeeking:Z
 
     .line 635
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
@@ -2422,13 +2422,13 @@
 .end method
 
 .method public onRenderedFirstFrame()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public final onRenderedFirstFrame(Ljava/lang/Object;J)V
-    .registers 6
+    .locals 2
 
     .line 359
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2448,7 +2448,7 @@
 .end method
 
 .method public final onRepeatModeChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 585
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2468,7 +2468,7 @@
 .end method
 
 .method public onSeekBackIncrementChanged(J)V
-    .registers 5
+    .locals 2
 
     .line 657
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2488,7 +2488,7 @@
 .end method
 
 .method public onSeekForwardIncrementChanged(J)V
-    .registers 5
+    .locals 2
 
     .line 666
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2508,7 +2508,7 @@
 .end method
 
 .method public final onShuffleModeEnabledChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 594
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2528,7 +2528,7 @@
 .end method
 
 .method public final onSkipSilenceEnabledChanged(Z)V
-    .registers 4
+    .locals 2
 
     .line 727
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2548,7 +2548,7 @@
 .end method
 
 .method public final onSurfaceSizeChanged(II)V
-    .registers 5
+    .locals 2
 
     .line 387
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2568,7 +2568,7 @@
 .end method
 
 .method public final onTimelineChanged(Landroidx/media3/common/Timeline;I)V
-    .registers 4
+    .locals 1
 
     .line 479
     iget-object p1, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
@@ -2601,7 +2601,7 @@
 .end method
 
 .method public onTrackSelectionParametersChanged(Landroidx/media3/common/TrackSelectionParameters;)V
-    .registers 4
+    .locals 2
 
     .line 772
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2621,7 +2621,7 @@
 .end method
 
 .method public onTracksChanged(Landroidx/media3/common/Tracks;)V
-    .registers 4
+    .locals 2
 
     .line 499
     invoke-virtual {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateCurrentPlayerMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2641,7 +2641,7 @@
 .end method
 
 .method public final onUpstreamDiscarded(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 0
 
     .line 454
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateMediaPeriodEventTime(ILandroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2661,7 +2661,7 @@
 .end method
 
 .method public final onVideoCodecError(Ljava/lang/Exception;)V
-    .registers 4
+    .locals 2
 
     .line 378
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2681,7 +2681,7 @@
 .end method
 
 .method public final onVideoDecoderInitialized(Ljava/lang/String;JJ)V
-    .registers 15
+    .locals 9
 
     .line 307
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2711,7 +2711,7 @@
 .end method
 
 .method public final onVideoDecoderReleased(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 339
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2731,7 +2731,7 @@
 .end method
 
 .method public final onVideoDisabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 348
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generatePlayingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2751,7 +2751,7 @@
 .end method
 
 .method public final onVideoEnabled(Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 4
+    .locals 2
 
     .line 294
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2771,7 +2771,7 @@
 .end method
 
 .method public final onVideoFrameProcessingOffset(JI)V
-    .registers 6
+    .locals 2
 
     .line 368
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generatePlayingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2791,7 +2791,7 @@
 .end method
 
 .method public final onVideoInputFormatChanged(Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 5
+    .locals 2
 
     .line 321
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2811,7 +2811,7 @@
 .end method
 
 .method public final onVideoSizeChanged(Landroidx/media3/common/VideoSize;)V
-    .registers 4
+    .locals 2
 
     .line 755
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2831,7 +2831,7 @@
 .end method
 
 .method public final onVolumeChanged(F)V
-    .registers 4
+    .locals 2
 
     .line 283
     invoke-direct {p0}, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->generateReadingMediaPeriodEventTime()Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
@@ -2851,7 +2851,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 145
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->handler:Landroidx/media3/common/util/HandlerWrapper;
@@ -2872,7 +2872,7 @@
 .end method
 
 .method public removeListener(Landroidx/media3/exoplayer/analytics/AnalyticsListener;)V
-    .registers 3
+    .locals 1
 
     .line 124
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->listeners:Landroidx/media3/common/util/ListenerSet;
@@ -2883,7 +2883,7 @@
 .end method
 
 .method protected final sendEvent(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ILandroidx/media3/common/util/ListenerSet$Event;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2909,12 +2909,12 @@
 .end method
 
 .method public setPlayer(Landroidx/media3/common/Player;Landroid/os/Looper;)V
-    .registers 5
+    .locals 2
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->player:Landroidx/media3/common/Player;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector;->mediaPeriodQueueTracker:Landroidx/media3/exoplayer/analytics/DefaultAnalyticsCollector$MediaPeriodQueueTracker;
 
@@ -2926,20 +2926,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 131
@@ -2980,7 +2980,7 @@
 .end method
 
 .method public setThrowsWhenUsingWrongThread(Z)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -2993,7 +2993,7 @@
 .end method
 
 .method public final updateMediaPeriodQueueInfo(Ljava/util/List;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

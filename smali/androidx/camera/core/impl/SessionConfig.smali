@@ -75,7 +75,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Landroidx/camera/core/impl/CaptureConfig;Landroid/hardware/camera2/params/InputConfiguration;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,7 +144,7 @@
 .end method
 
 .method public static defaultEmptySessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 9
+    .locals 9
 
     .line 223
     new-instance v8, Landroidx/camera/core/impl/SessionConfig;
@@ -192,7 +192,7 @@
 
 # virtual methods
 .method public getDeviceStateCallbacks()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -209,7 +209,7 @@
 .end method
 
 .method public getErrorListeners()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -226,7 +226,7 @@
 .end method
 
 .method public getExpectedFrameRateRange()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -247,7 +247,7 @@
 .end method
 
 .method public getImplementationOptions()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 262
     iget-object v0, p0, Landroidx/camera/core/impl/SessionConfig;->mRepeatingCaptureConfig:Landroidx/camera/core/impl/CaptureConfig;
@@ -260,7 +260,7 @@
 .end method
 
 .method public getInputConfiguration()Landroid/hardware/camera2/params/InputConfiguration;
-    .registers 2
+    .locals 1
 
     .line 235
     iget-object v0, p0, Landroidx/camera/core/impl/SessionConfig;->mInputConfiguration:Landroid/hardware/camera2/params/InputConfiguration;
@@ -269,7 +269,7 @@
 .end method
 
 .method public getOutputConfigs()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -286,7 +286,7 @@
 .end method
 
 .method public getRepeatingCameraCaptureCallbacks()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -307,7 +307,7 @@
 .end method
 
 .method public getRepeatingCaptureConfig()Landroidx/camera/core/impl/CaptureConfig;
-    .registers 2
+    .locals 1
 
     .line 306
     iget-object v0, p0, Landroidx/camera/core/impl/SessionConfig;->mRepeatingCaptureConfig:Landroidx/camera/core/impl/CaptureConfig;
@@ -316,7 +316,7 @@
 .end method
 
 .method public getSessionStateCallbacks()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -333,7 +333,7 @@
 .end method
 
 .method public getSingleCameraCaptureCallbacks()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -350,7 +350,7 @@
 .end method
 
 .method public getSurfaces()Ljava/util/List;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -372,12 +372,12 @@
 
     move-result-object v1
 
-    :cond_b
+    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -401,12 +401,12 @@
 
     move-result-object v2
 
-    :goto_26
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -417,10 +417,10 @@
     .line 249
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_26
+    goto :goto_0
 
     .line 252
-    :cond_36
+    :cond_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -429,7 +429,7 @@
 .end method
 
 .method public getTemplateType()I
-    .registers 2
+    .locals 1
 
     .line 266
     iget-object v0, p0, Landroidx/camera/core/impl/SessionConfig;->mRepeatingCaptureConfig:Landroidx/camera/core/impl/CaptureConfig;

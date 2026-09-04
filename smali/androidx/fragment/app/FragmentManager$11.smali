@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;)V
-    .registers 2
+    .locals 0
 
     .line 2939
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$11;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public bridge synthetic onActivityResult(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 2939
     check-cast p1, Ljava/util/Map;
@@ -58,7 +58,7 @@
 .end method
 
 .method public onActivityResult(Ljava/util/Map;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,12 +103,12 @@
     move v3, v1
 
     .line 2946
-    :goto_1d
+    :goto_0
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_37
+    if-ge v3, v4, :cond_1
 
     .line 2947
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -121,25 +121,25 @@
 
     move-result v4
 
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_0
 
     move v4, v1
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_0
     const/4 v4, -0x1
 
     .line 2949
-    :goto_32
+    :goto_1
     aput v4, p1, v3
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 2951
-    :cond_37
+    :cond_1
     iget-object v1, p0, Landroidx/fragment/app/FragmentManager$11;->this$0:Landroidx/fragment/app/FragmentManager;
 
     iget-object v1, v1, Landroidx/fragment/app/FragmentManager;->mLaunchedFragments:Ljava/util/ArrayDeque;
@@ -152,7 +152,7 @@
 
     const-string v2, "FragmentManager"
 
-    if-nez v1, :cond_58
+    if-nez v1, :cond_2
 
     .line 2953
     new-instance p1, Ljava/lang/StringBuilder;
@@ -174,7 +174,7 @@
     return-void
 
     .line 2956
-    :cond_58
+    :cond_2
     iget-object v3, v1, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;->mWho:Ljava/lang/String;
 
     .line 2957
@@ -191,7 +191,7 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_7b
+    if-nez v4, :cond_3
 
     .line 2963
     new-instance p1, Ljava/lang/StringBuilder;
@@ -213,7 +213,7 @@
     return-void
 
     .line 2967
-    :cond_7b
+    :cond_3
     invoke-virtual {v4, v1, v0, p1}, Landroidx/fragment/app/Fragment;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 
     return-void

@@ -46,7 +46,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
-    .registers 3
+    .locals 3
 
     const/16 v0, 0x9
 
@@ -111,7 +111,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 96
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
@@ -223,7 +223,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -237,7 +237,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
-    .registers 2
+    .locals 1
 
     .line 92
     const-class v0, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
@@ -252,7 +252,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
-    .registers 1
+    .locals 1
 
     .line 92
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->$VALUES:[Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;

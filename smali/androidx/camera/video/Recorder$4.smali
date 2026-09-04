@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/video/Recorder$RecordingRecord;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public onEncodeError(Landroidx/camera/video/internal/encoder/EncodeException;)V
-    .registers 3
+    .locals 1
 
     .line 1642
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -60,13 +60,13 @@
 .end method
 
 .method public onEncodeStart()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public onEncodeStop()V
-    .registers 3
+    .locals 2
 
     .line 1636
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->val$completer:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -79,14 +79,14 @@
 .end method
 
 .method public onEncodedData(Landroidx/camera/video/internal/encoder/EncodedData;)V
-    .registers 5
+    .locals 3
 
     .line 1650
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mMediaMuxer:Landroid/media/MediaMuxer;
 
-    if-nez v0, :cond_7b
+    if-nez v0, :cond_7
 
     .line 1651
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
@@ -95,14 +95,14 @@
 
     const-string v1, "Recorder"
 
-    if-nez v0, :cond_72
+    if-nez v0, :cond_6
 
     .line 1655
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mPendingFirstVideoData:Landroidx/camera/video/internal/encoder/EncodedData;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 1657
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
@@ -120,18 +120,18 @@
 
     const/4 v0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 v0, 0x0
 
     .line 1661
-    :goto_23
+    :goto_0
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->isKeyFrame()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_4
 
     .line 1664
     iget-object v2, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
@@ -145,7 +145,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_3
 
     iget-object p1, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
 
@@ -156,30 +156,30 @@
 
     move-result p1
 
-    if-nez p1, :cond_40
+    if-nez p1, :cond_1
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_40
-    if-eqz v0, :cond_48
+    :cond_1
+    if-eqz v0, :cond_2
 
     const-string p1, "Replaced cached video keyframe with newer keyframe."
 
     .line 1674
     invoke-static {v1, p1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_48
+    :cond_2
     const-string p1, "Cached video keyframe while we wait for first audio sample before starting muxer."
 
     .line 1677
     invoke-static {v1, p1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_4e
-    :goto_4e
+    :cond_3
+    :goto_1
     const-string p1, "Received video keyframe. Starting muxer..."
 
     .line 1669
@@ -192,17 +192,17 @@
 
     invoke-virtual {p1, v0}, Landroidx/camera/video/Recorder;->setupAndStartMediaMuxer(Landroidx/camera/video/Recorder$RecordingRecord;)V
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_5b
-    if-eqz v0, :cond_62
+    :cond_4
+    if-eqz v0, :cond_5
 
     const-string v0, "Dropped cached keyframe since we have new video data and have not yet received audio data."
 
     .line 1688
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_62
+    :cond_5
     const-string v0, "Dropped video data since muxer has not yet started and data is not a keyframe."
 
     .line 1692
@@ -218,9 +218,9 @@
     .line 1695
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
 
-    goto :goto_87
+    goto :goto_2
 
-    :cond_72
+    :cond_6
     const-string v0, "Drop video data since recording is stopping."
 
     .line 1699
@@ -229,53 +229,53 @@
     .line 1700
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
 
-    goto :goto_87
+    goto :goto_2
 
     .line 1705
-    :cond_7b
-    :try_start_7b
+    :cond_7
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v1, p0, Landroidx/camera/video/Recorder$4;->val$recordingToStart:Landroidx/camera/video/Recorder$RecordingRecord;
 
     invoke-virtual {v0, p1, v1}, Landroidx/camera/video/Recorder;->writeVideoData(Landroidx/camera/video/internal/encoder/EncodedData;Landroidx/camera/video/Recorder$RecordingRecord;)V
-    :try_end_82
-    .catchall {:try_start_7b .. :try_end_82} :catchall_88
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p1, :cond_87
+    if-eqz p1, :cond_8
 
     .line 1706
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
 
-    :cond_87
-    :goto_87
+    :cond_8
+    :goto_2
     return-void
 
-    :catchall_88
+    :catchall_0
     move-exception v0
 
-    if-eqz p1, :cond_93
+    if-eqz p1, :cond_9
 
     .line 1704
-    :try_start_8b
+    :try_start_1
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/EncodedData;->close()V
-    :try_end_8e
-    .catchall {:try_start_8b .. :try_end_8e} :catchall_8f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_93
+    goto :goto_3
 
-    :catchall_8f
+    :catchall_1
     move-exception p1
 
     invoke-virtual {v0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_93
-    :goto_93
+    :cond_9
+    :goto_3
     throw v0
 .end method
 
 .method public onOutputConfigUpdate(Landroidx/camera/video/internal/encoder/OutputConfig;)V
-    .registers 3
+    .locals 1
 
     .line 1713
     iget-object v0, p0, Landroidx/camera/video/Recorder$4;->this$0:Landroidx/camera/video/Recorder;

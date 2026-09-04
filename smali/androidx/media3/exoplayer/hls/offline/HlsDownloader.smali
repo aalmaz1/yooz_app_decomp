@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/cache/CacheDataSource$Factory;)V
-    .registers 4
+    .locals 1
 
     .line 78
     new-instance v0, Landroidx/media3/exoplayer/dash/offline/DashDownloader$$ExternalSyntheticLambda0;
@@ -28,7 +28,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 11
+    .locals 7
 
     .line 93
     new-instance v2, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;)V
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/datasource/cache/CacheDataSource$Factory;Ljava/util/concurrent/Executor;J)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +108,7 @@
 .end method
 
 .method private addMediaPlaylistDataSpecs(Ljava/util/List;Ljava/util/List;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,12 +124,12 @@
     const/4 v0, 0x0
 
     .line 189
-    :goto_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 190
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -146,14 +146,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method private addSegment(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;Ljava/util/HashSet;Ljava/util/ArrayList;)V
-    .registers 14
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -181,7 +181,7 @@
     .line 201
     iget-object p1, p2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->fullSegmentEncryptionKeyUri:Ljava/lang/String;
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
     .line 202
     iget-object p1, p2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->fullSegmentEncryptionKeyUri:Ljava/lang/String;
@@ -195,7 +195,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_23
+    if-eqz p3, :cond_0
 
     .line 204
     new-instance p3, Landroidx/media3/exoplayer/offline/SegmentDownloader$Segment;
@@ -209,7 +209,7 @@
     invoke-virtual {p4, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 207
-    :cond_23
+    :cond_0
     iget-object p1, p2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->url:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroidx/media3/common/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
@@ -240,7 +240,7 @@
 
 # virtual methods
 .method protected getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/hls/playlist/HlsPlaylist;Z)Ljava/util/List;
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,7 +268,7 @@
     .line 151
     instance-of v1, p2, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 152
     check-cast p2, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
@@ -278,10 +278,10 @@
 
     invoke-direct {p0, p2, v0}, Landroidx/media3/exoplayer/hls/offline/HlsDownloader;->addMediaPlaylistDataSpecs(Ljava/util/List;Ljava/util/List;)V
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 155
-    :cond_11
+    :cond_0
     iget-object p2, p2, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylist;->baseUri:Ljava/lang/String;
 
     .line 156
@@ -297,7 +297,7 @@
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 159
-    :goto_1e
+    :goto_0
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
@@ -312,13 +312,13 @@
 
     move-result-object v0
 
-    :cond_2c
-    :goto_2c
+    :cond_1
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -336,14 +336,14 @@
     invoke-virtual {p2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 165
-    :try_start_42
+    :try_start_0
     invoke-virtual {p0, p1, v2, p3}, Landroidx/media3/exoplayer/hls/offline/HlsDownloader;->getManifest(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Z)Landroidx/media3/exoplayer/offline/FilterableManifest;
 
     move-result-object v2
 
     check-cast v2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    :try_end_48
-    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_48} :catch_68
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 174
     iget-object v3, v2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
@@ -353,12 +353,12 @@
     const/4 v5, 0x0
 
     .line 175
-    :goto_4c
+    :goto_2
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v6
 
-    if-ge v5, v6, :cond_2c
+    if-ge v5, v6, :cond_1
 
     .line 176
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -370,9 +370,9 @@
     .line 177
     iget-object v7, v6, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->initializationSegment:Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;
 
-    if-eqz v7, :cond_62
+    if-eqz v7, :cond_2
 
-    if-eq v7, v4, :cond_62
+    if-eq v7, v4, :cond_2
 
     .line 180
     invoke-direct {p0, v2, v7, v1, p2}, Landroidx/media3/exoplayer/hls/offline/HlsDownloader;->addSegment(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;Ljava/util/HashSet;Ljava/util/ArrayList;)V
@@ -380,30 +380,30 @@
     move-object v4, v7
 
     .line 182
-    :cond_62
+    :cond_2
     invoke-direct {p0, v2, v6, v1, p2}, Landroidx/media3/exoplayer/hls/offline/HlsDownloader;->addSegment(Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;Ljava/util/HashSet;Ljava/util/ArrayList;)V
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_4c
+    goto :goto_2
 
-    :catch_68
+    :catch_0
     move-exception v2
 
-    if-eqz p3, :cond_6c
+    if-eqz p3, :cond_3
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 168
-    :cond_6c
+    :cond_3
     throw v2
 
-    :cond_6d
+    :cond_4
     return-object p2
 .end method
 
 .method protected bridge synthetic getSegments(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/offline/FilterableManifest;Z)Ljava/util/List;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,

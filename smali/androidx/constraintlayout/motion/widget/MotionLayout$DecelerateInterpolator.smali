@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/constraintlayout/motion/widget/MotionLayout;)V
-    .registers 2
+    .locals 0
 
     .line 1672
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public config(FFF)V
-    .registers 4
+    .locals 0
 
     .line 1678
     iput p1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->initalV:F
@@ -62,7 +62,7 @@
 .end method
 
 .method public getInterpolation(F)F
-    .registers 6
+    .locals 4
 
     .line 1685
     iget v0, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->initalV:F
@@ -73,7 +73,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    if-lez v1, :cond_26
+    if-lez v1, :cond_1
 
     .line 1686
     iget v1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->maxA:F
@@ -82,12 +82,12 @@
 
     cmpg-float v3, v3, p1
 
-    if-gez v3, :cond_13
+    if-gez v3, :cond_0
 
     div-float p1, v0, v1
 
     .line 1689
-    :cond_13
+    :cond_0
     iget-object v3, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     mul-float/2addr v1, p1
@@ -114,12 +114,12 @@
     .line 1691
     iget p1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->currentP:F
 
-    :goto_24
+    :goto_0
     add-float/2addr v0, p1
 
     return v0
 
-    :cond_26
+    :cond_1
     neg-float v1, v0
 
     .line 1694
@@ -129,14 +129,14 @@
 
     cmpg-float v1, v1, p1
 
-    if-gez v1, :cond_30
+    if-gez v1, :cond_2
 
     neg-float p1, v0
 
     div-float/2addr p1, v3
 
     .line 1697
-    :cond_30
+    :cond_2
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     mul-float/2addr v3, p1
@@ -163,11 +163,11 @@
     .line 1699
     iget p1, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->currentP:F
 
-    goto :goto_24
+    goto :goto_0
 .end method
 
 .method public getVelocity()F
-    .registers 2
+    .locals 1
 
     .line 1705
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator;->this$0:Landroidx/constraintlayout/motion/widget/MotionLayout;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,17 +23,17 @@
 
     check-cast v0, Landroidx/camera/camera2/internal/compat/quirk/StillCaptureFlashStopRepeatingQuirk;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
     .line 39
-    :goto_10
+    :goto_0
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/StillCaptureFlow;->mShouldStopRepeatingBeforeStillCapture:Z
 
     return-void
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public shouldStopRepeatingBeforeCapture(Ljava/util/List;Z)Z
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,24 +57,24 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_3
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 55
-    :cond_8
+    :cond_0
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_c
+    :cond_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
 
-    if-eqz p2, :cond_2c
+    if-eqz p2, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -97,18 +97,18 @@
 
     const/4 v0, 0x2
 
-    if-eq p2, v0, :cond_2a
+    if-eq p2, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-ne p2, v0, :cond_c
+    if-ne p2, v0, :cond_1
 
-    :cond_2a
+    :cond_2
     const/4 p1, 0x1
 
     return p1
 
-    :cond_2c
-    :goto_2c
+    :cond_3
+    :goto_0
     return v1
 .end method

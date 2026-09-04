@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public createAdapter(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;)Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -40,15 +40,15 @@
     const/4 v0, 0x0
 
     .line 51
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter$Factory;->createCodec(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;)Landroid/media/MediaCodec;
 
     move-result-object v1
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_5} :catch_30
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_5} :catch_2e
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
 
-    :try_start_5
+    :try_start_1
     const-string v2, "configureCodec"
 
     .line 52
@@ -83,46 +83,46 @@
     new-instance p1, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;
 
     invoke-direct {p1, v1, v0}, Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter;-><init>(Landroid/media/MediaCodec;Landroidx/media3/exoplayer/mediacodec/SynchronousMediaCodecAdapter$1;)V
-    :try_end_28
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_28} :catch_2b
-    .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_28} :catch_29
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
 
     return-object p1
 
-    :catch_29
+    :catch_0
     move-exception p1
 
-    goto :goto_2c
+    goto :goto_0
 
-    :catch_2b
+    :catch_1
     move-exception p1
 
-    :goto_2c
+    :goto_0
     move-object v0, v1
 
-    goto :goto_31
+    goto :goto_1
 
-    :catch_2e
+    :catch_2
     move-exception p1
 
-    goto :goto_31
+    goto :goto_1
 
-    :catch_30
+    :catch_3
     move-exception p1
 
-    :goto_31
-    if-eqz v0, :cond_36
+    :goto_1
+    if-eqz v0, :cond_0
 
     .line 65
     invoke-virtual {v0}, Landroid/media/MediaCodec;->release()V
 
     .line 67
-    :cond_36
+    :cond_0
     throw p1
 .end method
 
 .method protected createCodec(Landroidx/media3/exoplayer/mediacodec/MediaCodecAdapter$Configuration;)Landroid/media/MediaCodec;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

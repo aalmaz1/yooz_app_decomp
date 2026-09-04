@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 33
     new-instance v0, Landroidx/camera/camera2/internal/compat/params/DynamicRangesCompat;
@@ -48,7 +48,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public getDynamicRangeCaptureRequestConstraints(Landroidx/camera/core/DynamicRange;)Ljava/util/Set;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -101,7 +101,7 @@
 .end method
 
 .method public getSupportedDynamicRanges()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -118,7 +118,7 @@
 .end method
 
 .method public isExtraLatencyPresent(Landroidx/camera/core/DynamicRange;)Z
-    .registers 5
+    .locals 3
 
     .line 54
     sget-object v0, Landroidx/camera/core/DynamicRange;->SDR:Landroidx/camera/core/DynamicRange;
@@ -149,7 +149,7 @@
 .end method
 
 .method public unwrap()Landroid/hardware/camera2/params/DynamicRangeProfiles;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

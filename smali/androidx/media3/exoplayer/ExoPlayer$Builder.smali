@@ -137,7 +137,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 559
     new-instance v0, Landroidx/media3/exoplayer/ExoPlayer$Builder$$ExternalSyntheticLambda11;
@@ -154,7 +154,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/RenderersFactory;)V
-    .registers 5
+    .locals 2
 
     .line 579
     new-instance v0, Landroidx/media3/exoplayer/ExoPlayer$Builder$$ExternalSyntheticLambda6;
@@ -174,7 +174,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/RenderersFactory;Landroidx/media3/exoplayer/source/MediaSource$Factory;)V
-    .registers 6
+    .locals 2
 
     .line 625
     new-instance v0, Landroidx/media3/exoplayer/ExoPlayer$Builder$$ExternalSyntheticLambda14;
@@ -197,7 +197,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/RenderersFactory;Landroidx/media3/exoplayer/source/MediaSource$Factory;Landroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/LoadControl;Landroidx/media3/exoplayer/upstream/BandwidthMeter;Landroidx/media3/exoplayer/analytics/AnalyticsCollector;)V
-    .registers 16
+    .locals 8
 
     .line 654
     new-instance v2, Landroidx/media3/exoplayer/ExoPlayer$Builder$$ExternalSyntheticLambda18;
@@ -249,7 +249,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/source/MediaSource$Factory;)V
-    .registers 5
+    .locals 2
 
     .line 601
     new-instance v0, Landroidx/media3/exoplayer/ExoPlayer$Builder$$ExternalSyntheticLambda2;
@@ -269,7 +269,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;Lcom/google/common/base/Supplier;Lcom/google/common/base/Supplier;)V
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -314,7 +314,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;Lcom/google/common/base/Supplier;Lcom/google/common/base/Supplier;Lcom/google/common/base/Supplier;Lcom/google/common/base/Supplier;Lcom/google/common/base/Supplier;Lcom/google/common/base/Function;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -462,7 +462,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Landroid/content/Context;)Landroidx/media3/exoplayer/RenderersFactory;
-    .registers 2
+    .locals 1
 
     .line 561
     new-instance v0, Landroidx/media3/exoplayer/DefaultRenderersFactory;
@@ -473,7 +473,7 @@
 .end method
 
 .method static synthetic lambda$new$1(Landroid/content/Context;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 3
+    .locals 2
 
     .line 562
     new-instance v0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;
@@ -488,31 +488,31 @@
 .end method
 
 .method static synthetic lambda$new$10(Landroidx/media3/exoplayer/trackselection/TrackSelector;)Landroidx/media3/exoplayer/trackselection/TrackSelector;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$11(Landroidx/media3/exoplayer/LoadControl;)Landroidx/media3/exoplayer/LoadControl;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$12(Landroidx/media3/exoplayer/upstream/BandwidthMeter;)Landroidx/media3/exoplayer/upstream/BandwidthMeter;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$13(Landroidx/media3/exoplayer/analytics/AnalyticsCollector;Landroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/analytics/AnalyticsCollector;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$14(Landroid/content/Context;)Landroidx/media3/exoplayer/trackselection/TrackSelector;
-    .registers 2
+    .locals 1
 
     .line 677
     new-instance v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;
@@ -523,7 +523,7 @@
 .end method
 
 .method static synthetic lambda$new$15(Landroid/content/Context;)Landroidx/media3/exoplayer/upstream/BandwidthMeter;
-    .registers 1
+    .locals 0
 
     .line 679
     invoke-static {p0}, Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter;->getSingletonInstance(Landroid/content/Context;)Landroidx/media3/exoplayer/upstream/DefaultBandwidthMeter;
@@ -534,13 +534,13 @@
 .end method
 
 .method static synthetic lambda$new$2(Landroidx/media3/exoplayer/RenderersFactory;)Landroidx/media3/exoplayer/RenderersFactory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$3(Landroid/content/Context;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 3
+    .locals 2
 
     .line 582
     new-instance v0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;
@@ -555,7 +555,7 @@
 .end method
 
 .method static synthetic lambda$new$4(Landroid/content/Context;)Landroidx/media3/exoplayer/RenderersFactory;
-    .registers 2
+    .locals 1
 
     .line 601
     new-instance v0, Landroidx/media3/exoplayer/DefaultRenderersFactory;
@@ -566,67 +566,67 @@
 .end method
 
 .method static synthetic lambda$new$5(Landroidx/media3/exoplayer/source/MediaSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$6(Landroidx/media3/exoplayer/RenderersFactory;)Landroidx/media3/exoplayer/RenderersFactory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$7(Landroidx/media3/exoplayer/source/MediaSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$8(Landroidx/media3/exoplayer/RenderersFactory;)Landroidx/media3/exoplayer/RenderersFactory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$new$9(Landroidx/media3/exoplayer/source/MediaSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$setAnalyticsCollector$21(Landroidx/media3/exoplayer/analytics/AnalyticsCollector;Landroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/analytics/AnalyticsCollector;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$setBandwidthMeter$20(Landroidx/media3/exoplayer/upstream/BandwidthMeter;)Landroidx/media3/exoplayer/upstream/BandwidthMeter;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$setLoadControl$19(Landroidx/media3/exoplayer/LoadControl;)Landroidx/media3/exoplayer/LoadControl;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$setMediaSourceFactory$17(Landroidx/media3/exoplayer/source/MediaSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource$Factory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$setRenderersFactory$16(Landroidx/media3/exoplayer/RenderersFactory;)Landroidx/media3/exoplayer/RenderersFactory;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$setTrackSelector$18(Landroidx/media3/exoplayer/trackselection/TrackSelector;)Landroidx/media3/exoplayer/trackselection/TrackSelector;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
@@ -634,7 +634,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/exoplayer/ExoPlayer;
-    .registers 3
+    .locals 2
 
     .line 1305
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -659,7 +659,7 @@
 .end method
 
 .method buildSimpleExoPlayer()Landroidx/media3/exoplayer/SimpleExoPlayer;
-    .registers 3
+    .locals 2
 
     .line 1311
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -682,7 +682,7 @@
 .end method
 
 .method public experimentalSetDynamicSchedulingEnabled(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 747
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -698,7 +698,7 @@
 .end method
 
 .method public experimentalSetForegroundModeTimeoutMs(J)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 4
+    .locals 1
 
     .line 729
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -714,7 +714,7 @@
 .end method
 
 .method public setAnalyticsCollector(Landroidx/media3/exoplayer/analytics/AnalyticsCollector;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 885
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -737,7 +737,7 @@
 .end method
 
 .method public setAudioAttributes(Landroidx/media3/common/AudioAttributes;Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 4
+    .locals 1
 
     .line 943
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -762,7 +762,7 @@
 .end method
 
 .method public setBandwidthMeter(Landroidx/media3/exoplayer/upstream/BandwidthMeter;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 852
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -785,7 +785,7 @@
 .end method
 
 .method public setClock(Landroidx/media3/common/util/Clock;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1258
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -801,7 +801,7 @@
 .end method
 
 .method public setDetachSurfaceTimeoutMs(J)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 4
+    .locals 1
 
     .line 1182
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -817,7 +817,7 @@
 .end method
 
 .method public setDeviceVolumeControlEnabled(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1016
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -833,7 +833,7 @@
 .end method
 
 .method public setHandleAudioBecomingNoisy(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 986
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -849,7 +849,7 @@
 .end method
 
 .method public setLivePlaybackSpeedControl(Landroidx/media3/exoplayer/LivePlaybackSpeedControl;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1218
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -871,7 +871,7 @@
 .end method
 
 .method public setLoadControl(Landroidx/media3/exoplayer/LoadControl;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 836
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -894,7 +894,7 @@
 .end method
 
 .method public setLooper(Landroid/os/Looper;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 869
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -913,7 +913,7 @@
 .end method
 
 .method public setMaxSeekToPreviousPositionMs(J)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -921,17 +921,17 @@
 
     const/4 v1, 0x1
 
-    if-ltz v0, :cond_9
+    if-ltz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 1143
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1144
@@ -948,7 +948,7 @@
 .end method
 
 .method public setMediaSourceFactory(Landroidx/media3/exoplayer/source/MediaSource$Factory;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 804
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -971,7 +971,7 @@
 .end method
 
 .method public setName(Ljava/lang/String;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1294
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -987,7 +987,7 @@
 .end method
 
 .method public setPauseAtEndOfMediaItems(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1202
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1003,7 +1003,7 @@
 .end method
 
 .method public setPlaybackLooper(Landroid/os/Looper;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1276
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1019,7 +1019,7 @@
 .end method
 
 .method public setPriority(I)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 905
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1035,7 +1035,7 @@
 .end method
 
 .method public setPriorityTaskManager(Landroidx/media3/common/PriorityTaskManager;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 923
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1051,7 +1051,7 @@
 .end method
 
 .method public setReleaseTimeoutMs(J)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 4
+    .locals 1
 
     .line 1163
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1067,7 +1067,7 @@
 .end method
 
 .method public setRenderersFactory(Landroidx/media3/exoplayer/RenderersFactory;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 789
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1090,7 +1090,7 @@
 .end method
 
 .method public setSeekBackIncrementMs(J)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -1098,17 +1098,17 @@
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 1107
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1108
@@ -1125,7 +1125,7 @@
 .end method
 
 .method public setSeekForwardIncrementMs(J)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -1133,17 +1133,17 @@
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 1124
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1125
@@ -1160,7 +1160,7 @@
 .end method
 
 .method public setSeekParameters(Landroidx/media3/exoplayer/SeekParameters;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1091
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1182,7 +1182,7 @@
 .end method
 
 .method public setSkipSilenceEnabled(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1001
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1198,7 +1198,7 @@
 .end method
 
 .method public setSuppressPlaybackOnUnsuitableOutput(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 774
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1214,7 +1214,7 @@
 .end method
 
 .method public setTrackSelector(Landroidx/media3/exoplayer/trackselection/TrackSelector;)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 820
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1237,7 +1237,7 @@
 .end method
 
 .method public setUseLazyPreparation(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1076
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1253,7 +1253,7 @@
 .end method
 
 .method public setUsePlatformDiagnostics(Z)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1241
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1269,7 +1269,7 @@
 .end method
 
 .method public setVideoChangeFrameRateStrategy(I)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1057
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1285,7 +1285,7 @@
 .end method
 
 .method public setVideoScalingMode(I)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 1034
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z
@@ -1301,7 +1301,7 @@
 .end method
 
 .method public setWakeMode(I)Landroidx/media3/exoplayer/ExoPlayer$Builder;
-    .registers 3
+    .locals 1
 
     .line 968
     iget-boolean v0, p0, Landroidx/media3/exoplayer/ExoPlayer$Builder;->buildCalled:Z

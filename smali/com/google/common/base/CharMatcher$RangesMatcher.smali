@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;[C[C)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -59,41 +59,41 @@
 
     const/4 v2, 0x0
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     move p1, v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move p1, v2
 
-    :goto_12
+    :goto_0
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     move p1, v2
 
     .line 1312
-    :goto_16
+    :goto_1
     array-length v0, p2
 
-    if-ge p1, v0, :cond_38
+    if-ge p1, v0, :cond_4
 
     .line 1313
     aget-char v0, p2, p1
 
     aget-char v3, p3, p1
 
-    if-gt v0, v3, :cond_21
+    if-gt v0, v3, :cond_1
 
     move v0, v1
 
-    goto :goto_22
+    goto :goto_2
 
-    :cond_21
+    :cond_1
     move v0, v2
 
-    :goto_22
+    :goto_2
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     add-int/lit8 v0, p1, 0x1
@@ -101,38 +101,38 @@
     .line 1314
     array-length v3, p2
 
-    if-ge v0, v3, :cond_36
+    if-ge v0, v3, :cond_3
 
     .line 1315
     aget-char p1, p3, p1
 
     aget-char v3, p2, v0
 
-    if-ge p1, v3, :cond_32
+    if-ge p1, v3, :cond_2
 
     move p1, v1
 
-    goto :goto_33
+    goto :goto_3
 
-    :cond_32
+    :cond_2
     move p1, v2
 
-    :goto_33
+    :goto_3
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    :cond_36
+    :cond_3
     move p1, v0
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_38
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -156,7 +156,7 @@
 .end method
 
 .method public matches(C)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -175,35 +175,35 @@
 
     const/4 v1, 0x1
 
-    if-ltz v0, :cond_a
+    if-ltz v0, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     not-int v0, v0
 
     sub-int/2addr v0, v1
 
-    if-ltz v0, :cond_15
+    if-ltz v0, :cond_1
 
     .line 1327
     iget-object v2, p0, Lcom/google/common/base/CharMatcher$RangesMatcher;->rangeEnds:[C
 
     aget-char v0, v2, v0
 
-    if-gt p1, v0, :cond_15
+    if-gt p1, v0, :cond_1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_16
+    :goto_0
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 1333
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$RangesMatcher;->description:Ljava/lang/String;

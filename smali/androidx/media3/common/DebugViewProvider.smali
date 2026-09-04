@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 31
     new-instance v0, Landroidx/media3/common/DebugViewProvider$$ExternalSyntheticLambda0;
@@ -22,7 +22,7 @@
 .end method
 
 .method public static synthetic lambda$static$0(II)Landroid/view/SurfaceView;
-    .registers 2
+    .locals 0
 
     const/4 p0, 0x0
 

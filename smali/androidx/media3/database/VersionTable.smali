@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.database"
 
@@ -42,7 +42,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method private static featureAndInstanceUidArguments(ILjava/lang/String;)[Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -74,7 +74,7 @@
 .end method
 
 .method public static getVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)I
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -91,11 +91,11 @@
 
     const/4 v1, -0x1
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_a
+    :cond_0
     const-string v3, "ExoPlayerVersions"
 
     const-string/jumbo v0, "version"
@@ -124,33 +124,33 @@
     invoke-virtual/range {v2 .. v9}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p0
-    :try_end_21
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_21} :catch_47
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 169
-    :try_start_21
+    :try_start_1
     invoke-interface {p0}, Landroid/database/Cursor;->getCount()I
 
     move-result p1
-    :try_end_25
-    .catchall {:try_start_21 .. :try_end_25} :catchall_3b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_2
 
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_1
 
     .line 174
-    :try_start_29
+    :try_start_2
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
-    :try_end_2c
-    .catch Landroid/database/SQLException; {:try_start_29 .. :try_end_2c} :catch_47
+    :try_end_2
+    .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :cond_2c
+    :cond_1
     return v1
 
     .line 172
-    :cond_2d
-    :try_start_2d
+    :cond_2
+    :try_start_3
     invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
 
     const/4 p1, 0x0
@@ -159,46 +159,46 @@
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getInt(I)I
 
     move-result p1
-    :try_end_35
-    .catchall {:try_start_2d .. :try_end_35} :catchall_3b
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    if-eqz p0, :cond_3a
+    if-eqz p0, :cond_3
 
     .line 174
-    :try_start_37
+    :try_start_4
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
-    :try_end_3a
-    .catch Landroid/database/SQLException; {:try_start_37 .. :try_end_3a} :catch_47
+    :try_end_4
+    .catch Landroid/database/SQLException; {:try_start_4 .. :try_end_4} :catch_0
 
-    :cond_3a
+    :cond_3
     return p1
 
-    :catchall_3b
+    :catchall_0
     move-exception p1
 
-    if-eqz p0, :cond_46
+    if-eqz p0, :cond_4
 
     .line 160
-    :try_start_3e
+    :try_start_5
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
-    :try_end_41
-    .catchall {:try_start_3e .. :try_end_41} :catchall_42
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    goto :goto_46
+    goto :goto_0
 
-    :catchall_42
+    :catchall_1
     move-exception p0
 
-    :try_start_43
+    :try_start_6
     invoke-virtual {p1, p0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_46
-    :goto_46
+    :cond_4
+    :goto_0
     throw p1
-    :try_end_47
-    .catch Landroid/database/SQLException; {:try_start_43 .. :try_end_47} :catch_47
+    :try_end_6
+    .catch Landroid/database/SQLException; {:try_start_6 .. :try_end_6} :catch_0
 
-    :catch_47
+    :catch_0
     move-exception p0
 
     .line 176
@@ -210,7 +210,7 @@
 .end method
 
 .method public static removeVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -220,16 +220,16 @@
     const-string v0, "ExoPlayerVersions"
 
     .line 132
-    :try_start_2
+    :try_start_0
     invoke-static {p0, v0}, Landroidx/media3/common/util/Util;->tableExists(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     return-void
 
-    :cond_9
+    :cond_0
     const-string v1, "feature = ? AND instance_uid = ?"
 
     .line 138
@@ -239,12 +239,12 @@
 
     .line 135
     invoke-virtual {p0, v0, v1, p1}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_12
-    .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_12} :catch_13
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_13
+    :catch_0
     move-exception p0
 
     .line 140
@@ -256,7 +256,7 @@
 .end method
 
 .method public static setVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;I)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -303,12 +303,12 @@
 
     .line 114
     invoke-virtual {p0, p1, p2, v0}, Landroid/database/sqlite/SQLiteDatabase;->replaceOrThrow(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-    :try_end_28
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_29
+    :catch_0
     move-exception p0
 
     .line 116

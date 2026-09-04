@@ -26,27 +26,27 @@
 
 # direct methods
 .method public static replaceSession(Landroidx/media3/exoplayer/drm/DrmSession;Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_0
 
     return-void
 
-    :cond_3
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_1
 
     .line 57
     invoke-interface {p1, v0}, Landroidx/media3/exoplayer/drm/DrmSession;->acquire(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
 
-    :cond_9
-    if-eqz p0, :cond_e
+    :cond_1
+    if-eqz p0, :cond_2
 
     .line 60
     invoke-interface {p0, v0}, Landroidx/media3/exoplayer/drm/DrmSession;->release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
 
-    :cond_e
+    :cond_2
     return-void
 .end method
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public playClearSamplesWithoutKeys()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

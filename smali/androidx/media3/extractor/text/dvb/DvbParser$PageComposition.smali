@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(IIILandroid/util/SparseArray;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",

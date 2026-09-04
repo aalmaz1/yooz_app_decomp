@@ -44,7 +44,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/google/common/base/CaseFormat;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x5
 
@@ -85,7 +85,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     .line 35
     new-instance v0, Lcom/google/common/base/CaseFormat$1;
@@ -187,7 +187,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000,
@@ -225,7 +225,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;Lcom/google/common/base/CaseFormat$1;)V
-    .registers 6
+    .locals 0
 
     .line 33
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/base/CaseFormat;-><init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;)V
@@ -234,7 +234,7 @@
 .end method
 
 .method static synthetic access$100(Ljava/lang/String;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 33
     invoke-static {p0}, Lcom/google/common/base/CaseFormat;->firstCharOnlyToUpper(Ljava/lang/String;)Ljava/lang/String;
@@ -245,7 +245,7 @@
 .end method
 
 .method private static firstCharOnlyToUpper(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -260,12 +260,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 215
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -302,12 +302,12 @@
 
     move-result-object p0
 
-    :goto_2a
+    :goto_0
     return-object p0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/CaseFormat;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8000
@@ -330,7 +330,7 @@
 .end method
 
 .method public static values()[Lcom/google/common/base/CaseFormat;
-    .registers 1
+    .locals 1
 
     .line 31
     sget-object v0, Lcom/google/common/base/CaseFormat;->$VALUES:[Lcom/google/common/base/CaseFormat;
@@ -347,7 +347,7 @@
 
 # virtual methods
 .method convert(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -368,7 +368,7 @@
     move v3, v2
 
     .line 137
-    :goto_4
+    :goto_0
     iget-object v4, p0, Lcom/google/common/base/CaseFormat;->wordBoundary:Lcom/google/common/base/CharMatcher;
 
     add-int/lit8 v3, v3, 0x1
@@ -377,9 +377,9 @@
 
     move-result v3
 
-    if-eq v3, v2, :cond_4c
+    if-eq v3, v2, :cond_1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_0
 
     .line 140
     new-instance v0, Ljava/lang/StringBuilder;
@@ -411,10 +411,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 143
-    :cond_2e
+    :cond_0
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -432,7 +432,7 @@
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 145
-    :goto_3f
+    :goto_1
     iget-object v1, p1, Lcom/google/common/base/CaseFormat;->wordSeparator:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -446,20 +446,20 @@
 
     add-int/2addr v1, v3
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_4c
-    if-nez v1, :cond_53
+    :cond_1
+    if-nez v1, :cond_2
 
     .line 149
     invoke-virtual {p1, p2}, Lcom/google/common/base/CaseFormat;->normalizeFirstWord(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_69
+    goto :goto_2
 
     .line 150
-    :cond_53
+    :cond_2
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -482,12 +482,12 @@
 
     move-result-object p1
 
-    :goto_69
+    :goto_2
     return-object p1
 .end method
 
 .method public converterTo(Lcom/google/common/base/CaseFormat;)Lcom/google/common/base/Converter;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -518,7 +518,7 @@
 .end method
 
 .method normalizeFirstWord(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -548,7 +548,7 @@
 .end method
 
 .method public final to(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -566,16 +566,16 @@
     .line 127
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne p1, p0, :cond_9
+    if-ne p1, p0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
     .line 128
-    :cond_9
+    :cond_0
     invoke-virtual {p0, p1, p2}, Lcom/google/common/base/CaseFormat;->convert(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    :goto_d
+    :goto_0
     return-object p2
 .end method

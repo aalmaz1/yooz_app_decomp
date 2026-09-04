@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public get(Ljava/lang/String;I)Ljava/util/List;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,7 +46,7 @@
     .line 49
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/workaround/ExtraSupportedSurfaceCombinationsContainer;->mQuirk:Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 50
     new-instance p1, Ljava/util/ArrayList;
@@ -56,7 +56,7 @@
     return-object p1
 
     .line 53
-    :cond_a
+    :cond_0
     invoke-virtual {v0, p1, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->getExtraSupportedSurfaceCombinations(Ljava/lang/String;I)Ljava/util/List;
 
     move-result-object p1

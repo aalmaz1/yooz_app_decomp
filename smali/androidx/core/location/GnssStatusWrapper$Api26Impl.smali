@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getCarrierFrequencyHz(Landroid/location/GnssStatus;I)F
-    .registers 2
+    .locals 0
 
     .line 146
     invoke-virtual {p0, p1}, Landroid/location/GnssStatus;->getCarrierFrequencyHz(I)F
@@ -36,7 +36,7 @@
 .end method
 
 .method static hasCarrierFrequencyHz(Landroid/location/GnssStatus;I)Z
-    .registers 2
+    .locals 0
 
     .line 151
     invoke-virtual {p0, p1}, Landroid/location/GnssStatus;->hasCarrierFrequencyHz(I)Z

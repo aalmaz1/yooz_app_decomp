@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;[IILjava/util/Random;)V
-    .registers 5
+    .locals 0
 
     .line 80
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/trackselection/BaseTrackSelection;-><init>(Landroidx/media3/common/TrackGroup;[II)V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getSelectedIndex()I
-    .registers 2
+    .locals 1
 
     .line 116
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->selectedIndex:I
@@ -51,7 +51,7 @@
 .end method
 
 .method public getSelectionData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -59,7 +59,7 @@
 .end method
 
 .method public getSelectionReason()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public updateSelectedTrack(JJJLjava/util/List;[Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJ",
@@ -92,27 +92,27 @@
     move p5, p4
 
     .line 95
-    :goto_7
+    :goto_0
     iget p6, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->length:I
 
-    if-ge p4, p6, :cond_16
+    if-ge p4, p6, :cond_1
 
     .line 96
     invoke-virtual {p0, p4, p1, p2}, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->isTrackExcluded(IJ)Z
 
     move-result p6
 
-    if-nez p6, :cond_13
+    if-nez p6, :cond_0
 
     add-int/lit8 p5, p5, 0x1
 
-    :cond_13
+    :cond_0
     add-int/lit8 p4, p4, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 101
-    :cond_16
+    :cond_1
     iget-object p4, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->random:Ljava/util/Random;
 
     invoke-virtual {p4, p5}, Ljava/util/Random;->nextInt(I)I
@@ -124,42 +124,42 @@
     .line 102
     iget p4, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->length:I
 
-    if-eq p5, p4, :cond_3a
+    if-eq p5, p4, :cond_4
 
     move p4, p3
 
     .line 105
-    :goto_23
+    :goto_1
     iget p5, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->length:I
 
-    if-ge p3, p5, :cond_3a
+    if-ge p3, p5, :cond_4
 
     .line 106
     invoke-virtual {p0, p3, p1, p2}, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->isTrackExcluded(IJ)Z
 
     move-result p5
 
-    if-nez p5, :cond_37
+    if-nez p5, :cond_3
 
     iget p5, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->selectedIndex:I
 
     add-int/lit8 p6, p4, 0x1
 
-    if-ne p5, p4, :cond_36
+    if-ne p5, p4, :cond_2
 
     .line 107
     iput p3, p0, Landroidx/media3/exoplayer/trackselection/RandomTrackSelection;->selectedIndex:I
 
     return-void
 
-    :cond_36
+    :cond_2
     move p4, p6
 
-    :cond_37
+    :cond_3
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_3a
+    :cond_4
     return-void
 .end method

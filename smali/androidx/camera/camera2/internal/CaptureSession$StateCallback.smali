@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/CaptureSession;)V
-    .registers 2
+    .locals 0
 
     .line 1014
     iput-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onConfigureFailed(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 6
+    .locals 4
 
     const-string p1, "onConfigureFailed() should not be possible in state: "
 
@@ -47,7 +47,7 @@
     monitor-enter v1
 
     .line 1090
-    :try_start_9
+    :try_start_0
     sget-object v2, Landroidx/camera/camera2/internal/CaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$CaptureSession$State:[I
 
     iget-object v3, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -60,11 +60,11 @@
 
     aget v2, v2, v3
 
-    packed-switch v2, :pswitch_data_5a
+    packed-switch v2, :pswitch_data_0
 
-    goto :goto_3e
+    goto :goto_0
 
-    :pswitch_19
+    :pswitch_0
     const-string p1, "CaptureSession"
 
     const-string v2, "ConfigureFailed callback after change to RELEASED state"
@@ -72,18 +72,18 @@
     .line 1107
     invoke-static {p1, v2}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 1104
-    :pswitch_21
+    :pswitch_1
     iget-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/CaptureSession;->finishClose()V
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 1095
-    :pswitch_27
+    :pswitch_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -106,7 +106,7 @@
 
     throw v0
 
-    :goto_3e
+    :goto_0
     const-string p1, "CaptureSession"
 
     .line 1110
@@ -133,32 +133,32 @@
 
     return-void
 
-    :catchall_56
+    :catchall_0
     move-exception p1
 
     monitor-exit v1
-    :try_end_58
-    .catchall {:try_start_9 .. :try_end_58} :catchall_56
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
     nop
 
-    :pswitch_data_5a
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_21
-        :pswitch_27
-        :pswitch_21
-        :pswitch_21
-        :pswitch_19
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onConfigured(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 7
+    .locals 5
 
     const-string v0, "onConfigured() should not be possible in state: "
 
@@ -172,7 +172,7 @@
     monitor-enter v2
 
     .line 1025
-    :try_start_9
+    :try_start_0
     sget-object v3, Landroidx/camera/camera2/internal/CaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$CaptureSession$State:[I
 
     iget-object v4, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -185,26 +185,26 @@
 
     aget v3, v3, v4
 
-    packed-switch v3, :pswitch_data_94
+    packed-switch v3, :pswitch_data_0
 
-    goto :goto_78
+    goto :goto_0
 
     .line 1054
-    :pswitch_19
+    :pswitch_0
     invoke-interface {p1}, Landroidx/camera/camera2/internal/SynchronizedCaptureSession;->close()V
 
-    goto :goto_78
+    goto :goto_0
 
     .line 1051
-    :pswitch_1d
+    :pswitch_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     iput-object p1, v0, Landroidx/camera/camera2/internal/CaptureSession;->mSynchronizedCaptureSession:Landroidx/camera/camera2/internal/SynchronizedCaptureSession;
 
-    goto :goto_78
+    goto :goto_0
 
     .line 1034
-    :pswitch_22
+    :pswitch_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     sget-object v3, Landroidx/camera/camera2/internal/CaptureSession$State;->OPENED:Landroidx/camera/camera2/internal/CaptureSession$State;
@@ -221,7 +221,7 @@
 
     iget-object p1, p1, Landroidx/camera/camera2/internal/CaptureSession;->mSessionConfig:Landroidx/camera/core/impl/SessionConfig;
 
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_0
 
     .line 1039
     iget-object p1, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -242,7 +242,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_0
 
     .line 1042
     iget-object v0, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -253,7 +253,7 @@
 
     invoke-virtual {v0, p1}, Landroidx/camera/camera2/internal/CaptureSession;->issueBurstCaptureRequest(Ljava/util/List;)I
 
-    :cond_4d
+    :cond_0
     const-string p1, "CaptureSession"
 
     const-string v0, "Attempting to send capture request onConfigured"
@@ -273,10 +273,10 @@
 
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/CaptureSession;->issuePendingCaptureRequest()V
 
-    goto :goto_78
+    goto :goto_0
 
     .line 1031
-    :pswitch_61
+    :pswitch_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -299,7 +299,7 @@
 
     throw p1
 
-    :goto_78
+    :goto_0
     const-string p1, "CaptureSession"
 
     .line 1057
@@ -326,32 +326,32 @@
 
     return-void
 
-    :catchall_90
+    :catchall_0
     move-exception p1
 
     monitor-exit v2
-    :try_end_92
-    .catchall {:try_start_9 .. :try_end_92} :catchall_90
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
     nop
 
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_61
-        :pswitch_61
-        :pswitch_61
-        :pswitch_22
-        :pswitch_61
-        :pswitch_1d
-        :pswitch_19
-        :pswitch_61
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_3
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
     .end packed-switch
 .end method
 
 .method public onReady(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 6
+    .locals 4
 
     const-string p1, "CameraCaptureSession.onReady() "
 
@@ -365,7 +365,7 @@
     monitor-enter v1
 
     .line 1064
-    :try_start_9
+    :try_start_0
     sget-object v2, Landroidx/camera/camera2/internal/CaptureSession$4;->$SwitchMap$androidx$camera$camera2$internal$CaptureSession$State:[I
 
     iget-object v3, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
@@ -380,7 +380,7 @@
 
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_30
+    if-eq v2, v3, :cond_0
 
     const-string v0, "CaptureSession"
 
@@ -409,7 +409,7 @@
     return-void
 
     .line 1066
-    :cond_30
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -432,19 +432,19 @@
 
     throw p1
 
-    :catchall_47
+    :catchall_0
     move-exception p1
 
     .line 1071
     monitor-exit v1
-    :try_end_49
-    .catchall {:try_start_9 .. :try_end_49} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public onSessionFinished(Landroidx/camera/camera2/internal/SynchronizedCaptureSession;)V
-    .registers 5
+    .locals 3
 
     const-string p1, "onSessionFinished() should not be possible in state: "
 
@@ -456,14 +456,14 @@
     monitor-enter v0
 
     .line 1077
-    :try_start_7
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/CaptureSession$StateCallback;->this$0:Landroidx/camera/camera2/internal/CaptureSession;
 
     iget-object v1, v1, Landroidx/camera/camera2/internal/CaptureSession;->mState:Landroidx/camera/camera2/internal/CaptureSession$State;
 
     sget-object v2, Landroidx/camera/camera2/internal/CaptureSession$State;->UNINITIALIZED:Landroidx/camera/camera2/internal/CaptureSession$State;
 
-    if-eq v1, v2, :cond_1d
+    if-eq v1, v2, :cond_0
 
     const-string p1, "CaptureSession"
 
@@ -483,7 +483,7 @@
     return-void
 
     .line 1078
-    :cond_1d
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -506,13 +506,13 @@
 
     throw v1
 
-    :catchall_34
+    :catchall_0
     move-exception p1
 
     .line 1084
     monitor-exit v0
-    :try_end_36
-    .catchall {:try_start_7 .. :try_end_36} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

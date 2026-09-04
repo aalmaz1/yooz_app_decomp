@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 76
     invoke-static {p2, p3}, Landroidx/media3/common/util/Log;->appendThrowableString(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
@@ -43,7 +43,7 @@
 .end method
 
 .method public e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 91
     invoke-static {p2, p3}, Landroidx/media3/common/util/Log;->appendThrowableString(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
@@ -56,7 +56,7 @@
 .end method
 
 .method public i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 81
     invoke-static {p2, p3}, Landroidx/media3/common/util/Log;->appendThrowableString(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
@@ -69,7 +69,7 @@
 .end method
 
 .method public w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 86
     invoke-static {p2, p3}, Landroidx/media3/common/util/Log;->appendThrowableString(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;

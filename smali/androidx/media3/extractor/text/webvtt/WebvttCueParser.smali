@@ -98,7 +98,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     const-string v0, "^(\\S+)\\s+-->\\s+(\\S+)(.*)?$"
 
@@ -358,7 +358,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -367,7 +367,7 @@
 .end method
 
 .method private static applyDefaultColors(Landroid/text/SpannableStringBuilder;Ljava/util/Set;II)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -383,13 +383,13 @@
 
     move-result-object p1
 
-    :cond_4
-    :goto_4
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -406,7 +406,7 @@
 
     const/16 v3, 0x21
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     .line 652
     invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -426,17 +426,17 @@
 
     invoke-virtual {p0, v1, p2, p3, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_4
+    goto :goto_0
 
     .line 654
-    :cond_2d
+    :cond_1
     sget-object v1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->DEFAULT_BACKGROUND_COLORS:Ljava/util/Map;
 
     invoke-interface {v1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_0
 
     .line 655
     invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -456,14 +456,14 @@
 
     invoke-virtual {p0, v1, p2, p3, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_48
+    :cond_2
     return-void
 .end method
 
 .method private static applyEntity(Ljava/lang/String;Landroid/text/SpannableStringBuilder;)V
-    .registers 4
+    .locals 2
 
     .line 498
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -474,74 +474,74 @@
 
     const/4 v1, -0x1
 
-    sparse-switch v0, :sswitch_data_6e
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_37
+    goto :goto_0
 
-    :sswitch_c
+    :sswitch_0
     const-string v0, "nbsp"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v1, 0x3
 
-    goto :goto_37
+    goto :goto_0
 
-    :sswitch_17
+    :sswitch_1
     const-string v0, "amp"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 v1, 0x2
 
-    goto :goto_37
+    goto :goto_0
 
-    :sswitch_22
+    :sswitch_2
     const-string v0, "lt"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_2
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     const/4 v1, 0x1
 
-    goto :goto_37
+    goto :goto_0
 
-    :sswitch_2d
+    :sswitch_3
     const-string v0, "gt"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_3
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_36
+    :cond_3
     const/4 v1, 0x0
 
-    :goto_37
-    packed-switch v1, :pswitch_data_80
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
     .line 512
     new-instance p1, Ljava/lang/StringBuilder;
@@ -568,62 +568,62 @@
 
     invoke-static {p1, p0}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_6c
+    goto :goto_1
 
-    :pswitch_55
+    :pswitch_0
     const/16 p0, 0x20
 
     .line 506
     invoke-virtual {p1, p0}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    goto :goto_6c
+    goto :goto_1
 
-    :pswitch_5b
+    :pswitch_1
     const/16 p0, 0x26
 
     .line 509
     invoke-virtual {p1, p0}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    goto :goto_6c
+    goto :goto_1
 
-    :pswitch_61
+    :pswitch_2
     const/16 p0, 0x3c
 
     .line 500
     invoke-virtual {p1, p0}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    goto :goto_6c
+    goto :goto_1
 
-    :pswitch_67
+    :pswitch_3
     const/16 p0, 0x3e
 
     .line 503
     invoke-virtual {p1, p0}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    :goto_6c
+    :goto_1
     return-void
 
     nop
 
-    :sswitch_data_6e
+    :sswitch_data_0
     .sparse-switch
-        0xced -> :sswitch_2d
-        0xd88 -> :sswitch_22
-        0x179c4 -> :sswitch_17
-        0x337f11 -> :sswitch_c
+        0xced -> :sswitch_3
+        0xd88 -> :sswitch_2
+        0x179c4 -> :sswitch_1
+        0x337f11 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_67
-        :pswitch_61
-        :pswitch_5b
-        :pswitch_55
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static applyRubySpans(Landroid/text/SpannableStringBuilder;Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;Ljava/util/List;Ljava/util/List;)V
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -671,12 +671,12 @@
     move v2, p3
 
     .line 584
-    :goto_1b
+    :goto_0
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge p3, v3, :cond_73
+    if-ge p3, v3, :cond_1
 
     .line 585
     invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -697,12 +697,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_36
+    if-nez v3, :cond_0
 
-    goto :goto_70
+    goto :goto_1
 
     .line 588
-    :cond_36
+    :cond_0
     invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -773,17 +773,17 @@
 
     move p2, v5
 
-    :goto_70
+    :goto_1
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_73
+    :cond_1
     return-void
 .end method
 
 .method private static applySpansForTag(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;Ljava/util/List;Landroid/text/SpannableStringBuilder;Ljava/util/List;)V
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -824,179 +824,179 @@
 
     const/4 v7, -0x1
 
-    sparse-switch v3, :sswitch_data_b4
+    sparse-switch v3, :sswitch_data_0
 
-    goto/16 :goto_71
+    goto/16 :goto_0
 
-    :sswitch_18
+    :sswitch_0
     const-string v3, "ruby"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_21
+    if-nez v2, :cond_0
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     const/4 v7, 0x7
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_23
+    :sswitch_1
     const-string v3, "lang"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_2c
+    if-nez v2, :cond_1
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     const/4 v7, 0x6
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_2e
+    :sswitch_2
     const-string/jumbo v3, "v"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_38
+    if-nez v2, :cond_2
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_38
+    :cond_2
     const/4 v7, 0x5
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_3a
+    :sswitch_3
     const-string/jumbo v3, "u"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_44
+    if-nez v2, :cond_3
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_44
+    :cond_3
     const/4 v7, 0x4
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_46
+    :sswitch_4
     const-string v3, "i"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_4f
+    if-nez v2, :cond_4
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_4f
+    :cond_4
     const/4 v7, 0x3
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_51
+    :sswitch_5
     const-string v3, "c"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_5a
+    if-nez v2, :cond_5
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_5a
+    :cond_5
     move v7, v4
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_5c
+    :sswitch_6
     const-string v3, "b"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_65
+    if-nez v2, :cond_6
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_65
+    :cond_6
     move v7, v6
 
-    goto :goto_71
+    goto :goto_0
 
-    :sswitch_67
+    :sswitch_7
     const-string v3, ""
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_70
+    if-nez v2, :cond_7
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_70
+    :cond_7
     move v7, v5
 
-    :goto_71
+    :goto_0
     const/16 v2, 0x21
 
-    packed-switch v7, :pswitch_data_d6
+    packed-switch v7, :pswitch_data_0
 
     return-void
 
     .line 550
-    :pswitch_77
+    :pswitch_0
     invoke-static {p3, p0, p1, p2, p4}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->applyRubySpans(Landroid/text/SpannableStringBuilder;Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;Ljava/util/List;Ljava/util/List;)V
 
-    goto :goto_9b
+    goto :goto_1
 
     .line 553
-    :pswitch_7b
+    :pswitch_1
     new-instance p2, Landroid/text/style/UnderlineSpan;
 
     invoke-direct {p2}, Landroid/text/style/UnderlineSpan;-><init>()V
 
     invoke-virtual {p3, p2, v0, v1, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_9b
+    goto :goto_1
 
     .line 547
-    :pswitch_84
+    :pswitch_2
     new-instance p2, Landroid/text/style/StyleSpan;
 
     invoke-direct {p2, v4}, Landroid/text/style/StyleSpan;-><init>(I)V
 
     invoke-virtual {p3, p2, v0, v1, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    goto :goto_9b
+    goto :goto_1
 
     .line 556
-    :pswitch_8d
+    :pswitch_3
     iget-object p2, p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;->classes:Ljava/util/Set;
 
     invoke-static {p3, p2, v0, v1}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->applyDefaultColors(Landroid/text/SpannableStringBuilder;Ljava/util/Set;II)V
 
-    goto :goto_9b
+    goto :goto_1
 
     .line 544
-    :pswitch_93
+    :pswitch_4
     new-instance p2, Landroid/text/style/StyleSpan;
 
     invoke-direct {p2, v6}, Landroid/text/style/StyleSpan;-><init>(I)V
@@ -1004,19 +1004,19 @@
     invoke-virtual {p3, p2, v0, v1, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 566
-    :goto_9b
-    :pswitch_9b
+    :goto_1
+    :pswitch_5
     invoke-static {p4, p0, p1}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->getApplicableStyles(Ljava/util/List;Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;)Ljava/util/List;
 
     move-result-object p0
 
     .line 567
-    :goto_9f
+    :goto_2
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-ge v5, p1, :cond_b3
+    if-ge v5, p1, :cond_8
 
     .line 568
     invoke-interface {p0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1031,45 +1031,45 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_9f
+    goto :goto_2
 
-    :cond_b3
+    :cond_8
     return-void
 
-    :sswitch_data_b4
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_67
-        0x62 -> :sswitch_5c
-        0x63 -> :sswitch_51
-        0x69 -> :sswitch_46
-        0x75 -> :sswitch_3a
-        0x76 -> :sswitch_2e
-        0x3291ee -> :sswitch_23
-        0x3595da -> :sswitch_18
+        0x0 -> :sswitch_7
+        0x62 -> :sswitch_6
+        0x63 -> :sswitch_5
+        0x69 -> :sswitch_4
+        0x75 -> :sswitch_3
+        0x76 -> :sswitch_2
+        0x3291ee -> :sswitch_1
+        0x3595da -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_d6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9b
-        :pswitch_93
-        :pswitch_8d
-        :pswitch_84
-        :pswitch_7b
-        :pswitch_9b
-        :pswitch_9b
-        :pswitch_77
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_5
+        :pswitch_5
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static applyStyleToText(Landroid/text/SpannableStringBuilder;Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;II)V
-    .registers 8
+    .locals 4
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 666
-    :cond_3
+    :cond_0
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->getStyle()I
 
     move-result v0
@@ -1078,7 +1078,7 @@
 
     const/16 v2, 0x21
 
-    if-eq v0, v1, :cond_18
+    if-eq v0, v1, :cond_1
 
     .line 667
     new-instance v0, Landroid/text/style/StyleSpan;
@@ -1094,12 +1094,12 @@
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 674
-    :cond_18
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->isLinethrough()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     .line 675
     new-instance v0, Landroid/text/style/StrikethroughSpan;
@@ -1109,12 +1109,12 @@
     invoke-virtual {p0, v0, p2, p3, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 677
-    :cond_26
+    :cond_2
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->isUnderline()Z
 
     move-result v0
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_3
 
     .line 678
     new-instance v0, Landroid/text/style/UnderlineSpan;
@@ -1124,12 +1124,12 @@
     invoke-virtual {p0, v0, p2, p3, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 680
-    :cond_34
+    :cond_3
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->hasFontColor()Z
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 681
     new-instance v0, Landroid/text/style/ForegroundColorSpan;
@@ -1145,12 +1145,12 @@
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 688
-    :cond_46
+    :cond_4
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->hasBackgroundColor()Z
 
     move-result v0
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_5
 
     .line 689
     new-instance v0, Landroid/text/style/BackgroundColorSpan;
@@ -1166,12 +1166,12 @@
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 696
-    :cond_58
+    :cond_5
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->getFontFamily()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_6
 
     .line 697
     new-instance v0, Landroid/text/style/TypefaceSpan;
@@ -1187,27 +1187,27 @@
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 704
-    :cond_6a
+    :cond_6
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->getFontSizeUnit()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_95
+    if-eq v0, v1, :cond_9
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_88
+    if-eq v0, v1, :cond_8
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_78
+    if-eq v0, v1, :cond_7
 
-    goto :goto_a2
+    goto :goto_0
 
     .line 722
-    :cond_78
+    :cond_7
     new-instance v0, Landroid/text/style/RelativeSizeSpan;
 
     .line 724
@@ -1224,10 +1224,10 @@
     .line 722
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
-    goto :goto_a2
+    goto :goto_0
 
     .line 714
-    :cond_88
+    :cond_8
     new-instance v0, Landroid/text/style/RelativeSizeSpan;
 
     .line 716
@@ -1240,10 +1240,10 @@
     .line 714
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
-    goto :goto_a2
+    goto :goto_0
 
     .line 706
-    :cond_95
+    :cond_9
     new-instance v0, Landroid/text/style/AbsoluteSizeSpan;
 
     .line 708
@@ -1259,12 +1259,12 @@
     invoke-static {p0, v0, p2, p3, v2}, Landroidx/media3/common/text/SpanUtil;->addOrReplaceSpan(Landroid/text/Spannable;Ljava/lang/Object;III)V
 
     .line 733
-    :goto_a2
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->getCombineUpright()Z
 
     move-result p1
 
-    if-eqz p1, :cond_b0
+    if-eqz p1, :cond_a
 
     .line 734
     new-instance p1, Landroidx/media3/common/text/HorizontalTextInVerticalContextSpan;
@@ -1273,12 +1273,12 @@
 
     invoke-virtual {p0, p1, p2, p3, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_b0
+    :cond_a
     return-void
 .end method
 
 .method private static findEndOfTag(Ljava/lang/String;I)I
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x3e
 
@@ -1289,43 +1289,43 @@
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_e
+    if-ne p1, v0, :cond_0
 
     .line 494
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     add-int/lit8 p0, p1, 0x1
 
-    :goto_10
+    :goto_0
     return p0
 .end method
 
 .method private static firstKnownRubyPosition(III)I
-    .registers 4
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-eq p0, v0, :cond_4
+    if-eq p0, v0, :cond_0
 
     return p0
 
-    :cond_4
-    if-eq p1, v0, :cond_7
+    :cond_0
+    if-eq p1, v0, :cond_1
 
     return p1
 
-    :cond_7
-    if-eq p2, v0, :cond_a
+    :cond_1
+    if-eq p2, v0, :cond_2
 
     return p2
 
     .line 638
-    :cond_a
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -1334,7 +1334,7 @@
 .end method
 
 .method private static getApplicableStyles(Ljava/util/List;Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;)Ljava/util/List;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1358,12 +1358,12 @@
     const/4 v1, 0x0
 
     .line 754
-    :goto_6
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_29
+    if-ge v1, v2, :cond_1
 
     .line 755
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1383,7 +1383,7 @@
 
     move-result v3
 
-    if-lez v3, :cond_26
+    if-lez v3, :cond_0
 
     .line 758
     new-instance v4, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StyleMatch;
@@ -1392,20 +1392,20 @@
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_26
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 761
-    :cond_29
+    :cond_1
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
     return-object v0
 .end method
 
 .method private static getRubyPosition(Ljava/util/List;Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;)I
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1426,14 +1426,14 @@
     const/4 p1, 0x0
 
     .line 616
-    :goto_5
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p2
 
     const/4 v0, -0x1
 
-    if-ge p1, p2, :cond_22
+    if-ge p1, p2, :cond_1
 
     .line 617
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1449,7 +1449,7 @@
 
     move-result v1
 
-    if-eq v1, v0, :cond_1f
+    if-eq v1, v0, :cond_0
 
     .line 619
     invoke-virtual {p2}, Landroidx/media3/extractor/text/webvtt/WebvttCssStyle;->getRubyPosition()I
@@ -1458,17 +1458,17 @@
 
     return p0
 
-    :cond_1f
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     return v0
 .end method
 
 .method private static getTagName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 746
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1499,7 +1499,7 @@
 .end method
 
 .method private static isSupportedTag(Ljava/lang/String;)Z
-    .registers 5
+    .locals 4
 
     .line 518
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -1514,173 +1514,173 @@
 
     const/4 v3, -0x1
 
-    sparse-switch v0, :sswitch_data_6e
+    sparse-switch v0, :sswitch_data_0
 
-    goto/16 :goto_68
+    goto/16 :goto_0
 
-    :sswitch_f
+    :sswitch_0
     const-string v0, "ruby"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_18
+    if-nez p0, :cond_0
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v3, 0x7
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_1a
+    :sswitch_1
     const-string v0, "lang"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_1
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     const/4 v3, 0x6
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_25
+    :sswitch_2
     const-string v0, "rt"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_2e
+    if-nez p0, :cond_2
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_2e
+    :cond_2
     const/4 v3, 0x5
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_30
+    :sswitch_3
     const-string/jumbo v0, "v"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_3a
+    if-nez p0, :cond_3
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_3a
+    :cond_3
     const/4 v3, 0x4
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_3c
+    :sswitch_4
     const-string/jumbo v0, "u"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_46
+    if-nez p0, :cond_4
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_46
+    :cond_4
     const/4 v3, 0x3
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_48
+    :sswitch_5
     const-string v0, "i"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_51
+    if-nez p0, :cond_5
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_51
+    :cond_5
     const/4 v3, 0x2
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_53
+    :sswitch_6
     const-string v0, "c"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_5c
+    if-nez p0, :cond_6
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_5c
+    :cond_6
     move v3, v1
 
-    goto :goto_68
+    goto :goto_0
 
-    :sswitch_5e
+    :sswitch_7
     const-string v0, "b"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_67
+    if-nez p0, :cond_7
 
-    goto :goto_68
+    goto :goto_0
 
-    :cond_67
+    :cond_7
     move v3, v2
 
-    :goto_68
-    packed-switch v3, :pswitch_data_90
+    :goto_0
+    packed-switch v3, :pswitch_data_0
 
     return v2
 
-    :pswitch_6c
+    :pswitch_0
     return v1
 
     nop
 
-    :sswitch_data_6e
+    :sswitch_data_0
     .sparse-switch
-        0x62 -> :sswitch_5e
-        0x63 -> :sswitch_53
-        0x69 -> :sswitch_48
-        0x75 -> :sswitch_3c
-        0x76 -> :sswitch_30
-        0xe42 -> :sswitch_25
-        0x3291ee -> :sswitch_1a
-        0x3595da -> :sswitch_f
+        0x62 -> :sswitch_7
+        0x63 -> :sswitch_6
+        0x69 -> :sswitch_5
+        0x75 -> :sswitch_4
+        0x76 -> :sswitch_3
+        0xe42 -> :sswitch_2
+        0x3291ee -> :sswitch_1
+        0x3595da -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_90
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6c
-        :pswitch_6c
-        :pswitch_6c
-        :pswitch_6c
-        :pswitch_6c
-        :pswitch_6c
-        :pswitch_6c
-        :pswitch_6c
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static newCueForText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue;
-    .registers 2
+    .locals 1
 
     .line 237
     new-instance v0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;
@@ -1703,7 +1703,7 @@
 .end method
 
 .method public static parseCue(Landroidx/media3/common/util/ParsableByteArray;Ljava/util/List;)Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1722,12 +1722,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 204
-    :cond_8
+    :cond_0
     sget-object v2, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->CUE_HEADER_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v2, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1739,7 +1739,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_1
 
     .line 207
     invoke-static {v1, v3, p0, p1}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->parseCue(Ljava/lang/String;Ljava/util/regex/Matcher;Landroidx/media3/common/util/ParsableByteArray;Ljava/util/List;)Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;
@@ -1749,17 +1749,17 @@
     return-object p0
 
     .line 210
-    :cond_19
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object v3
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_2
 
     return-object v1
 
     .line 214
-    :cond_20
+    :cond_2
     invoke-virtual {v2, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v2
@@ -1769,7 +1769,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_3
 
     .line 217
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1782,12 +1782,12 @@
 
     return-object p0
 
-    :cond_33
+    :cond_3
     return-object v1
 .end method
 
 .method private static parseCue(Ljava/lang/String;Ljava/util/regex/Matcher;Landroidx/media3/common/util/ParsableByteArray;Ljava/util/List;)Landroidx/media3/extractor/text/webvtt/WebvttCueInfo;
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1809,7 +1809,7 @@
     const/4 v1, 0x1
 
     .line 346
-    :try_start_6
+    :try_start_0
     invoke-virtual {p1, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1844,8 +1844,8 @@
     move-result-wide v1
 
     iput-wide v1, v0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;->endTimeUs:J
-    :try_end_27
-    .catch Ljava/lang/NumberFormatException; {:try_start_6 .. :try_end_27} :catch_6a
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v1, 0x3
 
@@ -1873,19 +1873,19 @@
     move-result-object v1
 
     .line 359
-    :goto_3e
+    :goto_0
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-nez v2, :cond_5b
+    if-nez v2, :cond_1
 
     .line 361
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
-    if-lez v2, :cond_4f
+    if-lez v2, :cond_0
 
     const-string v2, "\n"
 
@@ -1893,7 +1893,7 @@
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 364
-    :cond_4f
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -1905,10 +1905,10 @@
 
     move-result-object v1
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 366
-    :cond_5b
+    :cond_1
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -1927,7 +1927,7 @@
     return-object p0
 
     .line 350
-    :catch_6a
+    :catch_0
     new-instance p0, Ljava/lang/StringBuilder;
 
     const-string p2, "Skipping cue with bad header: "
@@ -1956,7 +1956,7 @@
 .end method
 
 .method static parseCueSettingsList(Ljava/lang/String;)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 1
 
     .line 229
     new-instance v0, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;
@@ -1975,7 +1975,7 @@
 .end method
 
 .method private static parseCueSettingsList(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;)V
-    .registers 7
+    .locals 5
 
     const-string v0, "WebvttCueParser"
 
@@ -1987,12 +1987,12 @@
     move-result-object p0
 
     .line 374
-    :goto_8
+    :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v1
 
-    if-eqz v1, :cond_a4
+    if-eqz v1, :cond_5
 
     const/4 v1, 0x1
 
@@ -2020,7 +2020,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    :try_start_24
+    :try_start_0
     const-string v3, "line"
 
     .line 378
@@ -2028,14 +2028,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     .line 379
     invoke-static {v2, p1}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->parseLineAttribute(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const-string v3, "align"
 
     .line 380
@@ -2043,7 +2043,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3f
+    if-eqz v3, :cond_1
 
     .line 381
     invoke-static {v2}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->parseTextAlignment(Ljava/lang/String;)I
@@ -2052,9 +2052,9 @@
 
     iput v1, p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;->textAlignment:I
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_3f
+    :cond_1
     const-string v3, "position"
 
     .line 382
@@ -2062,14 +2062,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4b
+    if-eqz v3, :cond_2
 
     .line 383
     invoke-static {v2, p1}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->parsePositionAttribute(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;)V
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_4b
+    :cond_2
     const-string v3, "size"
 
     .line 384
@@ -2077,7 +2077,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5a
+    if-eqz v3, :cond_3
 
     .line 385
     invoke-static {v2}, Landroidx/media3/extractor/text/webvtt/WebvttParserUtil;->parsePercentage(Ljava/lang/String;)F
@@ -2086,9 +2086,9 @@
 
     iput v1, p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;->size:F
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_5a
+    :cond_3
     const-string/jumbo v3, "vertical"
 
     .line 386
@@ -2096,7 +2096,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6a
+    if-eqz v3, :cond_4
 
     .line 387
     invoke-static {v2}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->parseVerticalAttribute(Ljava/lang/String;)I
@@ -2105,10 +2105,10 @@
 
     iput v1, p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;->verticalType:I
 
-    goto :goto_8
+    goto :goto_0
 
     .line 389
-    :cond_6a
+    :cond_4
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2138,13 +2138,13 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_8a
-    .catch Ljava/lang/NumberFormatException; {:try_start_24 .. :try_end_8a} :catch_8c
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_8
+    goto/16 :goto_0
 
     .line 392
-    :catch_8c
+    :catch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Skipping bad cue setting: "
@@ -2165,14 +2165,14 @@
 
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_0
 
-    :cond_a4
+    :cond_5
     return-void
 .end method
 
 .method static parseCueText(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Landroid/text/SpannedString;
-    .registers 14
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2205,12 +2205,12 @@
     move v4, v3
 
     .line 256
-    :goto_11
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_e5
+    if-ge v4, v5, :cond_12
 
     .line 257
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
@@ -2219,20 +2219,20 @@
 
     const/16 v6, 0x26
 
-    if-eq v5, v6, :cond_b1
+    if-eq v5, v6, :cond_d
 
     const/16 v6, 0x3c
 
-    if-eq v5, v6, :cond_29
+    if-eq v5, v6, :cond_0
 
     .line 316
     invoke-virtual {v0, v5}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     add-int/lit8 v5, v4, 0x1
 
     .line 260
@@ -2240,12 +2240,12 @@
 
     move-result v6
 
-    if-lt v5, v6, :cond_32
+    if-lt v5, v6, :cond_1
 
-    goto :goto_6f
+    goto :goto_4
 
     .line 265
-    :cond_32
+    :cond_1
     invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
@@ -2254,17 +2254,17 @@
 
     const/4 v8, 0x1
 
-    if-ne v6, v7, :cond_3d
+    if-ne v6, v7, :cond_2
 
     move v6, v8
 
-    goto :goto_3e
+    goto :goto_1
 
-    :cond_3d
+    :cond_2
     move v6, v3
 
     .line 266
-    :goto_3e
+    :goto_1
     invoke-static {p1, v5}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->findEndOfTag(Ljava/lang/String;I)I
 
     move-result v5
@@ -2276,32 +2276,32 @@
 
     move-result v10
 
-    if-ne v10, v7, :cond_4c
+    if-ne v10, v7, :cond_3
 
     move v7, v8
 
-    goto :goto_4d
+    goto :goto_2
 
-    :cond_4c
+    :cond_3
     move v7, v3
 
-    :goto_4d
-    if-eqz v6, :cond_50
+    :goto_2
+    if-eqz v6, :cond_4
 
     const/4 v8, 0x2
 
-    :cond_50
+    :cond_4
     add-int/2addr v4, v8
 
-    if-eqz v7, :cond_54
+    if-eqz v7, :cond_5
 
-    goto :goto_56
+    goto :goto_3
 
-    :cond_54
+    :cond_5
     add-int/lit8 v9, v5, -0x1
 
     .line 269
-    :goto_56
+    :goto_3
     invoke-virtual {p1, v4, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v4
@@ -2315,12 +2315,12 @@
 
     move-result v8
 
-    if-eqz v8, :cond_65
+    if-eqz v8, :cond_6
 
-    goto :goto_6f
+    goto :goto_4
 
     .line 273
-    :cond_65
+    :cond_6
     invoke-static {v4}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->getTagName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
@@ -2330,29 +2330,29 @@
 
     move-result v9
 
-    if-nez v9, :cond_71
+    if-nez v9, :cond_8
 
-    :cond_6f
-    :goto_6f
+    :cond_7
+    :goto_4
     move v4, v5
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_71
-    if-eqz v6, :cond_a3
+    :cond_8
+    if-eqz v6, :cond_c
 
     .line 280
-    :cond_73
+    :cond_9
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result v4
 
-    if-eqz v4, :cond_7a
+    if-eqz v4, :cond_a
 
-    goto :goto_6f
+    goto :goto_4
 
     .line 283
-    :cond_7a
+    :cond_a
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->pop()Ljava/lang/Object;
 
     move-result-object v4
@@ -2367,7 +2367,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_97
+    if-nez v6, :cond_b
 
     .line 286
     new-instance v6, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$Element;
@@ -2382,26 +2382,26 @@
 
     invoke-interface {v2, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9a
+    goto :goto_5
 
     .line 288
-    :cond_97
+    :cond_b
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
     .line 290
-    :goto_9a
+    :goto_5
     iget-object v4, v4, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;->name:Ljava/lang/String;
 
     invoke-virtual {v4, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_73
+    if-eqz v4, :cond_9
 
-    goto :goto_6f
+    goto :goto_4
 
-    :cond_a3
-    if-nez v7, :cond_6f
+    :cond_c
+    if-nez v7, :cond_7
 
     .line 292
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
@@ -2414,9 +2414,9 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
-    goto :goto_6f
+    goto :goto_4
 
-    :cond_b1
+    :cond_d
     add-int/lit8 v4, v4, 0x1
 
     const/16 v6, 0x3b
@@ -2435,25 +2435,25 @@
 
     const/4 v8, -0x1
 
-    if-ne v6, v8, :cond_c4
+    if-ne v6, v8, :cond_e
 
     move v6, v7
 
-    goto :goto_cb
+    goto :goto_6
 
-    :cond_c4
-    if-ne v7, v8, :cond_c7
+    :cond_e
+    if-ne v7, v8, :cond_f
 
-    goto :goto_cb
+    goto :goto_6
 
     .line 303
-    :cond_c7
+    :cond_f
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v6
 
-    :goto_cb
-    if-eq v6, v8, :cond_e0
+    :goto_6
+    if-eq v6, v8, :cond_11
 
     .line 305
     invoke-virtual {p1, v4, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -2462,34 +2462,34 @@
 
     invoke-static {v4, v0}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->applyEntity(Ljava/lang/String;Landroid/text/SpannableStringBuilder;)V
 
-    if-ne v6, v7, :cond_db
+    if-ne v6, v7, :cond_10
 
     const-string v4, " "
 
     .line 307
     invoke-virtual {v0, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    :cond_db
+    :cond_10
     add-int/lit8 v6, v6, 0x1
 
     move v4, v6
 
-    goto/16 :goto_11
+    goto/16 :goto_0
 
     .line 311
-    :cond_e0
+    :cond_11
     invoke-virtual {v0, v5}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    goto/16 :goto_11
+    goto/16 :goto_0
 
     .line 322
-    :cond_e5
-    :goto_e5
+    :cond_12
+    :goto_7
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_f5
+    if-nez p1, :cond_13
 
     .line 323
     invoke-virtual {v1}, Ljava/util/ArrayDeque;->pop()Ljava/lang/Object;
@@ -2500,10 +2500,10 @@
 
     invoke-static {p0, p1, v2, v0, p2}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser;->applySpansForTag(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;Ljava/util/List;Landroid/text/SpannableStringBuilder;Ljava/util/List;)V
 
-    goto :goto_e5
+    goto :goto_7
 
     .line 327
-    :cond_f5
+    :cond_13
     invoke-static {}, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;->buildWholeCueVirtualTag()Landroidx/media3/extractor/text/webvtt/WebvttCueParser$StartTag;
 
     move-result-object p1
@@ -2525,7 +2525,7 @@
 .end method
 
 .method private static parseLineAnchor(Ljava/lang/String;)I
-    .registers 6
+    .locals 5
 
     .line 413
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -2542,74 +2542,74 @@
 
     const/4 v4, -0x1
 
-    sparse-switch v0, :sswitch_data_58
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_3a
+    goto :goto_0
 
-    :sswitch_f
+    :sswitch_0
     const-string v0, "start"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v4, 0x3
 
-    goto :goto_3a
+    goto :goto_0
 
-    :sswitch_1a
+    :sswitch_1
     const-string v0, "end"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     move v4, v1
 
-    goto :goto_3a
+    goto :goto_0
 
-    :sswitch_25
+    :sswitch_2
     const-string v0, "middle"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_2e
+    :cond_2
     move v4, v2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :sswitch_30
+    :sswitch_3
     const-string v0, "center"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_3
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_39
+    :cond_3
     move v4, v3
 
-    :goto_3a
-    packed-switch v4, :pswitch_data_6a
+    :goto_0
+    packed-switch v4, :pswitch_data_0
 
     .line 422
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2634,36 +2634,36 @@
 
     return p0
 
-    :pswitch_54
+    :pswitch_0
     return v3
 
-    :pswitch_55
+    :pswitch_1
     return v1
 
-    :pswitch_56
+    :pswitch_2
     return v2
 
     nop
 
-    :sswitch_data_58
+    :sswitch_data_0
     .sparse-switch
-        -0x514d33ab -> :sswitch_30
-        -0x4009266b -> :sswitch_25
-        0x188db -> :sswitch_1a
-        0x68ac462 -> :sswitch_f
+        -0x514d33ab -> :sswitch_3
+        -0x4009266b -> :sswitch_2
+        0x188db -> :sswitch_1
+        0x68ac462 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_56
-        :pswitch_56
-        :pswitch_55
-        :pswitch_54
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseLineAttribute(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;)V
-    .registers 5
+    .locals 3
 
     const/16 v0, 0x2c
 
@@ -2676,7 +2676,7 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 v1, v0, 0x1
 
@@ -2696,7 +2696,7 @@
 
     move-result-object p0
 
-    :cond_1a
+    :cond_0
     const-string v0, "%"
 
     .line 403
@@ -2704,7 +2704,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 404
     invoke-static {p0}, Landroidx/media3/extractor/text/webvtt/WebvttParserUtil;->parsePercentage(Ljava/lang/String;)F
@@ -2716,10 +2716,10 @@
     .line 405
     iput v2, p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;->lineType:I
 
-    goto :goto_35
+    goto :goto_0
 
     .line 407
-    :cond_2b
+    :cond_1
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
@@ -2733,12 +2733,12 @@
     .line 408
     iput p0, p1, Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;->lineType:I
 
-    :goto_35
+    :goto_0
     return-void
 .end method
 
 .method private static parsePositionAnchor(Ljava/lang/String;)I
-    .registers 6
+    .locals 5
 
     .line 437
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -2755,106 +2755,106 @@
 
     const/4 v4, -0x1
 
-    sparse-switch v0, :sswitch_data_6e
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_50
+    goto :goto_0
 
-    :sswitch_f
+    :sswitch_0
     const-string v0, "start"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v4, 0x5
 
-    goto :goto_50
+    goto :goto_0
 
-    :sswitch_1a
+    :sswitch_1
     const-string v0, "end"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     const/4 v4, 0x4
 
-    goto :goto_50
+    goto :goto_0
 
-    :sswitch_25
+    :sswitch_2
     const-string v0, "middle"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_2e
+    :cond_2
     const/4 v4, 0x3
 
-    goto :goto_50
+    goto :goto_0
 
-    :sswitch_30
+    :sswitch_3
     const-string v0, "line-right"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_3
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_39
+    :cond_3
     move v4, v1
 
-    goto :goto_50
+    goto :goto_0
 
-    :sswitch_3b
+    :sswitch_4
     const-string v0, "center"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_4
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_44
+    :cond_4
     move v4, v2
 
-    goto :goto_50
+    goto :goto_0
 
-    :sswitch_46
+    :sswitch_5
     const-string v0, "line-left"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_5
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_4f
+    :cond_5
     move v4, v3
 
-    :goto_50
-    packed-switch v4, :pswitch_data_88
+    :goto_0
+    packed-switch v4, :pswitch_data_0
 
     .line 448
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2879,40 +2879,40 @@
 
     return p0
 
-    :pswitch_6a
+    :pswitch_0
     return v1
 
-    :pswitch_6b
+    :pswitch_1
     return v2
 
-    :pswitch_6c
+    :pswitch_2
     return v3
 
     nop
 
-    :sswitch_data_6e
+    :sswitch_data_0
     .sparse-switch
-        -0x6dd215c0 -> :sswitch_46
-        -0x514d33ab -> :sswitch_3b
-        -0x4c1a40fd -> :sswitch_30
-        -0x4009266b -> :sswitch_25
-        0x188db -> :sswitch_1a
-        0x68ac462 -> :sswitch_f
+        -0x6dd215c0 -> :sswitch_5
+        -0x514d33ab -> :sswitch_4
+        -0x4c1a40fd -> :sswitch_3
+        -0x4009266b -> :sswitch_2
+        0x188db -> :sswitch_1
+        0x68ac462 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6c
-        :pswitch_6b
-        :pswitch_6a
-        :pswitch_6b
-        :pswitch_6a
-        :pswitch_6c
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
     .end packed-switch
 .end method
 
 .method private static parsePositionAttribute(Ljava/lang/String;Landroidx/media3/extractor/text/webvtt/WebvttCueParser$WebvttCueInfoBuilder;)V
-    .registers 4
+    .locals 2
 
     const/16 v0, 0x2c
 
@@ -2923,7 +2923,7 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 v1, v0, 0x1
 
@@ -2946,7 +2946,7 @@
     move-result-object p0
 
     .line 433
-    :cond_1a
+    :cond_0
     invoke-static {p0}, Landroidx/media3/extractor/text/webvtt/WebvttParserUtil;->parsePercentage(Ljava/lang/String;)F
 
     move-result p0
@@ -2957,7 +2957,7 @@
 .end method
 
 .method private static parseTextAlignment(Ljava/lang/String;)I
-    .registers 8
+    .locals 7
 
     .line 466
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -2978,106 +2978,106 @@
 
     const/4 v6, -0x1
 
-    sparse-switch v0, :sswitch_data_70
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_52
+    goto :goto_0
 
-    :sswitch_11
+    :sswitch_0
     const-string v0, "start"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move v6, v1
 
-    goto :goto_52
+    goto :goto_0
 
-    :sswitch_1c
+    :sswitch_1
     const-string v0, "right"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     move v6, v2
 
-    goto :goto_52
+    goto :goto_0
 
-    :sswitch_27
+    :sswitch_2
     const-string v0, "left"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_2
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     move v6, v3
 
-    goto :goto_52
+    goto :goto_0
 
-    :sswitch_32
+    :sswitch_3
     const-string v0, "end"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_3
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_3b
+    :cond_3
     move v6, v5
 
-    goto :goto_52
+    goto :goto_0
 
-    :sswitch_3d
+    :sswitch_4
     const-string v0, "middle"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_4
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_46
+    :cond_4
     move v6, v4
 
-    goto :goto_52
+    goto :goto_0
 
-    :sswitch_48
+    :sswitch_5
     const-string v0, "center"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_51
+    if-nez v0, :cond_5
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_51
+    :cond_5
     const/4 v6, 0x0
 
-    :goto_52
-    packed-switch v6, :pswitch_data_8a
+    :goto_0
+    packed-switch v6, :pswitch_data_0
 
     .line 479
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3100,46 +3100,46 @@
 
     return v5
 
-    :pswitch_6a
+    :pswitch_0
     return v4
 
-    :pswitch_6b
+    :pswitch_1
     return v1
 
-    :pswitch_6c
+    :pswitch_2
     return v2
 
-    :pswitch_6d
+    :pswitch_3
     return v3
 
-    :pswitch_6e
+    :pswitch_4
     return v5
 
     nop
 
-    :sswitch_data_70
+    :sswitch_data_0
     .sparse-switch
-        -0x514d33ab -> :sswitch_48
-        -0x4009266b -> :sswitch_3d
-        0x188db -> :sswitch_32
-        0x32a007 -> :sswitch_27
-        0x677c21c -> :sswitch_1c
-        0x68ac462 -> :sswitch_11
+        -0x514d33ab -> :sswitch_5
+        -0x4009266b -> :sswitch_4
+        0x188db -> :sswitch_3
+        0x32a007 -> :sswitch_2
+        0x677c21c -> :sswitch_1
+        0x68ac462 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_8a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6e
-        :pswitch_6e
-        :pswitch_6d
-        :pswitch_6c
-        :pswitch_6b
-        :pswitch_6a
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseVerticalAttribute(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
 
     .line 454
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
@@ -3150,7 +3150,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_1
 
     const-string v0, "rl"
 
@@ -3158,7 +3158,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_0
 
     .line 460
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3183,12 +3183,12 @@
 
     return p0
 
-    :cond_2a
+    :cond_0
     const/4 p0, 0x1
 
     return p0
 
-    :cond_2c
+    :cond_1
     const/4 p0, 0x2
 
     return p0

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$2uBGKY_80y0rfanMa5kwoYKApMc(Landroid/os/Bundle;)Landroidx/media3/common/TrackGroup;
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/media3/common/TrackGroup;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/TrackGroup;
 
@@ -39,7 +39,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$Dt6V5UxQuB5ooJc2RtbDzh5YjWc(Landroidx/media3/common/TrackGroup;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     invoke-virtual {p0}, Landroidx/media3/common/TrackGroup;->toBundle()Landroid/os/Bundle;
 
@@ -49,7 +49,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 46
     new-instance v0, Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -73,7 +73,7 @@
 .end method
 
 .method public varargs constructor <init>([Landroidx/media3/common/TrackGroup;)V
-    .registers 3
+    .locals 1
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,7 +97,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 4
+    .locals 3
 
     .line 130
     sget-object v0, Landroidx/media3/exoplayer/source/TrackGroupArray;->FIELD_TRACK_GROUPS:Ljava/lang/String;
@@ -108,7 +108,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_11
+    if-nez p0, :cond_0
 
     .line 132
     new-instance p0, Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -120,7 +120,7 @@
     return-object p0
 
     .line 134
-    :cond_11
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     new-instance v2, Landroidx/media3/exoplayer/source/TrackGroupArray$$ExternalSyntheticLambda2;
@@ -147,7 +147,7 @@
 .end method
 
 .method static synthetic lambda$getTrackTypes$0(Landroidx/media3/common/TrackGroup;)Ljava/lang/Integer;
-    .registers 1
+    .locals 0
 
     .line 95
     iget p0, p0, Landroidx/media3/common/TrackGroup;->type:I
@@ -160,33 +160,33 @@
 .end method
 
 .method private verifyCorrectness()V
-    .registers 7
+    .locals 6
 
     const/4 v0, 0x0
 
     .line 140
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_3b
+    if-ge v0, v1, :cond_2
 
     add-int/lit8 v1, v0, 0x1
 
     move v2, v1
 
     .line 141
-    :goto_c
+    :goto_1
     iget-object v3, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v3}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_39
+    if-ge v2, v3, :cond_1
 
     .line 142
     iget-object v3, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
@@ -207,7 +207,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_36
+    if-eqz v3, :cond_0
 
     .line 143
     new-instance v3, Ljava/lang/IllegalArgumentException;
@@ -222,35 +222,35 @@
 
     invoke-static {v4, v5, v3}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_36
+    :cond_0
     add-int/lit8 v2, v2, 0x1
-
-    goto :goto_c
-
-    :cond_39
-    move v0, v1
 
     goto :goto_1
 
-    :cond_3b
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_3
 
     .line 111
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -261,12 +261,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_27
+    goto :goto_1
 
     .line 114
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     .line 115
@@ -274,7 +274,7 @@
 
     iget v3, p1, Landroidx/media3/exoplayer/source/TrackGroupArray;->length:I
 
-    if-ne v2, v3, :cond_25
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
 
@@ -284,23 +284,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_2
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     move v0, v1
 
-    :goto_26
+    :goto_0
     return v0
 
-    :cond_27
-    :goto_27
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public get(I)Landroidx/media3/common/TrackGroup;
-    .registers 3
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
@@ -315,7 +315,7 @@
 .end method
 
 .method public getTrackTypes()Lcom/google/common/collect/ImmutableList;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -344,12 +344,12 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->hashCode:I
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 101
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
@@ -361,14 +361,14 @@
     iput v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->hashCode:I
 
     .line 103
-    :cond_c
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->hashCode:I
 
     return v0
 .end method
 
 .method public indexOf(Landroidx/media3/common/TrackGroup;)I
-    .registers 3
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->trackGroups:Lcom/google/common/collect/ImmutableList;
@@ -377,38 +377,38 @@
 
     move-result p1
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_a
+    :goto_0
     return p1
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 90
     iget v0, p0, Landroidx/media3/exoplayer/source/TrackGroupArray;->length:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 121
     new-instance v0, Landroid/os/Bundle;

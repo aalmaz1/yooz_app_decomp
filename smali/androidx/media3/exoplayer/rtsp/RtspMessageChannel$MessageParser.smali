@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 358
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method private addMessageBody([B)Lcom/google/common/collect/ImmutableList;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -80,22 +80,22 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     move v0, v3
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v2
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 474
     array-length v0, p1
 
-    if-lez v0, :cond_47
+    if-lez v0, :cond_2
 
     array-length v0, p1
 
@@ -105,12 +105,12 @@
 
     const/16 v1, 0xa
 
-    if-ne v0, v1, :cond_47
+    if-ne v0, v1, :cond_2
 
     .line 476
     array-length v0, p1
 
-    if-le v0, v3, :cond_2f
+    if-le v0, v3, :cond_1
 
     array-length v0, p1
 
@@ -120,7 +120,7 @@
 
     const/16 v1, 0xd
 
-    if-ne v0, v1, :cond_2f
+    if-ne v0, v1, :cond_1
 
     .line 479
     new-instance v0, Ljava/lang/String;
@@ -133,10 +133,10 @@
 
     invoke-direct {v0, p1, v2, v1, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    goto :goto_38
+    goto :goto_1
 
     .line 487
-    :cond_2f
+    :cond_1
     new-instance v0, Ljava/lang/String;
 
     array-length v1, p1
@@ -148,7 +148,7 @@
     invoke-direct {v0, p1, v2, v1, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 498
-    :goto_38
+    :goto_1
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->messageLines:Ljava/util/List;
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -166,7 +166,7 @@
     return-object p1
 
     .line 495
-    :cond_47
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Message body is empty or does not end with a LF."
@@ -177,7 +177,7 @@
 .end method
 
 .method private addMessageLine([B)Lcom/google/common/collect/ImmutableList;
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -202,7 +202,7 @@
 
     const/4 v3, 0x2
 
-    if-lt v0, v3, :cond_18
+    if-lt v0, v3, :cond_0
 
     array-length v0, p1
 
@@ -212,7 +212,7 @@
 
     const/16 v4, 0xd
 
-    if-ne v0, v4, :cond_18
+    if-ne v0, v4, :cond_0
 
     array-length v0, p1
 
@@ -222,16 +222,16 @@
 
     const/16 v4, 0xa
 
-    if-ne v0, v4, :cond_18
+    if-ne v0, v4, :cond_0
 
     move v0, v2
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     move v0, v1
 
-    :goto_19
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 430
@@ -253,9 +253,9 @@
     .line 434
     iget p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->state:I
 
-    if-eq p1, v2, :cond_5e
+    if-eq p1, v2, :cond_4
 
-    if-ne p1, v3, :cond_58
+    if-ne p1, v3, :cond_3
 
     .line 443
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/RtspMessageUtil;->parseContentLengthHeader(Ljava/lang/String;)J
@@ -266,18 +266,18 @@
 
     cmp-long p1, v1, v3
 
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_1
 
     .line 445
     iput-wide v1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->messageBodyLength:J
 
     .line 448
-    :cond_3c
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_5
 
     .line 450
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->messageBodyLength:J
@@ -286,17 +286,17 @@
 
     cmp-long p1, v0, v2
 
-    if-lez p1, :cond_4e
+    if-lez p1, :cond_2
 
     const/4 p1, 0x3
 
     .line 451
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->state:I
 
-    goto :goto_66
+    goto :goto_1
 
     .line 453
-    :cond_4e
+    :cond_2
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->messageLines:Ljava/util/List;
 
     invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
@@ -309,7 +309,7 @@
     return-object p1
 
     .line 464
-    :cond_58
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -317,25 +317,25 @@
     throw p1
 
     .line 436
-    :cond_5e
+    :cond_4
     invoke-static {v0}, Landroidx/media3/exoplayer/rtsp/RtspMessageUtil;->isRtspStartLine(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_5
 
     .line 437
     iput v3, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->state:I
 
-    :cond_66
-    :goto_66
+    :cond_5
+    :goto_1
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method private static parseNextLine(BLjava/io/DataInputStream;)[B
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -367,31 +367,31 @@
     .line 407
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
-    :goto_15
+    :goto_0
     aget-byte p0, v1, v2
 
     const/16 v4, 0xd
 
-    if-ne p0, v4, :cond_27
+    if-ne p0, v4, :cond_1
 
     aget-byte p0, v1, v3
 
     const/16 v4, 0xa
 
-    if-eq p0, v4, :cond_22
+    if-eq p0, v4, :cond_0
 
-    goto :goto_27
+    goto :goto_1
 
     .line 416
-    :cond_22
+    :cond_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p0
 
     return-object p0
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_1
     aget-byte p0, v1, v3
 
     aput-byte p0, v1, v2
@@ -406,11 +406,11 @@
     .line 413
     invoke-virtual {v0, p0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    goto :goto_15
+    goto :goto_0
 .end method
 
 .method private reset()V
-    .registers 3
+    .locals 2
 
     .line 505
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->messageLines:Ljava/util/List;
@@ -433,7 +433,7 @@
 
 # virtual methods
 .method public parseNext(BLjava/io/DataInputStream;)Lcom/google/common/collect/ImmutableList;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(B",
@@ -460,15 +460,15 @@
 
     move-result-object p1
 
-    :goto_8
-    if-nez p1, :cond_44
+    :goto_0
+    if-nez p1, :cond_3
 
     .line 377
     iget p1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->state:I
 
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_37
+    if-ne p1, v0, :cond_2
 
     .line 378
     iget-wide v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageParser;->messageBodyLength:J
@@ -477,7 +477,7 @@
 
     cmp-long p1, v0, v2
 
-    if-lez p1, :cond_2f
+    if-lez p1, :cond_1
 
     .line 383
     invoke-static {v0, v1}, Lcom/google/common/primitives/Ints;->checkedCast(J)I
@@ -488,17 +488,17 @@
 
     const/4 v1, 0x0
 
-    if-eq p1, v0, :cond_21
+    if-eq p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
+    :cond_0
     move v0, v1
 
     .line 384
-    :goto_22
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 385
@@ -512,10 +512,10 @@
 
     move-result-object p1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 389
-    :cond_2f
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Expects a greater than zero Content-Length."
@@ -525,7 +525,7 @@
     throw p1
 
     .line 393
-    :cond_37
+    :cond_2
     invoke-virtual {p2}, Ljava/io/DataInputStream;->readByte()B
 
     move-result p1
@@ -538,8 +538,8 @@
 
     move-result-object p1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_44
+    :cond_3
     return-object p1
 .end method

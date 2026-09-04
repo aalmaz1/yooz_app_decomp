@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,56 +61,56 @@
 
 # virtual methods
 .method activeStateChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 475
     iget-boolean v0, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 480
-    :cond_5
+    :cond_0
     iput-boolean p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
     .line 481
     iget-object v0, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_1
     const/4 p1, -0x1
 
-    :goto_e
+    :goto_0
     invoke-virtual {v0, p1}, Landroidx/lifecycle/LiveData;->changeActiveCounter(I)V
 
     .line 482
     iget-boolean p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_2
 
     .line 483
     iget-object p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
 
     invoke-virtual {p1, p0}, Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V
 
-    :cond_1a
+    :cond_2
     return-void
 .end method
 
 .method detachObserver()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method isAttachedTo(Landroidx/lifecycle/LifecycleOwner;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

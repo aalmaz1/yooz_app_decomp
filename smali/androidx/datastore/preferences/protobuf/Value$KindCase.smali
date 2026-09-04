@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 15
+    .locals 15
 
     .line 27
     new-instance v0, Landroidx/datastore/preferences/protobuf/Value$KindCase;
@@ -150,7 +150,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -167,70 +167,70 @@
 .end method
 
 .method public static forNumber(I)Landroidx/datastore/preferences/protobuf/Value$KindCase;
-    .registers 1
+    .locals 0
 
-    packed-switch p0, :pswitch_data_1a
+    packed-switch p0, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 53
-    :pswitch_5
+    :pswitch_0
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->LIST_VALUE:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
     .line 52
-    :pswitch_8
+    :pswitch_1
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->STRUCT_VALUE:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
     .line 51
-    :pswitch_b
+    :pswitch_2
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->BOOL_VALUE:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
     .line 50
-    :pswitch_e
+    :pswitch_3
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->STRING_VALUE:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
     .line 49
-    :pswitch_11
+    :pswitch_4
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->NUMBER_VALUE:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
     .line 48
-    :pswitch_14
+    :pswitch_5
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->NULL_VALUE:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
     .line 54
-    :pswitch_17
+    :pswitch_6
     sget-object p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->KIND_NOT_SET:Landroidx/datastore/preferences/protobuf/Value$KindCase;
 
     return-object p0
 
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
-        :pswitch_e
-        :pswitch_b
-        :pswitch_8
+        :pswitch_6
         :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static valueOf(I)Landroidx/datastore/preferences/protobuf/Value$KindCase;
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -243,7 +243,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Value$KindCase;
-    .registers 2
+    .locals 1
 
     .line 26
     const-class v0, Landroidx/datastore/preferences/protobuf/Value$KindCase;
@@ -258,7 +258,7 @@
 .end method
 
 .method public static values()[Landroidx/datastore/preferences/protobuf/Value$KindCase;
-    .registers 1
+    .locals 1
 
     .line 26
     sget-object v0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->$VALUES:[Landroidx/datastore/preferences/protobuf/Value$KindCase;
@@ -275,7 +275,7 @@
 
 # virtual methods
 .method public getNumber()I
-    .registers 2
+    .locals 1
 
     .line 59
     iget v0, p0, Landroidx/datastore/preferences/protobuf/Value$KindCase;->value:I

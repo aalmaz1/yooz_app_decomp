@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Landroidx/media3/common/Format;ILjava/lang/Object;JJJ)V
-    .registers 23
+    .locals 11
 
     const/4 v3, 0x1
 
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public getNextChunkIndex()J
-    .registers 6
+    .locals 5
 
     .line 67
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/MediaChunk;->chunkIndex:J
@@ -55,13 +55,13 @@
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_0
 
     const-wide/16 v2, 0x1
 
     add-long/2addr v2, v0
 
-    :cond_b
+    :cond_0
     return-wide v2
 .end method
 

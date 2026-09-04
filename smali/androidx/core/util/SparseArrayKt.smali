@@ -65,7 +65,7 @@
 
 # direct methods
 .method public static final contains(Landroid/util/SparseArray;I)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -81,21 +81,21 @@
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final containsKey(Landroid/util/SparseArray;I)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -111,21 +111,21 @@
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final containsValue(Landroid/util/SparseArray;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -141,21 +141,21 @@
 
     move-result p0
 
-    if-ltz p0, :cond_8
+    if-ltz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final forEach(Landroid/util/SparseArray;Lkotlin/jvm/functions/Function2;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -179,8 +179,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_19
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 77
     invoke-virtual {p0, v1}, Landroid/util/SparseArray;->keyAt(I)I
@@ -199,14 +199,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public static final getOrDefault(Landroid/util/SparseArray;ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -222,19 +222,19 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move-object p2, p0
 
-    :goto_8
+    :goto_0
     return-object p2
 .end method
 
 .method public static final getOrElse(Landroid/util/SparseArray;ILkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -252,18 +252,18 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_a
+    if-nez p0, :cond_0
 
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    :cond_a
+    :cond_0
     return-object p0
 .end method
 
 .method public static final getSize(Landroid/util/SparseArray;)I
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -283,7 +283,7 @@
 .end method
 
 .method public static final isEmpty(Landroid/util/SparseArray;)Z
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -299,21 +299,21 @@
 
     move-result p0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final isNotEmpty(Landroid/util/SparseArray;)Z
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -329,21 +329,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method public static final keyIterator(Landroid/util/SparseArray;)Lkotlin/collections/IntIterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -366,7 +366,7 @@
 .end method
 
 .method public static final plus(Landroid/util/SparseArray;Landroid/util/SparseArray;)Landroid/util/SparseArray;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -406,7 +406,7 @@
 .end method
 
 .method public static final putAll(Landroid/util/SparseArray;Landroid/util/SparseArray;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -426,8 +426,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_15
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 96
     invoke-virtual {p1, v1}, Landroid/util/SparseArray;->keyAt(I)I
@@ -443,14 +443,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public static final remove(Landroid/util/SparseArray;ILjava/lang/Object;)Z
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -466,7 +466,7 @@
 
     move-result p1
 
-    if-ltz p1, :cond_15
+    if-ltz p1, :cond_0
 
     .line 64
     invoke-virtual {p0, p1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -477,7 +477,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     .line 65
     invoke-virtual {p0, p1}, Landroid/util/SparseArray;->removeAt(I)V
@@ -486,14 +486,14 @@
 
     return p0
 
-    :cond_15
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static final set(Landroid/util/SparseArray;ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -511,7 +511,7 @@
 .end method
 
 .method public static final valueIterator(Landroid/util/SparseArray;)Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

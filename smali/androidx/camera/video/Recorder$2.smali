@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;Landroidx/camera/video/VideoEncoderSession;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 1204
     new-instance v0, Ljava/lang/StringBuilder;
@@ -79,7 +79,7 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/video/internal/encoder/Encoder;)V
-    .registers 5
+    .locals 3
 
     .line 1185
     new-instance v0, Ljava/lang/StringBuilder;
@@ -100,17 +100,17 @@
 
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_0
 
     return-void
 
     .line 1189
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/Recorder$2;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mSourceNonStreamingTimeout:Ljava/util/concurrent/ScheduledFuture;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/Recorder$2;->this$0:Landroidx/camera/video/Recorder;
 
@@ -123,19 +123,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/Recorder$2;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/Recorder$2;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, v0, Landroidx/camera/video/Recorder;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
 
-    if-ne v0, p1, :cond_3b
+    if-ne v0, p1, :cond_1
 
     .line 1192
     iget-object p1, p0, Landroidx/camera/video/Recorder$2;->this$0:Landroidx/camera/video/Recorder;
@@ -145,7 +145,7 @@
     invoke-static {p1}, Landroidx/camera/video/Recorder;->notifyEncoderSourceStopped(Landroidx/camera/video/internal/encoder/Encoder;)V
 
     .line 1195
-    :cond_3b
+    :cond_1
     iget-object p1, p0, Landroidx/camera/video/Recorder$2;->this$0:Landroidx/camera/video/Recorder;
 
     iget-object v0, p0, Landroidx/camera/video/Recorder$2;->val$videoEncoderSession:Landroidx/camera/video/VideoEncoderSession;
@@ -176,7 +176,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1182
     check-cast p1, Landroidx/camera/video/internal/encoder/Encoder;

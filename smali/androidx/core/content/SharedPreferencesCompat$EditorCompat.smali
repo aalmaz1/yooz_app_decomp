@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,14 +49,14 @@
 .end method
 
 .method public static getInstance()Landroidx/core/content/SharedPreferencesCompat$EditorCompat;
-    .registers 1
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 66
     sget-object v0, Landroidx/core/content/SharedPreferencesCompat$EditorCompat;->sInstance:Landroidx/core/content/SharedPreferencesCompat$EditorCompat;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 67
     new-instance v0, Landroidx/core/content/SharedPreferencesCompat$EditorCompat;
@@ -66,7 +66,7 @@
     sput-object v0, Landroidx/core/content/SharedPreferencesCompat$EditorCompat;->sInstance:Landroidx/core/content/SharedPreferencesCompat$EditorCompat;
 
     .line 69
-    :cond_b
+    :cond_0
     sget-object v0, Landroidx/core/content/SharedPreferencesCompat$EditorCompat;->sInstance:Landroidx/core/content/SharedPreferencesCompat$EditorCompat;
 
     return-object v0
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public apply(Landroid/content/SharedPreferences$Editor;)V
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

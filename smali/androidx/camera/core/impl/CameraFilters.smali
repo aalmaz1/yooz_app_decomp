@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 32
     new-instance v0, Landroidx/camera/core/impl/CameraFilters$$ExternalSyntheticLambda0;
@@ -31,7 +31,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,13 +40,13 @@
 .end method
 
 .method static synthetic lambda$static$0(Ljava/util/List;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$static$1(Ljava/util/List;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;

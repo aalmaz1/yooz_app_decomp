@@ -65,28 +65,28 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     const/16 v0, 0x9
 
     new-array v1, v0, [F
 
     .line 92
-    fill-array-data v1, :array_34
+    fill-array-data v1, :array_0
 
     sput-object v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->kColorConversion601:[F
 
     new-array v1, v0, [F
 
     .line 98
-    fill-array-data v1, :array_4a
+    fill-array-data v1, :array_1
 
     sput-object v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->kColorConversion709:[F
 
     new-array v0, v0, [F
 
     .line 104
-    fill-array-data v0, :array_60
+    fill-array-data v0, :array_2
 
     sput-object v0, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->kColorConversion2020:[F
 
@@ -108,7 +108,7 @@
     new-array v0, v0, [F
 
     .line 142
-    fill-array-data v0, :array_76
+    fill-array-data v0, :array_3
 
     .line 143
     invoke-static {v0}, Landroidx/media3/common/util/GlUtil;->createBuffer([F)Ljava/nio/FloatBuffer;
@@ -119,7 +119,7 @@
 
     return-void
 
-    :array_34
+    :array_0
     .array-data 4
         0x3f94fdf4    # 1.164f
         0x3f94fdf4    # 1.164f
@@ -132,7 +132,7 @@
         0x0
     .end array-data
 
-    :array_4a
+    :array_1
     .array-data 4
         0x3f94fdf4    # 1.164f
         0x3f94fdf4    # 1.164f
@@ -145,7 +145,7 @@
         0x0
     .end array-data
 
-    :array_60
+    :array_2
     .array-data 4
         0x3f958106    # 1.168f
         0x3f958106    # 1.168f
@@ -158,7 +158,7 @@
         0x0
     .end array-data
 
-    :array_76
+    :array_3
     .array-data 4
         -0x40800000    # -1.0f
         0x3f800000    # 1.0f
@@ -172,7 +172,7 @@
 .end method
 
 .method public constructor <init>(Landroid/opengl/GLSurfaceView;)V
-    .registers 6
+    .locals 4
 
     .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -216,8 +216,8 @@
 
     const/4 v0, 0x0
 
-    :goto_22
-    if-ge v0, p1, :cond_30
+    :goto_0
+    if-ge v0, p1, :cond_0
 
     .line 172
     iget-object v1, p0, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->previousWidths:[I
@@ -232,14 +232,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     return-void
 .end method
 
 .method private setupTextures()V
-    .registers 6
+    .locals 5
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "program"
@@ -256,8 +256,8 @@
 
     invoke-static {v2, v0, v1}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    :goto_7
-    if-ge v1, v2, :cond_2b
+    :goto_0
+    if-ge v1, v2, :cond_0
 
     .line 317
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->program:Landroidx/media3/common/util/GlProgram;
@@ -292,17 +292,17 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 321
-    :cond_2b
+    :cond_0
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_2e
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_2e} :catch_2f
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_37
+    goto :goto_1
 
-    :catch_2f
+    :catch_0
     move-exception v0
 
     const-string v1, "VideoDecoderGLSV"
@@ -312,14 +312,14 @@
     .line 323
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_37
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public onDrawFrame(Ljavax/microedition/khronos/opengles/GL10;)V
-    .registers 20
+    .locals 18
 
     move-object/from16 v1, p0
 
@@ -335,32 +335,32 @@
 
     check-cast v0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 210
     iget-object v2, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->renderedOutputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_0
 
     return-void
 
-    :cond_12
-    if-eqz v0, :cond_1d
+    :cond_0
+    if-eqz v0, :cond_2
 
     .line 215
     iget-object v2, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->renderedOutputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1
 
     .line 216
     invoke-virtual {v2}, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->release()V
 
     .line 218
-    :cond_1b
+    :cond_1
     iput-object v0, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->renderedOutputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
     .line 221
-    :cond_1d
+    :cond_2
     iget-object v0, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->renderedOutputBuffer:Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -379,24 +379,24 @@
 
     const/4 v5, 0x1
 
-    if-eq v3, v5, :cond_33
+    if-eq v3, v5, :cond_4
 
-    if-eq v3, v4, :cond_30
+    if-eq v3, v4, :cond_3
 
-    goto :goto_35
+    goto :goto_0
 
     .line 230
-    :cond_30
+    :cond_3
     sget-object v2, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->kColorConversion2020:[F
 
-    goto :goto_35
+    goto :goto_0
 
     .line 227
-    :cond_33
+    :cond_4
     sget-object v2, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->kColorConversion601:[F
 
     .line 237
-    :goto_35
+    :goto_0
     iget v3, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->colorMatrixLocation:I
 
     const/4 v6, 0x0
@@ -423,26 +423,26 @@
 
     move v7, v6
 
-    :goto_4c
+    :goto_1
     const/4 v8, 0x2
 
-    if-ge v7, v4, :cond_81
+    if-ge v7, v4, :cond_6
 
-    if-nez v7, :cond_54
+    if-nez v7, :cond_5
 
     .line 248
     iget v8, v0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->height:I
 
-    goto :goto_59
+    goto :goto_2
 
-    :cond_54
+    :cond_5
     iget v9, v0, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->height:I
 
     add-int/2addr v9, v5
 
     div-int/lit8 v8, v9, 0x2
 
-    :goto_59
+    :goto_2
     move v13, v8
 
     const v8, 0x84c0
@@ -485,9 +485,9 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_4c
+    goto :goto_1
 
-    :cond_81
+    :cond_6
     new-array v3, v4, [I
 
     .line 265
@@ -506,12 +506,12 @@
 
     move v0, v6
 
-    :goto_8e
+    :goto_3
     const/4 v7, 0x4
 
     const/4 v9, 0x5
 
-    if-ge v0, v4, :cond_f3
+    if-ge v0, v4, :cond_a
 
     .line 272
     iget-object v10, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->previousWidths:[I
@@ -520,7 +520,7 @@
 
     aget v11, v3, v0
 
-    if-ne v10, v11, :cond_a2
+    if-ne v10, v11, :cond_7
 
     iget-object v10, v1, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->previousStrides:[I
 
@@ -528,22 +528,22 @@
 
     aget v11, v2, v0
 
-    if-eq v10, v11, :cond_f0
+    if-eq v10, v11, :cond_9
 
     .line 273
-    :cond_a2
+    :cond_7
     aget v10, v2, v0
 
-    if-eqz v10, :cond_a8
+    if-eqz v10, :cond_8
 
     move v10, v5
 
-    goto :goto_a9
+    goto :goto_4
 
-    :cond_a8
+    :cond_8
     move v10, v6
 
-    :goto_a9
+    :goto_4
     invoke-static {v10}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 274
@@ -628,12 +628,12 @@
 
     aput v9, v7, v0
 
-    :cond_f0
+    :cond_9
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8e
+    goto :goto_3
 
-    :cond_f3
+    :cond_a
     const/16 v0, 0x4000
 
     .line 292
@@ -643,14 +643,14 @@
     invoke-static {v9, v6, v7}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
     .line 295
-    :try_start_fb
+    :try_start_0
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_fe
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_fb .. :try_end_fe} :catch_ff
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_108
+    goto :goto_5
 
-    :catch_ff
+    :catch_0
     move-exception v0
 
     move-object v2, v0
@@ -662,12 +662,12 @@
     .line 297
     invoke-static {v0, v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_108
+    :goto_5
     return-void
 .end method
 
 .method public onSurfaceChanged(Ljavax/microedition/khronos/opengles/GL10;II)V
-    .registers 4
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -678,7 +678,7 @@
 .end method
 
 .method public onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
-    .registers 9
+    .locals 6
 
     .line 179
     :try_start_0
@@ -776,12 +776,12 @@
 
     .line 194
     invoke-static {}, Landroidx/media3/common/util/GlUtil;->checkGlError()V
-    :try_end_56
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_56} :catch_57
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_5f
+    goto :goto_0
 
-    :catch_57
+    :catch_0
     move-exception p1
 
     const-string p2, "VideoDecoderGLSV"
@@ -791,12 +791,12 @@
     .line 196
     invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_5f
+    :goto_0
     return-void
 .end method
 
 .method public setOutputBuffer(Landroidx/media3/decoder/VideoDecoderOutputBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 303
     iget-object v0, p0, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->pendingOutputBufferReference:Ljava/util/concurrent/atomic/AtomicReference;
@@ -808,13 +808,13 @@
 
     check-cast p1, Landroidx/media3/decoder/VideoDecoderOutputBuffer;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 307
     invoke-virtual {p1}, Landroidx/media3/decoder/VideoDecoderOutputBuffer;->release()V
 
     .line 309
-    :cond_d
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/video/VideoDecoderGLSurfaceView$Renderer;->surfaceView:Landroid/opengl/GLSurfaceView;
 
     invoke-virtual {p1}, Landroid/opengl/GLSurfaceView;->requestRender()V

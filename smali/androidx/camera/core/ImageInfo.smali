@@ -8,7 +8,7 @@
 .end method
 
 .method public getSensorToBufferTransformMatrix()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 119
     new-instance v0, Landroid/graphics/Matrix;

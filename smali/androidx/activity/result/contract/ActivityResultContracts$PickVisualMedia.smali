@@ -90,7 +90,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 633
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method public static final getGmsPicker$activity_release(Landroid/content/Context;)Landroid/content/pm/ResolveInfo;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -127,7 +127,7 @@
 .end method
 
 .method public static final getSystemFallbackPicker$activity_release(Landroid/content/Context;)Landroid/content/pm/ResolveInfo;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final isGmsPickerAvailable$activity_release(Landroid/content/Context;)Z
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -155,7 +155,7 @@
 .end method
 
 .method public static final isPhotoPickerAvailable()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/Deprecated;
         message = "This method is deprecated in favor of isPhotoPickerAvailable(context) to support the picker provided by updatable system apps"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -177,7 +177,7 @@
 .end method
 
 .method public static final isPhotoPickerAvailable(Landroid/content/Context;)Z
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -191,7 +191,7 @@
 .end method
 
 .method public static final isSystemFallbackPickerAvailable$activity_release(Landroid/content/Context;)Z
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -205,7 +205,7 @@
 .end method
 
 .method public static final isSystemPickerAvailable$activity_release()Z
-    .registers 1
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -221,7 +221,7 @@
 
 # virtual methods
 .method public createIntent(Landroid/content/Context;Landroidx/activity/result/PickVisualMediaRequest;)Landroid/content/Intent;
-    .registers 6
+    .locals 3
 
     const-string v0, "context"
 
@@ -238,7 +238,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_0
 
     .line 790
     new-instance p1, Landroid/content/Intent;
@@ -258,24 +258,24 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    goto/16 :goto_bc
+    goto/16 :goto_1
 
     .line 793
-    :cond_26
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->isSystemFallbackPickerAvailable$activity_release(Landroid/content/Context;)Z
 
     move-result v1
 
     const-string v2, "Required value was null."
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 794
     invoke-virtual {v0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->getSystemFallbackPicker$activity_release(Landroid/content/Context;)Landroid/content/pm/ResolveInfo;
 
     move-result-object p1
 
-    if-eqz p1, :cond_53
+    if-eqz p1, :cond_1
 
     iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -306,13 +306,13 @@
 
     invoke-virtual {v1, p1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    :goto_51
+    :goto_0
     move-object p1, v1
 
-    goto :goto_bc
+    goto :goto_1
 
     .line 794
-    :cond_53
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -324,19 +324,19 @@
     throw p1
 
     .line 799
-    :cond_5d
+    :cond_2
     invoke-virtual {v0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->isGmsPickerAvailable$activity_release(Landroid/content/Context;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_91
+    if-eqz v1, :cond_4
 
     .line 800
     invoke-virtual {v0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->getGmsPicker$activity_release(Landroid/content/Context;)Landroid/content/pm/ResolveInfo;
 
     move-result-object p1
 
-    if-eqz p1, :cond_87
+    if-eqz p1, :cond_3
 
     iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -367,10 +367,10 @@
 
     invoke-virtual {v1, p1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    goto :goto_51
+    goto :goto_0
 
     .line 800
-    :cond_87
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -382,7 +382,7 @@
     throw p1
 
     .line 809
-    :cond_91
+    :cond_4
     new-instance p1, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.OPEN_DOCUMENT"
@@ -405,7 +405,7 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_bc
+    if-nez p2, :cond_5
 
     const-string p2, "*/*"
 
@@ -425,13 +425,13 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
-    :cond_bc
-    :goto_bc
+    :cond_5
+    :goto_1
     return-object p1
 .end method
 
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 633
     check-cast p2, Landroidx/activity/result/PickVisualMediaRequest;
@@ -444,7 +444,7 @@
 .end method
 
 .method public final getSynchronousResult(Landroid/content/Context;Landroidx/activity/result/PickVisualMediaRequest;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -471,7 +471,7 @@
 .end method
 
 .method public bridge synthetic getSynchronousResult(Landroid/content/Context;Ljava/lang/Object;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 3
+    .locals 0
 
     .line 633
     check-cast p2, Landroidx/activity/result/PickVisualMediaRequest;
@@ -484,38 +484,38 @@
 .end method
 
 .method public final parseResult(ILandroid/content/Intent;)Landroid/net/Uri;
-    .registers 4
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_6
+    :goto_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_1
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
+    :cond_1
     move-object p2, v0
 
-    :goto_b
-    if-eqz p2, :cond_20
+    :goto_1
+    if-eqz p2, :cond_3
 
     .line 832
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
 
-    if-nez p1, :cond_1f
+    if-nez p1, :cond_2
 
     sget-object p1, Landroidx/activity/result/contract/ActivityResultContracts$GetMultipleContents;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$GetMultipleContents$Companion;
 
@@ -529,15 +529,15 @@
 
     check-cast p1, Landroid/net/Uri;
 
-    :cond_1f
+    :cond_2
     move-object v0, p1
 
-    :cond_20
+    :cond_3
     return-object v0
 .end method
 
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 633
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia;->parseResult(ILandroid/content/Intent;)Landroid/net/Uri;

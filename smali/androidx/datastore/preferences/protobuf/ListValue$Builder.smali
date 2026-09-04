@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 297
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ListValue;->access$000()Landroidx/datastore/preferences/protobuf/ListValue;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/ListValue$1;)V
-    .registers 2
+    .locals 0
 
     .line 290
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public addAllValues(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,7 +79,7 @@
 .end method
 
 .method public addValues(ILandroidx/datastore/preferences/protobuf/Value$Builder;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 4
+    .locals 1
 
     .line 407
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public addValues(ILandroidx/datastore/preferences/protobuf/Value;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 4
+    .locals 1
 
     .line 381
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -111,7 +111,7 @@
 .end method
 
 .method public addValues(Landroidx/datastore/preferences/protobuf/Value$Builder;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 3
+    .locals 1
 
     .line 394
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -127,7 +127,7 @@
 .end method
 
 .method public addValues(Landroidx/datastore/preferences/protobuf/Value;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 3
+    .locals 1
 
     .line 368
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -143,7 +143,7 @@
 .end method
 
 .method public clearValues()Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 2
+    .locals 1
 
     .line 432
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -159,7 +159,7 @@
 .end method
 
 .method public getValues(I)Landroidx/datastore/preferences/protobuf/Value;
-    .registers 3
+    .locals 1
 
     .line 332
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -174,7 +174,7 @@
 .end method
 
 .method public getValuesCount()I
-    .registers 2
+    .locals 1
 
     .line 322
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -189,7 +189,7 @@
 .end method
 
 .method public getValuesList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -218,7 +218,7 @@
 .end method
 
 .method public removeValues(I)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 3
+    .locals 1
 
     .line 444
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -234,7 +234,7 @@
 .end method
 
 .method public setValues(ILandroidx/datastore/preferences/protobuf/Value$Builder;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 4
+    .locals 1
 
     .line 356
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V
@@ -250,7 +250,7 @@
 .end method
 
 .method public setValues(ILandroidx/datastore/preferences/protobuf/Value;)Landroidx/datastore/preferences/protobuf/ListValue$Builder;
-    .registers 4
+    .locals 1
 
     .line 343
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ListValue$Builder;->copyOnWrite()V

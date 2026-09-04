@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/constraintlayout/utils/widget/ImageFilterView;)V
-    .registers 2
+    .locals 0
 
     .line 543
     iput-object p1, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$2;->this$0:Landroidx/constraintlayout/utils/widget/ImageFilterView;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .registers 9
+    .locals 6
 
     .line 546
     iget-object p1, p0, Landroidx/constraintlayout/utils/widget/ImageFilterView$2;->this$0:Landroidx/constraintlayout/utils/widget/ImageFilterView;

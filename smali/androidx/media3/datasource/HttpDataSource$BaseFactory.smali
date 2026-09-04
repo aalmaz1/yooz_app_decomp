@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public bridge synthetic createDataSource()Landroidx/media3/datasource/DataSource;
-    .registers 2
+    .locals 1
 
     .line 146
     invoke-virtual {p0}, Landroidx/media3/datasource/HttpDataSource$BaseFactory;->createDataSource()Landroidx/media3/datasource/HttpDataSource;
@@ -52,7 +52,7 @@
 .end method
 
 .method public final createDataSource()Landroidx/media3/datasource/HttpDataSource;
-    .registers 2
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/media3/datasource/HttpDataSource$BaseFactory;->defaultRequestProperties:Landroidx/media3/datasource/HttpDataSource$RequestProperties;
@@ -68,7 +68,7 @@
 .end method
 
 .method public final setDefaultRequestProperties(Ljava/util/Map;)Landroidx/media3/datasource/HttpDataSource$Factory;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/ForwardingPlayer;Landroidx/media3/common/Player$Listener;)V
-    .registers 3
+    .locals 0
 
     .line 940
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,26 +42,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 1144
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     return v1
 
     .line 1147
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;
 
     .line 1148
@@ -73,12 +73,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_2
 
     return v1
 
     .line 1151
-    :cond_17
+    :cond_2
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
 
     iget-object p1, p1, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -91,7 +91,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 1156
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->forwardingPlayer:Landroidx/media3/common/ForwardingPlayer;
@@ -115,7 +115,7 @@
 .end method
 
 .method public onAudioAttributesChanged(Landroidx/media3/common/AudioAttributes;)V
-    .registers 3
+    .locals 1
 
     .line 1100
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -126,7 +126,7 @@
 .end method
 
 .method public onAudioSessionIdChanged(I)V
-    .registers 3
+    .locals 1
 
     .line 1095
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -137,7 +137,7 @@
 .end method
 
 .method public onAvailableCommandsChanged(Landroidx/media3/common/Player$Commands;)V
-    .registers 3
+    .locals 1
 
     .line 990
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -148,7 +148,7 @@
 .end method
 
 .method public onCues(Landroidx/media3/common/text/CueGroup;)V
-    .registers 3
+    .locals 1
 
     .line 1121
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -159,7 +159,7 @@
 .end method
 
 .method public onCues(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -178,7 +178,7 @@
 .end method
 
 .method public onDeviceInfoChanged(Landroidx/media3/common/DeviceInfo;)V
-    .registers 3
+    .locals 1
 
     .line 1131
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -189,7 +189,7 @@
 .end method
 
 .method public onDeviceVolumeChanged(IZ)V
-    .registers 4
+    .locals 1
 
     .line 1136
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -200,7 +200,7 @@
 .end method
 
 .method public onEvents(Landroidx/media3/common/Player;Landroidx/media3/common/Player$Events;)V
-    .registers 4
+    .locals 1
 
     .line 948
     iget-object p1, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -213,7 +213,7 @@
 .end method
 
 .method public onIsLoadingChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 979
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -224,7 +224,7 @@
 .end method
 
 .method public onIsPlayingChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 1023
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -235,7 +235,7 @@
 .end method
 
 .method public onLoadingChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 985
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -246,7 +246,7 @@
 .end method
 
 .method public onMaxSeekToPreviousPositionChanged(J)V
-    .registers 4
+    .locals 1
 
     .line 1075
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -257,7 +257,7 @@
 .end method
 
 .method public onMediaItemTransition(Landroidx/media3/common/MediaItem;I)V
-    .registers 4
+    .locals 1
 
     .line 959
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -268,7 +268,7 @@
 .end method
 
 .method public onMediaMetadataChanged(Landroidx/media3/common/MediaMetadata;)V
-    .registers 3
+    .locals 1
 
     .line 969
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -279,7 +279,7 @@
 .end method
 
 .method public onMetadata(Landroidx/media3/common/Metadata;)V
-    .registers 3
+    .locals 1
 
     .line 1126
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -290,7 +290,7 @@
 .end method
 
 .method public onPlayWhenReadyChanged(ZI)V
-    .registers 4
+    .locals 1
 
     .line 1012
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -301,7 +301,7 @@
 .end method
 
 .method public onPlaybackParametersChanged(Landroidx/media3/common/PlaybackParameters;)V
-    .registers 3
+    .locals 1
 
     .line 1060
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -312,7 +312,7 @@
 .end method
 
 .method public onPlaybackStateChanged(I)V
-    .registers 3
+    .locals 1
 
     .line 1006
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -323,7 +323,7 @@
 .end method
 
 .method public onPlaybackSuppressionReasonChanged(I)V
-    .registers 3
+    .locals 1
 
     .line 1018
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -334,7 +334,7 @@
 .end method
 
 .method public onPlayerError(Landroidx/media3/common/PlaybackException;)V
-    .registers 3
+    .locals 1
 
     .line 1038
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -345,7 +345,7 @@
 .end method
 
 .method public onPlayerErrorChanged(Landroidx/media3/common/PlaybackException;)V
-    .registers 3
+    .locals 1
 
     .line 1043
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -356,7 +356,7 @@
 .end method
 
 .method public onPlayerStateChanged(ZI)V
-    .registers 4
+    .locals 1
 
     .line 1001
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -367,7 +367,7 @@
 .end method
 
 .method public onPlaylistMetadataChanged(Landroidx/media3/common/MediaMetadata;)V
-    .registers 3
+    .locals 1
 
     .line 974
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -378,7 +378,7 @@
 .end method
 
 .method public onPositionDiscontinuity(I)V
-    .registers 3
+    .locals 1
 
     .line 1049
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -389,7 +389,7 @@
 .end method
 
 .method public onPositionDiscontinuity(Landroidx/media3/common/Player$PositionInfo;Landroidx/media3/common/Player$PositionInfo;I)V
-    .registers 5
+    .locals 1
 
     .line 1055
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -400,7 +400,7 @@
 .end method
 
 .method public onRenderedFirstFrame()V
-    .registers 2
+    .locals 1
 
     .line 1090
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -411,7 +411,7 @@
 .end method
 
 .method public onRepeatModeChanged(I)V
-    .registers 3
+    .locals 1
 
     .line 1028
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -422,7 +422,7 @@
 .end method
 
 .method public onSeekBackIncrementChanged(J)V
-    .registers 4
+    .locals 1
 
     .line 1065
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -433,7 +433,7 @@
 .end method
 
 .method public onSeekForwardIncrementChanged(J)V
-    .registers 4
+    .locals 1
 
     .line 1070
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -444,7 +444,7 @@
 .end method
 
 .method public onShuffleModeEnabledChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 1033
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -455,7 +455,7 @@
 .end method
 
 .method public onSkipSilenceEnabledChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 1110
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -466,7 +466,7 @@
 .end method
 
 .method public onSurfaceSizeChanged(II)V
-    .registers 4
+    .locals 1
 
     .line 1085
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -477,7 +477,7 @@
 .end method
 
 .method public onTimelineChanged(Landroidx/media3/common/Timeline;I)V
-    .registers 4
+    .locals 1
 
     .line 953
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -488,7 +488,7 @@
 .end method
 
 .method public onTrackSelectionParametersChanged(Landroidx/media3/common/TrackSelectionParameters;)V
-    .registers 3
+    .locals 1
 
     .line 995
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -499,7 +499,7 @@
 .end method
 
 .method public onTracksChanged(Landroidx/media3/common/Tracks;)V
-    .registers 3
+    .locals 1
 
     .line 964
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -510,7 +510,7 @@
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/common/VideoSize;)V
-    .registers 3
+    .locals 1
 
     .line 1080
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;
@@ -521,7 +521,7 @@
 .end method
 
 .method public onVolumeChanged(F)V
-    .registers 3
+    .locals 1
 
     .line 1105
     iget-object v0, p0, Landroidx/media3/common/ForwardingPlayer$ForwardingListener;->listener:Landroidx/media3/common/Player$Listener;

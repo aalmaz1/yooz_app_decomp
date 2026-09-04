@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/app/AlertController$AlertParams;Landroidx/appcompat/app/AlertController;)V
-    .registers 3
+    .locals 0
 
     .line 1065
     iput-object p1, p0, Landroidx/appcompat/app/AlertController$AlertParams$3;->this$0:Landroidx/appcompat/app/AlertController$AlertParams;
@@ -40,7 +40,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,7 +67,7 @@
 
     iget-boolean p1, p1, Landroidx/appcompat/app/AlertController$AlertParams;->mIsSingleChoice:Z
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 1070
     iget-object p1, p0, Landroidx/appcompat/app/AlertController$AlertParams$3;->val$dialog:Landroidx/appcompat/app/AlertController;
@@ -76,6 +76,6 @@
 
     invoke-virtual {p1}, Landroidx/appcompat/app/AppCompatDialog;->dismiss()V
 
-    :cond_18
+    :cond_0
     return-void
 .end method

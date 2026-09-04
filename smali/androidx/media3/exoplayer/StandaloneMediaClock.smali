@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/util/Clock;)V
-    .registers 2
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public getPlaybackParameters()Landroidx/media3/common/PlaybackParameters;
-    .registers 2
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Landroidx/media3/common/PlaybackParameters;
@@ -48,7 +48,7 @@
 .end method
 
 .method public getPositionUs()J
-    .registers 7
+    .locals 6
 
     .line 77
     iget-wide v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->baseUs:J
@@ -56,7 +56,7 @@
     .line 78
     iget-boolean v2, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     .line 79
     iget-object v2, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->clock:Landroidx/media3/common/util/Clock;
@@ -78,32 +78,32 @@
 
     cmpl-float v4, v4, v5
 
-    if-nez v4, :cond_1e
+    if-nez v4, :cond_0
 
     .line 81
     invoke-static {v2, v3}, Landroidx/media3/common/util/Util;->msToUs(J)J
 
     move-result-wide v2
 
-    goto :goto_24
+    goto :goto_0
 
     .line 85
-    :cond_1e
+    :cond_0
     iget-object v4, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Landroidx/media3/common/PlaybackParameters;
 
     invoke-virtual {v4, v2, v3}, Landroidx/media3/common/PlaybackParameters;->getMediaTimeUsForPlayoutTimeMs(J)J
 
     move-result-wide v2
 
-    :goto_24
+    :goto_0
     add-long/2addr v0, v2
 
-    :cond_25
+    :cond_1
     return-wide v0
 .end method
 
 .method public resetPosition(J)V
-    .registers 3
+    .locals 0
 
     .line 69
     iput-wide p1, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->baseUs:J
@@ -111,7 +111,7 @@
     .line 70
     iget-boolean p1, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 71
     iget-object p1, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->clock:Landroidx/media3/common/util/Clock;
@@ -122,17 +122,17 @@
 
     iput-wide p1, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->baseElapsedMs:J
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public setPlaybackParameters(Landroidx/media3/common/PlaybackParameters;)V
-    .registers 4
+    .locals 2
 
     .line 94
     iget-boolean v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 95
     invoke-virtual {p0}, Landroidx/media3/exoplayer/StandaloneMediaClock;->getPositionUs()J
@@ -142,19 +142,19 @@
     invoke-virtual {p0, v0, v1}, Landroidx/media3/exoplayer/StandaloneMediaClock;->resetPosition(J)V
 
     .line 97
-    :cond_b
+    :cond_0
     iput-object p1, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->playbackParameters:Landroidx/media3/common/PlaybackParameters;
 
     return-void
 .end method
 
 .method public start()V
-    .registers 3
+    .locals 2
 
     .line 49
     iget-boolean v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 50
     iget-object v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->clock:Landroidx/media3/common/util/Clock;
@@ -170,17 +170,17 @@
     .line 51
     iput-boolean v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public stop()V
-    .registers 3
+    .locals 2
 
     .line 57
     iget-boolean v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 58
     invoke-virtual {p0}, Landroidx/media3/exoplayer/StandaloneMediaClock;->getPositionUs()J
@@ -194,6 +194,6 @@
     .line 59
     iput-boolean v0, p0, Landroidx/media3/exoplayer/StandaloneMediaClock;->started:Z
 
-    :cond_e
+    :cond_0
     return-void
 .end method

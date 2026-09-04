@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/Quirks;)V
-    .registers 3
+    .locals 1
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,16 +33,16 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_16
+    :goto_0
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/compat/workaround/AutoFlashAEModeDisabler;->mIsCrashWhenTakingPhotoWithAutoFlashAEModeQuirkEnabled:Z
 
     return-void
@@ -51,24 +51,24 @@
 
 # virtual methods
 .method public getCorrectedAeMode(I)I
-    .registers 3
+    .locals 1
 
     .line 52
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/AutoFlashAEModeDisabler;->mIsImageCaptureFailWithAutoFlashQuirkEnabled:Z
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/compat/workaround/AutoFlashAEModeDisabler;->mIsCrashWhenTakingPhotoWithAutoFlashAEModeQuirkEnabled:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_1
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_1
 
     const/4 p1, 0x1
 
-    :cond_c
+    :cond_1
     return p1
 .end method

@@ -17,12 +17,12 @@
 
 # direct methods
 .method public constructor <init>(I[BJJ)V
-    .registers 13
+    .locals 6
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :try_start_3
+    :try_start_0
     const-string v0, "AES/CTR/NoPadding"
 
     .line 54
@@ -93,41 +93,41 @@
     .line 60
     invoke-virtual {v0, p1, p6, p2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
-    if-eqz p5, :cond_44
+    if-eqz p5, :cond_0
 
     .line 65
     new-array p1, p5, [B
 
     invoke-virtual {p0, p1, v4, p5}, Landroidx/media3/datasource/AesFlushingCipher;->updateInPlace([BII)V
-    :try_end_44
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3 .. :try_end_44} :catch_4b
-    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_3 .. :try_end_44} :catch_49
-    .catch Ljava/security/InvalidKeyException; {:try_start_3 .. :try_end_44} :catch_47
-    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_3 .. :try_end_44} :catch_45
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_44
+    :cond_0
     return-void
 
-    :catch_45
+    :catch_0
     move-exception p1
 
-    goto :goto_4c
+    goto :goto_0
 
-    :catch_47
+    :catch_1
     move-exception p1
 
-    goto :goto_4c
+    goto :goto_0
 
-    :catch_49
+    :catch_2
     move-exception p1
 
-    goto :goto_4c
+    goto :goto_0
 
-    :catch_4b
+    :catch_3
     move-exception p1
 
     .line 72
-    :goto_4c
+    :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
     invoke-direct {p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -136,7 +136,7 @@
 .end method
 
 .method public constructor <init>(I[BLjava/lang/String;J)V
-    .registers 13
+    .locals 7
 
     .line 49
     invoke-static {p3}, Landroidx/media3/datasource/AesFlushingCipher;->getFNV64Hash(Ljava/lang/String;)J
@@ -157,24 +157,24 @@
 .end method
 
 .method private static getFNV64Hash(Ljava/lang/String;)J
-    .registers 8
+    .locals 7
 
     const-wide/16 v0, 0x0
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     return-wide v0
 
-    :cond_5
+    :cond_0
     const/4 v2, 0x0
 
     .line 143
-    :goto_6
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_2f
+    if-ge v2, v3, :cond_1
 
     .line 144
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
@@ -223,14 +223,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_2f
+    :cond_1
     return-wide v0
 .end method
 
 .method private getInitializationVector(JJ)[B
-    .registers 6
+    .locals 1
 
     const/16 v0, 0x10
 
@@ -255,7 +255,7 @@
 .end method
 
 .method private nonFlushingUpdate([BII[BI)I
-    .registers 12
+    .locals 6
 
     .line 121
     :try_start_0
@@ -274,12 +274,12 @@
     invoke-virtual/range {v0 .. v5}, Ljavax/crypto/Cipher;->update([BII[BI)I
 
     move-result p1
-    :try_end_b
-    .catch Ljavax/crypto/ShortBufferException; {:try_start_0 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljavax/crypto/ShortBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_c
+    :catch_0
     move-exception p1
 
     .line 124
@@ -293,15 +293,15 @@
 
 # virtual methods
 .method public update([BII[BI)V
-    .registers 14
+    .locals 8
 
     move v2, p2
 
     .line 84
-    :cond_1
+    :cond_0
     iget p2, p0, Landroidx/media3/datasource/AesFlushingCipher;->pendingXorBytes:I
 
-    if-lez p2, :cond_1f
+    if-lez p2, :cond_1
 
     .line 85
     aget-byte v0, p1, v2
@@ -331,11 +331,11 @@
 
     add-int/lit8 p3, p3, -0x1
 
-    if-nez p3, :cond_1
+    if-nez p3, :cond_0
 
     return-void
 
-    :cond_1f
+    :cond_1
     move-object v0, p0
 
     move-object v1, p1
@@ -351,11 +351,11 @@
 
     move-result p1
 
-    if-ne p3, p1, :cond_2b
+    if-ne p3, p1, :cond_2
 
     return-void
 
-    :cond_2b
+    :cond_2
     sub-int/2addr p3, p1
 
     .line 107
@@ -365,16 +365,16 @@
 
     const/4 v1, 0x1
 
-    if-ge p3, p2, :cond_34
+    if-ge p3, p2, :cond_3
 
     move p2, v1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_3
     move p2, v0
 
-    :goto_35
+    :goto_0
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     add-int/2addr p5, p1
@@ -404,18 +404,18 @@
     .line 111
     iget p2, p0, Landroidx/media3/datasource/AesFlushingCipher;->blockSize:I
 
-    if-ne p1, p2, :cond_4f
+    if-ne p1, p2, :cond_4
 
-    goto :goto_50
+    goto :goto_1
 
-    :cond_4f
+    :cond_4
     move v1, v0
 
-    :goto_50
+    :goto_1
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    :goto_53
-    if-ge v0, p3, :cond_61
+    :goto_2
+    if-ge v0, p3, :cond_5
 
     add-int/lit8 p1, p5, 0x1
 
@@ -430,14 +430,14 @@
 
     move p5, p1
 
-    goto :goto_53
+    goto :goto_2
 
-    :cond_61
+    :cond_5
     return-void
 .end method
 
 .method public updateInPlace([BII)V
-    .registers 10
+    .locals 6
 
     move-object v0, p0
 

@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 48
     new-instance v0, Landroidx/camera/core/resolutionselector/ResolutionStrategy;
@@ -46,7 +46,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Landroid/util/Size;I)V
-    .registers 3
+    .locals 0
 
     .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public getBoundSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/camera/core/resolutionselector/ResolutionStrategy;->mBoundSize:Landroid/util/Size;
@@ -91,7 +91,7 @@
 .end method
 
 .method public getFallbackRule()I
-    .registers 2
+    .locals 1
 
     .line 150
     iget v0, p0, Landroidx/camera/core/resolutionselector/ResolutionStrategy;->mFallbackRule:I

@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/LinkedHashSet;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,12 +53,12 @@
 
     move-result-object p1
 
-    :goto_e
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -79,21 +79,21 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 861
     instance-of v0, p1, Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 862
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;->mIds:Ljava/util/List;
@@ -108,14 +108,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 869
     iget-object v0, p0, Landroidx/camera/core/internal/CameraUseCaseAdapter$CameraId;->mIds:Ljava/util/List;

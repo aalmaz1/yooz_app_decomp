@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;)V
-    .registers 2
+    .locals 0
 
     .line 121
     iput-object p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0:Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 144
     iget p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyEndCount:I
@@ -62,14 +62,14 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_21
+    if-ne p1, v0, :cond_1
 
     .line 145
     iget-object p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0:Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
 
     iget-object p1, p1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener:Landroidx/core/view/ViewPropertyAnimatorListener;
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_0
 
     .line 146
     iget-object p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0:Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
@@ -81,24 +81,24 @@
     invoke-interface {p1, v0}, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
 
     .line 148
-    :cond_1e
+    :cond_0
     invoke-virtual {p0}, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->onEnd()V
 
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/View;)V
-    .registers 3
+    .locals 1
 
     .line 127
     iget-boolean p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->mProxyStarted:Z
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 p1, 0x1
 
     .line 130
@@ -109,7 +109,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;->mListener:Landroidx/core/view/ViewPropertyAnimatorListener;
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 132
     iget-object p1, p0, Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet$1;->this$0:Landroidx/appcompat/view/ViewPropertyAnimatorCompatSet;
@@ -120,12 +120,12 @@
 
     invoke-interface {p1, v0}, Landroidx/core/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
 
-    :cond_16
+    :cond_1
     return-void
 .end method
 
 .method onEnd()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

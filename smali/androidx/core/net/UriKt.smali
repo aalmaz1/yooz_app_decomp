@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final toFile(Landroid/net/Uri;)Ljava/io/File;
-    .registers 3
+    .locals 2
 
     .line 43
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -45,14 +45,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1
 
     .line 44
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     new-instance p0, Ljava/io/File;
 
@@ -60,7 +60,7 @@
 
     return-object p0
 
-    :cond_18
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Uri path is null: "
@@ -86,7 +86,7 @@
     throw v0
 
     .line 43
-    :cond_31
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Uri lacks \'file\' scheme: "
@@ -113,7 +113,7 @@
 .end method
 
 .method public static final toUri(Ljava/io/File;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-static {p0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
@@ -124,7 +124,7 @@
 .end method
 
 .method public static final toUri(Ljava/lang/String;)Landroid/net/Uri;
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;

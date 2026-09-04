@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;IIJ)V
-    .registers 13
+    .locals 7
 
     const/4 v6, -0x1
 
@@ -60,7 +60,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/Object;IIJI)V
-    .registers 7
+    .locals 0
 
     .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;J)V
-    .registers 11
+    .locals 7
 
     const/4 v2, -0x1
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;JI)V
-    .registers 12
+    .locals 7
 
     const/4 v2, -0x1
 
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public copyWithPeriodUid(Ljava/lang/Object;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 10
+    .locals 8
 
     .line 278
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -137,14 +137,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 280
-    :cond_a
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget v3, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
@@ -161,26 +161,26 @@
 
     invoke-direct/range {v1 .. v7}, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;IIJI)V
 
-    :goto_19
+    :goto_0
     return-object v0
 .end method
 
 .method public copyWithWindowSequenceNumber(J)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 11
+    .locals 8
 
     .line 286
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
     cmp-long v0, v0, p1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     move-object v0, p0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 288
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -197,31 +197,31 @@
 
     invoke-direct/range {v1 .. v7}, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;IIJI)V
 
-    :goto_17
+    :goto_0
     return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 302
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 306
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
     .line 307
@@ -233,19 +233,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
     iget v3, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
-    if-ne v1, v3, :cond_31
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
     iget v3, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
 
-    if-ne v1, v3, :cond_31
+    if-ne v1, v3, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
 
@@ -253,25 +253,25 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_2
 
     iget v1, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
 
     iget p1, p1, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
 
-    if-ne v1, p1, :cond_31
+    if-ne v1, p1, :cond_2
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_2
     move v0, v2
 
-    :goto_32
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 317
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
@@ -318,22 +318,22 @@
 .end method
 
 .method public isAd()Z
-    .registers 3
+    .locals 2
 
     .line 294
     iget v0, p0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;->adGroupIndex:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method

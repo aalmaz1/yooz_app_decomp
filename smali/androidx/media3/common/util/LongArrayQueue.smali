@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x10
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 5
+    .locals 3
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,34 +41,34 @@
 
     const/4 v1, 0x1
 
-    if-ltz p1, :cond_d
+    if-ltz p1, :cond_0
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    if-gt p1, v2, :cond_d
+    if-gt p1, v2, :cond_0
 
     move v2, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v2, v0
 
     .line 52
-    :goto_e
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_1
 
     move p1, v1
 
     .line 55
-    :cond_14
+    :cond_1
     invoke-static {p1}, Ljava/lang/Integer;->bitCount(I)I
 
     move-result v2
 
-    if-eq v2, v1, :cond_21
+    if-eq v2, v1, :cond_2
 
     add-int/lit8 p1, p1, -0x1
 
@@ -80,7 +80,7 @@
     shl-int/2addr p1, v1
 
     .line 58
-    :cond_21
+    :cond_2
     iput v0, p0, Landroidx/media3/common/util/LongArrayQueue;->headIndex:I
 
     const/4 v2, -0x1
@@ -107,7 +107,7 @@
 .end method
 
 .method private doubleArraySize()V
-    .registers 6
+    .locals 5
 
     .line 130
     iget-object v0, p0, Landroidx/media3/common/util/LongArrayQueue;->data:[J
@@ -116,7 +116,7 @@
 
     shl-int/lit8 v1, v1, 0x1
 
-    if-ltz v1, :cond_26
+    if-ltz v1, :cond_0
 
     .line 135
     new-array v1, v1, [J
@@ -161,7 +161,7 @@
     return-void
 
     .line 132
-    :cond_26
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -172,7 +172,7 @@
 
 # virtual methods
 .method public add(J)V
-    .registers 5
+    .locals 2
 
     .line 67
     iget v0, p0, Landroidx/media3/common/util/LongArrayQueue;->size:I
@@ -181,13 +181,13 @@
 
     array-length v1, v1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     .line 68
     invoke-direct {p0}, Landroidx/media3/common/util/LongArrayQueue;->doubleArraySize()V
 
     .line 71
-    :cond_a
+    :cond_0
     iget v0, p0, Landroidx/media3/common/util/LongArrayQueue;->tailIndex:I
 
     add-int/lit8 v0, v0, 0x1
@@ -214,7 +214,7 @@
 .end method
 
 .method capacity()I
-    .registers 2
+    .locals 1
 
     .line 126
     iget-object v0, p0, Landroidx/media3/common/util/LongArrayQueue;->data:[J
@@ -225,7 +225,7 @@
 .end method
 
 .method public clear()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -244,12 +244,12 @@
 .end method
 
 .method public element()J
-    .registers 3
+    .locals 2
 
     .line 99
     iget v0, p0, Landroidx/media3/common/util/LongArrayQueue;->size:I
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 103
     iget-object v0, p0, Landroidx/media3/common/util/LongArrayQueue;->data:[J
@@ -261,7 +261,7 @@
     return-wide v0
 
     .line 100
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -270,31 +270,31 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 113
     iget v0, p0, Landroidx/media3/common/util/LongArrayQueue;->size:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public remove()J
-    .registers 6
+    .locals 5
 
     .line 82
     iget v0, p0, Landroidx/media3/common/util/LongArrayQueue;->size:I
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 86
     iget-object v1, p0, Landroidx/media3/common/util/LongArrayQueue;->data:[J
@@ -320,7 +320,7 @@
     return-wide v3
 
     .line 83
-    :cond_16
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -329,7 +329,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 108
     iget v0, p0, Landroidx/media3/common/util/LongArrayQueue;->size:I

@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;ILandroidx/media3/exoplayer/rtsp/RtspHeaders;Ljava/lang/String;)V
-    .registers 5
+    .locals 0
 
     .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

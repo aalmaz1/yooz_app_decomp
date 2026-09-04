@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x7d0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     const/16 v0, 0x1f40
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -103,10 +103,10 @@
     .line 166
     iget-object v1, p0, Landroidx/media3/datasource/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 168
-    :try_start_7
+    :try_start_0
     iget-object v2, p0, Landroidx/media3/datasource/UdpDataSource;->address:Ljava/net/InetAddress;
 
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -116,18 +116,18 @@
     check-cast v2, Ljava/net/InetAddress;
 
     invoke-virtual {v1, v2}, Ljava/net/MulticastSocket;->leaveGroup(Ljava/net/InetAddress;)V
-    :try_end_12
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_12} :catch_12
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 172
-    :catch_12
+    :catch_0
     iput-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
 
     .line 174
-    :cond_14
+    :cond_0
     iget-object v1, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
     .line 175
     invoke-virtual {v1}, Ljava/net/DatagramSocket;->close()V
@@ -136,7 +136,7 @@
     iput-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     .line 178
-    :cond_1d
+    :cond_1
     iput-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->address:Ljava/net/InetAddress;
 
     const/4 v0, 0x0
@@ -147,7 +147,7 @@
     .line 180
     iget-boolean v1, p0, Landroidx/media3/datasource/UdpDataSource;->opened:Z
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_2
 
     .line 181
     iput-boolean v0, p0, Landroidx/media3/datasource/UdpDataSource;->opened:Z
@@ -155,24 +155,24 @@
     .line 182
     invoke-virtual {p0}, Landroidx/media3/datasource/UdpDataSource;->transferEnded()V
 
-    :cond_2b
+    :cond_2
     return-void
 .end method
 
 .method public getLocalPort()I
-    .registers 2
+    .locals 1
 
     .line 191
     iget-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
     .line 194
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/net/DatagramSocket;->getLocalPort()I
 
     move-result v0
@@ -181,7 +181,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->uri:Landroid/net/Uri;
@@ -190,7 +190,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/UdpDataSource$UdpDataSourceException;
@@ -224,7 +224,7 @@
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/UdpDataSource;->transferInitializing(Landroidx/media3/datasource/DataSpec;)V
 
     .line 107
-    :try_start_17
+    :try_start_0
     invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v0
@@ -245,7 +245,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_0
 
     .line 110
     new-instance v1, Ljava/net/MulticastSocket;
@@ -264,10 +264,10 @@
 
     iput-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
-    goto :goto_44
+    goto :goto_0
 
     .line 114
-    :cond_3d
+    :cond_0
     new-instance v1, Ljava/net/DatagramSocket;
 
     invoke-direct {v1, v0}, Ljava/net/DatagramSocket;-><init>(Ljava/net/SocketAddress;)V
@@ -275,15 +275,15 @@
     iput-object v1, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     .line 116
-    :goto_44
+    :goto_0
     iget-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     iget v1, p0, Landroidx/media3/datasource/UdpDataSource;->socketTimeoutMillis:I
 
     invoke-virtual {v0, v1}, Ljava/net/DatagramSocket;->setSoTimeout(I)V
-    :try_end_4b
-    .catch Ljava/lang/SecurityException; {:try_start_17 .. :try_end_4b} :catch_5d
-    .catch Ljava/io/IOException; {:try_start_17 .. :try_end_4b} :catch_54
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v0, 0x1
 
@@ -297,7 +297,7 @@
 
     return-wide v0
 
-    :catch_54
+    :catch_0
     move-exception p1
 
     .line 120
@@ -309,7 +309,7 @@
 
     throw v0
 
-    :catch_5d
+    :catch_1
     move-exception p1
 
     .line 118
@@ -323,27 +323,27 @@
 .end method
 
 .method public read([BII)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/UdpDataSource$UdpDataSourceException;
         }
     .end annotation
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 135
-    :cond_4
+    :cond_0
     iget v0, p0, Landroidx/media3/datasource/UdpDataSource;->packetRemaining:I
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     .line 138
-    :try_start_8
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -355,9 +355,9 @@
     iget-object v1, p0, Landroidx/media3/datasource/UdpDataSource;->packet:Ljava/net/DatagramPacket;
 
     invoke-virtual {v0, v1}, Ljava/net/DatagramSocket;->receive(Ljava/net/DatagramPacket;)V
-    :try_end_15
-    .catch Ljava/net/SocketTimeoutException; {:try_start_8 .. :try_end_15} :catch_2a
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_15} :catch_21
+    :try_end_0
+    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 146
     iget-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->packet:Ljava/net/DatagramPacket;
@@ -371,9 +371,9 @@
     .line 147
     invoke-virtual {p0, v0}, Landroidx/media3/datasource/UdpDataSource;->bytesTransferred(I)V
 
-    goto :goto_33
+    goto :goto_0
 
-    :catch_21
+    :catch_0
     move-exception p1
 
     .line 143
@@ -385,7 +385,7 @@
 
     throw p2
 
-    :catch_2a
+    :catch_1
     move-exception p1
 
     .line 140
@@ -398,8 +398,8 @@
     throw p2
 
     .line 150
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/media3/datasource/UdpDataSource;->packet:Ljava/net/DatagramPacket;
 
     invoke-virtual {v0}, Ljava/net/DatagramPacket;->getLength()I

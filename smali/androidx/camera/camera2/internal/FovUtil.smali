@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,7 +18,7 @@
 .end method
 
 .method public static focalLengthToViewAngleDegrees(FF)I
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -28,16 +28,16 @@
 
     const/4 v3, 0x0
 
-    if-lez v1, :cond_9
+    if-lez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v1, v3
 
-    :goto_a
+    :goto_0
     const-string v4, "Focal length should be positive."
 
     .line 56
@@ -45,14 +45,14 @@
 
     cmpl-float v0, p1, v0
 
-    if-lez v0, :cond_14
+    if-lez v0, :cond_1
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
+    :cond_1
     move v2, v3
 
-    :goto_15
+    :goto_1
     const-string v0, "Sensor length should be positive."
 
     .line 57
@@ -93,7 +93,7 @@
 .end method
 
 .method public static getDefaultFocalLength(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)F
-    .registers 2
+    .locals 1
 
     .line 142
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_FOCAL_LENGTHS:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static getDeviceDefaultViewAngleDegrees(Landroidx/camera/camera2/internal/compat/CameraManagerCompat;I)I
-    .registers 8
+    .locals 6
 
     .line 77
     :try_start_0
@@ -132,8 +132,8 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v1, :cond_35
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -166,7 +166,7 @@
 
     move-result v5
 
-    if-ne v4, v5, :cond_32
+    if-ne v4, v5, :cond_0
 
     .line 88
     invoke-static {v3}, Landroidx/camera/camera2/internal/FovUtil;->getDefaultFocalLength(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)F
@@ -182,18 +182,18 @@
     invoke-static {p0, p1}, Landroidx/camera/camera2/internal/FovUtil;->focalLengthToViewAngleDegrees(FF)I
 
     move-result p0
-    :try_end_31
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_31} :catch_3d
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
-    :cond_32
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 96
-    :cond_35
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Unable to get the default focal length with the specified lens facing."
@@ -203,7 +203,7 @@
     throw p0
 
     .line 93
-    :catch_3d
+    :catch_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Unable to get the default focal length."
@@ -214,7 +214,7 @@
 .end method
 
 .method public static getSensorHorizontalLength(Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;)F
-    .registers 5
+    .locals 4
 
     .line 108
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_PHYSICAL_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -289,7 +289,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_4e
+    if-eqz p0, :cond_0
 
     .line 125
     invoke-static {v0}, Landroidx/camera/core/impl/utils/TransformUtils;->reverseSizeF(Landroid/util/SizeF;)Landroid/util/SizeF;
@@ -307,7 +307,7 @@
     move-result-object v2
 
     .line 130
-    :cond_4e
+    :cond_0
     invoke-virtual {v0}, Landroid/util/SizeF;->getWidth()F
 
     move-result p0

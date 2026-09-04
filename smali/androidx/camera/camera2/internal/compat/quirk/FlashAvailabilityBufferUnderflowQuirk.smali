@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 47
     new-instance v0, Ljava/util/HashSet;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method private static addAffectedDevice(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 55
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/FlashAvailabilityBufferUnderflowQuirk;->KNOWN_AFFECTED_MODELS:Ljava/util/Set;
@@ -85,7 +85,7 @@
 .end method
 
 .method static load()Z
-    .registers 5
+    .locals 5
 
     .line 60
     sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/FlashAvailabilityBufferUnderflowQuirk;->KNOWN_AFFECTED_MODELS:Ljava/util/Set;

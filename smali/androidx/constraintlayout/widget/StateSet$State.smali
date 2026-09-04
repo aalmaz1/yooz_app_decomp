@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 8
+    .locals 5
 
     .line 251
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,8 +73,8 @@
 
     move-result v1
 
-    :goto_1e
-    if-ge v0, v1, :cond_5e
+    :goto_0
+    if-ge v0, v1, :cond_2
 
     .line 256
     invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -84,7 +84,7 @@
     .line 257
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->State_android_id:I
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_0
 
     .line 258
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$State;->mId:I
@@ -95,13 +95,13 @@
 
     iput v2, p0, Landroidx/constraintlayout/widget/StateSet$State;->mId:I
 
-    goto :goto_5b
+    goto :goto_1
 
     .line 259
-    :cond_31
+    :cond_0
     sget v3, Landroidx/constraintlayout/widget/R$styleable;->State_constraints:I
 
-    if-ne v2, v3, :cond_5b
+    if-ne v2, v3, :cond_1
 
     .line 260
     iget v3, p0, Landroidx/constraintlayout/widget/StateSet$State;->mConstraintID:I
@@ -139,21 +139,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_1
 
     const/4 v2, 0x1
 
     .line 265
     iput-boolean v2, p0, Landroidx/constraintlayout/widget/StateSet$State;->mIsLayout:Z
 
-    :cond_5b
-    :goto_5b
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 269
-    :cond_5e
+    :cond_2
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
@@ -162,7 +162,7 @@
 
 # virtual methods
 .method add(Landroidx/constraintlayout/widget/StateSet$Variant;)V
-    .registers 3
+    .locals 1
 
     .line 273
     iget-object v0, p0, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
@@ -173,19 +173,19 @@
 .end method
 
 .method public findMatch(FF)I
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 277
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_1
 
     .line 278
     iget-object v1, p0, Landroidx/constraintlayout/widget/StateSet$State;->mVariants:Ljava/util/ArrayList;
@@ -200,16 +200,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     return v0
 
-    :cond_18
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 p1, -0x1
 
     return p1

@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Joiner;Lcom/google/common/base/Joiner;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010,
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public appendTo(Ljava/lang/Appendable;Ljava/util/Iterator;)Ljava/lang/Appendable;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -86,19 +86,19 @@
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 276
-    :cond_a
+    :cond_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 277
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 279
     iget-object v1, p0, Lcom/google/common/base/Joiner$2;->this$0:Lcom/google/common/base/Joiner;
@@ -110,20 +110,20 @@
     invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 283
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_2
 
     .line 284
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 286
     iget-object v1, p0, Lcom/google/common/base/Joiner$2;->this$0:Lcom/google/common/base/Joiner;
@@ -143,14 +143,14 @@
 
     invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_3e
+    :cond_2
     return-object p1
 .end method
 
 .method public useForNull(Ljava/lang/String;)Lcom/google/common/base/Joiner;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -171,7 +171,7 @@
 .end method
 
 .method public withKeyValueSeparator(Ljava/lang/String;)Lcom/google/common/base/Joiner$MapJoiner;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

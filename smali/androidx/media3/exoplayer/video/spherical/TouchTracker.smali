@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/media3/exoplayer/video/spherical/TouchTracker$Listener;F)V
-    .registers 5
+    .locals 1
 
     .line 73
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public onDown(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
 
     .line 93
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/TouchTracker;->previousTouchPointPx:Landroid/graphics/PointF;
@@ -99,7 +99,7 @@
 .end method
 
 .method public onOrientationChange([FF)V
-    .registers 3
+    .locals 0
 
     neg-float p1, p2
 
@@ -110,7 +110,7 @@
 .end method
 
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .registers 9
+    .locals 4
 
     .line 102
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -237,7 +237,7 @@
 .end method
 
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/media3/exoplayer/video/spherical/TouchTracker;->listener:Landroidx/media3/exoplayer/video/spherical/TouchTracker$Listener;
@@ -250,7 +250,7 @@
 .end method
 
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 0
 
     .line 87
     iget-object p1, p0, Landroidx/media3/exoplayer/video/spherical/TouchTracker;->gestureDetector:Landroid/view/GestureDetector;

@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 13
+    .locals 13
 
     const-string v0, "SD"
 
@@ -179,7 +179,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -188,7 +188,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/video/Quality$1;)V
-    .registers 2
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/camera/video/Quality;-><init>()V
@@ -197,7 +197,7 @@
 .end method
 
 .method static containsQuality(Landroidx/camera/video/Quality;)Z
-    .registers 2
+    .locals 1
 
     .line 93
     sget-object v0, Landroidx/camera/video/Quality;->QUALITIES:Ljava/util/Set;
@@ -210,7 +210,7 @@
 .end method
 
 .method static getSortedQualities()Ljava/util/List;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

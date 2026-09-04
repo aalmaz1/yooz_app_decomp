@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;I)V
-    .registers 5
+    .locals 0
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

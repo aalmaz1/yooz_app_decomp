@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/Recorder;JLandroidx/camera/video/OutputOptions;ZZ)V
-    .registers 9
+    .locals 2
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,27 +55,27 @@
     .line 65
     iput-boolean p5, p0, Landroidx/camera/video/Recording;->mIsPersistent:Z
 
-    if-eqz p6, :cond_20
+    if-eqz p6, :cond_0
 
     const/4 p1, 0x1
 
     .line 68
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const-string p1, "stop"
 
     .line 70
     invoke-virtual {v1, p1}, Landroidx/camera/core/impl/utils/CloseGuardHelper;->open(Ljava/lang/String;)V
 
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method static createFinalizedFrom(Landroidx/camera/video/PendingRecording;J)Landroidx/camera/video/Recording;
-    .registers 11
+    .locals 8
 
     const-string v0, "The given PendingRecording cannot be null."
 
@@ -111,7 +111,7 @@
 .end method
 
 .method static from(Landroidx/camera/video/PendingRecording;J)Landroidx/camera/video/Recording;
-    .registers 11
+    .locals 8
 
     const-string v0, "The given PendingRecording cannot be null."
 
@@ -147,7 +147,7 @@
 .end method
 
 .method private stopWithError(ILjava/lang/Throwable;)V
-    .registers 5
+    .locals 2
 
     .line 253
     iget-object v0, p0, Landroidx/camera/video/Recording;->mCloseGuard:Landroidx/camera/core/impl/utils/CloseGuardHelper;
@@ -163,12 +163,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 257
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/Recording;->mRecorder:Landroidx/camera/video/Recorder;
 
     invoke-virtual {v0, p0, p1, p2}, Landroidx/camera/video/Recorder;->stop(Landroidx/camera/video/Recording;ILjava/lang/Throwable;)V
@@ -179,7 +179,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -192,7 +192,7 @@
 .end method
 
 .method protected finalize()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
@@ -215,15 +215,15 @@
     const/16 v1, 0xa
 
     invoke-direct {p0, v1, v0}, Landroidx/camera/video/Recording;->stopWithError(ILjava/lang/Throwable;)V
-    :try_end_11
-    .catchall {:try_start_0 .. :try_end_11} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 226
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
     return-void
 
-    :catchall_15
+    :catchall_0
     move-exception v0
 
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
@@ -233,7 +233,7 @@
 .end method
 
 .method getOutputOptions()Landroidx/camera/video/OutputOptions;
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/camera/video/Recording;->mOutputOptions:Landroidx/camera/video/OutputOptions;
@@ -242,7 +242,7 @@
 .end method
 
 .method getRecordingId()J
-    .registers 3
+    .locals 2
 
     .line 232
     iget-wide v0, p0, Landroidx/camera/video/Recording;->mRecordingId:J
@@ -251,7 +251,7 @@
 .end method
 
 .method public isClosed()Z
-    .registers 2
+    .locals 1
 
     .line 248
     iget-object v0, p0, Landroidx/camera/video/Recording;->mIsClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -264,7 +264,7 @@
 .end method
 
 .method public isPersistent()Z
-    .registers 2
+    .locals 1
 
     .line 127
     iget-boolean v0, p0, Landroidx/camera/video/Recording;->mIsPersistent:Z
@@ -273,7 +273,7 @@
 .end method
 
 .method public mute(Z)V
-    .registers 3
+    .locals 1
 
     .line 191
     iget-object v0, p0, Landroidx/camera/video/Recording;->mIsClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -282,7 +282,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 194
     iget-object v0, p0, Landroidx/camera/video/Recording;->mRecorder:Landroidx/camera/video/Recorder;
@@ -292,7 +292,7 @@
     return-void
 
     .line 192
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "The recording has been stopped."
@@ -303,7 +303,7 @@
 .end method
 
 .method public pause()V
-    .registers 3
+    .locals 2
 
     .line 144
     iget-object v0, p0, Landroidx/camera/video/Recording;->mIsClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -312,7 +312,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 147
     iget-object v0, p0, Landroidx/camera/video/Recording;->mRecorder:Landroidx/camera/video/Recorder;
@@ -322,7 +322,7 @@
     return-void
 
     .line 145
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The recording has been stopped."
@@ -333,7 +333,7 @@
 .end method
 
 .method public resume()V
-    .registers 3
+    .locals 2
 
     .line 163
     iget-object v0, p0, Landroidx/camera/video/Recording;->mIsClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -342,7 +342,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 166
     iget-object v0, p0, Landroidx/camera/video/Recording;->mRecorder:Landroidx/camera/video/Recorder;
@@ -352,7 +352,7 @@
     return-void
 
     .line 164
-    :cond_e
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "The recording has been stopped."
@@ -363,7 +363,7 @@
 .end method
 
 .method public stop()V
-    .registers 1
+    .locals 0
 
     .line 175
     invoke-virtual {p0}, Landroidx/camera/video/Recording;->close()V

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/drawerlayout/widget/DrawerLayout;)V
-    .registers 2
+    .locals 0
 
     .line 2349
     iput-object p1, p0, Landroidx/drawerlayout/widget/DrawerLayout$AccessibilityDelegate;->this$0:Landroidx/drawerlayout/widget/DrawerLayout;
@@ -40,7 +40,7 @@
 .end method
 
 .method private addChildrenForAccessibility(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;Landroid/view/ViewGroup;)V
-    .registers 7
+    .locals 4
 
     .line 2426
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
@@ -49,8 +49,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_17
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 2428
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -62,22 +62,22 @@
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_0
 
     .line 2430
     invoke-virtual {p1, v2}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addChild(Landroid/view/View;)V
 
-    :cond_14
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method private copyNodeInfoNoChildren(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
-    .registers 4
+    .locals 1
 
     .line 2442
     iget-object v0, p0, Landroidx/drawerlayout/widget/DrawerLayout$AccessibilityDelegate;->mTmpRect:Landroid/graphics/Rect;
@@ -184,7 +184,7 @@
 
 # virtual methods
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
-    .registers 5
+    .locals 2
 
     .line 2399
     invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
@@ -193,7 +193,7 @@
 
     const/16 v1, 0x20
 
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_1
 
     .line 2400
     invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
@@ -207,7 +207,7 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_0
 
     .line 2403
     iget-object v0, p0, Landroidx/drawerlayout/widget/DrawerLayout$AccessibilityDelegate;->this$0:Landroidx/drawerlayout/widget/DrawerLayout;
@@ -223,18 +223,18 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_0
 
     .line 2406
     invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_25
+    :cond_0
     const/4 p1, 0x1
 
     return p1
 
     .line 2413
-    :cond_27
+    :cond_1
     invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result p1
@@ -243,7 +243,7 @@
 .end method
 
 .method public onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 3
+    .locals 0
 
     .line 2387
     invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -261,20 +261,20 @@
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
-    .registers 6
+    .locals 3
 
     .line 2354
     sget-boolean v0, Landroidx/drawerlayout/widget/DrawerLayout;->CAN_HIDE_DESCENDANTS:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 2355
     invoke-super {p0, p1, p2}, Landroidx/core/view/AccessibilityDelegateCompat;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 2360
-    :cond_8
+    :cond_0
     invoke-static {p2}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->obtain(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object v0
@@ -293,7 +293,7 @@
     .line 2365
     instance-of v2, v1, Landroid/view/View;
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     .line 2366
     check-cast v1, Landroid/view/View;
@@ -301,7 +301,7 @@
     invoke-virtual {p2, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setParent(Landroid/view/View;)V
 
     .line 2368
-    :cond_1f
+    :cond_1
     invoke-direct {p0, p2, v0}, Landroidx/drawerlayout/widget/DrawerLayout$AccessibilityDelegate;->copyNodeInfoNoChildren(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
 
     .line 2369
@@ -313,7 +313,7 @@
     invoke-direct {p0, p2, p1}, Landroidx/drawerlayout/widget/DrawerLayout$AccessibilityDelegate;->addChildrenForAccessibility(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;Landroid/view/ViewGroup;)V
 
     .line 2374
-    :goto_2a
+    :goto_0
     const-class p1, Landroidx/drawerlayout/widget/DrawerLayout;
 
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -344,29 +344,29 @@
 .end method
 
 .method public onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
-    .registers 5
+    .locals 1
 
     .line 2419
     sget-boolean v0, Landroidx/drawerlayout/widget/DrawerLayout;->CAN_HIDE_DESCENDANTS:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     invoke-static {p2}, Landroidx/drawerlayout/widget/DrawerLayout;->includeChildForAccessibility(Landroid/view/View;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 
     .line 2420
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     invoke-super {p0, p1, p2, p3}, Landroidx/core/view/AccessibilityDelegateCompat;->onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result p1

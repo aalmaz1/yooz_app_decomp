@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/concurrent/Future;Landroidx/camera/core/impl/utils/futures/FutureCallback;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 339
     :try_start_0
@@ -84,10 +84,10 @@
     invoke-static {v0}, Landroidx/camera/core/impl/utils/futures/Futures;->getDone(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_6
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_6} :catch_15
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_6} :catch_e
-    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_6} :catch_c
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 352
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/Futures$CallbackListener;->mCallback:Landroidx/camera/core/impl/utils/futures/FutureCallback;
@@ -96,23 +96,23 @@
 
     return-void
 
-    :catch_c
+    :catch_0
     move-exception v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_e
+    :catch_1
     move-exception v0
 
     .line 349
-    :goto_f
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/Futures$CallbackListener;->mCallback:Landroidx/camera/core/impl/utils/futures/FutureCallback;
 
     invoke-interface {v1, v0}, Landroidx/camera/core/impl/utils/futures/FutureCallback;->onFailure(Ljava/lang/Throwable;)V
 
     return-void
 
-    :catch_15
+    :catch_2
     move-exception v0
 
     .line 341
@@ -120,27 +120,27 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_0
 
     .line 343
     iget-object v1, p0, Landroidx/camera/core/impl/utils/futures/Futures$CallbackListener;->mCallback:Landroidx/camera/core/impl/utils/futures/FutureCallback;
 
     invoke-interface {v1, v0}, Landroidx/camera/core/impl/utils/futures/FutureCallback;->onFailure(Ljava/lang/Throwable;)V
 
-    goto :goto_27
+    goto :goto_1
 
     .line 345
-    :cond_22
+    :cond_0
     iget-object v0, p0, Landroidx/camera/core/impl/utils/futures/Futures$CallbackListener;->mCallback:Landroidx/camera/core/impl/utils/futures/FutureCallback;
 
     invoke-interface {v0, v1}, Landroidx/camera/core/impl/utils/futures/FutureCallback;->onFailure(Ljava/lang/Throwable;)V
 
-    :goto_27
+    :goto_1
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 357
     new-instance v0, Ljava/lang/StringBuilder;

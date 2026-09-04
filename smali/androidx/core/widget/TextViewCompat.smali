@@ -25,7 +25,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 98
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,7 +34,7 @@
 .end method
 
 .method public static getAutoSizeMaxTextSize(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 363
     invoke-static {p0}, Landroidx/core/widget/TextViewCompat$Api26Impl;->getAutoSizeMaxTextSize(Landroid/widget/TextView;)I
@@ -45,7 +45,7 @@
 .end method
 
 .method public static getAutoSizeMinTextSize(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 346
     invoke-static {p0}, Landroidx/core/widget/TextViewCompat$Api26Impl;->getAutoSizeMinTextSize(Landroid/widget/TextView;)I
@@ -56,7 +56,7 @@
 .end method
 
 .method public static getAutoSizeStepGranularity(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 329
     invoke-static {p0}, Landroidx/core/widget/TextViewCompat$Api26Impl;->getAutoSizeStepGranularity(Landroid/widget/TextView;)I
@@ -67,7 +67,7 @@
 .end method
 
 .method public static getAutoSizeTextAvailableSizes(Landroid/widget/TextView;)[I
-    .registers 1
+    .locals 0
 
     .line 380
     invoke-static {p0}, Landroidx/core/widget/TextViewCompat$Api26Impl;->getAutoSizeTextAvailableSizes(Landroid/widget/TextView;)[I
@@ -78,7 +78,7 @@
 .end method
 
 .method public static getAutoSizeTextType(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 313
     invoke-static {p0}, Landroidx/core/widget/TextViewCompat$Api26Impl;->getAutoSizeTextType(Landroid/widget/TextView;)I
@@ -89,7 +89,7 @@
 .end method
 
 .method public static getCompoundDrawableTintList(Landroid/widget/TextView;)Landroid/content/res/ColorStateList;
-    .registers 1
+    .locals 0
 
     .line 958
     invoke-static {p0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -103,7 +103,7 @@
 .end method
 
 .method public static getCompoundDrawableTintMode(Landroid/widget/TextView;)Landroid/graphics/PorterDuff$Mode;
-    .registers 1
+    .locals 0
 
     .line 993
     invoke-static {p0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -117,7 +117,7 @@
 .end method
 
 .method public static getCompoundDrawablesRelative(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
-    .registers 1
+    .locals 0
 
     .line 213
     invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawablesRelative()[Landroid/graphics/drawable/Drawable;
@@ -128,7 +128,7 @@
 .end method
 
 .method public static getFirstBaselineToTopHeight(Landroid/widget/TextView;)I
-    .registers 2
+    .locals 1
 
     .line 689
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingTop()I
@@ -151,7 +151,7 @@
 .end method
 
 .method public static getLastBaselineToBottomHeight(Landroid/widget/TextView;)I
-    .registers 2
+    .locals 1
 
     .line 699
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingBottom()I
@@ -174,7 +174,7 @@
 .end method
 
 .method public static getMaxLines(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 180
     invoke-virtual {p0}, Landroid/widget/TextView;->getMaxLines()I
@@ -185,7 +185,7 @@
 .end method
 
 .method public static getMinLines(Landroid/widget/TextView;)I
-    .registers 1
+    .locals 0
 
     .line 188
     invoke-virtual {p0}, Landroid/widget/TextView;->getMinLines()I
@@ -196,91 +196,91 @@
 .end method
 
 .method private static getTextDirection(Landroid/text/TextDirectionHeuristic;)I
-    .registers 3
+    .locals 2
 
     .line 912
     sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
 
     const/4 v1, 0x1
 
-    if-ne p0, v0, :cond_6
+    if-ne p0, v0, :cond_0
 
     return v1
 
     .line 914
-    :cond_6
+    :cond_0
     sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_b
+    if-ne p0, v0, :cond_1
 
     return v1
 
     .line 916
-    :cond_b
+    :cond_1
     sget-object v0, Landroid/text/TextDirectionHeuristics;->ANYRTL_LTR:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_11
+    if-ne p0, v0, :cond_2
 
     const/4 p0, 0x2
 
     return p0
 
     .line 918
-    :cond_11
+    :cond_2
     sget-object v0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_17
+    if-ne p0, v0, :cond_3
 
     const/4 p0, 0x3
 
     return p0
 
     .line 920
-    :cond_17
+    :cond_3
     sget-object v0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_1d
+    if-ne p0, v0, :cond_4
 
     const/4 p0, 0x4
 
     return p0
 
     .line 922
-    :cond_1d
+    :cond_4
     sget-object v0, Landroid/text/TextDirectionHeuristics;->LOCALE:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_23
+    if-ne p0, v0, :cond_5
 
     const/4 p0, 0x5
 
     return p0
 
     .line 924
-    :cond_23
+    :cond_5
     sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_29
+    if-ne p0, v0, :cond_6
 
     const/4 p0, 0x6
 
     return p0
 
     .line 926
-    :cond_29
+    :cond_6
     sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
 
-    if-ne p0, v0, :cond_2f
+    if-ne p0, v0, :cond_7
 
     const/4 p0, 0x7
 
     return p0
 
-    :cond_2f
+    :cond_7
     return v1
 .end method
 
 .method private static getTextDirectionHeuristic(Landroid/widget/TextView;)Landroid/text/TextDirectionHeuristic;
-    .registers 5
+    .locals 4
 
     .line 856
     invoke-virtual {p0}, Landroid/widget/TextView;->getTransformationMethod()Landroid/text/method/TransformationMethod;
@@ -289,7 +289,7 @@
 
     instance-of v0, v0, Landroid/text/method/PasswordTransformationMethod;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 858
     sget-object p0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
@@ -297,7 +297,7 @@
     return-object p0
 
     .line 862
-    :cond_b
+    :cond_0
     invoke-virtual {p0}, Landroid/widget/TextView;->getInputType()I
 
     move-result v0
@@ -310,7 +310,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_38
+    if-ne v0, v1, :cond_3
 
     .line 868
     invoke-virtual {p0}, Landroid/widget/TextView;->getTextLocale()Ljava/util/Locale;
@@ -338,108 +338,108 @@
 
     move-result p0
 
-    if-eq p0, v3, :cond_35
+    if-eq p0, v3, :cond_2
 
     const/4 v0, 0x2
 
-    if-ne p0, v0, :cond_32
+    if-ne p0, v0, :cond_1
 
-    goto :goto_35
+    goto :goto_0
 
     .line 878
-    :cond_32
+    :cond_1
     sget-object p0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 876
-    :cond_35
-    :goto_35
+    :cond_2
+    :goto_0
     sget-object p0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 885
-    :cond_38
+    :cond_3
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayoutDirection()I
 
     move-result v0
 
-    if-ne v0, v3, :cond_3f
+    if-ne v0, v3, :cond_4
 
     move v2, v3
 
     .line 888
-    :cond_3f
+    :cond_4
     invoke-virtual {p0}, Landroid/widget/TextView;->getTextDirection()I
 
     move-result p0
 
-    packed-switch p0, :pswitch_data_60
+    packed-switch p0, :pswitch_data_0
 
-    if-eqz v2, :cond_5d
+    if-eqz v2, :cond_5
 
     .line 891
     sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
 
-    goto :goto_5f
+    goto :goto_1
 
     .line 904
-    :pswitch_4b
+    :pswitch_0
     sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 902
-    :pswitch_4e
+    :pswitch_1
     sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 900
-    :pswitch_51
+    :pswitch_2
     sget-object p0, Landroid/text/TextDirectionHeuristics;->LOCALE:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 898
-    :pswitch_54
+    :pswitch_3
     sget-object p0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 896
-    :pswitch_57
+    :pswitch_4
     sget-object p0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 894
-    :pswitch_5a
+    :pswitch_5
     sget-object p0, Landroid/text/TextDirectionHeuristics;->ANYRTL_LTR:Landroid/text/TextDirectionHeuristic;
 
     return-object p0
 
     .line 892
-    :cond_5d
+    :cond_5
     sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
-    :goto_5f
+    :goto_1
     return-object p0
 
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_5a
-        :pswitch_57
-        :pswitch_54
-        :pswitch_51
-        :pswitch_4e
-        :pswitch_4b
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static getTextMetricsParams(Landroid/widget/TextView;)Landroidx/core/text/PrecomputedTextCompat$Params;
-    .registers 2
+    .locals 1
 
     .line 770
     new-instance v0, Landroidx/core/text/PrecomputedTextCompat$Params;
@@ -454,7 +454,7 @@
 .end method
 
 .method public static setAutoSizeTextTypeUniformWithConfiguration(Landroid/widget/TextView;IIII)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
@@ -468,7 +468,7 @@
 .end method
 
 .method public static setAutoSizeTextTypeUniformWithPresetSizes(Landroid/widget/TextView;[II)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
@@ -482,7 +482,7 @@
 .end method
 
 .method public static setAutoSizeTextTypeWithDefaults(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 231
     invoke-static {p0, p1}, Landroidx/core/widget/TextViewCompat$Api26Impl;->setAutoSizeTextTypeWithDefaults(Landroid/widget/TextView;I)V
@@ -491,7 +491,7 @@
 .end method
 
 .method public static setCompoundDrawableTintList(Landroid/widget/TextView;Landroid/content/res/ColorStateList;)V
-    .registers 2
+    .locals 0
 
     .line 942
     invoke-static {p0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -503,7 +503,7 @@
 .end method
 
 .method public static setCompoundDrawableTintMode(Landroid/widget/TextView;Landroid/graphics/PorterDuff$Mode;)V
-    .registers 2
+    .locals 0
 
     .line 976
     invoke-static {p0}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -515,7 +515,7 @@
 .end method
 
 .method public static setCompoundDrawablesRelative(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .registers 5
+    .locals 0
 
     .line 123
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
@@ -524,7 +524,7 @@
 .end method
 
 .method public static setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/widget/TextView;IIII)V
-    .registers 5
+    .locals 0
 
     .line 172
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
@@ -533,7 +533,7 @@
 .end method
 
 .method public static setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .registers 5
+    .locals 0
 
     .line 148
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
@@ -542,7 +542,7 @@
 .end method
 
 .method public static setCustomSelectionActionModeCallback(Landroid/widget/TextView;Landroid/view/ActionMode$Callback;)V
-    .registers 2
+    .locals 0
 
     .line 413
     invoke-static {p0, p1}, Landroidx/core/widget/TextViewCompat;->wrapCustomSelectionActionModeCallback(Landroid/widget/TextView;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
@@ -556,7 +556,7 @@
 .end method
 
 .method public static setFirstBaselineToTopHeight(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 619
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkArgumentNonnegative(I)I
@@ -568,7 +568,7 @@
 .end method
 
 .method public static setLastBaselineToBottomHeight(Landroid/widget/TextView;I)V
-    .registers 5
+    .locals 3
 
     .line 662
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkArgumentNonnegative(I)I
@@ -587,24 +587,24 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 667
     iget v0, v0, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
-    goto :goto_16
+    goto :goto_0
 
     .line 669
-    :cond_14
+    :cond_0
     iget v0, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
 
     .line 675
-    :goto_16
+    :goto_0
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
 
-    if-le p1, v1, :cond_2c
+    if-le p1, v1, :cond_1
 
     sub-int/2addr p1, v0
 
@@ -625,12 +625,12 @@
     .line 677
     invoke-virtual {p0, v0, v1, v2, p1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    :cond_2c
+    :cond_1
     return-void
 .end method
 
 .method public static setLineHeight(Landroid/widget/TextView;I)V
-    .registers 4
+    .locals 2
 
     .line 718
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkArgumentNonnegative(I)I
@@ -646,7 +646,7 @@
 
     move-result v0
 
-    if-eq p1, v0, :cond_15
+    if-eq p1, v0, :cond_0
 
     sub-int/2addr p1, v0
 
@@ -657,27 +657,27 @@
     .line 724
     invoke-virtual {p0, p1, v0}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public static setLineHeight(Landroid/widget/TextView;IF)V
-    .registers 5
+    .locals 2
 
     .line 748
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     .line 749
     invoke-static {p0, p1, p2}, Landroidx/core/widget/TextViewCompat$Api34Impl;->setLineHeight(Landroid/widget/TextView;IF)V
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 754
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -698,19 +698,19 @@
 
     invoke-static {p0, p1}, Landroidx/core/widget/TextViewCompat;->setLineHeight(Landroid/widget/TextView;I)V
 
-    :goto_1d
+    :goto_0
     return-void
 .end method
 
 .method public static setPrecomputedText(Landroid/widget/TextView;Landroidx/core/text/PrecomputedTextCompat;)V
-    .registers 4
+    .locals 2
 
     .line 834
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_12
+    if-lt v0, v1, :cond_0
 
     .line 837
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat;->getPrecomputedText()Landroid/text/PrecomputedText;
@@ -723,10 +723,10 @@
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_23
+    goto :goto_0
 
     .line 839
-    :cond_12
+    :cond_0
     invoke-static {p0}, Landroidx/core/widget/TextViewCompat;->getTextMetricsParams(Landroid/widget/TextView;)Landroidx/core/text/PrecomputedTextCompat$Params;
 
     move-result-object v0
@@ -740,16 +740,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 843
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :goto_23
+    :goto_0
     return-void
 
     .line 841
-    :cond_24
+    :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Given text can not be applied to TextView."
@@ -760,7 +760,7 @@
 .end method
 
 .method public static setTextAppearance(Landroid/widget/TextView;I)V
-    .registers 2
+    .locals 0
 
     .line 202
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextAppearance(I)V
@@ -769,7 +769,7 @@
 .end method
 
 .method public static setTextMetricsParams(Landroid/widget/TextView;Landroidx/core/text/PrecomputedTextCompat$Params;)V
-    .registers 4
+    .locals 2
 
     .line 794
     invoke-virtual {p1}, Landroidx/core/text/PrecomputedTextCompat$Params;->getTextDirection()Landroid/text/TextDirectionHeuristic;
@@ -811,12 +811,12 @@
 .end method
 
 .method public static unwrapCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
-    .registers 2
+    .locals 1
 
     .line 445
     instance-of v0, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 446
     check-cast p0, Landroidx/core/widget/TextViewCompat$OreoCallback;
@@ -825,12 +825,12 @@
 
     move-result-object p0
 
-    :cond_a
+    :cond_0
     return-object p0
 .end method
 
 .method public static wrapCustomSelectionActionModeCallback(Landroid/widget/TextView;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode$Callback;
-    .registers 2
+    .locals 0
 
     return-object p1
 .end method

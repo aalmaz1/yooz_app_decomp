@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(I[BII)V
-    .registers 5
+    .locals 0
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,18 +49,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_3
 
     .line 78
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -71,12 +71,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_33
+    goto :goto_1
 
     .line 81
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/TrackOutput$CryptoData;
 
     .line 82
@@ -84,19 +84,19 @@
 
     iget v3, p1, Landroidx/media3/extractor/TrackOutput$CryptoData;->cryptoMode:I
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/TrackOutput$CryptoData;->encryptedBlocks:I
 
     iget v3, p1, Landroidx/media3/extractor/TrackOutput$CryptoData;->encryptedBlocks:I
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/TrackOutput$CryptoData;->clearBlocks:I
 
     iget v3, p1, Landroidx/media3/extractor/TrackOutput$CryptoData;->clearBlocks:I
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/TrackOutput$CryptoData;->encryptionKey:[B
 
@@ -107,23 +107,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_2
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_2
     move v0, v1
 
-    :goto_32
+    :goto_0
     return v0
 
-    :cond_33
-    :goto_33
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 90
     iget v0, p0, Landroidx/media3/extractor/TrackOutput$CryptoData;->cryptoMode:I

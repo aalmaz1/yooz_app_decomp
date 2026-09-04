@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 43
     new-instance v0, Landroidx/camera/camera2/internal/Camera2SessionOptionUnpacker;
@@ -25,7 +25,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public unpack(Landroid/util/Size;Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/SessionConfig$Builder;)V
-    .registers 8
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,7 +69,7 @@
 
     move-result v3
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     .line 59
     invoke-virtual {v1}, Landroidx/camera/core/impl/SessionConfig;->getTemplateType()I
@@ -104,19 +104,19 @@
     move-result-object v2
 
     .line 68
-    :cond_30
+    :cond_0
     invoke-virtual {p3, v2}, Landroidx/camera/core/impl/SessionConfig$Builder;->setImplementationOptions(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/SessionConfig$Builder;
 
     .line 71
     instance-of v1, p2, Landroidx/camera/core/impl/PreviewConfig;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_1
 
     .line 72
     invoke-static {p1, p3}, Landroidx/camera/camera2/internal/compat/workaround/PreviewPixelHDRnet;->setHDRnet(Landroid/util/Size;Landroidx/camera/core/impl/SessionConfig$Builder;)V
 
     .line 76
-    :cond_3a
+    :cond_1
     new-instance p1, Landroidx/camera/camera2/impl/Camera2ImplConfig;
 
     invoke-direct {p1, p2}, Landroidx/camera/camera2/impl/Camera2ImplConfig;-><init>(Landroidx/camera/core/impl/Config;)V

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 445
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static firstNonNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -53,17 +53,17 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
-    :cond_3
-    if-eqz p1, :cond_6
+    :cond_0
+    if-eqz p1, :cond_1
 
     return-object p1
 
     .line 68
-    :cond_6
+    :cond_1
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "Both parameters are null"
@@ -74,7 +74,7 @@
 .end method
 
 .method public static toStringHelper(Ljava/lang/Class;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -108,7 +108,7 @@
 .end method
 
 .method public static toStringHelper(Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -137,7 +137,7 @@
 .end method
 
 .method public static toStringHelper(Ljava/lang/String;)Lcom/google/common/base/MoreObjects$ToStringHelper;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

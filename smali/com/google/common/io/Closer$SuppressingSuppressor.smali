@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/reflect/Method;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -43,7 +43,7 @@
 .end method
 
 .method static tryCreate()Lcom/google/common/io/Closer$SuppressingSuppressor;
-    .registers 5
+    .locals 5
     .annotation runtime Ljavax/annotation/CheckForNull;
     .end annotation
 
@@ -66,8 +66,8 @@
     invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
-    :try_end_10
-    .catchall {:try_start_0 .. :try_end_10} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 273
     new-instance v1, Lcom/google/common/io/Closer$SuppressingSuppressor;
@@ -76,7 +76,7 @@
 
     return-object v1
 
-    :catchall_16
+    :catchall_0
     const/4 v0, 0x0
 
     return-object v0
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public suppress(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -99,13 +99,13 @@
         }
     .end annotation
 
-    if-ne p2, p3, :cond_3
+    if-ne p2, p3, :cond_0
 
     return-void
 
     .line 289
-    :cond_3
-    :try_start_3
+    :cond_0
+    :try_start_0
     iget-object v0, p0, Lcom/google/common/io/Closer$SuppressingSuppressor;->addSuppressed:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
@@ -117,17 +117,17 @@
     aput-object p3, v1, v2
 
     invoke-virtual {v0, p2, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 292
-    :catchall_f
+    :catchall_0
     sget-object v0, Lcom/google/common/io/Closer$LoggingSuppressor;->INSTANCE:Lcom/google/common/io/Closer$LoggingSuppressor;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/common/io/Closer$LoggingSuppressor;->suppress(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    :goto_14
+    :goto_0
     return-void
 .end method

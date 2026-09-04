@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;Landroid/net/Uri;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,26 +91,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 36
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 37
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;->webTriggerParams:Ljava/util/List;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;
@@ -121,7 +121,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     .line 38
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;->destination:Landroid/net/Uri;
@@ -132,19 +132,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     move v0, v2
 
-    :goto_22
+    :goto_0
     return v0
 .end method
 
 .method public final getDestination()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 32
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;->destination:Landroid/net/Uri;
@@ -153,7 +153,7 @@
 .end method
 
 .method public final getWebTriggerParams()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -170,7 +170,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 42
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/measurement/WebTriggerRegistrationRequest;->webTriggerParams:Ljava/util/List;
@@ -194,7 +194,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 48
     new-instance v0, Ljava/lang/StringBuilder;

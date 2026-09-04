@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 655
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getDisplayId(Landroid/view/accessibility/AccessibilityWindowInfo;)I
-    .registers 1
+    .locals 0
 
     .line 661
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getDisplayId()I
@@ -36,7 +36,7 @@
 .end method
 
 .method static getRegionInScreen(Landroid/view/accessibility/AccessibilityWindowInfo;Landroid/graphics/Region;)V
-    .registers 2
+    .locals 0
 
     .line 666
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityWindowInfo;->getRegionInScreen(Landroid/graphics/Region;)V
@@ -45,7 +45,7 @@
 .end method
 
 .method public static getRoot(Ljava/lang/Object;I)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
-    .registers 2
+    .locals 0
 
     .line 671
     check-cast p0, Landroid/view/accessibility/AccessibilityWindowInfo;

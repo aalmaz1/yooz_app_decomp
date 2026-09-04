@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 43
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -51,7 +51,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
-    .registers 5
+    .locals 2
 
     .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;)Landroid/os/ConditionVariable;
-    .registers 1
+    .locals 0
 
     .line 41
     iget-object p0, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->drmListenerConditionVariable:Landroid/os/ConditionVariable;
@@ -121,7 +121,7 @@
 .end method
 
 .method private acquireFirstSessionOnHandlerThread(I[BLandroidx/media3/common/Format;)Landroidx/media3/exoplayer/drm/DrmSession;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -165,15 +165,15 @@
     invoke-virtual {v7, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 347
-    :try_start_1e
+    :try_start_0
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/SettableFuture;->get()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroidx/media3/exoplayer/drm/DrmSession;
-    :try_end_24
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1e .. :try_end_24} :catch_50
-    .catch Ljava/lang/InterruptedException; {:try_start_1e .. :try_end_24} :catch_4e
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 355
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->drmListenerConditionVariable:Landroid/os/ConditionVariable;
@@ -195,17 +195,17 @@
     invoke-virtual {p3, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 374
-    :try_start_37
+    :try_start_1
     invoke-virtual {p2}, Lcom/google/common/util/concurrent/SettableFuture;->get()Ljava/lang/Object;
 
     move-result-object p3
 
-    if-nez p3, :cond_3e
+    if-nez p3, :cond_0
 
     return-object p1
 
     .line 375
-    :cond_3e
+    :cond_0
     invoke-virtual {p2}, Lcom/google/common/util/concurrent/SettableFuture;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -213,36 +213,36 @@
     check-cast p1, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
 
     throw p1
-    :try_end_45
-    .catch Ljava/lang/InterruptedException; {:try_start_37 .. :try_end_45} :catch_47
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_37 .. :try_end_45} :catch_45
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_0
 
-    :catch_45
+    :catch_0
     move-exception p1
 
-    goto :goto_48
+    goto :goto_0
 
-    :catch_47
+    :catch_1
     move-exception p1
 
     .line 380
-    :goto_48
+    :goto_0
     new-instance p2, Ljava/lang/IllegalStateException;
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     throw p2
 
-    :catch_4e
+    :catch_2
     move-exception p1
 
-    goto :goto_51
+    goto :goto_1
 
-    :catch_50
+    :catch_3
     move-exception p1
 
     .line 349
-    :goto_51
+    :goto_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
@@ -251,7 +251,7 @@
 .end method
 
 .method private acquireSessionAndGetOfflineLicenseKeySetIdOnHandlerThread(I[BLandroidx/media3/common/Format;)[B
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -278,7 +278,7 @@
     invoke-virtual {p3, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 291
-    :try_start_12
+    :try_start_0
     invoke-virtual {p2}, Lcom/google/common/util/concurrent/SettableFuture;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -290,42 +290,42 @@
     move-result-object p1
 
     check-cast p1, [B
-    :try_end_1e
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_12 .. :try_end_1e} :catch_26
-    .catch Ljava/lang/InterruptedException; {:try_start_12 .. :try_end_1e} :catch_24
-    .catchall {:try_start_12 .. :try_end_1e} :catchall_22
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 295
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->releaseManagerOnHandlerThread()V
 
     return-object p1
 
-    :catchall_22
+    :catchall_0
     move-exception p1
 
-    goto :goto_2d
+    goto :goto_1
 
-    :catch_24
+    :catch_0
     move-exception p1
 
-    goto :goto_27
+    goto :goto_0
 
-    :catch_26
+    :catch_1
     move-exception p1
 
     .line 293
-    :goto_27
-    :try_start_27
+    :goto_0
+    :try_start_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     throw p2
-    :try_end_2d
-    .catchall {:try_start_27 .. :try_end_2d} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 295
-    :goto_2d
+    :goto_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->releaseManagerOnHandlerThread()V
 
     .line 296
@@ -333,7 +333,7 @@
 .end method
 
 .method public static newWidevineInstance(Ljava/lang/String;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -346,7 +346,7 @@
 .end method
 
 .method public static newWidevineInstance(Ljava/lang/String;ZLandroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -359,7 +359,7 @@
 .end method
 
 .method public static newWidevineInstance(Ljava/lang/String;ZLandroidx/media3/datasource/DataSource$Factory;Ljava/util/Map;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -403,7 +403,7 @@
 .end method
 
 .method private releaseManagerOnHandlerThread()V
-    .registers 4
+    .locals 3
 
     .line 389
     invoke-static {}, Lcom/google/common/util/concurrent/SettableFuture;->create()Lcom/google/common/util/concurrent/SettableFuture;
@@ -420,24 +420,24 @@
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 400
-    :try_start_e
+    :try_start_0
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/SettableFuture;->get()Ljava/lang/Object;
-    :try_end_11
-    .catch Ljava/lang/InterruptedException; {:try_start_e .. :try_end_11} :catch_14
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_e .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_12
+    :catch_0
     move-exception v0
 
-    goto :goto_15
+    goto :goto_0
 
-    :catch_14
+    :catch_1
     move-exception v0
 
     .line 402
-    :goto_15
+    :goto_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
@@ -448,7 +448,7 @@
 
 # virtual methods
 .method public declared-synchronized downloadLicense(Landroidx/media3/common/Format;)[B
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -458,19 +458,19 @@
     monitor-enter p0
 
     .line 179
-    :try_start_1
+    :try_start_0
     iget-object v0, p1, Landroidx/media3/common/Format;->drmInitData:Landroidx/media3/common/DrmInitData;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const/4 v0, 0x2
@@ -481,14 +481,14 @@
     invoke-direct {p0, v0, v1, p1}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->acquireSessionAndGetOfflineLicenseKeySetIdOnHandlerThread(I[BLandroidx/media3/common/Format;)[B
 
     move-result-object p1
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_13
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -497,7 +497,7 @@
 .end method
 
 .method public declared-synchronized getLicenseDurationRemainingSec([B)Landroid/util/Pair;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -517,13 +517,13 @@
     monitor-enter p0
 
     .line 224
-    :try_start_1
+    :try_start_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_4d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 227
-    :try_start_4
+    :try_start_1
     sget-object v0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->FORMAT_WITH_EMPTY_DRM_INIT_DATA:Landroidx/media3/common/Format;
 
     const/4 v1, 0x1
@@ -532,12 +532,12 @@
     invoke-direct {p0, v1, p1, v0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->acquireFirstSessionOnHandlerThread(I[BLandroidx/media3/common/Format;)Landroidx/media3/exoplayer/drm/DrmSession;
 
     move-result-object p1
-    :try_end_b
-    .catch Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException; {:try_start_4 .. :try_end_b} :catch_33
-    .catchall {:try_start_4 .. :try_end_b} :catchall_4d
+    :try_end_1
+    .catch Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 239
-    :try_start_b
+    :try_start_2
     invoke-static {}, Lcom/google/common/util/concurrent/SettableFuture;->create()Lcom/google/common/util/concurrent/SettableFuture;
 
     move-result-object v0
@@ -550,65 +550,65 @@
     invoke-direct {v2, p0, v0, p1}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper$$ExternalSyntheticLambda2;-><init>(Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;Lcom/google/common/util/concurrent/SettableFuture;Landroidx/media3/exoplayer/drm/DrmSession;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_19
-    .catchall {:try_start_b .. :try_end_19} :catchall_4d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 252
-    :try_start_19
+    :try_start_3
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/SettableFuture;->get()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroid/util/Pair;
-    :try_end_1f
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_19 .. :try_end_1f} :catch_28
-    .catch Ljava/lang/InterruptedException; {:try_start_19 .. :try_end_1f} :catch_26
-    .catchall {:try_start_19 .. :try_end_1f} :catchall_24
+    :try_end_3
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 256
-    :try_start_1f
+    :try_start_4
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->releaseManagerOnHandlerThread()V
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_4d
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 252
     monitor-exit p0
 
     return-object p1
 
-    :catchall_24
+    :catchall_0
     move-exception p1
 
-    goto :goto_2f
+    goto :goto_1
 
-    :catch_26
+    :catch_0
     move-exception p1
 
-    goto :goto_29
+    goto :goto_0
 
-    :catch_28
+    :catch_1
     move-exception p1
 
     .line 254
-    :goto_29
-    :try_start_29
+    :goto_0
+    :try_start_5
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
-    :try_end_2f
-    .catchall {:try_start_29 .. :try_end_2f} :catchall_24
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 256
-    :goto_2f
-    :try_start_2f
+    :goto_1
+    :try_start_6
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->releaseManagerOnHandlerThread()V
 
     .line 257
     throw p1
 
-    :catch_33
+    :catch_2
     move-exception p1
 
     .line 233
@@ -618,7 +618,7 @@
 
     instance-of v0, v0, Landroidx/media3/exoplayer/drm/KeysExpiredException;
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_0
 
     const-wide/16 v0, 0x0
 
@@ -634,21 +634,21 @@
     invoke-static {p1, v0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object p1
-    :try_end_4a
-    .catchall {:try_start_2f .. :try_end_4a} :catchall_4d
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     monitor-exit p0
 
     return-object p1
 
     .line 236
-    :cond_4c
-    :try_start_4c
+    :cond_0
+    :try_start_7
     throw p1
-    :try_end_4d
-    .catchall {:try_start_4c .. :try_end_4d} :catchall_4d
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    :catchall_4d
+    :catchall_1
     move-exception p1
 
     monitor-exit p0
@@ -657,7 +657,7 @@
 .end method
 
 .method synthetic lambda$acquireFirstSessionOnHandlerThread$2$androidx-media3-exoplayer-drm-OfflineLicenseHelper(I[BLcom/google/common/util/concurrent/SettableFuture;Landroidx/media3/common/Format;)V
-    .registers 8
+    .locals 3
 
     .line 329
     :try_start_0
@@ -681,11 +681,11 @@
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->drmSessionManager:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->prepare()V
-    :try_end_16
-    .catchall {:try_start_0 .. :try_end_16} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 332
-    :try_start_16
+    :try_start_1
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->drmSessionManager:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->setMode(I[B)V
@@ -709,37 +709,37 @@
 
     .line 333
     invoke-virtual {p3, p1}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_2c
-    .catchall {:try_start_16 .. :try_end_2c} :catchall_2d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_38
+    goto :goto_0
 
-    :catchall_2d
+    :catchall_0
     move-exception p1
 
     .line 337
-    :try_start_2e
+    :try_start_2
     iget-object p2, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->drmSessionManager:Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;
 
     invoke-virtual {p2}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->release()V
 
     .line 338
     throw p1
-    :try_end_34
-    .catchall {:try_start_2e .. :try_end_34} :catchall_34
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :catchall_34
+    :catchall_1
     move-exception p1
 
     .line 341
     invoke-virtual {p3, p1}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_38
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$acquireFirstSessionOnHandlerThread$3$androidx-media3-exoplayer-drm-OfflineLicenseHelper(Landroidx/media3/exoplayer/drm/DrmSession;Lcom/google/common/util/concurrent/SettableFuture;)V
-    .registers 6
+    .locals 3
 
     .line 361
     :try_start_0
@@ -754,7 +754,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_15
+    if-ne v1, v2, :cond_0
 
     .line 363
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->eventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -767,14 +767,14 @@
     invoke-virtual {v1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->release()V
 
     .line 366
-    :cond_15
+    :cond_0
     invoke-virtual {p2, v0}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_18
-    .catchall {:try_start_0 .. :try_end_18} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :catchall_19
+    :catchall_0
     move-exception v0
 
     .line 368
@@ -790,12 +790,12 @@
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/drm/DefaultDrmSessionManager;->release()V
 
-    :goto_27
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$acquireSessionAndGetOfflineLicenseKeySetIdOnHandlerThread$1$androidx-media3-exoplayer-drm-OfflineLicenseHelper(Lcom/google/common/util/concurrent/SettableFuture;Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 4
+    .locals 1
 
     .line 282
     :try_start_0
@@ -804,32 +804,32 @@
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_7
-    .catchall {:try_start_0 .. :try_end_7} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 286
-    :goto_7
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->eventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
 
     invoke-interface {p2, p1}, Landroidx/media3/exoplayer/drm/DrmSession;->release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
 
-    goto :goto_12
+    goto :goto_1
 
-    :catchall_d
+    :catchall_0
     move-exception v0
 
     .line 284
-    :try_start_e
+    :try_start_1
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
-    :try_end_11
-    .catchall {:try_start_e .. :try_end_11} :catchall_13
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_7
+    goto :goto_0
 
-    :goto_12
+    :goto_1
     return-void
 
-    :catchall_13
+    :catchall_1
     move-exception p1
 
     .line 286
@@ -842,7 +842,7 @@
 .end method
 
 .method synthetic lambda$getLicenseDurationRemainingSec$0$androidx-media3-exoplayer-drm-OfflineLicenseHelper(Lcom/google/common/util/concurrent/SettableFuture;Landroidx/media3/exoplayer/drm/DrmSession;)V
-    .registers 4
+    .locals 1
 
     .line 244
     :try_start_0
@@ -858,29 +858,29 @@
 
     .line 243
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_d
-    .catchall {:try_start_0 .. :try_end_d} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catchall_e
+    :catchall_0
     move-exception v0
 
     .line 246
-    :try_start_f
+    :try_start_1
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
-    :try_end_12
-    .catchall {:try_start_f .. :try_end_12} :catchall_18
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 248
-    :goto_12
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->eventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
 
     invoke-interface {p2, p1}, Landroidx/media3/exoplayer/drm/DrmSession;->release(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;)V
 
     return-void
 
-    :catchall_18
+    :catchall_1
     move-exception p1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->eventDispatcher:Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;
@@ -892,7 +892,7 @@
 .end method
 
 .method synthetic lambda$releaseManagerOnHandlerThread$4$androidx-media3-exoplayer-drm-OfflineLicenseHelper(Lcom/google/common/util/concurrent/SettableFuture;)V
-    .registers 3
+    .locals 1
 
     .line 393
     :try_start_0
@@ -904,23 +904,23 @@
 
     .line 394
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_9
-    .catchall {:try_start_0 .. :try_end_9} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     .line 396
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_e
+    :goto_0
     return-void
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 262
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
@@ -931,7 +931,7 @@
 .end method
 
 .method public declared-synchronized releaseLicense([B)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -941,7 +941,7 @@
     monitor-enter p0
 
     .line 208
-    :try_start_1
+    :try_start_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 209
@@ -950,15 +950,15 @@
     const/4 v1, 0x3
 
     invoke-direct {p0, v1, p1, v0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->acquireSessionAndGetOfflineLicenseKeySetIdOnHandlerThread(I[BLandroidx/media3/common/Format;)[B
-    :try_end_a
-    .catchall {:try_start_1 .. :try_end_a} :catchall_c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 213
     monitor-exit p0
 
     return-void
 
-    :catchall_c
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -967,7 +967,7 @@
 .end method
 
 .method public declared-synchronized renewLicense([B)[B
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
@@ -977,7 +977,7 @@
     monitor-enter p0
 
     .line 193
-    :try_start_1
+    :try_start_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 194
@@ -988,14 +988,14 @@
     invoke-direct {p0, v1, p1, v0}, Landroidx/media3/exoplayer/drm/OfflineLicenseHelper;->acquireSessionAndGetOfflineLicenseKeySetIdOnHandlerThread(I[BLandroidx/media3/common/Format;)[B
 
     move-result-object p1
-    :try_end_b
-    .catchall {:try_start_1 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object p1
 
-    :catchall_d
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

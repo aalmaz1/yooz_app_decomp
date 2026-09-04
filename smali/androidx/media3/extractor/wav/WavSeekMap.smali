@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/wav/WavFormat;IJJ)V
-    .registers 7
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method private blockIndexToTimeUs(J)J
-    .registers 11
+    .locals 8
 
     .line 71
     iget v0, p0, Landroidx/media3/extractor/wav/WavSeekMap;->framesPerBlock:I
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 47
     iget-wide v0, p0, Landroidx/media3/extractor/wav/WavSeekMap;->durationUs:J
@@ -92,7 +92,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 13
+    .locals 10
 
     .line 53
     iget-object v0, p0, Landroidx/media3/extractor/wav/WavSeekMap;->wavFormat:Landroidx/media3/extractor/wav/WavFormat;
@@ -151,7 +151,7 @@
 
     cmp-long p1, v6, p1
 
-    if-gez p1, :cond_52
+    if-gez p1, :cond_1
 
     .line 59
     iget-wide p1, p0, Landroidx/media3/extractor/wav/WavSeekMap;->blockCount:J
@@ -160,11 +160,11 @@
 
     cmp-long p1, v0, p1
 
-    if-nez p1, :cond_39
+    if-nez p1, :cond_0
 
-    goto :goto_52
+    goto :goto_0
 
-    :cond_39
+    :cond_0
     add-long/2addr v0, v2
 
     .line 63
@@ -198,8 +198,8 @@
     return-object p1
 
     .line 60
-    :cond_52
-    :goto_52
+    :cond_1
+    :goto_0
     new-instance p1, Landroidx/media3/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p1, v8}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
@@ -208,7 +208,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

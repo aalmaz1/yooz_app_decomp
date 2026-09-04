@@ -124,7 +124,7 @@
 
 # direct methods
 .method public constructor <init>(I[I[Landroidx/media3/common/Format;Landroidx/media3/exoplayer/source/chunk/ChunkSource;Landroidx/media3/exoplayer/source/SequenceableLoader$Callback;Landroidx/media3/exoplayer/upstream/Allocator;JLandroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;)V
-    .registers 14
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[I[",
@@ -151,20 +151,20 @@
 
     const/4 v0, 0x0
 
-    if-nez p2, :cond_a
+    if-nez p2, :cond_0
 
     new-array p2, v0, [I
 
     .line 131
-    :cond_a
+    :cond_0
     iput-object p2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTrackTypes:[I
 
-    if-nez p3, :cond_10
+    if-nez p3, :cond_1
 
     new-array p3, v0, [Landroidx/media3/common/Format;
 
     .line 132
-    :cond_10
+    :cond_1
     iput-object p3, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTrackFormats:[Landroidx/media3/common/Format;
 
     .line 133
@@ -243,8 +243,8 @@
     .line 151
     aput-object p5, p3, v0
 
-    :goto_50
-    if-ge v0, p2, :cond_66
+    :goto_0
+    if-ge v0, p2, :cond_2
 
     .line 154
     invoke-static {p6}, Landroidx/media3/exoplayer/source/SampleQueue;->createWithoutDrm(Landroidx/media3/exoplayer/upstream/Allocator;)Landroidx/media3/exoplayer/source/SampleQueue;
@@ -270,10 +270,10 @@
 
     move v0, p5
 
-    goto :goto_50
+    goto :goto_0
 
     .line 160
-    :cond_66
+    :cond_2
     new-instance p1, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;
 
     invoke-direct {p1, p4, p3}, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;-><init>([I[Landroidx/media3/exoplayer/source/SampleQueue;)V
@@ -290,7 +290,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
-    .registers 1
+    .locals 0
 
     .line 58
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->canceledMediaChunk:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
@@ -299,7 +299,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)[Z
-    .registers 1
+    .locals 0
 
     .line 58
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTracksSelected:[Z
@@ -308,7 +308,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)[I
-    .registers 1
+    .locals 0
 
     .line 58
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTrackTypes:[I
@@ -317,7 +317,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)[Landroidx/media3/common/Format;
-    .registers 1
+    .locals 0
 
     .line 58
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTrackFormats:[Landroidx/media3/common/Format;
@@ -326,7 +326,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)J
-    .registers 3
+    .locals 2
 
     .line 58
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
@@ -335,7 +335,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
-    .registers 1
+    .locals 0
 
     .line 58
     iget-object p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaSourceEventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -344,7 +344,7 @@
 .end method
 
 .method private discardDownstreamMediaChunks(I)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -361,7 +361,7 @@
 
     move-result p1
 
-    if-lez p1, :cond_17
+    if-lez p1, :cond_0
 
     .line 736
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -375,12 +375,12 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->nextNotifyPrimaryFormatMediaChunkIndex:I
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method private discardUpstream(I)V
-    .registers 9
+    .locals 7
 
     .line 674
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -400,35 +400,35 @@
 
     move-result v0
 
-    :goto_11
+    :goto_0
     const/4 v1, -0x1
 
-    if-ge p1, v0, :cond_1e
+    if-ge p1, v0, :cond_1
 
     .line 679
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->haveReadFromMediaChunk(I)Z
 
     move-result v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1b
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     move p1, v1
 
-    :goto_1f
-    if-ne p1, v1, :cond_22
+    :goto_1
+    if-ne p1, v1, :cond_2
 
     return-void
 
     .line 690
-    :cond_22
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->getLastMediaChunk()Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
     move-result-object v0
@@ -447,14 +447,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3
 
     .line 693
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
 
     iput-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
-    :cond_38
+    :cond_3
     const/4 v0, 0x0
 
     .line 695
@@ -473,7 +473,7 @@
 .end method
 
 .method private discardUpstreamMediaChunksFromIndex(I)Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
-    .registers 5
+    .locals 3
 
     .line 798
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -521,12 +521,12 @@
     invoke-virtual {p1, v2}, Landroidx/media3/exoplayer/source/SampleQueue;->discardUpstreamSamples(I)V
 
     .line 803
-    :goto_29
+    :goto_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedSampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v2, p1
 
-    if-ge v1, v2, :cond_3a
+    if-ge v1, v2, :cond_0
 
     .line 804
     aget-object p1, p1, v1
@@ -539,14 +539,14 @@
 
     invoke-virtual {p1, v2}, Landroidx/media3/exoplayer/source/SampleQueue;->discardUpstreamSamples(I)V
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_3a
+    :cond_0
     return-object v0
 .end method
 
 .method private getLastMediaChunk()Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
-    .registers 3
+    .locals 2
 
     .line 787
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -567,7 +567,7 @@
 .end method
 
 .method private haveReadFromMediaChunk(I)Z
-    .registers 7
+    .locals 5
 
     .line 713
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -593,20 +593,20 @@
 
     const/4 v3, 0x1
 
-    if-le v0, v2, :cond_17
+    if-le v0, v2, :cond_0
 
     return v3
 
-    :cond_17
+    :cond_0
     move v0, v1
 
     .line 717
-    :cond_18
+    :cond_1
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedSampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v4, v2
 
-    if-ge v0, v4, :cond_2c
+    if-ge v0, v4, :cond_2
 
     .line 718
     aget-object v2, v2, v0
@@ -621,16 +621,16 @@
 
     move-result v4
 
-    if-le v2, v4, :cond_18
+    if-le v2, v4, :cond_1
 
     return v3
 
-    :cond_2c
+    :cond_2
     return v1
 .end method
 
 .method private isMediaChunk(Landroidx/media3/exoplayer/source/chunk/Chunk;)Z
-    .registers 2
+    .locals 0
 
     .line 701
     instance-of p1, p1, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
@@ -639,7 +639,7 @@
 .end method
 
 .method private maybeNotifyPrimaryTrackFormatChanged()V
-    .registers 4
+    .locals 3
 
     .line 742
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -659,10 +659,10 @@
     move-result v0
 
     .line 746
-    :goto_e
+    :goto_0
     iget v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->nextNotifyPrimaryFormatMediaChunkIndex:I
 
-    if-gt v1, v0, :cond_1a
+    if-gt v1, v0, :cond_0
 
     add-int/lit8 v2, v1, 0x1
 
@@ -671,14 +671,14 @@
 
     invoke-direct {p0, v1}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->maybeNotifyPrimaryTrackFormatChanged(I)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method private maybeNotifyPrimaryTrackFormatChanged(I)V
-    .registers 10
+    .locals 8
 
     .line 752
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -699,7 +699,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     .line 755
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaSourceEventDispatcher:Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;
@@ -717,14 +717,14 @@
     invoke-virtual/range {v0 .. v6}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->downstreamFormatChanged(ILandroidx/media3/common/Format;ILjava/lang/Object;J)V
 
     .line 762
-    :cond_20
+    :cond_0
     iput-object v7, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primaryDownstreamTrackFormat:Landroidx/media3/common/Format;
 
     return-void
 .end method
 
 .method private primarySampleIndexToMediaChunkIndex(II)I
-    .registers 5
+    .locals 2
 
     :cond_0
     add-int/lit8 p2, p2, 0x1
@@ -736,7 +736,7 @@
 
     move-result v0
 
-    if-ge p2, v0, :cond_1c
+    if-ge p2, v0, :cond_1
 
     .line 779
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -760,7 +760,7 @@
     return p2
 
     .line 783
-    :cond_1c
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -773,7 +773,7 @@
 .end method
 
 .method private resetSampleQueues()V
-    .registers 5
+    .locals 4
 
     .line 705
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -787,8 +787,8 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v1, :cond_13
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -797,16 +797,16 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 27
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -815,7 +815,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_d2
+    if-nez v1, :cond_8
 
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -823,7 +823,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_d2
+    if-nez v1, :cond_8
 
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -831,17 +831,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
-    goto/16 :goto_d2
+    goto/16 :goto_3
 
     .line 570
-    :cond_19
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     .line 574
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -851,10 +851,10 @@
     .line 575
     iget-wide v4, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 577
-    :cond_26
+    :cond_1
     iget-object v3, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->readOnlyMediaChunks:Ljava/util/List;
 
     .line 578
@@ -864,7 +864,7 @@
 
     iget-wide v4, v4, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->endTimeUs:J
 
-    :goto_2e
+    :goto_0
     move-object v10, v3
 
     move-wide v8, v4
@@ -897,7 +897,7 @@
 
     const/4 v7, 0x1
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_2
 
     .line 586
     iput-wide v5, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
@@ -907,13 +907,13 @@
 
     return v7
 
-    :cond_53
-    if-nez v4, :cond_56
+    :cond_2
+    if-nez v4, :cond_3
 
     return v2
 
     .line 595
-    :cond_56
+    :cond_3
     iput-object v4, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadingChunk:Landroidx/media3/exoplayer/source/chunk/Chunk;
 
     .line 596
@@ -921,14 +921,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8c
+    if-eqz v3, :cond_6
 
     .line 597
     move-object v3, v4
 
     check-cast v3, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
-    if-eqz v1, :cond_81
+    if-eqz v1, :cond_5
 
     .line 603
     iget-wide v8, v3, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->startTimeUs:J
@@ -937,7 +937,7 @@
 
     cmp-long v1, v8, v10
 
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_4
 
     .line 604
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -949,8 +949,8 @@
 
     array-length v8, v1
 
-    :goto_73
-    if-ge v2, v8, :cond_7f
+    :goto_1
+    if-ge v2, v8, :cond_4
 
     aget-object v9, v1, v2
 
@@ -961,14 +961,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_73
+    goto :goto_1
 
     .line 609
-    :cond_7f
+    :cond_4
     iput-wide v5, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
     .line 611
-    :cond_81
+    :cond_5
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->chunkOutput:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;
 
     invoke-virtual {v3, v1}, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->init(Landroidx/media3/exoplayer/source/chunk/BaseMediaChunkOutput;)V
@@ -978,13 +978,13 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_98
+    goto :goto_2
 
     .line 613
-    :cond_8c
+    :cond_6
     instance-of v1, v4, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;
 
-    if-eqz v1, :cond_98
+    if-eqz v1, :cond_7
 
     .line 614
     move-object v1, v4
@@ -996,8 +996,8 @@
     invoke-virtual {v1, v2}, Landroidx/media3/exoplayer/source/chunk/InitializationChunk;->init(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor$TrackOutputProvider;)V
 
     .line 616
-    :cond_98
-    :goto_98
+    :cond_7
+    :goto_2
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     iget-object v2, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -1059,25 +1059,25 @@
 
     return v7
 
-    :cond_d2
-    :goto_d2
+    :cond_8
+    :goto_3
     return v2
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 8
+    .locals 4
 
     .line 173
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 176
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/source/SampleQueue;->getFirstIndex()I
@@ -1098,7 +1098,7 @@
 
     move-result p1
 
-    if-le p1, v0, :cond_33
+    if-le p1, v0, :cond_1
 
     .line 180
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1110,12 +1110,12 @@
     const/4 p2, 0x0
 
     .line 181
-    :goto_22
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedSampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v3, v2
 
-    if-ge p2, v3, :cond_33
+    if-ge p2, v3, :cond_1
 
     .line 182
     aget-object v2, v2, p2
@@ -1128,17 +1128,17 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 185
-    :cond_33
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->discardDownstreamMediaChunks(I)V
 
     return-void
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 5
+    .locals 1
 
     .line 251
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->chunkSource:Landroidx/media3/exoplayer/source/chunk/ChunkSource;
@@ -1151,24 +1151,24 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 5
+    .locals 4
 
     .line 224
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadingFinished:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
     return-wide v0
 
     .line 226
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 227
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
@@ -1176,7 +1176,7 @@
     return-wide v0
 
     .line 229
-    :cond_10
+    :cond_1
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
 
     .line 230
@@ -1189,12 +1189,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
     .line 234
-    :cond_1d
+    :cond_2
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1203,7 +1203,7 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_35
+    if-le v2, v3, :cond_3
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
 
@@ -1219,13 +1219,13 @@
 
     check-cast v2, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_3
     const/4 v2, 0x0
 
-    :goto_36
-    if-eqz v2, :cond_3e
+    :goto_0
+    if-eqz v2, :cond_4
 
     .line 236
     iget-wide v2, v2, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->endTimeUs:J
@@ -1235,7 +1235,7 @@
     move-result-wide v0
 
     .line 238
-    :cond_3e
+    :cond_4
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     invoke-virtual {v2}, Landroidx/media3/exoplayer/source/SampleQueue;->getLargestQueuedTimestampUs()J
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public getChunkSource()Landroidx/media3/exoplayer/source/chunk/ChunkSource;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -1264,14 +1264,14 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 638
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 639
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
@@ -1279,28 +1279,28 @@
     return-wide v0
 
     .line 641
-    :cond_9
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadingFinished:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->getLastMediaChunk()Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
     move-result-object v0
 
     iget-wide v0, v0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->endTimeUs:J
 
-    :goto_16
+    :goto_0
     return-wide v0
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 633
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -1313,7 +1313,7 @@
 .end method
 
 .method isPendingReset()Z
-    .registers 5
+    .locals 4
 
     .line 726
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
@@ -1322,28 +1322,28 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method public isReady()Z
-    .registers 3
+    .locals 2
 
     .line 368
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
@@ -1353,21 +1353,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method public maybeThrowError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1391,19 +1391,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 376
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->chunkSource:Landroidx/media3/exoplayer/source/chunk/ChunkSource;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/chunk/ChunkSource;->maybeThrowError()V
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/source/chunk/Chunk;JJZ)V
-    .registers 22
+    .locals 15
 
     move-object v0, p0
 
@@ -1475,27 +1475,27 @@
 
     invoke-virtual/range {v3 .. v13}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadCanceled(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
 
-    if-nez p6, :cond_6b
+    if-nez p6, :cond_2
 
     .line 470
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_0
 
     .line 471
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->resetSampleQueues()V
 
-    goto :goto_66
+    goto :goto_0
 
     .line 472
-    :cond_49
+    :cond_0
     invoke-direct/range {p0 .. p1}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isMediaChunk(Landroidx/media3/exoplayer/source/chunk/Chunk;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_1
 
     .line 474
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -1515,7 +1515,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_1
 
     .line 476
     iget-wide v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
@@ -1523,18 +1523,18 @@
     iput-wide v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
     .line 479
-    :cond_66
-    :goto_66
+    :cond_1
+    :goto_0
     iget-object v1, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->callback:Landroidx/media3/exoplayer/source/SequenceableLoader$Callback;
 
     invoke-interface {v1, p0}, Landroidx/media3/exoplayer/source/SequenceableLoader$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_6b
+    :cond_2
     return-void
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 57
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -1545,7 +1545,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;JJ)V
-    .registers 21
+    .locals 15
 
     move-object v0, p0
 
@@ -1628,7 +1628,7 @@
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 57
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -1639,7 +1639,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/source/chunk/Chunk;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 38
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -1672,30 +1672,30 @@
 
     const/4 v11, 0x0
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_1
 
-    if-eqz v14, :cond_27
+    if-eqz v14, :cond_1
 
     .line 494
     invoke-direct {v0, v10}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->haveReadFromMediaChunk(I)Z
 
     move-result v2
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     move v8, v11
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     move v8, v15
 
     .line 495
-    :goto_28
+    :goto_1
     new-instance v9, Landroidx/media3/exoplayer/source/LoadEventInfo;
 
     iget-wide v3, v1, Landroidx/media3/exoplayer/source/chunk/Chunk;->loadTaskId:J
@@ -1787,14 +1787,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a6
+    if-eqz v2, :cond_4
 
-    if-eqz v15, :cond_9f
+    if-eqz v15, :cond_3
 
     .line 520
     sget-object v2, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    if-eqz v17, :cond_a7
+    if-eqz v17, :cond_5
 
     move/from16 v6, v29
 
@@ -1803,17 +1803,17 @@
 
     move-result-object v6
 
-    if-ne v6, v1, :cond_8e
+    if-ne v6, v1, :cond_2
 
     const/4 v11, 0x1
 
-    goto :goto_8f
+    goto :goto_2
 
-    :cond_8e
+    :cond_2
     const/4 v11, 0x0
 
     .line 523
-    :goto_8f
+    :goto_2
     invoke-static {v11}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 524
@@ -1823,16 +1823,16 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a7
+    if-eqz v6, :cond_5
 
     .line 525
     iget-wide v6, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
 
     iput-wide v6, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
-    goto :goto_a7
+    goto :goto_3
 
-    :cond_9f
+    :cond_3
     const-string v2, "ChunkSampleStream"
 
     const-string v6, "Ignoring attempt to cancel non-cancelable load."
@@ -1840,12 +1840,12 @@
     .line 529
     invoke-static {v2, v6}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_a6
+    :cond_4
     const/4 v2, 0x0
 
-    :cond_a7
-    :goto_a7
-    if-nez v2, :cond_c0
+    :cond_5
+    :goto_3
+    if-nez v2, :cond_7
 
     .line 535
     iget-object v2, v0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -1858,7 +1858,7 @@
 
     cmp-long v6, v2, v6
 
-    if-eqz v6, :cond_be
+    if-eqz v6, :cond_6
 
     const/4 v6, 0x0
 
@@ -1867,15 +1867,15 @@
 
     move-result-object v2
 
-    goto :goto_c0
+    goto :goto_4
 
     .line 539
-    :cond_be
+    :cond_6
     sget-object v2, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     .line 542
-    :cond_c0
-    :goto_c0
+    :cond_7
+    :goto_4
     invoke-virtual {v2}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v3
@@ -1925,7 +1925,7 @@
 
     invoke-virtual/range {v16 .. v28}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJLjava/io/IOException;Z)V
 
-    if-eqz v3, :cond_100
+    if-eqz v3, :cond_8
 
     const/4 v3, 0x0
 
@@ -1944,12 +1944,12 @@
 
     invoke-interface {v1, v0}, Landroidx/media3/exoplayer/source/SequenceableLoader$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_100
+    :cond_8
     return-object v2
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 57
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -1962,7 +1962,7 @@
 .end method
 
 .method public onLoaderReleased()V
-    .registers 5
+    .locals 4
 
     .line 354
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1976,8 +1976,8 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v1, :cond_13
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -1986,10 +1986,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 358
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->chunkSource:Landroidx/media3/exoplayer/source/chunk/ChunkSource;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/chunk/ChunkSource;->release()V
@@ -1997,17 +1997,17 @@
     .line 359
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->releaseCallback:Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$ReleaseCallback;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 360
     invoke-interface {v0, p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$ReleaseCallback;->onSampleStreamReleased(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)V
 
-    :cond_1f
+    :cond_1
     return-void
 .end method
 
 .method public readData(Landroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 7
+    .locals 3
 
     .line 383
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
@@ -2016,15 +2016,15 @@
 
     const/4 v1, -0x3
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 386
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->canceledMediaChunk:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     const/4 v2, 0x0
 
@@ -2040,12 +2040,12 @@
 
     move-result v2
 
-    if-gt v0, v2, :cond_1a
+    if-gt v0, v2, :cond_1
 
     return v1
 
     .line 393
-    :cond_1a
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->maybeNotifyPrimaryTrackFormatChanged()V
 
     .line 395
@@ -2061,7 +2061,7 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 6
+    .locals 3
 
     .line 647
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -2070,25 +2070,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_61
+    if-nez v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_61
+    goto :goto_0
 
     .line 651
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->isLoading()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_3
 
     .line 652
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadingChunk:Landroidx/media3/exoplayer/source/chunk/Chunk;
@@ -2104,7 +2104,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
 
@@ -2119,12 +2119,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_1
 
     return-void
 
     .line 658
-    :cond_34
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->chunkSource:Landroidx/media3/exoplayer/source/chunk/ChunkSource;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->readOnlyMediaChunks:Ljava/util/List;
@@ -2133,7 +2133,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_2
 
     .line 659
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -2145,18 +2145,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_2
 
     .line 661
     check-cast v0, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
     iput-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->canceledMediaChunk:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
-    :cond_4d
+    :cond_2
     return-void
 
     .line 667
-    :cond_4e
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->chunkSource:Landroidx/media3/exoplayer/source/chunk/ChunkSource;
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->readOnlyMediaChunks:Ljava/util/List;
@@ -2172,18 +2172,18 @@
 
     move-result p2
 
-    if-ge p1, p2, :cond_61
+    if-ge p1, p2, :cond_4
 
     .line 669
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->discardUpstream(I)V
 
-    :cond_61
-    :goto_61
+    :cond_4
+    :goto_0
     return-void
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -2194,7 +2194,7 @@
 .end method
 
 .method public release(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$ReleaseCallback;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2218,8 +2218,8 @@
 
     const/4 v1, 0x0
 
-    :goto_b
-    if-ge v1, v0, :cond_15
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     aget-object v2, p1, v1
 
@@ -2228,10 +2228,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 349
-    :cond_15
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1, p0}, Landroidx/media3/exoplayer/upstream/Loader;->release(Landroidx/media3/exoplayer/upstream/Loader$ReleaseCallback;)V
@@ -2240,7 +2240,7 @@
 .end method
 
 .method public seekToUs(J)V
-    .registers 11
+    .locals 8
 
     .line 260
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->lastSeekPositionUs:J
@@ -2250,27 +2250,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 263
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
     return-void
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 269
-    :goto_d
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_35
+    if-ge v1, v2, :cond_3
 
     .line 270
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->mediaChunks:Ljava/util/ArrayList;
@@ -2286,7 +2286,7 @@
 
     cmp-long v3, v3, p1
 
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_1
 
     .line 272
     iget-wide v4, v2, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->clippedStartTimeUs:J
@@ -2295,28 +2295,28 @@
 
     cmp-long v4, v4, v6
 
-    if-nez v4, :cond_2f
+    if-nez v4, :cond_1
 
-    goto :goto_36
+    goto :goto_2
 
-    :cond_2f
-    if-lez v3, :cond_32
+    :cond_1
+    if-lez v3, :cond_2
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_35
-    :goto_35
+    :cond_3
+    :goto_1
     const/4 v2, 0x0
 
-    :goto_36
+    :goto_2
     const/4 v1, 0x1
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_4
 
     .line 287
     iget-object v3, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -2329,10 +2329,10 @@
 
     move-result v2
 
-    goto :goto_55
+    goto :goto_4
 
     .line 289
-    :cond_44
+    :cond_4
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     .line 291
@@ -2342,23 +2342,23 @@
 
     cmp-long v3, p1, v3
 
-    if-gez v3, :cond_50
+    if-gez v3, :cond_5
 
     move v3, v1
 
-    goto :goto_51
+    goto :goto_3
 
-    :cond_50
+    :cond_5
     move v3, v0
 
     .line 290
-    :goto_51
+    :goto_3
     invoke-virtual {v2, p1, p2, v3}, Landroidx/media3/exoplayer/source/SampleQueue;->seekTo(JZ)Z
 
     move-result v2
 
-    :goto_55
-    if-eqz v2, :cond_70
+    :goto_4
+    if-eqz v2, :cond_6
 
     .line 296
     iget-object v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -2380,8 +2380,8 @@
 
     array-length v3, v2
 
-    :goto_66
-    if-ge v0, v3, :cond_a3
+    :goto_5
+    if-ge v0, v3, :cond_9
 
     aget-object v4, v2, v0
 
@@ -2390,10 +2390,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_66
+    goto :goto_5
 
     .line 305
-    :cond_70
+    :cond_6
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->pendingResetPositionUs:J
 
     .line 306
@@ -2414,7 +2414,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_9b
+    if-eqz p1, :cond_8
 
     .line 311
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
@@ -2426,8 +2426,8 @@
 
     array-length p2, p1
 
-    :goto_8b
-    if-ge v0, p2, :cond_95
+    :goto_6
+    if-ge v0, p2, :cond_7
 
     aget-object v1, p1, v0
 
@@ -2436,18 +2436,18 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8b
+    goto :goto_6
 
     .line 315
-    :cond_95
+    :cond_7
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    goto :goto_a3
+    goto :goto_7
 
     .line 317
-    :cond_9b
+    :cond_8
     iget-object p1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/upstream/Loader;->clearFatalError()V
@@ -2455,13 +2455,13 @@
     .line 318
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->resetSampleQueues()V
 
-    :cond_a3
-    :goto_a3
+    :cond_9
+    :goto_7
     return-void
 .end method
 
 .method public selectEmbeddedTrack(JI)Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JI)",
@@ -2473,19 +2473,19 @@
     const/4 v0, 0x0
 
     .line 199
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedSampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_2d
+    if-ge v0, v1, :cond_1
 
     .line 200
     iget-object v1, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTrackTypes:[I
 
     aget v1, v1, v0
 
-    if-ne v1, p3, :cond_2a
+    if-ne v1, p3, :cond_0
 
     .line 201
     iget-object p3, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->embeddedTracksSelected:[Z
@@ -2521,13 +2521,13 @@
 
     return-object p1
 
-    :cond_2a
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 208
-    :cond_2d
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -2536,7 +2536,7 @@
 .end method
 
 .method public skipData(J)I
-    .registers 6
+    .locals 3
 
     .line 400
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->isPendingReset()Z
@@ -2545,12 +2545,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 403
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->loadingFinished:Z
@@ -2562,7 +2562,7 @@
     .line 404
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->canceledMediaChunk:Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_1
 
     .line 408
     invoke-virtual {p2, v1}, Landroidx/media3/exoplayer/source/chunk/BaseMediaChunk;->getFirstSampleIndex(I)I
@@ -2584,7 +2584,7 @@
     move-result p1
 
     .line 412
-    :cond_23
+    :cond_1
     iget-object p2, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primarySampleQueue:Landroidx/media3/exoplayer/source/SampleQueue;
 
     invoke-virtual {p2, p1}, Landroidx/media3/exoplayer/source/SampleQueue;->skip(I)V

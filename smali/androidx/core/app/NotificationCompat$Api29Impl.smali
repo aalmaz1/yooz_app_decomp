@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 9568
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getAllowSystemGeneratedContextualActions(Landroid/app/Notification;)Z
-    .registers 1
+    .locals 0
 
     .line 9572
     invoke-virtual {p0}, Landroid/app/Notification;->getAllowSystemGeneratedContextualActions()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method static getBubbleMetadata(Landroid/app/Notification;)Landroid/app/Notification$BubbleMetadata;
-    .registers 1
+    .locals 0
 
     .line 9592
     invoke-virtual {p0}, Landroid/app/Notification;->getBubbleMetadata()Landroid/app/Notification$BubbleMetadata;
@@ -47,7 +47,7 @@
 .end method
 
 .method static getEditChoicesBeforeSending(Landroid/app/RemoteInput;)I
-    .registers 1
+    .locals 0
 
     .line 9587
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getEditChoicesBeforeSending()I
@@ -58,7 +58,7 @@
 .end method
 
 .method static getLocusId(Landroid/app/Notification;)Landroid/content/LocusId;
-    .registers 1
+    .locals 0
 
     .line 9577
     invoke-virtual {p0}, Landroid/app/Notification;->getLocusId()Landroid/content/LocusId;
@@ -69,7 +69,7 @@
 .end method
 
 .method static isContextual(Landroid/app/Notification$Action;)Z
-    .registers 1
+    .locals 0
 
     .line 9582
     invoke-virtual {p0}, Landroid/app/Notification$Action;->isContextual()Z

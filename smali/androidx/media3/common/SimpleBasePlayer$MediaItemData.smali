@@ -68,7 +68,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)V
-    .registers 11
+    .locals 9
 
     .line 1641
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -84,7 +84,7 @@
 
     const/4 v4, 0x0
 
-    if-nez v0, :cond_42
+    if-nez v0, :cond_3
 
     .line 1644
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$4800(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
@@ -93,16 +93,16 @@
 
     cmp-long v0, v5, v1
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     move v0, v3
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move v0, v4
 
-    :goto_1b
+    :goto_0
     const-string v5, "presentationStartTimeMs can only be set if liveConfiguration != null"
 
     .line 1643
@@ -115,16 +115,16 @@
 
     cmp-long v0, v5, v1
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     move v0, v3
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     move v0, v4
 
-    :goto_2b
+    :goto_1
     const-string/jumbo v5, "windowStartTimeMs can only be set if liveConfiguration != null"
 
     .line 1646
@@ -137,32 +137,32 @@
 
     cmp-long v0, v5, v1
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     move v0, v3
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_3b
+    :cond_2
     move v0, v4
 
-    :goto_3c
+    :goto_2
     const-string v5, "elapsedRealtimeEpochOffsetMs can only be set if liveConfiguration != null"
 
     .line 1649
     invoke-static {v0, v5}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    goto :goto_67
+    goto :goto_4
 
     .line 1652
-    :cond_42
+    :cond_3
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$4800(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
 
     move-result-wide v5
 
     cmp-long v0, v5, v1
 
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_5
 
     .line 1653
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$4900(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
@@ -171,7 +171,7 @@
 
     cmp-long v0, v5, v1
 
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_5
 
     .line 1655
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$4900(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
@@ -184,24 +184,24 @@
 
     cmp-long v0, v5, v7
 
-    if-ltz v0, :cond_60
+    if-ltz v0, :cond_4
 
     move v0, v3
 
-    goto :goto_61
+    goto :goto_3
 
-    :cond_60
+    :cond_4
     move v0, v4
 
-    :goto_61
+    :goto_3
     const-string/jumbo v5, "windowStartTimeMs can\'t be less than presentationStartTimeMs"
 
     .line 1654
     invoke-static {v0, v5}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 1658
-    :cond_67
-    :goto_67
+    :cond_5
+    :goto_4
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$5100(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -217,7 +217,7 @@
 
     cmp-long v1, v5, v1
 
-    if-eqz v1, :cond_8b
+    if-eqz v1, :cond_7
 
     .line 1661
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$5300(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)J
@@ -230,23 +230,23 @@
 
     cmp-long v1, v1, v5
 
-    if-gtz v1, :cond_85
+    if-gtz v1, :cond_6
 
     move v1, v3
 
-    goto :goto_86
+    goto :goto_5
 
-    :cond_85
+    :cond_6
     move v1, v4
 
-    :goto_86
+    :goto_5
     const-string v2, "defaultPositionUs can\'t be greater than durationUs"
 
     .line 1660
     invoke-static {v1, v2}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
     .line 1664
-    :cond_8b
+    :cond_7
     invoke-static {p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;->access$5400(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)Ljava/lang/Object;
 
     move-result-object v1
@@ -372,17 +372,17 @@
 
     move-result p1
 
-    if-nez p1, :cond_115
+    if-nez p1, :cond_8
 
     neg-long v1, v1
 
     .line 1682
     aput-wide v1, v5, v4
 
-    :goto_fc
+    :goto_6
     add-int/lit8 p1, v0, -0x1
 
-    if-ge v4, p1, :cond_115
+    if-ge v4, p1, :cond_8
 
     .line 1684
     iget-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periodPositionInWindowUs:[J
@@ -407,17 +407,17 @@
 
     move v4, v1
 
-    goto :goto_fc
+    goto :goto_6
 
     .line 1688
-    :cond_115
+    :cond_8
     iget-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
 
-    if-eqz p1, :cond_11a
+    if-eqz p1, :cond_9
 
-    goto :goto_122
+    goto :goto_7
 
-    :cond_11a
+    :cond_9
     iget-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->mediaItem:Landroidx/media3/common/MediaItem;
 
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->tracks:Landroidx/media3/common/Tracks;
@@ -426,14 +426,14 @@
 
     move-result-object p1
 
-    :goto_122
+    :goto_7
     iput-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->combinedMediaMetadata:Landroidx/media3/common/MediaMetadata;
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;Landroidx/media3/common/SimpleBasePlayer$1;)V
-    .registers 3
+    .locals 0
 
     .line 1239
     invoke-direct {p0, p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;-><init>(Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;)V
@@ -442,7 +442,7 @@
 .end method
 
 .method static synthetic access$4300(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1239
     invoke-direct {p0, p1}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->getPeriodUid(I)Ljava/lang/Object;
@@ -453,7 +453,7 @@
 .end method
 
 .method static synthetic access$4400(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
-    .registers 3
+    .locals 0
 
     .line 1239
     invoke-direct {p0, p1, p2}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->getWindow(ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
@@ -464,7 +464,7 @@
 .end method
 
 .method static synthetic access$4500(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;IILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 4
+    .locals 0
 
     .line 1239
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->getPeriod(IILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
@@ -475,7 +475,7 @@
 .end method
 
 .method static synthetic access$7100(Landroidx/media3/common/SimpleBasePlayer$MediaItemData;)Landroidx/media3/common/MediaMetadata;
-    .registers 1
+    .locals 0
 
     .line 1239
     iget-object p0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->combinedMediaMetadata:Landroidx/media3/common/MediaMetadata;
@@ -484,7 +484,7 @@
 .end method
 
 .method private static getCombinedMediaMetadata(Landroidx/media3/common/MediaItem;Landroidx/media3/common/Tracks;)Landroidx/media3/common/MediaMetadata;
-    .registers 11
+    .locals 9
 
     .line 1804
     new-instance v0, Landroidx/media3/common/MediaMetadata$Builder;
@@ -504,8 +504,8 @@
 
     move v3, v2
 
-    :goto_f
-    if-ge v3, v1, :cond_49
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     .line 1807
     invoke-virtual {p1}, Landroidx/media3/common/Tracks;->getGroups()Lcom/google/common/collect/ImmutableList;
@@ -521,17 +521,17 @@
     move v5, v2
 
     .line 1808
-    :goto_1c
+    :goto_1
     iget v6, v4, Landroidx/media3/common/Tracks$Group;->length:I
 
-    if-ge v5, v6, :cond_46
+    if-ge v5, v6, :cond_1
 
     .line 1809
     invoke-virtual {v4, v5}, Landroidx/media3/common/Tracks$Group;->isTrackSelected(I)Z
 
     move-result v6
 
-    if-eqz v6, :cond_43
+    if-eqz v6, :cond_0
 
     .line 1810
     invoke-virtual {v4, v5}, Landroidx/media3/common/Tracks$Group;->getTrackFormat(I)Landroidx/media3/common/Format;
@@ -541,19 +541,19 @@
     .line 1811
     iget-object v7, v6, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-eqz v7, :cond_43
+    if-eqz v7, :cond_0
 
     move v7, v2
 
     .line 1812
-    :goto_2f
+    :goto_2
     iget-object v8, v6, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
     invoke-virtual {v8}, Landroidx/media3/common/Metadata;->length()I
 
     move-result v8
 
-    if-ge v7, v8, :cond_43
+    if-ge v7, v8, :cond_0
 
     .line 1813
     iget-object v8, v6, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
@@ -566,20 +566,20 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_43
+    :cond_0
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_46
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 1819
-    :cond_49
+    :cond_2
     iget-object p0, p0, Landroidx/media3/common/MediaItem;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
 
     invoke-virtual {v0, p0}, Landroidx/media3/common/MediaMetadata$Builder;->populate(Landroidx/media3/common/MediaMetadata;)Landroidx/media3/common/MediaMetadata$Builder;
@@ -594,7 +594,7 @@
 .end method
 
 .method private getPeriod(IILandroidx/media3/common/Timeline$Period;)Landroidx/media3/common/Timeline$Period;
-    .registers 15
+    .locals 11
 
     .line 1770
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
@@ -603,7 +603,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 1771
     iget-object v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->uid:Ljava/lang/Object;
@@ -628,10 +628,10 @@
 
     invoke-virtual/range {v1 .. v10}, Landroidx/media3/common/Timeline$Period;->set(Ljava/lang/Object;Ljava/lang/Object;IJJLandroidx/media3/common/AdPlaybackState;Z)Landroidx/media3/common/Timeline$Period;
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 1780
-    :cond_1d
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p2}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -667,12 +667,12 @@
 
     invoke-virtual/range {v1 .. v10}, Landroidx/media3/common/Timeline$Period;->set(Ljava/lang/Object;Ljava/lang/Object;IJJLandroidx/media3/common/AdPlaybackState;Z)Landroidx/media3/common/Timeline$Period;
 
-    :goto_3c
+    :goto_0
     return-object p3
 .end method
 
 .method private getPeriodUid(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     .line 1796
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
@@ -681,7 +681,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 1797
     iget-object p1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->uid:Ljava/lang/Object;
@@ -689,7 +689,7 @@
     return-object p1
 
     .line 1799
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -711,7 +711,7 @@
 .end method
 
 .method private getWindow(ILandroidx/media3/common/Timeline$Window;)Landroidx/media3/common/Timeline$Window;
-    .registers 26
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -726,13 +726,13 @@
 
     const/16 v18, 0x1
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     move/from16 v19, v18
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     iget-object v2, v0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList;->size()I
@@ -742,7 +742,7 @@
     move/from16 v19, v2
 
     .line 1749
-    :goto_19
+    :goto_0
     iget-object v2, v0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->uid:Ljava/lang/Object;
 
     iget-object v3, v0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->mediaItem:Landroidx/media3/common/MediaItem;
@@ -800,7 +800,7 @@
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
-    .registers 3
+    .locals 2
 
     .line 1693
     new-instance v0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData$Builder;
@@ -813,26 +813,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 1701
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1704
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;
 
     .line 1705
@@ -844,7 +844,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->tracks:Landroidx/media3/common/Tracks;
 
@@ -855,7 +855,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->mediaItem:Landroidx/media3/common/MediaItem;
 
@@ -866,7 +866,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
 
@@ -877,7 +877,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->manifest:Ljava/lang/Object;
 
@@ -888,7 +888,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
@@ -899,7 +899,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->presentationStartTimeMs:J
 
@@ -907,7 +907,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_95
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->windowStartTimeMs:J
 
@@ -915,7 +915,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_95
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->elapsedRealtimeEpochOffsetMs:J
 
@@ -923,19 +923,19 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_95
+    if-nez v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->isSeekable:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->isSeekable:Z
 
-    if-ne v1, v3, :cond_95
+    if-ne v1, v3, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->isDynamic:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->isDynamic:Z
 
-    if-ne v1, v3, :cond_95
+    if-ne v1, v3, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->defaultPositionUs:J
 
@@ -943,7 +943,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_95
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->durationUs:J
 
@@ -951,7 +951,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_95
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->positionInFirstPeriodUs:J
 
@@ -959,13 +959,13 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_95
+    if-nez v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->isPlaceholder:Z
 
     iget-boolean v3, p1, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->isPlaceholder:Z
 
-    if-ne v1, v3, :cond_95
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->periods:Lcom/google/common/collect/ImmutableList;
 
@@ -976,19 +976,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_95
+    if-eqz p1, :cond_2
 
-    goto :goto_96
+    goto :goto_0
 
-    :cond_95
+    :cond_2
     move v0, v2
 
-    :goto_96
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 7
+    .locals 6
 
     .line 1726
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->uid:Ljava/lang/Object;
@@ -1030,18 +1030,18 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     invoke-virtual {v0}, Landroidx/media3/common/MediaMetadata;->hashCode()I
 
     move-result v0
 
-    :goto_28
+    :goto_0
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
@@ -1049,18 +1049,18 @@
     .line 1730
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->manifest:Ljava/lang/Object;
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_31
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_35
+    :goto_1
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
@@ -1068,16 +1068,16 @@
     .line 1731
     iget-object v0, p0, Landroidx/media3/common/SimpleBasePlayer$MediaItemData;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_2
 
-    goto :goto_41
+    goto :goto_2
 
-    :cond_3d
+    :cond_2
     invoke-virtual {v0}, Landroidx/media3/common/MediaItem$LiveConfiguration;->hashCode()I
 
     move-result v2
 
-    :goto_41
+    :goto_2
     add-int/2addr v1, v2
 
     mul-int/lit8 v1, v1, 0x1f

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/heifwriter/HeifWriter;)V
-    .registers 2
+    .locals 0
 
     .line 696
     iput-object p1, p0, Landroidx/heifwriter/HeifWriter$1;->this$0:Landroidx/heifwriter/HeifWriter;
@@ -36,16 +36,16 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 700
     :try_start_0
     iget-object v0, p0, Landroidx/heifwriter/HeifWriter$1;->this$0:Landroidx/heifwriter/HeifWriter;
 
     invoke-virtual {v0}, Landroidx/heifwriter/HeifWriter;->closeInternal()V
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_5
+    :catch_0
     return-void
 .end method

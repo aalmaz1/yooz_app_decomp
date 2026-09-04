@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroid/app/Notification;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILandroid/app/Notification;)V
-    .registers 4
+    .locals 0
 
     .line 323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

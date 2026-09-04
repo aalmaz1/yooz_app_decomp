@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;I)V
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;ILjava/lang/String;)V
-    .registers 4
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

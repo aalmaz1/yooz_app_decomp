@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>([J[JJ)V
-    .registers 7
+    .locals 2
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,12 +31,12 @@
 
     cmp-long p1, p3, v0
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 65
-    :cond_11
+    :cond_0
     array-length p1, p2
 
     add-int/lit8 p1, p1, -0x1
@@ -47,14 +47,14 @@
 
     move-result-wide p3
 
-    :goto_1a
+    :goto_0
     iput-wide p3, p0, Landroidx/media3/extractor/mp3/MlltSeeker;->durationUs:J
 
     return-void
 .end method
 
 .method public static create(JLandroidx/media3/extractor/metadata/id3/MlltFrame;J)Landroidx/media3/extractor/mp3/MlltSeeker;
-    .registers 14
+    .locals 9
 
     .line 37
     iget-object v0, p2, Landroidx/media3/extractor/metadata/id3/MlltFrame;->bytesDeviations:[I
@@ -81,8 +81,8 @@
 
     const/4 v3, 0x1
 
-    :goto_11
-    if-gt v3, v0, :cond_2e
+    :goto_0
+    if-gt v3, v0, :cond_0
 
     .line 45
     iget v6, p2, Landroidx/media3/extractor/metadata/id3/MlltFrame;->bytesBetweenReference:I
@@ -120,10 +120,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 50
-    :cond_2e
+    :cond_0
     new-instance p0, Landroidx/media3/extractor/mp3/MlltSeeker;
 
     invoke-direct {p0, v2, v1, p3, p4}, Landroidx/media3/extractor/mp3/MlltSeeker;-><init>([J[JJ)V
@@ -132,7 +132,7 @@
 .end method
 
 .method private static linearlyInterpolate(J[J[J)Landroid/util/Pair;
-    .registers 14
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J[J[J)",
@@ -161,7 +161,7 @@
     .line 112
     array-length v0, p2
 
-    if-ne v1, v0, :cond_1a
+    if-ne v1, v0, :cond_0
 
     .line 113
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -179,7 +179,7 @@
     return-object p0
 
     .line 115
-    :cond_1a
+    :cond_0
     aget-wide v6, p2, v1
 
     .line 116
@@ -187,13 +187,13 @@
 
     cmp-long v0, v6, v2
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     const-wide/16 v0, 0x0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     long-to-double v0, p0
 
     long-to-double v8, v2
@@ -206,7 +206,7 @@
 
     div-double/2addr v0, v2
 
-    :goto_2b
+    :goto_0
     sub-long/2addr p2, v4
 
     long-to-double p2, p2
@@ -236,7 +236,7 @@
 
 # virtual methods
 .method public getAverageBitrate()I
-    .registers 2
+    .locals 1
 
     const v0, -0x7fffffff
 
@@ -244,7 +244,7 @@
 .end method
 
 .method public getDataEndPosition()J
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -252,7 +252,7 @@
 .end method
 
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 92
     iget-wide v0, p0, Landroidx/media3/extractor/mp3/MlltSeeker;->durationUs:J
@@ -261,7 +261,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 9
+    .locals 6
 
     const-wide/16 v2, 0x0
 
@@ -322,7 +322,7 @@
 .end method
 
 .method public getTimeUs(J)J
-    .registers 5
+    .locals 2
 
     .line 85
     iget-object v0, p0, Landroidx/media3/extractor/mp3/MlltSeeker;->referencePositions:[J
@@ -351,7 +351,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

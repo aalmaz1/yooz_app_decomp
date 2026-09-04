@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public start()V
-    .registers 2
+    .locals 1
 
     .line 438
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;->mAvd:Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;
@@ -47,7 +47,7 @@
 .end method
 
 .method public stop()V
-    .registers 2
+    .locals 1
 
     .line 443
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedVectorDrawableTransition;->mAvd:Landroidx/vectordrawable/graphics/drawable/AnimatedVectorDrawableCompat;

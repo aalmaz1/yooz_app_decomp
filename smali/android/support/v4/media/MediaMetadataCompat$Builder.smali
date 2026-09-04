@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 665
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .registers 3
+    .locals 1
 
     .line 676
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Landroid/support/v4/media/MediaMetadataCompat;I)V
-    .registers 6
+    .locals 3
 
     .line 693
     invoke-direct {p0, p1}, Landroid/support/v4/media/MediaMetadataCompat$Builder;-><init>(Landroid/support/v4/media/MediaMetadataCompat;)V
@@ -73,13 +73,13 @@
 
     move-result-object p1
 
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -97,7 +97,7 @@
     .line 696
     instance-of v2, v1, Landroid/graphics/Bitmap;
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     .line 697
     check-cast v1, Landroid/graphics/Bitmap;
@@ -107,30 +107,30 @@
 
     move-result v2
 
-    if-gt v2, p2, :cond_31
+    if-gt v2, p2, :cond_1
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    if-le v2, p2, :cond_d
+    if-le v2, p2, :cond_0
 
     .line 699
-    :cond_31
+    :cond_1
     invoke-direct {p0, v1, p2}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->scaleBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     return-void
 .end method
 
 .method private scaleBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
-    .registers 5
+    .locals 2
 
     int-to-float p2, p2
 
@@ -192,7 +192,7 @@
 
 # virtual methods
 .method public build()Landroid/support/v4/media/MediaMetadataCompat;
-    .registers 3
+    .locals 2
 
     .line 874
     new-instance v0, Landroid/support/v4/media/MediaMetadataCompat;
@@ -205,7 +205,7 @@
 .end method
 
 .method public putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
-    .registers 5
+    .locals 2
 
     .line 858
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -214,7 +214,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 859
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -231,12 +231,12 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 860
-    :cond_18
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -264,8 +264,8 @@
     throw p2
 
     .line 864
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
@@ -274,7 +274,7 @@
 .end method
 
 .method public putLong(Ljava/lang/String;J)Landroid/support/v4/media/MediaMetadataCompat$Builder;
-    .registers 5
+    .locals 1
 
     .line 799
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -283,7 +283,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 800
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -298,12 +298,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 801
-    :cond_17
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -331,8 +331,8 @@
     throw p2
 
     .line 805
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
@@ -341,7 +341,7 @@
 .end method
 
 .method public putRating(Ljava/lang/String;Landroid/support/v4/media/RatingCompat;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
-    .registers 5
+    .locals 2
 
     .line 823
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -350,7 +350,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 824
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -367,12 +367,12 @@
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 825
-    :cond_18
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -400,8 +400,8 @@
     throw p2
 
     .line 832
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {p2}, Landroid/support/v4/media/RatingCompat;->getRating()Ljava/lang/Object;
@@ -416,7 +416,7 @@
 .end method
 
 .method public putString(Ljava/lang/String;Ljava/lang/String;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
-    .registers 5
+    .locals 2
 
     .line 769
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -425,7 +425,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 770
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -442,12 +442,12 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 771
-    :cond_18
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -475,8 +475,8 @@
     throw p2
 
     .line 775
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
@@ -485,7 +485,7 @@
 .end method
 
 .method public putText(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
-    .registers 5
+    .locals 2
 
     .line 732
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -494,7 +494,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 733
     sget-object v0, Landroid/support/v4/media/MediaMetadataCompat;->METADATA_KEYS_TYPE:Landroidx/collection/ArrayMap;
@@ -511,12 +511,12 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
-    goto :goto_33
+    goto :goto_0
 
     .line 734
-    :cond_18
+    :cond_0
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -544,8 +544,8 @@
     throw p2
 
     .line 738
-    :cond_33
-    :goto_33
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V

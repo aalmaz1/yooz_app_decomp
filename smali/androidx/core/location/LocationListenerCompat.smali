@@ -8,13 +8,13 @@
 
 # virtual methods
 .method public onFlushComplete(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onLocationChanged(Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -31,8 +31,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, v0, :cond_13
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 46
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -45,26 +45,26 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public onProviderDisabled(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onProviderEnabled(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method

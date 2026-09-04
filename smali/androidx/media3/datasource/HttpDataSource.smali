@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 180
     new-instance v0, Landroidx/media3/datasource/HttpDataSource$$ExternalSyntheticLambda0;
@@ -47,16 +47,16 @@
 .end method
 
 .method public static synthetic lambda$static$0(Ljava/lang/String;)Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     return v0
 
     .line 185
-    :cond_4
+    :cond_0
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -66,7 +66,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_2
 
     const-string v1, "text"
 
@@ -75,7 +75,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     const-string v1, "text/vtt"
 
@@ -83,9 +83,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
-    :cond_1e
+    :cond_1
     const-string v1, "html"
 
     .line 188
@@ -93,7 +93,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_2
 
     const-string/jumbo v1, "xml"
 
@@ -102,11 +102,11 @@
 
     move-result p0
 
-    if-nez p0, :cond_30
+    if-nez p0, :cond_2
 
     const/4 v0, 0x1
 
-    :cond_30
+    :cond_2
     return v0
 .end method
 

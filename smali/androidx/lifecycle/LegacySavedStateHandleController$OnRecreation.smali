@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public onRecreated(Landroidx/savedstate/SavedStateRegistryOwner;)V
-    .registers 7
+    .locals 5
 
     const-string v0, "owner"
 
@@ -62,7 +62,7 @@
     .line 78
     instance-of v0, p1, Landroidx/lifecycle/ViewModelStoreOwner;
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_2
 
     .line 82
     move-object v0, p1
@@ -87,12 +87,12 @@
 
     move-result-object v2
 
-    :goto_1c
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_37
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -114,10 +114,10 @@
 
     invoke-static {v3, v1, v4}, Landroidx/lifecycle/LegacySavedStateHandleController;->attachHandleIfNeeded(Landroidx/lifecycle/ViewModel;Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;)V
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 88
-    :cond_37
+    :cond_0
     invoke-virtual {v0}, Landroidx/lifecycle/ViewModelStore;->keys()Ljava/util/Set;
 
     move-result-object p1
@@ -130,18 +130,18 @@
 
     xor-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_1
 
     .line 89
     const-class p1, Landroidx/lifecycle/LegacySavedStateHandleController$OnRecreation;
 
     invoke-virtual {v1, p1}, Landroidx/savedstate/SavedStateRegistry;->runOnNextRecreation(Ljava/lang/Class;)V
 
-    :cond_4a
+    :cond_1
     return-void
 
     .line 78
-    :cond_4b
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner"

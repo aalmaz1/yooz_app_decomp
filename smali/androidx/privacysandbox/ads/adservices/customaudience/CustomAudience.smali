@@ -100,7 +100,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;Ljava/util/List;Ljava/time/Instant;Ljava/time/Instant;Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;)V
-    .registers 11
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,7 +173,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;Ljava/util/List;Ljava/time/Instant;Ljava/time/Instant;Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 25
+    .locals 13
 
     move/from16 v0, p10
 
@@ -181,52 +181,52 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     move-object v9, v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move-object/from16 v9, p6
 
-    :goto_b
+    :goto_0
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_1
 
     move-object v10, v2
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_11
+    :cond_1
     move-object/from16 v10, p7
 
-    :goto_13
+    :goto_1
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_2
 
     move-object v11, v2
 
-    goto :goto_1b
+    goto :goto_2
 
-    :cond_19
+    :cond_2
     move-object/from16 v11, p8
 
-    :goto_1b
+    :goto_2
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_3
 
     move-object v12, v2
 
-    goto :goto_23
+    goto :goto_3
 
-    :cond_21
+    :cond_3
     move-object/from16 v12, p9
 
-    :goto_23
+    :goto_3
     move-object v3, p0
 
     move-object v4, p1
@@ -248,26 +248,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 68
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 69
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->buyer:Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;
@@ -278,7 +278,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 70
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->name:Ljava/lang/String;
@@ -289,7 +289,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 71
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->activationTime:Ljava/time/Instant;
@@ -300,7 +300,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 72
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->expirationTime:Ljava/time/Instant;
@@ -311,7 +311,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 73
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->dailyUpdateUri:Landroid/net/Uri;
@@ -322,7 +322,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 74
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->userBiddingSignals:Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;
@@ -333,7 +333,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 75
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->trustedBiddingSignals:Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;
@@ -344,7 +344,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_2
 
     .line 76
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->ads:Ljava/util/List;
@@ -355,19 +355,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5d
+    if-eqz p1, :cond_2
 
-    goto :goto_5e
+    goto :goto_0
 
-    :cond_5d
+    :cond_2
     move v0, v2
 
-    :goto_5e
+    :goto_0
     return v0
 .end method
 
 .method public final getActivationTime()Ljava/time/Instant;
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->activationTime:Ljava/time/Instant;
@@ -376,7 +376,7 @@
 .end method
 
 .method public final getAds()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -393,7 +393,7 @@
 .end method
 
 .method public final getBiddingLogicUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 55
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->biddingLogicUri:Landroid/net/Uri;
@@ -402,7 +402,7 @@
 .end method
 
 .method public final getBuyer()Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->buyer:Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
@@ -411,7 +411,7 @@
 .end method
 
 .method public final getDailyUpdateUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->dailyUpdateUri:Landroid/net/Uri;
@@ -420,7 +420,7 @@
 .end method
 
 .method public final getExpirationTime()Ljava/time/Instant;
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->expirationTime:Ljava/time/Instant;
@@ -429,7 +429,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 53
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->name:Ljava/lang/String;
@@ -438,7 +438,7 @@
 .end method
 
 .method public final getTrustedBiddingSignals()Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;
-    .registers 2
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->trustedBiddingSignals:Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;
@@ -447,7 +447,7 @@
 .end method
 
 .method public final getUserBiddingSignals()Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->userBiddingSignals:Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;
@@ -456,7 +456,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 83
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->buyer:Landroidx/privacysandbox/ads/adservices/common/AdTechIdentifier;
@@ -483,18 +483,18 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move v1, v2
 
-    :goto_1c
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -502,18 +502,18 @@
     .line 86
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->expirationTime:Ljava/time/Instant;
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
+    :cond_1
     move v1, v2
 
-    :goto_29
+    :goto_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -532,18 +532,18 @@
     .line 88
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->userBiddingSignals:Landroidx/privacysandbox/ads/adservices/common/AdSelectionSignals;
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    goto :goto_3f
+    goto :goto_2
 
-    :cond_3e
+    :cond_2
     move v1, v2
 
-    :goto_3f
+    :goto_2
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -551,13 +551,13 @@
     .line 89
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/customaudience/CustomAudience;->trustedBiddingSignals:Landroidx/privacysandbox/ads/adservices/customaudience/TrustedBiddingData;
 
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_3
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    :cond_4a
+    :cond_3
     add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
@@ -586,7 +586,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 96
     new-instance v0, Ljava/lang/StringBuilder;

@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/audio/AudioSink;)V
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public configure(Landroidx/media3/common/Format;I[I)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/audio/AudioSink$ConfigurationException;
@@ -42,7 +42,7 @@
 .end method
 
 .method public disableTunneling()V
-    .registers 2
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -53,7 +53,7 @@
 .end method
 
 .method public enableTunnelingV21()V
-    .registers 2
+    .locals 1
 
     .line 167
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -64,7 +64,7 @@
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
 
     .line 199
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -75,7 +75,7 @@
 .end method
 
 .method public getAudioAttributes()Landroidx/media3/common/AudioAttributes;
-    .registers 2
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -88,7 +88,7 @@
 .end method
 
 .method public getCurrentPositionUs(Z)J
-    .registers 4
+    .locals 2
 
     .line 72
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -101,7 +101,7 @@
 .end method
 
 .method public getFormatOffloadSupport(Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/audio/AudioOffloadSupport;
-    .registers 3
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -114,7 +114,7 @@
 .end method
 
 .method public getFormatSupport(Landroidx/media3/common/Format;)I
-    .registers 3
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -127,7 +127,7 @@
 .end method
 
 .method public getPlaybackParameters()Landroidx/media3/common/PlaybackParameters;
-    .registers 2
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -140,7 +140,7 @@
 .end method
 
 .method public getSkipSilenceEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -153,7 +153,7 @@
 .end method
 
 .method public handleBuffer(Ljava/nio/ByteBuffer;JI)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;,
@@ -172,7 +172,7 @@
 .end method
 
 .method public handleDiscontinuity()V
-    .registers 2
+    .locals 1
 
     .line 88
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -183,7 +183,7 @@
 .end method
 
 .method public hasPendingData()Z
-    .registers 2
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -196,7 +196,7 @@
 .end method
 
 .method public isEnded()Z
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -209,7 +209,7 @@
 .end method
 
 .method public pause()V
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -220,7 +220,7 @@
 .end method
 
 .method public play()V
-    .registers 2
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -231,7 +231,7 @@
 .end method
 
 .method public playToEndOfStream()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/audio/AudioSink$WriteException;
@@ -247,7 +247,7 @@
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -258,7 +258,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 204
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -269,7 +269,7 @@
 .end method
 
 .method public setAudioAttributes(Landroidx/media3/common/AudioAttributes;)V
-    .registers 3
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -280,7 +280,7 @@
 .end method
 
 .method public setAudioSessionId(I)V
-    .registers 3
+    .locals 1
 
     .line 146
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -291,7 +291,7 @@
 .end method
 
 .method public setAuxEffectInfo(Landroidx/media3/common/AuxEffectInfo;)V
-    .registers 3
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -302,7 +302,7 @@
 .end method
 
 .method public setClock(Landroidx/media3/common/util/Clock;)V
-    .registers 3
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -313,7 +313,7 @@
 .end method
 
 .method public setListener(Landroidx/media3/exoplayer/audio/AudioSink$Listener;)V
-    .registers 3
+    .locals 1
 
     .line 42
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -324,7 +324,7 @@
 .end method
 
 .method public setOffloadDelayPadding(II)V
-    .registers 4
+    .locals 1
 
     .line 184
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -335,7 +335,7 @@
 .end method
 
 .method public setOffloadMode(I)V
-    .registers 3
+    .locals 1
 
     .line 178
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -346,7 +346,7 @@
 .end method
 
 .method public setOutputStreamOffsetUs(J)V
-    .registers 4
+    .locals 1
 
     .line 162
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -357,7 +357,7 @@
 .end method
 
 .method public setPlaybackParameters(Landroidx/media3/common/PlaybackParameters;)V
-    .registers 3
+    .locals 1
 
     .line 115
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -368,7 +368,7 @@
 .end method
 
 .method public setPlayerId(Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 3
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -379,7 +379,7 @@
 .end method
 
 .method public setPreferredDevice(Landroid/media/AudioDeviceInfo;)V
-    .registers 3
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -390,7 +390,7 @@
 .end method
 
 .method public setSkipSilenceEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -401,7 +401,7 @@
 .end method
 
 .method public setVolume(F)V
-    .registers 3
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;
@@ -412,7 +412,7 @@
 .end method
 
 .method public supportsFormat(Landroidx/media3/common/Format;)Z
-    .registers 3
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/ForwardingAudioSink;->sink:Landroidx/media3/exoplayer/audio/AudioSink;

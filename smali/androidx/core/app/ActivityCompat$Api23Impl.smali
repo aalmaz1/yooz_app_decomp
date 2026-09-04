@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 898
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static onSharedElementsReady(Ljava/lang/Object;)V
-    .registers 1
+    .locals 0
 
     .line 914
     check-cast p0, Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;
@@ -37,7 +37,7 @@
 .end method
 
 .method static requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
 
     .line 904
     invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
@@ -46,7 +46,7 @@
 .end method
 
 .method static shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 909
     invoke-virtual {p0, p1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z

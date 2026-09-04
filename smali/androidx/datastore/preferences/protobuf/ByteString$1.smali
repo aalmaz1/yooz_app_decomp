@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 3
+    .locals 1
 
     .line 166
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/ByteString$1;->this$0:Landroidx/datastore/preferences/protobuf/ByteString;
@@ -49,28 +49,28 @@
 
 # virtual methods
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 172
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$1;->position:I
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$1;->limit:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public nextByte()B
-    .registers 3
+    .locals 2
 
     .line 177
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$1;->position:I
@@ -78,7 +78,7 @@
     .line 178
     iget v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$1;->limit:I
 
-    if-ge v0, v1, :cond_11
+    if-ge v0, v1, :cond_0
 
     add-int/lit8 v1, v0, 0x1
 
@@ -95,7 +95,7 @@
     return v0
 
     .line 179
-    :cond_11
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isUserUnlocked(Landroid/content/Context;)Z
-    .registers 2
+    .locals 1
 
     .line 58
     const-class v0, Landroid/os/UserManager;

@@ -37,7 +37,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/loader/content/AsyncTaskLoader;)V
-    .registers 3
+    .locals 1
 
     .line 48
     iput-object p1, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->this$0:Landroidx/loader/content/AsyncTaskLoader;
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 48
     check-cast p1, [Ljava/lang/Void;
@@ -72,7 +72,7 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -88,12 +88,12 @@
     invoke-virtual {p1}, Landroidx/loader/content/AsyncTaskLoader;->onLoadInBackground()Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_6
-    .catch Landroidx/core/os/OperationCanceledException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroidx/core/os/OperationCanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 64
@@ -101,19 +101,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 71
-    :cond_10
+    :cond_0
     throw p1
 .end method
 
 .method protected onCancelled(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TD;)V"
@@ -125,8 +125,8 @@
     iget-object v0, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->this$0:Landroidx/loader/content/AsyncTaskLoader;
 
     invoke-virtual {v0, p0, p1}, Landroidx/loader/content/AsyncTaskLoader;->dispatchOnCancelled(Landroidx/loader/content/AsyncTaskLoader$LoadTask;Ljava/lang/Object;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 96
     iget-object p1, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->mDone:Ljava/util/concurrent/CountDownLatch;
@@ -135,7 +135,7 @@
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     iget-object v0, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->mDone:Ljava/util/concurrent/CountDownLatch;
@@ -146,7 +146,7 @@
 .end method
 
 .method protected onPostExecute(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TD;)V"
@@ -158,8 +158,8 @@
     iget-object v0, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->this$0:Landroidx/loader/content/AsyncTaskLoader;
 
     invoke-virtual {v0, p0, p1}, Landroidx/loader/content/AsyncTaskLoader;->dispatchOnLoadComplete(Landroidx/loader/content/AsyncTaskLoader$LoadTask;Ljava/lang/Object;)V
-    :try_end_5
-    .catchall {:try_start_0 .. :try_end_5} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 85
     iget-object p1, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->mDone:Ljava/util/concurrent/CountDownLatch;
@@ -168,7 +168,7 @@
 
     return-void
 
-    :catchall_b
+    :catchall_0
     move-exception p1
 
     iget-object v0, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->mDone:Ljava/util/concurrent/CountDownLatch;
@@ -179,7 +179,7 @@
 .end method
 
 .method public run()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -195,16 +195,16 @@
 .end method
 
 .method public waitForLoader()V
-    .registers 2
+    .locals 1
 
     .line 111
     :try_start_0
     iget-object v0, p0, Landroidx/loader/content/AsyncTaskLoader$LoadTask;->mDone:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
-    :try_end_5
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_5} :catch_5
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_5
+    :catch_0
     return-void
 .end method

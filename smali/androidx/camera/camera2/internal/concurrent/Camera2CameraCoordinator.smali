@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/camera2/internal/compat/CameraManagerCompat;)V
-    .registers 3
+    .locals 1
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 .end method
 
 .method private static createCameraSelectorById(Landroidx/camera/camera2/internal/compat/CameraManagerCompat;Ljava/lang/String;)Landroidx/camera/core/CameraSelector;
-    .registers 4
+    .locals 2
 
     .line 181
     new-instance v0, Landroidx/camera/core/CameraSelector$Builder;
@@ -126,7 +126,7 @@
     move-result-object v0
 
     .line 194
-    :try_start_e
+    :try_start_0
     invoke-virtual {p0, p1}, Landroidx/camera/camera2/internal/compat/CameraManagerCompat;->getCameraCharacteristicsCompat(Ljava/lang/String;)Landroidx/camera/camera2/internal/compat/CameraCharacteristicsCompat;
 
     move-result-object p0
@@ -146,8 +146,8 @@
     move-result p0
 
     invoke-virtual {v0, p0}, Landroidx/camera/core/CameraSelector$Builder;->requireLensFacing(I)Landroidx/camera/core/CameraSelector$Builder;
-    :try_end_21
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_e .. :try_end_21} :catch_26
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 202
     invoke-virtual {v0}, Landroidx/camera/core/CameraSelector$Builder;->build()Landroidx/camera/core/CameraSelector;
@@ -156,7 +156,7 @@
 
     return-object p0
 
-    :catch_26
+    :catch_0
     move-exception p0
 
     .line 199
@@ -168,19 +168,19 @@
 .end method
 
 .method static synthetic lambda$createCameraSelectorById$0(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .registers 4
+    .locals 2
 
     .line 183
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_4
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -201,7 +201,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_0
 
     .line 185
     invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -211,7 +211,7 @@
     return-object p0
 
     .line 189
-    :cond_23
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -234,7 +234,7 @@
 .end method
 
 .method private retrieveConcurrentCameraIds()V
-    .registers 9
+    .locals 8
 
     .line 154
     :try_start_0
@@ -245,12 +245,12 @@
     move-result-object v0
 
     iput-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIds:Ljava/util/Set;
-    :try_end_8
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :catch_9
+    :catch_0
     const-string v0, "Camera2CameraCoordinator"
 
     const-string v1, "Failed to get concurrent camera ids"
@@ -259,20 +259,20 @@
     invoke-static {v0, v1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 159
-    :goto_10
+    :goto_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIds:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_16
-    :goto_16
+    :cond_0
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -292,7 +292,7 @@
 
     const/4 v3, 0x2
 
-    if-lt v1, v3, :cond_16
+    if-lt v1, v3, :cond_0
 
     const/4 v1, 0x0
 
@@ -319,7 +319,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_4e
+    if-nez v6, :cond_1
 
     .line 166
     iget-object v6, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIdMap:Ljava/util/Map;
@@ -331,14 +331,14 @@
     invoke-interface {v6, v3, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 168
-    :cond_4e
+    :cond_1
     iget-object v6, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIdMap:Ljava/util/Map;
 
     invoke-interface {v6, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_60
+    if-nez v6, :cond_2
 
     .line 169
     iget-object v6, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIdMap:Ljava/util/Map;
@@ -350,7 +350,7 @@
     invoke-interface {v6, v5, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 171
-    :cond_60
+    :cond_2
     iget-object v6, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIdMap:Ljava/util/Map;
 
     invoke-interface {v6, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -384,16 +384,16 @@
 
     invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_83
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public addListener(Landroidx/camera/core/concurrent/CameraCoordinator$ConcurrentCameraModeListener;)V
-    .registers 3
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraModeListeners:Ljava/util/List;
@@ -404,7 +404,7 @@
 .end method
 
 .method public getActiveConcurrentCameraInfos()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -421,7 +421,7 @@
 .end method
 
 .method public getCameraOperatingMode()I
-    .registers 2
+    .locals 1
 
     .line 113
     iget v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mCameraOperatingMode:I
@@ -430,7 +430,7 @@
 .end method
 
 .method public getConcurrentCameraSelectors()Ljava/util/List;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -453,12 +453,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -476,12 +476,12 @@
 
     move-result-object v2
 
-    :goto_20
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -498,20 +498,20 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_20
+    goto :goto_1
 
     .line 77
-    :cond_36
+    :cond_0
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_3a
+    :cond_1
     return-object v0
 .end method
 
 .method public getPairedConcurrentCameraId(Ljava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     .line 97
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIdMap:Ljava/util/Map;
@@ -522,12 +522,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 100
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraIdMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -540,12 +540,12 @@
 
     move-result-object p1
 
-    :cond_16
+    :cond_1
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_3
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -560,12 +560,12 @@
 
     move-result-object v2
 
-    :cond_28
+    :cond_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -586,16 +586,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_2
 
     return-object v0
 
-    :cond_43
+    :cond_3
     return-object v1
 .end method
 
 .method public removeListener(Landroidx/camera/core/concurrent/CameraCoordinator$ConcurrentCameraModeListener;)V
-    .registers 3
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraModeListeners:Ljava/util/List;
@@ -606,7 +606,7 @@
 .end method
 
 .method public setActiveConcurrentCameraInfos(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -627,12 +627,12 @@
 .end method
 
 .method public setCameraOperatingMode(I)V
-    .registers 5
+    .locals 3
 
     .line 118
     iget v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mCameraOperatingMode:I
 
-    if-eq p1, v0, :cond_1c
+    if-eq p1, v0, :cond_0
 
     .line 119
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraModeListeners:Ljava/util/List;
@@ -641,12 +641,12 @@
 
     move-result-object v0
 
-    :goto_a
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -659,17 +659,17 @@
 
     invoke-interface {v1, v2, p1}, Landroidx/camera/core/concurrent/CameraCoordinator$ConcurrentCameraModeListener;->onCameraOperatingModeUpdated(II)V
 
-    goto :goto_a
+    goto :goto_0
 
     .line 126
-    :cond_1c
+    :cond_0
     iget v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mCameraOperatingMode:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_28
+    if-ne v0, v1, :cond_1
 
-    if-eq p1, v1, :cond_28
+    if-eq p1, v1, :cond_1
 
     .line 128
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mActiveConcurrentCameraInfos:Ljava/util/List;
@@ -677,14 +677,14 @@
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     .line 130
-    :cond_28
+    :cond_1
     iput p1, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mCameraOperatingMode:I
 
     return-void
 .end method
 
 .method public shutdown()V
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/camera/camera2/internal/concurrent/Camera2CameraCoordinator;->mConcurrentCameraModeListeners:Ljava/util/List;

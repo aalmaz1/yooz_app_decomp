@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 60
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -54,7 +54,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const-string v0, "EventLogger"
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/trackselection/MappingTrackSelector;)V
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/trackselection/MappingTrackSelector;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -89,7 +89,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -122,7 +122,7 @@
 .end method
 
 .method private static getAudioTrackConfigString(Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 775
     new-instance v0, Ljava/lang/StringBuilder;
@@ -195,65 +195,65 @@
 .end method
 
 .method private static getDiscontinuityReasonString(I)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
-    packed-switch p0, :pswitch_data_1c
+    packed-switch p0, :pswitch_data_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :pswitch_6
+    :pswitch_0
     const-string p0, "SILENCE_SKIP"
 
     return-object p0
 
-    :pswitch_9
+    :pswitch_1
     const-string p0, "INTERNAL"
 
     return-object p0
 
-    :pswitch_c
+    :pswitch_2
     const-string p0, "REMOVE"
 
     return-object p0
 
-    :pswitch_f
+    :pswitch_3
     const-string p0, "SKIP"
 
     return-object p0
 
-    :pswitch_12
+    :pswitch_4
     const-string p0, "SEEK_ADJUSTMENT"
 
     return-object p0
 
-    :pswitch_15
+    :pswitch_5
     const-string p0, "SEEK"
 
     return-object p0
 
-    :pswitch_18
+    :pswitch_6
     const-string p0, "AUTO_TRANSITION"
 
     return-object p0
 
     nop
 
-    :pswitch_data_1c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
-        :pswitch_15
-        :pswitch_12
-        :pswitch_f
-        :pswitch_c
-        :pswitch_9
         :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private getEventString(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
-    .registers 6
+    .locals 1
 
     .line 627
     new-instance v0, Ljava/lang/StringBuilder;
@@ -285,7 +285,7 @@
     .line 628
     instance-of p2, p4, Landroidx/media3/common/PlaybackException;
 
-    if-eqz p2, :cond_3d
+    if-eqz p2, :cond_0
 
     .line 629
     new-instance p2, Ljava/lang/StringBuilder;
@@ -318,8 +318,8 @@
 
     move-result-object p1
 
-    :cond_3d
-    if-eqz p3, :cond_56
+    :cond_0
+    if-eqz p3, :cond_1
 
     .line 632
     new-instance p2, Ljava/lang/StringBuilder;
@@ -345,7 +345,7 @@
     move-result-object p1
 
     .line 634
-    :cond_56
+    :cond_1
     invoke-static {p4}, Landroidx/media3/common/util/Log;->getThrowableString(Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object p2
@@ -355,7 +355,7 @@
 
     move-result p3
 
-    if-nez p3, :cond_83
+    if-nez p3, :cond_2
 
     .line 636
     new-instance p3, Ljava/lang/StringBuilder;
@@ -393,7 +393,7 @@
     move-result-object p1
 
     .line 638
-    :cond_83
+    :cond_2
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -416,7 +416,7 @@
 .end method
 
 .method private getEventTimeString(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)Ljava/lang/String;
-    .registers 8
+    .locals 6
 
     .line 643
     new-instance v0, Ljava/lang/StringBuilder;
@@ -438,7 +438,7 @@
     .line 644
     iget-object v1, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
 
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_0
 
     .line 645
     new-instance v1, Ljava/lang/StringBuilder;
@@ -481,7 +481,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_0
 
     .line 648
     new-instance v1, Ljava/lang/StringBuilder;
@@ -538,7 +538,7 @@
     move-result-object v0
 
     .line 652
-    :cond_75
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "eventTime="
@@ -595,216 +595,216 @@
 .end method
 
 .method private static getMediaItemTransitionReasonString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_17
+    if-eqz p0, :cond_3
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_14
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_11
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_e
+    if-eq p0, v0, :cond_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :cond_e
+    :cond_0
     const-string p0, "PLAYLIST_CHANGED"
 
     return-object p0
 
-    :cond_11
+    :cond_1
     const-string p0, "SEEK"
 
     return-object p0
 
-    :cond_14
+    :cond_2
     const-string p0, "AUTO"
 
     return-object p0
 
-    :cond_17
+    :cond_3
     const-string p0, "REPEAT"
 
     return-object p0
 .end method
 
 .method private static getPlayWhenReadyChangeReasonString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1e
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_1b
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x5
 
-    if-eq p0, v0, :cond_12
+    if-eq p0, v0, :cond_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :cond_12
+    :cond_0
     const-string p0, "END_OF_MEDIA_ITEM"
 
     return-object p0
 
-    :cond_15
+    :cond_1
     const-string p0, "REMOTE"
 
     return-object p0
 
-    :cond_18
+    :cond_2
     const-string p0, "AUDIO_BECOMING_NOISY"
 
     return-object p0
 
-    :cond_1b
+    :cond_3
     const-string p0, "AUDIO_FOCUS_LOSS"
 
     return-object p0
 
-    :cond_1e
+    :cond_4
     const-string p0, "USER_REQUEST"
 
     return-object p0
 .end method
 
 .method private static getPlaybackSuppressionReasonString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_8
+    if-eq p0, v0, :cond_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :cond_8
+    :cond_0
     const-string p0, "TRANSIENT_AUDIO_FOCUS_LOSS"
 
     return-object p0
 
-    :cond_b
+    :cond_1
     const-string p0, "NONE"
 
     return-object p0
 .end method
 
 .method private static getRepeatModeString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_e
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_b
+    if-eq p0, v0, :cond_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const-string p0, "ALL"
 
     return-object p0
 
-    :cond_e
+    :cond_1
     const-string p0, "ONE"
 
     return-object p0
 
-    :cond_11
+    :cond_2
     const-string p0, "OFF"
 
     return-object p0
 .end method
 
 .method private static getStateString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_18
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_15
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_12
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_f
+    if-eq p0, v0, :cond_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :cond_f
+    :cond_0
     const-string p0, "ENDED"
 
     return-object p0
 
-    :cond_12
+    :cond_1
     const-string p0, "READY"
 
     return-object p0
 
-    :cond_15
+    :cond_2
     const-string p0, "BUFFERING"
 
     return-object p0
 
-    :cond_18
+    :cond_3
     const-string p0, "IDLE"
 
     return-object p0
 .end method
 
 .method private static getTimeString(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const-string p0, "?"
 
-    goto :goto_17
+    goto :goto_0
 
     .line 661
-    :cond_c
+    :cond_0
     sget-object v0, Landroidx/media3/exoplayer/util/EventLogger;->TIME_FORMAT:Ljava/text/NumberFormat;
 
     long-to-float p0, p0
@@ -819,52 +819,52 @@
 
     move-result-object p0
 
-    :goto_17
+    :goto_0
     return-object p0
 .end method
 
 .method private static getTimelineChangeReasonString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_8
+    if-eq p0, v0, :cond_0
 
     const-string p0, "?"
 
     return-object p0
 
-    :cond_8
+    :cond_0
     const-string p0, "SOURCE_UPDATE"
 
     return-object p0
 
-    :cond_b
+    :cond_1
     const-string p0, "PLAYLIST_CHANGED"
 
     return-object p0
 .end method
 
 .method private static getTrackStatusString(Z)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     const-string p0, "[X]"
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const-string p0, "[ ]"
 
-    :goto_7
+    :goto_0
     return-object p0
 .end method
 
 .method private logd(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -879,7 +879,7 @@
 .end method
 
 .method private logd(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -894,7 +894,7 @@
 .end method
 
 .method private loge(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 0
 
     .line 609
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/media3/exoplayer/util/EventLogger;->getEventString(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
@@ -907,7 +907,7 @@
 .end method
 
 .method private loge(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -922,7 +922,7 @@
 .end method
 
 .method private printInternalError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;Ljava/lang/Exception;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "internalError"
 
@@ -933,17 +933,17 @@
 .end method
 
 .method private printMetadata(Landroidx/media3/common/Metadata;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 617
-    :goto_1
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/Metadata;->length()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_22
+    if-ge v0, v1, :cond_0
 
     .line 618
     new-instance v1, Ljava/lang/StringBuilder;
@@ -970,16 +970,16 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method protected logd(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 577
     iget-object v0, p0, Landroidx/media3/exoplayer/util/EventLogger;->tag:Ljava/lang/String;
@@ -990,7 +990,7 @@
 .end method
 
 .method protected loge(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 587
     iget-object v0, p0, Landroidx/media3/exoplayer/util/EventLogger;->tag:Ljava/lang/String;
@@ -1001,7 +1001,7 @@
 .end method
 
 .method public onAudioAttributesChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/AudioAttributes;)V
-    .registers 6
+    .locals 3
 
     .line 386
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1058,7 +1058,7 @@
 .end method
 
 .method public onAudioDecoderInitialized(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;JJ)V
-    .registers 7
+    .locals 0
 
     const-string p3, "audioDecoderInitialized"
 
@@ -1069,7 +1069,7 @@
 .end method
 
 .method public onAudioDecoderReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "audioDecoderReleased"
 
@@ -1080,7 +1080,7 @@
 .end method
 
 .method public onAudioDisabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 0
 
     const-string p2, "audioDisabled"
 
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public onAudioEnabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 0
 
     const-string p2, "audioEnabled"
 
@@ -1102,7 +1102,7 @@
 .end method
 
 .method public onAudioInputFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 4
+    .locals 0
 
     const-string p3, "audioInputFormat"
 
@@ -1117,7 +1117,7 @@
 .end method
 
 .method public onAudioSessionIdChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "audioSessionId"
 
@@ -1132,7 +1132,7 @@
 .end method
 
 .method public onAudioTrackInitialized(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "audioTrackInit"
 
@@ -1147,7 +1147,7 @@
 .end method
 
 .method public onAudioTrackReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "audioTrackReleased"
 
@@ -1162,7 +1162,7 @@
 .end method
 
 .method public onAudioUnderrun(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJJ)V
-    .registers 8
+    .locals 1
 
     .line 358
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1205,13 +1205,13 @@
 .end method
 
 .method public onBandwidthEstimate(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJJ)V
-    .registers 7
+    .locals 0
 
     return-void
 .end method
 
 .method public onDownstreamFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 1
 
     .line 531
     iget-object p2, p2, Landroidx/media3/exoplayer/source/MediaLoadData;->trackFormat:Landroidx/media3/common/Format;
@@ -1228,7 +1228,7 @@
 .end method
 
 .method public onDrmKeysLoaded(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "drmKeysLoaded"
 
@@ -1239,7 +1239,7 @@
 .end method
 
 .method public onDrmKeysRemoved(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "drmKeysRemoved"
 
@@ -1250,7 +1250,7 @@
 .end method
 
 .method public onDrmKeysRestored(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "drmKeysRestored"
 
@@ -1261,7 +1261,7 @@
 .end method
 
 .method public onDrmSessionAcquired(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
-    .registers 5
+    .locals 2
 
     .line 537
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1286,7 +1286,7 @@
 .end method
 
 .method public onDrmSessionManagerError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Exception;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "drmSessionManagerError"
 
@@ -1297,7 +1297,7 @@
 .end method
 
 .method public onDrmSessionReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "drmSessionReleased"
 
@@ -1308,7 +1308,7 @@
 .end method
 
 .method public onDroppedVideoFrames(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;IJ)V
-    .registers 5
+    .locals 0
 
     const-string p3, "droppedFrames"
 
@@ -1323,7 +1323,7 @@
 .end method
 
 .method public onIsLoadingChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
-    .registers 4
+    .locals 1
 
     const-string v0, "loading"
 
@@ -1338,7 +1338,7 @@
 .end method
 
 .method public onIsPlayingChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
-    .registers 4
+    .locals 1
 
     const-string v0, "isPlaying"
 
@@ -1353,19 +1353,19 @@
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;Ljava/io/IOException;Z)V
-    .registers 6
+    .locals 0
 
     const-string p2, "loadError"
 
@@ -1376,13 +1376,13 @@
 .end method
 
 .method public onLoadStarted(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/LoadEventInfo;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public onMediaItemTransition(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/MediaItem;I)V
-    .registers 5
+    .locals 1
 
     .line 265
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1432,7 +1432,7 @@
 .end method
 
 .method public onMetadata(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Metadata;)V
-    .registers 5
+    .locals 2
 
     .line 326
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1469,7 +1469,7 @@
 .end method
 
 .method public onPlayWhenReadyChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;ZI)V
-    .registers 5
+    .locals 1
 
     .line 133
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1508,7 +1508,7 @@
 .end method
 
 .method public onPlaybackParametersChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackParameters;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "playbackParameters"
 
@@ -1523,7 +1523,7 @@
 .end method
 
 .method public onPlaybackStateChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "state"
 
@@ -1538,7 +1538,7 @@
 .end method
 
 .method public onPlaybackSuppressionReasonChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "playbackSuppressionReason"
 
@@ -1554,7 +1554,7 @@
 .end method
 
 .method public onPlayerError(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/PlaybackException;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "playerFailed"
 
@@ -1565,7 +1565,7 @@
 .end method
 
 .method public onPositionDiscontinuity(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Player$PositionInfo;Landroidx/media3/common/Player$PositionInfo;I)V
-    .registers 14
+    .locals 9
 
     .line 174
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1635,7 +1635,7 @@
 
     const/4 v6, -0x1
 
-    if-eq p4, v6, :cond_5a
+    if-eq p4, v6, :cond_0
 
     .line 187
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1671,7 +1671,7 @@
     .line 192
     invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :cond_5a
+    :cond_0
     const-string p2, "], PositionInfo:new [mediaItem="
 
     .line 195
@@ -1712,7 +1712,7 @@
     .line 202
     iget p2, p3, Landroidx/media3/common/Player$PositionInfo;->adGroupIndex:I
 
-    if-eq p2, v6, :cond_9a
+    if-eq p2, v6, :cond_1
 
     .line 204
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1748,7 +1748,7 @@
     .line 209
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :cond_9a
+    :cond_1
     const-string p2, "]"
 
     .line 211
@@ -1767,7 +1767,7 @@
 .end method
 
 .method public onRenderedFirstFrame(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/Object;J)V
-    .registers 5
+    .locals 0
 
     const-string p3, "renderedFirstFrame"
 
@@ -1782,7 +1782,7 @@
 .end method
 
 .method public onRepeatModeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "repeatMode"
 
@@ -1797,7 +1797,7 @@
 .end method
 
 .method public onShuffleModeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
-    .registers 4
+    .locals 1
 
     const-string v0, "shuffleModeEnabled"
 
@@ -1812,7 +1812,7 @@
 .end method
 
 .method public onSkipSilenceEnabledChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Z)V
-    .registers 4
+    .locals 1
 
     const-string v0, "skipSilenceEnabled"
 
@@ -1827,7 +1827,7 @@
 .end method
 
 .method public onSurfaceSizeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;II)V
-    .registers 5
+    .locals 1
 
     .line 519
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1860,7 +1860,7 @@
 .end method
 
 .method public onTimelineChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;I)V
-    .registers 11
+    .locals 8
 
     .line 225
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->timeline:Landroidx/media3/common/Timeline;
@@ -1938,7 +1938,7 @@
 
     move v2, p2
 
-    :goto_46
+    :goto_0
     const/4 v3, 0x3
 
     .line 236
@@ -1948,7 +1948,7 @@
 
     const-string v5, "]"
 
-    if-ge v2, v4, :cond_79
+    if-ge v2, v4, :cond_0
 
     .line 237
     iget-object v3, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->timeline:Landroidx/media3/common/Timeline;
@@ -1990,24 +1990,24 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_46
+    goto :goto_0
 
-    :cond_79
+    :cond_0
     const-string v2, "  ..."
 
-    if-le v0, v3, :cond_80
+    if-le v0, v3, :cond_1
 
     .line 241
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/util/EventLogger;->logd(Ljava/lang/String;)V
 
     .line 243
-    :cond_80
-    :goto_80
+    :cond_1
+    :goto_1
     invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    if-ge p2, v0, :cond_cc
+    if-ge p2, v0, :cond_2
 
     .line 244
     iget-object v0, p1, Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;->timeline:Landroidx/media3/common/Timeline;
@@ -2079,23 +2079,23 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_80
+    goto :goto_1
 
-    :cond_cc
-    if-le v1, v3, :cond_d1
+    :cond_2
+    if-le v1, v3, :cond_3
 
     .line 256
     invoke-virtual {p0, v2}, Landroidx/media3/exoplayer/util/EventLogger;->logd(Ljava/lang/String;)V
 
     .line 258
-    :cond_d1
+    :cond_3
     invoke-virtual {p0, v5}, Landroidx/media3/exoplayer/util/EventLogger;->logd(Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public onTracksChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Tracks;)V
-    .registers 11
+    .locals 8
 
     .line 282
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2128,7 +2128,7 @@
     move v0, p2
 
     .line 285
-    :goto_1d
+    :goto_0
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v1
@@ -2137,7 +2137,7 @@
 
     const-string v3, "  ]"
 
-    if-ge v0, v1, :cond_86
+    if-ge v0, v1, :cond_1
 
     .line 286
     invoke-virtual {p1, v0}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -2154,10 +2154,10 @@
     move v4, p2
 
     .line 288
-    :goto_33
+    :goto_1
     iget v5, v1, Landroidx/media3/common/Tracks$Group;->length:I
 
-    if-ge v4, v5, :cond_80
+    if-ge v4, v5, :cond_0
 
     .line 289
     invoke-virtual {v1, v4}, Landroidx/media3/common/Tracks$Group;->isTrackSelected(I)Z
@@ -2234,30 +2234,30 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_33
+    goto :goto_1
 
     .line 301
-    :cond_80
+    :cond_0
     invoke-virtual {p0, v3}, Landroidx/media3/exoplayer/util/EventLogger;->logd(Ljava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_86
+    :cond_1
     move v0, p2
 
     move v1, v0
 
-    :goto_88
-    if-nez v0, :cond_c3
+    :goto_2
+    if-nez v0, :cond_4
 
     .line 306
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v4
 
-    if-ge v1, v4, :cond_c3
+    if-ge v1, v4, :cond_4
 
     .line 307
     invoke-virtual {p1, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -2268,20 +2268,20 @@
 
     move v5, p2
 
-    :goto_97
-    if-nez v0, :cond_c0
+    :goto_3
+    if-nez v0, :cond_3
 
     .line 308
     iget v6, v4, Landroidx/media3/common/Tracks$Group;->length:I
 
-    if-ge v5, v6, :cond_c0
+    if-ge v5, v6, :cond_3
 
     .line 309
     invoke-virtual {v4, v5}, Landroidx/media3/common/Tracks$Group;->isTrackSelected(I)Z
 
     move-result v6
 
-    if-eqz v6, :cond_bd
+    if-eqz v6, :cond_2
 
     .line 310
     invoke-virtual {v4, v5}, Landroidx/media3/common/Tracks$Group;->getTrackFormat(I)Landroidx/media3/common/Format;
@@ -2290,14 +2290,14 @@
 
     iget-object v6, v6, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-eqz v6, :cond_bd
+    if-eqz v6, :cond_2
 
     .line 311
     invoke-virtual {v6}, Landroidx/media3/common/Metadata;->length()I
 
     move-result v7
 
-    if-lez v7, :cond_bd
+    if-lez v7, :cond_2
 
     const-string v0, "  Metadata ["
 
@@ -2312,17 +2312,17 @@
 
     const/4 v0, 0x1
 
-    :cond_bd
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_97
+    goto :goto_3
 
-    :cond_c0
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_88
+    goto :goto_2
 
-    :cond_c3
+    :cond_4
     const-string p1, "]"
 
     .line 320
@@ -2332,7 +2332,7 @@
 .end method
 
 .method public onUpstreamDiscarded(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/source/MediaLoadData;)V
-    .registers 4
+    .locals 1
 
     .line 525
     iget-object p2, p2, Landroidx/media3/exoplayer/source/MediaLoadData;->trackFormat:Landroidx/media3/common/Format;
@@ -2349,7 +2349,7 @@
 .end method
 
 .method public onVideoDecoderInitialized(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;JJ)V
-    .registers 7
+    .locals 0
 
     const-string/jumbo p3, "videoDecoderInitialized"
 
@@ -2360,7 +2360,7 @@
 .end method
 
 .method public onVideoDecoderReleased(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string/jumbo v0, "videoDecoderReleased"
 
@@ -2371,7 +2371,7 @@
 .end method
 
 .method public onVideoDisabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 0
 
     const-string/jumbo p2, "videoDisabled"
 
@@ -2382,7 +2382,7 @@
 .end method
 
 .method public onVideoEnabled(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/exoplayer/DecoderCounters;)V
-    .registers 3
+    .locals 0
 
     const-string/jumbo p2, "videoEnabled"
 
@@ -2393,7 +2393,7 @@
 .end method
 
 .method public onVideoInputFormatChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/Format;Landroidx/media3/exoplayer/DecoderReuseEvaluation;)V
-    .registers 4
+    .locals 0
 
     const-string/jumbo p3, "videoInputFormat"
 
@@ -2408,7 +2408,7 @@
 .end method
 
 .method public onVideoSizeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;Landroidx/media3/common/VideoSize;)V
-    .registers 5
+    .locals 2
 
     .line 474
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2445,7 +2445,7 @@
 .end method
 
 .method public onVolumeChanged(Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;F)V
-    .registers 4
+    .locals 1
 
     const-string/jumbo v0, "volume"
 

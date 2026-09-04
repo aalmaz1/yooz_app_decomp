@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/media/AudioTrack;)V
-    .registers 2
+    .locals 0
 
     .line 300
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public expectTimestampFramePositionReset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public getTimestampPositionFrames()J
-    .registers 3
+    .locals 2
 
     .line 338
     iget-wide v0, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->lastTimestampPositionFrames:J
@@ -73,7 +73,7 @@
 .end method
 
 .method public getTimestampSystemTimeUs()J
-    .registers 5
+    .locals 4
 
     .line 334
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->audioTimestamp:Landroid/media/AudioTimestamp;
@@ -88,7 +88,7 @@
 .end method
 
 .method public maybeUpdateTimestamp()Z
-    .registers 8
+    .locals 7
 
     .line 312
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->audioTrack:Landroid/media/AudioTrack;
@@ -99,7 +99,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     .line 314
     iget-object v1, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->audioTimestamp:Landroid/media/AudioTimestamp;
@@ -111,12 +111,12 @@
 
     cmp-long v5, v3, v1
 
-    if-lez v5, :cond_28
+    if-lez v5, :cond_1
 
     .line 316
     iget-boolean v5, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->expectTimestampFramePositionReset:Z
 
-    if-eqz v5, :cond_21
+    if-eqz v5, :cond_0
 
     .line 317
     iget-wide v5, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->accumulatedRawTimestampFramePosition:J
@@ -130,10 +130,10 @@
     .line 318
     iput-boolean v3, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->expectTimestampFramePositionReset:Z
 
-    goto :goto_28
+    goto :goto_0
 
     .line 321
-    :cond_21
+    :cond_0
     iget-wide v3, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->rawTimestampFramePositionWrapCount:J
 
     const-wide/16 v5, 0x1
@@ -143,8 +143,8 @@
     iput-wide v3, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->rawTimestampFramePositionWrapCount:J
 
     .line 324
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     iput-wide v1, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->lastTimestampRawPositionFrames:J
 
     .line 325
@@ -162,6 +162,6 @@
 
     iput-wide v1, p0, Landroidx/media3/exoplayer/audio/AudioTimestampPoller$AudioTimestampWrapper;->lastTimestampPositionFrames:J
 
-    :cond_35
+    :cond_2
     return v0
 .end method

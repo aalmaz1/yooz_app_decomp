@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/ProcessLifecycleOwner;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/lifecycle/ProcessLifecycleOwner$attach$1$onActivityPreCreated$1;->this$0:Landroidx/lifecycle/ProcessLifecycleOwner;
 
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public onActivityPostResumed(Landroid/app/Activity;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "activity"
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public onActivityPostStarted(Landroid/app/Activity;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "activity"
 

@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 124
     invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method protected removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,15 +62,15 @@
 
     iget v0, p0, Landroidx/media3/exoplayer/upstream/experimental/PercentileTimeToFirstByteEstimator$FixedSizeLinkedHashMap;->maxSize:I
 
-    if-le p1, v0, :cond_a
+    if-le p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method

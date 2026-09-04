@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/LinkedHashSet;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +68,7 @@
 .end method
 
 .method public static fromSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/CameraSelector$Builder;
-    .registers 2
+    .locals 1
 
     .line 268
     new-instance v0, Landroidx/camera/core/CameraSelector$Builder;
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public addCameraFilter(Landroidx/camera/core/CameraFilter;)Landroidx/camera/core/CameraSelector$Builder;
-    .registers 3
+    .locals 1
 
     .line 255
     iget-object v0, p0, Landroidx/camera/core/CameraSelector$Builder;->mCameraFilterSet:Ljava/util/LinkedHashSet;
@@ -97,7 +97,7 @@
 .end method
 
 .method public build()Landroidx/camera/core/CameraSelector;
-    .registers 3
+    .locals 2
 
     .line 276
     new-instance v0, Landroidx/camera/core/CameraSelector;
@@ -110,20 +110,20 @@
 .end method
 
 .method public requireLensFacing(I)Landroidx/camera/core/CameraSelector$Builder;
-    .registers 4
+    .locals 2
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_5
+    if-eq p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_6
+    :goto_0
     const-string v1, "The specified lens facing is invalid."
 
     .line 236

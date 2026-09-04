@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 449
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +25,9 @@
 .end method
 
 .method public static getHandler(Landroid/os/Handler;)Landroid/os/Handler;
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_0
 
     .line 497
     new-instance p0, Landroid/os/Handler;
@@ -38,14 +38,14 @@
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    :cond_b
+    :cond_0
     return-object p0
 .end method
 
 
 # virtual methods
 .method public final callbackFailAsync(ILandroid/os/Handler;)V
-    .registers 4
+    .locals 1
 
     .line 491
     invoke-static {p2}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->getHandler(Landroid/os/Handler;)Landroid/os/Handler;
@@ -62,7 +62,7 @@
 .end method
 
 .method public final callbackSuccessAsync(Landroid/graphics/Typeface;Landroid/os/Handler;)V
-    .registers 4
+    .locals 1
 
     .line 480
     invoke-static {p2}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->getHandler(Landroid/os/Handler;)Landroid/os/Handler;
@@ -79,7 +79,7 @@
 .end method
 
 .method synthetic lambda$callbackFailAsync$1$androidx-core-content-res-ResourcesCompat$FontCallback(I)V
-    .registers 2
+    .locals 0
 
     .line 491
     invoke-virtual {p0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrievalFailed(I)V
@@ -88,7 +88,7 @@
 .end method
 
 .method synthetic lambda$callbackSuccessAsync$0$androidx-core-content-res-ResourcesCompat$FontCallback(Landroid/graphics/Typeface;)V
-    .registers 2
+    .locals 0
 
     .line 480
     invoke-virtual {p0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrieved(Landroid/graphics/Typeface;)V

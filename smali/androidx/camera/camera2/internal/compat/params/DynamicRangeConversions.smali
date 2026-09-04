@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     .line 53
     new-instance v0, Ljava/util/HashMap;
@@ -188,12 +188,12 @@
 
     move-result-object v2
 
-    :goto_91
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_a5
+    if-eqz v7, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -208,10 +208,10 @@
 
     invoke-interface {v8, v7, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_91
+    goto :goto_0
 
     .line 84
-    :cond_a5
+    :cond_0
     sget-object v2, Landroidx/camera/camera2/internal/compat/params/DynamicRangeConversions;->DR_TO_PROFILE_MAP:Ljava/util/Map;
 
     sget-object v7, Landroidx/camera/core/DynamicRange;->DOLBY_VISION_10_BIT:Landroidx/camera/core/DynamicRange;
@@ -264,12 +264,12 @@
 
     move-result-object v1
 
-    :goto_d6
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_ea
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -284,10 +284,10 @@
 
     invoke-interface {v3, v2, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_d6
+    goto :goto_1
 
     .line 92
-    :cond_ea
+    :cond_1
     sget-object v1, Landroidx/camera/camera2/internal/compat/params/DynamicRangeConversions;->DR_TO_PROFILE_MAP:Ljava/util/Map;
 
     sget-object v2, Landroidx/camera/core/DynamicRange;->DOLBY_VISION_8_BIT:Landroidx/camera/core/DynamicRange;
@@ -298,7 +298,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -307,7 +307,7 @@
 .end method
 
 .method public static dynamicRangeToFirstSupportedProfile(Landroidx/camera/core/DynamicRange;Landroid/hardware/camera2/params/DynamicRangeProfiles;)Ljava/lang/Long;
-    .registers 4
+    .locals 2
 
     .line 119
     sget-object v0, Landroidx/camera/camera2/internal/compat/params/DynamicRangeConversions;->DR_TO_PROFILE_MAP:Ljava/util/Map;
@@ -318,7 +318,7 @@
 
     check-cast p0, Ljava/util/List;
 
-    if-eqz p0, :cond_25
+    if-eqz p0, :cond_1
 
     .line 121
     invoke-virtual {p1}, Landroid/hardware/camera2/params/DynamicRangeProfiles;->getSupportedProfiles()Ljava/util/Set;
@@ -330,12 +330,12 @@
 
     move-result-object p0
 
-    :cond_12
+    :cond_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -348,18 +348,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     return-object v0
 
-    :cond_25
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public static profileToDynamicRange(J)Landroidx/camera/core/DynamicRange;
-    .registers 3
+    .locals 1
 
     .line 101
     sget-object v0, Landroidx/camera/camera2/internal/compat/params/DynamicRangeConversions;->PROFILE_TO_DR_MAP:Ljava/util/Map;

@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 78
     sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
@@ -75,7 +75,7 @@
 .end method
 
 .method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 83
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -91,7 +91,7 @@
 .end method
 
 .method private static isImageFile(Ljava/io/File;)Z
-    .registers 2
+    .locals 1
 
     .line 122
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -109,7 +109,7 @@
 .end method
 
 .method private static shouldCleanUp(Landroid/content/SharedPreferences;)Z
-    .registers 7
+    .locals 6
 
     const-string v0, "last_cleanup_time"
 
@@ -133,23 +133,23 @@
 
     cmp-long p0, v2, v0
 
-    if-lez p0, :cond_17
+    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_18
+    :goto_0
     return p0
 .end method
 
 
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 76
     check-cast p1, [Ljava/lang/Void;
@@ -162,7 +162,7 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
-    .registers 14
+    .locals 12
 
     .line 89
     iget-object p1, p0, Landroidx/browser/browseractions/BrowserServiceFileProvider$FileCleanupTask;->mAppContext:Landroid/content/Context;
@@ -206,18 +206,18 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     return-object v2
 
     .line 92
-    :cond_28
+    :cond_0
     sget-object v0, Landroidx/browser/browseractions/BrowserServiceFileProvider;->sFileCleanupLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 94
-    :try_start_2b
+    :try_start_0
     new-instance v3, Ljava/io/File;
 
     iget-object v4, p0, Landroidx/browser/browseractions/BrowserServiceFileProvider$FileCleanupTask;->mAppContext:Landroid/content/Context;
@@ -235,14 +235,14 @@
 
     move-result v4
 
-    if-nez v4, :cond_40
+    if-nez v4, :cond_1
 
     monitor-exit v0
 
     return-object v2
 
     .line 96
-    :cond_40
+    :cond_1
     invoke-virtual {v3}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v3
@@ -263,8 +263,8 @@
 
     move v8, v1
 
-    :goto_4e
-    if-ge v8, v6, :cond_87
+    :goto_0
+    if-ge v8, v6, :cond_4
 
     aget-object v9, v3, v8
 
@@ -273,26 +273,26 @@
 
     move-result v10
 
-    if-nez v10, :cond_59
+    if-nez v10, :cond_2
 
-    goto :goto_84
+    goto :goto_1
 
     .line 100
-    :cond_59
+    :cond_2
     invoke-virtual {v9}, Ljava/io/File;->lastModified()J
 
     move-result-wide v10
 
     cmp-long v10, v10, v4
 
-    if-gez v10, :cond_84
+    if-gez v10, :cond_3
 
     .line 101
     invoke-virtual {v9}, Ljava/io/File;->delete()Z
 
     move-result v10
 
-    if-nez v10, :cond_84
+    if-nez v10, :cond_3
 
     const-string v7, "BrowserServiceFP"
 
@@ -323,24 +323,24 @@
 
     move v7, v1
 
-    :cond_84
-    :goto_84
+    :cond_3
+    :goto_1
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_87
-    if-eqz v7, :cond_8e
+    :cond_4
+    if-eqz v7, :cond_5
 
     .line 109
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    goto :goto_98
+    goto :goto_2
 
     .line 111
-    :cond_8e
+    :cond_5
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -354,7 +354,7 @@
     add-long/2addr v3, v5
 
     .line 114
-    :goto_98
+    :goto_2
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
@@ -372,12 +372,12 @@
 
     return-object v2
 
-    :catchall_a6
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_a8
-    .catchall {:try_start_2b .. :try_end_a8} :catchall_a6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

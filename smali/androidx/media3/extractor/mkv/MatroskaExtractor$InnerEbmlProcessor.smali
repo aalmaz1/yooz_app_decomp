@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/extractor/mkv/MatroskaExtractor;)V
-    .registers 2
+    .locals 0
 
     .line 2014
     iput-object p1, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$InnerEbmlProcessor;->this$0:Landroidx/media3/extractor/mkv/MatroskaExtractor;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/extractor/mkv/MatroskaExtractor;Landroidx/media3/extractor/mkv/MatroskaExtractor$1;)V
-    .registers 3
+    .locals 0
 
     .line 2014
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mkv/MatroskaExtractor$InnerEbmlProcessor;-><init>(Landroidx/media3/extractor/mkv/MatroskaExtractor;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public binaryElement(IILandroidx/media3/extractor/ExtractorInput;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -61,7 +61,7 @@
 .end method
 
 .method public endMasterElement(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -77,7 +77,7 @@
 .end method
 
 .method public floatElement(ID)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -93,7 +93,7 @@
 .end method
 
 .method public getElementType(I)I
-    .registers 3
+    .locals 1
 
     .line 2018
     iget-object v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$InnerEbmlProcessor;->this$0:Landroidx/media3/extractor/mkv/MatroskaExtractor;
@@ -106,7 +106,7 @@
 .end method
 
 .method public integerElement(IJ)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -122,7 +122,7 @@
 .end method
 
 .method public isLevel1Element(I)Z
-    .registers 3
+    .locals 1
 
     .line 2023
     iget-object v0, p0, Landroidx/media3/extractor/mkv/MatroskaExtractor$InnerEbmlProcessor;->this$0:Landroidx/media3/extractor/mkv/MatroskaExtractor;
@@ -135,7 +135,7 @@
 .end method
 
 .method public startMasterElement(IJJ)V
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -157,7 +157,7 @@
 .end method
 
 .method public stringElement(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;

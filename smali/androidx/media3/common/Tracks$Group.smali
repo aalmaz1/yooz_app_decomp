@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;Z[I[Z)V
-    .registers 9
+    .locals 4
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -97,33 +97,33 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     array-length v1, p4
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     move v1, v3
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v1, v2
 
-    :goto_12
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 68
     iput-object p1, p0, Landroidx/media3/common/Tracks$Group;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
 
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_1
 
-    if-le v0, v3, :cond_1c
+    if-le v0, v3, :cond_1
 
     move v2, v3
 
     .line 69
-    :cond_1c
+    :cond_1
     iput-boolean v2, p0, Landroidx/media3/common/Tracks$Group;->adaptiveSupported:Z
 
     .line 70
@@ -148,7 +148,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Tracks$Group;
-    .registers 6
+    .locals 5
 
     .line 248
     sget-object v0, Landroidx/media3/common/Tracks$Group;->FIELD_TRACK_GROUP:Ljava/lang/String;
@@ -226,7 +226,7 @@
 
 # virtual methods
 .method public copyWithId(Ljava/lang/String;)Landroidx/media3/common/Tracks$Group;
-    .registers 6
+    .locals 4
 
     .line 202
     new-instance v0, Landroidx/media3/common/Tracks$Group;
@@ -250,18 +250,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3b
+    if-eqz p1, :cond_3
 
     .line 211
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -272,12 +272,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 214
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/common/Tracks$Group;
 
     .line 215
@@ -285,7 +285,7 @@
 
     iget-boolean v3, p1, Landroidx/media3/common/Tracks$Group;->adaptiveSupported:Z
 
-    if-ne v2, v3, :cond_39
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/Tracks$Group;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
 
@@ -296,7 +296,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/Tracks$Group;->trackSupport:[I
 
@@ -307,7 +307,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/common/Tracks$Group;->trackSelected:[Z
 
@@ -318,23 +318,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_2
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     move v0, v1
 
-    :goto_3a
+    :goto_0
     return v0
 
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public getMediaTrackGroup()Landroidx/media3/common/TrackGroup;
-    .registers 2
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
@@ -343,7 +343,7 @@
 .end method
 
 .method public getTrackFormat(I)Landroidx/media3/common/Format;
-    .registers 3
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
@@ -356,7 +356,7 @@
 .end method
 
 .method public getTrackSupport(I)I
-    .registers 3
+    .locals 1
 
     .line 104
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->trackSupport:[I
@@ -367,7 +367,7 @@
 .end method
 
 .method public getType()I
-    .registers 2
+    .locals 1
 
     .line 191
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
@@ -378,7 +378,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 223
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->mediaTrackGroup:Landroidx/media3/common/TrackGroup;
@@ -420,7 +420,7 @@
 .end method
 
 .method public isAdaptiveSupported()Z
-    .registers 2
+    .locals 1
 
     .line 142
     iget-boolean v0, p0, Landroidx/media3/common/Tracks$Group;->adaptiveSupported:Z
@@ -429,7 +429,7 @@
 .end method
 
 .method public isSelected()Z
-    .registers 3
+    .locals 2
 
     .line 137
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->trackSelected:[Z
@@ -444,7 +444,7 @@
 .end method
 
 .method public isSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -457,42 +457,42 @@
 .end method
 
 .method public isSupported(Z)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 163
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/Tracks$Group;->trackSupport:[I
 
     array-length v2, v2
 
-    if-ge v1, v2, :cond_12
+    if-ge v1, v2, :cond_1
 
     .line 164
     invoke-virtual {p0, v1, p1}, Landroidx/media3/common/Tracks$Group;->isTrackSupported(IZ)Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_f
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     return v0
 .end method
 
 .method public isTrackSelected(I)Z
-    .registers 3
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->trackSelected:[Z
@@ -503,7 +503,7 @@
 .end method
 
 .method public isTrackSupported(I)Z
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -516,7 +516,7 @@
 .end method
 
 .method public isTrackSupported(IZ)Z
-    .registers 4
+    .locals 1
 
     .line 130
     iget-object v0, p0, Landroidx/media3/common/Tracks$Group;->trackSupport:[I
@@ -525,31 +525,31 @@
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_f
+    if-eq p1, v0, :cond_1
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     const/4 p2, 0x3
 
-    if-ne p1, p2, :cond_d
+    if-ne p1, p2, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_10
+    :goto_1
     return p1
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 236
     new-instance v0, Landroid/os/Bundle;

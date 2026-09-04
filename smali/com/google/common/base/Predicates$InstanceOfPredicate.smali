@@ -47,7 +47,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/Class;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -81,7 +81,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/Class;Lcom/google/common/base/Predicates$1;)V
-    .registers 3
+    .locals 0
 
     .line 495
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InstanceOfPredicate;-><init>(Ljava/lang/Class;)V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -123,7 +123,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -142,7 +142,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 516
     check-cast p1, Lcom/google/common/base/Predicates$InstanceOfPredicate;
@@ -152,16 +152,16 @@
 
     iget-object p1, p1, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
-    if-ne v0, p1, :cond_e
+    if-ne v0, p1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_e
+    :cond_0
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 510
     iget-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
@@ -174,7 +174,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 524
     new-instance v0, Ljava/lang/StringBuilder;

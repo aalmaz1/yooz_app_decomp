@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/appcompat/widget/AppCompatEditText;)V
-    .registers 2
+    .locals 0
 
     .line 514
     iput-object p1, p0, Landroidx/appcompat/widget/AppCompatEditText$SuperCaller;->this$0:Landroidx/appcompat/widget/AppCompatEditText;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getTextClassifier()Landroid/view/textclassifier/TextClassifier;
-    .registers 2
+    .locals 1
 
     .line 518
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEditText$SuperCaller;->this$0:Landroidx/appcompat/widget/AppCompatEditText;
@@ -46,7 +46,7 @@
 .end method
 
 .method public setTextClassifier(Landroid/view/textclassifier/TextClassifier;)V
-    .registers 3
+    .locals 1
 
     .line 522
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatEditText$SuperCaller;->this$0:Landroidx/appcompat/widget/AppCompatEditText;

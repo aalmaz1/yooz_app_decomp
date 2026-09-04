@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,12 +18,12 @@
 .end method
 
 .method public static getInstance()Landroid/os/Handler;
-    .registers 2
+    .locals 2
 
     .line 40
     sget-object v0, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;->sHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 41
     sget-object v0, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;->sHandler:Landroid/os/Handler;
@@ -31,16 +31,16 @@
     return-object v0
 
     .line 43
-    :cond_7
+    :cond_0
     const-class v0, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;
 
     monitor-enter v0
 
     .line 44
-    :try_start_a
+    :try_start_0
     sget-object v1, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;->sHandler:Landroid/os/Handler;
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1
 
     .line 45
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -54,24 +54,24 @@
     sput-object v1, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;->sHandler:Landroid/os/Handler;
 
     .line 47
-    :cond_18
+    :cond_1
     monitor-exit v0
-    :try_end_19
-    .catchall {:try_start_a .. :try_end_19} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 49
     sget-object v0, Landroidx/camera/core/impl/utils/MainThreadAsyncHandler;->sHandler:Landroid/os/Handler;
 
     return-object v0
 
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
     .line 47
-    :try_start_1d
+    :try_start_1
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method

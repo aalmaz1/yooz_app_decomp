@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(CC)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -37,17 +37,17 @@
     .line 1780
     invoke-direct {p0}, Lcom/google/common/base/CharMatcher$FastMatcher;-><init>()V
 
-    if-lt p2, p1, :cond_7
+    if-lt p2, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 1781
-    :goto_8
+    :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
     .line 1782
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public matches(C)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -75,25 +75,25 @@
     .line 1788
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$InRange;->startInclusive:C
 
-    if-gt v0, p1, :cond_a
+    if-gt v0, p1, :cond_0
 
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$InRange;->endInclusive:C
 
-    if-gt p1, v0, :cond_a
+    if-gt p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method setBits(Ljava/util/BitSet;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -116,7 +116,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1800
     new-instance v0, Ljava/lang/StringBuilder;

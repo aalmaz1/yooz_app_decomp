@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/MediaExtractorCompat;)V
-    .registers 2
+    .locals 0
 
     .line 592
     iput-object p1, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/MediaExtractorCompat;Landroidx/media3/exoplayer/MediaExtractorCompat$1;)V
-    .registers 3
+    .locals 0
 
     .line 592
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;-><init>(Landroidx/media3/exoplayer/MediaExtractorCompat;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public endTracks()V
-    .registers 3
+    .locals 2
 
     .line 614
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -58,7 +58,7 @@
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 3
+    .locals 1
 
     .line 619
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -69,7 +69,7 @@
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 5
+    .locals 2
 
     .line 596
     iget-object p2, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
@@ -84,19 +84,19 @@
 
     check-cast p2, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;
 
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     return-object p2
 
     .line 602
-    :cond_f
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;
 
     invoke-static {p2}, Landroidx/media3/exoplayer/MediaExtractorCompat;->access$300(Landroidx/media3/exoplayer/MediaExtractorCompat;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_1
 
     .line 604
     new-instance p1, Landroidx/media3/extractor/DiscardingTrackOutput;
@@ -106,7 +106,7 @@
     return-object p1
 
     .line 607
-    :cond_1d
+    :cond_1
     new-instance p2, Landroidx/media3/exoplayer/MediaExtractorCompat$MediaExtractorSampleQueue;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaExtractorCompat$ExtractorOutputImpl;->this$0:Landroidx/media3/exoplayer/MediaExtractorCompat;

@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 33
     new-instance v0, Landroidx/media3/common/VideoSize;
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(II)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public constructor <init>(IIIF)V
-    .registers 5
+    .locals 0
 
     .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,7 +118,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/VideoSize;
-    .registers 6
+    .locals 5
 
     .line 146
     sget-object v0, Landroidx/media3/common/VideoSize;->FIELD_WIDTH:Ljava/lang/String;
@@ -165,21 +165,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 108
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/VideoSize;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2
 
     .line 109
     check-cast p1, Landroidx/media3/common/VideoSize;
@@ -189,19 +189,19 @@
 
     iget v3, p1, Landroidx/media3/common/VideoSize;->width:I
 
-    if-ne v1, v3, :cond_26
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/media3/common/VideoSize;->height:I
 
     iget v3, p1, Landroidx/media3/common/VideoSize;->height:I
 
-    if-ne v1, v3, :cond_26
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/media3/common/VideoSize;->unappliedRotationDegrees:I
 
     iget v3, p1, Landroidx/media3/common/VideoSize;->unappliedRotationDegrees:I
 
-    if-ne v1, v3, :cond_26
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/media3/common/VideoSize;->pixelWidthHeightRatio:F
 
@@ -209,22 +209,22 @@
 
     cmpl-float p1, v1, p1
 
-    if-nez p1, :cond_26
+    if-nez p1, :cond_1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     move v0, v2
 
-    :goto_27
+    :goto_0
     return v0
 
-    :cond_28
+    :cond_2
     return v2
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0xd9
 
@@ -262,7 +262,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 135
     new-instance v0, Landroid/os/Bundle;

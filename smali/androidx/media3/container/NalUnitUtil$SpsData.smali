@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>(IIIIIIIFIIZZIIIZIIII)V
-    .registers 23
+    .locals 2
 
     move-object v0, p0
 

@@ -44,7 +44,7 @@
 
 # direct methods
 .method protected constructor <init>(Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;)V
-    .registers 3
+    .locals 1
 
     .line 1313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method protected final getMetadataRepoLoader()Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;
-    .registers 2
+    .locals 1
 
     .line 1508
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mMetadataLoader:Landroidx/emoji2/text/EmojiCompat$MetadataRepoLoader;
@@ -89,7 +89,7 @@
 .end method
 
 .method public registerInitCallback(Landroidx/emoji2/text/EmojiCompat$InitCallback;)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 3
+    .locals 1
 
     const-string v0, "initCallback cannot be null"
 
@@ -99,7 +99,7 @@
     .line 1329
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mInitCallbacks:Ljava/util/Set;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 1330
     new-instance v0, Landroidx/collection/ArraySet;
@@ -109,7 +109,7 @@
     iput-object v0, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mInitCallbacks:Ljava/util/Set;
 
     .line 1333
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mInitCallbacks:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -118,7 +118,7 @@
 .end method
 
 .method public setEmojiSpanIndicatorColor(I)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 2
+    .locals 0
 
     .line 1444
     iput p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiSpanIndicatorColor:I
@@ -127,7 +127,7 @@
 .end method
 
 .method public setEmojiSpanIndicatorEnabled(Z)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 2
+    .locals 0
 
     .line 1432
     iput-boolean p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiSpanIndicatorEnabled:Z
@@ -136,7 +136,7 @@
 .end method
 
 .method public setGlyphChecker(Landroidx/emoji2/text/EmojiCompat$GlyphChecker;)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 3
+    .locals 1
 
     const-string v0, "GlyphChecker cannot be null"
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public setMetadataLoadStrategy(I)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 2
+    .locals 0
 
     .line 1486
     iput p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mMetadataLoadStrategy:I
@@ -159,7 +159,7 @@
 .end method
 
 .method public setReplaceAll(Z)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 2
+    .locals 0
 
     .line 1365
     iput-boolean p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mReplaceAll:Z
@@ -168,7 +168,7 @@
 .end method
 
 .method public setUseEmojiAsDefaultStyle(Z)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -181,7 +181,7 @@
 .end method
 
 .method public setUseEmojiAsDefaultStyle(ZLjava/util/List;)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -195,9 +195,9 @@
     .line 1408
     iput-boolean p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mUseEmojiAsDefaultStyle:Z
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_1
 
-    if-eqz p2, :cond_31
+    if-eqz p2, :cond_1
 
     .line 1410
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -215,12 +215,12 @@
 
     const/4 p2, 0x0
 
-    :goto_13
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -241,28 +241,28 @@
 
     move p2, v2
 
-    goto :goto_13
+    goto :goto_0
 
     .line 1415
-    :cond_2b
+    :cond_0
     iget-object p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiAsDefaultStyleExceptions:[I
 
     invoke-static {p1}, Ljava/util/Arrays;->sort([I)V
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_31
+    :cond_1
     const/4 p1, 0x0
 
     .line 1417
     iput-object p1, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mEmojiAsDefaultStyleExceptions:[I
 
-    :goto_34
+    :goto_1
     return-object p0
 .end method
 
 .method public unregisterInitCallback(Landroidx/emoji2/text/EmojiCompat$InitCallback;)Landroidx/emoji2/text/EmojiCompat$Config;
-    .registers 3
+    .locals 1
 
     const-string v0, "initCallback cannot be null"
 
@@ -272,11 +272,11 @@
     .line 1348
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$Config;->mInitCallbacks:Ljava/util/Set;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 1349
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    :cond_c
+    :cond_0
     return-object p0
 .end method

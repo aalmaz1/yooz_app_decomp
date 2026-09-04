@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -119,7 +119,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/text/Cue;)V
-    .registers 3
+    .locals 1
 
     .line 459
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -213,7 +213,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/text/Cue;Landroidx/media3/common/text/Cue$1;)V
-    .registers 3
+    .locals 0
 
     .line 421
     invoke-direct {p0, p1}, Landroidx/media3/common/text/Cue$Builder;-><init>(Landroidx/media3/common/text/Cue;)V
@@ -224,7 +224,7 @@
 
 # virtual methods
 .method public build()Landroidx/media3/common/text/Cue;
-    .registers 23
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -285,7 +285,7 @@
 .end method
 
 .method public clearWindowColor()Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public getBitmap()Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -307,7 +307,7 @@
 .end method
 
 .method public getBitmapHeight()F
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -318,7 +318,7 @@
 .end method
 
 .method public getLine()F
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -329,7 +329,7 @@
 .end method
 
 .method public getLineAnchor()I
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -340,7 +340,7 @@
 .end method
 
 .method public getLineType()I
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -351,7 +351,7 @@
 .end method
 
 .method public getPosition()F
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -362,7 +362,7 @@
 .end method
 
 .method public getPositionAnchor()I
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -373,7 +373,7 @@
 .end method
 
 .method public getSize()F
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -384,7 +384,7 @@
 .end method
 
 .method public getText()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -395,7 +395,7 @@
 .end method
 
 .method public getTextAlignment()Landroid/text/Layout$Alignment;
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -406,7 +406,7 @@
 .end method
 
 .method public getTextSize()F
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -417,7 +417,7 @@
 .end method
 
 .method public getTextSizeType()I
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -428,7 +428,7 @@
 .end method
 
 .method public getVerticalType()I
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -439,7 +439,7 @@
 .end method
 
 .method public getWindowColor()I
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/dataflow/qual/Pure;
     .end annotation
 
@@ -450,7 +450,7 @@
 .end method
 
 .method public isWindowColorSet()Z
-    .registers 2
+    .locals 1
 
     .line 767
     iget-boolean v0, p0, Landroidx/media3/common/text/Cue$Builder;->windowColorSet:Z
@@ -459,7 +459,7 @@
 .end method
 
 .method public setBitmap(Landroid/graphics/Bitmap;)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 510
     iput-object p1, p0, Landroidx/media3/common/text/Cue$Builder;->bitmap:Landroid/graphics/Bitmap;
@@ -468,7 +468,7 @@
 .end method
 
 .method public setBitmapHeight(F)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 725
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->bitmapHeight:F
@@ -477,7 +477,7 @@
 .end method
 
 .method public setLine(FI)Landroidx/media3/common/text/Cue$Builder;
-    .registers 3
+    .locals 0
 
     .line 571
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->line:F
@@ -489,7 +489,7 @@
 .end method
 
 .method public setLineAnchor(I)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 604
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->lineAnchor:I
@@ -498,7 +498,7 @@
 .end method
 
 .method public setMultiRowAlignment(Landroid/text/Layout$Alignment;)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 558
     iput-object p1, p0, Landroidx/media3/common/text/Cue$Builder;->multiRowAlignment:Landroid/text/Layout$Alignment;
@@ -507,7 +507,7 @@
 .end method
 
 .method public setPosition(F)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 626
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->position:F
@@ -516,7 +516,7 @@
 .end method
 
 .method public setPositionAnchor(I)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 648
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->positionAnchor:I
@@ -525,7 +525,7 @@
 .end method
 
 .method public setShearDegrees(F)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 795
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->shearDegrees:F
@@ -534,7 +534,7 @@
 .end method
 
 .method public setSize(F)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 703
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->size:F
@@ -543,7 +543,7 @@
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 488
     iput-object p1, p0, Landroidx/media3/common/text/Cue$Builder;->text:Ljava/lang/CharSequence;
@@ -552,7 +552,7 @@
 .end method
 
 .method public setTextAlignment(Landroid/text/Layout$Alignment;)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 534
     iput-object p1, p0, Landroidx/media3/common/text/Cue$Builder;->textAlignment:Landroid/text/Layout$Alignment;
@@ -561,7 +561,7 @@
 .end method
 
 .method public setTextSize(FI)Landroidx/media3/common/text/Cue$Builder;
-    .registers 3
+    .locals 0
 
     .line 670
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->textSize:F
@@ -573,7 +573,7 @@
 .end method
 
 .method public setVerticalType(I)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 788
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->verticalType:I
@@ -582,7 +582,7 @@
 .end method
 
 .method public setWindowColor(I)Landroidx/media3/common/text/Cue$Builder;
-    .registers 2
+    .locals 0
 
     .line 749
     iput p1, p0, Landroidx/media3/common/text/Cue$Builder;->windowColor:I

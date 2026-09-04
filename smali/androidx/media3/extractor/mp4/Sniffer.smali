@@ -15,20 +15,20 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x1d
 
     new-array v0, v0, [I
 
     .line 40
-    fill-array-data v0, :array_a
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/mp4/Sniffer;->COMPATIBLE_BRANDS:[I
 
     return-void
 
-    :array_a
+    :array_0
     .array-data 4
         0x69736f6d
         0x69736f32
@@ -63,7 +63,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 246
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method private static isCompatibleBrand(IZ)Z
-    .registers 7
+    .locals 5
 
     ushr-int/lit8 v0, p0, 0x8
 
@@ -80,21 +80,21 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     return v2
 
-    :cond_9
+    :cond_0
     const v0, 0x68656963
 
-    if-ne p0, v0, :cond_11
+    if-ne p0, v0, :cond_1
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_1
 
     return v2
 
     .line 238
-    :cond_11
+    :cond_1
     sget-object p1, Landroidx/media3/extractor/mp4/Sniffer;->COMPATIBLE_BRANDS:[I
 
     array-length v0, p1
@@ -103,26 +103,26 @@
 
     move v3, v1
 
-    :goto_16
-    if-ge v3, v0, :cond_20
+    :goto_0
+    if-ge v3, v0, :cond_3
 
     aget v4, p1, v3
 
-    if-ne v4, p0, :cond_1d
+    if-ne v4, p0, :cond_2
 
     return v2
 
-    :cond_1d
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_20
+    :cond_3
     return v1
 .end method
 
 .method public static sniffFragmented(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/extractor/SniffFailure;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -142,7 +142,7 @@
 .end method
 
 .method private static sniffInternal(Landroidx/media3/extractor/ExtractorInput;ZZ)Landroidx/media3/extractor/SniffFailure;
-    .registers 25
+    .locals 22
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -164,19 +164,19 @@
 
     const-wide/16 v7, 0x1000
 
-    if-eqz v6, :cond_16
+    if-eqz v6, :cond_1
 
     cmp-long v9, v2, v7
 
-    if-lez v9, :cond_15
+    if-lez v9, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move-wide v7, v2
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     long-to-int v7, v7
 
     .line 115
@@ -192,8 +192,8 @@
 
     move v11, v10
 
-    :goto_21
-    if-ge v10, v7, :cond_115
+    :goto_1
+    if-ge v10, v7, :cond_14
 
     const/16 v13, 0x8
 
@@ -211,12 +211,12 @@
 
     move-result v14
 
-    if-nez v14, :cond_35
+    if-nez v14, :cond_2
 
-    goto/16 :goto_115
+    goto/16 :goto_8
 
     .line 129
-    :cond_35
+    :cond_2
     invoke-virtual {v8}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v16
@@ -230,7 +230,7 @@
 
     cmp-long v18, v16, v18
 
-    if-nez v18, :cond_54
+    if-nez v18, :cond_3
 
     .line 135
     invoke-virtual {v8}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -250,14 +250,14 @@
 
     move-result-wide v16
 
-    goto :goto_6c
+    goto :goto_2
 
-    :cond_54
+    :cond_3
     const-wide/16 v19, 0x0
 
     cmp-long v15, v16, v19
 
-    if-nez v15, :cond_6b
+    if-nez v15, :cond_4
 
     .line 140
     invoke-interface/range {p0 .. p0}, Landroidx/media3/extractor/ExtractorInput;->getLength()J
@@ -266,7 +266,7 @@
 
     cmp-long v15, v19, v4
 
-    if-eqz v15, :cond_6b
+    if-eqz v15, :cond_4
 
     .line 142
     invoke-interface/range {p0 .. p0}, Landroidx/media3/extractor/ExtractorInput;->getPeekPosition()J
@@ -279,17 +279,17 @@
 
     add-long v16, v19, v4
 
-    :cond_6b
+    :cond_4
     move v15, v13
 
-    :goto_6c
+    :goto_2
     move-wide/from16 v4, v16
 
     int-to-long v12, v15
 
     cmp-long v19, v4, v12
 
-    if-gez v19, :cond_79
+    if-gez v19, :cond_5
 
     .line 148
     new-instance v0, Landroidx/media3/extractor/mp4/AtomSizeTooSmallSniffFailure;
@@ -298,54 +298,54 @@
 
     return-object v0
 
-    :cond_79
+    :cond_5
     add-int/2addr v10, v15
 
     const v15, 0x6d6f6f76
 
-    if-ne v14, v15, :cond_8c
+    if-ne v14, v15, :cond_7
 
     long-to-int v4, v4
 
     add-int/2addr v7, v4
 
-    if-eqz v6, :cond_89
+    if-eqz v6, :cond_6
 
     int-to-long v4, v7
 
     cmp-long v4, v4, v2
 
-    if-lez v4, :cond_89
+    if-lez v4, :cond_6
 
     long-to-int v7, v2
 
-    :cond_89
-    :goto_89
+    :cond_6
+    :goto_3
     const-wide/16 v4, -0x1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_8c
+    :cond_7
     const v15, 0x6d6f6f66
 
-    if-eq v14, v15, :cond_113
+    if-eq v14, v15, :cond_13
 
     const v15, 0x6d766578
 
-    if-ne v14, v15, :cond_98
+    if-ne v14, v15, :cond_8
 
-    goto/16 :goto_113
+    goto/16 :goto_7
 
-    :cond_98
+    :cond_8
     const v15, 0x6d646174
 
     move-wide/from16 v19, v2
 
-    if-ne v14, v15, :cond_a0
+    if-ne v14, v15, :cond_9
 
     const/4 v11, 0x1
 
-    :cond_a0
+    :cond_9
     int-to-long v2, v10
 
     add-long/2addr v2, v4
@@ -358,13 +358,13 @@
 
     cmp-long v2, v2, v9
 
-    if-ltz v2, :cond_ad
+    if-ltz v2, :cond_a
 
     const/4 v9, 0x0
 
-    goto/16 :goto_117
+    goto/16 :goto_9
 
-    :cond_ad
+    :cond_a
     sub-long/2addr v4, v12
 
     long-to-int v2, v4
@@ -373,11 +373,11 @@
 
     const v3, 0x66747970
 
-    if-ne v14, v3, :cond_108
+    if-ne v14, v3, :cond_11
 
     const/16 v3, 0x8
 
-    if-ge v2, v3, :cond_c1
+    if-ge v2, v3, :cond_b
 
     .line 186
     new-instance v0, Landroidx/media3/extractor/mp4/AtomSizeTooSmallSniffFailure;
@@ -389,7 +389,7 @@
     return-object v0
 
     .line 188
-    :cond_c1
+    :cond_b
     invoke-virtual {v8, v2}, Landroidx/media3/common/util/ParsableByteArray;->reset(I)V
 
     .line 189
@@ -411,11 +411,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d7
+    if-eqz v3, :cond_c
 
     const/4 v11, 0x1
 
-    :cond_d7
+    :cond_c
     const/4 v3, 0x4
 
     .line 195
@@ -428,17 +428,17 @@
 
     div-int/2addr v5, v3
 
-    if-nez v11, :cond_fc
+    if-nez v11, :cond_f
 
-    if-lez v5, :cond_fc
+    if-lez v5, :cond_f
 
     .line 199
     new-array v12, v5, [I
 
     move v3, v4
 
-    :goto_e7
-    if-ge v3, v5, :cond_fa
+    :goto_4
+    if-ge v3, v5, :cond_e
 
     .line 201
     invoke-virtual {v8}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -452,29 +452,29 @@
 
     move-result v9
 
-    if-eqz v9, :cond_f7
+    if-eqz v9, :cond_d
 
     const/4 v15, 0x1
 
-    goto :goto_fe
+    goto :goto_5
 
-    :cond_f7
+    :cond_d
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_e7
+    goto :goto_4
 
-    :cond_fa
+    :cond_e
     move v15, v11
 
-    goto :goto_fe
+    goto :goto_5
 
-    :cond_fc
+    :cond_f
     move v15, v11
 
     const/4 v12, 0x0
 
-    :goto_fe
-    if-nez v15, :cond_106
+    :goto_5
+    if-nez v15, :cond_10
 
     .line 210
     new-instance v0, Landroidx/media3/extractor/mp4/UnsupportedBrandsSniffFailure;
@@ -483,74 +483,74 @@
 
     return-object v0
 
-    :cond_106
+    :cond_10
     move v11, v15
 
-    goto :goto_10e
+    goto :goto_6
 
-    :cond_108
+    :cond_11
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_10e
+    if-eqz v2, :cond_12
 
     .line 214
     invoke-interface {v0, v2}, Landroidx/media3/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    :cond_10e
-    :goto_10e
+    :cond_12
+    :goto_6
     move v9, v4
 
     move-wide/from16 v2, v19
 
-    goto/16 :goto_89
+    goto/16 :goto_3
 
-    :cond_113
-    :goto_113
+    :cond_13
+    :goto_7
     const/4 v9, 0x1
 
-    goto :goto_117
+    goto :goto_9
 
-    :cond_115
-    :goto_115
+    :cond_14
+    :goto_8
     move v4, v9
 
     move v9, v4
 
-    :goto_117
-    if-nez v11, :cond_11c
+    :goto_9
+    if-nez v11, :cond_15
 
     .line 218
     sget-object v0, Landroidx/media3/extractor/mp4/NoDeclaredBrandSniffFailure;->INSTANCE:Landroidx/media3/extractor/mp4/NoDeclaredBrandSniffFailure;
 
     return-object v0
 
-    :cond_11c
+    :cond_15
     move/from16 v0, p1
 
-    if-eq v0, v9, :cond_128
+    if-eq v0, v9, :cond_17
 
-    if-eqz v9, :cond_125
+    if-eqz v9, :cond_16
 
     .line 221
     sget-object v0, Landroidx/media3/extractor/mp4/IncorrectFragmentationSniffFailure;->FILE_FRAGMENTED:Landroidx/media3/extractor/mp4/IncorrectFragmentationSniffFailure;
 
-    goto :goto_127
+    goto :goto_a
 
     .line 222
-    :cond_125
+    :cond_16
     sget-object v0, Landroidx/media3/extractor/mp4/IncorrectFragmentationSniffFailure;->FILE_NOT_FRAGMENTED:Landroidx/media3/extractor/mp4/IncorrectFragmentationSniffFailure;
 
-    :goto_127
+    :goto_a
     return-object v0
 
-    :cond_128
+    :cond_17
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static sniffUnfragmented(Landroidx/media3/extractor/ExtractorInput;Z)Landroidx/media3/extractor/SniffFailure;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

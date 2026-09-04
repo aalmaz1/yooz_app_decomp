@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1087
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createDeviceProtectedStorageContext(Landroid/content/Context;)Landroid/content/Context;
-    .registers 1
+    .locals 0
 
     .line 1098
     invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getDataDir(Landroid/content/Context;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1093
     invoke-virtual {p0}, Landroid/content/Context;->getDataDir()Ljava/io/File;
@@ -47,7 +47,7 @@
 .end method
 
 .method static isDeviceProtectedStorage(Landroid/content/Context;)Z
-    .registers 1
+    .locals 0
 
     .line 1103
     invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z

@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/VideoCapture;Lcom/google/common/util/concurrent/ListenableFuture;Z)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -58,12 +58,12 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 1253
     instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const-string v0, "VideoCapture"
 
@@ -72,12 +72,12 @@
     .line 1254
     invoke-static {v0, v1, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 1237
     check-cast p1, Ljava/lang/Void;
@@ -88,7 +88,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 3
+    .locals 1
 
     .line 1244
     iget-object p1, p0, Landroidx/camera/video/VideoCapture$3;->val$surfaceUpdateFuture:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -97,7 +97,7 @@
 
     iget-object v0, v0, Landroidx/camera/video/VideoCapture;->mSurfaceUpdateFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    if-ne p1, v0, :cond_1e
+    if-ne p1, v0, :cond_1
 
     iget-object p1, p0, Landroidx/camera/video/VideoCapture$3;->this$0:Landroidx/camera/video/VideoCapture;
 
@@ -105,27 +105,27 @@
 
     sget-object v0, Landroidx/camera/video/VideoOutput$SourceState;->INACTIVE:Landroidx/camera/video/VideoOutput$SourceState;
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_1
 
     .line 1246
     iget-object p1, p0, Landroidx/camera/video/VideoCapture$3;->this$0:Landroidx/camera/video/VideoCapture;
 
     iget-boolean v0, p0, Landroidx/camera/video/VideoCapture$3;->val$isStreamActive:Z
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/camera/video/VideoOutput$SourceState;->ACTIVE_STREAMING:Landroidx/camera/video/VideoOutput$SourceState;
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 1247
-    :cond_19
+    :cond_0
     sget-object v0, Landroidx/camera/video/VideoOutput$SourceState;->ACTIVE_NON_STREAMING:Landroidx/camera/video/VideoOutput$SourceState;
 
     .line 1246
-    :goto_1b
+    :goto_0
     invoke-virtual {p1, v0}, Landroidx/camera/video/VideoCapture;->setSourceState(Landroidx/camera/video/VideoOutput$SourceState;)V
 
-    :cond_1e
+    :cond_1
     return-void
 .end method

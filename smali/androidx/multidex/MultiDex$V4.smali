@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 744
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static install(Ljava/lang/ClassLoader;Ljava/util/List;)V
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,12 +87,12 @@
     move-result-object p1
 
     .line 764
-    :goto_21
+    :goto_0
     invoke-interface {p1}, Ljava/util/ListIterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_64
+    if-eqz v6, :cond_0
 
     .line 765
     invoke-interface {p1}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
@@ -160,10 +160,10 @@
 
     aput-object v6, v0, v8
 
-    goto :goto_21
+    goto :goto_0
 
     .line 775
-    :cond_64
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1

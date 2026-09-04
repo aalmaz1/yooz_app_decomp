@@ -9,7 +9,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -18,19 +18,19 @@
 .end method
 
 .method public static adjustRequestData([B)[B
-    .registers 3
+    .locals 2
 
     .line 38
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1b
 
-    if-lt v0, v1, :cond_7
+    if-lt v0, v1, :cond_0
 
     return-object p0
 
     .line 45
-    :cond_7
+    :cond_0
     invoke-static {p0}, Landroidx/media3/common/util/Util;->fromUtf8Bytes([B)Ljava/lang/String;
 
     move-result-object p0
@@ -48,20 +48,20 @@
 .end method
 
 .method public static adjustResponseData([B)[B
-    .registers 6
+    .locals 5
 
     .line 56
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1b
 
-    if-lt v0, v1, :cond_7
+    if-lt v0, v1, :cond_0
 
     return-object p0
 
     .line 63
-    :cond_7
-    :try_start_7
+    :cond_0
+    :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-static {p0}, Landroidx/media3/common/util/Util;->fromUtf8Bytes([B)Ljava/lang/String;
@@ -87,14 +87,14 @@
     const/4 v2, 0x0
 
     .line 66
-    :goto_1f
+    :goto_0
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_6b
+    if-ge v2, v3, :cond_2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_1
 
     const-string v3, ","
 
@@ -102,7 +102,7 @@
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 70
-    :cond_2c
+    :cond_1
     invoke-virtual {v0, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -164,9 +164,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_6b
+    :cond_2
     const-string v0, "]}"
 
     .line 79
@@ -180,12 +180,12 @@
     invoke-static {v0}, Landroidx/media3/common/util/Util;->getUtf8Bytes(Ljava/lang/String;)[B
 
     move-result-object p0
-    :try_end_78
-    .catch Lorg/json/JSONException; {:try_start_7 .. :try_end_78} :catch_79
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_79
+    :catch_0
     move-exception v0
 
     .line 82
@@ -215,7 +215,7 @@
 .end method
 
 .method private static base64ToBase64Url(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x2b
 
@@ -238,7 +238,7 @@
 .end method
 
 .method private static base64UrlToBase64(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     const/16 v0, 0x2d
 

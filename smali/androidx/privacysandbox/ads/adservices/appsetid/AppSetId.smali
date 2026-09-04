@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId$Companion;
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "id"
 
@@ -95,25 +95,25 @@
 
     const/4 p1, 0x1
 
-    if-eq p2, p1, :cond_14
+    if-eq p2, p1, :cond_1
 
     const/4 v0, 0x2
 
-    if-ne p2, v0, :cond_13
+    if-ne p2, v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
-    :cond_14
-    :goto_14
-    if-eqz p1, :cond_17
+    :cond_1
+    :goto_0
+    if-eqz p1, :cond_2
 
     return-void
 
     .line 37
-    :cond_17
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Scope undefined."
@@ -130,26 +130,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 42
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 43
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->id:Ljava/lang/String;
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;
@@ -160,26 +160,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_2
 
     .line 44
     iget v1, p0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->scope:I
 
     iget p1, p1, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->scope:I
 
-    if-ne v1, p1, :cond_1d
+    if-ne v1, p1, :cond_2
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_2
     move v0, v2
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method public final getId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 33
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->id:Ljava/lang/String;
@@ -188,7 +188,7 @@
 .end method
 
 .method public final getScope()I
-    .registers 2
+    .locals 1
 
     .line 34
     iget v0, p0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->scope:I
@@ -197,7 +197,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 48
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->id:Ljava/lang/String;
@@ -221,24 +221,24 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 54
     iget v0, p0, Landroidx/privacysandbox/ads/adservices/appsetid/AppSetId;->scope:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const-string v0, "SCOPE_APP"
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const-string v0, "SCOPE_DEVELOPER"
 
     .line 55
-    :goto_a
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "AppSetId: id="

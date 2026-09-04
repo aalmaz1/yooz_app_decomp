@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 114
     invoke-direct {p0}, Landroidx/camera/core/impl/SessionConfig$OutputConfig$Builder;-><init>()V
@@ -47,25 +47,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/impl/SessionConfig$OutputConfig;
-    .registers 10
+    .locals 9
 
     .line 153
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->surface:Landroidx/camera/core/impl/DeferrableSurface;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " surface"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 156
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->sharedSurfaces:Ljava/util/List;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 157
     new-instance v1, Ljava/lang/StringBuilder;
@@ -87,10 +87,10 @@
     move-result-object v0
 
     .line 159
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->surfaceGroupId:Ljava/lang/Integer;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 160
     new-instance v1, Ljava/lang/StringBuilder;
@@ -112,10 +112,10 @@
     move-result-object v0
 
     .line 162
-    :cond_37
+    :cond_2
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->dynamicRange:Landroidx/camera/core/DynamicRange;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_3
 
     .line 163
     new-instance v1, Ljava/lang/StringBuilder;
@@ -137,12 +137,12 @@
     move-result-object v0
 
     .line 165
-    :cond_4e
+    :cond_3
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6a
+    if-eqz v1, :cond_4
 
     .line 168
     new-instance v0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;
@@ -171,7 +171,7 @@
     return-object v0
 
     .line 166
-    :cond_6a
+    :cond_4
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -194,9 +194,9 @@
 .end method
 
 .method public setDynamicRange(Landroidx/camera/core/DynamicRange;)Landroidx/camera/core/impl/SessionConfig$OutputConfig$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 147
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->dynamicRange:Landroidx/camera/core/DynamicRange;
@@ -204,7 +204,7 @@
     return-object p0
 
     .line 145
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null dynamicRange"
@@ -215,7 +215,7 @@
 .end method
 
 .method public setPhysicalCameraId(Ljava/lang/String;)Landroidx/camera/core/impl/SessionConfig$OutputConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 134
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->physicalCameraId:Ljava/lang/String;
@@ -224,7 +224,7 @@
 .end method
 
 .method public setSharedSurfaces(Ljava/util/List;)Landroidx/camera/core/impl/SessionConfig$OutputConfig$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -235,7 +235,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 129
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->sharedSurfaces:Ljava/util/List;
@@ -243,7 +243,7 @@
     return-object p0
 
     .line 127
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null sharedSurfaces"
@@ -254,9 +254,9 @@
 .end method
 
 .method public setSurface(Landroidx/camera/core/impl/DeferrableSurface;)Landroidx/camera/core/impl/SessionConfig$OutputConfig$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 121
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$Builder;->surface:Landroidx/camera/core/impl/DeferrableSurface;
@@ -264,7 +264,7 @@
     return-object p0
 
     .line 119
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null surface"
@@ -275,7 +275,7 @@
 .end method
 
 .method public setSurfaceGroupId(I)Landroidx/camera/core/impl/SessionConfig$OutputConfig$Builder;
-    .registers 2
+    .locals 0
 
     .line 139
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

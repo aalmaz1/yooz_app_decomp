@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/os/IBinder;)V
-    .registers 2
+    .locals 0
 
     .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
-    .registers 2
+    .locals 1
 
     .line 109
     iget-object v0, p0, Landroid/support/customtabs/IEngagementSignalsCallback$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 113
     sget-object v0, Landroid/support/customtabs/IEngagementSignalsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
@@ -55,7 +55,7 @@
 .end method
 
 .method public onGreatestScrollPercentageIncreased(ILandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -68,7 +68,7 @@
     move-result-object v0
 
     .line 132
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/IEngagementSignalsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -91,15 +91,15 @@
     const/4 v2, 0x3
 
     invoke-interface {p1, v2, v0, p2, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_18
-    .catchall {:try_start_4 .. :try_end_18} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 138
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -109,7 +109,7 @@
 .end method
 
 .method public onSessionEnded(ZLandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -122,7 +122,7 @@
     move-result-object v0
 
     .line 145
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/IEngagementSignalsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -131,17 +131,17 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     move p1, v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move p1, v2
 
     .line 146
-    :goto_10
+    :goto_0
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 147
@@ -155,15 +155,15 @@
     const/4 v2, 0x0
 
     invoke-interface {p1, p2, v0, v2, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_1d
-    .catchall {:try_start_4 .. :try_end_1d} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 151
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -173,7 +173,7 @@
 .end method
 
 .method public onVerticalScrollEvent(ZLandroid/os/Bundle;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -186,7 +186,7 @@
     move-result-object v0
 
     .line 119
-    :try_start_4
+    :try_start_0
     sget-object v1, Landroid/support/customtabs/IEngagementSignalsCallback$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
@@ -195,17 +195,17 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     move p1, v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move p1, v2
 
     .line 120
-    :goto_10
+    :goto_0
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 121
@@ -219,15 +219,15 @@
     const/4 v2, 0x0
 
     invoke-interface {p1, p2, v0, v2, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_1d
-    .catchall {:try_start_4 .. :try_end_1d} :catchall_21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 125
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
 
-    :catchall_21
+    :catchall_0
     move-exception p1
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V

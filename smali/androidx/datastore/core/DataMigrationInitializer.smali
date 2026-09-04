@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/datastore/core/DataMigrationInitializer$Companion;
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

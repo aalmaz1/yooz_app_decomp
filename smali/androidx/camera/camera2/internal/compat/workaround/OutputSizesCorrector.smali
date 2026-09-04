@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method private addExtraSupportedOutputSizesByClass(Ljava/util/List;Ljava/lang/Class;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,12 +63,12 @@
     .line 109
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;->mExtraSupportedOutputSizeQuirk:Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 113
-    :cond_5
+    :cond_0
     invoke-virtual {v0, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->getExtraSupportedResolutions(Ljava/lang/Class;)[Landroid/util/Size;
 
     move-result-object p2
@@ -76,7 +76,7 @@
     .line 115
     array-length v0, p2
 
-    if-lez v0, :cond_13
+    if-lez v0, :cond_1
 
     .line 116
     invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -85,12 +85,12 @@
 
     invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method private addExtraSupportedOutputSizesByFormat(Ljava/util/List;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,12 +103,12 @@
     .line 90
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/workaround/OutputSizesCorrector;->mExtraSupportedOutputSizeQuirk:Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 94
-    :cond_5
+    :cond_0
     invoke-virtual {v0, p2}, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedOutputSizeQuirk;->getExtraSupportedResolutions(I)[Landroid/util/Size;
 
     move-result-object p2
@@ -116,7 +116,7 @@
     .line 96
     array-length v0, p2
 
-    if-lez v0, :cond_13
+    if-lez v0, :cond_1
 
     .line 97
     invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -125,12 +125,12 @@
 
     invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method private excludeProblematicOutputSizesByClass(Ljava/util/List;Ljava/lang/Class;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,19 +154,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 152
-    :cond_d
+    :cond_0
     invoke-interface {p1, p2}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
     return-void
 .end method
 
 .method private excludeProblematicOutputSizesByFormat(Ljava/util/List;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -188,12 +188,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 134
-    :cond_d
+    :cond_0
     invoke-interface {p1, p2}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
     return-void
@@ -202,7 +202,7 @@
 
 # virtual methods
 .method public applyQuirks([Landroid/util/Size;I)[Landroid/util/Size;
-    .registers 4
+    .locals 1
 
     .line 60
     new-instance v0, Ljava/util/ArrayList;
@@ -224,7 +224,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const-string p1, "OutputSizesCorrector"
 
@@ -233,7 +233,7 @@
     .line 64
     invoke-static {p1, p2}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     new-array p1, p1, [Landroid/util/Size;
@@ -249,7 +249,7 @@
 .end method
 
 .method public applyQuirks([Landroid/util/Size;Ljava/lang/Class;)[Landroid/util/Size;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -282,7 +282,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_0
 
     const-string p1, "OutputSizesCorrector"
 
@@ -291,7 +291,7 @@
     .line 78
     invoke-static {p1, p2}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
     new-array p1, p1, [Landroid/util/Size;

@@ -34,7 +34,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/core/ImageProcessingUtil$Result;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -63,7 +63,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 60
     new-instance v0, Landroidx/camera/core/ImageProcessingUtil$Result;
@@ -109,7 +109,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -123,7 +123,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/core/ImageProcessingUtil$Result;
-    .registers 2
+    .locals 1
 
     .line 59
     const-class v0, Landroidx/camera/core/ImageProcessingUtil$Result;
@@ -138,7 +138,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/core/ImageProcessingUtil$Result;
-    .registers 1
+    .locals 1
 
     .line 59
     sget-object v0, Landroidx/camera/core/ImageProcessingUtil$Result;->$VALUES:[Landroidx/camera/core/ImageProcessingUtil$Result;

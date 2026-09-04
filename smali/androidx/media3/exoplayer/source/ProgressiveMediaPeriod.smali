@@ -138,7 +138,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$fRLJj_pvmhUWdElszeJahaiDmb0(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->maybeFinishPrepare()V
 
@@ -146,7 +146,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 106
     invoke-static {}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->createIcyMetadataHeaders()Ljava/util/Map;
@@ -183,7 +183,7 @@
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$Listener;Landroidx/media3/exoplayer/upstream/Allocator;Ljava/lang/String;IJ)V
-    .registers 14
+    .locals 0
 
     .line 189
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -289,7 +289,7 @@
 .end method
 
 .method static synthetic access$1000(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)J
-    .registers 3
+    .locals 2
 
     .line 77
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->continueLoadingCheckIntervalBytes:J
@@ -298,7 +298,7 @@
 .end method
 
 .method static synthetic access$1100(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)Ljava/lang/Runnable;
-    .registers 1
+    .locals 0
 
     .line 77
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->onContinueLoadingRequestedRunnable:Ljava/lang/Runnable;
@@ -307,7 +307,7 @@
 .end method
 
 .method static synthetic access$1200(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)Landroid/os/Handler;
-    .registers 1
+    .locals 0
 
     .line 77
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->handler:Landroid/os/Handler;
@@ -316,7 +316,7 @@
 .end method
 
 .method static synthetic access$1300(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;Z)J
-    .registers 2
+    .locals 0
 
     .line 77
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->getLargestQueuedTimestampUs(Z)J
@@ -327,7 +327,7 @@
 .end method
 
 .method static synthetic access$1400()Ljava/util/Map;
-    .registers 1
+    .locals 1
 
     .line 77
     sget-object v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->ICY_METADATA_HEADERS:Ljava/util/Map;
@@ -336,7 +336,7 @@
 .end method
 
 .method static synthetic access$1500(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 77
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->customCacheKey:Ljava/lang/String;
@@ -345,7 +345,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)J
-    .registers 3
+    .locals 2
 
     .line 77
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->durationUs:J
@@ -354,7 +354,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)V
-    .registers 1
+    .locals 0
 
     .line 77
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->onLengthKnown()V
@@ -363,7 +363,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;)Landroidx/media3/extractor/metadata/icy/IcyHeaders;
-    .registers 1
+    .locals 0
 
     .line 77
     iget-object p0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->icyHeaders:Landroidx/media3/extractor/metadata/icy/IcyHeaders;
@@ -372,7 +372,7 @@
 .end method
 
 .method static synthetic access$802(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;Landroidx/media3/extractor/metadata/icy/IcyHeaders;)Landroidx/media3/extractor/metadata/icy/IcyHeaders;
-    .registers 2
+    .locals 0
 
     .line 77
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->icyHeaders:Landroidx/media3/extractor/metadata/icy/IcyHeaders;
@@ -381,7 +381,7 @@
 .end method
 
 .method static synthetic access$900()Landroidx/media3/common/Format;
-    .registers 1
+    .locals 1
 
     .line 77
     sget-object v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->ICY_FORMAT:Landroidx/media3/common/Format;
@@ -390,7 +390,7 @@
 .end method
 
 .method private assertPrepared()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "trackState",
@@ -417,18 +417,18 @@
 .end method
 
 .method private configureRetry(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;I)Z
-    .registers 9
+    .locals 6
 
     .line 875
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isLengthKnown:Z
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_40
+    if-nez v0, :cond_3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/media3/extractor/SeekMap;->getDurationUs()J
 
@@ -438,23 +438,23 @@
 
     cmp-long v0, v2, v4
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_40
+    goto :goto_1
 
     .line 880
-    :cond_17
+    :cond_0
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_1
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->suppressRead()Z
 
     move-result p2
 
-    if-nez p2, :cond_25
+    if-nez p2, :cond_1
 
     .line 890
     iput-boolean v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingDeferredRetry:Z
@@ -462,7 +462,7 @@
     return v0
 
     .line 897
-    :cond_25
+    :cond_1
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
     iput-boolean p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->notifyDiscontinuity:Z
@@ -480,8 +480,8 @@
 
     array-length v4, p2
 
-    :goto_32
-    if-ge v0, v4, :cond_3c
+    :goto_0
+    if-ge v0, v4, :cond_2
 
     aget-object v5, p2, v0
 
@@ -490,24 +490,24 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_32
+    goto :goto_0
 
     .line 903
-    :cond_3c
+    :cond_2
     invoke-static {p1, v2, v3, v2, v3}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->access$600(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;JJ)V
 
     return v1
 
     .line 878
-    :cond_40
-    :goto_40
+    :cond_3
+    :goto_1
     iput p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->extractedSamplesCountAtStartOfLoad:I
 
     return v1
 .end method
 
 .method private static createIcyMetadataHeaders()Ljava/util/Map;
-    .registers 3
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -539,7 +539,7 @@
 .end method
 
 .method private getExtractedSamplesCount()I
-    .registers 6
+    .locals 5
 
     .line 936
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -550,8 +550,8 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v2, v1, :cond_11
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v4, v0, v2
 
@@ -564,28 +564,28 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return v3
 .end method
 
 .method private getLargestQueuedTimestampUs(Z)J
-    .registers 7
+    .locals 5
 
     const-wide/high16 v0, -0x8000000000000000L
 
     const/4 v2, 0x0
 
     .line 944
-    :goto_3
+    :goto_0
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v3, v3
 
-    if-ge v2, v3, :cond_27
+    if-ge v2, v3, :cond_2
 
-    if-nez p1, :cond_18
+    if-nez p1, :cond_0
 
     .line 945
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->trackState:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;
@@ -600,10 +600,10 @@
 
     aget-boolean v3, v3, v2
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_1
 
     .line 946
-    :cond_18
+    :cond_0
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     aget-object v3, v3, v2
@@ -617,17 +617,17 @@
 
     move-result-wide v0
 
-    :cond_24
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_27
+    :cond_2
     return-wide v0
 .end method
 
 .method private isPendingReset()Z
-    .registers 5
+    .locals 4
 
     .line 954
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingResetPositionUs:J
@@ -636,43 +636,43 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method private maybeFinishPrepare()V
-    .registers 14
+    .locals 13
 
     .line 770
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->released:Z
 
-    if-nez v0, :cond_11d
+    if-nez v0, :cond_c
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
-    if-nez v0, :cond_11d
+    if-nez v0, :cond_c
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueuesBuilt:Z
 
-    if-eqz v0, :cond_11d
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
-    goto/16 :goto_11d
+    goto/16 :goto_6
 
     .line 773
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v1, v0
@@ -681,8 +681,8 @@
 
     move v3, v2
 
-    :goto_17
-    if-ge v3, v1, :cond_25
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     aget-object v4, v0, v3
 
@@ -691,17 +691,17 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_22
+    if-nez v4, :cond_1
 
     return-void
 
-    :cond_22
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 778
-    :cond_25
+    :cond_2
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadCondition:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ConditionVariable;->close()Z
@@ -719,12 +719,12 @@
 
     move v4, v2
 
-    :goto_32
+    :goto_1
     const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
     const/4 v7, 0x1
 
-    if-ge v4, v0, :cond_de
+    if-ge v4, v0, :cond_a
 
     .line 783
     iget-object v8, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -749,28 +749,28 @@
 
     move-result v10
 
-    if-nez v10, :cond_59
+    if-nez v10, :cond_4
 
     .line 786
     invoke-static {v9}, Landroidx/media3/common/MimeTypes;->isVideo(Ljava/lang/String;)Z
 
     move-result v11
 
-    if-eqz v11, :cond_57
+    if-eqz v11, :cond_3
 
-    goto :goto_59
+    goto :goto_2
 
-    :cond_57
+    :cond_3
     move v11, v2
 
-    goto :goto_5a
+    goto :goto_3
 
-    :cond_59
-    :goto_59
+    :cond_4
+    :goto_2
     move v11, v7
 
     .line 787
-    :goto_5a
+    :goto_3
     aput-boolean v11, v3, v4
 
     .line 788
@@ -790,28 +790,28 @@
 
     cmp-long v5, v11, v5
 
-    if-eqz v5, :cond_71
+    if-eqz v5, :cond_5
 
-    if-ne v0, v7, :cond_71
+    if-ne v0, v7, :cond_5
 
-    if-eqz v9, :cond_71
+    if-eqz v9, :cond_5
 
     move v5, v7
 
-    goto :goto_72
+    goto :goto_4
 
-    :cond_71
+    :cond_5
     move v5, v2
 
-    :goto_72
+    :goto_4
     iput-boolean v5, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isSingleSample:Z
 
     .line 791
     iget-object v5, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->icyHeaders:Landroidx/media3/extractor/metadata/icy/IcyHeaders;
 
-    if-eqz v5, :cond_c1
+    if-eqz v5, :cond_9
 
-    if-nez v10, :cond_82
+    if-nez v10, :cond_6
 
     .line 793
     iget-object v6, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueueTrackIds:[Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackId;
@@ -820,13 +820,13 @@
 
     iget-boolean v6, v6, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackId;->isIcyTrack:Z
 
-    if-eqz v6, :cond_a4
+    if-eqz v6, :cond_8
 
     .line 794
-    :cond_82
+    :cond_6
     iget-object v6, v8, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-nez v6, :cond_90
+    if-nez v6, :cond_7
 
     .line 796
     new-instance v6, Landroidx/media3/common/Metadata;
@@ -837,9 +837,9 @@
 
     invoke-direct {v6, v9}, Landroidx/media3/common/Metadata;-><init>([Landroidx/media3/common/Metadata$Entry;)V
 
-    goto :goto_98
+    goto :goto_5
 
-    :cond_90
+    :cond_7
     new-array v9, v7, [Landroidx/media3/common/Metadata$Entry;
 
     aput-object v5, v9, v2
@@ -850,7 +850,7 @@
     move-result-object v6
 
     .line 800
-    :goto_98
+    :goto_5
     invoke-virtual {v8}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
 
     move-result-object v8
@@ -863,23 +863,23 @@
 
     move-result-object v8
 
-    :cond_a4
-    if-eqz v10, :cond_c1
+    :cond_8
+    if-eqz v10, :cond_9
 
     .line 804
     iget v6, v8, Landroidx/media3/common/Format;->averageBitrate:I
 
     const/4 v9, -0x1
 
-    if-ne v6, v9, :cond_c1
+    if-ne v6, v9, :cond_9
 
     iget v6, v8, Landroidx/media3/common/Format;->peakBitrate:I
 
-    if-ne v6, v9, :cond_c1
+    if-ne v6, v9, :cond_9
 
     iget v6, v5, Landroidx/media3/extractor/metadata/icy/IcyHeaders;->bitrate:I
 
-    if-eq v6, v9, :cond_c1
+    if-eq v6, v9, :cond_9
 
     .line 808
     invoke-virtual {v8}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -897,7 +897,7 @@
     move-result-object v8
 
     .line 811
-    :cond_c1
+    :cond_9
     iget-object v5, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
 
     invoke-interface {v5, v8}, Landroidx/media3/exoplayer/drm/DrmSessionManager;->getCryptoType(Landroidx/media3/common/Format;)I
@@ -925,10 +925,10 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_32
+    goto/16 :goto_1
 
     .line 814
-    :cond_de
+    :cond_a
     new-instance v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;
 
     new-instance v2, Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -942,13 +942,13 @@
     .line 815
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isSingleSample:Z
 
-    if-eqz v0, :cond_101
+    if-eqz v0, :cond_b
 
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->durationUs:J
 
     cmp-long v0, v0, v5
 
-    if-nez v0, :cond_101
+    if-nez v0, :cond_b
 
     .line 816
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->singleSampleDurationUs:J
@@ -965,7 +965,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
     .line 825
-    :cond_101
+    :cond_b
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->listener:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$Listener;
 
     iget-wide v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->durationUs:J
@@ -994,13 +994,13 @@
 
     invoke-interface {v0, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
 
-    :cond_11d
-    :goto_11d
+    :cond_c
+    :goto_6
     return-void
 .end method
 
 .method private maybeNotifyDownstreamFormat(I)V
-    .registers 12
+    .locals 10
 
     .line 528
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -1013,7 +1013,7 @@
     .line 530
     aget-boolean v1, v0, p1
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_0
 
     .line 531
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->trackState:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;
@@ -1054,12 +1054,12 @@
     .line 538
     aput-boolean v1, v0, p1
 
-    :cond_2a
+    :cond_0
     return-void
 .end method
 
 .method private maybeStartDeferredRetry(I)V
-    .registers 5
+    .locals 3
 
     .line 543
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -1072,11 +1072,11 @@
     .line 545
     iget-boolean v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingDeferredRetry:Z
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_2
 
     aget-boolean v0, v0, p1
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
@@ -1089,11 +1089,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_0
 
-    goto :goto_40
+    goto :goto_1
 
-    :cond_1b
+    :cond_0
     const-wide/16 v1, 0x0
 
     .line 550
@@ -1118,8 +1118,8 @@
 
     array-length v1, p1
 
-    :goto_2b
-    if-ge v0, v1, :cond_35
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     aget-object v2, p1, v0
 
@@ -1128,10 +1128,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 558
-    :cond_35
+    :cond_1
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
 
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1142,13 +1142,13 @@
 
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_40
-    :goto_40
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private onLengthKnown()V
-    .registers 3
+    .locals 2
 
     .line 730
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->handler:Landroid/os/Handler;
@@ -1163,7 +1163,7 @@
 .end method
 
 .method private prepareTrackOutput(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackId;)Landroidx/media3/extractor/TrackOutput;
-    .registers 6
+    .locals 4
 
     .line 734
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1172,8 +1172,8 @@
 
     const/4 v1, 0x0
 
-    :goto_4
-    if-ge v1, v0, :cond_18
+    :goto_0
+    if-ge v1, v0, :cond_1
 
     .line 736
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueueTrackIds:[Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackId;
@@ -1184,7 +1184,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     .line 737
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1193,16 +1193,16 @@
 
     return-object p1
 
-    :cond_15
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 740
-    :cond_18
+    :cond_1
     iget-boolean v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueuesBuilt:Z
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_2
 
     .line 741
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1239,7 +1239,7 @@
     return-object p1
 
     .line 744
-    :cond_3e
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->allocator:Landroidx/media3/exoplayer/upstream/Allocator;
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->drmSessionManager:Landroidx/media3/exoplayer/drm/DrmSessionManager;
@@ -1302,7 +1302,7 @@
 .end method
 
 .method private seekInsideBufferUs([ZJ)Z
-    .registers 9
+    .locals 5
 
     .line 916
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1313,8 +1313,8 @@
 
     move v2, v1
 
-    :goto_5
-    if-ge v2, v0, :cond_2a
+    :goto_0
+    if-ge v2, v0, :cond_3
 
     .line 918
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1324,7 +1324,7 @@
     .line 920
     iget-boolean v4, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isSingleSample:Z
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_0
 
     .line 921
     invoke-virtual {v3}, Landroidx/media3/exoplayer/source/SampleQueue;->getFirstIndex()I
@@ -1335,60 +1335,60 @@
 
     move-result v3
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 922
-    :cond_18
+    :cond_0
     invoke-virtual {v3, p2, p3, v1}, Landroidx/media3/exoplayer/source/SampleQueue;->seekTo(JZ)Z
 
     move-result v3
 
-    :goto_1c
-    if-nez v3, :cond_27
+    :goto_1
+    if-nez v3, :cond_2
 
     .line 927
     aget-boolean v3, p1, v2
 
-    if-nez v3, :cond_26
+    if-nez v3, :cond_1
 
     iget-boolean v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->haveAudioVideoTracks:Z
 
-    if-nez v3, :cond_27
+    if-nez v3, :cond_2
 
-    :cond_26
+    :cond_1
     return v1
 
-    :cond_27
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_2a
+    :cond_3
     const/4 p1, 0x1
 
     return p1
 .end method
 
 .method private setSeekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 8
+    .locals 6
 
     .line 758
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->icyHeaders:Landroidx/media3/extractor/metadata/icy/IcyHeaders;
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     move-object v0, p1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     new-instance v0, Landroidx/media3/extractor/SeekMap$Unseekable;
 
     invoke-direct {v0, v1, v2}, Landroidx/media3/extractor/SeekMap$Unseekable;-><init>(J)V
 
-    :goto_10
+    :goto_0
     iput-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
     .line 759
@@ -1403,7 +1403,7 @@
 
     const/4 v3, 0x1
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     invoke-interface {p1}, Landroidx/media3/extractor/SeekMap;->getDurationUs()J
 
@@ -1411,30 +1411,30 @@
 
     cmp-long v0, v4, v1
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     move v0, v3
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_28
+    :goto_1
     iput-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isLive:Z
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     const/4 v3, 0x7
 
     .line 761
-    :cond_2d
+    :cond_2
     iput v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->dataType:I
 
     .line 762
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_3
 
     .line 763
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->listener:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$Listener;
@@ -1449,18 +1449,18 @@
 
     invoke-interface {v0, v1, v2, p1, v3}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$Listener;->onSourceInfoRefreshed(JZZ)V
 
-    goto :goto_44
+    goto :goto_2
 
     .line 765
-    :cond_41
+    :cond_3
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->maybeFinishPrepare()V
 
-    :goto_44
+    :goto_2
     return-void
 .end method
 
 .method private startLoading()V
-    .registers 27
+    .locals 26
 
     move-object/from16 v7, p0
 
@@ -1486,7 +1486,7 @@
     .line 834
     iget-boolean v0, v7, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_2
 
     .line 835
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isPendingReset()Z
@@ -1502,13 +1502,13 @@
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_36
+    if-eqz v4, :cond_0
 
     iget-wide v4, v7, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingResetPositionUs:J
 
     cmp-long v0, v4, v0
 
-    if-lez v0, :cond_36
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1521,7 +1521,7 @@
     return-void
 
     .line 841
-    :cond_36
+    :cond_0
     iget-object v0, v7, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
     .line 842
@@ -1553,8 +1553,8 @@
 
     const/4 v4, 0x0
 
-    :goto_51
-    if-ge v4, v1, :cond_5d
+    :goto_0
+    if-ge v4, v1, :cond_1
 
     aget-object v5, v0, v4
 
@@ -1565,14 +1565,14 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_51
+    goto :goto_0
 
     .line 847
-    :cond_5d
+    :cond_1
     iput-wide v2, v7, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingResetPositionUs:J
 
     .line 849
-    :cond_5f
+    :cond_2
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->getExtractedSamplesCount()I
 
     move-result v0
@@ -1641,43 +1641,43 @@
 .end method
 
 .method private suppressRead()Z
-    .registers 2
+    .locals 1
 
     .line 562
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->notifyDiscontinuity:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 364
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadingFinished:Z
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_2
 
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -1686,24 +1686,24 @@
 
     move-result p1
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_2
 
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingDeferredRetry:Z
 
-    if-nez p1, :cond_2c
+    if-nez p1, :cond_2
 
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     iget p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->enabledTrackCount:I
 
-    if-nez p1, :cond_19
+    if-nez p1, :cond_0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 370
-    :cond_19
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadCondition:Landroidx/media3/common/util/ConditionVariable;
 
     invoke-virtual {p1}, Landroidx/media3/common/util/ConditionVariable;->open()Z
@@ -1717,35 +1717,35 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     .line 372
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->startLoading()V
 
     const/4 p1, 0x1
 
-    :cond_2b
+    :cond_1
     return p1
 
-    :cond_2c
-    :goto_2c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 9
+    .locals 5
 
     .line 342
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isSingleSample:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 346
-    :cond_5
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
 
     .line 347
@@ -1753,12 +1753,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 350
-    :cond_f
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->trackState:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;->trackEnabledStates:[Z
@@ -1770,8 +1770,8 @@
 
     const/4 v2, 0x0
 
-    :goto_17
-    if-ge v2, v1, :cond_25
+    :goto_0
+    if-ge v2, v1, :cond_2
 
     .line 353
     iget-object v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1784,14 +1784,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     return-void
 .end method
 
 .method public endTracks()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -1809,7 +1809,7 @@
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 13
+    .locals 9
 
     .line 471
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -1821,14 +1821,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const-wide/16 p1, 0x0
 
     return-wide p1
 
     .line 476
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
     invoke-interface {v0, p1, p2}, Landroidx/media3/extractor/SeekMap;->getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -1856,7 +1856,7 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 12
+    .locals 11
 
     .line 400
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -1866,21 +1866,21 @@
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    if-nez v0, :cond_61
+    if-nez v0, :cond_7
 
     iget v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->enabledTrackCount:I
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
-    goto :goto_61
+    goto :goto_1
 
     .line 403
-    :cond_e
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isPendingReset()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 404
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingResetPositionUs:J
@@ -1888,14 +1888,14 @@
     return-wide v0
 
     .line 407
-    :cond_17
+    :cond_1
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->haveAudioVideoTracks:Z
 
     const/4 v3, 0x0
 
     const-wide v4, 0x7fffffffffffffffL
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_3
 
     .line 409
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1906,8 +1906,8 @@
 
     move-wide v7, v4
 
-    :goto_26
-    if-ge v6, v0, :cond_52
+    :goto_0
+    if-ge v6, v0, :cond_4
 
     .line 411
     iget-object v9, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->trackState:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;
@@ -1916,7 +1916,7 @@
 
     aget-boolean v9, v9, v6
 
-    if-eqz v9, :cond_4e
+    if-eqz v9, :cond_2
 
     iget-object v9, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->trackState:Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackState;
 
@@ -1924,7 +1924,7 @@
 
     aget-boolean v9, v9, v6
 
-    if-eqz v9, :cond_4e
+    if-eqz v9, :cond_2
 
     iget-object v9, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
@@ -1935,7 +1935,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_4e
+    if-nez v9, :cond_2
 
     .line 414
     iget-object v9, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -1951,42 +1951,42 @@
 
     move-result-wide v7
 
-    :cond_4e
+    :cond_2
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_51
+    :cond_3
     move-wide v7, v4
 
-    :cond_52
+    :cond_4
     cmp-long v0, v7, v4
 
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_5
 
     .line 420
     invoke-direct {p0, v3}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->getLargestQueuedTimestampUs(Z)J
 
     move-result-wide v7
 
-    :cond_5a
+    :cond_5
     cmp-long v0, v7, v1
 
-    if-nez v0, :cond_60
+    if-nez v0, :cond_6
 
     .line 423
     iget-wide v7, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->lastSeekPositionUs:J
 
-    :cond_60
+    :cond_6
     return-wide v7
 
-    :cond_61
-    :goto_61
+    :cond_7
+    :goto_1
     return-wide v1
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 385
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->getBufferedPositionUs()J
@@ -1997,7 +1997,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 258
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -2011,7 +2011,7 @@
 .end method
 
 .method icyTrack()Landroidx/media3/extractor/TrackOutput;
-    .registers 4
+    .locals 3
 
     .line 717
     new-instance v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackId;
@@ -2030,7 +2030,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 380
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -2039,7 +2039,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadCondition:Landroidx/media3/common/util/ConditionVariable;
 
@@ -2047,28 +2047,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method isReady(I)Z
-    .registers 3
+    .locals 1
 
     .line 484
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->suppressRead()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
@@ -2080,26 +2080,26 @@
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_15
+    :goto_0
     return p1
 .end method
 
 .method synthetic lambda$new$0$androidx-media3-exoplayer-source-ProgressiveMediaPeriod()V
-    .registers 2
+    .locals 1
 
     .line 207
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->released:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 208
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -2112,12 +2112,12 @@
 
     invoke-interface {v0, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$onLengthKnown$2$androidx-media3-exoplayer-source-ProgressiveMediaPeriod()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -2128,7 +2128,7 @@
 .end method
 
 .method synthetic lambda$seekMap$1$androidx-media3-exoplayer-source-ProgressiveMediaPeriod(Landroidx/media3/extractor/SeekMap;)V
-    .registers 2
+    .locals 0
 
     .line 711
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->setSeekMap(Landroidx/media3/extractor/SeekMap;)V
@@ -2137,7 +2137,7 @@
 .end method
 
 .method maybeThrowError()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2161,7 +2161,7 @@
 .end method
 
 .method maybeThrowError(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2182,7 +2182,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2195,15 +2195,15 @@
     .line 250
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadingFinished:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const-string v0, "Loading finished before preparation is complete."
 
     const/4 v1, 0x0
@@ -2215,13 +2215,13 @@
 
     throw v0
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onLoadCanceled(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;JJZ)V
-    .registers 22
+    .locals 15
 
     move-object v0, p0
 
@@ -2300,7 +2300,7 @@
     .line 618
     invoke-virtual/range {v2 .. v12}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadCanceled(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJ)V
 
-    if-nez p6, :cond_5c
+    if-nez p6, :cond_1
 
     .line 628
     iget-object v1, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -2309,8 +2309,8 @@
 
     const/4 v3, 0x0
 
-    :goto_43
-    if-ge v3, v2, :cond_4d
+    :goto_0
+    if-ge v3, v2, :cond_0
 
     aget-object v4, v1, v3
 
@@ -2319,13 +2319,13 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_43
+    goto :goto_0
 
     .line 631
-    :cond_4d
+    :cond_0
     iget v1, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->enabledTrackCount:I
 
-    if-lez v1, :cond_5c
+    if-lez v1, :cond_1
 
     .line 632
     iget-object v1, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -2338,12 +2338,12 @@
 
     invoke-interface {v1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
-    :cond_5c
+    :cond_1
     return-void
 .end method
 
 .method public bridge synthetic onLoadCanceled(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJZ)V
-    .registers 7
+    .locals 0
 
     .line 77
     check-cast p1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;
@@ -2354,7 +2354,7 @@
 .end method
 
 .method public onLoadCompleted(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;JJ)V
-    .registers 22
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -2367,11 +2367,11 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     iget-object v1, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekMap:Landroidx/media3/extractor/SeekMap;
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 571
     invoke-interface {v1}, Landroidx/media3/extractor/SeekMap;->isSeekable()Z
@@ -2387,19 +2387,19 @@
 
     cmp-long v5, v3, v5
 
-    if-nez v5, :cond_23
+    if-nez v5, :cond_0
 
     const-wide/16 v3, 0x0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     const-wide/16 v5, 0x2710
 
     add-long/2addr v3, v5
 
     .line 577
-    :goto_26
+    :goto_0
     iput-wide v3, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->durationUs:J
 
     .line 578
@@ -2410,7 +2410,7 @@
     invoke-interface {v5, v3, v4, v1, v6}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$Listener;->onSourceInfoRefreshed(JZZ)V
 
     .line 580
-    :cond_2f
+    :cond_1
     invoke-static/range {p1 .. p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;->access$100(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;)Landroidx/media3/datasource/StatsDataSource;
 
     move-result-object v1
@@ -2503,7 +2503,7 @@
 .end method
 
 .method public bridge synthetic onLoadCompleted(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJ)V
-    .registers 6
+    .locals 0
 
     .line 77
     check-cast p1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;
@@ -2514,7 +2514,7 @@
 .end method
 
 .method public onLoadError(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 33
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -2614,17 +2614,17 @@
 
     const/4 v4, 0x1
 
-    if-nez v3, :cond_60
+    if-nez v3, :cond_0
 
     .line 668
     sget-object v1, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     move-object/from16 v15, p1
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 670
-    :cond_60
+    :cond_0
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->getExtractedSamplesCount()I
 
     move-result v3
@@ -2632,40 +2632,40 @@
     .line 671
     iget v5, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->extractedSamplesCountAtStartOfLoad:I
 
-    if-le v3, v5, :cond_6c
+    if-le v3, v5, :cond_1
 
     move-object/from16 v15, p1
 
     move v5, v4
 
-    goto :goto_6f
+    goto :goto_0
 
-    :cond_6c
+    :cond_1
     const/4 v5, 0x0
 
     move-object/from16 v15, p1
 
     .line 673
-    :goto_6f
+    :goto_0
     invoke-direct {v0, v15, v3}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->configureRetry(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_2
 
     .line 674
     invoke-static {v5, v1, v2}, Landroidx/media3/exoplayer/upstream/Loader;->createRetryAction(ZJ)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     move-result-object v1
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 675
-    :cond_7a
+    :cond_2
     sget-object v1, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
     .line 678
-    :goto_7c
+    :goto_1
     invoke-virtual {v1}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v2
@@ -2701,7 +2701,7 @@
     .line 679
     invoke-virtual/range {v2 .. v14}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;IILandroidx/media3/common/Format;ILjava/lang/Object;JJLjava/io/IOException;Z)V
 
-    if-eqz v16, :cond_a2
+    if-eqz v16, :cond_3
 
     .line 691
     iget-object v2, v0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -2712,12 +2712,12 @@
 
     invoke-interface {v2, v3, v4}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->onLoadTaskConcluded(J)V
 
-    :cond_a2
+    :cond_3
     return-object v1
 .end method
 
 .method public bridge synthetic onLoadError(Landroidx/media3/exoplayer/upstream/Loader$Loadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 8
+    .locals 0
 
     .line 77
     check-cast p1, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$ExtractingLoadable;
@@ -2730,7 +2730,7 @@
 .end method
 
 .method public onLoaderReleased()V
-    .registers 5
+    .locals 4
 
     .line 234
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -2739,8 +2739,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -2749,10 +2749,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 237
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->progressiveMediaExtractor:Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/ProgressiveMediaExtractor;->release()V
@@ -2761,7 +2761,7 @@
 .end method
 
 .method public onUpstreamFormatChanged(Landroidx/media3/common/Format;)V
-    .registers 3
+    .locals 1
 
     .line 724
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->handler:Landroid/os/Handler;
@@ -2774,7 +2774,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 242
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -2791,7 +2791,7 @@
 .end method
 
 .method readData(ILandroidx/media3/exoplayer/FormatHolder;Landroidx/media3/decoder/DecoderInputBuffer;I)I
-    .registers 8
+    .locals 3
 
     .line 501
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->suppressRead()Z
@@ -2800,12 +2800,12 @@
 
     const/4 v1, -0x3
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 504
-    :cond_8
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->maybeNotifyDownstreamFormat(I)V
 
     .line 505
@@ -2820,26 +2820,26 @@
 
     move-result p2
 
-    if-ne p2, v1, :cond_1a
+    if-ne p2, v1, :cond_1
 
     .line 508
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->maybeStartDeferredRetry(I)V
 
-    :cond_1a
+    :cond_1
     return p2
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     .line 390
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->notifyDiscontinuity:Z
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadingFinished:Z
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 391
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->getExtractedSamplesCount()I
@@ -2848,9 +2848,9 @@
 
     iget v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->extractedSamplesCountAtStartOfLoad:I
 
-    if-le v0, v1, :cond_16
+    if-le v0, v1, :cond_1
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     .line 392
@@ -2861,25 +2861,25 @@
 
     return-wide v0
 
-    :cond_16
+    :cond_1
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     return-wide v0
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public release()V
-    .registers 5
+    .locals 4
 
     .line 219
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->prepared:Z
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 222
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -2888,8 +2888,8 @@
 
     const/4 v2, 0x0
 
-    :goto_8
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -2898,10 +2898,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 226
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0, p0}, Landroidx/media3/exoplayer/upstream/Loader;->release(Landroidx/media3/exoplayer/upstream/Loader$ReleaseCallback;)V
@@ -2925,7 +2925,7 @@
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 4
+    .locals 2
 
     .line 711
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->handler:Landroid/os/Handler;
@@ -2940,7 +2940,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .registers 7
+    .locals 4
 
     .line 429
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -2957,14 +2957,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const-wide/16 p1, 0x0
 
-    :goto_12
+    :goto_0
     const/4 v1, 0x0
 
     .line 434
@@ -2978,7 +2978,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
     .line 438
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingResetPositionUs:J
@@ -2986,16 +2986,16 @@
     return-wide p1
 
     .line 444
-    :cond_20
+    :cond_1
     iget v2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->dataType:I
 
     const/4 v3, 0x7
 
-    if-eq v2, v3, :cond_38
+    if-eq v2, v3, :cond_3
 
     iget-boolean v2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadingFinished:Z
 
-    if-nez v2, :cond_31
+    if-nez v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
@@ -3004,20 +3004,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_3
 
     .line 446
-    :cond_31
+    :cond_2
     invoke-direct {p0, v0, p1, p2}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekInsideBufferUs([ZJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3
 
     return-wide p1
 
     .line 451
-    :cond_38
+    :cond_3
     iput-boolean v1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingDeferredRetry:Z
 
     .line 452
@@ -3033,15 +3033,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_5
 
     .line 456
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length v2, v0
 
-    :goto_49
-    if-ge v1, v2, :cond_53
+    :goto_1
+    if-ge v1, v2, :cond_4
 
     aget-object v3, v0, v1
 
@@ -3050,18 +3050,18 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_49
+    goto :goto_1
 
     .line 459
-    :cond_53
+    :cond_4
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    goto :goto_6b
+    goto :goto_3
 
     .line 461
-    :cond_59
+    :cond_5
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->clearFatalError()V
@@ -3071,8 +3071,8 @@
 
     array-length v2, v0
 
-    :goto_61
-    if-ge v1, v2, :cond_6b
+    :goto_2
+    if-ge v1, v2, :cond_6
 
     aget-object v3, v0, v1
 
@@ -3081,15 +3081,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_61
+    goto :goto_2
 
-    :cond_6b
-    :goto_6b
+    :cond_6
+    :goto_3
     return-wide p1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 15
+    .locals 8
 
     .line 269
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->assertPrepared()V
@@ -3112,28 +3112,28 @@
     move v4, v3
 
     .line 274
-    :goto_f
+    :goto_0
     array-length v5, p1
 
     const/4 v6, 0x1
 
-    if-ge v4, v5, :cond_37
+    if-ge v4, v5, :cond_2
 
     .line 275
     aget-object v5, p3, v4
 
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_1
 
     aget-object v7, p1, v4
 
-    if-eqz v7, :cond_1f
+    if-eqz v7, :cond_0
 
     aget-boolean v7, p2, v4
 
-    if-nez v7, :cond_34
+    if-nez v7, :cond_1
 
     .line 276
-    :cond_1f
+    :cond_0
     check-cast v5, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;
 
     invoke-static {v5}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;->access$000(Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$SampleStreamImpl;)I
@@ -3160,73 +3160,73 @@
     .line 280
     aput-object v5, p3, v4
 
-    :cond_34
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 287
-    :cond_37
+    :cond_2
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seenFirstTrackSelection:Z
 
-    if-eqz p2, :cond_3f
+    if-eqz p2, :cond_3
 
-    if-nez v2, :cond_4a
+    if-nez v2, :cond_4
 
-    :goto_3d
+    :goto_1
     move p2, v6
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_3f
+    :cond_3
     const-wide/16 v4, 0x0
 
     cmp-long p2, p5, v4
 
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_4
 
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->isSingleSample:Z
 
-    if-nez p2, :cond_4a
+    if-nez p2, :cond_4
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_4a
+    :cond_4
     move p2, v3
 
-    :goto_4b
+    :goto_2
     move v2, v3
 
     .line 289
-    :goto_4c
+    :goto_3
     array-length v4, p1
 
-    if-ge v2, v4, :cond_a5
+    if-ge v2, v4, :cond_9
 
     .line 290
     aget-object v4, p3, v2
 
-    if-nez v4, :cond_a2
+    if-nez v4, :cond_8
 
     aget-object v4, p1, v2
 
-    if-eqz v4, :cond_a2
+    if-eqz v4, :cond_8
 
     .line 292
     invoke-interface {v4}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
 
     move-result v5
 
-    if-ne v5, v6, :cond_5f
+    if-ne v5, v6, :cond_5
 
     move v5, v6
 
-    goto :goto_60
+    goto :goto_4
 
-    :cond_5f
+    :cond_5
     move v5, v3
 
-    :goto_60
+    :goto_4
     invoke-static {v5}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 293
@@ -3234,16 +3234,16 @@
 
     move-result v5
 
-    if-nez v5, :cond_6b
+    if-nez v5, :cond_6
 
     move v5, v6
 
-    goto :goto_6c
+    goto :goto_5
 
-    :cond_6b
+    :cond_6
     move v5, v3
 
-    :goto_6c
+    :goto_5
     invoke-static {v5}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 294
@@ -3282,7 +3282,7 @@
     .line 299
     aput-boolean v6, p4, v2
 
-    if-nez p2, :cond_a2
+    if-nez p2, :cond_8
 
     .line 302
     iget-object p2, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
@@ -3294,33 +3294,33 @@
 
     move-result v4
 
-    if-eqz v4, :cond_a1
+    if-eqz v4, :cond_7
 
     .line 308
     invoke-virtual {p2, p5, p6, v6}, Landroidx/media3/exoplayer/source/SampleQueue;->seekTo(JZ)Z
 
     move-result p2
 
-    if-nez p2, :cond_a1
+    if-nez p2, :cond_7
 
     move p2, v6
 
-    goto :goto_a2
+    goto :goto_6
 
-    :cond_a1
+    :cond_7
     move p2, v3
 
-    :cond_a2
-    :goto_a2
+    :cond_8
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4c
+    goto :goto_3
 
     .line 312
-    :cond_a5
+    :cond_9
     iget p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->enabledTrackCount:I
 
-    if-nez p1, :cond_d7
+    if-nez p1, :cond_c
 
     .line 313
     iput-boolean v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->pendingDeferredRetry:Z
@@ -3335,15 +3335,15 @@
 
     move-result p1
 
-    if-eqz p1, :cond_c8
+    if-eqz p1, :cond_b
 
     .line 317
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->sampleQueues:[Landroidx/media3/exoplayer/source/SampleQueue;
 
     array-length p2, p1
 
-    :goto_b8
-    if-ge v3, p2, :cond_c2
+    :goto_7
+    if-ge v3, p2, :cond_a
 
     aget-object p3, p1, v3
 
@@ -3352,18 +3352,18 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_b8
+    goto :goto_7
 
     .line 320
-    :cond_c2
+    :cond_a
     iget-object p1, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {p1}, Landroidx/media3/exoplayer/upstream/Loader;->cancelLoading()V
 
-    goto :goto_e9
+    goto :goto_a
 
     .line 322
-    :cond_c8
+    :cond_b
     iput-boolean v3, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->loadingFinished:Z
 
     .line 323
@@ -3371,8 +3371,8 @@
 
     array-length p2, p1
 
-    :goto_cd
-    if-ge v3, p2, :cond_e9
+    :goto_8
+    if-ge v3, p2, :cond_e
 
     aget-object p3, p1, v3
 
@@ -3381,10 +3381,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_cd
+    goto :goto_8
 
-    :cond_d7
-    if-eqz p2, :cond_e9
+    :cond_c
+    if-eqz p2, :cond_e
 
     .line 328
     invoke-virtual {p0, p5, p6}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seekToUs(J)J
@@ -3392,48 +3392,48 @@
     move-result-wide p5
 
     .line 330
-    :goto_dd
+    :goto_9
     array-length p1, p3
 
-    if-ge v3, p1, :cond_e9
+    if-ge v3, p1, :cond_e
 
     .line 331
     aget-object p1, p3, v3
 
-    if-eqz p1, :cond_e6
+    if-eqz p1, :cond_d
 
     .line 332
     aput-boolean v6, p4, v3
 
-    :cond_e6
+    :cond_d
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_dd
+    goto :goto_9
 
     .line 336
-    :cond_e9
-    :goto_e9
+    :cond_e
+    :goto_a
     iput-boolean v6, p0, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->seenFirstTrackSelection:Z
 
     return-wide p5
 .end method
 
 .method skipData(IJ)I
-    .registers 6
+    .locals 2
 
     .line 514
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->suppressRead()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 517
-    :cond_8
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->maybeNotifyDownstreamFormat(I)V
 
     .line 518
@@ -3451,17 +3451,17 @@
     .line 520
     invoke-virtual {v0, p2}, Landroidx/media3/exoplayer/source/SampleQueue;->skip(I)V
 
-    if-nez p2, :cond_1d
+    if-nez p2, :cond_1
 
     .line 522
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod;->maybeStartDeferredRetry(I)V
 
-    :cond_1d
+    :cond_1
     return p2
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 4
+    .locals 1
 
     .line 700
     new-instance p2, Landroidx/media3/exoplayer/source/ProgressiveMediaPeriod$TrackId;

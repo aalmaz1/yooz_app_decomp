@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 192
+    .locals 192
 
     const-string v0, "Blues"
 
@@ -419,7 +419,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 241
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -428,9 +428,9 @@
 .end method
 
 .method public static resolveV1Genre(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
-    if-ltz p0, :cond_11
+    if-ltz p0, :cond_0
 
     .line 236
     sget-object v0, Landroidx/media3/extractor/metadata/id3/Id3Util;->STANDARD_GENRES:Lcom/google/common/collect/ImmutableList;
@@ -439,7 +439,7 @@
 
     move-result v1
 
-    if-ge p0, v1, :cond_11
+    if-ge p0, v1, :cond_0
 
     .line 237
     invoke-virtual {v0, p0}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -448,11 +448,11 @@
 
     check-cast p0, Ljava/lang/String;
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_12
+    :goto_0
     return-object p0
 .end method

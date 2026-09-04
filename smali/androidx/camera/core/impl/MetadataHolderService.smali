@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -16,7 +16,7 @@
 
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 2
+    .locals 0
 
     .line 36
     new-instance p1, Ljava/lang/UnsupportedOperationException;

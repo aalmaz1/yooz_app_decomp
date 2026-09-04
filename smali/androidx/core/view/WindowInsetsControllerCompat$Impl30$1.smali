@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/view/WindowInsetsControllerCompat$Impl30;Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -52,28 +52,28 @@
 
 # virtual methods
 .method public onCancelled(Landroid/view/WindowInsetsAnimationController;)V
-    .registers 3
+    .locals 1
 
     .line 753
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl30$1;->val$listener:Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     iget-object p1, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl30$1;->mCompatAnimController:Landroidx/core/view/WindowInsetsAnimationControllerCompat;
 
-    :goto_8
+    :goto_0
     invoke-interface {v0, p1}, Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;->onCancelled(Landroidx/core/view/WindowInsetsAnimationControllerCompat;)V
 
     return-void
 .end method
 
 .method public onFinished(Landroid/view/WindowInsetsAnimationController;)V
-    .registers 3
+    .locals 1
 
     .line 747
     iget-object p1, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl30$1;->val$listener:Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;
@@ -86,7 +86,7 @@
 .end method
 
 .method public onReady(Landroid/view/WindowInsetsAnimationController;I)V
-    .registers 4
+    .locals 1
 
     .line 739
     new-instance v0, Landroidx/core/view/WindowInsetsAnimationControllerCompat;

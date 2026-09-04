@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method static copyNotificationOntoChannel(Landroid/content/Context;Landroid/app/NotificationManager;Landroid/app/Notification;Ljava/lang/String;Ljava/lang/String;)Landroid/app/Notification;
-    .registers 7
+    .locals 2
 
     .line 49
     new-instance v0, Landroid/app/NotificationChannel;
@@ -34,14 +34,14 @@
 
     move-result p1
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 59
-    :cond_15
+    :cond_0
     invoke-static {p0, p2}, Landroid/app/Notification$Builder;->recoverBuilder(Landroid/content/Context;Landroid/app/Notification;)Landroid/app/Notification$Builder;
 
     move-result-object p0
@@ -58,33 +58,33 @@
 .end method
 
 .method static isChannelEnabled(Landroid/app/NotificationManager;Ljava/lang/String;)Z
-    .registers 2
+    .locals 0
 
     .line 40
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
 
     move-result-object p0
 
-    if-eqz p0, :cond_f
+    if-eqz p0, :cond_1
 
     .line 42
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getImportance()I
 
     move-result p0
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_10
+    :goto_1
     return p0
 .end method

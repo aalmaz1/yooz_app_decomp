@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder;)V
-    .registers 2
+    .locals 0
 
     .line 94
     iput-object p1, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$1;->this$0:Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public compare(Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;)I
-    .registers 5
+    .locals 2
 
     .line 97
     iget p1, p1, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->key:I
@@ -54,7 +54,7 @@
     iget p2, p2, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;->key:I
 
     .line 101
-    :cond_4
+    :cond_0
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$1;->this$0:Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder;
 
     invoke-static {v0}, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder;->access$000(Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder;)Landroidx/emoji2/text/flatbuffer/ReadWriteBuf;
@@ -76,18 +76,18 @@
 
     move-result v1
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     sub-int/2addr v0, v1
 
     return v0
 
-    :cond_1c
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
     add-int/lit8 p2, p2, 0x1
 
-    if-eq v0, v1, :cond_4
+    if-eq v0, v1, :cond_0
 
     sub-int/2addr v0, v1
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+    .locals 0
 
     .line 94
     check-cast p1, Landroidx/emoji2/text/flatbuffer/FlexBuffersBuilder$Value;

@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,19 +55,19 @@
     iput-object p1, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mCameraId:Ljava/lang/String;
 
     .line 53
-    :try_start_c
+    :try_start_0
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
-    :try_end_10
-    .catch Ljava/lang/NumberFormatException; {:try_start_c .. :try_end_10} :catch_12
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v0, 0x1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 56
-    :catch_12
+    :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Camera id is not an integer: "
@@ -97,7 +97,7 @@
     const/4 p1, -0x1
 
     .line 59
-    :goto_2e
+    :goto_0
     iput-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mHasValidCameraId:Z
 
     .line 60
@@ -107,23 +107,23 @@
 .end method
 
 .method private createProfilesFromCamcorderProfile(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     .line 126
-    :try_start_1
+    :try_start_0
     iget v1, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mIntCameraId:I
 
     invoke-static {v1, p1}, Landroid/media/CamcorderProfile;->get(II)Landroid/media/CamcorderProfile;
 
     move-result-object p1
-    :try_end_7
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     move-exception v1
 
     .line 131
@@ -147,27 +147,27 @@
 
     move-object p1, v0
 
-    :goto_1e
-    if-eqz p1, :cond_24
+    :goto_0
+    if-eqz p1, :cond_0
 
     .line 133
     invoke-static {p1}, Landroidx/camera/core/impl/compat/EncoderProfilesProxyCompat;->from(Landroid/media/CamcorderProfile;)Landroidx/camera/core/impl/EncoderProfilesProxy;
 
     move-result-object v0
 
-    :cond_24
+    :cond_0
     return-object v0
 .end method
 
 .method private getProfilesInternal(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 5
+    .locals 3
 
     .line 97
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_30
+    if-lt v0, v1, :cond_3
 
     .line 98
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mCameraId:Ljava/lang/String;
@@ -176,53 +176,53 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 103
-    :cond_10
+    :cond_0
     const-class v1, Landroidx/camera/camera2/internal/compat/quirk/InvalidVideoProfilesQuirk;
 
     invoke-static {v1}, Landroidx/camera/camera2/internal/compat/quirk/DeviceQuirks;->get(Ljava/lang/Class;)Landroidx/camera/core/impl/Quirk;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_1b
+    :goto_0
     const-string v2, "Camera2EncoderProfilesProvider"
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     const-string v0, "EncoderProfiles contains invalid video profiles, use CamcorderProfile to create EncoderProfilesProxy."
 
     .line 106
     invoke-static {v2, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_30
+    goto :goto_1
 
     .line 110
-    :cond_25
-    :try_start_25
+    :cond_2
+    :try_start_0
     invoke-static {v0}, Landroidx/camera/core/impl/compat/EncoderProfilesProxyCompat;->from(Landroid/media/EncoderProfiles;)Landroidx/camera/core/impl/EncoderProfilesProxy;
 
     move-result-object p1
-    :try_end_29
-    .catch Ljava/lang/NullPointerException; {:try_start_25 .. :try_end_29} :catch_2a
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_2a
+    :catch_0
     move-exception v0
 
     const-string v1, "Failed to create EncoderProfilesProxy, EncoderProfiles might  contain invalid video profiles. Use CamcorderProfile instead."
@@ -231,8 +231,8 @@
     invoke-static {v2, v1, v0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 118
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_1
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->createProfilesFromCamcorderProfile(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
 
     move-result-object p1
@@ -243,31 +243,31 @@
 
 # virtual methods
 .method public getAll(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
-    .registers 4
+    .locals 2
 
     .line 77
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mHasValidCameraId:Z
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 81
-    :cond_6
+    :cond_0
     iget v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mIntCameraId:I
 
     invoke-static {v0, p1}, Landroid/media/CamcorderProfile;->hasProfile(II)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     return-object v1
 
     .line 86
-    :cond_f
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mEncoderProfilesCache:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -278,7 +278,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 87
     iget-object v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mEncoderProfilesCache:Ljava/util/Map;
@@ -296,7 +296,7 @@
     return-object p1
 
     .line 89
-    :cond_28
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->getProfilesInternal(I)Landroidx/camera/core/impl/EncoderProfilesProxy;
 
     move-result-object v0
@@ -314,19 +314,19 @@
 .end method
 
 .method public hasProfile(I)Z
-    .registers 3
+    .locals 1
 
     .line 66
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mHasValidCameraId:Z
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 70
-    :cond_6
+    :cond_0
     iget v0, p0, Landroidx/camera/camera2/internal/Camera2EncoderProfilesProvider;->mIntCameraId:I
 
     invoke-static {v0, p1}, Landroid/media/CamcorderProfile;->hasProfile(II)Z

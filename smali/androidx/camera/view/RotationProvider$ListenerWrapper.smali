@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/RotationProvider$Listener;Ljava/util/concurrent/Executor;)V
-    .registers 3
+    .locals 0
 
     .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method disable()V
-    .registers 3
+    .locals 2
 
     .line 198
     iget-object v0, p0, Landroidx/camera/view/RotationProvider$ListenerWrapper;->mEnabled:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -63,7 +63,7 @@
 .end method
 
 .method synthetic lambda$onRotationChanged$0$androidx-camera-view-RotationProvider$ListenerWrapper(I)V
-    .registers 3
+    .locals 1
 
     .line 187
     iget-object v0, p0, Landroidx/camera/view/RotationProvider$ListenerWrapper;->mEnabled:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -72,19 +72,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 188
     iget-object v0, p0, Landroidx/camera/view/RotationProvider$ListenerWrapper;->mListener:Landroidx/camera/view/RotationProvider$Listener;
 
     invoke-interface {v0, p1}, Landroidx/camera/view/RotationProvider$Listener;->onRotationChanged(I)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method onRotationChanged(I)V
-    .registers 4
+    .locals 2
 
     .line 186
     iget-object v0, p0, Landroidx/camera/view/RotationProvider$ListenerWrapper;->mExecutor:Ljava/util/concurrent/Executor;

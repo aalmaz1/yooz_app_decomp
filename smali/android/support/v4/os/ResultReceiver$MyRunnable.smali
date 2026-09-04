@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/os/ResultReceiver;ILandroid/os/Bundle;)V
-    .registers 4
+    .locals 0
 
     .line 56
     iput-object p1, p0, Landroid/support/v4/os/ResultReceiver$MyRunnable;->this$0:Landroid/support/v4/os/ResultReceiver;
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 63
     iget-object v0, p0, Landroid/support/v4/os/ResultReceiver$MyRunnable;->this$0:Landroid/support/v4/os/ResultReceiver;

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,7 +20,7 @@
 
 # virtual methods
 .method public final addFlag(I)V
-    .registers 3
+    .locals 1
 
     .line 80
     iget v0, p0, Landroidx/media3/decoder/Buffer;->flags:I
@@ -33,7 +33,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -44,7 +44,7 @@
 .end method
 
 .method public final clearFlag(I)V
-    .registers 3
+    .locals 1
 
     .line 89
     iget v0, p0, Landroidx/media3/decoder/Buffer;->flags:I
@@ -59,28 +59,28 @@
 .end method
 
 .method protected final getFlag(I)Z
-    .registers 3
+    .locals 1
 
     .line 99
     iget v0, p0, Landroidx/media3/decoder/Buffer;->flags:I
 
     and-int/2addr v0, p1
 
-    if-ne v0, p1, :cond_7
+    if-ne v0, p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_8
+    :goto_0
     return p1
 .end method
 
 .method public final hasSupplementalData()Z
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x10000000
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public final isEndOfStream()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x4
 
@@ -106,7 +106,7 @@
 .end method
 
 .method public final isFirstSample()Z
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x8000000
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public final isKeyFrame()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -132,7 +132,7 @@
 .end method
 
 .method public final isLastSample()Z
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x20000000
 
@@ -145,7 +145,7 @@
 .end method
 
 .method public final setFlags(I)V
-    .registers 2
+    .locals 0
 
     .line 70
     iput p1, p0, Landroidx/media3/decoder/Buffer;->flags:I

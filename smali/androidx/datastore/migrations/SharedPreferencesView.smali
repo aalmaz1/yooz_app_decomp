@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/SharedPreferences;Ljava/util/Set;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,27 +94,27 @@
 .end method
 
 .method private final checkKey(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 311
     iget-object v0, p0, Landroidx/datastore/migrations/SharedPreferencesView;->keySet:Ljava/util/Set;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 312
-    :cond_5
+    :cond_0
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_1
 
-    :goto_b
+    :goto_0
     return-object p1
 
-    :cond_c
+    :cond_1
     const-string v0, "Can\'t access key outside migration: "
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
@@ -135,16 +135,16 @@
 .end method
 
 .method public static synthetic getString$default(Landroidx/datastore/migrations/SharedPreferencesView;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p2, 0x0
 
     .line 285
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/datastore/migrations/SharedPreferencesView;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -153,16 +153,16 @@
 .end method
 
 .method public static synthetic getStringSet$default(Landroidx/datastore/migrations/SharedPreferencesView;Ljava/lang/String;Ljava/util/Set;ILjava/lang/Object;)Ljava/util/Set;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p2, 0x0
 
     .line 295
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/datastore/migrations/SharedPreferencesView;->getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object p0
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method public final contains(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     const-string v0, "key"
 
@@ -194,7 +194,7 @@
 .end method
 
 .method public final getAll()Ljava/util/Map;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -232,13 +232,13 @@
 
     move-result-object v0
 
-    :cond_1a
-    :goto_1a
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_44
+    if-eqz v2, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -256,19 +256,19 @@
     .line 301
     iget-object v4, p0, Landroidx/datastore/migrations/SharedPreferencesView;->keySet:Ljava/util/Set;
 
-    if-nez v4, :cond_32
+    if-nez v4, :cond_1
 
     const/4 v3, 0x1
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_32
+    :cond_1
     invoke-interface {v4, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    :goto_36
-    if-eqz v3, :cond_1a
+    :goto_1
+    if-eqz v3, :cond_0
 
     .line 324
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -281,10 +281,10 @@
 
     invoke-interface {v1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 328
-    :cond_44
+    :cond_2
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-interface {v1}, Ljava/util/Map;->size()I
@@ -311,12 +311,12 @@
 
     move-result-object v1
 
-    :goto_5d
+    :goto_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_7f
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -338,7 +338,7 @@
     .line 303
     instance-of v4, v2, Ljava/util/Set;
 
-    if-eqz v4, :cond_7b
+    if-eqz v4, :cond_3
 
     .line 304
     check-cast v2, Ljava/lang/Iterable;
@@ -348,17 +348,17 @@
     move-result-object v2
 
     .line 303
-    :cond_7b
+    :cond_3
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_5d
+    goto :goto_2
 
-    :cond_7f
+    :cond_4
     return-object v0
 .end method
 
 .method public final getBoolean(Ljava/lang/String;Z)Z
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 
@@ -379,7 +379,7 @@
 .end method
 
 .method public final getFloat(Ljava/lang/String;F)F
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 
@@ -400,7 +400,7 @@
 .end method
 
 .method public final getInt(Ljava/lang/String;I)I
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 
@@ -421,7 +421,7 @@
 .end method
 
 .method public final getLong(Ljava/lang/String;J)J
-    .registers 5
+    .locals 1
 
     const-string v0, "key"
 
@@ -442,7 +442,7 @@
 .end method
 
 .method public final getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     const-string v0, "key"
 
@@ -463,7 +463,7 @@
 .end method
 
 .method public final getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -492,19 +492,19 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     check-cast p1, Ljava/lang/Iterable;
 
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object p1
 
-    :goto_19
+    :goto_0
     return-object p1
 .end method

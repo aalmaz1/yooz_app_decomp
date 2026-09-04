@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method private static createDrawableBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
-    .registers 10
+    .locals 9
 
     .line 214
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -48,13 +48,13 @@
 
     move-result v1
 
-    if-lez v0, :cond_50
+    if-lez v0, :cond_2
 
-    if-gtz v1, :cond_d
+    if-gtz v1, :cond_0
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     mul-int v2, v0, v1
 
     int-to-float v2, v2
@@ -73,11 +73,11 @@
     .line 220
     instance-of v4, p0, Landroid/graphics/drawable/BitmapDrawable;
 
-    if-eqz v4, :cond_28
+    if-eqz v4, :cond_1
 
     cmpl-float v2, v3, v2
 
-    if-nez v2, :cond_28
+    if-nez v2, :cond_1
 
     .line 222
     check-cast p0, Landroid/graphics/drawable/BitmapDrawable;
@@ -88,7 +88,7 @@
 
     return-object p0
 
-    :cond_28
+    :cond_1
     int-to-float v0, v0
 
     mul-float/2addr v0, v3
@@ -143,8 +143,8 @@
 
     return-object v2
 
-    :cond_50
-    :goto_50
+    :cond_2
+    :goto_0
     const/4 p0, 0x0
 
     return-object p0
@@ -153,12 +153,12 @@
 
 # virtual methods
 .method public onCaptureSharedElementSnapshot(Landroid/view/View;Landroid/graphics/Matrix;Landroid/graphics/RectF;)Landroid/os/Parcelable;
-    .registers 8
+    .locals 4
 
     .line 168
     instance-of v0, p1, Landroid/widget/ImageView;
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_1
 
     .line 169
     move-object v0, p1
@@ -175,16 +175,16 @@
 
     move-result-object v2
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_1
 
-    if-nez v2, :cond_49
+    if-nez v2, :cond_1
 
     .line 173
     invoke-static {v1}, Landroidx/core/app/SharedElementCallback;->createDrawableBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_1
 
     .line 175
     new-instance p1, Landroid/os/Bundle;
@@ -217,7 +217,7 @@
 
     sget-object p3, Landroid/widget/ImageView$ScaleType;->MATRIX:Landroid/widget/ImageView$ScaleType;
 
-    if-ne p2, p3, :cond_48
+    if-ne p2, p3, :cond_0
 
     .line 180
     invoke-virtual {v0}, Landroid/widget/ImageView;->getImageMatrix()Landroid/graphics/Matrix;
@@ -236,11 +236,11 @@
     .line 183
     invoke-virtual {p1, p2, p3}, Landroid/os/Bundle;->putFloatArray(Ljava/lang/String;[F)V
 
-    :cond_48
+    :cond_0
     return-object p1
 
     .line 189
-    :cond_49
+    :cond_1
     invoke-virtual {p3}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -258,9 +258,9 @@
 
     move-result v1
 
-    if-lez v0, :cond_a3
+    if-lez v0, :cond_3
 
-    if-lez v1, :cond_a3
+    if-lez v1, :cond_3
 
     mul-int v2, v0, v1
 
@@ -292,7 +292,7 @@
     .line 196
     iget-object v3, p0, Landroidx/core/app/SharedElementCallback;->mTempMatrix:Landroid/graphics/Matrix;
 
-    if-nez v3, :cond_7a
+    if-nez v3, :cond_2
 
     .line 197
     new-instance v3, Landroid/graphics/Matrix;
@@ -302,7 +302,7 @@
     iput-object v3, p0, Landroidx/core/app/SharedElementCallback;->mTempMatrix:Landroid/graphics/Matrix;
 
     .line 199
-    :cond_7a
+    :cond_2
     iget-object v3, p0, Landroidx/core/app/SharedElementCallback;->mTempMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v3, p2}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
@@ -345,24 +345,24 @@
     .line 205
     invoke-virtual {p1, p3}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    goto :goto_a4
+    goto :goto_0
 
-    :cond_a3
+    :cond_3
     const/4 p2, 0x0
 
-    :goto_a4
+    :goto_0
     return-object p2
 .end method
 
 .method public onCreateSnapshotView(Landroid/content/Context;Landroid/os/Parcelable;)Landroid/view/View;
-    .registers 5
+    .locals 2
 
     .line 259
     instance-of v0, p2, Landroid/os/Bundle;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 260
     check-cast p2, Landroid/os/Bundle;
@@ -376,12 +376,12 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 265
-    :cond_12
+    :cond_0
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -410,7 +410,7 @@
 
     sget-object v0, Landroid/widget/ImageView$ScaleType;->MATRIX:Landroid/widget/ImageView$ScaleType;
 
-    if-ne p1, v0, :cond_4f
+    if-ne p1, v0, :cond_2
 
     const-string p1, "sharedElement:snapshot:imageMatrix"
 
@@ -430,13 +430,13 @@
     .line 274
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
 
-    goto :goto_4f
+    goto :goto_0
 
     .line 276
-    :cond_41
+    :cond_1
     instance-of v0, p2, Landroid/graphics/Bitmap;
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_2
 
     .line 277
     check-cast p2, Landroid/graphics/Bitmap;
@@ -449,13 +449,13 @@
     .line 279
     invoke-virtual {v1, p2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    :cond_4f
-    :goto_4f
+    :cond_2
+    :goto_0
     return-object v1
 .end method
 
 .method public onMapSharedElements(Ljava/util/List;Ljava/util/Map;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -473,7 +473,7 @@
 .end method
 
 .method public onRejectSharedElements(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -487,7 +487,7 @@
 .end method
 
 .method public onSharedElementEnd(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -507,7 +507,7 @@
 .end method
 
 .method public onSharedElementStart(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -527,7 +527,7 @@
 .end method
 
 .method public onSharedElementsArrived(Ljava/util/List;Ljava/util/List;Landroidx/core/app/SharedElementCallback$OnSharedElementsReadyListener;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/activity/result/ActivityResultRegistry;Ljava/lang/String;Landroidx/activity/result/contract/ActivityResultContract;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public getContract()Landroidx/activity/result/contract/ActivityResultContract;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -109,7 +109,7 @@
 .end method
 
 .method public launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TI;",
@@ -133,7 +133,7 @@
 
     iget-object v1, p0, Landroidx/activity/result/ActivityResultRegistry$register$2;->$contract:Landroidx/activity/result/contract/ActivityResultContract;
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     check-cast v0, Ljava/lang/Number;
 
@@ -153,18 +153,18 @@
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 137
-    :try_start_21
+    :try_start_0
     iget-object v1, p0, Landroidx/activity/result/ActivityResultRegistry$register$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;
 
     iget-object v2, p0, Landroidx/activity/result/ActivityResultRegistry$register$2;->$contract:Landroidx/activity/result/contract/ActivityResultContract;
 
     invoke-virtual {v1, v0, v2, p1, p2}, Landroidx/activity/result/ActivityResultRegistry;->onLaunch(ILandroidx/activity/result/contract/ActivityResultContract;Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
-    :try_end_28
-    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_29
+    :catch_0
     move-exception p1
 
     .line 139
@@ -182,7 +182,7 @@
     throw p1
 
     .line 131
-    :cond_36
+    :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string v0, "Attempting to launch an unregistered ActivityResultLauncher with contract "
@@ -226,7 +226,7 @@
 .end method
 
 .method public unregister()V
-    .registers 3
+    .locals 2
 
     .line 145
     iget-object v0, p0, Landroidx/activity/result/ActivityResultRegistry$register$2;->this$0:Landroidx/activity/result/ActivityResultRegistry;

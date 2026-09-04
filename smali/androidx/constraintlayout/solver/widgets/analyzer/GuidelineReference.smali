@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
-    .registers 3
+    .locals 1
 
     .line 25
     invoke-direct {p0, p1}, Landroidx/constraintlayout/solver/widgets/analyzer/WidgetRun;-><init>(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
@@ -33,7 +33,7 @@
 .end method
 
 .method private addDependency(Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;)V
-    .registers 3
+    .locals 1
 
     .line 48
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method apply()V
-    .registers 6
+    .locals 5
 
     .line 69
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->widget:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
@@ -84,9 +84,9 @@
 
     const/4 v4, 0x1
 
-    if-ne v0, v4, :cond_98
+    if-ne v0, v4, :cond_2
 
-    if-eq v1, v3, :cond_3c
+    if-eq v1, v3, :cond_0
 
     .line 75
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -123,10 +123,10 @@
 
     iput v1, v0, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->margin:I
 
-    goto :goto_84
+    goto :goto_0
 
-    :cond_3c
-    if-eq v2, v3, :cond_62
+    :cond_0
+    if-eq v2, v3, :cond_1
 
     .line 79
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -165,10 +165,10 @@
 
     iput v1, v0, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->margin:I
 
-    goto :goto_84
+    goto :goto_0
 
     .line 83
-    :cond_62
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
 
     iput-boolean v4, v0, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->delegateToWidgetRun:Z
@@ -204,7 +204,7 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 88
-    :goto_84
+    :goto_0
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->widget:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
 
     iget-object v0, v0, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->horizontalRun:Landroidx/constraintlayout/solver/widgets/analyzer/HorizontalWidgetRun;
@@ -222,10 +222,10 @@
 
     invoke-direct {p0, v0}, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->addDependency(Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;)V
 
-    goto/16 :goto_117
+    goto/16 :goto_2
 
-    :cond_98
-    if-eq v1, v3, :cond_bd
+    :cond_2
+    if-eq v1, v3, :cond_3
 
     .line 92
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -262,10 +262,10 @@
 
     iput v1, v0, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->margin:I
 
-    goto :goto_105
+    goto :goto_1
 
-    :cond_bd
-    if-eq v2, v3, :cond_e3
+    :cond_3
+    if-eq v2, v3, :cond_4
 
     .line 96
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -304,10 +304,10 @@
 
     iput v1, v0, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->margin:I
 
-    goto :goto_105
+    goto :goto_1
 
     .line 100
-    :cond_e3
+    :cond_4
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
 
     iput-boolean v4, v0, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->delegateToWidgetRun:Z
@@ -343,7 +343,7 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 105
-    :goto_105
+    :goto_1
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->widget:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
 
     iget-object v0, v0, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->verticalRun:Landroidx/constraintlayout/solver/widgets/analyzer/VerticalWidgetRun;
@@ -361,12 +361,12 @@
 
     invoke-direct {p0, v0}, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->addDependency(Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;)V
 
-    :goto_117
+    :goto_2
     return-void
 .end method
 
 .method public applyToWidget()V
-    .registers 3
+    .locals 2
 
     .line 112
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->widget:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
@@ -380,7 +380,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
     .line 114
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->widget:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
@@ -391,10 +391,10 @@
 
     invoke-virtual {v0, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setX(I)V
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 116
-    :cond_15
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->widget:Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
 
     iget-object v1, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -403,12 +403,12 @@
 
     invoke-virtual {v0, v1}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;->setY(I)V
 
-    :goto_1e
+    :goto_0
     return-void
 .end method
 
 .method clear()V
-    .registers 2
+    .locals 1
 
     .line 33
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -419,7 +419,7 @@
 .end method
 
 .method reset()V
-    .registers 3
+    .locals 2
 
     .line 38
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
@@ -437,7 +437,7 @@
 .end method
 
 .method supportsWrapComputation()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -445,29 +445,29 @@
 .end method
 
 .method public update(Landroidx/constraintlayout/solver/widgets/analyzer/Dependency;)V
-    .registers 3
+    .locals 1
 
     .line 54
     iget-object p1, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
 
     iget-boolean p1, p1, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->readyToSolve:Z
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
     return-void
 
     .line 57
-    :cond_7
+    :cond_0
     iget-object p1, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
 
     iget-boolean p1, p1, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->resolved:Z
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_1
 
     return-void
 
     .line 61
-    :cond_e
+    :cond_1
     iget-object p1, p0, Landroidx/constraintlayout/solver/widgets/analyzer/GuidelineReference;->start:Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;
 
     iget-object p1, p1, Landroidx/constraintlayout/solver/widgets/analyzer/DependencyNode;->targets:Ljava/util/List;

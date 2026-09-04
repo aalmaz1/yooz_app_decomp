@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getRestrictBackgroundStatus(Landroid/net/ConnectivityManager;)I
-    .registers 1
+    .locals 0
 
     .line 144
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getRestrictBackgroundStatus()I

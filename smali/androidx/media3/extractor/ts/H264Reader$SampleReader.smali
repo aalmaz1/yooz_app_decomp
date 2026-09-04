@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/TrackOutput;ZZ)V
-    .registers 4
+    .locals 0
 
     .line 301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -151,7 +151,7 @@
 .end method
 
 .method private outputSample(I)V
-    .registers 10
+    .locals 8
 
     .line 519
     iget-wide v1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sampleTimeUs:J
@@ -160,12 +160,12 @@
 
     cmp-long v0, v1, v3
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return-void
 
     .line 522
-    :cond_c
+    :cond_0
     iget-boolean v3, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sampleIsKeyframe:Z
 
     .line 523
@@ -190,12 +190,12 @@
 .end method
 
 .method private setSampleIsKeyframe()V
-    .registers 6
+    .locals 5
 
     .line 512
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->allowNonIdrKeyframes:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sliceHeader:Landroidx/media3/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
@@ -203,13 +203,13 @@
 
     move-result v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->randomAccessIndicator:Z
 
     .line 513
-    :goto_d
+    :goto_0
     iget-boolean v1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sampleIsKeyframe:Z
 
     iget v2, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->nalUnitType:I
@@ -218,19 +218,19 @@
 
     const/4 v4, 0x1
 
-    if-eq v2, v3, :cond_1b
+    if-eq v2, v3, :cond_2
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
-    if-ne v2, v4, :cond_1a
+    if-ne v2, v4, :cond_1
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     const/4 v4, 0x0
 
-    :cond_1b
-    :goto_1b
+    :cond_2
+    :goto_1
     or-int v0, v1, v4
 
     iput-boolean v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sampleIsKeyframe:Z
@@ -241,7 +241,7 @@
 
 # virtual methods
 .method public appendToNalUnit([BII)V
-    .registers 27
+    .locals 23
 
     move-object/from16 v0, p0
 
@@ -250,11 +250,11 @@
     .line 361
     iget-boolean v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->isFilling:Z
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_0
 
     return-void
 
-    :cond_9
+    :cond_0
     sub-int v2, p3, v1
 
     .line 365
@@ -268,7 +268,7 @@
 
     const/4 v7, 0x2
 
-    if-ge v4, v6, :cond_1d
+    if-ge v4, v6, :cond_1
 
     add-int/2addr v5, v2
 
@@ -282,7 +282,7 @@
     iput-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->buffer:[B
 
     .line 368
-    :cond_1d
+    :cond_1
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->buffer:[B
 
     iget v4, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bufferLength:I
@@ -316,12 +316,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_2
 
     return-void
 
     .line 375
-    :cond_3e
+    :cond_2
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->skipBit()V
@@ -347,12 +347,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_58
+    if-nez v1, :cond_3
 
     return-void
 
     .line 384
-    :cond_58
+    :cond_3
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->readUnsignedExpGolombCodedInt()I
@@ -364,12 +364,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_66
+    if-nez v1, :cond_4
 
     return-void
 
     .line 388
-    :cond_66
+    :cond_4
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->readUnsignedExpGolombCodedInt()I
@@ -379,7 +379,7 @@
     .line 389
     iget-boolean v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->detectAccessUnits:Z
 
-    if-nez v1, :cond_78
+    if-nez v1, :cond_5
 
     .line 391
     iput-boolean v4, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->isFilling:Z
@@ -392,19 +392,19 @@
     return-void
 
     .line 395
-    :cond_78
+    :cond_5
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->canReadExpGolombCodedNum()Z
 
     move-result v1
 
-    if-nez v1, :cond_81
+    if-nez v1, :cond_6
 
     return-void
 
     .line 398
-    :cond_81
+    :cond_6
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->readUnsignedExpGolombCodedInt()I
@@ -418,7 +418,7 @@
 
     move-result v1
 
-    if-gez v1, :cond_92
+    if-gez v1, :cond_7
 
     .line 401
     iput-boolean v4, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->isFilling:Z
@@ -426,7 +426,7 @@
     return-void
 
     .line 404
-    :cond_92
+    :cond_7
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->pps:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v13}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -451,7 +451,7 @@
     .line 406
     iget-boolean v3, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->separateColorPlaneFlag:Z
 
-    if-eqz v3, :cond_b7
+    if-eqz v3, :cond_9
 
     .line 407
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -460,18 +460,18 @@
 
     move-result v3
 
-    if-nez v3, :cond_b2
+    if-nez v3, :cond_8
 
     return-void
 
     .line 410
-    :cond_b2
+    :cond_8
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v3, v7}, Landroidx/media3/container/ParsableNalUnitBitArray;->skipBits(I)V
 
     .line 412
-    :cond_b7
+    :cond_9
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     iget v5, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->frameNumLength:I
@@ -480,12 +480,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_c2
+    if-nez v3, :cond_a
 
     return-void
 
     .line 418
-    :cond_c2
+    :cond_a
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     iget v5, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->frameNumLength:I
@@ -499,7 +499,7 @@
 
     const/4 v5, 0x1
 
-    if-nez v3, :cond_f7
+    if-nez v3, :cond_e
 
     .line 420
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -508,19 +508,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_d8
+    if-nez v3, :cond_b
 
     return-void
 
     .line 423
-    :cond_d8
+    :cond_b
     iget-object v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v3}, Landroidx/media3/container/ParsableNalUnitBitArray;->readBit()Z
 
     move-result v3
 
-    if-eqz v3, :cond_f4
+    if-eqz v3, :cond_d
 
     .line 425
     iget-object v6, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -529,12 +529,12 @@
 
     move-result v6
 
-    if-nez v6, :cond_e9
+    if-nez v6, :cond_c
 
     return-void
 
     .line 428
-    :cond_e9
+    :cond_c
     iget-object v6, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v6}, Landroidx/media3/container/ParsableNalUnitBitArray;->readBit()Z
@@ -547,38 +547,38 @@
 
     move/from16 v16, v6
 
-    goto :goto_fb
+    goto :goto_1
 
-    :cond_f4
+    :cond_d
     move v14, v3
 
     move v15, v4
 
-    goto :goto_f9
+    goto :goto_0
 
-    :cond_f7
+    :cond_e
     move v14, v4
 
     move v15, v14
 
-    :goto_f9
+    :goto_0
     move/from16 v16, v15
 
     .line 432
-    :goto_fb
+    :goto_1
     iget v3, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->nalUnitType:I
 
-    if-ne v3, v2, :cond_102
+    if-ne v3, v2, :cond_f
 
     move/from16 v17, v5
 
-    goto :goto_104
+    goto :goto_2
 
-    :cond_102
+    :cond_f
     move/from16 v17, v4
 
-    :goto_104
-    if-eqz v17, :cond_118
+    :goto_2
+    if-eqz v17, :cond_11
 
     .line 435
     iget-object v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -587,12 +587,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_10f
+    if-nez v2, :cond_10
 
     return-void
 
     .line 438
-    :cond_10f
+    :cond_10
     iget-object v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v2}, Landroidx/media3/container/ParsableNalUnitBitArray;->readUnsignedExpGolombCodedInt()I
@@ -601,16 +601,16 @@
 
     move/from16 v18, v2
 
-    goto :goto_11a
+    goto :goto_3
 
-    :cond_118
+    :cond_11
     move/from16 v18, v4
 
     .line 444
-    :goto_11a
+    :goto_3
     iget v2, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->picOrderCountType:I
 
-    if-nez v2, :cond_152
+    if-nez v2, :cond_15
 
     .line 445
     iget-object v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -621,12 +621,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_129
+    if-nez v2, :cond_12
 
     return-void
 
     .line 448
-    :cond_129
+    :cond_12
     iget-object v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     iget v3, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->picOrderCntLsbLength:I
@@ -638,9 +638,9 @@
     .line 449
     iget-boolean v1, v1, Landroidx/media3/container/NalUnitUtil$PpsData;->bottomFieldPicOrderInFramePresentFlag:Z
 
-    if-eqz v1, :cond_14d
+    if-eqz v1, :cond_14
 
-    if-nez v14, :cond_14d
+    if-nez v14, :cond_14
 
     .line 450
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -649,12 +649,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_140
+    if-nez v1, :cond_13
 
     return-void
 
     .line 453
-    :cond_140
+    :cond_13
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->readSignedExpGolombCodedInt()I
@@ -667,24 +667,24 @@
 
     move/from16 v21, v4
 
-    goto :goto_196
+    goto :goto_5
 
-    :cond_14d
+    :cond_14
     move/from16 v19, v2
 
     move/from16 v20, v4
 
-    goto :goto_194
+    goto :goto_4
 
     .line 455
-    :cond_152
+    :cond_15
     iget v2, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->picOrderCountType:I
 
-    if-ne v2, v5, :cond_190
+    if-ne v2, v5, :cond_19
 
     iget-boolean v2, v9, Landroidx/media3/container/NalUnitUtil$SpsData;->deltaPicOrderAlwaysZeroFlag:Z
 
-    if-nez v2, :cond_190
+    if-nez v2, :cond_19
 
     .line 456
     iget-object v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -693,12 +693,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_163
+    if-nez v2, :cond_16
 
     return-void
 
     .line 459
-    :cond_163
+    :cond_16
     iget-object v2, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v2}, Landroidx/media3/container/ParsableNalUnitBitArray;->readSignedExpGolombCodedInt()I
@@ -708,9 +708,9 @@
     .line 460
     iget-boolean v1, v1, Landroidx/media3/container/NalUnitUtil$PpsData;->bottomFieldPicOrderInFramePresentFlag:Z
 
-    if-eqz v1, :cond_187
+    if-eqz v1, :cond_18
 
-    if-nez v14, :cond_187
+    if-nez v14, :cond_18
 
     .line 461
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
@@ -719,12 +719,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_178
+    if-nez v1, :cond_17
 
     return-void
 
     .line 464
-    :cond_178
+    :cond_17
     iget-object v1, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->bitArray:Landroidx/media3/container/ParsableNalUnitBitArray;
 
     invoke-virtual {v1}, Landroidx/media3/container/ParsableNalUnitBitArray;->readSignedExpGolombCodedInt()I
@@ -739,9 +739,9 @@
 
     move/from16 v20, v19
 
-    goto :goto_198
+    goto :goto_6
 
-    :cond_187
+    :cond_18
     move/from16 v21, v2
 
     move/from16 v19, v4
@@ -750,21 +750,21 @@
 
     move/from16 v22, v20
 
-    goto :goto_198
+    goto :goto_6
 
-    :cond_190
+    :cond_19
     move/from16 v19, v4
 
     move/from16 v20, v19
 
-    :goto_194
+    :goto_4
     move/from16 v21, v20
 
-    :goto_196
+    :goto_5
     move/from16 v22, v21
 
     .line 467
-    :goto_198
+    :goto_6
     iget-object v8, v0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sliceHeader:Landroidx/media3/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
     invoke-virtual/range {v8 .. v22}, Landroidx/media3/extractor/ts/H264Reader$SampleReader$SliceHeaderData;->setAll(Landroidx/media3/container/NalUnitUtil$SpsData;IIIIZZZZIIIII)V
@@ -776,7 +776,7 @@
 .end method
 
 .method public end(J)V
-    .registers 3
+    .locals 0
 
     .line 503
     invoke-direct {p0}, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->setSampleIsKeyframe()V
@@ -796,18 +796,18 @@
 .end method
 
 .method public endNalUnit(JIZ)Z
-    .registers 7
+    .locals 2
 
     .line 486
     iget v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->nalUnitType:I
 
     const/16 v1, 0x9
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->detectAccessUnits:Z
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sliceHeader:Landroidx/media3/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
@@ -818,15 +818,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2
 
-    :cond_14
-    if-eqz p4, :cond_22
+    :cond_0
+    if-eqz p4, :cond_1
 
     .line 489
     iget-boolean p4, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->readingSample:Z
 
-    if-eqz p4, :cond_22
+    if-eqz p4, :cond_1
 
     .line 490
     iget-wide v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->nalUnitStartPosition:J
@@ -841,7 +841,7 @@
     invoke-direct {p0, p3}, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->outputSample(I)V
 
     .line 493
-    :cond_22
+    :cond_1
     iget-wide p1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->nalUnitStartPosition:J
 
     iput-wide p1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->samplePosition:J
@@ -862,7 +862,7 @@
     iput-boolean p1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->readingSample:Z
 
     .line 498
-    :cond_30
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->setSampleIsKeyframe()V
 
     .line 499
@@ -872,7 +872,7 @@
 .end method
 
 .method public needsSpsPps()Z
-    .registers 2
+    .locals 1
 
     .line 315
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->detectAccessUnits:Z
@@ -881,7 +881,7 @@
 .end method
 
 .method public putPps(Landroidx/media3/container/NalUnitUtil$PpsData;)V
-    .registers 4
+    .locals 2
 
     .line 323
     iget-object v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->pps:Landroid/util/SparseArray;
@@ -894,7 +894,7 @@
 .end method
 
 .method public putSps(Landroidx/media3/container/NalUnitUtil$SpsData;)V
-    .registers 4
+    .locals 2
 
     .line 319
     iget-object v0, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->sps:Landroid/util/SparseArray;
@@ -907,7 +907,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -926,7 +926,7 @@
 .end method
 
 .method public startNalUnit(JIJZ)V
-    .registers 7
+    .locals 0
 
     .line 334
     iput p3, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->nalUnitType:I
@@ -945,27 +945,27 @@
 
     const/4 p2, 0x1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
-    if-eq p3, p2, :cond_1b
+    if-eq p3, p2, :cond_1
 
-    :cond_f
+    :cond_0
     iget-boolean p1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->detectAccessUnits:Z
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_2
 
     const/4 p1, 0x5
 
-    if-eq p3, p1, :cond_1b
+    if-eq p3, p1, :cond_1
 
-    if-eq p3, p2, :cond_1b
+    if-eq p3, p2, :cond_1
 
     const/4 p1, 0x2
 
-    if-ne p3, p1, :cond_2b
+    if-ne p3, p1, :cond_2
 
     .line 344
-    :cond_1b
+    :cond_1
     iget-object p1, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->previousSliceHeader:Landroidx/media3/extractor/ts/H264Reader$SampleReader$SliceHeaderData;
 
     .line 345
@@ -987,6 +987,6 @@
     .line 349
     iput-boolean p2, p0, Landroidx/media3/extractor/ts/H264Reader$SampleReader;->isFilling:Z
 
-    :cond_2b
+    :cond_2
     return-void
 .end method

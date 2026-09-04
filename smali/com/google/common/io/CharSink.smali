@@ -10,7 +10,7 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,7 +21,7 @@
 
 # virtual methods
 .method public openBufferedStream()Ljava/io/Writer;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -36,22 +36,22 @@
     .line 82
     instance-of v1, v0, Ljava/io/BufferedWriter;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 83
     check-cast v0, Ljava/io/BufferedWriter;
 
-    goto :goto_11
+    goto :goto_0
 
     .line 84
-    :cond_b
+    :cond_0
     new-instance v1, Ljava/io/BufferedWriter;
 
     invoke-direct {v1, v0}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
 
     move-object v0, v1
 
-    :goto_11
+    :goto_0
     return-object v0
 .end method
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public write(Ljava/lang/CharSequence;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -89,7 +89,7 @@
     move-result-object v0
 
     .line 97
-    :try_start_7
+    :try_start_0
     invoke-virtual {p0}, Lcom/google/common/io/CharSink;->openStream()Ljava/io/Writer;
 
     move-result-object v1
@@ -105,28 +105,28 @@
 
     .line 99
     invoke-virtual {v1}, Ljava/io/Writer;->flush()V
-    :try_end_17
-    .catchall {:try_start_7 .. :try_end_17} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 103
     invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
     return-void
 
-    :catchall_1b
+    :catchall_0
     move-exception p1
 
     .line 101
-    :try_start_1c
+    :try_start_1
     invoke-virtual {v0, p1}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object p1
 
     throw p1
-    :try_end_21
-    .catchall {:try_start_1c .. :try_end_21} :catchall_21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_21
+    :catchall_1
     move-exception p1
 
     .line 103
@@ -137,7 +137,7 @@
 .end method
 
 .method public writeFrom(Ljava/lang/Readable;)J
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -162,7 +162,7 @@
     move-result-object v0
 
     .line 157
-    :try_start_7
+    :try_start_0
     invoke-virtual {p0}, Lcom/google/common/io/CharSink;->openStream()Ljava/io/Writer;
 
     move-result-object v1
@@ -180,28 +180,28 @@
 
     .line 159
     invoke-virtual {v1}, Ljava/io/Writer;->flush()V
-    :try_end_18
-    .catchall {:try_start_7 .. :try_end_18} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 164
     invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
     return-wide v2
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 162
-    :try_start_1d
+    :try_start_1
     invoke-virtual {v0, p1}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object p1
 
     throw p1
-    :try_end_22
-    .catchall {:try_start_1d .. :try_end_22} :catchall_22
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_22
+    :catchall_1
     move-exception p1
 
     .line 164
@@ -212,7 +212,7 @@
 .end method
 
 .method public writeLines(Ljava/lang/Iterable;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -251,7 +251,7 @@
 .end method
 
 .method public writeLines(Ljava/lang/Iterable;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -293,7 +293,7 @@
     move-result-object v0
 
     .line 131
-    :try_start_a
+    :try_start_0
     invoke-virtual {p0}, Lcom/google/common/io/CharSink;->openBufferedStream()Ljava/io/Writer;
 
     move-result-object v1
@@ -309,12 +309,12 @@
 
     move-result-object p1
 
-    :goto_18
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -329,33 +329,33 @@
 
     invoke-virtual {v2, p2}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
-    goto :goto_18
+    goto :goto_0
 
     .line 135
-    :cond_2c
+    :cond_0
     invoke-virtual {v1}, Ljava/io/Writer;->flush()V
-    :try_end_2f
-    .catchall {:try_start_a .. :try_end_2f} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 139
     invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
     return-void
 
-    :catchall_33
+    :catchall_0
     move-exception p1
 
     .line 137
-    :try_start_34
+    :try_start_1
     invoke-virtual {v0, p1}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object p1
 
     throw p1
-    :try_end_39
-    .catchall {:try_start_34 .. :try_end_39} :catchall_39
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_39
+    :catchall_1
     move-exception p1
 
     .line 139

@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Map;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1    # Ljava/lang/Object;
         .annotation runtime Lcom/google/common/base/ParametricNullness;
         .end annotation
@@ -115,7 +115,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 159
     iget-object v1, p0, Lcom/google/common/base/Functions$FunctionForMapNoDefault;->map:Ljava/util/Map;
@@ -124,20 +124,20 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
-    :goto_14
+    :goto_1
     const-string v2, "Key \'%s\' not present in map"
 
     invoke-static {v1, v2, p1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V
@@ -151,7 +151,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -168,7 +168,7 @@
     .line 166
     instance-of v0, p1, Lcom/google/common/base/Functions$FunctionForMapNoDefault;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 167
     check-cast p1, Lcom/google/common/base/Functions$FunctionForMapNoDefault;
@@ -184,14 +184,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 175
     iget-object v0, p0, Lcom/google/common/base/Functions$FunctionForMapNoDefault;->map:Ljava/util/Map;
@@ -204,7 +204,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 180
     new-instance v0, Ljava/lang/StringBuilder;

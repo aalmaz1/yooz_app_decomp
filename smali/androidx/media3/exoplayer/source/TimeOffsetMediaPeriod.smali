@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/MediaPeriod;J)V
-    .registers 4
+    .locals 0
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 8
+    .locals 6
 
     .line 151
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -77,7 +77,7 @@
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 7
+    .locals 3
 
     .line 111
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -92,7 +92,7 @@
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 7
+    .locals 3
 
     .line 129
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -113,7 +113,7 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 6
+    .locals 5
 
     .line 135
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -126,22 +126,22 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_d
+    if-nez v4, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 138
-    :cond_d
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->timeOffsetUs:J
 
     add-long/2addr v2, v0
 
-    :goto_10
+    :goto_0
     return-wide v2
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 6
+    .locals 5
 
     .line 143
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -154,22 +154,22 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_d
+    if-nez v4, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 146
-    :cond_d
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->timeOffsetUs:J
 
     add-long/2addr v2, v0
 
-    :goto_10
+    :goto_0
     return-wide v2
 .end method
 
 .method public getStreamKeys(Ljava/util/List;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -193,7 +193,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 70
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -206,7 +206,7 @@
 .end method
 
 .method public getWrappedMediaPeriod()Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -215,7 +215,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 160
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -228,7 +228,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -244,7 +244,7 @@
 .end method
 
 .method public onContinueLoadingRequested(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 175
     iget-object p1, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -261,7 +261,7 @@
 .end method
 
 .method public bridge synthetic onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
-    .registers 2
+    .locals 0
 
     .line 33
     check-cast p1, Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -272,7 +272,7 @@
 .end method
 
 .method public onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 2
+    .locals 0
 
     .line 170
     iget-object p1, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -289,7 +289,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 6
+    .locals 2
 
     .line 59
     iput-object p1, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -307,7 +307,7 @@
 .end method
 
 .method public readDiscontinuity()J
-    .registers 6
+    .locals 5
 
     .line 116
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -320,22 +320,22 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_10
+    if-nez v4, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 119
-    :cond_10
+    :cond_0
     iget-wide v2, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->timeOffsetUs:J
 
     add-long/2addr v2, v0
 
-    :goto_13
+    :goto_0
     return-wide v2
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 6
+    .locals 3
 
     .line 165
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -350,7 +350,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .registers 6
+    .locals 3
 
     .line 124
     iget-object v0, p0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -371,7 +371,7 @@
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 19
+    .locals 12
 
     move-object v0, p0
 
@@ -387,34 +387,34 @@
     move v3, v10
 
     .line 86
-    :goto_7
+    :goto_0
     array-length v4, v1
 
     const/4 v11, 0x0
 
-    if-ge v3, v4, :cond_1a
+    if-ge v3, v4, :cond_1
 
     .line 87
     aget-object v4, v1, v3
 
     check-cast v4, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     .line 88
     invoke-virtual {v4}, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;->getChildStream()Landroidx/media3/exoplayer/source/SampleStream;
 
     move-result-object v11
 
-    :cond_15
+    :cond_0
     aput-object v11, v2, v3
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 90
-    :cond_1a
+    :cond_1
     iget-object v3, v0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     iget-wide v4, v0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->timeOffsetUs:J
@@ -435,26 +435,26 @@
     move-result-wide v3
 
     .line 97
-    :goto_29
+    :goto_1
     array-length v5, v1
 
-    if-ge v10, v5, :cond_4b
+    if-ge v10, v5, :cond_5
 
     .line 98
     aget-object v5, v2, v10
 
-    if-nez v5, :cond_33
+    if-nez v5, :cond_2
 
     .line 100
     aput-object v11, v1, v10
 
-    goto :goto_48
+    goto :goto_2
 
     .line 101
-    :cond_33
+    :cond_2
     aget-object v6, v1, v10
 
-    if-eqz v6, :cond_3f
+    if-eqz v6, :cond_3
 
     check-cast v6, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;
 
@@ -463,10 +463,10 @@
 
     move-result-object v6
 
-    if-eq v6, v5, :cond_48
+    if-eq v6, v5, :cond_4
 
     .line 103
-    :cond_3f
+    :cond_3
     new-instance v6, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod$TimeOffsetSampleStream;
 
     iget-wide v7, v0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->timeOffsetUs:J
@@ -475,14 +475,14 @@
 
     aput-object v6, v1, v10
 
-    :cond_48
-    :goto_48
+    :cond_4
+    :goto_2
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_29
+    goto :goto_1
 
     .line 106
-    :cond_4b
+    :cond_5
     iget-wide v1, v0, Landroidx/media3/exoplayer/source/TimeOffsetMediaPeriod;->timeOffsetUs:J
 
     add-long/2addr v3, v1

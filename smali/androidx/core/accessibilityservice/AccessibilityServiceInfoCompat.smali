@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,51 +38,51 @@
 .end method
 
 .method public static capabilityToString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_16
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_0
 
     const-string p0, "UNKNOWN"
 
     return-object p0
 
-    :cond_10
+    :cond_0
     const-string p0, "CAPABILITY_CAN_FILTER_KEY_EVENTS"
 
     return-object p0
 
-    :cond_13
+    :cond_1
     const-string p0, "CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY"
 
     return-object p0
 
-    :cond_16
+    :cond_2
     const-string p0, "CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION"
 
     return-object p0
 
-    :cond_19
+    :cond_3
     const-string p0, "CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT"
 
     return-object p0
 .end method
 
 .method public static feedbackTypeToString(I)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 211
     new-instance v0, Ljava/lang/StringBuilder;
@@ -94,8 +94,8 @@
     .line 212
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_a
-    if-lez p0, :cond_4f
+    :goto_0
+    if-lez p0, :cond_6
 
     .line 214
     invoke-static {p0}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
@@ -115,75 +115,75 @@
 
     move-result v3
 
-    if-le v3, v2, :cond_20
+    if-le v3, v2, :cond_0
 
     const-string v3, ", "
 
     .line 217
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_20
-    if-eq v1, v2, :cond_49
+    :cond_0
+    if-eq v1, v2, :cond_5
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_43
+    if-eq v1, v2, :cond_4
 
     const/4 v2, 0x4
 
-    if-eq v1, v2, :cond_3d
+    if-eq v1, v2, :cond_3
 
     const/16 v2, 0x8
 
-    if-eq v1, v2, :cond_37
+    if-eq v1, v2, :cond_2
 
     const/16 v2, 0x10
 
-    if-eq v1, v2, :cond_31
+    if-eq v1, v2, :cond_1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_31
+    :cond_1
     const-string v1, "FEEDBACK_GENERIC"
 
     .line 227
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_37
+    :cond_2
     const-string v1, "FEEDBACK_VISUAL"
 
     .line 233
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_3d
+    :cond_3
     const-string v1, "FEEDBACK_AUDIBLE"
 
     .line 221
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_43
+    :cond_4
     const-string v1, "FEEDBACK_HAPTIC"
 
     .line 224
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_49
+    :cond_5
     const-string v1, "FEEDBACK_SPOKEN"
 
     .line 230
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_4f
+    :cond_6
     const-string p0, "]"
 
     .line 237
@@ -198,69 +198,69 @@
 .end method
 
 .method public static flagToString(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_26
+    if-eq p0, v0, :cond_5
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_23
+    if-eq p0, v0, :cond_4
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_3
 
     const/16 v0, 0x8
 
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x10
 
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_1
 
     const/16 v0, 0x20
 
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_17
+    :cond_0
     const-string p0, "FLAG_REQUEST_FILTER_KEY_EVENTS"
 
     return-object p0
 
-    :cond_1a
+    :cond_1
     const-string p0, "FLAG_REPORT_VIEW_IDS"
 
     return-object p0
 
-    :cond_1d
+    :cond_2
     const-string p0, "FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY"
 
     return-object p0
 
-    :cond_20
+    :cond_3
     const-string p0, "FLAG_REQUEST_TOUCH_EXPLORATION_MODE"
 
     return-object p0
 
-    :cond_23
+    :cond_4
     const-string p0, "FLAG_INCLUDE_NOT_IMPORTANT_VIEWS"
 
     return-object p0
 
-    :cond_26
+    :cond_5
     const-string p0, "DEFAULT"
 
     return-object p0
 .end method
 
 .method public static getCapabilities(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
-    .registers 1
+    .locals 0
 
     .line 283
     invoke-virtual {p0}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
@@ -271,7 +271,7 @@
 .end method
 
 .method public static loadDescription(Landroid/accessibilityservice/AccessibilityServiceInfo;Landroid/content/pm/PackageManager;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 198
     invoke-virtual {p0, p1}, Landroid/accessibilityservice/AccessibilityServiceInfo;->loadDescription(Landroid/content/pm/PackageManager;)Ljava/lang/String;

@@ -42,7 +42,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 955
     new-instance v0, Landroid/util/Size;
@@ -142,7 +142,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 954
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -153,7 +153,7 @@
 
 # virtual methods
 .method public bridge synthetic getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 953
     invoke-virtual {p0}, Landroidx/camera/core/ImageAnalysis$Defaults;->getConfig()Landroidx/camera/core/impl/ImageAnalysisConfig;
@@ -164,7 +164,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/ImageAnalysisConfig;
-    .registers 2
+    .locals 1
 
     .line 992
     sget-object v0, Landroidx/camera/core/ImageAnalysis$Defaults;->DEFAULT_CONFIG:Landroidx/camera/core/impl/ImageAnalysisConfig;

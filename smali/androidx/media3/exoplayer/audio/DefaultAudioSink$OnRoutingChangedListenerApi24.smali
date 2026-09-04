@@ -24,7 +24,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$HRb3r58UkCrShJGoyBtN21Qgd6c(Landroidx/media3/exoplayer/audio/DefaultAudioSink$OnRoutingChangedListenerApi24;Landroid/media/AudioRouting;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$OnRoutingChangedListenerApi24;->onRoutingChanged(Landroid/media/AudioRouting;)V
 
@@ -32,7 +32,7 @@
 .end method
 
 .method public constructor <init>(Landroid/media/AudioTrack;Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;)V
-    .registers 4
+    .locals 1
 
     .line 1939
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,22 +68,22 @@
 .end method
 
 .method private onRoutingChanged(Landroid/media/AudioRouting;)V
-    .registers 3
+    .locals 1
 
     .line 1955
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$OnRoutingChangedListenerApi24;->listener:Landroid/media/AudioRouting$OnRoutingChangedListener;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 1959
-    :cond_5
+    :cond_0
     invoke-interface {p1}, Landroid/media/AudioRouting;->getRoutedDevice()Landroid/media/AudioDeviceInfo;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 1961
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$OnRoutingChangedListenerApi24;->capabilitiesReceiver:Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;
@@ -94,14 +94,14 @@
 
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/audio/AudioCapabilitiesReceiver;->setRoutedDevice(Landroid/media/AudioDeviceInfo;)V
 
-    :cond_14
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 1949
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$OnRoutingChangedListenerApi24;->audioTrack:Landroid/media/AudioTrack;

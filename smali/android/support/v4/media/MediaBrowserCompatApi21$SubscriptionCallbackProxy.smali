@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallback;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onChildrenLoaded(Ljava/lang/String;Ljava/util/List;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,7 +74,7 @@
 .end method
 
 .method public onError(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 138
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallbackProxy;->mSubscriptionCallback:Landroid/support/v4/media/MediaBrowserCompatApi21$SubscriptionCallback;

@@ -136,7 +136,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 11
+    .locals 11
 
     const/4 v0, 0x2
 
@@ -170,28 +170,28 @@
     new-array v6, v5, [I
 
     .line 898
-    fill-array-data v6, :array_6a
+    fill-array-data v6, :array_0
 
     sput-object v6, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->WINDOW_STYLE_JUSTIFICATION:[I
 
     new-array v6, v5, [I
 
     .line 904
-    fill-array-data v6, :array_7c
+    fill-array-data v6, :array_1
 
     sput-object v6, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->WINDOW_STYLE_PRINT_DIRECTION:[I
 
     new-array v6, v5, [I
 
     .line 910
-    fill-array-data v6, :array_8e
+    fill-array-data v6, :array_2
 
     sput-object v6, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->WINDOW_STYLE_SCROLL_DIRECTION:[I
 
     new-array v6, v5, [Z
 
     .line 916
-    fill-array-data v6, :array_a0
+    fill-array-data v6, :array_3
 
     sput-object v6, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->WINDOW_STYLE_WORD_WRAP:[Z
 
@@ -225,14 +225,14 @@
     new-array v6, v5, [I
 
     .line 930
-    fill-array-data v6, :array_a8
+    fill-array-data v6, :array_4
 
     sput-object v6, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->PEN_STYLE_FONT_STYLE:[I
 
     new-array v6, v5, [I
 
     .line 940
-    fill-array-data v6, :array_ba
+    fill-array-data v6, :array_5
 
     sput-object v6, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->PEN_STYLE_EDGE_TYPE:[I
 
@@ -259,7 +259,7 @@
 
     nop
 
-    :array_6a
+    :array_0
     .array-data 4
         0x0
         0x0
@@ -270,7 +270,7 @@
         0x0
     .end array-data
 
-    :array_7c
+    :array_1
     .array-data 4
         0x0
         0x0
@@ -281,7 +281,7 @@
         0x2
     .end array-data
 
-    :array_8e
+    :array_2
     .array-data 4
         0x3
         0x3
@@ -292,7 +292,7 @@
         0x1
     .end array-data
 
-    :array_a0
+    :array_3
     .array-data 1
         0x0t
         0x0t
@@ -303,7 +303,7 @@
         0x0t
     .end array-data
 
-    :array_a8
+    :array_4
     .array-data 4
         0x0
         0x1
@@ -314,7 +314,7 @@
         0x4
     .end array-data
 
-    :array_ba
+    :array_5
     .array-data 4
         0x0
         0x0
@@ -327,7 +327,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 983
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -353,7 +353,7 @@
 .end method
 
 .method public static getArgbColorFromCeaColor(III)I
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -366,7 +366,7 @@
 .end method
 
 .method public static getArgbColorFromCeaColor(IIII)I
-    .registers 8
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -388,61 +388,61 @@
 
     const/16 v2, 0xff
 
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_2
 
-    if-eq p3, v1, :cond_21
+    if-eq p3, v1, :cond_2
 
     const/4 v3, 0x2
 
-    if-eq p3, v3, :cond_1e
+    if-eq p3, v3, :cond_1
 
     const/4 v3, 0x3
 
-    if-eq p3, v3, :cond_1c
+    if-eq p3, v3, :cond_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     move p3, v0
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     const/16 p3, 0x7f
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_0
     move p3, v2
 
-    :goto_22
-    if-le p0, v1, :cond_26
+    :goto_1
+    if-le p0, v1, :cond_3
 
     move p0, v2
 
-    goto :goto_27
+    goto :goto_2
 
-    :cond_26
+    :cond_3
     move p0, v0
 
-    :goto_27
-    if-le p1, v1, :cond_2b
+    :goto_2
+    if-le p1, v1, :cond_4
 
     move p1, v2
 
-    goto :goto_2c
+    goto :goto_3
 
-    :cond_2b
+    :cond_4
     move p1, v0
 
-    :goto_2c
-    if-le p2, v1, :cond_2f
+    :goto_3
+    if-le p2, v1, :cond_5
 
     move v0, v2
 
     .line 1398
-    :cond_2f
+    :cond_5
     invoke-static {p3, p0, p1, v0}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result p0
@@ -453,11 +453,11 @@
 
 # virtual methods
 .method public append(C)V
-    .registers 4
+    .locals 2
 
     const/16 v0, 0xa
 
-    if-ne p1, v0, :cond_50
+    if-ne p1, v0, :cond_6
 
     .line 1209
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
@@ -480,41 +480,41 @@
 
     const/4 v1, 0x0
 
-    if-eq p1, v0, :cond_1a
+    if-eq p1, v0, :cond_0
 
     .line 1213
     iput v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->italicsStartPosition:I
 
     .line 1215
-    :cond_1a
+    :cond_0
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->underlineStartPosition:I
 
-    if-eq p1, v0, :cond_20
+    if-eq p1, v0, :cond_1
 
     .line 1216
     iput v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->underlineStartPosition:I
 
     .line 1218
-    :cond_20
+    :cond_1
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->foregroundColorStartPosition:I
 
-    if-eq p1, v0, :cond_26
+    if-eq p1, v0, :cond_2
 
     .line 1219
     iput v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->foregroundColorStartPosition:I
 
     .line 1221
-    :cond_26
+    :cond_2
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backgroundColorStartPosition:I
 
-    if-eq p1, v0, :cond_2c
+    if-eq p1, v0, :cond_3
 
     .line 1222
     iput v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backgroundColorStartPosition:I
 
     .line 1225
-    :cond_2c
-    :goto_2c
+    :cond_3
+    :goto_0
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -523,7 +523,7 @@
 
     iget v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rowCount:I
 
-    if-ge p1, v0, :cond_4a
+    if-ge p1, v0, :cond_5
 
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
@@ -534,12 +534,12 @@
 
     const/16 v0, 0xf
 
-    if-lt p1, v0, :cond_41
+    if-lt p1, v0, :cond_4
 
-    goto :goto_4a
+    goto :goto_1
 
     .line 1230
-    :cond_41
+    :cond_4
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -548,29 +548,29 @@
 
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->row:I
 
-    goto :goto_55
+    goto :goto_2
 
     .line 1227
-    :cond_4a
-    :goto_4a
+    :cond_5
+    :goto_1
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
     invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 1232
-    :cond_50
+    :cond_6
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v0, p1}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    :goto_55
+    :goto_2
     return-void
 .end method
 
 .method public backspace()V
-    .registers 4
+    .locals 3
 
     .line 1201
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -579,7 +579,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_f
+    if-lez v0, :cond_0
 
     .line 1203
     iget-object v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -588,26 +588,26 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public build()Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;
-    .registers 16
+    .locals 15
 
     .line 1280
     invoke-virtual {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 1285
-    :cond_8
+    :cond_0
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2}, Landroid/text/SpannableStringBuilder;-><init>()V
@@ -617,14 +617,14 @@
     move v1, v0
 
     .line 1288
-    :goto_f
+    :goto_0
     iget-object v3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_2a
+    if-ge v1, v3, :cond_1
 
     .line 1289
     iget-object v3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
@@ -644,10 +644,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 1293
-    :cond_2a
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->buildSpannableString()Landroid/text/SpannableString;
 
     move-result-object v1
@@ -663,18 +663,18 @@
 
     const/4 v5, 0x1
 
-    if-eqz v1, :cond_5c
+    if-eqz v1, :cond_5
 
-    if-eq v1, v5, :cond_59
+    if-eq v1, v5, :cond_4
 
-    if-eq v1, v3, :cond_56
+    if-eq v1, v3, :cond_3
 
-    if-ne v1, v4, :cond_3f
+    if-ne v1, v4, :cond_2
 
-    goto :goto_5c
+    goto :goto_1
 
     .line 1311
-    :cond_3f
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -698,29 +698,29 @@
     throw v0
 
     .line 1308
-    :cond_56
+    :cond_3
     sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    goto :goto_5e
+    goto :goto_2
 
     .line 1305
-    :cond_59
+    :cond_4
     sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_OPPOSITE:Landroid/text/Layout$Alignment;
 
-    goto :goto_5e
+    goto :goto_2
 
     .line 1302
-    :cond_5c
-    :goto_5c
+    :cond_5
+    :goto_1
     sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    :goto_5e
+    :goto_2
     move-object v6, v1
 
     .line 1316
     iget-boolean v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->relativePositioning:Z
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_6
 
     .line 1317
     iget v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->horizontalAnchor:I
@@ -738,10 +738,10 @@
 
     div-float/2addr v8, v7
 
-    goto :goto_7b
+    goto :goto_3
 
     .line 1320
-    :cond_6e
+    :cond_6
     iget v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->horizontalAnchor:I
 
     int-to-float v1, v1
@@ -759,7 +759,7 @@
 
     div-float v8, v7, v8
 
-    :goto_7b
+    :goto_3
     const v7, 0x3f666666    # 0.9f
 
     mul-float/2addr v1, v7
@@ -777,60 +777,60 @@
 
     div-int/lit8 v8, v1, 0x3
 
-    if-nez v8, :cond_8f
+    if-nez v8, :cond_7
 
     move v8, v0
 
-    goto :goto_96
+    goto :goto_4
 
     .line 1337
-    :cond_8f
+    :cond_7
     div-int/lit8 v8, v1, 0x3
 
-    if-ne v8, v5, :cond_95
+    if-ne v8, v5, :cond_8
 
     move v8, v5
 
-    goto :goto_96
+    goto :goto_4
 
-    :cond_95
+    :cond_8
     move v8, v3
 
     .line 1344
-    :goto_96
+    :goto_4
     rem-int/lit8 v9, v1, 0x3
 
-    if-nez v9, :cond_9c
+    if-nez v9, :cond_9
 
     move v9, v0
 
-    goto :goto_a2
+    goto :goto_5
 
     .line 1346
-    :cond_9c
+    :cond_9
     rem-int/2addr v1, v4
 
-    if-ne v1, v5, :cond_a1
+    if-ne v1, v5, :cond_a
 
     move v9, v5
 
-    goto :goto_a2
+    goto :goto_5
 
-    :cond_a1
+    :cond_a
     move v9, v3
 
     .line 1352
-    :goto_a2
+    :goto_5
     iget v1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->windowFillColor:I
 
     sget v3, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->COLOR_SOLID_BLACK:I
 
-    if-eq v1, v3, :cond_a9
+    if-eq v1, v3, :cond_b
 
     move v0, v5
 
     .line 1354
-    :cond_a9
+    :cond_b
     new-instance v13, Landroidx/media3/extractor/text/cea/Cea708Decoder$Cea708CueInfo;
 
     const/4 v5, 0x0
@@ -867,7 +867,7 @@
 .end method
 
 .method public buildSpannableString()Landroid/text/SpannableString;
-    .registers 7
+    .locals 6
 
     .line 1237
     new-instance v0, Landroid/text/SpannableStringBuilder;
@@ -881,7 +881,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_4d
+    if-lez v1, :cond_3
 
     .line 1242
     iget v2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->italicsStartPosition:I
@@ -890,7 +890,7 @@
 
     const/4 v4, -0x1
 
-    if-eq v2, v4, :cond_1f
+    if-eq v2, v4, :cond_0
 
     .line 1243
     new-instance v2, Landroid/text/style/StyleSpan;
@@ -904,10 +904,10 @@
     invoke-virtual {v0, v2, v5, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1250
-    :cond_1f
+    :cond_0
     iget v2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->underlineStartPosition:I
 
-    if-eq v2, v4, :cond_2d
+    if-eq v2, v4, :cond_1
 
     .line 1251
     new-instance v2, Landroid/text/style/UnderlineSpan;
@@ -919,10 +919,10 @@
     invoke-virtual {v0, v2, v5, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1258
-    :cond_2d
+    :cond_1
     iget v2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->foregroundColorStartPosition:I
 
-    if-eq v2, v4, :cond_3d
+    if-eq v2, v4, :cond_2
 
     .line 1259
     new-instance v2, Landroid/text/style/ForegroundColorSpan;
@@ -936,10 +936,10 @@
     invoke-virtual {v0, v2, v5, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1266
-    :cond_3d
+    :cond_2
     iget v2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backgroundColorStartPosition:I
 
-    if-eq v2, v4, :cond_4d
+    if-eq v2, v4, :cond_3
 
     .line 1267
     new-instance v2, Landroid/text/style/BackgroundColorSpan;
@@ -953,7 +953,7 @@
     invoke-virtual {v0, v2, v4, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1275
-    :cond_4d
+    :cond_3
     new-instance v1, Landroid/text/SpannableString;
 
     invoke-direct {v1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
@@ -962,7 +962,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 1014
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
@@ -997,7 +997,7 @@
 .end method
 
 .method public defineWindow(ZIZIIIIII)V
-    .registers 21
+    .locals 11
 
     move-object v0, p0
 
@@ -1045,13 +1045,13 @@
 
     add-int/lit8 v5, p6, 0x1
 
-    if-eq v4, v5, :cond_3f
+    if-eq v4, v5, :cond_1
 
     .line 1055
     iput v5, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rowCount:I
 
     .line 1058
-    :goto_24
+    :goto_0
     iget-object v4, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
@@ -1060,7 +1060,7 @@
 
     iget v5, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rowCount:I
 
-    if-ge v4, v5, :cond_38
+    if-ge v4, v5, :cond_0
 
     iget-object v4, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
@@ -1071,25 +1071,25 @@
 
     const/16 v5, 0xf
 
-    if-lt v4, v5, :cond_3f
+    if-lt v4, v5, :cond_1
 
     .line 1060
-    :cond_38
+    :cond_0
     iget-object v4, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
     const/4 v5, 0x0
 
     invoke-interface {v4, v5}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_3f
-    if-eqz v1, :cond_6e
+    :cond_1
+    if-eqz v1, :cond_2
 
     .line 1064
     iget v4, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->windowStyleId:I
 
-    if-eq v4, v1, :cond_6e
+    if-eq v4, v1, :cond_2
 
     .line 1065
     iput v1, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->windowStyleId:I
@@ -1139,13 +1139,13 @@
 
     invoke-virtual/range {p1 .. p8}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->setWindowAttributes(IIZIIII)V
 
-    :cond_6e
-    if-eqz v2, :cond_9f
+    :cond_2
+    if-eqz v2, :cond_3
 
     .line 1079
     iget v1, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->penStyleId:I
 
-    if-eq v1, v2, :cond_9f
+    if-eq v1, v2, :cond_3
 
     .line 1080
     iput v2, v0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->penStyleId:I
@@ -1200,12 +1200,12 @@
 
     invoke-virtual {p0, v2, v1, v3}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->setPenColor(III)V
 
-    :cond_9f
+    :cond_3
     return-void
 .end method
 
 .method public isDefined()Z
-    .registers 2
+    .locals 1
 
     .line 1024
     iget-boolean v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->defined:Z
@@ -1214,14 +1214,14 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 990
     invoke-virtual {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->isDefined()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->rolledUpCaptions:Ljava/util/List;
 
@@ -1229,7 +1229,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
 
@@ -1237,25 +1237,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1a
+    :goto_1
     return v0
 .end method
 
 .method public isVisible()Z
-    .registers 2
+    .locals 1
 
     .line 1032
     iget-boolean v0, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->visible:Z
@@ -1264,7 +1264,7 @@
 .end method
 
 .method public reset()V
-    .registers 3
+    .locals 2
 
     .line 994
     invoke-virtual {p0}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->clear()V
@@ -1325,7 +1325,7 @@
 .end method
 
 .method public setPenAttributes(IIIZZII)V
-    .registers 8
+    .locals 0
 
     .line 1125
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->italicsStartPosition:I
@@ -1334,9 +1334,9 @@
 
     const/4 p3, -0x1
 
-    if-eq p1, p3, :cond_1f
+    if-eq p1, p3, :cond_0
 
-    if-nez p4, :cond_29
+    if-nez p4, :cond_1
 
     .line 1127
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1362,10 +1362,10 @@
     .line 1132
     iput p3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->italicsStartPosition:I
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_1f
-    if-eqz p4, :cond_29
+    :cond_0
+    if-eqz p4, :cond_1
 
     .line 1135
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1377,13 +1377,13 @@
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->italicsStartPosition:I
 
     .line 1138
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->underlineStartPosition:I
 
-    if-eq p1, p3, :cond_44
+    if-eq p1, p3, :cond_2
 
-    if-nez p5, :cond_4e
+    if-nez p5, :cond_3
 
     .line 1140
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1407,10 +1407,10 @@
     .line 1145
     iput p3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->underlineStartPosition:I
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_44
-    if-eqz p5, :cond_4e
+    :cond_2
+    if-eqz p5, :cond_3
 
     .line 1148
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1421,13 +1421,13 @@
 
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->underlineStartPosition:I
 
-    :cond_4e
-    :goto_4e
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method public setPenColor(III)V
-    .registers 9
+    .locals 5
 
     .line 1156
     iget p3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->foregroundColorStartPosition:I
@@ -1436,12 +1436,12 @@
 
     const/4 v1, -0x1
 
-    if-eq p3, v1, :cond_1f
+    if-eq p3, v1, :cond_0
 
     .line 1157
     iget p3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->foregroundColor:I
 
-    if-eq p3, p1, :cond_1f
+    if-eq p3, p1, :cond_0
 
     .line 1158
     iget-object p3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1465,10 +1465,10 @@
     invoke-virtual {p3, v2, v3, v4, v0}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1165
-    :cond_1f
+    :cond_0
     sget p3, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->COLOR_SOLID_WHITE:I
 
-    if-eq p1, p3, :cond_2d
+    if-eq p1, p3, :cond_1
 
     .line 1166
     iget-object p3, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1483,15 +1483,15 @@
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->foregroundColor:I
 
     .line 1170
-    :cond_2d
+    :cond_1
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backgroundColorStartPosition:I
 
-    if-eq p1, v1, :cond_49
+    if-eq p1, v1, :cond_2
 
     .line 1171
     iget p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backgroundColor:I
 
-    if-eq p1, p2, :cond_49
+    if-eq p1, p2, :cond_2
 
     .line 1172
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1515,10 +1515,10 @@
     invoke-virtual {p1, p3, v1, v2, v0}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 1179
-    :cond_49
+    :cond_2
     sget p1, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->COLOR_SOLID_BLACK:I
 
-    if-eq p2, p1, :cond_57
+    if-eq p2, p1, :cond_3
 
     .line 1180
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->captionStringBuilder:Landroid/text/SpannableStringBuilder;
@@ -1532,17 +1532,17 @@
     .line 1181
     iput p2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->backgroundColor:I
 
-    :cond_57
+    :cond_3
     return-void
 .end method
 
 .method public setPenLocation(II)V
-    .registers 3
+    .locals 0
 
     .line 1194
     iget p2, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->row:I
 
-    if-eq p2, p1, :cond_9
+    if-eq p2, p1, :cond_0
 
     const/16 p2, 0xa
 
@@ -1550,14 +1550,14 @@
     invoke-virtual {p0, p2}, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->append(C)V
 
     .line 1197
-    :cond_9
+    :cond_0
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->row:I
 
     return-void
 .end method
 
 .method public setVisibility(Z)V
-    .registers 2
+    .locals 0
 
     .line 1028
     iput-boolean p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->visible:Z
@@ -1566,7 +1566,7 @@
 .end method
 
 .method public setWindowAttributes(IIZIIII)V
-    .registers 8
+    .locals 0
 
     .line 1105
     iput p1, p0, Landroidx/media3/extractor/text/cea/Cea708Decoder$CueInfoBuilder;->windowFillColor:I

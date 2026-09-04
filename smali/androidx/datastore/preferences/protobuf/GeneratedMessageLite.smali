@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 282
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/AbstractMessageLite;-><init>()V
@@ -86,7 +86,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
-    .registers 1
+    .locals 0
 
     .line 60
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->checkIsLite(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
@@ -97,7 +97,7 @@
 .end method
 
 .method private static checkIsLite(Landroidx/datastore/preferences/protobuf/ExtensionLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType:",
@@ -119,7 +119,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 1402
     check-cast p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
@@ -127,7 +127,7 @@
     return-object p0
 
     .line 1399
-    :cond_9
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Expected a lite extension."
@@ -138,7 +138,7 @@
 .end method
 
 .method private static checkMessageInitialized(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -153,19 +153,19 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_16
+    if-eqz p0, :cond_1
 
     .line 1585
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->isInitialized()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 1587
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->newUninitializedMessageException()Landroidx/datastore/preferences/protobuf/UninitializedMessageException;
 
     move-result-object v0
@@ -182,13 +182,13 @@
 
     throw p0
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     return-object p0
 .end method
 
 .method protected static emptyBooleanList()Landroidx/datastore/preferences/protobuf/Internal$BooleanList;
-    .registers 1
+    .locals 1
 
     .line 1469
     invoke-static {}, Landroidx/datastore/preferences/protobuf/BooleanArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/BooleanArrayList;
@@ -199,7 +199,7 @@
 .end method
 
 .method protected static emptyDoubleList()Landroidx/datastore/preferences/protobuf/Internal$DoubleList;
-    .registers 1
+    .locals 1
 
     .line 1459
     invoke-static {}, Landroidx/datastore/preferences/protobuf/DoubleArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/DoubleArrayList;
@@ -210,7 +210,7 @@
 .end method
 
 .method protected static emptyFloatList()Landroidx/datastore/preferences/protobuf/Internal$FloatList;
-    .registers 1
+    .locals 1
 
     .line 1449
     invoke-static {}, Landroidx/datastore/preferences/protobuf/FloatArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/FloatArrayList;
@@ -221,7 +221,7 @@
 .end method
 
 .method protected static emptyIntList()Landroidx/datastore/preferences/protobuf/Internal$IntList;
-    .registers 1
+    .locals 1
 
     .line 1429
     invoke-static {}, Landroidx/datastore/preferences/protobuf/IntArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/IntArrayList;
@@ -232,7 +232,7 @@
 .end method
 
 .method protected static emptyLongList()Landroidx/datastore/preferences/protobuf/Internal$LongList;
-    .registers 1
+    .locals 1
 
     .line 1439
     invoke-static {}, Landroidx/datastore/preferences/protobuf/LongArrayList;->emptyList()Landroidx/datastore/preferences/protobuf/LongArrayList;
@@ -243,7 +243,7 @@
 .end method
 
 .method protected static emptyProtobufList()Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -263,7 +263,7 @@
 .end method
 
 .method private final ensureUnknownFieldsInitialized()V
-    .registers 3
+    .locals 2
 
     .line 136
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
@@ -272,7 +272,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 137
     invoke-static {}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->newInstance()Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
@@ -281,12 +281,12 @@
 
     iput-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method static getDefaultInstance(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -306,10 +306,10 @@
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     .line 292
-    :try_start_a
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -321,8 +321,8 @@
     const/4 v2, 0x1
 
     invoke-static {v0, v2, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-    :try_end_16
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_a .. :try_end_16} :catch_1f
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 296
     sget-object v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->defaultInstanceMap:Ljava/util/Map;
@@ -333,9 +333,9 @@
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
-    goto :goto_28
+    goto :goto_0
 
-    :catch_1f
+    :catch_0
     move-exception p0
 
     .line 294
@@ -347,9 +347,9 @@
 
     throw v0
 
-    :cond_28
-    :goto_28
-    if-nez v0, :cond_42
+    :cond_0
+    :goto_0
+    if-nez v0, :cond_2
 
     .line 301
     invoke-static {p0}, Landroidx/datastore/preferences/protobuf/UnsafeUtil;->allocateInstance(Ljava/lang/Class;)Ljava/lang/Object;
@@ -362,42 +362,42 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     .line 306
     sget-object v1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->defaultInstanceMap:Ljava/util/Map;
 
     invoke-interface {v1, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_42
+    goto :goto_1
 
     .line 304
-    :cond_3c
+    :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p0
 
-    :cond_42
-    :goto_42
+    :cond_2
+    :goto_1
     return-object v0
 .end method
 
 .method static varargs getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .registers 6
+    .locals 3
 
     .line 1146
     :try_start_0
     invoke-virtual {p0, p1, p2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object p0
-    :try_end_4
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_5
+    :catch_0
     move-exception p2
 
     .line 1148
@@ -444,20 +444,20 @@
 .end method
 
 .method static varargs invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 1157
     :try_start_0
     invoke-virtual {p0, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_4
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_4} :catch_20
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_5
+    :catch_0
     move-exception p0
 
     .line 1162
@@ -468,12 +468,12 @@
     .line 1163
     instance-of p1, p0, Ljava/lang/RuntimeException;
 
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_1
 
     .line 1165
     instance-of p1, p0, Ljava/lang/Error;
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_0
 
     .line 1166
     check-cast p0, Ljava/lang/Error;
@@ -481,7 +481,7 @@
     throw p0
 
     .line 1168
-    :cond_15
+    :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
     const-string p2, "Unexpected exception thrown by generated accessor method."
@@ -491,12 +491,12 @@
     throw p1
 
     .line 1164
-    :cond_1d
+    :cond_1
     check-cast p0, Ljava/lang/RuntimeException;
 
     throw p0
 
-    :catch_20
+    :catch_1
     move-exception p0
 
     .line 1159
@@ -510,7 +510,7 @@
 .end method
 
 .method protected static final isInitialized(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Z)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -535,19 +535,19 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     return v1
 
-    :cond_10
-    if-nez v0, :cond_14
+    :cond_0
+    if-nez v0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
 
     .line 1420
-    :cond_14
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -560,46 +560,46 @@
 
     move-result v0
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_3
 
     .line 1422
     sget-object p1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;->SET_MEMOIZED_IS_INITIALIZED:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     move-object v1, p0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_2
     const/4 v1, 0x0
 
-    :goto_29
+    :goto_0
     invoke-virtual {p0, p1, v1}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_2c
+    :cond_3
     return v0
 .end method
 
 .method protected static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$BooleanList;)Landroidx/datastore/preferences/protobuf/Internal$BooleanList;
-    .registers 2
+    .locals 1
 
     .line 1473
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Internal$BooleanList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 1474
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$BooleanList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$BooleanList;
 
     move-result-object p0
@@ -608,24 +608,24 @@
 .end method
 
 .method protected static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$DoubleList;)Landroidx/datastore/preferences/protobuf/Internal$DoubleList;
-    .registers 2
+    .locals 1
 
     .line 1463
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Internal$DoubleList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 1464
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$DoubleList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$DoubleList;
 
     move-result-object p0
@@ -634,24 +634,24 @@
 .end method
 
 .method protected static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$FloatList;)Landroidx/datastore/preferences/protobuf/Internal$FloatList;
-    .registers 2
+    .locals 1
 
     .line 1453
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Internal$FloatList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 1454
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$FloatList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$FloatList;
 
     move-result-object p0
@@ -660,24 +660,24 @@
 .end method
 
 .method protected static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$IntList;)Landroidx/datastore/preferences/protobuf/Internal$IntList;
-    .registers 2
+    .locals 1
 
     .line 1433
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Internal$IntList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 1434
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$IntList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$IntList;
 
     move-result-object p0
@@ -686,24 +686,24 @@
 .end method
 
 .method protected static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$LongList;)Landroidx/datastore/preferences/protobuf/Internal$LongList;
-    .registers 2
+    .locals 1
 
     .line 1443
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/Internal$LongList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 1444
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$LongList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$LongList;
 
     move-result-object p0
@@ -712,7 +712,7 @@
 .end method
 
 .method protected static mutableCopy(Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -730,17 +730,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/16 v0, 0xa
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     mul-int/lit8 v0, v0, 0x2
 
     .line 1484
-    :goto_b
+    :goto_0
     invoke-interface {p0, v0}, Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Landroidx/datastore/preferences/protobuf/Internal$ProtobufList;
 
     move-result-object p0
@@ -749,7 +749,7 @@
 .end method
 
 .method protected static newMessageInfo(Landroidx/datastore/preferences/protobuf/MessageLite;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     .line 318
     new-instance v0, Landroidx/datastore/preferences/protobuf/RawMessageInfo;
@@ -760,7 +760,7 @@
 .end method
 
 .method public static newRepeatedGeneratedExtension(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Internal$EnumLiteMap;ILandroidx/datastore/preferences/protobuf/WireFormat$FieldType;ZLjava/lang/Class;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
-    .registers 20
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ContainingType::",
@@ -818,7 +818,7 @@
 .end method
 
 .method public static newSingularGeneratedExtension(Landroidx/datastore/preferences/protobuf/MessageLite;Ljava/lang/Object;Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Internal$EnumLiteMap;ILandroidx/datastore/preferences/protobuf/WireFormat$FieldType;Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$GeneratedExtension;
-    .registers 15
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ContainingType::",
@@ -874,7 +874,7 @@
 .end method
 
 .method protected static parseDelimitedFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -910,7 +910,7 @@
 .end method
 
 .method protected static parseDelimitedFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -942,7 +942,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -977,7 +977,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1008,7 +1008,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1038,7 +1038,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1069,7 +1069,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/io/InputStream;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1110,7 +1110,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1146,7 +1146,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/nio/ByteBuffer;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1176,7 +1176,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/nio/ByteBuffer;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1212,7 +1212,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;[B)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1250,7 +1250,7 @@
 .end method
 
 .method protected static parseFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;[BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1286,7 +1286,7 @@
 .end method
 
 .method private static parsePartialDelimitedFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1312,19 +1312,19 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 1722
-    :cond_9
+    :cond_0
     invoke-static {v0, p1}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->readRawVarint32(ILjava/io/InputStream;)I
 
     move-result v0
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_d} :catch_25
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 1726
     new-instance v1, Landroidx/datastore/preferences/protobuf/AbstractMessageLite$Builder$LimitedInputStream;
@@ -1344,14 +1344,14 @@
     const/4 p2, 0x0
 
     .line 1730
-    :try_start_1b
+    :try_start_1
     invoke-virtual {p1, p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
-    :try_end_1e
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_1b .. :try_end_1e} :catch_1f
+    :try_end_1
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_0
 
     return-object p0
 
-    :catch_1f
+    :catch_0
     move-exception p1
 
     .line 1732
@@ -1361,7 +1361,7 @@
 
     throw p0
 
-    :catch_25
+    :catch_1
     move-exception p0
 
     .line 1724
@@ -1377,7 +1377,7 @@
 .end method
 
 .method private static parsePartialFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/ByteString;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1408,14 +1408,14 @@
     const/4 p2, 0x0
 
     .line 1632
-    :try_start_9
+    :try_start_0
     invoke-virtual {p1, p2}, Landroidx/datastore/preferences/protobuf/CodedInputStream;->checkLastTagWas(I)V
-    :try_end_c
-    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_9 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_d
+    :catch_0
     move-exception p1
 
     .line 1634
@@ -1427,7 +1427,7 @@
 .end method
 
 .method protected static parsePartialFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1457,7 +1457,7 @@
 .end method
 
 .method static parsePartialFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;Landroidx/datastore/preferences/protobuf/CodedInputStream;Landroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1485,7 +1485,7 @@
     check-cast p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     .line 1530
-    :try_start_8
+    :try_start_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -1503,13 +1503,13 @@
 
     .line 1532
     invoke-interface {v0, p0}, Landroidx/datastore/preferences/protobuf/Schema;->makeImmutable(Ljava/lang/Object;)V
-    :try_end_1a
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_1a} :catch_2c
-    .catch Ljava/lang/RuntimeException; {:try_start_8 .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
-    :catch_1b
+    :catch_0
     move-exception p0
 
     .line 1539
@@ -1519,7 +1519,7 @@
 
     instance-of p1, p1, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_0
 
     .line 1540
     invoke-virtual {p0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
@@ -1531,10 +1531,10 @@
     throw p0
 
     .line 1542
-    :cond_2b
+    :cond_0
     throw p0
 
-    :catch_2c
+    :catch_1
     move-exception p1
 
     .line 1534
@@ -1544,7 +1544,7 @@
 
     instance-of p2, p2, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
-    if-eqz p2, :cond_3c
+    if-eqz p2, :cond_1
 
     .line 1535
     invoke-virtual {p1}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
@@ -1556,7 +1556,7 @@
     throw p0
 
     .line 1537
-    :cond_3c
+    :cond_1
     new-instance p2, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     invoke-virtual {p1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
@@ -1573,7 +1573,7 @@
 .end method
 
 .method static parsePartialFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;[BIILandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1600,7 +1600,7 @@
     check-cast p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     .line 1554
-    :try_start_8
+    :try_start_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -1632,23 +1632,23 @@
     .line 1558
     iget p1, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedHashCode:I
 
-    if-nez p1, :cond_26
+    if-nez p1, :cond_0
 
     return-object p0
 
     .line 1559
-    :cond_26
+    :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
     invoke-direct {p1}, Ljava/lang/RuntimeException;-><init>()V
 
     throw p1
-    :try_end_2c
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_2c} :catch_35
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_8 .. :try_end_2c} :catch_2c
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1567
-    :catch_2c
+    :catch_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;->truncatedMessage()Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
@@ -1659,7 +1659,7 @@
 
     throw p0
 
-    :catch_35
+    :catch_1
     move-exception p1
 
     .line 1562
@@ -1669,7 +1669,7 @@
 
     instance-of p2, p2, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
-    if-eqz p2, :cond_45
+    if-eqz p2, :cond_1
 
     .line 1563
     invoke-virtual {p1}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
@@ -1681,7 +1681,7 @@
     throw p0
 
     .line 1565
-    :cond_45
+    :cond_1
     new-instance p2, Landroidx/datastore/preferences/protobuf/InvalidProtocolBufferException;
 
     invoke-virtual {p1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
@@ -1698,7 +1698,7 @@
 .end method
 
 .method private static parsePartialFrom(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;[BLandroidx/datastore/preferences/protobuf/ExtensionRegistryLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1734,7 +1734,7 @@
 .end method
 
 .method protected static registerDefaultInstance(Ljava/lang/Class;Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1756,7 +1756,7 @@
 
 # virtual methods
 .method buildMessageInfo()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -1774,7 +1774,7 @@
 .end method
 
 .method protected final createBuilder()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType:",
@@ -1798,7 +1798,7 @@
 .end method
 
 .method protected final createBuilder(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;)Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType:",
@@ -1822,7 +1822,7 @@
 .end method
 
 .method protected dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1835,7 +1835,7 @@
 .end method
 
 .method protected dynamicMethod(Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1851,16 +1851,16 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 123
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     move-result-object v0
@@ -1873,14 +1873,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 127
-    :cond_14
+    :cond_1
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -1899,7 +1899,7 @@
 .end method
 
 .method public final getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TMessageType;"
@@ -1919,7 +1919,7 @@
 .end method
 
 .method public bridge synthetic getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/MessageLite;
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->getDefaultInstanceForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -1930,7 +1930,7 @@
 .end method
 
 .method getMemoizedSerializedSize()I
-    .registers 2
+    .locals 1
 
     .line 256
     iget v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
@@ -1939,7 +1939,7 @@
 .end method
 
 .method public final getParserForType()Landroidx/datastore/preferences/protobuf/Parser;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1961,14 +1961,14 @@
 .end method
 
 .method public getSerializedSize()I
-    .registers 3
+    .locals 2
 
     .line 271
     iget v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     .line 272
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
@@ -1986,19 +1986,19 @@
     iput v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     .line 274
-    :cond_13
+    :cond_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 109
     iget v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedHashCode:I
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 110
     iget v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedHashCode:I
@@ -2006,7 +2006,7 @@
     return v0
 
     .line 112
-    :cond_7
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
 
     move-result-object v0
@@ -2028,7 +2028,7 @@
 .end method
 
 .method public final isInitialized()Z
-    .registers 2
+    .locals 1
 
     .line 189
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -2045,7 +2045,7 @@
 .end method
 
 .method protected makeImmutable()V
-    .registers 2
+    .locals 1
 
     .line 170
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Protobuf;->getInstance()Landroidx/datastore/preferences/protobuf/Protobuf;
@@ -2062,7 +2062,7 @@
 .end method
 
 .method protected mergeLengthDelimitedField(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 4
+    .locals 1
 
     .line 164
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->ensureUnknownFieldsInitialized()V
@@ -2076,7 +2076,7 @@
 .end method
 
 .method protected final mergeUnknownFields(Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;)V
-    .registers 3
+    .locals 1
 
     .line 327
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
@@ -2091,7 +2091,7 @@
 .end method
 
 .method protected mergeVarintField(II)V
-    .registers 4
+    .locals 1
 
     .line 158
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->ensureUnknownFieldsInitialized()V
@@ -2105,7 +2105,7 @@
 .end method
 
 .method public final newBuilderForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TBuilderType;"
@@ -2125,7 +2125,7 @@
 .end method
 
 .method public bridge synthetic newBuilderForType()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->newBuilderForType()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
@@ -2136,7 +2136,7 @@
 .end method
 
 .method protected parseUnknownField(ILandroidx/datastore/preferences/protobuf/CodedInputStream;)Z
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2150,14 +2150,14 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 152
-    :cond_9
+    :cond_0
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->ensureUnknownFieldsInitialized()V
 
     .line 153
@@ -2171,7 +2171,7 @@
 .end method
 
 .method setMemoizedSerializedSize(I)V
-    .registers 2
+    .locals 0
 
     .line 261
     iput p1, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
@@ -2180,7 +2180,7 @@
 .end method
 
 .method public final toBuilder()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TBuilderType;"
@@ -2203,7 +2203,7 @@
 .end method
 
 .method public bridge synthetic toBuilder()Landroidx/datastore/preferences/protobuf/MessageLite$Builder;
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->toBuilder()Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$Builder;
@@ -2214,7 +2214,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 103
     invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -2229,7 +2229,7 @@
 .end method
 
 .method public writeTo(Landroidx/datastore/preferences/protobuf/CodedOutputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/VideoSpec;Landroid/util/Size;Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;Landroidx/camera/core/DynamicRange;Landroid/util/Range;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 .end method
 
 .method private resolveFrameRate()I
-    .registers 6
+    .locals 5
 
     .line 120
     iget-object v0, p0, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;->mVideoProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
@@ -109,7 +109,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_21
+    if-nez v1, :cond_0
 
     .line 123
     iget-object v1, p0, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;->mExpectedFrameRateRange:Landroid/util/Range;
@@ -128,12 +128,12 @@
 
     move-result v1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     move v1, v0
 
-    :goto_22
+    :goto_0
     const/4 v2, 0x3
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -164,17 +164,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_1
 
     .line 133
     iget-object v0, p0, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;->mExpectedFrameRateRange:Landroid/util/Range;
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_40
+    :cond_1
     const-string v0, "<UNSPECIFIED>"
 
-    :goto_42
+    :goto_1
     const/4 v3, 0x2
 
     aput-object v0, v2, v3
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public get()Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
-    .registers 12
+    .locals 11
 
     .line 91
     invoke-direct {p0}, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;->resolveFrameRate()I
@@ -372,7 +372,7 @@
 .end method
 
 .method public bridge synthetic get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 41
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/VideoEncoderConfigVideoProfileResolver;->get()Landroidx/camera/video/internal/encoder/VideoEncoderConfig;

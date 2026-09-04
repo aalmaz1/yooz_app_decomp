@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;Landroidx/media3/extractor/SeekMap;Landroidx/media3/extractor/SeekMap;)V
-    .registers 4
+    .locals 0
 
     .line 58
     iput-object p1, p0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput$1;->this$0:Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 11
+    .locals 8
 
     .line 61
     iget-object v0, p0, Landroidx/media3/extractor/jpeg/StartOffsetExtractorOutput$1;->val$seekMap:Landroidx/media3/extractor/SeekMap;

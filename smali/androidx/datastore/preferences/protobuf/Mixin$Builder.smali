@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 388
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Mixin;->access$000()Landroidx/datastore/preferences/protobuf/Mixin;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Mixin$1;)V
-    .registers 2
+    .locals 0
 
     .line 381
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearName()Landroidx/datastore/preferences/protobuf/Mixin$Builder;
-    .registers 2
+    .locals 1
 
     .line 441
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearRoot()Landroidx/datastore/preferences/protobuf/Mixin$Builder;
-    .registers 2
+    .locals 1
 
     .line 514
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->copyOnWrite()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 402
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -100,7 +100,7 @@
 .end method
 
 .method public getNameBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 415
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -115,7 +115,7 @@
 .end method
 
 .method public getRoot()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 472
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -130,7 +130,7 @@
 .end method
 
 .method public getRootBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 486
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -145,7 +145,7 @@
 .end method
 
 .method public setName(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Mixin$Builder;
-    .registers 3
+    .locals 1
 
     .line 428
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->copyOnWrite()V
@@ -161,7 +161,7 @@
 .end method
 
 .method public setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Mixin$Builder;
-    .registers 3
+    .locals 1
 
     .line 456
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->copyOnWrite()V
@@ -177,7 +177,7 @@
 .end method
 
 .method public setRoot(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Mixin$Builder;
-    .registers 3
+    .locals 1
 
     .line 500
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->copyOnWrite()V
@@ -193,7 +193,7 @@
 .end method
 
 .method public setRootBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Mixin$Builder;
-    .registers 3
+    .locals 1
 
     .line 530
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Mixin$Builder;->copyOnWrite()V

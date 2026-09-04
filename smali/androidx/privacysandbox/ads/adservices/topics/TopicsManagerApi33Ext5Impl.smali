@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "context"
 
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public convertRequest$ads_adservices_release(Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest;)Landroid/adservices/topics/GetTopicsRequest;
-    .registers 4
+    .locals 2
 
     const-string v0, "request"
 

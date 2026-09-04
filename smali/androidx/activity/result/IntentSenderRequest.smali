@@ -84,7 +84,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/result/IntentSenderRequest$Companion;
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/IntentSender;Landroid/content/Intent;II)V
-    .registers 6
+    .locals 1
 
     const-string v0, "intentSender"
 
@@ -132,39 +132,39 @@
 .end method
 
 .method public synthetic constructor <init>(Landroid/content/IntentSender;Landroid/content/Intent;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 8
+    .locals 1
 
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_5
+    if-eqz p6, :cond_0
 
     const/4 p2, 0x0
 
-    :cond_5
+    :cond_0
     and-int/lit8 p6, p5, 0x4
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     move p3, v0
 
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_10
+    if-eqz p5, :cond_2
 
     move p4, v0
 
     .line 32
-    :cond_10
+    :cond_2
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/activity/result/IntentSenderRequest;-><init>(Landroid/content/IntentSender;Landroid/content/Intent;II)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 5
+    .locals 3
 
     const-string v0, "parcel"
 
@@ -217,7 +217,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -225,7 +225,7 @@
 .end method
 
 .method public final getFillInIntent()Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/activity/result/IntentSenderRequest;->fillInIntent:Landroid/content/Intent;
@@ -234,7 +234,7 @@
 .end method
 
 .method public final getFlagsMask()I
-    .registers 2
+    .locals 1
 
     .line 45
     iget v0, p0, Landroidx/activity/result/IntentSenderRequest;->flagsMask:I
@@ -243,7 +243,7 @@
 .end method
 
 .method public final getFlagsValues()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/activity/result/IntentSenderRequest;->flagsValues:I
@@ -252,7 +252,7 @@
 .end method
 
 .method public final getIntentSender()Landroid/content/IntentSender;
-    .registers 2
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/activity/result/IntentSenderRequest;->intentSender:Landroid/content/IntentSender;
@@ -261,7 +261,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .locals 1
 
     const-string v0, "dest"
 

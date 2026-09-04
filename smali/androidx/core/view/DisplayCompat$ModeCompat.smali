@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/Point;)V
-    .registers 3
+    .locals 1
 
     .line 318
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method constructor <init>(Landroid/view/Display$Mode;Landroid/graphics/Point;)V
-    .registers 4
+    .locals 1
 
     .line 349
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method constructor <init>(Landroid/view/Display$Mode;Z)V
-    .registers 6
+    .locals 3
 
     .line 331
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public getPhysicalHeight()I
-    .registers 2
+    .locals 1
 
     .line 368
     iget-object v0, p0, Landroidx/core/view/DisplayCompat$ModeCompat;->mPhysicalSize:Landroid/graphics/Point;
@@ -136,7 +136,7 @@
 .end method
 
 .method public getPhysicalWidth()I
-    .registers 2
+    .locals 1
 
     .line 361
     iget-object v0, p0, Landroidx/core/view/DisplayCompat$ModeCompat;->mPhysicalSize:Landroid/graphics/Point;
@@ -147,7 +147,7 @@
 .end method
 
 .method public isNative()Z
-    .registers 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public toMode()Landroid/view/Display$Mode;
-    .registers 2
+    .locals 1
 
     .line 391
     iget-object v0, p0, Landroidx/core/view/DisplayCompat$ModeCompat;->mMode:Landroid/view/Display$Mode;

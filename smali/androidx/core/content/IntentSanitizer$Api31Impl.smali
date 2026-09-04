@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 950
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static checkOtherMembers(ILandroid/content/ClipData$Item;Landroidx/core/util/Consumer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -41,23 +41,23 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 956
     invoke-virtual {p1}, Landroid/content/ClipData$Item;->getTextLinks()Landroid/view/textclassifier/TextLinks;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_1
 
     .line 957
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "ClipData item at position "
@@ -84,6 +84,6 @@
 
     invoke-interface {p2, p0}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    :cond_2e
+    :cond_1
     return-void
 .end method

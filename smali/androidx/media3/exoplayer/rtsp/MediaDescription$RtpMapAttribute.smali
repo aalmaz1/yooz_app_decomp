@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>(ILjava/lang/String;II)V
-    .registers 5
+    .locals 0
 
     .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public static parse(Ljava/lang/String;)Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -70,16 +70,16 @@
 
     const/4 v3, 0x2
 
-    if-ne v0, v3, :cond_e
+    if-ne v0, v3, :cond_0
 
     move v0, v1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v0, v2
 
-    :goto_f
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 48
@@ -105,16 +105,16 @@
     .line 51
     array-length v4, p0
 
-    if-lt v4, v3, :cond_29
+    if-lt v4, v3, :cond_1
 
     move v4, v1
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     move v4, v2
 
-    :goto_2a
+    :goto_1
     invoke-static {v4}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 52
@@ -129,7 +129,7 @@
 
     const/4 v5, 0x3
 
-    if-ne v4, v5, :cond_3e
+    if-ne v4, v5, :cond_2
 
     .line 55
     aget-object v3, p0, v3
@@ -138,13 +138,13 @@
 
     move-result v3
 
-    goto :goto_3f
+    goto :goto_2
 
-    :cond_3e
+    :cond_2
     const/4 v3, -0x1
 
     .line 57
-    :goto_3f
+    :goto_2
     new-instance v4, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;
 
     aget-object p0, p0, v2
@@ -157,18 +157,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_3
 
     .line 86
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -179,12 +179,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_33
+    goto :goto_1
 
     .line 89
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;
 
     .line 90
@@ -192,7 +192,7 @@
 
     iget v3, p1, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->payloadType:I
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_2
 
     iget-object v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->mediaEncoding:Ljava/lang/String;
 
@@ -203,35 +203,35 @@
 
     move-result v2
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->clockRate:I
 
     iget v3, p1, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->clockRate:I
 
-    if-ne v2, v3, :cond_31
+    if-ne v2, v3, :cond_2
 
     iget v2, p0, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->encodingParameters:I
 
     iget p1, p1, Landroidx/media3/exoplayer/rtsp/MediaDescription$RtpMapAttribute;->encodingParameters:I
 
-    if-ne v2, p1, :cond_31
+    if-ne v2, p1, :cond_2
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_2
     move v0, v1
 
-    :goto_32
+    :goto_0
     return v0
 
-    :cond_33
-    :goto_33
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     const/16 v0, 0xd9
 

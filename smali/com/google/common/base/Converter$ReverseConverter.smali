@@ -47,7 +47,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Converter;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method correctedDoBackward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -111,7 +111,7 @@
 .end method
 
 .method correctedDoForward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -145,7 +145,7 @@
 .end method
 
 .method protected doBackward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -170,7 +170,7 @@
 .end method
 
 .method protected doForward(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -195,7 +195,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -212,7 +212,7 @@
     .line 357
     instance-of v0, p1, Lcom/google/common/base/Converter$ReverseConverter;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 358
     check-cast p1, Lcom/google/common/base/Converter$ReverseConverter;
@@ -228,14 +228,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 366
     iget-object v0, p0, Lcom/google/common/base/Converter$ReverseConverter;->original:Lcom/google/common/base/Converter;
@@ -250,7 +250,7 @@
 .end method
 
 .method public reverse()Lcom/google/common/base/Converter;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -266,7 +266,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 371
     new-instance v0, Ljava/lang/StringBuilder;

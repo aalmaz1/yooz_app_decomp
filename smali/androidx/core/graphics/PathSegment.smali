@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/PointF;FLandroid/graphics/PointF;F)V
-    .registers 6
+    .locals 1
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,26 +54,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 73
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/core/graphics/PathSegment;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 74
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/core/graphics/PathSegment;
 
     .line 75
@@ -85,7 +85,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     iget v1, p0, Landroidx/core/graphics/PathSegment;->mEndFraction:F
 
@@ -96,7 +96,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_2
 
     iget-object v1, p0, Landroidx/core/graphics/PathSegment;->mStart:Landroid/graphics/PointF;
 
@@ -107,7 +107,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/core/graphics/PathSegment;->mEnd:Landroid/graphics/PointF;
 
@@ -118,19 +118,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_2
     move v0, v2
 
-    :goto_36
+    :goto_0
     return v0
 .end method
 
 .method public getEnd()Landroid/graphics/PointF;
-    .registers 2
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/core/graphics/PathSegment;->mEnd:Landroid/graphics/PointF;
@@ -139,7 +139,7 @@
 .end method
 
 .method public getEndFraction()F
-    .registers 2
+    .locals 1
 
     .line 67
     iget v0, p0, Landroidx/core/graphics/PathSegment;->mEndFraction:F
@@ -148,7 +148,7 @@
 .end method
 
 .method public getStart()Landroid/graphics/PointF;
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/core/graphics/PathSegment;->mStart:Landroid/graphics/PointF;
@@ -157,7 +157,7 @@
 .end method
 
 .method public getStartFraction()F
-    .registers 2
+    .locals 1
 
     .line 54
     iget v0, p0, Landroidx/core/graphics/PathSegment;->mStartFraction:F
@@ -166,7 +166,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 83
     iget-object v0, p0, Landroidx/core/graphics/PathSegment;->mStart:Landroid/graphics/PointF;
@@ -186,18 +186,18 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_0
 
     invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v1, v4
 
-    :goto_16
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -218,20 +218,20 @@
 
     cmpl-float v2, v1, v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_1
 
     invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v4
 
-    :cond_2c
+    :cond_1
     add-int/2addr v0, v4
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 92
     new-instance v0, Ljava/lang/StringBuilder;

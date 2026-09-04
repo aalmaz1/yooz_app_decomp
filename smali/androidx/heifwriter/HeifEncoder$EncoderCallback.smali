@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/heifwriter/HeifEncoder;)V
-    .registers 2
+    .locals 0
 
     .line 825
     iput-object p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
@@ -33,14 +33,14 @@
 .end method
 
 .method private stopAndNotify(Landroid/media/MediaCodec$CodecException;)V
-    .registers 4
+    .locals 2
 
     .line 903
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     invoke-virtual {v0}, Landroidx/heifwriter/HeifEncoder;->stopInternal()V
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     .line 905
     iget-object p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
@@ -51,10 +51,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/heifwriter/HeifEncoder$Callback;->onComplete(Landroidx/heifwriter/HeifEncoder;)V
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 907
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object v0, v0, Landroidx/heifwriter/HeifEncoder;->mCallback:Landroidx/heifwriter/HeifEncoder$Callback;
@@ -63,26 +63,26 @@
 
     invoke-virtual {v0, v1, p1}, Landroidx/heifwriter/HeifEncoder$Callback;->onError(Landroidx/heifwriter/HeifEncoder;Landroid/media/MediaCodec$CodecException;)V
 
-    :goto_1a
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
-    .registers 4
+    .locals 1
 
     .line 896
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object v0, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
-    if-eq p1, v0, :cond_7
+    if-eq p1, v0, :cond_0
 
     return-void
 
     .line 898
-    :cond_7
+    :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "onError: "
@@ -108,25 +108,25 @@
 .end method
 
 .method public onInputBufferAvailable(Landroid/media/MediaCodec;I)V
-    .registers 4
+    .locals 1
 
     .line 853
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object v0, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
-    if-ne p1, v0, :cond_1d
+    if-ne p1, v0, :cond_1
 
     iget-object p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-boolean p1, p1, Landroidx/heifwriter/HeifEncoder;->mInputEOS:Z
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 856
-    :cond_d
+    :cond_0
     iget-object p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object p1, p1, Landroidx/heifwriter/HeifEncoder;->mCodecInputBuffers:Ljava/util/ArrayList;
@@ -142,38 +142,38 @@
 
     invoke-virtual {p1}, Landroidx/heifwriter/HeifEncoder;->maybeCopyOneTileYUV()V
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onOutputBufferAvailable(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
-    .registers 8
+    .locals 4
 
     .line 862
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object v0, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
-    if-ne p1, v0, :cond_58
+    if-ne p1, v0, :cond_4
 
     iget-boolean v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->mOutputEOS:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_58
+    goto :goto_1
 
     .line 871
-    :cond_b
+    :cond_0
     iget v0, p3, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    if-lez v0, :cond_3e
+    if-lez v0, :cond_2
 
     iget v0, p3, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_2
 
     .line 872
     invoke-virtual {p1, p2}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
@@ -199,7 +199,7 @@
 
     iget-object v1, v1, Landroidx/heifwriter/HeifEncoder;->mEOSTracker:Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 879
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
@@ -211,7 +211,7 @@
     invoke-virtual {v1, v2, v3}, Landroidx/heifwriter/HeifEncoder$SurfaceEOSTracker;->updateLastOutputTime(J)V
 
     .line 882
-    :cond_35
+    :cond_1
     iget-object v1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object v1, v1, Landroidx/heifwriter/HeifEncoder;->mCallback:Landroidx/heifwriter/HeifEncoder$Callback;
@@ -221,7 +221,7 @@
     invoke-virtual {v1, v2, v0}, Landroidx/heifwriter/HeifEncoder$Callback;->onDrainOutputBuffer(Landroidx/heifwriter/HeifEncoder;Ljava/nio/ByteBuffer;)V
 
     .line 885
-    :cond_3e
+    :cond_2
     iget-boolean v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->mOutputEOS:Z
 
     iget p3, p3, Landroid/media/MediaCodec$BufferInfo;->flags:I
@@ -230,16 +230,16 @@
 
     const/4 v1, 0x0
 
-    if-eqz p3, :cond_49
+    if-eqz p3, :cond_3
 
     const/4 p3, 0x1
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_49
+    :cond_3
     move p3, v1
 
-    :goto_4a
+    :goto_0
     or-int/2addr p3, v0
 
     iput-boolean p3, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->mOutputEOS:Z
@@ -250,31 +250,31 @@
     .line 889
     iget-boolean p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->mOutputEOS:Z
 
-    if-eqz p1, :cond_58
+    if-eqz p1, :cond_4
 
     const/4 p1, 0x0
 
     .line 890
     invoke-direct {p0, p1}, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->stopAndNotify(Landroid/media/MediaCodec$CodecException;)V
 
-    :cond_58
-    :goto_58
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public onOutputFormatChanged(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V
-    .registers 5
+    .locals 2
 
     .line 830
     iget-object v0, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object v0, v0, Landroidx/heifwriter/HeifEncoder;->mEncoder:Landroid/media/MediaCodec;
 
-    if-eq p1, v0, :cond_7
+    if-eq p1, v0, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     const-string p1, "mime"
 
     .line 835
@@ -289,7 +289,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_55
+    if-nez v0, :cond_1
 
     .line 836
     invoke-virtual {p2, p1, v1}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
@@ -317,7 +317,7 @@
 
     iget-boolean p1, p1, Landroidx/heifwriter/HeifEncoder;->mUseGrid:Z
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_1
 
     .line 841
     iget-object p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
@@ -356,7 +356,7 @@
     invoke-virtual {p2, v0, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     .line 848
-    :cond_55
+    :cond_1
     iget-object p1, p0, Landroidx/heifwriter/HeifEncoder$EncoderCallback;->this$0:Landroidx/heifwriter/HeifEncoder;
 
     iget-object p1, p1, Landroidx/heifwriter/HeifEncoder;->mCallback:Landroidx/heifwriter/HeifEncoder$Callback;

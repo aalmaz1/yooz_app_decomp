@@ -28,14 +28,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 243
     sget-boolean v0, Landroidx/concurrent/futures/AbstractResolvableFuture;->GENERATE_CANCELLATION_CAUSES:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 244
     sput-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_CANCELLED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
@@ -43,10 +43,10 @@
     .line 245
     sput-object v1, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_INTERRUPTED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 247
-    :cond_a
+    :cond_0
     new-instance v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
     const/4 v2, 0x0
@@ -64,12 +64,12 @@
 
     sput-object v0, Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;->CAUSELESS_INTERRUPTED:Landroidx/concurrent/futures/AbstractResolvableFuture$Cancellation;
 
-    :goto_1a
+    :goto_0
     return-void
 .end method
 
 .method constructor <init>(ZLjava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

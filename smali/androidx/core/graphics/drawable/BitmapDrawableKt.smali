@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final toDrawable(Landroid/graphics/Bitmap;Landroid/content/res/Resources;)Landroid/graphics/drawable/BitmapDrawable;
-    .registers 3
+    .locals 1
 
     .line 28
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;

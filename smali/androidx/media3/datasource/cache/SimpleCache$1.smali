@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/datasource/cache/SimpleCache;Ljava/lang/String;Landroid/os/ConditionVariable;)V
-    .registers 4
+    .locals 0
 
     .line 230
     iput-object p1, p0, Landroidx/media3/datasource/cache/SimpleCache$1;->this$0:Landroidx/media3/datasource/cache/SimpleCache;
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .locals 2
 
     .line 233
     iget-object v0, p0, Landroidx/media3/datasource/cache/SimpleCache$1;->this$0:Landroidx/media3/datasource/cache/SimpleCache;
@@ -45,7 +45,7 @@
     monitor-enter v0
 
     .line 234
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/datasource/cache/SimpleCache$1;->val$conditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v1}, Landroid/os/ConditionVariable;->open()V
@@ -69,12 +69,12 @@
 
     return-void
 
-    :catchall_18
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_1a
-    .catchall {:try_start_3 .. :try_end_1a} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

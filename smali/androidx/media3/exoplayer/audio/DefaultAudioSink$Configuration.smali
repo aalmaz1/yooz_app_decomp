@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/Format;IIIIIIILandroidx/media3/common/audio/AudioProcessingPipeline;ZZZ)V
-    .registers 13
+    .locals 0
 
     .line 2157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,14 +87,14 @@
 .end method
 
 .method private createAudioTrack(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
-    .registers 5
+    .locals 2
 
     .line 2254
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
     .line 2255
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->createAudioTrackV29(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
@@ -104,12 +104,12 @@
     return-object p1
 
     .line 2256
-    :cond_b
+    :cond_0
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_1
 
     .line 2257
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->createAudioTrackV21(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
@@ -119,7 +119,7 @@
     return-object p1
 
     .line 2259
-    :cond_16
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->createAudioTrackV9(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
 
     move-result-object p1
@@ -128,7 +128,7 @@
 .end method
 
 .method private createAudioTrackV21(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
-    .registers 10
+    .locals 7
 
     .line 2281
     new-instance v6, Landroid/media/AudioTrack;
@@ -165,7 +165,7 @@
 .end method
 
 .method private createAudioTrackV29(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
-    .registers 6
+    .locals 3
 
     .line 2265
     iget v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
@@ -223,15 +223,15 @@
 
     iget p2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputMode:I
 
-    if-ne p2, v0, :cond_31
+    if-ne p2, v0, :cond_0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/4 v0, 0x0
 
     .line 2275
-    :goto_32
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/media/AudioTrack$Builder;->setOffloadedPlayback(Z)Landroid/media/AudioTrack$Builder;
 
     move-result-object p1
@@ -245,7 +245,7 @@
 .end method
 
 .method private createAudioTrackV9(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
-    .registers 11
+    .locals 8
 
     .line 2291
     iget p1, p1, Landroidx/media3/common/AudioAttributes;->usage:I
@@ -254,7 +254,7 @@
 
     move-result v1
 
-    if-nez p2, :cond_18
+    if-nez p2, :cond_0
 
     .line 2293
     new-instance p1, Landroid/media/AudioTrack;
@@ -276,7 +276,7 @@
     return-object p1
 
     .line 2302
-    :cond_18
+    :cond_0
     new-instance p1, Landroid/media/AudioTrack;
 
     iget v2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
@@ -299,9 +299,9 @@
 .end method
 
 .method private static getAudioTrackAttributesV21(Landroidx/media3/common/AudioAttributes;Z)Landroid/media/AudioAttributes;
-    .registers 2
+    .locals 0
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_0
 
     .line 2317
     invoke-static {}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->getAudioTrackTunnelingAttributesV21()Landroid/media/AudioAttributes;
@@ -311,7 +311,7 @@
     return-object p0
 
     .line 2319
-    :cond_7
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/AudioAttributes;->getAudioAttributesV21()Landroidx/media3/common/AudioAttributes$AudioAttributesV21;
 
     move-result-object p0
@@ -322,7 +322,7 @@
 .end method
 
 .method private static getAudioTrackTunnelingAttributesV21()Landroid/media/AudioAttributes;
-    .registers 2
+    .locals 2
 
     .line 2325
     new-instance v0, Landroid/media/AudioAttributes$Builder;
@@ -361,7 +361,7 @@
 
 # virtual methods
 .method public buildAudioTrack(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;
@@ -373,9 +373,9 @@
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->createAudioTrack(Landroidx/media3/common/AudioAttributes;I)Landroid/media/AudioTrack;
 
     move-result-object p1
-    :try_end_4
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_4} :catch_25
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_4} :catch_23
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 2233
     invoke-virtual {p1}, Landroid/media/AudioTrack;->getState()I
@@ -384,19 +384,19 @@
 
     const/4 p2, 0x1
 
-    if-ne v1, p2, :cond_c
+    if-ne v1, p2, :cond_0
 
     return-object p1
 
     .line 2236
-    :cond_c
-    :try_start_c
+    :cond_0
+    :try_start_1
     invoke-virtual {p1}, Landroid/media/AudioTrack;->release()V
-    :try_end_f
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_f} :catch_f
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 2241
-    :catch_f
+    :catch_0
     new-instance p1, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;
 
     iget v2, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
@@ -420,15 +420,15 @@
 
     throw p1
 
-    :catch_23
+    :catch_1
     move-exception p1
 
-    goto :goto_26
+    goto :goto_0
 
-    :catch_25
+    :catch_2
     move-exception p1
 
-    :goto_26
+    :goto_0
     move-object v7, p1
 
     .line 2223
@@ -457,7 +457,7 @@
 .end method
 
 .method public buildAudioTrackConfig()Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;
-    .registers 9
+    .locals 8
 
     .line 2208
     new-instance v7, Landroidx/media3/exoplayer/audio/AudioSink$AudioTrackConfig;
@@ -474,16 +474,16 @@
 
     const/4 v5, 0x1
 
-    if-ne v0, v5, :cond_10
+    if-ne v0, v5, :cond_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     move v5, v0
 
-    :goto_12
+    :goto_0
     iget v6, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->bufferSize:I
 
     move-object v0, v7
@@ -494,64 +494,64 @@
 .end method
 
 .method public canReuseAudioTrack(Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;)Z
-    .registers 4
+    .locals 2
 
     .line 2190
     iget v0, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputMode:I
 
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputMode:I
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     iget v0, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputEncoding:I
 
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputEncoding:I
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     iget v0, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
 
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     iget v0, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputChannelConfig:I
 
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputChannelConfig:I
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     iget v0, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputPcmFrameSize:I
 
     iget v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputPcmFrameSize:I
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     iget-boolean v0, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->enableAudioTrackPlaybackParams:Z
 
     iget-boolean v1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->enableAudioTrackPlaybackParams:Z
 
-    if-ne v0, v1, :cond_2c
+    if-ne v0, v1, :cond_0
 
     iget-boolean p1, p1, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->enableOffloadGapless:Z
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->enableOffloadGapless:Z
 
-    if-ne p1, v0, :cond_2c
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_2d
+    :goto_0
     return p1
 .end method
 
 .method public copyWithBufferSize(I)Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;
-    .registers 16
+    .locals 14
 
     .line 2173
     new-instance v13, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;
@@ -588,7 +588,7 @@
 .end method
 
 .method public framesToDurationUs(J)J
-    .registers 4
+    .locals 1
 
     .line 2204
     iget v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputSampleRate:I
@@ -601,7 +601,7 @@
 .end method
 
 .method public inputFramesToDurationUs(J)J
-    .registers 4
+    .locals 1
 
     .line 2200
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->inputFormat:Landroidx/media3/common/Format;
@@ -616,20 +616,20 @@
 .end method
 
 .method public outputModeIsOffload()Z
-    .registers 3
+    .locals 2
 
     .line 2333
     iget v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$Configuration;->outputMode:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
+    :goto_0
     return v1
 .end method

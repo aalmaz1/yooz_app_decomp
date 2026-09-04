@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/FlagSet;Landroid/util/SparseArray;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,12 +59,12 @@
     const/4 v1, 0x0
 
     .line 106
-    :goto_f
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/FlagSet;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_2b
+    if-ge v1, v2, :cond_0
 
     .line 107
     invoke-virtual {p1, v1}, Landroidx/media3/common/FlagSet;->get(I)I
@@ -88,10 +88,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 110
-    :cond_2b
+    :cond_0
     iput-object v0, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->eventTimes:Landroid/util/SparseArray;
 
     return-void
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public contains(I)Z
-    .registers 3
+    .locals 1
 
     .line 130
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -113,7 +113,7 @@
 .end method
 
 .method public varargs containsAny([I)Z
-    .registers 3
+    .locals 1
 
     .line 140
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -126,7 +126,7 @@
 .end method
 
 .method public get(I)I
-    .registers 3
+    .locals 1
 
     .line 158
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->flags:Landroidx/media3/common/FlagSet;
@@ -139,7 +139,7 @@
 .end method
 
 .method public getEventTime(I)Landroidx/media3/exoplayer/analytics/AnalyticsListener$EventTime;
-    .registers 3
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->eventTimes:Landroid/util/SparseArray;
@@ -160,7 +160,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/media3/exoplayer/analytics/AnalyticsListener$Events;->flags:Landroidx/media3/common/FlagSet;

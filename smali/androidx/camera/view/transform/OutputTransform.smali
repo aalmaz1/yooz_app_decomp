@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Matrix;Landroid/util/Size;)V
-    .registers 3
+    .locals 0
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public getMatrix()Landroid/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/camera/view/transform/OutputTransform;->mMatrix:Landroid/graphics/Matrix;
@@ -37,7 +37,7 @@
 .end method
 
 .method getViewPortSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/camera/view/transform/OutputTransform;->mViewPortSize:Landroid/util/Size;

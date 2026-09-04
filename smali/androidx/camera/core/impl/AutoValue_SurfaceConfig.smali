@@ -13,17 +13,17 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/SurfaceConfig$ConfigType;Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;J)V
-    .registers 5
+    .locals 0
 
     .line 19
     invoke-direct {p0}, Landroidx/camera/core/impl/SurfaceConfig;-><init>()V
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 23
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->configType:Landroidx/camera/core/impl/SurfaceConfig$ConfigType;
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 27
     iput-object p2, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->configSize:Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
@@ -34,7 +34,7 @@
     return-void
 
     .line 25
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null configSize"
@@ -44,7 +44,7 @@
     throw p1
 
     .line 21
-    :cond_16
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null configType"
@@ -57,21 +57,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 62
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/SurfaceConfig;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2
 
     .line 63
     check-cast p1, Landroidx/camera/core/impl/SurfaceConfig;
@@ -87,7 +87,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->configSize:Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
 
@@ -100,7 +100,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
     iget-wide v3, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->streamUseCase:J
 
@@ -111,22 +111,22 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     move v0, v2
 
-    :goto_2f
+    :goto_0
     return v0
 
-    :cond_30
+    :cond_2
     return v2
 .end method
 
 .method public getConfigSize()Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
-    .registers 2
+    .locals 1
 
     .line 40
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->configSize:Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
@@ -135,7 +135,7 @@
 .end method
 
 .method public getConfigType()Landroidx/camera/core/impl/SurfaceConfig$ConfigType;
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->configType:Landroidx/camera/core/impl/SurfaceConfig$ConfigType;
@@ -144,7 +144,7 @@
 .end method
 
 .method public getStreamUseCase()J
-    .registers 3
+    .locals 2
 
     .line 45
     iget-wide v0, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->streamUseCase:J
@@ -153,7 +153,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 75
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SurfaceConfig;->configType:Landroidx/camera/core/impl/SurfaceConfig$ConfigType;
@@ -196,7 +196,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 50
     new-instance v0, Ljava/lang/StringBuilder;

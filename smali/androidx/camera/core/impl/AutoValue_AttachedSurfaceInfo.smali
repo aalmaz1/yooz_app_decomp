@@ -37,7 +37,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/SurfaceConfig;ILandroid/util/Size;Landroidx/camera/core/DynamicRange;Ljava/util/List;Landroidx/camera/core/impl/Config;Landroid/util/Range;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,7 +58,7 @@
     .line 36
     invoke-direct {p0}, Landroidx/camera/core/impl/AttachedSurfaceInfo;-><init>()V
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_3
 
     .line 40
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->surfaceConfig:Landroidx/camera/core/impl/SurfaceConfig;
@@ -66,17 +66,17 @@
     .line 41
     iput p2, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->imageFormat:I
 
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_2
 
     .line 45
     iput-object p3, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->size:Landroid/util/Size;
 
-    if-eqz p4, :cond_22
+    if-eqz p4, :cond_1
 
     .line 49
     iput-object p4, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->dynamicRange:Landroidx/camera/core/DynamicRange;
 
-    if-eqz p5, :cond_1a
+    if-eqz p5, :cond_0
 
     .line 53
     iput-object p5, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->captureTypes:Ljava/util/List;
@@ -90,7 +90,7 @@
     return-void
 
     .line 51
-    :cond_1a
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null captureTypes"
@@ -100,7 +100,7 @@
     throw p1
 
     .line 47
-    :cond_22
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null dynamicRange"
@@ -110,7 +110,7 @@
     throw p1
 
     .line 43
-    :cond_2a
+    :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null size"
@@ -120,7 +120,7 @@
     throw p1
 
     .line 38
-    :cond_32
+    :cond_3
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null surfaceConfig"
@@ -133,21 +133,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 118
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/AttachedSurfaceInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_4
 
     .line 119
     check-cast p1, Landroidx/camera/core/impl/AttachedSurfaceInfo;
@@ -163,7 +163,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_3
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->imageFormat:I
 
@@ -172,7 +172,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_6e
+    if-ne v1, v3, :cond_3
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->size:Landroid/util/Size;
 
@@ -185,7 +185,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->dynamicRange:Landroidx/camera/core/DynamicRange;
 
@@ -198,7 +198,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->captureTypes:Ljava/util/List;
 
@@ -211,22 +211,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->implementationOptions:Landroidx/camera/core/impl/Config;
 
-    if-nez v1, :cond_4e
+    if-nez v1, :cond_1
 
     .line 125
     invoke-virtual {p1}, Landroidx/camera/core/impl/AttachedSurfaceInfo;->getImplementationOptions()Landroidx/camera/core/impl/Config;
 
     move-result-object v1
 
-    if-nez v1, :cond_6e
+    if-nez v1, :cond_3
 
-    goto :goto_58
+    goto :goto_0
 
-    :cond_4e
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/impl/AttachedSurfaceInfo;->getImplementationOptions()Landroidx/camera/core/impl/Config;
 
     move-result-object v3
@@ -235,23 +235,23 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_3
 
-    :goto_58
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->targetFrameRate:Landroid/util/Range;
 
-    if-nez v1, :cond_63
+    if-nez v1, :cond_2
 
     .line 126
     invoke-virtual {p1}, Landroidx/camera/core/impl/AttachedSurfaceInfo;->getTargetFrameRate()Landroid/util/Range;
 
     move-result-object p1
 
-    if-nez p1, :cond_6e
+    if-nez p1, :cond_3
 
-    goto :goto_6f
+    goto :goto_1
 
-    :cond_63
+    :cond_2
     invoke-virtual {p1}, Landroidx/camera/core/impl/AttachedSurfaceInfo;->getTargetFrameRate()Landroid/util/Range;
 
     move-result-object p1
@@ -260,22 +260,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_6e
+    if-eqz p1, :cond_3
 
-    goto :goto_6f
+    goto :goto_1
 
-    :cond_6e
+    :cond_3
     move v0, v2
 
-    :goto_6f
+    :goto_1
     return v0
 
-    :cond_70
+    :cond_4
     return v2
 .end method
 
 .method public getCaptureTypes()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -292,7 +292,7 @@
 .end method
 
 .method public getDynamicRange()Landroidx/camera/core/DynamicRange;
-    .registers 2
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->dynamicRange:Landroidx/camera/core/DynamicRange;
@@ -301,7 +301,7 @@
 .end method
 
 .method public getImageFormat()I
-    .registers 2
+    .locals 1
 
     .line 66
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->imageFormat:I
@@ -310,7 +310,7 @@
 .end method
 
 .method public getImplementationOptions()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->implementationOptions:Landroidx/camera/core/impl/Config;
@@ -319,7 +319,7 @@
 .end method
 
 .method public getSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->size:Landroid/util/Size;
@@ -328,7 +328,7 @@
 .end method
 
 .method public getSurfaceConfig()Landroidx/camera/core/impl/SurfaceConfig;
-    .registers 2
+    .locals 1
 
     .line 61
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->surfaceConfig:Landroidx/camera/core/impl/SurfaceConfig;
@@ -337,7 +337,7 @@
 .end method
 
 .method public getTargetFrameRate()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -354,7 +354,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 135
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->surfaceConfig:Landroidx/camera/core/impl/SurfaceConfig;
@@ -414,18 +414,18 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_0
 
     move v2, v3
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    :goto_32
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -433,23 +433,23 @@
     .line 147
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_AttachedSurfaceInfo;->targetFrameRate:Landroid/util/Range;
 
-    if-nez v1, :cond_39
+    if-nez v1, :cond_1
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_39
+    :cond_1
     invoke-virtual {v1}, Landroid/util/Range;->hashCode()I
 
     move-result v3
 
-    :goto_3d
+    :goto_1
     xor-int/2addr v0, v3
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 102
     new-instance v0, Ljava/lang/StringBuilder;

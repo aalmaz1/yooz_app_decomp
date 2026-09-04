@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Landroid/net/http/UploadDataProvider;-><init>()V
@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public getLength()J
-    .registers 3
+    .locals 2
 
     .line 40
     iget-object v0, p0, Landroidx/media3/datasource/ByteArrayUploadDataProvider;->data:[B
@@ -38,7 +38,7 @@
 .end method
 
 .method public read(Landroid/net/http/UploadDataSink;Ljava/nio/ByteBuffer;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -85,7 +85,7 @@
 .end method
 
 .method public rewind(Landroid/net/http/UploadDataSink;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

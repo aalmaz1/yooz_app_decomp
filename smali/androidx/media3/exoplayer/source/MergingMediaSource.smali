@@ -78,7 +78,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 81
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -102,7 +102,7 @@
 .end method
 
 .method public varargs constructor <init>(ZZLandroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;[Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 5
+    .locals 0
 
     .line 157
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;-><init>()V
@@ -175,7 +175,7 @@
 .end method
 
 .method public varargs constructor <init>(ZZ[Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 5
+    .locals 1
 
     .line 134
     new-instance v0, Landroidx/media3/exoplayer/source/DefaultCompositeSequenceableLoaderFactory;
@@ -188,7 +188,7 @@
 .end method
 
 .method public varargs constructor <init>(Z[Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -199,7 +199,7 @@
 .end method
 
 .method public varargs constructor <init>([Landroidx/media3/exoplayer/source/MediaSource;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -210,7 +210,7 @@
 .end method
 
 .method private computePeriodTimeOffsets()V
-    .registers 10
+    .locals 9
 
     .line 293
     new-instance v0, Landroidx/media3/common/Timeline$Period;
@@ -222,10 +222,10 @@
     move v2, v1
 
     .line 294
-    :goto_7
+    :goto_0
     iget v3, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodCount:I
 
-    if-ge v2, v3, :cond_37
+    if-ge v2, v3, :cond_1
 
     .line 295
     iget-object v3, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->timelines:[Landroidx/media3/common/Timeline;
@@ -246,12 +246,12 @@
     const/4 v5, 0x1
 
     .line 297
-    :goto_19
+    :goto_1
     iget-object v6, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->timelines:[Landroidx/media3/common/Timeline;
 
     array-length v7, v6
 
-    if-ge v5, v7, :cond_34
+    if-ge v5, v7, :cond_0
 
     .line 298
     aget-object v6, v6, v5
@@ -278,19 +278,19 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_34
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     return-void
 .end method
 
 .method private updateClippedDuration()V
-    .registers 13
+    .locals 12
 
     .line 307
     new-instance v0, Landroidx/media3/common/Timeline$Period;
@@ -302,10 +302,10 @@
     move v2, v1
 
     .line 308
-    :goto_7
+    :goto_0
     iget v3, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodCount:I
 
-    if-ge v2, v3, :cond_69
+    if-ge v2, v3, :cond_5
 
     const-wide/high16 v3, -0x8000000000000000L
 
@@ -314,12 +314,12 @@
     move-wide v6, v3
 
     .line 310
-    :goto_f
+    :goto_1
     iget-object v8, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->timelines:[Landroidx/media3/common/Timeline;
 
     array-length v9, v8
 
-    if-ge v5, v9, :cond_3b
+    if-ge v5, v9, :cond_3
 
     .line 311
     aget-object v8, v8, v5
@@ -336,12 +336,12 @@
 
     cmp-long v10, v8, v10
 
-    if-nez v10, :cond_28
+    if-nez v10, :cond_0
 
-    goto :goto_38
+    goto :goto_2
 
     .line 315
-    :cond_28
+    :cond_0
     iget-object v10, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodTimeOffsetsUs:[[J
 
     aget-object v10, v10, v2
@@ -352,23 +352,23 @@
 
     cmp-long v10, v6, v3
 
-    if-eqz v10, :cond_37
+    if-eqz v10, :cond_1
 
     cmp-long v10, v8, v6
 
-    if-gez v10, :cond_38
+    if-gez v10, :cond_2
 
-    :cond_37
+    :cond_1
     move-wide v6, v8
 
-    :cond_38
-    :goto_38
+    :cond_2
+    :goto_2
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_f
+    goto :goto_1
 
     .line 320
-    :cond_3b
+    :cond_3
     aget-object v3, v8, v1
 
     invoke-virtual {v3, v2}, Landroidx/media3/common/Timeline;->getUidOfPeriod(I)Ljava/lang/Object;
@@ -395,12 +395,12 @@
 
     move-result-object v3
 
-    :goto_54
+    :goto_3
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_66
+    if-eqz v4, :cond_4
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -413,21 +413,21 @@
     .line 323
     invoke-virtual {v4, v8, v9, v6, v7}, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->updateClipping(JJ)V
 
-    goto :goto_54
+    goto :goto_3
 
-    :cond_66
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_69
+    :cond_5
     return-void
 .end method
 
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 5
+    .locals 3
 
     .line 177
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mediaSources:[Landroidx/media3/exoplayer/source/MediaSource;
@@ -436,7 +436,7 @@
 
     const/4 v2, 0x0
 
-    if-lez v1, :cond_f
+    if-lez v1, :cond_0
 
     aget-object v0, v0, v2
 
@@ -444,16 +444,16 @@
 
     move-result p1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     const/4 v2, 0x1
 
-    :cond_f
+    :cond_0
     return v2
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 16
+    .locals 11
 
     .line 203
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mediaSources:[Landroidx/media3/exoplayer/source/MediaSource;
@@ -475,8 +475,8 @@
 
     move-result v2
 
-    :goto_10
-    if-ge v3, v0, :cond_33
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 206
     iget-object v4, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->timelines:[Landroidx/media3/common/Timeline;
@@ -514,10 +514,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 212
-    :cond_33
+    :cond_0
     new-instance v5, Landroidx/media3/exoplayer/source/MergingMediaPeriod;
 
     iget-object p2, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->compositeSequenceableLoaderFactory:Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;
@@ -531,7 +531,7 @@
     .line 215
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->clipDurations:Z
 
-    if-eqz p2, :cond_6a
+    if-eqz p2, :cond_1
 
     .line 216
     new-instance p2, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -578,19 +578,19 @@
 
     move-object v5, p2
 
-    :cond_6a
+    :cond_1
     return-object v5
 .end method
 
 .method public getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 3
+    .locals 2
 
     .line 172
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mediaSources:[Landroidx/media3/exoplayer/source/MediaSource;
 
     array-length v1, v0
 
-    if-lez v1, :cond_d
+    if-lez v1, :cond_0
 
     const/4 v1, 0x0
 
@@ -600,36 +600,36 @@
 
     move-result-object v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     sget-object v0, Landroidx/media3/exoplayer/source/MergingMediaSource;->PLACEHOLDER_MEDIA_ITEM:Landroidx/media3/common/MediaItem;
 
-    :goto_f
+    :goto_0
     return-object v0
 .end method
 
 .method protected getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Integer;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 0
 
     .line 289
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-nez p1, :cond_7
+    if-nez p1, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p2, 0x0
 
-    :goto_8
+    :goto_0
     return-object p2
 .end method
 
 .method protected bridge synthetic getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 3
+    .locals 0
 
     .line 53
     check-cast p1, Ljava/lang/Integer;
@@ -642,7 +642,7 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -652,7 +652,7 @@
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mergeError:Landroidx/media3/exoplayer/source/MergingMediaSource$IllegalMergeException;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 198
     invoke-super {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->maybeThrowSourceInfoRefreshError()V
@@ -660,29 +660,29 @@
     return-void
 
     .line 196
-    :cond_8
+    :cond_0
     throw v0
 .end method
 
 .method protected onChildSourceInfoRefreshed(Ljava/lang/Integer;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 9
+    .locals 5
 
     .line 258
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mergeError:Landroidx/media3/exoplayer/source/MergingMediaSource$IllegalMergeException;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 261
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodCount:I
 
     const/4 v1, -0x1
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_12
+    if-ne v0, v1, :cond_1
 
     .line 262
     invoke-virtual {p3}, Landroidx/media3/common/Timeline;->getPeriodCount()I
@@ -691,17 +691,17 @@
 
     iput v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodCount:I
 
-    goto :goto_22
+    goto :goto_0
 
     .line 263
-    :cond_12
+    :cond_1
     invoke-virtual {p3}, Landroidx/media3/common/Timeline;->getPeriodCount()I
 
     move-result v0
 
     iget v1, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodCount:I
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v1, :cond_2
 
     .line 264
     new-instance p1, Landroidx/media3/exoplayer/source/MergingMediaSource$IllegalMergeException;
@@ -713,13 +713,13 @@
     return-void
 
     .line 267
-    :cond_22
-    :goto_22
+    :cond_2
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodTimeOffsetsUs:[[J
 
     array-length v0, v0
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_3
 
     .line 268
     iget v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodCount:I
@@ -749,7 +749,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->periodTimeOffsetsUs:[[J
 
     .line 270
-    :cond_3e
+    :cond_3
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->pendingTimelineSources:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -770,18 +770,18 @@
 
     move-result p1
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_6
 
     .line 273
     iget-boolean p1, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->adjustPeriodTimeOffsets:Z
 
-    if-eqz p1, :cond_5a
+    if-eqz p1, :cond_4
 
     .line 274
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/MergingMediaSource;->computePeriodTimeOffsets()V
 
     .line 276
-    :cond_5a
+    :cond_4
     iget-object p1, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->timelines:[Landroidx/media3/common/Timeline;
 
     aget-object p1, p1, v2
@@ -789,7 +789,7 @@
     .line 277
     iget-boolean p2, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->clipDurations:Z
 
-    if-eqz p2, :cond_6d
+    if-eqz p2, :cond_5
 
     .line 278
     invoke-direct {p0}, Landroidx/media3/exoplayer/source/MergingMediaSource;->updateClippedDuration()V
@@ -804,15 +804,15 @@
     move-object p1, p2
 
     .line 281
-    :cond_6d
+    :cond_5
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/source/MergingMediaSource;->refreshSourceInfo(Landroidx/media3/common/Timeline;)V
 
-    :cond_70
+    :cond_6
     return-void
 .end method
 
 .method protected bridge synthetic onChildSourceInfoRefreshed(Ljava/lang/Object;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/Timeline;)V
-    .registers 4
+    .locals 0
 
     .line 53
     check-cast p1, Ljava/lang/Integer;
@@ -823,7 +823,7 @@
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 2
 
     .line 187
     invoke-super {p0, p1}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
@@ -831,12 +831,12 @@
     const/4 p1, 0x0
 
     .line 188
-    :goto_4
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mediaSources:[Landroidx/media3/exoplayer/source/MediaSource;
 
     array-length v0, v0
 
-    if-ge p1, v0, :cond_17
+    if-ge p1, v0, :cond_0
 
     .line 189
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -851,19 +851,19 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 5
+    .locals 3
 
     .line 229
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->clipDurations:Z
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_2
 
     .line 230
     check-cast p1, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -879,12 +879,12 @@
 
     move-result-object v0
 
-    :cond_10
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -903,7 +903,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_0
 
     .line 233
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->clippedMediaPeriods:Lcom/google/common/collect/Multimap;
@@ -919,22 +919,22 @@
     invoke-interface {v0, v2, v1}, Lcom/google/common/collect/Multimap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 237
-    :cond_35
+    :cond_1
     iget-object p1, p1, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     .line 239
-    :cond_37
+    :cond_2
     check-cast p1, Landroidx/media3/exoplayer/source/MergingMediaPeriod;
 
     const/4 v0, 0x0
 
     .line 240
-    :goto_3a
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mediaSources:[Landroidx/media3/exoplayer/source/MediaSource;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_4b
+    if-ge v0, v2, :cond_3
 
     .line 241
     aget-object v1, v1, v0
@@ -947,14 +947,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_4b
+    :cond_3
     return-void
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 3
+    .locals 2
 
     .line 247
     invoke-super {p0}, Landroidx/media3/exoplayer/source/CompositeMediaSource;->releaseSourceInternal()V
@@ -990,7 +990,7 @@
 .end method
 
 .method public updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 4
+    .locals 2
 
     .line 182
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaSource;->mediaSources:[Landroidx/media3/exoplayer/source/MediaSource;

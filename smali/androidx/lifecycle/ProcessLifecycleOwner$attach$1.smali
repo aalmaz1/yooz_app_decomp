@@ -47,7 +47,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/ProcessLifecycleOwner;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/lifecycle/ProcessLifecycleOwner$attach$1;->this$0:Landroidx/lifecycle/ProcessLifecycleOwner;
 
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     const-string p2, "activity"
 
@@ -71,7 +71,7 @@
 
     const/16 v0, 0x1d
 
-    if-ge p2, v0, :cond_1a
+    if-ge p2, v0, :cond_0
 
     .line 174
     sget-object p2, Landroidx/lifecycle/ReportFragment;->Companion:Landroidx/lifecycle/ReportFragment$Companion;
@@ -88,12 +88,12 @@
 
     invoke-virtual {p1, p2}, Landroidx/lifecycle/ReportFragment;->setProcessListener(Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;)V
 
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method public onActivityPaused(Landroid/app/Activity;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "activity"
 
@@ -108,7 +108,7 @@
 .end method
 
 .method public onActivityPreCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     const-string p2, "activity"
 
@@ -130,7 +130,7 @@
 .end method
 
 .method public onActivityStopped(Landroid/app/Activity;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "activity"
 

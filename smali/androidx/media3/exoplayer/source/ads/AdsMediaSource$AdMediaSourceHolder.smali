@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/source/ads/AdsMediaSource;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 3
+    .locals 0
 
     .line 483
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public createMediaPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 8
+    .locals 3
 
     .line 501
     new-instance v0, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;
@@ -76,7 +76,7 @@
     .line 504
     iget-object p2, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->adMediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_0
 
     .line 505
     invoke-virtual {v0, p2}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->setMediaSource(Landroidx/media3/exoplayer/source/MediaSource;)V
@@ -99,10 +99,10 @@
     invoke-virtual {v0, p2}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->setPrepareListener(Landroidx/media3/exoplayer/source/MaskingMediaPeriod$PrepareListener;)V
 
     .line 508
-    :cond_23
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->timeline:Landroidx/media3/common/Timeline;
 
-    if-eqz p2, :cond_36
+    if-eqz p2, :cond_1
 
     const/4 p3, 0x0
 
@@ -121,24 +121,24 @@
     .line 511
     invoke-virtual {v0, p3}, Landroidx/media3/exoplayer/source/MaskingMediaPeriod;->createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
 
-    :cond_36
+    :cond_1
     return-object v0
 .end method
 
 .method public getDurationUs()J
-    .registers 4
+    .locals 3
 
     .line 531
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->timeline:Landroidx/media3/common/Timeline;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    goto :goto_19
+    goto :goto_0
 
     .line 533
-    :cond_a
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
 
     invoke-static {v1}, Landroidx/media3/exoplayer/source/ads/AdsMediaSource;->access$600(Landroidx/media3/exoplayer/source/ads/AdsMediaSource;)Landroidx/media3/common/Timeline$Period;
@@ -155,12 +155,12 @@
 
     move-result-wide v0
 
-    :goto_19
+    :goto_0
     return-wide v0
 .end method
 
 .method public handleSourceInfoRefresh(Landroidx/media3/common/Timeline;)V
-    .registers 8
+    .locals 6
 
     .line 517
     invoke-virtual {p1}, Landroidx/media3/common/Timeline;->getPeriodCount()I
@@ -171,20 +171,20 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_9
+    if-ne v0, v2, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v2, v1
 
-    :goto_a
+    :goto_0
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 518
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->timeline:Landroidx/media3/common/Timeline;
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_1
 
     .line 519
     invoke-virtual {p1, v1}, Landroidx/media3/common/Timeline;->getUidOfPeriod(I)Ljava/lang/Object;
@@ -192,14 +192,14 @@
     move-result-object v0
 
     .line 520
-    :goto_15
+    :goto_1
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->activeMediaPeriods:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_34
+    if-ge v1, v2, :cond_1
 
     .line 521
     iget-object v2, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->activeMediaPeriods:Ljava/util/List;
@@ -224,36 +224,36 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_15
+    goto :goto_1
 
     .line 527
-    :cond_34
+    :cond_1
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->timeline:Landroidx/media3/common/Timeline;
 
     return-void
 .end method
 
 .method public hasMediaSource()Z
-    .registers 2
+    .locals 1
 
     .line 548
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->adMediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public initializeWithMediaSource(Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/MediaItem;)V
-    .registers 7
+    .locals 4
 
     .line 489
     iput-object p1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->adMediaSource:Landroidx/media3/exoplayer/source/MediaSource;
@@ -264,14 +264,14 @@
     const/4 v0, 0x0
 
     .line 491
-    :goto_5
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->activeMediaPeriods:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_25
+    if-ge v0, v1, :cond_0
 
     .line 492
     iget-object v1, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->activeMediaPeriods:Ljava/util/List;
@@ -296,10 +296,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 496
-    :cond_25
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
 
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->id:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -310,7 +310,7 @@
 .end method
 
 .method public isInactive()Z
-    .registers 2
+    .locals 1
 
     .line 552
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->activeMediaPeriods:Ljava/util/List;
@@ -323,14 +323,14 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 542
     invoke-virtual {p0}, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->hasMediaSource()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 543
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->this$0:Landroidx/media3/exoplayer/source/ads/AdsMediaSource;
@@ -339,12 +339,12 @@
 
     invoke-static {v0, v1}, Landroidx/media3/exoplayer/source/ads/AdsMediaSource;->access$700(Landroidx/media3/exoplayer/source/ads/AdsMediaSource;Ljava/lang/Object;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public releaseMediaPeriod(Landroidx/media3/exoplayer/source/MaskingMediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 537
     iget-object v0, p0, Landroidx/media3/exoplayer/source/ads/AdsMediaSource$AdMediaSourceHolder;->activeMediaPeriods:Ljava/util/List;

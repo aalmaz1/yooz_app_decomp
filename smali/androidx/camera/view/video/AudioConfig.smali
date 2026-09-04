@@ -13,7 +13,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 35
     new-instance v0, Landroidx/camera/view/video/AudioConfig;
@@ -28,7 +28,7 @@
 .end method
 
 .method constructor <init>(Z)V
-    .registers 2
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static create(Z)Landroidx/camera/view/video/AudioConfig;
-    .registers 2
+    .locals 1
 
     .line 53
     new-instance v0, Landroidx/camera/view/video/AudioConfig;
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public getAudioEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 60
     iget-boolean v0, p0, Landroidx/camera/view/video/AudioConfig;->mIsAudioEnabled:Z

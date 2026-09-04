@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 .end method
 
 .method public static disambiguate4gAnd5gNsa(Landroid/content/Context;Landroidx/media3/common/util/NetworkTypeObserver;)V
-    .registers 4
+    .locals 2
 
     :try_start_0
     const-string v0, "phone"
@@ -63,17 +63,17 @@
 
     .line 238
     invoke-virtual {v0, v1}, Landroid/telephony/TelephonyManager;->unregisterTelephonyCallback(Landroid/telephony/TelephonyCallback;)V
-    :try_end_1d
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_1d} :catch_1e
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_22
+    goto :goto_0
 
-    :catch_1e
+    :catch_0
     const/4 p0, 0x5
 
     .line 241
     invoke-static {p1, p0}, Landroidx/media3/common/util/NetworkTypeObserver;->access$200(Landroidx/media3/common/util/NetworkTypeObserver;I)V
 
-    :goto_22
+    :goto_0
     return-void
 .end method

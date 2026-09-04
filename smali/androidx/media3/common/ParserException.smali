@@ -11,7 +11,7 @@
 
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
-    .registers 5
+    .locals 0
 
     .line 107
     invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -26,7 +26,7 @@
 .end method
 
 .method public static createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
-    .registers 4
+    .locals 2
 
     .line 50
     new-instance v0, Landroidx/media3/common/ParserException;
@@ -39,7 +39,7 @@
 .end method
 
 .method public static createForMalformedDataOfUnknownType(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
-    .registers 5
+    .locals 3
 
     .line 37
     new-instance v0, Landroidx/media3/common/ParserException;
@@ -54,7 +54,7 @@
 .end method
 
 .method public static createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
-    .registers 5
+    .locals 3
 
     .line 63
     new-instance v0, Landroidx/media3/common/ParserException;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static createForManifestWithUnsupportedFeature(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
-    .registers 5
+    .locals 3
 
     .line 77
     new-instance v0, Landroidx/media3/common/ParserException;
@@ -84,7 +84,7 @@
 .end method
 
 .method public static createForUnsupportedContainerFeature(Ljava/lang/String;)Landroidx/media3/common/ParserException;
-    .registers 5
+    .locals 4
 
     .line 89
     new-instance v0, Landroidx/media3/common/ParserException;
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public getMessage()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 115
     new-instance v0, Ljava/lang/StringBuilder;

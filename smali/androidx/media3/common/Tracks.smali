@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 262
     new-instance v0, Landroidx/media3/common/Tracks;
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,7 +81,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/Tracks;
-    .registers 2
+    .locals 1
 
     .line 386
     sget-object v0, Landroidx/media3/common/Tracks;->FIELD_TRACK_GROUPS:Ljava/lang/String;
@@ -90,17 +90,17 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_d
+    if-nez p0, :cond_0
 
     .line 389
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 390
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/media3/common/Tracks$$ExternalSyntheticLambda1;
 
     invoke-direct {v0}, Landroidx/media3/common/Tracks$$ExternalSyntheticLambda1;-><init>()V
@@ -110,7 +110,7 @@
     move-result-object p0
 
     .line 391
-    :goto_16
+    :goto_0
     new-instance v0, Landroidx/media3/common/Tracks;
 
     invoke-direct {v0, p0}, Landroidx/media3/common/Tracks;-><init>(Ljava/util/List;)V
@@ -121,21 +121,21 @@
 
 # virtual methods
 .method public containsType(I)Z
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 288
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1d
+    if-ge v1, v2, :cond_1
 
     .line 289
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
@@ -150,32 +150,32 @@
 
     move-result v2
 
-    if-ne v2, p1, :cond_1a
+    if-ne v2, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_1a
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     return v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_4
-    if-eqz p1, :cond_1c
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 362
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -186,12 +186,12 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 365
-    :cond_11
+    :cond_1
     check-cast p1, Landroidx/media3/common/Tracks;
 
     .line 366
@@ -205,15 +205,15 @@
 
     return p1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public getGroups()Lcom/google/common/collect/ImmutableList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -230,7 +230,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 371
     iget-object v0, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
@@ -243,7 +243,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 283
     iget-object v0, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
@@ -256,21 +256,21 @@
 .end method
 
 .method public isTypeSelected(I)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 348
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_1
 
     .line 349
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
@@ -286,29 +286,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_0
 
     invoke-virtual {v2}, Landroidx/media3/common/Tracks$Group;->getType()I
 
     move-result v2
 
-    if-ne v2, p1, :cond_20
+    if-ne v2, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_20
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     return v0
 .end method
 
 .method public isTypeSupported(I)Z
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -321,21 +321,21 @@
 .end method
 
 .method public isTypeSupported(IZ)Z
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 316
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_2b
+    if-ge v1, v2, :cond_1
 
     .line 317
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
@@ -350,7 +350,7 @@
 
     move-result v2
 
-    if-ne v2, p1, :cond_28
+    if-ne v2, p1, :cond_0
 
     .line 318
     iget-object v2, p0, Landroidx/media3/common/Tracks;->groups:Lcom/google/common/collect/ImmutableList;
@@ -365,23 +365,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_28
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     return v0
 .end method
 
 .method public isTypeSupportedOrEmpty(I)Z
-    .registers 3
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -396,7 +396,7 @@
 .end method
 
 .method public isTypeSupportedOrEmpty(IZ)Z
-    .registers 4
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -405,31 +405,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0, p1, p2}, Landroidx/media3/common/Tracks;->isTypeSupported(IZ)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_10
+    :goto_1
     return p1
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 378
     new-instance v0, Landroid/os/Bundle;

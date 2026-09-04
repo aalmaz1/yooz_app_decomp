@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     .line 357
     invoke-direct {p0}, Landroidx/media3/common/Timeline;-><init>()V
@@ -34,30 +34,30 @@
 
 # virtual methods
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
 
     .line 408
     sget-object v0, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->MASKING_EXTERNAL_PERIOD_UID:Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_7
+    :goto_0
     return p1
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 15
+    .locals 11
 
     const/4 p1, 0x0
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     const/4 v0, 0x0
 
@@ -68,18 +68,18 @@
 
     move-object v2, v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move-object v2, p1
 
-    :goto_b
-    if-eqz p3, :cond_f
+    :goto_0
+    if-eqz p3, :cond_1
 
     .line 397
     sget-object p1, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->MASKING_EXTERNAL_PERIOD_UID:Ljava/lang/Object;
 
-    :cond_f
+    :cond_1
     move-object v3, p1
 
     const/4 v4, 0x0
@@ -101,7 +101,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -109,7 +109,7 @@
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 413
     sget-object p1, Landroidx/media3/exoplayer/source/MaskingMediaSource$MaskingTimeline;->MASKING_EXTERNAL_PERIOD_UID:Ljava/lang/Object;
@@ -118,7 +118,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 26
+    .locals 21
 
     move-object/from16 v15, p2
 
@@ -172,7 +172,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

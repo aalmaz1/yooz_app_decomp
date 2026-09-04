@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public createDataSink()Landroidx/media3/datasource/DataSink;
-    .registers 6
+    .locals 5
 
     .line 111
     new-instance v0, Landroidx/media3/datasource/cache/CacheDataSink;
@@ -71,7 +71,7 @@
 .end method
 
 .method public setBufferSize(I)Landroidx/media3/datasource/cache/CacheDataSink$Factory;
-    .registers 2
+    .locals 0
 
     .line 105
     iput p1, p0, Landroidx/media3/datasource/cache/CacheDataSink$Factory;->bufferSize:I
@@ -80,7 +80,7 @@
 .end method
 
 .method public setCache(Landroidx/media3/datasource/cache/Cache;)Landroidx/media3/datasource/cache/CacheDataSink$Factory;
-    .registers 2
+    .locals 0
 
     .line 71
     iput-object p1, p0, Landroidx/media3/datasource/cache/CacheDataSink$Factory;->cache:Landroidx/media3/datasource/cache/Cache;
@@ -89,7 +89,7 @@
 .end method
 
 .method public setFragmentSize(J)Landroidx/media3/datasource/cache/CacheDataSink$Factory;
-    .registers 3
+    .locals 0
 
     .line 90
     iput-wide p1, p0, Landroidx/media3/datasource/cache/CacheDataSink$Factory;->fragmentSize:J

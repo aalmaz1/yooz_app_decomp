@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/constraintlayout/solver/state/State;)V
-    .registers 3
+    .locals 1
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public apply()V
-    .registers 3
+    .locals 2
 
     .line 73
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
@@ -65,42 +65,42 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_0
 
     .line 75
     iget-object v1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/solver/widgets/Guideline;->setGuideBegin(I)V
 
-    goto :goto_23
+    goto :goto_0
 
     .line 76
-    :cond_12
+    :cond_0
     iget v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mEnd:I
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     .line 77
     iget-object v1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/solver/widgets/Guideline;->setGuideEnd(I)V
 
-    goto :goto_23
+    goto :goto_0
 
     .line 79
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
     iget v1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mPercent:F
 
     invoke-virtual {v0, v1}, Landroidx/constraintlayout/solver/widgets/Guideline;->setGuidePercent(F)V
 
-    :goto_23
+    :goto_0
     return-void
 .end method
 
 .method public end(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -125,12 +125,12 @@
 .end method
 
 .method public getConstraintWidget()Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
-    .registers 2
+    .locals 1
 
     .line 85
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 86
     new-instance v0, Landroidx/constraintlayout/solver/widgets/Guideline;
@@ -140,14 +140,14 @@
     iput-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
     .line 88
-    :cond_b
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
     return-object v0
 .end method
 
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->key:Ljava/lang/Object;
@@ -156,7 +156,7 @@
 .end method
 
 .method public getOrientation()I
-    .registers 2
+    .locals 1
 
     .line 69
     iget v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mOrientation:I
@@ -165,7 +165,7 @@
 .end method
 
 .method public percent(F)V
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -182,32 +182,32 @@
 .end method
 
 .method public setConstraintWidget(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
-    .registers 3
+    .locals 1
 
     .line 93
     instance-of v0, p1, Landroidx/constraintlayout/solver/widgets/Guideline;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 94
     check-cast p1, Landroidx/constraintlayout/solver/widgets/Guideline;
 
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
     .line 96
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mGuidelineWidget:Landroidx/constraintlayout/solver/widgets/Guideline;
 
-    :goto_c
+    :goto_0
     return-void
 .end method
 
 .method public setKey(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 36
     iput-object p1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->key:Ljava/lang/Object;
@@ -216,7 +216,7 @@
 .end method
 
 .method public setOrientation(I)V
-    .registers 2
+    .locals 0
 
     .line 65
     iput p1, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mOrientation:I
@@ -225,7 +225,7 @@
 .end method
 
 .method public start(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/constraintlayout/solver/state/helpers/GuidelineReference;->mState:Landroidx/constraintlayout/solver/state/State;

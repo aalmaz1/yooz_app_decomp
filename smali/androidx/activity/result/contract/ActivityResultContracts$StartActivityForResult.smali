@@ -67,7 +67,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/result/contract/ActivityResultContracts$StartActivityForResult$Companion;
 
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 59
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public createIntent(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/Intent;
-    .registers 4
+    .locals 1
 
     const-string v0, "context"
 
@@ -106,7 +106,7 @@
 .end method
 
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 59
     check-cast p2, Landroid/content/Intent;
@@ -119,7 +119,7 @@
 .end method
 
 .method public parseResult(ILandroid/content/Intent;)Landroidx/activity/result/ActivityResult;
-    .registers 4
+    .locals 1
 
     .line 79
     new-instance v0, Landroidx/activity/result/ActivityResult;
@@ -130,7 +130,7 @@
 .end method
 
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 59
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$StartActivityForResult;->parseResult(ILandroid/content/Intent;)Landroidx/activity/result/ActivityResult;

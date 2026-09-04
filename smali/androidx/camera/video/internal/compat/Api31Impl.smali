@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static getInputChannelCountRanges(Landroid/media/MediaCodecInfo$AudioCapabilities;)[Landroid/util/Range;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -35,7 +35,7 @@
 .end method
 
 .method public static getMinInputChannelCount(Landroid/media/MediaCodecInfo$AudioCapabilities;)I
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo$AudioCapabilities;->getMinInputChannelCount()I
@@ -46,7 +46,7 @@
 .end method
 
 .method public static setContext(Landroid/media/AudioRecord$Builder;Landroid/content/Context;)V
-    .registers 2
+    .locals 0
 
     .line 62
     invoke-virtual {p0, p1}, Landroid/media/AudioRecord$Builder;->setContext(Landroid/content/Context;)Landroid/media/AudioRecord$Builder;

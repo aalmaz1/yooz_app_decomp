@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 72
     new-instance v0, Landroidx/media3/common/util/Log$Logger$1;

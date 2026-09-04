@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method public getTag()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/appcompat/view/ActionMode;->mTag:Ljava/lang/Object;
@@ -57,7 +57,7 @@
 .end method
 
 .method public getTitleOptionalHint()Z
-    .registers 2
+    .locals 1
 
     .line 145
     iget-boolean v0, p0, Landroidx/appcompat/view/ActionMode;->mTitleOptionalHint:Z
@@ -69,7 +69,7 @@
 .end method
 
 .method public isTitleOptional()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -77,7 +77,7 @@
 .end method
 
 .method public isUiFocusable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public setTag(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 57
     iput-object p1, p0, Landroidx/appcompat/view/ActionMode;->mTag:Ljava/lang/Object;
@@ -109,7 +109,7 @@
 .end method
 
 .method public setTitleOptionalHint(Z)V
-    .registers 2
+    .locals 0
 
     .line 134
     iput-boolean p1, p0, Landroidx/appcompat/view/ActionMode;->mTitleOptionalHint:Z

@@ -85,7 +85,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -98,7 +98,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraControlImpl;Ljava/util/concurrent/ScheduledExecutorService;Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Quirks;)V
-    .registers 9
+    .locals 4
 
     .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -182,12 +182,12 @@
 .end method
 
 .method private clearAutoFocusTimeoutHandle()V
-    .registers 3
+    .locals 2
 
     .line 512
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAutoFocusTimeoutHandle:Ljava/util/concurrent/ScheduledFuture;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
@@ -199,17 +199,17 @@
     .line 514
     iput-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAutoFocusTimeoutHandle:Ljava/util/concurrent/ScheduledFuture;
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method private completeCancelFuture()V
-    .registers 3
+    .locals 2
 
     .line 566
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningCancelCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
@@ -219,17 +219,17 @@
     .line 568
     iput-object v1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningCancelCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method private disableAutoCancel()V
-    .registers 3
+    .locals 2
 
     .line 504
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAutoCancelHandle:Ljava/util/concurrent/ScheduledFuture;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
@@ -241,12 +241,12 @@
     .line 506
     iput-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAutoCancelHandle:Ljava/util/concurrent/ScheduledFuture;
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method private executeMeteringAction([Landroid/hardware/camera2/params/MeteringRectangle;[Landroid/hardware/camera2/params/MeteringRectangle;[Landroid/hardware/camera2/params/MeteringRectangle;Landroidx/camera/core/FocusMeteringAction;J)V
-    .registers 9
+    .locals 2
 
     .line 579
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -279,7 +279,7 @@
 
     const/4 p3, 0x0
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_0
 
     .line 591
     iput-boolean p2, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsInAfAutoMode:Z
@@ -302,10 +302,10 @@
     .line 595
     invoke-virtual {p0, p1, p2}, Landroidx/camera/camera2/internal/FocusMeteringControl;->triggerAf(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Z)V
 
-    goto :goto_38
+    goto :goto_0
 
     .line 597
-    :cond_2c
+    :cond_0
     iput-boolean p3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsInAfAutoMode:Z
 
     .line 598
@@ -322,7 +322,7 @@
     move-result-wide v0
 
     .line 603
-    :goto_38
+    :goto_0
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -376,7 +376,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_7d
+    if-eqz p3, :cond_1
 
     .line 660
     new-instance p3, Landroidx/camera/camera2/internal/FocusMeteringControl$$ExternalSyntheticLambda8;
@@ -400,12 +400,12 @@
 
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAutoCancelHandle:Ljava/util/concurrent/ScheduledFuture;
 
-    :cond_7d
+    :cond_1
     return-void
 .end method
 
 .method private failActionFuture(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 546
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -417,7 +417,7 @@
     .line 547
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningActionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 548
     new-instance v1, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -431,12 +431,12 @@
     .line 550
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningActionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method private failCancelFuture(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 556
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -448,7 +448,7 @@
     .line 557
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningCancelCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 558
     new-instance v1, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -462,17 +462,17 @@
     .line 560
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningCancelCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method private getDefaultAspectRatio()Landroid/util/Rational;
-    .registers 4
+    .locals 3
 
     .line 166
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mPreviewAspectRatio:Landroid/util/Rational;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 167
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mPreviewAspectRatio:Landroid/util/Rational;
@@ -480,7 +480,7 @@
     return-object v0
 
     .line 170
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
 
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/Camera2CameraControlImpl;->getCropSensorRegion()Landroid/graphics/Rect;
@@ -504,14 +504,14 @@
 .end method
 
 .method private static getFovAdjustedPoint(Landroidx/camera/core/MeteringPoint;Landroid/util/Rational;Landroid/util/Rational;ILandroidx/camera/camera2/internal/compat/workaround/MeteringRegionCorrection;)Landroid/graphics/PointF;
-    .registers 11
+    .locals 6
 
     .line 218
     invoke-virtual {p0}, Landroidx/camera/core/MeteringPoint;->getSurfaceAspectRatio()Landroid/util/Rational;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 219
     invoke-virtual {p0}, Landroidx/camera/core/MeteringPoint;->getSurfaceAspectRatio()Landroid/util/Rational;
@@ -519,7 +519,7 @@
     move-result-object p2
 
     .line 222
-    :cond_a
+    :cond_0
     invoke-virtual {p4, p0, p3}, Landroidx/camera/camera2/internal/compat/workaround/MeteringRegionCorrection;->getCorrectedPoint(Landroidx/camera/core/MeteringPoint;I)Landroid/graphics/PointF;
 
     move-result-object p0
@@ -529,7 +529,7 @@
 
     move-result p3
 
-    if-nez p3, :cond_4b
+    if-nez p3, :cond_2
 
     .line 224
     invoke-virtual {p2, p1}, Landroid/util/Rational;->compareTo(Landroid/util/Rational;)I
@@ -542,7 +542,7 @@
 
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
-    if-lez p3, :cond_36
+    if-lez p3, :cond_1
 
     .line 227
     invoke-virtual {p2}, Landroid/util/Rational;->doubleValue()D
@@ -577,10 +577,10 @@
 
     iput p2, p0, Landroid/graphics/PointF;->y:F
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 235
-    :cond_36
+    :cond_1
     invoke-virtual {p1}, Landroid/util/Rational;->doubleValue()D
 
     move-result-wide v4
@@ -613,13 +613,13 @@
 
     iput p2, p0, Landroid/graphics/PointF;->x:F
 
-    :cond_4b
-    :goto_4b
+    :cond_2
+    :goto_0
     return-object p0
 .end method
 
 .method private static getMeteringRect(Landroidx/camera/core/MeteringPoint;Landroid/graphics/PointF;Landroid/graphics/Rect;)Landroid/hardware/camera2/params/MeteringRectangle;
-    .registers 8
+    .locals 5
 
     .line 247
     iget v0, p2, Landroid/graphics/Rect;->left:I
@@ -769,7 +769,7 @@
 .end method
 
 .method private getMeteringRectangles(Ljava/util/List;ILandroid/util/Rational;Landroid/graphics/Rect;I)Ljava/util/List;
-    .registers 10
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -790,14 +790,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_59
+    if-nez v0, :cond_6
 
-    if-nez p2, :cond_9
+    if-nez p2, :cond_0
 
-    goto :goto_59
+    goto :goto_2
 
     .line 296
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -821,13 +821,13 @@
 
     move-result-object p1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_5
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -840,22 +840,22 @@
 
     move-result v3
 
-    if-ne v3, p2, :cond_32
+    if-ne v3, p2, :cond_2
 
-    goto :goto_54
+    goto :goto_1
 
     .line 304
-    :cond_32
+    :cond_2
     invoke-static {v2}, Landroidx/camera/camera2/internal/FocusMeteringControl;->isValid(Landroidx/camera/core/MeteringPoint;)Z
 
     move-result v3
 
-    if-nez v3, :cond_39
+    if-nez v3, :cond_3
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 308
-    :cond_39
+    :cond_3
     iget-object v3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mMeteringRegionCorrection:Landroidx/camera/camera2/internal/compat/workaround/MeteringRegionCorrection;
 
     invoke-static {v2, v1, p3, p5, v3}, Landroidx/camera/camera2/internal/FocusMeteringControl;->getFovAdjustedPoint(Landroidx/camera/core/MeteringPoint;Landroid/util/Rational;Landroid/util/Rational;ILandroidx/camera/camera2/internal/compat/workaround/MeteringRegionCorrection;)Landroid/graphics/PointF;
@@ -872,25 +872,25 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1
 
     invoke-virtual {v2}, Landroid/hardware/camera2/params/MeteringRectangle;->getHeight()I
 
     move-result v3
 
-    if-nez v3, :cond_50
+    if-nez v3, :cond_4
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 315
-    :cond_50
+    :cond_4
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 318
-    :cond_54
-    :goto_54
+    :cond_5
+    :goto_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
@@ -898,8 +898,8 @@
     return-object p1
 
     .line 293
-    :cond_59
-    :goto_59
+    :cond_6
+    :goto_2
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
@@ -908,7 +908,7 @@
 .end method
 
 .method private isAfModeSupported()Z
-    .registers 3
+    .locals 2
 
     .line 531
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -919,19 +919,19 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     return v1
 .end method
 
 .method private static isValid(Landroidx/camera/core/MeteringPoint;)Z
-    .registers 4
+    .locals 3
 
     .line 208
     invoke-virtual {p0}, Landroidx/camera/core/MeteringPoint;->getX()F
@@ -942,7 +942,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_25
+    if-ltz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/camera/core/MeteringPoint;->getX()F
 
@@ -952,7 +952,7 @@
 
     cmpg-float v0, v0, v2
 
-    if-gtz v0, :cond_25
+    if-gtz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/camera/core/MeteringPoint;->getY()F
 
@@ -960,7 +960,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_25
+    if-ltz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/camera/core/MeteringPoint;->getY()F
 
@@ -968,21 +968,21 @@
 
     cmpg-float p0, p0, v2
 
-    if-gtz p0, :cond_25
+    if-gtz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_26
+    :goto_0
     return p0
 .end method
 
 .method private static rangeLimit(III)I
-    .registers 3
+    .locals 0
 
     .line 265
     invoke-static {p0, p2}, Ljava/lang/Math;->max(II)I
@@ -997,48 +997,48 @@
 .end method
 
 .method private shouldTriggerAF()Z
-    .registers 2
+    .locals 1
 
     .line 674
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAfRects:[Landroid/hardware/camera2/params/MeteringRectangle;
 
     array-length v0, v0
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method addFocusMeteringOptions(Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;)V
-    .registers 5
+    .locals 3
 
     .line 186
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsInAfAutoMode:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 188
-    :cond_6
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/FocusMeteringControl;->getDefaultAfMode()I
 
     move-result v0
 
     .line 190
-    :goto_a
+    :goto_0
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object v2, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -1060,7 +1060,7 @@
 
     array-length v0, v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 194
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -1070,12 +1070,12 @@
     invoke-virtual {p1, v0, v1}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
     .line 197
-    :cond_25
+    :cond_1
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAeRects:[Landroid/hardware/camera2/params/MeteringRectangle;
 
     array-length v0, v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     .line 198
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -1085,12 +1085,12 @@
     invoke-virtual {p1, v0, v1}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
     .line 201
-    :cond_31
+    :cond_2
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAwbRects:[Landroid/hardware/camera2/params/MeteringRectangle;
 
     array-length v0, v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_3
 
     .line 202
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -1099,22 +1099,22 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
-    :cond_3d
+    :cond_3
     return-void
 .end method
 
 .method cancelAfAeTrigger(ZZ)V
-    .registers 7
+    .locals 4
 
     .line 481
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-void
 
     .line 485
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/CaptureConfig$Builder;
 
     invoke-direct {v0}, Landroidx/camera/core/impl/CaptureConfig$Builder;-><init>()V
@@ -1136,7 +1136,7 @@
 
     const/4 v2, 0x2
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_1
 
     .line 491
     sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -1149,8 +1149,8 @@
     .line 491
     invoke-virtual {v1, p1, v3}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
-    :cond_24
-    if-eqz p2, :cond_2f
+    :cond_1
+    if-eqz p2, :cond_2
 
     .line 495
     sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_PRECAPTURE_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -1164,7 +1164,7 @@
     invoke-virtual {v1, p1, p2}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
     .line 498
-    :cond_2f
+    :cond_2
     invoke-virtual {v1}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->build()Landroidx/camera/camera2/impl/Camera2ImplConfig;
 
     move-result-object p1
@@ -1188,7 +1188,7 @@
 .end method
 
 .method cancelFocusAndMetering()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1211,7 +1211,7 @@
 .end method
 
 .method cancelFocusAndMeteringInternal(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1247,7 +1247,7 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -1255,7 +1255,7 @@
     invoke-virtual {p0, p1, v0}, Landroidx/camera/camera2/internal/FocusMeteringControl;->cancelAfAeTrigger(ZZ)V
 
     .line 702
-    :cond_1d
+    :cond_0
     sget-object p1, Landroidx/camera/camera2/internal/FocusMeteringControl;->EMPTY_RECTANGLES:[Landroid/hardware/camera2/params/MeteringRectangle;
 
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mAfRects:[Landroid/hardware/camera2/params/MeteringRectangle;
@@ -1279,7 +1279,7 @@
     .line 709
     iget-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningCancelCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz p1, :cond_47
+    if-eqz p1, :cond_1
 
     .line 710
     iget-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -1304,12 +1304,12 @@
 
     invoke-virtual {p1, v2}, Landroidx/camera/camera2/internal/Camera2CameraControlImpl;->addCaptureResultListener(Landroidx/camera/camera2/internal/Camera2CameraControlImpl$CaptureResultListener;)V
 
-    :cond_47
+    :cond_1
     return-void
 .end method
 
 .method cancelFocusAndMeteringWithoutAsyncResult()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1320,7 +1320,7 @@
 .end method
 
 .method completeActionFuture(Z)V
-    .registers 3
+    .locals 1
 
     .line 537
     invoke-direct {p0}, Landroidx/camera/camera2/internal/FocusMeteringControl;->clearAutoFocusTimeoutHandle()V
@@ -1328,7 +1328,7 @@
     .line 538
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningActionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 539
     invoke-static {p1}, Landroidx/camera/core/FocusMeteringResult;->create(Z)Landroidx/camera/core/FocusMeteringResult;
@@ -1342,30 +1342,30 @@
     .line 540
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mRunningActionCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method getDefaultAfMode()I
-    .registers 3
+    .locals 2
 
     .line 521
     iget v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mTemplate:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x4
 
     return v0
 
-    :cond_7
+    :cond_0
     return v1
 .end method
 
 .method isFocusMeteringSupported(Landroidx/camera/core/FocusMeteringAction;)Z
-    .registers 12
+    .locals 10
 
     .line 728
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
@@ -1449,37 +1449,37 @@
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_1
 
     invoke-interface {v9}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_1
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_4e
+    if-nez p1, :cond_0
 
-    goto :goto_50
+    goto :goto_0
 
-    :cond_4e
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_51
+    goto :goto_1
 
-    :cond_50
-    :goto_50
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_51
+    :goto_1
     return p1
 .end method
 
 .method synthetic lambda$cancelFocusAndMetering$7$androidx-camera-camera2-internal-FocusMeteringControl(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 2
+    .locals 0
 
     .line 680
     invoke-virtual {p0, p1}, Landroidx/camera/camera2/internal/FocusMeteringControl;->cancelFocusAndMeteringInternal(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
@@ -1488,7 +1488,7 @@
 .end method
 
 .method synthetic lambda$cancelFocusAndMetering$8$androidx-camera-camera2-internal-FocusMeteringControl(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -1510,7 +1510,7 @@
 .end method
 
 .method synthetic lambda$cancelFocusAndMeteringInternal$9$androidx-camera-camera2-internal-FocusMeteringControl(IJLandroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 6
+    .locals 1
 
     .line 713
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
@@ -1526,14 +1526,14 @@
 
     move-result v0
 
-    if-ne v0, p1, :cond_19
+    if-ne v0, p1, :cond_0
 
     .line 715
     invoke-static {p4, p2, p3}, Landroidx/camera/camera2/internal/Camera2CameraControlImpl;->isSessionUpdated(Landroid/hardware/camera2/TotalCaptureResult;J)Z
 
     move-result p1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     .line 717
     invoke-direct {p0}, Landroidx/camera/camera2/internal/FocusMeteringControl;->completeCancelFuture()V
@@ -1542,14 +1542,14 @@
 
     return p1
 
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method synthetic lambda$executeMeteringAction$2$androidx-camera-camera2-internal-FocusMeteringControl(ZJLandroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 9
+    .locals 4
 
     .line 609
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
@@ -1569,16 +1569,16 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_2
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
-    goto :goto_36
+    goto :goto_0
 
     .line 615
-    :cond_15
+    :cond_0
     iget-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCurrentAfState:Ljava/lang/Integer;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -1587,7 +1587,7 @@
 
     const/4 v1, 0x3
 
-    if-ne p1, v1, :cond_3a
+    if-ne p1, v1, :cond_3
 
     .line 616
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1596,7 +1596,7 @@
 
     const/4 v1, 0x4
 
-    if-ne p1, v1, :cond_2a
+    if-ne p1, v1, :cond_1
 
     .line 617
     iput-boolean v3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsFocusSuccessful:Z
@@ -1604,17 +1604,17 @@
     .line 618
     iput-boolean v3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsAutoFocusCompleted:Z
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 619
-    :cond_2a
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
     const/4 v1, 0x5
 
-    if-ne p1, v1, :cond_3a
+    if-ne p1, v1, :cond_3
 
     .line 621
     iput-boolean v2, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsFocusSuccessful:Z
@@ -1622,29 +1622,29 @@
     .line 622
     iput-boolean v3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsAutoFocusCompleted:Z
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 613
-    :cond_36
-    :goto_36
+    :cond_2
+    :goto_0
     iput-boolean v3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsFocusSuccessful:Z
 
     .line 614
     iput-boolean v3, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsAutoFocusCompleted:Z
 
     .line 628
-    :cond_3a
-    :goto_3a
+    :cond_3
+    :goto_1
     iget-boolean p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsAutoFocusCompleted:Z
 
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_4
 
     .line 629
     invoke-static {p4, p2, p3}, Landroidx/camera/camera2/internal/Camera2CameraControlImpl;->isSessionUpdated(Landroid/hardware/camera2/TotalCaptureResult;J)Z
 
     move-result p1
 
-    if-eqz p1, :cond_4a
+    if-eqz p1, :cond_4
 
     .line 630
     iget-boolean p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsFocusSuccessful:Z
@@ -1654,33 +1654,33 @@
     return v3
 
     .line 635
-    :cond_4a
+    :cond_4
     iget-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCurrentAfState:Ljava/lang/Integer;
 
     invoke-virtual {p1, v0}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_56
+    if-nez p1, :cond_5
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_5
 
     .line 636
     iput-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCurrentAfState:Ljava/lang/Integer;
 
-    :cond_56
+    :cond_5
     return v2
 .end method
 
 .method synthetic lambda$executeMeteringAction$3$androidx-camera-camera2-internal-FocusMeteringControl(J)V
-    .registers 5
+    .locals 2
 
     .line 649
     iget-wide v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mFocusTimeoutCounter:J
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -1690,12 +1690,12 @@
     .line 651
     invoke-virtual {p0, p1}, Landroidx/camera/camera2/internal/FocusMeteringControl;->completeActionFuture(Z)V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$executeMeteringAction$4$androidx-camera-camera2-internal-FocusMeteringControl(J)V
-    .registers 5
+    .locals 2
 
     .line 648
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mExecutor:Ljava/util/concurrent/Executor;
@@ -1710,24 +1710,24 @@
 .end method
 
 .method synthetic lambda$executeMeteringAction$5$androidx-camera-camera2-internal-FocusMeteringControl(J)V
-    .registers 5
+    .locals 2
 
     .line 661
     iget-wide v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mFocusTimeoutCounter:J
 
     cmp-long p1, p1, v0
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 662
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/FocusMeteringControl;->cancelFocusAndMeteringWithoutAsyncResult()V
 
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$executeMeteringAction$6$androidx-camera-camera2-internal-FocusMeteringControl(J)V
-    .registers 5
+    .locals 2
 
     .line 660
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mExecutor:Ljava/util/concurrent/Executor;
@@ -1742,7 +1742,7 @@
 .end method
 
 .method synthetic lambda$startFocusAndMetering$0$androidx-camera-camera2-internal-FocusMeteringControl(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/core/FocusMeteringAction;J)V
-    .registers 5
+    .locals 0
 
     .line 280
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/camera/camera2/internal/FocusMeteringControl;->startFocusAndMeteringInternal(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/core/FocusMeteringAction;J)V
@@ -1751,7 +1751,7 @@
 .end method
 
 .method synthetic lambda$startFocusAndMetering$1$androidx-camera-camera2-internal-FocusMeteringControl(Landroidx/camera/core/FocusMeteringAction;JLandroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -1783,33 +1783,33 @@
 .end method
 
 .method setActive(Z)V
-    .registers 3
+    .locals 1
 
     .line 149
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 153
-    :cond_5
+    :cond_0
     iput-boolean p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
     .line 155
     iget-boolean p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
-    if-nez p1, :cond_e
+    if-nez p1, :cond_1
 
     .line 156
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/FocusMeteringControl;->cancelFocusAndMeteringWithoutAsyncResult()V
 
-    :cond_e
+    :cond_1
     return-void
 .end method
 
 .method public setPreviewAspectRatio(Landroid/util/Rational;)V
-    .registers 2
+    .locals 0
 
     .line 161
     iput-object p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mPreviewAspectRatio:Landroid/util/Rational;
@@ -1818,7 +1818,7 @@
 .end method
 
 .method setTemplate(I)V
-    .registers 2
+    .locals 0
 
     .line 176
     iput p1, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mTemplate:I
@@ -1827,7 +1827,7 @@
 .end method
 
 .method startFocusAndMetering(Landroidx/camera/core/FocusMeteringAction;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1850,7 +1850,7 @@
 .end method
 
 .method startFocusAndMetering(Landroidx/camera/core/FocusMeteringAction;J)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1875,7 +1875,7 @@
 .end method
 
 .method startFocusAndMeteringInternal(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/core/FocusMeteringAction;J)V
-    .registers 15
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1890,7 +1890,7 @@
     .line 324
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 325
     new-instance p2, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -1904,7 +1904,7 @@
     return-void
 
     .line 330
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mCameraControl:Landroidx/camera/camera2/internal/Camera2CameraControlImpl;
 
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/Camera2CameraControlImpl;->getCropSensorRegion()Landroid/graphics/Rect;
@@ -1988,19 +1988,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_1
 
     invoke-interface {v9}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_1
 
     .line 346
     new-instance p2, Ljava/lang/IllegalArgumentException;
@@ -2013,7 +2013,7 @@
 
     return-void
 
-    :cond_68
+    :cond_1
     const-string v1, "Cancelled by another startFocusAndMetering()"
 
     .line 352
@@ -2071,7 +2071,7 @@
 .end method
 
 .method triggerAePrecapture(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2084,9 +2084,9 @@
     .line 436
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 438
     new-instance v0, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -2097,11 +2097,11 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :cond_10
+    :cond_0
     return-void
 
     .line 444
-    :cond_11
+    :cond_1
     new-instance v0, Landroidx/camera/core/impl/CaptureConfig$Builder;
 
     invoke-direct {v0}, Landroidx/camera/core/impl/CaptureConfig$Builder;-><init>()V
@@ -2163,7 +2163,7 @@
 .end method
 
 .method triggerAf(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Z)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2176,9 +2176,9 @@
     .line 376
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/FocusMeteringControl;->mIsActive:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 378
     new-instance p2, Landroidx/camera/core/CameraControl$OperationCanceledException;
@@ -2189,11 +2189,11 @@
 
     invoke-virtual {p1, p2}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :cond_10
+    :cond_0
     return-void
 
     .line 384
-    :cond_11
+    :cond_1
     new-instance v0, Landroidx/camera/core/impl/CaptureConfig$Builder;
 
     invoke-direct {v0}, Landroidx/camera/core/impl/CaptureConfig$Builder;-><init>()V
@@ -2224,7 +2224,7 @@
     .line 388
     invoke-virtual {v2, v3, v4}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
-    if-eqz p2, :cond_3e
+    if-eqz p2, :cond_2
 
     .line 396
     sget-object p2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -2244,7 +2244,7 @@
     invoke-virtual {v2, p2, v1}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->setCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;
 
     .line 399
-    :cond_3e
+    :cond_2
     invoke-virtual {v2}, Landroidx/camera/camera2/impl/Camera2ImplConfig$Builder;->build()Landroidx/camera/camera2/impl/Camera2ImplConfig;
 
     move-result-object p2

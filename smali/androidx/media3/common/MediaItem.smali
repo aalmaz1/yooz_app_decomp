@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 2269
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -135,7 +135,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Landroidx/media3/common/MediaItem$ClippingProperties;Landroidx/media3/common/MediaItem$LocalConfiguration;Landroidx/media3/common/MediaItem$LiveConfiguration;Landroidx/media3/common/MediaMetadata;Landroidx/media3/common/MediaItem$RequestMetadata;)V
-    .registers 7
+    .locals 0
 
     .line 2313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -168,7 +168,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;Landroidx/media3/common/MediaItem$ClippingProperties;Landroidx/media3/common/MediaItem$LocalConfiguration;Landroidx/media3/common/MediaItem$LiveConfiguration;Landroidx/media3/common/MediaMetadata;Landroidx/media3/common/MediaItem$RequestMetadata;Landroidx/media3/common/MediaItem$1;)V
-    .registers 8
+    .locals 0
 
     .line 45
     invoke-direct/range {p0 .. p6}, Landroidx/media3/common/MediaItem;-><init>(Ljava/lang/String;Landroidx/media3/common/MediaItem$ClippingProperties;Landroidx/media3/common/MediaItem$LocalConfiguration;Landroidx/media3/common/MediaItem$LiveConfiguration;Landroidx/media3/common/MediaMetadata;Landroidx/media3/common/MediaItem$RequestMetadata;)V
@@ -177,7 +177,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem;
-    .registers 9
+    .locals 8
 
     .line 2418
     sget-object v0, Landroidx/media3/common/MediaItem;->FIELD_MEDIA_ID:Ljava/lang/String;
@@ -203,20 +203,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 2422
     sget-object v0, Landroidx/media3/common/MediaItem$LiveConfiguration;->UNSET:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 2424
-    :cond_1a
+    :cond_0
     invoke-static {v0}, Landroidx/media3/common/MediaItem$LiveConfiguration;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     move-result-object v0
 
-    :goto_1e
+    :goto_0
     move-object v5, v0
 
     .line 2426
@@ -226,20 +226,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_1
 
     .line 2429
     sget-object v0, Landroidx/media3/common/MediaMetadata;->EMPTY:Landroidx/media3/common/MediaMetadata;
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 2431
-    :cond_2a
+    :cond_1
     invoke-static {v0}, Landroidx/media3/common/MediaMetadata;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaMetadata;
 
     move-result-object v0
 
-    :goto_2e
+    :goto_1
     move-object v6, v0
 
     .line 2433
@@ -249,20 +249,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_2
 
     .line 2436
     sget-object v0, Landroidx/media3/common/MediaItem$ClippingProperties;->UNSET:Landroidx/media3/common/MediaItem$ClippingProperties;
 
-    goto :goto_3e
+    goto :goto_2
 
     .line 2438
-    :cond_3a
+    :cond_2
     invoke-static {v0}, Landroidx/media3/common/MediaItem$ClippingConfiguration;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$ClippingProperties;
 
     move-result-object v0
 
-    :goto_3e
+    :goto_2
     move-object v3, v0
 
     .line 2440
@@ -272,20 +272,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_3
 
     .line 2443
     sget-object v0, Landroidx/media3/common/MediaItem$RequestMetadata;->EMPTY:Landroidx/media3/common/MediaItem$RequestMetadata;
 
-    goto :goto_4e
+    goto :goto_3
 
     .line 2445
-    :cond_4a
+    :cond_3
     invoke-static {v0}, Landroidx/media3/common/MediaItem$RequestMetadata;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$RequestMetadata;
 
     move-result-object v0
 
-    :goto_4e
+    :goto_3
     move-object v7, v0
 
     .line 2447
@@ -295,19 +295,19 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_59
+    if-nez p0, :cond_4
 
     const/4 p0, 0x0
 
-    goto :goto_5d
+    goto :goto_4
 
     .line 2452
-    :cond_59
+    :cond_4
     invoke-static {p0}, Landroidx/media3/common/MediaItem$LocalConfiguration;->fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/MediaItem$LocalConfiguration;
 
     move-result-object p0
 
-    :goto_5d
+    :goto_4
     move-object v4, p0
 
     .line 2454
@@ -321,7 +321,7 @@
 .end method
 
 .method public static fromUri(Landroid/net/Uri;)Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     .line 64
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -340,7 +340,7 @@
 .end method
 
 .method public static fromUri(Ljava/lang/String;)Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     .line 54
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -359,7 +359,7 @@
 .end method
 
 .method private toBundle(Z)Landroid/os/Bundle;
-    .registers 5
+    .locals 3
 
     .line 2368
     new-instance v0, Landroid/os/Bundle;
@@ -375,7 +375,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 2370
     sget-object v1, Landroidx/media3/common/MediaItem;->FIELD_MEDIA_ID:Ljava/lang/String;
@@ -385,7 +385,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2372
-    :cond_16
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     sget-object v2, Landroidx/media3/common/MediaItem$LiveConfiguration;->UNSET:Landroidx/media3/common/MediaItem$LiveConfiguration;
@@ -394,7 +394,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_1
 
     .line 2373
     sget-object v1, Landroidx/media3/common/MediaItem;->FIELD_LIVE_CONFIGURATION:Ljava/lang/String;
@@ -408,7 +408,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 2375
-    :cond_2b
+    :cond_1
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
 
     sget-object v2, Landroidx/media3/common/MediaMetadata;->EMPTY:Landroidx/media3/common/MediaMetadata;
@@ -417,7 +417,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_40
+    if-nez v1, :cond_2
 
     .line 2376
     sget-object v1, Landroidx/media3/common/MediaItem;->FIELD_MEDIA_METADATA:Ljava/lang/String;
@@ -431,7 +431,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 2378
-    :cond_40
+    :cond_2
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->clippingConfiguration:Landroidx/media3/common/MediaItem$ClippingConfiguration;
 
     sget-object v2, Landroidx/media3/common/MediaItem$ClippingConfiguration;->UNSET:Landroidx/media3/common/MediaItem$ClippingConfiguration;
@@ -440,7 +440,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_55
+    if-nez v1, :cond_3
 
     .line 2379
     sget-object v1, Landroidx/media3/common/MediaItem;->FIELD_CLIPPING_PROPERTIES:Ljava/lang/String;
@@ -454,7 +454,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 2381
-    :cond_55
+    :cond_3
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->requestMetadata:Landroidx/media3/common/MediaItem$RequestMetadata;
 
     sget-object v2, Landroidx/media3/common/MediaItem$RequestMetadata;->EMPTY:Landroidx/media3/common/MediaItem$RequestMetadata;
@@ -463,7 +463,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_6a
+    if-nez v1, :cond_4
 
     .line 2382
     sget-object v1, Landroidx/media3/common/MediaItem;->FIELD_REQUEST_METADATA:Ljava/lang/String;
@@ -476,13 +476,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_6a
-    if-eqz p1, :cond_79
+    :cond_4
+    if-eqz p1, :cond_5
 
     .line 2384
     iget-object p1, p0, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz p1, :cond_79
+    if-eqz p1, :cond_5
 
     .line 2385
     sget-object v1, Landroidx/media3/common/MediaItem;->FIELD_LOCAL_CONFIGURATION:Ljava/lang/String;
@@ -493,14 +493,14 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_79
+    :cond_5
     return-object v0
 .end method
 
 
 # virtual methods
 .method public buildUpon()Landroidx/media3/common/MediaItem$Builder;
-    .registers 3
+    .locals 2
 
     .line 2326
     new-instance v0, Landroidx/media3/common/MediaItem$Builder;
@@ -513,26 +513,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 2334
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/common/MediaItem;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 2338
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/common/MediaItem;
 
     .line 2340
@@ -544,7 +544,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->clippingConfiguration:Landroidx/media3/common/MediaItem$ClippingConfiguration;
 
@@ -555,7 +555,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
@@ -566,7 +566,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
@@ -577,7 +577,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->mediaMetadata:Landroidx/media3/common/MediaMetadata;
 
@@ -588,7 +588,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->requestMetadata:Landroidx/media3/common/MediaItem$RequestMetadata;
 
@@ -599,19 +599,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_49
+    if-eqz p1, :cond_2
 
-    goto :goto_4a
+    goto :goto_0
 
-    :cond_49
+    :cond_2
     move v0, v2
 
-    :goto_4a
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 2350
     iget-object v0, p0, Landroidx/media3/common/MediaItem;->mediaId:Ljava/lang/String;
@@ -625,18 +625,18 @@
     .line 2351
     iget-object v1, p0, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroidx/media3/common/MediaItem$LocalConfiguration;->hashCode()I
 
     move-result v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_12
+    :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
@@ -687,7 +687,7 @@
 .end method
 
 .method public toBundle()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -700,7 +700,7 @@
 .end method
 
 .method public toBundleIncludeLocalConfiguration()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

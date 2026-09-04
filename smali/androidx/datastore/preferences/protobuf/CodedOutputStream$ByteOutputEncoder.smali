@@ -20,12 +20,12 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/ByteOutput;I)V
-    .registers 3
+    .locals 0
 
     .line 2398
     invoke-direct {p0, p2}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$AbstractBufferedEncoder;-><init>(I)V
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 2402
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->out:Landroidx/datastore/preferences/protobuf/ByteOutput;
@@ -33,7 +33,7 @@
     return-void
 
     .line 2400
-    :cond_8
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "out"
@@ -44,7 +44,7 @@
 .end method
 
 .method private doFlush()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -69,7 +69,7 @@
 .end method
 
 .method private flushIfNotAvailable(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -83,19 +83,19 @@
 
     sub-int/2addr v0, v1
 
-    if-ge v0, p1, :cond_a
+    if-ge v0, p1, :cond_0
 
     .line 2694
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->doFlush()V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public flush()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -105,17 +105,17 @@
     .line 2656
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->position:I
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     .line 2658
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->doFlush()V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public write(B)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -127,20 +127,20 @@
 
     iget v1, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->limit:I
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     .line 2553
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->doFlush()V
 
     .line 2556
-    :cond_9
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->buffer(B)V
 
     return-void
 .end method
 
 .method public write(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -171,7 +171,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -197,7 +197,7 @@
 .end method
 
 .method public writeBool(IZ)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -223,7 +223,7 @@
 .end method
 
 .method public writeByteArray(I[B)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -241,7 +241,7 @@
 .end method
 
 .method public writeByteArray(I[BII)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -260,7 +260,7 @@
 .end method
 
 .method public writeByteArrayNoTag([BII)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -277,7 +277,7 @@
 .end method
 
 .method public writeByteBuffer(ILjava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -303,7 +303,7 @@
 .end method
 
 .method public writeBytes(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -322,7 +322,7 @@
 .end method
 
 .method public writeBytesNoTag(Landroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -343,7 +343,7 @@
 .end method
 
 .method public writeFixed32(II)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -367,7 +367,7 @@
 .end method
 
 .method public writeFixed32NoTag(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -386,7 +386,7 @@
 .end method
 
 .method public writeFixed64(IJ)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -410,7 +410,7 @@
 .end method
 
 .method public writeFixed64NoTag(J)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -429,7 +429,7 @@
 .end method
 
 .method public writeInt32(II)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -453,32 +453,32 @@
 .end method
 
 .method public writeInt32NoTag(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-ltz p1, :cond_6
+    if-ltz p1, :cond_0
 
     .line 2562
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->writeUInt32NoTag(I)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     int-to-long v0, p1
 
     .line 2565
     invoke-virtual {p0, v0, v1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->writeUInt64NoTag(J)V
 
-    :goto_a
+    :goto_0
     return-void
 .end method
 
 .method public writeLazy(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -509,7 +509,7 @@
 .end method
 
 .method public writeLazy([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -535,7 +535,7 @@
 .end method
 
 .method public writeMessage(ILandroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -554,7 +554,7 @@
 .end method
 
 .method writeMessage(ILandroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -573,7 +573,7 @@
 .end method
 
 .method public writeMessageNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -594,7 +594,7 @@
 .end method
 
 .method writeMessageNoTag(Landroidx/datastore/preferences/protobuf/MessageLite;Landroidx/datastore/preferences/protobuf/Schema;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -621,7 +621,7 @@
 .end method
 
 .method public writeMessageSetExtension(ILandroidx/datastore/preferences/protobuf/MessageLite;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -652,7 +652,7 @@
 .end method
 
 .method public writeRawBytes(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -664,7 +664,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 2499
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
@@ -681,10 +681,10 @@
 
     invoke-virtual {p0, v0, v1, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->write([BII)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 2501
-    :cond_16
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -695,12 +695,12 @@
     .line 2503
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->write(Ljava/nio/ByteBuffer;)V
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
 .method public writeRawMessageSetExtension(ILandroidx/datastore/preferences/protobuf/ByteString;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -731,7 +731,7 @@
 .end method
 
 .method public writeString(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -750,7 +750,7 @@
 .end method
 
 .method public writeStringNoTag(Ljava/lang/String;)V
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -774,7 +774,7 @@
     .line 2602
     iget v3, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->limit:I
 
-    if-le v2, v3, :cond_1e
+    if-le v2, v3, :cond_0
 
     .line 2607
     new-array v1, v0, [B
@@ -795,24 +795,24 @@
     return-void
 
     .line 2615
-    :cond_1e
+    :cond_0
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->limit:I
 
     iget v3, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->position:I
 
     sub-int/2addr v0, v3
 
-    if-le v2, v0, :cond_28
+    if-le v2, v0, :cond_1
 
     .line 2617
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->doFlush()V
 
     .line 2620
-    :cond_28
+    :cond_1
     iget v0, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->position:I
 
     .line 2624
-    :try_start_2a
+    :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -821,7 +821,7 @@
 
     move-result v2
 
-    if-ne v2, v1, :cond_55
+    if-ne v2, v1, :cond_2
 
     add-int v1, v0, v2
 
@@ -863,10 +863,10 @@
 
     iput v1, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->totalBytesWritten:I
 
-    goto :goto_81
+    goto :goto_0
 
     .line 2637
-    :cond_55
+    :cond_2
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/Utf8;->encodedLength(Ljava/lang/CharSequence;)I
 
     move-result v1
@@ -891,13 +891,13 @@
     add-int/2addr v2, v1
 
     iput v2, p0, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->totalBytesWritten:I
-    :try_end_6b
-    .catch Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException; {:try_start_2a .. :try_end_6b} :catch_73
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2a .. :try_end_6b} :catch_6c
+    :try_end_0
+    .catch Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_81
+    goto :goto_0
 
-    :catch_6c
+    :catch_0
     move-exception p1
 
     .line 2650
@@ -907,7 +907,7 @@
 
     throw v0
 
-    :catch_73
+    :catch_1
     move-exception v1
 
     .line 2644
@@ -927,12 +927,12 @@
     .line 2648
     invoke-virtual {p0, p1, v1}, Landroidx/datastore/preferences/protobuf/CodedOutputStream$ByteOutputEncoder;->inefficientWriteStringNoTag(Ljava/lang/String;Landroidx/datastore/preferences/protobuf/Utf8$UnpairedSurrogateException;)V
 
-    :goto_81
+    :goto_0
     return-void
 .end method
 
 .method public writeTag(II)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -950,7 +950,7 @@
 .end method
 
 .method public writeUInt32(II)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -974,7 +974,7 @@
 .end method
 
 .method public writeUInt32NoTag(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -993,7 +993,7 @@
 .end method
 
 .method public writeUInt64(IJ)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1017,7 +1017,7 @@
 .end method
 
 .method public writeUInt64NoTag(J)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

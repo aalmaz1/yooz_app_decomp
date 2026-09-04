@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>([BLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const/high16 v0, -0x80000000
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>([BLjava/lang/String;I)V
-    .registers 4
+    .locals 0
 
     .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public getData()[B
-    .registers 2
+    .locals 1
 
     .line 311
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;->data:[B
@@ -84,7 +84,7 @@
 .end method
 
 .method public getLicenseServerUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 316
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;->licenseServerUrl:Ljava/lang/String;
@@ -93,7 +93,7 @@
 .end method
 
 .method public getRequestType()I
-    .registers 2
+    .locals 1
 
     .line 325
     iget v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;->requestType:I

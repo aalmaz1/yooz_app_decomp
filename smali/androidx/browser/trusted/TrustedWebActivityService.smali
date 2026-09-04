@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 96
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
@@ -46,7 +46,7 @@
 .end method
 
 .method private static channelNameToId(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 423
     new-instance v0, Ljava/lang/StringBuilder;
@@ -85,17 +85,17 @@
 .end method
 
 .method private ensureOnCreateCalled()V
-    .registers 3
+    .locals 2
 
     .line 427
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 428
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "TrustedWebActivityService has not been properly initialized. Did onCreate() call super.onCreate()?"
@@ -111,7 +111,7 @@
 .end method
 
 .method public onAreNotificationsEnabled(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 242
     invoke-direct {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->ensureOnCreateCalled()V
@@ -125,14 +125,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 248
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/browser/trusted/TrustedWebActivityService;->mNotificationManager:Landroid/app/NotificationManager;
 
     .line 249
@@ -149,7 +149,7 @@
 .end method
 
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .registers 2
+    .locals 0
 
     .line 365
     iget-object p1, p0, Landroidx/browser/trusted/TrustedWebActivityService;->mBinder:Landroid/support/customtabs/trusted/ITrustedWebActivityService$Stub;
@@ -158,7 +158,7 @@
 .end method
 
 .method public onCancelNotification(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     .line 296
     invoke-direct {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->ensureOnCreateCalled()V
@@ -172,7 +172,7 @@
 .end method
 
 .method public onCreate()V
-    .registers 2
+    .locals 1
 
     .line 230
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -192,7 +192,7 @@
 .end method
 
 .method public onExtraCommand(Ljava/lang/String;Landroid/os/Bundle;Landroidx/browser/trusted/TrustedWebActivityCallbackRemote;)Landroid/os/Bundle;
-    .registers 4
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -200,7 +200,7 @@
 .end method
 
 .method public onGetActiveNotifications()[Landroid/os/Parcelable;
-    .registers 2
+    .locals 1
 
     .line 311
     invoke-direct {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->ensureOnCreateCalled()V
@@ -216,7 +216,7 @@
 .end method
 
 .method public onGetSmallIconBitmap()Landroid/os/Bundle;
-    .registers 4
+    .locals 3
 
     .line 325
     invoke-virtual {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->onGetSmallIconId()I
@@ -230,12 +230,12 @@
 
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_d
+    if-ne v0, v2, :cond_0
 
     return-object v1
 
     .line 331
-    :cond_d
+    :cond_0
     invoke-virtual {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -253,12 +253,12 @@
 .end method
 
 .method public onGetSmallIconId()I
-    .registers 5
+    .locals 4
 
     const/4 v0, -0x1
 
     .line 348
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -282,12 +282,12 @@
     .line 351
     iget-object v2, v1, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
 
-    if-nez v2, :cond_19
+    if-nez v2, :cond_0
 
     return v0
 
     .line 353
-    :cond_19
+    :cond_0
     iget-object v1, v1, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
 
     const-string v2, "android.support.customtabs.trusted.SMALL_ICON"
@@ -295,15 +295,15 @@
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
-    :try_end_21
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_21} :catch_21
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_21
+    :catch_0
     return v0
 .end method
 
 .method public onNotifyNotificationWithChannel(Ljava/lang/String;ILandroid/app/Notification;Ljava/lang/String;)Z
-    .registers 8
+    .locals 3
 
     .line 269
     invoke-direct {p0}, Landroidx/browser/trusted/TrustedWebActivityService;->ensureOnCreateCalled()V
@@ -319,12 +319,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     return v1
 
     .line 274
-    :cond_f
+    :cond_0
     invoke-static {p4}, Landroidx/browser/trusted/TrustedWebActivityService;->channelNameToId(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -343,12 +343,12 @@
 
     move-result p4
 
-    if-nez p4, :cond_22
+    if-nez p4, :cond_1
 
     return v1
 
     .line 283
-    :cond_22
+    :cond_1
     iget-object p4, p0, Landroidx/browser/trusted/TrustedWebActivityService;->mNotificationManager:Landroid/app/NotificationManager;
 
     invoke-virtual {p4, p1, p2, p3}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
@@ -359,7 +359,7 @@
 .end method
 
 .method public final onUnbind(Landroid/content/Intent;)Z
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 

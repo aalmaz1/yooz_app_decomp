@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
-    .registers 3
+    .locals 1
 
     .line 854
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public onAudioInfoChanged(IIIII)V
-    .registers 14
+    .locals 8
 
     .line 927
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -60,7 +60,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 929
     new-instance v7, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
@@ -81,12 +81,12 @@
 
     invoke-virtual {v0, v7}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onAudioInfoChanged(Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;)V
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public onExtrasChanged(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 918
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -97,17 +97,17 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 920
     invoke-virtual {v0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onExtrasChanged(Landroid/os/Bundle;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onMetadataChanged(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 894
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -118,7 +118,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 896
     invoke-static {p1}, Landroid/support/v4/media/MediaMetadataCompat;->fromMediaMetadata(Ljava/lang/Object;)Landroid/support/v4/media/MediaMetadataCompat;
@@ -127,12 +127,12 @@
 
     invoke-virtual {v0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public onPlaybackStateChanged(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     .line 881
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -143,17 +143,17 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 883
     iget-object v1, v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->mIControllerCallback:Landroid/support/v4/media/session/IMediaControllerCallback;
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 887
-    :cond_f
+    :cond_0
     invoke-static {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->fromPlaybackState(Ljava/lang/Object;)Landroid/support/v4/media/session/PlaybackStateCompat;
 
     move-result-object p1
@@ -161,13 +161,13 @@
     .line 886
     invoke-virtual {v0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
 
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onQueueChanged(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -185,7 +185,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 904
     invoke-static {p1}, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->fromQueueItemList(Ljava/util/List;)Ljava/util/List;
@@ -194,12 +194,12 @@
 
     invoke-virtual {v0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onQueueChanged(Ljava/util/List;)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
 
     .line 910
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -210,17 +210,17 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 912
     invoke-virtual {v0, p1}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onQueueTitleChanged(Ljava/lang/CharSequence;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onSessionDestroyed()V
-    .registers 2
+    .locals 1
 
     .line 860
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -231,17 +231,17 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 862
     invoke-virtual {v0}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onSessionDestroyed()V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 5
+    .locals 2
 
     .line 868
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$StubApi21;->mCallback:Ljava/lang/ref/WeakReference;
@@ -252,7 +252,7 @@
 
     check-cast v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 870
     iget-object v1, v0, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->mIControllerCallback:Landroid/support/v4/media/session/IMediaControllerCallback;
@@ -260,6 +260,6 @@
     .line 874
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method

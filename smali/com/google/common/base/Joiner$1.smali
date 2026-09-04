@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Joiner;Lcom/google/common/base/Joiner;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010,
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public skipNulls()Lcom/google/common/base/Joiner;
-    .registers 3
+    .locals 2
 
     .line 260
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -64,7 +64,7 @@
 .end method
 
 .method toString(Ljava/lang/Object;)Ljava/lang/CharSequence;
-    .registers 3
+    .locals 1
     .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -78,26 +78,26 @@
         }
     .end annotation
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     .line 250
     iget-object p1, p0, Lcom/google/common/base/Joiner$1;->val$nullText:Ljava/lang/String;
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     iget-object v0, p0, Lcom/google/common/base/Joiner$1;->this$0:Lcom/google/common/base/Joiner;
 
     invoke-virtual {v0, p1}, Lcom/google/common/base/Joiner;->toString(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object p1
 
-    :goto_b
+    :goto_0
     return-object p1
 .end method
 
 .method public useForNull(Ljava/lang/String;)Lcom/google/common/base/Joiner;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/encoder/EncoderImpl;)V
-    .registers 5
+    .locals 3
 
     .line 1053
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -78,7 +78,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_1
 
     .line 1056
     const-class v0, Landroidx/camera/video/internal/compat/quirk/CameraUseInconsistentTimebaseQuirk;
@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 1057
     iget-object v0, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
@@ -96,14 +96,14 @@
 
     invoke-static {v0, v2}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 1060
-    :cond_2d
+    :cond_0
     iget-object v1, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mInputTimebase:Landroidx/camera/core/impl/Timebase;
 
     .line 1062
-    :goto_2f
+    :goto_0
     new-instance v0, Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;
 
     iget-object p1, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTimeProvider:Landroidx/camera/video/internal/encoder/TimeProvider;
@@ -112,25 +112,25 @@
 
     iput-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mVideoTimestampConverter:Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 1064
-    :cond_39
+    :cond_1
     iput-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mVideoTimestampConverter:Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;
 
-    :goto_3b
+    :goto_1
     return-void
 .end method
 
 .method private checkBufferInfo(Landroid/media/MediaCodec$BufferInfo;)Z
-    .registers 9
+    .locals 7
 
     .line 1252
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasEndData:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 1253
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -144,10 +144,10 @@
     return v1
 
     .line 1257
-    :cond_f
+    :cond_0
     iget v0, p1, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    if-gtz v0, :cond_1d
+    if-gtz v0, :cond_1
 
     .line 1258
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -161,12 +161,12 @@
     return v1
 
     .line 1264
-    :cond_1d
+    :cond_1
     iget v0, p1, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 1265
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -180,10 +180,10 @@
     return v1
 
     .line 1269
-    :cond_2d
+    :cond_2
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mVideoTimestampConverter:Landroidx/camera/video/internal/workaround/VideoTimebaseConverter;
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3
 
     .line 1270
     iget-wide v2, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
@@ -196,14 +196,14 @@
     iput-wide v2, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     .line 1275
-    :cond_39
+    :cond_3
     iget-wide v2, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     iget-wide v4, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mLastPresentationTimeUs:J
 
     cmp-long v0, v2, v4
 
-    if-gtz v0, :cond_4b
+    if-gtz v0, :cond_4
 
     .line 1276
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -217,7 +217,7 @@
     return v1
 
     .line 1279
-    :cond_4b
+    :cond_4
     iget-wide v2, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
     iput-wide v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mLastPresentationTimeUs:J
@@ -239,7 +239,7 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_a4
+    if-nez v0, :cond_7
 
     .line 1286
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -255,7 +255,7 @@
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mPendingCodecStop:Z
 
-    if-eqz v0, :cond_a3
+    if-eqz v0, :cond_6
 
     iget-wide v3, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
@@ -276,14 +276,14 @@
 
     cmp-long v0, v3, v5
 
-    if-ltz v0, :cond_a3
+    if-ltz v0, :cond_6
 
     .line 1290
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mStopTimeoutFuture:Ljava/util/concurrent/Future;
 
-    if-eqz v0, :cond_90
+    if-eqz v0, :cond_5
 
     .line 1291
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -293,7 +293,7 @@
     invoke-interface {v0, v2}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
     .line 1293
-    :cond_90
+    :cond_5
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-wide v2, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
@@ -314,16 +314,16 @@
 
     iput-boolean v1, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mPendingCodecStop:Z
 
-    :cond_a3
+    :cond_6
     return v1
 
     .line 1300
-    :cond_a4
+    :cond_7
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->updatePauseRangeStateAndCheckIfBufferPaused(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b4
+    if-eqz v0, :cond_8
 
     .line 1301
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -337,7 +337,7 @@
     return v1
 
     .line 1306
-    :cond_b4
+    :cond_8
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->getAdjustedTimeUs(Landroid/media/MediaCodec$BufferInfo;)J
@@ -348,7 +348,7 @@
 
     cmp-long v0, v3, v5
 
-    if-gtz v0, :cond_d8
+    if-gtz v0, :cond_a
 
     .line 1307
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -364,51 +364,51 @@
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz v0, :cond_d7
+    if-eqz v0, :cond_9
 
     invoke-static {p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->isKeyFrame(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d7
+    if-eqz p1, :cond_9
 
     .line 1309
     iput-boolean v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsKeyFrameRequired:Z
 
-    :cond_d7
+    :cond_9
     return v1
 
     .line 1314
-    :cond_d8
+    :cond_a
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasFirstData:Z
 
-    if-nez v0, :cond_e8
+    if-nez v0, :cond_b
 
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsKeyFrameRequired:Z
 
-    if-nez v0, :cond_e8
+    if-nez v0, :cond_b
 
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz v0, :cond_e8
+    if-eqz v0, :cond_b
 
     .line 1315
     iput-boolean v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsKeyFrameRequired:Z
 
     .line 1318
-    :cond_e8
+    :cond_b
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsKeyFrameRequired:Z
 
-    if-eqz v0, :cond_103
+    if-eqz v0, :cond_d
 
     .line 1319
     invoke-static {p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->isKeyFrame(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result p1
 
-    if-nez p1, :cond_101
+    if-nez p1, :cond_c
 
     .line 1320
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -427,53 +427,53 @@
     return v1
 
     .line 1324
-    :cond_101
+    :cond_c
     iput-boolean v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsKeyFrameRequired:Z
 
-    :cond_103
+    :cond_d
     return v2
 .end method
 
 .method private isEndOfStream(Landroid/media/MediaCodec$BufferInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 1332
     invoke-static {p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->hasEndOfStreamFlag(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->isEosSignalledAndStopTimeReached(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p1, 0x1
 
-    :goto_10
+    :goto_1
     return p1
 .end method
 
 .method private isEosSignalledAndStopTimeReached(Landroid/media/MediaCodec$BufferInfo;)Z
-    .registers 6
+    .locals 4
 
     .line 1337
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodecEosSignalled:Z
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-wide v0, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
@@ -494,27 +494,27 @@
 
     cmp-long p1, v0, v2
 
-    if-lez p1, :cond_1c
+    if-lez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_1d
+    :goto_0
     return p1
 .end method
 
 .method static synthetic lambda$onOutputFormatChanged$5(Landroid/media/MediaFormat;)Landroid/media/MediaFormat;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$onOutputFormatChanged$6(Landroidx/camera/video/internal/encoder/EncoderCallback;Landroid/media/MediaFormat;)V
-    .registers 3
+    .locals 1
 
     .line 1449
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda4;
@@ -527,7 +527,7 @@
 .end method
 
 .method static synthetic lambda$sendEncodedData$3(Landroidx/camera/video/internal/encoder/EncoderCallback;Landroidx/camera/video/internal/encoder/EncodedDataImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1238
     invoke-interface {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderCallback;->onEncodedData(Landroidx/camera/video/internal/encoder/EncodedData;)V
@@ -536,7 +536,7 @@
 .end method
 
 .method private resolveOutputBufferInfo(Landroid/media/MediaCodec$BufferInfo;)Landroid/media/MediaCodec$BufferInfo;
-    .registers 9
+    .locals 7
 
     .line 1197
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -550,26 +550,26 @@
 
     cmp-long v0, v0, v4
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     return-object p1
 
     .line 1204
-    :cond_d
+    :cond_0
     iget-wide v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mLastSentAdjustedTimeUs:J
 
     cmp-long v0, v4, v0
 
-    if-lez v0, :cond_15
+    if-lez v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_16
+    :goto_0
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 1209
@@ -592,7 +592,7 @@
 .end method
 
 .method private sendEncodedData(Landroidx/camera/video/internal/encoder/EncodedDataImpl;Landroidx/camera/video/internal/encoder/EncoderCallback;Ljava/util/concurrent/Executor;)V
-    .registers 7
+    .locals 3
 
     .line 1217
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -617,18 +617,18 @@
     invoke-static {v0, v1, v2}, Landroidx/camera/core/impl/utils/futures/Futures;->addCallback(Lcom/google/common/util/concurrent/ListenableFuture;Landroidx/camera/core/impl/utils/futures/FutureCallback;Ljava/util/concurrent/Executor;)V
 
     .line 1238
-    :try_start_17
+    :try_start_0
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda10;
 
     invoke-direct {v0, p2, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda10;-><init>(Landroidx/camera/video/internal/encoder/EncoderCallback;Landroidx/camera/video/internal/encoder/EncodedDataImpl;)V
 
     invoke-interface {p3, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_1f
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_17 .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2d
+    goto :goto_0
 
-    :catch_20
+    :catch_0
     move-exception p2
 
     .line 1240
@@ -643,12 +643,12 @@
     .line 1241
     invoke-virtual {p1}, Landroidx/camera/video/internal/encoder/EncodedDataImpl;->close()V
 
-    :goto_2d
+    :goto_0
     return-void
 .end method
 
 .method private updatePauseRangeStateAndCheckIfBufferPaused(Landroid/media/MediaCodec$BufferInfo;)Z
-    .registers 8
+    .locals 6
 
     .line 1345
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -673,9 +673,9 @@
 
     const/4 v3, 0x1
 
-    if-nez v1, :cond_a1
+    if-nez v1, :cond_5
 
-    if-eqz v0, :cond_a1
+    if-eqz v0, :cond_5
 
     .line 1348
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -697,7 +697,7 @@
     monitor-enter v4
 
     .line 1356
-    :try_start_27
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderCallbackExecutor:Ljava/util/concurrent/Executor;
@@ -709,8 +709,8 @@
 
     .line 1358
     monitor-exit v4
-    :try_end_30
-    .catchall {:try_start_27 .. :try_end_30} :catchall_9e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1359
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -728,14 +728,14 @@
 
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PAUSED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, v1, :cond_77
+    if-ne v0, v1, :cond_3
 
     .line 1365
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-nez v0, :cond_52
+    if-nez v0, :cond_0
 
     const-class v0, Landroidx/camera/video/internal/compat/quirk/AudioEncoderIgnoresInputTimestampQuirk;
 
@@ -743,17 +743,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_0
 
-    goto :goto_77
+    goto :goto_0
 
     .line 1368
-    :cond_52
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_1
 
     const-class v0, Landroidx/camera/video/internal/compat/quirk/VideoEncoderSuspendDoesNotIncludeSuspendTimeQuirk;
 
@@ -761,19 +761,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_1
 
-    goto :goto_77
+    goto :goto_0
 
     .line 1372
-    :cond_61
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
 
     instance-of v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
 
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_2
 
     .line 1373
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -785,14 +785,14 @@
     invoke-virtual {v0, v2}, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->setActive(Z)V
 
     .line 1375
-    :cond_72
+    :cond_2
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     invoke-virtual {v0, v3}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setMediaCodecPaused(Z)V
 
     .line 1381
-    :cond_77
-    :goto_77
+    :cond_3
+    :goto_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-wide v4, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
@@ -808,14 +808,14 @@
 
     iget-boolean p1, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mPendingCodecStop:Z
 
-    if-eqz p1, :cond_be
+    if-eqz p1, :cond_6
 
     .line 1385
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object p1, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mStopTimeoutFuture:Ljava/util/concurrent/Future;
 
-    if-eqz p1, :cond_94
+    if-eqz p1, :cond_4
 
     .line 1386
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -825,7 +825,7 @@
     invoke-interface {p1, v3}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
     .line 1388
-    :cond_94
+    :cond_4
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     invoke-virtual {p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->signalCodecStop()V
@@ -835,23 +835,23 @@
 
     iput-boolean v2, p1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mPendingCodecStop:Z
 
-    goto :goto_be
+    goto :goto_1
 
-    :catchall_9e
+    :catchall_0
     move-exception p1
 
     .line 1358
-    :try_start_9f
+    :try_start_1
     monitor-exit v4
-    :try_end_a0
-    .catchall {:try_start_9f .. :try_end_a0} :catchall_9e
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 
-    :cond_a1
-    if-eqz v1, :cond_be
+    :cond_5
+    if-eqz v1, :cond_6
 
-    if-nez v0, :cond_be
+    if-nez v0, :cond_6
 
     .line 1393
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -870,20 +870,20 @@
 
     iget-boolean v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz v0, :cond_be
+    if-eqz v0, :cond_6
 
     invoke-static {p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->isKeyFrame(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result p1
 
-    if-nez p1, :cond_be
+    if-nez p1, :cond_6
 
     .line 1396
     iput-boolean v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsKeyFrameRequired:Z
 
     .line 1400
-    :cond_be
-    :goto_be
+    :cond_6
+    :goto_1
     iget-boolean p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mIsOutputBufferInPauseState:Z
 
     return p1
@@ -892,7 +892,7 @@
 
 # virtual methods
 .method synthetic lambda$onError$4$androidx-camera-video-internal-encoder-EncoderImpl$MediaCodecCallback(Landroid/media/MediaCodec$CodecException;)V
-    .registers 4
+    .locals 2
 
     .line 1406
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -907,7 +907,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 1421
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -935,35 +935,35 @@
     throw p1
 
     .line 1413
-    :pswitch_28
+    :pswitch_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->handleEncodeError(Landroid/media/MediaCodec$CodecException;)V
 
-    :pswitch_2d
+    :pswitch_1
     return-void
 
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2d
-        :pswitch_28
-        :pswitch_28
-        :pswitch_28
-        :pswitch_28
-        :pswitch_28
-        :pswitch_28
-        :pswitch_2d
-        :pswitch_2d
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method synthetic lambda$onInputBufferAvailable$0$androidx-camera-video-internal-encoder-EncoderImpl$MediaCodecCallback(I)V
-    .registers 4
+    .locals 2
 
     .line 1071
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mStopped:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 1072
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -977,7 +977,7 @@
     return-void
 
     .line 1075
-    :cond_e
+    :cond_0
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -990,7 +990,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
     .line 1091
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1018,7 +1018,7 @@
     throw p1
 
     .line 1082
-    :pswitch_36
+    :pswitch_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mFreeInputBufferIndexQueue:Ljava/util/Queue;
@@ -1034,27 +1034,27 @@
 
     invoke-virtual {p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->matchAcquisitionsAndFreeBufferIndexes()V
 
-    :pswitch_46
+    :pswitch_1
     return-void
 
     nop
 
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_46
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_46
-        :pswitch_46
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method synthetic lambda$onOutputBufferAvailable$1$androidx-camera-video-internal-encoder-EncoderImpl$MediaCodecCallback(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/EncoderCallback;)V
-    .registers 5
+    .locals 2
 
     .line 1171
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1063,13 +1063,13 @@
 
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->ERROR:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
     return-void
 
     .line 1176
-    :cond_9
-    :try_start_9
+    :cond_0
+    :try_start_0
     invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda9;
@@ -1077,12 +1077,12 @@
     invoke-direct {v0, p2}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda9;-><init>(Landroidx/camera/video/internal/encoder/EncoderCallback;)V
 
     invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_14
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_9 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :catch_15
+    :catch_0
     move-exception p1
 
     .line 1178
@@ -1094,17 +1094,17 @@
 
     invoke-static {p2, v0, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_1f
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$onOutputBufferAvailable$2$androidx-camera-video-internal-encoder-EncoderImpl$MediaCodecCallback(Landroid/media/MediaCodec$BufferInfo;Landroid/media/MediaCodec;I)V
-    .registers 11
+    .locals 7
 
     .line 1100
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mStopped:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 1101
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1118,7 +1118,7 @@
     return-void
 
     .line 1104
-    :cond_e
+    :cond_0
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1131,7 +1131,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_f6
+    packed-switch v0, :pswitch_data_0
 
     .line 1189
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1159,7 +1159,7 @@
     throw p1
 
     .line 1113
-    :pswitch_36
+    :pswitch_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLock:Ljava/lang/Object;
@@ -1167,7 +1167,7 @@
     monitor-enter v0
 
     .line 1114
-    :try_start_3b
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v1, v1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderCallback:Landroidx/camera/video/internal/encoder/EncoderCallback;
@@ -1179,21 +1179,21 @@
 
     .line 1116
     monitor-exit v0
-    :try_end_44
-    .catchall {:try_start_3b .. :try_end_44} :catchall_f2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1123
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasSendStartCallback:Z
 
     const/4 v3, 0x1
 
-    if-nez v0, :cond_61
+    if-nez v0, :cond_1
 
     .line 1124
     iput-boolean v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasSendStartCallback:Z
 
     .line 1126
-    :try_start_4b
+    :try_start_1
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda6;
@@ -1201,12 +1201,12 @@
     invoke-direct {v0, v1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda6;-><init>(Landroidx/camera/video/internal/encoder/EncoderCallback;)V
 
     invoke-interface {v2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_56
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_4b .. :try_end_56} :catch_57
+    :try_end_1
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_61
+    goto :goto_0
 
-    :catch_57
+    :catch_0
     move-exception v0
 
     .line 1128
@@ -1219,18 +1219,18 @@
     invoke-static {v4, v5, v0}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 1132
-    :cond_61
-    :goto_61
+    :cond_1
+    :goto_0
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->checkBufferInfo(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c7
+    if-eqz v0, :cond_3
 
     .line 1133
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasFirstData:Z
 
-    if-nez v0, :cond_af
+    if-nez v0, :cond_2
 
     .line 1134
     iput-boolean v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasFirstData:Z
@@ -1304,7 +1304,7 @@
     invoke-static {v0, v4}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1145
-    :cond_af
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->resolveOutputBufferInfo(Landroid/media/MediaCodec$BufferInfo;)Landroid/media/MediaCodec$BufferInfo;
 
     move-result-object v0
@@ -1315,19 +1315,19 @@
     iput-wide v4, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mLastSentAdjustedTimeUs:J
 
     .line 1148
-    :try_start_b7
+    :try_start_2
     new-instance v4, Landroidx/camera/video/internal/encoder/EncodedDataImpl;
 
     invoke-direct {v4, p2, p3, v0}, Landroidx/camera/video/internal/encoder/EncodedDataImpl;-><init>(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
 
     .line 1150
     invoke-direct {p0, v4, v1, v2}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->sendEncodedData(Landroidx/camera/video/internal/encoder/EncodedDataImpl;Landroidx/camera/video/internal/encoder/EncoderCallback;Ljava/util/concurrent/Executor;)V
-    :try_end_bf
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_b7 .. :try_end_bf} :catch_c0
+    :try_end_2
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_db
+    goto :goto_1
 
-    :catch_c0
+    :catch_1
     move-exception p1
 
     .line 1152
@@ -1337,13 +1337,13 @@
 
     return-void
 
-    :cond_c7
+    :cond_3
     const/16 p2, -0x270f
 
-    if-eq p3, p2, :cond_db
+    if-eq p3, p2, :cond_4
 
     .line 1159
-    :try_start_cb
+    :try_start_3
     iget-object p2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object p2, p2, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
@@ -1351,12 +1351,12 @@
     const/4 v0, 0x0
 
     invoke-virtual {p2, p3, v0}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-    :try_end_d3
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_cb .. :try_end_d3} :catch_d4
+    :try_end_3
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_db
+    goto :goto_1
 
-    :catch_d4
+    :catch_2
     move-exception p1
 
     .line 1161
@@ -1367,17 +1367,17 @@
     return-void
 
     .line 1168
-    :cond_db
-    :goto_db
+    :cond_4
+    :goto_1
     iget-boolean p2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasEndData:Z
 
-    if-nez p2, :cond_f5
+    if-nez p2, :cond_5
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->isEndOfStream(Landroid/media/MediaCodec$BufferInfo;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_f5
+    if-eqz p1, :cond_5
 
     .line 1169
     iput-boolean v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mHasEndData:Z
@@ -1391,45 +1391,45 @@
 
     invoke-virtual {p1, p2}, Landroidx/camera/video/internal/encoder/EncoderImpl;->stopMediaCodec(Ljava/lang/Runnable;)V
 
-    goto :goto_f5
+    goto :goto_2
 
-    :catchall_f2
+    :catchall_0
     move-exception p1
 
     .line 1116
-    :try_start_f3
+    :try_start_4
     monitor-exit v0
-    :try_end_f4
-    .catchall {:try_start_f3 .. :try_end_f4} :catchall_f2
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     throw p1
 
-    :cond_f5
-    :goto_f5
-    :pswitch_f5
+    :cond_5
+    :goto_2
+    :pswitch_1
     return-void
 
-    :pswitch_data_f6
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_f5
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_f5
-        :pswitch_f5
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method synthetic lambda$onOutputFormatChanged$7$androidx-camera-video-internal-encoder-EncoderImpl$MediaCodecCallback(Landroid/media/MediaFormat;)V
-    .registers 5
+    .locals 3
 
     .line 1430
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->mStopped:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 1431
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1443,7 +1443,7 @@
     return-void
 
     .line 1434
-    :cond_e
+    :cond_0
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
 
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1456,7 +1456,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_5c
+    packed-switch v0, :pswitch_data_0
 
     .line 1460
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1484,7 +1484,7 @@
     throw p1
 
     .line 1443
-    :pswitch_36
+    :pswitch_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLock:Ljava/lang/Object;
@@ -1492,7 +1492,7 @@
     monitor-enter v0
 
     .line 1444
-    :try_start_3b
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v1, v1, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderCallback:Landroidx/camera/video/internal/encoder/EncoderCallback;
@@ -1504,22 +1504,22 @@
 
     .line 1446
     monitor-exit v0
-    :try_end_44
-    .catchall {:try_start_3b .. :try_end_44} :catchall_58
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1448
-    :try_start_44
+    :try_start_1
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, v1, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback$$ExternalSyntheticLambda3;-><init>(Landroidx/camera/video/internal/encoder/EncoderCallback;Landroid/media/MediaFormat;)V
 
     invoke-interface {v2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_4c
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_44 .. :try_end_4c} :catch_4d
+    :try_end_1
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_5b
+    goto :goto_0
 
-    :catch_4d
+    :catch_0
     move-exception p1
 
     .line 1451
@@ -1531,39 +1531,39 @@
 
     invoke-static {v0, v1, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_5b
+    goto :goto_0
 
-    :catchall_58
+    :catchall_0
     move-exception p1
 
     .line 1446
-    :try_start_59
+    :try_start_2
     monitor-exit v0
-    :try_end_5a
-    .catchall {:try_start_59 .. :try_end_5a} :catchall_58
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
 
-    :goto_5b
-    :pswitch_5b
+    :goto_0
+    :pswitch_1
     return-void
 
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_5b
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_36
-        :pswitch_5b
-        :pswitch_5b
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
 .method public onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
-    .registers 4
+    .locals 1
 
     .line 1405
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1580,7 +1580,7 @@
 .end method
 
 .method public onInputBufferAvailable(Landroid/media/MediaCodec;I)V
-    .registers 4
+    .locals 1
 
     .line 1070
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1597,7 +1597,7 @@
 .end method
 
 .method public onOutputBufferAvailable(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
-    .registers 6
+    .locals 2
 
     .line 1099
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1614,7 +1614,7 @@
 .end method
 
 .method public onOutputFormatChanged(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V
-    .registers 4
+    .locals 1
 
     .line 1429
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -1631,7 +1631,7 @@
 .end method
 
 .method stop()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

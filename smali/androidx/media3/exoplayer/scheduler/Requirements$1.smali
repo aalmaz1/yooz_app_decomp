@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 271
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/media3/exoplayer/scheduler/Requirements;
-    .registers 3
+    .locals 1
 
     .line 275
     new-instance v0, Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -54,7 +54,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 271
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/scheduler/Requirements$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -65,7 +65,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/media3/exoplayer/scheduler/Requirements;
-    .registers 2
+    .locals 0
 
     .line 280
     new-array p1, p1, [Landroidx/media3/exoplayer/scheduler/Requirements;
@@ -74,7 +74,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 271
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/scheduler/Requirements$1;->newArray(I)[Landroidx/media3/exoplayer/scheduler/Requirements;

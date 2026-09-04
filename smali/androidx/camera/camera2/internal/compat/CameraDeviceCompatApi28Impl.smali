@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/hardware/camera2/CameraDevice;)V
-    .registers 3
+    .locals 1
 
     .line 32
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public createCaptureSession(Landroidx/camera/camera2/internal/compat/params/SessionConfigurationCompat;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
@@ -42,16 +42,16 @@
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 42
-    :try_start_9
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/CameraDeviceCompatApi28Impl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/CameraDevice;->createCaptureSession(Landroid/hardware/camera2/params/SessionConfiguration;)V
-    :try_end_e
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_9 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 44

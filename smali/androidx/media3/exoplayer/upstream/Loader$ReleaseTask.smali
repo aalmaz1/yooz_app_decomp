@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/upstream/Loader$ReleaseCallback;)V
-    .registers 2
+    .locals 0
 
     .line 535
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .locals 1
 
     .line 541
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/Loader$ReleaseTask;->callback:Landroidx/media3/exoplayer/upstream/Loader$ReleaseCallback;

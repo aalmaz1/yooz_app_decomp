@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 43
     new-instance v0, Ljava/util/HashSet;
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,30 +52,30 @@
 .end method
 
 .method private canParseSosMarker([B)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x2
 
     move v1, v0
 
-    :goto_2
+    :goto_0
     add-int/lit8 v2, v1, 0x4
 
     .line 93
     array-length v3, p1
 
-    if-gt v2, v3, :cond_2b
+    if-gt v2, v3, :cond_2
 
     aget-byte v2, p1, v1
 
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_d
+    if-eq v2, v3, :cond_0
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_d
-    if-ne v2, v3, :cond_19
+    :cond_0
+    if-ne v2, v3, :cond_1
 
     add-int/lit8 v2, v1, 0x1
 
@@ -84,13 +84,13 @@
 
     const/16 v3, -0x26
 
-    if-ne v2, v3, :cond_19
+    if-ne v2, v3, :cond_1
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_19
+    :cond_1
     add-int/lit8 v2, v1, 0x2
 
     .line 100
@@ -112,21 +112,21 @@
 
     add-int/2addr v1, v2
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_1
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method private findSecondFfd8Position([B)I
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x2
 
-    :goto_1
+    :goto_0
     add-int/lit8 v1, v0, 0x1
 
     .line 117
@@ -134,32 +134,32 @@
 
     const/4 v3, -0x1
 
-    if-le v1, v2, :cond_8
+    if-le v1, v2, :cond_0
 
     return v3
 
     .line 121
-    :cond_8
+    :cond_0
     aget-byte v2, p1, v0
 
-    if-ne v2, v3, :cond_13
+    if-ne v2, v3, :cond_1
 
     aget-byte v2, p1, v1
 
     const/16 v3, -0x28
 
-    if-ne v2, v3, :cond_13
+    if-ne v2, v3, :cond_1
 
     return v0
 
-    :cond_13
+    :cond_1
     move v0, v1
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private static isSamsungProblematicDevice()Z
-    .registers 3
+    .locals 3
 
     const-string v0, "Samsung"
 
@@ -170,7 +170,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;->SAMSUNG_DEVICES:Ljava/util/Set;
 
@@ -188,21 +188,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 .method static load()Z
-    .registers 1
+    .locals 1
 
     .line 48
     invoke-static {}, Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;->isSamsungProblematicDevice()Z
@@ -215,7 +215,7 @@
 
 # virtual methods
 .method public jpegImageToJpegByteArray(Landroidx/camera/core/ImageProxy;)[B
-    .registers 5
+    .locals 3
 
     .line 64
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
@@ -248,7 +248,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_26
+    if-nez v2, :cond_1
 
     .line 74
     invoke-direct {p0, v1}, Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;->findSecondFfd8Position([B)I
@@ -257,16 +257,16 @@
 
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_25
+    if-eq v0, v2, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     return-object v1
 
     .line 82
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result p1

@@ -100,7 +100,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ElementParser;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "StreamIndex"
 
@@ -121,7 +121,7 @@
 .end method
 
 .method private parseStreamElementStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -153,7 +153,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_0
 
     .line 600
     invoke-virtual {p0, p1, v2}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->parseRequiredString(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
@@ -162,10 +162,10 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->subType:Ljava/lang/String;
 
-    goto :goto_24
+    goto :goto_0
 
     .line 602
-    :cond_1e
+    :cond_0
     invoke-interface {p1, v3, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -173,7 +173,7 @@
     iput-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->subType:Ljava/lang/String;
 
     .line 604
-    :goto_24
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->subType:Ljava/lang/String;
 
     invoke-virtual {p0, v2, v0}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->putNormalizedAttribute(Ljava/lang/String;Ljava/lang/Object;)V
@@ -264,7 +264,7 @@
 
     cmp-long p1, v1, v3
 
-    if-nez p1, :cond_83
+    if-nez p1, :cond_1
 
     .line 616
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
@@ -280,7 +280,7 @@
     iput-wide v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->timescale:J
 
     .line 618
-    :cond_83
+    :cond_1
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -291,7 +291,7 @@
 .end method
 
 .method private parseStreamFragmentStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -320,23 +320,23 @@
 
     const/4 v7, 0x1
 
-    if-nez v1, :cond_3c
+    if-nez v1, :cond_2
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     const-wide/16 v4, 0x0
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 572
-    :cond_1c
+    :cond_0
     iget-wide v4, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
     const-wide/16 v8, -0x1
 
     cmp-long v1, v4, v8
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 574
     iget-object v1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->startTimes:Ljava/util/ArrayList;
@@ -357,9 +357,9 @@
 
     add-long/2addr v4, v0
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     const-string p1, "Unable to infer start time"
 
     .line 577
@@ -370,8 +370,8 @@
     throw p1
 
     .line 582
-    :cond_3c
-    :goto_3c
+    :cond_2
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->startTimes:Ljava/util/ArrayList;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -400,18 +400,18 @@
 
     cmp-long p1, v0, v8
 
-    if-lez p1, :cond_67
+    if-lez p1, :cond_4
 
     .line 586
     iget-wide v8, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->lastChunkDuration:J
 
     cmp-long p1, v8, v2
 
-    if-eqz p1, :cond_60
+    if-eqz p1, :cond_3
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_60
+    :cond_3
     const-string p1, "Repeated chunk with unspecified duration"
 
     .line 587
@@ -421,13 +421,13 @@
 
     throw p1
 
-    :cond_67
-    :goto_67
+    :cond_4
+    :goto_1
     int-to-long v2, v7
 
     cmp-long p1, v2, v0
 
-    if-gez p1, :cond_7c
+    if-gez p1, :cond_5
 
     .line 592
     iget-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->startTimes:Ljava/util/ArrayList;
@@ -446,14 +446,14 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_7c
+    :cond_5
     return-void
 .end method
 
 .method private parseType(Lorg/xmlpull/v1/XmlPullParser;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -469,7 +469,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_3
 
     const-string v1, "audio"
 
@@ -478,13 +478,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_13
+    :cond_0
     const-string/jumbo v1, "video"
 
     .line 626
@@ -492,13 +492,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1
 
     const/4 p1, 0x2
 
     return p1
 
-    :cond_1e
+    :cond_1
     const-string v1, "text"
 
     .line 628
@@ -506,14 +506,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2
 
     const/4 p1, 0x3
 
     return p1
 
     .line 631
-    :cond_28
+    :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "Invalid key value["
@@ -541,7 +541,7 @@
     throw p1
 
     .line 635
-    :cond_42
+    :cond_3
     new-instance p1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$MissingFieldException;
 
     invoke-direct {p1, v1}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$MissingFieldException;-><init>(Ljava/lang/String;)V
@@ -552,12 +552,12 @@
 
 # virtual methods
 .method public addChild(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 640
     instance-of v0, p1, Landroidx/media3/common/Format;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 641
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->formats:Ljava/util/List;
@@ -566,12 +566,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public build()Ljava/lang/Object;
-    .registers 22
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -638,7 +638,7 @@
 .end method
 
 .method public handleChildInline(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     const-string v0, "c"
 
@@ -651,7 +651,7 @@
 .end method
 
 .method public parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -669,17 +669,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 559
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->parseStreamFragmentStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    goto :goto_13
+    goto :goto_0
 
     .line 561
-    :cond_10
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$StreamIndexParser;->parseStreamElementStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    :goto_13
+    :goto_0
     return-void
 .end method

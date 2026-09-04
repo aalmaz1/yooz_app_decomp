@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 366
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static buildDataSpec(Landroidx/media3/exoplayer/dash/manifest/Representation;Landroidx/media3/exoplayer/dash/manifest/RangedUri;I)Landroidx/media3/datasource/DataSpec;
-    .registers 5
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -46,7 +46,7 @@
 .end method
 
 .method public static buildDataSpec(Landroidx/media3/exoplayer/dash/manifest/Representation;Ljava/lang/String;Landroidx/media3/exoplayer/dash/manifest/RangedUri;I)Landroidx/media3/datasource/DataSpec;
-    .registers 5
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public static buildDataSpec(Landroidx/media3/exoplayer/dash/manifest/Representation;Ljava/lang/String;Landroidx/media3/exoplayer/dash/manifest/RangedUri;ILjava/util/Map;)Landroidx/media3/datasource/DataSpec;
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,7 +136,7 @@
 .end method
 
 .method private static getFirstRepresentation(Landroidx/media3/exoplayer/dash/manifest/Period;I)Landroidx/media3/exoplayer/dash/manifest/Representation;
-    .registers 4
+    .locals 2
 
     .line 358
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/dash/manifest/Period;->getAdaptationSetIndex(I)I
@@ -147,12 +147,12 @@
 
     const/4 v1, 0x0
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_0
 
     return-object v1
 
     .line 362
-    :cond_9
+    :cond_0
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -168,11 +168,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 p1, 0x0
 
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -183,12 +183,12 @@
 
     check-cast v1, Landroidx/media3/exoplayer/dash/manifest/Representation;
 
-    :goto_22
+    :goto_0
     return-object v1
 .end method
 
 .method public static loadChunkIndex(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;)Landroidx/media3/extractor/ChunkIndex;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -206,7 +206,7 @@
 .end method
 
 .method public static loadChunkIndex(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;I)Landroidx/media3/extractor/ChunkIndex;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -218,14 +218,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 208
-    :cond_8
+    :cond_0
     iget-object v0, p2, Landroidx/media3/exoplayer/dash/manifest/Representation;->format:Landroidx/media3/common/Format;
 
     invoke-static {p1, v0}, Landroidx/media3/exoplayer/dash/DashUtil;->newChunkExtractor(ILandroidx/media3/common/Format;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
@@ -235,10 +235,10 @@
     const/4 v0, 0x1
 
     .line 210
-    :try_start_f
+    :try_start_0
     invoke-static {p1, p0, p2, p3, v0}, Landroidx/media3/exoplayer/dash/DashUtil;->loadInitializationData(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;IZ)V
-    :try_end_12
-    .catchall {:try_start_f .. :try_end_12} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 213
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;->release()V
@@ -250,7 +250,7 @@
 
     return-object p0
 
-    :catchall_1a
+    :catchall_0
     move-exception p0
 
     .line 213
@@ -261,7 +261,7 @@
 .end method
 
 .method public static loadFormatWithDrmInitData(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Period;)Landroidx/media3/common/Format;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -275,7 +275,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -284,14 +284,14 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 133
-    :cond_10
+    :cond_0
     iget-object p1, v1, Landroidx/media3/exoplayer/dash/manifest/Representation;->format:Landroidx/media3/common/Format;
 
     .line 135
@@ -299,22 +299,22 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_19
+    if-nez p0, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 138
-    :cond_19
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/media3/common/Format;->withManifestFormatInfo(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
 
     move-result-object p1
 
-    :goto_1d
+    :goto_0
     return-object p1
 .end method
 
 .method private static loadInitializationData(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;ILandroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/exoplayer/dash/manifest/RangedUri;)V
-    .registers 14
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -369,7 +369,7 @@
 .end method
 
 .method private static loadInitializationData(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;IZ)V
-    .registers 7
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -387,19 +387,19 @@
 
     check-cast v0, Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
-    if-eqz p4, :cond_29
+    if-eqz p4, :cond_2
 
     .line 259
     invoke-virtual {p2}, Landroidx/media3/exoplayer/dash/manifest/Representation;->getIndexUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
 
     move-result-object p4
 
-    if-nez p4, :cond_13
+    if-nez p4, :cond_0
 
     return-void
 
     .line 265
-    :cond_13
+    :cond_0
     iget-object v1, p2, Landroidx/media3/exoplayer/dash/manifest/Representation;->baseUrls:Lcom/google/common/collect/ImmutableList;
 
     .line 266
@@ -415,28 +415,28 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_1
 
     .line 268
     invoke-static {p1, p2, p3, p0, v0}, Landroidx/media3/exoplayer/dash/DashUtil;->loadInitializationData(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;ILandroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/exoplayer/dash/manifest/RangedUri;)V
 
     move-object v0, p4
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     move-object v0, v1
 
     .line 275
-    :cond_29
-    :goto_29
+    :cond_2
+    :goto_0
     invoke-static {p1, p2, p3, p0, v0}, Landroidx/media3/exoplayer/dash/DashUtil;->loadInitializationData(Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;ILandroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/exoplayer/dash/manifest/RangedUri;)V
 
     return-void
 .end method
 
 .method public static loadInitializationData(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;Z)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -452,7 +452,7 @@
 .end method
 
 .method public static loadManifest(Landroidx/media3/datasource/DataSource;Landroid/net/Uri;)Landroidx/media3/exoplayer/dash/manifest/DashManifest;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -476,7 +476,7 @@
 .end method
 
 .method public static loadSampleFormat(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;)Landroidx/media3/common/Format;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -494,7 +494,7 @@
 .end method
 
 .method public static loadSampleFormat(Landroidx/media3/datasource/DataSource;ILandroidx/media3/exoplayer/dash/manifest/Representation;I)Landroidx/media3/common/Format;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -506,14 +506,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 160
-    :cond_8
+    :cond_0
     iget-object v0, p2, Landroidx/media3/exoplayer/dash/manifest/Representation;->format:Landroidx/media3/common/Format;
 
     invoke-static {p1, v0}, Landroidx/media3/exoplayer/dash/DashUtil;->newChunkExtractor(ILandroidx/media3/common/Format;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
@@ -523,10 +523,10 @@
     const/4 v0, 0x0
 
     .line 162
-    :try_start_f
+    :try_start_0
     invoke-static {p1, p0, p2, p3, v0}, Landroidx/media3/exoplayer/dash/DashUtil;->loadInitializationData(Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;Landroidx/media3/datasource/DataSource;Landroidx/media3/exoplayer/dash/manifest/Representation;IZ)V
-    :try_end_12
-    .catchall {:try_start_f .. :try_end_12} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 165
     invoke-interface {p1}, Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;->release()V
@@ -546,7 +546,7 @@
 
     return-object p0
 
-    :catchall_22
+    :catchall_0
     move-exception p0
 
     .line 165
@@ -557,12 +557,12 @@
 .end method
 
 .method private static newChunkExtractor(ILandroidx/media3/common/Format;)Landroidx/media3/exoplayer/source/chunk/ChunkExtractor;
-    .registers 5
+    .locals 3
 
     .line 341
     iget-object v0, p1, Landroidx/media3/common/Format;->containerMimeType:Ljava/lang/String;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     const-string/jumbo v1, "video/webm"
 
@@ -571,7 +571,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     const-string v1, "audio/webm"
 
@@ -580,18 +580,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_18
-    if-eqz v0, :cond_23
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 348
     new-instance v0, Landroidx/media3/extractor/mkv/MatroskaExtractor;
@@ -602,10 +602,10 @@
 
     invoke-direct {v0, v1, v2}, Landroidx/media3/extractor/mkv/MatroskaExtractor;-><init>(Landroidx/media3/extractor/text/SubtitleParser$Factory;I)V
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 350
-    :cond_23
+    :cond_2
     new-instance v0, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor;
 
     sget-object v1, Landroidx/media3/extractor/text/SubtitleParser$Factory;->UNSUPPORTED:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -615,7 +615,7 @@
     invoke-direct {v0, v1, v2}, Landroidx/media3/extractor/mp4/FragmentedMp4Extractor;-><init>(Landroidx/media3/extractor/text/SubtitleParser$Factory;I)V
 
     .line 353
-    :goto_2c
+    :goto_1
     new-instance v1, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor;
 
     invoke-direct {v1, v0, p0, p1}, Landroidx/media3/exoplayer/source/chunk/BundledChunkExtractor;-><init>(Landroidx/media3/extractor/Extractor;ILandroidx/media3/common/Format;)V
@@ -624,19 +624,19 @@
 .end method
 
 .method public static resolveCacheKey(Landroidx/media3/exoplayer/dash/manifest/Representation;Landroidx/media3/exoplayer/dash/manifest/RangedUri;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 334
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/manifest/Representation;->getCacheKey()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 337
-    :cond_7
+    :cond_0
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation;->baseUrls:Lcom/google/common/collect/ImmutableList;
 
     const/4 v0, 0x0
@@ -657,6 +657,6 @@
 
     move-result-object v0
 
-    :goto_1a
+    :goto_0
     return-object v0
 .end method

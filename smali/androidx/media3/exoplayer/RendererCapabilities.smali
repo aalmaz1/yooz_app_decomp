@@ -61,7 +61,7 @@
 
 # direct methods
 .method public static create(I)I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 .end method
 
 .method public static create(III)I
-    .registers 9
+    .locals 6
 
     const/4 v3, 0x0
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public static create(IIII)I
-    .registers 10
+    .locals 6
 
     const/4 v3, 0x0
 
@@ -120,7 +120,7 @@
 .end method
 
 .method public static create(IIIII)I
-    .registers 11
+    .locals 6
 
     const/4 v5, 0x0
 
@@ -143,7 +143,7 @@
 .end method
 
 .method public static create(IIIIII)I
-    .registers 6
+    .locals 0
 
     or-int/2addr p0, p1
 
@@ -159,7 +159,7 @@
 .end method
 
 .method public static getAdaptiveSupport(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit8 p0, p0, 0x18
 
@@ -167,7 +167,7 @@
 .end method
 
 .method public static getAudioOffloadSupport(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit16 p0, p0, 0xe00
 
@@ -175,7 +175,7 @@
 .end method
 
 .method public static getDecoderSupport(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit16 p0, p0, 0x180
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public static getFormatSupport(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit8 p0, p0, 0x7
 
@@ -191,7 +191,7 @@
 .end method
 
 .method public static getHardwareAccelerationSupport(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit8 p0, p0, 0x40
 
@@ -199,7 +199,7 @@
 .end method
 
 .method public static getTunnelingSupport(I)I
-    .registers 1
+    .locals 0
 
     and-int/lit8 p0, p0, 0x20
 
@@ -207,7 +207,7 @@
 .end method
 
 .method public static isFormatSupported(IZ)Z
-    .registers 3
+    .locals 1
 
     .line 391
     invoke-static {p0}, Landroidx/media3/exoplayer/RendererCapabilities;->getFormatSupport(I)I
@@ -216,33 +216,33 @@
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_f
+    if-eq p0, v0, :cond_1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x3
 
-    if-ne p0, p1, :cond_d
+    if-ne p0, p1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_10
+    :goto_1
     return p0
 .end method
 
 
 # virtual methods
 .method public clearListener()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
@@ -254,7 +254,7 @@
 .end method
 
 .method public setListener(Landroidx/media3/exoplayer/RendererCapabilities$Listener;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

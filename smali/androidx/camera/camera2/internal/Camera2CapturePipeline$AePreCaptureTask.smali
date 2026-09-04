@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraControlImpl;ILandroidx/camera/camera2/internal/compat/workaround/OverrideAeModeForStillCapture;)V
-    .registers 5
+    .locals 1
 
     .line 617
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method static synthetic lambda$preCapture$1(Ljava/lang/Void;)Ljava/lang/Boolean;
-    .registers 1
+    .locals 0
 
     const/4 p0, 0x1
 
@@ -67,26 +67,26 @@
 
 # virtual methods
 .method public isCaptureResultNeeded()Z
-    .registers 2
+    .locals 1
 
     .line 646
     iget v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$AePreCaptureTask;->mFlashMode:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method synthetic lambda$preCapture$0$androidx-camera-camera2-internal-Camera2CapturePipeline$AePreCaptureTask(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -113,12 +113,12 @@
 .end method
 
 .method public postCapture()V
-    .registers 4
+    .locals 3
 
     .line 652
     iget-boolean v0, p0, Landroidx/camera/camera2/internal/Camera2CapturePipeline$AePreCaptureTask;->mIsExecuted:Z
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     const-string v0, "Camera2CapturePipeline"
 
@@ -145,12 +145,12 @@
 
     invoke-virtual {v0}, Landroidx/camera/camera2/internal/compat/workaround/OverrideAeModeForStillCapture;->onAePrecaptureFinished()V
 
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 .method public preCapture(Landroid/hardware/camera2/TotalCaptureResult;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,7 +169,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_0
 
     const-string p1, "Camera2CapturePipeline"
 
@@ -213,7 +213,7 @@
 
     return-object p1
 
-    :cond_2d
+    :cond_0
     const/4 p1, 0x0
 
     .line 640

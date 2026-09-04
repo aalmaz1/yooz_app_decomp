@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/SessionConfig;Landroidx/camera/core/impl/UseCaseConfig;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method getActive()Z
-    .registers 2
+    .locals 1
 
     .line 294
     iget-boolean v0, p0, Landroidx/camera/core/impl/UseCaseAttachState$UseCaseAttachInfo;->mActive:Z
@@ -75,7 +75,7 @@
 .end method
 
 .method getAttached()Z
-    .registers 2
+    .locals 1
 
     .line 286
     iget-boolean v0, p0, Landroidx/camera/core/impl/UseCaseAttachState$UseCaseAttachInfo;->mAttached:Z
@@ -84,7 +84,7 @@
 .end method
 
 .method getSessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 2
+    .locals 1
 
     .line 282
     iget-object v0, p0, Landroidx/camera/core/impl/UseCaseAttachState$UseCaseAttachInfo;->mSessionConfig:Landroidx/camera/core/impl/SessionConfig;
@@ -93,7 +93,7 @@
 .end method
 
 .method getUseCaseConfig()Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -109,7 +109,7 @@
 .end method
 
 .method setActive(Z)V
-    .registers 2
+    .locals 0
 
     .line 298
     iput-boolean p1, p0, Landroidx/camera/core/impl/UseCaseAttachState$UseCaseAttachInfo;->mActive:Z
@@ -118,7 +118,7 @@
 .end method
 
 .method setAttached(Z)V
-    .registers 2
+    .locals 0
 
     .line 290
     iput-boolean p1, p0, Landroidx/camera/core/impl/UseCaseAttachState$UseCaseAttachInfo;->mAttached:Z

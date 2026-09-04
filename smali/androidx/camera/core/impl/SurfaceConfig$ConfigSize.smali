@@ -48,7 +48,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
-    .registers 3
+    .locals 3
 
     const/16 v0, 0x8
 
@@ -107,7 +107,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 199
     new-instance v0, Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
@@ -208,7 +208,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -225,7 +225,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
-    .registers 2
+    .locals 1
 
     .line 197
     const-class v0, Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
@@ -240,7 +240,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
-    .registers 1
+    .locals 1
 
     .line 197
     sget-object v0, Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;->$VALUES:[Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;
@@ -257,7 +257,7 @@
 
 # virtual methods
 .method getId()I
-    .registers 2
+    .locals 1
 
     .line 242
     iget v0, p0, Landroidx/camera/core/impl/SurfaceConfig$ConfigSize;->mId:I

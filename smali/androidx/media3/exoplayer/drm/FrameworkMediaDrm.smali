@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 66
     new-instance v0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda1;
@@ -51,7 +51,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/UUID;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/UnsupportedSchemeException;
@@ -103,23 +103,23 @@
 
     move-result p1
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_0
 
     invoke-static {}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->needsForceWidevineL3Workaround()Z
 
     move-result p1
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_0
 
     .line 121
     invoke-static {v0}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->forceWidevineL3(Landroid/media/MediaDrm;)V
 
-    :cond_33
+    :cond_0
     return-void
 .end method
 
 .method private static addLaUrlAttributeIfMissing([B)[B
-    .registers 8
+    .locals 7
 
     .line 543
     new-instance v0, Landroidx/media3/common/util/ParsableByteArray;
@@ -145,14 +145,14 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_88
+    if-ne v2, v5, :cond_3
 
-    if-eq v3, v5, :cond_19
+    if-eq v3, v5, :cond_0
 
-    goto :goto_88
+    goto :goto_0
 
     .line 553
-    :cond_19
+    :cond_0
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianShort()S
 
     move-result v5
@@ -171,11 +171,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_1
 
     return-object p0
 
-    :cond_2c
+    :cond_1
     const-string p0, "</DATA>"
 
     .line 560
@@ -185,7 +185,7 @@
 
     const/4 v5, -0x1
 
-    if-ne p0, v5, :cond_3a
+    if-ne p0, v5, :cond_2
 
     const-string v5, "Could not find the </DATA> tag. Skipping LA_URL workaround."
 
@@ -193,7 +193,7 @@
     invoke-static {v4, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 564
-    :cond_3a
+    :cond_2
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -280,8 +280,8 @@
 
     return-object p0
 
-    :cond_88
-    :goto_88
+    :cond_3
+    :goto_0
     const-string v0, "Unexpected record count or type. Skipping LA_URL workaround."
 
     .line 550
@@ -291,7 +291,7 @@
 .end method
 
 .method private adjustLicenseServerUrl(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     const-string v0, "<LA_URL>https://x</LA_URL>"
 
@@ -302,17 +302,17 @@
 
     const-string v1, ""
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     return-object v1
 
     .line 250
-    :cond_b
+    :cond_0
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v2, 0x21
 
-    if-lt v0, v2, :cond_31
+    if-lt v0, v2, :cond_2
 
     const-string v0, "https://default.url"
 
@@ -320,7 +320,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "version"
 
@@ -336,7 +336,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_30
+    if-nez v2, :cond_1
 
     const-string v2, "aidl-1"
 
@@ -344,17 +344,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
-    :cond_30
+    :cond_1
     return-object v1
 
-    :cond_31
+    :cond_2
     return-object p1
 .end method
 
 .method private static adjustRequestData(Ljava/util/UUID;[B)[B
-    .registers 3
+    .locals 1
 
     .line 517
     sget-object v0, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
@@ -363,7 +363,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
     .line 518
     invoke-static {p1}, Landroidx/media3/exoplayer/drm/ClearKeyUtil;->adjustRequestData([B)[B
@@ -372,12 +372,12 @@
 
     return-object p0
 
-    :cond_d
+    :cond_0
     return-object p1
 .end method
 
 .method private static adjustRequestInitData(Ljava/util/UUID;[B)[B
-    .registers 4
+    .locals 2
 
     .line 472
     sget-object v0, Landroidx/media3/common/C;->PLAYREADY_UUID:Ljava/util/UUID;
@@ -386,22 +386,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 473
     invoke-static {p1, p0}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->parseSchemeSpecificData([BLjava/util/UUID;)[B
 
     move-result-object v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object p1, v0
 
     .line 478
-    :goto_10
+    :goto_0
     sget-object v0, Landroidx/media3/common/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     .line 480
@@ -415,12 +415,12 @@
     move-result-object p1
 
     .line 490
-    :cond_1a
+    :cond_1
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-ge v0, v1, :cond_28
+    if-ge v0, v1, :cond_2
 
     sget-object v0, Landroidx/media3/common/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
@@ -428,9 +428,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_3
 
-    :cond_28
+    :cond_2
     sget-object v0, Landroidx/media3/common/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     .line 491
@@ -438,7 +438,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_4
 
     const-string v0, "Amazon"
 
@@ -449,7 +449,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_4
 
     const-string v0, "AFTB"
 
@@ -460,7 +460,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_3
 
     const-string v0, "AFTS"
 
@@ -471,7 +471,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_3
 
     const-string v0, "AFTM"
 
@@ -482,7 +482,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_3
 
     const-string v0, "AFTT"
 
@@ -493,31 +493,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_4
 
     .line 497
-    :cond_62
+    :cond_3
     invoke-static {p1, p0}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->parseSchemeSpecificData([BLjava/util/UUID;)[B
 
     move-result-object p0
 
-    if-eqz p0, :cond_69
+    if-eqz p0, :cond_4
 
     return-object p0
 
-    :cond_69
+    :cond_4
     return-object p1
 .end method
 
 .method private static adjustRequestMimeType(Ljava/util/UUID;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 508
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-ge v0, v1, :cond_22
+    if-ge v0, v1, :cond_1
 
     sget-object v0, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
@@ -526,7 +526,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
     const-string/jumbo p0, "video/mp4"
 
@@ -535,7 +535,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_1f
+    if-nez p0, :cond_0
 
     const-string p0, "audio/mp4"
 
@@ -543,26 +543,26 @@
 
     move-result p0
 
-    if-eqz p0, :cond_22
+    if-eqz p0, :cond_1
 
-    :cond_1f
+    :cond_0
     const-string p0, "cenc"
 
     return-object p0
 
-    :cond_22
+    :cond_1
     return-object p1
 .end method
 
 .method private static adjustUuid(Ljava/util/UUID;)Ljava/util/UUID;
-    .registers 3
+    .locals 2
 
     .line 467
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1b
 
-    if-ge v0, v1, :cond_10
+    if-ge v0, v1, :cond_0
 
     sget-object v0, Landroidx/media3/common/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
@@ -570,16 +570,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     sget-object p0, Landroidx/media3/common/C;->COMMON_PSSH_UUID:Ljava/util/UUID;
 
-    :cond_10
+    :cond_0
     return-object p0
 .end method
 
 .method private static forceWidevineL3(Landroid/media/MediaDrm;)V
-    .registers 3
+    .locals 2
 
     const-string v0, "securityLevel"
 
@@ -592,7 +592,7 @@
 .end method
 
 .method private static getSchemeData(Ljava/util/UUID;Ljava/util/List;)Landroidx/media3/common/DrmInitData$SchemeData;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -613,7 +613,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_10
+    if-nez p0, :cond_0
 
     .line 414
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -625,20 +625,20 @@
     return-object p0
 
     .line 417
-    :cond_10
+    :cond_0
     sget p0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1c
 
     const/4 v2, 0x1
 
-    if-lt p0, v1, :cond_82
+    if-lt p0, v1, :cond_4
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p0
 
-    if-le p0, v2, :cond_82
+    if-le p0, v2, :cond_4
 
     .line 419
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -652,12 +652,12 @@
     move v3, v1
 
     .line 422
-    :goto_25
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v1, v4, :cond_5a
+    if-ge v1, v4, :cond_2
 
     .line 423
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -684,7 +684,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_58
+    if-eqz v6, :cond_1
 
     iget-object v4, v4, Landroidx/media3/common/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
 
@@ -695,14 +695,14 @@
 
     move-result v4
 
-    if-eqz v4, :cond_58
+    if-eqz v4, :cond_1
 
     .line 427
     invoke-static {v5}, Landroidx/media3/extractor/mp4/PsshAtomUtil;->isPsshAtom([B)Z
 
     move-result v4
 
-    if-eqz v4, :cond_58
+    if-eqz v4, :cond_1
 
     .line 428
     array-length v4, v5
@@ -711,18 +711,18 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_58
+    :cond_1
     move v1, v0
 
-    goto :goto_5b
+    goto :goto_1
 
-    :cond_5a
+    :cond_2
     move v1, v2
 
-    :goto_5b
-    if-eqz v1, :cond_82
+    :goto_1
+    if-eqz v1, :cond_4
 
     .line 435
     new-array v1, v3, [B
@@ -732,12 +732,12 @@
     move v3, v2
 
     .line 437
-    :goto_61
+    :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v2, v4, :cond_7d
+    if-ge v2, v4, :cond_3
 
     .line 438
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -765,26 +765,26 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_61
+    goto :goto_2
 
     .line 445
-    :cond_7d
+    :cond_3
     invoke-virtual {p0, v1}, Landroidx/media3/common/DrmInitData$SchemeData;->copyWithData([B)Landroidx/media3/common/DrmInitData$SchemeData;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_82
+    :cond_4
     move p0, v0
 
     .line 451
-    :goto_83
+    :goto_3
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge p0, v1, :cond_ae
+    if-ge p0, v1, :cond_7
 
     .line 452
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -811,29 +811,29 @@
 
     const/16 v5, 0x17
 
-    if-ge v4, v5, :cond_a4
+    if-ge v4, v5, :cond_5
 
-    if-nez v3, :cond_a4
+    if-nez v3, :cond_5
 
     return-object v1
 
     .line 456
-    :cond_a4
+    :cond_5
     sget v4, Landroidx/media3/common/util/Util;->SDK_INT:I
 
-    if-lt v4, v5, :cond_ab
+    if-lt v4, v5, :cond_6
 
-    if-ne v3, v2, :cond_ab
+    if-ne v3, v2, :cond_6
 
     return-object v1
 
-    :cond_ab
+    :cond_6
     add-int/lit8 p0, p0, 0x1
 
-    goto :goto_83
+    goto :goto_3
 
     .line 462
-    :cond_ae
+    :cond_7
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -844,7 +844,7 @@
 .end method
 
 .method public static isCryptoSchemeSupported(Ljava/util/UUID;)Z
-    .registers 1
+    .locals 0
 
     .line 91
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->adjustUuid(Ljava/util/UUID;)Ljava/util/UUID;
@@ -859,20 +859,20 @@
 .end method
 
 .method static synthetic lambda$static$0(Ljava/util/UUID;)Landroidx/media3/exoplayer/drm/ExoMediaDrm;
-    .registers 3
+    .locals 2
 
     .line 69
     :try_start_0
     invoke-static {p0}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->newInstance(Ljava/util/UUID;)Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;
 
     move-result-object p0
-    :try_end_4
-    .catch Landroidx/media3/exoplayer/drm/UnsupportedDrmException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/drm/UnsupportedDrmException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p0
 
     .line 71
-    :catch_5
+    :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "Failed to instantiate a FrameworkMediaDrm for uuid: "
@@ -906,7 +906,7 @@
 .end method
 
 .method private static needsForceWidevineL3Workaround()Z
-    .registers 2
+    .locals 2
 
     const-string v0, "ASUS_Z00AD"
 
@@ -921,7 +921,7 @@
 .end method
 
 .method public static newInstance(Ljava/util/UUID;)Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/drm/UnsupportedDrmException;
@@ -933,13 +933,13 @@
     new-instance v0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;
 
     invoke-direct {v0, p0}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;-><init>(Ljava/util/UUID;)V
-    :try_end_5
-    .catch Landroid/media/UnsupportedSchemeException; {:try_start_0 .. :try_end_5} :catch_e
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_6
+    :try_end_0
+    .catch Landroid/media/UnsupportedSchemeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_6
+    :catch_0
     move-exception p0
 
     .line 109
@@ -951,7 +951,7 @@
 
     throw v0
 
-    :catch_e
+    :catch_1
     move-exception p0
 
     .line 107
@@ -965,14 +965,14 @@
 .end method
 
 .method private shouldForceAllowInsecureDecoderComponents()Z
-    .registers 3
+    .locals 2
 
     .line 400
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
 
-    if-ge v0, v1, :cond_20
+    if-ge v0, v1, :cond_0
 
     sget-object v0, Landroidx/media3/common/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
@@ -983,7 +983,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     const-string v0, "securityLevel"
 
@@ -998,42 +998,42 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_21
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method public declared-synchronized acquire()V
-    .registers 3
+    .locals 2
 
     monitor-enter p0
 
     .line 317
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->referenceCount:I
 
     const/4 v1, 0x1
 
-    if-lez v0, :cond_8
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 318
@@ -1042,15 +1042,15 @@
     add-int/2addr v0, v1
 
     iput v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->referenceCount:I
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 319
     monitor-exit p0
 
     return-void
 
-    :catchall_13
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -1059,7 +1059,7 @@
 .end method
 
 .method public closeSession([B)V
-    .registers 3
+    .locals 1
 
     .line 195
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1070,7 +1070,7 @@
 .end method
 
 .method public bridge synthetic createCryptoConfig([B)Landroidx/media3/decoder/CryptoConfig;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCryptoException;
@@ -1086,7 +1086,7 @@
 .end method
 
 .method public createCryptoConfig([B)Landroidx/media3/exoplayer/drm/FrameworkCryptoConfig;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCryptoException;
@@ -1114,7 +1114,7 @@
 .end method
 
 .method public getCryptoType()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -1122,7 +1122,7 @@
 .end method
 
 .method public getKeyRequest([BLjava/util/List;ILjava/util/HashMap;)Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -1143,7 +1143,7 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_0
 
     .line 224
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
@@ -1180,9 +1180,9 @@
 
     move-object v3, v1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     const/4 p2, 0x0
 
     move-object v2, p2
@@ -1190,7 +1190,7 @@
     move-object v3, v2
 
     .line 228
-    :goto_24
+    :goto_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     move-object v1, p1
@@ -1229,9 +1229,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_1
 
-    if-eqz p2, :cond_51
+    if-eqz p2, :cond_1
 
     iget-object v0, p2, Landroidx/media3/common/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
 
@@ -1240,30 +1240,30 @@
 
     move-result v0
 
-    if-nez v0, :cond_51
+    if-nez v0, :cond_1
 
     .line 236
     iget-object p4, p2, Landroidx/media3/common/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
 
     .line 241
-    :cond_51
+    :cond_1
     sget p2, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v0, 0x17
 
-    if-lt p2, v0, :cond_5c
+    if-lt p2, v0, :cond_2
 
     invoke-virtual {p1}, Landroid/media/MediaDrm$KeyRequest;->getRequestType()I
 
     move-result p1
 
-    goto :goto_5e
+    goto :goto_1
 
-    :cond_5c
+    :cond_2
     const/high16 p1, -0x80000000
 
     .line 243
-    :goto_5e
+    :goto_1
     new-instance p2, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;
 
     invoke-direct {p2, p3, p4, p1}, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyRequest;-><init>([BLjava/lang/String;I)V
@@ -1272,21 +1272,21 @@
 .end method
 
 .method public getMetrics()Landroid/os/PersistableBundle;
-    .registers 3
+    .locals 2
 
     .line 359
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1c
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 362
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm;->getMetrics()Landroid/os/PersistableBundle;
@@ -1297,7 +1297,7 @@
 .end method
 
 .method public getOfflineLicenseKeySetIds()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1311,7 +1311,7 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 352
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1323,7 +1323,7 @@
     return-object v0
 
     .line 350
-    :cond_d
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1332,7 +1332,7 @@
 .end method
 
 .method public getPropertyByteArray(Ljava/lang/String;)[B
-    .registers 3
+    .locals 1
 
     .line 374
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1345,7 +1345,7 @@
 .end method
 
 .method public getPropertyString(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 368
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1358,7 +1358,7 @@
 .end method
 
 .method public getProvisionRequest()Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;
-    .registers 4
+    .locals 3
 
     .line 275
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1384,7 +1384,7 @@
 .end method
 
 .method synthetic lambda$setOnEventListener$1$androidx-media3-exoplayer-drm-FrameworkMediaDrm(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnEventListener;Landroid/media/MediaDrm;[BII[B)V
-    .registers 13
+    .locals 6
 
     move-object v0, p1
 
@@ -1405,7 +1405,7 @@
 .end method
 
 .method synthetic lambda$setOnExpirationUpdateListener$3$androidx-media3-exoplayer-drm-FrameworkMediaDrm(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnExpirationUpdateListener;Landroid/media/MediaDrm;[BJ)V
-    .registers 6
+    .locals 0
 
     .line 182
     invoke-interface {p1, p0, p3, p4, p5}, Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnExpirationUpdateListener;->onExpirationUpdate(Landroidx/media3/exoplayer/drm/ExoMediaDrm;[BJ)V
@@ -1414,7 +1414,7 @@
 .end method
 
 .method synthetic lambda$setOnKeyStatusChangeListener$2$androidx-media3-exoplayer-drm-FrameworkMediaDrm(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnKeyStatusChangeListener;Landroid/media/MediaDrm;[BLjava/util/List;Z)V
-    .registers 9
+    .locals 3
 
     .line 154
     new-instance p2, Ljava/util/ArrayList;
@@ -1426,12 +1426,12 @@
 
     move-result-object p4
 
-    :goto_9
+    :goto_0
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1454,17 +1454,17 @@
 
     invoke-interface {p2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_9
+    goto :goto_0
 
     .line 158
-    :cond_26
+    :cond_0
     invoke-interface {p1, p0, p3, p2, p5}, Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnKeyStatusChangeListener;->onKeyStatusChange(Landroidx/media3/exoplayer/drm/ExoMediaDrm;[BLjava/util/List;Z)V
 
     return-void
 .end method
 
 .method public openSession()[B
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaDrmException;
@@ -1482,7 +1482,7 @@
 .end method
 
 .method public provideKeyResponse([B[B)[B
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/NotProvisionedException;,
@@ -1499,7 +1499,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 266
     invoke-static {p2}, Landroidx/media3/exoplayer/drm/ClearKeyUtil;->adjustResponseData([B)[B
@@ -1507,7 +1507,7 @@
     move-result-object p2
 
     .line 269
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaDrm;->provideKeyResponse([B[B)[B
@@ -1518,7 +1518,7 @@
 .end method
 
 .method public provideProvisionResponse([B)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/DeniedByServerException;
@@ -1534,7 +1534,7 @@
 .end method
 
 .method public queryKeyStatus([B)Ljava/util/Map;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -1556,34 +1556,34 @@
 .end method
 
 .method public declared-synchronized release()V
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 324
-    :try_start_1
+    :try_start_0
     iget v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->referenceCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->referenceCount:I
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 325
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm;->release()V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 327
-    :cond_e
+    :cond_0
     monitor-exit p0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -1592,14 +1592,14 @@
 .end method
 
 .method public removeOfflineLicense([B)V
-    .registers 4
+    .locals 2
 
     .line 339
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_0
 
     .line 342
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1609,7 +1609,7 @@
     return-void
 
     .line 340
-    :cond_c
+    :cond_0
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1618,7 +1618,7 @@
 .end method
 
 .method public requiresSecureDecoder([BLjava/lang/String;)Z
-    .registers 7
+    .locals 4
 
     .line 295
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
@@ -1627,7 +1627,7 @@
 
     const/4 v2, 0x1
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     .line 296
     iget-object p1, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1636,91 +1636,91 @@
 
     move-result p1
 
-    goto :goto_30
+    goto :goto_2
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     .line 300
-    :try_start_f
+    :try_start_0
     new-instance v1, Landroid/media/MediaCrypto;
 
     iget-object v3, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
     invoke-direct {v1, v3, p1}, Landroid/media/MediaCrypto;-><init>(Ljava/util/UUID;[B)V
-    :try_end_16
-    .catch Landroid/media/MediaCryptoException; {:try_start_f .. :try_end_16} :catch_2a
-    .catchall {:try_start_f .. :try_end_16} :catchall_23
+    :try_end_0
+    .catch Landroid/media/MediaCryptoException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 301
-    :try_start_16
+    :try_start_1
     invoke-virtual {v1, p2}, Landroid/media/MediaCrypto;->requiresSecureDecoderComponent(Ljava/lang/String;)Z
 
     move-result p1
-    :try_end_1a
-    .catch Landroid/media/MediaCryptoException; {:try_start_16 .. :try_end_1a} :catch_21
-    .catchall {:try_start_16 .. :try_end_1a} :catchall_1e
+    :try_end_1
+    .catch Landroid/media/MediaCryptoException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 307
     invoke-virtual {v1}, Landroid/media/MediaCrypto;->release()V
 
-    goto :goto_30
+    goto :goto_2
 
-    :catchall_1e
+    :catchall_0
     move-exception p1
 
     move-object v0, v1
 
-    goto :goto_24
+    goto :goto_0
 
-    :catch_21
+    :catch_0
     move-object v0, v1
 
-    goto :goto_2a
+    goto :goto_1
 
-    :catchall_23
+    :catchall_1
     move-exception p1
 
-    :goto_24
-    if-eqz v0, :cond_29
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/media/MediaCrypto;->release()V
 
     .line 309
-    :cond_29
+    :cond_1
     throw p1
 
-    :catch_2a
-    :goto_2a
-    if-eqz v0, :cond_2f
+    :catch_1
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 307
     invoke-virtual {v0}, Landroid/media/MediaCrypto;->release()V
 
-    :cond_2f
+    :cond_2
     move p1, v2
 
-    :goto_30
-    if-eqz p1, :cond_39
+    :goto_2
+    if-eqz p1, :cond_3
 
     .line 311
     invoke-direct {p0}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->shouldForceAllowInsecureDecoderComponents()Z
 
     move-result p1
 
-    if-nez p1, :cond_39
+    if-nez p1, :cond_3
 
-    goto :goto_3a
+    goto :goto_3
 
-    :cond_39
+    :cond_3
     const/4 v2, 0x0
 
-    :goto_3a
+    :goto_3
     return v2
 .end method
 
 .method public restoreKeys([B[B)V
-    .registers 4
+    .locals 1
 
     .line 332
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1731,19 +1731,19 @@
 .end method
 
 .method public setOnEventListener(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnEventListener;)V
-    .registers 4
+    .locals 2
 
     .line 128
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 131
-    :cond_6
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0, p1}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda2;-><init>(Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnEventListener;)V
@@ -1751,47 +1751,47 @@
     move-object p1, v1
 
     .line 128
-    :goto_c
+    :goto_0
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->setOnEventListener(Landroid/media/MediaDrm$OnEventListener;)V
 
     return-void
 .end method
 
 .method public setOnExpirationUpdateListener(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
-    .registers 5
+    .locals 3
 
     .line 174
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_1
 
     .line 178
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     const/4 v1, 0x0
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     move-object v2, v1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 181
-    :cond_d
+    :cond_0
     new-instance v2, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0, p1}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda0;-><init>(Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
 
     .line 178
-    :goto_12
+    :goto_0
     invoke-virtual {v0, v2, v1}, Landroid/media/MediaDrm;->setOnExpirationUpdateListener(Landroid/media/MediaDrm$OnExpirationUpdateListener;Landroid/os/Handler;)V
 
     return-void
 
     .line 175
-    :cond_16
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1800,40 +1800,40 @@
 .end method
 
 .method public setOnKeyStatusChangeListener(Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
-    .registers 5
+    .locals 3
 
     .line 146
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_1
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     const/4 v1, 0x0
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     move-object v2, v1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 153
-    :cond_d
+    :cond_0
     new-instance v2, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda3;
 
     invoke-direct {v2, p0, p1}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$$ExternalSyntheticLambda3;-><init>(Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;Landroidx/media3/exoplayer/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
 
     .line 150
-    :goto_12
+    :goto_0
     invoke-virtual {v0, v2, v1}, Landroid/media/MediaDrm;->setOnKeyStatusChangeListener(Landroid/media/MediaDrm$OnKeyStatusChangeListener;Landroid/os/Handler;)V
 
     return-void
 
     .line 147
-    :cond_16
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1842,26 +1842,26 @@
 .end method
 
 .method public setPlayerIdForSession([BLandroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 5
+    .locals 2
 
     .line 201
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_13
+    if-lt v0, v1, :cond_0
 
     .line 203
-    :try_start_6
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-static {v0, p1, p2}, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm$Api31;->setLogSessionIdOnMediaDrmSession(Landroid/media/MediaDrm;[BLandroidx/media3/exoplayer/analytics/PlayerId;)V
-    :try_end_b
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_6 .. :try_end_b} :catch_c
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :catch_c
+    :catch_0
     const-string p1, "FrameworkMediaDrm"
 
     const-string p2, "setLogSessionId failed."
@@ -1869,13 +1869,13 @@
     .line 205
     invoke-static {p1, p2}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public setPropertyByteArray(Ljava/lang/String;[B)V
-    .registers 4
+    .locals 1
 
     .line 386
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
@@ -1886,7 +1886,7 @@
 .end method
 
 .method public setPropertyString(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 380
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;

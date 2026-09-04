@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/emoji2/text/EmojiCompat$CompatInternal19;)V
-    .registers 2
+    .locals 0
 
     .line 1627
     iput-object p1, p0, Landroidx/emoji2/text/EmojiCompat$CompatInternal19$1;->this$0:Landroidx/emoji2/text/EmojiCompat$CompatInternal19;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public onFailed(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     .line 1635
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$CompatInternal19$1;->this$0:Landroidx/emoji2/text/EmojiCompat$CompatInternal19;
@@ -46,7 +46,7 @@
 .end method
 
 .method public onLoaded(Landroidx/emoji2/text/MetadataRepo;)V
-    .registers 3
+    .locals 1
 
     .line 1630
     iget-object v0, p0, Landroidx/emoji2/text/EmojiCompat$CompatInternal19$1;->this$0:Landroidx/emoji2/text/EmojiCompat$CompatInternal19;

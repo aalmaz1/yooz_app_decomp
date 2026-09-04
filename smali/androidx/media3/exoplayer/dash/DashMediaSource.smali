@@ -123,7 +123,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$bjPSyv091RXo7Z8FfABbHZYQsso(Landroidx/media3/exoplayer/dash/DashMediaSource;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->startLoadingManifest()V
 
@@ -131,7 +131,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "media3.exoplayer.dash"
 
@@ -142,7 +142,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;JJ)V
-    .registers 15
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -232,17 +232,17 @@
 
     const/4 p1, 0x1
 
-    if-eqz p2, :cond_3b
+    if-eqz p2, :cond_0
 
     move p3, p1
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_3b
+    :cond_0
     const/4 p3, 0x0
 
     .line 479
-    :goto_3c
+    :goto_0
     iput-boolean p3, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->sideloadedManifest:Z
 
     const/4 p4, 0x0
@@ -283,7 +283,7 @@
     .line 485
     iput-wide p5, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->elapsedRealtimeOffsetMs:J
 
-    if-eqz p3, :cond_79
+    if-eqz p3, :cond_1
 
     .line 487
     iget-boolean p2, p2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
@@ -308,10 +308,10 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestLoadErrorThrower:Landroidx/media3/exoplayer/upstream/LoaderErrorThrower;
 
-    goto :goto_95
+    goto :goto_1
 
     .line 493
-    :cond_79
+    :cond_1
     new-instance p1, Landroidx/media3/exoplayer/dash/DashMediaSource$ManifestCallback;
 
     invoke-direct {p1, p0, p4}, Landroidx/media3/exoplayer/dash/DashMediaSource$ManifestCallback;-><init>(Landroidx/media3/exoplayer/dash/DashMediaSource;Landroidx/media3/exoplayer/dash/DashMediaSource$1;)V
@@ -339,12 +339,12 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->simulateManifestRefreshRunnable:Ljava/lang/Runnable;
 
-    :goto_95
+    :goto_1
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;JJLandroidx/media3/exoplayer/dash/DashMediaSource$1;)V
-    .registers 15
+    .locals 0
 
     .line 99
     invoke-direct/range {p0 .. p13}, Landroidx/media3/exoplayer/dash/DashMediaSource;-><init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;JJ)V
@@ -353,7 +353,7 @@
 .end method
 
 .method static synthetic access$500(Landroidx/media3/exoplayer/dash/DashMediaSource;J)V
-    .registers 3
+    .locals 0
 
     .line 99
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/dash/DashMediaSource;->onUtcTimestampResolved(J)V
@@ -362,7 +362,7 @@
 .end method
 
 .method static synthetic access$600(Landroidx/media3/exoplayer/dash/DashMediaSource;Ljava/io/IOException;)V
-    .registers 2
+    .locals 0
 
     .line 99
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource;->onUtcTimestampResolutionError(Ljava/io/IOException;)V
@@ -371,7 +371,7 @@
 .end method
 
 .method static synthetic access$700(Landroidx/media3/exoplayer/dash/DashMediaSource;)Landroidx/media3/exoplayer/upstream/Loader;
-    .registers 1
+    .locals 0
 
     .line 99
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -380,7 +380,7 @@
 .end method
 
 .method static synthetic access$800(Landroidx/media3/exoplayer/dash/DashMediaSource;)Ljava/io/IOException;
-    .registers 1
+    .locals 0
 
     .line 99
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestFatalError:Ljava/io/IOException;
@@ -389,7 +389,7 @@
 .end method
 
 .method private static getAvailableEndTimeInManifestUs(Landroidx/media3/exoplayer/dash/manifest/Period;JJ)J
-    .registers 22
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -416,14 +416,14 @@
     move v11, v10
 
     .line 1174
-    :goto_17
+    :goto_0
     iget-object v12, v0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
 
     move-result v12
 
-    if-ge v11, v12, :cond_73
+    if-ge v11, v12, :cond_6
 
     .line 1175
     iget-object v12, v0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -442,36 +442,36 @@
 
     const/4 v15, 0x1
 
-    if-eq v14, v15, :cond_34
+    if-eq v14, v15, :cond_0
 
     iget v12, v12, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->type:I
 
     const/4 v14, 0x2
 
-    if-eq v12, v14, :cond_34
+    if-eq v12, v14, :cond_0
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_34
+    :cond_0
     move v15, v10
 
-    :goto_35
-    if-eqz v7, :cond_39
+    :goto_1
+    if-eqz v7, :cond_1
 
-    if-nez v15, :cond_70
+    if-nez v15, :cond_5
 
     .line 1182
-    :cond_39
+    :cond_1
     invoke-interface {v13}, Ljava/util/List;->isEmpty()Z
 
     move-result v12
 
-    if-eqz v12, :cond_40
+    if-eqz v12, :cond_2
 
-    goto :goto_70
+    goto :goto_2
 
     .line 1185
-    :cond_40
+    :cond_2
     invoke-interface {v13, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v12
@@ -482,14 +482,14 @@
 
     move-result-object v12
 
-    if-nez v12, :cond_4e
+    if-nez v12, :cond_3
 
     add-long/2addr v5, v1
 
     return-wide v5
 
     .line 1189
-    :cond_4e
+    :cond_3
     invoke-interface {v12, v1, v2, v3, v4}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getAvailableSegmentCount(JJ)J
 
     move-result-wide v13
@@ -498,12 +498,12 @@
 
     cmp-long v15, v13, v15
 
-    if-nez v15, :cond_59
+    if-nez v15, :cond_4
 
     return-wide v5
 
     .line 1194
-    :cond_59
+    :cond_4
     invoke-interface {v12, v1, v2, v3, v4}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getFirstAvailableSegmentNum(JJ)J
 
     move-result-wide v15
@@ -533,18 +533,18 @@
 
     move-result-wide v8
 
-    :cond_70
-    :goto_70
+    :cond_5
+    :goto_2
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_73
+    :cond_6
     return-wide v8
 .end method
 
 .method private static getAvailableStartTimeInManifestUs(Landroidx/media3/exoplayer/dash/manifest/Period;JJ)J
-    .registers 22
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -571,14 +571,14 @@
     move v9, v8
 
     .line 1140
-    :goto_13
+    :goto_0
     iget-object v12, v0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->size()I
 
     move-result v12
 
-    if-ge v9, v12, :cond_64
+    if-ge v9, v12, :cond_6
 
     .line 1141
     iget-object v12, v0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -597,36 +597,36 @@
 
     const/4 v15, 0x1
 
-    if-eq v14, v15, :cond_30
+    if-eq v14, v15, :cond_0
 
     iget v12, v12, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->type:I
 
     const/4 v14, 0x2
 
-    if-eq v12, v14, :cond_30
+    if-eq v12, v14, :cond_0
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_30
+    :cond_0
     move v15, v8
 
-    :goto_31
-    if-eqz v7, :cond_35
+    :goto_1
+    if-eqz v7, :cond_1
 
-    if-nez v15, :cond_61
+    if-nez v15, :cond_5
 
     .line 1148
-    :cond_35
+    :cond_1
     invoke-interface {v13}, Ljava/util/List;->isEmpty()Z
 
     move-result v12
 
-    if-eqz v12, :cond_3c
+    if-eqz v12, :cond_2
 
-    goto :goto_61
+    goto :goto_2
 
     .line 1151
-    :cond_3c
+    :cond_2
     invoke-interface {v13, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v12
@@ -637,12 +637,12 @@
 
     move-result-object v12
 
-    if-nez v12, :cond_49
+    if-nez v12, :cond_3
 
     return-wide v5
 
     .line 1155
-    :cond_49
+    :cond_3
     invoke-interface {v12, v1, v2, v3, v4}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getAvailableSegmentCount(JJ)J
 
     move-result-wide v13
@@ -651,12 +651,12 @@
 
     cmp-long v13, v13, v15
 
-    if-nez v13, :cond_54
+    if-nez v13, :cond_4
 
     return-wide v5
 
     .line 1160
-    :cond_54
+    :cond_4
     invoke-interface {v12, v1, v2, v3, v4}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->getFirstAvailableSegmentNum(JJ)J
 
     move-result-wide v13
@@ -673,18 +673,18 @@
 
     move-result-wide v10
 
-    :cond_61
-    :goto_61
+    :cond_5
+    :goto_2
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_64
+    :cond_6
     return-wide v10
 .end method
 
 .method private static getIntervalUntilNextManifestRefreshMs(Landroidx/media3/exoplayer/dash/manifest/DashManifest;J)J
-    .registers 23
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -736,14 +736,14 @@
     move v12, v11
 
     .line 1112
-    :goto_28
+    :goto_0
     iget-object v13, v2, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     invoke-interface {v13}, Ljava/util/List;->size()I
 
     move-result v13
 
-    if-ge v12, v13, :cond_6d
+    if-ge v12, v13, :cond_3
 
     .line 1113
     iget-object v13, v2, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -761,12 +761,12 @@
 
     move-result v14
 
-    if-eqz v14, :cond_41
+    if-eqz v14, :cond_0
 
-    goto :goto_6a
+    goto :goto_1
 
     .line 1117
-    :cond_41
+    :cond_0
     invoke-interface {v13, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v13
@@ -777,7 +777,7 @@
 
     move-result-object v13
 
-    if-eqz v13, :cond_6a
+    if-eqz v13, :cond_2
 
     add-long v14, v0, v3
 
@@ -796,28 +796,28 @@
 
     cmp-long v13, v14, v18
 
-    if-ltz v13, :cond_69
+    if-ltz v13, :cond_1
 
     cmp-long v13, v14, v9
 
-    if-lez v13, :cond_6a
+    if-lez v13, :cond_2
 
     add-long v16, v9, v16
 
     cmp-long v13, v14, v16
 
-    if-gez v13, :cond_6a
+    if-gez v13, :cond_2
 
-    :cond_69
+    :cond_1
     move-wide v9, v14
 
-    :cond_6a
-    :goto_6a
+    :cond_2
+    :goto_1
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_6d
+    :cond_3
     const-wide/16 v0, 0x3e8
 
     .line 1132
@@ -831,7 +831,7 @@
 .end method
 
 .method private getManifestLoadRetryDelayMillis()J
-    .registers 3
+    .locals 2
 
     .line 1090
     iget v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->staleManifestReloadAttempt:I
@@ -852,21 +852,21 @@
 .end method
 
 .method private static hasVideoOrAudioAdaptationSets(Landroidx/media3/exoplayer/dash/manifest/Period;)Z
-    .registers 6
+    .locals 5
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 1218
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1f
+    if-ge v1, v2, :cond_2
 
     .line 1219
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -881,43 +881,43 @@
 
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_1e
+    if-eq v2, v3, :cond_1
 
     const/4 v4, 0x2
 
-    if-ne v2, v4, :cond_1b
+    if-ne v2, v4, :cond_0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1b
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_1
     return v3
 
-    :cond_1f
+    :cond_2
     return v0
 .end method
 
 .method private static isIndexExplicit(Landroidx/media3/exoplayer/dash/manifest/Period;)Z
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 1207
-    :goto_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_2c
+    if-ge v1, v2, :cond_2
 
     .line 1209
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/manifest/Period;->adaptationSets:Ljava/util/List;
@@ -940,34 +940,34 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_1
 
     .line 1210
     invoke-interface {v2}, Landroidx/media3/exoplayer/dash/DashSegmentIndex;->isExplicit()Z
 
     move-result v2
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_27
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_2a
-    :goto_2a
+    :cond_1
+    :goto_1
     const/4 p0, 0x1
 
     return p0
 
-    :cond_2c
+    :cond_2
     return v0
 .end method
 
 .method private loadNtpTimeOffset()V
-    .registers 3
+    .locals 2
 
     .line 847
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->loader:Landroidx/media3/exoplayer/upstream/Loader;
@@ -982,7 +982,7 @@
 .end method
 
 .method private onUtcTimestampResolutionError(Ljava/io/IOException;)V
-    .registers 6
+    .locals 4
 
     const-string v0, "DashMediaSource"
 
@@ -1013,7 +1013,7 @@
 .end method
 
 .method private onUtcTimestampResolved(J)V
-    .registers 3
+    .locals 0
 
     .line 863
     iput-wide p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->elapsedRealtimeOffsetMs:J
@@ -1027,7 +1027,7 @@
 .end method
 
 .method private processManifest(Z)V
-    .registers 33
+    .locals 31
 
     move-object/from16 v0, p0
 
@@ -1036,14 +1036,14 @@
     move v2, v1
 
     .line 876
-    :goto_4
+    :goto_0
     iget-object v3, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->periodsById:Landroid/util/SparseArray;
 
     invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_29
+    if-ge v2, v3, :cond_1
 
     .line 877
     iget-object v3, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->periodsById:Landroid/util/SparseArray;
@@ -1055,7 +1055,7 @@
     .line 878
     iget v4, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->firstPeriodId:I
 
-    if-lt v3, v4, :cond_26
+    if-lt v3, v4, :cond_0
 
     .line 879
     iget-object v4, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->periodsById:Landroid/util/SparseArray;
@@ -1074,13 +1074,13 @@
 
     invoke-virtual {v4, v5, v3}, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->updateManifest(Landroidx/media3/exoplayer/dash/manifest/DashManifest;I)V
 
-    :cond_26
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 885
-    :cond_29
+    :cond_1
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     invoke-virtual {v2, v1}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
@@ -1146,25 +1146,25 @@
 
     iget-boolean v3, v3, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v3, :cond_69
+    if-eqz v3, :cond_2
 
     invoke-static {v5}, Landroidx/media3/exoplayer/dash/DashMediaSource;->isIndexExplicit(Landroidx/media3/exoplayer/dash/manifest/Period;)Z
 
     move-result v3
 
-    if-nez v3, :cond_69
+    if-nez v3, :cond_2
 
     move v3, v4
 
-    goto :goto_6a
+    goto :goto_1
 
-    :cond_69
+    :cond_2
     move v3, v1
 
-    :goto_6a
+    :goto_1
     const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v3, :cond_87
+    if-eqz v3, :cond_3
 
     .line 896
     iget-object v5, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1173,7 +1173,7 @@
 
     cmp-long v5, v14, v12
 
-    if-eqz v5, :cond_87
+    if-eqz v5, :cond_3
 
     .line 898
     iget-object v5, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1192,7 +1192,7 @@
 
     move-result-wide v10
 
-    :cond_87
+    :cond_3
     sub-long v5, v6, v10
 
     .line 906
@@ -1200,7 +1200,7 @@
 
     iget-boolean v7, v7, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v7, :cond_d1
+    if-eqz v7, :cond_6
 
     .line 907
     iget-object v7, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1209,11 +1209,11 @@
 
     cmp-long v7, v14, v12
 
-    if-eqz v7, :cond_98
+    if-eqz v7, :cond_4
 
     move v1, v4
 
-    :cond_98
+    :cond_4
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 908
@@ -1271,24 +1271,24 @@
 
     cmp-long v1, v8, v12
 
-    if-gez v1, :cond_ce
+    if-gez v1, :cond_5
 
     move-wide/from16 v26, v12
 
-    goto :goto_d8
+    goto :goto_2
 
-    :cond_ce
+    :cond_5
     move-wide/from16 v26, v8
 
-    goto :goto_d8
+    goto :goto_2
 
-    :cond_d1
+    :cond_6
     const-wide v20, -0x7fffffffffffffffL    # -4.9E-324
 
     const-wide/16 v26, 0x0
 
     .line 924
-    :goto_d8
+    :goto_2
     iget-wide v1, v2, Landroidx/media3/exoplayer/dash/manifest/Period;->startMs:J
 
     invoke-static {v1, v2}, Landroidx/media3/common/util/Util;->msToUs(J)J
@@ -1320,16 +1320,16 @@
 
     iget-boolean v11, v11, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v11, :cond_f9
+    if-eqz v11, :cond_7
 
     iget-object v11, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
-    goto :goto_fa
+    goto :goto_3
 
-    :cond_f9
+    :cond_7
     const/4 v11, 0x0
 
-    :goto_fa
+    :goto_3
     move-object/from16 v30, v11
 
     const-wide/16 v11, 0x0
@@ -1356,7 +1356,7 @@
     .line 939
     iget-boolean v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->sideloadedManifest:Z
 
-    if-nez v1, :cond_166
+    if-nez v1, :cond_b
 
     .line 941
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
@@ -1365,7 +1365,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    if-eqz v3, :cond_130
+    if-eqz v3, :cond_8
 
     .line 944
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
@@ -1390,25 +1390,25 @@
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 949
-    :cond_130
+    :cond_8
     iget-boolean v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestLoadPending:Z
 
-    if-eqz v1, :cond_138
+    if-eqz v1, :cond_9
 
     .line 950
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->startLoadingManifest()V
 
-    goto :goto_166
+    goto :goto_4
 
-    :cond_138
-    if-eqz p1, :cond_166
+    :cond_9
+    if-eqz p1, :cond_b
 
     .line 951
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-boolean v1, v1, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v1, :cond_166
+    if-eqz v1, :cond_b
 
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
@@ -1418,7 +1418,7 @@
 
     cmp-long v1, v1, v3
 
-    if-eqz v1, :cond_166
+    if-eqz v1, :cond_b
 
     .line 955
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1427,12 +1427,12 @@
 
     cmp-long v3, v1, v11
 
-    if-nez v3, :cond_157
+    if-nez v3, :cond_a
 
     const-wide/16 v1, 0x1388
 
     .line 963
-    :cond_157
+    :cond_a
     iget-wide v3, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestLoadStartTimestampMs:J
 
     add-long/2addr v3, v1
@@ -1451,13 +1451,13 @@
     .line 965
     invoke-direct {v0, v1, v2}, Landroidx/media3/exoplayer/dash/DashMediaSource;->scheduleManifestRefresh(J)V
 
-    :cond_166
-    :goto_166
+    :cond_b
+    :goto_4
     return-void
 .end method
 
 .method private resolveUtcTimingElement(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;)V
-    .registers 4
+    .locals 2
 
     .line 809
     iget-object v0, p1, Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;->schemeIdUri:Ljava/lang/String;
@@ -1469,7 +1469,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_70
+    if-nez v1, :cond_7
 
     const-string/jumbo v1, "urn:mpeg:dash:utc:direct:2012"
 
@@ -1478,11 +1478,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
-    goto :goto_70
+    goto :goto_3
 
-    :cond_15
+    :cond_0
     const-string/jumbo v1, "urn:mpeg:dash:utc:http-iso:2014"
 
     .line 813
@@ -1490,7 +1490,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_67
+    if-nez v1, :cond_6
 
     const-string/jumbo v1, "urn:mpeg:dash:utc:http-iso:2012"
 
@@ -1499,11 +1499,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
-    goto :goto_67
+    goto :goto_2
 
-    :cond_28
+    :cond_1
     const-string/jumbo v1, "urn:mpeg:dash:utc:http-xsdate:2014"
 
     .line 816
@@ -1511,7 +1511,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_5
 
     const-string/jumbo v1, "urn:mpeg:dash:utc:http-xsdate:2012"
 
@@ -1520,11 +1520,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_2
 
-    goto :goto_5d
+    goto :goto_1
 
-    :cond_3b
+    :cond_2
     const-string/jumbo p1, "urn:mpeg:dash:utc:ntp:2014"
 
     .line 819
@@ -1532,7 +1532,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_59
+    if-nez p1, :cond_4
 
     const-string/jumbo p1, "urn:mpeg:dash:utc:ntp:2012"
 
@@ -1541,12 +1541,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_3
 
-    goto :goto_59
+    goto :goto_0
 
     .line 824
-    :cond_4e
+    :cond_3
     new-instance p1, Ljava/io/IOException;
 
     const-string v0, "Unsupported UTC timing scheme"
@@ -1555,18 +1555,18 @@
 
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource;->onUtcTimestampResolutionError(Ljava/io/IOException;)V
 
-    goto :goto_73
+    goto :goto_4
 
     .line 821
-    :cond_59
-    :goto_59
+    :cond_4
+    :goto_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->loadNtpTimeOffset()V
 
-    goto :goto_73
+    goto :goto_4
 
     .line 818
-    :cond_5d
-    :goto_5d
+    :cond_5
+    :goto_1
     new-instance v0, Landroidx/media3/exoplayer/dash/DashMediaSource$XsDateTimeParser;
 
     const/4 v1, 0x0
@@ -1575,30 +1575,30 @@
 
     invoke-direct {p0, p1, v0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->resolveUtcTimingElementHttp(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)V
 
-    goto :goto_73
+    goto :goto_4
 
     .line 815
-    :cond_67
-    :goto_67
+    :cond_6
+    :goto_2
     new-instance v0, Landroidx/media3/exoplayer/dash/DashMediaSource$Iso8601Parser;
 
     invoke-direct {v0}, Landroidx/media3/exoplayer/dash/DashMediaSource$Iso8601Parser;-><init>()V
 
     invoke-direct {p0, p1, v0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->resolveUtcTimingElementHttp(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)V
 
-    goto :goto_73
+    goto :goto_4
 
     .line 812
-    :cond_70
-    :goto_70
+    :cond_7
+    :goto_3
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource;->resolveUtcTimingElementDirect(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;)V
 
-    :goto_73
+    :goto_4
     return-void
 .end method
 
 .method private resolveUtcTimingElementDirect(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;)V
-    .registers 6
+    .locals 4
 
     .line 830
     :try_start_0
@@ -1614,23 +1614,23 @@
     sub-long/2addr v0, v2
 
     invoke-direct {p0, v0, v1}, Landroidx/media3/exoplayer/dash/DashMediaSource;->onUtcTimestampResolved(J)V
-    :try_end_c
-    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :catch_d
+    :catch_0
     move-exception p1
 
     .line 833
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource;->onUtcTimestampResolutionError(Ljava/io/IOException;)V
 
-    :goto_11
+    :goto_0
     return-void
 .end method
 
 .method private resolveUtcTimingElementHttp(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1672,7 +1672,7 @@
 .end method
 
 .method private scheduleManifestRefresh(J)V
-    .registers 5
+    .locals 2
 
     .line 1066
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
@@ -1685,7 +1685,7 @@
 .end method
 
 .method private startLoading(Landroidx/media3/exoplayer/upstream/ParsingLoadable;Landroidx/media3/exoplayer/upstream/Loader$Callback;I)V
-    .registers 11
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1727,7 +1727,7 @@
 .end method
 
 .method private startLoadingManifest()V
-    .registers 6
+    .locals 5
 
     .line 1070
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
@@ -1743,19 +1743,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 1074
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/upstream/Loader;->isLoading()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -1765,19 +1765,19 @@
     return-void
 
     .line 1079
-    :cond_1c
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestUriLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     .line 1080
-    :try_start_1f
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestUri:Landroid/net/Uri;
 
     .line 1081
     monitor-exit v0
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v0, 0x0
 
@@ -1809,20 +1809,20 @@
 
     return-void
 
-    :catchall_3b
+    :catchall_0
     move-exception v1
 
     .line 1081
-    :try_start_3c
+    :try_start_1
     monitor-exit v0
-    :try_end_3d
-    .catchall {:try_start_3c .. :try_end_3d} :catchall_3b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 .end method
 
 .method private updateLiveConfiguration(JJ)V
-    .registers 23
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -1845,7 +1845,7 @@
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 977
     iget-wide v2, v1, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxOffsetMs:J
@@ -1854,18 +1854,18 @@
 
     move-result-wide v2
 
-    :goto_1d
+    :goto_0
     move-wide v10, v2
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 978
-    :cond_1f
+    :cond_0
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
@@ -1875,7 +1875,7 @@
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     .line 980
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1888,12 +1888,12 @@
 
     move-result-wide v2
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_3a
+    :cond_1
     move-wide v10, v6
 
-    :goto_3b
+    :goto_1
     sub-long v2, p1, p3
 
     .line 983
@@ -1905,23 +1905,23 @@
 
     cmp-long v12, v2, v4
 
-    if-gez v12, :cond_4c
+    if-gez v12, :cond_2
 
     cmp-long v12, v10, v4
 
-    if-lez v12, :cond_4c
+    if-lez v12, :cond_2
 
     move-wide v2, v4
 
     .line 989
-    :cond_4c
+    :cond_2
     iget-object v4, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-wide v4, v4, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->minBufferTimeMs:J
 
     cmp-long v4, v4, v8
 
-    if-eqz v4, :cond_5d
+    if-eqz v4, :cond_3
 
     .line 991
     iget-object v4, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1934,7 +1934,7 @@
 
     move-result-wide v2
 
-    :cond_5d
+    :cond_3
     move-wide v4, v2
 
     .line 995
@@ -1942,7 +1942,7 @@
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_6b
+    if-eqz v2, :cond_4
 
     .line 996
     iget-wide v2, v1, Landroidx/media3/common/MediaItem$LiveConfiguration;->minOffsetMs:J
@@ -1952,15 +1952,15 @@
 
     move-result-wide v4
 
-    goto :goto_85
+    goto :goto_2
 
     .line 999
-    :cond_6b
+    :cond_4
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-eqz v2, :cond_85
+    if-eqz v2, :cond_5
 
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
@@ -1970,7 +1970,7 @@
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_85
+    if-eqz v2, :cond_5
 
     .line 1001
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -1984,38 +1984,38 @@
 
     move-result-wide v4
 
-    :cond_85
-    :goto_85
+    :cond_5
+    :goto_2
     cmp-long v2, v4, v10
 
-    if-lez v2, :cond_8a
+    if-lez v2, :cond_6
 
     move-wide v10, v4
 
     .line 1011
-    :cond_8a
+    :cond_6
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     iget-wide v2, v2, Landroidx/media3/common/MediaItem$LiveConfiguration;->targetOffsetMs:J
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_97
+    if-eqz v2, :cond_7
 
     .line 1013
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
     iget-wide v2, v2, Landroidx/media3/common/MediaItem$LiveConfiguration;->targetOffsetMs:J
 
-    goto :goto_bd
+    goto :goto_3
 
     .line 1014
-    :cond_97
+    :cond_7
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v2, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-eqz v2, :cond_ae
+    if-eqz v2, :cond_8
 
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
@@ -2025,7 +2025,7 @@
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_ae
+    if-eqz v2, :cond_8
 
     .line 1016
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -2034,40 +2034,40 @@
 
     iget-wide v2, v2, Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;->targetOffsetMs:J
 
-    goto :goto_bd
+    goto :goto_3
 
     .line 1017
-    :cond_ae
+    :cond_8
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-wide v2, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->suggestedPresentationDelayMs:J
 
     cmp-long v2, v2, v8
 
-    if-eqz v2, :cond_bb
+    if-eqz v2, :cond_9
 
     .line 1018
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-wide v2, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->suggestedPresentationDelayMs:J
 
-    goto :goto_bd
+    goto :goto_3
 
     .line 1020
-    :cond_bb
+    :cond_9
     iget-wide v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->fallbackTargetLiveOffsetMs:J
 
-    :goto_bd
+    :goto_3
     cmp-long v6, v2, v4
 
-    if-gez v6, :cond_c2
+    if-gez v6, :cond_a
 
     move-wide v2, v4
 
-    :cond_c2
+    :cond_a
     cmp-long v6, v2, v10
 
-    if-lez v6, :cond_dd
+    if-lez v6, :cond_b
 
     .line 1026
     iget-wide v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->minLiveStartPositionUs:J
@@ -2097,27 +2097,27 @@
     move-result-wide v2
 
     .line 1034
-    :cond_dd
+    :cond_b
     iget v6, v1, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
     const v7, -0x800001
 
     cmpl-float v6, v6, v7
 
-    if-eqz v6, :cond_e9
+    if-eqz v6, :cond_c
 
     .line 1035
     iget v6, v1, Landroidx/media3/common/MediaItem$LiveConfiguration;->minPlaybackSpeed:F
 
-    goto :goto_f7
+    goto :goto_4
 
     .line 1036
-    :cond_e9
+    :cond_c
     iget-object v6, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v6, v6, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-eqz v6, :cond_f6
+    if-eqz v6, :cond_d
 
     .line 1037
     iget-object v6, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -2126,31 +2126,31 @@
 
     iget v6, v6, Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;->minPlaybackSpeed:F
 
-    goto :goto_f7
+    goto :goto_4
 
-    :cond_f6
+    :cond_d
     move v6, v7
 
     .line 1040
-    :goto_f7
+    :goto_4
     iget v12, v1, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
     cmpl-float v12, v12, v7
 
-    if-eqz v12, :cond_100
+    if-eqz v12, :cond_e
 
     .line 1041
     iget v1, v1, Landroidx/media3/common/MediaItem$LiveConfiguration;->maxPlaybackSpeed:F
 
-    goto :goto_10e
+    goto :goto_5
 
     .line 1042
-    :cond_100
+    :cond_e
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v1, v1, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-eqz v1, :cond_10d
+    if-eqz v1, :cond_f
 
     .line 1043
     iget-object v1, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -2159,26 +2159,26 @@
 
     iget v1, v1, Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;->maxPlaybackSpeed:F
 
-    goto :goto_10e
+    goto :goto_5
 
-    :cond_10d
+    :cond_f
     move v1, v7
 
-    :goto_10e
+    :goto_5
     cmpl-float v12, v6, v7
 
-    if-nez v12, :cond_129
+    if-nez v12, :cond_11
 
     cmpl-float v7, v1, v7
 
-    if-nez v7, :cond_129
+    if-nez v7, :cond_11
 
     .line 1045
     iget-object v7, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v7, v7, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->serviceDescription:Landroidx/media3/exoplayer/dash/manifest/ServiceDescriptionElement;
 
-    if-eqz v7, :cond_126
+    if-eqz v7, :cond_10
 
     iget-object v7, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
@@ -2188,15 +2188,15 @@
 
     cmp-long v7, v12, v8
 
-    if-nez v7, :cond_129
+    if-nez v7, :cond_11
 
-    :cond_126
+    :cond_10
     const/high16 v6, 0x3f800000    # 1.0f
 
     move v1, v6
 
     .line 1055
-    :cond_129
+    :cond_11
     new-instance v7, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;
 
     invoke-direct {v7}, Landroidx/media3/common/MediaItem$LiveConfiguration$Builder;-><init>()V
@@ -2239,7 +2239,7 @@
 
 # virtual methods
 .method public canUpdateMediaItem(Landroidx/media3/common/MediaItem;)Z
-    .registers 7
+    .locals 5
 
     .line 521
     invoke-virtual {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->getMediaItem()Landroidx/media3/common/MediaItem;
@@ -2259,7 +2259,7 @@
     .line 524
     iget-object v2, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_0
 
     .line 525
     iget-object v3, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -2271,7 +2271,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_0
 
     iget-object v3, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->streamKeys:Ljava/util/List;
 
@@ -2282,7 +2282,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_0
 
     iget-object v2, v2, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
@@ -2293,7 +2293,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_0
 
     iget-object v0, v0, Landroidx/media3/common/MediaItem;->liveConfiguration:Landroidx/media3/common/MediaItem$LiveConfiguration;
 
@@ -2304,21 +2304,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_3a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_3b
+    :goto_0
     return p1
 .end method
 
 .method public createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 26
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -2414,21 +2414,21 @@
 .end method
 
 .method public declared-synchronized getMediaItem()Landroidx/media3/common/MediaItem;
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     .line 516
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-object v0
 
-    :catchall_5
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
@@ -2437,7 +2437,7 @@
 .end method
 
 .method synthetic lambda$new$0$androidx-media3-exoplayer-dash-DashMediaSource()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -2448,7 +2448,7 @@
 .end method
 
 .method public maybeThrowSourceInfoRefreshError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2464,7 +2464,7 @@
 .end method
 
 .method onDashManifestPublishTimeExpired(J)V
-    .registers 7
+    .locals 4
 
     .line 624
     iget-wide v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->expiredManifestPublishTimeUs:J
@@ -2473,22 +2473,22 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     cmp-long v0, v0, p1
 
-    if-gez v0, :cond_11
+    if-gez v0, :cond_1
 
     .line 626
-    :cond_f
+    :cond_0
     iput-wide p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->expiredManifestPublishTimeUs:J
 
-    :cond_11
+    :cond_1
     return-void
 .end method
 
 .method onDashManifestRefreshRequested()V
-    .registers 3
+    .locals 2
 
     .line 619
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
@@ -2504,7 +2504,7 @@
 .end method
 
 .method onLoadCanceled(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJ)V
-    .registers 21
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2565,7 +2565,7 @@
 .end method
 
 .method onManifestLoadCompleted(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJ)V
-    .registers 24
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2641,19 +2641,19 @@
 
     const/4 v4, 0x0
 
-    if-nez v3, :cond_3e
+    if-nez v3, :cond_0
 
     move v3, v4
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_3e
+    :cond_0
     invoke-virtual {v3}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodCount()I
 
     move-result v3
 
     .line 649
-    :goto_42
+    :goto_0
     invoke-virtual {v2, v4}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
 
     move-result-object v5
@@ -2662,8 +2662,8 @@
 
     move v7, v4
 
-    :goto_49
-    if-ge v7, v3, :cond_5a
+    :goto_1
+    if-ge v7, v3, :cond_1
 
     .line 650
     iget-object v8, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -2677,21 +2677,21 @@
 
     cmp-long v8, v8, v5
 
-    if-gez v8, :cond_5a
+    if-gez v8, :cond_1
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_49
+    goto :goto_1
 
     .line 655
-    :cond_5a
+    :cond_1
     iget-boolean v5, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
     const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
     const/4 v6, 0x1
 
-    if-eqz v5, :cond_cd
+    if-eqz v5, :cond_6
 
     sub-int/2addr v3, v7
 
@@ -2700,7 +2700,7 @@
 
     move-result v5
 
-    if-le v3, v5, :cond_74
+    if-le v3, v5, :cond_2
 
     const-string v3, "DashMediaSource"
 
@@ -2709,18 +2709,18 @@
     .line 662
     invoke-static {v3, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_72
+    :goto_2
     move v3, v6
 
-    goto :goto_a9
+    goto :goto_3
 
     .line 664
-    :cond_74
+    :cond_2
     iget-wide v10, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->expiredManifestPublishTimeUs:J
 
     cmp-long v3, v10, v8
 
-    if-eqz v3, :cond_a8
+    if-eqz v3, :cond_3
 
     iget-wide v10, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->publishTimeMs:J
 
@@ -2732,7 +2732,7 @@
 
     cmp-long v3, v10, v12
 
-    if-gtz v3, :cond_a8
+    if-gtz v3, :cond_3
 
     const-string v3, "DashMediaSource"
 
@@ -2767,13 +2767,13 @@
 
     invoke-static {v3, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_72
+    goto :goto_2
 
-    :cond_a8
+    :cond_3
     move v3, v4
 
-    :goto_a9
-    if-eqz v3, :cond_cb
+    :goto_3
+    if-eqz v3, :cond_5
 
     .line 679
     iget v2, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->staleManifestReloadAttempt:I
@@ -2791,7 +2791,7 @@
 
     move-result v0
 
-    if-ge v2, v0, :cond_c3
+    if-ge v2, v0, :cond_4
 
     .line 681
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->getManifestLoadRetryDelayMillis()J
@@ -2800,25 +2800,25 @@
 
     invoke-direct {v1, v2, v3}, Landroidx/media3/exoplayer/dash/DashMediaSource;->scheduleManifestRefresh(J)V
 
-    goto :goto_ca
+    goto :goto_4
 
     .line 683
-    :cond_c3
+    :cond_4
     new-instance v0, Landroidx/media3/exoplayer/dash/DashManifestStaleException;
 
     invoke-direct {v0}, Landroidx/media3/exoplayer/dash/DashManifestStaleException;-><init>()V
 
     iput-object v0, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestFatalError:Ljava/io/IOException;
 
-    :goto_ca
+    :goto_4
     return-void
 
     .line 687
-    :cond_cb
+    :cond_5
     iput v4, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->staleManifestReloadAttempt:I
 
     .line 690
-    :cond_cd
+    :cond_6
     iput-object v2, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     .line 691
@@ -2853,66 +2853,66 @@
     monitor-enter v2
 
     .line 701
-    :try_start_e6
+    :try_start_0
     iget-object v3, v0, Landroidx/media3/exoplayer/upstream/ParsingLoadable;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     iget-object v3, v3, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
 
     iget-object v5, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestUri:Landroid/net/Uri;
 
-    if-ne v3, v5, :cond_ef
+    if-ne v3, v5, :cond_7
 
     move v4, v6
 
-    :cond_ef
-    if-eqz v4, :cond_102
+    :cond_7
+    if-eqz v4, :cond_9
 
     .line 706
     iget-object v3, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v3, v3, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->location:Landroid/net/Uri;
 
-    if-eqz v3, :cond_fc
+    if-eqz v3, :cond_8
 
     iget-object v0, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->location:Landroid/net/Uri;
 
-    goto :goto_100
+    goto :goto_5
 
-    :cond_fc
+    :cond_8
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/exoplayer/upstream/ParsingLoadable;->getUri()Landroid/net/Uri;
 
     move-result-object v0
 
-    :goto_100
+    :goto_5
     iput-object v0, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestUri:Landroid/net/Uri;
 
     .line 708
-    :cond_102
+    :cond_9
     monitor-exit v2
-    :try_end_103
-    .catchall {:try_start_e6 .. :try_end_103} :catchall_125
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 710
     iget-object v0, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-boolean v0, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v0, :cond_121
+    if-eqz v0, :cond_b
 
     iget-wide v2, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->elapsedRealtimeOffsetMs:J
 
     cmp-long v0, v2, v8
 
-    if-nez v0, :cond_121
+    if-nez v0, :cond_b
 
     .line 712
     iget-object v0, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->utcTiming:Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;
 
-    if-eqz v0, :cond_11d
+    if-eqz v0, :cond_a
 
     .line 713
     iget-object v0, v1, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -2921,35 +2921,35 @@
 
     invoke-direct {v1, v0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->resolveUtcTimingElement(Landroidx/media3/exoplayer/dash/manifest/UtcTimingElement;)V
 
-    goto :goto_124
+    goto :goto_6
 
     .line 715
-    :cond_11d
+    :cond_a
     invoke-direct/range {p0 .. p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->loadNtpTimeOffset()V
 
-    goto :goto_124
+    goto :goto_6
 
     .line 718
-    :cond_121
+    :cond_b
     invoke-direct {v1, v6}, Landroidx/media3/exoplayer/dash/DashMediaSource;->processManifest(Z)V
 
-    :goto_124
+    :goto_6
     return-void
 
-    :catchall_125
+    :catchall_0
     move-exception v0
 
     .line 708
-    :try_start_126
+    :try_start_1
     monitor-exit v2
-    :try_end_127
-    .catchall {:try_start_126 .. :try_end_127} :catchall_125
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method onManifestLoadError(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJLjava/io/IOException;I)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 24
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3023,14 +3023,14 @@
 
     cmp-long v5, v3, v5
 
-    if-nez v5, :cond_40
+    if-nez v5, :cond_0
 
     .line 743
     sget-object v3, Landroidx/media3/exoplayer/upstream/Loader;->DONT_RETRY_FATAL:Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
 
-    goto :goto_45
+    goto :goto_0
 
-    :cond_40
+    :cond_0
     const/4 v5, 0x0
 
     .line 744
@@ -3039,7 +3039,7 @@
     move-result-object v3
 
     .line 745
-    :goto_45
+    :goto_0
     invoke-virtual {v3}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->isRetry()Z
 
     move-result v4
@@ -3053,7 +3053,7 @@
 
     invoke-virtual {v5, v15, v6, v2, v4}, Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;->loadError(Landroidx/media3/exoplayer/source/LoadEventInfo;ILjava/io/IOException;Z)V
 
-    if-eqz v4, :cond_5b
+    if-eqz v4, :cond_1
 
     .line 748
     iget-object v2, v0, Landroidx/media3/exoplayer/dash/DashMediaSource;->loadErrorHandlingPolicy:Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -3062,12 +3062,12 @@
 
     invoke-interface {v2, v4, v5}, Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;->onLoadTaskConcluded(J)V
 
-    :cond_5b
+    :cond_1
     return-object v3
 .end method
 
 .method onUtcTimestampLoadCompleted(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJ)V
-    .registers 21
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3144,7 +3144,7 @@
 .end method
 
 .method onUtcTimestampLoadError(Landroidx/media3/exoplayer/upstream/ParsingLoadable;JJLjava/io/IOException;)Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;
-    .registers 24
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3225,7 +3225,7 @@
 .end method
 
 .method protected prepareSourceInternal(Landroidx/media3/datasource/TransferListener;)V
-    .registers 4
+    .locals 2
 
     .line 539
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->mediaTransferListener:Landroidx/media3/datasource/TransferListener;
@@ -3251,17 +3251,17 @@
     .line 542
     iget-boolean p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->sideloadedManifest:Z
 
-    if-eqz p1, :cond_1d
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
     .line 543
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaSource;->processManifest(Z)V
 
-    goto :goto_37
+    goto :goto_0
 
     .line 545
-    :cond_1d
+    :cond_0
     iget-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestDataSourceFactory:Landroidx/media3/datasource/DataSource$Factory;
 
     invoke-interface {p1}, Landroidx/media3/datasource/DataSource$Factory;->createDataSource()Landroidx/media3/datasource/DataSource;
@@ -3289,12 +3289,12 @@
     .line 548
     invoke-direct {p0}, Landroidx/media3/exoplayer/dash/DashMediaSource;->startLoadingManifest()V
 
-    :goto_37
+    :goto_0
     return-void
 .end method
 
 .method public releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 587
     check-cast p1, Landroidx/media3/exoplayer/dash/DashMediaPeriod;
@@ -3313,7 +3313,7 @@
 .end method
 
 .method protected releaseSourceInternal()V
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -3328,7 +3328,7 @@
     .line 596
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     .line 597
     invoke-virtual {v2}, Landroidx/media3/exoplayer/upstream/Loader;->release()V
@@ -3336,7 +3336,7 @@
     .line 598
     iput-object v1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->loader:Landroidx/media3/exoplayer/upstream/Loader;
 
-    :cond_f
+    :cond_0
     const-wide/16 v2, 0x0
 
     .line 600
@@ -3356,7 +3356,7 @@
     .line 604
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     .line 605
     invoke-virtual {v2, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
@@ -3364,7 +3364,7 @@
     .line 606
     iput-object v1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->handler:Landroid/os/Handler;
 
-    :cond_24
+    :cond_1
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 608
@@ -3395,7 +3395,7 @@
 .end method
 
 .method public replaceManifestUri(Landroid/net/Uri;)V
-    .registers 3
+    .locals 1
 
     .line 506
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestUriLock:Ljava/lang/Object;
@@ -3403,7 +3403,7 @@
     monitor-enter v0
 
     .line 507
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->manifestUri:Landroid/net/Uri;
 
     .line 508
@@ -3414,33 +3414,33 @@
 
     return-void
 
-    :catchall_9
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_b
-    .catchall {:try_start_3 .. :try_end_b} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method public declared-synchronized updateMediaItem(Landroidx/media3/common/MediaItem;)V
-    .registers 2
+    .locals 0
 
     monitor-enter p0
 
     .line 534
-    :try_start_1
+    :try_start_0
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaSource;->mediaItem:Landroidx/media3/common/MediaItem;
-    :try_end_3
-    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 535
     monitor-exit p0
 
     return-void
 
-    :catchall_5
+    :catchall_0
     move-exception p1
 
     monitor-exit p0

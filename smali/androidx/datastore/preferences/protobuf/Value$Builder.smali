@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 584
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Value;->access$000()Landroidx/datastore/preferences/protobuf/Value;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Value$1;)V
-    .registers 2
+    .locals 0
 
     .line 577
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearBoolValue()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 810
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearKind()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 594
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public clearListValue()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 954
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -101,7 +101,7 @@
 .end method
 
 .method public clearNullValue()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 661
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -117,7 +117,7 @@
 .end method
 
 .method public clearNumberValue()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 701
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -133,7 +133,7 @@
 .end method
 
 .method public clearStringValue()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 755
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -149,7 +149,7 @@
 .end method
 
 .method public clearStructValue()Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 2
+    .locals 1
 
     .line 882
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -165,7 +165,7 @@
 .end method
 
 .method public getBoolValue()Z
-    .registers 2
+    .locals 1
 
     .line 785
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -180,7 +180,7 @@
 .end method
 
 .method public getKindCase()Landroidx/datastore/preferences/protobuf/Value$KindCase;
-    .registers 2
+    .locals 1
 
     .line 590
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -195,7 +195,7 @@
 .end method
 
 .method public getListValue()Landroidx/datastore/preferences/protobuf/ListValue;
-    .registers 2
+    .locals 1
 
     .line 907
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -210,7 +210,7 @@
 .end method
 
 .method public getNullValue()Landroidx/datastore/preferences/protobuf/NullValue;
-    .registers 2
+    .locals 1
 
     .line 636
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -225,7 +225,7 @@
 .end method
 
 .method public getNullValueValue()I
-    .registers 2
+    .locals 1
 
     .line 610
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -240,7 +240,7 @@
 .end method
 
 .method public getNumberValue()D
-    .registers 3
+    .locals 2
 
     .line 676
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -255,7 +255,7 @@
 .end method
 
 .method public getStringValue()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 716
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -270,7 +270,7 @@
 .end method
 
 .method public getStringValueBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 729
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -285,7 +285,7 @@
 .end method
 
 .method public getStructValue()Landroidx/datastore/preferences/protobuf/Struct;
-    .registers 2
+    .locals 1
 
     .line 835
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -300,7 +300,7 @@
 .end method
 
 .method public hasListValue()Z
-    .registers 2
+    .locals 1
 
     .line 896
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -315,7 +315,7 @@
 .end method
 
 .method public hasStructValue()Z
-    .registers 2
+    .locals 1
 
     .line 824
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Value$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -330,7 +330,7 @@
 .end method
 
 .method public mergeListValue(Landroidx/datastore/preferences/protobuf/ListValue;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 942
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -346,7 +346,7 @@
 .end method
 
 .method public mergeStructValue(Landroidx/datastore/preferences/protobuf/Struct;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 870
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -362,7 +362,7 @@
 .end method
 
 .method public setBoolValue(Z)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 797
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -378,7 +378,7 @@
 .end method
 
 .method public setListValue(Landroidx/datastore/preferences/protobuf/ListValue$Builder;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 930
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -394,7 +394,7 @@
 .end method
 
 .method public setListValue(Landroidx/datastore/preferences/protobuf/ListValue;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 917
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -410,7 +410,7 @@
 .end method
 
 .method public setNullValue(Landroidx/datastore/preferences/protobuf/NullValue;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 648
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -426,7 +426,7 @@
 .end method
 
 .method public setNullValueValue(I)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 622
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -442,7 +442,7 @@
 .end method
 
 .method public setNumberValue(D)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 4
+    .locals 1
 
     .line 688
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -458,7 +458,7 @@
 .end method
 
 .method public setStringValue(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 742
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -474,7 +474,7 @@
 .end method
 
 .method public setStringValueBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 770
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -490,7 +490,7 @@
 .end method
 
 .method public setStructValue(Landroidx/datastore/preferences/protobuf/Struct$Builder;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 858
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V
@@ -506,7 +506,7 @@
 .end method
 
 .method public setStructValue(Landroidx/datastore/preferences/protobuf/Struct;)Landroidx/datastore/preferences/protobuf/Value$Builder;
-    .registers 3
+    .locals 1
 
     .line 845
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Value$Builder;->copyOnWrite()V

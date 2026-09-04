@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/lifecycle/Lifecycle$Event$Companion;-><init>()V
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final downFrom(Landroidx/lifecycle/Lifecycle$State;)Landroidx/lifecycle/Lifecycle$Event;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -86,42 +86,42 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 165
-    :cond_18
+    :cond_0
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 164
-    :cond_1b
+    :cond_1
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 163
-    :cond_1e
+    :cond_2
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
-    :goto_20
+    :goto_0
     return-object p1
 .end method
 
 .method public final downTo(Landroidx/lifecycle/Lifecycle$State;)Landroidx/lifecycle/Lifecycle$Event;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -140,42 +140,42 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 181
-    :cond_18
+    :cond_0
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 183
-    :cond_1b
+    :cond_1
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 182
-    :cond_1e
+    :cond_2
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
 
-    :goto_20
+    :goto_0
     return-object p1
 .end method
 
 .method public final upFrom(Landroidx/lifecycle/Lifecycle$State;)Landroidx/lifecycle/Lifecycle$Event;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -194,42 +194,42 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x5
 
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 199
-    :cond_18
+    :cond_0
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 201
-    :cond_1b
+    :cond_1
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 200
-    :cond_1e
+    :cond_2
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
 
-    :goto_20
+    :goto_0
     return-object p1
 .end method
 
 .method public final upTo(Landroidx/lifecycle/Lifecycle$State;)Landroidx/lifecycle/Lifecycle$Event;
-    .registers 3
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -248,36 +248,36 @@
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_1e
+    if-eq p1, v0, :cond_2
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_1b
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_18
+    if-eq p1, v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 219
-    :cond_18
+    :cond_0
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 218
-    :cond_1b
+    :cond_1
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 217
-    :cond_1e
+    :cond_2
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
-    :goto_20
+    :goto_0
     return-object p1
 .end method

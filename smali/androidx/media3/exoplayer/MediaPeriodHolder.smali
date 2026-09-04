@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>([Landroidx/media3/exoplayer/RendererCapabilities;JLandroidx/media3/exoplayer/trackselection/TrackSelector;Landroidx/media3/exoplayer/upstream/Allocator;Landroidx/media3/exoplayer/MediaSourceList;Landroidx/media3/exoplayer/MediaPeriodInfo;Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;)V
-    .registers 16
+    .locals 7
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -120,17 +120,17 @@
 .end method
 
 .method private associateNoSampleRenderersWithEmptySampleStream([Landroidx/media3/exoplayer/source/SampleStream;)V
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 442
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_21
+    if-ge v0, v2, :cond_1
 
     .line 443
     aget-object v1, v1, v0
@@ -141,7 +141,7 @@
 
     const/4 v2, -0x2
 
-    if-ne v1, v2, :cond_1e
+    if-ne v1, v2, :cond_0
 
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
 
@@ -150,7 +150,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 445
     new-instance v1, Landroidx/media3/exoplayer/source/EmptySampleStream;
@@ -159,17 +159,17 @@
 
     aput-object v1, p1, v0
 
-    :cond_1e
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_21
+    :cond_1
     return-void
 .end method
 
 .method private static createMediaPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/MediaSourceList;Landroidx/media3/exoplayer/upstream/Allocator;JJ)Landroidx/media3/exoplayer/source/MediaPeriod;
-    .registers 14
+    .locals 7
 
     .line 461
     invoke-virtual {p1, p0, p2, p3, p4}, Landroidx/media3/exoplayer/MediaSourceList;->createPeriod(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;Landroidx/media3/exoplayer/upstream/Allocator;J)Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -180,7 +180,7 @@
 
     cmp-long p0, p5, p0
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_0
 
     .line 463
     new-instance p0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -197,32 +197,32 @@
 
     move-object v1, p0
 
-    :cond_18
+    :cond_0
     return-object v1
 .end method
 
 .method private disableTrackSelectionsInResult()V
-    .registers 4
+    .locals 3
 
     .line 411
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->isLoadingMediaPeriod()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 414
-    :goto_8
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
 
     iget v1, v1, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->length:I
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_2
 
     .line 415
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
@@ -238,34 +238,34 @@
 
     aget-object v2, v2, v0
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 418
     invoke-interface {v2}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->disable()V
 
-    :cond_21
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_24
+    :cond_2
     return-void
 .end method
 
 .method private disassociateNoSampleRenderersWithEmptySampleStream([Landroidx/media3/exoplayer/source/SampleStream;)V
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 429
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;
 
     array-length v2, v1
 
-    if-ge v0, v2, :cond_15
+    if-ge v0, v2, :cond_1
 
     .line 430
     aget-object v1, v1, v0
@@ -276,44 +276,44 @@
 
     const/4 v2, -0x2
 
-    if-ne v1, v2, :cond_12
+    if-ne v1, v2, :cond_0
 
     const/4 v1, 0x0
 
     .line 431
     aput-object v1, p1, v0
 
-    :cond_12
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     return-void
 .end method
 
 .method private enableTrackSelectionsInResult()V
-    .registers 4
+    .locals 3
 
     .line 398
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->isLoadingMediaPeriod()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 401
-    :goto_8
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
 
     iget v1, v1, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->length:I
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_2
 
     .line 402
     iget-object v1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
@@ -329,49 +329,49 @@
 
     aget-object v2, v2, v0
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 405
     invoke-interface {v2}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->enable()V
 
-    :cond_21
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_24
+    :cond_2
     return-void
 .end method
 
 .method private isLoadingMediaPeriod()Z
-    .registers 2
+    .locals 1
 
     .line 451
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->next:Landroidx/media3/exoplayer/MediaPeriodHolder;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method private static releaseMediaPeriod(Landroidx/media3/exoplayer/MediaSourceList;Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    .registers 3
+    .locals 1
 
     .line 473
     :try_start_0
     instance-of v0, p1, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 474
     check-cast p1, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -380,17 +380,17 @@
 
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/MediaSourceList;->releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
 
-    goto :goto_18
+    goto :goto_0
 
     .line 476
-    :cond_c
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/MediaSourceList;->releasePeriod(Landroidx/media3/exoplayer/source/MediaPeriod;)V
-    :try_end_f
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :catch_10
+    :catch_0
     move-exception p0
 
     const-string p1, "MediaPeriodHolder"
@@ -400,14 +400,14 @@
     .line 480
     invoke-static {p1, v0, p0}, Landroidx/media3/common/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_18
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public applyTrackSelection(Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;JZ)J
-    .registers 12
+    .locals 7
 
     .line 287
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;
@@ -432,7 +432,7 @@
 .end method
 
 .method public applyTrackSelection(Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;JZ[Z)J
-    .registers 19
+    .locals 13
 
     move-object v0, p0
 
@@ -443,17 +443,17 @@
     move v3, v2
 
     .line 311
-    :goto_4
+    :goto_0
     iget v4, v1, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->length:I
 
     const/4 v5, 0x1
 
-    if-ge v3, v4, :cond_1c
+    if-ge v3, v4, :cond_1
 
     .line 312
     iget-object v4, v0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mayRetainStreamFlags:[Z
 
-    if-nez p4, :cond_16
+    if-nez p4, :cond_0
 
     iget-object v6, v0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
 
@@ -462,22 +462,22 @@
 
     move-result v6
 
-    if-eqz v6, :cond_16
+    if-eqz v6, :cond_0
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
+    :cond_0
     move v5, v2
 
-    :goto_17
+    :goto_1
     aput-boolean v5, v4, v3
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 318
-    :cond_1c
+    :cond_1
     iget-object v3, v0, Landroidx/media3/exoplayer/MediaPeriodHolder;->sampleStreams:[Landroidx/media3/exoplayer/source/SampleStream;
 
     invoke-direct {p0, v3}, Landroidx/media3/exoplayer/MediaPeriodHolder;->disassociateNoSampleRenderersWithEmptySampleStream([Landroidx/media3/exoplayer/source/SampleStream;)V
@@ -520,17 +520,17 @@
     move v6, v2
 
     .line 334
-    :goto_40
+    :goto_2
     iget-object v7, v0, Landroidx/media3/exoplayer/MediaPeriodHolder;->sampleStreams:[Landroidx/media3/exoplayer/source/SampleStream;
 
     array-length v8, v7
 
-    if-ge v6, v8, :cond_6d
+    if-ge v6, v8, :cond_5
 
     .line 335
     aget-object v7, v7, v6
 
-    if-eqz v7, :cond_5e
+    if-eqz v7, :cond_2
 
     .line 336
     invoke-virtual {p1, v6}, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
@@ -550,43 +550,43 @@
 
     const/4 v8, -0x2
 
-    if-eq v7, v8, :cond_6a
+    if-eq v7, v8, :cond_4
 
     .line 339
     iput-boolean v5, v0, Landroidx/media3/exoplayer/MediaPeriodHolder;->hasEnabledTracks:Z
 
-    goto :goto_6a
+    goto :goto_4
 
     .line 342
-    :cond_5e
+    :cond_2
     iget-object v7, v1, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aget-object v7, v7, v6
 
-    if-nez v7, :cond_66
+    if-nez v7, :cond_3
 
     move v7, v5
 
-    goto :goto_67
+    goto :goto_3
 
-    :cond_66
+    :cond_3
     move v7, v2
 
-    :goto_67
+    :goto_3
     invoke-static {v7}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    :cond_6a
-    :goto_6a
+    :cond_4
+    :goto_4
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_6d
+    :cond_5
     return-wide v3
 .end method
 
 .method public canBeUsedForMediaPeriodInfo(Landroidx/media3/exoplayer/MediaPeriodInfo;)Z
-    .registers 6
+    .locals 4
 
     .line 485
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
@@ -599,7 +599,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
 
@@ -609,7 +609,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
 
@@ -622,21 +622,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_25
+    :goto_0
     return p1
 .end method
 
 .method public continueLoading(JFJ)V
-    .registers 8
+    .locals 2
 
     .line 233
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->isLoadingMediaPeriod()Z
@@ -684,12 +684,12 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 6
+    .locals 5
 
     .line 169
     iget-boolean v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->prepared:Z
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 170
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
@@ -699,12 +699,12 @@
     return-wide v0
 
     .line 173
-    :cond_9
+    :cond_0
     iget-boolean v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->hasEnabledTracks:Z
 
     const-wide/high16 v1, -0x8000000000000000L
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
@@ -712,27 +712,27 @@
 
     move-result-wide v3
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     move-wide v3, v1
 
-    :goto_17
+    :goto_0
     cmp-long v0, v3, v1
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_2
 
     .line 174
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
 
     iget-wide v3, v0, Landroidx/media3/exoplayer/MediaPeriodInfo;->durationUs:J
 
-    :cond_1f
+    :cond_2
     return-wide v3
 .end method
 
 .method public getNext()Landroidx/media3/exoplayer/MediaPeriodHolder;
-    .registers 2
+    .locals 1
 
     .line 375
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->next:Landroidx/media3/exoplayer/MediaPeriodHolder;
@@ -741,30 +741,30 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 182
     iget-boolean v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->prepared:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-wide/16 v0, 0x0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     invoke-interface {v0}, Landroidx/media3/exoplayer/source/MediaPeriod;->getNextLoadPositionUs()J
 
     move-result-wide v0
 
-    :goto_d
+    :goto_0
     return-wide v0
 .end method
 
 .method public getRendererOffset()J
-    .registers 3
+    .locals 2
 
     .line 139
     iget-wide v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->rendererPositionOffsetUs:J
@@ -773,7 +773,7 @@
 .end method
 
 .method public getStartPositionRendererTime()J
-    .registers 5
+    .locals 4
 
     .line 153
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
@@ -788,7 +788,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 380
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -797,7 +797,7 @@
 .end method
 
 .method public getTrackSelectorResult()Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
-    .registers 2
+    .locals 1
 
     .line 385
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->trackSelectorResult:Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
@@ -806,7 +806,7 @@
 .end method
 
 .method public handlePrepared(FLandroidx/media3/common/Timeline;)V
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -846,7 +846,7 @@
 
     cmp-long p2, v2, v4
 
-    if-eqz p2, :cond_35
+    if-eqz p2, :cond_0
 
     iget-object p2, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
 
@@ -854,7 +854,7 @@
 
     cmp-long p2, v0, v2
 
-    if-ltz p2, :cond_35
+    if-ltz p2, :cond_0
 
     .line 199
     iget-object p2, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
@@ -871,7 +871,7 @@
 
     move-result-wide v0
 
-    :cond_35
+    :cond_0
     const/4 p2, 0x0
 
     .line 202
@@ -905,16 +905,16 @@
 .end method
 
 .method public isFullyBuffered()Z
-    .registers 5
+    .locals 4
 
     .line 158
     iget-boolean v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->prepared:Z
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->hasEnabledTracks:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
@@ -927,22 +927,22 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 4
+    .locals 1
 
     .line 215
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->isLoadingMediaPeriod()Z
@@ -954,7 +954,7 @@
     .line 216
     iget-boolean v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->prepared:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 217
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -965,12 +965,12 @@
 
     invoke-interface {v0, p1, p2}, Landroidx/media3/exoplayer/source/MediaPeriod;->reevaluateBuffer(J)V
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 350
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->disableTrackSelectionsInResult()V
@@ -986,7 +986,7 @@
 .end method
 
 .method public selectTracks(FLandroidx/media3/common/Timeline;)Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -1016,10 +1016,10 @@
     move v1, v0
 
     .line 258
-    :goto_12
+    :goto_0
     iget v2, p2, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->length:I
 
-    if-ge v1, v2, :cond_42
+    if-ge v1, v2, :cond_4
 
     .line 259
     invoke-virtual {p2, v1}, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
@@ -1028,14 +1028,14 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_2
 
     .line 260
     iget-object v2, p2, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aget-object v2, v2, v1
 
-    if-nez v2, :cond_30
+    if-nez v2, :cond_1
 
     iget-object v2, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->rendererCapabilities:[Landroidx/media3/exoplayer/RendererCapabilities;
 
@@ -1048,78 +1048,78 @@
 
     const/4 v4, -0x2
 
-    if-ne v2, v4, :cond_2f
+    if-ne v2, v4, :cond_0
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
+    :cond_0
     move v3, v0
 
     .line 260
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_1
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    goto :goto_3f
+    goto :goto_3
 
     .line 264
-    :cond_34
+    :cond_2
     iget-object v2, p2, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aget-object v2, v2, v1
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_3
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_3b
+    :cond_3
     move v3, v0
 
-    :goto_3c
+    :goto_2
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    :goto_3f
+    :goto_3
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 267
-    :cond_42
+    :cond_4
     iget-object v1, p2, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     array-length v2, v1
 
-    :goto_45
-    if-ge v0, v2, :cond_51
+    :goto_4
+    if-ge v0, v2, :cond_6
 
     aget-object v3, v1, v0
 
-    if-eqz v3, :cond_4e
+    if-eqz v3, :cond_5
 
     .line 269
     invoke-interface {v3, p1}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->onPlaybackSpeed(F)V
 
-    :cond_4e
+    :cond_5
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_45
+    goto :goto_4
 
-    :cond_51
+    :cond_6
     return-object p2
 .end method
 
 .method public setNext(Landroidx/media3/exoplayer/MediaPeriodHolder;)V
-    .registers 3
+    .locals 1
 
     .line 361
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->next:Landroidx/media3/exoplayer/MediaPeriodHolder;
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     return-void
 
     .line 364
-    :cond_5
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->disableTrackSelectionsInResult()V
 
     .line 365
@@ -1132,7 +1132,7 @@
 .end method
 
 .method public setRendererOffset(J)V
-    .registers 3
+    .locals 0
 
     .line 148
     iput-wide p1, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->rendererPositionOffsetUs:J
@@ -1141,7 +1141,7 @@
 .end method
 
 .method public toPeriodTime(J)J
-    .registers 5
+    .locals 2
 
     .line 134
     invoke-virtual {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->getRendererOffset()J
@@ -1154,7 +1154,7 @@
 .end method
 
 .method public toRendererTime(J)J
-    .registers 5
+    .locals 2
 
     .line 126
     invoke-virtual {p0}, Landroidx/media3/exoplayer/MediaPeriodHolder;->getRendererOffset()J
@@ -1167,14 +1167,14 @@
 .end method
 
 .method public updateClipping()V
-    .registers 6
+    .locals 5
 
     .line 390
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     instance-of v0, v0, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 392
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
@@ -1185,19 +1185,19 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     const-wide/high16 v0, -0x8000000000000000L
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->info:Landroidx/media3/exoplayer/MediaPeriodInfo;
 
     iget-wide v0, v0, Landroidx/media3/exoplayer/MediaPeriodInfo;->endPositionUs:J
 
     .line 393
-    :goto_1a
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/MediaPeriodHolder;->mediaPeriod:Landroidx/media3/exoplayer/source/MediaPeriod;
 
     check-cast v2, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;
@@ -1206,6 +1206,6 @@
 
     invoke-virtual {v2, v3, v4, v0, v1}, Landroidx/media3/exoplayer/source/ClippingMediaPeriod;->updateClipping(JJ)V
 
-    :cond_23
+    :cond_1
     return-void
 .end method

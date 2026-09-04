@@ -106,14 +106,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .locals 16
 
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     .line 86
-    fill-array-data v0, :array_34
+    fill-array-data v0, :array_0
 
     .line 87
     invoke-static {v0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->getStateQuery([I)Ljava/lang/String;
@@ -163,7 +163,7 @@
 
     nop
 
-    :array_34
+    :array_0
     .array-data 4
         0x3
         0x4
@@ -171,7 +171,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/database/DatabaseProvider;)V
-    .registers 3
+    .locals 1
 
     const-string v0, ""
 
@@ -182,7 +182,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/database/DatabaseProvider;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -221,7 +221,7 @@
 .end method
 
 .method static synthetic access$100(Landroid/database/Cursor;)Landroidx/media3/exoplayer/offline/Download;
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-static {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->getDownloadForCurrentRow(Landroid/database/Cursor;)Landroidx/media3/exoplayer/offline/Download;
@@ -232,7 +232,7 @@
 .end method
 
 .method private static decodeStreamKeys(Ljava/lang/String;)Ljava/util/List;
-    .registers 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -254,11 +254,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     return-object v0
 
-    :cond_c
+    :cond_0
     const-string v1, ","
 
     .line 534
@@ -273,8 +273,8 @@
 
     move v3, v2
 
-    :goto_15
-    if-ge v3, v1, :cond_48
+    :goto_0
+    if-ge v3, v1, :cond_2
 
     aget-object v4, p0, v3
 
@@ -292,16 +292,16 @@
 
     const/4 v7, 0x1
 
-    if-ne v5, v6, :cond_26
+    if-ne v5, v6, :cond_1
 
     move v5, v7
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_26
+    :cond_1
     move v5, v2
 
-    :goto_27
+    :goto_1
     invoke-static {v5}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 538
@@ -337,14 +337,14 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_48
+    :cond_2
     return-object v0
 .end method
 
 .method static encodeStreamKeys(Ljava/util/List;)Ljava/lang/String;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -363,12 +363,12 @@
     const/4 v1, 0x0
 
     .line 414
-    :goto_6
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_36
+    if-ge v1, v2, :cond_0
 
     .line 415
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -418,15 +418,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 424
-    :cond_36
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result p0
 
-    if-lez p0, :cond_45
+    if-lez p0, :cond_1
 
     .line 425
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -438,7 +438,7 @@
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 427
-    :cond_45
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -447,7 +447,7 @@
 .end method
 
 .method private ensureInitialized()V
-    .registers 10
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -466,21 +466,21 @@
     monitor-enter v3
 
     .line 287
-    :try_start_9
+    :try_start_0
     iget-boolean v4, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->initialized:Z
 
-    if-eqz v4, :cond_f
+    if-eqz v4, :cond_0
 
     .line 288
     monitor-exit v3
-    :try_end_e
-    .catchall {:try_start_9 .. :try_end_e} :catchall_8e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     return-void
 
     .line 291
-    :cond_f
-    :try_start_f
+    :cond_0
+    :try_start_1
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->databaseProvider:Landroidx/media3/database/DatabaseProvider;
 
     invoke-interface {v4}, Landroidx/media3/database/DatabaseProvider;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -498,7 +498,7 @@
 
     const/4 v5, 0x3
 
-    if-eq v4, v5, :cond_82
+    if-eq v4, v5, :cond_3
 
     .line 294
     iget-object v7, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->databaseProvider:Landroidx/media3/database/DatabaseProvider;
@@ -509,34 +509,34 @@
 
     .line 295
     invoke-virtual {v7}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
-    :try_end_28
-    .catch Landroid/database/SQLException; {:try_start_f .. :try_end_28} :catch_87
-    .catchall {:try_start_f .. :try_end_28} :catchall_8e
+    :try_end_1
+    .catch Landroid/database/SQLException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 297
-    :try_start_28
+    :try_start_2
     iget-object v8, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->name:Ljava/lang/String;
 
     invoke-static {v7, v6, v8, v5}, Landroidx/media3/database/VersionTable;->setVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;I)V
 
     const/4 v5, 0x2
 
-    if-ne v4, v5, :cond_35
+    if-ne v4, v5, :cond_1
 
     .line 300
     invoke-direct {p0, v7}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->loadDownloadsFromVersion2(Landroid/database/sqlite/SQLiteDatabase;)Ljava/util/List;
 
     move-result-object v4
 
-    goto :goto_3a
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     .line 301
-    :goto_3a
+    :goto_0
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -579,12 +579,12 @@
 
     move-result-object v0
 
-    :goto_66
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_76
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -595,21 +595,21 @@
     .line 304
     invoke-direct {p0, v1, v7}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->putDownloadInternal(Landroidx/media3/exoplayer/offline/Download;Landroid/database/sqlite/SQLiteDatabase;)V
 
-    goto :goto_66
+    goto :goto_1
 
     .line 306
-    :cond_76
+    :cond_2
     invoke-virtual {v7}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_79
-    .catchall {:try_start_28 .. :try_end_79} :catchall_7d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 308
-    :try_start_79
+    :try_start_3
     invoke-virtual {v7}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    goto :goto_82
+    goto :goto_2
 
-    :catchall_7d
+    :catchall_0
     move-exception v0
 
     invoke-virtual {v7}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
@@ -617,23 +617,23 @@
     .line 309
     throw v0
 
-    :cond_82
-    :goto_82
+    :cond_3
+    :goto_2
     const/4 v0, 0x1
 
     .line 311
     iput-boolean v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->initialized:Z
-    :try_end_85
-    .catch Landroid/database/SQLException; {:try_start_79 .. :try_end_85} :catch_87
-    .catchall {:try_start_79 .. :try_end_85} :catchall_8e
+    :try_end_3
+    .catch Landroid/database/SQLException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 315
-    :try_start_85
+    :try_start_4
     monitor-exit v3
 
     return-void
 
-    :catch_87
+    :catch_0
     move-exception v0
 
     .line 313
@@ -643,19 +643,19 @@
 
     throw v1
 
-    :catchall_8e
+    :catchall_1
     move-exception v0
 
     .line 315
     monitor-exit v3
-    :try_end_90
-    .catchall {:try_start_85 .. :try_end_90} :catchall_8e
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     throw v0
 .end method
 
 .method private getCursor(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -689,12 +689,12 @@
     invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p1
-    :try_end_14
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_14} :catch_15
+    :try_end_0
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_15
+    :catch_0
     move-exception p1
 
     .line 407
@@ -706,7 +706,7 @@
 .end method
 
 .method private static getDownloadForCurrentRow(Landroid/database/Cursor;)Landroidx/media3/exoplayer/offline/Download;
-    .registers 16
+    .locals 15
 
     const/16 v0, 0xe
 
@@ -779,14 +779,14 @@
     .line 454
     array-length v3, v0
 
-    if-lez v3, :cond_3f
+    if-lez v3, :cond_0
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_40
+    :goto_0
     invoke-virtual {v1, v0}, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->setKeySetId([B)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
 
     move-result-object v0
@@ -848,7 +848,7 @@
 
     move-result v5
 
-    if-ne v5, v1, :cond_7c
+    if-ne v5, v1, :cond_1
 
     const/16 v0, 0xb
 
@@ -857,7 +857,7 @@
 
     move-result v2
 
-    :cond_7c
+    :cond_1
     move v13, v2
 
     .line 469
@@ -899,7 +899,7 @@
 .end method
 
 .method private static getDownloadForCurrentRowV2(Landroid/database/Cursor;)Landroidx/media3/exoplayer/offline/Download;
-    .registers 16
+    .locals 15
 
     .line 500
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
@@ -1023,7 +1023,7 @@
 
     move-result v5
 
-    if-ne v5, v2, :cond_71
+    if-ne v5, v2, :cond_0
 
     const/16 v0, 0xb
 
@@ -1032,7 +1032,7 @@
 
     move-result v1
 
-    :cond_71
+    :cond_0
     move v13, v1
 
     .line 518
@@ -1074,19 +1074,19 @@
 .end method
 
 .method private static varargs getStateQuery([I)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 431
     array-length v0, p0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const-string p0, "1"
 
     return-object p0
 
     .line 434
-    :cond_6
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "state IN ("
@@ -1096,12 +1096,12 @@
     const/4 v1, 0x0
 
     .line 436
-    :goto_e
+    :goto_0
     array-length v2, p0
 
-    if-ge v1, v2, :cond_20
+    if-ge v1, v2, :cond_2
 
-    if-lez v1, :cond_18
+    if-lez v1, :cond_1
 
     const/16 v2, 0x2c
 
@@ -1109,16 +1109,16 @@
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 440
-    :cond_18
+    :cond_1
     aget v2, p0, v1
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_20
+    :cond_2
     const/16 p0, 0x29
 
     .line 442
@@ -1133,7 +1133,7 @@
 .end method
 
 .method private static inferMimeType(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "dash"
 
@@ -1142,13 +1142,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const-string p0, "application/dash+xml"
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const-string v0, "hls"
 
     .line 383
@@ -1156,13 +1156,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     const-string p0, "application/x-mpegURL"
 
     return-object p0
 
-    :cond_16
+    :cond_1
     const-string v0, "ss"
 
     .line 385
@@ -1170,20 +1170,20 @@
 
     move-result p0
 
-    if-eqz p0, :cond_21
+    if-eqz p0, :cond_2
 
     const-string p0, "application/vnd.ms-sstr+xml"
 
     return-object p0
 
-    :cond_21
+    :cond_2
     const-string/jumbo p0, "video/x-unknown"
 
     return-object p0
 .end method
 
 .method private loadDownloadsFromVersion2(Landroid/database/sqlite/SQLiteDatabase;)Ljava/util/List;
-    .registers 20
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1211,11 +1211,11 @@
 
     move-result v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_0
 
     return-object v0
 
-    :cond_12
+    :cond_0
     const-string v4, "id"
 
     const-string v5, "title"
@@ -1270,13 +1270,13 @@
     move-result-object v2
 
     .line 372
-    :goto_41
-    :try_start_41
+    :goto_0
+    :try_start_0
     invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_4f
+    if-eqz v3, :cond_1
 
     .line 373
     invoke-static {v2}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->getDownloadForCurrentRowV2(Landroid/database/Cursor;)Landroidx/media3/exoplayer/offline/Download;
@@ -1284,68 +1284,68 @@
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_4e
-    .catchall {:try_start_41 .. :try_end_4e} :catchall_55
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_4f
-    if-eqz v2, :cond_54
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 376
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    :cond_54
+    :cond_2
     return-object v0
 
-    :catchall_55
+    :catchall_0
     move-exception v0
 
     move-object v3, v0
 
-    if-eqz v2, :cond_62
+    if-eqz v2, :cond_3
 
     .line 363
-    :try_start_59
+    :try_start_1
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
-    :try_end_5c
-    .catchall {:try_start_59 .. :try_end_5c} :catchall_5d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_62
+    goto :goto_1
 
-    :catchall_5d
+    :catchall_1
     move-exception v0
 
     move-object v2, v0
 
     invoke-virtual {v3, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_62
-    :goto_62
+    :cond_3
+    :goto_1
     throw v3
 .end method
 
 .method private putDownloadInternal(Landroidx/media3/exoplayer/offline/Download;Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 7
+    .locals 4
 
     .line 320
     iget-object v0, p1, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/offline/DownloadRequest;->keySetId:[B
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     iget-object v0, p1, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
 
     iget-object v0, v0, Landroidx/media3/exoplayer/offline/DownloadRequest;->keySetId:[B
 
     .line 321
-    :goto_d
+    :goto_0
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
@@ -1522,7 +1522,7 @@
 
 # virtual methods
 .method public getDownload(Ljava/lang/String;)Landroidx/media3/exoplayer/offline/Download;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1532,7 +1532,7 @@
     .line 186
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
-    :try_start_3
+    :try_start_0
     const-string v0, "id = ?"
 
     const/4 v1, 0x1
@@ -1547,81 +1547,81 @@
     invoke-direct {p0, v0, v1}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->getCursor(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p1
-    :try_end_f
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_3 .. :try_end_f} :catch_35
+    :try_end_0
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 188
-    :try_start_f
+    :try_start_1
     invoke-interface {p1}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
-    :try_end_13
-    .catchall {:try_start_f .. :try_end_13} :catchall_29
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     .line 193
-    :try_start_17
+    :try_start_2
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
-    :try_end_1a
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_17 .. :try_end_1a} :catch_35
+    :try_end_2
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :cond_1a
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 
     .line 191
-    :cond_1c
-    :try_start_1c
+    :cond_1
+    :try_start_3
     invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
 
     .line 192
     invoke-static {p1}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->getDownloadForCurrentRow(Landroid/database/Cursor;)Landroidx/media3/exoplayer/offline/Download;
 
     move-result-object v0
-    :try_end_23
-    .catchall {:try_start_1c .. :try_end_23} :catchall_29
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_2
 
     .line 193
-    :try_start_25
+    :try_start_4
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
-    :try_end_28
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_25 .. :try_end_28} :catch_35
+    :try_end_4
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_4 .. :try_end_4} :catch_0
 
-    :cond_28
+    :cond_2
     return-object v0
 
-    :catchall_29
+    :catchall_0
     move-exception v0
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_3
 
     .line 187
-    :try_start_2c
+    :try_start_5
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
-    :try_end_2f
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_30
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    goto :goto_34
+    goto :goto_0
 
-    :catchall_30
+    :catchall_1
     move-exception p1
 
-    :try_start_31
+    :try_start_6
     invoke-virtual {v0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_34
-    :goto_34
+    :cond_3
+    :goto_0
     throw v0
-    :try_end_35
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_31 .. :try_end_35} :catch_35
+    :try_end_6
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_6 .. :try_end_6} :catch_0
 
-    :catch_35
+    :catch_0
     move-exception p1
 
     .line 194
@@ -1633,7 +1633,7 @@
 .end method
 
 .method public varargs getDownloads([I)Landroidx/media3/exoplayer/offline/DownloadCursor;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1663,7 +1663,7 @@
 .end method
 
 .method public putDownload(Landroidx/media3/exoplayer/offline/Download;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1674,7 +1674,7 @@
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
     .line 209
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->databaseProvider:Landroidx/media3/database/DatabaseProvider;
 
     invoke-interface {v0}, Landroidx/media3/database/DatabaseProvider;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -1683,12 +1683,12 @@
 
     .line 210
     invoke-direct {p0, p1, v0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->putDownloadInternal(Landroidx/media3/exoplayer/offline/Download;Landroid/database/sqlite/SQLiteDatabase;)V
-    :try_end_c
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_3 .. :try_end_c} :catch_d
+    :try_end_0
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_d
+    :catch_0
     move-exception p1
 
     .line 212
@@ -1700,7 +1700,7 @@
 .end method
 
 .method public removeDownload(Ljava/lang/String;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1711,7 +1711,7 @@
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
     .line 220
-    :try_start_3
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->databaseProvider:Landroidx/media3/database/DatabaseProvider;
 
     invoke-interface {v0}, Landroidx/media3/database/DatabaseProvider;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -1731,12 +1731,12 @@
     aput-object p1, v3, v4
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_16
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_3 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 222
@@ -1748,7 +1748,7 @@
 .end method
 
 .method public setDownloadingStatesToQueued()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1759,7 +1759,7 @@
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
     .line 230
-    :try_start_3
+    :try_start_0
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
@@ -1790,12 +1790,12 @@
     const/4 v4, 0x0
 
     invoke-virtual {v1, v2, v0, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_20
-    .catch Landroid/database/SQLException; {:try_start_3 .. :try_end_20} :catch_21
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_21
+    :catch_0
     move-exception v0
 
     .line 235
@@ -1807,7 +1807,7 @@
 .end method
 
 .method public setStatesToRemoving()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1818,7 +1818,7 @@
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
     .line 243
-    :try_start_3
+    :try_start_0
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
@@ -1858,12 +1858,12 @@
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v0, v3, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_28
-    .catch Landroid/database/SQLException; {:try_start_3 .. :try_end_28} :catch_29
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_29
+    :catch_0
     move-exception v0
 
     .line 251
@@ -1875,7 +1875,7 @@
 .end method
 
 .method public setStopReason(I)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1886,7 +1886,7 @@
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
     .line 259
-    :try_start_3
+    :try_start_0
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
@@ -1915,12 +1915,12 @@
     const/4 v3, 0x0
 
     invoke-virtual {p1, v1, v0, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_1f
-    .catch Landroid/database/SQLException; {:try_start_3 .. :try_end_1f} :catch_20
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_20
+    :catch_0
     move-exception p1
 
     .line 264
@@ -1932,7 +1932,7 @@
 .end method
 
 .method public setStopReason(Ljava/lang/String;I)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -1945,7 +1945,7 @@
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DefaultDownloadIndex;->ensureInitialized()V
 
     .line 272
-    :try_start_5
+    :try_start_0
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
@@ -1996,12 +1996,12 @@
     aput-object p1, v3, v4
 
     invoke-virtual {p2, v2, v1, v0, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_37
-    .catch Landroid/database/SQLException; {:try_start_5 .. :try_end_37} :catch_38
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_38
+    :catch_0
     move-exception p1
 
     .line 281

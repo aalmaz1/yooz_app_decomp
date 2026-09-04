@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final addCallback(Landroidx/activity/OnBackPressedDispatcher;Landroidx/lifecycle/LifecycleOwner;ZLkotlin/jvm/functions/Function1;)Landroidx/activity/OnBackPressedCallback;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,7 +63,7 @@
 
     invoke-direct {v0, p2, p3}, Landroidx/activity/OnBackPressedDispatcherKt$addCallback$callback$1;-><init>(ZLkotlin/jvm/functions/Function1;)V
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_0
 
     .line 427
     move-object p2, v0
@@ -72,10 +72,10 @@
 
     invoke-virtual {p0, p1, p2}, Landroidx/activity/OnBackPressedDispatcher;->addCallback(Landroidx/lifecycle/LifecycleOwner;Landroidx/activity/OnBackPressedCallback;)V
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 429
-    :cond_18
+    :cond_0
     move-object p1, v0
 
     check-cast p1, Landroidx/activity/OnBackPressedCallback;
@@ -83,30 +83,30 @@
     invoke-virtual {p0, p1}, Landroidx/activity/OnBackPressedDispatcher;->addCallback(Landroidx/activity/OnBackPressedCallback;)V
 
     .line 431
-    :goto_1e
+    :goto_0
     check-cast v0, Landroidx/activity/OnBackPressedCallback;
 
     return-object v0
 .end method
 
 .method public static synthetic addCallback$default(Landroidx/activity/OnBackPressedDispatcher;Landroidx/lifecycle/LifecycleOwner;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/activity/OnBackPressedCallback;
-    .registers 6
+    .locals 0
 
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
     const/4 p2, 0x1
 
     .line 416
-    :cond_a
+    :cond_1
     invoke-static {p0, p1, p2, p3}, Landroidx/activity/OnBackPressedDispatcherKt;->addCallback(Landroidx/activity/OnBackPressedDispatcher;Landroidx/lifecycle/LifecycleOwner;ZLkotlin/jvm/functions/Function1;)Landroidx/activity/OnBackPressedCallback;
 
     move-result-object p0

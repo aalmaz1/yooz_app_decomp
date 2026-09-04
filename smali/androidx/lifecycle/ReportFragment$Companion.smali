@@ -51,7 +51,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/lifecycle/ReportFragment$Companion;-><init>()V
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public static synthetic get$annotations(Landroid/app/Activity;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final dispatch$lifecycle_runtime_release(Landroid/app/Activity;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -93,7 +93,7 @@
     .line 185
     instance-of v0, p1, Landroidx/lifecycle/LifecycleRegistryOwner;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 186
     check-cast p1, Landroidx/lifecycle/LifecycleRegistryOwner;
@@ -107,10 +107,10 @@
     return-void
 
     .line 189
-    :cond_18
+    :cond_0
     instance-of v0, p1, Landroidx/lifecycle/LifecycleOwner;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 190
     check-cast p1, Landroidx/lifecycle/LifecycleOwner;
@@ -122,19 +122,19 @@
     .line 191
     instance-of v0, p1, Landroidx/lifecycle/LifecycleRegistry;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 192
     check-cast p1, Landroidx/lifecycle/LifecycleRegistry;
 
     invoke-virtual {p1, p2}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
 
-    :cond_2b
+    :cond_1
     return-void
 .end method
 
 .method public final get(Landroid/app/Activity;)Landroidx/lifecycle/ReportFragment;
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -161,7 +161,7 @@
 .end method
 
 .method public final injectIfNeededIn(Landroid/app/Activity;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -174,7 +174,7 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_10
+    if-lt v0, v1, :cond_0
 
     .line 169
     sget-object v0, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;->Companion:Landroidx/lifecycle/ReportFragment$LifecycleCallbacks$Companion;
@@ -182,7 +182,7 @@
     invoke-virtual {v0, p1}, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks$Companion;->registerIn(Landroid/app/Activity;)V
 
     .line 175
-    :cond_10
+    :cond_0
     invoke-virtual {p1}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object p1
@@ -194,7 +194,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_1
 
     .line 177
     invoke-virtual {p1}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
@@ -216,6 +216,6 @@
     .line 179
     invoke-virtual {p1}, Landroid/app/FragmentManager;->executePendingTransactions()Z
 
-    :cond_31
+    :cond_1
     return-void
 .end method

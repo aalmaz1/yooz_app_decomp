@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentState;
-    .registers 3
+    .locals 1
 
     .line 135
     new-instance v0, Landroidx/fragment/app/FragmentState;
@@ -50,7 +50,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 132
     invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentState$1;->createFromParcel(Landroid/os/Parcel;)Landroidx/fragment/app/FragmentState;
@@ -61,7 +61,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/fragment/app/FragmentState;
-    .registers 2
+    .locals 0
 
     .line 140
     new-array p1, p1, [Landroidx/fragment/app/FragmentState;
@@ -70,7 +70,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 132
     invoke-virtual {p0, p1}, Landroidx/fragment/app/FragmentState$1;->newArray(I)[Landroidx/fragment/app/FragmentState;

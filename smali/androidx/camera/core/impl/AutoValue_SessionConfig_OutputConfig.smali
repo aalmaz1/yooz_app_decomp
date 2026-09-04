@@ -33,7 +33,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/camera/core/impl/DeferrableSurface;Ljava/util/List;Ljava/lang/String;ILandroidx/camera/core/DynamicRange;)V
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -70,7 +70,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/core/impl/DeferrableSurface;Ljava/util/List;Ljava/lang/String;ILandroidx/camera/core/DynamicRange;Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig$1;)V
-    .registers 7
+    .locals 0
 
     .line 11
     invoke-direct/range {p0 .. p5}, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;-><init>(Landroidx/camera/core/impl/DeferrableSurface;Ljava/util/List;Ljava/lang/String;ILandroidx/camera/core/DynamicRange;)V
@@ -81,21 +81,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 81
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/SessionConfig$OutputConfig;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_3
 
     .line 82
     check-cast p1, Landroidx/camera/core/impl/SessionConfig$OutputConfig;
@@ -111,7 +111,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->sharedSurfaces:Ljava/util/List;
 
@@ -124,22 +124,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->physicalCameraId:Ljava/lang/String;
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1
 
     .line 85
     invoke-virtual {p1}, Landroidx/camera/core/impl/SessionConfig$OutputConfig;->getPhysicalCameraId()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_2
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/core/impl/SessionConfig$OutputConfig;->getPhysicalCameraId()Ljava/lang/String;
 
     move-result-object v3
@@ -148,9 +148,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_2
 
-    :goto_38
+    :goto_0
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->surfaceGroupId:I
 
     .line 86
@@ -158,7 +158,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_4d
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->dynamicRange:Landroidx/camera/core/DynamicRange;
 
@@ -171,22 +171,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4d
+    if-eqz p1, :cond_2
 
-    goto :goto_4e
+    goto :goto_1
 
-    :cond_4d
+    :cond_2
     move v0, v2
 
-    :goto_4e
+    :goto_1
     return v0
 
-    :cond_4f
+    :cond_3
     return v2
 .end method
 
 .method public getDynamicRange()Landroidx/camera/core/DynamicRange;
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->dynamicRange:Landroidx/camera/core/DynamicRange;
@@ -195,7 +195,7 @@
 .end method
 
 .method public getPhysicalCameraId()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 51
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->physicalCameraId:Ljava/lang/String;
@@ -204,7 +204,7 @@
 .end method
 
 .method public getSharedSurfaces()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -221,7 +221,7 @@
 .end method
 
 .method public getSurface()Landroidx/camera/core/impl/DeferrableSurface;
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->surface:Landroidx/camera/core/impl/DeferrableSurface;
@@ -230,7 +230,7 @@
 .end method
 
 .method public getSurfaceGroupId()I
-    .registers 2
+    .locals 1
 
     .line 56
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->surfaceGroupId:I
@@ -239,7 +239,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 96
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->surface:Landroidx/camera/core/impl/DeferrableSurface;
@@ -268,18 +268,18 @@
     .line 100
     iget-object v2, p0, Landroidx/camera/core/impl/AutoValue_SessionConfig_OutputConfig;->physicalCameraId:Ljava/lang/String;
 
-    if-nez v2, :cond_19
+    if-nez v2, :cond_0
 
     const/4 v2, 0x0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :goto_1d
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -304,7 +304,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 67
     new-instance v0, Ljava/lang/StringBuilder;

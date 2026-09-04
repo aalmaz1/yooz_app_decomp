@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader$ConstructorSupplier;)V
-    .registers 3
+    .locals 1
 
     .line 633
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method private maybeLoadExtractorConstructor()Ljava/lang/reflect/Constructor;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -77,43 +77,43 @@
     monitor-enter v0
 
     .line 655
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader;->extensionLoaded:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 656
     iget-object v1, p0, Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader;->extractorConstructor:Ljava/lang/reflect/Constructor;
 
     monitor-exit v0
-    :try_end_e
-    .catchall {:try_start_3 .. :try_end_e} :catchall_2a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v1
 
     .line 659
-    :cond_f
-    :try_start_f
+    :cond_0
+    :try_start_1
     iget-object v1, p0, Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader;->constructorSupplier:Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader$ConstructorSupplier;
 
     invoke-interface {v1}, Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader$ConstructorSupplier;->getConstructor()Ljava/lang/reflect/Constructor;
 
     move-result-object v1
-    :try_end_15
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_f .. :try_end_15} :catch_20
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_15} :catch_17
-    .catchall {:try_start_f .. :try_end_15} :catchall_2a
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_15
+    :try_start_2
     monitor-exit v0
 
     return-object v1
 
-    :catch_17
+    :catch_0
     move-exception v1
 
     .line 664
@@ -126,7 +126,7 @@
     throw v2
 
     .line 666
-    :catch_20
+    :catch_1
     iget-object v1, p0, Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader;->extensionLoaded:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v2, 0x1
@@ -140,13 +140,13 @@
 
     return-object v1
 
-    :catchall_2a
+    :catchall_0
     move-exception v1
 
     .line 668
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_15 .. :try_end_2c} :catchall_2a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v1
 .end method
@@ -154,33 +154,33 @@
 
 # virtual methods
 .method public varargs getExtractor([Ljava/lang/Object;)Landroidx/media3/extractor/Extractor;
-    .registers 4
+    .locals 2
 
     .line 641
     invoke-direct {p0}, Landroidx/media3/extractor/DefaultExtractorsFactory$ExtensionLoader;->maybeLoadExtractorConstructor()Ljava/lang/reflect/Constructor;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 646
-    :cond_8
-    :try_start_8
+    :cond_0
+    :try_start_0
     invoke-virtual {v0, p1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroidx/media3/extractor/Extractor;
-    :try_end_e
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_e} :catch_f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_f
+    :catch_0
     move-exception p1
 
     .line 648

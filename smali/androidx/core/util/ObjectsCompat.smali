@@ -5,7 +5,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 50
     invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -25,7 +25,7 @@
 .end method
 
 .method public static varargs hash([Ljava/lang/Object;)I
-    .registers 1
+    .locals 0
 
     .line 88
     invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
@@ -36,26 +36,26 @@
 .end method
 
 .method public static hashCode(Ljava/lang/Object;)I
-    .registers 1
+    .locals 0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
     .line 61
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_8
+    :goto_0
     return p0
 .end method
 
 .method public static requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -71,7 +71,7 @@
 .end method
 
 .method public static requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -82,12 +82,12 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 147
-    :cond_3
+    :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
     invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
@@ -96,15 +96,15 @@
 .end method
 
 .method public static toString(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_0
 
     .line 102
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    :cond_6
+    :cond_0
     return-object p1
 .end method

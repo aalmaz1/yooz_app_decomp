@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/constraintlayout/motion/widget/TouchResponse;)V
-    .registers 2
+    .locals 0
 
     .line 416
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/TouchResponse$2;->this$0:Landroidx/constraintlayout/motion/widget/TouchResponse;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onScrollChange(Landroidx/core/widget/NestedScrollView;IIII)V
-    .registers 6
+    .locals 0
 
     return-void
 .end method

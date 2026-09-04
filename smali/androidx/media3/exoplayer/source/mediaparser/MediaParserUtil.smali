@@ -31,7 +31,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static setLogSessionIdOnMediaParser(Landroid/media/MediaParser;Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 2
+    .locals 0
 
     .line 75
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/source/mediaparser/MediaParserUtil$Api31;->setLogSessionIdOnMediaParser(Landroid/media/MediaParser;Landroidx/media3/exoplayer/analytics/PlayerId;)V
@@ -49,7 +49,7 @@
 .end method
 
 .method public static toCaptionsMediaFormat(Landroidx/media3/common/Format;)Landroid/media/MediaFormat;
-    .registers 4
+    .locals 3
 
     .line 59
     new-instance v0, Landroid/media/MediaFormat;
@@ -68,7 +68,7 @@
 
     const/4 v2, -0x1
 
-    if-eq v1, v2, :cond_18
+    if-eq v1, v2, :cond_0
 
     const-string v1, "caption-service-number"
 
@@ -77,6 +77,6 @@
 
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :cond_18
+    :cond_0
     return-object v0
 .end method

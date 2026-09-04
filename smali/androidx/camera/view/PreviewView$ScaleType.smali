@@ -44,7 +44,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/view/PreviewView$ScaleType;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x6
 
@@ -91,7 +91,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 823
     new-instance v0, Landroidx/camera/view/PreviewView$ScaleType;
@@ -170,7 +170,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -187,7 +187,7 @@
 .end method
 
 .method static fromId(I)Landroidx/camera/view/PreviewView$ScaleType;
-    .registers 6
+    .locals 5
 
     .line 885
     invoke-static {}, Landroidx/camera/view/PreviewView$ScaleType;->values()[Landroidx/camera/view/PreviewView$ScaleType;
@@ -198,25 +198,25 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v1, :cond_12
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
     .line 886
     iget v4, v3, Landroidx/camera/view/PreviewView$ScaleType;->mId:I
 
-    if-ne v4, p0, :cond_f
+    if-ne v4, p0, :cond_0
 
     return-object v3
 
-    :cond_f
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 890
-    :cond_12
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -239,7 +239,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/view/PreviewView$ScaleType;
-    .registers 2
+    .locals 1
 
     .line 812
     const-class v0, Landroidx/camera/view/PreviewView$ScaleType;
@@ -254,7 +254,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/view/PreviewView$ScaleType;
-    .registers 1
+    .locals 1
 
     .line 812
     sget-object v0, Landroidx/camera/view/PreviewView$ScaleType;->$VALUES:[Landroidx/camera/view/PreviewView$ScaleType;
@@ -271,7 +271,7 @@
 
 # virtual methods
 .method getId()I
-    .registers 2
+    .locals 1
 
     .line 881
     iget v0, p0, Landroidx/camera/view/PreviewView$ScaleType;->mId:I

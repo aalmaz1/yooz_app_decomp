@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/Display;Landroidx/camera/core/CameraInfo;FF)V
-    .registers 5
+    .locals 0
 
     .line 86
     invoke-direct {p0}, Landroidx/camera/core/MeteringPointFactory;-><init>()V
@@ -36,7 +36,7 @@
 .end method
 
 .method private getRelativeCameraOrientation(Z)I
-    .registers 4
+    .locals 2
 
     .line 151
     :try_start_0
@@ -53,29 +53,29 @@
 
     move-result v0
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     rsub-int p1, v0, 0x168
 
     .line 154
     rem-int/lit16 v0, p1, 0x168
-    :try_end_12
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_12} :catch_13
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :catch_13
+    :catch_0
     const/4 v0, 0x0
 
-    :cond_14
-    :goto_14
+    :cond_0
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method protected convertPoint(FF)Landroid/graphics/PointF;
-    .registers 11
+    .locals 8
 
     .line 101
     iget v0, p0, Landroidx/camera/core/DisplayOrientedMeteringPointFactory;->mWidth:F
@@ -90,17 +90,17 @@
 
     move-result v2
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v2, 0x0
 
     .line 106
-    :goto_f
+    :goto_0
     invoke-direct {p0, v2}, Landroidx/camera/core/DisplayOrientedMeteringPointFactory;->getRelativeCameraOrientation(Z)I
 
     move-result v3
@@ -109,13 +109,13 @@
 
     const/16 v5, 0x5a
 
-    if-eq v3, v5, :cond_22
+    if-eq v3, v5, :cond_2
 
-    if-ne v3, v4, :cond_1c
+    if-ne v3, v4, :cond_1
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     move v6, p2
 
     move p2, p1
@@ -128,35 +128,35 @@
 
     move v0, v7
 
-    :cond_22
-    :goto_22
-    if-eq v3, v5, :cond_30
+    :cond_2
+    :goto_1
+    if-eq v3, v5, :cond_5
 
     const/16 v5, 0xb4
 
-    if-eq v3, v5, :cond_2e
+    if-eq v3, v5, :cond_4
 
-    if-eq v3, v4, :cond_2b
+    if-eq v3, v4, :cond_3
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_2b
+    :cond_3
     sub-float p2, v1, p2
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_2e
+    :cond_4
     sub-float p2, v1, p2
 
-    :cond_30
+    :cond_5
     sub-float p1, v0, p1
 
-    :goto_32
-    if-eqz v2, :cond_36
+    :goto_2
+    if-eqz v2, :cond_6
 
     sub-float p2, v1, p2
 
-    :cond_36
+    :cond_6
     div-float/2addr p2, v1
 
     div-float/2addr p1, v0

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 363
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getType(Landroid/content/res/TypedArray;I)I
-    .registers 2
+    .locals 0
 
     .line 369
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getType(I)I

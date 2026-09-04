@@ -89,7 +89,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.imageAnalysis.backpressureStrategy"
 
@@ -167,7 +167,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/OptionsBundle;)V
-    .registers 2
+    .locals 0
 
     .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -181,7 +181,7 @@
 
 # virtual methods
 .method public getBackpressureStrategy()I
-    .registers 2
+    .locals 1
 
     .line 104
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_BACKPRESSURE_STRATEGY:Landroidx/camera/core/impl/Config$Option;
@@ -200,7 +200,7 @@
 .end method
 
 .method public getBackpressureStrategy(I)I
-    .registers 3
+    .locals 1
 
     .line 90
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_BACKPRESSURE_STRATEGY:Landroidx/camera/core/impl/Config$Option;
@@ -223,7 +223,7 @@
 .end method
 
 .method public getConfig()Landroidx/camera/core/impl/Config;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/camera/core/impl/ImageAnalysisConfig;->mConfig:Landroidx/camera/core/impl/OptionsBundle;
@@ -232,7 +232,7 @@
 .end method
 
 .method public getImageQueueDepth()I
-    .registers 2
+    .locals 1
 
     .line 133
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_IMAGE_QUEUE_DEPTH:Landroidx/camera/core/impl/Config$Option;
@@ -251,7 +251,7 @@
 .end method
 
 .method public getImageQueueDepth(I)I
-    .registers 3
+    .locals 1
 
     .line 119
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_IMAGE_QUEUE_DEPTH:Landroidx/camera/core/impl/Config$Option;
@@ -274,7 +274,7 @@
 .end method
 
 .method public getImageReaderProxyProvider()Landroidx/camera/core/ImageReaderProxyProvider;
-    .registers 3
+    .locals 2
 
     .line 179
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_IMAGE_READER_PROXY_PROVIDER:Landroidx/camera/core/impl/Config$Option;
@@ -291,7 +291,7 @@
 .end method
 
 .method public getInputFormat()I
-    .registers 2
+    .locals 1
 
     const/16 v0, 0x23
 
@@ -299,7 +299,7 @@
 .end method
 
 .method public getOnePixelShiftEnabled(Ljava/lang/Boolean;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
 
     .line 159
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_ONE_PIXEL_SHIFT_ENABLED:Landroidx/camera/core/impl/Config$Option;
@@ -314,7 +314,7 @@
 .end method
 
 .method public getOutputImageFormat(I)I
-    .registers 3
+    .locals 1
 
     .line 149
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_OUTPUT_IMAGE_FORMAT:Landroidx/camera/core/impl/Config$Option;
@@ -337,7 +337,7 @@
 .end method
 
 .method public isOutputImageRotationEnabled(Ljava/lang/Boolean;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
 
     .line 169
     sget-object v0, Landroidx/camera/core/impl/ImageAnalysisConfig;->OPTION_OUTPUT_IMAGE_ROTATION_ENABLED:Landroidx/camera/core/impl/Config$Option;

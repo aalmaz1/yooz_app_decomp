@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static build(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 1
+    .locals 0
 
     .line 84
     check-cast p0, Landroid/media/MediaMetadata$Builder;
@@ -38,7 +38,7 @@
 .end method
 
 .method public static newInstance()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 60
     new-instance v0, Landroid/media/MediaMetadata$Builder;
@@ -49,7 +49,7 @@
 .end method
 
 .method public static putBitmap(Ljava/lang/Object;Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .registers 3
+    .locals 0
 
     .line 64
     check-cast p0, Landroid/media/MediaMetadata$Builder;
@@ -60,7 +60,7 @@
 .end method
 
 .method public static putLong(Ljava/lang/Object;Ljava/lang/String;J)V
-    .registers 4
+    .locals 0
 
     .line 68
     check-cast p0, Landroid/media/MediaMetadata$Builder;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static putRating(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     .line 72
     check-cast p0, Landroid/media/MediaMetadata$Builder;
@@ -84,7 +84,7 @@
 .end method
 
 .method public static putString(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 80
     check-cast p0, Landroid/media/MediaMetadata$Builder;
@@ -95,7 +95,7 @@
 .end method
 
 .method public static putText(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 0
 
     .line 76
     check-cast p0, Landroid/media/MediaMetadata$Builder;

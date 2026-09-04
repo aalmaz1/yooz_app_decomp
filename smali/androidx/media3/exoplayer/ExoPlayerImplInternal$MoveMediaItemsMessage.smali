@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(IIILandroidx/media3/exoplayer/source/ShuffleOrder;)V
-    .registers 5
+    .locals 0
 
     .line 3427
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

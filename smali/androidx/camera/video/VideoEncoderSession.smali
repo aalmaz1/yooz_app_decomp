@@ -77,7 +77,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$BN6ownxJ9fjdfBbttSxzL9Jz6ks(Landroidx/camera/video/VideoEncoderSession;Landroidx/camera/core/SurfaceRequest$Result;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/camera/video/VideoEncoderSession;->onSurfaceRequestComplete(Landroidx/camera/core/SurfaceRequest$Result;)V
 
@@ -85,7 +85,7 @@
 .end method
 
 .method constructor <init>(Landroidx/camera/video/internal/encoder/EncoderFactory;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)V
-    .registers 7
+    .locals 3
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -155,7 +155,7 @@
 .end method
 
 .method private closeInternal()V
-    .registers 4
+    .locals 3
 
     .line 258
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$2;->$SwitchMap$androidx$camera$video$VideoEncoderSession$VideoEncoderState:[I
@@ -170,35 +170,35 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x3
 
     const-string v2, "VideoEncoderSession"
 
-    if-eq v0, v1, :cond_3e
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_3e
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_0
 
     const-string v0, "closeInternal in RELEASED state, No-op"
 
     .line 272
     invoke-static {v2, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_60
+    goto :goto_0
 
     .line 275
-    :cond_21
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -228,7 +228,7 @@
     throw v0
 
     .line 268
-    :cond_3e
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "closeInternal in "
@@ -258,18 +258,18 @@
 
     iput-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoderState:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
 
-    goto :goto_60
+    goto :goto_0
 
     .line 263
-    :cond_5d
+    :cond_2
     invoke-virtual {p0}, Landroidx/camera/video/VideoEncoderSession;->terminateNow()V
 
-    :goto_60
+    :goto_0
     return-void
 .end method
 
 .method private configureVideoEncoderInternal(Landroidx/camera/core/SurfaceRequest;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;Landroidx/camera/video/MediaSpec;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 12
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -316,7 +316,7 @@
     move-result-object p2
 
     .line 308
-    :try_start_19
+    :try_start_0
     iget-object p3, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoderFactory:Landroidx/camera/video/internal/encoder/EncoderFactory;
 
     iget-object p4, p0, Landroidx/camera/video/VideoEncoderSession;->mExecutor:Ljava/util/concurrent/Executor;
@@ -326,8 +326,8 @@
     move-result-object p2
 
     iput-object p2, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
-    :try_end_23
-    .catch Landroidx/camera/video/internal/encoder/InvalidConfigException; {:try_start_19 .. :try_end_23} :catch_43
+    :try_end_0
+    .catch Landroidx/camera/video/internal/encoder/InvalidConfigException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 315
     invoke-interface {p2}, Landroidx/camera/video/internal/encoder/Encoder;->getInput()Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
@@ -337,7 +337,7 @@
     .line 316
     instance-of p3, p2, Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput;
 
-    if-nez p3, :cond_36
+    if-nez p3, :cond_0
 
     .line 317
     new-instance p1, Ljava/lang/AssertionError;
@@ -351,7 +351,7 @@
     return-void
 
     .line 321
-    :cond_36
+    :cond_0
     check-cast p2, Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput;
 
     iget-object p3, p0, Landroidx/camera/video/VideoEncoderSession;->mSequentialExecutor:Ljava/util/concurrent/Executor;
@@ -364,7 +364,7 @@
 
     return-void
 
-    :catch_43
+    :catch_0
     move-exception p1
 
     const-string p2, "VideoEncoderSession"
@@ -381,7 +381,7 @@
 .end method
 
 .method private onSurfaceRequestComplete(Landroidx/camera/core/SurfaceRequest$Result;)V
-    .registers 4
+    .locals 2
 
     .line 366
     new-instance v0, Ljava/lang/StringBuilder;
@@ -418,7 +418,7 @@
     .line 368
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mActiveSurface:Landroid/view/Surface;
 
-    if-ne p1, v0, :cond_32
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x0
 
@@ -435,20 +435,20 @@
     .line 371
     invoke-direct {p0}, Landroidx/camera/video/VideoEncoderSession;->closeInternal()V
 
-    goto :goto_35
+    goto :goto_0
 
     .line 374
-    :cond_32
+    :cond_0
     invoke-virtual {p1}, Landroid/view/Surface;->release()V
 
-    :goto_35
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method configure(Landroidx/camera/core/SurfaceRequest;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/MediaSpec;Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 12
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -476,7 +476,7 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_28
+    if-eq v0, v1, :cond_0
 
     .line 157
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -506,7 +506,7 @@
     return-object p1
 
     .line 114
-    :cond_28
+    :cond_0
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;->INITIALIZING:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
 
     iput-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoderState:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
@@ -594,28 +594,28 @@
 .end method
 
 .method getActiveSurface()Landroid/view/Surface;
-    .registers 3
+    .locals 2
 
     .line 244
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoderState:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
 
     sget-object v1, Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;->READY:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 247
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mActiveSurface:Landroid/view/Surface;
 
     return-object v0
 .end method
 
 .method getReadyToReleaseFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -636,7 +636,7 @@
 .end method
 
 .method getVideoEncoder()Landroidx/camera/video/internal/encoder/Encoder;
-    .registers 2
+    .locals 1
 
     .line 253
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
@@ -645,7 +645,7 @@
 .end method
 
 .method isConfiguredSurfaceRequest(Landroidx/camera/core/SurfaceRequest;)Z
-    .registers 6
+    .locals 4
 
     .line 164
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$2;->$SwitchMap$androidx$camera$video$VideoEncoderSession$VideoEncoderState:[I
@@ -662,28 +662,28 @@
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_3d
+    if-eq v0, v2, :cond_2
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_38
+    if-eq v0, v3, :cond_1
 
     const/4 v3, 0x3
 
-    if-eq v0, v3, :cond_38
+    if-eq v0, v3, :cond_1
 
     const/4 p1, 0x4
 
-    if-eq v0, p1, :cond_3d
+    if-eq v0, p1, :cond_2
 
     const/4 p1, 0x5
 
-    if-ne v0, p1, :cond_1b
+    if-ne v0, p1, :cond_0
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 176
-    :cond_1b
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -713,20 +713,20 @@
     throw p1
 
     .line 168
-    :cond_38
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mSurfaceRequest:Landroidx/camera/core/SurfaceRequest;
 
-    if-ne v0, p1, :cond_3d
+    if-ne v0, p1, :cond_2
 
     move v1, v2
 
-    :cond_3d
-    :goto_3d
+    :cond_2
+    :goto_0
     return v1
 .end method
 
 .method synthetic lambda$configure$0$androidx-camera-video-VideoEncoderSession(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -755,7 +755,7 @@
 .end method
 
 .method synthetic lambda$configure$1$androidx-camera-video-VideoEncoderSession(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -784,7 +784,7 @@
 .end method
 
 .method synthetic lambda$configure$2$androidx-camera-video-VideoEncoderSession(Landroidx/camera/core/SurfaceRequest;Landroidx/camera/core/impl/Timebase;Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;Landroidx/camera/video/MediaSpec;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -813,7 +813,7 @@
 .end method
 
 .method synthetic lambda$configureVideoEncoderInternal$4$androidx-camera-video-VideoEncoderSession(Landroid/view/Surface;)V
-    .registers 3
+    .locals 1
 
     .line 353
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mOnSurfaceUpdateListener:Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;
@@ -824,7 +824,7 @@
 .end method
 
 .method synthetic lambda$configureVideoEncoderInternal$5$androidx-camera-video-VideoEncoderSession(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;Landroidx/camera/core/SurfaceRequest;Landroid/view/Surface;)V
-    .registers 8
+    .locals 4
 
     .line 323
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$2;->$SwitchMap$androidx$camera$video$VideoEncoderSession$VideoEncoderState:[I
@@ -843,28 +843,28 @@
 
     const-string v3, "VideoEncoderSession"
 
-    if-eq v0, v1, :cond_b1
+    if-eq v0, v1, :cond_5
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_5e
+    if-eq v0, v1, :cond_3
 
     const/4 p2, 0x3
 
-    if-eq v0, p2, :cond_3b
+    if-eq v0, p2, :cond_1
 
     const/4 p2, 0x4
 
-    if-eq v0, p2, :cond_b1
+    if-eq v0, p2, :cond_5
 
     const/4 p2, 0x5
 
-    if-ne v0, p2, :cond_1e
+    if-ne v0, p2, :cond_0
 
-    goto/16 :goto_b1
+    goto/16 :goto_0
 
     .line 358
-    :cond_1e
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -894,14 +894,14 @@
     throw p1
 
     .line 350
-    :cond_3b
+    :cond_1
     iget-object p1, p0, Landroidx/camera/video/VideoEncoderSession;->mOnSurfaceUpdateListener:Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Landroidx/camera/video/VideoEncoderSession;->mOnSurfaceUpdateExecutor:Ljava/util/concurrent/Executor;
 
-    if-eqz p1, :cond_4b
+    if-eqz p1, :cond_2
 
     .line 352
     new-instance p2, Landroidx/camera/video/VideoEncoderSession$$ExternalSyntheticLambda2;
@@ -911,7 +911,7 @@
     invoke-interface {p1, p2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     .line 355
-    :cond_4b
+    :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Surface is updated in READY state: "
@@ -928,15 +928,15 @@
 
     invoke-static {v3, p1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_c8
+    goto :goto_1
 
     .line 333
-    :cond_5e
+    :cond_3
     invoke-virtual {p2}, Landroidx/camera/core/SurfaceRequest;->isServiced()Z
 
     move-result v0
 
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_4
 
     .line 334
     new-instance p3, Ljava/lang/StringBuilder;
@@ -975,10 +975,10 @@
     .line 338
     invoke-direct {p0}, Landroidx/camera/video/VideoEncoderSession;->closeInternal()V
 
-    goto :goto_c8
+    goto :goto_1
 
     .line 342
-    :cond_89
+    :cond_4
     iput-object p3, p0, Landroidx/camera/video/VideoEncoderSession;->mActiveSurface:Landroid/view/Surface;
 
     .line 343
@@ -1017,11 +1017,11 @@
 
     invoke-virtual {p1, p2}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    goto :goto_c8
+    goto :goto_1
 
     .line 329
-    :cond_b1
-    :goto_b1
+    :cond_5
+    :goto_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string p3, "Not provide surface in "
@@ -1043,12 +1043,12 @@
     .line 330
     invoke-virtual {p1, v2}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    :goto_c8
+    :goto_1
     return-void
 .end method
 
 .method synthetic lambda$terminateNow$3$androidx-camera-video-VideoEncoderSession()V
-    .registers 3
+    .locals 2
 
     .line 229
     iget-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mReleasedCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -1061,7 +1061,7 @@
 .end method
 
 .method setOnSurfaceUpdateListener(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/Encoder$SurfaceInput$OnSurfaceUpdateListener;)V
-    .registers 3
+    .locals 0
 
     .line 282
     iput-object p1, p0, Landroidx/camera/video/VideoEncoderSession;->mOnSurfaceUpdateExecutor:Ljava/util/concurrent/Executor;
@@ -1073,7 +1073,7 @@
 .end method
 
 .method signalTermination()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1097,7 +1097,7 @@
 .end method
 
 .method terminateNow()V
-    .registers 5
+    .locals 4
 
     .line 209
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$2;->$SwitchMap$androidx$camera$video$VideoEncoderSession$VideoEncoderState:[I
@@ -1112,25 +1112,25 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_9c
+    if-eq v0, v1, :cond_3
 
     const/4 v1, 0x2
 
     const-string v2, "VideoEncoderSession"
 
-    if-eq v0, v1, :cond_53
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_53
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_53
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x5
 
-    if-ne v0, v1, :cond_36
+    if-ne v0, v1, :cond_0
 
     .line 215
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1160,7 +1160,7 @@
     return-void
 
     .line 237
-    :cond_36
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1190,7 +1190,7 @@
     throw v0
 
     .line 222
-    :cond_53
+    :cond_1
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;->RELEASED:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
 
     iput-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoderState:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
@@ -1210,7 +1210,7 @@
     .line 225
     iget-object v1, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
 
-    if-eqz v1, :cond_91
+    if-eqz v1, :cond_2
 
     .line 226
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1254,9 +1254,9 @@
     .line 230
     iput-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoder:Landroidx/camera/video/internal/encoder/Encoder;
 
-    goto :goto_9b
+    goto :goto_0
 
-    :cond_91
+    :cond_2
     const-string v1, "There\'s no VideoEncoder to release! Finish release completer."
 
     .line 232
@@ -1267,11 +1267,11 @@
 
     invoke-virtual {v1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    :goto_9b
+    :goto_0
     return-void
 
     .line 212
-    :cond_9c
+    :cond_3
     sget-object v0, Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;->RELEASED:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
 
     iput-object v0, p0, Landroidx/camera/video/VideoEncoderSession;->mVideoEncoderState:Landroidx/camera/video/VideoEncoderSession$VideoEncoderState;
@@ -1280,7 +1280,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 381
     new-instance v0, Ljava/lang/StringBuilder;

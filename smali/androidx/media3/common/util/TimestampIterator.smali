@@ -8,7 +8,7 @@
 .end method
 
 .method public getLastTimestampUs()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 

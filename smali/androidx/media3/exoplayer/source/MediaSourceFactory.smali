@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 38
     new-instance v0, Landroidx/media3/exoplayer/source/MediaSourceFactory$1;

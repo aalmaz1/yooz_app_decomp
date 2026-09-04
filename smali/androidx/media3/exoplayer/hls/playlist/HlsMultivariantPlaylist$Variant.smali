@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Landroidx/media3/common/Format;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 0
 
     .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public static createMediaPlaylistVariantUrl(Landroid/net/Uri;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;
-    .registers 9
+    .locals 8
 
     .line 106
     new-instance v0, Landroidx/media3/common/Format$Builder;
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public copyWithFormat(Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;
-    .registers 10
+    .locals 8
 
     .line 119
     new-instance v7, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;

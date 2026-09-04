@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method static saveProfile(Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;)V
-    .registers 3
+    .locals 2
 
     .line 150
     invoke-static {}, Landroid/os/Process;->myPid()I
@@ -66,14 +66,14 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 5
+    .locals 2
 
-    if-nez p2, :cond_3
+    if-nez p2, :cond_0
 
     return-void
 
     .line 102
-    :cond_3
+    :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -85,7 +85,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
     .line 104
     new-instance p2, Landroidx/media3/exoplayer/dash/offline/DashDownloader$$ExternalSyntheticLambda0;
@@ -100,9 +100,9 @@
 
     invoke-static {p1, p2, v0, v1}, Landroidx/profileinstaller/ProfileInstaller;->writeProfile(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;Z)V
 
-    goto/16 :goto_9b
+    goto/16 :goto_0
 
-    :cond_1f
+    :cond_1
     const-string v1, "androidx.profileinstaller.action.SKIP_FILE"
 
     .line 106
@@ -110,14 +110,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_3
 
     .line 107
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object p2
 
-    if-eqz p2, :cond_9b
+    if-eqz p2, :cond_6
 
     const-string v0, "EXTRA_SKIP_FILE_OPERATION"
 
@@ -133,7 +133,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 111
     new-instance p2, Landroidx/media3/exoplayer/dash/offline/DashDownloader$$ExternalSyntheticLambda0;
@@ -146,9 +146,9 @@
 
     invoke-static {p1, p2, v0}, Landroidx/profileinstaller/ProfileInstaller;->writeSkipFile(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;)V
 
-    goto :goto_9b
+    goto :goto_0
 
-    :cond_49
+    :cond_2
     const-string v0, "DELETE_SKIP_FILE"
 
     .line 112
@@ -156,7 +156,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_9b
+    if-eqz p2, :cond_6
 
     .line 113
     new-instance p2, Landroidx/media3/exoplayer/dash/offline/DashDownloader$$ExternalSyntheticLambda0;
@@ -169,9 +169,9 @@
 
     invoke-static {p1, p2, v0}, Landroidx/profileinstaller/ProfileInstaller;->deleteSkipFile(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;)V
 
-    goto :goto_9b
+    goto :goto_0
 
-    :cond_5f
+    :cond_3
     const-string v1, "androidx.profileinstaller.action.SAVE_PROFILE"
 
     .line 117
@@ -179,7 +179,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_4
 
     .line 118
     new-instance p1, Landroidx/profileinstaller/ProfileInstallReceiver$ResultDiagnostics;
@@ -188,9 +188,9 @@
 
     invoke-static {p1}, Landroidx/profileinstaller/ProfileInstallReceiver;->saveProfile(Landroidx/profileinstaller/ProfileInstaller$DiagnosticsCallback;)V
 
-    goto :goto_9b
+    goto :goto_0
 
-    :cond_70
+    :cond_4
     const-string v1, "androidx.profileinstaller.action.BENCHMARK_OPERATION"
 
     .line 119
@@ -198,14 +198,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9b
+    if-eqz v0, :cond_6
 
     .line 120
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object p2
 
-    if-eqz p2, :cond_9b
+    if-eqz p2, :cond_6
 
     const-string v0, "EXTRA_BENCHMARK_OPERATION"
 
@@ -226,14 +226,14 @@
 
     move-result p2
 
-    if-eqz p2, :cond_95
+    if-eqz p2, :cond_5
 
     .line 125
     invoke-static {p1, v0}, Landroidx/profileinstaller/BenchmarkOperation;->dropShaderCache(Landroid/content/Context;Landroidx/profileinstaller/ProfileInstallReceiver$ResultDiagnostics;)V
 
-    goto :goto_9b
+    goto :goto_0
 
-    :cond_95
+    :cond_5
     const/16 p1, 0x10
 
     const/4 p2, 0x0
@@ -241,7 +241,7 @@
     .line 127
     invoke-virtual {v0, p1, p2}, Landroidx/profileinstaller/ProfileInstallReceiver$ResultDiagnostics;->onResultReceived(ILjava/lang/Object;)V
 
-    :cond_9b
-    :goto_9b
+    :cond_6
+    :goto_0
     return-void
 .end method

@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/core/content/res/TypedArrayApi26ImplKt;
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 238
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public static final getFont(Landroid/content/res/TypedArray;I)Landroid/graphics/Typeface;
-    .registers 2
+    .locals 0
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 

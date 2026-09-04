@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final addOnContextAvailableListener(Landroidx/activity/contextaware/OnContextAvailableListener;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "listener"
 
@@ -81,13 +81,13 @@
     .line 58
     iget-object v0, p0, Landroidx/activity/contextaware/ContextAwareHelper;->context:Landroid/content/Context;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 59
     invoke-interface {p1, v0}, Landroidx/activity/contextaware/OnContextAvailableListener;->onContextAvailable(Landroid/content/Context;)V
 
     .line 61
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/activity/contextaware/ContextAwareHelper;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -96,7 +96,7 @@
 .end method
 
 .method public final clearAvailableContext()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public final dispatchOnContextAvailable(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "context"
 
@@ -123,12 +123,12 @@
 
     move-result-object v0
 
-    :goto_d
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -139,14 +139,14 @@
     .line 84
     invoke-interface {v1, p1}, Landroidx/activity/contextaware/OnContextAvailableListener;->onContextAvailable(Landroid/content/Context;)V
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public final peekAvailableContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/activity/contextaware/ContextAwareHelper;->context:Landroid/content/Context;
@@ -155,7 +155,7 @@
 .end method
 
 .method public final removeOnContextAvailableListener(Landroidx/activity/contextaware/OnContextAvailableListener;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "listener"
 

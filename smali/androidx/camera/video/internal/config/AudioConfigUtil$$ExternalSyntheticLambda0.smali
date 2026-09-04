@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
 
     iget v0, p0, Landroidx/camera/video/internal/config/AudioConfigUtil$$ExternalSyntheticLambda0;->f$0:I
 

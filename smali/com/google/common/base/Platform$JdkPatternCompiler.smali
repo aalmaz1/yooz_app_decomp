@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +28,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Platform$1;)V
-    .registers 2
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Lcom/google/common/base/Platform$JdkPatternCompiler;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public compile(Ljava/lang/String;)Lcom/google/common/base/CommonPattern;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -62,7 +62,7 @@
 .end method
 
 .method public isPcreLike()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 

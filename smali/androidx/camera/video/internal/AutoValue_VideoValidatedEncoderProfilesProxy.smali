@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(IILjava/util/List;Ljava/util/List;Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -60,12 +60,12 @@
     .line 33
     iput p2, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->recommendedFileFormat:I
 
-    if-eqz p3, :cond_26
+    if-eqz p3, :cond_2
 
     .line 37
     iput-object p3, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->audioProfiles:Ljava/util/List;
 
-    if-eqz p4, :cond_1e
+    if-eqz p4, :cond_1
 
     .line 41
     iput-object p4, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->videoProfiles:Ljava/util/List;
@@ -73,7 +73,7 @@
     .line 42
     iput-object p5, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
-    if-eqz p6, :cond_16
+    if-eqz p6, :cond_0
 
     .line 46
     iput-object p6, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultVideoProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
@@ -81,7 +81,7 @@
     return-void
 
     .line 44
-    :cond_16
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null defaultVideoProfile"
@@ -91,7 +91,7 @@
     throw p1
 
     .line 39
-    :cond_1e
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null videoProfiles"
@@ -101,7 +101,7 @@
     throw p1
 
     .line 35
-    :cond_26
+    :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null audioProfiles"
@@ -114,21 +114,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 100
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_3
 
     .line 101
     check-cast p1, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;
@@ -140,7 +140,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_55
+    if-ne v1, v3, :cond_2
 
     iget v1, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->recommendedFileFormat:I
 
@@ -149,7 +149,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_55
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->audioProfiles:Ljava/util/List;
 
@@ -162,7 +162,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->videoProfiles:Ljava/util/List;
 
@@ -175,22 +175,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_1
 
     .line 106
     invoke-virtual {p1}, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;->getDefaultAudioProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
     move-result-object v1
 
-    if-nez v1, :cond_55
+    if-nez v1, :cond_2
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_3e
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/internal/VideoValidatedEncoderProfilesProxy;->getDefaultAudioProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
     move-result-object v3
@@ -199,9 +199,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_2
 
-    :goto_48
+    :goto_0
     iget-object v1, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultVideoProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
 
     .line 107
@@ -213,22 +213,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_55
+    if-eqz p1, :cond_2
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_55
+    :cond_2
     move v0, v2
 
-    :goto_56
+    :goto_1
     return v0
 
-    :cond_57
+    :cond_3
     return v2
 .end method
 
 .method public getAudioProfiles()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -245,7 +245,7 @@
 .end method
 
 .method public getDefaultAudioProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
@@ -254,7 +254,7 @@
 .end method
 
 .method public getDefaultDurationSeconds()I
-    .registers 2
+    .locals 1
 
     .line 51
     iget v0, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultDurationSeconds:I
@@ -263,7 +263,7 @@
 .end method
 
 .method public getDefaultVideoProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
-    .registers 2
+    .locals 1
 
     .line 80
     iget-object v0, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultVideoProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$VideoProfileProxy;
@@ -272,7 +272,7 @@
 .end method
 
 .method public getRecommendedFileFormat()I
-    .registers 2
+    .locals 1
 
     .line 56
     iget v0, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->recommendedFileFormat:I
@@ -281,7 +281,7 @@
 .end method
 
 .method public getVideoProfiles()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -298,7 +298,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 116
     iget v0, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultDurationSeconds:I
@@ -341,18 +341,18 @@
     .line 124
     iget-object v2, p0, Landroidx/camera/video/internal/AutoValue_VideoValidatedEncoderProfilesProxy;->defaultAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
-    if-nez v2, :cond_21
+    if-nez v2, :cond_0
 
     const/4 v2, 0x0
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    :goto_25
+    :goto_0
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
@@ -370,7 +370,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 85
     new-instance v0, Ljava/lang/StringBuilder;

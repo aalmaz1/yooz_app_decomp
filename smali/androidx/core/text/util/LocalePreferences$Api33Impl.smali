@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 620
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getHourCycle(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 600
     invoke-static {p0}, Landroid/icu/text/DateTimePatternGenerator;->getInstance(Ljava/util/Locale;)Landroid/icu/text/DateTimePatternGenerator;
@@ -45,7 +45,7 @@
 .end method
 
 .method private static getHourCycleType(Landroid/icu/text/DateFormat$HourCycle;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 606
     sget-object v0, Landroidx/core/text/util/LocalePreferences$1;->$SwitchMap$android$icu$text$DateFormat$HourCycle:[I
@@ -58,47 +58,47 @@
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_20
+    if-eq p0, v0, :cond_3
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_1d
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_1a
+    if-eq p0, v0, :cond_1
 
     const/4 v0, 0x4
 
-    if-eq p0, v0, :cond_17
+    if-eq p0, v0, :cond_0
 
     const-string p0, ""
 
     return-object p0
 
-    :cond_17
+    :cond_0
     const-string p0, "h24"
 
     return-object p0
 
-    :cond_1a
+    :cond_1
     const-string p0, "h23"
 
     return-object p0
 
-    :cond_1d
+    :cond_2
     const-string p0, "h12"
 
     return-object p0
 
-    :cond_20
+    :cond_3
     const-string p0, "h11"
 
     return-object p0
 .end method
 
 .method static getResolvedTemperatureUnit(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 585
     invoke-static {}, Landroid/icu/number/NumberFormatter;->with()Landroid/icu/number/UnlocalizedNumberFormatter;
@@ -150,10 +150,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     return-object v0
 
-    :cond_30
+    :cond_0
     return-object p0
 .end method

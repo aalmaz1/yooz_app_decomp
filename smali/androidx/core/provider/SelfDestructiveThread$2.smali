@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/provider/SelfDestructiveThread;Ljava/util/concurrent/Callable;Landroid/os/Handler;Landroidx/core/provider/SelfDestructiveThread$ReplyCallback;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 146
     :try_start_0
@@ -62,16 +62,16 @@
     invoke-interface {v0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :catch_7
+    :catch_0
     const/4 v0, 0x0
 
     .line 151
-    :goto_8
+    :goto_0
     iget-object v1, p0, Landroidx/core/provider/SelfDestructiveThread$2;->val$calleeHandler:Landroid/os/Handler;
 
     new-instance v2, Landroidx/core/provider/SelfDestructiveThread$2$1;

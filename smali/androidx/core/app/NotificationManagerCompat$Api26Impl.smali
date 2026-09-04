@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1293
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createNotificationChannel(Landroid/app/NotificationManager;Landroid/app/NotificationChannel;)V
-    .registers 2
+    .locals 0
 
     .line 1300
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
@@ -34,7 +34,7 @@
 .end method
 
 .method static createNotificationChannelGroup(Landroid/app/NotificationManager;Landroid/app/NotificationChannelGroup;)V
-    .registers 2
+    .locals 0
 
     .line 1324
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->createNotificationChannelGroup(Landroid/app/NotificationChannelGroup;)V
@@ -43,7 +43,7 @@
 .end method
 
 .method static createNotificationChannelGroups(Landroid/app/NotificationManager;Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,7 +61,7 @@
 .end method
 
 .method static createNotificationChannels(Landroid/app/NotificationManager;Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,7 +79,7 @@
 .end method
 
 .method static deleteNotificationChannel(Landroid/app/NotificationManager;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1342
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
@@ -88,7 +88,7 @@
 .end method
 
 .method static deleteNotificationChannelGroup(Landroid/app/NotificationManager;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 1348
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->deleteNotificationChannelGroup(Ljava/lang/String;)V
@@ -97,7 +97,7 @@
 .end method
 
 .method static getId(Landroid/app/NotificationChannel;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1354
     invoke-virtual {p0}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
@@ -108,7 +108,7 @@
 .end method
 
 .method static getId(Landroid/app/NotificationChannelGroup;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 1359
     invoke-virtual {p0}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
@@ -119,7 +119,7 @@
 .end method
 
 .method static getNotificationChannel(Landroid/app/NotificationManager;Ljava/lang/String;)Landroid/app/NotificationChannel;
-    .registers 2
+    .locals 0
 
     .line 1306
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
@@ -130,7 +130,7 @@
 .end method
 
 .method static getNotificationChannelGroups(Landroid/app/NotificationManager;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -151,7 +151,7 @@
 .end method
 
 .method static getNotificationChannels(Landroid/app/NotificationManager;)Ljava/util/List;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

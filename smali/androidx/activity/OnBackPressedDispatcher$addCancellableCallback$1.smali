@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 9
+    .locals 7
 
     const/4 v1, 0x0
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 174
     invoke-virtual {p0}, Landroidx/activity/OnBackPressedDispatcher$addCancellableCallback$1;->invoke()V
@@ -73,7 +73,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 2
+    .locals 1
 
     .line 174
     iget-object v0, p0, Landroidx/activity/OnBackPressedDispatcher$addCancellableCallback$1;->receiver:Ljava/lang/Object;

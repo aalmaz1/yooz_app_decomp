@@ -13,17 +13,17 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/Surface;Landroid/util/Size;I)V
-    .registers 4
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Landroidx/camera/core/impl/OutputSurface;-><init>()V
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_1
 
     .line 25
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->surface:Landroid/view/Surface;
 
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 29
     iput-object p2, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->size:Landroid/util/Size;
@@ -34,7 +34,7 @@
     return-void
 
     .line 27
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null size"
@@ -44,7 +44,7 @@
     throw p1
 
     .line 23
-    :cond_16
+    :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null surface"
@@ -57,21 +57,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 64
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/impl/OutputSurface;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 65
     check-cast p1, Landroidx/camera/core/impl/OutputSurface;
@@ -87,7 +87,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->size:Landroid/util/Size;
 
@@ -100,7 +100,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_1
 
     iget v1, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->imageFormat:I
 
@@ -109,22 +109,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_2c
+    if-ne v1, p1, :cond_1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v0, v2
 
-    :goto_2d
+    :goto_0
     return v0
 
-    :cond_2e
+    :cond_2
     return v2
 .end method
 
 .method public getImageFormat()I
-    .registers 2
+    .locals 1
 
     .line 47
     iget v0, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->imageFormat:I
@@ -133,7 +133,7 @@
 .end method
 
 .method public getSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 42
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->size:Landroid/util/Size;
@@ -142,7 +142,7 @@
 .end method
 
 .method public getSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->surface:Landroid/view/Surface;
@@ -151,7 +151,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 77
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_OutputSurface;->surface:Landroid/view/Surface;
@@ -186,7 +186,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 52
     new-instance v0, Ljava/lang/StringBuilder;

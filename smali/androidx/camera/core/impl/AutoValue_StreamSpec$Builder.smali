@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 106
     invoke-direct {p0}, Landroidx/camera/core/impl/StreamSpec$Builder;-><init>()V
@@ -43,7 +43,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/camera/core/impl/StreamSpec;)V
-    .registers 3
+    .locals 1
 
     .line 108
     invoke-direct {p0}, Landroidx/camera/core/impl/StreamSpec$Builder;-><init>()V
@@ -80,7 +80,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/camera/core/impl/StreamSpec;Landroidx/camera/core/impl/AutoValue_StreamSpec$1;)V
-    .registers 3
+    .locals 0
 
     .line 101
     invoke-direct {p0, p1}, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;-><init>(Landroidx/camera/core/impl/StreamSpec;)V
@@ -91,25 +91,25 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/impl/StreamSpec;
-    .registers 9
+    .locals 8
 
     .line 146
     iget-object v0, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->resolution:Landroid/util/Size;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const-string v0, " resolution"
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const-string v0, ""
 
     .line 149
-    :goto_9
+    :goto_0
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->dynamicRange:Landroidx/camera/core/DynamicRange;
 
-    if-nez v1, :cond_20
+    if-nez v1, :cond_1
 
     .line 150
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,10 +131,10 @@
     move-result-object v0
 
     .line 152
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->expectedFrameRateRange:Landroid/util/Range;
 
-    if-nez v1, :cond_37
+    if-nez v1, :cond_2
 
     .line 153
     new-instance v1, Ljava/lang/StringBuilder;
@@ -156,12 +156,12 @@
     move-result-object v0
 
     .line 155
-    :cond_37
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_3
 
     .line 158
     new-instance v0, Landroidx/camera/core/impl/AutoValue_StreamSpec;
@@ -183,7 +183,7 @@
     return-object v0
 
     .line 156
-    :cond_4d
+    :cond_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -206,9 +206,9 @@
 .end method
 
 .method public setDynamicRange(Landroidx/camera/core/DynamicRange;)Landroidx/camera/core/impl/StreamSpec$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 127
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->dynamicRange:Landroidx/camera/core/DynamicRange;
@@ -216,7 +216,7 @@
     return-object p0
 
     .line 125
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null dynamicRange"
@@ -227,7 +227,7 @@
 .end method
 
 .method public setExpectedFrameRateRange(Landroid/util/Range;)Landroidx/camera/core/impl/StreamSpec$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,7 +238,7 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 135
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->expectedFrameRateRange:Landroid/util/Range;
@@ -246,7 +246,7 @@
     return-object p0
 
     .line 133
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null expectedFrameRateRange"
@@ -257,7 +257,7 @@
 .end method
 
 .method public setImplementationOptions(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/StreamSpec$Builder;
-    .registers 2
+    .locals 0
 
     .line 140
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->implementationOptions:Landroidx/camera/core/impl/Config;
@@ -266,9 +266,9 @@
 .end method
 
 .method public setResolution(Landroid/util/Size;)Landroidx/camera/core/impl/StreamSpec$Builder;
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 119
     iput-object p1, p0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;->resolution:Landroid/util/Size;
@@ -276,7 +276,7 @@
     return-object p0
 
     .line 117
-    :cond_5
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string v0, "Null resolution"

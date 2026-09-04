@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -36,7 +36,7 @@
 .end method
 
 .method private readAndCheckByte()B
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -53,14 +53,14 @@
 
     const/4 v1, -0x1
 
-    if-eq v1, v0, :cond_b
+    if-eq v1, v0, :cond_0
 
     int-to-byte v0, v0
 
     return v0
 
     .line 235
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public readBoolean()Z
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -83,21 +83,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public readByte()B
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -115,7 +115,7 @@
 .end method
 
 .method public readChar()C
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -133,7 +133,7 @@
 .end method
 
 .method public readDouble()D
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -153,7 +153,7 @@
 .end method
 
 .method public readFloat()F
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -173,7 +173,7 @@
 .end method
 
 .method public readFully([B)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -196,7 +196,7 @@
 .end method
 
 .method public readFully([BII)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -223,7 +223,7 @@
 .end method
 
 .method public readInt()I
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -259,7 +259,7 @@
 .end method
 
 .method public readLine()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 61
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -272,7 +272,7 @@
 .end method
 
 .method public readLong()J
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -328,7 +328,7 @@
 .end method
 
 .method public readShort()S
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -346,7 +346,7 @@
 .end method
 
 .method public readUTF()Ljava/lang/String;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -368,7 +368,7 @@
 .end method
 
 .method public readUnsignedByte()I
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -382,12 +382,12 @@
 
     move-result v0
 
-    if-ltz v0, :cond_9
+    if-ltz v0, :cond_0
 
     return v0
 
     .line 84
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/io/EOFException;
 
     invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
@@ -396,7 +396,7 @@
 .end method
 
 .method public readUnsignedShort()I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -424,7 +424,7 @@
 .end method
 
 .method public skipBytes(I)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0

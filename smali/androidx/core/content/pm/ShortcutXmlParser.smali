@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 59
     new-instance v0, Ljava/lang/Object;
@@ -40,7 +40,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method private static getAttributeValue(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     const-string v0, "http://schemas.android.com/apk/res/android"
 
@@ -58,7 +58,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -67,12 +67,12 @@
 
     move-result-object v0
 
-    :cond_d
+    :cond_0
     return-object v0
 .end method
 
 .method public static getShortcutIds(Landroid/content/Context;)Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
     .line 67
     sget-object v0, Landroidx/core/content/pm/ShortcutXmlParser;->sShortcutIds:Ljava/util/ArrayList;
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 68
     sget-object v0, Landroidx/core/content/pm/ShortcutXmlParser;->GET_INSTANCE_LOCK:Ljava/lang/Object;
@@ -95,10 +95,10 @@
     monitor-enter v0
 
     .line 69
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/core/content/pm/ShortcutXmlParser;->sShortcutIds:Ljava/util/ArrayList;
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_0
 
     .line 70
     new-instance v1, Ljava/util/ArrayList;
@@ -117,30 +117,30 @@
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     .line 73
-    :cond_1b
+    :cond_0
     monitor-exit v0
 
-    goto :goto_20
+    goto :goto_0
 
-    :catchall_1d
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_7 .. :try_end_1f} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 
     .line 75
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     sget-object p0, Landroidx/core/content/pm/ShortcutXmlParser;->sShortcutIds:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
 .method private static getXmlResourceParser(Landroid/content/Context;Landroid/content/pm/ActivityInfo;)Landroid/content/res/XmlResourceParser;
-    .registers 4
+    .locals 2
 
     .line 120
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -153,12 +153,12 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_0
 
     return-object p0
 
     .line 123
-    :cond_d
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -183,7 +183,7 @@
 .end method
 
 .method public static parseShortcutIds(Lorg/xmlpull/v1/XmlPullParser;)Ljava/util/List;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -210,27 +210,27 @@
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 141
-    :cond_6
-    :goto_6
+    :cond_0
+    :goto_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v2
 
-    if-eq v2, v1, :cond_37
+    if-eq v2, v1, :cond_3
 
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_15
+    if-ne v2, v3, :cond_1
 
     .line 142
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v3
 
-    if-lez v3, :cond_37
+    if-lez v3, :cond_3
 
     .line 143
-    :cond_15
+    :cond_1
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v3
@@ -242,9 +242,9 @@
 
     const/4 v5, 0x2
 
-    if-ne v2, v5, :cond_6
+    if-ne v2, v5, :cond_0
 
-    if-ne v3, v5, :cond_6
+    if-ne v3, v5, :cond_0
 
     const-string v2, "shortcut"
 
@@ -253,7 +253,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     const-string v2, "shortcutId"
 
@@ -262,22 +262,22 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_33
+    if-nez v2, :cond_2
 
-    goto :goto_6
+    goto :goto_0
 
     .line 152
-    :cond_33
+    :cond_2
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_37
+    :cond_3
     return-object v0
 .end method
 
 .method private static parseShortcutIds(Landroid/content/Context;)Ljava/util/Set;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -324,31 +324,31 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_3
 
     .line 97
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_0
 
-    goto :goto_6e
+    goto :goto_2
 
     .line 101
-    :cond_2b
-    :try_start_2b
+    :cond_0
+    :try_start_0
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_2f
-    :goto_2f
+    :cond_1
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6e
+    if-eqz v2, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -362,7 +362,7 @@
     .line 103
     iget-object v3, v2, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_1
 
     const-string v4, "android.app.shortcuts"
 
@@ -371,61 +371,61 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_1
 
     .line 105
     invoke-static {p0, v2}, Landroidx/core/content/pm/ShortcutXmlParser;->getXmlResourceParser(Landroid/content/Context;Landroid/content/pm/ActivityInfo;)Landroid/content/res/XmlResourceParser;
 
     move-result-object v2
-    :try_end_4d
-    .catch Ljava/lang/Exception; {:try_start_2b .. :try_end_4d} :catch_66
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 106
-    :try_start_4d
+    :try_start_1
     invoke-static {v2}, Landroidx/core/content/pm/ShortcutXmlParser;->parseShortcutIds(Lorg/xmlpull/v1/XmlPullParser;)Ljava/util/List;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-    :try_end_54
-    .catchall {:try_start_4d .. :try_end_54} :catchall_5a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     .line 107
-    :try_start_56
+    :try_start_2
     invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->close()V
-    :try_end_59
-    .catch Ljava/lang/Exception; {:try_start_56 .. :try_end_59} :catch_66
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :catchall_5a
+    :catchall_0
     move-exception p0
 
-    if-eqz v2, :cond_65
+    if-eqz v2, :cond_2
 
     .line 105
-    :try_start_5d
+    :try_start_3
     invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->close()V
-    :try_end_60
-    .catchall {:try_start_5d .. :try_end_60} :catchall_61
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_65
+    goto :goto_1
 
-    :catchall_61
+    :catchall_1
     move-exception v1
 
-    :try_start_62
+    :try_start_4
     invoke-virtual {p0, v1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :cond_65
-    :goto_65
+    :cond_2
+    :goto_1
     throw p0
-    :try_end_66
-    .catch Ljava/lang/Exception; {:try_start_62 .. :try_end_66} :catch_66
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
-    :catch_66
+    :catch_0
     move-exception p0
 
     const-string v1, "ShortcutXmlParser"
@@ -435,7 +435,7 @@
     .line 113
     invoke-static {v1, v2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_6e
-    :goto_6e
+    :cond_3
+    :goto_2
     return-object v0
 .end method

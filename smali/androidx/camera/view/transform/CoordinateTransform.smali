@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/view/transform/OutputTransform;Landroidx/camera/view/transform/OutputTransform;)V
-    .registers 6
+    .locals 3
 
     .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_0
 
     const/4 v0, 0x2
 
@@ -71,7 +71,7 @@
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 94
-    :cond_2d
+    :cond_0
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public mapPoint(Landroid/graphics/PointF;)V
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x2
 
@@ -142,7 +142,7 @@
 .end method
 
 .method public mapPoints([F)V
-    .registers 3
+    .locals 1
 
     .line 117
     iget-object v0, p0, Landroidx/camera/view/transform/CoordinateTransform;->mMatrix:Landroid/graphics/Matrix;
@@ -153,7 +153,7 @@
 .end method
 
 .method public mapRect(Landroid/graphics/RectF;)V
-    .registers 3
+    .locals 1
 
     .line 141
     iget-object v0, p0, Landroidx/camera/view/transform/CoordinateTransform;->mMatrix:Landroid/graphics/Matrix;
@@ -164,7 +164,7 @@
 .end method
 
 .method public transform(Landroid/graphics/Matrix;)V
-    .registers 3
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/camera/view/transform/CoordinateTransform;->mMatrix:Landroid/graphics/Matrix;

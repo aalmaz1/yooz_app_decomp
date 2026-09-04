@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 319
     new-instance v0, Ljava/util/LinkedHashSet;
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final getMIGRATE_ALL_KEYS()Ljava/util/Set;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource$Factory;)V
-    .registers 2
+    .locals 0
 
     .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public createChunkSource(Landroidx/media3/exoplayer/upstream/LoaderErrorThrower;Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;ILandroidx/media3/exoplayer/trackselection/ExoTrackSelection;Landroidx/media3/datasource/TransferListener;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;)Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource;
-    .registers 19
+    .locals 12
 
     move-object v0, p0
 
@@ -61,13 +61,13 @@
 
     move-result-object v8
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 127
     invoke-interface {v8, v1}, Landroidx/media3/datasource/DataSource;->addTransferListener(Landroidx/media3/datasource/TransferListener;)V
 
     .line 129
-    :cond_e
+    :cond_0
     new-instance v1, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource;
 
     iget-object v10, v0, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -92,7 +92,7 @@
 .end method
 
 .method public experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 89
     iput-boolean p1, p0, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->parseSubtitlesDuringExtraction:Z
@@ -101,7 +101,7 @@
 .end method
 
 .method public bridge synthetic experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 67
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->experimentalParseSubtitlesDuringExtraction(Z)Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;
@@ -112,12 +112,12 @@
 .end method
 
 .method public getOutputTextFormat(Landroidx/media3/common/Format;)Landroidx/media3/common/Format;
-    .registers 6
+    .locals 4
 
     .line 101
     iget-boolean v0, p0, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->parseSubtitlesDuringExtraction:Z
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
 
@@ -125,7 +125,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 103
     invoke-virtual {p1}, Landroidx/media3/common/Format;->buildUpon()Landroidx/media3/common/Format$Builder;
@@ -164,7 +164,7 @@
     .line 109
     iget-object v2, p1, Landroidx/media3/common/Format;->codecs:Ljava/lang/String;
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_0
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -182,12 +182,12 @@
 
     move-result-object p1
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_41
+    :cond_0
     const-string p1, ""
 
-    :goto_43
+    :goto_0
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
@@ -213,12 +213,12 @@
 
     move-result-object p1
 
-    :cond_5c
+    :cond_1
     return-object p1
 .end method
 
 .method public setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 81
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->subtitleParserFactory:Landroidx/media3/extractor/text/SubtitleParser$Factory;
@@ -227,7 +227,7 @@
 .end method
 
 .method public bridge synthetic setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/smoothstreaming/SsChunkSource$Factory;
-    .registers 2
+    .locals 0
 
     .line 67
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;->setSubtitleParserFactory(Landroidx/media3/extractor/text/SubtitleParser$Factory;)Landroidx/media3/exoplayer/smoothstreaming/DefaultSsChunkSource$Factory;

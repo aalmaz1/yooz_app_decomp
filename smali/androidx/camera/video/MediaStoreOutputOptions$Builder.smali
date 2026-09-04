@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-    .registers 4
+    .locals 1
 
     .line 161
     new-instance v0, Landroidx/camera/video/AutoValue_MediaStoreOutputOptions_MediaStoreOutputOptionsInternal$Builder;
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/MediaStoreOutputOptions;
-    .registers 3
+    .locals 2
 
     .line 195
     new-instance v0, Landroidx/camera/video/MediaStoreOutputOptions;
@@ -93,7 +93,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/camera/video/OutputOptions;
-    .registers 2
+    .locals 1
 
     .line 133
     invoke-virtual {p0}, Landroidx/camera/video/MediaStoreOutputOptions$Builder;->build()Landroidx/camera/video/MediaStoreOutputOptions;
@@ -104,7 +104,7 @@
 .end method
 
 .method public setContentValues(Landroid/content/ContentValues;)Landroidx/camera/video/MediaStoreOutputOptions$Builder;
-    .registers 3
+    .locals 1
 
     const-string v0, "Content values can\'t be null."
 
@@ -120,7 +120,7 @@
 .end method
 
 .method public bridge synthetic setDurationLimitMillis(J)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 133
     invoke-super {p0, p1, p2}, Landroidx/camera/video/OutputOptions$Builder;->setDurationLimitMillis(J)Ljava/lang/Object;
@@ -131,7 +131,7 @@
 .end method
 
 .method public bridge synthetic setFileSizeLimit(J)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 133
     invoke-super {p0, p1, p2}, Landroidx/camera/video/OutputOptions$Builder;->setFileSizeLimit(J)Ljava/lang/Object;
@@ -142,7 +142,7 @@
 .end method
 
 .method public bridge synthetic setLocation(Landroid/location/Location;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 133
     invoke-super {p0, p1}, Landroidx/camera/video/OutputOptions$Builder;->setLocation(Landroid/location/Location;)Ljava/lang/Object;

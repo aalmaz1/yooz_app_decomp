@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 464
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Any;->access$000()Landroidx/datastore/preferences/protobuf/Any;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Any$1;)V
-    .registers 2
+    .locals 0
 
     .line 457
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Any$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearTypeUrl()Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 2
+    .locals 1
 
     .line 605
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Any$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public clearValue()Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 2
+    .locals 1
 
     .line 682
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Any$Builder;->copyOnWrite()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public getTypeUrl()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 500
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Any$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -100,7 +100,7 @@
 .end method
 
 .method public getTypeUrlBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 535
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Any$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -115,7 +115,7 @@
 .end method
 
 .method public getValue()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 657
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Any$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -130,7 +130,7 @@
 .end method
 
 .method public setTypeUrl(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 3
+    .locals 1
 
     .line 570
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Any$Builder;->copyOnWrite()V
@@ -146,7 +146,7 @@
 .end method
 
 .method public setTypeUrlBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 3
+    .locals 1
 
     .line 642
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Any$Builder;->copyOnWrite()V
@@ -162,7 +162,7 @@
 .end method
 
 .method public setValue(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Any$Builder;
-    .registers 3
+    .locals 1
 
     .line 669
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Any$Builder;->copyOnWrite()V

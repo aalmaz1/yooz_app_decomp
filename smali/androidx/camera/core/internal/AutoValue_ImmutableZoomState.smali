@@ -15,7 +15,7 @@
 
 # direct methods
 .method constructor <init>(FFFF)V
-    .registers 5
+    .locals 0
 
     .line 20
     invoke-direct {p0}, Landroidx/camera/core/internal/ImmutableZoomState;-><init>()V
@@ -38,21 +38,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 62
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/internal/ImmutableZoomState;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_2
 
     .line 63
     check-cast p1, Landroidx/camera/core/internal/ImmutableZoomState;
@@ -72,7 +72,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_4c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->maxZoomRatio:F
 
@@ -89,7 +89,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_4c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->minZoomRatio:F
 
@@ -106,7 +106,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_4c
+    if-ne v1, v3, :cond_1
 
     iget v1, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->linearZoom:F
 
@@ -123,22 +123,22 @@
 
     move-result p1
 
-    if-ne v1, p1, :cond_4c
+    if-ne v1, p1, :cond_1
 
-    goto :goto_4d
+    goto :goto_0
 
-    :cond_4c
+    :cond_1
     move v0, v2
 
-    :goto_4d
+    :goto_0
     return v0
 
-    :cond_4e
+    :cond_2
     return v2
 .end method
 
 .method public getLinearZoom()F
-    .registers 2
+    .locals 1
 
     .line 44
     iget v0, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->linearZoom:F
@@ -147,7 +147,7 @@
 .end method
 
 .method public getMaxZoomRatio()F
-    .registers 2
+    .locals 1
 
     .line 34
     iget v0, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->maxZoomRatio:F
@@ -156,7 +156,7 @@
 .end method
 
 .method public getMinZoomRatio()F
-    .registers 2
+    .locals 1
 
     .line 39
     iget v0, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->minZoomRatio:F
@@ -165,7 +165,7 @@
 .end method
 
 .method public getZoomRatio()F
-    .registers 2
+    .locals 1
 
     .line 29
     iget v0, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->zoomRatio:F
@@ -174,7 +174,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 76
     iget v0, p0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;->zoomRatio:F
@@ -224,7 +224,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 49
     new-instance v0, Ljava/lang/StringBuilder;

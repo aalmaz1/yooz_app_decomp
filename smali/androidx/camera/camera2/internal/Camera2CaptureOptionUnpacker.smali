@@ -12,7 +12,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 36
     new-instance v0, Landroidx/camera/camera2/internal/Camera2CaptureOptionUnpacker;
@@ -25,7 +25,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public unpack(Landroidx/camera/core/impl/UseCaseConfig;Landroidx/camera/core/impl/CaptureConfig$Builder;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +68,7 @@
 
     move-result v2
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 50
     invoke-virtual {v0}, Landroidx/camera/core/impl/CaptureConfig;->getTemplateType()I
@@ -88,7 +88,7 @@
     move-result-object v1
 
     .line 56
-    :cond_22
+    :cond_0
     invoke-virtual {p2, v1}, Landroidx/camera/core/impl/CaptureConfig$Builder;->setImplementationOptions(Landroidx/camera/core/impl/Config;)V
 
     .line 59

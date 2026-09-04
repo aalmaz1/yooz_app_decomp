@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     .line 30
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method private flushBuilder()V
-    .registers 4
+    .locals 3
 
     .line 55
     iget-object v0, p0, Landroidx/fragment/app/LogWriter;->mBuilder:Ljava/lang/StringBuilder;
@@ -41,7 +41,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_1d
+    if-lez v0, :cond_0
 
     .line 56
     iget-object v0, p0, Landroidx/fragment/app/LogWriter;->mTag:Ljava/lang/String;
@@ -65,14 +65,14 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public close()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Landroidx/fragment/app/LogWriter;->flushBuilder()V
@@ -81,7 +81,7 @@
 .end method
 
 .method public flush()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Landroidx/fragment/app/LogWriter;->flushBuilder()V
@@ -90,12 +90,12 @@
 .end method
 
 .method public write([CII)V
-    .registers 7
+    .locals 3
 
     const/4 v0, 0x0
 
-    :goto_1
-    if-ge v0, p3, :cond_17
+    :goto_0
+    if-ge v0, p3, :cond_1
 
     add-int v1, p2, v0
 
@@ -104,24 +104,24 @@
 
     const/16 v2, 0xa
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
     .line 46
     invoke-direct {p0}, Landroidx/fragment/app/LogWriter;->flushBuilder()V
 
-    goto :goto_14
+    goto :goto_1
 
     .line 49
-    :cond_f
+    :cond_0
     iget-object v2, p0, Landroidx/fragment/app/LogWriter;->mBuilder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :goto_14
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_17
+    :cond_1
     return-void
 .end method

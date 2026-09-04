@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 140
     invoke-direct {p0}, Landroid/app/job/JobService;-><init>()V
@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public onStartJob(Landroid/app/job/JobParameters;)Z
-    .registers 5
+    .locals 3
 
     .line 143
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getExtras()Landroid/os/PersistableBundle;
@@ -50,7 +50,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_0
 
     const-string p1, "service_action"
 
@@ -90,10 +90,10 @@
     .line 150
     invoke-static {p0, p1}, Landroidx/media3/common/util/Util;->startForegroundService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    goto :goto_52
+    goto :goto_0
 
     .line 152
-    :cond_3a
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "Requirements not met: "
@@ -117,14 +117,14 @@
     .line 153
     invoke-virtual {p0, p1, v0}, Landroidx/media3/exoplayer/scheduler/PlatformScheduler$PlatformSchedulerService;->jobFinished(Landroid/app/job/JobParameters;Z)V
 
-    :goto_52
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public onStopJob(Landroid/app/job/JobParameters;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 

@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/adservices/topics/TopicsManager;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "mTopicsManager"
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public static final synthetic access$getMTopicsManager$p(Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;)Landroid/adservices/topics/TopicsManager;
-    .registers 1
+    .locals 0
 
     .line 13
     iget-object p0, p0, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;->mTopicsManager:Landroid/adservices/topics/TopicsManager;
@@ -76,7 +76,7 @@
 .end method
 
 .method public static final synthetic access$getTopicsAsyncInternal(Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;Landroid/adservices/topics/GetTopicsRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 13
     invoke-direct {p0, p1, p2}, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;->getTopicsAsyncInternal(Landroid/adservices/topics/GetTopicsRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -87,7 +87,7 @@
 .end method
 
 .method static synthetic getTopics$suspendImpl(Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,7 +103,7 @@
 
     instance-of v0, p2, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -115,7 +115,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;->label:I
 
@@ -123,14 +123,14 @@
 
     iput p2, v0, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;-><init>(Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p2, v0, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -142,9 +142,9 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_2e
+    if-ne v2, v3, :cond_1
 
     iget-object p0, v0, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon$getTopics$1;->L$0:Ljava/lang/Object;
 
@@ -152,9 +152,9 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_48
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
@@ -163,7 +163,7 @@
 
     throw p0
 
-    :cond_36
+    :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 22
@@ -179,12 +179,12 @@
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_48
+    if-ne p2, v1, :cond_3
 
     return-object v1
 
-    :cond_48
-    :goto_48
+    :cond_3
+    :goto_1
     check-cast p2, Landroid/adservices/topics/GetTopicsResponse;
 
     invoke-virtual {p0, p2}, Landroidx/privacysandbox/ads/adservices/topics/TopicsManagerImplCommon;->convertResponse$ads_adservices_release(Landroid/adservices/topics/GetTopicsResponse;)Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;
@@ -195,7 +195,7 @@
 .end method
 
 .method private final getTopicsAsyncInternal(Landroid/adservices/topics/GetTopicsRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -257,18 +257,18 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_2f
+    :cond_0
     return-object p1
 .end method
 
 
 # virtual methods
 .method public convertRequest$ads_adservices_release(Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest;)Landroid/adservices/topics/GetTopicsRequest;
-    .registers 3
+    .locals 1
 
     const-string v0, "request"
 
@@ -301,7 +301,7 @@
 .end method
 
 .method public final convertResponse$ads_adservices_release(Landroid/adservices/topics/GetTopicsResponse;)Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;
-    .registers 11
+    .locals 9
 
     const-string v0, "response"
 
@@ -323,12 +323,12 @@
 
     move-result-object p1
 
-    :goto_14
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -357,10 +357,10 @@
 
     invoke-interface {v0, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_14
+    goto :goto_0
 
     .line 52
-    :cond_36
+    :cond_0
     new-instance p1, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;
 
     invoke-direct {p1, v0}, Landroidx/privacysandbox/ads/adservices/topics/GetTopicsResponse;-><init>(Ljava/util/List;)V
@@ -369,7 +369,7 @@
 .end method
 
 .method public getTopics(Landroidx/privacysandbox/ads/adservices/topics/GetTopicsRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

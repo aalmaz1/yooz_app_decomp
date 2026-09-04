@@ -134,7 +134,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.useCase.defaultSessionConfig"
 
@@ -261,7 +261,7 @@
 
 # virtual methods
 .method public getCameraSelector()Landroidx/camera/core/CameraSelector;
-    .registers 2
+    .locals 1
 
     .line 275
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_CAMERA_SELECTOR:Landroidx/camera/core/impl/Config$Option;
@@ -276,7 +276,7 @@
 .end method
 
 .method public getCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/core/CameraSelector;
-    .registers 3
+    .locals 1
 
     .line 264
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_CAMERA_SELECTOR:Landroidx/camera/core/impl/Config$Option;
@@ -291,7 +291,7 @@
 .end method
 
 .method public getCaptureOptionUnpacker()Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;
-    .registers 2
+    .locals 1
 
     .line 229
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_CAPTURE_CONFIG_UNPACKER:Landroidx/camera/core/impl/Config$Option;
@@ -306,7 +306,7 @@
 .end method
 
 .method public getCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;
-    .registers 3
+    .locals 1
 
     .line 213
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_CAPTURE_CONFIG_UNPACKER:Landroidx/camera/core/impl/Config$Option;
@@ -321,7 +321,7 @@
 .end method
 
 .method public getCaptureType()Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;
-    .registers 2
+    .locals 1
 
     .line 327
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_CAPTURE_TYPE:Landroidx/camera/core/impl/Config$Option;
@@ -336,7 +336,7 @@
 .end method
 
 .method public getDefaultCaptureConfig()Landroidx/camera/core/impl/CaptureConfig;
-    .registers 2
+    .locals 1
 
     .line 161
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_DEFAULT_CAPTURE_CONFIG:Landroidx/camera/core/impl/Config$Option;
@@ -351,7 +351,7 @@
 .end method
 
 .method public getDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/core/impl/CaptureConfig;
-    .registers 3
+    .locals 1
 
     .line 147
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_DEFAULT_CAPTURE_CONFIG:Landroidx/camera/core/impl/Config$Option;
@@ -366,7 +366,7 @@
 .end method
 
 .method public getDefaultSessionConfig()Landroidx/camera/core/impl/SessionConfig;
-    .registers 2
+    .locals 1
 
     .line 132
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_DEFAULT_SESSION_CONFIG:Landroidx/camera/core/impl/Config$Option;
@@ -381,7 +381,7 @@
 .end method
 
 .method public getDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/core/impl/SessionConfig;
-    .registers 3
+    .locals 1
 
     .line 118
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_DEFAULT_SESSION_CONFIG:Landroidx/camera/core/impl/Config$Option;
@@ -396,7 +396,7 @@
 .end method
 
 .method public getSessionOptionUnpacker()Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;
-    .registers 2
+    .locals 1
 
     .line 195
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_SESSION_CONFIG_UNPACKER:Landroidx/camera/core/impl/Config$Option;
@@ -411,7 +411,7 @@
 .end method
 
 .method public getSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;
-    .registers 3
+    .locals 1
 
     .line 179
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_SESSION_CONFIG_UNPACKER:Landroidx/camera/core/impl/Config$Option;
@@ -426,7 +426,7 @@
 .end method
 
 .method public getSurfaceOccupancyPriority()I
-    .registers 2
+    .locals 1
 
     .line 252
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_SURFACE_OCCUPANCY_PRIORITY:Landroidx/camera/core/impl/Config$Option;
@@ -445,7 +445,7 @@
 .end method
 
 .method public getSurfaceOccupancyPriority(I)I
-    .registers 3
+    .locals 1
 
     .line 241
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_SURFACE_OCCUPANCY_PRIORITY:Landroidx/camera/core/impl/Config$Option;
@@ -468,7 +468,7 @@
 .end method
 
 .method public getTargetFrameRate()Landroid/util/Range;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -491,7 +491,7 @@
 .end method
 
 .method public getTargetFrameRate(Landroid/util/Range;)Landroid/util/Range;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -517,7 +517,7 @@
 .end method
 
 .method public isHigResolutionDisabled(Z)Z
-    .registers 3
+    .locals 1
 
     .line 319
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_HIGH_RESOLUTION_DISABLED:Landroidx/camera/core/impl/Config$Option;
@@ -540,7 +540,7 @@
 .end method
 
 .method public isZslDisabled(Z)Z
-    .registers 3
+    .locals 1
 
     .line 308
     sget-object v0, Landroidx/camera/core/impl/UseCaseConfig;->OPTION_ZSL_DISABLED:Landroidx/camera/core/impl/Config$Option;

@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/DefaultSpecialEffectsController;Landroid/view/ViewGroup;Landroid/view/View;Landroidx/fragment/app/DefaultSpecialEffectsController$AnimationInfo;)V
-    .registers 5
+    .locals 0
 
     .line 245
     iput-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$4;->this$0:Landroidx/fragment/app/DefaultSpecialEffectsController;
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 3
+    .locals 1
 
     .line 255
     iget-object p1, p0, Landroidx/fragment/app/DefaultSpecialEffectsController$4;->val$container:Landroid/view/ViewGroup;
@@ -63,13 +63,13 @@
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/mp4/Track;[J[II[J[IJ)V
-    .registers 13
+    .locals 4
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,16 +37,16 @@
 
     const/4 v3, 0x1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     move v0, v3
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v2
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 58
@@ -54,16 +54,16 @@
 
     array-length v1, p5
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_1
 
     move v0, v3
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
+    :cond_1
     move v0, v2
 
-    :goto_16
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 59
@@ -71,11 +71,11 @@
 
     array-length v1, p5
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_2
 
     move v2, v3
 
-    :cond_1e
+    :cond_2
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 61
@@ -107,7 +107,7 @@
     .line 69
     array-length p1, p6
 
-    if-lez p1, :cond_3e
+    if-lez p1, :cond_3
 
     .line 70
     array-length p1, p6
@@ -122,14 +122,14 @@
 
     aput p2, p6, p1
 
-    :cond_3e
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
 .method public getIndexOfEarlierOrEqualSynchronizationSample(J)I
-    .registers 6
+    .locals 3
 
     .line 84
     iget-object v0, p0, Landroidx/media3/extractor/mp4/TrackSampleTable;->timestampsUs:[J
@@ -142,8 +142,8 @@
 
     move-result p1
 
-    :goto_8
-    if-ltz p1, :cond_15
+    :goto_0
+    if-ltz p1, :cond_1
 
     .line 86
     iget-object p2, p0, Landroidx/media3/extractor/mp4/TrackSampleTable;->flags:[I
@@ -152,23 +152,23 @@
 
     and-int/2addr p2, v2
 
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     return p1
 
-    :cond_12
+    :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     const/4 p1, -0x1
 
     return p1
 .end method
 
 .method public getIndexOfLaterOrEqualSynchronizationSample(J)I
-    .registers 6
+    .locals 3
 
     .line 101
     iget-object v0, p0, Landroidx/media3/extractor/mp4/TrackSampleTable;->timestampsUs:[J
@@ -182,12 +182,12 @@
     move-result p1
 
     .line 102
-    :goto_8
+    :goto_0
     iget-object p2, p0, Landroidx/media3/extractor/mp4/TrackSampleTable;->timestampsUs:[J
 
     array-length p2, p2
 
-    if-ge p1, p2, :cond_18
+    if-ge p1, p2, :cond_1
 
     .line 103
     iget-object p2, p0, Landroidx/media3/extractor/mp4/TrackSampleTable;->flags:[I
@@ -196,16 +196,16 @@
 
     and-int/2addr p2, v2
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     return p1
 
-    :cond_15
+    :cond_0
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     const/4 p1, -0x1
 
     return p1

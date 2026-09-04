@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator$Builder;)V
-    .registers 4
+    .locals 2
 
     .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +94,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator$Builder;Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator$1;)V
-    .registers 3
+    .locals 0
 
     .line 36
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;-><init>(Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator$Builder;)V
@@ -103,33 +103,33 @@
 .end method
 
 .method private maybeNotifyBandwidthSample(IJJ)V
-    .registers 13
+    .locals 7
 
     const-wide/high16 v0, -0x8000000000000000L
 
     cmp-long v0, p4, v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, p2, v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 201
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->lastReportedBandwidthEstimate:J
 
     cmp-long v0, p4, v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 207
-    :cond_15
+    :cond_0
     iput-wide p4, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->lastReportedBandwidthEstimate:J
 
     .line 208
@@ -143,15 +143,15 @@
 
     invoke-virtual/range {v1 .. v6}, Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher;->bandwidthSample(IJJ)V
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public addEventListener(Landroid/os/Handler;Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;)V
-    .registers 4
+    .locals 1
 
     .line 137
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->eventDispatcher:Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher;
@@ -162,7 +162,7 @@
 .end method
 
 .method public getBandwidthEstimate()J
-    .registers 3
+    .locals 2
 
     .line 183
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->bandwidthEstimate:J
@@ -171,7 +171,7 @@
 .end method
 
 .method public onBytesTransferred(Landroidx/media3/datasource/DataSource;I)V
-    .registers 5
+    .locals 2
 
     .line 158
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->sampleBytesTransferred:J
@@ -193,7 +193,7 @@
 .end method
 
 .method public onNetworkTypeChange(J)V
-    .registers 13
+    .locals 10
 
     .line 188
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->clock:Landroidx/media3/common/util/Clock;
@@ -207,7 +207,7 @@
 
     const/4 v3, 0x0
 
-    if-lez v2, :cond_12
+    if-lez v2, :cond_0
 
     iget-wide v4, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->sampleStartTimeMs:J
 
@@ -217,13 +217,13 @@
 
     move v5, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v5, v3
 
     .line 190
-    :goto_13
+    :goto_0
     iget-wide v6, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->sampleBytesTransferred:J
 
     move-object v4, p0
@@ -260,23 +260,23 @@
 .end method
 
 .method public onTransferEnd(Landroidx/media3/datasource/DataSource;)V
-    .registers 15
+    .locals 13
 
     .line 164
     iget v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->streamCount:I
 
     const/4 v6, 0x1
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     move v0, v6
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 165
@@ -299,7 +299,7 @@
 
     cmp-long v2, v0, v9
 
-    if-lez v2, :cond_4d
+    if-lez v2, :cond_2
 
     .line 168
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->bandwidthStatistic:Landroidx/media3/exoplayer/upstream/experimental/BandwidthStatistic;
@@ -322,7 +322,7 @@
     .line 170
     iget v3, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->minSamples:I
 
-    if-le v2, v3, :cond_40
+    if-le v2, v3, :cond_1
 
     iget-wide v2, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->totalBytesTransferred:J
 
@@ -330,7 +330,7 @@
 
     cmp-long v2, v2, v4
 
-    if-lez v2, :cond_40
+    if-lez v2, :cond_1
 
     .line 171
     iget-object v2, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->bandwidthStatistic:Landroidx/media3/exoplayer/upstream/experimental/BandwidthStatistic;
@@ -341,7 +341,7 @@
 
     iput-wide v2, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->bandwidthEstimate:J
 
-    :cond_40
+    :cond_1
     long-to-int v1, v0
 
     .line 173
@@ -360,7 +360,7 @@
     iput-wide v9, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->sampleBytesTransferred:J
 
     .line 178
-    :cond_4d
+    :cond_2
     iget v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->streamCount:I
 
     sub-int/2addr v0, v6
@@ -371,18 +371,18 @@
 .end method
 
 .method public onTransferInitializing(Landroidx/media3/datasource/DataSource;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onTransferStart(Landroidx/media3/datasource/DataSource;)V
-    .registers 4
+    .locals 2
 
     .line 150
     iget p1, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->streamCount:I
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 151
     iget-object p1, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->clock:Landroidx/media3/common/util/Clock;
@@ -394,7 +394,7 @@
     iput-wide v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->sampleStartTimeMs:J
 
     .line 153
-    :cond_c
+    :cond_0
     iget p1, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->streamCount:I
 
     add-int/lit8 p1, p1, 0x1
@@ -405,7 +405,7 @@
 .end method
 
 .method public removeEventListener(Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener;)V
-    .registers 3
+    .locals 1
 
     .line 142
     iget-object v0, p0, Landroidx/media3/exoplayer/upstream/experimental/SplitParallelSampleBandwidthEstimator;->eventDispatcher:Landroidx/media3/exoplayer/upstream/BandwidthMeter$EventListener$EventDispatcher;

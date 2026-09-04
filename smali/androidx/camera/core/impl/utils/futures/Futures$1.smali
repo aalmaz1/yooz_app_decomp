@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/arch/core/util/Function;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TI;)",

@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 548
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public createIntent(Landroid/content/Context;Landroid/net/Uri;)Landroid/content/Intent;
-    .registers 4
+    .locals 1
 
     const-string v0, "context"
 
@@ -84,7 +84,7 @@
 
     invoke-direct {p1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_0
 
     const-string v0, "android.provider.extra.INITIAL_URI"
 
@@ -93,12 +93,12 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    :cond_15
+    :cond_0
     return-object p1
 .end method
 
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 547
     check-cast p2, Landroid/net/Uri;
@@ -111,7 +111,7 @@
 .end method
 
 .method public final getSynchronousResult(Landroid/content/Context;Landroid/net/Uri;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,7 +134,7 @@
 .end method
 
 .method public bridge synthetic getSynchronousResult(Landroid/content/Context;Ljava/lang/Object;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 3
+    .locals 0
 
     .line 547
     check-cast p2, Landroid/net/Uri;
@@ -147,43 +147,43 @@
 .end method
 
 .method public final parseResult(ILandroid/content/Intent;)Landroid/net/Uri;
-    .registers 4
+    .locals 1
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_6
+    :goto_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_1
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
+    :cond_1
     move-object p2, v0
 
-    :goto_b
-    if-eqz p2, :cond_11
+    :goto_1
+    if-eqz p2, :cond_2
 
     .line 564
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    :cond_11
+    :cond_2
     return-object v0
 .end method
 
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 547
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$OpenDocumentTree;->parseResult(ILandroid/content/Intent;)Landroid/net/Uri;

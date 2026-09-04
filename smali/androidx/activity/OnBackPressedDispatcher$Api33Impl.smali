@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$tzBBo0FLedRCWSI6_icF8qhF74s(Lkotlin/jvm/functions/Function0;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/activity/OnBackPressedDispatcher$Api33Impl;->createOnBackInvokedCallback$lambda$0(Lkotlin/jvm/functions/Function0;)V
 
@@ -58,7 +58,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/activity/OnBackPressedDispatcher$Api33Impl;
 
@@ -70,7 +70,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 350
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,7 +79,7 @@
 .end method
 
 .method private static final createOnBackInvokedCallback$lambda$0(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 1
 
     const-string v0, "$onBackInvoked"
 
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public final createOnBackInvokedCallback(Lkotlin/jvm/functions/Function0;)Landroid/window/OnBackInvokedCallback;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -118,7 +118,7 @@
 .end method
 
 .method public final registerOnBackInvokedCallback(Ljava/lang/Object;ILjava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "dispatcher"
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public final unregisterOnBackInvokedCallback(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "dispatcher"
 

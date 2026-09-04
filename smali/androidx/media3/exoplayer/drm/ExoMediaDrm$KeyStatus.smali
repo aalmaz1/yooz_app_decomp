@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(I[B)V
-    .registers 3
+    .locals 0
 
     .line 214
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public getKeyId()[B
-    .registers 2
+    .locals 1
 
     .line 226
     iget-object v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyStatus;->keyId:[B
@@ -48,7 +48,7 @@
 .end method
 
 .method public getStatusCode()I
-    .registers 2
+    .locals 1
 
     .line 221
     iget v0, p0, Landroidx/media3/exoplayer/drm/ExoMediaDrm$KeyStatus;->statusCode:I

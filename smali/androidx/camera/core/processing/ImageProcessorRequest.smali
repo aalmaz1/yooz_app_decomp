@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/ImageProxy;I)V
-    .registers 3
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public getInputImage()Landroidx/camera/core/ImageProxy;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/camera/core/processing/ImageProcessorRequest;->mImageProxy:Landroidx/camera/core/ImageProxy;
@@ -40,7 +40,7 @@
 .end method
 
 .method public getOutputFormat()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/camera/core/processing/ImageProcessorRequest;->mOutputFormat:I

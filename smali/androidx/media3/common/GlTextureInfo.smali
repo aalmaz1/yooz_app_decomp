@@ -21,7 +21,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 25
     new-instance v6, Landroidx/media3/common/GlTextureInfo;
@@ -46,7 +46,7 @@
 .end method
 
 .method public constructor <init>(IIIII)V
-    .registers 6
+    .locals 0
 
     .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public release()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/util/GlUtil$GlException;
@@ -84,29 +84,29 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     .line 76
     invoke-static {v0}, Landroidx/media3/common/util/GlUtil;->deleteTexture(I)V
 
     .line 78
-    :cond_8
+    :cond_0
     iget v0, p0, Landroidx/media3/common/GlTextureInfo;->fboId:I
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_1
 
     .line 79
     invoke-static {v0}, Landroidx/media3/common/util/GlUtil;->deleteFbo(I)V
 
     .line 81
-    :cond_f
+    :cond_1
     iget v0, p0, Landroidx/media3/common/GlTextureInfo;->rboId:I
 
-    if-eq v0, v1, :cond_16
+    if-eq v0, v1, :cond_2
 
     .line 82
     invoke-static {v0}, Landroidx/media3/common/util/GlUtil;->deleteRbo(I)V
 
-    :cond_16
+    :cond_2
     return-void
 .end method

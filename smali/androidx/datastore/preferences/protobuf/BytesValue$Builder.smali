@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 159
     invoke-static {}, Landroidx/datastore/preferences/protobuf/BytesValue;->access$000()Landroidx/datastore/preferences/protobuf/BytesValue;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/BytesValue$1;)V
-    .registers 2
+    .locals 0
 
     .line 152
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/BytesValue$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public clearValue()Landroidx/datastore/preferences/protobuf/BytesValue$Builder;
-    .registers 2
+    .locals 1
 
     .line 198
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BytesValue$Builder;->copyOnWrite()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public getValue()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 173
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/BytesValue$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -84,7 +84,7 @@
 .end method
 
 .method public setValue(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/BytesValue$Builder;
-    .registers 3
+    .locals 1
 
     .line 185
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/BytesValue$Builder;->copyOnWrite()V

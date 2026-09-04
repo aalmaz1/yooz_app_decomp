@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,9 +74,9 @@
 .end method
 
 .method private static createImageReaderProxy(Landroidx/camera/core/ImageReaderProxyProvider;III)Landroidx/camera/core/impl/ImageReaderProxy;
-    .registers 11
+    .locals 7
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :cond_0
 
     const/4 v4, 0x4
 
@@ -97,7 +97,7 @@
 
     return-object p0
 
-    :cond_e
+    :cond_0
     const/4 p0, 0x4
 
     .line 157
@@ -109,7 +109,7 @@
 .end method
 
 .method private matchAndPropagateImage(Landroidx/camera/core/ImageProxy;)V
-    .registers 6
+    .locals 4
 
     .line 177
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getImageInfo()Landroidx/camera/core/ImageInfo;
@@ -199,7 +199,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_60
+    if-eqz p1, :cond_0
 
     .line 187
     iget-object p1, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mCurrentRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
@@ -212,12 +212,12 @@
     .line 189
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/ProcessingRequest;->onImageCaptured()V
 
-    :cond_60
+    :cond_0
     return-void
 .end method
 
 .method private releaseInputResources(Landroidx/camera/core/imagecapture/CaptureNode$In;Landroidx/camera/core/SafeCloseImageReaderProxy;)V
-    .registers 4
+    .locals 1
 
     .line 244
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/CaptureNode$In;->getSurface()Landroidx/camera/core/impl/DeferrableSurface;
@@ -255,7 +255,7 @@
 
 # virtual methods
 .method public getCapacity()I
-    .registers 3
+    .locals 2
 
     .line 265
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -263,16 +263,16 @@
     .line 266
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mSafeCloseImageReaderProxy:Landroidx/camera/core/SafeCloseImageReaderProxy;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     const-string v1, "The ImageReader is not initialized."
 
     invoke-static {v0, v1}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -288,7 +288,7 @@
 .end method
 
 .method getInputEdge()Landroidx/camera/core/imagecapture/CaptureNode$In;
-    .registers 2
+    .locals 1
 
     .line 254
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mInputEdge:Landroidx/camera/core/imagecapture/CaptureNode$In;
@@ -303,7 +303,7 @@
 .end method
 
 .method public getSafeCloseImageReaderProxy()Landroidx/camera/core/SafeCloseImageReaderProxy;
-    .registers 2
+    .locals 1
 
     .line 260
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mSafeCloseImageReaderProxy:Landroidx/camera/core/SafeCloseImageReaderProxy;
@@ -318,7 +318,7 @@
 .end method
 
 .method synthetic lambda$transform$0$androidx-camera-core-imagecapture-CaptureNode(Landroidx/camera/core/imagecapture/NoMetadataImageReader;Landroidx/camera/core/imagecapture/ProcessingRequest;)V
-    .registers 3
+    .locals 0
 
     .line 121
     invoke-virtual {p0, p2}, Landroidx/camera/core/imagecapture/CaptureNode;->onRequestAvailable(Landroidx/camera/core/imagecapture/ProcessingRequest;)V
@@ -330,27 +330,27 @@
 .end method
 
 .method synthetic lambda$transform$1$androidx-camera-core-imagecapture-CaptureNode(Landroidx/camera/core/impl/ImageReaderProxy;)V
-    .registers 5
+    .locals 3
 
     const-string v0, "Failed to acquire latest image"
 
     const/4 v1, 0x2
 
     .line 131
-    :try_start_3
+    :try_start_0
     invoke-interface {p1}, Landroidx/camera/core/impl/ImageReaderProxy;->acquireLatestImage()Landroidx/camera/core/ImageProxy;
 
     move-result-object p1
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     .line 133
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/CaptureNode;->onImageProxyAvailable(Landroidx/camera/core/ImageProxy;)V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 135
-    :cond_d
+    :cond_0
     new-instance p1, Landroidx/camera/core/ImageCaptureException;
 
     const/4 v2, 0x0
@@ -358,12 +358,12 @@
     invoke-direct {p1, v1, v0, v2}, Landroidx/camera/core/ImageCaptureException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     invoke-virtual {p0, p1}, Landroidx/camera/core/imagecapture/CaptureNode;->sendCaptureError(Landroidx/camera/core/ImageCaptureException;)V
-    :try_end_16
-    .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_20
+    goto :goto_0
 
-    :catch_17
+    :catch_0
     move-exception p1
 
     .line 139
@@ -373,12 +373,12 @@
 
     invoke-virtual {p0, v2}, Landroidx/camera/core/imagecapture/CaptureNode;->sendCaptureError(Landroidx/camera/core/ImageCaptureException;)V
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
 .method onImageProxyAvailable(Landroidx/camera/core/ImageProxy;)V
-    .registers 4
+    .locals 2
 
     .line 164
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -386,7 +386,7 @@
     .line 165
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mCurrentRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 166
     new-instance v0, Ljava/lang/StringBuilder;
@@ -410,18 +410,18 @@
     .line 167
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->close()V
 
-    goto :goto_22
+    goto :goto_0
 
     .line 170
-    :cond_1f
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/camera/core/imagecapture/CaptureNode;->matchAndPropagateImage(Landroidx/camera/core/ImageProxy;)V
 
-    :goto_22
+    :goto_0
     return-void
 .end method
 
 .method onRequestAvailable(Landroidx/camera/core/imagecapture/ProcessingRequest;)V
-    .registers 6
+    .locals 4
 
     .line 196
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -435,16 +435,16 @@
 
     const/4 v2, 0x0
 
-    if-lez v0, :cond_d
+    if-lez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v2
 
-    :goto_e
+    :goto_0
     const-string v3, "Too many acquire images. Close image to be able to process next."
 
     invoke-static {v0, v3}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -452,7 +452,7 @@
     .line 201
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mCurrentRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mPendingStageIds:Ljava/util/Set;
 
@@ -460,15 +460,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     move v1, v2
 
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_1
     const-string v0, "The previous request is not complete"
 
     invoke-static {v1, v0}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -521,7 +521,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 237
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -551,7 +551,7 @@
 .end method
 
 .method sendCaptureError(Landroidx/camera/core/ImageCaptureException;)V
-    .registers 3
+    .locals 1
 
     .line 228
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -559,17 +559,17 @@
     .line 229
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mCurrentRequest:Landroidx/camera/core/imagecapture/ProcessingRequest;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 230
     invoke-virtual {v0, p1}, Landroidx/camera/core/imagecapture/ProcessingRequest;->onCaptureFailure(Landroidx/camera/core/ImageCaptureException;)V
 
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public setOnImageCloseListener(Landroidx/camera/core/ForwardingImageProxy$OnImageCloseListener;)V
-    .registers 4
+    .locals 2
 
     .line 273
     invoke-static {}, Landroidx/camera/core/impl/utils/Threads;->checkMainThread()V
@@ -577,16 +577,16 @@
     .line 274
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mSafeCloseImageReaderProxy:Landroidx/camera/core/SafeCloseImageReaderProxy;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     const-string v1, "The ImageReader is not initialized."
 
     invoke-static {v0, v1}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -600,27 +600,27 @@
 .end method
 
 .method public transform(Landroidx/camera/core/imagecapture/CaptureNode$In;)Landroidx/camera/core/imagecapture/CaptureNode$Out;
-    .registers 7
+    .locals 5
 
     .line 96
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mInputEdge:Landroidx/camera/core/imagecapture/CaptureNode$In;
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/camera/core/imagecapture/CaptureNode;->mSafeCloseImageReaderProxy:Landroidx/camera/core/SafeCloseImageReaderProxy;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     const-string v2, "CaptureNode does not support recreation yet."
 
     invoke-static {v0, v2}, Landroidx/core/util/Preconditions;->checkState(ZLjava/lang/String;)V
@@ -645,14 +645,14 @@
 
     xor-int/2addr v1, v3
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_1
 
     .line 106
     invoke-virtual {p1}, Landroidx/camera/core/imagecapture/CaptureNode$In;->getImageReaderProxyProvider()Landroidx/camera/core/ImageReaderProxyProvider;
 
     move-result-object v1
 
-    if-nez v1, :cond_43
+    if-nez v1, :cond_1
 
     .line 108
     new-instance v1, Landroidx/camera/core/MetadataImageReader;
@@ -682,10 +682,10 @@
 
     invoke-direct {v0, p0}, Landroidx/camera/core/imagecapture/CaptureNode$$ExternalSyntheticLambda1;-><init>(Landroidx/camera/core/imagecapture/CaptureNode;)V
 
-    goto :goto_5d
+    goto :goto_1
 
     .line 115
-    :cond_43
+    :cond_1
     new-instance v1, Landroidx/camera/core/imagecapture/NoMetadataImageReader;
 
     .line 116
@@ -715,7 +715,7 @@
     invoke-direct {v0, p0, v1}, Landroidx/camera/core/imagecapture/CaptureNode$$ExternalSyntheticLambda2;-><init>(Landroidx/camera/core/imagecapture/CaptureNode;Landroidx/camera/core/imagecapture/NoMetadataImageReader;)V
 
     .line 125
-    :goto_5d
+    :goto_1
     invoke-interface {v1}, Landroidx/camera/core/impl/ImageReaderProxy;->getSurface()Landroid/view/Surface;
 
     move-result-object v2
@@ -785,7 +785,7 @@
 .end method
 
 .method public bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 71
     check-cast p1, Landroidx/camera/core/imagecapture/CaptureNode$In;

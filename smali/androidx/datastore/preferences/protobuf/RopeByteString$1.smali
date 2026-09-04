@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/preferences/protobuf/RopeByteString;)V
-    .registers 4
+    .locals 2
 
     .line 285
     iput-object p1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->this$0:Landroidx/datastore/preferences/protobuf/RopeByteString;
@@ -51,7 +51,7 @@
 .end method
 
 .method private nextPiece()Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
-    .registers 2
+    .locals 1
 
     .line 292
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->pieces:Landroidx/datastore/preferences/protobuf/RopeByteString$PieceIterator;
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->pieces:Landroidx/datastore/preferences/protobuf/RopeByteString$PieceIterator;
 
@@ -72,43 +72,43 @@
 
     move-result-object v0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 297
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->current:Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public nextByte()B
-    .registers 3
+    .locals 2
 
     .line 302
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->current:Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 305
     invoke-interface {v0}, Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;->nextByte()B
@@ -122,7 +122,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 307
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->nextPiece()Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
@@ -131,11 +131,11 @@
 
     iput-object v1, p0, Landroidx/datastore/preferences/protobuf/RopeByteString$1;->current:Landroidx/datastore/preferences/protobuf/ByteString$ByteIterator;
 
-    :cond_16
+    :cond_0
     return v0
 
     .line 303
-    :cond_17
+    :cond_1
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

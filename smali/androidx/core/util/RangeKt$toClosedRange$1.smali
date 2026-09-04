@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/util/Range;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public contains(Ljava/lang/Comparable;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -98,7 +98,7 @@
 .end method
 
 .method public getEndInclusive()Ljava/lang/Comparable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -116,7 +116,7 @@
 .end method
 
 .method public getStart()Ljava/lang/Comparable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -134,7 +134,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-static {p0}, Lkotlin/ranges/ClosedRange$DefaultImpls;->isEmpty(Lkotlin/ranges/ClosedRange;)Z

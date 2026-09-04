@@ -60,14 +60,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0xd
 
     new-array v0, v0, [I
 
     .line 104
-    fill-array-data v0, :array_14
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/extractor/AacUtil;->AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE:[I
 
@@ -76,7 +76,7 @@
     new-array v0, v0, [I
 
     .line 126
-    fill-array-data v0, :array_32
+    fill-array-data v0, :array_1
 
     sput-object v0, Landroidx/media3/extractor/AacUtil;->AUDIO_SPECIFIC_CONFIG_CHANNEL_COUNT_TABLE:[I
 
@@ -84,7 +84,7 @@
 
     nop
 
-    :array_14
+    :array_0
     .array-data 4
         0x17700
         0x15888
@@ -101,7 +101,7 @@
         0x1cb6
     .end array-data
 
-    :array_32
+    :array_1
     .array-data 4
         0x0
         0x1
@@ -123,7 +123,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 392
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public static buildAacLcAudioSpecificConfig(II)[B
-    .registers 8
+    .locals 6
 
     const/4 v0, -0x1
 
@@ -143,52 +143,52 @@
     move v2, v1
 
     .line 285
-    :goto_4
+    :goto_0
     sget-object v4, Landroidx/media3/extractor/AacUtil;->AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE:[I
 
     array-length v5, v4
 
-    if-ge v2, v5, :cond_11
+    if-ge v2, v5, :cond_1
 
     .line 286
     aget v4, v4, v2
 
-    if-ne p0, v4, :cond_e
+    if-ne p0, v4, :cond_0
 
     move v3, v2
 
-    :cond_e
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_11
+    :cond_1
     move v2, v0
 
     .line 291
-    :goto_12
+    :goto_1
     sget-object v4, Landroidx/media3/extractor/AacUtil;->AUDIO_SPECIFIC_CONFIG_CHANNEL_COUNT_TABLE:[I
 
     array-length v5, v4
 
-    if-ge v1, v5, :cond_1f
+    if-ge v1, v5, :cond_3
 
     .line 292
     aget v4, v4, v1
 
-    if-ne p1, v4, :cond_1c
+    if-ne p1, v4, :cond_2
 
     move v2, v1
 
-    :cond_1c
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_1f
-    if-eq p0, v0, :cond_29
+    :cond_3
+    if-eq p0, v0, :cond_4
 
-    if-eq v2, v0, :cond_29
+    if-eq v2, v0, :cond_4
 
     const/4 p0, 0x2
 
@@ -200,7 +200,7 @@
     return-object p0
 
     .line 297
-    :cond_29
+    :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -233,7 +233,7 @@
 .end method
 
 .method public static buildAudioSpecificConfig(III)[B
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -275,7 +275,7 @@
 .end method
 
 .method private static getAudioObjectType(Landroidx/media3/common/util/ParsableBitArray;)I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x5
 
@@ -286,7 +286,7 @@
 
     const/16 v1, 0x1f
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x6
 
@@ -297,12 +297,12 @@
 
     add-int/lit8 v0, p0, 0x20
 
-    :cond_10
+    :cond_0
     return v0
 .end method
 
 .method private static getSamplingFrequency(Landroidx/media3/common/util/ParsableBitArray;)I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -320,7 +320,7 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1
 
     .line 345
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->bitsLeft()I
@@ -329,16 +329,16 @@
 
     const/16 v1, 0x18
 
-    if-lt v0, v1, :cond_17
+    if-lt v0, v1, :cond_0
 
     .line 349
     invoke-virtual {p0, v1}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const-string p0, "AAC header insufficient data"
 
     .line 346
@@ -348,20 +348,20 @@
 
     throw p0
 
-    :cond_1e
+    :cond_1
     const/16 p0, 0xd
 
-    if-ge v0, p0, :cond_27
+    if-ge v0, p0, :cond_2
 
     .line 351
     sget-object p0, Landroidx/media3/extractor/AacUtil;->AUDIO_SPECIFIC_CONFIG_SAMPLING_RATE_TABLE:[I
 
     aget p0, p0, v0
 
-    :goto_26
+    :goto_0
     return p0
 
-    :cond_27
+    :cond_2
     const-string p0, "AAC header wrong Sampling Frequency Index"
 
     .line 353
@@ -373,7 +373,7 @@
 .end method
 
 .method public static parseAudioSpecificConfig(Landroidx/media3/common/util/ParsableBitArray;Z)Landroidx/media3/extractor/AacUtil$Config;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -414,14 +414,14 @@
 
     const/4 v5, 0x5
 
-    if-eq v0, v5, :cond_23
+    if-eq v0, v5, :cond_0
 
     const/16 v5, 0x1d
 
-    if-ne v0, v5, :cond_33
+    if-ne v0, v5, :cond_1
 
     .line 223
-    :cond_23
+    :cond_0
     invoke-static {p0}, Landroidx/media3/extractor/AacUtil;->getSamplingFrequency(Landroidx/media3/common/util/ParsableBitArray;)I
 
     move-result v1
@@ -433,15 +433,15 @@
 
     const/16 v5, 0x16
 
-    if-ne v0, v5, :cond_33
+    if-ne v0, v5, :cond_1
 
     .line 227
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    :cond_33
-    if-eqz p1, :cond_85
+    :cond_1
+    if-eqz p1, :cond_4
 
     const/4 p1, 0x1
 
@@ -449,27 +449,27 @@
 
     const/4 v6, 0x2
 
-    if-eq v0, p1, :cond_61
+    if-eq v0, p1, :cond_2
 
-    if-eq v0, v6, :cond_61
+    if-eq v0, v6, :cond_2
 
-    if-eq v0, v5, :cond_61
+    if-eq v0, v5, :cond_2
 
-    if-eq v0, v2, :cond_61
+    if-eq v0, v2, :cond_2
 
     const/4 p1, 0x6
 
-    if-eq v0, p1, :cond_61
+    if-eq v0, p1, :cond_2
 
     const/4 p1, 0x7
 
-    if-eq v0, p1, :cond_61
+    if-eq v0, p1, :cond_2
 
     const/16 p1, 0x11
 
-    if-eq v0, p1, :cond_61
+    if-eq v0, p1, :cond_2
 
-    packed-switch v0, :pswitch_data_98
+    packed-switch v0, :pswitch_data_0
 
     .line 248
     new-instance p0, Ljava/lang/StringBuilder;
@@ -493,29 +493,29 @@
     throw p0
 
     .line 245
-    :cond_61
-    :pswitch_61
+    :cond_2
+    :pswitch_0
     invoke-static {p0, v0, v3}, Landroidx/media3/extractor/AacUtil;->parseGaSpecificConfig(Landroidx/media3/common/util/ParsableBitArray;II)V
 
-    packed-switch v0, :pswitch_data_a6
+    packed-switch v0, :pswitch_data_1
 
-    :pswitch_67
-    goto :goto_85
+    :pswitch_1
+    goto :goto_0
 
     .line 258
-    :pswitch_68
+    :pswitch_2
     invoke-virtual {p0, v6}, Landroidx/media3/common/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
 
-    if-eq p0, v6, :cond_71
+    if-eq p0, v6, :cond_3
 
-    if-eq p0, v5, :cond_71
+    if-eq p0, v5, :cond_3
 
-    goto :goto_85
+    goto :goto_0
 
     .line 260
-    :cond_71
+    :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Unsupported epConfig: "
@@ -537,8 +537,8 @@
     throw p0
 
     .line 269
-    :cond_85
-    :goto_85
+    :cond_4
+    :goto_0
     sget-object p0, Landroidx/media3/extractor/AacUtil;->AUDIO_SPECIFIC_CONFIG_CHANNEL_COUNT_TABLE:[I
 
     aget p0, p0, v3
@@ -547,7 +547,7 @@
 
     const/4 v0, 0x0
 
-    if-eq p0, p1, :cond_93
+    if-eq p0, p1, :cond_5
 
     .line 273
     new-instance p1, Landroidx/media3/extractor/AacUtil$Config;
@@ -557,36 +557,36 @@
     return-object p1
 
     .line 271
-    :cond_93
+    :cond_5
     invoke-static {v0, v0}, Landroidx/media3/common/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Landroidx/media3/common/ParserException;
 
     move-result-object p0
 
     throw p0
 
-    :pswitch_data_98
+    :pswitch_data_0
     .packed-switch 0x13
-        :pswitch_61
-        :pswitch_61
-        :pswitch_61
-        :pswitch_61
-        :pswitch_61
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 
-    :pswitch_data_a6
+    :pswitch_data_1
     .packed-switch 0x11
-        :pswitch_68
-        :pswitch_67
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
-        :pswitch_68
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
     .end packed-switch
 .end method
 
 .method public static parseAudioSpecificConfig([B)Landroidx/media3/extractor/AacUtil$Config;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -608,14 +608,14 @@
 .end method
 
 .method private static parseGaSpecificConfig(Landroidx/media3/common/util/ParsableBitArray;II)V
-    .registers 6
+    .locals 3
 
     .line 361
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const-string v0, "AacUtil"
 
@@ -625,12 +625,12 @@
     invoke-static {v0, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 365
-    :cond_d
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     const/16 v0, 0xe
 
@@ -638,12 +638,12 @@
     invoke-virtual {p0, v0}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
     .line 369
-    :cond_18
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableBitArray;->readBit()Z
 
     move-result v0
 
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_8
 
     const/4 p2, 0x6
 
@@ -651,56 +651,56 @@
 
     const/4 v2, 0x3
 
-    if-eq p1, p2, :cond_26
+    if-eq p1, p2, :cond_2
 
-    if-ne p1, v1, :cond_29
+    if-ne p1, v1, :cond_3
 
     .line 374
-    :cond_26
+    :cond_2
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_29
-    if-eqz v0, :cond_49
+    :cond_3
+    if-eqz v0, :cond_7
 
     const/16 p2, 0x16
 
-    if-ne p1, p2, :cond_34
+    if-ne p1, p2, :cond_4
 
     const/16 p2, 0x10
 
     .line 378
     invoke-virtual {p0, p2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_34
+    :cond_4
     const/16 p2, 0x11
 
-    if-eq p1, p2, :cond_42
+    if-eq p1, p2, :cond_5
 
     const/16 p2, 0x13
 
-    if-eq p1, p2, :cond_42
+    if-eq p1, p2, :cond_5
 
-    if-eq p1, v1, :cond_42
+    if-eq p1, v1, :cond_5
 
     const/16 p2, 0x17
 
-    if-ne p1, p2, :cond_45
+    if-ne p1, p2, :cond_6
 
     .line 386
-    :cond_42
+    :cond_5
     invoke-virtual {p0, v2}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_45
+    :cond_6
     const/4 p1, 0x1
 
     .line 388
     invoke-virtual {p0, p1}, Landroidx/media3/common/util/ParsableBitArray;->skipBits(I)V
 
-    :cond_49
+    :cond_7
     return-void
 
     .line 371
-    :cond_4a
+    :cond_8
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V

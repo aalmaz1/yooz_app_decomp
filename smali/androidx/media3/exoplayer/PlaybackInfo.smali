@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 41
     new-instance v0, Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/Timeline;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLandroidx/media3/exoplayer/source/TrackGroupArray;Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;Ljava/util/List;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;ZIILandroidx/media3/common/PlaybackParameters;JJJJZ)V
-    .registers 30
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -206,7 +206,7 @@
 .end method
 
 .method public static createDummy(Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 29
+    .locals 28
 
     move-object/from16 v11, p0
 
@@ -262,7 +262,7 @@
 .end method
 
 .method public static getDummyPeriodForEmptyTimeline()Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
-    .registers 1
+    .locals 1
 
     .line 223
     sget-object v0, Landroidx/media3/exoplayer/PlaybackInfo;->PLACEHOLDER_MEDIA_PERIOD_ID:Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;
@@ -273,7 +273,7 @@
 
 # virtual methods
 .method public copyWithEstimatedPosition()Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 31
 
     move-object/from16 v0, p0
 
@@ -354,7 +354,7 @@
 .end method
 
 .method public copyWithIsLoading(Z)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -433,7 +433,7 @@
 .end method
 
 .method public copyWithLoadingMediaPeriodId(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -512,7 +512,7 @@
 .end method
 
 .method public copyWithNewPosition(Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;JJJJLandroidx/media3/exoplayer/source/TrackGroupArray;Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;Ljava/util/List;)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 42
+    .locals 29
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -601,7 +601,7 @@
 .end method
 
 .method public copyWithPlayWhenReady(ZII)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 33
+    .locals 29
 
     move-object/from16 v0, p0
 
@@ -676,7 +676,7 @@
 .end method
 
 .method public copyWithPlaybackError(Landroidx/media3/exoplayer/ExoPlaybackException;)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -755,7 +755,7 @@
 .end method
 
 .method public copyWithPlaybackParameters(Landroidx/media3/common/PlaybackParameters;)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -832,7 +832,7 @@
 .end method
 
 .method public copyWithPlaybackState(I)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -911,7 +911,7 @@
 .end method
 
 .method public copyWithSleepingForOffload(Z)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -988,7 +988,7 @@
 .end method
 
 .method public copyWithTimeline(Landroidx/media3/common/Timeline;)Landroidx/media3/exoplayer/PlaybackInfo;
-    .registers 32
+    .locals 30
 
     move-object/from16 v0, p0
 
@@ -1067,14 +1067,14 @@
 .end method
 
 .method public getEstimatedPositionUs()J
-    .registers 7
+    .locals 6
 
     .line 584
     invoke-virtual {p0}, Landroidx/media3/exoplayer/PlaybackInfo;->isPlaying()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 585
     iget-wide v0, p0, Landroidx/media3/exoplayer/PlaybackInfo;->positionUs:J
@@ -1082,7 +1082,7 @@
     return-wide v0
 
     .line 593
-    :cond_9
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/exoplayer/PlaybackInfo;->positionUpdateTimeMs:J
 
     .line 594
@@ -1093,7 +1093,7 @@
 
     cmp-long v4, v0, v4
 
-    if-nez v4, :cond_9
+    if-nez v4, :cond_0
 
     .line 597
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1128,36 +1128,36 @@
 .end method
 
 .method public isPlaying()Z
-    .registers 3
+    .locals 2
 
     .line 617
     iget v0, p0, Landroidx/media3/exoplayer/PlaybackInfo;->playbackState:I
 
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/PlaybackInfo;->playWhenReady:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     iget v0, p0, Landroidx/media3/exoplayer/PlaybackInfo;->playbackSuppressionReason:I
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method public updatePositionUs(J)V
-    .registers 3
+    .locals 0
 
     .line 571
     iput-wide p1, p0, Landroidx/media3/exoplayer/PlaybackInfo;->positionUs:J

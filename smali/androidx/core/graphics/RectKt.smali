@@ -56,7 +56,7 @@
 
 # direct methods
 .method public static final and(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 282
     new-instance v0, Landroid/graphics/Rect;
@@ -70,7 +70,7 @@
 .end method
 
 .method public static final and(Landroid/graphics/RectF;Landroid/graphics/RectF;)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 294
     new-instance v0, Landroid/graphics/RectF;
@@ -84,7 +84,7 @@
 .end method
 
 .method public static final component1(Landroid/graphics/RectF;)F
-    .registers 1
+    .locals 0
 
     .line 82
     iget p0, p0, Landroid/graphics/RectF;->left:F
@@ -93,7 +93,7 @@
 .end method
 
 .method public static final component1(Landroid/graphics/Rect;)I
-    .registers 1
+    .locals 0
 
     .line 38
     iget p0, p0, Landroid/graphics/Rect;->left:I
@@ -102,7 +102,7 @@
 .end method
 
 .method public static final component2(Landroid/graphics/RectF;)F
-    .registers 1
+    .locals 0
 
     .line 93
     iget p0, p0, Landroid/graphics/RectF;->top:F
@@ -111,7 +111,7 @@
 .end method
 
 .method public static final component2(Landroid/graphics/Rect;)I
-    .registers 1
+    .locals 0
 
     .line 49
     iget p0, p0, Landroid/graphics/Rect;->top:I
@@ -120,7 +120,7 @@
 .end method
 
 .method public static final component3(Landroid/graphics/RectF;)F
-    .registers 1
+    .locals 0
 
     .line 104
     iget p0, p0, Landroid/graphics/RectF;->right:F
@@ -129,7 +129,7 @@
 .end method
 
 .method public static final component3(Landroid/graphics/Rect;)I
-    .registers 1
+    .locals 0
 
     .line 60
     iget p0, p0, Landroid/graphics/Rect;->right:I
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final component4(Landroid/graphics/RectF;)F
-    .registers 1
+    .locals 0
 
     .line 115
     iget p0, p0, Landroid/graphics/RectF;->bottom:F
@@ -147,7 +147,7 @@
 .end method
 
 .method public static final component4(Landroid/graphics/Rect;)I
-    .registers 1
+    .locals 0
 
     .line 71
     iget p0, p0, Landroid/graphics/Rect;->bottom:I
@@ -156,7 +156,7 @@
 .end method
 
 .method public static final contains(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
-    .registers 3
+    .locals 1
 
     .line 324
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -171,7 +171,7 @@
 .end method
 
 .method public static final contains(Landroid/graphics/RectF;Landroid/graphics/PointF;)Z
-    .registers 3
+    .locals 1
 
     .line 332
     iget v0, p1, Landroid/graphics/PointF;->x:F
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Rect;I)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 201
     new-instance v0, Landroid/graphics/Rect;
@@ -202,7 +202,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Rect;Landroid/graphics/Point;)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 221
     new-instance v0, Landroid/graphics/Rect;
@@ -224,7 +224,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/RectF;F)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 211
     new-instance v0, Landroid/graphics/RectF;
@@ -240,7 +240,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/RectF;Landroid/graphics/PointF;)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 231
     new-instance v0, Landroid/graphics/RectF;
@@ -262,7 +262,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 181
     new-instance v0, Landroid/graphics/Region;
@@ -278,7 +278,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/RectF;Landroid/graphics/RectF;)Landroid/graphics/Region;
-    .registers 4
+    .locals 2
 
     .line 191
     new-instance v0, Landroid/graphics/Region;
@@ -311,7 +311,7 @@
 .end method
 
 .method public static final or(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 378
     new-instance v0, Landroid/graphics/Rect;
@@ -325,7 +325,7 @@
 .end method
 
 .method public static final or(Landroid/graphics/RectF;Landroid/graphics/RectF;)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 381
     new-instance v0, Landroid/graphics/RectF;
@@ -339,7 +339,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Rect;I)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 142
     new-instance v0, Landroid/graphics/Rect;
@@ -353,7 +353,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Rect;Landroid/graphics/Point;)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 162
     new-instance v0, Landroid/graphics/Rect;
@@ -371,7 +371,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 122
     new-instance v0, Landroid/graphics/Rect;
@@ -385,7 +385,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/RectF;F)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 152
     new-instance v0, Landroid/graphics/RectF;
@@ -399,7 +399,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/RectF;Landroid/graphics/PointF;)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 172
     new-instance v0, Landroid/graphics/RectF;
@@ -417,7 +417,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/RectF;Landroid/graphics/RectF;)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 132
     new-instance v0, Landroid/graphics/RectF;
@@ -431,7 +431,7 @@
 .end method
 
 .method public static final times(Landroid/graphics/Rect;I)Landroid/graphics/Rect;
-    .registers 3
+    .locals 1
 
     .line 240
     new-instance v0, Landroid/graphics/Rect;
@@ -470,7 +470,7 @@
 .end method
 
 .method public static final times(Landroid/graphics/RectF;F)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     .line 257
     new-instance v0, Landroid/graphics/RectF;
@@ -509,7 +509,7 @@
 .end method
 
 .method public static final times(Landroid/graphics/RectF;I)Landroid/graphics/RectF;
-    .registers 3
+    .locals 1
 
     int-to-float p1, p1
 
@@ -550,7 +550,7 @@
 .end method
 
 .method public static final toRect(Landroid/graphics/RectF;)Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 344
     new-instance v0, Landroid/graphics/Rect;
@@ -564,7 +564,7 @@
 .end method
 
 .method public static final toRectF(Landroid/graphics/Rect;)Landroid/graphics/RectF;
-    .registers 2
+    .locals 1
 
     .line 337
     new-instance v0, Landroid/graphics/RectF;
@@ -575,7 +575,7 @@
 .end method
 
 .method public static final toRegion(Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 2
+    .locals 1
 
     .line 352
     new-instance v0, Landroid/graphics/Region;
@@ -586,7 +586,7 @@
 .end method
 
 .method public static final toRegion(Landroid/graphics/RectF;)Landroid/graphics/Region;
-    .registers 3
+    .locals 2
 
     .line 358
     new-instance v0, Landroid/graphics/Region;
@@ -606,7 +606,7 @@
 .end method
 
 .method public static final transform(Landroid/graphics/RectF;Landroid/graphics/Matrix;)Landroid/graphics/RectF;
-    .registers 2
+    .locals 0
 
     .line 364
     invoke-virtual {p1, p0}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
@@ -615,7 +615,7 @@
 .end method
 
 .method public static final xor(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 303
     new-instance v0, Landroid/graphics/Region;
@@ -631,7 +631,7 @@
 .end method
 
 .method public static final xor(Landroid/graphics/RectF;Landroid/graphics/RectF;)Landroid/graphics/Region;
-    .registers 4
+    .locals 2
 
     .line 313
     new-instance v0, Landroid/graphics/Region;

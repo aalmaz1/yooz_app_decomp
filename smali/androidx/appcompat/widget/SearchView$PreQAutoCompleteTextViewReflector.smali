@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 2061
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
     const/4 v1, 0x1
 
     .line 2064
-    :try_start_f
+    :try_start_0
     const-class v2, Landroid/widget/AutoCompleteTextView;
 
     const-string v3, "doBeforeTextChanged"
@@ -64,12 +64,12 @@
 
     .line 2066
     invoke-virtual {v2, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_1e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_f .. :try_end_1e} :catch_1e
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2071
-    :catch_1e
-    :try_start_1e
+    :catch_0
+    :try_start_1
     const-class v2, Landroid/widget/AutoCompleteTextView;
 
     const-string v3, "doAfterTextChanged"
@@ -85,12 +85,12 @@
 
     .line 2073
     invoke-virtual {v2, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_2d
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1e .. :try_end_2d} :catch_2d
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 2078
-    :catch_2d
-    :try_start_2d
+    :catch_1
+    :try_start_2
     const-class v2, Landroid/widget/AutoCompleteTextView;
 
     const-string v3, "ensureImeVisible"
@@ -110,27 +110,27 @@
 
     .line 2080
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_40
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2d .. :try_end_40} :catch_40
+    :try_end_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_2
 
-    :catch_40
+    :catch_2
     return-void
 .end method
 
 .method private static preApi29Check()V
-    .registers 2
+    .locals 2
 
     .line 2117
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-ge v0, v1, :cond_7
+    if-ge v0, v1, :cond_0
 
     return-void
 
     .line 2118
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedClassVersionError;
 
     const-string v1, "This function can only be used for API Level < 29."
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method doAfterTextChanged(Landroid/widget/AutoCompleteTextView;)V
-    .registers 4
+    .locals 2
 
     .line 2097
     invoke-static {}, Landroidx/appcompat/widget/SearchView$PreQAutoCompleteTextViewReflector;->preApi29Check()V
@@ -151,25 +151,25 @@
     .line 2098
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$PreQAutoCompleteTextViewReflector;->mDoAfterTextChanged:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    :try_start_8
+    :try_start_0
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 2100
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_d} :catch_d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_d
-    :cond_d
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method doBeforeTextChanged(Landroid/widget/AutoCompleteTextView;)V
-    .registers 4
+    .locals 2
 
     .line 2087
     invoke-static {}, Landroidx/appcompat/widget/SearchView$PreQAutoCompleteTextViewReflector;->preApi29Check()V
@@ -177,25 +177,25 @@
     .line 2088
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$PreQAutoCompleteTextViewReflector;->mDoBeforeTextChanged:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    :try_start_8
+    :try_start_0
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 2090
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_d
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_d} :catch_d
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_d
-    :cond_d
+    :catch_0
+    :cond_0
     return-void
 .end method
 
 .method ensureImeVisible(Landroid/widget/AutoCompleteTextView;)V
-    .registers 6
+    .locals 4
 
     .line 2107
     invoke-static {}, Landroidx/appcompat/widget/SearchView$PreQAutoCompleteTextViewReflector;->preApi29Check()V
@@ -203,11 +203,11 @@
     .line 2108
     iget-object v0, p0, Landroidx/appcompat/widget/SearchView$PreQAutoCompleteTextViewReflector;->mEnsureImeVisible:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    :try_start_8
+    :try_start_0
     new-array v2, v1, [Ljava/lang/Object;
 
     .line 2110
@@ -220,10 +220,10 @@
     aput-object v1, v2, v3
 
     invoke-virtual {v0, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_14} :catch_14
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_14
-    :cond_14
+    :catch_0
+    :cond_0
     return-void
 .end method

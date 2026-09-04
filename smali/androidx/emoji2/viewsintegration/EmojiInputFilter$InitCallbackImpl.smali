@@ -38,7 +38,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/TextView;Landroidx/emoji2/viewsintegration/EmojiInputFilter;)V
-    .registers 4
+    .locals 1
 
     .line 105
     invoke-direct {p0}, Landroidx/emoji2/text/EmojiCompat$InitCallback;-><init>()V
@@ -61,58 +61,58 @@
 .end method
 
 .method private isInputFilterCurrentlyRegisteredOnTextView(Landroid/widget/TextView;Landroid/text/InputFilter;)Z
-    .registers 6
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_3
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_0
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 148
-    :cond_6
+    :cond_0
     invoke-virtual {p1}, Landroid/widget/TextView;->getFilters()[Landroid/text/InputFilter;
 
     move-result-object p1
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_1
 
     return v0
 
-    :cond_d
+    :cond_1
     move v1, v0
 
     .line 153
-    :goto_e
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_1a
+    if-ge v1, v2, :cond_3
 
     .line 154
     aget-object v2, p1, v1
 
-    if-ne v2, p2, :cond_17
+    if-ne v2, p2, :cond_2
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_17
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_1a
-    :goto_1a
+    :cond_3
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public onInitialized()V
-    .registers 5
+    .locals 4
 
     .line 112
     invoke-super {p0}, Landroidx/emoji2/text/EmojiCompat$InitCallback;->onInitialized()V
@@ -140,17 +140,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     return-void
 
     .line 116
-    :cond_1a
+    :cond_0
     invoke-virtual {v0}, Landroid/widget/TextView;->isAttachedToWindow()Z
 
     move-result v1
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_2
 
     .line 117
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -166,12 +166,12 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_2f
+    if-ne v1, v2, :cond_1
 
     return-void
 
     .line 131
-    :cond_2f
+    :cond_1
     invoke-static {v2}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
 
     move-result v1
@@ -187,13 +187,13 @@
     .line 136
     instance-of v0, v2, Landroid/text/Spannable;
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     .line 137
     check-cast v2, Landroid/text/Spannable;
 
     invoke-static {v2, v1, v3}, Landroidx/emoji2/viewsintegration/EmojiInputFilter;->updateSelection(Landroid/text/Spannable;II)V
 
-    :cond_43
+    :cond_2
     return-void
 .end method

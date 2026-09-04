@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(III)V
-    .registers 4
+    .locals 0
 
     .line 342
     invoke-direct {p0, p1, p2, p3}, Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat$InputConfigurationCompatApi23Impl;-><init>(III)V
@@ -25,7 +25,7 @@
 .end method
 
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 338
     invoke-direct {p0, p1}, Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat$InputConfigurationCompatApi23Impl;-><init>(Ljava/lang/Object;)V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public isMultiResolution()Z
-    .registers 2
+    .locals 1
 
     .line 347
     invoke-virtual {p0}, Landroidx/camera/camera2/internal/compat/params/InputConfigurationCompat$InputConfigurationCompatApi31Impl;->getInputConfiguration()Ljava/lang/Object;

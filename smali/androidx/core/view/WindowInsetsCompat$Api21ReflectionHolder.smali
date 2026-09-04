@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 2131
     :try_start_0
@@ -78,12 +78,12 @@
 
     .line 2138
     sput-boolean v1, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sReflectionSucceeded:Z
-    :try_end_2c
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_2c} :catch_2d
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_46
+    goto :goto_0
 
-    :catch_2d
+    :catch_0
     move-exception v0
 
     .line 2140
@@ -109,12 +109,12 @@
 
     invoke-static {v2, v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_46
+    :goto_0
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -123,38 +123,38 @@
 .end method
 
 .method public static getRootWindowInsets(Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
-    .registers 5
+    .locals 4
 
     .line 2148
     sget-boolean v0, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sReflectionSucceeded:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
-    goto :goto_69
+    goto :goto_0
 
     .line 2152
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
     .line 2154
-    :try_start_10
+    :try_start_0
     sget-object v2, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sViewAttachInfoField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v2, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_1
 
     .line 2156
     sget-object v2, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sStableInsets:Ljava/lang/reflect/Field;
@@ -174,9 +174,9 @@
 
     check-cast v0, Landroid/graphics/Rect;
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_1
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_1
 
     .line 2159
     new-instance v3, Landroidx/core/view/WindowInsetsCompat$Builder;
@@ -215,12 +215,12 @@
     move-result-object p0
 
     invoke-virtual {v0, p0}, Landroidx/core/view/WindowInsetsCompat;->copyRootViewBounds(Landroid/view/View;)V
-    :try_end_4f
-    .catch Ljava/lang/IllegalAccessException; {:try_start_10 .. :try_end_4f} :catch_50
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_50
+    :catch_0
     move-exception p0
 
     .line 2172
@@ -246,7 +246,7 @@
 
     invoke-static {v2, v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :cond_69
-    :goto_69
+    :cond_1
+    :goto_0
     return-object v1
 .end method

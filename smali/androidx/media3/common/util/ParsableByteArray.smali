@@ -34,14 +34,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     const/4 v0, 0x2
 
     new-array v0, v0, [C
 
     .line 36
-    fill-array-data v0, :array_24
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/media3/common/util/ParsableByteArray;->CR_AND_LF:[C
 
@@ -80,7 +80,7 @@
 
     nop
 
-    :array_24
+    :array_0
     .array-data 2
         0xds
         0xas
@@ -88,7 +88,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -119,7 +119,7 @@
 .end method
 
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -136,7 +136,7 @@
 .end method
 
 .method public constructor <init>([BI)V
-    .registers 3
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -151,7 +151,7 @@
 .end method
 
 .method private findNextLineTerminator(Ljava/nio/charset/Charset;)I
-    .registers 6
+    .locals 4
 
     .line 629
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -160,7 +160,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_41
+    if-nez v0, :cond_3
 
     sget-object v0, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
@@ -168,19 +168,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_41
+    goto :goto_1
 
     .line 631
-    :cond_11
+    :cond_0
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_16:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v0}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_2
 
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_16LE:Ljava/nio/charset/Charset;
 
@@ -189,7 +189,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_2
 
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_16BE:Ljava/nio/charset/Charset;
 
@@ -198,12 +198,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_1
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 636
-    :cond_2a
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -224,28 +224,28 @@
 
     throw v0
 
-    :cond_3f
-    :goto_3f
+    :cond_2
+    :goto_0
     const/4 v0, 0x2
 
-    goto :goto_42
+    goto :goto_2
 
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_1
     const/4 v0, 0x1
 
     .line 638
-    :goto_42
+    :goto_2
     iget v1, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
 
-    :goto_44
+    :goto_3
     iget v2, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
 
     add-int/lit8 v3, v0, -0x1
 
     sub-int v3, v2, v3
 
-    if-ge v1, v3, :cond_a3
+    if-ge v1, v3, :cond_9
 
     .line 639
     sget-object v2, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -254,7 +254,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_5c
+    if-nez v2, :cond_4
 
     sget-object v2, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
@@ -262,9 +262,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_67
+    if-eqz v2, :cond_5
 
-    :cond_5c
+    :cond_4
     iget-object v2, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     aget-byte v2, v2, v1
@@ -274,19 +274,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_67
+    if-eqz v2, :cond_5
 
     return v1
 
     .line 642
-    :cond_67
+    :cond_5
     sget-object v2, Lcom/google/common/base/Charsets;->UTF_16:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v2}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_77
+    if-nez v2, :cond_6
 
     sget-object v2, Lcom/google/common/base/Charsets;->UTF_16BE:Ljava/nio/charset/Charset;
 
@@ -294,14 +294,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_88
+    if-eqz v2, :cond_7
 
-    :cond_77
+    :cond_6
     iget-object v2, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     aget-byte v3, v2, v1
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_7
 
     add-int/lit8 v3, v1, 0x1
 
@@ -312,19 +312,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_88
+    if-eqz v2, :cond_7
 
     return v1
 
     .line 646
-    :cond_88
+    :cond_7
     sget-object v2, Lcom/google/common/base/Charsets;->UTF_16LE:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v2}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_a1
+    if-eqz v2, :cond_8
 
     iget-object v2, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
@@ -332,7 +332,7 @@
 
     aget-byte v3, v2, v3
 
-    if-nez v3, :cond_a1
+    if-nez v3, :cond_8
 
     aget-byte v2, v2, v1
 
@@ -341,21 +341,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a1
+    if-eqz v2, :cond_8
 
     return v1
 
-    :cond_a1
+    :cond_8
     add-int/2addr v1, v0
 
-    goto :goto_44
+    goto :goto_3
 
-    :cond_a3
+    :cond_9
     return v2
 .end method
 
 .method private peekCharacterAndSize(Ljava/nio/charset/Charset;)I
-    .registers 6
+    .locals 4
 
     .line 694
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -366,7 +366,7 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     sget-object v0, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
@@ -374,14 +374,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
-    :cond_11
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lt v0, v1, :cond_28
+    if-lt v0, v1, :cond_1
 
     .line 695
     iget-object p1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -402,10 +402,10 @@
 
     int-to-byte p1, p1
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 697
-    :cond_28
+    :cond_1
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_16:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v0}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
@@ -414,7 +414,7 @@
 
     const/4 v2, 0x2
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_2
 
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_16BE:Ljava/nio/charset/Charset;
 
@@ -422,15 +422,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_3
 
     .line 698
-    :cond_39
+    :cond_2
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lt v0, v2, :cond_4f
+    if-lt v0, v2, :cond_3
 
     .line 699
     iget-object p1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -447,28 +447,28 @@
 
     move-result p1
 
-    :goto_4c
+    :goto_0
     int-to-byte p1, p1
 
     move v1, v2
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 701
-    :cond_4f
+    :cond_3
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_16LE:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v0}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_75
+    if-eqz p1, :cond_4
 
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result p1
 
-    if-lt p1, v2, :cond_75
+    if-lt p1, v2, :cond_4
 
     .line 702
     iget-object p1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -485,9 +485,9 @@
 
     move-result p1
 
-    goto :goto_4c
+    goto :goto_0
 
-    :goto_6c
+    :goto_1
     int-to-long v2, p1
 
     .line 707
@@ -501,21 +501,21 @@
 
     return p1
 
-    :cond_75
+    :cond_4
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method private readCharacterIfInList(Ljava/nio/charset/Charset;[C)C
-    .registers 5
+    .locals 2
 
     .line 671
     invoke-direct {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->peekCharacterAndSize(Ljava/nio/charset/Charset;)I
 
     move-result p1
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_0
 
     shr-int/lit8 v0, p1, 0x10
 
@@ -526,7 +526,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_0
 
     .line 674
     iget p2, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
@@ -541,14 +541,14 @@
 
     return v0
 
-    :cond_19
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method private skipLineTerminator(Ljava/nio/charset/Charset;)V
-    .registers 4
+    .locals 2
 
     .line 656
     sget-object v0, Landroidx/media3/common/util/ParsableByteArray;->CR_AND_LF:[C
@@ -559,21 +559,21 @@
 
     const/16 v1, 0xd
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 657
     sget-object v0, Landroidx/media3/common/util/ParsableByteArray;->LF:[C
 
     invoke-direct {p0, p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->readCharacterIfInList(Ljava/nio/charset/Charset;[C)C
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public bytesLeft()I
-    .registers 3
+    .locals 2
 
     .line 132
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
@@ -586,7 +586,7 @@
 .end method
 
 .method public capacity()I
-    .registers 2
+    .locals 1
 
     .line 182
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -597,14 +597,14 @@
 .end method
 
 .method public ensureCapacity(I)V
-    .registers 3
+    .locals 1
 
     .line 125
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->capacity()I
 
     move-result v0
 
-    if-le p1, v0, :cond_e
+    if-le p1, v0, :cond_0
 
     .line 126
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -615,12 +615,12 @@
 
     iput-object p1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public getData()[B
-    .registers 2
+    .locals 1
 
     .line 177
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -629,7 +629,7 @@
 .end method
 
 .method public getPosition()I
-    .registers 2
+    .locals 1
 
     .line 152
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
@@ -638,7 +638,7 @@
 .end method
 
 .method public limit()I
-    .registers 2
+    .locals 1
 
     .line 137
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
@@ -647,7 +647,7 @@
 .end method
 
 .method public peekChar()C
-    .registers 4
+    .locals 3
 
     .line 245
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -674,7 +674,7 @@
 .end method
 
 .method public peekChar(Ljava/nio/charset/Charset;)C
-    .registers 5
+    .locals 3
 
     .line 255
     sget-object v0, Landroidx/media3/common/util/ParsableByteArray;->SUPPORTED_CHARSETS_FOR_READLINE:Lcom/google/common/collect/ImmutableSet;
@@ -714,7 +714,7 @@
 .end method
 
 .method public peekUnsignedByte()I
-    .registers 3
+    .locals 2
 
     .line 235
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -729,7 +729,7 @@
 .end method
 
 .method public readBytes(Landroidx/media3/common/util/ParsableBitArray;I)V
-    .registers 5
+    .locals 2
 
     .line 204
     iget-object v0, p1, Landroidx/media3/common/util/ParsableBitArray;->data:[B
@@ -745,7 +745,7 @@
 .end method
 
 .method public readBytes(Ljava/nio/ByteBuffer;I)V
-    .registers 5
+    .locals 2
 
     .line 229
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -765,7 +765,7 @@
 .end method
 
 .method public readBytes([BII)V
-    .registers 6
+    .locals 2
 
     .line 217
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -785,41 +785,41 @@
 .end method
 
 .method public readDelimiterTerminatedString(C)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 505
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 508
-    :cond_8
+    :cond_0
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
 
     .line 509
-    :goto_a
+    :goto_0
     iget v1, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_1
 
     iget-object v1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     aget-byte v1, v1, v0
 
-    if-eq v1, p1, :cond_17
+    if-eq v1, p1, :cond_1
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 512
-    :cond_17
+    :cond_1
     iget-object p1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     iget v1, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
@@ -836,19 +836,19 @@
     .line 514
     iget v1, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
 
-    if-ge v0, v1, :cond_2b
+    if-ge v0, v1, :cond_2
 
     add-int/lit8 v0, v0, 0x1
 
     .line 515
     iput v0, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
 
-    :cond_2b
+    :cond_2
     return-object p1
 .end method
 
 .method public readDouble()D
-    .registers 3
+    .locals 2
 
     .line 439
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
@@ -863,7 +863,7 @@
 .end method
 
 .method public readFloat()F
-    .registers 2
+    .locals 1
 
     .line 434
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
@@ -878,7 +878,7 @@
 .end method
 
 .method public readInt()I
-    .registers 5
+    .locals 4
 
     .line 331
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -927,7 +927,7 @@
 .end method
 
 .method public readInt24()I
-    .registers 5
+    .locals 4
 
     .line 294
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -968,7 +968,7 @@
 .end method
 
 .method public readLine()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 527
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -981,7 +981,7 @@
 .end method
 
 .method public readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
     .line 548
     sget-object v0, Landroidx/media3/common/util/ParsableByteArray;->SUPPORTED_CHARSETS_FOR_READLINE:Lcom/google/common/collect/ImmutableSet;
@@ -1013,27 +1013,27 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 553
-    :cond_20
+    :cond_0
     sget-object v0, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
     invoke-virtual {p1, v0}, Ljava/nio/charset/Charset;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     .line 554
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUtfCharsetFromBom()Ljava/nio/charset/Charset;
 
     .line 556
-    :cond_2b
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->findNextLineTerminator(Ljava/nio/charset/Charset;)I
 
     move-result v0
@@ -1052,19 +1052,19 @@
 
     iget v2, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
 
-    if-ne v1, v2, :cond_3d
+    if-ne v1, v2, :cond_2
 
     return-object v0
 
     .line 561
-    :cond_3d
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/media3/common/util/ParsableByteArray;->skipLineTerminator(Ljava/nio/charset/Charset;)V
 
     return-object v0
 .end method
 
 .method public readLittleEndianInt()I
-    .registers 5
+    .locals 4
 
     .line 339
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1113,7 +1113,7 @@
 .end method
 
 .method public readLittleEndianInt24()I
-    .registers 5
+    .locals 4
 
     .line 301
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1152,7 +1152,7 @@
 .end method
 
 .method public readLittleEndianLong()J
-    .registers 10
+    .locals 9
 
     .line 359
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1273,7 +1273,7 @@
 .end method
 
 .method public readLittleEndianShort()S
-    .registers 5
+    .locals 4
 
     .line 282
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1304,7 +1304,7 @@
 .end method
 
 .method public readLittleEndianUnsignedInt()J
-    .registers 10
+    .locals 9
 
     .line 323
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1369,7 +1369,7 @@
 .end method
 
 .method public readLittleEndianUnsignedInt24()I
-    .registers 5
+    .locals 4
 
     .line 308
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1408,19 +1408,19 @@
 .end method
 
 .method public readLittleEndianUnsignedIntToInt()I
-    .registers 5
+    .locals 4
 
     .line 412
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLittleEndianInt()I
 
     move-result v0
 
-    if-ltz v0, :cond_7
+    if-ltz v0, :cond_0
 
     return v0
 
     .line 414
-    :cond_7
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1443,7 +1443,7 @@
 .end method
 
 .method public readLittleEndianUnsignedShort()I
-    .registers 5
+    .locals 4
 
     .line 272
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1472,7 +1472,7 @@
 .end method
 
 .method public readLong()J
-    .registers 10
+    .locals 9
 
     .line 347
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1593,7 +1593,7 @@
 .end method
 
 .method public readNullTerminatedString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1606,16 +1606,16 @@
 .end method
 
 .method public readNullTerminatedString(I)Ljava/lang/String;
-    .registers 5
+    .locals 3
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     const-string p1, ""
 
     return-object p1
 
     .line 477
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
 
     add-int v1, v0, p1
@@ -1625,23 +1625,23 @@
     .line 478
     iget v2, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
 
-    if-ge v1, v2, :cond_18
+    if-ge v1, v2, :cond_1
 
     iget-object v2, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     aget-byte v1, v2, v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_1
 
     add-int/lit8 v1, p1, -0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_1
     move v1, p1
 
     .line 481
-    :goto_19
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     invoke-static {v2, v0, v1}, Landroidx/media3/common/util/Util;->fromUtf8Bytes([BII)Ljava/lang/String;
@@ -1659,7 +1659,7 @@
 .end method
 
 .method public readShort()S
-    .registers 5
+    .locals 4
 
     .line 277
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1690,7 +1690,7 @@
 .end method
 
 .method public readString(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 449
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -1703,7 +1703,7 @@
 .end method
 
 .method public readString(ILjava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 6
+    .locals 3
 
     .line 460
     new-instance v0, Ljava/lang/String;
@@ -1725,7 +1725,7 @@
 .end method
 
 .method public readSynchSafeInt()I
-    .registers 5
+    .locals 4
 
     .line 385
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readUnsignedByte()I
@@ -1763,7 +1763,7 @@
 .end method
 
 .method public readUnsignedByte()I
-    .registers 4
+    .locals 3
 
     .line 262
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1782,7 +1782,7 @@
 .end method
 
 .method public readUnsignedFixedPoint1616()I
-    .registers 5
+    .locals 4
 
     .line 371
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1814,7 +1814,7 @@
 .end method
 
 .method public readUnsignedInt()J
-    .registers 10
+    .locals 9
 
     .line 315
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1879,7 +1879,7 @@
 .end method
 
 .method public readUnsignedInt24()I
-    .registers 5
+    .locals 4
 
     .line 287
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -1918,19 +1918,19 @@
 .end method
 
 .method public readUnsignedIntToInt()I
-    .registers 5
+    .locals 4
 
     .line 398
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readInt()I
 
     move-result v0
 
-    if-ltz v0, :cond_7
+    if-ltz v0, :cond_0
 
     return v0
 
     .line 400
-    :cond_7
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1953,7 +1953,7 @@
 .end method
 
 .method public readUnsignedLongToLong()J
-    .registers 6
+    .locals 5
 
     .line 425
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->readLong()J
@@ -1964,12 +1964,12 @@
 
     cmp-long v2, v0, v2
 
-    if-ltz v2, :cond_b
+    if-ltz v2, :cond_0
 
     return-wide v0
 
     .line 427
-    :cond_b
+    :cond_0
     new-instance v2, Ljava/lang/IllegalStateException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1992,7 +1992,7 @@
 .end method
 
 .method public readUnsignedShort()I
-    .registers 5
+    .locals 4
 
     .line 267
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -2021,7 +2021,7 @@
 .end method
 
 .method public readUtf8EncodedLong()J
-    .registers 12
+    .locals 11
 
     .line 573
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -2036,12 +2036,12 @@
 
     move v3, v2
 
-    :goto_9
+    :goto_0
     const/4 v4, 0x6
 
     const/4 v5, 0x1
 
-    if-ltz v3, :cond_25
+    if-ltz v3, :cond_2
 
     shl-int v6, v5, v3
 
@@ -2053,9 +2053,9 @@
 
     cmp-long v7, v7, v9
 
-    if-nez v7, :cond_22
+    if-nez v7, :cond_1
 
-    if-ge v3, v4, :cond_1e
+    if-ge v3, v4, :cond_0
 
     sub-int/2addr v6, v5
 
@@ -2065,28 +2065,28 @@
 
     sub-int/2addr v2, v3
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_1e
-    if-ne v3, v2, :cond_25
+    :cond_0
+    if-ne v3, v2, :cond_2
 
     move v2, v5
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_22
+    :cond_1
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_25
+    :cond_2
     const/4 v2, 0x0
 
-    :goto_26
-    if-eqz v2, :cond_5a
+    :goto_1
+    if-eqz v2, :cond_5
 
-    :goto_28
-    if-ge v5, v2, :cond_54
+    :goto_2
+    if-ge v5, v2, :cond_4
 
     .line 590
     iget-object v3, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -2101,7 +2101,7 @@
 
     const/16 v7, 0x80
 
-    if-ne v6, v7, :cond_3f
+    if-ne v6, v7, :cond_3
 
     shl-long/2addr v0, v4
 
@@ -2113,10 +2113,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_28
+    goto :goto_2
 
     .line 592
-    :cond_3f
+    :cond_3
     new-instance v2, Ljava/lang/NumberFormatException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2138,7 +2138,7 @@
     throw v2
 
     .line 596
-    :cond_54
+    :cond_4
     iget v3, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I
 
     add-int/2addr v3, v2
@@ -2148,7 +2148,7 @@
     return-wide v0
 
     .line 587
-    :cond_5a
+    :cond_5
     new-instance v2, Ljava/lang/NumberFormatException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2171,7 +2171,7 @@
 .end method
 
 .method public readUtfCharsetFromBom()Ljava/nio/charset/Charset;
-    .registers 8
+    .locals 7
 
     .line 606
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
@@ -2180,7 +2180,7 @@
 
     const/4 v1, 0x3
 
-    if-lt v0, v1, :cond_27
+    if-lt v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
@@ -2190,7 +2190,7 @@
 
     const/16 v4, -0x11
 
-    if-ne v3, v4, :cond_27
+    if-ne v3, v4, :cond_0
 
     add-int/lit8 v3, v2, 0x1
 
@@ -2198,7 +2198,7 @@
 
     const/16 v4, -0x45
 
-    if-ne v3, v4, :cond_27
+    if-ne v3, v4, :cond_0
 
     add-int/lit8 v3, v2, 0x2
 
@@ -2206,7 +2206,7 @@
 
     const/16 v3, -0x41
 
-    if-ne v0, v3, :cond_27
+    if-ne v0, v3, :cond_0
 
     add-int/2addr v2, v1
 
@@ -2219,14 +2219,14 @@
     return-object v0
 
     .line 612
-    :cond_27
+    :cond_0
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
     const/4 v1, 0x2
 
-    if-lt v0, v1, :cond_52
+    if-lt v0, v1, :cond_2
 
     .line 613
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -2239,13 +2239,13 @@
 
     const/4 v5, -0x2
 
-    if-ne v3, v5, :cond_44
+    if-ne v3, v5, :cond_1
 
     add-int/lit8 v6, v2, 0x1
 
     aget-byte v6, v0, v6
 
-    if-ne v6, v4, :cond_44
+    if-ne v6, v4, :cond_1
 
     add-int/2addr v2, v1
 
@@ -2257,15 +2257,15 @@
 
     return-object v0
 
-    :cond_44
-    if-ne v3, v4, :cond_52
+    :cond_1
+    if-ne v3, v4, :cond_2
 
     add-int/lit8 v3, v2, 0x1
 
     .line 616
     aget-byte v0, v0, v3
 
-    if-ne v0, v5, :cond_52
+    if-ne v0, v5, :cond_2
 
     add-int/2addr v2, v1
 
@@ -2277,37 +2277,37 @@
 
     return-object v0
 
-    :cond_52
+    :cond_2
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public reset(I)V
-    .registers 3
+    .locals 1
 
     .line 90
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->capacity()I
 
     move-result v0
 
-    if-ge v0, p1, :cond_9
+    if-ge v0, p1, :cond_0
 
     new-array v0, p1, [B
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
-    :goto_b
+    :goto_0
     invoke-virtual {p0, v0, p1}, Landroidx/media3/common/util/ParsableByteArray;->reset([BI)V
 
     return-void
 .end method
 
 .method public reset([B)V
-    .registers 3
+    .locals 1
 
     .line 100
     array-length v0, p1
@@ -2318,7 +2318,7 @@
 .end method
 
 .method public reset([BI)V
-    .registers 3
+    .locals 0
 
     .line 110
     iput-object p1, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
@@ -2335,25 +2335,25 @@
 .end method
 
 .method public setLimit(I)V
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
     .line 146
     iget-object v0, p0, Landroidx/media3/common/util/ParsableByteArray;->data:[B
 
     array-length v0, v0
 
-    if-gt p1, v0, :cond_9
+    if-gt p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 147
@@ -2363,23 +2363,23 @@
 .end method
 
 .method public setPosition(I)V
-    .registers 3
+    .locals 1
 
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_0
 
     .line 164
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->limit:I
 
-    if-gt p1, v0, :cond_8
+    if-gt p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 165
@@ -2389,7 +2389,7 @@
 .end method
 
 .method public skipBytes(I)V
-    .registers 3
+    .locals 1
 
     .line 193
     iget v0, p0, Landroidx/media3/common/util/ParsableByteArray;->position:I

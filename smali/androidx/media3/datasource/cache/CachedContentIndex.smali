@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/database/DatabaseProvider;)V
-    .registers 8
+    .locals 6
 
     const/4 v2, 0x0
 
@@ -73,28 +73,28 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/database/DatabaseProvider;Ljava/io/File;[BZZ)V
-    .registers 9
+    .locals 3
 
     .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_1
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_b
+    goto :goto_1
 
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 164
-    :goto_b
+    :goto_1
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 165
@@ -127,20 +127,20 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_33
+    if-eqz p1, :cond_2
 
     .line 171
     new-instance v1, Landroidx/media3/datasource/cache/CachedContentIndex$DatabaseStorage;
 
     invoke-direct {v1, p1}, Landroidx/media3/datasource/cache/CachedContentIndex$DatabaseStorage;-><init>(Landroidx/media3/database/DatabaseProvider;)V
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_33
+    :cond_2
     move-object v1, v0
 
-    :goto_34
-    if-eqz p2, :cond_42
+    :goto_2
+    if-eqz p2, :cond_3
 
     .line 175
     new-instance v0, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;
@@ -153,27 +153,27 @@
 
     invoke-direct {v0, p1, p3, p4}, Landroidx/media3/datasource/cache/CachedContentIndex$LegacyStorage;-><init>(Ljava/io/File;[BZ)V
 
-    :cond_42
-    if-eqz v1, :cond_4e
+    :cond_3
+    if-eqz v1, :cond_5
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_4
 
-    if-eqz p5, :cond_49
+    if-eqz p5, :cond_4
 
-    goto :goto_4e
+    goto :goto_3
 
     .line 184
-    :cond_49
+    :cond_4
     iput-object v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->storage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
     .line 185
     iput-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
-    goto :goto_58
+    goto :goto_4
 
     .line 181
-    :cond_4e
-    :goto_4e
+    :cond_5
+    :goto_3
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -185,12 +185,12 @@
     .line 182
     iput-object v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
-    :goto_58
+    :goto_4
     return-void
 .end method
 
 .method static synthetic access$000(Ljava/io/DataInputStream;)Landroidx/media3/datasource/cache/DefaultContentMetadata;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -206,7 +206,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/datasource/cache/DefaultContentMetadata;Ljava/io/DataOutputStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -220,7 +220,7 @@
 .end method
 
 .method private addNew(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
-    .registers 5
+    .locals 3
 
     .line 340
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
@@ -260,7 +260,7 @@
 .end method
 
 .method public static delete(Landroidx/media3/database/DatabaseProvider;J)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/database/DatabaseIOException;
@@ -274,7 +274,7 @@
 .end method
 
 .method static getNewId(Landroid/util/SparseArray;)I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -291,13 +291,13 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     move v2, v1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     add-int/lit8 v2, v0, -0x1
 
     .line 357
@@ -307,36 +307,36 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    :goto_11
-    if-gez v2, :cond_20
+    :goto_0
+    if-gez v2, :cond_3
 
-    :goto_13
-    if-ge v1, v0, :cond_1f
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     .line 361
     invoke-virtual {p0, v1}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
 
-    if-eq v1, v2, :cond_1c
+    if-eq v1, v2, :cond_1
 
-    goto :goto_1f
+    goto :goto_2
 
-    :cond_1c
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_2
     move v2, v1
 
-    :cond_20
+    :cond_3
     return v2
 .end method
 
 .method public static isIndexFile(Ljava/lang/String;)Z
-    .registers 2
+    .locals 1
 
     const-string v0, "cached_content_index.exi"
 
@@ -349,7 +349,7 @@
 .end method
 
 .method private static readContentMetadata(Ljava/io/DataInputStream;)Landroidx/media3/datasource/cache/DefaultContentMetadata;
-    .registers 12
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -370,8 +370,8 @@
 
     move v3, v2
 
-    :goto_b
-    if-ge v3, v0, :cond_4e
+    :goto_0
+    if-ge v3, v0, :cond_2
 
     .line 381
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
@@ -383,7 +383,7 @@
 
     move-result v5
 
-    if-ltz v5, :cond_39
+    if-ltz v5, :cond_1
 
     const/high16 v6, 0xa00000
 
@@ -397,8 +397,8 @@
 
     move v9, v2
 
-    :goto_20
-    if-eq v9, v5, :cond_33
+    :goto_1
+    if-eq v9, v5, :cond_0
 
     add-int v10, v9, v7
 
@@ -419,18 +419,18 @@
 
     move v9, v10
 
-    goto :goto_20
+    goto :goto_1
 
     .line 398
-    :cond_33
+    :cond_0
     invoke-virtual {v1, v4, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 384
-    :cond_39
+    :cond_1
     new-instance p0, Ljava/io/IOException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -452,7 +452,7 @@
     throw p0
 
     .line 400
-    :cond_4e
+    :cond_2
     new-instance p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;
 
     invoke-direct {p0, v1}, Landroidx/media3/datasource/cache/DefaultContentMetadata;-><init>(Ljava/util/Map;)V
@@ -461,7 +461,7 @@
 .end method
 
 .method private static writeContentMetadata(Landroidx/media3/datasource/cache/DefaultContentMetadata;Ljava/io/DataOutputStream;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -485,12 +485,12 @@
 
     move-result-object p0
 
-    :goto_f
+    :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -522,16 +522,16 @@
     .line 417
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->write([B)V
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_32
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public applyContentMetadataMutations(Ljava/lang/String;Landroidx/media3/datasource/cache/ContentMetadataMutations;)V
-    .registers 3
+    .locals 0
 
     .line 327
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->getOrAdd(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
@@ -543,19 +543,19 @@
 
     move-result p2
 
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 329
     iget-object p2, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->storage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
     invoke-interface {p2, p1}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->onUpdate(Landroidx/media3/datasource/cache/CachedContent;)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public assignIdForKey(Ljava/lang/String;)I
-    .registers 2
+    .locals 0
 
     .line 270
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->getOrAdd(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
@@ -568,7 +568,7 @@
 .end method
 
 .method public get(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
-    .registers 3
+    .locals 1
 
     .line 255
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -583,7 +583,7 @@
 .end method
 
 .method public getAll()Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -608,31 +608,31 @@
 .end method
 
 .method public getContentMetadata(Ljava/lang/String;)Landroidx/media3/datasource/cache/ContentMetadata;
-    .registers 2
+    .locals 0
 
     .line 335
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->get(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
 
     move-result-object p1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 336
     invoke-virtual {p1}, Landroidx/media3/datasource/cache/CachedContent;->getMetadata()Landroidx/media3/datasource/cache/DefaultContentMetadata;
 
     move-result-object p1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     sget-object p1, Landroidx/media3/datasource/cache/DefaultContentMetadata;->EMPTY:Landroidx/media3/datasource/cache/DefaultContentMetadata;
 
-    :goto_d
+    :goto_0
     return-object p1
 .end method
 
 .method public getKeyForId(I)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 276
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
@@ -647,7 +647,7 @@
 .end method
 
 .method public getKeys()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -668,7 +668,7 @@
 .end method
 
 .method public getOrAdd(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
-    .registers 3
+    .locals 1
 
     .line 243
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -679,19 +679,19 @@
 
     check-cast v0, Landroidx/media3/datasource/cache/CachedContent;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 244
     invoke-direct {p0, p1}, Landroidx/media3/datasource/cache/CachedContentIndex;->addNew(Ljava/lang/String;)Landroidx/media3/datasource/cache/CachedContent;
 
     move-result-object v0
 
-    :cond_e
+    :cond_0
     return-object v0
 .end method
 
 .method public initialize(J)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -706,30 +706,30 @@
     .line 200
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 201
     invoke-interface {v0, p1, p2}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->initialize(J)V
 
     .line 203
-    :cond_c
+    :cond_0
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->storage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
     invoke-interface {p1}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->exists()Z
 
     move-result p1
 
-    if-nez p1, :cond_2f
+    if-nez p1, :cond_1
 
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_1
 
     invoke-interface {p1}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->exists()Z
 
     move-result p1
 
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_1
 
     .line 205
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
@@ -747,10 +747,10 @@
 
     invoke-interface {p1, p2}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->storeFully(Ljava/util/HashMap;)V
 
-    goto :goto_38
+    goto :goto_0
 
     .line 209
-    :cond_2f
+    :cond_1
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->storage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
     iget-object p2, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -760,10 +760,10 @@
     invoke-interface {p1, p2, v0}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->load(Ljava/util/HashMap;Landroid/util/SparseArray;)V
 
     .line 211
-    :goto_38
+    :goto_0
     iget-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
-    if-eqz p1, :cond_42
+    if-eqz p1, :cond_2
 
     .line 212
     invoke-interface {p1}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->delete()V
@@ -773,12 +773,12 @@
     .line 213
     iput-object p1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->previousStorage:Landroidx/media3/datasource/cache/CachedContentIndex$Storage;
 
-    :cond_42
+    :cond_2
     return-void
 .end method
 
 .method public maybeRemove(Ljava/lang/String;)V
-    .registers 5
+    .locals 3
 
     .line 285
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -789,20 +789,20 @@
 
     check-cast v0, Landroidx/media3/datasource/cache/CachedContent;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 286
     invoke-virtual {v0}, Landroidx/media3/datasource/cache/CachedContent;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     invoke-virtual {v0}, Landroidx/media3/datasource/cache/CachedContent;->isFullyUnlocked()Z
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     .line 287
     iget-object v1, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -824,7 +824,7 @@
 
     invoke-interface {v2, v0, v1}, Landroidx/media3/datasource/cache/CachedContentIndex$Storage;->onRemove(Landroidx/media3/datasource/cache/CachedContent;Z)V
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_0
 
     .line 293
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
@@ -836,10 +836,10 @@
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->delete(I)V
 
-    goto :goto_41
+    goto :goto_0
 
     .line 298
-    :cond_35
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
     const/4 v1, 0x0
@@ -853,13 +853,13 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    :cond_41
-    :goto_41
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public removeEmpty()V
-    .registers 3
+    .locals 2
 
     .line 307
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -876,12 +876,12 @@
 
     move-result-object v0
 
-    :goto_e
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -892,14 +892,14 @@
     .line 308
     invoke-virtual {p0, v1}, Landroidx/media3/datasource/cache/CachedContentIndex;->maybeRemove(Ljava/lang/String;)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 .method public store()V
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -922,8 +922,8 @@
 
     const/4 v1, 0x0
 
-    :goto_e
-    if-ge v1, v0, :cond_1e
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 230
     iget-object v2, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
@@ -938,10 +938,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 232
-    :cond_1e
+    :cond_0
     iget-object v0, p0, Landroidx/media3/datasource/cache/CachedContentIndex;->removedIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->clear()V

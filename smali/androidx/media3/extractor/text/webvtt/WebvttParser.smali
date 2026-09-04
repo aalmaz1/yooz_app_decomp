@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method private static getNextEvent(Landroidx/media3/common/util/ParsableByteArray;)I
-    .registers 6
+    .locals 5
 
     const/4 v0, -0x1
 
@@ -65,8 +65,8 @@
 
     move v3, v1
 
-    :goto_4
-    if-ne v2, v0, :cond_28
+    :goto_0
+    if-ne v2, v0, :cond_3
 
     .line 121
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -78,13 +78,13 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_0
 
     move v2, v1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const-string v4, "STYLE"
 
     .line 125
@@ -92,13 +92,13 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1c
+    if-eqz v4, :cond_1
 
     const/4 v2, 0x2
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     const-string v4, "NOTE"
 
     .line 127
@@ -106,26 +106,26 @@
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     const/4 v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_26
+    :cond_2
     const/4 v2, 0x3
 
-    goto :goto_4
+    goto :goto_0
 
     .line 133
-    :cond_28
+    :cond_3
     invoke-virtual {p0, v3}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     return v2
 .end method
 
 .method private static skipComment(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 2
+    .locals 1
 
     .line 138
     :goto_0
@@ -137,18 +137,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     goto :goto_0
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public getCueReplacementBehavior()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -156,7 +156,7 @@
 .end method
 
 .method public parse([BIILandroidx/media3/extractor/text/SubtitleParser$OutputOptions;Landroidx/media3/common/util/Consumer;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII",
@@ -185,15 +185,15 @@
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     .line 82
-    :try_start_10
+    :try_start_0
     iget-object p2, p0, Landroidx/media3/extractor/text/webvtt/WebvttParser;->parsableWebvttData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-static {p2}, Landroidx/media3/extractor/text/webvtt/WebvttParserUtil;->validateWebvttHeaderLine(Landroidx/media3/common/util/ParsableByteArray;)V
-    :try_end_15
-    .catch Landroidx/media3/common/ParserException; {:try_start_10 .. :try_end_15} :catch_72
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 86
-    :goto_15
+    :goto_0
     iget-object p2, p0, Landroidx/media3/extractor/text/webvtt/WebvttParser;->parsableWebvttData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p2}, Landroidx/media3/common/util/ParsableByteArray;->readLine()Ljava/lang/String;
@@ -204,49 +204,49 @@
 
     move-result p2
 
-    if-nez p2, :cond_22
+    if-nez p2, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 89
-    :cond_22
+    :cond_0
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
     .line 90
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_1
     iget-object p3, p0, Landroidx/media3/extractor/text/webvtt/WebvttParser;->parsableWebvttData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-static {p3}, Landroidx/media3/extractor/text/webvtt/WebvttParser;->getNextEvent(Landroidx/media3/common/util/ParsableByteArray;)I
 
     move-result p3
 
-    if-eqz p3, :cond_69
+    if-eqz p3, :cond_5
 
     const/4 v0, 0x1
 
-    if-ne p3, v0, :cond_38
+    if-ne p3, v0, :cond_2
 
     .line 92
     iget-object p3, p0, Landroidx/media3/extractor/text/webvtt/WebvttParser;->parsableWebvttData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-static {p3}, Landroidx/media3/extractor/text/webvtt/WebvttParser;->skipComment(Landroidx/media3/common/util/ParsableByteArray;)V
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_38
+    :cond_2
     const/4 v0, 0x2
 
-    if-ne p3, v0, :cond_5a
+    if-ne p3, v0, :cond_4
 
     .line 94
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result p3
 
-    if-eqz p3, :cond_52
+    if-eqz p3, :cond_3
 
     .line 97
     iget-object p3, p0, Landroidx/media3/extractor/text/webvtt/WebvttParser;->parsableWebvttData:Landroidx/media3/common/util/ParsableByteArray;
@@ -264,10 +264,10 @@
 
     invoke-interface {p1, p3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_27
+    goto :goto_1
 
     .line 95
-    :cond_52
+    :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "A style block was found after the first cue."
@@ -276,10 +276,10 @@
 
     throw p1
 
-    :cond_5a
+    :cond_4
     const/4 v0, 0x3
 
-    if-ne p3, v0, :cond_27
+    if-ne p3, v0, :cond_1
 
     .line 101
     iget-object p3, p0, Landroidx/media3/extractor/text/webvtt/WebvttParser;->parsableWebvttData:Landroidx/media3/common/util/ParsableByteArray;
@@ -288,15 +288,15 @@
 
     move-result-object p3
 
-    if-eqz p3, :cond_27
+    if-eqz p3, :cond_1
 
     .line 103
     invoke-interface {p2, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_27
+    goto :goto_1
 
     .line 107
-    :cond_69
+    :cond_5
     new-instance p1, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;
 
     invoke-direct {p1, p2}, Landroidx/media3/extractor/text/webvtt/WebvttSubtitle;-><init>(Ljava/util/List;)V
@@ -306,7 +306,7 @@
 
     return-void
 
-    :catch_72
+    :catch_0
     move-exception p1
 
     .line 84

@@ -9,7 +9,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 51
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LeafByteString;-><init>()V
@@ -38,7 +38,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/datastore/preferences/protobuf/NioByteString;)Ljava/nio/ByteBuffer;
-    .registers 1
+    .locals 0
 
     .line 48
     iget-object p0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -47,7 +47,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -65,7 +65,7 @@
 .end method
 
 .method private slice(II)Ljava/nio/ByteBuffer;
-    .registers 6
+    .locals 3
 
     .line 282
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -74,7 +74,7 @@
 
     move-result v0
 
-    if-lt p1, v0, :cond_2d
+    if-lt p1, v0, :cond_0
 
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
 
@@ -82,9 +82,9 @@
 
     move-result v0
 
-    if-gt p2, v0, :cond_2d
+    if-gt p2, v0, :cond_0
 
-    if-gt p1, p2, :cond_2d
+    if-gt p1, p2, :cond_0
 
     .line 287
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -118,7 +118,7 @@
     return-object v0
 
     .line 283
-    :cond_2d
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const/4 v1, 0x2
@@ -154,7 +154,7 @@
 .end method
 
 .method private writeReplace()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -173,7 +173,7 @@
 
 # virtual methods
 .method public asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -186,7 +186,7 @@
 .end method
 
 .method public asReadOnlyByteBufferList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -209,7 +209,7 @@
 .end method
 
 .method public byteAt(I)B
-    .registers 3
+    .locals 1
 
     .line 76
     :try_start_0
@@ -218,13 +218,13 @@
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result p1
-    :try_end_6
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_6} :catch_12
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 80
@@ -238,7 +238,7 @@
 
     throw v0
 
-    :catch_12
+    :catch_1
     move-exception p1
 
     .line 78
@@ -246,7 +246,7 @@
 .end method
 
 .method public copyTo(Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -261,7 +261,7 @@
 .end method
 
 .method protected copyToInternal([BIII)V
-    .registers 6
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -280,26 +280,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 192
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/datastore/preferences/protobuf/ByteString;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 195
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/datastore/preferences/protobuf/ByteString;
@@ -313,25 +313,25 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_18
+    if-eq v3, v4, :cond_2
 
     return v2
 
     .line 199
-    :cond_18
+    :cond_2
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/NioByteString;->size()I
 
     move-result v2
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_3
 
     return v0
 
     .line 202
-    :cond_1f
+    :cond_3
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/NioByteString;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_4
 
     .line 203
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -347,10 +347,10 @@
     return p1
 
     .line 205
-    :cond_2e
+    :cond_4
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/RopeByteString;
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_5
 
     .line 206
     invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -360,7 +360,7 @@
     return p1
 
     .line 208
-    :cond_37
+    :cond_5
     iget-object p1, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Landroidx/datastore/preferences/protobuf/ByteString;->asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
@@ -375,7 +375,7 @@
 .end method
 
 .method equalsRange(Landroidx/datastore/preferences/protobuf/ByteString;II)Z
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -398,7 +398,7 @@
 .end method
 
 .method public internalByteAt(I)B
-    .registers 2
+    .locals 0
 
     .line 88
     invoke-virtual {p0, p1}, Landroidx/datastore/preferences/protobuf/NioByteString;->byteAt(I)B
@@ -409,7 +409,7 @@
 .end method
 
 .method public isValidUtf8()Z
-    .registers 2
+    .locals 1
 
     .line 179
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -422,7 +422,7 @@
 .end method
 
 .method public newCodedInput()Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 3
+    .locals 2
 
     .line 271
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -437,7 +437,7 @@
 .end method
 
 .method public newInput()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
 
     .line 221
     new-instance v0, Landroidx/datastore/preferences/protobuf/NioByteString$1;
@@ -448,14 +448,14 @@
 .end method
 
 .method protected partialHash(III)I
-    .registers 6
+    .locals 2
 
     move v0, p2
 
-    :goto_1
+    :goto_0
     add-int v1, p2, p3
 
-    if-ge v0, v1, :cond_11
+    if-ge v0, v1, :cond_0
 
     mul-int/lit8 p1, p1, 0x1f
 
@@ -470,14 +470,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return p1
 .end method
 
 .method protected partialIsValidUtf8(III)I
-    .registers 5
+    .locals 1
 
     .line 184
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -492,7 +492,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -505,7 +505,7 @@
 .end method
 
 .method public substring(II)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 3
+    .locals 0
 
     .line 99
     :try_start_0
@@ -517,13 +517,13 @@
     new-instance p2, Landroidx/datastore/preferences/protobuf/NioByteString;
 
     invoke-direct {p2, p1}, Landroidx/datastore/preferences/protobuf/NioByteString;-><init>(Ljava/nio/ByteBuffer;)V
-    :try_end_9
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_9} :catch_15
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p2
 
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 104
@@ -537,7 +537,7 @@
 
     throw p2
 
-    :catch_15
+    :catch_1
     move-exception p1
 
     .line 102
@@ -545,7 +545,7 @@
 .end method
 
 .method protected toStringInternal(Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     .line 164
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -554,7 +554,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 165
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -585,10 +585,10 @@
 
     move-result v2
 
-    goto :goto_28
+    goto :goto_0
 
     .line 170
-    :cond_22
+    :cond_0
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/NioByteString;->toByteArray()[B
 
     move-result-object v0
@@ -599,7 +599,7 @@
     const/4 v1, 0x0
 
     .line 174
-    :goto_28
+    :goto_0
     new-instance v3, Ljava/lang/String;
 
     invoke-direct {v3, v0, v1, v2, p1}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
@@ -608,7 +608,7 @@
 .end method
 
 .method writeTo(Landroidx/datastore/preferences/protobuf/ByteOutput;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -628,7 +628,7 @@
 .end method
 
 .method public writeTo(Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -646,7 +646,7 @@
 .end method
 
 .method writeToInternal(Ljava/io/OutputStream;II)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -660,7 +660,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 136
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/NioByteString;->buffer:Ljava/nio/ByteBuffer;
@@ -690,7 +690,7 @@
 
     return-void
 
-    :cond_20
+    :cond_0
     add-int/2addr p3, p2
 
     .line 141

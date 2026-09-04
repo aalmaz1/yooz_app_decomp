@@ -87,7 +87,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 89
     new-instance v0, Landroid/util/Size;
@@ -125,7 +125,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 128
     sget-object v0, Landroidx/camera/core/impl/DeferrableSurface;->SIZE_UNDEFINED:Landroid/util/Size;
@@ -138,7 +138,7 @@
 .end method
 
 .method public constructor <init>(Landroid/util/Size;I)V
-    .registers 5
+    .locals 2
 
     .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -193,7 +193,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_57
+    if-eqz p2, :cond_0
 
     .line 155
     sget-object p2, Landroidx/camera/core/impl/DeferrableSurface;->TOTAL_COUNT:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -236,25 +236,25 @@
     .line 159
     invoke-interface {p1, v0, p2}, Lcom/google/common/util/concurrent/ListenableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    :cond_57
+    :cond_0
     return-void
 .end method
 
 .method private printGlobalDebugCounts(Ljava/lang/String;II)V
-    .registers 6
+    .locals 2
 
     .line 181
     sget-boolean v0, Landroidx/camera/core/impl/DeferrableSurface;->DEBUG:Z
 
     const-string v1, "DeferrableSurface"
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     invoke-static {v1}, Landroidx/camera/core/Logger;->isDebugEnabled(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     const-string v0, "DeferrableSurface usage statistics may be inaccurate since debug logging was not enabled at static initialization time. App restart may be required to enable accurate usage statistics."
 
@@ -262,7 +262,7 @@
     invoke-static {v1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 187
-    :cond_11
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -319,7 +319,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 7
+    .locals 6
 
     const-string v0, "surface closed,  useCount="
 
@@ -329,12 +329,12 @@
     monitor-enter v1
 
     .line 274
-    :try_start_5
+    :try_start_0
     iget-boolean v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mClosed:Z
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_43
+    if-nez v2, :cond_1
 
     const/4 v2, 0x1
 
@@ -349,7 +349,7 @@
     .line 278
     iget v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mUseCount:I
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_0
 
     .line 279
     iget-object v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mTerminationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -357,12 +357,12 @@
     .line 280
     iput-object v3, p0, Landroidx/camera/core/impl/DeferrableSurface;->mTerminationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move-object v2, v3
 
-    :goto_1c
+    :goto_0
     const-string v4, "DeferrableSurface"
 
     .line 283
@@ -370,7 +370,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_44
+    if-eqz v4, :cond_2
 
     const-string v4, "DeferrableSurface"
 
@@ -401,40 +401,40 @@
 
     invoke-static {v4, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_43
+    :cond_1
     move-object v2, v3
 
     .line 288
-    :cond_44
-    :goto_44
+    :cond_2
+    :goto_1
     monitor-exit v1
-    :try_end_45
-    .catchall {:try_start_5 .. :try_end_45} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_3
 
     .line 291
     invoke-virtual {v2, v3}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    :cond_4a
+    :cond_3
     return-void
 
-    :catchall_4b
+    :catchall_0
     move-exception v0
 
     .line 288
-    :try_start_4c
+    :try_start_1
     monitor-exit v1
-    :try_end_4d
-    .catchall {:try_start_4c .. :try_end_4d} :catchall_4b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method public decrementUseCount()V
-    .registers 7
+    .locals 6
 
     const-string/jumbo v0, "use count-1,  useCount="
 
@@ -444,10 +444,10 @@
     monitor-enter v1
 
     .line 320
-    :try_start_6
+    :try_start_0
     iget v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mUseCount:I
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_3
 
     add-int/lit8 v2, v2, -0x1
 
@@ -456,12 +456,12 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_0
 
     .line 326
     iget-boolean v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mClosed:Z
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     .line 327
     iget-object v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mTerminationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
@@ -469,12 +469,12 @@
     .line 328
     iput-object v3, p0, Landroidx/camera/core/impl/DeferrableSurface;->mTerminationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move-object v2, v3
 
-    :goto_1b
+    :goto_0
     const-string v4, "DeferrableSurface"
 
     .line 331
@@ -482,7 +482,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_1
 
     const-string v4, "DeferrableSurface"
 
@@ -528,7 +528,7 @@
     .line 335
     iget v0, p0, Landroidx/camera/core/impl/DeferrableSurface;->mUseCount:I
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_1
 
     const-string v0, "Surface no longer in use"
 
@@ -550,22 +550,22 @@
     invoke-direct {p0, v0, v4, v5}, Landroidx/camera/core/impl/DeferrableSurface;->printGlobalDebugCounts(Ljava/lang/String;II)V
 
     .line 340
-    :cond_62
+    :cond_1
     monitor-exit v1
-    :try_end_63
-    .catchall {:try_start_6 .. :try_end_63} :catchall_71
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v2, :cond_68
+    if-eqz v2, :cond_2
 
     .line 343
     invoke-virtual {v2, v3}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
-    :cond_68
+    :cond_2
     return-void
 
     .line 321
-    :cond_69
-    :try_start_69
+    :cond_3
+    :try_start_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v2, "Decrementing use count occurs more times than incrementing"
@@ -574,19 +574,19 @@
 
     throw v0
 
-    :catchall_71
+    :catchall_0
     move-exception v0
 
     .line 340
     monitor-exit v1
-    :try_end_73
-    .catchall {:try_start_69 .. :try_end_73} :catchall_71
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
 
 .method public getCloseFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -607,7 +607,7 @@
 .end method
 
 .method public getContainerClass()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -623,7 +623,7 @@
 .end method
 
 .method public getPrescribedSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 352
     iget-object v0, p0, Landroidx/camera/core/impl/DeferrableSurface;->mPrescribedSize:Landroid/util/Size;
@@ -632,7 +632,7 @@
 .end method
 
 .method public getPrescribedStreamFormat()I
-    .registers 2
+    .locals 1
 
     .line 359
     iget v0, p0, Landroidx/camera/core/impl/DeferrableSurface;->mPrescribedStreamFormat:I
@@ -641,7 +641,7 @@
 .end method
 
 .method public final getSurface()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -657,10 +657,10 @@
     monitor-enter v0
 
     .line 200
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/impl/DeferrableSurface;->mClosed:Z
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 201
     new-instance v1, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
@@ -678,7 +678,7 @@
     return-object v1
 
     .line 204
-    :cond_14
+    :cond_0
     invoke-virtual {p0}, Landroidx/camera/core/impl/DeferrableSurface;->provideSurface()Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v1
@@ -687,19 +687,19 @@
 
     return-object v1
 
-    :catchall_1a
+    :catchall_0
     move-exception v1
 
     .line 205
     monitor-exit v0
-    :try_end_1c
-    .catchall {:try_start_3 .. :try_end_1c} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public getTerminationFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -720,7 +720,7 @@
 .end method
 
 .method public getUseCount()I
-    .registers 3
+    .locals 2
 
     .line 364
     iget-object v0, p0, Landroidx/camera/core/impl/DeferrableSurface;->mLock:Ljava/lang/Object;
@@ -728,26 +728,26 @@
     monitor-enter v0
 
     .line 365
-    :try_start_3
+    :try_start_0
     iget v1, p0, Landroidx/camera/core/impl/DeferrableSurface;->mUseCount:I
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 366
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public incrementUseCount()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
@@ -762,19 +762,19 @@
     monitor-enter v1
 
     .line 242
-    :try_start_6
+    :try_start_0
     iget v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mUseCount:I
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     iget-boolean v3, p0, Landroidx/camera/core/impl/DeferrableSurface;->mClosed:Z
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 243
-    :cond_f
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
 
     const-string v2, "Cannot begin use on a closed surface."
@@ -783,8 +783,8 @@
 
     throw v0
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 v3, 0x1
 
     add-int/2addr v2, v3
@@ -799,12 +799,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_3
 
     .line 248
     iget v2, p0, Landroidx/camera/core/impl/DeferrableSurface;->mUseCount:I
 
-    if-ne v2, v3, :cond_38
+    if-ne v2, v3, :cond_2
 
     const-string v2, "New surface in use"
 
@@ -825,7 +825,7 @@
     .line 249
     invoke-direct {p0, v2, v3, v4}, Landroidx/camera/core/impl/DeferrableSurface;->printGlobalDebugCounts(Ljava/lang/String;II)V
 
-    :cond_38
+    :cond_2
     const-string v2, "DeferrableSurface"
 
     .line 252
@@ -856,23 +856,23 @@
     invoke-static {v2, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 254
-    :cond_56
+    :cond_3
     monitor-exit v1
 
     return-void
 
-    :catchall_58
+    :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_5a
-    .catchall {:try_start_6 .. :try_end_5a} :catchall_58
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
 .method public isClosed()Z
-    .registers 3
+    .locals 2
 
     .line 373
     iget-object v0, p0, Landroidx/camera/core/impl/DeferrableSurface;->mLock:Ljava/lang/Object;
@@ -880,26 +880,26 @@
     monitor-enter v0
 
     .line 374
-    :try_start_3
+    :try_start_0
     iget-boolean v1, p0, Landroidx/camera/core/impl/DeferrableSurface;->mClosed:Z
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 375
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method synthetic lambda$new$0$androidx-camera-core-impl-DeferrableSurface(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -912,13 +912,13 @@
     monitor-enter v0
 
     .line 142
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/camera/core/impl/DeferrableSurface;->mTerminationCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     .line 143
     monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 144
     new-instance p1, Ljava/lang/StringBuilder;
@@ -943,20 +943,20 @@
 
     return-object p1
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 143
-    :try_start_1d
+    :try_start_1
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method synthetic lambda$new$1$androidx-camera-core-impl-DeferrableSurface(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -969,13 +969,13 @@
     monitor-enter v0
 
     .line 149
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/camera/core/impl/DeferrableSurface;->mCloseCompleter:Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
     .line 150
     monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 151
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1000,20 +1000,20 @@
 
     return-object p1
 
-    :catchall_1c
+    :catchall_0
     move-exception p1
 
     .line 150
-    :try_start_1d
+    :try_start_1
     monitor-exit v0
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method synthetic lambda$new$2$androidx-camera-core-impl-DeferrableSurface(Ljava/lang/String;)V
-    .registers 8
+    .locals 6
 
     .line 161
     :try_start_0
@@ -1039,12 +1039,12 @@
 
     .line 162
     invoke-direct {p0, v0, v1, v2}, Landroidx/camera/core/impl/DeferrableSurface;->printGlobalDebugCounts(Ljava/lang/String;II)V
-    :try_end_16
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_17
+    :catch_0
     move-exception v0
 
     const-string v1, "DeferrableSurface"
@@ -1082,7 +1082,7 @@
     monitor-enter p1
 
     .line 168
-    :try_start_39
+    :try_start_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "DeferrableSurface %s [closed: %b, use_count: %s] terminated with unexpected exception."
@@ -1125,13 +1125,13 @@
 
     throw v1
 
-    :catchall_5d
+    :catchall_0
     move-exception v0
 
     .line 172
     monitor-exit p1
-    :try_end_5f
-    .catchall {:try_start_39 .. :try_end_5f} :catchall_5d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 .end method
@@ -1148,7 +1148,7 @@
 .end method
 
 .method public setContainerClass(Ljava/lang/Class;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

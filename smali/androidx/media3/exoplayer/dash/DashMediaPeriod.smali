@@ -118,7 +118,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "CC([1-4])=(.+)"
 
@@ -142,7 +142,7 @@
 .end method
 
 .method public constructor <init>(ILandroidx/media3/exoplayer/dash/manifest/DashManifest;Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;ILandroidx/media3/exoplayer/dash/DashChunkSource$Factory;Landroidx/media3/datasource/TransferListener;Landroidx/media3/exoplayer/upstream/CmcdConfiguration;Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;Landroidx/media3/exoplayer/source/MediaSourceEventListener$EventDispatcher;JLandroidx/media3/exoplayer/upstream/LoaderErrorThrower;Landroidx/media3/exoplayer/upstream/Allocator;Landroidx/media3/exoplayer/source/CompositeSequenceableLoaderFactory;Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerEmsgCallback;Landroidx/media3/exoplayer/analytics/PlayerId;)V
-    .registers 28
+    .locals 9
 
     move-object v0, p0
 
@@ -304,7 +304,7 @@
 .end method
 
 .method private static buildManifestEventTrackGroupInfos(Ljava/util/List;[Landroidx/media3/common/TrackGroup;[Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;I)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -323,12 +323,12 @@
     move v1, v0
 
     .line 748
-    :goto_2
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_58
+    if-ge v1, v2, :cond_0
 
     .line 749
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -416,14 +416,14 @@
 
     move p3, v2
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_58
+    :cond_0
     return-void
 .end method
 
 .method private static buildPrimaryAndEmbeddedTrackGroupInfos(Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;Ljava/util/List;[[II[Z[[Landroidx/media3/common/Format;[Landroidx/media3/common/TrackGroup;[Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;)I
-    .registers 25
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -453,8 +453,8 @@
 
     move v5, v4
 
-    :goto_9
-    if-ge v4, v3, :cond_110
+    :goto_0
+    if-ge v4, v3, :cond_7
 
     .line 681
     aget-object v6, p3, v4
@@ -469,8 +469,8 @@
 
     move v9, v2
 
-    :goto_14
-    if-ge v9, v8, :cond_26
+    :goto_1
+    if-ge v9, v8, :cond_0
 
     aget v10, v6, v9
 
@@ -487,10 +487,10 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_14
+    goto :goto_1
 
     .line 686
-    :cond_26
+    :cond_0
     invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v8
@@ -499,8 +499,8 @@
 
     move v10, v2
 
-    :goto_2d
-    if-ge v10, v8, :cond_4e
+    :goto_2
+    if-ge v10, v8, :cond_1
 
     .line 688
     invoke-interface {v7, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -536,9 +536,9 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_2d
+    goto :goto_2
 
-    :cond_4e
+    :cond_1
     move-object/from16 v13, p0
 
     .line 696
@@ -557,7 +557,7 @@
 
     cmp-long v8, v10, v14
 
-    if-eqz v8, :cond_67
+    if-eqz v8, :cond_2
 
     .line 699
     iget-wide v10, v7, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->id:J
@@ -566,10 +566,10 @@
 
     move-result-object v8
 
-    goto :goto_77
+    goto :goto_3
 
     .line 700
-    :cond_67
+    :cond_2
     new-instance v8, Ljava/lang/StringBuilder;
 
     const-string/jumbo v10, "unset:"
@@ -584,7 +584,7 @@
 
     move-result-object v8
 
-    :goto_77
+    :goto_3
     add-int/lit8 v10, v5, 0x1
 
     .line 703
@@ -592,36 +592,36 @@
 
     const/4 v12, -0x1
 
-    if-eqz v11, :cond_81
+    if-eqz v11, :cond_3
 
     add-int/lit8 v11, v10, 0x1
 
-    goto :goto_83
+    goto :goto_4
 
-    :cond_81
+    :cond_3
     move v11, v10
 
     move v10, v12
 
     .line 705
-    :goto_83
+    :goto_4
     aget-object v14, p6, v4
 
     array-length v14, v14
 
-    if-eqz v14, :cond_8b
+    if-eqz v14, :cond_4
 
     add-int/lit8 v14, v11, 0x1
 
-    goto :goto_8d
+    goto :goto_5
 
-    :cond_8b
+    :cond_4
     move v14, v11
 
     move v11, v12
 
     .line 707
-    :goto_8d
+    :goto_5
     invoke-static {v0, v9}, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->maybeUpdateFormatsForParsedText(Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;[Landroidx/media3/common/Format;)V
 
     .line 708
@@ -641,7 +641,7 @@
 
     aput-object v7, p8, v5
 
-    if-eq v10, v12, :cond_db
+    if-eq v10, v12, :cond_5
 
     .line 717
     new-instance v7, Ljava/lang/StringBuilder;
@@ -706,13 +706,13 @@
 
     const/4 v7, -0x1
 
-    goto :goto_dc
+    goto :goto_6
 
-    :cond_db
+    :cond_5
     move v7, v12
 
-    :goto_dc
-    if-eq v11, v7, :cond_10b
+    :goto_6
+    if-eq v11, v7, :cond_6
 
     .line 728
     new-instance v7, Ljava/lang/StringBuilder;
@@ -762,19 +762,19 @@
 
     aput-object v5, p7, v11
 
-    :cond_10b
+    :cond_6
     add-int/lit8 v4, v4, 0x1
 
     move v5, v14
 
-    goto/16 :goto_9
+    goto/16 :goto_0
 
-    :cond_110
+    :cond_7
     return v5
 .end method
 
 .method private buildSampleStream(Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;J)Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
-    .registers 39
+    .locals 34
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -800,19 +800,19 @@
 
     const/4 v4, -0x1
 
-    if-eq v1, v4, :cond_e
+    if-eq v1, v4, :cond_0
 
     move/from16 v25, v2
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move/from16 v25, v3
 
-    :goto_10
+    :goto_0
     const/4 v1, 0x0
 
-    if-eqz v25, :cond_1d
+    if-eqz v25, :cond_1
 
     .line 768
     iget-object v5, v14, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -826,18 +826,18 @@
 
     move v6, v2
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1d
+    :cond_1
     move-object v5, v1
 
     move v6, v3
 
     .line 773
-    :goto_1f
+    :goto_1
     iget v7, v0, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->embeddedClosedCaptionTrackGroupIndex:I
 
-    if-eq v7, v4, :cond_2c
+    if-eq v7, v4, :cond_2
 
     .line 775
     iget-object v4, v14, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackGroupInfos:[Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
@@ -848,16 +848,16 @@
 
     iget-object v4, v4, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->embeddedClosedCaptionTrackOriginalFormats:Lcom/google/common/collect/ImmutableList;
 
-    goto :goto_30
+    goto :goto_2
 
     .line 776
-    :cond_2c
+    :cond_2
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v4
 
     .line 777
-    :goto_30
+    :goto_2
     invoke-virtual {v4}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v7
@@ -870,7 +870,7 @@
     .line 780
     new-array v6, v6, [I
 
-    if-eqz v25, :cond_46
+    if-eqz v25, :cond_3
 
     .line 783
     invoke-virtual {v5, v3}, Landroidx/media3/common/TrackGroup;->getFormat(I)Landroidx/media3/common/Format;
@@ -886,24 +886,24 @@
 
     move v5, v2
 
-    goto :goto_47
+    goto :goto_3
 
-    :cond_46
+    :cond_3
     move v5, v3
 
     .line 787
-    :goto_47
+    :goto_3
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     .line 788
-    :goto_4c
+    :goto_4
     invoke-virtual {v4}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v9
 
-    if-ge v3, v9, :cond_64
+    if-ge v3, v9, :cond_4
 
     .line 789
     invoke-virtual {v4, v3}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -926,17 +926,17 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4c
+    goto :goto_4
 
     .line 796
-    :cond_64
+    :cond_4
     iget-object v2, v14, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
 
     iget-boolean v2, v2, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v2, :cond_72
+    if-eqz v2, :cond_5
 
-    if-eqz v25, :cond_72
+    if-eqz v25, :cond_5
 
     .line 797
     iget-object v1, v14, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->playerEmsgHandler:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;
@@ -945,7 +945,7 @@
 
     move-result-object v1
 
-    :cond_72
+    :cond_5
     move-object v13, v1
 
     .line 799
@@ -1041,7 +1041,7 @@
     monitor-enter p0
 
     .line 830
-    :try_start_c9
+    :try_start_0
     iget-object v0, v14, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackEmsgHandlerBySampleStream:Ljava/util/IdentityHashMap;
 
     move-object/from16 v1, v33
@@ -1053,18 +1053,18 @@
 
     return-object v15
 
-    :catchall_d2
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_d4
-    .catchall {:try_start_c9 .. :try_end_d4} :catchall_d2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
 .method private static buildTrackGroups(Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;Ljava/util/List;Ljava/util/List;)Landroid/util/Pair;
-    .registers 15
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1149,7 +1149,7 @@
 .end method
 
 .method private static findAdaptationSetSwitchingProperty(Ljava/util/List;)Landroidx/media3/exoplayer/dash/manifest/Descriptor;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1171,7 +1171,7 @@
 .end method
 
 .method private static findDescriptor(Ljava/util/List;Ljava/lang/String;)Landroidx/media3/exoplayer/dash/manifest/Descriptor;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1187,12 +1187,12 @@
     const/4 v0, 0x0
 
     .line 847
-    :goto_1
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_1
 
     .line 848
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1208,23 +1208,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     return-object v1
 
-    :cond_16
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static findTrickPlayProperty(Ljava/util/List;)Landroidx/media3/exoplayer/dash/manifest/Descriptor;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1246,7 +1246,7 @@
 .end method
 
 .method private static getClosedCaptionTrackFormats(Ljava/util/List;[I)[Landroidx/media3/common/Format;
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1264,8 +1264,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, v0, :cond_9e
+    :goto_0
+    if-ge v2, v0, :cond_3
 
     aget v3, p1, v2
 
@@ -1288,12 +1288,12 @@
     move v5, v1
 
     .line 875
-    :goto_16
+    :goto_1
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v6
 
-    if-ge v5, v6, :cond_9a
+    if-ge v5, v6, :cond_2
 
     .line 876
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1311,7 +1311,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_5c
+    if-eqz v7, :cond_0
 
     .line 878
     new-instance p0, Landroidx/media3/common/Format$Builder;
@@ -1364,7 +1364,7 @@
 
     return-object p0
 
-    :cond_5c
+    :cond_0
     const-string/jumbo v7, "urn:scte:dash:cc:cea-708:2015"
 
     .line 885
@@ -1374,7 +1374,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_96
+    if-eqz v7, :cond_1
 
     .line 886
     new-instance p0, Landroidx/media3/common/Format$Builder;
@@ -1427,24 +1427,24 @@
 
     return-object p0
 
-    :cond_96
+    :cond_1
     add-int/lit8 v5, v5, 0x1
 
-    goto/16 :goto_16
+    goto/16 :goto_1
 
-    :cond_9a
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_3
+    goto/16 :goto_0
 
-    :cond_9e
+    :cond_3
     new-array p0, v1, [Landroidx/media3/common/Format;
 
     return-object p0
 .end method
 
 .method private static getGroupedAdaptationSetIndices(Ljava/util/List;)[[I
-    .registers 13
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1478,8 +1478,8 @@
 
     move v5, v4
 
-    :goto_14
-    if-ge v5, v0, :cond_3e
+    :goto_0
+    if-ge v5, v0, :cond_0
 
     .line 570
     invoke-interface {p0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1520,13 +1520,13 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_3e
+    :cond_0
     move v5, v4
 
-    :goto_3f
-    if-ge v5, v0, :cond_bc
+    :goto_1
+    if-ge v5, v0, :cond_6
 
     .line 580
     invoke-interface {p0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1542,7 +1542,7 @@
 
     move-result-object v7
 
-    if-nez v7, :cond_55
+    if-nez v7, :cond_1
 
     .line 587
     iget-object v7, v6, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->supplementalProperties:Ljava/util/List;
@@ -1551,8 +1551,8 @@
 
     move-result-object v7
 
-    :cond_55
-    if-eqz v7, :cond_6e
+    :cond_1
+    if-eqz v7, :cond_2
 
     .line 590
     iget-object v7, v7, Landroidx/media3/exoplayer/dash/manifest/Descriptor;->value:Ljava/lang/String;
@@ -1572,20 +1572,20 @@
 
     check-cast v7, Ljava/lang/Integer;
 
-    if-eqz v7, :cond_6e
+    if-eqz v7, :cond_2
 
     .line 593
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
-    goto :goto_6f
+    goto :goto_2
 
-    :cond_6e
+    :cond_2
     move v7, v5
 
-    :goto_6f
-    if-ne v7, v5, :cond_a2
+    :goto_2
+    if-ne v7, v5, :cond_4
 
     .line 601
     iget-object v6, v6, Landroidx/media3/exoplayer/dash/manifest/AdaptationSet;->supplementalProperties:Ljava/util/List;
@@ -1595,7 +1595,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_a2
+    if-eqz v6, :cond_4
 
     .line 604
     iget-object v6, v6, Landroidx/media3/exoplayer/dash/manifest/Descriptor;->value:Ljava/lang/String;
@@ -1611,8 +1611,8 @@
 
     move v9, v4
 
-    :goto_83
-    if-ge v9, v8, :cond_a2
+    :goto_3
+    if-ge v9, v8, :cond_4
 
     aget-object v10, v6, v9
 
@@ -1631,7 +1631,7 @@
 
     check-cast v10, Ljava/lang/Integer;
 
-    if-eqz v10, :cond_9f
+    if-eqz v10, :cond_3
 
     .line 610
     invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
@@ -1642,13 +1642,13 @@
 
     move-result v7
 
-    :cond_9f
+    :cond_3
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_83
+    goto :goto_3
 
-    :cond_a2
-    if-eq v7, v5, :cond_b9
+    :cond_4
+    if-eq v7, v5, :cond_5
 
     .line 618
     invoke-virtual {v3, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1673,21 +1673,21 @@
     .line 622
     invoke-interface {v2, v6}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    :cond_b9
+    :cond_5
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 626
-    :cond_bc
+    :cond_6
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result p0
 
     new-array v0, p0, [[I
 
-    :goto_c2
-    if-ge v4, p0, :cond_d6
+    :goto_4
+    if-ge v4, p0, :cond_7
 
     .line 628
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1707,26 +1707,26 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_c2
+    goto :goto_4
 
-    :cond_d6
+    :cond_7
     return-object v0
 .end method
 
 .method private getPrimaryStreamIndex(I[I)I
-    .registers 7
+    .locals 4
 
     .line 490
     aget p1, p2, p1
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v0, :cond_0
 
     return v0
 
     .line 494
-    :cond_6
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackGroupInfos:[Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
 
     aget-object p1, v1, p1
@@ -1736,15 +1736,15 @@
     const/4 v1, 0x0
 
     .line 495
-    :goto_d
+    :goto_0
     array-length v2, p2
 
-    if-ge v1, v2, :cond_20
+    if-ge v1, v2, :cond_2
 
     .line 496
     aget v2, p2, v1
 
-    if-ne v2, p1, :cond_1d
+    if-ne v2, p1, :cond_1
 
     .line 497
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackGroupInfos:[Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;
@@ -1753,21 +1753,21 @@
 
     iget v2, v2, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->trackGroupCategory:I
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
     return v1
 
-    :cond_1d
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_20
+    :cond_2
     return v0
 .end method
 
 .method private getStreamIndexToTrackGroupIndex([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)[I
-    .registers 6
+    .locals 4
 
     .line 379
     array-length v0, p1
@@ -1777,15 +1777,15 @@
     const/4 v1, 0x0
 
     .line 380
-    :goto_4
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_1
 
     .line 381
     aget-object v2, p1, v1
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 382
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -1800,25 +1800,25 @@
 
     aput v2, v0, v1
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_18
+    :cond_0
     const/4 v2, -0x1
 
     .line 384
     aput v2, v0, v1
 
-    :goto_1b
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_1e
+    :cond_1
     return-object v0
 .end method
 
 .method private static hasEventMessageTrack(Ljava/util/List;[I)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1835,8 +1835,8 @@
 
     move v2, v1
 
-    :goto_3
-    if-ge v2, v0, :cond_2c
+    :goto_0
+    if-ge v2, v0, :cond_2
 
     aget v3, p1, v2
 
@@ -1852,12 +1852,12 @@
     move v4, v1
 
     .line 860
-    :goto_10
+    :goto_1
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_29
+    if-ge v4, v5, :cond_1
 
     .line 861
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1873,28 +1873,28 @@
 
     move-result v5
 
-    if-nez v5, :cond_26
+    if-nez v5, :cond_0
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_26
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
-    :cond_2c
+    :cond_2
     return v1
 .end method
 
 .method private static identifyEmbeddedTracks(ILjava/util/List;[[I[Z[[Landroidx/media3/common/Format;)I
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -1910,8 +1910,8 @@
 
     move v1, v0
 
-    :goto_2
-    if-ge v0, p0, :cond_21
+    :goto_0
+    if-ge v0, p0, :cond_2
 
     .line 656
     aget-object v2, p2, v0
@@ -1920,7 +1920,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
@@ -1930,7 +1930,7 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 660
-    :cond_11
+    :cond_0
     aget-object v2, p2, v0
 
     .line 661
@@ -1943,21 +1943,21 @@
     .line 662
     array-length v2, v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
-    :cond_1e
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     return v1
 .end method
 
 .method static synthetic lambda$selectTracks$0(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)Ljava/util/List;
-    .registers 1
+    .locals 0
 
     .line 307
     iget p0, p0, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->primaryTrackType:I
@@ -1974,15 +1974,15 @@
 .end method
 
 .method private static maybeUpdateFormatsForParsedText(Landroidx/media3/exoplayer/dash/DashChunkSource$Factory;[Landroidx/media3/common/Format;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 932
-    :goto_1
+    :goto_0
     array-length v1, p1
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_0
 
     .line 933
     aget-object v1, p1, v0
@@ -1995,14 +1995,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private static newSampleStreamArray(I)[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)[",
@@ -2019,7 +2019,7 @@
 .end method
 
 .method private static parseClosedCaptionDescriptor(Landroidx/media3/exoplayer/dash/manifest/Descriptor;Ljava/util/regex/Pattern;Landroidx/media3/common/Format;)[Landroidx/media3/common/Format;
-    .registers 12
+    .locals 9
 
     .line 901
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/manifest/Descriptor;->value:Ljava/lang/String;
@@ -2028,7 +2028,7 @@
 
     const/4 v1, 0x1
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_0
 
     new-array p0, v1, [Landroidx/media3/common/Format;
 
@@ -2036,7 +2036,7 @@
 
     return-object p0
 
-    :cond_b
+    :cond_0
     const-string v2, ";"
 
     .line 906
@@ -2052,10 +2052,10 @@
     move v3, v0
 
     .line 908
-    :goto_15
+    :goto_0
     array-length v4, p0
 
-    if-ge v3, v4, :cond_68
+    if-ge v3, v4, :cond_2
 
     .line 909
     aget-object v4, p0, v3
@@ -2069,7 +2069,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_29
+    if-nez v5, :cond_1
 
     new-array p0, v1, [Landroidx/media3/common/Format;
 
@@ -2078,7 +2078,7 @@
     return-object p0
 
     .line 914
-    :cond_29
+    :cond_1
     invoke-virtual {v4, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v5
@@ -2146,39 +2146,39 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_68
+    :cond_2
     return-object v2
 .end method
 
 .method private releaseDisabledStreams([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;)V
-    .registers 7
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 392
-    :goto_1
+    :goto_0
     array-length v1, p1
 
-    if-ge v0, v1, :cond_27
+    if-ge v0, v1, :cond_4
 
     .line 393
     aget-object v1, p1, v0
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     aget-boolean v1, p2, v0
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_3
 
     .line 394
-    :cond_c
+    :cond_0
     aget-object v1, p3, v0
 
     instance-of v2, v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_1
 
     .line 396
     check-cast v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2186,83 +2186,83 @@
     .line 398
     invoke-virtual {v1, p0}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->release(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$ReleaseCallback;)V
 
-    goto :goto_21
+    goto :goto_1
 
     .line 399
-    :cond_18
+    :cond_1
     instance-of v2, v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_2
 
     .line 400
     check-cast v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->release()V
 
-    :cond_21
-    :goto_21
+    :cond_2
+    :goto_1
     const/4 v1, 0x0
 
     .line 402
     aput-object v1, p3, v0
 
-    :cond_24
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_27
+    :cond_4
     return-void
 .end method
 
 .method private releaseOrphanEmbeddedStreams([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Landroidx/media3/exoplayer/source/SampleStream;[I)V
-    .registers 9
+    .locals 5
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 409
-    :goto_2
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_3f
+    if-ge v1, v2, :cond_5
 
     .line 410
     aget-object v2, p2, v1
 
     instance-of v3, v2, Landroidx/media3/exoplayer/source/EmptySampleStream;
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_0
 
     instance-of v2, v2, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_4
 
     .line 412
-    :cond_f
+    :cond_0
     invoke-direct {p0, v1, p3}, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->getPrimaryStreamIndex(I[I)I
 
     move-result v2
 
     const/4 v3, -0x1
 
-    if-ne v2, v3, :cond_1b
+    if-ne v2, v3, :cond_1
 
     .line 417
     aget-object v2, p2, v1
 
     instance-of v2, v2, Landroidx/media3/exoplayer/source/EmptySampleStream;
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 421
-    :cond_1b
+    :cond_1
     aget-object v3, p2, v1
 
     instance-of v4, v3, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2
 
     check-cast v3, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
@@ -2270,72 +2270,72 @@
 
     aget-object v2, p2, v2
 
-    if-ne v3, v2, :cond_2b
+    if-ne v3, v2, :cond_2
 
     const/4 v2, 0x1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_2
     move v2, v0
 
-    :goto_2c
-    if-nez v2, :cond_3c
+    :goto_1
+    if-nez v2, :cond_4
 
     .line 426
     aget-object v2, p2, v1
 
     instance-of v3, v2, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_3
 
     .line 427
     check-cast v2, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;
 
     invoke-virtual {v2}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$EmbeddedSampleStream;->release()V
 
-    :cond_39
+    :cond_3
     const/4 v2, 0x0
 
     .line 429
     aput-object v2, p2, v1
 
-    :cond_3c
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_3f
+    :cond_5
     return-void
 .end method
 
 .method private selectNewStreams([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Landroidx/media3/exoplayer/source/SampleStream;[ZJ[I)V
-    .registers 13
+    .locals 6
 
     const/4 v0, 0x0
 
     move v1, v0
 
     .line 442
-    :goto_2
+    :goto_0
     array-length v2, p1
 
     const/4 v3, 0x1
 
-    if-ge v1, v2, :cond_57
+    if-ge v1, v2, :cond_4
 
     .line 443
     aget-object v2, p1, v1
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_0
 
-    goto :goto_54
+    goto :goto_1
 
     .line 447
-    :cond_b
+    :cond_0
     aget-object v4, p2, v1
 
-    if-nez v4, :cond_45
+    if-nez v4, :cond_2
 
     .line 449
     aput-boolean v3, p3, v1
@@ -2351,7 +2351,7 @@
     .line 452
     iget v4, v3, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->trackGroupCategory:I
 
-    if-nez v4, :cond_22
+    if-nez v4, :cond_1
 
     .line 453
     invoke-direct {p0, v3, v2, p4, p5}, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->buildSampleStream(Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;J)Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2360,15 +2360,15 @@
 
     aput-object v2, p2, v1
 
-    goto :goto_54
+    goto :goto_1
 
     .line 454
-    :cond_22
+    :cond_1
     iget v4, v3, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->trackGroupCategory:I
 
     const/4 v5, 0x2
 
-    if-ne v4, v5, :cond_54
+    if-ne v4, v5, :cond_3
 
     .line 455
     iget-object v4, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->eventStreams:Ljava/util/List;
@@ -2401,13 +2401,13 @@
 
     aput-object v4, p2, v1
 
-    goto :goto_54
+    goto :goto_1
 
     .line 459
-    :cond_45
+    :cond_2
     instance-of v3, v4, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
 
-    if-eqz v3, :cond_54
+    if-eqz v3, :cond_3
 
     .line 462
     check-cast v4, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2421,27 +2421,27 @@
 
     invoke-interface {v3, v2}, Landroidx/media3/exoplayer/dash/DashChunkSource;->updateTrackSelection(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)V
 
-    :cond_54
-    :goto_54
+    :cond_3
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 469
-    :cond_57
-    :goto_57
+    :cond_4
+    :goto_2
     array-length p3, p1
 
-    if-ge v0, p3, :cond_8a
+    if-ge v0, p3, :cond_7
 
     .line 470
     aget-object p3, p2, v0
 
-    if-nez p3, :cond_87
+    if-nez p3, :cond_6
 
     aget-object p3, p1, v0
 
-    if-eqz p3, :cond_87
+    if-eqz p3, :cond_6
 
     .line 471
     aget p3, p6, v0
@@ -2454,7 +2454,7 @@
     .line 473
     iget v1, p3, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->trackGroupCategory:I
 
-    if-ne v1, v3, :cond_87
+    if-ne v1, v3, :cond_6
 
     .line 474
     invoke-direct {p0, v0, p6}, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->getPrimaryStreamIndex(I[I)I
@@ -2463,7 +2463,7 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_7b
+    if-ne v1, v2, :cond_5
 
     .line 478
     new-instance p3, Landroidx/media3/exoplayer/source/EmptySampleStream;
@@ -2472,10 +2472,10 @@
 
     aput-object p3, p2, v0
 
-    goto :goto_87
+    goto :goto_3
 
     .line 480
-    :cond_7b
+    :cond_5
     aget-object v1, p2, v1
 
     check-cast v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2489,20 +2489,20 @@
 
     aput-object p3, p2, v0
 
-    :cond_87
-    :goto_87
+    :cond_6
+    :goto_3
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_57
+    goto :goto_2
 
-    :cond_8a
+    :cond_7
     return-void
 .end method
 
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 3
+    .locals 1
 
     .line 325
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -2515,7 +2515,7 @@
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 8
+    .locals 4
 
     .line 313
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2524,8 +2524,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_e
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -2534,14 +2534,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 10
+    .locals 6
 
     .line 361
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2550,8 +2550,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, v1, :cond_15
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -2560,7 +2560,7 @@
 
     const/4 v5, 0x2
 
-    if-ne v4, v5, :cond_12
+    if-ne v4, v5, :cond_0
 
     .line 363
     invoke-virtual {v3, p1, p2, p3}, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;->getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
@@ -2569,17 +2569,17 @@
 
     return-wide p1
 
-    :cond_12
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     return-wide p1
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 345
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -2592,7 +2592,7 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     .line 335
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -2605,7 +2605,7 @@
 .end method
 
 .method public getStreamKeys(Ljava/util/List;)Ljava/util/List;
-    .registers 15
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2639,13 +2639,13 @@
 
     move-result-object p1
 
-    :cond_13
-    :goto_13
+    :cond_0
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_88
+    if-eqz v2, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2672,12 +2672,12 @@
     .line 239
     iget v4, v3, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->trackGroupCategory:I
 
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 243
-    :cond_32
+    :cond_1
     iget-object v3, v3, Landroidx/media3/exoplayer/dash/DashMediaPeriod$TrackGroupInfo;->adaptationSetIndices:[I
 
     .line 244
@@ -2692,12 +2692,12 @@
     move v7, v6
 
     .line 245
-    :goto_3c
+    :goto_1
     invoke-interface {v2}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
 
     move-result v8
 
-    if-ge v7, v8, :cond_4b
+    if-ge v7, v8, :cond_2
 
     .line 246
     invoke-interface {v2, v7}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->getIndexInTrackGroup(I)I
@@ -2708,10 +2708,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_3c
+    goto :goto_1
 
     .line 248
-    :cond_4b
+    :cond_2
     invoke-static {v5}, Ljava/util/Arrays;->sort([I)V
 
     .line 252
@@ -2734,16 +2734,16 @@
 
     move v8, v7
 
-    :goto_5e
-    if-ge v6, v4, :cond_13
+    :goto_2
+    if-ge v6, v4, :cond_0
 
     .line 254
     aget v9, v5, v6
 
-    :goto_62
+    :goto_3
     add-int v10, v8, v2
 
-    if-lt v9, v10, :cond_78
+    if-lt v9, v10, :cond_3
 
     add-int/lit8 v7, v7, 0x1
 
@@ -2766,10 +2766,10 @@
 
     move v8, v10
 
-    goto :goto_62
+    goto :goto_3
 
     .line 264
-    :cond_78
+    :cond_3
     new-instance v10, Landroidx/media3/common/StreamKey;
 
     iget v11, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->periodIndex:I
@@ -2784,14 +2784,14 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_5e
+    goto :goto_2
 
-    :cond_88
+    :cond_4
     return-object v1
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 229
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackGroups:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -2800,7 +2800,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     .line 330
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -2813,7 +2813,7 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2829,7 +2829,7 @@
 .end method
 
 .method public bridge synthetic onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
-    .registers 2
+    .locals 0
 
     .line 79
     check-cast p1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2840,7 +2840,7 @@
 .end method
 
 .method public onContinueLoadingRequested(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2859,7 +2859,7 @@
 .end method
 
 .method public declared-synchronized onSampleStreamReleased(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2872,7 +2872,7 @@
     monitor-enter p0
 
     .line 208
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->trackEmsgHandlerBySampleStream:Ljava/util/IdentityHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/IdentityHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2881,20 +2881,20 @@
 
     check-cast p1, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     .line 210
     invoke-virtual {p1}, Landroidx/media3/exoplayer/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;->release()V
-    :try_end_e
-    .catchall {:try_start_1 .. :try_end_e} :catchall_10
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 212
-    :cond_e
+    :cond_0
     monitor-exit p0
 
     return-void
 
-    :catchall_10
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
@@ -2903,7 +2903,7 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 218
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
@@ -2915,7 +2915,7 @@
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -2923,7 +2923,7 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 4
+    .locals 1
 
     .line 320
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->compositeSequenceableLoader:Landroidx/media3/exoplayer/source/SequenceableLoader;
@@ -2934,7 +2934,7 @@
 .end method
 
 .method public release()V
-    .registers 5
+    .locals 4
 
     .line 197
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->playerEmsgHandler:Landroidx/media3/exoplayer/dash/PlayerEmsgHandler;
@@ -2948,8 +2948,8 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v1, :cond_13
+    :goto_0
+    if-ge v2, v1, :cond_0
 
     aget-object v3, v0, v2
 
@@ -2958,9 +2958,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
     .line 201
@@ -2970,7 +2970,7 @@
 .end method
 
 .method public seekToUs(J)J
-    .registers 8
+    .locals 5
 
     .line 350
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->sampleStreams:[Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -2981,8 +2981,8 @@
 
     move v3, v2
 
-    :goto_5
-    if-ge v3, v1, :cond_f
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     aget-object v4, v0, v3
 
@@ -2991,16 +2991,16 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 353
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->eventSampleStreams:[Landroidx/media3/exoplayer/dash/EventSampleStream;
 
     array-length v1, v0
 
-    :goto_12
-    if-ge v2, v1, :cond_1c
+    :goto_1
+    if-ge v2, v1, :cond_1
 
     aget-object v3, v0, v2
 
@@ -3009,14 +3009,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     return-wide p1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 14
+    .locals 7
 
     .line 281
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->getStreamIndexToTrackGroupIndex([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;)[I
@@ -3057,15 +3057,15 @@
 
     const/4 v0, 0x0
 
-    :goto_1e
-    if-ge v0, p4, :cond_38
+    :goto_0
+    if-ge v0, p4, :cond_2
 
     aget-object v1, p3, v0
 
     .line 290
     instance-of v2, v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     .line 292
     check-cast v1, Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
@@ -3073,27 +3073,27 @@
     .line 294
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_35
+    goto :goto_1
 
     .line 295
-    :cond_2c
+    :cond_0
     instance-of v2, v1, Landroidx/media3/exoplayer/dash/EventSampleStream;
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_1
 
     .line 296
     check-cast v1, Landroidx/media3/exoplayer/dash/EventSampleStream;
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_35
-    :goto_35
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 299
-    :cond_38
+    :cond_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p3
@@ -3142,7 +3142,7 @@
 .end method
 
 .method public updateManifest(Landroidx/media3/exoplayer/dash/manifest/DashManifest;I)V
-    .registers 12
+    .locals 9
 
     .line 173
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->manifest:Landroidx/media3/exoplayer/dash/manifest/DashManifest;
@@ -3160,15 +3160,15 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 177
     array-length v2, v0
 
     move v3, v1
 
-    :goto_10
-    if-ge v3, v2, :cond_20
+    :goto_0
+    if-ge v3, v2, :cond_0
 
     aget-object v4, v0, v3
 
@@ -3183,16 +3183,16 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 180
-    :cond_20
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/DashMediaPeriod;->callback:Landroidx/media3/exoplayer/source/MediaPeriod$Callback;
 
     invoke-interface {v0, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onContinueLoadingRequested(Landroidx/media3/exoplayer/source/SequenceableLoader;)V
 
     .line 182
-    :cond_25
+    :cond_1
     invoke-virtual {p1, p2}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriod(I)Landroidx/media3/exoplayer/dash/manifest/Period;
 
     move-result-object v0
@@ -3208,8 +3208,8 @@
 
     move v3, v1
 
-    :goto_31
-    if-ge v3, v2, :cond_69
+    :goto_1
+    if-ge v3, v2, :cond_5
 
     aget-object v4, v0, v3
 
@@ -3220,12 +3220,12 @@
 
     move-result-object v5
 
-    :cond_3b
+    :cond_2
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_66
+    if-eqz v6, :cond_4
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3246,7 +3246,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3b
+    if-eqz v7, :cond_2
 
     .line 186
     invoke-virtual {p1}, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->getPeriodCount()I
@@ -3260,23 +3260,23 @@
     .line 187
     iget-boolean v8, p1, Landroidx/media3/exoplayer/dash/manifest/DashManifest;->dynamic:Z
 
-    if-eqz v8, :cond_62
+    if-eqz v8, :cond_3
 
-    if-ne p2, v5, :cond_62
+    if-ne p2, v5, :cond_3
 
-    goto :goto_63
+    goto :goto_2
 
-    :cond_62
+    :cond_3
     move v7, v1
 
-    :goto_63
+    :goto_2
     invoke-virtual {v4, v6, v7}, Landroidx/media3/exoplayer/dash/EventSampleStream;->updateEventStream(Landroidx/media3/exoplayer/dash/manifest/EventStream;Z)V
 
-    :cond_66
+    :cond_4
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_69
+    :cond_5
     return-void
 .end method

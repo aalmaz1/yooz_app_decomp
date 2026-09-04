@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .locals 9
 
     const/4 v0, 0x1
 
@@ -38,7 +38,7 @@
 
     const/4 v2, 0x0
 
-    :try_start_3
+    :try_start_0
     const-string v3, "android.graphics.Insets"
 
     .line 202
@@ -56,137 +56,137 @@
     invoke-virtual {v4, v5, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
-    :try_end_13
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_13} :catch_44
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_13} :catch_40
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_3 .. :try_end_13} :catch_3c
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_9
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_8
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_7
 
-    :try_start_13
+    :try_start_1
     const-string v5, "left"
 
     .line 204
     invoke-virtual {v3, v5}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v5
-    :try_end_19
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_13 .. :try_end_19} :catch_3a
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_13 .. :try_end_19} :catch_38
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_13 .. :try_end_19} :catch_36
+    :try_end_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_1} :catch_4
 
-    :try_start_19
+    :try_start_2
     const-string/jumbo v6, "top"
 
     .line 205
     invoke-virtual {v3, v6}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
-    :try_end_20
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_19 .. :try_end_20} :catch_34
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_19 .. :try_end_20} :catch_32
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_19 .. :try_end_20} :catch_30
+    :try_end_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_2 .. :try_end_2} :catch_1
 
-    :try_start_20
+    :try_start_3
     const-string v7, "right"
 
     .line 206
     invoke-virtual {v3, v7}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v7
-    :try_end_26
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_20 .. :try_end_26} :catch_2e
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_20 .. :try_end_26} :catch_2e
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_20 .. :try_end_26} :catch_2e
+    :try_end_3
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_3 .. :try_end_3} :catch_0
 
-    :try_start_26
+    :try_start_4
     const-string v8, "bottom"
 
     .line 207
     invoke-virtual {v3, v8}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v3
-    :try_end_2c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_26 .. :try_end_2c} :catch_48
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_26 .. :try_end_2c} :catch_48
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_26 .. :try_end_2c} :catch_48
+    :try_end_4
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_4 .. :try_end_4} :catch_a
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_a
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_4 .. :try_end_4} :catch_a
 
     move v8, v0
 
-    goto :goto_4a
+    goto :goto_5
 
-    :catch_2e
+    :catch_0
     move-object v7, v1
 
-    goto :goto_48
+    goto :goto_4
 
-    :catch_30
+    :catch_1
     move-object v6, v1
 
-    goto :goto_47
+    goto :goto_3
 
-    :catch_32
+    :catch_2
     move-object v6, v1
 
-    goto :goto_47
+    goto :goto_3
 
-    :catch_34
+    :catch_3
     move-object v6, v1
 
-    goto :goto_47
+    goto :goto_3
 
-    :catch_36
+    :catch_4
     move-object v5, v1
 
-    goto :goto_3e
+    goto :goto_0
 
-    :catch_38
+    :catch_5
     move-object v5, v1
 
-    goto :goto_42
+    goto :goto_1
 
-    :catch_3a
+    :catch_6
     move-object v5, v1
 
-    goto :goto_46
+    goto :goto_2
 
-    :catch_3c
+    :catch_7
     move-object v4, v1
 
     move-object v5, v4
 
-    :goto_3e
+    :goto_0
     move-object v6, v5
 
-    goto :goto_47
+    goto :goto_3
 
-    :catch_40
+    :catch_8
     move-object v4, v1
 
     move-object v5, v4
 
-    :goto_42
+    :goto_1
     move-object v6, v5
 
-    goto :goto_47
+    goto :goto_3
 
-    :catch_44
+    :catch_9
     move-object v4, v1
 
     move-object v5, v4
 
-    :goto_46
+    :goto_2
     move-object v6, v5
 
-    :goto_47
+    :goto_3
     move-object v7, v6
 
-    :catch_48
-    :goto_48
+    :catch_a
+    :goto_4
     move-object v3, v1
 
     move v8, v2
 
-    :goto_4a
-    if-eqz v8, :cond_59
+    :goto_5
+    if-eqz v8, :cond_0
 
     .line 218
     sput-object v4, Landroidx/appcompat/widget/DrawableUtils$Api18Impl;->sGetOpticalInsets:Ljava/lang/reflect/Method;
@@ -206,10 +206,10 @@
     .line 223
     sput-boolean v0, Landroidx/appcompat/widget/DrawableUtils$Api18Impl;->sReflectionSuccessful:Z
 
-    goto :goto_65
+    goto :goto_6
 
     .line 225
-    :cond_59
+    :cond_0
     sput-object v1, Landroidx/appcompat/widget/DrawableUtils$Api18Impl;->sGetOpticalInsets:Ljava/lang/reflect/Method;
 
     .line 226
@@ -227,12 +227,12 @@
     .line 230
     sput-boolean v2, Landroidx/appcompat/widget/DrawableUtils$Api18Impl;->sReflectionSuccessful:Z
 
-    :goto_65
+    :goto_6
     return-void
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -241,21 +241,21 @@
 .end method
 
 .method static getOpticalInsets(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Rect;
-    .registers 6
+    .locals 5
 
     .line 241
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-ge v0, v1, :cond_33
+    if-ge v0, v1, :cond_0
 
     sget-boolean v0, Landroidx/appcompat/widget/DrawableUtils$Api18Impl;->sReflectionSuccessful:Z
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_0
 
     .line 243
-    :try_start_a
+    :try_start_0
     sget-object v0, Landroidx/appcompat/widget/DrawableUtils$Api18Impl;->sGetOpticalInsets:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -266,7 +266,7 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_33
+    if-eqz p0, :cond_0
 
     .line 245
     new-instance v0, Landroid/graphics/Rect;
@@ -300,15 +300,15 @@
     move-result p0
 
     invoke-direct {v0, v1, v2, v3, p0}, Landroid/graphics/Rect;-><init>(IIII)V
-    :try_end_32
-    .catch Ljava/lang/IllegalAccessException; {:try_start_a .. :try_end_32} :catch_33
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_a .. :try_end_32} :catch_33
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
     .line 258
-    :catch_33
-    :cond_33
+    :catch_0
+    :cond_0
     sget-object p0, Landroidx/appcompat/widget/DrawableUtils;->INSETS_NONE:Landroid/graphics/Rect;
 
     return-object p0

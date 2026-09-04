@@ -82,7 +82,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/datastore/core/SingleProcessDataStore;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,7 +134,7 @@
 .end method
 
 .method public final invoke(Landroidx/datastore/core/SingleProcessDataStore$Message;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -164,7 +164,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     check-cast p1, Landroidx/datastore/core/SingleProcessDataStore$Message;
 
@@ -178,7 +178,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -191,16 +191,16 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_2
 
-    if-eq v1, v3, :cond_17
+    if-eq v1, v3, :cond_1
 
-    if-ne v1, v2, :cond_f
+    if-ne v1, v2, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 245
-    :cond_f
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -210,13 +210,13 @@
     throw p1
 
     .line 236
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_1b
+    :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/datastore/core/SingleProcessDataStore$actor$3;->L$0:Ljava/lang/Object;
@@ -226,7 +226,7 @@
     .line 238
     instance-of v1, p1, Landroidx/datastore/core/SingleProcessDataStore$Message$Read;
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_3
 
     .line 239
     iget-object v1, p0, Landroidx/datastore/core/SingleProcessDataStore$actor$3;->this$0:Landroidx/datastore/core/SingleProcessDataStore;
@@ -243,15 +243,15 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_4a
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
     .line 241
-    :cond_36
+    :cond_3
     instance-of v1, p1, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;
 
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_4
 
     .line 242
     iget-object v1, p0, Landroidx/datastore/core/SingleProcessDataStore$actor$3;->this$0:Landroidx/datastore/core/SingleProcessDataStore;
@@ -268,13 +268,13 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_4a
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
     .line 245
-    :cond_4a
-    :goto_4a
+    :cond_4
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

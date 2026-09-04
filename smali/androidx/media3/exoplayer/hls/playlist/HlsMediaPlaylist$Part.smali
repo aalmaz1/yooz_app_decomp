@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;JIJLandroidx/media3/common/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZZZ)V
-    .registers 35
+    .locals 17
 
     move-object/from16 v15, p0
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public copyWith(JI)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;
-    .registers 24
+    .locals 20
 
     move-object/from16 v0, p0
 

@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/ImmutableList;[I)V
-    .registers 7
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,16 +67,16 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v0, v2
 
-    :goto_e
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 1487
@@ -96,10 +96,10 @@
     iput-object p1, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->windowIndicesInShuffled:[I
 
     .line 1491
-    :goto_1c
+    :goto_1
     array-length p1, p3
 
-    if-ge v2, p1, :cond_28
+    if-ge v2, p1, :cond_1
 
     .line 1492
     iget-object p1, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->windowIndicesInShuffled:[I
@@ -110,44 +110,44 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_28
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public getFirstWindowIndex(Z)I
-    .registers 3
+    .locals 1
 
     .line 1567
     invoke-virtual {p0}, Landroidx/media3/common/Timeline$RemotableTimeline;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_1
 
     .line 1570
     iget-object p1, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->shuffledWindowIndices:[I
 
     aget v0, p1, v0
 
-    :cond_f
+    :cond_1
     return v0
 .end method
 
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 1594
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -158,21 +158,21 @@
 .end method
 
 .method public getLastWindowIndex(Z)I
-    .registers 3
+    .locals 1
 
     .line 1557
     invoke-virtual {p0}, Landroidx/media3/common/Timeline$RemotableTimeline;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
-    :cond_8
-    if-eqz p1, :cond_15
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 1561
     iget-object p1, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->shuffledWindowIndices:[I
@@ -185,56 +185,56 @@
 
     aget p1, p1, v0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 1562
-    :cond_15
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/common/Timeline$RemotableTimeline;->getWindowCount()I
 
     move-result p1
 
     add-int/lit8 p1, p1, -0x1
 
-    :goto_1b
+    :goto_0
     return p1
 .end method
 
 .method public getNextWindowIndex(IIZ)I
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_4
+    if-ne p2, v0, :cond_0
 
     return p1
 
     .line 1529
-    :cond_4
+    :cond_0
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline$RemotableTimeline;->getLastWindowIndex(Z)I
 
     move-result v1
 
-    if-ne p1, v1, :cond_14
+    if-ne p1, v1, :cond_2
 
     const/4 p1, 0x2
 
-    if-ne p2, p1, :cond_12
+    if-ne p2, p1, :cond_1
 
     .line 1531
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline$RemotableTimeline;->getFirstWindowIndex(Z)I
 
     move-result p1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     const/4 p1, -0x1
 
-    :goto_13
+    :goto_0
     return p1
 
-    :cond_14
-    if-eqz p3, :cond_20
+    :cond_2
+    if-eqz p3, :cond_3
 
     .line 1535
     iget-object p2, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->shuffledWindowIndices:[I
@@ -247,17 +247,17 @@
 
     aget p1, p2, p1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_3
     add-int/2addr p1, v0
 
-    :goto_21
+    :goto_1
     return p1
 .end method
 
 .method public getPeriod(ILandroidx/media3/common/Timeline$Period;Z)Landroidx/media3/common/Timeline$Period;
-    .registers 14
+    .locals 10
 
     .line 1580
     iget-object p3, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->periods:Lcom/google/common/collect/ImmutableList;
@@ -295,7 +295,7 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 1575
     iget-object v0, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->periods:Lcom/google/common/collect/ImmutableList;
@@ -308,41 +308,41 @@
 .end method
 
 .method public getPreviousWindowIndex(IIZ)I
-    .registers 6
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_4
+    if-ne p2, v0, :cond_0
 
     return p1
 
     .line 1545
-    :cond_4
+    :cond_0
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline$RemotableTimeline;->getFirstWindowIndex(Z)I
 
     move-result v1
 
-    if-ne p1, v1, :cond_14
+    if-ne p1, v1, :cond_2
 
     const/4 p1, 0x2
 
-    if-ne p2, p1, :cond_12
+    if-ne p2, p1, :cond_1
 
     .line 1547
     invoke-virtual {p0, p3}, Landroidx/media3/common/Timeline$RemotableTimeline;->getLastWindowIndex(Z)I
 
     move-result p1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_1
     const/4 p1, -0x1
 
-    :goto_13
+    :goto_0
     return p1
 
-    :cond_14
-    if-eqz p3, :cond_20
+    :cond_2
+    if-eqz p3, :cond_3
 
     .line 1551
     iget-object p2, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->shuffledWindowIndices:[I
@@ -355,17 +355,17 @@
 
     aget p1, p2, p1
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
+    :cond_3
     sub-int/2addr p1, v0
 
-    :goto_21
+    :goto_1
     return p1
 .end method
 
 .method public getUidOfPeriod(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1599
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -376,7 +376,7 @@
 .end method
 
 .method public getWindow(ILandroidx/media3/common/Timeline$Window;J)Landroidx/media3/common/Timeline$Window;
-    .registers 27
+    .locals 22
 
     move-object/from16 v15, p2
 
@@ -467,7 +467,7 @@
 .end method
 
 .method public getWindowCount()I
-    .registers 2
+    .locals 1
 
     .line 1498
     iget-object v0, p0, Landroidx/media3/common/Timeline$RemotableTimeline;->windows:Lcom/google/common/collect/ImmutableList;

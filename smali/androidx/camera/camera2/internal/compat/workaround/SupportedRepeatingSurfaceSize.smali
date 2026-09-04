@@ -23,7 +23,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 45
     new-instance v0, Landroid/util/Size;
@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,19 +69,19 @@
 
 # virtual methods
 .method public getSupportedSizes([Landroid/util/Size;)[Landroid/util/Size;
-    .registers 9
+    .locals 7
 
     .line 52
     iget-object v0, p0, Landroidx/camera/camera2/internal/compat/workaround/SupportedRepeatingSurfaceSize;->mQuirk:Landroidx/camera/camera2/internal/compat/quirk/RepeatingStreamConstraintForVideoRecordingQuirk;
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 53
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/RepeatingStreamConstraintForVideoRecordingQuirk;->isHuaweiMate9()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     .line 54
     new-instance v0, Ljava/util/ArrayList;
@@ -95,8 +95,8 @@
 
     move v3, v2
 
-    :goto_12
-    if-ge v3, v1, :cond_26
+    :goto_0
+    if-ge v3, v1, :cond_1
 
     aget-object v4, p1, v3
 
@@ -109,17 +109,17 @@
 
     move-result v5
 
-    if-ltz v5, :cond_23
+    if-ltz v5, :cond_0
 
     .line 57
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_23
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     new-array p1, v2, [Landroid/util/Size;
 
     .line 60
@@ -129,6 +129,6 @@
 
     check-cast p1, [Landroid/util/Size;
 
-    :cond_2e
+    :cond_2
     return-object p1
 .end method

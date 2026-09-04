@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;ILandroid/content/Intent;ILandroid/os/Bundle;Z)V
-    .registers 7
+    .locals 0
 
     .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ILandroid/content/Intent;IZ)V
-    .registers 13
+    .locals 7
 
     const/4 v5, 0x0
 
@@ -78,12 +78,12 @@
 .end method
 
 .method private createPendingIntent()Landroid/app/PendingIntent;
-    .registers 7
+    .locals 6
 
     .line 101
     iget-object v4, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mOptions:Landroid/os/Bundle;
 
-    if-nez v4, :cond_13
+    if-nez v4, :cond_0
 
     .line 102
     iget-object v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mContext:Landroid/content/Context;
@@ -103,7 +103,7 @@
     return-object v0
 
     .line 105
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mContext:Landroid/content/Context;
 
     iget v1, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mRequestCode:I
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public getContext()Landroid/content/Context;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mContext:Landroid/content/Context;
@@ -133,7 +133,7 @@
 .end method
 
 .method public getFlags()I
-    .registers 2
+    .locals 1
 
     .line 85
     iget v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mFlags:I
@@ -142,7 +142,7 @@
 .end method
 
 .method public getIntent()Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mIntent:Landroid/content/Intent;
@@ -151,7 +151,7 @@
 .end method
 
 .method public getOptions()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mOptions:Landroid/os/Bundle;
@@ -160,7 +160,7 @@
 .end method
 
 .method public getPendingIntent()Landroid/app/PendingIntent;
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mPendingIntent:Landroid/app/PendingIntent;
@@ -169,7 +169,7 @@
 .end method
 
 .method public getRequestCode()I
-    .registers 2
+    .locals 1
 
     .line 77
     iget v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mRequestCode:I
@@ -178,7 +178,7 @@
 .end method
 
 .method public isMutable()Z
-    .registers 2
+    .locals 1
 
     .line 93
     iget-boolean v0, p0, Landroidx/core/service/quicksettings/PendingIntentActivityWrapper;->mIsMutable:Z

@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 79
     new-instance v0, Ljava/lang/Object;
@@ -77,7 +77,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 .end method
 
 .method static synthetic access$100()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 41
     sget-object v0, Landroidx/media3/exoplayer/util/SntpClient;->loaderLock:Ljava/lang/Object;
@@ -95,7 +95,7 @@
 .end method
 
 .method static synthetic access$200()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 41
     sget-object v0, Landroidx/media3/exoplayer/util/SntpClient;->valueLock:Ljava/lang/Object;
@@ -104,7 +104,7 @@
 .end method
 
 .method static synthetic access$300()Z
-    .registers 1
+    .locals 1
 
     .line 41
     sget-boolean v0, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized:Z
@@ -113,7 +113,7 @@
 .end method
 
 .method static synthetic access$302(Z)Z
-    .registers 1
+    .locals 0
 
     .line 41
     sput-boolean p0, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized:Z
@@ -122,7 +122,7 @@
 .end method
 
 .method static synthetic access$400()J
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -138,7 +138,7 @@
 .end method
 
 .method static synthetic access$502(J)J
-    .registers 2
+    .locals 0
 
     .line 41
     sput-wide p0, Landroidx/media3/exoplayer/util/SntpClient;->elapsedRealtimeOffsetMs:J
@@ -147,7 +147,7 @@
 .end method
 
 .method private static checkValidServerReply(BBIJ)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -156,20 +156,20 @@
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_49
+    if-eq p0, v0, :cond_4
 
     const/4 p0, 0x4
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_1
 
     const/4 p0, 0x5
 
-    if-ne p1, p0, :cond_a
+    if-ne p1, p0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 276
-    :cond_a
+    :cond_0
     new-instance p0, Ljava/io/IOException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -190,24 +190,24 @@
 
     throw p0
 
-    :cond_1f
-    :goto_1f
-    if-eqz p2, :cond_34
+    :cond_1
+    :goto_0
+    if-eqz p2, :cond_3
 
     const/16 p0, 0xf
 
-    if-gt p2, p0, :cond_34
+    if-gt p2, p0, :cond_3
 
     const-wide/16 p0, 0x0
 
     cmp-long p0, p3, p0
 
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_2
 
     return-void
 
     .line 282
-    :cond_2c
+    :cond_2
     new-instance p0, Ljava/io/IOException;
 
     const-string p1, "SNTP: Zero transmitTime"
@@ -217,7 +217,7 @@
     throw p0
 
     .line 279
-    :cond_34
+    :cond_3
     new-instance p0, Ljava/io/IOException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -239,7 +239,7 @@
     throw p0
 
     .line 273
-    :cond_49
+    :cond_4
     new-instance p0, Ljava/io/IOException;
 
     const-string p1, "SNTP: Unsynchronized server"
@@ -250,7 +250,7 @@
 .end method
 
 .method public static getElapsedRealtimeOffsetMs()J
-    .registers 3
+    .locals 3
 
     .line 138
     sget-object v0, Landroidx/media3/exoplayer/util/SntpClient;->valueLock:Ljava/lang/Object;
@@ -258,36 +258,36 @@
     monitor-enter v0
 
     .line 139
-    :try_start_3
+    :try_start_0
     sget-boolean v1, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized:Z
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     sget-wide v1, Landroidx/media3/exoplayer/util/SntpClient;->elapsedRealtimeOffsetMs:J
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
-    :goto_f
+    :goto_0
     monitor-exit v0
 
     return-wide v1
 
-    :catchall_11
+    :catchall_0
     move-exception v1
 
     .line 140
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public static getNtpHost()Ljava/lang/String;
-    .registers 2
+    .locals 2
 
     .line 95
     sget-object v0, Landroidx/media3/exoplayer/util/SntpClient;->valueLock:Ljava/lang/Object;
@@ -295,44 +295,44 @@
     monitor-enter v0
 
     .line 96
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/media3/exoplayer/util/SntpClient;->ntpHost:Ljava/lang/String;
 
     monitor-exit v0
 
     return-object v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 97
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public static initialize(Landroidx/media3/exoplayer/upstream/Loader;Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;)V
-    .registers 4
+    .locals 2
 
     .line 152
     invoke-static {}, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 154
     invoke-interface {p1}, Landroidx/media3/exoplayer/util/SntpClient$InitializationCallback;->onInitialized()V
 
-    :cond_b
+    :cond_0
     return-void
 
-    :cond_c
-    if-nez p0, :cond_15
+    :cond_1
+    if-nez p0, :cond_2
 
     .line 159
     new-instance p0, Landroidx/media3/exoplayer/upstream/Loader;
@@ -342,7 +342,7 @@
     invoke-direct {p0, v0}, Landroidx/media3/exoplayer/upstream/Loader;-><init>(Ljava/lang/String;)V
 
     .line 161
-    :cond_15
+    :cond_2
     new-instance v0, Landroidx/media3/exoplayer/util/SntpClient$NtpTimeLoadable;
 
     const/4 v1, 0x0
@@ -361,7 +361,7 @@
 .end method
 
 .method public static isInitialized()Z
-    .registers 2
+    .locals 2
 
     .line 126
     sget-object v0, Landroidx/media3/exoplayer/util/SntpClient;->valueLock:Ljava/lang/Object;
@@ -369,26 +369,26 @@
     monitor-enter v0
 
     .line 127
-    :try_start_3
+    :try_start_0
     sget-boolean v1, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized:Z
 
     monitor-exit v0
 
     return v1
 
-    :catchall_7
+    :catchall_0
     move-exception v1
 
     .line 128
     monitor-exit v0
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method private static loadNtpTimeOffsetMs()J
-    .registers 16
+    .locals 16
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -412,7 +412,7 @@
     const/16 v2, 0x2710
 
     .line 168
-    :try_start_f
+    :try_start_0
     invoke-virtual {v1, v2}, Ljava/net/DatagramSocket;->setSoTimeout(I)V
 
     const/16 v2, 0x30
@@ -517,8 +517,8 @@
 
     .line 208
     div-long/2addr v12, v2
-    :try_end_69
-    .catchall {:try_start_f .. :try_end_69} :catchall_6f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-long/2addr v6, v12
 
@@ -529,28 +529,28 @@
 
     return-wide v6
 
-    :catchall_6f
+    :catchall_0
     move-exception v0
 
     .line 167
-    :try_start_70
+    :try_start_1
     invoke-virtual {v1}, Ljava/net/DatagramSocket;->close()V
-    :try_end_73
-    .catchall {:try_start_70 .. :try_end_73} :catchall_74
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_78
+    goto :goto_0
 
-    :catchall_74
+    :catchall_1
     move-exception v1
 
     invoke-virtual {v0, v1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_78
+    :goto_0
     throw v0
 .end method
 
 .method private static read32([BI)J
-    .registers 7
+    .locals 5
 
     .line 256
     aget-byte v0, p0, p1
@@ -574,40 +574,40 @@
 
     const/16 v3, 0x80
 
-    if-ne p1, v3, :cond_18
+    if-ne p1, v3, :cond_0
 
     and-int/lit8 p1, v0, 0x7f
 
     add-int/lit16 v0, p1, 0x80
 
-    :cond_18
+    :cond_0
     and-int/lit16 p1, v1, 0x80
 
-    if-ne p1, v3, :cond_20
+    if-ne p1, v3, :cond_1
 
     and-int/lit8 p1, v1, 0x7f
 
     add-int/lit16 v1, p1, 0x80
 
-    :cond_20
+    :cond_1
     and-int/lit16 p1, v2, 0x80
 
-    if-ne p1, v3, :cond_28
+    if-ne p1, v3, :cond_2
 
     and-int/lit8 p1, v2, 0x7f
 
     add-int/lit16 v2, p1, 0x80
 
-    :cond_28
+    :cond_2
     and-int/lit16 p1, p0, 0x80
 
-    if-ne p1, v3, :cond_2f
+    if-ne p1, v3, :cond_3
 
     and-int/lit8 p0, p0, 0x7f
 
     add-int/2addr p0, v3
 
-    :cond_2f
+    :cond_3
     int-to-long v3, v0
 
     const/16 p1, 0x18
@@ -638,7 +638,7 @@
 .end method
 
 .method private static readTimestamp([BI)J
-    .registers 7
+    .locals 5
 
     .line 220
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/util/SntpClient;->read32([BI)J
@@ -656,15 +656,15 @@
 
     cmp-long v4, v0, v2
 
-    if-nez v4, :cond_15
+    if-nez v4, :cond_0
 
     cmp-long v4, p0, v2
 
-    if-nez v4, :cond_15
+    if-nez v4, :cond_0
 
     return-wide v2
 
-    :cond_15
+    :cond_0
     const-wide v2, 0x83aa7e80L
 
     sub-long/2addr v0, v2
@@ -686,7 +686,7 @@
 .end method
 
 .method public static setNtpHost(Ljava/lang/String;)V
-    .registers 3
+    .locals 2
 
     .line 111
     sget-object v0, Landroidx/media3/exoplayer/util/SntpClient;->valueLock:Ljava/lang/Object;
@@ -694,14 +694,14 @@
     monitor-enter v0
 
     .line 112
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/media3/exoplayer/util/SntpClient;->ntpHost:Ljava/lang/String;
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_0
 
     .line 113
     sput-object p0, Landroidx/media3/exoplayer/util/SntpClient;->ntpHost:Ljava/lang/String;
@@ -712,23 +712,23 @@
     sput-boolean p0, Landroidx/media3/exoplayer/util/SntpClient;->isInitialized:Z
 
     .line 116
-    :cond_10
+    :cond_0
     monitor-exit v0
 
     return-void
 
-    :catchall_12
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_14
-    .catchall {:try_start_3 .. :try_end_14} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method private static writeTimestamp([BIJ)V
-    .registers 15
+    .locals 11
 
     const-wide/16 v0, 0x0
 
@@ -736,7 +736,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     add-int/lit8 p2, p1, 0x8
 
@@ -745,7 +745,7 @@
 
     return-void
 
-    :cond_d
+    :cond_0
     const-wide/16 v2, 0x3e8
 
     .line 236

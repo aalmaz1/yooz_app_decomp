@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,17 +25,17 @@
 .end method
 
 .method static startForeground(Landroid/app/Service;ILandroid/app/Notification;I)V
-    .registers 5
+    .locals 1
 
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_1
 
     const/4 v0, -0x1
 
-    if-ne p3, v0, :cond_6
+    if-ne p3, v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const v0, 0x40000fff    # 2.0009763f
 
     and-int/2addr p3, v0
@@ -43,13 +43,13 @@
     .line 241
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
 
-    goto :goto_11
+    goto :goto_1
 
     .line 239
-    :cond_e
-    :goto_e
+    :cond_1
+    :goto_0
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
 
-    :goto_11
+    :goto_1
     return-void
 .end method

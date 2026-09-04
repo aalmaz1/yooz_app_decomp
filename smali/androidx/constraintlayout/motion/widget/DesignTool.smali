@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .locals 16
 
     .line 86
     new-instance v0, Ljava/util/HashMap;
@@ -286,7 +286,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/constraintlayout/motion/widget/MotionLayout;)V
-    .registers 3
+    .locals 1
 
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -314,7 +314,7 @@
 .end method
 
 .method private static Connect(ILandroidx/constraintlayout/widget/ConstraintSet;Landroid/view/View;Ljava/util/HashMap;II)V
-    .registers 14
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -355,7 +355,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     .line 137
     sget-object v2, Landroidx/constraintlayout/motion/widget/DesignTool;->allMargins:Ljava/util/HashMap;
@@ -366,7 +366,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_0
 
     .line 139
     invoke-virtual {p3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -379,12 +379,12 @@
 
     move-result p0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_32
+    :goto_0
     move v7, p0
 
     .line 141
@@ -405,20 +405,20 @@
 
     invoke-virtual/range {v2 .. v7}, Landroidx/constraintlayout/widget/ConstraintSet;->connect(IIIII)V
 
-    :cond_41
+    :cond_1
     return-void
 .end method
 
 .method private static GetPxFromDp(ILjava/lang/String;)I
-    .registers 5
+    .locals 3
 
     const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/16 v1, 0x64
 
     .line 122
@@ -428,12 +428,12 @@
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_e
+    if-ne v1, v2, :cond_1
 
     return v0
 
     .line 126
-    :cond_e
+    :cond_1
     invoke-virtual {p1, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
@@ -461,7 +461,7 @@
 .end method
 
 .method private static SetAbsolutePositions(ILandroidx/constraintlayout/widget/ConstraintSet;Landroid/view/View;Ljava/util/HashMap;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -483,7 +483,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 183
     invoke-virtual {p2}, Landroid/view/View;->getId()I
@@ -496,7 +496,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroidx/constraintlayout/widget/ConstraintSet;->setEditorAbsoluteX(II)V
 
-    :cond_15
+    :cond_0
     const-string v0, "layout_editor_absoluteY"
 
     .line 185
@@ -506,7 +506,7 @@
 
     check-cast p3, Ljava/lang/String;
 
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_1
 
     .line 187
     invoke-virtual {p2}, Landroid/view/View;->getId()I
@@ -519,12 +519,12 @@
 
     invoke-virtual {p1, p2, p0}, Landroidx/constraintlayout/widget/ConstraintSet;->setEditorAbsoluteY(II)V
 
-    :cond_2a
+    :cond_1
     return-void
 .end method
 
 .method private static SetBias(Landroidx/constraintlayout/widget/ConstraintSet;Landroid/view/View;Ljava/util/HashMap;I)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -539,26 +539,26 @@
 
     const/4 v0, 0x1
 
-    if-ne p3, v0, :cond_6
+    if-ne p3, v0, :cond_0
 
     const-string v1, "layout_constraintVertical_bias"
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const-string v1, "layout_constraintHorizontal_bias"
 
     .line 151
-    :goto_8
+    :goto_0
     invoke-virtual {p2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Ljava/lang/String;
 
-    if-eqz p2, :cond_2b
+    if-eqz p2, :cond_2
 
-    if-nez p3, :cond_1e
+    if-nez p3, :cond_1
 
     .line 154
     invoke-virtual {p1}, Landroid/view/View;->getId()I
@@ -571,10 +571,10 @@
 
     invoke-virtual {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintSet;->setHorizontalBias(IF)V
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_1e
-    if-ne p3, v0, :cond_2b
+    :cond_1
+    if-ne p3, v0, :cond_2
 
     .line 156
     invoke-virtual {p1}, Landroid/view/View;->getId()I
@@ -587,13 +587,13 @@
 
     invoke-virtual {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintSet;->setVerticalBias(IF)V
 
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private static SetDimensions(ILandroidx/constraintlayout/widget/ConstraintSet;Landroid/view/View;Ljava/util/HashMap;I)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -608,24 +608,24 @@
 
     const/4 v0, 0x1
 
-    if-ne p4, v0, :cond_6
+    if-ne p4, v0, :cond_0
 
     const-string v0, "layout_height"
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const-string v0, "layout_width"
 
     .line 166
-    :goto_8
+    :goto_0
     invoke-virtual {p3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
 
     check-cast p3, Ljava/lang/String;
 
-    if-eqz p3, :cond_30
+    if-eqz p3, :cond_3
 
     const-string/jumbo v0, "wrap_content"
 
@@ -634,20 +634,20 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1
 
     .line 170
     invoke-static {p0, p3}, Landroidx/constraintlayout/motion/widget/DesignTool;->GetPxFromDp(ILjava/lang/String;)I
 
     move-result p0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     const/4 p0, -0x2
 
-    :goto_1f
-    if-nez p4, :cond_29
+    :goto_1
+    if-nez p4, :cond_2
 
     .line 173
     invoke-virtual {p2}, Landroid/view/View;->getId()I
@@ -656,25 +656,25 @@
 
     invoke-virtual {p1, p2, p0}, Landroidx/constraintlayout/widget/ConstraintSet;->constrainWidth(II)V
 
-    goto :goto_30
+    goto :goto_2
 
     .line 175
-    :cond_29
+    :cond_2
     invoke-virtual {p2}, Landroid/view/View;->getId()I
 
     move-result p2
 
     invoke-virtual {p1, p2, p0}, Landroidx/constraintlayout/widget/ConstraintSet;->constrainHeight(II)V
 
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_2
     return-void
 .end method
 
 
 # virtual methods
 .method public designAccess(ILjava/lang/String;Ljava/lang/Object;[FI[FI)I
-    .registers 9
+    .locals 1
 
     .line 550
     check-cast p3, Landroid/view/View;
@@ -683,19 +683,19 @@
 
     const/4 p5, 0x0
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_2
 
     .line 553
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     return p4
 
-    :cond_d
-    if-eqz p3, :cond_1b
+    :cond_0
+    if-eqz p3, :cond_1
 
     .line 558
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -708,33 +708,33 @@
 
     check-cast p3, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez p3, :cond_1d
+    if-nez p3, :cond_3
 
-    :cond_1b
+    :cond_1
     return p4
 
-    :cond_1c
+    :cond_2
     move-object p3, p5
 
-    :cond_1d
+    :cond_3
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_7
 
-    if-eq p1, v0, :cond_46
+    if-eq p1, v0, :cond_6
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_38
+    if-eq p1, v0, :cond_5
 
     const/4 p5, 0x3
 
-    if-eq p1, p5, :cond_29
+    if-eq p1, p5, :cond_4
 
     return p4
 
     .line 588
-    :cond_29
+    :cond_4
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object p1, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -754,7 +754,7 @@
     return p1
 
     .line 580
-    :cond_38
+    :cond_5
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object p1, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -772,7 +772,7 @@
     return p1
 
     .line 572
-    :cond_46
+    :cond_6
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object p1, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -789,12 +789,12 @@
 
     return p1
 
-    :cond_54
+    :cond_7
     return v0
 .end method
 
 .method public disableAutoTransition(Z)V
-    .registers 3
+    .locals 1
 
     .line 410
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -805,14 +805,14 @@
 .end method
 
 .method public dumpConstraintSet(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
 
     .line 708
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 709
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -822,7 +822,7 @@
     iput-object v1, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
     .line 711
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v0, p1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->lookUpConstraintId(Ljava/lang/String;)I
@@ -865,7 +865,7 @@
     invoke-virtual {v1, p1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     .line 714
-    :try_start_36
+    :try_start_0
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object p1, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -883,37 +883,37 @@
     new-array v1, v1, [I
 
     invoke-virtual {p1, v0, v1}, Landroidx/constraintlayout/widget/ConstraintSet;->dump(Landroidx/constraintlayout/motion/widget/MotionScene;[I)V
-    :try_end_48
-    .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_48} :catch_49
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4d
+    goto :goto_0
 
-    :catch_49
+    :catch_0
     move-exception p1
 
     .line 716
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    :goto_4d
+    :goto_0
     return-void
 .end method
 
 .method public getAnimationKeyFrames(Ljava/lang/Object;[F)I
-    .registers 5
+    .locals 2
 
     .line 241
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 244
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -936,13 +936,13 @@
 
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez p1, :cond_20
+    if-nez p1, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
-    :cond_20
+    :cond_1
     const/4 v1, 0x0
 
     .line 252
@@ -952,21 +952,21 @@
 .end method
 
 .method public getAnimationPath(Ljava/lang/Object;[FI)I
-    .registers 5
+    .locals 1
 
     .line 199
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 203
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mFrameArrayList:Ljava/util/HashMap;
@@ -977,33 +977,33 @@
 
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 208
-    :cond_16
+    :cond_1
     invoke-virtual {p1, p2, p3}, Landroidx/constraintlayout/motion/widget/MotionController;->buildPath([FI)V
 
     return p3
 .end method
 
 .method public getAnimationRectangles(Ljava/lang/Object;[F)V
-    .registers 5
+    .locals 2
 
     .line 219
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     return-void
 
     .line 222
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -1026,19 +1026,19 @@
 
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1
 
     return-void
 
     .line 230
-    :cond_1e
+    :cond_1
     invoke-virtual {p1, p2, v0}, Landroidx/constraintlayout/motion/widget/MotionController;->buildRectangles([FI)V
 
     return-void
 .end method
 
 .method public getEndState()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 335
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1050,7 +1050,7 @@
     .line 337
     iget v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndStateId:I
 
-    if-ne v1, v0, :cond_d
+    if-ne v1, v0, :cond_0
 
     .line 338
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndState:Ljava/lang/String;
@@ -1058,14 +1058,14 @@
     return-object v0
 
     .line 340
-    :cond_d
+    :cond_0
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->getConstraintSetNames(I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 342
     iput-object v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndState:Ljava/lang/String;
@@ -1073,12 +1073,12 @@
     .line 343
     iput v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndStateId:I
 
-    :cond_19
+    :cond_1
     return-object v1
 .end method
 
 .method public getKeyFrameInfo(Ljava/lang/Object;I[I)I
-    .registers 5
+    .locals 1
 
     .line 447
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1093,14 +1093,14 @@
 
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 451
-    :cond_10
+    :cond_0
     invoke-virtual {p1, p2, p3}, Landroidx/constraintlayout/motion/widget/MotionController;->getKeyFrameInfo(I[I)I
 
     move-result p1
@@ -1109,7 +1109,7 @@
 .end method
 
 .method public getKeyFramePosition(Ljava/lang/Object;IFF)F
-    .registers 6
+    .locals 1
 
     .line 462
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1132,7 +1132,7 @@
 .end method
 
 .method public getKeyFramePositions(Ljava/lang/Object;[I[F)I
-    .registers 5
+    .locals 1
 
     .line 432
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1147,14 +1147,14 @@
 
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 436
-    :cond_10
+    :cond_0
     invoke-virtual {p1, p2, p3}, Landroidx/constraintlayout/motion/widget/MotionController;->getkeyFramePositions([I[F)I
 
     move-result p1
@@ -1163,21 +1163,21 @@
 .end method
 
 .method public getKeyframe(III)Ljava/lang/Object;
-    .registers 6
+    .locals 2
 
     .line 601
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 604
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
@@ -1196,21 +1196,21 @@
 .end method
 
 .method public getKeyframe(Ljava/lang/Object;II)Ljava/lang/Object;
-    .registers 6
+    .locals 2
 
     .line 640
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 643
-    :cond_8
+    :cond_0
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
@@ -1236,7 +1236,7 @@
 .end method
 
 .method public getKeyframeAtLocation(Ljava/lang/Object;FF)Ljava/lang/Object;
-    .registers 6
+    .locals 2
 
     .line 608
     check-cast p1, Landroid/view/View;
@@ -1246,7 +1246,7 @@
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const/4 p1, -0x1
 
@@ -1257,10 +1257,10 @@
 
     return-object p1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_2
 
     .line 614
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1273,12 +1273,12 @@
 
     check-cast v1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1
 
     return-object v0
 
     .line 621
-    :cond_1e
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -1302,17 +1302,17 @@
 
     return-object p1
 
-    :cond_31
+    :cond_2
     return-object v0
 .end method
 
 .method public getPositionKeyframe(Ljava/lang/Object;Ljava/lang/Object;FF[Ljava/lang/String;[F)Ljava/lang/Boolean;
-    .registers 15
+    .locals 8
 
     .line 628
     instance-of v0, p1, Landroidx/constraintlayout/motion/widget/KeyPositionBase;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     .line 629
     move-object v3, p1
@@ -1366,7 +1366,7 @@
 
     return-object p1
 
-    :cond_2b
+    :cond_0
     const/4 p1, 0x0
 
     .line 636
@@ -1378,7 +1378,7 @@
 .end method
 
 .method public getProgress()F
-    .registers 2
+    .locals 1
 
     .line 354
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1391,7 +1391,7 @@
 .end method
 
 .method public getStartState()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 321
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1403,7 +1403,7 @@
     .line 322
     iget v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartStateId:I
 
-    if-ne v1, v0, :cond_d
+    if-ne v1, v0, :cond_0
 
     .line 323
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
@@ -1411,14 +1411,14 @@
     return-object v0
 
     .line 325
-    :cond_d
+    :cond_0
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->getConstraintSetNames(I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 328
     iput-object v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
@@ -1427,7 +1427,7 @@
     iput v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartStateId:I
 
     .line 331
-    :cond_19
+    :cond_1
     iget-object v1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v1, v0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->getConstraintSetNames(I)Ljava/lang/String;
@@ -1438,16 +1438,16 @@
 .end method
 
 .method public getState()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 363
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndState:Ljava/lang/String;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .line 364
     invoke-virtual {p0}, Landroidx/constraintlayout/motion/widget/DesignTool;->getProgress()F
@@ -1458,19 +1458,19 @@
 
     cmpg-float v1, v0, v1
 
-    if-gtz v1, :cond_16
+    if-gtz v1, :cond_0
 
     .line 367
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
 
     return-object v0
 
-    :cond_16
+    :cond_0
     const v1, 0x3f7d70a4    # 0.99f
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_20
+    if-ltz v0, :cond_1
 
     .line 369
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndState:Ljava/lang/String;
@@ -1478,14 +1478,14 @@
     return-object v0
 
     .line 372
-    :cond_20
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public getTransitionTimeMs()J
-    .registers 3
+    .locals 2
 
     .line 419
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1498,30 +1498,30 @@
 .end method
 
 .method public isInTransition()Z
-    .registers 2
+    .locals 1
 
     .line 381
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastEndState:Ljava/lang/String;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public setAttributes(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 14
+    .locals 9
 
     .line 665
     check-cast p3, Landroid/view/View;
@@ -1545,12 +1545,12 @@
 
     move-result-object v6
 
-    if-nez v6, :cond_15
+    if-nez v6, :cond_0
 
     return-void
 
     .line 679
-    :cond_15
+    :cond_0
     invoke-virtual {p3}, Landroid/view/View;->getId()I
 
     move-result v0
@@ -1673,14 +1673,14 @@
 .end method
 
 .method public setKeyFrame(Ljava/lang/Object;ILjava/lang/String;Ljava/lang/Object;)V
-    .registers 6
+    .locals 1
 
     .line 476
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 477
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1721,19 +1721,19 @@
 
     invoke-virtual {p1, p2}, Landroidx/constraintlayout/motion/widget/MotionLayout;->evaluate(Z)V
 
-    :cond_27
+    :cond_0
     return-void
 .end method
 
 .method public setKeyFramePosition(Ljava/lang/Object;IIFF)Z
-    .registers 8
+    .locals 2
 
     .line 497
     iget-object p2, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object p2, p2, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-eqz p2, :cond_5b
+    if-eqz p2, :cond_0
 
     .line 498
     iget-object p2, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1757,7 +1757,7 @@
 
     float-to-int p3, p3
 
-    if-eqz p2, :cond_5b
+    if-eqz p2, :cond_0
 
     .line 500
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1770,7 +1770,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
@@ -1831,19 +1831,19 @@
 
     return p2
 
-    :cond_5b
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public setKeyframe(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 5
+    .locals 1
 
     .line 648
     instance-of v0, p1, Landroidx/constraintlayout/motion/widget/Key;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 649
     check-cast p1, Landroidx/constraintlayout/motion/widget/Key;
@@ -1863,27 +1863,27 @@
 
     iput-boolean p2, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;->mInTransition:Z
 
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public setState(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const-string p1, "motion_base"
 
     .line 279
-    :cond_4
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
 
-    if-ne v0, p1, :cond_9
+    if-ne v0, p1, :cond_1
 
     return-void
 
     .line 288
-    :cond_9
+    :cond_1
     iput-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartState:Ljava/lang/String;
 
     const/4 v0, 0x0
@@ -1896,7 +1896,7 @@
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_2
 
     .line 301
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1905,8 +1905,8 @@
 
     iput-object v1, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    :cond_1a
-    if-eqz p1, :cond_23
+    :cond_2
+    if-eqz p1, :cond_3
 
     .line 304
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1915,16 +1915,16 @@
 
     move-result p1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_23
+    :cond_3
     sget p1, Landroidx/constraintlayout/widget/R$id;->motion_base:I
 
     .line 305
-    :goto_25
+    :goto_0
     iput p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mLastStartStateId:I
 
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_6
 
     .line 308
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1933,7 +1933,7 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_38
+    if-ne p1, v0, :cond_4
 
     .line 309
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -1942,10 +1942,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
 
-    goto :goto_52
+    goto :goto_1
 
     .line 310
-    :cond_38
+    :cond_4
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v0}, Landroidx/constraintlayout/motion/widget/MotionLayout;->getEndState()I
@@ -1954,17 +1954,17 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-ne p1, v0, :cond_48
+    if-ne p1, v0, :cond_5
 
     .line 311
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {p1, v1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
 
-    goto :goto_52
+    goto :goto_1
 
     .line 313
-    :cond_48
+    :cond_5
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v0, p1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->transitionToState(I)V
@@ -1975,8 +1975,8 @@
     invoke-virtual {p1, v1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
 
     .line 317
-    :cond_52
-    :goto_52
+    :cond_6
+    :goto_1
     iget-object p1, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {p1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->requestLayout()V
@@ -1985,14 +1985,14 @@
 .end method
 
 .method public setToolPosition(F)V
-    .registers 4
+    .locals 2
 
     .line 261
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 262
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -2002,7 +2002,7 @@
     iput-object v1, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
     .line 264
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v0, p1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
@@ -2028,14 +2028,14 @@
 .end method
 
 .method public setTransition(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
 
     .line 391
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iget-object v0, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 392
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -2045,7 +2045,7 @@
     iput-object v1, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;->mScene:Landroidx/constraintlayout/motion/widget/MotionScene;
 
     .line 394
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     invoke-virtual {v0, p1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->lookUpConstraintId(Ljava/lang/String;)I
@@ -2080,7 +2080,7 @@
 .end method
 
 .method public setViewDebug(Ljava/lang/Object;I)V
-    .registers 4
+    .locals 1
 
     .line 521
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/DesignTool;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
@@ -2093,7 +2093,7 @@
 
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionController;
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     .line 523
     invoke-virtual {p1, p2}, Landroidx/constraintlayout/motion/widget/MotionController;->setDrawPath(I)V
@@ -2103,6 +2103,6 @@
 
     invoke-virtual {p1}, Landroidx/constraintlayout/motion/widget/MotionLayout;->invalidate()V
 
-    :cond_14
+    :cond_0
     return-void
 .end method

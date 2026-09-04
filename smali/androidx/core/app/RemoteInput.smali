@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;[Ljava/lang/CharSequence;ZILandroid/os/Bundle;Ljava/util/Set;)V
-    .registers 8
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,19 +110,19 @@
 
     const/4 p2, 0x2
 
-    if-ne p1, p2, :cond_27
+    if-ne p1, p2, :cond_1
 
     .line 103
     invoke-virtual {p0}, Landroidx/core/app/RemoteInput;->getAllowFreeFormInput()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 104
-    :cond_1f
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "setEditChoicesBeforeSending requires setAllowFreeFormInput"
@@ -131,13 +131,13 @@
 
     throw p1
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public static addDataResultToIntent(Landroidx/core/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,7 +157,7 @@
 .end method
 
 .method public static addResultsToIntent([Landroidx/core/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V
-    .registers 3
+    .locals 0
 
     .line 410
     invoke-static {p0}, Landroidx/core/app/RemoteInput;->fromCompat([Landroidx/core/app/RemoteInput;)[Landroid/app/RemoteInput;
@@ -170,7 +170,7 @@
 .end method
 
 .method static fromCompat(Landroidx/core/app/RemoteInput;)Landroid/app/RemoteInput;
-    .registers 1
+    .locals 0
 
     .line 565
     invoke-static {p0}, Landroidx/core/app/RemoteInput$Api20Impl;->fromCompat(Landroidx/core/app/RemoteInput;)Landroid/app/RemoteInput;
@@ -181,16 +181,16 @@
 .end method
 
 .method static fromCompat([Landroidx/core/app/RemoteInput;)[Landroid/app/RemoteInput;
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     .line 556
-    :cond_4
+    :cond_0
     array-length v0, p0
 
     new-array v0, v0, [Landroid/app/RemoteInput;
@@ -198,10 +198,10 @@
     const/4 v1, 0x0
 
     .line 557
-    :goto_8
+    :goto_0
     array-length v2, p0
 
-    if-ge v1, v2, :cond_16
+    if-ge v1, v2, :cond_1
 
     .line 558
     aget-object v2, p0, v1
@@ -214,14 +214,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     return-object v0
 .end method
 
 .method static fromPlatform(Landroid/app/RemoteInput;)Landroidx/core/app/RemoteInput;
-    .registers 1
+    .locals 0
 
     .line 570
     invoke-static {p0}, Landroidx/core/app/RemoteInput$Api20Impl;->fromPlatform(Ljava/lang/Object;)Landroidx/core/app/RemoteInput;
@@ -232,7 +232,7 @@
 .end method
 
 .method private static getClipDataIntentFromIntent(Landroid/content/Intent;)Landroid/content/Intent;
-    .registers 4
+    .locals 3
 
     .line 574
     invoke-virtual {p0}, Landroid/content/Intent;->getClipData()Landroid/content/ClipData;
@@ -241,12 +241,12 @@
 
     const/4 v0, 0x0
 
-    if-nez p0, :cond_8
+    if-nez p0, :cond_0
 
     return-object v0
 
     .line 578
-    :cond_8
+    :cond_0
     invoke-virtual {p0}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
 
     move-result-object v1
@@ -258,12 +258,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     return-object v0
 
     .line 582
-    :cond_15
+    :cond_1
     invoke-virtual {v1}, Landroid/content/ClipDescription;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -278,11 +278,11 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_2
 
     return-object v0
 
-    :cond_26
+    :cond_2
     const/4 v0, 0x0
 
     .line 585
@@ -298,7 +298,7 @@
 .end method
 
 .method public static getDataResultsFromIntent(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -321,7 +321,7 @@
 .end method
 
 .method private static getExtraResultsKeyForData(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 548
     new-instance v0, Ljava/lang/StringBuilder;
@@ -342,7 +342,7 @@
 .end method
 
 .method public static getResultsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
-    .registers 1
+    .locals 0
 
     .line 385
     invoke-static {p0}, Landroidx/core/app/RemoteInput$Api20Impl;->getResultsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
@@ -353,7 +353,7 @@
 .end method
 
 .method public static getResultsSource(Landroid/content/Intent;)I
-    .registers 1
+    .locals 0
 
     .line 537
     invoke-static {p0}, Landroidx/core/app/RemoteInput$Api28Impl;->getResultsSource(Landroid/content/Intent;)I
@@ -364,7 +364,7 @@
 .end method
 
 .method public static setResultsSource(Landroid/content/Intent;I)V
-    .registers 2
+    .locals 0
 
     .line 512
     invoke-static {p0, p1}, Landroidx/core/app/RemoteInput$Api28Impl;->setResultsSource(Landroid/content/Intent;I)V
@@ -375,7 +375,7 @@
 
 # virtual methods
 .method public getAllowFreeFormInput()Z
-    .registers 2
+    .locals 1
 
     .line 160
     iget-boolean v0, p0, Landroidx/core/app/RemoteInput;->mAllowFreeFormTextInput:Z
@@ -384,7 +384,7 @@
 .end method
 
 .method public getAllowedDataTypes()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -401,7 +401,7 @@
 .end method
 
 .method public getChoices()[Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 132
     iget-object v0, p0, Landroidx/core/app/RemoteInput;->mChoices:[Ljava/lang/CharSequence;
@@ -410,7 +410,7 @@
 .end method
 
 .method public getEditChoicesBeforeSending()I
-    .registers 2
+    .locals 1
 
     .line 168
     iget v0, p0, Landroidx/core/app/RemoteInput;->mEditChoicesBeforeSending:I
@@ -419,7 +419,7 @@
 .end method
 
 .method public getExtras()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/core/app/RemoteInput;->mExtras:Landroid/os/Bundle;
@@ -428,7 +428,7 @@
 .end method
 
 .method public getLabel()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/core/app/RemoteInput;->mLabel:Ljava/lang/CharSequence;
@@ -437,7 +437,7 @@
 .end method
 
 .method public getResultKey()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 115
     iget-object v0, p0, Landroidx/core/app/RemoteInput;->mResultKey:Ljava/lang/String;
@@ -446,21 +446,21 @@
 .end method
 
 .method public isDataOnly()Z
-    .registers 2
+    .locals 1
 
     .line 147
     invoke-virtual {p0}, Landroidx/core/app/RemoteInput;->getAllowFreeFormInput()Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 148
     invoke-virtual {p0}, Landroidx/core/app/RemoteInput;->getChoices()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/core/app/RemoteInput;->getChoices()[Ljava/lang/CharSequence;
 
@@ -468,15 +468,15 @@
 
     array-length v0, v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 149
-    :cond_13
+    :cond_0
     invoke-virtual {p0}, Landroidx/core/app/RemoteInput;->getAllowedDataTypes()Ljava/util/Set;
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 150
     invoke-virtual {p0}, Landroidx/core/app/RemoteInput;->getAllowedDataTypes()Ljava/util/Set;
@@ -487,15 +487,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_26
+    :goto_0
     return v0
 .end method

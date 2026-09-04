@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 984
     new-instance v0, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ReflectiveDefaultVideoFrameProcessorFactory$$ExternalSyntheticLambda0;
@@ -49,7 +49,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 981
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$1;)V
-    .registers 2
+    .locals 0
 
     .line 981
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/CompositingVideoSinkProvider$ReflectiveDefaultVideoFrameProcessorFactory;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method static synthetic lambda$static$0()Landroidx/media3/common/VideoFrameProcessor$Factory;
-    .registers 5
+    .locals 5
 
     :try_start_0
     const-string v0, "androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder"
@@ -115,12 +115,12 @@
     move-result-object v0
 
     check-cast v0, Landroidx/media3/common/VideoFrameProcessor$Factory;
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_27} :catch_28
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
-    :catch_28
+    :catch_0
     move-exception v0
 
     .line 1001
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public create(Landroid/content/Context;Landroidx/media3/common/DebugViewProvider;Landroidx/media3/common/ColorInfo;ZLjava/util/concurrent/Executor;Landroidx/media3/common/VideoFrameProcessor$Listener;)Landroidx/media3/common/VideoFrameProcessor;
-    .registers 15
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/VideoFrameProcessingException;

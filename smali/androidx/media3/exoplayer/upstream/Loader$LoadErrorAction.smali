@@ -22,7 +22,7 @@
 
 # direct methods
 .method private constructor <init>(IJ)V
-    .registers 4
+    .locals 0
 
     .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method synthetic constructor <init>(IJLandroidx/media3/exoplayer/upstream/Loader$1;)V
-    .registers 5
+    .locals 0
 
     .line 191
     invoke-direct {p0, p1, p2, p3}, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;-><init>(IJ)V
@@ -46,7 +46,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)I
-    .registers 1
+    .locals 0
 
     .line 191
     iget p0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->type:I
@@ -55,7 +55,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;)J
-    .registers 3
+    .locals 2
 
     .line 191
     iget-wide v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->retryDelayMillis:J
@@ -66,23 +66,23 @@
 
 # virtual methods
 .method public isRetry()Z
-    .registers 3
+    .locals 2
 
     .line 203
     iget v0, p0, Landroidx/media3/exoplayer/upstream/Loader$LoadErrorAction;->type:I
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_9
-    :goto_9
+    :cond_1
+    :goto_0
     return v1
 .end method

@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32;Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onSpatializerAvailableChanged(Landroid/media/Spatializer;Z)V
-    .registers 3
+    .locals 0
 
     .line 4190
     iget-object p1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32$1;->val$defaultTrackSelector:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;
@@ -56,7 +56,7 @@
 .end method
 
 .method public onSpatializerEnabledChanged(Landroid/media/Spatializer;Z)V
-    .registers 3
+    .locals 0
 
     .line 4185
     iget-object p1, p0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$SpatializerWrapperV32$1;->val$defaultTrackSelector:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;

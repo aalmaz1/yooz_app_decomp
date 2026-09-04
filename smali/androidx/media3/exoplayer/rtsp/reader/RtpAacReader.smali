@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_0
 
     const/16 p1, 0xd
 
@@ -92,9 +92,9 @@
     .line 65
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->auIndexFieldBitSize:I
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const-string v0, "AAC-lbr"
 
     .line 66
@@ -102,7 +102,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_46
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x6
 
@@ -115,7 +115,7 @@
     iput p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->auIndexFieldBitSize:I
 
     .line 73
-    :goto_3e
+    :goto_0
     iget p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->auIndexFieldBitSize:I
 
     iget v0, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->auSizeFieldBitSize:I
@@ -127,7 +127,7 @@
     return-void
 
     .line 70
-    :cond_46
+    :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "AAC mode not supported"
@@ -138,7 +138,7 @@
 .end method
 
 .method private static outputSampleMetadata(Landroidx/media3/extractor/TrackOutput;JI)V
-    .registers 11
+    .locals 7
 
     const/4 v3, 0x1
 
@@ -161,7 +161,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 14
+    .locals 8
 
     .line 108
     iget-object p4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
@@ -199,7 +199,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_40
+    if-ne v0, v1, :cond_0
 
     .line 120
     iget-object p4, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->auHeaderScratchBit:Landroidx/media3/common/util/ParsableBitArray;
@@ -226,16 +226,16 @@
 
     invoke-interface {v0, p1, v1}, Landroidx/media3/extractor/TrackOutput;->sampleData(Landroidx/media3/common/util/ParsableByteArray;I)V
 
-    if-eqz p5, :cond_72
+    if-eqz p5, :cond_1
 
     .line 126
     iget-object p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->trackOutput:Landroidx/media3/extractor/TrackOutput;
 
     invoke-static {p1, p2, p3, p4}, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->outputSampleMetadata(Landroidx/media3/extractor/TrackOutput;JI)V
 
-    goto :goto_72
+    goto :goto_1
 
-    :cond_40
+    :cond_0
     add-int/lit8 p4, p4, 0x7
 
     .line 130
@@ -245,8 +245,8 @@
 
     const/4 p4, 0x0
 
-    :goto_48
-    if-ge p4, v0, :cond_72
+    :goto_0
+    if-ge p4, v0, :cond_1
 
     .line 132
     iget-object p5, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->auHeaderScratchBit:Landroidx/media3/common/util/ParsableBitArray;
@@ -292,15 +292,15 @@
 
     add-int/lit8 p4, p4, 0x1
 
-    goto :goto_48
+    goto :goto_0
 
-    :cond_72
-    :goto_72
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -322,7 +322,7 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 4
+    .locals 0
 
     .line 86
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->firstReceivedTimestamp:J
@@ -331,7 +331,7 @@
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 148
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpAacReader;->firstReceivedTimestamp:J

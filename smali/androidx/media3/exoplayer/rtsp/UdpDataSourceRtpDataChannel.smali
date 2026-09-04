@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 5
+    .locals 2
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public addTransferListener(Landroidx/media3/datasource/TransferListener;)V
-    .registers 3
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->dataSource:Landroidx/media3/datasource/UdpDataSource;
@@ -54,7 +54,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->dataSource:Landroidx/media3/datasource/UdpDataSource;
@@ -64,17 +64,17 @@
     .line 96
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->rtcpChannel:Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 97
     invoke-virtual {v0}, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->close()V
 
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public getInterleavedBinaryDataListener()Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$InterleavedBinaryDataListener;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -82,7 +82,7 @@
 .end method
 
 .method public getLocalPort()I
-    .registers 3
+    .locals 2
 
     .line 61
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->dataSource:Landroidx/media3/datasource/UdpDataSource;
@@ -93,16 +93,16 @@
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     move v0, v1
 
-    :cond_a
+    :cond_0
     return v0
 .end method
 
 .method public getTransport()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 54
     invoke-virtual {p0}, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->getLocalPort()I
@@ -115,17 +115,17 @@
 
     const/4 v3, 0x1
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_0
 
     move v1, v3
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v1, v2
 
     .line 55
-    :goto_c
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     const/4 v1, 0x2
@@ -157,7 +157,7 @@
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;->dataSource:Landroidx/media3/datasource/UdpDataSource;
@@ -170,7 +170,7 @@
 .end method
 
 .method public needsClosingOnLoadCompletion()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -178,7 +178,7 @@
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -196,7 +196,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -210,12 +210,12 @@
     invoke-virtual {v0, p1, p2, p3}, Landroidx/media3/datasource/UdpDataSource;->read([BII)I
 
     move-result p1
-    :try_end_6
-    .catch Landroidx/media3/datasource/UdpDataSource$UdpDataSourceException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroidx/media3/datasource/UdpDataSource$UdpDataSourceException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 106
@@ -223,31 +223,31 @@
 
     const/16 p3, 0x7d2
 
-    if-ne p2, p3, :cond_10
+    if-ne p2, p3, :cond_0
 
     const/4 p1, -0x1
 
     return p1
 
     .line 109
-    :cond_10
+    :cond_0
     throw p1
 .end method
 
 .method public setRtcpChannel(Landroidx/media3/exoplayer/rtsp/UdpDataSourceRtpDataChannel;)V
-    .registers 3
+    .locals 1
 
-    if-eq p0, p1, :cond_4
+    if-eq p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 115
-    :goto_5
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 116

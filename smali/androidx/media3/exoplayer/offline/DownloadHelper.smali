@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 110
     sget-object v0, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->DEFAULT_WITHOUT_CONTEXT:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/TrackSelectionParameters;Landroidx/media3/exoplayer/RendererCapabilitiesList;)V
-    .registers 6
+    .locals 1
 
     .line 363
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -176,7 +176,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/TrackSelectionParameters;[Landroidx/media3/exoplayer/RendererCapabilities;)V
-    .registers 7
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -193,7 +193,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/offline/DownloadHelper;)V
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -207,7 +207,7 @@
 .end method
 
 .method static synthetic access$400(Landroidx/media3/exoplayer/offline/DownloadHelper;Ljava/io/IOException;)V
-    .registers 2
+    .locals 0
 
     .line 99
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadHelper;->onMediaPreparationFailed(Ljava/io/IOException;)V
@@ -216,7 +216,7 @@
 .end method
 
 .method private addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -251,12 +251,12 @@
 
     move-result-object v0
 
-    :goto_12
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -286,14 +286,14 @@
     .line 711
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/offline/DownloadHelper;->runTrackSelection(I)Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_33
+    :cond_0
     return-void
 .end method
 
 .method private assertPreparedWithMedia()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
         value = {
             "trackGroupArrays",
@@ -315,7 +315,7 @@
 .end method
 
 .method public static createMediaSource(Landroidx/media3/exoplayer/offline/DownloadRequest;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -328,7 +328,7 @@
 .end method
 
 .method public static createMediaSource(Landroidx/media3/exoplayer/offline/DownloadRequest;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManager;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 3
+    .locals 0
 
     .line 308
     invoke-virtual {p0}, Landroidx/media3/exoplayer/offline/DownloadRequest;->toMediaItem()Landroidx/media3/common/MediaItem;
@@ -344,7 +344,7 @@
 .end method
 
 .method private static createMediaSourceInternal(Landroidx/media3/common/MediaItem;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManager;)Landroidx/media3/exoplayer/source/MediaSource;
-    .registers 5
+    .locals 2
 
     .line 833
     new-instance v0, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;
@@ -353,7 +353,7 @@
 
     invoke-direct {v0, p1, v1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;-><init>(Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/extractor/ExtractorsFactory;)V
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_0
 
     .line 836
     new-instance p1, Landroidx/media3/exoplayer/offline/DownloadHelper$$ExternalSyntheticLambda1;
@@ -363,7 +363,7 @@
     invoke-virtual {v0, p1}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;->setDrmSessionManagerProvider(Landroidx/media3/exoplayer/drm/DrmSessionManagerProvider;)Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;
 
     .line 838
-    :cond_11
+    :cond_0
     invoke-virtual {v0, p0}, Landroidx/media3/exoplayer/source/DefaultMediaSourceFactory;->createMediaSource(Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/source/MediaSource;
 
     move-result-object p0
@@ -372,7 +372,7 @@
 .end method
 
 .method public static forMediaItem(Landroid/content/Context;Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/offline/DownloadHelper;
-    .registers 3
+    .locals 1
 
     .line 179
     iget-object v0, p1, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -405,7 +405,7 @@
 .end method
 
 .method public static forMediaItem(Landroid/content/Context;Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/RenderersFactory;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/offline/DownloadHelper;
-    .registers 5
+    .locals 1
 
     .line 210
     invoke-static {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->getDefaultTrackSelectorParameters(Landroid/content/Context;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
@@ -423,7 +423,7 @@
 .end method
 
 .method public static forMediaItem(Landroidx/media3/common/MediaItem;Landroidx/media3/common/TrackSelectionParameters;Landroidx/media3/exoplayer/RenderersFactory;Landroidx/media3/datasource/DataSource$Factory;)Landroidx/media3/exoplayer/offline/DownloadHelper;
-    .registers 5
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -436,7 +436,7 @@
 .end method
 
 .method public static forMediaItem(Landroidx/media3/common/MediaItem;Landroidx/media3/common/TrackSelectionParameters;Landroidx/media3/exoplayer/RenderersFactory;Landroidx/media3/datasource/DataSource$Factory;Landroidx/media3/exoplayer/drm/DrmSessionManager;)Landroidx/media3/exoplayer/offline/DownloadHelper;
-    .registers 9
+    .locals 4
 
     .line 269
     iget-object v0, p0, Landroidx/media3/common/MediaItem;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -453,23 +453,23 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
-    if-eqz p3, :cond_12
+    if-eqz p3, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v2, v1
 
-    goto :goto_15
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const/4 v2, 0x1
 
     .line 270
-    :goto_15
+    :goto_1
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 271
@@ -477,14 +477,14 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2
 
     move-object p3, v3
 
-    goto :goto_29
+    goto :goto_2
 
     .line 276
-    :cond_1f
+    :cond_2
     invoke-static {p3}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
@@ -496,8 +496,8 @@
 
     move-result-object p3
 
-    :goto_29
-    if-eqz p2, :cond_35
+    :goto_2
+    if-eqz p2, :cond_3
 
     .line 280
     new-instance p4, Landroidx/media3/exoplayer/DefaultRendererCapabilitiesList$Factory;
@@ -508,24 +508,24 @@
 
     move-result-object p2
 
-    goto :goto_3c
+    goto :goto_3
 
     .line 281
-    :cond_35
+    :cond_3
     new-instance p2, Landroidx/media3/exoplayer/offline/DownloadHelper$UnreleaseableRendererCapabilitiesList;
 
     new-array p4, v1, [Landroidx/media3/exoplayer/RendererCapabilities;
 
     invoke-direct {p2, p4, v3}, Landroidx/media3/exoplayer/offline/DownloadHelper$UnreleaseableRendererCapabilitiesList;-><init>([Landroidx/media3/exoplayer/RendererCapabilities;Landroidx/media3/exoplayer/offline/DownloadHelper$1;)V
 
-    :goto_3c
+    :goto_3
     invoke-direct {v2, p0, p3, p1, p2}, Landroidx/media3/exoplayer/offline/DownloadHelper;-><init>(Landroidx/media3/common/MediaItem;Landroidx/media3/exoplayer/source/MediaSource;Landroidx/media3/common/TrackSelectionParameters;Landroidx/media3/exoplayer/RendererCapabilitiesList;)V
 
     return-object v2
 .end method
 
 .method public static getDefaultTrackSelectorParameters(Landroid/content/Context;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
-    .registers 2
+    .locals 1
 
     .line 119
     invoke-static {p0}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;->getDefaults(Landroid/content/Context;)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
@@ -560,7 +560,7 @@
 .end method
 
 .method public static getRendererCapabilities(Landroidx/media3/exoplayer/RenderersFactory;)[Landroidx/media3/exoplayer/RendererCapabilities;
-    .registers 7
+    .locals 6
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -600,10 +600,10 @@
     const/4 v1, 0x0
 
     .line 164
-    :goto_21
+    :goto_0
     array-length v2, p0
 
-    if-ge v1, v2, :cond_2f
+    if-ge v1, v2, :cond_0
 
     .line 165
     aget-object v2, p0, v1
@@ -616,14 +616,14 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_2f
+    :cond_0
     return-object v0
 .end method
 
 .method private static isProgressive(Landroidx/media3/common/MediaItem$LocalConfiguration;)Z
-    .registers 2
+    .locals 1
 
     .line 842
     iget-object v0, p0, Landroidx/media3/common/MediaItem$LocalConfiguration;->uri:Landroid/net/Uri;
@@ -636,45 +636,45 @@
 
     const/4 v0, 0x4
 
-    if-ne p0, v0, :cond_d
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_e
+    :goto_0
     return p0
 .end method
 
 .method static synthetic lambda$createMediaSourceInternal$6(Landroidx/media3/exoplayer/drm/DrmSessionManager;Landroidx/media3/common/MediaItem;)Landroidx/media3/exoplayer/drm/DrmSessionManager;
-    .registers 2
+    .locals 0
 
     return-object p0
 .end method
 
 .method static synthetic lambda$getRendererCapabilities$0(Landroidx/media3/common/text/CueGroup;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method static synthetic lambda$getRendererCapabilities$1(Landroidx/media3/common/Metadata;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method static synthetic lambda$new$2()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private onMediaPreparationFailed(Ljava/io/IOException;)V
-    .registers 4
+    .locals 2
 
     .line 746
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->callbackHandler:Landroid/os/Handler;
@@ -695,7 +695,7 @@
 .end method
 
 .method private onMediaPrepared()V
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -777,13 +777,13 @@
 
     move v2, v5
 
-    :goto_42
-    if-ge v2, v0, :cond_68
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     move v3, v5
 
-    :goto_45
-    if-ge v3, v1, :cond_65
+    :goto_1
+    if-ge v3, v1, :cond_0
 
     .line 728
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackSelectionsByPeriodAndRenderer:[[Ljava/util/List;
@@ -816,15 +816,15 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_45
+    goto :goto_1
 
-    :cond_65
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_42
+    goto :goto_0
 
     .line 733
-    :cond_68
+    :cond_1
     new-array v1, v0, [Landroidx/media3/exoplayer/source/TrackGroupArray;
 
     iput-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackGroupArrays:[Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -834,8 +834,8 @@
 
     iput-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mappedTrackInfos:[Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
 
-    :goto_70
-    if-ge v5, v0, :cond_9e
+    :goto_2
+    if-ge v5, v0, :cond_2
 
     .line 736
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackGroupArrays:[Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -883,10 +883,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_70
+    goto :goto_2
 
     .line 741
-    :cond_9e
+    :cond_2
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->setPreparedWithMedia()V
 
     .line 742
@@ -908,7 +908,7 @@
 .end method
 
 .method private runTrackSelection(I)Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;
-    .registers 12
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/exoplayer/ExoPlaybackException;
@@ -965,22 +965,22 @@
     move v2, v1
 
     .line 793
-    :goto_23
+    :goto_0
     iget v3, v0, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->length:I
 
-    if-ge v2, v3, :cond_b2
+    if-ge v2, v3, :cond_7
 
     .line 794
     iget-object v3, v0, Landroidx/media3/exoplayer/trackselection/TrackSelectorResult;->selections:[Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
 
     aget-object v3, v3, v2
 
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_0
 
-    goto/16 :goto_ae
+    goto/16 :goto_6
 
     .line 798
-    :cond_2f
+    :cond_0
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackSelectionsByPeriodAndRenderer:[[Ljava/util/List;
 
     aget-object v4, v4, p1
@@ -990,12 +990,12 @@
     move v5, v1
 
     .line 801
-    :goto_36
+    :goto_1
     invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v6
 
-    if-ge v5, v6, :cond_a8
+    if-ge v5, v6, :cond_5
 
     .line 802
     invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1017,7 +1017,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_a5
+    if-eqz v7, :cond_4
 
     .line 805
     iget-object v7, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->scratchSet:Landroid/util/SparseIntArray;
@@ -1027,12 +1027,12 @@
     move v7, v1
 
     .line 806
-    :goto_56
+    :goto_2
     invoke-interface {v6}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
 
     move-result v8
 
-    if-ge v7, v8, :cond_68
+    if-ge v7, v8, :cond_1
 
     .line 807
     iget-object v8, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->scratchSet:Landroid/util/SparseIntArray;
@@ -1045,18 +1045,18 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_56
+    goto :goto_2
 
-    :cond_68
+    :cond_1
     move v7, v1
 
     .line 809
-    :goto_69
+    :goto_3
     invoke-interface {v3}, Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;->length()I
 
     move-result v8
 
-    if-ge v7, v8, :cond_7b
+    if-ge v7, v8, :cond_2
 
     .line 810
     iget-object v8, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->scratchSet:Landroid/util/SparseIntArray;
@@ -1069,10 +1069,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_69
+    goto :goto_3
 
     .line 812
-    :cond_7b
+    :cond_2
     iget-object v7, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->scratchSet:Landroid/util/SparseIntArray;
 
     invoke-virtual {v7}, Landroid/util/SparseIntArray;->size()I
@@ -1084,14 +1084,14 @@
     move v8, v1
 
     .line 813
-    :goto_84
+    :goto_4
     iget-object v9, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->scratchSet:Landroid/util/SparseIntArray;
 
     invoke-virtual {v9}, Landroid/util/SparseIntArray;->size()I
 
     move-result v9
 
-    if-ge v8, v9, :cond_97
+    if-ge v8, v9, :cond_3
 
     .line 814
     iget-object v9, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->scratchSet:Landroid/util/SparseIntArray;
@@ -1104,10 +1104,10 @@
 
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_84
+    goto :goto_4
 
     .line 816
-    :cond_97
+    :cond_3
     new-instance v8, Landroidx/media3/exoplayer/offline/DownloadHelper$DownloadTrackSelection;
 
     .line 817
@@ -1122,34 +1122,34 @@
 
     const/4 v5, 0x1
 
-    goto :goto_a9
+    goto :goto_5
 
-    :cond_a5
+    :cond_4
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_a8
+    :cond_5
     move v5, v1
 
-    :goto_a9
-    if-nez v5, :cond_ae
+    :goto_5
+    if-nez v5, :cond_6
 
     .line 823
     invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_ae
-    :goto_ae
+    :cond_6
+    :goto_6
     add-int/lit8 v2, v2, 0x1
 
-    goto/16 :goto_23
+    goto/16 :goto_0
 
-    :cond_b2
+    :cond_7
     return-object v0
 .end method
 
 .method private setPreparedWithMedia()V
-    .registers 2
+    .locals 1
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "trackGroupArrays",
@@ -1173,7 +1173,7 @@
 
 # virtual methods
 .method public varargs addAudioLanguagesToSelection([Ljava/lang/String;)V
-    .registers 10
+    .locals 8
 
     .line 541
     :try_start_0
@@ -1205,8 +1205,8 @@
 
     move v5, v4
 
-    :goto_16
-    if-ge v5, v3, :cond_29
+    :goto_0
+    if-ge v5, v3, :cond_1
 
     aget-object v6, v2, v5
 
@@ -1215,25 +1215,25 @@
 
     move-result v6
 
-    if-eq v6, v1, :cond_22
+    if-eq v6, v1, :cond_0
 
     move v7, v1
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
+    :cond_0
     move v7, v4
 
     .line 550
-    :goto_23
+    :goto_1
     invoke-virtual {v0, v6, v7}, Landroidx/media3/common/TrackSelectionParameters$Builder;->setTrackTypeDisabled(IZ)Landroidx/media3/common/TrackSelectionParameters$Builder;
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 555
-    :cond_29
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->getPeriodCount()I
 
     move-result v1
@@ -1243,8 +1243,8 @@
 
     move v3, v4
 
-    :goto_2f
-    if-ge v3, v2, :cond_47
+    :goto_2
+    if-ge v3, v2, :cond_3
 
     aget-object v5, p1, v3
 
@@ -1259,27 +1259,27 @@
 
     move v6, v4
 
-    :goto_3c
-    if-ge v6, v1, :cond_44
+    :goto_3
+    if-ge v6, v1, :cond_2
 
     .line 560
     invoke-direct {p0, v6, v5}, Landroidx/media3/exoplayer/offline/DownloadHelper;->addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
-    :try_end_41
-    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_41} :catch_48
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_3c
+    goto :goto_3
 
-    :cond_44
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2f
+    goto :goto_2
 
-    :cond_47
+    :cond_3
     return-void
 
-    :catch_48
+    :catch_0
     move-exception p1
 
     .line 564
@@ -1291,7 +1291,7 @@
 .end method
 
 .method public varargs addTextLanguagesToSelection(Z[Ljava/lang/String;)V
-    .registers 10
+    .locals 7
 
     .line 581
     :try_start_0
@@ -1326,8 +1326,8 @@
 
     move v4, v3
 
-    :goto_19
-    if-ge v4, v2, :cond_2d
+    :goto_0
+    if-ge v4, v2, :cond_1
 
     aget-object v5, v1, v4
 
@@ -1338,25 +1338,25 @@
 
     const/4 v6, 0x3
 
-    if-eq v5, v6, :cond_26
+    if-eq v5, v6, :cond_0
 
     move v6, p1
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_26
+    :cond_0
     move v6, v3
 
     .line 591
-    :goto_27
+    :goto_1
     invoke-virtual {v0, v5, v6}, Landroidx/media3/common/TrackSelectionParameters$Builder;->setTrackTypeDisabled(IZ)Landroidx/media3/common/TrackSelectionParameters$Builder;
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 596
-    :cond_2d
+    :cond_1
     invoke-virtual {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->getPeriodCount()I
 
     move-result p1
@@ -1366,8 +1366,8 @@
 
     move v2, v3
 
-    :goto_33
-    if-ge v2, v1, :cond_4b
+    :goto_2
+    if-ge v2, v1, :cond_3
 
     aget-object v4, p2, v2
 
@@ -1382,27 +1382,27 @@
 
     move v5, v3
 
-    :goto_40
-    if-ge v5, p1, :cond_48
+    :goto_3
+    if-ge v5, p1, :cond_2
 
     .line 601
     invoke-direct {p0, v5, v4}, Landroidx/media3/exoplayer/offline/DownloadHelper;->addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
-    :try_end_45
-    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_45} :catch_4c
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_40
+    goto :goto_3
 
-    :cond_48
+    :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_33
+    goto :goto_2
 
-    :cond_4b
+    :cond_3
     return-void
 
-    :catch_4c
+    :catch_0
     move-exception p1
 
     .line 605
@@ -1414,7 +1414,7 @@
 .end method
 
 .method public addTrackSelection(ILandroidx/media3/common/TrackSelectionParameters;)V
-    .registers 3
+    .locals 0
 
     .line 524
     :try_start_0
@@ -1422,12 +1422,12 @@
 
     .line 525
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/offline/DownloadHelper;->addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
-    :try_end_6
-    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_7
+    :catch_0
     move-exception p1
 
     .line 527
@@ -1439,7 +1439,7 @@
 .end method
 
 .method public addTrackSelectionForSingleRenderer(IILandroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;Ljava/util/List;)V
-    .registers 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -1464,7 +1464,7 @@
     move v1, v0
 
     .line 628
-    :goto_9
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mappedTrackInfos:[Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
 
     aget-object v2, v2, p1
@@ -1473,32 +1473,32 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_1
 
-    if-eq v1, p2, :cond_17
+    if-eq v1, p2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
+    :cond_0
     move v2, v0
 
     .line 629
-    :goto_18
+    :goto_1
     invoke-virtual {p3, v1, v2}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;->setRendererDisabled(IZ)Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 631
-    :cond_1e
+    :cond_1
     invoke-interface {p4}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     .line 632
     invoke-virtual {p3}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters$Builder;->build()Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector$Parameters;
@@ -1507,10 +1507,10 @@
 
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/offline/DownloadHelper;->addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
 
-    goto :goto_4d
+    goto :goto_3
 
     .line 634
-    :cond_2c
+    :cond_2
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mappedTrackInfos:[Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
 
     aget-object v1, v1, p1
@@ -1521,12 +1521,12 @@
     move-result-object v1
 
     .line 636
-    :goto_34
+    :goto_2
     invoke-interface {p4}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_4d
+    if-ge v0, v2, :cond_3
 
     .line 637
     invoke-interface {p4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1543,18 +1543,18 @@
     move-result-object v2
 
     invoke-direct {p0, p1, v2}, Landroidx/media3/exoplayer/offline/DownloadHelper;->addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
-    :try_end_4a
-    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_4a} :catch_4e
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_4d
-    :goto_4d
+    :cond_3
+    :goto_3
     return-void
 
-    :catch_4e
+    :catch_0
     move-exception p1
 
     .line 642
@@ -1566,7 +1566,7 @@
 .end method
 
 .method public clearTrackSelections(I)V
-    .registers 4
+    .locals 2
 
     .line 488
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
@@ -1574,14 +1574,14 @@
     const/4 v0, 0x0
 
     .line 489
-    :goto_4
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->rendererCapabilities:Landroidx/media3/exoplayer/RendererCapabilitiesList;
 
     invoke-interface {v1}, Landroidx/media3/exoplayer/RendererCapabilitiesList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_18
+    if-ge v0, v1, :cond_0
 
     .line 490
     iget-object v1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackSelectionsByPeriodAndRenderer:[[Ljava/util/List;
@@ -1594,14 +1594,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public getDownloadRequest(Ljava/lang/String;[B)Landroidx/media3/exoplayer/offline/DownloadRequest;
-    .registers 10
+    .locals 7
 
     .line 666
     new-instance v0, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
@@ -1626,7 +1626,7 @@
 
     iget-object v0, v0, Landroidx/media3/common/MediaItem$LocalConfiguration;->drmConfiguration:Landroidx/media3/common/MediaItem$DrmConfiguration;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 671
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -1637,13 +1637,13 @@
 
     move-result-object v0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
     .line 669
-    :goto_21
+    :goto_0
     invoke-virtual {p1, v0}, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->setKeySetId([B)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
 
     move-result-object p1
@@ -1665,7 +1665,7 @@
     .line 675
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-nez p2, :cond_3a
+    if-nez p2, :cond_1
 
     .line 676
     invoke-virtual {p1}, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->build()Landroidx/media3/exoplayer/offline/DownloadRequest;
@@ -1675,7 +1675,7 @@
     return-object p1
 
     .line 678
-    :cond_3a
+    :cond_1
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
 
     .line 679
@@ -1697,8 +1697,8 @@
 
     move v3, v2
 
-    :goto_4c
-    if-ge v3, v1, :cond_75
+    :goto_1
+    if-ge v3, v1, :cond_3
 
     .line 683
     invoke-interface {v0}, Ljava/util/List;->clear()V
@@ -1712,8 +1712,8 @@
 
     move v5, v2
 
-    :goto_57
-    if-ge v5, v4, :cond_65
+    :goto_2
+    if-ge v5, v4, :cond_2
 
     .line 686
     iget-object v6, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackSelectionsByPeriodAndRenderer:[[Ljava/util/List;
@@ -1726,10 +1726,10 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_57
+    goto :goto_2
 
     .line 688
-    :cond_65
+    :cond_2
     iget-object v4, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaPreparer:Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;
 
     iget-object v4, v4, Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;->mediaPeriods:[Landroidx/media3/exoplayer/source/MediaPeriod;
@@ -1744,10 +1744,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4c
+    goto :goto_1
 
     .line 690
-    :cond_75
+    :cond_3
     invoke-virtual {p1, p2}, Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;->setStreamKeys(Ljava/util/List;)Landroidx/media3/exoplayer/offline/DownloadRequest$Builder;
 
     move-result-object p1
@@ -1760,7 +1760,7 @@
 .end method
 
 .method public getDownloadRequest([B)Landroidx/media3/exoplayer/offline/DownloadRequest;
-    .registers 3
+    .locals 1
 
     .line 654
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->localConfiguration:Landroidx/media3/common/MediaItem$LocalConfiguration;
@@ -1779,19 +1779,19 @@
 .end method
 
 .method public getManifest()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 406
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 409
-    :cond_6
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
 
     .line 410
@@ -1803,7 +1803,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_20
+    if-lez v0, :cond_1
 
     .line 411
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaPreparer:Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;
@@ -1820,12 +1820,12 @@
 
     iget-object v1, v0, Landroidx/media3/common/Timeline$Window;->manifest:Ljava/lang/Object;
 
-    :cond_20
+    :cond_1
     return-object v1
 .end method
 
 .method public getMappedTrackInfo(I)Landroidx/media3/exoplayer/trackselection/MappingTrackSelector$MappedTrackInfo;
-    .registers 3
+    .locals 1
 
     .line 464
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
@@ -1839,19 +1839,19 @@
 .end method
 
 .method public getPeriodCount()I
-    .registers 2
+    .locals 1
 
     .line 420
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
     .line 423
-    :cond_6
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
 
     .line 424
@@ -1863,7 +1863,7 @@
 .end method
 
 .method public getTrackGroups(I)Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 3
+    .locals 1
 
     .line 452
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
@@ -1877,7 +1877,7 @@
 .end method
 
 .method public getTrackSelections(II)Ljava/util/List;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -1901,7 +1901,7 @@
 .end method
 
 .method public getTracks(I)Landroidx/media3/common/Tracks;
-    .registers 4
+    .locals 2
 
     .line 436
     invoke-direct {p0}, Landroidx/media3/exoplayer/offline/DownloadHelper;->assertPreparedWithMedia()V
@@ -1923,7 +1923,7 @@
 .end method
 
 .method synthetic lambda$onMediaPreparationFailed$5$androidx-media3-exoplayer-offline-DownloadHelper(Ljava/io/IOException;)V
-    .registers 3
+    .locals 1
 
     .line 746
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->callback:Landroidx/media3/exoplayer/offline/DownloadHelper$Callback;
@@ -1940,7 +1940,7 @@
 .end method
 
 .method synthetic lambda$onMediaPrepared$4$androidx-media3-exoplayer-offline-DownloadHelper()V
-    .registers 2
+    .locals 1
 
     .line 742
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->callback:Landroidx/media3/exoplayer/offline/DownloadHelper$Callback;
@@ -1957,7 +1957,7 @@
 .end method
 
 .method synthetic lambda$prepare$3$androidx-media3-exoplayer-offline-DownloadHelper(Landroidx/media3/exoplayer/offline/DownloadHelper$Callback;)V
-    .registers 2
+    .locals 0
 
     .line 387
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/offline/DownloadHelper$Callback;->onPrepared(Landroidx/media3/exoplayer/offline/DownloadHelper;)V
@@ -1966,21 +1966,21 @@
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/offline/DownloadHelper$Callback;)V
-    .registers 4
+    .locals 2
 
     .line 382
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->callback:Landroidx/media3/exoplayer/offline/DownloadHelper$Callback;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 383
@@ -1989,7 +1989,7 @@
     .line 384
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaSource:Landroidx/media3/exoplayer/source/MediaSource;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 385
     new-instance p1, Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;
@@ -2000,10 +2000,10 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaPreparer:Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;
 
-    goto :goto_24
+    goto :goto_1
 
     .line 387
-    :cond_1a
+    :cond_1
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Landroidx/media3/exoplayer/offline/DownloadHelper$$ExternalSyntheticLambda0;
@@ -2012,23 +2012,23 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :goto_24
+    :goto_1
     return-void
 .end method
 
 .method public release()V
-    .registers 2
+    .locals 1
 
     .line 393
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->mediaPreparer:Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 394
     invoke-virtual {v0}, Landroidx/media3/exoplayer/offline/DownloadHelper$MediaPreparer;->release()V
 
     .line 396
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/DownloadHelper;->trackSelector:Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;
 
     invoke-virtual {v0}, Landroidx/media3/exoplayer/trackselection/DefaultTrackSelector;->release()V
@@ -2042,7 +2042,7 @@
 .end method
 
 .method public replaceTrackSelections(ILandroidx/media3/common/TrackSelectionParameters;)V
-    .registers 3
+    .locals 0
 
     .line 505
     :try_start_0
@@ -2053,12 +2053,12 @@
 
     .line 507
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/offline/DownloadHelper;->addTrackSelectionInternal(ILandroidx/media3/common/TrackSelectionParameters;)V
-    :try_end_9
-    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_9} :catch_a
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_a
+    :catch_0
     move-exception p1
 
     .line 509

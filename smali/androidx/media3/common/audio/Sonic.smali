@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(IIFFI)V
-    .registers 6
+    .locals 0
 
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,17 +132,17 @@
 .end method
 
 .method private adjustRate(FI)V
-    .registers 11
+    .locals 8
 
     .line 370
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
 
-    if-ne v0, p2, :cond_5
+    if-ne v0, p2, :cond_0
 
     return-void
 
     .line 373
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputSampleRateHz:I
 
     int-to-float v1, v0
@@ -151,17 +151,17 @@
 
     float-to-int p1, v1
 
-    :goto_a
+    :goto_0
     const/16 v1, 0x4000
 
-    if-gt p1, v1, :cond_6e
+    if-gt p1, v1, :cond_7
 
-    if-le v0, v1, :cond_11
+    if-le v0, v1, :cond_1
 
-    goto :goto_6e
+    goto :goto_5
 
     .line 380
-    :cond_11
+    :cond_1
     invoke-direct {p0, p2}, Landroidx/media3/common/audio/Sonic;->moveNewSamplesToPitchBuffer(I)V
 
     const/4 p2, 0x0
@@ -169,17 +169,17 @@
     move v1, p2
 
     .line 382
-    :goto_16
+    :goto_1
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->pitchFrameCount:I
 
     add-int/lit8 v3, v2, -0x1
 
     const/4 v4, 0x1
 
-    if-ge v1, v3, :cond_69
+    if-ge v1, v3, :cond_6
 
     .line 383
-    :goto_1d
+    :goto_2
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->oldRatePosition:I
 
     add-int/lit8 v3, v2, 0x1
@@ -190,7 +190,7 @@
 
     mul-int v6, v5, v0
 
-    if-le v3, v6, :cond_55
+    if-le v3, v6, :cond_3
 
     .line 384
     iget-object v2, p0, Landroidx/media3/common/audio/Sonic;->outputBuffer:[S
@@ -207,10 +207,10 @@
     move v2, p2
 
     .line 387
-    :goto_33
+    :goto_3
     iget v3, p0, Landroidx/media3/common/audio/Sonic;->channelCount:I
 
-    if-ge v2, v3, :cond_4a
+    if-ge v2, v3, :cond_2
 
     .line 388
     iget-object v5, p0, Landroidx/media3/common/audio/Sonic;->outputBuffer:[S
@@ -236,10 +236,10 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_33
+    goto :goto_3
 
     .line 391
-    :cond_4a
+    :cond_2
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->newRatePosition:I
 
     add-int/2addr v2, v4
@@ -253,39 +253,39 @@
 
     iput v2, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
 
-    goto :goto_1d
+    goto :goto_2
 
-    :cond_55
+    :cond_3
     add-int/lit8 v2, v2, 0x1
 
     .line 394
     iput v2, p0, Landroidx/media3/common/audio/Sonic;->oldRatePosition:I
 
-    if-ne v2, v0, :cond_66
+    if-ne v2, v0, :cond_5
 
     .line 396
     iput p2, p0, Landroidx/media3/common/audio/Sonic;->oldRatePosition:I
 
-    if-ne v5, p1, :cond_60
+    if-ne v5, p1, :cond_4
 
-    goto :goto_61
+    goto :goto_4
 
-    :cond_60
+    :cond_4
     move v4, p2
 
     .line 397
-    :goto_61
+    :goto_4
     invoke-static {v4}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 398
     iput p2, p0, Landroidx/media3/common/audio/Sonic;->newRatePosition:I
 
-    :cond_66
+    :cond_5
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_69
+    :cond_6
     sub-int/2addr v2, v4
 
     .line 401
@@ -294,49 +294,49 @@
     return-void
 
     .line 377
-    :cond_6e
-    :goto_6e
+    :cond_7
+    :goto_5
     div-int/lit8 p1, p1, 0x2
 
     .line 378
     div-int/lit8 v0, v0, 0x2
 
-    goto :goto_a
+    goto :goto_0
 .end method
 
 .method private changeSpeed(F)V
-    .registers 9
+    .locals 7
 
     .line 458
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
 
     iget v1, p0, Landroidx/media3/common/audio/Sonic;->maxRequiredFrameCount:I
 
-    if-ge v0, v1, :cond_7
+    if-ge v0, v1, :cond_0
 
     return-void
 
-    :cond_7
+    :cond_0
     const/4 v1, 0x0
 
     .line 464
-    :cond_8
+    :cond_1
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->remainingInputToCopyFrameCount:I
 
-    if-lez v2, :cond_12
+    if-lez v2, :cond_2
 
     .line 465
     invoke-direct {p0, v1}, Landroidx/media3/common/audio/Sonic;->copyInputToOutput(I)I
 
     move-result v2
 
-    :goto_10
+    :goto_0
     add-int/2addr v1, v2
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 467
-    :cond_12
+    :cond_2
     iget-object v2, p0, Landroidx/media3/common/audio/Sonic;->inputBuffer:[S
 
     invoke-direct {p0, v2, v1}, Landroidx/media3/common/audio/Sonic;->findPitchPeriod([SI)I
@@ -349,7 +349,7 @@
 
     cmpl-double v3, v3, v5
 
-    if-lez v3, :cond_27
+    if-lez v3, :cond_3
 
     .line 469
     iget-object v3, p0, Landroidx/media3/common/audio/Sonic;->inputBuffer:[S
@@ -360,25 +360,25 @@
 
     add-int/2addr v2, v3
 
-    goto :goto_10
+    goto :goto_0
 
     .line 471
-    :cond_27
+    :cond_3
     iget-object v3, p0, Landroidx/media3/common/audio/Sonic;->inputBuffer:[S
 
     invoke-direct {p0, v3, v1, p1, v2}, Landroidx/media3/common/audio/Sonic;->insertPitchPeriod([SIFI)I
 
     move-result v2
 
-    goto :goto_10
+    goto :goto_0
 
     .line 474
-    :goto_2e
+    :goto_1
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->maxRequiredFrameCount:I
 
     add-int/2addr v2, v1
 
-    if-le v2, v0, :cond_8
+    if-le v2, v0, :cond_1
 
     .line 475
     invoke-direct {p0, v1}, Landroidx/media3/common/audio/Sonic;->removeProcessedInputFrames(I)V
@@ -387,7 +387,7 @@
 .end method
 
 .method private copyInputToOutput(I)I
-    .registers 4
+    .locals 2
 
     .line 218
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->maxRequiredFrameCount:I
@@ -414,7 +414,7 @@
 .end method
 
 .method private copyToOutput([SII)V
-    .registers 7
+    .locals 3
 
     .line 207
     iget-object v0, p0, Landroidx/media3/common/audio/Sonic;->outputBuffer:[S
@@ -451,7 +451,7 @@
 .end method
 
 .method private downSampleInput([SII)V
-    .registers 10
+    .locals 6
 
     .line 227
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->maxRequiredFrameCount:I
@@ -469,15 +469,15 @@
 
     move v2, v1
 
-    :goto_9
-    if-ge v2, v0, :cond_22
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     move v3, v1
 
     move v4, v3
 
-    :goto_d
-    if-ge v3, p3, :cond_19
+    :goto_1
+    if-ge v3, p3, :cond_0
 
     mul-int v5, v2, p3
 
@@ -492,10 +492,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_d
+    goto :goto_1
 
     .line 235
-    :cond_19
+    :cond_0
     div-int/2addr v4, p3
 
     .line 236
@@ -507,14 +507,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     return-void
 .end method
 
 .method private ensureSpaceForAdditionalFrames([SII)[S
-    .registers 6
+    .locals 2
 
     .line 190
     array-length v0, p1
@@ -525,11 +525,11 @@
 
     add-int/2addr p2, p3
 
-    if-gt p2, v0, :cond_8
+    if-gt p2, v0, :cond_0
 
     return-object p1
 
-    :cond_8
+    :cond_0
     mul-int/lit8 v0, v0, 0x3
 
     .line 194
@@ -548,7 +548,7 @@
 .end method
 
 .method private findPitchPeriod([SI)I
-    .registers 9
+    .locals 6
 
     .line 298
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputSampleRateHz:I
@@ -557,22 +557,22 @@
 
     const/16 v2, 0xfa0
 
-    if-le v0, v2, :cond_9
+    if-le v0, v2, :cond_0
 
     div-int/2addr v0, v2
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v1
 
     .line 299
-    :goto_a
+    :goto_0
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->channelCount:I
 
-    if-ne v2, v1, :cond_19
+    if-ne v2, v1, :cond_1
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_1
 
     .line 300
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->minPeriod:I
@@ -583,10 +583,10 @@
 
     move-result p1
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 302
-    :cond_19
+    :cond_1
     invoke-direct {p0, p1, p2, v0}, Landroidx/media3/common/audio/Sonic;->downSampleInput([SII)V
 
     .line 303
@@ -606,7 +606,7 @@
 
     move-result v2
 
-    if-eq v0, v1, :cond_4e
+    if-eq v0, v1, :cond_5
 
     mul-int/2addr v2, v0
 
@@ -619,33 +619,33 @@
     .line 308
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->minPeriod:I
 
-    if-ge v3, v0, :cond_36
+    if-ge v3, v0, :cond_2
 
     move v3, v0
 
     .line 311
-    :cond_36
+    :cond_2
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->maxPeriod:I
 
-    if-le v2, v0, :cond_3b
+    if-le v2, v0, :cond_3
 
     move v2, v0
 
     .line 314
-    :cond_3b
+    :cond_3
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->channelCount:I
 
-    if-ne v0, v1, :cond_44
+    if-ne v0, v1, :cond_4
 
     .line 315
     invoke-direct {p0, p1, p2, v3, v2}, Landroidx/media3/common/audio/Sonic;->findPitchPeriodInRange([SIII)I
 
     move-result p1
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 317
-    :cond_44
+    :cond_4
     invoke-direct {p0, p1, p2, v1}, Landroidx/media3/common/audio/Sonic;->downSampleInput([SII)V
 
     .line 318
@@ -655,13 +655,13 @@
 
     move-result p1
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_4e
+    :cond_5
     move p1, v2
 
     .line 322
-    :goto_4f
+    :goto_1
     iget p2, p0, Landroidx/media3/common/audio/Sonic;->minDiff:I
 
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->maxDiff:I
@@ -670,18 +670,18 @@
 
     move-result p2
 
-    if-eqz p2, :cond_5c
+    if-eqz p2, :cond_6
 
     .line 323
     iget p2, p0, Landroidx/media3/common/audio/Sonic;->prevPeriod:I
 
-    goto :goto_5d
+    goto :goto_2
 
-    :cond_5c
+    :cond_6
     move p2, p1
 
     .line 327
-    :goto_5d
+    :goto_2
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->minDiff:I
 
     iput v0, p0, Landroidx/media3/common/audio/Sonic;->prevMinDiff:I
@@ -693,7 +693,7 @@
 .end method
 
 .method private findPitchPeriodInRange([SIII)I
-    .registers 14
+    .locals 9
 
     .line 247
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->channelCount:I
@@ -710,15 +710,15 @@
 
     move v4, v3
 
-    :goto_9
-    if-gt p3, p4, :cond_34
+    :goto_0
+    if-gt p3, p4, :cond_3
 
     move v5, v0
 
     move v6, v5
 
-    :goto_d
-    if-ge v5, p3, :cond_21
+    :goto_1
+    if-ge v5, p3, :cond_0
 
     add-int v7, p2, v5
 
@@ -743,37 +743,37 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_d
+    goto :goto_1
 
-    :cond_21
+    :cond_0
     mul-int v5, v6, v3
 
     mul-int v7, v2, p3
 
-    if-ge v5, v7, :cond_29
+    if-ge v5, v7, :cond_1
 
     move v3, p3
 
     move v2, v6
 
-    :cond_29
+    :cond_1
     mul-int v5, v6, v1
 
     mul-int v7, v4, p3
 
-    if-le v5, v7, :cond_31
+    if-le v5, v7, :cond_2
 
     move v1, p3
 
     move v4, v6
 
-    :cond_31
+    :cond_2
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 267
-    :cond_34
+    :cond_3
     div-int/2addr v2, v3
 
     iput v2, p0, Landroidx/media3/common/audio/Sonic;->minDiff:I
@@ -787,7 +787,7 @@
 .end method
 
 .method private insertPitchPeriod([SIFI)I
-    .registers 14
+    .locals 9
 
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -795,7 +795,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-gez v0, :cond_e
+    if-gez v0, :cond_0
 
     int-to-float v0, p4
 
@@ -807,9 +807,9 @@
 
     float-to-int p3, v0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     int-to-float v0, p4
 
     const/high16 v2, 0x40000000    # 2.0f
@@ -832,7 +832,7 @@
     move p3, p4
 
     .line 436
-    :goto_1a
+    :goto_0
     iget-object v0, p0, Landroidx/media3/common/audio/Sonic;->outputBuffer:[S
 
     iget v1, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
@@ -891,7 +891,7 @@
 .end method
 
 .method private interpolate([SIII)S
-    .registers 7
+    .locals 2
 
     .line 359
     aget-short v0, p1, p2
@@ -938,7 +938,7 @@
 .end method
 
 .method private moveNewSamplesToPitchBuffer(I)V
-    .registers 8
+    .locals 6
 
     .line 333
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
@@ -985,14 +985,14 @@
 .end method
 
 .method private static overlapAdd(II[SI[SI[SI)V
-    .registers 16
+    .locals 8
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    :goto_2
-    if-ge v1, p1, :cond_26
+    :goto_0
+    if-ge v1, p1, :cond_1
 
     mul-int v2, p3, p1
 
@@ -1008,8 +1008,8 @@
 
     move v5, v0
 
-    :goto_e
-    if-ge v5, p0, :cond_23
+    :goto_1
+    if-ge v5, p0, :cond_0
 
     .line 508
     aget-short v6, p4, v4
@@ -1038,39 +1038,39 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_23
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     return-void
 .end method
 
 .method private previousPeriodBetter(II)Z
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_3
 
     .line 277
     iget v1, p0, Landroidx/media3/common/audio/Sonic;->prevPeriod:I
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     mul-int/lit8 v1, p1, 0x3
 
-    if-le p2, v1, :cond_d
+    if-le p2, v1, :cond_1
 
     return v0
 
-    :cond_d
+    :cond_1
     mul-int/lit8 p1, p1, 0x2
 
     .line 284
@@ -1078,22 +1078,22 @@
 
     mul-int/lit8 p2, p2, 0x3
 
-    if-gt p1, p2, :cond_16
+    if-gt p1, p2, :cond_2
 
     return v0
 
-    :cond_16
+    :cond_2
     const/4 p1, 0x1
 
     return p1
 
-    :cond_18
-    :goto_18
+    :cond_3
+    :goto_0
     return v0
 .end method
 
 .method private processStreamInput()V
-    .registers 9
+    .locals 8
 
     .line 480
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
@@ -1116,18 +1116,18 @@
 
     cmpl-double v2, v4, v6
 
-    if-gtz v2, :cond_29
+    if-gtz v2, :cond_1
 
     const-wide v6, 0x3fefffeb074a771dL    # 0.99999
 
     cmpg-double v2, v4, v6
 
-    if-gez v2, :cond_1e
+    if-gez v2, :cond_0
 
-    goto :goto_29
+    goto :goto_0
 
     .line 486
-    :cond_1e
+    :cond_0
     iget-object v1, p0, Landroidx/media3/common/audio/Sonic;->inputBuffer:[S
 
     iget v2, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
@@ -1139,36 +1139,36 @@
     .line 487
     iput v4, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 484
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     invoke-direct {p0, v1}, Landroidx/media3/common/audio/Sonic;->changeSpeed(F)V
 
-    :goto_2c
+    :goto_1
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpl-float v1, v3, v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 490
     invoke-direct {p0, v3, v0}, Landroidx/media3/common/audio/Sonic;->adjustRate(FI)V
 
-    :cond_35
+    :cond_2
     return-void
 .end method
 
 .method private removePitchFrames(I)V
-    .registers 6
+    .locals 4
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 349
-    :cond_3
+    :cond_0
     iget-object v0, p0, Landroidx/media3/common/audio/Sonic;->pitchBuffer:[S
 
     iget v1, p0, Landroidx/media3/common/audio/Sonic;->channelCount:I
@@ -1196,7 +1196,7 @@
 .end method
 
 .method private removeProcessedInputFrames(I)V
-    .registers 6
+    .locals 4
 
     .line 200
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
@@ -1223,7 +1223,7 @@
 .end method
 
 .method private skipPitchPeriod([SIFI)I
-    .registers 13
+    .locals 8
 
     const/high16 v0, 0x40000000    # 2.0f
 
@@ -1231,7 +1231,7 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    if-ltz v1, :cond_d
+    if-ltz v1, :cond_0
 
     int-to-float v0, p4
 
@@ -1241,9 +1241,9 @@
 
     float-to-int p3, v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     int-to-float v1, p4
 
     sub-float/2addr v0, p3
@@ -1262,7 +1262,7 @@
     move p3, p4
 
     .line 413
-    :goto_16
+    :goto_0
     iget-object v0, p0, Landroidx/media3/common/audio/Sonic;->outputBuffer:[S
 
     iget v1, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
@@ -1303,7 +1303,7 @@
 
 # virtual methods
 .method public flush()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1341,7 +1341,7 @@
 .end method
 
 .method public getOutput(Ljava/nio/ShortBuffer;)V
-    .registers 6
+    .locals 4
 
     .line 116
     invoke-virtual {p1}, Ljava/nio/ShortBuffer;->remaining()I
@@ -1391,7 +1391,7 @@
 .end method
 
 .method public getOutputSize()I
-    .registers 3
+    .locals 2
 
     .line 173
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
@@ -1406,7 +1406,7 @@
 .end method
 
 .method public getPendingInputBytes()I
-    .registers 3
+    .locals 2
 
     .line 91
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
@@ -1421,7 +1421,7 @@
 .end method
 
 .method public queueEndOfStream()V
-    .registers 8
+    .locals 7
 
     .line 132
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
@@ -1482,7 +1482,7 @@
     move v3, v1
 
     .line 142
-    :goto_27
+    :goto_0
     iget v4, p0, Landroidx/media3/common/audio/Sonic;->maxRequiredFrameCount:I
 
     mul-int/lit8 v5, v4, 0x2
@@ -1491,7 +1491,7 @@
 
     mul-int/2addr v5, v6
 
-    if-ge v3, v5, :cond_39
+    if-ge v3, v5, :cond_0
 
     .line 143
     iget-object v4, p0, Landroidx/media3/common/audio/Sonic;->inputBuffer:[S
@@ -1504,10 +1504,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
     .line 145
-    :cond_39
+    :cond_0
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
 
     mul-int/lit8 v4, v4, 0x2
@@ -1522,13 +1522,13 @@
     .line 148
     iget v0, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
 
-    if-le v0, v2, :cond_49
+    if-le v0, v2, :cond_1
 
     .line 149
     iput v2, p0, Landroidx/media3/common/audio/Sonic;->outputFrameCount:I
 
     .line 152
-    :cond_49
+    :cond_1
     iput v1, p0, Landroidx/media3/common/audio/Sonic;->inputFrameCount:I
 
     .line 153
@@ -1541,7 +1541,7 @@
 .end method
 
 .method public queueInput(Ljava/nio/ShortBuffer;)V
-    .registers 7
+    .locals 5
 
     .line 101
     invoke-virtual {p1}, Ljava/nio/ShortBuffer;->remaining()I

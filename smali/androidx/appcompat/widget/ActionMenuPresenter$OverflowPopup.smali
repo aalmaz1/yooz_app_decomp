@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/appcompat/widget/ActionMenuPresenter;Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/View;Z)V
-    .registers 12
+    .locals 6
 
     .line 715
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method protected onDismiss()V
-    .registers 3
+    .locals 2
 
     .line 723
     iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 724
     iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
@@ -77,7 +77,7 @@
     invoke-virtual {v0}, Landroidx/appcompat/view/menu/MenuBuilder;->close()V
 
     .line 726
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowPopup;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
 
     const/4 v1, 0x0

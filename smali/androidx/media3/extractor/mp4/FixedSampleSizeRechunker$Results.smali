@@ -30,7 +30,7 @@
 
 # direct methods
 .method private constructor <init>([J[II[J[IJ)V
-    .registers 8
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method synthetic constructor <init>([J[II[J[IJLandroidx/media3/extractor/mp4/FixedSampleSizeRechunker$1;)V
-    .registers 9
+    .locals 0
 
     .line 30
     invoke-direct/range {p0 .. p7}, Landroidx/media3/extractor/mp4/FixedSampleSizeRechunker$Results;-><init>([J[II[J[IJ)V

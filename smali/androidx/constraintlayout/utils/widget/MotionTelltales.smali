@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 55
     invoke-direct {p0, p1}, Landroidx/constraintlayout/utils/widget/MockView;-><init>(Landroid/content/Context;)V
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 4
+    .locals 1
 
     .line 60
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/utils/widget/MockView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -123,7 +123,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 4
+    .locals 0
 
     .line 65
     invoke-direct {p0, p1, p2, p3}, Landroidx/constraintlayout/utils/widget/MockView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -171,9 +171,9 @@
 .end method
 
 .method private init(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 6
+    .locals 3
 
-    if-eqz p2, :cond_3c
+    if-eqz p2, :cond_3
 
     .line 71
     sget-object v0, Landroidx/constraintlayout/widget/R$styleable;->MotionTelltales:[I
@@ -189,8 +189,8 @@
 
     const/4 v0, 0x0
 
-    :goto_d
-    if-ge v0, p2, :cond_3c
+    :goto_0
+    if-ge v0, p2, :cond_3
 
     .line 74
     invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getIndex(I)I
@@ -200,7 +200,7 @@
     .line 75
     sget v2, Landroidx/constraintlayout/widget/R$styleable;->MotionTelltales_telltales_tailColor:I
 
-    if-ne v1, v2, :cond_20
+    if-ne v1, v2, :cond_0
 
     .line 76
     iget v2, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mTailColor:I
@@ -211,13 +211,13 @@
 
     iput v1, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mTailColor:I
 
-    goto :goto_39
+    goto :goto_1
 
     .line 77
-    :cond_20
+    :cond_0
     sget v2, Landroidx/constraintlayout/widget/R$styleable;->MotionTelltales_telltales_velocityMode:I
 
-    if-ne v1, v2, :cond_2d
+    if-ne v1, v2, :cond_1
 
     .line 78
     iget v2, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mVelocityMode:I
@@ -228,13 +228,13 @@
 
     iput v1, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mVelocityMode:I
 
-    goto :goto_39
+    goto :goto_1
 
     .line 79
-    :cond_2d
+    :cond_1
     sget v2, Landroidx/constraintlayout/widget/R$styleable;->MotionTelltales_telltales_tailScale:I
 
-    if-ne v1, v2, :cond_39
+    if-ne v1, v2, :cond_2
 
     .line 80
     iget v2, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mTailScale:F
@@ -245,14 +245,14 @@
 
     iput v1, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mTailScale:F
 
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 84
-    :cond_3c
+    :cond_3
     iget-object p1, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mPaintTelltales:Landroid/graphics/Paint;
 
     iget p2, p0, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mTailColor:I
@@ -272,7 +272,7 @@
 
 # virtual methods
 .method protected onAttachedToWindow()V
-    .registers 1
+    .locals 0
 
     .line 90
     invoke-super {p0}, Landroidx/constraintlayout/utils/widget/MockView;->onAttachedToWindow()V
@@ -281,7 +281,7 @@
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .registers 24
+    .locals 22
 
     move-object/from16 v6, p0
 
@@ -301,7 +301,7 @@
     .line 109
     iget-object v0, v6, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 110
     invoke-virtual/range {p0 .. p0}, Landroidx/constraintlayout/utils/widget/MotionTelltales;->getParent()Landroid/view/ViewParent;
@@ -311,18 +311,18 @@
     .line 111
     instance-of v1, v0, Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 112
     check-cast v0, Landroidx/constraintlayout/motion/widget/MotionLayout;
 
     iput-object v0, v6, Landroidx/constraintlayout/utils/widget/MotionTelltales;->mMotionLayout:Landroidx/constraintlayout/motion/widget/MotionLayout;
 
-    :cond_1e
+    :cond_0
     return-void
 
     .line 116
-    :cond_1f
+    :cond_1
     invoke-virtual/range {p0 .. p0}, Landroidx/constraintlayout/utils/widget/MotionTelltales;->getWidth()I
 
     move-result v7
@@ -337,22 +337,22 @@
     new-array v10, v9, [F
 
     .line 118
-    fill-array-data v10, :array_76
+    fill-array-data v10, :array_0
 
     const/4 v11, 0x0
 
     move v12, v11
 
-    :goto_2f
-    if-ge v12, v9, :cond_75
+    :goto_0
+    if-ge v12, v9, :cond_3
 
     .line 120
     aget v13, v10, v12
 
     move v14, v11
 
-    :goto_34
-    if-ge v14, v9, :cond_72
+    :goto_1
+    if-ge v14, v9, :cond_2
 
     .line 122
     aget v15, v10, v14
@@ -423,17 +423,17 @@
 
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_72
+    :cond_2
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_75
+    :cond_3
     return-void
 
-    :array_76
+    :array_0
     .array-data 4
         0x3dcccccd    # 0.1f
         0x3e800000    # 0.25f
@@ -444,7 +444,7 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .registers 6
+    .locals 0
 
     .line 100
     invoke-super/range {p0 .. p5}, Landroidx/constraintlayout/utils/widget/MockView;->onLayout(ZIIII)V
@@ -456,7 +456,7 @@
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)V
-    .registers 2
+    .locals 0
 
     .line 94
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;

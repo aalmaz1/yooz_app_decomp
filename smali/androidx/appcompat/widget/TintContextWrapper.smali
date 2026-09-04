@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 42
     new-instance v0, Ljava/lang/Object;
@@ -39,7 +39,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
 
     .line 92
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
@@ -49,7 +49,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 97
     new-instance v0, Landroidx/appcompat/widget/VectorEnabledTintResources;
@@ -76,10 +76,10 @@
 
     invoke-virtual {v0, p1}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
 
-    goto :goto_30
+    goto :goto_0
 
     .line 101
-    :cond_22
+    :cond_0
     new-instance v0, Landroidx/appcompat/widget/TintResources;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -95,19 +95,19 @@
     .line 102
     iput-object p1, p0, Landroidx/appcompat/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    :goto_30
+    :goto_0
     return-void
 .end method
 
 .method private static shouldWrap(Landroid/content/Context;)Z
-    .registers 3
+    .locals 2
 
     .line 78
     instance-of v0, p0, Landroidx/appcompat/widget/TintContextWrapper;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 79
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -116,7 +116,7 @@
 
     instance-of v0, v0, Landroidx/appcompat/widget/TintResources;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 80
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -125,34 +125,34 @@
 
     instance-of p0, p0, Landroidx/appcompat/widget/VectorEnabledTintResources;
 
-    if-eqz p0, :cond_16
+    if-eqz p0, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 85
-    :cond_16
+    :cond_0
     invoke-static {}, Landroidx/appcompat/widget/VectorEnabledTintResources;->shouldBeUsed()Z
 
     move-result p0
 
-    if-eqz p0, :cond_1d
+    if-eqz p0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method public static wrap(Landroid/content/Context;)Landroid/content/Context;
-    .registers 5
+    .locals 4
 
     .line 46
     invoke-static {p0}, Landroidx/appcompat/widget/TintContextWrapper;->shouldWrap(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_72
+    if-eqz v0, :cond_7
 
     .line 47
     sget-object v0, Landroidx/appcompat/widget/TintContextWrapper;->CACHE_LOCK:Ljava/lang/Object;
@@ -160,10 +160,10 @@
     monitor-enter v0
 
     .line 48
-    :try_start_9
+    :try_start_0
     sget-object v1, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     .line 49
     new-instance v1, Ljava/util/ArrayList;
@@ -172,18 +172,18 @@
 
     sput-object v1, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    goto :goto_5e
+    goto :goto_3
 
     .line 52
-    :cond_15
+    :cond_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_1b
-    if-ltz v1, :cond_35
+    :goto_0
+    if-ltz v1, :cond_3
 
     .line 53
     sget-object v2, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
@@ -194,28 +194,28 @@
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     .line 54
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-nez v2, :cond_32
+    if-nez v2, :cond_2
 
     .line 55
-    :cond_2d
+    :cond_1
     sget-object v2, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    :cond_32
+    :cond_2
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 59
-    :cond_35
+    :cond_3
     sget-object v1, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -224,8 +224,8 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    :goto_3d
-    if-ltz v1, :cond_5e
+    :goto_1
+    if-ltz v1, :cond_6
 
     .line 60
     sget-object v2, Landroidx/appcompat/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
@@ -236,7 +236,7 @@
 
     check-cast v2, Ljava/lang/ref/WeakReference;
 
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_4
 
     .line 61
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -245,34 +245,34 @@
 
     check-cast v2, Landroidx/appcompat/widget/TintContextWrapper;
 
-    goto :goto_51
+    goto :goto_2
 
-    :cond_50
+    :cond_4
     const/4 v2, 0x0
 
-    :goto_51
-    if-eqz v2, :cond_5b
+    :goto_2
+    if-eqz v2, :cond_5
 
     .line 62
     invoke-virtual {v2}, Landroidx/appcompat/widget/TintContextWrapper;->getBaseContext()Landroid/content/Context;
 
     move-result-object v3
 
-    if-ne v3, p0, :cond_5b
+    if-ne v3, p0, :cond_5
 
     .line 63
     monitor-exit v0
 
     return-object v2
 
-    :cond_5b
+    :cond_5
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 69
-    :cond_5e
-    :goto_5e
+    :cond_6
+    :goto_3
     new-instance v1, Landroidx/appcompat/widget/TintContextWrapper;
 
     invoke-direct {v1, p0}, Landroidx/appcompat/widget/TintContextWrapper;-><init>(Landroid/content/Context;)V
@@ -291,24 +291,24 @@
 
     return-object v1
 
-    :catchall_6f
+    :catchall_0
     move-exception p0
 
     .line 72
     monitor-exit v0
-    :try_end_71
-    .catchall {:try_start_9 .. :try_end_71} :catchall_6f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 
-    :cond_72
+    :cond_7
     return-object p0
 .end method
 
 
 # virtual methods
 .method public getAssets()Landroid/content/res/AssetManager;
-    .registers 2
+    .locals 1
 
     .line 128
     iget-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
@@ -321,7 +321,7 @@
 .end method
 
 .method public getResources()Landroid/content/res/Resources;
-    .registers 2
+    .locals 1
 
     .line 122
     iget-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
@@ -330,40 +330,40 @@
 .end method
 
 .method public getTheme()Landroid/content/res/Resources$Theme;
-    .registers 2
+    .locals 1
 
     .line 108
     iget-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     invoke-super {p0}, Landroid/content/ContextWrapper;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
 
-    :cond_8
+    :cond_0
     return-object v0
 .end method
 
 .method public setTheme(I)V
-    .registers 4
+    .locals 2
 
     .line 113
     iget-object v0, p0, Landroidx/appcompat/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     .line 114
     invoke-super {p0, p1}, Landroid/content/ContextWrapper;->setTheme(I)V
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v1, 0x1
 
     .line 116
     invoke-virtual {v0, p1, v1}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
 
-    :goto_c
+    :goto_0
     return-void
 .end method

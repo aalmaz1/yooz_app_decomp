@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/SurfaceRequest;Landroidx/core/util/Consumer;Landroid/view/Surface;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 3
 
     .line 421
     instance-of v0, p1, Landroidx/camera/core/SurfaceRequest$RequestCancelledException;
@@ -96,7 +96,7 @@
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 412
     check-cast p1, Ljava/lang/Void;
@@ -107,7 +107,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 4
+    .locals 2
 
     .line 415
     iget-object p1, p0, Landroidx/camera/core/SurfaceRequest$4;->val$resultListener:Landroidx/core/util/Consumer;

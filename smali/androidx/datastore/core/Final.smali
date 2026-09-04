@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "finalException"
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final getFinalException()Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/datastore/core/Final;->finalException:Ljava/lang/Throwable;

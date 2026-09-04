@@ -30,7 +30,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/content/ContentValues;)V
-    .registers 4
+    .locals 0
 
     .line 1501
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/File;)V
-    .registers 2
+    .locals 0
 
     .line 1473
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/OutputStream;)V
-    .registers 2
+    .locals 0
 
     .line 1512
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/core/ImageCapture$OutputFileOptions;
-    .registers 9
+    .locals 8
 
     .line 1535
     new-instance v7, Landroidx/camera/core/ImageCapture$OutputFileOptions;
@@ -99,7 +99,7 @@
 .end method
 
 .method public setMetadata(Landroidx/camera/core/ImageCapture$Metadata;)Landroidx/camera/core/ImageCapture$OutputFileOptions$Builder;
-    .registers 2
+    .locals 0
 
     .line 1526
     iput-object p1, p0, Landroidx/camera/core/ImageCapture$OutputFileOptions$Builder;->mMetadata:Landroidx/camera/core/ImageCapture$Metadata;

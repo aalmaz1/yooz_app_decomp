@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/core/os/PersistableBundleApi21ImplKt;
 
@@ -52,7 +52,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public static final createPersistableBundle(I)Landroid/os/PersistableBundle;
-    .registers 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -74,24 +74,24 @@
 .end method
 
 .method public static final putValue(Landroid/os/PersistableBundle;Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 7
+    .locals 4
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
-    if-nez p2, :cond_8
+    if-nez p2, :cond_0
 
     const/4 p2, 0x0
 
     .line 82
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_99
+    goto/16 :goto_0
 
     .line 85
-    :cond_8
+    :cond_0
     instance-of v0, p2, Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     .line 87
     check-cast p2, Ljava/lang/Boolean;
@@ -102,13 +102,13 @@
 
     invoke-static {p0, p1, p2}, Landroidx/core/os/PersistableBundleApi22ImplKt;->putBoolean(Landroid/os/PersistableBundle;Ljava/lang/String;Z)V
 
-    goto/16 :goto_99
+    goto/16 :goto_0
 
     .line 94
-    :cond_17
+    :cond_1
     instance-of v0, p2, Ljava/lang/Double;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     check-cast p2, Ljava/lang/Number;
 
@@ -118,13 +118,13 @@
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/PersistableBundle;->putDouble(Ljava/lang/String;D)V
 
-    goto/16 :goto_99
+    goto/16 :goto_0
 
     .line 95
-    :cond_26
+    :cond_2
     instance-of v0, p2, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_3
 
     check-cast p2, Ljava/lang/Number;
 
@@ -134,13 +134,13 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putInt(Ljava/lang/String;I)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 96
-    :cond_34
+    :cond_3
     instance-of v0, p2, Ljava/lang/Long;
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_4
 
     check-cast p2, Ljava/lang/Number;
 
@@ -150,78 +150,78 @@
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/PersistableBundle;->putLong(Ljava/lang/String;J)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 99
-    :cond_42
+    :cond_4
     instance-of v0, p2, Ljava/lang/String;
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_5
 
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 102
-    :cond_4c
+    :cond_5
     instance-of v0, p2, [Z
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_6
 
     .line 104
     check-cast p2, [Z
 
     invoke-static {p0, p1, p2}, Landroidx/core/os/PersistableBundleApi22ImplKt;->putBooleanArray(Landroid/os/PersistableBundle;Ljava/lang/String;[Z)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 111
-    :cond_56
+    :cond_6
     instance-of v0, p2, [D
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_7
 
     check-cast p2, [D
 
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putDoubleArray(Ljava/lang/String;[D)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 112
-    :cond_60
+    :cond_7
     instance-of v0, p2, [I
 
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_8
 
     check-cast p2, [I
 
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putIntArray(Ljava/lang/String;[I)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 113
-    :cond_6a
+    :cond_8
     instance-of v0, p2, [J
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_9
 
     check-cast p2, [J
 
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putLongArray(Ljava/lang/String;[J)V
 
-    goto :goto_99
+    goto :goto_0
 
     .line 116
-    :cond_74
+    :cond_9
     instance-of v0, p2, [Ljava/lang/Object;
 
     const/16 v1, 0x22
 
     const-string v2, " for key \""
 
-    if-eqz v0, :cond_bf
+    if-eqz v0, :cond_b
 
     .line 117
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -242,7 +242,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_9a
+    if-eqz v3, :cond_a
 
     const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
 
@@ -253,11 +253,11 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/os/PersistableBundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
 
-    :goto_99
+    :goto_0
     return-void
 
     .line 124
-    :cond_9a
+    :cond_a
     invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
     move-result-object p0
@@ -298,7 +298,7 @@
     throw p2
 
     .line 133
-    :cond_bf
+    :cond_b
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0

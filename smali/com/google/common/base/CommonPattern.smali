@@ -10,7 +10,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,7 +19,7 @@
 .end method
 
 .method public static compile(Ljava/lang/String;)Lcom/google/common/base/CommonPattern;
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -38,7 +38,7 @@
 .end method
 
 .method public static isPcreLike()Z
-    .registers 1
+    .locals 1
 
     .line 42
     invoke-static {}, Lcom/google/common/base/Platform;->patternCompilerIsPcreLike()Z

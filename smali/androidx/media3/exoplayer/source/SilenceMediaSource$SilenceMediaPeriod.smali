@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     .line 181
     new-instance v0, Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -70,7 +70,7 @@
 .end method
 
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 .end method
 
 .method private constrainSeekPosition(J)J
-    .registers 9
+    .locals 6
 
     const-wide/16 v2, 0x0
 
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public continueLoading(Landroidx/media3/exoplayer/LoadingInfo;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -116,13 +116,13 @@
 .end method
 
 .method public discardBuffer(JZ)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
-    .registers 4
+    .locals 0
 
     .line 247
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->constrainSeekPosition(J)J
@@ -133,7 +133,7 @@
 .end method
 
 .method public getBufferedPositionUs()J
-    .registers 3
+    .locals 2
 
     const-wide/high16 v0, -0x8000000000000000L
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public getNextLoadPositionUs()J
-    .registers 3
+    .locals 2
 
     const-wide/high16 v0, -0x8000000000000000L
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public getTrackGroups()Landroidx/media3/exoplayer/source/TrackGroupArray;
-    .registers 2
+    .locals 1
 
     .line 201
     sget-object v0, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->TRACKS:Landroidx/media3/exoplayer/source/TrackGroupArray;
@@ -158,7 +158,7 @@
 .end method
 
 .method public isLoading()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -166,13 +166,13 @@
 .end method
 
 .method public maybeThrowPrepareError()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public prepare(Landroidx/media3/exoplayer/source/MediaPeriod$Callback;J)V
-    .registers 4
+    .locals 0
 
     .line 193
     invoke-interface {p1, p0}, Landroidx/media3/exoplayer/source/MediaPeriod$Callback;->onPrepared(Landroidx/media3/exoplayer/source/MediaPeriod;)V
@@ -181,7 +181,7 @@
 .end method
 
 .method public readDiscontinuity()J
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -189,13 +189,13 @@
 .end method
 
 .method public reevaluateBuffer(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method
 
 .method public seekToUs(J)J
-    .registers 5
+    .locals 2
 
     .line 238
     invoke-direct {p0, p1, p2}, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->constrainSeekPosition(J)J
@@ -205,14 +205,14 @@
     const/4 v0, 0x0
 
     .line 239
-    :goto_5
+    :goto_0
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_0
 
     .line 240
     iget-object v1, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
@@ -227,14 +227,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return-wide p1
 .end method
 
 .method public selectTracks([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)J
-    .registers 11
+    .locals 4
 
     .line 211
     invoke-direct {p0, p5, p6}, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->constrainSeekPosition(J)J
@@ -244,26 +244,26 @@
     const/4 v0, 0x0
 
     .line 212
-    :goto_5
+    :goto_0
     array-length v1, p1
 
-    if-ge v0, v1, :cond_3b
+    if-ge v0, v1, :cond_3
 
     .line 213
     aget-object v1, p3, v0
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     aget-object v2, p1, v0
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     aget-boolean v2, p2, v0
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_1
 
     .line 214
-    :cond_14
+    :cond_0
     iget-object v2, p0, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -274,14 +274,14 @@
     aput-object v1, p3, v0
 
     .line 217
-    :cond_1c
+    :cond_1
     aget-object v1, p3, v0
 
-    if-nez v1, :cond_38
+    if-nez v1, :cond_2
 
     aget-object v1, p1, v0
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 218
     new-instance v1, Landroidx/media3/exoplayer/source/SilenceMediaSource$SilenceSampleStream;
@@ -306,11 +306,11 @@
     .line 222
     aput-boolean v1, p4, v0
 
-    :cond_38
+    :cond_2
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_3b
+    :cond_3
     return-wide p5
 .end method

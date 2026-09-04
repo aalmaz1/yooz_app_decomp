@@ -139,13 +139,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-    .registers 14
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -221,23 +221,23 @@
 .end method
 
 .method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 14
+    .locals 6
 
     and-int/lit8 p7, p6, 0x4
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 122
     invoke-static {}, Landroidx/datastore/migrations/SharedPreferencesMigrationKt;->getMIGRATE_ALL_KEYS()Ljava/util/Set;
 
     move-result-object p3
 
-    :cond_8
+    :cond_0
     move-object v3, p3
 
     and-int/lit8 p3, p6, 0x8
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_1
 
     .line 123
     new-instance p3, Landroidx/datastore/migrations/SharedPreferencesMigration$3;
@@ -250,7 +250,7 @@
 
     check-cast p4, Lkotlin/jvm/functions/Function2;
 
-    :cond_16
+    :cond_1
     move-object v4, p4
 
     move-object v0, p0
@@ -268,7 +268,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Lkotlin/jvm/functions/Function3;)V
-    .registers 14
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -326,7 +326,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lkotlin/jvm/functions/Function3;)V
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -377,7 +377,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-    .registers 13
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -444,21 +444,21 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_8
+    if-eqz p6, :cond_0
 
     .line 75
     invoke-static {}, Landroidx/datastore/migrations/SharedPreferencesMigrationKt;->getMIGRATE_ALL_KEYS()Ljava/util/Set;
 
     move-result-object p2
 
-    :cond_8
+    :cond_0
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_14
+    if-eqz p5, :cond_1
 
     .line 76
     new-instance p3, Landroidx/datastore/migrations/SharedPreferencesMigration$2;
@@ -470,14 +470,14 @@
     check-cast p3, Lkotlin/jvm/functions/Function2;
 
     .line 73
-    :cond_14
+    :cond_1
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/datastore/migrations/SharedPreferencesMigration;-><init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     return-void
 .end method
 
 .method private constructor <init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroid/content/Context;Ljava/lang/String;)V
-    .registers 7
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -537,7 +537,7 @@
 
     move-result-object p1
 
-    if-ne p2, p1, :cond_1c
+    if-ne p2, p1, :cond_0
 
     const/4 p1, 0x0
 
@@ -546,10 +546,10 @@
 
     check-cast p2, Ljava/util/Set;
 
-    goto :goto_22
+    goto :goto_0
 
     .line 143
-    :cond_1c
+    :cond_0
     check-cast p2, Ljava/lang/Iterable;
 
     invoke-static {p2}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
@@ -557,18 +557,18 @@
     move-result-object p1
 
     .line 140
-    :goto_22
+    :goto_0
     iput-object p1, p0, Landroidx/datastore/migrations/SharedPreferencesMigration;->keySet:Ljava/util/Set;
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroid/content/Context;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 16
+    .locals 7
 
     and-int/lit8 p7, p7, 0x4
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_0
 
     .line 36
     new-instance p3, Landroidx/datastore/migrations/SharedPreferencesMigration$1;
@@ -579,7 +579,7 @@
 
     check-cast p3, Lkotlin/jvm/functions/Function2;
 
-    :cond_c
+    :cond_0
     move-object v3, p3
 
     move-object v0, p0
@@ -601,7 +601,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Ljava/util/Set;Lkotlin/jvm/functions/Function3;)V
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -655,7 +655,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;)V
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -702,7 +702,7 @@
 .end method
 
 .method private final deleteSharedPreferences(Landroid/content/Context;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     .line 192
     sget-object v0, Landroidx/datastore/migrations/SharedPreferencesMigration$Api24Impl;->INSTANCE:Landroidx/datastore/migrations/SharedPreferencesMigration$Api24Impl;
@@ -711,12 +711,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     return-void
 
     .line 193
-    :cond_9
+    :cond_0
     new-instance p1, Ljava/io/IOException;
 
     const-string v0, "Unable to delete SharedPreferences: "
@@ -731,7 +731,7 @@
 .end method
 
 .method private final getSharedPrefs()Landroid/content/SharedPreferences;
-    .registers 2
+    .locals 1
 
     .line 134
     iget-object v0, p0, Landroidx/datastore/migrations/SharedPreferencesMigration;->sharedPrefs$delegate:Lkotlin/Lazy;
@@ -746,7 +746,7 @@
 .end method
 
 .method private final getSharedPrefsBackup(Ljava/io/File;)Ljava/io/File;
-    .registers 4
+    .locals 2
 
     .line 213
     new-instance v0, Ljava/io/File;
@@ -767,7 +767,7 @@
 .end method
 
 .method private final getSharedPrefsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-    .registers 5
+    .locals 2
 
     .line 208
     new-instance v0, Ljava/io/File;
@@ -799,7 +799,7 @@
 
 # virtual methods
 .method public cleanUp(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -829,15 +829,15 @@
     .line 171
     iget-object v0, p0, Landroidx/datastore/migrations/SharedPreferencesMigration;->keySet:Ljava/util/Set;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 172
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_26
+    goto :goto_1
 
     .line 174
-    :cond_10
+    :cond_0
     check-cast v0, Ljava/lang/Iterable;
 
     .line 324
@@ -845,12 +845,12 @@
 
     move-result-object v0
 
-    :goto_16
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -861,16 +861,16 @@
     .line 175
     invoke-interface {p1, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_16
+    goto :goto_0
 
     .line 179
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_1
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result p1
 
-    if-eqz p1, :cond_5a
+    if-eqz p1, :cond_5
 
     .line 183
     invoke-direct {p0}, Landroidx/datastore/migrations/SharedPreferencesMigration;->getSharedPrefs()Landroid/content/SharedPreferences;
@@ -885,51 +885,51 @@
 
     move-result p1
 
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Landroidx/datastore/migrations/SharedPreferencesMigration;->context:Landroid/content/Context;
 
-    if-eqz p1, :cond_45
+    if-eqz p1, :cond_2
 
     iget-object v0, p0, Landroidx/datastore/migrations/SharedPreferencesMigration;->name:Ljava/lang/String;
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_2
 
     .line 184
     invoke-direct {p0, p1, v0}, Landroidx/datastore/migrations/SharedPreferencesMigration;->deleteSharedPreferences(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 187
-    :cond_45
+    :cond_2
     iget-object p1, p0, Landroidx/datastore/migrations/SharedPreferencesMigration;->keySet:Ljava/util/Set;
 
-    if-nez p1, :cond_4b
+    if-nez p1, :cond_3
 
     const/4 p1, 0x0
 
-    goto :goto_50
+    goto :goto_2
 
-    :cond_4b
+    :cond_3
     invoke-interface {p1}, Ljava/util/Set;->clear()V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    :goto_50
+    :goto_2
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_57
+    if-ne p1, v0, :cond_4
 
     return-object p1
 
     .line 188
-    :cond_57
+    :cond_4
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     .line 180
-    :cond_5a
+    :cond_5
     new-instance p1, Ljava/io/IOException;
 
     const-string v0, "Unable to delete migrated keys from SharedPreferences."
@@ -940,7 +940,7 @@
 .end method
 
 .method public migrate(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -976,7 +976,7 @@
 .end method
 
 .method public shouldMigrate(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -990,7 +990,7 @@
 
     instance-of v0, p2, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -1002,7 +1002,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;->label:I
 
@@ -1010,14 +1010,14 @@
 
     iput p2, v0, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;-><init>(Landroidx/datastore/migrations/SharedPreferencesMigration;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     iget-object p2, v0, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;->result:Ljava/lang/Object;
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
@@ -1029,9 +1029,9 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_2e
+    if-ne v2, v3, :cond_1
 
     iget-object p1, v0, Landroidx/datastore/migrations/SharedPreferencesMigration$shouldMigrate$1;->L$0:Ljava/lang/Object;
 
@@ -1039,10 +1039,10 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_47
+    goto :goto_1
 
     .line 151
-    :cond_2e
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
@@ -1052,7 +1052,7 @@
     throw p1
 
     .line 146
-    :cond_36
+    :cond_2
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 147
@@ -1066,14 +1066,14 @@
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_46
+    if-ne p2, v1, :cond_3
 
     return-object v1
 
-    :cond_46
+    :cond_3
     move-object p1, p0
 
-    :goto_47
+    :goto_1
     check-cast p2, Ljava/lang/Boolean;
 
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -1082,7 +1082,7 @@
 
     const/4 v0, 0x0
 
-    if-nez p2, :cond_55
+    if-nez p2, :cond_4
 
     .line 148
     invoke-static {v0}, Lkotlin/coroutines/jvm/internal/Boxing;->boxBoolean(Z)Ljava/lang/Boolean;
@@ -1092,10 +1092,10 @@
     return-object p1
 
     .line 151
-    :cond_55
+    :cond_4
     iget-object p2, p1, Landroidx/datastore/migrations/SharedPreferencesMigration;->keySet:Ljava/util/Set;
 
-    if-nez p2, :cond_6f
+    if-nez p2, :cond_6
 
     .line 152
     invoke-direct {p1}, Landroidx/datastore/migrations/SharedPreferencesMigration;->getSharedPrefs()Landroid/content/SharedPreferences;
@@ -1114,18 +1114,18 @@
 
     move-result p1
 
-    if-nez p1, :cond_6d
+    if-nez p1, :cond_5
 
-    goto :goto_a1
+    goto :goto_3
 
-    :cond_6d
-    :goto_6d
+    :cond_5
+    :goto_2
     move v3, v0
 
-    goto :goto_a1
+    goto :goto_3
 
     .line 154
-    :cond_6f
+    :cond_6
     check-cast p2, Ljava/lang/Iterable;
 
     invoke-direct {p1}, Landroidx/datastore/migrations/SharedPreferencesMigration;->getSharedPrefs()Landroid/content/SharedPreferences;
@@ -1135,7 +1135,7 @@
     .line 321
     instance-of v1, p2, Ljava/util/Collection;
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_7
 
     move-object v1, p2
 
@@ -1145,22 +1145,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_83
+    if-eqz v1, :cond_7
 
-    goto :goto_6d
+    goto :goto_2
 
     .line 322
-    :cond_83
+    :cond_7
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
 
-    :cond_87
+    :cond_8
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_5
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1181,10 +1181,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_87
+    if-eqz v1, :cond_8
 
     .line 323
-    :goto_a1
+    :goto_3
     invoke-static {v3}, Lkotlin/coroutines/jvm/internal/Boxing;->boxBoolean(Z)Ljava/lang/Boolean;
 
     move-result-object p1

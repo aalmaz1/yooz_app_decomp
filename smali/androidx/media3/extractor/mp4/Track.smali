@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>(IIJJJLandroidx/media3/common/Format;I[Landroidx/media3/extractor/mp4/TrackEncryptionBox;I[J[J)V
-    .registers 15
+    .locals 0
 
     .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public copyWithFormat(Landroidx/media3/common/Format;)Landroidx/media3/extractor/mp4/Track;
-    .registers 19
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -124,7 +124,7 @@
 .end method
 
 .method public copyWithoutEditLists()Landroidx/media3/extractor/mp4/Track;
-    .registers 18
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -161,21 +161,21 @@
 .end method
 
 .method public getSampleDescriptionEncryptionBox(I)Landroidx/media3/extractor/mp4/TrackEncryptionBox;
-    .registers 3
+    .locals 1
 
     .line 124
     iget-object v0, p0, Landroidx/media3/extractor/mp4/Track;->sampleDescriptionEncryptionBoxes:[Landroidx/media3/extractor/mp4/TrackEncryptionBox;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 126
-    :cond_6
+    :cond_0
     aget-object p1, v0, p1
 
-    :goto_8
+    :goto_0
     return-object p1
 .end method

@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 922
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public sort(Landroid/content/Intent;Ljava/util/List;Ljava/util/List;)V
-    .registers 10
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,8 +81,8 @@
 
     const/4 v1, 0x0
 
-    :goto_a
-    if-ge v1, v0, :cond_2c
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 934
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -118,10 +118,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 942
-    :cond_2c
+    :cond_0
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result v0
@@ -130,8 +130,8 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    :goto_34
-    if-ltz v0, :cond_55
+    :goto_1
+    if-ltz v0, :cond_2
 
     .line 945
     invoke-interface {p3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -150,7 +150,7 @@
 
     check-cast v3, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;
 
-    if-eqz v3, :cond_52
+    if-eqz v3, :cond_1
 
     .line 949
     iget v4, v3, Landroidx/appcompat/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
@@ -167,13 +167,13 @@
 
     mul-float/2addr v1, v2
 
-    :cond_52
+    :cond_1
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_34
+    goto :goto_1
 
     .line 954
-    :cond_55
+    :cond_2
     invoke-static {p2}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
     return-void

@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/Fragment;Landroidx/activity/result/ActivityResultRegistry;)V
-    .registers 3
+    .locals 0
 
     .line 3467
     iput-object p1, p0, Landroidx/fragment/app/Fragment$7;->this$0:Landroidx/fragment/app/Fragment;
@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public apply(Ljava/lang/Void;)Landroidx/activity/result/ActivityResultRegistry;
-    .registers 2
+    .locals 0
 
     .line 3470
     iget-object p1, p0, Landroidx/fragment/app/Fragment$7;->val$registry:Landroidx/activity/result/ActivityResultRegistry;
@@ -59,7 +59,7 @@
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 3467
     check-cast p1, Ljava/lang/Void;

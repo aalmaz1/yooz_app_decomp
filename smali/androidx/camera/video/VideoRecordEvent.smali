@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)V
-    .registers 3
+    .locals 0
 
     .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method static finalize(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;Landroidx/camera/video/OutputResults;)Landroidx/camera/video/VideoRecordEvent$Finalize;
-    .registers 10
+    .locals 7
 
     .line 150
     new-instance v6, Landroidx/camera/video/VideoRecordEvent$Finalize;
@@ -73,18 +73,18 @@
 .end method
 
 .method static finalizeWithError(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;Landroidx/camera/video/OutputResults;ILjava/lang/Throwable;)Landroidx/camera/video/VideoRecordEvent$Finalize;
-    .registers 13
+    .locals 8
 
-    if-eqz p3, :cond_4
+    if-eqz p3, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     const-string v1, "An error type is required."
 
     .line 159
@@ -111,7 +111,7 @@
 .end method
 
 .method static pause(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)Landroidx/camera/video/VideoRecordEvent$Pause;
-    .registers 3
+    .locals 1
 
     .line 462
     new-instance v0, Landroidx/camera/video/VideoRecordEvent$Pause;
@@ -122,7 +122,7 @@
 .end method
 
 .method static resume(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)Landroidx/camera/video/VideoRecordEvent$Resume;
-    .registers 3
+    .locals 1
 
     .line 482
     new-instance v0, Landroidx/camera/video/VideoRecordEvent$Resume;
@@ -133,7 +133,7 @@
 .end method
 
 .method static start(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)Landroidx/camera/video/VideoRecordEvent$Start;
-    .registers 3
+    .locals 1
 
     .line 127
     new-instance v0, Landroidx/camera/video/VideoRecordEvent$Start;
@@ -144,7 +144,7 @@
 .end method
 
 .method static status(Landroidx/camera/video/OutputOptions;Landroidx/camera/video/RecordingStats;)Landroidx/camera/video/VideoRecordEvent$Status;
-    .registers 3
+    .locals 1
 
     .line 444
     new-instance v0, Landroidx/camera/video/VideoRecordEvent$Status;
@@ -157,7 +157,7 @@
 
 # virtual methods
 .method public getOutputOptions()Landroidx/camera/video/OutputOptions;
-    .registers 2
+    .locals 1
 
     .line 121
     iget-object v0, p0, Landroidx/camera/video/VideoRecordEvent;->mOutputOptions:Landroidx/camera/video/OutputOptions;
@@ -166,7 +166,7 @@
 .end method
 
 .method public getRecordingStats()Landroidx/camera/video/RecordingStats;
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/camera/video/VideoRecordEvent;->mRecordingStats:Landroidx/camera/video/RecordingStats;

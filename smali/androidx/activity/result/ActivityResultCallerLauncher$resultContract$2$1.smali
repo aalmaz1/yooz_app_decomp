@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/activity/result/ActivityResultCallerLauncher;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 119
     check-cast p2, Lkotlin/Unit;
@@ -98,7 +98,7 @@
 .end method
 
 .method public createIntent(Landroid/content/Context;Lkotlin/Unit;)Landroid/content/Intent;
-    .registers 4
+    .locals 1
 
     const-string v0, "context"
 
@@ -129,7 +129,7 @@
 .end method
 
 .method public parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",

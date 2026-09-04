@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/View;)V
-    .registers 3
+    .locals 0
 
     .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .end method
 
 .method public static toContentCaptureSessionCompat(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/View;)Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;
-    .registers 3
+    .locals 1
 
     .line 62
     new-instance v0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;
@@ -55,14 +55,14 @@
 
 # virtual methods
 .method public newAutofillId(J)Landroid/view/autofill/AutofillId;
-    .registers 5
+    .locals 2
 
     .line 109
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_1f
+    if-lt v0, v1, :cond_0
 
     .line 110
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -93,21 +93,21 @@
 
     return-object p1
 
-    :cond_1f
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public newVirtualViewStructure(Landroid/view/autofill/AutofillId;J)Landroidx/core/view/ViewStructureCompat;
-    .registers 6
+    .locals 2
 
     .line 137
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_13
+    if-lt v0, v1, :cond_0
 
     .line 138
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -126,21 +126,21 @@
 
     return-object p1
 
-    :cond_13
+    :cond_0
     const/4 p1, 0x0
 
     return-object p1
 .end method
 
 .method public notifyViewTextChanged(Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V
-    .registers 5
+    .locals 2
 
     .line 235
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 236
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -149,12 +149,12 @@
 
     invoke-static {v0, p1, p2}, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat$Api29Impl;->notifyViewTextChanged(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public notifyViewsAppeared(Ljava/util/List;)V
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,7 +169,7 @@
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
     .line 163
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -178,15 +178,15 @@
 
     invoke-static {v0, p1}, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat$Api34Impl;->notifyViewsAppeared(Landroid/view/contentcapture/ContentCaptureSession;Ljava/util/List;)V
 
-    goto :goto_60
+    goto :goto_1
 
     .line 164
-    :cond_e
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_60
+    if-lt v0, v1, :cond_2
 
     .line 165
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -220,12 +220,12 @@
     const/4 v0, 0x0
 
     .line 170
-    :goto_30
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_46
+    if-ge v0, v1, :cond_1
 
     .line 171
     iget-object v1, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -244,10 +244,10 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 175
-    :cond_46
+    :cond_1
     iget-object p1, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
 
     check-cast p1, Landroid/view/contentcapture/ContentCaptureSession;
@@ -274,20 +274,20 @@
 
     invoke-static {v0, p1}, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat$Api29Impl;->notifyViewAppeared(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/ViewStructure;)V
 
-    :cond_60
-    :goto_60
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public notifyViewsDisappeared([J)V
-    .registers 6
+    .locals 4
 
     .line 199
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x22
 
-    if-lt v0, v1, :cond_1e
+    if-lt v0, v1, :cond_0
 
     .line 200
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -314,15 +314,15 @@
     .line 200
     invoke-static {v0, v1, p1}, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat$Api29Impl;->notifyViewsDisappeared(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/autofill/AutofillId;[J)V
 
-    goto :goto_70
+    goto :goto_0
 
     .line 204
-    :cond_1e
+    :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_70
+    if-lt v0, v1, :cond_1
 
     .line 205
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;
@@ -405,13 +405,13 @@
 
     invoke-static {v0, p1}, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat$Api29Impl;->notifyViewAppeared(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/ViewStructure;)V
 
-    :cond_70
-    :goto_70
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public toContentCaptureSession()Landroid/view/contentcapture/ContentCaptureSession;
-    .registers 2
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/core/view/contentcapture/ContentCaptureSessionCompat;->mWrappedObj:Ljava/lang/Object;

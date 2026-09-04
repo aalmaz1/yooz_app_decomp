@@ -16,7 +16,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/media3/exoplayer/MediaPeriodQueue;Lcom/google/common/collect/ImmutableList$Builder;Landroidx/media3/exoplayer/source/MediaSource$MediaPeriodId;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public final run()V
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Landroidx/media3/exoplayer/MediaPeriodQueue$$ExternalSyntheticLambda0;->f$0:Landroidx/media3/exoplayer/MediaPeriodQueue;
 

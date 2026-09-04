@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 60
     sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageListener;)V
-    .registers 3
+    .locals 1
 
     .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;)Z
-    .registers 1
+    .locals 0
 
     .line 57
     iget-boolean p0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->closed:Z
@@ -104,7 +104,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;)Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageListener;
-    .registers 1
+    .locals 0
 
     .line 57
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->messageListener:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$MessageListener;
@@ -113,7 +113,7 @@
 .end method
 
 .method static synthetic access$300(Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;)Ljava/util/Map;
-    .registers 1
+    .locals 0
 
     .line 57
     iget-object p0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->interleavedBinaryDataListeners:Ljava/util/Map;
@@ -124,7 +124,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -134,24 +134,24 @@
     .line 165
     iget-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->closed:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x1
 
     .line 169
-    :try_start_6
+    :try_start_0
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->sender:Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_1
 
     .line 170
     invoke-virtual {v1}, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel$Sender;->close()V
 
     .line 172
-    :cond_d
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->receiverLoader:Landroidx/media3/exoplayer/upstream/Loader;
 
     invoke-virtual {v1}, Landroidx/media3/exoplayer/upstream/Loader;->release()V
@@ -159,20 +159,20 @@
     .line 174
     iget-object v1, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->socket:Ljava/net/Socket;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_2
 
     .line 175
     invoke-virtual {v1}, Ljava/net/Socket;->close()V
-    :try_end_19
-    .catchall {:try_start_6 .. :try_end_19} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 178
-    :cond_19
+    :cond_2
     iput-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->closed:Z
 
     return-void
 
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
     iput-boolean v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->closed:Z
@@ -182,7 +182,7 @@
 .end method
 
 .method public open(Ljava/net/Socket;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -230,7 +230,7 @@
 .end method
 
 .method public registerInterleavedBinaryDataListener(ILandroidx/media3/exoplayer/rtsp/RtspMessageChannel$InterleavedBinaryDataListener;)V
-    .registers 4
+    .locals 1
 
     .line 200
     iget-object v0, p0, Landroidx/media3/exoplayer/rtsp/RtspMessageChannel;->interleavedBinaryDataListeners:Ljava/util/Map;
@@ -245,7 +245,7 @@
 .end method
 
 .method public send(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

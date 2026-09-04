@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;)V
-    .registers 4
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Landroidx/camera/video/internal/config/AudioMimeInfo;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/String;ILandroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo$1;)V
-    .registers 5
+    .locals 0
 
     .line 10
     invoke-direct {p0, p1, p2, p3}, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;-><init>(Ljava/lang/String;ILandroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;)V
@@ -50,21 +50,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 58
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/video/internal/config/AudioMimeInfo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_3
 
     .line 59
     check-cast p1, Landroidx/camera/video/internal/config/AudioMimeInfo;
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     iget v1, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->profile:I
 
@@ -89,22 +89,22 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_35
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->compatibleAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_1
 
     .line 62
     invoke-virtual {p1}, Landroidx/camera/video/internal/config/AudioMimeInfo;->getCompatibleAudioProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
     move-result-object p1
 
-    if-nez p1, :cond_35
+    if-nez p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_2a
+    :cond_1
     invoke-virtual {p1}, Landroidx/camera/video/internal/config/AudioMimeInfo;->getCompatibleAudioProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
     move-result-object p1
@@ -113,22 +113,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_35
+    if-eqz p1, :cond_2
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_35
+    :cond_2
     move v0, v2
 
-    :goto_36
+    :goto_0
     return v0
 
-    :cond_37
+    :cond_3
     return v2
 .end method
 
 .method public getCompatibleAudioProfile()Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->compatibleAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
@@ -137,7 +137,7 @@
 .end method
 
 .method public getMimeType()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 30
     iget-object v0, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->mimeType:Ljava/lang/String;
@@ -146,7 +146,7 @@
 .end method
 
 .method public getProfile()I
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->profile:I
@@ -155,7 +155,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 71
     iget-object v0, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->mimeType:Ljava/lang/String;
@@ -180,25 +180,25 @@
     .line 75
     iget-object v1, p0, Landroidx/camera/video/internal/config/AutoValue_AudioMimeInfo;->compatibleAudioProfile:Landroidx/camera/core/impl/EncoderProfilesProxy$AudioProfileProxy;
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_19
+    :goto_0
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 46
     new-instance v0, Ljava/lang/StringBuilder;

@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 8123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getEditChoicesBeforeSending(Landroid/app/RemoteInput;)I
-    .registers 1
+    .locals 0
 
     .line 8127
     invoke-virtual {p0}, Landroid/app/RemoteInput;->getEditChoicesBeforeSending()I

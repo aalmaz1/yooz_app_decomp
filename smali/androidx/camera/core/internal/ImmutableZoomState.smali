@@ -8,7 +8,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 .end method
 
 .method public static create(FFFF)Landroidx/camera/core/ZoomState;
-    .registers 5
+    .locals 1
 
     .line 35
     new-instance v0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;
@@ -28,7 +28,7 @@
 .end method
 
 .method public static create(Landroidx/camera/core/ZoomState;)Landroidx/camera/core/ZoomState;
-    .registers 5
+    .locals 4
 
     .line 41
     new-instance v0, Landroidx/camera/core/internal/AutoValue_ImmutableZoomState;

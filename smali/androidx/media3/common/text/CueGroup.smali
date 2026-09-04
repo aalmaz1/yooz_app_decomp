@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 34
     new-instance v0, Landroidx/media3/common/text/CueGroup;
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;J)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 .end method
 
 .method private static filterOutBitmapCues(Ljava/util/List;)Lcom/google/common/collect/ImmutableList;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -113,12 +113,12 @@
     const/4 v1, 0x0
 
     .line 93
-    :goto_5
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_22
+    if-ge v1, v2, :cond_1
 
     .line 94
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -129,12 +129,12 @@
 
     iget-object v2, v2, Landroidx/media3/common/text/Cue;->bitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 97
-    :cond_16
+    :cond_0
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -143,13 +143,13 @@
 
     invoke-virtual {v0, v2}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    :goto_1f
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 99
-    :cond_22
+    :cond_1
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
@@ -158,7 +158,7 @@
 .end method
 
 .method public static fromBundle(Landroid/os/Bundle;)Landroidx/media3/common/text/CueGroup;
-    .registers 4
+    .locals 3
 
     .line 78
     sget-object v0, Landroidx/media3/common/text/CueGroup;->FIELD_CUES:Ljava/lang/String;
@@ -167,17 +167,17 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 81
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 82
-    :cond_d
+    :cond_0
     new-instance v1, Landroidx/media3/common/text/CueGroup$$ExternalSyntheticLambda1;
 
     invoke-direct {v1}, Landroidx/media3/common/text/CueGroup$$ExternalSyntheticLambda1;-><init>()V
@@ -187,7 +187,7 @@
     move-result-object v0
 
     .line 83
-    :goto_16
+    :goto_0
     sget-object v1, Landroidx/media3/common/text/CueGroup;->FIELD_PRESENTATION_TIME_US:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -205,7 +205,7 @@
 
 # virtual methods
 .method public toBundle()Landroid/os/Bundle;
-    .registers 5
+    .locals 4
 
     .line 66
     new-instance v0, Landroid/os/Bundle;

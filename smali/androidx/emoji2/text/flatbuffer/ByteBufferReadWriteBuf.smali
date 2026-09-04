@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +31,7 @@
 
 # virtual methods
 .method public data()[B
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -44,7 +44,7 @@
 .end method
 
 .method public get(I)B
-    .registers 3
+    .locals 1
 
     .line 22
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -57,28 +57,28 @@
 .end method
 
 .method public getBoolean(I)Z
-    .registers 2
+    .locals 0
 
     .line 17
     invoke-virtual {p0, p1}, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->get(I)B
 
     move-result p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     return p1
 .end method
 
 .method public getDouble(I)D
-    .registers 4
+    .locals 2
 
     .line 47
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -91,7 +91,7 @@
 .end method
 
 .method public getFloat(I)F
-    .registers 3
+    .locals 1
 
     .line 42
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -104,7 +104,7 @@
 .end method
 
 .method public getInt(I)I
-    .registers 3
+    .locals 1
 
     .line 32
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -117,7 +117,7 @@
 .end method
 
 .method public getLong(I)J
-    .registers 4
+    .locals 2
 
     .line 37
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -130,7 +130,7 @@
 .end method
 
 .method public getShort(I)S
-    .registers 3
+    .locals 1
 
     .line 27
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -143,7 +143,7 @@
 .end method
 
 .method public getString(II)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -156,7 +156,7 @@
 .end method
 
 .method public limit()I
-    .registers 2
+    .locals 1
 
     .line 157
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -169,7 +169,7 @@
 .end method
 
 .method public put(B)V
-    .registers 3
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -180,7 +180,7 @@
 .end method
 
 .method public put([BII)V
-    .registers 5
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -191,7 +191,7 @@
 .end method
 
 .method public putBoolean(Z)V
-    .registers 3
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -202,7 +202,7 @@
 .end method
 
 .method public putDouble(D)V
-    .registers 4
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -213,7 +213,7 @@
 .end method
 
 .method public putFloat(F)V
-    .registers 3
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -224,7 +224,7 @@
 .end method
 
 .method public putInt(I)V
-    .registers 3
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -235,7 +235,7 @@
 .end method
 
 .method public putLong(J)V
-    .registers 4
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -246,7 +246,7 @@
 .end method
 
 .method public putShort(S)V
-    .registers 3
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -257,7 +257,7 @@
 .end method
 
 .method public requestCapacity(I)Z
-    .registers 3
+    .locals 1
 
     .line 162
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;
@@ -266,21 +266,21 @@
 
     move-result v0
 
-    if-gt p1, v0, :cond_a
+    if-gt p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_b
+    :goto_0
     return p1
 .end method
 
 .method public set(IB)V
-    .registers 4
+    .locals 1
 
     add-int/lit8 v0, p1, 0x1
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public set(I[BII)V
-    .registers 7
+    .locals 2
 
     sub-int v0, p4, p3
 
@@ -331,7 +331,7 @@
 .end method
 
 .method public setBoolean(IZ)V
-    .registers 3
+    .locals 0
 
     .line 102
     invoke-virtual {p0, p1, p2}, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->set(IB)V
@@ -340,7 +340,7 @@
 .end method
 
 .method public setDouble(ID)V
-    .registers 5
+    .locals 1
 
     add-int/lit8 v0, p1, 0x8
 
@@ -356,7 +356,7 @@
 .end method
 
 .method public setFloat(IF)V
-    .registers 4
+    .locals 1
 
     add-int/lit8 v0, p1, 0x4
 
@@ -372,7 +372,7 @@
 .end method
 
 .method public setInt(II)V
-    .registers 4
+    .locals 1
 
     add-int/lit8 v0, p1, 0x4
 
@@ -388,7 +388,7 @@
 .end method
 
 .method public setLong(IJ)V
-    .registers 5
+    .locals 1
 
     add-int/lit8 v0, p1, 0x8
 
@@ -404,7 +404,7 @@
 .end method
 
 .method public setShort(IS)V
-    .registers 4
+    .locals 1
 
     add-int/lit8 v0, p1, 0x2
 
@@ -420,7 +420,7 @@
 .end method
 
 .method public writePosition()I
-    .registers 2
+    .locals 1
 
     .line 152
     iget-object v0, p0, Landroidx/emoji2/text/flatbuffer/ByteBufferReadWriteBuf;->buffer:Ljava/nio/ByteBuffer;

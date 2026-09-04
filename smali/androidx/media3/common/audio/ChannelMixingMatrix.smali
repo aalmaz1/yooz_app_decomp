@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(II[F)V
-    .registers 13
+    .locals 9
 
     .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,31 +28,31 @@
 
     const/4 v1, 0x0
 
-    if-lez p1, :cond_9
+    if-lez p1, :cond_0
 
     move v2, v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v2, v1
 
-    :goto_a
+    :goto_0
     const-string v3, "Input channel count must be positive."
 
     .line 82
     invoke-static {v2, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-lez p2, :cond_13
+    if-lez p2, :cond_1
 
     move v2, v0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
+    :cond_1
     move v2, v1
 
-    :goto_14
+    :goto_1
     const-string v3, "Output channel count must be positive."
 
     .line 83
@@ -63,16 +63,16 @@
 
     mul-int v3, p1, p2
 
-    if-ne v2, v3, :cond_20
+    if-ne v2, v3, :cond_2
 
     move v2, v0
 
-    goto :goto_21
+    goto :goto_2
 
-    :cond_20
+    :cond_2
     move v2, v1
 
-    :goto_21
+    :goto_2
     const-string v3, "Coefficient array length is invalid."
 
     invoke-static {v2, v3}, Landroidx/media3/common/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
@@ -98,64 +98,64 @@
 
     move p3, v1
 
-    :goto_34
-    if-ge p3, p1, :cond_5a
+    :goto_3
+    if-ge p3, p1, :cond_7
 
     move v5, v1
 
-    :goto_37
-    if-ge v5, p2, :cond_57
+    :goto_4
+    if-ge v5, p2, :cond_6
 
     .line 97
     invoke-virtual {p0, p3, v5}, Landroidx/media3/common/audio/ChannelMixingMatrix;->getMixingCoefficient(II)F
 
     move-result v6
 
-    if-ne p3, v5, :cond_41
+    if-ne p3, v5, :cond_3
 
     move v7, v0
 
-    goto :goto_42
+    goto :goto_5
 
-    :cond_41
+    :cond_3
     move v7, v1
 
-    :goto_42
+    :goto_5
     const/high16 v8, 0x3f800000    # 1.0f
 
     cmpl-float v8, v6, v8
 
-    if-eqz v8, :cond_4b
+    if-eqz v8, :cond_4
 
-    if-eqz v7, :cond_4b
+    if-eqz v7, :cond_4
 
     move v4, v1
 
-    :cond_4b
+    :cond_4
     const/4 v8, 0x0
 
     cmpl-float v6, v6, v8
 
-    if-eqz v6, :cond_54
+    if-eqz v6, :cond_5
 
     move v2, v1
 
-    if-nez v7, :cond_54
+    if-nez v7, :cond_5
 
     move v3, v2
 
-    :cond_54
+    :cond_5
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_37
+    goto :goto_4
 
-    :cond_57
+    :cond_6
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_34
+    goto :goto_3
 
     .line 111
-    :cond_5a
+    :cond_7
     iput-boolean v2, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->isZero:Z
 
     .line 112
@@ -163,46 +163,46 @@
 
     move-result p1
 
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_8
 
-    if-eqz v3, :cond_66
+    if-eqz v3, :cond_8
 
     move p1, v0
 
-    goto :goto_67
+    goto :goto_6
 
-    :cond_66
+    :cond_8
     move p1, v1
 
-    :goto_67
+    :goto_6
     iput-boolean p1, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->isDiagonal:Z
 
-    if-eqz p1, :cond_6e
+    if-eqz p1, :cond_9
 
-    if-eqz v4, :cond_6e
+    if-eqz v4, :cond_9
 
-    goto :goto_6f
+    goto :goto_7
 
-    :cond_6e
+    :cond_9
     move v0, v1
 
     .line 113
-    :goto_6f
+    :goto_7
     iput-boolean v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->isIdentity:Z
 
     return-void
 .end method
 
 .method private static checkCoefficientsValid([F)[F
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
     .line 187
-    :goto_1
+    :goto_0
     array-length v1, p0
 
-    if-ge v0, v1, :cond_29
+    if-ge v0, v1, :cond_1
 
     .line 188
     aget v1, p0, v0
@@ -211,14 +211,14 @@
 
     cmpg-float v1, v1, v2
 
-    if-ltz v1, :cond_e
+    if-ltz v1, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 189
-    :cond_e
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -245,12 +245,12 @@
 
     throw p0
 
-    :cond_29
+    :cond_1
     return-object p0
 .end method
 
 .method public static create(II)Landroidx/media3/common/audio/ChannelMixingMatrix;
-    .registers 4
+    .locals 2
 
     .line 68
     new-instance v0, Landroidx/media3/common/audio/ChannelMixingMatrix;
@@ -266,9 +266,9 @@
 .end method
 
 .method private static createMixingCoefficients(II)[F
-    .registers 5
+    .locals 3
 
-    if-ne p0, p1, :cond_7
+    if-ne p0, p1, :cond_0
 
     .line 160
     invoke-static {p1}, Landroidx/media3/common/audio/ChannelMixingMatrix;->initializeIdentityMatrix(I)[F
@@ -277,36 +277,36 @@
 
     return-object p0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x1
 
     const/4 v1, 0x2
 
-    if-ne p0, v0, :cond_13
+    if-ne p0, v0, :cond_1
 
-    if-ne p1, v1, :cond_13
+    if-ne p1, v1, :cond_1
 
     new-array p0, v1, [F
 
     .line 164
-    fill-array-data p0, :array_42
+    fill-array-data p0, :array_0
 
     return-object p0
 
-    :cond_13
-    if-ne p0, v1, :cond_1d
+    :cond_1
+    if-ne p0, v1, :cond_2
 
-    if-ne p1, v0, :cond_1d
+    if-ne p1, v0, :cond_2
 
     new-array p0, v1, [F
 
     .line 168
-    fill-array-data p0, :array_4a
+    fill-array-data p0, :array_1
 
     return-object p0
 
     .line 170
-    :cond_1d
+    :cond_2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -343,13 +343,13 @@
 
     throw v0
 
-    :array_42
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_4a
+    :array_1
     .array-data 4
         0x3f000000    # 0.5f
         0x3f000000    # 0.5f
@@ -357,7 +357,7 @@
 .end method
 
 .method private static initializeIdentityMatrix(I)[F
-    .registers 5
+    .locals 4
 
     mul-int v0, p0, p0
 
@@ -366,8 +366,8 @@
 
     const/4 v1, 0x0
 
-    :goto_5
-    if-ge v1, p0, :cond_11
+    :goto_0
+    if-ge v1, p0, :cond_0
 
     mul-int v2, p0, v1
 
@@ -380,16 +380,16 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public getInputChannelCount()I
-    .registers 2
+    .locals 1
 
     .line 117
     iget v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->inputChannelCount:I
@@ -398,7 +398,7 @@
 .end method
 
 .method public getMixingCoefficient(II)F
-    .registers 5
+    .locals 2
 
     .line 126
     iget-object v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->coefficients:[F
@@ -415,7 +415,7 @@
 .end method
 
 .method public getOutputChannelCount()I
-    .registers 2
+    .locals 1
 
     .line 121
     iget v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->outputChannelCount:I
@@ -424,7 +424,7 @@
 .end method
 
 .method public isDiagonal()Z
-    .registers 2
+    .locals 1
 
     .line 141
     iget-boolean v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->isDiagonal:Z
@@ -433,7 +433,7 @@
 .end method
 
 .method public isIdentity()Z
-    .registers 2
+    .locals 1
 
     .line 146
     iget-boolean v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->isIdentity:Z
@@ -442,28 +442,28 @@
 .end method
 
 .method public isSquare()Z
-    .registers 3
+    .locals 2
 
     .line 136
     iget v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->inputChannelCount:I
 
     iget v1, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->outputChannelCount:I
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isZero()Z
-    .registers 2
+    .locals 1
 
     .line 131
     iget-boolean v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->isZero:Z
@@ -472,7 +472,7 @@
 .end method
 
 .method public scaleBy(F)Landroidx/media3/common/audio/ChannelMixingMatrix;
-    .registers 6
+    .locals 4
 
     .line 151
     iget-object v0, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->coefficients:[F
@@ -484,12 +484,12 @@
     const/4 v1, 0x0
 
     .line 152
-    :goto_6
+    :goto_0
     iget-object v2, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->coefficients:[F
 
     array-length v3, v2
 
-    if-ge v1, v3, :cond_13
+    if-ge v1, v3, :cond_0
 
     .line 153
     aget v2, v2, v1
@@ -500,10 +500,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 155
-    :cond_13
+    :cond_0
     new-instance p1, Landroidx/media3/common/audio/ChannelMixingMatrix;
 
     iget v1, p0, Landroidx/media3/common/audio/ChannelMixingMatrix;->inputChannelCount:I

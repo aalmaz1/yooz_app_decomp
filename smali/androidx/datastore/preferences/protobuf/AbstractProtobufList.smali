@@ -30,7 +30,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public add(ILjava/lang/Object;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)V"
@@ -63,7 +63,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -82,7 +82,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -103,7 +103,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,7 +124,7 @@
 .end method
 
 .method public clear()V
-    .registers 1
+    .locals 0
 
     .line 122
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->ensureIsMutable()V
@@ -136,17 +136,17 @@
 .end method
 
 .method protected ensureIsMutable()V
-    .registers 2
+    .locals 1
 
     .line 171
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->isMutable:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 172
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -155,29 +155,29 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 63
-    :cond_4
+    :cond_0
     instance-of v1, p1, Ljava/util/List;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 69
-    :cond_a
+    :cond_1
     instance-of v1, p1, Ljava/util/RandomAccess;
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_2
 
     .line 70
     invoke-super {p0, p1}, Ljava/util/AbstractList;->equals(Ljava/lang/Object;)Z
@@ -187,7 +187,7 @@
     return p1
 
     .line 73
-    :cond_13
+    :cond_2
     check-cast p1, Ljava/util/List;
 
     .line 74
@@ -200,15 +200,15 @@
 
     move-result v3
 
-    if-eq v1, v3, :cond_20
+    if-eq v1, v3, :cond_3
 
     return v2
 
-    :cond_20
+    :cond_3
     move v3, v2
 
-    :goto_21
-    if-ge v3, v1, :cond_35
+    :goto_0
+    if-ge v3, v1, :cond_5
 
     .line 79
     invoke-virtual {p0, v3}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->get(I)Ljava/lang/Object;
@@ -223,21 +223,21 @@
 
     move-result v4
 
-    if-nez v4, :cond_32
+    if-nez v4, :cond_4
 
     return v2
 
-    :cond_32
+    :cond_4
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_35
+    :cond_5
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 88
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->size()I
@@ -248,8 +248,8 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v0, :cond_16
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     mul-int/lit8 v1, v1, 0x1f
 
@@ -266,14 +266,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return v1
 .end method
 
 .method public isModifiable()Z
-    .registers 2
+    .locals 1
 
     .line 128
     iget-boolean v0, p0, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->isMutable:Z
@@ -282,7 +282,7 @@
 .end method
 
 .method public final makeImmutable()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -293,7 +293,7 @@
 .end method
 
 .method public remove(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
@@ -312,7 +312,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 0
 
     .line 144
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/AbstractProtobufList;->ensureIsMutable()V
@@ -326,7 +326,7 @@
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -347,7 +347,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -368,7 +368,7 @@
 .end method
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)TE;"

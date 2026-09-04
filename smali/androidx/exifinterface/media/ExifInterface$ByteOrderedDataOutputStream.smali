@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/OutputStream;Ljava/nio/ByteOrder;)V
-    .registers 3
+    .locals 0
 
     .line 7959
     invoke-direct {p0, p1}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public setByteOrder(Ljava/nio/ByteOrder;)V
-    .registers 2
+    .locals 0
 
     .line 7965
     iput-object p1, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mByteOrder:Ljava/nio/ByteOrder;
@@ -48,7 +48,7 @@
 .end method
 
 .method public write([B)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -64,7 +64,7 @@
 .end method
 
 .method public write([BII)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -80,7 +80,7 @@
 .end method
 
 .method public writeByte(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -96,7 +96,7 @@
 .end method
 
 .method public writeInt(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -108,7 +108,7 @@
 
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_0
 
     .line 7994
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mOutputStream:Ljava/io/OutputStream;
@@ -146,15 +146,15 @@
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    goto :goto_55
+    goto :goto_0
 
     .line 7998
-    :cond_2b
+    :cond_0
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mByteOrder:Ljava/nio/ByteOrder;
 
     sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v0, v1, :cond_55
+    if-ne v0, v1, :cond_1
 
     .line 7999
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mOutputStream:Ljava/io/OutputStream;
@@ -192,13 +192,13 @@
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    :cond_55
-    :goto_55
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public writeShort(S)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -210,7 +210,7 @@
 
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     .line 7984
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mOutputStream:Ljava/io/OutputStream;
@@ -230,15 +230,15 @@
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    goto :goto_31
+    goto :goto_0
 
     .line 7986
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mByteOrder:Ljava/nio/ByteOrder;
 
     sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    if-ne v0, v1, :cond_31
+    if-ne v0, v1, :cond_1
 
     .line 7987
     iget-object v0, p0, Landroidx/exifinterface/media/ExifInterface$ByteOrderedDataOutputStream;->mOutputStream:Ljava/io/OutputStream;
@@ -258,13 +258,13 @@
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public writeUnsignedInt(J)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -275,7 +275,7 @@
 
     cmp-long v0, p1, v0
 
-    if-gtz v0, :cond_e
+    if-gtz v0, :cond_0
 
     long-to-int p1, p1
 
@@ -285,7 +285,7 @@
     return-void
 
     .line 8016
-    :cond_e
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo p2, "val is larger than the maximum value of a 32-bit unsigned integer"
@@ -296,7 +296,7 @@
 .end method
 
 .method public writeUnsignedShort(I)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -305,7 +305,7 @@
 
     const v0, 0xffff
 
-    if-gt p1, v0, :cond_a
+    if-gt p1, v0, :cond_0
 
     int-to-short p1, p1
 
@@ -315,7 +315,7 @@
     return-void
 
     .line 8008
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v0, "val is larger than the maximum value of a 16-bit unsigned integer"

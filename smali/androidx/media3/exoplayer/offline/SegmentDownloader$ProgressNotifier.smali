@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/offline/Downloader$ProgressListener;JIJI)V
-    .registers 8
+    .locals 0
 
     .line 535
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method private getPercentDownloaded()F
-    .registers 7
+    .locals 6
 
     .line 555
     iget-wide v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->contentLength:J
@@ -66,13 +66,13 @@
 
     const/high16 v3, 0x42c80000    # 100.0f
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     const-wide/16 v4, 0x0
 
     cmp-long v2, v0, v4
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 556
     iget-wide v4, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
@@ -88,10 +88,10 @@
     return v2
 
     .line 557
-    :cond_17
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->totalSegments:I
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 558
     iget v1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->segmentsDownloaded:I
@@ -106,7 +106,7 @@
 
     return v1
 
-    :cond_22
+    :cond_1
     const/high16 v0, -0x40800000    # -1.0f
 
     return v0
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public onProgress(JJJ)V
-    .registers 13
+    .locals 6
 
     .line 545
     iget-wide p1, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
@@ -139,7 +139,7 @@
 .end method
 
 .method public onSegmentDownloaded()V
-    .registers 8
+    .locals 7
 
     .line 550
     iget v0, p0, Landroidx/media3/exoplayer/offline/SegmentDownloader$ProgressNotifier;->segmentsDownloaded:I

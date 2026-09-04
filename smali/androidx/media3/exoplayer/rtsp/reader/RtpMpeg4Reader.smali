@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/rtsp/RtpPayloadFormat;)V
-    .registers 4
+    .locals 2
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method private static getBufferFlagsFromVop(Landroidx/media3/common/util/ParsableByteArray;)I
-    .registers 5
+    .locals 4
 
     .line 131
     invoke-virtual {p0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -66,7 +66,7 @@
     new-array v2, v1, [B
 
     .line 132
-    fill-array-data v2, :array_20
+    fill-array-data v2, :array_0
 
     .line 133
     invoke-static {v0, v2}, Lcom/google/common/primitives/Bytes;->indexOf([B[B)I
@@ -77,7 +77,7 @@
 
     const/4 v3, 0x0
 
-    if-eq v0, v2, :cond_1f
+    if-eq v0, v2, :cond_0
 
     add-int/2addr v0, v1
 
@@ -91,14 +91,14 @@
 
     shr-int/lit8 p0, p0, 0x6
 
-    if-nez p0, :cond_1f
+    if-nez p0, :cond_0
 
     const/4 v3, 0x1
 
-    :cond_1f
+    :cond_0
     return v3
 
-    :array_20
+    :array_0
     .array-data 1
         0x0t
         0x0t
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;JIZ)V
-    .registers 25
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -128,14 +128,14 @@
 
     const/4 v4, 0x0
 
-    if-eq v2, v3, :cond_30
+    if-eq v2, v3, :cond_0
 
     .line 81
     invoke-static {v2}, Landroidx/media3/exoplayer/rtsp/RtpPacket;->getNextSequenceNumber(I)I
 
     move-result v2
 
-    if-eq v1, v2, :cond_30
+    if-eq v1, v2, :cond_0
 
     const/4 v3, 0x2
 
@@ -169,7 +169,7 @@
     invoke-static {v3, v2}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 93
-    :cond_30
+    :cond_0
     invoke-virtual/range {p1 .. p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v2
@@ -184,7 +184,7 @@
     .line 95
     iget v3, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->sampleLength:I
 
-    if-nez v3, :cond_45
+    if-nez v3, :cond_1
 
     .line 96
     invoke-static/range {p1 .. p1}, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->getBufferFlagsFromVop(Landroidx/media3/common/util/ParsableByteArray;)I
@@ -194,14 +194,14 @@
     iput v3, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->bufferFlags:I
 
     .line 98
-    :cond_45
+    :cond_1
     iget v3, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->sampleLength:I
 
     add-int/2addr v3, v2
 
     iput v3, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->sampleLength:I
 
-    if-eqz p5, :cond_7c
+    if-eqz p5, :cond_3
 
     .line 102
     iget-wide v2, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->firstReceivedTimestamp:J
@@ -210,20 +210,20 @@
 
     cmp-long v2, v2, v5
 
-    if-nez v2, :cond_5c
+    if-nez v2, :cond_2
 
     move-wide/from16 v2, p2
 
     .line 103
     iput-wide v2, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->firstReceivedTimestamp:J
 
-    goto :goto_5e
+    goto :goto_0
 
-    :cond_5c
+    :cond_2
     move-wide/from16 v2, p2
 
     .line 106
-    :goto_5e
+    :goto_0
     iget-wide v5, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->startTimeOffsetUs:J
 
     iget-wide v9, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->firstReceivedTimestamp:J
@@ -256,14 +256,14 @@
     iput v4, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->sampleLength:I
 
     .line 112
-    :cond_7c
+    :cond_3
     iput v1, v0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->previousSequenceNumber:I
 
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -291,13 +291,13 @@
 .end method
 
 .method public onReceivingFirstPacket(JI)V
-    .registers 4
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     .line 117
     iput-wide p1, p0, Landroidx/media3/exoplayer/rtsp/reader/RtpMpeg4Reader;->firstReceivedTimestamp:J

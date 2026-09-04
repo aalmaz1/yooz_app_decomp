@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/encoder/EncoderImpl;)V
-    .registers 2
+    .locals 0
 
     .line 1569
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -80,7 +80,7 @@
 .end method
 
 .method private cancelInputBuffer(Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,7 +97,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_0
 
     .line 1622
     invoke-interface {p1}, Lcom/google/common/util/concurrent/ListenableFuture;->isDone()Z
@@ -107,7 +107,7 @@
     invoke-static {v0}, Landroidx/core/util/Preconditions;->checkState(Z)V
 
     .line 1624
-    :try_start_e
+    :try_start_0
     invoke-interface {p1}, Lcom/google/common/util/concurrent/ListenableFuture;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -115,28 +115,28 @@
     check-cast p1, Landroidx/camera/video/internal/encoder/InputBuffer;
 
     invoke-interface {p1}, Landroidx/camera/video/internal/encoder/InputBuffer;->cancel()Z
-    :try_end_17
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_e .. :try_end_17} :catch_1c
-    .catch Ljava/lang/InterruptedException; {:try_start_e .. :try_end_17} :catch_1a
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_e .. :try_end_17} :catch_18
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_33
+    goto :goto_1
 
-    :catch_18
+    :catch_0
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1a
+    :catch_1
     move-exception p1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :catch_1c
+    :catch_2
     move-exception p1
 
     .line 1626
-    :goto_1d
+    :goto_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
 
     iget-object v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
@@ -157,13 +157,13 @@
 
     invoke-static {v0, p1}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_33
-    :goto_33
+    :cond_0
+    :goto_1
     return-void
 .end method
 
 .method static synthetic lambda$addObserver$6(Landroidx/camera/core/impl/Observable$Observer;Landroidx/camera/video/internal/BufferProvider$State;)V
-    .registers 2
+    .locals 0
 
     .line 1639
     invoke-interface {p0, p1}, Landroidx/camera/core/impl/Observable$Observer;->onNewData(Ljava/lang/Object;)V
@@ -172,7 +172,7 @@
 .end method
 
 .method static synthetic lambda$setActive$9(Ljava/util/Map$Entry;Landroidx/camera/video/internal/BufferProvider$State;)V
-    .registers 2
+    .locals 0
 
     .line 1667
     invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -189,7 +189,7 @@
 
 # virtual methods
 .method public acquireBuffer()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -212,7 +212,7 @@
 .end method
 
 .method public addObserver(Ljava/util/concurrent/Executor;Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -239,7 +239,7 @@
 .end method
 
 .method public fetchData()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -262,7 +262,7 @@
 .end method
 
 .method synthetic lambda$acquireBuffer$2$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 2
+    .locals 0
 
     .line 1598
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->cancelInputBuffer(Lcom/google/common/util/concurrent/ListenableFuture;)V
@@ -271,7 +271,7 @@
 .end method
 
 .method synthetic lambda$acquireBuffer$3$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Lcom/google/common/util/concurrent/ListenableFuture;)V
-    .registers 3
+    .locals 1
 
     .line 1605
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mAcquisitionList:Ljava/util/List;
@@ -282,14 +282,14 @@
 .end method
 
 .method synthetic lambda$acquireBuffer$4$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 5
+    .locals 3
 
     .line 1594
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mBufferProviderState:Landroidx/camera/video/internal/BufferProvider$State;
 
     sget-object v1, Landroidx/camera/video/internal/BufferProvider$State;->ACTIVE:Landroidx/camera/video/internal/BufferProvider$State;
 
-    if-ne v0, v1, :cond_2d
+    if-ne v0, v1, :cond_0
 
     .line 1595
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->this$0:Landroidx/camera/video/internal/encoder/EncoderImpl;
@@ -330,15 +330,15 @@
 
     invoke-interface {v0, p1, v1}, Lcom/google/common/util/concurrent/ListenableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    goto :goto_57
+    goto :goto_0
 
     .line 1606
-    :cond_2d
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mBufferProviderState:Landroidx/camera/video/internal/BufferProvider$State;
 
     sget-object v1, Landroidx/camera/video/internal/BufferProvider$State;->INACTIVE:Landroidx/camera/video/internal/BufferProvider$State;
 
-    if-ne v0, v1, :cond_3e
+    if-ne v0, v1, :cond_1
 
     .line 1607
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -349,10 +349,10 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    goto :goto_57
+    goto :goto_0
 
     .line 1610
-    :cond_3e
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -375,12 +375,12 @@
 
     invoke-virtual {p1, v0}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_57
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$acquireBuffer$5$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -404,7 +404,7 @@
 .end method
 
 .method synthetic lambda$addObserver$7$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Landroidx/camera/core/impl/Observable$Observer;Ljava/util/concurrent/Executor;)V
-    .registers 6
+    .locals 3
 
     .line 1636
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mStateObservers:Ljava/util/Map;
@@ -439,7 +439,7 @@
 .end method
 
 .method synthetic lambda$fetchData$0$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 3
+    .locals 1
 
     .line 1583
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mBufferProviderState:Landroidx/camera/video/internal/BufferProvider$State;
@@ -450,7 +450,7 @@
 .end method
 
 .method synthetic lambda$fetchData$1$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -474,7 +474,7 @@
 .end method
 
 .method synthetic lambda$removeObserver$8$androidx-camera-video-internal-encoder-EncoderImpl$ByteBufferInput(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 3
+    .locals 1
 
     .line 1647
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mStateObservers:Ljava/util/Map;
@@ -489,7 +489,7 @@
 .end method
 
 .method public removeObserver(Landroidx/camera/core/impl/Observable$Observer;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -515,34 +515,34 @@
 .end method
 
 .method setActive(Z)V
-    .registers 6
+    .locals 4
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     .line 1652
     sget-object p1, Landroidx/camera/video/internal/BufferProvider$State;->ACTIVE:Landroidx/camera/video/internal/BufferProvider$State;
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     sget-object p1, Landroidx/camera/video/internal/BufferProvider$State;->INACTIVE:Landroidx/camera/video/internal/BufferProvider$State;
 
     .line 1653
-    :goto_7
+    :goto_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mBufferProviderState:Landroidx/camera/video/internal/BufferProvider$State;
 
-    if-ne v0, p1, :cond_c
+    if-ne v0, p1, :cond_1
 
     return-void
 
     .line 1656
-    :cond_c
+    :cond_1
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mBufferProviderState:Landroidx/camera/video/internal/BufferProvider$State;
 
     .line 1658
     sget-object v0, Landroidx/camera/video/internal/BufferProvider$State;->INACTIVE:Landroidx/camera/video/internal/BufferProvider$State;
 
-    if-ne p1, v0, :cond_2e
+    if-ne p1, v0, :cond_3
 
     .line 1659
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mAcquisitionList:Ljava/util/List;
@@ -551,12 +551,12 @@
 
     move-result-object v0
 
-    :goto_18
+    :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -569,16 +569,16 @@
     .line 1660
     invoke-interface {v1, v2}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    goto :goto_18
+    goto :goto_1
 
     .line 1662
-    :cond_29
+    :cond_2
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mAcquisitionList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     .line 1665
-    :cond_2e
+    :cond_3
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->mStateObservers:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -589,12 +589,12 @@
 
     move-result-object v0
 
-    :goto_38
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -603,7 +603,7 @@
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 1667
-    :try_start_44
+    :try_start_0
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -615,12 +615,12 @@
     invoke-direct {v3, v1, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput$$ExternalSyntheticLambda0;-><init>(Ljava/util/Map$Entry;Landroidx/camera/video/internal/BufferProvider$State;)V
 
     invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_52
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_44 .. :try_end_52} :catch_53
+    :try_end_0
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_38
+    goto :goto_2
 
-    :catch_53
+    :catch_0
     move-exception v1
 
     .line 1669
@@ -632,8 +632,8 @@
 
     invoke-static {v2, v3, v1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_38
+    goto :goto_2
 
-    :cond_5e
+    :cond_4
     return-void
 .end method

@@ -22,7 +22,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/widget/EditText;Z)V
-    .registers 4
+    .locals 1
 
     .line 265
     invoke-direct {p0}, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;-><init>()V
@@ -53,32 +53,32 @@
 
 # virtual methods
 .method getKeyListener(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
-    .registers 3
+    .locals 1
 
     .line 284
     instance-of v0, p1, Landroidx/emoji2/viewsintegration/EmojiKeyListener;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object p1
 
-    :cond_5
-    if-nez p1, :cond_9
+    :cond_0
+    if-nez p1, :cond_1
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 293
-    :cond_9
+    :cond_1
     instance-of v0, p1, Landroid/text/method/NumberKeyListener;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_2
 
     return-object p1
 
     .line 299
-    :cond_e
+    :cond_2
     new-instance v0, Landroidx/emoji2/viewsintegration/EmojiKeyListener;
 
     invoke-direct {v0, p1}, Landroidx/emoji2/viewsintegration/EmojiKeyListener;-><init>(Landroid/text/method/KeyListener;)V
@@ -87,7 +87,7 @@
 .end method
 
 .method isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 324
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal19;->mTextWatcher:Landroidx/emoji2/viewsintegration/EmojiTextWatcher;
@@ -100,17 +100,17 @@
 .end method
 
 .method onCreateInputConnection(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-    .registers 5
+    .locals 2
 
     .line 305
     instance-of v0, p1, Landroidx/emoji2/viewsintegration/EmojiInputConnection;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object p1
 
     .line 310
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/emoji2/viewsintegration/EmojiInputConnection;
 
     iget-object v1, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal19;->mEditText:Landroid/widget/EditText;
@@ -121,7 +121,7 @@
 .end method
 
 .method setEmojiReplaceStrategy(I)V
-    .registers 3
+    .locals 1
 
     .line 279
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal19;->mTextWatcher:Landroidx/emoji2/viewsintegration/EmojiTextWatcher;
@@ -132,7 +132,7 @@
 .end method
 
 .method setEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 315
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal19;->mTextWatcher:Landroidx/emoji2/viewsintegration/EmojiTextWatcher;
@@ -143,7 +143,7 @@
 .end method
 
 .method setMaxEmojiCount(I)V
-    .registers 3
+    .locals 1
 
     .line 274
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal19;->mTextWatcher:Landroidx/emoji2/viewsintegration/EmojiTextWatcher;

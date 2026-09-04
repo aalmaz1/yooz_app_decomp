@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method private static dumpAudioCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$AudioCapabilities;Landroid/media/MediaFormat;)V
-    .registers 6
+    .locals 3
 
     const-string v0, "[AudioCaps] isSampleRateSupported for "
 
@@ -79,7 +79,7 @@
 
     const/16 v2, 0x1f
 
-    if-lt v1, v2, :cond_64
+    if-lt v1, v2, :cond_0
 
     .line 300
     new-instance v1, Ljava/lang/StringBuilder;
@@ -132,7 +132,7 @@
     invoke-static {p0, v1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 307
-    :cond_64
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "[AudioCaps] getSupportedSampleRateRanges = "
@@ -186,7 +186,7 @@
     .line 309
     invoke-static {p0, v1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :try_start_98
+    :try_start_0
     const-string v1, "sample-rate"
 
     .line 313
@@ -224,24 +224,24 @@
 
     .line 314
     invoke-static {p0, p1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    :try_end_bc
-    .catch Ljava/lang/NullPointerException; {:try_start_98 .. :try_end_bc} :catch_bd
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_98 .. :try_end_bc} :catch_bd
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_c2
+    goto :goto_0
 
-    :catch_bd
+    :catch_0
     const-string p1, "[AudioCaps] mediaFormat does not contain sample rate"
 
     .line 317
     invoke-static {p0, p1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :goto_c2
+    :goto_0
     return-void
 .end method
 
 .method public static dumpCodecCapabilities(Ljava/lang/String;Landroid/media/MediaCodec;Landroid/media/MediaFormat;)Ljava/lang/String;
-    .registers 6
+    .locals 3
 
     .line 168
     new-instance v0, Ljava/lang/StringBuilder;
@@ -249,7 +249,7 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 170
-    :try_start_5
+    :try_start_0
     invoke-virtual {p1}, Landroid/media/MediaCodec;->getCodecInfo()Landroid/media/MediaCodecInfo;
 
     move-result-object v1
@@ -258,28 +258,28 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v2, 0x0
 
     .line 172
-    :goto_12
+    :goto_0
     invoke-static {v2}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 173
     invoke-static {v0, v1, p2}, Landroidx/camera/video/internal/DebugUtils;->dumpCodecCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$CodecCapabilities;Landroid/media/MediaFormat;)V
-    :try_end_18
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_39
+    goto :goto_1
 
     .line 175
-    :catch_19
+    :catch_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string v1, "["
@@ -311,7 +311,7 @@
     invoke-static {v0, p0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 178
-    :goto_39
+    :goto_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -320,12 +320,12 @@
 .end method
 
 .method private static dumpCodecCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$CodecCapabilities;Landroid/media/MediaFormat;)V
-    .registers 9
+    .locals 6
 
     const-string v0, "[CodecCaps] isFormatSupported = "
 
     .line 185
-    :try_start_2
+    :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -345,19 +345,19 @@
 
     .line 185
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    :try_end_16
-    .catch Ljava/lang/ClassCastException; {:try_start_2 .. :try_end_16} :catch_17
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :catch_17
+    :catch_0
     const-string v0, "[CodecCaps] isFormatSupported=false"
 
     .line 189
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 192
-    :goto_1c
+    :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[CodecCaps] getDefaultFormat = "
@@ -381,7 +381,7 @@
     .line 193
     iget-object v0, p1, Landroid/media/MediaCodecInfo$CodecCapabilities;->profileLevels:[Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_1
 
     .line 194
     new-instance v0, Ljava/lang/StringBuilder;
@@ -402,8 +402,8 @@
 
     const/4 v4, 0x0
 
-    :goto_46
-    if-ge v4, v3, :cond_54
+    :goto_1
+    if-ge v4, v3, :cond_0
 
     aget-object v5, v2, v4
 
@@ -416,9 +416,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_54
+    :cond_0
     const-string v2, ", "
 
     .line 199
@@ -452,10 +452,10 @@
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 202
-    :cond_75
+    :cond_1
     iget-object v0, p1, Landroid/media/MediaCodecInfo$CodecCapabilities;->colorFormats:[I
 
-    if-eqz v0, :cond_91
+    if-eqz v0, :cond_2
 
     .line 203
     new-instance v0, Ljava/lang/StringBuilder;
@@ -483,44 +483,44 @@
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 207
-    :cond_91
+    :cond_2
     invoke-virtual {p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9a
+    if-eqz v0, :cond_3
 
     .line 209
     invoke-static {p0, v0, p2}, Landroidx/camera/video/internal/DebugUtils;->dumpVideoCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$VideoCapabilities;Landroid/media/MediaFormat;)V
 
     .line 212
-    :cond_9a
+    :cond_3
     invoke-virtual {p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getAudioCapabilities()Landroid/media/MediaCodecInfo$AudioCapabilities;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a3
+    if-eqz v0, :cond_4
 
     .line 214
     invoke-static {p0, v0, p2}, Landroidx/camera/video/internal/DebugUtils;->dumpAudioCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$AudioCapabilities;Landroid/media/MediaFormat;)V
 
     .line 217
-    :cond_a3
+    :cond_4
     invoke-virtual {p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getEncoderCapabilities()Landroid/media/MediaCodecInfo$EncoderCapabilities;
 
     move-result-object p1
 
-    if-eqz p1, :cond_ac
+    if-eqz p1, :cond_5
 
     .line 219
     invoke-static {p0, p1, p2}, Landroidx/camera/video/internal/DebugUtils;->dumpEncoderCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$EncoderCapabilities;Landroid/media/MediaFormat;)V
 
-    :cond_ac
+    :cond_5
     return-void
 .end method
 
 .method private static dumpEncoderCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$EncoderCapabilities;Landroid/media/MediaFormat;)V
-    .registers 6
+    .locals 3
 
     const-string v0, "[EncoderCaps] isBitrateModeSupported = "
 
@@ -568,7 +568,7 @@
     .line 328
     invoke-static {p0, v1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :try_start_2e
+    :try_start_0
     const-string v1, "bitrate-mode"
 
     .line 334
@@ -596,24 +596,24 @@
 
     .line 335
     invoke-static {p0, p1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    :try_end_48
-    .catch Ljava/lang/NullPointerException; {:try_start_2e .. :try_end_48} :catch_49
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2e .. :try_end_48} :catch_49
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4e
+    goto :goto_0
 
-    :catch_49
+    :catch_0
     const-string p1, "[EncoderCaps] mediaFormat does not contain bitrate mode"
 
     .line 339
     invoke-static {p0, p1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :goto_4e
+    :goto_0
     return-void
 .end method
 
 .method public static dumpMediaCodecListForFormat(Landroid/media/MediaCodecList;Landroid/media/MediaFormat;)Ljava/lang/String;
-    .registers 12
+    .locals 10
 
     const-string v0, "]"
 
@@ -657,8 +657,8 @@
 
     move v5, v4
 
-    :goto_26
-    if-ge v5, v3, :cond_aa
+    :goto_0
+    if-ge v5, v3, :cond_3
 
     aget-object v6, p0, v5
 
@@ -667,25 +667,25 @@
 
     move-result v7
 
-    if-nez v7, :cond_32
+    if-nez v7, :cond_0
 
-    goto/16 :goto_a6
+    goto/16 :goto_3
 
-    :cond_32
+    :cond_0
     const/4 v7, 0x1
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_1
 
     move v8, v7
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_37
+    :cond_1
     move v8, v4
 
     .line 144
-    :goto_38
-    :try_start_38
+    :goto_1
+    :try_start_0
     invoke-static {v8}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 145
@@ -693,15 +693,15 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_42
+    if-eqz v8, :cond_2
 
-    goto :goto_43
+    goto :goto_2
 
-    :cond_42
+    :cond_2
     move v7, v4
 
     .line 146
-    :goto_43
+    :goto_2
     invoke-static {v7}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
 
     .line 148
@@ -764,13 +764,13 @@
     move-result-object v7
 
     invoke-static {v1, v7}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    :try_end_85
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_38 .. :try_end_85} :catch_86
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_a6
+    goto :goto_3
 
     .line 152
-    :catch_86
+    :catch_0
     new-instance v7, Ljava/lang/StringBuilder;
 
     const-string v8, "["
@@ -801,12 +801,12 @@
 
     invoke-static {v1, v6}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :goto_a6
+    :goto_3
     add-int/lit8 v5, v5, 0x1
 
-    goto/16 :goto_26
+    goto/16 :goto_0
 
-    :cond_aa
+    :cond_3
     const-string p0, "[End] Dump MediaCodecList"
 
     .line 155
@@ -824,7 +824,7 @@
 .end method
 
 .method private static dumpVideoCapabilities(Ljava/lang/StringBuilder;Landroid/media/MediaCodecInfo$VideoCapabilities;Landroid/media/MediaFormat;)V
-    .registers 13
+    .locals 10
 
     const-string v0, "[VideoCaps] getSupportedWidthsFor "
 
@@ -929,7 +929,7 @@
 
     const/4 v3, 0x1
 
-    :try_start_64
+    :try_start_0
     const-string/jumbo v4, "width"
 
     .line 239
@@ -944,29 +944,29 @@
 
     move-result v5
 
-    if-lez v4, :cond_77
+    if-lez v4, :cond_0
 
-    if-lez v5, :cond_77
+    if-lez v5, :cond_0
 
     move v6, v3
 
-    goto :goto_78
+    goto :goto_0
 
-    :cond_77
+    :cond_0
     move v6, v2
 
     .line 241
-    :goto_78
+    :goto_0
     invoke-static {v6}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
-    :try_end_7b
-    .catch Ljava/lang/NullPointerException; {:try_start_64 .. :try_end_7b} :catch_7d
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_64 .. :try_end_7b} :catch_7d
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     move v6, v3
 
-    goto :goto_85
+    goto :goto_1
 
-    :catch_7d
+    :catch_0
     const-string v4, "[VideoCaps] mediaFormat does not contain valid width and height"
 
     .line 243
@@ -978,15 +978,15 @@
 
     move v6, v5
 
-    :goto_85
+    :goto_1
     const-string/jumbo v7, "x"
 
     const-string v8, " = "
 
-    if-eqz v6, :cond_110
+    if-eqz v6, :cond_1
 
     .line 251
-    :try_start_8c
+    :try_start_1
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -1014,13 +1014,13 @@
 
     .line 251
     invoke-static {p0, v1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    :try_end_a8
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_8c .. :try_end_a8} :catch_a9
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_bb
+    goto :goto_2
 
     .line 254
-    :catch_a9
+    :catch_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v9, "[VideoCaps] could not getSupportedHeightsFor "
@@ -1038,8 +1038,8 @@
     invoke-static {p0, v1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 257
-    :goto_bb
-    :try_start_bb
+    :goto_2
+    :try_start_2
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -1067,13 +1067,13 @@
 
     .line 257
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    :try_end_d7
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_bb .. :try_end_d7} :catch_d8
+    :try_end_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_ea
+    goto :goto_3
 
     .line 260
-    :catch_d8
+    :catch_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[VideoCaps] could not getSupportedWidthsFor "
@@ -1091,7 +1091,7 @@
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 262
-    :goto_ea
+    :goto_3
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[VideoCaps] isSizeSupported for "
@@ -1131,7 +1131,7 @@
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     .line 267
-    :cond_110
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[VideoCaps] getSupportedFrameRates = "
@@ -1154,7 +1154,7 @@
     .line 267
     invoke-static {p0, v0}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :try_start_126
+    :try_start_3
     const-string v0, "frame-rate"
 
     .line 271
@@ -1162,32 +1162,32 @@
 
     move-result p2
 
-    if-lez p2, :cond_12f
+    if-lez p2, :cond_2
 
-    goto :goto_130
+    goto :goto_4
 
-    :cond_12f
+    :cond_2
     move v3, v2
 
     .line 272
-    :goto_130
+    :goto_4
     invoke-static {v3}, Landroidx/core/util/Preconditions;->checkArgument(Z)V
-    :try_end_133
-    .catch Ljava/lang/NullPointerException; {:try_start_126 .. :try_end_133} :catch_135
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_126 .. :try_end_133} :catch_135
+    :try_end_3
+    .catch Ljava/lang/NullPointerException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_3
 
     move v2, p2
 
-    goto :goto_13a
+    goto :goto_5
 
-    :catch_135
+    :catch_3
     const-string p2, "[VideoCaps] mediaFormat does not contain frame rate"
 
     .line 274
     invoke-static {p0, p2}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :goto_13a
-    if-eqz v6, :cond_162
+    :goto_5
+    if-eqz v6, :cond_3
 
     .line 278
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1228,10 +1228,10 @@
     .line 278
     invoke-static {p0, p2}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :cond_162
-    if-eqz v6, :cond_197
+    :cond_3
+    if-eqz v6, :cond_4
 
-    if-lez v2, :cond_197
+    if-lez v2, :cond_4
 
     .line 283
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1284,12 +1284,12 @@
     .line 283
     invoke-static {p0, p1}, Landroidx/camera/video/internal/DebugUtils;->logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    :cond_197
+    :cond_4
     return-void
 .end method
 
 .method private static formatInterval(J)Ljava/lang/String;
-    .registers 11
+    .locals 9
 
     .line 119
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
@@ -1413,7 +1413,7 @@
 .end method
 
 .method private static logToString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
-    .registers 2
+    .locals 0
 
     .line 344
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1427,7 +1427,7 @@
 .end method
 
 .method public static readableBufferInfo(Landroid/media/MediaCodec$BufferInfo;)Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 89
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1536,7 +1536,7 @@
 
     and-int/lit8 v3, v3, 0x4
 
-    if-eqz v3, :cond_75
+    if-eqz v3, :cond_0
 
     const-string v3, "EOS"
 
@@ -1544,12 +1544,12 @@
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 99
-    :cond_75
+    :cond_0
     iget v3, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v3, v3, 0x2
 
-    if-eqz v3, :cond_80
+    if-eqz v3, :cond_1
 
     const-string v3, "CODEC_CONFIG"
 
@@ -1557,12 +1557,12 @@
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 102
-    :cond_80
+    :cond_1
     iget v3, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v3, v3, 0x1
 
-    if-eqz v3, :cond_8b
+    if-eqz v3, :cond_2
 
     const-string v3, "KEY_FRAME"
 
@@ -1570,12 +1570,12 @@
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 105
-    :cond_8b
+    :cond_2
     iget v3, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v3, v3, 0x8
 
-    if-eqz v3, :cond_96
+    if-eqz v3, :cond_3
 
     const-string v3, "PARTIAL_FRAME"
 
@@ -1583,14 +1583,14 @@
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 108
-    :cond_96
+    :cond_3
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
 
     const-string v4, " ("
 
-    if-nez v3, :cond_b1
+    if-nez v3, :cond_4
 
     .line 109
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1612,7 +1612,7 @@
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 111
-    :cond_b1
+    :cond_4
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 113
@@ -1665,7 +1665,7 @@
 .end method
 
 .method public static readableMs(J)Ljava/lang/String;
-    .registers 2
+    .locals 0
 
     .line 77
     invoke-static {p0, p1}, Landroidx/camera/video/internal/DebugUtils;->formatInterval(J)Ljava/lang/String;
@@ -1676,7 +1676,7 @@
 .end method
 
 .method public static readableUs(J)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 65
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
@@ -1693,7 +1693,7 @@
 .end method
 
 .method private static stringToLog(Ljava/lang/String;)V
-    .registers 3
+    .locals 2
 
     const-string v0, "DebugUtils"
 
@@ -1702,7 +1702,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 350
     new-instance v1, Ljava/util/Scanner;
@@ -1710,12 +1710,12 @@
     invoke-direct {v1, p0}, Ljava/util/Scanner;-><init>(Ljava/lang/String;)V
 
     .line 351
-    :goto_d
+    :goto_0
     invoke-virtual {v1}, Ljava/util/Scanner;->hasNextLine()Z
 
     move-result p0
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_0
 
     .line 352
     invoke-virtual {v1}, Ljava/util/Scanner;->nextLine()Ljava/lang/String;
@@ -1724,22 +1724,22 @@
 
     invoke-static {v0, p0}, Landroidx/camera/core/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 .method private static toString(Landroid/media/MediaCodecInfo$CodecProfileLevel;)Ljava/lang/String;
-    .registers 4
+    .locals 3
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     const-string p0, "null"
 
     return-object p0
 
-    :cond_5
+    :cond_0
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;

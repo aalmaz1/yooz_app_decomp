@@ -11,7 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -22,7 +22,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;II)V
-    .registers 10
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/common/TrackGroup;IIILjava/lang/Object;)V
-    .registers 8
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public getSelectedIndex()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -76,7 +76,7 @@
 .end method
 
 .method public getSelectionData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/media3/exoplayer/trackselection/FixedTrackSelection;->data:Ljava/lang/Object;
@@ -85,7 +85,7 @@
 .end method
 
 .method public getSelectionReason()I
-    .registers 2
+    .locals 1
 
     .line 85
     iget v0, p0, Landroidx/media3/exoplayer/trackselection/FixedTrackSelection;->reason:I
@@ -94,7 +94,7 @@
 .end method
 
 .method public updateSelectedTrack(JJJLjava/util/List;[Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;)V
-    .registers 9
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJ",

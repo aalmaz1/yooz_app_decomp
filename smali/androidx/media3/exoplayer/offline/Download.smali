@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/offline/DownloadRequest;IJJJII)V
-    .registers 23
+    .locals 12
 
     .line 142
     new-instance v11, Landroidx/media3/exoplayer/offline/DownloadProgress;
@@ -83,7 +83,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/offline/DownloadRequest;IJJJIILandroidx/media3/exoplayer/offline/DownloadProgress;)V
-    .registers 16
+    .locals 4
 
     .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,60 +95,60 @@
 
     const/4 v1, 0x0
 
-    if-nez p10, :cond_c
+    if-nez p10, :cond_0
 
     move v2, v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move v2, v1
 
-    :goto_d
+    :goto_0
     const/4 v3, 0x4
 
-    if-eq p2, v3, :cond_12
+    if-eq p2, v3, :cond_1
 
     move v3, v0
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
+    :cond_1
     move v3, v1
 
-    :goto_13
-    if-ne v2, v3, :cond_17
+    :goto_1
+    if-ne v2, v3, :cond_2
 
     move v2, v0
 
-    goto :goto_18
+    goto :goto_2
 
-    :cond_17
+    :cond_2
     move v2, v1
 
     .line 163
-    :goto_18
+    :goto_2
     invoke-static {v2}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
-    if-eqz p9, :cond_27
+    if-eqz p9, :cond_4
 
     const/4 v2, 0x2
 
-    if-eq p2, v2, :cond_23
+    if-eq p2, v2, :cond_3
 
-    if-eqz p2, :cond_23
+    if-eqz p2, :cond_3
 
-    goto :goto_24
+    goto :goto_3
 
-    :cond_23
+    :cond_3
     move v0, v1
 
     .line 165
-    :goto_24
+    :goto_3
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 167
-    :cond_27
+    :cond_4
     iput-object p1, p0, Landroidx/media3/exoplayer/offline/Download;->request:Landroidx/media3/exoplayer/offline/DownloadRequest;
 
     .line 168
@@ -178,7 +178,7 @@
 
 # virtual methods
 .method public getBytesDownloaded()J
-    .registers 3
+    .locals 2
 
     .line 184
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/Download;->progress:Landroidx/media3/exoplayer/offline/DownloadProgress;
@@ -189,7 +189,7 @@
 .end method
 
 .method public getPercentDownloaded()F
-    .registers 2
+    .locals 1
 
     .line 192
     iget-object v0, p0, Landroidx/media3/exoplayer/offline/Download;->progress:Landroidx/media3/exoplayer/offline/DownloadProgress;
@@ -200,30 +200,30 @@
 .end method
 
 .method public isTerminalState()Z
-    .registers 3
+    .locals 2
 
     .line 179
     iget v0, p0, Landroidx/media3/exoplayer/offline/Download;->state:I
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_1
 
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_c
+    :goto_1
     return v0
 .end method

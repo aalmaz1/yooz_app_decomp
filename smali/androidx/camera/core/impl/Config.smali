@@ -15,45 +15,45 @@
 
 # direct methods
 .method public static hasConflict(Landroidx/camera/core/impl/Config$OptionPriority;Landroidx/camera/core/impl/Config$OptionPriority;)Z
-    .registers 4
+    .locals 2
 
     .line 286
     sget-object v0, Landroidx/camera/core/impl/Config$OptionPriority;->ALWAYS_OVERRIDE:Landroidx/camera/core/impl/Config$OptionPriority;
 
     const/4 v1, 0x1
 
-    if-ne p0, v0, :cond_a
+    if-ne p0, v0, :cond_0
 
     sget-object v0, Landroidx/camera/core/impl/Config$OptionPriority;->ALWAYS_OVERRIDE:Landroidx/camera/core/impl/Config$OptionPriority;
 
-    if-ne p1, v0, :cond_a
+    if-ne p1, v0, :cond_0
 
     return v1
 
     .line 291
-    :cond_a
+    :cond_0
     sget-object v0, Landroidx/camera/core/impl/Config$OptionPriority;->REQUIRED:Landroidx/camera/core/impl/Config$OptionPriority;
 
-    if-ne p0, v0, :cond_13
+    if-ne p0, v0, :cond_1
 
     sget-object p0, Landroidx/camera/core/impl/Config$OptionPriority;->REQUIRED:Landroidx/camera/core/impl/Config$OptionPriority;
 
-    if-ne p1, p0, :cond_13
+    if-ne p1, p0, :cond_1
 
     return v1
 
-    :cond_13
+    :cond_1
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public static mergeConfigs(Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/Config;
-    .registers 5
+    .locals 3
 
-    if-nez p0, :cond_9
+    if-nez p0, :cond_0
 
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     .line 311
     invoke-static {}, Landroidx/camera/core/impl/OptionsBundle;->emptyBundle()Landroidx/camera/core/impl/OptionsBundle;
@@ -62,24 +62,24 @@
 
     return-object p0
 
-    :cond_9
-    if-eqz p1, :cond_10
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 317
     invoke-static {p1}, Landroidx/camera/core/impl/MutableOptionsBundle;->from(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/MutableOptionsBundle;
 
     move-result-object v0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 319
-    :cond_10
+    :cond_1
     invoke-static {}, Landroidx/camera/core/impl/MutableOptionsBundle;->create()Landroidx/camera/core/impl/MutableOptionsBundle;
 
     move-result-object v0
 
-    :goto_14
-    if-eqz p0, :cond_2e
+    :goto_0
+    if-eqz p0, :cond_2
 
     .line 325
     invoke-interface {p0}, Landroidx/camera/core/impl/Config;->listOptions()Ljava/util/Set;
@@ -90,12 +90,12 @@
 
     move-result-object v1
 
-    :goto_1e
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -106,10 +106,10 @@
     .line 326
     invoke-static {v0, p1, p0, v2}, Landroidx/camera/core/impl/Config;->mergeOptionValue(Landroidx/camera/core/impl/MutableOptionsBundle;Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/Config$Option;)V
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 330
-    :cond_2e
+    :cond_2
     invoke-static {v0}, Landroidx/camera/core/impl/OptionsBundle;->from(Landroidx/camera/core/impl/Config;)Landroidx/camera/core/impl/OptionsBundle;
 
     move-result-object p0
@@ -118,7 +118,7 @@
 .end method
 
 .method public static mergeOptionValue(Landroidx/camera/core/impl/MutableOptionsBundle;Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/Config;Landroidx/camera/core/impl/Config$Option;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -137,7 +137,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -168,10 +168,10 @@
     .line 356
     invoke-virtual {p0, p3, p2, p1}, Landroidx/camera/core/impl/MutableOptionsBundle;->insertOption(Landroidx/camera/core/impl/Config$Option;Landroidx/camera/core/impl/Config$OptionPriority;Ljava/lang/Object;)V
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 362
-    :cond_21
+    :cond_0
     invoke-interface {p2, p3}, Landroidx/camera/core/impl/Config;->getOptionPriority(Landroidx/camera/core/impl/Config$Option;)Landroidx/camera/core/impl/Config$OptionPriority;
 
     move-result-object p1
@@ -184,7 +184,7 @@
     .line 361
     invoke-virtual {p0, p3, p1, p2}, Landroidx/camera/core/impl/MutableOptionsBundle;->insertOption(Landroidx/camera/core/impl/Config$Option;Landroidx/camera/core/impl/Config$OptionPriority;Ljava/lang/Object;)V
 
-    :goto_2c
+    :goto_0
     return-void
 .end method
 

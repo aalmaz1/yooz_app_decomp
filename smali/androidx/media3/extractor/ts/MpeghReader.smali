@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -145,7 +145,7 @@
 .end method
 
 .method private copyData(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/common/util/ParsableByteArray;Z)V
-    .registers 8
+    .locals 4
 
     .line 231
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -179,17 +179,17 @@
     .line 234
     invoke-virtual {p2, v1}, Landroidx/media3/common/util/ParsableByteArray;->skipBytes(I)V
 
-    if-eqz p3, :cond_23
+    if-eqz p3, :cond_0
 
     .line 236
     invoke-virtual {p1, v0}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
-    :cond_23
+    :cond_0
     return-void
 .end method
 
 .method private finalizeFrame()V
-    .registers 11
+    .locals 10
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -201,7 +201,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 364
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/MpeghReader;->rapPending:Z
@@ -210,13 +210,13 @@
 
     move v5, v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v5, v1
 
     .line 366
-    :goto_b
+    :goto_0
     iget v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->standardFrameLength:I
 
     iget v2, p0, Landroidx/media3/extractor/ts/MpeghReader;->truncationSamples:I
@@ -245,7 +245,7 @@
     .line 369
     iget-boolean v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->dataPending:Z
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 370
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/MpeghReader;->dataPending:Z
@@ -255,10 +255,10 @@
 
     iput-wide v2, p0, Landroidx/media3/extractor/ts/MpeghReader;->timeUs:D
 
-    goto :goto_31
+    goto :goto_1
 
     .line 373
-    :cond_2c
+    :cond_1
     iget-wide v8, p0, Landroidx/media3/extractor/ts/MpeghReader;->timeUs:D
 
     add-double/2addr v8, v2
@@ -266,7 +266,7 @@
     iput-wide v8, p0, Landroidx/media3/extractor/ts/MpeghReader;->timeUs:D
 
     .line 375
-    :goto_31
+    :goto_1
     iget-object v2, p0, Landroidx/media3/extractor/ts/MpeghReader;->output:Landroidx/media3/extractor/TrackOutput;
 
     iget v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->frameBytes:I
@@ -298,7 +298,7 @@
 .end method
 
 .method private parseConfig(Landroidx/media3/common/util/ParsableBitArray;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -337,7 +337,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_7d
+    if-eqz v0, :cond_2
 
     .line 331
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->header:Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;
@@ -353,7 +353,7 @@
 
     const-string v3, "mhm1"
 
-    if-eq v0, v2, :cond_42
+    if-eq v0, v2, :cond_0
 
     .line 335
     new-instance v0, Ljava/lang/StringBuilder;
@@ -387,16 +387,16 @@
     move-result-object v3
 
     .line 338
-    :cond_42
+    :cond_0
     iget-object v0, p1, Landroidx/media3/extractor/ts/MpeghUtil$Mpegh3daConfig;->compatibleProfileLevelSet:[B
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_1
 
     iget-object v0, p1, Landroidx/media3/extractor/ts/MpeghUtil$Mpegh3daConfig;->compatibleProfileLevelSet:[B
 
     array-length v0, v0
 
-    if-lez v0, :cond_54
+    if-lez v0, :cond_1
 
     .line 341
     sget-object v0, Landroidx/media3/common/util/Util;->EMPTY_BYTE_ARRAY:[B
@@ -408,13 +408,13 @@
 
     move-result-object p1
 
-    goto :goto_55
+    goto :goto_0
 
-    :cond_54
+    :cond_1
     const/4 p1, 0x0
 
     .line 344
-    :goto_55
+    :goto_0
     new-instance v0, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v0}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -461,14 +461,14 @@
     invoke-interface {v0, p1}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
     .line 354
-    :cond_7d
+    :cond_2
     iput-boolean v1, p0, Landroidx/media3/extractor/ts/MpeghReader;->configFound:Z
 
     return-void
 .end method
 
 .method private parseHeader()Z
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -502,7 +502,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     const/4 v2, 0x0
 
@@ -522,33 +522,33 @@
 
     iput v2, p0, Landroidx/media3/extractor/ts/MpeghReader;->frameBytes:I
 
-    :cond_28
+    :cond_0
     return v1
 .end method
 
 .method private shouldParsePacket(I)Z
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_9
+    if-eq p1, v0, :cond_1
 
     const/16 v1, 0x11
 
-    if-ne p1, v1, :cond_8
+    if-ne p1, v1, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :cond_9
-    :goto_9
+    :cond_1
+    :goto_0
     return v0
 .end method
 
 .method private skipToNextSync(Landroidx/media3/common/util/ParsableByteArray;)Z
-    .registers 6
+    .locals 4
 
     .line 248
     iget v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->flags:I
@@ -557,7 +557,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 250
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -568,20 +568,20 @@
 
     return v2
 
-    :cond_f
+    :cond_0
     and-int/lit8 v0, v0, 0x4
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3
 
     .line 256
-    :cond_14
+    :cond_1
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_39
+    if-lez v0, :cond_2
 
     .line 257
     iget v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->syncBytes:I
@@ -604,7 +604,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 260
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->getPosition()I
@@ -620,15 +620,15 @@
 
     return v1
 
-    :cond_39
+    :cond_2
     return v2
 
-    :cond_3a
+    :cond_3
     return v1
 .end method
 
 .method private writeSampleData(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 5
+    .locals 3
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "output"
@@ -670,7 +670,7 @@
 
 # virtual methods
 .method public consume(Landroidx/media3/common/util/ParsableByteArray;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -683,26 +683,26 @@
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 158
-    :cond_5
-    :goto_5
+    :cond_0
+    :goto_0
     invoke-virtual {p1}, Landroidx/media3/common/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
-    if-lez v0, :cond_ce
+    if-lez v0, :cond_a
 
     .line 159
     iget v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->state:I
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_c4
+    if-eqz v0, :cond_9
 
     const/4 v2, 0x2
 
-    if-eq v0, v1, :cond_70
+    if-eq v0, v1, :cond_6
 
-    if-ne v0, v2, :cond_6a
+    if-ne v0, v2, :cond_5
 
     .line 192
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->header:Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;
@@ -713,7 +713,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 193
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->dataScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
@@ -721,7 +721,7 @@
     invoke-direct {p0, p1, v0, v1}, Landroidx/media3/extractor/ts/MpeghReader;->copyData(Landroidx/media3/common/util/ParsableByteArray;Landroidx/media3/common/util/ParsableByteArray;Z)V
 
     .line 195
-    :cond_24
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/MpeghReader;->writeSampleData(Landroidx/media3/common/util/ParsableByteArray;)V
 
     .line 196
@@ -731,14 +731,14 @@
 
     iget v3, v3, Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;->packetLength:I
 
-    if-ne v0, v3, :cond_5
+    if-ne v0, v3, :cond_0
 
     .line 197
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->header:Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;
 
     iget v0, v0, Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;->packetType:I
 
-    if-ne v0, v1, :cond_44
+    if-ne v0, v1, :cond_2
 
     .line 198
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
@@ -753,17 +753,17 @@
 
     invoke-direct {p0, v0}, Landroidx/media3/extractor/ts/MpeghReader;->parseConfig(Landroidx/media3/common/util/ParsableBitArray;)V
 
-    goto :goto_67
+    goto :goto_1
 
     .line 199
-    :cond_44
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->header:Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;
 
     iget v0, v0, Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;->packetType:I
 
     const/16 v3, 0x11
 
-    if-ne v0, v3, :cond_5e
+    if-ne v0, v3, :cond_3
 
     .line 200
     new-instance v0, Landroidx/media3/common/util/ParsableBitArray;
@@ -784,28 +784,28 @@
 
     iput v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->truncationSamples:I
 
-    goto :goto_67
+    goto :goto_1
 
     .line 203
-    :cond_5e
+    :cond_3
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->header:Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;
 
     iget v0, v0, Landroidx/media3/extractor/ts/MpeghUtil$MhasPacketHeader;->packetType:I
 
-    if-ne v0, v2, :cond_67
+    if-ne v0, v2, :cond_4
 
     .line 204
     invoke-direct {p0}, Landroidx/media3/extractor/ts/MpeghReader;->finalizeFrame()V
 
     .line 207
-    :cond_67
-    :goto_67
+    :cond_4
+    :goto_1
     iput v1, p0, Landroidx/media3/extractor/ts/MpeghReader;->state:I
 
-    goto :goto_5
+    goto :goto_0
 
     .line 211
-    :cond_6a
+    :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -813,7 +813,7 @@
     throw p1
 
     .line 166
-    :cond_70
+    :cond_6
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     const/4 v3, 0x0
@@ -827,14 +827,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_c0
+    if-nez v0, :cond_8
 
     .line 168
     invoke-direct {p0}, Landroidx/media3/extractor/ts/MpeghReader;->parseHeader()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a8
+    if-eqz v0, :cond_7
 
     .line 170
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
@@ -872,10 +872,10 @@
     .line 182
     iput v2, p0, Landroidx/media3/extractor/ts/MpeghReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 183
-    :cond_a8
+    :cond_7
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->limit()I
@@ -884,7 +884,7 @@
 
     const/16 v2, 0xf
 
-    if-ge v0, v2, :cond_5
+    if-ge v0, v2, :cond_0
 
     .line 184
     iget-object v0, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerScratchBytes:Landroidx/media3/common/util/ParsableByteArray;
@@ -900,33 +900,33 @@
     .line 185
     iput-boolean v3, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerDataFinished:Z
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 188
-    :cond_c0
+    :cond_8
     iput-boolean v3, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerDataFinished:Z
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 161
-    :cond_c4
+    :cond_9
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ts/MpeghReader;->skipToNextSync(Landroidx/media3/common/util/ParsableByteArray;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 162
     iput v1, p0, Landroidx/media3/extractor/ts/MpeghReader;->state:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
-    :cond_ce
+    :cond_a
     return-void
 .end method
 
 .method public createTracks(Landroidx/media3/extractor/ExtractorOutput;Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-    .registers 4
+    .locals 1
 
     .line 131
     invoke-virtual {p2}, Landroidx/media3/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
@@ -955,13 +955,13 @@
 .end method
 
 .method public packetFinished(Z)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public packetStarted(JI)V
-    .registers 6
+    .locals 2
 
     .line 138
     iput p3, p0, Landroidx/media3/extractor/ts/MpeghReader;->flags:I
@@ -969,54 +969,54 @@
     .line 141
     iget-boolean p3, p0, Landroidx/media3/extractor/ts/MpeghReader;->rapPending:Z
 
-    if-nez p3, :cond_11
+    if-nez p3, :cond_1
 
     iget p3, p0, Landroidx/media3/extractor/ts/MpeghReader;->frameBytes:I
 
-    if-nez p3, :cond_e
+    if-nez p3, :cond_0
 
     iget-boolean p3, p0, Landroidx/media3/extractor/ts/MpeghReader;->headerDataFinished:Z
 
-    if-nez p3, :cond_11
+    if-nez p3, :cond_1
 
-    :cond_e
+    :cond_0
     const/4 p3, 0x1
 
     .line 142
     iput-boolean p3, p0, Landroidx/media3/extractor/ts/MpeghReader;->dataPending:Z
 
-    :cond_11
+    :cond_1
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long p3, p1, v0
 
-    if-eqz p3, :cond_25
+    if-eqz p3, :cond_3
 
     .line 146
     iget-boolean p3, p0, Landroidx/media3/extractor/ts/MpeghReader;->dataPending:Z
 
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_2
 
     long-to-double p1, p1
 
     .line 147
     iput-wide p1, p0, Landroidx/media3/extractor/ts/MpeghReader;->timeUsPending:D
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_22
+    :cond_2
     long-to-double p1, p1
 
     .line 149
     iput-wide p1, p0, Landroidx/media3/extractor/ts/MpeghReader;->timeUs:D
 
-    :cond_25
-    :goto_25
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public seek()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 

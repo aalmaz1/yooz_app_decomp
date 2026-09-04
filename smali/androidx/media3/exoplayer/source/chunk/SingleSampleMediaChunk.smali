@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/datasource/DataSource;Landroidx/media3/datasource/DataSpec;Landroidx/media3/common/Format;ILjava/lang/Object;JJJILandroidx/media3/common/Format;)V
-    .registers 30
+    .locals 16
 
     move-object/from16 v14, p0
 
@@ -60,13 +60,13 @@
 
 # virtual methods
 .method public cancelLoad()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public isLoadCompleted()Z
-    .registers 2
+    .locals 1
 
     .line 80
     iget-boolean v0, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->loadCompleted:Z
@@ -75,7 +75,7 @@
 .end method
 
 .method public load()V
-    .registers 12
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -107,7 +107,7 @@
     invoke-interface {v3, v0}, Landroidx/media3/extractor/TrackOutput;->format(Landroidx/media3/common/Format;)V
 
     .line 99
-    :try_start_15
+    :try_start_0
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
     iget-wide v4, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->nextLoadPosition:J
@@ -127,14 +127,14 @@
 
     cmp-long v4, v0, v4
 
-    if-eqz v4, :cond_2c
+    if-eqz v4, :cond_0
 
     .line 102
     iget-wide v4, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->nextLoadPosition:J
 
     add-long/2addr v0, v4
 
-    :cond_2c
+    :cond_0
     move-wide v8, v0
 
     .line 104
@@ -148,12 +148,12 @@
 
     invoke-direct/range {v4 .. v9}, Landroidx/media3/extractor/DefaultExtractorInput;-><init>(Landroidx/media3/common/DataReader;JJ)V
 
-    :goto_37
+    :goto_0
     const/4 v1, -0x1
 
     const/4 v10, 0x1
 
-    if-eq v2, v1, :cond_49
+    if-eq v2, v1, :cond_1
 
     .line 109
     iget-wide v4, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->nextLoadPosition:J
@@ -171,10 +171,10 @@
 
     move-result v2
 
-    goto :goto_37
+    goto :goto_0
 
     .line 112
-    :cond_49
+    :cond_1
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->nextLoadPosition:J
 
     long-to-int v7, v0
@@ -189,8 +189,8 @@
     const/4 v9, 0x0
 
     invoke-interface/range {v3 .. v9}, Landroidx/media3/extractor/TrackOutput;->sampleMetadata(JIIILandroidx/media3/extractor/TrackOutput$CryptoData;)V
-    :try_end_54
-    .catchall {:try_start_15 .. :try_end_54} :catchall_5c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 115
     iget-object v0, p0, Landroidx/media3/exoplayer/source/chunk/SingleSampleMediaChunk;->dataSource:Landroidx/media3/datasource/StatsDataSource;
@@ -202,7 +202,7 @@
 
     return-void
 
-    :catchall_5c
+    :catchall_0
     move-exception v0
 
     .line 115

@@ -14,7 +14,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -28,7 +28,7 @@
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderInfoImpl;->mMediaCodecInfo:Landroid/media/MediaCodecInfo;
 
     .line 44
-    :try_start_5
+    :try_start_0
     invoke-virtual {p1, p2}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     move-result-object p1
@@ -40,12 +40,12 @@
     check-cast p1, Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderInfoImpl;->mCodecCapabilities:Landroid/media/MediaCodecInfo$CodecCapabilities;
-    :try_end_11
-    .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_11} :catch_12
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
-    :catch_12
+    :catch_0
     move-exception p1
 
     .line 48
@@ -71,7 +71,7 @@
 .end method
 
 .method static findCodecAndGetCodecInfo(Landroidx/camera/video/internal/encoder/EncoderConfig;)Landroid/media/MediaCodecInfo;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderInfoImpl;->mMediaCodecInfo:Landroid/media/MediaCodecInfo;

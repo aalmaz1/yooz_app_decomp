@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 695
     invoke-static {}, Landroidx/datastore/preferences/protobuf/Enum;->access$000()Landroidx/datastore/preferences/protobuf/Enum;
@@ -42,7 +42,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/datastore/preferences/protobuf/Enum$1;)V
-    .registers 2
+    .locals 0
 
     .line 688
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;-><init>()V
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public addAllEnumvalue(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,7 +79,7 @@
 .end method
 
 .method public addAllOptions(Ljava/lang/Iterable;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,7 +105,7 @@
 .end method
 
 .method public addEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 874
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -121,7 +121,7 @@
 .end method
 
 .method public addEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 848
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -137,7 +137,7 @@
 .end method
 
 .method public addEnumvalue(Landroidx/datastore/preferences/protobuf/EnumValue$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 861
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -153,7 +153,7 @@
 .end method
 
 .method public addEnumvalue(Landroidx/datastore/preferences/protobuf/EnumValue;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 835
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -169,7 +169,7 @@
 .end method
 
 .method public addOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 1022
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -185,7 +185,7 @@
 .end method
 
 .method public addOptions(ILandroidx/datastore/preferences/protobuf/Option;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 996
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -201,7 +201,7 @@
 .end method
 
 .method public addOptions(Landroidx/datastore/preferences/protobuf/Option$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1009
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -217,7 +217,7 @@
 .end method
 
 .method public addOptions(Landroidx/datastore/preferences/protobuf/Option;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 983
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -233,7 +233,7 @@
 .end method
 
 .method public clearEnumvalue()Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 2
+    .locals 1
 
     .line 899
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -249,7 +249,7 @@
 .end method
 
 .method public clearName()Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 2
+    .locals 1
 
     .line 748
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -265,7 +265,7 @@
 .end method
 
 .method public clearOptions()Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 2
+    .locals 1
 
     .line 1047
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -281,7 +281,7 @@
 .end method
 
 .method public clearSourceContext()Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 2
+    .locals 1
 
     .line 1130
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -297,7 +297,7 @@
 .end method
 
 .method public clearSyntax()Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 2
+    .locals 1
 
     .line 1196
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -313,7 +313,7 @@
 .end method
 
 .method public getEnumvalue(I)Landroidx/datastore/preferences/protobuf/EnumValue;
-    .registers 3
+    .locals 1
 
     .line 799
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -328,7 +328,7 @@
 .end method
 
 .method public getEnumvalueCount()I
-    .registers 2
+    .locals 1
 
     .line 789
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -343,7 +343,7 @@
 .end method
 
 .method public getEnumvalueList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -372,7 +372,7 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 709
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -387,7 +387,7 @@
 .end method
 
 .method public getNameBytes()Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 2
+    .locals 1
 
     .line 722
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -402,7 +402,7 @@
 .end method
 
 .method public getOptions(I)Landroidx/datastore/preferences/protobuf/Option;
-    .registers 3
+    .locals 1
 
     .line 947
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -417,7 +417,7 @@
 .end method
 
 .method public getOptionsCount()I
-    .registers 2
+    .locals 1
 
     .line 937
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -432,7 +432,7 @@
 .end method
 
 .method public getOptionsList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -461,7 +461,7 @@
 .end method
 
 .method public getSourceContext()Landroidx/datastore/preferences/protobuf/SourceContext;
-    .registers 2
+    .locals 1
 
     .line 1084
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -476,7 +476,7 @@
 .end method
 
 .method public getSyntax()Landroidx/datastore/preferences/protobuf/Syntax;
-    .registers 2
+    .locals 1
 
     .line 1171
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -491,7 +491,7 @@
 .end method
 
 .method public getSyntaxValue()I
-    .registers 2
+    .locals 1
 
     .line 1145
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -506,7 +506,7 @@
 .end method
 
 .method public hasSourceContext()Z
-    .registers 2
+    .locals 1
 
     .line 1073
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/Enum$Builder;->instance:Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -521,7 +521,7 @@
 .end method
 
 .method public mergeSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1119
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -537,7 +537,7 @@
 .end method
 
 .method public removeEnumvalue(I)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 911
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -553,7 +553,7 @@
 .end method
 
 .method public removeOptions(I)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1059
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -569,7 +569,7 @@
 .end method
 
 .method public setEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 823
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -585,7 +585,7 @@
 .end method
 
 .method public setEnumvalue(ILandroidx/datastore/preferences/protobuf/EnumValue;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 810
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -601,7 +601,7 @@
 .end method
 
 .method public setName(Ljava/lang/String;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 735
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -617,7 +617,7 @@
 .end method
 
 .method public setNameBytes(Landroidx/datastore/preferences/protobuf/ByteString;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 763
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -633,7 +633,7 @@
 .end method
 
 .method public setOptions(ILandroidx/datastore/preferences/protobuf/Option$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 971
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -649,7 +649,7 @@
 .end method
 
 .method public setOptions(ILandroidx/datastore/preferences/protobuf/Option;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 4
+    .locals 1
 
     .line 958
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -665,7 +665,7 @@
 .end method
 
 .method public setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext$Builder;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1107
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -681,7 +681,7 @@
 .end method
 
 .method public setSourceContext(Landroidx/datastore/preferences/protobuf/SourceContext;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1094
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -697,7 +697,7 @@
 .end method
 
 .method public setSyntax(Landroidx/datastore/preferences/protobuf/Syntax;)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1183
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V
@@ -713,7 +713,7 @@
 .end method
 
 .method public setSyntaxValue(I)Landroidx/datastore/preferences/protobuf/Enum$Builder;
-    .registers 3
+    .locals 1
 
     .line 1157
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/Enum$Builder;->copyOnWrite()V

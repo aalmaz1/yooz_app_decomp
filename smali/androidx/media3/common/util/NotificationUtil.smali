@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,14 +36,14 @@
 .end method
 
 .method public static createNotificationChannel(Landroid/content/Context;Ljava/lang/String;III)V
-    .registers 7
+    .locals 2
 
     .line 116
     sget v0, Landroidx/media3/common/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
 
-    if-lt v0, v1, :cond_29
+    if-lt v0, v1, :cond_1
 
     const-string v0, "notification"
 
@@ -71,7 +71,7 @@
 
     invoke-direct {v1, p1, p2, p4}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    if-eqz p3, :cond_26
+    if-eqz p3, :cond_0
 
     .line 123
     invoke-virtual {p0, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -81,15 +81,15 @@
     invoke-virtual {v1, p0}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
 
     .line 125
-    :cond_26
+    :cond_0
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    :cond_29
+    :cond_1
     return-void
 .end method
 
 .method public static setNotification(Landroid/content/Context;ILandroid/app/Notification;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "notification"
 
@@ -106,17 +106,17 @@
 
     check-cast p0, Landroid/app/NotificationManager;
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_0
 
     .line 144
     invoke-virtual {p0, p1, p2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-    goto :goto_17
+    goto :goto_0
 
     .line 146
-    :cond_14
+    :cond_0
     invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->cancel(I)V
 
-    :goto_17
+    :goto_0
     return-void
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/media3/exoplayer/audio/DefaultAudioSink;)V
-    .registers 2
+    .locals 0
 
     .line 2056
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PositionTrackerListener;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -34,7 +34,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/audio/DefaultAudioSink;Landroidx/media3/exoplayer/audio/DefaultAudioSink$1;)V
-    .registers 3
+    .locals 0
 
     .line 2056
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PositionTrackerListener;-><init>(Landroidx/media3/exoplayer/audio/DefaultAudioSink;)V
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onInvalidLatency(J)V
-    .registers 5
+    .locals 2
 
     .line 2110
     new-instance v0, Ljava/lang/StringBuilder;
@@ -70,7 +70,7 @@
 .end method
 
 .method public onPositionAdvancing(J)V
-    .registers 4
+    .locals 1
 
     .line 2115
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PositionTrackerListener;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 2116
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PositionTrackerListener;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -90,12 +90,12 @@
 
     invoke-interface {v0, p1, p2}, Landroidx/media3/exoplayer/audio/AudioSink$Listener;->onPositionAdvancing(J)V
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public onPositionFramesMismatch(JJJJ)V
-    .registers 11
+    .locals 2
 
     .line 2064
     new-instance v0, Ljava/lang/StringBuilder;
@@ -171,7 +171,7 @@
     .line 2077
     sget-boolean p2, Landroidx/media3/exoplayer/audio/DefaultAudioSink;->failOnSpuriousAudioTimestamp:Z
 
-    if-nez p2, :cond_4f
+    if-nez p2, :cond_0
 
     const-string p2, "DefaultAudioSink"
 
@@ -181,7 +181,7 @@
     return-void
 
     .line 2078
-    :cond_4f
+    :cond_0
     new-instance p2, Landroidx/media3/exoplayer/audio/DefaultAudioSink$InvalidAudioTrackTimestampException;
 
     const/4 p3, 0x0
@@ -192,7 +192,7 @@
 .end method
 
 .method public onSystemTimeUsMismatch(JJJJ)V
-    .registers 11
+    .locals 2
 
     .line 2089
     new-instance v0, Ljava/lang/StringBuilder;
@@ -268,7 +268,7 @@
     .line 2102
     sget-boolean p2, Landroidx/media3/exoplayer/audio/DefaultAudioSink;->failOnSpuriousAudioTimestamp:Z
 
-    if-nez p2, :cond_4f
+    if-nez p2, :cond_0
 
     const-string p2, "DefaultAudioSink"
 
@@ -278,7 +278,7 @@
     return-void
 
     .line 2103
-    :cond_4f
+    :cond_0
     new-instance p2, Landroidx/media3/exoplayer/audio/DefaultAudioSink$InvalidAudioTrackTimestampException;
 
     const/4 p3, 0x0
@@ -289,7 +289,7 @@
 .end method
 
 .method public onUnderrun(IJ)V
-    .registers 14
+    .locals 10
 
     .line 2122
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$PositionTrackerListener;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -298,7 +298,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 2123
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -326,6 +326,6 @@
 
     invoke-interface/range {v4 .. v9}, Landroidx/media3/exoplayer/audio/AudioSink$Listener;->onUnderrun(IJJ)V
 
-    :cond_1f
+    :cond_0
     return-void
 .end method

@@ -27,7 +27,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 38
     new-instance v0, Landroid/util/Size;
@@ -73,7 +73,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 .end method
 
 .method private calculatePreviewSize()Landroid/util/Size;
-    .registers 6
+    .locals 5
 
     .line 160
     invoke-direct {p0}, Landroidx/camera/camera2/internal/DisplayInfoManager;->getCorrectedDisplaySize()Landroid/util/Size;
@@ -143,12 +143,12 @@
 
     mul-int/2addr v3, v4
 
-    if-le v1, v3, :cond_1b
+    if-le v1, v3, :cond_0
 
     move-object v0, v2
 
     .line 165
-    :cond_1b
+    :cond_0
     iget-object v1, p0, Landroidx/camera/camera2/internal/DisplayInfoManager;->mMaxPreviewSize:Landroidx/camera/camera2/internal/compat/workaround/MaxPreviewSize;
 
     invoke-virtual {v1, v0}, Landroidx/camera/camera2/internal/compat/workaround/MaxPreviewSize;->getMaxPreviewResolution(Landroid/util/Size;)Landroid/util/Size;
@@ -159,7 +159,7 @@
 .end method
 
 .method private getCorrectedDisplaySize()Landroid/util/Size;
-    .registers 4
+    .locals 3
 
     .line 171
     new-instance v0, Landroid/graphics/Point;
@@ -192,7 +192,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     .line 184
     iget-object v0, p0, Landroidx/camera/camera2/internal/DisplayInfoManager;->mDisplaySizeCorrector:Landroidx/camera/camera2/internal/compat/workaround/DisplaySizeCorrector;
@@ -201,13 +201,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_0
 
     .line 189
     sget-object v1, Landroidx/camera/camera2/internal/DisplayInfoManager;->FALLBACK_DISPLAY_SIZE:Landroid/util/Size;
 
     .line 194
-    :cond_28
+    :cond_0
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
 
     move-result v0
@@ -216,7 +216,7 @@
 
     move-result v2
 
-    if-le v0, v2, :cond_40
+    if-le v0, v2, :cond_1
 
     .line 195
     new-instance v0, Landroid/util/Size;
@@ -234,17 +234,17 @@
 
     move-object v1, v0
 
-    :cond_40
+    :cond_1
     return-object v1
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Landroidx/camera/camera2/internal/DisplayInfoManager;
-    .registers 3
+    .locals 2
 
     .line 65
     sget-object v0, Landroidx/camera/camera2/internal/DisplayInfoManager;->sInstance:Landroidx/camera/camera2/internal/DisplayInfoManager;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 66
     sget-object v0, Landroidx/camera/camera2/internal/DisplayInfoManager;->INSTANCE_LOCK:Ljava/lang/Object;
@@ -252,10 +252,10 @@
     monitor-enter v0
 
     .line 67
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/camera/camera2/internal/DisplayInfoManager;->sInstance:Landroidx/camera/camera2/internal/DisplayInfoManager;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     .line 68
     new-instance v1, Landroidx/camera/camera2/internal/DisplayInfoManager;
@@ -265,30 +265,30 @@
     sput-object v1, Landroidx/camera/camera2/internal/DisplayInfoManager;->sInstance:Landroidx/camera/camera2/internal/DisplayInfoManager;
 
     .line 70
-    :cond_12
+    :cond_0
     monitor-exit v0
 
-    goto :goto_17
+    goto :goto_0
 
-    :catchall_14
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_16
-    .catchall {:try_start_7 .. :try_end_16} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 
     .line 72
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     sget-object p0, Landroidx/camera/camera2/internal/DisplayInfoManager;->sInstance:Landroidx/camera/camera2/internal/DisplayInfoManager;
 
     return-object p0
 .end method
 
 .method private getMaxSizeDisplayInternal([Landroid/view/Display;Z)Landroid/view/Display;
-    .registers 11
+    .locals 8
 
     .line 127
     array-length v0, p1
@@ -299,12 +299,12 @@
 
     const/4 v3, 0x0
 
-    :goto_4
-    if-ge v3, v0, :cond_2b
+    :goto_0
+    if-ge v3, v0, :cond_2
 
     aget-object v4, p1, v3
 
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_0
 
     .line 129
     invoke-virtual {v4}, Landroid/view/Display;->getState()I
@@ -313,12 +313,12 @@
 
     const/4 v6, 0x1
 
-    if-ne v5, v6, :cond_12
+    if-ne v5, v6, :cond_0
 
-    goto :goto_28
+    goto :goto_1
 
     .line 133
-    :cond_12
+    :cond_0
     new-instance v5, Landroid/graphics/Point;
 
     invoke-direct {v5}, Landroid/graphics/Point;-><init>()V
@@ -333,7 +333,7 @@
 
     mul-int/2addr v6, v7
 
-    if-le v6, v2, :cond_28
+    if-le v6, v2, :cond_1
 
     .line 136
     iget v1, v5, Landroid/graphics/Point;->x:I
@@ -346,18 +346,18 @@
 
     move-object v1, v4
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_2b
+    :cond_2
     return-object v1
 .end method
 
 .method static releaseInstance()V
-    .registers 1
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -370,7 +370,7 @@
 
 # virtual methods
 .method public getMaxSizeDisplay(Z)Landroid/view/Display;
-    .registers 6
+    .locals 4
 
     .line 97
     iget-object v0, p0, Landroidx/camera/camera2/internal/DisplayInfoManager;->mDisplayManager:Landroid/hardware/display/DisplayManager;
@@ -386,7 +386,7 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, v2, :cond_e
+    if-ne v1, v2, :cond_0
 
     .line 99
     aget-object p1, v0, v3
@@ -394,27 +394,27 @@
     return-object p1
 
     .line 103
-    :cond_e
+    :cond_0
     invoke-direct {p0, v0, p1}, Landroidx/camera/camera2/internal/DisplayInfoManager;->getMaxSizeDisplayInternal([Landroid/view/Display;Z)Landroid/view/Display;
 
     move-result-object v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 108
     invoke-direct {p0, v0, v3}, Landroidx/camera/camera2/internal/DisplayInfoManager;->getMaxSizeDisplayInternal([Landroid/view/Display;Z)Landroid/view/Display;
 
     move-result-object v1
 
-    :cond_1a
-    if-eqz v1, :cond_1d
+    :cond_1
+    if-eqz v1, :cond_2
 
     return-object v1
 
     .line 113
-    :cond_1d
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "No display can be found from the input display manager!"
@@ -425,12 +425,12 @@
 .end method
 
 .method getPreviewSize()Landroid/util/Size;
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/camera/camera2/internal/DisplayInfoManager;->mPreviewSize:Landroid/util/Size;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 152
     iget-object v0, p0, Landroidx/camera/camera2/internal/DisplayInfoManager;->mPreviewSize:Landroid/util/Size;
@@ -438,7 +438,7 @@
     return-object v0
 
     .line 155
-    :cond_7
+    :cond_0
     invoke-direct {p0}, Landroidx/camera/camera2/internal/DisplayInfoManager;->calculatePreviewSize()Landroid/util/Size;
 
     move-result-object v0
@@ -452,7 +452,7 @@
 .end method
 
 .method refresh()V
-    .registers 2
+    .locals 1
 
     .line 87
     invoke-direct {p0}, Landroidx/camera/camera2/internal/DisplayInfoManager;->calculatePreviewSize()Landroid/util/Size;

@@ -15,7 +15,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/CameraControlInternal;Landroidx/camera/core/streamsharing/StreamSharing$Control;)V
-    .registers 3
+    .locals 0
 
     .line 50
     invoke-direct {p0, p1}, Landroidx/camera/core/impl/ForwardingCameraControl;-><init>(Landroidx/camera/core/impl/CameraControlInternal;)V
@@ -27,7 +27,7 @@
 .end method
 
 .method private getJpegQuality(Landroidx/camera/core/impl/CaptureConfig;)I
-    .registers 4
+    .locals 2
 
     .line 67
     invoke-virtual {p1}, Landroidx/camera/core/impl/CaptureConfig;->getImplementationOptions()Landroidx/camera/core/impl/Config;
@@ -64,7 +64,7 @@
 .end method
 
 .method private getRotationDegrees(Landroidx/camera/core/impl/CaptureConfig;)I
-    .registers 4
+    .locals 2
 
     .line 72
     invoke-virtual {p1}, Landroidx/camera/core/impl/CaptureConfig;->getImplementationOptions()Landroidx/camera/core/impl/Config;
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public submitStillCaptureRequests(Ljava/util/List;II)Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -126,14 +126,14 @@
 
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_9
+    if-ne p2, v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, p3
 
-    :goto_a
+    :goto_0
     const-string p2, "Only support one capture config."
 
     invoke-static {v0, p2}, Landroidx/core/util/Preconditions;->checkArgument(ZLjava/lang/Object;)V

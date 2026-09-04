@@ -32,7 +32,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/VideoEncoderSession;)V
-    .registers 2
+    .locals 0
 
     .line 134
     iput-object p1, p0, Landroidx/camera/video/VideoEncoderSession$1;->this$0:Landroidx/camera/video/VideoEncoderSession;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     const-string v0, "VideoEncoderSession"
 
@@ -63,13 +63,13 @@
 .end method
 
 .method public onSuccess(Landroidx/camera/video/internal/encoder/Encoder;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 134
     check-cast p1, Landroidx/camera/video/internal/encoder/Encoder;

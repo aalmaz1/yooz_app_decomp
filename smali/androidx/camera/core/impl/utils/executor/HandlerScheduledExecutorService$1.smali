@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 54
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public bridge synthetic initialValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-virtual {p0}, Landroidx/camera/core/impl/utils/executor/HandlerScheduledExecutorService$1;->initialValue()Ljava/util/concurrent/ScheduledExecutorService;
@@ -46,7 +46,7 @@
 .end method
 
 .method public initialValue()Ljava/util/concurrent/ScheduledExecutorService;
-    .registers 3
+    .locals 2
 
     .line 57
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -57,7 +57,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 58
     invoke-static {}, Landroidx/camera/core/impl/utils/executor/CameraXExecutors;->mainThreadExecutor()Ljava/util/concurrent/ScheduledExecutorService;
@@ -67,12 +67,12 @@
     return-object v0
 
     .line 59
-    :cond_f
+    :cond_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     .line 60
     new-instance v0, Landroid/os/Handler;
@@ -90,7 +90,7 @@
 
     return-object v1
 
-    :cond_24
+    :cond_1
     const/4 v0, 0x0
 
     return-object v0

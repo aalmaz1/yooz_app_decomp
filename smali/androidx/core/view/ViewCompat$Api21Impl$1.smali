@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/View;Landroidx/core/view/OnApplyWindowInsetsListener;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .registers 6
+    .locals 3
 
     .line 5220
     invoke-static {p2, p1}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsetsCompat(Landroid/view/WindowInsets;Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
@@ -64,7 +64,7 @@
 
     const/16 v2, 0x1e
 
-    if-ge v1, v2, :cond_22
+    if-ge v1, v2, :cond_0
 
     .line 5223
     iget-object v1, p0, Landroidx/core/view/ViewCompat$Api21Impl$1;->val$v:Landroid/view/View;
@@ -78,7 +78,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_0
 
     .line 5227
     iget-object p2, p0, Landroidx/core/view/ViewCompat$Api21Impl$1;->val$listener:Landroidx/core/view/OnApplyWindowInsetsListener;
@@ -95,7 +95,7 @@
     return-object p1
 
     .line 5231
-    :cond_22
+    :cond_0
     iput-object v0, p0, Landroidx/core/view/ViewCompat$Api21Impl$1;->mLastInsets:Landroidx/core/view/WindowInsetsCompat;
 
     .line 5232
@@ -108,7 +108,7 @@
     .line 5234
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v0, v2, :cond_33
+    if-lt v0, v2, :cond_1
 
     .line 5235
     invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsets()Landroid/view/WindowInsets;
@@ -118,7 +118,7 @@
     return-object p1
 
     .line 5242
-    :cond_33
+    :cond_1
     invoke-static {p1}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
 
     .line 5246

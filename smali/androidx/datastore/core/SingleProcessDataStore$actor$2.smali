@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/datastore/core/SingleProcessDataStore$actor$2;
 
@@ -69,7 +69,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 224
     check-cast p1, Landroidx/datastore/core/SingleProcessDataStore$Message;
@@ -96,7 +96,7 @@
 .end method
 
 .method public final invoke(Landroidx/datastore/core/SingleProcessDataStore$Message;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,7 +114,7 @@
     .line 225
     instance-of v0, p1, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 229
     check-cast p1, Landroidx/datastore/core/SingleProcessDataStore$Message$Update;
@@ -123,7 +123,7 @@
 
     move-result-object p1
 
-    if-nez p2, :cond_1a
+    if-nez p2, :cond_0
 
     .line 230
     new-instance p2, Ljava/util/concurrent/CancellationException;
@@ -135,9 +135,9 @@
     check-cast p2, Ljava/lang/Throwable;
 
     .line 229
-    :cond_1a
+    :cond_0
     invoke-interface {p1, p2}, Lkotlinx/coroutines/CompletableDeferred;->completeExceptionally(Ljava/lang/Throwable;)Z
 
-    :cond_1d
+    :cond_1
     return-void
 .end method

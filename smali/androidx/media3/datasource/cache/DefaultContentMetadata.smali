@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 35
     new-instance v0, Landroidx/media3/datasource/cache/DefaultContentMetadata;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,7 +81,7 @@
 .end method
 
 .method private static addValues(Ljava/util/HashMap;Ljava/util/Map;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,12 +104,12 @@
 
     move-result-object p1
 
-    :goto_8
+    :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -134,14 +134,14 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 .method private static applyMutations(Ljava/util/Map;Landroidx/media3/datasource/cache/ContentMetadataMutations;)Ljava/util/Map;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,12 +179,12 @@
 .end method
 
 .method private static getBytes(Ljava/lang/Object;)[B
-    .registers 4
+    .locals 3
 
     .line 165
     instance-of v0, p0, Ljava/lang/Long;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     const/16 v0, 0x8
 
@@ -210,10 +210,10 @@
     return-object p0
 
     .line 167
-    :cond_19
+    :cond_0
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 168
     check-cast p0, Ljava/lang/String;
@@ -227,10 +227,10 @@
     return-object p0
 
     .line 169
-    :cond_26
+    :cond_1
     instance-of v0, p0, [B
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 170
     check-cast p0, [B
@@ -238,7 +238,7 @@
     return-object p0
 
     .line 172
-    :cond_2d
+    :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -247,7 +247,7 @@
 .end method
 
 .method private static isMetadataEqual(Ljava/util/Map;Ljava/util/Map;)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -271,12 +271,12 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     return v2
 
     .line 134
-    :cond_c
+    :cond_0
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -285,12 +285,12 @@
 
     move-result-object p0
 
-    :cond_14
+    :cond_1
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_2
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -321,18 +321,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v2
 
-    :cond_37
+    :cond_2
     const/4 p0, 0x1
 
     return p0
 .end method
 
 .method private static removeValues(Ljava/util/HashMap;Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -348,12 +348,12 @@
     const/4 v0, 0x0
 
     .line 153
-    :goto_1
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_11
+    if-ge v0, v1, :cond_0
 
     .line 154
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -364,16 +364,16 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final contains(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 104
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
@@ -386,7 +386,7 @@
 .end method
 
 .method public copyWithMutationsApplied(Landroidx/media3/datasource/cache/ContentMetadataMutations;)Landroidx/media3/datasource/cache/DefaultContentMetadata;
-    .registers 3
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
@@ -402,12 +402,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     return-object p0
 
     .line 62
-    :cond_f
+    :cond_0
     new-instance v0, Landroidx/media3/datasource/cache/DefaultContentMetadata;
 
     invoke-direct {v0, p1}, Landroidx/media3/datasource/cache/DefaultContentMetadata;-><init>(Ljava/util/Map;)V
@@ -416,7 +416,7 @@
 .end method
 
 .method public entrySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -438,16 +438,16 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_4
-    if-eqz p1, :cond_1c
+    :cond_0
+    if-eqz p1, :cond_2
 
     .line 112
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -458,12 +458,12 @@
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 115
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
     check-cast p1, Landroidx/media3/datasource/cache/DefaultContentMetadata;
@@ -476,15 +476,15 @@
 
     return p1
 
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public final get(Ljava/lang/String;J)J
-    .registers 5
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
@@ -495,7 +495,7 @@
 
     check-cast p1, [B
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     .line 96
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -508,12 +508,12 @@
 
     return-wide p1
 
-    :cond_13
+    :cond_0
     return-wide p2
 .end method
 
 .method public final get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 1
 
     .line 84
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
@@ -524,7 +524,7 @@
 
     check-cast p1, [B
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     .line 86
     new-instance p2, Ljava/lang/String;
@@ -533,12 +533,12 @@
 
     invoke-direct {p2, p1, v0}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
-    :cond_11
+    :cond_0
     return-object p2
 .end method
 
 .method public final get(Ljava/lang/String;[B)[B
-    .registers 4
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
@@ -549,7 +549,7 @@
 
     check-cast p1, [B
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 75
     array-length p2, p1
@@ -560,17 +560,17 @@
 
     return-object p1
 
-    :cond_10
+    :cond_0
     return-object p2
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 120
     iget v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->hashCode:I
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_1
 
     .line 122
     iget-object v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
@@ -585,12 +585,12 @@
 
     const/4 v1, 0x0
 
-    :goto_f
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -623,14 +623,14 @@
 
     add-int/2addr v1, v2
 
-    goto :goto_f
+    goto :goto_0
 
     .line 125
-    :cond_32
+    :cond_0
     iput v1, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->hashCode:I
 
     .line 127
-    :cond_34
+    :cond_1
     iget v0, p0, Landroidx/media3/datasource/cache/DefaultContentMetadata;->hashCode:I
 
     return v0

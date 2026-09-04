@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/upstream/ParsingLoadable$Parser;Ljava/util/List;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public parse(Landroid/net/Uri;Ljava/io/InputStream;)Landroidx/media3/exoplayer/offline/FilterableManifest;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,17 +97,17 @@
     .line 50
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/FilteringManifestParser;->streamKeys:Ljava/util/List;
 
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_1
 
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result p2
 
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     iget-object p2, p0, Landroidx/media3/exoplayer/offline/FilteringManifestParser;->streamKeys:Ljava/util/List;
 
     invoke-interface {p1, p2}, Landroidx/media3/exoplayer/offline/FilterableManifest;->copy(Ljava/util/List;)Ljava/lang/Object;
@@ -116,13 +116,13 @@
 
     check-cast p1, Landroidx/media3/exoplayer/offline/FilterableManifest;
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     return-object p1
 .end method
 
 .method public bridge synthetic parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

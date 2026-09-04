@@ -17,7 +17,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 48
     new-instance v0, Landroidx/media3/exoplayer/drm/DrmSessionManager$1;
@@ -38,7 +38,7 @@
 .end method
 
 .method public preacquireSession(Landroidx/media3/exoplayer/drm/DrmSessionEventListener$EventDispatcher;Landroidx/media3/common/Format;)Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference;
-    .registers 3
+    .locals 0
 
     .line 135
     sget-object p1, Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference;->EMPTY:Landroidx/media3/exoplayer/drm/DrmSessionManager$DrmSessionReference;
@@ -47,13 +47,13 @@
 .end method
 
 .method public prepare()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

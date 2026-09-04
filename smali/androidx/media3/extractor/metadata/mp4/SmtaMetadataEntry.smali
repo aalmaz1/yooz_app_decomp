@@ -26,7 +26,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 97
     new-instance v0, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry$1;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(FI)V
-    .registers 3
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method private constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry$1;)V
-    .registers 3
+    .locals 0
 
     .line 32
     invoke-direct {p0, p1}, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry;-><init>(Landroid/os/Parcel;)V
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -96,18 +96,18 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_3
 
     .line 60
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -118,12 +118,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_25
+    goto :goto_1
 
     .line 63
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry;
 
     .line 64
@@ -133,29 +133,29 @@
 
     cmpl-float v2, v2, v3
 
-    if-nez v2, :cond_23
+    if-nez v2, :cond_2
 
     iget v2, p0, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry;->svcTemporalLayerCount:I
 
     iget p1, p1, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry;->svcTemporalLayerCount:I
 
-    if-ne v2, p1, :cond_23
+    if-ne v2, p1, :cond_2
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_2
     move v0, v1
 
-    :goto_24
+    :goto_0
     return v0
 
-    :cond_25
-    :goto_25
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 71
     iget v0, p0, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry;->captureFrameRate:F
@@ -179,7 +179,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 78
     new-instance v0, Ljava/lang/StringBuilder;
@@ -214,7 +214,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 88
     iget p2, p0, Landroidx/media3/extractor/metadata/mp4/SmtaMetadataEntry;->captureFrameRate:F

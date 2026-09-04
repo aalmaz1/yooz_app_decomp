@@ -68,7 +68,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/ImmLeaksCleaner$Companion;
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(Landroid/app/Activity;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "activity"
 
@@ -108,7 +108,7 @@
 .end method
 
 .method public static final synthetic access$getCleaner$delegate$cp()Lkotlin/Lazy;
-    .registers 1
+    .locals 1
 
     .line 28
     sget-object v0, Landroidx/activity/ImmLeaksCleaner;->cleaner$delegate:Lkotlin/Lazy;
@@ -119,7 +119,7 @@
 
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 5
+    .locals 2
 
     const-string v0, "source"
 
@@ -132,12 +132,12 @@
     .line 30
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-eq p2, p1, :cond_f
+    if-eq p2, p1, :cond_0
 
     return-void
 
     .line 34
-    :cond_f
+    :cond_0
     iget-object p1, p0, Landroidx/activity/ImmLeaksCleaner;->activity:Landroid/app/Activity;
 
     const-string p2, "input_method"
@@ -164,38 +164,38 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_1
 
     return-void
 
     .line 37
-    :cond_2b
+    :cond_1
     monitor-enter v0
 
     .line 38
-    :try_start_2c
+    :try_start_0
     invoke-virtual {p2, p1}, Landroidx/activity/ImmLeaksCleaner$Cleaner;->getServedView(Landroid/view/inputmethod/InputMethodManager;)Landroid/view/View;
 
     move-result-object v1
-    :try_end_30
-    .catchall {:try_start_2c .. :try_end_30} :catchall_47
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_2
 
     monitor-exit v0
 
     return-void
 
     .line 39
-    :cond_34
-    :try_start_34
+    :cond_2
+    :try_start_1
     invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v1
-    :try_end_38
-    .catchall {:try_start_34 .. :try_end_38} :catchall_47
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3
 
     .line 40
     monitor-exit v0
@@ -203,26 +203,26 @@
     return-void
 
     .line 44
-    :cond_3c
-    :try_start_3c
+    :cond_3
+    :try_start_2
     invoke-virtual {p2, p1}, Landroidx/activity/ImmLeaksCleaner$Cleaner;->clearNextServedView(Landroid/view/inputmethod/InputMethodManager;)Z
 
     move-result p2
-    :try_end_40
-    .catchall {:try_start_3c .. :try_end_40} :catchall_47
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 37
     monitor-exit v0
 
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_4
 
     .line 49
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodManager;->isActive()Z
 
-    :cond_46
+    :cond_4
     return-void
 
-    :catchall_47
+    :catchall_0
     move-exception p1
 
     .line 37

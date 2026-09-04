@@ -11,7 +11,7 @@
 
 # direct methods
 .method constructor <init>(ILandroid/view/Surface;)V
-    .registers 3
+    .locals 0
 
     .line 17
     invoke-direct {p0}, Landroidx/camera/core/SurfaceRequest$Result;-><init>()V
@@ -19,7 +19,7 @@
     .line 18
     iput p1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_Result;->resultCode:I
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     .line 22
     iput-object p2, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_Result;->surface:Landroid/view/Surface;
@@ -27,7 +27,7 @@
     return-void
 
     .line 20
-    :cond_a
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
     const-string p2, "Null surface"
@@ -40,21 +40,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 50
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/camera/core/SurfaceRequest$Result;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 51
     check-cast p1, Landroidx/camera/core/SurfaceRequest$Result;
@@ -66,7 +66,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_20
+    if-ne v1, v3, :cond_1
 
     iget-object v1, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_Result;->surface:Landroid/view/Surface;
 
@@ -79,22 +79,22 @@
 
     move-result p1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move v0, v2
 
-    :goto_21
+    :goto_0
     return v0
 
-    :cond_22
+    :cond_2
     return v2
 .end method
 
 .method public getResultCode()I
-    .registers 2
+    .locals 1
 
     .line 28
     iget v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_Result;->resultCode:I
@@ -103,7 +103,7 @@
 .end method
 
 .method public getSurface()Landroid/view/Surface;
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_Result;->surface:Landroid/view/Surface;
@@ -112,7 +112,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 62
     iget v0, p0, Landroidx/camera/core/AutoValue_SurfaceRequest_Result;->resultCode:I
@@ -136,7 +136,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 39
     new-instance v0, Ljava/lang/StringBuilder;

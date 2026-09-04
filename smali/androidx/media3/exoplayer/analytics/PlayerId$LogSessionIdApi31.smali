@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 111
     new-instance v0, Landroidx/media3/exoplayer/analytics/PlayerId$LogSessionIdApi31;
@@ -39,7 +39,7 @@
 .end method
 
 .method public constructor <init>(Landroid/media/metrics/LogSessionId;)V
-    .registers 2
+    .locals 0
 
     .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

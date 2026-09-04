@@ -14,7 +14,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 .end method
 
 .method private static createPlaneProxy(II[B)Landroidx/camera/core/ImageProxy$PlaneProxy;
-    .registers 4
+    .locals 1
 
     .line 194
     new-instance v0, Landroidx/camera/core/ImageProxyDownsampler$1;
@@ -34,7 +34,7 @@
 .end method
 
 .method static downsample(Landroidx/camera/core/ImageProxy;IILandroidx/camera/core/ImageProxyDownsampler$DownsamplingMethod;)Landroidx/camera/core/ForwardingImageProxy;
-    .registers 26
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -49,33 +49,33 @@
 
     const/16 v4, 0x23
 
-    if-ne v3, v4, :cond_115
+    if-ne v3, v4, :cond_5
 
     .line 52
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getWidth()I
 
     move-result v3
 
-    if-lt v3, v1, :cond_de
+    if-lt v3, v1, :cond_4
 
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getHeight()I
 
     move-result v3
 
-    if-lt v3, v2, :cond_de
+    if-lt v3, v2, :cond_4
 
     .line 61
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getWidth()I
 
     move-result v3
 
-    if-ne v3, v1, :cond_30
+    if-ne v3, v1, :cond_0
 
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getHeight()I
 
     move-result v3
 
-    if-ne v3, v2, :cond_30
+    if-ne v3, v2, :cond_0
 
     .line 62
     new-instance v3, Landroidx/camera/core/ImageProxyDownsampler$ForwardingImageProxyImpl;
@@ -89,7 +89,7 @@
 
     return-object v3
 
-    :cond_30
+    :cond_0
     const/4 v3, 0x3
 
     new-array v4, v3, [I
@@ -172,8 +172,8 @@
 
     new-array v11, v3, [Landroidx/camera/core/ImageProxy$PlaneProxy;
 
-    :goto_76
-    if-ge v6, v3, :cond_d8
+    :goto_0
+    if-ge v6, v3, :cond_3
 
     .line 73
     invoke-interface/range {p0 .. p0}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
@@ -205,16 +205,16 @@
 
     aget v14, v14, v16
 
-    if-eq v14, v8, :cond_b4
+    if-eq v14, v8, :cond_2
 
-    if-eq v14, v7, :cond_98
+    if-eq v14, v7, :cond_1
 
     move-object/from16 v21, v15
 
-    goto :goto_cb
+    goto :goto_1
 
     .line 89
-    :cond_98
+    :cond_1
     aget v14, v4, v6
 
     .line 92
@@ -244,9 +244,9 @@
     .line 89
     invoke-static/range {v13 .. v20}, Landroidx/camera/core/ImageProxyDownsampler;->resizeAveraging(Ljava/nio/ByteBuffer;IIII[BII)V
 
-    goto :goto_cb
+    goto :goto_1
 
-    :cond_b4
+    :cond_2
     move-object/from16 v21, v15
 
     .line 78
@@ -274,7 +274,7 @@
     invoke-static/range {v13 .. v20}, Landroidx/camera/core/ImageProxyDownsampler;->resizeNearestNeighbor(Ljava/nio/ByteBuffer;IIII[BII)V
 
     .line 100
-    :goto_cb
+    :goto_1
     aget v12, v9, v6
 
     move-object/from16 v13, v21
@@ -287,10 +287,10 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_76
+    goto :goto_0
 
     .line 102
-    :cond_d8
+    :cond_3
     new-instance v3, Landroidx/camera/core/ImageProxyDownsampler$ForwardingImageProxyImpl;
 
     invoke-direct {v3, v0, v11, v1, v2}, Landroidx/camera/core/ImageProxyDownsampler$ForwardingImageProxyImpl;-><init>(Landroidx/camera/core/ImageProxy;[Landroidx/camera/core/ImageProxy$PlaneProxy;II)V
@@ -298,7 +298,7 @@
     return-object v3
 
     .line 53
-    :cond_de
+    :cond_4
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -353,7 +353,7 @@
     throw v3
 
     .line 49
-    :cond_115
+    :cond_5
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Only YUV_420_888 format is currently supported."
@@ -364,7 +364,7 @@
 .end method
 
 .method private static resizeAveraging(Ljava/nio/ByteBuffer;IIII[BII)V
-    .registers 24
+    .locals 16
 
     move-object/from16 v1, p0
 
@@ -403,8 +403,8 @@
 
     move v11, v10
 
-    :goto_1a
-    if-ge v11, v3, :cond_26
+    :goto_0
+    if-ge v11, v3, :cond_0
 
     int-to-float v12, v11
 
@@ -419,20 +419,20 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 165
-    :cond_26
+    :cond_0
     monitor-enter p0
 
     .line 166
-    :try_start_27
+    :try_start_0
     invoke-virtual/range {p0 .. p0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     move v4, v10
 
-    :goto_2b
-    if-ge v4, v5, :cond_89
+    :goto_1
+    if-ge v4, v5, :cond_2
 
     int-to-float v11, v4
 
@@ -490,8 +490,8 @@
 
     move v11, v10
 
-    :goto_5d
-    if-ge v11, v3, :cond_85
+    :goto_2
+    if-ge v11, v3, :cond_1
 
     .line 180
     aget v13, v9, v11
@@ -541,33 +541,33 @@
 
     const/4 v10, 0x0
 
-    goto :goto_5d
+    goto :goto_2
 
-    :cond_85
+    :cond_1
     add-int/lit8 v4, v4, 0x1
 
     const/4 v10, 0x0
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 188
-    :cond_89
+    :cond_2
     monitor-exit p0
 
     return-void
 
-    :catchall_8b
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_8d
-    .catchall {:try_start_27 .. :try_end_8d} :catchall_8b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
 
 .method private static resizeNearestNeighbor(Ljava/nio/ByteBuffer;IIII[BII)V
-    .registers 15
+    .locals 7
 
     int-to-float p1, p1
 
@@ -591,8 +591,8 @@
 
     move v4, v3
 
-    :goto_c
-    if-ge v4, p6, :cond_17
+    :goto_0
+    if-ge v4, p6, :cond_0
 
     int-to-float v5, v4
 
@@ -607,20 +607,20 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 126
-    :cond_17
+    :cond_0
     monitor-enter p0
 
     .line 127
-    :try_start_18
+    :try_start_0
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     move p1, v3
 
-    :goto_1c
-    if-ge p1, p7, :cond_49
+    :goto_1
+    if-ge p1, p7, :cond_2
 
     int-to-float p2, p1
 
@@ -655,8 +655,8 @@
 
     move p2, v3
 
-    :goto_39
-    if-ge p2, p6, :cond_46
+    :goto_2
+    if-ge p2, p6, :cond_1
 
     add-int v5, v4, p2
 
@@ -669,25 +669,25 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_46
+    :cond_1
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 141
-    :cond_49
+    :cond_2
     monitor-exit p0
 
     return-void
 
-    :catchall_4b
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_4d
-    .catchall {:try_start_18 .. :try_end_4d} :catchall_4b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

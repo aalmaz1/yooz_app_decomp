@@ -20,7 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 33
     new-instance v0, Ljava/lang/Object;
@@ -40,7 +40,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public static addConfig(Ljava/lang/Object;Landroidx/camera/core/impl/CameraConfigProvider;)V
-    .registers 4
+    .locals 2
 
     .line 46
     sget-object v0, Landroidx/camera/core/impl/ExtendedCameraConfigProviderStore;->LOCK:Ljava/lang/Object;
@@ -57,7 +57,7 @@
     monitor-enter v0
 
     .line 47
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/camera/core/impl/ExtendedCameraConfigProviderStore;->CAMERA_CONFIG_PROVIDERS:Ljava/util/Map;
 
     invoke-interface {v1, p0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -67,18 +67,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception p0
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
 .method public static clear()V
-    .registers 2
+    .locals 2
 
     .line 74
     sget-object v0, Landroidx/camera/core/impl/ExtendedCameraConfigProviderStore;->LOCK:Ljava/lang/Object;
@@ -86,7 +86,7 @@
     monitor-enter v0
 
     .line 75
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/camera/core/impl/ExtendedCameraConfigProviderStore;->CAMERA_CONFIG_PROVIDERS:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->clear()V
@@ -96,18 +96,18 @@
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method
 
 .method public static getConfigProvider(Ljava/lang/Object;)Landroidx/camera/core/impl/CameraConfigProvider;
-    .registers 3
+    .locals 2
 
     .line 60
     sget-object v0, Landroidx/camera/core/impl/ExtendedCameraConfigProviderStore;->LOCK:Ljava/lang/Object;
@@ -115,7 +115,7 @@
     monitor-enter v0
 
     .line 61
-    :try_start_3
+    :try_start_0
     sget-object v1, Landroidx/camera/core/impl/ExtendedCameraConfigProviderStore;->CAMERA_CONFIG_PROVIDERS:Ljava/util/Map;
 
     invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -126,25 +126,25 @@
 
     .line 62
     monitor-exit v0
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez p0, :cond_10
+    if-nez p0, :cond_0
 
     .line 65
     sget-object p0, Landroidx/camera/core/impl/CameraConfigProvider;->EMPTY:Landroidx/camera/core/impl/CameraConfigProvider;
 
-    :cond_10
+    :cond_0
     return-object p0
 
-    :catchall_11
+    :catchall_0
     move-exception p0
 
     .line 62
-    :try_start_12
+    :try_start_1
     monitor-exit v0
-    :try_end_13
-    .catchall {:try_start_12 .. :try_end_13} :catchall_11
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p0
 .end method

@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 100
     new-instance v0, Landroidx/media3/extractor/metadata/id3/GeobFrame$1;
@@ -42,7 +42,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "GEOB"
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[B)V
-    .registers 6
+    .locals 1
 
     const-string v0, "GEOB"
 
@@ -130,18 +130,18 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_3
 
     .line 59
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -152,12 +152,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_12
+    if-eq v2, v3, :cond_1
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 62
-    :cond_12
+    :cond_1
     check-cast p1, Landroidx/media3/extractor/metadata/id3/GeobFrame;
 
     .line 63
@@ -169,7 +169,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->filename:Ljava/lang/String;
 
@@ -180,7 +180,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->description:Ljava/lang/String;
 
@@ -191,7 +191,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->data:[B
 
@@ -202,41 +202,41 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_2
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_3d
+    :cond_2
     move v0, v1
 
-    :goto_3e
+    :goto_0
     return v0
 
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 72
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->mimeType:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v1
 
-    :goto_b
+    :goto_0
     const/16 v2, 0x20f
 
     add-int/2addr v2, v0
@@ -246,18 +246,18 @@
     .line 73
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->filename:Ljava/lang/String;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move v0, v1
 
-    :goto_1a
+    :goto_1
     add-int/2addr v2, v0
 
     mul-int/lit8 v2, v2, 0x1f
@@ -265,13 +265,13 @@
     .line 74
     iget-object v0, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->description:Ljava/lang/String;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    :cond_25
+    :cond_2
     add-int/2addr v2, v1
 
     mul-int/lit8 v2, v2, 0x1f
@@ -289,7 +289,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 81
     new-instance v0, Ljava/lang/StringBuilder;
@@ -346,7 +346,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    .locals 0
 
     .line 94
     iget-object p2, p0, Landroidx/media3/extractor/metadata/id3/GeobFrame;->mimeType:Ljava/lang/String;

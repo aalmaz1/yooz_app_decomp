@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static isApplicationUid(I)Z
-    .registers 1
+    .locals 0
 
     .line 69
     invoke-static {p0}, Landroid/os/Process;->isApplicationUid(I)Z

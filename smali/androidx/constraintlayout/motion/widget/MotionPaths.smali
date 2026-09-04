@@ -88,7 +88,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     const-string v0, "position"
 
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -162,7 +162,7 @@
 .end method
 
 .method public constructor <init>(IILandroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
-    .registers 8
+    .locals 2
 
     .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -212,11 +212,11 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_33
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_2f
+    if-eq v0, v1, :cond_0
 
     .line 134
     invoke-virtual {p0, p3, p4, p5}, Landroidx/constraintlayout/motion/widget/MotionPaths;->initCartesian(Landroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
@@ -224,20 +224,20 @@
     return-void
 
     .line 127
-    :cond_2f
+    :cond_0
     invoke-virtual/range {p0 .. p5}, Landroidx/constraintlayout/motion/widget/MotionPaths;->initScreen(IILandroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
 
     return-void
 
     .line 130
-    :cond_33
+    :cond_1
     invoke-virtual {p0, p3, p4, p5}, Landroidx/constraintlayout/motion/widget/MotionPaths;->initPath(Landroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
 
     return-void
 .end method
 
 .method private diff(FF)Z
-    .registers 6
+    .locals 3
 
     .line 236
     invoke-static {p1}, Ljava/lang/Float;->isNaN(F)Z
@@ -248,17 +248,17 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_2
 
     invoke-static {p2}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_f
+    :cond_0
     sub-float/2addr p1, p2
 
     .line 239
@@ -270,19 +270,19 @@
 
     cmpl-float p1, p1, p2
 
-    if-lez p1, :cond_1c
+    if-lez p1, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     move v1, v2
 
-    :goto_1d
+    :goto_0
     return v1
 
     .line 237
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     invoke-static {p1}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result p1
@@ -291,19 +291,19 @@
 
     move-result p2
 
-    if-eq p1, p2, :cond_29
+    if-eq p1, p2, :cond_3
 
-    goto :goto_2a
+    goto :goto_2
 
-    :cond_29
+    :cond_3
     move v1, v2
 
-    :goto_2a
+    :goto_2
     return v1
 .end method
 
 .method private static final xRotate(FFFFFF)F
-    .registers 6
+    .locals 0
 
     sub-float/2addr p4, p2
 
@@ -321,7 +321,7 @@
 .end method
 
 .method private static final yRotate(FFFFFF)F
-    .registers 6
+    .locals 0
 
     sub-float/2addr p4, p2
 
@@ -341,7 +341,7 @@
 
 # virtual methods
 .method public applyParameters(Landroidx/constraintlayout/widget/ConstraintSet$Constraint;)V
-    .registers 7
+    .locals 5
 
     .line 681
     iget-object v0, p1, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->motion:Landroidx/constraintlayout/widget/ConstraintSet$Motion;
@@ -394,13 +394,13 @@
 
     move-result-object v0
 
-    :cond_2c
-    :goto_2c
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -424,21 +424,21 @@
 
     sget-object v4, Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;->STRING_TYPE:Landroidx/constraintlayout/widget/ConstraintAttribute$AttributeType;
 
-    if-eq v3, v4, :cond_2c
+    if-eq v3, v4, :cond_0
 
     .line 690
     iget-object v3, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->attributes:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v3, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_4e
+    :cond_1
     return-void
 .end method
 
 .method public compareTo(Landroidx/constraintlayout/motion/widget/MotionPaths;)I
-    .registers 3
+    .locals 1
 
     .line 676
     iget v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->position:F
@@ -453,7 +453,7 @@
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 2
+    .locals 0
 
     .line 38
     check-cast p1, Landroidx/constraintlayout/motion/widget/MotionPaths;
@@ -466,7 +466,7 @@
 .end method
 
 .method different(Landroidx/constraintlayout/motion/widget/MotionPaths;[Z[Ljava/lang/String;Z)V
-    .registers 8
+    .locals 3
 
     const/4 p3, 0x0
 
@@ -561,7 +561,7 @@
 .end method
 
 .method fillStandard([D[I)V
-    .registers 11
+    .locals 8
 
     const/4 v0, 0x6
 
@@ -607,15 +607,15 @@
     move v2, v3
 
     .line 636
-    :goto_22
+    :goto_0
     array-length v4, p2
 
-    if-ge v3, v4, :cond_34
+    if-ge v3, v4, :cond_1
 
     .line 637
     aget v4, p2, v3
 
-    if-ge v4, v0, :cond_31
+    if-ge v4, v0, :cond_0
 
     add-int/lit8 v5, v2, 0x1
 
@@ -628,17 +628,17 @@
 
     move v2, v5
 
-    :cond_31
+    :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_34
+    :cond_1
     return-void
 .end method
 
 .method getBounds([I[D[FI)V
-    .registers 11
+    .locals 6
 
     .line 283
     iget v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
@@ -649,10 +649,10 @@
     const/4 v2, 0x0
 
     .line 286
-    :goto_5
+    :goto_0
     array-length v3, p1
 
-    if-ge v2, v3, :cond_1a
+    if-ge v2, v3, :cond_2
 
     .line 287
     aget-wide v3, p2, v2
@@ -664,29 +664,29 @@
 
     const/4 v5, 0x3
 
-    if-eq v4, v5, :cond_16
+    if-eq v4, v5, :cond_1
 
     const/4 v5, 0x4
 
-    if-eq v4, v5, :cond_14
+    if-eq v4, v5, :cond_0
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_14
+    :cond_0
     move v1, v3
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
+    :cond_1
     move v0, v3
 
-    :goto_17
+    :goto_1
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 304
-    :cond_1a
+    :cond_2
     aput v0, p3, p4
 
     add-int/lit8 p4, p4, 0x1
@@ -698,7 +698,7 @@
 .end method
 
 .method getCenter([I[D[FI)V
-    .registers 14
+    .locals 9
 
     .line 253
     iget v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->x:F
@@ -715,12 +715,12 @@
     const/4 v4, 0x0
 
     .line 258
-    :goto_9
+    :goto_0
     array-length v5, p1
 
     const/4 v6, 0x1
 
-    if-ge v4, v5, :cond_28
+    if-ge v4, v5, :cond_4
 
     .line 259
     aget-wide v7, p2, v4
@@ -730,46 +730,46 @@
     .line 261
     aget v7, p1, v4
 
-    if-eq v7, v6, :cond_24
+    if-eq v7, v6, :cond_3
 
     const/4 v6, 0x2
 
-    if-eq v7, v6, :cond_22
+    if-eq v7, v6, :cond_2
 
     const/4 v6, 0x3
 
-    if-eq v7, v6, :cond_20
+    if-eq v7, v6, :cond_1
 
     const/4 v6, 0x4
 
-    if-eq v7, v6, :cond_1e
+    if-eq v7, v6, :cond_0
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     move v3, v5
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     move v2, v5
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_22
+    :cond_2
     move v1, v5
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_3
     move v0, v5
 
-    :goto_25
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_28
+    :cond_4
     const/high16 p1, 0x40000000    # 2.0f
 
     div-float/2addr v2, p1
@@ -798,7 +798,7 @@
 .end method
 
 .method getCustomData(Ljava/lang/String;[DI)I
-    .registers 9
+    .locals 5
 
     .line 652
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->attributes:Ljava/util/LinkedHashMap;
@@ -816,7 +816,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     .line 654
     invoke-virtual {p1}, Landroidx/constraintlayout/widget/ConstraintAttribute;->getValueToInterpolate()F
@@ -830,7 +830,7 @@
     return v1
 
     .line 657
-    :cond_17
+    :cond_0
     invoke-virtual {p1}, Landroidx/constraintlayout/widget/ConstraintAttribute;->noOfInterpValues()I
 
     move-result v0
@@ -843,8 +843,8 @@
 
     const/4 p1, 0x0
 
-    :goto_21
-    if-ge p1, v0, :cond_2e
+    :goto_0
+    if-ge p1, v0, :cond_1
 
     add-int/lit8 v2, p3, 0x1
 
@@ -859,14 +859,14 @@
 
     move p3, v2
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     return v0
 .end method
 
 .method getCustomDataCount(Ljava/lang/String;)I
-    .registers 3
+    .locals 1
 
     .line 648
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->attributes:Ljava/util/LinkedHashMap;
@@ -885,7 +885,7 @@
 .end method
 
 .method getRect([I[D[FI)V
-    .registers 13
+    .locals 8
 
     .line 432
     iget v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->x:F
@@ -902,10 +902,10 @@
     const/4 v4, 0x0
 
     .line 450
-    :goto_9
+    :goto_0
     array-length v5, p1
 
-    if-ge v4, v5, :cond_28
+    if-ge v4, v5, :cond_4
 
     .line 451
     aget-wide v5, p2, v4
@@ -917,46 +917,46 @@
 
     const/4 v7, 0x1
 
-    if-eq v6, v7, :cond_24
+    if-eq v6, v7, :cond_3
 
     const/4 v7, 0x2
 
-    if-eq v6, v7, :cond_22
+    if-eq v6, v7, :cond_2
 
     const/4 v7, 0x3
 
-    if-eq v6, v7, :cond_20
+    if-eq v6, v7, :cond_1
 
     const/4 v7, 0x4
 
-    if-eq v6, v7, :cond_1e
+    if-eq v6, v7, :cond_0
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     move v3, v5
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_20
+    :cond_1
     move v2, v5
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_22
+    :cond_2
     move v1, v5
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_3
     move v0, v5
 
-    :goto_25
+    :goto_1
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_28
+    :cond_4
     add-float/2addr v2, v0
 
     add-float/2addr v3, v1
@@ -1029,7 +1029,7 @@
 .end method
 
 .method hasCustomData(Ljava/lang/String;)Z
-    .registers 3
+    .locals 1
 
     .line 644
     iget-object v0, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->attributes:Ljava/util/LinkedHashMap;
@@ -1042,7 +1042,7 @@
 .end method
 
 .method initCartesian(Landroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
-    .registers 21
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -1076,34 +1076,34 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_0
 
     move v5, v4
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     iget v5, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentWidth:F
 
     .line 86
-    :goto_20
+    :goto_0
     iget v6, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentHeight:F
 
     invoke-static {v6}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v6
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_1
 
     move v6, v4
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     iget v6, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentHeight:F
 
     .line 87
-    :goto_2c
+    :goto_1
     iget v7, v3, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
 
     iget v8, v2, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
@@ -1217,17 +1217,17 @@
 
     move-result v7
 
-    if-eqz v7, :cond_80
+    if-eqz v7, :cond_2
 
     move v7, v4
 
-    goto :goto_82
+    goto :goto_2
 
-    :cond_80
+    :cond_2
     iget v7, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentX:F
 
     .line 106
-    :goto_82
+    :goto_2
     iget v8, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mAltPercentY:F
 
     invoke-static {v8}, Ljava/lang/Float;->isNaN(F)Z
@@ -1236,46 +1236,46 @@
 
     const/4 v9, 0x0
 
-    if-eqz v8, :cond_8d
+    if-eqz v8, :cond_3
 
     move v8, v9
 
-    goto :goto_8f
+    goto :goto_3
 
-    :cond_8d
+    :cond_3
     iget v8, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mAltPercentY:F
 
     .line 107
-    :goto_8f
+    :goto_3
     iget v10, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentY:F
 
     invoke-static {v10}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v10
 
-    if-eqz v10, :cond_98
+    if-eqz v10, :cond_4
 
-    goto :goto_9a
+    goto :goto_4
 
-    :cond_98
+    :cond_4
     iget v4, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentY:F
 
     .line 108
-    :goto_9a
+    :goto_4
     iget v10, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mAltPercentX:F
 
     invoke-static {v10}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v10
 
-    if-eqz v10, :cond_a3
+    if-eqz v10, :cond_5
 
-    goto :goto_a5
+    goto :goto_5
 
-    :cond_a3
+    :cond_5
     iget v9, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mAltPercentX:F
 
-    :goto_a5
+    :goto_5
     const/4 v10, 0x2
 
     .line 109
@@ -1339,7 +1339,7 @@
 .end method
 
 .method initPath(Landroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
-    .registers 20
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -1373,34 +1373,34 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_0
 
     move v5, v4
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     iget v5, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentWidth:F
 
     .line 188
-    :goto_20
+    :goto_0
     iget v6, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentHeight:F
 
     invoke-static {v6}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v6
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_1
 
     move v6, v4
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     iget v6, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentHeight:F
 
     .line 190
-    :goto_2c
+    :goto_1
     iget v7, v3, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
 
     iget v8, v2, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
@@ -1426,15 +1426,15 @@
 
     move-result v9
 
-    if-eqz v9, :cond_43
+    if-eqz v9, :cond_2
 
-    goto :goto_45
+    goto :goto_2
 
-    :cond_43
+    :cond_2
     iget v4, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentX:F
 
     .line 197
-    :goto_45
+    :goto_2
     iget v9, v2, Landroidx/constraintlayout/motion/widget/MotionPaths;->x:F
 
     iget v10, v2, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
@@ -1537,16 +1537,16 @@
 
     move-result v8
 
-    if-eqz v8, :cond_8e
+    if-eqz v8, :cond_3
 
     const/4 v8, 0x0
 
-    goto :goto_90
+    goto :goto_3
 
-    :cond_8e
+    :cond_3
     iget v8, v7, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentY:F
 
-    :goto_90
+    :goto_3
     neg-float v1, v1
 
     mul-float/2addr v1, v8
@@ -1612,7 +1612,7 @@
 .end method
 
 .method initScreen(IILandroidx/constraintlayout/motion/widget/KeyPosition;Landroidx/constraintlayout/motion/widget/MotionPaths;Landroidx/constraintlayout/motion/widget/MotionPaths;)V
-    .registers 23
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -1646,34 +1646,34 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1e
+    if-eqz v5, :cond_0
 
     move v5, v4
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     iget v5, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentWidth:F
 
     .line 146
-    :goto_20
+    :goto_0
     iget v6, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentHeight:F
 
     invoke-static {v6}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v6
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_1
 
     move v6, v4
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2a
+    :cond_1
     iget v6, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentHeight:F
 
     .line 148
-    :goto_2c
+    :goto_1
     iget v7, v3, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
 
     iget v8, v2, Landroidx/constraintlayout/motion/widget/MotionPaths;->width:F
@@ -1792,7 +1792,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8e
+    if-nez v2, :cond_2
 
     move/from16 v2, p1
 
@@ -1819,14 +1819,14 @@
     iput v2, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->x:F
 
     .line 171
-    :cond_8e
+    :cond_2
     iget v2, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mPercentY:F
 
     invoke-static {v2}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_3
 
     move/from16 v2, p2
 
@@ -1853,7 +1853,7 @@
     iput v2, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->y:F
 
     .line 176
-    :cond_a5
+    :cond_3
     iget-object v2, v1, Landroidx/constraintlayout/motion/widget/KeyPosition;->mTransitionEasing:Ljava/lang/String;
 
     invoke-static {v2}, Landroidx/constraintlayout/motion/utils/Easing;->getInterpolator(Ljava/lang/String;)Landroidx/constraintlayout/motion/utils/Easing;
@@ -1871,7 +1871,7 @@
 .end method
 
 .method setBounds(FFFF)V
-    .registers 5
+    .locals 0
 
     .line 668
     iput p1, p0, Landroidx/constraintlayout/motion/widget/MotionPaths;->x:F
@@ -1889,7 +1889,7 @@
 .end method
 
 .method setDpDt(FF[F[I[D[D)V
-    .registers 19
+    .locals 12
 
     move-object/from16 v0, p4
 
@@ -1908,12 +1908,12 @@
     move v3, v2
 
     .line 572
-    :goto_9
+    :goto_0
     array-length v8, v0
 
     const/4 v9, 0x1
 
-    if-ge v3, v8, :cond_2a
+    if-ge v3, v8, :cond_4
 
     .line 573
     aget-wide v10, p5, v3
@@ -1926,46 +1926,46 @@
     .line 578
     aget v10, v0, v3
 
-    if-eq v10, v9, :cond_26
+    if-eq v10, v9, :cond_3
 
     const/4 v9, 0x2
 
-    if-eq v10, v9, :cond_24
+    if-eq v10, v9, :cond_2
 
     const/4 v9, 0x3
 
-    if-eq v10, v9, :cond_22
+    if-eq v10, v9, :cond_1
 
     const/4 v9, 0x4
 
-    if-eq v10, v9, :cond_20
+    if-eq v10, v9, :cond_0
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_20
+    :cond_0
     move v7, v8
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_22
+    :cond_1
     move v5, v8
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_24
+    :cond_2
     move v6, v8
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_26
+    :cond_3
     move v4, v8
 
-    :goto_27
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_2a
+    :cond_4
     mul-float v0, v1, v5
 
     const/high16 v3, 0x40000000    # 2.0f
@@ -2020,7 +2020,7 @@
 .end method
 
 .method setView(Landroid/view/View;[I[D[D[D)V
-    .registers 27
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -2045,7 +2045,7 @@
 
     const/4 v8, 0x1
 
-    if-eqz v7, :cond_28
+    if-eqz v7, :cond_0
 
     iget-object v7, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempValue:[D
 
@@ -2057,7 +2057,7 @@
 
     aget v9, v2, v9
 
-    if-gt v7, v9, :cond_28
+    if-gt v7, v9, :cond_0
 
     .line 330
     array-length v7, v2
@@ -2079,7 +2079,7 @@
     iput-object v7, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempDelta:[D
 
     .line 334
-    :cond_28
+    :cond_0
     iget-object v7, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempValue:[D
 
     const-wide/high16 v9, 0x7ff8000000000000L    # Double.NaN
@@ -2089,10 +2089,10 @@
     const/4 v9, 0x0
 
     .line 335
-    :goto_30
+    :goto_0
     array-length v10, v2
 
-    if-ge v9, v10, :cond_44
+    if-ge v9, v10, :cond_1
 
     .line 336
     iget-object v10, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempValue:[D
@@ -2112,9 +2112,9 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_44
+    :cond_1
     const/4 v10, 0x0
 
     const/high16 v11, 0x7fc00000    # Float.NaN
@@ -2128,12 +2128,12 @@
     const/4 v15, 0x0
 
     .line 340
-    :goto_4b
+    :goto_1
     iget-object v2, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempValue:[D
 
     array-length v7, v2
 
-    if-ge v10, v7, :cond_a2
+    if-ge v10, v7, :cond_b
 
     .line 341
     aget-wide v17, v2, v10
@@ -2144,29 +2144,29 @@
 
     const-wide/16 v17, 0x0
 
-    if-eqz v2, :cond_64
+    if-eqz v2, :cond_3
 
-    if-eqz p5, :cond_62
+    if-eqz p5, :cond_2
 
     aget-wide v19, p5, v10
 
     cmpl-double v2, v19, v17
 
-    if-nez v2, :cond_64
+    if-nez v2, :cond_3
 
-    :cond_62
+    :cond_2
     move v2, v8
 
-    goto :goto_9e
+    goto :goto_3
 
-    :cond_64
-    if-eqz p5, :cond_68
+    :cond_3
+    if-eqz p5, :cond_4
 
     .line 344
     aget-wide v17, p5, v10
 
     .line 345
-    :cond_68
+    :cond_4
     iget-object v2, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempValue:[D
 
     aget-wide v19, v2, v10
@@ -2175,18 +2175,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_73
+    if-eqz v2, :cond_5
 
-    goto :goto_79
+    goto :goto_2
 
-    :cond_73
+    :cond_5
     iget-object v2, v0, Landroidx/constraintlayout/motion/widget/MotionPaths;->mTempValue:[D
 
     aget-wide v19, v2, v10
 
     add-double v17, v19, v17
 
-    :goto_79
+    :goto_2
     move-wide/from16 v8, v17
 
     double-to-float v7, v8
@@ -2200,65 +2200,65 @@
 
     const/4 v2, 0x1
 
-    if-eq v10, v2, :cond_9c
+    if-eq v10, v2, :cond_a
 
     const/4 v9, 0x2
 
-    if-eq v10, v9, :cond_99
+    if-eq v10, v9, :cond_9
 
     const/4 v9, 0x3
 
-    if-eq v10, v9, :cond_96
+    if-eq v10, v9, :cond_8
 
     const/4 v9, 0x4
 
-    if-eq v10, v9, :cond_93
+    if-eq v10, v9, :cond_7
 
     const/4 v8, 0x5
 
-    if-eq v10, v8, :cond_91
+    if-eq v10, v8, :cond_6
 
-    goto :goto_9e
+    goto :goto_3
 
-    :cond_91
+    :cond_6
     move v11, v7
 
-    goto :goto_9e
+    goto :goto_3
 
-    :cond_93
+    :cond_7
     move v6, v7
 
     move v15, v8
 
-    goto :goto_9e
+    goto :goto_3
 
-    :cond_96
+    :cond_8
     move v5, v7
 
     move v13, v8
 
-    goto :goto_9e
+    goto :goto_3
 
-    :cond_99
+    :cond_9
     move v4, v7
 
     move v14, v8
 
-    goto :goto_9e
+    goto :goto_3
 
-    :cond_9c
+    :cond_a
     move v3, v7
 
     move v12, v8
 
-    :goto_9e
+    :goto_3
     add-int/lit8 v10, v10, 0x1
 
     move v8, v2
 
-    goto :goto_4b
+    goto :goto_1
 
-    :cond_a2
+    :cond_b
     move v2, v8
 
     .line 377
@@ -2266,7 +2266,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_b5
+    if-eqz v7, :cond_c
 
     const/high16 v7, 0x7fc00000    # Float.NaN
 
@@ -2275,14 +2275,14 @@
 
     move-result v8
 
-    if-nez v8, :cond_d6
+    if-nez v8, :cond_e
 
     .line 379
     invoke-virtual {v1, v7}, Landroid/view/View;->setRotation(F)V
 
-    goto :goto_d6
+    goto :goto_4
 
-    :cond_b5
+    :cond_c
     const/high16 v7, 0x7fc00000    # Float.NaN
 
     .line 382
@@ -2290,11 +2290,11 @@
 
     move-result v8
 
-    if-eqz v8, :cond_be
+    if-eqz v8, :cond_d
 
     const/4 v7, 0x0
 
-    :cond_be
+    :cond_d
     const/high16 v8, 0x40000000    # 2.0f
 
     div-float/2addr v13, v8
@@ -2331,8 +2331,8 @@
     .line 392
     invoke-virtual {v1, v7}, Landroid/view/View;->setRotation(F)V
 
-    :cond_d6
-    :goto_d6
+    :cond_e
+    :goto_4
     const/high16 v7, 0x3f000000    # 0.5f
 
     add-float/2addr v3, v7
@@ -2360,27 +2360,27 @@
 
     move-result v9
 
-    if-ne v5, v9, :cond_f4
+    if-ne v5, v9, :cond_10
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v9
 
-    if-eq v6, v9, :cond_f1
+    if-eq v6, v9, :cond_f
 
-    goto :goto_f4
+    goto :goto_5
 
-    :cond_f1
+    :cond_f
     const/16 v16, 0x0
 
-    goto :goto_f6
+    goto :goto_6
 
-    :cond_f4
-    :goto_f4
+    :cond_10
+    :goto_5
     move/from16 v16, v2
 
-    :goto_f6
-    if-eqz v16, :cond_105
+    :goto_6
+    if-eqz v16, :cond_11
 
     const/high16 v2, 0x40000000    # 2.0f
 
@@ -2398,7 +2398,7 @@
     invoke-virtual {v1, v5, v2}, Landroid/view/View;->measure(II)V
 
     .line 423
-    :cond_105
+    :cond_11
     invoke-virtual {v1, v8, v7, v3, v4}, Landroid/view/View;->layout(IIII)V
 
     return-void

@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/video/AudioSpec;)V
-    .registers 2
+    .locals 0
 
     .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public get()Landroidx/camera/video/internal/audio/AudioSettings;
-    .registers 8
+    .locals 7
 
     .line 53
     iget-object v0, p0, Landroidx/camera/video/internal/config/AudioSettingsDefaultResolver;->mAudioSpec:Landroidx/camera/video/AudioSpec;
@@ -68,7 +68,7 @@
 
     const-string v4, "DefAudioResolver"
 
-    if-ne v2, v3, :cond_1e
+    if-ne v2, v3, :cond_0
 
     const-string v2, "Using fallback AUDIO channel count: 1"
 
@@ -77,10 +77,10 @@
 
     const/4 v2, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 66
-    :cond_1e
+    :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v5, "Using supplied AUDIO channel count: "
@@ -98,7 +98,7 @@
     invoke-static {v4, v3}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 70
-    :goto_30
+    :goto_0
     iget-object v3, p0, Landroidx/camera/video/internal/config/AudioSettingsDefaultResolver;->mAudioSpec:Landroidx/camera/video/AudioSpec;
 
     invoke-virtual {v3}, Landroidx/camera/video/AudioSpec;->getSampleRate()Landroid/util/Range;
@@ -112,7 +112,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_47
+    if-eqz v5, :cond_1
 
     const-string v3, "Using fallback AUDIO sample rate: 44100Hz"
 
@@ -121,10 +121,10 @@
 
     const v3, 0xac44
 
-    goto :goto_6d
+    goto :goto_1
 
     .line 79
-    :cond_47
+    :cond_1
     invoke-virtual {v3}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
     move-result-object v5
@@ -164,7 +164,7 @@
     invoke-static {v4, v5}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 84
-    :goto_6d
+    :goto_1
     invoke-static {}, Landroidx/camera/video/internal/audio/AudioSettings;->builder()Landroidx/camera/video/internal/audio/AudioSettings$Builder;
 
     move-result-object v4
@@ -198,7 +198,7 @@
 .end method
 
 .method public bridge synthetic get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 32
     invoke-virtual {p0}, Landroidx/camera/video/internal/config/AudioSettingsDefaultResolver;->get()Landroidx/camera/video/internal/audio/AudioSettings;

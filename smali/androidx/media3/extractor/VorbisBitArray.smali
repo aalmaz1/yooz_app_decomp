@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,32 +32,32 @@
 .end method
 
 .method private assertValidOffset()V
-    .registers 3
+    .locals 2
 
     .line 123
     iget v0, p0, Landroidx/media3/extractor/VorbisBitArray;->byteOffset:I
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_1
 
     iget v1, p0, Landroidx/media3/extractor/VorbisBitArray;->byteLimit:I
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_0
 
-    if-ne v0, v1, :cond_10
+    if-ne v0, v1, :cond_1
 
     iget v0, p0, Landroidx/media3/extractor/VorbisBitArray;->bitOffset:I
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     return-void
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public bitsLeft()I
-    .registers 3
+    .locals 2
 
     .line 118
     iget v0, p0, Landroidx/media3/extractor/VorbisBitArray;->byteLimit:I
@@ -85,7 +85,7 @@
 .end method
 
 .method public getPosition()I
-    .registers 3
+    .locals 2
 
     .line 102
     iget v0, p0, Landroidx/media3/extractor/VorbisBitArray;->byteOffset:I
@@ -100,7 +100,7 @@
 .end method
 
 .method public readBit()Z
-    .registers 3
+    .locals 2
 
     .line 60
     iget-object v0, p0, Landroidx/media3/extractor/VorbisBitArray;->data:[B
@@ -119,24 +119,24 @@
 
     and-int/2addr v0, v1
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     move v0, v1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 61
-    :goto_12
+    :goto_0
     invoke-virtual {p0, v1}, Landroidx/media3/extractor/VorbisBitArray;->skipBits(I)V
 
     return v0
 .end method
 
 .method public readBits(I)I
-    .registers 8
+    .locals 6
 
     .line 72
     iget v0, p0, Landroidx/media3/extractor/VorbisBitArray;->byteOffset:I
@@ -171,8 +171,8 @@
 
     and-int/2addr v0, v4
 
-    :goto_1b
-    if-ge v1, p1, :cond_2a
+    :goto_0
+    if-ge v1, p1, :cond_0
 
     .line 76
     iget-object v4, p0, Landroidx/media3/extractor/VorbisBitArray;->data:[B
@@ -191,9 +191,9 @@
 
     move v3, v5
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     rsub-int/lit8 v1, p1, 0x20
 
     const/4 v2, -0x1
@@ -209,7 +209,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -223,7 +223,7 @@
 .end method
 
 .method public setPosition(I)V
-    .registers 3
+    .locals 1
 
     .line 111
     div-int/lit8 v0, p1, 0x8
@@ -244,7 +244,7 @@
 .end method
 
 .method public skipBits(I)V
-    .registers 5
+    .locals 3
 
     .line 90
     div-int/lit8 v0, p1, 0x8
@@ -269,7 +269,7 @@
 
     const/4 p1, 0x7
 
-    if-le v2, p1, :cond_1a
+    if-le v2, p1, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
@@ -282,7 +282,7 @@
     iput v2, p0, Landroidx/media3/extractor/VorbisBitArray;->bitOffset:I
 
     .line 97
-    :cond_1a
+    :cond_0
     invoke-direct {p0}, Landroidx/media3/extractor/VorbisBitArray;->assertValidOffset()V
 
     return-void

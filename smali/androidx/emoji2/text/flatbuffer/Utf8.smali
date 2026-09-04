@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,12 +27,12 @@
 .end method
 
 .method public static getDefault()Landroidx/emoji2/text/flatbuffer/Utf8;
-    .registers 1
+    .locals 1
 
     .line 62
     sget-object v0, Landroidx/emoji2/text/flatbuffer/Utf8;->DEFAULT:Landroidx/emoji2/text/flatbuffer/Utf8;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     .line 63
     new-instance v0, Landroidx/emoji2/text/flatbuffer/Utf8Safe;
@@ -42,14 +42,14 @@
     sput-object v0, Landroidx/emoji2/text/flatbuffer/Utf8;->DEFAULT:Landroidx/emoji2/text/flatbuffer/Utf8;
 
     .line 65
-    :cond_b
+    :cond_0
     sget-object v0, Landroidx/emoji2/text/flatbuffer/Utf8;->DEFAULT:Landroidx/emoji2/text/flatbuffer/Utf8;
 
     return-object v0
 .end method
 
 .method public static setDefault(Landroidx/emoji2/text/flatbuffer/Utf8;)V
-    .registers 1
+    .locals 0
 
     .line 73
     sput-object p0, Landroidx/emoji2/text/flatbuffer/Utf8;->DEFAULT:Landroidx/emoji2/text/flatbuffer/Utf8;

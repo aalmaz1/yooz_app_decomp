@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/extractor/text/ttml/TtmlNode;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,21 +79,21 @@
     .line 43
     iput-object p4, p0, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;->imageMap:Ljava/util/Map;
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_0
 
     .line 45
     invoke-static {p2}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object p2
 
-    :goto_14
+    :goto_0
     iput-object p2, p0, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;->globalStyles:Ljava/util/Map;
 
     .line 46
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public getCues(J)Ljava/util/List;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -138,7 +138,7 @@
 .end method
 
 .method public getEventTime(I)J
-    .registers 4
+    .locals 2
 
     .line 62
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;->eventTimesUs:[J
@@ -149,7 +149,7 @@
 .end method
 
 .method public getEventTimeCount()I
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;->eventTimesUs:[J
@@ -160,7 +160,7 @@
 .end method
 
 .method getGlobalStyles()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -178,7 +178,7 @@
 .end method
 
 .method public getNextEventTimeIndex(J)I
-    .registers 5
+    .locals 2
 
     .line 51
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;->eventTimesUs:[J
@@ -194,19 +194,19 @@
 
     array-length p2, p2
 
-    if-ge p1, p2, :cond_d
+    if-ge p1, p2, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_e
+    :goto_0
     return p1
 .end method
 
 .method getRoot()Landroidx/media3/extractor/text/ttml/TtmlNode;
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/media3/extractor/text/ttml/TtmlSubtitle;->root:Landroidx/media3/extractor/text/ttml/TtmlNode;

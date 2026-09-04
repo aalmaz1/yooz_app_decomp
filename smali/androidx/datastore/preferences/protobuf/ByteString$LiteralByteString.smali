@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>([B)V
-    .registers 2
+    .locals 0
 
     .line 1294
     invoke-direct {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LeafByteString;-><init>()V
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public final asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
-    .registers 4
+    .locals 3
 
     .line 1352
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -66,7 +66,7 @@
 .end method
 
 .method public final asReadOnlyByteBufferList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -89,7 +89,7 @@
 .end method
 
 .method public byteAt(I)B
-    .registers 3
+    .locals 1
 
     .line 1306
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -100,7 +100,7 @@
 .end method
 
 .method public final copyTo(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 1347
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -119,7 +119,7 @@
 .end method
 
 .method protected copyToInternal([BIII)V
-    .registers 6
+    .locals 1
 
     .line 1342
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -130,26 +130,26 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     return v0
 
     .line 1404
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/datastore/preferences/protobuf/ByteString;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 1408
-    :cond_a
+    :cond_1
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->size()I
 
     move-result v1
@@ -162,25 +162,25 @@
 
     move-result v3
 
-    if-eq v1, v3, :cond_18
+    if-eq v1, v3, :cond_2
 
     return v2
 
     .line 1411
-    :cond_18
+    :cond_2
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->size()I
 
     move-result v1
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_3
 
     return v0
 
     .line 1415
-    :cond_1f
+    :cond_3
     instance-of v0, p1, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_5
 
     .line 1416
     check-cast p1, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;
@@ -195,16 +195,16 @@
 
     move-result v1
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_4
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_4
 
-    if-eq v0, v1, :cond_34
+    if-eq v0, v1, :cond_4
 
     return v2
 
     .line 1425
-    :cond_34
+    :cond_4
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->size()I
 
     move-result v0
@@ -216,7 +216,7 @@
     return p1
 
     .line 1428
-    :cond_3d
+    :cond_5
     invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -225,14 +225,14 @@
 .end method
 
 .method final equalsRange(Landroidx/datastore/preferences/protobuf/ByteString;II)Z
-    .registers 9
+    .locals 5
 
     .line 1443
     invoke-virtual {p1}, Landroidx/datastore/preferences/protobuf/ByteString;->size()I
 
     move-result v0
 
-    if-gt p3, v0, :cond_6f
+    if-gt p3, v0, :cond_4
 
     add-int v0, p2, p3
 
@@ -241,14 +241,14 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_44
+    if-gt v0, v1, :cond_3
 
     .line 1451
     instance-of v1, p1, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .line 1452
     check-cast p1, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;
@@ -278,32 +278,32 @@
 
     add-int/2addr p1, p2
 
-    :goto_27
-    if-ge p3, v3, :cond_35
+    :goto_0
+    if-ge p3, v3, :cond_1
 
     .line 1460
     aget-byte p2, v0, p3
 
     aget-byte v4, v1, p1
 
-    if-eq p2, v4, :cond_30
+    if-eq p2, v4, :cond_0
 
     return v2
 
-    :cond_30
+    :cond_0
     add-int/lit8 p3, p3, 0x1
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     const/4 p1, 0x1
 
     return p1
 
     .line 1467
-    :cond_37
+    :cond_2
     invoke-virtual {p1, p2, v0}, Landroidx/datastore/preferences/protobuf/ByteString;->substring(II)Landroidx/datastore/preferences/protobuf/ByteString;
 
     move-result-object p1
@@ -319,7 +319,7 @@
     return p1
 
     .line 1447
-    :cond_44
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -364,7 +364,7 @@
     throw v0
 
     .line 1444
-    :cond_6f
+    :cond_4
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -395,7 +395,7 @@
 .end method
 
 .method protected getOffsetIntoBytes()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -403,7 +403,7 @@
 .end method
 
 .method internalByteAt(I)B
-    .registers 3
+    .locals 1
 
     .line 1311
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -414,7 +414,7 @@
 .end method
 
 .method public final isValidUtf8()Z
-    .registers 4
+    .locals 3
 
     .line 1386
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->getOffsetIntoBytes()I
@@ -438,7 +438,7 @@
 .end method
 
 .method public final newCodedInput()Landroidx/datastore/preferences/protobuf/CodedInputStream;
-    .registers 5
+    .locals 4
 
     .line 1487
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -463,7 +463,7 @@
 .end method
 
 .method public final newInput()Ljava/io/InputStream;
-    .registers 5
+    .locals 4
 
     .line 1480
     new-instance v0, Ljava/io/ByteArrayInputStream;
@@ -484,7 +484,7 @@
 .end method
 
 .method protected final partialHash(III)I
-    .registers 6
+    .locals 2
 
     .line 1472
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -503,7 +503,7 @@
 .end method
 
 .method protected final partialIsValidUtf8(III)I
-    .registers 5
+    .locals 1
 
     .line 1392
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->getOffsetIntoBytes()I
@@ -525,7 +525,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 1316
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -536,7 +536,7 @@
 .end method
 
 .method public final substring(II)Landroidx/datastore/preferences/protobuf/ByteString;
-    .registers 6
+    .locals 3
 
     .line 1324
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->size()I
@@ -547,7 +547,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_d
+    if-nez p2, :cond_0
 
     .line 1327
     sget-object p1, Landroidx/datastore/preferences/protobuf/ByteString;->EMPTY:Landroidx/datastore/preferences/protobuf/ByteString;
@@ -555,7 +555,7 @@
     return-object p1
 
     .line 1330
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;
 
     iget-object v1, p0, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;->bytes:[B
@@ -572,7 +572,7 @@
 .end method
 
 .method protected final toStringInternal(Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 6
+    .locals 4
 
     .line 1378
     new-instance v0, Ljava/lang/String;
@@ -593,7 +593,7 @@
 .end method
 
 .method final writeTo(Landroidx/datastore/preferences/protobuf/ByteOutput;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -617,7 +617,7 @@
 .end method
 
 .method public final writeTo(Ljava/io/OutputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -635,7 +635,7 @@
 .end method
 
 .method final writeToInternal(Ljava/io/OutputStream;II)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

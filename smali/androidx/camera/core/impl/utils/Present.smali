@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -50,12 +50,12 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     .line 77
     instance-of v0, p1, Landroidx/camera/core/impl/utils/Present;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 78
     check-cast p1, Landroidx/camera/core/impl/utils/Present;
@@ -71,14 +71,14 @@
 
     return p1
 
-    :cond_f
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -92,7 +92,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 86
     iget-object v0, p0, Landroidx/camera/core/impl/utils/Present;->mReference:Ljava/lang/Object;
@@ -109,7 +109,7 @@
 .end method
 
 .method public isPresent()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public or(Landroidx/camera/core/impl/utils/Optional;)Landroidx/camera/core/impl/utils/Optional;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,7 +135,7 @@
 .end method
 
 .method public or(Landroidx/core/util/Supplier;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,7 +154,7 @@
 .end method
 
 .method public or(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)TT;"
@@ -173,7 +173,7 @@
 .end method
 
 .method public orNull()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -187,7 +187,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 92
     new-instance v0, Ljava/lang/StringBuilder;

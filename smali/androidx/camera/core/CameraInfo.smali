@@ -45,7 +45,7 @@
 .end method
 
 .method public getIntrinsicZoomRatio()F
-    .registers 2
+    .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public getLensFacing()I
-    .registers 2
+    .locals 1
 
     const/4 v0, -0x1
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public getSupportedFrameRateRanges()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -112,7 +112,7 @@
 .end method
 
 .method public isFocusMeteringSupported(Landroidx/camera/core/FocusMeteringAction;)Z
-    .registers 2
+    .locals 0
 
     const/4 p1, 0x0
 
@@ -120,7 +120,7 @@
 .end method
 
 .method public isPrivateReprocessingSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public isZslSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

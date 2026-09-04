@@ -28,7 +28,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;Ljava/io/Writer;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x8010,
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -74,7 +74,7 @@
     .line 670
     iget v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->bitBufferLength:I
 
-    if-lez v0, :cond_4f
+    if-lez v0, :cond_0
 
     .line 671
     iget v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->bitBuffer:I
@@ -124,10 +124,10 @@
 
     iget-object v0, v0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->paddingChar:Ljava/lang/Character;
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_0
 
     .line 675
-    :goto_30
+    :goto_0
     iget v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->writtenChars:I
 
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
@@ -138,7 +138,7 @@
 
     rem-int/2addr v0, v1
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_0
 
     .line 676
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->val$out:Ljava/io/Writer;
@@ -160,10 +160,10 @@
 
     iput v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->writtenChars:I
 
-    goto :goto_30
+    goto :goto_0
 
     .line 681
-    :cond_4f
+    :cond_0
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->val$out:Ljava/io/Writer;
 
     invoke-virtual {v0}, Ljava/io/Writer;->close()V
@@ -172,7 +172,7 @@
 .end method
 
 .method public flush()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -188,7 +188,7 @@
 .end method
 
 .method public write(I)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -224,7 +224,7 @@
     iput p1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->bitBufferLength:I
 
     .line 655
-    :goto_f
+    :goto_0
     iget p1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->bitBufferLength:I
 
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
@@ -233,7 +233,7 @@
 
     iget v0, v0, Lcom/google/common/io/BaseEncoding$Alphabet;->bitsPerChar:I
 
-    if-lt p1, v0, :cond_4b
+    if-lt p1, v0, :cond_0
 
     .line 656
     iget p1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->bitBuffer:I
@@ -291,8 +291,8 @@
 
     iput p1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$1;->bitBufferLength:I
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_4b
+    :cond_0
     return-void
 .end method

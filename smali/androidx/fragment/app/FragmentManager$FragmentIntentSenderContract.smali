@@ -25,7 +25,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3656
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public createIntent(Landroid/content/Context;Landroidx/activity/result/IntentSenderRequest;)Landroid/content/Intent;
-    .registers 6
+    .locals 3
 
     .line 3662
     new-instance p1, Landroid/content/Intent;
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_0
 
     const-string v1, "androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE"
 
@@ -59,7 +59,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_0
 
     .line 3667
     invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
@@ -76,7 +76,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_0
 
     .line 3670
     new-instance v0, Landroidx/activity/result/IntentSenderRequest$Builder;
@@ -112,7 +112,7 @@
 
     move-result-object p2
 
-    :cond_42
+    :cond_0
     const-string v0, "androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST"
 
     .line 3677
@@ -125,7 +125,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_62
+    if-eqz p2, :cond_1
 
     .line 3679
     new-instance p2, Ljava/lang/StringBuilder;
@@ -146,12 +146,12 @@
 
     invoke-static {v0, p2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_62
+    :cond_1
     return-object p1
 .end method
 
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 3656
     check-cast p2, Landroidx/activity/result/IntentSenderRequest;
@@ -164,7 +164,7 @@
 .end method
 
 .method public parseResult(ILandroid/content/Intent;)Landroidx/activity/result/ActivityResult;
-    .registers 4
+    .locals 1
 
     .line 3687
     new-instance v0, Landroidx/activity/result/ActivityResult;
@@ -175,7 +175,7 @@
 .end method
 
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 3656
     invoke-virtual {p0, p1, p2}, Landroidx/fragment/app/FragmentManager$FragmentIntentSenderContract;->parseResult(ILandroid/content/Intent;)Landroidx/activity/result/ActivityResult;

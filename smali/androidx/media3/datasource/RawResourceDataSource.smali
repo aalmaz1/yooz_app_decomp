@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -52,7 +52,7 @@
 .end method
 
 .method public static buildRawResourceUri(I)Landroid/net/Uri;
-    .registers 3
+    .locals 2
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -79,7 +79,7 @@
 .end method
 
 .method private static openAssetFileDescriptor(Landroid/content/Context;Landroidx/media3/datasource/DataSpec;)Landroid/content/res/AssetFileDescriptor;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
@@ -110,7 +110,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_1
 
     .line 215
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -127,7 +127,7 @@
 
     move-result v4
 
-    if-ne v4, v1, :cond_31
+    if-ne v4, v1, :cond_0
 
     const/4 v1, 0x0
 
@@ -142,10 +142,10 @@
 
     move-result v0
 
-    goto/16 :goto_c2
+    goto/16 :goto_2
 
     .line 220
-    :cond_31
+    :cond_0
     new-instance p0, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -171,7 +171,7 @@
 
     throw p0
 
-    :cond_4a
+    :cond_1
     const-string v0, "android.resource"
 
     .line 226
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f8
+    if-eqz v0, :cond_8
 
     .line 227
     invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
@@ -204,7 +204,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6c
+    if-eqz v4, :cond_2
 
     .line 229
     invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -212,7 +212,7 @@
     move-result-object v0
 
     .line 232
-    :cond_6c
+    :cond_2
     invoke-virtual {p1}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v1
@@ -221,23 +221,23 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7b
+    if-eqz v1, :cond_3
 
     .line 233
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    goto :goto_7f
+    goto :goto_0
 
     .line 234
-    :cond_7b
+    :cond_3
     invoke-virtual {p1}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v1
 
     .line 235
-    :goto_7f
+    :goto_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -246,18 +246,18 @@
 
     move-result v4
 
-    if-eqz v4, :cond_8e
+    if-eqz v4, :cond_4
 
     .line 236
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
 
-    goto :goto_96
+    goto :goto_1
 
     .line 240
-    :cond_8e
-    :try_start_8e
+    :cond_4
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object p0
@@ -265,10 +265,10 @@
     invoke-virtual {p0, v1}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
 
     move-result-object p0
-    :try_end_96
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_8e .. :try_end_96} :catch_ef
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
-    :goto_96
+    :goto_1
     const-string v4, "\\d+"
 
     .line 250
@@ -276,17 +276,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_a3
+    if-eqz v4, :cond_5
 
     .line 251
     invoke-static {v0}, Landroidx/media3/datasource/RawResourceDataSource;->parseResourceId(Ljava/lang/String;)I
 
     move-result v0
 
-    goto :goto_c2
+    goto :goto_2
 
     .line 255
-    :cond_a3
+    :cond_5
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -316,23 +316,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e7
+    if-eqz v0, :cond_7
 
     .line 280
-    :goto_c2
-    :try_start_c2
+    :goto_2
+    :try_start_1
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
 
     move-result-object p0
-    :try_end_c6
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_c2 .. :try_end_c6} :catch_e0
+    :try_end_1
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
-    if-eqz p0, :cond_c9
+    if-eqz p0, :cond_6
 
     return-object p0
 
     .line 287
-    :cond_c9
+    :cond_6
     new-instance p0, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -355,7 +355,7 @@
 
     throw p0
 
-    :catch_e0
+    :catch_0
     move-exception p0
 
     .line 282
@@ -366,7 +366,7 @@
     throw p1
 
     .line 261
-    :cond_e7
+    :cond_7
     new-instance p0, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     const-string p1, "Resource not found."
@@ -375,7 +375,7 @@
 
     throw p0
 
-    :catch_ef
+    :catch_1
     move-exception p0
 
     .line 242
@@ -388,7 +388,7 @@
     throw p1
 
     .line 268
-    :cond_f8
+    :cond_8
     new-instance p0, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -424,7 +424,7 @@
 .end method
 
 .method private static parseResourceId(Ljava/lang/String;)I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
@@ -436,13 +436,13 @@
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
-    :try_end_4
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
 
     .line 299
-    :catch_5
+    :catch_0
     new-instance p0, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     const/4 v0, 0x0
@@ -459,7 +459,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
@@ -476,41 +476,41 @@
     const/4 v2, 0x0
 
     .line 352
-    :try_start_6
+    :try_start_0
     iget-object v3, p0, Landroidx/media3/datasource/RawResourceDataSource;->inputStream:Ljava/io/InputStream;
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_0
 
     .line 353
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_d} :catch_39
-    .catchall {:try_start_6 .. :try_end_d} :catchall_37
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 359
-    :cond_d
+    :cond_0
     iput-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->inputStream:Ljava/io/InputStream;
 
     .line 361
-    :try_start_f
+    :try_start_1
     iget-object v3, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_1
 
     .line 362
     invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_16
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_16} :catch_24
-    .catchall {:try_start_f .. :try_end_16} :catchall_22
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 368
-    :cond_16
+    :cond_1
     iput-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
     .line 369
     iget-boolean v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     .line 370
     iput-boolean v2, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
@@ -518,35 +518,35 @@
     .line 371
     invoke-virtual {p0}, Landroidx/media3/datasource/RawResourceDataSource;->transferEnded()V
 
-    :cond_21
+    :cond_2
     return-void
 
-    :catchall_22
+    :catchall_0
     move-exception v1
 
-    goto :goto_2b
+    goto :goto_0
 
-    :catch_24
+    :catch_0
     move-exception v3
 
     .line 365
-    :try_start_25
+    :try_start_2
     new-instance v4, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     invoke-direct {v4, v0, v3, v1}, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v4
-    :try_end_2b
-    .catchall {:try_start_25 .. :try_end_2b} :catchall_22
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 368
-    :goto_2b
+    :goto_0
     iput-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
     .line 369
     iget-boolean v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 370
     iput-boolean v2, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
@@ -555,51 +555,51 @@
     invoke-virtual {p0}, Landroidx/media3/datasource/RawResourceDataSource;->transferEnded()V
 
     .line 373
-    :cond_36
+    :cond_3
     throw v1
 
-    :catchall_37
+    :catchall_1
     move-exception v3
 
-    goto :goto_40
+    goto :goto_1
 
-    :catch_39
+    :catch_1
     move-exception v3
 
     .line 356
-    :try_start_3a
+    :try_start_3
     new-instance v4, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     invoke-direct {v4, v0, v3, v1}, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v4
-    :try_end_40
-    .catchall {:try_start_3a .. :try_end_40} :catchall_37
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 359
-    :goto_40
+    :goto_1
     iput-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->inputStream:Ljava/io/InputStream;
 
     .line 361
-    :try_start_42
+    :try_start_4
     iget-object v4, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
-    if-eqz v4, :cond_49
+    if-eqz v4, :cond_4
 
     .line 362
     invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_49
-    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_49} :catch_57
-    .catchall {:try_start_42 .. :try_end_49} :catchall_55
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 368
-    :cond_49
+    :cond_4
     iput-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
     .line 369
     iget-boolean v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_5
 
     .line 370
     iput-boolean v2, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
@@ -608,35 +608,35 @@
     invoke-virtual {p0}, Landroidx/media3/datasource/RawResourceDataSource;->transferEnded()V
 
     .line 374
-    :cond_54
+    :cond_5
     throw v3
 
-    :catchall_55
+    :catchall_2
     move-exception v1
 
-    goto :goto_5e
+    goto :goto_2
 
-    :catch_57
+    :catch_2
     move-exception v3
 
     .line 365
-    :try_start_58
+    :try_start_5
     new-instance v4, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     invoke-direct {v4, v0, v3, v1}, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v4
-    :try_end_5e
-    .catchall {:try_start_58 .. :try_end_5e} :catchall_55
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 368
-    :goto_5e
+    :goto_2
     iput-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
     .line 369
     iget-boolean v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_6
 
     .line 370
     iput-boolean v2, p0, Landroidx/media3/datasource/RawResourceDataSource;->opened:Z
@@ -645,31 +645,31 @@
     invoke-virtual {p0}, Landroidx/media3/datasource/RawResourceDataSource;->transferEnded()V
 
     .line 373
-    :cond_69
+    :cond_6
     throw v1
 .end method
 
 .method public getUri()Landroid/net/Uri;
-    .registers 2
+    .locals 1
 
     .line 344
     iget-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->dataSpec:Landroidx/media3/datasource/DataSpec;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     iget-object v0, v0, Landroidx/media3/datasource/DataSpec;->uri:Landroid/net/Uri;
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return-object v0
 .end method
 
 .method public open(Landroidx/media3/datasource/DataSpec;)J
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
@@ -718,20 +718,20 @@
 
     const/4 v7, 0x0
 
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_1
 
     .line 150
-    :try_start_27
+    :try_start_0
     iget-wide v8, p1, Landroidx/media3/datasource/DataSpec;->position:J
 
     cmp-long v8, v8, v0
 
-    if-gtz v8, :cond_2e
+    if-gtz v8, :cond_0
 
-    goto :goto_34
+    goto :goto_0
 
     .line 152
-    :cond_2e
+    :cond_0
     new-instance p1, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     invoke-direct {p1, v7, v7, v6}, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
@@ -739,8 +739,8 @@
     throw p1
 
     .line 157
-    :cond_34
-    :goto_34
+    :cond_1
+    :goto_0
     iget-object v8, p0, Landroidx/media3/datasource/RawResourceDataSource;->assetFileDescriptor:Landroid/content/res/AssetFileDescriptor;
 
     invoke-virtual {v8}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
@@ -764,11 +764,11 @@
 
     cmp-long v8, v10, v8
 
-    if-nez v8, :cond_a7
+    if-nez v8, :cond_9
 
     const-wide/16 v8, 0x0
 
-    if-nez v5, :cond_71
+    if-nez v5, :cond_4
 
     .line 172
     invoke-virtual {v2}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
@@ -782,15 +782,15 @@
 
     cmp-long v1, v1, v8
 
-    if-nez v1, :cond_5b
+    if-nez v1, :cond_2
 
     .line 174
     iput-wide v3, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
-    goto :goto_78
+    goto :goto_1
 
     .line 176
-    :cond_5b
+    :cond_2
     invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->size()J
 
     move-result-wide v1
@@ -805,61 +805,61 @@
 
     cmp-long v0, v1, v8
 
-    if-ltz v0, :cond_6b
+    if-ltz v0, :cond_3
 
-    goto :goto_78
+    goto :goto_1
 
     .line 179
-    :cond_6b
+    :cond_3
     new-instance p1, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     invoke-direct {p1, v7, v7, v6}, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw p1
 
-    :cond_71
+    :cond_4
     sub-long/2addr v0, v10
 
     .line 186
     iput-wide v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
-    :try_end_74
-    .catch Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException; {:try_start_27 .. :try_end_74} :catch_b6
-    .catch Ljava/io/IOException; {:try_start_27 .. :try_end_74} :catch_ad
+    :try_end_0
+    .catch Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     cmp-long v0, v0, v8
 
-    if-ltz v0, :cond_a1
+    if-ltz v0, :cond_8
 
     .line 198
-    :goto_78
+    :goto_1
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     cmp-long v0, v0, v3
 
-    if-eqz v0, :cond_8f
+    if-eqz v0, :cond_6
 
     .line 200
     iget-wide v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
     cmp-long v2, v0, v3
 
-    if-nez v2, :cond_87
+    if-nez v2, :cond_5
 
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
-    goto :goto_8d
+    goto :goto_2
 
-    :cond_87
+    :cond_5
     iget-wide v5, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
     invoke-static {v0, v1, v5, v6}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
-    :goto_8d
+    :goto_2
     iput-wide v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
-    :cond_8f
+    :cond_6
     const/4 v0, 0x1
 
     .line 202
@@ -873,21 +873,21 @@
 
     cmp-long v0, v0, v3
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_7
 
     iget-wide v0, p1, Landroidx/media3/datasource/DataSpec;->length:J
 
-    goto :goto_a0
+    goto :goto_3
 
-    :cond_9e
+    :cond_7
     iget-wide v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
-    :goto_a0
+    :goto_3
     return-wide v0
 
     .line 188
-    :cond_a1
-    :try_start_a1
+    :cond_8
+    :try_start_1
     new-instance p1, Landroidx/media3/datasource/DataSourceException;
 
     invoke-direct {p1, v6}, Landroidx/media3/datasource/DataSourceException;-><init>(I)V
@@ -895,17 +895,17 @@
     throw p1
 
     .line 164
-    :cond_a7
+    :cond_9
     new-instance p1, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     invoke-direct {p1, v7, v7, v6}, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw p1
-    :try_end_ad
-    .catch Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException; {:try_start_a1 .. :try_end_ad} :catch_b6
-    .catch Ljava/io/IOException; {:try_start_a1 .. :try_end_ad} :catch_ad
+    :try_end_1
+    .catch Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    :catch_ad
+    :catch_0
     move-exception p1
 
     .line 194
@@ -917,7 +917,7 @@
 
     throw v0
 
-    :catch_b6
+    :catch_1
     move-exception p1
 
     .line 192
@@ -925,21 +925,21 @@
 .end method
 
 .method public read([BII)I
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
         }
     .end annotation
 
-    if-nez p3, :cond_4
+    if-nez p3, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 310
-    :cond_4
+    :cond_0
     iget-wide v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
     const-wide/16 v2, 0x0
@@ -948,26 +948,26 @@
 
     const/4 v3, -0x1
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_1
 
     return v3
 
-    :cond_e
+    :cond_1
     const-wide/16 v4, -0x1
 
     cmp-long v2, v0, v4
 
     const/16 v6, 0x7d0
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_2
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_17
+    :cond_2
     int-to-long v7, p3
 
     .line 317
-    :try_start_18
+    :try_start_0
     invoke-static {v0, v1, v7, v8}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
@@ -975,7 +975,7 @@
     long-to-int p3, v0
 
     .line 318
-    :goto_1d
+    :goto_0
     iget-object v0, p0, Landroidx/media3/datasource/RawResourceDataSource;->inputStream:Ljava/io/InputStream;
 
     invoke-static {v0}, Landroidx/media3/common/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -987,22 +987,22 @@
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result p1
-    :try_end_29
-    .catch Ljava/io/IOException; {:try_start_18 .. :try_end_29} :catch_4d
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-ne p1, v3, :cond_3f
+    if-ne p1, v3, :cond_4
 
     .line 325
     iget-wide p1, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
     cmp-long p1, p1, v4
 
-    if-nez p1, :cond_32
+    if-nez p1, :cond_3
 
     return v3
 
     .line 327
-    :cond_32
+    :cond_3
     new-instance p1, Landroidx/media3/datasource/RawResourceDataSource$RawResourceDataSourceException;
 
     new-instance p2, Ljava/io/EOFException;
@@ -1016,12 +1016,12 @@
     throw p1
 
     .line 334
-    :cond_3f
+    :cond_4
     iget-wide p2, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
     cmp-long v0, p2, v4
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_5
 
     int-to-long v0, p1
 
@@ -1031,12 +1031,12 @@
     iput-wide p2, p0, Landroidx/media3/datasource/RawResourceDataSource;->bytesRemaining:J
 
     .line 337
-    :cond_49
+    :cond_5
     invoke-virtual {p0, p1}, Landroidx/media3/datasource/RawResourceDataSource;->bytesTransferred(I)V
 
     return p1
 
-    :catch_4d
+    :catch_0
     move-exception p1
 
     .line 320

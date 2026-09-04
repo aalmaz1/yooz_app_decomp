@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -14,7 +14,7 @@
 .end method
 
 .method public static read(Landroidx/versionedparcelable/VersionedParcel;)Landroidx/media/AudioAttributesCompat;
-    .registers 4
+    .locals 3
 
     .line 11
     new-instance v0, Landroidx/media/AudioAttributesCompat;
@@ -38,7 +38,7 @@
 .end method
 
 .method public static write(Landroidx/media/AudioAttributesCompat;Landroidx/versionedparcelable/VersionedParcel;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x0
 

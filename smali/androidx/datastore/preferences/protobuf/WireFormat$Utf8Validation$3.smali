@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method readString(Landroidx/datastore/preferences/protobuf/CodedInputStream;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

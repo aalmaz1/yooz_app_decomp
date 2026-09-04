@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 99
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;)V
-    .registers 3
+    .locals 0
 
     .line 104
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 110
     invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -69,7 +69,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/Throwable;)V
-    .registers 3
+    .locals 0
 
     .line 115
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public getReason()I
-    .registers 2
+    .locals 1
 
     .line 122
     iget v0, p0, Landroidx/camera/core/CameraUnavailableException;->mReason:I

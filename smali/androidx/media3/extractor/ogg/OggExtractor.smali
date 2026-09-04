@@ -22,7 +22,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 40
     new-instance v0, Landroidx/media3/extractor/ogg/OggExtractor$$ExternalSyntheticLambda0;
@@ -35,7 +35,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -63,7 +63,7 @@
 .end method
 
 .method private static resetPosition(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/util/ParsableByteArray;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 .end method
 
 .method private sniffInternal(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -102,7 +102,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_5e
+    if-eqz v2, :cond_3
 
     iget v2, v0, Landroidx/media3/extractor/ogg/OggPageHeader;->type:I
 
@@ -110,12 +110,12 @@
 
     and-int/2addr v2, v4
 
-    if-eq v2, v4, :cond_14
+    if-eq v2, v4, :cond_0
 
-    goto :goto_5e
+    goto :goto_1
 
     .line 100
-    :cond_14
+    :cond_0
     iget v0, v0, Landroidx/media3/extractor/ogg/OggPageHeader;->bodySize:I
 
     const/16 v2, 0x8
@@ -145,7 +145,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_1
 
     .line 105
     new-instance p1, Landroidx/media3/extractor/ogg/FlacReader;
@@ -154,10 +154,10 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
 
-    goto :goto_5d
+    goto :goto_0
 
     .line 106
-    :cond_3a
+    :cond_1
     invoke-static {v2}, Landroidx/media3/extractor/ogg/OggExtractor;->resetPosition(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/util/ParsableByteArray;
 
     move-result-object p1
@@ -166,7 +166,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_2
 
     .line 107
     new-instance p1, Landroidx/media3/extractor/ogg/VorbisReader;
@@ -175,10 +175,10 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
 
-    goto :goto_5d
+    goto :goto_0
 
     .line 108
-    :cond_4c
+    :cond_2
     invoke-static {v2}, Landroidx/media3/extractor/ogg/OggExtractor;->resetPosition(Landroidx/media3/common/util/ParsableByteArray;)Landroidx/media3/common/util/ParsableByteArray;
 
     move-result-object p1
@@ -187,7 +187,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5e
+    if-eqz p1, :cond_3
 
     .line 109
     new-instance p1, Landroidx/media3/extractor/ogg/OpusReader;
@@ -196,18 +196,18 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
 
-    :goto_5d
+    :goto_0
     return v1
 
-    :cond_5e
-    :goto_5e
+    :cond_3
+    :goto_1
     return v3
 .end method
 
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 2
+    .locals 0
 
     .line 59
     iput-object p1, p0, Landroidx/media3/extractor/ogg/OggExtractor;->output:Landroidx/media3/extractor/ExtractorOutput;
@@ -216,7 +216,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -231,21 +231,21 @@
     .line 77
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 78
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/OggExtractor;->sniffInternal(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 82
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const-string p1, "Failed to determine bitstream type"
 
     const/4 p2, 0x0
@@ -258,11 +258,11 @@
     throw p1
 
     .line 84
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     iget-boolean v0, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReaderInitialized:Z
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_2
 
     .line 85
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggExtractor;->output:Landroidx/media3/extractor/ExtractorOutput;
@@ -291,7 +291,7 @@
     iput-boolean v2, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReaderInitialized:Z
 
     .line 90
-    :cond_35
+    :cond_2
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
 
     invoke-virtual {v0, p1, p2}, Landroidx/media3/extractor/ogg/StreamReader;->read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
@@ -302,28 +302,28 @@
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 6
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/media3/extractor/ogg/OggExtractor;->streamReader:Landroidx/media3/extractor/ogg/StreamReader;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 65
     invoke-virtual {v0, p1, p2, p3, p4}, Landroidx/media3/extractor/ogg/StreamReader;->seek(JJ)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -335,12 +335,12 @@
     invoke-direct {p0, p1}, Landroidx/media3/extractor/ogg/OggExtractor;->sniffInternal(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p1
-    :try_end_4
-    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_4} :catch_5
+    :try_end_0
+    .catch Landroidx/media3/common/ParserException; {:try_start_0 .. :try_end_0} :catch_0
 
     return p1
 
-    :catch_5
+    :catch_0
     const/4 p1, 0x0
 
     return p1

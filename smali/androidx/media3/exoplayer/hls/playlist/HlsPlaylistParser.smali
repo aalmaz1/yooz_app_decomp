@@ -234,7 +234,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "AVERAGE-BANDWIDTH=(\\d+)\\b"
 
@@ -708,7 +708,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 236
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;->EMPTY:Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
@@ -721,7 +721,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;)V
-    .registers 3
+    .locals 0
 
     .line 250
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -736,7 +736,7 @@
 .end method
 
 .method private static checkPlaylistHeader(Ljava/io/BufferedReader;)Z
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -752,7 +752,7 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_2
 
     .line 300
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
@@ -761,7 +761,7 @@
 
     const/16 v1, 0xbb
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
@@ -769,24 +769,24 @@
 
     const/16 v1, 0xbf
 
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 304
-    :cond_1a
+    :cond_0
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
     move-result v0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     return v2
 
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_1
     const/4 v1, 0x1
 
     .line 306
@@ -796,10 +796,10 @@
 
     move v1, v2
 
-    :goto_26
+    :goto_2
     const/4 v3, 0x7
 
-    if-ge v1, v3, :cond_39
+    if-ge v1, v3, :cond_4
 
     const-string v3, "#EXTM3U"
 
@@ -808,22 +808,22 @@
 
     move-result v3
 
-    if-eq v0, v3, :cond_32
+    if-eq v0, v3, :cond_3
 
     return v2
 
     .line 312
-    :cond_32
+    :cond_3
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
     move-result v0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_26
+    goto :goto_2
 
     .line 314
-    :cond_39
+    :cond_4
     invoke-static {p0, v2, v0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->skipIgnorableWhitespace(Ljava/io/BufferedReader;ZI)I
 
     move-result p0
@@ -837,7 +837,7 @@
 .end method
 
 .method private static compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
-    .registers 2
+    .locals 1
 
     .line 1284
     new-instance v0, Ljava/lang/StringBuilder;
@@ -866,7 +866,7 @@
 .end method
 
 .method private static getPlaylistProtectionSchemes(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)Landroidx/media3/common/DrmInitData;
-    .registers 6
+    .locals 4
 
     .line 1070
     array-length v0, p1
@@ -876,10 +876,10 @@
     const/4 v1, 0x0
 
     .line 1071
-    :goto_4
+    :goto_0
     array-length v2, p1
 
-    if-ge v1, v2, :cond_13
+    if-ge v1, v2, :cond_0
 
     .line 1072
     aget-object v2, p1, v1
@@ -894,10 +894,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 1074
-    :cond_13
+    :cond_0
     new-instance p1, Landroidx/media3/common/DrmInitData;
 
     invoke-direct {p1, p0, v0}, Landroidx/media3/common/DrmInitData;-><init>(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)V
@@ -906,21 +906,21 @@
 .end method
 
 .method private static getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 0
 
-    if-nez p2, :cond_4
+    if-nez p2, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_4
-    if-eqz p3, :cond_7
+    :cond_0
+    if-eqz p3, :cond_1
 
     return-object p3
 
     .line 1087
-    :cond_7
+    :cond_1
     invoke-static {p0, p1}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object p0
@@ -929,7 +929,7 @@
 .end method
 
 .method private static getVariantWithAudioGroup(Ljava/util/ArrayList;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -945,12 +945,12 @@
     const/4 v0, 0x0
 
     .line 602
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_1
 
     .line 603
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -966,23 +966,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     return-object v1
 
-    :cond_16
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getVariantWithSubtitleGroup(Ljava/util/ArrayList;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -998,12 +998,12 @@
     const/4 v0, 0x0
 
     .line 624
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_1
 
     .line 625
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1019,23 +1019,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     return-object v1
 
-    :cond_16
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static getVariantWithVideoGroup(Ljava/util/ArrayList;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1051,12 +1051,12 @@
     const/4 v0, 0x0
 
     .line 613
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_19
+    if-ge v0, v1, :cond_1
 
     .line 614
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1072,23 +1072,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     return-object v1
 
-    :cond_16
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static parseDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)D
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1112,7 +1112,7 @@
 .end method
 
 .method private static parseDrmSchemeData(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Landroidx/media3/common/DrmInitData$SchemeData;
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1155,7 +1155,7 @@
 
     const-string/jumbo v5, "video/mp4"
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_0
 
     .line 1135
     sget-object p1, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
@@ -1186,7 +1186,7 @@
 
     return-object p1
 
-    :cond_31
+    :cond_0
     const-string v2, "com.widevine"
 
     .line 1140
@@ -1194,7 +1194,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_1
 
     .line 1141
     new-instance p1, Landroidx/media3/common/DrmInitData$SchemeData;
@@ -1211,7 +1211,7 @@
 
     return-object p1
 
-    :cond_47
+    :cond_1
     const-string v2, "com.microsoft.playready"
 
     .line 1142
@@ -1219,13 +1219,13 @@
 
     move-result p1
 
-    if-eqz p1, :cond_75
+    if-eqz p1, :cond_2
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_75
+    if-eqz p1, :cond_2
 
     .line 1143
     sget-object p1, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
@@ -1263,14 +1263,14 @@
 
     return-object p1
 
-    :cond_75
+    :cond_2
     const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method private static parseEncryptionScheme(Ljava/lang/String;)Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     const-string v0, "SAMPLE-AES-CENC"
 
@@ -1279,7 +1279,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     const-string v0, "SAMPLE-AES-CTR"
 
@@ -1287,25 +1287,25 @@
 
     move-result p0
 
-    if-eqz p0, :cond_11
+    if-eqz p0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const-string p0, "cbcs"
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     const-string p0, "cenc"
 
-    :goto_16
+    :goto_1
     return-object p0
 .end method
 
 .method private static parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1329,7 +1329,7 @@
 .end method
 
 .method private static parseLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)J
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -1353,7 +1353,7 @@
 .end method
 
 .method private static parseMediaPlaylist(Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
-    .registers 96
+    .locals 92
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1490,13 +1490,13 @@
     const/4 v5, 0x0
 
     .line 687
-    :cond_8d
-    :goto_8d
+    :cond_0
+    :goto_0
     invoke-virtual/range {p2 .. p2}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
 
     move-result v42
 
-    if-eqz v42, :cond_661
+    if-eqz v42, :cond_43
 
     .line 688
     invoke-virtual/range {p2 .. p2}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
@@ -1510,12 +1510,12 @@
 
     move-result v12
 
-    if-eqz v12, :cond_a2
+    if-eqz v12, :cond_1
 
     .line 692
     invoke-interface {v8, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_a2
+    :cond_1
     const-string v12, "#EXT-X-PLAYLIST-TYPE"
 
     .line 695
@@ -1523,7 +1523,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_c4
+    if-eqz v12, :cond_3
 
     .line 696
     sget-object v12, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_PLAYLIST_TYPE:Ljava/util/regex/Pattern;
@@ -1539,13 +1539,13 @@
 
     move-result v13
 
-    if-eqz v13, :cond_ba
+    if-eqz v13, :cond_2
 
     const/4 v2, 0x1
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_ba
+    :cond_2
     const-string v13, "EVENT"
 
     .line 699
@@ -1553,13 +1553,13 @@
 
     move-result v12
 
-    if-eqz v12, :cond_8d
+    if-eqz v12, :cond_0
 
     const/4 v2, 0x2
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_c4
+    :cond_3
     const-string v12, "#EXT-X-I-FRAMES-ONLY"
 
     .line 702
@@ -1567,13 +1567,13 @@
 
     move-result v12
 
-    if-eqz v12, :cond_cf
+    if-eqz v12, :cond_4
 
     const/16 v84, 0x1
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_cf
+    :cond_4
     const-string v12, "#EXT-X-START"
 
     .line 704
@@ -1583,7 +1583,7 @@
 
     const-wide v43, 0x412e848000000000L    # 1000000.0
 
-    if-eqz v12, :cond_ee
+    if-eqz v12, :cond_5
 
     .line 705
     sget-object v12, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_TIME_OFFSET:Ljava/util/regex/Pattern;
@@ -1606,9 +1606,9 @@
 
     move-result v23
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_ee
+    :cond_5
     const-string v11, "#EXT-X-SERVER-CONTROL"
 
     .line 708
@@ -1616,16 +1616,16 @@
 
     move-result v11
 
-    if-eqz v11, :cond_fb
+    if-eqz v11, :cond_6
 
     .line 709
     invoke-static {v13}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseServerControl(Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
 
     move-result-object v56
 
-    goto :goto_8d
+    goto :goto_0
 
-    :cond_fb
+    :cond_6
     const-string v11, "#EXT-X-PART-INF"
 
     .line 710
@@ -1633,7 +1633,7 @@
 
     move-result v11
 
-    if-eqz v11, :cond_110
+    if-eqz v11, :cond_7
 
     .line 711
     sget-object v11, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_PART_TARGET_DURATION:Ljava/util/regex/Pattern;
@@ -1648,9 +1648,9 @@
 
     move-wide/from16 v33, v11
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_110
+    :cond_7
     const-string v11, "#EXT-X-MAP"
 
     .line 713
@@ -1660,7 +1660,7 @@
 
     const-string v12, "@"
 
-    if-eqz v11, :cond_16f
+    if-eqz v11, :cond_d
 
     .line 714
     sget-object v11, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
@@ -1676,7 +1676,7 @@
 
     move-result-object v11
 
-    if-eqz v11, :cond_13e
+    if-eqz v11, :cond_8
 
     .line 717
     invoke-static {v11, v12}, Landroidx/media3/common/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
@@ -1695,7 +1695,7 @@
 
     const/4 v13, 0x1
 
-    if-le v12, v13, :cond_13e
+    if-le v12, v13, :cond_8
 
     .line 720
     aget-object v11, v11, v13
@@ -1706,25 +1706,25 @@
 
     move-wide/from16 v39, v11
 
-    :cond_13e
+    :cond_8
     const-wide/16 v11, -0x1
 
     cmp-long v13, v75, v11
 
-    if-nez v13, :cond_146
+    if-nez v13, :cond_9
 
     const-wide/16 v39, 0x0
 
-    :cond_146
+    :cond_9
     move-object/from16 v11, v77
 
-    if-eqz v14, :cond_155
+    if-eqz v14, :cond_b
 
-    if-eqz v11, :cond_14d
+    if-eqz v11, :cond_a
 
-    goto :goto_155
+    goto :goto_1
 
-    :cond_14d
+    :cond_a
     const-string v0, "The encryption IV attribute must be present when an initialization segment is encrypted with METHOD=AES-128."
 
     const/4 v12, 0x0
@@ -1736,8 +1736,8 @@
 
     throw v0
 
-    :cond_155
-    :goto_155
+    :cond_b
+    :goto_1
     const/4 v12, 0x0
 
     .line 734
@@ -1755,18 +1755,18 @@
 
     invoke-direct/range {v42 .. v49}, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;JJLjava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v13, :cond_169
+    if-eqz v13, :cond_c
 
     add-long v39, v39, v75
 
-    :cond_169
+    :cond_c
     move-object/from16 v77, v11
 
     const-wide/16 v75, -0x1
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_16f
+    :cond_d
     move-object/from16 v11, v77
 
     const/16 v77, 0x0
@@ -1778,7 +1778,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_18c
+    if-eqz v10, :cond_e
 
     .line 746
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_TARGET_DURATION:Ljava/util/regex/Pattern;
@@ -1793,15 +1793,15 @@
 
     mul-long v31, v31, v12
 
-    :goto_187
+    :goto_2
     move-object/from16 v77, v11
 
-    :goto_189
+    :goto_3
     const/4 v10, 0x0
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_18c
+    :cond_e
     const-string v10, "#EXT-X-MEDIA-SEQUENCE"
 
     .line 747
@@ -1809,7 +1809,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_19f
+    if-eqz v10, :cond_f
 
     .line 748
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_SEQUENCE:Ljava/util/regex/Pattern;
@@ -1822,9 +1822,9 @@
 
     move-wide/from16 v28, v82
 
-    goto :goto_189
+    goto :goto_3
 
-    :cond_19f
+    :cond_f
     const-string v10, "#EXT-X-VERSION"
 
     .line 750
@@ -1832,7 +1832,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_1ae
+    if-eqz v10, :cond_10
 
     .line 751
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_VERSION:Ljava/util/regex/Pattern;
@@ -1841,9 +1841,9 @@
 
     move-result v30
 
-    goto :goto_187
+    goto :goto_2
 
-    :cond_1ae
+    :cond_10
     const-string v10, "#EXT-X-DEFINE"
 
     .line 752
@@ -1851,7 +1851,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_1e9
+    if-eqz v10, :cond_13
 
     .line 753
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_IMPORT:Ljava/util/regex/Pattern;
@@ -1860,7 +1860,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_1cc
+    if-eqz v10, :cond_11
 
     .line 755
     iget-object v12, v0, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;->variableDefinitions:Ljava/util/Map;
@@ -1871,15 +1871,15 @@
 
     check-cast v12, Ljava/lang/String;
 
-    if-eqz v12, :cond_1db
+    if-eqz v12, :cond_12
 
     .line 757
     invoke-virtual {v3, v10, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1db
+    goto :goto_4
 
     .line 762
-    :cond_1cc
+    :cond_11
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
 
     .line 763
@@ -1897,8 +1897,8 @@
     .line 762
     invoke-virtual {v3, v10, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1db
-    :goto_1db
+    :cond_12
+    :goto_4
     move-object v12, v7
 
     move-object/from16 v91, v8
@@ -1911,12 +1911,12 @@
 
     move/from16 v78, v2
 
-    :goto_1e5
+    :goto_5
     move-object/from16 v82, v5
 
-    goto/16 :goto_64d
+    goto/16 :goto_18
 
-    :cond_1e9
+    :cond_13
     const-string v10, "#EXTINF"
 
     .line 766
@@ -1924,7 +1924,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_200
+    if-eqz v10, :cond_14
 
     .line 767
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_DURATION:Ljava/util/regex/Pattern;
@@ -1942,9 +1942,9 @@
 
     move-result-object v41
 
-    goto :goto_187
+    goto :goto_2
 
-    :cond_200
+    :cond_14
     move-object/from16 v10, v20
 
     const-string v0, "#EXT-X-SKIP"
@@ -1956,7 +1956,7 @@
 
     const-wide/16 v45, 0x1
 
-    if-eqz v0, :cond_2bd
+    if-eqz v0, :cond_1c
 
     .line 770
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_SKIPPED_SEGMENTS:Ljava/util/regex/Pattern;
@@ -1965,23 +1965,23 @@
 
     move-result v0
 
-    if-eqz v1, :cond_21c
+    if-eqz v1, :cond_15
 
     .line 771
     invoke-interface {v15}, Ljava/util/List;->isEmpty()Z
 
     move-result v12
 
-    if-eqz v12, :cond_21c
+    if-eqz v12, :cond_15
 
     const/4 v12, 0x1
 
-    goto :goto_21d
+    goto :goto_6
 
-    :cond_21c
+    :cond_15
     const/4 v12, 0x0
 
-    :goto_21d
+    :goto_6
     invoke-static {v12}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 772
@@ -1999,7 +1999,7 @@
 
     add-int/2addr v0, v12
 
-    if-ltz v12, :cond_2b7
+    if-ltz v12, :cond_1b
 
     .line 774
     iget-object v13, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
@@ -2008,7 +2008,7 @@
 
     move-result v13
 
-    if-gt v0, v13, :cond_2b7
+    if-gt v0, v13, :cond_1b
 
     move-object/from16 v20, v10
 
@@ -2016,8 +2016,8 @@
 
     move-wide/from16 v10, v80
 
-    :goto_23b
-    if-ge v12, v0, :cond_2ab
+    :goto_7
+    if-ge v12, v0, :cond_1a
 
     .line 779
     iget-object v14, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
@@ -2037,7 +2037,7 @@
 
     cmp-long v7, v28, v7
 
-    if-eqz v7, :cond_25a
+    if-eqz v7, :cond_16
 
     .line 784
     iget v7, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;->discontinuitySequence:I
@@ -2054,7 +2054,7 @@
     move-result-object v14
 
     .line 790
-    :cond_25a
+    :cond_16
     invoke-interface {v15, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 791
@@ -2069,7 +2069,7 @@
 
     cmp-long v7, v7, v42
 
-    if-eqz v7, :cond_271
+    if-eqz v7, :cond_17
 
     .line 794
     iget-wide v7, v14, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->byteRangeOffset:J
@@ -2080,13 +2080,13 @@
 
     add-long v39, v7, v0
 
-    goto :goto_273
+    goto :goto_8
 
-    :cond_271
+    :cond_17
     move/from16 v38, v0
 
     .line 796
-    :goto_273
+    :goto_8
     iget v0, v14, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->relativeDiscontinuitySequence:I
 
     .line 797
@@ -2103,7 +2103,7 @@
     .line 800
     iget-object v0, v14, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->encryptionIV:Ljava/lang/String;
 
-    if-eqz v0, :cond_290
+    if-eqz v0, :cond_18
 
     iget-object v0, v14, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->encryptionIV:Ljava/lang/String;
 
@@ -2118,20 +2118,20 @@
 
     move-result v0
 
-    if-nez v0, :cond_295
+    if-nez v0, :cond_19
 
-    goto :goto_292
+    goto :goto_9
 
-    :cond_290
+    :cond_18
     move-object/from16 v43, v1
 
     .line 802
-    :goto_292
+    :goto_9
     iget-object v0, v14, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->encryptionIV:Ljava/lang/String;
 
     move-object v13, v0
 
-    :cond_295
+    :cond_19
     add-long v82, v82, v45
 
     add-int/lit8 v12, v12, 0x1
@@ -2154,9 +2154,9 @@
 
     move-object/from16 v8, v91
 
-    goto :goto_23b
+    goto :goto_7
 
-    :cond_2ab
+    :cond_1a
     move-object/from16 v55, v7
 
     move-object/from16 v0, p0
@@ -2167,17 +2167,17 @@
 
     move-object/from16 v77, v13
 
-    goto/16 :goto_189
+    goto/16 :goto_3
 
     .line 776
-    :cond_2b7
+    :cond_1b
     new-instance v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$DeltaUpdateException;
 
     invoke-direct {v0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$DeltaUpdateException;-><init>()V
 
     throw v0
 
-    :cond_2bd
+    :cond_1c
     move-object/from16 v55, v7
 
     move-object/from16 v91, v8
@@ -2191,7 +2191,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_327
+    if-eqz v0, :cond_21
 
     .line 807
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_METHOD:Ljava/util/regex/Pattern;
@@ -2217,7 +2217,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_2ea
+    if-eqz v8, :cond_1d
 
     .line 813
     invoke-virtual {v9}, Ljava/util/TreeMap;->clear()V
@@ -2226,13 +2226,13 @@
 
     move-object v14, v8
 
-    :goto_2e7
+    :goto_a
     move-object/from16 v50, v14
 
-    goto :goto_320
+    goto :goto_c
 
     .line 816
-    :cond_2ea
+    :cond_1d
     sget-object v8, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_IV:Ljava/util/regex/Pattern;
 
     invoke-static {v13, v8, v3}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
@@ -2244,7 +2244,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_309
+    if-eqz v7, :cond_1f
 
     const-string v1, "AES-128"
 
@@ -2253,7 +2253,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_306
+    if-eqz v0, :cond_1e
 
     .line 820
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
@@ -2264,53 +2264,53 @@
 
     move-object v14, v0
 
-    goto :goto_320
+    goto :goto_c
 
-    :cond_306
+    :cond_1e
     move-object/from16 v14, v77
 
-    goto :goto_320
+    goto :goto_c
 
-    :cond_309
+    :cond_1f
     move-object/from16 v7, v78
 
-    if-nez v7, :cond_312
+    if-nez v7, :cond_20
 
     .line 827
     invoke-static {v0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseEncryptionScheme(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v78
 
-    goto :goto_314
+    goto :goto_b
 
-    :cond_312
+    :cond_20
     move-object/from16 v78, v7
 
     .line 829
-    :goto_314
+    :goto_b
     invoke-static {v13, v1, v3}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseDrmSchemeData(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Landroidx/media3/common/DrmInitData$SchemeData;
 
     move-result-object v0
 
-    if-eqz v0, :cond_306
+    if-eqz v0, :cond_1e
 
     .line 832
     invoke-virtual {v9, v1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object/from16 v14, v77
 
-    goto :goto_2e7
+    goto :goto_a
 
-    :goto_320
+    :goto_c
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     move-object/from16 v77, v8
 
-    goto :goto_356
+    goto :goto_e
 
-    :cond_327
+    :cond_21
     move-object/from16 v7, v78
 
     const-string v0, "#EXT-X-BYTERANGE"
@@ -2320,7 +2320,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_35c
+    if-eqz v0, :cond_23
 
     .line 837
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE:Ljava/util/regex/Pattern;
@@ -2348,7 +2348,7 @@
 
     const/4 v8, 0x1
 
-    if-le v1, v8, :cond_34e
+    if-le v1, v8, :cond_22
 
     .line 841
     aget-object v0, v0, v8
@@ -2359,8 +2359,8 @@
 
     move-wide/from16 v39, v0
 
-    :cond_34e
-    :goto_34e
+    :cond_22
+    :goto_d
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -2369,15 +2369,15 @@
 
     move-object/from16 v77, v11
 
-    :goto_356
+    :goto_e
     move-object/from16 v7, v55
 
-    :goto_358
+    :goto_f
     move-object/from16 v8, v91
 
-    goto/16 :goto_189
+    goto/16 :goto_3
 
-    :cond_35c
+    :cond_23
     const/4 v8, 0x1
 
     const-string v0, "#EXT-X-DISCONTINUITY-SEQUENCE"
@@ -2389,7 +2389,7 @@
 
     const/16 v1, 0x3a
 
-    if-eqz v0, :cond_385
+    if-eqz v0, :cond_24
 
     .line 845
     invoke-virtual {v13, v1}, Ljava/lang/String;->indexOf(I)I
@@ -2422,9 +2422,9 @@
 
     const/16 v26, 0x1
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_385
+    :cond_24
     const-string v0, "#EXT-X-DISCONTINUITY"
 
     .line 846
@@ -2432,13 +2432,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_390
+    if-eqz v0, :cond_25
 
     add-int/lit8 v79, v79, 0x1
 
-    goto :goto_34e
+    goto :goto_d
 
-    :cond_390
+    :cond_25
     const-string v0, "#EXT-X-PROGRAM-DATE-TIME"
 
     .line 848
@@ -2446,13 +2446,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3bd
+    if-eqz v0, :cond_27
 
     const-wide/16 v18, 0x0
 
     cmp-long v0, v24, v18
 
-    if-nez v0, :cond_3b3
+    if-nez v0, :cond_26
 
     .line 851
     invoke-virtual {v13, v1}, Ljava/lang/String;->indexOf(I)I
@@ -2477,23 +2477,23 @@
 
     sub-long v24, v0, v80
 
-    goto :goto_34e
+    goto :goto_d
 
-    :cond_3b3
+    :cond_26
     move/from16 v78, v2
 
     move-object v10, v7
 
-    :goto_3b6
+    :goto_10
     move-object/from16 v12, v55
 
     move-wide/from16 v7, v82
 
     const/4 v1, 0x0
 
-    goto/16 :goto_1e5
+    goto/16 :goto_5
 
-    :cond_3bd
+    :cond_27
     const-string v0, "#EXT-X-GAP"
 
     .line 854
@@ -2501,7 +2501,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3d6
+    if-eqz v0, :cond_28
 
     move-object/from16 v0, p0
 
@@ -2519,9 +2519,9 @@
 
     const/16 v54, 0x1
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_3d6
+    :cond_28
     const-string v0, "#EXT-X-INDEPENDENT-SEGMENTS"
 
     .line 856
@@ -2529,7 +2529,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3ef
+    if-eqz v0, :cond_29
 
     move-object/from16 v0, p0
 
@@ -2547,9 +2547,9 @@
 
     const/16 v35, 0x1
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_3ef
+    :cond_29
     const-string v0, "#EXT-X-ENDLIST"
 
     .line 858
@@ -2557,7 +2557,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_408
+    if-eqz v0, :cond_2a
 
     move-object/from16 v0, p0
 
@@ -2575,9 +2575,9 @@
 
     const/16 v36, 0x1
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_408
+    :cond_2a
     const-string v0, "#EXT-X-RENDITION-REPORT"
 
     .line 860
@@ -2585,7 +2585,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_43c
+    if-eqz v0, :cond_2b
 
     .line 861
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_LAST_MSN:Ljava/util/regex/Pattern;
@@ -2634,9 +2634,9 @@
 
     invoke-interface {v6, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_3b6
+    goto/16 :goto_10
 
-    :cond_43c
+    :cond_2b
     move/from16 v78, v2
 
     move-object v10, v7
@@ -2650,15 +2650,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4d4
+    if-eqz v0, :cond_33
 
-    if-eqz v5, :cond_44d
+    if-eqz v5, :cond_2c
 
-    :goto_44b
-    goto/16 :goto_3b6
+    :goto_11
+    goto/16 :goto_10
 
     .line 870
-    :cond_44d
+    :cond_2c
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_PRELOAD_HINT_TYPE:Ljava/util/regex/Pattern;
 
     invoke-static {v13, v0, v3}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
@@ -2672,12 +2672,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_45c
+    if-nez v0, :cond_2d
 
-    goto :goto_44b
+    goto :goto_11
 
     .line 874
-    :cond_45c
+    :cond_2d
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
 
     invoke-static {v13, v0, v3}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
@@ -2709,14 +2709,14 @@
 
     move-result-object v67
 
-    if-nez v50, :cond_498
+    if-nez v50, :cond_2f
 
     .line 883
     invoke-virtual {v9}, Ljava/util/TreeMap;->isEmpty()Z
 
     move-result v12
 
-    if-nez v12, :cond_498
+    if-nez v12, :cond_2f
 
     .line 884
     invoke-virtual {v9}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
@@ -2738,43 +2738,43 @@
 
     invoke-direct {v12, v10, v2}, Landroidx/media3/common/DrmInitData;-><init>(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)V
 
-    if-nez v37, :cond_496
+    if-nez v37, :cond_2e
 
     .line 887
     invoke-static {v10, v2}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->getPlaylistProtectionSchemes(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)Landroidx/media3/common/DrmInitData;
 
     move-result-object v37
 
-    :cond_496
+    :cond_2e
     move-object/from16 v50, v12
 
-    :cond_498
+    :cond_2f
     const-wide/16 v12, -0x1
 
     cmp-long v2, v0, v12
 
-    if-eqz v2, :cond_4a2
+    if-eqz v2, :cond_30
 
     cmp-long v38, v70, v12
 
-    if-eqz v38, :cond_4c2
+    if-eqz v38, :cond_32
 
     .line 892
-    :cond_4a2
+    :cond_30
     new-instance v5, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;
 
     const-wide/16 v60, 0x0
 
-    if-eqz v2, :cond_4ab
+    if-eqz v2, :cond_31
 
     move-wide/from16 v68, v0
 
-    goto :goto_4ad
+    goto :goto_12
 
-    :cond_4ab
+    :cond_31
     const-wide/16 v68, 0x0
 
-    :goto_4ad
+    :goto_12
     const/16 v72, 0x0
 
     const/16 v73, 0x0
@@ -2796,7 +2796,7 @@
     .line 902
     invoke-direct/range {v57 .. v74}, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;-><init>(Ljava/lang/String;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;JIJLandroidx/media3/common/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZZZ)V
 
-    :cond_4c2
+    :cond_32
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -2813,9 +2813,9 @@
 
     move-object/from16 v78, v10
 
-    goto/16 :goto_189
+    goto/16 :goto_3
 
-    :cond_4d4
+    :cond_33
     move-wide/from16 v7, v82
 
     const-string v0, "#EXT-X-PART"
@@ -2825,7 +2825,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_591
+    if-eqz v0, :cond_3b
 
     .line 911
     invoke-static {v7, v8, v14, v11}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -2863,23 +2863,23 @@
 
     move-result v2
 
-    if-eqz v35, :cond_505
+    if-eqz v35, :cond_34
 
     .line 919
     invoke-interface/range {v55 .. v55}, Ljava/util/List;->isEmpty()Z
 
     move-result v38
 
-    if-eqz v38, :cond_505
+    if-eqz v38, :cond_34
 
     const/16 v38, 0x1
 
-    goto :goto_507
+    goto :goto_13
 
-    :cond_505
+    :cond_34
     move/from16 v38, v5
 
-    :goto_507
+    :goto_13
     or-int v73, v2, v38
 
     .line 920
@@ -2896,7 +2896,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_530
+    if-eqz v2, :cond_36
 
     .line 925
     invoke-static {v2, v12}, Landroidx/media3/common/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
@@ -2917,7 +2917,7 @@
 
     const/4 v12, 0x1
 
-    if-le v5, v12, :cond_52d
+    if-le v5, v12, :cond_35
 
     .line 928
     aget-object v2, v2, v12
@@ -2926,32 +2926,32 @@
 
     move-result-wide v88
 
-    :cond_52d
+    :cond_35
     const-wide/16 v12, -0x1
 
-    goto :goto_534
+    goto :goto_14
 
-    :cond_530
+    :cond_36
     const-wide/16 v12, -0x1
 
     const-wide/16 v42, -0x1
 
-    :goto_534
+    :goto_14
     cmp-long v2, v42, v12
 
-    if-nez v2, :cond_53a
+    if-nez v2, :cond_37
 
     const-wide/16 v88, 0x0
 
-    :cond_53a
-    if-nez v50, :cond_55c
+    :cond_37
+    if-nez v50, :cond_39
 
     .line 934
     invoke-virtual {v9}, Ljava/util/TreeMap;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_55c
+    if-nez v5, :cond_39
 
     .line 935
     invoke-virtual {v9}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
@@ -2973,18 +2973,18 @@
 
     invoke-direct {v12, v10, v5}, Landroidx/media3/common/DrmInitData;-><init>(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)V
 
-    if-nez v37, :cond_55a
+    if-nez v37, :cond_38
 
     .line 938
     invoke-static {v10, v5}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->getPlaylistProtectionSchemes(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)Landroidx/media3/common/DrmInitData;
 
     move-result-object v37
 
-    :cond_55a
+    :cond_38
     move-object/from16 v50, v12
 
     .line 941
-    :cond_55c
+    :cond_39
     new-instance v5, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Part;
 
     move-object/from16 v57, v5
@@ -3015,11 +3015,11 @@
 
     add-long v51, v51, v0
 
-    if-eqz v2, :cond_580
+    if-eqz v2, :cond_3a
 
     add-long v88, v88, v42
 
-    :cond_580
+    :cond_3a
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
@@ -3036,9 +3036,9 @@
 
     move-object v7, v12
 
-    goto/16 :goto_358
+    goto/16 :goto_f
 
-    :cond_591
+    :cond_3b
     move-object/from16 v82, v5
 
     move-object/from16 v12, v55
@@ -3050,7 +3050,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_64c
+    if-nez v0, :cond_42
 
     .line 963
     invoke-static {v7, v8, v14, v11}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3075,18 +3075,18 @@
 
     cmp-long v8, v75, v42
 
-    if-nez v8, :cond_5b6
+    if-nez v8, :cond_3c
 
     const-wide/16 v57, 0x0
 
-    goto :goto_5d2
+    goto :goto_15
 
-    :cond_5b6
-    if-eqz v84, :cond_5d0
+    :cond_3c
+    if-eqz v84, :cond_3d
 
-    if-nez v85, :cond_5d0
+    if-nez v85, :cond_3d
 
-    if-nez v7, :cond_5d0
+    if-nez v7, :cond_3d
 
     .line 977
     new-instance v7, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;
@@ -3108,18 +3108,18 @@
     .line 984
     invoke-virtual {v4, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_5d0
+    :cond_3d
     move-wide/from16 v57, v39
 
-    :goto_5d2
-    if-nez v50, :cond_5f5
+    :goto_15
+    if-nez v50, :cond_3e
 
     .line 987
     invoke-virtual {v9}, Ljava/util/TreeMap;->isEmpty()Z
 
     move-result v13
 
-    if-nez v13, :cond_5f5
+    if-nez v13, :cond_3e
 
     .line 988
     invoke-virtual {v9}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
@@ -3143,16 +3143,16 @@
 
     invoke-direct {v13, v10, v2}, Landroidx/media3/common/DrmInitData;-><init>(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)V
 
-    if-nez v37, :cond_5fa
+    if-nez v37, :cond_3f
 
     .line 991
     invoke-static {v10, v2}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->getPlaylistProtectionSchemes(Ljava/lang/String;[Landroidx/media3/common/DrmInitData$SchemeData;)Landroidx/media3/common/DrmInitData;
 
     move-result-object v37
 
-    goto :goto_5fa
+    goto :goto_16
 
-    :cond_5f5
+    :cond_3e
     move-wide/from16 v59, v1
 
     const/4 v1, 0x0
@@ -3160,20 +3160,20 @@
     move-object/from16 v13, v50
 
     .line 995
-    :cond_5fa
-    :goto_5fa
+    :cond_3f
+    :goto_16
     new-instance v2, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;
 
-    if-eqz v85, :cond_601
+    if-eqz v85, :cond_40
 
     move-object/from16 v40, v85
 
-    goto :goto_603
+    goto :goto_17
 
-    :cond_601
+    :cond_40
     move-object/from16 v40, v7
 
-    :goto_603
+    :goto_17
     move-object/from16 v38, v2
 
     move-object/from16 v39, v5
@@ -3209,11 +3209,11 @@
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v8, :cond_62a
+    if-eqz v8, :cond_41
 
     add-long v57, v57, v75
 
-    :cond_62a
+    :cond_41
     move-wide/from16 v39, v57
 
     move-object/from16 v0, p0
@@ -3246,12 +3246,12 @@
 
     move/from16 v10, v54
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_64c
+    :cond_42
     const/4 v1, 0x0
 
-    :goto_64d
+    :goto_18
     move-object/from16 v0, p0
 
     move-object/from16 v77, v11
@@ -3272,9 +3272,9 @@
 
     move-object/from16 v1, p1
 
-    goto/16 :goto_8d
+    goto/16 :goto_0
 
-    :cond_661
+    :cond_43
     move/from16 v78, v2
 
     move-object/from16 v82, v5
@@ -3293,12 +3293,12 @@
     move v2, v1
 
     .line 1024
-    :goto_66f
+    :goto_19
     invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_6cd
+    if-ge v2, v3, :cond_48
 
     .line 1025
     invoke-interface {v6, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3314,7 +3314,7 @@
 
     cmp-long v9, v4, v7
 
-    if-nez v9, :cond_690
+    if-nez v9, :cond_44
 
     .line 1028
     invoke-interface {v15}, Ljava/util/List;->size()I
@@ -3334,25 +3334,25 @@
     sub-long/2addr v4, v9
 
     .line 1030
-    :cond_690
+    :cond_44
     iget v9, v3, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$RenditionReport;->lastPartIndex:I
 
     const/4 v10, -0x1
 
-    if-ne v9, v10, :cond_6b7
+    if-ne v9, v10, :cond_47
 
     const-wide v13, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v11, v33, v13
 
-    if-eqz v11, :cond_6b5
+    if-eqz v11, :cond_46
 
     .line 1033
     invoke-interface {v12}, Ljava/util/List;->isEmpty()Z
 
     move-result v9
 
-    if-eqz v9, :cond_6ad
+    if-eqz v9, :cond_45
 
     invoke-static {v15}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
 
@@ -3362,13 +3362,13 @@
 
     iget-object v9, v9, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
 
-    goto :goto_6ae
+    goto :goto_1a
 
-    :cond_6ad
+    :cond_45
     move-object v9, v12
 
     .line 1034
-    :goto_6ae
+    :goto_1a
     invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v9
@@ -3377,20 +3377,20 @@
 
     sub-int/2addr v9, v11
 
-    goto :goto_6bd
+    goto :goto_1b
 
-    :cond_6b5
+    :cond_46
     const/4 v11, 0x1
 
-    goto :goto_6bd
+    goto :goto_1b
 
-    :cond_6b7
+    :cond_47
     const/4 v11, 0x1
 
     const-wide v13, -0x7fffffffffffffffL    # -4.9E-324
 
     .line 1036
-    :goto_6bd
+    :goto_1b
     iget-object v1, v3, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$RenditionReport;->playlistUri:Landroid/net/Uri;
 
     new-instance v7, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$RenditionReport;
@@ -3405,12 +3405,12 @@
 
     const/4 v1, 0x0
 
-    goto :goto_66f
+    goto :goto_19
 
-    :cond_6cd
+    :cond_48
     const/4 v11, 0x1
 
-    if-eqz v82, :cond_6d5
+    if-eqz v82, :cond_49
 
     move-object/from16 v5, v82
 
@@ -3418,23 +3418,23 @@
     invoke-interface {v12, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 1045
-    :cond_6d5
+    :cond_49
     new-instance v1, Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     const-wide/16 v2, 0x0
 
     cmp-long v2, v24, v2
 
-    if-eqz v2, :cond_6e0
+    if-eqz v2, :cond_4a
 
     move/from16 v90, v11
 
-    goto :goto_6e2
+    goto :goto_1c
 
-    :cond_6e0
+    :cond_4a
     const/16 v90, 0x0
 
-    :goto_6e2
+    :goto_1c
     move-object v5, v1
 
     move/from16 v6, v78
@@ -3487,7 +3487,7 @@
 .end method
 
 .method private static parseMultivariantPlaylist(Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
-    .registers 38
+    .locals 36
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3551,14 +3551,14 @@
     const/4 v13, 0x0
 
     .line 344
-    :goto_36
+    :goto_0
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
 
     move-result v14
 
     const-string v15, "application/x-mpegURL"
 
-    if-eqz v14, :cond_21c
+    if-eqz v14, :cond_f
 
     .line 345
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
@@ -3572,12 +3572,12 @@
 
     move-result v9
 
-    if-eqz v9, :cond_4d
+    if-eqz v9, :cond_0
 
     .line 349
     invoke-virtual {v8, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_4d
+    :cond_0
     const-string v9, "#EXT-X-I-FRAME-STREAM-INF"
 
     .line 351
@@ -3594,7 +3594,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_6d
+    if-eqz v10, :cond_1
 
     .line 354
     sget-object v9, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
@@ -3614,9 +3614,9 @@
     .line 354
     invoke-virtual {v11, v9, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_ce
+    goto :goto_1
 
-    :cond_6d
+    :cond_1
     const-string v10, "#EXT-X-INDEPENDENT-SEGMENTS"
 
     .line 357
@@ -3624,7 +3624,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_87
+    if-eqz v10, :cond_2
 
     move-object v1, v0
 
@@ -3644,9 +3644,9 @@
 
     const/4 v10, 0x1
 
-    goto/16 :goto_201
+    goto/16 :goto_9
 
-    :cond_87
+    :cond_2
     const-string v10, "#EXT-X-MEDIA"
 
     .line 359
@@ -3654,14 +3654,14 @@
 
     move-result v10
 
-    if-eqz v10, :cond_93
+    if-eqz v10, :cond_3
 
     .line 362
     invoke-virtual {v3, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ce
+    goto :goto_1
 
-    :cond_93
+    :cond_3
     const-string v10, "#EXT-X-SESSION-KEY"
 
     .line 363
@@ -3669,7 +3669,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_c3
+    if-eqz v10, :cond_4
 
     .line 364
     sget-object v9, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_KEYFORMAT:Ljava/util/regex/Pattern;
@@ -3686,7 +3686,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_ce
+    if-eqz v9, :cond_5
 
     .line 368
     sget-object v10, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_METHOD:Ljava/util/regex/Pattern;
@@ -3715,9 +3715,9 @@
 
     invoke-virtual {v12, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_ce
+    goto :goto_1
 
-    :cond_c3
+    :cond_4
     const-string v10, "#EXT-X-STREAM-INF"
 
     .line 372
@@ -3725,14 +3725,14 @@
 
     move-result v10
 
-    if-nez v10, :cond_e1
+    if-nez v10, :cond_6
 
-    if-eqz v9, :cond_ce
+    if-eqz v9, :cond_5
 
-    goto :goto_e1
+    goto :goto_2
 
-    :cond_ce
-    :goto_ce
+    :cond_5
+    :goto_1
     move-object v1, v0
 
     move-object/from16 v34, v3
@@ -3751,10 +3751,10 @@
 
     move/from16 v10, v19
 
-    goto/16 :goto_201
+    goto/16 :goto_9
 
-    :cond_e1
-    :goto_e1
+    :cond_6
+    :goto_2
     const-string v10, "CLOSED-CAPTIONS=NONE"
 
     .line 373
@@ -3764,21 +3764,21 @@
 
     or-int/2addr v13, v10
 
-    if-eqz v9, :cond_ef
+    if-eqz v9, :cond_7
 
     const/16 v10, 0x4000
 
     move/from16 v20, v13
 
-    goto :goto_f2
+    goto :goto_3
 
-    :cond_ef
+    :cond_7
     move/from16 v20, v13
 
     const/4 v10, 0x0
 
     .line 375
-    :goto_f2
+    :goto_3
     sget-object v13, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_BANDWIDTH:Ljava/util/regex/Pattern;
 
     invoke-static {v14, v13}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
@@ -3815,7 +3815,7 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_13c
+    if-eqz v8, :cond_a
 
     move-object/from16 v31, v6
 
@@ -3844,33 +3844,33 @@
 
     move-result v6
 
-    if-lez v8, :cond_133
+    if-lez v8, :cond_9
 
-    if-gtz v6, :cond_130
+    if-gtz v6, :cond_8
 
-    goto :goto_133
+    goto :goto_4
 
-    :cond_130
+    :cond_8
     move/from16 v17, v8
 
-    goto :goto_136
+    goto :goto_5
 
-    :cond_133
-    :goto_133
+    :cond_9
+    :goto_4
     const/4 v6, -0x1
 
     const/16 v17, -0x1
 
-    :goto_136
+    :goto_5
     move-object/from16 v32, v5
 
     move v8, v6
 
     move/from16 v6, v17
 
-    goto :goto_142
+    goto :goto_6
 
-    :cond_13c
+    :cond_a
     move-object/from16 v31, v6
 
     move-object/from16 v32, v5
@@ -3880,7 +3880,7 @@
     const/4 v8, -0x1
 
     .line 396
-    :goto_142
+    :goto_6
     sget-object v5, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_FRAME_RATE:Ljava/util/regex/Pattern;
 
     .line 397
@@ -3888,19 +3888,19 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_14f
+    if-eqz v5, :cond_b
 
     .line 399
     invoke-static {v5}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v5
 
-    goto :goto_151
+    goto :goto_7
 
-    :cond_14f
+    :cond_b
     const/high16 v5, -0x40800000    # -1.0f
 
-    :goto_151
+    :goto_7
     move-object/from16 v33, v4
 
     .line 401
@@ -3939,7 +3939,7 @@
 
     move-result-object v0
 
-    if-eqz v9, :cond_17e
+    if-eqz v9, :cond_c
 
     .line 409
     sget-object v9, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
@@ -3953,15 +3953,15 @@
 
     move-result-object v9
 
-    goto :goto_190
+    goto :goto_8
 
     .line 411
-    :cond_17e
+    :cond_c
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
 
     move-result v9
 
-    if-eqz v9, :cond_214
+    if-eqz v9, :cond_e
 
     .line 416
     invoke-virtual/range {p0 .. p0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
@@ -3978,7 +3978,7 @@
     move-result-object v9
 
     .line 420
-    :goto_190
+    :goto_8
     new-instance v14, Landroidx/media3/common/Format$Builder;
 
     invoke-direct {v14}, Landroidx/media3/common/Format$Builder;-><init>()V
@@ -4066,7 +4066,7 @@
 
     check-cast v5, Ljava/util/ArrayList;
 
-    if-nez v5, :cond_1e7
+    if-nez v5, :cond_d
 
     .line 438
     new-instance v5, Ljava/util/ArrayList;
@@ -4077,7 +4077,7 @@
     invoke-virtual {v1, v9, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 441
-    :cond_1e7
+    :cond_d
     new-instance v6, Landroidx/media3/exoplayer/hls/HlsTrackMetadataEntry$VariantInfo;
 
     move-object/from16 v21, v6
@@ -4102,7 +4102,7 @@
 
     move/from16 v13, v20
 
-    :goto_201
+    :goto_9
     move-object v0, v1
 
     move-object/from16 v12, v28
@@ -4121,9 +4121,9 @@
 
     move-object/from16 v1, p1
 
-    goto/16 :goto_36
+    goto/16 :goto_0
 
-    :cond_214
+    :cond_e
     const-string v0, "#EXT-X-STREAM-INF must be followed by another line"
 
     const/4 v1, 0x0
@@ -4135,7 +4135,7 @@
 
     throw v0
 
-    :cond_21c
+    :cond_f
     move-object v1, v0
 
     move-object/from16 v34, v3
@@ -4167,12 +4167,12 @@
     const/4 v4, 0x0
 
     .line 455
-    :goto_238
+    :goto_a
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_291
+    if-ge v4, v5, :cond_12
 
     .line 456
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4188,23 +4188,23 @@
 
     move-result v6
 
-    if-eqz v6, :cond_28d
+    if-eqz v6, :cond_11
 
     .line 458
     iget-object v6, v5, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Landroidx/media3/common/Format;
 
     iget-object v6, v6, Landroidx/media3/common/Format;->metadata:Landroidx/media3/common/Metadata;
 
-    if-nez v6, :cond_254
+    if-nez v6, :cond_10
 
     const/4 v6, 0x1
 
-    goto :goto_255
+    goto :goto_b
 
-    :cond_254
+    :cond_10
     const/4 v6, 0x0
 
-    :goto_255
+    :goto_b
     invoke-static {v6}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 459
@@ -4264,17 +4264,17 @@
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_28e
+    goto :goto_c
 
-    :cond_28d
+    :cond_11
     const/4 v8, 0x0
 
-    :goto_28e
+    :goto_c
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_238
+    goto :goto_a
 
-    :cond_291
+    :cond_12
     const/4 v8, 0x0
 
     move-object v1, v8
@@ -4284,12 +4284,12 @@
     const/4 v0, 0x0
 
     .line 470
-    :goto_295
+    :goto_d
     invoke-virtual/range {v34 .. v34}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v0, v4, :cond_4b7
+    if-ge v0, v4, :cond_24
 
     move-object/from16 v4, v34
 
@@ -4394,20 +4394,20 @@
 
     move-object/from16 v14, p1
 
-    if-nez v12, :cond_2fd
+    if-nez v12, :cond_13
 
     move-object v12, v8
 
-    goto :goto_301
+    goto :goto_e
 
     .line 484
-    :cond_2fd
+    :cond_13
     invoke-static {v14, v12}, Landroidx/media3/common/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v12
 
     .line 485
-    :goto_301
+    :goto_e
     new-instance v8, Landroidx/media3/common/Metadata;
 
     move-object/from16 v34, v4
@@ -4448,79 +4448,79 @@
 
     const/4 v15, 0x2
 
-    sparse-switch v14, :sswitch_data_4de
+    sparse-switch v14, :sswitch_data_0
 
-    :goto_32a
+    :goto_f
     const/4 v4, -0x1
 
-    goto :goto_357
+    goto :goto_10
 
-    :sswitch_32c
+    :sswitch_0
     const-string v14, "VIDEO"
 
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_335
+    if-nez v4, :cond_14
 
-    goto :goto_32a
+    goto :goto_f
 
-    :cond_335
+    :cond_14
     const/4 v4, 0x3
 
-    goto :goto_357
+    goto :goto_10
 
-    :sswitch_337
+    :sswitch_1
     const-string v14, "AUDIO"
 
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_340
+    if-nez v4, :cond_15
 
-    goto :goto_32a
+    goto :goto_f
 
-    :cond_340
+    :cond_15
     move v4, v15
 
-    goto :goto_357
+    goto :goto_10
 
-    :sswitch_342
+    :sswitch_2
     const-string v14, "CLOSED-CAPTIONS"
 
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_34b
+    if-nez v4, :cond_16
 
-    goto :goto_32a
+    goto :goto_f
 
-    :cond_34b
+    :cond_16
     const/4 v4, 0x1
 
-    goto :goto_357
+    goto :goto_10
 
-    :sswitch_34d
+    :sswitch_3
     const-string v14, "SUBTITLES"
 
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_356
+    if-nez v4, :cond_17
 
-    goto :goto_32a
+    goto :goto_f
 
-    :cond_356
+    :cond_17
     const/4 v4, 0x0
 
-    :goto_357
-    packed-switch v4, :pswitch_data_4f0
+    :goto_10
+    packed-switch v4, :pswitch_data_0
 
-    :goto_35a
+    :goto_11
     move-object/from16 v21, v9
 
     move-object/from16 v6, v31
@@ -4529,18 +4529,18 @@
 
     move-object/from16 v14, v33
 
-    :goto_362
+    :goto_12
     const/16 v16, 0x0
 
-    goto/16 :goto_4a8
+    goto/16 :goto_18
 
     .line 489
-    :pswitch_366
+    :pswitch_0
     invoke-static {v2, v6}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->getVariantWithVideoGroup(Ljava/util/ArrayList;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;
 
     move-result-object v4
 
-    if-eqz v4, :cond_391
+    if-eqz v4, :cond_18
 
     .line 491
     iget-object v4, v4, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Landroidx/media3/common/Format;
@@ -4585,13 +4585,13 @@
     .line 499
     invoke-virtual {v5, v4}, Landroidx/media3/common/Format$Builder;->setFrameRate(F)Landroidx/media3/common/Format$Builder;
 
-    :cond_391
-    if-nez v12, :cond_394
+    :cond_18
+    if-nez v12, :cond_19
 
-    goto :goto_35a
+    goto :goto_11
 
     .line 504
-    :cond_394
+    :cond_19
     invoke-virtual {v10, v8}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
 
     .line 505
@@ -4613,9 +4613,9 @@
 
     move-object/from16 v9, v32
 
-    goto :goto_362
+    goto :goto_12
 
-    :pswitch_3ac
+    :pswitch_1
     move-object/from16 v14, v33
 
     .line 510
@@ -4623,7 +4623,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_3c7
+    if-eqz v4, :cond_1a
 
     .line 513
     iget-object v15, v4, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Landroidx/media3/common/Format;
@@ -4646,15 +4646,15 @@
 
     move-result-object v15
 
-    goto :goto_3ca
+    goto :goto_13
 
-    :cond_3c7
+    :cond_1a
     move-object/from16 v21, v9
 
     const/4 v15, 0x0
 
     .line 518
-    :goto_3ca
+    :goto_13
     sget-object v9, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_CHANNELS:Ljava/util/regex/Pattern;
 
     .line 519
@@ -4662,7 +4662,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_3fb
+    if-eqz v5, :cond_1b
 
     const-string v9, "/"
 
@@ -4689,7 +4689,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_3fd
+    if-eqz v9, :cond_1c
 
     const-string v9, "/JOC"
 
@@ -4697,7 +4697,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3fd
+    if-eqz v5, :cond_1c
 
     const-string v5, "ec+3"
 
@@ -4706,17 +4706,17 @@
 
     const-string v15, "audio/eac3-joc"
 
-    goto :goto_3fd
+    goto :goto_14
 
-    :cond_3fb
+    :cond_1b
     const/16 v16, 0x0
 
     .line 528
-    :cond_3fd
-    :goto_3fd
+    :cond_1c
+    :goto_14
     invoke-virtual {v10, v15}, Landroidx/media3/common/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
-    if-eqz v12, :cond_414
+    if-eqz v12, :cond_1d
 
     .line 530
     invoke-virtual {v10, v8}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
@@ -4734,12 +4734,12 @@
 
     invoke-virtual {v9, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_460
+    goto :goto_16
 
-    :cond_414
+    :cond_1d
     move-object/from16 v9, v32
 
-    if-eqz v4, :cond_460
+    if-eqz v4, :cond_20
 
     .line 534
     invoke-virtual {v10}, Landroidx/media3/common/Format$Builder;->build()Landroidx/media3/common/Format;
@@ -4748,9 +4748,9 @@
 
     move-object/from16 v21, v4
 
-    goto :goto_460
+    goto :goto_16
 
-    :pswitch_41f
+    :pswitch_2
     move-object/from16 v21, v9
 
     move-object/from16 v9, v32
@@ -4773,7 +4773,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_440
+    if-eqz v5, :cond_1e
 
     .line 561
     invoke-virtual {v4, v15}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -4786,9 +4786,9 @@
 
     const-string v5, "application/cea-608"
 
-    goto :goto_44b
+    goto :goto_15
 
-    :cond_440
+    :cond_1e
     const/4 v5, 0x7
 
     .line 564
@@ -4802,8 +4802,8 @@
 
     const-string v5, "application/cea-708"
 
-    :goto_44b
-    if-nez v1, :cond_452
+    :goto_15
+    if-nez v1, :cond_1f
 
     .line 567
     new-instance v1, Ljava/util/ArrayList;
@@ -4811,7 +4811,7 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 570
-    :cond_452
+    :cond_1f
     invoke-virtual {v10, v5}, Landroidx/media3/common/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
     move-result-object v5
@@ -4826,13 +4826,13 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_460
-    :goto_460
+    :cond_20
+    :goto_16
     move-object/from16 v6, v31
 
-    goto :goto_4a8
+    goto :goto_18
 
-    :pswitch_463
+    :pswitch_3
     move-object/from16 v21, v9
 
     move-object/from16 v9, v32
@@ -4846,7 +4846,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_482
+    if-eqz v4, :cond_21
 
     .line 542
     iget-object v4, v4, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Landroidx/media3/common/Format;
@@ -4867,25 +4867,25 @@
 
     move-result-object v4
 
-    goto :goto_483
+    goto :goto_17
 
-    :cond_482
+    :cond_21
     const/4 v4, 0x0
 
-    :goto_483
-    if-nez v4, :cond_487
+    :goto_17
+    if-nez v4, :cond_22
 
     const-string v4, "text/vtt"
 
     .line 549
-    :cond_487
+    :cond_22
     invoke-virtual {v10, v4}, Landroidx/media3/common/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Landroidx/media3/common/Format$Builder;
 
     move-result-object v4
 
     invoke-virtual {v4, v8}, Landroidx/media3/common/Format$Builder;->setMetadata(Landroidx/media3/common/Metadata;)Landroidx/media3/common/Format$Builder;
 
-    if-eqz v12, :cond_49f
+    if-eqz v12, :cond_23
 
     .line 551
     new-instance v4, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Rendition;
@@ -4900,9 +4900,9 @@
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4a8
+    goto :goto_18
 
-    :cond_49f
+    :cond_23
     move-object/from16 v6, v31
 
     const-string v4, "HlsPlaylistParser"
@@ -4912,7 +4912,7 @@
     .line 553
     invoke-static {v4, v5}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_4a8
+    :goto_18
     add-int/lit8 v0, v0, 0x1
 
     move-object/from16 v31, v6
@@ -4927,9 +4927,9 @@
 
     const/4 v8, 0x0
 
-    goto/16 :goto_295
+    goto/16 :goto_d
 
-    :cond_4b7
+    :cond_24
     move-object/from16 v21, v9
 
     move-object/from16 v6, v31
@@ -4938,7 +4938,7 @@
 
     move-object/from16 v14, v33
 
-    if-eqz v13, :cond_4c7
+    if-eqz v13, :cond_25
 
     .line 582
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -4947,13 +4947,13 @@
 
     move-object v10, v0
 
-    goto :goto_4c8
+    goto :goto_19
 
-    :cond_4c7
+    :cond_25
     move-object v10, v1
 
     .line 585
-    :goto_4c8
+    :goto_19
     new-instance v13, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
 
     move-object v0, v13
@@ -4980,25 +4980,25 @@
 
     return-object v13
 
-    :sswitch_data_4de
+    :sswitch_data_0
     .sparse-switch
-        -0x392db8c5 -> :sswitch_34d
-        -0x13dc6572 -> :sswitch_342
-        0x3bba3b6 -> :sswitch_337
-        0x4de1c5b -> :sswitch_32c
+        -0x392db8c5 -> :sswitch_3
+        -0x13dc6572 -> :sswitch_2
+        0x3bba3b6 -> :sswitch_1
+        0x4de1c5b -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_4f0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_463
-        :pswitch_41f
-        :pswitch_3ac
-        :pswitch_366
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
-    .registers 3
+    .locals 0
 
     .line 1276
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -5010,7 +5010,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -5027,12 +5027,12 @@
 
     return p0
 
-    :cond_16
+    :cond_0
     return p2
 .end method
 
 .method private static parseOptionalDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;D)D
-    .registers 4
+    .locals 0
 
     .line 1249
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -5044,7 +5044,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -5065,12 +5065,12 @@
 
     return-wide p0
 
-    :cond_1a
+    :cond_0
     return-wide p2
 .end method
 
 .method private static parseOptionalIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;I)I
-    .registers 3
+    .locals 0
 
     .line 1189
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -5082,7 +5082,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -5103,12 +5103,12 @@
 
     return p0
 
-    :cond_1a
+    :cond_0
     return p2
 .end method
 
 .method private static parseOptionalLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;J)J
-    .registers 4
+    .locals 0
 
     .line 1201
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -5120,7 +5120,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -5141,12 +5141,12 @@
 
     return-wide p0
 
-    :cond_1a
+    :cond_0
     return-wide p2
 .end method
 
 .method private static parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5171,7 +5171,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_16
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -5188,30 +5188,30 @@
     check-cast p2, Ljava/lang/String;
 
     .line 1243
-    :cond_16
+    :cond_0
     invoke-interface {p3}, Ljava/util/Map;->isEmpty()Z
 
     move-result p0
 
-    if-nez p0, :cond_23
+    if-nez p0, :cond_2
 
-    if-nez p2, :cond_1f
+    if-nez p2, :cond_1
 
-    goto :goto_23
+    goto :goto_0
 
     .line 1245
-    :cond_1f
+    :cond_1
     invoke-static {p2, p3}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object p2
 
-    :cond_23
-    :goto_23
+    :cond_2
+    :goto_0
     return-object p2
 .end method
 
 .method private static parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5236,7 +5236,7 @@
 .end method
 
 .method private static parseRoleFlags(Ljava/lang/String;Ljava/util/Map;)I
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5263,11 +5263,11 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     return v0
 
-    :cond_e
+    :cond_0
     const-string p1, ","
 
     .line 1111
@@ -5282,11 +5282,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1
 
     const/16 v0, 0x200
 
-    :cond_1e
+    :cond_1
     const-string p1, "public.accessibility.transcribes-spoken-dialog"
 
     .line 1116
@@ -5294,11 +5294,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_2
 
     or-int/lit16 v0, v0, 0x1000
 
-    :cond_28
+    :cond_2
     const-string p1, "public.accessibility.describes-music-and-sound"
 
     .line 1119
@@ -5306,11 +5306,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_3
 
     or-int/lit16 v0, v0, 0x400
 
-    :cond_32
+    :cond_3
     const-string p1, "public.easy-to-read"
 
     .line 1122
@@ -5318,16 +5318,16 @@
 
     move-result p0
 
-    if-eqz p0, :cond_3c
+    if-eqz p0, :cond_4
 
     or-int/lit16 v0, v0, 0x2000
 
-    :cond_3c
+    :cond_4
     return v0
 .end method
 
 .method private static parseSelectionFlags(Ljava/lang/String;)I
-    .registers 4
+    .locals 3
 
     .line 1092
     sget-object v0, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_DEFAULT:Ljava/util/regex/Pattern;
@@ -5345,28 +5345,28 @@
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     or-int/lit8 v0, v0, 0x2
 
     .line 1098
-    :cond_11
+    :cond_0
     sget-object v2, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_AUTOSELECT:Ljava/util/regex/Pattern;
 
     invoke-static {p0, v2, v1}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
 
     move-result p0
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_1
 
     or-int/lit8 v0, v0, 0x4
 
-    :cond_1b
+    :cond_1
     return v0
 .end method
 
 .method private static parseServerControl(Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist$ServerControl;
-    .registers 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -5386,13 +5386,13 @@
 
     const-wide v8, 0x412e848000000000L    # 1000000.0
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     move-wide v11, v6
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     mul-double/2addr v4, v8
 
     double-to-long v4, v4
@@ -5400,7 +5400,7 @@
     move-wide v11, v4
 
     .line 1158
-    :goto_1d
+    :goto_0
     sget-object v1, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_CAN_SKIP_DATE_RANGES:Ljava/util/regex/Pattern;
 
     const/4 v4, 0x0
@@ -5420,19 +5420,19 @@
 
     cmpl-double v1, v14, v2
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_1
 
     move-wide v14, v6
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_30
+    :cond_1
     mul-double/2addr v14, v8
 
     double-to-long v14, v14
 
     .line 1166
-    :goto_32
+    :goto_1
     sget-object v1, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->REGEX_PART_HOLD_BACK:Ljava/util/regex/Pattern;
 
     invoke-static {v0, v1, v2, v3}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseOptionalDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;D)D
@@ -5441,16 +5441,16 @@
 
     cmpl-double v1, v16, v2
 
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_2
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_3d
+    :cond_2
     mul-double v1, v16, v8
 
     double-to-long v6, v1
 
-    :goto_40
+    :goto_2
     move-wide/from16 v16, v6
 
     .line 1171
@@ -5472,7 +5472,7 @@
 .end method
 
 .method private static parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5497,12 +5497,12 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     return-object p2
 
     .line 1225
-    :cond_7
+    :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string v0, "Couldn\'t match "
@@ -5543,7 +5543,7 @@
 .end method
 
 .method private static parseTimeSecondsToUs(Ljava/lang/String;Ljava/util/regex/Pattern;)J
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;
@@ -5583,7 +5583,7 @@
 .end method
 
 .method private static replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5609,13 +5609,13 @@
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
     .line 1261
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
@@ -5629,7 +5629,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 1265
     invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -5645,10 +5645,10 @@
     .line 1264
     invoke-virtual {p0, v0, v1}, Ljava/util/regex/Matcher;->appendReplacement(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/util/regex/Matcher;
 
-    goto :goto_b
+    goto :goto_0
 
     .line 1270
-    :cond_2a
+    :cond_1
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->appendTail(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;
 
     .line 1271
@@ -5660,7 +5660,7 @@
 .end method
 
 .method private static skipIgnorableWhitespace(Ljava/io/BufferedReader;ZI)I
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -5670,39 +5670,39 @@
     :goto_0
     const/4 v0, -0x1
 
-    if-eq p2, v0, :cond_16
+    if-eq p2, v0, :cond_1
 
     .line 320
     invoke-static {p2}, Ljava/lang/Character;->isWhitespace(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     invoke-static {p2}, Landroidx/media3/common/util/Util;->isLinebreak(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     .line 321
-    :cond_11
+    :cond_0
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
     move-result p2
 
     goto :goto_0
 
-    :cond_16
+    :cond_1
     return p2
 .end method
 
 
 # virtual methods
 .method public parse(Landroid/net/Uri;Ljava/io/InputStream;)Landroidx/media3/exoplayer/hls/playlist/HlsPlaylist;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -5724,22 +5724,22 @@
     invoke-direct {p2}, Ljava/util/ArrayDeque;-><init>()V
 
     .line 261
-    :try_start_f
+    :try_start_0
     invoke-static {v0}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->checkPlaylistHeader(Ljava/io/BufferedReader;)Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_aa
+    if-eqz v1, :cond_5
 
     .line 265
-    :goto_16
+    :goto_0
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_a0
+    if-eqz v1, :cond_4
 
     .line 266
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -5751,11 +5751,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     const-string v3, "#EXT-X-STREAM-INF"
 
     .line 269
@@ -5763,7 +5763,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_1
 
     .line 270
     invoke-interface {p2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
@@ -5780,16 +5780,16 @@
     invoke-static {v1, p1}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseMultivariantPlaylist(Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
 
     move-result-object p1
-    :try_end_3f
-    .catchall {:try_start_f .. :try_end_3f} :catchall_b1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 291
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-object p1
 
-    :cond_43
-    :try_start_43
+    :cond_1
+    :try_start_1
     const-string v3, "#EXT-X-TARGETDURATION"
 
     .line 272
@@ -5797,7 +5797,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXT-X-MEDIA-SEQUENCE"
 
@@ -5806,7 +5806,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXTINF"
 
@@ -5815,7 +5815,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXT-X-KEY"
 
@@ -5824,7 +5824,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXT-X-BYTERANGE"
 
@@ -5833,7 +5833,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXT-X-DISCONTINUITY"
 
@@ -5842,7 +5842,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXT-X-DISCONTINUITY-SEQUENCE"
 
@@ -5851,7 +5851,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_88
+    if-nez v3, :cond_3
 
     const-string v3, "#EXT-X-ENDLIST"
 
@@ -5860,19 +5860,19 @@
 
     move-result v3
 
-    if-eqz v3, :cond_84
+    if-eqz v3, :cond_2
 
-    goto :goto_88
+    goto :goto_1
 
     .line 287
-    :cond_84
+    :cond_2
     invoke-interface {p2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    goto :goto_16
+    goto :goto_0
 
     .line 280
-    :cond_88
-    :goto_88
+    :cond_3
+    :goto_1
     invoke-interface {p2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
     .line 281
@@ -5893,15 +5893,15 @@
     invoke-static {v1, v2, v3, p1}, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser;->parseMediaPlaylist(Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMediaPlaylist;
 
     move-result-object p1
-    :try_end_9c
-    .catchall {:try_start_43 .. :try_end_9c} :catchall_b1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 291
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-object p1
 
-    :cond_a0
+    :cond_4
     invoke-static {v0}, Landroidx/media3/common/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     const-string p1, "Failed to parse the playlist, could not identify any tags."
@@ -5913,8 +5913,8 @@
 
     throw p1
 
-    :cond_aa
-    :try_start_aa
+    :cond_5
+    :try_start_2
     const-string p1, "Input does not start with the #EXTM3U header."
 
     .line 262
@@ -5923,10 +5923,10 @@
     move-result-object p1
 
     throw p1
-    :try_end_b1
-    .catchall {:try_start_aa .. :try_end_b1} :catchall_b1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :catchall_b1
+    :catchall_0
     move-exception p1
 
     .line 291
@@ -5937,7 +5937,7 @@
 .end method
 
 .method public bridge synthetic parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

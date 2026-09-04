@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getImei(Landroid/telephony/TelephonyManager;)Ljava/lang/String;
-    .registers 1
+    .locals 0
 
     .line 155
     invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getImei()Ljava/lang/String;

@@ -31,7 +31,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,36 +40,36 @@
 .end method
 
 .method public static getPcmEncodingForType(II)I
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x3
 
     const/4 v1, 0x0
 
-    if-eq p0, v0, :cond_d
+    if-eq p0, v0, :cond_0
 
     const v0, 0xfffe
 
-    if-eq p0, v0, :cond_13
+    if-eq p0, v0, :cond_2
 
     return v1
 
-    :cond_d
+    :cond_0
     const/16 p0, 0x20
 
-    if-ne p1, p0, :cond_12
+    if-ne p1, p0, :cond_1
 
     const/4 v1, 0x4
 
-    :cond_12
+    :cond_1
     return v1
 
     .line 99
-    :cond_13
+    :cond_2
     invoke-static {p1}, Landroidx/media3/common/util/Util;->getPcmEncoding(I)I
 
     move-result p0
@@ -78,43 +78,43 @@
 .end method
 
 .method public static getTypeForPcmEncoding(I)I
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_2
 
     const/4 v0, 0x3
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_2
 
     const/4 v1, 0x4
 
-    if-eq p0, v1, :cond_18
+    if-eq p0, v1, :cond_1
 
     const/16 v0, 0x15
 
-    if-eq p0, v0, :cond_19
+    if-eq p0, v0, :cond_2
 
     const/16 v0, 0x16
 
-    if-ne p0, v0, :cond_12
+    if-ne p0, v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 87
-    :cond_12
+    :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw p0
 
-    :cond_18
+    :cond_1
     return v0
 
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_0
     const/4 p0, 0x1
 
     return p0

@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 4
+    .locals 2
 
     .line 98
     iget-object v0, p0, Landroidx/core/view/ViewKt$doOnAttach$1;->$this_doOnAttach:Landroid/view/View;
@@ -107,7 +107,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

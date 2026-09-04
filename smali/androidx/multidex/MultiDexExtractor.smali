@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/io/File;Ljava/io/File;)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -147,19 +147,19 @@
     iput-object p2, p0, Landroidx/multidex/MultiDexExtractor;->lockRaf:Ljava/io/RandomAccessFile;
 
     .line 102
-    :try_start_4b
+    :try_start_0
     invoke-virtual {p2}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
     move-result-object p2
 
     iput-object p2, p0, Landroidx/multidex/MultiDexExtractor;->lockChannel:Ljava/nio/channels/FileChannel;
-    :try_end_51
-    .catch Ljava/io/IOException; {:try_start_4b .. :try_end_51} :catch_95
-    .catch Ljava/lang/RuntimeException; {:try_start_4b .. :try_end_51} :catch_93
-    .catch Ljava/lang/Error; {:try_start_4b .. :try_end_51} :catch_91
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 104
-    :try_start_51
+    :try_start_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -184,13 +184,13 @@
     move-result-object p2
 
     iput-object p2, p0, Landroidx/multidex/MultiDexExtractor;->cacheLock:Ljava/nio/channels/FileLock;
-    :try_end_6b
-    .catch Ljava/io/IOException; {:try_start_51 .. :try_end_6b} :catch_8a
-    .catch Ljava/lang/RuntimeException; {:try_start_51 .. :try_end_6b} :catch_88
-    .catch Ljava/lang/Error; {:try_start_51 .. :try_end_6b} :catch_86
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 110
-    :try_start_6b
+    :try_start_2
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -217,47 +217,47 @@
 
     return-void
 
-    :catch_86
+    :catch_0
     move-exception p1
 
-    goto :goto_8b
+    goto :goto_0
 
-    :catch_88
+    :catch_1
     move-exception p1
 
-    goto :goto_8b
+    goto :goto_0
 
-    :catch_8a
+    :catch_2
     move-exception p1
 
     .line 107
-    :goto_8b
+    :goto_0
     iget-object p2, p0, Landroidx/multidex/MultiDexExtractor;->lockChannel:Ljava/nio/channels/FileChannel;
 
     invoke-static {p2}, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
 
     .line 108
     throw p1
-    :try_end_91
-    .catch Ljava/io/IOException; {:try_start_6b .. :try_end_91} :catch_95
-    .catch Ljava/lang/RuntimeException; {:try_start_6b .. :try_end_91} :catch_93
-    .catch Ljava/lang/Error; {:try_start_6b .. :try_end_91} :catch_91
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/lang/Error; {:try_start_2 .. :try_end_2} :catch_3
 
-    :catch_91
+    :catch_3
     move-exception p1
 
-    goto :goto_96
+    goto :goto_1
 
-    :catch_93
+    :catch_4
     move-exception p1
 
-    goto :goto_96
+    goto :goto_1
 
-    :catch_95
+    :catch_5
     move-exception p1
 
     .line 112
-    :goto_96
+    :goto_1
     iget-object p2, p0, Landroidx/multidex/MultiDexExtractor;->lockRaf:Ljava/io/RandomAccessFile;
 
     invoke-static {p2}, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
@@ -267,7 +267,7 @@
 .end method
 
 .method private clearDexDir()V
-    .registers 9
+    .locals 8
 
     .line 354
     iget-object v0, p0, Landroidx/multidex/MultiDexExtractor;->dexDir:Ljava/io/File;
@@ -282,7 +282,7 @@
 
     const-string v1, "MultiDex"
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_0
 
     .line 361
     new-instance v0, Ljava/lang/StringBuilder;
@@ -316,13 +316,13 @@
     return-void
 
     .line 364
-    :cond_2e
+    :cond_0
     array-length v2, v0
 
     const/4 v3, 0x0
 
-    :goto_30
-    if-ge v3, v2, :cond_8e
+    :goto_0
+    if-ge v3, v2, :cond_2
 
     aget-object v4, v0, v3
 
@@ -368,7 +368,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_75
+    if-nez v5, :cond_1
 
     .line 368
     new-instance v5, Ljava/lang/StringBuilder;
@@ -391,10 +391,10 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_8b
+    goto :goto_1
 
     .line 370
-    :cond_75
+    :cond_1
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v6, "Deleted old file "
@@ -415,27 +415,27 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_8b
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_8e
+    :cond_2
     return-void
 .end method
 
 .method private static closeQuietly(Ljava/io/Closeable;)V
-    .registers 3
+    .locals 2
 
     .line 422
     :try_start_0
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_3} :catch_4
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :catch_4
+    :catch_0
     move-exception p0
 
     const-string v0, "MultiDex"
@@ -445,12 +445,12 @@
     .line 424
     invoke-static {v0, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_c
+    :goto_0
     return-void
 .end method
 
 .method private static extract(Ljava/util/zip/ZipFile;Ljava/util/zip/ZipEntry;Ljava/io/File;Ljava/lang/String;)V
-    .registers 9
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -514,7 +514,7 @@
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 385
-    :try_start_35
+    :try_start_0
     new-instance v0, Ljava/util/zip/ZipOutputStream;
 
     new-instance v2, Ljava/io/BufferedOutputStream;
@@ -526,11 +526,11 @@
     invoke-direct {v2, v3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     invoke-direct {v0, v2}, Ljava/util/zip/ZipOutputStream;-><init>(Ljava/io/OutputStream;)V
-    :try_end_44
-    .catchall {:try_start_35 .. :try_end_44} :catchall_103
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 387
-    :try_start_44
+    :try_start_1
     new-instance v2, Ljava/util/zip/ZipEntry;
 
     const-string v3, "classes.dex"
@@ -556,10 +556,10 @@
 
     move-result v2
 
-    :goto_5d
+    :goto_0
     const/4 v3, -0x1
 
-    if-eq v2, v3, :cond_69
+    if-eq v2, v3, :cond_0
 
     const/4 v3, 0x0
 
@@ -571,16 +571,16 @@
 
     move-result v2
 
-    goto :goto_5d
+    goto :goto_0
 
     .line 398
-    :cond_69
+    :cond_0
     invoke-virtual {v0}, Ljava/util/zip/ZipOutputStream;->closeEntry()V
-    :try_end_6c
-    .catchall {:try_start_44 .. :try_end_6c} :catchall_fe
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 400
-    :try_start_6c
+    :try_start_2
     invoke-virtual {v0}, Ljava/util/zip/ZipOutputStream;->close()V
 
     .line 402
@@ -588,7 +588,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_cd
+    if-eqz p1, :cond_2
 
     .line 406
     new-instance p1, Ljava/lang/StringBuilder;
@@ -619,10 +619,10 @@
     invoke-virtual {p3, p2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     move-result p1
-    :try_end_93
-    .catchall {:try_start_6c .. :try_end_93} :catchall_103
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-eqz p1, :cond_9c
+    if-eqz p1, :cond_1
 
     .line 412
     invoke-static {p0}, Landroidx/multidex/MultiDexExtractor;->closeQuietly(Ljava/io/Closeable;)V
@@ -633,8 +633,8 @@
     return-void
 
     .line 408
-    :cond_9c
-    :try_start_9c
+    :cond_1
+    :try_start_3
     new-instance p1, Ljava/io/IOException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -685,7 +685,7 @@
     throw p1
 
     .line 403
-    :cond_cd
+    :cond_2
     new-instance p1, Ljava/io/IOException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -735,17 +735,17 @@
 
     throw p1
 
-    :catchall_fe
+    :catchall_0
     move-exception p1
 
     .line 400
     invoke-virtual {v0}, Ljava/util/zip/ZipOutputStream;->close()V
 
     throw p1
-    :try_end_103
-    .catchall {:try_start_9c .. :try_end_103} :catchall_103
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :catchall_103
+    :catchall_1
     move-exception p1
 
     .line 412
@@ -758,7 +758,7 @@
 .end method
 
 .method private static getMultiDexPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-    .registers 3
+    .locals 2
 
     const-string v0, "multidex.version"
 
@@ -773,7 +773,7 @@
 .end method
 
 .method private static getTimeStamp(Ljava/io/File;)J
-    .registers 5
+    .locals 4
 
     .line 224
     invoke-virtual {p0}, Ljava/io/File;->lastModified()J
@@ -784,18 +784,18 @@
 
     cmp-long p0, v0, v2
 
-    if-nez p0, :cond_d
+    if-nez p0, :cond_0
 
     const-wide/16 v2, 0x1
 
     sub-long/2addr v0, v2
 
-    :cond_d
+    :cond_0
     return-wide v0
 .end method
 
 .method private static getZipCrc(Ljava/io/File;)J
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -811,18 +811,18 @@
 
     cmp-long p0, v0, v2
 
-    if-nez p0, :cond_d
+    if-nez p0, :cond_0
 
     const-wide/16 v2, 0x1
 
     sub-long/2addr v0, v2
 
-    :cond_d
+    :cond_0
     return-wide v0
 .end method
 
 .method private static isModified(Landroid/content/Context;Ljava/io/File;JLjava/lang/String;)Z
-    .registers 12
+    .locals 7
 
     .line 218
     invoke-static {p0}, Landroidx/multidex/MultiDexExtractor;->getMultiDexPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -860,7 +860,7 @@
 
     cmp-long p1, v3, v5
 
-    if-nez p1, :cond_43
+    if-nez p1, :cond_1
 
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -887,25 +887,25 @@
 
     cmp-long p0, p0, p2
 
-    if-eqz p0, :cond_41
+    if-eqz p0, :cond_0
 
-    goto :goto_43
+    goto :goto_0
 
-    :cond_41
+    :cond_0
     const/4 p0, 0x0
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_43
-    :goto_43
+    :cond_1
+    :goto_0
     const/4 p0, 0x1
 
-    :goto_44
+    :goto_1
     return p0
 .end method
 
 .method private loadExistingExtractions(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
-    .registers 18
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -999,8 +999,8 @@
 
     const/4 v6, 0x2
 
-    :goto_47
-    if-gt v6, v4, :cond_12d
+    :goto_0
+    if-gt v6, v4, :cond_2
 
     .line 184
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1037,7 +1037,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_10e
+    if-eqz v7, :cond_1
 
     .line 187
     invoke-static {v8}, Landroidx/multidex/MultiDexExtractor;->getZipCrc(Ljava/io/File;)J
@@ -1109,7 +1109,7 @@
 
     cmp-long v7, v9, v13
 
-    if-nez v7, :cond_c5
+    if-nez v7, :cond_0
 
     move-object v7, v2
 
@@ -1120,7 +1120,7 @@
 
     cmp-long v2, v11, v2
 
-    if-nez v2, :cond_c5
+    if-nez v2, :cond_0
 
     .line 201
     invoke-interface {v5, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1131,10 +1131,10 @@
 
     move-object v2, v7
 
-    goto :goto_47
+    goto :goto_0
 
     .line 195
-    :cond_c5
+    :cond_0
     new-instance v2, Ljava/io/IOException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1208,7 +1208,7 @@
     throw v2
 
     .line 203
-    :cond_10e
+    :cond_1
     new-instance v1, Ljava/io/IOException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1240,12 +1240,12 @@
 
     throw v1
 
-    :cond_12d
+    :cond_2
     return-object v5
 .end method
 
 .method private performExtractions()Ljava/util/List;
-    .registers 15
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1305,7 +1305,7 @@
 
     invoke-direct {v4, v5}, Ljava/util/zip/ZipFile;-><init>(Ljava/io/File;)V
 
-    :try_start_2c
+    :try_start_0
     const-string v5, "classes2.dex"
 
     .line 258
@@ -1315,8 +1315,8 @@
 
     const/4 v6, 0x2
 
-    :goto_33
-    if-eqz v5, :cond_15f
+    :goto_0
+    if-eqz v5, :cond_4
 
     .line 260
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1378,41 +1378,41 @@
 
     move v10, v9
 
-    :cond_6f
-    :goto_6f
+    :cond_0
+    :goto_1
     const/4 v11, 0x3
 
-    if-ge v9, v11, :cond_10f
+    if-ge v9, v11, :cond_2
 
-    if-nez v10, :cond_10f
+    if-nez v10, :cond_2
 
     add-int/lit8 v9, v9, 0x1
 
     .line 272
     invoke-static {v4, v5, v8, v2}, Landroidx/multidex/MultiDexExtractor;->extract(Ljava/util/zip/ZipFile;Ljava/util/zip/ZipEntry;Ljava/io/File;Ljava/lang/String;)V
-    :try_end_79
-    .catchall {:try_start_2c .. :try_end_79} :catchall_168
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 276
-    :try_start_79
+    :try_start_1
     invoke-static {v8}, Landroidx/multidex/MultiDexExtractor;->getZipCrc(Ljava/io/File;)J
 
     move-result-wide v10
 
     iput-wide v10, v8, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->crc:J
-    :try_end_7f
-    .catch Ljava/io/IOException; {:try_start_79 .. :try_end_7f} :catch_81
-    .catchall {:try_start_79 .. :try_end_7f} :catchall_168
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/4 v10, 0x1
 
-    goto :goto_9d
+    goto :goto_2
 
-    :catch_81
+    :catch_0
     move-exception v10
 
     .line 280
-    :try_start_82
+    :try_start_2
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -1440,7 +1440,7 @@
     move v10, v7
 
     .line 284
-    :goto_9d
+    :goto_2
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -1451,16 +1451,16 @@
 
     move-result-object v11
 
-    if-eqz v10, :cond_ad
+    if-eqz v10, :cond_1
 
     const-string v12, "succeeded"
 
-    goto :goto_af
+    goto :goto_3
 
-    :cond_ad
+    :cond_1
     const-string v12, "failed"
 
-    :goto_af
+    :goto_3
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
@@ -1514,7 +1514,7 @@
     .line 284
     invoke-static {v1, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v10, :cond_6f
+    if-nez v10, :cond_0
 
     .line 289
     invoke-virtual {v8}, Landroidx/multidex/MultiDexExtractor$ExtractedDex;->delete()Z
@@ -1524,7 +1524,7 @@
 
     move-result v11
 
-    if-eqz v11, :cond_6f
+    if-eqz v11, :cond_0
 
     .line 291
     new-instance v11, Ljava/lang/StringBuilder;
@@ -1559,10 +1559,10 @@
     .line 291
     invoke-static {v1, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_6f
+    goto/16 :goto_1
 
-    :cond_10f
-    if-eqz v10, :cond_132
+    :cond_2
+    if-eqz v10, :cond_3
 
     add-int/lit8 v6, v6, 0x1
 
@@ -1595,10 +1595,10 @@
 
     move-result-object v5
 
-    goto/16 :goto_33
+    goto/16 :goto_0
 
     .line 297
-    :cond_132
+    :cond_3
     new-instance v2, Ljava/io/IOException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1643,51 +1643,51 @@
     invoke-direct {v2, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v2
-    :try_end_15f
-    .catchall {:try_start_82 .. :try_end_15f} :catchall_168
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 306
-    :cond_15f
-    :try_start_15f
+    :cond_4
+    :try_start_3
     invoke-virtual {v4}, Ljava/util/zip/ZipFile;->close()V
-    :try_end_162
-    .catch Ljava/io/IOException; {:try_start_15f .. :try_end_162} :catch_163
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
-    goto :goto_167
+    goto :goto_4
 
-    :catch_163
+    :catch_1
     move-exception v2
 
     .line 308
     invoke-static {v1, v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_167
+    :goto_4
     return-object v3
 
-    :catchall_168
+    :catchall_0
     move-exception v2
 
     .line 306
-    :try_start_169
+    :try_start_4
     invoke-virtual {v4}, Ljava/util/zip/ZipFile;->close()V
-    :try_end_16c
-    .catch Ljava/io/IOException; {:try_start_169 .. :try_end_16c} :catch_16d
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    goto :goto_171
+    goto :goto_5
 
-    :catch_16d
+    :catch_2
     move-exception v3
 
     .line 308
     invoke-static {v1, v0, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 309
-    :goto_171
+    :goto_5
     throw v2
 .end method
 
 .method private static putStoredApkInfo(Landroid/content/Context;Ljava/lang/String;JJLjava/util/List;)V
-    .registers 9
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1786,12 +1786,12 @@
 
     const/4 p3, 0x2
 
-    :goto_55
+    :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p4
 
-    if-eqz p4, :cond_9e
+    if-eqz p4, :cond_0
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1857,10 +1857,10 @@
 
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_55
+    goto :goto_0
 
     .line 336
-    :cond_9e
+    :cond_0
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     return-void
@@ -1869,7 +1869,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1895,7 +1895,7 @@
 .end method
 
 .method load(Landroid/content/Context;Ljava/lang/String;Z)Ljava/util/List;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1971,9 +1971,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a1
+    if-eqz v0, :cond_2
 
-    if-nez p3, :cond_64
+    if-nez p3, :cond_0
 
     .line 136
     iget-object v0, p0, Landroidx/multidex/MultiDexExtractor;->sourceApk:Ljava/io/File;
@@ -1984,19 +1984,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_64
+    if-nez v0, :cond_0
 
     .line 138
-    :try_start_46
+    :try_start_0
     invoke-direct {p0, p1, p2}, Landroidx/multidex/MultiDexExtractor;->loadExistingExtractions(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
-    :try_end_4a
-    .catch Ljava/io/IOException; {:try_start_46 .. :try_end_4a} :catch_4b
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_84
+    goto :goto_2
 
-    :catch_4b
+    :catch_0
     move-exception p3
 
     const-string v0, "Failed to reload existing extracted secondary dex files, falling back to fresh extraction"
@@ -2026,26 +2026,26 @@
 
     invoke-static/range {v2 .. v8}, Landroidx/multidex/MultiDexExtractor;->putStoredApkInfo(Landroid/content/Context;Ljava/lang/String;JJLjava/util/List;)V
 
-    goto :goto_83
+    goto :goto_1
 
-    :cond_64
-    if-eqz p3, :cond_6c
+    :cond_0
+    if-eqz p3, :cond_1
 
     const-string p3, "Forced extraction must be performed."
 
     .line 148
     invoke-static {v1, p3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_6c
+    :cond_1
     const-string p3, "Detected that extraction must be performed."
 
     .line 150
     invoke-static {v1, p3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 152
-    :goto_71
+    :goto_0
     invoke-direct {p0}, Landroidx/multidex/MultiDexExtractor;->performExtractions()Ljava/util/List;
 
     move-result-object p3
@@ -2067,11 +2067,11 @@
 
     invoke-static/range {v2 .. v8}, Landroidx/multidex/MultiDexExtractor;->putStoredApkInfo(Landroid/content/Context;Ljava/lang/String;JJLjava/util/List;)V
 
-    :goto_83
+    :goto_1
     move-object p1, p3
 
     .line 157
-    :goto_84
+    :goto_2
     new-instance p2, Ljava/lang/StringBuilder;
 
     const-string p3, "load found "
@@ -2101,7 +2101,7 @@
     return-object p1
 
     .line 132
-    :cond_a1
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "MultiDexExtractor was closed"

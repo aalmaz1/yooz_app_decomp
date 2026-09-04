@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/fragment/app/FragmentManager;Landroid/view/ViewGroup;Landroid/view/View;Landroidx/fragment/app/Fragment;)V
-    .registers 5
+    .locals 0
 
     .line 1550
     iput-object p1, p0, Landroidx/fragment/app/FragmentManager$7;->this$0:Landroidx/fragment/app/FragmentManager;
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 4
+    .locals 2
 
     .line 1553
     iget-object v0, p0, Landroidx/fragment/app/FragmentManager$7;->val$container:Landroid/view/ViewGroup;
@@ -62,13 +62,13 @@
 
     iget-object p1, p1, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/fragment/app/FragmentManager$7;->val$fragment:Landroidx/fragment/app/Fragment;
 
     iget-boolean p1, p1, Landroidx/fragment/app/Fragment;->mHidden:Z
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_0
 
     .line 1556
     iget-object p1, p0, Landroidx/fragment/app/FragmentManager$7;->val$fragment:Landroidx/fragment/app/Fragment;
@@ -79,6 +79,6 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_1f
+    :cond_0
     return-void
 .end method

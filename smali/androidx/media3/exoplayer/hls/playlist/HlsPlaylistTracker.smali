@@ -20,7 +20,7 @@
 .end method
 
 .method public deactivatePlaylistForPlayback(Landroid/net/Uri;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

@@ -273,7 +273,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 607
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -282,7 +282,7 @@
 .end method
 
 .method public static findPointerIndex(Landroid/view/MotionEvent;I)I
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -295,7 +295,7 @@
 .end method
 
 .method public static getActionIndex(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -308,7 +308,7 @@
 .end method
 
 .method public static getActionMasked(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -321,7 +321,7 @@
 .end method
 
 .method public static getAxisValue(Landroid/view/MotionEvent;I)F
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -334,7 +334,7 @@
 .end method
 
 .method public static getAxisValue(Landroid/view/MotionEvent;II)F
-    .registers 3
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -347,7 +347,7 @@
 .end method
 
 .method public static getButtonState(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -360,7 +360,7 @@
 .end method
 
 .method public static getPointerCount(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -373,7 +373,7 @@
 .end method
 
 .method public static getPointerId(Landroid/view/MotionEvent;I)I
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -386,7 +386,7 @@
 .end method
 
 .method public static getSource(Landroid/view/MotionEvent;)I
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -399,7 +399,7 @@
 .end method
 
 .method public static getX(Landroid/view/MotionEvent;I)F
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -412,7 +412,7 @@
 .end method
 
 .method public static getY(Landroid/view/MotionEvent;I)F
-    .registers 2
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -425,7 +425,7 @@
 .end method
 
 .method public static isFromSource(Landroid/view/MotionEvent;I)Z
-    .registers 2
+    .locals 0
 
     .line 556
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getSource()I
@@ -434,15 +434,15 @@
 
     and-int/2addr p0, p1
 
-    if-ne p0, p1, :cond_9
+    if-ne p0, p1, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_a
+    :goto_0
     return p0
 .end method

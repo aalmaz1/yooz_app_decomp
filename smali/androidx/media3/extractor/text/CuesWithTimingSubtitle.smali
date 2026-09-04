@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 48
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
@@ -58,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 16
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 
     const/4 v5, 0x1
 
-    if-ne v0, v5, :cond_4a
+    if-ne v0, v5, :cond_1
 
     .line 52
     invoke-static {p1}, Lcom/google/common/collect/Iterables;->getOnlyElement(Ljava/lang/Iterable;)Ljava/lang/Object;
@@ -105,7 +105,7 @@
 
     cmp-long v0, v8, v1
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_0
 
     .line 55
     iget-object p1, p1, Landroidx/media3/extractor/text/CuesWithTiming;->cues:Lcom/google/common/collect/ImmutableList;
@@ -123,10 +123,10 @@
     .line 56
     iput-object p1, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventTimesUs:[J
 
-    goto :goto_49
+    goto :goto_0
 
     .line 58
-    :cond_32
+    :cond_0
     iget-object v0, p1, Landroidx/media3/extractor/text/CuesWithTiming;->cues:Lcom/google/common/collect/ImmutableList;
 
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
@@ -152,11 +152,11 @@
 
     iput-object v0, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventTimesUs:[J
 
-    :goto_49
+    :goto_0
     return-void
 
     .line 64
-    :cond_4a
+    :cond_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -188,12 +188,12 @@
     move v3, v4
 
     .line 72
-    :goto_67
+    :goto_1
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_d3
+    if-ge v4, v5, :cond_6
 
     .line 73
     invoke-virtual {p1, v4}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -214,7 +214,7 @@
 
     add-long/2addr v8, v6
 
-    if-eqz v3, :cond_b0
+    if-eqz v3, :cond_4
 
     .line 77
     iget-object v10, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventTimesUs:[J
@@ -225,14 +225,14 @@
 
     cmp-long v10, v12, v6
 
-    if-gez v10, :cond_89
+    if-gez v10, :cond_2
 
-    goto :goto_b0
+    goto :goto_2
 
-    :cond_89
+    :cond_2
     cmp-long v10, v12, v6
 
-    if-nez v10, :cond_9f
+    if-nez v10, :cond_3
 
     .line 81
     invoke-virtual {v0, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -245,16 +245,16 @@
 
     move-result v10
 
-    if-eqz v10, :cond_9f
+    if-eqz v10, :cond_3
 
     .line 84
     iget-object v6, v5, Landroidx/media3/extractor/text/CuesWithTiming;->cues:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, v11, v6}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_bc
+    goto :goto_3
 
-    :cond_9f
+    :cond_3
     const-string v10, "CuesWithTimingSubtitle"
 
     const-string v12, "Truncating unsupported overlapping cues."
@@ -272,11 +272,11 @@
 
     invoke-virtual {v0, v11, v6}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_bc
+    goto :goto_3
 
     .line 78
-    :cond_b0
-    :goto_b0
+    :cond_4
+    :goto_2
     iget-object v10, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventTimesUs:[J
 
     add-int/lit8 v11, v3, 0x1
@@ -291,12 +291,12 @@
     move v3, v11
 
     .line 92
-    :goto_bc
+    :goto_3
     iget-wide v5, v5, Landroidx/media3/extractor/text/CuesWithTiming;->durationUs:J
 
     cmp-long v5, v5, v1
 
-    if-eqz v5, :cond_d0
+    if-eqz v5, :cond_5
 
     .line 93
     iget-object v5, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventTimesUs:[J
@@ -314,13 +314,13 @@
 
     move v3, v6
 
-    :cond_d0
+    :cond_5
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_67
+    goto :goto_1
 
     .line 97
-    :cond_d3
+    :cond_6
     invoke-static {v0}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
@@ -331,7 +331,7 @@
 .end method
 
 .method static synthetic lambda$static$0(Landroidx/media3/extractor/text/CuesWithTiming;)Ljava/lang/Comparable;
-    .registers 3
+    .locals 2
 
     .line 48
     iget-wide v0, p0, Landroidx/media3/extractor/text/CuesWithTiming;->startTimeUs:J
@@ -348,24 +348,24 @@
 .end method
 
 .method private static normalizeUnsetStartTimeToZero(J)J
-    .registers 4
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     const-wide/16 p0, 0x0
 
-    :cond_b
+    :cond_0
     return-wide p0
 .end method
 
 
 # virtual methods
 .method public getCues(J)Lcom/google/common/collect/ImmutableList;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -389,16 +389,16 @@
 
     const/4 p2, -0x1
 
-    if-ne p1, p2, :cond_10
+    if-ne p1, p2, :cond_0
 
     .line 124
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     iget-object p2, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventCues:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {p2, p1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -407,12 +407,12 @@
 
     check-cast p1, Lcom/google/common/collect/ImmutableList;
 
-    :goto_18
+    :goto_0
     return-object p1
 .end method
 
 .method public bridge synthetic getCues(J)Ljava/util/List;
-    .registers 3
+    .locals 0
 
     .line 34
     invoke-virtual {p0, p1, p2}, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->getCues(J)Lcom/google/common/collect/ImmutableList;
@@ -423,7 +423,7 @@
 .end method
 
 .method public getEventTime(I)J
-    .registers 4
+    .locals 2
 
     .line 115
     iget-object v0, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventCues:Lcom/google/common/collect/ImmutableList;
@@ -432,16 +432,16 @@
 
     move-result v0
 
-    if-ge p1, v0, :cond_a
+    if-ge p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 116
@@ -453,7 +453,7 @@
 .end method
 
 .method public getEventTimeCount()I
-    .registers 2
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventCues:Lcom/google/common/collect/ImmutableList;
@@ -466,7 +466,7 @@
 .end method
 
 .method public getNextEventTimeIndex(J)I
-    .registers 5
+    .locals 2
 
     .line 102
     iget-object v0, p0, Landroidx/media3/extractor/text/CuesWithTimingSubtitle;->eventTimesUs:[J
@@ -485,13 +485,13 @@
 
     move-result p2
 
-    if-ge p1, p2, :cond_10
+    if-ge p1, p2, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_11
+    :goto_0
     return p1
 .end method

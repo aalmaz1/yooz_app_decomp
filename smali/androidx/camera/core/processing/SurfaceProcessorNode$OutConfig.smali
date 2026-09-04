@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 335
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method public static of(IILandroid/graphics/Rect;Landroid/util/Size;IZ)Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;
-    .registers 15
+    .locals 9
 
     .line 407
     new-instance v8, Landroidx/camera/core/processing/AutoValue_SurfaceProcessorNode_OutConfig;
@@ -54,7 +54,7 @@
 .end method
 
 .method public static of(Landroidx/camera/core/processing/SurfaceEdge;)Landroidx/camera/core/processing/SurfaceProcessorNode$OutConfig;
-    .registers 7
+    .locals 6
 
     .line 389
     invoke-virtual {p0}, Landroidx/camera/core/processing/SurfaceEdge;->getTargets()I

@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$ElementParser;Ljava/lang/String;)V
-    .registers 4
+    .locals 1
 
     const-string v0, "SmoothStreamingMedia"
 
@@ -92,12 +92,12 @@
 
 # virtual methods
 .method public addChild(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     .line 370
     instance-of v0, p1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 371
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$SmoothStreamingMediaParser;->streamElements:Ljava/util/List;
@@ -106,27 +106,27 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 372
-    :cond_c
+    :cond_0
     instance-of v0, p1, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_2
 
     .line 373
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$SmoothStreamingMediaParser;->protectionElement:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 374
@@ -134,13 +134,13 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$SmoothStreamingMediaParser;->protectionElement:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;
 
-    :cond_1e
-    :goto_1e
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public build()Ljava/lang/Object;
-    .registers 15
+    .locals 14
 
     .line 380
     iget-object v0, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$SmoothStreamingMediaParser;->streamElements:Ljava/util/List;
@@ -159,7 +159,7 @@
     .line 382
     iget-object v1, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$SmoothStreamingMediaParser;->protectionElement:Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$ProtectionElement;
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_2
 
     .line 383
     new-instance v1, Landroidx/media3/common/DrmInitData;
@@ -190,8 +190,8 @@
 
     move v3, v5
 
-    :goto_2d
-    if-ge v3, v0, :cond_54
+    :goto_0
+    if-ge v3, v0, :cond_2
 
     .line 387
     aget-object v4, v13, v3
@@ -201,21 +201,21 @@
 
     const/4 v7, 0x2
 
-    if-eq v6, v7, :cond_38
+    if-eq v6, v7, :cond_0
 
-    if-ne v6, v2, :cond_51
+    if-ne v6, v2, :cond_1
 
     .line 390
-    :cond_38
+    :cond_0
     iget-object v4, v4, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Landroidx/media3/common/Format;
 
     move v6, v5
 
     .line 391
-    :goto_3b
+    :goto_1
     array-length v7, v4
 
-    if-ge v6, v7, :cond_51
+    if-ge v6, v7, :cond_1
 
     .line 392
     aget-object v7, v4, v6
@@ -236,15 +236,15 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_3b
+    goto :goto_1
 
-    :cond_51
+    :cond_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 397
-    :cond_54
+    :cond_2
     new-instance v0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifest;
 
     iget v2, p0, Landroidx/media3/exoplayer/smoothstreaming/manifest/SsManifestParser$SmoothStreamingMediaParser;->majorVersion:I
@@ -271,7 +271,7 @@
 .end method
 
 .method public parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/ParserException;

@@ -26,7 +26,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 422
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static applyTheme(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
-    .registers 2
+    .locals 0
 
     .line 188
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->applyTheme(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
@@ -44,7 +44,7 @@
 .end method
 
 .method public static canApplyTheme(Landroid/graphics/drawable/Drawable;)Z
-    .registers 1
+    .locals 0
 
     .line 198
     invoke-static {p0}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->canApplyTheme(Landroid/graphics/drawable/Drawable;)Z
@@ -55,7 +55,7 @@
 .end method
 
 .method public static clearColorFilter(Landroid/graphics/drawable/Drawable;)V
-    .registers 1
+    .locals 0
 
     .line 226
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->clearColorFilter()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static getAlpha(Landroid/graphics/drawable/Drawable;)I
-    .registers 1
+    .locals 0
 
     .line 179
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getAlpha()I
@@ -75,7 +75,7 @@
 .end method
 
 .method public static getColorFilter(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
-    .registers 1
+    .locals 0
 
     .line 213
     invoke-static {p0}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->getColorFilter(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
-    .registers 1
+    .locals 0
 
     .line 397
     invoke-static {p0}, Landroidx/core/graphics/drawable/DrawableCompat$Api23Impl;->getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
@@ -97,7 +97,7 @@
 .end method
 
 .method public static inflate(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
-    .registers 5
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -112,7 +112,7 @@
 .end method
 
 .method public static isAutoMirrored(Landroid/graphics/drawable/Drawable;)Z
-    .registers 1
+    .locals 0
 
     .line 96
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->isAutoMirrored()Z
@@ -123,7 +123,7 @@
 .end method
 
 .method public static jumpToCurrentState(Landroid/graphics/drawable/Drawable;)V
-    .registers 1
+    .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -134,7 +134,7 @@
 .end method
 
 .method public static setAutoMirrored(Landroid/graphics/drawable/Drawable;Z)V
-    .registers 2
+    .locals 0
 
     .line 81
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
@@ -143,7 +143,7 @@
 .end method
 
 .method public static setHotspot(Landroid/graphics/drawable/Drawable;FF)V
-    .registers 3
+    .locals 0
 
     .line 108
     invoke-static {p0, p1, p2}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->setHotspot(Landroid/graphics/drawable/Drawable;FF)V
@@ -152,7 +152,7 @@
 .end method
 
 .method public static setHotspotBounds(Landroid/graphics/drawable/Drawable;IIII)V
-    .registers 5
+    .locals 0
 
     .line 125
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->setHotspotBounds(Landroid/graphics/drawable/Drawable;IIII)V
@@ -161,7 +161,7 @@
 .end method
 
 .method public static setLayoutDirection(Landroid/graphics/drawable/Drawable;I)Z
-    .registers 2
+    .locals 0
 
     .line 361
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/DrawableCompat$Api23Impl;->setLayoutDirection(Landroid/graphics/drawable/Drawable;I)Z
@@ -172,7 +172,7 @@
 .end method
 
 .method public static setTint(Landroid/graphics/drawable/Drawable;I)V
-    .registers 2
+    .locals 0
 
     .line 137
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->setTint(Landroid/graphics/drawable/Drawable;I)V
@@ -181,7 +181,7 @@
 .end method
 
 .method public static setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
-    .registers 2
+    .locals 0
 
     .line 151
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
@@ -190,7 +190,7 @@
 .end method
 
 .method public static setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
-    .registers 2
+    .locals 0
 
     .line 165
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/DrawableCompat$Api21Impl;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
@@ -199,7 +199,7 @@
 .end method
 
 .method public static unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -213,7 +213,7 @@
     .line 339
     instance-of v0, p0, Landroidx/core/graphics/drawable/WrappedDrawable;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 340
     check-cast p0, Landroidx/core/graphics/drawable/WrappedDrawable;
@@ -222,12 +222,12 @@
 
     move-result-object p0
 
-    :cond_a
+    :cond_0
     return-object p0
 .end method
 
 .method public static wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method

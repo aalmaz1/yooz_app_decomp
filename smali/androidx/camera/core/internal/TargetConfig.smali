@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camerax.core.target.name"
 
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public getTargetClass()Ljava/lang/Class;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -101,7 +101,7 @@
 .end method
 
 .method public getTargetClass(Ljava/lang/Class;)Ljava/lang/Class;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -125,7 +125,7 @@
 .end method
 
 .method public getTargetName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 106
     sget-object v0, Landroidx/camera/core/internal/TargetConfig;->OPTION_TARGET_NAME:Landroidx/camera/core/impl/Config$Option;
@@ -140,7 +140,7 @@
 .end method
 
 .method public getTargetName(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
+    .locals 1
 
     .line 92
     sget-object v0, Landroidx/camera/core/internal/TargetConfig;->OPTION_TARGET_NAME:Landroidx/camera/core/impl/Config$Option;

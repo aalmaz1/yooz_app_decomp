@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public getAcceleration(FF)F
-    .registers 3
+    .locals 0
 
     .line 228
     iget p1, p0, Landroidx/dynamicanimation/animation/FlingAnimation$DragForce;->mFriction:F
@@ -67,7 +67,7 @@
 .end method
 
 .method getFrictionScalar()F
-    .registers 3
+    .locals 2
 
     .line 213
     iget v0, p0, Landroidx/dynamicanimation/animation/FlingAnimation$DragForce;->mFriction:F
@@ -80,7 +80,7 @@
 .end method
 
 .method public isAtEquilibrium(FF)Z
-    .registers 3
+    .locals 0
 
     .line 233
     invoke-static {p2}, Ljava/lang/Math;->abs(F)F
@@ -91,21 +91,21 @@
 
     cmpg-float p1, p1, p2
 
-    if-gez p1, :cond_c
+    if-gez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_d
+    :goto_0
     return p1
 .end method
 
 .method setFrictionScalar(F)V
-    .registers 3
+    .locals 1
 
     const v0, -0x3f79999a    # -4.2f
 
@@ -118,7 +118,7 @@
 .end method
 
 .method setValueThreshold(F)V
-    .registers 3
+    .locals 1
 
     const/high16 v0, 0x427a0000    # 62.5f
 
@@ -131,7 +131,7 @@
 .end method
 
 .method updateValueAndVelocity(FFJ)Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
-    .registers 10
+    .locals 5
 
     .line 217
     iget-object v0, p0, Landroidx/dynamicanimation/animation/FlingAnimation$DragForce;->mMassState:Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
@@ -207,7 +207,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_0
 
     .line 221
     iget-object p1, p0, Landroidx/dynamicanimation/animation/FlingAnimation$DragForce;->mMassState:Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
@@ -217,7 +217,7 @@
     iput p2, p1, Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;->mVelocity:F
 
     .line 223
-    :cond_3d
+    :cond_0
     iget-object p1, p0, Landroidx/dynamicanimation/animation/FlingAnimation$DragForce;->mMassState:Landroidx/dynamicanimation/animation/DynamicAnimation$MassState;
 
     return-object p1

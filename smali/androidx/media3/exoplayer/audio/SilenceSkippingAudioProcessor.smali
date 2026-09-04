@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 9
+    .locals 8
 
     const-wide/32 v1, 0x186a0
 
@@ -87,7 +87,7 @@
 .end method
 
 .method public constructor <init>(JFJIS)V
-    .registers 10
+    .locals 2
 
     .line 231
     invoke-direct {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;-><init>()V
@@ -107,18 +107,18 @@
 
     cmpl-float v1, p3, v1
 
-    if-ltz v1, :cond_16
+    if-ltz v1, :cond_0
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpg-float v1, p3, v1
 
-    if-gtz v1, :cond_16
+    if-gtz v1, :cond_0
 
     const/4 v0, 0x1
 
     .line 232
-    :cond_16
+    :cond_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     .line 233
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>(JJS)V
-    .registers 14
+    .locals 8
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -177,7 +177,7 @@
 .end method
 
 .method private alignToBytePerFrameBoundary(F)I
-    .registers 2
+    .locals 0
 
     float-to-int p1, p1
 
@@ -190,7 +190,7 @@
 .end method
 
 .method private alignToBytePerFrameBoundary(I)I
-    .registers 3
+    .locals 1
 
     .line 523
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
@@ -203,7 +203,7 @@
 .end method
 
 .method private calculateFadeInPercentage(II)I
-    .registers 5
+    .locals 2
 
     .line 676
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->minVolumeToKeepPercentageWhenMuting:I
@@ -224,7 +224,7 @@
 .end method
 
 .method private calculateFadeOutPercentage(II)I
-    .registers 4
+    .locals 1
 
     .line 670
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->minVolumeToKeepPercentageWhenMuting:I
@@ -245,7 +245,7 @@
 .end method
 
 .method private calculateShortenedSilenceLength(I)I
-    .registers 4
+    .locals 2
 
     .line 507
     iget-wide v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maxSilenceToKeepDurationUs:J
@@ -271,17 +271,17 @@
 
     sub-int/2addr v0, v1
 
-    if-ltz v0, :cond_16
+    if-ltz v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v1, 0x0
 
     .line 512
-    :goto_17
+    :goto_0
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     int-to-float p1, p1
@@ -311,7 +311,7 @@
 .end method
 
 .method private durationUsToFrames(J)I
-    .registers 5
+    .locals 2
 
     .line 713
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->inputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -332,7 +332,7 @@
 .end method
 
 .method private findNoiseLimit(Ljava/nio/ByteBuffer;)I
-    .registers 5
+    .locals 3
 
     .line 737
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
@@ -341,12 +341,12 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_6
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
 
-    if-lt v0, v1, :cond_25
+    if-lt v0, v1, :cond_1
 
     .line 738
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get(I)B
@@ -363,7 +363,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 740
     iget p1, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
@@ -376,13 +376,13 @@
 
     return v0
 
-    :cond_22
+    :cond_0
     add-int/lit8 v0, v0, -0x2
 
-    goto :goto_6
+    goto :goto_0
 
     .line 743
-    :cond_25
+    :cond_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result p1
@@ -391,7 +391,7 @@
 .end method
 
 .method private findNoisePosition(Ljava/nio/ByteBuffer;)I
-    .registers 5
+    .locals 3
 
     .line 722
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
@@ -400,12 +400,12 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    :goto_6
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_24
+    if-ge v0, v1, :cond_1
 
     .line 723
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get(I)B
@@ -422,7 +422,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     .line 725
     iget p1, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
@@ -433,13 +433,13 @@
 
     return p1
 
-    :cond_21
+    :cond_0
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_6
+    goto :goto_0
 
     .line 728
-    :cond_24
+    :cond_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result p1
@@ -448,7 +448,7 @@
 .end method
 
 .method private isNoise(BB)Z
-    .registers 3
+    .locals 0
 
     .line 751
     invoke-static {p1, p2}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->twoByteSampleToInt(BB)I
@@ -461,33 +461,33 @@
 
     iget-short p2, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->silenceThresholdLevel:S
 
-    if-le p1, p2, :cond_e
+    if-le p1, p2, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_f
+    :goto_0
     return p1
 .end method
 
 .method private modifyVolume([BII)V
-    .registers 7
+    .locals 3
 
     const/4 v0, 0x3
 
-    if-ne p3, v0, :cond_4
+    if-ne p3, v0, :cond_0
 
     return-void
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
-    if-ge v0, p2, :cond_2f
+    :goto_0
+    if-ge v0, p2, :cond_3
 
     add-int/lit8 v1, v0, 0x1
 
@@ -502,7 +502,7 @@
 
     move-result v1
 
-    if-nez p3, :cond_1a
+    if-nez p3, :cond_1
 
     add-int/lit8 v2, p2, -0x1
 
@@ -511,12 +511,12 @@
 
     move-result v2
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     const/4 v2, 0x2
 
-    if-ne p3, v2, :cond_24
+    if-ne p3, v2, :cond_2
 
     add-int/lit8 v2, p2, -0x1
 
@@ -525,13 +525,13 @@
 
     move-result v2
 
-    goto :goto_26
+    goto :goto_1
 
     .line 661
-    :cond_24
+    :cond_2
     iget v2, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->minVolumeToKeepPercentageWhenMuting:I
 
-    :goto_26
+    :goto_1
     mul-int/2addr v1, v2
 
     .line 664
@@ -542,14 +542,14 @@
 
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_2f
+    :cond_3
     return-void
 .end method
 
 .method private output(Ljava/nio/ByteBuffer;)V
-    .registers 3
+    .locals 1
 
     .line 706
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -570,7 +570,7 @@
 .end method
 
 .method private outputRange([BII)V
-    .registers 8
+    .locals 4
 
     .line 536
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
@@ -579,16 +579,16 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v0, v1
 
-    :goto_a
+    :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "byteOutput size is not aligned to frame size "
@@ -623,7 +623,7 @@
 .end method
 
 .method private outputShortenedSilenceBuffer(Z)V
-    .registers 10
+    .locals 8
 
     .line 432
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferContentsSize:I
@@ -633,12 +633,12 @@
 
     array-length v2, v1
 
-    if-eq v0, v2, :cond_9
+    if-eq v0, v2, :cond_0
 
-    if-eqz p1, :cond_91
+    if-eqz p1, :cond_7
 
     .line 439
-    :cond_9
+    :cond_0
     iget v2, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->outputSilenceFramesSinceNoise:I
 
     const/4 v3, 0x0
@@ -647,9 +647,9 @@
 
     const/4 v5, 0x2
 
-    if-nez v2, :cond_2b
+    if-nez v2, :cond_3
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x3
 
@@ -658,27 +658,27 @@
 
     move p1, v0
 
-    :goto_17
+    :goto_0
     move v1, p1
 
-    goto :goto_4f
+    goto :goto_2
 
     .line 448
-    :cond_19
+    :cond_1
     array-length p1, v1
 
     div-int/2addr p1, v5
 
-    if-lt v0, p1, :cond_1f
+    if-lt v0, p1, :cond_2
 
     move p1, v4
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_2
     move p1, v3
 
-    :goto_20
+    :goto_1
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 452
@@ -691,10 +691,10 @@
     .line 453
     invoke-direct {p0, p1, v3}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->outputSilence(II)V
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_2b
-    if-eqz p1, :cond_44
+    :cond_3
+    if-eqz p1, :cond_4
 
     .line 459
     array-length p1, v1
@@ -733,10 +733,10 @@
 
     move p1, v7
 
-    goto :goto_4f
+    goto :goto_2
 
     .line 475
-    :cond_44
+    :cond_4
     array-length p1, v1
 
     div-int/2addr p1, v5
@@ -752,21 +752,21 @@
     invoke-direct {p0, v1, v4}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->outputSilence(II)V
 
     .line 481
-    :goto_4f
+    :goto_2
     iget v2, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
     rem-int v2, p1, v2
 
-    if-nez v2, :cond_57
+    if-nez v2, :cond_5
 
     move v2, v4
 
-    goto :goto_58
+    goto :goto_3
 
-    :cond_57
+    :cond_5
     move v2, v3
 
-    :goto_58
+    :goto_3
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v6, "bytesConsumed is not aligned to frame size: %s"
@@ -783,12 +783,12 @@
 
     invoke-static {v2, v5}, Landroidx/media3/common/util/Assertions;->checkState(ZLjava/lang/Object;)V
 
-    if-lt v0, v1, :cond_6d
+    if-lt v0, v1, :cond_6
 
     move v3, v4
 
     .line 485
-    :cond_6d
+    :cond_6
     invoke-static {v3}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 487
@@ -838,40 +838,40 @@
 
     iput-wide v3, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
-    :cond_91
+    :cond_7
     return-void
 .end method
 
 .method private outputSilence(II)V
-    .registers 10
+    .locals 7
 
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 558
-    :cond_3
+    :cond_0
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferContentsSize:I
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-lt v0, p1, :cond_b
+    if-lt v0, p1, :cond_1
 
     move v0, v1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_1
     move v0, v2
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const/4 v0, 0x2
 
-    if-ne p2, v0, :cond_42
+    if-ne p2, v0, :cond_4
 
     .line 562
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferStartIndex:I
@@ -884,7 +884,7 @@
 
     array-length v6, v5
 
-    if-gt v4, v6, :cond_25
+    if-gt v4, v6, :cond_2
 
     add-int/2addr v0, v3
 
@@ -895,17 +895,17 @@
 
     invoke-static {v5, v0, v3, v2, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_61
+    goto :goto_1
 
     .line 573
-    :cond_25
+    :cond_2
     array-length v4, v5
 
     sub-int/2addr v4, v0
 
     sub-int/2addr v3, v4
 
-    if-lt v3, p1, :cond_31
+    if-lt v3, p1, :cond_3
 
     sub-int/2addr v3, p1
 
@@ -914,9 +914,9 @@
 
     invoke-static {v5, v3, v0, v2, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_61
+    goto :goto_1
 
-    :cond_31
+    :cond_3
     sub-int v0, p1, v3
 
     .line 585
@@ -935,10 +935,10 @@
 
     invoke-static {v4, v2, v5, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_61
+    goto :goto_1
 
     .line 603
-    :cond_42
+    :cond_4
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferStartIndex:I
 
     add-int v3, v0, p1
@@ -947,17 +947,17 @@
 
     array-length v5, v4
 
-    if-gt v3, v5, :cond_51
+    if-gt v3, v5, :cond_5
 
     .line 605
     iget-object v3, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->contiguousOutputBuffer:[B
 
     invoke-static {v4, v0, v3, v2, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_61
+    goto :goto_1
 
     .line 613
-    :cond_51
+    :cond_5
     array-length v3, v4
 
     sub-int/2addr v3, v0
@@ -977,21 +977,21 @@
     invoke-static {v4, v2, v5, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 631
-    :goto_61
+    :goto_1
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
     rem-int v0, p1, v0
 
-    if-nez v0, :cond_69
+    if-nez v0, :cond_6
 
     move v0, v1
 
-    goto :goto_6a
+    goto :goto_2
 
-    :cond_69
+    :cond_6
     move v0, v2
 
-    :goto_6a
+    :goto_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "sizeToOutput is not aligned to frame size: "
@@ -1015,14 +1015,14 @@
 
     array-length v3, v3
 
-    if-ge v0, v3, :cond_84
+    if-ge v0, v3, :cond_7
 
-    goto :goto_85
+    goto :goto_3
 
-    :cond_84
+    :cond_7
     move v1, v2
 
-    :goto_85
+    :goto_3
     invoke-static {v1}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 636
@@ -1034,7 +1034,7 @@
 .end method
 
 .method private processNoisy(Ljava/nio/ByteBuffer;)V
-    .registers 5
+    .locals 3
 
     .line 337
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
@@ -1068,17 +1068,17 @@
 
     move-result v2
 
-    if-ne v1, v2, :cond_21
+    if-ne v1, v2, :cond_0
 
     const/4 v1, 0x1
 
     .line 344
     iput v1, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->state:I
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 346
-    :cond_21
+    :cond_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->capacity()I
 
     move-result v2
@@ -1093,18 +1093,18 @@
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->output(Ljava/nio/ByteBuffer;)V
 
     .line 351
-    :goto_2f
+    :goto_0
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     return-void
 .end method
 
 .method private static sampleIntToTwoBigEndianBytes([BII)V
-    .registers 4
+    .locals 1
 
     const/16 v0, 0x7fff
 
-    if-lt p2, v0, :cond_e
+    if-lt p2, v0, :cond_0
 
     const/4 p2, -0x1
 
@@ -1118,12 +1118,12 @@
     .line 692
     aput-byte p2, p0, p1
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/16 v0, -0x8000
 
-    if-gt p2, v0, :cond_1c
+    if-gt p2, v0, :cond_1
 
     const/4 p2, 0x0
 
@@ -1137,9 +1137,9 @@
     .line 695
     aput-byte p2, p0, p1
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     and-int/lit16 v0, p2, 0xff
 
     int-to-byte v0, v0
@@ -1156,12 +1156,12 @@
     .line 698
     aput-byte p2, p0, p1
 
-    :goto_28
+    :goto_0
     return-void
 .end method
 
 .method private shortenSilenceSilenceUntilNoise(Ljava/nio/ByteBuffer;)V
-    .registers 12
+    .locals 10
 
     .line 383
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferStartIndex:I
@@ -1174,16 +1174,16 @@
 
     const/4 v3, 0x0
 
-    if-ge v0, v1, :cond_b
+    if-ge v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v3
 
-    :goto_c
+    :goto_0
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
     .line 385
@@ -1214,7 +1214,7 @@
 
     array-length v9, v8
 
-    if-ge v7, v9, :cond_2e
+    if-ge v7, v9, :cond_1
 
     .line 393
     array-length v7, v8
@@ -1225,10 +1225,10 @@
 
     add-int/2addr v5, v6
 
-    goto :goto_34
+    goto :goto_1
 
     .line 399
-    :cond_2e
+    :cond_1
     array-length v7, v8
 
     sub-int/2addr v7, v5
@@ -1239,18 +1239,18 @@
 
     move v5, v6
 
-    :goto_34
-    if-ge v1, v0, :cond_38
+    :goto_1
+    if-ge v1, v0, :cond_2
 
     move v1, v2
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_38
+    :cond_2
     move v1, v3
 
     .line 406
-    :goto_39
+    :goto_2
     invoke-static {v4, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v6
@@ -1281,32 +1281,32 @@
 
     array-length v6, v6
 
-    if-gt v5, v6, :cond_56
+    if-gt v5, v6, :cond_3
 
     move v5, v2
 
-    goto :goto_57
+    goto :goto_3
 
-    :cond_56
+    :cond_3
     move v5, v3
 
-    :goto_57
+    :goto_3
     invoke-static {v5}, Landroidx/media3/common/util/Assertions;->checkState(Z)V
 
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_4
 
-    if-ge v4, v7, :cond_5f
+    if-ge v4, v7, :cond_4
 
-    goto :goto_60
+    goto :goto_4
 
-    :cond_5f
+    :cond_4
     move v2, v3
 
     .line 419
-    :goto_60
+    :goto_4
     invoke-direct {p0, v2}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->outputShortenedSilenceBuffer(Z)V
 
-    if-eqz v2, :cond_69
+    if-eqz v2, :cond_5
 
     .line 422
     iput v3, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->state:I
@@ -1315,14 +1315,14 @@
     iput v3, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->outputSilenceFramesSinceNoise:I
 
     .line 427
-    :cond_69
+    :cond_5
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     return-void
 .end method
 
 .method private static twoByteSampleToInt(BB)I
-    .registers 2
+    .locals 0
 
     and-int/lit16 p1, p1, 0xff
 
@@ -1336,7 +1336,7 @@
 
 # virtual methods
 .method public getSkippedFrames()J
-    .registers 3
+    .locals 2
 
     .line 258
     iget-wide v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
@@ -1345,32 +1345,32 @@
 .end method
 
 .method public isActive()Z
-    .registers 2
+    .locals 1
 
     .line 275
     invoke-super {p0}, Landroidx/media3/common/audio/BaseAudioProcessor;->isActive()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->enabled:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method protected onConfigure(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
@@ -1382,23 +1382,23 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_1
 
     .line 267
     iget v0, p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     .line 268
     sget-object p1, Landroidx/media3/common/audio/AudioProcessor$AudioFormat;->NOT_SET:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
 
-    :cond_c
+    :cond_0
     return-object p1
 
     .line 265
-    :cond_d
+    :cond_1
     new-instance v0, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;
 
     invoke-direct {v0, p1}, Landroidx/media3/common/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Landroidx/media3/common/audio/AudioProcessor$AudioFormat;)V
@@ -1407,14 +1407,14 @@
 .end method
 
 .method public onFlush()V
-    .registers 4
+    .locals 3
 
     .line 308
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->isActive()Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 309
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->inputAudioFormat:Landroidx/media3/common/audio/AudioProcessor$AudioFormat;
@@ -1446,7 +1446,7 @@
 
     array-length v1, v1
 
-    if-eq v1, v0, :cond_29
+    if-eq v1, v0, :cond_0
 
     .line 314
     new-array v1, v0, [B
@@ -1458,7 +1458,7 @@
 
     iput-object v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->contiguousOutputBuffer:[B
 
-    :cond_29
+    :cond_0
     const/4 v0, 0x0
 
     .line 318
@@ -1482,12 +1482,12 @@
 .end method
 
 .method public onQueueEndOfStream()V
-    .registers 2
+    .locals 1
 
     .line 298
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferContentsSize:I
 
-    if-lez v0, :cond_b
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -1499,12 +1499,12 @@
     .line 302
     iput v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->outputSilenceFramesSinceNoise:I
 
-    :cond_b
+    :cond_0
     return-void
 .end method
 
 .method public onReset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1525,7 +1525,7 @@
 .end method
 
 .method public queueInput(Ljava/nio/ByteBuffer;)V
-    .registers 4
+    .locals 2
 
     .line 280
     :goto_0
@@ -1533,22 +1533,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->hasPendingOutput()Z
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_2
 
     .line 281
     iget v0, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->state:I
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     .line 286
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->shortenSilenceSilenceUntilNoise(Ljava/nio/ByteBuffer;)V
@@ -1556,7 +1556,7 @@
     goto :goto_0
 
     .line 289
-    :cond_17
+    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -1564,17 +1564,17 @@
     throw p1
 
     .line 283
-    :cond_1d
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->processNoisy(Ljava/nio/ByteBuffer;)V
 
     goto :goto_0
 
-    :cond_21
+    :cond_2
     return-void
 .end method
 
 .method public setEnabled(Z)V
-    .registers 2
+    .locals 0
 
     .line 250
     iput-boolean p1, p0, Landroidx/media3/exoplayer/audio/SilenceSkippingAudioProcessor;->enabled:Z

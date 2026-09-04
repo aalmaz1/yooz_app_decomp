@@ -15,7 +15,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,7 +24,7 @@
 .end method
 
 .method private static final camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 271
     new-instance v0, Ljava/lang/StringBuilder;
@@ -34,12 +34,12 @@
     const/4 v1, 0x0
 
     .line 272
-    :goto_6
+    :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_25
+    if-ge v1, v2, :cond_1
 
     .line 273
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -51,7 +51,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     const-string v3, "_"
 
@@ -59,7 +59,7 @@
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 277
-    :cond_1b
+    :cond_0
     invoke-static {v2}, Ljava/lang/Character;->toLowerCase(C)C
 
     move-result v2
@@ -68,10 +68,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 279
-    :cond_25
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -80,14 +80,14 @@
 .end method
 
 .method private static isDefaultValue(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 7
 
     .line 183
     instance-of v0, p0, Ljava/lang/Boolean;
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 184
     check-cast p0, Ljava/lang/Boolean;
@@ -101,12 +101,12 @@
     return p0
 
     .line 186
-    :cond_d
+    :cond_0
     instance-of v0, p0, Ljava/lang/Integer;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_2
 
     .line 187
     check-cast p0, Ljava/lang/Integer;
@@ -115,21 +115,21 @@
 
     move-result p0
 
-    if-nez p0, :cond_1b
+    if-nez p0, :cond_1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     move v1, v2
 
-    :goto_1c
+    :goto_0
     return v1
 
     .line 189
-    :cond_1d
+    :cond_2
     instance-of v0, p0, Ljava/lang/Float;
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_4
 
     .line 190
     check-cast p0, Ljava/lang/Float;
@@ -142,21 +142,21 @@
 
     cmpl-float p0, p0, v0
 
-    if-nez p0, :cond_2d
+    if-nez p0, :cond_3
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
+    :cond_3
     move v1, v2
 
-    :goto_2e
+    :goto_1
     return v1
 
     .line 192
-    :cond_2f
+    :cond_4
     instance-of v0, p0, Ljava/lang/Double;
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_6
 
     .line 193
     check-cast p0, Ljava/lang/Double;
@@ -169,21 +169,21 @@
 
     cmpl-double p0, v3, v5
 
-    if-nez p0, :cond_40
+    if-nez p0, :cond_5
 
-    goto :goto_41
+    goto :goto_2
 
-    :cond_40
+    :cond_5
     move v1, v2
 
-    :goto_41
+    :goto_2
     return v1
 
     .line 195
-    :cond_42
+    :cond_6
     instance-of v0, p0, Ljava/lang/String;
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_7
 
     const-string v0, ""
 
@@ -195,10 +195,10 @@
     return p0
 
     .line 198
-    :cond_4d
+    :cond_7
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_8
 
     .line 199
     sget-object v0, Landroidx/datastore/preferences/protobuf/ByteString;->EMPTY:Landroidx/datastore/preferences/protobuf/ByteString;
@@ -210,10 +210,10 @@
     return p0
 
     .line 201
-    :cond_58
+    :cond_8
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/MessageLite;
 
-    if-eqz v0, :cond_68
+    if-eqz v0, :cond_a
 
     .line 202
     move-object v0, p0
@@ -224,21 +224,21 @@
 
     move-result-object v0
 
-    if-ne p0, v0, :cond_66
+    if-ne p0, v0, :cond_9
 
-    goto :goto_67
+    goto :goto_3
 
-    :cond_66
+    :cond_9
     move v1, v2
 
-    :goto_67
+    :goto_3
     return v1
 
     .line 204
-    :cond_68
+    :cond_a
     instance-of v0, p0, Ljava/lang/Enum;
 
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_c
 
     .line 205
     check-cast p0, Ljava/lang/Enum;
@@ -247,27 +247,27 @@
 
     move-result p0
 
-    if-nez p0, :cond_75
+    if-nez p0, :cond_b
 
-    goto :goto_76
+    goto :goto_4
 
-    :cond_75
+    :cond_b
     move v1, v2
 
-    :goto_76
+    :goto_4
     return v1
 
-    :cond_77
+    :cond_c
     return v2
 .end method
 
 .method static final printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
-    .registers 10
+    .locals 6
 
     .line 222
     instance-of v0, p3, Ljava/util/List;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .line 223
     check-cast p3, Ljava/util/List;
@@ -277,12 +277,12 @@
 
     move-result-object p3
 
-    :goto_a
+    :goto_0
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -291,16 +291,16 @@
     .line 225
     invoke-static {p0, p1, p2, v0}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     return-void
 
     .line 229
-    :cond_19
+    :cond_1
     instance-of v0, p3, Ljava/util/Map;
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3
 
     .line 230
     check-cast p3, Ljava/util/Map;
@@ -314,12 +314,12 @@
 
     move-result-object p3
 
-    :goto_27
+    :goto_1
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_2
 
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -330,12 +330,12 @@
     .line 232
     invoke-static {p0, p1, p2, v0}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_37
+    :cond_2
     return-void
 
-    :cond_38
+    :cond_3
     const/16 v0, 0xa
 
     .line 237
@@ -345,20 +345,20 @@
 
     move v1, v0
 
-    :goto_3f
+    :goto_2
     const/16 v2, 0x20
 
-    if-ge v1, p1, :cond_49
+    if-ge v1, p1, :cond_4
 
     .line 239
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3f
+    goto :goto_2
 
     .line 241
-    :cond_49
+    :cond_4
     invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 243
@@ -368,7 +368,7 @@
 
     const-string v3, ": \""
 
-    if-eqz p2, :cond_67
+    if-eqz p2, :cond_5
 
     .line 244
     invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -387,13 +387,13 @@
 
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_db
+    goto/16 :goto_5
 
     .line 245
-    :cond_67
+    :cond_5
     instance-of p2, p3, Landroidx/datastore/preferences/protobuf/ByteString;
 
-    if-eqz p2, :cond_7d
+    if-eqz p2, :cond_6
 
     .line 246
     invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -412,10 +412,10 @@
 
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_db
+    goto :goto_5
 
     .line 247
-    :cond_7d
+    :cond_6
     instance-of p2, p3, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     const-string/jumbo v1, "}"
@@ -424,7 +424,7 @@
 
     const-string v4, " {"
 
-    if-eqz p2, :cond_a1
+    if-eqz p2, :cond_8
 
     .line 248
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -439,27 +439,27 @@
     .line 250
     invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_95
-    if-ge v0, p1, :cond_9d
+    :goto_3
+    if-ge v0, p1, :cond_7
 
     .line 252
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_95
+    goto :goto_3
 
     .line 254
-    :cond_9d
+    :cond_7
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_db
+    goto :goto_5
 
     .line 255
-    :cond_a1
+    :cond_8
     instance-of p2, p3, Ljava/util/Map$Entry;
 
-    if-eqz p2, :cond_ce
+    if-eqz p2, :cond_a
 
     .line 256
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -490,23 +490,23 @@
     .line 260
     invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_c2
-    if-ge v0, p1, :cond_ca
+    :goto_4
+    if-ge v0, p1, :cond_9
 
     .line 262
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_c2
+    goto :goto_4
 
     .line 264
-    :cond_ca
+    :cond_9
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_db
+    goto :goto_5
 
-    :cond_ce
+    :cond_a
     const-string p1, ": "
 
     .line 266
@@ -520,12 +520,12 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_db
+    :goto_5
     return-void
 .end method
 
 .method private static reflectivePrintWithIndent(Landroidx/datastore/preferences/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
-    .registers 15
+    .locals 12
 
     .line 76
     new-instance v0, Ljava/util/HashMap;
@@ -557,10 +557,10 @@
 
     move v6, v5
 
-    :goto_1a
+    :goto_0
     const-string v7, "get"
 
-    if-ge v6, v4, :cond_49
+    if-ge v6, v4, :cond_1
 
     aget-object v8, v3, v6
 
@@ -578,7 +578,7 @@
 
     array-length v9, v9
 
-    if-nez v9, :cond_46
+    if-nez v9, :cond_0
 
     .line 82
     invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
@@ -596,7 +596,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_46
+    if-eqz v7, :cond_0
 
     .line 85
     invoke-virtual {v8}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
@@ -605,24 +605,24 @@
 
     invoke-interface {v2, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :cond_46
+    :cond_0
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 90
-    :cond_49
+    :cond_1
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_4d
-    :goto_4d
+    :cond_2
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1d0
+    if-eqz v3, :cond_9
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -646,7 +646,7 @@
 
     const/4 v9, 0x1
 
-    if-eqz v8, :cond_bb
+    if-eqz v8, :cond_3
 
     const-string v8, "OrBuilderList"
 
@@ -655,14 +655,14 @@
 
     move-result v8
 
-    if-nez v8, :cond_bb
+    if-nez v8, :cond_3
 
     .line 95
     invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_bb
+    if-nez v6, :cond_3
 
     .line 96
     new-instance v6, Ljava/lang/StringBuilder;
@@ -708,7 +708,7 @@
 
     check-cast v8, Ljava/lang/reflect/Method;
 
-    if-eqz v8, :cond_bb
+    if-eqz v8, :cond_3
 
     .line 102
     invoke-virtual {v8}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
@@ -721,7 +721,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_bb
+    if-eqz v10, :cond_3
 
     .line 106
     invoke-static {v6}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
@@ -738,9 +738,9 @@
     .line 103
     invoke-static {p1, p2, v3, v4}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_4d
+    goto :goto_1
 
-    :cond_bb
+    :cond_3
     const-string v6, "Map"
 
     .line 111
@@ -748,14 +748,14 @@
 
     move-result v8
 
-    if-eqz v8, :cond_121
+    if-eqz v8, :cond_4
 
     .line 113
     invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-nez v6, :cond_121
+    if-nez v6, :cond_4
 
     .line 114
     new-instance v6, Ljava/lang/StringBuilder;
@@ -801,7 +801,7 @@
 
     check-cast v3, Ljava/lang/reflect/Method;
 
-    if-eqz v3, :cond_121
+    if-eqz v3, :cond_4
 
     .line 121
     invoke-virtual {v3}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
@@ -814,7 +814,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_121
+    if-eqz v8, :cond_4
 
     const-class v8, Ljava/lang/Deprecated;
 
@@ -823,7 +823,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_121
+    if-nez v8, :cond_4
 
     .line 126
     invoke-virtual {v3}, Ljava/lang/reflect/Method;->getModifiers()I
@@ -834,7 +834,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_121
+    if-eqz v8, :cond_4
 
     .line 130
     invoke-static {v6}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
@@ -851,10 +851,10 @@
     .line 127
     invoke-static {p1, p2, v4, v3}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
 
-    goto/16 :goto_4d
+    goto/16 :goto_1
 
     .line 136
-    :cond_121
+    :cond_4
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v6, "set"
@@ -875,11 +875,11 @@
 
     check-cast v3, Ljava/lang/reflect/Method;
 
-    if-nez v3, :cond_13a
+    if-nez v3, :cond_5
 
-    goto/16 :goto_4d
+    goto/16 :goto_1
 
-    :cond_13a
+    :cond_5
     const-string v3, "Bytes"
 
     .line 140
@@ -887,7 +887,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_161
+    if-eqz v3, :cond_6
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -917,12 +917,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_161
+    if-eqz v3, :cond_6
 
-    goto/16 :goto_4d
+    goto/16 :goto_1
 
     .line 147
-    :cond_161
+    :cond_6
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -991,7 +991,7 @@
 
     check-cast v4, Ljava/lang/reflect/Method;
 
-    if-eqz v6, :cond_4d
+    if-eqz v6, :cond_2
 
     new-array v8, v5, [Ljava/lang/Object;
 
@@ -1000,23 +1000,23 @@
 
     move-result-object v6
 
-    if-nez v4, :cond_1b9
+    if-nez v4, :cond_8
 
     .line 158
     invoke-static {v6}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->isDefaultValue(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_1b7
+    if-nez v4, :cond_7
 
-    goto :goto_1c5
+    goto :goto_2
 
-    :cond_1b7
+    :cond_7
     move v9, v5
 
-    goto :goto_1c5
+    goto :goto_2
 
-    :cond_1b9
+    :cond_8
     new-array v8, v5, [Ljava/lang/Object;
 
     .line 159
@@ -1030,8 +1030,8 @@
 
     move-result v9
 
-    :goto_1c5
-    if-eqz v9, :cond_4d
+    :goto_2
+    if-eqz v9, :cond_2
 
     .line 162
     invoke-static {v3}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->camelCaseToSnakeCase(Ljava/lang/String;)Ljava/lang/String;
@@ -1040,13 +1040,13 @@
 
     invoke-static {p1, p2, v3, v6}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
 
-    goto/16 :goto_4d
+    goto/16 :goto_1
 
     .line 168
-    :cond_1d0
+    :cond_9
     instance-of v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite$ExtendableMessage;
 
-    if-eqz v0, :cond_210
+    if-eqz v0, :cond_a
 
     .line 169
     move-object v0, p0
@@ -1061,12 +1061,12 @@
     move-result-object v0
 
     .line 171
-    :goto_1dd
+    :goto_3
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_210
+    if-eqz v1, :cond_a
 
     .line 172
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -1112,27 +1112,27 @@
 
     invoke-static {p1, p2, v2, v1}, Landroidx/datastore/preferences/protobuf/MessageLiteToString;->printField(Ljava/lang/StringBuilder;ILjava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_1dd
+    goto :goto_3
 
     .line 177
-    :cond_210
+    :cond_a
     check-cast p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
 
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
-    if-eqz v0, :cond_21b
+    if-eqz v0, :cond_b
 
     .line 178
     iget-object p0, p0, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;->unknownFields:Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;
 
     invoke-virtual {p0, p1, p2}, Landroidx/datastore/preferences/protobuf/UnknownFieldSetLite;->printWithIndent(Ljava/lang/StringBuilder;I)V
 
-    :cond_21b
+    :cond_b
     return-void
 .end method
 
 .method static toString(Landroidx/datastore/preferences/protobuf/MessageLite;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 59
     new-instance v0, Ljava/lang/StringBuilder;

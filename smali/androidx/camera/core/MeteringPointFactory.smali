@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -20,7 +20,7 @@
 .end method
 
 .method public constructor <init>(Landroid/util/Rational;)V
-    .registers 2
+    .locals 0
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,7 +32,7 @@
 .end method
 
 .method public static getDefaultPointSize()F
-    .registers 1
+    .locals 1
 
     const v0, 0x3e19999a    # 0.15f
 
@@ -45,7 +45,7 @@
 .end method
 
 .method public final createPoint(FF)Landroidx/camera/core/MeteringPoint;
-    .registers 4
+    .locals 1
 
     .line 115
     invoke-static {}, Landroidx/camera/core/MeteringPointFactory;->getDefaultPointSize()F
@@ -60,7 +60,7 @@
 .end method
 
 .method public final createPoint(FFF)Landroidx/camera/core/MeteringPoint;
-    .registers 6
+    .locals 2
 
     .line 136
     invoke-virtual {p0, p1, p2}, Landroidx/camera/core/MeteringPointFactory;->convertPoint(FF)Landroid/graphics/PointF;

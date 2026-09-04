@@ -24,7 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 151
     new-instance v0, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory$1;
@@ -37,7 +37,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 44
     invoke-static {}, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory;->getDefaultMessageInfoFactory()Landroidx/datastore/preferences/protobuf/MessageInfoFactory;
@@ -50,7 +50,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/datastore/preferences/protobuf/MessageInfoFactory;)V
-    .registers 3
+    .locals 1
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method private static getDefaultMessageInfoFactory()Landroidx/datastore/preferences/protobuf/MessageInfoFactory;
-    .registers 4
+    .locals 4
 
     .line 118
     new-instance v0, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory$CompositeMessageInfoFactory;
@@ -102,7 +102,7 @@
 .end method
 
 .method private static getDescriptorMessageInfoFactory()Landroidx/datastore/preferences/protobuf/MessageInfoFactory;
-    .registers 4
+    .locals 4
 
     :try_start_0
     const-string v0, "androidx.datastore.preferences.protobuf.DescriptorMessageInfoFactory"
@@ -132,20 +132,20 @@
     move-result-object v0
 
     check-cast v0, Landroidx/datastore/preferences/protobuf/MessageInfoFactory;
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_19
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object v0
 
     .line 169
-    :catch_19
+    :catch_0
     sget-object v0, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory;->EMPTY_FACTORY:Landroidx/datastore/preferences/protobuf/MessageInfoFactory;
 
     return-object v0
 .end method
 
 .method private static isProto2(Landroidx/datastore/preferences/protobuf/MessageInfo;)Z
-    .registers 2
+    .locals 1
 
     .line 114
     invoke-interface {p0}, Landroidx/datastore/preferences/protobuf/MessageInfo;->getSyntax()Landroidx/datastore/preferences/protobuf/ProtoSyntax;
@@ -154,21 +154,21 @@
 
     sget-object v0, Landroidx/datastore/preferences/protobuf/ProtoSyntax;->PROTO2:Landroidx/datastore/preferences/protobuf/ProtoSyntax;
 
-    if-ne p0, v0, :cond_a
+    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_b
+    :goto_0
     return p0
 .end method
 
 .method private static newSchema(Ljava/lang/Class;Landroidx/datastore/preferences/protobuf/MessageInfo;)Landroidx/datastore/preferences/protobuf/Schema;
-    .registers 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -190,14 +190,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 76
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory;->isProto2(Landroidx/datastore/preferences/protobuf/MessageInfo;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 80
     invoke-static {}, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->lite()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
@@ -233,10 +233,10 @@
 
     move-result-object p0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 88
-    :cond_29
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->lite()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
 
     move-result-object v2
@@ -267,16 +267,16 @@
 
     move-result-object p0
 
-    :goto_40
+    :goto_0
     return-object p0
 
     .line 94
-    :cond_41
+    :cond_1
     invoke-static {p1}, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory;->isProto2(Landroidx/datastore/preferences/protobuf/MessageInfo;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_2
 
     .line 98
     invoke-static {}, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->full()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
@@ -312,10 +312,10 @@
 
     move-result-object p0
 
-    goto :goto_79
+    goto :goto_1
 
     .line 106
-    :cond_62
+    :cond_2
     invoke-static {}, Landroidx/datastore/preferences/protobuf/NewInstanceSchemas;->full()Landroidx/datastore/preferences/protobuf/NewInstanceSchema;
 
     move-result-object v2
@@ -346,14 +346,14 @@
 
     move-result-object p0
 
-    :goto_79
+    :goto_1
     return-object p0
 .end method
 
 
 # virtual methods
 .method public createSchema(Ljava/lang/Class;)Landroidx/datastore/preferences/protobuf/Schema;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -381,7 +381,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_1
 
     .line 59
     const-class v1, Landroidx/datastore/preferences/protobuf/GeneratedMessageLite;
@@ -390,7 +390,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_28
+    if-eqz p1, :cond_0
 
     .line 61
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->unknownFieldSetLiteSchema()Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
@@ -415,7 +415,7 @@
     return-object p1
 
     .line 66
-    :cond_28
+    :cond_0
     invoke-static {}, Landroidx/datastore/preferences/protobuf/SchemaUtil;->proto2UnknownFieldSetSchema()Landroidx/datastore/preferences/protobuf/UnknownFieldSchema;
 
     move-result-object p1
@@ -438,7 +438,7 @@
     return-object p1
 
     .line 71
-    :cond_39
+    :cond_1
     invoke-static {p1, v0}, Landroidx/datastore/preferences/protobuf/ManifestSchemaFactory;->newSchema(Ljava/lang/Class;Landroidx/datastore/preferences/protobuf/MessageInfo;)Landroidx/datastore/preferences/protobuf/Schema;
 
     move-result-object p1

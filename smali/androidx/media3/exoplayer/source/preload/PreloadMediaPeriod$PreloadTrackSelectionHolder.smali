@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>([Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;[Z[Landroidx/media3/exoplayer/source/SampleStream;[ZJ)V
-    .registers 7
+    .locals 0
 
     .line 299
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

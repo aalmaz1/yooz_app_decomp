@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/drm/DefaultDrmSession;Landroid/os/Looper;)V
-    .registers 3
+    .locals 0
 
     .line 643
     iput-object p1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
@@ -34,7 +34,7 @@
 .end method
 
 .method private maybeRetryRequest(Landroid/os/Message;Landroidx/media3/exoplayer/drm/MediaDrmCallbackException;)Z
-    .registers 24
+    .locals 21
 
     move-object/from16 v1, p0
 
@@ -52,12 +52,12 @@
 
     const/4 v5, 0x0
 
-    if-nez v4, :cond_10
+    if-nez v4, :cond_0
 
     return v5
 
     .line 697
-    :cond_10
+    :cond_0
     iget v4, v3, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestTask;->errorCount:I
 
     const/4 v6, 0x1
@@ -82,12 +82,12 @@
 
     move-result v7
 
-    if-le v4, v7, :cond_26
+    if-le v4, v7, :cond_1
 
     return v5
 
     .line 702
-    :cond_26
+    :cond_1
     new-instance v4, Landroidx/media3/exoplayer/source/LoadEventInfo;
 
     iget-wide v10, v3, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestTask;->taskId:J
@@ -132,7 +132,7 @@
 
     instance-of v7, v7, Ljava/io/IOException;
 
-    if-eqz v7, :cond_58
+    if-eqz v7, :cond_2
 
     .line 714
     invoke-virtual/range {p2 .. p2}, Landroidx/media3/exoplayer/drm/MediaDrmCallbackException;->getCause()Ljava/lang/Throwable;
@@ -141,10 +141,10 @@
 
     check-cast v2, Ljava/io/IOException;
 
-    goto :goto_62
+    goto :goto_0
 
     .line 715
-    :cond_58
+    :cond_2
     new-instance v7, Landroidx/media3/exoplayer/drm/DefaultDrmSession$UnexpectedDrmSessionException;
 
     invoke-virtual/range {p2 .. p2}, Landroidx/media3/exoplayer/drm/MediaDrmCallbackException;->getCause()Ljava/lang/Throwable;
@@ -156,7 +156,7 @@
     move-object v2, v7
 
     .line 716
-    :goto_62
+    :goto_0
     iget-object v7, v1, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     .line 717
@@ -178,19 +178,19 @@
 
     cmp-long v4, v2, v6
 
-    if-nez v4, :cond_7d
+    if-nez v4, :cond_3
 
     return v5
 
     .line 724
-    :cond_7d
+    :cond_3
     monitor-enter p0
 
     .line 725
-    :try_start_7e
+    :try_start_0
     iget-boolean v4, v1, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->isReleased:Z
 
-    if-nez v4, :cond_8c
+    if-nez v4, :cond_4
 
     .line 726
     invoke-static/range {p1 .. p1}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
@@ -207,17 +207,17 @@
     return v0
 
     .line 729
-    :cond_8c
+    :cond_4
     monitor-exit p0
 
     return v5
 
-    :catchall_8e
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
-    :try_end_90
-    .catchall {:try_start_7e .. :try_end_90} :catchall_8e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method
@@ -225,7 +225,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 7
+    .locals 5
 
     .line 659
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -233,16 +233,16 @@
     check-cast v0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestTask;
 
     .line 662
-    :try_start_4
+    :try_start_0
     iget v1, p1, Landroid/os/Message;->what:I
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_27
+    if-eq v1, v2, :cond_1
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_21
+    if-ne v1, v2, :cond_0
 
     .line 668
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
@@ -265,10 +265,10 @@
 
     move-result-object v1
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 671
-    :cond_21
+    :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1}, Ljava/lang/RuntimeException;-><init>()V
@@ -276,7 +276,7 @@
     throw v1
 
     .line 664
-    :cond_27
+    :cond_1
     iget-object v1, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     .line 665
@@ -297,13 +297,13 @@
     invoke-interface {v1, v2, v3}, Landroidx/media3/exoplayer/drm/MediaDrmCallback;->executeProvisionRequest(Ljava/util/UUID;Landroidx/media3/exoplayer/drm/ExoMediaDrm$ProvisionRequest;)[B
 
     move-result-object v1
-    :try_end_3b
-    .catch Landroidx/media3/exoplayer/drm/MediaDrmCallbackException; {:try_start_4 .. :try_end_3b} :catch_45
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_3b} :catch_3c
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/drm/MediaDrmCallbackException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4d
+    goto :goto_0
 
-    :catch_3c
+    :catch_0
     move-exception v1
 
     const-string v2, "DefaultDrmSession"
@@ -313,9 +313,9 @@
     .line 679
     invoke-static {v2, v3, v1}, Landroidx/media3/common/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_4d
+    goto :goto_0
 
-    :catch_45
+    :catch_1
     move-exception v1
 
     .line 674
@@ -323,13 +323,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_2
 
     return-void
 
     .line 682
-    :cond_4d
-    :goto_4d
+    :cond_2
+    :goto_0
     iget-object v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
 
     invoke-static {v2}, Landroidx/media3/exoplayer/drm/DefaultDrmSession;->access$400(Landroidx/media3/exoplayer/drm/DefaultDrmSession;)Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;
@@ -344,10 +344,10 @@
     monitor-enter p0
 
     .line 684
-    :try_start_59
+    :try_start_1
     iget-boolean v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->isReleased:Z
 
-    if-nez v2, :cond_72
+    if-nez v2, :cond_3
 
     .line 685
     iget-object v2, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->this$0:Landroidx/media3/exoplayer/drm/DefaultDrmSession;
@@ -373,23 +373,23 @@
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     .line 689
-    :cond_72
+    :cond_3
     monitor-exit p0
 
     return-void
 
-    :catchall_74
+    :catchall_0
     move-exception p1
 
     monitor-exit p0
-    :try_end_76
-    .catchall {:try_start_59 .. :try_end_76} :catchall_74
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
 .method post(ILjava/lang/Object;Z)V
-    .registers 12
+    .locals 8
 
     .line 648
     new-instance v7, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestTask;
@@ -423,29 +423,29 @@
 .end method
 
 .method public declared-synchronized release()V
-    .registers 2
+    .locals 1
 
     monitor-enter p0
 
     const/4 v0, 0x0
 
     .line 734
-    :try_start_2
+    :try_start_0
     invoke-virtual {p0, v0}, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     const/4 v0, 0x1
 
     .line 735
     iput-boolean v0, p0, Landroidx/media3/exoplayer/drm/DefaultDrmSession$RequestHandler;->isReleased:Z
-    :try_end_8
-    .catchall {:try_start_2 .. :try_end_8} :catchall_a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 736
     monitor-exit p0
 
     return-void
 
-    :catchall_a
+    :catchall_0
     move-exception v0
 
     monitor-exit p0

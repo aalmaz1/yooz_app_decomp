@@ -26,7 +26,7 @@
 
 # direct methods
 .method constructor <init>([BII)V
-    .registers 5
+    .locals 1
 
     .line 1531
     invoke-direct {p0, p1}, Landroidx/datastore/preferences/protobuf/ByteString$LiteralByteString;-><init>([B)V
@@ -48,7 +48,7 @@
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public byteAt(I)B
-    .registers 4
+    .locals 2
 
     .line 1551
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;->size()I
@@ -90,7 +90,7 @@
 .end method
 
 .method protected copyToInternal([BIII)V
-    .registers 7
+    .locals 2
 
     .line 1576
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;->bytes:[B
@@ -109,7 +109,7 @@
 .end method
 
 .method protected getOffsetIntoBytes()I
-    .registers 2
+    .locals 1
 
     .line 1567
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;->bytesOffset:I
@@ -118,7 +118,7 @@
 .end method
 
 .method internalByteAt(I)B
-    .registers 4
+    .locals 2
 
     .line 1557
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;->bytes:[B
@@ -133,7 +133,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 1562
     iget v0, p0, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;->bytesLength:I
@@ -142,7 +142,7 @@
 .end method
 
 .method writeReplace()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1586
     invoke-virtual {p0}, Landroidx/datastore/preferences/protobuf/ByteString$BoundedByteString;->toByteArray()[B

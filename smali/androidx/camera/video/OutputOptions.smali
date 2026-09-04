@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/OutputOptions$OutputOptionsInternal;)V
-    .registers 2
+    .locals 0
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public getDurationLimitMillis()J
-    .registers 3
+    .locals 2
 
     .line 82
     iget-object v0, p0, Landroidx/camera/video/OutputOptions;->mOutputOptionsInternal:Landroidx/camera/video/OutputOptions$OutputOptionsInternal;
@@ -51,7 +51,7 @@
 .end method
 
 .method public getFileSizeLimit()J
-    .registers 3
+    .locals 2
 
     .line 60
     iget-object v0, p0, Landroidx/camera/video/OutputOptions;->mOutputOptionsInternal:Landroidx/camera/video/OutputOptions$OutputOptionsInternal;
@@ -64,7 +64,7 @@
 .end method
 
 .method public getLocation()Landroid/location/Location;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/camera/video/OutputOptions;->mOutputOptionsInternal:Landroidx/camera/video/OutputOptions$OutputOptionsInternal;

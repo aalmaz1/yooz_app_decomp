@@ -24,7 +24,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$xMC8M6LLEeW997bBmO6BCC6GGAM(Landroid/os/Handler;Ljava/lang/Runnable;)Z
-    .registers 2
+    .locals 0
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/media3/exoplayer/audio/DefaultAudioSink;)V
-    .registers 4
+    .locals 2
 
     .line 1971
     iput-object p1, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;->this$0:Landroidx/media3/exoplayer/audio/DefaultAudioSink;
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public register(Landroid/media/AudioTrack;)V
-    .registers 4
+    .locals 2
 
     .line 2019
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;->handler:Landroid/os/Handler;
@@ -84,7 +84,7 @@
 .end method
 
 .method public unregister(Landroid/media/AudioTrack;)V
-    .registers 3
+    .locals 1
 
     .line 2024
     iget-object v0, p0, Landroidx/media3/exoplayer/audio/DefaultAudioSink$StreamEventCallbackV29;->callback:Landroid/media/AudioTrack$StreamEventCallback;

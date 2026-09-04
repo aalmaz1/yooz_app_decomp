@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
-    .registers 7
+    .locals 0
 
     .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,23 +115,23 @@
 .end method
 
 .method private applyIconTint()V
-    .registers 3
+    .locals 2
 
     .line 449
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     iget-boolean v1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTint:Z
 
-    if-nez v1, :cond_c
+    if-nez v1, :cond_0
 
     iget-boolean v1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTintMode:Z
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     .line 450
-    :cond_c
+    :cond_0
     invoke-static {v0}, Landroidx/core/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -148,7 +148,7 @@
     .line 453
     iget-boolean v1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTint:Z
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_1
 
     .line 454
     iget-object v1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList:Landroid/content/res/ColorStateList;
@@ -156,10 +156,10 @@
     invoke-static {v0, v1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     .line 457
-    :cond_21
+    :cond_1
     iget-boolean v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mHasIconTintMode:Z
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 458
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
@@ -168,14 +168,14 @@
 
     invoke-static {v0, v1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
-    :cond_2c
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public collapseActionView()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public expandActionView()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -191,7 +191,7 @@
 .end method
 
 .method public getActionProvider()Landroid/view/ActionProvider;
-    .registers 2
+    .locals 1
 
     .line 345
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -202,7 +202,7 @@
 .end method
 
 .method public getActionView()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public getAlphabeticModifiers()I
-    .registers 2
+    .locals 1
 
     .line 95
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutAlphabeticModifiers:I
@@ -219,7 +219,7 @@
 .end method
 
 .method public getAlphabeticShortcut()C
-    .registers 2
+    .locals 1
 
     .line 90
     iget-char v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutAlphabeticChar:C
@@ -228,7 +228,7 @@
 .end method
 
 .method public getContentDescription()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 401
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mContentDescription:Ljava/lang/CharSequence;
@@ -237,7 +237,7 @@
 .end method
 
 .method public getGroupId()I
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mGroup:I
@@ -246,7 +246,7 @@
 .end method
 
 .method public getIcon()Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
@@ -255,7 +255,7 @@
 .end method
 
 .method public getIconTintList()Landroid/content/res/ColorStateList;
-    .registers 2
+    .locals 1
 
     .line 429
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList:Landroid/content/res/ColorStateList;
@@ -264,7 +264,7 @@
 .end method
 
 .method public getIconTintMode()Landroid/graphics/PorterDuff$Mode;
-    .registers 2
+    .locals 1
 
     .line 445
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintMode:Landroid/graphics/PorterDuff$Mode;
@@ -273,7 +273,7 @@
 .end method
 
 .method public getIntent()Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
@@ -282,7 +282,7 @@
 .end method
 
 .method public getItemId()I
-    .registers 2
+    .locals 1
 
     .line 115
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mId:I
@@ -291,7 +291,7 @@
 .end method
 
 .method public getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -299,7 +299,7 @@
 .end method
 
 .method public getNumericModifiers()I
-    .registers 2
+    .locals 1
 
     .line 130
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericModifiers:I
@@ -308,7 +308,7 @@
 .end method
 
 .method public getNumericShortcut()C
-    .registers 2
+    .locals 1
 
     .line 125
     iget-char v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericChar:C
@@ -317,7 +317,7 @@
 .end method
 
 .method public getOrder()I
-    .registers 2
+    .locals 1
 
     .line 135
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mOrdering:I
@@ -326,7 +326,7 @@
 .end method
 
 .method public getSubMenu()Landroid/view/SubMenu;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -334,7 +334,7 @@
 .end method
 
 .method public getSupportActionProvider()Landroidx/core/view/ActionProvider;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -342,7 +342,7 @@
 .end method
 
 .method public getTitle()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
@@ -351,24 +351,24 @@
 .end method
 
 .method public getTitleCondensed()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitleCondensed:Ljava/lang/CharSequence;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
 
-    :goto_7
+    :goto_0
     return-object v0
 .end method
 
 .method public getTooltipText()Ljava/lang/CharSequence;
-    .registers 2
+    .locals 1
 
     .line 413
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTooltipText:Ljava/lang/CharSequence;
@@ -377,7 +377,7 @@
 .end method
 
 .method public hasSubMenu()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -385,28 +385,28 @@
 .end method
 
 .method public invoke()Z
-    .registers 4
+    .locals 3
 
     .line 300
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p0}, Landroid/view/MenuItem$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 304
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 305
     iget-object v2, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
@@ -415,14 +415,14 @@
 
     return v1
 
-    :cond_16
+    :cond_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public isActionViewExpanded()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -430,7 +430,7 @@
 .end method
 
 .method public isCheckable()Z
-    .registers 3
+    .locals 2
 
     .line 160
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
@@ -439,82 +439,82 @@
 
     and-int/2addr v0, v1
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_8
+    :goto_0
     return v1
 .end method
 
 .method public isChecked()Z
-    .registers 2
+    .locals 1
 
     .line 165
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 170
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x10
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public isVisible()Z
-    .registers 2
+    .locals 1
 
     .line 175
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x8
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public requiresActionButton()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -522,7 +522,7 @@
 .end method
 
 .method public requiresOverflow()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -530,7 +530,7 @@
 .end method
 
 .method public setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 340
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -541,7 +541,7 @@
 .end method
 
 .method public bridge synthetic setActionView(I)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ActionMenuItem;->setActionView(I)Landroidx/core/internal/view/SupportMenuItem;
@@ -552,7 +552,7 @@
 .end method
 
 .method public bridge synthetic setActionView(Landroid/view/View;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ActionMenuItem;->setActionView(Landroid/view/View;)Landroidx/core/internal/view/SupportMenuItem;
@@ -563,7 +563,7 @@
 .end method
 
 .method public setActionView(I)Landroidx/core/internal/view/SupportMenuItem;
-    .registers 2
+    .locals 0
 
     .line 351
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -574,7 +574,7 @@
 .end method
 
 .method public setActionView(Landroid/view/View;)Landroidx/core/internal/view/SupportMenuItem;
-    .registers 2
+    .locals 0
 
     .line 330
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -585,7 +585,7 @@
 .end method
 
 .method public setAlphabeticShortcut(C)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 180
     invoke-static {p1}, Ljava/lang/Character;->toLowerCase(C)C
@@ -598,7 +598,7 @@
 .end method
 
 .method public setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-    .registers 3
+    .locals 0
 
     .line 187
     invoke-static {p1}, Ljava/lang/Character;->toLowerCase(C)C
@@ -618,7 +618,7 @@
 .end method
 
 .method public setCheckable(Z)Landroid/view/MenuItem;
-    .registers 3
+    .locals 1
 
     .line 194
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
@@ -633,23 +633,23 @@
 .end method
 
 .method public setChecked(Z)Landroid/view/MenuItem;
-    .registers 3
+    .locals 1
 
     .line 205
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, -0x3
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x2
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     or-int/2addr p1, v0
 
     iput p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
@@ -658,7 +658,7 @@
 .end method
 
 .method public bridge synthetic setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ActionMenuItem;->setContentDescription(Ljava/lang/CharSequence;)Landroidx/core/internal/view/SupportMenuItem;
@@ -669,7 +669,7 @@
 .end method
 
 .method public setContentDescription(Ljava/lang/CharSequence;)Landroidx/core/internal/view/SupportMenuItem;
-    .registers 2
+    .locals 0
 
     .line 395
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mContentDescription:Ljava/lang/CharSequence;
@@ -678,23 +678,23 @@
 .end method
 
 .method public setEnabled(Z)Landroid/view/MenuItem;
-    .registers 3
+    .locals 1
 
     .line 211
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, -0x11
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_0
 
     const/16 p1, 0x10
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_a
+    :goto_0
     or-int/2addr p1, v0
 
     iput p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
@@ -703,23 +703,23 @@
 .end method
 
 .method public setExclusiveCheckable(Z)Landroidx/appcompat/view/menu/ActionMenuItem;
-    .registers 3
+    .locals 1
 
     .line 199
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, -0x5
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 p1, 0x4
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_9
+    :goto_0
     or-int/2addr p1, v0
 
     iput p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
@@ -728,7 +728,7 @@
 .end method
 
 .method public setIcon(I)Landroid/view/MenuItem;
-    .registers 3
+    .locals 1
 
     .line 225
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
@@ -746,7 +746,7 @@
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 217
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
@@ -758,7 +758,7 @@
 .end method
 
 .method public setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 419
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintList:Landroid/content/res/ColorStateList;
@@ -775,7 +775,7 @@
 .end method
 
 .method public setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 435
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIconTintMode:Landroid/graphics/PorterDuff$Mode;
@@ -792,7 +792,7 @@
 .end method
 
 .method public setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 233
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
@@ -801,7 +801,7 @@
 .end method
 
 .method public setNumericShortcut(C)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 239
     iput-char p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericChar:C
@@ -810,7 +810,7 @@
 .end method
 
 .method public setNumericShortcut(CI)Landroid/view/MenuItem;
-    .registers 3
+    .locals 0
 
     .line 246
     iput-char p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericChar:C
@@ -826,7 +826,7 @@
 .end method
 
 .method public setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 389
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -837,7 +837,7 @@
 .end method
 
 .method public setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 253
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
@@ -846,7 +846,7 @@
 .end method
 
 .method public setShortcut(CC)Landroid/view/MenuItem;
-    .registers 3
+    .locals 0
 
     .line 259
     iput-char p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericChar:C
@@ -862,7 +862,7 @@
 .end method
 
 .method public setShortcut(CCII)Landroid/view/MenuItem;
-    .registers 5
+    .locals 0
 
     .line 268
     iput-char p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mShortcutNumericChar:C
@@ -892,13 +892,13 @@
 .end method
 
 .method public setShowAsAction(I)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic setShowAsActionFlags(I)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ActionMenuItem;->setShowAsActionFlags(I)Landroidx/core/internal/view/SupportMenuItem;
@@ -909,7 +909,7 @@
 .end method
 
 .method public setShowAsActionFlags(I)Landroidx/core/internal/view/SupportMenuItem;
-    .registers 2
+    .locals 0
 
     .line 368
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ActionMenuItem;->setShowAsAction(I)V
@@ -918,7 +918,7 @@
 .end method
 
 .method public setSupportActionProvider(Landroidx/core/view/ActionProvider;)Landroidx/core/internal/view/SupportMenuItem;
-    .registers 2
+    .locals 0
 
     .line 362
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -929,7 +929,7 @@
 .end method
 
 .method public setTitle(I)Landroid/view/MenuItem;
-    .registers 3
+    .locals 1
 
     .line 283
     iget-object v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
@@ -948,7 +948,7 @@
 .end method
 
 .method public setTitle(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 277
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
@@ -957,7 +957,7 @@
 .end method
 
 .method public setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 289
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTitleCondensed:Ljava/lang/CharSequence;
@@ -966,7 +966,7 @@
 .end method
 
 .method public bridge synthetic setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-    .registers 2
+    .locals 0
 
     .line 43
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/ActionMenuItem;->setTooltipText(Ljava/lang/CharSequence;)Landroidx/core/internal/view/SupportMenuItem;
@@ -977,7 +977,7 @@
 .end method
 
 .method public setTooltipText(Ljava/lang/CharSequence;)Landroidx/core/internal/view/SupportMenuItem;
-    .registers 2
+    .locals 0
 
     .line 407
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mTooltipText:Ljava/lang/CharSequence;
@@ -986,7 +986,7 @@
 .end method
 
 .method public setVisible(Z)Landroid/view/MenuItem;
-    .registers 4
+    .locals 2
 
     .line 295
     iget v0, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I
@@ -995,11 +995,11 @@
 
     and-int/2addr v0, v1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x0
 
-    :cond_8
+    :cond_0
     or-int p1, v0, v1
 
     iput p1, p0, Landroidx/appcompat/view/menu/ActionMenuItem;->mFlags:I

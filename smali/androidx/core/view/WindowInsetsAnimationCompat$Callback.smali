@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 372
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final getDispatchMode()I
-    .registers 2
+    .locals 1
 
     .line 397
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Callback;->mDispatchMode:I
@@ -57,13 +57,13 @@
 .end method
 
 .method public onEnd(Landroidx/core/view/WindowInsetsAnimationCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public onPrepare(Landroidx/core/view/WindowInsetsAnimationCompat;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
@@ -82,7 +82,7 @@
 .end method
 
 .method public onStart(Landroidx/core/view/WindowInsetsAnimationCompat;Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;)Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
-    .registers 3
+    .locals 0
 
     return-object p2
 .end method

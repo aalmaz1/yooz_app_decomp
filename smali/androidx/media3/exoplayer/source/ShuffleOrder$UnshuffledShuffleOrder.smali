@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
 
     .line 182
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public cloneAndClear()Landroidx/media3/exoplayer/source/ShuffleOrder;
-    .registers 3
+    .locals 2
 
     .line 223
     new-instance v0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;
@@ -50,7 +50,7 @@
 .end method
 
 .method public cloneAndInsert(II)Landroidx/media3/exoplayer/source/ShuffleOrder;
-    .registers 4
+    .locals 1
 
     .line 213
     new-instance p1, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;
@@ -65,7 +65,7 @@
 .end method
 
 .method public cloneAndRemove(II)Landroidx/media3/exoplayer/source/ShuffleOrder;
-    .registers 5
+    .locals 2
 
     .line 218
     new-instance v0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;
@@ -82,45 +82,45 @@
 .end method
 
 .method public getFirstIndex()I
-    .registers 2
+    .locals 1
 
     .line 208
     iget v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public getLastIndex()I
-    .registers 2
+    .locals 1
 
     .line 203
     iget v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_0
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public getLength()I
-    .registers 2
+    .locals 1
 
     .line 188
     iget v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
@@ -129,35 +129,35 @@
 .end method
 
 .method public getNextIndex(I)I
-    .registers 3
+    .locals 1
 
     add-int/lit8 p1, p1, 0x1
 
     .line 193
     iget v0, p0, Landroidx/media3/exoplayer/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
-    if-ge p1, v0, :cond_7
+    if-ge p1, v0, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_8
+    :goto_0
     return p1
 .end method
 
 .method public getPreviousIndex(I)I
-    .registers 3
+    .locals 1
 
     const/4 v0, -0x1
 
     add-int/2addr p1, v0
 
-    if-ltz p1, :cond_5
+    if-ltz p1, :cond_0
 
     move v0, p1
 
-    :cond_5
+    :cond_0
     return v0
 .end method

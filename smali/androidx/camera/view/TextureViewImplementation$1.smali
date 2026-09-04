@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/view/TextureViewImplementation;)V
-    .registers 2
+    .locals 0
 
     .line 129
     iput-object p1, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
@@ -34,7 +34,7 @@
 .end method
 
 .method static synthetic lambda$onSurfaceTextureUpdated$0(Landroidx/camera/view/PreviewView$OnFrameUpdateListener;Landroid/graphics/SurfaceTexture;)V
-    .registers 4
+    .locals 2
 
     .line 207
     invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .registers 6
+    .locals 2
 
     .line 133
     new-instance v0, Ljava/lang/StringBuilder;
@@ -90,7 +90,7 @@
 
     iget-object p1, p1, Landroidx/camera/view/TextureViewImplementation;->mSurfaceReleaseFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_0
 
     .line 140
     iget-object p1, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
@@ -131,20 +131,20 @@
 
     invoke-virtual {p1}, Landroidx/camera/core/impl/DeferrableSurface;->close()V
 
-    goto :goto_57
+    goto :goto_0
 
     .line 144
-    :cond_52
+    :cond_0
     iget-object p1, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
 
     invoke-virtual {p1}, Landroidx/camera/view/TextureViewImplementation;->tryToProvidePreviewSurface()V
 
-    :goto_57
+    :goto_0
     return-void
 .end method
 
 .method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .registers 5
+    .locals 3
 
     .line 156
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
@@ -158,7 +158,7 @@
 
     iget-object v0, v0, Landroidx/camera/view/TextureViewImplementation;->mSurfaceReleaseFuture:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 162
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
@@ -194,7 +194,7 @@
 
     return p1
 
-    :cond_29
+    :cond_0
     const-string p1, "TextureViewImpl"
 
     const-string v0, "SurfaceTexture about to be destroyed"
@@ -208,7 +208,7 @@
 .end method
 
 .method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .registers 5
+    .locals 1
 
     .line 151
     new-instance p1, Ljava/lang/StringBuilder;
@@ -243,7 +243,7 @@
 .end method
 
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .registers 5
+    .locals 3
 
     .line 196
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
@@ -259,13 +259,13 @@
 
     check-cast v0, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 200
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
     .line 203
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/camera/view/TextureViewImplementation$1;->this$0:Landroidx/camera/view/TextureViewImplementation;
 
     iget-object v0, v0, Landroidx/camera/view/TextureViewImplementation;->mOnFrameUpdateListener:Landroidx/camera/view/PreviewView$OnFrameUpdateListener;
@@ -275,9 +275,9 @@
 
     iget-object v1, v1, Landroidx/camera/view/TextureViewImplementation;->mFrameUpdateExecutor:Ljava/util/concurrent/Executor;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_1
 
     .line 206
     new-instance v2, Landroidx/camera/view/TextureViewImplementation$1$$ExternalSyntheticLambda0;
@@ -286,6 +286,6 @@
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    :cond_24
+    :cond_1
     return-void
 .end method

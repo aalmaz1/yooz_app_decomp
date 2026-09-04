@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$ntLYs6AQqIcuPK7Mh8WMiBBjXHE(Landroidx/media3/exoplayer/dash/manifest/BaseUrl;Landroidx/media3/exoplayer/dash/manifest/BaseUrl;)I
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->compareBaseUrl(Landroidx/media3/exoplayer/dash/manifest/BaseUrl;Landroidx/media3/exoplayer/dash/manifest/BaseUrl;)I
 
@@ -56,7 +56,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 51
     new-instance v0, Ljava/util/Random;
@@ -69,7 +69,7 @@
 .end method
 
 .method constructor <init>(Ljava/util/Random;)V
-    .registers 3
+    .locals 1
 
     .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 .end method
 
 .method private static addExclusion(Ljava/lang/Object;JLjava/util/Map;)V
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -120,7 +120,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 192
     invoke-interface {p3, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -144,7 +144,7 @@
     move-result-wide p1
 
     .line 194
-    :cond_1a
+    :cond_0
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -155,7 +155,7 @@
 .end method
 
 .method private applyExclusions(Ljava/util/List;)Ljava/util/List;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -191,12 +191,12 @@
     const/4 v1, 0x0
 
     .line 162
-    :goto_14
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_3e
+    if-ge v1, v2, :cond_1
 
     .line 163
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -214,7 +214,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_3b
+    if-nez v3, :cond_0
 
     iget-object v3, p0, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->excludedPriorities:Ljava/util/Map;
 
@@ -229,22 +229,22 @@
 
     move-result v3
 
-    if-nez v3, :cond_3b
+    if-nez v3, :cond_0
 
     .line 166
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_3b
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_3e
+    :cond_1
     return-object v0
 .end method
 
 .method private static compareBaseUrl(Landroidx/media3/exoplayer/dash/manifest/BaseUrl;Landroidx/media3/exoplayer/dash/manifest/BaseUrl;)I
-    .registers 4
+    .locals 2
 
     .line 211
     iget v0, p0, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->priority:I
@@ -255,12 +255,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 212
-    :cond_b
+    :cond_0
     iget-object p0, p0, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->serviceLocation:Ljava/lang/String;
 
     iget-object p1, p1, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->serviceLocation:Ljava/lang/String;
@@ -269,12 +269,12 @@
 
     move-result v0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method public static getPriorityCount(Ljava/util/List;)I
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -292,12 +292,12 @@
     const/4 v1, 0x0
 
     .line 142
-    :goto_6
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_1e
+    if-ge v1, v2, :cond_0
 
     .line 143
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -316,10 +316,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 145
-    :cond_1e
+    :cond_0
     invoke-interface {v0}, Ljava/util/Set;->size()I
 
     move-result p0
@@ -328,7 +328,7 @@
 .end method
 
 .method private static removeExpiredExclusions(JLjava/util/Map;)V
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -355,13 +355,13 @@
 
     move-result-object v1
 
-    :cond_d
-    :goto_d
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -382,7 +382,7 @@
 
     cmp-long v3, v3, p0
 
-    if-gtz v3, :cond_d
+    if-gtz v3, :cond_0
 
     .line 201
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -391,18 +391,18 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_2f
+    :cond_1
     const/4 p0, 0x0
 
     .line 204
-    :goto_30
+    :goto_1
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-ge p0, p1, :cond_40
+    if-ge p0, p1, :cond_2
 
     .line 205
     invoke-interface {v0, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -413,14 +413,14 @@
 
     add-int/lit8 p0, p0, 0x1
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_40
+    :cond_2
     return-void
 .end method
 
 .method private selectWeighted(Ljava/util/List;)Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
-    .registers 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -438,12 +438,12 @@
     move v2, v1
 
     .line 174
-    :goto_3
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v1, v3, :cond_15
+    if-ge v1, v3, :cond_0
 
     .line 175
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -458,10 +458,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
     .line 177
-    :cond_15
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->random:Ljava/util/Random;
 
     invoke-virtual {v1, v2}, Ljava/util/Random;->nextInt(I)I
@@ -471,12 +471,12 @@
     move v2, v0
 
     .line 179
-    :goto_1c
+    :goto_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v0, v3, :cond_31
+    if-ge v0, v3, :cond_2
 
     .line 180
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -490,17 +490,17 @@
 
     add-int/2addr v2, v4
 
-    if-ge v1, v2, :cond_2e
+    if-ge v1, v2, :cond_1
 
     return-object v3
 
-    :cond_2e
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 186
-    :cond_31
+    :cond_2
     invoke-static {p1}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object p1
@@ -513,7 +513,7 @@
 
 # virtual methods
 .method public exclude(Landroidx/media3/exoplayer/dash/manifest/BaseUrl;J)V
-    .registers 6
+    .locals 2
 
     .line 69
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -534,7 +534,7 @@
 
     const/high16 p3, -0x80000000
 
-    if-eq p2, p3, :cond_1d
+    if-eq p2, p3, :cond_0
 
     .line 72
     iget p1, p1, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->priority:I
@@ -547,12 +547,12 @@
 
     invoke-static {p1, v0, v1, p2}, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->addExclusion(Ljava/lang/Object;JLjava/util/Map;)V
 
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public getPriorityCountAfterExclusion(Ljava/util/List;)I
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -575,12 +575,12 @@
     const/4 v1, 0x0
 
     .line 128
-    :goto_a
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_22
+    if-ge v1, v2, :cond_0
 
     .line 129
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -599,10 +599,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 131
-    :cond_22
+    :cond_0
     invoke-interface {v0}, Ljava/util/Set;->size()I
 
     move-result p1
@@ -611,7 +611,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->excludedServiceLocations:Ljava/util/Map;
@@ -632,7 +632,7 @@
 .end method
 
 .method public selectBaseUrl(Ljava/util/List;)Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
-    .registers 9
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -655,7 +655,7 @@
 
     const/4 v1, 0x2
 
-    if-ge v0, v1, :cond_13
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -669,7 +669,7 @@
     return-object p1
 
     .line 93
-    :cond_13
+    :cond_0
     new-instance v0, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList$$ExternalSyntheticLambda0;
 
     invoke-direct {v0}, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList$$ExternalSyntheticLambda0;-><init>()V
@@ -695,12 +695,12 @@
     move v3, v1
 
     .line 97
-    :goto_2a
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_5b
+    if-ge v3, v4, :cond_2
 
     .line 98
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -712,7 +712,7 @@
     .line 99
     iget v5, v4, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->priority:I
 
-    if-eq v2, v5, :cond_48
+    if-eq v2, v5, :cond_1
 
     .line 100
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -721,7 +721,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_5b
+    if-ne v2, v3, :cond_2
 
     .line 102
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -733,7 +733,7 @@
     return-object p1
 
     .line 106
-    :cond_48
+    :cond_1
     new-instance v5, Landroid/util/Pair;
 
     iget-object v6, v4, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;->serviceLocation:Ljava/lang/String;
@@ -750,10 +750,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 109
-    :cond_5b
+    :cond_2
     iget-object v2, p0, Landroidx/media3/exoplayer/dash/BaseUrlExclusionList;->selectionsTaken:Ljava/util/Map;
 
     invoke-interface {v2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -762,7 +762,7 @@
 
     check-cast v2, Landroidx/media3/exoplayer/dash/manifest/BaseUrl;
 
-    if-nez v2, :cond_76
+    if-nez v2, :cond_3
 
     .line 112
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -782,6 +782,6 @@
 
     invoke-interface {p1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_76
+    :cond_3
     return-object v2
 .end method

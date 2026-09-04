@@ -19,7 +19,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/camera/core/impl/utils/CloseGuardHelper$CloseGuardImpl;)V
-    .registers 2
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,14 +31,14 @@
 .end method
 
 .method public static create()Landroidx/camera/core/impl/utils/CloseGuardHelper;
-    .registers 2
+    .locals 2
 
     .line 46
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 47
     new-instance v0, Landroidx/camera/core/impl/utils/CloseGuardHelper;
@@ -52,7 +52,7 @@
     return-object v0
 
     .line 50
-    :cond_11
+    :cond_0
     new-instance v0, Landroidx/camera/core/impl/utils/CloseGuardHelper;
 
     new-instance v1, Landroidx/camera/core/impl/utils/CloseGuardHelper$CloseGuardNoOpImpl;
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/camera/core/impl/utils/CloseGuardHelper;->mImpl:Landroidx/camera/core/impl/utils/CloseGuardHelper$CloseGuardImpl;
@@ -78,7 +78,7 @@
 .end method
 
 .method public open(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/camera/core/impl/utils/CloseGuardHelper;->mImpl:Landroidx/camera/core/impl/utils/CloseGuardHelper$CloseGuardImpl;
@@ -89,7 +89,7 @@
 .end method
 
 .method public warnIfOpen()V
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/camera/core/impl/utils/CloseGuardHelper;->mImpl:Landroidx/camera/core/impl/utils/CloseGuardHelper$CloseGuardImpl;

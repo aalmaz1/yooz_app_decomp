@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static setGroupDividerEnabled(Landroid/view/Menu;Z)V
-    .registers 2
+    .locals 0
 
     .line 69
     invoke-interface {p0, p1}, Landroid/view/Menu;->setGroupDividerEnabled(Z)V

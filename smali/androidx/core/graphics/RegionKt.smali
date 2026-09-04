@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static final and(Landroid/graphics/Region;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 95
     new-instance v0, Landroid/graphics/Region;
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final and(Landroid/graphics/Region;Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 104
     new-instance v0, Landroid/graphics/Region;
@@ -82,7 +82,7 @@
 .end method
 
 .method public static final contains(Landroid/graphics/Region;Landroid/graphics/Point;)Z
-    .registers 3
+    .locals 1
 
     .line 29
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -97,7 +97,7 @@
 .end method
 
 .method public static final forEach(Landroid/graphics/Region;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -116,7 +116,7 @@
     invoke-direct {v0, p0}, Landroid/graphics/RegionIterator;-><init>(Landroid/graphics/Region;)V
 
     .line 133
-    :goto_5
+    :goto_0
     new-instance p0, Landroid/graphics/Rect;
 
     invoke-direct {p0}, Landroid/graphics/Rect;-><init>()V
@@ -126,19 +126,19 @@
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     return-void
 
     .line 137
-    :cond_11
+    :cond_0
     invoke-interface {p1, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_5
+    goto :goto_0
 .end method
 
 .method public static final iterator(Landroid/graphics/Region;)Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -161,7 +161,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Region;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 53
     new-instance v0, Landroid/graphics/Region;
@@ -177,7 +177,7 @@
 .end method
 
 .method public static final minus(Landroid/graphics/Region;Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 62
     new-instance v0, Landroid/graphics/Region;
@@ -193,7 +193,7 @@
 .end method
 
 .method public static final not(Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 2
 
     .line 159
     new-instance v0, Landroid/graphics/Region;
@@ -213,7 +213,7 @@
 .end method
 
 .method public static final or(Landroid/graphics/Region;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 162
     new-instance v0, Landroid/graphics/Region;
@@ -227,7 +227,7 @@
 .end method
 
 .method public static final or(Landroid/graphics/Region;Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 165
     new-instance v0, Landroid/graphics/Region;
@@ -243,7 +243,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Region;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 35
     new-instance v0, Landroid/graphics/Region;
@@ -257,7 +257,7 @@
 .end method
 
 .method public static final plus(Landroid/graphics/Region;Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 44
     new-instance v0, Landroid/graphics/Region;
@@ -273,7 +273,7 @@
 .end method
 
 .method public static final unaryMinus(Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 2
 
     .line 71
     new-instance v0, Landroid/graphics/Region;
@@ -293,7 +293,7 @@
 .end method
 
 .method public static final xor(Landroid/graphics/Region;Landroid/graphics/Rect;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 114
     new-instance v0, Landroid/graphics/Region;
@@ -309,7 +309,7 @@
 .end method
 
 .method public static final xor(Landroid/graphics/Region;Landroid/graphics/Region;)Landroid/graphics/Region;
-    .registers 3
+    .locals 1
 
     .line 124
     new-instance v0, Landroid/graphics/Region;

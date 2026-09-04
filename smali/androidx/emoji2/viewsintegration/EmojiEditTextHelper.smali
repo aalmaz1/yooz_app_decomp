@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/widget/EditText;)V
-    .registers 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -33,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Landroid/widget/EditText;Z)V
-    .registers 4
+    .locals 1
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public getEmojiReplaceStrategy()I
-    .registers 2
+    .locals 1
 
     .line 204
     iget v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mEmojiReplaceStrategy:I
@@ -75,7 +75,7 @@
 .end method
 
 .method public getKeyListener(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
-    .registers 3
+    .locals 1
 
     .line 155
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
@@ -88,7 +88,7 @@
 .end method
 
 .method public getMaxEmojiCount()I
-    .registers 2
+    .locals 1
 
     .line 139
     iget v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mMaxEmojiCount:I
@@ -97,7 +97,7 @@
 .end method
 
 .method public isEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
@@ -110,16 +110,16 @@
 .end method
 
 .method public onCreateInputConnection(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-    .registers 4
+    .locals 1
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     .line 174
-    :cond_4
+    :cond_0
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
 
     invoke-virtual {v0, p1, p2}, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;->onCreateInputConnection(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
@@ -130,7 +130,7 @@
 .end method
 
 .method public setEmojiReplaceStrategy(I)V
-    .registers 3
+    .locals 1
 
     .line 189
     iput p1, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mEmojiReplaceStrategy:I
@@ -144,7 +144,7 @@
 .end method
 
 .method public setEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 227
     iget-object v0, p0, Landroidx/emoji2/viewsintegration/EmojiEditTextHelper;->mHelper:Landroidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal;
@@ -155,7 +155,7 @@
 .end method
 
 .method public setMaxEmojiCount(I)V
-    .registers 3
+    .locals 1
 
     const-string v0, "maxEmojiCount should be greater than 0"
 

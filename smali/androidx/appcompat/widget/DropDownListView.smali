@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Z)V
-    .registers 5
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -92,7 +92,7 @@
 .end method
 
 .method private clearPressedItem()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -118,16 +118,16 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 657
     invoke-virtual {v1, v0}, Landroid/view/View;->setPressed(Z)V
 
     .line 660
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 661
     invoke-virtual {v0}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
@@ -137,12 +137,12 @@
     .line 662
     iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;
 
-    :cond_23
+    :cond_1
     return-void
 .end method
 
 .method private clickPressedItem(Landroid/view/View;I)V
-    .registers 5
+    .locals 2
 
     .line 566
     invoke-virtual {p0, p2}, Landroidx/appcompat/widget/DropDownListView;->getItemIdAtPosition(I)J
@@ -156,7 +156,7 @@
 .end method
 
 .method private drawSelectorCompat(Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 2
 
     .line 589
     iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;
@@ -165,14 +165,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 590
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 592
     iget-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;
@@ -182,12 +182,12 @@
     .line 593
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method private positionSelectorCompat(ILandroid/view/View;)V
-    .registers 8
+    .locals 5
 
     .line 629
     iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;
@@ -257,7 +257,7 @@
 
     move-result p2
 
-    if-eq p2, v0, :cond_46
+    if-eq p2, v0, :cond_0
 
     xor-int/lit8 p2, v0, 0x1
 
@@ -266,17 +266,17 @@
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_46
+    if-eq p1, p2, :cond_0
 
     .line 644
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->refreshDrawableState()V
 
-    :cond_46
+    :cond_0
     return-void
 .end method
 
 .method private positionSelectorLikeFocusCompat(ILandroid/view/View;)V
-    .registers 7
+    .locals 4
 
     .line 610
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;
@@ -287,30 +287,30 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const/4 v3, -0x1
 
-    if-eq p1, v3, :cond_d
+    if-eq p1, v3, :cond_0
 
     move v3, v1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v3, v2
 
-    :goto_e
-    if-eqz v3, :cond_13
+    :goto_0
+    if-eqz v3, :cond_1
 
     .line 613
     invoke-virtual {v0, v2, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     .line 616
-    :cond_13
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/DropDownListView;->positionSelectorCompat(ILandroid/view/View;)V
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_3
 
     .line 619
     iget-object p1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectorRect:Landroid/graphics/Rect;
@@ -330,25 +330,25 @@
 
     move-result v3
 
-    if-nez v3, :cond_29
+    if-nez v3, :cond_2
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_2
     move v1, v2
 
-    :goto_2a
+    :goto_1
     invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     .line 623
     invoke-static {v0, p2, p1}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable;FF)V
 
-    :cond_30
+    :cond_3
     return-void
 .end method
 
 .method private positionSelectorLikeTouchCompat(ILandroid/view/View;FF)V
-    .registers 6
+    .locals 1
 
     .line 599
     invoke-direct {p0, p1, p2}, Landroidx/appcompat/widget/DropDownListView;->positionSelectorLikeFocusCompat(ILandroid/view/View;)V
@@ -358,21 +358,21 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_f
+    if-eq p1, v0, :cond_0
 
     .line 603
     invoke-static {p2, p3, p4}, Landroidx/core/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable;FF)V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method private setPressedItem(Landroid/view/View;IFF)V
-    .registers 9
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -387,13 +387,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     .line 674
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/DropDownListView;->setPressed(Z)V
 
     .line 678
-    :cond_f
+    :cond_0
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->layoutChildren()V
 
     .line 682
@@ -403,7 +403,7 @@
 
     const/4 v3, 0x0
 
-    if-eq v1, v2, :cond_2e
+    if-eq v1, v2, :cond_1
 
     .line 683
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I
@@ -416,22 +416,22 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_1
 
-    if-eq v1, p1, :cond_2e
+    if-eq v1, p1, :cond_1
 
     .line 684
     invoke-virtual {v1}, Landroid/view/View;->isPressed()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2e
+    if-eqz v2, :cond_1
 
     .line 685
     invoke-virtual {v1, v3}, Landroid/view/View;->setPressed(Z)V
 
     .line 688
-    :cond_2e
+    :cond_1
     iput p2, p0, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition:I
 
     .line 691
@@ -460,13 +460,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_4a
+    if-nez v1, :cond_2
 
     .line 697
     invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
 
     .line 701
-    :cond_4a
+    :cond_2
     invoke-direct {p0, p2, p1, p3, p4}, Landroidx/appcompat/widget/DropDownListView;->positionSelectorLikeTouchCompat(ILandroid/view/View;FF)V
 
     .line 706
@@ -479,29 +479,29 @@
 .end method
 
 .method private setSelectorEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 390
     iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 391
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;->setEnabled(Z)V
 
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method private superIsSelectedChildViewEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 134
     invoke-static {}, Landroidx/core/os/BuildCompat;->isAtLeastT()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 135
     invoke-static {p0}, Landroidx/appcompat/widget/DropDownListView$Api33Impl;->isSelectedChildViewEnabled(Landroid/widget/AbsListView;)Z
@@ -511,7 +511,7 @@
     return v0
 
     .line 137
-    :cond_b
+    :cond_0
     invoke-static {p0}, Landroidx/appcompat/widget/DropDownListView$PreApi33Impl;->isSelectedChildViewEnabled(Landroid/widget/AbsListView;)Z
 
     move-result v0
@@ -520,30 +520,30 @@
 .end method
 
 .method private superSetSelectedChildViewEnabled(Z)V
-    .registers 3
+    .locals 1
 
     .line 143
     invoke-static {}, Landroidx/core/os/BuildCompat;->isAtLeastT()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 144
     invoke-static {p0, p1}, Landroidx/appcompat/widget/DropDownListView$Api33Impl;->setSelectedChildViewEnabled(Landroid/widget/AbsListView;Z)V
 
-    goto :goto_d
+    goto :goto_0
 
     .line 146
-    :cond_a
+    :cond_0
     invoke-static {p0, p1}, Landroidx/appcompat/widget/DropDownListView$PreApi33Impl;->setSelectedChildViewEnabled(Landroid/widget/AbsListView;Z)V
 
-    :goto_d
+    :goto_0
     return-void
 .end method
 
 .method private touchModeDrawsInPressedStateCompat()Z
-    .registers 2
+    .locals 1
 
     .line 714
     iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mDrawsInPressedState:Z
@@ -552,27 +552,27 @@
 .end method
 
 .method private updateSelectorStateCompat()V
-    .registers 3
+    .locals 2
 
     .line 582
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelector()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 583
     invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->touchModeDrawsInPressedStateCompat()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->isPressed()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     .line 584
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getDrawableState()[I
@@ -581,14 +581,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 2
+    .locals 0
 
     .line 219
     invoke-direct {p0, p1}, Landroidx/appcompat/widget/DropDownListView;->drawSelectorCompat(Landroid/graphics/Canvas;)V
@@ -600,17 +600,17 @@
 .end method
 
 .method protected drawableStateChanged()V
-    .registers 2
+    .locals 1
 
     .line 205
     iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 209
-    :cond_5
+    :cond_0
     invoke-super {p0}, Landroid/widget/ListView;->drawableStateChanged()V
 
     const/4 v0, 0x1
@@ -625,125 +625,125 @@
 .end method
 
 .method public hasFocus()Z
-    .registers 2
+    .locals 1
 
     .line 183
     iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     invoke-super {p0}, Landroid/widget/ListView;->hasFocus()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 .method public hasWindowFocus()Z
-    .registers 2
+    .locals 1
 
     .line 163
     iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     invoke-super {p0}, Landroid/widget/ListView;->hasWindowFocus()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 .method public isFocused()Z
-    .registers 2
+    .locals 1
 
     .line 173
     iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     invoke-super {p0}, Landroid/widget/ListView;->isFocused()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 .method public isInTouchMode()Z
-    .registers 2
+    .locals 1
 
     .line 153
     iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mHijackFocus:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/appcompat/widget/DropDownListView;->mListSelectionHidden:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_1
 
-    :cond_8
+    :cond_0
     invoke-super {p0}, Landroid/widget/ListView;->isInTouchMode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_2
 
-    :cond_e
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public lookForSelectablePosition(IZ)I
-    .registers 7
+    .locals 4
 
     .line 248
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getAdapter()Landroid/widget/ListAdapter;
@@ -752,19 +752,19 @@
 
     const/4 v1, -0x1
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_7
 
     .line 249
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->isInTouchMode()Z
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
-    goto :goto_4c
+    goto :goto_3
 
     .line 253
-    :cond_e
+    :cond_0
     invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
 
     move-result v2
@@ -778,9 +778,9 @@
 
     move-result v3
 
-    if-nez v3, :cond_46
+    if-nez v3, :cond_5
 
-    if-eqz p2, :cond_2e
+    if-eqz p2, :cond_1
 
     const/4 p2, 0x0
 
@@ -789,21 +789,21 @@
 
     move-result p1
 
-    :goto_23
-    if-ge p1, v2, :cond_3f
+    :goto_0
+    if-ge p1, v2, :cond_2
 
     .line 257
     invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
 
     move-result p2
 
-    if-nez p2, :cond_3f
+    if-nez p2, :cond_2
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     add-int/lit8 p2, v2, -0x1
 
     .line 261
@@ -811,51 +811,51 @@
 
     move-result p1
 
-    :goto_34
-    if-ltz p1, :cond_3f
+    :goto_1
+    if-ltz p1, :cond_2
 
     .line 262
     invoke-interface {v0, p1}, Landroid/widget/ListAdapter;->isEnabled(I)Z
 
     move-result p2
 
-    if-nez p2, :cond_3f
+    if-nez p2, :cond_2
 
     add-int/lit8 p1, p1, -0x1
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_3f
-    if-ltz p1, :cond_45
+    :cond_2
+    if-ltz p1, :cond_4
 
-    if-lt p1, v2, :cond_44
+    if-lt p1, v2, :cond_3
 
-    goto :goto_45
+    goto :goto_2
 
-    :cond_44
+    :cond_3
     return p1
 
-    :cond_45
-    :goto_45
+    :cond_4
+    :goto_2
     return v1
 
-    :cond_46
-    if-ltz p1, :cond_4c
+    :cond_5
+    if-ltz p1, :cond_7
 
-    if-lt p1, v2, :cond_4b
+    if-lt p1, v2, :cond_6
 
-    goto :goto_4c
+    goto :goto_3
 
-    :cond_4b
+    :cond_6
     return p1
 
-    :cond_4c
-    :goto_4c
+    :cond_7
+    :goto_3
     return v1
 .end method
 
 .method public measureHeightOfChildrenCompat(IIIII)I
-    .registers 16
+    .locals 10
 
     .line 309
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getListPaddingTop()I
@@ -882,28 +882,28 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_0
 
     add-int/2addr p2, p3
 
     return p2
 
-    :cond_18
+    :cond_0
     add-int/2addr p2, p3
 
     const/4 p3, 0x0
 
-    if-lez v0, :cond_1f
+    if-lez v0, :cond_1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     move v0, p3
 
     .line 331
-    :goto_20
+    :goto_0
     invoke-interface {v2}, Landroid/widget/ListAdapter;->getCount()I
 
     move-result v1
@@ -918,22 +918,22 @@
 
     move-object v6, v3
 
-    :goto_29
-    if-ge v4, v1, :cond_77
+    :goto_1
+    if-ge v4, v1, :cond_9
 
     .line 333
     invoke-interface {v2, v4}, Landroid/widget/ListAdapter;->getItemViewType(I)I
 
     move-result v8
 
-    if-eq v8, v5, :cond_33
+    if-eq v8, v5, :cond_2
 
     move-object v6, v3
 
     move v5, v8
 
     .line 338
-    :cond_33
+    :cond_2
     invoke-interface {v2, v4, v6, p0}, Landroid/widget/ListAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v6
@@ -943,7 +943,7 @@
 
     move-result-object v8
 
-    if-nez v8, :cond_44
+    if-nez v8, :cond_3
 
     .line 345
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -954,10 +954,10 @@
     invoke-virtual {v6, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 349
-    :cond_44
+    :cond_3
     iget v9, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    if-lez v9, :cond_51
+    if-lez v9, :cond_4
 
     .line 350
     iget v8, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
@@ -968,66 +968,66 @@
 
     move-result v8
 
-    goto :goto_55
+    goto :goto_2
 
     .line 353
-    :cond_51
+    :cond_4
     invoke-static {p3, p3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v8
 
     .line 355
-    :goto_55
+    :goto_2
     invoke-virtual {v6, p1, v8}, Landroid/view/View;->measure(II)V
 
     .line 359
     invoke-virtual {v6}, Landroid/view/View;->forceLayout()V
 
-    if-lez v4, :cond_5e
+    if-lez v4, :cond_5
 
     add-int/2addr p2, v0
 
     .line 366
-    :cond_5e
+    :cond_5
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v8
 
     add-int/2addr p2, v8
 
-    if-lt p2, p4, :cond_6f
+    if-lt p2, p4, :cond_7
 
-    if-ltz p5, :cond_6e
+    if-ltz p5, :cond_6
 
-    if-le v4, p5, :cond_6e
+    if-le v4, p5, :cond_6
 
-    if-lez v7, :cond_6e
+    if-lez v7, :cond_6
 
-    if-eq p2, p4, :cond_6e
+    if-eq p2, p4, :cond_6
 
     move p4, v7
 
-    :cond_6e
+    :cond_6
     return p4
 
-    :cond_6f
-    if-ltz p5, :cond_74
+    :cond_7
+    if-ltz p5, :cond_8
 
-    if-lt v4, p5, :cond_74
+    if-lt v4, p5, :cond_8
 
     move v7, p2
 
-    :cond_74
+    :cond_8
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_77
+    :cond_9
     return p2
 .end method
 
 .method protected onDetachedFromWindow()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -1041,7 +1041,7 @@
 .end method
 
 .method public onForwardedEvent(Landroid/view/MotionEvent;I)Z
-    .registers 10
+    .locals 7
 
     .line 509
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
@@ -1052,52 +1052,52 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_16
+    if-eq v0, v1, :cond_3
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_14
+    if-eq v0, v3, :cond_2
 
     const/4 p2, 0x3
 
-    if-eq v0, p2, :cond_11
+    if-eq v0, p2, :cond_1
 
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     move v3, v1
 
     move p2, v2
 
-    goto :goto_46
+    goto :goto_3
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_1
     move p2, v2
 
     move v3, p2
 
-    goto :goto_46
+    goto :goto_3
 
-    :cond_14
+    :cond_2
     move v3, v1
 
-    goto :goto_17
+    goto :goto_2
 
-    :cond_16
+    :cond_3
     move v3, v2
 
     .line 518
-    :goto_17
+    :goto_2
     invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result p2
 
-    if-gez p2, :cond_1e
+    if-gez p2, :cond_4
 
-    goto :goto_11
+    goto :goto_1
 
     .line 524
-    :cond_1e
+    :cond_4
     invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v4
@@ -1118,14 +1118,14 @@
 
     const/4 v6, -0x1
 
-    if-ne v5, v6, :cond_31
+    if-ne v5, v6, :cond_5
 
     move p2, v1
 
-    goto :goto_46
+    goto :goto_3
 
     .line 532
-    :cond_31
+    :cond_5
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I
 
     move-result v3
@@ -1143,29 +1143,29 @@
     .line 533
     invoke-direct {p0, v3, v5, v4, p2}, Landroidx/appcompat/widget/DropDownListView;->setPressedItem(Landroid/view/View;IFF)V
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     .line 537
     invoke-direct {p0, v3, v5}, Landroidx/appcompat/widget/DropDownListView;->clickPressedItem(Landroid/view/View;I)V
 
-    goto :goto_e
+    goto :goto_0
 
-    :goto_46
-    if-eqz v3, :cond_4a
+    :goto_3
+    if-eqz v3, :cond_6
 
-    if-eqz p2, :cond_4d
+    if-eqz p2, :cond_7
 
     .line 544
-    :cond_4a
+    :cond_6
     invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->clearPressedItem()V
 
-    :cond_4d
-    if-eqz v3, :cond_65
+    :cond_7
+    if-eqz v3, :cond_9
 
     .line 549
     iget-object p2, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
-    if-nez p2, :cond_5a
+    if-nez p2, :cond_8
 
     .line 550
     new-instance p2, Landroidx/core/widget/ListViewAutoScrollHelper;
@@ -1175,7 +1175,7 @@
     iput-object p2, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
     .line 552
-    :cond_5a
+    :cond_8
     iget-object p2, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
     invoke-virtual {p2, v1}, Landroidx/core/widget/ListViewAutoScrollHelper;->setEnabled(Z)Landroidx/core/widget/AutoScrollHelper;
@@ -1185,24 +1185,24 @@
 
     invoke-virtual {p2, p0, p1}, Landroidx/core/widget/ListViewAutoScrollHelper;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    goto :goto_6c
+    goto :goto_4
 
     .line 554
-    :cond_65
+    :cond_9
     iget-object p1, p0, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
-    if-eqz p1, :cond_6c
+    if-eqz p1, :cond_a
 
     .line 555
     invoke-virtual {p1, v2}, Landroidx/core/widget/ListViewAutoScrollHelper;->setEnabled(Z)Landroidx/core/widget/AutoScrollHelper;
 
-    :cond_6c
-    :goto_6c
+    :cond_a
+    :goto_4
     return v3
 .end method
 
 .method public onHoverEvent(Landroid/view/MotionEvent;)Z
-    .registers 6
+    .locals 4
 
     .line 453
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
@@ -1211,12 +1211,12 @@
 
     const/16 v1, 0xa
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
     .line 454
     iget-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     .line 457
     new-instance v1, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
@@ -1229,7 +1229,7 @@
     invoke-virtual {v1}, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->post()V
 
     .line 462
-    :cond_16
+    :cond_0
     invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
@@ -1238,23 +1238,23 @@
 
     const/4 v3, -0x1
 
-    if-eq v0, v2, :cond_27
+    if-eq v0, v2, :cond_2
 
     const/4 v2, 0x7
 
-    if-ne v0, v2, :cond_23
+    if-ne v0, v2, :cond_1
 
-    goto :goto_27
+    goto :goto_0
 
     .line 487
-    :cond_23
+    :cond_1
     invoke-virtual {p0, v3}, Landroidx/appcompat/widget/DropDownListView;->setSelection(I)V
 
-    goto :goto_6f
+    goto :goto_2
 
     .line 465
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1271,14 +1271,14 @@
 
     move-result p1
 
-    if-eq p1, v3, :cond_6f
+    if-eq p1, v3, :cond_5
 
     .line 467
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getSelectedItemPosition()I
 
     move-result v0
 
-    if-eq p1, v0, :cond_6f
+    if-eq p1, v0, :cond_5
 
     .line 468
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->getFirstVisiblePosition()I
@@ -1296,7 +1296,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6c
+    if-eqz v2, :cond_4
 
     .line 472
     invoke-virtual {p0}, Landroidx/appcompat/widget/DropDownListView;->requestFocus()Z
@@ -1306,21 +1306,21 @@
 
     const/16 v3, 0x1e
 
-    if-lt v2, v3, :cond_60
+    if-lt v2, v3, :cond_3
 
     invoke-static {}, Landroidx/appcompat/widget/DropDownListView$Api30Impl;->canPositionSelectorForHoveredItem()Z
 
     move-result v2
 
-    if-eqz v2, :cond_60
+    if-eqz v2, :cond_3
 
     .line 477
     invoke-static {p0, p1, v0}, Landroidx/appcompat/widget/DropDownListView$Api30Impl;->positionSelectorForHoveredItem(Landroidx/appcompat/widget/DropDownListView;ILandroid/view/View;)V
 
-    goto :goto_6c
+    goto :goto_1
 
     .line 479
-    :cond_60
+    :cond_3
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v0
@@ -1334,29 +1334,29 @@
     invoke-virtual {p0, p1, v0}, Landroidx/appcompat/widget/DropDownListView;->setSelectionFromTop(II)V
 
     .line 482
-    :cond_6c
-    :goto_6c
+    :cond_4
+    :goto_1
     invoke-direct {p0}, Landroidx/appcompat/widget/DropDownListView;->updateSelectorStateCompat()V
 
-    :cond_6f
-    :goto_6f
+    :cond_5
+    :goto_2
     return v1
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
 
     .line 227
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 229
-    :cond_7
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1376,16 +1376,16 @@
     iput v0, p0, Landroidx/appcompat/widget/DropDownListView;->mMotionPosition:I
 
     .line 232
-    :goto_17
+    :goto_0
     iget-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 234
     invoke-virtual {v0}, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->cancel()V
 
     .line 236
-    :cond_1e
+    :cond_1
     invoke-super {p0, p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -1394,7 +1394,7 @@
 .end method
 
 .method setListSelectionHidden(Z)V
-    .registers 2
+    .locals 0
 
     .line 578
     iput-boolean p1, p0, Landroidx/appcompat/widget/DropDownListView;->mListSelectionHidden:Z
@@ -1403,21 +1403,21 @@
 .end method
 
 .method public setSelector(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+    .locals 1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_0
 
     .line 188
     new-instance v0, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;
 
     invoke-direct {v0, p1}, Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;-><init>(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;
 
     .line 189
@@ -1428,13 +1428,13 @@
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1
 
     .line 193
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
     .line 196
-    :cond_18
+    :cond_1
     iget p1, v0, Landroid/graphics/Rect;->left:I
 
     iput p1, p0, Landroidx/appcompat/widget/DropDownListView;->mSelectionLeftPadding:I

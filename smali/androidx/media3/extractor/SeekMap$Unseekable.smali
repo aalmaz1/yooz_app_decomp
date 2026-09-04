@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
@@ -36,7 +36,7 @@
 .end method
 
 .method public constructor <init>(JJ)V
-    .registers 7
+    .locals 2
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,19 +51,19 @@
 
     cmp-long p2, p3, v0
 
-    if-nez p2, :cond_10
+    if-nez p2, :cond_0
 
     .line 51
     sget-object p2, Landroidx/media3/extractor/SeekPoint;->START:Landroidx/media3/extractor/SeekPoint;
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     new-instance p2, Landroidx/media3/extractor/SeekPoint;
 
     invoke-direct {p2, v0, v1, p3, p4}, Landroidx/media3/extractor/SeekPoint;-><init>(JJ)V
 
-    :goto_15
+    :goto_0
     invoke-direct {p1, p2}, Landroidx/media3/extractor/SeekMap$SeekPoints;-><init>(Landroidx/media3/extractor/SeekPoint;)V
 
     iput-object p1, p0, Landroidx/media3/extractor/SeekMap$Unseekable;->startSeekPoints:Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public getDurationUs()J
-    .registers 3
+    .locals 2
 
     .line 61
     iget-wide v0, p0, Landroidx/media3/extractor/SeekMap$Unseekable;->durationUs:J
@@ -83,7 +83,7 @@
 .end method
 
 .method public getSeekPoints(J)Landroidx/media3/extractor/SeekMap$SeekPoints;
-    .registers 3
+    .locals 0
 
     .line 66
     iget-object p1, p0, Landroidx/media3/extractor/SeekMap$Unseekable;->startSeekPoints:Landroidx/media3/extractor/SeekMap$SeekPoints;
@@ -92,7 +92,7 @@
 .end method
 
 .method public isSeekable()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

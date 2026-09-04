@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/media/Image$Plane;)V
-    .registers 2
+    .locals 0
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public getBuffer()Ljava/nio/ByteBuffer;
-    .registers 2
+    .locals 1
 
     .line 122
     iget-object v0, p0, Landroidx/camera/core/AndroidImageProxy$PlaneProxy;->mPlane:Landroid/media/Image$Plane;
@@ -50,7 +50,7 @@
 .end method
 
 .method public getPixelStride()I
-    .registers 2
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/camera/core/AndroidImageProxy$PlaneProxy;->mPlane:Landroid/media/Image$Plane;
@@ -63,7 +63,7 @@
 .end method
 
 .method public getRowStride()I
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/camera/core/AndroidImageProxy$PlaneProxy;->mPlane:Landroid/media/Image$Plane;

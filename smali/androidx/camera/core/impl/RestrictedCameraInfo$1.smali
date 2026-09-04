@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/core/impl/RestrictedCameraInfo;)V
-    .registers 2
+    .locals 0
 
     .line 89
     iput-object p1, p0, Landroidx/camera/core/impl/RestrictedCameraInfo$1;->this$0:Landroidx/camera/core/impl/RestrictedCameraInfo;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public getExposureCompensationIndex()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -44,7 +44,7 @@
 .end method
 
 .method public getExposureCompensationRange()Landroid/util/Range;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -69,7 +69,7 @@
 .end method
 
 .method public getExposureCompensationStep()Landroid/util/Rational;
-    .registers 2
+    .locals 1
 
     .line 104
     sget-object v0, Landroid/util/Rational;->ZERO:Landroid/util/Rational;
@@ -78,7 +78,7 @@
 .end method
 
 .method public isExposureCompensationSupported()Z
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

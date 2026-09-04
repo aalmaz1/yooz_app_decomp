@@ -39,7 +39,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3332
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method synthetic constructor <init>(Landroidx/media3/exoplayer/ExoPlayerImpl$1;)V
-    .registers 2
+    .locals 0
 
     .line 3332
     invoke-direct {p0}, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;-><init>()V
@@ -59,27 +59,27 @@
 
 # virtual methods
 .method public handleMessage(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     const/4 v0, 0x7
 
-    if-eq p1, v0, :cond_28
+    if-eq p1, v0, :cond_3
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_23
+    if-eq p1, v0, :cond_2
 
     const/16 v0, 0x2710
 
-    if-eq p1, v0, :cond_c
+    if-eq p1, v0, :cond_0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 3358
-    :cond_c
+    :cond_0
     check-cast p2, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;
 
-    if-nez p2, :cond_16
+    if-nez p2, :cond_1
 
     const/4 p1, 0x0
 
@@ -89,10 +89,10 @@
     .line 3361
     iput-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->internalCameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 3363
-    :cond_16
+    :cond_1
     invoke-virtual {p2}, Landroidx/media3/exoplayer/video/spherical/SphericalGLSurfaceView;->getVideoFrameMetadataListener()Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
     move-result-object p1
@@ -106,81 +106,81 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->internalCameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 3355
-    :cond_23
+    :cond_2
     check-cast p2, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
     iput-object p2, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->cameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 3352
-    :cond_28
+    :cond_3
     check-cast p2, Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
     iput-object p2, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->videoFrameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
-    :goto_2c
+    :goto_0
     return-void
 .end method
 
 .method public onCameraMotion(J[F)V
-    .registers 5
+    .locals 1
 
     .line 3403
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->internalCameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 3404
     invoke-interface {v0, p1, p2, p3}, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;->onCameraMotion(J[F)V
 
     .line 3406
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->cameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 3407
     invoke-interface {v0, p1, p2, p3}, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;->onCameraMotion(J[F)V
 
-    :cond_e
+    :cond_1
     return-void
 .end method
 
 .method public onCameraMotionReset()V
-    .registers 2
+    .locals 1
 
     .line 3413
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->internalCameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 3414
     invoke-interface {v0}, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;->onCameraMotionReset()V
 
     .line 3416
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->cameraMotionListener:Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 3417
     invoke-interface {v0}, Landroidx/media3/exoplayer/video/spherical/CameraMotionListener;->onCameraMotionReset()V
 
-    :cond_e
+    :cond_1
     return-void
 .end method
 
 .method public onVideoFrameAboutToBeRendered(JJLandroidx/media3/common/Format;Landroid/media/MediaFormat;)V
-    .registers 15
+    .locals 8
 
     .line 3389
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->internalVideoFrameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     move-wide v1, p1
 
@@ -194,10 +194,10 @@
     invoke-interface/range {v0 .. v6}, Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;->onVideoFrameAboutToBeRendered(JJLandroidx/media3/common/Format;Landroid/media/MediaFormat;)V
 
     .line 3393
-    :cond_b
+    :cond_0
     iget-object v1, p0, Landroidx/media3/exoplayer/ExoPlayerImpl$FrameMetadataListener;->videoFrameMetadataListener:Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_1
 
     move-wide v2, p1
 
@@ -210,6 +210,6 @@
     .line 3394
     invoke-interface/range {v1 .. v7}, Landroidx/media3/exoplayer/video/VideoFrameMetadataListener;->onVideoFrameAboutToBeRendered(JJLandroidx/media3/common/Format;Landroid/media/MediaFormat;)V
 
-    :cond_16
+    :cond_1
     return-void
 .end method

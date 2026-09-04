@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static absent()Lcom/google/common/base/Optional;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -60,7 +60,7 @@
 .end method
 
 .method public static fromNullable(Ljava/lang/Object;)Lcom/google/common/base/Optional;
-    .registers 2
+    .locals 1
     .param p0    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/CheckForNull;
         .end annotation
@@ -84,28 +84,28 @@
         }
     .end annotation
 
-    if-nez p0, :cond_7
+    if-nez p0, :cond_0
 
     .line 119
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
 
     move-result-object p0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     new-instance v0, Lcom/google/common/base/Present;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Present;-><init>(Ljava/lang/Object;)V
 
     move-object p0, v0
 
-    :goto_d
+    :goto_0
     return-object p0
 .end method
 
 .method public static of(Ljava/lang/Object;)Lcom/google/common/base/Optional;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -138,7 +138,7 @@
 .end method
 
 .method public static presentInstances(Ljava/lang/Iterable;)Ljava/lang/Iterable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10

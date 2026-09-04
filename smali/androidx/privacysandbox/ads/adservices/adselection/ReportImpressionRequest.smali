@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(JLandroidx/privacysandbox/ads/adservices/adselection/AdSelectionConfig;)V
-    .registers 5
+    .locals 1
 
     const-string v0, "adSelectionConfig"
 
@@ -68,26 +68,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 35
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 36
-    :cond_a
+    :cond_1
     iget-wide v3, p0, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;->adSelectionId:J
 
     check-cast p1, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;
@@ -96,7 +96,7 @@
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_2
 
     .line 37
     iget-object v1, p0, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;->adSelectionConfig:Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionConfig;
@@ -107,19 +107,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_2
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_2
     move v0, v2
 
-    :goto_20
+    :goto_0
     return v0
 .end method
 
 .method public final getAdSelectionConfig()Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionConfig;
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;->adSelectionConfig:Landroidx/privacysandbox/ads/adservices/adselection/AdSelectionConfig;
@@ -128,7 +128,7 @@
 .end method
 
 .method public final getAdSelectionId()J
-    .registers 3
+    .locals 2
 
     .line 28
     iget-wide v0, p0, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;->adSelectionId:J
@@ -137,7 +137,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 42
     iget-wide v0, p0, Landroidx/privacysandbox/ads/adservices/adselection/ReportImpressionRequest;->adSelectionId:J
@@ -161,7 +161,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 49
     new-instance v0, Ljava/lang/StringBuilder;

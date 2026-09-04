@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const-string v0, "(.+?)(Z|((\\+|-|\u2212)(\\d\\d)(:?(\\d\\d))?))"
 
@@ -47,7 +47,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1455
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Long;
-    .registers 13
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -86,7 +86,7 @@
     const/4 v0, 0x0
 
     .line 1465
-    :try_start_13
+    :try_start_0
     sget-object v1, Landroidx/media3/exoplayer/dash/DashMediaSource$Iso8601Parser;->TIMESTAMP_WITH_TIMEZONE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -98,7 +98,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_89
+    if-eqz v2, :cond_3
 
     const/4 p1, 0x1
 
@@ -148,11 +148,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_0
 
-    goto :goto_84
+    goto :goto_2
 
-    :cond_4d
+    :cond_0
     const-string v2, "+"
 
     const/4 v3, 0x4
@@ -166,16 +166,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5d
+    if-eqz v2, :cond_1
 
     const-wide/16 v2, 0x1
 
-    goto :goto_5f
+    goto :goto_0
 
-    :cond_5d
+    :cond_1
     const-wide/16 v2, -0x1
 
-    :goto_5f
+    :goto_0
     const/4 v4, 0x5
 
     .line 1481
@@ -199,18 +199,18 @@
 
     move-result v6
 
-    if-eqz v6, :cond_76
+    if-eqz v6, :cond_2
 
     const-wide/16 v6, 0x0
 
-    goto :goto_7a
+    goto :goto_1
 
-    :cond_76
+    :cond_2
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v6
 
-    :goto_7a
+    :goto_1
     const-wide/16 v8, 0x3c
 
     mul-long/2addr v4, v8
@@ -228,7 +228,7 @@
     sub-long/2addr p1, v2
 
     .line 1487
-    :goto_84
+    :goto_2
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -236,7 +236,7 @@
     return-object p1
 
     .line 1467
-    :cond_89
+    :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -254,10 +254,10 @@
     move-result-object p1
 
     throw p1
-    :try_end_9b
-    .catch Ljava/text/ParseException; {:try_start_13 .. :try_end_9b} :catch_9b
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_9b
+    :catch_0
     move-exception p1
 
     .line 1489
@@ -269,7 +269,7 @@
 .end method
 
 .method public bridge synthetic parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/video/internal/audio/AudioSource;Landroidx/camera/video/internal/BufferProvider;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public onError(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
 
     .line 432
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$1;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -63,19 +63,19 @@
 
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioSource$1;->val$bufferProvider:Landroidx/camera/video/internal/BufferProvider;
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 433
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$1;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
 
     invoke-virtual {v0, p1}, Landroidx/camera/video/internal/audio/AudioSource;->notifyError(Ljava/lang/Throwable;)V
 
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public onNewData(Landroidx/camera/video/internal/BufferProvider$State;)V
-    .registers 4
+    .locals 2
 
     .line 418
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -87,7 +87,7 @@
 
     iget-object v1, p0, Landroidx/camera/video/internal/audio/AudioSource$1;->val$bufferProvider:Landroidx/camera/video/internal/BufferProvider;
 
-    if-ne v0, v1, :cond_3c
+    if-ne v0, v1, :cond_0
 
     .line 420
     new-instance v0, Ljava/lang/StringBuilder;
@@ -127,7 +127,7 @@
 
     iget-object v0, v0, Landroidx/camera/video/internal/audio/AudioSource;->mBufferProviderState:Landroidx/camera/video/internal/BufferProvider$State;
 
-    if-eq v0, p1, :cond_3c
+    if-eq v0, p1, :cond_0
 
     .line 423
     iget-object v0, p0, Landroidx/camera/video/internal/audio/AudioSource$1;->this$0:Landroidx/camera/video/internal/audio/AudioSource;
@@ -139,12 +139,12 @@
 
     invoke-virtual {p1}, Landroidx/camera/video/internal/audio/AudioSource;->updateSendingAudio()V
 
-    :cond_3c
+    :cond_0
     return-void
 .end method
 
 .method public bridge synthetic onNewData(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 414
     check-cast p1, Landroidx/camera/video/internal/BufferProvider$State;

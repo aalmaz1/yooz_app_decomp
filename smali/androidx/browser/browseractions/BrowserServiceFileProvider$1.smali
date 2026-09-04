@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;Landroidx/concurrent/futures/ResolvableFuture;)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .line 281
     :try_start_0
@@ -63,7 +63,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 284
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserServiceFileProvider$1;->val$result:Landroidx/concurrent/futures/ResolvableFuture;
@@ -77,7 +77,7 @@
     return-void
 
     .line 288
-    :cond_17
+    :cond_0
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v1
@@ -90,7 +90,7 @@
     .line 290
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_1
 
     .line 293
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserServiceFileProvider$1;->val$result:Landroidx/concurrent/futures/ResolvableFuture;
@@ -106,16 +106,16 @@
     return-void
 
     .line 297
-    :cond_31
+    :cond_1
     iget-object v0, p0, Landroidx/browser/browseractions/BrowserServiceFileProvider$1;->val$result:Landroidx/concurrent/futures/ResolvableFuture;
 
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
-    :try_end_36
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_36} :catch_37
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3d
+    goto :goto_0
 
-    :catch_37
+    :catch_0
     move-exception v0
 
     .line 299
@@ -123,6 +123,6 @@
 
     invoke-virtual {v1, v0}, Landroidx/concurrent/futures/ResolvableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    :goto_3d
+    :goto_0
     return-void
 .end method

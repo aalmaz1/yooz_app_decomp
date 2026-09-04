@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static createRemoteAction(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/RemoteAction;
-    .registers 5
+    .locals 1
 
     .line 258
     new-instance v0, Landroid/app/RemoteAction;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getActionIntent(Landroid/app/RemoteAction;)Landroid/app/PendingIntent;
-    .registers 1
+    .locals 0
 
     .line 237
     invoke-virtual {p0}, Landroid/app/RemoteAction;->getActionIntent()Landroid/app/PendingIntent;
@@ -47,7 +47,7 @@
 .end method
 
 .method static getContentDescription(Landroid/app/RemoteAction;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 232
     invoke-virtual {p0}, Landroid/app/RemoteAction;->getContentDescription()Ljava/lang/CharSequence;
@@ -58,7 +58,7 @@
 .end method
 
 .method static getIcon(Landroid/app/RemoteAction;)Landroid/graphics/drawable/Icon;
-    .registers 1
+    .locals 0
 
     .line 247
     invoke-virtual {p0}, Landroid/app/RemoteAction;->getIcon()Landroid/graphics/drawable/Icon;
@@ -69,7 +69,7 @@
 .end method
 
 .method static getTitle(Landroid/app/RemoteAction;)Ljava/lang/CharSequence;
-    .registers 1
+    .locals 0
 
     .line 242
     invoke-virtual {p0}, Landroid/app/RemoteAction;->getTitle()Ljava/lang/CharSequence;
@@ -80,7 +80,7 @@
 .end method
 
 .method static isEnabled(Landroid/app/RemoteAction;)Z
-    .registers 1
+    .locals 0
 
     .line 252
     invoke-virtual {p0}, Landroid/app/RemoteAction;->isEnabled()Z
@@ -91,7 +91,7 @@
 .end method
 
 .method static setEnabled(Landroid/app/RemoteAction;Z)V
-    .registers 2
+    .locals 0
 
     .line 263
     invoke-virtual {p0, p1}, Landroid/app/RemoteAction;->setEnabled(Z)V

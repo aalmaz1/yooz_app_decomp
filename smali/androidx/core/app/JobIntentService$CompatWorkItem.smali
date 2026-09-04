@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/core/app/JobIntentService;Landroid/content/Intent;I)V
-    .registers 4
+    .locals 0
 
     .line 367
     iput-object p1, p0, Landroidx/core/app/JobIntentService$CompatWorkItem;->this$0:Landroidx/core/app/JobIntentService;
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public complete()V
-    .registers 3
+    .locals 2
 
     .line 380
     iget-object v0, p0, Landroidx/core/app/JobIntentService$CompatWorkItem;->this$0:Landroidx/core/app/JobIntentService;
@@ -59,7 +59,7 @@
 .end method
 
 .method public getIntent()Landroid/content/Intent;
-    .registers 2
+    .locals 1
 
     .line 374
     iget-object v0, p0, Landroidx/core/app/JobIntentService$CompatWorkItem;->mIntent:Landroid/content/Intent;

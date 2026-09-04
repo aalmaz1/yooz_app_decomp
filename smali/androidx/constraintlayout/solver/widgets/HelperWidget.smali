@@ -14,7 +14,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 9
     invoke-direct {p0}, Landroidx/constraintlayout/solver/widgets/ConstraintWidget;-><init>()V
@@ -37,16 +37,16 @@
 
 # virtual methods
 .method public add(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;)V
-    .registers 5
+    .locals 3
 
-    if-eq p1, p0, :cond_23
+    if-eq p1, p0, :cond_2
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 27
-    :cond_5
+    :cond_0
     iget v0, p0, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgetsCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -55,7 +55,7 @@
 
     array-length v2, v1
 
-    if-le v0, v2, :cond_19
+    if-le v0, v2, :cond_1
 
     .line 28
     array-length v0, v1
@@ -71,7 +71,7 @@
     iput-object v0, p0, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgets:[Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
 
     .line 30
-    :cond_19
+    :cond_1
     iget-object v0, p0, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgets:[Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
 
     iget v1, p0, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgetsCount:I
@@ -83,13 +83,13 @@
     .line 31
     iput v1, p0, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgetsCount:I
 
-    :cond_23
-    :goto_23
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public copy(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;Ljava/util/HashMap;)V
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,8 +115,8 @@
     .line 39
     iget v1, p1, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgetsCount:I
 
-    :goto_a
-    if-ge v0, v1, :cond_1c
+    :goto_0
+    if-ge v0, v1, :cond_0
 
     .line 41
     iget-object v2, p1, Landroidx/constraintlayout/solver/widgets/HelperWidget;->mWidgets:[Landroidx/constraintlayout/solver/widgets/ConstraintWidget;
@@ -133,14 +133,14 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public removeAllIds()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public updateConstraints(Landroidx/constraintlayout/solver/widgets/ConstraintWidgetContainer;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method

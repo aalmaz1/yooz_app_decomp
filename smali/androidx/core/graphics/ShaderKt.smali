@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final transform(Landroid/graphics/Shader;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

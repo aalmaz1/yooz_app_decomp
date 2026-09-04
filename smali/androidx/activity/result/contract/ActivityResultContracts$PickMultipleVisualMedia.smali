@@ -76,7 +76,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia$Companion;
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     .line 870
     invoke-direct {p0}, Landroidx/activity/result/contract/ActivityResultContract;-><init>()V
@@ -114,20 +114,20 @@
 
     const/4 v0, 0x1
 
-    if-le p1, v0, :cond_9
+    if-le p1, v0, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-eqz v0, :cond_d
+    :goto_0
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 873
-    :cond_d
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Max items must be higher than 1"
@@ -142,11 +142,11 @@
 .end method
 
 .method public synthetic constructor <init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     .line 869
     sget-object p1, Landroidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia$Companion;
@@ -156,7 +156,7 @@
     move-result p1
 
     .line 868
-    :cond_a
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia;-><init>(I)V
 
     return-void
@@ -165,7 +165,7 @@
 
 # virtual methods
 .method public createIntent(Landroid/content/Context;Landroidx/activity/result/PickVisualMediaRequest;)Landroid/content/Intent;
-    .registers 6
+    .locals 3
 
     const-string v0, "context"
 
@@ -184,7 +184,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_2
 
     .line 883
     new-instance p1, Landroid/content/Intent;
@@ -213,15 +213,15 @@
 
     move-result v0
 
-    if-gt p2, v0, :cond_30
+    if-gt p2, v0, :cond_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_31
-    if-eqz v1, :cond_3c
+    :goto_0
+    if-eqz v1, :cond_1
 
     const-string p2, "android.provider.extra.PICK_IMAGES_MAX"
 
@@ -230,10 +230,10 @@
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    goto/16 :goto_f3
+    goto/16 :goto_1
 
     .line 885
-    :cond_3c
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Max items must be less or equals MediaStore.getPickImagesMaxLimit()"
@@ -247,7 +247,7 @@
     throw p1
 
     .line 891
-    :cond_48
+    :cond_2
     sget-object v0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;
 
     invoke-virtual {v0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->isSystemFallbackPickerAvailable$activity_release(Landroid/content/Context;)Z
@@ -256,7 +256,7 @@
 
     const-string v2, "Required value was null."
 
-    if-eqz v0, :cond_8c
+    if-eqz v0, :cond_4
 
     .line 892
     sget-object v0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;
@@ -265,7 +265,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_82
+    if-eqz p1, :cond_3
 
     iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -307,10 +307,10 @@
 
     move-object p1, v0
 
-    goto :goto_f3
+    goto :goto_1
 
     .line 892
-    :cond_82
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -322,14 +322,14 @@
     throw p1
 
     .line 898
-    :cond_8c
+    :cond_4
     sget-object v0, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;
 
     invoke-virtual {v0, p1}, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;->isGmsPickerAvailable$activity_release(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c1
+    if-eqz v0, :cond_6
 
     .line 899
     sget-object p2, Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$PickVisualMedia$Companion;
@@ -338,7 +338,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_b7
+    if-eqz p1, :cond_5
 
     iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -367,10 +367,10 @@
 
     move-object p1, p2
 
-    goto :goto_f3
+    goto :goto_1
 
     .line 899
-    :cond_b7
+    :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -382,7 +382,7 @@
     throw p1
 
     .line 908
-    :cond_c1
+    :cond_6
     new-instance p1, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.OPEN_DOCUMENT"
@@ -412,7 +412,7 @@
 
     move-result-object p2
 
-    if-nez p2, :cond_f3
+    if-nez p2, :cond_7
 
     const-string p2, "*/*"
 
@@ -432,13 +432,13 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
-    :cond_f3
-    :goto_f3
+    :cond_7
+    :goto_1
     return-object p1
 .end method
 
 .method public bridge synthetic createIntent(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
-    .registers 3
+    .locals 0
 
     .line 868
     check-cast p2, Landroidx/activity/result/PickVisualMediaRequest;
@@ -451,7 +451,7 @@
 .end method
 
 .method public final getSynchronousResult(Landroid/content/Context;Landroidx/activity/result/PickVisualMediaRequest;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -479,7 +479,7 @@
 .end method
 
 .method public bridge synthetic getSynchronousResult(Landroid/content/Context;Ljava/lang/Object;)Landroidx/activity/result/contract/ActivityResultContract$SynchronousResult;
-    .registers 3
+    .locals 0
 
     .line 868
     check-cast p2, Landroidx/activity/result/PickVisualMediaRequest;
@@ -492,7 +492,7 @@
 .end method
 
 .method public bridge synthetic parseResult(ILandroid/content/Intent;)Ljava/lang/Object;
-    .registers 3
+    .locals 0
 
     .line 868
     invoke-virtual {p0, p1, p2}, Landroidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia;->parseResult(ILandroid/content/Intent;)Ljava/util/List;
@@ -503,7 +503,7 @@
 .end method
 
 .method public final parseResult(ILandroid/content/Intent;)Ljava/util/List;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -517,25 +517,25 @@
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_6
-    if-eqz p1, :cond_9
+    :goto_0
+    if-eqz p1, :cond_1
 
-    goto :goto_a
+    goto :goto_1
 
-    :cond_9
+    :cond_1
     const/4 p2, 0x0
 
-    :goto_a
-    if-eqz p2, :cond_15
+    :goto_1
+    if-eqz p2, :cond_2
 
     .line 931
     sget-object p1, Landroidx/activity/result/contract/ActivityResultContracts$GetMultipleContents;->Companion:Landroidx/activity/result/contract/ActivityResultContracts$GetMultipleContents$Companion;
@@ -544,15 +544,15 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_2
 
-    goto :goto_19
+    goto :goto_2
 
-    :cond_15
+    :cond_2
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
-    :goto_19
+    :goto_2
     return-object p1
 .end method

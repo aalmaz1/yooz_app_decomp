@@ -20,7 +20,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/browser/customtabs/CustomTabsSessionToken;)V
-    .registers 2
+    .locals 0
 
     .line 139
     iput-object p1, p0, Landroidx/browser/customtabs/CustomTabsSessionToken$1;->this$0:Landroidx/browser/customtabs/CustomTabsSessionToken;
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public extraCallback(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 154
     :try_start_0
@@ -42,12 +42,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/support/customtabs/ICustomTabsCallback;->extraCallback(Ljava/lang/String;Landroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -55,12 +55,12 @@
     .line 156
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public extraCallbackWithResult(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 4
+    .locals 1
 
     .line 166
     :try_start_0
@@ -71,12 +71,12 @@
     invoke-interface {v0, p1, p2}, Landroid/support/customtabs/ICustomTabsCallback;->extraCallbackWithResult(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object p1
-    :try_end_8
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_8} :catch_9
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-object p1
 
-    :catch_9
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -90,7 +90,7 @@
 .end method
 
 .method public onActivityLayout(IIIIILandroid/os/Bundle;)V
-    .registers 15
+    .locals 8
 
     .line 230
     :try_start_0
@@ -111,12 +111,12 @@
     move-object v7, p6
 
     invoke-interface/range {v1 .. v7}, Landroid/support/customtabs/ICustomTabsCallback;->onActivityLayout(IIIIILandroid/os/Bundle;)V
-    :try_end_d
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_d} :catch_e
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :catch_e
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -124,12 +124,12 @@
     .line 232
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_15
+    :goto_0
     return-void
 .end method
 
 .method public onActivityResized(IILandroid/os/Bundle;)V
-    .registers 5
+    .locals 1
 
     .line 209
     :try_start_0
@@ -138,12 +138,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/support/customtabs/ICustomTabsCallback;->onActivityResized(IILandroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -151,12 +151,12 @@
     .line 211
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onMessageChannelReady(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 177
     :try_start_0
@@ -165,12 +165,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1}, Landroid/support/customtabs/ICustomTabsCallback;->onMessageChannelReady(Landroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string v0, "RemoteException during ICustomTabsCallback transaction"
@@ -178,12 +178,12 @@
     .line 179
     invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onMinimized(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 240
     :try_start_0
@@ -192,12 +192,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1}, Landroid/support/customtabs/ICustomTabsCallback;->onMinimized(Landroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string v0, "RemoteException during ICustomTabsCallback transaction"
@@ -205,12 +205,12 @@
     .line 242
     invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onNavigationEvent(ILandroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 144
     :try_start_0
@@ -219,12 +219,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/support/customtabs/ICustomTabsCallback;->onNavigationEvent(ILandroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -232,12 +232,12 @@
     .line 146
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onPostMessage(Ljava/lang/String;Landroid/os/Bundle;)V
-    .registers 4
+    .locals 1
 
     .line 187
     :try_start_0
@@ -246,12 +246,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1, p2}, Landroid/support/customtabs/ICustomTabsCallback;->onPostMessage(Ljava/lang/String;Landroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -259,12 +259,12 @@
     .line 189
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onRelationshipValidationResult(ILandroid/net/Uri;ZLandroid/os/Bundle;)V
-    .registers 6
+    .locals 1
 
     .line 198
     :try_start_0
@@ -273,12 +273,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/customtabs/ICustomTabsCallback;->onRelationshipValidationResult(ILandroid/net/Uri;ZLandroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string p2, "RemoteException during ICustomTabsCallback transaction"
@@ -286,12 +286,12 @@
     .line 201
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onUnminimized(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 250
     :try_start_0
@@ -300,12 +300,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1}, Landroid/support/customtabs/ICustomTabsCallback;->onUnminimized(Landroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string v0, "RemoteException during ICustomTabsCallback transaction"
@@ -313,12 +313,12 @@
     .line 252
     invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method
 
 .method public onWarmupCompleted(Landroid/os/Bundle;)V
-    .registers 3
+    .locals 1
 
     .line 219
     :try_start_0
@@ -327,12 +327,12 @@
     iget-object v0, v0, Landroidx/browser/customtabs/CustomTabsSessionToken;->mCallbackBinder:Landroid/support/customtabs/ICustomTabsCallback;
 
     invoke-interface {v0, p1}, Landroid/support/customtabs/ICustomTabsCallback;->onWarmupCompleted(Landroid/os/Bundle;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_7} :catch_8
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :catch_8
+    :catch_0
     const-string p1, "CustomTabsSessionToken"
 
     const-string v0, "RemoteException during ICustomTabsCallback transaction"
@@ -340,6 +340,6 @@
     .line 221
     invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :goto_f
+    :goto_0
     return-void
 .end method

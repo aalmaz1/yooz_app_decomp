@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final toColorFilter(Landroid/graphics/PorterDuff$Mode;I)Landroid/graphics/PorterDuffColorFilter;
-    .registers 3
+    .locals 1
 
     .line 36
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -41,7 +41,7 @@
 .end method
 
 .method public static final toXfermode(Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuffXfermode;
-    .registers 2
+    .locals 1
 
     .line 29
     new-instance v0, Landroid/graphics/PorterDuffXfermode;

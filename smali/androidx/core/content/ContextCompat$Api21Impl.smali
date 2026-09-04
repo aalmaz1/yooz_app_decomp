@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1043
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +25,7 @@
 .end method
 
 .method static getCodeCacheDir(Landroid/content/Context;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1059
     invoke-virtual {p0}, Landroid/content/Context;->getCodeCacheDir()Ljava/io/File;
@@ -36,7 +36,7 @@
 .end method
 
 .method static getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-    .registers 2
+    .locals 0
 
     .line 1049
     invoke-virtual {p0, p1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -47,7 +47,7 @@
 .end method
 
 .method static getNoBackupFilesDir(Landroid/content/Context;)Ljava/io/File;
-    .registers 1
+    .locals 0
 
     .line 1054
     invoke-virtual {p0}, Landroid/content/Context;->getNoBackupFilesDir()Ljava/io/File;

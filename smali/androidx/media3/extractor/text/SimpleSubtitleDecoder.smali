@@ -25,7 +25,7 @@
 
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x2
 
@@ -48,7 +48,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/extractor/text/SimpleSubtitleDecoder;Landroidx/media3/decoder/DecoderOutputBuffer;)V
-    .registers 2
+    .locals 0
 
     .line 26
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/text/SimpleSubtitleDecoder;->releaseOutputBuffer(Landroidx/media3/decoder/DecoderOutputBuffer;)V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method protected bridge synthetic createInputBuffer()Landroidx/media3/decoder/DecoderInputBuffer;
-    .registers 2
+    .locals 1
 
     .line 25
     invoke-virtual {p0}, Landroidx/media3/extractor/text/SimpleSubtitleDecoder;->createInputBuffer()Landroidx/media3/extractor/text/SubtitleInputBuffer;
@@ -70,7 +70,7 @@
 .end method
 
 .method protected final createInputBuffer()Landroidx/media3/extractor/text/SubtitleInputBuffer;
-    .registers 2
+    .locals 1
 
     .line 54
     new-instance v0, Landroidx/media3/extractor/text/SubtitleInputBuffer;
@@ -81,7 +81,7 @@
 .end method
 
 .method protected bridge synthetic createOutputBuffer()Landroidx/media3/decoder/DecoderOutputBuffer;
-    .registers 2
+    .locals 1
 
     .line 25
     invoke-virtual {p0}, Landroidx/media3/extractor/text/SimpleSubtitleDecoder;->createOutputBuffer()Landroidx/media3/extractor/text/SubtitleOutputBuffer;
@@ -92,7 +92,7 @@
 .end method
 
 .method protected final createOutputBuffer()Landroidx/media3/extractor/text/SubtitleOutputBuffer;
-    .registers 2
+    .locals 1
 
     .line 59
     new-instance v0, Landroidx/media3/extractor/text/SimpleSubtitleDecoder$1;
@@ -103,7 +103,7 @@
 .end method
 
 .method protected bridge synthetic createUnexpectedDecodeException(Ljava/lang/Throwable;)Landroidx/media3/decoder/DecoderException;
-    .registers 2
+    .locals 0
 
     .line 25
     invoke-virtual {p0, p1}, Landroidx/media3/extractor/text/SimpleSubtitleDecoder;->createUnexpectedDecodeException(Ljava/lang/Throwable;)Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -114,7 +114,7 @@
 .end method
 
 .method protected final createUnexpectedDecodeException(Ljava/lang/Throwable;)Landroidx/media3/extractor/text/SubtitleDecoderException;
-    .registers 4
+    .locals 2
 
     .line 69
     new-instance v0, Landroidx/media3/extractor/text/SubtitleDecoderException;
@@ -127,7 +127,7 @@
 .end method
 
 .method protected bridge synthetic decode(Landroidx/media3/decoder/DecoderInputBuffer;Landroidx/media3/decoder/DecoderOutputBuffer;Z)Landroidx/media3/decoder/DecoderException;
-    .registers 4
+    .locals 0
 
     .line 25
     check-cast p1, Landroidx/media3/extractor/text/SubtitleInputBuffer;
@@ -150,7 +150,7 @@
 .end method
 
 .method protected final decode(Landroidx/media3/extractor/text/SubtitleInputBuffer;Landroidx/media3/extractor/text/SubtitleOutputBuffer;Z)Landroidx/media3/extractor/text/SubtitleDecoderException;
-    .registers 12
+    .locals 8
 
     .line 78
     :try_start_0
@@ -188,21 +188,21 @@
 
     .line 81
     iput-boolean p1, p2, Landroidx/media3/extractor/text/SubtitleOutputBuffer;->shouldBeSkipped:Z
-    :try_end_1f
-    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_0 .. :try_end_1f} :catch_21
+    :try_end_0
+    .catch Landroidx/media3/extractor/text/SubtitleDecoderException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 p1, 0x0
 
     return-object p1
 
-    :catch_21
+    :catch_0
     move-exception p1
 
     return-object p1
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/media3/extractor/text/SimpleSubtitleDecoder;->name:Ljava/lang/String;
@@ -211,7 +211,7 @@
 .end method
 
 .method public setPositionUs(J)V
-    .registers 3
+    .locals 0
 
     return-void
 .end method

@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
-    .registers 2
+    .locals 0
 
     .line 170
     iput-object p1, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$1;->val$defHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
@@ -34,21 +34,21 @@
 .end method
 
 .method private shouldWrapException(Ljava/lang/Throwable;)Z
-    .registers 4
+    .locals 2
 
     .line 187
     instance-of v0, p1, Landroid/content/res/Resources$NotFoundException;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 188
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
     const-string v0, "drawable"
 
@@ -57,7 +57,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     const-string v0, "Drawable"
 
@@ -66,26 +66,26 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
-    :cond_1b
+    :cond_0
     const/4 v1, 0x1
 
-    :cond_1c
+    :cond_1
     return v1
 .end method
 
 
 # virtual methods
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .registers 6
+    .locals 3
 
     .line 174
     invoke-direct {p0, p2}, Landroidx/appcompat/app/AppCompatDelegateImpl$1;->shouldWrapException(Ljava/lang/Throwable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 176
     new-instance v0, Landroid/content/res/Resources$NotFoundException;
@@ -134,14 +134,14 @@
 
     invoke-interface {p2, p1, v0}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 182
-    :cond_36
+    :cond_0
     iget-object v0, p0, Landroidx/appcompat/app/AppCompatDelegateImpl$1;->val$defHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
-    :goto_3b
+    :goto_0
     return-void
 .end method

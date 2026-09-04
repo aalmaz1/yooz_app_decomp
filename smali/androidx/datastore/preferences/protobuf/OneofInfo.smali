@@ -13,7 +13,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/reflect/Field;Ljava/lang/reflect/Field;)V
-    .registers 4
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public getCaseField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/OneofInfo;->caseField:Ljava/lang/reflect/Field;
@@ -42,7 +42,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 54
     iget v0, p0, Landroidx/datastore/preferences/protobuf/OneofInfo;->id:I
@@ -51,7 +51,7 @@
 .end method
 
 .method public getValueField()Ljava/lang/reflect/Field;
-    .registers 2
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/datastore/preferences/protobuf/OneofInfo;->valueField:Ljava/lang/reflect/Field;

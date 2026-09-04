@@ -24,7 +24,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/media/session/MediaSessionManager$RemoteUserInfo;)V
-    .registers 3
+    .locals 1
 
     .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;II)V
-    .registers 5
+    .locals 1
 
     .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,26 +58,26 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     .line 211
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/media/MediaSessionManager$RemoteUserInfo;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 p1, 0x0
 
     return p1
 
     .line 214
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/media/MediaSessionManager$RemoteUserInfo;->mImpl:Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;
 
     check-cast p1, Landroidx/media/MediaSessionManager$RemoteUserInfo;
@@ -92,7 +92,7 @@
 .end method
 
 .method public getPackageName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 172
     iget-object v0, p0, Landroidx/media/MediaSessionManager$RemoteUserInfo;->mImpl:Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;
@@ -105,7 +105,7 @@
 .end method
 
 .method public getPid()I
-    .registers 2
+    .locals 1
 
     .line 179
     iget-object v0, p0, Landroidx/media/MediaSessionManager$RemoteUserInfo;->mImpl:Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;
@@ -118,7 +118,7 @@
 .end method
 
 .method public getUid()I
-    .registers 2
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/media/MediaSessionManager$RemoteUserInfo;->mImpl:Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;
@@ -131,7 +131,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 219
     iget-object v0, p0, Landroidx/media/MediaSessionManager$RemoteUserInfo;->mImpl:Landroidx/media/MediaSessionManager$RemoteUserInfoImpl;

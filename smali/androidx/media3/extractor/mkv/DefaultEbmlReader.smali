@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method private maybeResyncToNextLevel1Element(Landroidx/media3/extractor/ExtractorInput;)J
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -105,7 +105,7 @@
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->resetPeekPosition()V
 
     .line 173
-    :goto_3
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->scratch:[B
 
     const/4 v1, 0x0
@@ -125,9 +125,9 @@
 
     const/4 v3, -0x1
 
-    if-eq v0, v3, :cond_2b
+    if-eq v0, v3, :cond_0
 
-    if-gt v0, v2, :cond_2b
+    if-gt v0, v2, :cond_0
 
     .line 176
     iget-object v2, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->scratch:[B
@@ -145,7 +145,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     .line 178
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
@@ -154,17 +154,17 @@
 
     return-wide v0
 
-    :cond_2b
+    :cond_0
     const/4 v0, 0x1
 
     .line 182
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
 
-    goto :goto_3
+    goto :goto_0
 .end method
 
 .method private readFloat(Landroidx/media3/extractor/ExtractorInput;I)D
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -178,7 +178,7 @@
 
     const/4 p1, 0x4
 
-    if-ne p2, p1, :cond_e
+    if-ne p2, p1, :cond_0
 
     long-to-int p1, v0
 
@@ -189,20 +189,20 @@
 
     float-to-double p1, p1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 217
-    :cond_e
+    :cond_0
     invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
 
     move-result-wide p1
 
-    :goto_12
+    :goto_0
     return-wide p1
 .end method
 
 .method private readInteger(Landroidx/media3/extractor/ExtractorInput;I)J
-    .registers 9
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -218,8 +218,8 @@
 
     const-wide/16 v2, 0x0
 
-    :goto_8
-    if-ge v1, p2, :cond_18
+    :goto_0
+    if-ge v1, p2, :cond_0
 
     const/16 p1, 0x8
 
@@ -238,28 +238,28 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     return-wide v2
 .end method
 
 .method private static readString(Landroidx/media3/extractor/ExtractorInput;I)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     const-string p0, ""
 
     return-object p0
 
     .line 235
-    :cond_5
+    :cond_0
     new-array v0, p1, [B
 
     const/4 v1, 0x0
@@ -267,22 +267,22 @@
     .line 236
     invoke-interface {p0, v0, v1, p1}, Landroidx/media3/extractor/ExtractorInput;->readFully([BII)V
 
-    :goto_b
-    if-lez p1, :cond_16
+    :goto_0
+    if-lez p1, :cond_1
 
     add-int/lit8 p0, p1, -0x1
 
     .line 239
     aget-byte p0, v0, p0
 
-    if-nez p0, :cond_16
+    if-nez p0, :cond_1
 
     add-int/lit8 p1, p1, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 242
-    :cond_16
+    :cond_1
     new-instance p0, Ljava/lang/String;
 
     invoke-direct {p0, v0, v1, p1}, Ljava/lang/String;-><init>([BII)V
@@ -293,7 +293,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/mkv/EbmlProcessor;)V
-    .registers 2
+    .locals 0
 
     .line 72
     iput-object p1, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
@@ -302,7 +302,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -315,7 +315,7 @@
     invoke-static {v0}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 86
-    :goto_5
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->masterElementsStack:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->peek()Ljava/lang/Object;
@@ -326,7 +326,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_0
 
     .line 87
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
@@ -339,7 +339,7 @@
 
     cmp-long v0, v2, v4
 
-    if-ltz v0, :cond_2e
+    if-ltz v0, :cond_0
 
     .line 88
     iget-object p1, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
@@ -361,14 +361,14 @@
     return v1
 
     .line 92
-    :cond_2e
+    :cond_0
     iget v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementState:I
 
     const/4 v2, 0x4
 
     const/4 v3, 0x0
 
-    if-nez v0, :cond_50
+    if-nez v0, :cond_3
 
     .line 93
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->varintReader:Landroidx/media3/extractor/mkv/VarintReader;
@@ -381,23 +381,23 @@
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_1
 
     .line 95
     invoke-direct {p0, p1}, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->maybeResyncToNextLevel1Element(Landroidx/media3/extractor/ExtractorInput;)J
 
     move-result-wide v4
 
-    :cond_44
+    :cond_1
     const-wide/16 v6, -0x1
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_4b
+    if-nez v0, :cond_2
 
     return v3
 
-    :cond_4b
+    :cond_2
     long-to-int v0, v4
 
     .line 101
@@ -407,12 +407,12 @@
     iput v1, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementState:I
 
     .line 105
-    :cond_50
+    :cond_3
     iget v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementState:I
 
     const/4 v4, 0x2
 
-    if-ne v0, v1, :cond_61
+    if-ne v0, v1, :cond_4
 
     .line 106
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->varintReader:Landroidx/media3/extractor/mkv/VarintReader;
@@ -429,7 +429,7 @@
     iput v4, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementState:I
 
     .line 110
-    :cond_61
+    :cond_4
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
 
     iget v5, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementId:I
@@ -438,25 +438,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_145
+    if-eqz v0, :cond_e
 
     const/4 v5, 0x0
 
-    if-eq v0, v1, :cond_126
+    if-eq v0, v1, :cond_d
 
     const-wide/16 v6, 0x8
 
-    if-eq v0, v4, :cond_fb
+    if-eq v0, v4, :cond_b
 
     const/4 v4, 0x3
 
-    if-eq v0, v4, :cond_cd
+    if-eq v0, v4, :cond_9
 
-    if-eq v0, v2, :cond_c0
+    if-eq v0, v2, :cond_8
 
     const/4 v2, 0x5
 
-    if-ne v0, v2, :cond_ac
+    if-ne v0, v2, :cond_7
 
     .line 128
     iget-wide v8, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementContentSize:J
@@ -465,16 +465,16 @@
 
     cmp-long v0, v8, v10
 
-    if-eqz v0, :cond_9d
+    if-eqz v0, :cond_6
 
     cmp-long v0, v8, v6
 
-    if-nez v0, :cond_87
+    if-nez v0, :cond_5
 
-    goto :goto_9d
+    goto :goto_1
 
     .line 130
-    :cond_87
+    :cond_5
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Invalid float size: "
@@ -498,8 +498,8 @@
     throw p1
 
     .line 133
-    :cond_9d
-    :goto_9d
+    :cond_6
+    :goto_1
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
 
     iget v2, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementId:I
@@ -518,7 +518,7 @@
     return v1
 
     .line 153
-    :cond_ac
+    :cond_7
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v1, "Invalid element type "
@@ -540,7 +540,7 @@
     throw p1
 
     .line 145
-    :cond_c0
+    :cond_8
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
 
     iget v2, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementId:I
@@ -557,14 +557,14 @@
     return v1
 
     .line 137
-    :cond_cd
+    :cond_9
     iget-wide v6, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementContentSize:J
 
     const-wide/32 v8, 0x7fffffff
 
     cmp-long v0, v6, v8
 
-    if-gtz v0, :cond_e5
+    if-gtz v0, :cond_a
 
     .line 141
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
@@ -585,7 +585,7 @@
     return v1
 
     .line 138
-    :cond_e5
+    :cond_a
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "String element size: "
@@ -609,12 +609,12 @@
     throw p1
 
     .line 120
-    :cond_fb
+    :cond_b
     iget-wide v8, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementContentSize:J
 
     cmp-long v0, v8, v6
 
-    if-gtz v0, :cond_110
+    if-gtz v0, :cond_c
 
     .line 124
     iget-object v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->processor:Landroidx/media3/extractor/mkv/EbmlProcessor;
@@ -635,7 +635,7 @@
     return v1
 
     .line 121
-    :cond_110
+    :cond_c
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string v0, "Invalid integer size: "
@@ -659,7 +659,7 @@
     throw p1
 
     .line 113
-    :cond_126
+    :cond_d
     invoke-interface {p1}, Landroidx/media3/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v6
@@ -695,7 +695,7 @@
     return v1
 
     .line 149
-    :cond_145
+    :cond_e
     iget-wide v0, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementContentSize:J
 
     long-to-int v0, v0
@@ -705,11 +705,11 @@
     .line 150
     iput v3, p0, Landroidx/media3/extractor/mkv/DefaultEbmlReader;->elementState:I
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 

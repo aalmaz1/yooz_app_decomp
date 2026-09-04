@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 103
     new-instance v0, Landroidx/loader/content/ModernAsyncTask$Status;
@@ -86,7 +86,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -100,7 +100,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/loader/content/ModernAsyncTask$Status;
-    .registers 2
+    .locals 1
 
     .line 99
     const-class v0, Landroidx/loader/content/ModernAsyncTask$Status;
@@ -115,7 +115,7 @@
 .end method
 
 .method public static values()[Landroidx/loader/content/ModernAsyncTask$Status;
-    .registers 1
+    .locals 1
 
     .line 99
     sget-object v0, Landroidx/loader/content/ModernAsyncTask$Status;->$VALUES:[Landroidx/loader/content/ModernAsyncTask$Status;

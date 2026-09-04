@@ -12,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/database/sqlite/SQLiteOpenHelper;)V
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-    .registers 2
+    .locals 1
 
     .line 42
     iget-object v0, p0, Landroidx/media3/database/DefaultDatabaseProvider;->sqliteOpenHelper:Landroid/database/sqlite/SQLiteOpenHelper;
@@ -39,7 +39,7 @@
 .end method
 
 .method public getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-    .registers 2
+    .locals 1
 
     .line 37
     iget-object v0, p0, Landroidx/media3/database/DefaultDatabaseProvider;->sqliteOpenHelper:Landroid/database/sqlite/SQLiteOpenHelper;

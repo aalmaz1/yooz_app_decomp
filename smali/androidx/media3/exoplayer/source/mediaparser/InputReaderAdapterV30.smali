@@ -18,7 +18,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public getAndResetSeekPosition()J
-    .registers 5
+    .locals 4
 
     .line 61
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;->lastSeekPosition:J
@@ -43,7 +43,7 @@
 .end method
 
 .method public getLength()J
-    .registers 3
+    .locals 2
 
     .line 87
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;->resourceLength:J
@@ -52,7 +52,7 @@
 .end method
 
 .method public getPosition()J
-    .registers 3
+    .locals 2
 
     .line 82
     iget-wide v0, p0, Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;->currentPosition:J
@@ -61,7 +61,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -94,7 +94,7 @@
 .end method
 
 .method public seekToPosition(J)V
-    .registers 3
+    .locals 0
 
     .line 70
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;->lastSeekPosition:J
@@ -103,7 +103,7 @@
 .end method
 
 .method public setCurrentPosition(J)V
-    .registers 3
+    .locals 0
 
     .line 53
     iput-wide p1, p0, Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;->currentPosition:J
@@ -112,7 +112,7 @@
 .end method
 
 .method public setDataReader(Landroidx/media3/common/DataReader;J)V
-    .registers 4
+    .locals 0
 
     .line 46
     iput-object p1, p0, Landroidx/media3/exoplayer/source/mediaparser/InputReaderAdapterV30;->dataReader:Landroidx/media3/common/DataReader;

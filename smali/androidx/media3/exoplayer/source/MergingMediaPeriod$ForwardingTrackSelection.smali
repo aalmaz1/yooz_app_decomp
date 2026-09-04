@@ -25,7 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;Landroidx/media3/common/TrackGroup;)V
-    .registers 3
+    .locals 0
 
     .line 318
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public disable()V
-    .registers 2
+    .locals 1
 
     .line 365
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -53,7 +53,7 @@
 .end method
 
 .method public enable()V
-    .registers 2
+    .locals 1
 
     .line 360
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -64,26 +64,26 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 456
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 459
-    :cond_a
+    :cond_1
     check-cast p1, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;
 
     .line 460
@@ -95,7 +95,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackGroup:Landroidx/media3/common/TrackGroup;
 
@@ -105,19 +105,19 @@
 
     move-result p1
 
-    if-eqz p1, :cond_21
+    if-eqz p1, :cond_2
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_2
     move v0, v2
 
-    :goto_22
+    :goto_0
     return v0
 .end method
 
 .method public evaluateQueueSize(JLjava/util/List;)I
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -139,7 +139,7 @@
 .end method
 
 .method public excludeTrack(IJ)Z
-    .registers 5
+    .locals 1
 
     .line 438
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -152,7 +152,7 @@
 .end method
 
 .method public getFormat(I)Landroidx/media3/common/Format;
-    .registers 4
+    .locals 2
 
     .line 340
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackGroup:Landroidx/media3/common/TrackGroup;
@@ -171,7 +171,7 @@
 .end method
 
 .method public getIndexInTrackGroup(I)I
-    .registers 3
+    .locals 1
 
     .line 345
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -184,7 +184,7 @@
 .end method
 
 .method public getLatestBitrateEstimate()J
-    .registers 3
+    .locals 2
 
     .line 448
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -197,7 +197,7 @@
 .end method
 
 .method public getSelectedFormat()Landroidx/media3/common/Format;
-    .registers 3
+    .locals 2
 
     .line 370
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackGroup:Landroidx/media3/common/TrackGroup;
@@ -216,7 +216,7 @@
 .end method
 
 .method public getSelectedIndex()I
-    .registers 2
+    .locals 1
 
     .line 380
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -229,7 +229,7 @@
 .end method
 
 .method public getSelectedIndexInTrackGroup()I
-    .registers 2
+    .locals 1
 
     .line 375
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -242,7 +242,7 @@
 .end method
 
 .method public getSelectionData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 391
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -255,7 +255,7 @@
 .end method
 
 .method public getSelectionReason()I
-    .registers 2
+    .locals 1
 
     .line 385
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -268,7 +268,7 @@
 .end method
 
 .method public getTrackGroup()Landroidx/media3/common/TrackGroup;
-    .registers 2
+    .locals 1
 
     .line 330
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackGroup:Landroidx/media3/common/TrackGroup;
@@ -277,7 +277,7 @@
 .end method
 
 .method public getType()I
-    .registers 2
+    .locals 1
 
     .line 325
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -290,7 +290,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 466
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackGroup:Landroidx/media3/common/TrackGroup;
@@ -318,7 +318,7 @@
 .end method
 
 .method public indexOf(I)I
-    .registers 3
+    .locals 1
 
     .line 355
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -331,7 +331,7 @@
 .end method
 
 .method public indexOf(Landroidx/media3/common/Format;)I
-    .registers 4
+    .locals 2
 
     .line 350
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -350,7 +350,7 @@
 .end method
 
 .method public isTrackExcluded(IJ)Z
-    .registers 5
+    .locals 1
 
     .line 443
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -363,7 +363,7 @@
 .end method
 
 .method public length()I
-    .registers 2
+    .locals 1
 
     .line 335
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -376,7 +376,7 @@
 .end method
 
 .method public onDiscontinuity()V
-    .registers 2
+    .locals 1
 
     .line 401
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -387,7 +387,7 @@
 .end method
 
 .method public onPlayWhenReadyChanged(Z)V
-    .registers 3
+    .locals 1
 
     .line 411
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -398,7 +398,7 @@
 .end method
 
 .method public onPlaybackSpeed(F)V
-    .registers 3
+    .locals 1
 
     .line 396
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -409,7 +409,7 @@
 .end method
 
 .method public onRebuffer()V
-    .registers 2
+    .locals 1
 
     .line 406
     iget-object v0, p0, Landroidx/media3/exoplayer/source/MergingMediaPeriod$ForwardingTrackSelection;->trackSelection:Landroidx/media3/exoplayer/trackselection/ExoTrackSelection;
@@ -420,7 +420,7 @@
 .end method
 
 .method public shouldCancelChunkLoad(JLandroidx/media3/exoplayer/source/chunk/Chunk;Ljava/util/List;)Z
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -443,7 +443,7 @@
 .end method
 
 .method public updateSelectedTrack(JJJLjava/util/List;[Landroidx/media3/exoplayer/source/chunk/MediaChunkIterator;)V
-    .registers 19
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJ",

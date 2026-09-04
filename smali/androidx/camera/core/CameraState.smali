@@ -31,7 +31,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .end method
 
 .method public static create(Landroidx/camera/core/CameraState$Type;)Landroidx/camera/core/CameraState;
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public static create(Landroidx/camera/core/CameraState$Type;Landroidx/camera/core/CameraState$StateError;)Landroidx/camera/core/CameraState;
-    .registers 3
+    .locals 1
 
     .line 220
     new-instance v0, Landroidx/camera/core/AutoValue_CameraState;

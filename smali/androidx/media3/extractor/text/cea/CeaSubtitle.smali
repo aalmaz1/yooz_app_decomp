@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getCues(J)Ljava/util/List;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -56,36 +56,36 @@
 
     cmp-long p1, p1, v0
 
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
     .line 55
     iget-object p1, p0, Landroidx/media3/extractor/text/cea/CeaSubtitle;->cues:Ljava/util/List;
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
-    :goto_d
+    :goto_0
     return-object p1
 .end method
 
 .method public getEventTime(I)J
-    .registers 4
+    .locals 2
 
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 p1, 0x0
 
     .line 49
-    :goto_5
+    :goto_0
     invoke-static {p1}, Landroidx/media3/common/util/Assertions;->checkArgument(Z)V
 
     const-wide/16 v0, 0x0
@@ -94,7 +94,7 @@
 .end method
 
 .method public getEventTimeCount()I
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -102,21 +102,21 @@
 .end method
 
 .method public getNextEventTimeIndex(J)I
-    .registers 5
+    .locals 2
 
     const-wide/16 v0, 0x0
 
     cmp-long p1, p1, v0
 
-    if-gez p1, :cond_8
+    if-gez p1, :cond_0
 
     const/4 p1, 0x0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p1, -0x1
 
-    :goto_9
+    :goto_0
     return p1
 .end method

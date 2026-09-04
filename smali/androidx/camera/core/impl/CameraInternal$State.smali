@@ -48,7 +48,7 @@
 
 # direct methods
 .method private static synthetic $values()[Landroidx/camera/core/impl/CameraInternal$State;
-    .registers 3
+    .locals 3
 
     const/16 v0, 0x8
 
@@ -107,7 +107,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 58
     new-instance v0, Landroidx/camera/core/impl/CameraInternal$State;
@@ -208,7 +208,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
-    .registers 4
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
@@ -225,7 +225,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/camera/core/impl/CameraInternal$State;
-    .registers 2
+    .locals 1
 
     .line 51
     const-class v0, Landroidx/camera/core/impl/CameraInternal$State;
@@ -240,7 +240,7 @@
 .end method
 
 .method public static values()[Landroidx/camera/core/impl/CameraInternal$State;
-    .registers 1
+    .locals 1
 
     .line 51
     sget-object v0, Landroidx/camera/core/impl/CameraInternal$State;->$VALUES:[Landroidx/camera/core/impl/CameraInternal$State;
@@ -257,7 +257,7 @@
 
 # virtual methods
 .method holdsCameraSlot()Z
-    .registers 2
+    .locals 1
 
     .line 117
     iget-boolean v0, p0, Landroidx/camera/core/impl/CameraInternal$State;->mHoldsCameraSlot:Z

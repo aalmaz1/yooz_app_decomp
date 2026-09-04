@@ -24,7 +24,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/io/ByteSource;JJ)V
-    .registers 11
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1010,
@@ -51,16 +51,16 @@
 
     const/4 v3, 0x0
 
-    if-ltz p1, :cond_f
+    if-ltz p1, :cond_0
 
     move p1, v2
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move p1, v3
 
-    :goto_10
+    :goto_0
     const-string v4, "offset (%s) may not be negative"
 
     .line 502
@@ -68,14 +68,14 @@
 
     cmp-long p1, p4, v0
 
-    if-ltz p1, :cond_1a
+    if-ltz p1, :cond_1
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move v2, v3
 
-    :goto_1b
+    :goto_1
     const-string p1, "length (%s) may not be negative"
 
     .line 503
@@ -91,7 +91,7 @@
 .end method
 
 .method private sliceStream(Ljava/io/InputStream;)Ljava/io/InputStream;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -114,22 +114,22 @@
 
     cmp-long v2, v0, v2
 
-    if-lez v2, :cond_30
+    if-lez v2, :cond_0
 
     .line 522
-    :try_start_8
+    :try_start_0
     invoke-static {p1, v0, v1}, Lcom/google/common/io/ByteStreams;->skipUpTo(Ljava/io/InputStream;J)J
 
     move-result-wide v0
-    :try_end_c
-    .catchall {:try_start_8 .. :try_end_c} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 533
     iget-wide v2, p0, Lcom/google/common/io/ByteSource$SlicedByteSource;->offset:J
 
     cmp-long v0, v0, v2
 
-    if-gez v0, :cond_30
+    if-gez v0, :cond_0
 
     .line 535
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
@@ -145,7 +145,7 @@
 
     return-object p1
 
-    :catchall_1e
+    :catchall_0
     move-exception v0
 
     .line 524
@@ -157,16 +157,16 @@
     invoke-virtual {v1, p1}, Lcom/google/common/io/Closer;->register(Ljava/io/Closeable;)Ljava/io/Closeable;
 
     .line 527
-    :try_start_26
+    :try_start_1
     invoke-virtual {v1, v0}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object p1
 
     throw p1
-    :try_end_2b
-    .catchall {:try_start_26 .. :try_end_2b} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :catchall_2b
+    :catchall_1
     move-exception p1
 
     .line 529
@@ -176,7 +176,7 @@
     throw p1
 
     .line 539
-    :cond_30
+    :cond_0
     iget-wide v0, p0, Lcom/google/common/io/ByteSource$SlicedByteSource;->length:J
 
     invoke-static {p1, v0, v1}, Lcom/google/common/io/ByteStreams;->limit(Ljava/io/InputStream;J)Ljava/io/InputStream;
@@ -189,7 +189,7 @@
 
 # virtual methods
 .method public isEmpty()Z
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -203,31 +203,31 @@
 
     cmp-long v0, v0, v2
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     invoke-super {p0}, Lcom/google/common/io/ByteSource;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_12
+    goto :goto_1
 
-    :cond_11
-    :goto_11
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_12
+    :goto_1
     return v0
 .end method
 
 .method public openBufferedStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -249,7 +249,7 @@
 .end method
 
 .method public openStream()Ljava/io/InputStream;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -271,7 +271,7 @@
 .end method
 
 .method public sizeIfKnown()Lcom/google/common/base/Optional;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -293,7 +293,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     .line 561
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->get()Ljava/lang/Object;
@@ -333,7 +333,7 @@
     return-object v0
 
     .line 565
-    :cond_2c
+    :cond_0
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
 
     move-result-object v0
@@ -342,7 +342,7 @@
 .end method
 
 .method public slice(JJ)Lcom/google/common/io/ByteSource;
-    .registers 11
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -362,16 +362,16 @@
 
     const/4 v4, 0x0
 
-    if-ltz v2, :cond_a
+    if-ltz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v4
 
-    :goto_b
+    :goto_0
     const-string v5, "offset (%s) may not be negative"
 
     .line 544
@@ -379,14 +379,14 @@
 
     cmp-long v2, p3, v0
 
-    if-ltz v2, :cond_15
+    if-ltz v2, :cond_1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
+    :cond_1
     move v3, v4
 
-    :goto_16
+    :goto_1
     const-string v2, "length (%s) may not be negative"
 
     .line 545
@@ -399,17 +399,17 @@
 
     cmp-long v0, v2, v0
 
-    if-gtz v0, :cond_27
+    if-gtz v0, :cond_2
 
     .line 548
     invoke-static {}, Lcom/google/common/io/ByteSource;->empty()Lcom/google/common/io/ByteSource;
 
     move-result-object p1
 
-    goto :goto_34
+    goto :goto_2
 
     .line 549
-    :cond_27
+    :cond_2
     iget-object v0, p0, Lcom/google/common/io/ByteSource$SlicedByteSource;->this$0:Lcom/google/common/io/ByteSource;
 
     iget-wide v4, p0, Lcom/google/common/io/ByteSource$SlicedByteSource;->offset:J
@@ -424,12 +424,12 @@
 
     move-result-object p1
 
-    :goto_34
+    :goto_2
     return-object p1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 570
     new-instance v0, Ljava/lang/StringBuilder;

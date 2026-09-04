@@ -66,7 +66,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 46
     new-instance v0, Landroidx/media3/extractor/flv/FlvExtractor$$ExternalSyntheticLambda0;
@@ -79,7 +79,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -134,7 +134,7 @@
 .end method
 
 .method private ensureReadyForMediaOutput()V
-    .registers 5
+    .locals 4
     .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
         value = {
             "extractorOutput"
@@ -144,7 +144,7 @@
     .line 312
     iget-boolean v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 313
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -162,17 +162,17 @@
     .line 314
     iput-boolean v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
-    :cond_16
+    :cond_0
     return-void
 .end method
 
 .method private getCurrentTimestampUs()J
-    .registers 5
+    .locals 4
 
     .line 319
     iget-boolean v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 320
     iget-wide v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->mediaTagTimestampOffsetUs:J
@@ -181,10 +181,10 @@
 
     add-long/2addr v0, v2
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 321
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->metadataReader:Landroidx/media3/extractor/flv/ScriptTagPayloadReader;
 
     invoke-virtual {v0}, Landroidx/media3/extractor/flv/ScriptTagPayloadReader;->getDurationUs()J
@@ -195,21 +195,21 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     const-wide/16 v0, 0x0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     iget-wide v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagTimestampUs:J
 
-    :goto_1e
+    :goto_0
     return-wide v0
 .end method
 
 .method static synthetic lambda$static$0()[Landroidx/media3/extractor/Extractor;
-    .registers 3
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -228,7 +228,7 @@
 .end method
 
 .method private prepareTagData(Landroidx/media3/extractor/ExtractorInput;)Landroidx/media3/common/util/ParsableByteArray;
-    .registers 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -246,7 +246,7 @@
 
     const/4 v2, 0x0
 
-    if-le v0, v1, :cond_1f
+    if-le v0, v1, :cond_0
 
     .line 301
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagData:Landroidx/media3/common/util/ParsableByteArray;
@@ -267,16 +267,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/media3/common/util/ParsableByteArray;->reset([BI)V
 
-    goto :goto_24
+    goto :goto_0
 
     .line 303
-    :cond_1f
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagData:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0, v2}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
 
     .line 305
-    :goto_24
+    :goto_0
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagData:Landroidx/media3/common/util/ParsableByteArray;
 
     iget v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagDataSize:I
@@ -301,7 +301,7 @@
 .end method
 
 .method private readFlvHeader(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -331,12 +331,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     return v1
 
     .line 200
-    :cond_11
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->headerBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -357,29 +357,29 @@
 
     and-int/lit8 v4, p1, 0x4
 
-    if-eqz v4, :cond_28
+    if-eqz v4, :cond_1
 
     move v4, v3
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     move v4, v1
 
-    :goto_29
+    :goto_0
     and-int/2addr p1, v3
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2
 
     move v1, v3
 
-    :cond_2d
-    if-eqz v4, :cond_42
+    :cond_2
+    if-eqz v4, :cond_3
 
     .line 205
     iget-object p1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->audioReader:Landroidx/media3/extractor/flv/AudioTagPayloadReader;
 
-    if-nez p1, :cond_42
+    if-nez p1, :cond_3
 
     .line 206
     new-instance p1, Landroidx/media3/extractor/flv/AudioTagPayloadReader;
@@ -397,15 +397,15 @@
 
     iput-object p1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->audioReader:Landroidx/media3/extractor/flv/AudioTagPayloadReader;
 
-    :cond_42
+    :cond_3
     const/4 p1, 0x2
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_4
 
     .line 209
     iget-object v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->videoReader:Landroidx/media3/extractor/flv/VideoTagPayloadReader;
 
-    if-nez v1, :cond_56
+    if-nez v1, :cond_4
 
     .line 210
     new-instance v1, Landroidx/media3/extractor/flv/VideoTagPayloadReader;
@@ -422,7 +422,7 @@
     iput-object v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->videoReader:Landroidx/media3/extractor/flv/VideoTagPayloadReader;
 
     .line 213
-    :cond_56
+    :cond_4
     iget-object v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
 
     invoke-interface {v1}, Landroidx/media3/extractor/ExtractorOutput;->endTracks()V
@@ -447,7 +447,7 @@
 .end method
 
 .method private readTagData(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -474,11 +474,11 @@
 
     const/4 v6, 0x1
 
-    if-ne v2, v3, :cond_23
+    if-ne v2, v3, :cond_1
 
     iget-object v3, p0, Landroidx/media3/extractor/flv/FlvExtractor;->audioReader:Landroidx/media3/extractor/flv/AudioTagPayloadReader;
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_1
 
     .line 269
     invoke-direct {p0}, Landroidx/media3/extractor/flv/FlvExtractor;->ensureReadyForMediaOutput()V
@@ -494,21 +494,21 @@
 
     move-result p1
 
-    :cond_21
-    :goto_21
+    :cond_0
+    :goto_0
     move v0, v6
 
-    goto :goto_75
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     const/16 v3, 0x9
 
-    if-ne v2, v3, :cond_39
+    if-ne v2, v3, :cond_2
 
     .line 271
     iget-object v3, p0, Landroidx/media3/extractor/flv/FlvExtractor;->videoReader:Landroidx/media3/extractor/flv/VideoTagPayloadReader;
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_2
 
     .line 272
     invoke-direct {p0}, Landroidx/media3/extractor/flv/FlvExtractor;->ensureReadyForMediaOutput()V
@@ -524,17 +524,17 @@
 
     move-result p1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_39
+    :cond_2
     const/16 v3, 0x12
 
-    if-ne v2, v3, :cond_6e
+    if-ne v2, v3, :cond_3
 
     .line 274
     iget-boolean v2, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
-    if-nez v2, :cond_6e
+    if-nez v2, :cond_3
 
     .line 275
     iget-object v2, p0, Landroidx/media3/extractor/flv/FlvExtractor;->metadataReader:Landroidx/media3/extractor/flv/ScriptTagPayloadReader;
@@ -556,7 +556,7 @@
 
     cmp-long v2, v0, v4
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_0
 
     .line 278
     iget-object v2, p0, Landroidx/media3/extractor/flv/FlvExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -585,10 +585,10 @@
     .line 283
     iput-boolean v6, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
-    goto :goto_21
+    goto :goto_0
 
     .line 286
-    :cond_6e
+    :cond_3
     iget v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagDataSize:I
 
     invoke-interface {p1, v0}, Landroidx/media3/extractor/ExtractorInput;->skipFully(I)V
@@ -598,12 +598,12 @@
     move v0, p1
 
     .line 289
-    :goto_75
+    :goto_1
     iget-boolean v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
-    if-nez v1, :cond_8f
+    if-nez v1, :cond_5
 
-    if-eqz p1, :cond_8f
+    if-eqz p1, :cond_5
 
     .line 290
     iput-boolean v6, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputFirstSample:Z
@@ -617,21 +617,21 @@
 
     cmp-long p1, v1, v4
 
-    if-nez p1, :cond_8b
+    if-nez p1, :cond_4
 
     iget-wide v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagTimestampUs:J
 
     neg-long v1, v1
 
-    goto :goto_8d
+    goto :goto_2
 
-    :cond_8b
+    :cond_4
     const-wide/16 v1, 0x0
 
-    :goto_8d
+    :goto_2
     iput-wide v1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->mediaTagTimestampOffsetUs:J
 
-    :cond_8f
+    :cond_5
     const/4 p1, 0x4
 
     .line 294
@@ -646,7 +646,7 @@
 .end method
 
 .method private readTagHeader(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -670,12 +670,12 @@
 
     move-result p1
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
     return v1
 
     .line 246
-    :cond_11
+    :cond_0
     iget-object p1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->tagHeaderBuffer:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {p1, v1}, Landroidx/media3/common/util/ParsableByteArray;->setPosition(I)V
@@ -746,7 +746,7 @@
 .end method
 
 .method private skipToTagHeader(Landroidx/media3/extractor/ExtractorInput;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -774,7 +774,7 @@
 
 # virtual methods
 .method public init(Landroidx/media3/extractor/ExtractorOutput;)V
-    .registers 2
+    .locals 0
 
     .line 137
     iput-object p1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->extractorOutput:Landroidx/media3/extractor/ExtractorOutput;
@@ -783,7 +783,7 @@
 .end method
 
 .method public read(Landroidx/media3/extractor/ExtractorInput;Landroidx/media3/extractor/PositionHolder;)I
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -796,41 +796,41 @@
     invoke-static {p2}, Landroidx/media3/common/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 160
-    :cond_5
-    :goto_5
+    :cond_0
+    :goto_0
     iget p2, p0, Landroidx/media3/extractor/flv/FlvExtractor;->state:I
 
     const/4 v0, 0x1
 
     const/4 v1, -0x1
 
-    if-eq p2, v0, :cond_2d
+    if-eq p2, v0, :cond_4
 
     const/4 v0, 0x2
 
-    if-eq p2, v0, :cond_29
+    if-eq p2, v0, :cond_3
 
     const/4 v0, 0x3
 
-    if-eq p2, v0, :cond_22
+    if-eq p2, v0, :cond_2
 
     const/4 v0, 0x4
 
-    if-ne p2, v0, :cond_1c
+    if-ne p2, v0, :cond_1
 
     .line 175
     invoke-direct {p0, p1}, Landroidx/media3/extractor/flv/FlvExtractor;->readTagData(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
     .line 181
-    :cond_1c
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -838,40 +838,40 @@
     throw p1
 
     .line 170
-    :cond_22
+    :cond_2
     invoke-direct {p0, p1}, Landroidx/media3/extractor/flv/FlvExtractor;->readTagHeader(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p2
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
     return v1
 
     .line 167
-    :cond_29
+    :cond_3
     invoke-direct {p0, p1}, Landroidx/media3/extractor/flv/FlvExtractor;->skipToTagHeader(Landroidx/media3/extractor/ExtractorInput;)V
 
-    goto :goto_5
+    goto :goto_0
 
     .line 162
-    :cond_2d
+    :cond_4
     invoke-direct {p0, p1}, Landroidx/media3/extractor/flv/FlvExtractor;->readFlvHeader(Landroidx/media3/extractor/ExtractorInput;)Z
 
     move-result p2
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
     return v1
 .end method
 
 .method public release()V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public seek(JJ)V
-    .registers 5
+    .locals 0
 
     const-wide/16 p3, 0x0
 
@@ -879,7 +879,7 @@
 
     const/4 p2, 0x0
 
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
@@ -889,23 +889,23 @@
     .line 144
     iput-boolean p2, p0, Landroidx/media3/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 p1, 0x3
 
     .line 146
     iput p1, p0, Landroidx/media3/extractor/flv/FlvExtractor;->state:I
 
     .line 148
-    :goto_10
+    :goto_0
     iput p2, p0, Landroidx/media3/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
     return-void
 .end method
 
 .method public sniff(Landroidx/media3/extractor/ExtractorInput;)Z
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -939,12 +939,12 @@
 
     const v1, 0x464c56
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_0
 
     return v2
 
     .line 114
-    :cond_1c
+    :cond_0
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -969,12 +969,12 @@
 
     and-int/lit16 v0, v0, 0xfa
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     return v2
 
     .line 121
-    :cond_36
+    :cond_1
     iget-object v0, p0, Landroidx/media3/extractor/flv/FlvExtractor;->scratch:Landroidx/media3/common/util/ParsableByteArray;
 
     invoke-virtual {v0}, Landroidx/media3/common/util/ParsableByteArray;->getData()[B
@@ -1024,10 +1024,10 @@
 
     move-result p1
 
-    if-nez p1, :cond_68
+    if-nez p1, :cond_2
 
     const/4 v2, 0x1
 
-    :cond_68
+    :cond_2
     return v2
 .end method

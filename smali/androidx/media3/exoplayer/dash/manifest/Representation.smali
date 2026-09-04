@@ -68,7 +68,7 @@
 
 # direct methods
 .method private constructor <init>(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 10
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -114,22 +114,22 @@
 
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/Representation;->baseUrls:Lcom/google/common/collect/ImmutableList;
 
-    if-nez p6, :cond_1d
+    if-nez p6, :cond_0
 
     .line 153
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 154
-    :cond_1d
+    :cond_0
     invoke-static {p6}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
-    :goto_21
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/dash/manifest/Representation;->inbandEventStreams:Ljava/util/List;
 
     .line 155
@@ -156,7 +156,7 @@
 .end method
 
 .method synthetic constructor <init>(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase;Ljava/util/List;Ljava/util/List;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/Representation$1;)V
-    .registers 10
+    .locals 0
 
     .line 35
     invoke-direct/range {p0 .. p8}, Landroidx/media3/exoplayer/dash/manifest/Representation;-><init>(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
@@ -165,7 +165,7 @@
 .end method
 
 .method public static newInstance(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase;)Landroidx/media3/exoplayer/dash/manifest/Representation;
-    .registers 14
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -210,7 +210,7 @@
 .end method
 
 .method public static newInstance(JLandroidx/media3/common/Format;Ljava/util/List;Landroidx/media3/exoplayer/dash/manifest/SegmentBase;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)Landroidx/media3/exoplayer/dash/manifest/Representation;
-    .registers 23
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -239,7 +239,7 @@
     .line 113
     instance-of v1, v0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$SingleSegmentBase;
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 114
     new-instance v1, Landroidx/media3/exoplayer/dash/manifest/Representation$SingleSegmentRepresentation;
@@ -271,10 +271,10 @@
     return-object v1
 
     .line 124
-    :cond_1f
+    :cond_0
     instance-of v1, v0, Landroidx/media3/exoplayer/dash/manifest/SegmentBase$MultiSegmentBase;
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
     .line 125
     new-instance v1, Landroidx/media3/exoplayer/dash/manifest/Representation$MultiSegmentRepresentation;
@@ -302,7 +302,7 @@
     return-object v1
 
     .line 134
-    :cond_38
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "segmentBase must be of type SingleSegmentBase or MultiSegmentBase"
@@ -324,7 +324,7 @@
 .end method
 
 .method public getInitializationUri()Landroidx/media3/exoplayer/dash/manifest/RangedUri;
-    .registers 2
+    .locals 1
 
     .line 167
     iget-object v0, p0, Landroidx/media3/exoplayer/dash/manifest/Representation;->initializationUri:Landroidx/media3/exoplayer/dash/manifest/RangedUri;

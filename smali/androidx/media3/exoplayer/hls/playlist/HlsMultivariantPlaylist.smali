@@ -119,7 +119,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 14
+    .locals 14
 
     .line 35
     new-instance v13, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
@@ -185,7 +185,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Landroidx/media3/common/Format;Ljava/util/List;ZLjava/util/Map;Ljava/util/List;)V
-    .registers 13
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -275,19 +275,19 @@
     .line 225
     iput-object p8, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;->muxedAudioFormat:Landroidx/media3/common/Format;
 
-    if-eqz p9, :cond_34
+    if-eqz p9, :cond_0
 
     .line 227
     invoke-static {p9}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     const/4 p1, 0x0
 
-    :goto_35
+    :goto_0
     iput-object p1, p0, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;->muxedCaptionFormats:Ljava/util/List;
 
     .line 228
@@ -308,7 +308,7 @@
 .end method
 
 .method private static addMediaPlaylistUrls(Ljava/util/List;Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -324,12 +324,12 @@
     const/4 v0, 0x0
 
     .line 296
-    :goto_1
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1d
+    if-ge v0, v1, :cond_1
 
     .line 297
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -340,29 +340,29 @@
 
     iget-object v1, v1, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist$Rendition;->url:Landroid/net/Uri;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 298
     invoke-interface {p1, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_0
 
     .line 299
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_1a
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     return-void
 .end method
 
 .method private static copyStreams(Ljava/util/List;ILjava/util/List;)Ljava/util/List;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -392,12 +392,12 @@
     move v2, v1
 
     .line 317
-    :goto_b
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_34
+    if-ge v2, v3, :cond_2
 
     .line 318
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -407,12 +407,12 @@
     move v4, v1
 
     .line 319
-    :goto_16
+    :goto_1
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_31
+    if-ge v4, v5, :cond_1
 
     .line 320
     invoke-interface {p2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -424,34 +424,34 @@
     .line 321
     iget v6, v5, Landroidx/media3/common/StreamKey;->groupIndex:I
 
-    if-ne v6, p1, :cond_2e
+    if-ne v6, p1, :cond_0
 
     iget v5, v5, Landroidx/media3/common/StreamKey;->streamIndex:I
 
-    if-ne v5, v2, :cond_2e
+    if-ne v5, v2, :cond_0
 
     .line 322
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_2e
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_34
+    :cond_2
     return-object v0
 .end method
 
 .method public static createSingleVariantMultivariantPlaylist(Ljava/lang/String;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
-    .registers 14
+    .locals 13
 
     .line 259
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -520,7 +520,7 @@
 .end method
 
 .method private static getMediaPlaylistUrls(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -553,12 +553,12 @@
     const/4 v1, 0x0
 
     .line 282
-    :goto_6
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_20
+    if-ge v1, v2, :cond_1
 
     .line 283
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -574,18 +574,18 @@
 
     move-result v3
 
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_0
 
     .line 285
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_1d
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 288
-    :cond_20
+    :cond_1
     invoke-static {p1, v0}, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;->addMediaPlaylistUrls(Ljava/util/List;Ljava/util/List;)V
 
     .line 289
@@ -603,7 +603,7 @@
 
 # virtual methods
 .method public copy(Ljava/util/List;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;
-    .registers 16
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -676,7 +676,7 @@
 .end method
 
 .method public bridge synthetic copy(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 31
     invoke-virtual {p0, p1}, Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;->copy(Ljava/util/List;)Landroidx/media3/exoplayer/hls/playlist/HlsMultivariantPlaylist;

@@ -51,7 +51,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/camera/core/impl/MutableOptionsBundle;)V
-    .registers 5
+    .locals 3
 
     .line 1401
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_2
 
     .line 1408
     sget-object v0, Landroidx/camera/core/internal/TargetConfig;->OPTION_TARGET_CLASS:Landroidx/camera/core/impl/Config$Option;
@@ -80,7 +80,7 @@
 
     check-cast p1, Ljava/lang/Class;
 
-    if-eqz p1, :cond_40
+    if-eqz p1, :cond_1
 
     .line 1410
     const-class v0, Landroidx/camera/video/VideoCapture;
@@ -89,12 +89,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
-    goto :goto_40
+    goto :goto_0
 
     .line 1411
-    :cond_21
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -126,8 +126,8 @@
     throw v0
 
     .line 1418
-    :cond_40
-    :goto_40
+    :cond_1
+    :goto_0
     const-class p1, Landroidx/camera/video/VideoCapture;
 
     move-object v0, p1
@@ -139,7 +139,7 @@
     return-void
 
     .line 1405
-    :cond_49
+    :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "VideoOutput is required"
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/video/VideoOutput;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -168,7 +168,7 @@
 .end method
 
 .method private static createInitialBundle(Landroidx/camera/video/VideoOutput;)Landroidx/camera/core/impl/MutableOptionsBundle;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -192,7 +192,7 @@
 .end method
 
 .method static fromConfig(Landroidx/camera/core/impl/Config;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -218,7 +218,7 @@
 .end method
 
 .method public static fromConfig(Landroidx/camera/video/impl/VideoCaptureConfig;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -246,7 +246,7 @@
 
 # virtual methods
 .method public build()Landroidx/camera/video/VideoCapture;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -268,7 +268,7 @@
 .end method
 
 .method public bridge synthetic build()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1387
     invoke-virtual {p0}, Landroidx/camera/video/VideoCapture$Builder;->build()Landroidx/camera/video/VideoCapture;
@@ -279,7 +279,7 @@
 .end method
 
 .method public getMutableConfig()Landroidx/camera/core/impl/MutableConfig;
-    .registers 2
+    .locals 1
 
     .line 1455
     iget-object v0, p0, Landroidx/camera/video/VideoCapture$Builder;->mMutableConfig:Landroidx/camera/core/impl/MutableOptionsBundle;
@@ -288,7 +288,7 @@
 .end method
 
 .method public bridge synthetic getUseCaseConfig()Landroidx/camera/core/impl/UseCaseConfig;
-    .registers 2
+    .locals 1
 
     .line 1387
     invoke-virtual {p0}, Landroidx/camera/video/VideoCapture$Builder;->getUseCaseConfig()Landroidx/camera/video/impl/VideoCaptureConfig;
@@ -299,7 +299,7 @@
 .end method
 
 .method public getUseCaseConfig()Landroidx/camera/video/impl/VideoCaptureConfig;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -323,7 +323,7 @@
 .end method
 
 .method public setBackgroundExecutor(Ljava/util/concurrent/Executor;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -347,7 +347,7 @@
 .end method
 
 .method public bridge synthetic setBackgroundExecutor(Ljava/util/concurrent/Executor;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setBackgroundExecutor(Ljava/util/concurrent/Executor;)Landroidx/camera/video/VideoCapture$Builder;
@@ -358,7 +358,7 @@
 .end method
 
 .method public setCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -382,7 +382,7 @@
 .end method
 
 .method public bridge synthetic setCameraSelector(Landroidx/camera/core/CameraSelector;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setCameraSelector(Landroidx/camera/core/CameraSelector;)Landroidx/camera/video/VideoCapture$Builder;
@@ -393,7 +393,7 @@
 .end method
 
 .method public setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -417,7 +417,7 @@
 .end method
 
 .method public bridge synthetic setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setCaptureOptionUnpacker(Landroidx/camera/core/impl/CaptureConfig$OptionUnpacker;)Landroidx/camera/video/VideoCapture$Builder;
@@ -428,7 +428,7 @@
 .end method
 
 .method public setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -452,7 +452,7 @@
 .end method
 
 .method public bridge synthetic setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setCaptureType(Landroidx/camera/core/impl/UseCaseConfigFactory$CaptureType;)Landroidx/camera/video/VideoCapture$Builder;
@@ -463,7 +463,7 @@
 .end method
 
 .method public setCustomOrderedResolutions(Ljava/util/List;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -488,7 +488,7 @@
 .end method
 
 .method public bridge synthetic setCustomOrderedResolutions(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setCustomOrderedResolutions(Ljava/util/List;)Landroidx/camera/video/VideoCapture$Builder;
@@ -499,7 +499,7 @@
 .end method
 
 .method public setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -523,7 +523,7 @@
 .end method
 
 .method public bridge synthetic setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setDefaultCaptureConfig(Landroidx/camera/core/impl/CaptureConfig;)Landroidx/camera/video/VideoCapture$Builder;
@@ -534,7 +534,7 @@
 .end method
 
 .method public setDefaultResolution(Landroid/util/Size;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -558,7 +558,7 @@
 .end method
 
 .method public bridge synthetic setDefaultResolution(Landroid/util/Size;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setDefaultResolution(Landroid/util/Size;)Landroidx/camera/video/VideoCapture$Builder;
@@ -569,7 +569,7 @@
 .end method
 
 .method public setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -593,7 +593,7 @@
 .end method
 
 .method public bridge synthetic setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setDefaultSessionConfig(Landroidx/camera/core/impl/SessionConfig;)Landroidx/camera/video/VideoCapture$Builder;
@@ -604,7 +604,7 @@
 .end method
 
 .method public setDynamicRange(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -628,7 +628,7 @@
 .end method
 
 .method public bridge synthetic setDynamicRange(Landroidx/camera/core/DynamicRange;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setDynamicRange(Landroidx/camera/core/DynamicRange;)Landroidx/camera/video/VideoCapture$Builder;
@@ -639,7 +639,7 @@
 .end method
 
 .method public setHighResolutionDisabled(Z)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -665,7 +665,7 @@
 .end method
 
 .method public bridge synthetic setHighResolutionDisabled(Z)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setHighResolutionDisabled(Z)Landroidx/camera/video/VideoCapture$Builder;
@@ -676,7 +676,7 @@
 .end method
 
 .method public setMaxResolution(Landroid/util/Size;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -700,7 +700,7 @@
 .end method
 
 .method public bridge synthetic setMaxResolution(Landroid/util/Size;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setMaxResolution(Landroid/util/Size;)Landroidx/camera/video/VideoCapture$Builder;
@@ -711,7 +711,7 @@
 .end method
 
 .method public setMirrorMode(I)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -737,7 +737,7 @@
 .end method
 
 .method public bridge synthetic setMirrorMode(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setMirrorMode(I)Landroidx/camera/video/VideoCapture$Builder;
@@ -748,7 +748,7 @@
 .end method
 
 .method public setResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -772,7 +772,7 @@
 .end method
 
 .method public bridge synthetic setResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setResolutionSelector(Landroidx/camera/core/resolutionselector/ResolutionSelector;)Landroidx/camera/video/VideoCapture$Builder;
@@ -783,7 +783,7 @@
 .end method
 
 .method public setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -807,7 +807,7 @@
 .end method
 
 .method public bridge synthetic setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setSessionOptionUnpacker(Landroidx/camera/core/impl/SessionConfig$OptionUnpacker;)Landroidx/camera/video/VideoCapture$Builder;
@@ -818,7 +818,7 @@
 .end method
 
 .method public setSupportedResolutions(Ljava/util/List;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -846,7 +846,7 @@
 .end method
 
 .method public bridge synthetic setSupportedResolutions(Ljava/util/List;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setSupportedResolutions(Ljava/util/List;)Landroidx/camera/video/VideoCapture$Builder;
@@ -857,7 +857,7 @@
 .end method
 
 .method public setSurfaceOccupancyPriority(I)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -883,7 +883,7 @@
 .end method
 
 .method public bridge synthetic setSurfaceOccupancyPriority(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setSurfaceOccupancyPriority(I)Landroidx/camera/video/VideoCapture$Builder;
@@ -894,7 +894,7 @@
 .end method
 
 .method public setTargetAspectRatio(I)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -914,7 +914,7 @@
 .end method
 
 .method public bridge synthetic setTargetAspectRatio(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setTargetAspectRatio(I)Landroidx/camera/video/VideoCapture$Builder;
@@ -925,7 +925,7 @@
 .end method
 
 .method public setTargetClass(Ljava/lang/Class;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -959,7 +959,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     .line 1497
     new-instance v0, Ljava/lang/StringBuilder;
@@ -995,12 +995,12 @@
     .line 1498
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setTargetName(Ljava/lang/String;)Landroidx/camera/video/VideoCapture$Builder;
 
-    :cond_38
+    :cond_0
     return-object p0
 .end method
 
 .method public bridge synthetic setTargetClass(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setTargetClass(Ljava/lang/Class;)Landroidx/camera/video/VideoCapture$Builder;
@@ -1011,7 +1011,7 @@
 .end method
 
 .method public setTargetFrameRate(Landroid/util/Range;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1036,7 +1036,7 @@
 .end method
 
 .method public setTargetName(Ljava/lang/String;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1060,7 +1060,7 @@
 .end method
 
 .method public bridge synthetic setTargetName(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setTargetName(Ljava/lang/String;)Landroidx/camera/video/VideoCapture$Builder;
@@ -1071,7 +1071,7 @@
 .end method
 
 .method public setTargetResolution(Landroid/util/Size;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1093,7 +1093,7 @@
 .end method
 
 .method public bridge synthetic setTargetResolution(Landroid/util/Size;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setTargetResolution(Landroid/util/Size;)Landroidx/camera/video/VideoCapture$Builder;
@@ -1104,7 +1104,7 @@
 .end method
 
 .method public setTargetRotation(I)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -1130,7 +1130,7 @@
 .end method
 
 .method public bridge synthetic setTargetRotation(I)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setTargetRotation(I)Landroidx/camera/video/VideoCapture$Builder;
@@ -1141,7 +1141,7 @@
 .end method
 
 .method public setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1165,7 +1165,7 @@
 .end method
 
 .method public bridge synthetic setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setUseCaseEventCallback(Landroidx/camera/core/UseCase$EventCallback;)Landroidx/camera/video/VideoCapture$Builder;
@@ -1176,7 +1176,7 @@
 .end method
 
 .method setVideoEncoderInfoFinder(Landroidx/arch/core/util/Function;)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1202,7 +1202,7 @@
 .end method
 
 .method public setZslDisabled(Z)Landroidx/camera/video/VideoCapture$Builder;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -1228,7 +1228,7 @@
 .end method
 
 .method public bridge synthetic setZslDisabled(Z)Ljava/lang/Object;
-    .registers 2
+    .locals 0
 
     .line 1387
     invoke-virtual {p0, p1}, Landroidx/camera/video/VideoCapture$Builder;->setZslDisabled(Z)Landroidx/camera/video/VideoCapture$Builder;

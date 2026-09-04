@@ -22,7 +22,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .end method
 
 .method static synthetic access$000(Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;)V
-    .registers 1
+    .locals 0
 
     .line 86
     invoke-direct {p0}, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->reset()V
@@ -48,7 +48,7 @@
 .end method
 
 .method static synthetic access$100(Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;)J
-    .registers 3
+    .locals 2
 
     .line 86
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->earlyUs:J
@@ -57,7 +57,7 @@
 .end method
 
 .method static synthetic access$102(Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;J)J
-    .registers 3
+    .locals 0
 
     .line 86
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->earlyUs:J
@@ -66,7 +66,7 @@
 .end method
 
 .method static synthetic access$200(Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;)J
-    .registers 3
+    .locals 2
 
     .line 86
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->releaseTimeNs:J
@@ -75,7 +75,7 @@
 .end method
 
 .method static synthetic access$202(Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;J)J
-    .registers 3
+    .locals 0
 
     .line 86
     iput-wide p1, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->releaseTimeNs:J
@@ -84,7 +84,7 @@
 .end method
 
 .method private reset()V
-    .registers 3
+    .locals 2
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public getEarlyUs()J
-    .registers 3
+    .locals 2
 
     .line 101
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->earlyUs:J
@@ -109,7 +109,7 @@
 .end method
 
 .method public getReleaseTimeNs()J
-    .registers 3
+    .locals 2
 
     .line 109
     iget-wide v0, p0, Landroidx/media3/exoplayer/video/VideoFrameReleaseControl$FrameReleaseInfo;->releaseTimeNs:J

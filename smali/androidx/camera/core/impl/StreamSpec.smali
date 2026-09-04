@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 41
     new-instance v0, Landroid/util/Range;
@@ -44,7 +44,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public static builder(Landroid/util/Size;)Landroidx/camera/core/impl/StreamSpec$Builder;
-    .registers 2
+    .locals 1
 
     .line 76
     new-instance v0, Landroidx/camera/core/impl/AutoValue_StreamSpec$Builder;

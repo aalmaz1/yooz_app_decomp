@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final isDigitsOnly(Ljava/lang/CharSequence;)Z
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-static {p0}, Landroid/text/TextUtils;->isDigitsOnly(Ljava/lang/CharSequence;)Z
@@ -39,7 +39,7 @@
 .end method
 
 .method public static final trimmedLength(Ljava/lang/CharSequence;)I
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-static {p0}, Landroid/text/TextUtils;->getTrimmedLength(Ljava/lang/CharSequence;)I

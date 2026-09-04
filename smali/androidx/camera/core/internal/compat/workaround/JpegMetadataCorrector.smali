@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/camera/core/impl/Quirks;)V
-    .registers 3
+    .locals 1
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,12 +31,12 @@
 
 # virtual methods
 .method public jpegImageToJpegByteArray(Landroidx/camera/core/ImageProxy;)[B
-    .registers 3
+    .locals 1
 
     .line 55
     iget-object v0, p0, Landroidx/camera/core/internal/compat/workaround/JpegMetadataCorrector;->mQuirk:Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 56
     invoke-interface {p1}, Landroidx/camera/core/ImageProxy;->getPlanes()[Landroidx/camera/core/ImageProxy$PlaneProxy;
@@ -68,7 +68,7 @@
     return-object v0
 
     .line 63
-    :cond_1c
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;->jpegImageToJpegByteArray(Landroidx/camera/core/ImageProxy;)[B
 
     move-result-object p1
@@ -77,20 +77,20 @@
 .end method
 
 .method public needCorrectJpegMetadata()Z
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/camera/core/internal/compat/workaround/JpegMetadataCorrector;->mQuirk:Landroidx/camera/core/internal/compat/quirk/IncorrectJpegMetadataQuirk;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

@@ -98,7 +98,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-string v0, "camera2.captureRequest.templateType"
 
@@ -198,7 +198,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/camera/core/impl/Config;)V
-    .registers 2
+    .locals 0
 
     .line 90
     invoke-direct {p0, p1}, Landroidx/camera/camera2/interop/CaptureRequestOptions;-><init>(Landroidx/camera/core/impl/Config;)V
@@ -207,7 +207,7 @@
 .end method
 
 .method public static createCaptureRequestOption(Landroid/hardware/camera2/CaptureRequest$Key;)Landroidx/camera/core/impl/Config$Option;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -250,7 +250,7 @@
 
 # virtual methods
 .method public getCameraEventCallback(Landroidx/camera/camera2/impl/CameraEventCallbacks;)Landroidx/camera/camera2/impl/CameraEventCallbacks;
-    .registers 4
+    .locals 2
 
     .line 192
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -269,7 +269,7 @@
 .end method
 
 .method public getCaptureRequestOptions()Landroidx/camera/camera2/interop/CaptureRequestOptions;
-    .registers 2
+    .locals 1
 
     .line 110
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -288,7 +288,7 @@
 .end method
 
 .method public getCaptureRequestTag(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     .line 204
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -305,7 +305,7 @@
 .end method
 
 .method public getCaptureRequestTemplate(I)I
-    .registers 4
+    .locals 2
 
     .line 139
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -332,7 +332,7 @@
 .end method
 
 .method public getDeviceStateCallback(Landroid/hardware/camera2/CameraDevice$StateCallback;)Landroid/hardware/camera2/CameraDevice$StateCallback;
-    .registers 4
+    .locals 2
 
     .line 152
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -351,7 +351,7 @@
 .end method
 
 .method public getPhysicalCameraId(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     .line 216
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -370,7 +370,7 @@
 .end method
 
 .method public getSessionCaptureCallback(Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
-    .registers 4
+    .locals 2
 
     .line 179
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -389,7 +389,7 @@
 .end method
 
 .method public getSessionStateCallback(Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-    .registers 4
+    .locals 2
 
     .line 166
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;
@@ -408,7 +408,7 @@
 .end method
 
 .method public getStreamUseCase(J)J
-    .registers 5
+    .locals 2
 
     .line 125
     invoke-virtual {p0}, Landroidx/camera/camera2/impl/Camera2ImplConfig;->getConfig()Landroidx/camera/core/impl/Config;

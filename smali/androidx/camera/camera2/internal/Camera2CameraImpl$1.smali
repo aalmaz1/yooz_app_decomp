@@ -34,7 +34,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/camera/camera2/internal/Camera2CameraImpl;Landroidx/camera/camera2/internal/CaptureSessionInterface;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -54,13 +54,13 @@
 
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
 
     .line 563
     check-cast p1, Ljava/lang/Void;
@@ -71,7 +71,7 @@
 .end method
 
 .method public onSuccess(Ljava/lang/Void;)V
-    .registers 3
+    .locals 1
 
     .line 567
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$1;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -97,43 +97,43 @@
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_27
+    if-eq p1, v0, :cond_1
 
     const/4 v0, 0x7
 
-    if-eq p1, v0, :cond_20
+    if-eq p1, v0, :cond_0
 
     const/16 v0, 0x8
 
-    if-eq p1, v0, :cond_27
+    if-eq p1, v0, :cond_1
 
-    goto :goto_41
+    goto :goto_0
 
     .line 570
-    :cond_20
+    :cond_0
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$1;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
     iget p1, p1, Landroidx/camera/camera2/internal/Camera2CameraImpl;->mCameraDeviceError:I
 
-    if-nez p1, :cond_27
+    if-nez p1, :cond_1
 
-    goto :goto_41
+    goto :goto_0
 
     .line 577
-    :cond_27
+    :cond_1
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$1;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
     invoke-virtual {p1}, Landroidx/camera/camera2/internal/Camera2CameraImpl;->isSessionCloseComplete()Z
 
     move-result p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$1;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
 
     iget-object p1, p1, Landroidx/camera/camera2/internal/Camera2CameraImpl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_2
 
     .line 578
     iget-object p1, p0, Landroidx/camera/camera2/internal/Camera2CameraImpl$1;->this$0:Landroidx/camera/camera2/internal/Camera2CameraImpl;
@@ -149,7 +149,7 @@
 
     iput-object v0, p1, Landroidx/camera/camera2/internal/Camera2CameraImpl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
-    :cond_41
-    :goto_41
+    :cond_2
+    :goto_0
     return-void
 .end method

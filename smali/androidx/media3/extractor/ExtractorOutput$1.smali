@@ -19,7 +19,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public endTracks()V
-    .registers 2
+    .locals 1
 
     .line 39
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -41,7 +41,7 @@
 .end method
 
 .method public seekMap(Landroidx/media3/extractor/SeekMap;)V
-    .registers 2
+    .locals 0
 
     .line 44
     new-instance p1, Ljava/lang/UnsupportedOperationException;
@@ -52,7 +52,7 @@
 .end method
 
 .method public track(II)Landroidx/media3/extractor/TrackOutput;
-    .registers 3
+    .locals 0
 
     .line 34
     new-instance p1, Ljava/lang/UnsupportedOperationException;

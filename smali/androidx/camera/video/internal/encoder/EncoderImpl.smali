@@ -175,7 +175,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$hvm2SuAcZhYiWDDolmnCJWhuFxQ(Landroidx/camera/video/internal/encoder/EncoderImpl;)V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->signalEndOfInputStream()V
 
@@ -183,7 +183,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     const-wide v0, 0x7fffffffffffffffL
 
@@ -202,7 +202,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/concurrent/Executor;Landroidx/camera/video/internal/encoder/EncoderConfig;)V
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
@@ -331,7 +331,7 @@
     .line 228
     instance-of p1, p2, Landroidx/camera/video/internal/encoder/AudioEncoderConfig;
 
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_0
 
     const-string p1, "AudioEncoder"
 
@@ -348,13 +348,13 @@
 
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
 
-    goto :goto_8d
+    goto :goto_0
 
     .line 232
-    :cond_7b
+    :cond_0
     instance-of p1, p2, Landroidx/camera/video/internal/encoder/VideoEncoderConfig;
 
-    if-eqz p1, :cond_12a
+    if-eqz p1, :cond_2
 
     const-string p1, "VideoEncoder"
 
@@ -374,7 +374,7 @@
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
 
     .line 240
-    :goto_8d
+    :goto_0
     invoke-interface {p2}, Landroidx/camera/video/internal/encoder/EncoderConfig;->getInputTimebase()Landroidx/camera/core/impl/Timebase;
 
     move-result-object p1
@@ -478,7 +478,7 @@
     .line 248
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz v0, :cond_f8
+    if-eqz v0, :cond_1
 
     .line 249
     check-cast p2, Landroidx/camera/video/internal/encoder/VideoEncoderInfo;
@@ -487,11 +487,11 @@
     invoke-direct {p0, p2, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->clampVideoBitrateIfNotSupported(Landroidx/camera/video/internal/encoder/VideoEncoderInfo;Landroid/media/MediaFormat;)V
 
     .line 254
-    :cond_f8
-    :try_start_f8
+    :cond_1
+    :try_start_0
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->reset()V
-    :try_end_fb
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_f8 .. :try_end_fb} :catch_123
+    :try_end_0
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 259
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
@@ -537,7 +537,7 @@
 
     return-void
 
-    :catch_123
+    :catch_0
     move-exception p1
 
     .line 256
@@ -548,7 +548,7 @@
     throw p2
 
     .line 237
-    :cond_12a
+    :cond_2
     new-instance p1, Landroidx/camera/video/internal/encoder/InvalidConfigException;
 
     const-string p2, "Unknown encoder config type"
@@ -559,7 +559,7 @@
 .end method
 
 .method private clampVideoBitrateIfNotSupported(Landroidx/camera/video/internal/encoder/VideoEncoderInfo;Landroid/media/MediaFormat;)V
-    .registers 6
+    .locals 3
 
     .line 279
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
@@ -573,7 +573,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_0
 
     .line 281
     invoke-virtual {p2, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
@@ -599,7 +599,7 @@
 
     move-result p1
 
-    if-eq v1, p1, :cond_47
+    if-eq v1, p1, :cond_0
 
     .line 284
     invoke-virtual {p2, v0, p1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
@@ -633,60 +633,60 @@
 
     invoke-static {p2, p1}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_47
+    :cond_0
     return-void
 .end method
 
 .method private static createEncoderInfo(ZLandroid/media/MediaCodecInfo;Ljava/lang/String;)Landroidx/camera/video/internal/encoder/EncoderInfo;
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroidx/camera/video/internal/encoder/InvalidConfigException;
         }
     .end annotation
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     .line 1014
     new-instance p0, Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;
 
     invoke-direct {p0, p1, p2}, Landroidx/camera/video/internal/encoder/VideoEncoderInfoImpl;-><init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
 
-    goto :goto_d
+    goto :goto_0
 
     .line 1015
-    :cond_8
+    :cond_0
     new-instance p0, Landroidx/camera/video/internal/encoder/AudioEncoderInfoImpl;
 
     invoke-direct {p0, p1, p2}, Landroidx/camera/video/internal/encoder/AudioEncoderInfoImpl;-><init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
 
-    :goto_d
+    :goto_0
     return-object p0
 .end method
 
 .method static hasEndOfStreamFlag(Landroid/media/MediaCodec$BufferInfo;)Z
-    .registers 1
+    .locals 0
 
     .line 1030
     iget p0, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 p0, p0, 0x4
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 p0, 0x0
 
-    :goto_9
+    :goto_0
     return p0
 .end method
 
 .method static isKeyFrame(Landroid/media/MediaCodec$BufferInfo;)Z
-    .registers 2
+    .locals 1
 
     .line 1025
     iget p0, p0, Landroid/media/MediaCodec$BufferInfo;->flags:I
@@ -695,19 +695,19 @@
 
     and-int/2addr p0, v0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method static synthetic lambda$acquireInputBuffer$12(Ljava/util/concurrent/atomic/AtomicReference;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -723,7 +723,7 @@
 .end method
 
 .method static synthetic lambda$new$0(Ljava/util/concurrent/atomic/AtomicReference;Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)Ljava/lang/Object;
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -739,7 +739,7 @@
 .end method
 
 .method static synthetic lambda$notifyError$10(Landroidx/camera/video/internal/encoder/EncoderCallback;ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    .locals 1
 
     .line 821
     new-instance v0, Landroidx/camera/video/internal/encoder/EncodeException;
@@ -752,12 +752,12 @@
 .end method
 
 .method private releaseInternal()V
-    .registers 3
+    .locals 2
 
     .line 654
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsFlushedAfterEndOfStream:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 655
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
@@ -770,7 +770,7 @@
     iput-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsFlushedAfterEndOfStream:Z
 
     .line 659
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->release()V
@@ -780,7 +780,7 @@
 
     instance-of v1, v0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 662
     check-cast v0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;
@@ -788,7 +788,7 @@
     invoke-virtual {v0}, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->releaseSurface()V
 
     .line 665
-    :cond_1c
+    :cond_1
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->RELEASED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
@@ -804,7 +804,7 @@
 .end method
 
 .method private reset()V
-    .registers 5
+    .locals 4
 
     .line 292
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl;->NO_RANGE:Landroid/util/Range;
@@ -833,12 +833,12 @@
 
     move-result-object v0
 
-    :goto_18
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -849,10 +849,10 @@
     .line 299
     invoke-virtual {v1}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->setCancelled()Z
 
-    goto :goto_18
+    goto :goto_0
 
     .line 301
-    :cond_28
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mAcquisitionQueue:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->clear()V
@@ -883,7 +883,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_1
 
     .line 309
     invoke-interface {v0, v1}, Ljava/util/concurrent/Future;->cancel(Z)Z
@@ -892,16 +892,16 @@
     iput-object v2, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mStopTimeoutFuture:Ljava/util/concurrent/Future;
 
     .line 312
-    :cond_46
+    :cond_1
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodecCallback:Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_2
 
     .line 313
     invoke-virtual {v0}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;->stop()V
 
     .line 315
-    :cond_4d
+    :cond_2
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;
 
     invoke-direct {v0, p0}, Landroidx/camera/video/internal/encoder/EncoderImpl$MediaCodecCallback;-><init>(Landroidx/camera/video/internal/encoder/EncoderImpl;)V
@@ -925,29 +925,29 @@
 
     instance-of v1, v0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;
 
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_3
 
     .line 321
     check-cast v0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;
 
     invoke-virtual {v0}, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;->resetSurface()V
 
-    :cond_6b
+    :cond_3
     return-void
 .end method
 
 .method private setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
-    .registers 5
+    .locals 3
 
     .line 711
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mState:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, p1, :cond_5
+    if-ne v0, p1, :cond_0
 
     return-void
 
     .line 714
-    :cond_5
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -985,7 +985,7 @@
 .end method
 
 .method private signalEndOfInputStream()V
-    .registers 4
+    .locals 3
 
     .line 736
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->acquireInputBuffer()Lcom/google/common/util/concurrent/ListenableFuture;
@@ -1006,7 +1006,7 @@
 
 # virtual methods
 .method acquireInputBuffer()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1027,7 +1027,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_76
+    packed-switch v0, :pswitch_data_0
 
     .line 983
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -1053,7 +1053,7 @@
     throw v0
 
     .line 980
-    :pswitch_24
+    :pswitch_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Encoder is released."
@@ -1067,7 +1067,7 @@
     return-object v0
 
     .line 977
-    :pswitch_30
+    :pswitch_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Encoder is in error state."
@@ -1081,7 +1081,7 @@
     return-object v0
 
     .line 964
-    :pswitch_3c
+    :pswitch_2
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
@@ -1128,7 +1128,7 @@
     return-object v1
 
     .line 956
-    :pswitch_69
+    :pswitch_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Encoder is not started yet."
@@ -1143,22 +1143,22 @@
 
     nop
 
-    :pswitch_data_76
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_69
-        :pswitch_3c
-        :pswitch_3c
-        :pswitch_3c
-        :pswitch_3c
-        :pswitch_3c
-        :pswitch_3c
-        :pswitch_30
-        :pswitch_24
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method generatePresentationTimeUs()J
-    .registers 3
+    .locals 2
 
     .line 1020
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTimeProvider:Landroidx/camera/video/internal/encoder/TimeProvider;
@@ -1171,7 +1171,7 @@
 .end method
 
 .method getAdjustedTimeUs(Landroid/media/MediaCodec$BufferInfo;)J
-    .registers 6
+    .locals 4
 
     .line 927
     iget-wide v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTotalPausedDurationUs:J
@@ -1180,7 +1180,7 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_0
 
     .line 928
     iget-wide v0, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
@@ -1189,18 +1189,18 @@
 
     sub-long/2addr v0, v2
 
-    goto :goto_10
+    goto :goto_0
 
     .line 930
-    :cond_e
+    :cond_0
     iget-wide v0, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    :goto_10
+    :goto_0
     return-wide v0
 .end method
 
 .method public getConfiguredBitrate()I
-    .registers 3
+    .locals 2
 
     .line 341
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaFormat:Landroid/media/MediaFormat;
@@ -1211,7 +1211,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 342
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaFormat:Landroid/media/MediaFormat;
@@ -1220,17 +1220,17 @@
 
     move-result v0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_12
+    :goto_0
     return v0
 .end method
 
 .method public getEncoderInfo()Landroidx/camera/video/internal/encoder/EncoderInfo;
-    .registers 2
+    .locals 1
 
     .line 335
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInfo:Landroidx/camera/video/internal/encoder/EncoderInfo;
@@ -1239,7 +1239,7 @@
 .end method
 
 .method public getInput()Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
-    .registers 2
+    .locals 1
 
     .line 329
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
@@ -1248,7 +1248,7 @@
 .end method
 
 .method public getReleasedFuture()Lcom/google/common/util/concurrent/ListenableFuture;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1265,7 +1265,7 @@
 .end method
 
 .method handleEncodeError(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 3
 
     .line 784
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -1278,12 +1278,12 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_48
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_47
+    goto :goto_0
 
     .line 801
-    :pswitch_e
+    :pswitch_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1318,10 +1318,10 @@
 
     invoke-static {v0, p1, p3}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_47
+    goto :goto_0
 
     .line 796
-    :pswitch_33
+    :pswitch_1
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->ERROR:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
@@ -1333,33 +1333,33 @@
 
     invoke-virtual {p0, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->stopMediaCodec(Ljava/lang/Runnable;)V
 
-    goto :goto_47
+    goto :goto_0
 
     .line 787
-    :pswitch_41
+    :pswitch_2
     invoke-virtual {p0, p1, p2, p3}, Landroidx/camera/video/internal/encoder/EncoderImpl;->notifyError(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     .line 788
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->reset()V
 
-    :goto_47
+    :goto_0
     return-void
 
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_41
-        :pswitch_33
-        :pswitch_33
-        :pswitch_33
-        :pswitch_33
-        :pswitch_33
-        :pswitch_33
-        :pswitch_e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method handleEncodeError(Landroid/media/MediaCodec$CodecException;)V
-    .registers 4
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -1374,34 +1374,34 @@
 .end method
 
 .method handleStopped()V
-    .registers 3
+    .locals 2
 
     .line 886
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mState:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_RELEASE:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     .line 887
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->releaseInternal()V
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 889
-    :cond_a
+    :cond_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mState:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     .line 890
     iget-boolean v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsFlushedAfterEndOfStream:Z
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_1
 
     .line 894
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->reset()V
 
     .line 896
-    :cond_13
+    :cond_1
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->CONFIGURED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, v1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
@@ -1409,31 +1409,31 @@
     .line 897
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_START:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-eq v0, v1, :cond_20
+    if-eq v0, v1, :cond_2
 
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_START_PAUSED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, v1, :cond_2a
+    if-ne v0, v1, :cond_3
 
     .line 898
-    :cond_20
+    :cond_2
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->start()V
 
     .line 899
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_START_PAUSED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, v1, :cond_2a
+    if-ne v0, v1, :cond_3
 
     .line 900
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->pause()V
 
-    :cond_2a
-    :goto_2a
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method isInPauseRange(J)Z
-    .registers 8
+    .locals 5
 
     .line 938
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mActivePauseResumeTimeRanges:Ljava/util/Deque;
@@ -1442,14 +1442,14 @@
 
     move-result-object v0
 
-    :cond_6
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1466,14 +1466,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_1
 
     const/4 p1, 0x1
 
     return p1
 
     .line 941
-    :cond_1f
+    :cond_1
     invoke-virtual {v1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v1
@@ -1486,14 +1486,14 @@
 
     cmp-long v1, p1, v3
 
-    if-gez v1, :cond_6
+    if-gez v1, :cond_0
 
-    :cond_2d
+    :cond_2
     return v2
 .end method
 
 .method synthetic lambda$acquireInputBuffer$13$androidx-camera-video-internal-encoder-EncoderImpl(Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;)V
-    .registers 3
+    .locals 1
 
     .line 972
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mAcquisitionQueue:Ljava/util/Queue;
@@ -1504,7 +1504,7 @@
 .end method
 
 .method synthetic lambda$handleEncodeError$9$androidx-camera-video-internal-encoder-EncoderImpl(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 0
 
     .line 797
     invoke-virtual {p0, p1, p2, p3}, Landroidx/camera/video/internal/encoder/EncoderImpl;->notifyError(ILjava/lang/String;Ljava/lang/Throwable;)V
@@ -1513,7 +1513,7 @@
 .end method
 
 .method synthetic lambda$matchAcquisitionsAndFreeBufferIndexes$14$androidx-camera-video-internal-encoder-EncoderImpl(Landroidx/camera/video/internal/encoder/InputBufferImpl;)V
-    .registers 3
+    .locals 1
 
     .line 1004
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mInputBufferSet:Ljava/util/Set;
@@ -1524,7 +1524,7 @@
 .end method
 
 .method synthetic lambda$pause$5$androidx-camera-video-internal-encoder-EncoderImpl(J)V
-    .registers 6
+    .locals 3
 
     .line 567
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -1537,7 +1537,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_66
+    packed-switch v0, :pswitch_data_0
 
     .line 589
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1563,7 +1563,7 @@
     throw p1
 
     .line 587
-    :pswitch_24
+    :pswitch_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Encoder is released"
@@ -1573,15 +1573,15 @@
     throw p1
 
     .line 576
-    :pswitch_2c
+    :pswitch_1
     sget-object p1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_START_PAUSED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    goto :goto_65
+    goto :goto_0
 
     .line 580
-    :pswitch_32
+    :pswitch_2
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1630,26 +1630,26 @@
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    :goto_65
-    :pswitch_65
+    :goto_0
+    :pswitch_3
     return-void
 
-    :pswitch_data_66
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_65
-        :pswitch_32
-        :pswitch_65
-        :pswitch_65
-        :pswitch_65
-        :pswitch_2c
-        :pswitch_24
-        :pswitch_65
-        :pswitch_24
+        :pswitch_3
+        :pswitch_2
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method synthetic lambda$release$6$androidx-camera-video-internal-encoder-EncoderImpl()V
-    .registers 4
+    .locals 3
 
     .line 605
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -1662,7 +1662,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 622
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -1688,37 +1688,37 @@
     throw v0
 
     .line 615
-    :pswitch_24
+    :pswitch_0
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_RELEASE:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 610
-    :pswitch_2a
+    :pswitch_1
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->releaseInternal()V
 
-    :goto_2d
-    :pswitch_2d
+    :goto_0
+    :pswitch_2
     return-void
 
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2a
-        :pswitch_2a
-        :pswitch_2a
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_2d
-        :pswitch_2a
-        :pswitch_2d
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
     .end packed-switch
 .end method
 
 .method synthetic lambda$requestKeyFrame$8$androidx-camera-video-internal-encoder-EncoderImpl()V
-    .registers 3
+    .locals 2
 
     .line 690
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -1733,20 +1733,20 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_1d
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_0
 
     const/16 v1, 0x9
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 704
-    :cond_15
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Encoder is released"
@@ -1756,15 +1756,15 @@
     throw v0
 
     .line 692
-    :cond_1d
+    :cond_1
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->requestKeyFrameToMediaCodec()V
 
-    :goto_20
+    :goto_0
     return-void
 .end method
 
 .method synthetic lambda$signalSourceStopped$7$androidx-camera-video-internal-encoder-EncoderImpl()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -1774,7 +1774,7 @@
     .line 645
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsFlushedAfterEndOfStream:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 646
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
@@ -1784,12 +1784,12 @@
     .line 647
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->reset()V
 
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$start$1$androidx-camera-video-internal-encoder-EncoderImpl(J)V
-    .registers 10
+    .locals 7
 
     .line 361
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -1808,7 +1808,7 @@
 
     const/4 v4, 0x1
 
-    packed-switch v0, :pswitch_data_11e
+    packed-switch v0, :pswitch_data_0
 
     .line 440
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1834,7 +1834,7 @@
     throw p1
 
     .line 438
-    :pswitch_2b
+    :pswitch_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Encoder is released"
@@ -1844,15 +1844,15 @@
     throw p1
 
     .line 434
-    :pswitch_33
+    :pswitch_1
     sget-object p1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PENDING_START:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    goto/16 :goto_118
+    goto/16 :goto_2
 
     .line 388
-    :pswitch_3a
+    :pswitch_2
     iput-object v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLastDataStopTimestamp:Ljava/lang/Long;
 
     .line 390
@@ -1866,7 +1866,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_0
 
     .line 392
     invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
@@ -1881,16 +1881,16 @@
 
     cmp-long v1, v5, v1
 
-    if-nez v1, :cond_57
+    if-nez v1, :cond_0
 
     move v1, v4
 
-    goto :goto_58
+    goto :goto_0
 
-    :cond_57
+    :cond_0
     move v1, v3
 
-    :goto_58
+    :goto_0
     const-string v2, "There should be a \"pause\" before \"resume\""
 
     .line 391
@@ -1970,7 +1970,7 @@
     .line 405
     iget-boolean p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-nez p1, :cond_ac
+    if-nez p1, :cond_1
 
     const-class p1, Landroidx/camera/video/internal/compat/quirk/AudioEncoderIgnoresInputTimestampQuirk;
 
@@ -1978,15 +1978,15 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_ac
+    if-eqz p1, :cond_1
 
-    goto :goto_c7
+    goto :goto_1
 
     .line 409
-    :cond_ac
+    :cond_1
     iget-boolean p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz p1, :cond_b9
+    if-eqz p1, :cond_2
 
     const-class p1, Landroidx/camera/video/internal/compat/quirk/VideoEncoderSuspendDoesNotIncludeSuspendTimeQuirk;
 
@@ -1994,12 +1994,12 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_b9
+    if-eqz p1, :cond_2
 
-    goto :goto_c7
+    goto :goto_1
 
     .line 414
-    :cond_b9
+    :cond_2
     invoke-virtual {p0, v3}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setMediaCodecPaused(Z)V
 
     .line 415
@@ -2007,7 +2007,7 @@
 
     instance-of p2, p1, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
 
-    if-eqz p2, :cond_c7
+    if-eqz p2, :cond_3
 
     .line 416
     check-cast p1, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
@@ -2015,25 +2015,25 @@
     invoke-virtual {p1, v4}, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->setActive(Z)V
 
     .line 422
-    :cond_c7
-    :goto_c7
+    :cond_3
+    :goto_1
     iget-boolean p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsVideoEncoder:Z
 
-    if-eqz p1, :cond_ce
+    if-eqz p1, :cond_4
 
     .line 423
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->requestKeyFrameToMediaCodec()V
 
     .line 425
-    :cond_ce
+    :cond_4
     sget-object p1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->STARTED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    goto :goto_118
+    goto :goto_2
 
     .line 363
-    :pswitch_d4
+    :pswitch_3
     iput-object v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLastDataStopTimestamp:Ljava/lang/Long;
 
     .line 365
@@ -2060,16 +2060,16 @@
     invoke-static {v0, v3}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 367
-    :try_start_ee
+    :try_start_0
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsFlushedAfterEndOfStream:Z
 
-    if-eqz v0, :cond_f5
+    if-eqz v0, :cond_5
 
     .line 371
     invoke-direct {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->reset()V
 
     .line 373
-    :cond_f5
+    :cond_5
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -2088,15 +2088,15 @@
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     invoke-virtual {p1}, Landroid/media/MediaCodec;->start()V
-    :try_end_108
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_ee .. :try_end_108} :catch_119
+    :try_end_0
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 379
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
 
     instance-of p2, p1, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
 
-    if-eqz p2, :cond_113
+    if-eqz p2, :cond_6
 
     .line 380
     check-cast p1, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
@@ -2104,16 +2104,16 @@
     invoke-virtual {p1, v4}, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;->setActive(Z)V
 
     .line 382
-    :cond_113
+    :cond_6
     sget-object p1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->STARTED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    :goto_118
-    :pswitch_118
+    :goto_2
+    :pswitch_4
     return-void
 
-    :catch_119
+    :catch_0
     move-exception p1
 
     .line 376
@@ -2121,27 +2121,27 @@
 
     return-void
 
-    :pswitch_data_11e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_d4
-        :pswitch_118
-        :pswitch_3a
-        :pswitch_33
-        :pswitch_33
-        :pswitch_118
-        :pswitch_2b
-        :pswitch_118
-        :pswitch_2b
+        :pswitch_3
+        :pswitch_4
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_4
+        :pswitch_0
+        :pswitch_4
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method synthetic lambda$stop$2$androidx-camera-video-internal-encoder-EncoderImpl()V
-    .registers 3
+    .locals 2
 
     .line 508
     iget-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mPendingCodecStop:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 509
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
@@ -2163,12 +2163,12 @@
     .line 515
     iput-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mPendingCodecStop:Z
 
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method synthetic lambda$stop$3$androidx-camera-video-internal-encoder-EncoderImpl()V
-    .registers 3
+    .locals 2
 
     .line 507
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderExecutor:Ljava/util/concurrent/Executor;
@@ -2183,7 +2183,7 @@
 .end method
 
 .method synthetic lambda$stop$4$androidx-camera-video-internal-encoder-EncoderImpl(JJ)V
-    .registers 10
+    .locals 5
 
     .line 461
     sget-object v0, Landroidx/camera/video/internal/encoder/EncoderImpl$2;->$SwitchMap$androidx$camera$video$internal$encoder$EncoderImpl$InternalState:[I
@@ -2196,7 +2196,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_c0
+    packed-switch v0, :pswitch_data_0
 
     .line 528
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -2222,7 +2222,7 @@
     throw p1
 
     .line 526
-    :pswitch_24
+    :pswitch_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Encoder is released"
@@ -2232,15 +2232,15 @@
     throw p1
 
     .line 522
-    :pswitch_2c
+    :pswitch_1
     sget-object p1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->CONFIGURED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     invoke-direct {p0, p1}, Landroidx/camera/video/internal/encoder/EncoderImpl;->setState(Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;)V
 
-    goto/16 :goto_bf
+    goto/16 :goto_1
 
     .line 469
-    :pswitch_33
+    :pswitch_2
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mState:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     .line 470
@@ -2265,20 +2265,20 @@
 
     cmp-long v3, v1, v3
 
-    if-eqz v3, :cond_b7
+    if-eqz v3, :cond_4
 
     const-wide/16 v3, -0x1
 
     cmp-long v3, p1, v3
 
-    if-nez v3, :cond_56
+    if-nez v3, :cond_0
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_56
+    :cond_0
     cmp-long v3, p1, v1
 
-    if-gez v3, :cond_62
+    if-gez v3, :cond_1
 
     .line 483
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
@@ -2287,13 +2287,13 @@
 
     invoke-static {p1, p2}, Landroidx/camera/core/Logger;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_61
+    :goto_0
     move-wide p1, p3
 
-    :cond_62
+    :cond_1
     cmp-long p3, p1, v1
 
-    if-ltz p3, :cond_af
+    if-ltz p3, :cond_3
 
     .line 494
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2336,18 +2336,18 @@
     .line 498
     sget-object p1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->PAUSED:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-ne v0, p1, :cond_98
+    if-ne v0, p1, :cond_2
 
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLastDataStopTimestamp:Ljava/lang/Long;
 
-    if-eqz p1, :cond_98
+    if-eqz p1, :cond_2
 
     .line 499
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->signalCodecStop()V
 
-    goto :goto_bf
+    goto :goto_1
 
-    :cond_98
+    :cond_2
     const/4 p1, 0x1
 
     .line 501
@@ -2372,10 +2372,10 @@
 
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mStopTimeoutFuture:Ljava/util/concurrent/Future;
 
-    goto :goto_bf
+    goto :goto_1
 
     .line 490
-    :cond_af
+    :cond_3
     new-instance p1, Ljava/lang/AssertionError;
 
     const-string p2, "The start time should be before the stop time."
@@ -2385,7 +2385,7 @@
     throw p1
 
     .line 473
-    :cond_b7
+    :cond_4
     new-instance p1, Ljava/lang/AssertionError;
 
     const-string p2, "There should be a \"start\" before \"stop\""
@@ -2394,40 +2394,40 @@
 
     throw p1
 
-    :goto_bf
-    :pswitch_bf
+    :goto_1
+    :pswitch_3
     return-void
 
-    :pswitch_data_c0
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_bf
-        :pswitch_33
-        :pswitch_33
-        :pswitch_bf
-        :pswitch_2c
-        :pswitch_2c
-        :pswitch_24
-        :pswitch_bf
-        :pswitch_24
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_3
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method synthetic lambda$stopMediaCodec$11$androidx-camera-video-internal-encoder-EncoderImpl(Ljava/util/List;Ljava/lang/Runnable;)V
-    .registers 5
+    .locals 2
 
     .line 851
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mState:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
     sget-object v1, Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;->ERROR:Landroidx/camera/video/internal/encoder/EncoderImpl$InternalState;
 
-    if-eq v0, v1, :cond_2b
+    if-eq v0, v1, :cond_2
 
     .line 852
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     .line 853
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
@@ -2437,16 +2437,16 @@
     invoke-static {p1, v0}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 855
-    :cond_13
+    :cond_0
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
 
     instance-of p1, p1, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_1
 
     iget-boolean p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mSourceStoppedSignalled:Z
 
-    if-nez p1, :cond_26
+    if-nez p1, :cond_1
 
     .line 865
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
@@ -2458,30 +2458,30 @@
     .line 866
     iput-boolean p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mIsFlushedAfterEndOfStream:Z
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 873
-    :cond_26
+    :cond_1
     iget-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     invoke-virtual {p1}, Landroid/media/MediaCodec;->stop()V
 
-    :cond_2b
-    :goto_2b
-    if-eqz p2, :cond_30
+    :cond_2
+    :goto_0
+    if-eqz p2, :cond_3
 
     .line 877
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     .line 879
-    :cond_30
+    :cond_3
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->handleStopped()V
 
     return-void
 .end method
 
 .method matchAcquisitionsAndFreeBufferIndexes()V
-    .registers 5
+    .locals 4
 
     .line 990
     :goto_0
@@ -2491,7 +2491,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_59
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mFreeInputBufferIndexQueue:Ljava/util/Queue;
 
@@ -2499,7 +2499,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_59
+    if-nez v0, :cond_1
 
     .line 991
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mAcquisitionQueue:Ljava/util/Queue;
@@ -2536,21 +2536,21 @@
     move-result v1
 
     .line 996
-    :try_start_30
+    :try_start_0
     new-instance v2, Landroidx/camera/video/internal/encoder/InputBufferImpl;
 
     iget-object v3, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     invoke-direct {v2, v3, v1}, Landroidx/camera/video/internal/encoder/InputBufferImpl;-><init>(Landroid/media/MediaCodec;I)V
-    :try_end_37
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_30 .. :try_end_37} :catch_55
+    :try_end_0
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1001
     invoke-virtual {v0, v2}, Landroidx/concurrent/futures/CallbackToFutureAdapter$Completer;->set(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_0
 
     .line 1002
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mInputBufferSet:Ljava/util/Set;
@@ -2573,23 +2573,23 @@
     goto :goto_0
 
     .line 1006
-    :cond_51
+    :cond_0
     invoke-virtual {v2}, Landroidx/camera/video/internal/encoder/InputBufferImpl;->cancel()Z
 
     goto :goto_0
 
-    :catch_55
+    :catch_0
     move-exception v0
 
     .line 998
     invoke-virtual {p0, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->handleEncodeError(Landroid/media/MediaCodec$CodecException;)V
 
-    :cond_59
+    :cond_1
     return-void
 .end method
 
 .method notifyError(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 3
 
     .line 815
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLock:Ljava/lang/Object;
@@ -2597,7 +2597,7 @@
     monitor-enter v0
 
     .line 816
-    :try_start_3
+    :try_start_0
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderCallback:Landroidx/camera/video/internal/encoder/EncoderCallback;
 
     .line 817
@@ -2605,22 +2605,22 @@
 
     .line 818
     monitor-exit v0
-    :try_end_8
-    .catchall {:try_start_3 .. :try_end_8} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 820
-    :try_start_8
+    :try_start_1
     new-instance v0, Landroidx/camera/video/internal/encoder/EncoderImpl$$ExternalSyntheticLambda6;
 
     invoke-direct {v0, v1, p1, p2, p3}, Landroidx/camera/video/internal/encoder/EncoderImpl$$ExternalSyntheticLambda6;-><init>(Landroidx/camera/video/internal/encoder/EncoderCallback;ILjava/lang/String;Ljava/lang/Throwable;)V
 
     invoke-interface {v2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_10
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_8 .. :try_end_10} :catch_11
+    :try_end_1
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :catch_11
+    :catch_0
     move-exception p1
 
     .line 823
@@ -2630,23 +2630,23 @@
 
     invoke-static {p2, p3, p1}, Landroidx/camera/core/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_19
+    :goto_0
     return-void
 
-    :catchall_1a
+    :catchall_0
     move-exception p1
 
     .line 818
-    :try_start_1b
+    :try_start_2
     monitor-exit v0
-    :try_end_1c
-    .catchall {:try_start_1b .. :try_end_1c} :catchall_1a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
 .end method
 
 .method public pause()V
-    .registers 5
+    .locals 4
 
     .line 565
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->generatePresentationTimeUs()J
@@ -2666,7 +2666,7 @@
 .end method
 
 .method public release()V
-    .registers 3
+    .locals 2
 
     .line 604
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderExecutor:Ljava/util/concurrent/Executor;
@@ -2681,7 +2681,7 @@
 .end method
 
 .method public requestKeyFrame()V
-    .registers 3
+    .locals 2
 
     .line 689
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderExecutor:Ljava/util/concurrent/Executor;
@@ -2696,7 +2696,7 @@
 .end method
 
 .method requestKeyFrameToMediaCodec()V
-    .registers 4
+    .locals 3
 
     .line 729
     new-instance v0, Landroid/os/Bundle;
@@ -2719,7 +2719,7 @@
 .end method
 
 .method public setEncoderCallback(Landroidx/camera/video/internal/encoder/EncoderCallback;Ljava/util/concurrent/Executor;)V
-    .registers 4
+    .locals 1
 
     .line 680
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mLock:Ljava/lang/Object;
@@ -2727,7 +2727,7 @@
     monitor-enter v0
 
     .line 681
-    :try_start_3
+    :try_start_0
     iput-object p1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderCallback:Landroidx/camera/video/internal/encoder/EncoderCallback;
 
     .line 682
@@ -2738,18 +2738,18 @@
 
     return-void
 
-    :catchall_9
+    :catchall_0
     move-exception p1
 
     monitor-exit v0
-    :try_end_b
-    .catchall {:try_start_3 .. :try_end_b} :catchall_9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
 .method setMediaCodecPaused(Z)V
-    .registers 4
+    .locals 2
 
     .line 721
     new-instance v0, Landroid/os/Bundle;
@@ -2770,14 +2770,14 @@
 .end method
 
 .method signalCodecStop()V
-    .registers 4
+    .locals 3
 
     .line 536
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderInput:Landroidx/camera/video/internal/encoder/Encoder$EncoderInput;
 
     instance-of v1, v0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_1
 
     .line 537
     check-cast v0, Landroidx/camera/video/internal/encoder/EncoderImpl$ByteBufferInput;
@@ -2798,12 +2798,12 @@
 
     move-result-object v1
 
-    :goto_17
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2818,10 +2818,10 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_17
+    goto :goto_0
 
     .line 543
-    :cond_2b
+    :cond_0
     invoke-static {v0}, Landroidx/camera/core/impl/utils/futures/Futures;->successfulAsList(Ljava/util/Collection;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -2834,16 +2834,16 @@
 
     invoke-interface {v0, v1, v2}, Lcom/google/common/util/concurrent/ListenableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    goto :goto_4b
+    goto :goto_1
 
     .line 545
-    :cond_3a
+    :cond_1
     instance-of v0, v0, Landroidx/camera/video/internal/encoder/EncoderImpl$SurfaceInput;
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_2
 
     .line 547
-    :try_start_3e
+    :try_start_0
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodec:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->signalEndOfInputStream()V
@@ -2852,24 +2852,24 @@
 
     .line 550
     iput-boolean v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mMediaCodecEosSignalled:Z
-    :try_end_46
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_3e .. :try_end_46} :catch_47
+    :try_end_0
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4b
+    goto :goto_1
 
-    :catch_47
+    :catch_0
     move-exception v0
 
     .line 552
     invoke-virtual {p0, v0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->handleEncodeError(Landroid/media/MediaCodec$CodecException;)V
 
-    :cond_4b
-    :goto_4b
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public signalSourceStopped()V
-    .registers 3
+    .locals 2
 
     .line 643
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mEncoderExecutor:Ljava/util/concurrent/Executor;
@@ -2884,7 +2884,7 @@
 .end method
 
 .method public start()V
-    .registers 5
+    .locals 4
 
     .line 359
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->generatePresentationTimeUs()J
@@ -2904,7 +2904,7 @@
 .end method
 
 .method public stop()V
-    .registers 3
+    .locals 2
 
     const-wide/16 v0, -0x1
 
@@ -2915,7 +2915,7 @@
 .end method
 
 .method public stop(J)V
-    .registers 11
+    .locals 8
 
     .line 459
     invoke-virtual {p0}, Landroidx/camera/video/internal/encoder/EncoderImpl;->generatePresentationTimeUs()J
@@ -2941,7 +2941,7 @@
 .end method
 
 .method stopMediaCodec(Ljava/lang/Runnable;)V
-    .registers 6
+    .locals 4
 
     .line 836
     new-instance v0, Ljava/util/ArrayList;
@@ -2955,12 +2955,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2975,22 +2975,22 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
     .line 840
-    :cond_1f
+    :cond_0
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mInputBufferSet:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_25
+    :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -3005,15 +3005,15 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_25
+    goto :goto_1
 
     .line 843
-    :cond_39
+    :cond_1
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_69
+    if-nez v1, :cond_2
 
     .line 844
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mTag:Ljava/lang/String;
@@ -3060,7 +3060,7 @@
     invoke-static {v1, v2}, Landroidx/camera/core/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 848
-    :cond_69
+    :cond_2
     invoke-static {v0}, Landroidx/camera/core/impl/utils/futures/Futures;->successfulAsList(Ljava/util/Collection;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v1
@@ -3077,7 +3077,7 @@
 .end method
 
 .method updateTotalPausedDuration(J)V
-    .registers 10
+    .locals 7
 
     .line 909
     :goto_0
@@ -3087,7 +3087,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_58
+    if-nez v0, :cond_0
 
     .line 910
     iget-object v0, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mActivePauseResumeTimeRanges:Ljava/util/Deque;
@@ -3111,7 +3111,7 @@
 
     cmp-long v1, p1, v1
 
-    if-lez v1, :cond_58
+    if-lez v1, :cond_0
 
     .line 913
     iget-object v1, p0, Landroidx/camera/video/internal/encoder/EncoderImpl;->mActivePauseResumeTimeRanges:Ljava/util/Deque;
@@ -3176,6 +3176,6 @@
 
     goto :goto_0
 
-    :cond_58
+    :cond_0
     return-void
 .end method

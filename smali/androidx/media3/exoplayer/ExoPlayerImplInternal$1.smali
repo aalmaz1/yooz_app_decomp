@@ -23,7 +23,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/media3/exoplayer/ExoPlayerImplInternal;)V
-    .registers 2
+    .locals 0
 
     .line 2782
     iput-object p1, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$1;->this$0:Landroidx/media3/exoplayer/ExoPlayerImplInternal;
@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public onSleep()V
-    .registers 3
+    .locals 2
 
     .line 2785
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$1;->this$0:Landroidx/media3/exoplayer/ExoPlayerImplInternal;
@@ -49,7 +49,7 @@
 .end method
 
 .method public onWakeup()V
-    .registers 3
+    .locals 2
 
     .line 2790
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$1;->this$0:Landroidx/media3/exoplayer/ExoPlayerImplInternal;
@@ -58,7 +58,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$1;->this$0:Landroidx/media3/exoplayer/ExoPlayerImplInternal;
 
@@ -66,10 +66,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 2791
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/media3/exoplayer/ExoPlayerImplInternal$1;->this$0:Landroidx/media3/exoplayer/ExoPlayerImplInternal;
 
     invoke-static {v0}, Landroidx/media3/exoplayer/ExoPlayerImplInternal;->access$900(Landroidx/media3/exoplayer/ExoPlayerImplInternal;)Landroidx/media3/common/util/HandlerWrapper;
@@ -80,6 +80,6 @@
 
     invoke-interface {v0, v1}, Landroidx/media3/common/util/HandlerWrapper;->sendEmptyMessage(I)Z
 
-    :cond_1a
+    :cond_1
     return-void
 .end method
